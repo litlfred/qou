@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2605.09605v2
-doc_title: "Cocycle Actions on Hidden Quantum Markov Models:"
+doc_title: "Cocycle Actions on Hidden Quantum Markov Models: Symmetry Protection and Topological Order"
 section_id: sec-001-cocycle-actions-and-symmetry-protection-in-hqmms
 section_title: "Cocycle Actions and Symmetry Protection in HQMMs"
 section_number: null
 pages: 3-11
 source_pdf: 2605.09605v2.pdf
 source_sha256: 24496fb444a2b558
-doc_brief: "Cocycle Actions on Hidden Quantum Markov Models: — We develop a symmetry action framework for hidden quantum Markov models (HQMMs) tailored to one-dimensional quantum spin systems and"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.659
-latex_coverage_ratio: 0.994
+latex_prose_ratio: 0.986
+latex_coverage_ratio: 0.992
 ---
 []{#Sect_main label="Sect_main"} Let $G$ be a locally compact group. In quantum systems, symmetry actions are typically implemented by unitary representations. However, within the framework ofHQMMs, the hidden sector may carry a *projective* representation, reflecting the anomalous nature of the symmetry in the corresponding symmetry-protected topological (SPT) phase. This projective character is encoded in a $2$-cocycle, which defines an element of the second cohomology group $H^2(G, \mathrm{U}(1))$. Throughout the remainder of the paper, the notation associated with the HQMM formalism is introduced in Appendix [\[sect_prel\]](#sect_prel){reference-type="ref" reference="sect_prel"}.
 

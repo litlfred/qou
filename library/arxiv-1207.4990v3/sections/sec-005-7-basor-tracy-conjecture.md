@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1207.4990v3
-doc_title: "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results Percy Deift"
+doc_title: "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results"
 section_id: sec-005-7-basor-tracy-conjecture
 section_title: "Basor-Tracy conjecture"
 section_number: 7
 pages: 36-40
 source_pdf: 1207.4990v3.pdf
 source_sha256: 02aa065f4f65b857
-doc_brief: "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results Percy Deift — 10 sections: Setting the problem; Toeplitz meets Ising; Back to Isi"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.996
-latex_coverage_ratio: 0.958
+latex_prose_ratio: 0.991
+latex_coverage_ratio: 0.924
 ---
 As already observed in [@BottSilb5] [@BottSilb6], Ehrhardt's condition on the seminorm, $|||\beta|||<1$, is not just a technical matter. In a critical calculation in 1991, Basor and Tracy [@BasTr] considered a particular symbol $f\!\left(e^{i\theta}\right)$ which has two FH singularities at $z_0=1$ and $z_1=e^{i\,\pi}=-1$ respectively $$\label{eq94}
 f\!\left(e^{i\theta}\right) =  g_{1, \frac{1}{2}}(z) \, g_{-1, -\frac{1}{2}}(z)\, e^{i\,\pi/2}$$ with $\beta_0= \frac{1}{2}, \, \beta_1 = -\frac{1}{2}$ so that $|||\beta|||=1$. By direct computation they found that as $n\to \infty$ $$\label{eq95}

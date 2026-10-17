@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2605.28781v1
-doc_title: "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS"
+doc_title: "The sum-product conjecture is false for real numbers"
 section_id: sec-008-3-algebraic-number-theory
 section_title: "Algebraic number theory"
 section_number: 3
 pages: 7-8
 source_pdf: 2605.28781v1.pdf
 source_sha256: eee6d535af1996ca
-doc_brief: "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily largeA⊂R(whose elements are algebraic integers in a number"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.511
+latex_prose_ratio: 0.99
+latex_coverage_ratio: 0.682
 ---
 In this section we review the necessary concepts required from algebraic number theory; with the exception of Theorem [\[th-tower\]](#th-tower){reference-type="ref" reference="th-tower"}, these are all classical results that can be found in most textbooks on the subject.
 

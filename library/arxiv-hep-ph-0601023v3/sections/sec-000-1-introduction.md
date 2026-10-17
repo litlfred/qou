@@ -10,7 +10,7 @@ source_sha256: 875ab040b50487a1
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.997
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.998
 ---
 The Standard Model of strong, and the electro-weak interactions, 
 given by the gauge group $SU(3)_C\times SU(2)_L\times U(1)_Y$,   

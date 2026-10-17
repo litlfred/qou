@@ -1,0 +1,122 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0503227v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "4e83adfdef82710343324fc2e1ddd94b3ec5a1b2165a96ddd0a5848abc192f59",
+  "file": "0503227v2.pdf"
+ },
+ "provenance": {
+  "title": "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios",
+  "authors": "By Jason Fulman",
+  "arxiv": {
+   "id": "math/0503227",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "8 Aug 2006"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 7,
+  "by_kind": {
+   "lemma": 7
+  },
+  "formalization_candidates": 7
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "[\\[ismart\\]](#ismart){reference-type=\"ref\" reference=\"ismart\"} states that the $X_j$ are martingale differences satisfying special properties. We remark that [@F3] extends this lemma to more general conjugacy classes and groups. The notation $\\ee(A|\\cdot)$ means the expected value of $A$ given $\\cdot$.",
+   "section_file": "sections/sec-001-2-central-limit-theorem-for-plancherel-measure.md",
+   "section_title": "Central limit theorem for Plancherel measure",
+   "pages": "3-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "[\\[moments\\]](#moments){reference-type=\"ref\" reference=\"moments\"} gives the conditional second and fourth moments of the $X_j$'s. We emphasize that these were not derived or even stated in terms of character ratios, but rather were proved in a completely combinatorial way by studying the behavior of the moments of $c(x)$ where $x$ is the box added during Kerov's growth process. We remark that for other conjugacy classes, there is not an analog of the fact that $\\ee(X_j^2|\\lambda(j-1))$ is independent of $\\lambda(j-1)$.",
+   "section_file": "sections/sec-001-2-central-limit-theorem-for-plancherel-measure.md",
+   "section_title": "Central limit theorem for Plancherel measure",
+   "pages": "3-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "[\\[identity\\]](#identity){reference-type=\"ref\" reference=\"identity\"} is a useful identity. Although a combinatorial proof can be given using properties of Schur functions, we defer combinatorial arguments to the more general setting of Jack polynomials in Section [\\[jack\\]](#jack){reference-type=\"ref\" reference=\"jack\"} and give an algebraic proof.",
+   "section_file": "sections/sec-001-2-central-limit-theorem-for-plancherel-measure.md",
+   "section_title": "Central limit theorem for Plancherel measure",
+   "pages": "3-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "[\\[boundmom\\]](#boundmom){reference-type=\"ref\" reference=\"boundmom\"} gives upper bounds for $\\ee(|X_n|^3)$ and for $\\ee(|T_{n-1}||X_n|^3)$. One could prove a similar bound (with slightly worse constants) using the concentration inequality for $X_n$ in the proof of Theorem [\\[main1\\]](#main1){reference-type=\"ref\" reference=\"main1\"}.",
+   "section_file": "sections/sec-001-2-central-limit-theorem-for-plancherel-measure.md",
+   "section_title": "Central limit theorem for Plancherel measure",
+   "pages": "3-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "[\\[ismart2\\]](#ismart2){reference-type=\"ref\" reference=\"ismart2\"} is an analog of Lemma [\\[ismart\\]](#ismart){reference-type=\"ref\" reference=\"ismart\"} and is generalized in [@F3] to arbitrary spherical functions of the Gelfand pair $(S_{2n},H_{2n})$.",
+   "section_file": "sections/sec-002-3-central-limit-theorem-for-jack-measure.md",
+   "section_title": "Central limit theorem for Jack measure",
+   "pages": "9-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "[\\[moments2\\]](#moments2){reference-type=\"ref\" reference=\"moments2\"} is the $\\alpha$ version of Lemma [\\[moments\\]](#moments){reference-type=\"ref\" reference=\"moments\"}.",
+   "section_file": "sections/sec-002-3-central-limit-theorem-for-jack-measure.md",
+   "section_title": "Central limit theorem for Jack measure",
+   "pages": "9-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "[\\[identity2\\]](#identity2){reference-type=\"ref\" reference=\"identity2\"} is the $\\alpha$ version of Lemma [\\[identity\\]](#identity){reference-type=\"ref\" reference=\"identity\"}. The proof is combinatorial, as opposed to the algebraic argument given for Lemma [\\[identity\\]](#identity){reference-type=\"ref\" reference=\"identity\"}.",
+   "section_file": "sections/sec-002-3-central-limit-theorem-for-jack-measure.md",
+   "section_title": "Central limit theorem for Jack measure",
+   "pages": "9-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1502.02882v2
-doc_title: "Fusion categories via string diagrams Bruce Bartlett"
+doc_title: "Fusion categories via string diagrams"
 section_id: sec-014-41-monodromy-interpretation-of-the-pivotal-opera
 section_title: "Monodromy interpretation of the pivotal operators"
 section_number: 4.1
 pages: 21-24
 source_pdf: 1502.02882v2.pdf
 source_sha256: 43641c6f3aed63dd
-doc_brief: "Fusion categories via string diagrams Bruce Bartlett — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.972
-latex_coverage_ratio: 0.905
+latex_coverage_ratio: 0.948
 ---
 We can write the pivotal operators $T^i_{jk}$ as the conjugate of a product of {\em cyclic operators}, defined as follows. Write $V_{ijk} = \Hom(1, X_i \otimes (X_j \otimes X_k))$.
 \begin{defn} In a fusion category, the {\em cyclic operators} $C_{ijk} : V_{ijk} \rightarrow V_{kij}$ are defined as follows, using the pairing convention: \label{cyclic_op_defn}

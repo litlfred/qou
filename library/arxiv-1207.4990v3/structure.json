@@ -8,10 +8,10 @@
   "pages": 70,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "math_source": "latex",
   "mtime": null,
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,18 +21,29 @@
    "stamp_date": "1 Dec 2012"
   },
   "doi": null,
-  "title": "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results Percy Deift",
-  "authors_raw": "Courant Institute, New York",
+  "title": "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results",
+  "authors_raw": "Percy Deift",
   "title_lines": [
    "Toeplitz matrices and Toeplitz determinants under the impetus of",
-   "the Ising model. Some history and some recent results",
-   "Percy Deift"
+   "the Ising model. Some history and some recent results"
   ],
   "abstract": null,
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref package",
    "CreationDate": "D:20181030085028-04'00'"
+  },
+  "title_raw": "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results",
+   "outline": "1 Setting the problem",
+   "text": "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -41,81 +52,771 @@
    "title": "Setting the problem",
    "page": 3,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Toeplitz meets Ising",
    "page": 9,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "Szego's Theorem",
    "page": 12,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "Back to Ising",
    "page": 23,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 1,
    "title": "New questions for SSLT",
    "page": 27,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 1,
    "title": "Fisher-Hartwig singularities. Fisher-Hartwig conjecture",
    "page": 29,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 1,
    "title": "Basor-Tracy conjecture",
    "page": 36,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 1,
    "title": "Hankel and Toeplitz+Hankel determinants",
    "page": 40,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   },
   {
    "level": 1,
    "title": "Some applications",
    "page": 42,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "42"
   },
   {
    "level": 1,
    "title": "Block Toeplitz matrices",
    "page": 45,
    "source": "outline",
-   "number": "10"
+   "number": "10",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
   },
   {
    "level": 1,
    "title": "Double-scaling limits",
    "page": 49,
    "source": "outline",
-   "number": "11"
+   "number": "11",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "49"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "64",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "69",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "70",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 323,
+   "n_words": 46,
+   "label_start": "1",
+   "label_end": "2"
+  },
   {
    "id": "sec-000-1-setting-the-problem",
    "number": "1",
@@ -123,8 +824,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 9,
-   "n_chars": 19894,
-   "n_words": 3643
+   "n_chars": 19912,
+   "n_words": 3645,
+   "label_start": "2",
+   "label_end": "9"
   },
   {
    "id": "sec-001-2-toeplitz-meets-ising",
@@ -133,8 +836,10 @@
    "level": 1,
    "page_start": 9,
    "page_end": 23,
-   "n_chars": 35618,
-   "n_words": 6830
+   "n_chars": 35637,
+   "n_words": 6832,
+   "label_start": "9",
+   "label_end": "23"
   },
   {
    "id": "sec-002-4-back-to-ising",
@@ -143,8 +848,10 @@
    "level": 1,
    "page_start": 23,
    "page_end": 27,
-   "n_chars": 9640,
-   "n_words": 1852
+   "n_chars": 9652,
+   "n_words": 1854,
+   "label_start": "23",
+   "label_end": "27"
   },
   {
    "id": "sec-003-5-new-questions-for-sslt",
@@ -153,8 +860,10 @@
    "level": 1,
    "page_start": 27,
    "page_end": 29,
-   "n_chars": 5191,
-   "n_words": 1048
+   "n_chars": 5212,
+   "n_words": 1051,
+   "label_start": "27",
+   "label_end": "29"
   },
   {
    "id": "sec-004-6-fisher-hartwig-singularities-fisher-hartwig-co",
@@ -163,8 +872,10 @@
    "level": 1,
    "page_start": 29,
    "page_end": 36,
-   "n_chars": 19564,
-   "n_words": 3945
+   "n_chars": 19618,
+   "n_words": 3948,
+   "label_start": "29",
+   "label_end": "36"
   },
   {
    "id": "sec-005-7-basor-tracy-conjecture",
@@ -173,8 +884,10 @@
    "level": 1,
    "page_start": 36,
    "page_end": 40,
-   "n_chars": 8256,
-   "n_words": 1785
+   "n_chars": 8277,
+   "n_words": 1786,
+   "label_start": "36",
+   "label_end": "40"
   },
   {
    "id": "sec-006-8-hankel-and-toeplitzhankel-determinants",
@@ -183,8 +896,10 @@
    "level": 1,
    "page_start": 40,
    "page_end": 42,
-   "n_chars": 4611,
-   "n_words": 989
+   "n_chars": 4649,
+   "n_words": 992,
+   "label_start": "40",
+   "label_end": "42"
   },
   {
    "id": "sec-007-9-some-applications",
@@ -193,8 +908,10 @@
    "level": 1,
    "page_start": 42,
    "page_end": 45,
-   "n_chars": 7515,
-   "n_words": 1516
+   "n_chars": 7530,
+   "n_words": 1517,
+   "label_start": "42",
+   "label_end": "45"
   },
   {
    "id": "sec-008-10-block-toeplitz-matrices",
@@ -203,8 +920,10 @@
    "level": 1,
    "page_start": 45,
    "page_end": 49,
-   "n_chars": 13036,
-   "n_words": 2321
+   "n_chars": 13057,
+   "n_words": 2323,
+   "label_start": "45",
+   "label_end": "49"
   },
   {
    "id": "sec-009-11-double-scaling-limits",
@@ -213,16 +932,39 @@
    "level": 1,
    "page_start": 49,
    "page_end": 70,
-   "n_chars": 54148,
-   "n_words": 9069
+   "n_chars": 54170,
+   "n_words": 9071,
+   "label_start": "49",
+   "label_end": "70"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 11,
-  "sections": 10,
-  "chars_total": 177473,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 11,
+  "chars_total": 178037,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -235,10 +977,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-setting-the-problem",
      "title": "Setting the problem",
-     "prose_ratio": 0.999,
-     "coverage_ratio": 0.991,
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -246,15 +993,15 @@
      "id": "sec-001-2-toeplitz-meets-ising",
      "title": "Toeplitz meets Ising",
      "prose_ratio": 0.994,
-     "coverage_ratio": 0.995,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-4-back-to-ising",
      "title": "Back to Ising",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.983,
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -262,55 +1009,55 @@
      "id": "sec-003-5-new-questions-for-sslt",
      "title": "New questions for SSLT",
      "prose_ratio": 0.996,
-     "coverage_ratio": 0.988,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-6-fisher-hartwig-singularities-fisher-hartwig-co",
      "title": "Fisher-Hartwig singularities. Fisher-Hartwig conjecture",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-7-basor-tracy-conjecture",
      "title": "Basor-Tracy conjecture",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.958,
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.924,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-006-8-hankel-and-toeplitzhankel-determinants",
      "title": "Hankel and Toeplitz+Hankel determinants",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.951,
+     "prose_ratio": 0.992,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-007-9-some-applications",
      "title": "Some applications",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.977,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-008-10-block-toeplitz-matrices",
      "title": "Block Toeplitz matrices",
-     "prose_ratio": 0.998,
-     "coverage_ratio": 0.996,
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.998,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-009-11-double-scaling-limits",
      "title": "Double-scaling limits",
-     "prose_ratio": 0.94,
-     "coverage_ratio": 0.997,
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.565,
      "result": "overlaid",
      "converter": "pandoc"
     }

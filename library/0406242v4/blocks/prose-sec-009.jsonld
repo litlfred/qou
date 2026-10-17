@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/0406242v4/blocks/prose-sec-009",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Ruling out some degeneracies",
-  "pageStart": 19,
-  "pageEnd": 20,
-  "text": "../sections/sec-009-7-ruling-out-some-degeneracies.md",
+  "title": "Behavior of the volume functional",
+  "pageStart": 17,
+  "pageEnd": 19,
+  "text": "../sections/sec-009-63-behavior-of-the-volume-functional.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0406242v4/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0406242v4/manifest.jsonld",
   "provenance": "ingested"

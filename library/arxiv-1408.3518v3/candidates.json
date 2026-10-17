@@ -1,0 +1,70 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1408.3518v3",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "cf18585b886587c77a93aad8403fe1724b3092f864ed0b298c87d5e74c34706c",
+  "file": "1408.3518v3.pdf"
+ },
+ "provenance": {
+  "title": "On Augmentation Algorithms for Linear and Integer-Linear Programming: From Edmonds-Karp to Bland and Beyond",
+  "authors": "From Edmonds-Karp to Bland and Beyond",
+  "arxiv": {
+   "id": "1408.3518",
+   "version": "3",
+   "primary_class": "math.OC",
+   "stamp_date": "15 Jan 2015"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 3,
+  "by_kind": {
+   "lemma": 3
+  },
+  "formalization_candidates": 3
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{Lemma: Steepest descent direction is in G(A)} states that among all steepest-descent directions applicable at a feasible solution $\\vex_k$, there is always one in $\\Graver(A)$. Or in other words, the discrete steepest-descent rule is a steepest descent rule as claimed in Theorems \\ref{theorem:main, ILP case} and \\ref{theorem:main, LP case}, parts(c).",
+   "section_file": "sections/sec-002-2-proofs.md",
+   "section_title": "Proofs",
+   "pages": "8-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{Lemma: monotonicity} states that the steepness of steepest-descent augmentations never increases.",
+   "section_file": "sections/sec-002-2-proofs.md",
+   "section_title": "Proofs",
+   "pages": "8-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{Lemma: chance of sign-pattern leads to change in slope} states that once the sign pattern",
+   "section_file": "sections/sec-002-2-proofs.md",
+   "section_title": "Proofs",
+   "pages": "8-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

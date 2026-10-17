@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-math-0508291v1
-doc_title: "Stein’s Method and Random Character Ratios"
+doc_title: "Stein’s Method and Random Character Ratios Running head: Stein’s Method and Random Character Ratios Version of 8/13/05"
 section_id: sec-017-63-example-hamming-scheme
 section_title: "Example: Hamming Scheme"
 section_number: 6.3
 pages: 49-50
 source_pdf: 0508291v1.pdf
 source_sha256: d2d541426aaec742
-doc_brief: "Stein’s Method and Random Character Ratios — Stein’s method is used to prove limit theorems for random character ratios."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.942
-latex_coverage_ratio: 0.977
+latex_prose_ratio: 0.957
+latex_coverage_ratio: 0.985
 ---
 \label{Hamming}
 

@@ -1,0 +1,1 @@
+\ref{Lemma: Steepest descent direction is in G(A)} states that among all steepest-descent directions applicable at a feasible solution $\vex_k$, there is always one in $\Graver(A)$. Or in other words, the discrete steepest-descent rule is a steepest descent rule as claimed in Theorems \ref{theorem:main, ILP case} and \ref{theorem:main, LP case}, parts(c).

@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1205.4617v1
-doc_title: "Quaternion Octonion Reformulation of Grand Unified Theories"
+doc_title: "Quaternion Octonion Reformulation of Grand Uniﬁed Theories"
 section_id: sec-002-4-discussion-and-conclusion
 section_title: "Discussion and Conclusion"
 section_number: 4
 pages: 11-14
 source_pdf: 1205.4617v1.pdf
 source_sha256: dd00cf2cee521bf5
-doc_brief: "Quaternion Octonion Reformulation of Grand Unified Theories — In this paper, Grand Uniﬁed theories are discussed in terms o f quater- nions and octonions by using the relation between quaternio n"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.988
+latex_coverage_ratio: 0.643
 ---
 \begin{spacing}{1.5}
 We have already shown earlier \cite{key-8} that the quaternion and

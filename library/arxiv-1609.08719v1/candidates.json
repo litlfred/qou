@@ -1,0 +1,97 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1609.08719v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "f61ff2111e9a97f9e87191e3936bfc998db9efad44cec9d4fc485f5c65145efa",
+  "file": "1609.08719v1.pdf"
+ },
+ "provenance": {
+  "title": "AN EXPERIMENTAL INVESTIGATION OF NEUMANN\u2019S CONJECTURE",
+  "authors": "STEPHEN GILLES AND PETER HUSTON",
+  "arxiv": {
+   "id": "1609.08719",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "28 Sep 2016"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "conjecture": 3,
+   "theorem": 2
+  },
+  "formalization_candidates": 2
+ },
+ "candidates": [
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "1.1",
+   "name": "Neumann",
+   "statement": "Let F \u2282C be a number \ufb01eld not contained in R,",
+   "section_file": "sections/sec-002-13-a-stronger-false-conjecture.md",
+   "section_title": "A stronger, false conjecture",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "1.2",
+   "name": "[Neu11, Conjecture 1]",
+   "statement": "Every non-real concrete number \ufb01eld k",
+   "section_file": "sections/sec-002-13-a-stronger-false-conjecture.md",
+   "section_title": "A stronger, false conjecture",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "1.3",
+   "name": null,
+   "statement": "Let F \u2282C be a number \ufb01eld not contained in R.",
+   "section_file": "sections/sec-003-22-the-invariant-trace-field.md",
+   "section_title": "The invariant trace field",
+   "pages": "2-3",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.1",
+   "name": "[GMM09, Corollary 1.3]",
+   "statement": "The Weeks manifold is the unique closed",
+   "section_file": "sections/sec-015-4-a-counter-example-to-conjecture-13.md",
+   "section_title": "A counter-example to conjecture 1.3",
+   "pages": "11-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.3",
+   "name": "[Neu11, Theorem 2.7]",
+   "statement": "If M has cusps then [M] is de\ufb01ned in B(F),",
+   "section_file": "sections/sec-015-4-a-counter-example-to-conjecture-13.md",
+   "section_title": "A counter-example to conjecture 1.3",
+   "pages": "11-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

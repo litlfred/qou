@@ -1,0 +1,58 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1808.02836v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "0224a296253122a22771fa08e967a250c611c8171bd89eb7fdf303bf48e35392",
+  "file": "1808.02836v2.pdf"
+ },
+ "provenance": {
+  "title": "On minimal ideal triangulations of cusped hyperbolic 3\u2013manifolds Introduction",
+  "authors": "William Jaco, Hyam Rubinstein, Jonathan Spreer and Stephan Tillmann",
+  "arxiv": {
+   "id": "1808.02836",
+   "version": "2",
+   "primary_class": "math.GT",
+   "stamp_date": "6 Sep 2019"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "proposition": 1,
+   "theorem": 1
+  },
+  "formalization_candidates": 2
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3",
+   "name": "Topologically \ufb01nite manifolds have ideal triangulations",
+   "statement": "If M is the interior of a compact",
+   "section_file": "sections/sec-007-22-edge-paths-and-edge-loops.md",
+   "section_title": "Edge paths and edge loops",
+   "pages": "4-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.1.26",
+   "name": null,
+   "statement": "implies that \u03a3 is dual to an ideal triangulation of M with the property that the ideal vertices",
+   "section_file": "sections/sec-007-22-edge-paths-and-edge-loops.md",
+   "section_title": "Edge paths and edge loops",
+   "pages": "4-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2202.06733v1
-doc_title: "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE"
+doc_title: "Received <day> <Month>, <year>"
 section_id: sec-003-22-the-characteristic-polynomial-and-the-cayley
 section_title: "The characteristic polynomial and the Cayley-Hamilton theorem"
 section_number: 2.2
 pages: 3-5
 source_pdf: 2202.06733v1.pdf
 source_sha256: e670632090447f14
-doc_brief: "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE — Diﬀerent ways of representing the groupSU(3) within a Geometric Algebra approach are"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.983
-latex_coverage_ratio: 0.869
+latex_coverage_ratio: 0.997
 ---
 \label{sect:cay-ham}
 

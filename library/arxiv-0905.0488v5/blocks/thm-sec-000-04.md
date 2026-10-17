@@ -1,1 +1,1 @@
-Let K be a ﬁeld of characteristic0, X a smooth
+\ref{thm:intro.101}; the bijections $\ol{\opn{geo}}$ are from

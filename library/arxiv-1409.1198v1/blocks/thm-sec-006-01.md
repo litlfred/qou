@@ -1,0 +1,1 @@
+\ref{2-reps} provides a context for understanding this surprising action by traces on category $\cal{O}$. Indeed, Brundan's action is part of a broad phenomenon that occurs within the context of higher representation theory: any categorified representation

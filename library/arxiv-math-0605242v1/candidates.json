@@ -1,0 +1,111 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0605242v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "65fac7285e4a77f43ca418f54b2047a5f635b056f595ac7e1a8ca12bc64e7eb6",
+  "file": "0605242v1.pdf"
+ },
+ "provenance": {
+  "title": "N-Fold Integer Programming",
+  "authors": null,
+  "arxiv": {
+   "id": "math/0605242",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "9 May 2006"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "theorem": 2,
+   "corollary": 2,
+   "lemma": 2
+  },
+  "formalization_candidates": 6
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{Main} is deduced in the case $B=I_q$.",
+   "section_file": "sections/sec-000-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "2.2",
+   "name": null,
+   "statement": "which provides a polynomial time solution to 3-way integer transportation problems for",
+   "section_file": "sections/sec-001-applications.md",
+   "section_title": "Applications",
+   "pages": "3-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{Threeway} extends to transportation problems",
+   "section_file": "sections/sec-002-high-dimensional-transportation-problems.md",
+   "section_title": "High dimensional transportation problems",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "5.1",
+   "name": null,
+   "statement": "Fix any pair of integer matrices A \u2208Zr\u00d7q and B \u2208Zs\u00d7q. Then there is a polynomial time",
+   "section_file": "sections/sec-006-the-polynomial-time-algorithm-for-n-fold-integer.md",
+   "section_title": "The polynomial time algorithm for n-fold integer programming",
+   "pages": "13-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "5.2",
+   "name": null,
+   "statement": "Fix any pair of integer matrices A \u2208Zr\u00d7q and B \u2208Zs\u00d7q. Then there is a polynomial",
+   "section_file": "sections/sec-006-the-polynomial-time-algorithm-for-n-fold-integer.md",
+   "section_title": "The polynomial time algorithm for n-fold integer programming",
+   "pages": "13-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.2",
+   "name": null,
+   "statement": "Fix any pair of integer matrices A, B of compatible sizes. Then there is a polynomial",
+   "section_file": "sections/sec-006-the-polynomial-time-algorithm-for-n-fold-integer.md",
+   "section_title": "The polynomial time algorithm for n-fold integer programming",
+   "pages": "13-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/ant-v14-n7-s/blocks/prose-sec-151",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "6B. A Menshov–Rademacher argument with permutations",
-  "pageStart": 269,
-  "pageEnd": 270,
-  "text": "../sections/sec-151-6b-a-menshovrademacher-argument-with-permutation.md",
+  "title": "4D. Proof of Theorem 4.1",
+  "pageStart": 263,
+  "pageEnd": 265,
+  "text": "../sections/sec-151-4d-proof-of-theorem-41.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
   "provenance": "ingested"

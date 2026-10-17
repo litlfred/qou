@@ -10,7 +10,7 @@ source_sha256: c43e413aed71aef1
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.947
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.995
 ---
 \label{tbau0}
 

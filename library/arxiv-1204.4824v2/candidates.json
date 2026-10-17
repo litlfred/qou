@@ -8,8 +8,8 @@
   "file": "1204.4824v2.pdf"
  },
  "provenance": {
-  "title": "Prepared for submission to JHEP Spectral networks",
-  "authors": "Davide Gaiotto, 1 Gregory W. Moore 2 and Andrew Neitzke 3",
+  "title": "Spectral networks",
+  "authors": "Davide Gaiotto,1 Gregory W. Moore2 and Andrew Neitzke3",
   "arxiv": {
    "id": "1204.4824",
    "version": "2",
@@ -20,20 +20,34 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 1,
+  "candidates": 2,
   "by_kind": {
+   "example": 1,
    "theorem": 1
   },
   "formalization_candidates": 1
  },
  "candidates": [
   {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "s with irregular singularities and $K>2$ are discussed in",
+   "section_file": "sections/sec-038-103-the-nonabelianization-map.md",
+   "section_title": "The nonabelianization map",
+   "pages": "65-66",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
    "kind": "theorem",
    "source_kind": "theorem",
    "number": null,
    "name": null,
-   "statement": "F(\u00b7,W) descends to a homomorphism",
-   "section_file": "sections/sec-048-b4-formal-parallel-transport-for-the-path-groupo.md",
+   "statement": "F(\u00b7, W) descends to a homomorphism",
+   "section_file": "sections/sec-052-b4-formal-parallel-transport-for-the-path-groupo.md",
    "section_title": "B.4 Formal parallel transport for the path groupoid",
    "pages": "80-80",
    "formalization_candidate": true,

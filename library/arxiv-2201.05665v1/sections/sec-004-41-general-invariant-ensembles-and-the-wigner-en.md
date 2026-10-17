@@ -7,7 +7,7 @@ section_number: 4.1
 pages: 7-9
 source_pdf: 2201.05665v1.pdf
 source_sha256: bad7bde03d199a73
-doc_brief: "HAROLD WIDOM’S WORK IN RANDOM MATRIX THEORY — This is a survey of Harold Widom’s work in random matrices."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.971
 latex_coverage_ratio: 0.964

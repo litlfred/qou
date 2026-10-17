@@ -7,10 +7,10 @@ section_number: null
 pages: 1-3
 source_pdf: 2211.13362v2.pdf
 source_sha256: 3becbeaa1135d2e1
-doc_brief: "Double-slit experiment revisited — The double-slit experiment is one of the quintessential quantum experiments."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.965
+latex_prose_ratio: 0.803
+latex_coverage_ratio: 0.99
 ---
 Diffraction and interference phenomena occupy a prominent place in the phenomenology of quantum physics, Young's double-slit experiment (DSE) being an archetypal example which, according to Feynman "has in it the heart of quantum mechanics" [@Feynman]. Quantum physicists have discussed the DSE and augments thereof, e.g., the which-way [@Zurek; @WWM], or the delayed-choice DSE [@Wheeler], with varying degrees of rigour. Several notable realizations employing *single* electrons [@Batelaan; @tonomura], neutrons [@neutronsA; @neutronsB], atoms [@atomDS; @Pfau], and even macro-molecules [@molecules] have been performed.
 

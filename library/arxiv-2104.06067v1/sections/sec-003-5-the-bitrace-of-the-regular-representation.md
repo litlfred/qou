@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2104.06067v1
-doc_title: "ON IRREDUCIBLE CHARACTERS OF THE IW AHORI-HECKE ALGEBRA IN TYPE A"
+doc_title: "ON IRREDUCIBLE CHARACTERS OF THE IWAHORI-HECKE ALGEBRA IN"
 section_id: sec-003-5-the-bitrace-of-the-regular-representation
 section_title: "The bitrace of the regular representation"
 section_number: 5
 pages: 17-20
 source_pdf: 2104.06067v1.pdf
 source_sha256: 750303181ca019ba
-doc_brief: "ON IRREDUCIBLE CHARACTERS OF THE IWAHORI-HECKE ALGEBRA IN TYPE A — We use vertex operators to compute irreducible characters o f the Iwahori-Hecke algebra of type A."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.992
-latex_coverage_ratio: 0.986
+latex_prose_ratio: 0.984
+latex_coverage_ratio: 0.984
 ---
 The Hecke algebra $H_n(q)$ is a $(H_n(q), H_n(q))$-bimodule under the left and right regular actions, and the two actions mutually commute with each other. As a result $$H_n(q)=\bigoplus_{\lambda\vdash n} V_{\lambda}\otimes V^{\lambda}$$ where $V_{\lambda}$ (resp. $V^{\lambda}$) is the irreducible left (resp. right) $H_n(q)$-module labeled by $\lambda$.
 

@@ -1,1 +1,1 @@
-LetK = ˆw be the closure of a generic 3–braid
+s [\[lemma:cusp-area-mu\]](#lemma:cusp-area-mu){reference-type="ref" reference="lemma:cusp-area-mu"} and [\[lemma:ptorus-slope-length\]](#lemma:ptorus-slope-length){reference-type="ref" reference="lemma:ptorus-slope-length"} complete the proof of Theorem [\[thm:ptorus-area\]](#thm:ptorus-area){reference-type="ref" reference="thm:ptorus-area"}.

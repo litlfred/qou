@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "13116841v1",
+  "title": "Observables in Loop Quantum Gravity with a cosmological constant",
   "contains": [
+    "library/13116841v1/sections/sec-front-matter",
     "library/13116841v1/sections/sec-000",
     "library/13116841v1/sections/sec-001",
     "library/13116841v1/sections/sec-002",
@@ -21,7 +22,9 @@
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "13116841v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1311.6841v1.pdf",
     "source_sha256": "ca65879d80b1e1c3f89fa6f19c62cc925fce5c8d24692c7e311726c817617977",
     "pages": 29,

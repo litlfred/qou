@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1101.3374v1
-doc_title: "PONTRYAGIN INVARIANTS AND INTEGRAL FORMULAS FOR MILNOR’S TRIPLE LINKING NUMBER"
+doc_title: "Pontryagin invariants and integral formulas for Milnor's triple linking number"
 section_id: sec-001-4-explicit-formulas-for-the-characteristic-map
 section_title: "Explicit formulas for the characteristic map"
 section_number: 4
 pages: 20-57
 source_pdf: 1101.3374v1.pdf
 source_sha256: 01d76c1d259c1d51
-doc_brief: "PONTRYAGIN INVARIANTS AND INTEGRAL FORMULAS FOR MILNOR’S TRIPLE LINKING NUMBER — To each three-component link in the 3-sphere, we associate a geometrically natural characteristic map from the 3-torus"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.945
-latex_coverage_ratio: 0.907
+latex_coverage_ratio: 0.965
 ---
 []{#sec:characteristic label="sec:characteristic"}
 

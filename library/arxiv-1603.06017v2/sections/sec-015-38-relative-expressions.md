@@ -1,14 +1,15 @@
 ---
 doc_id: arxiv-1603.06017v2
-doc_title: "Automatic Theorem Proving in Walnut Hamoon Mousavi"
+doc_title: "Automatic Theorem Proving in Walnut"
 section_id: sec-015-38-relative-expressions
 section_title: "Relative Expressions"
 section_number: 3.8
 pages: 11-12
 source_pdf: 1603.06017v2.pdf
 source_sha256: 3ff091e40573a5dd
-doc_brief: "Automatic Theorem Proving in Walnut Hamoon Mousavi — 34 sections: Introduction; Basics; Words and Automata"
+toc_source: outline
 ---
+Relative Expressions
 Comparison operators are =,!=,<,>,<=, and >=. A relative expression is any of the following:
 • An expression e1 <e2 where e1 and e2 are arithmetic expressions and < is any comparison operator.
 • An expression e1 <e2 where e1 and e2 are indexing expressions and/or alphabetic constants and < is any comparison

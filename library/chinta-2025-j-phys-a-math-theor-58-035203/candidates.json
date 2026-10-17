@@ -1,0 +1,145 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "chinta-2025-j-phys-a-math-theor-58-035203",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "baba83ca76c773d4d3734983720d36dbcb6610d9019256b0d218b6f10da2a492",
+  "file": "Chinta_2025_J._Phys._A__Math._Theor._58_035203.pdf"
+ },
+ "provenance": {
+  "title": "The discrete analogue of the Gaussian",
+  "authors": "View the article online for updates and enhancements",
+  "arxiv": null,
+  "doi": "10.1088/1751-8121/ada64b"
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 9,
+  "by_kind": {
+   "proposition": 2,
+   "theorem": 6,
+   "corollary": 1
+  },
+  "formalization_candidates": 9
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "1",
+   "name": null,
+   "statement": "Let {\u03b1n} be any sequence of integers indexed by n \u2208Z+ such that",
+   "section_file": "sections/sec-001-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "3-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "1",
+   "name": null,
+   "statement": "was proved by Athreya in [At87]; we provide a different proof in section 3.",
+   "section_file": "sections/sec-001-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "3-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3",
+   "name": null,
+   "statement": "For any q \u2a7e1, let \u03b6Tq+1(s) be the spectral zeta function associated to Tq+1. Then",
+   "section_file": "sections/sec-001-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "3-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4",
+   "name": null,
+   "statement": "[CJK15]. The heat kernel on any (q + 1)-regular graph X is",
+   "section_file": "sections/sec-002-2-the-building-block-of-heat-kernels-of-graphs.md",
+   "section_title": "The building block of heat kernels of graphs",
+   "pages": "7-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "1",
+   "name": null,
+   "statement": "In addition to the assumptions as stated in theorem 5, assume that \u00b5 = 0. Then",
+   "section_file": "sections/sec-003-3-discrete-local-limit-theorem.md",
+   "section_title": "Discrete local limit theorem",
+   "pages": "8-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "6",
+   "name": null,
+   "statement": "([JKS23]) For sufficiently small complex s,",
+   "section_file": "sections/sec-005-5-application-2-finite-trigonometric-sums.md",
+   "section_title": "Application 2: finite trigonometric sums",
+   "pages": "14-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "7",
+   "name": null,
+   "statement": "([CJK10, CJK12]) Let An be a sequence of integral d \u00d7 d matrices with detAn \u2192",
+   "section_file": "sections/sec-006-6-application-3-asymptotics-by-passing-from-the.md",
+   "section_title": "Application 3: asymptotics by passing from the discrete to the continuous",
+   "pages": "15-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "7",
+   "name": null,
+   "statement": "is of interest in combinatorics, statistical physics and quantum field theory",
+   "section_file": "sections/sec-006-6-application-3-asymptotics-by-passing-from-the.md",
+   "section_title": "Application 3: asymptotics by passing from the discrete to the continuous",
+   "pages": "15-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "8",
+   "name": null,
+   "statement": "For any q \u2a7e1, we have that",
+   "section_file": "sections/sec-009-72-application-4-spectral-zeta-function-of-regul.md",
+   "section_title": "Application 4: spectral zeta function of regular trees and hypergeometric identities",
+   "pages": "17-20",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

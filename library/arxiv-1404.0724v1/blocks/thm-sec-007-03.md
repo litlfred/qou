@@ -1,1 +1,1 @@
-The following statements hold for all n ≥2:
+The sequence of functions fn deﬁned above is a Markov function with values

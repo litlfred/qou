@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/ant-v14-n7-s/blocks/prose-sec-156",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "7A. Proof of Corollaries 1.3 and 1.4",
-  "pageStart": 276,
-  "pageEnd": 278,
-  "text": "../sections/sec-156-7a-proof-of-corollaries-13-and-14.md",
+  "title": "6C. A dyadic decomposition",
+  "pageStart": 270,
+  "pageEnd": 271,
+  "text": "../sections/sec-156-6c-a-dyadic-decomposition.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
   "provenance": "ingested"

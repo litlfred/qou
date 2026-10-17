@@ -37,4 +37,3 @@ Work supported by CNRS.
 ‡e-mail:roche@math.mit.edu
 §Laboratoire Propre du CNRS UPR 14
 1
-1

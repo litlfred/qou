@@ -1,25 +1,25 @@
 ---
 doc_id: arxiv-1905.02045v3
-doc_title: "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM"
+doc_title: "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM INVARIANTS OF HYPERBOLIC KNOTS"
 section_id: sec-008-references
 section_title: "References"
 section_number: null
 pages: 38-39
 source_pdf: 1905.02045v3.pdf
 source_sha256: 8e7eb17c7d1f4f4e
-doc_brief: "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM — We obtain an exact modularity relation for the q-Pochhammer symbol."
+toc_source: outline
 ---
-[1] N. H. Abel. Œuvres compl` etes.Tome I. ´Editions Jacques Gabay, Sceaux, 1992. Edited and with a preface
+[1] N. H. Abel. Œuvres compl`etes. Tome I. ´Editions Jacques Gabay, Sceaux, 1992. Edited and with a preface
 by L. Sylow and S. Lie, Reprint of the second (1881) edition.
 [2] J. E. Andersen and S. K. Hansen. Asymptotics of the quantum invariants for surgeries on the ﬁgure 8
 knot. J. Knot Theory Ramiﬁcations, 15(4):479–548, 2006.
-[3] L. B´ aez-Duarte. A strengthening of the Nyman-Beurling criterion for the Riemann hypothesis.Atti Accad.
+[3] L. B´aez-Duarte. A strengthening of the Nyman-Beurling criterion for the Riemann hypothesis. Atti Accad.
 Naz. Lincei Rend. Lincei Mat. Appl., 14(1):5–11, 2003.
-[4] L. B´ aez-Duarte, M. Balazard, B. Landreau, and ´E. Saias. ´Etude de l’autocorr´ elation multiplicative de la
+[4] L. B´aez-Duarte, M. Balazard, B. Landreau, and ´E. Saias. ´Etude de l’autocorr´elation multiplicative de la
 fonction ‘partie fractionnaire’. Ramanujan J., 9(1-2):215–240, 2005.
 [5] B. Bagchi. On Nyman, Beurling and Baez-Duarte’s Hilbert space reformulation of the Riemann hypothesis.
 Proc. Indian Acad. Sci. Math. Sci., 116(2):137–146, 2006.
-[6] V. Baladi and B. Vall´ ee. Euclidean algorithms are Gaussian.J. Number Theory, 110(2):331–386, February
+[6] V. Baladi and B. Vall´ee. Euclidean algorithms are Gaussian. J. Number Theory, 110(2):331–386, February
 2005.
 [7] B. C. Berndt. What is a q-series? In Ramanujan rediscovered, volume 14 of Ramanujan Math. Soc. Lect.
 Notes Ser., pages 31–51. Ramanujan Math. Soc., Mysore, 2010.
@@ -63,11 +63,12 @@ Providence, RI, 2011.
 Math., 186(1):85–104, 2001.
 [29] H. Murakami, J. Murakami, M. Okamoto, T. Takata, and Y. Yokota. Kashaev’s conjecture and the Chern-
 Simons invariants of knots and links. Experiment. Math., 11(3):427–435, 2002.
-MODULARITY AND DISTRIBUTION OF QUANTUM KNOTS INV ARIANTS 39
+MODULARITY AND DISTRIBUTION OF QUANTUM KNOTS INVARIANTS
+39
 [30] H. Murakami and Y. Yokota. Volume Conjecture for Knots. Springer Singapore, 2018.
 [31] J. Murakami. Generalized Kashaev invariants for knots in three manifolds. Quantum Topology, 8(1):35–73,
 2017.
-[32] T. Ohtsuki. On the asymptotic expansion of the Kashaev invariant of the 5 2 knot. Quantum Topology,
+[32] T. Ohtsuki. On the asymptotic expansion of the Kashaev invariant of the 52 knot. Quantum Topology,
 7(4):669–735, 2016.
 [33] T. Ohtsuki. On the asymptotic expansions of the Kashaev invariant of hyperbolic knots with seven cross-
 ings. Internat. J. Math., 28(13):1750096, 143, 2017.

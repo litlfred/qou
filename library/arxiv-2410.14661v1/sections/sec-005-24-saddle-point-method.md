@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2410.14661v1
-doc_title: "On the asymptotic expansion of various quantum invariants III: the Reshetikhin-Turaev invariants of closed hyperbolic 3-manifolds obtained by integral surgery along the figure-eigh"
+doc_title: "ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM INVARIANTS III: THE RESHETIKHIN-TURAEV INVARIANTS OF CLOSED HYPERBOLIC 3-MANIFOLDS OBTAINED BY DOING INTEGRAL SURGERY ALONG THE TWIST"
 section_id: sec-005-24-saddle-point-method
 section_title: "Saddle point method"
 section_number: 2.4
 pages: 7-8
 source_pdf: 2410.14661v1.pdf
 source_sha256: 3362fcd5e28eb1f0
-doc_brief: "On the asymptotic expansion of various quantum invariants III: the Reshetikhin-Turaev invariants of closed hyperbolic 3-manifolds obtained by integral surgery along the figure-eight knot — This is"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.906
-latex_coverage_ratio: 0.892
+latex_coverage_ratio: 0.906
 ---
 We need to use the following version of saddle point method as illustrated in [@Oht18].
 

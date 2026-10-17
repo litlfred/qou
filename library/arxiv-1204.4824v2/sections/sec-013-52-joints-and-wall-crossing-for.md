@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1204.4824v2
-doc_title: "Prepared for submission to JHEP Spectral networks"
+doc_title: "Spectral networks"
 section_id: sec-013-52-joints-and-wall-crossing-for
 section_title: "Joints and wall-crossing for"
 section_number: 5.2
 pages: 23-30
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
-doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.97
-latex_coverage_ratio: 0.98
+latex_coverage_ratio: 1.0
 ---
 \label{sec:wnet-basics}
 

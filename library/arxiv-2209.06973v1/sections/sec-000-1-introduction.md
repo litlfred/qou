@@ -7,8 +7,9 @@ section_number: 1
 pages: 1-2
 source_pdf: 2209.06973v1.pdf
 source_sha256: cc3393a17c48b9df
-doc_brief: "On the geometry of two state models for the colored Jones polynomial — Using the ﬂow property of the R-matrix deﬁning the colored Jones polynomial, we establish a natural bijection between the set of"
+toc_source: outline
 ---
+Introduction
 This article is the result of a long-going eﬀort to understand a state-sum
 formula of Garoufalidis and Loebl for the colored Jones polynomial of a
 knot. This formula was proven in [7] from the state-sum formula for the
@@ -27,7 +28,7 @@ Quantum link invariants, deﬁned for a quantum group of a simple Lie-
 algebra and a ﬁnite dimensional representation, can be calculated as state-
 sums over PK, [12], [22] and [16]. In the case of the quantum group corre-
 sponding to sl(2, C) and the irreducible (n + 1)-dimensional representation,
-n≥ 1, Garoufalidis and Loebl [7] deﬁne a bichromatic digraph GK and
+n ≥1, Garoufalidis and Loebl [7] deﬁne a bichromatic digraph GK and
 calculate a state-sum for the colored Jones polynomial as a state-sum on
 this graph. In [7] the state-sum formula is derived from the formula for
-the classical Jones-polynomial ( n = 1) and cabling. This is based on the
+the classical Jones-polynomial (n = 1) and cabling. This is based on the

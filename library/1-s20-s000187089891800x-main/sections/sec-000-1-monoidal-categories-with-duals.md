@@ -1,13 +1,13 @@
 ---
 doc_id: 1-s20-s000187089891800x-main
-doc_title: "Advances in Mathematics 143, 357375 (1999) Spherical Categories John W. Barrett"
+doc_title: "Spherical Categories"
 section_id: sec-000-1-monoidal-categories-with-duals
 section_title: "MONOIDAL CATEGORIES WITH DUALS"
 section_number: 1
 pages: 1-1
 source_pdf: 1-s2.0-S000187089891800X-main.pdf
 source_sha256: 9844f124dcbc7f36
-doc_brief: "Advances in Mathematics 143, 357375 (1999) Spherical Categories John W. Barrett — 6 sections: MONOIDAL CATEGORIES WITH DUALS; INTRODUCTION; SPHERICAL CATEGORIES"
+toc_source: outline
 ---
 need not be commutative. The motivating examples are categories of representa-
 tions of Hopf algebras. We introduce the new notion of a spherical category. In the
@@ -17,4 +17,5 @@ give the definition of a spherical category, and construct a natural quotient wh
 is also spherical. In the third section we define spherical Hopf algebras so that the
 category of representations is spherical. Examples of spherical Hopf algebras are
 involutory Hopf algebras and ribbon Hopf algebras. Finally we study the natural
-quotient in these cases and show it is semisimple.  1999 Academic Press
+quotient in these cases and show it is semisimple.
+ 1999 Academic Press

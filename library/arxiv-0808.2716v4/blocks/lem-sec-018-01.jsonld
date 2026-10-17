@@ -3,7 +3,7 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-0808.2716v4/blocks/lem-sec-018-01",
@@ -12,8 +12,8 @@
     "doco:Section"
   ],
   "kind": "lemma",
-  "pageStart": 28,
-  "pageEnd": 34,
+  "pageStart": 21,
+  "pageEnd": 25,
   "text": "lem-sec-018-01.md",
   "derivedFrom": "library/arxiv-0808.2716v4/sections/sec-018",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0808.2716v4/manifest.jsonld",

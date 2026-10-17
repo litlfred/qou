@@ -1,0 +1,1 @@
+[\[thm:relations\]](#thm:relations){reference-type="ref" reference="thm:relations"} Let $K$ be a hyperbolic closed $3$--braid. From the Jones polynomial $J_K(t)$, we define ${\zeta_K}, {\zeta'_K}$ as follows. Let $$\zeta_K = \left\{ \begin{array}{r l}

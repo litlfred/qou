@@ -4,13 +4,13 @@ doc_title: "MODIFIED TRACES ON DELIGNE’S CATEGORY Rep(St)"
 section_id: sec-007-2-ribbon-categories-and-traces
 section_title: "Ribbon Categories and Traces"
 section_number: 2
-pages: 3-5
+pages: 3-4
 source_pdf: 1103.2082v1.pdf
 source_sha256: 0ac5371486b38eac
-doc_brief: "MODIFIED TRACES ON DELIGNE’S CATEGORY Rep(St) — Deligne has deﬁned a category which interpolates among the representations of the various symmetric groups."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.691
+latex_prose_ratio: 0.961
+latex_coverage_ratio: 0.984
 ---
 \label{S:ribboncategories}   The authors of \cite{GKP} define modified trace functions for ideals in ribbon categories.  In this section we give a brief overview of this theory but refer the reader to the above paper for further details and proofs. 
 
@@ -60,13 +60,3 @@ Finally, the \emph{ground ring} of a ribbon category $\cat$ is
 K=\End_{\cat}(\unit ).
 \]  We assume $K$ is a field, that the category is $K$-linear, and that the tensor product is bilinear. Later references to linearity will always be with respect to $K$.
 Ultimately the ground ring will be a fixed field $F$ of characteristic zero and the categories in question will be $F$-linear.
-
-
-\subsection{Ideals in $\cat$}\label{SS:ideals} There are two closely related notions of an ideal within a ribbon category.  The first we discuss is used in \cite{GKP} and defined via objects.  We discuss the second notion in Section~\ref{SS:homideals}.   Note that here and elsewhere if $f$ and $g$ are morphisms, then we write $fg$ for the composition $f \circ g$.
-
-\begin{definition}\label{D:ideal} We say a full subcategory $\ideal$ of a ribbon category $\cat$ is an \emph{ideal} if the following two conditions are met:
-\begin{enumerate}
-\item  If $V$ is an object of $\ideal$ and $W$ is any object of $\cat$, then $V\otimes W$ is an object of $\ideal$.
-\item  $\ideal$ is closed under retracts; that is, if $V$ is an object of $\ideal$, $W$ an object of $\cat$, and if there exists morphisms $f:W \rightarrow V$, $g:V\rightarrow W$ such that $gf=\Id_W$, then $W$ is an object of $\ideal$.
-\end{enumerate}
-\end{definition} Trivially, if $\ideal$ consists of just the zero object or $\ideal = \cat$, then $\ideal$ is an ideal of the category.  We say an ideal $\ideal$ is a \emph{proper} ideal if it contains a nonzero object and is not all of $\cat$.

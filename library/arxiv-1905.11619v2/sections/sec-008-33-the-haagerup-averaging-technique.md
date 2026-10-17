@@ -4,13 +4,13 @@ doc_title: "L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q-GAUSS
 section_id: sec-008-33-the-haagerup-averaging-technique
 section_title: "The Haagerup averaging technique"
 section_number: 3.3
-pages: 9-11
+pages: 9-10
 source_pdf: 1905.11619v2.pdf
 source_sha256: f634f9ec4357d5f3
-doc_brief: "L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS — We study (quasi-)cohomological properties through an anal ysis of quantum Markov semi-groups."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.971
-latex_coverage_ratio: 0.574
+latex_prose_ratio: 0.984
+latex_coverage_ratio: 0.948
 ---
 We will show that under algebraic conditions gradient-$\mathcal{S}_p$ properties behave well under Haagerup averaging techniques. We believe this result is of independent interest, though we will not use it in the subsequent sections.
 
@@ -42,7 +42,3 @@ Let $(\Phi_t)_{t \geq 0}$ be a quantum Markov semi-group on $\mathcal{L}(\Gamma)
 ::: proof
 *Proof.* Take $\mu_1, \mu_2 \in \Gamma$ fixed. Since $(\Phi_t)_{t \geq 0}$ is gradient-$\mathcal{S}_p$ we have that the assignment $$\Psi^{\mu_1, \mu_2}: \gamma \mapsto \Delta(\mu_1 \gamma \mu_2) +  \mu_1 \Delta( \gamma ) \mu_2 - \mu_1 \Delta(\gamma \mu_2) -  \Delta(\mu_1 \gamma  ) \mu_2$$ is in $\mathcal{S}_p$ as an operator on $\ell_2(\Gamma)$. Therefore, also $$\mu_1^{-1} \Psi^{\mu_1, \mu_2}(\:\cdot \:) \mu_2^{-1}:  \gamma \mapsto \mu_1^{-1} \Delta(\mu_1 \gamma \mu_2) \mu_2^{-1} +   \Delta( \gamma )   -   \Delta(\gamma \mu_2) \mu_2^{-1} -  \mu_1^{-1} \Delta(\mu_1 \gamma  )$$ is in $\mathcal{S}_p$. Let $\mathbb{D}$ be the conditional expectation of $B(\ell_2(\Gamma))$ onto the diagonal operators in $B(\ell_2(\Gamma))$. Certainly $\mathbb{D}(\mu_1^{-1} \Psi^{\mu_1, \mu_2}(\: \cdot \:) \mu_2^{-1})$ is in $\mathcal{S}_p$ and, further, $$\mathbb{D}(\mu_1^{-1} \Psi^{\mu_1, \mu_2}(\:\cdot \:) \mu_2^{-1})(    \gamma) = \mu_1^{-1} \Delta^{\Psi}(\mu_1 \gamma \mu_2) \mu_2^{-1} +   \Delta^{\Psi}( \gamma )   -   \Delta^{\Psi}(\gamma \mu_2) \mu_2^{-1} -  \mu_1^{-1} \Delta^{\Psi}(\mu_1 \gamma  ).$$ Multiplying again with $\mu_1$ and $\mu_2$ shows that the assignment $$\gamma \mapsto \Delta^\Psi(\mu_1 \gamma \mu_2) +  \mu_1 \Delta^\Psi( \gamma ) \mu_2 - \mu_1 \Delta^\Psi(\gamma \mu_2) -  \Delta^\Psi(\mu_1 \gamma  ) \mu_2$$ is in $\mathcal{S}_p$. ◻
 :::
-
-# Schatten $\mathcal{S}_p$-estimates for the Ornstein-Uhlenbeck semi-group on $q$-Gaussians {#Sect=Orhnstein-Uhlenbeck}
-
-We show that $q$-Gaussians $\Gamma_q(H_{\mathbb{R}})$ with the Ornstein-Uhlenbeck semi-group are gradient-$\mathcal{S}_p$ for a range of $q$ depending on $p$ and the dimension of the Hilbert space $H_{\mathbb{R}}$.

@@ -1,0 +1,70 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1401.5542v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "f7cd278a274f37c545e9dda9a4b2553f1b718e65b9ad96edbc0d61e09a5a9d82",
+  "file": "1401.5542v1.pdf"
+ },
+ "provenance": {
+  "title": "THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS",
+  "authors": "STAVROS GAROUFALIDIS, MATTHIAS GOERNER, AND CHRISTIAN K. ZICKERT",
+  "arxiv": {
+   "id": "1401.5542",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "22 Jan 2014"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 3,
+  "by_kind": {
+   "remark": 3
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "3.2",
+   "name": null,
+   "statement": "One can concretely obtain P2(T ) from A by adding a dummy variable x and",
+   "section_file": "sections/sec-009-31-the-sl2c-ptolemy-variety.md",
+   "section_title": "The SL(2,C)-Ptolemy variety",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "3.3",
+   "name": null,
+   "statement": "We can eliminate the identi\ufb01cation relations (3.2) by selecting a representative",
+   "section_file": "sections/sec-009-31-the-sl2c-ptolemy-variety.md",
+   "section_title": "The SL(2,C)-Ptolemy variety",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "6.1",
+   "name": null,
+   "statement": "The signs in 6.3 depend in a non-trivial way on the face pairings (see [5]).",
+   "section_file": "sections/sec-022-61-definition-of-the-ptolemy-variety.md",
+   "section_title": "Definition of the Ptolemy variety",
+   "pages": "16-16",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

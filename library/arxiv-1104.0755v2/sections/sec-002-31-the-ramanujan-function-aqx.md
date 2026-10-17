@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1104.0755v2
-doc_title: "A connection formula between the Ramanujan function and the q-Airy function"
+doc_title: "A connection formula between the Ramanujan function and the q -Airy function"
 section_id: sec-002-31-the-ramanujan-function-aqx
 section_title: "The Ramanujan function Aq(x)"
 section_number: 3.1
 pages: 6-7
 source_pdf: 1104.0755v2.pdf
 source_sha256: d2fbbea44598e8f4
-doc_brief: "A connection formula between the Ramanujan function and the q-Airy function — We show a connection formula between two diﬀerent q-Airy func- tions."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.658
-latex_coverage_ratio: 0.981
+latex_coverage_ratio: 1.0
 ---
 The Ramanujan function appears in Ramanujan's \"Lost notebook\"  [@Ramanujan]. Ismail has pointed out that the Ramanujan function can be considered as a $q$-analogue of the Airy function. The Ramanujan function is defined by following convergent series; $$\operatorname{A}_q(x):=\sum_{n\ge 0}\frac{q^{n^2}}{(q;q)_n}(-x)^n
 ={_0\varphi_1}(-;0;q,-qx).$$

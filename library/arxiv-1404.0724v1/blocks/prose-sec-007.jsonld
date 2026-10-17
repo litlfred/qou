@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1404.0724v1/blocks/prose-sec-007",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "The Lawrence-Krammer-Bigelow representation",
-  "pageStart": 13,
-  "pageEnd": 15,
-  "text": "../sections/sec-007-34-the-lawrence-krammer-bigelow-representation.md",
+  "title": "Braids, knots and the Alexander Conway polynomial",
+  "pageStart": 10,
+  "pageEnd": 13,
+  "text": "../sections/sec-007-33-braids-knots-and-the-alexander-conway-polynom.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1404.0724v1/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1404.0724v1/manifest.jsonld",
   "provenance": "ingested"

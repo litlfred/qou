@@ -1,1 +1,1 @@
-Let R be a parameter algebra over K, and let φ : g→ h be a DG Lie
+\ref{thm:107} plays a crucial role in our new proof of {\em twisted

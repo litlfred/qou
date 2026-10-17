@@ -1,114 +1,118 @@
 ---
 doc_id: arxiv-2605.20846v1
-doc_title: "Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li"
+doc_title: "Topological Field Theories and the Algebraic Structures of the Two-Sphere"
 section_id: sec-015-presentations-of-a-category
 section_title: "Presentations of a Category"
 section_number: null
 pages: 90-92
 source_pdf: 2605.20846v1.pdf
 source_sha256: db27cb6d01c4f2fb
-doc_brief: "Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li — We give two presentations for bordisms ofS 2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the"
+toc_source: outline
 ---
-Definition A.1.1.(Free Category) LetGbe a directed graph. Thefree category
-F(G) has objects the vertices ofGand morphisms all composable arrows. The empty
+Presentations of a Category
+Definition A.1.1. (Free Category) Let G be a directed graph. The free category
+F(G) has objects the vertices of G and morphisms all composable arrows. The empty
 path is the identity of a vertex.
-Definition A.1.2.(Binary Relation) LetCbe a category anda,b∈obj(C). Abi-
-nary relationR a,b on HomC(a,b) is a subsetR a,b⊂Hom C(a,b)×Hom C(a,b). We
-writefR a,bgif (f,g)∈R a,b. We sayRis abinary relation on homsofCif
-R={R a,b|a,b∈obj(C)}is a collection of binary relations on all pairs of objects ofC.
-If a pair of morphisms (f,f ′) is inR a,b, we writefR a,bf′, orf=f ′ if the context is
+Definition A.1.2. (Binary Relation) Let C be a category and a, b ∈obj(C). A bi-
+nary relation Ra,b on HomC(a, b) is a subset Ra,b ⊂HomC(a, b) × HomC(a, b). We
+write fRa,bg if (f, g) ∈Ra,b.
+We say R is a binary relation on homs of C if
+R = {Ra,b | a, b ∈obj(C)} is a collection of binary relations on all pairs of objects of C.
+If a pair of morphisms (f, f′) is in Ra,b, we write fRa,bf′, or f = f′ if the context is
 clear.
-Definition A.1.3.(Congruence) AcongruenceRon a categoryCis an assignment
-to each pair of objectsa,b∈obj(C) an equivalence relationR a,b on HomC(a,b) that is
-compatible with compositions: iffR a,bf′, meaning if (f,f ′) are equivalent, then for all
-g:a ′→aand allh:b→b ′ one has (hfg)R a′,b′(hf′g); ifeR b,ce′, then (ef)R a,c(e′f′).
-We sometimes writef∼ R f′ instead to denote the fact thatRis a congruence rather
+Definition A.1.3. (Congruence) A congruence R on a category C is an assignment
+to each pair of objects a, b ∈obj(C) an equivalence relation Ra,b on HomC(a, b) that is
+compatible with compositions: if fRa,bf′, meaning if (f, f′) are equivalent, then for all
+g : a′ →a and all h : b →b′ one has (hfg)Ra′,b′(hf′g); if eRb,ce′, then (ef)Ra,c(e′f′).
+We sometimes write f ∼R f′ instead to denote the fact that R is a congruence rather
 than a binary relation.
-Theorem A.1.4.(First isomorphism theorem of category theory) LetH:C → D
-be a functor. ThenHdefines a congruence≡ H onCbyf≡ H f′ if and only if
-H(f) =H(f ′). Moreover,Hfactors uniquely through the quotient:H= H◦Qwhere
-Q:C→C/≡ H and H:C/≡ H→Dwhere H(a) =H(a)and H([f]) =H(f).
-Proof.≡ H is obviously symmetric, reflexive, and transitive. Functoriality ofHguar-
-antees that≡ H is compatible with compositions. The functor His well defined by
-definition, and His unique since any functorH ′ withH=H ′◦Qmust satisfy
-H′([f]) =H ′(Q(f)) =H(f) for any morphism inC/≡ H. SinceQis identity on
-objects,H ′ must coincide withH(and hence H) on objects also. This completely
-determinesH ′ as the same as H.
-Lemma A.1.5.(Least Congruence) Given any binary relationsRon homs ofC, there
-is a least congruenceR ′ onCwithR⊂R ′.
+Theorem A.1.4. (First isomorphism theorem of category theory) Let H : C →D
+be a functor.
+Then H defines a congruence ≡H on C by f ≡H f′ if and only if
+H(f) = H(f′). Moreover, H factors uniquely through the quotient: H = H ◦Q where
+Q : C →C/ ≡H and H : C/ ≡H→D where H(a) = H(a) and H([f]) = H(f).
+Proof. ≡H is obviously symmetric, reflexive, and transitive. Functoriality of H guar-
+antees that ≡H is compatible with compositions. The functor H is well defined by
+definition, and H is unique since any functor H′ with H = H′ ◦Q must satisfy
+H′([f]) = H′(Q(f)) = H(f) for any morphism in C/ ≡H.
+Since Q is identity on
+objects, H′ must coincide with H (and hence H) on objects also. This completely
+determines H′ as the same as H.
+Lemma A.1.5. (Least Congruence) Given any binary relations R on homs of C, there
+is a least congruence R′ on C with R ⊂R′.
 90
-Definition A.1.6.(Quotient Category) LetCbe a category andRa congruence on
-C. Then thequotient categoryC/Rhas the same objects asCand the morphisms
-HomC/R(a,b) = HomC(a,b)/Ra,b are those ofCmodulo the equivalence relationR a,b.
-IfRis a binary relation, the quotient categoryC/Ris defined asC/R ′ whereR′ is
-the least congruence containingR.
-Proposition A.1.7.(Universal Property of Quotient Category) [Mac94] LetCbe a
-category withRa binary relation on the homs. LetC/Rbe the quotient category.
-Then the quotient functorQ=Q R :C → C/R, which is identity on objects and
-sends a morphism to its equivalence class, 1 satisfy the following universal property: If
-H:C→Dis any functor such thatfR a,bf′ impliesHf=Hf ′ for allfandf ′, then
-there exists a unique functorH ′ :C/R→DwithH ′◦QR =H.
-Definition A.1.8.(Generators and Relations) LetGbe a directed graph andRa
-binary relation onF(G), the free category ofG. Then we sayF(G)/Rhasgenerators
-GandrelationsR. An isomorphismF(G)/R→Cand⟨G|R⟩form apresentation
-ofC. We say the morphisms ofCaregeneratedby the edges ofGand the objects by
-the vertices, and that the binary relationRissufficient.
-RemarkA.1.9.Sufficiency of relations is equivalent to the following more convenient
-description: LetGbe a directed graph andRa binary relation onF(G). Let H:
-F(G)/R→Cbe a functor, whereF(G)/Rdenotes the quotient categoryF(G)/∼ R
-for∼ R the least congruence containingR. Consider the functorH:F(G)→Cwhich
-is the compositionH= H◦Q. ThenRbeing sufficient (equivalently Hbeing an
-isomorphism) is the same as Hbeing bijective on objects and on homs. But sinceQ
-is bijective on objects, the former is equivalent toHbeing bijective on objects. The
-injectivity part of the later says H([f]) = H([f′]) if and only if [f] = [f ′], i.e.f∼ R f′.
-Notice that the congruence “kernel”≡ H defined byf≡ H f′⇔H(f) =H(f ′) can be
-equivalently defined asf≡ H f′⇔H([f]) = H([f′]). So Hbeing fully faithful implies
-that∼ R=≡H.
-Translating the abstract nonsense into English, a relationRis sufficient if every
-morphism inCis induced by at least one morphism inF(G) and every equality of
-morphisms inCis due to equivalence induced byRinF(G).
-Note that this does not speak of whetherRis the most efficient way of achieving
+Definition A.1.6. (Quotient Category) Let C be a category and R a congruence on
+C. Then the quotient category C/R has the same objects as C and the morphisms
+HomC/R(a, b) = HomC(a, b)/Ra,b are those of C modulo the equivalence relation Ra,b.
+If R is a binary relation, the quotient category C/R is defined as C/R′ where R′ is
+the least congruence containing R.
+Proposition A.1.7. (Universal Property of Quotient Category) [Mac94] Let C be a
+category with R a binary relation on the homs.
+Let C/R be the quotient category.
+Then the quotient functor Q = QR : C →C/R, which is identity on objects and
+sends a morphism to its equivalence class,1 satisfy the following universal property: If
+H : C →D is any functor such that fRa,bf′ implies Hf = Hf′ for all f and f′, then
+there exists a unique functor H′ : C/R →D with H′ ◦QR = H.
+Definition A.1.8. (Generators and Relations) Let G be a directed graph and R a
+binary relation on F(G), the free category of G. Then we say F(G)/R has generators
+G and relations R. An isomorphism F(G)/R →C and ⟨G | R⟩form a presentation
+of C. We say the morphisms of C are generated by the edges of G and the objects by
+the vertices, and that the binary relation R is sufficient.
+Remark A.1.9. Sufficiency of relations is equivalent to the following more convenient
+description: Let G be a directed graph and R a binary relation on F(G). Let H :
+F(G)/R →C be a functor, where F(G)/R denotes the quotient category F(G)/ ∼R
+for ∼R the least congruence containing R. Consider the functor H : F(G) →C which
+is the composition H = H ◦Q. Then R being sufficient (equivalently H being an
+isomorphism) is the same as H being bijective on objects and on homs. But since Q
+is bijective on objects, the former is equivalent to H being bijective on objects. The
+injectivity part of the later says H([f]) = H([f′]) if and only if [f] = [f′], i.e. f ∼R f′.
+Notice that the congruence “kernel” ≡H defined by f ≡H f′ ⇔H(f) = H(f′) can be
+equivalently defined as f ≡H f′ ⇔H([f]) = H([f′]). So H being fully faithful implies
+that ∼R=≡H.
+Translating the abstract nonsense into English, a relation R is sufficient if every
+morphism in C is induced by at least one morphism in F(G) and every equality of
+morphisms in C is due to equivalence induced by R in F(G).
+Note that this does not speak of whether R is the most efficient way of achieving
 sufficiency.
-Definition A.1.10.(Smaller Relations) LetR,R ′ be binary relations on homs of
-F(G). We sayR ′ is smaller thanR, denotedR ′ ⊊R, ifR ′
-a,b⊆R a,b for all pairs of
-objectsa,band there exists at least one pair of objectsX,Ysuch thatR ′
-X,Y ⊊R X,Y .
-In English,R′ is smaller thanRif it can be obtained fromRby removing some binary
+Definition A.1.10. (Smaller Relations) Let R, R′ be binary relations on homs of
+F(G). We say R′ is smaller than R, denoted R′ ⊊R, if R′
+a,b ⊆Ra,b for all pairs of
+objects a, b and there exists at least one pair of objects X, Y such that R′
+X,Y ⊊RX,Y .
+In English, R′ is smaller than R if it can be obtained from R by removing some binary
 relations.
-Definition A.1.11.(Necessary Relations) Let H,G,Rbe a presentation ofC. Let
-H:F(G)→ Cbe the composition H◦Q R. We sayRis necessary if for anyR ′
-smaller thanR, the unique functor H
-′
-:F(G)/∼ R′→C, through whichHfactors as
-H= H
-′
-◦QR′ is no longer an isomorphism.
-RemarkA.1.12.In this case, H
-′
-will fail faithfulness while still remaining full and
-bijective on objects. A pair of morphisms (f,f ′)∈R X,Y will be mapped to two
-1HenceQis surjective on hom sets, and is therefore a full functor.
+Definition A.1.11. (Necessary Relations) Let H, G, R be a presentation of C. Let
+H : F(G) →C be the composition H ◦QR.
+We say R is necessary if for any R′
+smaller than R, the unique functor H
+′ : F(G)/ ∼R′→C, through which H factors as
+H = H
+′ ◦QR′ is no longer an isomorphism.
+Remark A.1.12. In this case, H
+′ will fail faithfulness while still remaining full and
+bijective on objects.
+A pair of morphisms (f, f′) ∈RX,Y will be mapped to two
+1Hence Q is surjective on hom sets, and is therefore a full functor.
 91
-distinct equivalence classes inF(G)/∼ R′, but sent to the same morphism inCunder
+distinct equivalence classes in F(G)/ ∼R′, but sent to the same morphism in C under
 H. Hence the two distinct equivalence classes will be sent to the same morphism by
 H
-′
-.
-Heuristically, the least congruence containingR ′ will be too small, resulting in a
-quotientF(G)/∼ R′ being too big.
+′.
+Heuristically, the least congruence containing R′ will be too small, resulting in a
+quotient F(G)/ ∼R′ being too big.
 This paper is concerned with constructing presentations of Cob(3)S2. There are two
-presentations– both having non-negative integers (or equivalently⊔ n≥0S2 )as vertices,
-but one graph hasG 1 (and all tensor products) as edges, while the other graph has
-G2 (and all tensor products) as edges. By abuse of notation we shall refer to the
-two graphs asG 1 andG 2. Since their edges are morphisms, the free category is just
+presentations– both having non-negative integers (or equivalently ⊔n≥0S2 )as vertices,
+but one graph has G1 (and all tensor products) as edges, while the other graph has
+G2 (and all tensor products) as edges.
+By abuse of notation we shall refer to the
+two graphs as G1 and G2. Since their edges are morphisms, the free category is just
 Cob(3)S2 except one forgets if two compositions are equal. The two binary relations on
-homs are commutative Frobenius relations for theG1 case, and commutative Frobenius
-relations + legs relations for theG 2 case.
-The first section is largely concerned with showing that the functorsF(G 1,2)→
+homs are commutative Frobenius relations for the G1 case, and commutative Frobenius
+relations + legs relations for the G2 case.
+The first section is largely concerned with showing that the functors F(G1,2) →
 Cob(3)S2 are bijective on objects and full, so whatever relations we plan on choosing
 has a chance to result in presentations. The second section explicitly constructs two
-binary relationsR 1,2 onF(G 1,2). We then show that these relations are sufficient,
+binary relations R1,2 on F(G1,2). We then show that these relations are sufficient,
 namely they give rise to presentations of Cob(3)S2. Then we show that these relations
 can be thinned down to be necessary. Hence we obtain two minimal presentations of
 the category Cob(3)S2.

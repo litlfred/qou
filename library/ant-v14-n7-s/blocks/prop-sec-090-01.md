@@ -1,1 +1,1 @@
-The inﬁnite suspension spectrum6∞
+Il existe un foncteur monoïdal

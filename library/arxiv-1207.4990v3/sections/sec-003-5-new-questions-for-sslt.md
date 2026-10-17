@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1207.4990v3
-doc_title: "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results Percy Deift"
+doc_title: "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results"
 section_id: sec-003-5-new-questions-for-sslt
 section_title: "New questions for SSLT"
 section_number: 5
 pages: 27-29
 source_pdf: 1207.4990v3.pdf
 source_sha256: 02aa065f4f65b857
-doc_brief: "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results Percy Deift — 10 sections: Setting the problem; Toeplitz meets Ising; Back to Isi"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.996
-latex_coverage_ratio: 0.988
+latex_coverage_ratio: 1.0
 ---
 In view of the above calculations for $T\ge T_c$, the Ising problem raised new questions and challenges in Toeplitz theory. From [\[eq50\]](#eq50){reference-type="eqref" reference="eq50"}, $\left\langle \sigma_{1,1}\, \sigma_{1, 1+n}\right\rangle = D_n
 \!\left(\varphi_{\text{ons}}\right)$ (similarly, from [\[eq27\]](#eq27){reference-type="eqref" reference="eq27"}, $\langle \sigma_{1,1}\, \sigma_{1+n,\, 1+n}\rangle = D_n \left(\varphi_{\text{diag}}\right)$), and so we want to know precisely how $D_n \!\left(\varphi_{\text{ons}}\right)$ behaves as $n\to\infty$ for $T\ge T_c$. But for $T>T_c$, we have $0< \gamma_1 <1 < \gamma_2$ (see [\[eq23\]](#eq23){reference-type="eqref" reference="eq23"}, [\[eq26\]](#eq26){reference-type="eqref" reference="eq26"}), and so in contrast to the case $T<T_c$, the winding number of $\varphi_{\text{ons}}$ is $-1 \neq 0$. And at $T=T_c$, we see from [\[eq25\]](#eq25){reference-type="eqref" reference="eq25"} that $\varphi_{\text{ons}} \!\left(e^{i\theta}\right)$ has a jump discontinuity at $\theta=0$. For such discontinuities the Fourier coefficients $\left(\log \varphi_{\text{ons}}\right)_k$ decay as $k^{-1}$ and so $\sum^\infty_{k=1} k\left|\left(\log \varphi_{\text{ons}}\right)_k\right|^2 =\infty$. In both cases SSLT, or more properly Theorem [\[theorem7\]](#theorem7){reference-type="ref" reference="theorem7"}, does not apply.

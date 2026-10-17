@@ -7,28 +7,29 @@ section_number: null
 pages: 101-103
 source_pdf: qt2pf5d0mn.pdf
 source_sha256: 4c8581c3b46398e3
-doc_brief: "UC Santa Barbara — 18 sections: Abstract; Introduction; Higher Categories"
+toc_source: outline
 ---
-ly, the invariant was associated with a pair ( M,ω ), where M is a closed oriented 4-
-manifold and ω∈ H2(M, Z2), and the original Crane-Yetter invariant is a normalized
-sum of the reﬁned invariant over all ω∈ H2(M, Z2). Moreover, the reﬁned invariant
+ly, the invariant was associated with a pair (M, ω), where M is a closed oriented 4-
+manifold and ω ∈H2(M, Z2), and the original Crane-Yetter invariant is a normalized
+sum of the reﬁned invariant over all ω ∈H2(M, Z2). Moreover, the reﬁned invariant
 gives a state sum formula of the second Stiefel-Whitney class and the Pontrjagin squares
 of second cohomology classes. It is interesting to see if our invariant also has a similar
 reﬁnement.
-Secondly, the extension of a braided category to aG-crossed braided category depends
-on the vanishing condition of some obstruction inO4∈H4(G,U (1)). We conjecture that
+Secondly, the extension of a braided category to a G-crossed braided category depends
+on the vanishing condition of some obstruction in O4 ∈H4(G, U(1)). We conjecture that
 even if this obstruction does not vanish, one can still get a 4-manifold invariant from
 some structures beyond G-crossed braided categories.
 Lastly but more importantly, we are interested in deﬁning a G-BSFC where G is
 allowed to be an inﬁnite group, such as U(1), and in modifying the state sum model so
 that the partition function converges. It is expected that the resulting invariant would be
-much stronger than the current one, and might be related to Donaldson /Seiberg-Witten
+much stronger than the current one, and might be related to Donaldson/Seiberg-Witten
 invariants.
-3. By [35][38][39], equivalent classes G-BSFCs are in one-to-one correspondence,
+3.
+By [35][38][39], equivalent classes G-BSFCs are in one-to-one correspondence,
 by equivariatization and de-equivariatization, with equivalent classes of ribbon fusion
 categories containing Rep(G) as a subcategory. Ribbon fusion categories are the input
 to the Crane-Yetter invariant. Thus we wonder whether there are any relations between
-the invariant from aG-BSFC and Crane-Yetter invariant from the corresponding ribbon
+the invariant from a G-BSFC and Crane-Yetter invariant from the corresponding ribbon
 fusion category containing Rep(G).
 4. In (2+1) dimension, a non-semisimple generalization of the Turaev-Viro invariant
 is the Kuperberg invariant [17], which is deﬁned based on Hopf algebras. Our invariant

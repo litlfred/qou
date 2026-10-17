@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2605.28781v1
-doc_title: "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS"
+doc_title: "The sum-product conjecture is false for real numbers"
 section_id: sec-004-the-role-of-ai-in-this-proof
 section_title: "The role of AI in this proof"
 section_number: null
 pages: 4-4
 source_pdf: 2605.28781v1.pdf
 source_sha256: eee6d535af1996ca
-doc_brief: "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily largeA⊂R(whose elements are algebraic integers in a number"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.905
 latex_coverage_ratio: 1.0

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2505.00799v2
-doc_title: "QUANTUM MODULAR FORMS AND RESURGENCE"
+doc_title: "Quantum Modular Forms and Resurgence"
 section_id: sec-000-1-introduction-and-statement-of-results
 section_title: "Introduction and statement of results"
 section_number: 1
 pages: 1-3
 source_pdf: 2505.00799v2.pdf
 source_sha256: cc9d2ab4c6c79b50
-doc_brief: "QUANTUM MODULAR FORMS AND RESURGENCE — In 2010, Zagier described a new phenomenon which he called quantum mod- ularity."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.966
 latex_coverage_ratio: 0.983

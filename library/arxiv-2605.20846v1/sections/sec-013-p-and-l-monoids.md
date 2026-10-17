@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2605.20846v1
-doc_title: "Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li"
+doc_title: "Topological Field Theories and the Algebraic Structures of the Two-Sphere"
 section_id: sec-013-p-and-l-monoids
 section_title: "P and L Monoids"
 section_number: null
 pages: 70-74
 source_pdf: 2605.20846v1.pdf
 source_sha256: db27cb6d01c4f2fb
-doc_brief: "Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li — We give two presentations for bordisms ofS 2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.948
+latex_coverage_ratio: 0.977
 ---
 \label{sec:PLmonoids}
 Inspired by the list of relations which define the $G_1$ and $G_2$ presentations of $\operatorname{Cob}(3)_{S^2}$, we define the following monoids in symmetric monoidal categories, in anticipation that they will come from a 3d TFT.

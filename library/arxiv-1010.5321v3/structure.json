@@ -6,10 +6,12 @@
   "sha256": "c6bb20926b1f291fe66fc82b10be9d6a8b51f3b44034d4fd9d111bd4c3767a31",
   "bytes": 183784,
   "pages": 16,
-  "math_source": "latex",
+  "text_source": "embedded",
+  "extractor": "pymupdf",
   "mtime": null,
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,22 +21,31 @@
    "stamp_date": "16 Nov 2010"
   },
   "doi": null,
-  "title": "Formulas on hyperbolic volume",
+  "title": "Formulas on hyperbolic volume \u2217",
   "authors_raw": "Budapest University of Technology and Economics",
-  "abstract": "This paper collects some important formulas on hyperbolic volume. To determine con- crete values of volume function is a very hard question requiring the knowledge of various methods. Our goal to give a non-elementary integral on the volume of the orthosceme (obtain it without using the Schl\u00a8 a\ufb02i di\ufb00erential formula), using edge-lengthes as the only parameters.",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181022103223-04'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  },
-  "title_prev": "Formulas on hyperbolic volume \u2217 \u00c1.G.Horv\u00e1th Department of Geometry",
   "title_lines": [
-   "Formulas on hyperbolic volume \u2217",
+   "Formulas on hyperbolic volume\u2217",
    "\u00c1.G.Horv\u00e1th",
    "Department of Geometry"
-  ]
+  ],
+  "abstract": "This paper collects some important formulas on hyperbolic volume. To determine con- crete values of volume function is a very hard question requiring the knowledge of various methods. Our goal to give a non-elementary integral on the volume of the orthosceme (obtain it without using the Schl\u00a8a\ufb02i di\ufb00erential formula), using edge-lengthes as the only parameters.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181022103223-04'00'"
+  },
+  "title_raw": "Formulas on hyperbolic volume\u2217 \u00c1.G.Horv\u00e1th Department of Geometry",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Formulas on hyperbolic volume \u2217",
+   "outline": "1 Introduction",
+   "text": "Formulas on hyperbolic volume\u2217 \u00c1.G.Horv\u00e1th Department of Geometry",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -42,116 +53,414 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Notation",
    "page": 1,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "General formulas",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Coordinate system based on paracycles (horocycles)",
    "page": 2,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Volume in the Poincare half-space model",
    "page": 3,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Hyperbolic orthogonal coordinate system",
    "page": 4,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Coordinate system based on spherical hyperbolic coordinates",
    "page": 5,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Volume in the projective model",
    "page": 6,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "The three dimensional case",
    "page": 6,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Formulas of J. Bolyai",
    "page": 6,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Formulas of N.I.Lobachevsky",
    "page": 8,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Once more again on the volume of the orthosceme",
    "page": 9,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 3,
    "title": "The 3-dimensional case",
    "page": 9,
    "source": "outline",
-   "number": "3.3.1"
+   "number": "3.3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 3,
    "title": "The case of dimension two",
    "page": 13,
    "source": "outline",
-   "number": "3.3.2"
+   "number": "3.3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 3,
    "title": "The case of dimension n",
    "page": 13,
    "source": "outline",
-   "number": "3.3.3"
+   "number": "3.3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Further results on concrete volumes",
    "page": 14,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "coordinate system based on paracycles. Consider a parasphere of dimension n \u22121 and its pencil of rays of parallel lines. The last",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Coordinate system in the half-space model. In the Poincare half-space model we consider a Cartesian coordinate system via Fig. 2. The \ufb01rst n\u22121 axes lie in the bounding hyperplane the last one is perpendicular to it. If the hyperbolic",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Coordinate system based on orthogonal axes. arclength of the connecting paracycle arc 2s is s = k sinh d",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Spherical coordinates From the hyperbolic orthogonal coordinates x1, x2, \u00b7 \u00b7 \u00b7 , xn we can get the spherical coordi-",
+   "page": 5,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Coordinates in the Cayley-Klein model We connect the hyperbolic spherical coordinates and the euclidean spherical ones by the system of equations: rn = k tanh\u22121 Rn",
+   "page": 6,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Orthosceme The dihedral angle at a is \u03b1, the angle opposite to b of the triangle with edges a and b is \u03b2 and the angle opposite to the edge c in the triangle with edges c and z is \u03b3, respectively (see Fig.6). J.Bolyai gave two formulas:",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Orthosceme and orthogonal coordinates rectangular triangle \u25b3OP2P1 the tangent of the angle P2OP1\u2220is: tan P2OP1\u2220= tanh b",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 722,
+   "n_words": 97,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -159,8 +468,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 590,
-   "n_words": 92
+   "n_chars": 598,
+   "n_words": 88,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-001-2-general-formulas",
@@ -169,8 +480,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 286,
-   "n_words": 45
+   "n_chars": 284,
+   "n_words": 43,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-002-11-notation",
@@ -179,8 +492,10 @@
    "level": 2,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 960,
-   "n_words": 160
+   "n_chars": 966,
+   "n_words": 158,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-003-21-coordinate-system-based-on-paracycles-horocyc",
@@ -189,8 +504,10 @@
    "level": 2,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 2687,
-   "n_words": 573
+   "n_chars": 2743,
+   "n_words": 584,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-004-22-volume-in-the-poincare-half-space-model",
@@ -199,8 +516,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 618,
-   "n_words": 135
+   "n_chars": 655,
+   "n_words": 142,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-005-23-hyperbolic-orthogonal-coordinate-system",
@@ -209,8 +528,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 1886,
-   "n_words": 420
+   "n_chars": 1943,
+   "n_words": 441,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-006-24-coordinate-system-based-on-spherical-hyperbol",
@@ -219,8 +540,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 896,
-   "n_words": 197
+   "n_chars": 974,
+   "n_words": 222,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
    "id": "sec-007-25-volume-in-the-projective-model",
@@ -229,8 +552,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 926,
-   "n_words": 214
+   "n_chars": 966,
+   "n_words": 226,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
    "id": "sec-008-3-the-three-dimensional-case",
@@ -239,8 +564,10 @@
    "level": 1,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 26,
+   "n_words": 4,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
    "id": "sec-009-31-formulas-of-j-bolyai",
@@ -249,8 +576,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 8,
-   "n_chars": 2076,
-   "n_words": 447
+   "n_chars": 2108,
+   "n_words": 471,
+   "label_start": "6",
+   "label_end": "8"
   },
   {
    "id": "sec-010-32-formulas-of-nilobachevsky",
@@ -259,8 +588,10 @@
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 796,
-   "n_words": 165
+   "n_chars": 829,
+   "n_words": 173,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
    "id": "sec-011-33-once-more-again-on-the-volume-of-the-orthosce",
@@ -269,8 +600,10 @@
    "level": 2,
    "page_start": 9,
    "page_end": 9,
-   "n_chars": 467,
-   "n_words": 99
+   "n_chars": 515,
+   "n_words": 108,
+   "label_start": "9",
+   "label_end": "9"
   },
   {
    "id": "sec-012-331-the-3-dimensional-case",
@@ -279,8 +612,10 @@
    "level": 3,
    "page_start": 9,
    "page_end": 13,
-   "n_chars": 6212,
-   "n_words": 1351
+   "n_chars": 6533,
+   "n_words": 1652,
+   "label_start": "9",
+   "label_end": "13"
   },
   {
    "id": "sec-013-332-the-case-of-dimension-two",
@@ -289,8 +624,10 @@
    "level": 3,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 964,
-   "n_words": 220
+   "n_chars": 1034,
+   "n_words": 269,
+   "label_start": "13",
+   "label_end": "13"
   },
   {
    "id": "sec-014-333-the-case-of-dimension-n",
@@ -299,8 +636,10 @@
    "level": 3,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 1916,
-   "n_words": 387
+   "n_chars": 1994,
+   "n_words": 446,
+   "label_start": "13",
+   "label_end": "14"
   },
   {
    "id": "sec-015-34-further-results-on-concrete-volumes",
@@ -309,16 +648,25 @@
    "level": 2,
    "page_start": 14,
    "page_end": 16,
-   "n_chars": 3784,
-   "n_words": 770
+   "n_chars": 3869,
+   "n_words": 824,
+   "label_start": "14",
+   "label_end": "16"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 16,
-  "sections": 16,
-  "chars_total": 25064,
+  "toc_inferred_entries": 0,
+  "figure_entries": 7,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 17,
+  "chars_total": 26759,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "hyperbolicvolume.tex",
@@ -331,10 +679,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.86,
+     "prose_ratio": 0.722,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -348,14 +701,14 @@
      "id": "sec-002-11-notation",
      "title": "Notation",
      "prose_ratio": 0.95,
-     "coverage_ratio": 0.407,
+     "coverage_ratio": 0.392,
      "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-003-21-coordinate-system-based-on-paracycles-horocyc",
      "title": "Coordinate system based on paracycles (horocycles)",
      "prose_ratio": 0.982,
-     "coverage_ratio": 0.973,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -363,7 +716,7 @@
      "id": "sec-004-22-volume-in-the-poincare-half-space-model",
      "title": "Volume in the Poincare half-space model",
      "prose_ratio": 0.939,
-     "coverage_ratio": 0.97,
+     "coverage_ratio": 0.969,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -371,7 +724,7 @@
      "id": "sec-005-23-hyperbolic-orthogonal-coordinate-system",
      "title": "Hyperbolic orthogonal coordinate system",
      "prose_ratio": 0.965,
-     "coverage_ratio": 0.906,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -379,7 +732,7 @@
      "id": "sec-006-24-coordinate-system-based-on-spherical-hyperbol",
      "title": "Coordinate system based on spherical hyperbolic coordinates",
      "prose_ratio": 0.938,
-     "coverage_ratio": 0.846,
+     "coverage_ratio": 0.919,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -387,7 +740,7 @@
      "id": "sec-007-25-volume-in-the-projective-model",
      "title": "Volume in the projective model",
      "prose_ratio": 0.95,
-     "coverage_ratio": 0.957,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -401,7 +754,7 @@
      "id": "sec-009-31-formulas-of-j-bolyai",
      "title": "Formulas of J. Bolyai",
      "prose_ratio": 0.955,
-     "coverage_ratio": 0.979,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -417,7 +770,7 @@
      "id": "sec-011-33-once-more-again-on-the-volume-of-the-orthosce",
      "title": "Once more again on the volume of the orthosceme",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.893,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -425,7 +778,7 @@
      "id": "sec-012-331-the-3-dimensional-case",
      "title": "The 3-dimensional case",
      "prose_ratio": 0.984,
-     "coverage_ratio": 0.918,
+     "coverage_ratio": 0.949,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -433,7 +786,7 @@
      "id": "sec-013-332-the-case-of-dimension-two",
      "title": "The case of dimension two",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.941,
+     "coverage_ratio": 0.9,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -441,7 +794,7 @@
      "id": "sec-014-333-the-case-of-dimension-n",
      "title": "The case of dimension n",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.915,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -449,7 +802,7 @@
      "id": "sec-015-34-further-results-on-concrete-volumes",
      "title": "Further results on concrete volumes",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.544,
+     "coverage_ratio": 0.517,
      "result": "overlaid",
      "converter": "pandoc"
     }

@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-math-0611941v3
-doc_title: "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR MEINOLF GECK"
+doc_title: "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR"
 section_id: sec-004-25-representations-of-j
 section_title: "Representations of J"
 section_number: 2.5
 pages: 5-7
 source_pdf: 0611941v3.pdf
 source_sha256: bf6f2d55c7adee51
-doc_brief: "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR MEINOLF GECK — Let H be the one-parameter Hecke algebra associated to a ﬁnite Weyl gr oup W , deﬁned over a ground ring in which “bad” primes for W are"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.955
-latex_coverage_ratio: 0.951
+latex_coverage_ratio: 0.95
 ---
 []{#sub25 label="sub25"}
 

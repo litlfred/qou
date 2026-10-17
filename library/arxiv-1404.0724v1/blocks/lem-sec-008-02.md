@@ -1,1 +1,1 @@
-The Knizhnik-Zamolodchikov connection θn is ﬂat, i.e.
+The homomorphism ˆf∗preserves the invariant ρ, i.e. ρ ◦ˆf∗= ρ.

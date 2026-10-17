@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-math-0611941v3
-doc_title: "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR MEINOLF GECK"
+doc_title: "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR"
 section_id: sec-005-3-a-cell-datum-for-h
 section_title: "A cell datum for H"
 section_number: 3
 pages: 7-11
 source_pdf: 0611941v3.pdf
 source_sha256: bf6f2d55c7adee51
-doc_brief: "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR MEINOLF GECK — Let H be the one-parameter Hecke algebra associated to a ﬁnite Weyl gr oup W , deﬁned over a ground ring in which “bad” primes for W are"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.996
-latex_coverage_ratio: 0.978
+latex_prose_ratio: 0.967
+latex_coverage_ratio: 0.983
 ---
 []{#secDatum label="secDatum"} We keep the notation of the previous sections. In order to show that ${\mathcal{H}}$ is "cellular" in the sense of Graham--Lehrer [@GrLe Definition 1.1], we must specify a quadruple $(\Lambda,M,C,*)$ satisfying the following conditions.
 

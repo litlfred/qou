@@ -10,7 +10,7 @@ source_sha256: 0c6abbb9c5a720d9
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.95
-latex_coverage_ratio: 0.905
+latex_coverage_ratio: 0.9
 ---
 We consider Toeplitz determinants of the form
 \begin{equation}\label{Toeplitz}

@@ -1,1 +1,1 @@
-L’adjonction (2-36) est une équivalence de Quillen. En particulier, le foncteur
+Soit R un objet de RigDA´et(k; 3) muni d’une structure de 0W-module. Alors, la

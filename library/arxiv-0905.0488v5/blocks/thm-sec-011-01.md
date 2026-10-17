@@ -1,1 +1,1 @@
-Let K be a ﬁeld containing the real numbers, letR be a parameter
+s \ref{thm:7} and \ref{thm:221}.

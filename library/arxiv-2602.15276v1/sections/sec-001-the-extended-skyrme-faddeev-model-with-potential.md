@@ -9,4 +9,4 @@ source_pdf: 2602.15276v1.pdf
 source_sha256: 18d77d6aa140fc50
 toc_source: outline
 ---
-A.
+THE EXTENDED SKYRME-FADDEEV MODEL WITH POTENTIAL

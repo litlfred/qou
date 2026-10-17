@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0911.1038v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "3bc566efaefd44c65b2a9536bde79ff211e9facffa8e7387762583d9a986378c",
+  "file": "0911.1038v2.pdf"
+ },
+ "provenance": {
+  "title": "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS",
+  "authors": "MACIEJ DO\u0141 \u02dbEGA AND PIOTR \u015aNIADY",
+  "arxiv": {
+   "id": "0911.1038",
+   "version": "2",
+   "primary_class": "math.CO",
+   "stamp_date": "12 Mar 2012"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

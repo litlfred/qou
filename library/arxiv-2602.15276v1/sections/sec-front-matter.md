@@ -31,4 +31,3 @@ and analyze the influence of quartic terms on the properties of the resulting co
 specifically examining the E(Q) relationship between energy and Noether charge. Our find-
 ings provide valuable insights into the stability and characteristics of compact boson stars
 within CP N models featuring higher-order derivative terms.
-I.

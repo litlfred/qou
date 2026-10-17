@@ -1,14 +1,13 @@
 ---
 doc_id: arxiv-1710.04865v2
-doc_title: "THE COLORED JONES POL YNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS"
+doc_title: "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS"
 section_id: sec-004-acknowledgements
 section_title: "Acknowledgements"
 section_number: null
 pages: 23-23
 source_pdf: 1710.04865v2.pdf
 source_sha256: ac8f436173d550e8
-doc_brief: "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS — Using a result of Takata, we prove a formula for the colored Jones polynomial of the double twist knots K(−m,−p) and"
-duplicate_of: "cjdoubletwistfinal"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0

@@ -9,6 +9,7 @@ source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
 ---
+Deﬁnition of the Kashaev invariant
 In this section, we review the deﬁnition of the Kashaev invariant of oriented knots.
 Following Yokota [33],3 we review the deﬁnition of the Kashaev invariant. We put
 N = {0, 1, · · · , N −1}.
@@ -99,4 +100,3 @@ W(crossings)
 critical
 points of D
 W(critical points) ∈C.
-2.4

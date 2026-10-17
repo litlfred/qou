@@ -7,10 +7,10 @@ section_number: 2
 pages: 6-6
 source_pdf: 1003.4808v2.pdf
 source_sha256: 72301d4bee491f86
-doc_brief: "Quantum Field Theory and the Volume Conjecture — 14 sections: Preliminaries; The many dimensions of the volume ; Parametrized VC"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.973
-latex_coverage_ratio: 0.986
+latex_coverage_ratio: 0.973
 ---
 []{#sec:gen label="sec:gen"}
 

@@ -7,18 +7,19 @@ section_number: 3.3
 pages: 14-15
 source_pdf: 1511.05628v1.pdf
 source_sha256: 3b9da2994233882b
-doc_brief: "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY — The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coeﬃcients that"
+toc_source: outline
 ---
 S(θ) =
-∑
+X
 m∈(Z/kZ)N
 am(θ)
-P (θ) =
-N∏
+P(θ) =
+N
+Y
 i=1
 D∗
 k(θ−1
-i )1/k.
-To begin with, we haveS(θ),P k(θ)∈FG,k. If σj is the j-th generator of the Galois group of
+i )1/k .
+To begin with, we have S(θ), P k(θ) ∈FG,k. If σj is the j-th generator of the Galois group of
 FG,k/Fk then Equation (32) implies that
-σjS(θ) =ϵj(θ)S(θ).
+σjS(θ) = ϵj(θ)S(θ) .

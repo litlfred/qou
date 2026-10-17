@@ -7,9 +7,9 @@ section_number: 1.1
 pages: 3-4
 source_pdf: 2305.07425v1.pdf
 source_sha256: 2f7d2ac5818b6af4
-doc_brief: "LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS — The set of equivalence classes of cobounded actions of a grou p G on diﬀerent hyperbolic metric spaces carries a natural partial order."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.933
-latex_coverage_ratio: 0.737
+latex_coverage_ratio: 0.75
 ---
 Abbott was partially supported by NSF grants DMS-1803368 and DMS-2106906. Nguyen was partially supported by Project ICRTM04_2021.07 of the International Centre for Research and Postgraduate Training in Mathematics, VietNam. Rasmussen was partially supported by NSF grants DMS-1840190 and DMS-2202986.

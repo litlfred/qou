@@ -7,10 +7,10 @@ section_number: 5.3.1
 pages: 46-48
 source_pdf: 1301.4504v4.pdf
 source_sha256: 201acc5bb1d4b6a0
-doc_brief: "Quantum Computation vs. Firewalls — In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.941
-latex_coverage_ratio: 0.995
+latex_coverage_ratio: 1.0
 ---
 To quantitatively test the feasibility of using a throat to evade the computational hardness of decoding, we need a specific example of this type of geometry. In string theory there is a standard way of producing throat geometries with the desired properties by stacking branes; for example D3 branes in type IIB string theory or M5 branes in M-theory. To realize the geometry [\[AdSsch\]](#AdSsch){reference-type="eqref" reference="AdSsch"} explicitly we would need a configuration of branes which is spherically symmetric and stable. Spherical symmetry is a bit inconvenient because branes in spherical configurations tend to collapse under their own tension unless there is something else supporting them. A simple thing we could do is start with the $AdS_3\times S^3\times T^4$ solution of IIB supergravity with RR flux, itself the near horizon limit of the $D1-D5$ system, and then wrap some $D3$ branes on the $S^3$. This throat would not be asymptotically Minkowski, but we could easily arrange for the curvature radius of the $AdS_3$ to be much larger than the curvature radius of the $AdS_5$ near the $D3$ branes. Rather than try to make this construction work in detail, we will instead consider a simpler setup in which the black hole has planar symmetry instead of spherical symmetry.
 

@@ -1,1 +1,1 @@
-LetM be a punctured–torus bundle with monodromy of length s. Let C be a
+[\[thm:ptorus-area\]](#thm:ptorus-area){reference-type="ref" reference="thm:ptorus-area"} Let $M$ be a punctured--torus bundle with monodromy of length $s$. Let $C$ be a maximal horoball neighborhood about the cusp of $M$. Then $$\frac{16 \sqrt{3}}{147} \, s \: \leq \: {\rm area}({\partial}C) \:<\: 2

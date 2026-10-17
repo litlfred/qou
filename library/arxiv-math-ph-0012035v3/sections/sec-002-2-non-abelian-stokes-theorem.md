@@ -11,4 +11,3 @@ toc_source: inferred
 ---
 on LHS of 5 is called the holonomy, and more generally, for open curves C,
 global connection.
-1.2

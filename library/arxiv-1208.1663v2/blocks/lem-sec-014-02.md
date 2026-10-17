@@ -1,1 +1,1 @@
-Fix positive real numbersα,β > 0 withα+β <1/2 and letγ = min{α,β, 1/2−
+Suppose C is a closed cone in Rr and p : C −→R is a polynomial that satisﬁes

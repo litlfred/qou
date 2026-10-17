@@ -1,1 +1,1 @@
-LetD be a block-strand diagram of braid index n. Then there exist
+Let D be a block-strand diagram of braid index n. Then there exist

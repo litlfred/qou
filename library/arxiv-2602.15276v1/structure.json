@@ -989,8 +989,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1642,
-   "n_words": 225,
+   "n_chars": 1639,
+   "n_words": 224,
    "label_start": "1",
    "label_end": "1"
   },
@@ -1001,7 +1001,7 @@
    "level": 2,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 10264,
+   "n_chars": 10273,
    "n_words": 1472,
    "label_start": "1",
    "label_end": "4"
@@ -1013,8 +1013,8 @@
    "level": 2,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 2,
-   "n_words": 1,
+   "n_chars": 48,
+   "n_words": 6,
    "label_start": "4",
    "label_end": "4"
   },
@@ -1025,8 +1025,8 @@
    "level": 3,
    "page_start": 4,
    "page_end": 7,
-   "n_chars": 8419,
-   "n_words": 1497,
+   "n_chars": 8460,
+   "n_words": 1501,
    "label_start": "4",
    "label_end": "7"
   },
@@ -1037,8 +1037,8 @@
    "level": 3,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 2288,
-   "n_words": 470,
+   "n_chars": 2302,
+   "n_words": 471,
    "label_start": "7",
    "label_end": "9"
   },
@@ -1049,8 +1049,8 @@
    "level": 3,
    "page_start": 9,
    "page_end": 12,
-   "n_chars": 5634,
-   "n_words": 1053,
+   "n_chars": 5644,
+   "n_words": 1054,
    "label_start": "9",
    "label_end": "12"
   },
@@ -1061,8 +1061,8 @@
    "level": 2,
    "page_start": 12,
    "page_end": 14,
-   "n_chars": 5141,
-   "n_words": 952,
+   "n_chars": 5154,
+   "n_words": 953,
    "label_start": "12",
    "label_end": "14"
   },
@@ -1073,7 +1073,7 @@
    "level": 2,
    "page_start": 14,
    "page_end": 14,
-   "n_chars": 1425,
+   "n_chars": 1433,
    "n_words": 247,
    "label_start": "14",
    "label_end": "14"
@@ -1085,8 +1085,8 @@
    "level": 3,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 1255,
-   "n_words": 219,
+   "n_chars": 1288,
+   "n_words": 223,
    "label_start": "14",
    "label_end": "15"
   },
@@ -1097,8 +1097,8 @@
    "level": 3,
    "page_start": 15,
    "page_end": 17,
-   "n_chars": 5136,
-   "n_words": 955,
+   "n_chars": 5157,
+   "n_words": 958,
    "label_start": "15",
    "label_end": "17"
   },
@@ -1109,8 +1109,8 @@
    "level": 2,
    "page_start": 17,
    "page_end": 17,
-   "n_chars": 586,
-   "n_words": 89,
+   "n_chars": 603,
+   "n_words": 90,
    "label_start": "17",
    "label_end": "17"
   },
@@ -1120,50 +1120,74 @@
    "title": "Shooting method",
    "level": 3,
    "page_start": 17,
-   "page_end": 24,
-   "n_chars": 15299,
-   "n_words": 2646,
+   "page_end": 18,
+   "n_chars": 794,
+   "n_words": 134,
    "label_start": "17",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-011-cp1-q-balls",
+   "number": null,
+   "title": "CP1 Q-balls",
+   "level": 3,
+   "page_start": 18,
+   "page_end": 22,
+   "n_chars": 11963,
+   "n_words": 2082,
+   "label_start": "18",
+   "label_end": "22"
+  },
+  {
+   "id": "sec-012-cp3-q-balls",
+   "number": null,
+   "title": "CP3 Q-balls",
+   "level": 3,
+   "page_start": 22,
+   "page_end": 24,
+   "n_chars": 2527,
+   "n_words": 425,
+   "label_start": "22",
    "label_end": "24"
   },
   {
-   "id": "sec-011-q-shells",
+   "id": "sec-013-q-shells",
    "number": null,
    "title": "Q-shells",
    "level": 3,
    "page_start": 24,
    "page_end": 25,
-   "n_chars": 2238,
+   "n_chars": 2244,
    "n_words": 363,
    "label_start": "24",
    "label_end": "25"
   },
   {
-   "id": "sec-012-energy-noether-charge-and-radius-of-the-compacto",
+   "id": "sec-014-energy-noether-charge-and-radius-of-the-compacto",
    "number": null,
    "title": "Energy, Noether charge and radius of the compactons for l=0,1,2,5",
    "level": 3,
    "page_start": 25,
    "page_end": 39,
-   "n_chars": 21067,
-   "n_words": 4351,
+   "n_chars": 21134,
+   "n_words": 4365,
    "label_start": "25",
    "label_end": "39"
   },
   {
-   "id": "sec-013-summary-and-remarks",
+   "id": "sec-015-summary-and-remarks",
    "number": null,
    "title": "Summary and remarks",
    "level": 2,
    "page_start": 39,
    "page_end": 40,
-   "n_chars": 4315,
-   "n_words": 650,
+   "n_chars": 4335,
+   "n_words": 653,
    "label_start": "39",
    "label_end": "40"
   },
   {
-   "id": "sec-014-acknowledgmets",
+   "id": "sec-016-acknowledgmets",
    "number": null,
    "title": "Acknowledgmets",
    "level": 2,
@@ -1186,13 +1210,13 @@
    "count": 0,
    "items": []
   },
-  "sections": 16,
-  "chars_total": 93166,
+  "sections": 18,
+  "chars_total": 93453,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "sfcpnqballs-v3.tex",
    "tex_sections": 20,
-   "overlaid": 13,
+   "overlaid": 12,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1208,7 +1232,7 @@
      "id": "sec-000-introduction",
      "title": "Introduction",
      "prose_ratio": 0.97,
-     "coverage_ratio": 0.979,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1254,7 +1278,7 @@
      "id": "sec-006-compactons",
      "title": "Compactons",
      "prose_ratio": 0.976,
-     "coverage_ratio": 0.988,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1262,7 +1286,7 @@
      "id": "sec-007-expansion-at-the-compacton-boundary",
      "title": "Expansion at the compacton boundary",
      "prose_ratio": 0.986,
-     "coverage_ratio": 0.986,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1285,13 +1309,21 @@
     {
      "id": "sec-010-shooting-method",
      "title": "Shooting method",
-     "prose_ratio": 0.981,
-     "coverage_ratio": 0.998,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.135,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-011-q-shells",
+     "id": "sec-011-cp1-q-balls",
+     "title": "CP1 Q-balls",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-cp3-q-balls",
+     "title": "CP3 Q-balls",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-q-shells",
      "title": "Q-shells",
      "prose_ratio": 0.965,
      "coverage_ratio": 0.993,
@@ -1299,23 +1331,23 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-energy-noether-charge-and-radius-of-the-compacto",
+     "id": "sec-014-energy-noether-charge-and-radius-of-the-compacto",
      "title": "Energy, Noether charge and radius of the compactons for l=0,1,2,5",
      "prose_ratio": 0.998,
-     "coverage_ratio": 0.995,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-summary-and-remarks",
+     "id": "sec-015-summary-and-remarks",
      "title": "Summary and remarks",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.996,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-acknowledgmets",
+     "id": "sec-016-acknowledgmets",
      "title": "Acknowledgmets",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.071,

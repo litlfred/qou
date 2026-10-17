@@ -1278,8 +1278,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 3591,
-   "n_words": 548,
+   "n_chars": 3589,
+   "n_words": 547,
    "label_start": null,
    "label_end": "3"
   },
@@ -1290,8 +1290,8 @@
    "level": 1,
    "page_start": 3,
    "page_end": 8,
-   "n_chars": 15676,
-   "n_words": 2692,
+   "n_chars": 15689,
+   "n_words": 2693,
    "label_start": "3",
    "label_end": null
   },
@@ -1505,14 +1505,26 @@
    "title": "Unipotent quantum coordinate ring",
    "level": 2,
    "page_start": 58,
-   "page_end": 66,
-   "n_chars": 12753,
-   "n_words": 2418,
+   "page_end": 60,
+   "n_chars": 3214,
+   "n_words": 605,
    "label_start": "58",
+   "label_end": "60"
+  },
+  {
+   "id": "sec-019-83-modified-quantum-enveloping-algebra",
+   "number": "8.3",
+   "title": "Modified quantum enveloping algebra",
+   "level": 2,
+   "page_start": 60,
+   "page_end": 66,
+   "n_chars": 9463,
+   "n_words": 1802,
+   "label_start": "60",
    "label_end": "66"
   },
   {
-   "id": "sec-019-9-quantum-minors-and-t-systems",
+   "id": "sec-020-9-quantum-minors-and-t-systems",
    "number": "9",
    "title": "Quantum minors and T-systems",
    "level": 1,
@@ -1524,7 +1536,7 @@
    "label_end": "70"
   },
   {
-   "id": "sec-020-92-t-system",
+   "id": "sec-021-92-t-system",
    "number": "9.2",
    "title": "T-system",
    "level": 2,
@@ -1536,7 +1548,7 @@
    "label_end": "70"
   },
   {
-   "id": "sec-021-93-revisit-of-crystal-bases-and-global-bases",
+   "id": "sec-022-93-revisit-of-crystal-bases-and-global-bases",
    "number": "9.3",
    "title": "Revisit of crystal bases and global bases",
    "level": 2,
@@ -1548,7 +1560,7 @@
    "label_end": "74"
   },
   {
-   "id": "sec-022-94-generalized-t-system",
+   "id": "sec-023-94-generalized-t-system",
    "number": "9.4",
    "title": "Generalized T-system",
    "level": 2,
@@ -1560,7 +1572,7 @@
    "label_end": "75"
   },
   {
-   "id": "sec-023-10-klr-algebras-and-their-modules",
+   "id": "sec-024-10-klr-algebras-and-their-modules",
    "number": "10",
    "title": "KLR algebras and their modules",
    "level": 1,
@@ -1572,7 +1584,7 @@
    "label_end": "75"
   },
   {
-   "id": "sec-024-101-chevalley-and-kashiwara-operators",
+   "id": "sec-025-101-chevalley-and-kashiwara-operators",
    "number": "10.1",
    "title": "Chevalley and Kashiwara operators",
    "level": 2,
@@ -1584,7 +1596,7 @@
    "label_end": "80"
   },
   {
-   "id": "sec-025-102-determinantial-modules-and-t-system",
+   "id": "sec-026-102-determinantial-modules-and-t-system",
    "number": "10.2",
    "title": "Determinantial modules and T-system",
    "level": 2,
@@ -1596,7 +1608,7 @@
    "label_end": "81"
   },
   {
-   "id": "sec-026-103-generalized-t-system-on-determinantial-modul",
+   "id": "sec-027-103-generalized-t-system-on-determinantial-modul",
    "number": "10.3",
    "title": "Generalized T-system on determinantial module",
    "level": 2,
@@ -1614,7 +1626,7 @@
   "toc_entries": 41,
   "toc_inferred_entries": 41,
   "toc_inferred_mean_confidence": 0.939,
-  "toc_inferred_empty_share": 0.074,
+  "toc_inferred_empty_share": 0.071,
   "toc_inferred_method": "latex",
   "figure_entries": 0,
   "figure_sequence_gaps": [],
@@ -1639,13 +1651,13 @@
     "items": []
    }
   },
-  "sections": 28,
-  "chars_total": 155167,
+  "sections": 29,
+  "chars_total": 155102,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 42,
-   "overlaid": 20,
+   "overlaid": 21,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1792,13 +1804,21 @@
     {
      "id": "sec-018-82-unipotent-quantum-coordinate-ring",
      "title": "Unipotent quantum coordinate ring",
-     "prose_ratio": 0.939,
-     "coverage_ratio": 0.944,
+     "prose_ratio": 0.932,
+     "coverage_ratio": 0.92,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-019-9-quantum-minors-and-t-systems",
+     "id": "sec-019-83-modified-quantum-enveloping-algebra",
+     "title": "Modified quantum enveloping algebra",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.928,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-020-9-quantum-minors-and-t-systems",
      "title": "Quantum minors and T-systems",
      "prose_ratio": 0.884,
      "coverage_ratio": 0.917,
@@ -1806,7 +1826,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-020-92-t-system",
+     "id": "sec-021-92-t-system",
      "title": "T-system",
      "prose_ratio": 0.8,
      "coverage_ratio": 1.0,
@@ -1814,7 +1834,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-021-93-revisit-of-crystal-bases-and-global-bases",
+     "id": "sec-022-93-revisit-of-crystal-bases-and-global-bases",
      "title": "Revisit of crystal bases and global bases",
      "prose_ratio": 0.902,
      "coverage_ratio": 0.915,
@@ -1822,7 +1842,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-022-94-generalized-t-system",
+     "id": "sec-023-94-generalized-t-system",
      "title": "Generalized T-system",
      "prose_ratio": 0.91,
      "coverage_ratio": 0.939,
@@ -1830,13 +1850,13 @@
      "converter": "latex"
     },
     {
-     "id": "sec-023-10-klr-algebras-and-their-modules",
+     "id": "sec-024-10-klr-algebras-and-their-modules",
      "title": "KLR algebras and their modules",
      "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-024-101-chevalley-and-kashiwara-operators",
+     "id": "sec-025-101-chevalley-and-kashiwara-operators",
      "title": "Chevalley and Kashiwara operators",
      "prose_ratio": 0.951,
      "coverage_ratio": 0.927,
@@ -1844,7 +1864,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-025-102-determinantial-modules-and-t-system",
+     "id": "sec-026-102-determinantial-modules-and-t-system",
      "title": "Determinantial modules and T-system",
      "prose_ratio": 0.825,
      "coverage_ratio": 0.957,
@@ -1852,7 +1872,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-026-103-generalized-t-system-on-determinantial-modul",
+     "id": "sec-027-103-generalized-t-system-on-determinantial-modul",
      "title": "Generalized T-system on determinantial module",
      "prose_ratio": 0.931,
      "coverage_ratio": 0.584,

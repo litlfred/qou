@@ -9,4 +9,5 @@ source_pdf: 0012035v3.pdf
 source_sha256: 06a4c8096c8ebb10
 toc_source: inferred
 ---
+Path-integral formalism
 There are two main approaches to the non-Abelian Stokes theorem in the frame-

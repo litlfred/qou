@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-math-0401084v3
-doc_title: "Some limits of the colored Jones polynomials of the figure-eight knot"
+doc_title: "THE COLORED JONES POLYNOMIALS OF THE"
 section_id: sec-003-4-proof-of-the-main-theorem
 section_title: "Proof of the main theorem"
 section_number: 4
 pages: 14-15
 source_pdf: 0401084v3.pdf
 source_sha256: f56bbd4cee4f3418
-doc_brief: "Some limits of the colored Jones polynomials of the figure-eight knot — W e calculate limits of the colored Jones polynomials of the ﬁ gure- eight knot and conclude that in most cases they determine"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.887
+latex_prose_ratio: 0.871
+latex_coverage_ratio: 0.818
 ---
 In this section we will prove the main theorem.
 

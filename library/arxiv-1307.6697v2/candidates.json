@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1307.6697v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "a3afaefdaebe0292a144037347f9903eace2aea5da25618894915438daa27e2e",
+  "file": "1307.6697v2.pdf"
+ },
+ "provenance": {
+  "title": "REPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS",
+  "authors": "INTO PGL(3, C): EXACT COMPUTATIONS IN LOW COMPLEXITY",
+  "arxiv": {
+   "id": "1307.6697",
+   "version": "2",
+   "primary_class": "math.RT",
+   "stamp_date": "3 Dec 2013"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

@@ -9,8 +9,8 @@ source_pdf: 1309.0865v1.pdf
 source_sha256: e610a4fa938a7cc9
 toc_source: inferred
 text_source: latex
-latex_prose_ratio: 0.988
-latex_coverage_ratio: 0.934
+latex_prose_ratio: 0.994
+latex_coverage_ratio: 0.935
 ---
 Two color graphs and Soergel bimodules for the dihedral group are explored in detail in \cite{EDihedral}. Essentially, morphisms between Bott-Samelson bimodules in rank 2 are governed by the Temperley-Lieb algebra at a root of unity, a fact related to the (quantum) geometric Satake equivalence for $\mathfrak{sl}_2$.
 

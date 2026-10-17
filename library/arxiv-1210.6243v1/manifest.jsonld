@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1210.6243v1",
+  "title": "Controlled double-slit electron diﬀraction",
   "contains": [
+    "library/arxiv-1210.6243v1/sections/sec-front-matter",
     "library/arxiv-1210.6243v1/sections/sec-000",
     "library/arxiv-1210.6243v1/sections/sec-001",
     "library/arxiv-1210.6243v1/sections/sec-002",
@@ -27,7 +28,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1210.6243v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1210.6243v1.pdf",
     "source_sha256": "3ff2f5358b25586e10469081d9b0a6e07671cced9d3f3a5074e55f5f6c749c74",
     "pages": 8,

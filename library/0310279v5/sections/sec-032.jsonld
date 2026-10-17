@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/0310279v5/sections/sec-032",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Pushing across regions with a G–exchange foliation",
+  "pageStart": 94,
+  "pageEnd": 100,
+  "contains": [
+    "library/0310279v5/blocks/prose-sec-032",
+    "library/0310279v5/blocks/rem-sec-032-01",
+    "library/0310279v5/blocks/prop-sec-032-02",
+    "library/0310279v5/blocks/rem-sec-032-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0310279v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0310279v5/manifest.jsonld",
+  "provenance": "ingested"
+}

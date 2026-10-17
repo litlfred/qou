@@ -1,20 +1,20 @@
 ---
 doc_id: arxiv-2111.06645
-doc_title: ""
+doc_title: "Symmetry, Integrability and Geometry: Methods and Applications"
 section_id: sec-022-references
 section_title: "References"
 section_number: null
 pages: 37-39
 source_pdf: 2304.09377v2.pdf
 source_sha256: 76ae6c6058f4a9f9
-doc_brief: "Knots and Their Related q-Series — We discuss a matrix of periodic holomorphic functions in the upper and lower half-plane which can be obtained from a factorization of an Andersen–Kashaev state"
+toc_source: outline
 ---
-[1] An N., Li Y., On the quantum modularity conjecture for the ( −2, 3, 7)-pretzel knot, in preparation.
+[1] An N., Li Y., On the quantum modularity conjecture for the (−2, 3, 7)-pretzel knot, in preparation.
 [2] Andersen J.E., Garoufalidis S., Kashaev R., The volume conjecture for the KLV state-integral, in prepara-
 tion.
 [3] Andersen J.E., Hansen S.K., Asymptotics of the quantum invariants for surgeries on the figure 8 knot,
 J. Knot Theory Ramifications 15 (2006), 479–548, arXiv:math.QA/0506456.
-[4] Andersen J.E., Kashaev R., A TQFT from quantum Teichm¨ uller theory, Comm. Math. Phys. 330 (2014),
+[4] Andersen J.E., Kashaev R., A TQFT from quantum Teichm¨uller theory, Comm. Math. Phys. 330 (2014),
 887–934, arXiv:1109.6295.
 [5] Beem C., Dimofte T., Pasquetti S., Holomorphic blocks in three dimensions, J. High Energy Phys. 2014
 (2014), no. 12, 177, 119 pages, arXiv:1211.1986.
@@ -23,14 +23,15 @@ Ann. 382 (2022), 1631–1679, arXiv:1905.02045.
 [7] Bruinier J.H., van der Geer G., Harder G., Zagier D., The 1-2-3 of modular forms, Universitext, Springer,
 Berlin, 2008.
 [8] Calegari F., Garoufalidis S., Zagier D., Bloch groups, algebraic K-theory, units, and Nahm’s conjecture,
-Ann. Sci. ´Ec. Norm. Sup´ er.56 (2023), 383–426, arXiv:1712.04887.
+Ann. Sci. ´Ec. Norm. Sup´er. 56 (2023), 383–426, arXiv:1712.04887.
 [9] Dimofte T., Complex Chern–Simons theory at level k via the 3d-3d correspondence, Comm. Math. Phys.
 339 (2015), 619–662, arXiv:1409.0857.
 [10] Dimofte T., Perturbative and nonperturbative aspects of complex Chern–Simons theory, J. Phys. A 50
 (2017), 443009, 25 pages, arXiv:1608.02961.
 [11] Dimofte T., Gaiotto D., Gukov S., 3-manifolds and 3d indices, Adv. Theor. Math. Phys. 17 (2013), 975–1076,
 arXiv:1112.5179.
-38 S. Garoufalidis and D. Zagier
+38
+S. Garoufalidis and D. Zagier
 [12] Dimofte T., Gaiotto D., Gukov S., Gauge theories labelled by three-manifolds, Comm. Math. Phys. 325
 (2014), 367–419, arXiv:1108.4389.
 [13] Dimofte T., Garoufalidis S., The quantum content of the gluing equations, Geom. Topol. 17 (2013), 1253–
@@ -49,11 +50,11 @@ arXiv:hep-th/9504111.
 [20] Garoufalidis S., The 3D index of an ideal triangulation and angle structures (with an appendix by Sander
 Zwegers), Ramanujan J. 40 (2016), 573–604, arXiv:1208.1663.
 [21] Garoufalidis S., Quantum knot invariants, Res. Math. Sci. 5 (2018), 11, 17 pages, arXiv:1201.3314.
-[22] Garoufalidis S., Gu J., Mari˜ no M., The resurgent structure of quantum knot invariants,Comm. Math. Phys.
+[22] Garoufalidis S., Gu J., Mari˜no M., The resurgent structure of quantum knot invariants, Comm. Math. Phys.
 386 (2021), 469–493, arXiv:2007.10190.
-[23] Garoufalidis S., Gu J., Mari˜ no M., Peacock patterns and resurgence in complex Chern–Simons theory, Res.
+[23] Garoufalidis S., Gu J., Mari˜no M., Peacock patterns and resurgence in complex Chern–Simons theory, Res.
 Math. Sci. 10 (2023), 29, 67 pages, arXiv:2012.00062.
-[24] Garoufalidis S., Gu J., Mari˜ no M., Wheeler C., Resurgence of Chern–Simons theory at the trivial flat
+[24] Garoufalidis S., Gu J., Mari˜no M., Wheeler C., Resurgence of Chern–Simons theory at the trivial flat
 connection, arXiv:2111.04763.
 [25] Garoufalidis S., Hodgson C.D., Rubinstein J.H., Segerman H., 1-efficient triangulations and the index of
 a cusped hyperbolic 3-manifold, Geom. Topol. 19 (2015), 2619–2689, arXiv:1303.5278.
@@ -64,7 +65,10 @@ arXiv:1304.2705.
 [28] Garoufalidis S., Kashaev R., Zagier D., A modular quantum dilogarithm and invariants of 3-manifolds, in
 preparation.
 [29] Garoufalidis S., Wheeler C., Modular q-holonomic modules, arXiv:2203.17029.
-[30] Garoufalidis S., Wheeler C., Periods, the meromorphic 3D-index and the Turaev–Viro invariant,
+[30] Garoufalidis S.,
+Wheeler C.,
+Periods,
+the meromorphic 3D-index and the Turaev–Viro invariant,
 arXiv:2209.02843.
 [31] Garoufalidis S., Zagier D., Asymptotics of Nahm sums at roots of unity, Ramanujan J. 55 (2021), 219–238,
 arXiv:1812.07690.
@@ -74,16 +78,17 @@ arXiv:1812.07690.
 Izv. Math. 80 (2016), 24–49.
 [35] Gukov S., Manolescu C., A two-variable series for knot complements, Quantum Topol. 12 (2021), 1–109,
 arXiv:1904.06057.
-[36] Gukov S., Mari˜ no M., Putrov P., Resurgence in complex Chern–Simons theory, arXiv:1605.07615.
+[36] Gukov S., Mari˜no M., Putrov P., Resurgence in complex Chern–Simons theory, arXiv:1605.07615.
 [37] Gukov S., Pei D., Putrov P., Vafa C., BPS spectra and 3-manifold invariants, J. Knot Theory Ramifications
 29 (2020), 2040003, 85 pages, arXiv:1701.06567.
 [38] Hikami K., Hyperbolic structure arising from a knot invariant, Internat. J. Modern Phys. A 16 (2001),
 3309–3333, arXiv:math-ph/0105039.
 [39] Jones V.F.R., Hecke algebra representations of braid groups and link polynomials, Ann. of Math. 126 (1987),
 335–388.
-Knots and Their Related q-Series 39
+Knots and Their Related q-Series
+39
 [40] Kashaev R., Luo F., Vartanov G., A TQFT of Turaev–Viro type on shaped triangulations, Ann. Henri
-Poincar´ e17 (2016), 1109–1143, arXiv:1210.8393.
+Poincar´e 17 (2016), 1109–1143, arXiv:1210.8393.
 [41] Kashaev R.M., A link invariant from quantum dilogarithm, Modern Phys. Lett. A 10 (1995), 1409–1418,
 arXiv:q-alg/9504020.
 [42] Kashaev R.M., Mangazeev V.V., Stroganov Yu.G., Star-square and tetrahedron equations in the Baxter–

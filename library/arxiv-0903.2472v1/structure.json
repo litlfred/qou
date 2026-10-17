@@ -1027,13 +1027,25 @@
    "level": 1,
    "page_start": 1,
    "page_end": 10,
-   "n_chars": 23922,
-   "n_words": 4000,
+   "n_chars": 23343,
+   "n_words": 3912,
    "label_start": null,
    "label_end": "9"
   },
   {
-   "id": "sec-000-21-feynman-diagrams-and-arithmetic-tqft",
+   "id": "sec-000-2-perturbation-theory-around-a-non-trivial-flat",
+   "number": "2",
+   "title": "Perturbation theory around a non-trivial flat connection",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 519,
+   "n_words": 80,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-001-21-feynman-diagrams-and-arithmetic-tqft",
    "number": "2.1",
    "title": "Feynman diagrams and arithmetic TQFT",
    "level": 2,
@@ -1045,19 +1057,31 @@
    "label_end": "17"
   },
   {
-   "id": "sec-001-221-analytic-continuation",
+   "id": "sec-002-221-analytic-continuation",
    "number": "2.2.1",
    "title": "Analytic continuation",
    "level": 3,
    "page_start": 18,
-   "page_end": 23,
-   "n_chars": 11121,
-   "n_words": 2119,
+   "page_end": 20,
+   "n_chars": 4249,
+   "n_words": 768,
    "label_start": "17",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-003-222-a-hierarchy-of-differential-equations",
+   "number": "2.2.2",
+   "title": "A hierarchy of differential equations",
+   "level": 3,
+   "page_start": 20,
+   "page_end": 23,
+   "n_chars": 6828,
+   "n_words": 1345,
+   "label_start": "19",
    "label_end": "22"
   },
   {
-   "id": "sec-002-23-classical-and-quantum-symmetries",
+   "id": "sec-004-23-classical-and-quantum-symmetries",
    "number": "2.3",
    "title": "Classical and quantum symmetries",
    "level": 2,
@@ -1069,7 +1093,7 @@
    "label_end": "24"
   },
   {
-   "id": "sec-003-24-brane-quantization",
+   "id": "sec-005-24-brane-quantization",
    "number": "2.4",
    "title": "Brane quantization",
    "level": 2,
@@ -1081,7 +1105,7 @@
    "label_end": "26"
   },
   {
-   "id": "sec-004-31-ideal-triangulations-of-hyperbolic-3-manifold",
+   "id": "sec-006-31-ideal-triangulations-of-hyperbolic-3-manifold",
    "number": "3.1",
    "title": "Ideal triangulations of hyperbolic 3-manifolds",
    "level": 2,
@@ -1093,7 +1117,7 @@
    "label_end": "32"
   },
   {
-   "id": "sec-005-33-quantum-dilogarithm",
+   "id": "sec-007-33-quantum-dilogarithm",
    "number": "3.3",
    "title": "Quantum dilogarithm",
    "level": 2,
@@ -1105,19 +1129,31 @@
    "label_end": "42"
   },
   {
-   "id": "sec-006-4-examples-and-computations",
+   "id": "sec-008-4-examples-and-computations",
    "number": "4",
    "title": "Examples and computations",
    "level": 1,
    "page_start": 43,
-   "page_end": 51,
-   "n_chars": 16520,
-   "n_words": 3140,
+   "page_end": 44,
+   "n_chars": 2792,
+   "n_words": 484,
    "label_start": "42",
+   "label_end": "43"
+  },
+  {
+   "id": "sec-009-41-numerical-verification-of-the-arithmeticity-c",
+   "number": "4.1",
+   "title": "Numerical verification of the arithmeticity conjecture",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 51,
+   "n_chars": 13669,
+   "n_words": 2649,
+   "label_start": "43",
    "label_end": "50"
   },
   {
-   "id": "sec-007-421-quantization",
+   "id": "sec-010-421-quantization",
    "number": "4.2.1",
    "title": "Quantization",
    "level": 3,
@@ -1129,7 +1165,7 @@
    "label_end": "51"
   },
   {
-   "id": "sec-008-geometric-branch",
+   "id": "sec-011-geometric-branch",
    "number": null,
    "title": "Geometric branch",
    "level": 3,
@@ -1141,7 +1177,7 @@
    "label_end": "53"
   },
   {
-   "id": "sec-009-conjugate-branch",
+   "id": "sec-012-conjugate-branch",
    "number": null,
    "title": "Conjugate branch",
    "level": 3,
@@ -1153,7 +1189,7 @@
    "label_end": "53"
   },
   {
-   "id": "sec-010-abelian-branch",
+   "id": "sec-013-abelian-branch",
    "number": null,
    "title": "Abelian branch",
    "level": 3,
@@ -1165,7 +1201,7 @@
    "label_end": "53"
   },
   {
-   "id": "sec-011-422-state-integral-model",
+   "id": "sec-014-422-state-integral-model",
    "number": "4.2.2",
    "title": "State integral model",
    "level": 3,
@@ -1213,13 +1249,13 @@
     ]
    }
   },
-  "sections": 13,
-  "chars_total": 148247,
+  "sections": 16,
+  "chars_total": 148084,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "statesum.tex",
    "tex_sections": 21,
-   "overlaid": 11,
+   "overlaid": 14,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1232,7 +1268,15 @@
      "result": "no matching \\section"
     },
     {
-     "id": "sec-000-21-feynman-diagrams-and-arithmetic-tqft",
+     "id": "sec-000-2-perturbation-theory-around-a-non-trivial-flat",
+     "title": "Perturbation theory around a non-trivial flat connection",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-21-feynman-diagrams-and-arithmetic-tqft",
      "title": "Feynman diagrams and arithmetic TQFT",
      "prose_ratio": 0.944,
      "coverage_ratio": 0.998,
@@ -1240,15 +1284,23 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-221-analytic-continuation",
+     "id": "sec-002-221-analytic-continuation",
      "title": "Analytic continuation",
-     "prose_ratio": 0.922,
-     "coverage_ratio": 0.987,
+     "prose_ratio": 0.934,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-23-classical-and-quantum-symmetries",
+     "id": "sec-003-222-a-hierarchy-of-differential-equations",
+     "title": "A hierarchy of differential equations",
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-23-classical-and-quantum-symmetries",
      "title": "Classical and quantum symmetries",
      "prose_ratio": 0.942,
      "coverage_ratio": 0.989,
@@ -1256,7 +1308,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-24-brane-quantization",
+     "id": "sec-005-24-brane-quantization",
      "title": "Brane quantization",
      "prose_ratio": 0.932,
      "coverage_ratio": 0.969,
@@ -1264,7 +1316,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-31-ideal-triangulations-of-hyperbolic-3-manifold",
+     "id": "sec-006-31-ideal-triangulations-of-hyperbolic-3-manifold",
      "title": "Ideal triangulations of hyperbolic 3-manifolds",
      "prose_ratio": 0.858,
      "coverage_ratio": 0.978,
@@ -1272,7 +1324,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-33-quantum-dilogarithm",
+     "id": "sec-007-33-quantum-dilogarithm",
      "title": "Quantum dilogarithm",
      "prose_ratio": 0.943,
      "coverage_ratio": 0.91,
@@ -1280,15 +1332,23 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-4-examples-and-computations",
+     "id": "sec-008-4-examples-and-computations",
      "title": "Examples and computations",
-     "prose_ratio": 0.918,
-     "coverage_ratio": 0.994,
+     "prose_ratio": 0.952,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-421-quantization",
+     "id": "sec-009-41-numerical-verification-of-the-arithmeticity-c",
+     "title": "Numerical verification of the arithmeticity conjecture",
+     "prose_ratio": 0.917,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-421-quantization",
      "title": "Quantization",
      "prose_ratio": 0.915,
      "coverage_ratio": 0.993,
@@ -1296,7 +1356,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-geometric-branch",
+     "id": "sec-011-geometric-branch",
      "title": "Geometric branch",
      "prose_ratio": 0.922,
      "coverage_ratio": 0.946,
@@ -1304,7 +1364,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-conjugate-branch",
+     "id": "sec-012-conjugate-branch",
      "title": "Conjugate branch",
      "prose_ratio": 0.944,
      "coverage_ratio": 0.971,
@@ -1312,13 +1372,13 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-abelian-branch",
+     "id": "sec-013-abelian-branch",
      "title": "Abelian branch",
      "prose_ratio": 0.141,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-011-422-state-integral-model",
+     "id": "sec-014-422-state-integral-model",
      "title": "State integral model",
      "prose_ratio": 0.952,
      "coverage_ratio": 0.509,

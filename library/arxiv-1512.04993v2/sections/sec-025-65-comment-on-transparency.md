@@ -7,10 +7,10 @@ section_number: 6.5
 pages: 42-47
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
-doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.914
-latex_coverage_ratio: 0.991
+latex_coverage_ratio: 0.998
 ---
 Finally, let us comment on the transition in complexity growth that occurs at $|t_w| - t_* = t_R$. This transition is precisely the transparent and opaque horizons of \cite{opacity}. From \eqref{eq:one-shock-complexity-strong-shock} we see that there is a period during which the complexity decreases on the right side,
 \be

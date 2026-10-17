@@ -7,10 +7,11 @@
   "bytes": 273662,
   "pages": 17,
   "text_source": "embedded",
-  "math_source": "latex",
+  "extractor": "pymupdf",
   "mtime": null,
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,18 +21,26 @@
    "stamp_date": "18 Oct 2022"
   },
   "doi": null,
-  "title": "A NEW PRESENTATION OF THE osp(1|2)-POL YNOMIAL LINK INVARIANT",
+  "title": "A NEW PRESENTATION OF THE osp(1|2)-POLYNOMIAL LINK INVARIANT",
   "authors_raw": "AND CATEGORIFICATION",
   "title_lines": [
-   "A NEW PRESENTATION OF THE osp(1|2)-POL YNOMIAL LINK INVARIANT"
+   "A NEW PRESENTATION OF THE osp(1|2)-POLYNOMIAL LINK INVARIANT"
   ],
-  "abstract": "There is a known connection between the osp(1|2n) polynomial knot invariant J n K and the so(2n + 1) knot invariant soJ n K studied by Clark [ 10] and Blumen [ 4]. In the rank one case, the uncolored Uq(osp(1|2)) link invariant is equal to the Ut\u22121q(sl2) link invariant where t2 = \u2212 1. W e de\ufb01ne a skein relation similar to the Kau\ufb00man bracket, and use that to recover an oriented link invariant which coincides with Clark\u2019s uncolored osp(1|2)-link invariant. This de\ufb01nition also comes from the representation theory of Uq,\u03c0 (sl2), but using di\ufb00erent methods from Clark. W e show that our invariant is easily categori\ufb01ed by a slightly modi\ufb01ed ve rsion of Khovanov homology equipped with an extra /CI 4-grading. W e also construct a similarly modi\ufb01ed version of P utyra\u2019s covering Khovanov homology [ 28]. This suggests that the similarity between the two invaria nts holds at the categori\ufb01ed level as well.",
+  "abstract": "There is a known connection between the osp(1|2n) polynomial knot invariant Jn K and the so(2n + 1) knot invariant soJn K studied by Clark [10] and Blumen [4]. In the rank one case, the uncolored Uq(osp(1|2)) link invariant is equal to the Ut\u22121q(sl2) link invariant where t2 = \u22121. We de\ufb01ne a skein relation similar to the Kau\ufb00man bracket, and use that to recover an oriented link invariant which coincides with Clark\u2019s uncolored osp(1|2)-link invariant. This de\ufb01nition also comes from the representation theory of Uq,\u03c0(sl2), but using di\ufb00erent methods from Clark. We show that our invariant is easily categori\ufb01ed by a slightly modi\ufb01ed version of Khovanov homology equipped with an extra Z4-grading. We also construct a similarly modi\ufb01ed version of Putyra\u2019s covering Khovanov homology [28]. This suggests that the similarity between the two invariants holds at the categori\ufb01ed level as well.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20221018202339-04'00'",
    "Creator": "LaTeX with hyperref",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20221018202339-04'00'"
+  },
+  "title_raw": "A NEW PRESENTATION OF THE osp(1|2)-POLYNOMIAL LINK INVARIANT",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "A NEW PRESENTATION OF THE osp (1 | 2) -POLYNOMIAL LINK INVARIANT AND CATEGORIFICATION 1. Introduction The Reshetikhin-Turaev invariants are a family of link-invariants constructed from the representation theory of quantum groups [ 29 ]. Examples of such invariants include the HOMFLY-PT polynomial an",
+   "outline": "1. Introduction",
+   "text": "A NEW PRESENTATION OF THE osp(1|2)-POLYNOMIAL LINK INVARIANT",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -40,123 +49,309 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Results",
    "page": 2,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Acknowledgements",
    "page": 2,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "osp(1|2) braid invariant",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Explanation using representation theory",
    "page": 6,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Parameters",
    "page": 6,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Quantum covering group",
    "page": 7,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Uq,-modules",
    "page": 7,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Clark's osp(1|2) invariant",
    "page": 8,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Representation theoretic definiton of J\"0362J",
    "page": 9,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Two Categorifications",
    "page": 12,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Normal Khovanov Homology",
    "page": 13,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "e-graded Khovanov Homology",
    "page": 13,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "R1",
    "page": 14,
    "source": "outline",
-   "number": "4.2.1"
+   "number": "4.2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Categorification of J\"0362J",
    "page": 15,
    "source": "outline",
-   "number": "4.2.2"
+   "number": "4.2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "e-graded Covering Khovanov Homology",
    "page": 15,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1036,
+   "n_words": 160,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -164,8 +359,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 493,
-   "n_words": 72
+   "n_chars": 488,
+   "n_words": 67,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-11-results",
@@ -174,8 +371,10 @@
    "level": 2,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 4299,
-   "n_words": 735
+   "n_chars": 4229,
+   "n_words": 676,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-12-acknowledgements",
@@ -184,8 +383,10 @@
    "level": 2,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 337,
-   "n_words": 48
+   "n_chars": 332,
+   "n_words": 44,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-2-osp12-braid-invariant",
@@ -194,8 +395,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 6,
-   "n_chars": 7503,
-   "n_words": 1523
+   "n_chars": 7397,
+   "n_words": 1448,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-3-explanation-using-representation-theory",
@@ -204,8 +407,10 @@
    "level": 1,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 202,
-   "n_words": 33
+   "n_chars": 200,
+   "n_words": 31,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-32-quantum-covering-group",
@@ -214,8 +419,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 276,
-   "n_words": 42
+   "n_chars": 274,
+   "n_words": 40,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-31-parameters",
@@ -224,8 +431,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 12,
-   "n_chars": 10489,
-   "n_words": 2602
+   "n_chars": 10080,
+   "n_words": 2217,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-007-4-two-categorifications",
@@ -234,8 +443,10 @@
    "level": 1,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 2852,
-   "n_words": 521
+   "n_chars": 2765,
+   "n_words": 470,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-008-41-normal-khovanov-homology",
@@ -244,8 +455,10 @@
    "level": 2,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 1243,
-   "n_words": 246
+   "n_chars": 1230,
+   "n_words": 235,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-009-42-e-graded-khovanov-homology",
@@ -254,8 +467,10 @@
    "level": 2,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 2435,
-   "n_words": 528
+   "n_chars": 2357,
+   "n_words": 480,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-010-421-r1",
@@ -264,8 +479,10 @@
    "level": 3,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 1371,
-   "n_words": 301
+   "n_chars": 1331,
+   "n_words": 268,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-011-43-e-graded-covering-khovanov-homology",
@@ -274,8 +491,10 @@
    "level": 2,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 3225,
-   "n_words": 653
+   "n_chars": 3128,
+   "n_words": 591,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-012-references",
@@ -284,16 +503,25 @@
    "level": 1,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 4889,
-   "n_words": 709
+   "n_chars": 4826,
+   "n_words": 646,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 17,
-  "sections": 13,
-  "chars_total": 39614,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 14,
+  "chars_total": 39673,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "osp-link-invariant-and-categorifications.tex",
@@ -306,6 +534,11 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.202,
@@ -315,7 +548,7 @@
      "id": "sec-001-11-results",
      "title": "Results",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.275,
+     "coverage_ratio": 0.259,
      "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
@@ -352,7 +585,7 @@
      "id": "sec-007-4-two-categorifications",
      "title": "Two Categorifications",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.97,
+     "coverage_ratio": 0.962,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -376,7 +609,7 @@
      "id": "sec-010-421-r1",
      "title": "R1",
      "prose_ratio": 0.942,
-     "coverage_ratio": 0.833,
+     "coverage_ratio": 0.831,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -384,7 +617,7 @@
      "id": "sec-011-43-e-graded-covering-khovanov-homology",
      "title": "e-graded Covering Khovanov Homology",
      "prose_ratio": 0.992,
-     "coverage_ratio": 0.971,
+     "coverage_ratio": 0.962,
      "result": "overlaid",
      "converter": "latex"
     },

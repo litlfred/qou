@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1203.2182v1/blocks/prose-sec-008",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Recursion relations for homological knot invariants",
-  "pageStart": 32,
-  "pageEnd": 32,
-  "text": "../sections/sec-008-32-recursion-relations-for-homological-knot-inva.md",
+  "title": "The gamma factors for symmetric and anti-symmetric representations",
+  "pageStart": 19,
+  "pageEnd": 21,
+  "text": "../sections/sec-008-the-gamma-factors-for-symmetric-and-anti-symmetr.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1203.2182v1/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1203.2182v1/manifest.jsonld",
   "provenance": "ingested"

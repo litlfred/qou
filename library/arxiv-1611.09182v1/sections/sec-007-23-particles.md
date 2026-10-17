@@ -7,7 +7,7 @@ section_number: 2.3
 pages: 13-13
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-doc_brief: "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction"
+toc_source: outline
 ---
 them?
 Similar in spirit is an earlier spaceless graph model, proposed by Kribs and Markopoulou
@@ -23,11 +23,12 @@ did so by proposing to replace localized regions of space with quantum subsystem
 [58], an idea which was later developed in 2007 by Piazza and Costa, [60]. In 2010, Van
 Raamsdonk, [61], proposed building up space-time with quantum entanglement using gauge
 theory/gravity duality. More recently in 2014, Wieland proposed a model of simplicial
-gravity, constructed from spinors, [67]. In the same year, W. Edwards described non-
+gravity, constructed from spinors, [67].
+In the same year, W. Edwards described non-
 embeddable relational conﬁgurations, [29]. Also related to these concepts are works by
 Kempf in 2013, [45], and Saravani, Aslanbeigi, and Kempf in 2015, [52], which discuss how
 space-time curvature can be encoded in the vacuum entanglement structure of ﬁelds.
-In 2013, Cortˆ es and Smolin published work on Energetic Causal Sets, [24], [25], which
+In 2013, Cortˆes and Smolin published work on Energetic Causal Sets, [24], [25], which
 describes a spaceless causal set, constructed out of particles at the fundamental level.
 This basic concept overlaps signiﬁcantly with [32]: ideas of L. Smolin’s PhD student at
 the time (the present author). The notes, [32], were written up for L. Smolin in 2011

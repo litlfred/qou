@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1108.5365v2
-doc_title: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R)"
+doc_title: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL +"
 section_id: sec-002-21-mellin-transform
 section_title: "Mellin transform"
 section_number: 2.1
 pages: 8-13
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
-doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R) — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.985
-latex_coverage_ratio: 0.878
+latex_coverage_ratio: 0.925
 ---
 \label{sec:Pre:Mellin}
 In this subsection, let us recall the Mellin transform of a function and its properties. 

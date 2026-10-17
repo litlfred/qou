@@ -1,1 +1,1 @@
-If L⊂M is a Lagrangian sphere, equipped with the non-trivial Spin
+The map QH∗(M) →HF ∗(L, L) takes c1(M) 7→m0(L) · 1L.

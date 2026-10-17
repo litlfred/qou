@@ -1,0 +1,44 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0807.2679v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "69ef10f8e70fc6f6fded518e9653f2f222f5a42cea4d29eee37d20dc92db0d66",
+  "file": "0807.2679v1.pdf"
+ },
+ "provenance": {
+  "title": "A cabling formula for the colored Jones polynomial",
+  "authors": "Roland van der Veen",
+  "arxiv": {
+   "id": "0807.2679",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "17 Jul 2008"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "remark": 1
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "ably this formula is also valid for $p=1$. In this case the non-negative $w$ run through all partitions and both $w$ and $-(w+1)$ contribute to the same term $J_{M_1,\\hdots,M_{i-1},|2w+1|,\\hdots,M_c}(L)$, thus producing the coefficients found in [\\[P1geval\\]](#P1geval){reference-type=\"eqref\" reference=\"P1geval\"}.",
+   "section_file": "sections/sec-001-proof-of-the-cabling-formula.md",
+   "section_title": "Proof of the cabling formula",
+   "pages": "4-12",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

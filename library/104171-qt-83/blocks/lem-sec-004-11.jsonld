@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/0.1.0/ns#"
+    }
+  ],
+  "@id": "library/104171-qt-83/blocks/lem-sec-004-11",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 36,
+  "pageEnd": 62,
+  "text": "lem-sec-004-11.md",
+  "derivedFrom": "library/104171-qt-83/sections/sec-004",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-qt-83/manifest.jsonld",
+  "provenance": "ingested"
+}

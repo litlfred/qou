@@ -3495,8 +3495,8 @@
    "level": 2,
    "page_start": 11,
    "page_end": 13,
-   "n_chars": 3333,
-   "n_words": 555,
+   "n_chars": 3330,
+   "n_words": 554,
    "label_start": null,
    "label_end": null
   },
@@ -3507,8 +3507,8 @@
    "level": 1,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 702,
-   "n_words": 112,
+   "n_chars": 752,
+   "n_words": 118,
    "label_start": null,
    "label_end": null
   },
@@ -3675,8 +3675,8 @@
    "level": 2,
    "page_start": 66,
    "page_end": 69,
-   "n_chars": 1492,
-   "n_words": 234,
+   "n_chars": 1489,
+   "n_words": 233,
    "label_start": null,
    "label_end": null
   },
@@ -3687,8 +3687,8 @@
    "level": 1,
    "page_start": 69,
    "page_end": 70,
-   "n_chars": 514,
-   "n_words": 80,
+   "n_chars": 561,
+   "n_words": 89,
    "label_start": null,
    "label_end": null
   },
@@ -3699,8 +3699,8 @@
    "level": 2,
    "page_start": 70,
    "page_end": 72,
-   "n_chars": 5185,
-   "n_words": 908,
+   "n_chars": 5182,
+   "n_words": 907,
    "label_start": null,
    "label_end": null
   },
@@ -3711,8 +3711,8 @@
    "level": 2,
    "page_start": 72,
    "page_end": 79,
-   "n_chars": 16407,
-   "n_words": 3063,
+   "n_chars": 16465,
+   "n_words": 3072,
    "label_start": null,
    "label_end": null
   },
@@ -3722,14 +3722,26 @@
    "title": "A stroll in the crystalline world.",
    "level": 1,
    "page_start": 79,
-   "page_end": 82,
-   "n_chars": 8811,
-   "n_words": 1602,
+   "page_end": 81,
+   "n_chars": 6073,
+   "n_words": 1084,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-022-84-crystals-and-connections",
+   "id": "sec-022-83-the-hodge-filtration",
+   "number": "8.3",
+   "title": "The Hodge filtration.",
+   "level": 2,
+   "page_start": 81,
+   "page_end": 82,
+   "n_chars": 2711,
+   "n_words": 514,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-023-84-crystals-and-connections",
    "number": "8.4",
    "title": "Crystals and connections.",
    "level": 2,
@@ -3741,7 +3753,7 @@
    "label_end": null
   },
   {
-   "id": "sec-023-85-interlude-analytic-spaces-associated-with-for",
+   "id": "sec-024-85-interlude-analytic-spaces-associated-with-for",
    "number": "8.5",
    "title": "Interlude : analytic spaces associated with formal schemes and tubes.",
    "level": 2,
@@ -3753,7 +3765,7 @@
    "label_end": null
   },
   {
-   "id": "sec-024-86-convergent-isocrystals",
+   "id": "sec-025-86-convergent-isocrystals",
    "number": "8.6",
    "title": "Convergent isocrystals.",
    "level": 2,
@@ -3765,7 +3777,7 @@
    "label_end": null
   },
   {
-   "id": "sec-025-92-examples",
+   "id": "sec-026-92-examples",
    "number": "9.2",
    "title": "Examples.",
    "level": 2,
@@ -3777,7 +3789,7 @@
    "label_end": null
   },
   {
-   "id": "sec-026-93-decorated-variants",
+   "id": "sec-027-93-decorated-variants",
    "number": "9.3",
    "title": "Decorated variants.",
    "level": 2,
@@ -3789,7 +3801,7 @@
    "label_end": null
   },
   {
-   "id": "sec-027-102-symmetric-domains-via-stability-theory",
+   "id": "sec-028-102-symmetric-domains-via-stability-theory",
    "number": "10.2",
    "title": "Symmetric domains via stability theory.",
    "level": 2,
@@ -3801,7 +3813,7 @@
    "label_end": null
   },
   {
-   "id": "sec-028-103-examples",
+   "id": "sec-029-103-examples",
    "number": "10.3",
    "title": "Examples.",
    "level": 2,
@@ -3813,7 +3825,7 @@
    "label_end": null
   },
   {
-   "id": "sec-029-113-examples-and-formulas",
+   "id": "sec-030-113-examples-and-formulas",
    "number": "11.3",
    "title": "Examples and formulas.",
    "level": 2,
@@ -3825,7 +3837,7 @@
    "label_end": null
   },
   {
-   "id": "sec-030-111-construction",
+   "id": "sec-031-111-construction",
    "number": "11.1",
    "title": "Construction.",
    "level": 2,
@@ -3837,7 +3849,7 @@
    "label_end": null
   },
   {
-   "id": "sec-031-112-properties",
+   "id": "sec-032-112-properties",
    "number": "11.2",
    "title": "Properties.",
    "level": 2,
@@ -3849,7 +3861,7 @@
    "label_end": null
   },
   {
-   "id": "sec-032-122-the-uniformization-theorem",
+   "id": "sec-033-122-the-uniformization-theorem",
    "number": "12.2",
    "title": "The uniformization theorem.",
    "level": 2,
@@ -3861,19 +3873,31 @@
    "label_end": null
   },
   {
-   "id": "sec-033-123-global-uniformization",
+   "id": "sec-034-123-global-uniformization",
    "number": "12.3",
    "title": "Global uniformization",
    "level": 2,
    "page_start": 103,
-   "page_end": 113,
-   "n_chars": 24970,
-   "n_words": 4650,
+   "page_end": 103,
+   "n_chars": 1566,
+   "n_words": 271,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-034-127-conclusion",
+   "id": "sec-035-124-example-the-cerednik-drinfeld-uniformization",
+   "number": "12.4",
+   "title": "Example: the Cerednik-Drinfeld uniformization of Shimura curves at a critical prime.",
+   "level": 2,
+   "page_start": 103,
+   "page_end": 113,
+   "n_chars": 23340,
+   "n_words": 4372,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-036-127-conclusion",
    "number": "12.7",
    "title": "Conclusion.",
    "level": 2,
@@ -3885,7 +3909,7 @@
    "label_end": null
   },
   {
-   "id": "sec-035-131-more-on-the-topological-fundamental-group",
+   "id": "sec-037-131-more-on-the-topological-fundamental-group",
    "number": "13.1",
    "title": "More on the topological fundamental group.",
    "level": 2,
@@ -3897,7 +3921,7 @@
    "label_end": null
   },
   {
-   "id": "sec-036-134-the-formalism-of-fundamental-groups",
+   "id": "sec-038-134-the-formalism-of-fundamental-groups",
    "number": "13.4",
    "title": "The formalism of fundamental groups.",
    "level": 2,
@@ -3909,31 +3933,31 @@
    "label_end": null
   },
   {
-   "id": "sec-037-14-temperate-fundamental-groups",
+   "id": "sec-039-14-temperate-fundamental-groups",
    "number": "14",
    "title": "Temperate fundamental groups.",
    "level": 1,
    "page_start": 130,
    "page_end": 137,
-   "n_chars": 17761,
-   "n_words": 3209,
+   "n_chars": 17757,
+   "n_words": 3208,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-038-142-interlude-tangential-base-points",
+   "id": "sec-040-142-interlude-tangential-base-points",
    "number": "14.2",
    "title": "Interlude: tangential base-points.",
    "level": 2,
    "page_start": 137,
    "page_end": 139,
-   "n_chars": 5149,
-   "n_words": 1007,
+   "n_chars": 5189,
+   "n_words": 1011,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-039-143-description-of-some-temperate-fundamental-gr",
+   "id": "sec-041-143-description-of-some-temperate-fundamental-gr",
    "number": "14.3",
    "title": "Description of some temperate fundamental groups.",
    "level": 2,
@@ -3945,7 +3969,7 @@
    "label_end": null
   },
   {
-   "id": "sec-040-151-introduction",
+   "id": "sec-042-151-introduction",
    "number": "15.1",
    "title": "Introduction.",
    "level": 2,
@@ -3957,7 +3981,7 @@
    "label_end": null
   },
   {
-   "id": "sec-041-154-a-non-archimedean-riemann-hilbert-equivalenc",
+   "id": "sec-043-154-a-non-archimedean-riemann-hilbert-equivalenc",
    "number": "15.4",
    "title": "A non-archimedean Riemann-Hilbert equivalence.",
    "level": 2,
@@ -3969,19 +3993,31 @@
    "label_end": null
   },
   {
-   "id": "sec-042-155-examples-and-applications",
+   "id": "sec-044-155-examples-and-applications",
    "number": "15.5",
    "title": "Examples and applications.",
    "level": 2,
    "page_start": 156,
    "page_end": 162,
-   "n_chars": 14870,
-   "n_words": 2574,
+   "n_chars": 14605,
+   "n_words": 2541,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-043-161-review-of-complex-orbifolds",
+   "id": "sec-045-16-non-archimedean-orbifolds-uniformizing-differ",
+   "number": "16",
+   "title": "Non-archimedean orbifolds, uniformizing differential equations and period mappings.",
+   "level": 1,
+   "page_start": 162,
+   "page_end": 162,
+   "n_chars": 209,
+   "n_words": 28,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-046-161-review-of-complex-orbifolds",
    "number": "16.1",
    "title": "Review of complex orbifolds.",
    "level": 2,
@@ -3993,19 +4029,31 @@
    "label_end": null
   },
   {
-   "id": "sec-044-162-orbifold-fundamental-groups",
+   "id": "sec-047-162-orbifold-fundamental-groups",
    "number": "16.2",
    "title": "Orbifold fundamental groups.",
    "level": 2,
    "page_start": 165,
-   "page_end": 167,
-   "n_chars": 4033,
-   "n_words": 774,
+   "page_end": 166,
+   "n_chars": 2175,
+   "n_words": 413,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-045-164-non-archimedean-orbifolds",
+   "id": "sec-048-163-uniformizing-differential-equations",
+   "number": "16.3",
+   "title": "Uniformizing differential equations.",
+   "level": 2,
+   "page_start": 166,
+   "page_end": 167,
+   "n_chars": 1816,
+   "n_words": 357,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-049-164-non-archimedean-orbifolds",
    "number": "16.4",
    "title": "Non-archimedean orbifolds.",
    "level": 2,
@@ -4017,7 +4065,7 @@
    "label_end": null
   },
   {
-   "id": "sec-046-165-non-archimedean-orbifold-fundamental-groups",
+   "id": "sec-050-165-non-archimedean-orbifold-fundamental-groups",
    "number": "16.5",
    "title": "Non-archimedean orbifold fundamental groups.",
    "level": 2,
@@ -4029,7 +4077,7 @@
    "label_end": null
   },
   {
-   "id": "sec-047-171-review-of-schwarz-triangle-groups",
+   "id": "sec-051-171-review-of-schwarz-triangle-groups",
    "number": "17.1",
    "title": "Review of Schwarz triangle groups.",
    "level": 2,
@@ -4041,7 +4089,7 @@
    "label_end": null
   },
   {
-   "id": "sec-048-173-mumford-schwarz-orbifolds",
+   "id": "sec-052-173-mumford-schwarz-orbifolds",
    "number": "17.3",
    "title": "Mumford-Schwarz orbifolds.",
    "level": 2,
@@ -4053,7 +4101,7 @@
    "label_end": null
   },
   {
-   "id": "sec-049-174-arithmetic-triangle-groups-review-of-takeuch",
+   "id": "sec-053-174-arithmetic-triangle-groups-review-of-takeuch",
    "number": "17.4",
    "title": "Arithmetic triangle groups. Review of Takeuchi's list.",
    "level": 2,
@@ -4065,7 +4113,7 @@
    "label_end": null
   },
   {
-   "id": "sec-050-176-on-special-values-of-hypergeometric-function",
+   "id": "sec-054-176-on-special-values-of-hypergeometric-function",
    "number": "17.6",
    "title": "On special values of hypergeometric functions attached to arithmetic $p$-adic triangle groups.",
    "level": 2,
@@ -4077,7 +4125,7 @@
    "label_end": null
   },
   {
-   "id": "sec-051-183-triadic-uniformization",
+   "id": "sec-055-183-triadic-uniformization",
    "number": "18.3",
    "title": "Triadic uniformization.",
    "level": 2,
@@ -4089,7 +4137,7 @@
    "label_end": null
   },
   {
-   "id": "sec-052-a-introduction",
+   "id": "sec-056-a-introduction",
    "number": "A",
    "title": "Introduction.",
    "level": 1,
@@ -4101,7 +4149,7 @@
    "label_end": null
   },
   {
-   "id": "sec-053-b-rigid-analytic-spaces",
+   "id": "sec-057-b-rigid-analytic-spaces",
    "number": "B",
    "title": "Rigid analytic spaces.",
    "level": 1,
@@ -4113,7 +4161,7 @@
    "label_end": null
   },
   {
-   "id": "sec-054-c-relation-with-formal-geometry",
+   "id": "sec-058-c-relation-with-formal-geometry",
    "number": "C",
    "title": "Relation with Formal Geometry.",
    "level": 1,
@@ -4125,7 +4173,7 @@
    "label_end": null
   },
   {
-   "id": "sec-055-d-topology-of-rigid-analytic-space",
+   "id": "sec-059-d-topology-of-rigid-analytic-space",
    "number": "D",
    "title": "Topology of Rigid Analytic Space.",
    "level": 1,
@@ -4137,7 +4185,7 @@
    "label_end": null
   },
   {
-   "id": "sec-056-f-bruhat-tits-building",
+   "id": "sec-060-f-bruhat-tits-building",
    "number": "F",
    "title": "Bruhat-Tits building.",
    "level": 1,
@@ -4149,38 +4197,50 @@
    "label_end": null
   },
   {
-   "id": "sec-057-g-drinfeld-symmetric-space",
+   "id": "sec-061-g-drinfeld-symmetric-space",
    "number": "G",
    "title": "Drinfeld symmetric space.",
    "level": 1,
    "page_start": 225,
    "page_end": 230,
-   "n_chars": 10172,
-   "n_words": 2002,
+   "n_chars": 10168,
+   "n_words": 2001,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-058-h-uniformization",
+   "id": "sec-062-h-uniformization",
    "number": "H",
    "title": "Uniformization.",
    "level": 1,
    "page_start": 230,
    "page_end": 231,
-   "n_chars": 2444,
-   "n_words": 476,
+   "n_chars": 2492,
+   "n_words": 483,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-059-i-examples",
+   "id": "sec-063-i-examples",
    "number": "I",
    "title": "Examples.",
    "level": 1,
    "page_start": 231,
+   "page_end": 235,
+   "n_chars": 8799,
+   "n_words": 1623,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-064-k-weakly-admissible-filtered-isocrystals",
+   "number": "K",
+   "title": "Weakly admissible filtered isocrystals.",
+   "level": 1,
+   "page_start": 235,
    "page_end": 256,
-   "n_chars": 47597,
-   "n_words": 7890,
+   "n_chars": 38755,
+   "n_words": 6262,
    "label_start": null,
    "label_end": null
   }
@@ -4191,7 +4251,7 @@
   "toc_entries": 120,
   "toc_inferred_entries": 120,
   "toc_inferred_mean_confidence": 0.996,
-  "toc_inferred_empty_share": 0.017,
+  "toc_inferred_empty_share": 0.015,
   "toc_inferred_method": "latex",
   "figure_entries": 4,
   "figure_sequence_gaps": [
@@ -4201,13 +4261,13 @@
    "count": 0,
    "items": []
   },
-  "sections": 61,
-  "chars_total": 548235,
+  "sections": 66,
+  "chars_total": 548229,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
    "tex_sections": 106,
-   "overlaid": 48,
+   "overlaid": 52,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -4390,13 +4450,21 @@
     {
      "id": "sec-021-8-a-stroll-in-the-crystalline-world",
      "title": "A stroll in the crystalline world.",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.97,
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.96,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-022-84-crystals-and-connections",
+     "id": "sec-022-83-the-hodge-filtration",
+     "title": "The Hodge filtration.",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-023-84-crystals-and-connections",
      "title": "Crystals and connections.",
      "prose_ratio": 0.974,
      "coverage_ratio": 0.975,
@@ -4404,7 +4472,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-023-85-interlude-analytic-spaces-associated-with-for",
+     "id": "sec-024-85-interlude-analytic-spaces-associated-with-for",
      "title": "Interlude : analytic spaces associated with formal schemes and tubes.",
      "prose_ratio": 0.981,
      "coverage_ratio": 0.936,
@@ -4412,7 +4480,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-024-86-convergent-isocrystals",
+     "id": "sec-025-86-convergent-isocrystals",
      "title": "Convergent isocrystals.",
      "prose_ratio": 0.826,
      "coverage_ratio": 0.956,
@@ -4420,7 +4488,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-025-92-examples",
+     "id": "sec-026-92-examples",
      "title": "Examples.",
      "prose_ratio": 0.977,
      "coverage_ratio": 0.653,
@@ -4428,7 +4496,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-026-93-decorated-variants",
+     "id": "sec-027-93-decorated-variants",
      "title": "Decorated variants.",
      "prose_ratio": 0.978,
      "coverage_ratio": 0.979,
@@ -4436,25 +4504,25 @@
      "converter": "latex"
     },
     {
-     "id": "sec-027-102-symmetric-domains-via-stability-theory",
+     "id": "sec-028-102-symmetric-domains-via-stability-theory",
      "title": "Symmetric domains via stability theory.",
      "prose_ratio": 0.436,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-028-103-examples",
+     "id": "sec-029-103-examples",
      "title": "Examples.",
      "prose_ratio": 0.231,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-029-113-examples-and-formulas",
+     "id": "sec-030-113-examples-and-formulas",
      "title": "Examples and formulas.",
      "prose_ratio": 0.0,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-030-111-construction",
+     "id": "sec-031-111-construction",
      "title": "Construction.",
      "prose_ratio": 0.966,
      "coverage_ratio": 0.966,
@@ -4462,14 +4530,14 @@
      "converter": "latex"
     },
     {
-     "id": "sec-031-112-properties",
+     "id": "sec-032-112-properties",
      "title": "Properties.",
      "prose_ratio": 0.984,
      "coverage_ratio": 0.284,
      "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-032-122-the-uniformization-theorem",
+     "id": "sec-033-122-the-uniformization-theorem",
      "title": "The uniformization theorem.",
      "prose_ratio": 0.991,
      "coverage_ratio": 0.952,
@@ -4477,15 +4545,23 @@
      "converter": "latex"
     },
     {
-     "id": "sec-033-123-global-uniformization",
+     "id": "sec-034-123-global-uniformization",
      "title": "Global uniformization",
-     "prose_ratio": 0.977,
-     "coverage_ratio": 0.982,
+     "prose_ratio": 0.971,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-034-127-conclusion",
+     "id": "sec-035-124-example-the-cerednik-drinfeld-uniformization",
+     "title": "Example: the Cerednik-Drinfeld uniformization of Shimura curves at a critical prime.",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-036-127-conclusion",
      "title": "Conclusion.",
      "prose_ratio": 0.98,
      "coverage_ratio": 0.939,
@@ -4493,7 +4569,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-035-131-more-on-the-topological-fundamental-group",
+     "id": "sec-037-131-more-on-the-topological-fundamental-group",
      "title": "More on the topological fundamental group.",
      "prose_ratio": 0.978,
      "coverage_ratio": 0.979,
@@ -4501,7 +4577,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-036-134-the-formalism-of-fundamental-groups",
+     "id": "sec-038-134-the-formalism-of-fundamental-groups",
      "title": "The formalism of fundamental groups.",
      "prose_ratio": 0.983,
      "coverage_ratio": 0.979,
@@ -4509,7 +4585,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-037-14-temperate-fundamental-groups",
+     "id": "sec-039-14-temperate-fundamental-groups",
      "title": "Temperate fundamental groups.",
      "prose_ratio": 0.968,
      "coverage_ratio": 0.978,
@@ -4517,15 +4593,15 @@
      "converter": "latex"
     },
     {
-     "id": "sec-038-142-interlude-tangential-base-points",
+     "id": "sec-040-142-interlude-tangential-base-points",
      "title": "Interlude: tangential base-points.",
      "prose_ratio": 0.995,
-     "coverage_ratio": 0.973,
+     "coverage_ratio": 0.969,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-039-143-description-of-some-temperate-fundamental-gr",
+     "id": "sec-041-143-description-of-some-temperate-fundamental-gr",
      "title": "Description of some temperate fundamental groups.",
      "prose_ratio": 0.967,
      "coverage_ratio": 0.984,
@@ -4533,7 +4609,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-040-151-introduction",
+     "id": "sec-042-151-introduction",
      "title": "Introduction.",
      "prose_ratio": 0.976,
      "coverage_ratio": 0.988,
@@ -4541,7 +4617,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-041-154-a-non-archimedean-riemann-hilbert-equivalenc",
+     "id": "sec-043-154-a-non-archimedean-riemann-hilbert-equivalenc",
      "title": "A non-archimedean Riemann-Hilbert equivalence.",
      "prose_ratio": 0.963,
      "coverage_ratio": 0.98,
@@ -4549,7 +4625,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-042-155-examples-and-applications",
+     "id": "sec-044-155-examples-and-applications",
      "title": "Examples and applications.",
      "prose_ratio": 0.98,
      "coverage_ratio": 0.961,
@@ -4557,7 +4633,15 @@
      "converter": "latex"
     },
     {
-     "id": "sec-043-161-review-of-complex-orbifolds",
+     "id": "sec-045-16-non-archimedean-orbifolds-uniformizing-differ",
+     "title": "Non-archimedean orbifolds, uniformizing differential equations and period mappings.",
+     "prose_ratio": 0.895,
+     "coverage_ratio": 0.842,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-046-161-review-of-complex-orbifolds",
      "title": "Review of complex orbifolds.",
      "prose_ratio": 0.993,
      "coverage_ratio": 0.993,
@@ -4565,15 +4649,23 @@
      "converter": "latex"
     },
     {
-     "id": "sec-044-162-orbifold-fundamental-groups",
+     "id": "sec-047-162-orbifold-fundamental-groups",
      "title": "Orbifold fundamental groups.",
-     "prose_ratio": 0.75,
-     "coverage_ratio": 0.988,
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-045-164-non-archimedean-orbifolds",
+     "id": "sec-048-163-uniformizing-differential-equations",
+     "title": "Uniformizing differential equations.",
+     "prose_ratio": 0.601,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-049-164-non-archimedean-orbifolds",
      "title": "Non-archimedean orbifolds.",
      "prose_ratio": 0.988,
      "coverage_ratio": 0.81,
@@ -4581,7 +4673,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-046-165-non-archimedean-orbifold-fundamental-groups",
+     "id": "sec-050-165-non-archimedean-orbifold-fundamental-groups",
      "title": "Non-archimedean orbifold fundamental groups.",
      "prose_ratio": 0.98,
      "coverage_ratio": 0.986,
@@ -4589,7 +4681,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-047-171-review-of-schwarz-triangle-groups",
+     "id": "sec-051-171-review-of-schwarz-triangle-groups",
      "title": "Review of Schwarz triangle groups.",
      "prose_ratio": 0.98,
      "coverage_ratio": 0.994,
@@ -4597,7 +4689,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-048-173-mumford-schwarz-orbifolds",
+     "id": "sec-052-173-mumford-schwarz-orbifolds",
      "title": "Mumford-Schwarz orbifolds.",
      "prose_ratio": 0.987,
      "coverage_ratio": 0.992,
@@ -4605,7 +4697,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-049-174-arithmetic-triangle-groups-review-of-takeuch",
+     "id": "sec-053-174-arithmetic-triangle-groups-review-of-takeuch",
      "title": "Arithmetic triangle groups. Review of Takeuchi's list.",
      "prose_ratio": 0.972,
      "coverage_ratio": 0.988,
@@ -4613,7 +4705,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-050-176-on-special-values-of-hypergeometric-function",
+     "id": "sec-054-176-on-special-values-of-hypergeometric-function",
      "title": "On special values of hypergeometric functions attached to arithmetic $p$-adic triangle groups.",
      "prose_ratio": 0.961,
      "coverage_ratio": 0.992,
@@ -4621,7 +4713,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-051-183-triadic-uniformization",
+     "id": "sec-055-183-triadic-uniformization",
      "title": "Triadic uniformization.",
      "prose_ratio": 0.973,
      "coverage_ratio": 0.985,
@@ -4629,47 +4721,51 @@
      "converter": "latex"
     },
     {
-     "id": "sec-052-a-introduction",
+     "id": "sec-056-a-introduction",
      "title": "Introduction.",
      "prose_ratio": 0.265,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-053-b-rigid-analytic-spaces",
+     "id": "sec-057-b-rigid-analytic-spaces",
      "title": "Rigid analytic spaces.",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-054-c-relation-with-formal-geometry",
+     "id": "sec-058-c-relation-with-formal-geometry",
      "title": "Relation with Formal Geometry.",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-055-d-topology-of-rigid-analytic-space",
+     "id": "sec-059-d-topology-of-rigid-analytic-space",
      "title": "Topology of Rigid Analytic Space.",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-056-f-bruhat-tits-building",
+     "id": "sec-060-f-bruhat-tits-building",
      "title": "Bruhat-Tits building.",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-057-g-drinfeld-symmetric-space",
+     "id": "sec-061-g-drinfeld-symmetric-space",
      "title": "Drinfeld symmetric space.",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-058-h-uniformization",
+     "id": "sec-062-h-uniformization",
      "title": "Uniformization.",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-059-i-examples",
+     "id": "sec-063-i-examples",
      "title": "Examples.",
-     "prose_ratio": 0.7,
-     "coverage_ratio": 0.1,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.477,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-064-k-weakly-admissible-filtered-isocrystals",
+     "title": "Weakly admissible filtered isocrystals.",
+     "result": "no matching \\section"
     }
    ]
   }

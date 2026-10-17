@@ -1,14 +1,15 @@
 ---
 doc_id: arxiv-0907.4143v1
-doc_title: "Soft and Supersoft X-ray Sources in Symbiotic Stars1"
+doc_title: "Soft and Supersoft X-ray Sources in Symbiotic Stars 1"
 section_id: sec-008-conclusions
 section_title: "Conclusions"
 section_number: null
 pages: 12-14
 source_pdf: 0907.4143v1.pdf
 source_sha256: a2090d1e574b27db
-doc_brief: "Soft and Supersoft X-ray Sources in Symbiotic Stars1 — Assuming that soft X-ray sources in symbiotic stars result from strong thermonu- clear runaways, and supersoft X-ray sources from weak"
+toc_source: outline
 ---
+Conclusions
 Assuming that SSs in SySs result from the violent collisions of the stellar
 winds during strong symbiotic novae, and SSSs from weak symbiotic novae or
 steady hydrogen burning SySs, we investigate the Galactic population of SSs

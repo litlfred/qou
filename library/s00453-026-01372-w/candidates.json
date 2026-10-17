@@ -1,0 +1,198 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "s00453-026-01372-w",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "98b569eff84fb4893f38795b1c75a726a05d418f31ee2115852f3314572e0680",
+  "file": "s00453-026-01372-w.pdf"
+ },
+ "provenance": {
+  "title": "Concentration of Submodular Functions and Read-k Families Under Negative Dependence",
+  "authors": null,
+  "arxiv": null,
+  "doi": "10.1007/s00453-026-01372-w"
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 13,
+  "by_kind": {
+   "theorem": 3,
+   "lemma": 2,
+   "corollary": 5,
+   "proposition": 3
+  },
+  "formalization_candidates": 13
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.1",
+   "name": null,
+   "statement": "Let X1, . . . , Xn be binary random variables with mean x1, . . . , xn satis-",
+   "section_file": "sections/sec-002-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.1",
+   "name": null,
+   "statement": "Let X1, . . . , Xn be 1-negatively associated random variables and let",
+   "section_file": "sections/sec-008-32-proof-of-submodular-concentration.md",
+   "section_title": "Proof of Submodular Concentration",
+   "pages": "7-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "3.2",
+   "name": null,
+   "statement": "Let X1, . . . , Xn be 1-negatively associated random variables and let",
+   "section_file": "sections/sec-008-32-proof-of-submodular-concentration.md",
+   "section_title": "Proof of Submodular Concentration",
+   "pages": "7-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.3",
+   "name": null,
+   "statement": "Let X1, . . . , Xn be binary random variables with mean x1, . . . , xn satis-",
+   "section_file": "sections/sec-008-32-proof-of-submodular-concentration.md",
+   "section_title": "Proof of Submodular Concentration",
+   "pages": "7-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.4",
+   "name": null,
+   "statement": "Let X1, . . . , Xm be 1-negatively associated random variables and let",
+   "section_file": "sections/sec-009-33-concentration-of-read-k-families.md",
+   "section_title": "Concentration of read-k families",
+   "pages": "10-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "3.5",
+   "name": null,
+   "statement": "Let X1, . . . , Xm be 1-negatively associated random variables. Suppose",
+   "section_file": "sections/sec-009-33-concentration-of-read-k-families.md",
+   "section_title": "Concentration of read-k families",
+   "pages": "10-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "claim",
+   "number": null,
+   "name": null,
+   "statement": "A.1 If a collection of random variables X1, . . . , Xn satis\ufb01es weak negative",
+   "section_file": "sections/sec-010-acknowledgements.md",
+   "section_title": "Acknowledgements",
+   "pages": "12-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "claim",
+   "number": null,
+   "name": null,
+   "statement": "A.2 If a collection of binary random variables X1, . . . , Xn satis\ufb01es 1-negative",
+   "section_file": "sections/sec-010-acknowledgements.md",
+   "section_title": "Acknowledgements",
+   "pages": "12-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "claim",
+   "number": null,
+   "name": null,
+   "statement": "A.3 There exists (non-binary) distributions over 2 random variables which sat-",
+   "section_file": "sections/sec-010-acknowledgements.md",
+   "section_title": "Acknowledgements",
+   "pages": "12-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": null,
+   "name": null,
+   "statement": "A.4 1-negative association is a strictly weaker condition than negative asso-",
+   "section_file": "sections/sec-010-acknowledgements.md",
+   "section_title": "Acknowledgements",
+   "pages": "12-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": null,
+   "name": null,
+   "statement": "A.5 1-negative association is a strictly weaker condition than negative",
+   "section_file": "sections/sec-010-acknowledgements.md",
+   "section_title": "Acknowledgements",
+   "pages": "12-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": null,
+   "name": null,
+   "statement": "A.6 1-negative association is a strictly stronger condition than negative",
+   "section_file": "sections/sec-010-acknowledgements.md",
+   "section_title": "Acknowledgements",
+   "pages": "12-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "B.1 For an arbitrary read-k family F1, . . . , Fn, we have",
+   "section_file": "sections/sec-010-acknowledgements.md",
+   "section_title": "Acknowledgements",
+   "pages": "12-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

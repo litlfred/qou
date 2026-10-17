@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1012.5432v4
-doc_title: "Towards topological quantum computation? Knotting and fusing flux tubes"
+doc_title: "quant-ph Towards Topological Quantum Computation? -"
 section_id: sec-003-1-three-dimensions
 section_title: "Three Dimensions"
 section_number: 1
 pages: 13-14
 source_pdf: 1012.5432v4.pdf
 source_sha256: ec5f6da1f813649e
-doc_brief: "Towards topological quantum computation? Knotting and fusing flux tubes — 19 sections: A Hamiltonian; Instantons; Dirac Monopoles"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0

@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2306.13098v2
-doc_title: "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions"
+doc_title: "Three generations of colored fermions with S 3 family symmetry from Cayley-Dickson sedenions"
 section_id: sec-004-octonion-subalgebras-inside-the-sedenions
 section_title: "Octonion subalgebras inside the sedenions"
 section_number: null
 pages: 6-8
 source_pdf: 2306.13098v2.pdf
 source_sha256: edeb214d587bfca4
-doc_brief: "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU (3)C color symmetry based on the"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.989
-latex_coverage_ratio: 0.968
+latex_coverage_ratio: 0.973
 ---
 Let us now use $\{e_0,e_1,...,e_{n^2-1}\}$ to denote an orthonormal basis for $\mathbb{A}_n$, so that $$\begin{aligned}
     \mathbb{A}_1=\mathbb{C}&:& \{e_0,e_1\},\quad\textrm{where}\quad e_1=i,\\

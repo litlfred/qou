@@ -7,10 +7,10 @@ section_number: null
 pages: 6-9
 source_pdf: 2211.13362v2.pdf
 source_sha256: 3becbeaa1135d2e1
-doc_brief: "Double-slit experiment revisited — The double-slit experiment is one of the quintessential quantum experiments."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.931
-latex_coverage_ratio: 0.61
+latex_coverage_ratio: 0.613
 ---
 <figure id="bohmianplots">
 <figure id="fig:triple_hist">

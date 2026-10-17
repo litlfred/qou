@@ -7,6 +7,6 @@ section_number: null
 pages: 42-42
 source_pdf: qt2pf5d0mn.pdf
 source_sha256: 4c8581c3b46398e3
-doc_brief: "UC Santa Barbara — 18 sections: Abstract; Introduction; Higher Categories"
+toc_source: outline
 ---
 In this chapter, we introduce the key construction of the 4-manifold invariants out of a

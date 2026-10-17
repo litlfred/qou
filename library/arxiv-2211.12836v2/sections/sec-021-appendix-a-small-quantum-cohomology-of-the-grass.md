@@ -1,0 +1,12 @@
+---
+doc_id: arxiv-2211.12836v2
+doc_title: "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY"
+section_id: sec-021-appendix-a-small-quantum-cohomology-of-the-grass
+section_title: "Appendix A. Small quantum cohomology of the Grassmannian"
+section_number: null
+pages: 60-60
+source_pdf: 2211.12836v2.pdf
+source_sha256: 4ffbb8b21f8b175d
+toc_source: outline
+---
+We recall here some basic facts about the small quantum cohomology of the Grassmannian.

@@ -1,0 +1,136 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2210.09583v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "38fc6fa465a06a7bc25954bfd34baccc888bd93a4e20522c26eae7d1c04af841",
+  "file": "2210.09583v1.pdf"
+ },
+ "provenance": {
+  "title": "A NEW PRESENTATION OF THE osp(1|2)-POLYNOMIAL LINK INVARIANT",
+  "authors": "AND CATEGORIFICATION",
+  "arxiv": {
+   "id": "2210.09583",
+   "version": "1",
+   "primary_class": "math.QA",
+   "stamp_date": "18 Oct 2022"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 8,
+  "by_kind": {
+   "theorem": 6,
+   "remark": 2
+  },
+  "formalization_candidates": 6
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.1",
+   "name": null,
+   "statement": "[10, Theorem 4.24] Let K be any oriented knot, and let ospJ\u03bb",
+   "section_file": "sections/sec-001-11-results.md",
+   "section_title": "Results",
+   "pages": "1-2",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.5",
+   "name": null,
+   "statement": "The second relation of (2.1) follows from the \ufb01rst and vice versa since the braid group",
+   "section_file": "sections/sec-003-2-osp12-braid-invariant.md",
+   "section_title": "osp(1|2) braid invariant",
+   "pages": "3-6",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.6",
+   "name": null,
+   "statement": "The \ufb01rst relation of (2.3) clearly implies second relation, and it does hold in the repre-",
+   "section_file": "sections/sec-003-2-osp12-braid-invariant.md",
+   "section_title": "osp(1|2) braid invariant",
+   "pages": "3-6",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2.13",
+   "name": null,
+   "statement": "bJ is an invariant of oriented links.",
+   "section_file": "sections/sec-003-2-osp12-braid-invariant.md",
+   "section_title": "osp(1|2) braid invariant",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.6",
+   "name": null,
+   "statement": "[10, Theorem 3.8, Corollary 3.9] There is a covariant functor J from the category",
+   "section_file": "sections/sec-006-31-parameters.md",
+   "section_title": "Parameters",
+   "pages": "6-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.8",
+   "name": null,
+   "statement": "n is a odd weight Uq,\u03c0-module homomorphism.",
+   "section_file": "sections/sec-006-31-parameters.md",
+   "section_title": "Parameters",
+   "pages": "6-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.10",
+   "name": null,
+   "statement": "u is a an odd weight Uq,\u03c0-module homomorphism.",
+   "section_file": "sections/sec-006-31-parameters.md",
+   "section_title": "Parameters",
+   "pages": "6-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.12",
+   "name": null,
+   "statement": "\u03c1q,\u03c4 : Bn \u2192T Ln(d) de\ufb01nes a Bn-representation inside T Ln(d), namely a group",
+   "section_file": "sections/sec-006-31-parameters.md",
+   "section_title": "Parameters",
+   "pages": "6-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

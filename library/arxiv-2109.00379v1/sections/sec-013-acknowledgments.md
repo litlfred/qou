@@ -7,7 +7,7 @@ section_number: null
 pages: 22-22
 source_pdf: 2109.00379v1.pdf
 source_sha256: f0c9bd89312a761c
-doc_brief: "TWISTED NEUMANN–ZAGIER MATRICES — The Neumann–Zagier matrices of an ideal triangulation are integer matrices with symplectic properties whose entries encode the number of tetrahedra that wind around"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.731
 latex_coverage_ratio: 1.0

@@ -1,0 +1,99 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1103.2082v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "0ac5371486b38eacaac17f08516448531d3d7ec6c40e8e235428e781cde5eeac",
+  "file": "1103.2082v1.pdf"
+ },
+ "provenance": {
+  "title": "MODIFIED TRACES ON DELIGNE\u2019S CATEGORY Rep(St)",
+  "authors": "JONATHAN COMES AND JONATHAN R. KUJAWA",
+  "arxiv": {
+   "id": "1103.2082",
+   "version": "1",
+   "primary_class": "math.RT",
+   "stamp_date": "10 Mar 2011"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "conjecture": 1,
+   "proposition": 1,
+   "remark": 2,
+   "theorem": 1
+  },
+  "formalization_candidates": 2
+ },
+ "candidates": [
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": null,
+   "name": null,
+   "statement": "See [GPM10, GKT10] and references therein.",
+   "section_file": "sections/sec-002-12.md",
+   "section_title": "1.2.",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "6.1",
+   "name": null,
+   "statement": "Let q \u2208F\\{0}. Then there is a faithful functor",
+   "section_file": "sections/sec-020-61.md",
+   "section_title": "6.1.",
+   "pages": "14-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "6.2",
+   "name": null,
+   "statement": "It is straightforward to verify that F is a tensor functor (i.e. F(X \u2297Y ) =",
+   "section_file": "sections/sec-020-61.md",
+   "section_title": "6.1.",
+   "pages": "14-16",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "6.3",
+   "name": null,
+   "statement": "Let V be an object of grRep(St)q such that F(V ) admits an ambidextrous",
+   "section_file": "sections/sec-020-61.md",
+   "section_title": "6.1.",
+   "pages": "14-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "6.4",
+   "name": null,
+   "statement": "Fix a nonnegative integer n and \ufb01x a, b \u2208Z\u22650 such that a + b = n. Let",
+   "section_file": "sections/sec-020-61.md",
+   "section_title": "6.1.",
+   "pages": "14-16",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

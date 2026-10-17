@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2211.08164v2
-doc_title: "INFINITELY MANY RIEMANN SURF ACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS"
+doc_title: "INFINITELY MANY RIEMANN SURFACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS"
 section_id: sec-006-the-jacobian-variety
 section_title: "The Jacobian variety"
 section_number: null
 pages: 7-7
 source_pdf: 2211.08164v2.pdf
 source_sha256: aff9ff3ef5ac28be
-doc_brief: "INFINITELY MANY RIEMANN SURFACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS — In this short note, we prove the existence of inﬁnitely many pairwise non-isomorphic, non-hyperelliptic Riemann"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.894
 latex_coverage_ratio: 1.0

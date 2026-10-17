@@ -7,10 +7,10 @@ section_number: 4.2
 pages: 65-67
 source_pdf: 1508.05448v1.pdf
 source_sha256: 57d2c717d8ec74d0
-doc_brief: "Concentration of Measure Techniques and Applications — 23 sections: Biographical Sketch; Acknowledgments; Abstract"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.968
+latex_prose_ratio: 0.99
+latex_coverage_ratio: 0.972
 ---
 []{#sec:Expected label="sec:Expected"}
 

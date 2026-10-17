@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1603.06017v2/blocks/prose-sec-031",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "reg",
+  "title": "Matrices with eval and def",
   "pageStart": 29,
-  "pageEnd": 32,
-  "text": "../sections/sec-031-75-reg.md",
+  "pageEnd": 29,
+  "text": "../sections/sec-031-74-matrices-with-eval-and-def.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1603.06017v2/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1603.06017v2/manifest.jsonld",
   "provenance": "ingested"

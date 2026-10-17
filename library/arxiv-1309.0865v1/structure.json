@@ -1514,8 +1514,8 @@
    "level": 3,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 722,
-   "n_words": 117,
+   "n_chars": 720,
+   "n_words": 116,
    "label_start": "6",
    "label_end": "7"
   },
@@ -1526,8 +1526,8 @@
    "level": 3,
    "page_start": 7,
    "page_end": 11,
-   "n_chars": 7996,
-   "n_words": 1360,
+   "n_chars": 8080,
+   "n_words": 1373,
    "label_start": "7",
    "label_end": "11"
   },
@@ -1573,14 +1573,26 @@
    "title": "Acknowledgements",
    "level": 2,
    "page_start": 13,
+   "page_end": 13,
+   "n_chars": 372,
+   "n_words": 57,
+   "label_start": "13",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-011-21-basic-definitions",
+   "number": "2.1",
+   "title": "Basic definitions",
+   "level": 2,
+   "page_start": 13,
    "page_end": 14,
-   "n_chars": 3004,
-   "n_words": 624,
+   "n_chars": 2553,
+   "n_words": 551,
    "label_start": "13",
    "label_end": "14"
   },
   {
-   "id": "sec-011-22-the-kazhdan-lusztig-basis",
+   "id": "sec-012-22-the-kazhdan-lusztig-basis",
    "number": "2.2",
    "title": "The Kazhdan-Lusztig basis",
    "level": 2,
@@ -1592,7 +1604,7 @@
    "label_end": "15"
   },
   {
-   "id": "sec-012-23-the-presentation-in-the-kazhdan-lusztig-gener",
+   "id": "sec-013-23-the-presentation-in-the-kazhdan-lusztig-gener",
    "number": "2.3",
    "title": "The presentation in the Kazhdan-Lusztig generators",
    "level": 2,
@@ -1604,7 +1616,7 @@
    "label_end": "16"
   },
   {
-   "id": "sec-013-24-the-standard-trace-and-the-defect-formula",
+   "id": "sec-014-24-the-standard-trace-and-the-defect-formula",
    "number": "2.4",
    "title": "The standard trace and the defect formula",
    "level": 2,
@@ -1616,7 +1628,7 @@
    "label_end": "18"
   },
   {
-   "id": "sec-014-3-soergel-bimodules",
+   "id": "sec-015-3-soergel-bimodules",
    "number": "3",
    "title": "Soergel Bimodules",
    "level": 1,
@@ -1628,7 +1640,7 @@
    "label_end": "18"
   },
   {
-   "id": "sec-015-31-realizations-of-coxeter-systems",
+   "id": "sec-016-31-realizations-of-coxeter-systems",
    "number": "3.1",
    "title": "Realizations of Coxeter systems",
    "level": 2,
@@ -1640,7 +1652,7 @@
    "label_end": "21"
   },
   {
-   "id": "sec-016-32-technicalities",
+   "id": "sec-017-32-technicalities",
    "number": "3.2",
    "title": "Technicalities",
    "level": 2,
@@ -1652,7 +1664,7 @@
    "label_end": "23"
   },
   {
-   "id": "sec-017-33-demazure-operators",
+   "id": "sec-018-33-demazure-operators",
    "number": "3.3",
    "title": "Demazure operators",
    "level": 2,
@@ -1664,19 +1676,31 @@
    "label_end": "24"
   },
   {
-   "id": "sec-018-34-soergel-bimodules-and-standard-bimodules",
+   "id": "sec-019-34-soergel-bimodules-and-standard-bimodules",
    "number": "3.4",
    "title": "Soergel bimodules and standard bimodules",
    "level": 2,
    "page_start": 24,
-   "page_end": 29,
-   "n_chars": 14230,
-   "n_words": 2480,
+   "page_end": 27,
+   "n_chars": 8836,
+   "n_words": 1541,
    "label_start": "24",
+   "label_end": "27"
+  },
+  {
+   "id": "sec-020-35-categorification",
+   "number": "3.5",
+   "title": "Categorification",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 29,
+   "n_chars": 5311,
+   "n_words": 927,
+   "label_start": "27",
    "label_end": "29"
   },
   {
-   "id": "sec-019-36-localization",
+   "id": "sec-021-36-localization",
    "number": "3.6",
    "title": "Localization",
    "level": 2,
@@ -1688,19 +1712,31 @@
    "label_end": "31"
   },
   {
-   "id": "sec-020-4-diagrammatics-for-standard-bimodules",
+   "id": "sec-022-4-diagrammatics-for-standard-bimodules",
    "number": "4",
    "title": "Diagrammatics for Standard Bimodules",
    "level": 1,
    "page_start": 31,
+   "page_end": 31,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "31",
+   "label_end": "31"
+  },
+  {
+   "id": "sec-023-41-diagrammatic-definition",
+   "number": "4.1",
+   "title": "Diagrammatic definition",
+   "level": 2,
+   "page_start": 31,
    "page_end": 34,
-   "n_chars": 6903,
-   "n_words": 1254,
+   "n_chars": 6822,
+   "n_words": 1242,
    "label_start": "31",
    "label_end": "34"
   },
   {
-   "id": "sec-021-42-rex-moves-and-rex-graphs",
+   "id": "sec-024-42-rex-moves-and-rex-graphs",
    "number": "4.2",
    "title": "Rex moves and rex graphs",
    "level": 2,
@@ -1712,7 +1748,7 @@
    "label_end": "37"
   },
   {
-   "id": "sec-022-5-diagrammatics-for-soergel-bimodules",
+   "id": "sec-025-5-diagrammatics-for-soergel-bimodules",
    "number": "5",
    "title": "Diagrammatics for Soergel Bimodules",
    "level": 1,
@@ -1724,7 +1760,7 @@
    "label_end": "37"
   },
   {
-   "id": "sec-023-51-generators-and-relations",
+   "id": "sec-026-51-generators-and-relations",
    "number": "5.1",
    "title": "Generators and relations",
    "level": 2,
@@ -1736,7 +1772,7 @@
    "label_end": "42"
   },
   {
-   "id": "sec-024-52-jones-wenzl-morphisms",
+   "id": "sec-027-52-jones-wenzl-morphisms",
    "number": "5.2",
    "title": "Jones-Wenzl morphisms",
    "level": 2,
@@ -1748,7 +1784,7 @@
    "label_end": "45"
   },
   {
-   "id": "sec-025-53-the-functor-to-bimodules",
+   "id": "sec-028-53-the-functor-to-bimodules",
    "number": "5.3",
    "title": "The functor to bimodules",
    "level": 2,
@@ -1760,7 +1796,7 @@
    "label_end": "46"
   },
   {
-   "id": "sec-026-54-localization",
+   "id": "sec-029-54-localization",
    "number": "5.4",
    "title": "Localization",
    "level": 2,
@@ -1772,7 +1808,7 @@
    "label_end": "53"
   },
   {
-   "id": "sec-027-55-computation-using-localization",
+   "id": "sec-030-55-computation-using-localization",
    "number": "5.5",
    "title": "Computation using localization",
    "level": 2,
@@ -1784,7 +1820,7 @@
    "label_end": "55"
   },
   {
-   "id": "sec-028-56-unbalanced-realizations",
+   "id": "sec-031-56-unbalanced-realizations",
    "number": "5.6",
    "title": "Unbalanced realizations",
    "level": 2,
@@ -1796,7 +1832,7 @@
    "label_end": "57"
   },
   {
-   "id": "sec-029-61-diagrammatics-for-light-leaves",
+   "id": "sec-032-61-diagrammatics-for-light-leaves",
    "number": "6.1",
    "title": "Diagrammatics for light leaves",
    "level": 2,
@@ -1808,7 +1844,7 @@
    "label_end": "60"
   },
   {
-   "id": "sec-030-62-localizing-light-leaves",
+   "id": "sec-033-62-localizing-light-leaves",
    "number": "6.2",
    "title": "Localizing light leaves",
    "level": 2,
@@ -1820,55 +1856,55 @@
    "label_end": "62"
   },
   {
-   "id": "sec-031-63-double-leaves",
+   "id": "sec-034-63-double-leaves",
    "number": "6.3",
    "title": "Double leaves",
    "level": 2,
    "page_start": 62,
    "page_end": 64,
-   "n_chars": 4383,
-   "n_words": 815,
+   "n_chars": 4381,
+   "n_words": 814,
    "label_start": "62",
    "label_end": "64"
   },
   {
-   "id": "sec-032-64-cellularity",
+   "id": "sec-035-64-cellularity",
    "number": "6.4",
    "title": "Cellularity",
    "level": 2,
    "page_start": 64,
    "page_end": 65,
-   "n_chars": 4013,
-   "n_words": 752,
+   "n_chars": 4098,
+   "n_words": 766,
    "label_start": "64",
    "label_end": "65"
   },
   {
-   "id": "sec-033-65-the-diagrammatic-character",
+   "id": "sec-036-65-the-diagrammatic-character",
    "number": "6.5",
    "title": "The diagrammatic character",
    "level": 2,
    "page_start": 65,
    "page_end": 69,
-   "n_chars": 7456,
-   "n_words": 1378,
+   "n_chars": 7453,
+   "n_words": 1377,
    "label_start": "65",
    "label_end": "69"
   },
   {
-   "id": "sec-034-67-the-equivalence-to-bimodules",
+   "id": "sec-037-67-the-equivalence-to-bimodules",
    "number": "6.7",
    "title": "The equivalence to bimodules",
    "level": 2,
    "page_start": 69,
    "page_end": 69,
-   "n_chars": 2631,
-   "n_words": 459,
+   "n_chars": 2712,
+   "n_words": 474,
    "label_start": "69",
    "label_end": "69"
   },
   {
-   "id": "sec-035-7-double-leaves-span",
+   "id": "sec-038-7-double-leaves-span",
    "number": "7",
    "title": "Double Leaves Span",
    "level": 1,
@@ -1880,7 +1916,7 @@
    "label_end": "70"
   },
   {
-   "id": "sec-036-71-negative-positive-decompositions",
+   "id": "sec-039-71-negative-positive-decompositions",
    "number": "7.1",
    "title": "Negative-positive decompositions",
    "level": 2,
@@ -1892,7 +1928,7 @@
    "label_end": "72"
   },
   {
-   "id": "sec-037-72-modulo-lower-terms",
+   "id": "sec-040-72-modulo-lower-terms",
    "number": "7.2",
    "title": "Modulo lower terms",
    "level": 2,
@@ -1904,7 +1940,7 @@
    "label_end": "73"
   },
   {
-   "id": "sec-038-73-reduction-to-working-modulo-lower-terms",
+   "id": "sec-041-73-reduction-to-working-modulo-lower-terms",
    "number": "7.3",
    "title": "Reduction to working modulo lower terms",
    "level": 2,
@@ -1916,7 +1952,7 @@
    "label_end": "73"
   },
   {
-   "id": "sec-039-74-the-grand-induction",
+   "id": "sec-042-74-the-grand-induction",
    "number": "7.4",
    "title": "The grand induction",
    "level": 2,
@@ -1934,7 +1970,7 @@
   "toc_entries": 46,
   "toc_inferred_entries": 46,
   "toc_inferred_mean_confidence": 1.0,
-  "toc_inferred_empty_share": 0.075,
+  "toc_inferred_empty_share": 0.093,
   "toc_inferred_method": "latex",
   "figure_entries": 3,
   "figure_sequence_gaps": [],
@@ -1942,13 +1978,13 @@
    "count": 0,
    "items": []
   },
-  "sections": 41,
+  "sections": 44,
   "chars_total": 190689,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "GR4allSB.tex",
    "tex_sections": 46,
-   "overlaid": 33,
+   "overlaid": 36,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -2011,8 +2047,8 @@
     {
      "id": "sec-006-142-two-color-relations",
      "title": "Two color relations:",
-     "prose_ratio": 0.988,
-     "coverage_ratio": 0.934,
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.935,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -2033,18 +2069,27 @@
     {
      "id": "sec-009-2-the-hecke-algebra",
      "title": "The Hecke Algebra",
-     "prose_ratio": 0.092,
+     "prose_ratio": 0.333,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-010-17-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 0.871,
-     "coverage_ratio": 0.2,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.903,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-011-22-the-kazhdan-lusztig-basis",
+     "id": "sec-011-21-basic-definitions",
+     "title": "Basic definitions",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.945,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-22-the-kazhdan-lusztig-basis",
      "title": "The Kazhdan-Lusztig basis",
      "prose_ratio": 0.933,
      "coverage_ratio": 0.971,
@@ -2052,7 +2097,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-012-23-the-presentation-in-the-kazhdan-lusztig-gener",
+     "id": "sec-013-23-the-presentation-in-the-kazhdan-lusztig-gener",
      "title": "The presentation in the Kazhdan-Lusztig generators",
      "prose_ratio": 0.913,
      "coverage_ratio": 0.812,
@@ -2060,7 +2105,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-013-24-the-standard-trace-and-the-defect-formula",
+     "id": "sec-014-24-the-standard-trace-and-the-defect-formula",
      "title": "The standard trace and the defect formula",
      "prose_ratio": 0.958,
      "coverage_ratio": 0.937,
@@ -2068,13 +2113,13 @@
      "converter": "latex"
     },
     {
-     "id": "sec-014-3-soergel-bimodules",
+     "id": "sec-015-3-soergel-bimodules",
      "title": "Soergel Bimodules",
      "prose_ratio": 0.0,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-015-31-realizations-of-coxeter-systems",
+     "id": "sec-016-31-realizations-of-coxeter-systems",
      "title": "Realizations of Coxeter systems",
      "prose_ratio": 0.912,
      "coverage_ratio": 0.979,
@@ -2082,7 +2127,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-016-32-technicalities",
+     "id": "sec-017-32-technicalities",
      "title": "Technicalities",
      "prose_ratio": 0.98,
      "coverage_ratio": 0.913,
@@ -2090,7 +2135,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-017-33-demazure-operators",
+     "id": "sec-018-33-demazure-operators",
      "title": "Demazure operators",
      "prose_ratio": 0.965,
      "coverage_ratio": 0.972,
@@ -2098,15 +2143,23 @@
      "converter": "latex"
     },
     {
-     "id": "sec-018-34-soergel-bimodules-and-standard-bimodules",
+     "id": "sec-019-34-soergel-bimodules-and-standard-bimodules",
      "title": "Soergel bimodules and standard bimodules",
-     "prose_ratio": 0.97,
-     "coverage_ratio": 0.986,
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-019-36-localization",
+     "id": "sec-020-35-categorification",
+     "title": "Categorification",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-021-36-localization",
      "title": "Localization",
      "prose_ratio": 0.989,
      "coverage_ratio": 0.964,
@@ -2114,15 +2167,21 @@
      "converter": "latex"
     },
     {
-     "id": "sec-020-4-diagrammatics-for-standard-bimodules",
+     "id": "sec-022-4-diagrammatics-for-standard-bimodules",
      "title": "Diagrammatics for Standard Bimodules",
-     "prose_ratio": 0.972,
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-023-41-diagrammatic-definition",
+     "title": "Diagrammatic definition",
+     "prose_ratio": 0.965,
      "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-021-42-rex-moves-and-rex-graphs",
+     "id": "sec-024-42-rex-moves-and-rex-graphs",
      "title": "Rex moves and rex graphs",
      "prose_ratio": 0.973,
      "coverage_ratio": 0.825,
@@ -2130,13 +2189,13 @@
      "converter": "latex"
     },
     {
-     "id": "sec-022-5-diagrammatics-for-soergel-bimodules",
+     "id": "sec-025-5-diagrammatics-for-soergel-bimodules",
      "title": "Diagrammatics for Soergel Bimodules",
      "prose_ratio": 0.0,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-023-51-generators-and-relations",
+     "id": "sec-026-51-generators-and-relations",
      "title": "Generators and relations",
      "prose_ratio": 0.951,
      "coverage_ratio": 0.923,
@@ -2144,7 +2203,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-024-52-jones-wenzl-morphisms",
+     "id": "sec-027-52-jones-wenzl-morphisms",
      "title": "Jones-Wenzl morphisms",
      "prose_ratio": 0.96,
      "coverage_ratio": 0.982,
@@ -2152,19 +2211,19 @@
      "converter": "latex"
     },
     {
-     "id": "sec-025-53-the-functor-to-bimodules",
+     "id": "sec-028-53-the-functor-to-bimodules",
      "title": "The functor to bimodules",
      "prose_ratio": 0.179,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-026-54-localization",
+     "id": "sec-029-54-localization",
      "title": "Localization",
      "prose_ratio": 0.582,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-027-55-computation-using-localization",
+     "id": "sec-030-55-computation-using-localization",
      "title": "Computation using localization",
      "prose_ratio": 0.98,
      "coverage_ratio": 0.981,
@@ -2172,7 +2231,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-028-56-unbalanced-realizations",
+     "id": "sec-031-56-unbalanced-realizations",
      "title": "Unbalanced realizations",
      "prose_ratio": 0.972,
      "coverage_ratio": 0.985,
@@ -2180,7 +2239,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-029-61-diagrammatics-for-light-leaves",
+     "id": "sec-032-61-diagrammatics-for-light-leaves",
      "title": "Diagrammatics for light leaves",
      "prose_ratio": 0.952,
      "coverage_ratio": 0.972,
@@ -2188,7 +2247,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-030-62-localizing-light-leaves",
+     "id": "sec-033-62-localizing-light-leaves",
      "title": "Localizing light leaves",
      "prose_ratio": 0.966,
      "coverage_ratio": 0.976,
@@ -2196,7 +2255,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-031-63-double-leaves",
+     "id": "sec-034-63-double-leaves",
      "title": "Double leaves",
      "prose_ratio": 0.964,
      "coverage_ratio": 0.969,
@@ -2204,15 +2263,15 @@
      "converter": "latex"
     },
     {
-     "id": "sec-032-64-cellularity",
+     "id": "sec-035-64-cellularity",
      "title": "Cellularity",
-     "prose_ratio": 0.965,
-     "coverage_ratio": 0.954,
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.949,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-033-65-the-diagrammatic-character",
+     "id": "sec-036-65-the-diagrammatic-character",
      "title": "The diagrammatic character",
      "prose_ratio": 0.954,
      "coverage_ratio": 0.951,
@@ -2220,15 +2279,15 @@
      "converter": "latex"
     },
     {
-     "id": "sec-034-67-the-equivalence-to-bimodules",
+     "id": "sec-037-67-the-equivalence-to-bimodules",
      "title": "The equivalence to bimodules",
-     "prose_ratio": 0.956,
+     "prose_ratio": 0.964,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-035-7-double-leaves-span",
+     "id": "sec-038-7-double-leaves-span",
      "title": "Double Leaves Span",
      "prose_ratio": 0.95,
      "coverage_ratio": 0.864,
@@ -2236,7 +2295,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-036-71-negative-positive-decompositions",
+     "id": "sec-039-71-negative-positive-decompositions",
      "title": "Negative-positive decompositions",
      "prose_ratio": 0.952,
      "coverage_ratio": 0.984,
@@ -2244,7 +2303,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-037-72-modulo-lower-terms",
+     "id": "sec-040-72-modulo-lower-terms",
      "title": "Modulo lower terms",
      "prose_ratio": 0.983,
      "coverage_ratio": 0.989,
@@ -2252,7 +2311,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-038-73-reduction-to-working-modulo-lower-terms",
+     "id": "sec-041-73-reduction-to-working-modulo-lower-terms",
      "title": "Reduction to working modulo lower terms",
      "prose_ratio": 0.938,
      "coverage_ratio": 0.979,
@@ -2260,7 +2319,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-039-74-the-grand-induction",
+     "id": "sec-042-74-the-grand-induction",
      "title": "The grand induction",
      "prose_ratio": 0.956,
      "coverage_ratio": 0.773,

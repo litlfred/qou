@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1203.3404v1",
+  "title": "On local solutions of the Ramanujan equation and their connection formulae",
   "contains": [
+    "library/arxiv-1203.3404v1/sections/sec-front-matter",
     "library/arxiv-1203.3404v1/sections/sec-000",
     "library/arxiv-1203.3404v1/sections/sec-001",
     "library/arxiv-1203.3404v1/sections/sec-002",
@@ -18,7 +19,10 @@
     "library/arxiv-1203.3404v1/sections/sec-004",
     "library/arxiv-1203.3404v1/sections/sec-005",
     "library/arxiv-1203.3404v1/sections/sec-006",
-    "library/arxiv-1203.3404v1/sections/sec-007"
+    "library/arxiv-1203.3404v1/sections/sec-007",
+    "library/arxiv-1203.3404v1/sections/sec-008",
+    "library/arxiv-1203.3404v1/sections/sec-009",
+    "library/arxiv-1203.3404v1/sections/sec-010"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -31,7 +35,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1203.3404v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1203.3404v1.pdf",
     "source_sha256": "2318b14fb270266595726034523a964843a87d07b6f89e85a50a9a914f9fd70a",
     "pages": 19,

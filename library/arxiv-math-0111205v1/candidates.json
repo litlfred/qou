@@ -1,0 +1,58 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0111205v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "66325a21651aff89b24b08c459728ef3e03b483d9c0108d0790da3b2da7aea32",
+  "file": "0111205v1.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:math/0111205v1 [math.CT] 19 Nov 2001",
+  "authors": "Michael M\u00fcger\u2217",
+  "arxiv": {
+   "id": "math/0111205",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "19 Nov 2001"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "theorem": 1,
+   "lemma": 1
+  },
+  "formalization_candidates": 2
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{main1}. This is where subfactor theory enters the present story. Starting from",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "2-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{iii-iv} implies invertibility of $e_{\\ol{Y}}(X)$ for all $X$.",
+   "section_file": "sections/sec-006-32-elementary-properties-of-the-quantum-double.md",
+   "section_title": "Elementary properties of the quantum double",
+   "pages": "9-29",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

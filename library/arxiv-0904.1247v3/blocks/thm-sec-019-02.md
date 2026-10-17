@@ -1,1 +1,1 @@
-Suppose X is a stack with smooth diagonal, Y is a stack, and X→Y is a proper
+Let X be a stack, Y a scheme, and f : X →Y a safe morphism (for example, a

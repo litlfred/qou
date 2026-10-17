@@ -36,4 +36,3 @@ an inner product of stuﬀtypes that makes the category of stuﬀtypes
 into a categoriﬁed version of the Hilbert space of the quantized har-
 monic oscillator. We conclude by sketching how this idea gives a nice
 explanation of the combinatorics of Feynman diagrams.
-1

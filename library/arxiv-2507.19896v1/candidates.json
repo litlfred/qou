@@ -1,0 +1,97 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2507.19896v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "a3f23d5a08b397ee8c3dab8dcb02dc2f16f7f1626a377624435ce916a749e49c",
+  "file": "2507.19896v1.pdf"
+ },
+ "provenance": {
+  "title": "Generalized Markov traces and Jucys-Murphy elements",
+  "authors": "Kostiantyn Tolmachov, Heorhii Zhylinskyi",
+  "arxiv": {
+   "id": "2507.19896",
+   "version": "1",
+   "primary_class": "math.RT",
+   "stamp_date": "26 Jul 2025"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "proposition": 3,
+   "corollary": 2
+  },
+  "formalization_candidates": 5
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2.3.1",
+   "name": null,
+   "statement": "The functional \u03c4 and the pairing \u27e8, \u27e9satisfies the following prop-",
+   "section_file": "sections/sec-004-iwahori-hecke-algebras-and-multiplicative-jucys.md",
+   "section_title": "Iwahori-Hecke algebras and multiplicative Jucys-Murphy elements.",
+   "pages": "2-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "2.3.2",
+   "name": null,
+   "statement": "Let (W \u2032, S\u2032) be a parabolic subgroup of W.",
+   "section_file": "sections/sec-004-iwahori-hecke-algebras-and-multiplicative-jucys.md",
+   "section_title": "Iwahori-Hecke algebras and multiplicative Jucys-Murphy elements.",
+   "pages": "2-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2.4.1",
+   "name": null,
+   "statement": "The element S(W, S) is central in H(W, S).",
+   "section_file": "sections/sec-004-iwahori-hecke-algebras-and-multiplicative-jucys.md",
+   "section_title": "Iwahori-Hecke algebras and multiplicative Jucys-Murphy elements.",
+   "pages": "2-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2.4.2",
+   "name": null,
+   "statement": "For any h1, h2 \u2208H(W, S) we have the identity",
+   "section_file": "sections/sec-004-iwahori-hecke-algebras-and-multiplicative-jucys.md",
+   "section_title": "Iwahori-Hecke algebras and multiplicative Jucys-Murphy elements.",
+   "pages": "2-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "2.4.4",
+   "name": null,
+   "statement": "For X equal to A\u22121, B or D, elements JX",
+   "section_file": "sections/sec-004-iwahori-hecke-algebras-and-multiplicative-jucys.md",
+   "section_title": "Iwahori-Hecke algebras and multiplicative Jucys-Murphy elements.",
+   "pages": "2-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

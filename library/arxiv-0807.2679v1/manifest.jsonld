@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-0807.2679v1",
+  "title": "A cabling formula for the colored Jones polynomial",
   "contains": [
+    "library/arxiv-0807.2679v1/sections/sec-front-matter",
     "library/arxiv-0807.2679v1/sections/sec-000",
     "library/arxiv-0807.2679v1/sections/sec-001"
   ],
@@ -25,7 +26,9 @@
   },
   "meta": {
     "doc_id": "arxiv-0807.2679v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0807.2679v1.pdf",
     "source_sha256": "69ef10f8e70fc6f6fded518e9653f2f222f5a42cea4d29eee37d20dc92db0d66",
     "pages": 12,
@@ -36,8 +39,8 @@
       "stamp_date": "17 Jul 2008"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

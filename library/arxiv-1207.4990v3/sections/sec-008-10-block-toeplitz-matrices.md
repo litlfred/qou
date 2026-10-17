@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1207.4990v3
-doc_title: "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results Percy Deift"
+doc_title: "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results"
 section_id: sec-008-10-block-toeplitz-matrices
 section_title: "Block Toeplitz matrices"
 section_number: 10
 pages: 45-49
 source_pdf: 1207.4990v3.pdf
 source_sha256: 02aa065f4f65b857
-doc_brief: "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results Percy Deift — 10 sections: Setting the problem; Toeplitz meets Ising; Back to Isi"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.998
-latex_coverage_ratio: 0.996
+latex_prose_ratio: 0.989
+latex_coverage_ratio: 0.998
 ---
 We now consider block Toeplitz matrices $D_n(\varphi)$ of the form $D_n(\varphi) =
 \det\!\left(\varphi_{j-k}\right)^{n-1}_{j, k=0}$ where $\varphi_q \in M(r,\mathbb{C})$ are the Fourier coefficients of an $r\times r$-matrix-valued integrable function $\varphi\!\left(e^{i\theta}\right)$ on $S^1$. The earliest asymptotic result for such determinants is the analog of Szegő's Theorem 1 due to Gyires in 1956 [@Gy], who showed that if $\varphi(z)$ is continuous and positive definite for $|z|=1$, then $$\label{eq125}

@@ -24,4 +24,3 @@ plest possible forms. A recent generalization for a knotted loop as well as a
 suggestion concerning higher-degree forms have been also included. Non-
 perturbative applications of the non-Abelian Stokes theorem, to (semi-)to-
 pological gauge theories, have been presented.
-1

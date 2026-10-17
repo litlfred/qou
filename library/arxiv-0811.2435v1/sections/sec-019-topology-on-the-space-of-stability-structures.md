@@ -7,10 +7,10 @@ section_number: null
 pages: 56-60
 source_pdf: 0811.2435v1.pdf
 source_sha256: 615b04eca83bcade
-doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.991
-latex_coverage_ratio: 0.937
+latex_prose_ratio: 0.99
+latex_coverage_ratio: 0.995
 ---
 Let $\CC$ be an ind-constructible weakly unital $\A$-category over a field $\k$ of arbitrary characteristic. Let $\op{cl}: Ob(\CC)\to \Gamma\simeq \Z^n$ be a map of ind-constructible sets (where $\Gamma$ is considered as a countable set of points) such that the induced map $Ob(\CC)(\overline{\k})\to \Gamma$ factorizes through a group homomorphism $\op{cl}_{\overline{\k}}: K_0(\CC(\overline{\k}))\to \Gamma$. It is easy to see that for any field extension $\k^{\prime}\supset \k$ we obtain a homomorphism $\op{cl}_{\overline{\k}^{\prime}}: K_0(\CC(\overline{\k}^{\prime}))\to \Gamma$.
 
@@ -89,7 +89,5 @@ b\) There exists a neighborhood $U$ of $x_0$ such that for any $E\in \CC^{ss}_x,
 c\) For any generic closed interval $I$ of the length strictly less than $1$ the constructible set ${\cal P}(I)_{x,\gamma}$ is locally constant near $x_0$ (cf. Definition 3c)).
 
 In this way we obtain a Hausdorff topology on $Stab(\CC,\op{cl})$. We can define a parallel transport along a path $\sigma_t$ in the space $Stab(\CC,\op{cl})$ similarly to the case of stability structures in graded Lie algebras discussed in Section 2. Each time when we cross the wall of first kind we use the above property c) in order to "recalculate\" the set of semistable objects. In order to do this we use the following property: $E\in Ob(\CC_{{\Delta},\op{Log}})$ is semistable iff there is no extension $E_2\to E\to E_1$ where $E_i,i=1,2$ are non-zero objects of $\CC_{{\Delta},\op{Log}}$ such that $\op{Arg}(E_2)>\op{Arg}(E_1)$. These considerations also ensure that the Theorem 1 from Introduction holds (i.e. the natural projection of the space of stability conditions to the space of central charges is a local homeomorphism).
-
-# Motivic functions and motivic Milnor fiber
 
 [^1]: One should read expressions $Ob(\CC),{\cal P}(I)$ etc. in this list of axioms as sets of $\kk$-points.

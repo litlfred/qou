@@ -9,6 +9,7 @@ source_pdf: 0605314v1.pdf
 source_sha256: 5fb8b89b432401ea
 toc_source: inferred
 ---
+12.3.1. Derivatives and power series expansions. Like polynomials and analytic
 functions, the elements of d
 Z[q] can be diﬀerentiated arbitrarily many times.
 In

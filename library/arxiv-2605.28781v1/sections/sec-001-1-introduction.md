@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2605.28781v1
-doc_title: "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS"
+doc_title: "The sum-product conjecture is false for real numbers"
 section_id: sec-001-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-3
 source_pdf: 2605.28781v1.pdf
 source_sha256: eee6d535af1996ca
-doc_brief: "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily largeA⊂R(whose elements are algebraic integers in a number"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.976
-latex_coverage_ratio: 0.683
+latex_coverage_ratio: 0.775
 ---
 Given any finite set $A$ in some ring we define the sum set and product set of $A$ as $$A+A=\{a+b: a,b\in A\}\quad\textrm{and}\quad AA=\{ ab : a,b\in A\}.$$ The sum-product conjecture in a given ring is that at least one of these must grow near-maximally; more precisely $$\label{eq-sp}\max(\mathopen{}\left| A+A\mathclose{}\right|,\mathopen{}\left| AA\mathclose{}\right|)\geq \mathopen{}\left| A\mathclose{}\right|^{2-o(1)}$$ (where the $o(1)$ term tends $0$ as $\mathopen{}\left| A\mathclose{}\right|\to \infty$). This is often attributed to Erdős and Szemerédi, who proved the first results in this direction [@ErSz83], but it first appeared in the literature in a paper of Erdős in 1976 [@Er76] (in which he says he first made the conjecture 18 months earlier). This question makes sense over any ring (although there are obvious complications in finite rings or rings with zero divisors). Erdős [@Er76] asked this specifically for $\mathbb{Z}$, $\mathbb{R}$, and $\mathbb{C}$, although his main interest was for $A\subset \mathbb{Z}$.
 

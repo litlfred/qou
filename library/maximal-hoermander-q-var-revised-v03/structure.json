@@ -6,6 +6,8 @@
   "sha256": "135332c04a1b3bb87bf9d0a5e85260731ee08fbbe82c0a769c61292c68d0aa4e",
   "bytes": 919600,
   "pages": 43,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
   "mtime": null,
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
@@ -13,23 +15,36 @@
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "q-variational Hormander functional calculus and Schrodinger and wave maximal estimates",
+  "title": "q-variational H\u00f6rmander functional calculus and Schr\u00f6dinger and wave maximal estimates",
   "authors_raw": "The documents may come from teaching and research",
-  "abstract": null,
-  "docinfo": {
-   "Creator": "HAL",
-   "Title": "q-variational Hörmander functional calculus and Schrödinger and wave maximal estimates",
-   "Author": "Luc Deleaval, Christoph Kriegler",
-   "Producer": "PDFLaTeX",
-   "CreationDate": "D:20260803151641+02'00'"
-  },
   "title_lines": [
    "HAL Id: hal-04526930",
    "HAL is a multi-disciplinary open access archive",
    "for the deposit and dissemination of scientific re-",
    "search documents, whether they are published or not"
   ],
-  "title_prev": "HAL Id: hal-04526930 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+  "abstract": null,
+  "docinfo": {
+   "Title": "q-variational H\u00f6rmander functional calculus and Schr\u00f6dinger and wave maximal estimates",
+   "Author": "Luc Deleaval, Christoph Kriegler",
+   "Producer": "PDFLaTeX",
+   "Creator": "HAL",
+   "CreationDate": "D:20260803151641+02'00'"
+  },
+  "title_raw": "HAL Id: hal-04526930 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "q-variational H\u00f6rmander functional calculus and Schr\u00f6dinger and wave maximal estimates",
+   "heading": "q-variational H\u00f6rmander functional calculus and Schr\u00f6dinger and wave maximal estimates",
+   "outline": "Introduction",
+   "text": "HAL Id: hal-04526930 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not",
+   "corroborated_by": [
+    "heading",
+    "page"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -37,81 +52,431 @@
    "title": "Introduction",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Preliminaries",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "R-boundedness",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "UMD lattices",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Abstract Hörmander functional calculus",
+   "title": "Abstract H\u00f6rmander functional calculus",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "q-variational inequalities",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "q-variation for spherical and euclidean ball means in Rd",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "Schrödinger and wave maximal estimates",
+   "title": "Schr\u00f6dinger and wave maximal estimates",
    "page": 21,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "Pointwise continuity of time paths for abstract Schrödinger and wave equations",
+   "title": "Pointwise continuity of time paths for abstract Schr\u00f6dinger and wave equations",
    "page": 28,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Examples and concluding remarks",
    "page": 35,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Acknowledgments",
    "page": 36,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2639,
+   "n_words": 419,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -119,8 +484,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 8,
-   "n_chars": 13860,
-   "n_words": 2365
+   "n_chars": 14176,
+   "n_words": 2692,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-r-boundedness",
@@ -129,8 +496,10 @@
    "level": 2,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 1527,
-   "n_words": 245
+   "n_chars": 1555,
+   "n_words": 273,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-preliminaries",
@@ -139,18 +508,22 @@
    "level": 1,
    "page_start": 8,
    "page_end": 11,
-   "n_chars": 7313,
-   "n_words": 1250
+   "n_chars": 7506,
+   "n_words": 1509,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-abstract-hörmander-functional-calculus",
+   "id": "sec-003-abstract-h\u00f6rmander-functional-calculus",
    "number": null,
-   "title": "Abstract Hörmander functional calculus",
+   "title": "Abstract H\u00f6rmander functional calculus",
    "level": 2,
    "page_start": 11,
    "page_end": 13,
-   "n_chars": 6084,
-   "n_words": 993
+   "n_chars": 6296,
+   "n_words": 1241,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-q-variational-inequalities",
@@ -159,8 +532,10 @@
    "level": 1,
    "page_start": 13,
    "page_end": 16,
-   "n_chars": 5345,
-   "n_words": 923
+   "n_chars": 5542,
+   "n_words": 1116,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-q-variation-for-spherical-and-euclidean-ball-mea",
@@ -169,28 +544,34 @@
    "level": 1,
    "page_start": 16,
    "page_end": 21,
-   "n_chars": 10295,
-   "n_words": 1847
+   "n_chars": 10483,
+   "n_words": 2242,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-schrödinger-and-wave-maximal-estimates",
+   "id": "sec-006-schr\u00f6dinger-and-wave-maximal-estimates",
    "number": null,
-   "title": "Schrödinger and wave maximal estimates",
+   "title": "Schr\u00f6dinger and wave maximal estimates",
    "level": 1,
    "page_start": 21,
    "page_end": 28,
-   "n_chars": 13674,
-   "n_words": 2413
+   "n_chars": 13820,
+   "n_words": 2793,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-007-pointwise-continuity-of-time-paths-for-abstract",
    "number": null,
-   "title": "Pointwise continuity of time paths for abstract Schrödinger and wave equations",
+   "title": "Pointwise continuity of time paths for abstract Schr\u00f6dinger and wave equations",
    "level": 1,
    "page_start": 28,
    "page_end": 35,
-   "n_chars": 16705,
-   "n_words": 2688
+   "n_chars": 17235,
+   "n_words": 3285,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-008-examples-and-concluding-remarks",
@@ -199,8 +580,10 @@
    "level": 1,
    "page_start": 35,
    "page_end": 36,
-   "n_chars": 4984,
-   "n_words": 816
+   "n_chars": 5143,
+   "n_words": 947,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-009-acknowledgments",
@@ -209,15 +592,24 @@
    "level": 1,
    "page_start": 36,
    "page_end": 43,
-   "n_chars": 16782,
-   "n_words": 2553
+   "n_chars": 16850,
+   "n_words": 2606,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 11,
-  "sections": 10,
-  "chars_total": 96569
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 11,
+  "chars_total": 101245
  }
 }

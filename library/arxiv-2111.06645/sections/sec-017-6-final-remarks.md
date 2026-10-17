@@ -1,23 +1,25 @@
 ---
 doc_id: arxiv-2111.06645
-doc_title: ""
+doc_title: "Symmetry, Integrability and Geometry: Methods and Applications"
 section_id: sec-017-6-final-remarks
 section_title: "Final remarks"
 section_number: 6
 pages: 26-26
 source_pdf: 2304.09377v2.pdf
 source_sha256: 76ae6c6058f4a9f9
-doc_brief: "Knots and Their Related q-Series — We discuss a matrix of periodic holomorphic functions in the upper and lower half-plane which can be obtained from a factorization of an Andersen–Kashaev state"
+toc_source: outline
 ---
-In this paper, we discussed the properties of a 2 by 2 matrix Q of periodic functions on C\ R
-associated to the 4 1 knot (see equation (4.4)). On the other hand, in our companion paper [32],
-we constructed a 3 by 3 matrixQ+ of periodic functions on Q (see equation (5.5)). Wheeler [51]
-has found an extension of our 2 by 2 matrix Q (with one boring column (1 , 0, 0)t and one
+Final remarks
+In this paper, we discussed the properties of a 2 by 2 matrix Q of periodic functions on C \ R
+associated to the 41 knot (see equation (4.4)). On the other hand, in our companion paper [32],
+we constructed a 3 by 3 matrix Q+ of periodic functions on Q (see equation (5.5)). Wheeler [51]
+has found an extension of our 2 by 2 matrix Q (with one boring column (1, 0, 0)t and one
 interesting row) using the ε-deformation series (2.8).
 Another aspect of the matrix Q of q-series associated to a knot appears to be in connection
 to the resurgence, i.e., analytic continuation, of the the factorially divergent series bΦ(h) in the
-complex Borel plane. In fact the matrix Q appears to completely describe this problem of
-analytic continuation as found by the first author and Gu and Mari˜ no [22, 23]. The so-called
+complex Borel plane.
+In fact the matrix Q appears to completely describe this problem of
+analytic continuation as found by the first author and Gu and Mari˜no [22, 23]. The so-called
 Stokes constants of the analytic continuation problem are integers, multiplied by integer powers
 of ˜q = e−2πi/τ that assemble into power series with integer coefficients which are none other
 than the matrix Q(−1/τ). This approach to resurgence of asymptotic series is similar to the

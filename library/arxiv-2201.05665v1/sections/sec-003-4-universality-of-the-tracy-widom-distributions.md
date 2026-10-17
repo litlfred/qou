@@ -7,7 +7,7 @@ section_number: 4
 pages: 6-7
 source_pdf: 2201.05665v1.pdf
 source_sha256: bad7bde03d199a73
-doc_brief: "HAROLD WIDOM’S WORK IN RANDOM MATRIX THEORY — This is a survey of Harold Widom’s work in random matrices."
+toc_source: outline
 ---
 A remarkable fact is that the Tracy-Widom distribution functions Fβ(z) appear in a large
 and growing number of applications in random matrix theory as well as in areas beyond

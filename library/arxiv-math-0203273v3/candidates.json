@@ -1,0 +1,240 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0203273v3",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "824715d110e343057f8c5b8668e8870e8daf6f94342497f801d4f2e73aa6c2b1",
+  "file": "0203273v3.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:math/0203273v3 [math.CT] 12 Oct 2002",
+  "authors": "YVES ANDR\u00c9 ET BRUNO KAHN",
+  "arxiv": {
+   "id": "math/0203273",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "12 Oct 2002"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 16,
+  "by_kind": {
+   "lemma": 10,
+   "theorem": 6
+  },
+  "formalization_candidates": 16
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "C.1. Suppose that k is algebraically closed. Let M be a connected reduc-",
+   "section_file": "sections/sec-028-c1-families-of-representations.md",
+   "section_title": "Families of representations",
+   "pages": "128-138",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "C.2. Suppose that k is algebraically closed. Let M be a non-commutative",
+   "section_file": "sections/sec-028-c1-families-of-representations.md",
+   "section_title": "Families of representations",
+   "pages": "128-138",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "C.3. Suppose that k is algebraically closed. Let M be a connected reduc-",
+   "section_file": "sections/sec-028-c1-families-of-representations.md",
+   "section_title": "Families of representations",
+   "pages": "128-138",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "C.4. Suppose that k is algebraically closed, and let H be a connected",
+   "section_file": "sections/sec-028-c1-families-of-representations.md",
+   "section_title": "Families of representations",
+   "pages": "128-138",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "C.3 hold. Write A1 = Spec(k[t]), and de\ufb01ne a family (Ei",
+   "section_file": "sections/sec-028-c1-families-of-representations.md",
+   "section_title": "Families of representations",
+   "pages": "128-138",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "C.5. Let H be an af\ufb01ne k-group with prounipotent radical U of dimension",
+   "section_file": "sections/sec-028-c1-families-of-representations.md",
+   "section_title": "Families of representations",
+   "pages": "128-138",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "C.6. Let H be an af\ufb01ne k-group, let k\u2032 be an extension of k, and let V \u2032 be",
+   "section_file": "sections/sec-028-c1-families-of-representations.md",
+   "section_title": "Families of representations",
+   "pages": "128-138",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "C.1. If H is an af\ufb01ne k-group the following conditions are equivalent :",
+   "section_file": "sections/sec-028-c1-families-of-representations.md",
+   "section_title": "Families of representations",
+   "pages": "128-138",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "C.2. Let H be an af\ufb01ne k-group and let k\u2032 be an extension of k. Then",
+   "section_file": "sections/sec-028-c1-families-of-representations.md",
+   "section_title": "Families of representations",
+   "pages": "128-138",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "C.1, there is a representation V of H over A1 with an in\ufb01nite set of pair-",
+   "section_file": "sections/sec-028-c1-families-of-representations.md",
+   "section_title": "Families of representations",
+   "pages": "128-138",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "C.7. Let f : H \u2192K be a k-homomorphism from an af\ufb01ne k-group to a",
+   "section_file": "sections/sec-029-c2-application-to-proreductive-envelopes.md",
+   "section_title": "Application to proreductive envelopes",
+   "pages": "138-146",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "C.3. Let H be an af\ufb01ne k-group and let k\u2032 be an extension of k. Then the",
+   "section_file": "sections/sec-029-c2-application-to-proreductive-envelopes.md",
+   "section_title": "Application to proreductive envelopes",
+   "pages": "138-146",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "C.4. Let U be a unipotent k-group of dimension 1, equipped with an",
+   "section_file": "sections/sec-029-c2-application-to-proreductive-envelopes.md",
+   "section_title": "Application to proreductive envelopes",
+   "pages": "138-146",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "C.5, and so universal by Lemma C.7(i).",
+   "section_file": "sections/sec-029-c2-application-to-proreductive-envelopes.md",
+   "section_title": "Application to proreductive envelopes",
+   "pages": "138-146",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "C.8. If k is algebraically closed then a connected \ufb01nite dimensional reduc-",
+   "section_file": "sections/sec-029-c2-application-to-proreductive-envelopes.md",
+   "section_title": "Application to proreductive envelopes",
+   "pages": "138-146",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "C.5. The proreductive envelope of an af\ufb01ne k-group H is of \ufb01nite type",
+   "section_file": "sections/sec-029-c2-application-to-proreductive-envelopes.md",
+   "section_title": "Application to proreductive envelopes",
+   "pages": "138-146",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

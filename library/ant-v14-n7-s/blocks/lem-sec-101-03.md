@@ -1,1 +1,1 @@
-Let (E, th(−)) be an SL-oriented motivic spectrum in SH(B). Suppose given X ∈SmB of
+For X smooth and proper over B, χ(X/B) is equal to the composition

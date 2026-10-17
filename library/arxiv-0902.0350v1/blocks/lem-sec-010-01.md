@@ -1,0 +1,1 @@
+~\ref{lemma:double-edge} below gives Case (a): we cannot have two such edges $\{u_1,u_2\}$ and $\{u_1',u_2'\}$ with distinct endpoints. It follows that there is an endpoint $u_2$ shared by every edge that passes through the

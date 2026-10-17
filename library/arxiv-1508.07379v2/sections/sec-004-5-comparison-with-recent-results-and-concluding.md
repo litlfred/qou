@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1508.07379v2
-doc_title: "Convergence of Mayer and Virial expansions and the Penrose t ree-graph identity"
+doc_title: "Convergence of Mayer and Virial expansions and the Penrose tree-graph identity Introduction"
 section_id: sec-004-5-comparison-with-recent-results-and-concluding
 section_title: "Comparison with recent results and concluding remarks"
 section_number: 5
 pages: 13-15
 source_pdf: 1508.07379v2.pdf
 source_sha256: c3dbf93d1cac198e
-doc_brief: "Convergence of Mayer and Virial expansions and the Penrose t ree-graph identity — We establish new lower bounds for the convergence radius of the Ma yer series and the Virial series of a continuous"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.993
-latex_coverage_ratio: 0.597
+latex_coverage_ratio: 0.579
 ---
 As observed in Section 2, the improvement of Theorem [\[teo1\]](#teo1){reference-type="ref" reference="teo1"} respect to the old Penrose-Ruelle bound is manifestly evident, as far as general stable and tempered pair potentials are concerned. There have been however recent works [@MPS; @dLP; @dLPY] which also obtain improvements on the convergence radius of the Mayer series for systems of particles interacting via a restricted class of stable and tempered pair potentials. In particular, in a recent paper [@dLPY], which is a development of an early work by Basuev [@Ba2], the authors obtain new bounds for the Mayer series convergence radius which are better than any precedent bound given in the literature (see in [@dLPY] the new bounds of Theorem 5, formula (4.5)), as far as the particles in the system interact via a so-called Basuev potential (see Definition 3 in [@dLPY]). This is a class of potentials which includes the classical case of the Lennard-Jones type.
 

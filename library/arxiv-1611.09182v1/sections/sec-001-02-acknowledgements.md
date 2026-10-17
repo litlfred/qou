@@ -7,10 +7,10 @@ section_number: 0.2
 pages: 3-8
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-doc_brief: "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.979
+latex_coverage_ratio: 0.5
 ---
 This research was supported by NSERC, the University of Waterloo, the Templeton Foundation, and by the Perimeter Institute for Theoretical Physics.  Research at Perimeter Institute is supported by the Government of Canada through Industry Canada and by the Province of Ontario through the Ministry of Research and Innovation.
 

@@ -10,7 +10,7 @@ source_sha256: c43e413aed71aef1
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.931
-latex_coverage_ratio: 0.993
+latex_coverage_ratio: 0.979
 ---
 \label{deri}
 

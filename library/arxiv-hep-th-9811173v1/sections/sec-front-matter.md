@@ -47,4 +47,3 @@ a) CECM, Simon Fraser University, Burnaby, B.C. V5A 1S6, Canada;
 jborwein@cecm.sfu.ca; http://www.cecm.sfu.ca/ejborwein
 b) Physics Department, Open University, Milton Keynes MK7 6AA, UK;
 D.Broadhurst@open.ac.uk; http://physics.open.ac.uk/edbroadhu
-1

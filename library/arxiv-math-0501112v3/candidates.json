@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0501112v3",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "f95088789da2453ad00f1a60d147922bf270149fe5ffb01394643e0a1e60ac81",
+  "file": "0501112v3.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:math/0501112v3 [math.CO] 31 May 2005",
+  "authors": "PIOTR \u015aNIADY",
+  "arxiv": {
+   "id": "math/0501112",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "31 May 2005"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

@@ -7,10 +7,10 @@ section_number: null
 pages: 30-33
 source_pdf: 0811.2435v1.pdf
 source_sha256: 615b04eca83bcade
-doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.996
-latex_coverage_ratio: 0.973
+latex_coverage_ratio: 0.996
 ---
 Here we will interpret the parallel transport in a different way, introducing a wall of another kind. We use the notation from the previous section. In particular, we fix the quadratic form $Q_0$ and the connected component $U$ of the set $\{Z\in \op{Hom}(\Gamma,\C)|\,\, (Q_{0})_{|\op{Ker} Z}<0\}$.
 

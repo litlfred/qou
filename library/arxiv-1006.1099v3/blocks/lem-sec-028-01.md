@@ -1,1 +1,1 @@
-that for each of the individual pentagram spheres L, the Floer cohomology ring
+Under hypothesis (4.11), the correspondences ΓE and ΓR can be chosen to be

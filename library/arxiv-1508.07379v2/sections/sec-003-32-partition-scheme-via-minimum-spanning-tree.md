@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1508.07379v2
-doc_title: "Convergence of Mayer and Virial expansions and the Penrose t ree-graph identity"
+doc_title: "Convergence of Mayer and Virial expansions and the Penrose tree-graph identity Introduction"
 section_id: sec-003-32-partition-scheme-via-minimum-spanning-tree
 section_title: "Partition scheme via minimum spanning tree"
 section_number: 3.2
 pages: 8-13
 source_pdf: 1508.07379v2.pdf
 source_sha256: c3dbf93d1cac198e
-doc_brief: "Convergence of Mayer and Virial expansions and the Penrose t ree-graph identity — We establish new lower bounds for the convergence radius of the Ma yer series and the Virial series of a continuous"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.975
-latex_coverage_ratio: 0.986
+latex_coverage_ratio: 1.0
 ---
 []{#asas label="asas"}
 

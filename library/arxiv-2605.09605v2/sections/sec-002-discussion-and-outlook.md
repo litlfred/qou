@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2605.09605v2
-doc_title: "Cocycle Actions on Hidden Quantum Markov Models:"
+doc_title: "Cocycle Actions on Hidden Quantum Markov Models: Symmetry Protection and Topological Order"
 section_id: sec-002-discussion-and-outlook
 section_title: "Discussion and Outlook"
 section_number: null
 pages: 11-12
 source_pdf: 2605.09605v2.pdf
 source_sha256: 24496fb444a2b558
-doc_brief: "Cocycle Actions on Hidden Quantum Markov Models: — We develop a symmetry action framework for hidden quantum Markov models (HQMMs) tailored to one-dimensional quantum spin systems and"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.99
+latex_prose_ratio: 0.963
+latex_coverage_ratio: 0.995
 ---
 []{#Sect_Discussion label="Sect_Discussion"}
 

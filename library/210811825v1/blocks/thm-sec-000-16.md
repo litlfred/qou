@@ -1,1 +1,1 @@
-The dimension of the second eigenspace of∆(B) is 4.
+The dimension of the second eigenspace of ∆(B) is 4.

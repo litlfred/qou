@@ -612,14 +612,50 @@
    "title": "INTRODUCTION AND SUMMARY OF RESULTS",
    "level": 1,
    "page_start": 2,
-   "page_end": 9,
-   "n_chars": 9829,
-   "n_words": 1904,
+   "page_end": 4,
+   "n_chars": 3588,
+   "n_words": 661,
    "label_start": "2",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-001-12-the-system-of-partial-differential-equations",
+   "number": "1.2",
+   "title": "The System of Partial Differential Equations",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1169,
+   "n_words": 255,
+   "label_start": "4",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-002-13-the-ordinary-differential-equations",
+   "number": "1.3",
+   "title": "The Ordinary Differential Equations",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 978,
+   "n_words": 199,
+   "label_start": "5",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-003-14-asymptotics-and-the-commuting-differential-op",
+   "number": "1.4",
+   "title": "Asymptotics and the Commuting Differential Operator",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 3952,
+   "n_words": 770,
+   "label_start": "6",
    "label_end": "9"
   },
   {
-   "id": "sec-001-2-the-system-of-partial-differential-equations",
+   "id": "sec-004-2-the-system-of-partial-differential-equations",
    "number": "2",
    "title": "THE SYSTEM OF PARTIAL DIFFERENTIAL EQUATIONS",
    "level": 1,
@@ -631,7 +667,7 @@
    "label_end": "9"
   },
   {
-   "id": "sec-002-21-derivation-of-the-equations",
+   "id": "sec-005-21-derivation-of-the-equations",
    "number": "2.1",
    "title": "Derivation of the Equations",
    "level": 2,
@@ -643,7 +679,7 @@
    "label_end": "14"
   },
   {
-   "id": "sec-003-22-hamiltonian-structure",
+   "id": "sec-006-22-hamiltonian-structure",
    "number": "2.2",
    "title": "Hamiltonian Structure",
    "level": 2,
@@ -655,7 +691,7 @@
    "label_end": "16"
   },
   {
-   "id": "sec-004-3-the-ordinary-differential-equations",
+   "id": "sec-007-3-the-ordinary-differential-equations",
    "number": "3",
    "title": "THE ORDINARY DIFFERENTIAL EQUATIONS",
    "level": 1,
@@ -667,15 +703,27 @@
    "label_end": "17"
   },
   {
-   "id": "sec-005-4-asymptotics",
+   "id": "sec-008-4-asymptotics",
    "number": "4",
    "title": "ASYMPTOTICS",
    "level": 1,
    "page_start": 17,
-   "page_end": 34,
-   "n_chars": 21589,
-   "n_words": 4304,
+   "page_end": 19,
+   "n_chars": 3871,
+   "n_words": 759,
    "label_start": "17",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-009-42-asymptotics-via-the-commuting-differential-op",
+   "number": "4.2",
+   "title": "Asymptotics via the Commuting Differential Operator",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 34,
+   "n_chars": 17663,
+   "n_words": 3538,
+   "label_start": "19",
    "label_end": "34"
   }
  ],
@@ -685,7 +733,7 @@
   "toc_entries": 18,
   "toc_inferred_entries": 18,
   "toc_inferred_mean_confidence": 1.0,
-  "toc_inferred_empty_share": 0.167,
+  "toc_inferred_empty_share": 0.1,
   "toc_inferred_method": "latex",
   "figure_entries": 0,
   "figure_sequence_gaps": [],
@@ -693,13 +741,13 @@
    "count": 0,
    "items": []
   },
-  "sections": 7,
-  "chars_total": 42260,
+  "sections": 11,
+  "chars_total": 42063,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 18,
-   "overlaid": 4,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -715,18 +763,42 @@
      "id": "sec-000-1-introduction-and-summary-of-results",
      "title": "INTRODUCTION AND SUMMARY OF RESULTS",
      "prose_ratio": 0.944,
-     "coverage_ratio": 0.578,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-2-the-system-of-partial-differential-equations",
+     "id": "sec-001-12-the-system-of-partial-differential-equations",
+     "title": "The System of Partial Differential Equations",
+     "prose_ratio": 0.86,
+     "coverage_ratio": 0.881,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-13-the-ordinary-differential-equations",
+     "title": "The Ordinary Differential Equations",
+     "prose_ratio": 0.845,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-14-asymptotics-and-the-commuting-differential-op",
+     "title": "Asymptotics and the Commuting Differential Operator",
+     "prose_ratio": 0.937,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-2-the-system-of-partial-differential-equations",
      "title": "THE SYSTEM OF PARTIAL DIFFERENTIAL EQUATIONS",
      "prose_ratio": 0.0,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-002-21-derivation-of-the-equations",
+     "id": "sec-005-21-derivation-of-the-equations",
      "title": "Derivation of the Equations",
      "prose_ratio": 0.967,
      "coverage_ratio": 0.977,
@@ -734,7 +806,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-003-22-hamiltonian-structure",
+     "id": "sec-006-22-hamiltonian-structure",
      "title": "Hamiltonian Structure",
      "prose_ratio": 0.686,
      "coverage_ratio": 0.948,
@@ -742,16 +814,24 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-3-the-ordinary-differential-equations",
+     "id": "sec-007-3-the-ordinary-differential-equations",
      "title": "THE ORDINARY DIFFERENTIAL EQUATIONS",
-     "prose_ratio": 0.177,
+     "prose_ratio": 0.345,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-005-4-asymptotics",
+     "id": "sec-008-4-asymptotics",
      "title": "ASYMPTOTICS",
-     "prose_ratio": 0.978,
-     "coverage_ratio": 0.99,
+     "prose_ratio": 0.962,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-42-asymptotics-via-the-commuting-differential-op",
+     "title": "Asymptotics via the Commuting Differential Operator",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "pandoc"
     }

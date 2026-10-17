@@ -1,1 +1,1 @@
-The function B(N, A, B, C1, V1; u, v, w, α, β) deﬁned above may be written as
+The coefﬁcients cn of L(E ⊗χD, u) satisfy the following relation

@@ -20,9 +20,25 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
+  "candidates": 1,
+  "by_kind": {
+   "conjecture": 1
+  },
   "formalization_candidates": 0
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": null,
+   "name": null,
+   "statement": "d complexity growth bound",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-4",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
 }

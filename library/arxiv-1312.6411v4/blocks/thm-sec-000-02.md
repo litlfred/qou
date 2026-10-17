@@ -1,1 +1,1 @@
-Let A be a commutative DG ring, and letP be a DG A-module. The
+\ref{thm:315}, due to Negron, that refines earlier results in

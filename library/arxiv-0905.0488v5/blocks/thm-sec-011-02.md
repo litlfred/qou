@@ -1,1 +1,1 @@
-(2) we have[χ′] = [Υ 1(ω)]. We see that{−,−}χ′={−,−}ω. □
+\ref{thm:205} implies the following: if

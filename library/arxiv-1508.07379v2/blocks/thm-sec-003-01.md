@@ -1,0 +1,1 @@
+[\[teo1\]](#teo1){reference-type="ref" reference="teo1"} follows now straightforwardly. Indeed, from Proposition [\[pro1\]](#pro1){reference-type="ref" reference="pro1"} and Lemma [\[le3\]](#le3){reference-type="ref" reference="le3"} we get the following bound for the absolute value of the Mayer coefficient $C_n(\b,\L)$. $$|C_n(\b,\L)|~\le ~{1\over |\L|}{1\over n!}\int_{\L}\,dx_1

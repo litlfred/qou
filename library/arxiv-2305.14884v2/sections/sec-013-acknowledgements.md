@@ -7,8 +7,10 @@ section_number: null
 pages: 41-41
 source_pdf: 2305.14884v2.pdf
 source_sha256: ebc8e64d901c9e4f
-doc_brief: "PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS — We prove that a formal power series associated to an ideally triangu lated cusped hyperbolic 3-manifold (together with some further choices)"
+toc_source: outline
 ---
-The work of M.S. and C.W. has been supported by the Max-Planck-Ge sellschaft. C.W.
-wishes to thank the Southern University of Science and Technology ’s International Center
-for Mathematics in Shenzhen for their hospitality where the paper w as completed.
+Acknowledgements. The authors wish to thank Don Zagier for enlightening conversations.
+The work of M.S. and C.W. has been supported by the Max-Planck-Gesellschaft.
+C.W.
+wishes to thank the Southern University of Science and Technology’s International Center
+for Mathematics in Shenzhen for their hospitality where the paper was completed.

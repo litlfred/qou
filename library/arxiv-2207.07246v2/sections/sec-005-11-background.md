@@ -7,10 +7,10 @@ section_number: 1.1
 pages: 11-11
 source_pdf: 2207.07246v2.pdf
 source_sha256: 91e70e5fe39e07a5
-doc_brief: "Path Integral Quantum Monte Carlo Method for Light Nuclei — 58 sections: Front matter; ABSTRACT; LIST OF TABLES"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.969
-latex_coverage_ratio: 0.968
+latex_coverage_ratio: 0.984
 ---
 []{#secBackground label="secBackground"}
 

@@ -1,0 +1,44 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2512.18642v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "c4c7f8b0a719aa2df0a0ae6c4260bced585090a6c53c51c07b770579ecbda39e",
+  "file": "2512.18642v1.pdf"
+ },
+ "provenance": {
+  "title": "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain",
+  "authors": "Abdessatar Souissi",
+  "arxiv": {
+   "id": "2512.18642",
+   "version": "1",
+   "primary_class": "quant-ph",
+   "stamp_date": "21 Dec 2025"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "theorem": 1
+  },
+  "formalization_candidates": 1
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "[\\[thm:EOH-sym\\]](#thm:EOH-sym){reference-type=\"ref\" reference=\"thm:EOH-sym\"} provides a key understanding about the unique properties of AKLT state. It shows that the emission map is a perfect symmetry bridge. The equation ([\\[eq:equivariance_correct\\]](#eq:equivariance_correct){reference-type=\"ref\" reference=\"eq:equivariance_correct\"}) guarantees that the symmetry of the hidden spin-\u00bd particles is perfectly converted into the standard symmetry of the physical spin-1 particles we observe.",
+   "section_file": "sections/sec-006-spt-order-on-the-aklts-hqmms.md",
+   "section_title": "SPT order on the AKLT,s HQMMs",
+   "pages": "15-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

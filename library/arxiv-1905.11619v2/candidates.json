@@ -1,0 +1,44 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1905.11619v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "f634f9ec4357d5f34d5a161a0fea1e598715b059592cfd5813b0a85d3764cd83",
+  "file": "1905.11619v2.pdf"
+ },
+ "provenance": {
+  "title": "L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS",
+  "authors": "MARTIJN CASPERS, YUSUKE ISONO, AND MATEUSZ WASILEWSKI",
+  "arxiv": {
+   "id": "1905.11619",
+   "version": "2",
+   "primary_class": "math.OA",
+   "stamp_date": "13 Feb 2020"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "theorem": 1
+  },
+  "formalization_candidates": 1
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.1",
+   "name": null,
+   "statement": "For any Aq-Aq-bimodule H we have Hn(Aq, H) = 0 for n \u22652.",
+   "section_file": "sections/sec-009-4-schatten-sp-estimates-for-the-ornstein-uhlenbe.md",
+   "section_title": "Schatten Sp-estimates for the Ornstein-Uhlenbeck semi-group on q-Gaussians",
+   "pages": "10-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

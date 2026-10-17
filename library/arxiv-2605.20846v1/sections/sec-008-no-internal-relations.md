@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2605.20846v1
-doc_title: "Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li"
+doc_title: "Topological Field Theories and the Algebraic Structures of the Two-Sphere"
 section_id: sec-008-no-internal-relations
 section_title: "No Internal Relations"
 section_number: null
 pages: 46-49
 source_pdf: 2605.20846v1.pdf
 source_sha256: db27cb6d01c4f2fb
-doc_brief: "Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li — We give two presentations for bordisms ofS 2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.97
+latex_coverage_ratio: 0.991
 ---
 \label{sec:no internal relations}
 

@@ -7,10 +7,10 @@ section_number: 5.3.2
 pages: 48-50
 source_pdf: 1301.4504v4.pdf
 source_sha256: 201acc5bb1d4b6a0
-doc_brief: "Quantum Computation vs. Firewalls — In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.917
-latex_coverage_ratio: 0.957
+latex_coverage_ratio: 0.961
 ---
 For spherical black holes in AdS with metric [\[AdSsch\]](#AdSsch){reference-type="eqref" reference="AdSsch"}, it is well known [@Hawking:1982dh; @Witten:1998zw] that for small enough values of $\alpha$ the black hole is unstable to decay by Hawking radiation. The crossover point is when the temperature is of order $R^{-1}$.[^1] This phenomenon provides a natural endpoint for the type of decay we discussed in the previous section; the black hole will very slowly radiate energy up the throat and into Minkowski space until it reaches the critical temperature, after which it will decay essentially immediately into low energy quanta in the AdS-region of the throat. Does something similar occur for our toroidal black hole as well? The answer is yes, but as we now describe the analysis has a few details that differ from the spherical case. This transition has been previously discussed by [@Nishioka:2009zj].
 

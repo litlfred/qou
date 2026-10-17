@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/aif-2009-59-1-347-0/blocks/prose-sec-011",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "The divergent q-Euler series",
-  "pageStart": 29,
-  "pageEnd": 31,
-  "text": "../sections/sec-011-3-the-divergent-q-euler-series.md",
+  "title": "Part 2. Summation of divergent q-series and confluence: the case q>1",
+  "pageStart": 28,
+  "pageEnd": 29,
+  "text": "../sections/sec-011-part-2-summation-of-divergent-q-series-and-confl.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2009-59-1-347-0/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2009-59-1-347-0/manifest.jsonld",
   "provenance": "ingested"

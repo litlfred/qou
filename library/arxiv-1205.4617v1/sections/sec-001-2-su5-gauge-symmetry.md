@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1205.4617v1
-doc_title: "Quaternion Octonion Reformulation of Grand Unified Theories"
+doc_title: "Quaternion Octonion Reformulation of Grand Uniﬁed Theories"
 section_id: sec-001-2-su5-gauge-symmetry
 section_title: "SU(5) Gauge Symmetry"
 section_number: 2
 pages: 3-11
 source_pdf: 1205.4617v1.pdf
 source_sha256: dd00cf2cee521bf5
-doc_brief: "Quaternion Octonion Reformulation of Grand Unified Theories — In this paper, Grand Uniﬁed theories are discussed in terms o f quater- nions and octonions by using the relation between quaternio n"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.991
-latex_coverage_ratio: 0.988
+latex_coverage_ratio: 1.0
 ---
 \begin{spacing}{1.5}
 Grand Unified Theories \cite{key-19} are based on the mathematical

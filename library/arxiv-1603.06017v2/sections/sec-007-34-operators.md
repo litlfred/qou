@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1603.06017v2
-doc_title: "Automatic Theorem Proving in Walnut Hamoon Mousavi"
+doc_title: "Automatic Theorem Proving in Walnut"
 section_id: sec-007-34-operators
 section_title: "Operators"
 section_number: 3.4
 pages: 8-9
 source_pdf: 1603.06017v2.pdf
 source_sha256: 3ff091e40573a5dd
-doc_brief: "Automatic Theorem Proving in Walnut Hamoon Mousavi — 34 sections: Introduction; Basics; Words and Automata"
+toc_source: outline
 ---
 • If ?S appears inside a pair of parentheses or brackets, then the number system S is effective from the place it occurs in
 the predicate to the nearest closing parenthesis or bracket6.
@@ -33,4 +33,3 @@ Let us see an example of an automaton having multiple number systems.
 Figure 2.9 depicts the automaton
 (a,b) : a = 1&(?lsd_2 b = 1).
 Figure 2.9: Automaton accepting a = 1&(?lsd_2 b = 1)
-3

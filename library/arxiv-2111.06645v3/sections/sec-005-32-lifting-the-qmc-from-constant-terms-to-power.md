@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2111.06645v3
-doc_title: ""
+doc_title: "Part 0: Introduction and overview"
 section_id: sec-005-32-lifting-the-qmc-from-constant-terms-to-power
 section_title: "Lifting the QMC from constant terms to power series"
 section_number: 3.2
 pages: 16-18
 source_pdf: 2111.06645v3.pdf
 source_sha256: 2a4826bd1c2f0823
-doc_brief: "Knots, Perturbative Series and Quantum Modularity — We introduce an invariant of a hyperbolic knot which is a map α7→ Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.949
-latex_coverage_ratio: 0.958
+latex_coverage_ratio: 0.967
 ---
 []{#sub.QMCwithh label="sub.QMCwithh"}
 

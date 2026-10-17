@@ -1,1 +1,1 @@
-Let s: Y→ X be a section of a smooth morphism p: X→ Y and let η: id→ s∗s∗,
+Let A/Q be the abelian subvariety of J that is the image of w5 −1. Then A ∼A2 × A3 has

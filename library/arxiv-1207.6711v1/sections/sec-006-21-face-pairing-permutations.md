@@ -7,10 +7,10 @@ section_number: 2.1
 pages: 7-8
 source_pdf: 1207.6711v1.pdf
 source_sha256: 320c4301ac66fff1
-doc_brief: "GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.903
-latex_coverage_ratio: 0.917
+latex_coverage_ratio: 0.95
 ---
 We canonically identify the symmetry group of an ordered simplex with
 $S_4$.

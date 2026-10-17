@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2111.06645v3
-doc_title: ""
+doc_title: "Part 0: Introduction and overview"
 section_id: sec-034-102-optimal-truncation-and-smoothed-optimal-trun
 section_title: "Optimal truncation and smoothed optimal truncation"
 section_number: 10.2
 pages: 74-75
 source_pdf: 2111.06645v3.pdf
 source_sha256: 2a4826bd1c2f0823
-doc_brief: "Knots, Perturbative Series and Quantum Modularity — We introduce an invariant of a hyperbolic knot which is a map α7→ Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.973
-latex_coverage_ratio: 0.967
+latex_coverage_ratio: 0.974
 ---
 []{#sub.optimal label="sub.optimal"}
 

@@ -7,7 +7,7 @@ section_number: 1.6
 pages: 3-3
 source_pdf: 1103.2082v1.pdf
 source_sha256: 0ac5371486b38eac
-doc_brief: "MODIFIED TRACES ON DELIGNE’S CATEGORY Rep(St) — Deligne has deﬁned a category which interpolates among the representations of the various symmetric groups."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.902
 latex_coverage_ratio: 1.0

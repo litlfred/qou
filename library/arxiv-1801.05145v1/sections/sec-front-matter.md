@@ -167,4 +167,3 @@ Admissible seeds in the monoidal category Cw
 References
 89
 MONOIDAL CATEGORIFICATION OF CLUSTER ALGEBRAS
-3

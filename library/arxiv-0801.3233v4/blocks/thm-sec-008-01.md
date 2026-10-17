@@ -1,1 +1,1 @@
-B.1 (Kontsevich Formality Theorem, [ Ko1], 1997) . Let C :=
+B.3 (Equivalence Theorem). Let Φ : g →h be an L∞quasi-isomorphism

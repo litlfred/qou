@@ -6,10 +6,12 @@
   "sha256": "edb7c9b2b1561ac3dd50c96bb6cb02714eb5757d4728b53ba9c171e76dcefb9e",
   "bytes": 198677,
   "pages": 22,
-  "math_source": "latex",
+  "text_source": "embedded",
+  "extractor": "pymupdf",
   "mtime": null,
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,23 +21,31 @@
    "stamp_date": "9 Apr 2014"
   },
   "doi": null,
-  "title": "The Stokes phenomenon for the Ramanujan\u2019s q-difference equation and its higher order extension",
-  "authors_raw": null,
-  "abstract": "We show connection formulae of local solutions of the Ramanu - jan equation between the origin and the in\ufb01nity. These solut ions are given by the Ramanujan function, the q-Airy function and the diver- gent basic hypergeometric series 2\u03d5 0(0, 0; \u2212; q, x ). We use two di\ufb00erent q-Borel-Laplace resummation methods to obtain our connecti on for- mulae. We also introduce the q-Borel-Laplace transformation of level r\u22121, which are higher order extension of these transformation s. These methods are useful to obtain an asymptotic formula of a diver gent se- ries r\u03d5 0(0, 0, . . . , 0; \u2212; q, x ).",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20220422155936-04'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  },
-  "title_prev": "The Stokes phenomenon for the Ramanujan\u2019s q-difference equation and its higher order extension Takeshi MORITA\u2217",
+  "title": "The Stokes phenomenon for the Ramanujan\u2019s q -di\ufb00erence equation and its higher order extension",
+  "authors_raw": "Takeshi MORITA\u2217",
   "title_lines": [
    "The Stokes phenomenon for the Ramanujan\u2019s",
    "q-difference equation and its higher order",
-   "extension",
-   "Takeshi MORITA\u2217"
-  ]
+   "extension"
+  ],
+  "abstract": "We show connection formulae of local solutions of the Ramanu- jan equation between the origin and the in\ufb01nity. These solutions are given by the Ramanujan function, the q-Airy function and the diver- gent basic hypergeometric series 2\u03d50(0, 0; \u2212; q, x). We use two di\ufb00erent q-Borel-Laplace resummation methods to obtain our connection for- mulae. We also introduce the q-Borel-Laplace transformation of level r\u22121, which are higher order extension of these transformations. These methods are useful to obtain an asymptotic formula of a divergent se- ries r\u03d50(0, 0, . . . , 0; \u2212; q, x).",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20220422155936-04'00'"
+  },
+  "title_raw": "The Stokes phenomenon for the Ramanujan\u2019s q-difference equation and its higher order extension",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "The Stokes phenomenon for the Ramanujan\u2019s q -di\ufb00erence equation and its higher order extension",
+   "outline": "1 Introduction",
+   "text": "The Stokes phenomenon for the Ramanujan\u2019s q-difference equation and its higher order extension",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -43,67 +53,264 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Basic notations",
    "page": 7,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Two q-exponential functions",
    "page": 8,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Covering transformations",
    "page": 11,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The Ramanujan function and the q-Airy function",
    "page": 11,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The q-Borel-Laplace transformations",
    "page": 13,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The connection formula of the series 20(0,0;-;q,)",
    "page": 15,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The q-Airy equation around the infinity and the connection formula",
    "page": 17,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The q-Borel-Laplace transformations of level r-1 and its application",
    "page": 19,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 742,
+   "n_words": 116,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -111,8 +318,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 7,
-   "n_chars": 8957,
-   "n_words": 1632
+   "n_chars": 9012,
+   "n_words": 1675,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-basic-notations",
@@ -121,8 +330,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 808,
-   "n_words": 172
+   "n_chars": 807,
+   "n_words": 157,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-3-two-q-exponential-functions",
@@ -131,8 +342,10 @@
    "level": 1,
    "page_start": 8,
    "page_end": 11,
-   "n_chars": 2646,
-   "n_words": 554
+   "n_chars": 2678,
+   "n_words": 561,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-4-covering-transformations",
@@ -141,8 +354,10 @@
    "level": 1,
    "page_start": 11,
    "page_end": 13,
-   "n_chars": 3415,
-   "n_words": 690
+   "n_chars": 3409,
+   "n_words": 661,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-6-the-q-borel-laplace-transformations",
@@ -151,8 +366,10 @@
    "level": 1,
    "page_start": 13,
    "page_end": 19,
-   "n_chars": 5457,
-   "n_words": 1245
+   "n_chars": 5453,
+   "n_words": 1207,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-9-the-q-borel-laplace-transformations-of-level-r",
@@ -161,16 +378,25 @@
    "level": 1,
    "page_start": 19,
    "page_end": 22,
-   "n_chars": 4680,
-   "n_words": 870
+   "n_chars": 4713,
+   "n_words": 863,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 9,
-  "sections": 6,
-  "chars_total": 25963,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 7,
+  "chars_total": 26814,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -183,10 +409,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.935,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -194,15 +425,15 @@
      "id": "sec-001-2-basic-notations",
      "title": "Basic notations",
      "prose_ratio": 0.97,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.97,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-3-two-q-exponential-functions",
      "title": "Two q-exponential functions",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.976,
+     "prose_ratio": 0.985,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -210,15 +441,15 @@
      "id": "sec-003-4-covering-transformations",
      "title": "Covering transformations",
      "prose_ratio": 0.99,
-     "coverage_ratio": 0.981,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-6-the-q-borel-laplace-transformations",
      "title": "The q-Borel-Laplace transformations",
-     "prose_ratio": 0.604,
-     "coverage_ratio": 0.987,
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -226,7 +457,7 @@
      "id": "sec-005-9-the-q-borel-laplace-transformations-of-level-r",
      "title": "The q-Borel-Laplace transformations of level r-1 and its application",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.337,
+     "coverage_ratio": 0.35,
      "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     }
    ]

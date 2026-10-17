@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1108.5365v2/blocks/prose-sec-009",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "The Haar functional",
-  "pageStart": 27,
-  "pageEnd": 28,
-  "text": "../sections/sec-009-43-the-haar-functional.md",
+  "title": "Motivations from classical ax+b group",
+  "pageStart": 23,
+  "pageEnd": 23,
+  "text": "../sections/sec-009-41-motivations-from-classical-axb-group.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1108.5365v2/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1108.5365v2/manifest.jsonld",
   "provenance": "ingested"

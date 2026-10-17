@@ -29,4 +29,3 @@ of the polynomial ring R[q] over a commutative ring R with unit with
 respect to the linear topologies deﬁned by the principal ideals generated
 by products of powers of cyclotomic polynomials.
 Contents
-1.

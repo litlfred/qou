@@ -1,1 +1,1 @@
-/three.prop./five.prop. In Section /four.prop, we calculate the sum corresponding to the inte-
+In Section 4, we calculate the sum corresponding to the inte-

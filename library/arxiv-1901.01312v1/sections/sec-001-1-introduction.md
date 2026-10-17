@@ -10,7 +10,7 @@ source_sha256: a480da38283622d6
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.986
-latex_coverage_ratio: 0.788
+latex_coverage_ratio: 0.842
 ---
 Leptons and quarks are identified with representations of the gauge group $U(1)_Y\times SU(2)_L\times SU(3)_C$ in the Standard Model (SM) of particle physics. Despite its success in accurately describing and predicting experimental observations, this gauge group lacks a theoretical basis. Why has Nature chosen these gauge groups from an infinite set of Lie groups, and why do only some representations correspond to physical states? A second shortcoming of the SM is the lack of gravity, or equivalently, its unification with General Relativity (GR).
 

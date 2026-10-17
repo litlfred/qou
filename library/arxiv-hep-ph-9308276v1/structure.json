@@ -419,8 +419,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 1350,
-   "n_words": 195,
+   "n_chars": 1348,
+   "n_words": 194,
    "label_start": null,
    "label_end": "1"
   },
@@ -431,8 +431,8 @@
    "level": 1,
    "page_start": 2,
    "page_end": 2,
-   "n_chars": 567,
-   "n_words": 85,
+   "n_chars": 580,
+   "n_words": 86,
    "label_start": "1",
    "label_end": "1"
   },
@@ -442,38 +442,50 @@
    "title": "The electroweak chiral Lagrangian",
    "level": 1,
    "page_start": 2,
-   "page_end": 14,
-   "n_chars": 29079,
-   "n_words": 5344,
+   "page_end": 8,
+   "n_chars": 13800,
+   "n_words": 2506,
    "label_start": "1",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-002-3-effective-lagrangian-parameters-for-a-heavy-hi",
+   "number": "3",
+   "title": "Effective Lagrangian parameters for a heavy Higgs",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 14,
+   "n_chars": 15274,
+   "n_words": 2836,
+   "label_start": "7",
    "label_end": "13"
   },
   {
-   "id": "sec-002-4-some-physical-consequences",
+   "id": "sec-003-4-some-physical-consequences",
    "number": "4",
    "title": "Some physical consequences",
    "level": 1,
    "page_start": 14,
    "page_end": 16,
-   "n_chars": 5243,
-   "n_words": 953,
+   "n_chars": 5268,
+   "n_words": 955,
    "label_start": "13",
    "label_end": "15"
   },
   {
-   "id": "sec-003-5-conclusions",
+   "id": "sec-004-5-conclusions",
    "number": "5",
    "title": "Conclusions",
    "level": 1,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 1192,
-   "n_words": 181,
+   "n_chars": 1204,
+   "n_words": 182,
    "label_start": "15",
    "label_end": "16"
   },
   {
-   "id": "sec-004-aknowledgments",
+   "id": "sec-005-aknowledgments",
    "number": null,
    "title": "Aknowledgments",
    "level": 1,
@@ -485,7 +497,7 @@
    "label_end": "17"
   },
   {
-   "id": "sec-005-appendix-a",
+   "id": "sec-006-appendix-a",
    "number": null,
    "title": "Appendix A",
    "level": 1,
@@ -497,7 +509,7 @@
    "label_end": "17"
   },
   {
-   "id": "sec-006-appendix-b",
+   "id": "sec-007-appendix-b",
    "number": null,
    "title": "Appendix B",
    "level": 1,
@@ -509,31 +521,31 @@
    "label_end": "18"
   },
   {
-   "id": "sec-007-two-point-functions",
+   "id": "sec-008-two-point-functions",
    "number": null,
    "title": "Two point functions",
    "level": 2,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 1640,
-   "n_words": 406,
+   "n_chars": 1638,
+   "n_words": 405,
    "label_start": "18",
    "label_end": "19"
   },
   {
-   "id": "sec-008-three-point-functions",
+   "id": "sec-009-three-point-functions",
    "number": null,
    "title": "Three point functions",
    "level": 2,
    "page_start": 20,
    "page_end": 22,
-   "n_chars": 1364,
-   "n_words": 305,
+   "n_chars": 1386,
+   "n_words": 308,
    "label_start": "19",
    "label_end": "21"
   },
   {
-   "id": "sec-009-figure-captions",
+   "id": "sec-010-figure-captions",
    "number": null,
    "title": "Figure Captions",
    "level": 1,
@@ -559,13 +571,13 @@
    "count": 0,
    "items": []
   },
-  "sections": 11,
-  "chars_total": 46040,
+  "sections": 12,
+  "chars_total": 46103,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 11,
-   "overlaid": 8,
+   "overlaid": 9,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -587,28 +599,36 @@
      "id": "sec-001-2-the-electroweak-chiral-lagrangian",
      "title": "The electroweak chiral Lagrangian",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.894,
+     "coverage_ratio": 0.74,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-4-some-physical-consequences",
+     "id": "sec-002-3-effective-lagrangian-parameters-for-a-heavy-hi",
+     "title": "Effective Lagrangian parameters for a heavy Higgs",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-4-some-physical-consequences",
      "title": "Some physical consequences",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-5-conclusions",
+     "id": "sec-004-5-conclusions",
      "title": "Conclusions",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-aknowledgments",
+     "id": "sec-005-aknowledgments",
      "title": "Aknowledgments",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -616,7 +636,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-appendix-a",
+     "id": "sec-006-appendix-a",
      "title": "Appendix A",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -624,7 +644,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-appendix-b",
+     "id": "sec-007-appendix-b",
      "title": "Appendix B",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -632,7 +652,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-two-point-functions",
+     "id": "sec-008-two-point-functions",
      "title": "Two point functions",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.943,
@@ -640,7 +660,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-three-point-functions",
+     "id": "sec-009-three-point-functions",
      "title": "Three point functions",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.892,
@@ -648,7 +668,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-figure-captions",
+     "id": "sec-010-figure-captions",
      "title": "Figure Captions",
      "prose_ratio": 0.957,
      "coverage_ratio": 0.152,

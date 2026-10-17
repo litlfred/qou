@@ -1,1 +1,1 @@
-D.2 implies that twisted Poisson deformations ofOX, modulo twisted
+D.2 implies that twisted Poisson deformations of OX, modulo twisted

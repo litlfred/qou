@@ -25,4 +25,3 @@ relevant general features of the QHI.
 Keywords: quantum invariants, volume conjecture, hyperbolic manifolds, saddle point method.
 AMS subject classiﬁcation 2020: 57K16, 57K32, 57R05.
 Contents
-1.

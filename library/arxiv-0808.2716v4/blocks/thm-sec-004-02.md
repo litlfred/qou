@@ -1,0 +1,1 @@
+[\[thm:counterexample\]](#thm:counterexample){reference-type="ref" reference="thm:counterexample"} There does not exist a function $f(\cdot, \cdot)$ of two variables, together with constants $C_i>0$, $i=1, \ldots, 4$, such that $$C_1 f(\beta_K, \beta'_K) - C_2 \: < \: {\rm vol}(S^3{\smallsetminus}K) \:<\:

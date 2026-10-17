@@ -1,1 +1,1 @@
-The composite map QH ∗(M )→ HF ∗(L,L )→ QH ∗(M ) is given by quantum
+Let φ ∈Symp(M(Σg)). The eigenvalues of quantum cup-product by the generator

@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2509.02354v2
-doc_title: "The holonomy braiding for U_xi(sl2) in terms of geometric quantum dilogarithms"
+doc_title: "THE HOLONOMY BRAIDING FOR Uξ(sl2) IN TERMS OF GEOMETRIC QUANTUM DILOGARITHMS"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-3
 source_pdf: 2509.02354v2.pdf
 source_sha256: 14680221e597fe61
-doc_brief: "The holonomy braiding for U_xi(sl2) in terms of geometric quantum dilogarithms — We derive an explicit formula for the holonomyR-matrix of quantumsl2 at a root of unity."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.991
+latex_prose_ratio: 0.957
+latex_coverage_ratio: 0.879
 ---
 []{#sec:Introduction label="sec:Introduction"}
 

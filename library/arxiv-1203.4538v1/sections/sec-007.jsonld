@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1203.4538v1/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Transseries and exp-log series.",
+  "pageStart": 13,
+  "pageEnd": 15,
+  "contains": [
+    "library/arxiv-1203.4538v1/blocks/prose-sec-007",
+    "library/arxiv-1203.4538v1/blocks/conj-sec-007-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1203.4538v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1203.4538v1/manifest.jsonld",
+  "provenance": "ingested"
+}

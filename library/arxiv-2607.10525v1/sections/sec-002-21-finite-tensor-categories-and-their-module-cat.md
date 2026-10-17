@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2607.10525v1
-doc_title: "FIBER FUNCTORS OF EQUIVARIANTIZATIONS OF FINITE TENSOR CATEGORIES"
+doc_title: "Fiber Functors of Equivariantizations of Finite Tensor Categories"
 section_id: sec-002-21-finite-tensor-categories-and-their-module-cat
 section_title: "Finite tensor categories and their module categories"
 section_number: 2.1
 pages: 4-4
 source_pdf: 2607.10525v1.pdf
 source_sha256: b893cb4c87ea1d66
-doc_brief: "FIBER FUNCTORS OF EQUIVARIANTIZATIONS OF FINITE TENSOR CATEGORIES — LetGbe a finite group acting on a finite tensor categoryC."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.81
+latex_coverage_ratio: 1.0
 ---
 A *finite tensor category* is a finite abelian category equipped with a rigid monoidal structure, bilinear tensor product, and simple unit [@EO04 Section 2.2]; a *fusion category* is a semisimple finite tensor category.
 

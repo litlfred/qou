@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/ant-v14-n7-s/sections/sec-188",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Numerical approximation of Archimedean Arakelov–Zhang integrals",
+  "pageStart": 329,
+  "pageEnd": 331,
+  "contains": [
+    "library/ant-v14-n7-s/blocks/prose-sec-188",
+    "library/ant-v14-n7-s/blocks/thm-sec-188-01",
+    "library/ant-v14-n7-s/blocks/prop-sec-188-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "provenance": "ingested"
+}

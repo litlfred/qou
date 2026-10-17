@@ -1,0 +1,57 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1907.00949v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "865defaa34bf42be66c3820cffe668c7a6baefcd5fe7ab32a3a7407ab7d1d42e",
+  "file": "1907.00949v2.pdf"
+ },
+ "provenance": {
+  "title": "OPTIMIZATION ON FLAG MANIFOLDS",
+  "authors": "KE YE, KEN SZE-WAI WONG, AND LEK-HENG LIM",
+  "arxiv": {
+   "id": "1907.00949",
+   "version": "2",
+   "primary_class": "math.OC",
+   "stamp_date": "7 Aug 2019"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "proposition": 2
+  },
+  "formalization_candidates": 2
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "[\\[prop:metric inner product correspondence\\]](#prop:metric inner product correspondence){reference-type=\"ref\" reference=\"prop:metric inner product correspondence\"} says that if $\\mathfrak{h}\\subseteq \\mathfrak{g}$ admits a complement $\\mathfrak{m}$, then we may obtain a $G$-invariant metric $g$ on $M$ by an $\\mathop{\\mathrm{Ad}}_H$-invariant inner product on $\\mathfrak{m}$. Moreover, we may identify $T_xM$ with $\\mathfrak{m}$, implying that the metric $g$ on $M$ is essentially determined by $g_x$ at a single arbitrary point $x \\in M$.",
+   "section_file": "sections/sec-006-21-lie-groups-and-lie-algebras.md",
+   "section_title": "Lie groups and Lie algebras",
+   "pages": "5-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "s [\\[prop:reduced coord\\]](#prop:reduced coord){reference-type=\"ref\" reference=\"prop:reduced coord\"} and [\\[prop:tangent3\\]](#prop:tangent3){reference-type=\"ref\" reference=\"prop:tangent3\"} give an alternative way to obtain the metric $g$ in Proposition [\\[prop:metric\\]](#prop:metric){reference-type=\"ref\" reference=\"prop:metric\"}. Let $g_i$ be the standard metric on $\\mathop{\\mathrm{Gr}}(n_i-n_{i-1},n)$, $i=1,\\dots,d$. Then it is straightforward to verify that $g$ is the pull-back of $\\sum_{i=1}^d g_i$ via the embedding [\\[eq:j2\\]](#eq:j2){reference-type=\"eqref\" reference=\"eq:j2\"} in Propositio",
+   "section_file": "sections/sec-015-52-refined-projection-coordinates-for-the-flag-m.md",
+   "section_title": "Refined projection coordinates for the flag manifold",
+   "pages": "18-19",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

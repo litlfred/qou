@@ -1,1 +1,1 @@
-LetS be a closed surface. Ifχ(S)< 0, thenm1(S)< 5−χ(S).
+Let S be a closed surface. If χ(S) < 0, then m1(S) < 5 −χ(S).

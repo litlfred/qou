@@ -1,0 +1,44 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1012.4941v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "1932a359f3bafb8329e43e040873de5caab69ce3439df7a539ae9392ea5da59b",
+  "file": "1012.4941v2.pdf"
+ },
+ "provenance": {
+  "title": "ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS",
+  "authors": "RICHARD B\u00d6DI, KATRIN HERR, AND MICHAEL JOSWIG",
+  "arxiv": {
+   "id": "1012.4941",
+   "version": "2",
+   "primary_class": "math.OC",
+   "stamp_date": "13 Jan 2011"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "corollary": 1
+  },
+  "formalization_candidates": 1
+ },
+ "candidates": [
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": null,
+   "name": null,
+   "statement": "[\\[cor:opt_sol_in_fix\\]](#cor:opt_sol_in_fix){reference-type=\"ref\" reference=\"cor:opt_sol_in_fix\"} and Theorem [\\[thm:barycenter_ineqs\\]](#thm:barycenter_ineqs){reference-type=\"ref\" reference=\"thm:barycenter_ineqs\"} yield a direct algorithm for solving a symmetric linear program: instead of solving $\\operatorname{LP}(A,b,c)$ one can solve the linear program [\\[eq:reduced_LP\\]](#eq:reduced_LP){reference-type=\"eqref\" reference=\"eq:reduced_LP\"}. The benefit is the following: The larger the group $\\Gamma\\leq\\operatorname{Aut}(\\operatorname{LP}(A,b,c))$ the smaller the dimension of the fixed space ",
+   "section_file": "sections/sec-001-2-automorphisms-of-linear-programs.md",
+   "section_title": "Automorphisms of Linear Programs",
+   "pages": "2-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

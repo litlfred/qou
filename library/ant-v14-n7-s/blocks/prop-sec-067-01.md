@@ -1,1 +1,1 @@
-A.2.2. Lhar(K) has a canonical Lie bracket{·,·} har deﬁned by
+A.1. Let δ ∈N∗, and a map S : N∗∩[δ, +∞[ →K such that we have, for all a ∈

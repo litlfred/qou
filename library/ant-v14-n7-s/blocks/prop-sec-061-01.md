@@ -1,1 +1,1 @@
-B.5. Let 3, ˜3, a be three formal variables. There exists a map
+B.1. For all ˜α0, ˜α ∈N∗such that ˜α0 | ˜α, we have

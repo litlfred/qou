@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2206.14086v3
-doc_title: "KPZ limit theorems Jinho Baik∗"
+doc_title: "KPZ limit theorems"
 section_id: sec-009-4-multi-point-distributions
 section_title: "Multi-point distributions"
 section_number: 4
-pages: 7-8
+pages: 7-7
 source_pdf: 2206.14086v3.pdf
 source_sha256: b6c27f820f963079
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.919
-latex_coverage_ratio: 0.568
-doc_brief: "KPZ limit theorems Jinho Baik∗ — One-dimensional interacting particle systems, 1+1 random growth models, and two-dimensional di- rected polymers deﬁne 2d height ﬁelds."
+latex_coverage_ratio: 1.0
 ---
 []{#sec:multitime label="sec:multitime"}
 

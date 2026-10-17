@@ -7,10 +7,10 @@ section_number: 4.2
 pages: 17-20
 source_pdf: 2411.03801v2.pdf
 source_sha256: a7f1f6fa74cb0949
-doc_brief: "1-LOOP EQUALS TORSION FOR TWO-BRIDGE KNOTS — Motivated by the conjectured asymptotics of the Kashaev invariant, Dimofte and the first author introduced a power series associated to a suitable ideal"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.953
-latex_coverage_ratio: 0.911
+latex_prose_ratio: 0.965
+latex_coverage_ratio: 0.948
 ---
 []{#sec.reduction label="sec.reduction"}
 

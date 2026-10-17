@@ -4,13 +4,13 @@ doc_title: "Towards a regularity theory for integral Menger curvature"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
-pages: 1-11
+pages: 1-6
 source_pdf: 1308.2499v1.pdf
 source_sha256: 3b20abdc0e1b0ba9
-doc_brief: "Towards a regularity theory for integral Menger curvature — We generalize the notion of integral Menger curvature introduced by Gonzalez and Maddocks [14] by decoupling the powers in the integrand."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.656
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.636
+latex_coverage_ratio: 0.958
 ---
 \addcontentsline{toc}{section}{Introduction}
 

@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-2
 source_pdf: 1507.03238v3.pdf
 source_sha256: 1da6a5498c08a521
-doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety forSL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.961
-latex_coverage_ratio: 0.781
+latex_coverage_ratio: 0.913
 ---
 The Ptolemy variety $P_n(\mathcal T)$ of a topological ideal triangulation $\mathcal T$ of a compact $3$-manifold $M$ was defined by Garoufalidis, Thurston and Zickert [@GaroufalidisThurstonZickert]. It gives coordinates (called Ptolemy coordinates) for boundary-unipotent $\mathop{\mathrm{SL}}(n,\mathbb C)$-representations of $\pi_1(M)$ in the sense that each point in $P_n(\mathcal T)$ determines a representation (up to conjugation). The Ptolemy variety is explicitly computable for many census manifolds when $n=2$ or $3$ (see [@CURVE; @FalbelKoseleffRouillier] for a database), and invariants such as volume and Chern-Simons invariant can be explicitly computed from the Ptolemy coordinates. The Ptolemy variety, however, depends on the triangulation and may miss several components of representations.
 

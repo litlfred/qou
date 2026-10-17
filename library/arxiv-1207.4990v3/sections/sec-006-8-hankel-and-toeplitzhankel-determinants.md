@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1207.4990v3
-doc_title: "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results Percy Deift"
+doc_title: "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results"
 section_id: sec-006-8-hankel-and-toeplitzhankel-determinants
 section_title: "Hankel and Toeplitz+Hankel determinants"
 section_number: 8
 pages: 40-42
 source_pdf: 1207.4990v3.pdf
 source_sha256: 02aa065f4f65b857
-doc_brief: "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results Percy Deift — 10 sections: Setting the problem; Toeplitz meets Ising; Back to Isi"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.951
+latex_prose_ratio: 0.992
+latex_coverage_ratio: 1.0
 ---
 In [@DIK1] the authors also consider Hankel and Toeplitz + Hankel determinants with FH-type singularities. For a weight $w=w(x) \ge 0$ on $[-1,1]$, the associated Hankel determinant is given by [@Sz5] $$\label{eq108}
 D_n^{(H)}(w) = \det \left(\int^1_{-1} x^{j+k}\, w(x) \, dx\right)^{n-1}_{j, k=0} \ .$$ The Hankel determinant $D_n^{(H)}(w)$ is related to the polynomials orthogonal with respect to the weight $w$ on the interval $[-1,1]$ in a similar way as a Toeplitz determinant is related to OPUC's.

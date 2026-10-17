@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2410.14661v1
-doc_title: "On the asymptotic expansion of various quantum invariants III: the Reshetikhin-Turaev invariants of closed hyperbolic 3-manifolds obtained by integral surgery along the figure-eigh"
+doc_title: "ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM INVARIANTS III: THE RESHETIKHIN-TURAEV INVARIANTS OF CLOSED HYPERBOLIC 3-MANIFOLDS OBTAINED BY DOING INTEGRAL SURGERY ALONG THE TWIST"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-4
 source_pdf: 2410.14661v1.pdf
 source_sha256: 3362fcd5e28eb1f0
-doc_brief: "On the asymptotic expansion of various quantum invariants III: the Reshetikhin-Turaev invariants of closed hyperbolic 3-manifolds obtained by integral surgery along the figure-eight knot — This is"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.991
+latex_prose_ratio: 0.975
+latex_coverage_ratio: 0.896
 ---
 Volume Conjectures relate the exponential growth rate of various quantum invariants of hyperbolic 3- manifolds at certain root of unity to the hyperbolic volume of the manifolds. In a series started from [@CZ23-1; @CZ23-2], we plan to prove various volume conjectures related to the twist knots.
 

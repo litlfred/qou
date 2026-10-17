@@ -1175,14 +1175,26 @@
    "title": "Phase shifts",
    "level": 2,
    "page_start": 21,
-   "page_end": 25,
-   "n_chars": 7344,
-   "n_words": 1320,
+   "page_end": 24,
+   "n_chars": 5590,
+   "n_words": 1012,
    "label_start": "21",
+   "label_end": "24"
+  },
+  {
+   "id": "sec-012-a4-effective-range-expansion",
+   "number": "A.4",
+   "title": "Effective range expansion",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 1725,
+   "n_words": 304,
+   "label_start": "24",
    "label_end": "25"
   },
   {
-   "id": "sec-012-b-one-boson-exchange-potential",
+   "id": "sec-013-b-one-boson-exchange-potential",
    "number": "B",
    "title": "One-boson exchange potential",
    "level": 1,
@@ -1194,7 +1206,7 @@
    "label_end": "25"
   },
   {
-   "id": "sec-013-b1-obe-amplitudes",
+   "id": "sec-014-b1-obe-amplitudes",
    "number": "B.1",
    "title": "OBE amplitudes",
    "level": 2,
@@ -1206,7 +1218,7 @@
    "label_end": "26"
   },
   {
-   "id": "sec-014-b2-partial-wave-decomposition",
+   "id": "sec-015-b2-partial-wave-decomposition",
    "number": "B.2",
    "title": "Partial wave decomposition",
    "level": 2,
@@ -1218,7 +1230,7 @@
    "label_end": "28"
   },
   {
-   "id": "sec-015-b3-final-potential-expressions",
+   "id": "sec-016-b3-final-potential-expressions",
    "number": "B.3",
    "title": "Final potential expressions",
    "level": 2,
@@ -1230,7 +1242,7 @@
    "label_end": "32"
   },
   {
-   "id": "sec-016-c-potential-parameters",
+   "id": "sec-017-c-potential-parameters",
    "number": "C",
    "title": "Potential parameters",
    "level": 1,
@@ -1242,7 +1254,7 @@
    "label_end": "33"
   },
   {
-   "id": "sec-017-d-deuteron-calculations",
+   "id": "sec-018-d-deuteron-calculations",
    "number": "D",
    "title": "Deuteron calculations",
    "level": 1,
@@ -1260,7 +1272,7 @@
   "toc_entries": 19,
   "toc_inferred_entries": 19,
   "toc_inferred_mean_confidence": 1.0,
-  "toc_inferred_empty_share": 0.111,
+  "toc_inferred_empty_share": 0.105,
   "toc_inferred_method": "latex",
   "figure_entries": 7,
   "figure_sequence_gaps": [
@@ -1287,8 +1299,8 @@
     "items": []
    }
   },
-  "sections": 19,
-  "chars_total": 118199,
+  "sections": 20,
+  "chars_total": 118170,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "bonn.tex",
@@ -1386,32 +1398,37 @@
      "result": "no matching \\section"
     },
     {
-     "id": "sec-012-b-one-boson-exchange-potential",
+     "id": "sec-012-a4-effective-range-expansion",
+     "title": "Effective range expansion",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-b-one-boson-exchange-potential",
      "title": "One-boson exchange potential",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-013-b1-obe-amplitudes",
+     "id": "sec-014-b1-obe-amplitudes",
      "title": "OBE amplitudes",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-014-b2-partial-wave-decomposition",
+     "id": "sec-015-b2-partial-wave-decomposition",
      "title": "Partial wave decomposition",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-015-b3-final-potential-expressions",
+     "id": "sec-016-b3-final-potential-expressions",
      "title": "Final potential expressions",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-016-c-potential-parameters",
+     "id": "sec-017-c-potential-parameters",
      "title": "Potential parameters",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-017-d-deuteron-calculations",
+     "id": "sec-018-d-deuteron-calculations",
      "title": "Deuteron calculations",
      "result": "no matching \\section"
     }

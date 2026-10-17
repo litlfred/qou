@@ -1,0 +1,165 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2404.03933v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "48aff6e97e1f126731c0e133d99d6b8616275d9de5f2f0e9b16ee251d1cc4dc0",
+  "file": "2404.03933v2.pdf"
+ },
+ "provenance": {
+  "title": "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2) AT EVEN ROOTS OF UNITY",
+  "authors": "ANNA LACHOWSKA, OLGA POSTNOVA, NICOLAI RESHETIKHIN, AND DMITRY SOLOVYEV",
+  "arxiv": {
+   "id": "2404.03933",
+   "version": "2",
+   "primary_class": "math.RT",
+   "stamp_date": "29 Jul 2024"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 10,
+  "by_kind": {
+   "theorem": 3,
+   "corollary": 2,
+   "example": 2,
+   "proposition": 1,
+   "lemma": 2
+  },
+  "formalization_candidates": 8
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2.11",
+   "name": null,
+   "statement": ", we can obtain the following result for the restriction of the tilting modules over",
+   "section_file": "sections/sec-003-4-restriction-from-uqsl2-to-uqsl2.md",
+   "section_title": "Restriction from Uq(sl2) to uq(sl2)",
+   "pages": "11-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "4.1",
+   "name": null,
+   "statement": "Restricting Theorem 3.1 over the algebra u\u2212",
+   "section_file": "sections/sec-003-4-restriction-from-uqsl2-to-uqsl2.md",
+   "section_title": "Restriction from Uq(sl2) to uq(sl2)",
+   "pages": "11-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.2",
+   "name": null,
+   "statement": "Let j \u2208Z\u22650, and 0 \u2264k0 \u2264l \u22122.",
+   "section_file": "sections/sec-003-4-restriction-from-uqsl2-to-uqsl2.md",
+   "section_title": "Restriction from Uq(sl2) to uq(sl2)",
+   "pages": "11-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "s of such lattice paths are given on Figure [2](#two-paths){reference-type=\"ref\" reference=\"two-paths\"}.",
+   "section_file": "sections/sec-005-6-multiplicities-and-lattice-paths.md",
+   "section_title": "Multiplicities and lattice paths",
+   "pages": "14-18",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "s of such lattice paths are given on Figure [4](#two-paths-u){reference-type=\"ref\" reference=\"two-paths-u\"}.",
+   "section_file": "sections/sec-005-6-multiplicities-and-lattice-paths.md",
+   "section_title": "Multiplicities and lattice paths",
+   "pages": "14-18",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "[\\[Weyl\\]](#Weyl){reference-type=\"ref\" reference=\"Weyl\"} and Theorem [\\[isomLW\\]](#isomLW){reference-type=\"ref\" reference=\"isomLW\"} give the following identifications and relations: $$\\begin{aligned}",
+   "section_file": "sections/sec-006-7-integral-formula-for-multiplicities.md",
+   "section_title": "Integral formula for multiplicities",
+   "pages": "18-21",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "A.1. Let m = lm1 + m0, where 0 \u2264m0 \u2264l \u22121, m1 \u2208Z, r = r1l + r0, where",
+   "section_file": "sections/sec-010-appendix-a-gaussian-binomial-coefficients.md",
+   "section_title": "Appendix A. Gaussian binomial coefficients",
+   "pages": "30-31",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": null,
+   "name": null,
+   "statement": "A.2. For an integer p \u22650 and the specialization v \u2192q we have",
+   "section_file": "sections/sec-010-appendix-a-gaussian-binomial-coefficients.md",
+   "section_title": "Appendix A. Gaussian binomial coefficients",
+   "pages": "30-31",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "B.1. If the identity (20) holds for N and n = \u230aN\u2212l",
+   "section_file": "sections/sec-011-appendix-b-proof-of-theorem-63.md",
+   "section_title": "Appendix B. Proof of Theorem 6.3",
+   "pages": "31-38",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "B.2. For even n the identity",
+   "section_file": "sections/sec-011-appendix-b-proof-of-theorem-63.md",
+   "section_title": "Appendix B. Proof of Theorem 6.3",
+   "pages": "31-38",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

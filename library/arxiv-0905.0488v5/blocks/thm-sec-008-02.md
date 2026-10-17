@@ -1,1 +1,1 @@
-Let Ψ : g→h be an L∞morphism between quasi quantum type
+\ref{thm:400} the morphism of crossed groupoids

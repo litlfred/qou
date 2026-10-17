@@ -1,1 +1,1 @@
-Let K be a ﬁeld containing the real
+\ref{thm:intro.103} (at least for artinian parameter algebras), but we

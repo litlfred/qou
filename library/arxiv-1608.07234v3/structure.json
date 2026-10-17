@@ -7,10 +7,11 @@
   "bytes": 1062408,
   "pages": 87,
   "text_source": "embedded",
-  "math_source": "latex",
+  "extractor": "pymupdf",
   "mtime": null,
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,27 @@
    "stamp_date": "29 Jan 2019"
   },
   "doi": null,
-  "title": "DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS AKSHAY VENKA TESH",
-  "authors_raw": null,
+  "title": "DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS",
+  "authors_raw": "AKSHAY VENKATESH",
   "title_lines": [
    "DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC",
-   "GROUPS",
-   "AKSHAY VENKA TESH"
+   "GROUPS"
   ],
-  "abstract": "We describe a graded extension of the usual Hecke algebra: i t acts in a graded fashion on the cohomology of an arithmetic group \u0393 . Under favorable conditions, the cohomology is freely generated in a single degree over this g raded Hecke algebra. From this construction we extract an action of certainp-adic Galois cohomology groups on H \u02da p\u0393 , Qpq, and formulate the central conjecture: the motivic Q-lattice inside these Galois cohomology groups preserves H \u02da p\u0393 , Qq.",
+  "abstract": "We describe a graded extension of the usual Hecke algebra: it acts in a graded fashion on the cohomology of an arithmetic group \u0393. Under favorable conditions, the cohomology is freely generated in a single degree over this graded Hecke algebra. From this construction we extract an action of certain p-adic Galois cohomology groups on H\u02dap\u0393, Qpq, and formulate the central conjecture: the motivic Q-lattice inside these Galois cohomology groups preserves H\u02dap\u0393, Qq.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20190130204224-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20190130204224-05'00'"
+  },
+  "title_raw": "DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS C ONTENTS Introduction Derived Hecke algebra Torus localization and Satake isomorphism Iwahori-Hecke algebra The trivial representation Setup for patching Patching and the derived Hecke algebra The reciprocity law Some very poor evidence for",
+   "outline": "1. Introduction",
+   "text": "DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -42,95 +50,783 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Derived Hecke algebra",
    "page": 11,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "Torus localization and Satake isomorphism",
    "page": 21,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 1,
    "title": "Iwahori-Hecke algebra",
    "page": 26,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 1,
    "title": "The trivial representation",
    "page": 31,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   },
   {
    "level": 1,
    "title": "Setup for patching",
    "page": 39,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 1,
    "title": "Patching and the derived Hecke algebra",
    "page": 50,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "50"
   },
   {
    "level": 1,
    "title": "The reciprocity law",
    "page": 55,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "55"
   },
   {
    "level": 1,
    "title": "Some very poor evidence for the main conjecture: Tori and the trivial representation",
    "page": 74,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "74"
   },
   {
    "level": 1,
    "title": "Appendix A. Remedial algebra",
    "page": 76,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "76"
   },
   {
    "level": 1,
    "title": "Appendix B.  Koszul algebra; other odds and ends",
    "page": 82,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "82"
   },
   {
    "level": 1,
    "title": "Index of symbols and important notation",
    "page": 85,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "85"
   },
   {
    "level": 1,
    "title": "References",
    "page": 86,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "86"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 48,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 49,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 52,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 53,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 54,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 57,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 58,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 59,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 60,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 61,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 62,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 63,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 64,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 65,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 66,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 67,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 68,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 69,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 70,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 71,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 72,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 73,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 74,
+   "label": "74",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 76,
+   "label": "76",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 77,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 78,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 79,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 80,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 81,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 82,
+   "label": "82",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 83,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 84,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 85,
+   "label": "85",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 86,
+   "label": "86",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 87,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 600,
+   "n_words": 90,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -138,8 +834,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 11,
-   "n_chars": 30677,
-   "n_words": 5591
+   "n_chars": 30545,
+   "n_words": 5446,
+   "label_start": null,
+   "label_end": "11"
   },
   {
    "id": "sec-001-2-derived-hecke-algebra",
@@ -147,42 +845,179 @@
    "title": "Derived Hecke algebra",
    "level": 1,
    "page_start": 11,
-   "page_end": 85,
-   "n_chars": 202975,
-   "n_words": 38712
+   "page_end": 21,
+   "n_chars": 28130,
+   "n_words": 5349,
+   "label_start": "11",
+   "label_end": "21"
   },
   {
-   "id": "sec-002-index-of-symbols-and-important-notation",
+   "id": "sec-002-3-torus-localization-and-satake-isomorphism",
+   "number": "3",
+   "title": "Torus localization and Satake isomorphism",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 26,
+   "n_chars": 15798,
+   "n_words": 3125,
+   "label_start": "21",
+   "label_end": "26"
+  },
+  {
+   "id": "sec-003-4-iwahori-hecke-algebra",
+   "number": "4",
+   "title": "Iwahori-Hecke algebra",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 31,
+   "n_chars": 12846,
+   "n_words": 2412,
+   "label_start": "26",
+   "label_end": "31"
+  },
+  {
+   "id": "sec-004-5-the-trivial-representation",
+   "number": "5",
+   "title": "The trivial representation",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 39,
+   "n_chars": 22906,
+   "n_words": 4336,
+   "label_start": "31",
+   "label_end": "39"
+  },
+  {
+   "id": "sec-005-6-setup-for-patching",
+   "number": "6",
+   "title": "Setup for patching",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 50,
+   "n_chars": 31759,
+   "n_words": 6006,
+   "label_start": "39",
+   "label_end": "50"
+  },
+  {
+   "id": "sec-006-7-patching-and-the-derived-hecke-algebra",
+   "number": "7",
+   "title": "Patching and the derived Hecke algebra",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 55,
+   "n_chars": 14921,
+   "n_words": 2855,
+   "label_start": "50",
+   "label_end": "55"
+  },
+  {
+   "id": "sec-007-8-the-reciprocity-law",
+   "number": "8",
+   "title": "The reciprocity law",
+   "level": 1,
+   "page_start": 55,
+   "page_end": 74,
+   "n_chars": 48971,
+   "n_words": 9325,
+   "label_start": "55",
+   "label_end": "74"
+  },
+  {
+   "id": "sec-008-9-some-very-poor-evidence-for-the-main-conjectur",
+   "number": "9",
+   "title": "Some very poor evidence for the main conjecture: Tori and the trivial representation",
+   "level": 1,
+   "page_start": 74,
+   "page_end": 76,
+   "n_chars": 4788,
+   "n_words": 906,
+   "label_start": "74",
+   "label_end": "76"
+  },
+  {
+   "id": "sec-009-appendix-a-remedial-algebra",
+   "number": null,
+   "title": "Appendix A. Remedial algebra",
+   "level": 1,
+   "page_start": 76,
+   "page_end": 82,
+   "n_chars": 14730,
+   "n_words": 2796,
+   "label_start": "76",
+   "label_end": "82"
+  },
+  {
+   "id": "sec-010-appendix-b-koszul-algebra-other-odds-and-ends",
+   "number": null,
+   "title": "Appendix B.  Koszul algebra; other odds and ends",
+   "level": 1,
+   "page_start": 82,
+   "page_end": 85,
+   "n_chars": 6871,
+   "n_words": 1394,
+   "label_start": "82",
+   "label_end": "85"
+  },
+  {
+   "id": "sec-011-index-of-symbols-and-important-notation",
    "number": null,
    "title": "Index of symbols and important notation",
    "level": 1,
    "page_start": 85,
    "page_end": 86,
-   "n_chars": 1037,
-   "n_words": 258
+   "n_chars": 1008,
+   "n_words": 229,
+   "label_start": "85",
+   "label_end": "86"
   },
   {
-   "id": "sec-003-references",
+   "id": "sec-012-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 86,
    "page_end": 87,
-   "n_chars": 6187,
-   "n_words": 913
+   "n_chars": 6118,
+   "n_words": 844,
+   "label_start": "86",
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 13,
-  "sections": 4,
-  "chars_total": 240876,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "Introduction"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 14,
+  "chars_total": 239991,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "derivedHecke.tex",
    "tex_sections": 78,
-   "overlaid": 1,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -190,27 +1025,96 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.046,
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.053,
      "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-001-2-derived-hecke-algebra",
      "title": "Derived Hecke algebra",
-     "prose_ratio": 0.825,
-     "coverage_ratio": 0.722,
+     "prose_ratio": 0.572,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-3-torus-localization-and-satake-isomorphism",
+     "title": "Torus localization and Satake isomorphism",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.897,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-index-of-symbols-and-important-notation",
+     "id": "sec-003-4-iwahori-hecke-algebra",
+     "title": "Iwahori-Hecke algebra",
+     "prose_ratio": 0.833,
+     "coverage_ratio": 0.943,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-5-the-trivial-representation",
+     "title": "The trivial representation",
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.88,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-6-setup-for-patching",
+     "title": "Setup for patching",
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.913,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-7-patching-and-the-derived-hecke-algebra",
+     "title": "Patching and the derived Hecke algebra",
+     "prose_ratio": 0.913,
+     "coverage_ratio": 0.893,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-8-the-reciprocity-law",
+     "title": "The reciprocity law",
+     "prose_ratio": 0.918,
+     "coverage_ratio": 0.896,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-9-some-very-poor-evidence-for-the-main-conjectur",
+     "title": "Some very poor evidence for the main conjecture: Tori and the trivial representation",
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.903,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-appendix-a-remedial-algebra",
+     "title": "Appendix A. Remedial algebra",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-appendix-b-koszul-algebra-other-odds-and-ends",
+     "title": "Appendix B.  Koszul algebra; other odds and ends",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-index-of-symbols-and-important-notation",
      "title": "Index of symbols and important notation",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-003-references",
+     "id": "sec-012-references",
      "title": "References",
      "result": "no matching \\section"
     }

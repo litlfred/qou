@@ -1,1 +1,1 @@
-Each pentagram matching path is obtained from some basic, re spectively radial,
+Equip E = P1 with the symplectic form 2ωF S of area 2π, and equip X = O(−1)

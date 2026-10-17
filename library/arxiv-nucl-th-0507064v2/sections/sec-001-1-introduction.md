@@ -10,7 +10,7 @@ source_sha256: dcfad7240ba81bf5
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.616
-latex_coverage_ratio: 0.975
+latex_coverage_ratio: 0.971
 ---
 Matter composed of neutrons and protons exhibits remarkable properties. Cold neutron matter is close to a scaling regime for densities $n 
 \lesssim 1/10 \, n_0$, where $n_0 = 0.16 \, \, \text{fm}^{-3}$ denotes nuclear saturation density. In this regime, thermodynamic properties of neutron matter scale only with the density, and for the energy per particle $E/N$ one has approximately [@Vijay; @dEFT] $$\frac{E}{N} \approx 0.5 \, \biggl( \frac{E}{N} \biggr)_{\rm free} = 0.5 \,

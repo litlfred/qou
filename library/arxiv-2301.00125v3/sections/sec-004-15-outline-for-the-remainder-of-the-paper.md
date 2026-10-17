@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2301.00125v3
-doc_title: "Generating Function for Pinsky’s Combinatorial Second Mom ent Formula for the Generalized Ulam Problem Samen Hossein The Bronx High School of Science 75 Bronx Science Bvd"
+doc_title: "Generating Function for Pinsky’s Combinatorial Second Moment Formula for the Generalized Ulam Problem"
 section_id: sec-004-15-outline-for-the-remainder-of-the-paper
 section_title: "Outline for the remainder of the paper"
 section_number: 1.5
 pages: 4-8
 source_pdf: 2301.00125v3.pdf
 source_sha256: 7ecd0cff7d6c2ec4
-doc_brief: "Generating Function for Pinsky’s Combinatorial Second Mom ent Formula for the Generalized Ulam Problem Samen Hossein The Bronx High School of Science 75 Bronx Science Bvd — Given a uniform random"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.949
-latex_coverage_ratio: 0.974
+latex_coverage_ratio: 0.977
 ---
 The moments of the generalized Ulam problem appear to have been investigated primarily by Ross Pinsky.
 We begin, in the next section, by stating Pinsky's precise combinatorial formula for the second moment.

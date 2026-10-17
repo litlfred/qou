@@ -1,1 +1,1 @@
-LetS be a closed and connected Riemann sur-
+Let S be a closed and connected Riemann sur-

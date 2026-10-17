@@ -7,11 +7,11 @@
   "bytes": 822524,
   "pages": 14,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "text-layer",
+  "extractor": "pymupdf",
   "mtime": null,
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -28,11 +28,22 @@
   ],
   "abstract": null,
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20200731003107Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.17",
-   "Title": ""
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20200731003107Z"
+  },
+  "title_raw": "A quantum Monte Carlo based approach to intranuclear cascades",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "A quantum Monte Carlo based approach to intranuclear cascades",
+   "outline": "A quantum Monte Carlo based approach to intranuclear cascades",
+   "text": "A quantum Monte Carlo based approach to intranuclear cascades",
+   "corroborated_by": [
+    "outline",
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -41,129 +52,457 @@
    "title": "A quantum Monte Carlo based approach to intranuclear cascades",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Abstract",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "I Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "II The physics of the impact parameter based intranuclear cascade model",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 3,
    "title": "A Nuclear configuration",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 3,
    "title": "B Nucleon momentum distribution",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 3,
    "title": "C Nucleon-nucleon interaction algorithm",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 3,
    "title": "D Phase space, Pauli blocking and after-interaction",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 3,
    "title": "E Exiting the nucleus",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "III Results and Model Validation",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 3,
    "title": "A Mean free path",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 3,
    "title": "B Proton-carbon Scattering Data",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 3,
    "title": "C Nuclear transparency",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 3,
    "title": "D Correlation effects",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "IV Conclusions",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "V Acknowledgments",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "References",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "A Nucleon-nucleon interaction Models",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Schematics of a propagating nucleon (black circle). The distance travelled by the propagating nucleon is depicted by a black arrow. The crosses represent background nucleons. An interaction test would be performed for the nucleon in red",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The proposed algorithm for the INC model",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Nucleon density in carbon from Green\u2019s function Monte Carlo (red) and mean \ufb01eld (blue) con\ufb01gurations",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The short-range repulsive core of the NN interaction prevents two nucleons from being close to each other. As a consequence, the pp and np GFMC density distributions are small at short separation distances. Furthermore, the di\ufb00erence between the GFMC pp and np",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Distribution of distance traveled (blue histogram) by 500 MeV test nucleons traveling through",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Proton-carbon scattering total cross section as a function of the incoming proton kinetic energy. In the upper panel the entire energy range for which experimental data are available is shown. In the lower panel the low energy region is magni\ufb01ed. The red and blue curves correspond to the cylinder al",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Carbon transparency as a function of the proton kinetic energy. The di\ufb00erent curves indicate di\ufb00erent approaches used as described in Fig. 6. The experimental data are taken from Refs. [4, 6, 7, 74\u201376]",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Left panel: a schematic picture of an external proton scattering o\ufb00the nucleus. The distance from the proton to the center of the nucleus is r1, and the propagation step is d\u2113. The radius of the cylinder is given by",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "The four panels corresponds to histograms of the distance traveled by a struck particle before the \ufb01rst interaction takes place for di\ufb00erent values of the interaction cross section. The results in blue and red correspond to MF and QMC initial nucleon con\ufb01gurations, respectively. For each of the pane",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "Comparison between the two interaction models used within the intranuclear cascade model",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -173,7 +512,9 @@
    "page_start": 1,
    "page_end": 1,
    "n_chars": 21,
-   "n_words": 1
+   "n_words": 1,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-000-a-quantum-monte-carlo-based-approach-to-intranuc",
@@ -181,22 +522,43 @@
    "title": "A quantum Monte Carlo based approach to intranuclear cascades",
    "level": 1,
    "page_start": 1,
+   "page_end": 2,
+   "n_chars": 7377,
+   "n_words": 1092,
+   "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-001-a-nuclear-configuration",
+   "number": null,
+   "title": "A Nuclear configuration",
+   "level": 3,
+   "page_start": 2,
    "page_end": 14,
-   "n_chars": 58011,
-   "n_words": 9444
+   "n_chars": 50590,
+   "n_words": 8365,
+   "label_start": "2",
+   "label_end": "14"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 18,
-  "sections": 2,
-  "chars_total": 58032,
+  "toc_inferred_entries": 0,
+  "figure_entries": 10,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 3,
+  "chars_total": 57988,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
    "tex_sections": 14,
-   "overlaid": 0,
+   "overlaid": 1,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -212,6 +574,14 @@
      "id": "sec-000-a-quantum-monte-carlo-based-approach-to-intranuc",
      "title": "A quantum Monte Carlo based approach to intranuclear cascades",
      "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-a-nuclear-configuration",
+     "title": "A Nuclear configuration",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.828,
+     "result": "overlaid",
+     "converter": "pandoc"
     }
    ]
   }

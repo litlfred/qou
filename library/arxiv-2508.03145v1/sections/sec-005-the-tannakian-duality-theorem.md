@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2508.03145v1
-doc_title: "Θ-Categories and Tannakian duality"
+doc_title: "Θ -Categories and Tannakian duality"
 section_id: sec-005-the-tannakian-duality-theorem
 section_title: "The Tannakian duality theorem"
 section_number: null
 pages: 23-29
 source_pdf: 2508.03145v1.pdf
 source_sha256: 2bf03452cb503e96
-doc_brief: "Θ-Categories and Tannakian duality — We introduce a notion ofΘ-categories, which is a refinement of the notion of symmetric monoidal∞-categories."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.993
-latex_coverage_ratio: 0.9
+latex_coverage_ratio: 0.972
 ---
 We start by investigating the morphism $\beta$.
 

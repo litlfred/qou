@@ -9,7 +9,7 @@
  },
  "provenance": {
   "title": "THE RESURGENT STRUCTURE OF QUANTUM KNOT INVARIANTS",
-  "authors": "STAVROS GAROUFALIDIS, JIE GU, AND MARCOS MARI\u02dcNO",
+  "authors": "STAVROS GAROUFALIDIS, JIE GU, AND MARCOS MARI\u00d1O",
   "arxiv": {
    "id": "2007.10190",
    "version": "2",
@@ -20,53 +20,9 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 3,
-  "by_kind": {
-   "conjecture": 1,
-   "theorem": 1,
-   "example": 1
-  },
-  "formalization_candidates": 1
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "conjecture",
-   "source_kind": "conjecture",
-   "number": "1",
-   "name": null,
-   "statement": "(a) S\u00b1(q) are bilinear functions of two fundamental solutions of the pair of",
-   "section_file": "sections/sec-002-12-resurgence-in-complex-chern-simons-theory.md",
-   "section_title": "Resurgence in complex Chern-Simons theory",
-   "pages": "1-7",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "3",
-   "name": null,
-   "statement": "Fix integers A and B with B > A >0 and integers \u03bb and \u00b5. For all \u03c4 with",
-   "section_file": "sections/sec-005-43-the-state-integral-and-its-descendants.md",
-   "section_title": "The state integral and its descendants",
-   "pages": "9-11",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "example",
-   "source_kind": "example",
-   "number": "4",
-   "name": null,
-   "statement": "In this example we illustrate theorem 3 with the state integral I1,2,\u03bb,\u00b5(b) asso-",
-   "section_file": "sections/sec-005-43-the-state-integral-and-its-descendants.md",
-   "section_title": "The state integral and its descendants",
-   "pages": "9-11",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  }
- ]
+ "candidates": []
 }

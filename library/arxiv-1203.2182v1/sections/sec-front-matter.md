@@ -39,4 +39,3 @@ bAref(bx, by; q, t). We compute both classical and quantum t-deformed curves in 
 examples coming from colored knot homologies and reﬁned BPS invariants.
 CALT-68-2866
 Contents
-1.

@@ -1,0 +1,1 @@
+[\[csspezialschur\]](#csspezialschur){reference-type="ref" reference="csspezialschur"} is very important from a combinatorial point of view: it enables us to relate the coherent systems of probability measures coming from characters of $\mathfrak{S}_{\infty}$ to very general models of random permutations. The goal of the next section is to explain this link.

@@ -7,10 +7,10 @@ section_number: null
 pages: 3-5
 source_pdf: 2211.13362v2.pdf
 source_sha256: 3becbeaa1135d2e1
-doc_brief: "Double-slit experiment revisited — The double-slit experiment is one of the quintessential quantum experiments."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.914
-latex_coverage_ratio: 0.887
+latex_coverage_ratio: 0.895
 ---
 Bohmian mechanics (also called the de Broglie-Bohm theory or pilot-wave theory) is a theory describing point particles moving along trajectories that grounds the formalism and predictions of standard quantum mechanics [@BohmHiley; @HollandBook; @DurrTeufel; @DGZOperators]. For a single-particle with position $\vb{R}$ and mass $m$, the dynamics is given by the guidance equation $$\label{eq:guide}
     \dot{\vb{R}}(t)=\frac{\hbar}{m}\kern 0.1em\Im\!\left[\!\frac{\pmb{\nabla}\psi\big(\vb{R}(t),t\big)}{\psi\big(\vb{R}(t),t\big)}\!\right]\!,$$ where $\psi(\vb{r},t)$ is the wave function satisfying Schrödinger's equation with an external potential $V(\vb{r},t)$. The wave function never collapses in this theory. Here, the "wave/particle duality" of quantum mechanics is resolved in a trivial way: both a wave *and* a particle are present.

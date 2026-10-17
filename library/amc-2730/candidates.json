@@ -1,0 +1,199 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "amc-2730",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "65730074a2925c6e1fb36513581887d8699744e16bedf5f4c111695d3cdd0d23",
+  "file": "amc_2730.pdf"
+ },
+ "provenance": {
+  "title": "Braid representatives minimizing the number of simple walks *",
+  "authors": "Mathematics & Statistics, McMaster University, Hamilton, Ontario, Canada",
+  "arxiv": null,
+  "doi": "10.26493/1855-3974.2730.6ac"
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 13,
+  "by_kind": {
+   "definition": 3,
+   "theorem": 4,
+   "example": 2,
+   "proposition": 3,
+   "lemma": 1
+  },
+  "formalization_candidates": 11
+ },
+ "candidates": [
+  {
+   "kind": "definition",
+   "source_kind": "definition",
+   "number": "2.1",
+   "name": null,
+   "statement": "A braid is a set of m strands running from top to bottom with no reversals",
+   "section_file": "sections/sec-001-the-colored-jones-polynomial-and-walks-along-bra.md",
+   "section_title": "The colored Jones polynomial and walks along braids",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2.2",
+   "name": null,
+   "statement": "Let K be a knot obtained as the closure of a braid \u03b2 P Bm. Its colored",
+   "section_file": "sections/sec-001-the-colored-jones-polynomial-and-walks-along-bra.md",
+   "section_title": "The colored Jones polynomial and walks along braids",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": "3.2",
+   "name": null,
+   "statement": "The braid word \u03c31\u03c32\u03c31\u00b41\u03c33\u00b41\u03c32\u03c33\u00b41\u03c31 represents the knot 61 and has",
+   "section_file": "sections/sec-002-the-colored-jones-polynomial-in-closed-form.md",
+   "section_title": "The colored Jones polynomial in closed form",
+   "pages": "6-10",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "s 3.1, 3.2, and 3.3 are all hyperbolic, and the Volume Conjecture has been verified",
+   "section_file": "sections/sec-002-the-colored-jones-polynomial-in-closed-form.md",
+   "section_title": "The colored Jones polynomial in closed form",
+   "pages": "6-10",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.1",
+   "name": null,
+   "statement": "Every oriented knot or link is equivalent to the closure p\u03b2 for some braid",
+   "section_file": "sections/sec-003-representing-knots-as-braids.md",
+   "section_title": "Representing knots as braids",
+   "pages": "10-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "definition",
+   "source_kind": "definition",
+   "number": "4.2",
+   "name": null,
+   "statement": "The Markov moves include conjugation and stabilization (see Figure 4).",
+   "section_file": "sections/sec-003-representing-knots-as-braids.md",
+   "section_title": "Representing knots as braids",
+   "pages": "10-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.3",
+   "name": null,
+   "statement": "Two braids have equivalent link closures if and only if they are related by a",
+   "section_file": "sections/sec-003-representing-knots-as-braids.md",
+   "section_title": "Representing knots as braids",
+   "pages": "10-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "4.4",
+   "name": null,
+   "statement": "If K is a knot, then any braid representative for K that minimizes the",
+   "section_file": "sections/sec-003-representing-knots-as-braids.md",
+   "section_title": "Representing knots as braids",
+   "pages": "10-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "5.1",
+   "name": null,
+   "statement": "The simple walks with J \u010e t2, . . . , mu on a braid \u03b2 and its reflection \u03b2\u02da are",
+   "section_file": "sections/sec-004-semi-simple-walks-and-cyclic-permutation.md",
+   "section_title": "Semi-simple walks and cyclic permutation",
+   "pages": "14-21",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "definition",
+   "source_kind": "definition",
+   "number": "5.2",
+   "name": null,
+   "statement": "Given a braid word \u03b2, we say that a walk W on \u03b2 is semi-simple if it",
+   "section_file": "sections/sec-004-semi-simple-walks-and-cyclic-permutation.md",
+   "section_title": "Semi-simple walks and cyclic permutation",
+   "pages": "14-21",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5.3",
+   "name": null,
+   "statement": "The set of semi-simple walks S\u03b2 is invariant under cyclic permutation of",
+   "section_file": "sections/sec-004-semi-simple-walks-and-cyclic-permutation.md",
+   "section_title": "Semi-simple walks and cyclic permutation",
+   "pages": "14-21",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "6.1",
+   "name": null,
+   "statement": "Let fpnq be the number of simple walks on the p2, nq torus braid \u03b2n.",
+   "section_file": "sections/sec-004-semi-simple-walks-and-cyclic-permutation.md",
+   "section_title": "Semi-simple walks and cyclic permutation",
+   "pages": "14-21",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "7.1",
+   "name": null,
+   "statement": "Let gpnq be the number of simple walks on the p3, nq torus braid \u03b3n.",
+   "section_file": "sections/sec-004-semi-simple-walks-and-cyclic-permutation.md",
+   "section_title": "Semi-simple walks and cyclic permutation",
+   "pages": "14-21",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

@@ -1,1 +1,1 @@
-s 0.3.4, 0.3.5 and 7.16].
+\ref{thm:500}(1); the isomorphism $\cong^3$

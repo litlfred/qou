@@ -1,1 +1,1 @@
-C.1. For any word w on e0∪µN and any m0 ∈N, there exists a sequence
+B.1. For any, α0, α ∈N∗with α0 dividing α, we have

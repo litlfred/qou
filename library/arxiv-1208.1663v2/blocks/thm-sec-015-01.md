@@ -1,0 +1,1 @@
+[\[thm.IMconv\]](#thm.IMconv){reference-type="ref" reference="thm.IMconv"} implies that $I_{\mathbf M}$ converges when $\mathbf M$ admits a strict index structure. In this section we give an independent proof of this fact without using the restriction of the summand of the index to a ray.

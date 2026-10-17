@@ -1,0 +1,162 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0707.2052v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "0a1d1cca848706bef76372a2fed96571fae1dd49b6e75e41ec98d86115ff5ed9",
+  "file": "0707.2052v1.pdf"
+ },
+ "provenance": {
+  "title": "The Mukai pairing, I: a categorical approach",
+  "authors": "Andrei C\u02d8ald\u02d8araru\u2217and Simon Willerton\u2020",
+  "arxiv": {
+   "id": "0707.2052",
+   "version": "1",
+   "primary_class": "math.AG",
+   "stamp_date": "13 Jul 2007"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 10,
+  "by_kind": {
+   "theorem": 2,
+   "proposition": 8
+  },
+  "formalization_candidates": 10
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "17",
+   "name": null,
+   "statement": "If \u03a6 and \u03a6\u2020 form a politely dual pair of kernels, then the",
+   "section_file": "sections/sec-026-polite-duality.md",
+   "section_title": "Polite duality.",
+   "pages": "31-35",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "19",
+   "name": null,
+   "statement": "Given an adjunction \u03a8 \u22a3\u03a6, de\ufb01ne \u03a6\u2020 := \u03a8 \u25e6\u03a3\u22121",
+   "section_file": "sections/sec-026-polite-duality.md",
+   "section_title": "Polite duality.",
+   "pages": "31-35",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "20",
+   "name": null,
+   "statement": "Let \u03a6 \u2208D(X \u00d7 Y) be a kernel, and let \u03a6\u2228\u2208D(Y \u00d7 X) be",
+   "section_file": "sections/sec-026-polite-duality.md",
+   "section_title": "Polite duality.",
+   "pages": "31-35",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "21",
+   "name": null,
+   "statement": "If a kernel \u03a6 is re\ufb02exively polite then so is \u03a6\u2228.",
+   "section_file": "sections/sec-027-reflexively-polite-kernels.md",
+   "section_title": "Reflexively polite kernels.",
+   "pages": "35-38",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "22",
+   "name": null,
+   "statement": "If \u03a6: X \u2192Y and \u03a8: Y \u2192Z are re\ufb02exively polite kernels",
+   "section_file": "sections/sec-027-reflexively-polite-kernels.md",
+   "section_title": "Reflexively polite kernels.",
+   "pages": "35-38",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "23",
+   "name": null,
+   "statement": "Suppose that \u03a6: X \u2192Y and \u03a8: X\u2032 \u2192Y \u2032 are re\ufb02exively",
+   "section_file": "sections/sec-027-reflexively-polite-kernels.md",
+   "section_title": "Reflexively polite kernels.",
+   "pages": "35-38",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "24",
+   "name": null,
+   "statement": "Let \u2206: X \u2192X \u00d7 X denote the diagonal map, let E be an",
+   "section_file": "sections/sec-027-reflexively-polite-kernels.md",
+   "section_title": "Reflexively polite kernels.",
+   "pages": "35-38",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "25",
+   "name": null,
+   "statement": "Let X be a space, then the kernel OX considered as a kernel",
+   "section_file": "sections/sec-027-reflexively-polite-kernels.md",
+   "section_title": "Reflexively polite kernels.",
+   "pages": "35-38",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "26",
+   "name": null,
+   "statement": "Let \u03c0X: X \u00d7 Y \u2192X be the projection, and (abusing nota-",
+   "section_file": "sections/sec-027-reflexively-polite-kernels.md",
+   "section_title": "Reflexively polite kernels.",
+   "pages": "35-38",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "27",
+   "name": null,
+   "statement": "Every kernel is re\ufb02exively polite.",
+   "section_file": "sections/sec-027-reflexively-polite-kernels.md",
+   "section_title": "Reflexively polite kernels.",
+   "pages": "35-38",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

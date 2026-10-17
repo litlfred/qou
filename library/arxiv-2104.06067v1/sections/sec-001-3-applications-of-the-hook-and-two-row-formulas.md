@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2104.06067v1
-doc_title: "ON IRREDUCIBLE CHARACTERS OF THE IW AHORI-HECKE ALGEBRA IN TYPE A"
+doc_title: "ON IRREDUCIBLE CHARACTERS OF THE IWAHORI-HECKE ALGEBRA IN"
 section_id: sec-001-3-applications-of-the-hook-and-two-row-formulas
 section_title: "Applications of the hook and two-row formulas"
 section_number: 3
 pages: 11-12
 source_pdf: 2104.06067v1.pdf
 source_sha256: 750303181ca019ba
-doc_brief: "ON IRREDUCIBLE CHARACTERS OF THE IWAHORI-HECKE ALGEBRA IN TYPE A — We use vertex operators to compute irreducible characters o f the Iwahori-Hecke algebra of type A."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.975
+latex_prose_ratio: 0.983
+latex_coverage_ratio: 0.967
 ---
 Let $V=V_{\bar{0}}\bigoplus V_{\bar{1}}$ be a $\mathbb{Z}_2$-graded vector space over $\mathbb{C}(q)$ with basis $\{v_1,v_2,\cdots,v_a\}$ for the even subspace $V_{\bar 0}$ and basis $\{v_{a+1},v_{a+2},\cdots,v_{a+b}\}$ for the odd subspace $V_{\bar 1}$. Let $\pi$ be the endomorphism of $V\otimes V$ by $$\begin{aligned}
 (v_k\otimes v_l)\pi=

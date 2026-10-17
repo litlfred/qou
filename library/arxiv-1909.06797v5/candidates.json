@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1909.06797v5",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "87095d7e46ebe286a2d65cc1c9dc6ddf386c8bfb65e20dc34c0fe23ce14e5e64",
+  "file": "1909.06797v5.pdf"
+ },
+ "provenance": {
+  "title": "Quantum Mechanics of Plancherel Growth",
+  "authors": "Arghya Chattopadhyaya,b, Suvankar Duttac, Debangshu Mukherjeec,d, Neetuc",
+  "arxiv": {
+   "id": "1909.06797",
+   "version": "5",
+   "primary_class": "hep-th",
+   "stamp_date": "14 Apr 2021"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

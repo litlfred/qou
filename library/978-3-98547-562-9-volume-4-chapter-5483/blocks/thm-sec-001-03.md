@@ -1,1 +1,1 @@
-Let 02 A be normal and numerically Q-Gorenstein. Sup-
+Let 0 2 A be normal and numerically Q-Gorenstein. Sup-

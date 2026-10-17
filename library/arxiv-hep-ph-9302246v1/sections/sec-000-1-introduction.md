@@ -10,7 +10,7 @@ source_sha256: 2d352297255be8de
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.982
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.991
 ---
 []{#1 label="1"}
 

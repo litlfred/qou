@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2202.06733v1
-doc_title: "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE"
+doc_title: "Received <day> <Month>, <year>"
 section_id: sec-001-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-2
 source_pdf: 2202.06733v1.pdf
 source_sha256: e670632090447f14
-doc_brief: "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE — Diﬀerent ways of representing the groupSU(3) within a Geometric Algebra approach are"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.982
+latex_coverage_ratio: 0.989
 ---
 \label{sec1}
 

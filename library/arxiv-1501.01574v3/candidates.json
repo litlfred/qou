@@ -1,0 +1,215 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1501.01574v3",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "8af5d6264a0ad5e0fce33b41d7502ba25ad1969ad56e661044f387bdfe537ac3",
+  "file": "1501.01574v3.pdf"
+ },
+ "provenance": {
+  "title": "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL",
+  "authors": "EFSTRATIA KALFAGIANNI AND ANH T. TRAN",
+  "arxiv": {
+   "id": "1501.01574",
+   "version": "3",
+   "primary_class": "math.GT",
+   "stamp_date": "5 Sep 2015"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 14,
+  "by_kind": {
+   "conjecture": 4,
+   "theorem": 9,
+   "proposition": 1
+  },
+  "formalization_candidates": 10
+ },
+ "candidates": [
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "1.1",
+   "name": "Slope Conjecture",
+   "statement": "For every knot K \u2282S3 we have",
+   "section_file": "sections/sec-001-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{period2} also applies to several non-alternating prime knots with up to nine crossings",
+   "section_file": "sections/sec-002-12-cable-knots.md",
+   "section_title": "Cable knots",
+   "pages": "2-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{slopeaug} implies a similar statement for $\\{2b^*_K(n)\\}'$ since it is know that",
+   "section_file": "sections/sec-002-12-cable-knots.md",
+   "section_title": "Cable knots",
+   "pages": "2-4",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{main:bs} and Corollary \\ref{integers} are key ingredients in the proofs of the results of the paper concerning",
+   "section_file": "sections/sec-004-2-boundary-slopes-of-cable-knots.md",
+   "section_title": "Boundary Slopes of Cable Knots",
+   "pages": "4-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{quasi} and Theorem \\ref{main:bs} imply the following.",
+   "section_file": "sections/sec-009-32-cables-of-knots-of-period-at-most-2.md",
+   "section_title": "Cables of knots of period at most 2",
+   "pages": "10-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{thm-quasi} and the proof of Proposition \\ref{quasi} then imply that",
+   "section_file": "sections/sec-010-33-strong-slope-conjecture-for-iterated-cables-o.md",
+   "section_title": "Strong Slope Conjecture for iterated cables of adequate knots",
+   "pages": "14-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{thm-quasi} applies to several non-alternating knots with 8 and 9 crossings. The Jones slopes of all non-alternating prime knots with up to nine crossings were calculated by Garoufalidis in Section 4 of \\cite{Ga-slope}.",
+   "section_file": "sections/sec-011-35-low-crossing-knots-with-period-two.md",
+   "section_title": "Low crossing knots with period two",
+   "pages": "17-18",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{thm-quasi} implies that $js_{\\K} \\subset bs_{\\K}$ and that $js^*_{\\K} \\subset bs_{\\K}$. In particular, $\\K$ satisfies the Slope Conjecture. Applying this argument repeatedly we obtain the result for iterated cables.",
+   "section_file": "sections/sec-011-35-low-crossing-knots-with-period-two.md",
+   "section_title": "Low crossing knots with period two",
+   "pages": "17-18",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{thm-quasi-constant} and Corollary \\ref{cables-a} to the knots $8_{20}, 9_{43}, 9_{44}$. By \\cite[Section 4]{Ga-slope},",
+   "section_file": "sections/sec-012-4-cabling-knots-with-constant-an.md",
+   "section_title": "Cabling knots with constant a(n)",
+   "pages": "18-22",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{thm-quasi-constant} follows from Theorem \\ref{bdry slope} and the following proposition.",
+   "section_file": "sections/sec-012-4-cabling-knots-with-constant-an.md",
+   "section_title": "Cabling knots with constant a(n)",
+   "pages": "18-22",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{conj} holds for the knots of Table 1. In the next section we will check that Conjecture \\ref{conj} holds true for",
+   "section_file": "sections/sec-013-5-conjectures.md",
+   "section_title": "Conjectures",
+   "pages": "22-23",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": null,
+   "name": null,
+   "statement": "s \\ref{conj} and \\ref{slopeaug}",
+   "section_file": "sections/sec-013-5-conjectures.md",
+   "section_title": "Conjectures",
+   "pages": "22-23",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{thm-quasi} and the proof of Proposition \\ref{quasi} then imply that",
+   "section_file": "sections/sec-014-51-non-alternating-montesinos-knots-up-to-nine-c.md",
+   "section_title": "Non-alternating Montesinos knots up to nine crossings",
+   "pages": "23-25",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{prop:b} implies that Conjecture \\ref{conj} holds true for 2-fusion knots: The fact that $b_K(n)\\leq 0$ is clear by the statement",
+   "section_file": "sections/sec-018-62-calculating-the-linear-term.md",
+   "section_title": "Calculating the linear term",
+   "pages": "27-30",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1009.4034v1
-doc_title: "KEROV’S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL MEASURES OF PARAMETER α = 1/2 PIERRE-LOÏC MÉLIOT"
+doc_title: "KEROV’S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL MEASURES OF PARAMETER α = 1/2"
 section_id: sec-002-5-moments-of-the-deviations-and-chebyshev-polyno
 section_title: "Moments of the deviations and Chebyshev polynomials of the second kind"
 section_number: 5
 pages: 13-23
 source_pdf: 1009.4034v1.pdf
 source_sha256: 8f8d6d786b60c279
-doc_brief: "KEROV’S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL MEASURES OF PARAMETER α = 1/2 PIERRE-LOÏC MÉLIOT — In this article, we show that Kerov’s central limit theorem related to the ﬂuctuations of Young"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.872
-latex_coverage_ratio: 0.997
+latex_prose_ratio: 0.966
+latex_coverage_ratio: 0.995
 ---
 []{#core label="core"} To make appear the Chebyshev polynomials of the second type, we start by computing the moments of the deviation $\Delta_{\lambda,c}$ of a rescaled Young diagram from its limit shape. If $\lambda$ is a partition of size $n$, let us denote by $\tilq_{k,c}(\lambda)$ the following quantity: $$\widetilde{q}_{k,c}(\lambda)=\frac{\widetilde{p}_{k+1}(\lambda)}{(k+1)\,n^{k/2}}-\sum_{l=1}^{\lfloor\frac{k+1}{2}\rfloor} \frac{k^{\downarrow 2l-1}}{(k+1-l)\,l!\,l-1!}\,c^{k+1-2l}\,n^{1/2}$$ Because of the factors $n^{-k/2}$ and $n^{1/2}$, $\widetilde{q}_{k,c}$ is not contained in $\obs$, but is rather in the localized ring $\obs^{+}=\obs[{\varSigma_{1}}^{-1/2}]$. In [@IO02], all the computations are done in this ring of generalized observables, and using the so-called Kerov degree; as we shall see here, this complicated framework is not at all required for the asymptotic analysis of fluctuations of Plancherel ($c=0$) and Schur-Weyl ($c>0$) measures.
 

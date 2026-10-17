@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1103.2082v1/blocks/prose-sec-012",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "A trace on the ideal of negligibles in Rep(S0)",
-  "pageStart": 7,
-  "pageEnd": 8,
-  "text": "../sections/sec-012-4-a-trace-on-the-ideal-of-negligibles-in-reps0.md",
+  "title": "2.6.",
+  "pageStart": 6,
+  "pageEnd": 7,
+  "text": "../sections/sec-012-26.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1103.2082v1/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1103.2082v1/manifest.jsonld",
   "provenance": "ingested"

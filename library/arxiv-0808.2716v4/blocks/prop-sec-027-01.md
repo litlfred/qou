@@ -1,0 +1,1 @@
+[\[prop:3-braids\]](#prop:3-braids){reference-type="ref" reference="prop:3-braids"} and Theorem [\[thm:3braid-volume\]](#thm:3braid-volume){reference-type="ref" reference="thm:3braid-volume"} immediately imply the following.

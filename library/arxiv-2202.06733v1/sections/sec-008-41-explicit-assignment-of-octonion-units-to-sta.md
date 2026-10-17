@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2202.06733v1
-doc_title: "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE"
+doc_title: "Received <day> <Month>, <year>"
 section_id: sec-008-41-explicit-assignment-of-octonion-units-to-sta
 section_title: "Explicit assignment of octonion units to STA elements"
 section_number: 4.1
 pages: 9-12
 source_pdf: 2202.06733v1.pdf
 source_sha256: e670632090447f14
-doc_brief: "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE — Diﬀerent ways of representing the groupSU(3) within a Geometric Algebra approach are"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.881
-latex_coverage_ratio: 0.964
+latex_coverage_ratio: 0.993
 ---
 We now discuss the explicit linking of the octonion units $e_0$ through $e_7$ with the 8 elements making up Dirac spinors in the STA. The latter are the even elements of the STA, which as mentioned above, can be derived as the full geometric algebra of 3d space, via the identification $\sigma_i = \gamma_i \gamma_0$, $i=1,2,3$, as illustrated in Fig.~\ref{fig:sta-split}.
 

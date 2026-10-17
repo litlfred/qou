@@ -1,0 +1,1 @@
+[\[prop:polygon-count\]](#prop:polygon-count){reference-type="ref" reference="prop:polygon-count"} follows immediately from Lemmas [\[lem:covering\]](#lem:covering){reference-type="ref" reference="lem:covering"} and [\[lem:degree-1\]](#lem:degree-1){reference-type="ref" reference="lem:degree-1"}.

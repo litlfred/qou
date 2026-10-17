@@ -1,0 +1,71 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1205.1453v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "29d1b1fd9466a3d885fab05470c70d7dd07e155afafd5e0e9214165b6a603f4d",
+  "file": "1205.1453v2.pdf"
+ },
+ "provenance": {
+  "title": "An asymptotic formula of the divergent bilateral basic hypergeometric series",
+  "authors": "Takeshi MORITA\u2217",
+  "arxiv": {
+   "id": "1205.1453",
+   "version": "2",
+   "primary_class": "math.CA",
+   "stamp_date": "9 May 2012"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 3,
+  "by_kind": {
+   "theorem": 2,
+   "corollary": 1
+  },
+  "formalization_candidates": 3
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "For any x \u2208C\u2217\\ [\u2212\u03bb; q], we have",
+   "section_file": "sections/sec-004-32-an-asymptotic-formula.md",
+   "section_title": "An asymptotic formula",
+   "pages": "9-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "1",
+   "name": null,
+   "statement": "The function C(x; q) is the q-elliptic function, i.e., C(x; q)",
+   "section_file": "sections/sec-004-32-an-asymptotic-formula.md",
+   "section_title": "An asymptotic formula",
+   "pages": "9-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": null,
+   "statement": "For any x \u2208C\u2217\\ [\u2212\u03bb; q] (\u2212\u03c0 < arg x < \u03c0), we have",
+   "section_file": "sections/sec-004-32-an-asymptotic-formula.md",
+   "section_title": "An asymptotic formula",
+   "pages": "9-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

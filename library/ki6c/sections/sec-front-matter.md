@@ -27,4 +27,3 @@ concrete homotopy of the (real 3-dimensional) domain of the integral in C3 in su
 boundary of the domain always stays in a certain domain in C3 given by the potential function of
 the hyperbolic structure.
 Mathematics Subject Classiﬁcation (2010). Primary: 57M27. Secondary: 57M25, 57M50.
-1

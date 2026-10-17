@@ -7,10 +7,10 @@ section_number: 3.5
 pages: 47-55
 source_pdf: 1508.05448v1.pdf
 source_sha256: 57d2c717d8ec74d0
-doc_brief: "Concentration of Measure Techniques and Applications — 23 sections: Biographical Sketch; Acknowledgments; Abstract"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.984
-latex_coverage_ratio: 0.992
+latex_prose_ratio: 0.988
+latex_coverage_ratio: 0.973
 ---
 Consider a random walk X on $\{1,\dots,n\}$. Represent $X$ by some element in $\{0,1\}^n$, where $X_i=0$ corresponds to a step down in the walk at position $i$ and $X_i=1$ corresponds to a step up. We will assume that $$\sum_{i=1}^n X_i =\frac{n}{2}$$ so that we have the same number of up steps as down steps. We can now look at this random walk as the initial configuration of a particle process with $X_i=1$ corresponding to a particle in position $i$ and $X_i=0$ corresponding to no particle at position $i$. Consider the asymmetric exclusion process acting on this configuration with the following dynamics. At each step of the process, a number $i$ is chosen uniformly in $\{1,\dots,n-1\}$. If $X_i=X_{i+1}$, then the configuration stays the same. If $X_i=1$ and $X_{i+1}=0$, then the values of $X_i$ and $X_{i+1}$ switch with probability $1-q/2$ and if $X_i=0$ and $X_{i+1}=1$, then the values switch with probability $q/2$. Viewed in this way, the asymmetric exclusion process can be viewed as a Markov process on the set of random walks. See [@Liggett] for an in depth discussion of the asymmetric exclusion process.
 

@@ -1,15 +1,15 @@
 ---
 doc_id: arxiv-2206.14086v3
-doc_title: "KPZ limit theorems Jinho Baik∗"
+doc_title: "KPZ limit theorems"
 section_id: sec-008-34-integrable-method
 section_title: "Integrable method"
 section_number: 3.4
 pages: 6-7
 source_pdf: 2206.14086v3.pdf
 source_sha256: b6c27f820f963079
-doc_brief: "KPZ limit theorems Jinho Baik∗ — One-dimensional interacting particle systems, 1+1 random growth models, and two-dimensional di- rected polymers deﬁne 2d height ﬁelds."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.893
+latex_prose_ratio: 0.898
 latex_coverage_ratio: 1.0
 ---
 []{#sec:integrablemethod label="sec:integrablemethod"}

@@ -1,1 +1,1 @@
-Let X ∈Smk be projective of dimension dX. Then
+], where for p, using the projective bundle formula, the key point is to show that both

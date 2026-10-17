@@ -30,4 +30,3 @@ using blowup equations, we explain the connection between this operator and the 
 Painlev´e III.
 arXiv:1908.07065v3  [hep-th]  20 Jul 2020
 Contents
-1

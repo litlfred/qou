@@ -1,1 +1,1 @@
-For any C∗ \ [−λ;qr−1], we have
+For any C∗\ [−λ; qr−1], we have

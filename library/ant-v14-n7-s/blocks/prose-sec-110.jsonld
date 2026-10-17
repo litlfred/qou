@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/ant-v14-n7-s/blocks/prose-sec-110",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "8E. Descent for the motivic Euler characteristic",
-  "pageStart": 181,
-  "pageEnd": 184,
-  "text": "../sections/sec-110-8e-descent-for-the-motivic-euler-characteristic.md",
+  "title": "8C. Milnor–Witt cohomology and Chow–Witt groups",
+  "pageStart": 173,
+  "pageEnd": 175,
+  "text": "../sections/sec-110-8c-milnorwitt-cohomology-and-chowwitt-groups.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
   "provenance": "ingested"

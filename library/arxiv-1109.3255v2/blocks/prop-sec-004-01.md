@@ -1,1 +1,1 @@
-The integral aﬃne manifold B is topologically a disk. It has one
+[\[prop:affine-coords\]](#prop:affine-coords){reference-type="ref" reference="prop:affine-coords"} determines the monodromy around the singular point (at $\eta = \xi = \psi = 0$) of the base, and show that the affine structure is in fact integral. Once again, the monodromy is a shear.

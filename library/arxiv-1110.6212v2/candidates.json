@@ -1,0 +1,72 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1110.6212v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "1923b6a0bfdc810f27d6c2ecf533c3b52ad94c321e9e7004fe962c82ad34c52b",
+  "file": "1110.6212v2.pdf"
+ },
+ "provenance": {
+  "title": "On calibrated representations and the Plancherel Theorem for a\ufb03ne Hecke algebras",
+  "authors": "James Parkinson\u2217",
+  "arxiv": {
+   "id": "1110.6212",
+   "version": "2",
+   "primary_class": "math.RT",
+   "stamp_date": "26 May 2014"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 3,
+  "by_kind": {
+   "proposition": 1,
+   "theorem": 1,
+   "conjecture": 1
+  },
+  "formalization_candidates": 2
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "~\\ref{prop:calc} gives $f(q_1^{-1},\\omega)+f(q_1^{-1},\\omega^{-1})=\\pi^8(h)$ and $\\sigma=\\pi^6(h)$ (note that $\\pi^6$ only occurs for parameters $q_2^{3/2}<q_1<q_2^2$, and in this range $\\pi^6$ is defined and has regular central character). We also have $\\sigma_{\\pm}=\\pi_{\\pm}^7(h)$. For $\\pi_+^7$ it is important that $q_1\\neq q_2$ and $q_1\\neq q_2^3$, for otherwise $\\pi_+^7$ does not have a regular central character and things become complicated (see below). Lemma~\\ref{lem:1dim} gives $f(q_1^{-1},q_2^{-1})=\\chi^3(h)$. Since we exclude $q_1=q_2$ the representation $\\pi^4$ has regular central c",
+   "section_file": "sections/sec-011-31-the-rank-1-algebras.md",
+   "section_title": "The rank 1 algebras",
+   "pages": "16-31",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "for real and p-adic Lie groups (see also Reeder [26]). The Plancherel Theorem has",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-2",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "2.27",
+   "name": null,
+   "statement": "] to be rational numbers). Thus it is desirable to have a complete and direct",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

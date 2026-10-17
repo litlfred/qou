@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1112.0030v2/blocks/prose-sec-003",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Mirror symmetry for knots",
-  "pageStart": 25,
-  "pageEnd": 36,
-  "text": "../sections/sec-003-5-mirror-symmetry-for-knots.md",
+  "title": "Colored HOMFLY homology",
+  "pageStart": 15,
+  "pageEnd": 25,
+  "text": "../sections/sec-003-4-colored-homfly-homology.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1112.0030v2/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1112.0030v2/manifest.jsonld",
   "provenance": "ingested"

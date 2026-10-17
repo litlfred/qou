@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "1-s20-s009731651830061x-main",
+  "title": "Journal of Combinatorial Theory, Series A Constant term formulas for reﬁned enumerations of Gog and Magog trapezoids",
   "contains": [
+    "library/1-s20-s009731651830061x-main/sections/sec-front-matter",
     "library/1-s20-s009731651830061x-main/sections/sec-000",
     "library/1-s20-s009731651830061x-main/sections/sec-001",
     "library/1-s20-s009731651830061x-main/sections/sec-002",
@@ -31,13 +32,16 @@
     "library/1-s20-s009731651830061x-main/sections/sec-017",
     "library/1-s20-s009731651830061x-main/sections/sec-018",
     "library/1-s20-s009731651830061x-main/sections/sec-019",
-    "library/1-s20-s009731651830061x-main/sections/sec-020"
+    "library/1-s20-s009731651830061x-main/sections/sec-020",
+    "library/1-s20-s009731651830061x-main/sections/sec-021"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "1-s20-s009731651830061x-main",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1-s2.0-S009731651830061X-main.pdf",
     "source_sha256": "8d591fe7f1673c5225706070b0b17ade3e51bde21198a6bc1e297def580eb216",
     "pages": 45,

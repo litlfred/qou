@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1012.5432v4
-doc_title: "Towards topological quantum computation? Knotting and fusing flux tubes"
+doc_title: "quant-ph Towards Topological Quantum Computation? -"
 section_id: sec-004-2-two-dimensions
 section_title: "Two Dimensions"
 section_number: 2
 pages: 14-21
 source_pdf: 1012.5432v4.pdf
 source_sha256: ec5f6da1f813649e
-doc_brief: "Towards topological quantum computation? Knotting and fusing flux tubes — 19 sections: A Hamiltonian; Instantons; Dirac Monopoles"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.933
-latex_coverage_ratio: 0.976
+latex_coverage_ratio: 0.985
 ---
 ***Indistinguishable Particles: Braid Group*** On the other hand, in two dimensions the fundamental group of the configuration space of a system of $n$ identical particles is given by the more general braid group: $$\pi_1(C_n(\mathbb{R}^2)) \simeq B_n(\mathbb{R}^2) = \langle \sigma_i,  1 \leq i \leq n-1 | \sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1},$$ $$\sigma_i \sigma_j = \sigma_j \sigma_i \forall |i-j| \geq 2 \rangle .$$ The $\sigma_i$ are defined physically by interchanging the $i^{th}$ and $(i+1)^{st}$ particles counterclockwise. In contrast to the symmetric group, not all braid group generators satisfy $\sigma_i^2 = Id$. The monodromy operator/$R^2$ matrix is defined as the square of the braiding operator/R matrix.
 

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2206.14086v3
-doc_title: "KPZ limit theorems Jinho Baik∗"
+doc_title: "KPZ limit theorems"
 section_id: sec-006-33-exponential-dlpp
 section_title: "Exponential DLPP"
 section_number: 3.3
 pages: 5-5
 source_pdf: 2206.14086v3.pdf
 source_sha256: b6c27f820f963079
-doc_brief: "KPZ limit theorems Jinho Baik∗ — One-dimensional interacting particle systems, 1+1 random growth models, and two-dimensional di- rected polymers deﬁne 2d height ﬁelds."
+toc_source: outline
 ---
 a 2d Poisson process in R2
 +. An up/right path p this time is deﬁned as the graph of a continuous piecewise
@@ -40,4 +40,3 @@ distributed as the Tracy-Widom distribution. The Tracy-Widom distribution is the
 the largest eigenvalue of random Hermitian matrices such as Gaussian unitary ensemble matrices [86]. The
 connection of the KPZ ﬁxed point and random matrix theory was surprising and unexpected. See Section
 9.3 for more on this connection.
-3.2

@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-1
 source_pdf: 1403.4021v2.pdf
 source_sha256: 046d02411e0dc086
-doc_brief: "MARKOV TRACES ON THE BIRMAN-WENZL-MURAKAMI ALGEBRAS — We classify the Markov traces factoring through the Birman-Wenzl-Murakami (BMW) algebras."
+toc_source: outline
 ---
-
+Introduction
+2

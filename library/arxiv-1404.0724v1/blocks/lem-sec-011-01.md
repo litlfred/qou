@@ -1,1 +1,1 @@
-Given an r-matrix R ∈Aut(V ⊗V ), there is a representation
+The vector space W[|Λ| −2m] is ﬁnite dimensional, of dimension equal to the

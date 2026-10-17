@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-0811.2435v1/blocks/prose-sec-038",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Spherical collections and mutations",
-  "pageStart": 128,
-  "pageEnd": 136,
-  "text": "../sections/sec-038-spherical-collections-and-mutations.md",
+  "title": "Deformation invariance and intermediate Jacobian",
+  "pageStart": 112,
+  "pageEnd": 120,
+  "text": "../sections/sec-038-deformation-invariance-and-intermediate-jacobian.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0811.2435v1/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0811.2435v1/manifest.jsonld",
   "provenance": "ingested"

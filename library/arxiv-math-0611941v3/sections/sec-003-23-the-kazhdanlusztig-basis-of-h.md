@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-math-0611941v3
-doc_title: "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR MEINOLF GECK"
+doc_title: "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR"
 section_id: sec-003-23-the-kazhdanlusztig-basis-of-h
 section_title: "The Kazhdan–Lusztig basis of H"
 section_number: 2.3
 pages: 4-5
 source_pdf: 0611941v3.pdf
 source_sha256: bf6f2d55c7adee51
-doc_brief: "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR MEINOLF GECK — Let H be the one-parameter Hecke algebra associated to a ﬁnite Weyl gr oup W , deﬁned over a ground ring in which “bad” primes for W are"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.95
-latex_coverage_ratio: 0.944
+latex_coverage_ratio: 0.952
 ---
 []{#sub23 label="sub23"}
 

@@ -1,1 +1,1 @@
-LetSn∼=L⊂M be a Lagrangian sphere. Fix a Lagrangian disk ∆ n+1⊂H with
+A quadric hypersurface Q ⊂Pn+1contains a distinguished isotopy class of La-

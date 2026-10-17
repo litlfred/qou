@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1411.6062v2
-doc_title: "EV ALUATION OF STATE INTEGRALS AT RATIONAL POINTS"
+doc_title: "EVALUATION OF STATE INTEGRALS AT RATIONAL POINTS"
 section_id: sec-009-3-proof-of-theorem-19
 section_title: "Proof of Theorem 1.9"
 section_number: 3
 pages: 13-16
 source_pdf: 1411.6062v2.pdf
 source_sha256: 5abd328d027de43c
-doc_brief: "EVALUATION OF STATE INTEGRALS AT RATIONAL POINTS — Multi-dimensional state-integrals of products of Faddeev’s quant um diloga- rithms arise frequently in Quantum Topology, quantum Teichm¨ uller t"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.977
+latex_prose_ratio: 0.97
+latex_coverage_ratio: 0.823
 ---
 We start by taking the logarithmic derivative of Faddeev's quantum dilogarithm $$\begin{aligned}
 \frac{\partial}{\partial x}\log \operatorname{\Phi}_{\mathsf{b}}(x)

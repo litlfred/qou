@@ -9,6 +9,7 @@ source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
 ---
+Estimate of the range of ∆′
 In this section, we calculate the concrete values of the bounds of the inequalities in (53)
 so that they satisfy that ∆−∆′ ⊂(52).
 Putting Λ as in Section 2.2, we have that
@@ -296,4 +297,3 @@ not estimate the error term of the numerical solution of Newton’s method, thou
 above argument is practically useful, since we can guess that such an error term would
 be suﬃciently small for the above purpose. In order to complete the above argument, we
 give a rigorous proof of an estimate of a solution of (58) in Lemma A.3.
-4.3

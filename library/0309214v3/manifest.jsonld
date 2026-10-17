@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "0309214v3",
+  "title": "The colored Jones function is q –holonomic",
   "contains": [
+    "library/0309214v3/sections/sec-front-matter",
     "library/0309214v3/sections/sec-000",
     "library/0309214v3/sections/sec-001",
     "library/0309214v3/sections/sec-002",
@@ -33,13 +34,16 @@
     "library/0309214v3/sections/sec-019",
     "library/0309214v3/sections/sec-020",
     "library/0309214v3/sections/sec-021",
-    "library/0309214v3/sections/sec-022"
+    "library/0309214v3/sections/sec-022",
+    "library/0309214v3/sections/sec-023"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "0309214v3",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0309214v3.pdf",
     "source_sha256": "53967ef30b0aedb90fc8384886e3c0754e908ca9a1edf06aaadb3501b72318c5",
     "pages": 41,

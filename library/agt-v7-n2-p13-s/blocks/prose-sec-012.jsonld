@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/agt-v7-n2-p13-s/blocks/prose-sec-012",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "From QHFT bordisms to QHG-triangulated pseudomanifolds",
+  "title": "The QHFT functor",
   "pageStart": 41,
-  "pageEnd": 43,
-  "text": "../sections/sec-012-51-from-qhft-bordisms-to-qhg-triangulated-pseudo.md",
+  "pageEnd": 41,
+  "text": "../sections/sec-012-5-the-qhft-functor.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v7-n2-p13-s/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v7-n2-p13-s/manifest.jsonld",
   "provenance": "ingested"

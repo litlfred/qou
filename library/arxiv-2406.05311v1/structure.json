@@ -2,7 +2,7 @@
  "_schema": "pdf-structure/v1",
  "doc_id": "arxiv-2406.05311v1",
  "source": {
-  "file": "A_quantum_Murnaghan--Nakayama_rule_for_the_flag_ma.pdf",
+  "file": "2406.05311v1.pdf",
   "sha256": "c431fca1503295472c64e8a979468af083bd75329242fd3d137f28ae81422b6b",
   "bytes": 569861,
   "pages": 34,
@@ -1012,14 +1012,26 @@
    "title": "Definition of the left operators",
    "level": 2,
    "page_start": 15,
-   "page_end": 19,
-   "n_chars": 11869,
-   "n_words": 2517,
+   "page_end": 17,
+   "n_chars": 5355,
+   "n_words": 1176,
    "label_start": "15",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-013-52-flattening-and-uk-equivalence",
+   "number": "5.2",
+   "title": "Flattening and (u,k)-equivalence",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 6424,
+   "n_words": 1330,
+   "label_start": "17",
    "label_end": "19"
   },
   {
-   "id": "sec-013-53-diagrammatic-notation",
+   "id": "sec-014-53-diagrammatic-notation",
    "number": "5.3",
    "title": "Diagrammatic notation",
    "level": 2,
@@ -1031,7 +1043,7 @@
    "label_end": "20"
   },
   {
-   "id": "sec-014-54-symmetries-of-the-quantum-k-bruhat-order",
+   "id": "sec-015-54-symmetries-of-the-quantum-k-bruhat-order",
    "number": "5.4",
    "title": "Symmetries of the quantum k-Bruhat order",
    "level": 2,
@@ -1043,7 +1055,7 @@
    "label_end": "23"
   },
   {
-   "id": "sec-015-55-degree-two-relations",
+   "id": "sec-016-55-degree-two-relations",
    "number": "5.5",
    "title": "Degree two relations",
    "level": 2,
@@ -1055,7 +1067,7 @@
    "label_end": "26"
   },
   {
-   "id": "sec-016-56-crossing-products",
+   "id": "sec-017-56-crossing-products",
    "number": "5.6",
    "title": "Crossing products",
    "level": 2,
@@ -1067,7 +1079,7 @@
    "label_end": "26"
   },
   {
-   "id": "sec-017-57-paths",
+   "id": "sec-018-57-paths",
    "number": "5.7",
    "title": "Paths",
    "level": 2,
@@ -1079,7 +1091,7 @@
    "label_end": "29"
   },
   {
-   "id": "sec-018-58-products-of-trees",
+   "id": "sec-019-58-products-of-trees",
    "number": "5.8",
    "title": "Products of trees",
    "level": 2,
@@ -1091,7 +1103,7 @@
    "label_end": "30"
   },
   {
-   "id": "sec-019-example",
+   "id": "sec-020-example",
    "number": null,
    "title": "Example",
    "level": 2,
@@ -1103,7 +1115,7 @@
    "label_end": "31"
   },
   {
-   "id": "sec-020-59-proof-of-theorem-51",
+   "id": "sec-021-59-proof-of-theorem-51",
    "number": "5.9",
    "title": "Proof of Theorem 5.1",
    "level": 2,
@@ -1115,7 +1127,7 @@
    "label_end": "32"
   },
   {
-   "id": "sec-021-acknowledgments",
+   "id": "sec-022-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 2,
@@ -1127,7 +1139,7 @@
    "label_end": "32"
   },
   {
-   "id": "sec-022-references",
+   "id": "sec-023-references",
    "number": null,
    "title": "References",
    "level": 1,
@@ -1150,13 +1162,13 @@
    "count": 0,
    "items": []
   },
-  "sections": 24,
-  "chars_total": 93787,
+  "sections": 25,
+  "chars_total": 93697,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "quantum-mn-rule.tex",
    "tex_sections": 30,
-   "overlaid": 19,
+   "overlaid": 20,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1265,13 +1277,21 @@
     {
      "id": "sec-012-51-definition-of-the-left-operators",
      "title": "Definition of the left operators",
-     "prose_ratio": 0.955,
-     "coverage_ratio": 0.936,
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.901,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-53-diagrammatic-notation",
+     "id": "sec-013-52-flattening-and-uk-equivalence",
+     "title": "Flattening and (u,k)-equivalence",
+     "prose_ratio": 0.924,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-53-diagrammatic-notation",
      "title": "Diagrammatic notation",
      "prose_ratio": 0.912,
      "coverage_ratio": 0.948,
@@ -1279,7 +1299,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-54-symmetries-of-the-quantum-k-bruhat-order",
+     "id": "sec-015-54-symmetries-of-the-quantum-k-bruhat-order",
      "title": "Symmetries of the quantum k-Bruhat order",
      "prose_ratio": 0.946,
      "coverage_ratio": 0.965,
@@ -1287,7 +1307,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-55-degree-two-relations",
+     "id": "sec-016-55-degree-two-relations",
      "title": "Degree two relations",
      "prose_ratio": 0.9,
      "coverage_ratio": 0.905,
@@ -1295,13 +1315,13 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-56-crossing-products",
+     "id": "sec-017-56-crossing-products",
      "title": "Crossing products",
      "prose_ratio": 0.324,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-017-57-paths",
+     "id": "sec-018-57-paths",
      "title": "Paths",
      "prose_ratio": 0.932,
      "coverage_ratio": 0.728,
@@ -1309,7 +1329,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-018-58-products-of-trees",
+     "id": "sec-019-58-products-of-trees",
      "title": "Products of trees",
      "prose_ratio": 0.965,
      "coverage_ratio": 0.955,
@@ -1317,7 +1337,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-019-example",
+     "id": "sec-020-example",
      "title": "Example",
      "prose_ratio": 0.703,
      "coverage_ratio": 0.932,
@@ -1325,12 +1345,12 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-020-59-proof-of-theorem-51",
+     "id": "sec-021-59-proof-of-theorem-51",
      "title": "Proof of Theorem 5.1",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-021-acknowledgments",
+     "id": "sec-022-acknowledgments",
      "title": "Acknowledgments",
      "prose_ratio": 0.821,
      "coverage_ratio": 1.0,
@@ -1338,7 +1358,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-022-references",
+     "id": "sec-023-references",
      "title": "References",
      "result": "no matching \\section"
     }

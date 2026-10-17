@@ -7,10 +7,11 @@
   "bytes": 1047366,
   "pages": 99,
   "text_source": "embedded",
-  "math_source": "latex",
+  "extractor": "pymupdf",
   "mtime": null,
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,19 +21,34 @@
    "stamp_date": "20 May 2026"
   },
   "doi": null,
-  "title": "Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li",
+  "title": "Topological Field Theories and the Algebraic Structures of the Two-Sphere",
   "authors_raw": "May 21, 2026",
   "title_lines": [
    "Topological Field Theories and the Algebraic Structures",
    "of the Two-Sphere",
    "Chris Li"
   ],
-  "abstract": "We give two presentations for bordisms ofS 2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the algebraic structures onS 2. After passing through topological field theories, we define two kinds of monoids which we call P-monoids and L-monoids. In addition to both being commutative Frobenius monoids, P-monoids are equipped with a class of endomorphisms while L-monoids are equipped with a class of unit morphisms, all of which are labelled by closed oriented irreducible prime 3- manifolds. They turn out to be equivalent. The new prime structures satisfy some countable relations with the commutative Frobenius structure, the most notable of which we call \u201clegs relations.\u201d We then restrict to the setting of algebras and show that the legs relations place strong constraints on the new prime endomorphisms which forces them to act by multiplications by prime units, rendering the additional prime structures remarkably simple. We also propose an\u221e-operad which encodes these prime structures and contains the\u221e-little 3-cube operad as a sub-operad. 1 arXiv:2605.20846v1 [math.AT] 20 May 2026",
+  "abstract": "We give two presentations for bordisms of S2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the algebraic structures on S2. After passing through topological field theories, we define two kinds of monoids which we call P-monoids and L-monoids. In addition to both being commutative Frobenius monoids, P-monoids are equipped with a class of endomorphisms while L-monoids are equipped with a class of unit morphisms, all of which are labelled by closed oriented irreducible prime 3- manifolds. They turn out to be equivalent. The new prime structures satisfy some countable relations with the commutative Frobenius structure, the most notable of which we call \u201clegs relations.\u201d We then restrict to the setting of algebras and show that the legs relations place strong constraints on the new prime endomorphisms which forces them to act by multiplications by prime units, rendering the additional prime structures remarkably simple. We also propose an \u221e-operad which encodes these prime structures and contains the \u221e-little 3-cube operad as a sub-operad. 1 arXiv:2605.20846v1 [math.AT] 20 May 2026",
   "docinfo": {
+   "Title": "Topological Field Theories and the Algebraic Structures of the Two-Sphere",
    "Author": "Chris Li",
-   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
    "Producer": "pikepdf 8.15.1",
-   "Title": "Topological Field Theories and the Algebraic Structures of the Two-Sphere"
+   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)"
+  },
+  "title_raw": "Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Topological Field Theories and the Algebraic Structures of the Two-Sphere",
+   "heading": "Topological Field Theories and the Algebraic Structures of the Two-Sphere",
+   "outline": "Introduction",
+   "text": "Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -41,144 +57,1525 @@
    "title": "Introduction",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Generators",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "Commutative Frobenius Relations",
    "page": 22,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "Outline of Strategy",
    "page": 22,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "Existence and Spherical Morse Functions",
    "page": 26,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "Spherical Morse Functions",
    "page": 32,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 2,
    "title": "Local Models of Excellent Morse Failures",
    "page": 38,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   },
   {
    "level": 2,
    "title": "Sufficiency of Commutative Frobenius Relations Among CF Generators",
    "page": 41,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
   },
   {
    "level": 1,
    "title": "Prime Relations",
    "page": 46,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "46"
   },
   {
    "level": 2,
    "title": "No Internal Relations",
    "page": 46,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "46"
   },
   {
    "level": 2,
    "title": "External Prime Relations",
    "page": 49,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "49"
   },
   {
    "level": 2,
    "title": "Sufficiency of External Relations",
    "page": 54,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "54"
   },
   {
    "level": 2,
    "title": "Necessity of Legs Relations",
    "page": 60,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "60"
   },
   {
    "level": 1,
    "title": "Passing through TFTs",
    "page": 70,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "70"
   },
   {
    "level": 2,
    "title": "P and L Monoids",
    "page": 70,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "70"
   },
   {
    "level": 2,
    "title": "Relations to J-Algebras",
    "page": 74,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "74"
   },
   {
    "level": 2,
    "title": "The -operad L",
    "page": 78,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "78"
   },
   {
    "level": 1,
    "title": "Appendix: Definitions and Common Results",
    "page": 90,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "90"
   },
   {
    "level": 2,
    "title": "Presentations of a Category",
    "page": 90,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "90"
   },
   {
    "level": 2,
    "title": "Towards",
    "page": 92,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "92"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1.1",
+   "title": "The commutative Frobenius generators of Cob(2)",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "1.2",
+   "title": "A list of generating morphisms",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "1.3",
+   "title": "The \u201clegs relations\u201d for the G2 presentation of Cob(3)S2",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "1.4",
+   "title": "A path from f0 to f1 using 3 prime relations, then 2 commutative Frobenius relations, then 2 prime relations. Note that each black dot is a Morse data which induces some composition. The prime relations is a pair of Morse data separated by more than 1 singularities, while a commutative Frobenius rel",
+   "page": 10,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "2.1",
+   "title": "A sketch of how G2 generates a generic bordism [M] where M \u2019s prime factors are P1, . . . , Pm. Note that this picture is \u201csideways\u201d as we usually associate the \u201ctime\u201d direction as going up. In this case, time goes from left to right",
+   "page": 17,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "17"
+  },
+  {
+   "kind": "figure",
+   "number": "2.2",
+   "title": "A sketch of how G1 generates a generic bordism [M] where M \u2019s prime factors are",
+   "page": 19,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "19"
+  },
+  {
+   "kind": "figure",
+   "number": "2.3",
+   "title": "Notations 2.0.10. Given the two remarks 2.0.8 and 2.0.9, we shall remove S2 \u00d7 S1",
+   "page": 19,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "19"
+  },
+  {
+   "kind": "figure",
+   "number": "2.4",
+   "title": "Bijection between G1 and G2 generators. Figure (a) shows that all prime units",
+   "page": 21,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "21"
+  },
+  {
+   "kind": "figure",
+   "number": "3.1",
+   "title": "The birth and death of a pair of critical points of index (0, 1) and (2, 3). The first equality, when read from left to right, shows the death of critical points of indices 0 and 1. One can imagine pushing the left cone up until the bottom tip is level with the crouch of the pair of pants, then smoo",
+   "page": 27,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "27"
+  },
+  {
+   "kind": "figure",
+   "number": "3.2",
+   "title": "(a) Associativity of multiplication. (b) Coassociativity of comultiplication",
+   "page": 28,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "28"
+  },
+  {
+   "kind": "figure",
+   "number": "3.3",
+   "title": "Frobenius relation",
+   "page": 29,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "29"
+  },
+  {
+   "kind": "figure",
+   "number": "3.4",
+   "title": "The local picture of the regular surface f \u22121(r) after the birth of a pair of critical points c1,2 of index 1 and 2, where f(c1) < r < f(c2). Notice that this surface has genus at least 1, hence is not spherical",
+   "page": 30,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "30"
+  },
+  {
+   "kind": "figure",
+   "number": "3.5",
+   "title": "Two different decompositions of S2 \u00d7 S1. Figure (a) is the usual \u201cpants\u201d decomposition which resembles the pants decomposition of a torus in 2-dimensions. A regular surface f \u22121(r), for any r between the index 2 and 1 critical values, is the disjoint union",
+   "page": 31,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "31"
+  },
+  {
+   "kind": "figure",
+   "number": "3.6",
+   "title": "The Kirby graphics for a path at fpants : S2 \u00d7 S1 which fails to remain spherical as it exchanges the index 1 and 2 critical points. After the exchange the Morse function",
+   "page": 32,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "32"
+  },
+  {
+   "kind": "figure",
+   "number": "3.7",
+   "title": "An example of a Reeb graph Rf associated to a Morse function f. Here f :",
+   "page": 34,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "34"
+  },
+  {
+   "kind": "figure",
+   "number": "3.8",
+   "title": "A local model of the birth of a pair of critical points",
+   "page": 39,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "39"
+  },
+  {
+   "kind": "figure",
+   "number": "3.9",
+   "title": "The tilting torus. The figure on the left is the standard embedding of the 2-torus. As one rotates the torus, the critical values of the index 1 critical points move towards each other, ultimately coinciding as depicted in the right figure. The critical level set is depicted as the two dashed circle",
+   "page": 41,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "41"
+  },
+  {
+   "kind": "figure",
+   "number": "3.10",
+   "title": "The behavior of Morse data under the isomorphism S : Cob(2) \u2192Cob(3)S2",
+   "page": 43,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "43"
+  },
+  {
+   "kind": "figure",
+   "number": "4.1",
+   "title": "Classifications of spherical regular surface in a prime endomorphism. The shaded",
+   "page": 47,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "47"
+  },
+  {
+   "kind": "figure",
+   "number": "4.2",
+   "title": "Classifications of spherical regular surface in a prime unit. The shaded sphere is",
+   "page": 49,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "49"
+  },
+  {
+   "kind": "figure",
+   "number": "4.3",
+   "title": "Prime endomorphism commutativity. Geometrically turning the left hand side upside down. Equivalently one can post-compose the Morse function by x 7\u2192\u2212x",
+   "page": 50,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "50"
+  },
+  {
+   "kind": "figure",
+   "number": "4.4",
+   "title": "A cartoon for legs and waist relations. All manifolds depicted are diffeomorphic,",
+   "page": 51,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "51"
+  },
+  {
+   "kind": "figure",
+   "number": "4.5",
+   "title": "Legs relations for p\u00d7L \u2282G1",
+   "page": 52,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "52"
+  },
+  {
+   "kind": "figure",
+   "number": "4.6",
+   "title": "Redundancy of L legs relations",
+   "page": 54,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "54"
+  },
+  {
+   "kind": "figure",
+   "number": "4.7",
+   "title": "Pulling aside a map out of 1\u2297",
+   "page": 57,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "57"
+  },
+  {
+   "kind": "figure",
+   "number": "4.8",
+   "title": "The only if direction of lemma 4.4.2",
+   "page": 62,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "62"
+  },
+  {
+   "kind": "figure",
+   "number": "4.9",
+   "title": "Redundancy of G2 waist relations",
+   "page": 63,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "63"
+  },
+  {
+   "kind": "figure",
+   "number": "4.10",
+   "title": "Redundancy of prime commutativity. Note that the final figure is symmetric under the exchange of p\u00d7\u00d7",
+   "page": 68,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "68"
+  },
+  {
+   "kind": "figure",
+   "number": "4.11",
+   "title": "Redundancy of cowaist relations",
+   "page": 69,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "69"
+  },
+  {
+   "kind": "figure",
+   "number": "5.1",
+   "title": "(a) An example of the star graph G in the spike ball operad. In this particular case, G has | \u03b1\u22121(j) | +1 = 3 half edges, and Ij = {1, 2} labelled vertices. (b) illustrate the particular bordism [M] \u2208BDiff(M)represented by G and the connect sum configuration f",
+   "page": 85,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "85"
+  },
+  {
+   "kind": "figure",
+   "number": "5.2",
+   "title": "A simple spike ball example. (a) gives the graph G. (b) provides a visualization for the bordism represented by G and a connect sum configuration f",
+   "page": 88,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "88"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "64",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "69",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "70",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "71",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "72",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "73",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": "74",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": "75",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": "76",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 77,
+   "label": "77",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 78,
+   "label": "78",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 79,
+   "label": "79",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 80,
+   "label": "80",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 81,
+   "label": "81",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 82,
+   "label": "82",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 83,
+   "label": "83",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 84,
+   "label": "84",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 85,
+   "label": "85",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 86,
+   "label": "86",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 87,
+   "label": "87",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 88,
+   "label": "88",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 89,
+   "label": "89",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 90,
+   "label": "90",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 91,
+   "label": "91",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 92,
+   "label": "92",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 93,
+   "label": "93",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 94,
+   "label": "94",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 95,
+   "label": "95",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 96,
+   "label": "96",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 97,
+   "label": "97",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 98,
+   "label": "98",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 99,
+   "label": "99",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1229,
+   "n_words": 187,
+   "label_start": "1",
+   "label_end": "2"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -186,8 +1583,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 13,
-   "n_chars": 26148,
-   "n_words": 4282
+   "n_chars": 26460,
+   "n_words": 4582,
+   "label_start": "2",
+   "label_end": "13"
   },
   {
    "id": "sec-001-generators",
@@ -196,8 +1595,10 @@
    "level": 1,
    "page_start": 13,
    "page_end": 21,
-   "n_chars": 14823,
-   "n_words": 2570
+   "n_chars": 15261,
+   "n_words": 3007,
+   "label_start": "13",
+   "label_end": "21"
   },
   {
    "id": "sec-002-commutative-frobenius-relations",
@@ -206,8 +1607,10 @@
    "level": 1,
    "page_start": 21,
    "page_end": 22,
-   "n_chars": 589,
-   "n_words": 100
+   "n_chars": 597,
+   "n_words": 110,
+   "label_start": "21",
+   "label_end": "22"
   },
   {
    "id": "sec-003-outline-of-strategy",
@@ -216,8 +1619,10 @@
    "level": 2,
    "page_start": 22,
    "page_end": 26,
-   "n_chars": 12042,
-   "n_words": 1868
+   "n_chars": 12242,
+   "n_words": 2050,
+   "label_start": "22",
+   "label_end": "26"
   },
   {
    "id": "sec-004-existence-and-spherical-morse-functions",
@@ -226,8 +1631,10 @@
    "level": 2,
    "page_start": 26,
    "page_end": 32,
-   "n_chars": 12365,
-   "n_words": 2068
+   "n_chars": 12610,
+   "n_words": 2278,
+   "label_start": "26",
+   "label_end": "32"
   },
   {
    "id": "sec-005-spherical-morse-functions",
@@ -236,8 +1643,10 @@
    "level": 2,
    "page_start": 32,
    "page_end": 38,
-   "n_chars": 11061,
-   "n_words": 1766
+   "n_chars": 11490,
+   "n_words": 2172,
+   "label_start": "32",
+   "label_end": "38"
   },
   {
    "id": "sec-006-local-models-of-excellent-morse-failures",
@@ -246,8 +1655,10 @@
    "level": 2,
    "page_start": 38,
    "page_end": 46,
-   "n_chars": 17800,
-   "n_words": 2973
+   "n_chars": 18289,
+   "n_words": 3428,
+   "label_start": "38",
+   "label_end": "46"
   },
   {
    "id": "sec-007-prime-relations",
@@ -257,7 +1668,9 @@
    "page_start": 46,
    "page_end": 46,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "46",
+   "label_end": "46"
   },
   {
    "id": "sec-008-no-internal-relations",
@@ -266,8 +1679,10 @@
    "level": 2,
    "page_start": 46,
    "page_end": 49,
-   "n_chars": 7534,
-   "n_words": 1236
+   "n_chars": 7758,
+   "n_words": 1441,
+   "label_start": "46",
+   "label_end": "49"
   },
   {
    "id": "sec-009-external-prime-relations",
@@ -276,8 +1691,10 @@
    "level": 2,
    "page_start": 49,
    "page_end": 54,
-   "n_chars": 9004,
-   "n_words": 1465
+   "n_chars": 9252,
+   "n_words": 1694,
+   "label_start": "49",
+   "label_end": "54"
   },
   {
    "id": "sec-010-sufficiency-of-external-relations",
@@ -286,8 +1703,10 @@
    "level": 2,
    "page_start": 54,
    "page_end": 60,
-   "n_chars": 12495,
-   "n_words": 2117
+   "n_chars": 12780,
+   "n_words": 2372,
+   "label_start": "54",
+   "label_end": "60"
   },
   {
    "id": "sec-011-necessity-of-legs-relations",
@@ -296,8 +1715,10 @@
    "level": 2,
    "page_start": 60,
    "page_end": 70,
-   "n_chars": 14711,
-   "n_words": 2424
+   "n_chars": 15191,
+   "n_words": 2884,
+   "label_start": "60",
+   "label_end": "70"
   },
   {
    "id": "sec-012-passing-through-tfts",
@@ -307,7 +1728,9 @@
    "page_start": 70,
    "page_end": 70,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "70",
+   "label_end": "70"
   },
   {
    "id": "sec-013-p-and-l-monoids",
@@ -316,8 +1739,10 @@
    "level": 2,
    "page_start": 70,
    "page_end": 74,
-   "n_chars": 9920,
-   "n_words": 1525
+   "n_chars": 10262,
+   "n_words": 1855,
+   "label_start": "70",
+   "label_end": "74"
   },
   {
    "id": "sec-014-relations-to-j-algebras",
@@ -326,8 +1751,10 @@
    "level": 2,
    "page_start": 74,
    "page_end": 90,
-   "n_chars": 34037,
-   "n_words": 5427
+   "n_chars": 35054,
+   "n_words": 6423,
+   "label_start": "74",
+   "label_end": "90"
   },
   {
    "id": "sec-015-presentations-of-a-category",
@@ -336,8 +1763,10 @@
    "level": 2,
    "page_start": 90,
    "page_end": 92,
-   "n_chars": 6356,
-   "n_words": 980
+   "n_chars": 6633,
+   "n_words": 1233,
+   "label_start": "90",
+   "label_end": "92"
   },
   {
    "id": "sec-016-towards",
@@ -346,16 +1775,44 @@
    "level": 2,
    "page_start": 92,
    "page_end": 99,
-   "n_chars": 12634,
-   "n_words": 1671
+   "n_chars": 12874,
+   "n_words": 1903,
+   "label_start": "92",
+   "label_end": "99"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 20,
-  "sections": 17,
-  "chars_total": 201519,
+  "toc_inferred_entries": 0,
+  "figure_entries": 31,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "P and L Monoids"
+    ]
+   },
+   "found_not_listed": {
+    "count": 2,
+    "items": [
+     "2 M is diffeomorphic to either S3 or #r \u0000",
+     "4 S is the gluing sphere of"
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 18,
+  "chars_total": 207982,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
@@ -367,6 +1824,11 @@
     "coverage": 0.5
    },
    "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
@@ -385,24 +1847,24 @@
     {
      "id": "sec-003-outline-of-strategy",
      "title": "Outline of Strategy",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-004-existence-and-spherical-morse-functions",
      "title": "Existence and Spherical Morse Functions",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-005-spherical-morse-functions",
      "title": "Spherical Morse Functions",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -410,7 +1872,7 @@
      "id": "sec-006-local-models-of-excellent-morse-failures",
      "title": "Local Models of Excellent Morse Failures",
      "prose_ratio": 0.968,
-     "coverage_ratio": 0.814,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -422,32 +1884,32 @@
     {
      "id": "sec-008-no-internal-relations",
      "title": "No Internal Relations",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-009-external-prime-relations",
      "title": "External Prime Relations",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-010-sufficiency-of-external-relations",
      "title": "Sufficiency of External Relations",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-011-necessity-of-legs-relations",
      "title": "Necessity of Legs Relations",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -459,8 +1921,8 @@
     {
      "id": "sec-013-p-and-l-monoids",
      "title": "P and L Monoids",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -468,7 +1930,7 @@
      "id": "sec-014-relations-to-j-algebras",
      "title": "Relations to J-Algebras",
      "prose_ratio": 0.964,
-     "coverage_ratio": 0.75,
+     "coverage_ratio": 0.965,
      "result": "overlaid",
      "converter": "latex"
     },

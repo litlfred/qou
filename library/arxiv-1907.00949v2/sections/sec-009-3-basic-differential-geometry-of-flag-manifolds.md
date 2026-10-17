@@ -7,10 +7,10 @@ section_number: 3
 pages: 7-9
 source_pdf: 1907.00949v2.pdf
 source_sha256: 865defaa34bf42be
-doc_brief: "OPTIMIZATION ON FLAG MANIFOLDS — A ﬂag is a sequence of nested subspaces."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.994
-latex_coverage_ratio: 0.983
+latex_prose_ratio: 0.955
+latex_coverage_ratio: 0.993
 ---
 []{#sec:flag label="sec:flag"}
 

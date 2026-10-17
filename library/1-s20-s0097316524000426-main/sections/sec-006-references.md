@@ -1,13 +1,13 @@
 ---
 doc_id: 1-s20-s0097316524000426-main
-doc_title: "Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions"
+doc_title: "Journal of Combinatorial Theory, Series A Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions"
 section_id: sec-006-references
 section_title: "References"
 section_number: null
 pages: 10-10
 source_pdf: 1-s2.0-S0097316524000426-main.pdf
 source_sha256: 76a8ab857163aa09
-doc_brief: "Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions — 7 sections: Proof of a conjecture of Ballantin; Introduction; Proofs of Theorem 1.3 and Corollar"
+toc_source: outline
 ---
 [1] G.E. Andrews, The Theory of Partitions, Addison-Wesley, Reading, Mass, 1976, reprinted, Cam-
 bridge University Press, 1998.

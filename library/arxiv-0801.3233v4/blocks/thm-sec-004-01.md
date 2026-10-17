@@ -1,1 +1,1 @@
-Let K be a ﬁeld containingR, and letX be a smooth aﬃne
+\ref{thm1} is a consequence of the following more general

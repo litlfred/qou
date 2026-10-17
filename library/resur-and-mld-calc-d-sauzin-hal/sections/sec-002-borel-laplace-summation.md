@@ -7,193 +7,246 @@ section_number: null
 pages: 6-9
 source_pdf: Resur_and_Mld_Calc_D_SAUZIN_HAL.pdf
 source_sha256: b33f24cc76102f33
-doc_brief: "Resurgence and Mould Calculus — 9 sections: Introduction; Alien operators. Alien derivations; Borel-Laplace summation"
+toc_source: outline
 ---
-3.1 Borel-Laplace summation
+3.1
+Borel-Laplace summation
 Many resurgent series encountered in practice are use-
 ful because they are also ‘summable’ (or ‘accelero-
-summable’, but we won’t touch on accelero-
+summable’,
+but
+we
+won’t
+touch
+on
+accelero-
 summability in this article).
 Borel-Laplace summation is the application of
-Laplace transform (or some variant) to ( B~ϕ)(ζ), giv-
+Laplace transform (or some variant) to (B eϕ)(ζ), giv-
 ing rise to a function ϕ(z) for which the formal se-
-ries ~ϕ(z) appears as asymptotic expansion at inﬁnity;
+ries eϕ(z) appears as asymptotic expansion at inﬁnity;
 but the function ϕ is usually not analytic in a full
 neighbourhood of inﬁnity, only in a sectorial neigh-
-bourhood, because ~ϕ is usually a divergent series.
+bourhood, because eϕ is usually a divergent series.
 A condition is needed for this to be possible. Let J
-denote a real interval. We say that~ϕ(z) is 1-summable
-in the directions ofJ if the function ˆϕ(ζ) extends ana-
-lytically to the sector{argζ∈J} and satisﬁes there an
-exponential bound,|ˆϕ(ζ)|≤ C ec|ζ| for some c,C > 0.
+denote a real interval. We say that eϕ(z) is 1-summable
+in the directions of J if the function bϕ(ζ) extends ana-
+lytically to the sector {arg ζ ∈J} and satisﬁes there an
+exponential bound, |bϕ(ζ)| ≤C ec|ζ| for some c, C > 0.
 Each of the Laplace transforms
-(LθB~ϕ)(z) :=c0 +
-∫ eiθ∞
+(L θB eϕ)(z) := c0 +
+Z eiθ∞
 0
-e−zζ ˆϕ(ζ) dζ, θ ∈J
+e−zζ bϕ(ζ) dζ,
+θ ∈J
 (23)
 is then analytic in the half-plane {ℜe(zeiθ) > c}. By
 the Cauchy theorem, these functions match and can
-be glued so as to deﬁne one function ( LJB~ϕ)(z) an-
+be glued so as to deﬁne one function (L JB eϕ)(z) an-
 alytic in the union DJ of these half-planes—see Fig-
 ure 3. The domain DJ can be viewed as a sectorial
-neighbourhood of inﬁnity of opening |J| +π (to be
+neighbourhood of inﬁnity of opening |J| + π (to be
 considered as a part of the Riemann surface of the
-logarithm if|J|>π ).
+logarithm if |J| > π).
 Figure 3: Above: Directions for Laplace integration
-withJ = (θ1,θ 2). Below: the union of half-planes DJ.
-In that situation, the function SJ~ϕ := LJB~ϕ
-satisﬁes the asymptotic property ( SJ~ϕ)(z) ∼ ~ϕ(z)
-as|z|→∞ with 1-Gevrey qualiﬁcation—a classical
+with J = (θ1, θ2). Below: the union of half-planes DJ.
+In that situation, the function S J eϕ := L JB eϕ
+satisﬁes the asymptotic property (S J eϕ)(z) ∼eϕ(z)
+as |z| →∞with 1-Gevrey qualiﬁcation—a classical
 fact that sometimes goes under the name of Watson’s
 lemma, see e.g. [Cos09; MS16]. The operator
-SJ = LJ◦ B (24)
+S J = L J ◦B
+(24)
 is thus called the Borel-Laplace summation operator
 in the directions of J. One can easily check that
-SJ d ~ϕ
+S J deϕ
 dz = d
-dz (SJ~ϕ) and SJ[
-~ϕ(z+α)
-]
-= (SJ~ϕ)(z+α)
+dz(S J eϕ) and S J
+eϕ(z+α)
+
+= (S J eϕ)(z+α)
 (25)
 5
-for any α∈ C. The summation operator is also an
+for any α ∈C. The summation operator is also an
 algebra homomorphism. Indeed, B maps the Cauchy
-product of formal series to convolution in Cδ⊕ C{ζ},
-which LJ maps to the pointwise product of functions:
-SJ(~ϕ~ψ) = (SJ~ϕ)(SJ~ψ). (26)
-Equations (25)–(26) show that, if we start with~ϕ(z)
+product of formal series to convolution in C δ ⊕C{ζ},
+which L J maps to the pointwise product of functions:
+S J(eϕ eψ) = (S J eϕ)(S J eψ).
+(26)
+Equations (25)–(26) show that, if we start with eϕ(z)
 formal solution to an ordinary diﬀerential equation
 or a diﬀerence equation, even a nonlinear one, and
 if we can subject it to Borel-Laplace summation, then
-SJ~ϕ(z) is an analytic solution to the same equation.
+S J eϕ(z) is an analytic solution to the same equation.
 Notice however that there may exist other solutions
-with the same asymptotic series ~ϕ, maybe obtained
-by means of SJ′
-with a diﬀerent interval J′, or by
+with the same asymptotic series eϕ, maybe obtained
+by means of S J′ with a diﬀerent interval J′, or by
 some other means...
 The Borel-Laplace picture becomes particularly in-
-teresting when we start with a resurgent series ~ϕ(z),
-in which case ϕJ(z) := SJ~ϕ(z) deserves to be called
+teresting when we start with a resurgent series eϕ(z),
+in which case ϕJ(z) := S J eϕ(z) deserves to be called
 a resurgent function.
 Resurgent
-series ~ϕ(z)
-c0δ +ˆϕ(ζ) with
+series eϕ(z)
+c0δ + bϕ(ζ) with
 good analytic
 continuation
 Resurgent
 function ϕJ(z)
- 1
-PPPPPPPP i
+
+
+1
+P
+P
+P
+P
+P
+P
+P
+P
+i
 Borel B
-Laplace LJ
+Laplace L J
 6
-3.2 Transseries, symbolic Stokes automor-
+3.2
+Transseries,
+symbolic
+Stokes
+automor-
 phism
-Indeed, let us pick a generator ω1 of Ω and θ∗∈ R
-so that Ω + ⊂ d := e iθ∗ R>0 (making use of nota-
-tions (2) and (10)). Suppose that ~ϕ ∈ ~Rs
-Ω is 1-
-summable in the directions of J+ := (θ∗−δ,θ∗) as
-well as those of J− := ( θ∗,θ∗ + δ) for some δ ∈
-(0,π ). We then have two Borel sums at our disposal,
-SJ+~ϕ(z) and SJ−~ϕ(z). Comparing them in the do-
-main DJ+∩ DJ−∩{ℜe(zeiθ∗)> 0}, we ﬁnd
-SJ+~ϕ(z)− SJ−~ϕ(z) =
-∫
+Indeed, let us pick a generator ω1 of Ωand θ∗∈R
+so that Ω+ ⊂d := eiθ∗R>0 (making use of nota-
+tions (2) and (10)).
+Suppose that eϕ ∈
+eRs
+Ωis 1-
+summable in the directions of J+ := (θ∗−δ, θ∗) as
+well as those of J−:= (θ∗, θ∗+ δ) for some δ ∈
+(0, π). We then have two Borel sums at our disposal,
+S J+ eϕ(z) and S J−eϕ(z). Comparing them in the do-
+main DJ+ ∩DJ−∩{ℜe(zeiθ∗) > 0}, we ﬁnd
+S J+ eϕ(z) −S J−eϕ(z) =
+Z
 Γdiff
-e−zζ ˆϕ(ζ) dζ (27)
-with a contour Γdiﬀ that can be decomposed in a sum
-of contours Γ1, Γ2,... as illustrated on Figure (4).
+e−zζ bϕ(ζ) dζ
+(27)
+with a contour Γdiﬀthat can be decomposed in a sum
+of contours Γ1, Γ2, . . . as illustrated on Figure (4).
 Figure 4: Decomposition of the contour for the diﬀer-
 ence of two Laplace transforms as a sum of contours.
 By the Cauchy theorem we thus get
-SJ+~ϕ(z) = SJ−~ϕ(z) +
-∑
+S J+ eϕ(z) = S J−eϕ(z) +
+X
 k≥1
-∫
+Z
 Γk
-e−zζ ˆϕ(ζ) dζ, (28)
-at least if the growth of the relevant branches of ˆϕ(ζ)
+e−zζ bϕ(ζ) dζ,
+(28)
+at least if the growth of the relevant branches of bϕ(ζ)
 along the Γk’s stays at most exponential and the series
-overk is convergent (if not, (28) still has asymptotic
+over k is convergent (if not, (28) still has asymptotic
 meaning upon appropriate truncations). The point is
-that, for each k ≥ 1, in view of (4), (9) and (11),
-the branch of ˆϕ(ζ) that we are using along Γ k has a
+that, for each k ≥1, in view of (4), (9) and (11),
+the branch of bϕ(ζ) that we are using along Γk has a
 pole and a monodromy variation precisely described
 by B∆+
-ωk~ϕ, hence
-∫
+ωk eϕ, hence
+Z
 Γk
-e−zζ ˆϕ(ζ) dζ = e−ωkzSJ−∆+
-ωk~ϕ(z) (29)
-(use the change of variable ζ =ωk +ξ and (44)–(45)
+e−zζ bϕ(ζ) dζ = e−ωkzS J−∆+
+ωk eϕ(z)
+(29)
+(use the change of variable ζ = ωk + ξ and (44)–(45)
 below) and, ﬁnally,
-SJ+~ϕ = SJ−~ϕ +
-∑
+S J+ eϕ = S J−eϕ +
+X
 k≥1
-e−ωkzSJ−∆+
-ωk~ϕ. (30)
+e−ωkzS J−∆+
+ωk eϕ.
+(30)
 The right-hand side of (30) can be interpreted as
 the Borel-Laplace summation of a transseries, i.e. we
 are naturally led to work with expressions of the form
-~Ψ = ~ψ0 +
-∑
+eΨ = eψ0 +
+X
 k≥1
-e−ωkz~ψk, ~ψ0,~ψ1,~ψ2... ∈ ~Rs
+e−ωkz eψk,
+eψ0, eψ1, eψ2 . . . ∈eRs
 Ω, (31)
 which live in the space
-~Rs
-Ω[[e−ω1z]] = ˆ⊕
-k≥0
-e−kω1z~Rs
-Ω. (32)
+eRs
+Ω[[e−ω1z]] = b⊕
+k≥0e−kω1z eRs
+Ω.
+(32)
 6
 We view that space as a completed graded algebra, in
 which acts the operator
-∆/+
+∆
+/ +
 d := Id +
-∑
+X
 ω∈Ω∩d
 e−ωz∆+
-ω, (33)
-and to which we extend SJ± by declaring that
-SJ[e−ωz~Ψ] := e−ωz SJ~Ψ, the upshot being
-SJ+ = SJ−◦ ∆/+
-d, (34)
-at least in restriction to those transseries of
-~Rs
+ω ,
+(33)
+and to which we extend S J± by declaring that
+S J[e−ωz eΨ] := e−ωzS J eΨ, the upshot being
+S J+ = S J−◦∆
+/ +
+d ,
+(34)
+at
+least
+in
+restriction
+to
+those
+transseries
+of
+eRs
 Ω[[e−ω1z]] all of whose components satisfy the
 growth and convergence requirements needed for (28).
 We can now reach a more conceptual understanding
 of Theorem 3 and the identities (12):
-• The identities (12) express that ∆/+
+• The identities (12) express that ∆
+/ +
 d is an algebra
 endomorphism, which is no surprise since (34) in-
-volves two algebra homomorphisms SJ±.
-• The formulas expressing ∆ ωr in terms of
+volves two algebra homomorphisms S J±.
+• The
+formulas
+expressing
+∆ωr
+in
+terms
+of
 ∆+
-ω1,..., ∆+
+ω1, . . . , ∆+
 ωr alluded to right after the statement
 of Theorem 3 are just the homogeneous compo-
 nents of the relation
-log ∆/+
+log ∆
+/ +
 d =
-∑
+X
 ω∈Ω∩d
-e−ω∆ω, (35)
+e−ω∆ω,
+(35)
 which is the true origin of formula (11).
 • In the context of a completed graded algebra like
 ours, the logarithm of an algebra automorphism is
 always a derivation, and the homogeneous com-
 ponents of a derivation are all derivations, this
-explains why each ∆ω is a derivation of ~Rs
+explains why each ∆ω is a derivation of eRs
 Ω.
-Deﬁnition 7. The operator ∆/+
+Deﬁnition 7. The operator ∆
+/ +
 d is called the symbolic
-Stokes automorphism in the direction d = e iθ∗ R>0.
-The operator ∆/d := log ∆/+
+Stokes automorphism in the direction d = eiθ∗R>0.
+The operator ∆
+/ d := log ∆
+/ +
 d is called the directional
 alien derivation in the direction d.
 Here we see how we can go beyond the traditional
@@ -204,33 +257,40 @@ totics, ﬂat functions are in fact exponentially small,
 and the previous computation oﬀers a glimpse of how
 the resurgent tools gives us a handle on the exponen-
 tially small ambiguities inherent to the situation.
-The point is that ∆/+
+The point is that ∆
+/ +
 d is an algebra automorphism
-that commutes with d
-dz and composition with z ↦→
+that commutes with
+d
+dz and composition with z 7→
 z+α, and thus preserves the property of being a formal
 solution to a diﬀerential or diﬀerence equation. One
 can construct other such automorphisms; the simplest
-example is (∆/+
-d )w, with arbitrary w∈ C, which can
+example is (∆
+/ +
+d )w, with arbitrary w ∈C, which can
 be written as a mould expansion:
-(∆/+
+(∆
+/ +
 d )w =
-∑
+X
 ω∈Ω′
 wr(ω)
-r(ω)! e−‖ω‖z∆ω (36)
-with the notation‖ω1··· ωr‖ :=ω1+··· +ωr. The case
-w =± 1
+r(ω)! e−∥ω∥z∆ω
+(36)
+with the notation ∥ω1 · · · ωr∥:= ω1+· · ·+ωr. The case
+w = ± 1
 2 gives rise to the median summation operator,
-Sθ∗
-med := SJ+◦ (∆/+
-d )− 1
-2 = SJ−◦ (∆/+
+S θ∗
+med := S J+ ◦(∆
+/ +
+d )−1
+2 = S J−◦(∆
+/ +
 d )
 1
 2 , especially
-useful when θ∗ = 0 and real symmetry is at play.
+useful when θ∗= 0 and real symmetry is at play.
 All this can be particularly relevant in physics,
 where one often starts by developing a so-called per-
 turbative theory, where various formal expansions nat-
@@ -238,78 +298,91 @@ urally appear; but then, if they can be subjected to
 the resurgent apparatus, one may hope to incarnate
 them as functions with meaningful exponentially small
 contributions related to non-perturbative physics...
-4 The algebra
+4
+The algebra
 ▽
 R of general resurgent
 singularities
 We now relax one by one the two requirements im-
 posed by Deﬁnition 1, namely that the only obstacles
 to analytic continuation may occur at points of a given
-lattice Ω and that the singularities are no worse than
+lattice Ωand that the singularities are no worse than
 simple.
-4.1 Relaxing the constraint on the location of
+4.1
+Relaxing the constraint on the location of
 singularities.
-Deﬁnition 8. We call endlessly continuable anyˆϕ(ζ)
-analytic near 0 for which, for every real L >0, there
-exists a ﬁnite subset FL of C such that ˆϕ(ζ) can be
+Deﬁnition 8. We call endlessly continuable any bϕ(ζ)
+analytic near 0 for which, for every real L > 0, there
+exists a ﬁnite subset FL of C such that bϕ(ζ) can be
 analytically continued along every Lipschitz path of
-length<L starting in the initial domain of deﬁnition
-of ˆϕ and avoiding FL.
-Variants are possible—see [CNP93; KS20], or
+length < L starting in the initial domain of deﬁnition
+of bϕ and avoiding FL.
+Variants are possible—see [CNP93;
+KS20],
+or
 [´Eca85] for the most general deﬁnition (‘continuable
 with no cut’). The point is that singular points are
 possibly very numerous but, in a sense, still isolated.
 This leaves room for a behaviour such as the one en-
 visioned by Voros [Vor83b]: there may exist a dense
-subset Ω of C such that, at every point of Ω, at least
-one of the branches of the analytic continuation ofˆϕ is
+subset Ωof C such that, at every point of Ω, at least
+one of the branches of the analytic continuation of bϕ is
 7
 singular (but, in any given region of C, one ‘sees’ only
 ﬁnitely many singularities at a time: you need longer
 and longer paths of analytic continuation to see more
 and more singularities in that region).
-Denoting by ~Rs the space of all ~ϕ(z)∈ B−1(Cδ⊕
-C{ζ}) for which ˆϕ(ζ) is endlessly continuable with at
+Denoting by eRs the space of all eϕ(z) ∈B−1(C δ ⊕
+C{ζ}) for which bϕ(ζ) is endlessly continuable with at
 worst simple singularities for all the branches of its
 analytic continuation, we can now deﬁne the alien op-
 erators
 ∆+
-ω∈ EndC(~Rs), ∆ω∈ DerC(~Rs), for ω∈ C∗
+ω ∈EndC( eRs), ∆ω ∈DerC( eRs),
+for ω ∈C∗
 (37)
-as follows: given ~ϕ = B−1(Cδ +ˆϕ)∈ ~Rs, Deﬁnition 8
-allows us to ﬁnd a ﬁnite subset of ]0 ,ω [, the points of
-which we denote by ω1≺···≺ ωr−1 (with reference
+as follows: given eϕ = B−1(C δ + bϕ) ∈eRs, Deﬁnition 8
+allows us to ﬁnd a ﬁnite subset of ]0, ω[, the points of
+which we denote by ω1 ≺· · · ≺ωr−1 (with reference
 to the natural total order on the line-segment), so that
 Deﬁnition 2 can be copied verbatim, except that the
-ωk’s do not necessarily lie on any lattice (take anyL>
-|ω| and{ω1,...,ω r−1} :=FL∩ ]0,ω [ in Deﬁnition 8).
+ωk’s do not necessarily lie on any lattice (take any L >
+|ω| and {ω1, . . . , ωr−1} := FL∩]0, ω[ in Deﬁnition 8).
 Much of what has been said in the case of a lattice
-can be generalized to the case of ~Rs; in particular, this
+can be generalized to the case of eRs; in particular, this
 is a diﬀerential subalgebra of (C[[z−1]], d
-dz ) and, in the
+dz) and, in the
 summable case, we have a passage formula generaliz-
 ing (33)–(35):
-S{θ} = S{θ′}◦
-( ∑
+S {θ} = S {θ′} ◦
+ X
 ω∈Ω′
-Pω
-θ,θ′ e−‖ω‖z∆ω
-)
-, θ<θ ′,
+P ω
+θ,θ′ e−∥ω∥z∆ω
+
+,
+θ < θ′,
 (38)
 (at least in restriction to the simple resurgent series for
 which the action of the right-hand side is well-deﬁned),
 with a scalar mould Pθ,θ′ deﬁned by
-Pω
+P ω
 θ,θ′ :=
 
-
-
-1 if r(ω) = 0
+
+
+
+
+
+
 1
-r1!···rs! if θ< argω1≤···≤ argωr <θ′
-0 otherwise,
+if r(ω) = 0
+1
+r1!···rs!
+if θ < arg ω1 ≤· · · ≤arg ωr < θ′
+0
+otherwise,
 (39)
-where, in the second case, ω =ω1··· ωr⁄= ∅,s counts
-the number of pairwise distinct argωj’s, andr1,...,r s
-count their multiplicities (r1 +··· +rs =r).
+where, in the second case, ω = ω1 · · · ωr̸ = ∅, s counts
+the number of pairwise distinct arg ωj’s, and r1, . . . , rs
+count their multiplicities (r1 + · · · + rs = r).

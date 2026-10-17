@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0601458v1
-doc_title: "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS JEFFREY MORTON"
+doc_title: "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS"
 section_id: sec-005-4-stuff-types
 section_title: "Stuff Types"
 section_number: 4
 pages: 14-14
 source_pdf: 0601458v1.pdf
 source_sha256: ef34611620cfd0bd
-doc_brief: "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS JEFFREY MORTON — Interest in combinatorial interpretations of mathematica l entities stems from the convenience of the concrete models they provi de."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.98
 latex_coverage_ratio: 0.99

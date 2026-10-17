@@ -32,4 +32,3 @@ many examples, including Lens spaces, circle ﬁbrations over Riemann surfaces, 
 CALT-TH-2016-039
 arXiv:1701.06567v2  [hep-th]  24 May 2017
 Contents
-1.

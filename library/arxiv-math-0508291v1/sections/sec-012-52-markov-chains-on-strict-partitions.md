@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-math-0508291v1
-doc_title: "Stein’s Method and Random Character Ratios"
+doc_title: "Stein’s Method and Random Character Ratios Running head: Stein’s Method and Random Character Ratios Version of 8/13/05"
 section_id: sec-012-52-markov-chains-on-strict-partitions
 section_title: "Markov chains on strict partitions"
 section_number: 5.2
 pages: 32-34
 source_pdf: 0508291v1.pdf
 source_sha256: d2d541426aaec742
-doc_brief: "Stein’s Method and Random Character Ratios — Stein’s method is used to prove limit theorems for random character ratios."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.939
-latex_coverage_ratio: 0.986
+latex_coverage_ratio: 1.0
 ---
 \label{exchange}
 

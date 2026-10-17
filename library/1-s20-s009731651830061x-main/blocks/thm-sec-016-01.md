@@ -1,1 +1,1 @@
-Let S(x1, ..., xn) be a power series in x1, ..., xn that is symmetric in
+Suppose k̸ = 1 or m + q̸ = 1. The generating function of (m, n, k)-Magog

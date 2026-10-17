@@ -7,10 +7,10 @@ section_number: 1.2
 pages: 1-7
 source_pdf: 2007.10190v2.pdf
 source_sha256: 37bcbd3a343bb21a
-doc_brief: "THE RESURGENT STRUCTURE OF QUANTUM KNOT INVARIANTS — The asymptotic expansion of quantum knot invariants in complex Chern-Simons theory gives rise to factorially divergent formal power series."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.972
-latex_coverage_ratio: 0.797
+latex_coverage_ratio: 0.81
 ---
 In what follows, we will identify the partition function of complex
 Chern-Simons theory with the state integral of Andersen-Kashaev

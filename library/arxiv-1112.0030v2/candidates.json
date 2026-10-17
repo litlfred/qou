@@ -8,8 +8,8 @@
   "file": "1112.0030v2.pdf"
  },
  "provenance": {
-  "title": "Homological algebra of knots and BPS states",
-  "authors": "Sergei Gukov and Marko Sto\u02c7 si\u00b4 c",
+  "title": "Homological algebra of knots and BPS states Sergei Gukov and Marko Sto\u02c7si\u00b4c",
+  "authors": "Sergei Gukov and Marko Sto\u02c7si\u0107",
   "arxiv": {
    "id": "1112.0030",
    "version": "2",
@@ -20,10 +20,9 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 6,
+  "candidates": 2,
   "by_kind": {
-   "remark": 2,
-   "conjecture": 4
+   "remark": 2
   },
   "formalization_candidates": 0
  },
@@ -33,62 +32,10 @@
    "source_kind": "remark",
    "number": null,
    "name": null,
-   "statement": "ably, in addition to the di\ufb00erentials labeled by N (for a given r) we also",
+   "statement": "ably, in addition to the differentials labeled by $N$ (for a given $r$) we also find {\\it{colored}} differentials",
    "section_file": "sections/sec-000-1-setting-the-stage.md",
    "section_title": "Setting the stage",
    "pages": "1-7",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "conjecture",
-   "source_kind": "conjecture",
-   "number": "1.1",
-   "name": null,
-   "statement": "For every positive integer r, there exists a triply-graded",
-   "section_file": "sections/sec-000-1-setting-the-stage.md",
-   "section_title": "Setting the stage",
-   "pages": "1-7",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "conjecture",
-   "source_kind": "conjecture",
-   "number": "4.1",
-   "name": null,
-   "statement": "For a knot K and a positive integer r, there exists a \ufb01nite",
-   "section_file": "sections/sec-002-3-b-model-and-matrix-factorizations.md",
-   "section_title": "B-model and matrix factorizations",
-   "pages": "10-25",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "conjecture",
-   "source_kind": "conjecture",
-   "number": "4.2",
-   "name": null,
-   "statement": "For every positive integer r there exists a triply-graded ho-",
-   "section_file": "sections/sec-002-3-b-model-and-matrix-factorizations.md",
-   "section_title": "B-model and matrix factorizations",
-   "pages": "10-25",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "conjecture",
-   "source_kind": "conjecture",
-   "number": "5.1",
-   "name": null,
-   "statement": "For every positive integer r there exists a triply-graded ho-",
-   "section_file": "sections/sec-003-5-mirror-symmetry-for-knots.md",
-   "section_title": "Mirror symmetry for knots",
-   "pages": "25-36",
    "formalization_candidate": false,
    "formalization_note": null,
    "route_to": null
@@ -99,9 +46,9 @@
    "number": null,
    "name": null,
    "statement": "A.1. Conventions for the superpolynomial in the vector rep-",
-   "section_file": "sections/sec-004-appendix-a-notations.md",
+   "section_file": "sections/sec-006-appendix-a-notations.md",
    "section_title": "Appendix A. Notations",
-   "pages": "36-42",
+   "pages": "36-37",
    "formalization_candidate": false,
    "formalization_note": null,
    "route_to": null

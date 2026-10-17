@@ -7,7 +7,7 @@ section_number: 8
 pages: 18-18
 source_pdf: 1012.4941v2.pdf
 source_sha256: 1932a359f3bafb83
-doc_brief: "ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS — This paper deals with exploiting symmetry for solving linea r and integer programming problems."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.976
 latex_coverage_ratio: 1.0

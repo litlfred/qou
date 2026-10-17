@@ -23,4 +23,3 @@ These structures naturally descend from the sym-
 plectic group Sp(n), and are related to the dressing action given by the
 Iwasawa decomposition of the general linear group over the quaternions,
 GLn(H).
-1

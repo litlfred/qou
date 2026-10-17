@@ -1,1 +1,1 @@
-A.2. For all z∈ K such that|z|p< 1, we have, for the N3,D-topology,
+B.5. Let 3, ˜3, a be three formal variables. There exists a map

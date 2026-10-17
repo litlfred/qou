@@ -7,10 +7,10 @@ section_number: 3.2
 pages: 19-26
 source_pdf: 1301.4504v4.pdf
 source_sha256: 201acc5bb1d4b6a0
-doc_brief: "Quantum Computation vs. Firewalls — In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.941
-latex_coverage_ratio: 0.978
+latex_coverage_ratio: 0.987
 ---
 []{#compsec label="compsec"} In our world, the result of the previous section, that doing a quantum computation at worst takes a time which is double exponential in the entropy of the computer, had better not be optimal if we are ever to do any quantum computation at all. It can be improved upon of course, and the reason is that locality of interactions makes the dependence of $U_{comp}$ on time and computer size very special indeed.[^1] Since no quantum computer has yet been built we do not know exactly how one might be implemented physically, but there is a widely accepted model for quantum computation called the *quantum circuit model*. In the quantum circuit model one imagines having a "quantum memory" consisting of $n$ qubits, on which one can easily act with some finite set of one- or two-qubit unitary transformations, called *quantum gates*, on any qubit or pair of qubits. The computer builds up larger unitary transformations by applying the various gates successively. Interestingly the number of different types of gates needed to generate arbitrary unitary transformations with high precision is quite small. In fact, one is sufficient provided it is generic enough and that it can be applied to any two of the qubits (and in either order on those two). A set of gates having this property is called *universal*. A specific set of three gates which is universal is the *Hadamard* gate, which acts on a single qubit as $$\begin{aligned}
 \nonumber

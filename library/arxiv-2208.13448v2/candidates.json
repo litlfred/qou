@@ -1,0 +1,204 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2208.13448v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "8bfa244cf7ca867d90a5d465df2a3d3c63af08e500fc213a95cecdc6bd52693f",
+  "file": "2208.13448v2.pdf"
+ },
+ "provenance": {
+  "title": "ON THE COMPUTATION OF THE DIFFERENCE GALOIS GROUPS OF ORDER THREE EQUATIONS",
+  "authors": "THOMAS DREYFUS AND MARINA POULET",
+  "arxiv": {
+   "id": "2208.13448",
+   "version": "2",
+   "primary_class": "math.NT",
+   "stamp_date": "4 Jul 2023"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 13,
+  "by_kind": {
+   "theorem": 2,
+   "proposition": 5,
+   "lemma": 4,
+   "remark": 1,
+   "example": 1
+  },
+  "formalization_candidates": 11
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": "Theorem 6.13",
+   "statement": "For all t \u2208C\u2217, the di\ufb00erence Galois group of (1.1) is GL3(C).",
+   "section_file": "sections/sec-001-21-galois-groups.md",
+   "section_title": "Galois groups",
+   "pages": "2-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "s 1.20 and 1.21], see also [DR15, Theorem 2.4].",
+   "section_file": "sections/sec-003-2-difference-algebra.md",
+   "section_title": "Difference algebra",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2.1",
+   "name": null,
+   "statement": "Let G \u2282GLn(C) be the di\ufb00erence Galois group over (k, \u03c6) of (2.1). Then,",
+   "section_file": "sections/sec-003-2-difference-algebra.md",
+   "section_title": "Difference algebra",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.3",
+   "name": null,
+   "statement": "For all \u2113\u2a7e1, G[\u2113] has the same connected component of the identity as G.",
+   "section_file": "sections/sec-003-2-difference-algebra.md",
+   "section_title": "Difference algebra",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{prop3} then reduces the criterion on $D(G)$ to look at solutions in $\\overline{\\mathbf{k}} $ of linear $\\phi$-difference systems with coefficients in $\\overline{\\mathbf{k}}$. More precisely the condition $X=X^t$ drops the number of unknowns from $9$ to",
+   "section_file": "sections/sec-014-6-galois-groups-of-equations-of-order-three.md",
+   "section_title": "Galois groups of equations of order three",
+   "pages": "23-30",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "6.6",
+   "name": null,
+   "statement": "Assume that G is irreducible and primitive.",
+   "section_file": "sections/sec-015-62-imprimitive-case.md",
+   "section_title": "Imprimitive case",
+   "pages": "30-34",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "6.7",
+   "name": null,
+   "statement": "If D(G) = SL3(C), then Z(G) = {\u03bbId3 where \u03bb3 \u2208det(G)} . Recall that",
+   "section_file": "sections/sec-015-62-imprimitive-case.md",
+   "section_title": "Imprimitive case",
+   "pages": "30-34",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "6.8",
+   "name": null,
+   "statement": "Assume that G is irreducible and primitive. Let k be the algebraic closure of",
+   "section_file": "sections/sec-015-62-imprimitive-case.md",
+   "section_title": "Imprimitive case",
+   "pages": "30-34",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "6.9",
+   "name": null,
+   "statement": "Let K be a \ufb01eld of characteristic zero. Let X \u2208GLn(K) be a symmetric",
+   "section_file": "sections/sec-015-62-imprimitive-case.md",
+   "section_title": "Imprimitive case",
+   "pages": "30-34",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "6.10",
+   "name": null,
+   "statement": "The following facts are equivalent.",
+   "section_file": "sections/sec-015-62-imprimitive-case.md",
+   "section_title": "Imprimitive case",
+   "pages": "30-34",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "6.11",
+   "name": null,
+   "statement": "Assume that G is irreducible and primitive. Then, D(G) = SO3(C) if",
+   "section_file": "sections/sec-015-62-imprimitive-case.md",
+   "section_title": "Imprimitive case",
+   "pages": "30-34",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "6.11",
+   "name": null,
+   "statement": "then reduces the criterion on D(G) to look at solutions in k of linear",
+   "section_file": "sections/sec-015-62-imprimitive-case.md",
+   "section_title": "Imprimitive case",
+   "pages": "30-34",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": "6.12",
+   "name": null,
+   "statement": "Consider G the di\ufb00erence Galois group of (1.1) over C(z1/\u2217). Assume that",
+   "section_file": "sections/sec-015-62-imprimitive-case.md",
+   "section_title": "Imprimitive case",
+   "pages": "30-34",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

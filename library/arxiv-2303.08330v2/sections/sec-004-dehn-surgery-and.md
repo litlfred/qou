@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2303.08330v2
-doc_title: "A Cable Knot and BPS-Series II John Chae"
+doc_title: "A Cable Knot and BPS-Series II"
 section_id: sec-004-dehn-surgery-and
 section_title: "Dehn surgery and"
 section_number: null
 pages: 7-8
 source_pdf: 2303.08330v2.pdf
 source_sha256: 94981fa0a792b3fa
-doc_brief: "A Cable Knot and BPS-Series II John Chae — This is a companion paper to earlier work of the author, which genera lizes to an inﬁnite family of (2 , 2w + 1)-cabling of the ﬁgure eight knot ( |w| > 3)"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.974
 latex_coverage_ratio: 0.951

@@ -4,13 +4,13 @@ doc_title: "ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER FIELDS"
 section_id: sec-001-3-a-motivic-version-of-the-conjecture
 section_title: "A motivic version of the conjecture"
 section_number: 3
-pages: 9-29
+pages: 9-17
 source_pdf: 0707.3682v2.pdf
 source_sha256: 609a6f67a0cd5fc8
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.92
-latex_coverage_ratio: 0.565
-doc_brief: "ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER FIELDS — We formulate a conjectural p-adic analogue of Borel’s theorem re- lating regulators for higher K-groups of number ﬁelds to special values of the"
+latex_prose_ratio: 0.916
+latex_coverage_ratio: 0.969
 ---
 []{#motivicsection label="motivicsection"}
 
@@ -20,20 +20,14 @@ If $E$ is any extension of $\Q$, and $k/\Q$ is finite and Galois with Galois gro
 For an idempotent $\pi$ in $E[G]$ we let $M_\pi^E = \pi M^E$ and $K_{2n-1} (M_\pi^E) = \pi \KnE k$.
 :::
 
-Now fix an embedding $\phi_\infty : k \to \C$. The pairing $G \times k \to \C$ mapping $(\s,a)$ to $\phi_\infty(\s(a))$ leads to an $E$-bilinear pairing $$\begin{equation}
-\begin{aligned}\label{discpairing}
+Now fix an embedding $\phi_\infty : k \to \C$. The pairing $G \times k \to \C$ mapping $(\s,a)$ to $\phi_\infty(\s(a))$ leads to an $E$-bilinear pairing $$\begin{aligned}\label{discpairing}
 E[G] \times M^E & \to E \tensor_\Q \C
 \cr
 (e \s, e' \tensor a ) & \mapsto e e' \tensor \phi_\infty(\s(a))
 \,.
-\end{aligned}
-\end{equation}$$ and we consider its restriction $$\begin{equation*}
-(\,\cdot\,,\,\cdot\,)_\infty : E[G]\pi \times M_\pi^E \to E \tensor_\Q \C
-\,.
-\end{equation*}$$ Similarly, replacing $\phi_\infty$ with a fixed embedding $\phi_p : k \to \Qpbar$ we obtain $$\begin{equation*}
-(\,\cdot\,,\,\cdot\,)_p : E[G]\pi \times M_\pi^E \to E \tensor_\Q F
-\,.
-\end{equation*}$$ where $F \subset \Qpbar$ is the topological closure of $\phi_p(k)$, which is independent of $\phi_p$ since $k/\Q$ is Galois.
+\end{aligned}$$ and we consider its restriction $$(\,\cdot\,,\,\cdot\,)_\infty : E[G]\pi \times M_\pi^E \to E \tensor_\Q \C
+\,.$$ Similarly, replacing $\phi_\infty$ with a fixed embedding $\phi_p : k \to \Qpbar$ we obtain $$(\,\cdot\,,\,\cdot\,)_p : E[G]\pi \times M_\pi^E \to E \tensor_\Q F
+\,.$$ where $F \subset \Qpbar$ is the topological closure of $\phi_p(k)$, which is independent of $\phi_p$ since $k/\Q$ is Galois.
 
 ::: lemma
 []{#dimlemma label="dimlemma"} Let $\pi$ in $E[G]$ be an idempotent. Then $\dim_E(M_\pi^E) = \dim_E(E[G]\pi)$.
@@ -43,31 +37,19 @@ E[G] \times M^E & \to E \tensor_\Q \C
 *Proof.* Since $\pi^2 = \pi$, [\[discpairing\]](#discpairing){reference-type="eqref" reference="discpairing"} is identically 0 on $E[G]\pi \times  M_{1-\pi}^E$ and $E[G](1-\pi) \times  M_\pi^E$. But the determinant of this pairing is, up to multiplication by $E^*$, equal to $D_k^{1/2,\infty}$, hence non-zero. This implies the lemma. ◻
 :::
 
-We now introduce pairings similar to $(\cdot,\cdot)_\infty$ and $(\cdot,\cdot)_p$ but replacing $M_\pi^E$ with $\KMn M_\pi^E$. If we denote the map $\Kn k \to \Kn {\C}$ induced by $\phi_\infty$ by $\phi_{\infty*}$ and let $\Phi_\infty$ be the composition with the Beilinson regulator map $\reg_\infty$ for $\C$, $$\begin{equation*}
-\Phi_\infty = \reg_\infty \circ \phi_{\infty*} : \Kn k \to \Kn {\C} \to \R(n-1) \subset \C
-\,,
-\end{equation*}$$ then the pairing $G \times \Kn k \to \C$ given by mapping $(\s,\a)$ to $\Phi_\infty(\s(\a))$ gives rise to an $E$-bilinear pairing $$\begin{equation}
-\label{EKpairing}
+We now introduce pairings similar to $(\cdot,\cdot)_\infty$ and $(\cdot,\cdot)_p$ but replacing $M_\pi^E$ with $\KMn M_\pi^E$. If we denote the map $\Kn k \to \Kn {\C}$ induced by $\phi_\infty$ by $\phi_{\infty*}$ and let $\Phi_\infty$ be the composition with the Beilinson regulator map $\reg_\infty$ for $\C$, $$\Phi_\infty = \reg_\infty \circ \phi_{\infty*} : \Kn k \to \Kn {\C} \to \R(n-1) \subset \C
+\,,$$ then the pairing $G \times \Kn k \to \C$ given by mapping $(\s,\a)$ to $\Phi_\infty(\s(\a))$ gives rise to an $E$-bilinear pairing $$\label{EKpairing}
 \begin{aligned}
 E[G] \times \KMn M^E & \to E \otimes_\Q \C
 \\
 (e\s, e' \tensor \a ) & \mapsto  e e' \tensor \Phi_\infty(\s(\a))
-\end{aligned}
-\end{equation}$$ and we consider its restriction $$\begin{equation*}
-[\,\cdot\,,\,\cdot\,]_\infty : E[G]\pi \times \KMn M_\pi^E \to E \tensor_\Q \C
-\,.
-\end{equation*}$$
+\end{aligned}$$ and we consider its restriction $$_\infty : E[G]\pi \times \KMn M_\pi^E \to E \tensor_\Q \C
+\,.$$
 
-By Lemma [\[synlemma\]](#synlemma){reference-type="ref" reference="synlemma"} and the definition of $F$ the syntomic regulator gives us $$\begin{equation*}
-\reg_\syn : \Kn {\OO_F} \to F
-\,.
-\end{equation*}$$ If we write $\phi_{p*}$ for the composition $\Kn k \iso \Kn {\O} \to \Kn {\OO_F}$, with the second map induced by $\phi_p : k \to F$, and let $\Phi_p$ be the composition $$\begin{equation*}
-\reg_\syn \circ \phi_{p*} : \Kn k \to \Kn {F} \to F
-\,,
-\end{equation*}$$ then we can similarly obtain a pairing $$\begin{equation*}
-[\,\cdot\,,\,\cdot\,]_p : E[G]\pi \times \KMn M_\pi^E \to E \tensor_\Q F
-\,.
-\end{equation*}$$
+By Lemma [\[synlemma\]](#synlemma){reference-type="ref" reference="synlemma"} and the definition of $F$ the syntomic regulator gives us $$\reg_\syn : \Kn {\OO_F} \to F
+\,.$$ If we write $\phi_{p*}$ for the composition $\Kn k \iso \Kn {\O} \to \Kn {\OO_F}$, with the second map induced by $\phi_p : k \to F$, and let $\Phi_p$ be the composition $$\reg_\syn \circ \phi_{p*} : \Kn k \to \Kn {F} \to F
+\,,$$ then we can similarly obtain a pairing $$_p : E[G]\pi \times \KMn M_\pi^E \to E \tensor_\Q F
+\,.$$
 
 We now fix ordered $E$-bases of $E[G]\pi$, $M_\pi^E$, and $\KMn M_\pi^E$.
 
@@ -104,14 +86,12 @@ We now investigate when the two dimensions in Definition [\[regdef\]](#regdef){
 ::: proof
 *Proof.* For the statement we can first replace $E$ by a finitely generated subfield since $\pi$ contains only finitely many elements of $E$, next embed $E$ into $\C$ and use this embedding to enlarge $E$ to $\C$. So we may assume that $E=\C$.
 
-According to Theorem [\[boreltheorem\]](#boreltheorem){reference-type="ref" reference="boreltheorem"} the pairing [\[EKpairing\]](#EKpairing){reference-type="eqref" reference="EKpairing"} gives an injection $$\begin{equation}
-\label{Rinjection}
+According to Theorem [\[boreltheorem\]](#boreltheorem){reference-type="ref" reference="boreltheorem"} the pairing [\[EKpairing\]](#EKpairing){reference-type="eqref" reference="EKpairing"} gives an injection $$\label{Rinjection}
 \begin{aligned}
 \R \tensor_\Q \Kn k  & \to \R[G]^\vee = \Hom_\R(\R[G], \R)
 \cr
 \a & \mapsto f_\a \text{ with } f_\a(\s) = \frac{1}{(2 \pi i)^{n-1}} \Phi_\infty(\s(\a))
-\end{aligned}
-\end{equation}$$ and by extending the coefficients we get an injection $\C \tensor_\Q \Kn k  \to \C[G]^\vee$. The image of $\pi (\Kn k \tensor_\Q \C)$ under the last map vanishes on $\C[G](1-\pi)$ since $(1-\pi) \pi = 0$ so that $\pi \Kn k \tensor_\Q \C$ injects into $(\C[G]/\C[G](1-\pi))^\vee \iso (\C[G]\pi)^\vee$, which proves our first inequality.
+\end{aligned}$$ and by extending the coefficients we get an injection $\C \tensor_\Q \Kn k  \to \C[G]^\vee$. The image of $\pi (\Kn k \tensor_\Q \C)$ under the last map vanishes on $\C[G](1-\pi)$ since $(1-\pi) \pi = 0$ so that $\pi \Kn k \tensor_\Q \C$ injects into $(\C[G]/\C[G](1-\pi))^\vee \iso (\C[G]\pi)^\vee$, which proves our first inequality.
 
 As for equality, we know by Theorem [\[boreltheorem\]](#boreltheorem){reference-type="ref" reference="boreltheorem"} that [\[Rinjection\]](#Rinjection){reference-type="eqref" reference="Rinjection"} has as its image the subspace of $\R[G]^\vee$ where, under the action of $\Gal(\Qbar/\Q)$ on $\R[G]^\vee$ via $(\tilde \s f)(\s) = f(\tilde \s^{-1}\s)$, the conjucagy class of complex conjugation in $\Gal(\Qbar/\Q)$ acts as multiplication by $(-1)^{n-1}$. The same will therefore hold with complex coefficients. Since any element $\t$ in the conjugacy class of complex conjugation has order 1 or 2, $\C[G] \pi$ decomposes into eigenspaces for the eigenvalues $\pm 1$ and the desired equality can only hold if $\t$ acts as multiplication by $(-1)^{n-1}$ on all of $\C[G] \pi$. ◻
 :::
@@ -237,8 +217,7 @@ Then the statements of Conjecture [\[motiveconjecture\]](#motiveconjecture){ref
 ::: remark
 []{#BBmotiverem label="BBmotiverem"} We make the relation between Conjecture [\[motiveconjecture\]](#motiveconjecture){reference-type="ref" reference="motiveconjecture"}(1) and Beilinson's conjecture [@bei85 Conjecture 3.4] for (Artin) motives explicit since the relation between the two elements of $E^*$ involved also shows up very explicitly in our computer calculations, suggesting that the element for the formulation at $s=1-n$ is simpler than for our formulation at $s=n$ (see Remark [\[constantremark\]](#constantremark){reference-type="ref" reference="constantremark"}). We provide some details since we could not find a detailed enough reference in the literature.
 
-With notation as in Conjecture [\[motiveconjecture\]](#motiveconjecture){reference-type="ref" reference="motiveconjecture"} and [\[oldfuneq\]](#oldfuneq){reference-type="eqref" reference="oldfuneq"} we have $$\begin{equation}
-\label{newfuneq}
+With notation as in Conjecture [\[motiveconjecture\]](#motiveconjecture){reference-type="ref" reference="motiveconjecture"} and [\[oldfuneq\]](#oldfuneq){reference-type="eqref" reference="oldfuneq"} we have $$\label{newfuneq}
 \begin{aligned}
 \L 1-s {\chi_\pi^\vee\tensor\id} {\Q} 
 & =
@@ -247,51 +226,30 @@ W(\chi_\pi^\vee\tensor\id) C(\chi_\pi^\vee\tensor\id)^{s-\frac12} (2 (2\pi)^{-s}
 & \qquad\times
  (\cos(\pi s/2))^{n^+}  (\sin(\pi s/2))^{n^-} \L s {\chi_\pi\tensor\id} {\Q} 
 \,,
-\end{aligned}
-\end{equation}$$ with $\chi_\pi^\vee$ the dual character of $\chi_\pi$, $W(\chi_\pi^\vee\tensor\id)$ in $E\tensor\C$, and $C(\chi_\pi^\vee\tensor\id) = C(\chi_\pi\tensor\id)$ in $\Q^*$. If $m=\dim_E(E[G]\pi)$, then $n^+ = m$ and $n^-=0$ for $n$ odd, and $n^-=m$ and $n^+=0$ for $n$ even. In either case $\L s {\chi_\pi^\vee\tensor\id} {\Q}$ has a zero of order $m$ at $s=1-n$. Moreover $$\begin{equation}
-\label{edef}
-W(\chi_\pi^\vee\tensor\id) C(\chi_\pi^\vee\tensor\id)^{1/2} = e_n i^{m(n-1)} D(M_\pi^E)^{1/2,\infty}
-\end{equation}$$ for some $e_n$ in $E^* = (E\tensor_\Q \Q)^*$ by [@Del77 Propositions 5.5 and 6.5] since $D^{1/2,\infty}$ can be taken to be the same for $M_\pi^E$ and the associated determinant representation (cf. [@Jan88b p.360]). Hence the first non-vanishing coefficient in its Taylor expansion around $s=1-n$, $\Lsharp {1-n} {\chi_\pi^\vee\tensor\id} {\Q}$, equals $$\begin{equation*}
-\delta_n e_n (2\pi i)^{m(1-n)} ((n-1)!/2)^m C(\chi_\pi^\vee\tensor\id)^{n-1} D(M_\pi^E)^{1/2,\infty} \L n {\chi_\pi\tensor\id} {\Q}
-\end{equation*}$$ with $\delta_n = (-1)^{m(n-1)/2}$ when $n$ is odd, and $\delta_n = (-1)^{m(n+2)/2}$ when $n$ is even. In particular, Conjecture [\[motiveconjecture\]](#motiveconjecture){reference-type="ref" reference="motiveconjecture"}(1) is equivalent with $$\begin{equation}
-\label{newe}
+\end{aligned}$$ with $\chi_\pi^\vee$ the dual character of $\chi_\pi$, $W(\chi_\pi^\vee\tensor\id)$ in $E\tensor\C$, and $C(\chi_\pi^\vee\tensor\id) = C(\chi_\pi\tensor\id)$ in $\Q^*$. If $m=\dim_E(E[G]\pi)$, then $n^+ = m$ and $n^-=0$ for $n$ odd, and $n^-=m$ and $n^+=0$ for $n$ even. In either case $\L s {\chi_\pi^\vee\tensor\id} {\Q}$ has a zero of order $m$ at $s=1-n$. Moreover $$\label{edef}
+W(\chi_\pi^\vee\tensor\id) C(\chi_\pi^\vee\tensor\id)^{1/2} = e_n i^{m(n-1)} D(M_\pi^E)^{1/2,\infty}$$ for some $e_n$ in $E^* = (E\tensor_\Q \Q)^*$ by [@Del77 Propositions 5.5 and 6.5] since $D^{1/2,\infty}$ can be taken to be the same for $M_\pi^E$ and the associated determinant representation (cf. [@Jan88b p.360]). Hence the first non-vanishing coefficient in its Taylor expansion around $s=1-n$, $\Lsharp {1-n} {\chi_\pi^\vee\tensor\id} {\Q}$, equals $$\delta_n e_n (2\pi i)^{m(1-n)} ((n-1)!/2)^m C(\chi_\pi^\vee\tensor\id)^{n-1} D(M_\pi^E)^{1/2,\infty} \L n {\chi_\pi\tensor\id} {\Q}$$ with $\delta_n = (-1)^{m(n-1)/2}$ when $n$ is odd, and $\delta_n = (-1)^{m(n+2)/2}$ when $n$ is even. In particular, Conjecture [\[motiveconjecture\]](#motiveconjecture){reference-type="ref" reference="motiveconjecture"}(1) is equivalent with $$\label{newe}
 \Lsharp {1-n} {\chi_\pi^\vee\tensor\id} {\Q} 
 =
-\delta_n e_n ((n-1)!/2)^m C(\chi_\pi^\vee\tensor\id)^{n-1} e(n,M_\pi^E) \widetilde R_{n,\infty}(M_\pi^E)
-\end{equation}$$ with the renormalized regulator $\widetilde R_{n,\infty}(M_\pi^E) = (2\pi i)^{m(1-n)}R_{n,\infty}(M_\pi^E)$.
+\delta_n e_n ((n-1)!/2)^m C(\chi_\pi^\vee\tensor\id)^{n-1} e(n,M_\pi^E) \widetilde R_{n,\infty}(M_\pi^E)$$ with the renormalized regulator $\widetilde R_{n,\infty}(M_\pi^E) = (2\pi i)^{m(1-n)}R_{n,\infty}(M_\pi^E)$.
 
 Let us compare this with Beilinson's conjecture for a motive associated with $\pi$. We associate motives covariantly to smooth projective varieties over $\Q$ as in [@bei85 § 2.4]. The Galois group $G$ acts on the left on $k$, hence on the right on $\spec(k)$, and we let $\art$ be the motive corresponding to $\pi$ under this action. Then $G$ acts on the left on the cohomology theories on $\spec(k)$ as well as its $K$-theory, and after tensoring with $E$ the corresponding groups for $\art$ are the images under $\pi$. Thus, the relevant motivic cohomology of $\art$ is $\hm^1(\mathcal{M}_{\pi/\Z},\Q(n))= K_{2n-1} (M_\pi^E)$.
 
-We shall need the non-degenerate $E$-bilinear pairing $$\begin{equation*}
-\begin{aligned}
+We shall need the non-degenerate $E$-bilinear pairing $$\begin{aligned}
 E[G] \times \bigoplus_{\t: k \to \C} E & \to E
 \\
 (\smallsum_\s a_\s \s,  (b_\t)_\t ) & \mapsto \smallsum_\s a_\s b_{\phi_\infty\circ\s^{-1}}
 \,.
-\end{aligned}
-\end{equation*}$$ It factors through the left $E[G]$-action on $\oplus_\t E$ (given by $\s((b_\t)_\t) = (b_{\t\circ\s^{-1}})_\t$), hence is trivial on $E[G](1-\pi)\times \pi(\oplus_\t E)$ and $E[G]\pi\times (1-\pi)(\oplus_\t E)$. We therefore obtain a non-degenerate $E$-bilinear pairing $$\begin{equation}
-\label{<>}
-\langle \,\cdot\, , \,\cdot\, \rangle : E[G]\pi \times \pi(\oplus_\t E) \to E
-\end{equation}$$ that identifies $E[G]\pi$ and $\pi(\oplus_\t E)$ as dual $E[G]$-modules.
+\end{aligned}$$ It factors through the left $E[G]$-action on $\oplus_\t E$ (given by $\s((b_\t)_\t) = (b_{\t\circ\s^{-1}})_\t$), hence is trivial on $E[G](1-\pi)\times \pi(\oplus_\t E)$ and $E[G]\pi\times (1-\pi)(\oplus_\t E)$. We therefore obtain a non-degenerate $E$-bilinear pairing $$\label{<>}
+\langle \,\cdot\, , \,\cdot\, \rangle : E[G]\pi \times \pi(\oplus_\t E) \to E$$ that identifies $E[G]\pi$ and $\pi(\oplus_\t E)$ as dual $E[G]$-modules.
 
-Tensoring [\[HDid\]](#HDid){reference-type="eqref" reference="HDid"} with $E$ and applying $\pi$ we get $$\begin{equation*}
-    \hd^1(\artR,\R(n)) \isom  \pi \bigl( \bigoplus_{\tau: k\to \C} E\otimes \R(n-1) \bigr)
-\,.
-\end{equation*}$$ Note that the left hand side is a subspace of the right hand side by [\[HDid\]](#HDid){reference-type="eqref" reference="HDid"}, but because the regulator map [\[Bregulator\]](#Bregulator){reference-type="eqref" reference="Bregulator"} tensored with $\R$ is injective, and $\dim_E(K_{2n-1}(M_\pi^E)) = \dim_E(E[G]\pi) = \dim_E(\pi(\oplus_\t E))$ by our assumption on $\pi$ and since $D(M_\pi^E)^{1/2,\infty} \ne 0$ (as was noticed right after Definition [\[discdef\]](#discdef){reference-type="ref" reference="discdef"}), equality must hold. For the Beilinson regulator we therefore have to compare the two $E$-structures on $\det\hd^1(\artR,\R(n))$ coming from Betti cohomology, $$\begin{equation*}
-\hb^0(\artR,\Q(n-1)) \isom  \pi (\bigoplus_{\tau: k\to \C} E\otimes \Q(n-1)) 
+Tensoring [\[HDid\]](#HDid){reference-type="eqref" reference="HDid"} with $E$ and applying $\pi$ we get $$\hd^1(\artR,\R(n)) \isom  \pi \bigl( \bigoplus_{\tau: k\to \C} E\otimes \R(n-1) \bigr)
+\,.$$ Note that the left hand side is a subspace of the right hand side by [\[HDid\]](#HDid){reference-type="eqref" reference="HDid"}, but because the regulator map [\[Bregulator\]](#Bregulator){reference-type="eqref" reference="Bregulator"} tensored with $\R$ is injective, and $\dim_E(K_{2n-1}(M_\pi^E)) = \dim_E(E[G]\pi) = \dim_E(\pi(\oplus_\t E))$ by our assumption on $\pi$ and since $D(M_\pi^E)^{1/2,\infty} \ne 0$ (as was noticed right after Definition [\[discdef\]](#discdef){reference-type="ref" reference="discdef"}), equality must hold. For the Beilinson regulator we therefore have to compare the two $E$-structures on $\det\hd^1(\artR,\R(n))$ coming from Betti cohomology, $$\hb^0(\artR,\Q(n-1)) \isom  \pi (\bigoplus_{\tau: k\to \C} E\otimes \Q(n-1)) 
 \subseteq     \pi \bigl(\bigoplus_{\tau: k\to \C} E\otimes \R(n-1) \bigr) 
-\,,
-\end{equation*}$$ and that induced by the Beilinson regulator map [\[Bregulator\]](#Bregulator){reference-type="eqref" reference="Bregulator"}, $$\begin{equation*}
-\hm^1(\artR,\Q(n)) \to \hd^1(\artR,\R(n)) 
+\,,$$ and that induced by the Beilinson regulator map [\[Bregulator\]](#Bregulator){reference-type="eqref" reference="Bregulator"}, $$\hm^1(\artR,\Q(n)) \to \hd^1(\artR,\R(n)) 
 = \pi \bigl(\bigoplus_{\tau: k\to \C} E\otimes \R(n-1)\bigr) 
-\,.
-\end{equation*}$$ Choosing an $E$-basis of $\pi(\oplus_\t E)$, and multiplying it by $(2\pi i)^{n-1}$ to obtain an $E$-basis of $\pi (\oplus_\t E\tensor \Q(n-1))$, it is easy to see that Beilinson's regulator $R_\Bei$ for $\art$ satisfies $$\begin{equation*}
-R_\Bei = (2\pi i)^{m(1-n)} \det [\,\cdot\,,\,\cdot\,]_\infty / \det \langle\,\cdot\,,\,\cdot\,\rangle 
-= \widetilde  R_{n,\infty}(M_\pi^E) / \det \langle\,\cdot\,,\,\cdot\,\rangle
-\end{equation*}$$ where all determinants are computed using the chosen $E$-bases.
+\,.$$ Choosing an $E$-basis of $\pi(\oplus_\t E)$, and multiplying it by $(2\pi i)^{n-1}$ to obtain an $E$-basis of $\pi (\oplus_\t E\tensor \Q(n-1))$, it is easy to see that Beilinson's regulator $R_\Bei$ for $\art$ satisfies $$R_\Bei = (2\pi i)^{m(1-n)} \det [\,\cdot\,,\,\cdot\,]_\infty / \det \langle\,\cdot\,,\,\cdot\,\rangle 
+= \widetilde  R_{n,\infty}(M_\pi^E) / \det \langle\,\cdot\,,\,\cdot\,\rangle$$ where all determinants are computed using the chosen $E$-bases.
 
-Finally, we compare . We have $$\begin{equation*}
- H_{\textup{et}}^0(\spec(k) \otimes \Qbar,\Q_l) \iso \bigoplus_{\t:k\to\Qbar} \Q_l
-\iso \Q_l \tensor_\Q \biggl( \bigoplus_{\t:k\to\Qbar} \Q \biggr)
-\end{equation*}$$ so that $H_{\textup{et}}^0(\art,\Q_l) \iso \Q_l \tensor \pi (\oplus_\t E)$ as $\Q_l\tensor E[G]$-modules. The $\Q_l$ plays no role, and as in [\[\<\>\]](#<>){reference-type="eqref" reference="<>"} we see that $\pi(\oplus_{\t:k\to\Qbar} E )$ is dual to $E[G] \pi$ as $E[G]$-module. As the motivic uses the geometric rather than the arithmetic Frobenius (cf. [@Kat94 p.26]), we obtain that $L(s,\art)$ of [@bei85 § 3] is equal to $\L s {\chi_\pi\tensor\id} {\Q}$. If $\theta : E[G] \to E[G]$ is the $E$-linear involution obtained by replacing each $\s$ in $G$ with $\s^{-1}$, then we need to consider $\mathcal{M}_{\pi}^0 = \mathcal{M}_{\theta(\pi)}$ instead of $\art$. But the map $E[G]\pi \times E[G]\theta(\pi) \to E$ mapping $(\a,\b)$ to the coefficient of the neutral element of $G$ in $\theta(\b)\a$ is easily seen to identify $E[G]\theta(\pi)$ and $E[G]\pi$ as dual $E[G]$-modules, so that $L(s,\art^0) = \L s {\chi_\pi^\vee\tensor\id} {\Q}$.
+Finally, we compare . We have $$H_{\textup{et}}^0(\spec(k) \otimes \Qbar,\Q_l) \iso \bigoplus_{\t:k\to\Qbar} \Q_l
+\iso \Q_l \tensor_\Q \biggl( \bigoplus_{\t:k\to\Qbar} \Q \biggr)$$ so that $H_{\textup{et}}^0(\art,\Q_l) \iso \Q_l \tensor \pi (\oplus_\t E)$ as $\Q_l\tensor E[G]$-modules. The $\Q_l$ plays no role, and as in [\[\<\>\]](#<>){reference-type="eqref" reference="<>"} we see that $\pi(\oplus_{\t:k\to\Qbar} E )$ is dual to $E[G] \pi$ as $E[G]$-module. As the motivic uses the geometric rather than the arithmetic Frobenius (cf. [@Kat94 p.26]), we obtain that $L(s,\art)$ of [@bei85 § 3] is equal to $\L s {\chi_\pi\tensor\id} {\Q}$. If $\theta : E[G] \to E[G]$ is the $E$-linear involution obtained by replacing each $\s$ in $G$ with $\s^{-1}$, then we need to consider $\mathcal{M}_{\pi}^0 = \mathcal{M}_{\theta(\pi)}$ instead of $\art$. But the map $E[G]\pi \times E[G]\theta(\pi) \to E$ mapping $(\a,\b)$ to the coefficient of the neutral element of $G$ in $\theta(\b)\a$ is easily seen to identify $E[G]\theta(\pi)$ and $E[G]\pi$ as dual $E[G]$-modules, so that $L(s,\art^0) = \L s {\chi_\pi^\vee\tensor\id} {\Q}$.
 :::

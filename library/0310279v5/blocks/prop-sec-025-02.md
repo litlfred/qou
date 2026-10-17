@@ -1,1 +1,1 @@
-LetR⊂PA\ S be a component which is embedded. Assume that
+Each of the following holds for all four graphs G+,+, G−,−, G−,+

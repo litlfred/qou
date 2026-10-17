@@ -8,7 +8,7 @@
   "file": "0012035v3.pdf"
  },
  "provenance": {
-  "title": "Non-Abelian Stokes theorem in action Bogus/suppress law Broda1 Department of Theoretical Physics University of /suppress L\u00b4 od\u00b4 z Pomorska 149/153 PL 90\u2013236 /suppress L\u00b4 od\u00b4 z Poland",
+  "title": "arXiv:math-ph/0012035v3 16 Jan 2002",
   "authors": null,
   "arxiv": {
    "id": "math-ph/0012035",
@@ -20,9 +20,25 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 1,
+  "by_kind": {
+   "theorem": 1
+  },
+  "formalization_candidates": 1
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "s of Advanced Calculus\u201d, Benjamin, New York, 1965.",
+   "section_file": "sections/sec-020-4-summary.md",
+   "section_title": "Summary",
+   "pages": "42-46",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
 }

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2210.09583v1
-doc_title: "A NEW PRESENTATION OF THE osp(1|2)-POL YNOMIAL LINK INVARIANT"
+doc_title: "A NEW PRESENTATION OF THE osp(1|2)-POLYNOMIAL LINK INVARIANT"
 section_id: sec-009-42-e-graded-khovanov-homology
 section_title: "e-graded Khovanov Homology"
 section_number: 4.2
 pages: 13-14
 source_pdf: 2210.09583v1.pdf
 source_sha256: 38fc6fa465a06a7b
-doc_brief: "A NEW PRESENTATION OF THE osp(1|2)-POL YNOMIAL LINK INVARIANT — There is a known connection between the osp(1|2n) polynomial knot invariant J n K and the so(2n + 1) knot invariant soJ n K studied by"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.91
 latex_coverage_ratio: 0.981

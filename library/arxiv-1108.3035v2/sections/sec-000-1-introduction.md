@@ -7,8 +7,9 @@ section_number: 1
 pages: 2-3
 source_pdf: 1108.3035v2.pdf
 source_sha256: 935bf1bd3e13821b
-doc_brief: "Random Matrix Theory for the Hermitian Wilson Dirac Operator and the chGUE – GUE Transition — We introduce a random two-matrix model interpolating between a chiral Hermitian (2n + ν) × (2n+ν) matrix"
+toc_source: outline
 ---
+Introduction
 The application of random matrix theory (RMT) to Quantum Chromodynamics (QCD) ﬁrst intro-
 duced in [1] has become much more sophisticated in the recent past. Starting from a Gaussian RMT
 with Nf massless ﬂavours [1, 2], the so-called chiral Gaussian unitary ensemble (chGUE), several
@@ -84,4 +85,3 @@ details. These are given in terms of Gaussian integral transforms of standard La
 as they appear in the chGUE [1]. The microscopic large-N limit at the origin close to the chGUE is
 then presented in section 5 illustrated with several examples, before we present our conclusions and
 open problems in section 6.
-2

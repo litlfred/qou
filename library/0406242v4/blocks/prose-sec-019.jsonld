@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/0406242v4/blocks/prose-sec-019",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "A.3 Combinatorics at the cusp",
-  "pageStart": 34,
-  "pageEnd": 36,
-  "text": "../sections/sec-019-a3-combinatorics-at-the-cusp.md",
+  "title": "A.2 The ideal triangulation",
+  "pageStart": 31,
+  "pageEnd": 34,
+  "text": "../sections/sec-019-a2-the-ideal-triangulation.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0406242v4/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0406242v4/manifest.jsonld",
   "provenance": "ingested"

@@ -1,1 +1,1 @@
-TheX-coordinates of a Ptolemy assignmentc agree with theX-coordinates
+The X-coordinates of a Ptolemy assignment c agree with the X-coordinates

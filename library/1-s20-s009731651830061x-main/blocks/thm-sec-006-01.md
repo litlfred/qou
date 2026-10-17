@@ -1,1 +1,1 @@
-in [15]c a n be generalized as follows.
+in [15] can be generalized as follows.

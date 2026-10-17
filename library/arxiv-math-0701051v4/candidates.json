@@ -1,0 +1,44 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0701051v4",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "4592a048c3b84a8d33c983bc76e0a447e5834c24747e8f556986212551cc7c66",
+  "file": "0701051v4.pdf"
+ },
+ "provenance": {
+  "title": "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS",
+  "authors": "RELATED TO STANLEY CHARACTER FORMULA",
+  "arxiv": {
+   "id": "math/0701051",
+   "version": "4",
+   "primary_class": null,
+   "stamp_date": "21 Mar 2011"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "proposition": 1
+  },
+  "formalization_candidates": 1
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "[\\[prop:bipartite-graphs\\]](#prop:bipartite-graphs){reference-type=\"ref\" reference=\"prop:bipartite-graphs\"} can be improved to the following one: $$N^\\lambda(\\sigma_1,\\sigma_2) \\leq A^{l-|C(\\pi)|}n^{|C(\\pi)|} \\frac{1}{n}.$$",
+   "section_file": "sections/sec-017-52-error-term-for-balanced-young-diagrams.md",
+   "section_title": "Error term for balanced Young diagrams",
+   "pages": "16-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

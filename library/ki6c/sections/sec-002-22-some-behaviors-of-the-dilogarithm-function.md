@@ -9,6 +9,7 @@ source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
 ---
+Some behaviors of the dilogarithm function
 In this section, we show some behaviors of the dilogarithm function.
 We put
 Λ(t) = Re
@@ -159,4 +160,3 @@ t −1
 )
 X.
 Therefore, we obtain the “X < 0” part of the lemma from the “X ≥0” part.
-2.3

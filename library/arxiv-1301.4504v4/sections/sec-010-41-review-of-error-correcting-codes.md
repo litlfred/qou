@@ -7,10 +7,10 @@ section_number: 4.1
 pages: 27-32
 source_pdf: 1301.4504v4.pdf
 source_sha256: 201acc5bb1d4b6a0
-doc_brief: "Quantum Computation vs. Firewalls — In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.927
-latex_coverage_ratio: 0.949
+latex_coverage_ratio: 0.966
 ---
 []{#ecrev label="ecrev"} Typically quantum systems cannot be isolated from their environment. It is interesting to understand to what extent a system which began in an unknown state can be restored to that state after it has interacted nontrivially with its environment. Usually this is done by introducing another ancillary system and transferring the entanglement with the environment from the system whose state we want to restore to the ancillary system. We show this pictorially in figure [1](#correction){reference-type="ref" reference="correction"}.
 

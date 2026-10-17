@@ -1,0 +1,70 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2206.14086v3",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "b6c27f820f9630793309e2afa2b53067a2f3d5c142b3f7c3952aa91617686604",
+  "file": "2206.14086v3.pdf"
+ },
+ "provenance": {
+  "title": "KPZ limit theorems",
+  "authors": "Jinho Baik\u2217",
+  "arxiv": {
+   "id": "2206.14086",
+   "version": "3",
+   "primary_class": "math.PR",
+   "stamp_date": "20 Jul 2022"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 3,
+  "by_kind": {
+   "theorem": 3
+  },
+  "formalization_candidates": 3
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "[\\[thm:PTASEP\\]](#thm:PTASEP){reference-type=\"ref\" reference=\"thm:PTASEP\"} is also proved for the discrete-time TASEP on a ring [@Liao21]. However, extending the result to other integrable models is at the moment a challenge.",
+   "section_file": "sections/sec-011-6-ring-domain.md",
+   "section_title": "Ring domain",
+   "pages": "8-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "8.1",
+   "name": " [12,13]",
+   "statement": "Let K = K\u03b6 be the operator in either (7.1) or (7.3). If det(1 \u2212K)\u0338 = 0, which holds",
+   "section_file": "sections/sec-016-8-integrable-differential-equations.md",
+   "section_title": "Integrable differential equations",
+   "pages": "11-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "9.1",
+   "name": " [16,21]",
+   "statement": "Suppose that ws is an arbitrary random variable which has all moments. Assume",
+   "section_file": "sections/sec-018-9-comments-on-universality.md",
+   "section_title": "Comments on universality",
+   "pages": "12-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

@@ -1,0 +1,97 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0606222v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "5c2a45596d04dd07859d65fb200db8cacad17d1ef95b2d278997a79600e358f5",
+  "file": "0606222v2.pdf"
+ },
+ "provenance": {
+  "title": "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS",
+  "authors": "URI ONN AND JASPER V. STOKMAN",
+  "arxiv": {
+   "id": "math/0606222",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "8 Nov 2006"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "proposition": 2,
+   "theorem": 3
+  },
+  "formalization_candidates": 5
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "[\\[classicalcomplexformula\\]](#classicalcomplexformula){reference-type=\"ref\" reference=\"classicalcomplexformula\"} follows also as a direct consequence of the formula $$\\label{DclasQ}",
+   "section_file": "sections/sec-005-42-irreducible-constituents-and-dimension-formul.md",
+   "section_title": "Irreducible constituents and dimension formulas: the Archimedean case",
+   "pages": "11-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "[\\[classicalcomplexformula\\]](#classicalcomplexformula){reference-type=\"ref\" reference=\"classicalcomplexformula\"} can easily be reconfirmed by specializing the Weyl dimension formula [\\[Weyl\\]](#Weyl){reference-type=\"eqref\" reference=\"Weyl\"} to $\\mu=\\lambda^\\natural$ ($\\lambda\\in\\Lambda_n$).",
+   "section_file": "sections/sec-005-42-irreducible-constituents-and-dimension-formul.md",
+   "section_title": "Irreducible constituents and dimension formulas: the Archimedean case",
+   "pages": "11-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "[\\[pthm\\]](#pthm){reference-type=\"ref\" reference=\"pthm\"} gives the multiplicity free irreducible decomposition $$\\mathbb{C}\\bigl(\\mathcal{G}(n,d;\\mathbb{F})\\bigr)\\simeq\\bigoplus_{\\lambda \\in",
+   "section_file": "sections/sec-006-43-irreducible-constituents-and-dimension-formul.md",
+   "section_title": "Irreducible constituents and dimension formulas: the non-Archimedean case",
+   "pages": "14-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "[\\[thm-dim-padic\\]](#thm-dim-padic){reference-type=\"ref\" reference=\"thm-dim-padic\"} is a direct consequence of the formula $$\\label{reldimD0}",
+   "section_file": "sections/sec-006-43-irreducible-constituents-and-dimension-formul.md",
+   "section_title": "Irreducible constituents and dimension formulas: the non-Archimedean case",
+   "pages": "14-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "6.1",
+   "name": null,
+   "statement": "For \u03bb \u2208\u039bn we have the evaluation formulas",
+   "section_file": "sections/sec-013-62-multivariable-little-q-jacobi-polynomials.md",
+   "section_title": "Multivariable little q-Jacobi polynomials",
+   "pages": "24-27",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

@@ -1,1 +1,1 @@
-C there exist 1S̸ = φ ∈Irrp′(B0(S))σ1 X-invariant for some X ∈Sylp(Aut(S)). By Lemma 2.5,
+C. Let S be a nonabelian simple group of order divisible by p ≤3, P ∈Sylp(S) and X ∈

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2111.06645v3
-doc_title: ""
+doc_title: "Part 0: Introduction and overview"
 section_id: sec-026-73-state-sums
 section_title: "State-sums"
 section_number: 7.3
 pages: 55-57
 source_pdf: 2111.06645v3.pdf
 source_sha256: 2a4826bd1c2f0823
-doc_brief: "Knots, Perturbative Series and Quantum Modularity — We introduce an invariant of a hyperbolic knot which is a map α7→ Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.975
 latex_coverage_ratio: 0.985

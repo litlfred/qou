@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1009.4034v1
-doc_title: "KEROV’S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL MEASURES OF PARAMETER α = 1/2 PIERRE-LOÏC MÉLIOT"
+doc_title: "KEROV’S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL MEASURES OF PARAMETER α = 1/2"
 section_id: sec-001-4-gaussian-concentration-of-measures-on-partitio
 section_title: "Gaussian concentration of measures on partitions"
 section_number: 4
 pages: 12-13
 source_pdf: 1009.4034v1.pdf
 source_sha256: 8f8d6d786b60c279
-doc_brief: "KEROV’S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL MEASURES OF PARAMETER α = 1/2 PIERRE-LOÏC MÉLIOT — In this article, we show that Kerov’s central limit theorem related to the ﬂuctuations of Young"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.994
-latex_coverage_ratio: 0.995
+latex_prose_ratio: 0.987
+latex_coverage_ratio: 0.994
 ---
 []{#sniady label="sniady"} To establish the gaussian concentration of probability measures on partitions coming from reducible representations of symmetric groups, P. Śniady has developed in [@Sni06] a theory of cumulants of observables that works in a very general setting, and in particular for Schur-Weyl measures. If $X_{1},\ldots,X_{r}$ are real or complex random variables, we recall that the **joint cumulant** of $X_{1},\ldots,X_{r}$ is $$k(X_{1},\ldots,X_{r})=\left.\frac{\partial^{r}}{\partial t_{1}\cdots \partial t_{r}}\right|_{t_{1}=t_{2}=\cdots=t_{r}=0}\!\!\!\log \esper[\exp(t_{1}X_{1}+\cdots+ t_{r}X_{r})]\,.$$ In particular, gaussian vectors are characterized by the vanishing of joint cumulants of order $r\geq 3$, and the first and second joint cumulants give the expectation of the gaussian vector and its covariance matrix. That said, if $a_{1},\ldots,a_{r}$ commute in the group algebra $\C\sym_{n}$, and if $\proba$ is a probability measure on $\Part_{n}$, then one can consider the $a_{i}$'s as commutative random variables by setting $$a_{i}=a_{i}(\lambda)=\chi^{\lambda}(a_{i})$$ with $\lambda$ picked randomly according to $\proba$; as a consequence, the joint cumulant $k(a_{1},\ldots,a_{r})$ makes sense. On the other hand, we have seen that observables of diagrams may also be considered as random variables, and besides, any observable can be interpreted as an element of the center of the group algebra $\C\sym_{n}$, see [@Sni06 §2.1]; so, the joint cumulant of observables of diagrams also makes sense. Then, the major result of [@Sni06] is the following:
 

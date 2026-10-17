@@ -9,11 +9,14 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1107.1559v1",
+  "title": "Quaternion-Octonion SU (3) Flavor Symmetry",
   "contains": [
+    "library/arxiv-1107.1559v1/sections/sec-front-matter",
     "library/arxiv-1107.1559v1/sections/sec-000",
     "library/arxiv-1107.1559v1/sections/sec-001",
-    "library/arxiv-1107.1559v1/sections/sec-002"
+    "library/arxiv-1107.1559v1/sections/sec-002",
+    "library/arxiv-1107.1559v1/sections/sec-003",
+    "library/arxiv-1107.1559v1/sections/sec-004"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -26,9 +29,11 @@
   },
   "meta": {
     "doc_id": "arxiv-1107.1559v1",
-    "title_source": "slug",
-    "source_file": "1107.1559v1.pdf",
-    "source_sha256": "b9f867ae7120eda6f5b1f6aa6e5765371171f65fe5aa40ebe61f23ff5709f07b",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1107.1559.pdf",
+    "source_sha256": "90d63f2e18629b9db9ae3150b68e319a2fc3a60f93b2a904338903debe2ad7a0",
     "pages": 12,
     "arxiv": {
       "id": "1107.1559",

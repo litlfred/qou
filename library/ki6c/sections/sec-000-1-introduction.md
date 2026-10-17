@@ -9,6 +9,7 @@ source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
 ---
+Introduction
 In [12, 13] Kashaev deﬁned the Kashaev invariant ⟨L ⟩N ∈C of a link L for N = 2, 3, · · ·
 by using the quantum dilogarithm. In [14] he conjectured that, for any hyperbolic link L,
 2π
@@ -178,4 +179,3 @@ erties of the notation used in this paper. In Sections 3, 4, 5, we show proofs o
 some lemmas used in Sections 3, 4, 5.
 The authors would like to thank Tudor Dimofte, Kazuo Habiro, Hitoshi Murakami,
 Toshie Takata and Dylan Thurston for helpful comments.
-2

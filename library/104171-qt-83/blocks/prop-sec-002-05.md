@@ -1,1 +1,1 @@
-/four.prop./two.propfor this assumption can be proved by modifying the above proo f
+Let A; D be as above. Then, there exists " > 0 such that

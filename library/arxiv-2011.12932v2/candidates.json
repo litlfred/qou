@@ -1,0 +1,71 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2011.12932v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "23709542c5652a295267b45764c1bf95a1b6f9e78cf73baeb5936b58aee93c9c",
+  "file": "2011.12932v2.pdf"
+ },
+ "provenance": {
+  "title": "MODULAR CATEGORIES AND TQFTS BEYOND SEMISIMPLICITY",
+  "authors": "CHRISTIAN BLANCHET AND MARCO DERENZI",
+  "arxiv": {
+   "id": "2011.12932",
+   "version": "2",
+   "primary_class": "math.GT",
+   "stamp_date": "22 May 2021"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 3,
+  "by_kind": {
+   "remark": 1,
+   "proposition": 2
+  },
+  "formalization_candidates": 2
+ },
+ "candidates": [
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "that Lusztig considers the opposite coproduct, while we are using the one of Kassel \\cite[Sec.~VII.1]{K95}. A basis of $\\bar{U}_q \\fsl_2$ is given by",
+   "section_file": "sections/sec-006-4-semisimple-quantum-invariants-and-tqfts.md",
+   "section_title": "Semisimple quantum invariants and TQFTs",
+   "pages": "7-16",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "A.1. If C is a rigid fusion category and \u0393(C) = {Vi | i \u2208I} is a set",
+   "section_file": "sections/sec-008-appendix-a-ends.md",
+   "section_title": "Appendix A. Ends",
+   "pages": "20-24",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "A.2. If C = H-mod is the category of \ufb01nite-dimensional represen-",
+   "section_file": "sections/sec-008-appendix-a-ends.md",
+   "section_title": "Appendix A. Ends",
+   "pages": "20-24",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

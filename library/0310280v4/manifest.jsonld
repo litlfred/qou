@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "0310280v4",
+  "title": "Stabilization in the braid groups II: Transversal simplicity of knots Introduction and description of results",
   "contains": [
+    "library/0310280v4/sections/sec-front-matter",
     "library/0310280v4/sections/sec-000",
     "library/0310280v4/sections/sec-001",
     "library/0310280v4/sections/sec-002",
@@ -25,7 +26,9 @@
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "0310280v4",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0310280v4.pdf",
     "source_sha256": "1e146ee4ebc157f2b803d0fef8081f145c3a467c899ab705d32e88eebd8f9e38",
     "pages": 28,

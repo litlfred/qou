@@ -1,0 +1,111 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2301.00125v3",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "7ecd0cff7d6c2ec4ca969bc68728e9d29769c57dfa49b482addae9a11ff89cc0",
+  "file": "2301.00125v3.pdf"
+ },
+ "provenance": {
+  "title": "Generating Function for Pinsky\u2019s Combinatorial Second Moment Formula for the Generalized Ulam Problem",
+  "authors": "Samen Hossein",
+  "arxiv": {
+   "id": "2301.00125",
+   "version": "3",
+   "primary_class": "math.CO",
+   "stamp_date": "3 May 2023"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "proposition": 1,
+   "remark": 1,
+   "lemma": 4
+  },
+  "formalization_candidates": 5
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "A.1 (Version of the Bonferroni inequalities) Suppose we have n \u2208N and we have chosen",
+   "section_file": "sections/sec-008-a-bonferroni-inequalities-and-bell-polynomials.md",
+   "section_title": "A Bonferroni inequalities and Bell polynomials",
+   "pages": "16-21",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "A.2 In an earlier version of this article, we promoted the idea of the Bell polynomials, not realizing",
+   "section_file": "sections/sec-008-a-bonferroni-inequalities-and-bell-polynomials.md",
+   "section_title": "A Bonferroni inequalities and Bell polynomials",
+   "pages": "16-21",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.4",
+   "name": null,
+   "statement": "So g(x; 1) \u2208(0, \u221e) by (65) and (214). Since",
+   "section_file": "sections/sec-013-g-elementary-proofs-from-contour-deformations.md",
+   "section_title": "G Elementary proofs from contour deformations",
+   "pages": "28-29",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "I.1 For x, w \u2208(0, \u221e) satisfying 4x + w2 < 1, we have",
+   "section_file": "sections/sec-015-i-elliptic-integrals-and-linear-fractional-trans.md",
+   "section_title": "I Elliptic integrals and linear fractional transformations",
+   "pages": "31-35",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "I.2 Suppose AD \u2212BC\u0338 = 0 and suppose we have \u03c1 \u2208C \u222a{\u221e} \\ {\u2212D/C}, then for \u03a6 and \u03a6\u22121 as in",
+   "section_file": "sections/sec-015-i-elliptic-integrals-and-linear-fractional-trans.md",
+   "section_title": "I Elliptic integrals and linear fractional transformations",
+   "pages": "31-35",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "I.3 Let Z(x, w) = {A1(x, w), A2(x, w), b1(x, w), b2(x, w)}, which is the variety of roots of Q2(x, w; \u00b7).",
+   "section_file": "sections/sec-015-i-elliptic-integrals-and-linear-fractional-trans.md",
+   "section_title": "I Elliptic integrals and linear fractional transformations",
+   "pages": "31-35",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

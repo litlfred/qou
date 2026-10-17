@@ -1,0 +1,111 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1501.04614v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "ebebcae0c18232176f5306e63cc95112e6285f7707fdaf85432d955cc7a0f76c",
+  "file": "1501.04614v1.pdf"
+ },
+ "provenance": {
+  "title": "KNOT CABLING AND THE DEGREE OF THE COLORED JONES",
+  "authors": "POLYNOMIAL II",
+  "arxiv": {
+   "id": "1501.04614",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "19 Jan 2015"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "theorem": 4,
+   "conjecture": 1,
+   "proposition": 1
+  },
+  "formalization_candidates": 5
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{thm-quasi-constant} has applications to two open conjectures about the degree of $J_K(n)$.",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{slope} is known for the following classes of knots:",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{thm-quasi-constant} implies the following.",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{quasi-constant} and Theorem \\ref{bdry slope} imply Theorem \\ref{thm-quasi-constant} stated in the introduction.",
+   "section_file": "sections/sec-001-2-jones-slopes-of-cable-knots.md",
+   "section_title": "Jones slopes of cable knots",
+   "pages": "3-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{thm-quasi-constant} applies to the non-alternating knots $8_{20}, 9_{43}, 9_{44}$ (of period $3$) in Section 4 of \\cite{Ga-slope}.",
+   "section_file": "sections/sec-001-2-jones-slopes-of-cable-knots.md",
+   "section_title": "Jones slopes of cable knots",
+   "pages": "3-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{prop:b} implies that Conjecture \\ref{conj} holds true for 2-fusion knots: The fact that $b_K(n)\\leq 0$ is clear by the statement",
+   "section_file": "sections/sec-004-32-calculating-the-linear-term.md",
+   "section_title": "Calculating the linear term",
+   "pages": "10-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

@@ -9,8 +9,8 @@ source_pdf: 0605314v1.pdf
 source_sha256: 5fb8b89b432401ea
 toc_source: inferred
 text_source: latex
-latex_prose_ratio: 0.98
-latex_coverage_ratio: 0.954
+latex_prose_ratio: 0.986
+latex_coverage_ratio: 0.948
 ---
 []{#sec:appl-ohts-seri label="sec:appl-ohts-seri"}
 

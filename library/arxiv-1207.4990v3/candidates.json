@@ -1,0 +1,58 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1207.4990v3",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "02aa065f4f65b8579392ae32b61e27d93ee2501be3b13b0f4e7bc99aa1ba0fbb",
+  "file": "1207.4990v3.pdf"
+ },
+ "provenance": {
+  "title": "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results",
+  "authors": "Percy Deift",
+  "arxiv": {
+   "id": "1207.4990",
+   "version": "3",
+   "primary_class": "math.FA",
+   "stamp_date": "1 Dec 2012"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "conjecture": 1,
+   "theorem": 1
+  },
+  "formalization_candidates": 1
+ },
+ "candidates": [
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": null,
+   "name": null,
+   "statement": "[\\[conject8\\]](#conject8){reference-type=\"ref\" reference=\"conject8\"} was proved recently in [@DIK1].",
+   "section_file": "sections/sec-005-7-basor-tracy-conjecture.md",
+   "section_title": "Basor-Tracy conjecture",
+   "pages": "36-40",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "[\\[BT\\]](#BT){reference-type=\"ref\" reference=\"BT\"} can also be used to analyze the asymptotic behavior of the eigenvalues $\\lambda^{(n)}_1 \\le \\lambda^{(n)}_2 \\le \\dots \\le \\lambda^{(n)}_n$, $n\\to\\infty$, of a Toeplitz matrix $T_n(\\varphi)$ with a real symbol $\\varphi$. At the beginning of our story (see Theorem [\\[theorem2\\]](#theorem2){reference-type=\"ref\" reference=\"theorem2\"}) we interpreted Szeg\u0151's early results as saying that the $\\lambda^{(n)}_j$'s were equidistributed as $n\\to\\infty$. But what about the behavior of individual eigenvalues, $\\lambda^{(n)}_k$, $n\\to\\infty$? Early work on ",
+   "section_file": "sections/sec-007-9-some-applications.md",
+   "section_title": "Some applications",
+   "pages": "42-45",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

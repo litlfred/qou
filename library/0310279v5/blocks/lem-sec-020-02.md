@@ -1,1 +1,1 @@
-We may assume that each pair of clasp arcsγ has a tab neighborhood
+Singularities of type ss do not occur in either A+ or A−.

@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2111.06645v3
-doc_title: ""
+doc_title: "Part 0: Introduction and overview"
 section_id: sec-028-8-proof-of-the-modularity-conjecture-for-the-4-1
 section_title: "Proof of the modularity conjecture for the 4_1 knot"
 section_number: 8
 pages: 58-60
 source_pdf: 2111.06645v3.pdf
 source_sha256: 2a4826bd1c2f0823
-doc_brief: "Knots, Perturbative Series and Quantum Modularity — We introduce an invariant of a hyperbolic knot which is a map α7→ Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.99
-latex_coverage_ratio: 0.614
+latex_prose_ratio: 0.98
+latex_coverage_ratio: 0.99
 ---
 []{#sec.QMC41 label="sec.QMC41"}
 

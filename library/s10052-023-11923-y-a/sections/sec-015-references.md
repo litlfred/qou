@@ -1,14 +1,13 @@
 ---
 doc_id: s10052-023-11923-y-a
-doc_title: "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions"
+doc_title: "Three generations of colored fermions with S 3 family symmetry from Cayley–Dickson sedenions"
 section_id: sec-015-references
 section_title: "References"
 section_number: null
 pages: 12-13
 source_pdf: s10052-023-11923-y_a.pdf
 source_sha256: 73d1a03532d62ef7
-doc_brief: "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU (3)C color symmetry based on the"
-duplicate_of: "arxiv-2306.13098v2"
+toc_source: outline
 ---
 1. M. Günaydin, F. Gürsey, Quark structure and octonions. J. Math.
 Phys. 14(11), 1651–1667 (1973)
@@ -17,11 +16,11 @@ Phys. 14(11), 1651–1667 (1973)
 3. G. Dixon, Division algebras: family replication. J. Math. Phys.
 45(10), 3878–3882 (2004)
 4. G.M. Dixon, Division Algebras: Octonions Quaternions Complex
-Numbers and the Algebraic Design of Physics , vol. 290 (Springer
+Numbers and the Algebraic Design of Physics, vol. 290 (Springer
 Science & Business Media, Berlin, 2013)
 5. C. Furey, Standard model physics from an algebra? arXiv preprint
 arXiv:1611.09182 (2016)
-6. C. Furey, SU(3)C × SU(2)L × U(1)Y (×U(1)X ) as a symmetry
+6. C. Furey, SU(3)C × SU(2)L × U(1)Y (×U(1)X) as a symmetry
 of division algebraic ladder operators. Eur. Phys. J. C 78(5), 1–12
 (2018)
 7. N.G. Gresnigt, Braids, normed division algebras, and standard
@@ -30,12 +29,12 @@ model symmetries. Phys. Lett. B 783, 212–221 (2018)
 nal of Physics: Conference Series, vol. 1194, p. 012040. IOP Pub-
 lishing (2019)
 9. N.G. Gresnigt, A topological model of composite preons from the
-minimal ideals of two Clifford algebras. Phys. Lett. B808, 135687
+minimal ideals of two Clifford algebras. Phys. Lett. B 808, 135687
 (2020)
 10. N.G. Gresnigt, Topological preons from algebraic spinors. Eur.
-P h y s .J .C81(6), 1–7 (2021)
+Phys. J. C 81(6), 1–7 (2021)
 11. N. Gresnigt, A. Marcianò, E. Zappala, Braided matter interactions
-in quantum gravity via one-handle attachment. Phys. Rev. D104(8),
+inquantumgravityviaone-handleattachment.Phys.Rev.D104(8),
 086021 (2021)
 12. C.A. Manogue, T. Dray. Octonions, E6, and particle physics. In:
 Journal of Physics: Conference Series, vol. 254, p. 012005. IOP
@@ -46,39 +45,312 @@ arXiv:2204.04996 (2022)
 14. C.A. Manogue, T. Dray, R.A. Wilson, Octions: an E8 description
 of the standard model. J. Math. Phys. 63(8), 081703 (2022)
 Table 1 Sedenion multiplication table, generated from e1, e2, e4 and e8 corresponding to the new C, H, O and S imaginary units respectively
-0 12345678 91 0 1 1 1 2 1 3 1 4 1 5
-0 0 12345678 91 0 1 1 1 2 1 3 1 4 1 5
-11 − 03 − 25 − 4 − 76 9 − 8 − 11 10 − 13 12 15 − 14
-22 − 3 − 01 6 7 − 4 − 51 01 1 − 8 − 9 − 14 − 15 12 13
-332 − 1 − 07 − 65 − 41 1 − 10 9 − 8 − 15 14 − 13 12
-44 − 5 − 6 − 7 − 0 1231 2 1 3 1 4 1 5 − 8 − 9 − 10 − 11
-554 − 76 − 1 − 0 − 32 1 3 − 12 15 − 14 9 − 81 1 − 10
-667 4 − 5 − 23 − 0 − 11 4 − 15 − 12 13 10 − 11 − 89
-77 − 65 4 − 3 − 21 − 01 51 4 − 13 − 12 11 10 − 9 − 8
-88 − 9 − 10 − 11 − 12 − 13 − 14 − 15 − 0 1234567
-998 − 11 10 − 13 12 15 − 14 − 1 − 0 − 32 − 54 7 − 6
-10 10 11 8 − 9 − 14 − 15 12 13 − 23 − 0 − 1 − 6 − 74 5
-11 11 − 10 9 8 − 15 14 − 13 12 − 3 − 21 − 0 − 76 − 54
-12 12 13 14 15 8 − 9 − 10 − 11 − 45 6 7 − 0 − 1 − 2 − 3
-13 13 − 12 15 − 14 9 8 11 − 10 − 5 − 47 − 61 − 03 − 2
-14 14 − 15 − 12 13 10 − 11 8 9 − 6 − 7 − 45 2 − 3 − 01
-15 15 14 − 13 − 12 11 10 − 98 − 76 − 5 − 43 2 − 1 − 0
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+0
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+1
+1
+−0
+3
+−2
+5
+−4
+−7
+6
+9
+−8
+−11
+10
+−13
+12
+15
+−14
+2
+2
+−3
+−0
+1
+6
+7
+−4
+−5
+10
+11
+−8
+−9
+−14
+−15
+12
+13
+3
+3
+2
+−1
+−0
+7
+−6
+5
+−4
+11
+−10
+9
+−8
+−15
+14
+−13
+12
+4
+4
+−5
+−6
+−7
+−0
+1
+2
+3
+12
+13
+14
+15
+−8
+−9
+−10
+−11
+5
+5
+4
+−7
+6
+−1
+−0
+−3
+2
+13
+−12
+15
+−14
+9
+−8
+11
+−10
+6
+6
+7
+4
+−5
+−2
+3
+−0
+−1
+14
+−15
+−12
+13
+10
+−11
+−8
+9
+7
+7
+−6
+5
+4
+−3
+−2
+1
+−0
+15
+14
+−13
+−12
+11
+10
+−9
+−8
+8
+8
+−9
+−10
+−11
+−12
+−13
+−14
+−15
+−0
+1
+2
+3
+4
+5
+6
+7
+9
+9
+8
+−11
+10
+−13
+12
+15
+−14
+−1
+−0
+−3
+2
+−5
+4
+7
+−6
+10
+10
+11
+8
+−9
+−14
+−15
+12
+13
+−2
+3
+−0
+−1
+−6
+−7
+4
+5
+11
+11
+−10
+9
+8
+−15
+14
+−13
+12
+−3
+−2
+1
+−0
+−7
+6
+−5
+4
+12
+12
+13
+14
+15
+8
+−9
+−10
+−11
+−4
+5
+6
+7
+−0
+−1
+−2
+−3
+13
+13
+−12
+15
+−14
+9
+8
+11
+−10
+−5
+−4
+7
+−6
+1
+−0
+3
+−2
+14
+14
+−15
+−12
+13
+10
+−11
+8
+9
+−6
+−7
+−4
+5
+2
+−3
+−0
+1
+15
+15
+14
+−13
+−12
+11
+10
+−9
+8
+−7
+6
+−5
+−4
+3
+2
+−1
+−0
 123
-Eur. Phys. J. C (2023) 83 :747 Page 13 of 13 747
+Eur. Phys. J. C (2023) 83 :747
+Page 13 of 13
+747
 15. R.A. Wilson, Chirality in an E8 model of elementary particles.
 arXiv preprint arXiv:2210.06029 (2022)
 16. S. Raj, T.P. Singh, A lagrangian with E8 × E8 symmetry for the
 standard model and pre-gravitation. I.–the bosonic Lagrangian, and
 a theoretical derivation of the weak mixing angle. arXiv preprint
 arXiv:2208.09811 (2022)
-17. P. Kaushik, V . Vaibhav, T.P. Singh, AnE8 × E8 uniﬁcation of the
+17. P. Kaushik, V. Vaibhav, T.P. Singh, An E8 × E8 uniﬁcation of the
 standard model with pre-gravitation, on an octonion-valued twistor
 space. arXiv preprint arXiv:2206.06911 (2022)
 18. G. Trayling, A geometric approach to the standard model. arXiv
 preprint arXiv:hep-th/9912231 (1999)
 19. G. Trayling, W.E. Baylis, A geometric basis for the standard-model
 gauge group. J. Phys. A Math. Gen. 34(15), 3309 (2001)
-20. G. Trayling, W.E. Baylis, The C𝓁(7) approach to the standard
+20. G. Trayling, W.E. Baylis, The Cℓ(7) approach to the standard
 model, in Clifford Algebras. (Springer, Berlin, 2004), pp.547–558
 21. O.C. Stoica, The standard model algebra. Adv. Appl. Clifford Alge-
 bras 28(52), 2017 (2018)
@@ -87,9 +359,9 @@ Algebras. arXiv preprint arXiv:2005.08855 (2020)
 23. I. Todorov, Octonionic Clifford algebra for the internal space of
 the standard model. https://preprints.ihes.fr/2022/P/P-22-01.pdf
 (2022)
-24. C.C. Perelman, R ⊗ C ⊗ H ⊗ O-Valued gravity as a grand uniﬁed
+24. C.C. Perelman, R ⊗C ⊗H ⊗O-Valued gravity as a grand uniﬁed
 ﬁeld theory. Adv. Appl. Clifford Algebras 29(1), 1–20 (2019)
-25. C.C. Perelman, On C ⊗ H ⊗ O-valued gravity, sedenions, her-
+25. C.C. Perelman, On C ⊗H ⊗O-valued gravity, sedenions, her-
 mitian matrix geometry and nonsymmetric Kaluza–Klein theory.
 Adv. Appl. Clifford Algebras 29(3), 1–16 (2019)
 26. M. Pavšiˇc, Geometric spinors, generalized Dirac equation and mir-
@@ -106,7 +378,7 @@ standard model from the automorphism and structure groups of the
 exceptional jordan algebra. Int. J. Mod. Phys. A 33(20), 1850118
 (2018)
 31. L. Boyle, S. Farnsworth, The standard model, the Pati–Salam
-model, and ‘Jordan geometry’. New J. Phys.22(7), 073023 (2020)
+model, and ‘Jordan geometry’. New J. Phys. 22(7), 073023 (2020)
 32. L. Boyle, The standard model, the exceptional Jordan algebra, and
 triality. arXiv preprint arXiv:2006.16265 (2020)
 33. C. Furey, Generations: three prints, in colour. J. High Energy Phys.
@@ -130,18 +402,18 @@ Wissenschaften zu Göttingen, Mathematisch-Physikalische Klasse
 physics (Hadronic Press, Palm Harbor, 1994)
 41. R. Abłamowicz, Construction of spinors via Witt decomposition
 and primitive idempotents: a review. In: Clifford Algebras and
-Spinor Structures: A Special V olume Dedicated to the Memory
+Spinor Structures: A Special Volume Dedicated to the Memory
 of Albert Crumeyrolle 1919–1992, pp. 113–123 (1995)
 42. R. Cawagas, On the structure and zero divisors of the Cayley–
 Dickson sedenion algebra. Discussiones Mathematicae-General
 Algebra and Applications 24(2), 251–265 (2004)
 43. R. Guillermo Moreno, The zero divisors of the Cayley–Dickson
-algebras over the real numbers. arXiv preprintarXiv:q-alg/9710013
+algebrasovertherealnumbers.arXivpreprintarXiv:q-alg/9710013
 (1997)
-44. N. Masi, An exceptional G(2) extension of the standard model from
+44. N.Masi,Anexceptional G(2)extensionofthe standardmodel from
 the correspondence with Cayley–Dickson algebras automorphism
 groups. Sci. Rep. 11(1), 1–18 (2021)
-45. F.R. Harvey, Spinors and Calibrations ,v o l .8( E l s e v i e r ,A m s t e r -
+45. F.R. Harvey, Spinors and Calibrations, vol. 8 (Elsevier, Amster-
 dam, 1990)
 46. C. Furey, A demonstration that electroweak theory can violate
 parity automatically (leptonic case). Int. J. Mod. Phys. A 33(04),
@@ -165,6 +437,6 @@ O. Felix-Beltran, E. Peinado, A minimal S3-invariant extension
 of the standard model. In: Journal of Physics: Conference Series,
 vol. 18, p. 380. IOP Publishing (2005)
 54. A. Mondragon, M. Mondragon, E. Peinado, Lepton masses, mix-
-ings, and ﬂavor-changing neutral currents in a minimalS3-invariant
-extension of the standard model. Phys. Rev. D76(7), 076003 (2007)
+ings, and ﬂavor-changing neutral currents in a minimal S3-invariant
+extension of the standard model. Phys. Rev. D 76(7), 076003 (2007)
 123

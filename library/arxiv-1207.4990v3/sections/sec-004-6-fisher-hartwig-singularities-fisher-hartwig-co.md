@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1207.4990v3
-doc_title: "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results Percy Deift"
+doc_title: "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results"
 section_id: sec-004-6-fisher-hartwig-singularities-fisher-hartwig-co
 section_title: "Fisher-Hartwig singularities. Fisher-Hartwig conjecture"
 section_number: 6
 pages: 29-36
 source_pdf: 1207.4990v3.pdf
 source_sha256: 02aa065f4f65b857
-doc_brief: "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results Percy Deift — 10 sections: Setting the problem; Toeplitz meets Ising; Back to Isi"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.996
-latex_coverage_ratio: 0.992
+latex_prose_ratio: 0.957
+latex_coverage_ratio: 0.996
 ---
 []{#sectionFH label="sectionFH"} In addition to the new questions and challenges raised in Toeplitz theory by the Ising model for $T\ge T_c$, other kinds of singularities also began to appear. For example, in 1964, in his work on the ground state of the one-dimensional system of impenetrable bosons [@Len1] Lenard expressed the one-particle density matrix for the system as a Toeplitz matrix with a symbol $\varphi\!\left(e^{i\theta}\right)$ that vanished at some points on $S^1$ (see [\[eq81\]](#eq81){reference-type="eqref" reference="eq81"} and particularly Remark [\[Lenard\]](#Lenard){reference-type="ref" reference="Lenard"} below for further discussion). In 1968, in a major step in the development and generalization of SSLT, Fisher and Hartwig [@FisHart1] introduced a class of singular symbols for Toeplitz determinants, that allowed for zeros, (integrable) singularities, discontinuities and non-zero winding numbers.
 

@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2111.06645v3
-doc_title: ""
+doc_title: "Part 0: Introduction and overview"
 section_id: sec-009-41-improving-the-quantum-modularity-conjecture-o
 section_title: "Improving the quantum modularity conjecture: optimal truncation"
 section_number: 4.1
 pages: 22-23
 source_pdf: 2111.06645v3.pdf
 source_sha256: 2a4826bd1c2f0823
-doc_brief: "Knots, Perturbative Series and Quantum Modularity — We introduce an invariant of a hyperbolic knot which is a map α7→ Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.979
-latex_coverage_ratio: 0.959
+latex_coverage_ratio: 0.975
 ---
 []{#sub.4.1 label="sub.4.1"}
 

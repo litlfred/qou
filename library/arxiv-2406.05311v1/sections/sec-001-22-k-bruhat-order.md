@@ -5,10 +5,9 @@ section_id: sec-001-22-k-bruhat-order
 section_title: "k-Bruhat order"
 section_number: 2.2
 pages: 2-2
-source_pdf: A_quantum_Murnaghan--Nakayama_rule_for_the_flag_ma.pdf
+source_pdf: 2406.05311v1.pdf
 source_sha256: c431fca150329547
 toc_source: outline
-doc_brief: "Draft of June 11, 2024 A QUANTUM MURNAGHAN–NAKAYAMA RULE FOR THE FLAG MANIFOLD — In this paper, we give a rule for the multiplication of a Schubert class by a tautological class in the (small)"
 ---
 suborder of the Bruhat order on Sn) and Littlewood–Richardson coeﬃcients cw
 u,v when v

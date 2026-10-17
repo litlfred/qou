@@ -22,4 +22,3 @@ thermodynamic properties of neutron matter scale over a wide range of temperatur
 signiﬁcantly reduced interaction coeﬃcient compared to the unitary limit.
 PACS numbers: 21.65.+f, 26.50.+x, 97.60.Bw, 05.70.Ce
 Keywords: Low-density neutron matter, equation of state, virial expansion
-I.

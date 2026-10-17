@@ -1,0 +1,1 @@
+\ref{thm-quasi} implies that $js_{\K} \subset bs_{\K}$ and that $js^*_{\K} \subset bs_{\K}$. In particular, $\K$ satisfies the Slope Conjecture. Applying this argument repeatedly we obtain the result for iterated cables.

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1712.03058v3
-doc_title: "Iterated filtering methods for Markov process epidemic models Theresa Stocks1 1Department of Mathematics, Stockholm University, Sweden This manuscript is a preprint of a Chapter to"
+doc_title: "Iterated ﬁltering methods for Markov process epidemic models"
 section_id: sec-005-131-likelihood-of-a-pomp
 section_title: "Likelihood of a POMP"
 section_number: 1.3.1
 pages: 5-7
 source_pdf: 1712.03058v3.pdf
 source_sha256: ba48c5bbb2467374
-doc_brief: "Iterated filtering methods for Markov process epidemic models Theresa Stocks1 1Department of Mathematics, Stockholm University, Sweden This manuscript is a preprint of a Chapter to appear in the Handb"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.992
 latex_coverage_ratio: 0.867

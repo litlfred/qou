@@ -1,1 +1,1 @@
-(a) Let k be real valued and let ǫ ∈ C×. There exists a unique
+has a direct analogue for the (periodic) cyclic homology of graded

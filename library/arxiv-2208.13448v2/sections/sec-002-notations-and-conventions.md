@@ -7,7 +7,7 @@ section_number: null
 pages: 3-3
 source_pdf: 2208.13448v2.pdf
 source_sha256: 8bfa244cf7ca867d
-doc_brief: "ON THE COMPUTATION OF THE DIFFERENCE GALOIS GROUPS OF ORDER THREE EQUATIONS — In this paper we consider the problem of computing the diﬀere nce Galois groups of order three equations for a large"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.867
 latex_coverage_ratio: 1.0

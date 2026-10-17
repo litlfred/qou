@@ -62,4 +62,3 @@ introduced by adding β|ν|/2 massless ﬂavors to the theory with ν = 0. There
 this duality between ﬂavor and topology is a general feature of all correlation
 functions. For a discussion of this duality in terms of ﬁnite volume partition
 functions, see Refs. [35, 36].
-3.2

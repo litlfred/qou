@@ -1,1 +1,1 @@
-] and the isomorphism H0(Spec k, KMW
+Let X ∈Smk be projective of dimension dX. Then

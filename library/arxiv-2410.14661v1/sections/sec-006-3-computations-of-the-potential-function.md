@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2410.14661v1
-doc_title: "On the asymptotic expansion of various quantum invariants III: the Reshetikhin-Turaev invariants of closed hyperbolic 3-manifolds obtained by integral surgery along the figure-eigh"
+doc_title: "ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM INVARIANTS III: THE RESHETIKHIN-TURAEV INVARIANTS OF CLOSED HYPERBOLIC 3-MANIFOLDS OBTAINED BY DOING INTEGRAL SURGERY ALONG THE TWIST"
 section_id: sec-006-3-computations-of-the-potential-function
 section_title: "Computations of the potential function"
 section_number: 3
 pages: 8-15
 source_pdf: 2410.14661v1.pdf
 source_sha256: 3362fcd5e28eb1f0
-doc_brief: "On the asymptotic expansion of various quantum invariants III: the Reshetikhin-Turaev invariants of closed hyperbolic 3-manifolds obtained by integral surgery along the figure-eight knot — This is"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.958
-latex_coverage_ratio: 0.909
+latex_prose_ratio: 0.901
+latex_coverage_ratio: 0.873
 ---
 []{#Section-Potentialfunction label="Section-Potentialfunction"}
 

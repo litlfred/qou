@@ -1,1 +1,1 @@
-Let{Mi}i∈N be an inverse system of A-modules. The following
+\ref{lem:260} says that this is a quasi-isomorphism.

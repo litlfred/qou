@@ -212,4 +212,3 @@ mial was exhibited in [St2]. Here we extend this study to the Alexander polynomi
 3-braid links with given ∆, and in particular show no non-trivial 3-braid knot has trivial polynomial. In [B], Birman
 constructed some pairs of different 3-braid links with the same polynomials and proposed the problem to understand
 4
-1

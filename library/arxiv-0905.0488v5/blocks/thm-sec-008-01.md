@@ -1,1 +1,1 @@
-]. However we do not know if this is true whenΨ is anL∞morphism;
+\ref{thm:100} tells us that the vertical arrows here are bijections.

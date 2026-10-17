@@ -8,15 +8,16 @@
   "file": "s40687-023-00400-3.pdf"
  },
  "provenance": {
-  "title": "bonn.mpg.de/stavros 2MaxPlanckInstitutefor Mathematics,Bonn,Germany Fulllistofauthorinformationis availableattheendofthearticle DedicatedtoWalterNeumann andDonZagier,withadmiration",
+  "title": "Twisted Neumann\u2013Zagier matrices",
   "authors": null,
   "arxiv": null,
   "doi": "10.1007/s40687-023-00400-3"
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 7,
+  "candidates": 9,
   "by_kind": {
+   "example": 2,
    "remark": 3,
    "conjecture": 1,
    "theorem": 3
@@ -25,11 +26,37 @@
  },
  "candidates": [
   {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "s . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+   "section_file": "sections/sec-003-11-motivation.md",
+   "section_title": "Motivation",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "s, continued . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+   "section_file": "sections/sec-003-11-motivation.md",
+   "section_title": "Motivation",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
    "kind": "remark",
    "source_kind": "remark",
    "number": "1.3",
    "name": null,
-   "statement": "OnecancheckthatEquation( 17)(orequivalently,itsrestrictionto n-throots",
+   "statement": "One can check that Equation (17) (or equivalently, its restriction to n-th roots",
    "section_file": "sections/sec-005-13-neumannzagier-matrices-and-their-twisted-vers.md",
    "section_title": "Neumann\u2013Zagier matrices and their twisted version",
    "pages": "4-7",
@@ -68,7 +95,7 @@
    "source_kind": "theorem",
    "number": "1.6",
    "name": null,
-   "statement": "\u03c4CS(T ,t) is invariant under Pachner 2\u20133 moves between ideal triangula-",
+   "statement": "\u03c4 CS(T , t) is invariant under Pachner 2\u20133 moves between ideal triangula-",
    "section_file": "sections/sec-006-14-the-1-loop-invariant-and-its-twisted-version.md",
    "section_title": "The 1-loop invariant and its twisted version",
    "pages": "7-9",
@@ -81,7 +108,7 @@
    "source_kind": "theorem",
    "number": "1.8",
    "name": null,
-   "statement": "We have \u03c4CS(T ,1) = 0 and d",
+   "statement": "We have \u03c4 CS(T , 1) = 0 and",
    "section_file": "sections/sec-006-14-the-1-loop-invariant-and-its-twisted-version.md",
    "section_title": "The 1-loop invariant and its twisted version",
    "pages": "7-9",
@@ -107,8 +134,8 @@
    "source_kind": "remark",
    "number": "4.1",
    "name": null,
-   "statement": "RewritingEquation( 65)intermsofNZmatrices,wehave",
-   "section_file": "sections/sec-010-4-proofs-twisted-1-loop-invariant.md",
+   "statement": "Rewriting Equation (65) in terms of NZ matrices, we have",
+   "section_file": "sections/sec-011-4-proofs-twisted-1-loop-invariant.md",
    "section_title": "Proofs: twisted 1-loop invariant",
    "pages": "16-21",
    "formalization_candidate": false,

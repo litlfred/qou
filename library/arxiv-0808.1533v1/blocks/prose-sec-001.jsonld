@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-0808.1533v1/blocks/prose-sec-001",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Energy bound.",
-  "pageStart": 23,
-  "pageEnd": 27,
-  "text": "../sections/sec-001-energy-bound.md",
+  "title": "Invariants of volume preserving flows. Helicity.",
+  "pageStart": 12,
+  "pageEnd": 23,
+  "text": "../sections/sec-001-invariants-of-volume-preserving-flows-helicity.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0808.1533v1/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0808.1533v1/manifest.jsonld",
   "provenance": "ingested"

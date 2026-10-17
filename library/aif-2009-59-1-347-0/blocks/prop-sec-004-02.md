@@ -1,1 +1,1 @@
-— The following identity holds, for any x ∈ C∗ \q−N:
+— The following identity holds, for any x ∈C∗\q−N:

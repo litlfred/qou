@@ -1,0 +1,1 @@
+[\[thm:2bridge\]](#thm:2bridge){reference-type="ref" reference="thm:2bridge"} Let $K$ be a 2--bridge link in $S^3$, whose reduced alternating diagram has twist number $t$. Let $C$ be a maximal neighborhood about the cusps of $S^3 {\smallsetminus}

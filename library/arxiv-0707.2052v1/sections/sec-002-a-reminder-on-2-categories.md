@@ -7,10 +7,10 @@ section_number: null
 pages: 7-10
 source_pdf: 0707.2052v1.pdf
 source_sha256: 0a1d1cca848706be
-doc_brief: "The Mukai pairing, I: a categorical approach — We study the Hochschild homology of smooth spaces, emphasiz ing the importance of a pairing which generalizes Mukai’s pairi ng on the cohomology of K3"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.996
-latex_coverage_ratio: 0.992
+latex_coverage_ratio: 0.987
 ---
 We will review the notion of a 2-category at the same time as introducing the notation we will be using. Recall that a 2-category consists of three levels of structure: objects; 1-morphisms between objects; and 2-morphisms between 1-morphisms. It is worth mentioning a few examples to bear in mind during the following exposition.
 

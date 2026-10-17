@@ -1,0 +1,84 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1704.00850v3",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "09dd9c99453ba251bf59236fd6af5f5061182c60f2bd752e82688dbd04680b31",
+  "file": "1704.00850v3.pdf"
+ },
+ "provenance": {
+  "title": "Estimating the spectral gap of a trace-class Markov operator",
+  "authors": "Qian Qin, James P. Hobert and Kshitij Khare",
+  "arxiv": {
+   "id": "1704.00850",
+   "version": "3",
+   "primary_class": "math.ST",
+   "stamp_date": "4 Apr 2019"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 4,
+  "by_kind": {
+   "theorem": 3,
+   "proposition": 1
+  },
+  "formalization_candidates": 4
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "[\\[basic\\]](#basic){reference-type=\"ref\" reference=\"basic\"} is a combination of a few standard results in classical functional analysis. It is fairly well-known, but we were unable to find a complete proof in the literature. An elementary proof is given in the appendix for completeness. For a more modern version of the theorem, see [@brislawn1988kernels].",
+   "section_file": "sections/sec-003-4-data-augmentation-operators-and-an-integral-re.md",
+   "section_title": "Data augmentation operators and an integral representation of sk",
+   "pages": "7-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "[\\[secondmoment\\]](#secondmoment){reference-type=\"ref\" reference=\"secondmoment\"} implies that an $\\omega(\\cdot)$ with heavy tails is more likely to result in finite variance (which is not surprising). It might seem natural to take $\\omega(\\cdot) = \\pi_V(\\cdot)$. However, in practice, we are never able to draw from $\\pi_V(\\cdot)$. (If we could do that, we would not need MCMC.) Moreover, setting $\\omega(\\cdot)$ to be $\\pi_V(\\cdot)$ does not always result in a finite variance. On the other hand, it can be beneficial to use $\\omega(\\cdot)$s resembling $\\pi_V(\\cdot)$, as we argue in Section [\\[effi",
+   "section_file": "sections/sec-004-5-classical-monte-carlo.md",
+   "section_title": "Classical Monte Carlo",
+   "pages": "9-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": null,
+   "statement": "The DA operator P is trace-class if and only if",
+   "section_file": "sections/sec-010-a-proof-of-theorem-2.md",
+   "section_title": "A Proof of Theorem 2",
+   "pages": "26-30",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "9",
+   "name": null,
+   "statement": "Suppose that h(\u00b7) is strictly positive in a neighborhood of the origin. If \u03c9(z) can be written",
+   "section_file": "sections/sec-011-b-proof-of-proposition-9.md",
+   "section_title": "B Proof of Proposition 9",
+   "pages": "30-34",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

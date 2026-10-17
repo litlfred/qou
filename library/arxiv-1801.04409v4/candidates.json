@@ -1,0 +1,242 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1801.04409v4",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "db61d011e3775aca54c0cc5b4f74b48d028227bf952482c6ff47f98492ee5d3f",
+  "file": "1801.04409v4.pdf"
+ },
+ "provenance": {
+  "title": "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES",
+  "authors": "PAVEL ETINGOF AND VICTOR OSTRIK",
+  "arxiv": {
+   "id": "1801.04409",
+   "version": "4",
+   "primary_class": "math.RT",
+   "stamp_date": "9 Nov 2019"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 16,
+  "by_kind": {
+   "proposition": 6,
+   "theorem": 5,
+   "corollary": 3,
+   "remark": 2
+  },
+  "formalization_candidates": 14
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "[\\[negli\\]](#negli){reference-type=\"ref\" reference=\"negli\"} immediately implies",
+   "section_file": "sections/sec-008-33-compatibility-of-negligible-morphisms-with-su.md",
+   "section_title": "Compatibility of negligible morphisms with surjective tensor functors",
+   "pages": "14-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "4.1",
+   "name": null,
+   "statement": "Let f : X \u2192Y be a negligible morphism of G-",
+   "section_file": "sections/sec-010-4-semisimplification-of-representation-categorie.md",
+   "section_title": "Semisimplification of representation categories of finite groups in characteristic p.",
+   "pages": "15-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.2",
+   "name": null,
+   "statement": "The functor F in Proposition 4.1 is an equivalence of",
+   "section_file": "sections/sec-010-4-semisimplification-of-representation-categorie.md",
+   "section_title": "Semisimplification of representation categories of finite groups in characteristic p.",
+   "pages": "15-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.2",
+   "name": null,
+   "statement": "is proved in the next subsection.",
+   "section_file": "sections/sec-010-4-semisimplification-of-representation-categorie.md",
+   "section_title": "Semisimplification of representation categories of finite groups in characteristic p.",
+   "pages": "15-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "4.3",
+   "name": null,
+   "statement": "One has Repk G \u223c= (Repk P)L.",
+   "section_file": "sections/sec-010-4-semisimplification-of-representation-categorie.md",
+   "section_title": "Semisimplification of representation categories of finite groups in characteristic p.",
+   "pages": "15-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "4.5",
+   "name": null,
+   "statement": "(see e.g. [A], Section 9) For each indecomposable",
+   "section_file": "sections/sec-011-42-proof-of-theorem-42.md",
+   "section_title": "Proof of Theorem 4.2",
+   "pages": "16-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "4.7",
+   "name": null,
+   "statement": "([G], Theorem 9) If dim M\u0338 = 0 in k then the vertex",
+   "section_file": "sections/sec-011-42-proof-of-theorem-42.md",
+   "section_title": "Proof of Theorem 4.2",
+   "pages": "16-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.8",
+   "name": null,
+   "statement": "[A] (Green\u2019s correspondence) For each p-subgroup H \u2282",
+   "section_file": "sections/sec-011-42-proof-of-theorem-42.md",
+   "section_title": "Proof of Theorem 4.2",
+   "pages": "16-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": null,
+   "name": null,
+   "statement": "[\\[funsemisi\\]](#funsemisi){reference-type=\"ref\" reference=\"funsemisi\"} raises a question of classification of pairs $K\\subset G$, where $G$ is simple, $K$ is connected reductive, and $K$ contains a regular unipotent element of $G$. Let us call such a pair a *principal pair*. It is clear that it suffices to classify the corresponding pairs of Lie algebras (which we also call principal); namely, a principal pair of groups $K\\subset G$ is determined by a principal pair of Lie algebras ${\\mathfrak{k}}\\subset \\mathfrak{g}$ and a central subgroup in $G$. The question of classification of principal ",
+   "section_file": "sections/sec-018-6-surjective-symmetric-tensor-functors-between-v.md",
+   "section_title": "Surjective symmetric tensor functors between Verlinde categories Verp(G)",
+   "pages": "25-26",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "8.2",
+   "name": null,
+   "statement": "Let nj = 2m1 + \u00b7 \u00b7 \u00b7 + 2mj, 1 \u2264j \u2264s, and let",
+   "section_file": "sections/sec-020-8-semisimplification-of-tiltgln-when-chark2.md",
+   "section_title": "Semisimplification of Tilt(GL(n)) when char(k)=2",
+   "pages": "29-31",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "8.3",
+   "name": null,
+   "statement": "The objects Xmj, j = 1, . . . , s are multiplicatively",
+   "section_file": "sections/sec-020-8-semisimplification-of-tiltgln-when-chark2.md",
+   "section_title": "Semisimplification of Tilt(GL(n)) when char(k)=2",
+   "pages": "29-31",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "8.4",
+   "name": null,
+   "statement": "We have Tilt(SLn) = Veck(Zs\u22121) where Zs\u22121 is gen-",
+   "section_file": "sections/sec-020-8-semisimplification-of-tiltgln-when-chark2.md",
+   "section_title": "Semisimplification of Tilt(GL(n)) when char(k)=2",
+   "pages": "29-31",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "A.1. (i) Assume that q2 = 1 or that q2 is not a root of 1.",
+   "section_file": "sections/sec-022-a1.md",
+   "section_title": "A.1.",
+   "pages": "31-32",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "A.2. (i) We expect that the assumption on q in Theorem A.1",
+   "section_file": "sections/sec-022-a1.md",
+   "section_title": "A.1.",
+   "pages": "31-32",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "A.3. Let C be a pivotal fusion category which is a cate-",
+   "section_file": "sections/sec-023-a2-fusion-categories.md",
+   "section_title": "A.2. Fusion categories",
+   "pages": "32-34",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "A.4. (i) The categori\ufb01cations of Kl with l = 2 are completely",
+   "section_file": "sections/sec-023-a2-fusion-categories.md",
+   "section_title": "A.2. Fusion categories",
+   "pages": "32-34",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

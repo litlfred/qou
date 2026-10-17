@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-math-0603217v3
-doc_title: "A version of the volume conjecture"
+doc_title: "A VERSION OF THE VOLUME CONJECTURE"
 section_id: sec-002-3-proof
 section_title: "Proof"
 section_number: 3
 pages: 3-4
 source_pdf: 0603217v3.pdf
 source_sha256: d7375d4fee00dd98
-doc_brief: "A version of the volume conjecture — W e propose a version of the volume conjecture that would rela te a certain limit of the colored Jones polynomials of a knot to th e volume function deﬁned by a"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.976
+latex_prose_ratio: 0.884
+latex_coverage_ratio: 0.984
 ---
 In this section we prove Conjecture [\[conj:parameterization\]](#conj:parameterization){reference-type="ref" reference="conj:parameterization"} for torus knots. (To be honest, [\[eq:volume\]](#eq:volume){reference-type="eqref" reference="eq:volume"} is proved only up to a constant, that is, we prove [\[eq:Schlafli\]](#eq:Schlafli){reference-type="eqref" reference="eq:Schlafli"} instead.)
 

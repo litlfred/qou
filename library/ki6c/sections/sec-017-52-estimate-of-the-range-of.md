@@ -9,6 +9,7 @@ source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
 ---
+Estimate of the range of ∆′
 In this section, we calculate the concrete values of the bounds of the inequalities in (79)
 so that they satisfy that ∆−∆′ ⊂(78).
 Putting Λ as in Section 2.2, we have that
@@ -161,4 +162,3 @@ To be precise (see Remark 4.1), we can rigorously verify the above estimate of t
 of the above system of equations in a similar way as in Section A.3.
 We obtain the other bounds of ∆′ from the above bounds by the symmetry with respect
 to the exchange of t and u.
-5.3

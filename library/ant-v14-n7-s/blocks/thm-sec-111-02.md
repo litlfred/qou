@@ -1,1 +1,1 @@
-Let k> 0, u= eiθ,v= eiγ withθ,γ ∈[ 0, 2π] and let m= deg(L(E⊗χD,w)) . Then
+Finally, (3) follows from (2), after we check that the unit map uBO induces the identity map

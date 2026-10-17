@@ -1,1 +1,1 @@
-[23]) Let X+, X− be closed braid representa-
+[23]) Let X+, X−be closed braid representa-

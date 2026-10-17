@@ -1,0 +1,1 @@
+\ref{thm-quasi} applies to several non-alternating knots with 8 and 9 crossings. The Jones slopes of all non-alternating prime knots with up to nine crossings were calculated by Garoufalidis in Section 4 of \cite{Ga-slope}.

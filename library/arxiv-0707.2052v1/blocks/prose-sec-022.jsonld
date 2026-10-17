@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-0707.2052v1/blocks/prose-sec-022",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "The open-closed 2d TQFT from a Calabi-Yau manifold.",
-  "pageStart": 28,
-  "pageEnd": 29,
-  "text": "../sections/sec-022-the-open-closed-2d-tqft-from-a-calabi-yau-manifo.md",
+  "title": "Open-closed 2d TQFTs with D-branes.",
+  "pageStart": 27,
+  "pageEnd": 28,
+  "text": "../sections/sec-022-open-closed-2d-tqfts-with-d-branes.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0707.2052v1/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0707.2052v1/manifest.jsonld",
   "provenance": "ingested"

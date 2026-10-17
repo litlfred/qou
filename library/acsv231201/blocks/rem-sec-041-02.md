@@ -1,0 +1,1 @@
+All combinatorially interesting multivariate generating functions

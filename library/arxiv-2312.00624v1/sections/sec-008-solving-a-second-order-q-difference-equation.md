@@ -7,10 +7,10 @@ section_number: null
 pages: 17-20
 source_pdf: 2312.00624v1.pdf
 source_sha256: bda867f7b84f69c3
-doc_brief: "On the structure of wave functions in complex Chern–Simons theory — We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.917
-latex_coverage_ratio: 0.968
+latex_coverage_ratio: 0.981
 ---
 []{#sec: 2nd-order label="sec: 2nd-order"} Recall that, for each choice of $\alpha$, the resummed perturbative wave function $\chi^{(\alpha), \rm{WKB}}(u; \hbar)$ is given in Eq. [\[WKB-conj\]](#WKB-conj){reference-type="eqref" reference="WKB-conj"}. Equivalently, we write $$\label{chi-matrix-2}
 \chi^{(\alpha), \rm{WKB}}(u; \hbar) = {\rm e}^{\frac{{\rm i}}{\hbar} s^{(\alpha)}_0(x) +  s^{(\alpha)}_1(x)} \Psi^{(\alpha), \rm{WKB}}(X;q) \, ,$$ where we have introduced the notation $$\label{Psi}

@@ -1,1 +1,1 @@
-Let A be a commutative DG ring, and let w0,w 1 : ˜B′→˜B be
+\ref{lem:305} says that the function $v_0 : F_0(X) \to B$

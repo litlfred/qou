@@ -1,18 +1,20 @@
 ---
 doc_id: 1-s20-s002212362200012x-main
-doc_title: "www.elsevier.com/locate/jfa"
+doc_title: "Journal of Functional Analysis Log concavity and concentration of Lipschitz functions on the Boolean hypercube"
 section_id: sec-000-log-concavity-and-concentration-of-lipschitz-fun
 section_title: "Log concavity and concentration of Lipschitz functions on the Boolean hypercube"
 section_number: null
 pages: 1-2
 source_pdf: 1-s2.0-S002212362200012X-main.pdf
 source_sha256: 6fc7d28c8d40bf42
-doc_brief: "www.elsevier.com/locate/jfa — 13 sections: Log concavity and concentration of; Introduction; A lower bound on the entropy"
+toc_source: outline
 ---
 functions on the Boolean hypercube
 Ronen Eldan ∗,1, Omer Shamir 2
 Weizmann Institute of Science, Israel
-a r t i c l e i n f o a b s t r a c t
+a r t i c l e 
+i n f o
+a b s t r a c t
 Article history:
 Received 17 December 2020
 Accepted 13 January 2022
@@ -27,11 +29,12 @@ It is well-known that measures whose density is the form e−V
 where V is a uniformly convex potential on Rn attain strong 
 concentration properties. In search of a notion of log-concavity 
 on the discrete hypercube, we consider measures on {−1, 1}n
-whose multi-linear extension f satisﬁes log ∇2f(x) ≼ βIn, for 
-β ≥ 0, which we refer to as β-semi-log-concave. We prove 
+whose multi-linear extension f satisﬁes log ∇2f(x) ⪯βIn, for 
+β ≥0, which we refer to as β-semi-log-concave. We prove 
 that these measures satisfy a nontrivial concentration bound, 
 namely, any Hamming Lipchitz test function ϕ satisﬁes 
-Varν [ϕ] ≤ n2−Cβ for Cβ > 0. As a corollary, we prove 
+Varν[ϕ] ≤n2−Cβ for Cβ
+> 0. As a corollary, we prove 
 a concentration bound for measures which exhibit the so-
 called Rayleigh property. Namely, we show that for measures 
 such that under any external ﬁeld (or exponential tilt), 
@@ -45,4 +48,5 @@ Israel Science Foundation grant no. 715/16.
 2 Supported by a European Research Council grant no. 803084.
 https://doi.org/10.1016/j.jfa.2022.109392
 0022-1236/© 2022 Elsevier Inc. All rights reserved.
-2 R. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392
+2
+R. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392

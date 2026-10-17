@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2202.06733v1
-doc_title: "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE"
+doc_title: "Received <day> <Month>, <year>"
 section_id: sec-009-5-octonions-the-sta-and-particle-physics
 section_title: "Octonions, the STA and particle physics"
 section_number: 5
 pages: 12-18
 source_pdf: 2202.06733v1.pdf
 source_sha256: e670632090447f14
-doc_brief: "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE — Diﬀerent ways of representing the groupSU(3) within a Geometric Algebra approach are"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.979
+latex_coverage_ratio: 0.999
 ---
 Now, excitingly, we can start to reinterpret what we have already discussed above for the STA approach to the strong force, as a partial piece of a larger scale project for understanding the symmetries that nature may want to use. Here is a proposal:
 

@@ -1,0 +1,71 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1105.0091v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "7d6f72e016b250274d5fc2d4a1fcddc44d9e8bfd481054d627434794adf25803",
+  "file": "1105.0091v1.pdf"
+ },
+ "provenance": {
+  "title": "A central limit theorem for the characters of the infinite symmetric group and of the infinite Hecke algebra",
+  "authors": null,
+  "arxiv": {
+   "id": "1105.0091",
+   "version": "1",
+   "primary_class": "math.RT",
+   "stamp_date": "30 Apr 2011"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 3,
+  "by_kind": {
+   "proposition": 1,
+   "theorem": 2
+  },
+  "formalization_candidates": 3
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "[\\[csspezialschur\\]](#csspezialschur){reference-type=\"ref\" reference=\"csspezialschur\"} is very important from a combinatorial point of view: it enables us to relate the coherent systems of probability measures coming from characters of $\\mathfrak{S}_{\\infty}$ to very general models of random permutations. The goal of the next section is to explain this link.",
+   "section_file": "sections/sec-000-1-representation-theory-of-the-infinite-symmetri.md",
+   "section_title": "Representation theory of the infinite symmetric group",
+   "pages": "4-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "[\\[ivanovolshanski\\]](#ivanovolshanski){reference-type=\"ref\" reference=\"ivanovolshanski\"} implies in particular that the symbols $\\varSigma_{\\mu}$ factorize in higher degree, that is to say that for any partitions $\\mu$ and $\\nu$, $$\\varSigma_{\\mu}\\,\\varSigma_{\\nu}=\\varSigma_{\\mu \\sqcup \\nu}+(\\text{terms of degree at most }|\\mu|+|\\nu|-1).$$ The next paragraph is devoted to a better description of the products $\\varSigma_{\\mu}\\,\\varSigma_{\\nu}$; we shall rely on the formalism of partial permutations (*cf.* [@IK99]). To conclude this paragraph, let us compute the expectation of a symbol $\\varSig",
+   "section_file": "sections/sec-002-3-observables-of-young-diagrams-and-their-cumula.md",
+   "section_title": "Observables of Young diagrams and their cumulants",
+   "pages": "22-31",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "[\\[maingeom\\]](#maingeom){reference-type=\"ref\" reference=\"maingeom\"} seems to remain true when $\\beta\\neq 0, \\gamma \\neq 0$, and in this case, the fluctuations of the first renormalized columns seem to be given by analogous formulas as those given above, with fluctuations \"of type $X$\" described by Theorem [\\[almostgeom\\]](#almostgeom){reference-type=\"ref\" reference=\"almostgeom\"}, and fluctuations \"of type $Y$\" (for equal coordinates) independent of the fluctuations of the rows. We don't know how to prove this, but we can give arguments in favor of this conjecture. These arguments can be made ",
+   "section_file": "sections/sec-005-6-pitman-operators-and-a-link-with-conditioned-r.md",
+   "section_title": "Pitman operators and a link with conditioned random walks and brownian matrices",
+   "pages": "42-57",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

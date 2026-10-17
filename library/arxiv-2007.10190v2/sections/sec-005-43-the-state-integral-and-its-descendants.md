@@ -7,9 +7,9 @@ section_number: 4.3
 pages: 9-11
 source_pdf: 2007.10190v2.pdf
 source_sha256: 37bcbd3a343bb21a
-doc_brief: "THE RESURGENT STRUCTURE OF QUANTUM KNOT INVARIANTS — The asymptotic expansion of quantum knot invariants in complex Chern-Simons theory gives rise to factorially divergent formal power series."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.97
+latex_prose_ratio: 0.978
 latex_coverage_ratio: 0.93
 ---
 \label{sub.state}

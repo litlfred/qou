@@ -1,0 +1,173 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "104171-rmi-1408",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "eda199771108dff8901f7b28fb8fe2d02e21bc67ff7fb0c278254035438ae7af",
+  "file": "10.4171-rmi-1408.pdf"
+ },
+ "provenance": {
+  "title": "DOI 10.4171/RMI/1408 \u00a9 2023 Real Sociedad Matem\u00e1tica Espa\u00f1ola",
+  "authors": "Published by EMS Press and licensed under a CC BY 4.0 license",
+  "arxiv": null,
+  "doi": "10.4171/RMI/1408"
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 11,
+  "by_kind": {
+   "lemma": 3,
+   "corollary": 2,
+   "remark": 1,
+   "theorem": 3,
+   "proposition": 2
+  },
+  "formalization_candidates": 10
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.2",
+   "name": null,
+   "statement": "Given objects A, B and C in Rep C3 with the above decompositions, let",
+   "section_file": "sections/sec-001-2-from-algebras-to-superalgebras.md",
+   "section_title": "From algebras to superalgebras",
+   "pages": "3-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "2.3",
+   "name": null,
+   "statement": "Let .A;\u0016/ be an algebra in Rep C3, with \u0016.x \u02dd y/ D xy for all x;y 2 A.",
+   "section_file": "sections/sec-001-2-from-algebras-to-superalgebras.md",
+   "section_title": "From algebras to superalgebras",
+   "pages": "3-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.4",
+   "name": null,
+   "statement": "Let \u0016W A \u02dd B ! C be a homomorphism in Rep C3 as before. On each",
+   "section_file": "sections/sec-001-2-from-algebras-to-superalgebras.md",
+   "section_title": "From algebras to superalgebras",
+   "pages": "3-9",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2.6",
+   "name": null,
+   "statement": "Let \u0016WA \u02dd B ! C be a homomorphism in Rep C3. Pick splittings of A, B,",
+   "section_file": "sections/sec-001-2-from-algebras-to-superalgebras.md",
+   "section_title": "From algebras to superalgebras",
+   "pages": "3-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "2.8",
+   "name": null,
+   "statement": "Let .A;\u0016/ be an algebra in Rep C3, with \u0016.x \u02dd y/ D xy for all x;y. Pick",
+   "section_file": "sections/sec-002-3-from-octonions-to-composition-superalgebras.md",
+   "section_title": "From octonions to composition superalgebras",
+   "pages": "9-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.1",
+   "name": null,
+   "statement": "Let .A; \u0016; n/ be a composition algebra endowed with an automorphism \u001b",
+   "section_file": "sections/sec-002-3-from-octonions-to-composition-superalgebras.md",
+   "section_title": "From octonions to composition superalgebras",
+   "pages": "9-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.2",
+   "name": null,
+   "statement": "Let .A; \u0016; n/ be a composition algebra in Rep C3. Then the composition",
+   "section_file": "sections/sec-002-3-from-octonions-to-composition-superalgebras.md",
+   "section_title": "From octonions to composition superalgebras",
+   "pages": "9-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.4",
+   "name": null,
+   "statement": "Let .A; \u0016; n/ be a composition algebra in Rep C3, with \u0016.x \u02dd y/ D xy",
+   "section_file": "sections/sec-002-3-from-octonions-to-composition-superalgebras.md",
+   "section_title": "From octonions to composition superalgebras",
+   "pages": "9-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.5",
+   "name": "Theorem 6.3 in [7]",
+   "statement": "Let .C; \u0016; n/ be a Cayley algebra over a field F of",
+   "section_file": "sections/sec-002-3-from-octonions-to-composition-superalgebras.md",
+   "section_title": "From octonions to composition superalgebras",
+   "pages": "9-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "4.1",
+   "name": null,
+   "statement": "Let V be an object in Rep C3.",
+   "section_file": "sections/sec-003-4-semisimplification-skew-transformations-deriva.md",
+   "section_title": "Semisimplification: skew transformations, derivations",
+   "pages": "15-19",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "4.2",
+   "name": null,
+   "statement": "For any algebra .A; \u0016/ in Rep C3, there is a natural homomorphism",
+   "section_file": "sections/sec-003-4-semisimplification-skew-transformations-deriva.md",
+   "section_title": "Semisimplification: skew transformations, derivations",
+   "pages": "15-19",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

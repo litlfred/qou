@@ -9,6 +9,7 @@ source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
 ---
+Calculation of the critical value
 In this section, we calculate the concrete values of a critical point and the Hesse matrix
 of ˆV .
 The diﬀerentials of ˆV are presented by
@@ -265,4 +266,3 @@ z0
 
 . (88)
 51
-5.4

@@ -1,0 +1,44 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1409.2849v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "7bf9646716fbb2477ff2bc89359ed41e854b9ba1f9c8fae9fd22d277223d0e92",
+  "file": "1409.2849v1.pdf"
+ },
+ "provenance": {
+  "title": "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS",
+  "authors": "PIERRE-LO\u00cfC M\u00c9LIOT AND ASHKAN NIKEGHBALI",
+  "arxiv": {
+   "id": "1409.2849",
+   "version": "1",
+   "primary_class": "math.PR",
+   "stamp_date": "9 Sep 2014"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "theorem": 1
+  },
+  "formalization_candidates": 1
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{thm:jointcumulant} has several easy corollaries. First of all, we see immediately from it that the sign of a joint cumulant of spins is prescribed, which was \\emph{a priori} non-obvious. On the other hand, applying Theorem \\ref{thm:jointcumulant} to the case $r=1$ yields $$\\kappa(\\sigma(i),\\sigma(j))=x^{|j-i|},$$ that is, the correlation between two spins decreases exponentially with the distance between the spins. More generally, one can use Theorem \\ref{thm:jointcumulant} to get a useful bound on cumulants. Notice that the minimal exponent of $x$ that appears in the right-hand side of t",
+   "section_file": "sections/sec-016-51-joint-cumulants-of-the-spins.md",
+   "section_title": "Joint cumulants of the spins",
+   "pages": "32-41",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

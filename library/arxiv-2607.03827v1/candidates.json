@@ -1,0 +1,58 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2607.03827v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "965d69603381942abe2ab6ff20195f17afbbf9e7f215c098634664b1f87a98f7",
+  "file": "2607.03827v1.pdf"
+ },
+ "provenance": {
+  "title": "Affine cellular algebras and asymptotic algebras",
+  "authors": "PAULA A.A.B. CARVALHO, STEFFEN KOENIG, AND CHRISTIAN LOMP",
+  "arxiv": {
+   "id": "2607.03827",
+   "version": "1",
+   "primary_class": "math.RT",
+   "stamp_date": "4 Jul 2026"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "theorem": 1,
+   "proposition": 1
+  },
+  "formalization_candidates": 2
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{TheoremE} will be established. At the end of the section, two",
+   "section_file": "sections/sec-002-3-homomorphisms-between-affine-cell-ideals.md",
+   "section_title": "Homomorphisms between affine cell ideals.",
+   "pages": "7-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{embeddingscoincide}. Thus the assumptions in our main",
+   "section_file": "sections/sec-008-63-gram-determinants-and-jucys-murphy-elements.md",
+   "section_title": "Gram determinants and Jucys Murphy elements",
+   "pages": "29-31",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

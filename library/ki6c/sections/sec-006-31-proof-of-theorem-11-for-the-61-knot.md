@@ -9,6 +9,7 @@ source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
 ---
+Proof of Theorem 1.1 for the 61 knot
 In this section, we show a proof of Theorem 1.1 for the 61 knot.
 Since the Kashaev invariant of the mirror image of a knot is equal to the complex
 conjugate of the Kashaev invariant of the original knot, it is suﬃcient to show the theorem
@@ -416,4 +417,3 @@ where we put x0 = e2π√−1 t0, y0 = e2π√−1 s0, z0 = e2π√−1 u0, and 
 this value and the twisted Reidemeister torsion. Hence, we obtain the theorem for the 61
 knot.
 15
-3.2

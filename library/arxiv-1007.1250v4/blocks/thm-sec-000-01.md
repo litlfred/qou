@@ -1,1 +1,1 @@
-Let C = ( G, H, Ψ, Φ) be a Lie crossed
+\ref{thm:6} on estimates for the nonabelian exponential map. These

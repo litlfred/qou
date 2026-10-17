@@ -1,0 +1,84 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2007.13108v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "b298478f5f5b948df63ffd7aaccf2c6940ff65dcd23b1e25a39071a7dc7d40fa",
+  "file": "2007.13108v1.pdf"
+ },
+ "provenance": {
+  "title": "Log concavity and concentration of Lipschitz functions on the Boolean hypercube",
+  "authors": "Ronen Eldan\u2217and Omer Shamir\u2020",
+  "arxiv": {
+   "id": "2007.13108",
+   "version": "1",
+   "primary_class": "math.PR",
+   "stamp_date": "26 Jul 2020"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 4,
+  "by_kind": {
+   "lemma": 2,
+   "proposition": 2
+  },
+  "formalization_candidates": 4
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "12",
+   "name": null,
+   "statement": "For all t, r \u22650, we have almost surely,",
+   "section_file": "sections/sec-008-31-estimating-the-variance-in-terms-of-the-trans.md",
+   "section_title": "Estimating the variance in terms of the transportation distance between tilts",
+   "pages": "9-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "13",
+   "name": null,
+   "statement": "Let \u03bd be a \u03b2-semi-log-concave measure on Cn. Let v \u2208Rn and let \u03b8 \u2208Sn\u22121.",
+   "section_file": "sections/sec-008-31-estimating-the-variance-in-terms-of-the-trans.md",
+   "section_title": "Estimating the variance in terms of the transportation distance between tilts",
+   "pages": "9-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "13",
+   "name": null,
+   "statement": "will be proven via a coupling argument laid out below. Let v \u2208Rn and consider",
+   "section_file": "sections/sec-009-32-proof-of-proposition-13-the-stochastic-coupli.md",
+   "section_title": "Proof of Proposition 13: The stochastic coupling",
+   "pages": "11-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "14",
+   "name": null,
+   "statement": "Let \u03b5 > 0. Let Wt be a standard Brownian motion and let Yt, Zt be adapted to Wt,",
+   "section_file": "sections/sec-009-32-proof-of-proposition-13-the-stochastic-coupli.md",
+   "section_title": "Proof of Proposition 13: The stochastic coupling",
+   "pages": "11-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

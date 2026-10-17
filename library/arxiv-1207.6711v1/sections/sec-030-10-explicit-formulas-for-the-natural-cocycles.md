@@ -7,10 +7,10 @@ section_number: 10
 pages: 31-31
 source_pdf: 1207.6711v1.pdf
 source_sha256: 320c4301ac66fff1
-doc_brief: "GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.909
-latex_coverage_ratio: 0.95
+latex_coverage_ratio: 1.0
 ---
 \label{sec:ExplicitFormulas}
 We now show that the cocycle associated to a $\PGL(n,\C)/B$-decoration $D$ is determined by the shape assignment $\mathcal Z(D)$. The reader should keep in mind the diagram~\eqref{eqn:DiagramIntro}. 

@@ -9,6 +9,7 @@ source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
 ---
+Verifying the assumption of the Poisson summation formula
 In this section, we verify the assumption of the Poisson summation formula in Lemma 5.2,
 which is used in the proof of Theorem 1.1 for the 63 knot in Section 5.1. As we mentioned
 in Remark 2.5, we verify the assumption for ˆV (t, s, u) instead of V (t, s, u), since V (t, s, u)
@@ -180,4 +181,3 @@ As for (19) and (20), similarly as above, it is suﬃcient to show that
 )
 < 2π −ε′
 for some ε′ > 0. We obtain this formula from (89) by the symmetry (87).
-5.5

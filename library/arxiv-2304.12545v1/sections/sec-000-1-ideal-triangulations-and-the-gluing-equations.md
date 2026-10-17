@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2304.12545v1
-doc_title: "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP, AND THE WORK OF WALTER NEUMANN"
+doc_title: "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP"
 section_id: sec-000-1-ideal-triangulations-and-the-gluing-equations
 section_title: "Ideal triangulations and the gluing equations"
 section_number: 1
 pages: 1-3
 source_pdf: 2304.12545v1.pdf
 source_sha256: bfc3c2be395b1b2d
-doc_brief: "Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — survey of gluing equations, volumes, the extended Bloch group, symplectic properties and quantization."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.991
+latex_coverage_ratio: 0.881
 ---
 \label{sec.2}
 

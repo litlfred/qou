@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2301.02038v1
-doc_title: "Vinogradov's Cohomological Geometry of Partial Differential Equations"
+doc_title: "Contemporary Mathematics"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
 pages: 1-3
 source_pdf: 2301.02038v1.pdf
 source_sha256: 27b303939826ab39
-doc_brief: "Vinogradov's Cohomological Geometry of Partial Differential Equations — Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a system of possibly non-li"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.817
+latex_coverage_ratio: 0.951
 ---
 Systems of algebraic equations can be encoded geometrically in an algebraic variety. This apparently harmless observation is the starting point for the development of such a successful branch of modern Mathematics as Algebraic Geometry. One of the leading principles behind most of the mathematical work of Alexandre M. Vinogradov is that Partial Differential Equations (PDEs) should be treated in a similar way. Namely, let $x = (x^1, \ldots, x^n)$ be some independent variables, let $u = (u^1, \ldots, u^m)$ be some dependent variables, and let 
 

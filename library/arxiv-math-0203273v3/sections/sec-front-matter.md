@@ -119,4 +119,3 @@ reductive envelope pRed(G) associated to any afﬁne group scheme G over K
 tent group). Other applications are given in this paper as well as in the note [1] on
 motives.
 NILPOTENCE, RADICAUX ET STRUCTURES MONO¨IDALES
-3

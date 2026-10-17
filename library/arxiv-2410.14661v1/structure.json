@@ -6,10 +6,12 @@
   "sha256": "3362fcd5e28eb1f0faeb2ebb04ed6f6380ae0655404d74aca5ae9950d1fb65f9",
   "bytes": 997639,
   "pages": 62,
-  "math_source": "latex",
+  "text_source": "embedded",
+  "extractor": "pymupdf",
   "mtime": null,
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,23 +21,30 @@
    "stamp_date": "18 Oct 2024"
   },
   "doi": null,
-  "title": "On the asymptotic expansion of various quantum invariants III: the Reshetikhin-Turaev invariants of closed hyperbolic 3-manifolds obtained by integral surgery along the figure-eight knot",
+  "title": "ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM INVARIANTS III: THE RESHETIKHIN-TURAEV INVARIANTS OF CLOSED HYPERBOLIC 3-MANIFOLDS OBTAINED BY DOING INTEGRAL SURGERY ALONG THE TWIST KNOT",
   "authors_raw": null,
-  "abstract": "This is the third article in a series devoted to the study of the asymptotic expansions of various quantum invariants related to the twist knots. In this paper, by us- ing the saddle point method developed by Ohtsuki and Yokota, we obtain an asymptotic expansion formula for the Reshetikhin-Turaev invariants of closed hyperbolic 3-manifolds obtained by doing integral q-surgery along the twist knotsKp at the root of unity e 4\u03c0\u221a\u22121 r (r is odd).",
-  "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20241021010334Z",
-   "Creator": "LaTeX with hyperref",
-   "Producer": "pdfTeX-1.40.25",
-   "Title": ""
-  },
   "title_lines": [
    "ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM",
    "INVARIANTS III: THE RESHETIKHIN-TURAEV INVARIANTS OF",
    "CLOSED HYPERBOLIC 3-MANIFOLDS OBTAINED BY DOING",
    "INTEGRAL SURGERY ALONG THE TWIST KNOT"
   ],
-  "title_prev": "ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM INVARIANTS III: THE RESHETIKHIN-TURAEV INVARIANTS OF CLOSED HYPERBOLIC 3-MANIFOLDS OBTAINED BY DOING INTEGRAL SURGERY ALONG THE TWIST KNOT"
+  "abstract": "This is the third article in a series devoted to the study of the asymptotic expansions of various quantum invariants related to the twist knots. In this paper, by us- ing the saddle point method developed by Ohtsuki and Yokota, we obtain an asymptotic expansion formula for the Reshetikhin-Turaev invariants of closed hyperbolic 3-manifolds obtained by doing integral q-surgery along the twist knots Kp at the root of unity e 4\u03c0\u221a\u22121 r (r is odd).",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.25",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20241021010334Z"
+  },
+  "title_raw": "ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM INVARIANTS III: THE RESHETIKHIN-TURAEV INVARIANTS OF CLOSED HYPERBOLIC 3-MANIFOLDS OBTAINED BY DOING INTEGRAL SURGERY ALONG THE TWIST KNOT",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM INVARIANTS III: THE RESHETIKHIN-TURAEV INVARIANTS OF CLOSED HYPERBOLIC 3-MANIFOLDS OBTAINED BY DOING INTEGRAL SURGERY ALONG THE TWIST KNOT Contents Introduction Preliminaries Defintion of the Reshetikhin-Turaev invariants Dilogarithm and Lobachevsky fun",
+   "outline": "1. Introduction",
+   "text": "ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM INVARIANTS III: THE RESHETIKHIN-TURAEV INVARIANTS OF CLOSED HYPERBOLIC 3-MANIFOLDS OBTAINED BY DOING INTEGRAL SURGERY ALONG THE TWIST KNOT",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -43,158 +52,875 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Preliminaries",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Defintion of the Reshetikhin-Turaev invariants",
    "page": 4,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Dilogarithm and Lobachevsky functions",
    "page": 6,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Quantum dilogrithm functions",
    "page": 7,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Saddle point method",
    "page": 7,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Computations of the potential function",
    "page": 8,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "Poisson summation formula",
    "page": 15,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 1,
    "title": "Asymptotic expansions",
    "page": 20,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "Preparations",
    "page": 20,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "The case m2=0",
    "page": 24,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 2,
    "title": "The case m2=0 but (m1,m3)=(0,0)",
    "page": 29,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 2,
    "title": "The contribution of N(0,0,0)",
    "page": 32,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 2,
    "title": "Final proof",
    "page": 41,
    "source": "outline",
-   "number": "5.5"
+   "number": "5.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
   },
   {
    "level": 1,
    "title": "Appendices",
    "page": 41,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
   },
   {
    "level": 2,
    "title": "Geometry of the critical point",
    "page": 41,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
   },
   {
    "level": 2,
    "title": "Critical value gives the complex volume",
    "page": 43,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
   },
   {
    "level": 2,
    "title": "Proof of Proposition 5.2",
    "page": 45,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
   },
   {
    "level": 2,
    "title": "Estimation of the critical value",
    "page": 46,
    "source": "outline",
-   "number": "6.4"
+   "number": "6.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "46"
   },
   {
    "level": 2,
    "title": "Two-dimensional saddle point method",
    "page": 52,
    "source": "outline",
-   "number": "6.5"
+   "number": "6.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "52"
   },
   {
    "level": 2,
    "title": "One-dimensional saddle point method",
    "page": 55,
    "source": "outline",
-   "number": "6.6"
+   "number": "6.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "55"
   },
   {
    "level": 1,
    "title": "References",
    "page": 61,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "61"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "2.1",
+   "title": "The core curve z Then zn means n-parallel copies of z. Moreover, we have B = C[z]. We define the skein elements en \u2208B recursively by e0 = 1, e1 = z and en = zen\u22121 \u2212en\u22122 for n \u22652. Let",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "3.1",
+   "title": "Twist knot Kp",
+   "page": 9,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "4.1",
+   "title": "The region D0 lies in the tetrahedron FEBC",
+   "page": 17,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "17"
+  },
+  {
+   "kind": "figure",
+   "number": "5.1",
+   "title": "The cube MCB",
+   "page": 32,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "32"
+  },
+  {
+   "kind": "figure",
+   "number": "5.2",
+   "title": "The cube SPM1",
+   "page": 34,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "34"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 681,
+   "n_words": 107,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -202,8 +928,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 6558,
-   "n_words": 1269
+   "n_chars": 6663,
+   "n_words": 1361,
+   "label_start": "1",
+   "label_end": "4"
   },
   {
    "id": "sec-001-2-preliminaries",
@@ -213,7 +941,9 @@
    "page_start": 4,
    "page_end": 4,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
    "id": "sec-002-21-defintion-of-the-reshetikhin-turaev-invariant",
@@ -222,8 +952,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 2289,
-   "n_words": 431
+   "n_chars": 2322,
+   "n_words": 468,
+   "label_start": "4",
+   "label_end": "6"
   },
   {
    "id": "sec-003-22-dilogarithm-and-lobachevsky-functions",
@@ -232,8 +964,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 1185,
-   "n_words": 249
+   "n_chars": 1213,
+   "n_words": 278,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
    "id": "sec-004-23-quantum-dilogrithm-functions",
@@ -242,8 +976,10 @@
    "level": 2,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 1415,
-   "n_words": 339
+   "n_chars": 1517,
+   "n_words": 381,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
    "id": "sec-005-24-saddle-point-method",
@@ -252,8 +988,10 @@
    "level": 2,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 1732,
-   "n_words": 337
+   "n_chars": 1746,
+   "n_words": 351,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
    "id": "sec-006-3-computations-of-the-potential-function",
@@ -262,8 +1000,10 @@
    "level": 1,
    "page_start": 8,
    "page_end": 15,
-   "n_chars": 8027,
-   "n_words": 2260
+   "n_chars": 8152,
+   "n_words": 2385,
+   "label_start": "8",
+   "label_end": "15"
   },
   {
    "id": "sec-007-4-poisson-summation-formula",
@@ -272,8 +1012,10 @@
    "level": 1,
    "page_start": 15,
    "page_end": 20,
-   "n_chars": 6722,
-   "n_words": 1324
+   "n_chars": 6789,
+   "n_words": 1390,
+   "label_start": "15",
+   "label_end": "20"
   },
   {
    "id": "sec-008-5-asymptotic-expansions",
@@ -282,8 +1024,10 @@
    "level": 1,
    "page_start": 20,
    "page_end": 20,
-   "n_chars": 101,
-   "n_words": 16
+   "n_chars": 102,
+   "n_words": 17,
+   "label_start": "20",
+   "label_end": "20"
   },
   {
    "id": "sec-009-51-preparations",
@@ -291,112 +1035,179 @@
    "title": "Preparations",
    "level": 2,
    "page_start": 20,
-   "page_end": 41,
-   "n_chars": 28319,
-   "n_words": 6092
+   "page_end": 24,
+   "n_chars": 5658,
+   "n_words": 1282,
+   "label_start": "20",
+   "label_end": "24"
   },
   {
-   "id": "sec-010-55-final-proof",
+   "id": "sec-010-52-the-case-m20",
+   "number": "5.2",
+   "title": "The case m2=0",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 29,
+   "n_chars": 6087,
+   "n_words": 1664,
+   "label_start": "24",
+   "label_end": "29"
+  },
+  {
+   "id": "sec-011-53-the-case-m20-but-m1m300",
+   "number": "5.3",
+   "title": "The case m2=0 but (m1,m3)=(0,0)",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 41,
+   "n_chars": 16905,
+   "n_words": 3584,
+   "label_start": "29",
+   "label_end": "41"
+  },
+  {
+   "id": "sec-012-55-final-proof",
    "number": "5.5",
    "title": "Final proof",
    "level": 2,
    "page_start": 41,
    "page_end": 41,
-   "n_chars": 364,
-   "n_words": 75
+   "n_chars": 367,
+   "n_words": 78,
+   "label_start": "41",
+   "label_end": "41"
   },
   {
-   "id": "sec-011-6-appendices",
+   "id": "sec-013-6-appendices",
    "number": "6",
    "title": "Appendices",
    "level": 1,
    "page_start": 41,
    "page_end": 41,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "41",
+   "label_end": "41"
   },
   {
-   "id": "sec-012-61-geometry-of-the-critical-point",
+   "id": "sec-014-61-geometry-of-the-critical-point",
    "number": "6.1",
    "title": "Geometry of the critical point",
    "level": 2,
    "page_start": 41,
    "page_end": 43,
-   "n_chars": 1585,
-   "n_words": 318
+   "n_chars": 1639,
+   "n_words": 374,
+   "label_start": "41",
+   "label_end": "43"
   },
   {
-   "id": "sec-013-62-critical-value-gives-the-complex-volume",
+   "id": "sec-015-62-critical-value-gives-the-complex-volume",
    "number": "6.2",
    "title": "Critical value gives the complex volume",
    "level": 2,
    "page_start": 43,
    "page_end": 45,
-   "n_chars": 3261,
-   "n_words": 610
+   "n_chars": 3409,
+   "n_words": 709,
+   "label_start": "43",
+   "label_end": "45"
   },
   {
-   "id": "sec-014-63-proof-of-proposition-52",
+   "id": "sec-016-63-proof-of-proposition-52",
    "number": "6.3",
    "title": "Proof of Proposition 5.2",
    "level": 2,
    "page_start": 45,
    "page_end": 46,
-   "n_chars": 2082,
-   "n_words": 422
+   "n_chars": 2126,
+   "n_words": 466,
+   "label_start": "45",
+   "label_end": "46"
   },
   {
-   "id": "sec-015-64-estimation-of-the-critical-value",
+   "id": "sec-017-64-estimation-of-the-critical-value",
    "number": "6.4",
    "title": "Estimation of the critical value",
    "level": 2,
    "page_start": 46,
    "page_end": 52,
-   "n_chars": 7415,
-   "n_words": 1783
+   "n_chars": 7674,
+   "n_words": 2044,
+   "label_start": "46",
+   "label_end": "52"
   },
   {
-   "id": "sec-016-65-two-dimensional-saddle-point-method",
+   "id": "sec-018-65-two-dimensional-saddle-point-method",
    "number": "6.5",
    "title": "Two-dimensional saddle point method",
    "level": 2,
    "page_start": 52,
    "page_end": 55,
-   "n_chars": 4633,
-   "n_words": 1027
+   "n_chars": 4780,
+   "n_words": 1107,
+   "label_start": "52",
+   "label_end": "55"
   },
   {
-   "id": "sec-017-66-one-dimensional-saddle-point-method",
+   "id": "sec-019-66-one-dimensional-saddle-point-method",
    "number": "6.6",
    "title": "One-dimensional saddle point method",
    "level": 2,
    "page_start": 55,
    "page_end": 61,
-   "n_chars": 6976,
-   "n_words": 1338
+   "n_chars": 7083,
+   "n_words": 1445,
+   "label_start": "55",
+   "label_end": "61"
   },
   {
-   "id": "sec-018-references",
+   "id": "sec-020-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 61,
    "page_end": 62,
-   "n_chars": 3917,
-   "n_words": 601
+   "n_chars": 3903,
+   "n_words": 587,
+   "label_start": "61",
+   "label_end": "62"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 22,
-  "sections": 19,
-  "chars_total": 86581,
+  "toc_inferred_entries": 0,
+  "figure_entries": 5,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "Final proof"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 22,
+  "chars_total": 88816,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
    "tex_sections": 24,
-   "overlaid": 15,
+   "overlaid": 14,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -404,10 +1215,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.991,
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.896,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -421,7 +1237,7 @@
      "id": "sec-002-21-defintion-of-the-reshetikhin-turaev-invariant",
      "title": "Defintion of the Reshetikhin-Turaev invariants",
      "prose_ratio": 0.971,
-     "coverage_ratio": 0.893,
+     "coverage_ratio": 0.944,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -429,15 +1245,15 @@
      "id": "sec-003-22-dilogarithm-and-lobachevsky-functions",
      "title": "Dilogarithm and Lobachevsky functions",
      "prose_ratio": 0.971,
-     "coverage_ratio": 0.857,
+     "coverage_ratio": 0.872,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-23-quantum-dilogrithm-functions",
      "title": "Quantum dilogrithm functions",
-     "prose_ratio": 0.886,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.919,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -445,23 +1261,23 @@
      "id": "sec-005-24-saddle-point-method",
      "title": "Saddle point method",
      "prose_ratio": 0.906,
-     "coverage_ratio": 0.892,
+     "coverage_ratio": 0.906,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-006-3-computations-of-the-potential-function",
      "title": "Computations of the potential function",
-     "prose_ratio": 0.958,
-     "coverage_ratio": 0.909,
+     "prose_ratio": 0.901,
+     "coverage_ratio": 0.873,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-007-4-poisson-summation-formula",
      "title": "Poisson summation formula",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.931,
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.914,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -476,27 +1292,35 @@
     {
      "id": "sec-009-51-preparations",
      "title": "Preparations",
-     "prose_ratio": 0.907,
-     "coverage_ratio": 0.903,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.239,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-010-55-final-proof",
+     "id": "sec-010-52-the-case-m20",
+     "title": "The case m2=0",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-53-the-case-m20-but-m1m300",
+     "title": "The case m2=0 but (m1,m3)=(0,0)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-55-final-proof",
      "title": "Final proof",
      "prose_ratio": 0.6,
-     "coverage_ratio": 0.846,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-6-appendices",
+     "id": "sec-013-6-appendices",
      "title": "Appendices",
      "prose_ratio": 0.0,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-012-61-geometry-of-the-critical-point",
+     "id": "sec-014-61-geometry-of-the-critical-point",
      "title": "Geometry of the critical point",
      "prose_ratio": 0.889,
      "coverage_ratio": 0.8,
@@ -504,20 +1328,20 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-62-critical-value-gives-the-complex-volume",
+     "id": "sec-015-62-critical-value-gives-the-complex-volume",
      "title": "Critical value gives the complex volume",
-     "prose_ratio": 0.6,
-     "coverage_ratio": 0.857,
+     "prose_ratio": 0.625,
+     "coverage_ratio": 0.81,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-63-proof-of-proposition-52",
+     "id": "sec-016-63-proof-of-proposition-52",
      "title": "Proof of Proposition 5.2",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-015-64-estimation-of-the-critical-value",
+     "id": "sec-017-64-estimation-of-the-critical-value",
      "title": "Estimation of the critical value",
      "prose_ratio": 0.907,
      "coverage_ratio": 0.873,
@@ -525,15 +1349,15 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-65-two-dimensional-saddle-point-method",
+     "id": "sec-018-65-two-dimensional-saddle-point-method",
      "title": "Two-dimensional saddle point method",
-     "prose_ratio": 0.882,
-     "coverage_ratio": 0.866,
+     "prose_ratio": 0.926,
+     "coverage_ratio": 0.884,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-66-one-dimensional-saddle-point-method",
+     "id": "sec-019-66-one-dimensional-saddle-point-method",
      "title": "One-dimensional saddle point method",
      "prose_ratio": 0.826,
      "coverage_ratio": 0.822,
@@ -541,7 +1365,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-018-references",
+     "id": "sec-020-references",
      "title": "References",
      "result": "no matching \\section"
     }

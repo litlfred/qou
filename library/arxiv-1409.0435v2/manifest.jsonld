@@ -21,7 +21,9 @@
     "library/arxiv-1409.0435v2/sections/sec-006",
     "library/arxiv-1409.0435v2/sections/sec-007",
     "library/arxiv-1409.0435v2/sections/sec-008",
-    "library/arxiv-1409.0435v2/sections/sec-009"
+    "library/arxiv-1409.0435v2/sections/sec-009",
+    "library/arxiv-1409.0435v2/sections/sec-010",
+    "library/arxiv-1409.0435v2/sections/sec-011"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -47,8 +49,8 @@
       "stamp_date": "25 Feb 2015"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

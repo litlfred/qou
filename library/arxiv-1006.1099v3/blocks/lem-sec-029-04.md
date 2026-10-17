@@ -1,1 +1,1 @@
-implies that intersections with Href respectively Z∞ contribute 4g respectively 2
+The relation between algebraic and geometric twists, Proposition 3.6 and more

@@ -455,14 +455,50 @@
    "title": "Interpretation of the invariant",
    "level": 1,
    "page_start": 6,
-   "page_end": 11,
-   "n_chars": 12760,
-   "n_words": 2433,
+   "page_end": 7,
+   "n_chars": 2583,
+   "n_words": 454,
    "label_start": "6",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-004-5-example-of-three-magnetic-fields-with-a-third",
+   "number": "5",
+   "title": "Example of three magnetic fields with a third-order linkage",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1303,
+   "n_words": 234,
+   "label_start": "7",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-005-51-yang-mills-potentials-of-a-vacuum-field-with",
+   "number": "5.1",
+   "title": "Yang-Mills potentials of a vacuum field with non-vanishing winding number",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1296,
+   "n_words": 262,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-006-52-magnetic-fields-constructed-from-yang-mills-p",
+   "number": "5.2",
+   "title": "Magnetic fields constructed from Yang-Mills potentials",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 7376,
+   "n_words": 1455,
+   "label_start": "8",
    "label_end": "11"
   },
   {
-   "id": "sec-004-6-conclusions",
+   "id": "sec-007-6-conclusions",
    "number": "6",
    "title": "Conclusions",
    "level": 1,
@@ -474,7 +510,7 @@
    "label_end": "11"
   },
   {
-   "id": "sec-005-a-equivalence-of-boundary-conditions",
+   "id": "sec-008-a-equivalence-of-boundary-conditions",
    "number": "A",
    "title": "Equivalence of boundary conditions",
    "level": 1,
@@ -486,7 +522,7 @@
    "label_end": "12"
   },
   {
-   "id": "sec-006-b-gauge-invariance-of-the-third-order-invariant",
+   "id": "sec-009-b-gauge-invariance-of-the-third-order-invariant",
    "number": "B",
    "title": "Gauge invariance of the third-order invariant $H^{(3)}$",
    "level": 1,
@@ -498,7 +534,7 @@
    "label_end": "13"
   },
   {
-   "id": "sec-007-c-equivalence-of-the-link-integrals-for-disjunct",
+   "id": "sec-010-c-equivalence-of-the-link-integrals-for-disjunct",
    "number": "C",
    "title": "Equivalence of the link integrals for disjunct flux tubes",
    "level": 1,
@@ -510,7 +546,7 @@
    "label_end": "14"
   },
   {
-   "id": "sec-008-references",
+   "id": "sec-011-references",
    "number": null,
    "title": "References",
    "level": 1,
@@ -536,13 +572,13 @@
    "count": 0,
    "items": []
   },
-  "sections": 10,
-  "chars_total": 36587,
+  "sections": 13,
+  "chars_total": 36385,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "third-order-invariant.tex",
    "tex_sections": 8,
-   "overlaid": 4,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -579,13 +615,37 @@
     {
      "id": "sec-003-4-interpretation-of-the-invariant",
      "title": "Interpretation of the invariant",
-     "prose_ratio": 0.97,
-     "coverage_ratio": 0.99,
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-6-conclusions",
+     "id": "sec-004-5-example-of-three-magnetic-fields-with-a-third",
+     "title": "Example of three magnetic fields with a third-order linkage",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-51-yang-mills-potentials-of-a-vacuum-field-with",
+     "title": "Yang-Mills potentials of a vacuum field with non-vanishing winding number",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-52-magnetic-fields-constructed-from-yang-mills-p",
+     "title": "Magnetic fields constructed from Yang-Mills potentials",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-6-conclusions",
      "title": "Conclusions",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.99,
@@ -593,22 +653,22 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-a-equivalence-of-boundary-conditions",
+     "id": "sec-008-a-equivalence-of-boundary-conditions",
      "title": "Equivalence of boundary conditions",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-006-b-gauge-invariance-of-the-third-order-invariant",
+     "id": "sec-009-b-gauge-invariance-of-the-third-order-invariant",
      "title": "Gauge invariance of the third-order invariant $H^{(3)}$",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-007-c-equivalence-of-the-link-integrals-for-disjunct",
+     "id": "sec-010-c-equivalence-of-the-link-integrals-for-disjunct",
      "title": "Equivalence of the link integrals for disjunct flux tubes",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-008-references",
+     "id": "sec-011-references",
      "title": "References",
      "result": "no matching \\section"
     }

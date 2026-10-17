@@ -6,10 +6,12 @@
   "sha256": "ac8f436173d550e816683457955ed337dd1e59b0ae0dc521b7cbd2be70b1d5fd",
   "bytes": 457441,
   "pages": 24,
-  "math_source": "latex",
+  "text_source": "embedded",
+  "extractor": "pymupdf",
   "mtime": null,
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,19 +23,26 @@
   "doi": null,
   "title": "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS",
   "authors_raw": "JEREMY LOVEJOY AND ROBERT OSBURN",
-  "abstract": "Using a result of Takata, we prove a formula for the colored Jones polynomial of the double twist knots K(\u2212m,\u2212p) and K(\u2212m,p) where m and p are positive integers. In the ( \u2212m, \u2212p) case, this leads to new families of q-hypergeometric series generalizing the Kontsevich-Zagier series. Comparing with the cyclotomic expansion of the colored Jones polynomials of K(m,p) gives a generalization of a duality at roots of unity between the Kontsevich-Zagier function and the generating function for strongly unimodal sequences.",
-  "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20210414010028Z",
-   "Creator": "LaTeX with hyperref",
-   "Producer": "pdfTeX-1.40.21",
-   "Title": ""
-  },
-  "title_prev": "THE COLORED JONES POL YNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS",
   "title_lines": [
    "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER",
    "SERIES FOR DOUBLE TWIST KNOTS"
-  ]
+  ],
+  "abstract": "Using a result of Takata, we prove a formula for the colored Jones polynomial of the double twist knots K(\u2212m,\u2212p) and K(\u2212m,p) where m and p are positive integers. In the (\u2212m, \u2212p) case, this leads to new families of q-hypergeometric series generalizing the Kontsevich-Zagier series. Comparing with the cyclotomic expansion of the colored Jones polynomials of K(m,p) gives a generalization of a duality at roots of unity between the Kontsevich-Zagier function and the generating function for strongly unimodal sequences.",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.21",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20210414010028Z"
+  },
+  "title_raw": "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS 1. Introduction Let K be a knot and J N ( K ; q ) be the usual N th colored Jones polynomial, normalized to be 1 for the unknot. It is often useful to determine a q -hypergeometric expression for J N ( K ; q ), and such",
+   "outline": "1. Introduction",
+   "text": "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -41,46 +50,262 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Preliminaries",
    "page": 6,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Proofs of Theorems 1.1 and 1.2",
    "page": 12,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Concluding remarks and questions",
    "page": 22,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Acknowledgements",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Double twist knots",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 668,
+   "n_words": 102,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -88,8 +313,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 6,
-   "n_chars": 8197,
-   "n_words": 1399
+   "n_chars": 8323,
+   "n_words": 1525,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-preliminaries",
@@ -98,8 +325,10 @@
    "level": 1,
    "page_start": 6,
    "page_end": 12,
-   "n_chars": 8649,
-   "n_words": 1775
+   "n_chars": 8951,
+   "n_words": 2067,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-3-proofs-of-theorems-11-and-12",
@@ -108,8 +337,10 @@
    "level": 1,
    "page_start": 12,
    "page_end": 22,
-   "n_chars": 13511,
-   "n_words": 2401
+   "n_chars": 14019,
+   "n_words": 2898,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-4-concluding-remarks-and-questions",
@@ -118,8 +349,10 @@
    "level": 1,
    "page_start": 22,
    "page_end": 23,
-   "n_chars": 1865,
-   "n_words": 297
+   "n_chars": 1892,
+   "n_words": 324,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-acknowledgements",
@@ -128,8 +361,10 @@
    "level": 1,
    "page_start": 23,
    "page_end": 23,
-   "n_chars": 339,
-   "n_words": 55
+   "n_chars": 338,
+   "n_words": 54,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-references",
@@ -138,21 +373,30 @@
    "level": 1,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 4553,
-   "n_words": 717
+   "n_chars": 4528,
+   "n_words": 692,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 6,
-  "sections": 6,
-  "chars_total": 37114,
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 7,
+  "chars_total": 38719,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "cJdoubletwistfinal.tex",
    "tex_sections": 5,
-   "overlaid": 4,
+   "overlaid": 3,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -160,20 +404,23 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.969,
+     "prose_ratio": 0.883,
+     "coverage_ratio": 0.923,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.649,
-     "coverage_ratio": 0.981,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.583,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-3-proofs-of-theorems-11-and-12",
@@ -183,8 +430,8 @@
     {
      "id": "sec-003-4-concluding-remarks-and-questions",
      "title": "Concluding remarks and questions",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.981,
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.967,
      "result": "overlaid",
      "converter": "pandoc"
     },

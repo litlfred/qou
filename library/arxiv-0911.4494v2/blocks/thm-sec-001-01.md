@@ -1,1 +1,1 @@
-The geometrically deﬁned trace TrΓsatisﬁes the following properties:
+The geometrically deﬁned trace TrΓ satisﬁes the following properties:

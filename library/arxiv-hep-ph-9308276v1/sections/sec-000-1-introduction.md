@@ -9,6 +9,7 @@ source_pdf: 9308276v1.pdf
 source_sha256: 498931b15afb3f65
 toc_source: inferred
 ---
+Introduction
 Chiral Lagrangians have been extensively used to describe the phenomenon of spontaneous sym-
 metry breaking both in strong and electroweak interactions.
 The basis of this approach was

@@ -1,1 +1,1 @@
-/four.prop./one.prop.Leta;c be complex numbers satisfying that
+Let a be a non-zero complex number, and let .z/ and r.z/ be

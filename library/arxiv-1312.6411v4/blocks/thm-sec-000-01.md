@@ -1,1 +1,1 @@
-Let A be a commutative DG ring, and letP be a DG A-module. The
+\ref{thm:50}, Theorem \ref{thm:74} and Corollary \ref{cor:550}.

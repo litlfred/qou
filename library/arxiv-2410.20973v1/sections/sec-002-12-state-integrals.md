@@ -7,10 +7,10 @@ section_number: 1.2
 pages: 3-5
 source_pdf: 2410.20973v1.pdf
 source_sha256: 852b7bbc81a62883
-doc_brief: "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS — We prove conjectures of Garoufalidis-Gu-Mari˜ no [ 9] that perturbative series associated with the hyperbolic knots 4 1 and 5 2 are resurgent and"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.953
-latex_coverage_ratio: 0.589
+latex_coverage_ratio: 0.601
 ---
 We are interested in the resurgent and summability properties of the series $\Phi_{\Xi}(\hbar)$, which was defined in terms of the quantum dilogarithm $\Psi(z,\hbar)$ in Equation~\eqref{eq:def.phi}. The latter was shown to be resurgent and Borel--Laplace summable to a function given in terms of Faddeev's quantum dilogarithm $\Phi(z;\tau)$ (see~\cite{GK:resQD,andersen.mero}). The function $\Phi(z;\tau)$ is a meromorphic function of $(z,\tau)\in\BC\times(\BC\backslash\BR_{\leq0})$ with poles located on a cone $z\in\BZ_{\geq0}+\tau\BZ_{\geq0}$ and zeros located on the opposite cone $z\in\BZ_{<0}+\tau\BZ_{<0}$. In addition, it has a variety of descriptions
 \be\label{eq:fad.expressions}

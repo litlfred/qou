@@ -1,0 +1,12 @@
+---
+doc_id: arxiv-1907.03683v4
+doc_title: "EXPLICIT DESCRIPTION OF CHRISTOFFEL DEFORMATIONS AND"
+section_id: sec-018-4-the-z-measures-and-a-deformation-of-the-gamma
+section_title: "The z-measures and a deformation of the gamma process"
+section_number: 4
+pages: 18-18
+source_pdf: 1907.03683v4.pdf
+source_sha256: eb8cc2ddfc8c0739
+toc_source: outline
+---
+

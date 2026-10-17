@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1603.06017v2
-doc_title: "Automatic Theorem Proving in Walnut Hamoon Mousavi"
+doc_title: "Automatic Theorem Proving in Walnut"
 section_id: sec-013-39-predicates
 section_title: "Predicates"
 section_number: 3.9
 pages: 11-11
 source_pdf: 1603.06017v2.pdf
 source_sha256: 3ff091e40573a5dd
-doc_brief: "Automatic Theorem Proving in Walnut Hamoon Mousavi — 34 sections: Introduction; Basics; Words and Automata"
+toc_source: outline
 ---
 An indexing expression on its own is not a valid predicate, and it is not meaningful to talk about automata accepting
 indexing expressions. Smallest predicates involving indexing expressions are deﬁned in Section 3.8 and they involve
@@ -28,4 +28,3 @@ icates involving comparison of two automatic words, e.g., W1[e1][e2]···[em]>=
 2]···[e′
 n], should be straightforward.
 Recall that alphabetic constants are ordered just like integers.
-3.7

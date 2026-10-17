@@ -7,7 +7,7 @@ section_number: 1.4
 pages: 5-6
 source_pdf: topological.invariance.3Dindex.pdf
 source_sha256: 22953b4eee66dca2
-doc_brief: "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD — In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifold M (a collection of"
+toc_source: outline
 ---
 nitions of ideal triangulations,
 e
@@ -18,7 +18,8 @@ cient.
 In Section 4 we review the basic properties of the tetrahedron index from [Garb], and give
 a detailed discussion of the 3D index for an ideal triangulation of a cusped 3-manifold. In
 Section 5 we study the behaviour of the 3D index under the 02 and 20 move.
-6 STA VROS GAROUF ALIDIS, CRAIG D. HODGSON, J. HYAM RUBINSTEIN, AND HENRY SEGERMAN
+6
+STAVROS GAROUFALIDIS, CRAIG D. HODGSON, J. HYAM RUBINSTEIN, AND HENRY SEGERMAN
 In Section 6 we discuss the Epstein-Penner ideal cell decomposition and its subdivision
 into regular triangulations. At the end of Section 6.4 we prove Theorems 1.8 and 1.9.
 In Section 7 we compute the 

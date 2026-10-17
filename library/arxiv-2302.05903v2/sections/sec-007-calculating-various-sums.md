@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2302.05903v2
-doc_title: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials"
+doc_title: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials Introduction"
 section_id: sec-007-calculating-various-sums
 section_title: "Calculating various sums"
 section_number: null
 pages: 7-8
 source_pdf: 2302.05903v2.pdf
 source_sha256: 9a17abd36cc8a317
-doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials — We elaborate on the recent suggestion to consider averaging of Cauchy identities"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.969
-latex_coverage_ratio: 0.954
+latex_prose_ratio: 0.971
+latex_coverage_ratio: 0.971
 ---
 Note that the averaging procedure allows one to evaluate various sums of combinatorics quantities by evaluating the Gaussian moment. For instance (using the Fröbenius formula [@Fulton]), $$\begin{aligned}
 \left<p_\Delta\right>^{\bf A}=\sum_R\psi_R(\Delta)\left<S_R\right>^{\bf A}=\sum_R\psi_R(\Delta)
@@ -25,7 +25,3 @@ S_PS_Q=\sum_RN^R_{PQ}S_R
 \end{aligned}$$ and we used that [@Mac] $$\begin{aligned}
 S_{R/Q}=\sum_PN^R_{PQ}S_P
 \end{aligned}$$
-
-# Strong superintegrability and $W$-operators
-
-As we saw in the previous sections, the Schur functions form a full set of polynomials that have simple averages, this phenomenon is called superintegrability [@MMsi]. Similarly, one can construct a full set of *bilinear* combinations with simple averages too. This phenomenon is called strong superintegrability, and first we remind how this phenomenon looks like in the case of the Gaussian Hermitian matrix model.

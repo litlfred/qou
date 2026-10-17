@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/ant-v14-n7-s/blocks/prose-sec-070",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "5C. Another iteration equation via regularized iterated integrals",
+  "title": "5B. Iteration equation",
   "pageStart": 77,
-  "pageEnd": 78,
-  "text": "../sections/sec-070-5c-another-iteration-equation-via-regularized-it.md",
+  "pageEnd": 77,
+  "text": "../sections/sec-070-5b-iteration-equation.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
   "provenance": "ingested"

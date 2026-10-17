@@ -8,8 +8,8 @@
   "file": "0601023v3.pdf"
  },
  "provenance": {
-  "title": "Proton Stability Grand Unified Theories, in Strings and in Branes",
-  "authors": "Pran Nath 1, and Pavel Fileviez P\u00e9rez2",
+  "title": "arXiv:hep-ph/0601023v3 23 Apr 2007",
+  "authors": "Grand Unified Theories",
   "arxiv": {
    "id": "hep-ph/0601023",
    "version": "3",
@@ -20,9 +20,25 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
+  "candidates": 1,
+  "by_kind": {
+   "example": 1
+  },
   "formalization_candidates": 0
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "s of this possibility are provided by the $e^+\\pi^0$ for the non-supersymmetric minimal $SU(5)$ model,",
+   "section_file": "sections/sec-038-9-summary-and-outlook.md",
+   "section_title": "Summary and Outlook",
+   "pages": "139-144",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
 }

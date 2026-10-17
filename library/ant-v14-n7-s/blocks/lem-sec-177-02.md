@@ -1,1 +1,1 @@
-Let K be a number ﬁeld, let K = K0 ⊂K1 ⊂K2 ⊂· · · be a tower of distinct cyclic p-extensions
+]. Unipotent blocks of ˜G are parametrized by certain ˜G-conjugacy classes of pairs ( ˜L, λ)

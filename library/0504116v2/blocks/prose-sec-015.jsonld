@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/0504116v2/blocks/prose-sec-015",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "A.2 Classical rigidity results",
-  "pageStart": 22,
-  "pageEnd": 24,
-  "text": "../sections/sec-015-a2-classical-rigidity-results.md",
+  "title": "Infinitesimal deformations of compact tetrahedra",
+  "pageStart": 20,
+  "pageEnd": 21,
+  "text": "../sections/sec-015-32-infinitesimal-deformations-of-compact-tetrahe.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0504116v2/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0504116v2/manifest.jsonld",
   "provenance": "ingested"

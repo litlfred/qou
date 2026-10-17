@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1303.0720v2/blocks/prose-sec-022",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "The local asymptotics for the weighted Bergman kernel: the corrective algorithm",
-  "pageStart": 18,
-  "pageEnd": 20,
-  "text": "../sections/sec-022-66-the-local-asymptotics-for-the-weighted-bergma.md",
+  "title": "Tools from the approach of Berman-Berndtsson-Sjöstrand",
+  "pageStart": 13,
+  "pageEnd": 13,
+  "text": "../sections/sec-022-6-tools-from-the-approach-of-berman-berndtsson-s.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1303.0720v2/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1303.0720v2/manifest.jsonld",
   "provenance": "ingested"

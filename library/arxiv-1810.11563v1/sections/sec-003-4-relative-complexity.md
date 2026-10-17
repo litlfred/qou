@@ -7,10 +7,10 @@ section_number: 4
 pages: 7-9
 source_pdf: 1810.11563v1.pdf
 source_sha256: 8e17ac8b91bc3cc9
-doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.976
+latex_coverage_ratio: 0.995
 ---
 The enormity of the space of states of quantum systems begs the question of how to measure the distance between states. Are some states close to each other and others enormously far? The usual metric in state space (by which I mean $CP(N)$) is the inner-product metric. It's also called the Fubini-Study (FS) metric. The FS distance between two vectors $|A\ra$ and $|B\ra$ is,
 \be 

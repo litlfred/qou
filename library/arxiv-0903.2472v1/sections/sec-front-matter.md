@@ -515,12 +515,3 @@ the background of a non-abelian irreducible ﬂat connection A(ρ) contain much 
 – 8 –
 information about the geometry of M. We believe that studying these invariants further,
 both physically and mathematically, can lead to exciting developments in both subjects.
-2. Perturbation theory around a non-trivial ﬂat connection
-In this section we pursue traditional approaches to Chern-Simons gauge theory based on the
-evaluation of Feynman diagrams and the quantization of moduli spaces of ﬂat connections.
-In particular, we explain how one can systematically compute the perturbative GC invariant
-Z(ρ)(M; ℏ) to arbitrary order in the ℏ-expansion for non-trivial ﬂat connections. Through
-the analysis of Feynman diagrams, we will ﬁnd that the coeﬃcients S(ρ)
-n
-have a very special
-structure, motivating us to deﬁne the notion of “arithmetic QFT.”

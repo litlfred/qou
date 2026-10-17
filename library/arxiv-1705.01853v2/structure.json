@@ -441,14 +441,26 @@
    "title": "A Review of Line Operators",
    "level": 1,
    "page_start": 4,
-   "page_end": 8,
-   "n_chars": 7407,
-   "n_words": 1365,
+   "page_end": 7,
+   "n_chars": 6133,
+   "n_words": 1160,
    "label_start": "3",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-001-how-does-the-dynamics-differ",
+   "number": null,
+   "title": "How Does the Dynamics Differ?",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1244,
+   "n_words": 200,
+   "label_start": "6",
    "label_end": "7"
   },
   {
-   "id": "sec-001-3-line-operators-in-the-standard-model",
+   "id": "sec-002-3-line-operators-in-the-standard-model",
    "number": "3",
    "title": "Line Operators in the Standard Model",
    "level": 1,
@@ -460,7 +472,7 @@
    "label_end": "10"
   },
   {
-   "id": "sec-002-31-theta-angles",
+   "id": "sec-003-31-theta-angles",
    "number": "3.1",
    "title": "Theta Angles",
    "level": 2,
@@ -472,19 +484,31 @@
    "label_end": "11"
   },
   {
-   "id": "sec-003-time-reversal-invariant-states",
+   "id": "sec-004-time-reversal-invariant-states",
    "number": null,
    "title": "Time Reversal Invariant States",
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 2330,
-   "n_words": 498,
+   "n_chars": 927,
+   "n_words": 224,
    "label_start": "11",
    "label_end": "12"
   },
   {
-   "id": "sec-004-32-electroweak-symmetry-breaking",
+   "id": "sec-005-the-effect-of-global-anomalies",
+   "number": null,
+   "title": "The Effect of Global Anomalies",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 1372,
+   "n_words": 269,
+   "label_start": "12",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-006-32-electroweak-symmetry-breaking",
    "number": "3.2",
    "title": "Electroweak Symmetry Breaking",
    "level": 2,
@@ -496,7 +520,7 @@
    "label_end": "14"
   },
   {
-   "id": "sec-005-4-summary",
+   "id": "sec-007-4-summary",
    "number": "4",
    "title": "Summary",
    "level": 1,
@@ -508,7 +532,7 @@
    "label_end": "15"
   },
   {
-   "id": "sec-006-acknowledgements",
+   "id": "sec-008-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
    "level": 2,
@@ -551,13 +575,13 @@
     "items": []
    }
   },
-  "sections": 8,
-  "chars_total": 34434,
+  "sections": 10,
+  "chars_total": 34373,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "linesm.tex",
    "tex_sections": 11,
-   "overlaid": 6,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -572,13 +596,21 @@
     {
      "id": "sec-000-2-a-review-of-line-operators",
      "title": "A Review of Line Operators",
-     "prose_ratio": 0.98,
+     "prose_ratio": 0.979,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-001-3-line-operators-in-the-standard-model",
+     "id": "sec-001-how-does-the-dynamics-differ",
+     "title": "How Does the Dynamics Differ?",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-line-operators-in-the-standard-model",
      "title": "Line Operators in the Standard Model",
      "prose_ratio": 0.989,
      "coverage_ratio": 1.0,
@@ -586,7 +618,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-002-31-theta-angles",
+     "id": "sec-003-31-theta-angles",
      "title": "Theta Angles",
      "prose_ratio": 0.964,
      "coverage_ratio": 1.0,
@@ -594,15 +626,23 @@
      "converter": "latex"
     },
     {
-     "id": "sec-003-time-reversal-invariant-states",
+     "id": "sec-004-time-reversal-invariant-states",
      "title": "Time Reversal Invariant States",
-     "prose_ratio": 0.958,
+     "prose_ratio": 0.944,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-004-32-electroweak-symmetry-breaking",
+     "id": "sec-005-the-effect-of-global-anomalies",
+     "title": "The Effect of Global Anomalies",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-32-electroweak-symmetry-breaking",
      "title": "Electroweak Symmetry Breaking",
      "prose_ratio": 0.986,
      "coverage_ratio": 1.0,
@@ -610,7 +650,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-005-4-summary",
+     "id": "sec-007-4-summary",
      "title": "Summary",
      "prose_ratio": 0.978,
      "coverage_ratio": 1.0,
@@ -618,7 +658,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-006-acknowledgements",
+     "id": "sec-008-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.242,

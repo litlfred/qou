@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-math-0409593v1
-doc_title: "CATEGORIFICATION OF THE BRAID GROUPS RAPHAËL ROUQUIER 1. Introduction Actions of braid groups on triangulated categories are quite widesp read. They arise for instance in represent"
+doc_title: "CATEGORIFICATION OF THE BRAID GROUPS"
 section_id: sec-003-22-applications
 section_title: "Applications"
 section_number: 2.2
 pages: 4-6
 source_pdf: 0409593v1.pdf
 source_sha256: ad965f5c80838824
-doc_brief: "CATEGORIFICATION OF THE BRAID GROUPS RAPHAËL ROUQUIER 1. Introduction Actions of braid groups on triangulated categories are quite widesp read. They arise for instance in representation theory, for co"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
-latex_coverage_ratio: 0.969
+latex_coverage_ratio: 0.964
 ---
 ###  {#P1}
 

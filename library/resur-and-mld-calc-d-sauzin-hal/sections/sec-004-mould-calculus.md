@@ -7,6 +7,6 @@ section_number: null
 pages: 11-11
 source_pdf: Resur_and_Mld_Calc_D_SAUZIN_HAL.pdf
 source_sha256: b33f24cc76102f33
-doc_brief: "Resurgence and Mould Calculus — 9 sections: Introduction; Alien operators. Alien derivations; Borel-Laplace summation"
+toc_source: outline
 ---
-
+Mould Calculus

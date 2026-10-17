@@ -10,7 +10,7 @@ source_sha256: c43e413aed71aef1
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.912
-latex_coverage_ratio: 0.996
+latex_coverage_ratio: 0.993
 ---
 We will now test the expression (\ref{sd}) in several ways. 
 

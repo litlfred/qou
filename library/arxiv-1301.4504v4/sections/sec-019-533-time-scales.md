@@ -7,10 +7,10 @@ section_number: 5.3.3
 pages: 50-56
 source_pdf: 1301.4504v4.pdf
 source_sha256: 201acc5bb1d4b6a0
-doc_brief: "Quantum Computation vs. Firewalls — In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.98
-latex_coverage_ratio: 0.958
+latex_coverage_ratio: 0.967
 ---
 In this section we work out the time scales for sending signals down the throat from the Minkowski region to the vicinity of the black hole horizon at $r_0$ in [\[nonext\]](#nonext){reference-type="eqref" reference="nonext"}, as well as the time to evaporate down to the transition temperature just discussed in the previous section. Since we will ultimately compare these time scales to the computation and recurrence times, both of which are exponential in the entropy of the black hole, we will be focused on extracting only the pieces of them which are exponential in entropy. Specifically we will write $S_0$ to mean the entropy of the black hole just after the Page time, so that it is also roughly the size of the radiation and one half of the entropy of the original black hole. If we had started the computer any later it would just have made the task more difficult, and we want to give Alice a fair shot.
 

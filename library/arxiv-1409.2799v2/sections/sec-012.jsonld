@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1409.2799v2/sections/sec-012",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The basics: diagrammatic categories, additive closures and Karoubi envelopes",
+  "pageStart": 31,
+  "pageEnd": 48,
+  "contains": [
+    "library/arxiv-1409.2799v2/blocks/prose-sec-012",
+    "library/arxiv-1409.2799v2/blocks/lem-sec-012-01",
+    "library/arxiv-1409.2799v2/blocks/lem-sec-012-02",
+    "library/arxiv-1409.2799v2/blocks/lem-sec-012-03",
+    "library/arxiv-1409.2799v2/blocks/lem-sec-012-04",
+    "library/arxiv-1409.2799v2/blocks/lem-sec-012-05",
+    "library/arxiv-1409.2799v2/blocks/cor-sec-012-06",
+    "library/arxiv-1409.2799v2/blocks/cor-sec-012-07",
+    "library/arxiv-1409.2799v2/blocks/cor-sec-012-08",
+    "library/arxiv-1409.2799v2/blocks/cor-sec-012-09",
+    "library/arxiv-1409.2799v2/blocks/prop-sec-012-10",
+    "library/arxiv-1409.2799v2/blocks/thm-sec-012-11",
+    "library/arxiv-1409.2799v2/blocks/prop-sec-012-12"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1409.2799v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1409.2799v2/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,1 +1,1 @@
-LetX be a smooth manifold. The assignment
+Let X be a smooth manifold. The assignment

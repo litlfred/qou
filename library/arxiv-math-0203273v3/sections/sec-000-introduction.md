@@ -10,7 +10,7 @@ source_sha256: 824715d110e34305
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.975
-latex_coverage_ratio: 0.943
+latex_coverage_ratio: 0.942
 ---
 En algèbre non commutative, on rencontre d'abord, par ordre de complexité croissant, les anneaux semi-simples, puis les anneaux semi-primaires, c'est-à-dire les extensions d'un anneau semi-simple par un idéal nilpotent (le radical). Parmi ces derniers, le cas où l'anneau semi-simple est en fait une algèbre séparable est particulièrement agréable puisque, d'après un théorème classique de Wedderburn, l'extension par le radical se scinde.
 

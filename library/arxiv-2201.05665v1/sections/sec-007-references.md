@@ -7,7 +7,7 @@ section_number: null
 pages: 14-16
 source_pdf: 2201.05665v1.pdf
 source_sha256: bad7bde03d199a73
-doc_brief: "HAROLD WIDOM’S WORK IN RANDOM MATRIX THEORY — This is a survey of Harold Widom’s work in random matrices."
+toc_source: outline
 ---
 Cited Publications by Harold Widom
 [1] The strong Szeg˝o limit theorem for circular arcs. Indiana Univ. Math. J. 21, 277–283 (1971).

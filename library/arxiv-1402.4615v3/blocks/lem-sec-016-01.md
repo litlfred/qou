@@ -1,0 +1,1 @@
+[\[LemTriangle\]](#LemTriangle){reference-type="ref" reference="LemTriangle"} does not hold for Lassalle's system of equation [@Lassalle2009 Equations (9.1) and (9.2)], which computes recursively $K_\mu$.

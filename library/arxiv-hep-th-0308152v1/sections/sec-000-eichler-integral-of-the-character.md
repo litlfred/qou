@@ -7,10 +7,10 @@ section_number: null
 pages: 1-10
 source_pdf: 0308152v1.pdf
 source_sha256: 93bcc14b8be91257
-doc_brief: "TORUS KNOT AND MINIMAL MODEL — We reveal an intimate connection between the quantum knot i nvariant for torus knot T(s, t) and the character of the minimal model M(s, t), where s and t are relatively"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.95
-latex_coverage_ratio: 0.674
+latex_prose_ratio: 0.947
+latex_coverage_ratio: 0.691
 ---
 []{#sec:character label="sec:character"}
 

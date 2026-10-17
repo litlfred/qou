@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1110.6212v2",
+  "title": "On calibrated representations and the Plancherel Theorem for aﬃne Hecke algebras",
   "contains": [
+    "library/arxiv-1110.6212v2/sections/sec-front-matter",
     "library/arxiv-1110.6212v2/sections/sec-000",
     "library/arxiv-1110.6212v2/sections/sec-001",
     "library/arxiv-1110.6212v2/sections/sec-002",
@@ -19,7 +20,11 @@
     "library/arxiv-1110.6212v2/sections/sec-005",
     "library/arxiv-1110.6212v2/sections/sec-006",
     "library/arxiv-1110.6212v2/sections/sec-007",
-    "library/arxiv-1110.6212v2/sections/sec-008"
+    "library/arxiv-1110.6212v2/sections/sec-008",
+    "library/arxiv-1110.6212v2/sections/sec-009",
+    "library/arxiv-1110.6212v2/sections/sec-010",
+    "library/arxiv-1110.6212v2/sections/sec-011",
+    "library/arxiv-1110.6212v2/sections/sec-012"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -32,7 +37,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1110.6212v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1110.6212v2.pdf",
     "source_sha256": "1923b6a0bfdc810f27d6c2ecf533c3b52ad94c321e9e7004fe962c82ad34c52b",
     "pages": 34,
@@ -43,8 +50,8 @@
       "stamp_date": "26 May 2014"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

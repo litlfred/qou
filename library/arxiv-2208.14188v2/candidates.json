@@ -8,8 +8,8 @@
   "file": "2208.14188v2.pdf"
  },
  "provenance": {
-  "title": "Prepared for submission to JHEP KIAS-P22064 Resurgence in complex Chern-Simons theory at generic levels Zhihao Duana Jie Gub aKorea Institute for Advanced Study 85 Hoegiro, Dongdaemun-gu, Seoul 02455, Korea",
-  "authors": null,
+  "title": "Resurgence in complex Chern-Simons theory at generic levels",
+  "authors": "Zhihao Duana Jie Gub",
   "arxiv": {
    "id": "2208.14188",
    "version": "2",
@@ -20,9 +20,39 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
+  "candidates": 2,
+  "by_kind": {
+   "example": 1,
+   "conjecture": 1
+  },
   "formalization_candidates": 0
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "s of the $q$-series, also known as holomorphic blocks, are",
+   "section_file": "sections/sec-002-21-perturbative-complex-chern-simons-theory-at-g.md",
+   "section_title": "Perturbative complex Chern-Simons theory at generic level",
+   "pages": "4-10",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": null,
+   "name": null,
+   "statement": "\\cite{Zagier:2010qmf,Garoufalidis:2021lcp} in the case of",
+   "section_file": "sections/sec-013-5-conclusion-and-discussion.md",
+   "section_title": "Conclusion and discussion",
+   "pages": "34-38",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
 }

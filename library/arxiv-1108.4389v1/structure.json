@@ -1308,8 +1308,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 1199,
-   "n_words": 175,
+   "n_chars": 1196,
+   "n_words": 174,
    "label_start": null,
    "label_end": "1"
   },
@@ -1320,8 +1320,8 @@
    "level": 1,
    "page_start": 2,
    "page_end": 8,
-   "n_chars": 14334,
-   "n_words": 2495,
+   "n_chars": 14347,
+   "n_words": 2496,
    "label_start": "1",
    "label_end": "7"
   },
@@ -1427,14 +1427,38 @@
    "title": "Adding supersymmetry",
    "level": 3,
    "page_start": 23,
-   "page_end": 37,
-   "n_chars": 37026,
-   "n_words": 7024,
+   "page_end": 30,
+   "n_chars": 18139,
+   "n_words": 3447,
    "label_start": "22",
+   "label_end": "29"
+  },
+  {
+   "id": "sec-010-41-definition",
+   "number": "4.1",
+   "title": "Definition",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 36,
+   "n_chars": 14883,
+   "n_words": 2902,
+   "label_start": "29",
+   "label_end": "35"
+  },
+  {
+   "id": "sec-011-43-the-flip",
+   "number": "4.3",
+   "title": "The flip",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 3976,
+   "n_words": 670,
+   "label_start": "35",
    "label_end": "36"
   },
   {
-   "id": "sec-010-45-the-octahedron",
+   "id": "sec-012-45-the-octahedron",
    "number": "4.5",
    "title": "The octahedron",
    "level": 2,
@@ -1446,7 +1470,7 @@
    "label_end": "38"
   },
   {
-   "id": "sec-011-46-figure-eight-knot",
+   "id": "sec-013-46-figure-eight-knot",
    "number": "4.6",
    "title": "Figure-eight knot",
    "level": 2,
@@ -1458,7 +1482,7 @@
    "label_end": "41"
   },
   {
-   "id": "sec-012-51-the-tetrahedron",
+   "id": "sec-014-51-the-tetrahedron",
    "number": "5.1",
    "title": "The tetrahedron",
    "level": 2,
@@ -1470,7 +1494,7 @@
    "label_end": "43"
   },
   {
-   "id": "sec-013-52-the-bipyramid",
+   "id": "sec-015-52-the-bipyramid",
    "number": "5.2",
    "title": "The bipyramid",
    "level": 2,
@@ -1482,7 +1506,7 @@
    "label_end": "46"
   },
   {
-   "id": "sec-014-61-chirals-and-tetrahedra",
+   "id": "sec-016-61-chirals-and-tetrahedra",
    "number": "6.1",
    "title": "Chirals and tetrahedra",
    "level": 2,
@@ -1494,7 +1518,7 @@
    "label_end": "47"
   },
   {
-   "id": "sec-015-62-gluing-and-bipyramids",
+   "id": "sec-017-62-gluing-and-bipyramids",
    "number": "6.2",
    "title": "Gluing and bipyramids",
    "level": 2,
@@ -1506,7 +1530,7 @@
    "label_end": "49"
   },
   {
-   "id": "sec-016-63-figure-eight-knot",
+   "id": "sec-018-63-figure-eight-knot",
    "number": "6.3",
    "title": "Figure-eight knot",
    "level": 2,
@@ -1551,13 +1575,13 @@
     "items": []
    }
   },
-  "sections": 18,
-  "chars_total": 139024,
+  "sections": 20,
+  "chars_total": 139006,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "toolbox.tex",
    "tex_sections": 29,
-   "overlaid": 14,
+   "overlaid": 16,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1642,13 +1666,29 @@
     {
      "id": "sec-009-312-adding-supersymmetry",
      "title": "Adding supersymmetry",
-     "prose_ratio": 0.956,
-     "coverage_ratio": 0.986,
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-45-the-octahedron",
+     "id": "sec-010-41-definition",
+     "title": "Definition",
+     "prose_ratio": 0.921,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-43-the-flip",
+     "title": "The flip",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.911,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-45-the-octahedron",
      "title": "The octahedron",
      "prose_ratio": 0.979,
      "coverage_ratio": 0.995,
@@ -1656,7 +1696,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-46-figure-eight-knot",
+     "id": "sec-013-46-figure-eight-knot",
      "title": "Figure-eight knot",
      "prose_ratio": 0.948,
      "coverage_ratio": 0.991,
@@ -1664,7 +1704,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-51-the-tetrahedron",
+     "id": "sec-014-51-the-tetrahedron",
      "title": "The tetrahedron",
      "prose_ratio": 0.957,
      "coverage_ratio": 0.942,
@@ -1672,7 +1712,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-52-the-bipyramid",
+     "id": "sec-015-52-the-bipyramid",
      "title": "The bipyramid",
      "prose_ratio": 0.925,
      "coverage_ratio": 0.996,
@@ -1680,7 +1720,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-61-chirals-and-tetrahedra",
+     "id": "sec-016-61-chirals-and-tetrahedra",
      "title": "Chirals and tetrahedra",
      "prose_ratio": 0.941,
      "coverage_ratio": 1.0,
@@ -1688,13 +1728,13 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-62-gluing-and-bipyramids",
+     "id": "sec-017-62-gluing-and-bipyramids",
      "title": "Gluing and bipyramids",
      "prose_ratio": 0.394,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-016-63-figure-eight-knot",
+     "id": "sec-018-63-figure-eight-knot",
      "title": "Figure-eight knot",
      "prose_ratio": 0.545,
      "result": "prose gate failed \u2014 titles agree, contents do not"

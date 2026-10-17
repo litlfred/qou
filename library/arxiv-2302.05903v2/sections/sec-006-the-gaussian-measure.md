@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2302.05903v2
-doc_title: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials"
+doc_title: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials Introduction"
 section_id: sec-006-the-gaussian-measure
 section_title: "The Gaussian measure"
 section_number: null
 pages: 7-7
 source_pdf: 2302.05903v2.pdf
 source_sha256: 9a17abd36cc8a317
-doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials — We elaborate on the recent suggestion to consider averaging of Cauchy identities"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.964
 latex_coverage_ratio: 1.0

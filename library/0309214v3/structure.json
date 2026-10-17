@@ -6,6 +6,8 @@
   "sha256": "53967ef30b0aedb90fc8384886e3c0754e908ca9a1edf06aaadb3501b72318c5",
   "bytes": 407134,
   "pages": 41,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
   "mtime": null,
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
@@ -13,22 +15,29 @@
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "The colored Jones function is q-holonomic",
-  "authors_raw": "School of Mathematics, Georgia Institute of Technology",
-  "abstract": "A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l inear recursion relations with polynomial coeﬃcients. Zeilberger was the ﬁ rst to notice that the abstract notion of holonomicity can be applied to verify , in a systematic and computerized way, combinatorial identities among spec ial functions. Using a general state sum deﬁnition of the colored Jones function o f a link in 3–space, we prove from ﬁrst principles that the colored Jones functio n is a multisum of a q –proper-hypergeometric function, and thus it is q –holonomic. We demonstrate our results by computer calculations.",
+  "title": "The colored Jones function is q \u2013holonomic",
+  "authors_raw": "Stavros Garoufalidis",
+  "title_lines": [
+   "The colored Jones function is q\u2013holonomic"
+  ],
+  "abstract": "A function of several variables is called holonomic if, roughly speaking, it is determined from \ufb01nitely many of its values via \ufb01nitely many linear recursion relations with polynomial coe\ufb03cients. Zeilberger was the \ufb01rst to notice that the abstract notion of holonomicity can be applied to verify, in a systematic and computerized way, combinatorial identities among special functions. Using a general state sum de\ufb01nition of the colored Jones function of a link in 3\u2013space, we prove from \ufb01rst principles that the colored Jones function is a multisum of a q\u2013proper-hypergeometric function, and thus it is q\u2013holonomic. We demonstrate our results by computer calculations.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181022171421-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20181022171421-04'00'"
   },
-  "title_lines": [
-   "The colored Jones function is q–holonomic",
-   "Stavros Garoufalidis",
-   "Thang T Q L ˆ"
-  ],
-  "title_prev": "The colored Jones function is q–holonomic Stavros Garoufalidis Thang T Q L ˆ"
+  "title_raw": "The colored Jones function is q\u2013holonomic",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "The colored Jones function is q \u2013holonomic",
+   "outline": "1 Introduction",
+   "text": "The colored Jones function is q\u2013holonomic",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -36,333 +45,804 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Zeilberger meets Jones",
    "page": 2,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Synonymous notions to holonomicity",
    "page": 4,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Plan of the proof",
    "page": 5,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Acknowledgements",
    "page": 5,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "q--holonomic and q--hypergeometric functions",
    "page": 6,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "q--holonomicity in many variables",
    "page": 6,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Assembling q--holonomic functions",
    "page": 8,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Examples of q--holonomic functions",
    "page": 8,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "q--hypergeometric functions",
    "page": 9,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The colored Jones function for sl2",
    "page": 10,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Proof of Theorem ?? for links",
    "page": 10,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "A multisum formula for the colored Jones function of a knot",
    "page": 13,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The cyclotomic function of a knot is q--holonomic",
    "page": 15,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Complexity",
    "page": 16,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Finding a recursion relation for multisums",
    "page": 16,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Upper bounds for initial conditions",
    "page": 18,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Proof of Theorem ??",
    "page": 19,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "In computer talk",
    "page": 19,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Recursion relations for the cyclotomic function of twist knots",
    "page": 20,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Recursion relations for the colored Jones function of the figure 8 knot",
    "page": 22,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The colored Jones function for a simple Lie algebra",
    "page": 24,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Preliminaries",
    "page": 24,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "The quantum group U",
    "page": 25,
    "source": "outline",
-   "number": "7.1.1"
+   "number": "7.1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Verma modules and finite dimensional modules",
    "page": 25,
    "source": "outline",
-   "number": "7.1.2"
+   "number": "7.1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Quantum braid group action",
    "page": 26,
    "source": "outline",
-   "number": "7.1.3"
+   "number": "7.1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Ordering of the roots",
    "page": 26,
    "source": "outline",
-   "number": "7.1.4"
+   "number": "7.1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "PBW basis for U-, U+, and U",
    "page": 27,
    "source": "outline",
-   "number": "7.1.5"
+   "number": "7.1.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "A commutation rule",
    "page": 27,
    "source": "outline",
-   "number": "7.1.6"
+   "number": "7.1.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "q--holonomicity of quantum groups",
    "page": 28,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "q--holonomicity of transition matrix",
    "page": 28,
    "source": "outline",
-   "number": "7.2.1"
+   "number": "7.2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Structure constants",
    "page": 29,
    "source": "outline",
-   "number": "7.2.2"
+   "number": "7.2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Actions on Verma modules are q--holonomic",
    "page": 29,
    "source": "outline",
-   "number": "7.2.3"
+   "number": "7.2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Quantum knot invariants",
    "page": 29,
    "source": "outline",
-   "number": "7.3"
+   "number": "7.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "The quasi-R--matrix",
    "page": 29,
    "source": "outline",
-   "number": "7.3.1"
+   "number": "7.3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "The R--matrix and the braiding",
    "page": 30,
    "source": "outline",
-   "number": "7.3.2"
+   "number": "7.3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "q--holonomicity of quantum invariants of knots",
    "page": 31,
    "source": "outline",
-   "number": "7.3.3"
+   "number": "7.3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Proof of Theorem ??",
    "page": 33,
    "source": "outline",
-   "number": "7.4"
+   "number": "7.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "r is q--holonomic",
    "page": 33,
    "source": "outline",
-   "number": "7.4.1"
+   "number": "7.4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Uq(sl2) is q--holonomic",
    "page": 33,
    "source": "outline",
-   "number": "7.4.2"
+   "number": "7.4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Ek, Fk2mu-:6muplus1muUU are q--holonomic in k",
    "page": 34,
    "source": "outline",
-   "number": "7.4.3"
+   "number": "7.4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "T is q--holonomic",
    "page": 35,
    "source": "outline",
-   "number": "7.4.4"
+   "number": "7.4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Proof of Theorem ??",
    "page": 36,
    "source": "outline",
-   "number": "7.4.5"
+   "number": "7.4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "A Appendix: Proof of Proposition ?? for A2 and B2",
    "page": 37,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "A.1 The case of A2",
    "page": 37,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "A.2 The case of B2",
    "page": 38,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Bibliography",
    "page": 39,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "A word w, the corresponding braid \u03b2, its long closure K\u2032, and a coloring of",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The twist knot Kp, for integers p. For p = \u22121, it is the Figure 8, for p = 0 it is the unknot, for p = 1 it is the left trefoil and for p = 2 it is the Stevedore\u2019s ribbon knot",
+   "page": 20,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1434,
+   "n_words": 198,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -370,8 +850,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 12,
+   "n_words": 1,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-11-zeilberger-meets-jones",
@@ -380,8 +862,10 @@
    "level": 2,
    "page_start": 2,
    "page_end": 4,
-   "n_chars": 5293,
-   "n_words": 957
+   "n_chars": 5252,
+   "n_words": 896,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-12-synonymous-notions-to-holonomicity",
@@ -390,8 +874,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 1107,
-   "n_words": 184
+   "n_chars": 1133,
+   "n_words": 179,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-13-plan-of-the-proof",
@@ -400,8 +886,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 2222,
-   "n_words": 381
+   "n_chars": 2216,
+   "n_words": 361,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-14-acknowledgements",
@@ -410,8 +898,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 10,
-   "n_chars": 7783,
-   "n_words": 1583
+   "n_chars": 7664,
+   "n_words": 1448,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-3-the-colored-jones-function-for-sl2",
@@ -420,8 +910,10 @@
    "level": 1,
    "page_start": 10,
    "page_end": 13,
-   "n_chars": 5873,
-   "n_words": 1248
+   "n_chars": 5803,
+   "n_words": 1149,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-32-a-multisum-formula-for-the-colored-jones-func",
@@ -430,8 +922,10 @@
    "level": 2,
    "page_start": 13,
    "page_end": 16,
-   "n_chars": 4564,
-   "n_words": 927
+   "n_chars": 4572,
+   "n_words": 890,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-007-5-complexity",
@@ -440,8 +934,10 @@
    "level": 1,
    "page_start": 16,
    "page_end": 16,
-   "n_chars": 135,
-   "n_words": 26
+   "n_chars": 145,
+   "n_words": 26,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-008-51-finding-a-recursion-relation-for-multisums",
@@ -450,8 +946,10 @@
    "level": 2,
    "page_start": 16,
    "page_end": 18,
-   "n_chars": 4237,
-   "n_words": 864
+   "n_chars": 4228,
+   "n_words": 818,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-009-52-upper-bounds-for-initial-conditions",
@@ -460,8 +958,10 @@
    "level": 2,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 2014,
-   "n_words": 365
+   "n_chars": 2022,
+   "n_words": 342,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-010-6-in-computer-talk",
@@ -470,8 +970,10 @@
    "level": 1,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 638,
-   "n_words": 111
+   "n_chars": 649,
+   "n_words": 108,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-011-61-recursion-relations-for-the-cyclotomic-functi",
@@ -480,8 +982,10 @@
    "level": 2,
    "page_start": 20,
    "page_end": 22,
-   "n_chars": 3680,
-   "n_words": 726
+   "n_chars": 3713,
+   "n_words": 710,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-012-62-recursion-relations-for-the-colored-jones-fun",
@@ -490,8 +994,10 @@
    "level": 2,
    "page_start": 22,
    "page_end": 24,
-   "n_chars": 2510,
-   "n_words": 616
+   "n_chars": 2549,
+   "n_words": 606,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-013-7-the-colored-jones-function-for-a-simple-lie-al",
@@ -500,8 +1006,10 @@
    "level": 1,
    "page_start": 24,
    "page_end": 24,
-   "n_chars": 1465,
-   "n_words": 262
+   "n_chars": 1496,
+   "n_words": 250,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-014-71-preliminaries",
@@ -510,8 +1018,10 @@
    "level": 2,
    "page_start": 24,
    "page_end": 25,
-   "n_chars": 1011,
-   "n_words": 242
+   "n_chars": 1014,
+   "n_words": 232,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-015-711-the-quantum-group-u",
@@ -519,86 +1029,121 @@
    "title": "The quantum group U",
    "level": 3,
    "page_start": 25,
-   "page_end": 26,
-   "n_chars": 1671,
-   "n_words": 400
+   "page_end": 25,
+   "n_chars": 832,
+   "n_words": 189,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-016-713-quantum-braid-group-action",
+   "id": "sec-016-712-verma-modules-and-finite-dimensional-modules",
+   "number": "7.1.2",
+   "title": "Verma modules and finite dimensional modules",
+   "level": 3,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 808,
+   "n_words": 170,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-017-713-quantum-braid-group-action",
    "number": "7.1.3",
    "title": "Quantum braid group action",
    "level": 3,
    "page_start": 26,
    "page_end": 26,
-   "n_chars": 840,
-   "n_words": 186
+   "n_chars": 855,
+   "n_words": 178,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-017-714-ordering-of-the-roots",
+   "id": "sec-018-714-ordering-of-the-roots",
    "number": "7.1.4",
    "title": "Ordering of the roots",
    "level": 3,
    "page_start": 26,
    "page_end": 27,
-   "n_chars": 2053,
-   "n_words": 518
+   "n_chars": 2025,
+   "n_words": 472,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-018-716-a-commutation-rule",
+   "id": "sec-019-716-a-commutation-rule",
    "number": "7.1.6",
    "title": "A commutation rule",
    "level": 3,
    "page_start": 27,
    "page_end": 29,
-   "n_chars": 2333,
-   "n_words": 469
+   "n_chars": 2314,
+   "n_words": 434,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-019-722-structure-constants",
+   "id": "sec-020-722-structure-constants",
    "number": "7.2.2",
    "title": "Structure constants",
    "level": 3,
    "page_start": 29,
    "page_end": 29,
-   "n_chars": 998,
-   "n_words": 214
+   "n_chars": 997,
+   "n_words": 195,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-020-73-quantum-knot-invariants",
+   "id": "sec-021-73-quantum-knot-invariants",
    "number": "7.3",
    "title": "Quantum knot invariants",
    "level": 2,
    "page_start": 29,
    "page_end": 37,
-   "n_chars": 12902,
-   "n_words": 2875
+   "n_chars": 12666,
+   "n_words": 2618,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-021-a1-the-case-of-a2",
+   "id": "sec-022-a1-the-case-of-a2",
    "number": null,
    "title": "A.1 The case of A2",
    "level": 2,
    "page_start": 37,
    "page_end": 38,
-   "n_chars": 1740,
-   "n_words": 441
+   "n_chars": 1727,
+   "n_words": 417,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-022-a2-the-case-of-b2",
+   "id": "sec-023-a2-the-case-of-b2",
    "number": null,
    "title": "A.2 The case of B2",
    "level": 2,
    "page_start": 38,
    "page_end": 41,
-   "n_chars": 7402,
-   "n_words": 1395
+   "n_chars": 7260,
+   "n_words": 1242,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 47,
-  "sections": 23,
-  "chars_total": 72471
+  "toc_inferred_entries": 0,
+  "figure_entries": 2,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 25,
+  "chars_total": 73386
  }
 }

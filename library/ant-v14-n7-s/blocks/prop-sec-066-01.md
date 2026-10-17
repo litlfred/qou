@@ -1,1 +1,1 @@
-A.1. Let δ ∈N∗, and a map S : N∗∩[δ, +∞[ →K such that we have, for all a ∈
+C.1. (i) Let m ∈N∗, and let its q-adic expansion be

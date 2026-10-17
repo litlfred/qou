@@ -5,10 +5,9 @@ section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
 pages: 1-1
-source_pdf: A_quantum_Murnaghan--Nakayama_rule_for_the_flag_ma.pdf
+source_pdf: 2406.05311v1.pdf
 source_sha256: c431fca150329547
 toc_source: outline
-doc_brief: "Draft of June 11, 2024 A QUANTUM MURNAGHAN–NAKAYAMA RULE FOR THE FLAG MANIFOLD — In this paper, we give a rule for the multiplication of a Schubert class by a tautological class in the (small)"
 ---
 arXiv:2406.05311v1  [math.CO]  8 Jun 2024
 Draft of June 11, 2024

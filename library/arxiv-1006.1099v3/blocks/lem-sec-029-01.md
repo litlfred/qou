@@ -1,1 +1,1 @@
-The Z-gradings on the pentagram algebra inside W are Z2g+1-equivariant.
+Let Sn ∼= L ⊂M be a Lagrangian sphere. Fix a Lagrangian disk ∆n+1 ⊂H with

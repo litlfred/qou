@@ -1,0 +1,44 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0405258v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "dbd6bf5a94deebaf152abfa7f11ee13eb42f2fd13671bfa7cc466d2fdcacae0b",
+  "file": "0405258v2.pdf"
+ },
+ "provenance": {
+  "title": "SECOND ORDER FREENESS AND FLUCTUATIONS OF RANDOM MATRICES: II. UNITARY RANDOM MATRICES",
+  "authors": "JAMES A. MINGO (\u2217), PIOTR \u015aNIADY (\u2021), AND ROLAND SPEICHER (\u2217)(\u2020)",
+  "arxiv": {
+   "id": "math/0405258",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "27 Jun 2005"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "theorem": 1
+  },
+  "formalization_candidates": 1
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{main:higherorder} provides the bound on higher order",
+   "section_file": "sections/sec-007-3-asymptotic-second-order-freeness-for-unitary-r.md",
+   "section_title": "Asymptotic second order freeness for unitary random matrices",
+   "pages": "10-27",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

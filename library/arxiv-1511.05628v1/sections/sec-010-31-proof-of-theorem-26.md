@@ -7,10 +7,10 @@ section_number: 3.1
 pages: 12-14
 source_pdf: 1511.05628v1.pdf
 source_sha256: 3b9da2994233882b
-doc_brief: "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY — The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coeﬃcients that"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.943
-latex_coverage_ratio: 0.84
+latex_coverage_ratio: 0.895
 ---
 []{#sub.proof.thm1 label="sub.proof.thm1"}
 

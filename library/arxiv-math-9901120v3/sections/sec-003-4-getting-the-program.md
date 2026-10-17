@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-math-9901120v3
-doc_title: "A table of boundary slopes of Montesinos knots Nathan M. Dunfield1 Revised version of June 2010 email: nathan@dunfield.info"
+doc_title: "A table of boundary slopes of Montesinos knots Abstract Introduction Revised table"
 section_id: sec-003-4-getting-the-program
 section_title: "Getting the program"
 section_number: 4
 pages: 4-4
 source_pdf: 9901120v3.pdf
 source_sha256: 782034b674f958af
-doc_brief: "A table of boundary slopes of Montesinos knots Nathan M. Dunfield1 Revised version of June 2010 email: nathan@dunfield.info — This note corrects errors in Hatcher and Oertel’s table of boundary"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.962
+latex_coverage_ratio: 0.62
 ---
 []{#gettingprogram label="gettingprogram"}
 

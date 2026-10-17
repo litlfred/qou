@@ -7,10 +7,10 @@ section_number: 4.2
 pages: 15-16
 source_pdf: 1910.09966v1.pdf
 source_sha256: 21798500c98ed25a
-doc_brief: "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics — In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.981
-latex_coverage_ratio: 0.988
+latex_coverage_ratio: 1.0
 ---
 In the previous subsection, we described a relation between the octonions and a system of eight intersecting surfaces in the K3 surface. In this system of surfaces, every surface has two self-intersections (the diagonal of the matrix ([\[eq:E8-matrix\]](#eq:E8-matrix){reference-type="ref" reference="eq:E8-matrix"})). Therefore, every surface is not embedded but immersed in the K3 surface. For immersed surfaces, there is a whole theory, called Weierstrass representation, with a close connection between immersed surfaces and spinors. The following discussion is borrowed from [@AsselmeyerRose2012], and we will present it here again for completeness. First, we start with the immersion $I:\Sigma\to\mathbb{R}^{3}$ of a surface $\Sigma$ into $\mathbb{R}^{3}$. This immersion $I$ can be defined by a spinor $\varphi$ on $\Sigma$ fulfilling the Dirac equation $$D\varphi=H\varphi,\label{eq:2D-Dirac}$$ with $|\varphi|^{2}=1$ (or an arbitrary constant) (see Theorem 1 of [@Friedrich1998]). A spinor bundle over a surface splits into two sub-bundles $S=S^{+}\oplus S^{-}$, representing spinors of different helicity, with the corresponding splitting of the spinor $\varphi$ in components $$\varphi=\left(\begin{array}{c}
 \varphi^{+}\\

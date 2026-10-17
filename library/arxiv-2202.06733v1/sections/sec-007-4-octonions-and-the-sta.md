@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2202.06733v1
-doc_title: "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE"
+doc_title: "Received <day> <Month>, <year>"
 section_id: sec-007-4-octonions-and-the-sta
 section_title: "Octonions and the STA"
 section_number: 4
 pages: 8-9
 source_pdf: 2202.06733v1.pdf
 source_sha256: e670632090447f14
-doc_brief: "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE — Diﬀerent ways of representing the groupSU(3) within a Geometric Algebra approach are"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.617
+latex_prose_ratio: 0.981
+latex_coverage_ratio: 0.997
 ---
 There are still several further aspects that are relevant for representing the $SU(3)$ aspect of strong forces, and in particular something we have not discussed here is that the $\psi=\psi(B)$ recipe for allowing the spacetime Dirac wavefunction to respond to the internal colour forces needs to be `self-dual', i.e.\ we need $\psi(IB)=I\psi(B)$, where $I$ is the spacetime pseudoscalar. Nevertheless, it seems very likely overall that what we need can be done wholly with STA entities. 
 However, such an approach deals only with one generation of particles and only with $SU(3)$ and not the other groups involved in the standard model (SM). What do we need to do to enlarge the opportunities for representing particles and forces in the SM, whilst still staying in the STA?

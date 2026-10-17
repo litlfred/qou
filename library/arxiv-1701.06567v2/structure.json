@@ -1483,8 +1483,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 1520,
-   "n_words": 232,
+   "n_chars": 1517,
+   "n_words": 231,
    "label_start": null,
    "label_end": "1"
   },
@@ -1495,25 +1495,49 @@
    "level": 1,
    "page_start": 2,
    "page_end": 6,
-   "n_chars": 10828,
-   "n_words": 1791,
+   "n_chars": 10501,
+   "n_words": 1733,
    "label_start": "1",
    "label_end": "5"
   },
   {
-   "id": "sec-001-21-preliminaries",
+   "id": "sec-001-2-fivebranes-on-3-manifolds-and-categorification",
+   "number": "2",
+   "title": "Fivebranes on 3-manifolds and categorification of WRT invariant",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 273,
+   "n_words": 50,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-002-21-preliminaries",
    "number": "2.1",
    "title": "Preliminaries",
    "level": 2,
    "page_start": 6,
-   "page_end": 9,
-   "n_chars": 6022,
-   "n_words": 1031,
+   "page_end": 7,
+   "n_chars": 1477,
+   "n_words": 265,
    "label_start": "5",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-003-categorification-of-wrt-invaraiant",
+   "number": null,
+   "title": "Categorification of WRT invaraiant",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 4510,
+   "n_words": 762,
+   "label_start": "6",
    "label_end": "8"
   },
   {
-   "id": "sec-002-physics-behind-the-proposal",
+   "id": "sec-004-physics-behind-the-proposal",
    "number": null,
    "title": "Physics behind the proposal",
    "level": 3,
@@ -1525,7 +1549,7 @@
    "label_end": "13"
   },
   {
-   "id": "sec-003-23-realization-in-terms-of-counting-solutions-of",
+   "id": "sec-005-23-realization-in-terms-of-counting-solutions-of",
    "number": "2.3",
    "title": "Realization in terms of counting solutions of differential equations",
    "level": 2,
@@ -1537,19 +1561,43 @@
    "label_end": "15"
   },
   {
-   "id": "sec-004-24-surgeries-triangulations-and-atiyah-floer",
+   "id": "sec-006-24-surgeries-triangulations-and-atiyah-floer",
    "number": "2.4",
    "title": "Surgeries, triangulations, and Atiyah-Floer",
    "level": 2,
    "page_start": 16,
-   "page_end": 27,
-   "n_chars": 26390,
-   "n_words": 4577,
+   "page_end": 19,
+   "n_chars": 8982,
+   "n_words": 1491,
    "label_start": "15",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-007-26-further-refinement",
+   "number": "2.6",
+   "title": "Further refinement",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 24,
+   "n_chars": 9044,
+   "n_words": 1597,
+   "label_start": "18",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-008-210-langlands-duality-and-flat-connections",
+   "number": "2.10",
+   "title": "Langlands duality and flat connections",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 27,
+   "n_chars": 8297,
+   "n_words": 1480,
+   "label_start": "23",
    "label_end": "26"
   },
   {
-   "id": "sec-005-3-examples",
+   "id": "sec-009-3-examples",
    "number": "3",
    "title": "Examples",
    "level": 1,
@@ -1561,31 +1609,67 @@
    "label_end": "28"
   },
   {
-   "id": "sec-006-311-categorifying-the-index",
+   "id": "sec-010-311-categorifying-the-index",
    "number": "3.1.1",
    "title": "Categorifying the index",
    "level": 3,
    "page_start": 29,
-   "page_end": 39,
-   "n_chars": 20365,
-   "n_words": 3964,
+   "page_end": 32,
+   "n_chars": 7179,
+   "n_words": 1377,
    "label_start": "28",
+   "label_end": "31"
+  },
+  {
+   "id": "sec-011-321-refined-superconformal-index",
+   "number": "3.2.1",
+   "title": "Refined superconformal index",
+   "level": 3,
+   "page_start": 32,
+   "page_end": 39,
+   "n_chars": 13151,
+   "n_words": 2583,
+   "label_start": "31",
    "label_end": "38"
   },
   {
-   "id": "sec-007-324-cyclotomic-expansion",
+   "id": "sec-012-324-cyclotomic-expansion",
    "number": "3.2.4",
    "title": "Cyclotomic expansion",
    "level": 3,
    "page_start": 39,
-   "page_end": 47,
-   "n_chars": 13790,
-   "n_words": 2642,
+   "page_end": 41,
+   "n_chars": 3714,
+   "n_words": 793,
    "label_start": "38",
+   "label_end": "40"
+  },
+  {
+   "id": "sec-013-325-positivity-of-coefficients",
+   "number": "3.2.5",
+   "title": "Positivity of coefficients",
+   "level": 3,
+   "page_start": 41,
+   "page_end": 43,
+   "n_chars": 4894,
+   "n_words": 840,
+   "label_start": "40",
+   "label_end": "42"
+  },
+  {
+   "id": "sec-014-326-comparison-with-refined-cs",
+   "number": "3.2.6",
+   "title": "Comparison with refined CS",
+   "level": 3,
+   "page_start": 43,
+   "page_end": 47,
+   "n_chars": 5117,
+   "n_words": 1000,
+   "label_start": "42",
    "label_end": "46"
   },
   {
-   "id": "sec-008-331-homological-blocks-and-wrt-invariant",
+   "id": "sec-015-331-homological-blocks-and-wrt-invariant",
    "number": "3.3.1",
    "title": "Homological blocks and WRT invariant",
    "level": 3,
@@ -1597,15 +1681,63 @@
    "label_end": "47"
   },
   {
-   "id": "sec-009-332-factorization-of-the-superconformal-index",
+   "id": "sec-016-332-factorization-of-the-superconformal-index",
    "number": "3.3.2",
    "title": "Factorization of the superconformal index",
    "level": 3,
    "page_start": 48,
-   "page_end": 81,
-   "n_chars": 70243,
-   "n_words": 12749,
+   "page_end": 50,
+   "n_chars": 4112,
+   "n_words": 807,
    "label_start": "47",
+   "label_end": "49"
+  },
+  {
+   "id": "sec-017-333-comparison-with-refined-cs",
+   "number": "3.3.3",
+   "title": "Comparison with refined CS",
+   "level": 3,
+   "page_start": 50,
+   "page_end": 65,
+   "n_chars": 30950,
+   "n_words": 5817,
+   "label_start": "49",
+   "label_end": "64"
+  },
+  {
+   "id": "sec-018-432-refinement-and-categorification",
+   "number": "4.3.2",
+   "title": "Refinement and categorification",
+   "level": 3,
+   "page_start": 65,
+   "page_end": 66,
+   "n_chars": 2248,
+   "n_words": 495,
+   "label_start": "64",
+   "label_end": "65"
+  },
+  {
+   "id": "sec-019-44-comparison-with-refined-cs",
+   "number": "4.4",
+   "title": "Comparison with refined CS",
+   "level": 2,
+   "page_start": 66,
+   "page_end": 74,
+   "n_chars": 15340,
+   "n_words": 2873,
+   "label_start": "65",
+   "label_end": "73"
+  },
+  {
+   "id": "sec-020-c-categorification-of-the-turaev-viro-invariants",
+   "number": "C",
+   "title": "Categorification of the Turaev-Viro invariants",
+   "level": 1,
+   "page_start": 74,
+   "page_end": 81,
+   "n_chars": 17442,
+   "n_words": 2737,
+   "label_start": "73",
    "label_end": "80"
   }
  ],
@@ -1646,13 +1778,13 @@
     "items": []
    }
   },
-  "sections": 11,
-  "chars_total": 173991,
+  "sections": 22,
+  "chars_total": 173581,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "3ManBPS-10.tex",
    "tex_sections": 41,
-   "overlaid": 10,
+   "overlaid": 16,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1668,20 +1800,36 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.948,
-     "coverage_ratio": 0.937,
+     "coverage_ratio": 0.935,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-21-preliminaries",
+     "id": "sec-001-2-fivebranes-on-3-manifolds-and-categorification",
+     "title": "Fivebranes on 3-manifolds and categorification of WRT invariant",
+     "prose_ratio": 0.917,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-21-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.973,
-     "coverage_ratio": 0.983,
+     "prose_ratio": 0.853,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-physics-behind-the-proposal",
+     "id": "sec-003-categorification-of-wrt-invaraiant",
+     "title": "Categorification of WRT invaraiant",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-physics-behind-the-proposal",
      "title": "Physics behind the proposal",
      "prose_ratio": 0.972,
      "coverage_ratio": 1.0,
@@ -1689,7 +1837,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-23-realization-in-terms-of-counting-solutions-of",
+     "id": "sec-005-23-realization-in-terms-of-counting-solutions-of",
      "title": "Realization in terms of counting solutions of differential equations",
      "prose_ratio": 0.98,
      "coverage_ratio": 0.991,
@@ -1697,15 +1845,31 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-24-surgeries-triangulations-and-atiyah-floer",
+     "id": "sec-006-24-surgeries-triangulations-and-atiyah-floer",
      "title": "Surgeries, triangulations, and Atiyah-Floer",
-     "prose_ratio": 0.961,
-     "coverage_ratio": 0.985,
+     "prose_ratio": 0.893,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-3-examples",
+     "id": "sec-007-26-further-refinement",
+     "title": "Further refinement",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.876,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-210-langlands-duality-and-flat-connections",
+     "title": "Langlands duality and flat connections",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-3-examples",
      "title": "Examples",
      "prose_ratio": 0.969,
      "coverage_ratio": 0.994,
@@ -1713,23 +1877,47 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-311-categorifying-the-index",
+     "id": "sec-010-311-categorifying-the-index",
      "title": "Categorifying the index",
-     "prose_ratio": 0.961,
-     "coverage_ratio": 0.984,
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-324-cyclotomic-expansion",
+     "id": "sec-011-321-refined-superconformal-index",
+     "title": "Refined superconformal index",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-324-cyclotomic-expansion",
      "title": "Cyclotomic expansion",
-     "prose_ratio": 0.97,
-     "coverage_ratio": 0.991,
+     "prose_ratio": 0.957,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-331-homological-blocks-and-wrt-invariant",
+     "id": "sec-013-325-positivity-of-coefficients",
+     "title": "Positivity of coefficients",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-326-comparison-with-refined-cs",
+     "title": "Comparison with refined CS",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-331-homological-blocks-and-wrt-invariant",
      "title": "Homological blocks and WRT invariant",
      "prose_ratio": 0.949,
      "coverage_ratio": 0.982,
@@ -1737,12 +1925,34 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-332-factorization-of-the-superconformal-index",
+     "id": "sec-016-332-factorization-of-the-superconformal-index",
      "title": "Factorization of the superconformal index",
-     "prose_ratio": 0.975,
-     "coverage_ratio": 0.729,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 0.222,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-017-333-comparison-with-refined-cs",
+     "title": "Comparison with refined CS",
+     "prose_ratio": 0.651,
+     "coverage_ratio": 0.215,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-018-432-refinement-and-categorification",
+     "title": "Refinement and categorification",
+     "prose_ratio": 0.288,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-019-44-comparison-with-refined-cs",
+     "title": "Comparison with refined CS",
+     "prose_ratio": 0.508,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-020-c-categorification-of-the-turaev-viro-invariants",
+     "title": "Categorification of the Turaev-Viro invariants",
+     "result": "no matching \\section"
     }
    ]
   }

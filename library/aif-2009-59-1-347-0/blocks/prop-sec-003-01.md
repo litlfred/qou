@@ -1,1 +1,1 @@
-— For any x ∈ C /integerdivide{(q − 1)qn : n ∈ Z, n⩽ 0}, we
+— For any x ∈C ∖{(q −1)qn : n ∈Z, n ⩽0}, we

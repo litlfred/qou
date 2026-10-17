@@ -1,1 +1,1 @@
-Let q be positive. The map (67) is an isomorphism of Z(S ⋊ Γ) -
+Suppose that there exists ǫ ∈C× such that kα ∈ǫR for all α ∈R.

@@ -9,4 +9,4 @@ source_pdf: 0003017v2.pdf
 source_sha256: 1660907865346bdf
 toc_source: inferred
 ---
-3.1
+CHIRAL RANDOM MATRIX THEORY

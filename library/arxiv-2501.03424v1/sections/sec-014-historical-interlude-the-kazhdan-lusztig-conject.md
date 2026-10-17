@@ -1,0 +1,12 @@
+---
+doc_id: arxiv-2501.03424v1
+doc_title: "Soergel bimodules and Kazhdan-Lusztig polynomials"
+section_id: sec-014-historical-interlude-the-kazhdan-lusztig-conject
+section_title: "Historical Interlude: The Kazhdan-Lusztig conjectures"
+section_number: null
+pages: 11-11
+source_pdf: 2501.03424v1.pdf
+source_sha256: 53e00a30fd850a5b
+toc_source: outline
+---
+Historical Interlude: The Kazhdan-Lusztig conjectures

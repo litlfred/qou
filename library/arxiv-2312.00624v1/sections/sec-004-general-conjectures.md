@@ -7,10 +7,10 @@ section_number: null
 pages: 9-12
 source_pdf: 2312.00624v1.pdf
 source_sha256: bda867f7b84f69c3
-doc_brief: "On the structure of wave functions in complex Chern–Simons theory — We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.904
-latex_coverage_ratio: 0.988
+latex_coverage_ratio: 0.992
 ---
 []{#sec: conjectures label="sec: conjectures"} Our *first claim* is that the WKB expansion in Eq. [\[WKB\]](#WKB){reference-type="eqref" reference="WKB"} can be resummed at all orders in $\hbar$ and order by order in $X={\rm e}^{2 \pi {\mathsf{b}}u}$. Explicitly, for a fixed choice of $\alpha$, we have that
 

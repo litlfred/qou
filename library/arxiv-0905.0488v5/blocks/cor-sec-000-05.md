@@ -1,1 +1,1 @@
-Let K be a ﬁeld of character-
+\ref{cor:110}; and the bijections

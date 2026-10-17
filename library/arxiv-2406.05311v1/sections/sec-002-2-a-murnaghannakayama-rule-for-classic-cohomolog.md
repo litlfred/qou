@@ -5,13 +5,12 @@ section_id: sec-002-2-a-murnaghannakayama-rule-for-classic-cohomolog
 section_title: "A Murnaghan–Nakayama rule for (classic) cohomology"
 section_number: 2
 pages: 2-3
-source_pdf: A_quantum_Murnaghan--Nakayama_rule_for_the_flag_ma.pdf
+source_pdf: 2406.05311v1.pdf
 source_sha256: c431fca150329547
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.952
 latex_coverage_ratio: 1.0
-doc_brief: "Draft of June 11, 2024 A QUANTUM MURNAGHAN–NAKAYAMA RULE FOR THE FLAG MANIFOLD — In this paper, we give a rule for the multiplication of a Schubert class by a tautological class in the (small)"
 ---
 []{#sec:classic-mn-rule label="sec:classic-mn-rule"}
 

@@ -1,1 +1,1 @@
-Let X ∈Smk be projective of dimension dX. Then
+Suppose the pushforward maps

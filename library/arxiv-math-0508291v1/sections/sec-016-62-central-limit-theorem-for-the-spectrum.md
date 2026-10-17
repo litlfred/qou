@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-math-0508291v1
-doc_title: "Stein’s Method and Random Character Ratios"
+doc_title: "Stein’s Method and Random Character Ratios Running head: Stein’s Method and Random Character Ratios Version of 8/13/05"
 section_id: sec-016-62-central-limit-theorem-for-the-spectrum
 section_title: "Central limit theorem for the spectrum"
 section_number: 6.2
 pages: 44-49
 source_pdf: 0508291v1.pdf
 source_sha256: d2d541426aaec742
-doc_brief: "Stein’s Method and Random Character Ratios — Stein’s method is used to prove limit theorems for random character ratios."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.88
-latex_coverage_ratio: 0.944
+latex_coverage_ratio: 0.992
 ---
 \label{assocCLT}
 

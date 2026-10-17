@@ -7,10 +7,11 @@
   "bytes": 201832,
   "pages": 17,
   "text_source": "embedded",
-  "math_source": "latex",
+  "extractor": "pymupdf",
   "mtime": null,
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,19 +21,28 @@
    "stamp_date": "9 Jan 2024"
   },
   "doi": null,
-  "title": "A Cable Knot and BPS-Series II John Chae",
-  "authors_raw": "University of California Davis, 1 Shields Ave, Davis, CA, 95616, USA",
+  "title": "A Cable Knot and BPS-Series II",
+  "authors_raw": "John Chae",
   "title_lines": [
-   "A Cable Knot and BPS-Series II",
-   "John Chae"
+   "A Cable Knot and BPS-Series II"
   ],
-  "abstract": "This is a companion paper to earlier work of the author, which genera lizes to an in\ufb01nite family of (2 , 2w + 1)-cabling of the \ufb01gure eight knot ( |w| > 3) and proposes general formulas for the two-variable series invariant of the family of the cable knots . The formulas provide an insight into the cabling operation. We verify the conjecture throug h explicit examples using the recursion method, which also provide a strong evidence for the q-holonomic property of the series invariant. This result paves a road for computation of the WR T invariant of a 3-manifold obtained from a Dehn surgery on the cable knots via a certain q-series. We also analyze and conjecture formulas for (3 , 3w + 1)-cabling (|w| > 3).",
+  "abstract": "This is a companion paper to earlier work of the author, which generalizes to an in\ufb01nite family of (2, 2w + 1)-cabling of the \ufb01gure eight knot (|w| > 3) and proposes general formulas for the two-variable series invariant of the family of the cable knots. The formulas provide an insight into the cabling operation. We verify the conjecture through explicit examples using the recursion method, which also provide a strong evidence for the q-holonomic property of the series invariant. This result paves a road for computation of the WRT invariant of a 3-manifold obtained from a Dehn surgery on the cable knots via a certain q-series. We also analyze and conjecture formulas for (3, 3w + 1)-cabling (|w| > 3).",
   "docinfo": {
    "Producer": "GPL Ghostscript 10.01.2",
-   "CreationDate": "D:20240109215926-05'00'",
    "Creator": "LaTeX with hyperref",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20240109215926-05'00'"
+  },
+  "title_raw": "A Cable Knot and BPS-Series II",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "A Cable Knot and BPS-Series II",
+   "outline": "Introduction",
+   "text": "A Cable Knot and BPS-Series II",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -41,109 +51,323 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "(2w+1,2)-cables (w>3)",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Examples",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Example 1",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Example 2",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 3,
    "title": "Dehn surgery and",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Example 3",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "(3w+1,3)-cables (w>3)",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 1,
    "title": "Examples",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Example 1",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Example 2",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "Appendix",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "The colored Jones polynomial of a cable knot",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "The recursion relation for the figure eight knot",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 1,
    "title": "The definitions of the operators",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 889,
+   "n_words": 147,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -151,8 +375,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 5241,
-   "n_words": 1033
+   "n_chars": 5128,
+   "n_words": 908,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-001-examples",
@@ -161,8 +387,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 2705,
-   "n_words": 539
+   "n_chars": 2683,
+   "n_words": 514,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-002-example-1",
@@ -171,8 +399,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 229,
-   "n_words": 46
+   "n_chars": 237,
+   "n_words": 46,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-003-example-2",
@@ -181,8 +411,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 4101,
-   "n_words": 891
+   "n_chars": 4062,
+   "n_words": 842,
+   "label_start": "5",
+   "label_end": "7"
   },
   {
    "id": "sec-004-dehn-surgery-and",
@@ -191,8 +423,10 @@
    "level": 3,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 1338,
-   "n_words": 299
+   "n_chars": 1344,
+   "n_words": 291,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
    "id": "sec-005-example-3",
@@ -201,8 +435,10 @@
    "level": 2,
    "page_start": 8,
    "page_end": 12,
-   "n_chars": 6732,
-   "n_words": 1397
+   "n_chars": 6636,
+   "n_words": 1289,
+   "label_start": "8",
+   "label_end": "12"
   },
   {
    "id": "sec-006-examples",
@@ -211,8 +447,10 @@
    "level": 1,
    "page_start": 12,
    "page_end": 12,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 8,
+   "n_words": 1,
+   "label_start": "12",
+   "label_end": "12"
   },
   {
    "id": "sec-007-example-1",
@@ -221,8 +459,10 @@
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 2386,
-   "n_words": 524
+   "n_chars": 2384,
+   "n_words": 512,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
    "id": "sec-008-example-2",
@@ -231,8 +471,10 @@
    "level": 2,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 1583,
-   "n_words": 342
+   "n_chars": 1587,
+   "n_words": 336,
+   "label_start": "13",
+   "label_end": "14"
   },
   {
    "id": "sec-009-appendix",
@@ -242,7 +484,9 @@
    "page_start": 14,
    "page_end": 14,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "14",
+   "label_end": "14"
   },
   {
    "id": "sec-010-the-colored-jones-polynomial-of-a-cable-knot",
@@ -250,17 +494,50 @@
    "title": "The colored Jones polynomial of a cable knot",
    "level": 1,
    "page_start": 14,
+   "page_end": 15,
+   "n_chars": 296,
+   "n_words": 53,
+   "label_start": "14",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-011-the-recursion-relation-for-the-figure-eight-knot",
+   "number": null,
+   "title": "The recursion relation for the figure eight knot",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 1145,
+   "n_words": 382,
+   "label_start": "15",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-012-the-definitions-of-the-operators",
+   "number": null,
+   "title": "The definitions of the operators",
+   "level": 1,
+   "page_start": 15,
    "page_end": 17,
-   "n_chars": 5717,
-   "n_words": 1211
+   "n_chars": 4189,
+   "n_words": 656,
+   "label_start": "15",
+   "label_end": "17"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 15,
-  "sections": 11,
-  "chars_total": 30032,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 14,
+  "chars_total": 30588,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -273,10 +550,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.713,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.81,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -290,7 +572,7 @@
      "id": "sec-002-example-1",
      "title": "Example 1",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.944,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -298,7 +580,7 @@
      "id": "sec-003-example-2",
      "title": "Example 2",
      "prose_ratio": 0.989,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -313,7 +595,7 @@
     {
      "id": "sec-005-example-3",
      "title": "Example 3",
-     "prose_ratio": 0.799,
+     "prose_ratio": 0.805,
      "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
@@ -344,6 +626,16 @@
     {
      "id": "sec-010-the-colored-jones-polynomial-of-a-cable-knot",
      "title": "The colored Jones polynomial of a cable knot",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-the-recursion-relation-for-the-figure-eight-knot",
+     "title": "The recursion relation for the figure eight knot",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-the-definitions-of-the-operators",
+     "title": "The definitions of the operators",
      "result": "no matching \\section"
     }
    ]

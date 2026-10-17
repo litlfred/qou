@@ -228,4 +228,3 @@ J
 Gauge coupling uniﬁcation in string models
 196
 4
-1

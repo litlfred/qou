@@ -35,4 +35,3 @@ continuum limit, a →0, both the coupling constant and the ¯ψψ-operator have
 be renormalized. For a discussion of the ultraviolet divergences in a recent lattice
 study of Σ(mv) at ﬁnite volume, ﬁnite quark mass, and ﬁnite lattice spacing, see
 Ref. [30].
-3

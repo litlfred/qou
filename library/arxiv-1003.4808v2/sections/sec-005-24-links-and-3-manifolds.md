@@ -7,6 +7,7 @@ section_number: 2.4
 pages: 13-13
 source_pdf: 1003.4808v2.pdf
 source_sha256: 72301d4bee491f86
-doc_brief: "Quantum Field Theory and the Volume Conjecture — 14 sections: Preliminaries; The many dimensions of the volume ; Parametrized VC"
+toc_source: outline
 ---
+Links and 3-manifolds
 The ﬁnal generalization of the volume conjecture that we consider is to arbitrary links in

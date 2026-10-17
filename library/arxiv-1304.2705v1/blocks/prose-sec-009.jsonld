@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1304.2705v1/blocks/prose-sec-009",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "An application: state-integrals of the 41 and 52 knots",
-  "pageStart": 14,
-  "pageEnd": 14,
-  "text": "../sections/sec-009-3-an-application-state-integrals-of-the-41-and-5.md",
+  "title": "Some auxiliary power series",
+  "pageStart": 10,
+  "pageEnd": 12,
+  "text": "../sections/sec-009-25-some-auxiliary-power-series.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1304.2705v1/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1304.2705v1/manifest.jsonld",
   "provenance": "ingested"

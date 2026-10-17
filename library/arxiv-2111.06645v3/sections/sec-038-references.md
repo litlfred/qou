@@ -1,15 +1,15 @@
 ---
 doc_id: arxiv-2111.06645v3
-doc_title: ""
+doc_title: "Part 0: Introduction and overview"
 section_id: sec-038-references
 section_title: "References"
 section_number: null
 pages: 84-87
 source_pdf: 2111.06645v3.pdf
 source_sha256: 2a4826bd1c2f0823
-doc_brief: "Knots, Perturbative Series and Quantum Modularity — We introduce an invariant of a hyperbolic knot which is a map α7→ Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns"
+toc_source: outline
 ---
-[1] Andersen J.E., Kashaev R., A TQFT from quantum Teichm¨ uller theory, Comm. Math. Phys. 330 (2014),
+[1] Andersen J.E., Kashaev R., A TQFT from quantum Teichm¨uller theory, Comm. Math. Phys. 330 (2014),
 887–934, arXiv:1109.6295.
 [2] Atiyah M.F., Hirzebruch F., Cohomologie-Operationen und charakteristische Klassen, Math. Z. 77 (1961),
 149–187.
@@ -22,11 +22,21 @@ Pure Appl. Math., McGraw-Hill Book Co., New York, 1978.
 Ann. 382 (2022), 1631–1679, arXiv:1905.02045.
 [7] Borot G., Eynard B., All order asymptotics of hyperbolic knot invariants from non-perturbative topological
 recursion of A-polynomials, Quantum Topol. 6 (2015), 39–138, arXiv:1205.2261.
-[8] Boyd D.W., Rodriguez-Villegas F., Mahler’s measure and the dilogarithm. (II) (2005),,
+[8] Boyd
+D.W.,
+Rodriguez-Villegas
+F.,
+Mahler’s
+measure
+and
+the
+dilogarithm.
+(II)
+(2005),,
 arXiv:math.NT/0308041.
 [9] Calegari D., Real places and torus bundles, Geom. Dedicata 118 (2006), 209–227, arXiv:math.GT/0510416.
 [10] Calegari F., Garoufalidis S., Zagier D., Bloch groups, algebraic K-theory, units, and Nahm’s conjecture,
-Ann. Sci. ´Ec. Norm. Sup´ er. (4)56 (2023), 383–426, arXiv:1712.04887.
+Ann. Sci. ´Ec. Norm. Sup´er. (4) 56 (2023), 383–426, arXiv:1712.04887.
 [11] Cooper D., Culler M., Gillet H., Long D.D., Shalen P.B., Plane curves associated to character varieties of
 3-manifolds, Invent. Math. 118 (1994), 47–84.
 [12] Culler M., Dunfield N., Weeks J., SnapPy, a computer program for studying the topology of 3-manifolds,
@@ -47,22 +57,26 @@ quantum modularity, Comm. Math. Phys. 396 (2022), 143–186, arXiv:2005.13349.
 arXiv:hep-th/9504111.
 [20] Faddeev L.D., Kashaev R.M., Quantum dilogarithm, Modern Phys. Lett. A 9 (1994), 427–434, arXiv:hep-
 th/9310070.
-[21] Fock V., Goncharov A., Moduli spaces of local systems and higher Teichm¨ uller theory, Publ. Math. Inst.
+[21] Fock V., Goncharov A., Moduli spaces of local systems and higher Teichm¨uller theory, Publ. Math. Inst.
 Hautes ´Etudes Sci. 103 (2006), 1–211, arXiv:math.AG/0311149.
 [22] Gang D., Kim S., Yoon S., Adjoint Reidemeister torsions from wrapped M5-branes, Adv. Theor. Math.
 Phys. 25 (2021), 1819–1845, arXiv:1911.10718.
 [23] Garoufalidis S., Chern–Simons theory, analytic continuation and arithmetic, Acta Math. Vietnam. 33 (2008),
 335–362, arXiv:0711.1716.
-[24] Garoufalidis S., Twist knots data, 2010, available at http://people.mpim-bonn.mpg.de/stavros/
+[24] Garoufalidis S.,
+Twist knots data,
+2010,
+available at http://people.mpim-bonn.mpg.de/stavros/
 publications/twist.knot.data.
 [25] Garoufalidis S., Pretzel knots data, 2012, available at http://people.mpim-bonn.mpg.de/stavros/
 publications/pretzel.data.
 [26] Garoufalidis S., Goerner M., Zickert C.K., The Ptolemy field of 3-manifold representations, Algebr. Geom.
 Topol. 15 (2015), 371–397, arXiv:1401.5542.
-Knots, Perturbative Series and Quantum Modularity 85
-[27] Garoufalidis S., Gu J., Mari˜ no M., The resurgent structure of quantum knot invariants,Comm. Math. Phys.
+Knots, Perturbative Series and Quantum Modularity
+85
+[27] Garoufalidis S., Gu J., Mari˜no M., The resurgent structure of quantum knot invariants, Comm. Math. Phys.
 386 (2021), 469–493, arXiv:2007.10190.
-[28] Garoufalidis S., Gu J., Mari˜ no M., Peacock patterns and resurgence in complex Chern–Simons theory, Res.
+[28] Garoufalidis S., Gu J., Mari˜no M., Peacock patterns and resurgence in complex Chern–Simons theory, Res.
 Math. Sci. 10 (2023), 29, 67 pages, arXiv:2012.00062.
 [29] Garoufalidis S., Kashaev R., Evaluation of state integrals at rational points, Commun. Number Theory Phys.
 9 (2015), 549–582, arXiv:1411.6062.
@@ -72,13 +86,13 @@ arXiv:1304.2705.
 2307–2334, arXiv:2108.07553.
 [32] Garoufalidis S., Kashaev R., Zagier D., A modular quantum dilogarithm and invariants of 3-manifolds, in
 preparation.
-[33] Garoufalidis S., Koutschan C., The noncommutative A-polynomial of ( −2, 3, n) pretzel knots, Exp. Math.
+[33] Garoufalidis S., Koutschan C., The noncommutative A-polynomial of (−2, 3, n) pretzel knots, Exp. Math.
 21 (2012), 241–251, arXiv:1101.2844.
-[34] Garoufalidis S., Koutschan C., Irreducibility of q-difference operators and the knot 7 4, Algebr. Geom. Topol.
+[34] Garoufalidis S., Koutschan C., Irreducibility of q-difference operators and the knot 74, Algebr. Geom. Topol.
 13 (2013), 3261–3286, arXiv:1211.6020.
-[35] Garoufalidis S., Lˆ e T.T.Q., The colored Jones function is q-holonomic, Geom. Topol. 9 (2005), 1253–1293,
+[35] Garoufalidis S., Lˆe T.T.Q., The colored Jones function is q-holonomic, Geom. Topol. 9 (2005), 1253–1293,
 arXiv:math.GT/0309214.
-[36] Garoufalidis S., Lˆ e T.T.Q., From 3-dimensional skein theory to functions near Q, Ann. Inst. Fourier , to
+[36] Garoufalidis S., Lˆe T.T.Q., From 3-dimensional skein theory to functions near Q, Ann. Inst. Fourier, to
 appear, arXiv:2307.09135.
 [37] Garoufalidis S., Sabo E., Scott S., Exact computation of the n-loop invariants of knots, Exp. Math. 25
 (2016), 125–129, arXiv:6458.2015.
@@ -93,30 +107,36 @@ Geom. Topol. 17 (2013), 1–37, arXiv:0902.3113.
 arXiv:1812.07690.
 [43] Garoufalidis S., Zagier D., Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann,
 Celebratio Math., 2023, available at https://celebratio.org/Neumann_WD/article/1106.
-[44] Garoufalidis S., Zagier D., Knots and their related q-series, SIGMA 19 (2023), 082, 39 pages,
+[44] Garoufalidis S.,
+Zagier D.,
+Knots and their related q-series,
+SIGMA 19 (2023),
+082,
+39 pages,
 arXiv:2304.09377.
 [45] Garoufalidis S., Zagier D., Resummation of factorially divergent series, in preparation.
 [46] Goette S., Zickert C.K., The extended Bloch group and the Cheeger–Chern–Simons class, Geom. Topol. 11
 (2007), 1623–1635, arXiv:0705.0500.
-[47] Gr¨ unberg D.B., Moree P., Zagier D., Sequences of enumerative geometry: congruences and asymptotics,
+[47] Gr¨unberg D.B., Moree P., Zagier D., Sequences of enumerative geometry: congruences and asymptotics,
 Exp. Math. 17 (2008), 409–426, arXiv:math.NT/0610286.
 [48] Gukov S., Three-dimensional quantum gravity, Chern–Simons theory, and the A-polynomial, Comm. Math.
 Phys. 255 (2005), 577–627, arXiv:hep-th/0306165.
-[49] Gukov S., Mari˜ no M., Putrov P., Resurgence in complex Chern–Simons theory, arXiv:1605.07615.
+[49] Gukov S., Mari˜no M., Putrov P., Resurgence in complex Chern–Simons theory, arXiv:1605.07615.
 [50] Gukov S., Pei D., Putrov P., Vafa C., BPS spectra and 3-manifold invariants, J. Knot Theory Ramifications
 29 (2020), 2040003, 85 pages, arXiv:2040003.
 [51] Gunningham S., Jordan D., Safronov P., The finiteness conjecture for skein modules, Invent. Math. 232
 (2023), 301–363, arXiv:1908.05233.
-[52] Habiro K., On the quantum sl 2 invariants of knots and integral homology spheres, in Invariants of Knots
+[52] Habiro K., On the quantum sl2 invariants of knots and integral homology spheres, in Invariants of Knots
 and 3-manifolds, Geom. Topol. Monogr., Vol. 4, Geometry & Topology Publications, Coventry, 2002, 55–68,
 arXiv:math.GT/0211044.
 [53] Hikami K., Generalized volume conjecture and the A-polynomials: the Neumann–Zagier potential function
 as a classical limit of the partition function, J. Geom. Phys. 57 (2007), 1895–1940, arXiv:math.QA/0604094.
-86 S. Garoufalidis and D. Zagier
+86
+S. Garoufalidis and D. Zagier
 [54] Hirzebruch F., Topological methods in algebraic geometry, Class. Math., Springer, Berlin, 1995.
-[55] Hirzebruch F., Zagier D., The Atiyah–Singer theorem and elementary number theory, Math. Lect. Ser. ,
+[55] Hirzebruch F., Zagier D., The Atiyah–Singer theorem and elementary number theory, Math. Lect. Ser.,
 Vol. 3, Publish or Perish, Inc., Boston, MA, 1974.
-[56] Igusa J., Theta functions, Grundlehren Math. Wiss. , Vol. 194, Springer, New York, 1972.
+[56] Igusa J., Theta functions, Grundlehren Math. Wiss., Vol. 194, Springer, New York, 1972.
 [57] Jones V.F.R., Hecke algebra representations of braid groups and link polynomials, Ann. of Math. 126 (1987),
 335–388.
 [58] Kashaev R., A link invariant from quantum dilogarithm, Modern Phys. Lett. A 10 (1995), 1409–1418,
@@ -133,7 +153,7 @@ arXiv:math.NT/0101270.
 [64] Murakami H., Murakami J., The colored Jones polynomials and the simplicial volume of a knot, Acta Math.
 186 (2001), 85–104, arXiv:math/9905075.
 [65] Neumann W.D., Combinatorics of triangulations and the Chern–Simons invariant for hyperbolic 3-manifolds,
-in Topology ’90 (Columbus, OH, 1990), Ohio State Univ. Math. Res. Inst. Publ. , Vol. 1, de Gruyter, Berlin,
+in Topology ’90 (Columbus, OH, 1990), Ohio State Univ. Math. Res. Inst. Publ., Vol. 1, de Gruyter, Berlin,
 1992, 243–271.
 [66] Neumann W.D., Extended Bloch group and the Cheeger–Chern–Simons class, Geom. Topol. 8 (2004), 413–
 474, arXiv:math/0307092.
@@ -150,10 +170,10 @@ in Topology ’90 (Columbus, OH, 1990), Ohio State Univ. Math. Res. Inst. Publ. 
 Number Theory Phys. 5 (2011), 617–642, arXiv:1104.4008.
 [76] Wheeler C., Modular q-difference equations and quantum invariants of hyperbolic three-manifolds,
 Ph.D. Thesis, University of Bonn, 2023.
-[77] Wilf H.S., Zeilberger D., An algorithmic proof theory for hypergeometric (ordinary and “ q”) multi-
+[77] Wilf H.S., Zeilberger D., An algorithmic proof theory for hypergeometric (ordinary and “q”) multi-
 sum/integral identities, Invent. Math. 108 (1992), 575–633.
 [78] Witten E., Analytic continuation of Chern–Simons theory, in Chern–Simons Gauge Theory: 20 Years Af-
-ter, AMS/IP Stud. Adv. Math. , Vol. 50, American Mathematical Society, Providence, RI, 2011, 347–446,
+ter, AMS/IP Stud. Adv. Math., Vol. 50, American Mathematical Society, Providence, RI, 2011, 347–446,
 arXiv:1001.2933.
 [79] Witten E., Fivebranes and knots, Quantum Topol. 3 (2012), 1–137, arXiv:1101.3216.
 [80] Witten E., Two lectures on the Jones polynomial and Khovanov homology, in Lectures on Geometry, Clay
@@ -163,12 +183,13 @@ Lect. Notes, Oxford University Press, Oxford, 2017, 1–27, arXiv:1401.6996.
 (2001), 945–960.
 [83] Zagier D., The dilogarithm function, in Frontiers in Number Theory, Physics, and Geometry. II, Springer,
 Berlin, 2007, 3–65.
-Knots, Perturbative Series and Quantum Modularity 87
+Knots, Perturbative Series and Quantum Modularity
+87
 [84] Zagier D., Quantum modular forms, in Quanta of Maths, Clay Math. Proc., Vol. 11, American Mathematical
 Society, Providence, RI, 2010, 659–675.
 [85] Zagier D., Holomorphic quantum modular forms, in preparation.
 [86] Zagier D., Gangl H., Classical and elliptic polylogarithms and special values of L-series, in The Arithmetic
-and Geometry of Algebraic Cycles (Banff, AB, 1998), NATO Sci. Ser. C Math. Phys. Sci. , Vol. 548, Kluwer,
+and Geometry of Algebraic Cycles (Banff, AB, 1998), NATO Sci. Ser. C Math. Phys. Sci., Vol. 548, Kluwer,
 Dordrecht, 2000, 561–615.
 [87] Zickert C.K., The volume and Chern–Simons invariant of a representation, Duke Math. J. 150 (2009),
 489–532, arXiv:0710.2049.

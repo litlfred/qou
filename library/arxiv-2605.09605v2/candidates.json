@@ -1,0 +1,58 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2605.09605v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "24496fb444a2b5587e28d86f6190c592c54d705939aab80dcc6c415ccacf9f38",
+  "file": "2605.09605v2.pdf"
+ },
+ "provenance": {
+  "title": "Cocycle Actions on Hidden Quantum Markov Models: Symmetry Protection and Topological Order",
+  "authors": "Abdessatar Souissi",
+  "arxiv": {
+   "id": "2605.09605",
+   "version": "2",
+   "primary_class": "math-ph",
+   "stamp_date": "26 May 2026"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "lemma": 1,
+   "theorem": 1
+  },
+  "formalization_candidates": 2
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "A.1 (Projective Limit State). If {\u03c6n}n\u2208N0 satisfies the Kolmogorov compatibility condi-",
+   "section_file": "sections/sec-003-appedix-hidden-quantum-markov-models.md",
+   "section_title": "Appedix: Hidden Quantum Markov Models",
+   "pages": "12-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "A.2 (Global HQMM State). Let T : AH \u2297AH \u2297AO \u2192AH be a CPU map and \u03d50",
+   "section_file": "sections/sec-003-appedix-hidden-quantum-markov-models.md",
+   "section_title": "Appedix: Hidden Quantum Markov Models",
+   "pages": "12-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

@@ -1,19 +1,21 @@
 ---
 doc_id: 1-s20-s009731651830061x-main
-doc_title: "Constant term formulas for refined enumerations of Gog and Magog trapezoids"
+doc_title: "Journal of Combinatorial Theory, Series A Constant term formulas for reﬁned enumerations of Gog and Magog trapezoids"
 section_id: sec-000-constant-term-formulas-for-reﬁned-enumerations-o
 section_title: "Constant term formulas for reﬁned enumerations of Gog and Magog trapezoids"
 section_number: null
 pages: 1-2
 source_pdf: 1-s2.0-S009731651830061X-main.pdf
 source_sha256: 8d591fe7f1673c52
-doc_brief: "Fischer, Constant term formulas for refined enumerations of Gog and Magog trapezoids (JCTA 158, 2018, 560–604) — alternating sign matrices, plane partitions, constant-term methods."
+toc_source: outline
 ---
 of Gog and Magog trapezoids
 Ilse Fischer 1
 Fakultät für Mathematik, Universität Wien, Oskar-Morgenstern-Platz 1, 
-1090 Wien,  Austria
-a r t i c l e i n f o a b s t r a c t
+1090 Wien, Austria
+a r t i c l e 
+i n f o
+a b s t r a c t
 Article history:
 Received 29 September 2017
 Keywords:
@@ -25,7 +27,7 @@ Constant term formula
 Gog and Magog trapezoids are certain arrays of positive 
 integers that generalize alternating sign matrices (ASMs) 
 and totally symmetric self-complementary plane partitions 
-(TSSCPPs) respectively.  Zeilberger used constant term for-
+(TSSCPPs) respectively. Zeilberger used constant term for-
 mulas to prove that there is the same number of (n, k)-Gog 
 trapezoids as there is of (n, k)-Magog trapezoids, thereby pro-
 viding so far the only proof for a weak version of a conjecture 
@@ -52,9 +54,9 @@ E-mail address: ilse .ﬁscher @univie .ac .at.
 1 The author acknowledges support from the Austrian Science Foundation FWF, START grant Y463 and 
 SFB grant F50.
 https://doi.org/10.1016/j.jcta.2018.04.008
-0097-3165/©
- 2018 Elsevier Inc. All rights reserved.
-I. Fischer / Journal of Combinatorial Theory, Series A 158 (2018) 560–604 561
+0097-3165/© 2018 Elsevier Inc. All rights reserved.
+I. Fischer / Journal of Combinatorial Theory, Series A 158 (2018) 560–604
+561
 existing tools that may be helpful in relating constant term 
 formulas for Gogs to those for Magogs to eventually prove the 
 above mentioned conjectures.

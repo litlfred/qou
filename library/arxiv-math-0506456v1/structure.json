@@ -709,14 +709,26 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 12,
-   "n_chars": 25538,
-   "n_words": 4778,
+   "page_end": 10,
+   "n_chars": 21195,
+   "n_words": 3920,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-001-3-a-complex-double-contour-integral-formula-for",
+   "id": "sec-001-2-the-rt-invariant-for-surgeries-on-the-figure-8",
+   "number": "2",
+   "title": "The RT-invariant for surgeries on the figure $8$ knot",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 4288,
+   "n_words": 848,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-3-a-complex-double-contour-integral-formula-for",
    "number": "3",
    "title": "A complex double contour integral formula for $\\tau_{r}(M_{p/q})$",
    "level": 1,
@@ -728,7 +740,7 @@
    "label_end": null
   },
   {
-   "id": "sec-002-41-semiclassical-asymptotics-of-the-quantum-dilo",
+   "id": "sec-003-41-semiclassical-asymptotics-of-the-quantum-dilo",
    "number": "4.1",
    "title": "Semiclassical asymptotics of the quantum dilogarithm",
    "level": 2,
@@ -754,13 +766,13 @@
    "count": 0,
    "items": []
   },
-  "sections": 4,
-  "chars_total": 135325,
+  "sections": 5,
+  "chars_total": 135270,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 11,
-   "overlaid": 3,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -775,13 +787,21 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.982,
-     "coverage_ratio": 0.975,
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-001-3-a-complex-double-contour-integral-formula-for",
+     "id": "sec-001-2-the-rt-invariant-for-surgeries-on-the-figure-8",
+     "title": "The RT-invariant for surgeries on the figure $8$ knot",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-a-complex-double-contour-integral-formula-for",
      "title": "A complex double contour integral formula for $\\tau_{r}(M_{p/q})$",
      "prose_ratio": 0.974,
      "coverage_ratio": 0.983,
@@ -789,7 +809,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-002-41-semiclassical-asymptotics-of-the-quantum-dilo",
+     "id": "sec-003-41-semiclassical-asymptotics-of-the-quantum-dilo",
      "title": "Semiclassical asymptotics of the quantum dilogarithm",
      "prose_ratio": 0.949,
      "coverage_ratio": 0.797,

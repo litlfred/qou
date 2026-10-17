@@ -7,10 +7,10 @@ section_number: 3.4
 pages: 19-21
 source_pdf: 2311.02632v2.pdf
 source_sha256: 0da5ba097b79340d
-doc_brief: "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE — The Fricke-Macbeath surface is the unique Hurwitz surface of genus 7 with 504 conformal automorphisms."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.971
-latex_coverage_ratio: 0.967
+latex_coverage_ratio: 0.989
 ---
 In Vogeler's study [@Vogeler2003], an in-depth analysis of closed geodesics on Hurwitz surfaces is presented, with a special focus on the length spectrum of Hurwitz surfaces of low genera. Of particular relevance to us, Vogeler offers an exhaustive table [@Vogeler2003 Table C.2] enumerating the short primitive closed geodesics on the Fricke-Macbeath surface, along with their corresponding lengths and multiplicities. This table comprehensively covers geodesics with lengths below 14.49 [@Vogeler2003 p. 57]. For those interested on understanding the method used, refer to [@Vogeler2003 Section 2.3].
 

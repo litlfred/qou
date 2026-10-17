@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2302.05903v2
-doc_title: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials"
+doc_title: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials Introduction"
 section_id: sec-003-derivation-of-various-sum-formulas-by-the-averag
 section_title: "Derivation of various sum formulas by the averaging method"
 section_number: null
 pages: 4-5
 source_pdf: 2302.05903v2.pdf
 source_sha256: 9a17abd36cc8a317
-doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials — We elaborate on the recent suggestion to consider averaging of Cauchy identities"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.971
 latex_coverage_ratio: 0.952

@@ -1,1 +1,1 @@
-A.2 Suppose N is compact. Then H1(π1(N); sl(2, C);ρ0) = 0.
+, such a homeomorphism is homotopic to an isometry ψ : bN(x) →bN(x′) via a

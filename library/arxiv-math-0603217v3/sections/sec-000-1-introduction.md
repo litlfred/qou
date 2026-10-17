@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-math-0603217v3
-doc_title: "A version of the volume conjecture"
+doc_title: "A VERSION OF THE VOLUME CONJECTURE"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-1
 source_pdf: 0603217v3.pdf
 source_sha256: d7375d4fee00dd98
-doc_brief: "A version of the volume conjecture — W e propose a version of the volume conjecture that would rela te a certain limit of the colored Jones polynomials of a knot to th e volume function deﬁned by a"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.97
+latex_prose_ratio: 0.868
+latex_coverage_ratio: 0.988
 ---
 For a knot $K$ in the three-sphere $S^3$, one can define the colored Jones polynomial $J_N(K;t)$ as the quantum invariant corresponding to the $N$-dimensional irreducible representation of the Lie algebra $sl(2;\mathbb{C})$ [@Jones:BULAM385; @Kirillov/Reshetikhin:1989] (see also [@Kirby/Melvin:INVEM1991]).
 

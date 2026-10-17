@@ -9,11 +9,14 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "A.2. A second proof of the pentagon identity",
-  "pageStart": 26,
-  "pageEnd": 27,
+  "title": "A.1. A generating series proof of the pentagon identity",
+  "pageStart": 23,
+  "pageEnd": 26,
   "contains": [
-    "library/arxiv-1208.1663v2/blocks/prose-sec-020"
+    "library/arxiv-1208.1663v2/blocks/prose-sec-020",
+    "library/arxiv-1208.1663v2/blocks/lem-sec-020-01",
+    "library/arxiv-1208.1663v2/blocks/rem-sec-020-02",
+    "library/arxiv-1208.1663v2/blocks/rem-sec-020-03"
   ],
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1208.1663v2/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1208.1663v2/manifest.jsonld",

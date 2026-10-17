@@ -7,7 +7,7 @@ section_number: 2
 pages: 4-4
 source_pdf: 1501.01574v3.pdf
 source_sha256: 8af5d6264a0ad5e0
-doc_brief: "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL — We study the behavior of the degree of the colored Jones polyn omial and the boundary slopes of knots under the operation of cabling."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.938
 latex_coverage_ratio: 1.0

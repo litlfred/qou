@@ -1,0 +1,150 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1308.2499v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "3b20abdc0e1b0ba9efe4819ac385e38fa76fa0f0714465753cb931a49666c5bb",
+  "file": "1308.2499v1.pdf"
+ },
+ "provenance": {
+  "title": "Towards a regularity theory for integral Menger curvature",
+  "authors": "Simon Blatt\u2217",
+  "arxiv": {
+   "id": "1308.2499",
+   "version": "1",
+   "primary_class": "math.AP",
+   "stamp_date": "12 Aug 2013"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 9,
+  "by_kind": {
+   "proposition": 4,
+   "remark": 1,
+   "lemma": 4
+  },
+  "formalization_candidates": 8
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "~\\ref{prop:sequentiallycompact} guarantees the existence",
+   "section_file": "sections/sec-000-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "1.2",
+   "name": "Non-repulsive energies for p < 2\n3 q + 1",
+   "statement": "A bi-Lipschitz estimate is not",
+   "section_file": "sections/sec-001-1-classification-of-finite-energy-curves.md",
+   "section_title": "Classification of finite-energy curves",
+   "pages": "6-11",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2.1",
+   "name": "Uniform bi-Lipschitz estimate",
+   "statement": "For every M < \u221eand (0.6) there",
+   "section_file": "sections/sec-002-2-existence-of-minimizers-within-knot-classes.md",
+   "section_title": "Existence of minimizers within knot classes",
+   "pages": "11-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.2",
+   "name": null,
+   "statement": "Let \u03b1 \u2208(0, 1). For \u00b5 > 0 we let M\u00b5 denote the set of all pairs (\u03b31, \u03b32) of",
+   "section_file": "sections/sec-002-2-existence-of-minimizers-within-knot-classes.md",
+   "section_title": "Existence of minimizers within knot classes",
+   "pages": "11-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2.4",
+   "name": "intM(p,q",
+   "statement": "is a strong knot energy [36, Cor. 2.3]). Let (0.6) hold.",
+   "section_file": "sections/sec-002-2-existence-of-minimizers-within-knot-classes.md",
+   "section_title": "Existence of minimizers within knot classes",
+   "pages": "11-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.1",
+   "name": null,
+   "statement": "Let (0.6) hold and \u03b3 \u2208W(3p\u22122)/q\u22121,q(R/Z, Rn) be an injective regular",
+   "section_file": "sections/sec-003-3-differentiability.md",
+   "section_title": "Differentiability",
+   "pages": "15-19",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.2",
+   "name": null,
+   "statement": "The functional intM(p,q) is C1 on the subspace of all regular embedded",
+   "section_file": "sections/sec-003-3-differentiability.md",
+   "section_title": "Differentiability",
+   "pages": "15-19",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "4.1",
+   "name": null,
+   "statement": "The functional Q(p) is bilinear on",
+   "section_file": "sections/sec-004-4-regularity-of-stationary-points.md",
+   "section_title": "Regularity of stationary points",
+   "pages": "19-26",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "B.1. For s \u2208(0, 1), p \u2208[1, \u221e) the seminorms",
+   "section_file": "sections/sec-006-b-equivalence-of-fractional-seminorms.md",
+   "section_title": "B Equivalence of fractional seminorms",
+   "pages": "27-32",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1105.1998v3
-doc_title: "A Connection Formula of the Hahn-Exton q-Bessel Function"
+doc_title: "Symmetry, Integrability and Geometry: Methods and Applications"
 section_id: sec-004-3-the-limit-of-the-connection-formula
 section_title: "The limit of the connection formula"
 section_number: 3
 pages: 6-11
 source_pdf: 1105.1998v3.pdf
 source_sha256: daf3bffad8eb2749
-doc_brief: "A Connection Formula of the Hahn-Exton q-Bessel Function — We show a connection formula of the Hahn–Exton q-Bessel function around the origin and the infinity."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.985
-latex_coverage_ratio: 0.951
+latex_prose_ratio: 0.949
+latex_coverage_ratio: 0.925
 ---
 []{#section3 label="section3"}
 

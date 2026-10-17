@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1112.5179v1/blocks/prose-sec-020",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "A Proof of triality for the tetrahedron index",
-  "pageStart": 68,
-  "pageEnd": 70,
-  "text": "../sections/sec-020-a-proof-of-triality-for-the-tetrahedron-index.md",
+  "title": "Boundary conditions for hypermultiplets",
+  "pageStart": 51,
+  "pageEnd": 52,
+  "text": "../sections/sec-020-52-boundary-conditions-for-hypermultiplets.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1112.5179v1/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1112.5179v1/manifest.jsonld",
   "provenance": "ingested"

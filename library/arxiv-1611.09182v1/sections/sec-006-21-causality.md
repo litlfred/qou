@@ -7,12 +7,14 @@ section_number: 2.1
 pages: 11-13
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-doc_brief: "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction"
+toc_source: outline
 ---
+Causality
 Suppose for a moment that nature were represented by an algebra, A. We will start, then,
 simply with an unevaluated algebraic expression. Consider for example
-f· (e· (d·c +b·a)), (2.1)
-wherea,b,c,d,e,f are elements of A. Taking multiplication to be the propagation along
+f · (e · (d · c + b · a)),
+(2.1)
+where a, b, c, d, e, f are elements of A. Taking multiplication to be the propagation along
 an edge, and addition to be the joining of two edges at a vertex, it can be seen that this
 unevaluated algebraic expression gives a causal set. Please see Figure (2.1).
 3
@@ -22,12 +24,18 @@ c
 d
 e
 f
-Figure 2.1: The unevaluated algebraic expression, f· (e· (d·c +b·a)), gives a causal set.
-A causal set is a set S together with the relation,≤, such that
-1. if x≤y and y≤z, then x≤z ∀x,y,z ∈S (transitive),
-2. if x≤y and y≤x, then x =y ∀x,y∈S (non-circular),
-3. for any given x,z∈S, the set of elements{y|x≤y≤z} is ﬁnite (locally ﬁnite).
-In Figure (2.1), S is given by the set of vertices, and the relations ≤ are indicated by
+Figure 2.1:
+The unevaluated algebraic expression, f · (e · (d · c + b · a)), gives a causal set.
+A causal set is a set S together with the relation, ≤, such that
+1. if x ≤y and y ≤z, then x ≤z
+∀x, y, z ∈S
+(transitive),
+2. if x ≤y and y ≤x, then x = y
+∀x, y ∈S
+(non-circular),
+3. for any given x, z ∈S, the set of elements {y | x ≤y ≤z} is ﬁnite
+(locally ﬁnite).
+In Figure (2.1), S is given by the set of vertices, and the relations ≤are indicated by
 the arrows between those vertices.
 It is at this early stage only a conjecture that any (associative) algebraic expression
 gives a causal set. For an introduction to causal sets, please see [28], [10] and [55].

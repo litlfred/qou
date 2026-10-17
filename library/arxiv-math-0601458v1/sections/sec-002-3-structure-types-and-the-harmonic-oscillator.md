@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-math-0601458v1
-doc_title: "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS JEFFREY MORTON"
+doc_title: "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS"
 section_id: sec-002-3-structure-types-and-the-harmonic-oscillator
 section_title: "Structure Types and the Harmonic Oscillator"
 section_number: 3
 pages: 8-8
 source_pdf: 0601458v1.pdf
 source_sha256: ef34611620cfd0bd
-doc_brief: "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS JEFFREY MORTON — Interest in combinatorial interpretations of mathematica l entities stems from the convenience of the concrete models they provi de."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.787
-latex_coverage_ratio: 0.98
+latex_coverage_ratio: 0.979
 ---
 []{#harmoscsec label="harmoscsec"}
 

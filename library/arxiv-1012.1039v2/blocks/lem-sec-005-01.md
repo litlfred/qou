@@ -1,1 +1,1 @@
-Let X be a topological space. Let c ∈ Cn(X; R) be homologous to a
+[\[l:fattori\]](#l:fattori){reference-type="ref" reference="l:fattori"} implies that $\partial \tilde{M}$ admits an $r$--fat triangulation with $t_{n-1}$ $(n-1)$--simplices per component so that singular simplices lifted from $\partial c$ are all small respect to this triangulation. ◻

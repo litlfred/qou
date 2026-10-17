@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2605.20846v1
-doc_title: "Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li"
+doc_title: "Topological Field Theories and the Algebraic Structures of the Two-Sphere"
 section_id: sec-014-relations-to-j-algebras
 section_title: "Relations to J-Algebras"
 section_number: null
 pages: 74-90
 source_pdf: 2605.20846v1.pdf
 source_sha256: db27cb6d01c4f2fb
-doc_brief: "Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li — We give two presentations for bordisms ofS 2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.964
-latex_coverage_ratio: 0.75
+latex_coverage_ratio: 0.965
 ---
 \label{sec:Jalg}
 

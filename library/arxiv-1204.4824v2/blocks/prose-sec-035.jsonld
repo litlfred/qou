@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1204.4824v2/blocks/prose-sec-035",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Holomorphic symplectic structures",
-  "pageStart": 66,
-  "pageEnd": 67,
-  "text": "../sections/sec-035-104-holomorphic-symplectic-structures.md",
+  "title": "Coordinates for moduli of flat connections",
+  "pageStart": 61,
+  "pageEnd": 61,
+  "text": "../sections/sec-035-10-coordinates-for-moduli-of-flat-connections.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1204.4824v2/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1204.4824v2/manifest.jsonld",
   "provenance": "ingested"

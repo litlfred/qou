@@ -1,1 +1,1 @@
-LetTX be a transversal oriented knot
+Let T X be a transversal oriented knot

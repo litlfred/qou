@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1912.10638v2
-doc_title: "Asymptotics of some quantum invariants of the Whitehead chains Ka Ho WONG"
+doc_title: "Asymptotics of some quantum invariants of the Whitehead chains"
 section_id: sec-001-11-overview-of-volume-conjectures
 section_title: "Overview of volume conjectures"
 section_number: 1.1
 pages: 1-3
 source_pdf: 1912.10638v2.pdf
 source_sha256: 612e44871d91d2e2
-doc_brief: "Asymptotics of some quantum invariants of the Whitehead chains Ka Ho WONG — In this paper, we study the asymptotics of the colored Jones polynomials of the Whitehead chains with one belt colored by"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.963
 latex_coverage_ratio: 0.975

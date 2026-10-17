@@ -1,15 +1,15 @@
 ---
 doc_id: arxiv-2301.00125v3
-doc_title: "Generating Function for Pinsky’s Combinatorial Second Mom ent Formula for the Generalized Ulam Problem Samen Hossein The Bronx High School of Science 75 Bronx Science Bvd"
+doc_title: "Generating Function for Pinsky’s Combinatorial Second Moment Formula for the Generalized Ulam Problem"
 section_id: sec-006-4-main-result
 section_title: "Main result"
 section_number: 4
 pages: 12-16
 source_pdf: 2301.00125v3.pdf
 source_sha256: 7ecd0cff7d6c2ec4
-doc_brief: "Generating Function for Pinsky’s Combinatorial Second Mom ent Formula for the Generalized Ulam Problem Samen Hossein The Bronx High School of Science 75 Bronx Science Bvd — Given a uniform random"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
+latex_prose_ratio: 0.915
 latex_coverage_ratio: 1.0
 ---
 \label{sec:Main}

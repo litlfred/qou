@@ -20,9 +20,25 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 1,
+  "by_kind": {
+   "corollary": 1
+  },
+  "formalization_candidates": 1
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "1",
+   "name": null,
+   "statement": "I(\u00b5) = Sb(\u00b55 + \u00b56)Sb(2Q \u2212",
+   "section_file": "sections/sec-028-b2-useful-corollaries.md",
+   "section_title": "B.2 Useful corollaries.",
+   "pages": "25-32",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
 }

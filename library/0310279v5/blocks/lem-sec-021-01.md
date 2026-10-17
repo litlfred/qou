@@ -1,1 +1,1 @@
-The reader may also wonder why our complexity function ignores all the singularities
+After a braid isotopy, we may assume that there are no short clasp arcs.

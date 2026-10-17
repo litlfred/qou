@@ -16,4 +16,3 @@ from all equations of state currently used in supernova simulations. Finally, th
 state greatly improves our conceptual understanding of low-density nuclear matter.
 PACS numbers: 21.65.+f, 26.50.+x, 97.60.Bw, 05.70.Ce
 Keywords: Low-density nuclear matter, equation of state, clustering, virial expansion
-I.

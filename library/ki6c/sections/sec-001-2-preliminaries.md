@@ -9,6 +9,7 @@ source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
 ---
+Preliminaries
 In this section, we review deﬁnitions and basic properties of the notation used in this
 paper.
 2.1
@@ -179,4 +180,3 @@ N
 12N .
 (11)
 5
-2.2

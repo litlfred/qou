@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-0810.1064v1",
+  "title": "Multiple polylogarithm values at roots of unity",
   "contains": [
+    "library/arxiv-0810.1064v1/sections/sec-front-matter",
     "library/arxiv-0810.1064v1/sections/sec-000",
     "library/arxiv-0810.1064v1/sections/sec-001"
   ],
@@ -25,7 +26,9 @@
   },
   "meta": {
     "doc_id": "arxiv-0810.1064v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0810.1064v1.pdf",
     "source_sha256": "b2d7514c5382ceaaa1824e32bc21518f43155a83644c9967642788a5cf0c79a9",
     "pages": 9,

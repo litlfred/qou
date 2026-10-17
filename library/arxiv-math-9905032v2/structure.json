@@ -820,14 +820,26 @@
    "title": "Proof of Theorem",
    "level": 2,
    "page_start": 15,
-   "page_end": 18,
-   "n_chars": 6214,
-   "n_words": 1305,
+   "page_end": 17,
+   "n_chars": 4128,
+   "n_words": 909,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-010-3-correlation-functions-in-the-bulk-of-the-spect",
+   "id": "sec-010-24-commuting-difference-operator",
+   "number": "2.4",
+   "title": "Commuting difference operator",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 2023,
+   "n_words": 388,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-011-3-correlation-functions-in-the-bulk-of-the-spect",
    "number": "3",
    "title": "Correlation functions in the bulk of the spectrum",
    "level": 1,
@@ -839,7 +851,7 @@
    "label_end": null
   },
   {
-   "id": "sec-011-31-proof-of-theorem",
+   "id": "sec-012-31-proof-of-theorem",
    "number": "3.1",
    "title": "Proof of Theorem",
    "level": 2,
@@ -851,7 +863,7 @@
    "label_end": null
   },
   {
-   "id": "sec-012-4-edge-of-the-spectrum-convergence-to-the-airy-e",
+   "id": "sec-013-4-edge-of-the-spectrum-convergence-to-the-airy-e",
    "number": "4",
    "title": "Edge of the spectrum: convergence to the Airy ensemble",
    "level": 1,
@@ -863,7 +875,7 @@
    "label_end": null
   },
   {
-   "id": "sec-013-41-results-and-strategy-of-proof",
+   "id": "sec-014-41-results-and-strategy-of-proof",
    "number": "4.1",
    "title": "Results and strategy of proof",
    "level": 2,
@@ -875,7 +887,7 @@
    "label_end": null
   },
   {
-   "id": "sec-014-42-proof-of-theorem",
+   "id": "sec-015-42-proof-of-theorem",
    "number": "4.2",
    "title": "Proof of Theorem",
    "level": 2,
@@ -887,7 +899,7 @@
    "label_end": null
   },
   {
-   "id": "sec-015-43-depoissonization-and-proof-of-theorem",
+   "id": "sec-016-43-depoissonization-and-proof-of-theorem",
    "number": "4.3",
    "title": "Depoissonization and proof of Theorem",
    "level": 2,
@@ -899,7 +911,7 @@
    "label_end": null
   },
   {
-   "id": "sec-016-a1-fredholm-determinants-and-determinantal-proce",
+   "id": "sec-017-a1-fredholm-determinants-and-determinantal-proce",
    "number": "A.1",
    "title": "Fredholm determinants and determinantal processes",
    "level": 2,
@@ -911,31 +923,31 @@
    "label_end": null
   },
   {
-   "id": "sec-017-a2-correlation-functions-of-determinantal-proces",
+   "id": "sec-018-a2-correlation-functions-of-determinantal-proces",
    "number": "A.2",
    "title": "Correlation functions of determinantal processes",
    "level": 2,
    "page_start": 38,
    "page_end": 39,
-   "n_chars": 1417,
-   "n_words": 293,
+   "n_chars": 1414,
+   "n_words": 292,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-018-a3-complementation-principle",
+   "id": "sec-019-a3-complementation-principle",
    "number": "A.3",
    "title": "Complementation principle",
    "level": 2,
    "page_start": 39,
    "page_end": 40,
-   "n_chars": 1221,
-   "n_words": 262,
+   "n_chars": 1287,
+   "n_words": 272,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-019-a4-convergence-of-trace-class-operators",
+   "id": "sec-020-a4-convergence-of-trace-class-operators",
    "number": "A.4",
    "title": "Convergence of trace class operators",
    "level": 2,
@@ -953,7 +965,7 @@
   "toc_entries": 25,
   "toc_inferred_entries": 25,
   "toc_inferred_mean_confidence": 1.0,
-  "toc_inferred_empty_share": 0.1,
+  "toc_inferred_empty_share": 0.095,
   "toc_inferred_method": "latex",
   "figure_entries": 1,
   "figure_sequence_gaps": [],
@@ -961,13 +973,13 @@
    "count": 0,
    "items": []
   },
-  "sections": 21,
+  "sections": 22,
   "chars_total": 71653,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "boo.tex",
    "tex_sections": 20,
-   "overlaid": 7,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1034,7 +1046,7 @@
     {
      "id": "sec-007-17-acknowledgements",
      "title": "Acknowledgements",
-     "prose_ratio": 0.073,
+     "prose_ratio": 0.083,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -1046,35 +1058,43 @@
     {
      "id": "sec-009-22-proof-of-theorem",
      "title": "Proof of Theorem",
-     "prose_ratio": 0.418,
+     "prose_ratio": 0.312,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-010-3-correlation-functions-in-the-bulk-of-the-spect",
+     "id": "sec-010-24-commuting-difference-operator",
+     "title": "Commuting difference operator",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-3-correlation-functions-in-the-bulk-of-the-spect",
      "title": "Correlation functions in the bulk of the spectrum",
      "prose_ratio": 0.0,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-011-31-proof-of-theorem",
+     "id": "sec-012-31-proof-of-theorem",
      "title": "Proof of Theorem",
      "prose_ratio": 0.515,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-012-4-edge-of-the-spectrum-convergence-to-the-airy-e",
+     "id": "sec-013-4-edge-of-the-spectrum-convergence-to-the-airy-e",
      "title": "Edge of the spectrum: convergence to the Airy ensemble",
      "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-013-41-results-and-strategy-of-proof",
+     "id": "sec-014-41-results-and-strategy-of-proof",
      "title": "Results and strategy of proof",
      "prose_ratio": 0.431,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-014-42-proof-of-theorem",
+     "id": "sec-015-42-proof-of-theorem",
      "title": "Proof of Theorem",
      "prose_ratio": 0.996,
      "coverage_ratio": 0.818,
@@ -1082,7 +1102,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-43-depoissonization-and-proof-of-theorem",
+     "id": "sec-016-43-depoissonization-and-proof-of-theorem",
      "title": "Depoissonization and proof of Theorem",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.543,
@@ -1090,22 +1110,22 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-a1-fredholm-determinants-and-determinantal-proce",
+     "id": "sec-017-a1-fredholm-determinants-and-determinantal-proce",
      "title": "Fredholm determinants and determinantal processes",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-017-a2-correlation-functions-of-determinantal-proces",
+     "id": "sec-018-a2-correlation-functions-of-determinantal-proces",
      "title": "Correlation functions of determinantal processes",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-018-a3-complementation-principle",
+     "id": "sec-019-a3-complementation-principle",
      "title": "Complementation principle",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-019-a4-convergence-of-trace-class-operators",
+     "id": "sec-020-a4-convergence-of-trace-class-operators",
      "title": "Convergence of trace class operators",
      "result": "no matching \\section"
     }

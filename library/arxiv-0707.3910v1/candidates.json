@@ -1,0 +1,97 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0707.3910v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "ad31f3cba16c4ea4ba12e789dae066ac6642f519613076b901067d0a7bf5b6de",
+  "file": "0707.3910v1.pdf"
+ },
+ "provenance": {
+  "title": "LANDEN TRANSFORMATIONS AND THE INTEGRATION OF RATIONAL FUNCTIONS",
+  "authors": "GEORGE BOROS AND VICTOR H. MOLL",
+  "arxiv": {
+   "id": "0707.3910",
+   "version": "1",
+   "primary_class": "math.CA",
+   "stamp_date": "26 Jul 2007"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "lemma": 4,
+   "corollary": 1
+  },
+  "formalization_candidates": 5
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{lem32} and Lemma \\ref{lem34} with",
+   "section_file": "sections/sec-001-2-the-reduction-formula.md",
+   "section_title": "The reduction formula",
+   "pages": "4-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": null,
+   "name": null,
+   "statement": "\\ref{cor62}. For example:",
+   "section_file": "sections/sec-006-7-examples.md",
+   "section_title": "Examples",
+   "pages": "11-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "A.1. Let k, N be positive integers with k \u2264N. Then",
+   "section_file": "sections/sec-007-appendix-a-two-binomial-sums.md",
+   "section_title": "Appendix A. Two binomial sums",
+   "pages": "17-19",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "A.3. Let k, N \u2208N with k \u2264N. Then",
+   "section_file": "sections/sec-007-appendix-a-two-binomial-sums.md",
+   "section_title": "Appendix A. Two binomial sums",
+   "pages": "17-19",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "A.4. Let p \u2208N, d1, d2, \u00b7 \u00b7 \u00b7 , dp be parameters, and de\ufb01ne dp+1 := 1. Then",
+   "section_file": "sections/sec-007-appendix-a-two-binomial-sums.md",
+   "section_title": "Appendix A. Two binomial sums",
+   "pages": "17-19",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

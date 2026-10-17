@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2402.08782v1
-doc_title: "Hecke–Farey coordinates for Bring’s surface"
+doc_title: "Hecke–Farey coordinates for Bring’s surface Doha Kattan 1 and David Singerman 2"
 section_id: sec-001-3-the-congruence-subgroups-of-the-hecke-groups
 section_title: "The congruence subgroups of the Hecke groups"
 section_number: 3
 pages: 3-4
 source_pdf: 2402.08782v1.pdf
 source_sha256: 30311f0bd815f93f
-doc_brief: "Hecke–Farey coordinates for Bring’s surface — The modular groupΓ (which is the Hecke groupH3) can be used to study triangular maps, Here we use the Hecke groupH4 to study the reg- ular map that"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.972
+latex_coverage_ratio: 0.946
 ---
 Let $I$ be an ideal of  $\mathbb Z[\lambda_{q}]$.\\We define
  \begin{equation*}

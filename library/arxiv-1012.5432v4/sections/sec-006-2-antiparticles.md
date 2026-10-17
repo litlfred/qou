@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1012.5432v4
-doc_title: "Towards topological quantum computation? Knotting and fusing flux tubes"
+doc_title: "quant-ph Towards Topological Quantum Computation? -"
 section_id: sec-006-2-antiparticles
 section_title: "Antiparticles"
 section_number: 2
 pages: 21-23
 source_pdf: 1012.5432v4.pdf
 source_sha256: ec5f6da1f813649e
-doc_brief: "Towards topological quantum computation? Knotting and fusing flux tubes — 19 sections: A Hamiltonian; Instantons; Dirac Monopoles"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.608
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.987
 ---
 An antiparticle is defined to be the representation which when fused with the original particle yields the identity as one possible outcome. It turns out that the antiparticle is unique, and the charge conjugation operator $C=S^2$ takes a particle to its antiparticle. Note that since the S matrix commutes with the T matrix (which encodes the spin), the spin of a particle is the same as that of the corresponding antiparticle.
 

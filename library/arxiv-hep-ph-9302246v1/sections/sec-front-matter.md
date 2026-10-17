@@ -26,4 +26,3 @@ to anomalous and non-anomalous low-energy hadronic transitions involving spin-1
 particles are also discussed.
 January 1993
 CPT-93/P.2871
-1

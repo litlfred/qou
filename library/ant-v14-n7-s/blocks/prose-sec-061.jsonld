@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/ant-v14-n7-s/blocks/prose-sec-061",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "2B2. The iteration of the harmonic Frobenius",
-  "pageStart": 64,
-  "pageEnd": 65,
-  "text": "../sections/sec-061-2b2-the-iteration-of-the-harmonic-frobenius.md",
+  "title": "2B1. Iteration on the Frobenius at (1,0)",
+  "pageStart": 62,
+  "pageEnd": 64,
+  "text": "../sections/sec-061-2b1-iteration-on-the-frobenius-at-10.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
   "provenance": "ingested"

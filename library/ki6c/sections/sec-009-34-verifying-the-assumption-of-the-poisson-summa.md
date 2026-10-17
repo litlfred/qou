@@ -9,6 +9,7 @@ source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
 ---
+Verifying the assumption of the Poisson summation formula
 In this section, we verify the assumption of the Poisson summation formula in Lemma 3.4,
 which is used in the proof of Theorem 1.1 for the 61 knot in Section 3.1. As we mentioned
 in Remark 2.5, we verify the assumption for ˆV (t, s, u) instead of V (t, s, u), since V (t, s, u)
@@ -266,4 +267,3 @@ Therefore, since t ≥0.03 and s ≥0,
 )
 < 2π · 0.97,
 and hence, (47) is satisﬁed.
-3.5

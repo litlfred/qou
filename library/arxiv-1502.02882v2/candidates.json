@@ -1,0 +1,125 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1502.02882v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "43641c6f3aed63dd287a423ba8abcda0b4d36b3df9bdd585fed35339436d8f01",
+  "file": "1502.02882v2.pdf"
+ },
+ "provenance": {
+  "title": "Fusion categories via string diagrams",
+  "authors": "Bruce Bartlett",
+  "arxiv": {
+   "id": "1502.02882",
+   "version": "2",
+   "primary_class": "math.QA",
+   "stamp_date": "20 Jul 2015"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 7,
+  "by_kind": {
+   "conjecture": 1,
+   "lemma": 3,
+   "corollary": 1,
+   "example": 2
+  },
+  "formalization_candidates": 4
+ },
+ "candidates": [
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": null,
+   "name": "[9]",
+   "statement": "Every fusion category admits a pivotal structure.",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "5.14",
+   "name": null,
+   "statement": "The sphericalization \u02dcC of C has simple objects Xsi",
+   "section_file": "sections/sec-019-53-sphericalization-of-a-fusion-category.md",
+   "section_title": "Sphericalization of a fusion category",
+   "pages": "28-30",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "5.15",
+   "name": "cf. [9, Prop 5.14]",
+   "statement": "The sphericalization \u02dcC of a fusion category",
+   "section_file": "sections/sec-019-53-sphericalization-of-a-fusion-category.md",
+   "section_title": "Sphericalization of a fusion category",
+   "pages": "28-30",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": "5.16",
+   "name": null,
+   "statement": "The sphericalization of the Yang-Lee category has simple ob-",
+   "section_file": "sections/sec-019-53-sphericalization-of-a-fusion-category.md",
+   "section_title": "Sphericalization of a fusion category",
+   "pages": "28-30",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "5.17",
+   "name": null,
+   "statement": "The Frobenius-Perron and fusion dimensions in \u02dcC are the same",
+   "section_file": "sections/sec-019-53-sphericalization-of-a-fusion-category.md",
+   "section_title": "Sphericalization of a fusion category",
+   "pages": "28-30",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "6.5",
+   "name": null,
+   "statement": "In the pairing convention for the graphical calculus associated to",
+   "section_file": "sections/sec-022-62-vanishing-of-cohomology.md",
+   "section_title": "Vanishing of cohomology",
+   "pages": "32-36",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": "6.7",
+   "name": null,
+   "statement": "For a 2-cocycle A \u2208Z2(C), that is, a collection of linear opera-",
+   "section_file": "sections/sec-022-62-vanishing-of-cohomology.md",
+   "section_title": "Vanishing of cohomology",
+   "pages": "32-36",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

@@ -1141,26 +1141,38 @@
    "title": "Representations with character factorization property",
    "level": 1,
    "page_start": 10,
-   "page_end": 13,
-   "n_chars": 5023,
-   "n_words": 880,
+   "page_end": 10,
+   "n_chars": 0,
+   "n_words": 0,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-017-32-examples",
+   "id": "sec-017-31-factorization-of-characters-and-gaussian-fluc",
+   "number": "3.1",
+   "title": "Factorization of characters and Gaussian fluctuations",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 13,
+   "n_chars": 4949,
+   "n_words": 870,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-018-32-examples",
    "number": "3.2",
    "title": "Examples",
    "level": 2,
    "page_start": 13,
    "page_end": 18,
-   "n_chars": 9240,
-   "n_words": 1647,
+   "n_chars": 9312,
+   "n_words": 1659,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-018-4-proof-of-the-main-result",
+   "id": "sec-019-4-proof-of-the-main-result",
    "number": "4",
    "title": "Proof of the main result",
    "level": 1,
@@ -1172,7 +1184,7 @@
    "label_end": null
   },
   {
-   "id": "sec-019-41-toy-example",
+   "id": "sec-020-41-toy-example",
    "number": "4.1",
    "title": "Toy example",
    "level": 2,
@@ -1184,19 +1196,31 @@
    "label_end": null
   },
   {
-   "id": "sec-020-42-partitions",
+   "id": "sec-021-42-partitions",
    "number": "4.2",
    "title": "Partitions",
    "level": 2,
    "page_start": 18,
-   "page_end": 20,
-   "n_chars": 2819,
-   "n_words": 528,
+   "page_end": 19,
+   "n_chars": 555,
+   "n_words": 120,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-021-44-three-probability-spaces",
+   "id": "sec-022-43-algebra-of-conjugacy-classes-and-its-filtrati",
+   "number": "4.3",
+   "title": "Algebra of conjugacy classes and its filtration",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 2193,
+   "n_words": 397,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-023-44-three-probability-spaces",
    "number": "4.4",
    "title": "Three probability spaces",
    "level": 2,
@@ -1208,7 +1232,7 @@
    "label_end": null
   },
   {
-   "id": "sec-022-45-cumulants-of-products",
+   "id": "sec-024-45-cumulants-of-products",
    "number": "4.5",
    "title": "Cumulants of products",
    "level": 2,
@@ -1220,31 +1244,31 @@
    "label_end": null
   },
   {
-   "id": "sec-023-471-cumulants-of-falling-factorials",
+   "id": "sec-025-471-cumulants-of-falling-factorials",
    "number": "4.7.1",
    "title": "Cumulants of falling factorials",
    "level": 3,
    "page_start": 24,
    "page_end": 26,
-   "n_chars": 2678,
-   "n_words": 597,
+   "n_chars": 2676,
+   "n_words": 596,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-024-51-cumulants",
+   "id": "sec-026-51-cumulants",
    "number": "5.1",
    "title": "Cumulants",
    "level": 2,
    "page_start": 26,
    "page_end": 26,
-   "n_chars": 8,
-   "n_words": 1,
+   "n_chars": 77,
+   "n_words": 11,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-025-5-proof-of-theorem",
+   "id": "sec-027-5-proof-of-theorem",
    "number": "5",
    "title": "Proof of Theorem",
    "level": 1,
@@ -1256,7 +1280,7 @@
    "label_end": null
   },
   {
-   "id": "sec-026-53-products-of-conjugacy-classes",
+   "id": "sec-028-53-products-of-conjugacy-classes",
    "number": "5.3",
    "title": "Products of conjugacy classes",
    "level": 2,
@@ -1268,7 +1292,7 @@
    "label_end": null
   },
   {
-   "id": "sec-027-55-geometric-interpretation-of-theorem",
+   "id": "sec-029-55-geometric-interpretation-of-theorem",
    "number": "5.5",
    "title": "Geometric interpretation of Theorem",
    "level": 2,
@@ -1280,7 +1304,7 @@
    "label_end": null
   },
   {
-   "id": "sec-028-56-fat-partitions",
+   "id": "sec-030-56-fat-partitions",
    "number": "5.6",
    "title": "Fat partitions",
    "level": 2,
@@ -1292,7 +1316,7 @@
    "label_end": null
   },
   {
-   "id": "sec-029-6-acknowledgments",
+   "id": "sec-031-6-acknowledgments",
    "number": "6",
    "title": "Acknowledgments",
    "level": 1,
@@ -1310,7 +1334,7 @@
   "toc_entries": 39,
   "toc_inferred_entries": 39,
   "toc_inferred_mean_confidence": 0.987,
-  "toc_inferred_empty_share": 0.1,
+  "toc_inferred_empty_share": 0.094,
   "toc_inferred_method": "latex",
   "figure_entries": 9,
   "figure_sequence_gaps": [
@@ -1320,13 +1344,13 @@
    "count": 0,
    "items": []
   },
-  "sections": 31,
-  "chars_total": 69415,
+  "sections": 33,
+  "chars_total": 69409,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "gaussian02.tex",
    "tex_sections": 39,
-   "overlaid": 23,
+   "overlaid": 24,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1464,27 +1488,33 @@
     {
      "id": "sec-016-3-representations-with-character-factorization-p",
      "title": "Representations with character factorization property",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-017-31-factorization-of-characters-and-gaussian-fluc",
+     "title": "Factorization of characters and Gaussian fluctuations",
      "prose_ratio": 0.938,
      "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-32-examples",
+     "id": "sec-018-32-examples",
      "title": "Examples",
-     "prose_ratio": 0.954,
+     "prose_ratio": 0.962,
      "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-018-4-proof-of-the-main-result",
+     "id": "sec-019-4-proof-of-the-main-result",
      "title": "Proof of the main result",
      "prose_ratio": 0.0,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-019-41-toy-example",
+     "id": "sec-020-41-toy-example",
      "title": "Toy example",
      "prose_ratio": 0.918,
      "coverage_ratio": 1.0,
@@ -1492,15 +1522,23 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-020-42-partitions",
+     "id": "sec-021-42-partitions",
      "title": "Partitions",
-     "prose_ratio": 0.952,
-     "coverage_ratio": 0.97,
+     "prose_ratio": 0.9,
+     "coverage_ratio": 0.844,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-021-44-three-probability-spaces",
+     "id": "sec-022-43-algebra-of-conjugacy-classes-and-its-filtrati",
+     "title": "Algebra of conjugacy classes and its filtration",
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-44-three-probability-spaces",
      "title": "Three probability spaces",
      "prose_ratio": 0.957,
      "coverage_ratio": 0.947,
@@ -1508,7 +1546,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-022-45-cumulants-of-products",
+     "id": "sec-024-45-cumulants-of-products",
      "title": "Cumulants of products",
      "prose_ratio": 0.938,
      "coverage_ratio": 0.955,
@@ -1516,7 +1554,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-023-471-cumulants-of-falling-factorials",
+     "id": "sec-025-471-cumulants-of-falling-factorials",
      "title": "Cumulants of falling factorials",
      "prose_ratio": 0.779,
      "coverage_ratio": 0.935,
@@ -1524,18 +1562,18 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-024-51-cumulants",
+     "id": "sec-026-51-cumulants",
      "title": "Cumulants",
-     "prose_ratio": 0.023,
+     "prose_ratio": 0.047,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-025-5-proof-of-theorem",
+     "id": "sec-027-5-proof-of-theorem",
      "title": "Proof of Theorem",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-026-53-products-of-conjugacy-classes",
+     "id": "sec-028-53-products-of-conjugacy-classes",
      "title": "Products of conjugacy classes",
      "prose_ratio": 0.845,
      "coverage_ratio": 0.529,
@@ -1543,7 +1581,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-027-55-geometric-interpretation-of-theorem",
+     "id": "sec-029-55-geometric-interpretation-of-theorem",
      "title": "Geometric interpretation of Theorem",
      "prose_ratio": 0.848,
      "coverage_ratio": 0.972,
@@ -1551,7 +1589,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-028-56-fat-partitions",
+     "id": "sec-030-56-fat-partitions",
      "title": "Fat partitions",
      "prose_ratio": 0.95,
      "coverage_ratio": 0.917,
@@ -1559,7 +1597,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-029-6-acknowledgments",
+     "id": "sec-031-6-acknowledgments",
      "title": "Acknowledgments",
      "prose_ratio": 0.958,
      "coverage_ratio": 0.107,

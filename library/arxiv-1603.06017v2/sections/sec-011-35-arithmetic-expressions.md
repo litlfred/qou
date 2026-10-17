@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1603.06017v2
-doc_title: "Automatic Theorem Proving in Walnut Hamoon Mousavi"
+doc_title: "Automatic Theorem Proving in Walnut"
 section_id: sec-011-35-arithmetic-expressions
 section_title: "Arithmetic Expressions"
 section_number: 3.5
 pages: 9-11
 source_pdf: 1603.06017v2.pdf
 source_sha256: 3ff091e40573a5dd
-doc_brief: "Automatic Theorem Proving in Walnut Hamoon Mousavi — 34 sections: Introduction; Basics; Words and Automata"
+toc_source: outline
 ---
 3.3
 Variables
@@ -115,4 +115,3 @@ See Section 4.4 to see how Walnut constructs automaton for valid predicates like
 (y1 ⊗y2 ⊗···⊗ym)<(x1 ⊗x2 ⊗···⊗xn),
 where the xi and y j are variables or arithmetic constants, ⊗are arithmetic operators, and < is a comparison operator.
 10
-3.6

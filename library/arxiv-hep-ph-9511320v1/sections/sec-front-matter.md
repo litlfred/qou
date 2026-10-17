@@ -25,4 +25,3 @@ term in pion–nucleon scattering and the role of ρ–meson exchange. Chirally 
 vector mesons do not give rise to this two–pion nucleon seagull interaction but
 rather to higher order corrections. Some problems of the formal equivalence arising
 in higher orders and related to loops are touched upon.
-1

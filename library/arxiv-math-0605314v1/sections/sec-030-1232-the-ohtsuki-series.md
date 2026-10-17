@@ -11,4 +11,3 @@ toc_source: inferred
 ---
 (see Theorem 12.6 below).
 A UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANT
-41

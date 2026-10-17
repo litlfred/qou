@@ -10,7 +10,7 @@ source_sha256: 18d77d6aa140fc50
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.976
-latex_coverage_ratio: 0.988
+latex_coverage_ratio: 0.977
 ---
 []{#sec4 label="sec4"}
 

@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2304.12545v1
-doc_title: "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP, AND THE WORK OF WALTER NEUMANN"
+doc_title: "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP"
 section_id: sec-001-2-volumes-and-dehn-surgeries
 section_title: "Volumes and Dehn surgeries"
 section_number: 2
 pages: 3-7
 source_pdf: 2304.12545v1.pdf
 source_sha256: bfc3c2be395b1b2d
-doc_brief: "Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — survey of gluing equations, volumes, the extended Bloch group, symplectic properties and quantization."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.98
+latex_coverage_ratio: 0.983
 ---
 \label{sec.3}
  

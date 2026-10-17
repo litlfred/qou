@@ -10,7 +10,7 @@ source_sha256: 06a4c8096c8ebb10
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.967
 ---
 The birth of the ideas related to the (non-)Abelian Stokes theorem dates back to the ninetenth century and is connected with the emergence of the Abelian Stokes theorem. The Abelian Stokes theorem can be treated as a prototype of the non-Abelian Stokes theorem or a version of thereof when we confine ourselves to an Abelian group.
 

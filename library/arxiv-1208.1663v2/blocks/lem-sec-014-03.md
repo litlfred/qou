@@ -1,1 +1,1 @@
-Consider the convex polytope P in Rr deﬁned by
+(a) If (−xi, yi)̸ ∈R for some i = 1, . . . , s, then Iρ

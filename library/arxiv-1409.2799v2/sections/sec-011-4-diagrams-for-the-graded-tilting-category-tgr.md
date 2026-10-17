@@ -1,0 +1,19 @@
+---
+doc_id: arxiv-1409.2799v2
+doc_title: "Diagram categories for Uq-tilting modules at roots of unity"
+section_id: sec-011-4-diagrams-for-the-graded-tilting-category-tgr
+section_title: "Diagrams for the graded tilting category Tgr"
+section_number: 4
+pages: 31-31
+source_pdf: 1409.2799v2.pdf
+source_sha256: 2f2067b7b583e731
+toc_source: outline
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.909
+---
+\label{sec-dia}
+
+In this section we give the diagrammatic presentation of 
+the (graded) tilting category $\Tgrl$ and the category of 
+its projective endofunctors $\Endo(\Tgrl)$.

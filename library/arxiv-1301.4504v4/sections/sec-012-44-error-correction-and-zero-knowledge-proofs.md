@@ -7,10 +7,10 @@ section_number: 4.4
 pages: 37-41
 source_pdf: 1301.4504v4.pdf
 source_sha256: 201acc5bb1d4b6a0
-doc_brief: "Quantum Computation vs. Firewalls — In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.962
-latex_coverage_ratio: 0.981
+latex_coverage_ratio: 0.994
 ---
 []{#qszksubsect label="qszksubsect"}
 

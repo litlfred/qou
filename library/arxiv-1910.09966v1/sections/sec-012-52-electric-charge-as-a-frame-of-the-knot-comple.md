@@ -7,10 +7,10 @@ section_number: 5.2
 pages: 24-26
 source_pdf: 1910.09966v1.pdf
 source_sha256: 21798500c98ed25a
-doc_brief: "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics — In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.968
-latex_coverage_ratio: 0.994
+latex_coverage_ratio: 1.0
 ---
 However, what does change in the knot complement and in the branched covering? As a toy example, we consider the complement of the unknot $D^{2}\times S^{1}$. Then, the Dehn twist along the meridian of the boundary torus will be trivialized. By a result of McCullough (see for instance [@McCulloughHong2013-mcg]), every Dehn twist along the longitude induces a diffeomorphism of the solid torus. Then, the complement of the unknot can carry an electric charge (by a Dehn twist) but no magnetic charge. This result can be generalized to all knot complements (which are homologically equivalent to the solid torus). The effect on the branched covering can also be obtained by considering the boundary. The boundary is a torus written as two-fold branched covering branched along 4 points. A Dehn twist is given by a permutation of the branching points that leads to a twist of the braid as a branching set of the knot complement (see Figure [1](#fig:Dehn-twist-represented-braid){reference-type="ref" reference="fig:Dehn-twist-represented-braid"}).
 

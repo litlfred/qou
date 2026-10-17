@@ -1,1 +1,1 @@
-Let β ∈ Bn be a braid and F be an essential, genus g
+[\[thm:main1\]](#thm:main1){reference-type="ref" reference="thm:main1"} means braid ordering gives some information about the geometry of closed braid complements, and especially if Dehornoy floor is relatively large with respect to its genus, then the surface can be positioned to special position, which is simple .

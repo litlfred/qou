@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1108.5365v2
-doc_title: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R)"
+doc_title: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL +"
 section_id: sec-003-24-the-multiplicative-unitary
 section_title: "The multiplicative unitary"
 section_number: 2.4
 pages: 13-15
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
-doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R) — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.951
+latex_coverage_ratio: 0.983
 ---
 \label{sec:pre:mu}
 Multiplicative unitaries are fundamental to the theory of quantum groups in the setting of $C^*$-algebras and von Neumann algebras, and to generalization of Pontryagin duality. In particular, a multiplicative unitary encodes all the structure maps of a quantum group and its dual. A very good exposition is given in \cite{T}.

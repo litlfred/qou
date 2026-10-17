@@ -1,1 +1,1 @@
-Let Ω be an open domain in a hyperbolic
+Let Ωbe an open domain in a hyperbolic

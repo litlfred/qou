@@ -7,10 +7,11 @@
   "bytes": 1616994,
   "pages": 32,
   "text_source": "embedded",
-  "math_source": "latex",
+  "extractor": "pymupdf",
   "mtime": null,
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,30 @@
    "stamp_date": "24 May 2020"
   },
   "doi": null,
-  "title": "Asymptotics of some quantum invariants of the Whitehead chains Ka Ho WONG",
+  "title": "Asymptotics of some quantum invariants of the Whitehead chains",
   "authors_raw": null,
   "title_lines": [
    "Asymptotics of some quantum invariants",
    "of the Whitehead chains",
    "Ka Ho WONG"
   ],
-  "abstract": "In this paper, we study the asymptotics of the colored Jones polynomials of the Whitehead chains with one belt colored by M1 and all the clasps colored by M2 evaluated at the ( N + 1/2)-th root of unity t = e 2\u03c0i N +1/2 , where M1 and M2 are sequences of integers inN. By considering the limiting ratios, s1 and s2, of M1 and M2 to (N + 1/2), we show that the exponential growth rate of the invariants coincides with the hyperbolic volume of the link complement equipped with certain (possibly incom- plete) hyperbolic structure parametrized by s1 and s2. In the proof we \ufb01gure out the correspondence between the critical point equations of the potential functions and the hyperbolic gluing equations of certain triangulations of the link complements. Furthermore, we discover a connection between the potential function, the theory of angle structures and the covolume function. As a corollary, we prove the volume conjecture for the Turaev-Viro invariants for all Whitehead chains complements.",
+  "abstract": "In this paper, we study the asymptotics of the colored Jones polynomials of the Whitehead chains with one belt colored by M1 and all the clasps colored by M2 evaluated at the (N + 1/2)-th root of unity t = e 2\u03c0i N+1/2 , where M1 and M2 are sequences of integers in N. By considering the limiting ratios, s1 and s2, of M1 and M2 to (N + 1/2), we show that the exponential growth rate of the invariants coincides with the hyperbolic volume of the link complement equipped with certain (possibly incom- plete) hyperbolic structure parametrized by s1 and s2. In the proof we \ufb01gure out the correspondence between the critical point equations of the potential functions and the hyperbolic gluing equations of certain triangulations of the link complements. Furthermore, we discover a connection between the potential function, the theory of angle structures and the covolume function. As a corollary, we prove the volume conjecture for the Turaev-Viro invariants for all Whitehead chains complements.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20200526013339Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.17",
-   "Title": ""
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20200526013339Z"
+  },
+  "title_raw": "Asymptotics of some quantum invariants of the Whitehead chains Ka Ho WONG",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Asymptotics of some quantum invariants of the Whitehead chains",
+   "outline": "1 Introduction",
+   "text": "Asymptotics of some quantum invariants of the Whitehead chains Ka Ho WONG",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -42,144 +53,686 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Overview of volume conjectures",
    "page": 1,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Strategy to prove the volume conjecture",
    "page": 3,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Main results",
    "page": 3,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 3,
    "title": "Asymptotics of the quantum invariants of the Whitehead link",
    "page": 4,
    "source": "outline",
-   "number": "1.3.1"
+   "number": "1.3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 3,
    "title": "Asymptotic of the quantum invariants of the Whitehead chains",
    "page": 5,
    "source": "outline",
-   "number": "1.3.2"
+   "number": "1.3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 3,
    "title": "Differential formula for the potential function and relation to hyperbolic geometry",
    "page": 5,
    "source": "outline",
-   "number": "1.3.3"
+   "number": "1.3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Outline",
    "page": 7,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Acknowledgements",
    "page": 7,
    "source": "outline",
-   "number": "1.5"
+   "number": "1.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Asymptotics of JM1,M2(WL,e2iN+12)",
    "page": 7,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Potential functions of JM1,M2(WL,e2iN+12)",
    "page": 7,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "The asymptotics expansion formula for JN,N(WL, e2iN+12)",
    "page": 11,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "The asymptotics expansion formula for JM1,M2(WL,e2iN+12)",
    "page": 13,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Geometry of the potential function",
    "page": 16,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Differential formula for the potential function",
    "page": 21,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 1,
    "title": "Generalization to JM1,M2(Wa,1,c,d,e2iN+12)",
    "page": 23,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "Potential functions for JM1,M2(Wa,1,c,d,e2iN+12)",
    "page": 23,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "Asymptotics of JN, N(Wa,1,c,d,e2iN+12)",
    "page": 27,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 2,
    "title": "Triangulation of the S3\"026E30F W0,1,c,0",
    "page": 29,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 1,
    "title": "Volume conjecture for TVr(Wa,b,c,d, e2ir) with b1",
    "page": 30,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Left: the positive full twist, belt, clasp and mirror clasp tangles, when a < 0, we twist the tangles in the opposite direction. Right: the links W0,1,1,0 (also denoted as WL) and W1,1,1,1",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "the link W0,1,2,0 with belt colored by M1 and all other components colored by M2 Note that Theorem 5 gives a positive answer to Conjecture 6 for the sequence of colors (M1, M2, . . . , M2) with s2 = 1",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "ideal octahedron",
+   "page": 16,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "16"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "glue the faces with the same color together The following pictures illustrate how to obtain a cylinder from an ideal octahedron",
+   "page": 16,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "16"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "the faces B1 and B2 are glued together",
+   "page": 17,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "17"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "deform the object so that it looks like a cylinder",
+   "page": 17,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "17"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "the faces D1 and D2 are glued together",
+   "page": 17,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "17"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "deform the object to obtain a cylinder with a clasp removed Next, we consider the curl face of the cylinder. The labels 1, 2, 3, 4 refer to the truncated faces of the ideal octahedron. If we glue the top of the cylinder to the bottom according to the rule C2 \u2192C1 and A2 \u2192A1, we will obtain a decompos",
+   "page": 17,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "17"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "decomposition of the curl face into parallelograms Next, we decompose the ideal octahedron into 5 ideal tetrahedra and assign shape parameters to them (Figure 10). The parameters U, Z and W are related by U = (ZW)\u22121. The decomposition of the truncated faces and the assignments of shape parameters to",
+   "page": 18,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "18"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "decomposition of the ideal octahedron into 5 ideal tetrahedra",
+   "page": 18,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "18"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "assignment of shape parameters After that, we slide the left edge down (Figure 12) to obtain the geometric triangulation of the curl surface",
+   "page": 19,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "19"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "triangulation of the boundary torus of the belt component Recall that for each triangle, the shape parameters are given in counter-clockwise by A, A\u2032 =",
+   "page": 19,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "19"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "triangulation of the boundary torus of the belt component From direct computation, for the boundary torus of the clasp component, the edges equations are given by \u2022 vertex (v):",
+   "page": 20,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "20"
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "decomposition of the boundary torus into parallelograms Originally, each tetrahedron has its own assignment of shape parameters Z1 = e2\u03c0iz1, Wi = e2\u03c0izi+1 and Ui =",
+   "page": 29,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "29"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1077,
+   "n_words": 179,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -187,8 +740,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 12,
+   "n_words": 1,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-001-11-overview-of-volume-conjectures",
@@ -197,8 +752,10 @@
    "level": 2,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 5370,
-   "n_words": 1019
+   "n_chars": 5430,
+   "n_words": 1058,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-002-12-strategy-to-prove-the-volume-conjecture",
@@ -207,8 +764,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 2701,
-   "n_words": 462
+   "n_chars": 2779,
+   "n_words": 506,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
    "id": "sec-003-13-main-results",
@@ -217,8 +776,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 828,
-   "n_words": 149
+   "n_chars": 847,
+   "n_words": 157,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-004-131-asymptotics-of-the-quantum-invariants-of-the",
@@ -227,8 +788,10 @@
    "level": 3,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 2146,
-   "n_words": 395
+   "n_chars": 2212,
+   "n_words": 415,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-005-132-asymptotic-of-the-quantum-invariants-of-the",
@@ -236,68 +799,126 @@
    "title": "Asymptotic of the quantum invariants of the Whitehead chains",
    "level": 3,
    "page_start": 5,
-   "page_end": 7,
-   "n_chars": 4743,
-   "n_words": 847
+   "page_end": 5,
+   "n_chars": 948,
+   "n_words": 201,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
-   "id": "sec-006-14-outline",
+   "id": "sec-006-133-differential-formula-for-the-potential-funct",
+   "number": "1.3.3",
+   "title": "Differential formula for the potential function and relation to hyperbolic geometry",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 3894,
+   "n_words": 699,
+   "label_start": "5",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-007-14-outline",
    "number": "1.4",
    "title": "Outline",
    "level": 2,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 672,
-   "n_words": 116
+   "n_chars": 680,
+   "n_words": 117,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
-   "id": "sec-007-15-acknowledgements",
+   "id": "sec-008-15-acknowledgements",
    "number": "1.5",
    "title": "Acknowledgements",
    "level": 2,
    "page_start": 7,
-   "page_end": 13,
-   "n_chars": 11866,
-   "n_words": 3216
+   "page_end": 11,
+   "n_chars": 6335,
+   "n_words": 1872,
+   "label_start": "7",
+   "label_end": "11"
   },
   {
-   "id": "sec-008-23-the-asymptotics-expansion-formula-for-jm1m2wl",
+   "id": "sec-009-22-the-asymptotics-expansion-formula-for-jnnwl-e",
+   "number": "2.2",
+   "title": "The asymptotics expansion formula for JN,N(WL, e2iN+12)",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 5572,
+   "n_words": 1374,
+   "label_start": "11",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-010-23-the-asymptotics-expansion-formula-for-jm1m2wl",
    "number": "2.3",
    "title": "The asymptotics expansion formula for JM1,M2(WL,e2iN+12)",
    "level": 2,
    "page_start": 13,
    "page_end": 16,
-   "n_chars": 5071,
-   "n_words": 1244
+   "n_chars": 5096,
+   "n_words": 1233,
+   "label_start": "13",
+   "label_end": "16"
   },
   {
-   "id": "sec-009-24-geometry-of-the-potential-function",
+   "id": "sec-011-24-geometry-of-the-potential-function",
    "number": "2.4",
    "title": "Geometry of the potential function",
    "level": 2,
    "page_start": 16,
+   "page_end": 21,
+   "n_chars": 4658,
+   "n_words": 944,
+   "label_start": "16",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-012-25-differential-formula-for-the-potential-functi",
+   "number": "2.5",
+   "title": "Differential formula for the potential function",
+   "level": 2,
+   "page_start": 21,
    "page_end": 32,
-   "n_chars": 26056,
-   "n_words": 5240
+   "n_chars": 22096,
+   "n_words": 5027,
+   "label_start": "21",
+   "label_end": "32"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 20,
-  "sections": 10,
-  "chars_total": 59453,
+  "toc_inferred_entries": 0,
+  "figure_entries": 14,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 14,
+  "chars_total": 61636,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Asymptotics_of_some_quantum_invariants_of_the_Whitehead_chains.tex",
    "tex_sections": 24,
-   "overlaid": 8,
+   "overlaid": 9,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
     "coverage": 0.5
    },
    "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
@@ -315,8 +936,8 @@
     {
      "id": "sec-002-12-strategy-to-prove-the-volume-conjecture",
      "title": "Strategy to prove the volume conjecture",
-     "prose_ratio": 0.992,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -324,52 +945,71 @@
      "id": "sec-003-13-main-results",
      "title": "Main results",
      "prose_ratio": 0.961,
-     "coverage_ratio": 0.96,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-131-asymptotics-of-the-quantum-invariants-of-the",
      "title": "Asymptotics of the quantum invariants of the Whitehead link",
-     "prose_ratio": 0.769,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.779,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-132-asymptotic-of-the-quantum-invariants-of-the",
      "title": "Asymptotic of the quantum invariants of the Whitehead chains",
-     "prose_ratio": 0.955,
-     "coverage_ratio": 0.945,
+     "prose_ratio": 0.889,
+     "coverage_ratio": 0.93,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-14-outline",
+     "id": "sec-006-133-differential-formula-for-the-potential-funct",
+     "title": "Differential formula for the potential function and relation to hyperbolic geometry",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-14-outline",
      "title": "Outline",
      "prose_ratio": 0.974,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-15-acknowledgements",
+     "id": "sec-008-15-acknowledgements",
      "title": "Acknowledgements",
-     "prose_ratio": 0.748,
-     "coverage_ratio": 0.987,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.414,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-008-23-the-asymptotics-expansion-formula-for-jm1m2wl",
+     "id": "sec-009-22-the-asymptotics-expansion-formula-for-jnnwl-e",
+     "title": "The asymptotics expansion formula for JN,N(WL, e2iN+12)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-23-the-asymptotics-expansion-formula-for-jm1m2wl",
      "title": "The asymptotics expansion formula for JM1,M2(WL,e2iN+12)",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-009-24-geometry-of-the-potential-function",
+     "id": "sec-011-24-geometry-of-the-potential-function",
      "title": "Geometry of the potential function",
-     "prose_ratio": 0.725,
-     "coverage_ratio": 0.669,
+     "prose_ratio": 0.784,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-25-differential-formula-for-the-potential-functi",
+     "title": "Differential formula for the potential function",
+     "prose_ratio": 0.714,
+     "coverage_ratio": 0.635,
      "result": "overlaid",
      "converter": "pandoc"
     }

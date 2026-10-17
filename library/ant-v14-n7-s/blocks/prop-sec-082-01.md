@@ -1,1 +1,1 @@
-La catégorie triangulée avec sommes inﬁnies RigDA´et( b
+L’adjonction (2-36) est une équivalence de Quillen. En particulier, le foncteur

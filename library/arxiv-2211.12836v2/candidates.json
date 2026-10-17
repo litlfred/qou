@@ -1,0 +1,164 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2211.12836v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "4ffbb8b21f8b175d26656de27bd686c6c544330f5a9daf63e6ad631e57e5f362",
+  "file": "2211.12836v2.pdf"
+ },
+ "provenance": {
+  "title": "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY",
+  "authors": "DYSON BROWNIAN MOTION",
+  "arxiv": {
+   "id": "2211.12836",
+   "version": "2",
+   "primary_class": "math.PR",
+   "stamp_date": "12 May 2023"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 10,
+  "by_kind": {
+   "remark": 6,
+   "theorem": 1,
+   "lemma": 1,
+   "example": 2
+  },
+  "formalization_candidates": 2
+ },
+ "candidates": [
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "that $C$ depends decreasingly on $t_0$ and thus this theorem is useful only when $m$ is of order $n^2$ or larger. By taking appropriate Lipschitz functions, one can deduce from the previous results convergence estimates for probability of open sets of $T_{k}$: namely for an open set $\\mathcal{O}$ of $T_k$ $$\\left\\vert\\mathbb{P}\\left(I_{*\\mathbf{m}}\\in O\\right)-\\mathbb{P}\\left(B^{\\alpha,\\gamma}\\left(\\frac{m}{n^2}\\right)\\in O\\right)\\right\\vert\\leq C_{O}\\sqrt{\\frac{\\log n}{n}},$$ with $C_O$ depending on $O$. The theorem of the next section, which provides a quantitative local limit theorem, would",
+   "section_file": "sections/sec-005-24-main-probabilistic-theorems.md",
+   "section_title": "Main probabilistic theorems",
+   "pages": "7-11",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "that we can similarly view the set $\\left\\{P^v, v\\in V\\right\\}$ as a family of commuting Markov kernels on $L^2_h(V)$ with common invariant measure having density $\\mathbf{1}$ with respect to $\\mu^h$. We have indeed similarly $$(P^v)^{h,*}[\\mathbf{1}]=\\frac{1}{\\mu^h}h^r\\cdot \\frac{s_v^*}{h^l(v)}\\left(\\frac{1}{h^r}\\cdot \\mu^h\\cdot \\mathbf{1}\\right)=\\frac{1}{h^l}\\cdot \\frac{s_v^*}{h^l(v)}(h^l)=\\frac{1}{h^l}\\cdot h^l=\\mathbf{1}.$$",
+   "section_file": "sections/sec-009-31-family-of-random-walks-and-h-transform.md",
+   "section_title": "Family of random walks and h-transform",
+   "pages": "15-18",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "that $s_{v}^h$ is also diagonalizable on $L^2_h(V)$ with same eigenvalues $\\theta_v(i),\\overline{\\theta_v(i)}$ and left and right eigenvectors $$\\tilde{u}^{(i)}=\\frac{1}{h^r}\\cdot u^{(i)},\\, \\tilde{w}^{(i)}=\\frac{1}{h^l}\\cdot w^{(i)}.$$ (beware that left eigenvectors are taken with respect to the adjoint $(\\cdot)^{h,*})$).",
+   "section_file": "sections/sec-010-33-integrable-pm-graph-fourier-transform-and-ver.md",
+   "section_title": "Integrable PM-graph, Fourier transform and Verlinde formula",
+   "pages": "18-21",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "that the first statement of Proposition [\\[prop:convergence_fourier\\]](#prop:convergence_fourier){reference-type=\"ref\" reference=\"prop:convergence_fourier\"} is only relevant when $K(\\tilde{J})\\leq c\\frac{n^2k^3}{M^2K(\\mathbf{m})}$ for some numeric $c>0$. We conclude this section by a crude estimate of $\\Phi_n[*\\mathbf{m}]$ when $K(\\tilde{J})\\geq cn^2$.",
+   "section_file": "sections/sec-016-5-the-fourier-transform-of-a-large-sequence-of-c.md",
+   "section_title": "The Fourier transform of a large sequence of convolution",
+   "pages": "32-46",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "[\\[thm:Berry-Esseen_simplified\\]](#thm:Berry-Esseen_simplified){reference-type=\"ref\" reference=\"thm:Berry-Esseen_simplified\"} given in Section [\\[sec:intro_model\\]](#sec:intro_model){reference-type=\"ref\" reference=\"sec:intro_model\"} is then a simplified version of the latter result, using Lemma [\\[lem:bound_K_norm_inf\\]](#lem:bound_K_norm_inf){reference-type=\"ref\" reference=\"lem:bound_K_norm_inf\"} to bound $\\langle \\hat{\\mathbf{m}}\\rangle_3$ by $2\\sqrt{2}k^3\\Vert \\tilde{\\mathbf{m}}\\Vert_3$. The main ingredients in the proof of Theorem [\\[thm:Berry-Esseen\\]](#thm:Berry-Esseen){reference-type=\"r",
+   "section_file": "sections/sec-017-6-berry-esseen-theorem-on-bkn.md",
+   "section_title": "Berry-Esseen theorem on Bk,n",
+   "pages": "46-47",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "6.5",
+   "name": null,
+   "statement": "Let Kt be the heat kernel either on SU(k) or U(k). Then, for all x \u2208SU(k) (resp.",
+   "section_file": "sections/sec-019-62-proof-of-theorem-61.md",
+   "section_title": "Proof of Theorem 6.1",
+   "pages": "50-56",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "A.1. In the simplest case k = 1, we have G(1, n + 1) = Pn(C), the projective space",
+   "section_file": "sections/sec-023-a2-the-grassmannian-schubert-variety-and-interse.md",
+   "section_title": "A.2. the Grassmannian, Schubert variety and intersection",
+   "pages": "61-62",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "that for W \u2032 generic, dim Wn+1\u2212k1 \u2229W \u2032",
+   "section_file": "sections/sec-023-a2-the-grassmannian-schubert-variety-and-interse.md",
+   "section_title": "A.2. the Grassmannian, Schubert variety and intersection",
+   "pages": "61-62",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "that d = 0 corresponds to constant maps on Gk,n and we recover with \u27e8\u03bb, \u00b5, \u03bdc\u27e90 the",
+   "section_file": "sections/sec-024-a3-quantum-cohomology-ring-of-the-grassmannian.md",
+   "section_title": "A.3. Quantum cohomology ring of the Grassmannian",
+   "pages": "62-64",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "A.3. Let us resume Example A.1 for k = 1, where G1,n+1 = Pn(C). Then, a rational",
+   "section_file": "sections/sec-024-a3-quantum-cohomology-ring-of-the-grassmannian.md",
+   "section_title": "A.3. Quantum cohomology ring of the Grassmannian",
+   "pages": "62-64",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1105.1998v3
-doc_title: "A Connection Formula of the Hahn-Exton q-Bessel Function"
+doc_title: "Symmetry, Integrability and Geometry: Methods and Applications"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-2
 source_pdf: 1105.1998v3.pdf
 source_sha256: daf3bffad8eb2749
-doc_brief: "A Connection Formula of the Hahn-Exton q-Bessel Function — We show a connection formula of the Hahn–Exton q-Bessel function around the origin and the infinity."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.989
-latex_coverage_ratio: 0.936
+latex_prose_ratio: 0.667
+latex_coverage_ratio: 0.86
 ---
 In this paper, we show a connection formula of the Hahn--Exton $q$-Bessel function $J_\nu^{(3)}(x;q)$. At first, we review the Bessel function and $q$-analogues of the Bessel function. The Bessel equation $$\begin{gathered}
 \frac{d^2u}{dz^2}+\frac{1}{z}\frac{du}{dz}+\left(1-\frac{\nu^2}{z^2}\right)u=0

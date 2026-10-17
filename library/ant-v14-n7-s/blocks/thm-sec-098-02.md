@@ -1,1 +1,1 @@
-], where for p, using the projective bundle formula, the key point is to show that both
+Assume that k is a perfect ﬁeld of characteristic different from two. Then χ(X/k) =

@@ -9,13 +9,18 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1304.3481v1",
+  "title": "Quadruply-graded colored homology of knots Eugene Gorsky, Sergei Gukov, and Marko Stoˇsi´c",
   "contains": [
+    "library/arxiv-1304.3481v1/sections/sec-front-matter",
     "library/arxiv-1304.3481v1/sections/sec-000",
     "library/arxiv-1304.3481v1/sections/sec-001",
     "library/arxiv-1304.3481v1/sections/sec-002",
     "library/arxiv-1304.3481v1/sections/sec-003",
-    "library/arxiv-1304.3481v1/sections/sec-004"
+    "library/arxiv-1304.3481v1/sections/sec-004",
+    "library/arxiv-1304.3481v1/sections/sec-005",
+    "library/arxiv-1304.3481v1/sections/sec-006",
+    "library/arxiv-1304.3481v1/sections/sec-007",
+    "library/arxiv-1304.3481v1/sections/sec-008"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -28,7 +33,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1304.3481v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1304.3481v1.pdf",
     "source_sha256": "d0840f2775c0f761c2e03dc01af6a4879456eccf53f70cd0e3e8da76b3b6d00d",
     "pages": 78,

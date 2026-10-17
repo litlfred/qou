@@ -1,1 +1,1 @@
-(See Theorems 3.4, 3.6 and 3.8.)
+\ref{thmi:1}. The various homologies of Hecke algebras are computed in Section 3.

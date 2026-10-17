@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1207.4990v3
-doc_title: "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results Percy Deift"
+doc_title: "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results"
 section_id: sec-007-9-some-applications
 section_title: "Some applications"
 section_number: 9
 pages: 42-45
 source_pdf: 1207.4990v3.pdf
 source_sha256: 02aa065f4f65b857
-doc_brief: "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results Percy Deift — 10 sections: Setting the problem; Toeplitz meets Ising; Back to Isi"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.977
+latex_prose_ratio: 0.996
+latex_coverage_ratio: 0.996
 ---
 []{#sec9 label="sec9"} As advertised at the outset, the goal of this paper has been to show how SSLT developed and was generalized in response to questions arising in the analysis of the Ising model. Although the case $|||\beta|||=1$ in [@DIK1] does not arise in the Ising model (the same is true for the Hankel and Toeplitz + Hankel determinants [\[eq108\]](#eq108){reference-type="eqref" reference="eq108"} and [\[eq115\]](#eq115){reference-type="eqref" reference="eq115"} respectively), this case does arise in many other problems in statistical physics. For example, the probability $P_E(n)$ of a string of length $n$ of ferromagnetically aligned spins in the antiferromagnetic ground state in the $XY$ spin chain, is given, for a certain range of parameters, by a Toeplitz determinant with $2$ $\beta$-singularities such that $|||\beta|||=1$. Thus [\[eq100\]](#eq100){reference-type="eqref" reference="eq100"} verifies the result on $P_E(n)$, $n\to\infty$, presented in [@FrAb], which the authors based on the Basor-Tracy conjecture. In a similar way, the results in [@DIK1] can be used to justify the asymptotic results for correlations arising in the theory of the impenetrable Bose gas that were obtained in the work of Ovchinnikov [@Ov] on the basis of the Basor-Tracy conjecture. In another direction in [@GGM], the authors use [\[eq100\]](#eq100){reference-type="eqref" reference="eq100"} to evaluate the long-time behavior of a variety of non-equilibrium 1D many-body problems. In particular, in the Fermi edge singularity and tunneling spectroscopy problems considered in [@GGM], the authors show that the various contributions to [\[eq100\]](#eq100){reference-type="eqref" reference="eq100"} have a very transparent physical meaning: they correspond to contributions to the Green's functions for these problems from multiple Fermi edges.
 

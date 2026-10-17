@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1404.2541v1
-doc_title: "The Stokes phenomenon for the Ramanujan’s q-difference equation and its higher order extension"
+doc_title: "The Stokes phenomenon for the Ramanujan’s q -diﬀerence equation and its higher order extension"
 section_id: sec-004-6-the-q-borel-laplace-transformations
 section_title: "The q-Borel-Laplace transformations"
 section_number: 6
 pages: 13-19
 source_pdf: 1404.2541v1.pdf
 source_sha256: edb7c9b2b1561ac3
-doc_brief: "The Stokes phenomenon for the Ramanujan’s q-difference equation and its higher order extension — We show connection formulae of local solutions of the Ramanu - jan equation between the origin and the"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.604
-latex_coverage_ratio: 0.987
+latex_prose_ratio: 0.946
+latex_coverage_ratio: 0.982
 ---
 In this section, we show a connection formula of the divergent series ${}_2\varphi_0$. This series appears in the second solution of the Ramanujan equation [\[ram\]](#ram){reference-type="eqref" reference="ram"}. At first, we define two types of the $q$-Borel-Laplace transformations.
 

@@ -9,7 +9,7 @@ source_pdf: 0012035v3.pdf
 source_sha256: 06a4c8096c8ebb10
 toc_source: inferred
 text_source: latex
-latex_prose_ratio: 0.953
+latex_prose_ratio: 0.965
 latex_coverage_ratio: 1.0
 ---
 []{#SECTION:calculusofPaths label="SECTION:calculusofPaths"}

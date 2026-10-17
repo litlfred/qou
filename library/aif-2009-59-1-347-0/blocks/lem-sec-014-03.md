@@ -1,1 +1,1 @@
-— Let Eq be the set of all the entire
+— Let λ ∈C∗\(−pZ) and ˜Ωλ := π−1(C∗\[−λ(1−p); q]) ⊂

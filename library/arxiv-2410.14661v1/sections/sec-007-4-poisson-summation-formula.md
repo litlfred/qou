@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2410.14661v1
-doc_title: "On the asymptotic expansion of various quantum invariants III: the Reshetikhin-Turaev invariants of closed hyperbolic 3-manifolds obtained by integral surgery along the figure-eigh"
+doc_title: "ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM INVARIANTS III: THE RESHETIKHIN-TURAEV INVARIANTS OF CLOSED HYPERBOLIC 3-MANIFOLDS OBTAINED BY DOING INTEGRAL SURGERY ALONG THE TWIST"
 section_id: sec-007-4-poisson-summation-formula
 section_title: "Poisson summation formula"
 section_number: 4
 pages: 15-20
 source_pdf: 2410.14661v1.pdf
 source_sha256: 3362fcd5e28eb1f0
-doc_brief: "On the asymptotic expansion of various quantum invariants III: the Reshetikhin-Turaev invariants of closed hyperbolic 3-manifolds obtained by integral surgery along the figure-eight knot — This is"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.931
+latex_prose_ratio: 0.952
+latex_coverage_ratio: 0.914
 ---
 []{#Section-Poissonsummation label="Section-Poissonsummation"} By Proposition [\[Prop-RTN\]](#Prop-RTN){reference-type="ref" reference="Prop-RTN"}, we have $$\begin{aligned}
    g_{N}(a,k,l)=\sin\left(\frac{(a+\frac{1}{2})\pi}{N+\frac{1}{2}}\right)\sin\left(\frac{2\pi(l+\frac{1}{2})}{N+\frac{1}{2}}\right)e^{(N+\frac{1}{2})\hat{V}_N\left(\frac{a+\frac{1}{2}}{N+\frac{1}{2}},\frac{k+\frac{1}{2}}{N+\frac{1}{2}},\frac{l+\frac{1}{2}}{N+\frac{1}{2}}\right)}

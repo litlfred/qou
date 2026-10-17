@@ -1,0 +1,12 @@
+---
+doc_id: arxiv-1604.01247v2
+doc_title: "EXCEPTIONAL QUANTUM GEOMETRY"
+section_id: sec-009-4-modules-and-fundamental-fermions
+section_title: "Modules and fundamental fermions"
+section_number: 4
+pages: 18-18
+source_pdf: 1604.01247v2.pdf
+source_sha256: 5a402405aadf5d54
+toc_source: outline
+---
+Modules and fundamental fermions

@@ -9,4 +9,4 @@ source_pdf: 0012035v3.pdf
 source_sha256: 06a4c8096c8ebb10
 toc_source: inferred
 ---
-2.3.1
+Generalizations

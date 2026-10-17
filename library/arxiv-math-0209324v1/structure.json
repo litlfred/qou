@@ -386,8 +386,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1085,
-   "n_words": 182,
+   "n_chars": 1082,
+   "n_words": 181,
    "label_start": null,
    "label_end": null
   },
@@ -398,8 +398,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 5,
-   "n_chars": 8718,
-   "n_words": 1603,
+   "n_chars": 8731,
+   "n_words": 1604,
    "label_start": null,
    "label_end": "5"
   },
@@ -421,14 +421,26 @@
    "title": "Monic completions of polynomial rings",
    "level": 1,
    "page_start": 6,
+   "page_end": 6,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-003-31-definitions-and-basic-properties",
+   "number": "3.1",
+   "title": "Definitions and basic properties",
+   "level": 2,
+   "page_start": 6,
    "page_end": 10,
-   "n_chars": 9418,
-   "n_words": 1928,
+   "n_chars": 9349,
+   "n_words": 1915,
    "label_start": "6",
    "label_end": "10"
   },
   {
-   "id": "sec-003-5-expansions-at-roots-of-unity",
+   "id": "sec-004-5-expansions-at-roots-of-unity",
    "number": "5",
    "title": "Expansions at roots of unity",
    "level": 1,
@@ -440,7 +452,7 @@
    "label_end": "12"
   },
   {
-   "id": "sec-004-6-values-at-roots-of-unity",
+   "id": "sec-005-6-values-at-roots-of-unity",
    "number": "6",
    "title": "Values at roots of unity",
    "level": 1,
@@ -452,7 +464,7 @@
    "label_end": "14"
   },
   {
-   "id": "sec-005-7-remarks",
+   "id": "sec-006-7-remarks",
    "number": "7",
    "title": "Remarks",
    "level": 1,
@@ -464,7 +476,7 @@
    "label_end": "16"
   },
   {
-   "id": "sec-006-73-modules",
+   "id": "sec-007-73-modules",
    "number": "7.3",
    "title": "Modules",
    "level": 2,
@@ -482,7 +494,7 @@
   "toc_entries": 14,
   "toc_inferred_entries": 14,
   "toc_inferred_mean_confidence": 0.893,
-  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_empty_share": 0.125,
   "toc_inferred_method": "latex",
   "figure_entries": 0,
   "figure_sequence_gaps": [],
@@ -507,8 +519,8 @@
     "items": []
    }
   },
-  "sections": 8,
-  "chars_total": 37933,
+  "sections": 9,
+  "chars_total": 37874,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -544,13 +556,19 @@
     {
      "id": "sec-002-3-monic-completions-of-polynomial-rings",
      "title": "Monic completions of polynomial rings",
-     "prose_ratio": 0.994,
-     "coverage_ratio": 0.978,
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-31-definitions-and-basic-properties",
+     "title": "Definitions and basic properties",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-003-5-expansions-at-roots-of-unity",
+     "id": "sec-004-5-expansions-at-roots-of-unity",
      "title": "Expansions at roots of unity",
      "prose_ratio": 0.991,
      "coverage_ratio": 0.936,
@@ -558,7 +576,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-004-6-values-at-roots-of-unity",
+     "id": "sec-005-6-values-at-roots-of-unity",
      "title": "Values at roots of unity",
      "prose_ratio": 0.989,
      "coverage_ratio": 0.959,
@@ -566,7 +584,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-005-7-remarks",
+     "id": "sec-006-7-remarks",
      "title": "Remarks",
      "prose_ratio": 0.952,
      "coverage_ratio": 0.973,
@@ -574,7 +592,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-006-73-modules",
+     "id": "sec-007-73-modules",
      "title": "Modules",
      "prose_ratio": 0.992,
      "coverage_ratio": 0.624,

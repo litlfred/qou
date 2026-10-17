@@ -1,0 +1,112 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1508.05448v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "57d2c717d8ec74d053bcaf861cffbb60a826bfea80af7eb89639207e98292c7a",
+  "file": "1508.05448v1.pdf"
+ },
+ "provenance": {
+  "title": "Concentration of Measure Techniques and Applications",
+  "authors": "Meg Walters",
+  "arxiv": {
+   "id": "1508.05448",
+   "version": "1",
+   "primary_class": "math.PR",
+   "stamp_date": "22 Aug 2015"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "remark": 1,
+   "theorem": 3,
+   "proposition": 1,
+   "lemma": 1
+  },
+  "formalization_candidates": 5
+ },
+ "candidates": [
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "s . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+   "section_file": "sections/sec-003-contributors-and-funding-sources.md",
+   "section_title": "Contributors and Funding Sources",
+   "pages": "5-9",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2.1.1",
+   "name": null,
+   "statement": "Consider a Lipschitz function F on RM, with Lipschitz constant",
+   "section_file": "sections/sec-005-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "10-34",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2.2.2",
+   "name": null,
+   "statement": "dT(x, A) = min{\u2225v\u22252 : v \u2208VA(x)}",
+   "section_file": "sections/sec-005-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "10-34",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.2.3",
+   "name": null,
+   "statement": "For all 0 \u2264t \u22641 and A(\u03c9) and B as de\ufb01ned above, we have",
+   "section_file": "sections/sec-005-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "10-34",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2.3.1",
+   "name": null,
+   "statement": "Let (\u03a0, \u00b5) be a reversible Markov chain on X with a spectral gap",
+   "section_file": "sections/sec-005-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "10-34",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5.1.1",
+   "name": null,
+   "statement": "For \u03b2 \u2208R, let q = exp(\u2212\u03b2/n).",
+   "section_file": "sections/sec-016-5-mallows-random-permutations.md",
+   "section_title": "Mallows Random Permutations",
+   "pages": "96-104",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

@@ -1,1 +1,1 @@
-we can replicate another T+ neighborhood inside the T+ neighborhoods
+If a singularity of type a−a−or a−s occurs, then the associated singular

@@ -7,10 +7,10 @@ section_number: 2.1
 pages: 5-6
 source_pdf: 1907.00949v2.pdf
 source_sha256: 865defaa34bf42be
-doc_brief: "OPTIMIZATION ON FLAG MANIFOLDS — A ﬂag is a sequence of nested subspaces."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.988
-latex_coverage_ratio: 0.964
+latex_prose_ratio: 0.994
+latex_coverage_ratio: 0.982
 ---
 []{#sec:Lie label="sec:Lie"} Let $M$ be a smooth manifold and $T^\ast M$ be its cotangent bundle. A *Riemannian metric* on $M$ is a smooth section $g: M \to T^\ast M \otimes T^\ast M$ such that $g_x \coloneqq g(x) \in T^\ast_xM \otimes T^\ast_x M$ is a positive definite symmetric bilinear form on the tangent space $T_xM$ for every $x\in M$. Intuitively, a Riemannian metric gives an inner product on $T_xM$ for every $x\in M$ and it varies smoothly with respect to $x\in M$. Let $G$ be a group and let $m:G\times G \to G$ be the multiplication map $m(a_1,a_2) = a_1a_2$ and $i: G \to G$ be the inversion map $i(a) = a^{-1}$. Then $G$ is a *Lie group* if it is a smooth manifold and the group operations $m$ and $i$ are smooth maps. The tangent space $\mathfrak{g}$ of $G$ at the identity $e\in G$ is a *Lie algebra*, i.e., a vector space equipped with a *Lie bracket*, a bilinear map $[\cdot, \cdot]: \mathfrak{g} \times \mathfrak{g} \to \mathfrak{g}$ satisfying $[X,Y] = -[Y,X]$ (skew-symmetry) and $[X,[Y,Z]] + [Z,[X,Y]] + [Y,[Z,X]] = 0$ (Jacobi identity). For example, if $G$ is the orthogonal group $\mathop{\mathrm{O}}(n)$ of all $n\times n$ real orthogonal matrices, then its Lie algebra $\mathfrak{so}(n)$ is the vector space of all $n\times n$ real skew-symmetric matrices.
 

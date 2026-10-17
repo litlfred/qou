@@ -503,8 +503,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 888,
-   "n_words": 137,
+   "n_chars": 886,
+   "n_words": 136,
    "label_start": null,
    "label_end": null
   },
@@ -514,81 +514,105 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 12,
-   "n_chars": 21333,
-   "n_words": 3856,
+   "page_end": 5,
+   "n_chars": 8478,
+   "n_words": 1417,
    "label_start": null,
+   "label_end": "5"
+  },
+  {
+   "id": "sec-001-2-effective-lagrangian-of-goldstones-baryons-and",
+   "number": "2",
+   "title": "Effective Lagrangian of Goldstones, Baryons and Spin--1 Fields",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 12,
+   "n_chars": 12863,
+   "n_words": 2438,
+   "label_start": "5",
    "label_end": "12"
   },
   {
-   "id": "sec-001-3-electromagnetic-form-factors-for-the-baryon-oc",
+   "id": "sec-002-3-electromagnetic-form-factors-for-the-baryon-oc",
    "number": "3",
    "title": "Electromagnetic Form Factors for the Baryon Octet",
    "level": 1,
    "page_start": 12,
+   "page_end": 12,
+   "n_chars": 358,
+   "n_words": 56,
+   "label_start": "12",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-003-31-basic-definitions",
+   "number": "3.1",
+   "title": "Basic Definitions",
+   "level": 2,
+   "page_start": 12,
    "page_end": 13,
-   "n_chars": 1674,
-   "n_words": 331,
+   "n_chars": 1308,
+   "n_words": 274,
    "label_start": "12",
    "label_end": "13"
   },
   {
-   "id": "sec-002-32-vector-meson-contribution-to-the-electromagne",
+   "id": "sec-004-32-vector-meson-contribution-to-the-electromagne",
    "number": "3.2",
    "title": "Vector Meson Contribution to the Electromagnetic Form Factors",
    "level": 2,
    "page_start": 13,
    "page_end": 16,
-   "n_chars": 6456,
-   "n_words": 1304,
+   "n_chars": 6516,
+   "n_words": 1311,
    "label_start": "13",
    "label_end": "16"
   },
   {
-   "id": "sec-003-5-loops-with-massive-particles",
+   "id": "sec-005-5-loops-with-massive-particles",
    "number": "5",
    "title": "Loops with massive particles",
    "level": 1,
    "page_start": 16,
    "page_end": 18,
-   "n_chars": 3016,
-   "n_words": 520,
+   "n_chars": 3043,
+   "n_words": 523,
    "label_start": "16",
    "label_end": "18"
   },
   {
-   "id": "sec-004-6-short-summary",
+   "id": "sec-006-6-short-summary",
    "number": "6",
    "title": "Short Summary",
    "level": 1,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 2167,
-   "n_words": 340,
+   "n_chars": 2179,
+   "n_words": 341,
    "label_start": "18",
    "label_end": "19"
   },
   {
-   "id": "sec-005-a-construction-principles",
+   "id": "sec-007-a-construction-principles",
    "number": "A",
    "title": "Construction Principles",
    "level": 1,
    "page_start": 19,
    "page_end": 22,
-   "n_chars": 5087,
-   "n_words": 968,
+   "n_chars": 5109,
+   "n_words": 969,
    "label_start": "19",
    "label_end": "22"
   },
   {
-   "id": "sec-006-b-on-the-equivalence-from-dual-transformations",
+   "id": "sec-008-b-on-the-equivalence-from-dual-transformations",
    "number": "B",
    "title": "On the Equivalence from Dual Transformations",
    "level": 1,
    "page_start": 22,
    "page_end": 26,
-   "n_chars": 7454,
-   "n_words": 1404,
+   "n_chars": 7499,
+   "n_words": 1410,
    "label_start": "22",
    "label_end": "26"
   }
@@ -607,13 +631,13 @@
    "count": 0,
    "items": []
   },
-  "sections": 8,
-  "chars_total": 48075,
+  "sections": 10,
+  "chars_total": 48239,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "9511320.tex",
    "tex_sections": 11,
-   "overlaid": 5,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -628,21 +652,37 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.968,
-     "coverage_ratio": 0.978,
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.967,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-3-electromagnetic-form-factors-for-the-baryon-oc",
+     "id": "sec-001-2-effective-lagrangian-of-goldstones-baryons-and",
+     "title": "Effective Lagrangian of Goldstones, Baryons and Spin--1 Fields",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-electromagnetic-form-factors-for-the-baryon-oc",
      "title": "Electromagnetic Form Factors for the Baryon Octet",
-     "prose_ratio": 0.988,
+     "prose_ratio": 0.871,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-32-vector-meson-contribution-to-the-electromagne",
+     "id": "sec-003-31-basic-definitions",
+     "title": "Basic Definitions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-32-vector-meson-contribution-to-the-electromagne",
      "title": "Vector Meson Contribution to the Electromagnetic Form Factors",
      "prose_ratio": 0.984,
      "coverage_ratio": 1.0,
@@ -650,28 +690,28 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-5-loops-with-massive-particles",
+     "id": "sec-005-5-loops-with-massive-particles",
      "title": "Loops with massive particles",
      "prose_ratio": 0.994,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-6-short-summary",
+     "id": "sec-006-6-short-summary",
      "title": "Short Summary",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-a-construction-principles",
+     "id": "sec-007-a-construction-principles",
      "title": "Construction Principles",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-006-b-on-the-equivalence-from-dual-transformations",
+     "id": "sec-008-b-on-the-equivalence-from-dual-transformations",
      "title": "On the Equivalence from Dual Transformations",
      "result": "no matching \\section"
     }

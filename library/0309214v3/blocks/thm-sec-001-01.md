@@ -1,1 +1,1 @@
-The colored Jones function of every knot is q –holonomic.
+The colored Jones function of every knot is q–holonomic.

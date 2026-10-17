@@ -7,10 +7,10 @@ section_number: null
 pages: 20-23
 source_pdf: 2312.00624v1.pdf
 source_sha256: bda867f7b84f69c3
-doc_brief: "On the structure of wave functions in complex Chern–Simons theory — We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.937
-latex_coverage_ratio: 0.974
+latex_coverage_ratio: 1.0
 ---
 []{#sec: 3rd-order label="sec: 3rd-order"} We will show how the matrix formalism of Section [\[sec: 2nd-order\]](#sec: 2nd-order){reference-type="ref" reference="sec: 2nd-order"} can be applied to solve a third-order $q$-difference equation in closed form. In particular, let us return to the quantum $A$-polynomial equation satisfied by the resummed perturbative wave function $\chi^{(\alpha), \rm{WKB}}(u; \hbar)$ in Eq. [\[Aeq-matrix\]](#Aeq-matrix){reference-type="eqref" reference="Aeq-matrix"} and assume it is of order three. As before, after appropriately accounting for the correction due to the exponential prefactor containing the functions $s^{(\alpha)}_{0,1}(x)$ in Eq. [\[chi-matrix-2\]](#chi-matrix-2){reference-type="eqref" reference="chi-matrix-2"}, the $q$-difference equation takes the form
 

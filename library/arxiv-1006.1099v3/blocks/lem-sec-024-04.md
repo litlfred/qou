@@ -1,1 +1,1 @@
-The relation between algebraic and geometric twists, Pr oposition 3.6 and more
+Let Q ⊂Pn+1 denote a smooth n-dimensional quadric hypersurface. The quantum

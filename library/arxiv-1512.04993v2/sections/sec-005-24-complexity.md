@@ -7,17 +7,19 @@ section_number: 2.4
 pages: 12-14
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
-doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
+toc_source: outline
 ---
 system in a general quantum state. Building on the work of Aharonov-Anandan-Bohm,
 Margolus-Levitin, and Lloyd, we conjecture a similar bound on the rate of growth of
 complexity. Informally this is the rate of growth of the number of simple gates needed
 to prepare the state of the computer from a reference state,
 dgates
-dt ≤ 2E
-πℏ. (2.12)
-Eq. 2.12 is fast. A 100 g 2015-era CPU manages about 10 12 classical operations
-per second, 4 much less than the permitted 10 50. The slowdown is largely the fault of
+dt
+≤2E
+πℏ.
+(2.12)
+Eq. 2.12 is fast. A 100g 2015-era CPU manages about 1012 classical operations
+per second,4 much less than the permitted 1050. The slowdown is largely the fault of
 wastefully locking up most of the energy in the rest mass of atoms, where it does no
 useful computation. (Indeed, counting just the energy in the logical qubits, modern
 cold atom experiments come close to saturating Eq. 2.12). A fast computer should avoid
@@ -34,14 +36,15 @@ information theoretic tasks. We conjecture that black holes are the fastest comp
 total FLOP rate of 5 million petaFLOPs, about a thousand times more than all the single site
 supercomputers combined.
 11
-in the sense that they saturate the complexiﬁcation bound Eq. 2.12. 5
-2.4 Complexity
-Given a state|ψ⟩ on n qubits, the state complexity of |ψ⟩ is the minimum number of
-gates necessary to construct |ψ⟩. We ﬁx a simple reference state |ψ0⟩ and a universal
-gate set of elementary unitaries {Gα} and deﬁne the complexity of |ψ⟩ to be the
-minimum number of gates necessary to produce |ψ⟩ from|ψ0⟩. More generally, we
-require only that |ψ⟩ be closely approximated by a state produced from |ψ0⟩. The
-complexity of |ψ⟩ in principle depends on all the details of the construction, but is
+in the sense that they saturate the complexiﬁcation bound Eq. 2.12.5
+2.4
+Complexity
+Given a state |ψ⟩on n qubits, the state complexity of |ψ⟩is the minimum number of
+gates necessary to construct |ψ⟩. We ﬁx a simple reference state |ψ0⟩and a universal
+gate set of elementary unitaries {Gα} and deﬁne the complexity of |ψ⟩to be the
+minimum number of gates necessary to produce |ψ⟩from |ψ0⟩. More generally, we
+require only that |ψ⟩be closely approximated by a state produced from |ψ0⟩. The
+complexity of |ψ⟩in principle depends on all the details of the construction, but is
 expected to be relatively robust in its basic properties, e.g. the distinction between
 states of poly(n) complexity and exp(n) complexity is independent of the details.
 In this paper we conjecture the existence of a more reﬁned notion of complexity
@@ -53,7 +56,7 @@ details exists, at least for semiclassical bulk states, but many of our conclusi
 robust even if such a unique deﬁnition cannot be constructed. An incomplete discussion
 of these open questions is given in Appendix A.
 So long as we are considering the late time rate of change of complexity growth, the
-reference state|ψ0⟩ may be taken to be the thermoﬁeld double state. (For one-sided
+reference state |ψ0⟩may be taken to be the thermoﬁeld double state. (For one-sided
 systems the reference state would be a locally perturbed ground state.) We will discuss
 the reference state in more detail in [41].
 5We have argued that black holes may be the fastest computers in nature, at least within some

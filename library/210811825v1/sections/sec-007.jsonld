@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/210811825v1/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Symmetry group of the Bolza surface",
+  "pageStart": 60,
+  "pageEnd": 65,
+  "contains": [
+    "library/210811825v1/blocks/prose-sec-007",
+    "library/210811825v1/blocks/rem-sec-007-01",
+    "library/210811825v1/blocks/rem-sec-007-02",
+    "library/210811825v1/blocks/thm-sec-007-03",
+    "library/210811825v1/blocks/rem-sec-007-04",
+    "library/210811825v1/blocks/prop-sec-007-05",
+    "library/210811825v1/blocks/rem-sec-007-06"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/210811825v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/210811825v1/manifest.jsonld",
+  "provenance": "ingested"
+}

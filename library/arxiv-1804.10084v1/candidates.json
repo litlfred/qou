@@ -1,0 +1,58 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1804.10084v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "716da9708f06d930246e5eeb0c30b6d271005199ef58f10102799e07b8d14aa1",
+  "file": "1804.10084v1.pdf"
+ },
+ "provenance": {
+  "title": "Concentration of Lipschitz Functions of Negatively Dependent Variables",
+  "authors": "Kevin Garbe",
+  "arxiv": {
+   "id": "1804.10084",
+   "version": "1",
+   "primary_class": "math.PR",
+   "stamp_date": "21 Apr 2018"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "theorem": 1,
+   "example": 1
+  },
+  "formalization_candidates": 1
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "[\\[thm:Lipschitz-R\\]](#thm:Lipschitz-R){reference-type=\"ref\" reference=\"thm:Lipschitz-R\"} now follows by standard exponential moment analysis; see for example [@McDiarmid89]. For completeness, we summarize the rest of the analysis as follows.",
+   "section_file": "sections/sec-004-31-adaptive-martingale-analysis.md",
+   "section_title": "Adaptive martingale analysis",
+   "pages": "4-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "Consider the following random variables X1, . . . , Xn: X2, . . . , Xn are independent and",
+   "section_file": "sections/sec-006-a-the-failure-of-a-fixed-ordering.md",
+   "section_title": "A The failure of a fixed ordering",
+   "pages": "9-10",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

@@ -7,10 +7,10 @@ section_number: 4.1
 pages: 21-32
 source_pdf: 2311.02632v2.pdf
 source_sha256: 0da5ba097b79340d
-doc_brief: "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE — The Fricke-Macbeath surface is the unique Hurwitz surface of genus 7 with 504 conformal automorphisms."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.974
-latex_coverage_ratio: 0.949
+latex_coverage_ratio: 0.989
 ---
 In this section, we will investigate the multiplicity $m_1$ of the first eigenvalue $\la_1$ of the Laplacian on the Fricke-Macbeath surface $\X=\Gamma\backslash\disk$. Specifically, we will prove the following:
 

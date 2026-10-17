@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1105.1998v3
-doc_title: "A Connection Formula of the Hahn-Exton q-Bessel Function"
+doc_title: "Symmetry, Integrability and Geometry: Methods and Applications"
 section_id: sec-003-23-the-p-borel-transformation-and-the-p-laplace
 section_title: "The p-Borel transformation and the p-Laplace transformation"
 section_number: 2.3
 pages: 3-6
 source_pdf: 1105.1998v3.pdf
 source_sha256: daf3bffad8eb2749
-doc_brief: "A Connection Formula of the Hahn-Exton q-Bessel Function — We show a connection formula of the Hahn–Exton q-Bessel function around the origin and the infinity."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.957
-latex_coverage_ratio: 0.598
+latex_coverage_ratio: 0.59
 ---
 []{#section2.3 label="section2.3"}
 

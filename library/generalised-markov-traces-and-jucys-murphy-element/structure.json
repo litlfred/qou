@@ -7,6 +7,7 @@
   "bytes": 354206,
   "pages": 10,
   "text_source": "embedded",
+  "extractor": "pymupdf",
   "mtime": null,
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
@@ -14,19 +15,26 @@
  "metadata": {
   "arxiv": null,
   "doi": "10.1017/S0017089526101050",
-  "title": "Glasgow Mathematical Journal (2026), 1\u201310 RESEARCH ARTICLE",
-  "authors_raw": "Generalised Markov traces and Jucys\u2013Murphy elements",
+  "title": "Glasgow Mathematical Journal (2026), 1\u201310",
+  "authors_raw": "RESEARCH ARTICLE",
   "title_lines": [
-   "Glasgow Mathematical Journal (2026), 1\u201310",
-   "RESEARCH ARTICLE"
+   "Glasgow Mathematical Journal (2026), 1\u201310"
   ],
-  "abstract": "We give a simple construction of Markov traces for Iwahori\u2013Hecke algebras associated with the crystallographic Coxeter groups of types An, Bn and Dn.I nt y p e sB and D, it is new and generalises a known construction in typeA employing symmetric polynomials in multiplicative Jucys\u2013Murphy elements.",
+  "abstract": "We give a simple construction of Markov traces for Iwahori\u2013Hecke algebras associated with the crystallographic Coxeter groups of types An, Bn and Dn. In types B and D, it is new and generalises a known construction in type A employing symmetric polynomials in multiplicative Jucys\u2013Murphy elements.",
   "docinfo": {
-   "Author": "",
-   "Title": "",
    "Producer": "Acrobat Distiller 10.1.5 (Windows)",
    "Creator": "LaTeX with hyperref package",
    "CreationDate": "D:20260725175049+05'30'"
+  },
+  "title_raw": "Glasgow Mathematical Journal (2026), 1\u201310",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Generalised Markov traces and Jucys\u2013Murphy elements",
+   "outline": "Introduction",
+   "text": "Glasgow Mathematical Journal (2026), 1\u201310",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -35,81 +43,227 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Iwahori-Hecke algebras and multiplicative Jucys-Murphy elements",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Coxeter groups",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Iwahori-Hecke algebras",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Trace functional and a pairing on H(W,S)",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "`Full twist' and Jucys-Murphy elements",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Some central elements in the classical Iwahori-Hecke algebras",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "Markov traces",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Markov traces via Jucys-Murphy elements",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "General Markov traces in types B, D",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "Geometric Markov traces",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 402,
+   "n_words": 47,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-iwahori-hecke-algebras",
    "number": null,
@@ -118,7 +272,9 @@
    "page_start": 1,
    "page_end": 1,
    "n_chars": 189,
-   "n_words": 25
+   "n_words": 25,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-001-coxeter-groups",
@@ -128,7 +284,9 @@
    "page_start": 1,
    "page_end": 1,
    "n_chars": 72,
-   "n_words": 7
+   "n_words": 7,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-002-introduction",
@@ -137,8 +295,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 10606,
-   "n_words": 1890
+   "n_chars": 10600,
+   "n_words": 1884,
+   "label_start": "1",
+   "label_end": "4"
   },
   {
    "id": "sec-003-some-central-elements-in-the-classical-iwahori-h",
@@ -147,8 +307,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 2460,
-   "n_words": 457
+   "n_chars": 2361,
+   "n_words": 490,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-004-markov-traces",
@@ -157,8 +319,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 3333,
-   "n_words": 581
+   "n_chars": 3349,
+   "n_words": 597,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
    "id": "sec-005-general-markov-traces-in-types-b-d",
@@ -167,8 +331,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 8,
-   "n_chars": 5375,
-   "n_words": 987
+   "n_chars": 5386,
+   "n_words": 998,
+   "label_start": "6",
+   "label_end": "8"
   },
   {
    "id": "sec-006-geometric-markov-traces",
@@ -177,15 +343,24 @@
    "level": 1,
    "page_start": 8,
    "page_end": 10,
-   "n_chars": 7509,
-   "n_words": 1212
+   "n_chars": 7513,
+   "n_words": 1216,
+   "label_start": "8",
+   "label_end": "10"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 11,
-  "sections": 7,
-  "chars_total": 29544
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 29872
  }
 }

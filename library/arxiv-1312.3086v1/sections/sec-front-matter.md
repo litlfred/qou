@@ -30,4 +30,3 @@ Successful transmission and storage of entanglement are heralded by ionization e
 rather than by photon detection signal used in previous proposals. We demonstrate how the high
 charge detection eﬃciency allows for a shortened average entanglement generation time, and we
 analyze an implementation of our scheme with ensembles of Cs atoms.
-I.

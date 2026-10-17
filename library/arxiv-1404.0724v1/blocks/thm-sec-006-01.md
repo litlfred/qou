@@ -1,1 +1,1 @@
-Any oriented link can be obtained as the closure of a braid.
+There exists a an isomorphism of Λ-modules µ : Λn →˜H such that the following

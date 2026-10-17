@@ -1,0 +1,172 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "hal-01215114",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "c70f8b04a5542a1f7ca757bcc435276bab7992822a8fad87de813dd54d1739a1",
+  "file": "hal-01215114.pdf"
+ },
+ "provenance": {
+  "title": "FPSAC 2011, Reykjav\u00edk, Iceland",
+  "authors": "DMTCS proc. AO, 2011, 317\u2013328",
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 11,
+  "by_kind": {
+   "proposition": 1,
+   "theorem": 4,
+   "remark": 2,
+   "lemma": 4
+  },
+  "formalization_candidates": 9
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "1",
+   "name": null,
+   "statement": "Fix \u03b1 > 0. There exists a (unique) family of functions J(\u03b1)",
+   "section_file": "sections/sec-003-jack-symmetric-functions-and-zonal-polynomials.md",
+   "section_title": "Jack symmetric functions and zonal polynomials",
+   "pages": "3-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3",
+   "name": null,
+   "statement": "Let \u03bb be a partition and T be a bijective \ufb01lling of 2\u03bb. One has:",
+   "section_file": "sections/sec-006-zonal-polynomials-in-terms-of-pair-partition.md",
+   "section_title": "Zonal polynomials in terms of pair-partition",
+   "pages": "4-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "This theorem is an analogue of a known result on Schur symmetric functions:",
+   "section_file": "sections/sec-006-zonal-polynomials-in-terms-of-pair-partition.md",
+   "section_title": "Zonal polynomials in terms of pair-partition",
+   "pages": "4-5",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4",
+   "name": null,
+   "statement": "Let \u03bb and \u00b5 be two partitions of the same integer n. If \u03bb does not dominate \u00b5 then for any",
+   "section_file": "sections/sec-011-combinatorial-lemmas.md",
+   "section_title": "Combinatorial lemmas",
+   "pages": "6-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "5",
+   "name": null,
+   "statement": "The couples (S1, S2) such that \u00b5(L(S1, S2)) = \u03bd form exactly one orbit under the diagonal",
+   "section_file": "sections/sec-011-combinatorial-lemmas.md",
+   "section_title": "Combinatorial lemmas",
+   "pages": "6-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "6",
+   "name": null,
+   "statement": "Let \u03bb be a partition of n, let T be a bijective \ufb01lling of 2\u03bb and let S1 be a pair-partition",
+   "section_file": "sections/sec-011-combinatorial-lemmas.md",
+   "section_title": "Combinatorial lemmas",
+   "pages": "6-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "7",
+   "name": null,
+   "statement": "Let S1, S2 be two pair partitions of {1, . . . , 2n}. Then",
+   "section_file": "sections/sec-012-triangularity.md",
+   "section_title": "Triangularity",
+   "pages": "7-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "The inequality L(S1, S2) \u2264\u03a0 is equivalent to the following local condition: the partners of any",
+   "section_file": "sections/sec-012-triangularity.md",
+   "section_title": "Triangularity",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "9",
+   "name": null,
+   "statement": "Let \u03bd be a partition of the integer k and S1, S2 be two \ufb01xed pair-partitions of the set [2k]",
+   "section_file": "sections/sec-016-via-numbers-of-embeddings.md",
+   "section_title": "Via numbers of embeddings",
+   "pages": "9-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "10",
+   "name": null,
+   "statement": "Let \u03bd be a partition of the integer k and S1, S2 be two \ufb01xed pair-partitions of [2k] such that",
+   "section_file": "sections/sec-016-via-numbers-of-embeddings.md",
+   "section_title": "Via numbers of embeddings",
+   "pages": "9-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "11",
+   "name": null,
+   "statement": "Let \u03bd be a partition of an integer k and S1, S2 be two \ufb01xed pair-partitions of [2k] such that",
+   "section_file": "sections/sec-017-in-terms-of-free-cumulants.md",
+   "section_title": "In terms of free cumulants",
+   "pages": "10-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

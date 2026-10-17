@@ -1,0 +1,1 @@
+~\ref{generichomology} is proved in Section~\ref{proofsection}. The idea is that a generic tuple canonically determines a $(G,N)$-cocycle on a truncated simplex. Hence, $C_*^{\gen}(G/N)\otimes_{\Z[G]}\Z$ is isomorphic to a subcomplex of $\overline{B}_3(G,N)$, and the representation~\eqref{cosetrep} of the fundamental class is then an immediate consequence of~\eqref{fundclassrep}.

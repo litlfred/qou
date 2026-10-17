@@ -9,6 +9,7 @@ source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
 ---
+The Poisson summation formula
 In this section, we review the Poisson summation formula and a proposition obtained
 from it.
 Recall (see e.g. [23]) that the Poisson summation formula states that
@@ -387,4 +388,3 @@ to the case where the holomorphic function ψ(t, s, u) depends on N, if ψ(t, s,
 converges to ψ0(t, s, u) as N →∞, and ψ0(t, s, u) satisﬁes the assumption of the proposi-
 tion, and |Ψ(t, s, u)| is bounded by a constant which is independent of N. We note that
 we can choose ε of the proposition independently of N in this case.
-2.5

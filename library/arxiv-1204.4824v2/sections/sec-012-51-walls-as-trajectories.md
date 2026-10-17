@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1204.4824v2
-doc_title: "Prepared for submission to JHEP Spectral networks"
+doc_title: "Spectral networks"
 section_id: sec-012-51-walls-as-trajectories
 section_title: "Walls as trajectories"
 section_number: 5.1
 pages: 23-23
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
-doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.92
+latex_coverage_ratio: 0.979
 ---
 Suppose the $\cS$-wall $p$
 supports the charge $\bar a \in \Gamma_{ij}$ (by which we mean more precisely that

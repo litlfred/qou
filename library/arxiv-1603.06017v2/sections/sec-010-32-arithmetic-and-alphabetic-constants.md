@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1603.06017v2
-doc_title: "Automatic Theorem Proving in Walnut Hamoon Mousavi"
+doc_title: "Automatic Theorem Proving in Walnut"
 section_id: sec-010-32-arithmetic-and-alphabetic-constants
 section_title: "Arithmetic and Alphabetic Constants"
 section_number: 3.2
 pages: 9-9
 source_pdf: 1603.06017v2.pdf
 source_sha256: 3ff091e40573a5dd
-doc_brief: "Automatic Theorem Proving in Walnut Hamoon Mousavi — 34 sections: Introduction; Basics; Words and Automata"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.97
 latex_coverage_ratio: 1.0

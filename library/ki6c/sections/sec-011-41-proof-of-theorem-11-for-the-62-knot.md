@@ -9,6 +9,7 @@ source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
 ---
+Proof of Theorem 1.1 for the 62 knot
 In this section, we show a proof of Theorem 1.1 for the 62 knot.
 26
 The 62 knot is the closure of the following tangle.
@@ -413,4 +414,3 @@ det(−H0)
 where we put z0 = e2π√−1 u0, and H0 is the Hesse matrix of ˆV at (t0, s0, u0) whose concrete
 presentation is given in (64); see also [22] for a relation of this value and the twisted
 Reidemeister torsion. Hence, we obtain the theorem for the 62 knot.
-4.2

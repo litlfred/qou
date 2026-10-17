@@ -1,0 +1,111 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1303.0720v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "389ab465e81a06674df137c14c10ae3f34ab0626b329424eac052cf8a8e9f185",
+  "file": "1303.0720v2.pdf"
+ },
+ "provenance": {
+  "title": "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS",
+  "authors": "ANTTI HAIMI AND HAAKAN HEDENMALM",
+  "arxiv": {
+   "id": "1303.0720",
+   "version": "2",
+   "primary_class": "math.CV",
+   "stamp_date": "9 Mar 2013"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "proposition": 3,
+   "theorem": 2,
+   "remark": 1
+  },
+  "formalization_candidates": 5
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "4.2",
+   "name": null,
+   "statement": "If u(z) is bianalytic and \u03c8 is subharmonic in D, then",
+   "section_file": "sections/sec-013-43-applications-of-the-basic-estimate.md",
+   "section_title": "Applications of the basic estimate",
+   "pages": "8-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "4.3",
+   "name": null,
+   "statement": "Suppose u is bianalytic and that \u03c8 is subharmonic in D. If \u03c8 \u22640 in D, then",
+   "section_file": "sections/sec-014-5-asymptotic-expansion-of-polyanalytic-bergman-k.md",
+   "section_title": "Asymptotic expansion of polyanalytic Bergman kernels",
+   "pages": "9-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5.1",
+   "name": null,
+   "statement": "(q = 2) Let \u2126be a domain in C, and suppose Q : \u2126\u2192R is C4-smooth with \u2206Q > 0",
+   "section_file": "sections/sec-021-61-assumptions-on-the-potential.md",
+   "section_title": "Assumptions on the potential",
+   "pages": "12-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "[\\[binegliprop\\]](#binegliprop){reference-type=\"ref\" reference=\"binegliprop\"} is stated for bi-negligible amplitudes (i.e., where $q=2$). However, it is rather clear how to formulate the corresponding result for general $q$. In (i), we get $q$ operators ${\\mathbf S},\\ldots,{\\mathbf S}^{(q-1)}$ instead of ${\\mathbf S},{\\mathbf S}'$, and in (ii), we get a product of $q$ copies of the operator $\\boldsymbol{\\nabla}$ interlaced with $q-1$ copies of the multiplication operator ${\\mathbf M}_{\\bar\\partial_w\\theta}$.",
+   "section_file": "sections/sec-033-75-the-characterization-of-bi-negligible-amplitu.md",
+   "section_title": "The characterization of bi-negligible amplitudes",
+   "pages": "23-24",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "9.3",
+   "name": null,
+   "statement": "Let \u2126be a domain in C and suppose Q : \u2126\u2192R is C4-smooth with both \u2206Q > 0 on \u2126",
+   "section_file": "sections/sec-046-97-the-pointwise-distance-to-the-weighted-bergma.md",
+   "section_title": "The pointwise distance to the weighted Bergman kernel",
+   "pages": "37-37",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "9.4",
+   "name": null,
+   "statement": "We have already obtained K\u27e8k\u27e9",
+   "section_file": "sections/sec-046-97-the-pointwise-distance-to-the-weighted-bergma.md",
+   "section_title": "The pointwise distance to the weighted Bergman kernel",
+   "pages": "37-37",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

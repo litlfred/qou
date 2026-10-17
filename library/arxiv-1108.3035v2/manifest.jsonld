@@ -9,13 +9,21 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1108.3035v2",
+  "title": "Random Matrix Theory for the Hermitian Wilson Dirac Operator and the chGUE – GUE Transition",
   "contains": [
+    "library/arxiv-1108.3035v2/sections/sec-front-matter",
     "library/arxiv-1108.3035v2/sections/sec-000",
     "library/arxiv-1108.3035v2/sections/sec-001",
     "library/arxiv-1108.3035v2/sections/sec-002",
     "library/arxiv-1108.3035v2/sections/sec-003",
-    "library/arxiv-1108.3035v2/sections/sec-004"
+    "library/arxiv-1108.3035v2/sections/sec-004",
+    "library/arxiv-1108.3035v2/sections/sec-005",
+    "library/arxiv-1108.3035v2/sections/sec-006",
+    "library/arxiv-1108.3035v2/sections/sec-007",
+    "library/arxiv-1108.3035v2/sections/sec-008",
+    "library/arxiv-1108.3035v2/sections/sec-009",
+    "library/arxiv-1108.3035v2/sections/sec-010",
+    "library/arxiv-1108.3035v2/sections/sec-011"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -28,7 +36,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1108.3035v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1108.3035v2.pdf",
     "source_sha256": "935bf1bd3e13821bced6a5f488f30e5d70554a99d189637bc3755aee8eb0f9ce",
     "pages": 27,
@@ -39,8 +49,8 @@
       "stamp_date": "2 Nov 2011"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,1 +1,1 @@
-Let B be a regular noetherian separated scheme of ﬁnite Krull dimension with 2 invertible
+Let πX : X →B be a smooth projective morphism with B a regular separated scheme of

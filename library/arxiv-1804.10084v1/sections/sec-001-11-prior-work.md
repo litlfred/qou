@@ -7,15 +7,16 @@ section_number: 1.1
 pages: 1-1
 source_pdf: 1804.10084v1.pdf
 source_sha256: 716da9708f06d930
-doc_brief: "Concentration of Lipschitz Functions of Negatively Dependent Variables — We explore the question whether Lipschitz functions of random var iables under various forms of negative correlation satisfy"
+toc_source: outline
 ---
-Negatively dependent random variables arise naturally in scenarios m otivated by statistical physics
-as well as computer science. Newman studied the asymptotic behav ior of ensembles of random
-variables under a certain notion of negative dependence, and prov ed a central limit theorem in this
-setting [10]. Panconesi and Srinivasan [11] proved that random var iables under the condition of
-negative cylinder dependence (see Section 2 for deﬁnitions) satisfy Chernoﬀ-Hoeﬀding concent ration
+Prior work
+Negatively dependent random variables arise naturally in scenarios motivated by statistical physics
+as well as computer science. Newman studied the asymptotic behavior of ensembles of random
+variables under a certain notion of negative dependence, and proved a central limit theorem in this
+setting [10]. Panconesi and Srinivasan [11] proved that random variables under the condition of
+negative cylinder dependence (see Section 2 for deﬁnitions) satisfy Chernoﬀ-Hoeﬀding concentration
 bounds, just like independent random variables. It was shown that negative cylinder dependence is
-exhibited by random variables arising in various randomized rounding s cenarios which led to several
-applications [11, 7, 1, 3]. We note that from the point of view of this pa per, these concentration
+exhibited by random variables arising in various randomized rounding scenarios which led to several
+applications [11, 7, 1, 3]. We note that from the point of view of this paper, these concentration
 results are somewhat special as they only apply to linear functions of negatively dependent variables.
-The notion of negative dependence was studied systematically by Pe mantle [12] who proposed
+The notion of negative dependence was studied systematically by Pemantle [12] who proposed

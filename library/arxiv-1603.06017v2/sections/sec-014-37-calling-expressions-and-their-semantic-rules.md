@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1603.06017v2
-doc_title: "Automatic Theorem Proving in Walnut Hamoon Mousavi"
+doc_title: "Automatic Theorem Proving in Walnut"
 section_id: sec-014-37-calling-expressions-and-their-semantic-rules
 section_title: "Calling Expressions and Their Semantic Rules"
 section_number: 3.7
 pages: 11-11
 source_pdf: 1603.06017v2.pdf
 source_sha256: 3ff091e40573a5dd
-doc_brief: "Automatic Theorem Proving in Walnut Hamoon Mousavi — 34 sections: Introduction; Basics; Words and Automata"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.905
-latex_coverage_ratio: 0.974
+latex_coverage_ratio: 0.925
 ---
 \label{sec:calling expressions}
 For an automaton $M$ with $n$ inputs a calling expression is

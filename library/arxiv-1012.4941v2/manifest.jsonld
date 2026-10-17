@@ -11,6 +11,7 @@
   ],
   "title": "arxiv-1012.4941v2",
   "contains": [
+    "library/arxiv-1012.4941v2/sections/sec-front-matter",
     "library/arxiv-1012.4941v2/sections/sec-000",
     "library/arxiv-1012.4941v2/sections/sec-001",
     "library/arxiv-1012.4941v2/sections/sec-002",
@@ -45,8 +46,8 @@
       "stamp_date": "13 Jan 2011"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

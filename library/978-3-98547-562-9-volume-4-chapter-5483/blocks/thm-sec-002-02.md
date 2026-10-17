@@ -1,1 +1,1 @@
-Suppose that G acts freely away from 02 Cn and
+Suppose that G acts freely away from 0 2 Cn and

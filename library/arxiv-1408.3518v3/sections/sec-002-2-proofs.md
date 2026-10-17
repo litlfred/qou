@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1408.3518v3
-doc_title: "On Augmentation Algorithms for Linear and Integer-Linear Programming:"
+doc_title: "On Augmentation Algorithms for Linear and Integer-Linear Programming: From Edmonds-Karp to Bland and Beyond"
 section_id: sec-002-2-proofs
 section_title: "Proofs"
 section_number: 2
 pages: 8-13
 source_pdf: 1408.3518v3.pdf
 source_sha256: cf18585b886587c7
-doc_brief: "On Augmentation Algorithms for Linear and Integer-Linear Programming: — 4 sections: Introduction.; Our Contributions; Proofs"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.953
+latex_coverage_ratio: 0.991
 ---
 We present the proofs to the above results in separate subsections. We will use the following  lemma (a slight variation from Theorem 3.1 in \cite{Ahuja+Magnanti+Orlin}) which  establishes the bounds we claim once we can guarantee sufficient improvement at each iteration:
 \begin{lemma}

@@ -9,6 +9,7 @@ source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
 ---
+Proof of Theorem 1.1 for the 63 knot
 In this section, we show a proof of Theorem 1.1 for the 63 knot.
 44
 The 63 knot is the closure of the following tangle.
@@ -388,4 +389,3 @@ where H0 is the Hesse matrix of ˆV at (t0, s0, u0) whose concrete presentation 
 (88); see also [22] for a relation of this value and the twisted Reidemeister torsion. Hence,
 we obtain the theorem for the 63 knot.
 47
-5.2

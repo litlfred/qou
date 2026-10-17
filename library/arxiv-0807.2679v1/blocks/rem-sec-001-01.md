@@ -1,0 +1,1 @@
+ably this formula is also valid for $p=1$. In this case the non-negative $w$ run through all partitions and both $w$ and $-(w+1)$ contribute to the same term $J_{M_1,\hdots,M_{i-1},|2w+1|,\hdots,M_c}(L)$, thus producing the coefficients found in [\[P1geval\]](#P1geval){reference-type="eqref" reference="P1geval"}.

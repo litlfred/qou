@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-hep-ph-0003017v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "1660907865346bdf43c71b3529e742cb4d7031983c99012027040e80c7bef132",
+  "file": "0003017v2.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:hep-ph/0003017v2 26 Jun 2000",
+  "authors": "J.J.M. Verbaarschot",
+  "arxiv": {
+   "id": "hep-ph/0003017",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "26 Jun 2000"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

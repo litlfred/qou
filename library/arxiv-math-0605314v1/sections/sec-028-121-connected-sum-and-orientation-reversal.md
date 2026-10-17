@@ -9,8 +9,8 @@ source_pdf: 0605314v1.pdf
 source_sha256: 5fb8b89b432401ea
 toc_source: inferred
 text_source: latex
-latex_prose_ratio: 0.97
-latex_coverage_ratio: 0.964
+latex_prose_ratio: 0.977
+latex_coverage_ratio: 0.95
 ---
 []{#sec:conn-sum-orient label="sec:conn-sum-orient"}
 

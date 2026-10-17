@@ -8,22 +8,22 @@
   "file": "0310280v4.pdf"
  },
  "provenance": {
-  "title": "Stabilization in the braid groups II: Transversal simplicity of knots JOAN S BIRMAN WILLIAM W MENASCO The main result of this paper is a negative answer to the question: are all transversal",
-  "authors": null,
+  "title": "Stabilization in the braid groups II: Transversal simplicity of knots Introduction and description of results",
+  "authors": "JOAN S BIRMAN",
   "arxiv": null,
   "doi": "10.2140/gt.2006.10.1425"
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 13,
+  "candidates": 15,
   "by_kind": {
-   "theorem": 5,
+   "theorem": 6,
    "example": 1,
-   "lemma": 3,
+   "lemma": 4,
    "proposition": 3,
    "remark": 1
   },
-  "formalization_candidates": 11
+  "formalization_candidates": 13
  },
  "candidates": [
   {
@@ -66,11 +66,37 @@
    "route_to": null
   },
   {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": "Markov\u2019s Theorem Without Stabilization [6]",
+   "statement": "Let X be an oriented knot",
+   "section_file": "sections/sec-002-21-block-strand-diagrams-templates-and-the-mtws.md",
+   "section_title": "Block-strand diagrams, templates and the MTWS",
+   "pages": "4-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
    "kind": "lemma",
    "source_kind": "lemma",
    "number": "1",
    "name": "The Bennequin Trick",
-   "statement": "Let \u0393\u2282 R3 be an oriented differentiable graph that",
+   "statement": "Let \u0393 \u2282R3 be an oriented differentiable graph that",
+   "section_file": "sections/sec-003-22-the-construction-of-transversal-clasp-annuli.md",
+   "section_title": "The construction of transversal clasp annuli",
+   "pages": "8-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2",
+   "name": "Eliashberg\u2019s isotopy extension lemma [8]",
+   "statement": "Let \u03d5t : X \u2192R3, t \u2208[0, 1]",
    "section_file": "sections/sec-003-22-the-construction-of-transversal-clasp-annuli.md",
    "section_title": "The construction of transversal clasp annuli",
    "pages": "8-13",
@@ -96,7 +122,7 @@
    "source_kind": "lemma",
    "number": "3",
    "name": null,
-   "statement": "Let T\u2206 be a transversal disc between the braids X and X\u2032. Then, when X",
+   "statement": "Let T\u2206be a transversal disc between the braids X and X\u2032. Then, when X",
    "section_file": "sections/sec-004-23-braid-foliations-on-transversal-clasp-annuli.md",
    "section_title": "Braid foliations on transversal clasp annuli",
    "pages": "13-20",
@@ -109,7 +135,7 @@
    "source_kind": "proposition",
    "number": "2",
    "name": null,
-   "statement": "below. We say that a clasp arc\u03b3\u2282 TAis short for X+ (resp. X\u2212) if there",
+   "statement": "below. We say that a clasp arc \u03b3 \u2282TA is short for X+ (resp. X\u2212) if there",
    "section_file": "sections/sec-004-23-braid-foliations-on-transversal-clasp-annuli.md",
    "section_title": "Braid foliations on transversal clasp annuli",
    "pages": "13-20",
@@ -122,7 +148,7 @@
    "source_kind": "proposition",
    "number": "2",
    "name": null,
-   "statement": "LetTX be a transversal oriented knot type and (TX+, TX\u2212) be a",
+   "statement": "Let T X be a transversal oriented knot type and (TX+, TX\u2212) be a",
    "section_file": "sections/sec-004-23-braid-foliations-on-transversal-clasp-annuli.md",
    "section_title": "Braid foliations on transversal clasp annuli",
    "pages": "13-20",
@@ -135,7 +161,7 @@
    "source_kind": "lemma",
    "number": "3",
    "name": null,
-   "statement": "to T\u2206 we see that, since one boundary arc of \u2202T\u2206 is on a braid of minimal",
+   "statement": "to T\u2206we see that, since one boundary arc of \u2202T\u2206is on a braid of minimal",
    "section_file": "sections/sec-004-23-braid-foliations-on-transversal-clasp-annuli.md",
    "section_title": "Braid foliations on transversal clasp annuli",
    "pages": "13-20",
@@ -148,7 +174,7 @@
    "source_kind": "theorem",
    "number": "2",
    "name": "A weak transversal MTWS",
-   "statement": "LetTX be a transversal oriented knot",
+   "statement": "Let T X be a transversal oriented knot",
    "section_file": "sections/sec-005-24-a-weak-transversal-mtws.md",
    "section_title": "A weak transversal MTWS",
    "pages": "20-24",

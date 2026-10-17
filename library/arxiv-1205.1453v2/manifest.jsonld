@@ -9,12 +9,14 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1205.1453v2",
+  "title": "An asymptotic formula of the divergent bilateral basic hypergeometric series",
   "contains": [
+    "library/arxiv-1205.1453v2/sections/sec-front-matter",
     "library/arxiv-1205.1453v2/sections/sec-000",
     "library/arxiv-1205.1453v2/sections/sec-001",
     "library/arxiv-1205.1453v2/sections/sec-002",
-    "library/arxiv-1205.1453v2/sections/sec-003"
+    "library/arxiv-1205.1453v2/sections/sec-003",
+    "library/arxiv-1205.1453v2/sections/sec-004"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -27,7 +29,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1205.1453v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1205.1453v2.pdf",
     "source_sha256": "29d1b1fd9466a3d885fab05470c70d7dd07e155afafd5e0e9214165b6a603f4d",
     "pages": 12,
@@ -38,8 +42,8 @@
       "stamp_date": "9 May 2012"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

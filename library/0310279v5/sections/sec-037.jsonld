@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/0310279v5/sections/sec-037",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The set T(m) is finite",
+  "pageStart": 109,
+  "pageEnd": 123,
+  "contains": [
+    "library/0310279v5/blocks/prose-sec-037",
+    "library/0310279v5/blocks/lem-sec-037-01",
+    "library/0310279v5/blocks/lem-sec-037-02",
+    "library/0310279v5/blocks/rem-sec-037-03",
+    "library/0310279v5/blocks/prop-sec-037-04",
+    "library/0310279v5/blocks/prop-sec-037-05",
+    "library/0310279v5/blocks/rem-sec-037-06",
+    "library/0310279v5/blocks/rem-sec-037-07",
+    "library/0310279v5/blocks/prop-sec-037-08",
+    "library/0310279v5/blocks/prop-sec-037-09"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0310279v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0310279v5/manifest.jsonld",
+  "provenance": "ingested"
+}

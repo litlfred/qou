@@ -1,1 +1,1 @@
-LetM be a smooth, connected, compact manifold, possibly
+Let M be a smooth, connected, compact manifold, possibly

@@ -1,1 +1,1 @@
-The colored Jones function JL is q –holonomic.
+The colored Jones function JL is q–holonomic.
