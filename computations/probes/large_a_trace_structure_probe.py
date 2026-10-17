@@ -463,7 +463,7 @@ def mode_extend(args):
                            "a greedy low-cut order, mpmath; validated 63/63 against the two-row "
                            "tower witness for A <= 16.",
                            "producer": "computations/probes/large_a_trace_structure_probe.py",
-                           "q0": Q0_STR, "z": "q^3/(q^2+1)", "dps": args.dps, "rows": rows},
+                           "q0": Q0_STR, "q0_anchor": "proton", "z": "q^3/(q^2+1)", "dps": args.dps, "rows": rows},
                           open(args.out, "w"), indent=1)
 
 
