@@ -33,7 +33,7 @@ is **malformed**: no pair-indexed object exists in either source.
 
 ### Verified against the primary source, not taken on a prior agent's word
 
-`library/arxiv-0808.1533v1/sections/sec-001-energy-bound.md:203-216` (Komendarczyk,
+`library/arxiv-0808.1533v1/sections/sec-002-energy-bound.md:203-216` (Komendarczyk,
 arXiv:0808.1533v1, p. 26) states the Freedman–He link bound verbatim as
 
     E_{3/2}(X) >= (pi/16)^{1/4} ( sum_{k=1}^{n} ac(L_k, L)|Flux(X_k)| ) * min_{1<=k<=n}{|Flux(X_k)|}   (43)

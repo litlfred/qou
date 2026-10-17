@@ -116,11 +116,11 @@ Artifact: `build/benchmarks/formula-before.json` (micro-averaged across all form
    - Title: "The Skyrme-Faddeev model and low charge solitons"
    - Prose ratio: 0.996 | Coverage ratio: 1.000 | Converter: `pandoc`
    - Verification: Faddeev energy functional integral, topological charge integral $Q = \frac{1}{4\pi^2}\int_{S^3} F \wedge A$, Ward's conjectured energy bound $E \ge c Q^{3/4}$, bold vector fields $\mbox{\boldmath $\phi$}$ all cleanly formatted.
-2. `library/arxiv-math-0305275v1/sections/sec-001-the-straightening.md`
+2. `library/arxiv-math-0305275v1/sections/sec-002-the-straightening.md`
    - Title: "The straightening"
    - Prose ratio: 0.985 | Coverage ratio: 0.995 | Converter: `pandoc`
    - Verification: Moduli in $\mathbb{H}^3$, homeomorphism $\eta \circ \varphi \circ \beta = \psi$, straightening map ${\rm Str}(D_\rho)$, definitions and lemmas rendered in Pandoc Markdown.
-3. `library/arxiv-math-ph-0012035v3/sections/sec-038-4-summary.md`
+3. `library/arxiv-math-ph-0012035v3/sections/sec-020-4-summary.md`
    - Title: "Summary"
    - Prose ratio: 1.000 | Coverage ratio: 0.987 | Converter: `pandoc`
    - Verification: Clean prose overlay, author acknowledgments, Polish diacritics (P. Kosiński, University of Łódź) preserved.

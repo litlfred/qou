@@ -12,7 +12,7 @@ against the source. It is checked here, and it is **false**.
 ═══ THE SOURCE, QUOTED ═══
 
 The datum is GGM `arXiv:2012.00062v3` eq (98), held in this repo at
-`library/arxiv-2012.00062v3/sections/sec-007-2-borel-resummation-and-stokes-
+`library/arxiv-2012.00062v3/sections/sec-008-2-borel-resummation-and-stokes-automorphisms
 automorphisms.md`. Immediately under eq (96)/(97) the paper says, verbatim:
 
     "where the non-vanishing off-diagonal entry of S_{σi,σj} is the Stokes

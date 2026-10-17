@@ -167,7 +167,7 @@ The library ingest surfaced **Ito, *Braid ordering and the geometry of closed br
 (arXiv:0805.1447v2)**, now at [`library/arxiv-0805.1447v2/`](../library/arxiv-0805.1447v2/).
 It reframes the result above.
 
-**Verified in the ingested text** ([`sec-006-5-nielsen-thurston-classification…`](../library/arxiv-0805.1447v2/sections/sec-006-5-nielsen-thurston-classification-and-the-geomet.md)):
+**Verified in the ingested text** ([`sec-006-5-nielsen-thurston-classification…`](../library/arxiv-0805.1447v2/sections/sec-008-5-nielsen-thurston-classification-and-the-geomet.md)):
 every braid is exactly one of **periodic**, **reducible**, or **pseudo-Anosov**, and
 
 > *"F admits a complete hyperbolic structure **if and only if** φ is pseudo-Anosov"*, while

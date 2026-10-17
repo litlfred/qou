@@ -21,7 +21,7 @@ unconstrained (pair is an unlink, inf = 0, route dead) or constrained to the
 complement of the third component (Brunnian-ness holds it up).
 
 There is **no pair minimisation**. Verified against the primary source
-`library/arxiv-0808.1533v1/sections/sec-001-energy-bound.md:203-216` (Komendarczyk
+`library/arxiv-0808.1533v1/sections/sec-002-energy-bound.md:203-216` (Komendarczyk
 eq. 43, p. 26): the invariant in the link bound is `ac(L_k, L)` — one component
 against the whole link, summed over the `n` components. No `ac(L_i, L_j)` occurs in
 Komendarczyk or Khesin. Khesin's Rmk 3.5 gloss about "two given space curves" is the

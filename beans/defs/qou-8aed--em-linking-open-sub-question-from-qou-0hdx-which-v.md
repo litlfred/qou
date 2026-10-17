@@ -15,7 +15,7 @@ proton-pair energy — the whole nucleus (`Vol ~ A`, 6.10% scatter) or the proto
 subsystem (`Vol ~ Z`, 5.17%).
 
 **There is no `Vol^{-1/3}` in the Freedman–He link bound.** Verified against the
-primary source `library/arxiv-0808.1533v1/sections/sec-001-energy-bound.md:203-216`
+primary source `library/arxiv-0808.1533v1/sections/sec-002-energy-bound.md:203-216`
 (Komendarczyk eq. 43, p. 26): the prefactor is `(pi/16)^{1/4}`, a pure constant, with
 no volume factor of any kind. The `Vol^{-1/3}` is **Khesin Thm 3.6**, the bound for a
 *single knotted torus*, misapplied to a multi-component configuration — the

@@ -18,7 +18,7 @@ with the conclusion written nowhere.
 Option (a) *(unconstrained, pair is an unlink, inf = 0, route DEAD)* and option (b)
 *(constrained to the complement of the third component, so `ACN = 1.643` is a genuine
 upper bound on a positive quantity)* both presuppose a **pair** minimisation. Verified
-against `library/arxiv-0808.1533v1/sections/sec-001-energy-bound.md:203-216`
+against `library/arxiv-0808.1533v1/sections/sec-002-energy-bound.md:203-216`
 (Komendarczyk eq. 43): the object in the Freedman–He link bound is `ac(L_k, L)`,
 per-component against the whole link, summed over components. There is no pair index
 in either source.

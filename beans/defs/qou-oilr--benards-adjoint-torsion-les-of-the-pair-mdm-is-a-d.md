@@ -86,7 +86,7 @@ independent of this bean.
 ## 2026-08-24 — the meeting point with qou-m3ad, and why it may be nothing
 
 Located the actual statement rather than inferring it from section titles.
-`library/2018sorus020/sections/sec-038-212-computation-of-the-twisted-cohomology.md`,
+`library/2018sorus020/sections/sec-028-212-computation-of-the-twisted-cohomology.md`,
 **Proposition 2.1.5**, quoted from the text:
 
 > Let rho : pi_1(M) -> SL_2(k(X-bar)) be the tautological representation, then
