@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1610.09640v4/blocks/prose-sec-099",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "NC MGM Equivalence",
-  "pageStart": 377,
-  "pageEnd": 385,
-  "text": "../sections/sec-099-166-nc-mgm-equivalence.md",
+  "title": "Tilting Bimodule Complexes over Rings",
+  "pageStart": 314,
+  "pageEnd": 323,
+  "text": "../sections/sec-099-145-tilting-bimodule-complexes-over-rings.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
   "provenance": "ingested"

@@ -1,1 +1,1 @@
-LetA be a commutative ring, let a be an ideal in A, and let M be
+\ref{thm:168} is similar to \cite[Lemma 051C]{SP}. The latter says that

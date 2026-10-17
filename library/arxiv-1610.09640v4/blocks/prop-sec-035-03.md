@@ -1,1 +1,1 @@
-For every integerk, the translation isomorphism of the DG
+Let M ∈C(A, M) and i ∈Z. There is equality dTi(M) =

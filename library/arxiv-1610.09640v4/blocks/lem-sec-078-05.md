@@ -1,1 +1,1 @@
-Let R be a dualizing complex overA, with associated duality
+Consider the free DG K-module V := L

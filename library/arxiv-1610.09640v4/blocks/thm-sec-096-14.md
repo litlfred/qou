@@ -1,1 +1,1 @@
-Under Setup16.3.1, the torsion functor
+Let A be a DG ring, let E ⊆D(A) be a

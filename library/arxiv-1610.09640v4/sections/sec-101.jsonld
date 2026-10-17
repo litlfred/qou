@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-101",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Categories of Algebraically Graded Modules",
+  "pageStart": 323,
+  "pageEnd": 331,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-101",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-101-01",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-101-02",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-101-03",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-101-04",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-101-05",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-101-06",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-101-07",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-101-08",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-101-09"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,1 +1,1 @@
-is [76, Proposition 7.3.2]. However their notation is diﬀerent:
+Let (K, T) be a triangulated category, let S be a denominator set

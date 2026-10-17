@@ -53,7 +53,10 @@
     "library/arxiv-1702.00039v1/sections/sec-039",
     "library/arxiv-1702.00039v1/sections/sec-040",
     "library/arxiv-1702.00039v1/sections/sec-041",
-    "library/arxiv-1702.00039v1/sections/sec-042"
+    "library/arxiv-1702.00039v1/sections/sec-042",
+    "library/arxiv-1702.00039v1/sections/sec-043",
+    "library/arxiv-1702.00039v1/sections/sec-044",
+    "library/arxiv-1702.00039v1/sections/sec-045"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -77,8 +80,8 @@
       "stamp_date": "31 Jan 2017"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

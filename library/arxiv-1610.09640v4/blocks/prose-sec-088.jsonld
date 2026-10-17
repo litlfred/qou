@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1610.09640v4/blocks/prose-sec-088",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Algebraically Graded Noncommutative Rings",
-  "pageStart": 323,
-  "pageEnd": 323,
-  "text": "../sections/sec-088-15-algebraically-graded-noncommutative-rings.md",
+  "title": "Hom-Tensor Formulas for Weakly Commutative DG Rings",
+  "pageStart": 248,
+  "pageEnd": 253,
+  "text": "../sections/sec-088-1210-hom-tensor-formulas-for-weakly-commutative.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
   "provenance": "ingested"

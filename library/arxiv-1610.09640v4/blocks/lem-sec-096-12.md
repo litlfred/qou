@@ -1,1 +1,1 @@
-Let M ∈M(A, gr) be an m-torsion module, and let I be an
+Let A and B be DG rings, let F, G : D(A) →D(B) be trian-

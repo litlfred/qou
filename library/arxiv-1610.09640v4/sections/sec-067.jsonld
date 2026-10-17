@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-067",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Derived Bifunctors",
+  "pageStart": 171,
+  "pageEnd": 175,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-067",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-067-01",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-067-02",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-067-03",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-067-04",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-067-05",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-067-06"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

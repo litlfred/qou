@@ -1,1 +1,1 @@
-If A is a left noetherian connected graded ring, thenA is a
+If K is a residue complex over A, then it is a minimal complex

@@ -1,1 +1,1 @@
-are satisﬁed. Condition (b) is simply the assumption thatK2 has
+Let A be a DG ring, let M be an abelian category, and let K be a

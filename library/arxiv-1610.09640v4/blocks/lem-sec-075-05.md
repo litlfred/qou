@@ -1,1 +1,1 @@
-the functionF0(u) : F0(X)→A extends uniquely to a DG ring
+The degree 1 operator dTot makes the pair

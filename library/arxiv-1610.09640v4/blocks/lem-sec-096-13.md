@@ -1,1 +1,1 @@
-LetI be a graded-injectiveA-module. Then there is an isomor-
+Let A and B be DG rings, let E be a full triangulated subcategory

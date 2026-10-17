@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1712.03058v3/blocks/prose-sec-010",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Formulation of a POMP model",
+  "title": "The problem of interest",
   "pageStart": 12,
-  "pageEnd": 14,
-  "text": "../sections/sec-010-152-formulation-of-a-pomp-model.md",
+  "pageEnd": 12,
+  "text": "../sections/sec-010-151-the-problem-of-interest.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1712.03058v3/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1712.03058v3/manifest.jsonld",
   "provenance": "ingested"

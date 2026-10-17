@@ -1,1 +1,1 @@
-LetA be a noetherian ring, and letR and R′be NC dualizing
+Assume A is a left noetherian connected graded ring, and M

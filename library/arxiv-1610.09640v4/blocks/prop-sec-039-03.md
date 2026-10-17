@@ -1,1 +1,1 @@
-Let K be a triangulated category. For everyP∈K the functor
+And in the top right entries we have F(φ ◦t−1

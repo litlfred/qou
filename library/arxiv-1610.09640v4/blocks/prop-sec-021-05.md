@@ -1,1 +1,1 @@
-LetF : M→N be an additive functor between abelian cate-
+Let φ : M →N be a morphism in an

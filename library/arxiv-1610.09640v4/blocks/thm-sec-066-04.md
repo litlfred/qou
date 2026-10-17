@@ -1,1 +1,1 @@
-Let P be an object ofC(A). If P is semi-free, then it is K-
+, in each coordinate i for which ♦i = op. This gives a new DG

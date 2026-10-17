@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1610.09640v4/blocks/prose-sec-104",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Interlude: Graded Rings of Laurent Type",
-  "pageStart": 425,
-  "pageEnd": 429,
-  "text": "../sections/sec-104-183-interlude-graded-rings-of-laurent-type.md",
+  "title": "Artin-Schelter Regular Graded Rings",
+  "pageStart": 345,
+  "pageEnd": 351,
+  "text": "../sections/sec-104-154-artin-schelter-regular-graded-rings.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
   "provenance": "ingested"

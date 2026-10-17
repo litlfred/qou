@@ -1,1 +1,1 @@
-Let φ: M →N be a morphism in an
+Let M be a linear category, and N ∈M. The following condi-

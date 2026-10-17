@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1704.02352v2/blocks/prose-sec-012",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "The second main result: Central Limit Theorem",
-  "pageStart": 9,
-  "pageEnd": 13,
-  "text": "../sections/sec-012-115-the-second-main-result-central-limit-theorem.md",
+  "title": "The first main result: Law of Large Numbers",
+  "pageStart": 8,
+  "pageEnd": 9,
+  "text": "../sections/sec-012-114-the-first-main-result-law-of-large-numbers.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1704.02352v2/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1704.02352v2/manifest.jsonld",
   "provenance": "ingested"

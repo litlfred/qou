@@ -1,1 +1,1 @@
-If A is a noetherian commutative ring, a is an ideal in A, and M
+\ref{thm:280} is repeated as Theorem \ref{thm:200} in the body of the

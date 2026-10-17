@@ -1,1 +1,1 @@
-(1) A graded-freeA-moduleP is graded-projective.
+Let I be an injective A-module, with direct sum decompo-

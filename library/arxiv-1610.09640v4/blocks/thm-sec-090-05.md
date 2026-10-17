@@ -1,1 +1,1 @@
-LetA be a left noetherian nonnegative graded
+Let A be a noetherian commutative ring.

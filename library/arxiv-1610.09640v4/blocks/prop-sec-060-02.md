@@ -1,1 +1,1 @@
-A DG moduleP ∈K(A, M) is K-projective if and only if
+Let C and E be categories, and let S ⊆C be a multiplicatively

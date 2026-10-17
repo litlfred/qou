@@ -1,1 +1,1 @@
-Under the assumptions of Theorem18.1.18, the functor
+Let A, B and C be graded rings.

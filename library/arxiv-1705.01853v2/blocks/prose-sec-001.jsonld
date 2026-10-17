@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1705.01853v2/blocks/prose-sec-001",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Line Operators in the Standard Model",
-  "pageStart": 8,
-  "pageEnd": 11,
-  "text": "../sections/sec-001-3-line-operators-in-the-standard-model.md",
+  "title": "How Does the Dynamics Differ?",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "text": "../sections/sec-001-how-does-the-dynamics-differ.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1705.01853v2/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1705.01853v2/manifest.jsonld",
   "provenance": "ingested"

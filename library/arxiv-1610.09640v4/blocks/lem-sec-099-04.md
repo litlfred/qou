@@ -1,1 +1,1 @@
-Consider the functorsF andG on D(A⊗Bop, gr) from Deﬁnition
+Let A be a local ring, let M be a nonzero ﬁnitely generated right

@@ -1,0 +1,1 @@
+\ref{thm:weighted main theorem} together with Theorems \ref{thm:sequence of hemisphere}, \ref{thm:sequence of Euclidean ball}, \ref{thm:warped product model Levy family} and Corollary \ref{cor:ball model Levy family} leads us to the following:

@@ -1,1 +1,1 @@
-LetA, B, C and D be graded rings.
+If A has a dualizing complex, then it is catenary.

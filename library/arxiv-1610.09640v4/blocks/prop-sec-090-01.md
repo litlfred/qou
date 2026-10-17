@@ -1,1 +1,1 @@
-For an objectM∈M(K, gr) there is an isomorphismM∼=⨁
+Every A-module M admits an injective hull.

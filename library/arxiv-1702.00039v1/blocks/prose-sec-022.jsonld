@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1702.00039v1/blocks/prose-sec-022",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Stability of Soergel bimodules",
-  "pageStart": 22,
-  "pageEnd": 22,
-  "text": "../sections/sec-022-42-stability-of-soergel-bimodules.md",
+  "title": "Our favorite open questions about Hecke algebras",
+  "pageStart": 19,
+  "pageEnd": 20,
+  "text": "../sections/sec-022-34-our-favorite-open-questions-about-hecke-algeb.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1702.00039v1/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1702.00039v1/manifest.jsonld",
   "provenance": "ingested"

@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1702.00039v1/blocks/prose-sec-032",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "One color light leaves",
-  "pageStart": 34,
-  "pageEnd": 35,
-  "text": "../sections/sec-032-53-one-color-light-leaves.md",
+  "title": "Soergel bimodules and light leaves in ranks 1 and 2",
+  "pageStart": 29,
+  "pageEnd": 29,
+  "text": "../sections/sec-032-5-soergel-bimodules-and-light-leaves-in-ranks-1.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1702.00039v1/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1702.00039v1/manifest.jsonld",
   "provenance": "ingested"

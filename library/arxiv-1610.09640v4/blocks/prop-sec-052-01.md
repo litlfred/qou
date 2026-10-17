@@ -1,1 +1,1 @@
-If a right derived functor(RF,ηR) exists, then it is unique,
+Suppose H : K →M is a cohomological functor, where M is

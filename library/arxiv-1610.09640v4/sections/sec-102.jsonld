@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-102",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Properties of Algebraically Graded Modules",
+  "pageStart": 331,
+  "pageEnd": 338,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-102",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-102-01",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-102-02",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-102-03",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-102-04",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-102-05",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-102-06",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-102-07",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-102-08",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-102-09",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-102-10",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-102-11",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-102-12",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-102-13",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-102-14",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-102-15",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-102-16",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-102-17",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-102-18",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-102-19",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-102-20",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-102-21",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-102-22"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,1 +1,1 @@
-Let CAG n be the complete alternating group graph with n ≥ 3.
+Let CAGn be the complete alternating group graph with n ≥3.

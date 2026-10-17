@@ -1,1 +1,1 @@
-In the situation of Theorem12.7.2, assume thatA and B
+Let M be an abelian category. If I is a bounded below complex

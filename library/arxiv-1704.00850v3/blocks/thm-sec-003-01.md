@@ -1,0 +1,1 @@
+[\[basic\]](#basic){reference-type="ref" reference="basic"} is a combination of a few standard results in classical functional analysis. It is fairly well-known, but we were unable to find a complete proof in the literature. An elementary proof is given in the appendix for completeness. For a more modern version of the theorem, see [@brislawn1988kernels].

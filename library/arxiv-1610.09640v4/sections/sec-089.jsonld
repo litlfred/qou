@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-089",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Dualizing Complexes over Commutative Rings",
+  "pageStart": 253,
+  "pageEnd": 263,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-089",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-089-01",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-089-02",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-089-03",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-089-04",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-089-05",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-089-06",
+    "library/arxiv-1610.09640v4/blocks/cor-sec-089-07",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-089-08",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-089-09",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-089-10",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-089-11",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-089-12",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-089-13",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-089-14",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-089-15",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-089-16",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-089-17",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-089-18",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-089-19",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-089-20",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-089-21",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-089-22",
+    "library/arxiv-1610.09640v4/blocks/cor-sec-089-23",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-089-24",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-089-25"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

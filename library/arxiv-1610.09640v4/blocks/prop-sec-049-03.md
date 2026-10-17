@@ -1,1 +1,1 @@
-Let Kop be a full triangulated subcategory ofK(A, M)op, and
+Let S be a multiplicatively closed set in a category A, let B be

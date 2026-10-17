@@ -1,1 +1,1 @@
-The following hold in the situation of Deﬁnition17.4.19.
+Let A be a left noetherian graded ring.

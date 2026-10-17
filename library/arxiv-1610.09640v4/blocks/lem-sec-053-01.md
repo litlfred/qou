@@ -1,1 +1,1 @@
-Let (F,τ) : ( K, TK)→(L, TL) be a triangulated functor between
+Suppose φ, ψ : M →N are morphisms in Cstr(A, M) such that

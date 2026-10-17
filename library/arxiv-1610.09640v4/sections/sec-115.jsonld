@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-115",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Balanced DC: Existence",
+  "pageStart": 392,
+  "pageEnd": 402,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-115",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-115-01",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-115-02",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-115-03",
+    "library/arxiv-1610.09640v4/blocks/cor-sec-115-04",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-115-05",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-115-06",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-115-07",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-115-08",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-115-09",
+    "library/arxiv-1610.09640v4/blocks/cor-sec-115-10",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-115-11",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-115-12",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-115-13",
+    "library/arxiv-1610.09640v4/blocks/cor-sec-115-14",
+    "library/arxiv-1610.09640v4/blocks/cor-sec-115-15",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-115-16",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-115-17",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-115-18"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

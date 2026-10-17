@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1711.08944v2",
+  "title": "The second largest eigenvalues of some Cayley graphs on alternating groups ∗",
   "contains": [
+    "library/arxiv-1711.08944v2/sections/sec-front-matter",
     "library/arxiv-1711.08944v2/sections/sec-000",
     "library/arxiv-1711.08944v2/sections/sec-001"
   ],
@@ -25,7 +26,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1711.08944v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1711.08944v2.pdf",
     "source_sha256": "ad7a020e7e92b788c3344cb1910ded6fda534908c9d08c1c44096e796d737234",
     "pages": 12,

@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-087",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The Derived Tensor-Evaluation Morphism",
+  "pageStart": 245,
+  "pageEnd": 248,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-087",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-087-01",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-087-02",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-087-03",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-087-04",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-087-05",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-087-06",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-087-07",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-087-08"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

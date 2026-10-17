@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1702.00039v1/blocks/prose-sec-042",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Final calculations: examples B, C and D",
-  "pageStart": 44,
-  "pageEnd": 47,
-  "text": "../sections/sec-042-7-final-calculations-examples-b-c-and-d.md",
+  "title": "Path morphisms",
+  "pageStart": 40,
+  "pageEnd": 41,
+  "text": "../sections/sec-042-63-path-morphisms.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1702.00039v1/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1702.00039v1/manifest.jsonld",
   "provenance": "ingested"

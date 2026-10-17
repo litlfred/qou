@@ -1,1 +1,1 @@
-A DG moduleP ∈K(A, M) is K-projective iﬀ the DG module
+If U and V are equivalences, then the functor TrFun(U, V ) is an

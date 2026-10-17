@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-082",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Cohomological Dimensions of Functors and Objects",
+  "pageStart": 227,
+  "pageEnd": 231,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-082",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-082-01",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-082-02",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-082-03",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-082-04",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-082-05",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-082-06",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-082-07",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-082-08",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-082-09",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-082-10",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-082-11",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-082-12",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-082-13",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-082-14",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-082-15",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-082-16"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

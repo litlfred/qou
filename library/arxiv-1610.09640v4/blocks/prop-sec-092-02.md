@@ -1,1 +1,1 @@
-LetA be an AS regular graded ring. Then the AS dimension
+that every complex M ∈C(B) admits a K-ﬂat resolution P →

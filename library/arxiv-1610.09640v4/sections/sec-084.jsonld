@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-084",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Derived Restriction, Induction and Coinduction Functors",
+  "pageStart": 235,
+  "pageEnd": 238,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-084",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-084-01",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-084-02",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-084-03",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-084-04",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-084-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

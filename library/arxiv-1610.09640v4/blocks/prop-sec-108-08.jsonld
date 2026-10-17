@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/0.1.0/ns#"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/blocks/prop-sec-108-08",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 358,
+  "pageEnd": 367,
+  "text": "prop-sec-108-08.md",
+  "derivedFrom": "library/arxiv-1610.09640v4/sections/sec-108",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,1 +1,1 @@
-LetA be a noetherian commutative ring with connected spec-
+tells us that the subcategory C+(A) has enough K-injective objects.

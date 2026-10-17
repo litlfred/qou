@@ -3,7 +3,7 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1610.09640v4/blocks/prop-sec-096-05",
@@ -12,8 +12,8 @@
     "doco:Section"
   ],
   "kind": "proposition",
-  "pageStart": 358,
-  "pageEnd": 367,
+  "pageStart": 295,
+  "pageEnd": 302,
   "text": "prop-sec-096-05.md",
   "derivedFrom": "library/arxiv-1610.09640v4/sections/sec-096",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",

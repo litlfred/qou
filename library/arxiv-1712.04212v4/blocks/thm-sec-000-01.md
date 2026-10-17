@@ -1,0 +1,1 @@
+\ref{thm:higher order Dirichlet eigenvalue and Dirichlet Levy family} is an analogue of the Funano-Shioya theorem for closed manifolds of non-negative $\infty$-weighted Ricci curvature (see Corollary 1.4 in \cite{FSh}).

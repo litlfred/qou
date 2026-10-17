@@ -1,1 +1,1 @@
-Assume the functorΓ m has ﬁnite cohomological dimension, and
+the DG B-A-bimodule T ∼= T ′ is tilting.

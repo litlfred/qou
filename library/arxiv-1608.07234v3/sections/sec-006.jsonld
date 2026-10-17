@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1608.07234v3/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Patching and the derived Hecke algebra",
+  "pageStart": 50,
+  "pageEnd": 55,
+  "contains": [
+    "library/arxiv-1608.07234v3/blocks/prose-sec-006"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1608.07234v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1608.07234v3/manifest.jsonld",
+  "provenance": "ingested"
+}

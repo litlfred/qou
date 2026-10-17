@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-069",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "K-Injective DG Modules",
+  "pageStart": 175,
+  "pageEnd": 179,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-069",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-069-01",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-069-02",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-069-03",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-069-04",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-069-05",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-069-06",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-069-07",
+    "library/arxiv-1610.09640v4/blocks/cor-sec-069-08",
+    "library/arxiv-1610.09640v4/blocks/cor-sec-069-09",
+    "library/arxiv-1610.09640v4/blocks/cor-sec-069-10",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-069-11",
+    "library/arxiv-1610.09640v4/blocks/cor-sec-069-12",
+    "library/arxiv-1610.09640v4/blocks/cor-sec-069-13",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-069-14",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-069-15",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-069-16",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-069-17",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-069-18"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

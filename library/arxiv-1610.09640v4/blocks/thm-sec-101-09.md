@@ -1,1 +1,1 @@
-, RA has symmetric derived torsion. This is condition (B1) of
+Let A be a nonnegative graded ring, and let a ∈A be a nonzero

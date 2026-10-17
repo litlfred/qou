@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-090",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Interlude: The Matlis Classification of Injective Modules",
+  "pageStart": 263,
+  "pageEnd": 265,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-090",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-090-01",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-090-02",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-090-03",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-090-04",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-090-05",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-090-06",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-090-07"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

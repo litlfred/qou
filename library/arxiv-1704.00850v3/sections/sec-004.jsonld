@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1704.00850v3/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Classical Monte Carlo",
+  "pageStart": 9,
+  "pageEnd": 15,
+  "contains": [
+    "library/arxiv-1704.00850v3/blocks/prose-sec-004",
+    "library/arxiv-1704.00850v3/blocks/thm-sec-004-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1704.00850v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1704.00850v3/manifest.jsonld",
+  "provenance": "ingested"
+}

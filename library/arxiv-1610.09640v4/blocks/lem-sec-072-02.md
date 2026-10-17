@@ -1,1 +1,1 @@
-Let D be a triangulated category, letF,G : D→D(N) be trian-
+A DG module P ∈K(A, M) is K-projective iﬀthe DG module

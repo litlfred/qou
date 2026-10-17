@@ -1,1 +1,1 @@
-If K is a full triangulated subcategory ofK(A, M), then Kprj
+Let C, D and E be categories. There is an isomorphism of

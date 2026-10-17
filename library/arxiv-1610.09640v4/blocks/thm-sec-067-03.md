@@ -1,1 +1,1 @@
-Let M be an abelian category, and letJ⊆M be a full subcategory
+Under Setup 9.3.1, assume there are full triangulated subcate-

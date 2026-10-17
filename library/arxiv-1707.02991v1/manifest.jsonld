@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1707.02991v1",
+  "title": "BPS states, knots and quivers",
   "contains": [
+    "library/arxiv-1707.02991v1/sections/sec-front-matter",
     "library/arxiv-1707.02991v1/sections/sec-000",
     "library/arxiv-1707.02991v1/sections/sec-001",
     "library/arxiv-1707.02991v1/sections/sec-002",
@@ -28,7 +29,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1707.02991v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1707.02991v1.pdf",
     "source_sha256": "f4f539f74403dd24e5641276bbf7b131e32820662ea471f296e6fd3515cd36fe",
     "pages": 6,

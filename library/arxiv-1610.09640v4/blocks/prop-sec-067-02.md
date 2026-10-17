@@ -1,1 +1,1 @@
-Let M be an abelian category. IfI is a bounded below complex
+If a triangulated right derived bifunctor exists, then it is

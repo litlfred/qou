@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/0.1.0/ns#"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/blocks/lem-sec-119-04",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 425,
+  "pageEnd": 429,
+  "text": "lem-sec-119-04.md",
+  "derivedFrom": "library/arxiv-1610.09640v4/sections/sec-119",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

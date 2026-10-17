@@ -1,1 +1,1 @@
-A DG module M ∈C(A, M) is acyclic iﬀ the DG module
+Let (F, τ) : (K, TK) →(L, TL) be a triangulated functor between
