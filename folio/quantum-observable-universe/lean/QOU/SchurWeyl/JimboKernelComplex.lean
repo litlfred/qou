@@ -172,7 +172,7 @@ theorem projFamily_kappa_one {lam : Nat.Partition (m + 1)} (hlam : ThreeRow lam)
   simp only [jimboRep_σ] at hreal
   have hc := congrArg Complex.ofRealHom.mapMatrix hreal
   rw [jmProjIn_mapMatrix, map_zero] at hc
-  simp only [strandBraid_map, Complex.ofRealHom_eq_coe, Complex.ofReal_inv] at hc
+  simp only [RingHom.mapMatrix_apply, strandBraid_map, map_inv₀, Complex.ofRealHom_eq_coe] at hc
   unfold projFamily
   simp only [jimboFam, jimboRep_σ]
   rw [qC_kappa_one]
@@ -240,16 +240,26 @@ theorem jimbo_wedderburn_threeRow (q : ℂ) (hq : q ≠ 0)
       (StandardYoungTableau (partitionShape lam)) ℂ) = ∑ T, Matrix.single T T 1 := by
     ext i j
     rw [Matrix.sum_apply, Matrix.one_apply]
-    simp only [Matrix.single_apply]
     by_cases hij : i = j
-    · subst hij; simp
-    · simp [hij]
+    · subst hij; simp [Matrix.single]
+    · rw [if_neg hij]
+      symm
+      apply Finset.sum_eq_zero
+      intro T _
+      simp only [Matrix.single, Matrix.of_apply]
+      rw [if_neg]
+      rintro ⟨rfl, rfl⟩
+      exact hij rfl
   have hM : Pi.single lam M
       = (∑ T, Pi.single lam (Matrix.single T T (1 : ℂ))) * Pi.single (M := fun lam =>
           Matrix (StandardYoungTableau (partitionShape lam))
             (StandardYoungTableau (partitionShape lam)) ℂ) lam M := by
-    rw [← map_sum (AddMonoidHom.single _ lam), AddMonoidHom.single_apply, ← h1,
-      ← Pi.single_mul, one_mul]
+    have hs := map_sum (AddMonoidHom.single (fun lam : Nat.Partition (m + 1) =>
+        Matrix (StandardYoungTableau (partitionShape lam))
+          (StandardYoungTableau (partitionShape lam)) ℂ) lam)
+      (fun T => Matrix.single T T (1 : ℂ)) Finset.univ
+    simp only [AddMonoidHom.single_apply] at hs
+    rw [← hs, ← h1, ← Pi.single_mul, one_mul]
   rw [hM, map_mul, map_mul, map_sum, map_sum]
   rw [Finset.sum_eq_zero fun T _ => jimbo_wedderburn_single_threeRow q hq hq2 hlam T, zero_mul]
 
