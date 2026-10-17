@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.952
 latex_coverage_ratio: 0.964
+doc_brief: "Gentle introduction to Soergel bimodules I: The basics — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules."
 ---
 As one might have conjectured looking at the first two examples, for $x\in I_2(n)$ we have $$\label{excc}b_x= \sum_{y\leq x}v^{l(x)-l(y)}h_y$$ If we would want to play the game we played in the first two examples, this is, if we wanted to express $b_x$ as additions and substractions of *Bott-Samelsons* (i.e. objects of the type $b_sb_r\cdots b_t,$ with $s,r,\ldots, t\in S$) then we obtain the combinatorics appearing in Temperley-Lieb algebras, but this approach is a bit complicated. It is easier to prove directly equation ([\[excc\]](#excc){reference-type="ref" reference="excc"}).
 

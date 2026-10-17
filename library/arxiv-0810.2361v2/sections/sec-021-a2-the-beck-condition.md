@@ -8,6 +8,7 @@ pages: 43-44
 source_pdf: 0810.2361v2.pdf
 source_sha256: 77d6d59a29596484
 toc_source: outline
+doc_brief: "2-VECTOR SPACES AND GROUPOIDS — This paper describes a relationship between essentially ﬁnite groupoids and 2-vector spaces."
 ---
 Remark A.2.1. The isomorphism α in the weak pullback square (11) gave rise to
 a natural isomorphism:

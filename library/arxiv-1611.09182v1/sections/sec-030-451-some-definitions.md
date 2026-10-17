@@ -8,6 +8,7 @@ pages: 31-33
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
 toc_source: outline
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 Some deﬁnitions
 Let V be the vector space over a ﬁeld F. A quadratic form, Q, is a map Q : V →F such

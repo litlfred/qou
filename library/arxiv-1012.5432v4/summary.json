@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1012.5432v4",
  "source_sha256": "ec5f6da1f813649e",
- "brief": "Towards topological quantum computation? Knotting and fusing flux tubes — 19 sections: A Hamiltonian; Instantons; Dirac Monopoles",
- "extended": "**Towards topological quantum computation? Knotting and fusing flux tubes**\n\n*Knotting and Fusing Flux Tubes*\n\n52 pp, 19 sections.\n\n**Outline.** A Hamiltonian; 3 Instantons; 1 Dirac Monopoles; 1 Three Dimensions; 2 Two Dimensions; 1 Fusion; 2 Antiparticles; 1 Particles; 2 Braiding and Fusion; 2 S3; 3 A5; 4 Fusion Rules:; 1 Fusion Probabilities; 1 A5; 2 S3; Acknowledgments; 2 A4; 3 S4",
+ "brief": "quant-ph Towards Topological Quantum Computation? - — 23 sections: Front matter; A Hamiltonian; Instantons",
+ "extended": "**quant-ph Towards Topological Quantum Computation? -**\n\n*Knotting and Fusing Flux Tubes*\n\n52 pp, 23 sections.\n\n**Outline.** Front matter; A Hamiltonian; 3 Instantons; 1 Dirac Monopoles; 1 Three Dimensions; 2 Two Dimensions; 1 Fusion; 2 Antiparticles; 1 Particles; 2 Braiding and Fusion; 1 Finite Subgroups of SO(3) and SU(2); 2 S3; 3 A5; 4 Fusion Rules:; 1 Fusion Probabilities; 1 A5; 2 S3; 3 The Dihedral Groups and  p + i p Superconduc",
  "tokens": {
-  "brief": 32,
-  "extended": 96
+  "brief": 26,
+  "extended": 109
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-11"
+  },
   {
    "id": "sec-000-a-hamiltonian",
    "title": "A Hamiltonian",
@@ -55,52 +60,67 @@
    "pages": "24-25"
   },
   {
-   "id": "sec-009-2-s3",
+   "id": "sec-009-1-finite-subgroups-of-so3-and-su2",
+   "title": "Finite Subgroups of SO(3) and SU(2)",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-010-2-s3",
    "title": "S3",
    "pages": "25-29"
   },
   {
-   "id": "sec-010-3-a5",
+   "id": "sec-011-3-a5",
    "title": "A5",
    "pages": "29-32"
   },
   {
-   "id": "sec-011-4-fusion-rules",
+   "id": "sec-012-4-fusion-rules",
    "title": "Fusion Rules:",
    "pages": "32-36"
   },
   {
-   "id": "sec-012-1-fusion-probabilities",
+   "id": "sec-013-1-fusion-probabilities",
    "title": "Fusion Probabilities",
    "pages": "36-37"
   },
   {
-   "id": "sec-013-1-a5",
+   "id": "sec-014-1-a5",
    "title": "A5",
    "pages": "37-37"
   },
   {
-   "id": "sec-014-2-s3",
+   "id": "sec-015-2-s3",
    "title": "S3",
-   "pages": "37-39"
+   "pages": "37-38"
   },
   {
-   "id": "sec-015-acknowledgments",
+   "id": "sec-016-3-the-dihedral-groups-and-p-i-p-superconductors",
+   "title": "The Dihedral Groups and  p + i p Superconductors",
+   "pages": "38-39"
+  },
+  {
+   "id": "sec-017-acknowledgments",
    "title": "Acknowledgments",
    "pages": "39-44"
   },
   {
-   "id": "sec-016-2-a4",
+   "id": "sec-018-1-finite-subgroups-of-so3-and-su2",
+   "title": "Finite Subgroups of SO(3) and SU(2)",
+   "pages": "44-44"
+  },
+  {
+   "id": "sec-019-2-a4",
    "title": "A4",
    "pages": "44-46"
   },
   {
-   "id": "sec-017-3-s4",
+   "id": "sec-020-3-s4",
    "title": "S4",
    "pages": "46-47"
   },
   {
-   "id": "sec-018-4-d4",
+   "id": "sec-021-4-d4",
    "title": "D4",
    "pages": "47-52"
   }

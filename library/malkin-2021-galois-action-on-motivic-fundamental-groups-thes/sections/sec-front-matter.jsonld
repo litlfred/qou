@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-front-matter",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Front matter",
+  "pageStart": 1,
+  "pageEnd": 7,
+  "contains": [
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-front-matter"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest.jsonld",
+  "provenance": "ingested"
+}

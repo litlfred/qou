@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.987
 latex_coverage_ratio: 0.97
+doc_brief: "SOERGEL CALCULUS — The monoidal category of Soergel bimodules is an incarnation of the Hecke category, a fundamental object in representation theory."
 ---
 Let $\DC$ denote the diagrammatic category defined by generators and relations in the previous section. In order to prove that this category is equivalent to $\BSBim$, we construct a basis
 for morphisms in $\DC$, which is sent to a basis for morphisms in $\BSBim$. In \cite{Lib}, Libedinsky constructed a combinatorial basis for the morphism space between two Bott-Samelson

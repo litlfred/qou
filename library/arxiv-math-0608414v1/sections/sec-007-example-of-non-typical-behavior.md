@@ -8,6 +8,7 @@ pages: 44-46
 source_pdf: 0608414v1.pdf
 source_sha256: bd9a8d48a6d66945
 toc_source: outline
+doc_brief: "Exponential asymptotics, trans-series and generalized Borel summation for analytic nonlinear rank one systems of ODE’s — For analytic nonlinear systems of ordinary diﬀerential equations, under some"
 ---
 Example of non-typical behavior
 Consider the equation

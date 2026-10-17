@@ -8,6 +8,7 @@ pages: 165-165
 source_pdf: 2207.07246v2.pdf
 source_sha256: 91e70e5fe39e07a5
 toc_source: outline
+doc_brief: "Path Integral Quantum Monte Carlo Method for Light Nuclei — 64 sections: Front matter; ABSTRACT; LIST OF TABLES"
 ---
 Born in Shanghai, China on Feb 22, 1987, Rong Chen received his bachelor’s degree
 from Shanghai University in June, 2009. With postgraduate recommendation, he was

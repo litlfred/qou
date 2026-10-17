@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.993
 latex_coverage_ratio: 0.986
+doc_brief: "Deducing the symmetry of the standard model from the automorphism and structure groups of the exceptional Jordan algebra ∗ — We continue the study undertaken in [DV] of the exceptional Jordan algebra"
 ---
 About the same time Pascual Jordan introduced his algebras Ruth Moufang studied her non-Desarguian (octonionic) projective plane $P{\mathbb O}_2$. Sixteen years later, in 1949, Jordan noticed that the points of $P{\mathbb O}_2$ are given by the one-dimensional (trace-one) idempotents of the exceptional Jordan algebra $J$ which are also the pure states of $J$.\
 A glimpse on the automorphism group $F_4 = \{ g : J \to J ; g(X \circ Y) = g \, X \circ g \, Y \}$ is provided by displaying the stability subgroup of one such idempotent $$\label{eq31}

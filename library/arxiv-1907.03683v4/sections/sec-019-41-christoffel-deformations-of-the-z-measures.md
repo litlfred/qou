@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.952
 latex_coverage_ratio: 1.0
+doc_brief: "EXPLICIT DESCRIPTION OF CHRISTOFFEL DEFORMATIONS AND — Christoﬀel deformation of a measure on the real line consists of multipying this measure by a squared polynomial having its roots in R."
 ---
 The $z$-measures on partitions were introduced and extensively studied by Borodin and Olshanski in a series of papers, see e.g. [@bodist], [@bogamma], [@bomeixner] and [@bomarkov] and references therein. We first briefly explain their construcion. The $z$-measures are defined on the set $\mathbb{Y}$ of all partitions by: $$\begin{aligned}
 M_{z,z',\xi}(\lambda)=(1-\xi)^{zz'}\xi^{|\lambda|}(z)_\lambda(z')_\lambda \left(\frac{\dim(\lambda)}{|\lambda|!}\right)^2.

@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.983
 latex_coverage_ratio: 0.996
+doc_brief: "arXiv:math/0606435v2 [math.GT] 10 Oct 2007 — We show that 3-braid links with given (non-zero) Alexander or Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
 There is a conjecture, often attributed to Jones (who speculated
 on it at least for knots and in it its weaker form, as given below;

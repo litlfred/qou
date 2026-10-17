@@ -8,6 +8,7 @@ pages: 6-6
 source_pdf: 1103.2082v1.pdf
 source_sha256: 0ac5371486b38eac
 toc_source: outline
+doc_brief: "MODIFIED TRACES ON DELIGNE’S CATEGORY Rep(St) — Deligne has deﬁned a category which interpolates among the representations of the various symmetric groups."
 ---
 in [CO11, CO]. As we need both, we deﬁne it here and discuss the relationship with the
 earlier deﬁnition. To distinguish the two we call these tensor ideals. They are deﬁned via

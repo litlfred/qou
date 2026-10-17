@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.952
 latex_coverage_ratio: 0.914
+doc_brief: "ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM INVARIANTS III: THE RESHETIKHIN-TURAEV INVARIANTS OF CLOSED HYPERBOLIC 3-MANIFOLDS OBTAINED BY DOING INTEGRAL SURGERY ALONG THE TWIST KNOT — This is the"
 ---
 []{#Section-Poissonsummation label="Section-Poissonsummation"} By Proposition [\[Prop-RTN\]](#Prop-RTN){reference-type="ref" reference="Prop-RTN"}, we have $$\begin{aligned}
    g_{N}(a,k,l)=\sin\left(\frac{(a+\frac{1}{2})\pi}{N+\frac{1}{2}}\right)\sin\left(\frac{2\pi(l+\frac{1}{2})}{N+\frac{1}{2}}\right)e^{(N+\frac{1}{2})\hat{V}_N\left(\frac{a+\frac{1}{2}}{N+\frac{1}{2}},\frac{k+\frac{1}{2}}{N+\frac{1}{2}},\frac{l+\frac{1}{2}}{N+\frac{1}{2}}\right)}

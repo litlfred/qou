@@ -8,6 +8,7 @@ pages: 25-25
 source_pdf: 0906.1500v4.pdf
 source_sha256: 9a586f6d134ca47f
 toc_source: inferred
+doc_brief: "TWISTED ALEXANDER INVARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS — We study a computational method of the hyperbolic Reidemeister torsion (also"
 ---
 In this section, we exhibit a natural, and in a sense compatible, homology orientation
 in the case where M is the exterior EL = S3 \ N(L) of a link L in S3. Here N(L)

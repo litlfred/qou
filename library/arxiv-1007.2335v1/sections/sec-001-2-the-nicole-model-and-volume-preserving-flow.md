@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.994
 latex_coverage_ratio: 0.997
+doc_brief: "Hopf solitons in the Nicole model — The Nicole model is a conformal ﬁeld theory in three-dimensional space."
 ---
 The Nicole model [@Ni] is a rather exotic modification of the $O(3)$ sigma model, although it involves the same field $\mbox{\boldmath $\phi$}:\hbox{\mybb R}^3\mapsto S^2,$ which is realized as a real three-component vector $\mbox{\boldmath $\phi$}=(\phi_1,\phi_2,\phi_3),$ of unit length, $\mbox{\boldmath $\phi$}\cdot\mbox{\boldmath $\phi$}=1.$ As we are concerned only with static solutions then the Nicole model may be defined by its static energy $$E=\frac{1}{32\pi^2\sqrt{2}}\int (\partial_i\mbox{\boldmath $\phi$}\cdot\partial_i\mbox{\boldmath $\phi$})
 ^\frac{3}{2}\ d^3x, \label{energy_ni}$$ where the normalization is chosen for later convenience.

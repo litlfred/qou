@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 1107.1559.pdf
 source_sha256: 90d63f2e18629b9d
 toc_source: outline
+doc_brief: "Quaternion-Octonion SU (3) Flavor Symmetry — Starting with the quaternionic formulation of isospin SU(2) group, we have derived the relations for diﬀerent components of isospin with quark states."
 ---
 arXiv:1107.1559v1  [physics.gen-ph]  8 Jul 2011
 Quaternion-Octonion SU(3) Flavor Symmetry

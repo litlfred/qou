@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.955
 latex_coverage_ratio: 1.0
+doc_brief: "Cluster Formation and The Virial Equation of State of Low-Density Nuclear Matter — 15 sections: Front matter; Nuclear Statistical Equilibrium; Introduction"
 ---
 The symmetry energy $S_E$ characterizes how the energy rises as one 
 moves away from equal numbers of neutrons and protons,

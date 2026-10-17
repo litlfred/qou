@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.971
 latex_coverage_ratio: 0.944
+doc_brief: "ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM INVARIANTS III: THE RESHETIKHIN-TURAEV INVARIANTS OF CLOSED HYPERBOLIC 3-MANIFOLDS OBTAINED BY DOING INTEGRAL SURGERY ALONG THE TWIST KNOT — This is the"
 ---
 We use the skein theory approach of Reshetikhin-Turaev invariants [@BHMV92; @Lic93] following the concise illustration given in [@WongYang23]. We focus on the $SO(3)$ TQFT theory and consider the root of unity $e^{\frac{2\pi\sqrt{-1}}{r}}$, where $r$ is an odd number, we write $r=2N+1$ with $N\geq 1$.
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.962
 latex_coverage_ratio: 0.981
+doc_brief: "On minimal ideal triangulations of cusped hyperbolic 3–manifolds Introduction — Previous work of the authors studies minimal triangulations of closed 3–manifolds using a characterisation of low"
 ---
 The canonical cell decompositions of cusped hyperbolic 3--manifolds due to Epstein and Penner [@Epstein-euclidean-1988] are generically ideal triangulations. It follows from work of Guéritaud [@GueritaudPhDThesis Theorem 2.1.7 in Section 2.1.4] that the canonical cell decompositions of hyperbolic 2--bridge link complements are ideal triangulations. However, these are not minimal in general. We thank Jessica Purcell and the anonymous referee for pointing us to these examples.
 

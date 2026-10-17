@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.957
 latex_coverage_ratio: 0.989
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 It is plain to see that $m_c$, $m_h$, and $m_q$ each correspond to an involution of the $\CH$ algebra.  That is, $m_c$ corresponds to  $*$, $m_h$ corresponds to $\dagger$, and $m_q$ corresponds to $\sim$.  The complex quaternions, though, have more discrete symmetries available than is shown here, and it would be interesting to see what could come from the corresponding constructions of generalized ideals. 
 

@@ -8,6 +8,7 @@ pages: 24-28
 source_pdf: 2507.13873v1.pdf
 source_sha256: fa1d38d08dc4976a
 toc_source: outline
+doc_brief: "Probing the singularity at the holographic screen via $q$-holography — We study the emergence of q-deformed spacetime in a lower-dimensional gravitational system whose asymptotic region geometrizes"
 ---
 Corepresentations of (quasi)-primary operators
 Holomorphic primary operators O(z) with weight ∆in a 2d CFT are defined to transform

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.883
 latex_coverage_ratio: 0.945
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS — We prove an upper bound for characters of the symmetric groups."
 ---
 ::: proof
 *Proof of Theorem [\[theo:rough\]](#theo:rough){reference-type="ref" reference="theo:rough"}.* Let $k_1,\dots,k_r\geq 2$ be the lengths of the non-trivial cycles in the cycle decomposition of $\pi\in S_n$. It follows that $l:=k_1+\cdots+k_r=|\mathop{\mathrm{supp}}\pi|$ and in the following we will regard $\pi$ as an element of $S_l$. We denote $A=\max(l,r(\lambda),c(\lambda))$.

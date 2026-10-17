@@ -8,6 +8,7 @@ pages: 6-8
 source_pdf: Generalised_Markov_traces_and_Jucys-Murphy_element.pdf
 source_sha256: 9246e10a44d0b4aa
 toc_source: outline
+doc_brief: "Glasgow Mathematical Journal (2026), 1–10 — We give a simple construction of Markov traces for Iwahori–Hecke algebras associated with the crystallographic Coxeter groups of types An, Bn and Dn."
 ---
 In type A, the classical result of Jones and Ocneanu [10] says that a Markov trace with given constants
 ρ, μ is deﬁned uniquely up to an overall scaling. Thus, Theorem 3.1.4 gives a general description of a

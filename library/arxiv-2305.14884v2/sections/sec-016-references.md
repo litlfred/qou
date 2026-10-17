@@ -8,6 +8,7 @@ pages: 46-48
 source_pdf: 2305.14884v2.pdf
 source_sha256: ebc8e64d901c9e4f
 toc_source: outline
+doc_brief: "PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS — We prove that a formal power series associated to an ideally triangulated cusped hyperbolic 3-manifold (together with some further choices)"
 ---
 [1] Jørgen Ellegaard Andersen and Rinat Kashaev. The Teichm¨uller TQFT. In Proceedings of the Interna-
 tional Congress of Mathematicians—Rio de Janeiro 2018. Vol. III. Invited lectures, pages 2541–2565.

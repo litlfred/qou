@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.867
 latex_coverage_ratio: 1.0
+doc_brief: "EXPLICIT DESCRIPTION OF CHRISTOFFEL DEFORMATIONS AND — Christoﬀel deformation of a measure on the real line consists of multipying this measure by a squared polynomial having its roots in R."
 ---
 The aim of this article is to study deformations of discrete determinantal point processes describing distributions or limit distributions on partitions, namely the poissonized Plancherel measure, the $z$-measures and its limiting Gamma process (see e.g. [@boo], [@johanssonplancherel], [@infinitewedge], [@bodist], [@bogamma] and [@bomarkov]). Recall that a partition $\lambda=(\lambda_1 \geq \lambda_2 \geq ...)$ is a finite non-increasing sequence of non-negative integers, and that it can be identified with a Young diagram ([@macdonald]). The set of all partitions will be denoted by $\mathbb{Y}$. As it is usual, for a partition $\lambda \in \mathbb{Y}$, we define its length $l(\lambda)$ as being the index of its last non-zero entry $$\begin{aligned}
 l(\lambda):=\max \{i, \hspace{0.1cm} \lambda_i \neq 0 , \hspace{0.1cm} i=1,2,... \},

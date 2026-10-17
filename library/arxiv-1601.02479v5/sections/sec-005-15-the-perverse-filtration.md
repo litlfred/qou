@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.954
 latex_coverage_ratio: 0.955
+doc_brief: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A — This paper concerns the cohomological aspects of Donaldson– Thomas theory for Jacobi algebras and the associated cohomological Hall alge- bra, introduced"
 ---
 An advantage of considering constructions relative to the base $\mathcal{M}_{\upmu}^{\upzeta\mathop{\mathrm{-ss}}}$ instead of $\Uplambda_{\upmu}^{\upzeta}$ is that it leads naturally to the introduction of the perverse filtration on $\mathop{\mathrm{H}}(\mathcal{A}_{W,\upmu}^{\upzeta,\mathcal{S}})$.
 

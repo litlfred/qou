@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.791
 latex_coverage_ratio: 0.995
+doc_brief: "Cluster Formation and The Virial Equation of State of Low-Density Nuclear Matter — 15 sections: Front matter; Nuclear Statistical Equilibrium; Introduction"
 ---
 Next, we present our results for the pressure.  In Fig.~\ref{Fig10}, 
 we plot the pressure of symmetric nuclear matter for $T=10 \mev$.

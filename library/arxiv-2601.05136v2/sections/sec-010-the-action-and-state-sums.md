@@ -8,6 +8,7 @@ pages: 9-10
 source_pdf: 2601.05136v2.pdf
 source_sha256: cee15456257d3028
 toc_source: outline
+doc_brief: "State integrals for the quantized SL 2 ( C ) Chern-Simons invariant — Previous work of the author and N."
 ---
 Following [McP25a, Section 6] we deﬁne the action functional of a diagram. Consider the functions
 (3.4)

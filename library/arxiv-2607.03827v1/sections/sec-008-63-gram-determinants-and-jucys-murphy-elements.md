@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.629
 latex_coverage_ratio: 0.988
+doc_brief: "Affine cellular algebras and asymptotic algebras — The theory of affine cellular algebras A is extended to incorporate their asymptotic algebras ˆA, clarifying unexpected differences between"
 ---
 In the case of extended affine Hecke algebras of type $A$, no determinant
 of a swich matrix is a zero-divisor, by Lemma \ref{lemma:phic-injective} and

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.974
 latex_coverage_ratio: 1.0
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 At very late times, of order the classical recurrence time $e^S$, the complexity must saturate and stop increasing \cite{opacity}. It is a nontrivial test of our duality that there is an instanton that invalidates the semiclassical bulk description after a similar time scale. After a time of order $e^S$ it is likely that at some stage the large black hole will have undergone a thermal fluctuation down to the size of a small AdS black hole (plus thermal gas), which would then evaporate (and then recollapse and reform the black hole).
 

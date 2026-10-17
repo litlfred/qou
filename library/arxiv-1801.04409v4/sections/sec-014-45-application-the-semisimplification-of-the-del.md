@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.983
 latex_coverage_ratio: 0.961
+doc_brief: "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES — We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury."
 ---
 Let $n$ be a nonnegative integer, and $\mathbf{k}$ be a field of characteristic zero. Let $\underline{\mathop{\mathrm{Rep}}\nolimits} S_n$ denote the Karoubian Deligne category over $\mathbf{k}$ defined in [@D3] (its main property is that it can be interpolated to non-integer values of $n$ in $\mathbf{k}$). This category has a tensor ideal $I$ such that $\underline{\mathop{\mathrm{Rep}}\nolimits} S_n/I=\mathop{\mathrm{Rep}}\nolimits_\mathbf{k}S_n$. Moreover, it is known (see [@D3],[@CO]) that $\underline{\mathop{\mathrm{Rep}}\nolimits} S_n$ has an abelian envelope $\underline{\mathop{\mathrm{Rep}}\nolimits}^{\rm ab} S_n$; in particular, the trace of any nilpotent endomorphism in $\underline{\mathop{\mathrm{Rep}}\nolimits} S_n$ vanishes. Since $I$ consists of morphisms factoring through negligible objects (i.e., direct sums of indecomposable objects of dimension zero), and $\mathop{\mathrm{Rep}}\nolimits_\mathbf{k}S_n$ is semisimple, we see that $I=\mathcal{N}(\mathcal{C})$ is the full ideal of negligible morphisms (i.e., every negligible morphism factors through a negligible object), and the semisimplification $\overline{\underline{\mathop{\mathrm{Rep}}\nolimits} S_n}$ coincides with $\mathop{\mathrm{Rep}}\nolimits_\mathbf{k}S_n$.
 

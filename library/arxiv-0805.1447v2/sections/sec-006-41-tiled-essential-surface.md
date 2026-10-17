@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.947
 latex_coverage_ratio: 0.981
+doc_brief: "BRAID ORDERING AND THE GEOMETRY OF CLOSED BRAID — The relationships between braid ordering and the ge- ometry of its closure is studied."
 ---
 First we prove statement (1), tiled case. Assume $F$ is tiled. Since $F$ is tiled, every singular point is bb-singularity, and $F$ can be decomposed into bb-tiles. A decomposition into bb-tiles determines cellular-decomposition of $F$, and we call this *tiling*. The notion of vertex and valance we defined in section 3 coincides to usual definition of vertex and valance in this cellular decomposition.
 

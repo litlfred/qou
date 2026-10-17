@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.875
 latex_coverage_ratio: 0.833
+doc_brief: "Classification of connected étale algebras in pre-modular fusion categories up to rank three — We classify connected ´etale algebras A’s in pre-modular fusion categories B with rank(B) ≤3 including"
 ---
 A rank one pre-MFC has only one simple object $1$. There are two pre-MFCs depending on the sign of categorical dimension $D(\mathcal B)=\pm1$. Since $1\le\text{FPdim}(\mathcal B_A)\le\text{FPdim}(\mathcal B)=1$, the only possibility is $$\text{FPdim}(\mathcal B_A)=1.$$ Accordingly, the algebra has $$\text{FPdim}_{\mathcal B}(A)=\frac{\text{FPdim}(\mathcal B)}{\text{FPdim}(\mathcal B_A)}=1.$$ Since the only simple object is $1\in\mathcal B$, we get the unique algebra object $$A\cong1.\label{rank1alg}$$ It is trivially connected étale. The algebra is also Lagrangian.
 

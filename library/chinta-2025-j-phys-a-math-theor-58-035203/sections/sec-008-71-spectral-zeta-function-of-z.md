@@ -8,6 +8,7 @@ pages: 16-17
 source_pdf: Chinta_2025_J._Phys._A__Math._Theor._58_035203.pdf
 source_sha256: baba83ca76c773d4
 toc_source: outline
+doc_brief: "The discrete analogue of the Gaussian — 13 sections: Front matter; The discrete analogue of the Gauss; Introduction"
 ---
 The zeta function regularization method in physics started in the 1970 s with papers by
 Dowker-Critchley and by Hawking. For a survey of applications to mathematical physics of

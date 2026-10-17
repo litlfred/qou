@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.994
 latex_coverage_ratio: 0.977
+doc_brief: "Concentration of Measure Techniques and Applications — 25 sections: Front matter; Biographical Sketch; Acknowledgments"
 ---
 Using these results, along with the method of Chatterjee and Ledoux, we are able to prove the following result:
 

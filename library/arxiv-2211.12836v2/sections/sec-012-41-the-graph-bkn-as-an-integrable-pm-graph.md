@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.955
 latex_coverage_ratio: 0.932
+doc_brief: "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY — We study a class of commuting Markov kernels whose simplest element describes the movement of k particles on a discrete circle of size n"
 ---
 Recall from Section [\[sec:intro_model\]](#sec:intro_model){reference-type="ref" reference="sec:intro_model"} that $L^2(B_{k,n})=\bigoplus_{I\in B_{k,n}}\mathbb{C} e_{I}$ denotes the Hilbert space of functions on $B_{k,n}$ with the scalar product $\langle e_{I},e_{J}\rangle=\delta_{I,J}$, where $\mathcal{B}_0=(e_{I})_{I\in B_{k,n}}$ is the canonical basis on $L^2(B_{k,n})$. Then, the graph structure on $B_{k,n}$ is encoded in the adjacency matrix $A\in \mathcal{B}(L^2(B_{k,n}))$ given by $$Ae_I=\sum_{I\nearrow J}e_J.$$
 

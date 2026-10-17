@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL + — We give complete detail of the description of the GNS representation of the quantum plane A and its dual ˆ A as"
 ---
 \label{sec:Dual} We have encountered the dual space elements in the expression for the multiplicative unitary $W$. Following the recipe in \cite{KV1}, in order to describe the GNS representation for the dual space $\hat{\cA}$, which is self-dual for quantum plane, we need to establish a non-degenerate pairing between $\cA$ and $\hat{\cA}$. 
 

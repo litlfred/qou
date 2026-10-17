@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/hdr/sections/sec-025",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Affine and Cyclotomic Yokonuma–Hecke algebras",
+  "pageStart": 51,
+  "pageEnd": 54,
+  "contains": [
+    "library/hdr/blocks/prose-sec-025",
+    "library/hdr/blocks/rem-sec-025-01",
+    "library/hdr/blocks/rem-sec-025-02",
+    "library/hdr/blocks/prop-sec-025-03",
+    "library/hdr/blocks/rem-sec-025-04",
+    "library/hdr/blocks/prop-sec-025-05",
+    "library/hdr/blocks/thm-sec-025-06",
+    "library/hdr/blocks/rem-sec-025-07",
+    "library/hdr/blocks/rem-sec-025-08"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hdr/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hdr/manifest.jsonld",
+  "provenance": "ingested"
+}

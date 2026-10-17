@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.945
 latex_coverage_ratio: 0.979
+doc_brief: "L-spaces and knot traces — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries."
 ---
 Let $h:\Sigma\to\Sigma$ be a homeomorphism of a compact oriented surface  with possibly empty boundary. By Thurston's classification \cite{thurston-diffeomorphisms}, $h$ is  isotopic rel boundary to a map $\varphi:\Sigma\to\Sigma$ such that
 \begin{itemize}

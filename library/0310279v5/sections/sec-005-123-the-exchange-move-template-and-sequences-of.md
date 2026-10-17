@@ -8,6 +8,7 @@ pages: 9-11
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
 toc_source: outline
+doc_brief: "Stabilization in the braid groups I: MTWS Introduction — 40 sections: Front matter; Introduction; The problem"
 ---
 The exchange move template and sequences of exchange moves
 The exchange move template was deﬁned by the block-strand diagram in Figure 2. It

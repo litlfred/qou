@@ -8,6 +8,8 @@ pages: 13-16
 source_pdf: symmetry-11-01298.pdf
 source_sha256: 595648c84501e8a6
 toc_source: outline
+doc_brief: "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics — In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds."
+duplicate_of: "arxiv-1910.09966v1"
 ---
 Now, we have the following situation: two knot complements C(K1) and C(K2) can be connected
 by a so-called tube T(K1, K2) along the boundary, a torus. This tube T(K1, K2) can be described by

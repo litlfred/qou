@@ -8,5 +8,6 @@ pages: 43-43
 source_pdf: 2111.06645v3.pdf
 source_sha256: 2a4826bd1c2f0823
 toc_source: outline
+doc_brief: "Part 0: Introduction and overview — We introduce an invariant of a hyperbolic knot which is a map α 7→Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns indexed by the"
 ---
 

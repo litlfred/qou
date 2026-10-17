@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: CRMATH_2011__349_19-20_1037_0.pdf
 source_sha256: fd5bd0558dfe892f
 toc_source: outline
+doc_brief: "Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières — 8 sections: Front matter; Classiﬁcation analytique et théori; Notations"
 ---
 A un module aux q-différences, on peut associer un polygone de Newton (cf. [5]), et les pentes de ce polygone, qui sont
 rationnelles, sont les pentes du module aux q-différences. Un module pur isocline (c’est à dire qui n’a qu’une seule pente), à

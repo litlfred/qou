@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: Download.pdf
 source_sha256: ca9639465b08d34c
 toc_source: outline
+doc_brief: "Concentration of empirical distribution functions with applications to non-i.i.d. models — 12 sections: Front matter; Introduction; Empirical Poincaré inequalities"
 ---
 Bernoulli 16(4), 2010, 1385–1414
 DOI: 10.3150/10-BEJ254

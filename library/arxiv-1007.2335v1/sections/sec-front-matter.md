@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 1007.2335v1.pdf
 source_sha256: a55d544d1740523f
 toc_source: outline
+doc_brief: "Hopf solitons in the Nicole model — The Nicole model is a conformal ﬁeld theory in three-dimensional space."
 ---
 arXiv:1007.2335v1  [hep-th]  14 Jul 2010
 Hopf solitons in the Nicole model

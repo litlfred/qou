@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2501.03424v1/sections/sec-front-matter",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Front matter",
+  "pageStart": 1,
+  "pageEnd": 4,
+  "contains": [
+    "library/arxiv-2501.03424v1/blocks/prose-sec-front-matter",
+    "library/arxiv-2501.03424v1/blocks/rem-sec-front-matter-01",
+    "library/arxiv-2501.03424v1/blocks/ex-sec-front-matter-02",
+    "library/arxiv-2501.03424v1/blocks/lem-sec-front-matter-03",
+    "library/arxiv-2501.03424v1/blocks/lem-sec-front-matter-04",
+    "library/arxiv-2501.03424v1/blocks/thm-sec-front-matter-05",
+    "library/arxiv-2501.03424v1/blocks/ex-sec-front-matter-06",
+    "library/arxiv-2501.03424v1/blocks/ex-sec-front-matter-07",
+    "library/arxiv-2501.03424v1/blocks/lem-sec-front-matter-08",
+    "library/arxiv-2501.03424v1/blocks/ex-sec-front-matter-09",
+    "library/arxiv-2501.03424v1/blocks/rem-sec-front-matter-10",
+    "library/arxiv-2501.03424v1/blocks/thm-sec-front-matter-11",
+    "library/arxiv-2501.03424v1/blocks/thm-sec-front-matter-12",
+    "library/arxiv-2501.03424v1/blocks/thm-sec-front-matter-13",
+    "library/arxiv-2501.03424v1/blocks/thm-sec-front-matter-14",
+    "library/arxiv-2501.03424v1/blocks/lem-sec-front-matter-15",
+    "library/arxiv-2501.03424v1/blocks/lem-sec-front-matter-16",
+    "library/arxiv-2501.03424v1/blocks/lem-sec-front-matter-17",
+    "library/arxiv-2501.03424v1/blocks/cor-sec-front-matter-18",
+    "library/arxiv-2501.03424v1/blocks/prop-sec-front-matter-19",
+    "library/arxiv-2501.03424v1/blocks/prop-sec-front-matter-20",
+    "library/arxiv-2501.03424v1/blocks/prop-sec-front-matter-21",
+    "library/arxiv-2501.03424v1/blocks/prop-sec-front-matter-22"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2501.03424v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2501.03424v1/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.977
 latex_coverage_ratio: 0.872
+doc_brief: "arXiv:hep-ph/0003017v2 26 Jun 2000 — Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems."
 ---
 Our conventions are such that if we have $N$ eigenvalues, the global spectral density is normalized to $N$ so that the mean level spacing is of order $1/N$. Local spectral correlation functions $R_k(\lambda_1,\ldots,\lambda_k)$ in the bulk of the spectrum are thus characterized by $\lambda_p\sim{\cal O}(1)$ and $|\lambda_p-\lambda_q|\sim{\cal O}(1/N)$. Universal correlation functions are obtained by rescaling the eigenvalues according to the average local level spacing. This procedure, known as unfolding, is discussed in more detail in Sec. [\[unfolding\]](#unfolding){reference-type="ref" reference="unfolding"}. The rescaled eigenvalues with average level spacing equal to unity are denoted by $x_k$.
 

@@ -8,6 +8,7 @@ pages: 17-18
 source_pdf: 0203060v10.pdf
 source_sha256: 2ccb480f4bd4a970
 toc_source: outline
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 ment of [N, Proposition 6.4] and is analogous to the Larson-Radford theorem [LR1]
 for usual Hopf algebras which says that if A is a ﬁnite dimensional Hopf algebra

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.956
 latex_coverage_ratio: 0.969
+doc_brief: "Connections on Non-Abelian Gerbes and their Holonomy — We introduce an axiomatic framework for the parallel transport of connections on gerbes."
 ---
 The reduced surface holonomy has nice properties that we will reveal in the following.
 First we treat  the dependence of the reduced surface holonomy on the marking. 

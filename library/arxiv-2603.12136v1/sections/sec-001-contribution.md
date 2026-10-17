@@ -8,6 +8,7 @@ pages: 5-6
 source_pdf: 2603.12136v1.pdf
 source_sha256: e9c50616344b24e0
 toc_source: outline
+doc_brief: "Folding Mixed-Integer Linear Programs and Reflection Symmetries — For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the"
 ---
 We extend the DRCR procedure from [11] in several directions. First of all, we show
 that DRCR for Linear Programs can be extended to reflection symmetries, which

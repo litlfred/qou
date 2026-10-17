@@ -8,6 +8,7 @@ pages: 48-49
 source_pdf: 0908.3425v1.pdf
 source_sha256: 5e88d45bbc1c1b9b
 toc_source: outline
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 The Primakoﬀmethod was used at Serpukhov with the result [Antipov et al., 1983]
 (α −β)π+ = (13.6 ± 2.8stat ± 2.4syst) × 10−4 fm3,

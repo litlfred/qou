@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.969
 latex_coverage_ratio: 0.97
+doc_brief: "On a volume invariant of 3-manifolds (Kegel, Ray, Spreer, Thompson, Tillmann) — defines topological volume vol_t(M), the smallest volume of a hyperbolic-link complement in M; bounds and a…"
 ---
 In \Cref{cor:topinv} (2) we have shown that a sequence of manifolds with unbounded rank of first homology has unbounded topological volume. In the next theorem, we develop a lower bound which quantifies this.
 

@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.938
+doc_brief: "arXiv:math/0111205v1 [math.CT] 19 Nov 2001 — For every tensor category C there is a braided tensor category Z(C), the ‘center’ of C."
 ---
 We refer to \cite[Section 2]{mue09} for our general conventions and recall only a few less
 standard notations. A retract $Y\prec X$ is also called a subobject. A category has

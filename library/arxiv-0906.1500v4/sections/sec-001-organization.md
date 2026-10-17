@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.931
 latex_coverage_ratio: 1.0
+doc_brief: "TWISTED ALEXANDER INVARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS — We study a computational method of the hyperbolic Reidemeister torsion (also"
 ---
 The outline of the paper is as follows.
 Section~\ref{section:preliminaries} deals with some reviews on the

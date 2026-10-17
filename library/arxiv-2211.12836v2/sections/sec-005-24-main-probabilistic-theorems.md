@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.973
 latex_coverage_ratio: 0.985
+doc_brief: "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY — We study a class of commuting Markov kernels whose simplest element describes the movement of k particles on a discrete circle of size n"
 ---
 []{#subsec:main_probabilistic_results label="subsec:main_probabilistic_results"} Using the convolution product introduced in Proposition [\[prop:result_1\]](#prop:result_1){reference-type="ref" reference="prop:result_1"}, we can consider the convolution $\mu=\mu_1*\mu_2*\dots\mu_m$ of an arbitrary number of $h$-probability measures and its image by the map $\xi_n$. As already shown in [@De; @We] in the independent and identically distributed case, we expect that there exists $\gamma>0$ depending on some second moments of $(\mu_i)_{1\leq i\leq m}$ such that $\mu$ is close to the eigenvalue distribution of a unitary Brownian motion at time $\gamma\frac{ m}{n^2}$ as $n$ goes to infinity and under the appropriate scaling. Note that we need some care to properly define the unitary Brownian motion, since there is a two-parameters family of bi-invariant Brownian motions on $U(k)$ because of the semisimple decomposition $U(k)\simeq SU(k)\times U(1)$.
 

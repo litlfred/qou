@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.94
 latex_coverage_ratio: 0.976
+doc_brief: "L-spaces and knot traces — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries."
 ---
 \label{sec:rational-surgeries}
 The goal of this section is to prove in Theorem~\ref{thm:trace-determines-hfhat-restated} that any trace $X_n(K)$  determines the Heegaard Floer homology of many or all rational surgeries on $K$; this quickly implies Theorem~\ref{thm:lspace-detection-main} as well. For this, we combine the results of the previous section with work of Hayden--Mark--Piccirillo, who proved in \cite[Theorem~1.4]{hayden-mark-piccirillo} that for any $n \geq 0$, the $n$-trace of a knot $K\subset S^3$ detects the Heegaard Floer $\nu$ invariant of $K$ in the following sense:

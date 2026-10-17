@@ -8,6 +8,7 @@ pages: 1-4
 source_pdf: s10955-022-02992-6.pdf
 source_sha256: aa73d797a89eaf06
 toc_source: outline
+doc_brief: "Cluster Expansions: Necessary and Sufficient Convergence Conditions — We prove a new convergence condition for the activity expansion of correlation functions in equilibrium statistical mechanics"
 ---
 Since its introduction by Mayer in the early 40s, the method of cluster expansions was—and
 remains—a very important tool in equilibrium statistical mechanics. A classical application

@@ -8,6 +8,7 @@ pages: 67-81
 source_pdf: qt2pf5d0mn.pdf
 source_sha256: 4c8581c3b46398e3
 toc_source: outline
+doc_brief: "UC Santa Barbara — 19 sections: Front matter; Abstract; Introduction"
 ---
 implies Diagram 4.6 commutes.
 Theorem 4.1.4 Given a coloring F = (g, f), we have

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.875
 latex_coverage_ratio: 0.857
+doc_brief: "ON THE CABLE EXPANSION FORMULA — In this paper, a generalized version of Morton’s formula [8] is proved."
 ---
 []{#apendix label="apendix"} []{#appendix label="appendix"} Now we will present a proof of lemma 3 and lemma 4.
 

@@ -8,6 +8,7 @@ pages: 40-41
 source_pdf: 0406242v4.pdf
 source_sha256: 27e48b483007b824
 toc_source: outline
+doc_brief: "On canonical triangulations of once-punctured torus bundles and two-bridge link complements Introduction — 28 sections: Front matter; Introduction; The canonical triangulation"
 ---
 Volume estimates for bundles
 Theorem B.1 Let Vϕ be a once-punctured torus bundle deﬁned by the cyclic word

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.633
 latex_coverage_ratio: 0.891
+doc_brief: "THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS — The Ptolemy coordinates for boundary-unipotent SL(n, C)-representations of a 3-manifold group were introduced in [7] inspired by the A-coordinates on"
 ---
 \label{sec:ProofOfMainThm}The general case follows the same strategy, but is more complicated since it involves edge paths between multiple cusps. 
 

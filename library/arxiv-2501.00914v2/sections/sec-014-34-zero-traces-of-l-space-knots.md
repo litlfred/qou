@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.812
 latex_coverage_ratio: 1.0
+doc_brief: "L-spaces and knot traces — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries."
 ---
 We conclude this section by proving our main result, Theorem~\ref{thm:main}, which asserts that every L-space knot is detected by its $0$-trace. 
 

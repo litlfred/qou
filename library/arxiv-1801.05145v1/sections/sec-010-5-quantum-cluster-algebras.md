@@ -11,5 +11,6 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.833
+doc_brief: "MONOIDAL CATEGORIFICATION OF CLUSTER ALGEBRAS — We prove that the quantum cluster algebra structure of a unipotent quantum coordinate ring Aq(n(w)), associated with a symmetric Kac-Moody algebra and"
 ---
 In this section we recall the definition of skew-symmetric quantum cluster algebras following \cite{BZ05}, \cite[\S 8]{GLS}.

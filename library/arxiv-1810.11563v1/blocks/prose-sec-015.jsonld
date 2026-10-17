@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1810.11563v1/blocks/prose-sec-015",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "The Growth of Wormholes",
-  "pageStart": 35,
-  "pageEnd": 40,
-  "text": "../sections/sec-015-12-the-growth-of-wormholes.md",
+  "title": "Two Problems",
+  "pageStart": 33,
+  "pageEnd": 34,
+  "text": "../sections/sec-015-111-two-problems.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1810.11563v1/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1810.11563v1/manifest.jsonld",
   "provenance": "ingested"

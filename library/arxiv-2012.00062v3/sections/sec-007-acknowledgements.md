@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.805
 latex_coverage_ratio: 1.0
+doc_brief: "PEACOCK PATTERNS AND RESURGENCE IN COMPLEX CHERN-SIMONS THEORY — The partition function of complex Chern-Simons theory on a 3-manifold with torus boundary reduces to a ﬁnite dimensional"
 ---
 The authors would like to thank Jorgen Andersen, Maxim Kontsevich,
 Pietro Longhi and Don Zagier for enlightening conversations. The work

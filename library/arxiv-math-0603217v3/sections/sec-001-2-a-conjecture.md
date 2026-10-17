@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.854
 latex_coverage_ratio: 0.906
+doc_brief: "A VERSION OF THE VOLUME CONJECTURE — We propose a version of the volume conjecture that would relate a certain limit of the colored Jones polynomials of a knot to the volume function deﬁned by a"
 ---
 Let $K$ be a knot in $S^3$. Denote by $J_N(K;q)$ the colored Jones polynomial associated to the $N$-dimensional irreducible representation of the Lie algebra $sl(2,\mathbb{C})$ [@Kirillov/Reshetikhin:1989]. We normalize it so that $J_2(K;q)$ is the Jones polynomial [@Jones:BULAM385] and that $J_N(U;q)=1$, where $U$ is the unknot.
 

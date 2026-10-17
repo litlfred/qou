@@ -8,6 +8,7 @@ pages: 12-13
 source_pdf: 5S032X.pdf
 source_sha256: 17761383781f7bdc
 toc_source: outline
+doc_brief: "The Standard Model Symmetry and Qubit Entanglement — quantum description."
 ---
 Three Qubits and the Octonionic Hopf Fibration
 Due to the normalization |o0|2 +|o1|2 = 1, an octonionic qubit defines a point on the sphere S15. There again exists

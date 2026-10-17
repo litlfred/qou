@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.969
 latex_coverage_ratio: 0.996
+doc_brief: "Categorical Quantum Volume Operator — 11 sections: Categorical Quantum Volume Operato; Introduction; Quantum tetrahedron"
 ---
 \label{subsec:Qvol.derivation}
 To compute the matrix elements of the generalized volume operator, we follow the same steps as for the standard $\SU(2)$ volume operator in LQG~\cite{Rovelli2014}\@. That is, we consider a tetrahedron, but the corresponding four-valent intertwiners are not necessarily irreducible representations of $\SU(2)$. Instead, we treat them as morphisms in a premodular category $\C$,

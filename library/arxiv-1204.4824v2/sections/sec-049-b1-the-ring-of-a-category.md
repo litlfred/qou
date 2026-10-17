@@ -8,6 +8,7 @@ pages: 78-79
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
 toc_source: outline
+doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
 ---
 The ring of a category
 To any category C we may associate a ring R(C). As an abelian group, R(C) is the free

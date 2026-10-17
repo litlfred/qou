@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.987
 latex_coverage_ratio: 0.987
+doc_brief: "The Mukai pairing, I: a categorical approach — We study the Hochschild homology of smooth spaces, emphasizing the importance of a pairing which generalizes Mukai’s pairing on the cohomology of K3"
 ---
 The notion of an adjunction in a 2-category simultaneously generalizes the notion of an adjunction between functors and the notion of a duality between objects of a monoidal category. As it is the former that arises in the context of integral transforms, we will use that as the motivation, but will come back to the latter below.
 

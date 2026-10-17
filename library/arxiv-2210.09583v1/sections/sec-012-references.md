@@ -8,6 +8,7 @@ pages: 16-17
 source_pdf: 2210.09583v1.pdf
 source_sha256: 38fc6fa465a06a7b
 toc_source: outline
+doc_brief: "A NEW PRESENTATION OF THE osp(1|2)-POLYNOMIAL LINK INVARIANT — There is a known connection between the osp(1|2n) polynomial knot invariant Jn K and the so(2n + 1) knot invariant soJn K studied by"
 ---
 [1] Dorit Aharonov, Vaughan Jones, and Zeph Landau. A polynomial quantum algorithm for approximating the Jones
 polynomial. In STOC’06: Proceedings of the 38th Annual ACM Symposium on Theory of Computing, pages 427–436.

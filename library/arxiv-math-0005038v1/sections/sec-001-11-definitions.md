@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.947
 latex_coverage_ratio: 0.909
+doc_brief: "arXiv:math/0005038v1 [math.GR] 4 May 2000 — The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc."
 ---
 Let $D$ be an oriented disc in the complex plane. Fix a set $P \subset D$ consisting of $n$ distinct points $p_1,\dots,p_n$ in the interior of $D$. Let ${\mathcal{H}}(D,P)$ be the group of all homeomorphisms $h \colon\thinspace D \rightarrow D$ such that $h(P) = P$ and $h$ fixes $\partial D$ pointwise. Let ${\mathcal{I}}(D,P)$ be the group of all such homeomorphisms which are isotopic to the identity relative to $P \cup \partial D$. We define the braid group $B_n$ to be the group ${\mathcal{H}}(D,P)/{\mathcal{I}}(D,P)$. See [@birman] for other equivalent definitions of these groups and a good introduction to their basic properties.
 

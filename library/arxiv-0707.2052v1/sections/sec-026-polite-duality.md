@@ -8,6 +8,7 @@ pages: 31-35
 source_pdf: 0707.2052v1.pdf
 source_sha256: 0a1d1cca848706be
 toc_source: outline
+doc_brief: "The Mukai pairing, I: a categorical approach — We study the Hochschild homology of smooth spaces, emphasizing the importance of a pairing which generalizes Mukai’s pairing on the cohomology of K3"
 ---
 Polite duality.
 Recall from Section 2.2 that for every space X there is the Serre kernel

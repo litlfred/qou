@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.779
 latex_coverage_ratio: 0.976
+doc_brief: "Asymptotics of some quantum invariants of the Whitehead chains — In this paper, we study the asymptotics of the colored Jones polynomials of the Whitehead chains with one belt colored by M1 and all"
 ---
 Let $M_1$ and $M_2$ be sequences of integers in $N$ with limiting ratios $$s_i = \lim_{N \to \infty}\frac{M_i}{N+\frac{1}{2}}$$ We use $WL$ to denote the Whitehead link and $J_{M_1,M_2}(WL,t)$ to denote the colored Jones polynomials of the Whitehead link with the belt colored by $M_1$ and the clasp colored by $M_2$. In the first part of this paper, we study the asymptotic expansion formula for $J_{M_1,M_2}(WL,e^{\frac{2\pi i}{N+\frac{1}{2}}})$. Our result can be stated as follows
 

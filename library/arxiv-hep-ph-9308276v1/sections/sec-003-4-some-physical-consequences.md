@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.996
+doc_brief: "arXiv:hep-ph/9308276v1 14 Aug 1993 — The most general chiral Lagrangian for electroweak interactions with the complete set of SU(2)L × U(1)Y invariant operators up to dimen- sion four is considered."
 ---
 We would like to add in this section some remarks and comments on the results for the EChL parameters presented in eq.([\[aMH\]](#aMH){reference-type="ref" reference="aMH"}). These finite values represent the non-decopling effects of a heavy Higgs particle in the SM to one-loop order. They contain valuable information since they serve as reference values to be compared with the corresponding predictions from other possible alternatives for the symmetry breaking sector. Thus, for instance, in Technicolor Models, the values for the $a_i$ parameters are known to be quite different [@AW]. The optimal strategy will be therefore to find a set of appropriate observables that, once expressed in terms of the $a_i$'s, can provide a systematic check of the compatibility of the assumed underlying theory to one-loop level with data. Some of these observables like the $T,U$ and $S$ parameters of Peskin and Takeuchi [@PT] or the related parameters $\epsilon_1$,$\epsilon_2$ and $\epsilon_3$ of Altarelli and Barbieri [@AlB] have already been studied by many authors in conexion with the LEP data [@HDG]. The contributions from the $a_i$'s to the $\epsilon$ parameters are given by [@F]: $$\begin{aligned}
 \epsilon_1 & = & 2 a_0^\msb(M_Z)\nonumber\\[2mm]

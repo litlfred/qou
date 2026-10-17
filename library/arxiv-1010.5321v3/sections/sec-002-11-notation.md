@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 1010.5321v3.pdf
 source_sha256: c6bb20926b1f291f
 toc_source: outline
+doc_brief: "Formulas on hyperbolic volume ∗ — This paper collects some important formulas on hyperbolic volume."
 ---
 Notation
 Rn, En, Hn: The space of the n-dimensional real vectors, the n-dimensional Euclidean space

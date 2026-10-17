@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.929
 latex_coverage_ratio: 0.963
+doc_brief: "EXPLICIT DESCRIPTION OF CHRISTOFFEL DEFORMATIONS AND — Christoﬀel deformation of a measure on the real line consists of multipying this measure by a squared polynomial having its roots in R."
 ---
 Let $\omega$ be a discrete measure on $\mathbb{R}$ with infinite support and finite moments of all orders: $$\begin{aligned}
 \int_{\mathbb{R}}|x|^nd\omega(x) < +\infty \quad \text{for all $n  \in \mathbb{N}$}.

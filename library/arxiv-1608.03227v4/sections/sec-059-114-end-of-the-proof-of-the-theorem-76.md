@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.983
 latex_coverage_ratio: 0.983
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 ::: corollary
 []{#cor: cubic label="cor: cubic"} There is a homotopy realizing relation: $$\bcalC^{(1)}_+\bar{\star}\bcalC^{(2)}_+\bar{\star}\bcalC^{(1)}_+\sim\bcalC_+^{(2)}\bar{\star}\bcalC_+^{(1)}\bar{\star}\bcalC^{(2)}.$$

@@ -8,6 +8,7 @@ pages: 8-10
 source_pdf: 2501.00914v2.pdf
 source_sha256: d94bd6edf8544d4a
 toc_source: outline
+doc_brief: "L-spaces and knot traces — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries."
 ---
 Vela-Vick proved in [BVV18] that
 dim [

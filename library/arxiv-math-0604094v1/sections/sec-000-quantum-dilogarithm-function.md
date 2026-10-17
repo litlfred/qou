@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.917
 latex_coverage_ratio: 0.924
+doc_brief: "GENERALIZED VOLUME CONJECTURE AND THE A-POLYNOMIALS: THE NEUMANN–ZAGIER POTENTIAL FUNCTION AS A CLASSICAL LIMIT OF — 7 sections: Front matter; Quantum Dilogarithm Function; Examples"
 ---
 \label{sec:dilog}
 We define a function  $\Phi_\gamma(\varphi)$ by an integral form

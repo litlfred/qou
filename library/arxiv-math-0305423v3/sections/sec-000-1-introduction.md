@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 0.995
+doc_brief: "Stein’s Method and Plancherel Measure of the Symmetric Group Running head: Stein’s Method and Plancherel Measure — We initiate a Stein’s method approach to the study of the Plancherel measure of the"
 ---
 It is accurate to state that one of the most important developments in probability theory in the last century was Stein's method. Stein's method is a highly original technique and has been useful in proving normal and Poisson approximation theorems in probability problems with limited information such as the knowledge of only a few moments of the random variable. Stein's method can be difficult to work with and often the bounds arising are not sharp, even in simple problems. But it sometimes is the only option available and has been a smashing success in Poisson approximation in computational biology. Good surveys of Stein's method (two of them books) are \cite{AGG},\cite{BHJ},\cite{St1},\cite{St2}.
 

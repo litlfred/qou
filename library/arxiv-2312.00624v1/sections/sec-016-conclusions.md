@@ -8,6 +8,7 @@ pages: 36-38
 source_pdf: 2312.00624v1.pdf
 source_sha256: bda867f7b84f69c3
 toc_source: outline
+doc_brief: "On the structure of wave functions in complex Chern–Simons theory — We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the"
 ---
 Conclusions
 In this paper, we have made various observations on the structure of the wave functions in CS theory

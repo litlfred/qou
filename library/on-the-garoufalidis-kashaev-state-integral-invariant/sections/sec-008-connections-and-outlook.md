@@ -8,6 +8,7 @@ pages: 14-15
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
 toc_source: outline
+doc_brief: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT — 63 sections: Front matter; ACKNOWLEDGMENTS; ABSTRACT"
 ---
 Connections and Outlook
 While the focus of this thesis is on a specific construction, the state-integral

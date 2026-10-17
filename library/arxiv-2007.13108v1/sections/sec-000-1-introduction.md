@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.989
 latex_coverage_ratio: 0.938
+doc_brief: "Log concavity and concentration of Lipschitz functions on the Boolean hypercube — It is well-known that measures whose density is the form e−V where V is a uniformly convex potential on Rn attain"
 ---
 In the Euclidean space $\RR^n$, \emph{log-concave} measures, namely measures whose density is of the form $e^{-U}$ with $U$ being a convex potential are known to satisfy several concentration inequalities. For instance, if $\gamma$ is the standard Gaussian measure on $\RR^n$ and the probability measure $\nu$ is absolutely continuous with respect to $\gamma$ with density $d \nu = e^{V} d \gamma$ where the potential $V:\RR^n \to \RR$ satisfies the condition
 \begin{equation}\label{eq:Rnsemilogconcave}

@@ -1,1 +1,1 @@
-(a) The descendant state-integral can be expressed in terms of the descendant
+Wm(q) is a fundamental solution of the linear q-diﬀerence equation (86) that

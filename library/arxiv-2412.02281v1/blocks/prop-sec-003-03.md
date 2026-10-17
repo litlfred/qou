@@ -1,1 +1,1 @@
-Suppose the following condition holds for a1,...,a n−1,b 1,...,b n−1:
+Suppose the following condition holds for a1, ..., an−1, b1, ..., bn−1:

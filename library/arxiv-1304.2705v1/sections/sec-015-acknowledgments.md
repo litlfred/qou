@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.706
 latex_coverage_ratio: 1.0
+doc_brief: "FROM STATE INTEGRALS TO q-SERIES — It is well-known to the experts that multi-dimensional state integrals of prod- ucts of Faddeev’s quantum dilogarithm which arise in Quantum Topology can be written"
 ---
 The paper was conceived during a visit of the first author in Geneva
 in the spring of 2013. The first author wishes to thank the University of

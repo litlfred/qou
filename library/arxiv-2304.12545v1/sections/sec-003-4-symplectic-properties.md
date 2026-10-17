@@ -8,6 +8,7 @@ pages: 9-9
 source_pdf: 2304.12545v1.pdf
 source_sha256: bfc3c2be395b1b2d
 toc_source: outline
+doc_brief: "Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — survey of gluing equations, volumes, the extended Bloch group, symplectic properties and quantization."
 ---
 In retrospect, the symplectic properties as descibed in equation (3) and the following text,
 and their reﬁnement from Q to Z as given in the follow-up paper [28], turned out to be the

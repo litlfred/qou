@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.97
 latex_coverage_ratio: 1.0
+doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety for SL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
 ---
 The fundamental correspondence between *generic* decorations, Ptolemy assignments, and natural cocycles plays an important role. The Ptolemy variety gives explicit coordinates enabling concrete computations, the decorations establish the link to group homology allowing for explicit computation of the Cheeger-Chern-Simons class [@GaroufalidisThurstonZickert], and the natural cocycles allow us to explicitly recover a representation from its coordinates.
 

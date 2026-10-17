@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.958
 latex_coverage_ratio: 0.944
+doc_brief: "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2) AT EVEN ROOTS OF UNITY — We study the decomposition of tensor powers of two dimensional irreducible rep- resentations of quantum sl2 at even roots of"
 ---
 []{#rec-mult label="rec-mult"} Here we reformulate the problem of tensor power decomposition over $U_q(\mathfrak{sl}_2)$ and $u_q(\mathfrak{sl}_2)$ resolved in the previous section in terms of counting lattice paths on the set of dominant weights for the corresponding quantum groups and will give a combinatorial derivation of multiplicity formulae for $T(1)^{\otimes N}$ derived before.
 

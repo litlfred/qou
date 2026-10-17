@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.916
 latex_coverage_ratio: 0.992
+doc_brief: "Path Integral Quantum Monte Carlo Method for Light Nuclei — 64 sections: Front matter; ABSTRACT; LIST OF TABLES"
 ---
 []{#propagator label="propagator"} Efficiently sampling the imaginary time propagator $e^{-H \Delta \tau}$ by using a short-time approximated propagator $U(\Delta \tau)$ is important for PIMC. Due to the fact that the local chiral N$^2$LO interaction contains the spin-orbit term $v_{LS}(r_{ij})$ in Eq.([\[vlsrij\]](#vlsrij){reference-type="ref" reference="vlsrij"}), the approximated short-time propagator $U(\Delta \tau)$ for $e^{-H \Delta \tau}$ is calculated as, $$\begin{aligned}
 U(\Delta \tau) & \equiv

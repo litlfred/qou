@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-math-0111205v1/blocks/prose-sec-009",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Applications",
-  "pageStart": 49,
-  "pageEnd": 50,
-  "text": "../sections/sec-009-8-applications.md",
+  "title": "The quantum double of a braided category",
+  "pageStart": 44,
+  "pageEnd": 49,
+  "text": "../sections/sec-009-7-the-quantum-double-of-a-braided-category.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0111205v1/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0111205v1/manifest.jsonld",
   "provenance": "ingested"

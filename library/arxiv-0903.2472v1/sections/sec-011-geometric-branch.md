@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.922
 latex_coverage_ratio: 0.946
+doc_brief: "Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group — We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with"
 ---
 For the geometric branch, the solution to the first equation in Table [\[tab:Seqns\]](#tab:Seqns){reference-type="ref" reference="tab:Seqns"} is chosen to be $$S_0^{({\rm geom})} (u) = \frac{i}{2}{\mbox{Vol\,}}({\bf 4_1};0) + \int_0^u du\, v_{{\rm geom}} (u) + i\pi u\,,
 \label{GS0}$$ with $v_{{\rm geom}} (u)$ as in [\[v41\]](#v41){reference-type="eqref" reference="v41"}. The integration constant $i({\mbox{Vol\,}}(0)+i\rm{CS}(0))$ is not important for determining the remaining coefficients (since only derivatives of $S_0$ appear in the equations), but we have fixed it by requiring that $S_0^{({\rm geom})}(0) = \frac{i}{2}({\mbox{Vol\,}}({\bf 4_1};0)+i {\rm CS} ({\bf 4_1};0))

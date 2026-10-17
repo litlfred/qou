@@ -1,1 +1,1 @@
-LetY =Y (Ω′) be a UMD lattice and(ϵk)k an i.i.d. Rademacher sequence. Then
+1. Let T : Y →Z be a bounded (linear) operator, where Y (Ω′) and Z(Ω′′)

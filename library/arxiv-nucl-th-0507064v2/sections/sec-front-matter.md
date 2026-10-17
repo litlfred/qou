@@ -8,5 +8,6 @@ pages: 1-1
 source_pdf: 0507064v2.pdf
 source_sha256: dcfad7240ba81bf5
 toc_source: inferred
+doc_brief: "The Virial Equation of State of Low-Density Neutron Matter — 10 sections: Front matter; Virial Equation of State; Introduction"
 ---
 arXiv:nucl-th/0507064v2  17 May 2006

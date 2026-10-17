@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.897
 latex_coverage_ratio: 0.919
+doc_brief: "GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were"
 ---
 The Ptolemy coordinates are not as well behaved under symmetries as the shapes. 
 The obvious pullback defined by $(\sigma^*c_t)=c_{\sigma(t)}$ does not preserve Ptolemy assignments. To fix this, we must modify by signs depending on both $\sigma\in S_4$ and $t$.

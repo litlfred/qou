@@ -8,6 +8,7 @@ pages: 15-16
 source_pdf: qt2pf5d0mn.pdf
 source_sha256: 4c8581c3b46398e3
 toc_source: outline
+doc_brief: "UC Santa Barbara — 19 sections: Front matter; Abstract; Introduction"
 ---
 In this chapter, we give a brief review of categories with extra structures such as tensor
 product, dual, braiding, etc. The ultimate goal of this chapter is to introduce G-crossed

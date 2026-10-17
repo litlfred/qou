@@ -8,6 +8,7 @@ pages: 3-3
 source_pdf: CRMATH_2011__349_19-20_1037_0.pdf
 source_sha256: fd5bd0558dfe892f
 toc_source: outline
+doc_brief: "Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières — 8 sections: Front matter; Classiﬁcation analytique et théori; Notations"
 ---
 Van der Put et Reversat ont décrit dans [2] le groupe de Galois formel des équations aux q-différences sur ˆK du point de
 vue algébrique, en tant qu’extension de Picard–Vessiot. Nous donnons ici, une description matricielle explicite de ce groupe

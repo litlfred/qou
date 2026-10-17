@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.989
 latex_coverage_ratio: 0.993
+doc_brief: "A Matrix Bernstein Inequality for Strong Rayleigh Distributions * — The Entropy method provides a powerful framework for proving scalar concentration in- equalities by establishing functional"
 ---
 In this section, we prove our matrix valued Poincare inequality for measures satisfying the stochastic covering property (SCP). We first need some notation in order to define SCP measures. Let $\{e_i\}_{i=1}^{n}$ be the coordinate basis of $\mathbb{R}^n$. For $x,y \in \{ 0,1\}^n$, we write $x\triangleright y$ if $x$ can be obtained by $y$ by increasing at most one coordinate from 0 to 1, i.e.,
 \begin{align*}

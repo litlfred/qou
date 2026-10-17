@@ -8,6 +8,7 @@ pages: 44-47
 source_pdf: 1702.00039v1.pdf
 source_sha256: b47ca7d1cf7b44be
 toc_source: outline
+doc_brief: "Gentle introduction to Soergel bimodules I: The basics — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules."
 ---
 Final calculations: examples B, C and D
 In section 4 we were able to calculate the indecomposable Soergel bimodules

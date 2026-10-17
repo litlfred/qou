@@ -8,6 +8,7 @@ pages: 18-19
 source_pdf: quaternioms.pdf
 source_sha256: becedcbc858611dd
 toc_source: outline
+doc_brief: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 44 sections: Front matter; Introduction; Extended Related Work"
 ---
 We formalize the scope and guarantees of the four mitigation routes introduced in
 Methods and quantify their effects using process-ﬁdelity summaries. The organizing idea

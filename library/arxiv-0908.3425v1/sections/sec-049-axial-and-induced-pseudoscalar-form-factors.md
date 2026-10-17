@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.934
 latex_coverage_ratio: 0.989
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 Assuming isospin symmetry, the most general parametrization of the isovector axial-vector current evaluated between one-nucleon states is given by $$\label{H1_axff_FFDef}
 \langle N(p',s')| A^\mu_i(0) |N(p,s) \rangle = \bar{u}(p',s')

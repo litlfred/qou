@@ -11,6 +11,7 @@
   ],
   "title": "Concentration of Submodular Functions and Read-k Families Under Negative Dependence",
   "contains": [
+    "library/s00453-026-01372-w/sections/sec-front-matter",
     "library/s00453-026-01372-w/sections/sec-000",
     "library/s00453-026-01372-w/sections/sec-001",
     "library/s00453-026-01372-w/sections/sec-002",
@@ -21,7 +22,8 @@
     "library/s00453-026-01372-w/sections/sec-007",
     "library/s00453-026-01372-w/sections/sec-008",
     "library/s00453-026-01372-w/sections/sec-009",
-    "library/s00453-026-01372-w/sections/sec-010"
+    "library/s00453-026-01372-w/sections/sec-010",
+    "library/s00453-026-01372-w/sections/sec-011"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -34,8 +36,8 @@
     "pages": 19,
     "arxiv": null,
     "doi": "10.1007/s00453-026-01372-w",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

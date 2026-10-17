@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.937
 latex_coverage_ratio: 0.969
+doc_brief: "MARKOV TRACES ON THE BIRMAN-WENZL-MURAKAMI ALGEBRAS — We classify the Markov traces factoring through the Birman-Wenzl-Murakami (BMW) algebras."
 ---
 We define an algebra $F_n$ over $A = \Q[a,x,x^{-1}]/(a^2 = 1)$ by generators
 $s_1,\dots,s_{n-1}$, $e_1,\dots,e_{n-1},C$ and relations

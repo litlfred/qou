@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/modularqholonomicmodules/sections/sec-024",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Determinants",
+  "pageStart": 45,
+  "pageEnd": 46,
+  "contains": [
+    "library/modularqholonomicmodules/blocks/prose-sec-024",
+    "library/modularqholonomicmodules/blocks/cor-sec-024-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modularqholonomicmodules/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modularqholonomicmodules/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.895
 latex_coverage_ratio: 0.891
+doc_brief: "A Tannakian description of the local Kaletha gerbe — We construct, for a p-adic field F, an explicit semisimple Tannakian category RigIsocF whose category of fiber functors recovers Kaletha’s Galois"
 ---
 We will now describe the Galois descent constructed in the previous subsection in terms of a more concrete Tannakian category over $F$.
 

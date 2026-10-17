@@ -8,6 +8,7 @@ pages: 19-22
 source_pdf: 9511320v1.pdf
 source_sha256: 4336112cecabdfdf
 toc_source: inferred
+doc_brief: "arXiv:hep-ph/9511320v1 15 Nov 1995 — We analyze the eﬀective low–energy ﬁeld theory of Goldstone bosons and baryons chirally coupled to massive spin–1 ﬁelds."
 ---
 Construction Principles
 Here, we collect a few useful formulae which are needed to construct the

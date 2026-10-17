@@ -1,0 +1,1 @@
+[\[thm:Lipschitz-R\]](#thm:Lipschitz-R){reference-type="ref" reference="thm:Lipschitz-R"} now follows by standard exponential moment analysis; see for example [@McDiarmid89]. For completeness, we summarize the rest of the analysis as follows.

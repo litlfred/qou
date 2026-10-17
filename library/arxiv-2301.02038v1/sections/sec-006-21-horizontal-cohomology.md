@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.969
 latex_coverage_ratio: 0.916
+doc_brief: "Contemporary Mathematics — Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a system of possibly non-linear partial dif- ferential equations and it"
 ---
 \label{Sec:hor_cohom}
 In this section we attach a cochain complex to every diffiety $(\mathscr E, \mathscr C)$. The associated cohomology is called the \emph{horizontal cohomology} of $\mathscr E$ and it contains important coordinate free information on $\mathscr E_0$.

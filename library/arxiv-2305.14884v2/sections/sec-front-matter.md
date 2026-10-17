@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2305.14884v2.pdf
 source_sha256: ebc8e64d901c9e4f
 toc_source: outline
+doc_brief: "PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS — We prove that a formal power series associated to an ideally triangulated cusped hyperbolic 3-manifold (together with some further choices)"
 ---
 arXiv:2305.14884v2  [math.GT]  12 Jul 2023
 PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC

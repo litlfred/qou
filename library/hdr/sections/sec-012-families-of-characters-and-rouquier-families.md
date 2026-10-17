@@ -8,6 +8,7 @@ pages: 29-30
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
 toc_source: outline
+doc_brief: "Hecke algebras, generalisations and representation theory — 30 sections: Front matter; Algebras of Finite Type; Blocks"
 ---
 Families of characters and Rouquier families
 Let ϕm : vC,j 7→qmC,j be a cyclotomic specialisation and let Hϕm(W) be the corresponding cyclotomic

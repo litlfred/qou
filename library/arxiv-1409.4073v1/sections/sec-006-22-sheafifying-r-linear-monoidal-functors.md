@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.887
 latex_coverage_ratio: 0.913
+doc_brief: "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION — We introduce “sheaﬁﬁcation” functors from categories of (lax monoidal) linear functors to categories of quasi-coherent sheaves (of algebras) of"
 ---
 In this section we show how "ring structures" on a quasi-coherent sheaf over $\stX$ correspond to "monoidal" structures on the corresponding Yoneda functor.
 

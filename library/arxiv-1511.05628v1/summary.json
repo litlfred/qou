@@ -3,12 +3,17 @@
  "doc_id": "arxiv-1511.05628v1",
  "source_sha256": "3b9da2994233882b",
  "brief": "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY — The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coeﬃcients that",
- "extended": "**QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY**\n\n*TUDOR DIMOFTE AND STAVROS GAROUFALIDIS*\n\n41 pp, 28 sections.\n\n**Abstract.** The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coeﬃcients that appears in the asymptotics of the Kashaev invariant at each root of unity. Our goal is to construct a power series from a Neumann-Zagier datum (i.e., an ideal triangulation of the knot complement and a geo- metric solution to the gluing equations) and a complex root of unity ζ. We prove that the coeﬃcients of our series lie in the trace ﬁeld of the knot, adjoined a complex root of unity. We conjecture that our series are those that appear in the Quantum Modularity Conjecture and conﬁrm that they match the numerical asymptotics of the Kashaev invariant (at various roots of unity) computed by Zagier and the ﬁrst author.\n\n**Outline.** 1 Introduction; 1.1 Quantum modular forms; 2.1 Ideal triangulations and Neumann-Zagier da; 2.2 The 1-loop invariant at level k; 2.4 Feynman diagrams for the n-loop invariant; 2.5 The 2-loop invariant in detail; 2.6 The 3-loop invariant; 2.7 Matching with the numerical asymptotics of; 2.8 Topological invariance; 3 Proofs; 3.1 Proof of Theorem 2.6; 3.2 Some identities of the cyclic dilogarithm; 3.3 Proof of Theorem 2.2; 4 Complex Chern-Simons theory; 4.1 Basic structure; 4.2 A singular limit; 4.3 State integrals; 4.4 Derivation of the torsion\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.6: The coeﬃcients of the power series φ+\n- Lemma 2.8: For a Z-non-degenerate Neumann-Zagier datum γ, we have\n- Lemma 3.1: [GZ] The summation in Equation (12) is k-periodic.",
+ "extended": "**QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY**\n\n*TUDOR DIMOFTE AND STAVROS GAROUFALIDIS*\n\n41 pp, 29 sections.\n\n**Abstract.** The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coeﬃcients that appears in the asymptotics of the Kashaev invariant at each root of unity. Our goal is to construct a power series from a Neumann-Zagier datum (i.e., an ideal triangulation of the knot complement and a geo- metric solution to the gluing equations) and a complex root of unity ζ. We prove that the coeﬃcients of our series lie in the trace ﬁeld of the knot, adjoined a complex root of unity. We conjecture that our series are those that appear in the Quantum Modularity Conjecture and conﬁrm that they match the numerical asymptotics of the Kashaev invariant (at various roots of unity) computed by Zagier and the ﬁrst author.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Quantum modular forms; 2.1 Ideal triangulations and Neumann-Zagier da; 2.2 The 1-loop invariant at level k; 2.4 Feynman diagrams for the n-loop invariant; 2.5 The 2-loop invariant in detail; 2.6 The 3-loop invariant; 2.7 Matching with the numerical asymptotics of; 2.8 Topological invariance; 3 Proofs; 3.1 Proof of Theorem 2.6; 3.2 Some identities of the cyclic dilogarithm; 3.3 Proof of Theorem 2.2; 4 Complex Chern-Simons theory; 4.1 Basic structure; 4.2 A singular limit; 4.3 State integrals",
  "tokens": {
   "brief": 48,
-  "extended": 423
+  "extended": 361
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -154,8 +159,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

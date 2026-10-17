@@ -8,6 +8,7 @@ pages: 13-14
 source_pdf: 1809.08419v1.pdf
 source_sha256: 7ebca632544a6ea4
 toc_source: outline
+doc_brief: "GRÖBNER-SHIRSHOV BASES FOR NON-CRYSTALLOGRAPHIC COXETER GROUPS — For the noncrystallographic Coxeter groups of type H, we construct their Gr¨obner- Shirshov bases and the corresponding standard"
 ---
 [1] G. M. Bergman, The diamond lemma for ring theory, Adv. Math. 29 (1978), 178–218.
 [2] L. A. Bokut, Imbedding into simple associative algebras, Algebra and Logic 15 (1976), 117–142.

@@ -8,6 +8,7 @@ pages: 5-6
 source_pdf: Generalised_Markov_traces_and_Jucys-Murphy_element.pdf
 source_sha256: 9246e10a44d0b4aa
 toc_source: outline
+doc_brief: "Glasgow Mathematical Journal (2026), 1–10 — We give a simple construction of Markov traces for Iwahori–Hecke algebras associated with the crystallographic Coxeter groups of types An, Bn and Dn."
 ---
 3.1. Markov traces via Jucys–Murphy elements
 Deﬁnition 3.1.1. Let R be a commutative A-algebra. A family (φn) of A-linear functionals φn : H(Xn) →

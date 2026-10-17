@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1111.6782v2.pdf
 source_sha256: 5acfde49432e59e3
 toc_source: outline
+doc_brief: "Stationary Points of O’Hara’s Knot Energies — In this article we study the regularity of stationary points of the knot ener- gies E(α) introduced by O’Hara in [14, 15, 16] in the range α ∈(2, 3)."
 ---
 arXiv:1111.6782v2  [math.AP]  18 Jan 2012
 Stationary Points of O’Hara’s Knot Energies

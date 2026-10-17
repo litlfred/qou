@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.979
 latex_coverage_ratio: 0.98
+doc_brief: "Log concavity and concentration of Lipschitz functions on the Boolean hypercube — It is well-known that measures whose density is the form e−V where V is a uniformly convex potential on Rn attain"
 ---
 For a sequence of Bernoulli variables $X_1,...,X_n$, there are several notions of \emph{negative-dependence} between those variables (see e.g., \cite{BSS82,BK85,BF87,DR98}), some of which are known or conjectured to imply concentration of Lipschitz functions. Some notable first steps towards a theory unifying those notions appear in the work of Permantle \cite{pemantle04}, to which we also refer for a review of these notions.
 

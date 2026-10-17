@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.981
 latex_coverage_ratio: 0.968
+doc_brief: "On the number of hyperbolic 3 -manifolds of a given volume Craig Hodgson and Hidetoshi Masai — The work of Jørgensen and Thurston shows that there is a ﬁnite number N(v) of orientable hyperbolic"
 ---
 []{#pack label="pack"} In this section we study the circle packing corresponding to the hyperbolic graph $W_n$ shown in Figure [1](#fig.graphW){reference-type="ref" reference="fig.graphW"}.
 

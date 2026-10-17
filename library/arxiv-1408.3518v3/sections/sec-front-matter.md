@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1408.3518v3.pdf
 source_sha256: cf18585b886587c7
 toc_source: outline
+doc_brief: "On Augmentation Algorithms for Linear and Integer-Linear Programming: From Edmonds-Karp to Bland and Beyond — 5 sections: Front matter; Introduction.; Our Contributions"
 ---
 arXiv:1408.3518v3  [math.OC]  15 Jan 2015
 On Augmentation Algorithms for Linear

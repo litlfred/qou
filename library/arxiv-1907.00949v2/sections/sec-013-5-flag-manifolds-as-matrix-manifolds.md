@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.917
 latex_coverage_ratio: 0.956
+doc_brief: "OPTIMIZATION ON FLAG MANIFOLDS — A ﬂag is a sequence of nested subspaces."
 ---
 []{#sec:mfld label="sec:mfld"}
 

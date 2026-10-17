@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.942
 latex_coverage_ratio: 0.95
+doc_brief: "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS — In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the"
 ---
 \label{subsec:curieweiss}
 Consider i.i.d.~Bernoulli random variables $(\sigma(i))_{i \geq 1}$ with $\proba[\sigma(i)=1]=1-\proba[\sigma(i)=-1]=\frac{\E^{\alpha}}{2\,\cosh\alpha}$ for some $\alpha \in\R$. We set $U_n=\sum_{i=1}^n \sigma(i)$, so that

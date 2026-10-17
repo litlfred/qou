@@ -2,35 +2,65 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2203.06568v4",
  "source_sha256": "256fcfb588dac554",
- "brief": "Semidefinite programming bounds for binary codes from a split Terwilliger algebra — We study the upper bounds for A(n, d), the maximum size of codewords with length n and Hamming distance at least d.",
- "extended": "**Semidefinite programming bounds for binary codes from a split Terwilliger algebra**\n\n*Pin-Chieh Tseng, Ching-Yi Lai, and Wei-Hsuan Y u*\n\n15 pp, 5 sections.\n\n**Abstract.** We study the upper bounds for A(n, d), the maximum size of codewords with length n and Hamming distance at least d. Schrijver studied the Terwilliger algebra of the Hamming sc heme and proposed a semideﬁnite program to bound A(n, d). We derive more sophisticated matrix inequalities based on a sp lit Terwilliger algebra to improve Schrijver’s semideﬁnit e programming bounds on A(n, d). In particular, we improve the semideﬁnite programming bou nds on A(18,4) to 6551. I. I NTRODUCTION In coding theory, one of the classical problems is to determi ne A(n, d), the maximum size of a binary (n, d) code with length n and minimum distance at least d. The (Hamming) distance distribution of a code is considere d since the MacWilliams identities provide a linear relation between the distance d istribution and its transform [MS77].\n\n**Outline.** Split Terwilliger algebra of the Hamming schem; linear constraints; The correctness of computer computational resu; Underlying structure; References",
+ "brief": "Semideﬁnite programming bounds for binary codes from a split Terwilliger algebra — We study the upper bounds for A(n, d), the maximum size of codewords with length n and Hamming distance at least d.",
+ "extended": "**Semideﬁnite programming bounds for binary codes from a split Terwilliger algebra**\n\n*Pin-Chieh Tseng, Ching-Yi Lai, and Wei-Hsuan Yu*\n\n15 pp, 11 sections.\n\n**Abstract.** We study the upper bounds for A(n, d), the maximum size of codewords with length n and Hamming distance at least d. Schrijver studied the Terwilliger algebra of the Hamming scheme and proposed a semideﬁnite program to bound A(n, d). We derive more sophisticated matrix inequalities based on a split Terwilliger algebra to improve Schrijver’s semideﬁnite programming bounds on A(n, d). In particular, we improve the semideﬁnite programming bounds on A(18, 4) to 6551. I. INTRODUCTION In coding theory, one of the classical problems is to determine A(n, d), the maximum size of a binary (n, d) code with length n and minimum distance at least d. The (Hamming) distance distribution of a code is considered since the MacWilliams identities provide a linear relation between the distance distribution and its transform [MS77].\n\n**Outline.** Front matter; Introduction; Split Terwilliger algebra of the Hamming schem; linear constraints; Semidefinite program; Semidefinite program for binary codes; The correctness of computer computational resu; Generalization; Underlying structure; Conclusion; References\n\n**Extracted claims (proposals, not verified).**\n- Proposition 11: [GMS12, Generalized SDP bound] For S ∈Nk, deﬁne\n- Corollary 9: [Sim95, Generalized Delsarte’s inequalities]\n- Lemma 15: [Bes80, Lemma 5] Let P = A(n −1, d, 1\n- Lemma 16: [MEL02, Theorem 10] For i = 1, . . . , d\n- Lemma 17: [Sch05, (25)] For i = 0, . . . , n,\n- Lemma 18: [KT13, Theorem 3] For i, j, t ∈{0, . . . , n}, we have",
  "tokens": {
   "brief": 49,
-  "extended": 291
+  "extended": 416
  },
  "sections": [
   {
-   "id": "sec-000-split-terwilliger-algebra-of-the-hamming-scheme",
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-split-terwilliger-algebra-of-the-hamming-scheme",
    "title": "Split Terwilliger algebra of the Hamming scheme",
-   "pages": "5-8"
+   "pages": "4-8"
   },
   {
-   "id": "sec-001-linear-constraints",
+   "id": "sec-002-linear-constraints",
    "title": "linear constraints",
-   "pages": "8-10"
+   "pages": "8-9"
   },
   {
-   "id": "sec-002-the-correctness-of-computer-computational-result",
+   "id": "sec-003-semidefinite-program",
+   "title": "Semidefinite program",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-004-semidefinite-program-for-binary-codes",
+   "title": "Semidefinite program for binary codes",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-005-the-correctness-of-computer-computational-result",
    "title": "The correctness of computer computational results",
-   "pages": "10-14"
+   "pages": "10-11"
   },
   {
-   "id": "sec-003-underlying-structure",
+   "id": "sec-006-generalization",
+   "title": "Generalization",
+   "pages": "11-14"
+  },
+  {
+   "id": "sec-007-underlying-structure",
    "title": "Underlying structure",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-008-conclusion",
+   "title": "Conclusion",
    "pages": "14-15"
   },
   {
-   "id": "sec-004-references",
+   "id": "sec-009-references",
    "title": "References",
    "pages": "15-15"
   }
@@ -39,7 +69,8 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles"
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

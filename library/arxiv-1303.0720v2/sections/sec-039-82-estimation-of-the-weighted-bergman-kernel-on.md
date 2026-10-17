@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.974
 latex_coverage_ratio: 0.905
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 We recall that $\mathrm{PA}^2_{2,m}$ is the weighted bianalytic Bergman space on the domain $\Omega$ in ${\mathbb C}$, supplied with the weight $\mathrm{e}^{-2mQ}$. The associated reproducing kernel is written $K_{2,m}$.
 

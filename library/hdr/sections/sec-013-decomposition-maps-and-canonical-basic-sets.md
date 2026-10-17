@@ -8,6 +8,7 @@ pages: 30-31
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
 toc_source: outline
+doc_brief: "Hecke algebras, generalisations and representation theory — 30 sections: Front matter; Algebras of Finite Type; Blocks"
 ---
 Decomposition maps and canonical basic sets
 Given a cyclotomic Hecke algebra Hϕm(W) and a ring homomorphism θ : q 7→η ∈C \ {0}, we obtain a

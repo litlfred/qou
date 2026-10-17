@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.947
 latex_coverage_ratio: 0.909
+doc_brief: "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS — In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the"
 ---
 Suppose for a moment that  hypothesis \eqref{hyp:laplacemod} is replaced by the stronger hypotheses of Definition \ref{def:mod2}, with $c=+\infty$ and therefore $\mathcal{B}_c=\CC$. Fix then $0<a<b$, and consider the partial integral $\esper[\E^{(X_n)^2/2t_n}\,\mathbbm{1}_{t_na \leq X_n \leq t_nb}]$. By integration by parts of Riemann-Stieltjes integrals, one has:
 \begin{align*}

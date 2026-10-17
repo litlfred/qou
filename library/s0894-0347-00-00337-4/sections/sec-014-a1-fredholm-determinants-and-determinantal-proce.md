@@ -8,6 +8,7 @@ pages: 28-30
 source_pdf: S0894-0347-00-00337-4.pdf
 source_sha256: 1c6848281fc2804c
 toc_source: outline
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY S 0894-0347(00)00337-4 — 21 sections: Front matter; Plancherel measures; Introduction"
 ---
 plex Hilbert space, L(H) the algebra of bounded operators in H, and L1(H), L2(H)
 the ideals of trace class and Hilbert–Schmidt operators, respectively.

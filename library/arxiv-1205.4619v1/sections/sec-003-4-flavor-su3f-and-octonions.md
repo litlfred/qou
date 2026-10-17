@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.94
+doc_brief: "Quaternion-Octonion Unitary Symmetries and Analogous Casimir Operators — An attempt has been made to investigate the global SU(2) and SU(3) unitary ﬂavor symmetries systematically in terms of"
 ---
 Gell-Mann and Ne'eman \cite{key-28} were the first to propose $SU(3)_{f}$
 as the correct generalization of isospin $SU(2)_{f}$ to include third

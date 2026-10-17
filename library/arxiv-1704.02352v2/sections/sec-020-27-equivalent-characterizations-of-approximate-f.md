@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.903
 latex_coverage_ratio: 0.984
+doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Young diagrams which can be regarded as a natural one-parameter deformation of some classi- cal"
 ---
 The following result, [\[def:approx-factorization-charactersB\]](#def:approx-factorization-charactersB){reference-type="ref" reference="def:approx-factorization-charactersB"}, is the key tool for the purposes of the current paper. Its main content is part [\[item:afp2\]](#item:afp2){reference-type="ref" reference="item:afp2"}; roughly speaking, it states that each of the four families of numbers [\[eq:AFPPartitions\]](#eq:AFPPartitions){reference-type="eqref" reference="eq:AFPPartitions"}--[\[eq:AFPDisjointCumulants\]](#eq:AFPDisjointCumulants){reference-type="eqref" reference="eq:AFPDisjointCumulants"} can be transformed into the others. Each of these four families describes some convenient aspect of the characters $\chi_n$ in the limit $n\to\infty$. To be more specific:
 

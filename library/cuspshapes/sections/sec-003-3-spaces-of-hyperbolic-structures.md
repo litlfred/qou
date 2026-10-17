@@ -8,6 +8,7 @@ pages: 6-8
 source_pdf: CuspShapes.pdf
 source_sha256: 01db19e63193e6ae
 toc_source: outline
+doc_brief: "CUSP SHAPE AND TUNNEL NUMBER — We show that the set of cusp shapes of hyperbolic tunnel number one manifolds is dense in the Teichm¨uller space of the torus."
 ---
 Deﬁne the representation space of C with parabolic locus T to be the space
 R(C, T) = {representations ρ: π1(C) →PSL(2, C) | g ∈π1(T) ⇒ρ(g) is parabolic}.

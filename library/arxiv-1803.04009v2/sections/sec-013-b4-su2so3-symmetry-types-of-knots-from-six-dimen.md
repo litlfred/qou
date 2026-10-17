@@ -8,6 +8,7 @@ pages: 53-59
 source_pdf: 1803.04009v2.pdf
 source_sha256: 8b34299b739cd2b0
 toc_source: outline
+doc_brief: "Symmetry enhancement and closing of knots in 3d/3d correspondence — We revisit Dimofte-Gaiotto-Gukov’s construction of 3d gauge theories asso- ciated to 3-manifolds with a torus boundary."
 ---
 SU(2)/SO(3) symmetry types of knots from six dimensions
 From the point of view of 6d N = (2, 0) theory, the symmetry type is determined as follows.

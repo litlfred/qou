@@ -8,6 +8,7 @@ pages: 32-34
 source_pdf: 0904.1247v3.pdf
 source_sha256: 4a6f4dee6af66dac
 toc_source: outline
+doc_brief: "THE CHARACTER THEORY OF A COMPLEX GROUP — We apply the ideas of derived algebraic geometry and topological ﬁeld theory to the representation theory of reductive groups."
 ---
 ization of Theorem 5.2 and its corollary realizing linear functors via integrals kernels on the ﬁber
 product. Unfortunately, results of this nature do not hold in great generality, but we will be content

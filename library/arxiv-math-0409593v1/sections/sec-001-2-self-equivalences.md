@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.51
+doc_brief: "CATEGORIFICATION OF THE BRAID GROUPS — 19 sections: Front matter; Introduction; Self-equivalences"
 ---
 We describe a categorification of the notion of reflection with respect to a subspace. The ambient space is $K_0$ of a triangulated category, the subspace is another triangulated category and the embeddings and projections are given by functors. We actually allow an automorphism of the "subspace" category, which allows to categorify the $q$-analog of a reflection.
 

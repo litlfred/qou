@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.839
 latex_coverage_ratio: 1.0
+doc_brief: "Quantum Mechanics of Plancherel Growth — Growth of Young diagrams, equipped with Plancherel measure, follows the automodel equation of Kerov."
 ---
 To make a precise connection between automodel class and the above solution, we need to set up a dictionary between the variables defined in $(u,v)$ plane and $(h,x)$ plane. The relation between \emph{French} notation and \emph{English} notation is $Y=n\ \tand \ X=x$. We use the following transformation between $(n,x)$ and $(u,v)$ so that 
 $u=v=2$ point is mapped to $n=1, x=0$

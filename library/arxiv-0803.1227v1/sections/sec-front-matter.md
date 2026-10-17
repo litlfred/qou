@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0803.1227v1.pdf
 source_sha256: cf72e0fcdc7f3ddf
 toc_source: outline
+doc_brief: "Linear programming bounds for unitary space time codes — The linear programming method is applied to the space Un(C) of uni- tary matrices in order to obtain bounds for codes relative to the"
 ---
 arXiv:0803.1227v1  [cs.IT]  8 Mar 2008
 Linear programming bounds for unitary space

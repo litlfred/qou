@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.978
 latex_coverage_ratio: 1.0
+doc_brief: "Quantum repeater with Rydberg blocked atomic ensembles in ﬁber-coupled cavities — 9 sections: Front matter; Introduction; The model"
 ---
 Initially, all the cavities are empty and all ensemble atoms are in the reservoir state $\left|s\ldots s\right\rangle$. The first step consists in entangling pairs of neighboring subnodes $\left(R_{k},L_{k+1}\right)$ (see Fig. [\[Fig1\]](#Fig1){reference-type="ref" reference="Fig1"}c). To this end, one applies the sequence of operations given in Table [1](#EntanglementGeneration){reference-type="ref" reference="EntanglementGeneration"}. In this table, dashed-line arrows are used for non-resonant couplings to the intermediate states. Moreover, the "ensemble" nature of pulses is emphasized by a $\sqrt{N_{a}}$ factor above the concerned arrows. Finally, we indicate when a cavity mode is involved in a transition $\left|s\right\rangle \leftrightarrow\left|\varphi_{\pm}\right\rangle$ by writing "single photon $\pm$" above the corresponding arrow.
 

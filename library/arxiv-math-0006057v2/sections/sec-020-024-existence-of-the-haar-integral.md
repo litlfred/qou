@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.972
 latex_coverage_ratio: 0.981
+doc_brief: "arXiv:math/0006057v2 [math.QA] 10 Jun 2000 — We give a survey of the theory of ﬁnite quantum groupoids (weak Hopf algebras), including foundations of the theory and applications to ﬁnite depth"
 ---
 Given a dual bases $\{f_i\}$ and $\{\xi^i\}$ of $H$ and $\widehat H$, 
 respectively,  let us consider the following canonical element
@@ -208,7 +209,8 @@ Let us introduce an element $g_t=E_t(h)^{1/2}\in H_t$.
 
 
 \begin{remark}
-\label{group-like}(\cite{BNSz}, 4.12).
+\label{group-like}
+(\cite{BNSz}, 4.12).
 $g_t$ is positive and invertible, and the canonical group-like element 
 of $H$ can be written as $g=g_tS(g_t^{-1})$.
 \end{remark}

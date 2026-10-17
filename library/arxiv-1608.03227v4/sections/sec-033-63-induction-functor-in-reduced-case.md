@@ -8,6 +8,7 @@ pages: 33-34
 source_pdf: 1608.03227v4.pdf
 source_sha256: c71128e9a6c35343
 toc_source: outline
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 Lie(Pk) × n. We also use notation W for the restriction of the potential W on the subspace X 2(Pk).
 There is a natural embedding ¯ik : X 2(Pk) →X 2(Gn).

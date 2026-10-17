@@ -8,6 +8,7 @@ pages: 18-20
 source_pdf: 2010.12445v1.pdf
 source_sha256: 16e9ca22ecc1f296
 toc_source: outline
+doc_brief: "STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION — Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect(X), we are"
 ---
 The last statement of Theorem 3.2 admits an almost converse. Let X be a ﬁbered category
 over R and C ⊆Vect X be a full monoidal subcategory. We deﬁne

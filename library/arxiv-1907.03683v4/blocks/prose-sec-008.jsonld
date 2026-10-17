@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1907.03683v4/blocks/prose-sec-008",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Discrete orthogonal polynomial ensembles and determinantal point processes",
-  "pageStart": 8,
-  "pageEnd": 10,
-  "text": "../sections/sec-008-23-discrete-orthogonal-polynomial-ensembles-and.md",
+  "title": "Christoffel deformations of orthogonal polynomial ensembles",
+  "pageStart": 5,
+  "pageEnd": 5,
+  "text": "../sections/sec-008-2-christoffel-deformations-of-orthogonal-polynom.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1907.03683v4/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1907.03683v4/manifest.jsonld",
   "provenance": "ingested"

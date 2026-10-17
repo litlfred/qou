@@ -1,1 +1,1 @@
-If h(t,x,q ) is holomorphic for t∈ C × and satisﬁes Equation (282a) then it
+(a) The function B1 ˆf (0)(ξ, q) has simple poles at ξ ∈qZ with residue

@@ -8,6 +8,7 @@ pages: 17-23
 source_pdf: deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-linking-numbers.pdf
 source_sha256: db149864ce367da2
 toc_source: outline
+doc_brief: "Matemática Contemporânea, Vol. 34, 251–283 ©2008, Sociedade Brasileira de Matemática TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INVARIANTS — Three-component links in the 3-dimensional sphere were classi"
 ---
 Sketch of the algebraic proof of Theorem A
 This proof is organized around the following key diagram:

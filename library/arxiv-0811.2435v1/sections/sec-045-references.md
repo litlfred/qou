@@ -8,6 +8,7 @@ pages: 143-148
 source_pdf: 0811.2435v1.pdf
 source_sha256: 615b04eca83bcade
 toc_source: outline
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 47 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 [1] A. Bayer, Polynomial Bridgeland stability conditions and the large vol-
 ume limit, arXiv:0712.1083.

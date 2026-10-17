@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.983
 latex_coverage_ratio: 0.992
+doc_brief: "The Mukai pairing, I: a categorical approach — We study the Hochschild homology of smooth spaces, emphasizing the importance of a pairing which generalizes Mukai’s pairing on the cohomology of K3"
 ---
 In the case of a manifold $X$ that is not necessarily Calabi-Yau we don't have the same coincidence of structure as above: we no longer have a Frobenius algebra $\mathop{\mathrm{HH}}^\bullet(X)$; rather we have an algebra $\mathop{\mathrm{HH}}^\bullet(X)$ and an inner product space $\mathop{\mathrm{HH}}_\bullet(X)$. This means that we can not formulate the Cardy Condition as it stands. We now state a condition which makes sense for an arbitrary, non-Calabi-Yau manifold and which is equivalent to the Cardy Condition in the Calabi-Yau case.
 

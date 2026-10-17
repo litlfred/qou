@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.771
 latex_coverage_ratio: 0.985
+doc_brief: "Cluster Formation and The Virial Equation of State of Low-Density Nuclear Matter — 15 sections: Front matter; Nuclear Statistical Equilibrium; Introduction"
 ---
 What do we mean by nuclear matter at subsaturation density? This is an important conceptual question. The binding energy of uniform nuclear matter has a minimum at saturation density $n_0 \approx 0.16 \, \text{fm}^{-3}$. Below this density, the system can minimize its energy by forming clusters. Therefore the study of low-density nuclear matter is a study of clusters. What are the properties of these clusters? What role do they play in astrophysics? What is the relationship between clusters formed in the thermodynamic limit for an infinite system and those formed in laboratory heavy-ion collisions? In this paper, we answer these questions using the virial expansion for low-density nuclear matter.
 

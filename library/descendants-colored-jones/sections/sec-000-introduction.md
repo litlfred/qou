@@ -8,6 +8,7 @@ pages: 1-3
 source_pdf: descendants_colored_jones.pdf
 source_sha256: f00693a5926c074f
 toc_source: outline
+doc_brief: "The descendant colored Jones polynomials — We discuss two realizations of the colored Jones polyno- mials of a knot, one appearing in an unnoticed work of the second author in 1994 on quantum"
 ---
 Introduction
 2308

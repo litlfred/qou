@@ -8,6 +8,7 @@ pages: 6-7
 source_pdf: 5S032X.pdf
 source_sha256: 17761383781f7bdc
 toc_source: outline
+doc_brief: "The Standard Model Symmetry and Qubit Entanglement — quantum description."
 ---
 The Bloch Sphere and the Complex Hopf Fibration
 Above, we have already introduced the Bloch sphere representation of single qubits. The normalization condition

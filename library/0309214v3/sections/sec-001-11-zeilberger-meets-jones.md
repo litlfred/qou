@@ -8,6 +8,7 @@ pages: 2-4
 source_pdf: 0309214v3.pdf
 source_sha256: 53967ef30b0aedb9
 toc_source: outline
+doc_brief: "The colored Jones function is q –holonomic — A function of several variables is called holonomic if, roughly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many linear"
 ---
 Zeilberger meets Jones
 The colored Jones function of a framed knot K in 3–space

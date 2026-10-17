@@ -8,6 +8,7 @@ pages: 34-36
 source_pdf: AIF_2009__59_1_347_0.pdf
 source_sha256: 35b8422990e24888
 toc_source: outline
+doc_brief: "On q-summation and confluence — 25 sections: Front matter; Introduction; Part 1. Convergent q-Borel and q-L"
 ---
 Notice that if λqZ = µqZ, i.e. if λ and µ are two complex numbers
 congruent modulo q, the two discrete sums E[λ]

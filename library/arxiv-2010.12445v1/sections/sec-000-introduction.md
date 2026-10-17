@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.907
 latex_coverage_ratio: 0.988
+doc_brief: "STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION — Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect(X), we are"
 ---
 Classical (non-neutral) Tannaka's duality over a field $k$ establishes a correspondence between $k$-Tannakian categories and affine gerbes over $k$. More precisely given a $k$-Tannakian category $\shC$ we can define a fibered category $\Pi_{\shC}\colon\mathop{\mathrm{\textup{Aff}}}/k\to(\text{groupoids)}$ by $$\Pi_{\shC}(A)=\{k\text{-linear, strong monoidal and exact functors \ensuremath{\shC}\ensuremath{\ensuremath{\to\mathop{\mathrm{\textup{Vect}}}}(A)\}}}$$ where $\mathop{\mathrm{\textup{Aff}}}/k$ is the category of affine schemes over $k$ and $\mathop{\mathrm{\textup{Vect}}}(A)=\mathop{\mathrm{\textup{Vect}}}(\mathop{\mathrm{\textup{Spec}}}A)$ is the category of finitely presented locally free sheaves on $\mathop{\mathrm{\textup{Spec}}}A$. It is then proved that $\Pi_{\shC}$ is an affine gerbe and the functor $$\shC\to\mathop{\mathrm{\textup{Vect}}}(\Pi_{\shC})\comma X\longmapsto(\Gamma\ni\Pi_{\shC}(A)\mapsto\Gamma_{X}\in\mathop{\mathrm{\textup{Vect}}}(A))$$ is a $k$-linear and strong monoidal equivalence. Here and in what follows we think sheaves (e.g locally free, quasi-coherent) on a fibered category as functors from the fibered category itself to the corresponding fibered category of sheaves (see [@Tonini2014 Section 1] for details).
 

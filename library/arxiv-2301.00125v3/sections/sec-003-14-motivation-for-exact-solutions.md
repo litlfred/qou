@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.976
 latex_coverage_ratio: 0.988
+doc_brief: "Generating Function for Pinsky’s Combinatorial Second Moment Formula for the Generalized Ulam Problem — Given a uniform random permutation π ∈Sn, let Zn,k be equal to the number of increasing"
 ---
 In theoretical physics and in the mathematical physics of spin glasses, one is interested in the
 precise form of the second moment and all higher moments, at least to leading order asymptotically

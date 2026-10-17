@@ -8,6 +8,7 @@ pages: 118-130
 source_pdf: 2108.11825v1.pdf
 source_sha256: 1c2a4b317d6239c5
 toc_source: outline
+doc_brief: "Properties of Eigenvalues on Riemann Surfaces with Large Symmetry Groups — 24 sections: Front matter; Introduction; Background"
 ---
 The following box contains the FreeFEM++ code for the Bolza surface. It contains basic
 comments, but for more information about the various solvers and ﬁnite element spaces

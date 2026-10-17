@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:math/9910147v1 [math.QA] 27 Oct 1999 — We study the tensor product of principal unitary representations of the quantum Lorentz Group, prove a decomposition theorem and compute the associated"
 ---
 In this section we will compute the $R$-matrix in the tensor product of two irreducible infinite dimensional representations $({\buildrel {_{(X_0X_1)}}\over \Pi}\otimes  
  {\buildrel {_{(Y_0Y_1)}}\over \Pi})$. We will in particular show that the expression of $({\buildrel {_{(X_0X_1)}}\over \Pi}\otimes  

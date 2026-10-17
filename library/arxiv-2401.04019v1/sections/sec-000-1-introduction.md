@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.991
 latex_coverage_ratio: 0.922
+doc_brief: "TRUNCATED THETA SERIES RELATED TO THE JACOBI TRIPLE PRODUCT IDENTITY — The work of Andrews and Merca on the truncated Euler’s pen- tagonal number theorem led to a resurgence in research on truncated"
 ---
 A partition $\lambda$ of $n$ is a non-increasing sequence $\lambda= (\lambda_1, \lambda_2, \ldots, \lambda_\ell)$ of positive integers that add up to $n$. We refer to the integers $\lambda_i$ as the parts of $\lambda$. As usual, we denote by $p(n)$ the number of partitions of $n$. Since the empty partition $\emptyset$ is the only partition of $0$, we have $p(0)=1$. For a thorough introduction to the theory of partitions we refer the reader to [@A98; @AE].
 

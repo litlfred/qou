@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.926
 latex_coverage_ratio: 1.0
+doc_brief: "Automatic Theorem Proving in Walnut — 41 sections: Front matter; Introduction; Basics"
 ---
 \label{sec:load}
 We can write any series of legitimate Walnut commands in a text file and save it in the directory ``/Walnut/Command Files/''. Then we can load it by writing the following in Walnut:

@@ -1,1 +1,1 @@
-There are only three orbits orbits of points of size less than120
+Aut(B) = S5. This is the maximal possible automorphism

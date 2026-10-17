@@ -8,6 +8,7 @@ pages: 225-230
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
 toc_source: inferred
+doc_brief: "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry — 66 sections: Front matter; Purpose of this book.; Contents of this book."
 ---
 an n+1 dimensional vector space over K. A lattice in V is a ﬁnitely generated
 R-submodule of V which spans V over K. Every lattice is therefore a free

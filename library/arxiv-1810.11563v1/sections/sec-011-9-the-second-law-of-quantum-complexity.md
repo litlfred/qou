@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.988
 latex_coverage_ratio: 0.997
+doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
 ---
 I'm not sure why complexity theorists never remarked on the similarity of quantum complexity and classical entropy, or the existence of a second law of complexity\footnote{There is a very interesting paper by Zurek  in which he argues that that the classical entopy of a system is the ensemble average of the Kolmogorov algorithmic complexity of states in phase space. [W. Zurek,  Phys.\ Rev.\ A {\bf 40}, 4731 (1989)] The idea is very similar to the connection between quantum-computational-complexity and entropy described by Brown et.al in  \url{https://arxiv.org/pdf/1701.0110.pdf}}. 
  Just to be clear, although ensemble-averaged complexity is a kind of entropy it is NOT conventional entropy. The conventional entropy of a system of $K$ qubits is bounded by $K\log{2}$, the logarithm of the maximum number of mutually orthogonal vectors in the Hilbert space. By contrast the maximum  complexity is exponential in $K$.  Maximum complexity $\sim 4^K\log{1/\epsilon}$, the number of $\epsilon$-balls in $\suk.$ 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.976
 latex_coverage_ratio: 0.982
+doc_brief: "BRAID ORDERING AND THE GEOMETRY OF CLOSED BRAID — The relationships between braid ordering and the ge- ometry of its closure is studied."
 ---
 In this section we give a brief exposition of left-invariant total ordering of braid groups called Dehornoy ordering, and define Dehornoy floor. Dehornoy floor is first introduced in [@mn], though they do not use term Dehornoy floor. This is a measure of how far braid is from the identity elements with respect to Dehornoy ordering and can be seen as some kinds of complexity of braids. We describe fundamental results about Dehornoy floor, proved in [@mn],[@ma].
 

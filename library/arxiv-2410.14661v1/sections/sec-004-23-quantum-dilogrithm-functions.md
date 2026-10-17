@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.943
 latex_coverage_ratio: 0.919
+doc_brief: "ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM INVARIANTS III: THE RESHETIKHIN-TURAEV INVARIANTS OF CLOSED HYPERBOLIC 3-MANIFOLDS OBTAINED BY DOING INTEGRAL SURGERY ALONG THE TWIST KNOT — This is the"
 ---
 For a positive integer $N$, we set $t=e^{\frac{2\pi\sqrt{-1}}{N+\frac{1}{2}}}$. We introduce the holomorphic function $\varphi_N(\theta)$ for $\{\theta\in
 \mathbb{C}| 0< \text{Re}(\theta) < 1\}$, by the following integral $$\begin{aligned}

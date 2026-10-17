@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1501.04614v1.pdf
 source_sha256: ebebcae0c1823217
 toc_source: outline
+doc_brief: "KNOT CABLING AND THE DEGREE OF THE COLORED JONES — We continue our study of the degree of the colored Jones polynomial under knot cabling started in [8]."
 ---
 arXiv:1501.04614v1  [math.GT]  19 Jan 2015
 KNOT CABLING AND THE DEGREE OF THE COLORED JONES

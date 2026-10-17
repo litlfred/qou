@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.992
 latex_coverage_ratio: 0.962
+doc_brief: "A NEW PRESENTATION OF THE osp(1|2)-POLYNOMIAL LINK INVARIANT — There is a known connection between the osp(1|2n) polynomial knot invariant Jn K and the so(2n + 1) knot invariant soJn K studied by"
 ---
 Let $R=\Z^\pi$ for the remainder of the paper.
 This section assumes prior knowledge of Putyra's work on Covering Khovanov homology \cite{P}.

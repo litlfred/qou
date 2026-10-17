@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.996
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:hep-th/9811173v1 19 Nov 1998 — We identify 998 closed hyperbolic 3-manifolds whose volumes are rationally related to Dedekind zeta values, with coprime integers a and b giving a b vol(M) ="
 ---
 We found that 7 of the 84 knots with less than 10 crossings have rational Dedekind-zeta invariants. The 6 distinct values of ([\[ZK\]](#ZK){reference-type="ref" reference="ZK"}) are $$\begin{aligned}
 Z_3&=&1\times{\rm vol}(4_1)\label{4_1}\\

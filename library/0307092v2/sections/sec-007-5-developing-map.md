@@ -8,6 +8,7 @@ pages: 18-23
 source_pdf: 0307092v2.pdf
 source_sha256: de2f7ddec49b2ce6
 toc_source: outline
+doc_brief: "Extended Bloch group and the Cheeger–Chern–Simons class — We deﬁne an extended Bloch group and show it is naturally isomorphic to H3(PSL(2, C)δ; Z)."
 ---
 3 which is helpful for visualizing the ﬂattening con-
 dition. It is used to prove some preliminary lemmas. Section 6 proves a con-

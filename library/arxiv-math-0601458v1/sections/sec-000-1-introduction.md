@@ -8,6 +8,7 @@ pages: 2-3
 source_pdf: 0601458v1.pdf
 source_sha256: ef34611620cfd0bd
 toc_source: outline
+doc_brief: "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS — Interest in combinatorial interpretations of mathematical entities stems from the convenience of the concrete models they provide."
 ---
 Introduction
 3

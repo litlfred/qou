@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
 latex_coverage_ratio: 0.935
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 We begin with a lemma. We decompose the given bianalytic function as $u(z)= u_1(z)+c\bar z+|z|^2u_2(z)$, where $c$ is a constant and $u_j$ is holomorphic for $j=1,2$. Let $\mathrm{d}s(z)
 :=|\mathrm{d}z|$ denote arc length measure.

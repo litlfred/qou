@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.891
 latex_coverage_ratio: 0.986
+doc_brief: "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects."
 ---
 In the following, we assume that all triangulations are generic and transversal at the boundary. 
 Our first example is a defect sphere without defect lines or vertices embedded inside a 3-ball.  We suppose that the embedding is \emph{unknotted} in the sense of Zeeman \cite{Z}. This means that there is a PL homeomorphism from the 3-ball to itself that  sends the defect sphere to the boundary of a tetrahedron, see also Footnote 1  \cite{Z}.

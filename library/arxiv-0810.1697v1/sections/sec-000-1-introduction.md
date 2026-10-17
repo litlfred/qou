@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.983
 latex_coverage_ratio: 1.0
+doc_brief: "ON THE CABLE EXPANSION FORMULA — In this paper, a generalized version of Morton’s formula [8] is proved."
 ---
 []{#intro label="intro"} In [@MO], Morton proved a formula relating the colored Jones polynomials of a cabling of a knot to the colored Jones polynomials of the original knot. Using this formula, Kashaev proved that the volume conjecture is true for the torus knots [@KT].
 

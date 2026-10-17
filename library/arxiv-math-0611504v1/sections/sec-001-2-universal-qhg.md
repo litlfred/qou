@@ -8,6 +8,8 @@ pages: 3-4
 source_pdf: 0611504v1.pdf
 source_sha256: a33d2771c873a97e
 toc_source: outline
+doc_brief: "Quantum hyperbolic geometry — 22 sections: Front matter; Introduction; Universal QHG"
+duplicate_of: "agt-v7-n2-p13-s"
 ---
 (section 2.4 in particular) the notions and results we need.
 The QHFT bordism category is described in section 4, while its objects, the QHFT surfaces, are

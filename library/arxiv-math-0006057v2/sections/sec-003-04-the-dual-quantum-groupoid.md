@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.913
 latex_coverage_ratio: 0.955
+doc_brief: "arXiv:math/0006057v2 [math.QA] 10 Jun 2000 — We give a survey of the theory of ﬁnite quantum groupoids (weak Hopf algebras), including foundations of the theory and applications to ﬁnite depth"
 ---
 The set of axioms of Definition [\[finite quantum groupoid\]](#finite quantum groupoid){reference-type="ref" reference="finite quantum groupoid"} is self-dual. This allows to define a natural quantum groupoid structure on the dual vector space $\widehat H=\mbox{Hom}_k(H,k)$ by "reversing the arrows": $$\begin{aligned}
 & & \langle\,h,\,\phi\psi \,\rangle= \langle\,\Delta(h),\,\phi\otimes\psi \,\rangle, \\

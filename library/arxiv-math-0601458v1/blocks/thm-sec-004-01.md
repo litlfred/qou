@@ -1,1 +1,1 @@
-The structure type operators A and A∗ satisfy
+The structure type operators A and A∗satisfy

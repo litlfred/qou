@@ -1,1 +1,1 @@
-TheJ-holomorphic trivial stripuγ : R×[0, 1]→ R×Z
+The J-holomorphic trivial strip uγ : R×[0, 1] →R×Z

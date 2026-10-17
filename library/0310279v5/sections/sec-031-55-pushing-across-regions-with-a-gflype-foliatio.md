@@ -8,6 +8,7 @@ pages: 92-94
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
 toc_source: outline
+doc_brief: "Stabilization in the braid groups I: MTWS Introduction — 40 sections: Front matter; Introduction; The problem"
 ---
 Pushing across regions with a G–ﬂype foliation
 We have seen that if PA contains a long clasp arc, then there is a family of thin annuli

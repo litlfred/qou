@@ -8,6 +8,8 @@ pages: 4-4
 source_pdf: state.integrals.qseries.pdf
 source_sha256: a5e86443f35e21c0
 toc_source: outline
+doc_brief: "FROM STATE INTEGRALS TO q-SERIES — It is well-known to the experts that multi-dimensional state integrals of prod- ucts of Faddeev’s quantum dilogarithm which arise in Quantum Topology can be written"
+duplicate_of: "arxiv-1304.2705v1"
 ---
 Consider the operators ˆx and ˆE which act on f(x) ∈Q(q)[[x]] by:
 ( ˆEf)(x) = f(qx),

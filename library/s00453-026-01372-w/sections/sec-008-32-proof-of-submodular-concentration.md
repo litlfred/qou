@@ -8,6 +8,7 @@ pages: 7-10
 source_pdf: s00453-026-01372-w.pdf
 source_sha256: 98b569eff84fb489
 toc_source: outline
+doc_brief: "Concentration of Submodular Functions and Read-k Families Under Negative Dependence — We study the question of whether submodular functions of random variables satisfying various notions of negative"
 ---
 We will now prove our main result. As mentioned in the introduction, our proof is
 based on the standard technique of bounding the exponential moments, which can be

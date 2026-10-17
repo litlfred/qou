@@ -8,6 +8,7 @@ pages: 36-39
 source_pdf: 1207.6711v1.pdf
 source_sha256: 320c4301ac66fff1
 toc_source: outline
+doc_brief: "GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were"
 ---
 natural map π: SL(n, C) →PGL(n, C) induces a map from decorations by N-cosets to dec-
 orations by B-cosets. Given a generic SL(n, C)/N-decoration D on ∆3

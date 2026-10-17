@@ -8,6 +8,7 @@ pages: 25-25
 source_pdf: 1012.5432v4.pdf
 source_sha256: ec5f6da1f813649e
 toc_source: outline
+doc_brief: "quant-ph Towards Topological Quantum Computation? - — 23 sections: Front matter; A Hamiltonian; Instantons"
 ---
 Finite Subgroups of SO(3) and SU(2)
 Non-abelian quantum doubles arise from SSB of non-abelian groups. SO(3) has ﬁve ﬁnite

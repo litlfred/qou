@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.99
 latex_coverage_ratio: 0.99
+doc_brief: "BRAID ORDERING AND THE GEOMETRY OF CLOSED BRAID — The relationships between braid ordering and the ge- ometry of its closure is studied."
 ---
 In this section, we describe an application of theorem [\[thm:main1\]](#thm:main1){reference-type="ref" reference="thm:main1"} for genus one closed surface, namely, essential torus. A description of essential torus in closed braid complements is studied in [@bm2],[@n] by using braid foliation machinery. Since an essential torus deeply involves the geometry of link complements, we can extract some of geometrical information of closed braids from theorem [\[thm:main1\]](#thm:main1){reference-type="ref" reference="thm:main1"}.
 

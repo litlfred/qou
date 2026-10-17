@@ -8,6 +8,7 @@ pages: 2-3
 source_pdf: agt-v12-n2-p04-s.pdf
 source_sha256: bcbb460bc75f5612
 toc_source: outline
+doc_brief: "The twisted Alexander polynomial for finite abelian covers over three manifolds with boundary — 8 sections: Front matter; Introduction; The Reidemeister torsion"
 ---
 covering. We are mainly intested in link exteriors in homology three–spheres and their
 abelian covers. Our main theorem (see Theorem 4.1) is stated for an abelian cover

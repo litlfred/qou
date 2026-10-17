@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.992
 latex_coverage_ratio: 0.974
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 47 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 In this section the field $\k$ can have arbitrary characteristic.
 

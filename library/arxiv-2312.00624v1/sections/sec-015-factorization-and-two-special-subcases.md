@@ -8,6 +8,7 @@ pages: 34-36
 source_pdf: 2312.00624v1.pdf
 source_sha256: bda867f7b84f69c3
 toc_source: outline
+doc_brief: "On the structure of wave functions in complex Chern–Simons theory — We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the"
 ---
 Factorization and two special subcases
 Let us apply the explicit formula for the Faddeev’s quantum dilogarithm at the rational point

@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2111.06645v3",
  "source_sha256": "2a4826bd1c2f0823",
- "brief": "Knots, Perturbative Series and Quantum Modularity — We introduce an invariant of a hyperbolic knot which is a map α7→ Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns",
- "extended": "**Knots, Perturbative Series and Quantum Modularity**\n\n*Stavros GAROUFALIDIS a and Don ZAGIER bc*\n\n87 pp, 39 sections.\n\n**Abstract.** We introduce an invariant of a hyperbolic knot which is a map α7→ Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns indexed by the boundary parabolic SL 2(C) representations of the fundamental group of the knot.\n\n**Outline.** Part 0: Introduction and overview; Part I: The main story; 1 The original quantum modularity conjecture; 2 A collection of formal power series; 3.1 The generalized quantum modularity conject; 3.2 Lifting the QMC from constant terms to pow; 3.3 Quadratic relations; 3.4 Asymptotics of the coefficients; 4 Refining the quantum modularity conjecture; 4.1 Improving the quantum modularity conjectur; 4.2 New elements of the Habiro ring; 4.3 Smoothed optimal truncation; 4.4 Strengthening the generalized quantum modu; 4.5 The refined quantum modularity conjecture; 5 The matrix-valued cocycle associated to a kn; 5.1 The Habiro-like matrix and the perturbativ; 5.2 Smoothness; 5.4 Analyticity\n\n**Extracted claims (proposals, not verified).**\n- Theorem 9.1: For each knot K, representation σ∈P K, and number α∈ Q/Z, we have\n- Theorem 9.3: For each integer n≥ 1, define\n- Proposition 5.2: to the ( σ1,σ 1) component of the matrix W (41)\n- Proposition 5.2: The function Wγ belongs to C∞\n- Proposition 8.1: Fix an integer m≥ 0, and set M =m + 5\n- Proposition 8.2: For fixed m< den(β) and r∈ Z/cZ and for n and X tending to infinity as",
+ "brief": "Part 0: Introduction and overview — We introduce an invariant of a hyperbolic knot which is a map α 7→Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns indexed by the",
+ "extended": "**Part 0: Introduction and overview**\n\n*SIGMA 20 (2024), 055, 87 pages*\n\n87 pp, 40 sections.\n\n**Abstract.** We introduce an invariant of a hyperbolic knot which is a map α 7→Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns indexed by the boundary parabolic SL2(C) representations of the fundamental group of the knot.\n\n**Outline.** Front matter; Part 0: Introduction and overview; Part I: The main story; 1 The original quantum modularity conjecture; 2 A collection of formal power series; 3.1 The generalized quantum modularity conject; 3.2 Lifting the QMC from constant terms to pow; 3.3 Quadratic relations; 3.4 Asymptotics of the coefficients; 4 Refining the quantum modularity conjecture; 4.1 Improving the quantum modularity conjectur; 4.2 New elements of the Habiro ring; 4.3 Smoothed optimal truncation; 4.4 Strengthening the generalized quantum modu; 4.5 The refined quantum modularity conjecture; 5 The matrix-valued cocycle associated to a kn; 5.1 The Habiro-like matrix and the perturbativ; 5.2 Smoothness",
  "tokens": {
   "brief": 48,
-  "extended": 378
+  "extended": 261
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-part-0-introduction-and-overview",
    "title": "Part 0: Introduction and overview",
@@ -209,8 +214,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

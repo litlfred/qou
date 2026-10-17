@@ -8,6 +8,7 @@ pages: 7-9
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
 toc_source: outline
+doc_brief: "Stabilization in the braid groups I: MTWS Introduction — 40 sections: Front matter; Introduction; The problem"
 ---
 The admissible ﬂype templates
 Flypes ﬁrst enter the picture when the braid index is 3, and we already illustrated the

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.977
 latex_coverage_ratio: 0.593
+doc_brief: "Fricke S-duality in CHL models — We consider four dimensional CHL models with sixteen spacetime supersym- metries obtained from orbifolds of type IIA superstring on K3×T 2 by a ZN symmetry acting"
 ---
 The lattice of electric charges of the CHL model can be most conveniently described in the heterotic frame. Let $u,u^*$ denote two null vectors generating $\Gamma_{S^1}$, so that $$u\cdot u=u^*\cdot u^*=0\qquad u\cdot u^*=1\qquad \Gamma_{S^1}=\langle u, u^*\rangle\ .$$We can consider $u$ as representing a unit of winding along $S^1$ and $u^*$ as a unit of momentum. Let $g$ be a symmetry of order $N$ of the K3 model in the dual type IIA picture, so that $g$ acts by automorphisms of $\Gamma_{K3}\cong \Gamma^{4,20}$ and fixes $\Gamma_{S^1}$ and $\Gamma_{\tilde S^1}$. The symmetry $g$ fixes a sublattice $\Gamma_{K3}^g\subseteq \Gamma_{K3}$ of signature $(4,d)$, $0\le d\le 20$. In this section, we assume that both in the heterotic and in the type IIA picture, a $g$-twisted ground state satisfies the level matching condition, i.e. $\lambda=1$. This means that the shift $\delta$ can be taken to have the same order $N$ as the symmetry $g$, for example $$\delta:=u/N \ ,$$representing a shift along $S^1$ of $1/ N$-th of a period. The case $\lambda>1$ is considered in appendix [\[s:pureelectgen\]](#s:pureelectgen){reference-type="ref" reference="s:pureelectgen"}.
 

@@ -8,6 +8,7 @@ pages: 11-14
 source_pdf: S0025-5718-07-02027-3.pdf
 source_sha256: 080b5ac8542ff19c
 toc_source: outline
+doc_brief: "MATHEMATICS OF COMPUTATIONS 0025-5718(07)02027-3 — We describe an algorithm for computing Coleman’s p-adic poly- logarithms up to a given precision."
 ---
 In this section we provide estimates for the valuations of the coeﬃcients in the
 power series gn(v) of Proposition 4.3, Fn,ζ(t) of Proposition 4.4 and Hn(t) of Propo-

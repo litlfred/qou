@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.972
 latex_coverage_ratio: 0.968
+doc_brief: "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS — In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the"
 ---
 As explained in the introduction, we now have to gather the estimates given by Theorem \ref{thm:jointcumulant} to get the asymptotics of the cumulants $\kappa^{(2r)}(M_n)$ of the magnetization. 
 

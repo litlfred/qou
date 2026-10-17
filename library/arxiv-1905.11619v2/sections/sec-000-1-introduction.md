@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.793
 latex_coverage_ratio: 0.952
+doc_brief: "L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS — We study (quasi-)cohomological properties through an analysis of quantum Markov semi-groups."
 ---
 []{#Sect=Intro label="Sect=Intro"} The aim of this paper is to connect the theory of quantum Markov semi-groups to certain cohomological properties of their algebras. Quantum Markov semi-groups are continuous semi-groups of trace preserving unital completely positive maps on a finite von Neumann algebra. Such quantum Markov semi-groups naturally arise in time evolutions of open systems that undergo decoherence. With the emergence of non-commutative probability, their theory had been investigated thoroughly. We refer in particular to the papers of Goldstein-Lindsay [@GoldsteinLindsay] and Cipriani [@Cipriani].
 

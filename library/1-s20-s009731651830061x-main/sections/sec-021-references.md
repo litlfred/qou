@@ -8,6 +8,7 @@ pages: 44-45
 source_pdf: 1-s2.0-S009731651830061X-main.pdf
 source_sha256: 8d591fe7f1673c52
 toc_source: outline
+doc_brief: "Fischer, Constant term formulas for refined enumerations of Gog and Magog trapezoids (JCTA 158, 2018, 560–604) — alternating sign matrices, plane partitions, constant-term methods."
 ---
 [1] R.E. Behrend, P. Di Francesco, P. Zinn-Justin, On the weighted enumeration of alternating sign 
 matrices and descending plane partitions, J. Combin. Theory Ser. A 119 (2012) 331–363.

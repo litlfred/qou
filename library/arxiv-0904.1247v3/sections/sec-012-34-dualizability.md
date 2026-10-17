@@ -8,6 +8,7 @@ pages: 25-27
 source_pdf: 0904.1247v3.pdf
 source_sha256: 4a6f4dee6af66dac
 toc_source: outline
+doc_brief: "THE CHARACTER THEORY OF A COMPLEX GROUP — We apply the ideas of derived algebraic geometry and topological ﬁeld theory to the representation theory of reductive groups."
 ---
 rigid categories as objects in the symmetric monoidal (∞, 2)-category Alg(1)(StC), the Morita 2-
 category of monoidal categories [L3, Section 4.1]. This interpretation will not require any technical

@@ -8,6 +8,7 @@ pages: 24-24
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
 toc_source: outline
+doc_brief: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT — 63 sections: Front matter; ACKNOWLEDGMENTS; ABSTRACT"
 ---
 A quantum dilogarithm over a Special Gaussian Group
 Definition 7. [7] The quantum dilogarithm over A = ˆB × B for B = F × is the

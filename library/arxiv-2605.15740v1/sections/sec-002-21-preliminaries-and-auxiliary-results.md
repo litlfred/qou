@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.88
 latex_coverage_ratio: 0.853
+doc_brief: "Bailey pairs, Eichler integrals and unified Witten-Reshetikhin-Turaev invariants — In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´e homology"
 ---
 Recall that a Bailey pair relative to $a$ is a pair of sequences $(\alpha_n,\beta_n)_{n \geq 0}$ satisfying $$\begin{aligned}
 \beta_n &= \sum_{k=0}^n \frac{\alpha_k}{(q)_{n-k}(aq)_{n+k}} \label{pairdef} \\

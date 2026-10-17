@@ -1,1 +1,1 @@
-If the following condition holds for a1,a 2,...,a n−1,b 1,b 2,...,b n−1:
+If the following condition holds for a1, a2, ..., an−1, b1, b2, ..., bn−1:

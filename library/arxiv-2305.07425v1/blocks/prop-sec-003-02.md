@@ -1,1 +1,1 @@
-Suppose thatG ↷ X is a hyperbolic action with a WWPD + elementg ∈G.
+Suppose that G ↷X is a hyperbolic action with a WWPD+ element g ∈G.

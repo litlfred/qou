@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.982
 latex_coverage_ratio: 0.997
+doc_brief: "The Algebra of Grand Uniﬁed Theories — The Standard Model is the best tested and most widely accepted theory of elementary particles we have today."
 ---
 []{#sec:g(2,2,4) label="sec:g(2,2,4)"}
 

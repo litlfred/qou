@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.961
 latex_coverage_ratio: 0.98
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 We turn to Bergman's second metric. The function $$L_q(z,z'):=\log\mathbf{E}_{\otimes2}[K_q](z,z';z,z')
 \label{eq-Lfun1}$$ is basic to the analysis, where the expression on the right-hand side is as in [\[eq-bk4\]](#eq-bk4){reference-type="eqref" reference="eq-bk4"}. We think of $(z,\bar z')$ as holomorphic coordinates, and form the corresponding Bergman metric: $$\partial_z\bar\partial_{z}L_q(z,z')\vert\mathrm{d}z\vert^2

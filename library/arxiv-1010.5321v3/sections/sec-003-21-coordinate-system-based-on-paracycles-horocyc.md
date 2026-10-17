@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.982
 latex_coverage_ratio: 0.991
+doc_brief: "Formulas on hyperbolic volume ∗ — This paper collects some important formulas on hyperbolic volume."
 ---
 ![coordinate system based on paracycles.](vol1.eps)
 

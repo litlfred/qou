@@ -8,6 +8,7 @@ pages: 47-50
 source_pdf: 1105.2919v1.pdf
 source_sha256: 6d94496f2093ddd0
 toc_source: outline
+doc_brief: "Chiral eﬀective ﬁeld theory and nuclear forces — We review how nuclear forces emerge from low-energy QCD via chiral eﬀective ﬁeld theory. The presentation is accessible to the non-specialist."
 ---
 After previous sections have thoroughly prepared the terrain, we will now present a quantitative NN
 potential at N3LO, including details of construction and results. We choose the Idaho N3LO potential [68]

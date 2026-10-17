@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.976
 latex_coverage_ratio: 0.975
+doc_brief: "BRAID ORDERING AND THE GEOMETRY OF CLOSED BRAID — The relationships between braid ordering and the ge- ometry of its closure is studied."
 ---
 For later use, we prove slightly more precious estimation of Dehornoy floor than proposition [\[prop:dehornoyfloor\]](#prop:dehornoyfloor){reference-type="ref" reference="prop:dehornoyfloor"} (1).
 

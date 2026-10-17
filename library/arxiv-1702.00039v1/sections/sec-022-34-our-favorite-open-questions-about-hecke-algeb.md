@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.928
+doc_brief: "Gentle introduction to Soergel bimodules I: The basics — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules."
 ---
 It is one of the most important achievements in the theory of Soergel bimodules the proof [@EW] by B. Elias and G. Williamson of the conjecture (stated by Kazhdan and Lusztig) that Kazhdan-Lusztig polynomials have positive coefficients. We will come back to this beautiful and fundamental result in a subsequent paper of this saga. For the moment, this theorem gives rise to the following question.
 

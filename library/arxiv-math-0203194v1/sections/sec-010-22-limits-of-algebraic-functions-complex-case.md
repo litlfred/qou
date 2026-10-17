@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.965
 latex_coverage_ratio: 0.981
+doc_brief: "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry — 66 sections: Front matter; Purpose of this book.; Contents of this book."
 ---
 Let $S$ be a Riemann surface coming from a complex affine algebraic
 curve $S^{\mathrm{alg}}$, smooth and connected.

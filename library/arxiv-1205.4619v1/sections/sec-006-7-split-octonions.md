@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.911
+doc_brief: "Quaternion-Octonion Unitary Symmetries and Analogous Casimir Operators — An attempt has been made to investigate the global SU(2) and SU(3) unitary ﬂavor symmetries systematically in terms of"
 ---
 Let us start with an octonion $\mathcal{O}$, which is expanded \cite{key-30}
 in a basis $(e_{0},e_{A})$ as 

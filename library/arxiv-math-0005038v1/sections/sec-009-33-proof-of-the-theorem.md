@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.954
 latex_coverage_ratio: 0.984
+doc_brief: "arXiv:math/0005038v1 [math.GR] 4 May 2000 — The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc."
 ---
 In this subsection we use the Basic Lemma and the Key Lemma to prove that the Lawrence-Krammer representation is faithful. The following lemma will be useful.
 

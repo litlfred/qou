@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.991
 latex_coverage_ratio: 0.994
+doc_brief: "arXiv:math/0004133v1 [math.QA] 20 Apr 2000 — ‘Categoriﬁcation’ is the process of replacing equations by isomor- phisms."
 ---
 []{#power label="power"}
 

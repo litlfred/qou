@@ -8,6 +8,7 @@ pages: 46-46
 source_pdf: 1403.4021v2.pdf
 source_sha256: 046d02411e0dc086
 toc_source: outline
+doc_brief: "MARKOV TRACES ON THE BIRMAN-WENZL-MURAKAMI ALGEBRAS — We classify the Markov traces factoring through the Birman-Wenzl-Murakami (BMW) algebras."
 ---
 [1] J. Birman, H. Wenzl, Braids, link polynomials and a new algebra, Trans. Amer. Math. Soc. 313
 (1989), 249–273.

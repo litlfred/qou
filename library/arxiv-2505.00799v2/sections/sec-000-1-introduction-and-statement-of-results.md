@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.966
 latex_coverage_ratio: 0.983
+doc_brief: "Quantum Modular Forms and Resurgence — In 2010, Zagier described a new phenomenon which he called quantum mod- ularity."
 ---
 In a seminal 2010 paper [@zagier-quantum], Zagier defined a new type of modular object which he called a quantum modular form. This new notion was meant to capture the behavior of a collection of examples from the literature. As Zagier remarked, these objects are reminiscent of calculations in perturbative quantum field theory and quantum topology. In the past few years, quantum modular forms have appeared prominently in connection to exciting new invariants in low-dimensional topology and knot theory (e.g. [@gppv; @g-z-24; @ajk]).
 

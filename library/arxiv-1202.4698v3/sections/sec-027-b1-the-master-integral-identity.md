@@ -8,6 +8,7 @@ pages: 24-25
 source_pdf: 1202.4698.pdf
 source_sha256: 54171c652161ca5b
 toc_source: outline
+doc_brief: "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories — We revisit the deﬁnition of the 6j symbols from the modular double of Uq(sl(2, R)), referred to as"
 ---
 Let us start from the V -function [S03] which is the example from Spiridonov’ theory of elliptic
 hypergeometric integrals [S01, S03]4 deﬁned by

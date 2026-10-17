@@ -8,6 +8,8 @@ pages: 16-23
 source_pdf: Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds.pdf
 source_sha256: 9e541693c60cbd3f
 toc_source: inferred
+doc_brief: "Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — survey of gluing equations, volumes, the extended Bloch group, symplectic properties and quantization."
+duplicate_of: "arxiv-2304.12545v1"
 ---
 The paper [1] and its sequel [2] suggested or led to several interesting develop‐
 ments in pure number theory as well as in topology. In this final section we de‐

@@ -8,6 +8,7 @@ pages: 43-46
 source_pdf: 2305.14884v2.pdf
 source_sha256: ebc8e64d901c9e4f
 toc_source: outline
+doc_brief: "PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS — We prove that a formal power series associated to an ideally triangulated cusped hyperbolic 3-manifold (together with some further choices)"
 ---
 In this appendix, we give the omitted details in the last step of the proof of Theorem 3.6.
 They are an aﬃne change of coordinates, followed by the corresponding computation of the

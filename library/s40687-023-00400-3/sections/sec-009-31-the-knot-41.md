@@ -8,6 +8,8 @@ pages: 12-14
 source_pdf: s40687-023-00400-3.pdf
 source_sha256: fd7638a8cf512a99
 toc_source: outline
+doc_brief: "TWISTED NEUMANN–ZAGIER MATRICES — The Neumann–Zagier matrices of an ideal triangulation are integer matrices with symplectic properties whose entries encode the number of tetrahedra that wind around"
+duplicate_of: "arxiv-2109.00379v1"
 ---
 The knot complement M of the knot 41 decomposes into two ideal tetrahedra 1
 and 2. Using the default triangulation of SnapPy for 41 with isometry signature

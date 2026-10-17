@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.922
 latex_coverage_ratio: 0.94
+doc_brief: "STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION — Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect(X), we are"
 ---
 The goal of this section is to introduce the stack of fiber functors and prove Theorem [\[thma\]](#thma){reference-type="ref" reference="thma"}. We will work over a base ring $R$ and denote by $A$ a general $R$-algebra.
 

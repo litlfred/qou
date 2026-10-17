@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.962
 latex_coverage_ratio: 0.984
+doc_brief: "arXiv:math/0501112v3 [math.CO] 31 May 2005 — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 All examples presented in this section not only have the character factorization property but additionally are as in Theorem [\[theo:main2\]](#theo:main2){reference-type="ref" reference="theo:main2"}.
 

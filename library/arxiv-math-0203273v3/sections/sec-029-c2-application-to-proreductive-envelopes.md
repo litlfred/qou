@@ -8,6 +8,7 @@ pages: 138-146
 source_pdf: 0203273v3.pdf
 source_sha256: 824715d110e34305
 toc_source: inferred
+doc_brief: "arXiv:math/0203273v3 [math.CT] 12 Oct 2002 — 31 sections: Front matter; Introduction; Alg`ebres `a plusieurs objets"
 ---
 velopes it will be convenient to use the following terminology. Let f : H →K be
 a k-homomorphism from an afﬁne k-group to a proreductive k-group. Call f uni-

@@ -11,5 +11,6 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "Compact Q-balls and Q-shells within a $CP^N$ Skyrme-Faddeev type model — 18 sections: Front matter; Introduction; The extended Skyrme-Faddeev model"
 ---
 In this section, we present several numerical solutions for Q-balls and Q-shells within the ESF model. The parameter space for the coupling constants is extensive, and a detailed investigation of all possible cases would be exceptionally time-consuming and exceeds the primary scope of this paper. Our objective here is to showcase some novel solutions that arise specifically due to the presence of quartic terms. We will also thoroughly examine the resulting relationship between energy and Noether charge, which is the key characteristic defining the stability of these solutions.

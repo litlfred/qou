@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.96
 latex_coverage_ratio: 0.972
+doc_brief: "BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections."
 ---
 We now move to the case of $M_3=L(p,1)\cong S^3/{\mathbb Z}_p$. The theory $T[L(p,1),U(N)]$ is an ${\mathcal N}=2$ Chern-Simons theory at level $p$, with a chiral multiplet $\Phi$ in the adjoint representation with R-charge $R(\Phi)=2$ [@Gadde:2013sca; @Chung:2014qpa; @equivariant]. Its superconformal index is given by (see *e.g.* [@Imamura:2011su]) $$\begin{gathered}
     \label{IndexInt}

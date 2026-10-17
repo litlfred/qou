@@ -1,1 +1,1 @@
-Let be a number ﬁeld and- = P1.
+gives simple proofs of certain results of [GR].

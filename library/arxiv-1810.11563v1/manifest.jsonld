@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1810.11563v1",
+  "title": "Three Lectures on Complexity and Black Holes",
   "contains": [
+    "library/arxiv-1810.11563v1/sections/sec-front-matter",
     "library/arxiv-1810.11563v1/sections/sec-000",
     "library/arxiv-1810.11563v1/sections/sec-001",
     "library/arxiv-1810.11563v1/sections/sec-002",
@@ -54,7 +55,9 @@
     "library/arxiv-1810.11563v1/sections/sec-040",
     "library/arxiv-1810.11563v1/sections/sec-041",
     "library/arxiv-1810.11563v1/sections/sec-042",
-    "library/arxiv-1810.11563v1/sections/sec-043"
+    "library/arxiv-1810.11563v1/sections/sec-043",
+    "library/arxiv-1810.11563v1/sections/sec-044",
+    "library/arxiv-1810.11563v1/sections/sec-045"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -67,7 +70,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1810.11563v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1810.11563v1.pdf",
     "source_sha256": "8e17ac8b91bc3cc9fc90ff43301f70369036431cfa8679a27b7a408f4bcd9d93",
     "pages": 84,

@@ -8,6 +8,7 @@ pages: 10-11
 source_pdf: math0505170.pdf
 source_sha256: 0846b74f9c7c55cb
 toc_source: outline
+doc_brief: "AN AVERAGING PROCESS FOR UNIPOTENT GROUP ACTIONS — We present an averaging process for sections of a torsor under a unipotent group."
 ---
 [Bo]
 R. Bott, “Lectures on Characteristic Classes and Polarizations”, Lecture Notes in Math.

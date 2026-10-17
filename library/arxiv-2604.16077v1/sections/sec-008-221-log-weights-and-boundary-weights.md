@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.941
 latex_coverage_ratio: 0.967
+doc_brief: "Volume Conjecture and quantum hyperbolic invariants: the figure eight knot complement — We compute the real part of the semi-classical limit of the sequence of quantum hyperbolic invariants (QHI) of"
 ---
 \label{sec:landbweights} As usual denote by $\bar M$ the compact manifold with interior $M$; so $\partial \bar M$ is a disjoint union of $c$ tori. Recall the holonomy map \eqref{defholmapSept24}. 
 \smallskip

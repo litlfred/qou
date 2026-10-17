@@ -8,6 +8,7 @@ pages: 2-4
 source_pdf: quaternioms.pdf
 source_sha256: becedcbc858611dd
 toc_source: outline
+doc_brief: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 44 sections: Front matter; Introduction; Extended Related Work"
 ---
 Quantum computation is typically formulated on complex Hilbert spaces. The existence
 of exactly four real normed division algebras, R,C,H,O, motivates systematic extensions

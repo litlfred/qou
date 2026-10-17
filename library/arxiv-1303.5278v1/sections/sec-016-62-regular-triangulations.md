@@ -7,11 +7,11 @@ section_number: 6.2
 pages: 34-41
 source_pdf: 1303.5278v1.pdf
 source_sha256: 92e417c93f8b883a
-doc_brief: "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD — In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifold M (a collection of"
-duplicate_of: "topologicalinvariance3dindex"
 text_source: latex
 latex_prose_ratio: 0.974
 latex_coverage_ratio: 0.891
+doc_brief: "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD — In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifold M (a collection of"
+duplicate_of: "topologicalinvariance3dindex"
 ---
 The concept of a regular triangulation comes from the study of triangulations of convex polytopes in $\mathbb{R}^n$. Here we are not dealing with topological triangulations, where tetrahedra may have self-identifications or two vertices may have multiple edges connecting them. Rather, the vertices are concrete points in $\mathbb{R}^n$, the edges are straight line segments in $\mathbb{R}^n$ and so on. In this context, a triangulation of a convex polytope is a subdivision of the polytope into concrete Euclidean simplices. Roughly speaking, a triangulation of a polytope in $\mathbb{R}^n$ is *regular* if it is isomorphic to the lower faces of a convex polytope in $\mathbb{R}^{n+1}$. The following series of definitions make this idea precise.
 

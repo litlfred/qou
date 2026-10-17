@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.926
 latex_coverage_ratio: 0.967
+doc_brief: "arXiv:hep-th/9304063v2 29 Jan 1999 — 10 sections: Front matter; Introduction and Statement of Resu; The System of Partial Differential"
 ---
 ## Introduction
 

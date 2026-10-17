@@ -8,6 +8,7 @@ pages: 42-44
 source_pdf: 0808.2716v4.pdf
 source_sha256: ea66f7ddcf9e9fe6
 toc_source: outline
+doc_brief: "CUSP AREAS OF FAREY MANIFOLDS — This paper gives the ﬁrst explicit, two–sided estimates on the cusp area of once– punctured torus bundles, 4–punctured sphere bundles, and 2–bridge link complements."
 ---
 [1] Colin Adams, Waist size for cusps in hyperbolic 3-manifolds II, Preprint.
 [2]

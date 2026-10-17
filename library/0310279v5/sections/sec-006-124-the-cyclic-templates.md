@@ -8,6 +8,7 @@ pages: 11-11
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
 toc_source: outline
+doc_brief: "Stabilization in the braid groups I: MTWS Introduction — 40 sections: Front matter; Introduction; The problem"
 ---
 The cyclic templates
 Figure 8 gives an example of the cyclic template. We have singled it out because it shows

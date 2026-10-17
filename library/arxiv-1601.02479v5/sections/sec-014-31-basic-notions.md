@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.959
 latex_coverage_ratio: 0.964
+doc_brief: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A — This paper concerns the cohomological aspects of Donaldson– Thomas theory for Jacobi algebras and the associated cohomological Hall alge- bra, introduced"
 ---
 []{#Bassection label="Bassection"}We will use the notations and conventions from [@DaMe4], which we briefly recall. Let $Q=(Q_0,Q_1,s,t)$ denote a quiver, that is, a pair of finite sets $Q_0$ and $Q_1$, and a pair of maps $s\colon Q_1\rightarrow Q_0$ and $t\colon Q_1\rightarrow Q_0$, taking an arrow to its source and target, respectively. Denote by $\mathbb{C} Q$ the free path category of $Q$ over $\mathbb{C}$. Alternatively we may think of $\mathbb{C} Q$ as the free path algebra of $Q$, with a distinguished family of mutually orthogonal idempotents $e_i$ in bijection with the vertices $Q_0$, summing to $1_{\mathbb{C} Q}$.
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.979
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 We denote by $$\SymbolPrint{V^0}\subset V=\CC^n$$ the subset of vectors with a non-zero last coordinate. Let us define $\SymbolPrint{\calX_{\ell,fr}}$ as the subvariety of $\calX_\ell\times V$ consisting of collections $(X,g_1,Y_1,,\dots,g_\ell,Y_\ell,u)$ such that $$\CC \langle \Ad_{g_i}^{-1}(X),Y_i\rangle g^{-1}_i(u)=V,\quad g^{-1}(u)\in V^0,\quad i=1,\dots,\ell-1,$$
 

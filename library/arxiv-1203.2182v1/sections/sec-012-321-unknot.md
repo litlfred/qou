@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.905
 latex_coverage_ratio: 0.709
+doc_brief: "Volume Conjecture: Reﬁned and Categoriﬁed — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebraic curve, the zero"
 ---
 As we already mentioned in [\[unknotMqtR\]](#unknotMqtR){reference-type="eqref" reference="unknotMqtR"} and [\[unknotsuperSr\]](#unknotsuperSr){reference-type="eqref" reference="unknotsuperSr"}, in every approach to knot homologies based on the refined BPS invariants [@GIKV; @AS] the colored superpolynomial of the unknot is given essentially by the Macdonald polynomial [@IK11]. In particular, after the change of variables [\[GSvarchng\]](#GSvarchng){reference-type="eqref" reference="GSvarchng"}, the $S^r$-colored superpolynomial reads: $$\overline{{\cal P}}^{S^r} ({\,\raisebox{-.08cm}{\includegraphics[width=.37cm]{unknot}}\,}; a,q,t) \; = \;
 (-1)^{\frac{r}{2}}a^{-\frac{r}{2}}q^{\frac{r}{2}}t^{-\frac{3r}{2}} \frac{(-at^3;q)_r}{(q;q)_r} \,.$$ Note that when we talk about the unknot, only the unreduced superpolynomial (resp. homology) is non-trivial; the reduced one is trivial by definition (which involves normalizing by the unknot). Specializing further to $a=q^2$ we find $$P_{n=r+1} ({\,\raisebox{-.08cm}{\includegraphics[width=.37cm]{unknot}}\,}; q,t) \; = \;

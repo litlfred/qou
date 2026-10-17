@@ -8,6 +8,7 @@ pages: 57-68
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
 toc_source: outline
+doc_brief: "Hecke algebras, generalisations and representation theory — 30 sections: Front matter; Algebras of Finite Type; Blocks"
 ---
 Knot invariants
 One of the reasons that the interest in Yokonuma–Hecke algebras was rekindled in the past years was

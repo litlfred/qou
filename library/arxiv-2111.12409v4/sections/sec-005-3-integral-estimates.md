@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.853
 latex_coverage_ratio: 0.985
+doc_brief: "On the generalisation of Roth’s theorem — We present two generalisations of Roth’s approximation theorem on proper adelic curves, assuming some technical conditions on the behavior of the logarithmic"
 ---
 \label{estimates}
 This technical section is ``the heart'' of the proof of our results since here we will prove some integral bounds for very particular integrable functions $\theta:S\subset\Omega\to \mathbb R_{\ge 0}$. We continue with all the notations fixed in section \ref{aux} since we want to make full use of Proposition \ref{interpolationpoly}. 

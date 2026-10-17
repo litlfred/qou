@@ -8,6 +8,7 @@ pages: 69-72
 source_pdf: mod-phi-convergence-approximation-of-discrete-measures-and-20yc5c6q3n.pdf
 source_sha256: c563cc999000e75d
 toc_source: outline
+doc_brief: "ANNALES DE L’INSTITUT FOURIER — 26 sections: Front matter; Introduction; Poisson approximation of lattice-v"
 ---
 As in the one-dimensional case, a combination of the Laplace method
 and of the norm estimates given by Corollary 5.6 yields under appropri-

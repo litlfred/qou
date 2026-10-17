@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "s00209-021-02825-4",
  "source_sha256": "85ca5ec21f42a988",
- "brief": "Mathematische Zeitschrift (2022) 300:1359–1400 A representation theoretic explanation of the Borcea–Brändén characterization Jonathan Leake 1 © The Author(s) 2021 — In 2009, Borcea and Brändén",
- "extended": "**Mathematische Zeitschrift (2022) 300:1359–1400 A representation theoretic explanation of the Borcea–Brändén characterization Jonathan Leake 1 © The Author(s) 2021**\n\n42 pp, 28 sections.\n\n**Abstract.** In 2009, Borcea and Brändén characterized all linear operators on multivariate polynomials which preserve the property of being non-vanishing (stable) on products of prescribed open circular regions. We give a representation theoretic interpretation of their ﬁndings, which generalizes and simpliﬁes their result and leads to a conceptual uniﬁcation of many related results in polynomial stability theory. At the heart of this uniﬁcation is a generalized Grace’s theorem which addresses polynomials whose roots are all contained in some real interval or ray. This generalization allows us to extend the Borcea–Brändén result to characterize a certain subclass of the linear operators which preserve such polynomials.\n\n**Outline.** A representation theoretic explanation of the ; Abstract; 1 Introduction; The main idea; 2.1 Notation; A roadmap; 2 Preliminaries; 2.2 Homogeneous polynomials; 3 Homogeneous polynomials as representations; 3.1 The action of SL2(C); 3.2 An important invariant map, and apolarity; 3.3 The symbol of an operator; 4 Polynomial stability theory; 4.1 Polar derivatives; 4.3 Real stable polynomials; 5.1 Other regions; 5.2 Evaluation symbols; 6 Stability properties of complex linear opera",
+ "brief": "A representation theoretic explanation of the Borcea–Brändén characterization — In 2009, Borcea and Brändén characterized all linear operators on multivariate polynomials which preserve the property",
+ "extended": "**A representation theoretic explanation of the Borcea–Brändén characterization**\n\n*Mathematische Zeitschrift*\n\n42 pp, 29 sections.\n\n**Abstract.** In 2009, Borcea and Brändén characterized all linear operators on multivariate polynomials which preserve the property of being non-vanishing (stable) on products of prescribed open circular regions. We give a representation theoretic interpretation of their ﬁndings, which generalizes and simpliﬁes their result and leads to a conceptual uniﬁcation of many related results in polynomial stability theory. At the heart of this uniﬁcation is a generalized Grace’s theorem which addresses polynomials whose roots are all contained in some real interval or ray. This generalization allows us to extend the Borcea–Brändén result to characterize a certain subclass of the linear operators which preserve such polynomials.\n\n**Outline.** Front matter; A representation theoretic explanation of the ; Abstract; 1 Introduction; The main idea; 2.1 Notation; A roadmap; 2 Preliminaries; 2.2 Homogeneous polynomials; 3 Homogeneous polynomials as representations; 3.1 The action of SL2(C); 3.2 An important invariant map, and apolarity; 3.3 The symbol of an operator; 4 Polynomial stability theory; 4.1 Polar derivatives; 4.3 Real stable polynomials; 5.1 Other regions; 5.2 Evaluation symbols\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: Fixalinearoperator T : Cλ[x1, . . . , xm] →C[x1, . . . , xm]\n- Theorem 1.2: Fixalinearoperator T : Rλ[x1, . . . , xm] →R[x1, . . . , xm]\n- Theorem 6.2: Fix a linear operator T : Cλ[x1, . . . , xm] →Cα[x1, . . . , xl], a product of\n- Theorem 7.2: Fix a linear operator T : Rλ[x1, . . . , xm] →Rα[x1, . . . , xl]. Up to certain\n- Theorem: [8] Let f , g ∈Cn[x] be polynomials of degree exactly n. Further, let C be some\n- Theorem 7.8: Fix a linear operator T : Rn[x] →Rm[x] which has image of dimension",
  "tokens": {
-  "brief": 48,
-  "extended": 354
+  "brief": 49,
+  "extended": 472
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-a-representation-theoretic-explanation-of-the-bo",
    "title": "A representation theoretic explanation of the Borcea–Brändén characterization",
@@ -154,7 +159,8 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles"
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

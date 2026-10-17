@@ -8,6 +8,7 @@ pages: 38-39
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
 toc_source: outline
+doc_brief: "Stabilization in the braid groups I: MTWS Introduction — 40 sections: Front matter; Introduction; The problem"
 ---
 Braid foliations of the immersed annulus
 We are now ready to investigate braid foliations of the clasp annulus CA which we

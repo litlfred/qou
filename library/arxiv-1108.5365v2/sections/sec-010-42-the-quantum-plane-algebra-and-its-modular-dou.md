@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.96
 latex_coverage_ratio: 0.955
+doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL + — We give complete detail of the description of the GNS representation of the quantum plane A and its dual ˆ A as"
 ---
 \label{sec:QPlane:alg}
 Throughout the section, we let $q=e^{\pi ib^2}, \til[q]=e^{\pi ib^{-2}}$ where $b^2\in\R\setminus \Q, 0<b^2<1$. We have $|q|=|\til[q]|=1$.

@@ -8,6 +8,8 @@ pages: 30-36
 source_pdf: ki52.pdf
 source_sha256: 35ad4ee5a00d4a18
 toc_source: inferred
+doc_brief: "DOI 10.4171/QT/83 — We give a presentation of the asymptotic expansion of the Kashaev invariant of the 52 knot."
+duplicate_of: "104171-qt-83"
 ---
 In this section, we show some lemmas used in the proof of Theorem 1.1.
 Let (t0, s0) and (tc, sc) be the critical points of ˆV (t, s) and V (t, s) given in the previous

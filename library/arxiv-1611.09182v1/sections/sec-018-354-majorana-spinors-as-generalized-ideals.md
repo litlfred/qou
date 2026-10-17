@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 Given our description above of Dirac spinors, it is now easy to build Majorana spinors.  Any Dirac spinor splits into two Majorana spinors, given by 
 \begin{equation} \begin{array}{lll}\Psi_{\textup{M}_1} \equiv  \frac{1}{2}\left( \Psi_{\textup{D}} + \Psi_{\textup{D}}^* \right) &\hspace{1cm} & \Psi_{\textup{M}_2} \equiv  \frac{1}{2}\left( \Psi_{\textup{D}} - \Psi_{\textup{D}}^* \right). 

@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0203273v3/sections/sec-029",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Application to proreductive envelopes",
+  "pageStart": 138,
+  "pageEnd": 146,
+  "contains": [
+    "library/arxiv-math-0203273v3/blocks/prose-sec-029",
+    "library/arxiv-math-0203273v3/blocks/lem-sec-029-01",
+    "library/arxiv-math-0203273v3/blocks/thm-sec-029-02",
+    "library/arxiv-math-0203273v3/blocks/thm-sec-029-03",
+    "library/arxiv-math-0203273v3/blocks/lem-sec-029-04",
+    "library/arxiv-math-0203273v3/blocks/lem-sec-029-05",
+    "library/arxiv-math-0203273v3/blocks/thm-sec-029-06"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203273v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203273v3/manifest.jsonld",
+  "provenance": "ingested"
+}

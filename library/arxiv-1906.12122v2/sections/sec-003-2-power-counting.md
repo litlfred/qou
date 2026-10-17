@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.956
 latex_coverage_ratio: 0.74
+doc_brief: "Nuclear eﬀective ﬁeld theory: status and perspectives — 38 sections: Nuclear effective field theory: st; Contents; Two-body scattering amplitude"
 ---
 \label{sec:PowerCounting}
 

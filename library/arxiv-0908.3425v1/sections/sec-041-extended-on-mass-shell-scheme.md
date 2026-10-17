@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.955
 latex_coverage_ratio: 0.984
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 In the following, we will concentrate on yet another solution which has been motivated in Ref. [@Gegelia:1999gf] and has been worked out in detail in Ref. [@Fuchs:2003qc]. The central idea of the extended on-mass-shell (EOMS) scheme consists of performing additional subtractions beyond the $\widetilde{\rm MS}$ scheme such that renormalized diagrams satisfy the power counting. Terms violating the power counting are analytic in small quantities and can thus be absorbed in a renormalization of counter terms.
 

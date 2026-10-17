@@ -8,6 +8,7 @@ pages: 21-23
 source_pdf: 2507.12454v1.pdf
 source_sha256: 156fd9080847b4e7
 toc_source: outline
+doc_brief: "Cohomology rings of character varieties — In this talk I give an introduction and present some recent progress towards understanding the cohomology rings of character varieties of Riemann surfaces"
 ---
 [BFN18]
 Alexander Braverman, Michael Finkelberg, and Hiraku Nakajima, Towards a mathematical

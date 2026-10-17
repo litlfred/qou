@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2304.07001v3.pdf
 source_sha256: b6c0d7f50b6407f1
 toc_source: outline
+doc_brief: "RESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES — We prove resurgence properties for the Borel transform of a formal power series associated to elements in the Habiro ring that come from radial"
 ---
 arXiv:2304.07001v3  [math.NT]  10 Apr 2025
 RESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES

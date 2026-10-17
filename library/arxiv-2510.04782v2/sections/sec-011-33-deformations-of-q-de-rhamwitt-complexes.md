@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.953
 latex_coverage_ratio: 0.979
+doc_brief: "$q$-Hodge complexes over the Habiro ring — — Peter Scholze has raised the question whether some variant of the q-de Rham complex is already defined over the Habiro ring H := limm∈N Z[q]∧ (qm−1)."
 ---
 []{#subsec:TwistedqDeRham label="subsec:TwistedqDeRham"} We fix a perfectly covered $\Lambda$-ring $A$ as before. We let $\psi^m$ denote its Adams operations, which we extend to a map $\psi^m\colon A[q]\rightarrow A[q]$ via $\psi^m(q)\coloneqq q^m$. We'll also frequently use the Berthelot--Ogus décalage functor $\L\eta_{[m]_q}$ (see [@BMS1 §] or [@Stacks]).
 

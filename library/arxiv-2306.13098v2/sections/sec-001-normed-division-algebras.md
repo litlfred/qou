@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.97
 latex_coverage_ratio: 0.891
+doc_brief: "Three generations of colored fermions with S 3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU(3)C color symmetry based on the"
 ---
 []{#sec:normeddivisionalgebras label="sec:normeddivisionalgebras"}
 

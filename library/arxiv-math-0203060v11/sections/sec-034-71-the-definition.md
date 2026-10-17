@@ -8,6 +8,7 @@ pages: 27-27
 source_pdf: 0203060v11.pdf
 source_sha256: fa7e21ceab3e9933
 toc_source: outline
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 several identities in a weak Hopf algebra, and equation (34) applied to f and ˜f.
 Therefore, f∆n(u) = (−1)nδn−1( ˜f). Now u is a non-zero scalar by Lemma 6.2,

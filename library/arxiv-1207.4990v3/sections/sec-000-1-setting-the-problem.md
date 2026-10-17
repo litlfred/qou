@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.994
 latex_coverage_ratio: 0.978
+doc_brief: "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results — 11 sections: Front matter; Setting the problem; Toeplitz meets Ising"
 ---
 An $n\times n$ *Toeplitz matrix* $T_n$ is a matrix with coefficients of the form $(T_n)_{jk} = c_{j-k},
 \;0\le j,\; k \le n-1$, for some given sequence $\{c_\ell\}_{\ell \in \mathbb{Z}}$. An $n\times n$ *Toeplitz determinant* $D_n(T)$ is the determinant of some given Toeplitz matrix $T=T_n$. If $\varphi = \varphi\!\left(e^{i\theta}\right)$ is an integrable function on the unit circle $S^1=\{z=e^{i\theta}\}$ (oriented in the positive direction) with Fourier coefficients $$\varphi_{\ell} = \int^{\pi}_{-\pi} e^{-i\ell \theta} \, \varphi \!\left(e^{i\theta}\right) \,\frac{d\theta}{2\pi},

@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "li-braid-closures",
  "source_sha256": "f7410e7be5bc187e",
- "brief": "Knot polynomials on braid closures Eddy Li — We explore properties of the Jones and Alexander polynomials of braid closures of braids of index 3.",
- "extended": "**Knot polynomials on braid closures Eddy Li**\n\n*January 29, 2025*\n\n16 pp, 10 sections.\n\n**Abstract.** We explore properties of the Jones and Alexander polynomials of braid closures of braids of index 3. We analyze how the evaluations of these polynomials att=−1 force implications regarding the topological structure of the braid closure, such as its number of circles or the existence of splittings. As a consequence, we construct an infinite number of pairs of distinct non-split links that have the same HOMFLYPT polynomial.\n\n**Outline.** Introduction; Preliminaries; The braid group; Young diagrams; Specht modules of the Hecke algebra; The HOMFLYPT polynomial; Split Links; Knots; 4-braids and beyond; Acknowledgments",
+ "brief": "Knot polynomials on braid closures — We explore properties of the Jones and Alexander polynomials of braid closures of braids of index 3.",
+ "extended": "**Knot polynomials on braid closures**\n\n*January 29, 2025*\n\n16 pp, 12 sections.\n\n**Abstract.** We explore properties of the Jones and Alexander polynomials of braid closures of braids of index 3. We analyze how the evaluations of these polynomials at t = −1 force implications regarding the topological structure of the braid closure, such as its number of circles or the existence of splittings. As a consequence, we construct an infinite number of pairs of distinct non-split links that have the same HOMFLYPT polynomial.\n\n**Outline.** Front matter; Introduction; Preliminaries; The braid group; Young diagrams; Specht modules of the Hecke algebra; The HOMFLYPT polynomial; Closures of 3-braids; Split Links; Knots; 4-braids and beyond; Acknowledgments\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.5: There exists an infinite family of links Lm,k, indexed\n- Theorem 1.6: If 6 | k, then Xˆγm,k(q, Λ) = Xˆγm+ k\n- Theorem 1.7: If L is a knot with braid index at most 3, then VL(−1) ≡\n- Theorem 2.4: Let L be a link. Then there exists an integer n\n- Theorem 3.8: Let α ∈B3 satisfy Vˆα(−1) = ∆ˆα(−1) = 0. Then there exist integers m and\n- Theorem 3.9: For m, k ∈Z, let γm,k denote the braid σk",
  "tokens": {
-  "brief": 36,
-  "extended": 180
+  "brief": 34,
+  "extended": 301
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
@@ -37,25 +42,30 @@
   {
    "id": "sec-005-the-homflypt-polynomial",
    "title": "The HOMFLYPT polynomial",
-   "pages": "6-9"
+   "pages": "6-8"
   },
   {
-   "id": "sec-006-split-links",
+   "id": "sec-006-closures-of-3-braids",
+   "title": "Closures of 3-braids",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-007-split-links",
    "title": "Split Links",
    "pages": "9-13"
   },
   {
-   "id": "sec-007-knots",
+   "id": "sec-008-knots",
    "title": "Knots",
    "pages": "13-15"
   },
   {
-   "id": "sec-008-4-braids-and-beyond",
+   "id": "sec-009-4-braids-and-beyond",
    "title": "4-braids and beyond",
    "pages": "15-15"
   },
   {
-   "id": "sec-009-acknowledgments",
+   "id": "sec-010-acknowledgments",
    "title": "Acknowledgments",
    "pages": "15-16"
   }
@@ -64,7 +74,8 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles"
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

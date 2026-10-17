@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.948
 latex_coverage_ratio: 0.941
+doc_brief: "Fusion categories via string diagrams — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories."
 ---
 In this subsection, we show that the paired dimensions $d_{\{i,i^*\}}$ are positive real numbers.
 

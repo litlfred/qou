@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.956
 latex_coverage_ratio: 0.937
+doc_brief: "Fricke S-duality in CHL models — We consider four dimensional CHL models with sixteen spacetime supersym- metries obtained from orbifolds of type IIA superstring on K3×T 2 by a ZN symmetry acting"
 ---
 Let us now generalize the previous analysis to CHL models in type IIA string theory. We are interested in the case where the orbifold group $G$ is cyclic of order $\hat N$, with generator $\hat g$ acting by a shift $\delta$ of a $1/\hat N$ period along one of the cycles of $T^2$ and by a symmetry $g$ of the K3 sigma model. Then, the generating function $Z^{\text{IIA}}_{\text{CHL}[\hat g]}$ is obtained from [\[ZIIA\]](#ZIIA){reference-type="eqref" reference="ZIIA"} by the usual orbifold formula $$Z^{\text{IIA}}_{\text{CHL}[\hat g]}(\upsilon,\bar \upsilon)=\frac{\vartheta_1(\upsilon/2)^2\bar\vartheta_1(\bar\upsilon/2)^2  }{\eta^6\bar\eta^6\tau_2}\xi(\upsilon)\bar\xi(\bar\upsilon)\frac{1}{|\hat N|}\sum_{r,s=1}^{\hat N}C_{g^r,g^s}
 (\upsilon/2,\bar\upsilon/2)\Theta_{\Gamma^{2,2}} \bigl[{}^r_s\bigr]\ ,

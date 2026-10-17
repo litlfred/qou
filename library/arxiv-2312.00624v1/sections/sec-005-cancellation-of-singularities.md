@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.918
 latex_coverage_ratio: 0.897
+doc_brief: "On the structure of wave functions in complex Chern–Simons theory — We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the"
 ---
 []{#sec: cancellation label="sec: cancellation"} Again, we hide the explicit dependence on the classical solution $\alpha$ to simplify the notation. Here and in the rest of this work, we will only re-introduce it when necessary.
 

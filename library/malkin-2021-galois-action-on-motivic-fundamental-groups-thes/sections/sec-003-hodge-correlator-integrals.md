@@ -8,6 +8,7 @@ pages: 9-10
 source_pdf: malkin-2021-galois-action-on-motivic-fundamental-groups-thesis.pdf
 source_sha256: 3bc30dc6a4a03a7f
 toc_source: outline
+doc_brief: "On the Galois Action on Motivic Fundamental Groups of Punctured Elliptic and Rational Curves Nikolay Malkin 2021 The main motive of this thesis is to study the action of the motivic Galois group"
 ---
 related to themes (1) and (2) are closely intertwined.
 (3) The geometry of modular manifolds. The phenomenon that the complex computing cohomology of some

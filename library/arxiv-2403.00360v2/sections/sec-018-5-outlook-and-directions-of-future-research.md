@@ -11,5 +11,6 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.889
 latex_coverage_ratio: 1.0
+doc_brief: "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular"
 ---
 []{#secoutlook label="secoutlook"} In this section, we given an outlook and explain directions of future research.

@@ -1,0 +1,1 @@
+[\[r44\]](#r44){reference-type="ref" reference="r44"} implies that $J_K^\MMR$ is contained in the image of the natural (injective) homomorphism $$\varprojlim_k \modZ [q,q^{-1},t+t^{-1},\frac{1}{\Delta _K(t^i)}\quad (i\ge 1)]/((q)_k)

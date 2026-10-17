@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.988
 latex_coverage_ratio: 0.875
+doc_brief: "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds Introduction — Let W be a compact manifold and let ρ be a representation of its fundamental group into PSL(2, C)."
 ---
 Let $W$ be a compact manifold and let $\rho$ be a representation of its fundamental group into PSL$(2,\ensuremath{\mathbb C})\simeq$ Isom$^+(\ensuremath{\mathbb H}^3)$. The volume of $\rho$ is defined by taking any $\rho$-equivariant map from the universal cover $\widetilde{W}$ to $\ensuremath{\mathbb H}^3$ and then by integrating the pull-back of the hyperbolic volume form on a fundamental domain. This volume does not depend on the choice of the equivariant map because two equivariant maps are always equivariantly homotopic and the cohomology-class of the pull-back of the volume form is invariant under homotopy.
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.995
 latex_coverage_ratio: 0.94
+doc_brief: "ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS — This paper deals with exploiting symmetry for solving linear and integer programming problems."
 ---
 []{#sec:layers label="sec:layers"} Our goal is to describe an algorithm for the efficient solution of a highly symmetric integer linear program. Again we consider $\operatorname{ILP}(A,b,c)$ with a group $\Gamma$ of automorphisms as above.
 

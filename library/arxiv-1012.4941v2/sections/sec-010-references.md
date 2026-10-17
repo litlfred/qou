@@ -8,6 +8,7 @@ pages: 20-21
 source_pdf: 1012.4941v2.pdf
 source_sha256: 1932a359f3bafb83
 toc_source: outline
+doc_brief: "ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS — This paper deals with exploiting symmetry for solving linear and integer programming problems."
 ---
 1. Timo Berthold and Marc E. Pfetsch, Detecting orbitopal symmetries, Operations Research Proceedings
 2008 (Bernhard Fleischmann, Karl Heinz Borgwardt, Robert Klein, and Axel Tuma, eds.), Springer-

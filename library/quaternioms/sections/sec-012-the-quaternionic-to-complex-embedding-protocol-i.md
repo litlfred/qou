@@ -8,6 +8,7 @@ pages: 11-14
 source_pdf: quaternioms.pdf
 source_sha256: becedcbc858611dd
 toc_source: outline
+doc_brief: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 44 sections: Front matter; Introduction; Extended Related Work"
 ---
 A foundational result is the embedding of quaternionic quantum circuits into complex
 ones with minimal overhead [6]. This theoretical equivalence, established in Chapter 3 [5],

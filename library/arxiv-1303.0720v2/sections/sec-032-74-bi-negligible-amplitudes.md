@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.873
 latex_coverage_ratio: 0.889
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 We recall the definition of the differential operator $\boldsymbol{\nabla}$ in [\[nabladef\]](#nabladef){reference-type="eqref" reference="nabladef"}. By squaring the operator identity [\[eq-fundid0.1\]](#eq-fundid0.1){reference-type="eqref" reference="eq-fundid0.1"}, we arrive at $$\big\{{\mathbf M}_{\bar \partial_w \theta} \boldsymbol{\nabla}
 {\mathbf M}_{\bar \partial_w \theta} \boldsymbol{\nabla}A(z,w) \big\}\, \mathrm{e}^{2m(z-w) \theta} 

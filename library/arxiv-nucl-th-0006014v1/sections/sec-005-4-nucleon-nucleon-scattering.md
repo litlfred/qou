@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.992
 latex_coverage_ratio: 0.997
+doc_brief: "arXiv:nucl-th/0006014v1 9 Jun 2000 — 20 sections: Front matter; Introduction; The model"
 ---
 We construct three $NN$ interactions: a proton-proton ($pp$), a neutron-neutron ($nn$), and a neutron-proton ($np$) potential. The three potentials are not independent. They are all based upon the model described in Sec. II and the differences between them are determined by CSB and CIB as discussed in Sec. III. Thus, when one of the three potentials is fixed, then the $T=1$ parts of the other two potentials are also fixed due to CSB and CIB.
 

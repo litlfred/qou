@@ -8,6 +8,7 @@ pages: 6-6
 source_pdf: 2202.06733v1.pdf
 source_sha256: e670632090447f14
 toc_source: outline
+doc_brief: "Received <day> <Month>, <year> — Diﬀerent ways of representing the group 푆푈(3) within a Geometric Algebra approach are explored."
 ---
 GA AND THE FORCES OF NATURE
 As expressed in the talk at GAME2020 (https://www.youtube.com/watch?v=m7v2IUJtC3g&t=7s), a particularly interesting

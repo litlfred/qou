@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.988
 latex_coverage_ratio: 0.957
+doc_brief: "ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS — This paper deals with exploiting symmetry for solving linear and integer programming problems."
 ---
 []{#sec:searching label="sec:searching"} The question remaining is how to test ILP-feasibility of a $c$-layer in an efficient way. Our key observation is that some optimal integral solution is close to the fixed space if the group of symmetries acts sufficiently transitive.
 

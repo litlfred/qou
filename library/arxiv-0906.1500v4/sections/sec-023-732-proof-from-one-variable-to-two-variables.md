@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.991
 latex_coverage_ratio: 1.0
+doc_brief: "TWISTED ALEXANDER INVARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS — We study a computational method of the hyperbolic Reidemeister torsion (also"
 ---
 Suppose that $\varphi\colon \pi_1(M) \to \ZZ \oplus \ZZ$. A priori, up to
 multiplications by $t_1^{r}t_2^{s}$, 

@@ -8,6 +8,7 @@ pages: 54-56
 source_pdf: 1006.1099v3.pdf
 source_sha256: 76c1c4173cdee9d8
 toc_source: outline
+doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS — There is a classical relationship in algebraic geometry between a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
 ---
 by V(π) the Fukaya category of the Lefschetz ﬁbration in the sense of [92, Section 18]; we refer to
 op. cit. for foundational material on such categories. V(π) has objects either closed Lagrangian

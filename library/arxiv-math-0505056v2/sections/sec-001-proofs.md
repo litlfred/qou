@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.991
 latex_coverage_ratio: 0.987
+doc_brief: "Matrix factorizations and link homology II — To a presentation of an oriented link as the closure of a braid we assign a complex of bigraded vector spaces."
 ---
 []{#sec-proofs label="sec-proofs"}
 

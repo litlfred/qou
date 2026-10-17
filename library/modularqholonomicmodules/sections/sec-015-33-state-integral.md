@@ -8,6 +8,7 @@ pages: 28-29
 source_pdf: modular.qholonomic.modules.pdf
 source_sha256: 640303a68dd75453
 toc_source: outline
+doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised"
 ---
 I(z, α, β, τ) =
 Z

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.885
 latex_coverage_ratio: 0.978
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials."
 ---
 []{#subsec:polfunct label="subsec:polfunct"} The ring $\Lambda_\star^{(1)}$ of *polynomial functions on the set of Young diagrams* (briefly: the ring of *polynomial functions*) has been introduced by Kerov and Olshanski in order to study irreducible character values of the symmetric groups [@KerovOlshanskiPolFunc].
 

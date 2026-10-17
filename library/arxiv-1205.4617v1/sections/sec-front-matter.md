@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 1205.4617v1.pdf
 source_sha256: dd00cf2cee521bf5
 toc_source: outline
+doc_brief: "Quaternion Octonion Reformulation of Grand Uniﬁed Theories — In this paper, Grand Uniﬁed theories are discussed in terms of quater- nions and octonions by using the relation between quaternion basis"
 ---
 arXiv:1205.4617v1  [physics.gen-ph]  29 Feb 2012
 Quaternion Octonion Reformulation of Grand

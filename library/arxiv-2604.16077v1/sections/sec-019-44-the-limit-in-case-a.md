@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.93
 latex_coverage_ratio: 0.942
+doc_brief: "Volume Conjecture and quantum hyperbolic invariants: the figure eight knot complement — We compute the real part of the semi-classical limit of the sequence of quantum hyperbolic invariants (QHI) of"
 ---
 \label{sub:SPM:a} Recall \eqref{l0inftymars25}-\eqref{l1inftymars25} and \eqref{defL+-modif}-\eqref{notInjui25}. In case (a) we have $\bl_{0,\infty}=-2i\pi$ and $\bl_{1,\infty}=i\pi$, so
 \begin{equation}\label{defL+-modifcasea}

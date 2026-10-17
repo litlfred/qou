@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.924
 latex_coverage_ratio: 0.974
+doc_brief: "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM INVARIANTS OF HYPERBOLIC KNOTS — We obtain an exact modularity relation for the q-Pochhammer symbol."
 ---
 Among knot invariants, the colored Jones polynomials $\{J_{K,n}\}_{n\geq2}$ and the Kashaev invariants $\{\langle K\rangle_N\}_{N\geq 2}$ are of particular interest, by their relation to quantum field theory, and the geometry of hyperbolic manifolds [@Witten1994; @MurakamiMurakami2001]. We refer to *e.g.* [@MurakamiMurakami2001; @Yokota2011] for their definitions; by [@MurakamiMurakami2001], the two invariants are related by $\langle K\rangle_N=J_{K,N}(\ifthenelse{\equal{}{}}{{\rm e}}{\operatorname{e}\mathchoice{\mathopen{}\mathclose\bgroup\originalleft(  \aftergroup\egroup\originalright)}{( )}{( )}{( )}}^{2\pi i /N})$. We refer to [@Jones; @Kashaev1995; @Champanerkar_etal] for more results and references on this topic.
 

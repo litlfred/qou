@@ -8,6 +8,7 @@ pages: 55-60
 source_pdf: 0105186v2.pdf
 source_sha256: e1552ceb6c82c27c
 toc_source: inferred
+doc_brief: "arXiv:math/0105186v2 [math.SG] 20 Jul 2002 — 17 sections: Front matter; Introduction; Dehn twists, and all that"
 ---
 The ﬁrst map
 Let S be the surface in Figure 3, which has three boundary components ∂kS

@@ -8,6 +8,7 @@ pages: 15-16
 source_pdf: 1003.4808v2.pdf
 source_sha256: 72301d4bee491f86
 toc_source: outline
+doc_brief: "Quantum Field Theory and the Volume Conjecture — 15 sections: Front matter; Preliminaries; The many dimensions of the volume"
 ---
 Cutting and gluing
 In its more mathematical incarnation, a 3-dimensional TQFT can be thought of as a

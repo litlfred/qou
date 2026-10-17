@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.979
 latex_coverage_ratio: 0.993
+doc_brief: "Gentle introduction to Soergel bimodules I: The basics — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules."
 ---
 In this section we will consider only two simple reflections, say $s$ and $r$, represented by two colors, say red and blue. We will explain a version of the Double Leaves Theorem in two colors but only for reduced expressions (we will see that the general version of this theorem (Theorem [\[DL\]](#DL){reference-type="ref" reference="DL"}) does not restrict to reduced expressions neither in the source nor in the target). It is for simplicity of exposition that we use reduced expressions.
 

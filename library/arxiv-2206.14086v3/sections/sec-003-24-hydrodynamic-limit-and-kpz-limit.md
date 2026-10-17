@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.876
 latex_coverage_ratio: 1.0
+doc_brief: "KPZ limit theorems — One-dimensional interacting particle systems, 1+1 random growth models, and two-dimensional di- rected polymers deﬁne 2d height ﬁelds."
 ---
 The hydrodynamic limit of TASEP is about $\mathbf{h}(x,t)$ when $x$ and $t$ are proportional. For the step initial condition, $\mathbf{h}(x,0)=|x|$, Rost [@Rost81] showed in 1981 that $$\frac{\mathbf{h}(xT, tT)}{T}  \to \bar{\mathbf{h}}(x,t)$$ almost surely as $T\to \infty$, where $\bar{\mathbf{h}}(x,t) = \frac{t^2+x^2}{2t}$ for $|x|\le t$ and $\bar{\mathbf{h}}(x,t) = |x|$ for $|x|\ge t$. See Figure [1](#fig:hbar){reference-type="ref" reference="fig:hbar"} for the graph. The hydrodynamic limit $\bar{\mathbf{h}}$ is deterministic, and it solves Burger's equation [@Liggett85; @Liggett99].
 

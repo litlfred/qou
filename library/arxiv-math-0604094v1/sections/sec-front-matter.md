@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 0604094v1.pdf
 source_sha256: f0c4c36ab0acf537
 toc_source: outline
+doc_brief: "GENERALIZED VOLUME CONJECTURE AND THE A-POLYNOMIALS: THE NEUMANN–ZAGIER POTENTIAL FUNCTION AS A CLASSICAL LIMIT OF — 7 sections: Front matter; Quantum Dilogarithm Function; Examples"
 ---
 arXiv:math/0604094v1  [math.QA]  5 Apr 2006
 GENERALIZED VOLUME CONJECTURE AND THE A-POLYNOMIALS:

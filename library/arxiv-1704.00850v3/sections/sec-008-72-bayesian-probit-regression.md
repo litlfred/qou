@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.958
 latex_coverage_ratio: 0.986
+doc_brief: "Estimating the spectral gap of a trace-class Markov operator — The utility of a Markov chain Monte Carlo algorithm is, in large part, determined by the size of the spectral gap of the corresponding"
 ---
 Let $Y_1,Y_2,\dots, Y_n$ be independent Bernoulli random variables with $\mathbb{P}(Y_1=1|\beta) = \Phi(x_i^T\beta),$ where $x_i,\beta
         \in \mathbb{R}^p$, and $\Phi(\cdot)$ is the cumulative distribution function of the standard normal distribution. Take the prior on $\beta$ to be $\mbox{N}_p(Q^{-1}w, Q^{-1}),$ where $w \in \mathbb{R}^p$ and $Q$ is positive definite. The resulting posterior distribution is intractable, but [@albert1993bayesian] devised a DA algorithm to sample from it. Let $z=(z_1,z_2,\dots,z_n)^T$ be a vector of latent variables, and let $X$ be the design matrix whose $i$th row is $x_i^T.$ The Mtd of the Albert and Chib (AC) chain, $p(\beta,\cdot), \beta \in \mathbb{R}^p,$ is characterized by $$\pi_{U|V} (\beta|z) \propto \exp \bigg[ -\frac{1}{2} \big\{

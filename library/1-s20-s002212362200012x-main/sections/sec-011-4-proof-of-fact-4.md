@@ -8,6 +8,7 @@ pages: 19-20
 source_pdf: 1-s2.0-S002212362200012X-main.pdf
 source_sha256: 6fc7d28c8d40bf42
 toc_source: outline
+doc_brief: "Journal of Functional Analysis Log concavity and concentration of Lipschitz functions on the Boolean hypercube — 15 sections: Front matter; Log concavity and concentration of; Introduction"
 ---
 Let ρ : [−1, 1]n →R be the harmonic extension of dν
 dμ and write g(x) := log ρ(tanh(x))

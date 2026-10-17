@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.985
+doc_brief: "Gentle introduction to Soergel bimodules I: The basics — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules."
 ---
 In this section we will introduce Soergel bimodules in the baby example A, i.e. the symmetric group $S_3.$ This case is hard enough to start with and most of the features of general Soergel bimodules are already visible in this example.
 

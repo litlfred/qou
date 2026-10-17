@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 0.942
+doc_brief: "MONOIDAL CATEGORIFICATION OF CLUSTER ALGEBRAS — We prove that the quantum cluster algebra structure of a unipotent quantum coordinate ring Aq(n(w)), associated with a symmetric Kac-Moody algebra and"
 ---
 A $U_q(\g)$-module $M$ is called {\em integrable}
 if  $M= \bigoplus_{\eta \in \wl} M_\eta$

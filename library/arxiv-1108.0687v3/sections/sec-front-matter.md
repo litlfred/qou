@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 1108.0687v3.pdf
 source_sha256: 66ba88e13a429a0a
 toc_source: outline
+doc_brief: "Concentration of Lipschitz functionals of determinantal and other strong Rayleigh measures — Let {X1, . . ."
 ---
 arXiv:1108.0687v3  [math.PR]  28 Jul 2013
 Concentration of Lipschitz functionals of determinantal and other strong

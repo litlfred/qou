@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.504
+doc_brief: "Large-NC estimate of the chiral low-energy constants ∗ — 5 sections: Front matter; Introduction; The role of Resonance Chiral Theor"
 ---
 The study of the resonance energy region is essential for the understanding of hadron phenomenology driven by non-perturbative QCD : hadronic tau decays, final-state interactions, kaon decays, etc.
 

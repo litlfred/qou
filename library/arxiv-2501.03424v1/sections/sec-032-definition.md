@@ -8,6 +8,7 @@ pages: 17-17
 source_pdf: 2501.03424v1.pdf
 source_sha256: 53e00a30fd850a5b
 toc_source: outline
+doc_brief: "Soergel bimodules and Kazhdan-Lusztig polynomials — This paper presents an exposition of Soergel bimodules, the categoriﬁcation of Hecke alge- bras, and their applications to various topics in"
 ---
 Deﬁnition
 Let w = (s1, . . . , sm) be a reduced expression for w. The Bott-Samelson module BS(w) is the

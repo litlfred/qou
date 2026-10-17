@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.952
 latex_coverage_ratio: 0.963
+doc_brief: "Volume Conjecture and quantum hyperbolic invariants: the figure eight knot complement — We compute the real part of the semi-classical limit of the sequence of quantum hyperbolic invariants (QHI) of"
 ---
 \label{NOTA} 
 We introduce in Sections \ref{QGVsec} and \ref{LOGW} the material required to define the reduced QHI state sums associated to the geometric ideal triangulations of cusped manifolds which support a branching.  The case of the figure-eight knot complement is developed in Section \ref{4_1}. The generalization to arbitrary ({\it i.e.}, not necessarily branched) geometric ideal triangulations, possibly with some flat tetrahedra (see Definition \ref{defgeomtri}), is described in \cite{AGT,NA}. Though any cusped manifold has a geometric ideal triangulation (see Section \ref{sec:tri_GV}), to our knowledge it is still an open question whether or not there is a branched geometric one. For hyperbolic links in $S^3$ which have a reduced alternating diagram, the answer is positive; this follows from the main result of \cite{GMT,SakYok}. 

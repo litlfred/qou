@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-math-0409593v1/blocks/prose-sec-015",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Classical isomorphisms",
+  "title": "Appendix : associativity of kernel transforms",
   "pageStart": 15,
-  "pageEnd": 21,
-  "text": "../sections/sec-015-61-classical-isomorphisms.md",
+  "pageEnd": 15,
+  "text": "../sections/sec-015-6-appendix-associativity-of-kernel-transforms.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0409593v1/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0409593v1/manifest.jsonld",
   "provenance": "ingested"

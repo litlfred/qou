@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.958
 latex_coverage_ratio: 0.965
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 We consider a 'non-commutative analog' of the nested Hilbert scheme defined as a quotient $\SymbolPrint{\Hilb_{1,n}^{free}}=\SymbolPrint{\widetilde{\Hilb}_{1,n}^{free}}/\SymbolPrint{B}$, where $$\widetilde{\Hilb}_{1,n}^{free} = \{
  (X,Y,v)\in \frb\times\frn\times V\,|\,\CC\langle X,Y\rangle v=\SymbolPrint{V}

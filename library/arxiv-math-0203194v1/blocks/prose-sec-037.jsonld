@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-math-0203194v1/blocks/prose-sec-037",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Temperate fundamental groups.",
-  "pageStart": 130,
-  "pageEnd": 137,
-  "text": "../sections/sec-037-14-temperate-fundamental-groups.md",
+  "title": "More on the topological fundamental group.",
+  "pageStart": 116,
+  "pageEnd": 123,
+  "text": "../sections/sec-037-131-more-on-the-topological-fundamental-group.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203194v1/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203194v1/manifest.jsonld",
   "provenance": "ingested"

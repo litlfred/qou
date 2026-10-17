@@ -8,6 +8,7 @@ pages: 12-14
 source_pdf: 0907.4143v1.pdf
 source_sha256: a2090d1e574b27db
 toc_source: outline
+doc_brief: "Soft and Supersoft X-ray Sources in Symbiotic Stars 1 — Assuming that soft X-ray sources in symbiotic stars result from strong thermonu- clear runaways, and supersoft X-ray sources from weak"
 ---
 Conclusions
 Assuming that SSs in SySs result from the violent collisions of the stellar

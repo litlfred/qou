@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.978
 latex_coverage_ratio: 0.937
+doc_brief: "Soft and Supersoft X-ray Sources in Symbiotic Stars 1 — Assuming that soft X-ray sources in symbiotic stars result from strong thermonu- clear runaways, and supersoft X-ray sources from weak"
 ---
 SySs are complex binary systems, and can be divided into two
 subgroups: `ordinary' SySs, which are assumed to burn hydrogen

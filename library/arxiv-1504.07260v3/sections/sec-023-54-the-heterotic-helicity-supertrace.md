@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.948
 latex_coverage_ratio: 0.934
+doc_brief: "Fricke S-duality in CHL models — We consider four dimensional CHL models with sixteen spacetime supersym- metries obtained from orbifolds of type IIA superstring on K3×T 2 by a ZN symmetry acting"
 ---
 Let us now analyse the counting of BPS-states from the heterotic perspective. The generating function of helicity supertraces for heterotic strings on $T^6$ is [@Kiritsis:1997hj] $$Z^{\text{het}}(\upsilon,\bar\upsilon)=
 \frac{\vartheta_1(\upsilon/2)^4  }{\eta^{12}\bar\eta^{24}}\frac{\xi(\upsilon)\bar\xi(\bar\upsilon)}{\tau_2}\Theta_{\Gamma^{6,22}}\ ,$$and the fourth helicity supertrace is[^1] $$B_4=\left(\frac{1}{2\pi i} \frac{\partial}{\partial \upsilon}+\frac{1}{2\pi i} \frac{\partial}{\partial \bar\upsilon}\right)^4 Z^{\text{het}}(\upsilon,\bar \upsilon)_{\rvert \upsilon=0}=\left(\frac{1}{2\pi i} \frac{\partial}{\partial \upsilon}\right)^4Z^{\text{het}}(\upsilon,\bar \upsilon)_{\rvert \upsilon=0}=\frac{3}{2\tau_2} \frac{\Theta_{\Gamma^{6,22}}}{\bar\eta^{24}}\ .$$

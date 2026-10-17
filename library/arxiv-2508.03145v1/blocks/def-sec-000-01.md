@@ -1,1 +1,1 @@
-An objectf∗ : T′→T in Fun(∆1,∞-CatR
+An object f∗: T ′ →T in Fun(∆1, ∞-CatR

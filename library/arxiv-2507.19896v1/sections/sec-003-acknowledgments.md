@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.889
 latex_coverage_ratio: 0.902
+doc_brief: "Generalized Markov traces and Jucys-Murphy elements — We give a simple construction of Markov traces for Iwahori-Hecke algebras associated with infinite series of crystallographic Coxeter groups."
 ---
 The results of this paper were obtained while the authors participated in \href{https://math.mit.edu/research/highschool/primes/YuliasDream/}{Yulia's Dream} program. We would like to thank the program's or\-ga\-ni\-zers for this wonderful initiative. We would like to thank Mykhailo Barkulov, another participant of the program, for helpful discussions.
 

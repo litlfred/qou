@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.953
 latex_coverage_ratio: 0.991
+doc_brief: "On Augmentation Algorithms for Linear and Integer-Linear Programming: From Edmonds-Karp to Bland and Beyond — 5 sections: Front matter; Introduction.; Our Contributions"
 ---
 We present the proofs to the above results in separate subsections. We will use the following  lemma (a slight variation from Theorem 3.1 in \cite{Ahuja+Magnanti+Orlin}) which  establishes the bounds we claim once we can guarantee sufficient improvement at each iteration:
 \begin{lemma}

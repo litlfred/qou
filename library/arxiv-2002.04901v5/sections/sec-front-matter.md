@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2002.04901v5.pdf
 source_sha256: f1320c4b87229215
 toc_source: outline
+doc_brief: "WEAK PROREGULARITY, DERIVED COMPLETION, ADIC FLATNESS — We begin by recalling the role that weak proregularity of an ideal in a commu- tative ring has in derived completion and adic ﬂatness."
 ---
 WEAK PROREGULARITY, DERIVED COMPLETION, ADIC FLATNESS,
 AND PRISMS

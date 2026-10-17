@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.609
 latex_coverage_ratio: 0.985
+doc_brief: "arXiv:math/0105186v2 [math.SG] 20 Jul 2002 — 17 sections: Front matter; Introduction; Dehn twists, and all that"
 ---
 By an exact symplectic manifold we mean a compact manifold $M$ with boundary, together with a symplectic form $\o$ and a one-form $\theta$ satisfying $d\theta = \o$, such that $\theta|\partial M$ is a contact one-form and makes $\partial M$ convex. An isomorphism of exact symplectic manifolds is a diffeomorphism $\phi: M \rightarrow M'$ which is symplectic, satisfies $\phi^*\theta' = \theta$ in some neighbourhood of $\partial M$, and such that $[\phi^*\theta' - \theta] \in H^1(M,\partial M;\R)$ is zero. This means that there is a unique function $K_\phi \in \smooth_c(M \setminus \partial M,\R)$ such that $\phi^*\theta' = \theta + dK_\phi$. We denote by $\Sympe(M)$ the group of those exact symplectic automorphisms of $M$ which are the identity near $\partial M$. Its Lie algebra consists of vector fields $X$ such that $\o(\cdot,X) = dH$ for some $H$ which vanishes near $\partial M$, and is thus identified with $\smooth_c(M \setminus \partial M,\R)$.
 

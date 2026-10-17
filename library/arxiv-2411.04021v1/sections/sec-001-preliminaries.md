@@ -8,6 +8,7 @@ pages: 3-7
 source_pdf: 2411.04021v1.pdf
 source_sha256: f5b6980f08d25394
 toc_source: outline
+doc_brief: "On the Gram determinants of the Specht modules — For every partition λ of a positive integer n, let Sλ be the corresponding Specht module of the symmetric group Sn, and let det(λ) ∈Z denote the Gram"
 ---
 Preliminaries
 We fix a positive integer n. A partition is a sequence λ = (a1, . . . , am) of non-negative

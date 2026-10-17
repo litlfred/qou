@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.966
 latex_coverage_ratio: 0.8
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 We now introduce the *phase function*: $$\theta(z,w) = \frac{ Q(w) - Q(z,w)}{w-z},\qquad z\ne w.$$ Clearly, the phase function $\theta(z,w)$ is holomorphic in $z$ and real-analytic in $w$. We extend it by continuity to the diagonal: $\theta(z, z):=\partial_z Q(z)$. In terms of the phase function, our assumption [\[Qtaylor\]](#Qtaylor){reference-type="eqref" reference="Qtaylor"} asks that $$\begin{gathered}
  2\mathop{\mathrm{Re}}[(z-w)\theta(z,w)] =2\mathop{\mathrm{Re}}Q(z,w)-2Q(w)

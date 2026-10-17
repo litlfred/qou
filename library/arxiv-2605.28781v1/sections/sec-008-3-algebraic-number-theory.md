@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.99
 latex_coverage_ratio: 0.682
+doc_brief: "The sum-product conjecture is false for real numbers — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily large A ⊂R (whose elements are algebraic integers in a"
 ---
 In this section we review the necessary concepts required from algebraic number theory; with the exception of Theorem [\[th-tower\]](#th-tower){reference-type="ref" reference="th-tower"}, these are all classical results that can be found in most textbooks on the subject.
 

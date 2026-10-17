@@ -1,0 +1,1 @@
+[\[l nnpp\]](#l nnpp){reference-type="ref" reference="l nnpp"} does not hold if three vertices of $X$ coincide. To see this, let $Y$ be a regular ideal tetrahedron and let $\gamma$ be a parabolic or hyperbolic isometry. Then $\gamma^n(Y)$ is a family of tetrahedra with maximal volume, but at least three of the vertices of $\gamma^n(Y)$ converge to the same point.

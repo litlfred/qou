@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.969
 latex_coverage_ratio: 0.965
+doc_brief: "Connections on Non-Abelian Gerbes and their Holonomy — We introduce an axiomatic framework for the parallel transport of connections on gerbes."
 ---
 Giraud introduced gerbes  in order to achieve a geometrical understanding of \emph{non-abelian} cohomology \cite{giraud}. However, already \emph{abelian} gerbes turned out to be interesting: Brylinski introduced the notion of a \emph{connection} on an abelian gerbe, and showed that these represent classes in a certain \emph{differential} cohomology theory, namely Deligne cohomology \cite{brylinski1}. Deligne cohomology in degree two  has before been related to two-dimensional conformal field theory  by Gaw\c edzki \cite{gawedzki3}. This relation is   established by means of the \emph{surface holonomy} of a connection on an abelian gerbe, which provides a term in the action functional of the field theory. 
 

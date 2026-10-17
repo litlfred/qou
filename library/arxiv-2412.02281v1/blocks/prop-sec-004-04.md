@@ -1,1 +1,1 @@
-Forλ ∈ C∗, it follows that
+For λ ∈C∗, it follows that

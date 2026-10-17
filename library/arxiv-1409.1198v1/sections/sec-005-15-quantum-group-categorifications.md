@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.965
 latex_coverage_ratio: 0.977
+doc_brief: "TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR — Categoriﬁcation is a process of lifting structures to a higher categorical level."
 ---
 There is a strong interplay between quantum link invariants and algebraic objects known as quantum groups. Given the existence of link homology theories categorifying link invariants, it is perhaps not surprising to discover that quantum groups can also be categorified.  In this article we will examine how the two notions of decategorification given by the Grothendieck group and the trace can be applied to categorified quantum groups.
 

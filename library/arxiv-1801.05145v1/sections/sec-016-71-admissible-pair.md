@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.887
 latex_coverage_ratio: 0.957
+doc_brief: "MONOIDAL CATEGORIFICATION OF CLUSTER ALGEBRAS — We prove that the quantum cluster algebra structure of a unipotent quantum coordinate ring Aq(n(w)), associated with a symmetric Kac-Moody algebra and"
 ---
 In this section, we assume that \emph{$R$ is a symmetric KLR algebra
 over a base field $\coro$}.

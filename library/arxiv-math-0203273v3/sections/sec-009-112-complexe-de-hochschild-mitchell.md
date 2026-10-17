@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.991
 latex_coverage_ratio: 0.93
+doc_brief: "arXiv:math/0203273v3 [math.CT] 12 Oct 2002 — 31 sections: Front matter; Introduction; Alg`ebres `a plusieurs objets"
 ---
 []{#7.2 label="7.2"} Soit ${\mathcal{A}}$ une petite $K$-catégorie, telle que pour tout $(A,B)\in
 {\mathcal{A}}\times {\mathcal{A}}$, ${\mathcal{A}}(A,B)$ soit un $K$-module projectif.

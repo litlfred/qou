@@ -8,6 +8,7 @@ pages: 12-13
 source_pdf: 1303.0720v2.pdf
 source_sha256: 389ab465e81a0667
 toc_source: outline
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 kernel has – up to an error term – the (local) expansion
 Kq,m(z, w) ∼

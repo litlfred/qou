@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.99
 latex_coverage_ratio: 0.99
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS — We study asymptotics of characters of the symmetric groups on a ﬁxed conjugacy class."
 ---
 Lassalle announced as a conjecture [@Lassalle-preprint2007] that there is an additional structure in the genus expansion of Kerov polynomials. He claimed that for a fixed genus $g$ there exists a symmetric function $f_g$ which describes polynomials $K_{k,k+1-2g}$ and which is independent of $k$. Before presenting his conjectures we need to prepare some notations.
 

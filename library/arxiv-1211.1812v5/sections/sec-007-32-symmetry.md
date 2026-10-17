@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.991
 latex_coverage_ratio: 1.0
+doc_brief: "Presheaves of superselection structures in curved spacetimes — We show that superselection structures on curved spacetimes, that are expected to describe quantum charges aﬀected by the underlying"
 ---
 []{#sec.sym label="sec.sym"} As a final step we consider the symmetry structure. This is an essential ingredient at the level of duality theory ([@DR89 §1]) and, at the same time, encodes the Fermi-Bose statistics (see [@Dop11] for a friendly introduction). We introduce the family of unitary operators
 

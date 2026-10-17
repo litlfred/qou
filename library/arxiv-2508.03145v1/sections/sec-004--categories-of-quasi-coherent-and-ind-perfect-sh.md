@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.987
 latex_coverage_ratio: 0.961
+doc_brief: "Θ -Categories and Tannakian duality — We introduce a notion of Θ-categories, which is a refinement of the notion of symmetric monoidal ∞-categories."
 ---
 For a commutative $k$-algebra $A$, we consider $\mathsf{QCoh}(\mathbf{Spec}\, A)$, also denoted by $\mathsf{QCoh}(A)$, the symmetric monoidal $\infty$-category of complexes of $A$-modules. When $A$ varies in commutative $k$-algebras this defines an fpqc-stack in presentable symmetric monoidal $\infty$-categories $$\mathsf{QCoh}\colon \mathbf{Aff}_k^{op} \longrightarrow \infty\text{-}\mathbf{Cat}_{pr}^\otimes.$$ We will need a slight modification of the stack $\mathsf{QCoh}$, which involves ind-perfect complexes. For any small stack $F$, the dualizable objects in the symmetric monoidal $\infty$-category $\mathsf{QCoh}(F)$ are the perfect complexes, whose $\infty$-category will be denoted $\mathsf{Perf}(F)$. It comes equipped with the restriction of the symmetric monoidal structure of $\mathsf{QCoh}(F)$, and as such forms a small, stable symmetric monoidal $\infty$-category.
 

@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0902.0350v1.pdf
 source_sha256: 4591687132c93973
 toc_source: outline
+doc_brief: "A REVISION OF THE PROOF OF THE KEPLER CONJECTURE — The Kepler conjecture asserts that no packing of congruent balls in three-dimensional Euclidean space has density greater than that of the"
 ---
 A REVISION OF THE PROOF OF THE KEPLER
 CONJECTURE

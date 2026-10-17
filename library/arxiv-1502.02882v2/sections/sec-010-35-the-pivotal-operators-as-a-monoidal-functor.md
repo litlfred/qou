@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.947
 latex_coverage_ratio: 0.988
+doc_brief: "Fusion categories via string diagrams — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories."
 ---
 \label{piv_monoidal}
 We want to precisely relate the pivotal operators with the more traditional notion of the `double dual functor'. We first need to show that the pivotal operators can be viewed as equipping the identity functor with coherence isomorphisms making it into a monoidal functor. 

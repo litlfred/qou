@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.958
 latex_coverage_ratio: 0.983
+doc_brief: "The Mukai pairing, I: a categorical approach — We study the Hochschild homology of smooth spaces, emphasizing the importance of a pairing which generalizes Mukai’s pairing on the cohomology of K3"
 ---
 []{#subsec:leftrightadjoints label="subsec:leftrightadjoints"} []{#subsec:yphimphi label="subsec:yphimphi"} In an arbitrary 2-category a given 1-morphism might or might not have a left or a right adjoint, but in the 2-category ${\mathscr{V}\textsf{ar}}$ every 1-morphism, that is every kernel, has both a left and a right adjoint. We will see below that for a kernel $\Phi\colon X\to Y$ there are adjunctions $$\Phi^{\scriptscriptstyle\vee}\circ\Sigma_Y\dashv\Phi\dashv\Sigma_X\circ
 \Phi^{\scriptscriptstyle\vee},$$ where $\Phi^{\scriptscriptstyle\vee}\colon Y\to X$ means the object $\mathop{\mathrm{\underline{Hom}}}_{\mathbf{D}(X\times

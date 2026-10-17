@@ -1,1 +1,1 @@
-For any λ∈ C the combination Yλ = λY+
+For any λ ∈C the combination Yλ = λY+

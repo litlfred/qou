@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.848
 latex_coverage_ratio: 0.967
+doc_brief: "Affine cellular algebras and asymptotic algebras — The theory of affine cellular algebras A is extended to incorporate their asymptotic algebras ˆA, clarifying unexpected differences between"
 ---
 In this section, the asymptotic algebra of an affine cellular algebra
 and the embedding of an affine cellular algebra into its asymptotic algebra

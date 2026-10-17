@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.949
 latex_coverage_ratio: 0.95
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 The locally closed locus $\calX^{crit}_{\ell,st}$ defined by the condition that there is vector $u\in V$ such that $$\label{eq: cyclic}
  \CC[\Ad_{g_i}(Y_i),X]u=\CC^n.$$ From above discussion we see that the image $\pi_i(\calX^{crit}_{\ell,st})$ is inside $\mathcal{CV}_B^{st}$ because $u_i=g_i^{-1}(u)$ is cyclic $$\CC[Y_i,\tilde{X}_{i,+}]u_i=\CC^n.$$ We denote intersection of $\calX^{crit}_\ell/U^\ell$ with the stable locus by $\calX^{crit}_{\ell,st}/U^\ell$. Let us denote $j_{st}$ the inclusion of the stable locus.

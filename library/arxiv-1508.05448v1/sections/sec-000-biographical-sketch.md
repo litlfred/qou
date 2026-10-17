@@ -8,6 +8,7 @@ pages: 2-3
 source_pdf: 1508.05448v1.pdf
 source_sha256: 57d2c717d8ec74d0
 toc_source: outline
+doc_brief: "Concentration of Measure Techniques and Applications — 25 sections: Front matter; Biographical Sketch; Acknowledgments"
 ---
 Meg Walters grew up in Gainesville, FL. She moved to Rochester in 2005 to study
 bassoon performance at the Eastman School of Music and enrolled at the University

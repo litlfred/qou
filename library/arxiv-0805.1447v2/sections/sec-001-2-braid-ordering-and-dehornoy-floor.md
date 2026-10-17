@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "BRAID ORDERING AND THE GEOMETRY OF CLOSED BRAID — The relationships between braid ordering and the ge- ometry of its closure is studied."
 ---
 In this section we review some of fundamental facts of Dehornoy ordering and Dehornoy floor. Braid group $B_{n}$ is, by definition, a group which is presented by $$\langle \sigma_{1},\cdots,\sigma_{n-1}| \sigma_{i}\sigma_{j}\sigma_{i}=\sigma_{j}\sigma_{i}\sigma_{j} \textrm{ if } |i-j|=1, \; \sigma_{i}\sigma_{j}=\sigma_{j}\sigma_{i} \textrm{ if } |i-j|\geq 2  \rangle .$$ Geometrically, elements of braid group $\beta \in B_{n}$ are represented by braided $n$-strands which move from above to below, oriented downward. By connecting their endpoints of strands canonically, we obtain an oriented link. We denote this link by $\widehat{\beta}$ and call *closed braid* or *closure* of $\beta$.
 

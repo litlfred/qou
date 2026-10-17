@@ -8,6 +8,7 @@ pages: 13-13
 source_pdf: 1003.4808v2.pdf
 source_sha256: 72301d4bee491f86
 toc_source: outline
+doc_brief: "Quantum Field Theory and the Volume Conjecture — 15 sections: Front matter; Preliminaries; The many dimensions of the volume"
 ---
 Links and 3-manifolds
 The ﬁnal generalization of the volume conjecture that we consider is to arbitrary links in

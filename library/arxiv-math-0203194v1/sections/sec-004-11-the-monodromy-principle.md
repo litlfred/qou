@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.946
+doc_brief: "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry — 66 sections: Front matter; Purpose of this book.; Contents of this book."
 ---
 Let $S$ be a topological space, and $\mathcal{F}$ an abelian sheaf on $S$.
 For an open set $U\subseteq S$ and a section $f\in\Gamma(U,\mathcal{F})$, the 

@@ -3,81 +3,76 @@
  "doc_id": "arxiv-1409.0435v2",
  "source_sha256": "0c6abbb9c5a720d9",
  "brief": "Asymptotics for Toeplitz determinants: perturbation of symbols with a gap — We study the determinants of Toeplitz matrices as the size of the matrices tends to inﬁnity, in the particular case where",
- "extended": "**Asymptotics for Toeplitz determinants: perturbation of symbols with a gap**\n\n*Christophe Charlier∗and Tom Claeys∗*\n\n28 pp, 14 sections.\n\n**Abstract.** We study the determinants of Toeplitz matrices as the size of the matrices tends to inﬁnity, in the particular case where the symbol has two jump discontinuities and tends to zero on an arc of the unit circle at a suﬃciently fast rate. We generalize an asymptotic expansion by Widom [22], which was known for symbols supported on an arc. We highlight applications of our results in the Circular Unitary Ensemble and in the study of Fredholm determinants associated to the sine kernel.\n\n**Outline.** Abstract; Introduction; 2 I′; 2 K′; 0 (2(−ζ); 2 W(z)σ3,; 2 W(z)σ3 1; 1 We get; 12 (0) = sin θ0; 2 (if W = 0),; 12 (0) + R12(0)P (∞); 2 O(n1/2),; Acknowledgements; References",
+ "extended": "**Asymptotics for Toeplitz determinants: perturbation of symbols with a gap**\n\n*Christophe Charlier∗and Tom Claeys∗*\n\n28 pp, 13 sections.\n\n**Abstract.** We study the determinants of Toeplitz matrices as the size of the matrices tends to inﬁnity, in the particular case where the symbol has two jump discontinuities and tends to zero on an arc of the unit circle at a suﬃciently fast rate. We generalize an asymptotic expansion by Widom [22], which was known for symbols supported on an arc. We highlight applications of our results in the Circular Unitary Ensemble and in the study of Fredholm determinants associated to the sine kernel.\n\n**Outline.** Front matter; 1 Introduction; Application 1: the Circular Unitary Ensemble; Application 2: sine kernel determinants; Outline; 2 Differential identities for Toeplitz determi; 3 Equilibrium measures; 4.3 Global parametrix; 4.4.1 Bessel model RH problem; 4.4.2 Modification of the model RH problem; 4.4.3 Construction of the local parametrix; 5.4 Heuristic discussion of the asymptotics fo; Acknowledgements",
  "tokens": {
   "brief": 49,
-  "extended": 206
+  "extended": 264
  },
  "sections": [
   {
-   "id": "sec-000-abstract",
-   "title": "Abstract",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-18"
+   "pages": "1-3"
   },
   {
-   "id": "sec-002-2-i",
-   "title": "I′",
+   "id": "sec-001-application-1-the-circular-unitary-ensemble",
+   "title": "Application 1: the Circular Unitary Ensemble",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-002-application-2-sine-kernel-determinants",
+   "title": "Application 2: sine kernel determinants",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-003-outline",
+   "title": "Outline",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-004-2-differential-identities-for-toeplitz-determina",
+   "title": "Differential identities for Toeplitz determinants",
+   "pages": "6-10"
+  },
+  {
+   "id": "sec-005-3-equilibrium-measures",
+   "title": "Equilibrium measures",
+   "pages": "10-16"
+  },
+  {
+   "id": "sec-006-43-global-parametrix",
+   "title": "Global parametrix",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-007-441-bessel-model-rh-problem",
+   "title": "Bessel model RH problem",
    "pages": "18-18"
   },
   {
-   "id": "sec-003-2-k",
-   "title": "K′",
-   "pages": "18-18"
-  },
-  {
-   "id": "sec-004-0-2ζ",
-   "title": "(2(−ζ)",
+   "id": "sec-008-442-modification-of-the-model-rh-problem",
+   "title": "Modification of the model RH problem",
    "pages": "18-20"
   },
   {
-   "id": "sec-005-2-wzσ3",
-   "title": "W(z)σ3,",
-   "pages": "20-20"
+   "id": "sec-009-443-construction-of-the-local-parametrix",
+   "title": "Construction of the local parametrix",
+   "pages": "20-26"
   },
   {
-   "id": "sec-006-2-wzσ3-1",
-   "title": "W(z)σ3 1",
-   "pages": "20-23"
+   "id": "sec-010-54-heuristic-discussion-of-the-asymptotics-for-s",
+   "title": "Heuristic discussion of the asymptotics for $s>e^{-x_cn}$",
+   "pages": "26-26"
   },
   {
-   "id": "sec-007-1-we-get",
-   "title": "We get",
-   "pages": "23-24"
-  },
-  {
-   "id": "sec-008-12-0-sin-θ0",
-   "title": "(0) = sin θ0",
-   "pages": "24-24"
-  },
-  {
-   "id": "sec-009-2-if-w-0",
-   "title": "(if W = 0),",
-   "pages": "24-24"
-  },
-  {
-   "id": "sec-010-12-0-r120p",
-   "title": "(0) + R12(0)P (∞)",
-   "pages": "24-25"
-  },
-  {
-   "id": "sec-011-2-on12",
-   "title": "O(n1/2),",
-   "pages": "25-26"
-  },
-  {
-   "id": "sec-012-acknowledgements",
+   "id": "sec-011-acknowledgements",
    "title": "Acknowledgements",
-   "pages": "26-27"
-  },
-  {
-   "id": "sec-013-references",
-   "title": "References",
-   "pages": "27-28"
+   "pages": "26-28"
   }
  ],
  "provenance": {

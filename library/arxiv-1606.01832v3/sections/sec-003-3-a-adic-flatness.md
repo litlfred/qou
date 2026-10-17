@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.99
 latex_coverage_ratio: 0.956
+doc_brief: "FLATNESS AND COMPLETION REVISITED — We continue investigating the interaction between ﬂatness and a- adic completion for inﬁnitely generated A-modules."
 ---
 \label{sec:adic-flatness} 
 

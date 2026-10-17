@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.925
 latex_coverage_ratio: 0.996
+doc_brief: "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories."
 ---
 To find the moduli space for the bipyramid theory, let us work in the equatorial polarization $\Pi_{\rm eq}$, as discussed in Section [\[sec:geom\]](#sec:geom){reference-type="ref" reference="sec:geom"} and Section [\[sec:gauge23\]](#sec:gauge23){reference-type="ref" reference="sec:gauge23"}. We closely follow the notation in those sections. We can start with the decomposition into two tetrahedra, and use the Lagrangian description [\[SQEDbip\]](#SQEDbip){reference-type="eqref" reference="SQEDbip"} of $T_{M,\Pi_{\rm eq}}$ as $N_f=1$ SQED, with a shift $V\to V-V_{X_1}/2$, to obtain a twisted superpotential
 

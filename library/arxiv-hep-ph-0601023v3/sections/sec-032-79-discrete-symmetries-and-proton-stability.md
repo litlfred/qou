@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.968
 latex_coverage_ratio: 0.987
+doc_brief: "arXiv:hep-ph/0601023v3 23 Apr 2007 — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non - su- persymmetric uniﬁcation"
 ---
 Dimension 4 and dimension 5 proton decay operators can be eliminated by specific choice  of 
 discrete  symmetries. However, if the symmetries are global they would  not be 

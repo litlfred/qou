@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.989
 latex_coverage_ratio: 0.992
+doc_brief: "Concentration of Measure Techniques and Applications — 25 sections: Front matter; Biographical Sketch; Acknowledgments"
 ---
 Chalker and Mehlig were able to relate the overlap functions to expectations of functions involving all the eigenvalues. The eigenvalue distribution for the complex Ginibre ensemble is well-known. In fact it is one of the simplest of the various Gaussian ensembles. For example, as Chalker and Mehlig also point out in their paper, $$\label{eq:RD}
 \mathcal{R}_N^{(1)}(z)\, =\, \frac{N}{\pi N!}\, e^{-N |z|^2} D_{N-1}(z)\, ,$$ where $D_{N-1}(z)$ equals the determinant of the $(N-1)$-dimensional square matrix $\mathcal{D}_N(z)$ where the matrix entries are best indexed for $j,k \in \{0,\dots,N-2\}$ as $$_{jk}\, =\, \left(\frac{N^{j+k+4}}{\pi^2 (j!) (k!)}\right)^{1/2} \int_{\mathbb{C}} \overline{\lambda}^j \lambda^k

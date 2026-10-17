@@ -8,6 +8,7 @@ pages: 26-26
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
 toc_source: outline
+doc_brief: "Hecke algebras, generalisations and representation theory — 30 sections: Front matter; Algebras of Finite Type; Blocks"
 ---
 Cyclotomic Hecke algebras generalise the notion of Iwahori–Hecke algebras to the case of complex reﬂec-
 tion groups. For any positive integer e we will write ζe for exp(2πi/e) ∈C.

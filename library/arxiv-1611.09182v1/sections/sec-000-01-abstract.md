@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.992
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 This thesis constitutes a first attempt to derive aspects of standard  model particle physics from little more than an algebra.  Here, we argue that physical concepts such as particles, causality, and irreversible time may result from the algebra acting on itself.
 

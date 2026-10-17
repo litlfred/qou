@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.882
+doc_brief: "A connection formula between the Ramanujan function and the q -Airy function — We show a connection formula between two diﬀerent q-Airy func- tions."
 ---
 We define a shearing transformation of a second order linear $q$-difference equation.
 

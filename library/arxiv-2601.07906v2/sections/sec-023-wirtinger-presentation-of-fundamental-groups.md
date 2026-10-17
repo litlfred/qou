@@ -8,6 +8,7 @@ pages: 81-85
 source_pdf: 2601.07906v2.pdf
 source_sha256: e69b1bf37f2c75b0
 toc_source: outline
+doc_brief: "A universal sum over topologies in 3d gravity — We explore the sum over topologies in AdS3 quantum gravity and its relationship with the statistical interpretation of the boundary theory."
 ---
 Wirtinger presentation of fundamental groups
 We often make use of the fundamental group of 3-manifolds. There is a systematic

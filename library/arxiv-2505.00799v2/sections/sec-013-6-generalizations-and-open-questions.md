@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.966
 latex_coverage_ratio: 1.0
+doc_brief: "Quantum Modular Forms and Resurgence — In 2010, Zagier described a new phenomenon which he called quantum mod- ularity."
 ---
 []{#sec: questions label="sec: questions"} We conclude with a selection of follow-up questions of interest to the authors.
 

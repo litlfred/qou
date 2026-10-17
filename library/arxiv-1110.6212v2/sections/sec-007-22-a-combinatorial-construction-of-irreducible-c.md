@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.868
 latex_coverage_ratio: 0.909
+doc_brief: "On calibrated representations and the Plancherel Theorem for aﬃne Hecke algebras — This paper has two main purposes."
 ---
 []{#sect:combconst label="sect:combconst"}
 

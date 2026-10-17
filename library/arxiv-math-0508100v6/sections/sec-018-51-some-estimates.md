@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.684
 latex_coverage_ratio: 0.901
+doc_brief: "ASYMPTOTICS OF THE COLORED JONES FUNCTION OF A KNOT — To a knot in 3-space, one can associate a sequence of Laurent polynomials, whose nth term is the nth colored Jones polynomial."
 ---
 The following is a higher order version of Lemma \ref{lem.estimate}.
 The proof is similar.

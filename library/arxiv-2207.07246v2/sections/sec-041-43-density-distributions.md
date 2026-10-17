@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.923
 latex_coverage_ratio: 0.985
+doc_brief: "Path Integral Quantum Monte Carlo Method for Light Nuclei — 64 sections: Front matter; ABSTRACT; LIST OF TABLES"
 ---
 The ground state of $^4$He is an angular momentum $J=0$ state and is spherically symmetric. We can use the one-particle number density $\rho(r)$ to describe the probability density for one particle to be at distance $r$ from the nuclei's center of mass. With this convention we normalize it as $$\int 4 \pi r^2 \rho(r) dr = 1 .$$ The distribution $\rho(r)$ can be extracted from high energy electron-nucleus scattering experiments, and is related with the electric form factor by Fourier transform ([@Xuzizong2009book; @Lynn2019ann]). The label of a particle does not matter, so we can just take particle 1 as the reference particle, and the operator $\hat{\rho}(r)$ can be written as[^1],
 

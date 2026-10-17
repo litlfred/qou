@@ -8,6 +8,7 @@ pages: 52-58
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
 toc_source: outline
+doc_brief: "Stabilization in the braid groups I: MTWS Introduction — 40 sections: Front matter; Introduction; The problem"
 ---
 Creating symmetric normal neighborhoods of the clasp arcs
 In Section 4.3 we modiﬁed the discs R1, . . . , Rk which had been constructed as part

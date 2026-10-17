@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.963
 latex_coverage_ratio: 0.902
+doc_brief: "On local solutions of the Ramanujan equation and their connection formulae — We show connection formulae of local solutions of the Ramanujan equation between the origin and the inﬁnity."
 ---
 In this papar, we show two essentially different connection formulae of some basic hypergeometric series between the origin and the infinity. In 1846, E. Heine [@hein] introduced the basic hypergeometric series ${}_2\varphi_1(a,b;c;q,x)$ as follows; $${}_2\varphi_1(a,b;c;q,x):=\sum_{n\ge 0}\frac{(a,b;q)_n}{(c;q)_n(q;q)_n}x^n,\quad c\not \in q^{-\mathbb{N}}.
 \label{heine}$$ Here, $(a;q)_n$ is the $q$-shifted factorial; $$(a;q)_n:=

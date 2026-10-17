@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.945
 latex_coverage_ratio: 0.96
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 We need to find the bianalytic analogue of Proposition [\[prop-neglampl1\]](#prop-neglampl1){reference-type="ref" reference="prop-neglampl1"}, so that we can tell when we have a bi-negligible amplitude. To formulate the criterion, we first need to define the operator ${\mathbf N}$. We note that a function $f\in{\mathfrak R}_2$ has a unique decomposition $f(z,w)=f_1(z,w)+\bar z f_2(z,w)$, where $f_1$ and $f_2$ are holomorphic in in $z$ and $C^\infty$-smooth in $w$ (near the diagonal $z=w$). For such $f\in{\mathfrak R}_2$, we put $${\mathbf N}[f](z,w):=\frac{f_1(z,w)-f_1(w, w)}{z-w}+\bar z\,
 \frac{f_2(z,w)-f_2(w, w)}{z-w}.$$ Then ${\mathbf N}{\mathbf M}_{z-w}$ is the identity operator. Second, we need the (formal) operator ${\mathbf S}'$ given by $${\mathbf S}' : = {\mathbf S}{\mathbf M}^{-1}_{\bar \partial_w \theta} {\mathbf S}^{-1} {\mathbf N}{\mathbf S}.  

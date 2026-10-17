@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.969
 latex_coverage_ratio: 0.909
+doc_brief: "arXiv:math/0203273v3 [math.CT] 12 Oct 2002 — 31 sections: Front matter; Introduction; Alg`ebres `a plusieurs objets"
 ---
 Voici un avatar monoı̈dal de la proposition [\[P3\]](#P3){reference-type="ref" reference="P3"}.
 

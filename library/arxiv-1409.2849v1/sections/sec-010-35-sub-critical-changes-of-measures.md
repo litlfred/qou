@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.913
 latex_coverage_ratio: 0.927
+doc_brief: "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS — In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the"
 ---
 In the mixed Curie-Weiss-Ising model, one may ask  what happens if instead of $\beta$ and $\frac{1}{\E^{2\beta}}$ one puts arbitrary coefficients for the local and the global interaction. More generally, given a sequence $(X_n)_{n \in \N}$ that converges in the $\mathrm{L}^{1}$-mod-Gaussian sense with parameters $t_n$ and limiting function $\psi$, one can look at the change of measure
 $$\qproba_{n}^{(\gamma)}[dx]=\frac{\E^{\frac{\gamma x^2}{2t_n}}}{\esper\!\left[\E^{\frac{\gamma (X_n)^2}{2t_n}}\right]}\,\proba_n[dx]$$

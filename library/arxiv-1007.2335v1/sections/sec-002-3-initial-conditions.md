@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.987
 latex_coverage_ratio: 1.0
+doc_brief: "Hopf solitons in the Nicole model — The Nicole model is a conformal ﬁeld theory in three-dimensional space."
 ---
 Initial conditions, for a range of values of $Q,$ need to be provided for the volume-preserving flow algorithm discussed in the previous section. We use the approach introduced in [@Su], which is briefly reviewed in this section.
 

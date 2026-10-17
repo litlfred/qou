@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.962
 latex_coverage_ratio: 0.834
+doc_brief: "A Tannakian description of the local Kaletha gerbe — We construct, for a p-adic field F, an explicit semisimple Tannakian category RigIsocF whose category of fiber functors recovers Kaletha’s Galois"
 ---
 Given an object $X = (V,\tilde{\Phi},\mathcal{D})$ in $R\mathcal{I}_{k}$, one can attach a homomorphism $f_{X} \in \text{Hom}_{\overline{F}}(u_{\overline{F}}, \mathrm{GL}(\omega_{k}(X))$ as follows: The group $\mathrm{Res}_{E_{k}/F}(\mu_{n_{k}})(\overline{F})$ is canonically identified with the group of automorphisms of the $\overline{F}$-fiber functor described in the previous subsection, which we will denote by $\omega_{k}$, and then $f_{X}$ is defined by sending $x \in \mathrm{Res}_{E_{k}/F}(\mu_{n_{k}})$ to the $\overline{F}$-linear automorphism of $\omega_{k}(X)$ corresponding to $x$.
 

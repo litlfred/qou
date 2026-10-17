@@ -8,6 +8,7 @@ pages: 69-70
 source_pdf: 2603.12136v1.pdf
 source_sha256: e9c50616344b24e0
 toc_source: outline
+doc_brief: "Folding Mixed-Integer Linear Programs and Reflection Symmetries — For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the"
 ---
 Table
 A1: Comparison of DRCR and R-DRCR on the linear relaxation of

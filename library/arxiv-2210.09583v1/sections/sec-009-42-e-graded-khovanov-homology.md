@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.91
 latex_coverage_ratio: 0.981
+doc_brief: "A NEW PRESENTATION OF THE osp(1|2)-POLYNOMIAL LINK INVARIANT — There is a known connection between the osp(1|2n) polynomial knot invariant Jn K and the so(2n + 1) knot invariant soJn K studied by"
 ---
 \label{section: e-Khov}
 We construct the e-graded version of Khovanov homology in a nearly identical manner.

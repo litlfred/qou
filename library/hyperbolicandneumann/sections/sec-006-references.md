@@ -8,6 +8,8 @@ pages: 17-19
 source_pdf: HyperbolicAndNeumann.pdf
 source_sha256: 3d66fe4c64bdc62b
 toc_source: outline
+doc_brief: "Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — survey of gluing equations, volumes, the extended Bloch group, symplectic properties and quantization."
+duplicate_of: "arxiv-2304.12545v1"
 ---
 [1] Spencer Bloch. Applications of the dilogarithm function in algebraic K-theory and algebraic geometry.
 In Proceedings of the International Symposium on Algebraic Geometry (Kyoto Univ., Kyoto, 1977),

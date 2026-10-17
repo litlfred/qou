@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.946
 latex_coverage_ratio: 0.946
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 We have the following analog of Lemma [\[lem: ext MF\]](#lem: ext MF){reference-type="ref" reference="lem: ext MF"} and respective uniqueness result.
 

@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0802.1072v2.pdf
 source_sha256: 6f4d93f0b7ba5cd7
 toc_source: outline
+doc_brief: "A note on closed 3-braids ∗ — This is a review article about knots and links of braid index 3."
 ---
 arXiv:0802.1072v2  [math.GT]  14 May 2008
 A note on closed 3-braids ∗

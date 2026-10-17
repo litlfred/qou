@@ -1,1 +1,1 @@
-If un : D2→ (Wn,J n,Ln) is a sequence of Jn holomorphic disc to the n−stretched
+If un : D2 →(W n, Jn, Ln) is a sequence of Jn holomorphic disc to the n−stretched

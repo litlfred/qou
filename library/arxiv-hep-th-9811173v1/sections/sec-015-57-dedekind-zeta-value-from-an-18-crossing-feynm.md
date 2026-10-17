@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.994
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:hep-th/9811173v1 19 Nov 1998 — We identify 998 closed hyperbolic 3-manifolds whose volumes are rationally related to Dedekind zeta values, with coprime integers a and b giving a b vol(M) ="
 ---
 It was observed that the positivity criterion of [@BKP; @BGK; @BK15] was more fertile than maximal symmetry, at 10 and 12 crossings. We expect further sequences of positive knots whose first hyperbolic instances yield Dedekind zeta values at high crossing numbers. From QFT we inferred a source of such a sequence, namely the 3-parameter family of even-crossing positive 3-braids [@BK15] $$R_{k,m,n}:=
 \sigma_1^{}\sigma_2^{2k}\sigma_1^{}\sigma_2^{2m}\sigma_1^{}\sigma_2^{2n+1}

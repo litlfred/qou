@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.979
 latex_coverage_ratio: 0.935
+doc_brief: "THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS — @We show that for a twist knot, the A-polynomial can be obtained from recur- rences for the summand in Masbaum’s formula of the"
 ---
 We start with reviewing Wilf-Zeilberger's algorithm. For more details, we refer to [@Garoufalidis/Le:math.GT] and [@Garoufalidis:math.GT]. A disctrete function $F(n,{\bf k})$ is called proper $q$-hypergeometric if it is one of the form $$F(n,{\bf k})=\frac {\prod_{s}(A_s;q)_{a_s n+{\bf b}_s\cdot {\bf k} +c_s}}
                     {\prod_{t}(B_t;q)_{u_t n+{\bf v}_t\cdot {\bf k} +w_t}}

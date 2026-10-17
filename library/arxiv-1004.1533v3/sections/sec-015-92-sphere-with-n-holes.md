@@ -8,6 +8,7 @@ pages: 36-38
 source_pdf: 1004.1533v3.pdf
 source_sha256: 95c1544431e6bf37
 toc_source: outline
+doc_brief: "TURAEV-VIRO INVARIANTS AS AN EXTENDED TQFT — In this paper we show how one can extend Turaev-Viro invariants, deﬁned for an arbitrary spherical fusion category C, to 3-manifolds with cor- ners."
 ---
 by objects Y1, . . . , Yn ∈Obj Z(C) (see Example 7.2). Choose the cell decomposition
 of N as in Example 7.2; then

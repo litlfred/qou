@@ -8,6 +8,7 @@ pages: 9-9
 source_pdf: hal-01215114.pdf
 source_sha256: c70f8b04a5542a1f
 toc_source: outline
+doc_brief: "FPSAC 2011, Reykjavík, Iceland — In this paper we establish a new combinatorial formula for zonal polynomials in terms of power-sums. The proof relies on the sign-reversing involution principle."
 ---
 Normalization
 In this paragraph we prove that the functions Yλ satisfy property N.

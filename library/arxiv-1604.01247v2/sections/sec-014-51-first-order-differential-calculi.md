@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — Based on an interpretation of the quark-lepton symmetry in terms of the unimodularity of the color group SU(3) and on the existence of 3 generations, we develop an"
 ---
 Given a category $\mathbf C$ of algebras over some field $\mathbb K$ and an algebra ${\cal A}$ in $\mathbf C$, a pair $(\Omega^1,d)$ of an ${\cal A}$-bimodule $\Omega^1$ for $\mathbf C$ [@mdv:2001] and a derivation $d$ of ${\cal A}$ into $\Omega^1$, that is a $\mathbb K$-linear mapping satisfying (the Leibniz rule) $$d(xy)=d(x)y+xd(y)$$ for any $x,y\in {\cal A}$, will be refered to as a *first order differential calculus over ${\cal A}$* for $\mathbf C$ or simply a first order calculus over ${\cal A}$ when no confusion arises. There is an obvious notion of homomorphism of first order differential calculi over ${\cal A}$. This terminology as well as the one for higher order differential calculi was introduced in [@wor:1989] for the case of the category of associative algebras on a field $\mathbb K$.
 

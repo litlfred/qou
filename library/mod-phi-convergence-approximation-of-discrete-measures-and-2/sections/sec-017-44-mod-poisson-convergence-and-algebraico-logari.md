@@ -8,6 +8,7 @@ pages: 48-56
 source_pdf: mod-phi-convergence-approximation-of-discrete-measures-and-20yc5c6q3n.pdf
 source_sha256: c563cc999000e75d
 toc_source: outline
+doc_brief: "ANNALES DE L’INSTITUT FOURIER — 26 sections: Front matter; Introduction; Poisson approximation of lattice-v"
 ---
 singularities
 The discussion of Section 4.3 can be extended to any statistic of a random

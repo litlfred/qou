@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.925
 latex_coverage_ratio: 0.918
+doc_brief: "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY — We study a class of commuting Markov kernels whose simplest element describes the movement of k particles on a discrete circle of size n"
 ---
 []{#Sec:Fourier_continuous label="Sec:Fourier_continuous"} Let us turn to $T_{k}$, the continuous limit object of the sequence $\{B_{k,n}, n\geq k\}$. Recall that the set of continuous $k$-configurations on a circle $T_{k}$ is the subset of $\mathbb{R}^k$ consisting of vectors $u=(u_1,\ldots,u_k)$ such that $$0\leq u_k\leq u_{k-1}\leq \dots\leq u_1<2\pi.$$ Before describing the relation with $B_{k,n}$, let us describe the Fourier transform on $T_{k}$ coming from representations theory of $U(k)$, the Lie group of unitary matrices of rank $k$. Sending $U\in U(k)$ to the sequence of arguments of its eigenvalues taken in $[0,2\pi[)$ and sorted in decreasing order yields a map $p:U(k)\mapsto  T_{k}$. Characters of $U(k)$ are conjugation invariant functions $\{\chi_I, I\in B_{k}\}$ with the formula $$\label{eq:character_Uk}
 \chi_I(U)=S_{I}(p(U))=\frac{a_{I}(u_1,\ldots,u_k)}{a_{I_0}(u_1,\ldots,u_k)},$$ where $\{u_1,\ldots,u_k\}$ are arguments of eigenvalues of $U\in U(k)$ and we recall that $a_{I}(u_1,\ldots,u_k)=\det(e^{iu_lI_m})_{1\leq l,m\leq k}$ for $u\in\mathbb{R}^k$ and $I\in B_{k}$, where we recall that $B_k$ is the set of increasing sequences of integers.

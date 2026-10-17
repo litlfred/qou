@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 Let ${\mathcal M}$ be an indecomposable left module category over a rigid tensor category ${\mathcal C}$ [@O] (all module categories we consider are assumed semisimple). This means, ${\mathcal M}$ is a module category which cannot be split in a direct sum of two nonzero module subcategories. In this case one can define the dual category ${\mathcal C}^*_{{\mathcal M}}$ to be the category of module functors from ${\mathcal M}$ to itself: ${\mathcal C}^*_{{\mathcal M}}={\rm Fun}_{\mathcal C}({\mathcal M},{\mathcal M})$ [@O]. This is a rigid tensor category (the tensor product is the composition of functors, the right and left duals are the right and left adjoint functors).
 

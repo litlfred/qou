@@ -8,6 +8,7 @@ pages: 18-20
 source_pdf: 2305.07425v1.pdf
 source_sha256: 2f7d2ac5818b6af4
 toc_source: outline
+doc_brief: "LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS — The set of equivalence classes of cobounded actions of a group G on diﬀerent hyperbolic metric spaces carries a natural partial order."
 ---
 [AFW15] M. Aschenbrenner, S. Friedl, H. Wilton, 3-manifold groups; EMS Series of Lectures in Mathematics,
 European Mathematical Society (EMS), Zurich, 2015.

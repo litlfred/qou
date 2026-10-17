@@ -8,6 +8,7 @@ pages: 15-16
 source_pdf: 0611941v3.pdf
 source_sha256: bf6f2d55c7adee51
 toc_source: outline
+doc_brief: "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR — Let H be the one-parameter Hecke algebra associated to a ﬁnite Weyl group W, deﬁned over a ground ring in which “bad” primes for W are invertible."
 ---
 basic sets for type Bn and any L (where k has characteristic 0) has been established without
 assuming Lusztig’s conjectures on Hecke algebras with unequal parameters.

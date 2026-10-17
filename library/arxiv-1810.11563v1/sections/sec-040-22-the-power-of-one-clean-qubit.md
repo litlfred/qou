@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
 ---
 That a resource analogous to negentropy can be vastly increased by merely adding a single qubit seems very counterintuitive. If I told you that by adding a single molecule to a gas of $10^{30}$ molecules in thermal equilibrium, it  would allow you to extract a large amount of useful work you would probably dismiss the claim as nonsense. You would of course be right. When I first thought about the fact that a single qubit can restore an exponential amount of uncomplexity I was skeptical about its meaning. So as I always do when I am confused about quantum information I went to Patrick Hayden. I asked him: Can adding one qubit to a computer significantly increase its power?
 

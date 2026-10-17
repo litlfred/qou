@@ -8,6 +8,7 @@ pages: 2-3
 source_pdf: 1801.04409v4.pdf
 source_sha256: db61d011e3775aca
 toc_source: outline
+doc_brief: "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES — We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury."
 ---
 and semisimpliﬁcations.
 In Section 3, we give some general results about semisimplications.

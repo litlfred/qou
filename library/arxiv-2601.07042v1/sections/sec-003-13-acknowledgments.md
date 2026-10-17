@@ -11,5 +11,6 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.652
 latex_coverage_ratio: 0.739
+doc_brief: "A Tannakian description of the local Kaletha gerbe — We construct, for a p-adic field F, an explicit semisimple Tannakian category RigIsocF whose category of fiber functors recovers Kaletha’s Galois"
 ---
 The authors thank Tasho Kaletha and David Schwein for many helpful conversations. This work was started while both authors were supported by NSF grant DMS-1840234 at the University of Michigan. The first named author is partially supported by NSF grant DMS-2502131.

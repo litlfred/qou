@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.739
 latex_coverage_ratio: 0.948
+doc_brief: "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION — We introduce “sheaﬁﬁcation” functors from categories of (lax monoidal) linear functors to categories of quasi-coherent sheaves (of algebras) of"
 ---
 In this section we want to explicitly describe sheafification functors for small subcategories of $\mathop{\mathrm{\textup{QCoh}}}\stX$. In particular we fix a *small* (and non empty) subcategory $\shC$ of $\mathop{\mathrm{\textup{QCoh}}}\stX$.
 

@@ -8,6 +8,7 @@ pages: 2-3
 source_pdf: 2208.13448v2.pdf
 source_sha256: 8bfa244cf7ca867d
 toc_source: outline
+doc_brief: "ON THE COMPUTATION OF THE DIFFERENCE GALOIS GROUPS OF ORDER THREE EQUATIONS — In this paper we consider the problem of computing the diﬀerence Galois groups of order three equations for a large class"
 ---
 of the diﬀerence Galois groups of q-hypergeometric equations, see [Roq11] and density
 theorems [RS06, Pou20] but the present introduction does not pretend to be exhaustive.

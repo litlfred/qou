@@ -8,6 +8,7 @@ pages: 11-11
 source_pdf: 1609.08719v1.pdf
 source_sha256: f61ff2111e9a97f9
 toc_source: outline
+doc_brief: "AN EXPERIMENTAL INVESTIGATION OF NEUMANN’S CONJECTURE — We use a large census of hyperbolic 3-manifolds to experimentally investigate a conjecture of Neumann regarding the Bloch Group."
 ---
 coordinates for computing volumes of hyperbolic 3-manifolds, the computations
 may be generalized to compute the volume of any representation ρ : Γ →PSL(n, C).

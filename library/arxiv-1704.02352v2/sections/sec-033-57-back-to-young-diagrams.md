@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.881
 latex_coverage_ratio: 0.962
+doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Young diagrams which can be regarded as a natural one-parameter deformation of some classi- cal"
 ---
 The function $\omega_{\Lambda_\infty}$ which was promised in the formulation of [\[theo:lln\]](#theo:lln){reference-type="ref" reference="theo:lln"} is simply given by the relationship [\[eq:density\]](#eq:density){reference-type="eqref" reference="eq:density"} for the specific choice of $f_{\Lambda}:=f_{\Lambda_\infty}$, namely $$\omega_{\Lambda_\infty}(u):= 2 f_{\Lambda_\infty}(u) + |u|.$$
 

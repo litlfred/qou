@@ -1,0 +1,1 @@
+We will need in the next section the following identity, which can be easily proved using $(\ref{Mformula})$. ${\cal M}_{\;\;{}_{(Z_0Z_1)}}^{{}_{(X_0X_1)}{}_{(Y_0Y_1)}},$ can also be written as: $$\begin{aligned}

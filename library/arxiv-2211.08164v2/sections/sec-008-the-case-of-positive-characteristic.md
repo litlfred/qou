@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.961
 latex_coverage_ratio: 0.99
+doc_brief: "INFINITELY MANY RIEMANN SURFACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS — In this short note, we prove the existence of inﬁnitely many pairwise non-isomorphic, non-hyperelliptic Riemann"
 ---
 Transitive actions on \we points can be also studied for (projective, non-singular, absolutely irreducible) algebraic curves  defined over algebraically closed fields of positive characteristic. However, in this context the relationship between \we point and automorphisms becomes much more involved than in the complex case. In fact, the following two problems may arise:
 \begin{enumerate}

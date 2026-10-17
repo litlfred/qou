@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 We will now find that the hermitian invariant-action, $m_h$, leads to new generalized ideals, which behave like four-vectors, 
 

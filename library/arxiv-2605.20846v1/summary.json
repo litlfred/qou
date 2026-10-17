@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2605.20846v1",
  "source_sha256": "db27cb6d01c4f2fb",
- "brief": "Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li — We give two presentations for bordisms ofS 2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the",
- "extended": "**Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li**\n\n*May 21, 2026*\n\n99 pp, 17 sections.\n\n**Abstract.** We give two presentations for bordisms ofS 2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the algebraic structures onS 2. After passing through topological field theories, we define two kinds of monoids which we call P-monoids and L-monoids. In addition to both being commutative Frobenius monoids, P-monoids are equipped with a class of endomorphisms while L-monoids are equipped with a class of unit morphisms, all of which are labelled by closed oriented irreducible prime 3- manifolds. They turn out to be equivalent.\n\n**Outline.** Introduction; Generators; Commutative Frobenius Relations; Outline of Strategy; Existence and Spherical Morse Functions; Spherical Morse Functions; Local Models of Excellent Morse Failures; Prime Relations; No Internal Relations; External Prime Relations; Sufficiency of External Relations; Necessity of Legs Relations; Passing through TFTs; P and L Monoids; Relations to J-Algebras; Presentations of a Category; Towards\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.0.3: The 2-dimensional oriented bordism categoryCob(2)is the free sym-\n- Theorem 1.0.5: Cob(3) S2 has a presentation withG 2 generators under commutative\n- Theorem 1.0.6: Cob(3) S2 has a presentation withG 1 generators and commutative\n- Theorem 1.0.7: (Kneser-Milnor Prime Decomposition Theorem)\n- Theorem 1.0.8: There is a canonical isomorphismS: Cob(2) ∼→Cob(3) S2,CF\n- Theorem 3.3.6: shows that the silly functor is an isomorphism.",
+ "brief": "Topological Field Theories and the Algebraic Structures of the Two-Sphere — We give two presentations for bordisms of S2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the",
+ "extended": "**Topological Field Theories and the Algebraic Structures of the Two-Sphere**\n\n*May 21, 2026*\n\n99 pp, 18 sections.\n\n**Abstract.** We give two presentations for bordisms of S2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the algebraic structures on S2. After passing through topological field theories, we define two kinds of monoids which we call P-monoids and L-monoids. In addition to both being commutative Frobenius monoids, P-monoids are equipped with a class of endomorphisms while L-monoids are equipped with a class of unit morphisms, all of which are labelled by closed oriented irreducible prime 3- manifolds. They turn out to be equivalent.\n\n**Outline.** Front matter; Introduction; Generators; Commutative Frobenius Relations; Outline of Strategy; Existence and Spherical Morse Functions; Spherical Morse Functions; Local Models of Excellent Morse Failures; Prime Relations; No Internal Relations; External Prime Relations; Sufficiency of External Relations; Necessity of Legs Relations; Passing through TFTs; P and L Monoids; Relations to J-Algebras; Presentations of a Category; Towards\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.0.3: The 2-dimensional oriented bordism category Cob(2) is the free sym-\n- Theorem 1.0.5: Cob(3)S2 has a presentation with G2 generators under commutative\n- Theorem 1.0.6: Cob(3)S2 has a presentation with G1 generators and commutative\n- Theorem 1.0.7: (Kneser-Milnor Prime Decomposition Theorem)\n- Theorem 1.0.8: There is a canonical isomorphism S : Cob(2) ∼\n- Theorem: \\ref{thm:Cob2Cob3CFIso} shows that the silly functor is an isomorphism.",
  "tokens": {
-  "brief": 49,
-  "extended": 403
+  "brief": 47,
+  "extended": 406
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",

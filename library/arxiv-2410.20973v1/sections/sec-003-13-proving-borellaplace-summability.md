@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.962
 latex_coverage_ratio: 0.974
+doc_brief: "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS — We prove conjectures of Garoufalidis-Gu-Mari˜no [9] that perturbative series associated with the hyperbolic knots 41 and 52 are resurgent and"
 ---
 \label{sec:BL-intro}
 Starting with a Gevrey-1 formal power series, the process of resurgence requires convergence and then analytic continuation of the series's Borel transform~\cite{EcalleI,diverg-resurg-i}. 

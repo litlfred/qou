@@ -8,6 +8,7 @@ pages: 32-33
 source_pdf: 0006014v1.pdf
 source_sha256: 208c7a6aaf628b30
 toc_source: inferred
+doc_brief: "arXiv:nucl-th/0006014v1 9 Jun 2000 — 20 sections: Front matter; Introduction; The model"
 ---
 For the ‘basic’ mesons, π, ω, and ρ, we use, in general, the parameters shown in Table I.
 Note that (except for the cutoﬀmasses) these parameters are determined from empirical

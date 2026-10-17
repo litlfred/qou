@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1611.09182v1",
  "source_sha256": "6b40549b96d40ac7",
- "brief": "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction",
- "extended": "**Standard model physics from an algebra?**\n\n97 pp, 57 sections.\n\n**Outline.** 0.1 Abstract; 0.2 Acknowledgements; 1 Introduction; 1.1 Towards conceptual parsimony; 1.2 Outline; 2 What lies in an algebra?; 2.1 Causality; 2.3 Particles; 2.2 Irreversible time; 2.4 Summary and outlook; 3 Complex quaternions; 3.1 Preamble; 3.3 Conjugation; 3.4 Generalized ideals; 3.5 Complex invariant-action, mc; 3.5.1 Preliminaries; 3.5.2 Weyl and Dirac spinors as generalized id; 3.5.3 A seamless new way to conjugate Weyl spi",
+ "brief": "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements",
+ "extended": "**Standard model physics from an algebra?**\n\n*C. Furey*\n\n97 pp, 69 sections.\n\n**Outline.** Front matter; 0.1 Abstract; 0.2 Acknowledgements; 1 Introduction; 1.1 Towards conceptual parsimony; 1.2 Outline; 2 What lies in an algebra?; 2.1 Causality; 2.3 Particles; 2.2 Irreversible time; 2.4 Summary and outlook; 3 Complex quaternions; 3.1 Preamble; 3.3 Conjugation; 3.4 Generalized ideals; 3.5 Complex invariant-action, mc; 3.5.1 Preliminaries; 3.5.2 Weyl and Dirac spinors as generalized id",
  "tokens": {
   "brief": 23,
-  "extended": 127
+  "extended": 122
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
   {
    "id": "sec-000-01-abstract",
    "title": "Abstract",
@@ -77,12 +82,12 @@
   {
    "id": "sec-013-34-generalized-ideals",
    "title": "Generalized ideals",
-   "pages": "18-18"
+   "pages": "18-19"
   },
   {
    "id": "sec-014-35-complex-invariant-action-mc",
    "title": "Complex invariant-action, mc",
-   "pages": "18-19"
+   "pages": "19-19"
   },
   {
    "id": "sec-015-351-preliminaries",
@@ -130,167 +135,222 @@
    "pages": "26-27"
   },
   {
-   "id": "sec-024-41-motivation",
+   "id": "sec-024-4-clifford-algebras",
+   "title": "Clifford algebras",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-025-41-motivation",
    "title": "Motivation",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-026-42-definition",
+   "title": "Definition",
    "pages": "27-30"
   },
   {
-   "id": "sec-025-44-minimal-left-ideals",
+   "id": "sec-027-44-minimal-left-ideals",
    "title": "Minimal left ideals",
    "pages": "30-31"
   },
   {
-   "id": "sec-026-45-how-to-identify-minimal-left-ideals",
+   "id": "sec-028-45-how-to-identify-minimal-left-ideals",
    "title": "How to identify minimal left ideals",
    "pages": "31-31"
   },
   {
-   "id": "sec-027-452-procedure",
+   "id": "sec-029-452-procedure",
    "title": "Procedure",
+   "pages": "31-31"
+  },
+  {
+   "id": "sec-030-451-some-definitions",
+   "title": "Some definitions",
    "pages": "31-33"
   },
   {
-   "id": "sec-028-461-fock-space-structure",
+   "id": "sec-031-461-fock-space-structure",
    "title": "Fock space structure",
    "pages": "33-34"
   },
   {
-   "id": "sec-029-47-the-dirac-algebra",
+   "id": "sec-032-47-the-dirac-algebra",
    "title": "The Dirac algebra",
    "pages": "34-36"
   },
   {
-   "id": "sec-030-48-right-action-required",
+   "id": "sec-033-48-right-action-required",
    "title": "Right action required",
+   "pages": "36-36"
+  },
+  {
+   "id": "sec-034-49-parity-and-the-field-strength-tensor",
+   "title": "Parity and the field strength tensor",
    "pages": "36-40"
   },
   {
-   "id": "sec-031-5-standard-model-of-particle-physics",
+   "id": "sec-035-5-standard-model-of-particle-physics",
    "title": "Standard model of particle physics",
    "pages": "40-40"
   },
   {
-   "id": "sec-032-51-what-it-is",
+   "id": "sec-036-51-what-it-is",
    "title": "What it is",
    "pages": "40-43"
   },
   {
-   "id": "sec-033-52-what-it-is-not",
+   "id": "sec-037-52-what-it-is-not",
    "title": "What it is not",
    "pages": "43-43"
   },
   {
-   "id": "sec-034-53-what-it-should-be",
+   "id": "sec-038-53-what-it-should-be",
    "title": "What it should be",
    "pages": "43-46"
   },
   {
-   "id": "sec-035-61-a-summary-of-the-results-to-come",
+   "id": "sec-039-61-a-summary-of-the-results-to-come",
    "title": "A summary of the results to come",
    "pages": "46-50"
   },
   {
-   "id": "sec-036-63-octonionic-chain-algebra",
+   "id": "sec-040-63-octonionic-chain-algebra",
    "title": "Octonionic chain algebra",
    "pages": "50-53"
   },
   {
-   "id": "sec-037-64-a-system-of-ladder-operators",
+   "id": "sec-041-64-a-system-of-ladder-operators",
    "title": "A system of ladder operators",
    "pages": "53-55"
   },
   {
-   "id": "sec-038-66-minimal-left-ideals",
+   "id": "sec-042-66-minimal-left-ideals",
    "title": "Minimal left ideals",
    "pages": "55-57"
   },
   {
-   "id": "sec-039-67-mtis-symmetries-su3c-and-u1em",
+   "id": "sec-043-67-mtis-symmetries-su3c-and-u1em",
    "title": "MTIS symmetries: su(3)c and u(1)em",
    "pages": "57-58"
   },
   {
-   "id": "sec-040-68-ladders-to-su3c-and-u1em",
+   "id": "sec-044-68-ladders-to-su3c-and-u1em",
    "title": "Ladders to su(3)c and u(1)em",
    "pages": "58-61"
   },
   {
-   "id": "sec-041-69-towards-the-weak-force",
+   "id": "sec-045-69-towards-the-weak-force",
    "title": "Towards the weak force",
    "pages": "61-62"
   },
   {
-   "id": "sec-042-610-summary",
+   "id": "sec-046-610-summary",
    "title": "Summary",
    "pages": "62-63"
   },
   {
-   "id": "sec-043-71-a-spotlight-on-right-multiplication",
+   "id": "sec-047-71-a-spotlight-on-right-multiplication",
    "title": "A spotlight on right multiplication",
    "pages": "63-64"
   },
   {
-   "id": "sec-044-72-leptonic-subspace-of-cl4",
+   "id": "sec-048-72-leptonic-subspace-of-cl4",
    "title": "Leptonic subspace of Cl(4)",
    "pages": "64-65"
   },
   {
-   "id": "sec-045-73-mtis-symmetries-su2l-and-u1y",
+   "id": "sec-049-73-mtis-symmetries-su2l-and-u1y",
    "title": "MTIS symmetries: su(2)L and u(1)Y",
    "pages": "65-66"
   },
   {
-   "id": "sec-046-74-summary-and-outlook",
+   "id": "sec-050-74-summary-and-outlook",
    "title": "Summary and outlook",
    "pages": "66-67"
   },
   {
-   "id": "sec-047-811-introduction",
-   "title": "Introduction",
-   "pages": "67-70"
+   "id": "sec-051-81-su5-unification",
+   "title": "SU(5) unification",
+   "pages": "67-67"
   },
   {
-   "id": "sec-048-813-some-notes-on-symmetry-breaking",
+   "id": "sec-052-811-introduction",
+   "title": "Introduction",
+   "pages": "67-68"
+  },
+  {
+   "id": "sec-053-812-gsm-inside-su5",
+   "title": "GSM inside SU(5)",
+   "pages": "68-70"
+  },
+  {
+   "id": "sec-054-813-some-notes-on-symmetry-breaking",
    "title": "Some notes on symmetry breaking",
    "pages": "70-71"
   },
   {
-   "id": "sec-049-82-a-fermionic-binary-code",
+   "id": "sec-055-82-a-fermionic-binary-code",
    "title": "A fermionic binary code",
-   "pages": "71-76"
+   "pages": "71-73"
   },
   {
-   "id": "sec-050-84-pati-salam-model",
+   "id": "sec-056-83-spin10-unification",
+   "title": "Spin(10) unification",
+   "pages": "73-76"
+  },
+  {
+   "id": "sec-057-84-pati-salam-model",
    "title": "Pati-Salam model",
    "pages": "76-79"
   },
   {
-   "id": "sec-051-9-towards-a-three-generation-model",
+   "id": "sec-058-9-towards-a-three-generation-model",
    "title": "Towards a three-generation model",
    "pages": "79-79"
   },
   {
-   "id": "sec-052-91-introduction",
+   "id": "sec-059-91-introduction",
    "title": "Introduction",
-   "pages": "79-84"
+   "pages": "79-80"
   },
   {
-   "id": "sec-053-94-a-sample-calculation",
+   "id": "sec-060-92-generators-of-su3c",
+   "title": "Generators of SU(3)c",
+   "pages": "80-81"
+  },
+  {
+   "id": "sec-061-93-three-generations-under-su3c",
+   "title": "Three generations under SU(3)c",
+   "pages": "81-84"
+  },
+  {
+   "id": "sec-062-94-a-sample-calculation",
    "title": "A sample calculation",
-   "pages": "84-89"
+   "pages": "84-85"
   },
   {
-   "id": "sec-054-97-outlook-from-one-generation-to-three",
+   "id": "sec-063-95-summary-for-su3c",
+   "title": "Summary for SU(3)c",
+   "pages": "85-86"
+  },
+  {
+   "id": "sec-064-96-three-generations-under-su3c-and-u1em",
+   "title": "Three generations under SU(3)c and U(1)em",
+   "pages": "86-89"
+  },
+  {
+   "id": "sec-065-97-outlook-from-one-generation-to-three",
    "title": "Outlook: From one generation to three",
    "pages": "89-91"
   },
   {
-   "id": "sec-055-10-conclusion",
+   "id": "sec-066-10-conclusion",
    "title": "Conclusion",
    "pages": "91-93"
   },
   {
-   "id": "sec-056-references",
+   "id": "sec-067-references",
    "title": "References",
    "pages": "93-97"
   }

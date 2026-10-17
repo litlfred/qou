@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.933
 latex_coverage_ratio: 0.964
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS — We prove an upper bound for characters of the symmetric groups."
 ---
 Let $\mathcal{D}$ be the algebra of continuous functions on $\mathbb{R}_+$. We equip it with an expected value $\phi:\mathcal{D}\rightarrow \mathbb{C}$ given by $\phi(f)=\int_0^{\infty} f(t) dt$.
 

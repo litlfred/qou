@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/s40879-023-00706-0/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Vertices and face-centres",
+  "pageStart": 22,
+  "pageEnd": 23,
+  "contains": [
+    "library/s40879-023-00706-0/blocks/prose-sec-008",
+    "library/s40879-023-00706-0/blocks/prop-sec-008-01",
+    "library/s40879-023-00706-0/blocks/prop-sec-008-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s40879-023-00706-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s40879-023-00706-0/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -8,6 +8,7 @@ pages: 19-20
 source_pdf: topological.invariance.3Dindex.pdf
 source_sha256: 22953b4eee66dca2
 toc_source: outline
+doc_brief: "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD — In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifold M (a collection of"
 ---
 ary ∂M consists of r ≥1 tori T1, . . . , Tr, and let T be an ideal triangulation of M. Let
 ϖ = (ϖ1, . . . , ϖr) be a collection of oriented peripheral curves as above. By Theorem 4.3,

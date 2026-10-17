@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.952
 latex_coverage_ratio: 0.964
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS — We study asymptotics of characters of the symmetric groups on a ﬁxed conjugacy class."
 ---
 For a given positive integer $g$ we define a symmetric function $k(\mu) := |\mu|+2g-1 = p_1(\mu) + 2g - 1$, therefore for a given symmetric functions $f_g$ and $h_g$ we can define symmetric functions $\tilde{f}_g(\mu) := k(\mu) \binom{k(\mu)+1}{3} f_g(\mu)$ and $\tilde{h}_g(\mu) := k(\mu) \binom{k(\mu)+1}{3} h_g(\mu)$. We notice that in equations [\[eq:lassalle1\]](#eq:lassalle1){reference-type="eqref" reference="eq:lassalle1"} and [\[eq:lassalle6\]](#eq:lassalle6){reference-type="eqref" reference="eq:lassalle6"} we sum over all partitions $\mu$ which satisfy $k(\mu) = k$. Therefore the following proposition is an immediate consequence of Theorem [\[theo:main\]](#theo:main){reference-type="ref" reference="theo:main"}.
 

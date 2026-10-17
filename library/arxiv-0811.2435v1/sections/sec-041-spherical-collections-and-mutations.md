@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.988
 latex_coverage_ratio: 0.979
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 47 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 Let ${\cal C}$ be a $3$-dimensional ind-constructible Calabi-Yau category over a field $\k$ of characteristic zero. Assume that it is endowed with a finite collection of spherical generators ${\cal E}=\{E_i\}_{i\in I}$ of ${\cal C}$ defined over $\k$. Then $\op{Ext}_{\cal C(\k)}^\bullet(E_i,E_i)$ is isomorphic to $H^{\bullet}(S^3,\k ), \,\,i\in I$. The matrix of the Euler form (taken with the *minus* sign) $$a_{ij}:=-\chi\left(\op{Ext}_{\cal C(\k)}^{\bullet}(E_i,E_j)\right)$$ is integer and skew-symmetric. In fact, the ind-constructible category ${\cal C}$ can be canonically reconstructed from the (plain, i.e. not ind-constructible) $\k$-linear Calabi-Yau $\A$-category $\CC(\K)$, or even from its full subcategory consisting of the collection ${\cal E}$. In what follows we will omit the subscript $\CC(\k)$ in the notation for $\op{Ext}^\bullet$-spaces.
 

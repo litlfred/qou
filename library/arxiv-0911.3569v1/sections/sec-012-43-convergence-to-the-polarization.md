@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.981
 latex_coverage_ratio: 0.912
+doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
 ---
 Let $0\not\equiv f(x)\in\Stab[x]$ be a univariate stable polynomial of degree
 at most $m$:\ say $f(x) = c(x-\xi_1)\cdots(x-\xi_n)$ in which $c\neq 0$,

@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-2410.14661v1/blocks/prose-sec-014",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Proof of Proposition 5.2",
-  "pageStart": 45,
-  "pageEnd": 46,
-  "text": "../sections/sec-014-63-proof-of-proposition-52.md",
+  "title": "Geometry of the critical point",
+  "pageStart": 41,
+  "pageEnd": 43,
+  "text": "../sections/sec-014-61-geometry-of-the-critical-point.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2410.14661v1/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2410.14661v1/manifest.jsonld",
   "provenance": "ingested"

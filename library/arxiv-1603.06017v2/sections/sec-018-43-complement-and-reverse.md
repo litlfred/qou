@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.844
 latex_coverage_ratio: 0.927
+doc_brief: "Automatic Theorem Proving in Walnut — 41 sections: Front matter; Introduction; Basics"
 ---
 \label{sec:complement and reverse}
 To obtain $(x_1,\ldots,x_m): \sim (P)$ from $(x_1,\ldots,x_m): P$, one

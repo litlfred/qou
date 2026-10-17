@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.961
 latex_coverage_ratio: 0.984
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials."
 ---
 In order to study asymptotics of large Young diagrams we need to understand some special cases of structure constants. Here, we present some technical, but useful lemma about them:
 

@@ -8,6 +8,7 @@ pages: 14-14
 source_pdf: 0203048v1.pdf
 source_sha256: 47204f32280e91a3
 toc_source: inferred
+doc_brief: "arXiv:physics/0203048v1 [physics.plasm-ph] 15 Mar 2002 — An expression for a third-order link integral of three magnetic ﬁelds is presented."
 ---
 Arnol’d V I 1974 Proc. Summer School in Diﬀerential Equations (Erevan) Armenian SSR Acad. Sci.
 [English translation: 1986 Sel. Math. Sov. 5 327–45]

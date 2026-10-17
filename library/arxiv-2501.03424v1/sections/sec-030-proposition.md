@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.974
+doc_brief: "Soergel bimodules and Kazhdan-Lusztig polynomials — This paper presents an exposition of Soergel bimodules, the categoriﬁcation of Hecke alge- bras, and their applications to various topics in"
 ---
 \textit{The set} $\{\text{Pr}_w \st w \in W\}$ \textit{is the set of non-isomorphic indecomposable projective objects in} $\mathcal{O}_0.$ \textit{Moreover, every projective object $Q \in \mathcal{O}_0$ is isomorphic to a finite direct sum }
 $$Q \simeq \bigoplus_{w \in W}\text{Pr}^{\oplus m(\text{Pr}_w, Q)}_w$$

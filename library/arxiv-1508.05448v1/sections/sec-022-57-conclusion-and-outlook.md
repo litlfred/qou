@@ -8,6 +8,7 @@ pages: 122-127
 source_pdf: 1508.05448v1.pdf
 source_sha256: 57d2c717d8ec74d0
 toc_source: outline
+doc_brief: "Concentration of Measure Techniques and Applications — 25 sections: Front matter; Biographical Sketch; Acknowledgments"
 ---
 Conclusion and Outlook
 As previously mentioned, the results in this section are preliminary steps toward

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 0.961
+doc_brief: "Gentle introduction to Soergel bimodules I: The basics — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules."
 ---
 If we want to produce an algebra isomorphic to $\mathcal H$ starting with the category of Soergel bimodules and not just "the positive part", we just need to add formally to $\mathbb N\mathcal B(S_3)$ the element $-\langle M\rangle$ for every Soergel bimodule $M$. This element will satisfy the equation $-\langle M\rangle+\langle M\rangle=0.$ In this manner we obtain a honest algebra over $\mathbb Z[v,v^{-1}]$, isomorphic to $\mathcal H.$ One formal way of doing this is with the following general definition.
 

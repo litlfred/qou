@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.892
 latex_coverage_ratio: 0.969
+doc_brief: "L-spaces and knot traces — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries."
 ---
 In this subsection we determine when a fibered hyperbolic knot can have some surgery in common with a torus knot.
 

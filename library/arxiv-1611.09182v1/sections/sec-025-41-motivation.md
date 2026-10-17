@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.949
 latex_coverage_ratio: 0.987
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 It is difficult to ignore the presence of Clifford algebras within elementary particle physics.  Clifford algebras inevitably appear whenever spinors do, and ultimately underlie the algebra of some well-known grand unified theories, \cite{agut}.  It was in fact argued in \cite{Grass}, \cite{wow}, and \cite{wowagain} that Clifford algebras alone are the source of internal structure for quarks and leptons.  
 

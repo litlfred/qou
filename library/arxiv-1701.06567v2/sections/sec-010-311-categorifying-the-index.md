@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.955
 latex_coverage_ratio: 0.98
+doc_brief: "BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections."
 ---
 As $T[S^3,U(N)]$ is dual to a system of free chirals, its space of BPS states on $S^2$ --- which gives the homological invariant associated with $M_3 = S^3$ --- factorizes as product $${\mathcal H}(S^3) \; = \; {\mathcal H}_2 \otimes {\mathcal H}_4 \otimes \ldots \otimes {\mathcal H}_{2N},$$ where ${\mathcal H}_{2i}$ is the BPS Hilbert space of a single 3d ${\mathcal N}=2$ chiral multiplet with R-charge $2i$ and $U(1)_{\beta}$ flavor charge $i$. Thus, we now turn to the problem of categorifying the index of a free chiral multiplet.
 

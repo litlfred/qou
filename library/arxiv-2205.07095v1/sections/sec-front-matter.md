@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2205.07095v1.pdf
 source_sha256: 2ec6916399150e2d
 toc_source: outline
+doc_brief: "Virial Expansions for Correlation Functions in Canonical Ensemble — The inﬁnite set of coupled integral nonlinear equations for correlation func- tions in the case of classical canonical ensemble is"
 ---
 arXiv:2205.07095v1  [math-ph]  14 May 2022
 Virial Expansions for Correlation Functions in

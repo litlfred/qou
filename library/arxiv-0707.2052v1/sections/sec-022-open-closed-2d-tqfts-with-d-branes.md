@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "The Mukai pairing, I: a categorical approach — We study the Hochschild homology of smooth spaces, emphasizing the importance of a pairing which generalizes Mukai’s pairing on the cohomology of K3"
 ---
 A more interesting model of string theory is obtained when we specify a set of 'boundary conditions' or 'D-branes' for the open strings. For a mathematician this just means a set of labels for the boundary points of objects. So fix a set $\Lambda$ of labels, and consider the category $2\textsf{Cob}_{\text{oc}}^\Lambda$ of open-closed cobordisms such that the objects are compact, oriented one-manifolds with the boundary points labelled with elements of the set $\Lambda$, and morphisms having their internal boundaries labelled compatibly with their boundaries. Here is an example of a morphism from the union of the circle and the interval labelled $(B,A)$, to the interval labelled $(B,A)$. $$\raisebox{-.45\height}{}$$
 

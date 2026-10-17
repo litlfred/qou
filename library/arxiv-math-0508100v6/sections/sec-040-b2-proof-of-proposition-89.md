@@ -8,6 +8,7 @@ pages: 28-30
 source_pdf: 0508100v6.pdf
 source_sha256: 9cc100a86b40c336
 toc_source: outline
+doc_brief: "ASYMPTOTICS OF THE COLORED JONES FUNCTION OF A KNOT — To a knot in 3-space, one can associate a sequence of Laurent polynomials, whose nth term is the nth colored Jones polynomial."
 ---
 achieves maximum when k satisﬁes the condition in Lemma B.4(b), b = ⌊(n −1)/4⌋, and a = b + k. The
 value of k satisfying the condition in Lemma B.4(b) can be calculated easily:

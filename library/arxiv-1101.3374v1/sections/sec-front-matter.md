@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1101.3374v1.pdf
 source_sha256: 01d76c1d259c1d51
 toc_source: outline
+doc_brief: "Pontryagin invariants and integral formulas for Milnor's triple linking number — To each three-component link in the 3-sphere, we associate a geometrically natural characteristic map from the 3-torus"
 ---
 PONTRYAGIN INVARIANTS AND INTEGRAL FORMULAS
 FOR MILNOR’S TRIPLE LINKING NUMBER

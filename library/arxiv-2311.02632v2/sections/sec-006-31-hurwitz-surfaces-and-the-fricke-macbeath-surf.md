@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.943
 latex_coverage_ratio: 0.983
+doc_brief: "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE — The Fricke-Macbeath surface is the unique Hurwitz surface of genus 7 with 504 conformal automorphisms."
 ---
 []{#subsec:hurwitzsurfaces label="subsec:hurwitzsurfaces"} Hurwitz demonstrated in  [@hurwitz1893 §7] that a group of order $84(g - 1)$ can act as the automorphism group of a compact Riemann surface of genus $g\geq 2$ precisely when it is a quotient of the $(2,3,7)$-triangle group $\Delp$, whose presentation is given by $$\langle a, b \mid a^{3} = b^{7} = (ab)^{2} = 1 \rangle.$$ This transforms the challenge of finding surfaces with $84(g - 1)$ automorphisms into a purely group-theoretic problem. Consider $\Delp$ as a set of isometries acting on the hyperbolic plane, say, $\disk$ and let $\Gamma$ be a proper normal subgroup of it, with a finite index. Notably, any non-trivial element of such $\Gamma$ is hyperbolic. To clarify, there are no elements of torsion or parabolic type within $\Gamma$; for further references, see [@macbeath1965 p. 531] and [@Vogeler2003 p. 4]. Consequently, the quotient space $\Gamma\backslash \disk$ is a compact Riemann surface and a Hurwitz surface, with an automorphism group isomorphic to $\Delp/\Gamma$. For a general review of this topic, see [@MR1041434; @MR1722414].
 

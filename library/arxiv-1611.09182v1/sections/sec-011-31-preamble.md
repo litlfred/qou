@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.774
 latex_coverage_ratio: 0.99
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 A significant challenge within  causal set programs has been to explain the existence of 3+1 dimensions.
 That is, any causal set chosen at random is highly unlikely to have this particular dimension of our choosing.  

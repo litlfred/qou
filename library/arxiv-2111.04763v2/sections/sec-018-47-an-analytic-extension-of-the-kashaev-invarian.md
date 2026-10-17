@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.949
 latex_coverage_ratio: 0.862
+doc_brief: "Resurgence of Chern-Simons theory at the trivial flat connection — Some years ago, it was conjectured by the first author that the Chern–Simons perturbation theory of a 3-manifold at the trivial flat"
 ---
 In this section we discuss an analytic extension of the Kashaev invariant and of the colored Jones polynomial of the $\mathbf{5}_2$ knot, illustrating Conjectures [\[conj.ekashaev\]](#conj.ekashaev){reference-type="ref" reference="conj.ekashaev"} and [\[conj.ejones\]](#conj.ejones){reference-type="ref" reference="conj.ejones"}.
 

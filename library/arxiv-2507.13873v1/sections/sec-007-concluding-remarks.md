@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.951
 latex_coverage_ratio: 0.993
+doc_brief: "Probing the singularity at the holographic screen via $q$-holography — We study the emergence of q-deformed spacetime in a lower-dimensional gravitational system whose asymptotic region geometrizes"
 ---
 []{#s:concl label="s:concl"} In this work, we have investigated the probe regime in a $q$-deformed setting of holography. We then illustrated that sinh (or sine) dilaton gravity exhibits this structure explicitly close to its holographic screen. There is an priori puzzling discrepancy between the semi-classical regime and the probe regime, which we interpret as due to there being a curvature singularity at the boundary. This singularity gets resolved by the non-commutative geometry of the quantum hyperbolic disk. We end by listing some possible directions for the future.\
 *Other boundary correlation functions in the probe regime*\

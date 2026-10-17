@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.98
 latex_coverage_ratio: 0.971
+doc_brief: "On the number of hyperbolic 3 -manifolds of a given volume Craig Hodgson and Hidetoshi Masai — The work of Jørgensen and Thurston shows that there is a ﬁnite number N(v) of orientable hyperbolic"
 ---
 []{#sec.Vol label="sec.Vol"} In this section, we recall some results on hyperbolic graphs in $S^3$ with parabolic meridians; for details see [@HHMP] and [@Mas]. In this paper, spatial graphs may contain link components, and we regard every link as a spatial graph without vertices. We use the word *link* to emphasize that the graph does not have any vertices. Let $G$ be a spatial trivalent graph in $S^3$ and let $N$ be a manifold obtained from $S^3\setminus G$ by removing an open regular neighbourhood of each vertex. Then $N$ is a manifold with boundary consisting of thrice punctured spheres, one corresponding to each vertex of $G$. We say that $G$ is *hyperbolic* if $N$ admits a hyperbolic metric of finite volume with geodesic boundary; then the meridians of the graph correspond to parabolic isometries. We can construct a hyperbolic link from a hyperbolic graph by using the following.
 

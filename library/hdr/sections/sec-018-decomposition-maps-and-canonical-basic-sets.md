@@ -8,6 +8,7 @@ pages: 36-38
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
 toc_source: outline
+doc_brief: "Hecke algebras, generalisations and representation theory — 30 sections: Front matter; Algebras of Finite Type; Blocks"
 ---
 Decomposition maps and canonical basic sets
 A few of the results in this section have been brieﬂy discussed in §3.4. They are repeated here for reasons

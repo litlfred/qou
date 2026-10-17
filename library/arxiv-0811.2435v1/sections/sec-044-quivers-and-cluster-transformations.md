@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.996
 latex_coverage_ratio: 0.986
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 47 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 The formal power series ${\bf E}_Q$ in $\hat{e}_i,\,\,i\in I$ defined in the previous section satisfy a number of remarkable properties.
 

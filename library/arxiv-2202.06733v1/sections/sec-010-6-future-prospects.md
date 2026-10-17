@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.983
 latex_coverage_ratio: 0.983
+doc_brief: "Received <day> <Month>, <year> — Diﬀerent ways of representing the group 푆푈(3) within a Geometric Algebra approach are explored."
 ---
 So far, in particle terms, we have only considered a limited segment of the Standard Model, and there is much still to do in terms of having a complete version expressible in the STA. An interesting feature concerning this is that recently, following Furey's work,  Gording and Schmidt-May\cite{gording2020unified} report that they have fitted the entire SM, with all three generations, into the 64-dimensional octonionic left multiplication space. This is carried out, however, using a complex $8\times 8$ matrix approach, rather than using either Clifford algebras or octonions, and so is not immediately interpretable in the current context. Nevertheless it does bode well for the basic enterprise here.
 

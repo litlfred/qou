@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.994
 latex_coverage_ratio: 0.988
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 47 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 Here we give a short exposition of the generalization of the theory of motivic functions in the equivariant setting (essentially due to Joyce [@Jo4], here we use slightly different terms).
 

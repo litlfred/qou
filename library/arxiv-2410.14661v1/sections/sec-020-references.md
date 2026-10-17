@@ -8,6 +8,7 @@ pages: 61-62
 source_pdf: 2410.14661v1.pdf
 source_sha256: 3362fcd5e28eb1f0
 toc_source: outline
+doc_brief: "ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM INVARIANTS III: THE RESHETIKHIN-TURAEV INVARIANTS OF CLOSED HYPERBOLIC 3-MANIFOLDS OBTAINED BY DOING INTEGRAL SURGERY ALONG THE TWIST KNOT — This is the"
 ---
 [1] C. Blanchet, N. Habegger, G. Masbaum and P. Vogel: Three-manifold invariants derived from the
 Kauffman bracket. Topology 31(4), 685–699 (1992)

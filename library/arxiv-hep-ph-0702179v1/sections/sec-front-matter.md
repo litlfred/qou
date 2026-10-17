@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0702179v1.pdf
 source_sha256: 4d78ee89f0e67fbb
 toc_source: outline
+doc_brief: "Large-NC estimate of the chiral low-energy constants ∗ — 5 sections: Front matter; Introduction; The role of Resonance Chiral Theor"
 ---
 arXiv:hep-ph/0702179v1  18 Feb 2007
 Large-NC estimate of the chiral low-energy constants ∗

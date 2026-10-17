@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.957
 latex_coverage_ratio: 0.986
+doc_brief: "THE CHARACTER THEORY OF A COMPLEX GROUP — We apply the ideas of derived algebraic geometry and topological ﬁeld theory to the representation theory of reductive groups."
 ---
 Recall that $C_*(A)$ denotes the canonical simplicial resolution of $A$ as an $A$-bimodule, i.e., the monadic bar construction for the algebra $A$. Let $C_*(A)^{tr}$ denote the cosimplicial object obtained by passing to transposes, i.e., the comonadic cobar construction for the coalgebra $(A',\mu^t)$. Likewise, let $C_*(A)^r$ denote the cosimplicial object obtained by passing to right adjoints, i.e., the comonadic cobar construction for $(A^r,\mu^r)$. Note however that unless $A$ is rigid, the right adjoint to the unit morphism is not continuous, hence this cosimplicial object is not a diagram of continuous functors. We use the term semi-cosimplicial object to refer to the diagram object obtained from such a cosimplicial object by forgetting its codegeneracies, see [@topos Notation 6.5.3.6]. By [@topos Lemma 6.5.3.7], the inclusion of the semisimplical $\infty$-category in the simplicial one is cofinal, so that we may calculate totalizations of cosimplicial objects as limits over the underlying semi-cosimplicial objects. The underlying semi-cosimplicial object of $C_*(A)^r$ is indeed a diagram of continuous functors. The following is an immediate corollary of the above proposition:
 

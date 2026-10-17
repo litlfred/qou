@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.976
 latex_coverage_ratio: 0.943
+doc_brief: "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY — The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coeﬃcients that"
 ---
 Chern-Simons theory with complex gauge group $G_\mathbb{C}$ (where $G$ is a compact Lie group) was initially studied by Witten in [@Witten-CSgrav; @Witten-cx]. It is a topological quantum field theory in three-dimensions, whose action is a sum of holomorphic and antiholomorphic copies of the usual Chern-Simons action
 

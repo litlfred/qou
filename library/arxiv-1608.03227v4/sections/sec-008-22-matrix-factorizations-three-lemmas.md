@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.995
 latex_coverage_ratio: 0.958
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 In this subsection we fix notations for matrix factorizations and remind some basic facts about them. In particular we prove three lemmas that we will use in the main body of the paper. These lemmas essentially contain all facts about matrix factorizations that are used here. For more thorough review of the theory of matrix factorization the reader could consult the beautiful original paper [@E] or later surveys in [@D].
 

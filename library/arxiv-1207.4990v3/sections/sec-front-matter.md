@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 1207.4990v3.pdf
 source_sha256: 02aa065f4f65b857
 toc_source: outline
+doc_brief: "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results — 11 sections: Front matter; Setting the problem; Toeplitz meets Ising"
 ---
 arXiv:1207.4990v3  [math.FA]  1 Dec 2012
 Toeplitz matrices and Toeplitz determinants under the impetus of

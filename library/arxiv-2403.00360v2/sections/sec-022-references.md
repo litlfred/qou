@@ -8,6 +8,7 @@ pages: 31-36
 source_pdf: 2403.00360v2.pdf
 source_sha256: b0764ca18a83a84f
 toc_source: outline
+doc_brief: "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular"
 ---
 [1] Link to web platform on causal fermion systems: www.causal-fermion-system.com.
 [2] R. Ab lamowicz, Construction of spinors via Witt decomposition and primitive idempotents: A

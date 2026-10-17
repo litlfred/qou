@@ -8,6 +8,7 @@ pages: 28-30
 source_pdf: 0004133v1.pdf
 source_sha256: 687de8249639c7f2
 toc_source: inferred
+doc_brief: "arXiv:math/0004133v1 [math.QA] 20 Apr 2000 — ‘Categoriﬁcation’ is the process of replacing equations by isomor- phisms."
 ---
 We dedicate this paper to Gian-Carlo Rota and Irving Segal.
 References

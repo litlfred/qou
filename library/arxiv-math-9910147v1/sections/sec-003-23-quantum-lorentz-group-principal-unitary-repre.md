@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.995
+doc_brief: "arXiv:math/9910147v1 [math.QA] 27 Oct 1999 — We study the tensor product of principal unitary representations of the quantum Lorentz Group, prove a decomposition theorem and compute the associated"
 ---
 We will recall in this section fondamental results on $\mathfrak{U}_q(sl(2,\mathbb{C})_{\RR})$ and on the harmonic analysis [@BR1] on $SL_q(2,C)_{\RR}.$
 

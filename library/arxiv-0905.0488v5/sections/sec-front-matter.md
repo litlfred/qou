@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0905.0488v5.pdf
 source_sha256: fcf8dee7cd3849b9
 toc_source: outline
+doc_brief: "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES — Let X be a smooth algebraic variety over a ﬁeld K containing the real numbers. We introduce the notion of twisted associative (resp."
 ---
 TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC
 VARIETIES

@@ -8,6 +8,7 @@ pages: 8-9
 source_pdf: deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-linking-numbers.pdf
 source_sha256: db149864ce367da2
 toc_source: outline
+doc_brief: "Matemática Contemporânea, Vol. 34, 251–283 ©2008, Sociedade Brasileira de Matemática TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INVARIANTS — Three-component links in the 3-dimensional sphere were classi"
 ---
 Explicit formula for the characteristic map gL
 View R4 as the space of quaternions, with 1, i, j, k as basis, and consider

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.983
 latex_coverage_ratio: 0.952
+doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Young diagrams which can be regarded as a natural one-parameter deformation of some classi- cal"
 ---
 ::: lemma
 []{#lem:Carleman label="lem:Carleman"} Assume that $\mu$ is a probability measure which is supported on the interval $[x_0,\infty)$ (respectively, on the interval $(-\infty,x_0]$) for some $x_0\in\mathbb{R}$ and such that $$\label{eq:moments-slow}

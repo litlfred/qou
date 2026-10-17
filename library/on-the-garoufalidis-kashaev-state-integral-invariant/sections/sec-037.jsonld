@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/sections/sec-037",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Balanced Angle Structures",
+  "pageStart": 42,
+  "pageEnd": 43,
+  "contains": [
+    "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-037",
+    "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/def-sec-037-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/on-the-garoufalidis-kashaev-state-integral-invariant/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/on-the-garoufalidis-kashaev-state-integral-invariant/manifest.jsonld",
+  "provenance": "ingested"
+}

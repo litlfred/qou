@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.951
 latex_coverage_ratio: 0.959
+doc_brief: "THE HOLONOMY BRAIDING FOR Uξ(sl2) IN TERMS OF GEOMETRIC QUANTUM DILOGARITHMS — We derive an explicit formula for the holonomy R-matrix of quantum sl2 at a root of unity."
 ---
 The map $\mathcal{R}$ gives a braiding on the algebra $\mathcal{U}_{\xi}$, but we want to construct a braiding on $\mathcal{U}_{\xi}$-modules. Given $\mathcal{U}_\xi$-modules $(\pi_{i}, V_{i})$ with characters $\chi_{i}$ related as in [\[thm:braiding formulas\]](#thm:braiding formulas){reference-type="ref" reference="thm:braiding formulas"} a is a linear map $$R : V_{1} \otimes V_{2} \to V_{1'} \otimes V_{2'}$$ intertwining $\mathcal{R}$ in the sense that the diagram $$\label{eq:R-mat-U-module-diagram}
   \begin{tikzcd}[row sep = large, column sep = large]

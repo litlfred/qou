@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.953
+doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
 ---
 The properties of black holes suggest that a description in terms of qubits should have a particular form. First, how many qubits do we need? To fully and exactly describe the black hole and the infinite AdS-like space surrounding it we need an infinite number, but that's like saying that in order to exactly describe the solar system we need all of the degrees of freedom out to the cosmic horizon. Clearly that is overkill. 
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.95
 latex_coverage_ratio: 0.951
+doc_brief: "The Habiro ring of a number field — We introduce the Habiro ring of a number field K and modules over it graded by K3(K)."
 ---
 In this final subsection we describe some exotic functions that behave like elements
 of Habiro rings that involve different fields at each root of unity. On the face of

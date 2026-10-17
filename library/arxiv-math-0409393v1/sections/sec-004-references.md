@@ -8,6 +8,7 @@ pages: 25-26
 source_pdf: 0409393v1.pdf
 source_sha256: 2107d961f6065539
 toc_source: outline
+doc_brief: "ALGEBRAIC CONSTRUCTION OF THE STOKES SHEAF FOR IRREGULAR LINEAR q-DIFFERENCE EQUATIONS — — The local analytic classiﬁcation of irregular linear q-diﬀerence equa- tions has recently been obtained by"
 ---
 erations provide a local isomorphism of the sheaves of Lie algebras, so that λI(M) is
 a vector bundle. Last, these isomorphisms preserve the ﬁltrations by levels of ﬂatness.

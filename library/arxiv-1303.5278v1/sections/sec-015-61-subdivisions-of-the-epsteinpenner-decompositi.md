@@ -7,11 +7,11 @@ section_number: 6.1
 pages: 32-34
 source_pdf: 1303.5278v1.pdf
 source_sha256: 92e417c93f8b883a
-doc_brief: "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD — In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifold M (a collection of"
-duplicate_of: "topologicalinvariance3dindex"
 text_source: latex
 latex_prose_ratio: 0.962
 latex_coverage_ratio: 0.897
+doc_brief: "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD — In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifold M (a collection of"
+duplicate_of: "topologicalinvariance3dindex"
 ---
 For a once-cusped hyperbolic 3--manifold $M$, the Epstein--Penner decomposition (see [@EP]) divides $M$ into a finite number of ideal hyperbolic polyhedra. This subdivision is canonical, depending only on the topology of the manifold, if $M$ has a single cusp. If $M$ has $r \geq 1$ cusps, then the Epstein-Penner cell decomposition is canonical up to the choice of a scale vector $(t_1,\dots,t_r)$ with $t_1, t_2, \dots, t_r >0$ giving the relative size of the cusps. The scale vector is well-defined up to multiplication by a positive real number. For the purposes of defining our canonical set, we can choose all $t_i$ to be the same.
 

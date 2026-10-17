@@ -8,6 +8,7 @@ pages: 29-32
 source_pdf: 1409.1198v1.pdf
 source_sha256: 13ecb6c28bab6744
 toc_source: outline
+doc_brief: "TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR — Categoriﬁcation is a process of lifting structures to a higher categorical level."
 ---
 deﬁned for (additive) linear categories to the 2-categorical setting. A 2-category C is linear if the
 categories C(x, y) are linear for all x, y ∈Ob(C) and the composition functor preserves the linear

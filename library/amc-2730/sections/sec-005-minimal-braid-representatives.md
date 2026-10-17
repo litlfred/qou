@@ -8,6 +8,7 @@ pages: 21-27
 source_pdf: amc_2730.pdf
 source_sha256: 65730074a2925c6e
 toc_source: outline
+doc_brief: "Braid representatives minimizing the number of simple walks * — Given a knot, we develop methods for finding a braid representative that minimizes the number of simple walks."
 ---
 Minimal braid representatives
 In Table 5, we list knots up to 9 crossings with the braid representatives giving minimal

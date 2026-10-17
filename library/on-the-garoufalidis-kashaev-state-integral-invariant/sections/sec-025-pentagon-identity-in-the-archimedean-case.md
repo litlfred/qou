@@ -8,6 +8,7 @@ pages: 26-28
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
 toc_source: outline
+doc_brief: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT — 63 sections: Front matter; ACKNOWLEDGMENTS; ABSTRACT"
 ---
 Pentagon identity in the Archimedean case
 Theorem 3. The function φ(α, x) = α(1 + x) satisfies the distributional pentagon

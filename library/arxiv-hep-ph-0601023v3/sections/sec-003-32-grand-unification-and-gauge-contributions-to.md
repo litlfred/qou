@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.951
 latex_coverage_ratio: 0.984
+doc_brief: "arXiv:hep-ph/0601023v3 23 Apr 2007 — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non - su- persymmetric uniﬁcation"
 ---
 We discuss now a  unifying  framework beyond that  of the Standard Model. There
  are many reasons for doing so.  One of the major ones is the presence  of 

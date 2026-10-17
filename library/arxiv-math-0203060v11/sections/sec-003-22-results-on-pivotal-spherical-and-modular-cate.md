@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.956
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 Now let ${\mathcal C}$ be a pivotal fusion category. In such a category, one can define the dimension of an object $V$ by $\dim(V)=\text{Tr}_V(i)$, and we have the following result which justifies the notation $|V|^2$.
 

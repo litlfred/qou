@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.919
 latex_coverage_ratio: 0.983
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 We proceed to estimate the second term on the right-hand side of [\[glob1\]](#glob1){reference-type="eqref" reference="glob1"}.
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.955
 latex_coverage_ratio: 1.0
+doc_brief: "Formulas on hyperbolic volume ∗ — This paper collects some important formulas on hyperbolic volume."
 ---
 In this section $k$ is a constant giving the curvature of the hyperbolic space and the value of our constant $v_n$ is $1$. The following formulas can be found in [@bolyai], [@bonola] and [@weszely]. Most of it can be easily determined using the results of the previous section. An important exception is the volume of the orthosceme, we will give a new formula for it in section 3.3.
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.958
 latex_coverage_ratio: 0.99
+doc_brief: "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects."
 ---
 We now associate a generalised 6j symbol to each  labeled generic  transversal tetrahedron $t$ with a defect surface. Note that such a defect tetrahedron  is more than a combinatorial tetrahedron with categorical data assigned to each oriented edge. It consists of a combinatorial tetrahedron $t$, an oriented defect polygon $P$,  an assignment of certain edges of $t$ to the vertices  of $P$ and an assignment of the vertices of $t$ to the two regions labeled by $\mac$ and $\mad$. 
   In particular,  a labeled generic  transversal tetrahedron inherits an orientation, because the defect surface is oriented and assigning $\mac$ and $\mad$ to the two sides of the surface specifies a positive normal vector to the surface

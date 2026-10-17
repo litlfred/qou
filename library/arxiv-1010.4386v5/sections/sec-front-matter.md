@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1010.4386v5.pdf
 source_sha256: 168226dbb5a479ed
 toc_source: outline
+doc_brief: "ON THE HOMOLOGY OF COMPLETION AND TORSION — Let A be a commutative ring, and a a weakly proregular ideal in A."
 ---
 arXiv:1010.4386v5  [math.AC]  16 Oct 2012
 ON THE HOMOLOGY OF COMPLETION AND TORSION

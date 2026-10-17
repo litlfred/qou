@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.96
 latex_coverage_ratio: 0.868
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS — We study asymptotics of characters of the symmetric groups on a ﬁxed conjugacy class."
 ---
 ::: proof
 *Proof of Theorem [\[theo:main\]](#theo:main){reference-type="ref" reference="theo:main"}.* We know by Proposition [\[prop:main-prop\]](#prop:main-prop){reference-type="ref" reference="prop:main-prop"} that for any integer $g\geq 1$ there exist inhomogeneous symmetric functions $\tilde{f}_g$ and $\tilde{h}_g$, having maximal degree $4g$, such that $$\begin{aligned}

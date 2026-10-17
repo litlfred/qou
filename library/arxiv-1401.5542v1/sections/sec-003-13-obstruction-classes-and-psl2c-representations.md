@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.92
 latex_coverage_ratio: 1.0
+doc_brief: "THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS — The Ptolemy coordinates for boundary-unipotent SL(n, C)-representations of a 3-manifold group were introduced in [7] inspired by the A-coordinates on"
 ---
 There is a subtle distinction between representations in $\SL(2,\C)$ versus $\PSL(2,\C)$. The geometric representation of a hyperbolic manifold always lifts to an $\SL(2,\C)$-representation, but for a one-cusped manifold, no lift is boundary-parabolic (any lift will take a longitude to an element of trace $-2$~\cite{Calegari}). 
 

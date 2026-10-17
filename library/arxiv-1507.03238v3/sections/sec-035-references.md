@@ -8,6 +8,7 @@ pages: 26-26
 source_pdf: 1507.03238v3.pdf
 source_sha256: 1da6a5498c08a521
 toc_source: outline
+doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety for SL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
 ---
 [1] Wieb Bosma, John Cannon, and Catherine Playoust. The Magma algebra system. I. The user language. J.
 Symbolic Comput., 24(3-4):235–265, 1997. Computational algebra and number theory (London, 1993).

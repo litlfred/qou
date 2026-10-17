@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.937
 latex_coverage_ratio: 0.982
+doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — Based on an interpretation of the quark-lepton symmetry in terms of the unimodularity of the color group SU(3) and on the existence of 3 generations, we develop an"
 ---
 Up to now, the discussion is over each spacetime point. One knows however that the color group $SU(3)$ is the structure group of an $SU(3)$-gauge theory of strong interactions. Indeed the gluon field which induces the strong interactions is an $SU(3)$-connection.\
 This means that one has a complex vector bundle over spacetime with fiber $\mathbb C\oplus \mathbb C^3$ associated with a principal $SU(3)$-bundle which is the direct sum of a trivial complex vector bundle of rank 1 with a complex vector bundle of rank 3 corresponding to the fundamental representation of $SU(3)$. This bundle is also an associated bundle in algebras with product given by ([\[proc\]](#proc){reference-type="ref" reference="proc"}) in each fiber. The gluon field being then a connection on this bundle.\

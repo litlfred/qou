@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.974
 latex_coverage_ratio: 0.926
+doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL + — We give complete detail of the description of the GNS representation of the quantum plane A and its dual ˆ A as"
 ---
 \label{sec:QPlane:GNS}
 The GNS representation enables us to bring the quantum plane into the Hilbert space level, where the algebra is realized as operators on certain Hilbert space. This Hilbert space is nothing but the space of ``$L^2$ functions on the quantum plane", which gives the necessary background later to describe the $L^2$ functions on $GL_q^+(2,\R)$ using the quantum double construction. This will allow us to state the main theorem (Theorem \ref{main}) on the decomposition of $L^2(GL_q^+(2,\R))$ into the fundamental principal series representations of $U_{q\til[q]}(\gl(2,\R))$ with certain Plancherel measure.

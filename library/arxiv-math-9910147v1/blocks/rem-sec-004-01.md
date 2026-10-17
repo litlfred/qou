@@ -1,0 +1,1 @@
+A very important point is that $\GPhin{X_0X_1}{Y_0Y_1}{Z_0Z_1}$ maps the algebraic tensor product of the two domains $V(X_0X_1)\otimes V(Y_0Y_1)$ to $V(Z_0Z_1).$ As a result the sum $(\ref{defreducedelement})$ is finite. It can be seen that there are no non zero intertwiner from $V(Z_0Z_1)$ to the algebraic tensor product $V(X_0X_1)\otimes V(Y_0Y_1).$

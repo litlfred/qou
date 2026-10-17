@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.992
 latex_coverage_ratio: 0.992
+doc_brief: "Braided fermions from Hurwitz algebras — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of"
 ---
 There exist several curious structural similarities between recent braid- and Hurwitz algebraic descriptions of a single generation of fermions. Clifford algebras that are isomorphic to complex numbers and quaternions admit precisely those braid group representations from which the Helon model is contructed [@gresnigt2017quantum2]. Furthermore, the ribbon braids representing fermions in that model coincide exactly with the states that span the minimal left ideals of the adjoint algebra of the complex octonions, shown by Furey to describe one generation of leptons and quarks with unbroken $SU(3)_{C}$ and $U(1)_{EM}$ symmetry.
 

@@ -8,6 +8,7 @@ pages: 14-14
 source_pdf: quaternioms.pdf
 source_sha256: becedcbc858611dd
 toc_source: outline
+doc_brief: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 44 sections: Front matter; Introduction; Extended Related Work"
 ---
 Unlike quaternions, the direct embedding of a universal octonionic quantum computer
 into a complex one is not straightforward due to the fundamental challenges of non-

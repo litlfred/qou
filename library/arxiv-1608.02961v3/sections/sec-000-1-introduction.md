@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.895
 latex_coverage_ratio: 0.98
+doc_brief: "Perturbative and nonperturbative aspects of complex Chern-Simons Theory Contents — We present an elementary review of some aspects of Chern-Simons theory with complex gauge group SL(N, C)."
 ---
 Chern-Simons theory with complex gauge group came to prominence in the late 80's, partly as a tool for understanding three-dimensional gravity with a negative cosmological constant \cite{DIAT-CSgrav, DIWitten-gravCS, DIWitten-top, DIWitten-cx}.
 Many early developments were due to Witten.

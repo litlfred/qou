@@ -8,6 +8,7 @@ pages: 46-46
 source_pdf: 0808.1923v3.pdf
 source_sha256: 3c53f7c0fd9acf89
 toc_source: outline
+doc_brief: "Connections on Non-Abelian Gerbes and their Holonomy — We introduce an axiomatic framework for the parallel transport of connections on gerbes."
 ---
 Surface Holonomy
 From the viewpoint of a transport 2-functor, parallel transport and holonomy are basically evaluation

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.964
 latex_coverage_ratio: 0.973
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 Our construction of the complex of sheaves $\bbS_\beta\in D^{per}_{T_{sc}}(\Hilb_{1,n}^{free})$ is based on a homomorphism from the braid group $\Brgr_n$ to the convolution algebra of $T_{sc}$-equivariant and (weakly) $B^2$-equivariant matrix factorizations $\MF_{B^2}(\calXr_2(G_n),\Wr)$ on the space $\SymbolPrint{\calXr_2(G_n)}:=\frb\times G_n\times \frn$ with the potential $$\SymbolPrint{\Wr}=\Tr(X\Ad_g(Y)),$$ where $X\in \frb$ in upper triangular, $Y\in \frn$ is strictly upper triangular and $\SymbolPrint{G_n}=GL_n$[^1]. The potential $\Wr$ has degree $t^2$ with respect to $T_{sc}$ so we also assume that the differentials of the matrix factorizations from $\MF_{B^2}(\calXr_2( G_n),\Wr)$ have degree $t$.
 

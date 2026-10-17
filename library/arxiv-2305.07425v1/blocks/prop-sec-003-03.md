@@ -1,1 +1,1 @@
-Letq : G → R be a non-zero homogeneous quasi-
+Let q: G →R be a non-zero homogeneous quasi-

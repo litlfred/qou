@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
 toc_source: outline
+doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL + — We give complete detail of the description of the GNS representation of the quantum plane A and its dual ˆ A as"
 ---
 arXiv:1108.5365v2  [math.QA]  6 Sep 2012
 Representation of the Quantum Plane, its Quantum

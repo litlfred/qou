@@ -8,6 +8,7 @@ pages: 442-444
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
 toc_source: outline
+doc_brief: "Analytic Combinatorics in Several Variables Expanded Second Edition — 98 sections: Front matter; Preface to the second edition; Preface to the first edition"
 ---
 Let F(z) be the generating function of a sequence (ar). Theorems 7.20 and 7.35
 represent ar as an integer sum of saddle point integrals near critical points of

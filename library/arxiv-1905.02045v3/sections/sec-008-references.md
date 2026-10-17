@@ -8,6 +8,7 @@ pages: 38-39
 source_pdf: 1905.02045v3.pdf
 source_sha256: 8e7eb17c7d1f4f4e
 toc_source: outline
+doc_brief: "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM INVARIANTS OF HYPERBOLIC KNOTS — We obtain an exact modularity relation for the q-Pochhammer symbol."
 ---
 [1] N. H. Abel. Œuvres compl`etes. Tome I. ´Editions Jacques Gabay, Sceaux, 1992. Edited and with a preface
 by L. Sylow and S. Lie, Reprint of the second (1881) edition.

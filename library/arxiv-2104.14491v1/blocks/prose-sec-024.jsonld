@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-2104.14491v1/blocks/prose-sec-024",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "C.1 Simplest knots",
-  "pageStart": 19,
+  "title": "B.2 Twist knots",
+  "pageStart": 18,
   "pageEnd": 19,
-  "text": "../sections/sec-024-c1-simplest-knots.md",
+  "text": "../sections/sec-024-b2-twist-knots.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2104.14491v1/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2104.14491v1/manifest.jsonld",
   "provenance": "ingested"

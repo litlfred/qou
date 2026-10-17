@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/stateintegralsqseries/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "q-difference equations",
+  "pageStart": 4,
+  "pageEnd": 4,
+  "contains": [
+    "library/stateintegralsqseries/blocks/prose-sec-002",
+    "library/stateintegralsqseries/blocks/cor-sec-002-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/stateintegralsqseries/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/stateintegralsqseries/manifest.jsonld",
+  "provenance": "ingested"
+}

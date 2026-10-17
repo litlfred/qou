@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.923
 latex_coverage_ratio: 0.98
+doc_brief: "ON THE QUANTUM INVARIANT FOR THE BRIESKORN HOMOLOGY SPHERES — We study an exact asymptotic behavior of the Witten–Reshetikhin–Turaev SU(2) in- variant for the Brieskorn homology spheres Σ(p1, p2, p3)"
 ---
 The quantum invariant for the 3-manifold $\mathcal{M}$ was introduced as a path integral on $\mathcal{M}$ by Witten [@EWitt89a]; as the $SU(2)$ invariant we have $$\label{Witten}
   Z_{k} (\mathcal{M})

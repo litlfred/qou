@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 1301.4504v4.pdf
 source_sha256: 201acc5bb1d4b6a0
 toc_source: outline
+doc_brief: "Quantum Computation vs. Firewalls — In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue"
 ---
 Prepared for submission to JHEP
 DEDICATED TO JOHN PRESKILL ON THE OCCASION OF HIS 60TH BIRTHDAY

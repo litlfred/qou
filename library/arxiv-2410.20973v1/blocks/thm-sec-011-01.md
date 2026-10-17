@@ -1,1 +1,1 @@
-If [a, b]⊆ arg(C\S(V0))∩ ( π
+If [a, b] ⊆arg(C\S(V0)) ∩( π

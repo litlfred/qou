@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-034",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Phase Diagram for the QCD Partition Function",
-  "pageStart": 46,
-  "pageEnd": 50,
-  "text": "../sections/sec-034-63-phase-diagram-for-the-qcd-partition-function.md",
+  "title": "QUENCHED DIRAC SPECTRA",
+  "pageStart": 44,
+  "pageEnd": 46,
+  "text": "../sections/sec-034-625-quenched-dirac-spectra.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0003017v2/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0003017v2/manifest.jsonld",
   "provenance": "ingested"

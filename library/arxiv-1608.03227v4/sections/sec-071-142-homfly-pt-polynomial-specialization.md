@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.982
 latex_coverage_ratio: 0.97
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 The space $\calH^k(\beta)$ is doubly-graded with $q,t$ gradings induced by the action of $T_{sc}$ on $\Hilb^{free}_{1,n}$. We denote by $\calH^{i,j,k}(\beta)$ the subspace of $\calH^k(\beta)$ of degree $t^iq^j$. Respectively we introduce the super-polynomial: $$\SymbolPrint{\calP}(L(\beta)):= \sum_{i,j,k} t^iq^j a^k \calH^{i,j,k}(\beta),$$ where $\beta\in \Brgr_n$. In this section we explain why our super polynomial $\calP(L)$ specializes to the HOMFLY-PT polynomial $P(L)$.
 

@@ -8,6 +8,7 @@ pages: 26-30
 source_pdf: 1704.00850v3.pdf
 source_sha256: 09dd9c99453ba251
 toc_source: outline
+doc_brief: "Estimating the spectral gap of a trace-class Markov operator — The utility of a Markov chain Monte Carlo algorithm is, in large part, determined by the size of the spectral gap of the corresponding"
 ---
 Proof of Theorem 2
 Theorem 2. The DA operator P is trace-class if and only if

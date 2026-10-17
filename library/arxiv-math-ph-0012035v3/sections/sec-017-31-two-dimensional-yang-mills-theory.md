@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.983
 latex_coverage_ratio: 0.992
+doc_brief: "arXiv:math-ph/0012035v3 16 Jan 2002 — In this short review main issues related to the non-Abelian Stokes theorem have been addressed."
 ---
 There is a huge literature on the subject of the two-dimensional Yang-Mills theory approaching it from different points of view. One of the latest papers is \[AK00\], where a list of references to earlier papers is given. Two-dimensional Yang-Mills theory is a specific theory. From the dynamical point of view it is almost trivial---there are no local degrees of freedom, as a standard canonical analysis indicates. In fact it is "semi-topological" field theory, i.e. roughly it only describes combinatorial/topological phenomena and surface areas.
 

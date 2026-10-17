@@ -8,6 +8,7 @@ pages: 13-20
 source_pdf: 1406.7337v4.pdf
 source_sha256: 5bae8237742733b9
 toc_source: outline
+doc_brief: "Semi-Adequate Closed Braids and Volume — In this paper, we show that the volumes for a family of A-adequate closed braids can be bounded above and below in terms of the twist number, the number of"
 ---
 normal form of a 3-braid from Lemma 2.1 to the stable penultimate coeﬃcient β′
 K of the colored Jones

@@ -8,5 +8,6 @@ pages: 38-38
 source_pdf: 1402.4615v3.pdf
 source_sha256: b6e7c795cd1a7cd2
 toc_source: outline
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials."
 ---
 The purpose of this Section is to prove Theorem 1.1. As in [IO02], the key point

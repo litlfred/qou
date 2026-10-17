@@ -8,6 +8,7 @@ pages: 9-10
 source_pdf: 1901.01312v1.pdf
 source_sha256: a480da38283622d6
 toc_source: inferred
+doc_brief: "Braided fermions from Hurwitz algebras — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of"
 ---
 [1] Haim Harari. A Schematic Model of Quarks and Leptons. Physics Letters B, 86(1):83–86, 1979.
 [2] Michael A Shupe. A Composite Model of Leptons and Quarks. Physics Letters B, 86(1):87–92, 1979.

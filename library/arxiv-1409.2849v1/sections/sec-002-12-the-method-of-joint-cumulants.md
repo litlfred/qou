@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.944
 latex_coverage_ratio: 0.955
+doc_brief: "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS — In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the"
 ---
 \label{subsec:methjoint}
 The appearance of an exponential of a monomial $Kx^{r \geq 3}$ as the limiting residue in mod-Gaussian convergence is a phenomenon that occurs not only for sums of i.i.d.~random variables, but more generally for sums of possibly non identically distributed and/or dependent random variables. For instance, \vspace{1mm}

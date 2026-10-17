@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.959
 latex_coverage_ratio: 0.994
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 []{#subsubsec_clop4 label="subsubsec_clop4"} The most general $\mbox{SU(3)}_L\times\mbox{SU(3)}_R$-invariant Lagrangian at ${\cal O}(q^4)$ is given by [@Gasser:1984gg] $$\begin{aligned}
 \label{3:3:1:l4gl}

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.935
 latex_coverage_ratio: 0.948
+doc_brief: "THE 3D-INDEX AND NORMAL SURFACES — Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index, associated to a suitable ideal triangulation of a 3-manifold with torus boundary"
 ---
 When the triangulation $\T$ is not 1-efficient, it turns out that the 
 series $I_\T^a(b)$ may converge for some $b \ne {\bf 0}$

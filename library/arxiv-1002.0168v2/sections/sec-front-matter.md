@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1002.0168v2.pdf
 source_sha256: c95d5d193d57b097
 toc_source: outline
+doc_brief: "Non-cyclotomic fusion categories Introduction — Etingof, Nikshych and Ostrik ask in [7, §2] if every fusion category can be completely deﬁned over a cyclotomic ﬁeld."
 ---
 Non-cyclotomic fusion categories
 Scott Morrison

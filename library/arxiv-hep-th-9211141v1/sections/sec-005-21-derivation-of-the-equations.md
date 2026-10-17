@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.967
 latex_coverage_ratio: 0.977
+doc_brief: "arXiv:hep-th/9211141v1 1 Dec 1992 — 11 sections: Front matter; INTRODUCTION AND SUMMARY OF RESULT; The System of Partial Differential"
 ---
 \label{subsec:derivation_pde}
 A central role in the derivation of our equations is played by the

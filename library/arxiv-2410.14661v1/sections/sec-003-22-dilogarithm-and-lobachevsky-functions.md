@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.971
 latex_coverage_ratio: 0.872
+doc_brief: "ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM INVARIANTS III: THE RESHETIKHIN-TURAEV INVARIANTS OF CLOSED HYPERBOLIC 3-MANIFOLDS OBTAINED BY DOING INTEGRAL SURGERY ALONG THE TWIST KNOT — This is the"
 ---
 Let $\log: \mathbb{C}\setminus (-\infty,0]\rightarrow \mathbb{C}$ be the standard logarithm function defined by $$\begin{aligned}
     \log z=\log |z|+\sqrt{-1}\arg z

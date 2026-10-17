@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.988
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:math/9910147v1 [math.QA] 27 Oct 1999 — We study the tensor product of principal unitary representations of the quantum Lorentz Group, prove a decomposition theorem and compute the associated"
 ---
 In order to understand the problem of continuation of quantum $6j$ symbols the reader is invited to read the appendix of [@BR1] where definitions, proofs, as well as references on $6j(1)$ are given.
 

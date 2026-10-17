@@ -1,1 +1,1 @@
-we finish the proof of our corollary. □
+we finish the proof of our corollary.

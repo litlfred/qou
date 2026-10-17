@@ -8,6 +8,7 @@ pages: 1-4
 source_pdf: 1105.2919v1.pdf
 source_sha256: 6d94496f2093ddd0
 toc_source: outline
+doc_brief: "Chiral eﬀective ﬁeld theory and nuclear forces — We review how nuclear forces emerge from low-energy QCD via chiral eﬀective ﬁeld theory. The presentation is accessible to the non-specialist."
 ---
 Chiral eﬀective ﬁeld theory and nuclear forces
 R. Machleidta,∗, D. R. Entemb

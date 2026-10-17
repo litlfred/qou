@@ -8,6 +8,7 @@ pages: 65-72
 source_pdf: 2301.08311v4.pdf
 source_sha256: 385139c69e18f5b0
 toc_source: outline
+doc_brief: "FLOER COHOMOLOGY AND HIGHER MUTATIONS — We extend the construction of higher mutation as introduced in [PT20] to local higher mutation, which is applicable to a larger class of monotone Lagrangians."
 ---
 We begin this section with recalling the notion of Lagrangian Intersection Floer cohomology with
 local systems. After setting up the conventions and the review of the Floer cohomology, we prove

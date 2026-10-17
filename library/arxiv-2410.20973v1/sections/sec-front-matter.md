@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2410.20973v1.pdf
 source_sha256: 852b7bbc81a62883
 toc_source: outline
+doc_brief: "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS — We prove conjectures of Garoufalidis-Gu-Mari˜no [9] that perturbative series associated with the hyperbolic knots 41 and 52 are resurgent and"
 ---
 arXiv:2410.20973v1  [math.GT]  28 Oct 2024
 SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS

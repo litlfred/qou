@@ -8,6 +8,7 @@ pages: 1-4
 source_pdf: Generalised_Markov_traces_and_Jucys-Murphy_element.pdf
 source_sha256: 9246e10a44d0b4aa
 toc_source: outline
+doc_brief: "Glasgow Mathematical Journal (2026), 1–10 — We give a simple construction of Markov traces for Iwahori–Hecke algebras associated with the crystallographic Coxeter groups of types An, Bn and Dn."
 ---
 A two-variable link invariant – the HOMFLY-PT polynomial – can be recovered using a family of trace
 functions on Iwahori–Hecke algebras in type A satisfying analogues of the conditions in Markov’s the-

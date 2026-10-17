@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.87
 latex_coverage_ratio: 0.963
+doc_brief: "HAROLD WIDOM’S WORK IN RANDOM MATRIX THEORY — This is a survey of Harold Widom’s work in random matrices."
 ---
 The joint probability densities of the eigenvalues of random matrices from the GOE, GUE and GSE ensembles are given by $$\label{eigenprob}
 P_{N\beta}(\lambda_1, ..., \lambda_N) =

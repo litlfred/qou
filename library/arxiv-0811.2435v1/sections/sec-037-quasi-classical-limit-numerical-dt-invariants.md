@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.991
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 47 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 The elements $A_{V,q}\in {\cal R}_{V,q}$ corresponding to $A_V^{mot}$ are series in $\hat{e}_{\gamma},\gamma\in \Gamma$ with coefficients which are rational functions in $q^{1/2}$. They can have poles as $q^n=1$ for some $n\geqslant 1$. Hence it is not clear how to take the quasi-classical limit as $q^{1/2}\to -1$ (this corresponds to the taking of Euler characteristic of the corresponding motives).
 

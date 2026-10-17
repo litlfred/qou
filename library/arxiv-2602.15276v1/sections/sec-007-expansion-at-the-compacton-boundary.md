@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 0.972
+doc_brief: "Compact Q-balls and Q-shells within a $CP^N$ Skyrme-Faddeev type model — 18 sections: Front matter; Introduction; The extended Skyrme-Faddeev model"
 ---
 In the vicinity of the external compacton radius, $R_{\text{out}}$, the field values approach the vacuum state of zero. Consequently, the behavior of the radial function is governed by the quadratic terms in the Lagrangian. It is therefore anticipated that the leading-order behavior of the compacton's radial function will be quadratic, mirroring the characteristics observed in the previously examined ${C}P^N$ model [@Klimas:2017eft]. To analyze the behavior for $r < R_{\text{out}}$, we substitute the following power series expansion into the field equation, imposing the condition $f(r)=0$ for $r \ge R_{\text{out}}$: $$f(r)=b_2(R_{\rm out}-r)^2+b_3(R_{\rm out}-r)^3+\ldots$$ The radial equation yields the following expressions for the first three coefficients $b_k$: $$\begin{aligned}
 b_2&=\frac{\tilde \mu^2}{16}\label{eq:b2}\\

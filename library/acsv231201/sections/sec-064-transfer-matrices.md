@@ -8,6 +8,7 @@ pages: 411-417
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
 toc_source: outline
+doc_brief: "Analytic Combinatorics in Several Variables Expanded Second Edition — 98 sections: Front matter; Preface to the second edition; Preface to the first edition"
 ---
 393
 Ω= {0, 1, 2}, giving v(z) = 1 + z + z2 and

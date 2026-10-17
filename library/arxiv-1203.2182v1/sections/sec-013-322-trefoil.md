@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.927
 latex_coverage_ratio: 0.976
+doc_brief: "Volume Conjecture: Reﬁned and Categoriﬁed — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebraic curve, the zero"
 ---
 Our next task is to derive refined recursion relations for the trefoil. Similarly as in the unknot case, we will be able to determine these relations from the structure of the $sl(2)$ specialization $P_{n}(T^{2,3};q,t)$ of the colored superpolynomial. For general $(2,2p+1)$ torus knots, we found an explicit expression for this homological invariant in ([\[refined_SU(2)\]](#refined_SU(2)){reference-type="ref" reference="refined_SU(2)"}), which for the present purpose of deriving recursion relations we write in the form[^1]
 

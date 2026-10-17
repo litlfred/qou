@@ -11,5 +11,6 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.968
 latex_coverage_ratio: 0.968
+doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials Introduction — We elaborate on the recent suggestion to consider averaging of Cauchy"
 ---
 As we saw in the previous sections, the Schur functions form a full set of polynomials that have simple averages, this phenomenon is called superintegrability [@MMsi]. Similarly, one can construct a full set of *bilinear* combinations with simple averages too. This phenomenon is called strong superintegrability, and first we remind how this phenomenon looks like in the case of the Gaussian Hermitian matrix model.

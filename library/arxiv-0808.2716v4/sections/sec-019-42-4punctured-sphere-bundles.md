@@ -8,6 +8,7 @@ pages: 25-26
 source_pdf: 0808.2716v4.pdf
 source_sha256: ea66f7ddcf9e9fe6
 toc_source: outline
+doc_brief: "CUSP AREAS OF FAREY MANIFOLDS — This paper gives the ﬁrst explicit, two–sided estimates on the cusp area of once– punctured torus bundles, 4–punctured sphere bundles, and 2–bridge link complements."
 ---
 Theorem 4.7. Let N be a 4–punctured sphere bundle with monodromy
 Ω= Rp1Lq1 · · · RpsLqs,

@@ -1,1 +1,1 @@
-The homs ofCob(3) S2 have two generating sets:
+The homs of Cob(3)S2 have two generating sets:

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.937
 latex_coverage_ratio: 0.978
+doc_brief: "Classification of connected étale algebras in pre-modular fusion categories up to rank three — We classify connected ´etale algebras A’s in pre-modular fusion categories B with rank(B) ≤3 including"
 ---
 A rank two pre-MFC has two simple objects $\{1,X\}$. There are two fusion rings, $\mathbb Z/2\mathbb Z$ and $K(\text{Fib})$. We start from the $\mathbb Z/2\mathbb Z$ case.
 

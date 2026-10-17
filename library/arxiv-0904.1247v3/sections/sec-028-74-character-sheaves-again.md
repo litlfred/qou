@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.833
 latex_coverage_ratio: 1.0
+doc_brief: "THE CHARACTER THEORY OF A COMPLEX GROUP — We apply the ideas of derived algebraic geometry and topological ﬁeld theory to the representation theory of reductive groups."
 ---
 Now we apply our previous results to our motivating example when $X=BB$, $Y=BG$, for a reductive group $G$ and Borel subgroup $B\subset G$. We take $\tilde X = BN$, for the unipotent radical $N\subset B$, and take $\mathcal A_X = \pi_*\mathbb C_{BN} \in {\mathcal D}(BB)$ where $\pi:BN\to BB$ is the natural $H= B/N$ torsor. Thus we are studying the bimonodromic Hecke category $\tilde \mathcal H_G$ of unipotent bimonodromic ${\mathcal D}$-modules on $N\backslash G/N$.
 

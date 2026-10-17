@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.939
 latex_coverage_ratio: 0.992
+doc_brief: "Volume Conjecture: Reﬁned and Categoriﬁed — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebraic curve, the zero"
 ---
 In order to understand better the refined recursion relation ([\[RefineRecursion\]](#RefineRecursion){reference-type="ref" reference="RefineRecursion"}), let us consider what happens in various special limits, when $t=-1$ or $q=\pm 1$. We begin with the unrefined limit $t=-1$, which is special for several reasons. First, a direct substitution $\boxed{t=-1}$ in ([\[RefineRecursion\]](#RefineRecursion){reference-type="ref" reference="RefineRecursion"}) gives rise to the following 3-term homogeneous relation $$\alpha_{(t=-1)} J_{n-1} \, + \, \beta_{(t=-1)} J_n \, + \, \gamma_{(t=-1)} J_{n+1} \; = \; 0 \,,    \label{RefineRecursiont1}$$ with the coefficients (rescaled by $q^2-q^{1-n}$ compared to ([\[A\]](#A){reference-type="ref" reference="A"})-([\[C\]](#C){reference-type="ref" reference="C"})) $$\begin{aligned}
 \alpha_{(t=-1)} & = & \frac{q^{2 n} (q^n - q)}{q^{2 n} - q}, \\

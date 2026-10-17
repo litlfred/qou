@@ -1,0 +1,1 @@
+[\[th-main\]](#th-main){reference-type="ref" reference="th-main"} is an immediate consequence, letting $K$ be a totally real field of sufficiently large degree $d\geq 2$ with $\Delta_K \leq C^d$ for some absolute constant $C>0$, as provided by Theorem [\[th-tower\]](#th-tower){reference-type="ref" reference="th-tower"}, and choosing $Y=4C^2c^{-1}$, say.

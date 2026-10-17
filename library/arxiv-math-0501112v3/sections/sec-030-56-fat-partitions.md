@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.95
 latex_coverage_ratio: 0.917
+doc_brief: "arXiv:math/0501112v3 [math.CO] 31 May 2005 — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 []{#subsec:fat label="subsec:fat"} Let $\pi=\{\pi_1,\dots,\pi_r\}$ be a partition of the set $\{1,\dots,n\}$. For every $1\leq s\leq r$ let $\pi_s=\{\pi_{s,1},\dots,\pi_{s,l_s}\}$ with $\pi_{s,1}<\cdots<\pi_{s,l_s}$. We define $\pi_{\mathop{\mathrm{fat}}}$, called fat partition of $\pi$, to be a pair partition of the $2n$--element ordered set $\{1,1',2,2',\dots,n,n'\}$ given by $$\pi_{\mathop{\mathrm{fat}}}=
 \big\{  \{ \pi_{s,t}',\pi_{s,t+1}  \} :  1\leq s \leq r \text{ and }

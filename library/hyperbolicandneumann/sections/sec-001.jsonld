@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/hyperbolicandneumann/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Volumes and Dehn surgeries",
+  "pageStart": 3,
+  "pageEnd": 7,
+  "contains": [
+    "library/hyperbolicandneumann/blocks/prose-sec-001"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hyperbolicandneumann/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hyperbolicandneumann/manifest.jsonld",
+  "provenance": "ingested"
+}

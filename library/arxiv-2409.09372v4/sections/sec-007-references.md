@@ -8,6 +8,7 @@ pages: 16-16
 source_pdf: 2409.09372v4.pdf
 source_sha256: b7eed67ec102ab3d
 toc_source: outline
+doc_brief: "Markov traces on degenerate cyclotomic Hecke algebras — Let Hn(u) be the degenerate cyclotomic Hecke algebra with parameter u = {u1, . . . , um}."
 ---
 [1] Ariki S., Mathas A., Rui H.: Cyclotomic Nazarov–Wenzl algebras. Nagoya Math. J. 182, 47–134 (2006)
 [2] Bremke K., Malle G.: Reduced words and a length function for G(e, 1, n). Indag. Math. (New Series) 8, 453–469

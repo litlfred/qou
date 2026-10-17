@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2002.07369v2.pdf
 source_sha256: 6b8b1e509553b90c
 toc_source: outline
+doc_brief: "GRÖBNER-SHIRSHOV BASES FOR THE COXETER GROUPS — It is known that the finite Coxeter groups are classified in terms of Coxeter-Dynkin diagrams."
 ---
 GR¨OBNER-SHIRSHOV BASES FOR THE COXETER GROUPS
 OF THE TYPES G2, F4, E6, E7 AND E8

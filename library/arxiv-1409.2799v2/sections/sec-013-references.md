@@ -8,6 +8,7 @@ pages: 48-50
 source_pdf: 1409.2799v2.pdf
 source_sha256: 2f2067b7b583e731
 toc_source: outline
+doc_brief: "Diagram categories for Uq-tilting modules at roots of unity — We give a diagrammatic presentation of the category of Uq(sl2)-tilting modules T for q being a root of unity and introduce a grading on"
 ---
 [1] H.H. Andersen. Tensor products of quantized tilting modules. Comm. Math. Phys., 149(1):149–159, 1992. URL:
 http://projecteuclid.org/euclid.cmp/1104251142.

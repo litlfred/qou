@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.965
 latex_coverage_ratio: 0.986
+doc_brief: "BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections."
 ---
 In [@Gukov:2016gkn], it was shown that, up to an overall $\pm$ sign, the refined homological blocks (with or without contribution from the Cartan component of the adjoint chiral) have the following positivity property: $$\begin{aligned}\label{block-pos}
 \pm \widehat{Z}_a(q,-t) \quad & \in \quad q^{\Delta_a} {\mathbb Z}_+[t][[q]] \\

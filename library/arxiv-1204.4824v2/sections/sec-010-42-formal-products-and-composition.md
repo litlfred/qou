@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.99
 latex_coverage_ratio: 0.981
+doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
 ---
 Suppose $a$ and $b$ are the relative homology classes of
 two open paths on $\tilde\Sigma$.  If the end of $a$ coincides with the start of $b$,

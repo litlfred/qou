@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.908
+doc_brief: "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY — We study a class of commuting Markov kernels whose simplest element describes the movement of k particles on a discrete circle of size n"
 ---
 []{#sec:pm_graph label="sec:pm_graph"} In this section, we introduce the notion of integrable positively multiplicative graph which is the central property of the family of graph $\{B_{k,n}; 1\leq k\leq n\}$. We also introduce a general Fourier transform formalism to study a class of Markov chains naturally constructed from those graphs. Although some results of the present section are needed in the sequel of the paper, its content is quite general to enlighten a universal behavior.
 

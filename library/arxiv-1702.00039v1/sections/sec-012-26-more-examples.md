@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.975
 latex_coverage_ratio: 1.0
+doc_brief: "Gentle introduction to Soergel bimodules I: The basics — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules."
 ---
 -   Type A and type B groups are examples of *Weyl groups*. These groups appear in the theory of Lie algebras as the groups of symmetries of root systems associated to semisimple Lie algebras over the complex numbers (so they are examples of finite reflection groups). There are three infinite families of Weyl groups, types $A_n, BC_n$ and $D_n$ ($n\in \mathbb{N}$) and the exeptional groups of type $E_6$, $E_7,$ $E_8,$ $F_4,$ $G_2$. They are also symmetry groups of regular or semiregular polytopes. For example, this figure is a projection in the plane of an $8$-dimensional semiregular polytope with symmetry group $E_8$
 

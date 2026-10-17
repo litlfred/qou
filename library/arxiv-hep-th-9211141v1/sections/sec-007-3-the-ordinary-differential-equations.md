@@ -8,6 +8,7 @@ pages: 16-17
 source_pdf: 9211141v1.pdf
 source_sha256: bd9fbd329884c26e
 toc_source: inferred
+doc_brief: "arXiv:hep-th/9211141v1 1 Dec 1992 — 11 sections: Front matter; INTRODUCTION AND SUMMARY OF RESULT; The System of Partial Differential"
 ---
 In this section we specialize to the case J = (s, ∞) and derive the diﬀerential equations
 (1.11), (1.13) and (1.14). In the notation of the last section m = 1, a1 = s, a2 = ∞. All

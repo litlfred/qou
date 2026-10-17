@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.957
 latex_coverage_ratio: 0.969
+doc_brief: "Decompositions of derived categories of gerbes and families of Brauer–Severi varieties — It is well known that the category of quasi-coherent sheaves on a gerbe banded by a diagonalizable group"
 ---
 []{#sec:brau-severi-vari label="sec:brau-severi-vari"} In this section, we demonstrate how to use the theory of gerbes developed by Giraud to obtain a simple and conceptually appealing proof for the existence of the semi-orthogonal decomposition of the derived category of a Brauer--Severi scheme given by Bernardara [@bernardara-BS-schemes Theorem 4.1]. We start by recalling some basic facts on Brauer--Severi schemes and their trivializing gerbes from [@giraud1971 Example V.4.8].
 

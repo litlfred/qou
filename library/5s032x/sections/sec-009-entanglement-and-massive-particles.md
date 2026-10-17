@@ -8,6 +8,7 @@ pages: 13-16
 source_pdf: 5S032X.pdf
 source_sha256: 17761383781f7bdc
 toc_source: outline
+doc_brief: "The Standard Model Symmetry and Qubit Entanglement — quantum description."
 ---
 ENTANGLEMENT AND MASSIVE PARTICLES
 The above has given us a way to interpret the degrees of freedom contained within a single octonionic qubit as

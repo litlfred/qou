@@ -8,6 +8,7 @@ pages: 25-26
 source_pdf: 0309214v3.pdf
 source_sha256: 53967ef30b0aedb9
 toc_source: outline
+doc_brief: "The colored Jones function is q –holonomic — A function of several variables is called holonomic if, roughly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many linear"
 ---
 Verma modules and ﬁnite dimensional modules
 Let λ ∈X be a weight. The Verma module M(λ) is a U –module with under-

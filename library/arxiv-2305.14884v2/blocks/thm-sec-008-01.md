@@ -1,1 +1,1 @@
-The series Φ Ξ (ℏ) is independent of the choice of a nondegenerate quad.
+~\ref{thm.1} is the independence of $\Phi^\Xi(\hbar)$

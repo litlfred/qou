@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.938
 latex_coverage_ratio: 0.996
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 In the mesonic sector, the combination of dimensional regularization and the modified minimal subtraction scheme $\widetilde{\mbox{MS}}$ \[see Eq. ([\[3:3:1:lihi\]](#3:3:1:lihi){reference-type="ref" reference="3:3:1:lihi"})\] leads to a straightforward correspondence between the chiral and loop expansions. By studying the one-loop contributions of Fig. [1](#4:2:3:SEDia){reference-type="ref" reference="4:2:3:SEDia"} to the nucleon self energy, we will see that this correspondence, at first sight, seems to be lost in the baryonic sector.
 

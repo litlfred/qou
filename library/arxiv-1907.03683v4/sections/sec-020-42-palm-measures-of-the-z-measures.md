@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.859
 latex_coverage_ratio: 1.0
+doc_brief: "EXPLICIT DESCRIPTION OF CHRISTOFFEL DEFORMATIONS AND — Christoﬀel deformation of a measure on the real line consists of multipying this measure by a squared polynomial having its roots in R."
 ---
 We now state in Theorem [\[thmpalmzmeas\]](#thmpalmzmeas){reference-type="ref" reference="thmpalmzmeas"} below the interpretation of Theorem [\[thmzmeas\]](#thmzmeas){reference-type="ref" reference="thmzmeas"} in terms of Palm measures of the $z$-measures.
 

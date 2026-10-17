@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.714
 latex_coverage_ratio: 0.635
+doc_brief: "Asymptotics of some quantum invariants of the Whitehead chains — In this paper, we study the asymptotics of the colored Jones polynomials of the Whitehead chains with one belt colored by M1 and all"
 ---
 []{#diffsame label="diffsame"} After we associate a triangulation of the link complement to the potential functions, we need to prove that the critical values of the potential functions $\Phi^{\pm(s_1,s_2)}(\mathbf{z}^{\pm(z_1,z_2)})$ are indeed the sum of the hyperbolic volume of the tetrahedra. This can be done by using the following differential formula satisfied by the potential functions.
 

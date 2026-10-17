@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.945
 latex_coverage_ratio: 0.991
+doc_brief: "arXiv:math/0501112v3 [math.CO] 31 May 2005 — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 []{#subsec:algebraofconjugacy label="subsec:algebraofconjugacy"} Ivanov and Kerov [@IvanovKerov1999] defined a partial permutation of a set $X$ as a pair $\alpha=(d,w)$, where $d$ (called support of $\alpha$) is any subset of $X$ and $w:X\rightarrow X$ is a bijection which equal to identity outside of $d$. The usual product of partial permutations is given by $$(d_1,w_1)(d_2,w_2)=(d_1\cup d_2,w_1 w_2)$$ and their disjoint product $\bullet$ was defined in [\[eq:definition-of-disjoint\]](#eq:definition-of-disjoint){reference-type="eqref" reference="eq:definition-of-disjoint"}. Partial permutations behave like the usual permutations (to a partial permutation we can canonically associate the usual permutation $w$) except that we can distinguish two kinds of fix-points $x$ for a partial permutations: true fix-points (i.e. $x\notin d$) and cycles of length one ($x\in d$, $w(x)=x$). Partial permutations form a semigroup; in this article we are interested also in the corresponding semigroup algebra which should be regarded as an analogue of the permutation group algebra ${\mathbb{C}}(S_q)$ equipped with some additional structure.
 

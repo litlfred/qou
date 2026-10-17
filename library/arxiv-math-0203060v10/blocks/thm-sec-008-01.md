@@ -1,0 +1,1 @@
+[\[ocnrigfun\]](#ocnrigfun){reference-type="ref" reference="ocnrigfun"} also implies Ocneanu's result that a given fusion category has finitely many braidings. Indeed, any braiding in particular defines an equivalence of tensor categories between ${\mathcal C}$ and ${\mathcal C}^{op}$.

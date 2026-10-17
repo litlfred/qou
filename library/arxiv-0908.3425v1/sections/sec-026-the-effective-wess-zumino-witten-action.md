@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.987
 latex_coverage_ratio: 0.938
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 The Lagrangians discussed so far have a larger symmetry than QCD [@Witten:1983tw]. For example, if we consider the case of "pure" QCD, i.e., no external fields except for the quark-mass term $\chi=2B_0 {\cal M}$, ${\cal L}_2$ and ${\cal L}_4$ contain interaction terms with an even number of Goldstone bosons only (even intrinsic parity). In other words, they cannot describe, e.g, $K^+K^-\to\pi^+\pi^-\pi^0$. Analogously, ${\cal L}_2$ and ${\cal L}_4$ including a coupling to electromagnetic fields cannot describe $\pi^0\to\gamma\gamma$.
 

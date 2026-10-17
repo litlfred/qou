@@ -8,6 +8,7 @@ pages: 59-61
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
 toc_source: outline
+doc_brief: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT — 63 sections: Front matter; ACKNOWLEDGMENTS; ABSTRACT"
 ---
 REFERENCES
 [1] Jørgen Ellegaard Andersen and Rinat Kashaev. A TQFT from quantum Te-

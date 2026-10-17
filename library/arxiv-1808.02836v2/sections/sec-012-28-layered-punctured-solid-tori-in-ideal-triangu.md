@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 0.989
+doc_brief: "On minimal ideal triangulations of cusped hyperbolic 3–manifolds Introduction — Previous work of the authors studies minimal triangulations of closed 3–manifolds using a characterisation of low"
 ---
 The argument for closed 3--manifolds in [@Jaco-Z2-2013] hinged on an understanding of the intersections of *maximal* layered solid tori. We now carry such an analysis out in the case of cusped hyperbolic 3--manifolds. This requires a different approach due to the fact that the combinatorics of minimal ideal triangulations is less restricted than the combinatorics of minimal and 0--efficient (material) triangulations.
 

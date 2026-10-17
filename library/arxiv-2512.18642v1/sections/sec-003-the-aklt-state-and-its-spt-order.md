@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.945
 latex_coverage_ratio: 0.978
+doc_brief: "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain — This paper introduces a hidden quantum Markov models (HQMMs) framework to the Af"
 ---
 []{#SbSect_AKLT label="SbSect_AKLT"}
 

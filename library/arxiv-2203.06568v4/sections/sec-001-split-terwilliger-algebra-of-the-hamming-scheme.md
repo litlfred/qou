@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.696
 latex_coverage_ratio: 1.0
+doc_brief: "Semideﬁnite programming bounds for binary codes from a split Terwilliger algebra — We study the upper bounds for A(n, d), the maximum size of codewords with length n and Hamming distance at least d."
 ---
 []{#sec:split label="sec:split"} In this section, we consider split distance distribution on a partition of $\{1, \dots, n\}$ with two subsets $T_{1}$ and $T_{2}$ such that $T_{1}\cap T_{2}=\emptyset$, $\lvert T_{1}\rvert = n_{1}$, $\lvert T_{2}\rvert = n_{2}$, and $n_1+n_2=n$.
 

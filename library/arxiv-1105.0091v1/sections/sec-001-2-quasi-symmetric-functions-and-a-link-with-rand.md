@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.985
 latex_coverage_ratio: 0.985
+doc_brief: "A central limit theorem for the characters of the infinite symmetric group and of the infinite Hecke algebra — In this paper, we review the representation theory of the inﬁnite symmetric group, and"
 ---
 []{#randompermutation label="randompermutation"} In this section, we shall explain how the coherent systems of measures on $\mathfrak{Y}$ are related to models of random permutations that can be defined by using generalized riffle shuffles in the sense of [@Stan01; @Ful02].
 

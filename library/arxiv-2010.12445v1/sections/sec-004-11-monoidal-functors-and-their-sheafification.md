@@ -8,6 +8,7 @@ pages: 4-6
 source_pdf: 2010.12445v1.pdf
 source_sha256: 16e9ca22ecc1f296
 toc_source: outline
+doc_brief: "STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION — Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect(X), we are"
 ---
 Deﬁnition 1.1. Let C and D be R-linear symmetric monoidal categories. A (contravariant)
 pseudo-monoidal functor Ω: C →D is an R-linear (and contravariant) functor together with a

@@ -1,1 +1,1 @@
-Letp/q be a rational function on H, with zeroes at
+Let p/q be a rational function on H, with zeroes at

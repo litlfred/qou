@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.955
 latex_coverage_ratio: 0.975
+doc_brief: "$q$-Hodge complexes over the Habiro ring — — Peter Scholze has raised the question whether some variant of the q-de Rham complex is already defined over the Habiro ring H := limm∈N Z[q]∧ (qm−1)."
 ---
 []{#subsec:Nygaard label="subsec:Nygaard"} In this subsection, we'll study an auxiliary filtration on $q$-de Rham--Witt complexes. Throughout [\[subsec:Nygaard\]](#subsec:Nygaard){reference-type="ref" reference="subsec:Nygaard"}, we fix a prime $p$. We'll also write $\phi$ instead of $\psi^p$ for the $p$^th^ Adams operation of the $\Lambda$-ring $A$. We extend $\phi$ to $A[q]$ via $\phi(q)\coloneqq q^p$.
 

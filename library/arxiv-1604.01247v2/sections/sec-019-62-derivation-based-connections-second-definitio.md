@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.982
 latex_coverage_ratio: 0.949
+doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — Based on an interpretation of the quark-lepton symmetry in terms of the unimodularity of the color group SU(3) and on the existence of 3 generations, we develop an"
 ---
 Let $J$, $Z(J)$, ${\mbox{Der}}(J)$ and $M$ be as in §6.1 and let $\Omega^n_{{\mbox{\tiny Der}}}(M)$ be the $J$-module of all $n$-$Z(J)$-linear antisymmetric mapping of ${\mbox{Der}}(J)$ into $M$, which means that $\Phi\in \Omega^n_{{\mbox{\tiny Der}}}(M)$ is a $Z(J)$-linear mapping $$\Phi: \wedge^n_{Z(J)}{\mbox{Der}}(J)\rightarrow M$$ with the notations of §5.4. The graded $J$-module $\Omega_{\mbox{\tiny Der}}(M)=\oplus_{n\geq 0}\Omega^n_{\mbox{\tiny Der}}(M)$ in naturally a graded Jordan module over the graded Jordan algebra $\Omega_{\mbox{\tiny Der}}(J)$: The product of $\omega\in \Omega^m_{\mbox{\tiny Der}}(J)$ with $\Phi\in\Omega^n_{\mbox{\tiny Der}}(M)$ is the element $\omega\Phi\in\Omega^{m+n}_{\mbox{\tiny Der}}(M)$ obtained by product of evaluations on derivations followed by antisymmetrization in the derivations. A *(derivation-based) connection* on $M$ is a linear endomorphism $\nabla$ of $\Omega_{\mbox{\tiny Der}}(M)$ such that $$\left\{
  \begin{array}{l}

@@ -8,6 +8,7 @@ pages: 70-71
 source_pdf: 0203273v3.pdf
 source_sha256: 824715d110e34305
 toc_source: inferred
+doc_brief: "arXiv:math/0203273v3 [math.CT] 12 Oct 2002 — 31 sections: Front matter; Introduction; Alg`ebres `a plusieurs objets"
 ---
 de 2-cocycle, et la congruence (13.5) `a une relation de 2-cobord. Pour donner corps
 `a ces impressions, introduisons encore quelques notations.

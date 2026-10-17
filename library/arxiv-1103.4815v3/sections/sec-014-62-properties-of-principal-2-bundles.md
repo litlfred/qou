@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.935
 latex_coverage_ratio: 0.976
+doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non-abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal 2-bundles."
 ---
 Principal $\Gamma$-2-bundles over $M$ form a bicategory denoted $\zwoabun\Gamma M$. There is an evident pullback 2-functor 
 \begin{equation*}

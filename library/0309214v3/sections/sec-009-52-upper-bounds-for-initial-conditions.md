@@ -8,6 +8,7 @@ pages: 18-19
 source_pdf: 0309214v3.pdf
 source_sha256: 53967ef30b0aedb9
 toc_source: outline
+doc_brief: "The colored Jones function is q –holonomic — A function of several variables is called holonomic if, roughly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many linear"
 ---
 Upper bounds for initial conditions
 In another direction, one may ask the following question: if a q–holonomic

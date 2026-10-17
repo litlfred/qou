@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.948
 latex_coverage_ratio: 0.935
+doc_brief: "BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections."
 ---
 Can we hear the shape of a drum? Much like harmonics of a musical instrument, spectra of quantum systems contain wealth of useful information. Of particular interest are supersymmetric or the so-called BPS states which, depending on the problem at hand, can manifest themselves either as minimal surfaces, or solutions to partial differential equations, or other "extremal" objects. Thus, a spectrum of BPS states in Calabi-Yau compactifications can be used to reconstruct the geometry of the Calabi-Yau space itself and, as we explain in this paper, spectra of BPS states play a similar role in low-dimensional topology.
 

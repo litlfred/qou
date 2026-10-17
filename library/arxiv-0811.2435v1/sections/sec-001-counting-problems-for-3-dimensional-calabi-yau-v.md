@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.99
 latex_coverage_ratio: 0.995
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 47 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 Let $X$ be a compact complex $3$-dimensional Kähler manifold such that $c_1(T_X)=0\in Pic(X)$ (hence by Yau theorem $X$ admits a Calabi-Yau metric). We can associate with $X$ several moduli spaces which have the virtual dimension zero:
 

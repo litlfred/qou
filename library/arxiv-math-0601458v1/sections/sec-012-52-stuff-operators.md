@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.972
 latex_coverage_ratio: 0.973
+doc_brief: "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS — Interest in combinatorial interpretations of mathematical entities stems from the convenience of the concrete models they provide."
 ---
 So far we have described stuff types, and implied that they, as extensions of structure types, are a useful way of categorifying functions - in the setting where these functions are seen as states of a certain quantum system. The inner product defined in section [\[stuffinnerprod\]](#stuffinnerprod){reference-type="ref" reference="stuffinnerprod"} gives these some of the structure of a Hilbert space, and also makes a connection to Feynman diagrams for energy quanta of a harmonic oscillator. We want to describe more of the structure of the 2-rig of stuff types - in particular its linear structure, demanding a definition for the equivalent of a linear operator. We call such a thing a *stuff operator*. There will be a category of these, called $\boldsymbol{\operatorname{{StuffOps}}}$, with higher-dimensional algebraic structure similar to that of the algebra of linear operators on a Hilbert space, with an action on the category $\boldsymbol{\operatorname{{StuffTypes}}}$.
 

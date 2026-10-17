@@ -8,6 +8,7 @@ pages: 14-16
 source_pdf: Download.pdf
 source_sha256: ca9639465b08d34c
 toc_source: outline
+doc_brief: "Concentration of empirical distribution functions with applications to non-i.i.d. models — 12 sections: Front matter; Introduction; Empirical Poincaré inequalities"
 ---
 As before, let (X1,...,Xn) be a random vector in Rn with joint distribution μ. Similarly to
 Proposition 2.1, now using a log-Sobolev inequality for μ, we arrive at the following ‘empirical’

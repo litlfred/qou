@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.946
 latex_coverage_ratio: 0.984
+doc_brief: "EXPLICIT DESCRIPTION OF CHRISTOFFEL DEFORMATIONS AND — Christoﬀel deformation of a measure on the real line consists of multipying this measure by a squared polynomial having its roots in R."
 ---
 We will use the following Lemma, which we prove at the end of this section. This Lemma gives simple asymptotic results on the Charlier polynomials involving Bessel functions and their derivatives. As far as we know, the asymptotics we give can not be found in the litterature in this simple form. However, one may consult [@ouwong] for a complete study of the asymptotics of Charlier polynomials.
 

@@ -8,6 +8,8 @@ pages: 16-20
 source_pdf: 0611504v1.pdf
 source_sha256: a33d2771c873a97e
 toc_source: outline
+doc_brief: "Quantum hyperbolic geometry — 22 sections: Front matter; Introduction; Universal QHG"
+duplicate_of: "agt-v7-n2-p13-s"
 ---
 parameters for R(g, r) which are related to the shear-bend coordinates for pleated hyperbolic surfaces.
 These parameters are obtained via an idealization procedure that includes the choice of a base point

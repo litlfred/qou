@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.959
 latex_coverage_ratio: 0.939
+doc_brief: "TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR — Categoriﬁcation is a process of lifting structures to a higher categorical level."
 ---
 By allowing homogeneous, but not necessarily grading preserving 2-morphisms in $\Ucat(\mf{g})$ we can define a version of the 2-category with larger 2-hom spaces.  Let $\Ucat^{\ast}(\mf{g})$ denote the 2-category with the same objects and the same 1-morphisms as $\Ucat(\mf{g})$, but with 2-hom spaces between one morphisms $X \onel$ and $Y\onel$ given by
 \[

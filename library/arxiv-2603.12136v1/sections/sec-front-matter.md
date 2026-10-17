@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 2603.12136v1.pdf
 source_sha256: e9c50616344b24e0
 toc_source: outline
+doc_brief: "Folding Mixed-Integer Linear Programs and Reflection Symmetries — For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the"
 ---
 Folding Mixed-Integer Linear Programs and
 Reflection Symmetries

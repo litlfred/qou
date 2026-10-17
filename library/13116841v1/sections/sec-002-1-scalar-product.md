@@ -8,6 +8,7 @@ pages: 8-9
 source_pdf: 1311.6841v1.pdf
 source_sha256: ca65879d80b1e1c3
 toc_source: outline
+doc_brief: "Observables in Loop Quantum Gravity with a cosmological constant — 6 sections: Front matter; Introduction; Contents"
 ---
 Product of tensor operators: scalar product, vector product and triple product
 We would like now to consider the analogue of (11) and (12) in terms of tensor operators.

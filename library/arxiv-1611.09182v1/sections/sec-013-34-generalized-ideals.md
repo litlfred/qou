@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.989
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 We define a subalgebra $B$ of an algebra $A$ to be a \it generalized ideal \rm if $m \left( a, \underline{b} \right) \in B,  \hspace{1mm} \forall \underline{b} \in B$ and for any $a \in A$, where $m$ is (generalized) multiplication.  The notion of a generalized ideal was introduced by this author in \cite{UTI}, and differs from the definition of left ideals by generalizing what is meant by `multiplication'.   Directly from the definition, it can be seen that ideals make up the algebra's most robust subspaces, which persist no matter what $a$ is multiplied onto them. 
 

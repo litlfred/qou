@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.989
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 In the following discussion we will restrict ourselves to the two-flavor case. The effective Lagrangian relevant to the one-nucleon sector consists of the sum of the purely mesonic and $\pi N$ Lagrangians, respectively, $$\label{4:2:full_lagrangian}
 {\cal L}_{\rm eff}

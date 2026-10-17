@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 1.0
+doc_brief: "Line Operators in the Standard Model — There is an ambiguity in the gauge group of the Standard Model."
 ---
 Let's now see what becomes of our line operators after electroweak symmetry breaking. The Higgs field $H$ lies in the $({\bf 2},{\bf 1})_3$  representation and condenses, breaking $U(1)_{\tilde{Y}}\times SU(2)\rightarrow U(1)_{em}$ of electromagnetism. We will denote the electric charges of $U(1)_{em}$ as $Q$ and the magnetic charges as $G$. We choose to normalise electric charges such that the electron has $Q=-1$. 
 

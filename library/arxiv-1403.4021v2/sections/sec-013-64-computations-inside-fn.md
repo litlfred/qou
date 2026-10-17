@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.844
 latex_coverage_ratio: 0.587
+doc_brief: "MARKOV TRACES ON THE BIRMAN-WENZL-MURAKAMI ALGEBRAS — We classify the Markov traces factoring through the Birman-Wenzl-Murakami (BMW) algebras."
 ---
 Following the arguments of Wenzl in \cite{WENZL} p. 400 we can derive additional useful relations
 inside $F_n$.

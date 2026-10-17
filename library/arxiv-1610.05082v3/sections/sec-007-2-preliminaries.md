@@ -8,6 +8,7 @@ pages: 5-6
 source_pdf: 1610.05082v3.pdf
 source_sha256: 90c8089953ff2d97
 toc_source: outline
+doc_brief: "WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL — Weighted dependency graphs have been recently introduced by the second author, as a toolbox to prove central limit theorems."
 ---
 2.1. The Ising model. We consider the Ising model on a ﬁnite subset Λ of Zd. We use the notation
 of [10], that we deﬁne now.

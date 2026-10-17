@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:hep-ph/9308276v1 14 Aug 1993 — The most general chiral Lagrangian for electroweak interactions with the complete set of SU(2)L × U(1)Y invariant operators up to dimen- sion four is considered."
 ---
 In this appendix, we give the different contributions to the one loop Green's functions appearing in the matching equations ([\[PM\]](#PM){reference-type="ref" reference="PM"},[\[VM\]](#VM){reference-type="ref" reference="VM"}). In these formulas, we have not written explicitely the counterterm in the bare $a_i$ coefficients for brevity; therefore the replacement $a_i \rightarrow a_i^{\msb}(\mu)
 + \delta a_i^{\msb}$ has to be understood. The rest of fields and parameters are renormalized quantities.

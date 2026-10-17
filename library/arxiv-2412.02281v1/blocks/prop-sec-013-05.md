@@ -1,0 +1,1 @@
+, we obtain this proposition.

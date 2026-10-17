@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1909.06797v5.pdf
 source_sha256: 87095d7e46ebe286
 toc_source: outline
+doc_brief: "Quantum Mechanics of Plancherel Growth — Growth of Young diagrams, equipped with Plancherel measure, follows the automodel equation of Kerov."
 ---
 Quantum Mechanics of Plancherel Growth
 Arghya Chattopadhyaya,b, Suvankar Duttac, Debangshu Mukherjeec,d, Neetuc

@@ -8,6 +8,8 @@ pages: 20-22
 source_pdf: 1404.0724v1.pdf
 source_sha256: ea40edaad77c1617
 toc_source: outline
+doc_brief: "Introduction to Representations of Braid Groups — These are lecture notes prepared for a minicourse given at the Cimpa Research School Algebraic and geometric aspects of representation the- ory, held"
+duplicate_of: "ariasabad2015-revcolmat"
 ---
 Representations of sl2(C) and Lawrence-Krammer-Bigelow
 We will consider the KZ connection for the semisimple Lie algebras g = sl2(C) of 2 × 2 complex

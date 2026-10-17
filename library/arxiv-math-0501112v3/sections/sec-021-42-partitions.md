@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.9
 latex_coverage_ratio: 0.844
+doc_brief: "arXiv:math/0501112v3 [math.CO] 31 May 2005 — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 []{#subsec:partitions label="subsec:partitions"} We recall that $\pi=\{\pi_1,\dots,\pi_r\}$ is a partition of a finite ordered set $X$ if sets $\pi_1,\dots,\pi_r$ are nonempty and disjoint and if $\pi_1\cup\cdots\cup\pi_r=X$.
 

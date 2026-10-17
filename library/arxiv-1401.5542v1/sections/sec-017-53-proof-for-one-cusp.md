@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.64
 latex_coverage_ratio: 1.0
+doc_brief: "THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS — The Ptolemy coordinates for boundary-unipotent SL(n, C)-representations of a 3-manifold group were introduced in [7] inspired by the A-coordinates on"
 ---
 We first prove Theorem~\ref{thm:PtolemyEqTrace} in the case where there is only one cusp. In this case, all edges are self edges, and $T$ consists of a single edge $\varepsilon_1$.
 \begin{lemma}\label{lemma:BootStrapEdgeOneCusp} For any self edge $\varepsilon$, we have $m_1c_\varepsilon\in k_\rho$. 

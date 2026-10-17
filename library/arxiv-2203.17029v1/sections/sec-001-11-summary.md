@@ -11,6 +11,8 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.98
 latex_coverage_ratio: 0.649
+doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised"
+duplicate_of: "modularqholonomicmodules"
 ---
 We introduce a new class of linear $q$-difference equations and (corresponding
 $q$-holonomic modules) which we call \emph{modular}, with several key features.

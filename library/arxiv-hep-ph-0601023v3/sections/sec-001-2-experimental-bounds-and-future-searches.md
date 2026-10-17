@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.94
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:hep-ph/0601023v3 23 Apr 2007 — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non - su- persymmetric uniﬁcation"
 ---
 The issue of proton stability has attracted attention over three quarters of
 a century. Thus in the period 1929-1949 the law of baryon number conservation was

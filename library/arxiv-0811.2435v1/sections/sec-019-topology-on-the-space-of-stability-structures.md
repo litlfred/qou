@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.99
 latex_coverage_ratio: 0.995
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 47 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 Let $\CC$ be an ind-constructible weakly unital $\A$-category over a field $\k$ of arbitrary characteristic. Let $\op{cl}: Ob(\CC)\to \Gamma\simeq \Z^n$ be a map of ind-constructible sets (where $\Gamma$ is considered as a countable set of points) such that the induced map $Ob(\CC)(\overline{\k})\to \Gamma$ factorizes through a group homomorphism $\op{cl}_{\overline{\k}}: K_0(\CC(\overline{\k}))\to \Gamma$. It is easy to see that for any field extension $\k^{\prime}\supset \k$ we obtain a homomorphism $\op{cl}_{\overline{\k}^{\prime}}: K_0(\CC(\overline{\k}^{\prime}))\to \Gamma$.
 

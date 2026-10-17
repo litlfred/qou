@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.95
 latex_coverage_ratio: 0.951
+doc_brief: "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS — In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the"
 ---
 \label{subsec:randomwalkchange}
 In this section, we shall make a brief excursion in the higher dimensions. Since we do not want to enter details on mod-Gaussian convergence for random vectors (for which we refer the reader to \cite{KN12} and \cite{FMN13}), we shall only consider the simple case $X=(X^{(1)},\ldots,X^{(d)})$ is a random vector with values in $\R^d$ such that $\mathbb E[\exp(z_1 X^{(1)}+\cdots+z_d X^{(d)})]$ is entire in $\CC^d$. We shall say that the sequence $(X_n)$ of random vectors converges in the complex  mod-Gaussian sense with parameter $t_n$ and limiting function $\psi(z_1,\cdots,z_d)$ if the following convergence holds locally uniformly on compact subsets of $\CC^d$:

@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 1002.4860v2.pdf
 source_sha256: a2cfe924f7a9f5a0
 toc_source: outline
+doc_brief: "A STATE-SUM FORMULA FOR THE ALEXANDER POLYNOMIAL — We develop a diagrammatic formalism for calculating the Alexander polynomial of the closure of a braid as a state-sum."
 ---
 (of type A), which enjoys a character theory [4] deforming that of the symmetric
 group. The Markov trace can be decomposed as a linear combination of irreducible

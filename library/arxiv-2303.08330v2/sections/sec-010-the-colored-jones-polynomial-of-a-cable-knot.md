@@ -8,6 +8,7 @@ pages: 14-15
 source_pdf: 2303.08330v2.pdf
 source_sha256: 94981fa0a792b3fa
 toc_source: outline
+doc_brief: "A Cable Knot and BPS-Series II — This is a companion paper to earlier work of the author, which generalizes to an inﬁnite family of (2, 2w + 1)-cabling of the ﬁgure eight knot (|w| > 3) and proposes"
 ---
 The colored Jones polynomial of a cable knot
 For (r,2)-cabling of a knot K in S3, its unnormalized sl2(C) colored Jones polynomial of is [22]

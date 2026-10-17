@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.989
 latex_coverage_ratio: 0.947
+doc_brief: "arXiv:math/0006057v2 [math.QA] 10 Jun 2000 — We give a survey of the theory of ﬁnite quantum groupoids (weak Hopf algebras), including foundations of the theory and applications to ﬁnite depth"
 ---
 ::: definition
 []{#Ribbon WHA label="Ribbon WHA"} A ribbon quantum groupoid is a quasitriangular quantum groupoid with an invertible central element $\nu\in H$ such that $$\Delta(\nu) = {\mathcal R}_{21}{\mathcal R}(\nu\otimes \nu) \quad\mbox{and}\quad S(\nu)=\nu.$$ The element $\nu$ is called a *ribbon element* of $H$.

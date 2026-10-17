@@ -8,6 +8,7 @@ pages: 2-3
 source_pdf: 1312.3086v1.pdf
 source_sha256: ff328e7c7cbdc70c
 toc_source: inferred
+doc_brief: "Quantum repeater with Rydberg blocked atomic ensembles in ﬁber-coupled cavities — 9 sections: Front matter; Introduction; The model"
 ---
 THE MODEL
 Our quantum repeater setup consists of N atomic en-

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.972
 latex_coverage_ratio: 0.996
+doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
 ---
 The first new example we consider is obtained by taking $K=3$ and $C = \IC\IP^1$,
 with a single defect at $z = \infty$, imposing the boundary conditions

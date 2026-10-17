@@ -8,6 +8,7 @@ pages: 23-23
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
 toc_source: outline
+doc_brief: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT — 63 sections: Front matter; ACKNOWLEDGMENTS; ABSTRACT"
 ---
 The quantum dilogarithm arose as a deformation of the classical dilogarithm. Its
 myriad of forms and versions are a mathematical epic [21]. Notable are [5] which

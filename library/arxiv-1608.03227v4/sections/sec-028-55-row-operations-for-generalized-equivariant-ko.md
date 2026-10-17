@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.623
 latex_coverage_ratio: 0.976
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 []{#ssec: row ops label="ssec: row ops"} We use notations of the lemma [\[lem: ext MF+eq\]](#lem: ext MF+eq){reference-type="ref" reference="lem: ext MF+eq"} here and we also assume that the complex $(\calF_\bullet,d^+)$ is the Koszul complex tensored with matrix factorization $(M,D,\partial)$: $$\calF_\bullet=\tilde{M} \otimes \Lambda^\bullet V, \quad d^+=\sum_{j=1}^n f_i\theta_i,$$ where $\theta_i$ form a basis of $V$ and $f_1,\dots,f_n$ form a regular sequence in $\CC[\calZ]$. We call such matrix factorizations generalized equivariant Koszul matrix factorizations.
 

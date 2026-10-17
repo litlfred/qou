@@ -8,6 +8,7 @@ pages: 2-4
 source_pdf: 2507.19896v1.pdf
 source_sha256: a3f23d5a08b397ee
 toc_source: outline
+doc_brief: "Generalized Markov traces and Jucys-Murphy elements — We give a simple construction of Markov traces for Iwahori-Hecke algebras associated with infinite series of crystallographic Coxeter groups."
 ---
 Iwahori-Hecke algebras and multiplicative Jucys-Murphy elements.
 2.1

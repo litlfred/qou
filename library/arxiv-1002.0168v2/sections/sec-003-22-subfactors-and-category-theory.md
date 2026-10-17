@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "Non-cyclotomic fusion categories Introduction — Etingof, Nikshych and Ostrik ask in [7, §2] if every fusion category can be completely deﬁned over a cyclotomic ﬁeld."
 ---
 The main examples in this paper come from the theory of subfactors. A subfactor is an inclusion $A \subset B$ of von Neumann algebras with trivial centers. The applications of subfactor theory to tensor categories involve subfactors of finite index.
 

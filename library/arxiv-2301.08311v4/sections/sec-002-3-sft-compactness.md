@@ -8,6 +8,7 @@ pages: 14-30
 source_pdf: 2301.08311v4.pdf
 source_sha256: 385139c69e18f5b0
 toc_source: outline
+doc_brief: "FLOER COHOMOLOGY AND HIGHER MUTATIONS — We extend the construction of higher mutation as introduced in [PT20] to local higher mutation, which is applicable to a larger class of monotone Lagrangians."
 ---
 In this section, we will explain a version of the neck-stretching procedure where the Lagrangian
 passes through the neck region and prove a compactness result with assumptions on the Legendrian

@@ -8,6 +8,7 @@ pages: 11-14
 source_pdf: 0601458v1.pdf
 source_sha256: ef34611620cfd0bd
 toc_source: outline
+doc_brief: "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS — Interest in combinatorial interpretations of mathematical entities stems from the convenience of the concrete models they provide."
 ---
 ture types are a categoriﬁed version of formal power series (with natural number
 coeﬃcients). We want to use them to help us categorify the Weyl algebra, which is

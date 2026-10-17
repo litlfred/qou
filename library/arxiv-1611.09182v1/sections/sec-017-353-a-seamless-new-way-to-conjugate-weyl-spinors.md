@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.992
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 In quantum field theory textbooks, it is typically explained that a left handed Weyl spinor, $\Psi_{\textup{L}}$, can be conjugated so as to give a right-handed Weyl spinor.  The procedure necessary to do so, in the usual matrix-and-column-vector formalism, entails (1) complex conjugating the left-handed spinor's two components, and (2) multiplying this column vector by the matrix $\epsilon = -i\sigma_y=\left( \begin{smallmatrix}0&-1\\1&0 \end{smallmatrix}  \right)$, 
 

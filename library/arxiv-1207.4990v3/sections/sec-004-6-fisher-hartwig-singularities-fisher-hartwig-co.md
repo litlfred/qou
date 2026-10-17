@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.957
 latex_coverage_ratio: 0.996
+doc_brief: "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results — 11 sections: Front matter; Setting the problem; Toeplitz meets Ising"
 ---
 []{#sectionFH label="sectionFH"} In addition to the new questions and challenges raised in Toeplitz theory by the Ising model for $T\ge T_c$, other kinds of singularities also began to appear. For example, in 1964, in his work on the ground state of the one-dimensional system of impenetrable bosons [@Len1] Lenard expressed the one-particle density matrix for the system as a Toeplitz matrix with a symbol $\varphi\!\left(e^{i\theta}\right)$ that vanished at some points on $S^1$ (see [\[eq81\]](#eq81){reference-type="eqref" reference="eq81"} and particularly Remark [\[Lenard\]](#Lenard){reference-type="ref" reference="Lenard"} below for further discussion). In 1968, in a major step in the development and generalization of SSLT, Fisher and Hartwig [@FisHart1] introduced a class of singular symbols for Toeplitz determinants, that allowed for zeros, (integrable) singularities, discontinuities and non-zero winding numbers.
 

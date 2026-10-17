@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1912.13486v2/blocks/prose-sec-001",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Analysis on homological block and index of lens space theory",
-  "pageStart": 9,
-  "pageEnd": 21,
-  "text": "../sections/sec-001-22-analysis-on-homological-block-and-index-of-le.md",
+  "title": "Supersymmetric index, factorization, and D2 q S1 partition function",
+  "pageStart": 2,
+  "pageEnd": 9,
+  "text": "../sections/sec-001-21-supersymmetric-index-factorization-and-d2-q-s.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1912.13486v2/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1912.13486v2/manifest.jsonld",
   "provenance": "ingested"

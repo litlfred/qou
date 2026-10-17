@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.983
 latex_coverage_ratio: 0.944
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 []{#cy label="cy"} The forgetful functor $Z({\mathcal C})\to {\mathcal C}$ induces a homomorphism of rings $F:K(Z({\mathcal C}))\to K({\mathcal C})$. It is clear that the image of this map is contained in the center $Z(K({\mathcal C}))$ of the ring $K({\mathcal C})$.
 

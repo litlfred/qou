@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.938
 latex_coverage_ratio: 1.0
+doc_brief: "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES — We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury."
 ---
 First assume that $q$ is not a root of unity. Then for any $V\in \mathcal{C}_q$, $E|_V$ is nilpotent, since $E$ maps eigenvectors of $g$ with eigenvalue $\lambda$ to those with eigenvalue $\lambda q$. Thus, the indecomposable objects of $\mathcal{C}_q$ are $V_{m_1,m_2}$, where $m_1\ge m_2$ are integers, namely, Jordan blocks for $E$ of size $m_1-m_2+1$ containing a nonzero vector $v$ with $gv=q^{m_1}v, Ev=0$. Then $\dim V_{m_1,m_2}=q^{m_2}+...+q^{m_1}$, which is never zero, so there is no nonzero negligible objects. It is easy to see that the tensor product of $V_{m_1,m_2}$ obeys the same fusion rules as representations of $GL_{{\bold q}}(2)$ with highest weights $(m_1,m_2)$, where ${\bold q}^2=q$. From this we obtain
 

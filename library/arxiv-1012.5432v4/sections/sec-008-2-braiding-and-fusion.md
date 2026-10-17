@@ -8,6 +8,7 @@ pages: 24-25
 source_pdf: 1012.5432v4.pdf
 source_sha256: ec5f6da1f813649e
 toc_source: outline
+doc_brief: "quant-ph Towards Topological Quantum Computation? - — 23 sections: Front matter; A Hamiltonian; Instantons"
 ---
 Braiding and Fusion
 The braiding and fusion rules for Z/NZ theories are particularly simple. Braiding two

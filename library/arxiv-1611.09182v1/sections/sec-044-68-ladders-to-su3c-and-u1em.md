@@ -8,6 +8,7 @@ pages: 58-61
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
 toc_source: outline
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 Ladders to su(3)c and u(1)em
 We will now ﬁnd a compact way of describing the generators of the MTIS symmetries,

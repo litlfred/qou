@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
 latex_coverage_ratio: 0.951
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 []{#subsectionemff label="subsectionemff"} Imposing the relevant symmetries such as translational invariance, Lorentz covariance, the discrete symmetries, and current conservation, the nucleon matrix element of the electromagnetic current operator ${\cal J}^\mu(x)$, $${\cal J}^{\mu}(x)
 =\frac{2}{3}\,\bar{u}(x)\gamma^{\mu}u(x)

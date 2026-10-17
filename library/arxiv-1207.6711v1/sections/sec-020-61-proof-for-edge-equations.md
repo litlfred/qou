@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.804
 latex_coverage_ratio: 0.975
+doc_brief: "GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were"
 ---
 \label{subsection:ProofForEdgeEqn}
 Let $K$ be the space defined by cyclically gluing together $k$ simplices $\Delta_0,\dots,\Delta_{k-1}$ along the common edge $01$, pairing all faces via the permutation $(23)$, see Figure~\ref{fig:EdgeLocal}. 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.961
 latex_coverage_ratio: 0.996
+doc_brief: "Higher Dimensional Algebra VII: Groupoidiﬁcation — Groupoidiﬁcation is a form of categoriﬁcation in which vector spaces are replaced by groupoids and linear operators are replaced by spans of"
 ---
 To prove that a tame span gives a well-defined operator, we begin with three lemmas that are of some interest in themselves. We postpone to Appendix [\[appendix\]](#appendix){reference-type="ref" reference="appendix"} some well-known facts about groupoids that do not involve the concept of degroupoidification. This Appendix also recalls the familiar concept of 'equivalence' of groupoids, which serves as a basis for this:
 

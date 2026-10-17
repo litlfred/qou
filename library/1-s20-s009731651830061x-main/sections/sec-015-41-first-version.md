@@ -8,6 +8,7 @@ pages: 21-27
 source_pdf: 1-s2.0-S009731651830061X-main.pdf
 source_sha256: 8d591fe7f1673c52
 toc_source: outline
+doc_brief: "Fischer, Constant term formulas for refined enumerations of Gog and Magog trapezoids (JCTA 158, 2018, 560–604) — alternating sign matrices, plane partitions, constant-term methods."
 ---
 Using a standard technique, we can transform (m, n, k)-Magog trapezoids with pre-
 scribed bottom row (bn−k+1, bn−k+2, . . . , bn) into families of non-intersecting lattice 

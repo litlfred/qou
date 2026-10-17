@@ -8,6 +8,7 @@ pages: 4-4
 source_pdf: 1-s2.0-S002212362200012X-main.pdf
 source_sha256: 6fc7d28c8d40bf42
 toc_source: outline
+doc_brief: "Journal of Functional Analysis Log concavity and concentration of Lipschitz functions on the Boolean hypercube — 15 sections: Front matter; Log concavity and concentration of; Introduction"
 ---
 Our second result addresses the question of ﬁnding conditions under which the entropy 
 of the measure ν is close to that of the corresponding product measure, having the same 

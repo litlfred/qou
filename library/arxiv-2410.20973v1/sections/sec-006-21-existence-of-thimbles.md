@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.902
 latex_coverage_ratio: 0.947
+doc_brief: "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS — We prove conjectures of Garoufalidis-Gu-Mari˜no [9] that perturbative series associated with the hyperbolic knots 41 and 52 are resurgent and"
 ---
 To effectively understand the structure of thimbles associated to $V$, we will use two descriptions of $\Sigma$ and $V$. In particular, we choose branch cuts in the upper half plane to define a function $\Lambda$ (see Figure~\ref{fig:branchcut}).
 \begin{figure}[ht]

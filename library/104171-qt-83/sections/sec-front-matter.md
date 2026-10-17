@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 10.4171-qt-83.pdf
 source_sha256: d95b9363de2766d2
 toc_source: outline
+doc_brief: "DOI 10.4171/QT/83 — We give a presentation of the asymptotic expansion of the Kashaev invariant of the 52 knot."
 ---
 Quantum Topol. 7 (2016), 669–735
 DOI 10.4171/QT/83

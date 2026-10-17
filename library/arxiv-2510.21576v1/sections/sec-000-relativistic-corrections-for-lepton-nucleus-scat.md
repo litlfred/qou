@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2510.21576v1.pdf
 source_sha256: 17a79b59d590c8da
 toc_source: outline
+doc_brief: "Relativistic corrections for lepton-nucleus scattering in the short-time approximation — 8 sections: Relativistic corrections for lepto; Introduction; Short-time approximation"
 ---
 L. Andreoli1,2,∗R. Weiss3,† G. Chambers-Wall3,‡ A. Gnech1,2,§ S. Pastore3,4,¶ M. Piarulli3,4,∗∗and S. Gandolfi5
 1Department of Physics, Old Dominion University, Norfolk, VA 23529, USA

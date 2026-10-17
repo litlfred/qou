@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.945
 latex_coverage_ratio: 0.965
+doc_brief: "arXiv:hep-ph/0003017v2 26 Jun 2000 — Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems."
 ---
 []{#Finite-Volume label="Finite-Volume"} As we have seen before, chiral symmetry is spontaneously broken by the QCD vacuum. According to Goldstone's theorem, this leads to the appearance of massless modes. The Lagrangian describing the dynamics of these modes can be obtained solely from the symmetries of the QCD partition function. Goldstone modes corresponding to the symmetry-breaking pattern ${\rm SU}_R(N_f) \times {\rm SU}_L(N_f)
 \rightarrow {\rm SU}_V(N_f)$ can be parameterized as $$U =  U_R U_L^{-1}$$ with $U_R \in {\rm SU}_R(N_f)$ and $U_L \in {\rm SU}_L(N_f)$. The chiral Lagrangian is constructed by the requirement that it should have the same invariance properties as the QCD Lagrangian. In particular, for $m=0$ the Lagrangian should be both Lorentz invariant and invariant under ${\rm SU}_R(N_f) \times {\rm SU}_L(N_f)$. To lowest order in the momenta (or derivatives), the kinetic term in the effective Lagrangian is uniquely given by [@Weinberg; @GaL] $$\label{Lkin}

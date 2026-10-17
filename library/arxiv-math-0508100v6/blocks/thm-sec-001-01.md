@@ -1,1 +1,1 @@
-(The MMR conjecture) [ BNG96] For every knot K we have
+(The MMR conjecture) [BNG96] For every knot K we have

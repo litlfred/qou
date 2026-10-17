@@ -8,6 +8,7 @@ pages: 137-139
 source_pdf: 2207.07246v2.pdf
 source_sha256: 91e70e5fe39e07a5
 toc_source: outline
+doc_brief: "Path Integral Quantum Monte Carlo Method for Light Nuclei — 64 sections: Front matter; ABSTRACT; LIST OF TABLES"
 ---
 We use an analytical function ΨT(x) as the importance sampling function for the
 N-particle system. We deﬁne a new distribution function f(x, τ),

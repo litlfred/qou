@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.905
 latex_coverage_ratio: 0.881
+doc_brief: "OPTIMIZATION ON FLAG MANIFOLDS — A ﬂag is a sequence of nested subspaces."
 ---
 We describe this in Algorithm [\[alg:sd\]](#alg:sd){reference-type="ref" reference="alg:sd"}. A point $\llbracket Y \rrbracket\in \mathop{\mathrm{Flag}}(n_1,\dots,n_d;n)$ is represented in Stiefel coordinates, i.e., as an orthonormal matrix $Y \in \mathbb{R}^{n \times n_d}$, $Y^{\scriptscriptstyle\mathsf{T}}Y=I$. As usual, $Y^{\perp} \in \mathbb{R}^{n \times (n-n_d)}$ is such that $X \coloneqq [ Y, Y^{\perp}] \in \mathop{\mathrm{O}}(n)$. The Riemannian gradient $\nabla f \in \mathbb{R}^{n \times n_d}$ is given by Proposition [\[prop:gradient\]](#prop:gradient){reference-type="ref" reference="prop:gradient"} and we set $G = - \nabla f$ to be the search direction. The exponential map direction $B\in \mathbb{R}^{n\times n}$ is uniquely obtained from $B I_{n,n_d} = [Y,Y^{\perp}]^{\scriptscriptstyle\mathsf{T}}G$, i.e., $B$ is the unique skew-symmetric matrix whose first $n_d$ columns is $[Y,Y^{\perp}]^{\scriptscriptstyle\mathsf{T}}G$. The next iterate is then found along the geodesic determined by the current iterate and the direction as in Proposition [\[prop:geodesic3a\]](#prop:geodesic3a){reference-type="ref" reference="prop:geodesic3a"}, although the exact line search may be substituted by any reasonable strategy for choosing step size. Note in particular that Algorithm [\[alg:sd\]](#alg:sd){reference-type="ref" reference="alg:sd"} does not involve parallel transport.
 

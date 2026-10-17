@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0807.2679v1.pdf
 source_sha256: 69ef10f8e70fc6f6
 toc_source: outline
+doc_brief: "A cabling formula for the colored Jones polynomial — We prove an explicit cabling formula for the colored Jones polynomial."
 ---
 arXiv:0807.2679v1  [math.GT]  17 Jul 2008
 A cabling formula for the colored Jones

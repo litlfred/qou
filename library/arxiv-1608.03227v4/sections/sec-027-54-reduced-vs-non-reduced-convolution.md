@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.992
 latex_coverage_ratio: 0.992
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 Let $\bar{\pi}_{con}:\calX_3\to \calXr_3$ be the map defined by $$\SymbolPrint{\bar{\pi}_{con}}(X,g_1,Y_1,g_2,Y_2,g_3,Y_3)=(\Ad_{g_1}^{-1}(X)_+,g_1^{-1}g_2,g_2^{-1}g_3,Y_3).$$
 

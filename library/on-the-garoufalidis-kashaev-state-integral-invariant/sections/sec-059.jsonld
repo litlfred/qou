@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/sections/sec-059",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Topological Invariance Theorem",
+  "pageStart": 56,
+  "pageEnd": 58,
+  "contains": [
+    "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-059",
+    "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/thm-sec-059-01",
+    "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/rem-sec-059-02",
+    "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/rem-sec-059-03",
+    "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/rem-sec-059-04"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/on-the-garoufalidis-kashaev-state-integral-invariant/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/on-the-garoufalidis-kashaev-state-integral-invariant/manifest.jsonld",
+  "provenance": "ingested"
+}

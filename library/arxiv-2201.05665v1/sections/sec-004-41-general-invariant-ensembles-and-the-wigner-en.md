@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.971
 latex_coverage_ratio: 0.964
+doc_brief: "HAROLD WIDOM’S WORK IN RANDOM MATRIX THEORY — This is a survey of Harold Widom’s work in random matrices."
 ---
 The GUE, GOE and GSE ensembles are respectively particular examples of unitary (UE), orthogonal (OE) and symplectic (SE) ensembles of random matrix theory. The joint probability density of the eigenvalues for these ensembles are given by (cf. ([\[eigenprob\]](#eigenprob){reference-type="ref" reference="eigenprob"})) $$\label{eigenprob1}
 P_{N \beta}(\lambda_1, ..., \lambda_N) =

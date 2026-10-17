@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.954
 latex_coverage_ratio: 0.981
+doc_brief: "Concentration of Measure Techniques and Applications — 25 sections: Front matter; Biographical Sketch; Acknowledgments"
 ---
 By generalizing this method introduced by Chatterjee and Ledoux, we are able to show concentration of measure of the empirical spectral distribution not only for operator compressions via $SO(n)$ but also for operators that are \"compressed\" by conjugation with a Gaussian matrix. It is likely that this method could be applied to a much wider range of Markov chains, given that the chain does not change too many entries at once, has an appropriate invariant distribution, and for which the spectral gap is known. It is possible that better bounds for the Gaussian compression could be obtained by adapting the method to use the \"second\" spectral gap or the exponential decay rate in relative entropy found in [@BLV].
 

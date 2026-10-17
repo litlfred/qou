@@ -8,6 +8,7 @@ pages: 59-62
 source_pdf: 1006.1099v3.pdf
 source_sha256: 76c1c4173cdee9d8
 toc_source: outline
+doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS — There is a classical relationship in algebraic geometry between a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
 ---
 only Z2-graded, as in Section 3.5 one can impose a Z-grading by considering the ﬁltrations on
 Floer complexes coming from intersections of holomorphic polygons with the polar divisor ∆of

@@ -8,6 +8,7 @@ pages: 19-20
 source_pdf: 2102.00255v1.pdf
 source_sha256: b63df73a9d0e1534
 toc_source: outline
+doc_brief: "RIGIDITY, RESIDUES AND DUALITY: OVERVIEW AND RECENT PROGRESS — In this article we explain the theory of rigid residue complexes in commutative algebra and algebraic geometry, summarizing the"
 ---
 [AILN] L.L. Avramov, S.B. Iyengar, J. Lipman and S. Nayak, Reduction of derived Hochschild functors over
 commutative algebras and schemes, Advances in Mathematics 223 (2010) 735-772.

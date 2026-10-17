@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 Bilinears and other scalars can now be built by combining the various ideal representations, whose $SL(2, \mathbb{C})$ factors, $L$, fit together like lock and key.  Noting that $\widetilde{L} = L^{-1}$, let us consider for example the real part of $\Psi_{\textup{L}}^{\dagger} i \partial \hspace{0.05cm} \Psi_{\textup{L}} +  \Psi_{\textup{R}}^{\dagger} i {\partial}^* \hspace{0.05cm} \Psi_{\textup{R}} $, where  $\partial \equiv \partial_t -i{\epsilon_x}\hspace{1mm} \partial_x- i{\epsilon_y}\hspace{1mm} \partial_y- i{\epsilon_z} \hspace{1mm}\partial_z$.  Under a Lorentz transformation, 
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.748
 latex_coverage_ratio: 0.925
+doc_brief: "Quantum Modular Forms and Resurgence — In 2010, Zagier described a new phenomenon which he called quantum mod- ularity."
 ---
 []{#subsec: discontinuity label="subsec: discontinuity"} Here we compute the discontinuities of the Borel-Laplace sums of the functions of *Types 4* and *5* along the ray of angle $\pi/2$.
 

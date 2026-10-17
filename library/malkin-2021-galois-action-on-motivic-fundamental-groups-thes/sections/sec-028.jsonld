@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-028",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Second shuffle relations",
+  "pageStart": 100,
+  "pageEnd": 101,
+  "contains": [
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-028",
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/thm-sec-028-01",
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/conj-sec-028-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest.jsonld",
+  "provenance": "ingested"
+}

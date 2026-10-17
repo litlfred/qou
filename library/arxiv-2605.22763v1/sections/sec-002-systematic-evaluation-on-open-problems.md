@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.787
 latex_coverage_ratio: 0.77
+doc_brief: "Advancing Mathematics Research with AI-Driven Formal Proof Search — 15 sections: Front matter; Introduction; AlphaProof Nexus"
 ---
 \paragraph{{\erdos} Problems.} 
 

@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.779
 latex_coverage_ratio: 0.935
+doc_brief: "arXiv:math/0501112v3 [math.CO] 31 May 2005 — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 Element $\Sigma_{\underbrace{1,\dots,1}_{k \text{ times}} }\in
 {\mathbb{C}}(S_q)$ is equal to $q (q-1) \cdots (q+1-k)$, the multiple of identity, therefore no matter which representation we consider we always have $${\mathbb{E}}\Sigma_{\underbrace{1,\dots,1}_{k \text{ times}} }\in

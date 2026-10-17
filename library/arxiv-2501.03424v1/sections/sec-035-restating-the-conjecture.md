@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 0.928
+doc_brief: "Soergel bimodules and Kazhdan-Lusztig polynomials — This paper presents an exposition of Soergel bimodules, the categoriﬁcation of Hecke alge- bras, and their applications to various topics in"
 ---
 The Kazhdan-Lusztig conjecture states that for a complex semisimple Lie algebra $\g$, and any $x,y$ in the Weyl group $W,$
 $$[M_y : L_x] = h_{y,x}(1)$$

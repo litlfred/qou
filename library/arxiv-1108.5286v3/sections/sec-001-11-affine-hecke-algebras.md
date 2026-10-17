@@ -8,6 +8,7 @@ pages: 5-5
 source_pdf: 1108.5286v3.pdf
 source_sha256: 447d90883adce21e
 toc_source: outline
+doc_brief: "Hochschild homology of aﬃne Hecke algebras Maarten Solleveld Contents — Let H = H(R, q) be an aﬃne Hecke algebra with complex, possibly unequal parameters q, which are not roots of unity."
 ---
 some arguments involving localization at central characters.
 We do not study the consequences for the Hochschild homology of reductive

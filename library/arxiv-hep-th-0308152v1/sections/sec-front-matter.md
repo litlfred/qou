@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0308152v1.pdf
 source_sha256: 93bcc14b8be91257
 toc_source: outline
+doc_brief: "TORUS KNOT AND MINIMAL MODEL — 2 sections: Front matter; Eichler Integral of the Character"
 ---
 arXiv:hep-th/0308152v1  22 Aug 2003
 TORUS KNOT AND MINIMAL MODEL

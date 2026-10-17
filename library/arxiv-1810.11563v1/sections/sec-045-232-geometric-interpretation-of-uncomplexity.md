@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.996
 latex_coverage_ratio: 0.998
+doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
 ---
 Figure \ref{S1} illustrates a one-sided AdS black hole formed by the collapse of some matter. In the upper right corner the small slash-mark indicates the exponential time at which the complexity becomes maximal. In Lecture II  I explained the reasons for thinking that a breakdown of classical GR and possibly the occurrence of firewalls might take place at this  time.
 The figure also shows Alice at time $t$ who is contemplating a jump into the black  hole. She would like to know how much spacetime volume is available to her to explore.

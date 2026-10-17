@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1502.02882v2",
  "source_sha256": "43641c6f3aed63dd",
- "brief": "Fusion categories via string diagrams Bruce Bartlett — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories.",
- "extended": "**Fusion categories via string diagrams Bruce Bartlett**\n\n36 pp, 23 sections.\n\n**Abstract.** We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories. These results include: the quadruple dual is canonically isomorphic to the identity, positivity of the paired dimensions, and Ocneanu rigidity. We introduce the pairing convention as a convenient graphical framework for working with fusion categories. We use this framework to express the pivotal operators as a product of the apex associator monodromy and the pivotal indicators. We also characterize pivotal structures as solutions of an explicit set of algebraic equations over the complex numbers.\n\n**Outline.** 1 Introduction; 2 String diagrams; 2.1 Conventions for general monoidal categorie; 2.2 Conventions for fusion categories; 3 The pivotal operators on a fusion category; 3.2 The pairing convention; 3.1 Fusion and Frobenius-Peron dimensions; 3.2.1 Further graphical conventions; 3.3 The pivotal operators; 3.4 Positivity of paired dimensions; 3.5 The pivotal operators as a monoidal functo; 3.6 The pivotal operators are the double dual ; 4 Explicit formula for the pivotal operators; 4.2 The pivotal indicators; 4.1 Monodromy interpretation of the pivotal op; 4.3 Formula for the pivotal operators; 5 Pivotal structures; 5.1 Explicit equations for pivotal structures",
+ "brief": "Fusion categories via string diagrams — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories.",
+ "extended": "**Fusion categories via string diagrams**\n\n*Bruce Bartlett*\n\n36 pp, 24 sections.\n\n**Abstract.** We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories. These results include: the quadruple dual is canonically isomorphic to the identity, positivity of the paired dimensions, and Ocneanu rigidity. We introduce the pairing convention as a convenient graphical framework for working with fusion categories. We use this framework to express the pivotal operators as a product of the apex associator monodromy and the pivotal indicators. We also characterize pivotal structures as solutions of an explicit set of algebraic equations over the complex numbers.\n\n**Outline.** Front matter; 1 Introduction; 2 String diagrams; 2.1 Conventions for general monoidal categorie; 2.2 Conventions for fusion categories; 3 The pivotal operators on a fusion category; 3.2 The pairing convention; 3.1 Fusion and Frobenius-Peron dimensions; 3.2.1 Further graphical conventions; 3.3 The pivotal operators; 3.4 Positivity of paired dimensions; 3.5 The pivotal operators as a monoidal functo; 3.6 The pivotal operators are the double dual ; 4 Explicit formula for the pivotal operators; 4.2 The pivotal indicators; 4.1 Monodromy interpretation of the pivotal op; 4.3 Formula for the pivotal operators; 5 Pivotal structures\n\n**Extracted claims (proposals, not verified).**\n- Corollary 5.15: The sphericalization ˜C of a fusion category\n- Lemma 5.14: The sphericalization ˜C of C has simple objects Xsi\n- Lemma 5.17: The Frobenius-Perron and fusion dimensions in ˜C are the same\n- Lemma 6.5: In the pairing convention for the graphical calculus associated to",
  "tokens": {
-  "brief": 48,
-  "extended": 353
+  "brief": 44,
+  "extended": 429
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -129,7 +134,8 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles"
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

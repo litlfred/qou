@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.985
 latex_coverage_ratio: 1.0
+doc_brief: "quant-ph Towards Topological Quantum Computation? - — 23 sections: Front matter; A Hamiltonian; Instantons"
 ---
 The fusion rules for $A_5$ can be found in the following pages. Once again every particle is its own antiparticle. Note that, unlike in the $S_3$ case, there are multiple ways of obtaining some of the products - For instance, E and F can fuse to produce E in two distinct ways.
 

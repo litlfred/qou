@@ -8,6 +8,7 @@ pages: 10-34
 source_pdf: 1508.05448v1.pdf
 source_sha256: 57d2c717d8ec74d0
 toc_source: outline
+doc_brief: "Concentration of Measure Techniques and Applications — 25 sections: Front matter; Biographical Sketch; Acknowledgments"
 ---
 Introduction
 The idea of concentration of measure was ﬁrst introduced by Milman in the asymp-

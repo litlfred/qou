@@ -1,0 +1,1 @@
+[\[traceofS2\]](#traceofS2){reference-type="ref" reference="traceofS2"} is proved in Section 5. Theorem [\[sscoss\]](#sscoss){reference-type="ref" reference="sscoss"} follows from Theorem [\[multi-fus\]](#multi-fus){reference-type="ref" reference="multi-fus"}, since the representation category of the dual weak Hopf algebra is the dual category.

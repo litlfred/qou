@@ -8,6 +8,8 @@ pages: 29-29
 source_pdf: 0611504v1.pdf
 source_sha256: a33d2771c873a97e
 toc_source: outline
+doc_brief: "Quantum hyperbolic geometry — 22 sections: Front matter; Introduction; Universal QHG"
+duplicate_of: "agt-v7-n2-p13-s"
 ---
 HN(W, L, ρ, 0, 0) coincide with the invariants HN(W, L, ρ) constructed in [4, 5]. Let us consider more
 generally (W, LF, L0, ρ, 0, 0).

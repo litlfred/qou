@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.995
 latex_coverage_ratio: 0.991
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 47 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 In this section we are going to discuss the identity which will be crucial in the proof of the main theorem of Section 6.
 

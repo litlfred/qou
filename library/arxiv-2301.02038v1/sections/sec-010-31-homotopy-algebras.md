@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 0.976
+doc_brief: "Contemporary Mathematics — Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a system of possibly non-linear partial dif- ferential equations and it"
 ---
 In this subsection, we recall the definitions of those homotopy algebras that we will need in the rest of the paper. Roughly, a homotopy algebra of a certain type (associative, Lie, etc.) is a graded vector space equipped with operations satisfying the algebra axioms only up to a coherent system of \emph{higher homotopies}. Homotopy algebras appear when cohomology and homotopy interact with algebraic structures \cite{lv12, v14}. We adopt the degree $1$ convention on the operations of a homotopy algebra, and we only work with (graded) vector spaces over a field of zero characteristic.
 

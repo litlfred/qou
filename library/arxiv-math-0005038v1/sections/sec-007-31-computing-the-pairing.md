@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.965
 latex_coverage_ratio: 0.949
+doc_brief: "arXiv:math/0005038v1 [math.GR] 4 May 2000 — The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc."
 ---
 We now describe how to compute the pairing between a give noodle and fork. Let $N$ be a noodle and let $F$ be a fork. By applying a preliminary isotopy, we can assume that $T(F)$ intersects $N$ transversely at a finite number of points, which we label $z_1,\dots,z_l$. Let $F'$ be a parallel copy of $F$. Choose $F'$ so that $T(F')$ intersects $N$ transversely at $z'_1,\dots,z'_l$, where $z_i$ and $z'_i$ are joined by a short arc in $N$ which meets no other $z_j$ or $z'_j$. Let $z$ be the vertex which lies in all three edges of $F$, and let $z'$ be the vertex which lies in all three edges of $F'$.
 

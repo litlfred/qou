@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.996
 latex_coverage_ratio: 0.97
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 47 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 Let $\g, \Gamma$ be as in Section 2.1. We assume that the ground field is $\C$. Suppose that $C\subset \Gamma_{\R}$ is a strict convex cone. We are interested in such stability data $(Z,a)$ that $\op{Supp}a\subset C\cup (-C)$. We define $D$ as an open subset of $\op{Hom}(\Gamma, \C)$ which consists of additive maps such that $C\cap \Gamma$ is mapped into the upper-half plane ${\cal{H}}_+=\{
 z\in \C\,|\,\op{Im}(z)>0\}$. We interpret $D$ as an open subset of $Stab(\g)$. Every $\alpha\in C\cap {\Gamma}$ gives rise to an invertible function (coordinate) $z_{\alpha}\in {\cal O}(D)^{\times}$ such that $z_{\alpha}(Z,a)=Z(\alpha)$.

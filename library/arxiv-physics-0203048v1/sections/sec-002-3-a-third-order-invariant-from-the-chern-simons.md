@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.987
 latex_coverage_ratio: 0.991
+doc_brief: "arXiv:physics/0203048v1 [physics.plasm-ph] 15 Mar 2002 — An expression for a third-order link integral of three magnetic ﬁelds is presented."
 ---
 []{#section-third-order-invariant label="section-third-order-invariant"} In this section we construct a third-order invariant which, under conditions specified below, yields an invariant for three magnetic fields. The derivation is based on some basic knowledge in differential geometry found e.g. in Frankel (1997).
 

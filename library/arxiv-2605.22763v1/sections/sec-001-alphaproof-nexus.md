@@ -8,6 +8,7 @@ pages: 1-4
 source_pdf: 2605.22763v1.pdf
 source_sha256: 1fe6b92bb5eb0b45
 toc_source: outline
+doc_brief: "Advancing Mathematics Research with AI-Driven Formal Proof Search — 15 sections: Front matter; Introduction; AlphaProof Nexus"
 ---
 and used it to build a basic agent in which a set of subagents independently searches for
 proofs with feedback from the Lean compiler. We also developed a “full-featured” agent

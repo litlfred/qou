@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.722
 latex_coverage_ratio: 0.98
+doc_brief: "Formulas on hyperbolic volume ∗ — This paper collects some important formulas on hyperbolic volume."
 ---
 In the first section we give certain formulas with respect to some important coordinate systems and models, respectively.
 

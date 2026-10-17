@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.903
 latex_coverage_ratio: 0.994
+doc_brief: "A universal sum over topologies in 3d gravity — We explore the sum over topologies in AdS3 quantum gravity and its relationship with the statistical interpretation of the boundary theory."
 ---
 \label{subsec:gravitational machine 1}
 Before introducing the gravitational machine in its full generality, we will just point out two examples of conditions imposed in section \ref{sec:2} that fail to be satisfied by the handlebody sum alone, showing that the handlebody sum is indeed insufficient.

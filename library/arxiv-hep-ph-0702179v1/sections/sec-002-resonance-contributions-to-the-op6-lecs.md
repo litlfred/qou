@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.947
 latex_coverage_ratio: 0.984
+doc_brief: "Large-NC estimate of the chiral low-energy constants ∗ — 5 sections: Front matter; Introduction; The role of Resonance Chiral Theor"
 ---
 In Ref. [@Cirigliano:2006hb] we have constructed the $R \chi T$ Lagrangian needed to evaluate the resonance contributions to the ${\cal O}(p^6)$ LECs in Eq. ([\[eq:chpt\]](#eq:chpt){reference-type="ref" reference="eq:chpt"}). It has the following structure : $$\label{eq:rcht}
 {\cal L}_{R\chi T} \, = \, {\cal L}_2^{\chi PT}  +  {\cal L}_4^{GB}  +  {\cal L}_6^{GB}  +  

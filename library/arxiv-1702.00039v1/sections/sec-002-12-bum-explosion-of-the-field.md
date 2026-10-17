@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.989
 latex_coverage_ratio: 0.99
+doc_brief: "Gentle introduction to Soergel bimodules I: The basics — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules."
 ---
 Soergel bimodules were (and are) in the heart of an explosion of new discoveries in representation theory, algebraic combinatorics, algebraic geometry and knot theory. We give a list of some results obtained using Soergel bimodules in the last five years.
 

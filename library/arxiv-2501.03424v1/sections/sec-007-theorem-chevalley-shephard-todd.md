@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.895
+doc_brief: "Soergel bimodules and Kazhdan-Lusztig polynomials — This paper presents an exposition of Soergel bimodules, the categoriﬁcation of Hecke alge- bras, and their applications to various topics in"
 ---
 Let $I \subset S$ be a subset such that $W_I = \langle I\rangle \subset W$ is finite. Then the ring of  $W_I$-invariants 
 $$R^{W_I} = \{x \in R \st w \cdot x = x, \forall w \in W\}$$

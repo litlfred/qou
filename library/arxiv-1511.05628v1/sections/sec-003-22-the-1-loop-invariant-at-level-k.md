@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.945
 latex_coverage_ratio: 0.969
+doc_brief: "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY — The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coeﬃcients that"
 ---
 Fix a $\mathbb Z$-non-degenerate Neumann-Zagier datum $\gamma$ and a positive integer $k$. We use the notation of the previous section. For $m\in (\mathbb Z/k\mathbb Z)^N$, we define
 

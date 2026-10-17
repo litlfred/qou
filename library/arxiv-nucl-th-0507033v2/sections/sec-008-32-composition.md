@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.945
 latex_coverage_ratio: 0.932
+doc_brief: "Cluster Formation and The Virial Equation of State of Low-Density Nuclear Matter — 15 sections: Front matter; Nuclear Statistical Equilibrium; Introduction"
 ---
 We now discuss the $\alpha$ particle concentration.  The $\alpha$ mass 
 fraction is given by $x_\alpha=4n_\alpha/n_b$.  In Fig.~\ref{Fig4}, we 

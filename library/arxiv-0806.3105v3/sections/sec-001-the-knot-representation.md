@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.977
 latex_coverage_ratio: 0.989
+doc_brief: "KNOTS AND PREONS — It is shown that the four quantum trefoil solitons that are described by the irreducible representations D3/2 mm′ of the quantum algebra SLq(2) (and that may be identiﬁed with the"
 ---
 We replace the point particles of standard theory with quantum
 knots by attaching to each normal mode a knot state just as one

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.963
 latex_coverage_ratio: 0.981
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 []{#ssec: str eq Kosz label="ssec: str eq Kosz"} In this subsection we set notations for a particular type of matrix factorization that is ubiquitous in our work and in the previous work that relates matrix factorizations to knot invariants [@KR]. We need slightly more general setting than the one from [@KR] because we work with equivariant matrix factorizations. We state some simple properties of these factorizations that are used later in the paper.
 

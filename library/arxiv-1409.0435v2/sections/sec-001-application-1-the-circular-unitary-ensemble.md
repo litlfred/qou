@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.98
 latex_coverage_ratio: 0.99
+doc_brief: "Asymptotics for Toeplitz determinants: perturbation of symbols with a gap — We study the determinants of Toeplitz matrices as the size of the matrices tends to inﬁnity, in the particular case where"
 ---
 Consider the Circular Unitary Ensemble (CUE) which is the set of unitary $n\times n$ matrices with the Haar measure.
 The eigenvalues $e^{i\theta_1},\ldots, e^{i\theta_n}$ in this ensemble have the joint probability distribution

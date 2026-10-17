@@ -8,6 +8,7 @@ pages: 31-34
 source_pdf: 1112.5179v1.pdf
 source_sha256: b58af08336c40994
 toc_source: outline
+doc_brief: "3-Manifolds and 3d Indices — We identify a large class R of three-dimensional N = 2 superconformal ﬁeld the- ories."
 ---
 Mapping tori and T[SU(2)]
 One could also try constructing indices for some 3-manifolds without explicit reference to ideal

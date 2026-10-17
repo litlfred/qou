@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.947
 latex_coverage_ratio: 0.837
+doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Young diagrams which can be regarded as a natural one-parameter deformation of some classi- cal"
 ---
 ::: lemma
 []{#lem:small-free label="lem:small-free"} Let $(\mathcal{S}_l)_{l\geq 2}$ be a sequence of real numbers and let $(\mathcal{R}_l)_{l\geq 2}$ given by [\[eq:r-s\]](#eq:r-s){reference-type="eqref" reference="eq:r-s"} be the corresponding sequence of free cumulants. Assume that the sequence of free cumulants fulfills the estimate $$\label{eq:free-are-small}

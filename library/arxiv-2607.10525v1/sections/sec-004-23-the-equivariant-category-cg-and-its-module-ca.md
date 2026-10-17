@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.993
 latex_coverage_ratio: 0.964
+doc_brief: "Fiber Functors of Equivariantizations of Finite Tensor Categories — Let G be a finite group acting on a finite tensor category C."
 ---
 Given a $G$-action on a tensor category $\mathcal{C}$, one forms the *equivariant category* $\mathcal{C}^G$.
 

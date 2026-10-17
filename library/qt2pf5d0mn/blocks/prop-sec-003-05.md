@@ -1,1 +1,1 @@
-The assignment A↦−→A∗, f ↦−→f∗ deﬁnes a monoidal functor
+The assignment A 7−→A∗, f 7−→f ∗deﬁnes a monoidal functor

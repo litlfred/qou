@@ -8,6 +8,7 @@ pages: 30-31
 source_pdf: 1907.03683v4.pdf
 source_sha256: eb8cc2ddfc8c0739
 toc_source: outline
+doc_brief: "EXPLICIT DESCRIPTION OF CHRISTOFFEL DEFORMATIONS AND — Christoﬀel deformation of a measure on the real line consists of multipying this measure by a squared polynomial having its roots in R."
 ---
 [1] G.E. Andrews, R. Askey, R. Roy Special functions Cambridge university press (2000)
 [2] J. Baik, P. Deift, E. Strahov. Products and ratios of characteristic polynomials of random herimtian

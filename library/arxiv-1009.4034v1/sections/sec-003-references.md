@@ -8,6 +8,7 @@ pages: 23-23
 source_pdf: 1009.4034v1.pdf
 source_sha256: 8f8d6d786b60c279
 toc_source: outline
+doc_brief: "KEROV’S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL MEASURES OF PARAMETER α = 1/2 — In this article, we show that Kerov’s central limit theorem related to the ﬂuctuations of Young diagrams under the"
 ---
 [Bia98]
 P. Biane. Representations of symmetric groups and free probability. Adv. Math., 138:126–181, 1998.

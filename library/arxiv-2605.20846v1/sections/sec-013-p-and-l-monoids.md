@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.948
 latex_coverage_ratio: 0.977
+doc_brief: "Topological Field Theories and the Algebraic Structures of the Two-Sphere — We give two presentations for bordisms of S2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the"
 ---
 \label{sec:PLmonoids}
 Inspired by the list of relations which define the $G_1$ and $G_2$ presentations of $\operatorname{Cob}(3)_{S^2}$, we define the following monoids in symmetric monoidal categories, in anticipation that they will come from a 3d TFT.

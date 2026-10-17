@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.814
 latex_coverage_ratio: 0.979
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS — We prove an upper bound for characters of the symmetric groups."
 ---
 Now, we have to find a bound of the number of factorizations of $\pi$ with a given value of the statistic $o(\sigma_1,\sigma_2)$.
 

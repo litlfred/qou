@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.898
 latex_coverage_ratio: 1.0
+doc_brief: "GEOMETRIC TRIANGULATIONS OF A FAMILY OF HYPERBOLIC 3-BRAIDS — We construct topological triangulations for complements of (−2, 3, n)-pretzel knots and links with n ≥7."
 ---
 The explicit triangulations appearing here, as well as several more in the infinite family, were confirmed using the software packages Regina~\cite{Regina} and SnapPy \cite{SnapPy} and checked against the census of veering triangulations created by Giannopolous, Schleimer, and Segerman \cite{VeeringCensus}.  See the Regina data file at \href{https://tinyurl.com/ReginaFileC2sigma1psigma2inv}{https://tinyurl.com/ReginaFileC2sigma1psigma2inv} for the triangulations constructed in Section~\ref{sec:idealtriangulationsq=1}.
 

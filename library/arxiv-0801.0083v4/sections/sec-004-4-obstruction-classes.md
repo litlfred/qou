@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.978
+doc_brief: "CENTRAL EXTENSIONS OF GERBES — We introduce the notion of central extension of gerbes on a topo- logical space X."
 ---
 We fix a topological space $X$. 
 Given a sheaf $\mcal{N}$ of abelian groups on $X$, and an open covering

@@ -8,6 +8,7 @@ pages: 88-95
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
 toc_source: outline
+doc_brief: "Analytic Combinatorics in Several Variables Expanded Second Edition — 98 sections: Front matter; Preface to the second edition; Preface to the first edition"
 ---
 Our proof of Darboux’s Theorem uses analyticity of ψ(z) = f(z)/(R −z)α be-
 yond the disk of radius R only to provide a series development of f at z = R. By

@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.875
 latex_coverage_ratio: 0.641
+doc_brief: "Volume Conjecture: Reﬁned and Categoriﬁed — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebraic curve, the zero"
 ---
 The refinement / categorification of the generalized volume conjecture [\[VCparam\]](#VCparam){reference-type="eqref" reference="VCparam"} involves taking the limit [\[VClimit\]](#VClimit){reference-type="eqref" reference="VClimit"} while keeping the extra parameter $t$ fixed: $$q = e^{\hbar} \to 1 \,, \qquad t = \text{fixed} \,, \qquad x \equiv e^u = q^n = \text{fixed}
 \label{reflimit}$$ We conjecture that, in this limit, the homological (resp. refined) knot (resp. BPS) invariants have the following asymptotic behavior: $$\label{VCparamref}

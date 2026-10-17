@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.998
 latex_coverage_ratio: 0.791
+doc_brief: "A note on closed 3-braids ∗ — This is a review article about knots and links of braid index 3."
 ---
 []{#S:known and unknown label="S:known and unknown"} In this section we survey the literature and discuss some unknown properties of knots and links of braid index 3. Our choices are guided by what we know best, and by our wish to illustrate ways in which Theorems 1,2 and 3 have been and might be useful.
 

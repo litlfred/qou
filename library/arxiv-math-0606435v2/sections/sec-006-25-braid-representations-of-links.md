@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.953
 latex_coverage_ratio: 0.97
+doc_brief: "arXiv:math/0606435v2 [math.GT] 10 Oct 2007 — We show that 3-braid links with given (non-zero) Alexander or Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
 By a theorem of Alexander \cite{Alexander}, any link is the \em{closure}
 $\hat\bt$ of a braid $\bt$. The \em{braid index} $b(L)$ of a link $L$

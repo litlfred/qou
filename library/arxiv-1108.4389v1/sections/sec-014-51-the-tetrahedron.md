@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.957
 latex_coverage_ratio: 0.942
+doc_brief: "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories."
 ---
 Now, let us illustrate this in a few concrete examples, starting with the theory $T_{\Delta,\Pi_Z}$ that we associate to a single tetrahedron. The theory $T_{\Delta,\Pi_Z}$ is a single chiral multiplet $\phi_Z$ coupled to a $U(1)$ background gauge field that also has a (supersymmetric) Chern-Simons interaction at level $-\tfrac{1}{2}$. On a circle of finite radius $\beta$, this theory has the effective twisted superpotential (*cf.* [@Nek-5d; @LN; @NS-I; @DG-Sdual])
 

@@ -8,6 +8,7 @@ pages: 23-27
 source_pdf: 2111.04763v2.pdf
 source_sha256: 760a7f9794e8baaa
 toc_source: outline
+doc_brief: "Resurgence of Chern-Simons theory at the trivial flat connection — Some years ago, it was conjectured by the first author that the Chern–Simons perturbation theory of a 3-manifold at the trivial flat"
 ---
 In this section we discuss an extension of the results of Section 2 adding an x-variable. In
 the context of the nth colored Jones polynomial, x = qn corresponds to an eigenvalue of the

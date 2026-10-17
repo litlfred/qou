@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.971
 latex_coverage_ratio: 0.985
+doc_brief: "ALGEBRAIC CONSTRUCTION OF THE STOKES SHEAF FOR IRREGULAR LINEAR q-DIFFERENCE EQUATIONS — — The local analytic classiﬁcation of irregular linear q-diﬀerence equa- tions has recently been obtained by"
 ---
 []{#section:classification label="section:classification"}
 

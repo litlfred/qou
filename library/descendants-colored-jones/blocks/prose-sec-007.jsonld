@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/descendants-colored-jones/blocks/prose-sec-007",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Proof of the gauge symmetry equations",
-  "pageStart": 15,
-  "pageEnd": 19,
-  "text": "../sections/sec-007-proof-of-the-gauge-symmetry-equations.md",
+  "title": "R-matrices with a spectral parameter",
+  "pageStart": 13,
+  "pageEnd": 15,
+  "text": "../sections/sec-007-r-matrices-with-a-spectral-parameter.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/descendants-colored-jones/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/descendants-colored-jones/manifest.jsonld",
   "provenance": "ingested"

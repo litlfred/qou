@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.953
 latex_coverage_ratio: 1.0
+doc_brief: "THE CHARACTER THEORY OF A COMPLEX GROUP — We apply the ideas of derived algebraic geometry and topological ﬁeld theory to the representation theory of reductive groups."
 ---
 We continue with the setup and constructions of the previous section, in particular Theorem [\[monodromic Hecke\]](#monodromic Hecke){reference-type="ref" reference="monodromic Hecke"}. Thus suppose $X$ is a stack with smooth diagonal, $Y$ is a stack, and $X\to Y$ is a proper representable map. Suppose $\mathcal A_X\in {\mathcal D}(X)$ is a commutative algebra object whose underlying object is compact and hence dualizable with dual denoted by $\mathcal A_X^\vee\in {\mathcal D}(X)$.
 

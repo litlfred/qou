@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.982
 latex_coverage_ratio: 0.949
+doc_brief: "SOERGEL CALCULUS — The monoidal category of Soergel bimodules is an incarnation of the Hecke category, a fundamental object in representation theory."
 ---
 We assume Theorem \ref{homspacetheorem}, so that Hom spaces are free left $R$-modules and localization is injective on Hom spaces.
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.892
 latex_coverage_ratio: 0.953
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 In the sequel, $k$ is a *fixed nonegative integer*. To estimate the first term on the right-hand side of [\[glob1\]](#glob1){reference-type="eqref" reference="glob1"}, we use that $K^{\langle k\rangle}_{2,m}$ is a local reproducing kernel $\mathrm{mod}(m^{-k})$, which is expressed by [\[negliampeq2.b\]](#negliampeq2.b){reference-type="eqref" reference="negliampeq2.b"}. Before we go into that, we observe that if $u$ is biharmonic in ${\mathbb D}(z_0,r)$, then $$\begin{gathered}
 \mathbf{I}^{\langle k\rangle}_{2,m}[u](z)=\int_\Omega u(w)\chi_0(w)

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.911
 latex_coverage_ratio: 0.991
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 47 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 Let $\cal C$ be a triangulated ind-constructive category over a field $\k$. We will assume that all functors, bifunctors etc. respect this structure. In this section we are going to discuss a special framework in which orientation data is easy to construct.
 

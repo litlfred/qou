@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.929
 latex_coverage_ratio: 1.0
+doc_brief: "Asymptotics for Toeplitz determinants: perturbation of symbols with a gap — We study the determinants of Toeplitz matrices as the size of the matrices tends to inﬁnity, in the particular case where"
 ---
 We will construct $P$ in terms of a model RH problem for which the solution is constructed using Bessel functions.
 Consider the following model RH problem:

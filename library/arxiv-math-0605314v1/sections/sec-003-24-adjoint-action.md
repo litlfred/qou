@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.917
 latex_coverage_ratio: 0.957
+doc_brief: "arXiv:math/0605314v1 [math.GT] 11 May 2006 — We construct an invariant JM of integral homology spheres M with values in a completion d Z[q] of the polynomial ring Z[q] such that the evaluation at"
 ---
 []{#sec:adjoint-action label="sec:adjoint-action"} Let $\trr\zzzcolon U_h\ho U_h \rightarrow U_h$ denote the (left) adjoint action defined by $$\trr(x\otimes y)=x \trr y = \sum x_{(1)} y S(x_{(2)})$$ for $x,y\in U_h$. We regard $U_h$ as a left $U_h$-module via the adjoint action. Since we have $\Uq\trr\Uq\subset \Uq$, we may regard $\Uq$ as a left $\Uq$-module.
 

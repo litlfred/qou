@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.938
 latex_coverage_ratio: 1.0
+doc_brief: "CUSP AREAS OF FAREY MANIFOLDS — This paper gives the ﬁrst explicit, two–sided estimates on the cusp area of once– punctured torus bundles, 4–punctured sphere bundles, and 2–bridge link complements."
 ---
 To make the estimate of Proposition [\[prop:horosize\]](#prop:horosize){reference-type="ref" reference="prop:horosize"} independent of $\mu$, we prove a bound on the value of $\mu$. We note that the following lemma is the *only* result in this section that does not apply to all Farey manifolds: it fails for 2--bridge links.
 

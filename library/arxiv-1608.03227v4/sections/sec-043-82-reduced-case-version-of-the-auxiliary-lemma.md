@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.94
 latex_coverage_ratio: 0.938
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 Let us introduce $$\SymbolPrint{\calXr^{\circ}_2(G_{k\dots m})}=\frb\times G_{k\dots m} \times \frn^2,$$ $$\SymbolPrint{\calXr_3(G_n,G_{k\dots m})}:=\frb_n\times G_n\times G_{m-k+1}\times \frn_n.$$ Let us also define an embedding $\SymbolPrint{\bar{i}_{k\dots m}}:\calXr_3(G_n,G_{k\dots m})\to \calXr_3$ by $$\bar{i}_{k\dots m}(X,g_{12},g_{23},Y)=(X,g_{12},i_{k\dots m}(g_{23}),Y).$$ Using the last embedding we define the maps $\SymbolPrint{\bar{\pi}_{ij}}$ by restricting from the ambient $\calX_3$: $$\bar{\pi}_{12},\bar{\pi}_{13}: \calXr_3(G_n,G_{k\dots m})\to \calXr_2(G_n),\quad \bar{\pi}_{23}: \calXr_3(G_n,G_{k\dots m})\to \calXr_2(G_{k\dots m}).$$
 

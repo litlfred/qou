@@ -1,1 +1,1 @@
-Assume thatA and m satisfy the hypotheses of Theorem
+Assume that A and m satisfy the hypotheses of Theorem

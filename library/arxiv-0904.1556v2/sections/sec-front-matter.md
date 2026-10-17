@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0904.1556v2.pdf
 source_sha256: a1a43786d817f085
 toc_source: outline
+doc_brief: "The Algebra of Grand Uniﬁed Theories — The Standard Model is the best tested and most widely accepted theory of elementary particles we have today."
 ---
 arXiv:0904.1556v2  [hep-th]  1 May 2010
 The Algebra of Grand Uniﬁed Theories

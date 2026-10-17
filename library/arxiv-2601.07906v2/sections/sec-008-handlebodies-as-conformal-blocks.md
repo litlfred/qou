@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.969
 latex_coverage_ratio: 0.992
+doc_brief: "A universal sum over topologies in 3d gravity — We explore the sum over topologies in AdS3 quantum gravity and its relationship with the statistical interpretation of the boundary theory."
 ---
 Let us now discuss how handlebodies contribute to the path integral of 3d gravity. As explained in \cite{Collier:2023fwi}, 3d gravity with a negative cosmological constant on a hyperbolic 3-manifold is related to two copies of Virasoro TQFT (VTQFT). The gravitational partition function is just the product 
 \begin{equation}\label{eq:grav_to_VTQFT}

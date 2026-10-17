@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.94
 latex_coverage_ratio: 1.0
+doc_brief: "Automatic Theorem Proving in Walnut — 41 sections: Front matter; Introduction; Basics"
 ---
 \label{sec:words and automata}
 A word $(a_i)_{i\in I}$ for a finite, infinite, or a possibly empty

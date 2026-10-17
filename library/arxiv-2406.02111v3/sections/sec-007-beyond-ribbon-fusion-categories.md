@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.95
 latex_coverage_ratio: 1.0
+doc_brief: "Categorical Quantum Volume Operator — 11 sections: Categorical Quantum Volume Operato; Introduction; Quantum tetrahedron"
 ---
 \label{subsec:spherical.C}
 In the derivation of the standard volume operator for $\SU(2)$, the closure constraint~\eqref{eq:closure_constraint} guarantees that any oriented triplet $\vec{L}_j,\vec{L}_k,\vec{L}_\ell$ in the definition of the volume operator~\eqref{eq:def_volume_operator} gives the same result. As mentioned previously, the category-theoretic analog of the closure constraint is the tetrahedral symmetry condition~\eqref{eq:tetrahedral_symmetry}\@. However, there is a subtlety, which comes from the fact that we have to project the diagram in Eq.~\eqref{eq:volume_diagram} to the plane to make it amenable to the string diagram calculus in fusion categories. In the absence of tetrahedral symmetry, different couplings $j_k$--$j_\ell$ are, \textit{a priori}, not equivalent topologically. For example, consider the case of coupling $j_2$ and $j_3$ in Eq.~\eqref{eq:volume_diagram}\@. Then, Eq.~\eqref{eq:volume_derivation_starting_point} becomes

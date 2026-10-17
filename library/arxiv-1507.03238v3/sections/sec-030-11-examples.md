@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.864
 latex_coverage_ratio: 0.926
+doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety for SL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
 ---
 []{#sec:Examples label="sec:Examples"} Let $M$ be the manifold `m009` from the SnapPy census [@SnapPy]. The census triangulation $\mathcal T$ of $M$ is shown in Figure [1](#fig:Trigm009){reference-type="ref" reference="fig:Trigm009"}.
 

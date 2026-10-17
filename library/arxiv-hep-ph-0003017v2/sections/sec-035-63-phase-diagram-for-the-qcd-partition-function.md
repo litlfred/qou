@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.936
 latex_coverage_ratio: 0.988
+doc_brief: "arXiv:hep-ph/0003017v2 26 Jun 2000 — Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems."
 ---
 The random matrix models at nonzero temperature and nonzero chemical potential introduced in the previous sections can be merged into a single schematic chRMT model for the chiral phase transition [@phase], $$Z = \int DW {\det}^{N_f} \left ( \begin{array}{cc} m & iW + iC\\
       iW^\dagger +iC& im \end{array}\right )

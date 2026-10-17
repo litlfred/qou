@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.937
 latex_coverage_ratio: 0.946
+doc_brief: "arXiv:math/0006057v2 [math.QA] 10 Jun 2000 — We give a survey of the theory of ﬁnite quantum groupoids (weak Hopf algebras), including foundations of the theory and applications to ﬁnite depth"
 ---
 The linear maps defined in ([\[S epst\]](#S epst){reference-type="ref" reference="S epst"}) and ([\[S epss\]](#S epss){reference-type="ref" reference="S epss"}) are called *target* and *source counital maps* (see examples below for explanation of the terminology) and denoted $\varepsilon_t$ and $\varepsilon_s$ respectively : $$\varepsilon_t(h) = (\varepsilon\otimes\mbox{id})(\Delta(1)(h\otimes 1)),\qquad
 \varepsilon_s(h) = (\mbox{id}\otimes \varepsilon)((1\otimes h)\Delta(1)).$$

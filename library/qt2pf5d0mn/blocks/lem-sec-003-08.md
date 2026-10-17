@@ -1,1 +1,1 @@
-[42] IfC is a spherical fusion category, then dA =dA∗ and dA is real.
+[42] If C is a spherical fusion category, then dA = dA∗and dA is real.

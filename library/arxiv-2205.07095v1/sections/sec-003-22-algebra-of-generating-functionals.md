@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.971
 latex_coverage_ratio: 1.0
+doc_brief: "Virial Expansions for Correlation Functions in Canonical Ensemble — The inﬁnite set of coupled integral nonlinear equations for correlation func- tions in the case of classical canonical ensemble is"
 ---
 For any function $\psi\in C_0(\Gamma_0)$ define *generating functional* : $$\begin{aligned}
 \label{GFf}

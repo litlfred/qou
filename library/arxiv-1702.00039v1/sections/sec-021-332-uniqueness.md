@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.974
 latex_coverage_ratio: 0.927
+doc_brief: "Gentle introduction to Soergel bimodules I: The basics — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules."
 ---
 Suppose that we have two self-dual elements $c=h_x+h$ and $c'=h_x+h'$, with $h,h' \in \cH. $ Then one has that $h-h'$ is self-dual as $h-h'=c-c'.$
 

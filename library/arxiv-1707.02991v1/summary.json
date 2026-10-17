@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1707.02991v1",
  "source_sha256": "f4f539f74403dd24",
- "brief": "BPS states, knots and quivers — 5 sections: BPS states, knots and quivers; Moduli of quiver representations; Knot invariants from quiver repres",
- "extended": "**BPS states, knots and quivers**\n\n*Piotr Kucharski 1, Markus Reineke 2, Marko Stoˇ sić3,4, and Piotr Su lkowski 1,5*\n\n6 pp, 5 sections.\n\n**Outline.** BPS states, knots and quivers; Moduli of quiver representations; Knot invariants from quiver representation the; Example – trefoil knot; Summary",
+ "brief": "BPS states, knots and quivers — 6 sections: Front matter; BPS states, knots and quivers; Moduli of quiver representations",
+ "extended": "**BPS states, knots and quivers**\n\n*Piotr Kucharski1, Markus Reineke2, Marko Stoˇsić3,4, and Piotr Su lkowski1,5*\n\n6 pp, 6 sections.\n\n**Outline.** Front matter; BPS states, knots and quivers; Moduli of quiver representations; Knot invariants from quiver representation the; Example – trefoil knot; Summary",
  "tokens": {
-  "brief": 35,
-  "extended": 73
+  "brief": 30,
+  "extended": 76
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-bps-states-knots-and-quivers",
    "title": "BPS states, knots and quivers",

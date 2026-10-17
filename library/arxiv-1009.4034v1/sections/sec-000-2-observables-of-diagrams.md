@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.946
 latex_coverage_ratio: 0.992
+doc_brief: "KEROV’S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL MEASURES OF PARAMETER α = 1/2 — In this article, we show that Kerov’s central limit theorem related to the ﬂuctuations of Young diagrams under the"
 ---
 []{#obs label="obs"} In the setting of random partitions, the algebra of polynomial functions[^1] on Young diagrams and its various bases play an extremely important role that can be compared to the one played by the moments of a real random variable. Hence, the **generating function** of a Young diagram $\lambda$ is defined by $$G_{\lambda}(z)=\frac{\prod_{i=1}^{v-1}z-y_{i}}{\prod_{i=1}^{v}z-x_{i}},$$ where $x_{1}<y_{1}<x_{2}<y_{2}<\cdots<x_{v-1}<y_{v-1}<x_{v}$ are the **interlacing coordinates** of $\lambda$, that is to say, the sequences of local minima and local maxima of the function $s\mapsto \lambda(s)$. Alternatively, if $\sigma(s)=\frac{\lambda(s)-|s|}{2}$, then $$G_{\lambda}(z)=\frac{1}{z}\exp\left(-\int_{\R}\frac{\sigma'(s)}{z-s}\,ds\right).$$ This latter definition allows to consider the generating function of more general objects such as **continuous Young diagrams**, *i.e.*, functions $s\mapsto \omega(s)$ that satisfy the two following properties:
 

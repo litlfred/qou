@@ -1,1 +1,1 @@
-Suppose that eiϑ∈ C\S(V0) and p∈ Σ such that V (p)∈ V0− ieiϑR≥0 + Z.
+~\ref{lem:thimble} gives a complete description of the thimbles outside a compact set (depending on $\vartheta$). Next we study the behaviour of the thimbles inside the compact set given by Corollary~\ref{cor:thimble} (specifically the constant $M$ from Lemma~\ref{lem:thimble}). This will be described in the following sections.

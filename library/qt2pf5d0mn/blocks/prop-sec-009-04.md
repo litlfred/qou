@@ -1,1 +1,1 @@
-IfD has a trivial G-grading and a trivial G-action where the trivial
+If D has a trivial G-grading and a trivial G-action where the trivial

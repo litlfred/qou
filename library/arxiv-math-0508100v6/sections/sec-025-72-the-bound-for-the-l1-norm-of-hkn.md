@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.985
 latex_coverage_ratio: 0.904
+doc_brief: "ASYMPTOTICS OF THE COLORED JONES FUNCTION OF A KNOT — To a knot in 3-space, one can associate a sequence of Laurent polynomials, whose nth term is the nth colored Jones polynomial."
 ---
 Multiply both sides of \eqref{33}  by $\{2n+2\}!$,
 then use  \eqref{31} and Theorem \ref{95}, we see that there is a constant

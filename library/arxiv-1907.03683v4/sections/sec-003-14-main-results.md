@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.898
 latex_coverage_ratio: 1.0
+doc_brief: "EXPLICIT DESCRIPTION OF CHRISTOFFEL DEFORMATIONS AND — Christoﬀel deformation of a measure on the real line consists of multipying this measure by a squared polynomial having its roots in R."
 ---
 As mentioned above, it is easy to define Christoffel deformations of orthogonal polynomial ensembles, but neither the Plancherel nor the $z$-measures are orthogonal polynomial ensembles. As for the characteristic polynomials, an obstacle is that, unlike for orthogonal polynomial ensembles, the number of points might be random or infinite. We still manage to give a meaning to Christoffel deformations of these processes, and also for the process with the Gamma kernel, and we now briefly explain our arguments and state our main results in an informal way.\
 

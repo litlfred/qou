@@ -8,6 +8,7 @@ pages: 15-17
 source_pdf: s00209-021-02825-4.pdf
 source_sha256: 85ca5ec21f42a988
 toc_source: outline
+doc_brief: "A representation theoretic explanation of the Borcea–Brändén characterization — In 2009, Borcea and Brändén characterized all linear operators on multivariate polynomials which preserve the property"
 ---
 We now give a number of classical real stability results, along with a few results from [1]
 and [2]. Additionally, we state these results for homogeneous polynomials in VR(λ), taking

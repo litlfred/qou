@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.787
 latex_coverage_ratio: 1.0
+doc_brief: "A universal sum over topologies in 3d gravity — We explore the sum over topologies in AdS3 quantum gravity and its relationship with the statistical interpretation of the boundary theory."
 ---
 \label{subsec:Euclidean wormhole}
 The most standard example of a hyperbolic non-handlebody geometry is the Euclidean Maldacena-Maoz wormhole \cite{Maldacena:2004rf}. Its boundary is a pair of Riemann surfaces of genus $g$ and $n$ punctures (we assume that $2g-2+n>0$). In the case that the moduli of both boundaries agree, it is simple to write down the hyperbolic metric:

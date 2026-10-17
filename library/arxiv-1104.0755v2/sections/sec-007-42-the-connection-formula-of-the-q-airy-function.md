@@ -8,6 +8,7 @@ pages: 10-12
 source_pdf: 1104.0755v2.pdf
 source_sha256: d2fbbea44598e8f4
 toc_source: outline
+doc_brief: "A connection formula between the Ramanujan function and the q -Airy function — We show a connection formula between two diﬀerent q-Airy func- tions."
 ---
 The connection formula of the q-Airy function
 Applying the q-Borel transformation in 4.1 to the equation (7) and using

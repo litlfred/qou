@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.993
 latex_coverage_ratio: 0.986
+doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — Based on an interpretation of the quark-lepton symmetry in terms of the unimodularity of the color group SU(3) and on the existence of 3 generations, we develop an"
 ---
 Let $J$ be a unital Jordan algebra with center $Z(J)$ and let $\Omega^n_{{\mbox{\tiny Der}}}(J)$ be the $J$-module of all $n$-$Z(J)$-linear antisymmetric mappings of ${\mbox{Der}}(J)$ into $J$, that is $\omega\in \Omega^n_{{\mbox{\tiny Der}}}(J)$ is a $Z(J)$-linear mapping $$\omega:\wedge^n_{Z(J)} {\mbox{Der}}(J)\rightarrow J$$ of the n-th exterior power over $Z(J)$ of the $Z(J)$-module ${\mbox{Der}}(J)$ into $J$ as a $Z(J)$-module. Then $\Omega_{{\mbox{\tiny Der}}}(J)=\oplus_{n\geq 0} \ \Omega^n_{{\mbox{\tiny Der}}}(J)$ is canonically a differential graded Jordan algebra with differential given by the Chevalley-Eilenberg formula $$\begin{array}{ll}
 d\omega(X_0,\cdots,X_n) & =  \sum_{0\leq k\leq n} (-1)^k X_k\  \omega(X_0,\stackrel{k\atop \vee}{\cdots},X_n) \\

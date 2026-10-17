@@ -8,6 +8,7 @@ pages: 1-4
 source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
+doc_brief: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings Tomotada Ohtsuki and Yoshiyuki Yokota Introduction — We give presentations of the asymptotic expansions of the"
 ---
 Introduction
 In [12, 13] Kashaev deﬁned the Kashaev invariant ⟨L ⟩N ∈C of a link L for N = 2, 3, · · ·

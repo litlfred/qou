@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.949
 latex_coverage_ratio: 0.797
+doc_brief: "Asymptotics of the quantum invariants for surgeries on the figure-8 knot (Andersen–Hansen, JKTR) — asymptotic expansion of the SU(2) Reshetikhin–Turaev invariants for surgeries on 4₁."
 ---
 \noindent It is well-known that the semiclassical asymptotics,
 i.e.\ the small $\gamma$ asymptotics of the quantum dilogarithm

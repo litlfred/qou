@@ -1,1 +1,1 @@
-LetM be a compact, oriented 3-manifold with
+The state-integral FF,X,θ is invariant under

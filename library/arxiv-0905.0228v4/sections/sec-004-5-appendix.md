@@ -8,5 +8,6 @@ pages: 16-16
 source_pdf: 0905.0228v4.pdf
 source_sha256: 1744545d0f210949
 toc_source: outline
+doc_brief: "A CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS — Two well-known q-Hermite polynomials are the continuous and discrete q-Hermite polynomials."
 ---
 

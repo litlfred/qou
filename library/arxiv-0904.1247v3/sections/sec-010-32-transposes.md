@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.977
 latex_coverage_ratio: 0.972
+doc_brief: "THE CHARACTER THEORY OF A COMPLEX GROUP — We apply the ideas of derived algebraic geometry and topological ﬁeld theory to the representation theory of reductive groups."
 ---
 A semi-rigid monoidal category $A\in Alg(St_\mathbb C)$, being compactly generated, is dualizable with dual $A'$. The coevaluation functor, $$\xymatrix{
 \eta:\operatorname{Vect}_\mathbb C\ar[r] & A'\otimes A

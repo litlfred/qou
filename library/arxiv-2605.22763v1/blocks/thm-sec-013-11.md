@@ -1,1 +1,1 @@
-(A conjecture of OEIS A228143, 2018) Let𝑠𝑚 = ˝𝑚
+(A conjecture of OEIS A228143, 2018) Let 𝑠𝑚= Í𝑚

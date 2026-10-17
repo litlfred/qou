@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.933
 latex_coverage_ratio: 0.989
+doc_brief: "The exponential-logarithmic equivalence classes of surreal numbers — 9 sections: Front matter; Introduction.; Preliminaries on surreal numbers."
 ---
 This section is dedicated to fix the notations and recall some of the definitions and results obtained in [@conway_numb-games] and [@gonshor_surreal]. We will also use results from [@ehrlich:simpl-hierarc] and [@ehrlich-vdd:surreal-exp].
 

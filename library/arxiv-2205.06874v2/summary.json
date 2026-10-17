@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2205.06874v2",
  "source_sha256": "9b41365160c17ab4",
- "brief": "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg — We define a",
- "extended": "**State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg**\n\n*Cauerstraße 11, 91058 Erlangen, Germany*\n\n68 pp, 31 sections.\n\n**Abstract.** We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects. Surface defects are oriented embedded 2d PL submanifolds and are labeled with bimodule categories over spherical fusion categories with bimodule traces. Line and point defects form directed graphs on these surfaces and labeled with bimodule functors and bimodule natural transformations. The state sum is based on generalised 6j symbols that encode the coherence isomorphisms of the defect data. We prove the triangulation independence of the state sum and show that it can be computed in terms of polygon diagrams that satisfy the cutting and gluing identities for polygon presentations of oriented surfaces. By computing state sums with defect surfaces, we show that they detect the genus of a defect surface and are sensitive to its embedding.\n\n**Outline.** Spherical fusion categories; Categorical data; (Bi)module categories, functors and natural tr; Finite semisimple (bi)module categories over p; Bimodule categories with bimodule traces; Diagrammatic calculus; Diagrams for spherical fusion categories; Diagrams for (bi)module categories, functors a; Diagrams for 2-categories; Diagrams for pivotal 2-categories; Mixed diagrams; Polygon diagrams; Action on category diagrams; Bordered diagrams; Polygon diagrams; Gluing polygon diagrams; Projections and inclusions for simple objects; Gluing identities for polygon diagrams",
+ "brief": "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects.",
+ "extended": "**State sum models with defects based on spherical fusion categories**\n\n*Catherine Meusburger*\n\n68 pp, 32 sections.\n\n**Abstract.** We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects. Surface defects are oriented embedded 2d PL submanifolds and are labeled with bimodule categories over spherical fusion categories with bimodule traces. Line and point defects form directed graphs on these surfaces and labeled with bimodule functors and bimodule natural transformations. The state sum is based on generalised 6j symbols that encode the coherence isomorphisms of the defect data. We prove the triangulation independence of the state sum and show that it can be computed in terms of polygon diagrams that satisfy the cutting and gluing identities for polygon presentations of oriented surfaces. By computing state sums with defect surfaces, we show that they detect the genus of a defect surface and are sensitive to its embedding.\n\n**Outline.** Front matter; Spherical fusion categories; Categorical data; (Bi)module categories, functors and natural tr; Finite semisimple (bi)module categories over p; Bimodule categories with bimodule traces; Diagrammatic calculus; Diagrams for spherical fusion categories; Diagrams for (bi)module categories, functors a; Diagrams for 2-categories; Diagrams for pivotal 2-categories; Mixed diagrams; Polygon diagrams; Action on category diagrams; Bordered diagrams; Polygon diagrams; Gluing polygon diagrams; Projections and inclusions for simple objects\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2: (Theorem 5.16) If two transversal and generic triangulations of a 3-manifold with defect\n- Theorem: \\ref{th:fulltopinv} extends the definition of the state sum for a defect manifold to triangulations that are non-generic or non-transversal in the interior of $M$.\n- Theorem: \\ref{th:fulltopinv} this yields\n- Theorem 1: (Theorem 3.1) Evaluations of polygon diagrams are invariant under rotations of the polygon.\n- Proposition 1: ~is shown in \\cite{G14}.\n- Proposition 2: ~is essentially \\cite[Prop.~2.4.9]{DSS} for module categories over pivotal fusion categories. It follows by combining \\cite[Prop.~2.4.9]{DSS} with 1.",
  "tokens": {
-  "brief": 43,
-  "extended": 424
+  "brief": 47,
+  "extended": 560
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-3"
+  },
   {
    "id": "sec-000-spherical-fusion-categories",
    "title": "Spherical fusion categories",
@@ -169,7 +174,8 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles"
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

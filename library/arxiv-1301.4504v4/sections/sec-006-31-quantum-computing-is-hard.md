@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.935
 latex_coverage_ratio: 0.997
+doc_brief: "Quantum Computation vs. Firewalls — In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue"
 ---
 []{#bigcompsect label="bigcompsect"} We begin with a rather formal discussion of Alice's computation to illustrate some basic limitations on what is possible; we will take a more standard approach in the following subsection.
 

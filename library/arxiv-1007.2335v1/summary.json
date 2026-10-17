@@ -2,30 +2,40 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1007.2335v1",
  "source_sha256": "a55d544d1740523f",
- "brief": "Hopf solitons in the Nicole model — The Nicole model is a conformal ﬁeld theory in three-dimensi onal space.",
- "extended": "**Hopf solitons in the Nicole model**\n\n*Mike Gillard and Paul Sutcliffe*\n\n11 pp, 4 sections.\n\n**Abstract.** The Nicole model is a conformal ﬁeld theory in three-dimensi onal space. It has topo- logical soliton solutions classiﬁed by the integer-valued Hopf charge, and all currently known solitons are axially symmetric. A volume-preserving ﬂow is used to numerically construct soliton solutions for all Hopf charges from one to eight. It is found that the known axially symmetric solutions are unstable for Hopf cha rges greater than two and new lower energy solutions are obtained that include knots a nd links. A comparison with the Skyrme-Faddeev model suggests many universal feat ures, though there are some diﬀerences in the link types obtained in the two theories . 1\n\n**Outline.** 1 Introduction; 3 Initial conditions; 4 Numerical results; 5 Conclusion",
+ "brief": "Hopf solitons in the Nicole model — The Nicole model is a conformal ﬁeld theory in three-dimensional space.",
+ "extended": "**Hopf solitons in the Nicole model**\n\n*Mike Gillard and Paul Sutcliffe*\n\n11 pp, 6 sections.\n\n**Abstract.** The Nicole model is a conformal ﬁeld theory in three-dimensional space. It has topo- logical soliton solutions classiﬁed by the integer-valued Hopf charge, and all currently known solitons are axially symmetric. A volume-preserving ﬂow is used to numerically construct soliton solutions for all Hopf charges from one to eight. It is found that the known axially symmetric solutions are unstable for Hopf charges greater than two and new lower energy solutions are obtained that include knots and links. A comparison with the Skyrme-Faddeev model suggests many universal features, though there are some diﬀerences in the link types obtained in the two theories. 1\n\n**Outline.** Front matter; 1 Introduction; 2 The Nicole model and volume-preserving flow; 3 Initial conditions; 4 Numerical results; 5 Conclusion",
  "tokens": {
-  "brief": 27,
-  "extended": 215
+  "brief": 26,
+  "extended": 229
  },
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "title": "Introduction",
-   "pages": "2-6"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
   },
   {
-   "id": "sec-001-3-initial-conditions",
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-001-2-the-nicole-model-and-volume-preserving-flow",
+   "title": "The Nicole model and volume-preserving flow",
+   "pages": "3-6"
+  },
+  {
+   "id": "sec-002-3-initial-conditions",
    "title": "Initial conditions",
    "pages": "6-7"
   },
   {
-   "id": "sec-002-4-numerical-results",
+   "id": "sec-003-4-numerical-results",
    "title": "Numerical results",
    "pages": "7-10"
   },
   {
-   "id": "sec-003-5-conclusion",
+   "id": "sec-004-5-conclusion",
    "title": "Conclusion",
    "pages": "10-11"
   }

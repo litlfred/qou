@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.941
 latex_coverage_ratio: 0.891
+doc_brief: "THE HOLONOMY BRAIDING FOR Uξ(sl2) IN TERMS OF GEOMETRIC QUANTUM DILOGARITHMS — We derive an explicit formula for the holonomy R-matrix of quantum sl2 at a root of unity."
 ---
 Set $\xi=\exp(\frac{\pi i}{N})$ for $N \ge 2$ an integer. Denote by $\mathcal{U}_\xi$ the specialization of $\mathcal{U}_q(\sla)$ to $q=\xi$.
 

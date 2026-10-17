@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.976
 latex_coverage_ratio: 0.935
+doc_brief: "The Stokes phenomenon for the Ramanujan’s q -diﬀerence equation and its higher order extension — We show connection formulae of local solutions of the Ramanu- jan equation between the origin and the"
 ---
 In this papar, we deal with the Ramanujan equation $$qxu(q^2x)-u(qx)+u(x)=0,\qquad \forall x\in\mathbb{C}^*.
 \label{ramanujaneq}$$ We assume that $0<|q|<1$. The Ramanujan equation [\[ramanujaneq\]](#ramanujaneq){reference-type="eqref" reference="ramanujaneq"} has solutions $$\begin{aligned}

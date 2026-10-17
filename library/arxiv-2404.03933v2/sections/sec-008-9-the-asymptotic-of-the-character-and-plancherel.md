@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.929
 latex_coverage_ratio: 0.948
+doc_brief: "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2) AT EVEN ROOTS OF UNITY — We study the decomposition of tensor powers of two dimensional irreducible rep- resentations of quantum sl2 at even roots of"
 ---
 []{#as9 label="as9"} In this section we will compute the asymptotic of the character and the Plancherel measures on tilting submodules of $T(1)^{\otimes N}$ when $N\to \infty$. We will start with computing the asymptotic of the multiplicity of $T(k)\subset T(1)^{\otimes N}$.
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.97
 latex_coverage_ratio: 1.0
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS — We prove an upper bound for characters of the symmetric groups."
 ---
 Research of PŚ is supported by the MNiSW research grant P03A 013 30, by the EU Research Training Network "QP-Applications\", contract HPRN-CT-2002-00279 and by the EC Marie Curie Host Fellowship for the Transfer of Knowledge "Harmonic Analysis, Nonlinear Analysis and Probability\", contract MTKD-CT-2004-013389.
 

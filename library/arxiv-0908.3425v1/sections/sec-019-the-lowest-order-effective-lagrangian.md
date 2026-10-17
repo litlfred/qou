@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.961
 latex_coverage_ratio: 0.98
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 []{#sec_loel label="sec_loel"} In terms of the SU(3) matrix $U(x)$ of Eqs. ([\[3:1:2:upar\]](#3:1:2:upar){reference-type="ref" reference="3:1:2:upar"}) and ([\[3:1:2:phisu3\]](#3:1:2:phisu3){reference-type="ref" reference="3:1:2:phisu3"}) the most general, chirally invariant, effective Lagrangian with the minimal number of derivatives reads $$\label{3:2:1:l2}
 {\cal L}_{\rm eff}

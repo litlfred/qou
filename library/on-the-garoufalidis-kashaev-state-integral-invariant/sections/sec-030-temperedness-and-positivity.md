@@ -8,6 +8,7 @@ pages: 31-34
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
 toc_source: outline
+doc_brief: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT — 63 sections: Front matter; ACKNOWLEDGMENTS; ABSTRACT"
 ---
 Temperedness and Positivity
 While several known examples in [1, 14, 6] define versions of Ψ within the Schwartz

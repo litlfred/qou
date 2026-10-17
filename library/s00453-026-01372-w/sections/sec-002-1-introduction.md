@@ -8,6 +8,7 @@ pages: 1-5
 source_pdf: s00453-026-01372-w.pdf
 source_sha256: 98b569eff84fb489
 toc_source: outline
+doc_brief: "Concentration of Submodular Functions and Read-k Families Under Negative Dependence — We study the question of whether submodular functions of random variables satisfying various notions of negative"
 ---
 Concentration inequalities are ubiquitous in discrete mathematics and theoretical com-
 puter science [5, 6]. The most canonical examples are the Chernoff-Hoeffding bounds,

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.936
 latex_coverage_ratio: 0.97
+doc_brief: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A — This paper concerns the cohomological aspects of Donaldson– Thomas theory for Jacobi algebras and the associated cohomological Hall alge- bra, introduced"
 ---
 []{#prodss label="prodss"} In this section we define and introduce the first properties of the categorification of the quantum torus from refined DT theory.
 

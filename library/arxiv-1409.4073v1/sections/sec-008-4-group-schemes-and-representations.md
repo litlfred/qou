@@ -8,6 +8,7 @@ pages: 26-27
 source_pdf: 1409.4073v1.pdf
 source_sha256: b40be7f0022f70a1
 toc_source: outline
+doc_brief: "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION — We introduce “sheaﬁﬁcation” functors from categories of (lax monoidal) linear functors to categories of quasi-coherent sheaves (of algebras) of"
 ---
 Group schemes and representations.
 Let G be a ﬂat and aﬃne group scheme over R. In this section we want to interpret the

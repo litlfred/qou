@@ -8,6 +8,7 @@ pages: 6-6
 source_pdf: 2111.04763v2.pdf
 source_sha256: 760a7f9794e8baaa
 toc_source: outline
+doc_brief: "Resurgence of Chern-Simons theory at the trivial flat connection — Some years ago, it was conjectured by the first author that the Chern–Simons perturbation theory of a 3-manifold at the trivial flat"
 ---
 • We complete the 2 × 2 matrix Jred(x, q) of (x, q)-series to the 3 × 3 matrix J(x, q) by
 adding the trivial flat connection. Our completed matrix is a fundamental solution

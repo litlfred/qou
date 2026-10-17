@@ -11,6 +11,8 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.862
 latex_coverage_ratio: 0.942
+doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised"
+duplicate_of: "modularqholonomicmodules"
 ---
 Consider the fundamental matrices $U$ and $V$ given by Equations~\eqref{UVex41}
 and the associated monodromy. Using the modular transformation properties of

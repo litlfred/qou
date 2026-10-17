@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.625
 latex_coverage_ratio: 0.81
+doc_brief: "ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM INVARIANTS III: THE RESHETIKHIN-TURAEV INVARIANTS OF CLOSED HYPERBOLIC 3-MANIFOLDS OBTAINED BY DOING INTEGRAL SURGERY ALONG THE TWIST KNOT — This is the"
 ---
 Recall that $$\begin{aligned}
     \hat{V}&=\pi\sqrt{-1}\left(\frac{3}{2}q+\frac{q}{2}\theta_1^2-\theta_1^2-\theta_1-2\theta_2-(2p+3)\theta_3+(2p+1)\theta_3^2\right)\\\nonumber

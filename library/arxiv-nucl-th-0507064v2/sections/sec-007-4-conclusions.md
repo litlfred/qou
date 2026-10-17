@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 1.0
+doc_brief: "The Virial Equation of State of Low-Density Neutron Matter — 10 sections: Front matter; Virial Equation of State; Introduction"
 ---
 []{#conclusions label="conclusions"}
 

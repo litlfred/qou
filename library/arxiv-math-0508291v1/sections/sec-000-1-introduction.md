@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 0.994
+doc_brief: "Stein’s Method and Random Character Ratios Running head: Stein’s Method and Random Character Ratios Version of 8/13/05 — Stein’s method is used to prove limit theorems for random character ratios."
 ---
 Given a fixed $m \times m$ matrix, it is natural to study
 	the distribution of its eigenvalues, where each eigenvalue is

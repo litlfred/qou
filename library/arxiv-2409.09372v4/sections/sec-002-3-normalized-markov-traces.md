@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.961
 latex_coverage_ratio: 0.78
+doc_brief: "Markov traces on degenerate cyclotomic Hecke algebras — Let Hn(u) be the degenerate cyclotomic Hecke algebra with parameter u = {u1, . . . , um}."
 ---
 []{#Sec:Markov-traces label="Sec:Markov-traces"} In this section, we construct a $\mathbb{C}(\boldsymbol{u})$--linear function on $H_n(\boldsymbol{u})$ and demonstrate it constitutes a normalized Markov trace through Lambropoulou's approach from [@L], thereby proving Theorem [\[Them:Markov\]](#Them:Markov){reference-type="ref" reference="Them:Markov"} from the introduction.
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.935
 latex_coverage_ratio: 1.0
+doc_brief: "Automatic Theorem Proving in Walnut — 41 sections: Front matter; Introduction; Basics"
 ---
 \label{sec:true and false}
 In Section \ref{sec:automata accepting predicates} we saw an example of a predicate with no free variables: 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.983
 latex_coverage_ratio: 0.967
+doc_brief: "ON IRREDUCIBLE CHARACTERS OF THE IWAHORI-HECKE ALGEBRA IN — We use vertex operators to compute irreducible characters of the Iwahori-Hecke algebra of type A."
 ---
 Let $V=V_{\bar{0}}\bigoplus V_{\bar{1}}$ be a $\mathbb{Z}_2$-graded vector space over $\mathbb{C}(q)$ with basis $\{v_1,v_2,\cdots,v_a\}$ for the even subspace $V_{\bar 0}$ and basis $\{v_{a+1},v_{a+2},\cdots,v_{a+b}\}$ for the odd subspace $V_{\bar 1}$. Let $\pi$ be the endomorphism of $V\otimes V$ by $$\begin{aligned}
 (v_k\otimes v_l)\pi=

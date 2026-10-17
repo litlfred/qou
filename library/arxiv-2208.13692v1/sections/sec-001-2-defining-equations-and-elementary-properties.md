@@ -8,5 +8,7 @@ pages: 2-2
 source_pdf: 2208.13692v1.pdf
 source_sha256: 567eff9fb44ef3e5
 toc_source: outline
+doc_brief: "Bring’s curve: old and new — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
+duplicate_of: "s40879-023-00706-0"
 ---
 

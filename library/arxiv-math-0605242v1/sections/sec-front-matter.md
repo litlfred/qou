@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0605242v1.pdf
 source_sha256: 65fac7285e4a77f4
 toc_source: outline
+doc_brief: "N-Fold Integer Programming — In this article we study a broad class of integer programming problems in variable dimension."
 ---
 arXiv:math/0605242v1  [math.OC]  9 May 2006
 N-Fold Integer Programming

@@ -8,6 +8,7 @@ pages: 12-12
 source_pdf: 9304063v2.pdf
 source_sha256: 14a82437462eae23
 toc_source: inferred
+doc_brief: "arXiv:hep-th/9304063v2 29 Jan 1999 — 10 sections: Front matter; Introduction and Statement of Resu; The System of Partial Differential"
 ---
 A. Asymptotics of the σ-equation
 In the case of the ﬁnite N ensemble and α = 0, Edelman [7,8] and Forrester [11] (by a direct evaluation of the

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.975
 latex_coverage_ratio: 0.977
+doc_brief: "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS — In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the"
 ---
 When $\alpha=0$, one can realize the Ising model by choosing $\sigma(1)$ according to a Bernoulli random variable of parameter $\frac{1}{2}$, and then each sign $X_i=\sigma(i)\sigma(i+1)$ according to independent Bernoulli random variables with $$\proba[X_i=1]=1-\proba[X_i=-1]=\frac{\E^{\beta}}{2\cosh \beta}.$$ 
 In particular, one recovers immediately the value of the partition function $Z_n(\IS,0,\beta)=2^n(\cosh \beta)^{n-1}$. We then want to compute the joint cumulants of the magnetization $M_n$; by parity, the odd cumulants and moments vanish. By multilinearity, one can expand

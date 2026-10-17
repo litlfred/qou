@@ -8,6 +8,7 @@ pages: 2-3
 source_pdf: CRMATH_2011__349_19-20_1037_0.pdf
 source_sha256: fd5bd0558dfe892f
 toc_source: outline
+doc_brief: "Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières — 8 sections: Front matter; Classiﬁcation analytique et théori; Notations"
 ---
 3. Opérateurs de Stokes
 A un module aux q-différences M = (K n,ΦA) où, sans perte de généralité, la matrice A est peut-être prise dans

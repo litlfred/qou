@@ -8,6 +8,7 @@ pages: 13-13
 source_pdf: 0406242v4.pdf
 source_sha256: 27e48b483007b824
 toc_source: outline
+doc_brief: "On canonical triangulations of once-punctured torus bundles and two-bridge link complements Introduction — 28 sections: Front matter; Introduction; The canonical triangulation"
 ---
 Volume of an ideal tetrahedron
 The volume of a hyperbolic tetrahedron whose dihedral angles are x, y, z > 0 is

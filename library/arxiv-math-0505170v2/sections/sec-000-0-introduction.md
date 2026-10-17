@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.893
+doc_brief: "AN AVERAGING PROCESS FOR UNIPOTENT GROUP ACTIONS — We present an averaging process for sections of a torsor under a unipotent group."
 ---
 Let $\K$ be a field of characteristic $0$. For any natural number
 $q$ let $\K [t_0, \ldots, t_q]$ be the polynomial algebra, and let

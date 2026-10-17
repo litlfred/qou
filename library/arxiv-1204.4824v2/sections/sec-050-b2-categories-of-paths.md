@@ -8,6 +8,7 @@ pages: 79-79
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
 toc_source: outline
+doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
 ---
 Categories of paths
 Let X be any topological space. By a path in X we mean a continuous map ℘: [T1, T2] →X

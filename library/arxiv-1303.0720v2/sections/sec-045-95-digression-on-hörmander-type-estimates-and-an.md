@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 0.933
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 We should like to apply Proposition [\[prop-hormiter\]](#prop-hormiter){reference-type="ref" reference="prop-hormiter"} with $\phi:=mQ$. Then we need the assumptions of the proposition to be valid: $$\label{eq-9.4.1}
 \varDelta Q>0\quad\text{and}\quad\frac{1}{2\varDelta Q}\varDelta\log\varDelta Q>-m

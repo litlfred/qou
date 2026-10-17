@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.991
 latex_coverage_ratio: 0.965
+doc_brief: "STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION — Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect(X), we are"
 ---
 In this paper we work over a base commutative, associative ring $R$ with unity. If not stated otherwise a fiber category will be a category fibered in groupoids over $\mathop{\mathrm{\textup{Aff}}}/R$, the category of affine schemes over $\mathop{\mathrm{\textup{Spec}}}R$, or, equivalently, the opposite of the category of $R$-algebras. An fpqc stack will be a stack for the fpqc topology.
 

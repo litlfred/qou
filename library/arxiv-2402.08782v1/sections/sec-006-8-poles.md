@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.979
 latex_coverage_ratio: 0.973
+doc_brief: "Hecke–Farey coordinates for Bring’s surface Doha Kattan 1 and David Singerman 2 — The modular group Γ (which is the Hecke group H3) can be used to study triangular maps, Here we use the Hecke group"
 ---
 In a Farey map (the case $q=3$) a {\it pole} is a vertex with a Farey coordinate of the form $\frac{a}{0}$, where $a\not =0.$ For example, in the icosahedron $\mathscr{M}_{3}(5)$ the poles are $\frac{1}{0}$ and $\frac{2}{0}.$ which from Figure \ref{f9} are the north and south poles of the icosahedron.  Also, in \cite{ISS} Farey fractions were used to construct the fundamental region for the Klein quartic.  We found that $\frac{1}{0}$ was at the centre whilst $\frac{2}{0}$ and $\frac{3}{0}$ lie on the boundary. This is a typical situation. The pole $\frac{1}{0}$ always lies at the centre and the other poles lie on the boundary. In a rough sense these other poles lie at "infinity". The poles of $\mathscr{M}_{4}(5)$ are
 $$A_1= \frac{1}{0\sqrt 2},  \, B_1=\frac{2}{0\sqrt 2},  \,  C_2=\frac{\sqrt 2}{0}, \, H_2=\frac{2\sqrt 2}{0}.$$

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.897
 latex_coverage_ratio: 0.94
+doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Young diagrams which can be regarded as a natural one-parameter deformation of some classi- cal"
 ---
 We have proved that the sequence of random variables $(S_k^{[n]})_n$ converges (as $n\to\infty$) to $s_k$ in probability; in other words for each $\epsilon>0$ and each integer $k\geq 0$ $$\label{eq:moments-convergence}
 \lim_{n\to\infty} \mathbb{P}\left( \left| \int u^{k} \dif P_{\Lambda_n}(u)

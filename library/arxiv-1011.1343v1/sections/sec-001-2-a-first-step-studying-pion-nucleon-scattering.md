@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 0.988
+doc_brief: "Chiral symmetry, nuclear forces and all that — 11 sections: Front matter; The early days at Stony Brook; A first step: Studying pion-nucleo"
 ---
 \begin{figure}[t]
 \begin{center}

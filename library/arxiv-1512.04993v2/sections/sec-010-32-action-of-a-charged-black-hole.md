@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.975
 latex_coverage_ratio: 0.987
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 Adding electrical charge to an AdS black hole changes how the Wheeler-DeWitt patch terminates. Rather than terminating when the ingoing lights heets run into the singularity at $r=0$, it now terminates when the light sheets run into each other at $t=0$ (for $t_L = t_R$). Nevertheless, we can use much the same reasoning as before to find the late-time growth of the enclosed  action.
 

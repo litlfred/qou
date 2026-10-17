@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.966
 latex_coverage_ratio: 1.0
+doc_brief: "Combinatorial optimization in geometry (Rivin) — extends and unifies results on ideal polyhedra in H³ to singular Euclidean structures on surfaces, possibly with infinitely many singularities."
 ---
 []{#moduli label="moduli"} In the Introduction we alluded to the cell decomposition of the moduli space $\mathcal{M}$ of Euclidean structures, where the cells are given by Euclidean structures where the Delaunay triangulation has a fixed combinatorial type $T$. Each cell is a convex polytope $\mathcal{P}(T)$, and the results above can be used to describe the combinatorial and geometric structure of $\mathcal{P}(T)$ in some detail, although some interesting questions (discussed at the end of this section) remain open.
 

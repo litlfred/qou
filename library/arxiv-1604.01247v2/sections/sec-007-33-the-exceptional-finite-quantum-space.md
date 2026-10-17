@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.991
+doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — Based on an interpretation of the quark-lepton symmetry in terms of the unimodularity of the color group SU(3) and on the existence of 3 generations, we develop an"
 ---
 Apart $J^8_3$, all the other finite-dimensional simple Euclidean Jordan algebras can be realized as real vector spaces of self-adjoint operators in finite-dimensional Hilbert spaces, stable by the anticommutator of the associative composition of linear operators. They can therefore be considered as algebras of observabes of some finite quantum systems.These special algebras enter in the frame of noncommutative geometry based on associative $\ast$-algebras and each nonexceptional simple Lie algebra occurs as Lie algebra of derivations of one of these special simple Euclidean Jordan algebras.\
 However, as proved in [@alb:1934] the Jordan algebra $J^8_3$ is *exceptional* which means that it cannot be inbedded in an associative algebra as a subspace stable by the anticommutator of the associative product as Jordan product.\

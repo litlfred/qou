@@ -11,5 +11,6 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.909
 latex_coverage_ratio: 1.0
+doc_brief: "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS — Let M be a hyperbolic n–manifold whose cusps have torus cross- sections."
 ---
 []{#s:defs label="s:defs"} In this section we recall the definition of *simplicial volume* for pseudomanifolds and set up some computational tools.

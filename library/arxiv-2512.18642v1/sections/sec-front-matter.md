@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2512.18642v1.pdf
 source_sha256: c4c7f8b0a719aa2d
 toc_source: outline
+doc_brief: "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain — This paper introduces a hidden quantum Markov models (HQMMs) framework to the Af"
 ---
 A Hidden Quantum Markov model framework for
 Entanglement and Topological Order in the AKLT Chain

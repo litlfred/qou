@@ -9,10 +9,11 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-2007.15570v1",
+  "title": "A quantum Monte Carlo based approach to intranuclear cascades",
   "contains": [
     "library/arxiv-2007.15570v1/sections/sec-front-matter",
-    "library/arxiv-2007.15570v1/sections/sec-000"
+    "library/arxiv-2007.15570v1/sections/sec-000",
+    "library/arxiv-2007.15570v1/sections/sec-001"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -25,7 +26,9 @@
   },
   "meta": {
     "doc_id": "arxiv-2007.15570v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "2007.15570v1.pdf",
     "source_sha256": "6e46f4346a29fd83bf48e3ce2e5f10c6a3af97a0d3638c95a5f1acb58cb4fce5",
     "pages": 14,

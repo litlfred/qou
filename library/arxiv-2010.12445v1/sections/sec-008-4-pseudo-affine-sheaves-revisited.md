@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.959
 latex_coverage_ratio: 0.948
+doc_brief: "STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION — Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect(X), we are"
 ---
 In this section we give an alternative characterization of pseudo-affine sheaves, which will be used when studying the fiber category $\Fib_{\stX,\shC}$.
 

@@ -8,6 +8,7 @@ pages: 59-66
 source_pdf: 1301.4504v4.pdf
 source_sha256: 201acc5bb1d4b6a0
 toc_source: outline
+doc_brief: "Quantum Computation vs. Firewalls — In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue"
 ---
 The Absorption Probability for a Nambu-Goto String
 In this section we compute the low-energy absorption probability for transverse oscilla-

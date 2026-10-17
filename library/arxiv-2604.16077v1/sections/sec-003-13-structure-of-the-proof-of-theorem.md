@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.908
 latex_coverage_ratio: 0.961
+doc_brief: "Volume Conjecture and quantum hyperbolic invariants: the figure eight knot complement — We compute the real part of the semi-classical limit of the sequence of quantum hyperbolic invariants (QHI) of"
 ---
 \label{sec:sketchproof} Let us denote by $PM(N)$ (for \textit{positive monomial}) the set of complex-valued functions of $N$ of the form $$\exp\left (O_{N\to \infty}(1) + \log(N) O_{N\to \infty}(1)\right ).$$
 In other words, a function $f(N)$ is in $PM(N)$ if there exist constants $C, C'>0$ and $\alpha,\beta \in \R$ such that

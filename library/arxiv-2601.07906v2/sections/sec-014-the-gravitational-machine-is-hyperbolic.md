@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.957
 latex_coverage_ratio: 1.0
+doc_brief: "A universal sum over topologies in 3d gravity — We explore the sum over topologies in AdS3 quantum gravity and its relationship with the statistical interpretation of the boundary theory."
 ---
 \label{subsec:machine is hyperbolic}
 In this section, we prove one of the important results of this paper: 

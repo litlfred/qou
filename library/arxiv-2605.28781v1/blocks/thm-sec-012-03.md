@@ -1,1 +1,1 @@
-There is an absolute constantC >0such that the following holds.
+There is an absolute constant C > 0 such that the following holds.

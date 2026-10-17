@@ -8,6 +8,7 @@ pages: 14-14
 source_pdf: 0810.1697v1.pdf
 source_sha256: 1aef66179da3c154
 toc_source: outline
+doc_brief: "ON THE CABLE EXPANSION FORMULA — In this paper, a generalized version of Morton’s formula [8] is proved."
 ---
 [1] Blanchet, C.; Habegger, N.; Masbaum, G.; and Vogel, P., Three-manifold invariants derived
 from the Kauﬀman bracket. Topology 1992 31, no. 4, 685–699.

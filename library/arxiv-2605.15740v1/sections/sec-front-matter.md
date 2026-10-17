@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2605.15740v1.pdf
 source_sha256: aa7f99d6633113c6
 toc_source: outline
+doc_brief: "Bailey pairs, Eichler integrals and unified Witten-Reshetikhin-Turaev invariants — In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´e homology"
 ---
 BAILEY PAIRS, EICHLER INTEGRALS AND UNIFIED
 WITTEN-RESHETIKHIN-TURAEV INVARIANTS

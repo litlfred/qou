@@ -8,6 +8,7 @@ pages: 5-6
 source_pdf: helicity03mmj.pdf
 source_sha256: e364dad3afff3180
 toc_source: outline
+doc_brief: "MOSCOW MATHEMATICAL JOURNAL GEOMETRY OF HIGHER HELICITIES — We revisit an interpretation of higher-dimensional helicities and Hopf–Novikov invariants from the point of view of the Brownian ergodic"
 ---
 quadratic form on divergence-free vector ﬁelds, as the explicit formula in Deﬁ-
 nition 2.1 shows. Similarly, one deﬁnes a symmetric form, the cross-helicity, for

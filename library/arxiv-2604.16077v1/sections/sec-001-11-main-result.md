@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.965
 latex_coverage_ratio: 0.983
+doc_brief: "Volume Conjecture and quantum hyperbolic invariants: the figure eight knot complement — We compute the real part of the semi-classical limit of the sequence of quantum hyperbolic invariants (QHI) of"
 ---
 \label{QHIintro1} In this paper we compute the real part of the semi-classical limit of the sequence of {\it quantum hyperbolic invariants} (or \textit{QHI}) associated to the (oriented) complement $M:=S^3 \setminus K$ of the figure-eight knot $K:=4_1$. We notably obtain exponential growth of the invariants, with rate equal to the hyperbolic volume ${\rm Vol}(M)/2\pi$, or subexponential growth, depending on a choice of parameters of the QHI.  \smallskip
 

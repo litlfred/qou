@@ -8,6 +8,7 @@ pages: 7-7
 source_pdf: 1210.5756v1.pdf
 source_sha256: c7546a79a85b8dd5
 toc_source: outline
+doc_brief: "Contact Graphs of Unit Sphere Packings Revisited ∗ — The contact graph of an arbitrary ﬁnite packing of unit balls in Euclidean 3-space is the (simple) graph whose vertices correspond to the packing"
 ---
 Proof of (ii) in Theorem 2
 Based on the previous subsection, it is suﬃcient to prove the estimate in question on the touching triplets

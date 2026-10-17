@@ -8,6 +8,8 @@ pages: 3-3
 source_pdf: symmetry-11-01298.pdf
 source_sha256: 595648c84501e8a6
 toc_source: outline
+doc_brief: "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics — In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds."
+duplicate_of: "arxiv-1910.09966v1"
 ---
 Let us start with the simplest case, the surface. By results of Riemann and Hurwitz, every surface
 can be represented by a 2-fold covering of S2. As example, let us take the torus T2 with the 2-fold

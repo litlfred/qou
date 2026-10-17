@@ -8,6 +8,7 @@ pages: 1-5
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
 toc_source: inferred
+doc_brief: "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry — 66 sections: Front matter; Purpose of this book.; Contents of this book."
 ---
 arXiv:math/0203194v1  [math.NT]  19 Mar 2002
 Period mappings and diﬀerential

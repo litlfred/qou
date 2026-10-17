@@ -8,6 +8,7 @@ pages: 48-49
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
 toc_source: outline
+doc_brief: "Hecke algebras, generalisations and representation theory — 30 sections: Front matter; Algebras of Finite Type; Blocks"
 ---
 Yokonuma–Hecke algebras were introduced by Yokonuma [Yo] for the same reason that Ariki–Koike alge-
 bras were introduced by Ariki and Koike: as generalisations of Iwahori–Hecke algebras. More precisely,

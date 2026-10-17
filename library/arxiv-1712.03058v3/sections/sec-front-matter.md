@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 1712.03058v3.pdf
 source_sha256: ba48c5bbb2467374
 toc_source: outline
+doc_brief: "Iterated ﬁltering methods for Markov process epidemic models — Dynamic epidemic models have proven valuable for public health decision makers as they provide useful insights into the understanding"
 ---
 Iterated ﬁltering methods for Markov process
 epidemic models

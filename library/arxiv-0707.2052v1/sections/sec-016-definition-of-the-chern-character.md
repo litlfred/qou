@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.978
 latex_coverage_ratio: 0.957
+doc_brief: "The Mukai pairing, I: a categorical approach — We study the Hochschild homology of smooth spaces, emphasizing the importance of a pairing which generalizes Mukai’s pairing on the cohomology of K3"
 ---
 Suppose $X$ is a space, and ${\mathscr E}$ is an object in $\mathbf{D}(X)$. Consider ${\mathscr E}$ as an object of $\mathbf{D}({\mathsf{pt}}\times X)$, i.e., as a kernel ${\mathsf{pt}}\rightarrow
 X$, so there is an induced linear map $${\mathscr E}_*\colon\mathop{\mathrm{HH}}_\bullet({\mathsf{pt}}) \rightarrow\mathop{\mathrm{HH}}_\bullet(X).$$ Now, because the Serre functor on a point is trivial, $\mathop{\mathrm{HH}}_0({\mathsf{pt}})$ is canonically identifiable with $\mathop{\mathrm{Hom}}_{{\mathsf{pt}}\times {\mathsf{pt}}}({\mathscr O}_{\mathsf{pt}}, {\mathscr O}_{\mathsf{pt}})$ so there is a distinguished class ${\mathbf 1}\in \mathop{\mathrm{HH}}_0({\mathsf{pt}})$ corresponding to the identity map. Define the Chern character of ${\mathscr E}$ as $$\mathop{\mathrm{ch}}({\mathscr E}) := {\mathscr E}_*({\mathbf 1}) \in \mathop{\mathrm{HH}}_0(X).$$ Graphically this has the following description: $$\mathop{\mathrm{ch}}({\mathscr E}):=\raisebox{-.45\height}{}.$$ Naturality of push-forward leads to the next theorem.

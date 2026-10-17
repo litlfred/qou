@@ -8,6 +8,7 @@ pages: 42-47
 source_pdf: 1105.2919v1.pdf
 source_sha256: 6d94496f2093ddd0
 toc_source: outline
+doc_brief: "Chiral eﬀective ﬁeld theory and nuclear forces — We review how nuclear forces emerge from low-energy QCD via chiral eﬀective ﬁeld theory. The presentation is accessible to the non-specialist."
 ---
 So far we considered only neutron-proton scattering. However, as stressed repeatedly by the Nijmegen
 group [139, 176], for a precise reproduction of the NN data, i.e., the np and the pp data, it is crucial to

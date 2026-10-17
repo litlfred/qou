@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.982
 latex_coverage_ratio: 0.655
+doc_brief: "Gentle introduction to Soergel bimodules I: The basics — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules."
 ---
 Consider the bimodule $X_{sr}=B_sB_rB_s\cdots$ the product having $m(s,r)$ terms (recall that $m(s,r)$ is the order of $sr$). We define $f_{sr}$ as the only degree $0$ morphism from $X_{sr}$ to $X_{rs}$ sending $1^{\otimes}$ to $1^{\otimes}$. We have essentially encountered this morphism in Section [\[babyA\]](#babyA){reference-type="ref" reference="babyA"}.
 

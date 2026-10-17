@@ -8,6 +8,7 @@ pages: 26-28
 source_pdf: Download.pdf
 source_sha256: ca9639465b08d34c
 toc_source: outline
+doc_brief: "Concentration of empirical distribution functions with applications to non-i.i.d. models — 12 sections: Front matter; Introduction; Empirical Poincaré inequalities"
 ---
 Here we recall some facts about Poincaré-type and log-Sobolev inequalities. While Lemmas 2.2
 and 5.3 list some of their consequences, one might wonder which measures actually satisfy these

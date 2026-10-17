@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.97
 latex_coverage_ratio: 0.977
+doc_brief: "Compact Q-balls and Q-shells within a $CP^N$ Skyrme-Faddeev type model — 18 sections: Front matter; Introduction; The extended Skyrme-Faddeev model"
 ---
 Scalar fields play a crucial role in theoretical physics. They are extensively employed for modeling physical matter across a diverse range of contexts, from fundamental fields such as the Higgs field [@PhysRevLett.13.508] to effective descriptions like the order parameter field in the Landau-Ginzburg model [@Ginzburg:1950sr]. Depending on the inherent complexity of the physical phenomenon under investigation, scalar fields can be represented by straightforward real-valued functions or by more intricate structures, such as multiple complex-valued fields defined on complex projective spaces ($CP^N$ models) [@zakrzewski1988low].
 

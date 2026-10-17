@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.987
 latex_coverage_ratio: 0.975
+doc_brief: "arXiv:math/0006057v2 [math.QA] 10 Jun 2000 — We give a survey of the theory of ﬁnite quantum groupoids (weak Hopf algebras), including foundations of the theory and applications to ﬁnite depth"
 ---
 We describe a method of constructing twists of quantum groupoids,
 which is a  finite-dimensional modification of the construction

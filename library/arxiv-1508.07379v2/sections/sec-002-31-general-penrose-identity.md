@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.922
 latex_coverage_ratio: 0.983
+doc_brief: "Convergence of Mayer and Virial expansions and the Penrose tree-graph identity Introduction — We establish new lower bounds for the convergence radius of the Mayer series and the Virial series of a"
 ---
 Penrose identity is a rewriting of the Ursell functions $$\Phi^T(x_1,\dots,x_n)~=~\sum\limits_{g\in {\mathcal G}_{n}}~
 \prod\limits_{\{i,j\}\in E_g}\left[  e^{ -\b V(x_i -x_j)} -1\right]$$ based on the existence of a map (*partition scheme*) from the set ${\mathcal T}_n$ of the trees with vertex set $[n]$ to the set ${\mathcal G}_n$ of the connected graphs with vertex set $[n]$.

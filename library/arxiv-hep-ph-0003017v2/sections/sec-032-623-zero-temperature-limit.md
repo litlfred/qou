@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.932
 latex_coverage_ratio: 0.935
+doc_brief: "arXiv:hep-ph/0003017v2 26 Jun 2000 — Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems."
 ---
 The random matrix model discussed in the previous section has attracted a great deal of interest, and more sophisticated versions of this model have been proposed [@Feinnh; @Halaszyl; @Osbornmu; @Nowak; @glasgow]. One problem of the model ([\[zrandommu\]](#zrandommu){reference-type="ref" reference="zrandommu"}) is that the chiral condensate is $\mu$-dependent below the critical value of the chemical potential. The correct zero temperature limit, with a chiral condensate that remains constant up to the critical value of the chemical potential, is obtained if all Matsubara frequencies are taken into account. We illustrate this with a one-dimensional lattice QCD model.
 

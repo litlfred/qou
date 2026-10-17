@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 0.976
+doc_brief: "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain — This paper introduces a hidden quantum Markov models (HQMMs) framework to the Af"
 ---
 Let $\mathcal{H}$ and $\mathcal{K}$ be two finite-dimensional Hilbert spaces and let $\mathcal{B}(\mathcal{H})$ and $\mathcal{B}(\mathcal{K})$ be the algebras of bounded operators over the Hilbert spaces $\mathcal{H}$ and $\mathcal{K}$, respectively. A map is $\mathcal{E}$ from $\mathcal{B}(\mathcal{H})$ to $\mathcal{B}(\mathcal{K})$ is said to be *completely positive* if all its matrix amplifications $$\mathcal{E}: M_n(\mathcal{A}) \to M_n(\mathcal{B}), \quad [a_{ij}] \mapsto [\Phi(a_{ij})]$$ preserve positivity for every $n \in \mathbb{N}$. A *quantum channel* is a completely positive, trace-preserving map $\Phi: \mathcal{A} \to \mathcal{B}$ that describes general physical transformations of quantum states. The fundamental duality between state and observable evolution is encoded in the dual map $\Phi^*: \mathcal{B}^* \to \mathcal{A}^*$, defined via the relation $$\operatorname{Tr}(\Phi(\rho) X) = \operatorname{Tr}(\rho \, \Phi^*(X)) \quad \text{for all } \rho \in \mathcal{A}_*, \, X \in \mathcal{B}.$$ This establishes the precise correspondence between the Schrödinger picture (state evolution $\rho \mapsto \Phi(\rho)$) and the Heisenberg picture (observable evolution $X \mapsto \Phi^*(X)$).
 

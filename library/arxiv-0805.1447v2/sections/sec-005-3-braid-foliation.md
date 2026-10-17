@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.981
 latex_coverage_ratio: 0.986
+doc_brief: "BRAID ORDERING AND THE GEOMETRY OF CLOSED BRAID — The relationships between braid ordering and the ge- ometry of its closure is studied."
 ---
 In this section, we summarize basic machinery of Birman-Menasco's braid foliation theory in case of an embedded essential surface. For details of these techniques, see [@bf] or [@bm2].
 

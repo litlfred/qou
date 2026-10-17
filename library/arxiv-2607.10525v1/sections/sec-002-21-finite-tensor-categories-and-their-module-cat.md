@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "Fiber Functors of Equivariantizations of Finite Tensor Categories — Let G be a finite group acting on a finite tensor category C."
 ---
 A *finite tensor category* is a finite abelian category equipped with a rigid monoidal structure, bilinear tensor product, and simple unit [@EO04 Section 2.2]; a *fusion category* is a semisimple finite tensor category.
 

@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1011.1343v1.pdf
 source_sha256: 7d50e5e28e695191
 toc_source: outline
+doc_brief: "Chiral symmetry, nuclear forces and all that — 11 sections: Front matter; The early days at Stony Brook; A first step: Studying pion-nucleo"
 ---
 arXiv:1011.1343v1  [nucl-th]  5 Nov 2010
 Chiral symmetry, nuclear forces and all that

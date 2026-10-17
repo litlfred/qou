@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.99
 latex_coverage_ratio: 1.0
+doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety for SL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
 ---
 ::: definition
 []{#def:VirtualEdges label="def:VirtualEdges"} A *virtual edge* of $M$ is an element in the set $$V(M) =\big(I(\widetilde M)\times I(\widetilde M)\big)\big/\pi_1(M)$$ of pairs of ideal points in $\widetilde M$ up to the $\pi_1(M)$-action.

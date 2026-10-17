@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.976
 latex_coverage_ratio: 1.0
+doc_brief: "Braided fermions from Hurwitz algebras — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of"
 ---
 One speculative idea is that the lack of faithfulness of the representations of the braid groups $B_2$ and $B_3^c$ using $\mathbb{C}$ and $\mathbb{H}$ respectively naturally places a restriction on the number of distinct braided physical states that can be represented. The Helon model has no mechanism in place to restrict the number of allowable physical states. One could add more twisting to the ribbons and increase the complexity of braiding without limit, to get an infinite number of distinct states. Indeed, the model has been extended to a infinite number of generations [@Bilson-Thompson2008]. However, because the $\mathbb{C}$ and $\mathbb{H}$ representations of $B_2$ and $B_3^c$ representations are not faithful, many distinct braids are represented by the same (hyper)complex number. Each (hyper)complex number therefore represents an equivalence class of braids, each to be identified with a physical state. The finite set of equivalence classes then places a limit on the number of admissible physical states.
 

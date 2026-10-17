@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.697
 latex_coverage_ratio: 0.964
+doc_brief: "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS — We prove conjectures of Garoufalidis-Gu-Mari˜no [9] that perturbative series associated with the hyperbolic knots 41 and 52 are resurgent and"
 ---
 \label{sec:alg}
 Fix a critical point $p_0\in\Sigma$ with a lift of the critical value $V_0\in\BC$ and $\vartheta\in\arg(\BC\backslash\calS(V_{0}))\cap(\tfrac{\pi}{2},\tfrac{3\pi}{2})$. This determines the steepest descent contour~$\calC_{p_0,\vartheta}$ and constants $\epsilon,M>0$ so that all points $p\notin W_{\epsilon,M}$ satisfy $[\gamma_{p,\theta}]=0$ (see Corollary~\ref{cor:half.thimb.stateint.zero}). Let $W=W_{\epsilon,M}$ and consider the set

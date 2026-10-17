@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.961
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:hep-ph/0601023v3 23 Apr 2007 — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non - su- persymmetric uniﬁcation"
 ---
 Recently a new class of heterotic string ~\cite{Gross:1984dd}   have been proposed
  which lead to 

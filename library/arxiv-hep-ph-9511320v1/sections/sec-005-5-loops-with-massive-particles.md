@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.994
 latex_coverage_ratio: 0.988
+doc_brief: "arXiv:hep-ph/9511320v1 15 Nov 1995 — We analyze the eﬀective low–energy ﬁeld theory of Goldstone bosons and baryons chirally coupled to massive spin–1 ﬁelds."
 ---
 Up to now, we have only considered tree graphs. However, it is well--known that in the relativistic formulation of baryon CHPT, loops can contribute below the chiral dimension one would expect (as detailed by Gasser et al. in Ref.[@gss]). Therefore, for the single vector-exchange graphs we consider, we have to be more careful. These general diagrams for Goldstone boson--baryon scattering (in forward direction) or the baryon electromagnetic form factors are shown in Fig.2. The shaded areas denote the whole class of multi--loop diagrams. To be precise, these are Goldstone boson loops. The blob on the right side does only contain Goldstones and external sources and thus there is a consistent power counting, i.e the $n$--loop insertions on that vertex are obviously suppressed by $2n$ powers in the small momentum compared to the leading tree graph. To leading order, we thus only need to consider the tree level couplings of the massive spin--1 fields to the pions[^1] or the photon. Matters are different for the loops contained in the left blob in Fig.2. since there is no more one--to--one correspondence between the loop expansion and the expansion in small momenta and meson masses.
 

@@ -8,6 +8,7 @@ pages: 3-7
 source_pdf: 0904.1247v3.pdf
 source_sha256: 4a6f4dee6af66dac
 toc_source: outline
+doc_brief: "THE CHARACTER THEORY OF A COMPLEX GROUP — We apply the ideas of derived algebraic geometry and topological ﬁeld theory to the representation theory of reductive groups."
 ---
 in Theorem 1.8, from the perspective of representation theory. We ﬁrst recall two categories of
 D-modules of fundamental interest in representation theory and of primary focus in this paper.

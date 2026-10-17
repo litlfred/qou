@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 0.935
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 A convenient way to visualize (multi-) fusion categories is using weak Hopf algebras (see Section 4 for the definitions). Namely, let ${\mathcal C}$ be a multi-fusion category. Let $R$ be a finite dimensional semisimple $k$-algebra, and $F$ a fiber functor (i.e. an exact, faithful tensor functor) from ${\mathcal C}$ to $R$-bimod. Let $A=\text{End}_k(F)$ (i.e. the algebra of endomorphisms of the composition of $F$ with the forgetful functor to vector spaces).
 

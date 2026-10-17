@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.974
 latex_coverage_ratio: 0.969
+doc_brief: "ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS — This paper deals with exploiting symmetry for solving linear and integer programming problems."
 ---
 One way to produce symmetric input for (integer) linear optimization algorithms is by brute force: One can take any system $Ax\le b$ of linear inequalities and let the full group $\mathop{\mathrm{Sym}}(n)$ act. This way each original inequality may give up to $n!$ inequalities in the resulting *symmetrized* system. The symmetrized system of inequalities is $\mathop{\mathrm{Sym}}(n)$-invariant by construction. In order to produce input to our algorithms which is less well behaved than the hypertruncated cubes studied above we will apply this procedure to a special class of polytopes, which can be considered "wild". We aim at symmetric polytopes with many facets whose coordinates are not so nice, but still somewhat under control.
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.59
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 The pion-nucleon form factor $G_{\pi N}(Q^2)$ may be defined in terms of the pseudoscalar quark density $P_i=i\bar{q}\gamma_5 \tau_i q$ and the average light-quark mass $\hat m$ as [@Gasser:1987rb] $$\label{GpiN} \hat m \langle N(p',s')| P_i (0) | N(p,s) \rangle =
          \frac{M_\pi^2 F_\pi}{M_\pi^2 + Q^2}

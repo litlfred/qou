@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.771
 latex_coverage_ratio: 0.929
+doc_brief: "Volume Conjecture: Reﬁned and Categoriﬁed — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebraic curve, the zero"
 ---
 The fact that a $q$-difference operator $\widehat A (\widehat x, \widehat y; q)$ annihilates the partition function of Chern-Simons theory / matrix model / B-model / instanton partition function is easy to refine. Just like each of these partition functions becomes $t$-dependent, so does the operator $\widehat A (\widehat x, \widehat y; q,t)$ that annihilates it. The commutation relations [\[xycomm\]](#xycomm){reference-type="eqref" reference="xycomm"} do not change and, therefore, our proposal for the refinement of [\[VCquant\]](#VCquant){reference-type="eqref" reference="VCquant"} is easy to state: $$\label{VCquantref}
 \begin{equation}

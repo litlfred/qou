@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.983
 latex_coverage_ratio: 0.984
+doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — Based on an interpretation of the quark-lepton symmetry in terms of the unimodularity of the color group SU(3) and on the existence of 3 generations, we develop an"
 ---
 The notion of finite-dimensional Euclidean (or formally real) Jordan algebra was introduced and analyzed in [@jor-vn-wig:1934] under the name $r$-number algebra in order to formalize the properties of the observables of finite quantum systems. A minimal set of requirement for the observables of a finite quantum system is that it is a finite-dimensional real vector space $J$ such that one can consistently define powers of any element and that if a sum of squares of elements vanishes it implies that each of these elements vanishes. Given the square $x\mapsto x^2$, one defines a symmetric bilinear product on $J$ by setting $x\cdot y=1/2((x+y)^2-x^2-y^2)$ for $x,y\in J$.
 

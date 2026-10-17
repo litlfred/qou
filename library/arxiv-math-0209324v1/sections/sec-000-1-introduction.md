@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.972
 latex_coverage_ratio: 0.936
+doc_brief: "arXiv:math/0209324v1 [math.AC] 24 Sep 2002 — The main object of study in this paper is the completion Z[q]N = lim ←−n Z[q]/((1−q)(1−q2) · · · (1−qn)) of the polynomial ring Z[q], which arises from"
 ---
 \label{sec:introduction}
 The main object of study in this paper is the completion

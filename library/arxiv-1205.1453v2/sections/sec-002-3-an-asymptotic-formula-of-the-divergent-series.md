@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.792
 latex_coverage_ratio: 1.0
+doc_brief: "An asymptotic formula of the divergent bilateral basic hypergeometric series — We show an asymptotic formula of the divergent bilateral basic hypergeometric series 1ψ0(a; −; q, ·) with using the"
 ---
 In this section, we show an asymptotic formula of the divergent series ${}_1\psi_0(a;-;q,x)$. At first, we review Ramanujan's sum for ${}_1\psi_1(a;b;q,z)$ and its property. Ramanujan gives the following sum [@Hardy] $${}_1\psi_1(a;b;q,z)=\frac{(q,b/a,az,q/az;q)_\infty}{(b,q/a,z,b/az;q)_\infty},\qquad \left|b/a\right|<|z|<1.
 \label{Rsum}$$ We can regard this sum as a $q$-analogue of the bilateral binomial theorem [@Horn] as follows;

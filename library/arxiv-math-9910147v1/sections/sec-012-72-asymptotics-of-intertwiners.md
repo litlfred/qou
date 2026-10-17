@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.95
 latex_coverage_ratio: 0.626
+doc_brief: "arXiv:math/9910147v1 [math.QA] 27 Oct 1999 — We study the tensor product of principal unitary representations of the quantum Lorentz Group, prove a decomposition theorem and compute the associated"
 ---
 Our aim is to compute the behaviour of $\ElemRed{\!\!P+T}{\;\;P}{T}{X_0X_1}{Y_0Y_1}{Z_0Z_1}$ (see ([\[form6jprol1\]](#form6jprol1){reference-type="ref" reference="form6jprol1"}) for the explicit expression) for $P=Y_0-Y_1\geq 0, T\rightarrow +\infty.$ The sum on $X_2$ being finite, we can work term by term.\
 The asymptotics of $\sixjn{X_1}{X_0}{P+T}{T}{P}{\;\;X_2}{1}$ is very easy to obtain because, after a Racah-Wigner symetry ([\[symcont\]](#symcont){reference-type="ref" reference="symcont"}), the hypergeometric part of the result tends to one when $T$ is large. The behaviour is therefore given by: $$\begin{aligned}

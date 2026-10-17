@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.944
+doc_brief: "A Cable Knot and BPS-Series II — This is a companion paper to earlier work of the author, which generalizes to an inﬁnite family of (2, 2w + 1)-cabling of the ﬁgure eight knot (|w| > 3) and proposes"
 ---
 We first analyze $K=C_{(9,2)}(\bm{4_1})$. Applying Conjecture 2.1 to $w=4$, its predictions agree with the initial data listed in Section 7 of [@C][^1].
 

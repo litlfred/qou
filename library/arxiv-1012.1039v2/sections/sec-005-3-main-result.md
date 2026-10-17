@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.975
 latex_coverage_ratio: 0.99
+doc_brief: "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS — Let M be a hyperbolic n–manifold whose cusps have torus cross- sections."
 ---
 []{#s:main label="s:main"} In this section we prove the main result, Theorem [\[t:volumedecreases\]](#t:volumedecreases){reference-type="ref" reference="t:volumedecreases"}. The strategy is to modify an efficient relative fundamental cycle for $(M,\partial M)$ to a fundamental cycle on the filling, without increasing norm by too much.
 

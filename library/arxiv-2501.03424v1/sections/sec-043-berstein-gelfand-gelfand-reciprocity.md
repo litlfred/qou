@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "Soergel bimodules and Kazhdan-Lusztig polynomials — This paper presents an exposition of Soergel bimodules, the categoriﬁcation of Hecke alge- bras, and their applications to various topics in"
 ---
 \label{app5}
 For a complex semisimple Lie algebra $\g,$ let $\mathcal{C}$ denote the subcategory of $U(\g)$-Mod consisting of modules $V$ admitting finite dimensional weight spaces. For $V \in \mathcal{C},$ a weight $\lambda \in \h^*,$ and weight space $V[\lambda],$ we take $V[\lambda]^*$ to be all $f \in V^*$ that vanish on $V[\mu]$ where $\mu \ne \lambda.$ The dual module $\mathbf{D}(V)$ is defined by 

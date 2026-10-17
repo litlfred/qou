@@ -11,6 +11,8 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 0.933
+doc_brief: "Czechoslovak Mathematical Journal — 9 sections: Front matter; Introduction; Composition-Diamond lemma for left"
+duplicate_of: "czechmathj-60-2010-1-4"
 ---
 In this section, as an application of Lemma [\[l2\]](#l2){reference-type="ref" reference="l2"}, we re-prove that the highest weight module over $sl_2$ is irreducible (see [@book; @l]) and we show that any finite dimensional irreducible $sl_2$-module has the presentation $(**)$ as below.
 

@@ -8,6 +8,7 @@ pages: 4-5
 source_pdf: agt-v7-n2-p13-s.pdf
 source_sha256: affd571adbaac3fc
 toc_source: outline
+doc_brief: "Quantum hyperbolic geometry — 22 sections: Front matter; Introduction; Universal QHG"
 ---
 where we recall also from [3; 4] and [23; 24] (in Section 2.4 in particular) the notions
 and results we need.

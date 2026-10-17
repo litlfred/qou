@@ -8,6 +8,7 @@ pages: 62-66
 source_pdf: 0601458v1.pdf
 source_sha256: ef34611620cfd0bd
 toc_source: outline
+doc_brief: "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS — Interest in combinatorial interpretations of mathematical entities stems from the convenience of the concrete models they provide."
 ---
 notion of 2-categories - is just a preliminary suggestion of a still unﬁnished subject
 of higher-dimensional categories. However, it turns out to be a crucial idea when

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.983
 latex_coverage_ratio: 0.833
+doc_brief: "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE PLANE AND A BINODAL CUBIC CURVE — We construct a family of Lagrangian submanifolds in the Landau– Ginzburg mirror to the projective plane equipped"
 ---
 []{#sec:outline label="sec:outline"} The piece of symplectic geometry in the Landau--Ginzburg model $(X^\vee,W)$ we study is the Floer cohomology of Lagrangian submanifolds, while on the mirror side $\CP^2$ we consider the cohomology of the coherent sheaves $\cO_{\CP^2}(d)$. We construct a symplectic manifold $X(B)$, that serves as our symplectic model for $X^\vee$, and a collection of Lagrangian submanifolds $\{L(d)\}_{d\in
   \Z}$ in $X(B)$ that is mirror to the collection $\{\cO_{\CP^2}(d)\}_{d\in \Z}$. The constructions of $X(B)$ and $L(d)$ are based on the SYZ picture of mirror symmetry in terms of torus fibrations and affine manifolds, and also use the theory of Lefschetz fibrations. The manifold $X(B)$ carries two fibrations: one is a fibration over a singular affine manifold $B$ whose fibers are Lagrangian tori, while the other is a Lefschetz fibration whose fibers are symplectic submanifolds. See section [\[sec:main-construction\]](#sec:main-construction){reference-type="ref" reference="sec:main-construction"} for the definitions.

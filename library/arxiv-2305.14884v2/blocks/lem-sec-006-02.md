@@ -1,1 +1,1 @@
-For all invertible matrices Λ( z) over /C9 (z) and all integrable functions fℏ, we
+~\ref{lem.ff2} to shift the Gaussian and with a change of integration

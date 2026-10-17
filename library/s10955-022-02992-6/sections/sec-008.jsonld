@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/s10955-022-02992-6/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Combinatorial Lemmas: Proof of Theorems 2.1, 2.6, and 2.7",
+  "pageStart": 14,
+  "pageEnd": 14,
+  "contains": [
+    "library/s10955-022-02992-6/blocks/prose-sec-008"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10955-022-02992-6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10955-022-02992-6/manifest.jsonld",
+  "provenance": "ingested"
+}

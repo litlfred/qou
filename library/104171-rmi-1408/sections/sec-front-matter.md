@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 10.4171-rmi-1408.pdf
 source_sha256: eda199771108dff8
 toc_source: outline
+doc_brief: "DOI 10.4171/RMI/1408 © 2023 Real Sociedad Matemática Española — The nontrivial unital composition superalgebras, of dimension 3 and 6, which exist only in characteristic 3, are obtained from the"
 ---
 Rev. Mat. Iberoam. 40 (2024), no. 1, 129–152
 DOI 10.4171/RMI/1408

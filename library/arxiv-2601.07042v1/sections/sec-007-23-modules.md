@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.981
 latex_coverage_ratio: 0.93
+doc_brief: "A Tannakian description of the local Kaletha gerbe — We construct, for a p-adic field F, an explicit semisimple Tannakian category RigIsocF whose category of fiber functors recovers Kaletha’s Galois"
 ---
 []{#sec:mod label="sec:mod"} Now, let $R_{E/F}$ denote the $\prod_{\Gamma_{E/F}}\mathbb{Z}$-graded $L_{E}$-algebra $$\bigoplus_{(b_{\tau})_{\tau} \in \prod_{\Gamma_{E/F}}\mathbb{Z}} (L_{E})_{(b_{\tau})_{\tau}},$$ with addition defined component-wise and multiplication determined by $\ell_{(b_{\tau})_{\tau}} \cdot \ell'_{(c_{\tau})_{\tau}} = (\ell \cdot \ell')_{(b_{\tau} + c_{\tau})_{\tau}}$ for all $\ell, \ell' \in L_{E}$. This ring will also be equipped with an $\mathfrak{f}_{E}$-semilinear action, denoted by $\Phi_{R_{E/F}}$, determined by the semilinearity condition and the identity $\Phi_{R_{E/F}}(1_{(b_{\sigma})}) = \prod_{\gamma \in \Gamma_{E/F}} \gamma(\varpi_{E})^{b_{\gamma}}1_{(b_{\sigma})}$.
 

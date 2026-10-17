@@ -8,6 +8,7 @@ pages: 7-8
 source_pdf: 1210.5756v1.pdf
 source_sha256: c7546a79a85b8dd5
 toc_source: outline
+doc_brief: "Contact Graphs of Unit Sphere Packings Revisited ∗ — The contact graph of an arbitrary ﬁnite packing of unit balls in Euclidean 3-space is the (simple) graph whose vertices correspond to the packing"
 ---
 Proof of (i) in Theorem 2 using Theorem 3
 Let P be an arbitrary packing of n unit balls in E3. Let B stand for the unit ball centered at the origin of

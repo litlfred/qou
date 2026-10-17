@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.98
 latex_coverage_ratio: 1.0
+doc_brief: "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories — We revisit the deﬁnition of the 6j symbols from the modular double of Uq(sl(2, R)), referred to as"
 ---
 The quantum Teichm\"uller theory \cite{Fo97,Ka97,CF99,CF00}
 constructs a non-commutative

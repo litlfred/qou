@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.932
 latex_coverage_ratio: 0.859
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 The spaces $\mathrm{PA}^2_{q,m}$ considered in this paper involve the weight $\mathrm{e}^{-2mQ}$, where (locally at least) $Q$ is subharmonic and smooth. The estimates we derived in Section [\[sec-interlude\]](#sec-interlude){reference-type="ref" reference="sec-interlude"} for $q=2$ do not apply immediately, as the weights considered there had rather the converse property of being exponentials of subharmonic functions. Nevertheless, this difficulty is easy to overcome. Compare with, e.g., [@ahm1] for the analytic case.
 

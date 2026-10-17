@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.949
 latex_coverage_ratio: 0.982
+doc_brief: "Relativistic corrections for lepton-nucleus scattering in the short-time approximation — 8 sections: Relativistic corrections for lepto; Introduction; Short-time approximation"
 ---
 []{#sec:intro label="sec:intro"} In recent years, significant progress has been made in calculating inclusive cross sections for lepton scattering from nuclei [@Rocco:2020jlx; @Bacca:2014tla] using the microscopic, or *ab initio*, approach [@10.3389/fphy.2020.00379]. This framework allows for the inclusion of many-nucleon correlations and electroweak currents, which are essential for delivering theoretical predictions that explain the available experimental data. Specifically, nuclear wave functions are determined by solving the many-nucleon Hamiltonian, which typically includes a kinetic term arising from the sum of the kinetic energies of individual nucleons, as well as two- and three-body potentials that describe the correlations between nucleons in pairs and triplets. The interaction with external electroweak probes, such as electrons and neutrinos, is expressed by one- and two-nucleon current operators, which describe the coupling of the probe with individual nucleons and pairs of correlated nucleons.
 

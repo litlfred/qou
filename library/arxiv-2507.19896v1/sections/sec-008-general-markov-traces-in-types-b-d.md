@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.914
 latex_coverage_ratio: 0.993
+doc_brief: "Generalized Markov traces and Jucys-Murphy elements — We give a simple construction of Markov traces for Iwahori-Hecke algebras associated with infinite series of crystallographic Coxeter groups."
 ---
 \label{sec:gener-mark-trac-3}
 In type $A$, the classical result of Jones and Ocneanu \cite{jonesHeckeAlgebraRepresentations1987} says that a Markov trace with given constants $\rho, \mu$ is defined uniquely up to an overall scaling. Thus, Theorem~\ref{sec:markov-traces-via} gives a general description of a Markov trace in type $A$.

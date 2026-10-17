@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.953
 latex_coverage_ratio: 0.988
+doc_brief: "arXiv:hep-ph/0003017v2 26 Jun 2000 — Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems."
 ---
 In the context of QCD, the small eigenvalues are more interesting than those in the bulk because of their relation to spontaneous chiral symmetry breaking via the Banks-Casher relation. The local spectral correlation functions at the hard edge of the spectrum are characterized by $\lambda_p\sim{\cal O}(1/N)$ and $|\lambda_p-\lambda_q|\sim{\cal O}(1/N)$. Unfolding in the microscopic region is easy; the eigenvalues are simply rescaled by the mean level spacing at $\lambda=0$, which is given by Eq. ([\[spacing\]](#spacing){reference-type="ref" reference="spacing"}). By convention, we define the unfolded variables by $x_p=\lambda_p V\Sigma$, i.e. the factor of $\pi$ is omitted. Note that $V\propto N$. Thus, in the unfolded variables we have $x_p\sim{\cal O}(1)$ and $|x_p-x_q|\sim{\cal O}(1)$. As advertised above, the functional form of the $R_k$ is different in the microscopic region. The $R_k$ are still given by the determinant of a kernel according to Eq. ([\[det\]](#det){reference-type="ref" reference="det"}), but the sine kernel is now replaced by the Bessel kernel [@Verb93], $$\label{Bessel}
   K(x,y)=\sqrt{xy}\:\frac{xJ_{\alpha+1}(x)J_\alpha(y)

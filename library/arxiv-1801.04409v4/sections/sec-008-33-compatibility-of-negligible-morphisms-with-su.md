@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.968
 latex_coverage_ratio: 0.978
+doc_brief: "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES — We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury."
 ---
 Let $\mathcal{C},\mathcal{D}$ be finite spherical tensor categories ([@EGNO], Section 6), and $F: \mathcal{C}\to \mathcal{D}$ a surjective tensor functor ([@EGNO], Subsection 6.3). Let $I: \mathcal{D}\to \mathcal{C}$ be the right adjoint of $F$. Note that $I$ is exact since $F$ maps projectives to projectives, ([@EGNO], Theorem 6.1.16).
 

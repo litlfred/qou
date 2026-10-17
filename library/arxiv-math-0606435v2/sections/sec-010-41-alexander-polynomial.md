@@ -8,6 +8,7 @@ pages: 14-15
 source_pdf: 0606435v2.pdf
 source_sha256: 6dddaf838a19f0f5
 toc_source: inferred
+doc_brief: "arXiv:math/0606435v2 [math.GT] 10 Oct 2007 — We show that 3-braid links with given (non-zero) Alexander or Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
 knots, 121752, has braid index 4, so that (as expected) the corollary does not hold for 4-braids.
 Corollary 3.2 Any non-split closed 3-braid ˆβ with |[β]| ≤2 is ﬁbered, in particular so is any slice 3-braid knot.

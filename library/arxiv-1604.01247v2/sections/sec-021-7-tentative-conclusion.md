@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.529
+doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — Based on an interpretation of the quark-lepton symmetry in terms of the unimodularity of the color group SU(3) and on the existence of 3 generations, we develop an"
 ---
 From a physical point of view, it is clear that what is described in these notes is quite incomplete : One should write some dynamics. Before that, one must develop several points.\
 Firstly one must understand the formulation of the $U(1)\times SU(2)$-symmetry in this frame. Since the new suspected particles have $\mathbb R$ as internal spaces, it is suggested that they are described by Majorana fermions in a 4-Lorentzian approach where the charge conjugation is represented by complex conjugation of components. Notice that, as shown in [@bar:2007], the KO-dimension 6 is completely natural in the Lorentzian framework. Introducing such new particles does not spoil the anomalies cancellation of the standard model. However it is not clear that this is consistent with the usual formulation of the $U(1)\times SU(2)$-symmetry.\

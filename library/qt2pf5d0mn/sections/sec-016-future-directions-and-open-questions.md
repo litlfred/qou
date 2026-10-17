@@ -8,6 +8,7 @@ pages: 101-103
 source_pdf: qt2pf5d0mn.pdf
 source_sha256: 4c8581c3b46398e3
 toc_source: outline
+doc_brief: "UC Santa Barbara — 19 sections: Front matter; Abstract; Introduction"
 ---
 ly, the invariant was associated with a pair (M, ω), where M is a closed oriented 4-
 manifold and ω ∈H2(M, Z2), and the original Crane-Yetter invariant is a normalized

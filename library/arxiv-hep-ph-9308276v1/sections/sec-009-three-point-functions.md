@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.892
+doc_brief: "arXiv:hep-ph/9308276v1 14 Aug 1993 — The most general chiral Lagrangian for electroweak interactions with the complete set of SU(2)L × U(1)Y invariant operators up to dimen- sion four is considered."
 ---
 The differences in the tree level plus counterterm contributions to the $\gamma$WW and ZWW 1PI Green's functions from the SM and the EChL are given by: $$\begin{aligned}
 -i V^{\gamma WW}_{(0+{\rm C}) \lambda\mu\nu}

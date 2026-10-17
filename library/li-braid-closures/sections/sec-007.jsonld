@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/li-braid-closures/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Split Links",
+  "pageStart": 9,
+  "pageEnd": 13,
+  "contains": [
+    "library/li-braid-closures/blocks/prose-sec-007",
+    "library/li-braid-closures/blocks/cor-sec-007-01",
+    "library/li-braid-closures/blocks/prop-sec-007-02",
+    "library/li-braid-closures/blocks/lem-sec-007-03",
+    "library/li-braid-closures/blocks/prop-sec-007-04",
+    "library/li-braid-closures/blocks/prop-sec-007-05",
+    "library/li-braid-closures/blocks/thm-sec-007-06",
+    "library/li-braid-closures/blocks/thm-sec-007-07",
+    "library/li-braid-closures/blocks/thm-sec-007-08",
+    "library/li-braid-closures/blocks/prop-sec-007-09",
+    "library/li-braid-closures/blocks/rem-sec-007-10"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/li-braid-closures/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/li-braid-closures/manifest.jsonld",
+  "provenance": "ingested"
+}

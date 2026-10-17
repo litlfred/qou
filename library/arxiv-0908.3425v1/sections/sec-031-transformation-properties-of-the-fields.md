@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.975
 latex_coverage_ratio: 0.992
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 []{#sec_tpf label="sec_tpf"} Our aim is the most general description of the interaction of baryons with Goldstone bosons and external fields at low energies. For that purpose we not only need to specify the transformation behavior of the Goldstone bosons and external fields but also of the remaining dynamical fields entering the Lagrangian. Our discussion follows Refs. [@Georgi], [@Gasser:1987rb]. Consider the nucleon doublet and the octet of $\frac{1}{2}^+$ baryons (see Fig. [\[2:2:2:fig:baryon_octet\]](#2:2:2:fig:baryon_octet){reference-type="ref" reference="2:2:2:fig:baryon_octet"}), $$\begin{aligned}
 \label{4:1:1:nucleondoublet}

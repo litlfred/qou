@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.964
 latex_coverage_ratio: 0.93
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 []{#ssec: Cb label="ssec: Cb"} Now let us recall our construction of the braid group action and relate the construction of the braid group action to the knot invariants. Recall that in the previous sections we discussed various properties of the particular matrix factorization $\calC_\epsilon^i\in \MF_{G\times B^2}(\frg\times \left( G\times \frn\right)^2,W),$: $$W(X,g_1,Y_1,g_2,Y_2)=\Tr(\Ad^{-1}_{g_1}(X)Y_1-\Ad^{-1}_{g_2}(X)Y_2).$$
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.884
 latex_coverage_ratio: 0.917
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS — We study asymptotics of characters of the symmetric groups on a ﬁxed conjugacy class."
 ---
 ::: definition
 If $f$ is a symmetric function of degree $d$ and $2g\geq 2$ is an integer then the formal power series $$\label{eq:postac-F-nice}

@@ -1,1 +1,1 @@
-A.1.2.(Binary Relation) LetCbe a category anda,b∈obj(C). Abi-
+A.1.2. (Binary Relation) Let C be a category and a, b ∈obj(C). A bi-

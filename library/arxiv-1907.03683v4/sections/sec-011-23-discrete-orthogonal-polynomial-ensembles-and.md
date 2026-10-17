@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.948
 latex_coverage_ratio: 0.985
+doc_brief: "EXPLICIT DESCRIPTION OF CHRISTOFFEL DEFORMATIONS AND — Christoﬀel deformation of a measure on the real line consists of multipying this measure by a squared polynomial having its roots in R."
 ---
 Let $E$ be an infinite countable discrete subset of $\mathbb{R}$. We first recall the definition of an orthogonal polynomial ensemble in our setting. Let $\omega$ be a discrete weight as in the previous subsection. We assume that its support lies inside $E$, and in all the sequel, we may identify a measure on $E$ with its density with respect to the counting measure on $E$. Let $N$ be a positive integer.
 

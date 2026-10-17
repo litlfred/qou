@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.933
 latex_coverage_ratio: 0.985
+doc_brief: "quant-ph Towards Topological Quantum Computation? - — 23 sections: Front matter; A Hamiltonian; Instantons"
 ---
 ***Indistinguishable Particles: Braid Group*** On the other hand, in two dimensions the fundamental group of the configuration space of a system of $n$ identical particles is given by the more general braid group: $$\pi_1(C_n(\mathbb{R}^2)) \simeq B_n(\mathbb{R}^2) = \langle \sigma_i,  1 \leq i \leq n-1 | \sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1},$$ $$\sigma_i \sigma_j = \sigma_j \sigma_i \forall |i-j| \geq 2 \rangle .$$ The $\sigma_i$ are defined physically by interchanging the $i^{th}$ and $(i+1)^{st}$ particles counterclockwise. In contrast to the symmetric group, not all braid group generators satisfy $\sigma_i^2 = Id$. The monodromy operator/$R^2$ matrix is defined as the square of the braiding operator/R matrix.
 

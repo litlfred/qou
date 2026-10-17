@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/s00209-021-02825-4/sections/sec-025",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Ray and interval stability",
+  "pageStart": 30,
+  "pageEnd": 34,
+  "contains": [
+    "library/s00209-021-02825-4/blocks/prose-sec-025",
+    "library/s00209-021-02825-4/blocks/lem-sec-025-01",
+    "library/s00209-021-02825-4/blocks/lem-sec-025-02",
+    "library/s00209-021-02825-4/blocks/thm-sec-025-03",
+    "library/s00209-021-02825-4/blocks/cor-sec-025-04",
+    "library/s00209-021-02825-4/blocks/ex-sec-025-05",
+    "library/s00209-021-02825-4/blocks/ex-sec-025-06"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s00209-021-02825-4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s00209-021-02825-4/manifest.jsonld",
+  "provenance": "ingested"
+}

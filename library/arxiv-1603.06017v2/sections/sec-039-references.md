@@ -8,6 +8,7 @@ pages: 34-34
 source_pdf: 1603.06017v2.pdf
 source_sha256: 3ff091e40573a5dd
 toc_source: outline
+doc_brief: "Automatic Theorem Proving in Walnut — 41 sections: Front matter; Introduction; Basics"
 ---
 [1]
 J. R. Buchi. “On a Decision Method in Restricted Second Order Arithmetic”. In: Logic, Methodology and Philosophy of

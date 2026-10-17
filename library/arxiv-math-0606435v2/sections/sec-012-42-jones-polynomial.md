@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.964
 latex_coverage_ratio: 0.863
+doc_brief: "arXiv:math/0606435v2 [math.GT] 10 Oct 2007 — We show that 3-braid links with given (non-zero) Alexander or Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
 The control of the Jones polynomial on 3-braid links was the
 object of main attention in \cite{Birman}. We can accomplish

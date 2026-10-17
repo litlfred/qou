@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 1.0
+doc_brief: "Compact Q-balls and Q-shells within a $CP^N$ Skyrme-Faddeev type model — 18 sections: Front matter; Introduction; The extended Skyrme-Faddeev model"
 ---
 The Extended Skyrme-Faddeev (ESF) model augmented by a potential, defined on a $CP^N$ target space, is conveniently formulated using the principal variable $X$ [@Ferreira:1998zx]. The Lagrangian density is expressed by derivative terms containing $L_{\mu}\equiv X^{-1}\partial_{\mu}X$, as well as a non-derivative potential term $V(X)$. We examine a model whose Lagrangian density, $\mathcal{L}$, comprises five terms: a potential term, $\mathcal{L}_0$; a standard quadratic term, $\mathcal{L}_2$; a (quartic) Skyrme term, $\mathcal{L}_4^{(S)}$; and two additional quartic terms, $\mathcal{L}_{4}^{(1)}$ and $\mathcal{L}_{4}^{(2)}$. The total Lagrangian density is given by: $${\cal L}={\cal L}_2+{\cal L}_0+{\cal L}_4^{(S)}+{\cal L}_{4}^{(1)}+ {\cal L}_{4}^{(2)}.\label{lagr1}$$ These individual Lagrangian terms are explicitly defined as: $$\begin{aligned}
 {\cal L}_0&=-\mu^2V(X)\\

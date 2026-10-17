@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.95
 latex_coverage_ratio: 1.0
+doc_brief: "Formulas on hyperbolic volume ∗ — This paper collects some important formulas on hyperbolic volume."
 ---
 The formulas of this subsection can be found in [@lobacsevszkij] or [@molnar].
 

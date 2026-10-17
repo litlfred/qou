@@ -8,6 +8,7 @@ pages: 224-232
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
 toc_source: outline
+doc_brief: "Analytic Combinatorics in Several Variables Expanded Second Edition — 98 sections: Front matter; Preface to the second edition; Preface to the first edition"
 ---
 Theorems 7.15 and 7.35 allow us to express the Cauchy integral for coeﬃcients
 as a ﬁnite sum of integrals localized near critical points (up to negligible error).

@@ -8,6 +8,7 @@ pages: 13-13
 source_pdf: 2601.05136v2.pdf
 source_sha256: cee15456257d3028
 toc_source: outline
+doc_brief: "State integrals for the quantized SL 2 ( C ) Chern-Simons invariant — Previous work of the author and N."
 ---
 12
 [OT15] T. Ohtsuki and T. Takata, “On the

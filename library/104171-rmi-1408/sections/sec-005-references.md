@@ -8,6 +8,7 @@ pages: 23-24
 source_pdf: 10.4171-rmi-1408.pdf
 source_sha256: eda199771108dff8
 toc_source: outline
+doc_brief: "DOI 10.4171/RMI/1408 © 2023 Real Sociedad Matemática Española — The nontrivial unital composition superalgebras, of dimension 3 and 6, which exist only in characteristic 3, are obtained from the"
 ---
 [1] Barton, C. H. and Sudbery, A.: Magic squares and matrix models of Lie algebras. Adv. Math.
 180 (2003), no. 2, 596–647.

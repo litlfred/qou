@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.895
 latex_coverage_ratio: 0.994
+doc_brief: "arXiv:hep-ph/0601023v3 23 Apr 2007 — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non - su- persymmetric uniﬁcation"
 ---
 It is interesting to ask what the constraints on the coupling structures are if
 one does not impose R-parity invariance. Such constraints for the R-parity 

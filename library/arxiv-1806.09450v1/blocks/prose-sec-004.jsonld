@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1806.09450v1/blocks/prose-sec-004",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Borel-de Siebenthal theory and intersections of maximal subgroups of compact exceptional Lie groups",
-  "pageStart": 12,
-  "pageEnd": 16,
-  "text": "../sections/sec-004-4-borel-de-siebenthal-theory-and-intersections-o.md",
+  "title": "The exceptional Lie groups E6 and E7",
+  "pageStart": 10,
+  "pageEnd": 12,
+  "text": "../sections/sec-004-33-the-exceptional-lie-groups-e6-and-e7.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1806.09450v1/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1806.09450v1/manifest.jsonld",
   "provenance": "ingested"

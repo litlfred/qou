@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.927
 latex_coverage_ratio: 0.95
+doc_brief: "$q$-Hodge complexes over the Habiro ring — — Peter Scholze has raised the question whether some variant of the q-de Rham complex is already defined over the Habiro ring H := limm∈N Z[q]∧ (qm−1)."
 ---
 []{#sec:FunctorialqHodge label="sec:FunctorialqHodge"} Fix a perfectly covered $\Lambda$-ring $A$. We've seen in [\[lem:NoFunctorialqHodgeFiltration\]](#lem:NoFunctorialqHodgeFiltration){reference-type="ref" reference="lem:NoFunctorialqHodgeFiltration"} that it's impossible to get a functorial $q$-Hodge filtration for all animated $A$-algebras, or even just for smooth $A$-algebras. Despite this general no-go result, we'll see in this section that functorial $q$-Hodge filtrations exist for fairly large full subcategories of $\cat{AniAlg}_A$.
 

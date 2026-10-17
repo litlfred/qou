@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.928
 latex_coverage_ratio: 0.939
+doc_brief: "Path Integral Quantum Monte Carlo Method for Light Nuclei — 64 sections: Front matter; ABSTRACT; LIST OF TABLES"
 ---
 The reason to recast Eq.([\[PIMCopexpdetailshorttimeapprox\]](#PIMCopexpdetailshorttimeapprox){reference-type="ref" reference="PIMCopexpdetailshorttimeapprox"}) into the form of Eq.([\[OABP\]](#OABP){reference-type="ref" reference="OABP"}) is because once we have the detailed form of Eq.([\[PlrR\]](#PlrR){reference-type="ref" reference="PlrR"}), the normalized probability distribution $P_{lr}(\mathcal{R})$, we can sample it by using suitable algorithms. And then after we take enough uncorrelated samples of $A_{lr} (\mathcal{R})$ and $B_{lr}(\mathcal{R})$ in Eq.([\[OABP\]](#OABP){reference-type="ref" reference="OABP"}) from the probability distribution $P_{lr} (\mathcal{R})$ in Eq.([\[PlrR\]](#PlrR){reference-type="ref" reference="PlrR"}), we have the corresponding average values $\langle A \rangle$ for $A_{lr} (\mathcal{R})$ and $\langle B \rangle$ for $B_{lr}(\mathcal{R})$ and their errors $\sigma_A$ and $\sigma_B$, finally $\langle \hat{O} (\Delta \tau) \rangle$ and its error bar $\sigma$ can be estimated by, $$\begin{aligned}
 \langle \hat{O} (\Delta \tau)\rangle =

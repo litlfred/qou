@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.938
 latex_coverage_ratio: 0.935
+doc_brief: "arXiv:hep-th/9304063v2 29 Jan 1999 — 10 sections: Front matter; Introduction and Statement of Resu; The System of Partial Differential"
 ---
 We set J:= \_j=1\^m(a\_2j-1,a\_2j) (a\_j) []{#Jform label="Jform"} and write $D(J;\la)$ for the Fredholm determinant of $K$ (the operator with kernel $K(x,y)$) acting on $J$. If we think of this as a function of $a=(a_{1},\ldots,a_{2m})$ then d D(J;) = -\_j=1\^2m(-1)\^j R(a\_j,a\_j) da\_j[]{#diff label="diff"} where $R(x,y)$ is the kernel of $K(I-K)^{-1}$. We introduce the notations (x):=  J\_(~~x~~), (x):= x '(x)[]{#phidef label="phidef"} and the quantities $$\begin{aligned}
 q_{j}:&=&\,(I-K)^{-1}\phi\,(a_{j}),~~p_{j}:=\,(I-K)^{-1}\psi\,(a_{j}),

@@ -8,6 +8,7 @@ pages: 37-37
 source_pdf: modular.qholonomic.modules.pdf
 source_sha256: 640303a68dd75453
 toc_source: outline
+doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised"
 ---
 the functional equations of h the Mordell integral [74, Proposition 1.2] these functions give
 an analytic extension of h the Mordell integral to the cut plane C′. Therefore, the cocycle

@@ -8,6 +8,7 @@ pages: 37-41
 source_pdf: 1112.0030v2.pdf
 source_sha256: 745f143c2df4734b
 toc_source: outline
+doc_brief: "Homological algebra of knots and BPS states Sergei Gukov and Marko Stoˇsi´c — It is known that knot homologies admit a physical description as spaces of open BPS states."
 ---
 In this appendix we compute the S2 and Kauﬀman homologies of 819 and 942.
 Since both knots are homologically thick knots, these computations give highly

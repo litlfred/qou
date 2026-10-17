@@ -1,1 +1,1 @@
-IfΓ≤C × is a multiplicative group
+If Γ ≤C× is a multiplicative group

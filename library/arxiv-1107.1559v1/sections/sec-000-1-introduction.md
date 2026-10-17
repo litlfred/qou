@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "Quaternion-Octonion SU (3) Flavor Symmetry — Starting with the quaternionic formulation of isospin SU(2) group, we have derived the relations for diﬀerent components of isospin with quark states."
 ---
 \ \ \ \ \ \ \ \ \ \ \ \ \ According to celebrated Hurwitz
 theorem \cite{key-1} there exits four - division algebra consisting

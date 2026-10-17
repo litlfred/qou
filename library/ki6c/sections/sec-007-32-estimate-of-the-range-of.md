@@ -8,6 +8,7 @@ pages: 16-18
 source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
+doc_brief: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings Tomotada Ohtsuki and Yoshiyuki Yokota Introduction — We give presentations of the asymptotic expansions of the"
 ---
 Estimate of the range of ∆′
 In this section, we calculate the concrete values of the bounds of the inequalities in (31)

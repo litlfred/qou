@@ -11,5 +11,6 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.647
 latex_coverage_ratio: 1.0
+doc_brief: "L-spaces and knot traces — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries."
 ---
 We thank Matt Hedden and Tye Lidman for helpful conversations, and the referee for a very careful reading and lots of detailed feedback on the original version of this paper.

@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/chinta-2025-j-phys-a-math-theor-58-035203/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Application 4: spectral zeta function of regular trees and hypergeometric identities",
+  "pageStart": 17,
+  "pageEnd": 20,
+  "contains": [
+    "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-009",
+    "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/thm-sec-009-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/chinta-2025-j-phys-a-math-theor-58-035203/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/chinta-2025-j-phys-a-math-theor-58-035203/manifest.jsonld",
+  "provenance": "ingested"
+}

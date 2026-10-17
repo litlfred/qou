@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.949
 latex_coverage_ratio: 0.977
+doc_brief: "Generating Function for Pinsky’s Combinatorial Second Moment Formula for the Generalized Ulam Problem — Given a uniform random permutation π ∈Sn, let Zn,k be equal to the number of increasing"
 ---
 The moments of the generalized Ulam problem appear to have been investigated primarily by Ross Pinsky.
 We begin, in the next section, by stating Pinsky's precise combinatorial formula for the second moment.

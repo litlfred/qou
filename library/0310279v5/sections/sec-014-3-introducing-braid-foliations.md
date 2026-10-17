@@ -8,6 +8,7 @@ pages: 26-26
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
 toc_source: outline
+doc_brief: "Stabilization in the braid groups I: MTWS Introduction — 40 sections: Front matter; Introduction; The problem"
 ---
 Introducing braid foliations
 Theorem 2 is about the relationship between two closed braid diagrams which represent

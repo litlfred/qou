@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/s00453-026-01372-w/sections/sec-010",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Acknowledgements",
+  "pageStart": 12,
+  "pageEnd": 17,
+  "contains": [
+    "library/s00453-026-01372-w/blocks/prose-sec-010",
+    "library/s00453-026-01372-w/blocks/prop-sec-010-01",
+    "library/s00453-026-01372-w/blocks/prop-sec-010-02",
+    "library/s00453-026-01372-w/blocks/prop-sec-010-03",
+    "library/s00453-026-01372-w/blocks/cor-sec-010-04",
+    "library/s00453-026-01372-w/blocks/cor-sec-010-05",
+    "library/s00453-026-01372-w/blocks/cor-sec-010-06",
+    "library/s00453-026-01372-w/blocks/lem-sec-010-07"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s00453-026-01372-w/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s00453-026-01372-w/manifest.jsonld",
+  "provenance": "ingested"
+}

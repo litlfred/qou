@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.945
 latex_coverage_ratio: 0.986
+doc_brief: "Virial Expansions for Correlation Functions in Canonical Ensemble — The inﬁnite set of coupled integral nonlinear equations for correlation func- tions in the case of classical canonical ensemble is"
 ---
 Rewrite the equation [\[limeq\]](#limeq){reference-type="eqref" reference="limeq"}, [\[ratioPF1\]](#ratioPF1){reference-type="eqref" reference="ratioPF1"} as follows:
 

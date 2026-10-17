@@ -8,6 +8,7 @@ pages: 70-72
 source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
+doc_brief: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings Tomotada Ohtsuki and Yoshiyuki Yokota Introduction — We give presentations of the asymptotic expansions of the"
 ---
 [1] Andersen, J.E., Hansen, S.K., Asymptotics of the quantum invariants for surgeries on the ﬁgure 8
 knot, J. Knot Theory Ramiﬁcations 15 (2006) 479–548.

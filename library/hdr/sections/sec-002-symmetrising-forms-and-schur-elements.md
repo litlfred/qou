@@ -8,6 +8,7 @@ pages: 16-17
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
 toc_source: outline
+doc_brief: "Hecke algebras, generalisations and representation theory — 30 sections: Front matter; Algebras of Finite Type; Blocks"
 ---
 Symmetrising forms and Schur elements
 A symmetrising form on the algebra A is a linear map τ : A →R such that

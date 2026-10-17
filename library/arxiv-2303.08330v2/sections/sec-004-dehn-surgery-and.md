@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.974
 latex_coverage_ratio: 0.951
+doc_brief: "A Cable Knot and BPS-Series II — This is a companion paper to earlier work of the author, which generalizes to an inﬁnite family of (2, 2w + 1)-cabling of the ﬁgure eight knot (|w| > 3) and proposes"
 ---
 In [@GPPV], it was conjectured that the $sl(2)$ WRT invariant of a rational homology 3-sphere $Y\, (b_1(Y)=0)$ decomposes into a linear combination of power series $\hat{Z}(q)$, which converges in $|q|<1$ and itself is an invariant of $Y$. Specifically, $$WRT[Y;k]= \frac{1}{i\sqrt{2k}} \sum_{a,b \in Spin^c (Y)} c^{WRT}_{ab}\, \hat{Z}_{b}(q) \Big\vert_{q \rightarrow e^{\frac{i2\pi}{k}}},$$ where $$\hat{Z}_{b}(Y;q) \in \frac{1}{2^c}q^{\Delta_{b}} \mathbb{Z}[[q]], \qquad |q|<1,\qquad \Delta_{b} \in \mathbb{Q},\quad c \in \mathbb{Z}_{\geq 0}.$$ Performing a Dehn surgery on a complement of a knot $K$ along a (negative) slope $-p/r$ [^1] yields a relation between $F_K (x,q)$ and $\hat{Z}(q)$ given by [@GM] $$\hat{Z}_{b}[Y_{-\frac{p}{r}}(K);q] = \pm q^d \mathcal{L}^{(b)}_{-p/r} \left[\left(x^{\frac{1}{2r}} - x^{-\frac{1}{2r}} \right)F_{K}(x,q) \right]\qquad d \in \mathbb{Q},$$ $$\mathcal{L}^{(b)}_{-p/r} : x^{u}q^{v} \mapsto \begin{cases}
       q^{u^2 r/p}q^v & \text{if}\quad ru - b \in p\mathbb{Z}\\

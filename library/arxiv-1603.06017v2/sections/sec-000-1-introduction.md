@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.937
 latex_coverage_ratio: 0.922
+doc_brief: "Automatic Theorem Proving in Walnut — 41 sections: Front matter; Introduction; Basics"
 ---
 \label{sec:introduction}
 Walnut is a software package that implements a \emph{mechanical

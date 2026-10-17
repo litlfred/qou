@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.631
 latex_coverage_ratio: 0.986
+doc_brief: "Fractional Hopﬁons in the Faddeev-Skyrme model with a symmetry breaking potential — We construct new solutions of the Faddeev-Skyrme model with a symmetry breaking potential admitting S1 vacuum."
 ---
 One of the most interesting topological solitons, which appear in the scalar field theories in 3+1 dimensional space-time, are so-called \"Hopfions\" [@Faddeev-Hopf; @Faddeev:1996zj]. These stable field configurations, whose topology is defined by the first Hopf map ${S}^3 \mapsto {S}^2$, provide a first, and the best known example of knot solitons in field theory.
 

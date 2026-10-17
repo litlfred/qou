@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1501.04614v1",
  "source_sha256": "ebebcae0c1823217",
- "brief": "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL II — We continue our study of the degree of the colored Jones polyn omial under knot cabling started in [8].",
- "extended": "**KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL II**\n\n*EFSTRATIA KALFAGIANNI AND ANH T. TRAN*\n\n14 pp, 6 sections.\n\n**Abstract.** We continue our study of the degree of the colored Jones polyn omial under knot cabling started in [8]. Under certain hypothesis on thi s degree, we determine how the Jones slopes and the linear term behave under cabling. As an application we verify Garoufalidis’ Slope Conjecture and a conjecture of [8] for c ables of a two-parameter family of closed 3-braids called 2-fusion knots.\n\n**Outline.** 1 Introduction; 2 Jones slopes of cable knots; 3 Two-fusion knots; 3.1 The highest degree and the Jones slope.; 3.2 Calculating the linear term; References",
+ "brief": "KNOT CABLING AND THE DEGREE OF THE COLORED JONES — We continue our study of the degree of the colored Jones polynomial under knot cabling started in [8].",
+ "extended": "**KNOT CABLING AND THE DEGREE OF THE COLORED JONES**\n\n*POLYNOMIAL II*\n\n14 pp, 7 sections.\n\n**Abstract.** We continue our study of the degree of the colored Jones polynomial under knot cabling started in [8]. Under certain hypothesis on this degree, we determine how the Jones slopes and the linear term behave under cabling. As an application we verify Garoufalidis’ Slope Conjecture and a conjecture of [8] for cables of a two-parameter family of closed 3-braids called 2-fusion knots.\n\n**Outline.** Front matter; 1 Introduction; 2 Jones slopes of cable knots; 3 Two-fusion knots; 3.1 The highest degree and the Jones slope.; 3.2 Calculating the linear term; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem: \\ref{thm-quasi-constant} has applications to two open conjectures about the degree of $J_K(n)$.\n- Theorem: \\ref{thm-quasi-constant} implies the following.\n- Theorem: \\ref{thm-quasi-constant} applies to the non-alternating knots $8_{20}, 9_{43}, 9_{44}$ (of period $3$) in Section 4 of \\cite{Ga-slope}.\n- Theorem: \\ref{prop:b} implies that Conjecture \\ref{conj} holds true for 2-fusion knots: The fact that $b_K(n)\\leq 0$ is clear by the statement\n- Proposition: \\ref{quasi-constant} and Theorem \\ref{bdry slope} imply Theorem \\ref{thm-quasi-constant} stated in the introduction.",
  "tokens": {
-  "brief": 42,
-  "extended": 174
+  "brief": 38,
+  "extended": 327
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -44,7 +49,8 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles"
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

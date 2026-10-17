@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.985
 latex_coverage_ratio: 0.986
+doc_brief: "A central limit theorem for the characters of the infinite symmetric group and of the infinite Hecke algebra — In this paper, we review the representation theory of the inﬁnite symmetric group, and"
 ---
 In this first paragraph, we recall the representation theory of the infinite symmetric group, and a basic tool that we will use throughout the paper, namely, the Hopf algebra of symmetric functions (later, we shall also need the algebras of quasi-symmetric and free quasi-symmetric functions).
 

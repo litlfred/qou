@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.93
 latex_coverage_ratio: 0.935
+doc_brief: "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects."
 ---
 In this section, we summarise background on (bi)module categories, (bi)module functors and (bi)module natural transformations from \cite[Ch.~7]{EGNO}.
 

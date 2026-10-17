@@ -1,1 +1,1 @@
-For eachω∈ Ω+, the operator
+For each ω ∈Ω+, the operator

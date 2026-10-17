@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.964
 latex_coverage_ratio: 0.977
+doc_brief: "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS — In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the"
 ---
 As mentioned above, the goal of the paper is to study the phenomenon of mod-Gaussian convergence for probabilistic models stemming from statistical mechanics; this extends the already long list of models for which we were able to establish this asymptotic behavior of the Fourier or Laplace transforms (\cite{JKN11,KN12,FMN13}). More precisely, we shall focus on one-dimensional spin configurations, which already yield an interesting illustration of the theory and technics of mod-Gaussian convergence. Given two parameters $\alpha \in \R$ and $\beta \in \R_+$, we recall that the Curie-Weiss model and the one-dimensional Ising model are the probability laws on spin configurations $\sigma : \lle 1,n\rre \to \{\pm 1\}$ given by
 \begin{align}

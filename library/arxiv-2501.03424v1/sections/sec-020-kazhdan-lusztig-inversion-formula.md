@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.953
+doc_brief: "Soergel bimodules and Kazhdan-Lusztig polynomials — This paper presents an exposition of Soergel bimodules, the categoriﬁcation of Hecke alge- bras, and their applications to various topics in"
 ---
 Let $w_0 \in W$ be the longest eleemnt. For every $x,y \in W,$ we have the identity
 $$\sum_{z \in W}(-1)^{l(y) + l(x)}h_{z,x}(v)h_{zw_0, yw_0}(v) = \begin{cases}

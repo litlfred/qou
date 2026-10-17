@@ -8,6 +8,7 @@ pages: 35-37
 source_pdf: 2208.13448v2.pdf
 source_sha256: 8bfa244cf7ca867d
 toc_source: outline
+doc_brief: "ON THE COMPUTATION OF THE DIFFERENCE GALOIS GROUPS OF ORDER THREE EQUATIONS — In this paper we consider the problem of computing the diﬀerence Galois groups of order three equations for a large class"
 ---
 [AB98]
 S. A. Abramov and M. A. Barkatou. Rational solutions of ﬁrst order linear diﬀerence systems.

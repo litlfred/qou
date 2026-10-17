@@ -1,0 +1,1 @@
+[\[l:ab\]](#l:ab){reference-type="ref" reference="l:ab"} offers practical way to compute [\[e:hook\]](#e:hook){reference-type="eqref" reference="e:hook"} by expanding the generating function up to certain power of $v$ and then setting $v=q$.

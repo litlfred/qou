@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.957
 latex_coverage_ratio: 0.976
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 Using only the algebra of the complex octonions, which we will introduce, we expose an intrinsic structure to a generation of quarks and leptons.  This algebraic structure mimics familiar quantum systems, which have a vacuum state acted upon by raising and lowering operators.     In this case, the neutrino poses as the vacuum state, and electrons and quarks pose as the excited states.  These results are simply the analogue of the Fock space we found earlier in Section~\ref{fock}.
 

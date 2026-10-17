@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.979
 latex_coverage_ratio: 0.997
+doc_brief: "arXiv:hep-ph/9511320v1 15 Nov 1995 — We analyze the eﬀective low–energy ﬁeld theory of Goldstone bosons and baryons chirally coupled to massive spin–1 ﬁelds."
 ---
 To perform the calculations, we make use of the effective Goldstone boson--baryon Lagrangian. Our notation is identical to the one used in [@bkmz] and we compile here only some necessary definitions. Denoting by $\phi$ the pseudoscalar Goldstone fields ($\pi, K, \eta$) and by $B$ the baryon octet ($N,\Lambda,\Sigma,\Xi$), the effective Lagrangian takes the form (to one loop accuracy) $${\cal L}_{\rm eff} = {\cal L}_{\phi B}^{(1)} +  {\cal L}_{\phi B}^{(2)} +
   {\cal L}_{\phi B}^{(3)} +

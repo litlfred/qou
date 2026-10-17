@@ -8,6 +8,7 @@ pages: 13-14
 source_pdf: 1501.04614v1.pdf
 source_sha256: ebebcae0c1823217
 toc_source: outline
+doc_brief: "KNOT CABLING AND THE DEGREE OF THE COLORED JONES — We continue our study of the degree of the colored Jones polynomial under knot cabling started in [8]."
 ---
 [1] Nathan M. Dunﬁeld and Stavros Garoufalidis, Incompressibility criteria for spun-normal surfaces,
 Trans. Amer. Math. Soc. 364 (2012), no. 11, 6109–6137.

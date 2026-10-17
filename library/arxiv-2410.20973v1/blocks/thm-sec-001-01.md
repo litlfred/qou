@@ -1,1 +1,1 @@
-The series Φ 41 and Φ 52 are Borel–Laplace summable and their resummations
+The series Φ41 and Φ52 are Borel–Laplace summable and their resummations

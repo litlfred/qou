@@ -11,5 +11,6 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "2-VECTOR SPACES AND GROUPOIDS — This paper describes a relationship between essentially ﬁnite groupoids and 2-vector spaces."
 ---
 The author would like to recognize the invaluable assistance of John Baez, whose advice and guidance made possible the Ph.D. thesis work which led to this project; to acknowledge the useful discussions with and help of James Dolan, Derek Wise, Alex Hoffnung, Jamie Vicary, and Dan Christensen; and to the editors and referees whose copious suggestions greatly improved the material and its presentation.

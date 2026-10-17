@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.915
 latex_coverage_ratio: 0.955
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 []{#ssec: conv rk 1 label="ssec: conv rk 1"} The most important case of these theorems is the case $m=k+1$, that is when one of the matrix factorizations in $\bar{\star}$ product is lifted from the space $\calXr_2(G_2)$, we call such matrix factorization rank $1$ matrix factorization. In this case the pull back functor $(\bar{\pi}_{12}\times_{B_{m-k+1}}\bar{\pi}_{23})^*$ could be made very explicit. We do not provide the details of the computation, we essentially just follow the method of proposition [\[prop: Knorrer factor\]](#prop: Knorrer factor){reference-type="ref" reference="prop: Knorrer factor"}.
 

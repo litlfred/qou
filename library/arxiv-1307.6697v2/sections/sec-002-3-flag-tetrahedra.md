@@ -8,6 +8,7 @@ pages: 5-8
 source_pdf: 1307.6697v2.pdf
 source_sha256: a3afaefdaebe0292
 toc_source: outline
+doc_brief: "REPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS — In this paper we are interested in computing representations of the funda- mental group of a 3-manifold into PGL(3, C) (in particular in PGL(2"
 ---
 In this section we recall the parametrization of conﬁgurations of four ﬂags in the projective
 space CP2 (more details can be seen in [2]). Let V = C3. A ﬂag in V is usually seen as a

@@ -8,6 +8,7 @@ pages: 20-22
 source_pdf: 1-s2.0-S002212362200012X-main.pdf
 source_sha256: 6fc7d28c8d40bf42
 toc_source: outline
+doc_brief: "Journal of Functional Analysis Log concavity and concentration of Lipschitz functions on the Boolean hypercube — 15 sections: Front matter; Log concavity and concentration of; Introduction"
 ---
 Fix a measure ν on Cn. Consider the process νt constructed in Section 2.2. The 
 following lemma provides expressions for H(ν) and ˜H(ν) in terms of the process νt.

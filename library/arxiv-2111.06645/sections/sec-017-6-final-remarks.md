@@ -8,6 +8,7 @@ pages: 26-26
 source_pdf: 2304.09377v2.pdf
 source_sha256: 76ae6c6058f4a9f9
 toc_source: outline
+doc_brief: "Symmetry, Integrability and Geometry: Methods and Applications — We discuss a matrix of periodic holomorphic functions in the upper and lower half-plane which can be obtained from a factorization of"
 ---
 Final remarks
 In this paper, we discussed the properties of a 2 by 2 matrix Q of periodic functions on C \ R

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.878
 latex_coverage_ratio: 0.657
+doc_brief: "ON THE COMPUTATION OF THE DIFFERENCE GALOIS GROUPS OF ORDER THREE EQUATIONS — In this paper we consider the problem of computing the diﬀerence Galois groups of order three equations for a large class"
 ---
 We first decide whether $L$ has a right factor of order one.  This is the case if and only if $G$ is reducible.  Recall, see Lemma \ref{lem:eq left factor},  that it is equivalent to the existence of  a solution $\alpha$ of the Riccati equation $\phi(y)y+a_1y+a_0=0$. \par 
 Assume first that $L$ is reducible and let us write $L=(\phi-\beta)(\phi-\alpha)$.  Then, $\alpha$ is a solution of the Riccati equation  $\phi(y)y+a_1y+a_0=0$, and $\beta$ is determined by $\alpha \beta=a_0$.  The difference equation is equivalent to $\phi(Y)=AY$ where $A=\left(\begin{array}{cc}

@@ -1,0 +1,1 @@
+[\[thm:periodic\]](#thm:periodic){reference-type="ref" reference="thm:periodic"} states that if $\beta \in \mathit{Br}_W$ is periodic of slope $\nu\in \bb{Q}$, then its $R(W)$ trace is given by $$\begin{aligned}

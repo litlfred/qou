@@ -8,6 +8,7 @@ pages: 55-61
 source_pdf: 0003017v2.pdf
 source_sha256: 1660907865346bdf
 toc_source: inferred
+doc_brief: "arXiv:hep-ph/0003017v2 26 Jun 2000 — Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems."
 ---
 This work was supported in part by the US Department of Energy under contracts
 DE-FG-88ER40388, DE-FG02-91ER40608, and DE-AC02-98CH10886. We would

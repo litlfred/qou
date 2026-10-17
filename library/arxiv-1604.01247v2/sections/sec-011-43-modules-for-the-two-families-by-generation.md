@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.989
+doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — Based on an interpretation of the quark-lepton symmetry in terms of the unimodularity of the color group SU(3) and on the existence of 3 generations, we develop an"
 ---
 As recalled in §3.1, there are two families by generation. In view of §4.2 it seems, at first sight, reasonable to take as $J^8_{3}$-module the product of two copies $J^u$ and $J^d$ of $J^8_3$ as module with the particle assignment $$J^u=\left ( \begin{array}{ccc}
  \alpha_1 & \nu_\tau+t & \bar\nu_\mu-c\\

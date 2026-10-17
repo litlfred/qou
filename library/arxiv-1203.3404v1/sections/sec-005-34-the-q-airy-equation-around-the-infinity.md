@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.767
 latex_coverage_ratio: 0.92
+doc_brief: "On local solutions of the Ramanujan equation and their connection formulae — We show connection formulae of local solutions of the Ramanujan equation between the origin and the inﬁnity."
 ---
 We consider the behavior of the equation ([\[qai\]](#qai){reference-type="ref" reference="qai"}) around the infinity. We set $x=1/t$ and $z(t)=u(1/t)$. Then $z(t)$ satisfies $$\left(-\sigma_q^2+\frac{1}{q^2t}\sigma_q+1\right)z(t)=0.$$ We set $\mathcal{E}(t)=1/\theta (-q^2t)$ and $f(t)=\sum_{n\ge 0}a_nt^n,\quad a_0=1$. We assume that $z(t)$ can be described as $$z(t)=\mathcal{E}(t)f(t)=\frac{1}{\theta (-q^2t)}\left(\sum_{n\ge 0}a_nt^n\right).$$
 

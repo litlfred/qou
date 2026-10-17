@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.88
 latex_coverage_ratio: 0.981
+doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety for SL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
 ---
 We briefly state our main results about the triangulation independent Ptolemy varieties. A summary of their definition is given in Section [\[sec:Algorithm\]](#sec:Algorithm){reference-type="ref" reference="sec:Algorithm"}, and explicit computations are given in Section [\[sec:Examples\]](#sec:Examples){reference-type="ref" reference="sec:Examples"}. Let $M$ be a compact, orientable $3$-manifold with non-empty boundary, and let $\mathcal T$ be a topological ideal triangulation of $M$.
 

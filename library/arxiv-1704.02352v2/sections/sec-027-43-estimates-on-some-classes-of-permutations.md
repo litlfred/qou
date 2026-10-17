@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.96
 latex_coverage_ratio: 0.962
+doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Young diagrams which can be regarded as a natural one-parameter deformation of some classi- cal"
 ---
 Recall that for a permutation $\pi$ we denote by $C(\pi)$ the set of its cycles. The length $$\|\pi\|:=l - |C(\pi)|$$ of a permutation $\pi\in\mathfrak{S}(l)$ is defined as the minimal number of factors necessary to write $\pi$ as a product of transpositions.
 

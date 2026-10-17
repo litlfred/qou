@@ -1,1 +1,1 @@
-Proposition 5.8 asserts that the sequence of convergents forxis the best sequence of rational
+asserts that the sequence of convergents for x is the best sequence of rational

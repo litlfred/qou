@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.988
 latex_coverage_ratio: 0.643
+doc_brief: "Quaternion Octonion Reformulation of Grand Uniﬁed Theories — In this paper, Grand Uniﬁed theories are discussed in terms of quater- nions and octonions by using the relation between quaternion basis"
 ---
 \begin{spacing}{1.5}
 We have already shown earlier \cite{key-8} that the quaternion and

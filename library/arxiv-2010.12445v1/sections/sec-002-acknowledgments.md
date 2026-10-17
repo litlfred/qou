@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.841
 latex_coverage_ratio: 1.0
+doc_brief: "STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION — Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect(X), we are"
 ---
 I would like to thank Jarod Alper, Daniel Sch�ppi, Mattia Talpo and Angelo Vistoli for the useful conversations I had with them and all the suggestions they gave me. Moreover I would like to thank David Rydh for sharing many useful references and explaining me how the non-neutral form of Tannaka's reconstruction proved in this paper fits in the vast literature about Tannaka's duality.
 

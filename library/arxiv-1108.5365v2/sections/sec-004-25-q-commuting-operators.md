@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.96
 latex_coverage_ratio: 0.96
+doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL + — We give complete detail of the description of the GNS representation of the quantum plane A and its dual ˆ A as"
 ---
 \label{sec:pre:qcom}
 Throughout the paper, we will consider positive operators $A,B$ satisfying $AB=q^2BA$ for $q=e^{\pi ib^2}, |q|=1$. 

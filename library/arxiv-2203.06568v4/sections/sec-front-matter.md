@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2203.06568v4.pdf
 source_sha256: 256fcfb588dac554
 toc_source: outline
+doc_brief: "Semideﬁnite programming bounds for binary codes from a split Terwilliger algebra — We study the upper bounds for A(n, d), the maximum size of codewords with length n and Hamming distance at least d."
 ---
 arXiv:2203.06568v4  [cs.IT]  10 Jun 2023
 1

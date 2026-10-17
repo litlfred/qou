@@ -8,6 +8,7 @@ pages: 44-44
 source_pdf: 0810.2361v2.pdf
 source_sha256: 77d6d59a29596484
 toc_source: outline
+doc_brief: "2-VECTOR SPACES AND GROUPOIDS — This paper describes a relationship between essentially ﬁnite groupoids and 2-vector spaces."
 ---
 [1] Baez, J. Higher-dimensional algebra II: 2-hilbert spaces. Adv. Math. 127 (1997), 125–189.
 [2] Baez,

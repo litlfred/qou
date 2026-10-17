@@ -8,6 +8,7 @@ pages: 7-8
 source_pdf: 1202.6268v2.pdf
 source_sha256: 209af6ae25439050
 toc_source: outline
+doc_brief: "THE QUANTUM CONTENT OF THE GLUING EQUATIONS — The gluing equations of a cusped hyperbolic 3-manifold M are a system of polynomial equations in the shapes of an ideal triangulation T of M that"
 ---
 ST ,n have at most 3n −3 edges and each edge (contracted by H−1) contributes a factor of
 det(H)−1. Thus, we can also write

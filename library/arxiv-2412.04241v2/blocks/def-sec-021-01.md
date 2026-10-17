@@ -1,1 +1,1 @@
-, if f∈H R,0, then f∈H R∧p . Varying over all primes shows that f∈H R. This
+~\ref{def.HRmod}, if $f\in\calH_{R,0}$, then $f\in\calH_{R_p^\wedge}$.

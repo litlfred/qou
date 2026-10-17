@@ -8,6 +8,7 @@ pages: 45-48
 source_pdf: Black_Samson_phd2010sp.pdf
 source_sha256: c16799b0bd54ff29
 toc_source: inferred
+doc_brief: "REPRESENTATIONS OF HECKE — 11 sections: Front matter; INTRODUCTION; ILL Links and Braids"
 ---
 Construction of the State-sum
 Begin with a word a E I;d in the braid generators 0"1, ... ,0"d-I and their inverses, which

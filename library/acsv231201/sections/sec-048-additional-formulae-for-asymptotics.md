@@ -8,6 +8,7 @@ pages: 297-309
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
 toc_source: outline
+doc_brief: "Analytic Combinatorics in Several Variables Expanded Second Edition — 98 sections: Front matter; Preface to the second edition; Preface to the first edition"
 ---
 279
 Figure 9.7 The two critical points for Q(x, y) = 3 −3x + x2 −y in directions

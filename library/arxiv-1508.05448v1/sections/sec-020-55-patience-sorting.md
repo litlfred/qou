@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.988
 latex_coverage_ratio: 0.994
+doc_brief: "Concentration of Measure Techniques and Applications — 25 sections: Front matter; Biographical Sketch; Acknowledgments"
 ---
 The presentation of patience sorting that we describe here follows the algorithm as given by Aldous and Diaconis in [@AldousDiaconis]. Patience sorting is a type of one person card game. Imagine that we have a deck of cards with the numbers $1,\dots,n$ on them. We shuffle the deck thoroughly, and put the cards in a pile face down. We turn the cards face up one at a time and put them into a pile according to the following rule:\
 *A low card may be placed on top of a higher card (i.e. a 2 on top of a 7), but a higher card must be placed into a new pile to the right of the current piles*.\

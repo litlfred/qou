@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.975
 latex_coverage_ratio: 0.978
+doc_brief: "Path Integral Quantum Monte Carlo Method for Light Nuclei — 64 sections: Front matter; ABSTRACT; LIST OF TABLES"
 ---
 First principle, or *ab initio* calculations are referring to those methods which are aiming at directly solving the Schrödinger equation of the system. The no-core shell-model (NCSM) ([@Navr_til_2009; @BARRETT2013131]), coupled cluster theory ([@Hagen_2014]), and quantum Monte Carlo method (QMC) ([@CarlsonRMP15a]) are by far the three most successful and most mentioned methods. Each of them have their own advantages in their ability to approach specific problems.
 

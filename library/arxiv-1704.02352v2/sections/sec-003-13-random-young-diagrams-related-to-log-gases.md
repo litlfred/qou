@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.956
 latex_coverage_ratio: 1.0
+doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Young diagrams which can be regarded as a natural one-parameter deformation of some classi- cal"
 ---
 Opposite to the special cases $\beta\in\{1,2,4\}$, in the generic case of $\beta$-ensembles there seems to be no obvious unique way of defining their discrete counterparts and several alternative approaches are available, see the work of Moll [@Moll2015] as well as the work of Borodin, Gorin and Guionnet [@BorodinGorinGuionnet2015]. In the current paper we took another approach based on a deformation of the character theory of the symmetric groups.
 

@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.779
 latex_coverage_ratio: 1.0
+doc_brief: "Braided fermions from Hurwitz algebras — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of"
 ---
 Bilson-Thompson's Helon model maps the simplest ribbon braids, consisting of three twisted ribbons (called helons) and two crossings to the first generation of SM fermions [@Bilson-Thompson2005]. Quantized electric charges of $\pm e/3$ are represented by integral twists of $\pm 2\pi$ on the ribbons of the braids. These ribbons are combined into triplets by connecting the tops and bottoms of three ribbons to a parallel disk. The color charges of quarks are accounted for by the permutations of twists on certain braids, and simple topological processes are identified with the electroweak interaction, the color interaction, and conservation laws. The representation of first generation SM fermions in terms of braids is shown in Figure [1](#helonmodel){reference-type="ref" reference="helonmodel"}.
 

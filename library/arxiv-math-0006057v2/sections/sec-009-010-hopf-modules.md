@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.939
 latex_coverage_ratio: 0.955
+doc_brief: "arXiv:math/0006057v2 [math.QA] 10 Jun 2000 — We give a survey of the theory of ﬁnite quantum groupoids (weak Hopf algebras), including foundations of the theory and applications to ﬁnite depth"
 ---
 Since a quantum groupoid $H$ is both algebra and coalgebra, one 
 can consider modules and comodules over $H$. As in the theory of 

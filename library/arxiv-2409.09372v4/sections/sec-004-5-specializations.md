@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.95
+doc_brief: "Markov traces on degenerate cyclotomic Hecke algebras — Let Hn(u) be the degenerate cyclotomic Hecke algebra with parameter u = {u1, . . . , um}."
 ---
 This section is devoted to investigating the specializations of (non-)normalized Markov traces. In particular, we obtain the Broué--Malle--Michel symmetrizing trace on $H_n(\boldsymbol{u})$ and show that the Brundan--Kleshchev trace on $H_n(\boldsymbol{u})$ is a specialization of the non-normalized Markov trace.
 

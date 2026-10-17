@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.964
 latex_coverage_ratio: 0.977
+doc_brief: "arXiv:math/9910147v1 [math.QA] 27 Oct 1999 — We study the tensor product of principal unitary representations of the quantum Lorentz Group, prove a decomposition theorem and compute the associated"
 ---
 The aim of this section is to give explicit formulae of the intertwiners between the representation ${\buildrel {\!\!{}_{(X_0X_1)}} \over {\Pi}}\!\!\!\otimes \!\!{\buildrel {\!\!{}_{(Y_0Y_1)}} \over {\Pi}}$ and the representation ${\buildrel {\!\!{}_{(Z_0Z_1)}} \over {\Pi}},$ in terms of complex continuations of $6j$ symbols of $\mathfrak{U}_q(su(2)).$
 

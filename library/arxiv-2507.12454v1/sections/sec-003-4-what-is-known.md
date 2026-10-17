@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.926
 latex_coverage_ratio: 0.975
+doc_brief: "Cohomology rings of character varieties — In this talk I give an introduction and present some recent progress towards understanding the cohomology rings of character varieties of Riemann surfaces"
 ---
 Having defined our basic object of study, we explain some important structural results.
 

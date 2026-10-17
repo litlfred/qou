@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2412.02281v1.pdf
 source_sha256: ac4127cf4994b2ba
 toc_source: outline
+doc_brief: "Explicit evaluation of the q -Stokes matrices for certain conﬂuent hypergeometric q -diﬀerence equations — We prove a connection formula for the basic hypergeomtric function nϕn−1 (a1, ..., an−1, 0"
 ---
 arXiv:2412.02281v1  [math.CA]  3 Dec 2024
 Explicit evaluation of the q-Stokes matrices for certain conﬂuent

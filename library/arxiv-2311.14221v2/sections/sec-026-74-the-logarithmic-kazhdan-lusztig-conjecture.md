@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.957
+doc_brief: "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B →C is an exact"
 ---
 In conformal field theory, there is in good situations a modular tensor category of  representations of a vertex algebra $\mathcal{V}$, which reflects the analytic properties for example of solution spaces to certain differential equations (e.g. the braiding reflects the monodromy around the singularity $z=0$). One is often confronted with the very difficult question to determine the representation category of representations of a vertex subalgebra  $\mathcal{W}\subset \mathcal{V}$ if the representation theory of $\mathcal{V}$ is known, for example being a free-field realization. A brief introduction, references and an account for the statements below can be found in \cite{CLR}. \\
 

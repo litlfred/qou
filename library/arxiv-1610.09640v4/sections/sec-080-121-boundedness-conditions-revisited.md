@@ -8,6 +8,7 @@ pages: 221-223
 source_pdf: 1610.09640v4.pdf
 source_sha256: db5e7a5c5e85f95f
 toc_source: outline
+doc_brief: "Derived Categories Amnon Yekutieli 14 Apr 2019 DERIVED CATEGORIES — This is the fourth (and last) prepublication version of a book on derived categories, that will be published by Cambridge"
 ---
 We start by introducing some combinatorial deﬁnitions that will enable a precise
 treatment of cohomological dimensions of objects and functors (in Subsection 12.4).

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.981
 latex_coverage_ratio: 0.939
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 The goal of this subsection is to prove Theorem [\[posi\]](#posi){reference-type="ref" reference="posi"}, Proposition [\[pivo\]](#pivo){reference-type="ref" reference="pivo"}, Proposition [\[modu\]](#modu){reference-type="ref" reference="modu"}, and discuss their consequences.
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.915
 latex_coverage_ratio: 0.982
+doc_brief: "Automatic Theorem Proving in Walnut — 41 sections: Front matter; Introduction; Basics"
 ---
 \label{sec:reg}
 The word reg stands for regular expression. Before we talk about this command in detail, let us motivate the need for it through an example. Suppose we need an automaton accepting $\MSD[2]$ representations of powers of $2$ that are less than $20$. There is no straightforward way of constructing an automaton accepting representations of powers of $2$ using eval and def commands\footnote{The set of powers of $2$ is not expressible in Presburger arithmetic. However the extended Presburger arithmetic that involves automatic words is powerful enough to express this set (why?)}. Remember how def command saves automata definition in directory ``/Walnut/Automata Library/''? We can manually create a file power2.txt in this directory and write in it the definition of an automaton accepting binary representations of powers of $2$:

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.891
 latex_coverage_ratio: 1.0
+doc_brief: "Relativistic corrections for lepton-nucleus scattering in the short-time approximation — 8 sections: Relativistic corrections for lepto; Introduction; Short-time approximation"
 ---
 To calculate double differential cross sections, response functions are evaluated for a set of values of $q$ in the range 300-1400 MeV/$c$, using the interpolation scheme described in Ref. [@Andreoli:2024ovl]. This allows us to generate response functions for arbitrary values of $q$ on a finer grid required for the determination of the cross section. In Figs. [\[fig:cross_sections_he3_p1\]](#fig:cross_sections_he3_p1){reference-type="ref" reference="fig:cross_sections_he3_p1"} and [\[fig:cross_sections_he4_p1\]](#fig:cross_sections_he4_p1){reference-type="ref" reference="fig:cross_sections_he4_p1"}, we present cross sections for electron scattering from $^3$He and $^4$He, for selected values of beam energies and scattering angle. Solid red lines correspond to STA(1), while dashed blue lines correspond to the original STA calculations. The figures also show the position of the peak with a vertical black dashed line.
 

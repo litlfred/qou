@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.98
 latex_coverage_ratio: 0.961
+doc_brief: "Virial Expansions for Correlation Functions in Canonical Ensemble — The inﬁnite set of coupled integral nonlinear equations for correlation func- tions in the case of classical canonical ensemble is"
 ---
 The correlation functions of the canonical ensemble of the system $N$ of particles in some limited volume $\Lambda$ in configuration $\eta=\{x_1,\ldots, x_m\}$ are determined by the sequence
 

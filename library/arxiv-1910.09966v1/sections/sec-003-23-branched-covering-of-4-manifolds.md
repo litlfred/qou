@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.899
 latex_coverage_ratio: 0.993
+doc_brief: "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics — In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds."
 ---
 In a similar manner, one would expect that every 4-manifold $M^{4}$ can be represented as 4-fold branched covering of $S^{4}$ branched along a surface. Piergallini [@Piergallini1995] was able to show something similar, but the surface is only immersed and admits a finite number of singularities (cusps and nodes). If one adds an additional sheet, getting a 5-fold branched covering, then one can omit these singularities (thus getting a locally flat embedded surface) [@PiergalliniIori2002]. For a better understanding, we will discuss the way to this result shortly. In [@Piergallini1995], Piergallini considered the possible transformations or changes of the branching set for a 3-manifold $N^{3}$, i.e., the knot. Amazingly, he found two possible changes (see Figure [1](#fig:Branching-set-changes){reference-type="ref" reference="fig:Branching-set-changes"}).
 

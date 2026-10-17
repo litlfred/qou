@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 0.986
+doc_brief: "A connection formula between the Ramanujan function and the q -Airy function — We show a connection formula between two diﬀerent q-Airy func- tions."
 ---
 In this section, we fix our notations. We assume that $q\in\mathbb{C}^*$ satisfies $0<~|q|<1$. We define the $q$-Pochhammer symbol $(a;q)_n$.
 

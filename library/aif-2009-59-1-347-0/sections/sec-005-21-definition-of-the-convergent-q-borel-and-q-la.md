@@ -8,6 +8,7 @@ pages: 14-16
 source_pdf: AIF_2009__59_1_347_0.pdf
 source_sha256: 35b8422990e24888
 toc_source: outline
+doc_brief: "On q-summation and confluence — 25 sections: Front matter; Introduction; Part 1. Convergent q-Borel and q-L"
 ---
 transform
 Definition 2.1. — Let C{x} be the ring of the germs of analytic func-

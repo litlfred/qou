@@ -1,1 +1,1 @@
-The second shuﬄes form a coideal in~D(
+The ﬁrst shuﬄes, scaling relations, and distribution relations generate a coideal in C(퐺). The

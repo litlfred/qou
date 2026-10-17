@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2104.06067v1",
  "source_sha256": "750303181ca019ba",
- "brief": "ON IRREDUCIBLE CHARACTERS OF THE IWAHORI-HECKE ALGEBRA IN TYPE A — We use vertex operators to compute irreducible characters o f the Iwahori-Hecke algebra of type A.",
- "extended": "**ON IRREDUCIBLE CHARACTERS OF THE IWAHORI-HECKE ALGEBRA IN TYPE A**\n\n*NAIHUAN JING AND NING LIU*\n\n21 pp, 5 sections.\n\n**Abstract.** We use vertex operators to compute irreducible characters o f the Iwahori-Hecke algebra of type A. Two general formulas are given for the irreducible charact ers in terms of those of the symmetric groups or the Iwahori-Hecke algebras in lower degrees. Expl icit formulas are derived for the irreducible characters labeled by hooks and two-row partitions. Using d uality, we also formulate a determinant type Murnaghan-Nakayama formula and give another proof of Ram’s combinatorial Murnaghan-Nakayama formula. As applications, we study super-characters of the Iwahori-Hecke algebra as well as the bitrace of the regular representation and provide a simple proof of t he Halverson-Luduc-Ram formula.\n\n**Outline.** 1 Introduction; 3 Applications of the hook and two-row formula; 4 Determinant type Murnaghan-Nakayama rule; 5 The bitrace of the regular representation; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.4: For partitions λ, µ ⊢ n and integer number k,\n- Theorem 2.9: For partition µ ⊢ n and k ≥ 0, we have\n- Theorem 2.11: For partition µ ⊢ n and k ≥ n − k ≥ 0 we have\n- Theorem 2.13: For λ, µ ⊢ n, the irreducible character χλ\n- Theorem 2.14: For λ, µ ⊢ n. Then the irreducible character χλ\n- Theorem 3.1: For µ ⊢ n with l(µ) = l, we have that",
+ "brief": "ON IRREDUCIBLE CHARACTERS OF THE IWAHORI-HECKE ALGEBRA IN — We use vertex operators to compute irreducible characters of the Iwahori-Hecke algebra of type A.",
+ "extended": "**ON IRREDUCIBLE CHARACTERS OF THE IWAHORI-HECKE ALGEBRA IN**\n\n*TYPE A*\n\n21 pp, 6 sections.\n\n**Abstract.** We use vertex operators to compute irreducible characters of the Iwahori-Hecke algebra of type A. Two general formulas are given for the irreducible characters in terms of those of the symmetric groups or the Iwahori-Hecke algebras in lower degrees. Explicit formulas are derived for the irreducible characters labeled by hooks and two-row partitions. Using duality, we also formulate a determinant type Murnaghan-Nakayama formula and give another proof of Ram’s combinatorial Murnaghan-Nakayama formula. As applications, we study super-characters of the Iwahori-Hecke algebra as well as the bitrace of the regular representation and provide a simple proof of the Halverson-Luduc-Ram formula.\n\n**Outline.** Front matter; 1 Introduction; 3 Applications of the hook and two-row formula; 4 Determinant type Murnaghan-Nakayama rule; 5 The bitrace of the regular representation; References\n\n**Extracted claims (proposals, not verified).**\n- Lemma: [\\[l:ab\\]](#l:ab){reference-type=\"ref\" reference=\"l:ab\"} offers practical way to compute [\\[e:hook\\]](#e:hook){reference-type=\"eqref\" reference=\"e:hook\"} by expanding the",
  "tokens": {
-  "brief": 41,
-  "extended": 352
+  "brief": 39,
+  "extended": 305
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",

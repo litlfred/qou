@@ -8,6 +8,7 @@ pages: 137-137
 source_pdf: 2207.07246v2.pdf
 source_sha256: 91e70e5fe39e07a5
 toc_source: outline
+doc_brief: "Path Integral Quantum Monte Carlo Method for Light Nuclei — 64 sections: Front matter; ABSTRACT; LIST OF TABLES"
 ---
 Diﬀusion Monte Carlo with Importance Sampling
 DMC with constant short-time step without importance sampling is seldom used.

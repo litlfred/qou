@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.96
 latex_coverage_ratio: 0.941
+doc_brief: "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B →C is an exact"
 ---
 \begin{defi}\label{def_section}  Let $\vc, \Bc$ be tensor categories. If $F:\Bc\to \vc$ is a tensor functor, a \textit{section} to $F$ is a right exact tensor functor $G:\vc\to \Bc$ such that $F\circ G\simeq \Id_\vc$ as monoidal functors. 
 \end{defi} 

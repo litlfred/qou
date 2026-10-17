@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.936
 latex_coverage_ratio: 0.978
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials."
 ---
 []{#SubsectAlgo label="SubsectAlgo"} Unfortunately, the argument given above to prove the existence of $L_\mu$ and $K_\mu$ is not effective. M. Lassalle [@Lassalle2009] gave an algorithm for computing $K_\mu$ by induction over $\mu$. In this section we present a slightly simpler version of this algorithm which allows to compute $L_\mu$ instead of $K_\mu$.
 

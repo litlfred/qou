@@ -8,6 +8,7 @@ pages: 14-15
 source_pdf: CuspShapes.pdf
 source_sha256: 01db19e63193e6ae
 toc_source: outline
+doc_brief: "CUSP SHAPE AND TUNNEL NUMBER — We show that the set of cusp shapes of hyperbolic tunnel number one manifolds is dense in the Teichm¨uller space of the torus."
 ---
 [1] Colin C. Adams, Thrice-punctured spheres in hyperbolic 3-manifolds, Trans. Amer. Math. Soc.
 287 (1985), no. 2, 645–656. [11, 12]

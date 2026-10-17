@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.939
 latex_coverage_ratio: 1.0
+doc_brief: "CUSP AREAS OF FAREY MANIFOLDS — This paper gives the ﬁrst explicit, two–sided estimates on the cusp area of once– punctured torus bundles, 4–punctured sphere bundles, and 2–bridge link complements."
 ---
 The shapes of the cusps and their actual metrics give information not just on the 3--manifold itself, but also on the Dehn fillings of that manifold.
 

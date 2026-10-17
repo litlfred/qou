@@ -1,1 +1,1 @@
-For all ﬁnite subsets D′⊂ Zd ,a l lx ∈ Zd \ D′, and all k ∈ N,
+Let k ∈N and let D0, D1 be two disjoint subsets of Rd, with D0̸ = ∅. Then

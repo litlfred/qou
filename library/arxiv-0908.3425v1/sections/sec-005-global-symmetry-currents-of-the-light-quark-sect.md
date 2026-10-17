@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.976
 latex_coverage_ratio: 0.953
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 []{#subsubsec_agsl label="subsubsec_agsl"} Due to the flavor independence of the covariant derivative, ${\cal L}^0_{\rm QCD}$ is invariant under the infinitesimal global transformations of the left- and right-handed quark fields, $$\begin{aligned}
 \label{2:1:3:u3lu3r}

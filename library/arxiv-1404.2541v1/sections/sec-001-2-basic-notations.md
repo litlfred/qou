@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.97
 latex_coverage_ratio: 0.97
+doc_brief: "The Stokes phenomenon for the Ramanujan’s q -diﬀerence equation and its higher order extension — We show connection formulae of local solutions of the Ramanu- jan equation between the origin and the"
 ---
 In this section, we fix our notations. We assume that $q\in\mathbb{C}^*$ satisfies $0<|q|<1$. The $q$-shifted operator $\sigma_q$ is given by $\sigma_qf(x)=f(qx)$. For any fixed $\lambda\in\mathbb{C}^*\setminus q^{\mathbb{Z}}$, the set $[\lambda ;q]$-spiral is $[\lambda ;q]:=\lambda q^{\mathbb{Z}}=\{\lambda q^k;k\in\mathbb{Z}\}$. The theta function of Jacobi is important in connection problems. The theta function of Jacobi with the base $q$ is $$\theta_q(x):=\sum_{n\in\mathbb{Z}}q^{\frac{n(n-1)}{2}}x^n,\qquad \forall x\in\mathbb{C}^*.$$ The theta function has the following properties;
 

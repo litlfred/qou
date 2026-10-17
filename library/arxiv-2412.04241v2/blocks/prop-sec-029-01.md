@@ -1,1 +1,1 @@
-The number D(N) :=| det(MN)| is given by
+~\ref{prop:imiota} of Section~\ref{sec:naive}.

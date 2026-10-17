@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.991
 latex_coverage_ratio: 0.984
+doc_brief: "Nuclear eﬀective ﬁeld theory: status and perspectives — 38 sections: Nuclear effective field theory: st; Contents; Two-body scattering amplitude"
 ---
 In the case of $T$, there is potential violation from the QCD vacuum angle
 $\bar\theta$ and from higher-dimensional operators{, all contained in the

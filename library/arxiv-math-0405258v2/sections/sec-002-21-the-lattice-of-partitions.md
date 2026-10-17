@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.987
 latex_coverage_ratio: 0.963
+doc_brief: "SECOND ORDER FREENESS AND FLUCTUATIONS OF RANDOM MATRICES: II. UNITARY RANDOM MATRICES — We extend the relation between random matrices and free probability theory from the level of expectations to"
 ---
 For natural numbers $m,n\in\NN$ with $m<n$, we denote by $[m,n]$ the
 interval of natural numbers between $m$ and $n$, i.e.,

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.825
 latex_coverage_ratio: 0.914
+doc_brief: "Explicit evaluation of the q -Stokes matrices for certain conﬂuent hypergeometric q -diﬀerence equations — We prove a connection formula for the basic hypergeomtric function nϕn−1 (a1, ..., an−1, 0"
 ---
 \label{sec:sol zero inf}
  The fundamental solution of \eqref{u+A/z} is studied in \cite{birkhoff1913generalized} (especially when $u$ is invertible).  If $u$ is not invertible, there is     a slightly different formal  fundamental solution   (see e.g.,  \cite{dreyfus2015confluence}). Particularly,  the system \eqref{qdes} has a  formal fundamental solution around infinity as follows

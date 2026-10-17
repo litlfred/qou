@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.995
 latex_coverage_ratio: 0.995
+doc_brief: "Hopf solitons in the Nicole model — The Nicole model is a conformal ﬁeld theory in three-dimensional space."
 ---
 Hopf solitons arise in theories in three-dimensional space where the field takes values in a two-sphere. The Skyrme-Faddeev model [@Fa2] is the most famous example of a theory with Hopf solitons and consists of the $O(3)$ sigma model modified by the addition of a Skyrme term that is quartic in the derivatives of the field. Substantial numerical work [@FN; @GH; @BS5; @HS; @Su] has led to a reasonable understanding of the minimal energy solitons in this theory. There are axially symmetric solitons for all Hopf charges but they are stable only for charges one, two and four. For all other charges the minimal energy solitons are less symmetric and include knotted and linked configurations. It is unknown whether the appearance of knots and links as minimal energy solutions is a universal feature of Hopf solitons, since the Skyrme-Faddeev model is currently the only theory in which non-axial Hopf solitons have been investigated.
 

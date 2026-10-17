@@ -8,6 +8,7 @@ pages: 31-31
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
 toc_source: outline
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 plex Cliﬀord algebras, where n is even.
 This procedure is described in [1], which also

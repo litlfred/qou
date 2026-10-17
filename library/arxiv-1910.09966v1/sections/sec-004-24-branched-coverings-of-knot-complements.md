@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.845
 latex_coverage_ratio: 0.994
+doc_brief: "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics — In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds."
 ---
 Now, we will describe the case of a 3-manifold (the knot complement) with boundary a torus $T^{2}$. First, we will change the 2-fold covering of the torus to a 3-fold covering by adding a trivial sheet. For that purpose, we consider the 2-fold branched covering $T^{2}\to S^{2}$ and add a 2-sphere $T^{2}\#S^{2}\to S^{2}\#S^{2}$ which changes nothing ($S\#S^{2}$ is diffeomorphic to $S$ for every surface $S$). However, at the same time, we will obtain a 3-fold covering (see Figure [1](#fig:3-fold-covering-torus){reference-type="ref" reference="fig:3-fold-covering-torus"}).
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.863
 latex_coverage_ratio: 0.992
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 A full one-loop calculation of the nucleon mass also includes ${\cal O}(q^4)$ terms (see Fig. [1](#5:1:1:SEDiagrams){reference-type="ref" reference="5:1:1:SEDiagrams"}).
 

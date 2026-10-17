@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-2111.12409v4",
+  "title": "On the generalisation of Roth’s theorem",
   "contains": [
+    "library/arxiv-2111.12409v4/sections/sec-front-matter",
     "library/arxiv-2111.12409v4/sections/sec-000",
     "library/arxiv-2111.12409v4/sections/sec-001",
     "library/arxiv-2111.12409v4/sections/sec-002",
@@ -32,7 +33,9 @@
   },
   "meta": {
     "doc_id": "arxiv-2111.12409v4",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "2111.12409v4.pdf",
     "source_sha256": "3f0b94ee06fe79bf50355d5643695b1bbdd7d50ef3cda3001c1f54d5e8136033",
     "pages": 21,

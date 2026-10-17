@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.768
 latex_coverage_ratio: 1.0
+doc_brief: "Three generations of colored fermions with S 3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU(3)C color symmetry based on the"
 ---
 Since one generation of electrocolor states are efficiently represented starting from $\mathbb{C}\otimes\mathbb{O}$, one might ask if $\mathbb{S}$ (or rather $\mathbb{C}\otimes\mathbb{S}$) is an appropriate larger algebraic structure capable of describing three generations. Not being a division algebra is not grounds to disqualify $\mathbb{S}$, for we point out that neither $\mathbb{C}\otimes\mathbb{O}$ nor $\mathbb{C}\ell(6)$ generated as the left multiplication algebra are themselves division algebras. Furthermore, the algebra $\mathbb{R}\otimes\mathbb{C}\otimes\mathbb{H}\otimes\mathbb{O}$ is, like $\mathbb{S}$, not even alternative. in fact, the construction of invariant subspaces (minimal ideals) relies explicitly on the use of projectors (and nilpotents), which altogether do not exist in division algebras.
 

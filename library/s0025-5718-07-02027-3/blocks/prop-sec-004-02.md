@@ -1,1 +1,1 @@
-Let ζ ⁄=1 be a (pf − 1)- t hr o o to fu n i t ya n dw r i t e
+Suppose that ζ̸ = 1 is a (pf −1)-th root of unity. Then

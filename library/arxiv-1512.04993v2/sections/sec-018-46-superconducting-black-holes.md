@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.988
 latex_coverage_ratio: 1.0
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 In the last subsection we discussed that large charged black holes may be unstable to growing charged hair. In this subsection, we will look at an example in which this happens: holographic superconductors. We may ask how rapidly the thermal state of a superconducting black hole complexifies. The relevant hairy black holes correspond to far from extremal black holes of the type considered in \S\ref{sec:bh} with additional scalar condensate hair \cite{holosc1}. Our complexity growth calculation for far from extremal charged black holes leads to the action growth estimate $d\CA/dt \sim TS$, so we must compare $TS$ with  $(M - \mu Q) - (M - \mu Q)_{\text{gs}}$ to check the bound.
 

@@ -8,6 +8,7 @@ pages: 27-28
 source_pdf: 1307.6697v2.pdf
 source_sha256: a3afaefdaebe0292
 toc_source: outline
+doc_brief: "REPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS — In this paper we are interested in computing representations of the funda- mental group of a 3-manifold into PGL(3, C) (in particular in PGL(2"
 ---
 [1] P. Aubry, D. Lazard, and M. Moreno Maza. On the theories of triangular sets. J. of Symbolic Compu-
 tation, 28(1):105–124, 1999.

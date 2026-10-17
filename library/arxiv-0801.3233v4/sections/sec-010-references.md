@@ -8,6 +8,7 @@ pages: 18-19
 source_pdf: 0801.3233v4.pdf
 source_sha256: d98f9d4a9ecb4c5e
 toc_source: outline
+doc_brief: "Contemporary Mathematics Twisted Deformation Quantization of Algebraic Varieties (Survey) — Let X be a smooth algebraic variety over a ﬁeld of characteristic 0."
 ---
 BFFLS. F. Bayen, M. Flato, C. Fronsdal, A. Lichnerowicz and D. Sternheimer, Deformation
 theory and quantization I, II, Ann. Physics 111 (1978), 61-110, 111-151.

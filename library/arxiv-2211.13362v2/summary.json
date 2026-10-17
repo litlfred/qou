@@ -3,12 +3,17 @@
  "doc_id": "arxiv-2211.13362v2",
  "source_sha256": "3becbeaa1135d2e1",
  "brief": "Double-slit experiment revisited — The double-slit experiment is one of the quintessential quantum experiments.",
- "extended": "**Double-slit experiment revisited**\n\n*Siddhant Das*, Dirk-André Deckert*, Leopold Kellers*, Simon Krekels†,‡, and Ward*\n\n15 pp, 8 sections.\n\n**Abstract.** The double-slit experiment is one of the quintessential quantum experiments. However, it tends to be overlooked that a theoretical account of this experiment requires the specification of the joint position and time distribution of detection at the screen, whose position marginal yields the famous interference pattern. The difficulty then arises what this distribution should be. While there exists a variety of proposals for a quantum mechanical time observable, there is no consensus about the right choice. Here, we consider Bohmian mechanics, which allows for a natural and practical approach to this problem. We simulate this distribution in the case of an initial Gaussian wave packet passing through a double-slit potential. We also consider a more challenging setup in which one of the slits is shut during flight.\n\n**Outline.** Introduction; Bohmian account of the DSE; Trajectories for the DSE; First-passage distribution; Dynamic DSE; Numerical DSE; Comparison to the KPM experiment; Concluding remarks",
+ "extended": "**Double-slit experiment revisited**\n\n*Siddhant Das*, Dirk-André Deckert*, Leopold Kellers*, Simon Krekels†,‡, and Ward*\n\n15 pp, 9 sections.\n\n**Abstract.** The double-slit experiment is one of the quintessential quantum experiments. However, it tends to be overlooked that a theoretical account of this experiment requires the specification of the joint position and time distribution of detection at the screen, whose position marginal yields the famous interference pattern. The difficulty then arises what this distribution should be. While there exists a variety of proposals for a quantum mechanical time observable, there is no consensus about the right choice. Here, we consider Bohmian mechanics, which allows for a natural and practical approach to this problem. We simulate this distribution in the case of an initial Gaussian wave packet passing through a double-slit potential. We also consider a more challenging setup in which one of the slits is shut during flight.\n\n**Outline.** Front matter; Introduction; Bohmian account of the DSE; Trajectories for the DSE; First-passage distribution; Dynamic DSE; Numerical DSE; Comparison to the KPM experiment; Concluding remarks",
  "tokens": {
   "brief": 27,
-  "extended": 292
+  "extended": 296
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",

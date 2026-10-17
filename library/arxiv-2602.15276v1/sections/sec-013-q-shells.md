@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.965
 latex_coverage_ratio: 0.993
+doc_brief: "Compact Q-balls and Q-shells within a $CP^N$ Skyrme-Faddeev type model — 18 sections: Front matter; Introduction; The extended Skyrme-Faddeev model"
 ---
 The Q-shell solutions are characterized by an internal vacuum region and possess an expansion around the inner radius, $R_{\text{in}}$, given by: $$f(r)=b_2(r-R_{\rm in})^2-b_3(r-R_{\rm in})^3+b_4(r-R_{\rm in})^4+\ldots$$ where the coefficients $b_2$, $b_3$, and $b_4$ are determined by Equations [\[eq:b2\]](#eq:b2){reference-type="eqref" reference="eq:b2"}-[\[eq:b4\]](#eq:b4){reference-type="eqref" reference="eq:b4"}, with the external radius $R_{\text{out}}$ formally replaced by the internal radius $R_{\text{in}}$.
 

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1901.01312v1/sections/sec-011",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Extending the connections between the braid and Hurwitz algebraic models",
+  "pageStart": 7,
+  "pageEnd": 7,
+  "contains": [
+    "library/arxiv-1901.01312v1/blocks/prose-sec-011"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1901.01312v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1901.01312v1/manifest.jsonld",
+  "provenance": "ingested"
+}

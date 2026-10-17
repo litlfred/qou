@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.974
 latex_coverage_ratio: 0.966
+doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL + — We give complete detail of the description of the GNS representation of the quantum plane A and its dual ˆ A as"
 ---
 \label{sec:double:left}
 With the construction of the multiplicative unitary $\bW$, we can talk about the corepresentation induced by it. By the unitary transformations given in Section \ref{sec:Trans:corep}, we can choose the Hilbert space to be $\cH_{corep}\ox\hat{\cH}_{corep}$ so that the action can be nicely described. 

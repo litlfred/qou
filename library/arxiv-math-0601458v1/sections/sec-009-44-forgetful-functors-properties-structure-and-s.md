@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.993
 latex_coverage_ratio: 0.972
+doc_brief: "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS — Interest in combinatorial interpretations of mathematical entities stems from the convenience of the concrete models they provide."
 ---
 Here we take a detour through some ideas from category theory which apply directly to stuff types. The first is a classification of functors by degrees of forgetfulness, which is the source of the term "stuff" in "stuff type". In fact, we want to explain the terms "structure" and "stuff" which appear before the word "type" in our terminology. We began by trying to categorify a certain rigs, replacing it by a 2-rig of functors - and now we look at a classification of functors to see how we generalized this process. In particular, we are interested in functors which are, respectively: faithful; full and faithful; or full and faithful and essentially surjective:
 

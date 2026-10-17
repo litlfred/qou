@@ -1,1 +1,1 @@
-We call a broken strip u∈M Br(Γ, M[l], L[l],K ) regular
+We call a broken strip u ∈MBr(Γ, M[l], L[l], K) regular

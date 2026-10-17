@@ -8,6 +8,7 @@ pages: 31-31
 source_pdf: 1103.1035v4.pdf
 source_sha256: dd5c4660e1d08ea1
 toc_source: outline
+doc_brief: "MC ELEMENTS IN PRONILPOTENT DGLIE ALGEBRAS — Consider a pronilpotent DG (differential graded) Lie algebra over a ﬁeld of characteristic 0."
 ---
 References
 [Bo]

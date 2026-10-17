@@ -8,6 +8,7 @@ pages: 3-3
 source_pdf: 1609.08719v1.pdf
 source_sha256: f61ff2111e9a97f9
 toc_source: outline
+doc_brief: "AN EXPERIMENTAL INVESTIGATION OF NEUMANN’S CONJECTURE — We use a large census of hyperbolic 3-manifolds to experimentally investigate a conjecture of Neumann regarding the Bloch Group."
 ---
 complete 3-manifold (if ﬁnite) is actually a topological invariant (see e.g. [Ben92,
 p. 83] for a proof). For an ideal hyperbolic 3-simplex ∆= (a, b, c, d) deﬁned by

@@ -8,6 +8,7 @@ pages: 5-5
 source_pdf: 2206.14086v3.pdf
 source_sha256: b6c27f820f963079
 toc_source: outline
+doc_brief: "KPZ limit theorems — One-dimensional interacting particle systems, 1+1 random growth models, and two-dimensional di- rected polymers deﬁne 2d height ﬁelds."
 ---
 a 2d Poisson process in R2
 +. An up/right path p this time is deﬁned as the graph of a continuous piecewise

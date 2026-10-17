@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.954
 latex_coverage_ratio: 0.951
+doc_brief: "SOERGEL CALCULUS — The monoidal category of Soergel bimodules is an incarnation of the Hecke category, a fundamental object in representation theory."
 ---
 Recall that for any ideal $I \subset W$ in the Bruhat order we have a (cellular) ideal $\LLL_I$ in $\DC$. For any coideal $J$ (i.e. $W \setminus J$ is an ideal) we consider the quotient category
 \[

@@ -8,6 +8,7 @@ pages: 31-32
 source_pdf: quaternioms.pdf
 source_sha256: becedcbc858611dd
 toc_source: outline
+doc_brief: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 44 sections: Front matter; Introduction; Extended Related Work"
 ---
 Dimensionality Analysis of a Single Octo-Qubit
 Let us begin by analyzing the resource cost for a single octo-qubit. As established in

@@ -8,6 +8,7 @@ pages: 20-23
 source_pdf: Download.pdf
 source_sha256: ca9639465b08d34c
 toc_source: outline
+doc_brief: "Concentration of empirical distribution functions with applications to non-i.i.d. models — 12 sections: Front matter; Introduction; Empirical Poincaré inequalities"
 ---
 As before, let Fn denote the empirical measure associated with observations x1,...,xn and F =
 EFn their mean with respect to a given probability measure μ on Rn. In this section, we derive

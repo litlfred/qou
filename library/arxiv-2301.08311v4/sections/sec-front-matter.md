@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2301.08311v4.pdf
 source_sha256: 385139c69e18f5b0
 toc_source: outline
+doc_brief: "FLOER COHOMOLOGY AND HIGHER MUTATIONS — We extend the construction of higher mutation as introduced in [PT20] to local higher mutation, which is applicable to a larger class of monotone Lagrangians."
 ---
 FLOER COHOMOLOGY AND HIGHER MUTATIONS
 SOHAM CHANDA

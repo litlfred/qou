@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.966
 latex_coverage_ratio: 0.961
+doc_brief: "The sum-product conjecture is false for real numbers — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily large A ⊂R (whose elements are algebraic integers in a"
 ---
 We now construct counterexamples to the sum-product conjecture in fields of characteristic $p$. The constructions will lie in a sequence of fields $\mathbb F_q(C_i)$ for a sequence of algebraic curves $C_i$, and hence give counterexamples to the sum-product conjecture in any field containing all of them as subfields, such as $\overline{\mathbb F_q(t)}$ or $\mathbb F_q((t))$ (since our curves $C_i$ will have rational points so that $\mathbb F_q(C_i) \subseteq \mathbb F_q((t))$).
 

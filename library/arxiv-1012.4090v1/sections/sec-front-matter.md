@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1012.4090v1.pdf
 source_sha256: 02fe4a5eb36ff0ed
 toc_source: outline
+doc_brief: "Generalized Skyrme Crystals — This letter deals with triply-periodic (crystalline) solutions in a family of Skyrme systems, namely where the ﬁeld takes values in the squashed 3-sphere."
 ---
 Generalized Skyrme Crystals
 J. Silva Loboa,∗, R. S. Warda

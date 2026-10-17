@@ -8,6 +8,7 @@ pages: 19-19
 source_pdf: 0203060v10.pdf
 source_sha256: 2ccb480f4bd4a970
 toc_source: outline
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 composable module category over C. Let us show that C∗
 M is semisimple.

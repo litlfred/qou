@@ -1,0 +1,1 @@
+[\[classicalcomplexformula\]](#classicalcomplexformula){reference-type="ref" reference="classicalcomplexformula"} can easily be reconfirmed by specializing the Weyl dimension formula [\[Weyl\]](#Weyl){reference-type="eqref" reference="Weyl"} to $\mu=\lambda^\natural$ ($\lambda\in\Lambda_n$).

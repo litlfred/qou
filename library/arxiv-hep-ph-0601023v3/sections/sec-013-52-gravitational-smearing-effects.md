@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.945
 latex_coverage_ratio: 0.996
+doc_brief: "arXiv:hep-ph/0601023v3 23 Apr 2007 — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non - su- persymmetric uniﬁcation"
 ---
 Gravitational smearing effects can modify the unification of gauge coupling constants as well
 as affect analysis of proton decay. Consider, for example, the gauge kinetic energy function

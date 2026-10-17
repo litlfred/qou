@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.938
 latex_coverage_ratio: 0.955
+doc_brief: "arXiv:math/0501112v3 [math.CO] 31 May 2005 — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 If $\rho=\{\rho_1,\dots,\rho_k\}$ is a partition of the set $\{1,\dots,n\}$ with blocks $\rho_i=\{\rho_{i,1},\dots,\rho_{i,m(i)}
 \}$ we define partition--indexed cumulants given by a multiplicative extension of the usual cumulants: $$\label{eq:multiplikatywnie} k_{\rho}(X_1,\dots,X_n)= \prod_i

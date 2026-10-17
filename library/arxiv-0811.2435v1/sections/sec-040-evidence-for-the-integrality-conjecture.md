@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.991
 latex_coverage_ratio: 0.978
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 47 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 In this section we present arguments in favor of the integrality of the "numerical\" DT-invariants $\Omega(\gamma)$. Recall that if $E$ is an object of a $\k$-linear triangulated category, then we say that $E$ is a Schur object if $$\op{Ext}^{<0}(E,E)=0,\,\,\,\op{Ext}^0(E,E)\simeq \k\cdot id_E\,\,.$$
 

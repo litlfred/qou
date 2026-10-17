@@ -11,6 +11,8 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.947
 latex_coverage_ratio: 0.967
+doc_brief: "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS — Using a result of Takata, we prove a formula for the colored Jones polynomial of the double twist knots K(−m,−p) and"
+duplicate_of: "cjdoubletwistfinal"
 ---
 The work in this paper may be compared with that of Hikami and the first author in [@hikami1; @hikami2; @hl1], where one finds generalized Kontsevich-Zagier functions $F_t(q)$ and generalized $U$-functions $U_t(x;q)$ for torus knots $T_{(2,2t+1)}$. In the context of this family of torus knots, we have $$\label{Ft}
 F_t(q) := 

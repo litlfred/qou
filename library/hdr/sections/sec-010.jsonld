@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/hdr/sections/sec-010",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Hecke algebras for complex reflection groups",
+  "pageStart": 26,
+  "pageEnd": 28,
+  "contains": [
+    "library/hdr/blocks/prose-sec-010",
+    "library/hdr/blocks/ex-sec-010-01",
+    "library/hdr/blocks/ex-sec-010-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hdr/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hdr/manifest.jsonld",
+  "provenance": "ingested"
+}

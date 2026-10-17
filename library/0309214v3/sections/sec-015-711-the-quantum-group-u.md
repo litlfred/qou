@@ -8,6 +8,7 @@ pages: 25-25
 source_pdf: 0309214v3.pdf
 source_sha256: 53967ef30b0aedb9
 toc_source: outline
+doc_brief: "The colored Jones function is q –holonomic — A function of several variables is called holonomic if, roughly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many linear"
 ---
 The quantum group U
 The quantum group U = Uq(g) associated to g is a Hopf algebra deﬁned over

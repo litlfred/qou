@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.956
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:math/9905032v2 [math.CO] 11 Sep 1999 — We consider the asymptotics of the Plancherel mea- sures on partitions of n as n goes to inﬁnity."
 ---
 Section [\[s2\]](#s2){reference-type="ref" reference="s2"} contains the proof of Theorems [\[t1\]](#t1){reference-type="ref" reference="t1"} and [\[t1b\]](#t1b){reference-type="ref" reference="t1b"} and also various formulas for the kernels $\mathsf{K}$ and $\mathsf{J}$. We also discuss a difference operator which commutes with $\mathsf{J}$ and its possible applications.
 

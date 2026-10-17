@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.884
 latex_coverage_ratio: 1.0
+doc_brief: "THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS — The Ptolemy coordinates for boundary-unipotent SL(n, C)-representations of a 3-manifold group were introduced in [7] inspired by the A-coordinates on"
 ---
 By Proposition~\ref{prop:ReducedPtolemyVariety} any $c\in P^\sigma_2(\T)$ is equivalent to a Ptolemy assignment $c^\prime$ whose coordinates for a set of basic generators $\varepsilon_{i_1},\dots,\varepsilon_{i_v}$ is $1$. In particular, it follows that the Ptolemy field (see Definition~\ref{def:PtolemyField}) of $c\in P^\sigma_2(\T)$ is given by
 \begin{equation}\label{eq:kc}

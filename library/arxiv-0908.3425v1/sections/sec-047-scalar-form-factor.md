@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.774
 latex_coverage_ratio: 1.0
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 The pion-nucleon $\sigma$ term corresponds to the kinematical point $t=0$ of the scalar form factor which is defined as $$\langle p(p',s')|{\cal H_{\rm sb}}(0)|p(p,s)\rangle
 =\bar{u}(p',s')u(p,s)\sigma(t),\quad t=(p'-p)^2.$$ The numerical results for the real and imaginary parts of the scalar form factor at ${\cal O}(q^4)$ are shown in Fig. [\[fig:scffq4new\]](#fig:scffq4new){reference-type="ref" reference="fig:scffq4new"} for the extended on-mass-shell scheme (solid lines) and the infrared regularization scheme (dashed lines).

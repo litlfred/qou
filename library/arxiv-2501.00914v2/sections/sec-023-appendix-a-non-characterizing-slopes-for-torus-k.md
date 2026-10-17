@@ -8,6 +8,7 @@ pages: 32-34
 source_pdf: 2501.00914v2.pdf
 source_sha256: d94bd6edf8544d4a
 toc_source: outline
+doc_brief: "L-spaces and knot traces — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries."
 ---
 Here we describe a sequence of monic integer polynomials ak(n), bk(n), ck(n), dk(n) and pk(n)
 that determine a 2-parameter family of pairs of torus knots with lens space surgeries in common.

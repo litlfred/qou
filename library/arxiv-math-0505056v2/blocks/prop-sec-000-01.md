@@ -1,1 +1,1 @@
-LetD be a marked tangle diagram. Then C(D), as an object
+[\[prop-mark\]](#prop-mark){reference-type="ref" reference="prop-mark"} is proved in the next section.

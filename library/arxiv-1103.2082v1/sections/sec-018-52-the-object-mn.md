@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.877
 latex_coverage_ratio: 0.956
+doc_brief: "MODIFIED TRACES ON DELIGNE’S CATEGORY Rep(St) — Deligne has deﬁned a category which interpolates among the representations of the various symmetric groups."
 ---
 \label{SS:Mndef}   Let $M_n:=([n], s_n)\in\uRep(S_t)$ where $s_n$ is as in Equation~\ref{E:sndef}.  
 

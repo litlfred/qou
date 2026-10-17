@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.951
 latex_coverage_ratio: 1.0
+doc_brief: "EXPLICIT DESCRIPTION OF CHRISTOFFEL DEFORMATIONS AND — Christoﬀel deformation of a measure on the real line consists of multipying this measure by a squared polynomial having its roots in R."
 ---
 We now define the Christoffel deformation of the Charlier ensemble. We know from [@johanssonplancherel] that this ensemble approximates the poissonized Plancherel measure, and the aim of this section is to generalize this fact by proving that Christoffel deformations of this ensemble admit a limit that is expressed through Bessel functions. Our discrete measure is $$\begin{aligned}
 \omega(x)=\omega_a(x)=e^{-a}\frac{a^x}{x!}, \quad x \in \mathbb{N},

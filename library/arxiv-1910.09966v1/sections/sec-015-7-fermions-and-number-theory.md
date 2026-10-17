@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.992
 latex_coverage_ratio: 0.996
+doc_brief: "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics — In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds."
 ---
 In this section, we will present some ideas to uncover some explicit relations between fermions, given as hyperbolic knot complements, and number theory, notable quaternionic trace fields and algebraic K theory/Bloch group. However, we first need some definitions.
 

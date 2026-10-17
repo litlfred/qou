@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.869
 latex_coverage_ratio: 0.956
+doc_brief: "L-spaces and knot traces — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries."
 ---
 We now combine the results of the previous sections to prove that the $n$-trace of any $T_{2,2g+1}$ recovers the knot Floer homology of any knot with the same $n$-trace.
 

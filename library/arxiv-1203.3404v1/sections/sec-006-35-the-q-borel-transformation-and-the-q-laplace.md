@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.957
 latex_coverage_ratio: 0.889
+doc_brief: "On local solutions of the Ramanujan equation and their connection formulae — We show connection formulae of local solutions of the Ramanujan equation between the origin and the inﬁnity."
 ---
 ::: defi
 For $f(t)=\sum_{n\ge 0}a_nt^n$, the $q$-Borel transformation is defined by $$g(\tau )=\left(\mathcal{B}_q^-f\right)(\tau ):=\sum_{n\ge 0}a_nq^{-\frac{n(n-1)}{2}}\tau^n,$$ and the $q$-Laplace transformation is given by $$\left(\mathcal{L}_q^-g\right)(t):=\frac{1}{2\pi i}\int_{|\tau |=r}g(\tau )\theta\left(\frac{t}{\tau}\right)\frac{d\tau}{\tau },\qquad 0<r<\frac{1}{|q^2|}.$$

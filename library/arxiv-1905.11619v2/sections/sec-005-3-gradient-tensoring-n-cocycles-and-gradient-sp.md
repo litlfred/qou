@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.924
 latex_coverage_ratio: 0.956
+doc_brief: "L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS — We study (quasi-)cohomological properties through an analysis of quantum Markov semi-groups."
 ---
 []{#Sect=GradientTensor label="Sect=GradientTensor"} The aim of this section is to construct $n$-cocycles in Hochschild cohomology using quantum Markov semi-groups.
 

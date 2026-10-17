@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.989
 latex_coverage_ratio: 0.996
+doc_brief: "On the geometry of two state models for the colored Jones polynomial — Using the ﬂow property of the R-matrix deﬁning the colored Jones polynomial, we establish a natural bijection between the set of"
 ---
 We review and reformulate the state model for the framed colored Jones polynomial $J_n$ as defined in [@G]. Recall that $n$ labels the $(n+1)$-dimensional standard irreducible representation of $\textrm{sl}(2,\mathbb{C})$, or the corresponding type **1** $U_q(\textrm{sl}(2,\mathbb{C})$-module, see [@J], 5.2. Our normalization will coincide with [@GL] so that $n=1$ corresponds to the trivial $2$-dimensional representation and the classical Jones polynomial. Link components will all be colored by the same representation. We will use the word *coloring* for the edge-colorings of the projection graphs only. Throughout $\varepsilon (v)$ will denote the sign of the crossing $v$ (vertex of the part arc-graph $P\mathcal{K})$. Moreover, in [@G] a variable $v$ is used for $J_n$ while we will use the variable $v^2=t$ in this paper, which corresponds up to a change from $t$ to $t^{-1}$ to the variable $t$ in [@GL]. So our variable $t$ corresponds to $q$ in [@G] and $t^{-1}$ in [@GL]. While describing the state-sum formula of [@G] we will already rewrite all formulas to variable $t$. This includes rewriting quantum symbols in corresponding crossing-sign dependent functions, which are used in [@GL].
 

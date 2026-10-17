@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.977
 latex_coverage_ratio: 0.991
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 It is easier to discuss the reduced convolution and we focus on this operation. From construction of the reduced convolution $\bar{\star}$ we see that the key step of computation of $\calG\bar{\star}\calF$ is the \"computation\" of $\CE_{\frn^{2}}(\bar{\pi}_{12}^*\otimes_B \bar{\pi}_{23}^*)(\calG\boxtimes\calF)$. The latter complex is a matrix factorization with non-trivial potential, we can not compute its cohomology in conventional sense, since the differential does not square to $0$. However, we can get quite close to that by contracting the part of the complex with non-trivial action of $\frn^{(2)}$. We give details below.
 

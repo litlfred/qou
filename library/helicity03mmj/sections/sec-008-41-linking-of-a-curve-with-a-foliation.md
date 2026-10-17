@@ -8,6 +8,7 @@ pages: 12-12
 source_pdf: helicity03mmj.pdf
 source_sha256: e364dad3afff3180
 toc_source: outline
+doc_brief: "MOSCOW MATHEMATICAL JOURNAL GEOMETRY OF HIGHER HELICITIES — We revisit an interpretation of higher-dimensional helicities and Hopf–Novikov invariants from the point of view of the Brownian ergodic"
 ---
 foliation of codimension 2 and a divergence-free vector ﬁeld is a direct generaliza-
 tion of the cross-helicity, cf. [2], [16], [17]. The corresponding helicity invariants in

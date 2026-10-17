@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.957
 latex_coverage_ratio: 0.946
+doc_brief: "Bailey pairs, Eichler integrals and unified Witten-Reshetikhin-Turaev invariants — In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´e homology"
 ---
 In 1999, Lawrence and Zagier made a prescient observation connecting quantum invariants and modular forms [@lz]. To state their result, let $Z_{\zeta}(\mathcal{M})$ denote the Witten-Reshetikhin-Turaev (WRT) invariant of a closed and oriented 3-manifold $\mathcal{M}$ at the root of unity $\zeta$. Next let $\bm{p} = (p_1, p_2, p_3)$ be a triple of pairwise coprime positive integers and $P:=p_1 p_2 p_3$. For any triple $\bm{\ell} = (\ell_1, \ell_2, \ell_3) \in \mathbb{Z}^3$ satisfying $0 < \ell_j < p_j$, define the odd periodic function $$\begin{aligned}
 \chi_{\bm{p}}^{\bm{\ell}}(n) = 

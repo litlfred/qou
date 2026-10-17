@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1804.10084v1.pdf
 source_sha256: 716da9708f06d930
 toc_source: outline
+doc_brief: "Concentration of Lipschitz Functions of Negatively Dependent Variables — We explore the question whether Lipschitz functions of random variables under various forms of negative correlation satisfy"
 ---
 arXiv:1804.10084v1  [math.PR]  21 Apr 2018
 Concentration of Lipschitz Functions

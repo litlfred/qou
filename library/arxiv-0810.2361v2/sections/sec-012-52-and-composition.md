@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.96
 latex_coverage_ratio: 0.982
+doc_brief: "2-VECTOR SPACES AND GROUPOIDS — This paper describes a relationship between essentially ﬁnite groupoids and 2-vector spaces."
 ---
 Next we show that $\Lambda$ preserves horizontal composition of functors *weakly*---that is, up to a natural isomorphism. That is, the composition of the 2-linear maps must be compatible, in a weak sense, with composition of spans of groupoids.
 

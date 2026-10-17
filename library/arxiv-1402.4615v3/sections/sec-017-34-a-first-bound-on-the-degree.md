@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.936
 latex_coverage_ratio: 0.98
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials."
 ---
 []{#SubsectBound1 label="SubsectBound1"} Recall that $(M_k)_{k \geq 2}$ is an algebraic basis of the ring $\Lambda_\star^{(\alpha)}$ of $\alpha$-polynomial functions on Young diagrams. Hence, we can define a gradation on $\Lambda_\star^{(\alpha)}$ by choosing arbitrarily the degree of each of the generators $M_k$. In this section, we do the following natural choice: $$\deg_1(M_k)=k \qquad \text{for } k\geq 2.$$
 

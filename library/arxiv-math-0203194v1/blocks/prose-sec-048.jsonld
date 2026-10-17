@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-math-0203194v1/blocks/prose-sec-048",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Mumford-Schwarz orbifolds.",
-  "pageStart": 183,
-  "pageEnd": 186,
-  "text": "../sections/sec-048-173-mumford-schwarz-orbifolds.md",
+  "title": "Uniformizing differential equations.",
+  "pageStart": 166,
+  "pageEnd": 167,
+  "text": "../sections/sec-048-163-uniformizing-differential-equations.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203194v1/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203194v1/manifest.jsonld",
   "provenance": "ingested"

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.948
 latex_coverage_ratio: 0.987
+doc_brief: "On the structure of trans-series in quantum field theory — Many observables in quantum field theory can be expressed in terms of trans-series, in which one adds to the perturbative series a typically"
 ---
 \label{sec_bosonic_models}
 In this section, we will compute the formal power series $\varphi_\ell(\tilde\alpha)$ appearing in the trans-series \eqref{eq_free_energy_transseries}. Our computation is limited to the leading and subleading corrections in $\tilde{\alpha}$, but to arbitrary order $\ell$ in the exponential corrections. This will be essential in order to extract the large order behavior of the coefficients that appear in the partial series $\mathcal{G}_n(y)$ of \eqref{phi-y}, for $n=0$, $1$.

@@ -1,1 +1,1 @@
-(a) The functionB1/2 ˆf (1)(ξ,x,q ) has simple poles at ξ =±q−1/4−Z ≥0/2 with
+For t in some compact set where the functions are holomorphic, we have

@@ -8,6 +8,7 @@ pages: 38-39
 source_pdf: 1511.05628v1.pdf
 source_sha256: 3b9da2994233882b
 toc_source: outline
+doc_brief: "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY — The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coeﬃcients that"
 ---
 ﬁeld F912 = Q(α) where α = −0.06265158 · · · + i 1.24990458 . . . is a root of
 x17 −8x16 + 32x15 −89x14 + 195x13 −353x12 + 542x11 −719x10 + 834x9

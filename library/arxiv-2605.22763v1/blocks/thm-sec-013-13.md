@@ -1,1 +1,1 @@
-Let𝐺 and 𝐻 be finite simple graphs on
+Let 𝐺and 𝐻be finite simple graphs on

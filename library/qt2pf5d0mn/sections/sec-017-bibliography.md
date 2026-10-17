@@ -8,6 +8,7 @@ pages: 103-106
 source_pdf: qt2pf5d0mn.pdf
 source_sha256: 4c8581c3b46398e3
 toc_source: outline
+doc_brief: "UC Santa Barbara — 19 sections: Front matter; Abstract; Introduction"
 ---
 [1] E. Witten, Topological quantum ﬁeld theory, Communications in Mathematical
 Physics 117 (1988), no. 3 353–386.

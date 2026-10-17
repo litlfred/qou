@@ -8,6 +8,7 @@ pages: 37-38
 source_pdf: quaternioms.pdf
 source_sha256: becedcbc858611dd
 toc_source: outline
+doc_brief: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 44 sections: Front matter; Introduction; Extended Related Work"
 ---
 The principle of associative conﬁnement provides a clear theoretical path to a consis-
 tent octonionic model. In this section, we put this principle into practice by demonstrating

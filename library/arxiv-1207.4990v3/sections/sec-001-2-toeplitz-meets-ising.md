@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.994
 latex_coverage_ratio: 0.993
+doc_brief: "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results — 11 sections: Front matter; Setting the problem; Toeplitz meets Ising"
 ---
 What precisely was this "last problem" that Kaufman and Onsager had to face in order to compute the limit in [\[eq16\]](#eq16){reference-type="eqref" reference="eq16"}? It is here that we make contact with the theory of Toeplitz matrices. In [@KauOns] Kaufman and Onsager expressed $\langle \sigma_{1,1} \, \sigma_{1,1+n}\rangle$ as a sum of two Toeplitz determinants as follows (in the notation of [@MPW]): $$\label{eq17}
 \begin{aligned}

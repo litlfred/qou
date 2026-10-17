@@ -8,6 +8,7 @@ pages: 17-22
 source_pdf: Black_Samson_phd2010sp.pdf
 source_sha256: c16799b0bd54ff29
 toc_source: inferred
+doc_brief: "REPRESENTATIONS OF HECKE — 11 sections: Front matter; INTRODUCTION; ILL Links and Braids"
 ---
 Representations of the Braid Group and the Iwahori-Hecke Algebra
 In this section, we introduce the Iwahori-Hecke algebras of type A, and discuss their

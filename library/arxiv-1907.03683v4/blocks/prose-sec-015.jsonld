@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1907.03683v4/blocks/prose-sec-015",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Palm measures of the z-measures",
-  "pageStart": 25,
-  "pageEnd": 26,
-  "text": "../sections/sec-015-42-palm-measures-of-the-z-measures.md",
+  "title": "Christoffel deformations of the Charlier ensemble and main result",
+  "pageStart": 12,
+  "pageEnd": 13,
+  "text": "../sections/sec-015-32-christoffel-deformations-of-the-charlier-ense.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1907.03683v4/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1907.03683v4/manifest.jsonld",
   "provenance": "ingested"

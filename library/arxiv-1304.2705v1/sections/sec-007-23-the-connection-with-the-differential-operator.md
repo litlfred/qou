@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.848
 latex_coverage_ratio: 0.757
+doc_brief: "FROM STATE INTEGRALS TO q-SERIES — It is well-known to the experts that multi-dimensional state integrals of prod- ucts of Faddeev’s quantum dilogarithm which arise in Quantum Topology can be written"
 ---
 In this section we connect the series $E^{(m)}_l(q)$ and $\ti E^{(m)}_l(\tq)$
 with the action of the differential operators $\d_l$ and $\ti\d_l$ on

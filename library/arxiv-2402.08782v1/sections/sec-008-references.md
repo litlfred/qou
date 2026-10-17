@@ -8,6 +8,7 @@ pages: 11-12
 source_pdf: 2402.08782v1.pdf
 source_sha256: 30311f0bd815f93f
 toc_source: outline
+doc_brief: "Hecke–Farey coordinates for Bring’s surface Doha Kattan 1 and David Singerman 2 — The modular group Γ (which is the Hecke group H3) can be used to study triangular maps, Here we use the Hecke group"
 ---
 [1] H. Braden and T. Northover, Bring’s curve: its period matrix and the vector of Riemann
 constants, SIGMA 8 065 (2012).

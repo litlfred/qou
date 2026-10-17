@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-0611181v2",
+  "title": "Proof of the volume conjecture for Whitehead chains",
   "contains": [
+    "library/arxiv-math-0611181v2/sections/sec-front-matter",
     "library/arxiv-math-0611181v2/sections/sec-000",
     "library/arxiv-math-0611181v2/sections/sec-001",
     "library/arxiv-math-0611181v2/sections/sec-002"
@@ -31,7 +32,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-0611181v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0611181v2.pdf",
     "source_sha256": "6931e3ebca584de90bfb4efe82875c3f342a15db7e492c2956c70b53a7141b60",
     "pages": 13,

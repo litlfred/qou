@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.924
 latex_coverage_ratio: 0.908
+doc_brief: "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY — We study a class of commuting Markov kernels whose simplest element describes the movement of k particles on a discrete circle of size n"
 ---
 As a consequence of the fact that $B_{k,n}$ is an integrable PM-graph and the expression of its eigenbasis, we can deduce several results from Section [\[sec:pm_graph\]](#sec:pm_graph){reference-type="ref" reference="sec:pm_graph"}. In order to do so, we will need several times the following inversion formula for evaluating $S_{I}(\xi_{n}(J))$ in terms of $S_{J}(\xi_{n}(I))$.
 

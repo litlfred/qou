@@ -8,6 +8,7 @@ pages: 12-14
 source_pdf: S0894-0347-00-00337-4.pdf
 source_sha256: 1c6848281fc2804c
 toc_source: outline
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY S 0894-0347(00)00337-4 — 21 sections: Front matter; Plancherel measures; Introduction"
 ---
 tion of x, the function J(x, y) is entire in x and y. We shall now obtain several
 denominator–free formulas for the kernel J.

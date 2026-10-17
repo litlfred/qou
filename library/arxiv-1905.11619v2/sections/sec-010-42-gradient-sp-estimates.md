@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.779
 latex_coverage_ratio: 0.956
+doc_brief: "L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS — We study (quasi-)cohomological properties through an analysis of quantum Markov semi-groups."
 ---
 Let $[n]$ be the set $\{ 1, \ldots, n \}$, with $n\in \mathbb{N}$. $[n]$ has its natural order. We will consider the operator $\Psi^{a,b}$ associated to the Ornstein-Uhlenbeck semigroup. We will need a formula for products of Wick words to be able to work with this operator. We will follow Effros-Popa [@EffrosPopa] (see also [@DeyaSchott]).
 

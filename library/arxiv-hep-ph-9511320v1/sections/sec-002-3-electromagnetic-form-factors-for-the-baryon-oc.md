@@ -11,5 +11,6 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.871
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:hep-ph/9511320v1 15 Nov 1995 — We analyze the eﬀective low–energy ﬁeld theory of Goldstone bosons and baryons chirally coupled to massive spin–1 ﬁelds."
 ---
 In this section, we want to establish the equivalence between the tensor and the vector field formulation by calculating the vector meson contribution to the electromagnetic form factors of the baryon octet. This is analogous to the pion form factor calculation performed in Ref.[@reso1]. First, we will give some basic definitions and then establish the equivalence.

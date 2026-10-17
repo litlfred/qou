@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.963
 latex_coverage_ratio: 0.975
+doc_brief: "Asymptotics of some quantum invariants of the Whitehead chains — In this paper, we study the asymptotics of the colored Jones polynomials of the Whitehead chains with one belt colored by M1 and all"
 ---
 The volume conjecture of the colored Jones polynomials, discovered by R. Kashaev, H. Murakami and J. Murakami, suggests that the $N$-th colored Jones polynomials of a hyperbolic knot evaluated at the $N$-th root of unity $t=e^{\frac{2\pi i}{N}}$ grow exponentially with exponential growth rate equal to the hyperbolic volume of the knot complement.
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
 latex_coverage_ratio: 0.95
+doc_brief: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A — This paper concerns the cohomological aspects of Donaldson– Thomas theory for Jacobi algebras and the associated cohomological Hall alge- bra, introduced"
 ---
 Let $W\in\mathbb{C} Q/[\mathbb{C}Q,\mathbb{C}Q]$ be a finite linear combination of equivalence classes of cyclic words in $\mathbb{C} Q$. Such a $W$ is called a *potential*. A potential $W$ induces a function $\mathfrak{Tr}(W)$ on $\mathfrak{M}$, defined as follows. Firstly, assume that $W$ lifts to a single cyclic word $c=a_r\ldots a_0$ in $\mathbb{C} Q$. Then a $\mathbb{C}Q$-module $F$ determines an endomorphism $$F(a_r)\circ\ldots\circ F(a_0)\colon F(s(a_0))\rightarrow F(s(a_0)),$$ and $\mathop{\mathrm{Tr}}(F(a_r)\circ\ldots\circ F(a_0))$ determines a function on $X(Q)_{\mathop{\mathrm{\mathbf{d}}}}$, for each $\mathop{\mathrm{\mathbf{d}}}\in\mathbb{N}^{Q_0}$. By cyclic invariance of the trace, this function is $G_{\mathop{\mathrm{\mathbf{d}}}}$-invariant, and does not depend on the lift $c$ of $W$. Extending by linearity, we define for general $W\in\mathbb{C}Q/[\mathbb{C}Q,\mathbb{C}Q]$ the induced function $$\mathfrak{Tr}(W)_{\mathop{\mathrm{\mathbf{d}}}}\colon \mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}\rightarrow \mathbb{C}.$$
 

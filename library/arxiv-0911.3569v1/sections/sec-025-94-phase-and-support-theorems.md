@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.973
 latex_coverage_ratio: 0.987
+doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
 ---
 A polynomial $f\in\CC[\x]$ has \emph{definite parity} if every monomial
 $\x^\alpha$ occurring in $f$ has total degree of the same parity:\

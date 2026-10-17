@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.922
+doc_brief: "Fusion categories via string diagrams — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories."
 ---
 Fix a root choice $\{d_i\}$, $i \in I$. We introduce the following notation. For an endomorphism of a simple object $f : X_i \rightarrow X_i$, we will write $\langle f \rangle \in \mathbb{C}$ for the scalar satisfying $f = \langle f \rangle \, \id_{X_i}$. In string diagrams, 
 \begin{equation} \label{extract_scalar}

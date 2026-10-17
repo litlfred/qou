@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.988
 latex_coverage_ratio: 0.993
+doc_brief: "On the geometry of two state models for the colored Jones polynomial — Using the ﬂow property of the R-matrix deﬁning the colored Jones polynomial, we establish a natural bijection between the set of"
 ---
 We will first consider *part arc-graphs* and *arc-graphs* following [@GL], which are defined from Morse projections $\mathcal{K}$. We will also introduce a third type of graph representation (and the corresponding colorings), which we call chord graphs, closely related to the chord diagrams in Vassiliev theory.
 

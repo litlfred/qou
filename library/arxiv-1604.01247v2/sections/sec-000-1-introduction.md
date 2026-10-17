@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.959
 latex_coverage_ratio: 0.955
+doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — Based on an interpretation of the quark-lepton symmetry in terms of the unimodularity of the color group SU(3) and on the existence of 3 generations, we develop an"
 ---
 It is well known that the Standard Model of particles is very successful but contains several inputs which ought to have explainations at a fundamental level. Some of these inputs like the existence of the Higgs particles, which seem to have recently acquired experimental confimations, appear naturally for instance in the (almost commutative) noncommutative geometric formulations [@mdv-ker-mad:1989a], [@mdv-ker-mad:1988b], [@mdv:1991], [@ac-lot:1990], [@cha-ac:1997], [@cha-ac-mar:2007] or in the superconnection formulations [@roe:2000]. Some other structural inputs come almost directly from the experimental observation. For instance the quark-lepton symmetry or the existence of 3 generations belong to these latter inputs and it is one of our aims here to connect these 2 inputs and to suggest some theoretical explanations for these facts.\
 By the quark-lepton symmetry, we mean the fact that to each quark corresponds one lepton and conversely. For instance to the quark $u$ corresponds the electronic neutrino $\nu_e$, to the quark $d$ corresponds the electron $e$, etc..\

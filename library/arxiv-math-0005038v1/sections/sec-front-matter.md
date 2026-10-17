@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0005038v1.pdf
 source_sha256: db0b9b7a8534f161
 toc_source: inferred
+doc_brief: "arXiv:math/0005038v1 [math.GR] 4 May 2000 — The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc."
 ---
 arXiv:math/0005038v1  [math.GR]  4 May 2000
 BRAID GROUPS ARE LINEAR

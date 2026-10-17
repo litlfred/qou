@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0604057v2.pdf
 source_sha256: 649fad141dc34eb9
 toc_source: outline
+doc_brief: "VOLUME CONJECTURE, REGULATOR AND SL2(C)-CHARACTER VARIETY — In this paper, by using the regulator map of Beilinson-Deligne, we show that the quan- tization condition posed by Gukov is true for the"
 ---
 arXiv:math/0604057v2  [math.GT]  17 Apr 2006
 VOLUME CONJECTURE, REGULATOR AND SL2(C)-CHARACTER VARIETY

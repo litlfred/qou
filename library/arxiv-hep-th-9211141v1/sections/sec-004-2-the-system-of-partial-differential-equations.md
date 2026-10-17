@@ -8,5 +8,6 @@ pages: 9-9
 source_pdf: 9211141v1.pdf
 source_sha256: bd9fbd329884c26e
 toc_source: inferred
+doc_brief: "arXiv:hep-th/9211141v1 1 Dec 1992 — 11 sections: Front matter; INTRODUCTION AND SUMMARY OF RESULT; The System of Partial Differential"
 ---
 

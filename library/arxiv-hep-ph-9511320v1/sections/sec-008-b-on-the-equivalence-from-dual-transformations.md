@@ -8,6 +8,7 @@ pages: 22-26
 source_pdf: 9511320v1.pdf
 source_sha256: 4336112cecabdfdf
 toc_source: inferred
+doc_brief: "arXiv:hep-ph/9511320v1 15 Nov 1995 — We analyze the eﬀective low–energy ﬁeld theory of Goldstone bosons and baryons chirally coupled to massive spin–1 ﬁelds."
 ---
 On the Equivalence from Dual Transformations
 Here, we wish to critically examine the approach of Ref.[13], were it was ar-

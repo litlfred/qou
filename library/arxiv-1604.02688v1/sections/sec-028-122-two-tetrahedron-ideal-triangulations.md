@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.771
 latex_coverage_ratio: 0.816
+doc_brief: "THE 3D-INDEX AND NORMAL SURFACES — Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index, associated to a suitable ideal triangulation of a 3-manifold with torus boundary"
 ---
 Up to relabelling, there are 10 triangulations of orientable cusped 
 3-manifolds that decompose into two tetrahedra, and these 10 triangulations 

@@ -8,6 +8,7 @@ pages: 23-24
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
 toc_source: outline
+doc_brief: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT — 63 sections: Front matter; ACKNOWLEDGMENTS; ABSTRACT"
 ---
 A quantum dilogarithm over a Gaussian group
 Definition 6. [7] A quantum dilogarithm over a Gaussian group G is a tempered

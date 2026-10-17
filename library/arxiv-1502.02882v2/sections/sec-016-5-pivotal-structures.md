@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "Fusion categories via string diagrams — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories."
 ---
 \label{piv_struc_sec}
 In this section we characterize pivotal structures as solutions of an explicit set of equations over the complex numbers. We also define fusion homomorphisms, and discuss the sphericalization of a fusion category.

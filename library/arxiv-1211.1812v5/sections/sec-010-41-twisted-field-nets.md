@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.991
 latex_coverage_ratio: 0.982
+doc_brief: "Presheaves of superselection structures in curved spacetimes — We show that superselection structures on curved spacetimes, that are expected to describe quantum charges aﬀected by the underlying"
 ---
 Let $\EuFrak{F}= (F,\jmath)_\Delta$ be a net of $C^*$-algebras. We say that $\EuFrak{F}$ is ${\mathbb Z}_2$-*graded* whenever there is a period $2$ automorphism
 

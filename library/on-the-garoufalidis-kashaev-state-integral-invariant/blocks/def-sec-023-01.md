@@ -1,1 +1,1 @@
-[7] The quantum dilogarithm over A = ˆB×B for B = F× is the
+[7] The quantum dilogarithm over A = ˆB × B for B = F × is the

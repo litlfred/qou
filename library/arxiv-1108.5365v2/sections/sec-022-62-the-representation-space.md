@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.942
+doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL + — We give complete detail of the description of the GNS representation of the quantum plane A and its dual ˆ A as"
 ---
 \label{sec:Trans:rep}
 We introduce the transformations such that $\cA$ acts on $\cH$ canonically, and $\hat{\cA}$ acts on $\hat{\cH}$ canonically. We will use capital letter to denote the transformed function. All the new Hilbert spaces are $L^2(\R\x\R)$.

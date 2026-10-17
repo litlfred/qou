@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.98
 latex_coverage_ratio: 0.99
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 []{#ssec: comp ins label="ssec: comp ins"} In our general construction of the push forward $i_{k*}(\calF)$, $\calF=(M,D,d_l,d_r)$ we make a choice of the extension $\tilde{D}$ of the differential $D$ from sub-variety $\calX^\circ_2(P_k)$ to $\calX^\circ_2(G_n)$. However in our case we have a canonical choice of the extension because we could use the projection map $\Lie(G_n)\to \Lie(P_{k})$ to construct such an extension and use the remark [\[rem: section\]](#rem: section){reference-type="ref" reference="rem: section"}, the details are provided below. Morally, we would like to interpret $i_{k}$ as a section of some map and it is possible if we enlarge our space slightly.
 

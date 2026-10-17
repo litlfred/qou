@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.917
 latex_coverage_ratio: 0.831
+doc_brief: "Quadruply-graded colored homology of knots Eugene Gorsky, Sergei Gukov, and Marko Stoˇsi´c — We conjecture the existence of four independent gradings in the colored HOMFLY homology."
 ---
 As we use the quantum invariants of $(2,m)$ torus knots colored
 by the representations labeled by the rectangular Young diagrams in many examples throughout the paper, we would like

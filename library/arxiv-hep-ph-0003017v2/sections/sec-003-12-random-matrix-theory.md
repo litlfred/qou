@@ -8,6 +8,7 @@ pages: 15-15
 source_pdf: 0003017v2.pdf
 source_sha256: 1660907865346bdf
 toc_source: inferred
+doc_brief: "arXiv:hep-ph/0003017v2 26 Jun 2000 — Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems."
 ---
 15
 where we have introduced an ultraviolet cutoﬀΛ that must be removed at the end

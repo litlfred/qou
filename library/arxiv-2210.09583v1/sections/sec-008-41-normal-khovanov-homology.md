@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.971
 latex_coverage_ratio: 1.0
+doc_brief: "A NEW PRESENTATION OF THE osp(1|2)-POLYNOMIAL LINK INVARIANT — There is a known connection between the osp(1|2n) polynomial knot invariant Jn K and the so(2n + 1) knot invariant soJn K studied by"
 ---
 We briefly recall how the complex $Kh(L)$ for Khovanov homology of an oriented link $L$ with is defined.
 We use notation similar to \cite{BN2, P} to define the Khovanov complexes so that we can easily reference it again when we look at a similar e-graded version of covering Khovanov homology.

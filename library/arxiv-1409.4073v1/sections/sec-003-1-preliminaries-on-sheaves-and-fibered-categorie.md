@@ -8,6 +8,7 @@ pages: 5-9
 source_pdf: 1409.4073v1.pdf
 source_sha256: b40be7f0022f70a1
 toc_source: outline
+doc_brief: "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION — We introduce “sheaﬁﬁcation” functors from categories of (lax monoidal) linear functors to categories of quasi-coherent sheaves (of algebras) of"
 ---
 Preliminaries on sheaves and fibered categories
 Let π: X −→Aﬀ/R be a ﬁbered category. There is a functor of rings OX : X op −→(Sets)

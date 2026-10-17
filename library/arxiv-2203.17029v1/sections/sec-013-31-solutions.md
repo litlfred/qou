@@ -11,6 +11,8 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.689
 latex_coverage_ratio: 0.943
+doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised"
+duplicate_of: "modularqholonomicmodules"
 ---
 In this section we describe the solutions of the generalised $q$-hypergeometric
 equation~\eqref{gener.qhyper}. Since that equation depends on parameters, it will

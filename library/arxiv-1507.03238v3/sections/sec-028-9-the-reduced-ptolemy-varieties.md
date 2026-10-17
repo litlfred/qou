@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.974
 latex_coverage_ratio: 1.0
+doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety for SL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
 ---
 The diagonal action on decorations, Ptolemy assignments, and natural cocycles extends canonically to the case where some of the Ptolemy coordinates are zero and some of the long edges are diagonal instead of counterdiagonal. We define the reduced Ptolemy variety $\overline P_{\mathop{\mathrm{red}}}(\mathcal T)$ to be the quotient of $\overline P(\mathcal T)$ by the diagonal action. In [@PtolemyField] we showed that the reduced Ptolemy variety $P(\mathcal T)_{\mathop{\mathrm{red}}}$ can be computed by setting appropriately chosen Ptolemy coordinates equal to $1$:
 

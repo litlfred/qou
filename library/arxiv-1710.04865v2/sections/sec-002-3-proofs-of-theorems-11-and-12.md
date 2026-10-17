@@ -8,6 +8,8 @@ pages: 12-22
 source_pdf: 1710.04865v2.pdf
 source_sha256: ac8f436173d550e8
 toc_source: outline
+doc_brief: "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS — Using a result of Takata, we prove a formula for the colored Jones polynomial of the double twist knots K(−m,−p) and"
+duplicate_of: "cjdoubletwistfinal"
 ---
 Proof of Theorem 1.1. As (1.7) reduces to (1.8) when m = 1 and this case was proven in [28],
 we assume m ≥2.

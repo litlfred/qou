@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 978-3-98547-562-9-volume-4-chapter-5483.pdf
 source_sha256: 5e39a312cf8ed9d9
 toc_source: outline
+doc_brief: "Floer cohomology, singularities, and birational geometry — We explain a few recent results concerning the application of various Floer theories to topics in algebraic geometry, including singularity"
 ---
 Floer cohomology,
 singularities, and

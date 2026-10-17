@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0705.2975v1.pdf
 source_sha256: 683d6bd44cea6704
 toc_source: outline
+doc_brief: "On the Deﬁnitions of Diﬀerence Galois Groups — We compare several deﬁnitions of the Galois group of a linear diﬀerence equation that have arisen in algebra, analysis and model theory and show, that"
 ---
 arXiv:0705.2975v1  [math.CA]  21 May 2007
 On the Deﬁnitions of Diﬀerence Galois Groups

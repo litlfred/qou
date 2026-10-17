@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.885
 latex_coverage_ratio: 0.585
+doc_brief: "arXiv:math/0006057v2 [math.QA] 10 Jun 2000 — We give a survey of the theory of ﬁnite quantum groupoids (weak Hopf algebras), including foundations of the theory and applications to ﬁnite depth"
 ---
 ::: definition
 []{#module algebra label="module algebra"} An algebra $A$ is a (left) *$H$-module algebra* if $A$ is a left $H$-module via $h\otimes a \to h\cdot a$ and

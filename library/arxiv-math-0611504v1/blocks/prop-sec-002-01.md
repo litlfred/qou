@@ -1,1 +1,1 @@
-There is a canonical family { ˜φn
+There is a canonical family {˜φn

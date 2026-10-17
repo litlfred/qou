@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1810.11563v1/blocks/prose-sec-043",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Geometric Interpretation of Uncomplexity",
-  "pageStart": 77,
-  "pageEnd": 84,
-  "text": "../sections/sec-043-232-geometric-interpretation-of-uncomplexity.md",
+  "title": "Expending Uncomplexity and Negentropy",
+  "pageStart": 75,
+  "pageEnd": 76,
+  "text": "../sections/sec-043-222-expending-uncomplexity-and-negentropy.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1810.11563v1/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1810.11563v1/manifest.jsonld",
   "provenance": "ingested"

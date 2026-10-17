@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.978
 latex_coverage_ratio: 0.986
+doc_brief: "2-VECTOR SPACES AND GROUPOIDS — This paper describes a relationship between essentially ﬁnite groupoids and 2-vector spaces."
 ---
 Since we want our 2-vector spaces to have finitely many generators, we need a condition on the sorts of groupoids we are talking about here. Of course, since often one works with topological groupoids which may be uncountable, the kind of finiteness condition we will have to apply seems restrictive. A full treatment of, for example, Lie groupoids, would require much more consideration of infinite dimensional 2-vector spaces (and indeed 2-Hilbert spaces). In the meantime, we can only consider groupoids which are essentially finite.
 

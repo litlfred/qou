@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.974
 latex_coverage_ratio: 0.949
+doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — Based on an interpretation of the quark-lepton symmetry in terms of the unimodularity of the color group SU(3) and on the existence of 3 generations, we develop an"
 ---
 Let $\Omega=\oplus_{n\geq 0}\Omega^n$ be a differential graded Jordan algebra and let $\Gamma=\oplus_{n\geq 0}\Gamma^n$ be a graded Jordan module over the graded Jordan algebra $\Omega$, (the axioms for this notion are easy to guess). A *connection* on $\Gamma$ will be defined to be a linear endomorphism $\nabla$ of $\Gamma$ satisfying $$\left\{
 \begin{array}{l}

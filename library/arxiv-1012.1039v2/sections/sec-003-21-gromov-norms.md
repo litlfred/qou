@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.971
 latex_coverage_ratio: 0.99
+doc_brief: "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS — Let M be a hyperbolic n–manifold whose cusps have torus cross- sections."
 ---
 []{#ss:norms label="ss:norms"} Let $X$ be any space, and let $\omega \in H_*(X;\mathbb{R})$ or $\omega \in
 H_*(X,Y;\mathbb{R})$ for some $Y\subset X$. The *Gromov norm of $\omega$* is the smallest $l^1$--norm of a real singular chain representing $\omega$, $$\|\omega\| = \inf\left\{\sum_{i=1}^k

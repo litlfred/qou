@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: helicity03mmj.pdf
 source_sha256: e364dad3afff3180
 toc_source: outline
+doc_brief: "MOSCOW MATHEMATICAL JOURNAL GEOMETRY OF HIGHER HELICITIES — We revisit an interpretation of higher-dimensional helicities and Hopf–Novikov invariants from the point of view of the Brownian ergodic"
 ---
 MOSCOW MATHEMATICAL JOURNAL
 Volume 3, Number 3, July–September 2003, Pages 989–1011

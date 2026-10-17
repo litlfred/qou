@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.9
+doc_brief: "Formulas on hyperbolic volume ∗ — This paper collects some important formulas on hyperbolic volume."
 ---
 The following calculation shows that area of a rectangular triangle also can be get with our method. $$\int\limits_{0}^{a}\int\limits_{0}^{\phi(x)}(\cosh y)\mathrm{d}y\mathrm{d}x=\int\limits_{0}^{a}\frac{\frac{\tanh b}{\sinh a}\sinh x}{\sqrt{1-\left(\frac{\tanh b}{\sinh a}\sinh x\right)^2}}\mathrm{d}x=$$ $$=\frac{1}{2}\frac{\sinh a}{\tanh b}\int\limits_{0}^{(\tanh b)^2}\frac{1}{\sqrt{1+\left(\left(\frac{\sinh a}{\tanh b}\right)^2-1\right)t-\left(\frac{\sinh a}{\tanh b}\right)^2t^2}}\mathrm{d}t$$
 

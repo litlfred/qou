@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.955
 latex_coverage_ratio: 0.969
+doc_brief: "LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS — The set of equivalence classes of cobounded actions of a group G on diﬀerent hyperbolic metric spaces carries a natural partial order."
 ---
 []{#sec:projaxioms label="sec:projaxioms"} We will use the Bestvina--Bromberg--Fujiwara projection complex machinery developed in [@BBF15] to obtain actions on quasi-trees. In this section, we review this machinery.
 

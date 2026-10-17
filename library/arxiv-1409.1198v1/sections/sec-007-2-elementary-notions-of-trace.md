@@ -8,5 +8,6 @@ pages: 7-7
 source_pdf: 1409.1198v1.pdf
 source_sha256: 13ecb6c28bab6744
 toc_source: outline
+doc_brief: "TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR — Categoriﬁcation is a process of lifting structures to a higher categorical level."
 ---
 

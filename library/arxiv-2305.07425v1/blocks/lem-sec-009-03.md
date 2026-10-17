@@ -1,1 +1,1 @@
-Suppose there is a loop in Γ based atµ. For K large enough, we have ρK(zω) = 0
+Let (G, P) be a relatively hyperbolic group. If there is a peripheral subgroup

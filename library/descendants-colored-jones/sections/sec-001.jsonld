@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/descendants-colored-jones/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The descendant colored Jones polynomials of a knot",
+  "pageStart": 3,
+  "pageEnd": 4,
+  "contains": [
+    "library/descendants-colored-jones/blocks/prose-sec-001"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/descendants-colored-jones/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/descendants-colored-jones/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/hdr/sections/sec-020",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Canonical basic sets for Hecke algebras from rational Cherednik algebras",
+  "pageStart": 41,
+  "pageEnd": 44,
+  "contains": [
+    "library/hdr/blocks/prose-sec-020",
+    "library/hdr/blocks/rem-sec-020-01",
+    "library/hdr/blocks/prop-sec-020-02",
+    "library/hdr/blocks/prop-sec-020-03",
+    "library/hdr/blocks/rem-sec-020-04",
+    "library/hdr/blocks/prop-sec-020-05",
+    "library/hdr/blocks/ex-sec-020-06",
+    "library/hdr/blocks/prop-sec-020-07",
+    "library/hdr/blocks/prop-sec-020-08",
+    "library/hdr/blocks/cor-sec-020-09",
+    "library/hdr/blocks/rem-sec-020-10"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hdr/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hdr/manifest.jsonld",
+  "provenance": "ingested"
+}

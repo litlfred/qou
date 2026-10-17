@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.99
 latex_coverage_ratio: 0.993
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 47 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 Assume that $\CC$ is an ind-constructible $3d$ Calabi-Yau category endowed with polarization and orientation data $\sqrt{\cal D}$. The Hall algebra of $\CC$ is graded by the corresponding lattice $\Gamma$: $H(\CC)=\oplus_{\gamma\in \Gamma}H(\CC)_{\gamma}$. Main result of this section is the following theorem.
 

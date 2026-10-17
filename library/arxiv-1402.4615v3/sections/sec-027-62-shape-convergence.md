@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.827
 latex_coverage_ratio: 1.0
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials."
 ---
 In the previous Section, we proved that evaluations of polynomial functions at $D_{1/\sqrt{n}} \big(A_\alpha(\lambda_{(n)})\big)$ converge towards the evaluation at $\Omega$. Ivanov and Olshanski has established that, if one can prove that the support of these renormalized Young diagrams lies in some compact, this would imply the uniform convergence, that is Theorem [\[theo:RYD-limit\]](#theo:RYD-limit){reference-type="ref" reference="theo:RYD-limit"}.
 

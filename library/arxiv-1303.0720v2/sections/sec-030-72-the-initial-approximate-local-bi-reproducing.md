@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.943
 latex_coverage_ratio: 0.907
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 []{#subsec-6.2 label="subsec-6.2"} We now turn our attention to the space $\mathrm{PA}^2_{q,m}$ with $q=2$ (the bianalytic case). The first step is to find the analogue in this setting of the kernel $M_m$ given by [\[eq-Mm\]](#eq-Mm){reference-type="eqref" reference="eq-Mm"}, and then to obtain an approximate reproducing identity similar to [\[reproeq1\]](#reproeq1){reference-type="eqref" reference="reproeq1"}.
 

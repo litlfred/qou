@@ -8,6 +8,7 @@ pages: 61-62
 source_pdf: 2211.12836v2.pdf
 source_sha256: 4ffbb8b21f8b175d
 toc_source: outline
+doc_brief: "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY — We study a class of commuting Markov kernels whose simplest element describes the movement of k particles on a discrete circle of size n"
 ---
 the cohomology of the Grassmannian without going into details of homology theory, see [23] for
 more details. Denote by Gk,n the variety of k-dimensional subspaces of Cn and W = {(0 ⊂W1 ⊂

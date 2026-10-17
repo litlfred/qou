@@ -7,11 +7,11 @@ section_number: 4.6
 pages: 20-26
 source_pdf: 1303.5278v1.pdf
 source_sha256: 92e417c93f8b883a
-doc_brief: "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD — In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifold M (a collection of"
-duplicate_of: "topologicalinvariance3dindex"
 text_source: latex
 latex_prose_ratio: 0.962
 latex_coverage_ratio: 0.765
+doc_brief: "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD — In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifold M (a collection of"
+duplicate_of: "topologicalinvariance3dindex"
 ---
 Let $M$ be an orientable 3-manifold with $r \ge 1$ torus cusps and let $\mathcal{T}$ be an ideal triangulation of $M$ with $N$ tetrahedra and, hence, $N$ edges which we denote $e_1, \ldots, e_N$. Let $G$ be the 1-skeleton $\mathcal{T}^{(1)}$ of $\mathcal{T}$ together with one (ideal) vertex for each cusp of $M$. Note that $G$ has $r$ vertices and $N$ edges, and may contain loops (i.e. edges with both ends at a single vertex) or multiple edges between the same two vertices. The incidence matrix $C = (c_{hi})$ for $G$ is an $r \times N$ matrix whose $(h,i)$ entry gives the number of ends of edge $i$ on cusp $h$. Note that each $c_{hi} \in \{0,1,2\}$ and the sum of entries is $2$ in each column of $C$. Let $E(e_i)=E_i  \subset  \mathbb{Z}^{2N}$ be the edge equation coefficients corresponding to edge $e_i$ in $\mathcal{T}$, and let $$\Lambda = \left\{ \sum_{\boldsymbol{k}\in \mathbb{Z}^N} k_i E_i \right\} \subset  \mathbb{Z}^{2N}$$ be the lattice of all integer linear combinations of these. In other words, $E_i$ is the $i$th row of the Neumann-Zagier matrix $(\mathbf A \mid \mathbf B)$, and $\Lambda$ is the integer row space of this matrix.
 

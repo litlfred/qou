@@ -1,1 +1,1 @@
-A.1.3.(Congruence) AcongruenceRon a categoryCis an assignment
+A.1.3. (Congruence) A congruence R on a category C is an assignment

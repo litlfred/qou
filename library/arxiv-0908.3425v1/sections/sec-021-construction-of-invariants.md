@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.976
 latex_coverage_ratio: 0.967
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 []{#subsubsection_ci label="subsubsection_ci"} So far, we have discussed the lowest-order effective Lagrangian for a *global* $\mbox{SU(3)}_L\times\mbox{SU(3)}_R$ symmetry. In Sec. [\[subsubsection_gfcwigf\]](#subsubsection_gfcwigf){reference-type="ref" reference="subsubsection_gfcwigf"} we stated that the Ward identities of QCD are obtained from a *locally* invariant generating functional involving a coupling to external fields. Therefore, following Refs. [@Gasser:1983yg], [@Gasser:1984gg], we will promote the global symmetry of the effective Lagrangian to a local one, $$L\rightarrow V_L(x),\, R\rightarrow V_R(x),$$ and introduce a coupling to the *same* external fields $v$, $a$, $s$, and $p$ as in QCD \[see Eq. ([\[2:1:6:lqcdsn\]](#2:1:6:lqcdsn){reference-type="ref" reference="2:1:6:lqcdsn"})\]. The transformation behavior of the special unitary matrix $U$ of Eqs. ([\[3:1:2:upar\]](#3:1:2:upar){reference-type="ref" reference="3:1:2:upar"}) and ([\[3:1:2:phisu3\]](#3:1:2:phisu3){reference-type="ref" reference="3:1:2:phisu3"}) under $G=\mbox{SU(3)}_L\times\mbox{SU(3)}_R$, parity $P$, and charge conjugation $C$ is given by $$U\stackrel{G}{\mapsto}V_R U V_L^{\dagger},\quad
 U(\vec{x},t)\stackrel{P}{\mapsto}U^\dagger(-\vec{x},t),\quad

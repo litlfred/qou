@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2303.08330v2",
  "source_sha256": "94981fa0a792b3fa",
- "brief": "A Cable Knot and BPS-Series II John Chae — This is a companion paper to earlier work of the author, which genera lizes to an inﬁnite family of (2 , 2w + 1)-cabling of the ﬁgure eight knot ( |w| > 3)",
- "extended": "**A Cable Knot and BPS-Series II John Chae**\n\n*University of California Davis, 1 Shields Ave, Davis, CA, 95616, USA*\n\n17 pp, 11 sections.\n\n**Abstract.** This is a companion paper to earlier work of the author, which genera lizes to an inﬁnite family of (2 , 2w + 1)-cabling of the ﬁgure eight knot ( |w| > 3) and proposes general formulas for the two-variable series invariant of the family of the cable knots . The formulas provide an insight into the cabling operation. We verify the conjecture throug h explicit examples using the recursion method, which also provide a strong evidence for the q-holonomic property of the series invariant. This result paves a road for computation of the WR T invariant of a 3-manifold obtained from a Dehn surgery on the cable knots via a certain q-series. We also analyze and conjecture formulas for (3 , 3w + 1)-cabling (|w| > 3).\n\n**Outline.** Introduction; Examples; Example 1; Example 2; Dehn surgery and; Example 3; Examples; Example 1; Example 2; Appendix; The colored Jones polynomial of a cable knot",
+ "brief": "A Cable Knot and BPS-Series II — This is a companion paper to earlier work of the author, which generalizes to an inﬁnite family of (2, 2w + 1)-cabling of the ﬁgure eight knot (|w| > 3) and proposes",
+ "extended": "**A Cable Knot and BPS-Series II**\n\n*John Chae*\n\n17 pp, 14 sections.\n\n**Abstract.** This is a companion paper to earlier work of the author, which generalizes to an inﬁnite family of (2, 2w + 1)-cabling of the ﬁgure eight knot (|w| > 3) and proposes general formulas for the two-variable series invariant of the family of the cable knots. The formulas provide an insight into the cabling operation. We verify the conjecture through explicit examples using the recursion method, which also provide a strong evidence for the q-holonomic property of the series invariant. This result paves a road for computation of the WRT invariant of a 3-manifold obtained from a Dehn surgery on the cable knots via a certain q-series. We also analyze and conjecture formulas for (3, 3w + 1)-cabling (|w| > 3).\n\n**Outline.** Front matter; Introduction; Examples; Example 1; Example 2; Dehn surgery and; Example 3; Examples; Example 1; Example 2; Appendix; The colored Jones polynomial of a cable knot; The recursion relation for the figure eight kn; The definitions of the operators\n\n**Extracted claims (proposals, not verified).**\n- Proposition 5.1: The ℏexpansion of the JK,n(q) is given by\n- Proposition 5.3: The symmetric expansion of the inverse of the Alexander polynomial of K in\n- Proposition 5.4: The initial data for the recursion relation of K consists of I =\n- Proposition 5.5: The ℏexpansion of the JK,n(q) is given by\n- Proposition 5.7: The symmetric expansion of the inverse of the Alexander polynomial of K in\n- Proposition 5.8: The initial data for the recursion relation of K consists of I =",
  "tokens": {
   "brief": 49,
-  "extended": 261
+  "extended": 398
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
@@ -62,14 +67,25 @@
   {
    "id": "sec-010-the-colored-jones-polynomial-of-a-cable-knot",
    "title": "The colored Jones polynomial of a cable knot",
-   "pages": "14-17"
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-011-the-recursion-relation-for-the-figure-eight-knot",
+   "title": "The recursion relation for the figure eight knot",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-012-the-definitions-of-the-operators",
+   "title": "The definitions of the operators",
+   "pages": "15-17"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles"
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

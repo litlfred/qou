@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.966
 latex_coverage_ratio: 0.953
+doc_brief: "Fiber Functors of Equivariantizations of Finite Tensor Categories — Let G be a finite group acting on a finite tensor category C."
 ---
 We next characterize when $\mathcal{M}^H$ has rank one. Since $H$ is finite and $\operatorname{char}({\Bbbk})=0$, Tambara's theorem gives $$\mathcal{M}^H\text{ semisimple}\quad\Longleftrightarrow\quad \mathcal{M}\text{ semisimple}$$ [@T01 Proposition 5.2]. We therefore assume that $\mathcal{M}$ is semisimple.
 

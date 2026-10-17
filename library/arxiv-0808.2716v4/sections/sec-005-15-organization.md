@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.917
 latex_coverage_ratio: 1.0
+doc_brief: "CUSP AREAS OF FAREY MANIFOLDS — This paper gives the ﬁrst explicit, two–sided estimates on the cusp area of once– punctured torus bundles, 4–punctured sphere bundles, and 2–bridge link complements."
 ---
 We begin by discussing Farey manifolds. In Section [\[sec:farey-ford\]](#sec:farey-ford){reference-type="ref" reference="sec:farey-ford"}, we describe the canonical triangulations of the three families of Farey manifolds. In Section [\[sec:horosphere\]](#sec:horosphere){reference-type="ref" reference="sec:horosphere"}, we show that the universal cover of one of these manifolds must contain a number of maximal horospheres whose size is bounded below. This leads to the cusp area estimates of Section [\[sec:cusp-area\]](#sec:cusp-area){reference-type="ref" reference="sec:cusp-area"}.
 

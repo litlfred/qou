@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.69
 latex_coverage_ratio: 0.968
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 []{#sec: link inv 2 label="sec: link inv 2"} The nested Hilbert scheme $\Hilb_{1,n}$ is a very singular scheme and it has very complicated geometry, the main source of complexity is the commutativity relation between the matrices. On the other hands, we can define the free Hilbert scheme $\Hilb^{free}_{1,n}$ by omitting commutativity condition, this turn out to be relatively simple variety which is an iterated fibration of projective spaces (see proposition [\[prop: aff cover\]](#prop: aff cover){reference-type="ref" reference="prop: aff cover"}). In this section we explain a construction for $\bbS_\beta \in D^{per}_{\Tsc}(\Hilb^{free}_{1,n})$ for $\beta\in \Brgr_n$ with the property that the total cohomology of $\bbS_\beta$ is an isotopy invariant of the closure $L(\beta)$ (see theorem [\[thm: main\]](#thm: main){reference-type="ref" reference="thm: main"}).
 

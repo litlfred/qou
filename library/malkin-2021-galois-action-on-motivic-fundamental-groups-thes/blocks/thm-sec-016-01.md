@@ -1,1 +1,1 @@
-(a) Restricted to the subspace ofCL∨
+The second shuﬄes form a coideal in e

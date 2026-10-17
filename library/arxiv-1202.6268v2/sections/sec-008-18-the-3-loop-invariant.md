@@ -8,6 +8,7 @@ pages: 9-10
 source_pdf: 1202.6268v2.pdf
 source_sha256: 209af6ae25439050
 toc_source: outline
+doc_brief: "THE QUANTUM CONTENT OF THE GLUING EQUATIONS — The gluing equations of a cusped hyperbolic 3-manifold M are a system of polynomial equations in the shapes of an ideal triangulation T of M that"
 ---
 tribute, collecting the coeﬃcient of ℏ2 of their evaluation. In addition, there are 34 new
 diagrams that satisfy the inequality (1.15); they are shown in Figures 2 and 3. Calculations

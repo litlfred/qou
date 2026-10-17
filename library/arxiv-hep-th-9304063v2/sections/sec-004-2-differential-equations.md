@@ -8,5 +8,6 @@ pages: 6-6
 source_pdf: 9304063v2.pdf
 source_sha256: 14a82437462eae23
 toc_source: inferred
+doc_brief: "arXiv:hep-th/9304063v2 29 Jan 1999 — 10 sections: Front matter; Introduction and Statement of Resu; The System of Partial Differential"
 ---
 

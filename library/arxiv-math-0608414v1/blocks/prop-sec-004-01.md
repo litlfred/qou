@@ -1,1 +1,1 @@
-The functions Yk, k≥ 0, are analytic in R1.
+The functions Yk, k ≥0, are analytic in R1.

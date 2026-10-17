@@ -1,1 +1,1 @@
-A map u : H→ Cn such that the restriction u|R lies on
+A map u : H →Cn such that the restriction u|R lies on

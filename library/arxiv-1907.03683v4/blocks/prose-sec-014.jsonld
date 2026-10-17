@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1907.03683v4/blocks/prose-sec-014",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "The z-measures and a deformation of the gamma process",
-  "pageStart": 18,
-  "pageEnd": 25,
-  "text": "../sections/sec-014-4-the-z-measures-and-a-deformation-of-the-gamma.md",
+  "title": "On the Plancherel measure on partitions",
+  "pageStart": 11,
+  "pageEnd": 12,
+  "text": "../sections/sec-014-31-on-the-plancherel-measure-on-partitions.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1907.03683v4/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1907.03683v4/manifest.jsonld",
   "provenance": "ingested"

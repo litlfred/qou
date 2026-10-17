@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.981
 latex_coverage_ratio: 1.0
+doc_brief: "Generalized Skyrme Crystals — This letter deals with triply-periodic (crystalline) solutions in a family of Skyrme systems, namely where the ﬁeld takes values in the squashed 3-sphere."
 ---
 In this section, we investigate various triply-periodic solutions in the family of generalized Skyrme systems para- metrized by $\alpha$. There are many of these, corresponding to different local minima of the energy, and we shall describe only some of them.
 

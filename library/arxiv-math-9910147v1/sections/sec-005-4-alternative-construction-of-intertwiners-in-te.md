@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.959
 latex_coverage_ratio: 0.976
+doc_brief: "arXiv:math/9910147v1 [math.QA] 27 Oct 1999 — We study the tensor product of principal unitary representations of the quantum Lorentz Group, prove a decomposition theorem and compute the associated"
 ---
 Let us define the linear map ${\hat \Phi}[X_0X_1,Y_0Y_1]:V(X_0X_1)\otimes V(Y_0Y_1)\rightarrow \int^{\oplus} d(Z_0Z_1)H(Z_0Z_1)$ where $\forall w\in  V(X_0X_1)\otimes V(Y_0Y_1)  
 ,{\hat \Phi}[X_0X_1,Y_0Y_1](w)$ is the family of functions defined by

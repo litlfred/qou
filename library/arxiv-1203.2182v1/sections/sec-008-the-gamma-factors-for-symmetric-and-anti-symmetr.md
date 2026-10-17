@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.875
 latex_coverage_ratio: 0.987
+doc_brief: "Volume Conjecture: Reﬁned and Categoriﬁed — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebraic curve, the zero"
 ---
 In order to determine the gamma factors from the consistency condition ([\[consistency_gamma\]](#consistency_gamma){reference-type="ref" reference="consistency_gamma"}), one needs the explicit form of the Littlewood-Richardson coefficients $N_{RR}^Q$. For the symmetric representation $R=S^r$ and the anti-symmetric representation $R=\Lambda^r$, the explicit expression for the Littlewood-Richardson coefficients can be obtained from the Pieri formula: $$\begin{aligned}
 N_{S^rS^r}^{S^{r+\ell,r-\ell}}

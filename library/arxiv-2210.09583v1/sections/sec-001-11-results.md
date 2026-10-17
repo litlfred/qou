@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 2210.09583v1.pdf
 source_sha256: 38fc6fa465a06a7b
 toc_source: outline
+doc_brief: "A NEW PRESENTATION OF THE osp(1|2)-POLYNOMIAL LINK INVARIANT — There is a known connection between the osp(1|2n) polynomial knot invariant Jn K and the so(2n + 1) knot invariant soJn K studied by"
 ---
 diﬀerent ﬁelds.
 A major development in the study of categoriﬁed link invariants was an alternative categoriﬁcation

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.883
 latex_coverage_ratio: 0.841
+doc_brief: "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia"
 ---
 $\star$ The reduced Khovanov polynomial of a twisted satellite (Whitehead double) of a knot $\mathcal{K}$ has the form ($k$ in $\mathtt{Tw}_k$ is *even*, see [\[app:coltw\]](#app:coltw){reference-type="ref" reference="app:coltw"}) $$\begin{aligned}
 \mathtt{Kh}^{\mathcal{S}_{\mathtt{Tw}_k}^{\mathcal{K}}}=\mathtt{Kh}^{\mathtt{Tw}_{k}}(q,t)+\left(q^2t\right)^{-k-2}\left(1+q^6t^3\right)\left(1+q^2t\right){\mathfrak{K}}^{\mathcal{K}}(q,t).

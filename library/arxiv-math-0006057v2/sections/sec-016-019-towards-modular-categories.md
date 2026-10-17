@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.969
 latex_coverage_ratio: 0.953
+doc_brief: "arXiv:math/0006057v2 [math.QA] 10 Jun 2000 — We give a survey of the theory of ﬁnite quantum groupoids (weak Hopf algebras), including foundations of the theory and applications to ﬁnite depth"
 ---
 In \cite{RT} a general method of constructing invariants of
 $3$-manifolds from modular Hopf algebras was introduced. 
@@ -102,7 +103,8 @@ a normalized two-sided integral in $H$ is equivalent to $H$
 being semisimple and possessing an invertible element $g$ such
 that $S^2(x)=gxg^{-1}$ for all $x\in H$ and $\chi(g^{-1})\neq O$
 for all irreducible character $\chi$ of $H$. 
-Then$u^{-1}g$ is an invertible central element of $H$ and
+Then
+$u^{-1}g$ is an invertible central element of $H$ and
 $\chi_i(u^{-1})\neq 0$ for all $\chi_i$. By Corollary~\ref{uv is central} $uS(u)=c$
 is invertible central, therefore 
 $\chi_i(u)= \chi_i(c)\chi_i(S(u^{-1})))\neq 0$. 

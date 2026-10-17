@@ -8,6 +8,7 @@ pages: 14-15
 source_pdf: 0504116v2.pdf
 source_sha256: 24a8c998e40aed5d
 toc_source: outline
+doc_brief: "On deformations of hyperbolic 3-manifolds with geodesic boundary (Frigerio, AGT 6 (2006) 435–457) — the solution variety of consistency equations for a geometric partially truncated triangulation…"
 ---
 Dual vectors to planes and horospheres
 If S ∈Sgd, by construction the image of S under the developing map Dt is contained in

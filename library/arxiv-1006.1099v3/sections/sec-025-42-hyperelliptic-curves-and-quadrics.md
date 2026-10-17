@@ -8,6 +8,7 @@ pages: 33-36
 source_pdf: 1006.1099v3.pdf
 source_sha256: 76c1c4173cdee9d8
 toc_source: outline
+doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS — There is a classical relationship in algebraic geometry between a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
 ---
 a hyperelliptic curve branched over the (distinct) points {λ1, . . . , λ2g+2} ⊂C ⊂P1, there is an
 associated pencil of quadric hypersurfaces {sQ0 + tQ1}[s:t]∈P1, where

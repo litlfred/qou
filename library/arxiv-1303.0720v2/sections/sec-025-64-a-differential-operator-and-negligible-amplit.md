@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.897
 latex_coverage_ratio: 1.0
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 The corrective algorithm involves the differential operator $$\boldsymbol{\nabla}:= 
 \frac{1}{\bar\partial_w\theta} \bar \partial_w + 2m{\mathbf M}_{z-w}

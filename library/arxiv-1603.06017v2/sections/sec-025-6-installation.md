@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.949
 latex_coverage_ratio: 1.0
+doc_brief: "Automatic Theorem Proving in Walnut — 41 sections: Front matter; Introduction; Basics"
 ---
 \label{sec:installation}
 Walnut is a command line program. You can run Walnut on any platform as long as you have Java 8 or later (preferably JDK 8 or higher) installed. To see which version of Java is installed on your machine type the following in the terminal (without the command line prompt \$):

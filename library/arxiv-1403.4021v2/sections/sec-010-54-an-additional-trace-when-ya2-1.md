@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.966
 latex_coverage_ratio: 0.973
+doc_brief: "MARKOV TRACES ON THE BIRMAN-WENZL-MURAKAMI ALGEBRAS — We classify the Markov traces factoring through the Birman-Wenzl-Murakami (BMW) algebras."
 ---
 Let $S^{\dagger\dagger}  = S/(a^2-1,y-1) = S^{\dagger}/(a^2-y^2) = \overline{S}/(a^2-y)$,
 and $BMW_n^{\dagger\dagger} = \WBMW_n \otimes_R S^{\dagger \dagger}$.

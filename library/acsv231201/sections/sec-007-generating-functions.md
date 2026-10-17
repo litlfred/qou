@@ -8,6 +8,7 @@ pages: 35-35
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
 toc_source: outline
+doc_brief: "Analytic Combinatorics in Several Variables Expanded Second Edition — 98 sections: Front matter; Preface to the second edition; Preface to the first edition"
 ---
 Generating functions
 This chapter provides a crash course on generating functions and their uses

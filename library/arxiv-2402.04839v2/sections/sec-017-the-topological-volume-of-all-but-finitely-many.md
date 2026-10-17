@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.94
 latex_coverage_ratio: 0.991
+doc_brief: "On a volume invariant of 3-manifolds (Kegel, Ray, Spreer, Thompson, Tillmann) — defines topological volume vol_t(M), the smallest volume of a hyperbolic-link complement in M; bounds and a…"
 ---
 Agol~\cite{agol-2cusped} showed that $W$ and $P$ are the minimal volume orientable hyperbolic 3-manifolds with two cusps. This property is key for the following:
 

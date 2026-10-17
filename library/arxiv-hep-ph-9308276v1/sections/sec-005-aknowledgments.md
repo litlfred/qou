@@ -11,5 +11,6 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:hep-ph/9308276v1 14 Aug 1993 — The most general chiral Lagrangian for electroweak interactions with the complete set of SU(2)L × U(1)Y invariant operators up to dimen- sion four is considered."
 ---
 We would like to thank A.Dobado and D.Espriu for reading the manuscript and for useful discussions. A special thank goes to C.P.Martı́n for many stimulating discussions, his interesting comments on the manuscript and for his valuable help and patience in explaining us the large-m techniques developed in [@CAR; @O]. We are also indebted to C.Quimbay who participated in the very early stages of this work. M.J.H. aknowledges partial finantial support from the Ministerio de Educacion y Ciencia (Spain) (CICYT AEN90-272). E.R.M. aknowledges support from Dpto. de Matemáticas at UAM and thanks the SLAC theory group for their hospitality.

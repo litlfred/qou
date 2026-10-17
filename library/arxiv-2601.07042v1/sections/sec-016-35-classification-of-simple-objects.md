@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.968
 latex_coverage_ratio: 0.84
+doc_brief: "A Tannakian description of the local Kaletha gerbe — We construct, for a p-adic field F, an explicit semisimple Tannakian category RigIsocF whose category of fiber functors recovers Kaletha’s Galois"
 ---
 By Lemma [\[lem:simple\]](#lem:simple){reference-type="ref" reference="lem:simple"} it suffices to understand the $X \in \mathop{\mathrm{obj}}(\mathrm{RigIsoc}_{F})$ corresponding to basic classes in the elliptic twisted Levi subgroups $M \xrightarrow{\sim} \mathrm{Res}_{E/F}(\mathrm{GL}_{s})$ of $\mathrm{GL}_n$ which are not isomorphic to an object of the form $Y^{\oplus c}$ for a basic object $Y$ corresponding to $\mathrm{Res}_{E/F}(\mathrm{GL}_{s'})$ for $cs' = s$ with $c>1$. Indeed, such an $X$ would have $z_{X}$ valued in the non-elliptic twisted Levi subgroup $\mathrm{Res}_{E/F}(\mathrm{GL}_{s'})^{c}$.
 

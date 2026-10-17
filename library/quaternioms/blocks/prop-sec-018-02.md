@@ -1,1 +1,1 @@
-Encoding into subspaces stabilized by Aut(O) ∼= G2
++ entangler). Let G1 be any dense family

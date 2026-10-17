@@ -8,6 +8,7 @@ pages: 2-2
 source_pdf: 2206.14086v3.pdf
 source_sha256: b6c27f820f963079
 toc_source: outline
+doc_brief: "KPZ limit theorems — One-dimensional interacting particle systems, 1+1 random growth models, and two-dimensional di- rected polymers deﬁne 2d height ﬁelds."
 ---
 random matrix theory was completely unexpected at that time. Soon after, Johansson [53] proved a similar
 result for another model, giving yet another example of a KPZ limit theorem.

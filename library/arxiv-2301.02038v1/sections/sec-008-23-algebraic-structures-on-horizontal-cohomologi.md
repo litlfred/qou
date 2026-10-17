@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.977
 latex_coverage_ratio: 0.964
+doc_brief: "Contemporary Mathematics — Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a system of possibly non-linear partial dif- ferential equations and it"
 ---
 \label{Subsec:LR}
  Examples \ref{exmpl:var_prin} and \ref{exmpl:cons_law} suggest that the horizontal cohomology $\overline H{}^\bullet (\mathscr E)$ should be interpreted as ``smooth functions on the space of solutions of the PDE $\mathscr E_0$''. For this reason we also denote it

@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0810.1697v1.pdf
 source_sha256: 1aef66179da3c154
 toc_source: outline
+doc_brief: "ON THE CABLE EXPANSION FORMULA — In this paper, a generalized version of Morton’s formula [8] is proved."
 ---
 arXiv:0810.1697v1  [math.GT]  9 Oct 2008
 ON THE CABLE EXPANSION FORMULA

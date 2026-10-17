@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — We continue the study undertaken in [13] of the relevance of the exceptional Jordan algebra J8 3 of hermitian 3 × 3 octonionic matrices for the description of the"
 ---
 The subgroup of $F_4$ which preserves the splitting $\mathbb C\oplus \mathbb C^3$ of the octonions entering into the matrices of the elements of $J^8_3$ is $$\label{Spl}
 SU(3) \times SU(3)/\mathbb Z_3=SU(3)_c\times  SU(3)/\mathbb Z_3$$ where the first factor is the color group $SU(3)_c$ as explained in [@mdv:2016b]. It is our aim in this section to give a similar interpretation for the second $SU(3)$ factor occurring in [\[Spl\]](#Spl){reference-type="ref" reference="Spl"}.\

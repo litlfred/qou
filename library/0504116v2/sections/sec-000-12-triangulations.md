@@ -8,6 +8,7 @@ pages: 2-2
 source_pdf: 0504116v2.pdf
 source_sha256: 24a8c998e40aed5d
 toc_source: outline
+doc_brief: "On deformations of hyperbolic 3-manifolds with geodesic boundary (Frigerio, AGT 6 (2006) 435–457) — the solution variety of consistency equations for a geometric partially truncated triangulation…"
 ---
 would give a complete and self-contained proof of the ﬁlling Theorem via deformation
 theory of geometric triangulations.

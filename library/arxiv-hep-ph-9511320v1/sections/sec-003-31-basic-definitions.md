@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.97
+doc_brief: "arXiv:hep-ph/9511320v1 15 Nov 1995 — We analyze the eﬀective low–energy ﬁeld theory of Goldstone bosons and baryons chirally coupled to massive spin–1 ﬁelds."
 ---
 Consider an electromagnetic external vector source, $$v_\mu = - e \, A_\mu \, Q \, \, \, ,
 \label{vem}$$ where $e > 0$ is the unit charge, $A_\mu$ denotes the photon field and $Q= (1/3) \,$ diag$(2,-1,-1)$ is the quark charge matrix. We also have for the chiral connection $\Gamma_\mu = -i v_\mu +{\cal

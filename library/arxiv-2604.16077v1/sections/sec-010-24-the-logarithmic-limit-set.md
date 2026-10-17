@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.917
 latex_coverage_ratio: 0.936
+doc_brief: "Volume Conjecture and quantum hyperbolic invariants: the figure eight knot complement — We compute the real part of the semi-classical limit of the sequence of quantum hyperbolic invariants (QHI) of"
 ---
 \label{ASYWEIGHTS} Recall the spaces $G_{hyp,N}(T,b)$ and ${}_NX_{hyp}(M)$, where $N\geq 3$ is odd (see Section \ref{GhypN}); we saw that when $M=S^3\setminus 4_1$ these spaces are respectively the solution set of the equations \eqref{eqGN}, and (up to birational isomorphism) the plane curve whose points are  pairs $(\kappa_\bw(\mu_K),\kappa_\bw(\lambda_K))$ as in \eqref{compbord}. Here we introduce a ``limit'' of the tower of spaces $\{G_{hyp,N}(T,b)\}_N$, that will be used in Section \ref{sec:class_int}. It is related in a natural way (via holonomy maps) to a tropical curve associated to the tower of curves $\{{}_NX_{hyp}(M)\}_N$, and to the $PSL(2,\mc)$ $A$-polynomial of $M$ (see Remark \ref{tropremk}). 
 

@@ -8,6 +8,7 @@ pages: 43-45
 source_pdf: 2012.00062v3.pdf
 source_sha256: 2aacb7fa43f5e0da
 toc_source: outline
+doc_brief: "PEACOCK PATTERNS AND RESURGENCE IN COMPLEX CHERN-SIMONS THEORY — The partition function of complex Chern-Simons theory on a 3-manifold with torus boundary reduces to a ﬁnite dimensional"
 ---
 jecture 19. This involves, on the one hand, a numerical computation of the asymptotics of
 the holomorphic blocks and on the other hand, a numerical computation of the Borel re-

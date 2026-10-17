@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.99
 latex_coverage_ratio: 0.99
+doc_brief: "Virial Expansions for Correlation Functions in Canonical Ensemble — The inﬁnite set of coupled integral nonlinear equations for correlation func- tions in the case of classical canonical ensemble is"
 ---
 Let $\sigma$ be a Lebesgue measure in $\Bbb R^d$. *Configuration space* $\Gamma\;: = \; \Gamma_{\Bbb R^d}$ consists of all locally finite subsets of the space $\Bbb R^d$. This definition is quite natural from the point of view of physics, because an infinite number of particles cannot be in a bounded volume.
 

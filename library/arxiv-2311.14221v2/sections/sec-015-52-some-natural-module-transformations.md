@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.938
 latex_coverage_ratio: 0.926
+doc_brief: "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B →C is an exact"
 ---
 \label{subsection:nat-bimod} It is known that natural transformations between additive functors are additive. For example, if $(F,\xi)$ is an additive monoidal functor, then, natural isomorphisms
 $$\xi_{A,B}:F(A)\ot F(B)\to F(A\ot B), $$

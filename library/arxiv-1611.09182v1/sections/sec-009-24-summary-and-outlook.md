@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.978
 latex_coverage_ratio: 0.978
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 We come from sketching a model,  whose only fundamental input is an algebra, $A$.  
 From the  algebraic expressions of $A$, we argue that multiple physical concepts can materialize.  

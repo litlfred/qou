@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.947
 latex_coverage_ratio: 0.691
+doc_brief: "TORUS KNOT AND MINIMAL MODEL — 2 sections: Front matter; Eichler Integral of the Character"
 ---
 []{#sec:character label="sec:character"}
 

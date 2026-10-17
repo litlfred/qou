@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.903
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 Our conjecture assigns a physical meaning to the value of the action.  It would not be clear what to do if the bulk theory did not have an action formulation, or if the action wasn't a real number,
 

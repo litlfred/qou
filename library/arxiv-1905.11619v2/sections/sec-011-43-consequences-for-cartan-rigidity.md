@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.746
 latex_coverage_ratio: 0.972
+doc_brief: "L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS — We study (quasi-)cohomological properties through an analysis of quantum Markov semi-groups."
 ---
 We gather some Cartan rigidity properties; these were already obtained in an unpublished manuscript by Avsec [@Avsec], where they were proved for any $-1 < q < 1$. Our cohomological properties in the next section are new however. Recall that we assumed that $\dim(H_{\mathbb{R}}) < \infty$.
 

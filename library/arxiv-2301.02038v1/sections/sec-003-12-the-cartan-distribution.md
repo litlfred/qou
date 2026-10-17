@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.983
 latex_coverage_ratio: 0.941
+doc_brief: "Contemporary Mathematics — Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a system of possibly non-linear partial dif- ferential equations and it"
 ---
 \label{Sec:CD}
 The main geometric structure on jet spaces is the \emph{Cartan distribution}. There are several equivalent ways to define it. The one we present here will be also useful in defining the prolongation of a PDE in the next subsection. We begin noticing that a section of the fibration $J^1 (P, n) \to J^0 (P, n) \cong P$ can be interpreted as an $n$-dimensional distribution on $P$. Now, for every $1 \leq k \leq \infty$, the $k$-jet space is canonically equipped with a rank $n$ \emph{distribution along the projection $J^{k} (P, n) \to J^{k-1}(P, n)$}, i.e.{} a smooth map

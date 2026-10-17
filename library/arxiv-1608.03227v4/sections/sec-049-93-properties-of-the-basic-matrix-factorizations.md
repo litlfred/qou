@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.838
 latex_coverage_ratio: 1.0
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 In this subsection we collect various facts about the matrix factorizations from the previous subsection. In particular we explain how one can interpret the positive intersection matrix factorization as a cone of the identity matrix factorization and the blob matrix factorization.
 

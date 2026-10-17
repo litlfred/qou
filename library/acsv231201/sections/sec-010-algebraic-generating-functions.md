@@ -8,6 +8,7 @@ pages: 48-58
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
 toc_source: outline
+doc_brief: "Analytic Combinatorics in Several Variables Expanded Second Edition — 98 sections: Front matter; Preface to the second edition; Preface to the first edition"
 ---
 A formal power series F(z) is called an algebraic power series if there ex-
 ists a polynomial P(z, y) ∈C[z, y] such that P(z, F(z)) = 0. Algebraic series

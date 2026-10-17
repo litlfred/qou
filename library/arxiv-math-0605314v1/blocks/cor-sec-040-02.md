@@ -1,0 +1,1 @@
+[\[r2\]](#r2){reference-type="ref" reference="r2"} was first stated using the Kauffman bracket in [@H:iias2000] without proof. One can easily modify the arguments in [@Masbaum] to obtain a skein-theoretic proof of Corollary [\[r2\]](#r2){reference-type="ref" reference="r2"}.

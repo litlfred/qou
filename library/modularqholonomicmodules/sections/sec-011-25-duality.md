@@ -8,6 +8,7 @@ pages: 20-23
 source_pdf: modular.qholonomic.modules.pdf
 source_sha256: 640303a68dd75453
 toc_source: outline
+doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised"
 ---
 modules. Recall that we can write the linear q-diﬀerence equation
 ar(t, q)f(qrt, q) + ar−1(t, q)f(qr−1t, q) + · · · + a0(t, q)f(t, q) = 0

@@ -8,6 +8,7 @@ pages: 18-19
 source_pdf: 2104.14491v1.pdf
 source_sha256: 1aea658f17283df1
 toc_source: outline
+doc_brief: "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia"
 ---
 Twist knots
 The twist knots are obtained both for odd and even half-twists numbers n, but the knot diagrams with 2k−1

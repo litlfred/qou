@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.989
 latex_coverage_ratio: 0.979
+doc_brief: "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES — We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury."
 ---
 Now let $\mathcal{C}$ be a tensor category and $L$ be a finite group acting on $\mathcal{C}$. Let $\mathcal{C}^L$ be the $L$-equivariantization of $\mathcal{C}$ ([@EGNO], Subsection 4.15). The following lemma is easy ([@EGNO], Exercise 4.15.3).
 

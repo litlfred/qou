@@ -8,6 +8,7 @@ pages: 60-69
 source_pdf: mod-phi-convergence-approximation-of-discrete-measures-and-20yc5c6q3n.pdf
 source_sha256: c563cc999000e75d
 toc_source: outline
+doc_brief: "ANNALES DE L’INSTITUT FOURIER — 26 sections: Front matter; Introduction; Poisson approximation of lattice-v"
 ---
 Definition 5.1. — The multi-dimensional Wiener algebra A = A (Td)
 is the algebra of continuous functions on the d-torus whose Fourier series

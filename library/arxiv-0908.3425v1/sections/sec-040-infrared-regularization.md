@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.964
 latex_coverage_ratio: 0.984
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 Let us now turn to a *formal* definition of the infrared singular and regular parts for arbitrary $p^2$ [@Becher:1999he] which makes use of the Feynman parametrization of Eq. ([\[4:3:2:HPmMn\]](#4:3:2:HPmMn){reference-type="ref" reference="4:3:2:HPmMn"}). Introducing the dimensionless variables $$\label{4:3:3:alphaomegadef}
 \alpha=\frac{M}{m}={\cal O}(q),\quad \Omega=\frac{p^2-m^2-M^2}{2m M}={\cal O}(q^0),$$ we rewrite $A(z)$ as $$A(z)=m^2[z^2-2\alpha\Omega z(1-z)+\alpha^2(1-z)^2]\equiv m^2 C(z),$$ so that $H$ is now given by $$\label{4:3:3:defh2}

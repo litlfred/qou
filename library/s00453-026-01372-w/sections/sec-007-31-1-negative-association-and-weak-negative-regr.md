@@ -8,6 +8,7 @@ pages: 7-7
 source_pdf: s00453-026-01372-w.pdf
 source_sha256: 98b569eff84fb489
 toc_source: outline
+doc_brief: "Concentration of Submodular Functions and Read-k Families Under Negative Dependence — We study the question of whether submodular functions of random variables satisfying various notions of negative"
 ---
 We ﬁrst deﬁne the weaker notion of negative dependence which we work with, called
 1-negative association, and prove some simple properties about it. We also deﬁne a

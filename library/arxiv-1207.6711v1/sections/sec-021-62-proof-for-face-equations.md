@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.907
 latex_coverage_ratio: 1.0
+doc_brief: "GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were"
 ---
 \label{subsection:ProofForFaceEqn}
 A local model for a neighborhood of a face point $p$ is the complex $K$ obtained by gluing two simplices $\Delta_0$ and $\Delta_1$ by identifying the faces 012 of each simplex in the order-preserving way, see Figure~\ref{fig:FaceLocal}. As for the edge equations, it is enough to verify the face equations on $K$. 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.844
 latex_coverage_ratio: 0.982
+doc_brief: "EXPLICIT DESCRIPTION OF CHRISTOFFEL DEFORMATIONS AND — Christoﬀel deformation of a measure on the real line consists of multipying this measure by a squared polynomial having its roots in R."
 ---
 In regards of subsection [\[secpalm\]](#secpalm){reference-type="ref" reference="secpalm"} and Proposition [\[proppalm\]](#proppalm){reference-type="ref" reference="proppalm"}, we can now give a description of the Palm measures of the discrete Bessel point process $\mathfrak{S}^0_*(\mathbb{P}_\alpha)$, the determinantal point process with kernel $K_\alpha$ given by ([\[discretebesselkernel\]](#discretebesselkernel){reference-type="ref" reference="discretebesselkernel"}).
 

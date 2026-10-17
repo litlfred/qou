@@ -1,1 +1,1 @@
-LetC be a braided tensor category, B be a monoidal C-module
+\ref{equivalence-on-coend} also explains how to compute dinatural transformations of this coend. If $\pi_X: \widetilde{H}(X)\ot {}^*\widetilde{H}(X)\to C(F)\ot C(F)$, $X\in \Bc\boxtimes_\ca\Bc$, are the dinatural transformations associated to this coend, then

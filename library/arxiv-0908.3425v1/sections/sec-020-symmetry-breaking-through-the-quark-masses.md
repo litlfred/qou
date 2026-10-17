@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.942
 latex_coverage_ratio: 0.977
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 Up to now, we have assumed a perfect $\mbox{SU(3)}_L\times\mbox{SU(3)}_R$ symmetry. As has been discussed in Section [\[subsec_csbdqm\]](#subsec_csbdqm){reference-type="ref" reference="subsec_csbdqm"}, the quark-mass term of QCD results in an explicit symmetry breaking, $$\label{3:2:2:qmt}
 {\cal L}_{\cal M}=-\bar{q}_R{\cal M} q_L-\bar{q}_L {\cal M}^\dagger q_R,\quad

@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2301.00125v3",
  "source_sha256": "7ecd0cff7d6c2ec4",
- "brief": "Generating Function for Pinsky’s Combinatorial Second Mom ent Formula for the Generalized Ulam Problem Samen Hossein The Bronx High School of Science 75 Bronx Science Bvd — Given a uniform random",
- "extended": "**Generating Function for Pinsky’s Combinatorial Second Mom ent Formula for the Generalized Ulam Problem Samen Hossein The Bronx High School of Science 75 Bronx Science Bvd**\n\n*Bronx, NY 10468*\n\n35 pp, 16 sections.\n\n**Abstract.** Given a uniform random permutation π∈Sn, let Zn,k be equal to the number of increasing subsequences of length k: so Zn,k =|{(i1,...,i k)∈ Zk : 1 ≤i1 <··· <i k≤n, πi1 <··· <π ik}|. In an important paper, Ross Pinsky proved E [ Z 2 n,k ] is equal to ∑ iA(k−i,i )B(n, 2k−i), where for any nonnegative integers N and j, we have B(N,j ) = (N j ) /j! and A(N,j ) is a particular nonnegative integer, which Pinsky characterized in two diﬀerent ways. One characterization of A(N,j ) involves the occupation time of the x-axis prior to a ﬁrst return to the origin. Using this, he proved a law of large numbers for the sequence Zn,kn when kn =o(n2/5) asn→∞ . In a follow-up paper, he also proved the sequence Zn,kn fails to obey a law of large numbers when 1/kn = o(1/n4/9) as n→∞ .\n\n**Outline.** 1 Introduction; 1.1 Extended abstract; 1.2 Set-up; 1.4 Motivation for exact solutions; 1.5 Outline for the remainder of the paper; 3 The diagonal (contour integral) method; 4 Main result; 5 Summary and outlook; A Bonferroni inequalities and Bell polynomials; B.1 Mathematical physics and probability devel; C Roots of a class of quadratic equations; D Contour integral alternative derivation of L; F Elementary proofs from the quadratic formula; G Elementary proofs from contour deformations; H Proof of lemmas related to the residue theor; I Elliptic integrals and linear fractional tra",
+ "brief": "Generating Function for Pinsky’s Combinatorial Second Moment Formula for the Generalized Ulam Problem — Given a uniform random permutation π ∈Sn, let Zn,k be equal to the number of increasing",
+ "extended": "**Generating Function for Pinsky’s Combinatorial Second Moment Formula for the Generalized Ulam Problem**\n\n*Samen Hossein*\n\n35 pp, 17 sections.\n\n**Abstract.** Given a uniform random permutation π ∈Sn, let Zn,k be equal to the number of increasing subsequences of length k: so Zn,k = |{(i1, . . . , ik) ∈Zk : 1 ≤i1 < · · · < ik ≤n , πi1 < · · · < πik}|. In an important paper, Ross Pinsky proved E \u0002 Z2 n,k \u0003 is equal to P i A(k −i, i)B(n, 2k −i), where for any nonnegative integers N and j, we have B(N, j) = \u0000N j \u0001 /j! and A(N, j) is a particular nonnegative integer, which Pinsky characterized in two diﬀerent ways. One characterization of A(N, j) involves the occupation time of the x-axis prior to a ﬁrst return to the origin. Using this, he proved a law of large numbers for the sequence Zn,kn when kn = o(n2/5) as n →∞. In a follow-up paper, he also proved the sequence Zn,kn fails to obey a law of large numbers when 1/kn = o(1/n4/9) as n →∞.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Extended abstract; 1.2 Set-up; 1.4 Motivation for exact solutions; 1.5 Outline for the remainder of the paper; 3 The diagonal (contour integral) method; 4 Main result; 5 Summary and outlook; A Bonferroni inequalities and Bell polynomials; B.1 Mathematical physics and probability devel; C Roots of a class of quadratic equations; D Contour integral alternative derivation of L; F Elementary proofs from the quadratic formula; G Elementary proofs from contour deformations; H Proof of lemmas related to the residue theor; I Elliptic integrals and linear fractional tra\n\n**Extracted claims (proposals, not verified).**\n- Proposition: A.1 (Version of the Bonferroni inequalities) Suppose we have n ∈N and we have chosen\n- Lemma 3.4: So g(x; 1) ∈(0, ∞) by (65) and (214). Since\n- Lemma: I.1 For x, w ∈(0, ∞) satisfying 4x + w2 < 1, we have\n- Lemma: I.2 Suppose AD −BC̸ = 0 and suppose we have ρ ∈C ∪{∞} \\ {−D/C}, then for Φ and Φ−1 as in\n- Lemma: I.3 Let Z(x, w) = {A1(x, w), A2(x, w), b1(x, w), b2(x, w)}, which is the variety of roots of Q2(x, w; ·).",
  "tokens": {
-  "brief": 48,
-  "extended": 401
+  "brief": 47,
+  "extended": 511
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -94,7 +99,8 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles"
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

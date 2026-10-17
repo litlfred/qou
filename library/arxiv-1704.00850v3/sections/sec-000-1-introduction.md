@@ -8,6 +8,7 @@ pages: 1-3
 source_pdf: 1704.00850v3.pdf
 source_sha256: 09dd9c99453ba251
 toc_source: outline
+doc_brief: "Estimating the spectral gap of a trace-class Markov operator — The utility of a Markov chain Monte Carlo algorithm is, in large part, determined by the size of the spectral gap of the corresponding"
 ---
 Introduction
 Markov chain Monte Carlo (MCMC) is widely used to estimate intractable integrals that represent expec-

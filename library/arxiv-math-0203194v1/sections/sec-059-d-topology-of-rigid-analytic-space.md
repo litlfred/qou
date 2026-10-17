@@ -8,6 +8,7 @@ pages: 220-225
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
 toc_source: inferred
+doc_brief: "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry — 66 sections: Front matter; Purpose of this book.; Contents of this book."
 ---
 In this section, we assume, for simplicity, that K is algebraically closed.
 Deﬁnition 4.1.

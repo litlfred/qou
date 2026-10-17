@@ -8,6 +8,7 @@ pages: 27-30
 source_pdf: quaternioms.pdf
 source_sha256: becedcbc858611dd
 toc_source: outline
+doc_brief: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 44 sections: Front matter; Introduction; Extended Related Work"
 ---
 The overarching aim of this thesis was to explore the viability and implications of ex-
 tending quantum formalism to quaternionic (H) and octonionic (O) structures for quantum

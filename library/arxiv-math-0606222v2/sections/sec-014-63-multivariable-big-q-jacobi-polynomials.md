@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.958
 latex_coverage_ratio: 0.9
+doc_brief: "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS — We derive explicit dimension formulas for irreducible MF-spherical KF-re- presentations where KF is the maximal compact subgroup of the"
 ---
 We repeat the techniques and arguments of the previous subsection to derive evaluation formulas for multivariable big $q$-Jacobi polynomials. The monic multivariable big $q$-Jacobi polynomial $$P_\lambda^B(z)=P_\lambda^B(z;a,b,c,d;q,t)\in\ \mathbb{E}[z]^S$$ of degree $\lambda\in\Lambda_n$ is of the form $$\label{expansionB}
 P_\lambda^B(z)=\widetilde{m}_\lambda(z)+\sum_{\mu\in\Lambda: \mu<\lambda}c_{\lambda,\mu}^B\widetilde{m}_{\mu}(z)$$ for certain coefficients $c_{\lambda,\mu}^B=c_{\lambda,\mu}^B(a,b,c,d;q,t)\in \mathbb{E}$. Similarly as for the Koornwinder polynomials and the multivariable little $q$-Jacobi polynomials, the multivariable big $q$-Jacobi polynomials can be characterized by a second-order difference equation they should satisfy, or in terms of suitable orthogonality properties, see [@S0]. The characterization as solution of a difference equation is $D_BP_\lambda^B=

@@ -1,1 +1,1 @@
-says that no pseudo-Anosov component of (φ J,ΓJ) has any fixed points. When
+says that no pseudo-Anosov component of (φJ, ΓJ) has any fixed points. When

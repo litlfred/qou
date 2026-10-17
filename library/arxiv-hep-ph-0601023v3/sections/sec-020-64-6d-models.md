@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.976
 latex_coverage_ratio: 0.996
+doc_brief: "arXiv:hep-ph/0601023v3 23 Apr 2007 — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non - su- persymmetric uniﬁcation"
 ---
 There are a number of works which have explored GUT model 
 building in 6D~\cite{Hall:2001zb, Asaka:2001eh, Buchmuller:2004eg,Haba:2004qf,Gogoladze:2005zh}.

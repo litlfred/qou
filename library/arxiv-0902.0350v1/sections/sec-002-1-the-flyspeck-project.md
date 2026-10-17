@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.964
 latex_coverage_ratio: 0.996
+doc_brief: "A REVISION OF THE PROOF OF THE KEPLER CONJECTURE — The Kepler conjecture asserts that no packing of congruent balls in three-dimensional Euclidean space has density greater than that of the"
 ---
 The purpose of a long-term project, called the Flyspeck project, is to give a formal proof of the Kepler conjecture.  This section makes some preliminary remarks about
 formal proofs and gives a general overview of the current status of this project.

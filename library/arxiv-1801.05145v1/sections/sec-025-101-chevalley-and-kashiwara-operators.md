@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.951
 latex_coverage_ratio: 0.927
+doc_brief: "MONOIDAL CATEGORIFICATION OF CLUSTER ALGEBRAS — We prove that the quantum cluster algebra structure of a unipotent quantum coordinate ring Aq(n(w)), associated with a symmetric Kac-Moody algebra and"
 ---
 Let us recall the definition of several functors on modules over \KLRs \ which  are used to categorify $\Um_{\Z[q^\pm 1]}^\vee$.
 \begin{definition} Let $\beta\in\rtl^+$.

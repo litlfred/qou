@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:hep-ph/9511320v1 15 Nov 1995 — We analyze the eﬀective low–energy ﬁeld theory of Goldstone bosons and baryons chirally coupled to massive spin–1 ﬁelds."
 ---
 We now calculate the vector meson contribution to the form factors $F_{1,2}^\pm (t)$. A full chiral calculation would also involve the one loop contributions for the isovector form factors, these are e.g. given in Refs.[@gss; @bkkm]. For our purpose, these terms are of no relevance and are thus neglected here.
 

@@ -1,1 +1,1 @@
-GivenE0,ϵ> 0 there exists constantsσ,c> 0
+Given E0, ϵ > 0 there exists constants σ, c > 0

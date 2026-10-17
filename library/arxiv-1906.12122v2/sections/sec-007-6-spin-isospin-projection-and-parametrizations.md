@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.96
 latex_coverage_ratio: 0.976
+doc_brief: "Nuclear eﬀective ﬁeld theory: status and perspectives — 38 sections: Nuclear effective field theory: st; Contents; Two-body scattering amplitude"
 ---
 {For a fixed $N\!N$ channel it is convenient to use the effective
 Lagrangian~\eqref{eq:L-NN-simple}, with $\psi$ a

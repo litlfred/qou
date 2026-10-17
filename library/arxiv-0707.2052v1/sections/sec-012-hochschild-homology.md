@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "The Mukai pairing, I: a categorical approach — We study the Hochschild homology of smooth spaces, emphasizing the importance of a pairing which generalizes Mukai’s pairing on the cohomology of K3"
 ---
 Now we define $\mathop{\mathrm{HH}}_\bullet(X)$ the Hochschild *homology* of a space $X$ as follows: $$\mathop{\mathrm{HH}}_\bullet(X):=\mathop{\mathrm{{2\mbox{-}Hom}}}_{\mathscr{V}\textsf{ar}}^\bullet(\Sigma_X^{-1},\mathsf {Id}_X)$$ or, in more concrete terms, $$\mathop{\mathrm{HH}}_\bullet(X) = \mathop{\mathrm{Ext}}_{X\times X}^{-\bullet}(\Sigma^{-1}_X,{\mathscr O}_\Delta).$$ Thus an element $w\in \mathop{\mathrm{HH}}_\bullet(X)$ will be denoted $$\raisebox{-.45\height}{},$$ where again the shifts are understood.
 

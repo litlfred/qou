@@ -1,1 +1,1 @@
-A.3 ([27]). Forτ∈ C\ R, we have
+A.3 ([27]). For τ ∈C \ R, we have

@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.931
+doc_brief: "arXiv:math/0006057v2 [math.QA] 10 Jun 2000 — We give a survey of the theory of ﬁnite quantum groupoids (weak Hopf algebras), including foundations of the theory and applications to ﬁnite depth"
 ---
 ::: definition
 []{#semisimple and C* label="semisimple and C*"} A quantum groupoid is said to be *semisimple* (resp., *$*$- or $C^*$-quantum groupoid*) if its algebra $H$ is semisimple (resp., a $*$-algebra over a field $k$ with involution, or finite-dimensional $C^*$-algebra over the field $\mathbb{C}$ and $\Delta$ is a $*$-homomorphism).

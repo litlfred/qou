@@ -1,0 +1,1 @@
+[\[th-ffmain\]](#th-ffmain){reference-type="ref" reference="th-ffmain"} immediately follows, since for $q$ a power of $p$, $\mathbb F_{q}((t))$ contains $\mathbb F_{p}((t))$ and so the $p$ case implies the general case.

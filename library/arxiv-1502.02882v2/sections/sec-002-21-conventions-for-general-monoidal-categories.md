@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.978
 latex_coverage_ratio: 0.994
+doc_brief: "Fusion categories via string diagrams — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories."
 ---
 \label{string_conventions}
 The string diagram calculus for a monoidal category $\cat{C}$ is well-known (see \cite{s11-sgc} or \cite[Chap. 4]{BBthesis} for an overview). Each diagram refers to a certain morphism in $\cat{C}$. Our diagrams go from top to bottom, so that a morphism $f : A \rightarrow B \otimes C$ is drawn as

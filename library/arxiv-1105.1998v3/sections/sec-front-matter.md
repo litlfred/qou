@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1105.1998v3.pdf
 source_sha256: daf3bffad8eb2749
 toc_source: outline
+doc_brief: "Symmetry, Integrability and Geometry: Methods and Applications — We show a connection formula of the Hahn–Exton q-Bessel function around the origin and the infinity."
 ---
 arXiv:1105.1998v3  [math.CA]  16 Dec 2011
 Symmetry, Integrability and Geometry: Methods and Applications

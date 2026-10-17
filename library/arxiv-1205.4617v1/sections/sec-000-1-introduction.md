@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.995
+doc_brief: "Quaternion Octonion Reformulation of Grand Uniﬁed Theories — In this paper, Grand Uniﬁed theories are discussed in terms of quater- nions and octonions by using the relation between quaternion basis"
 ---
 In spite of all the successes of the Standard Model (SM) of elementary
 particles, it leaves many unresolved questions to be considered as

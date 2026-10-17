@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 0.901
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 The remarkable result due to J. de Boere, J. Goeree, A. Coste and T. Gannon states that the entries of the S-matrix of a semisimple modular category lie in a cyclotomic field, see [@dBG; @CG]. This result is used in Section 8. For reader's convenience in this Appendix we reproduce a proof of this result.
 

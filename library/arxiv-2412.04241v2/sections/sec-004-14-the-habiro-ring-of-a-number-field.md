@@ -8,6 +8,7 @@ pages: 5-8
 source_pdf: 2412.04241v2.pdf
 source_sha256: 308d1dd1c42bd979
 toc_source: outline
+doc_brief: "The Habiro ring of a number field — We introduce the Habiro ring of a number field K and modules over it graded by K3(K)."
 ---
 5
 the important property that vp(ζpm −ζm) > 0 for all positive integers m and all primes p,

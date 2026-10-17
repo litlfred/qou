@@ -8,6 +8,7 @@ pages: 38-41
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
 toc_source: outline
+doc_brief: "Hecke algebras, generalisations and representation theory — 30 sections: Front matter; Algebras of Finite Type; Blocks"
 ---
 Let W ⊂GL(h) be a complex reﬂection group. There is a natural pairing ( , ) : h × h∗→C given by
 (y, x) := x(y). Let S be the set of all pseudo-reﬂections in W and let c : S →C be a conjugacy invariant

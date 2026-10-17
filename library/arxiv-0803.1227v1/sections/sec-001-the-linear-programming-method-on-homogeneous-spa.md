@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.941
 latex_coverage_ratio: 0.992
+doc_brief: "Linear programming bounds for unitary space time codes — The linear programming method is applied to the space Un(C) of uni- tary matrices in order to obtain bounds for codes relative to the"
 ---
 We briefly describe the linear programming method on homogeneous spaces. For more details we refer to [@LEVEN], [@CS Chapter 9] for a treatment of 2-point homogeneous spaces, and to [@CHRISTINE1] for the prominent case of Grassmann codes.
 

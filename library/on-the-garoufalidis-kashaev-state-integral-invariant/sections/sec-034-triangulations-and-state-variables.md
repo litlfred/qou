@@ -8,6 +8,7 @@ pages: 40-41
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
 toc_source: outline
+doc_brief: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT — 63 sections: Front matter; ACKNOWLEDGMENTS; ABSTRACT"
 ---
 Triangulations and State Variables
 Let X be a finite ∆–complex obtained by gluing the faces of a finite collection

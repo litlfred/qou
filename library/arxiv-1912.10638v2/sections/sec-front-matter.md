@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1912.10638v2.pdf
 source_sha256: 612e44871d91d2e2
 toc_source: outline
+doc_brief: "Asymptotics of some quantum invariants of the Whitehead chains — In this paper, we study the asymptotics of the colored Jones polynomials of the Whitehead chains with one belt colored by M1 and all"
 ---
 Asymptotics of some quantum invariants
 of the Whitehead chains

@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-024",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "CHIRAL PHASE TRANSITION",
-  "pageStart": 37,
+  "title": "TOPOLOGY",
+  "pageStart": 36,
   "pageEnd": 37,
-  "text": "../sections/sec-024-525-chiral-phase-transition.md",
+  "text": "../sections/sec-024-524-topology.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0003017v2/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0003017v2/manifest.jsonld",
   "provenance": "ingested"

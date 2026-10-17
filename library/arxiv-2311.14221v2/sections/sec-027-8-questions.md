@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.98
+doc_brief: "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B →C is an exact"
 ---
 \begin{question}
 The result should be applicable if $\vc$ is merely locally finite tensor category an/or if $\mathcal{N}$ is infinite. The example we have in mind is maybe the quantum group $U_q(\mathfrak{g})$ at generic $q$.

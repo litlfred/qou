@@ -8,6 +8,7 @@ pages: 3-3
 source_pdf: 2406.02111v3.pdf
 source_sha256: d7be0c3f08b4d42a
 toc_source: outline
+doc_brief: "Categorical Quantum Volume Operator — 11 sections: Categorical Quantum Volume Operato; Introduction; Quantum tetrahedron"
 ---
 sum of local volumes. These quantum numbers might yield
 a convenient and more compact representation of many-body

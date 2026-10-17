@@ -8,6 +8,7 @@ pages: 11-11
 source_pdf: 1603.06017v2.pdf
 source_sha256: 3ff091e40573a5dd
 toc_source: outline
+doc_brief: "Automatic Theorem Proving in Walnut — 41 sections: Front matter; Introduction; Basics"
 ---
 An indexing expression on its own is not a valid predicate, and it is not meaningful to talk about automata accepting
 indexing expressions. Smallest predicates involving indexing expressions are deﬁned in Section 3.8 and they involve

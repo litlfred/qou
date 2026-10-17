@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.997
 latex_coverage_ratio: 0.997
+doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — We continue the study undertaken in [13] of the relevance of the exceptional Jordan algebra J8 3 of hermitian 3 × 3 octonionic matrices for the description of the"
 ---
 The space of internal states of a quark is the 3-dimensional complex space $\mathbb C^3$ acted by the color group $SU(3)$. Since $SU(3)$ is a subgroup of $U(3)$ this means that the above state's space is a 3-dimensional complex Hilbert space $\mathbb C^3$ but the role of the unimodularity of $SU(3)$ that is of a corresponding normalized volume on $\mathbb C^3$ is not transparent. As an element of comparison, one has not the same problem with $\mathbb C^2$ acted by $SU(2)$ because since $SU(2)$ coincides with the group $U(1,\mathbb H)$ of 1-dimensional quaternionic unitaries it means that one has just to interpret $\mathbb C^2$ as a 1-dimensional quaternionic Hilbert space $\mathbb H$.\
 Now given the volume form $v$ on the complex Hilbert space $\mathbb C^3$ with $\vert\vert v\vert\vert=1$, one defines an internal antisymmetric antilinear cross-product $\times$ on $\mathbb C^3$ by setting $$v(Z_1,Z_2,Z_3)= \langle Z_1 \times Z_2,Z_3\rangle$$

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.983
 latex_coverage_ratio: 0.734
+doc_brief: "Advancing Mathematics Research with AI-Driven Formal Proof Search — 15 sections: Front matter; Introduction; AlphaProof Nexus"
 ---
 Exploration of a large space of open problems is expensive, and we chose the full-featured agent (agent (D)) for this based on its strong performance on competition benchmarks. To understand which architectural components are necessary for its successes, we compared its performance against agents (A), (B), and (C) on the {\erdos} problem set in Table~\ref{tab:major_results}. 
 

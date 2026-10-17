@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.97
 latex_coverage_ratio: 0.823
+doc_brief: "EVALUATION OF STATE INTEGRALS AT RATIONAL POINTS — Multi-dimensional state-integrals of products of Faddeev’s quantum diloga- rithms arise frequently in Quantum Topology, quantum Teichm¨uller theory"
 ---
 We start by taking the logarithmic derivative of Faddeev's quantum dilogarithm $$\begin{aligned}
 \frac{\partial}{\partial x}\log \operatorname{\Phi}_{\mathsf{b}}(x)

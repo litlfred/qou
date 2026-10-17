@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1408.3518v3",
  "source_sha256": "cf18585b886587c7",
- "brief": "On Augmentation Algorithms for Linear and Integer-Linear Programming: — 4 sections: Introduction.; Our Contributions; Proofs",
- "extended": "**On Augmentation Algorithms for Linear and Integer-Linear Programming:**\n\n*From Edmonds-Karp to Bland and Beyond*\n\n15 pp, 4 sections.\n\n**Outline.** 1 Introduction.; 1.1 Our Contributions; 2 Proofs; 3 Concluding remarks",
+ "brief": "On Augmentation Algorithms for Linear and Integer-Linear Programming: From Edmonds-Karp to Bland and Beyond — 5 sections: Front matter; Introduction.; Our Contributions",
+ "extended": "**On Augmentation Algorithms for Linear and Integer-Linear Programming: From Edmonds-Karp to Bland and Beyond**\n\n*From Edmonds-Karp to Bland and Beyond*\n\n15 pp, 5 sections.\n\n**Outline.** Front matter; 1 Introduction.; 1.1 Our Contributions; 2 Proofs; 3 Concluding remarks\n\n**Extracted claims (proposals, not verified).**\n- Lemma: \\ref{Lemma: Steepest descent direction is in G(A)} states that among all steepest-descent directions applicable at a feasible solution $\\vex_k$, there is always one in\n- Lemma: \\ref{Lemma: monotonicity} states that the steepness of steepest-descent augmentations never increases.\n- Lemma: \\ref{Lemma: chance of sign-pattern leads to change in slope} states that once the sign pattern",
  "tokens": {
-  "brief": 31,
-  "extended": 54
+  "brief": 42,
+  "extended": 178
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction.",
@@ -33,7 +38,8 @@
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles"
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

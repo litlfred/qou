@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 0.985
+doc_brief: "Nuclear eﬀective ﬁeld theory: status and perspectives — 38 sections: Nuclear effective field theory: st; Contents; Two-body scattering amplitude"
 ---
 The form factor of the $^{11}$Be ground state is computed by calculating the
 contribution to the irreducible vertex for {$A_0 dd$} interactions

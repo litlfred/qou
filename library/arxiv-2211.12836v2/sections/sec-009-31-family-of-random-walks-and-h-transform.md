@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.98
 latex_coverage_ratio: 0.922
+doc_brief: "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY — We study a class of commuting Markov kernels whose simplest element describes the movement of k particles on a discrete circle of size n"
 ---
 Given a PM-graph with distinguished vertex $v_0$, one can construct a family of commuting Markov kernels as follows. For sake of simplicity we assume here that $A$ is irreducible, although the same reasoning apply beyond irreducibility. Let $h^r$ (resp. $h^l$) be the right (resp. left) Perron-Frobenius vector of $A$, normalized so that $h^l(v_0)=1$ and $\langle h^l,h^r\rangle_{L^2(V)}=1$. By irreducibility of $A$, $h^l(v)>0$ and $h^r(v)>0$ for all $v\in V$. In the case where we are considering an adjacency matrix $M$ which is not necessarily irreducible, we say that $v$ is a positive eigenvector of $M$ if $v$ is an eigenvector of $M$ which has positive coefficients in its expansion in the canonical basis.
 

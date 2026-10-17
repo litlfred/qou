@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.883
 latex_coverage_ratio: 0.965
+doc_brief: "L-spaces and knot traces — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries."
 ---
 \label{sec:torus-surgeries}
 The goal of this section is to prove Theorem~\ref{thm:negtracetorus}, which we restate here as follows:

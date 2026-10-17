@@ -8,6 +8,7 @@ pages: 9-10
 source_pdf: 1508.05448v1.pdf
 source_sha256: 57d2c717d8ec74d0
 toc_source: outline
+doc_brief: "Concentration of Measure Techniques and Applications — 25 sections: Front matter; Biographical Sketch; Acknowledgments"
 ---
 3.1
 A longest increasing subsequence of a random walk

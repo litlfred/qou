@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.961
 latex_coverage_ratio: 0.993
+doc_brief: "On Augmentation Algorithms for Linear and Integer-Linear Programming: From Edmonds-Karp to Bland and Beyond — 5 sections: Front matter; Introduction.; Our Contributions"
 ---
 The main contribution of this paper is an extension of Bland's theorem beyond LP to ILP.
 Our main results and proofs extend what Bland did for circuits to Graver bases. We look at several  augmentation rules.  

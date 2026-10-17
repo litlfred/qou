@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.837
 latex_coverage_ratio: 0.797
+doc_brief: "Octahedral coordinates from the Wirtinger presentation — Let ρ be a representation of a knot group (or more generally, the funda- mental group of a tangle complement) into SL2(C) expressed in terms"
 ---
 []{#sec:octahedral-colorings label="sec:octahedral-colorings"}
 

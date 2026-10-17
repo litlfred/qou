@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.934
 latex_coverage_ratio: 0.992
+doc_brief: "Perturbative and nonperturbative aspects of complex Chern-Simons Theory Contents — We present an elementary review of some aspects of Chern-Simons theory with complex gauge group SL(N, C)."
 ---
 Often in geometric quantization of Chern-Simons theory, one uses a holomorphic polarization instead of the real polarization above. In Chern-Simons theory with compact gauge group (\DIcf\ \cite{DIaxelrod-witten}), this means to choose a complex structure `$\tau$' on a surface $\Sigma$, to write the connection one-form as $A = A_zdz+A_{\bar z}d\bar z$ in local complex coordinates, and, when quantizing, to define the Hilbert space to consist of sections of the line bundle $\CalL\to \CalP[\Sigma]$ that are covariantly constant with respect to $A_{\bar z}$.
 

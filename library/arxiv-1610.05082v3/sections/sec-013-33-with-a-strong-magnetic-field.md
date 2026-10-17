@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.972
 latex_coverage_ratio: 0.99
+doc_brief: "WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL — Weighted dependency graphs have been recently introduced by the second author, as a toolbox to prove central limit theorems."
 ---
 []{#SectBoundMF label="SectBoundMF"} The last regime we consider is the Ising model with a strong magnetic field, *i.e.* $h$ is bigger than some value $h_1>0$ ($h_1$ is to be determined later). The case of negative $h$ (smaller than $-h_1<0$) is obviously symmetric.
 

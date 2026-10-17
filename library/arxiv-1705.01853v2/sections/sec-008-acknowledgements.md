@@ -8,6 +8,7 @@ pages: 16-18
 source_pdf: 1705.01853v2.pdf
 source_sha256: 895e0b22c93bca1b
 toc_source: inferred
+doc_brief: "Line Operators in the Standard Model — There is an ambiguity in the gauge group of the Standard Model."
 ---
 My thanks to Bobby Acharya, Nick Dorey, Zohar Komargodski, Tony Padilla and
 John Terning for useful discussions. This work was supported by STFC grant

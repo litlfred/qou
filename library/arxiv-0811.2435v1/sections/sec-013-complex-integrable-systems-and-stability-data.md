@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.993
 latex_coverage_ratio: 0.984
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 47 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 In this section we explain how complex integrable systems (with some additional structures) give rise to stability data in the graded Lie algebra $\mathfrak{g}_\Gamma$ associated with a symplectic lattice. In particular, Seiberg-Witten differential can be interpreted as the central charge for a complex integrable system, while the BPS degeneracies are interpreted via our "numerical\" Donaldson-Thomas invariants as the number of certain gradient trees on the base of a complex integrable system.
 

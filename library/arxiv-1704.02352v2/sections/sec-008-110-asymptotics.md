@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.9
 latex_coverage_ratio: 1.0
+doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Young diagrams which can be regarded as a natural one-parameter deformation of some classi- cal"
 ---
 In the current paper we consider asymptotic problems which correspond to the limit when the number of boxes $n\to\infty$ of the random Young diagrams tends to infinity. This corresponds to considering a *sequence* $(\chi_n)$ of reducible characters $\chi_n\colon \mathcal{P}_{n}\to\mathbb{R}$ and the resulting *sequence* $(\mathbb{P}^{(\alpha)}_{\chi_n})$ of probability measures on $\mathbb{Y}_{n}$.
 

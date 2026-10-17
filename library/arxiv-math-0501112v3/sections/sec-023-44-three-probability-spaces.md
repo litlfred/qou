@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.957
 latex_coverage_ratio: 0.947
+doc_brief: "arXiv:math/0501112v3 [math.CO] 31 May 2005 — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 Commutative algebras ${\mathfrak{A}}$ and ${\mathfrak{A}}^{\bullet}$ can be regarded as algebras of random variables on a purely formal level (usually it is not possible to represent them as algebras of functions on some Kolmogorov probability space).
 

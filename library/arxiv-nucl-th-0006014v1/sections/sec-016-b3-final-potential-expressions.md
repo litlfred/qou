@@ -8,6 +8,7 @@ pages: 28-32
 source_pdf: 0006014v1.pdf
 source_sha256: 208c7a6aaf628b30
 toc_source: inferred
+doc_brief: "arXiv:nucl-th/0006014v1 9 Jun 2000 — 20 sections: Front matter; Introduction; The model"
 ---
 Here, we will present the ﬁnal potential expressions in partial wave decomposition. More
 details concerning their derivation can be found in Appendix E of Ref. [1]. First, we state

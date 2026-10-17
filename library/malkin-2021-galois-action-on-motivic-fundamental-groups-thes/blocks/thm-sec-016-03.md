@@ -1,1 +1,1 @@
-Let be a number ﬁeld and- = P1.
+can then be expressed in terms of the generating functions:

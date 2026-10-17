@@ -1,1 +1,1 @@
-There exists a C[q,q−1] algebra isomorphism
+We deﬁne the linear map τ : Yd,n(q) →C[q, q−1] by

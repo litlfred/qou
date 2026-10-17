@@ -8,6 +8,8 @@ pages: 49-52
 source_pdf: ki52.pdf
 source_sha256: 35ad4ee5a00d4a18
 toc_source: inferred
+doc_brief: "DOI 10.4171/QT/83 — We give a presentation of the asymptotic expansion of the Kashaev invariant of the 52 knot."
+duplicate_of: "104171-qt-83"
 ---
 [1] Andersen, J.E., Hansen, S.K., Asymptotics of the quantum invariants for surgeries on the ﬁgure 8
 knot, J. Knot Theory Ramiﬁcations 15 (2006) 479–548.

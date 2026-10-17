@@ -1,1 +1,1 @@
-Every pure𝑂-sequence of codimension3and type2is log-concave.
+Every pure 𝑂-sequence of codimension 3 and type 2 is log-concave.

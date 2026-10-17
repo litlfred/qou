@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.941
 latex_coverage_ratio: 0.988
+doc_brief: "Asymptotics for Toeplitz determinants: perturbation of symbols with a gap — We study the determinants of Toeplitz matrices as the size of the matrices tends to inﬁnity, in the particular case where"
 ---
 \label{section: Fredholm}
 In the double scaling limit where $n\to\infty$ and $\theta_0$ approaches $\pi$ at rate $\bigO(1/n)$, the Toeplitz determinant $D_n(s,\theta_0,0)$ converges to the Fredholm determinant of the operator $1-(1-s)K_y$, where $K_y$ is the integral operator acting on $(-y,y)$ with kernel $\frac{\sin\pi(x-t)}{\pi(x-t)}$: we have \cite[formulas (236)-(241)]{DIK-hist}

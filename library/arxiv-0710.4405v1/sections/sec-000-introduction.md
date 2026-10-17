@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.97
 latex_coverage_ratio: 0.922
+doc_brief: "Chiral Low-Energy Constants : Status and Prospects ∗ — 6 sections: Front matter; Introduction; Tools : Large-NC and QCD asymptoti"
 ---
 Chiral symmetry of massless Quantum Chromodynamics has turned to be a key tool in order to deal with the low-energy domain of strong interactions (typically $E \sim M_{\pi}$) where hadron dynamics is not appropriately described by partonic QCD. It is indeed the guiding principle in the construction of Chiral Perturbation Theory ($\chi PT$) [@Weinberg:1978kz; @Gasser:1983yg; @Gasser:1984gg] that intends to be the dual effective theory of QCD, i.e. it describes a perturbative quantum field theory of strong interactions at low-energies.
 

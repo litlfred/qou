@@ -1,0 +1,1 @@
+[\[boundmom\]](#boundmom){reference-type="ref" reference="boundmom"} gives upper bounds for $\ee(|X_n|^3)$ and for $\ee(|T_{n-1}||X_n|^3)$. One could prove a similar bound (with slightly worse constants) using the concentration inequality for $X_n$ in the proof of Theorem [\[main1\]](#main1){reference-type="ref" reference="main1"}.

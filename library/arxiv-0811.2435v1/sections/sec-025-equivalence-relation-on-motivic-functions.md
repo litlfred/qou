@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.97
 latex_coverage_ratio: 0.966
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 47 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 We start with a motivation for this section. There are many examples of pairs of constructible sets (or even varieties) $X_1,X_2$ over a field $\k$ such that their classes $[X_1]$ and $[X_2]$ in $Mot(Spec(\k))$ are different (or at least not obviously coincide), but $X_1$ and $X_2$ coincide in each realization described in Section 4.1 (i)-(vi) (e.g. when $X_1,X_2$ are isogeneous abelian varieties). In particular we will be interested in the case when $X_l,l=1,2$ are affine quadrics given by the equations $\sum_{1\le i\le n}a_{i,l}x_i^2=1$, such that they have equal determinants: $\prod_{1\le i\le n}a_{i,1}=\prod_{1\le i\le n}a_{i,2}\in \k^{\times}$.
 

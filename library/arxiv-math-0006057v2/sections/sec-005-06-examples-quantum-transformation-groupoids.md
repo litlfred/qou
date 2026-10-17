@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.982
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:math/0006057v2 [math.QA] 10 Jun 2000 — We give a survey of the theory of ﬁnite quantum groupoids (weak Hopf algebras), including foundations of the theory and applications to ﬁnite depth"
 ---
 It is known that any group action on a set (i.e., on a commutative algebra of functions) gives rise to a groupoid [@R]. Extending this construction, we associate a quantum groupoid with any action of a Hopf algebra on a separable algebra ("finite quantum space").
 

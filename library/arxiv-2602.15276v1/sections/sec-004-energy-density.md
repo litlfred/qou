@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.958
 latex_coverage_ratio: 0.989
+doc_brief: "Compact Q-balls and Q-shells within a $CP^N$ Skyrme-Faddeev type model — 18 sections: Front matter; Introduction; The extended Skyrme-Faddeev model"
 ---
 A crucial prerequisite for constructing physically meaningful solutions is ensuring the positive definiteness of the energy density. Given that the Lagrangian for this model comprises multiple terms connected by various coupling constants, it is essential to guarantee a non-negative energy density across all configurations before proceeding to the derivation of solutions for specific parameter values. Consequently, the focus of the following section is a detailed analysis of the model's energy density.
 

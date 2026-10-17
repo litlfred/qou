@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.892
 latex_coverage_ratio: 1.0
+doc_brief: "Gentle introduction to Soergel bimodules I: The basics — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules."
 ---
 We start with two baby examples of Coxeter systems. In these two cases (as well as in examples (C) and (D)) we will calculate explicitly the two key objects in the theory, namely the Kazhdan-Lusztig basis and the indecomposable Soergel bimodules.
 

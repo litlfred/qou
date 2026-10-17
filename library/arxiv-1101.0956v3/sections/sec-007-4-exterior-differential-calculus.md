@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.993
+doc_brief: "ALGEBRAIC CONSTRUCTIONS IN THE CATEGORY OF VECTOR BUNDLES — In this paper we present the category of generalized Lie algebroids."
 ---
 We propose an exterior differential calculus in the general framework of generalized Lie algebroids. As any Lie algebroid can be regarded as a generalized Lie algebroid, in particular, we obtain a new point of view over the exterior differential calculus for Lie algebroids. Let $\left( \left(
 F,\nu ,N\right) ,\left[ ,\right] _{F,h},\left( \rho ,\eta \right) \right)

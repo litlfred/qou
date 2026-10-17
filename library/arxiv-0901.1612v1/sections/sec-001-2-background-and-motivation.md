@@ -11,6 +11,8 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.973
 latex_coverage_ratio: 0.984
+doc_brief: "Matemática Contemporânea, Vol. 34, 251–283 ©2008, Sociedade Brasileira de Matemática TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INVARIANTS — Three-component links in the 3-dimensional sphere were classi"
+duplicate_of: "deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin"
 ---
 []{#sec:background label="sec:background"}
 

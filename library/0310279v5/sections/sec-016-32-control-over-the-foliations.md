@@ -8,6 +8,7 @@ pages: 30-34
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
 toc_source: outline
+doc_brief: "Stabilization in the braid groups I: MTWS Introduction — 40 sections: Front matter; Introduction; The problem"
 ---
 Control over the foliations
 Braid foliations are not unique, and in this section we describe some of the ways we have

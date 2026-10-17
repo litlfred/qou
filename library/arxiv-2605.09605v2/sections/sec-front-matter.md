@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2605.09605v2.pdf
 source_sha256: 24496fb444a2b558
 toc_source: outline
+doc_brief: "Cocycle Actions on Hidden Quantum Markov Models: Symmetry Protection and Topological Order — We develop a symmetry action framework for hidden quantum Markov models (HQMMs) tailored to"
 ---
 Cocycle Actions on Hidden Quantum Markov Models:
 Symmetry Protection and Topological Order

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.968
 latex_coverage_ratio: 0.973
+doc_brief: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A — This paper concerns the cohomological aspects of Donaldson– Thomas theory for Jacobi algebras and the associated cohomological Hall alge- bra, introduced"
 ---
 Now that we have introduced the relative version of Donaldson--Thomas theory, we can state the first main result of this paper, a cohomological refinement of the integrality conjecture.
 

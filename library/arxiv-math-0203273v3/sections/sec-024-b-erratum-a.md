@@ -8,6 +8,7 @@ pages: 126-126
 source_pdf: 0203273v3.pdf
 source_sha256: 824715d110e34305
 toc_source: inferred
+doc_brief: "arXiv:math/0203273v3 [math.CT] 12 Oct 2002 — 31 sections: Front matter; Introduction; Alg`ebres `a plusieurs objets"
 ---
 O. Gabber nous a fait remarquer que la preuve de [1, Prop. 6] ´etait (encore)
 incompl`ete. Le probl`eme est que la d´emonstration donn´ee dans loc. cit. s’applique `a

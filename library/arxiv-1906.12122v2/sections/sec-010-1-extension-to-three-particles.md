@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.903
 latex_coverage_ratio: 0.964
+doc_brief: "Nuclear eﬀective ﬁeld theory: status and perspectives — 38 sections: Nuclear effective field theory: st; Contents; Two-body scattering amplitude"
 ---
 The simplest three-body system that can be studied in Pionless EFT is
 neutron-deuteron ($nd$) scattering in the quartet $S$-wave channel (total spin

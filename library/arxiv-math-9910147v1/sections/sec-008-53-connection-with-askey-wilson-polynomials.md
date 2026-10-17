@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.929
 latex_coverage_ratio: 0.988
+doc_brief: "arXiv:math/9910147v1 [math.QA] 27 Oct 1999 — We study the tensor product of principal unitary representations of the quantum Lorentz Group, prove a decomposition theorem and compute the associated"
 ---
 In the sequel, we will show that we can reexpress $N^{{}_{(X_0X_1)\;(Y_0Y_1)}}_{\;\;\;{}_{(Z_0Z_1)}}\ElemRed{A}{B}{C}{X_0X_1}{Y_0Y_1}{Z_0Z_1}$ in terms of q-Racah polynomials and Askey-Wilson polynomials, and that the relation ([\[completeness\]](#completeness){reference-type="ref" reference="completeness"}) is an orthogonality property mixing q-Racah polynomials and Askey-Wilson polynomials in a non trivial way.
 

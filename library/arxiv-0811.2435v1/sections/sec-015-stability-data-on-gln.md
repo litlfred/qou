@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 0.973
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 47 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 Let $\g={\mathfrak{gl}}(n,\Q)$ be the Lie algebra of the general linear group. We consider it as a $\Gamma$-graded Lie algebra $\g=\oplus_{\gamma \in \Gamma}\g_{\gamma}$, where $$\Gamma=\{(k_1,\dots,k_n)|\,\,k_i\in \Z, \sum_{1\le i\le n}k_i=0\}$$ is the root lattice. We endow $\g$ with the Cartan involution $\eta$. Algebra $\g$ has the standard basis $E_{ij}\in \g_{\gamma_{ij}}$ consisting of matrices with the single non-zero entry at the place $(i,j)$ equal to $1$. Then $\eta(E_{ij})=-E_{ji}$. In what follows we are going to consider symmetric (with respect to $\eta$) stability data on $\g$.
 

@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2605.28781v1.pdf
 source_sha256: eee6d535af1996ca
 toc_source: outline
+doc_brief: "The sum-product conjecture is false for real numbers — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily large A ⊂R (whose elements are algebraic integers in a"
 ---
 for any k ≥3, arbitrarily large A ⊂R such that
 max(|kA| , |A(k)|) ≤|A|C

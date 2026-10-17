@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.991
 latex_coverage_ratio: 0.818
+doc_brief: "GRÖBNER-SHIRSHOV BASES FOR THE COXETER GROUPS — It is known that the finite Coxeter groups are classified in terms of Coxeter-Dynkin diagrams."
 ---
 Let $M=(m_{ij})$ be a symmetric $n\times n$ matrix over natural numbers, with $\infty$ such that $m_{ii}=1,2\leq m_{ij}\leq \infty$ for $i\ne j$. The matrix $M$ determines a group with the following presentation $$W=\mbox{sgp}\langle s_1,..,s_n|(s_is_j)^{m_{ij}}=1, \mbox{ where } 1\leq i,j\leq n, m_{ij}\ne \infty\rangle,$$ which is called the Coxeter group $W=W(M)$.
 

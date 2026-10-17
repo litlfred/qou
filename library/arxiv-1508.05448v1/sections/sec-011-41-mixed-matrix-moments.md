@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.977
 latex_coverage_ratio: 0.954
+doc_brief: "Concentration of Measure Techniques and Applications — 25 sections: Front matter; Biographical Sketch; Acknowledgments"
 ---
 Given any $n\times n$ matrix $A$, any positive integer $k$, and any nonnegative integers $p(1),q(1),\dots,p(k),q(k)$, we may define $$M_n(\mathbf{p};\mathbf{q})\, 
 =\, \frac{1}{n}\, \operatorname{tr}[A_n^{p(1)} (A_n^*)^{q(1)} \cdots A_n^{p(k)} (A_n^*)^{q(k)}]\, ,$$ for $\mathbf{p}=(p(1),\dots,p(k))$, $\mathbf{q}=(q(1),\dots,q(k))$. Notice that $M_0=1$. As an example, consider $$\begin{gathered}

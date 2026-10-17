@@ -8,6 +8,7 @@ pages: 28-29
 source_pdf: 0908.4305v3.pdf
 source_sha256: ab8d2b335b026a36
 toc_source: outline
+doc_brief: "Higher Dimensional Algebra VII: Groupoidiﬁcation — Groupoidiﬁcation is a form of categoriﬁcation in which vector spaces are replaced by groupoids and linear operators are replaced by spans of"
 ---
 So, T deﬁnes a natural isomorphism between α-degroupoidiﬁcation and β-
 degroupoidiﬁcation.

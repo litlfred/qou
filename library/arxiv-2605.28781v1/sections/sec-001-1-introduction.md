@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.976
 latex_coverage_ratio: 0.775
+doc_brief: "The sum-product conjecture is false for real numbers — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily large A ⊂R (whose elements are algebraic integers in a"
 ---
 Given any finite set $A$ in some ring we define the sum set and product set of $A$ as $$A+A=\{a+b: a,b\in A\}\quad\textrm{and}\quad AA=\{ ab : a,b\in A\}.$$ The sum-product conjecture in a given ring is that at least one of these must grow near-maximally; more precisely $$\label{eq-sp}\max(\mathopen{}\left| A+A\mathclose{}\right|,\mathopen{}\left| AA\mathclose{}\right|)\geq \mathopen{}\left| A\mathclose{}\right|^{2-o(1)}$$ (where the $o(1)$ term tends $0$ as $\mathopen{}\left| A\mathclose{}\right|\to \infty$). This is often attributed to Erdős and Szemerédi, who proved the first results in this direction [@ErSz83], but it first appeared in the literature in a paper of Erdős in 1976 [@Er76] (in which he says he first made the conjecture 18 months earlier). This question makes sense over any ring (although there are obvious complications in finite rings or rings with zero divisors). Erdős [@Er76] asked this specifically for $\mathbb{Z}$, $\mathbb{R}$, and $\mathbb{C}$, although his main interest was for $A\subset \mathbb{Z}$.
 

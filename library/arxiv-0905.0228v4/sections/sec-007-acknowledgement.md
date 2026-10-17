@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.625
 latex_coverage_ratio: 1.0
+doc_brief: "A CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS — Two well-known q-Hermite polynomials are the continuous and discrete q-Hermite polynomials."
 ---
 The authors thank the two anonymous referees
  for useful comments on a previous version of this paper. The second author was  supported by 

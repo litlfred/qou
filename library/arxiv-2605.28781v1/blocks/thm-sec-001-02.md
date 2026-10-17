@@ -1,1 +1,1 @@
-is easily deduced from the following more general result.
+[\[th-headline\]](#th-headline){reference-type="ref" reference="th-headline"} is an immediate consequence. This result should also be compared to the lower bound of Solymosi [@So09], who proved that for any $A\subset \mathbb{R}$ $$\label{eq-sol}

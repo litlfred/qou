@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:hep-ph/9308276v1 14 Aug 1993 — The most general chiral Lagrangian for electroweak interactions with the complete set of SU(2)L × U(1)Y invariant operators up to dimen- sion four is considered."
 ---
 As we have already said, the fundamental theory that we want to represent by the electroweak chiral Lagrangian is the standard model with a heavy Higgs particle. We start with the standard model Lagrangian $$\cl_{\rm SM} = (D_\mu \Phi)^\dagger (D^\mu \Phi) + \mu^2 \Phi^\dagger \Phi -
 \lambda (\Phi^\dagger \Phi)^2 + \frac{1}{2} Tr \left( \wtd \wtu + \btd \btu

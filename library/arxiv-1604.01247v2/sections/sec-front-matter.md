@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 1604.01247v2.pdf
 source_sha256: 5a402405aadf5d54
 toc_source: outline
+doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — Based on an interpretation of the quark-lepton symmetry in terms of the unimodularity of the color group SU(3) and on the existence of 3 generations, we develop an"
 ---
 arXiv:1604.01247v2  [math.QA]  1 May 2016
 EXCEPTIONAL QUANTUM GEOMETRY

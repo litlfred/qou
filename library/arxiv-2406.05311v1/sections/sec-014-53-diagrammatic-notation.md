@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.912
 latex_coverage_ratio: 0.948
+doc_brief: "Draft of June 11, 2024 A QUANTUM MURNAGHAN–NAKAYAMA RULE FOR THE FLAG MANIFOLD — In this paper, we give a rule for the multiplication of a Schubert class by a tautological class in the (small)"
 ---
 []{#SS:diagrammatic-notation label="SS:diagrammatic-notation"} We introduce a diagrammatic notation for compositions of operators ${\mathbf v}_{ab}$, which will facilitate our study of relations among them. Figure [1](#fig:classical-relations){reference-type="ref" reference="fig:classical-relations"} depicts the relations among classical operators in [\[Eq:monoid-relations\]](#Eq:monoid-relations){reference-type="eqref" reference="Eq:monoid-relations"} using this notation. Depict a classical operator ${\mathbf v}_{ab}$ with $a<b$ by a green line segment $[a,b]$ and a quantum operator ${\mathbf v}_{ab}$ with $a>b$ by a dotted red line segment $[b,a]$, drawn in a window with the positions of $1,\dotsc,n$ indicated by vertical dashed lines as follows,
 

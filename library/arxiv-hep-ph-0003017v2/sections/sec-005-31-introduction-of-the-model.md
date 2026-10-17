@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.703
 latex_coverage_ratio: 0.98
+doc_brief: "arXiv:hep-ph/0003017v2 26 Jun 2000 — Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems."
 ---
 In this section we introduce a chiral random matrix theory (chRMT) with the global symmetries of the QCD Dirac operator. In the spirit of the invariant random matrix ensembles, we construct a model with eigenfunctions distributed uniformly over the unitary unit sphere. This is achieved by choosing Gaussian-distributed random matrix elements. We thus arrive at the following chRMT [@Shur93; @Verb94a]: $$Z_{N_f,\nu}^\beta(m_1,\ldots, m_{N_f}) = 
   \int DW \prod_{f= 1}^{N_f} \det({\cal D} +m_f)

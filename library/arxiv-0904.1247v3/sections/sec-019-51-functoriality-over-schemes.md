@@ -8,6 +8,7 @@ pages: 31-32
 source_pdf: 0904.1247v3.pdf
 source_sha256: 4a6f4dee6af66dac
 toc_source: outline
+doc_brief: "THE CHARACTER THEORY OF A COMPLEX GROUP — We apply the ideas of derived algebraic geometry and topological ﬁeld theory to the representation theory of reductive groups."
 ---
 ﬁt into the theme of the paper and are likely useful elsewhere.
 Theorem 5.1. For a diagram X1 →Y ←X2 where X1, X2 are stacks and Y a scheme, the

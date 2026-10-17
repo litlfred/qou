@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0806.2317v1.pdf
 source_sha256: c54e80d460413a5e
 toc_source: outline
+doc_brief: "Bounds for codes and designs in complex subspaces — We introduce the concepts of complex Grassmannian codes and designs."
 ---
 arXiv:0806.2317v1  [math.CO]  13 Jun 2008
 Bounds for codes and designs in complex subspaces

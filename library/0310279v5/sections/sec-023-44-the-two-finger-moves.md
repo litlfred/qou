@@ -8,6 +8,7 @@ pages: 49-52
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
 toc_source: outline
+doc_brief: "Stabilization in the braid groups I: MTWS Introduction — 40 sections: Front matter; Introduction; The problem"
 ---
 The two ﬁnger moves
 We need tools that will allow us to modify neighborhoods of the clasp arcs in CA in a

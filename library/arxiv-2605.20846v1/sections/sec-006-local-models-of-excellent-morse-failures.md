@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.968
 latex_coverage_ratio: 0.988
+doc_brief: "Topological Field Theories and the Algebraic Structures of the Two-Sphere — We give two presentations for bordisms of S2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the"
 ---
 \label{sec:localmodels}
 Proposition \ref{prop:CFcommFrob} gives the existence of commutative Frobenius relations among CF generators. We would like to know if they are sufficient-- namely, are there other necessary relations if one wants to give a presentation of the category $\operatorname{Cob}( 3)_{S^2,CF} $? This section introduces a tool which we call \textit{local models of failures}, which the next section uses alongside theorem \ref{thm:Cob2Cob3CFIso} to prove sufficiency.

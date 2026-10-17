@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.969
 latex_coverage_ratio: 0.969
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 As in the previous proof, $CC$ denotes the correction complex $$CC:= \begin{bmatrix} (\tilde{X}_{1--} )& (Y_{1}-\Ad_{g_{12}}(Y_2)_{++})\end{bmatrix}$$ Let us explain the equivariant structure of this matrix factorization. Since $B_{(2)}$-action does not change entries of the complex $\SymbolPrint{CC}$, the $B_{(2)}$ equivariant structure of $B_{(2)}$ is trivial.
 

@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.992
 latex_coverage_ratio: 0.992
+doc_brief: "arXiv:hep-th/9811173v1 19 Nov 1998 — We identify 998 closed hyperbolic 3-manifolds whose volumes are rationally related to Dedekind zeta values, with coprime integers a and b giving a b vol(M) ="
 ---
 Jim Hoste, Morwen Thistlethwaite and Jeff Weeks (hereafter HTW) have recently completed an impressive symmetry analysis [@HTW] of all 1,701,936 prime knots with up to 16 crossings. From the University of Tennessee at Knoxville, we obtained files[^1] that identify highly symmetric alternating and non-alternating knots at crossing numbers from 11 to 16. Before analyzing the most symmetric of these, we comment on the situation up to 10 crossings, in territory charted by Dale Rolfsen [@Rolfsen] and predecessors.
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.957
 latex_coverage_ratio: 0.971
+doc_brief: "TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR — Categoriﬁcation is a process of lifting structures to a higher categorical level."
 ---
 The trace of a linear category $\C$ gives rise to an interesting variant of Euler characteristic.
 Let $\Kom(\C)$ be the category of bounded complexes over $\C$. Recall that the objects of $\Kom(\C)$ are complexes

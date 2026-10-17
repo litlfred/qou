@@ -8,6 +8,7 @@ pages: 75-75
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
 toc_source: outline
+doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL + — We give complete detail of the description of the GNS representation of the quantum plane A and its dual ˆ A as"
 ---
 Regular representation
 To obtain a representation of Uq(sl(2, R)) on the space L2(GL+

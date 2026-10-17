@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.956
 latex_coverage_ratio: 0.977
+doc_brief: "ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER FIELDS — We formulate a conjectural p-adic analogue of Borel’s theorem re- lating regulators for higher K-groups of number ﬁelds to special values of the"
 ---
 The Beilinson conjectures about special values of  [@bei85] are a far reaching generalization of the class number formula for the Dedekind zeta function. For every algebraic variety $X$ over the rationals it predicts the leading term of the Taylor expansions of $L(H^i(X),s)$ at certain points, up to a rational multiple, in terms of arithmetic information associated with $X$, namely, its algebraic K-groups $K_j(X)$ [@qui73b]. More generally, these conjectures can also be formulated for motives.
 

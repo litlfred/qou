@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1203.3404v1.pdf
 source_sha256: 2318b14fb2702665
 toc_source: outline
+doc_brief: "On local solutions of the Ramanujan equation and their connection formulae — We show connection formulae of local solutions of the Ramanujan equation between the origin and the inﬁnity."
 ---
 arXiv:1203.3404v1  [math.CA]  15 Mar 2012
 On local solutions of the Ramanujan equation

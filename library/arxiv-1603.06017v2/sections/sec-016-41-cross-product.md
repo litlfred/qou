@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.952
 latex_coverage_ratio: 0.84
+doc_brief: "Automatic Theorem Proving in Walnut — 41 sections: Front matter; Introduction; Basics"
 ---
 \label{sec:cross product}
 Let $M\big(Q,q_0,F,\delta,\mathbf{S_1},\ldots,\mathbf{S_m}\big)$ and

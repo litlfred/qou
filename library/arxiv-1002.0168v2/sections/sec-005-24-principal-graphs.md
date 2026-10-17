@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.95
+doc_brief: "Non-cyclotomic fusion categories Introduction — Etingof, Nikshych and Ostrik ask in [7, §2] if every fusion category can be completely deﬁned over a cyclotomic ﬁeld."
 ---
 Given a unitary irreducible shaded planar algebra $\cP$ the principal graphs are a pair of bipartite graphs which together encode the fusion rules for tensoring with the single strand.
 

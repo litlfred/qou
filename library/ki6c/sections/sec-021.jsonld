@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/ki6c/sections/sec-021",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A Estimate of solutions of systems of equations",
+  "pageStart": 55,
+  "pageEnd": 56,
+  "contains": [
+    "library/ki6c/blocks/prose-sec-021"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki6c/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki6c/manifest.jsonld",
+  "provenance": "ingested"
+}

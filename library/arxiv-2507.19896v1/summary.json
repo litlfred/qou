@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2507.19896v1",
  "source_sha256": "a3f23d5a08b397ee",
- "brief": "Generalized Markov traces and Jucys-Murphy elements — WegiveasimpleconstructionofMarkovtracesforIwahori-Heckealgebrasassociated with infinite series of crystallographic Coxeter groups.",
- "extended": "**Generalized Markov traces and Jucys-Murphy elements**\n\n*Kostiantyn Tolmachov, Heorhii Zhylinskyi*\n\n12 pp, 9 sections.\n\n**Abstract.** WegiveasimpleconstructionofMarkovtracesforIwahori-Heckealgebrasassociated with infinite series of crystallographic Coxeter groups. In typesB and D it is new, and generalizes a known construction in typeA employing symmetric polynomials in multiplicative Jucys-Murphy elements.\n\n**Outline.** Coxeter groups.; Introduction.; Iwahori-Hecke algebras.; Acknowledgments.; Iwahori-Hecke algebras and multiplicative Jucy; Some central elements in the classical Iwahori; Markov traces.; Markov traces via Jucys-Murphy elements.; Geometric Markov traces.",
+ "brief": "Generalized Markov traces and Jucys-Murphy elements — We give a simple construction of Markov traces for Iwahori-Hecke algebras associated with infinite series of crystallographic Coxeter groups.",
+ "extended": "**Generalized Markov traces and Jucys-Murphy elements**\n\n*Kostiantyn Tolmachov, Heorhii Zhylinskyi*\n\n12 pp, 11 sections.\n\n**Abstract.** We give a simple construction of Markov traces for Iwahori-Hecke algebras associated with infinite series of crystallographic Coxeter groups. In types B and D it is new, and generalizes a known construction in type A employing symmetric polynomials in multiplicative Jucys-Murphy elements.\n\n**Outline.** Front matter; Coxeter groups.; Introduction.; Iwahori-Hecke algebras.; Acknowledgments.; Iwahori-Hecke algebras and multiplicative Jucy; Some central elements in the classical Iwahori; Markov traces.; Markov traces via Jucys-Murphy elements.; General Markov traces in types B, D.; Geometric Markov traces.\n\n**Extracted claims (proposals, not verified).**\n- Proposition 2.3.1: The functional τ and the pairing ⟨, ⟩satisfies the following prop-\n- Proposition 2.4.1: The element S(W, S) is central in H(W, S).\n- Proposition 2.4.2: For any h1, h2 ∈H(W, S) we have the identity\n- Corollary 2.3.2: Let (W ′, S′) be a parabolic subgroup of W.\n- Corollary 2.4.4: For X equal to A−1, B or D, elements JX",
  "tokens": {
-  "brief": 46,
-  "extended": 169
+  "brief": 48,
+  "extended": 283
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-coxeter-groups",
    "title": "Coxeter groups.",
@@ -47,10 +52,15 @@
   {
    "id": "sec-007-markov-traces-via-jucys-murphy-elements",
    "title": "Markov traces via Jucys-Murphy elements.",
-   "pages": "5-9"
+   "pages": "5-7"
   },
   {
-   "id": "sec-008-geometric-markov-traces",
+   "id": "sec-008-general-markov-traces-in-types-b-d",
+   "title": "General Markov traces in types B, D.",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-009-geometric-markov-traces",
    "title": "Geometric Markov traces.",
    "pages": "9-12"
   }
@@ -59,7 +69,8 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles"
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

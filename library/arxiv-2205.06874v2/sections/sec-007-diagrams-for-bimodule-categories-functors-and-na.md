@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.957
 latex_coverage_ratio: 0.92
+doc_brief: "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects."
 ---
 In the following, we  use  diagrammatic calculus for 2-categories and apply it  to the 2-categories Cat of (small) categories, functors and natural transformations and to the 2-categories
 $\Bimod^\theta(\mac,\mad)$ and $\mathrm{Mod}^\theta(\mac)$ from Theorem \ref{th:pivot}. 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.978
 latex_coverage_ratio: 0.992
+doc_brief: "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE — The Fricke-Macbeath surface is the unique Hurwitz surface of genus 7 with 504 conformal automorphisms."
 ---
 Having established that the first eigenvalue of the Fricke-Macbeath surface has a multiplicity of 7, our objective in this section is to numerically determine which 7-dimensional representation of $\Aut(\X)=\Delp/\Gamma$ corresponds to the eigenspace associated to $\la_1$. There are four 7-dimensional irreducible representations of $\Aut(\X)\cong \PSL_2(8)$. Refer to Table [1](#table:character_table){reference-type="ref" reference="table:character_table"} for the character table of $\Aut(\X)$. You can find the GAP code in Appendix [\[sec:appB\]](#sec:appB){reference-type="ref" reference="sec:appB"} to obtain the character table. See [@MR0827219 p. 6] for more information about the character table. In the character table, $A, B, C, D, E,$ and $F$ are defined as follows: $$\label{eq:abcdef}
 \begin{aligned}

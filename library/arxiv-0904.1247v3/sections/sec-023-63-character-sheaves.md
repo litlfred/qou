@@ -8,6 +8,7 @@ pages: 39-39
 source_pdf: 0904.1247v3.pdf
 source_sha256: 4a6f4dee6af66dac
 toc_source: outline
+doc_brief: "THE CHARACTER THEORY OF A COMPLEX GROUP — We apply the ideas of derived algebraic geometry and topological ﬁeld theory to the representation theory of reductive groups."
 ---
 X = BB, Y = BG, for a reductive group G and Borel subgroup B ⊂G. Thus we are studying the
 Hecke category HG = D(B\G/B) of Borel bi-equivariant D-modules on G.

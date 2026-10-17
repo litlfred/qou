@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.924
 latex_coverage_ratio: 0.912
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 ::: corollary
 []{#fpnonzero label="fpnonzero"} Let ${\mathcal C}$ be a nondegenerate fusion category over $k$. Then its Frobenius-Perron dimension $\Delta$ is not divisible by $p$.

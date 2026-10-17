@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.972
 latex_coverage_ratio: 1.0
+doc_brief: "Hochschild homology of aﬃne Hecke algebras Maarten Solleveld Contents — Let H = H(R, q) be an aﬃne Hecke algebra with complex, possibly unequal parameters q, which are not roots of unity."
 ---
 Graded Hecke algebras are also known as degenerate (affine) Hecke algebras.
 They were introduced by Lusztig in \cite{Lus-Gr}. We call 

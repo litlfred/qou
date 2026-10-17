@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.974
 latex_coverage_ratio: 0.918
+doc_brief: "A Tannakian description of the local Kaletha gerbe — We construct, for a p-adic field F, an explicit semisimple Tannakian category RigIsocF whose category of fiber functors recovers Kaletha’s Galois"
 ---
 We now construct a morphism of Tannakian categories over $F$ from $\mathop{\mathrm{Isoc}}_{F}$ to $\mathrm{RigIsoc}_{F}$. The category $\mathop{\mathrm{Isoc}}_{F,s}$ of isocrystals whose slopes are a multiple of $\frac{1}{s}$ is equivalent to the category $\mathcal{I}_{F/F, s}$. Indeed, we can define the equivalence by mapping the isocrystal $(V, \Phi)$ to the space $(V, \tilde{\Phi}, \mathcal{D})$ where the grading $\mathcal{D}$ is defined such that $V_{a_{\sigma}/s}$ is the $-a_{\sigma}/s$ slope isotypic piece of $V$ and the $W_{L/F}$-action is given by $\Phi$.
 

@@ -8,6 +8,7 @@ pages: 137-139
 source_pdf: 1007.1250v4.pdf
 source_sha256: 541ba4fb3068de8b
 toc_source: outline
+doc_brief: "NONABELIAN MULTIPLICATIVE INTEGRATION ON SURFACES — We construct a 2-dimensional twisted nonabelian multiplicative integral."
 ---
 References
 [BGNT] P. Bressler, A. Gorokhovsky, R. Nest and B. Tsygan, Formality for Algebroids I: Nerves of

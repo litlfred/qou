@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.971
 latex_coverage_ratio: 1.0
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 The classical equations of motion do not uniquely define the action. For example, adding an overall constant to the action has no effect. More generally, any function of just the intrinsic properties of the boundary will be ignored by the variational principle and leave the equations of motion unaffected.
 

@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.976
+doc_brief: "arXiv:math-ph/0012035v3 16 Jan 2002 — In this short review main issues related to the non-Abelian Stokes theorem have been addressed."
 ---
 There are a lot of different ordering operators in our formulas which have been collected in this section.
 

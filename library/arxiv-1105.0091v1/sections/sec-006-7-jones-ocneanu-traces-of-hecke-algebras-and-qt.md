@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.957
 latex_coverage_ratio: 0.695
+doc_brief: "A central limit theorem for the characters of the infinite symmetric group and of the infinite Hecke algebra — In this paper, we review the representation theory of the inﬁnite symmetric group, and"
 ---
 []{#qtplancherel label="qtplancherel"} In this last section, we return to the "algebraic" study of the probability measures $\mathbb{P}_{n,\omega}$, and we introduce new observables in $\mathscr{O}$ related to the representation theory of the Hecke algebras $\mathscr{H}(\mathfrak{S}_{n})$, that are deformations of the symmetric group algebras $\mathbb{C}\mathfrak{S}_{n}$. We then determine their asymptotic behaviour under the probability measures $\mathbb{P}_{n,\omega}$, thereby proving a $q$-analog of Theorem [\[mainalg\]](#mainalg){reference-type="ref" reference="mainalg"}. Finally, we study the systems of coherent measures coming from the Jones-Ocneanu traces of the Hecke algebras (*cf.* §[0.2](#jonesocneanu){reference-type="ref" reference="jonesocneanu"}); they form a $(q,t)$-deformation of the system of Plancherel measures described on page , see §[0.3](#qtasymptotic){reference-type="ref" reference="qtasymptotic"}.
 

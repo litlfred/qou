@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.924
 latex_coverage_ratio: 0.994
+doc_brief: "Fricke S-duality in CHL models — We consider four dimensional CHL models with sixteen spacetime supersym- metries obtained from orbifolds of type IIA superstring on K3×T 2 by a ZN symmetry acting"
 ---
 Monstrous moonshine relates representations of the monster group $\mathbb{M}$ with modular forms, Borcherds-Kac-Moody algebras and conformal field theory. To each element $g\in \mathbb{M}$ one associates a modular form $T_g(\tau)$ (McKay-Thompson series), whose Fourier coefficients are characters of the monster group. The basic conjecture of Conway-Norton, later proven by Borcherds, was that the McKay-Thompson series $T_g(\tau)$ should be invariant under a certain genus zero subgroup $\Gamma_g\subset SL(2,\mathbb{R})$. For some elements $g$, the invariance group $\Gamma_g$ contains a Fricke involution $\tau \to -1/(N\tau)$, analogously to our Fricke S-duality ([\[Fricke\]](#Fricke){reference-type="ref" reference="Fricke"}).
 

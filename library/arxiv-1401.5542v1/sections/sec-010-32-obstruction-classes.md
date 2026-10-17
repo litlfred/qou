@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.964
 latex_coverage_ratio: 0.73
+doc_brief: "THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS — The Ptolemy coordinates for boundary-unipotent SL(n, C)-representations of a 3-manifold group were introduced in [7] inspired by the A-coordinates on"
 ---
 \label{sec:ObstructionClasses}
 Each class in $H^2(\widehat M;\Z/2\Z)$ can be represented by a $\Z/2\Z$-valued $2$-cocycle on $\widehat M$, i.e.~an assignment of a sign to each face of $\T$.  

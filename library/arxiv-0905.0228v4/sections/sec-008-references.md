@@ -8,6 +8,7 @@ pages: 19-19
 source_pdf: 0905.0228v4.pdf
 source_sha256: 1744545d0f210949
 toc_source: outline
+doc_brief: "A CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS — Two well-known q-Hermite polynomials are the continuous and discrete q-Hermite polynomials."
 ---
 [1] G. Andrews, R. Askey, and R. Roy, Special Functions, Encyclopedia of Mathematics and Its Ap-
 plications, 71, Cambridge University Press, Cambridge, 1999.

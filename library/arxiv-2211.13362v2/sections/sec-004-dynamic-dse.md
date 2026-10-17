@@ -8,6 +8,7 @@ pages: 5-6
 source_pdf: 2211.13362v2.pdf
 source_sha256: 3becbeaa1135d2e1
 toc_source: outline
+doc_brief: "Double-slit experiment revisited — The double-slit experiment is one of the quintessential quantum experiments."
 ---
 5One considers the FPT because in general a trajectory might cross the surface D more than once [40, 41]. However,
 this does not happen in the present setting.

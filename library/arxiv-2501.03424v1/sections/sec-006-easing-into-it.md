@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.88
+doc_brief: "Soergel bimodules and Kazhdan-Lusztig polynomials — This paper presents an exposition of Soergel bimodules, the categoriﬁcation of Hecke alge- bras, and their applications to various topics in"
 ---
 Let $(W,S)$ be a Coxeter system, and let $V$ be its geometric representation\ref{app2} over $\R$. Let $\varPi = \{\alpha_s \st s \in S\}$ be the set of simple roots, forming a basis of $V$ indexed by simple reflections. Let 
 $$R = \text{Sym}(V) = \bigoplus_{i \in \Z_{\ge 0}}\text{Sym}^i(V)$$

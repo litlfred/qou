@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 2007.15570v1.pdf
 source_sha256: 6e46f4346a29fd83
 toc_source: outline
+doc_brief: "A quantum Monte Carlo based approach to intranuclear cascades — 3 sections: Front matter; A quantum Monte Carlo based approa; A Nuclear configuration"
 ---
 Joshua Isaacson a, William I. Jay a, Alessandro Lovato b,c, Pedro A. N. Machado a, Noemi Rocco a,b,
 aTheoretical Physics Department, Fermi National Accelerator Laboratory, P.O. Box 500, Batavia, IL 60510, USA

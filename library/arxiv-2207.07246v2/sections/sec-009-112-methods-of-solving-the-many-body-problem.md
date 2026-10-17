@@ -8,5 +8,6 @@ pages: 15-15
 source_pdf: 2207.07246v2.pdf
 source_sha256: 91e70e5fe39e07a5
 toc_source: outline
+doc_brief: "Path Integral Quantum Monte Carlo Method for Light Nuclei — 64 sections: Front matter; ABSTRACT; LIST OF TABLES"
 ---
 Methods of Solving the Many-Body Problem

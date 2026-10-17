@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.676
 latex_coverage_ratio: 0.667
+doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety for SL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
 ---
 The following result is proved in [@GaroufalidisThurstonZickert] for $\mathop{\mathrm{SL}}(n,\mathbb C)$. For $n=2$ the correspondence is particularly simple, and is illustrated in Figure [1](#fig:FundamentalCorrespondence){reference-type="ref" reference="fig:FundamentalCorrespondence"}.
 

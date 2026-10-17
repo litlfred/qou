@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1205.1453v2",
  "source_sha256": "29d1b1fd9466a3d8",
- "brief": "An asymptotic formula of the divergent bilateral basic hypergeometric series Takeshi MORITA∗ — We show an asymptotic formula of the divergent bilateral bas ic hypergeometric series 1ψ 0(a; −;q, ·)",
- "extended": "**An asymptotic formula of the divergent bilateral basic hypergeometric series Takeshi MORITA∗**\n\n12 pp, 4 sections.\n\n**Abstract.** We show an asymptotic formula of the divergent bilateral bas ic hypergeometric series 1ψ 0(a; −;q, ·) with using the q-Borel-Laplace method. We also give the limit q → 1 − 0 of our asymptotic formula.\n\n**Outline.** 1 Introduction; 2 Basic notations; 3.1 Local solutions of the degenerated equatio; 3.2 An asymptotic formula",
+ "brief": "An asymptotic formula of the divergent bilateral basic hypergeometric series — We show an asymptotic formula of the divergent bilateral basic hypergeometric series 1ψ0(a; −; q, ·) with using the",
+ "extended": "**An asymptotic formula of the divergent bilateral basic hypergeometric series**\n\n*Takeshi MORITA∗*\n\n12 pp, 6 sections.\n\n**Abstract.** We show an asymptotic formula of the divergent bilateral basic hypergeometric series 1ψ0(a; −; q, ·) with using the q-Borel-Laplace method. We also give the limit q →1 −0 of our asymptotic formula.\n\n**Outline.** Front matter; 1 Introduction; 2 Basic notations; 3 An asymptotic formula of the divergent serie; 3.1 Local solutions of the degenerated equatio; 3.2 An asymptotic formula\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: For any x ∈C∗\\ [−λ; q], we have\n- Theorem 2: For any x ∈C∗\\ [−λ; q] (−π < arg x < π), we have\n- Corollary 1: The function C(x; q) is the q-elliptic function, i.e., C(x; q)",
  "tokens": {
-  "brief": 49,
-  "extended": 113
+  "brief": 48,
+  "extended": 187
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -17,15 +22,20 @@
   {
    "id": "sec-001-2-basic-notations",
    "title": "Basic notations",
-   "pages": "5-8"
+   "pages": "5-7"
   },
   {
-   "id": "sec-002-31-local-solutions-of-the-degenerated-equation",
+   "id": "sec-002-3-an-asymptotic-formula-of-the-divergent-series",
+   "title": "An asymptotic formula of the divergent series 10(a;-;q,x)",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-003-31-local-solutions-of-the-degenerated-equation",
    "title": "Local solutions of the degenerated equation",
    "pages": "8-9"
   },
   {
-   "id": "sec-003-32-an-asymptotic-formula",
+   "id": "sec-004-32-an-asymptotic-formula",
    "title": "An asymptotic formula",
    "pages": "9-12"
   }
@@ -34,7 +44,8 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles"
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

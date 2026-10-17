@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0508291v1.pdf
 source_sha256: d2d541426aaec742
 toc_source: outline
+doc_brief: "Stein’s Method and Random Character Ratios Running head: Stein’s Method and Random Character Ratios Version of 8/13/05 — Stein’s method is used to prove limit theorems for random character ratios."
 ---
 arXiv:math/0508291v1  [math.CO]  16 Aug 2005
 Stein’s Method and Random Character Ratios

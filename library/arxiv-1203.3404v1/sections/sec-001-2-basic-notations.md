@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.973
 latex_coverage_ratio: 1.0
+doc_brief: "On local solutions of the Ramanujan equation and their connection formulae — We show connection formulae of local solutions of the Ramanujan equation between the origin and the inﬁnity."
 ---
 In this section, we review our notations. We assume that $q\in\mathbb{C}^*$ satisfies $0<|q|<1$. The $q$-shifted operator $\sigma_q$ is given by $\sigma_qf(x)=f(qx)$. For any fixed $\lambda\in\mathbb{C}^*\setminus q^{\mathbb{Z}}$, the set $[\lambda ;q]$-spiral is $[\lambda ;q]:=\lambda q^{\mathbb{Z}}=\{\lambda q^k;k\in\mathbb{Z}\}$. The (generalized) basic hypergeometric series ${}_r\varphi_s(a_1,\dots ,a_r;b_1,\dots ,b_s;q,x)$ is $$\begin{aligned}
 {}_r\varphi_s(a_1,\dots ,a_r&;b_1,\dots ,b_s;q,x)\\

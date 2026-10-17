@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.988
 latex_coverage_ratio: 0.965
+doc_brief: "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES — We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury."
 ---
 Let us now consider the simplest nontrivial special case of Theorem [\[equiv\]](#equiv){reference-type="ref" reference="equiv"}, when the $p$-Sylow subgroup of $G$ has order $p$.
 

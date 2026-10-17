@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1307.6697v2.pdf
 source_sha256: a3afaefdaebe0292
 toc_source: outline
+doc_brief: "REPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS — In this paper we are interested in computing representations of the funda- mental group of a 3-manifold into PGL(3, C) (in particular in PGL(2"
 ---
 arXiv:1307.6697v2  [math.RT]  3 Dec 2013
 REPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.985
 latex_coverage_ratio: 0.98
+doc_brief: "Fiber Functors of Equivariantizations of Finite Tensor Categories — Let G be a finite group acting on a finite tensor category C."
 ---
 We apply the preceding description to the small radical gaugings classified in [@GNradical]. Table [1](#tab:small_radical_gaugings){reference-type="ref" reference="tab:small_radical_gaugings"}, adapted from [@GNradical Table 3], records the non-pointed nondegenerate entries and the conclusions proved below. We follow the notation and parameter conventions of that reference. Here $D_r$ has order $2r$; the symbols $e$, $h$, and $N$ denote the elliptic, hyperbolic, and norm forms, respectively; and $p,r$ are distinct odd primes except in the final row.
 

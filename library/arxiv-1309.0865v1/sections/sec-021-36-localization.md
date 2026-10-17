@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.989
 latex_coverage_ratio: 0.964
+doc_brief: "SOERGEL CALCULUS — The monoidal category of Soergel bimodules is an incarnation of the Hecke category, a fundamental object in representation theory."
 ---
 As $\Bbbk$ is a domain, so is $R$. Let $Q$ denote the fraction field of $R$, which is an (ungraded) field living over $\Bbbk$. One can extend any $R$-module to a $Q$-module in the usual
 way. We have already shown in general that any tensor product of standard and Soergel bimodules is free as a left (or right) $R$-module, and that morphism spaces are torsion-free.

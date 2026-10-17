@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-016",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Definitions",
+  "pageStart": 45,
+  "pageEnd": 52,
+  "contains": [
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-016",
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/thm-sec-016-01",
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-016-02",
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/thm-sec-016-03",
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-016-04",
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-016-05",
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-016-06",
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-016-07"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.941
 latex_coverage_ratio: 0.985
+doc_brief: "EXPLICIT DESCRIPTION OF CHRISTOFFEL DEFORMATIONS AND — Christoﬀel deformation of a measure on the real line consists of multipying this measure by a squared polynomial having its roots in R."
 ---
 The Plancherel measure is a probability measure $\text{Pl}_n$ on the set of Young diagrams of fixed size $n$, $\mathbb{Y}_n=\{\lambda \in \mathbb{Y}, \hspace{0.1cm} |\lambda|=n \}$. It is given by $$\begin{aligned}
 \text{Pl}_n(\lambda)= \frac{\dim(\lambda)^2}{n!}, \quad \lambda \in \mathbb{Y}_n,

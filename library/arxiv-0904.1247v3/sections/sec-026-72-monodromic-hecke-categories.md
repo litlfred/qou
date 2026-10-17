@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.976
 latex_coverage_ratio: 0.992
+doc_brief: "THE CHARACTER THEORY OF A COMPLEX GROUP — We apply the ideas of derived algebraic geometry and topological ﬁeld theory to the representation theory of reductive groups."
 ---
 Let us return to the setup of a proper map $p:X\to Y$ of stacks where $X$ has smooth diagonal $\delta:X\to X\times X$. Suppose given $\mathcal A_X\in {\mathcal D}(X)$ a commutative algebra object.
 

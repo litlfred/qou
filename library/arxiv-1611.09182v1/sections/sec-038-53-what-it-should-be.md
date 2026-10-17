@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.951
 latex_coverage_ratio: 0.987
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 One might not criticize the standard model too harshly, for simply remaining silent about many of the open problems in physics.  However, what is less benign is that the standard model does at times account for various aspects of nature, and yet fails to explain them.
 

@@ -11,6 +11,7 @@
   ],
   "title": "hal-01215114",
   "contains": [
+    "library/hal-01215114/sections/sec-front-matter",
     "library/hal-01215114/sections/sec-000",
     "library/hal-01215114/sections/sec-001",
     "library/hal-01215114/sections/sec-002",
@@ -28,7 +29,8 @@
     "library/hal-01215114/sections/sec-014",
     "library/hal-01215114/sections/sec-015",
     "library/hal-01215114/sections/sec-016",
-    "library/hal-01215114/sections/sec-017"
+    "library/hal-01215114/sections/sec-017",
+    "library/hal-01215114/sections/sec-018"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -40,8 +42,8 @@
     "pages": 12,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

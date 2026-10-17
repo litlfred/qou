@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.764
 latex_coverage_ratio: 0.991
+doc_brief: "3-Manifolds and 3d Indices — We identify a large class R of three-dimensional N = 2 superconformal ﬁeld the- ories."
 ---
 So far, we have considered $U(1)^N$ vector multiplets coupled to a boundary theory $T_M$. Generically, the 4d theories $T[\partial M]$ arising from a geodesic boundary $M$ will also involve hypermultiplet matter, which leads to further interesting observations in our 3d/4d setup.
 

@@ -8,6 +8,7 @@ pages: 16-17
 source_pdf: 1801.04409v4.pdf
 source_sha256: db61d011e3775aca
 toc_source: outline
+doc_brief: "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES — We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury."
 ---
 theory of vertices of modular representations and the Green correspon-
 dence (see e.g. [A], Chapter III), which we will now recall. Let M be

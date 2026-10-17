@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.903
 latex_coverage_ratio: 0.988
+doc_brief: "EXPLICIT DESCRIPTION OF CHRISTOFFEL DEFORMATIONS AND — Christoﬀel deformation of a measure on the real line consists of multipying this measure by a squared polynomial having its roots in R."
 ---
 []{#secpalm label="secpalm"} We here give a probabilistic interpretation of Christoffel deformations of orthogonal polynomial ensembles in the case when the points $u_1,...,u_k$ belong to the support of the measure $\omega$. We first recall the basics on Palm distributions of a general point process $\mathbb{P}$ on a discrete space $E$, see for instance [@daley-verejones], [@shiraitakahashi] or [@bufetovquasisymmetries] and references therein for a more general treatment.
 

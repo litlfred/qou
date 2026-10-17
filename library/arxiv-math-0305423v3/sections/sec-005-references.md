@@ -8,6 +8,7 @@ pages: 18-19
 source_pdf: 0305423v3.pdf
 source_sha256: e4554f9084ba4935
 toc_source: outline
+doc_brief: "Stein’s Method and Plancherel Measure of the Symmetric Group Running head: Stein’s Method and Plancherel Measure — We initiate a Stein’s method approach to the study of the Plancherel measure of the"
 ---
 [AlD]
 Aldous, D. and Diaconis, P., Longest increasing subsequences: from patience sort-

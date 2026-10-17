@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.929
 latex_coverage_ratio: 0.797
+doc_brief: "Bailey pairs, Eichler integrals and unified Witten-Reshetikhin-Turaev invariants — In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´e homology"
 ---
 []{#arseBP label="arseBP"} Here we collect all of the Bailey pairs we will use in the proof of Theorem [\[main\]](#main){reference-type="ref" reference="main"}. There are eight Bailey pairs that we cite from the literature -- six Bailey pairs relative to $q$ and two Bailey pairs relative to $q^2$. First, we have four Bailey pairs relative to $q$ from Slater's list [@Sl p.463, A(2), A(4), A(6), A(8)]:
 

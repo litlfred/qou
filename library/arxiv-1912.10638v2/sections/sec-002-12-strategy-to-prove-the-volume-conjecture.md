@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.992
+doc_brief: "Asymptotics of some quantum invariants of the Whitehead chains — In this paper, we study the asymptotics of the colored Jones polynomials of the Whitehead chains with one belt colored by M1 and all"
 ---
 []{#strate label="strate"} In this subsection, we briefly discuss our approach to study the volume conjecture. A standard way to prove volume conjecture involves three steps. Roughly speaking, first of all, given the explicit formula of the colored Jones polynomials of a link $L$ evaluated at the $(N+1/2)$-th root of unity, we convert it into an integral of the form $$\int_D f(z_1,z_2,\dots,z_n)\exp\left( \left(N+\frac{1}{2}\right) \Phi_L(z_1,z_2,\dots,z_n) \right) dz_1dz_2 \dots dz_n,$$ where $(z_1,z_2,\dots,z_n)\in {\mathbb C}^n$ for some $n$, $f(z_1,z_2,\dots,z_n)$ is a holomorphic function and $\Phi_L(z_1,z_2,\dots,z_n)$ is called the potential function of the link $L$. After that, we apply the saddle point approximation, which says that the large $N$ behavior of the integral is determined by the critical value of the potential function at certain non-degenerate critical point.
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.935
 latex_coverage_ratio: 1.0
+doc_brief: "KPZ limit theorems — One-dimensional interacting particle systems, 1+1 random growth models, and two-dimensional di- rected polymers deﬁne 2d height ﬁelds."
 ---
 The Poisson DLPP is particularly interesting due to its connection to longest increasing subsequences of random permutations. Note that finitely many points in a rectangle with distinct $x$ and $y$ coordinates can be associated with a permutation by considering the relative orderings of the coordinates.
 

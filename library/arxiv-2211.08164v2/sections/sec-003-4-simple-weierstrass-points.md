@@ -8,6 +8,7 @@ pages: 6-7
 source_pdf: 2211.08164v2.pdf
 source_sha256: aff9ff3ef5ac28be
 toc_source: outline
+doc_brief: "INFINITELY MANY RIEMANN SURFACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS — In this short note, we prove the existence of inﬁnitely many pairwise non-isomorphic, non-hyperelliptic Riemann"
 ---
 Laing and Singerman in [24] searched for all Riemann surfaces of genus g > 2
 admitting a transitive action on the Weierstrass points, but under the additional

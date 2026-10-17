@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.76
+doc_brief: "Hopf solitons in the Nicole model — The Nicole model is a conformal ﬁeld theory in three-dimensional space."
 ---
 By introducing a volume-preserving flow we have been able to numerically investigate Hopf solitons and their stability in the Nicole model. It has been demonstrated that the known axially symmetric Hopf solitons are unstable for Hopf charges greater than two and new lower energy solutions have been computed that include links and knots. The formation of links and knots mirrors the situation in the Skyrme-Faddeev model, suggesting that this is likely to be a universal feature of Hopf solitons. However, for Hopf charges four and eight, links are formed in the Nicole model that are not of the same topological type as in the Skyrme-Faddeev model. As the Hopf charge increases there is an increased variety of possible link and knot types, so it seems likely that it becomes more common for the soliton types to disagree in the two theories.
 

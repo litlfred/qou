@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 0.963
+doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials Introduction — We elaborate on the recent suggestion to consider averaging of Cauchy"
 ---
 Borel transform [@Borel] is an important tool in the study of non-perturbative phenomena. It is used to extract information from divergent series which typically arise in perturbative expansions. Non-perturbative partition functions depend on extra parameters, like the choice of integration contour, this dependence seems to disappear in perturbative expansion, but is in fact traded for divergence of the series. New parameters appear as an ambiguity in the Borel transform. All this is well seen already in the simplest example of the exponential Borel transform $$\begin{aligned}
 \sum_r   r!\cdot q^r  =

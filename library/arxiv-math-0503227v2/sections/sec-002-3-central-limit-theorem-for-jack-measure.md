@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.982
 latex_coverage_ratio: 1.0
+doc_brief: "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios — Bolthausen used a variation of Stein’s method to give an inductive proof"
 ---
 []{#jack label="jack"}
 

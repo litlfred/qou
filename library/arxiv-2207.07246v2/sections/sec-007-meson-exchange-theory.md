@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.993
 latex_coverage_ratio: 0.968
+doc_brief: "Path Integral Quantum Monte Carlo Method for Light Nuclei — 64 sections: Front matter; ABSTRACT; LIST OF TABLES"
 ---
 The earliest version of nucleon-nucleon (NN) interaction is the Yukawa potential ([@Yukawa1935]) which is $V_{\text{Yukawa}}(r)= -g^2 \;\frac{e^{- mr}}{r}$ where $g$ is the coupling constant, $m$ is the mass of the meson and $r$ is the distance between two nucleons. Yukawa theory was pioneering in the 1930s because it first predicted that the interactions between nucleons are made by exchanging a new particle called a meson. The interaction range $r$ between nucleons, which is about 1 fm, can determine the mass of the meson by the uncertainty principle $r \approx 1/m$ so $m\approx 200$ MeV. And such a meson called the pion with mass about 140 MeV was discovered in 1947 ([@Meson1947a]). Since then, nuclear and high energy physics has entered a golden age, and there was time where a discovery of a new particle meant a Nobel Prize.
 

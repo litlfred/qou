@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.907
 latex_coverage_ratio: 0.972
+doc_brief: "THE COLORED JONES POLYNOMIALS OF THE — We calculate limits of the colored Jones polynomials of the ﬁgure- eight knot and conclude that in most cases they determine the volumes and the Chern–Simons"
 ---
 K. Habiro [@Habiro:SURIK00] and T. Le showed that the colored Jones polynomial $J_N(E;t)$ of the figure-eight knot $E$ is given as follows (see also [@Masbaum:AGT03]). $$\label{eq:Jones}
   J_N(E;t)=\sum_{n=0}^{N-1}\prod_{k=1}^{n}

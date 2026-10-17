@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.979
 latex_coverage_ratio: 0.972
+doc_brief: "arXiv:math/0111205v1 [math.CT] 19 Nov 2001 — For every tensor category C there is a braided tensor category Z(C), the ‘center’ of C."
 ---
 \bdefin \label{d-Frob}
 Let $\2A$ be a (strict) monoidal category. A Frobenius algebra in $\2A$ is a

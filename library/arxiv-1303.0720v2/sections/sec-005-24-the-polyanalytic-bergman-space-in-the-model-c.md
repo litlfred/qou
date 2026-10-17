@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.913
 latex_coverage_ratio: 1.0
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 For $q=1,2,3,\ldots$, we consider the spaces $\mathrm{PA}^2_q({\mathbb D}):=\mathrm{PA}^2_q({\mathbb D},\pi^{-1})$ where the domain is the unit disk ${\mathbb D}$ and the weight is $\omega(z)\equiv1/\pi$. The corresponding reproducing kernel $K_q$ was obtained Koshelev [@koselev]: $$K_q(z,w)=q\sum_{j=0}^{q-1}(-1)^j\binom{q}{j+1}\binom{q+j}{q}
 \frac{(1-w\bar z)^{q-j-1}|z-w|^{2j}}{(1-z\bar w)^{q+j+1}}.

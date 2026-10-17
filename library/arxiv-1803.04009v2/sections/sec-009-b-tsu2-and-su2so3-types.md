@@ -8,6 +8,7 @@ pages: 49-50
 source_pdf: 1803.04009v2.pdf
 source_sha256: 8b34299b739cd2b0
 toc_source: outline
+doc_brief: "Symmetry enhancement and closing of knots in 3d/3d correspondence — We revisit Dimofte-Gaiotto-Gukov’s construction of 3d gauge theories asso- ciated to 3-manifolds with a torus boundary."
 ---
 T[SU(2)] and SU(2)/SO(3) types
 Here we discuss some properties of the Gaiotto-Witten T[SU(2)] theory. This theory plays

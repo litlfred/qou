@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.969
 latex_coverage_ratio: 0.995
+doc_brief: "arXiv:hep-ph/0601023v3 23 Apr 2007 — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non - su- persymmetric uniﬁcation"
 ---
 Another approach to suppression of proton decay operators in extra dimensional models 
  comes from fermion localization mechanism~\cite{Arkani-Hamed:1999pv,Mirabelli:1999ks,Kaplan:2001ga} 

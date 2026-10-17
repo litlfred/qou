@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 0.949
+doc_brief: "Formulas on hyperbolic volume ∗ — This paper collects some important formulas on hyperbolic volume."
 ---
 We now follow another way for computation, we will determine the integral $$v(D)=\int\limits_{D}(\cosh z)^2(\cosh y)\mathrm{d}y\mathrm{d}z\mathrm{d}y= \int\limits_{0}^{a}\int\limits_{0}^{\phi(x)}\int\limits_{0}^{\psi (x,y)}(\cosh z)^2(\cosh y)\mathrm{d}y\mathrm{d}z\mathrm{d}x,$$ getting it from hyperbolic orthogonal coordinates using the parameter value $k=1$. The functions $\phi (x)$ and $\psi (x,y)$ can be determined as follows. Consider the orthosceme on Fig.7.
 

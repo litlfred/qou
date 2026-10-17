@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.962
+doc_brief: "A NEW PRESENTATION OF THE osp(1|2)-POLYNOMIAL LINK INVARIANT — There is a known connection between the osp(1|2n) polynomial knot invariant Jn K and the so(2n + 1) knot invariant soJn K studied by"
 ---
 \label{section:cat}
 As we know from \cite{C,Blu09}, the $\mf{osp}(1|2)$ polynomial (and hence our invariant $\hat{J}$) is practically identical to the Jones polynomial.

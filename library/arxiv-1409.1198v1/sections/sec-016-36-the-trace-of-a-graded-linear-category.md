@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.985
 latex_coverage_ratio: 0.97
+doc_brief: "TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR — Categoriﬁcation is a process of lifting structures to a higher categorical level."
 ---
 A {\em graded} linear category is a category equipped with an auto-equivalence $\la 1 \ra$. We denote by $\la t \ra$ the auto-equivalence obtained by applying $\la 1 \ra$ $t$ times.  Thus, given any object $x\in \Ob(\modC)$, there exists an object $x \la t \ra \in \Ob(\modC)$ for all $t$.  Likewise, given any morphism $f \maps x \to y$ in $\modC$, there is a morphism $f \la t \ra \maps x \la t \ra \to y \la t \ra$.  This equips Hom-sets with the structure of  $\Z$-graded abelian groups in which composition maps are grading preserving.
 

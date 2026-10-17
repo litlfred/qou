@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.872
 latex_coverage_ratio: 0.987
+doc_brief: "On the structure of trans-series in quantum field theory — Many observables in quantum field theory can be expressed in terms of trans-series, in which one adds to the perturbative series a typically"
 ---
 Using the method discussed in the previous section, we can now generate the first two coefficients of the series
 \begin{equation}

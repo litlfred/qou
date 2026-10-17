@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-math-0508100v6/blocks/prose-sec-029",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Bounds for higher rank groups",
-  "pageStart": 24,
-  "pageEnd": 24,
-  "text": "../sections/sec-029-102-bounds-for-higher-rank-groups.md",
+  "title": "The maximum of the R-matrices at roots of unity",
+  "pageStart": 22,
+  "pageEnd": 22,
+  "text": "../sections/sec-029-84-the-maximum-of-the-r-matrices-at-roots-of-uni.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0508100v6/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0508100v6/manifest.jsonld",
   "provenance": "ingested"

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.907
 latex_coverage_ratio: 0.972
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS — We study asymptotics of characters of the symmetric groups on a ﬁxed conjugacy class."
 ---
 It is convenient to consider a gradation with respect to which the degree of the free cumulant $R_k$ is equal to $k$. We denote by $K_{k,d}$ the homogeneous part of degree $d$ of the Kerov character polynomial $K_k$. One of the results announced by Kerov [@Kerov2000talk] was that the only non-zero polynomials $K_{k,d}$ are of the form $K_{k,k+1-2g}$ where $g\geq 0$ is an integer. It is possible to give some topological meaning to many calculations related to Kerov polynomials in which the integer $g$ can be interpreted as the genus of the resulting two-dimensional surface. For this reason, studying the polynomials $K_{k,k+1-2g}$ for a fixed value of $g$ is often called the *genus expansion*.
 

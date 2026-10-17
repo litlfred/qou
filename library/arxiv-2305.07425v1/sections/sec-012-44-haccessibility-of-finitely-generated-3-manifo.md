@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.963
 latex_coverage_ratio: 0.994
+doc_brief: "LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS — The set of equivalence classes of cobounded actions of a group G on diﬀerent hyperbolic metric spaces carries a natural partial order."
 ---
 []{#sec:Boundary label="sec:Boundary"} In this section, we explain how one might reduce the study of $\mathcal{H}$--accessibility of all finitely generated 3--manifold groups to the case of compact, orientable, irreducible, $\partial$--irreducible 3--manifold groups. In particular, we show that for any hyperbolic 3-manifold $M$ without rank-1 cusps, if $\pi_1(M)$ is finitely generated then it is $\mathcal H$-accessible.
 

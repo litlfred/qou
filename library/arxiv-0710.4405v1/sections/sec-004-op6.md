@@ -8,6 +8,7 @@ pages: 5-8
 source_pdf: 0710.4405v1.pdf
 source_sha256: af6234179a134532
 toc_source: outline
+doc_brief: "Chiral Low-Energy Constants : Status and Prospects ∗ — 6 sections: Front matter; Introduction; Tools : Large-NC and QCD asymptoti"
 ---
 tially obtain :
 ℓr

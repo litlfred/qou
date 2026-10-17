@@ -8,6 +8,7 @@ pages: 39-41
 source_pdf: 2509.02354v2.pdf
 source_sha256: 14680221e597fe61
 toc_source: outline
+doc_brief: "THE HOLONOMY BRAIDING FOR Uξ(sl2) IN TERMS OF GEOMETRIC QUANTUM DILOGARITHMS — We derive an explicit formula for the holonomy R-matrix of quantum sl2 at a root of unity."
 ---
 39
 References

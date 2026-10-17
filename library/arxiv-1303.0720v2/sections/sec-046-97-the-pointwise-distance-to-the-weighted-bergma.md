@@ -8,6 +8,7 @@ pages: 37-37
 source_pdf: 1303.0720v2.pdf
 source_sha256: 389ab465e81a0667
 toc_source: outline
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 (9.3.7) and (9.6.3) with the (basic) estimate (9.2.3). As before, the integer k is ﬁxed.
 Theorem 9.3. Let Ωbe a domain in C and suppose Q : Ω→R is C4-smooth with both ∆Q > 0 on Ω

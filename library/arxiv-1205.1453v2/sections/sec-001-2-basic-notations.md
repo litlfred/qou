@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.982
 latex_coverage_ratio: 0.964
+doc_brief: "An asymptotic formula of the divergent bilateral basic hypergeometric series — We show an asymptotic formula of the divergent bilateral basic hypergeometric series 1ψ0(a; −; q, ·) with using the"
 ---
 In this section, we fix our notations. We assume that $0<|q|<1$ and $\sigma_q$ is the $q$-difference operator such that $\sigma_qf(x)=f(qx)$. The basic hypergeometric series is $$\begin{aligned}
 {}_r\varphi_s(a_1,\dots ,a_r;&b_1,\dots ,b_r;q,x)\notag\\

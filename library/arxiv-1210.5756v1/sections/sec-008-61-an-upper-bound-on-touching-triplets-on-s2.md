@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.979
 latex_coverage_ratio: 0.989
+doc_brief: "Contact Graphs of Unit Sphere Packings Revisited ∗ — The contact graph of an arbitrary ﬁnite packing of unit balls in Euclidean 3-space is the (simple) graph whose vertices correspond to the packing"
 ---
 Our main goal is to show that the number of touching triplets in an arbitrary packing of spherical caps of angular radius $\pi/6$ on $\mathbb{S}^2$ is at most 11.
 

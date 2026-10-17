@@ -1,1 +1,1 @@
-LetJandKbe cable knots, neither of which is a(±1,q)-cable for anyq≥2,
+Let J and K be cable knots, neither of which is a (±1, q)-cable for any q ≥2,

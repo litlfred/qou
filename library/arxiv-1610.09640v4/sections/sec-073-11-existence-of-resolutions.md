@@ -8,6 +8,7 @@ pages: 185-185
 source_pdf: 1610.09640v4.pdf
 source_sha256: db5e7a5c5e85f95f
 toc_source: outline
+doc_brief: "Derived Categories Amnon Yekutieli 14 Apr 2019 DERIVED CATEGORIES — This is the fourth (and last) prepublication version of a book on derived categories, that will be published by Cambridge"
 ---
 In this section we continue in the more concrete setting: K is a nonzero commu-
 tative base ring, A is a central DG K-ring, and M is a K-linear abelian category; see

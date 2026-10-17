@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1711.08944v2.pdf
 source_sha256: ad7a020e7e92b788
 toc_source: outline
+doc_brief: "The second largest eigenvalues of some Cayley graphs on alternating groups ∗ — Let An denote the alternating group of degree n with n ≥3."
 ---
 arXiv:1711.08944v2  [math.CO]  12 Dec 2018
 The second largest eigenvalues of some Cayley

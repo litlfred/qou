@@ -8,6 +8,7 @@ pages: 92-92
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
 toc_source: inferred
+doc_brief: "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry — 66 sections: Front matter; Purpose of this book.; Contents of this book."
 ---
 5.2.1. In the p-adic case, one cannot deﬁne symmetric spaces by a positivity
 condition as in 1.2.3, 1.2.4. One uses instead the Hilbert-Mumford notion of

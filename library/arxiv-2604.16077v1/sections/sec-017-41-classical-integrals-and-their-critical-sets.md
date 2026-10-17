@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.887
 latex_coverage_ratio: 0.934
+doc_brief: "Volume Conjecture and quantum hyperbolic invariants: the figure eight knot complement — We compute the real part of the semi-classical limit of the sequence of quantum hyperbolic invariants (QHI) of"
 ---
 \label{sec:class_int} Recall the contour $C_N$ from  \eqref{choiceCN}. By the assumption \eqref{situation2}, when $z\in C_N$ both cases $0< \mathfrak{I}(\bl_{0,\infty}+z) < 2\pi$ and $-2\pi < \mathfrak{I}(\bl_{0,\infty}+z) < 0$ may happen. If $0< \mathfrak{I}(\bl_{0,\infty}+z) < 2\pi$, then $\hat S_N(\bl_{0,\infty}+z)$ is given by the formulas \eqref{intrepS}-\eqref{defShat}, and Lemma \ref{estimatehatS} yields
 \begin{equation}\label{equiv1}

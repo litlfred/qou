@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.95
 latex_coverage_ratio: 0.993
+doc_brief: "arXiv:hep-ph/0601023v3 23 Apr 2007 — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non - su- persymmetric uniﬁcation"
 ---
 The existence of magnetic monopoles~\cite{Dirac:1931kp} is a generic prediction of  
 grand unified theories (GUTs). The magnetic monopoles appear in 

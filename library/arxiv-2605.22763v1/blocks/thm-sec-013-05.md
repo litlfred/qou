@@ -1,1 +1,1 @@
-Let𝐴⊂ℝ 2 be an infinite set for which there exists some𝜖 >0such that in any
+Let 𝐴⊂ℝ2 be an infinite set for which there exists some 𝜖> 0 such that in any

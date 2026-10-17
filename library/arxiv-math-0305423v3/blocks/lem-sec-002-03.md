@@ -1,1 +1,1 @@
-The irreducible characters of the symmetric group Sn are real
+\ref{countsol}, and similarly the average of $2CD$ is reduced to

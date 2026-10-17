@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.98
 latex_coverage_ratio: 0.992
+doc_brief: "arXiv:hep-th/9811173v1 19 Nov 1998 — We identify 998 closed hyperbolic 3-manifolds whose volumes are rationally related to Dedekind zeta values, with coprime integers a and b giving a b vol(M) ="
 ---
 The simplest example of a number field with a single complex place is an imaginary-quadratic field ${\bf Q}(\sqrt{-d})$, where $d$ is a square-free positive integer. When $d\equiv3$ (mod 4), the discriminant is $D=-d$; otherwise it is $D=-4d$.
 

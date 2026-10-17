@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.941
 latex_coverage_ratio: 0.64
+doc_brief: "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia"
 ---
 The unreduced (label $u$) AAK polynomials for the two-strand torus knots have the following form $$\begin{aligned}
 \mathfrak{K}^{\mathtt{Tor}_n}&=&t\left(q^2t\right)^{\mathtt{Sh}_{\mathtt{Tor}_n}\!\!-4n}\hspace{-5mm}\sum_{\lambda=1,q^2t,q^6t^4}\hspace{-5mm}C^{\mathtt{Tor}_{\mathtt{sgn}_n}}_{\lambda}\lambda^{n-\mathtt{sgn}_n},\\

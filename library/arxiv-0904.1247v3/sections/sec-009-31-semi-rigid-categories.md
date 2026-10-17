@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.971
 latex_coverage_ratio: 0.949
+doc_brief: "THE CHARACTER THEORY OF A COMPLEX GROUP — We apply the ideas of derived algebraic geometry and topological ﬁeld theory to the representation theory of reductive groups."
 ---
 We continue here in the general setting $St_\mathbb C$ of stable presentable $\infty$-categories. Given a monoidal category $A\in Alg(St_\mathbb C)$, its multiplication map $\mu:A\otimes A\to A$ can be regarded as a map of $A$-bimodules, or equivalently $A^e=A\otimes A^{op}$ modules, where the left (respectively, right) $A$-action on $A\otimes A$ is via the first (respectively, second) factor.
 

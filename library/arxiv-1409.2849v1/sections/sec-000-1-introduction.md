@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.983
 latex_coverage_ratio: 0.964
+doc_brief: "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS — In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the"
 ---
 Let $(X_n)_{n \in \N}$ be a sequence of real-valued random variables. In the series of papers \cite{JKN11,DKN11,KN10,KN12,FMN13}, we introduced the notion of mod-Gaussian convergence (and more generally of mod-convergence with respect to an infinitely divisible law $\phi$):
 

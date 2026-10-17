@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0401068v1.pdf
 source_sha256: 8168d7e7f6069978
 toc_source: outline
+doc_brief: "THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS — @We show that for a twist knot, the A-polynomial can be obtained from recur- rences for the summand in Masbaum’s formula of the"
 ---
 arXiv:math/0401068v1  [math.GT]  8 Jan 2004
 THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL

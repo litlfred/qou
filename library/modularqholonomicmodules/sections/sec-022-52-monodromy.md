@@ -8,6 +8,7 @@ pages: 40-43
 source_pdf: modular.qholonomic.modules.pdf
 source_sha256: 640303a68dd75453
 toc_source: outline
+doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised"
 ---
 and the associated monodromy. Using the modular transformation properties of the Jacobi
 θ-function Equation (49) and the Dedekind η-function, it is easy to see that Equation (31)

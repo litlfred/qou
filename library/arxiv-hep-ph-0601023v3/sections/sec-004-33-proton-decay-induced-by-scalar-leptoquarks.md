@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.969
 latex_coverage_ratio: 0.982
+doc_brief: "arXiv:hep-ph/0601023v3 23 Apr 2007 — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non - su- persymmetric uniﬁcation"
 ---
 In non-supersymmetric scenarios the second most important contributions 
 to the decay of the proton are the Higgs $d=6$ contributions. 

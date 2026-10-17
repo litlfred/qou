@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.93
 latex_coverage_ratio: 0.918
+doc_brief: "L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS — We study (quasi-)cohomological properties through an analysis of quantum Markov semi-groups."
 ---
 We first consider group von Neumann algebras. This case was (essentially) discussed in [@NateTaka Section 15], but we include all proofs for reader's convenience.
 

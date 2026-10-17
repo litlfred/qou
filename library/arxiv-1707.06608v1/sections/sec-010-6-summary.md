@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.994
 latex_coverage_ratio: 0.686
+doc_brief: "Fractional Hopﬁons in the Faddeev-Skyrme model with a symmetry breaking potential — We construct new solutions of the Faddeev-Skyrme model with a symmetry breaking potential admitting S1 vacuum."
 ---
 The main purpose of this work was to construct  Hopfion solutions of the Faddeev-Skyrme model with symmetry breaking potential
 $V=m^2\left(\phi_1\sin\alpha-(1-\phi_3)\cos\alpha\right)^2$, which interpolates between the usual form of the

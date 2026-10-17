@@ -8,6 +8,7 @@ pages: 10-12
 source_pdf: s00453-026-01372-w.pdf
 source_sha256: 98b569eff84fb489
 toc_source: outline
+doc_brief: "Concentration of Submodular Functions and Read-k Families Under Negative Dependence — We study the question of whether submodular functions of random variables satisfying various notions of negative"
 ---
 In this subsection, we illustrate an application of our proof technique to give concen-
 tration for a read-k family of supermodular functions. Read-k families arise naturally

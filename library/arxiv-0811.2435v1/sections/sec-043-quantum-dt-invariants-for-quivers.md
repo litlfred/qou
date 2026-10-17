@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.949
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 47 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 For any $\sigma\in U_{{\cal E}}$ (recall domain $U_{{\cal E}}$ introduced at the end of Section 8.1) we have the corresponding element $A_V^{\op{Hall}}$, where $V$ is any strict sector containing all $Z(E_i), i\in I$. The element $A_V^{\op{Hall}}$ does not depend on $\sigma$. Moreover, this element depends only on the gauge equivalence class of the corresponding potential. The associated element $A_{V,q}:=A_{{\cal E},q}$ of the quantum torus ${\cal R}_{V,q}$ depends (for a *generic* potential) on the matrix $(a_{ij})$ only.
 

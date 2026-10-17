@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.952
 latex_coverage_ratio: 0.957
+doc_brief: "ALGEBRAIC CONSTRUCTIONS IN THE CATEGORY OF VECTOR BUNDLES — In this paper we present the category of generalized Lie algebroids."
 ---
 Let $\left( \left( h^{\ast }F,h^{\ast }\nu ,M\right) ,\left[ ,\right]
 _{h^{\ast }F},\left( \overset{h^{\ast }F}{\rho },Id_{M}\right) \right)$ be the pull-back Lie algebroid of the generalized Lie algebroid $\left( \left(

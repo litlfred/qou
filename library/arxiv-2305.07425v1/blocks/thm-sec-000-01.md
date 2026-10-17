@@ -1,1 +1,1 @@
-LetM be a non-geometric 3-manifold with empty or toroidal bounda ry. If the
+[\[thm:graphandSFmflds\]](#thm:graphandSFmflds){reference-type="ref" reference="thm:graphandSFmflds"} generalizes [@AR19 Theorem 1.1], in which the first and third authors show that flip graph manifold groups, a special class of graph manifold groups, are $\mathcal{H}$--inaccessible.

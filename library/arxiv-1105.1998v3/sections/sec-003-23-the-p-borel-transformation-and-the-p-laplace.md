@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.957
 latex_coverage_ratio: 0.59
+doc_brief: "Symmetry, Integrability and Geometry: Methods and Applications — We show a connection formula of the Hahn–Exton q-Bessel function around the origin and the infinity."
 ---
 []{#section2.3 label="section2.3"}
 

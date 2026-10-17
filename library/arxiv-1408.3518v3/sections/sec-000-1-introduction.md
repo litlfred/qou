@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.952
 latex_coverage_ratio: 0.998
+doc_brief: "On Augmentation Algorithms for Linear and Integer-Linear Programming: From Edmonds-Karp to Bland and Beyond — 5 sections: Front matter; Introduction.; Our Contributions"
 ---
 We consider a general framework for solving linear programs (LPs) and integer-linear programs (ILPs) of the form
 \begin{equation} \label{themilp}

@@ -8,6 +8,7 @@ pages: 6-6
 source_pdf: Di_Cairano_2022_J._Phys._Commun._6_015002.pdf
 source_sha256: f75313b507f97172
 toc_source: outline
+doc_brief: "On the derivation of a Nonlinear Generalized Langevin Equation — 15 sections: Front matter; Introduction; State-of-art"
 ---
 In this section, inspired by the work of Zwanzig, we will derive a nonlinear GLE and deﬁne the kernel matrix and
 noise term in such a way to be able (i) to recover the standard deﬁnition of FDR, (ii) to deﬁne a continuum limit

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.953
 latex_coverage_ratio: 0.976
+doc_brief: "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR — Let H be the one-parameter Hecke algebra associated to a ﬁnite Weyl group W, deﬁned over a ground ring in which “bad” primes for W are invertible."
 ---
 []{#sec2 label="sec2"} References for this section are the books [@GePf] and [@Lusztig03]. Let $W$ be a finite Weyl group, with generating set $S$. Let $L \colon 
 W \rightarrow {\mathbb{Z}}$ be a weight function. Thus, we have $L(ww')=L(w)+L(w')$ whenever $l(ww')=l(w)+l(w')$ for $w,w'\in W$; here $l(w)$ denotes the length of $w \in W$. Note that $L(s)=L(t)$ whenever $s,t \in S$ are conjugate in $W$.

@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "generalised-markov-traces-and-jucys-murphy-element",
  "source_sha256": "9246e10a44d0b4aa",
- "brief": "Glasgow Mathematical Journal (2026), 1–10 RESEARCH ARTICLE — We give a simple construction of Markov traces for Iwahori–Hecke algebras associated with the crystallographic Coxeter groups of types An",
- "extended": "**Glasgow Mathematical Journal (2026), 1–10 RESEARCH ARTICLE**\n\n*Generalised Markov traces and Jucys–Murphy elements*\n\n10 pp, 7 sections.\n\n**Abstract.** We give a simple construction of Markov traces for Iwahori–Hecke algebras associated with the crystallographic Coxeter groups of types An, Bn and Dn.I nt y p e sB and D, it is new and generalises a known construction in typeA employing symmetric polynomials in multiplicative Jucys–Murphy elements.\n\n**Outline.** Iwahori-Hecke algebras; Coxeter groups; Introduction; Some central elements in the classical Iwahori; Markov traces; General Markov traces in types B, D; Geometric Markov traces",
+ "brief": "Glasgow Mathematical Journal (2026), 1–10 — We give a simple construction of Markov traces for Iwahori–Hecke algebras associated with the crystallographic Coxeter groups of types An, Bn and Dn.",
+ "extended": "**Glasgow Mathematical Journal (2026), 1–10**\n\n*RESEARCH ARTICLE*\n\n10 pp, 8 sections.\n\n**Abstract.** We give a simple construction of Markov traces for Iwahori–Hecke algebras associated with the crystallographic Coxeter groups of types An, Bn and Dn. In types B and D, it is new and generalises a known construction in type A employing symmetric polynomials in multiplicative Jucys–Murphy elements.\n\n**Outline.** Front matter; Iwahori-Hecke algebras; Coxeter groups; Introduction; Some central elements in the classical Iwahori; Markov traces; General Markov traces in types B, D; Geometric Markov traces\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.5.1: The centre of Haff(An−1) consists of the symmetric Laurent polynomials in \u00061, . . . , \u0006n.\n- Theorem 3.1.4: The family of functionals (trζn) is a Markov trace with constants ρ = 1 + a, μ = v −v−1.\n- Theorem 3.2.1: Let R = A(a, y1, . . . , yn, . . . ), with inﬁnite number of variables yk. There is a\n- Proposition 2.3.1: The functional τ and the pairing ⟨, ⟩satisfy the following properties:\n- Proposition 2.4.1: The element S(W, S) is central in H(W, S).\n- Proposition 2.4.2: For any h1, h2 ∈H(W, S), we have the identity",
  "tokens": {
-  "brief": 49,
-  "extended": 160
+  "brief": 48,
+  "extended": 298
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-iwahori-hecke-algebras",
    "title": "Iwahori-Hecke algebras",
@@ -49,7 +54,8 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles"
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

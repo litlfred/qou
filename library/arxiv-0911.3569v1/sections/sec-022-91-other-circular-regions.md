@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.98
+doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
 ---
 Let $\Omega\subseteq\CC^m$.  A polynomial $f\in\CC[\x]$ is
 \emph{$\Omega$-stable} if either $f\equiv 0$ identically, or

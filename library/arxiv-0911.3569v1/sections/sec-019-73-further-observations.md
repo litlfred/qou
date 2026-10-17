@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.985
 latex_coverage_ratio: 0.985
+doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
 ---
 In verifying the hypotheses of the Feder-Mihail Theorem we used the 
 fact that if $f\in\StabR[\x]^{\ma}$ is multiaffine and real stable, 

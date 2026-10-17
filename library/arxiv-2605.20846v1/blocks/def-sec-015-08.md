@@ -1,1 +1,1 @@
-A.1.8.(Generators and Relations) LetGbe a directed graph andRa
+A.1.8. (Generators and Relations) Let G be a directed graph and R a

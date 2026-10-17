@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.604
 latex_coverage_ratio: 0.964
+doc_brief: "Concentration of Measure Techniques and Applications — 25 sections: Front matter; Biographical Sketch; Acknowledgments"
 ---
 We have considered the complex Ginibre ensemble. We consider the problem of calculating the mixed matrix moments to be a nice pedagogical problem. It may be used to illustrate the method of using concentration of measure to derive nonlinear recursion relations. This method is particularly important in spin glass theory, where it led to the Ghirlanda-Guerra identities, which are critical to those models.
 

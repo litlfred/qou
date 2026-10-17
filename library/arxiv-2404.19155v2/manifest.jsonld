@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-2404.19155v2",
+  "title": "Octahedral coordinates from the Wirtinger presentation",
   "contains": [
+    "library/arxiv-2404.19155v2/sections/sec-front-matter",
     "library/arxiv-2404.19155v2/sections/sec-000",
     "library/arxiv-2404.19155v2/sections/sec-001",
     "library/arxiv-2404.19155v2/sections/sec-002",
@@ -29,7 +30,9 @@
   },
   "meta": {
     "doc_id": "arxiv-2404.19155v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "2404.19155v2.pdf",
     "source_sha256": "45b9ed90006536b3c3ed2678f246941eac8deb7ca9ab740a7b67f3c9b54c7458",
     "pages": 21,

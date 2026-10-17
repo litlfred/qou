@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.954
 latex_coverage_ratio: 0.996
+doc_brief: "Quantum Field Theory and the Volume Conjecture — 15 sections: Front matter; Preliminaries; The many dimensions of the volume"
 ---
 Let us now adapt the general statements here to some specific examples.
 

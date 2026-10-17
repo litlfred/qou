@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-hep-th-9811173v1/blocks/prose-sec-003",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Signpost: integer sequence A003657",
-  "pageStart": 8,
-  "pageEnd": 9,
-  "text": "../sections/sec-003-41-signpost-integer-sequence-a003657.md",
+  "title": "Examination of 44 fields found by Snap",
+  "pageStart": 4,
+  "pageEnd": 7,
+  "text": "../sections/sec-003-22-examination-of-44-fields-found-by-snap.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9811173v1/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9811173v1/manifest.jsonld",
   "provenance": "ingested"

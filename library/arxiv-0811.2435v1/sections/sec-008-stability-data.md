@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.993
 latex_coverage_ratio: 0.967
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 47 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 Let us fix a free abelian group $\Gamma$ of finite rank, and a graded Lie algebra $\g=\oplus_{\gamma\in \Gamma}\g_{\gamma}$ over $\Q$.[^1]
 

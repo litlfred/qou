@@ -8,6 +8,7 @@ pages: 31-34
 source_pdf: 0406242v4.pdf
 source_sha256: 27e48b483007b824
 toc_source: outline
+doc_brief: "On canonical triangulations of once-punctured torus bundles and two-bridge link complements Introduction — 28 sections: Front matter; Introduction; The canonical triangulation"
 ---
 The ideal triangulation
 The word Ωdescribes a monodromy triangulation of the product region S×I, in exactly

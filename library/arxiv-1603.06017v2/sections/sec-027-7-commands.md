@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.973
 latex_coverage_ratio: 0.597
+doc_brief: "Automatic Theorem Proving in Walnut — 41 sections: Front matter; Introduction; Basics"
 ---
 \label{sec:commands}
 Every command ends in either a colon, double colon, or a semicolon. If you want to see the reports on the intermediate steps of a computation use colon or double colon, otherwise use semicolon. For example, if we type:

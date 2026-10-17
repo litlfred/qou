@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — Based on an interpretation of the quark-lepton symmetry in terms of the unimodularity of the color group SU(3) and on the existence of 3 generations, we develop an"
 ---
 Let us define a *differential graded Jordan algebra* to be a $\mathbb N$-graded algebra $$\Omega=\oplus_{n\in \mathbb N}\Omega^n$$ which is a *Jordan superalgebra*, (see e.g. in [@kac:1977], [@mar-zel:2010]), for the induced $\mathbb Z/2\mathbb Z$ degree and which is equipped with a *differential*, that is with an antiderivation $d$ of degree 1 and of square 0.\
 Thus $\Omega$ is a graded-commutative algebra, that is one has $$ab=(-1)^{\vert a\parallel b\vert} ba \in \Omega^{\vert a\vert+\vert b\vert}

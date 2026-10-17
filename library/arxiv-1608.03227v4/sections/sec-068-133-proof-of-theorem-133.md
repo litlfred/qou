@@ -8,6 +8,7 @@ pages: 75-78
 source_pdf: 1608.03227v4.pdf
 source_sha256: c71128e9a6c35343
 toc_source: outline
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 β as a product of the elementary braids. Let us explain why Hk(β) actually only depends only conjugacy
 class of β. First let us notice that because of the equality (13.61) we have a construction for Hk(β) as

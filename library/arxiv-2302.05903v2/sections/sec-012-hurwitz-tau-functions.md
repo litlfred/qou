@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.935
 latex_coverage_ratio: 0.993
+doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials Introduction — We elaborate on the recent suggestion to consider averaging of Cauchy"
 ---
 The combinatorial Borel transform allows one to enrich the set of the Hurwitz $\tau$-functions [@MMN; @AMMN] $$\begin{aligned}
 \tau^{(n)}\{p^{(1)},\ldots,p^{(n)}\}:=\sum_R q^{|R|} d_R^{2-n} S_R\{p^{(1)}\}\ldots S_R\{p^{(n)}\}

@@ -8,6 +8,8 @@ pages: 5-7
 source_pdf: ki52.pdf
 source_sha256: 35ad4ee5a00d4a18
 toc_source: inferred
+doc_brief: "DOI 10.4171/QT/83 — We give a presentation of the asymptotic expansion of the Kashaev invariant of the 52 knot."
+duplicate_of: "104171-qt-83"
 ---
 In this section, we review the deﬁnition of the Kashaev invariant and the calculation of the
 Kashaev invariant ⟨52 ⟩N of the 52 knot in Section 2.1. Further, we continue to calculate

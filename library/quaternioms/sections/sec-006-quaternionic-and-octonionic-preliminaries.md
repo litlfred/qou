@@ -8,6 +8,7 @@ pages: 6-7
 source_pdf: quaternioms.pdf
 source_sha256: becedcbc858611dd
 toc_source: outline
+doc_brief: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 44 sections: Front matter; Introduction; Extended Related Work"
 ---
 The hypercomplex extensions considered here replace the complex scalar ﬁeld by
 either H or O, together with compatible notions of inner product, adjoint, dynamics,

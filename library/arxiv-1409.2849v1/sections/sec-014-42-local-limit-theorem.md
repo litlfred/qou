@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.932
 latex_coverage_ratio: 0.914
+doc_brief: "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS — In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the"
 ---
 Combining Proposition \ref{prop:sizefourier} with Theorem 5 in \cite{DKN11} on local limit theorems for mod-$\phi$ convergence, we obtain the following local limit theorem for the magnetization in the Curie-Weiss model:
 

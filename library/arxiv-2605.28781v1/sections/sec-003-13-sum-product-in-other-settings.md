@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.917
 latex_coverage_ratio: 0.936
+doc_brief: "The sum-product conjecture is false for real numbers — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily large A ⊂R (whose elements are algebraic integers in a"
 ---
 Finally, in Section [\[sec-variants\]](#sec-variants){reference-type="ref" reference="sec-variants"} we discuss variants of our construction. We first obtain, via only a slight modification of the argument, analogues of all of the above results for $A\subset \mathbb{Q}_p$ for any prime $p$.
 

@@ -8,6 +8,7 @@ pages: 453-456
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
 toc_source: outline
+doc_brief: "Analytic Combinatorics in Several Variables Expanded Second Edition — 98 sections: Front matter; Preface to the second edition; Preface to the first edition"
 ---
 435
 Problem 13.8. Find a way analogous to Theorem 13.8 to conclude minimal-

@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0508100v6/sections/sec-019",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Theorem 4.2 implies Theorem 1.6",
+  "pageStart": 13,
+  "pageEnd": 14,
+  "contains": [
+    "library/arxiv-math-0508100v6/blocks/prose-sec-019",
+    "library/arxiv-math-0508100v6/blocks/thm-sec-019-01",
+    "library/arxiv-math-0508100v6/blocks/thm-sec-019-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0508100v6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0508100v6/manifest.jsonld",
+  "provenance": "ingested"
+}

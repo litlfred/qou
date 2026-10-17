@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.966
 latex_coverage_ratio: 0.99
+doc_brief: "On the number of hyperbolic 3 -manifolds of a given volume Craig Hodgson and Hidetoshi Masai — The work of Jørgensen and Thurston shows that there is a ﬁnite number N(v) of orientable hyperbolic"
 ---
 We now study the 1-cusped hyperbolic 3-manifolds obtained by Dehn filling on the Whitehead link complement and its sister, the complement of the $(-2,3,8)$-pretzel link, denoted $m129$ and $m125$ respectively in SnapPea notation. Note that each of these manifolds has a symmetry interchanging the cusps, so it suffices to consider Dehn fillings on cusp 0. See also [@HMW; @NR] and [@AD] for detailed discussions of the geometry and topology of these manifolds and their Dehn fillings.
 

@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0810.1064v1.pdf
 source_sha256: b2d7514c5382ceaa
 toc_source: outline
+doc_brief: "Multiple polylogarithm values at roots of unity — For any positive integer N let µN be the group of the Nth roots of unity."
 ---
 arXiv:0810.1064v1  [math.NT]  6 Oct 2008
 Multiple polylogarithm values at roots of unity

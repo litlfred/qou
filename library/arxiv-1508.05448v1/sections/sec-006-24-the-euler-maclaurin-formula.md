@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.989
 latex_coverage_ratio: 0.978
+doc_brief: "Concentration of Measure Techniques and Applications — 25 sections: Front matter; Biographical Sketch; Acknowledgments"
 ---
 The Euler-Maclaurin formula is a formula which enables us to make a connection between a sum and its corresponding integral, provided the function is sufficiently smooth. Before we can state the formula, we need a few preliminary definitions and notation. Let $\lfloor x\rfloor$ denote the greatest integer function, so that $\lfloor x\rfloor$ returns the greatest integer less than or equal to $x$. For $s=1,2,\dots$, let $B_s(x)$ denote the Bernoulli polynomials. The generating function for the Bernoulli polynomials is as follows: $$\frac{te^{xt}}{e^t-1}=\sum_{s=0}^{\infty} B_s(x)\frac{t^s}{s!}$$ For $s\geq 1$, we will let $B_s:=B_s(0)$. These $B_s$ are called the Bernoulli numbers. The first few Bernouli numbers are given by $B_1 = -1⁄2,\; B_2 = 1⁄6,\; B_3 = 0 ,\; B_4 = −1⁄30, \;B_5 = 0\;, B_6 = 1⁄42$. See [@AndrewsAskeyRoy] for more details and alternative definitions. We now have everything that we need to state the Euler-Maclaurin formula.
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.99
 latex_coverage_ratio: 0.977
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 47 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 Let $\CC$ be a $3$-dimensional ind-constructible Calabi-Yau category over a field of characteristic zero (see Section 3.3). In this section we are going to define motivic Donaldson-Thomas invariants associated with a constructible stability condition and an orientation data on $\CC$.
 

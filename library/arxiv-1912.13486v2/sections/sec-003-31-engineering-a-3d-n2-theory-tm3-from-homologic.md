@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.933
 latex_coverage_ratio: 0.99
+doc_brief: "Index for a Model of 3d-3d Correspondence for Plumbed 3-Manifolds — We consider the S2 ×q S1 supersymmetric index of a 3d N = 2 theory T[M3] when M3 is a plumbed 3-manifold."
 ---
 We consider the case $G=SU(2)$ with $t$ turned off. The homological block for a plumbed 3-manifold with $G=SU(2)$ [@Gukov-Pei-Putrov-Vafa; @Gukov-Manolescu] is given by $$\begin{aligned}
 \widehat{Z}_b (q) = (-1)^{\pi} q^{\frac{1}{4}(3 \sigma - \sum_v w_v)} \text{ v.p.} \oint_{|s_v|=1} \prod_{v \in \text{Vertices}} \frac{ds_v}{2\pi i s_v} (s_v - s_v^{-1})^{2- \text{deg}(v)} \Theta_b^{-M}(\vec{s}) \label{plmb-orig}

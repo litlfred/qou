@@ -1,0 +1,1 @@
+[\[thm:PTASEP\]](#thm:PTASEP){reference-type="ref" reference="thm:PTASEP"} is also proved for the discrete-time TASEP on a ring [@Liao21]. However, extending the result to other integrable models is at the moment a challenge.

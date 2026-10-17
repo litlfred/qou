@@ -8,6 +8,7 @@ pages: 20-21
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
 toc_source: outline
+doc_brief: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT — 63 sections: Front matter; ACKNOWLEDGMENTS; ABSTRACT"
 ---
 Pontryagin Characters and Gauss Characters
 A Pontryagin character is a continuous homomorphism χ : L −→T, T := {z ∈C |

@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0801.3233v4.pdf
 source_sha256: d98f9d4a9ecb4c5e
 toc_source: outline
+doc_brief: "Contemporary Mathematics Twisted Deformation Quantization of Algebraic Varieties (Survey) — Let X be a smooth algebraic variety over a ﬁeld of characteristic 0."
 ---
 Contemporary Mathematics
 Twisted Deformation Quantization of Algebraic Varieties

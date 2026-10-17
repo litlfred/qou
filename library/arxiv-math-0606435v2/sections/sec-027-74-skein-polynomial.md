@@ -8,6 +8,7 @@ pages: 52-53
 source_pdf: 0606435v2.pdf
 source_sha256: 6dddaf838a19f0f5
 toc_source: inferred
+doc_brief: "arXiv:math/0606435v2 [math.GT] 10 Oct 2007 — We show that 3-braid links with given (non-zero) Alexander or Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
 table1 in [J].) For 4-braids several new 14 crossing knots can be ruled out, for example 1421199.
 Remark 7.3 The use of P to restrict the possible values of e is usually most effective, but not indispensable. There

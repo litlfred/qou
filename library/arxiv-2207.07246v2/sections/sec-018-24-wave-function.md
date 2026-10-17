@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.938
 latex_coverage_ratio: 0.982
+doc_brief: "Path Integral Quantum Monte Carlo Method for Light Nuclei — 64 sections: Front matter; ABSTRACT; LIST OF TABLES"
 ---
 From Eq.([\[PIMCopexp\]](#PIMCopexp){reference-type="ref" reference="PIMCopexp"}) we know that an initial trial wave function $\Psi_T$ is needed. Like all QMC calculations, the closer the trial wave function $\Psi_T$ is to the ground state, the faster and the lower variance the calculation will become. In fact, obtaining a high quality trial wave function is always an important task for QMC.
 

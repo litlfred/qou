@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.981
 latex_coverage_ratio: 0.932
+doc_brief: "WDVV Equations as Functional Relations — 6 sections: Front matter; Introduction; WDVV and dispersionless Hirota equ"
 ---
 The associativity or Witten-Dijkgraaf-Verlinde-Verlinde (WDVV) equations [@WDVV] have been widely discussed in connection with various problems of mathematical physics for over ten years. They have arisen in the context of quantum cohomologies and mirror symmetry, and also with regard to multidimensional supersymmetric gauge field theories. In their most general form these equations may be expressed as [@MMM] $$\label{WDVV}
 {\sf F}_i\cdot {\sf F}_j^{-1}\cdot{\sf F}_k = {\sf F}_k\cdot {\sf F}_j^{-1}\cdot{\sf F}_i

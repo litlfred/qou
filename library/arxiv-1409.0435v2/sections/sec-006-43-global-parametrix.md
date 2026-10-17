@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.875
 latex_coverage_ratio: 0.933
+doc_brief: "Asymptotics for Toeplitz determinants: perturbation of symbols with a gap — We study the determinants of Toeplitz matrices as the size of the matrices tends to inﬁnity, in the particular case where"
 ---
 Ignoring the exponentially small jumps for $S$ and small neighborhoods of $z_0, \overline{z_0}$, $-1$, we are led to the following RH problem:
 

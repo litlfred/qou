@@ -8,6 +8,7 @@ pages: 8-11
 source_pdf: Di_Cairano_2022_J._Phys._Commun._6_015002.pdf
 source_sha256: f75313b507f97172
 toc_source: outline
+doc_brief: "On the derivation of a Nonlinear Generalized Langevin Equation — 15 sections: Front matter; Introduction; State-of-art"
 ---
 2.3. Alternative derivation
 The system of Hamilton’s equations of motion (22) based on the Hamiltonian (33) written as a system of second

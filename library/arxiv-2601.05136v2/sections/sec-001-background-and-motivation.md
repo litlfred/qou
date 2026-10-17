@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.927
 latex_coverage_ratio: 0.865
+doc_brief: "State integrals for the quantized SL 2 ( C ) Chern-Simons invariant — Previous work of the author and N."
 ---
 []{#sec:Background and motivation label="sec:Background and motivation"}
 

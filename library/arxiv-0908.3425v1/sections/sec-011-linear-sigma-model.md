@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.9
 latex_coverage_ratio: 1.0
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 Spontaneous symmetry breaking occurs if the ground state has a lower symmetry than the Hamiltonian. For example, in the linear sigma model [@Schwinger:1957em], [@Gell-Mann:1960np], the Lagrangian is constructed in terms of the O(4) multiplet $(\sigma,\pi_1,\pi_2,\pi_3)$, $$\label{2:2:1:lsm}
 {\cal L}=\frac{1}{2}\left(\partial_\mu\sigma\partial^\mu\sigma+

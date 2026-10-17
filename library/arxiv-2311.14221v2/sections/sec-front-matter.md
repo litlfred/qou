@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2311.14221v2.pdf
 source_sha256: 5aa4126bbb6df6eb
 toc_source: outline
+doc_brief: "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B →C is an exact"
 ---
 arXiv:2311.14221v2  [math.QA]  16 May 2024
 FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF

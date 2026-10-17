@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
+    }
+  ],
+  "@id": "library/resur-and-mld-calc-d-sauzin-hal/blocks/ex-sec-000-01",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "kind": "example",
+  "pageStart": 2,
+  "pageEnd": 4,
+  "text": "ex-sec-000-01.md",
+  "derivedFrom": "library/resur-and-mld-calc-d-sauzin-hal/sections/sec-000",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/resur-and-mld-calc-d-sauzin-hal/manifest.jsonld",
+  "provenance": "ingested"
+}

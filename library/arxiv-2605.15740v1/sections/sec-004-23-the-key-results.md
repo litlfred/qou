@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.856
 latex_coverage_ratio: 0.859
+doc_brief: "Bailey pairs, Eichler integrals and unified Witten-Reshetikhin-Turaev invariants — In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´e homology"
 ---
 Here we state and prove the key results relating ([\[h1\]](#h1){reference-type="ref" reference="h1"}), ([\[h8\]](#h8){reference-type="ref" reference="h8"}), ([\[h2\]](#h2){reference-type="ref" reference="h2"})--([\[h7\]](#h7){reference-type="ref" reference="h7"}), ([\[h9\]](#h9){reference-type="ref" reference="h9"}) and ([\[h10\]](#h10){reference-type="ref" reference="h10"}) to finite polynomial sums at roots of unity. We have chosen to present these results following the order in which the Bailey pairs in Section [\[arseBP\]](#arseBP){reference-type="ref" reference="arseBP"} were introduced.
 

@@ -8,6 +8,7 @@ pages: 4-7
 source_pdf: 1609.08719v1.pdf
 source_sha256: f61ff2111e9a97f9
 toc_source: outline
+doc_brief: "AN EXPERIMENTAL INVESTIGATION OF NEUMANN’S CONJECTURE — We use a large census of hyperbolic 3-manifolds to experimentally investigate a conjecture of Neumann regarding the Bloch Group."
 ---
 Deﬁnition 2.3. For any ﬁeld F, the Pre-Bloch group on F, denoted P(F), is
 deﬁned as

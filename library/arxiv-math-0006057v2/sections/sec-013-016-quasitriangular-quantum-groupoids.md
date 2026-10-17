@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.992
 latex_coverage_ratio: 0.937
+doc_brief: "arXiv:math/0006057v2 [math.QA] 10 Jun 2000 — We give a survey of the theory of ﬁnite quantum groupoids (weak Hopf algebras), including foundations of the theory and applications to ﬁnite depth"
 ---
 ::: definition
 []{#QT WHA label="QT WHA"} A quasitriangular quantum groupoid is a pair ($H,\, {\mathcal R}$) where $H$ is a quantum groupoid and ${\mathcal R}\in \Delta^{op}(1)(H\otimes_k H)\Delta(1)$ satisfying the following conditions : $$\Delta^{op}(h){\mathcal R}= {\mathcal R}\Delta(h),$$ for all $h\in H$, where $\Delta^{op}$ denotes the comultiplication opposite to $\Delta$, $$\begin{aligned}

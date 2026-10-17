@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.924
 latex_coverage_ratio: 0.994
+doc_brief: "Three generations of colored fermions with S 3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU(3)C color symmetry based on the"
 ---
 The model presented here is clearly far from complete as our focus has been restricted to the $SU(3)_C$ color gauge symmetry, and we have not considered the remaining internal symmetries nor the spacetime symmetries.
 

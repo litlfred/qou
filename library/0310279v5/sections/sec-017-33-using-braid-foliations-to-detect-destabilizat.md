@@ -8,6 +8,7 @@ pages: 34-37
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
 toc_source: outline
+doc_brief: "Stabilization in the braid groups I: MTWS Introduction — 40 sections: Front matter; Introduction; The problem"
 ---
 Using braid foliations to detect destabilizations and exchange moves
 In this section we will show how to recognize, from the foliation of F, when a closed

@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.977
 latex_coverage_ratio: 0.988
+doc_brief: "arXiv:hep-th/9211141v1 1 Dec 1992 — 11 sections: Front matter; INTRODUCTION AND SUMMARY OF RESULT; The System of Partial Differential"
 ---
 []{#subsec:asy_diffop label="subsec:asy_diffop"} We begin with the integral identity $$K(x,y)=\int_0^\infty A(x+z) A(y+z)\, dz \, .
 \label{K_identity}$$ This appears in [@clarkson_mcleod1] but we give a simple proof here. Think of ([\[partial_K\]](#partial_K){reference-type="ref" reference="partial_K"}) as a differential equation for the "unknown" function $K(x,y)$. Since $$\left({\partial\over\partial x}+{\partial\over \partial y}\right)

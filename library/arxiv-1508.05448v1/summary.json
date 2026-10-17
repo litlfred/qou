@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1508.05448v1",
  "source_sha256": "57d2c717d8ec74d0",
- "brief": "Concentration of Measure Techniques and Applications — 23 sections: Biographical Sketch; Acknowledgments; Abstract",
- "extended": "**Concentration of Measure Techniques and Applications**\n\n*Meg Walters*\n\n134 pp, 23 sections.\n\n**Outline.** Biographical Sketch; Acknowledgments; Abstract; Contributors and Funding Sources; List of Figures; 1 Introduction; 2.4 The Euler-Maclaurin Formula; 3.1 Background for First Result; 3.3 Main Result; 3.5 An Additional Application: The Length of t; 3.6 Remarks; 4.1 Mixed Matrix Moments; 4.2 The Expected Overlap Functions; 4.3 Formulas for the Overlap Functions; 4.7 Summary and Outlook; 5 Mallows Random Permutations; 5.2 The Mallows Measure; 5.3 Fisher-Yates Algorithm",
+ "brief": "Concentration of Measure Techniques and Applications — 25 sections: Front matter; Biographical Sketch; Acknowledgments",
+ "extended": "**Concentration of Measure Techniques and Applications**\n\n*Meg Walters*\n\n134 pp, 25 sections.\n\n**Outline.** Front matter; Biographical Sketch; Acknowledgments; Abstract; Contributors and Funding Sources; List of Figures; 1 Introduction; 2.4 The Euler-Maclaurin Formula; 3.1 Background for First Result; 3.3 Main Result; 3.5 An Additional Application: The Length of t; 3.6 Remarks; 4.1 Mixed Matrix Moments; 4.2 The Expected Overlap Functions; 4.3 Formulas for the Overlap Functions; 4.6 Invariance of the Perturbation Series PN(r; 4.7 Summary and Outlook; 5 Mallows Random Permutations\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.1.1: Consider a Lipschitz function F on RM, with Lipschitz constant\n- Theorem 2.3.1: Let (Π, µ) be a reversible Markov chain on X with a spectral gap\n- Theorem 5.1.1: For β ∈R, let q = exp(−β/n).\n- Proposition 2.2.2: dT(x, A) = min{∥v∥2 : v ∈VA(x)}\n- Lemma 2.2.3: For all 0 ≤t ≤1 and A(ω) and B as deﬁned above, we have",
  "tokens": {
-  "brief": 28,
-  "extended": 144
+  "brief": 29,
+  "extended": 241
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
   {
    "id": "sec-000-biographical-sketch",
    "title": "Biographical Sketch",
@@ -77,50 +82,55 @@
   {
    "id": "sec-013-43-formulas-for-the-overlap-functions",
    "title": "Formulas for the Overlap Functions",
-   "pages": "67-93"
+   "pages": "67-89"
   },
   {
-   "id": "sec-014-47-summary-and-outlook",
+   "id": "sec-014-46-invariance-of-the-perturbation-series-pnr",
+   "title": "Invariance of the Perturbation Series PN(r)",
+   "pages": "89-93"
+  },
+  {
+   "id": "sec-015-47-summary-and-outlook",
    "title": "Summary and Outlook",
    "pages": "93-96"
   },
   {
-   "id": "sec-015-5-mallows-random-permutations",
+   "id": "sec-016-5-mallows-random-permutations",
    "title": "Mallows Random Permutations",
    "pages": "96-104"
   },
   {
-   "id": "sec-016-52-the-mallows-measure",
+   "id": "sec-017-52-the-mallows-measure",
    "title": "The Mallows Measure",
    "pages": "104-105"
   },
   {
-   "id": "sec-017-53-fisher-yates-algorithm",
+   "id": "sec-018-53-fisher-yates-algorithm",
    "title": "Fisher-Yates Algorithm",
    "pages": "105-110"
   },
   {
-   "id": "sec-018-54-length-of-the-longest-increasing-subsequence",
+   "id": "sec-019-54-length-of-the-longest-increasing-subsequence",
    "title": "Length of the Longest Increasing Subsequence",
    "pages": "110-112"
   },
   {
-   "id": "sec-019-55-patience-sorting",
+   "id": "sec-020-55-patience-sorting",
    "title": "Patience Sorting",
    "pages": "112-115"
   },
   {
-   "id": "sec-020-56-four-square-problem",
+   "id": "sec-021-56-four-square-problem",
    "title": "Four Square Problem",
    "pages": "115-122"
   },
   {
-   "id": "sec-021-57-conclusion-and-outlook",
+   "id": "sec-022-57-conclusion-and-outlook",
    "title": "Conclusion and Outlook",
    "pages": "122-127"
   },
   {
-   "id": "sec-022-bibliography",
+   "id": "sec-023-bibliography",
    "title": "Bibliography",
    "pages": "127-134"
   }
@@ -128,7 +138,8 @@
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles"
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

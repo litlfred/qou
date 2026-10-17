@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.939
 latex_coverage_ratio: 0.897
+doc_brief: "THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS — @We show that for a twist knot, the A-polynomial can be obtained from recur- rences for the summand in Masbaum’s formula of the"
 ---
 We start with the review of the definition of the $A$-polynomial of a knot $K$ in $S^3$ (see [@Cooper/Culler/Gillet/Long/Shalen:INVEM94] ). Let $M_K$ be the complement of $K$ and $R(M_K)$ the set of all representations of $\pi_1(M_K)$ into $SL(2,\mathbb{C})$. The set $R(M_K)$ is an affine algebraic variety. Noting that $SL(2,\mathbb{C})$ acts on representations by conjugation, we restrict our attention to the subset $R_U$ of $R(M_K)$ consisting of a represetation $\rho$ satisfying that $\rho(\mu)$ and $\rho(\lambda)$ are upper triangular matirices for the meridian $\mu$ and the preferred longitude $\lambda$ of $K$. We can define a projection $\xi$ from $R_U$ to $\mathbb{C}^2$ by $\xi(\rho)=(l,m)$ for $\rho \in R(M_K)$ with $$\rho(\mu)= \begin{pmatrix}
               m & * \\

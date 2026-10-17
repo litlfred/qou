@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.939
 latex_coverage_ratio: 0.938
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 We let the potential $Q$, the point $z_0$, the radius $r$, and the cut-off function $\chi_0$ be as in Subsections [\[subsec-assQ\]](#subsec-assQ){reference-type="ref" reference="subsec-assQ"} and [\[subsec-5.3\]](#subsec-5.3){reference-type="ref" reference="subsec-5.3"}, with the additional requirement mentioned in Subsection [\[subsec-6.2\]](#subsec-6.2){reference-type="ref" reference="subsec-6.2"}. In particular, we have that ${\mathbb D}(z_0,r)\Subset\Omega$. We begin with a local weighted bianalytic Bergman kernel $\mathrm{mod}(m^{-k-1})$, $$K^{\langle k\rangle}_{2,m}(z,w)=\Lfun^{\langle2,k\rangle}(z,w)\,\mathrm{e}^{2mQ(z,w)},$$ where $$\Lfun^{\langle 2,k\rangle}:=m^2\Lfun^{2}_0+m\Lfun^{2}_1+\cdots+m^{-k+1}
 \Lfun^{2}_{k+1}

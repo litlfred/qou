@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.977
 latex_coverage_ratio: 0.878
+doc_brief: "Iterated ﬁltering methods for Markov process epidemic models — Dynamic epidemic models have proven valuable for public health decision makers as they provide useful insights into the understanding"
 ---
 []{#mif_algorithm label="mif_algorithm"} In the following we present the pseudocode for iterated filtering as implemented in the `mif2` function in the `R` package `pomp` and explain how to draw samples from $f_{\bm{X}_n|\bm{X}_{n-1}}$.\
 **Pseudocode iterated filtering (`mif2`)** cf. [@Ionides2015]\

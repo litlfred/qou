@@ -1,0 +1,1 @@
+that the first statement of Proposition [\[prop:convergence_fourier\]](#prop:convergence_fourier){reference-type="ref" reference="prop:convergence_fourier"} is only relevant when $K(\tilde{J})\leq c\frac{n^2k^3}{M^2K(\mathbf{m})}$ for some numeric $c>0$. We conclude this section by a crude estimate of $\Phi_n[*\mathbf{m}]$ when $K(\tilde{J})\geq cn^2$.

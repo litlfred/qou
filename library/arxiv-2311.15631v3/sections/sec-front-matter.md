@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2311.15631v3.pdf
 source_sha256: a3cc6d51cd04fc07
 toc_source: outline
+doc_brief: "Classification of connected étale algebras in pre-modular fusion categories up to rank three — We classify connected ´etale algebras A’s in pre-modular fusion categories B with rank(B) ≤3 including"
 ---
 arXiv:2311.15631v3  [math.QA]  2 May 2024
 Classiﬁcation of connected ´etale algebras in pre-modular

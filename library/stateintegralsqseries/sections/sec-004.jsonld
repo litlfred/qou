@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/stateintegralsqseries/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The case of the 52 knot",
+  "pageStart": 5,
+  "pageEnd": 6,
+  "contains": [
+    "library/stateintegralsqseries/blocks/prose-sec-004",
+    "library/stateintegralsqseries/blocks/rem-sec-004-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/stateintegralsqseries/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/stateintegralsqseries/manifest.jsonld",
+  "provenance": "ingested"
+}

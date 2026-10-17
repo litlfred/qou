@@ -8,6 +8,7 @@ pages: 15-18
 source_pdf: 0307092v2.pdf
 source_sha256: de2f7ddec49b2ce6
 toc_source: outline
+doc_brief: "Extended Bloch group and the Cheeger–Chern–Simons class — We deﬁne an extended Bloch group and show it is naturally isomorphic to H3(PSL(2, C)δ; Z)."
 ---
 Topological description
 Given a space X , any element α ∈Hn(X; Z) can be represented as f∗[K]

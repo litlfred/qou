@@ -8,6 +8,7 @@ pages: 1-4
 source_pdf: 0310280v4.pdf
 source_sha256: 1e146ee4ebc157f2
 toc_source: outline
+doc_brief: "Stabilization in the braid groups II: Transversal simplicity of knots Introduction and description of results — 10 sections: Front matter; Introduction and description of re; The MTWS and transversal"
 ---
 Introduction and description of results
 This paper is about knots which are transverse to the standard tight contact structure in

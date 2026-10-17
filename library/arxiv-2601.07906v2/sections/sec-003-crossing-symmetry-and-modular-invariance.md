@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.888
 latex_coverage_ratio: 0.994
+doc_brief: "A universal sum over topologies in 3d gravity — We explore the sum over topologies in AdS3 quantum gravity and its relationship with the statistical interpretation of the boundary theory."
 ---
 \label{sec:crossing}
 The next set of consistency conditions that we impose on the ensemble are modular invariance of the torus partition function and crossing symmetry of all higher-genus partition functions. We will impose these constraints on the average, instead of on each member of the ensemble. That is, we demand that

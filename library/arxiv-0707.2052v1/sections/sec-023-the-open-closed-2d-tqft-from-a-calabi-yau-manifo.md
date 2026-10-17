@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.977
 latex_coverage_ratio: 0.992
+doc_brief: "The Mukai pairing, I: a categorical approach — We study the Hochschild homology of smooth spaces, emphasizing the importance of a pairing which generalizes Mukai’s pairing on the cohomology of K3"
 ---
 Associated to a Calabi-Yau manifold $X$ there are two standard 2d TQFTs coming from string theory, imaginatively named the A-model and the B-model: it is the B-model we will be interested in here. In the B-model the boundary conditions are supposed to be "generated" by complex submanifolds of $X$ so the boundary conditions are taken to be complexes of coherent sheaves on $X$; the open string category is then supposed to be the derived category of coherent sheaves on $X$. This is indeed a Calabi-Yau category, which is why such categories are so named: for each ${\mathscr E}$ and ${\mathscr F}$, the requisite pairing $\mathop{\mathrm{Hom}}^\bullet_{\mathbf{D}(X)}({\mathscr E},{\mathscr F})\otimes \mathop{\mathrm{Hom}}^\bullet_{\mathbf{D}(X)}({\mathscr F},{\mathscr E})\to
 \textsf{k}[-\dim X]$ comes from the Serre pairing as a Calabi-Yau manifold is precisely a manifold with a trivial canonical bundle.

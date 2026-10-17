@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/helicity03mmj/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Ergodic meaning of the Calabi invariant.",
+  "pageStart": 8,
+  "pageEnd": 10,
+  "contains": [
+    "library/helicity03mmj/blocks/prose-sec-005",
+    "library/helicity03mmj/blocks/rem-sec-005-01",
+    "library/helicity03mmj/blocks/rem-sec-005-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/helicity03mmj/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/helicity03mmj/manifest.jsonld",
+  "provenance": "ingested"
+}

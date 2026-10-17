@@ -8,6 +8,7 @@ pages: 48-50
 source_pdf: 1701.06567v2.pdf
 source_sha256: c1610b50f5a7e22c
 toc_source: inferred
+doc_brief: "BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections."
 ---
 The superconformal index of 3d N = 2 theory (3.120) reads
 IT[M3](q, t) =

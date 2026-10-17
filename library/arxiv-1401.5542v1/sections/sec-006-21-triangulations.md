@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.957
 latex_coverage_ratio: 0.959
+doc_brief: "THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS — The Ptolemy coordinates for boundary-unipotent SL(n, C)-representations of a 3-manifold group were introduced in [7] inspired by the A-coordinates on"
 ---
 Let $M$ be a compact oriented $3$-manifold with (possibly empty) boundary. We refer to the boundary components as \emph{cusps} (although they may not be tori). Let $\widehat M$ be the space obtained from $M$ by collapsing each boundary component to a point.
 \begin{definition}

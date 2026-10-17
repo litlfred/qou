@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:math-ph/0012035v3 16 Jan 2002 — In this short review main issues related to the non-Abelian Stokes theorem have been addressed."
 ---
 The theorem being considered up to now is a very particular, though seemingly the most important, non-Abelian version of the Stokes theorem. It connects a non-Abelian differential one-form in dimension $1$ and a two-form in dimension $2$. The forms are of a very particular shape, namely, the connection $1$-form and the curvature $2$-form. Now, we would like to discuss possible generalizations to arbitrary, higher-dimensional differential forms in arbitrary dimensions. Since there may be a lot of variants of such generalizations depending on a particular mathematical and/or physical context, we will start from giving a general recipe.
 

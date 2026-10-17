@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 0.996
+doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
 ---
 Circuits can be usefully described using graph theory\footnote{See also Henry Lin, ``Caley Graphs and Complexity Geometry",  \url{https://arxiv.org/pdf/1808.06620.pdf}.}. I'll call a graph  describing a circuit a \it circuit graph.\rm 
 

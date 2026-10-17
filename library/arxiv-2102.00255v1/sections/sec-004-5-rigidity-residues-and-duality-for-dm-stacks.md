@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.982
 latex_coverage_ratio: 0.987
+doc_brief: "RIGIDITY, RESIDUES AND DUALITY: OVERVIEW AND RECENT PROGRESS — In this article we explain the theory of rigid residue complexes in commutative algebra and algebraic geometry, summarizing the"
 ---
 Here is a brief recollection of facts about Deligne-Mumford (DM) stacks and 
 quasi-coherent sheaves on them, extracted from \cite{SP} and \cite{Ol}, with 

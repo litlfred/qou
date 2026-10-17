@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.937
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:hep-th/9211141v1 1 Dec 1992 — 11 sections: Front matter; INTRODUCTION AND SUMMARY OF RESULT; The System of Partial Differential"
 ---
 []{#subsec:sum_commuting label="subsec:sum_commuting"} Again we take $J=(s,\infty)$ and consider asymptotics as $s\rightarrow
 -\infty$. (Asymptotics as $s\rightarrow\infty$ can be obtained trivially from the Neumann series for $(I-K)^{-1}$.) From the random matrix point of view the interesting quantities are $$E(n;s):= {(-1)^n\over n!}\> {\partial^n\over \partial \lambda^n}

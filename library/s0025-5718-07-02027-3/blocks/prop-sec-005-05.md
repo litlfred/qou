@@ -1,1 +1,1 @@
-the coeﬃcients of Fn,ζ(t)a r ei nQp(ζ) ⊆ F so that Lin(z) lies in F.
+For n ≥1 set Gn(t) = logn(1 + t)/n!, and for n ≥2 let

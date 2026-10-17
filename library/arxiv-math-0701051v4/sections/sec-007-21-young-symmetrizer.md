@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.978
 latex_coverage_ratio: 0.958
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS — We prove an upper bound for characters of the symmetric groups."
 ---
 Let $\lambda$ be a Young diagram consisting of $n$ boxes. In the following we will distinguish the symmetric group $S_n$ which permutes the elements $\{1,\dots,n\}$ and the symmetric group $\tilde{S}_n$ which permutes the boxes of $\lambda$.
 

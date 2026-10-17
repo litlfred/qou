@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.98
 latex_coverage_ratio: 1.0
+doc_brief: "A note on closed 3-braids ∗ — This is a review article about knots and links of braid index 3."
 ---
 {\bf Theorems 1 and 2}. \ \ We need two more results before we can make Theorems~\ref{T:topological} and \ref{T:invertibility}  into results that can be used computationally.  First, we need to be able to recognize when the closure of a 3-braid has braid index less than 3. Table I  gives the Xu symbols $\Sigma^\star(W)$  in the cases when the closed braid associated to $W$ has braid index less than 3.  Using it, we can decide when a closed 3-braid is a link of braid index 3, by computing its Xu-invariant and verifying whether it is or is not the symbol for a  3-braid of braid index less than 3.  In the table the symbol $1^{u}$ means $u$ syllables of length 1.  For example, Table I tells us that a 3-braid $X$ whose Xu-invariant is $(-5; (1^4, 2)) = (-5; (1, 1, 1, 1, 2))$ is conjugate to the 3-braid  $a_1^{-5}a_2$, which closes to the type (2,5) torus knot.  Therefore the closure of $X$ has braid index 2. 
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.963
 latex_coverage_ratio: 0.943
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 An example of a fusion category with integer Frobenius-Perron dimensions is the category ${\mathcal C}(G,H,\omega,\psi)$ associated to quadruples $(G,H,\omega,\psi)$, where $G$ is a finite group, $H$ is a subgroup, $\omega\in Z^3(G,{\mathbb{C}}^*)$ is a 3-cocycle, $\psi\in C^2(H,{\mathbb{C}}^*)$ a 2-cochain such that $d\psi=\omega|_H$ (see [@O1]). Namely, let ${\rm Vec}_{G,\omega}$ be the category of finite dimensional $G$-graded vector spaces with associativity defined by $\omega$. Let ${\rm Vec}_{G,\omega}(H)$ be the subcategory of ${\rm Vec}_{G,\omega}$ of objects graded by $H$. Consider the twisted group algebra $A={\mathbb{C}}_\psi[H]$. Since $d\psi=\omega|_H$, it is an associative algebra in this category. Then ${\mathcal C}(G,H,\omega,\psi)$ is defined to be the category of $A$-bimodules in ${\rm Vec}_{G,\omega}$.
 

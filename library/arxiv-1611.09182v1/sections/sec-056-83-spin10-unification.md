@@ -8,6 +8,7 @@ pages: 73-76
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
 toc_source: outline
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 Spin(10) uniﬁcation
 Although the SU(5) model was able to draw together the three gauge groups of the stan-

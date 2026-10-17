@@ -8,6 +8,7 @@ pages: 6-6
 source_pdf: 2210.09583v1.pdf
 source_sha256: 38fc6fa465a06a7b
 toc_source: outline
+doc_brief: "A NEW PRESENTATION OF THE osp(1|2)-POLYNOMIAL LINK INVARIANT — There is a known connection between the osp(1|2n) polynomial knot invariant Jn K and the so(2n + 1) knot invariant soJn K studied by"
 ---
 Wang [7] and its representation theory in section 3.2 and section 3.3 respectively. We then review
 Clark’s representation-theoretic deﬁnition of the invariant from [10] in section 3.4. Finally, we give a

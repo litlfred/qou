@@ -8,6 +8,7 @@ pages: 63-66
 source_pdf: modular.qholonomic.modules.pdf
 source_sha256: 640303a68dd75453
 toc_source: outline
+doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised"
 ---
 [1] Lars Ahlfors. Complex analysis. McGraw-Hill Book Co., New York, third edition, 1978. An introduction
 to the theory of analytic functions of one complex variable, International Series in Pure and Applied

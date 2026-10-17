@@ -8,6 +8,7 @@ pages: 13-13
 source_pdf: Resur_and_Mld_Calc_D_SAUZIN_HAL.pdf
 source_sha256: b33f24cc76102f33
 toc_source: outline
+doc_brief: "Resurgence and Mould Calculus — 10 sections: Front matter; Introduction; Alien operators. Alien derivations"
 ---
 Mould aspects of the MZV world
 ´Ecalle [´Eca81, §12e] introduced the multizetas

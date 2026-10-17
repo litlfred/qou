@@ -11,5 +11,6 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.957
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS — We prove an upper bound for characters of the symmetric groups."
 ---
 In the case where $\pi$ is a fixed permutation, we only need Lemma 11 and we can avoid most of the technicalities. Therefore, our method gives a unified, simple way to reprove three important results on asymptotics of character values on fixed permutations as well as new results: the intermediate case between balanced diagrams ($A=\Theta(\sqrt{n})$) and diagrams with long rows and/or columns ($A=\Theta(n)$) has, to our knowledge, not been studied until now. Moreover, it is interesting to note that our method can be extended to quite long permutations.

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.994
 latex_coverage_ratio: 0.988
+doc_brief: "Received <day> <Month>, <year> — Diﬀerent ways of representing the group 푆푈(3) within a Geometric Algebra approach are explored."
 ---
 We can now employ these results to look at the characteristic polynomial and Cayley-Hamilton theorem. For the characteristic polynomial
 

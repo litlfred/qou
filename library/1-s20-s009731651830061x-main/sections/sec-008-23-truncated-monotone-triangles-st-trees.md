@@ -8,6 +8,7 @@ pages: 11-14
 source_pdf: 1-s2.0-S009731651830061X-main.pdf
 source_sha256: 8d591fe7f1673c52
 toc_source: outline
+doc_brief: "Fischer, Constant term formulas for refined enumerations of Gog and Magog trapezoids (JCTA 158, 2018, 560–604) — alternating sign matrices, plane partitions, constant-term methods."
 ---
 Next we turn to certain partial monotone triangles. Let l, r, n be non-negative integers 
 with l + r ≤n. Suppose s = (s1, s2, . . . , sl), t = (tn−r+1, tn−r+2, . . . , tn) are sequences 

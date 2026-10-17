@@ -8,6 +8,7 @@ pages: 13-14
 source_pdf: modular.qholonomic.modules.pdf
 source_sha256: 640303a68dd75453
 toc_source: outline
+doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised"
 ---
 obtain a fundamental matrix solution to a q-holonomic module given by Dreyfus [20] using
 the q-Borel and the q-Laplace transform. Let us describe the main steps here.

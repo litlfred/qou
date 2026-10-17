@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.983
 latex_coverage_ratio: 0.983
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 With a little relabelling, it becomes obvious that these minimal left ideals naturally exhibit Fock space structure.  Taking $\alpha_1 = \epsilon_{\downarrow\uparrow}$, it then follows that $\alpha_1^{\dagger} = \epsilon_{\uparrow\downarrow}$, which have the anticommutation relations,
 

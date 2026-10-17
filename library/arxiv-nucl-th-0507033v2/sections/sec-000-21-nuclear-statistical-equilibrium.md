@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0507033v2.pdf
 source_sha256: 57509b3ce5f9f8cc
 toc_source: inferred
+doc_brief: "Cluster Formation and The Virial Equation of State of Low-Density Nuclear Matter — 15 sections: Front matter; Nuclear Statistical Equilibrium; Introduction"
 ---
 coeﬃcients are used to make model-independent predictions for a variety of properties of nuclear
 matter over a range of densities, temperatures and compositions. Our results provide constraints on

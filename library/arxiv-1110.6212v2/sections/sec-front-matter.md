@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 1110.6212v2.pdf
 source_sha256: 1923b6a0bfdc810f
 toc_source: outline
+doc_brief: "On calibrated representations and the Plancherel Theorem for aﬃne Hecke algebras — This paper has two main purposes."
 ---
 arXiv:1110.6212v2  [math.RT]  26 May 2014
 On calibrated representations and the Plancherel Theorem for

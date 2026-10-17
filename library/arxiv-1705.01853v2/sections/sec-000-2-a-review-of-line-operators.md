@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.979
 latex_coverage_ratio: 1.0
+doc_brief: "Line Operators in the Standard Model — There is an ambiguity in the gauge group of the Standard Model."
 ---
 \label{reviewsec}
 

@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.929
 latex_coverage_ratio: 0.959
+doc_brief: "Volume Conjecture and quantum hyperbolic invariants: the figure eight knot complement — We compute the real part of the semi-classical limit of the sequence of quantum hyperbolic invariants (QHI) of"
 ---
 \label{sub:SPM:b}
 For case (b) we have $\bl_{0,\infty}=-2i\pi$ and $\bl_{1,\infty}=2i\pi$. Hence

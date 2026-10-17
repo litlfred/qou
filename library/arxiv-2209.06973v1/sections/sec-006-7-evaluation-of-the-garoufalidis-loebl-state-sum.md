@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.982
 latex_coverage_ratio: 0.992
+doc_brief: "On the geometry of two state models for the colored Jones polynomial — Using the ﬂow property of the R-matrix deﬁning the colored Jones polynomial, we establish a natural bijection between the set of"
 ---
 Note that the arc-graphs are *abstract* enhanced graphs representing the data necessary to calculate the state-sum [\[eq=main formula\]](#eq=main formula){reference-type="eqref" reference="eq=main formula"}. For explicit computations it will be helpful to present the data in non-geometritc way so that it can easily be implemented as an algorithm.
 

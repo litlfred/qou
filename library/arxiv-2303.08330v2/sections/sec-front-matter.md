@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2303.08330v2.pdf
 source_sha256: 94981fa0a792b3fa
 toc_source: outline
+doc_brief: "A Cable Knot and BPS-Series II — This is a companion paper to earlier work of the author, which generalizes to an inﬁnite family of (2, 2w + 1)-cabling of the ﬁgure eight knot (|w| > 3) and proposes"
 ---
 arXiv:2303.08330v2  [math.GT]  9 Jan 2024
 A Cable Knot and BPS-Series II

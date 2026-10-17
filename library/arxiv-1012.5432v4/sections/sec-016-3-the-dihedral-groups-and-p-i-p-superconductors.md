@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.839
 latex_coverage_ratio: 1.0
+doc_brief: "quant-ph Towards Topological Quantum Computation? - — 23 sections: Front matter; A Hamiltonian; Instantons"
 ---
 From the field theory point of view, time reversal or parity symmetry is broken in chiral p-wave superconductors so the electromagnetic $U(1)$ group becomes minimally non-Abelian - $U(1) \ltimes \mathbb{Z}/2\mathbb{Z}$. Superconductivity results when this gauge group is spontaneously broken, and could give rise to non-Abelian anyons as, for instance, $D_n = \mathbb{Z}/n\mathbb{Z}\ltimes \mathbb{Z}/2\mathbb{Z}$.
 

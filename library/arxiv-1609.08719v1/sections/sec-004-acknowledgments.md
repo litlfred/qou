@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.632
 latex_coverage_ratio: 1.0
+doc_brief: "AN EXPERIMENTAL INVESTIGATION OF NEUMANN’S CONJECTURE — We use a large census of hyperbolic 3-manifolds to experimentally investigate a conjecture of Neumann regarding the Bloch Group."
 ---
 The authors would like to thank Christian Zickert for guidance and
 advice, and the 2014 MAPS-REU program at the University of Maryland,

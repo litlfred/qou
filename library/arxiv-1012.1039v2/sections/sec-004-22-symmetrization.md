@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.94
 latex_coverage_ratio: 0.955
+doc_brief: "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS — Let M be a hyperbolic n–manifold whose cusps have torus cross- sections."
 ---
 []{#ss:symm label="ss:symm"} It will be convenient in the arguments of Section [\[s:main\]](#s:main){reference-type="ref" reference="s:main"} to assume that all chains considered are *symmetric*. Here we say what this means and justify the assumption.
 

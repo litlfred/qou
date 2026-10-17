@@ -8,6 +8,7 @@ pages: 38-38
 source_pdf: quaternioms.pdf
 source_sha256: becedcbc858611dd
 toc_source: outline
+doc_brief: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 44 sections: Front matter; Introduction; Extended Related Work"
 ---
 Appendix C.1. Seven-Factor Algebraic Synthesis
 Target transformations decompose as U ≈U1U2 · · · U7 with each Ui in an associative

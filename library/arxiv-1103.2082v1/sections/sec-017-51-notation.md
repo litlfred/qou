@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.947
 latex_coverage_ratio: 1.0
+doc_brief: "MODIFIED TRACES ON DELIGNE’S CATEGORY Rep(St) — Deligne has deﬁned a category which interpolates among the representations of the various symmetric groups."
 ---
 Given $\sigma\in S_n$ and $I\subset\{1,\ldots, n\}$, let $\sigma_I$ denote the partition diagram obtained from the partition diagram for $\sigma$ by removing all edges adjacent to top vertices labelled by elements of $I$.  Also, for $i\in\{1,\ldots, n\}$ we write $\sigma_i=\sigma_{\{i\}}$.
 For example, if 

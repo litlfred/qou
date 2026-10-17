@@ -8,6 +8,7 @@ pages: 19-22
 source_pdf: AIF_2009__59_1_347_0.pdf
 source_sha256: 35b8422990e24888
 toc_source: outline
+doc_brief: "On q-summation and confluence — 25 sections: Front matter; Introduction; Part 1. Convergent q-Borel and q-L"
 ---
 We know that our germs φ(q, ξ), q ∈(η, 1], of analytic functions at 0
 admit an analytic continuation along d. Moreover, for q < 1, the functions

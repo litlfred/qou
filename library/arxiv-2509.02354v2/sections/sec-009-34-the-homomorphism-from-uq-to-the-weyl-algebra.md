@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.983
 latex_coverage_ratio: 0.95
+doc_brief: "THE HOLONOMY BRAIDING FOR Uξ(sl2) IN TERMS OF GEOMETRIC QUANTUM DILOGARITHMS — We derive an explicit formula for the holonomy R-matrix of quantum sl2 at a root of unity."
 ---
 We now consider the presentation of $\mathcal{U}_q$ in terms of $\mathcal{W}_q$ at $q = \xi$. The map $\phi$ takes the center of $\mathcal{U}_\xi$ to the center of $\mathcal{W}_\xi$:
 

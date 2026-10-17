@@ -1,1 +1,1 @@
-A.1.5.(Least Congruence) Given any binary relationsRon homs ofC, there
+A.1.5. (Least Congruence) Given any binary relations R on homs of C, there

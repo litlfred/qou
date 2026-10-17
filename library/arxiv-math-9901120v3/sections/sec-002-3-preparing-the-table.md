@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.985
 latex_coverage_ratio: 0.993
+doc_brief: "A table of boundary slopes of Montesinos knots Abstract Introduction Revised table — This note corrects errors in Hatcher and Oertel’s table of boundary slopes of Montesinos knots which have projec"
 ---
 []{#method label="method"}
 

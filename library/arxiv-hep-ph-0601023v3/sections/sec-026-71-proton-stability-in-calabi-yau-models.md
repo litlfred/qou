@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.956
 latex_coverage_ratio: 0.876
+doc_brief: "arXiv:hep-ph/0601023v3 23 Apr 2007 — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non - su- persymmetric uniﬁcation"
 ---
 We begin with a discussion of a class of heterotic string models 
 which on compactifications maintain $N=1$ supersymmetry~\cite{Candelas:1985en}.

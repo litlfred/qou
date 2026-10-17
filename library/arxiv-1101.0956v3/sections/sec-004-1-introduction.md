@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.917
+doc_brief: "ALGEBRAIC CONSTRUCTIONS IN THE CATEGORY OF VECTOR BUNDLES — In this paper we present the category of generalized Lie algebroids."
 ---
 Using the notion of generalized Lie algebroid introduced in the paper $[1]$ we present the category of generalized Lie algebroids. In the framework of Lie algebroids (see $\left[ 2\right]$) we know the following
 

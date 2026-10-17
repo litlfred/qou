@@ -8,6 +8,7 @@ pages: 42-51
 source_pdf: qt2pf5d0mn.pdf
 source_sha256: 4c8581c3b46398e3
 toc_source: outline
+doc_brief: "UC Santa Barbara — 19 sections: Front matter; Abstract; Introduction"
 ---
 generalization of the Tuaev-Viro invariant. Although we will only describe the invariants
 for oriented closed 4-manifolds, it is straight forward to extend the construction to 3-

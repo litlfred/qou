@@ -8,6 +8,7 @@ pages: 26-26
 source_pdf: 2402.04839v2.pdf
 source_sha256: daf09811c350a2ad
 toc_source: outline
+doc_brief: "On a volume invariant of 3-manifolds (Kegel, Ray, Spreer, Thompson, Tillmann) — defines topological volume vol_t(M), the smallest volume of a hyperbolic-link complement in M; bounds and a…"
 ---
 Using tetrahedron shapes to prove equivalence of volumes
 In this appendix we verify our assertions regarding the equality of volumes of certain 3–manifolds,

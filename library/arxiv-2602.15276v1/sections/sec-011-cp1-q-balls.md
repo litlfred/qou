@@ -8,6 +8,7 @@ pages: 18-22
 source_pdf: 2602.15276v1.pdf
 source_sha256: 18d77d6aa140fc50
 toc_source: outline
+doc_brief: "Compact Q-balls and Q-shells within a $CP^N$ Skyrme-Faddeev type model — 18 sections: Front matter; Introduction; The extended Skyrme-Faddeev model"
 ---
 When the leading behavior of the radial function f(r) in the vicinity of the origin (r = 0) is
 described by a parabolic function, f(r) = a0 +a2r2 +. . ., we can search for compact Q-balls similar

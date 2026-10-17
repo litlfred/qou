@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1312.3086v1.pdf
 source_sha256: ff328e7c7cbdc70c
 toc_source: inferred
+doc_brief: "Quantum repeater with Rydberg blocked atomic ensembles in ﬁber-coupled cavities — 9 sections: Front matter; Introduction; The model"
 ---
 arXiv:1312.3086v1  [quant-ph]  11 Dec 2013
 Quantum repeater with Rydberg blocked atomic ensembles in ﬁber-coupled cavities

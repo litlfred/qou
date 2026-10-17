@@ -8,6 +8,7 @@ pages: 4-5
 source_pdf: 0604057v2.pdf
 source_sha256: 649fad141dc34eb9
 toc_source: outline
+doc_brief: "VOLUME CONJECTURE, REGULATOR AND SL2(C)-CHARACTER VARIETY — In this paper, by using the regulator map of Beilinson-Deligne, we show that the quan- tization condition posed by Gukov is true for the"
 ---
 surface. Let f, g be two meromorphic functions on X. Denote by S(f) (resp. S(g)) the set of zeros
 and poles of f (resp. g). Notice that S(f) ∪S(g) is a ﬁnite set. Put X′ = X \ (S(f) ∪S(g)).

@@ -8,6 +8,7 @@ pages: 68-75
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
 toc_source: outline
+doc_brief: "Hecke algebras, generalisations and representation theory — 30 sections: Front matter; Algebras of Finite Type; Blocks"
 ---
 [Ai] F. Aicardi, Private communication.
 [Al] D. Alvis, The left cells of the Coxeter group of type H4, J. Algebra 107 (1987) 160–168.

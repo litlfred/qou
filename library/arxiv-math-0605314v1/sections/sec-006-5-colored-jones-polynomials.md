@@ -8,6 +8,7 @@ pages: 18-19
 source_pdf: 0605314v1.pdf
 source_sha256: 5fb8b89b432401ea
 toc_source: inferred
+doc_brief: "arXiv:math/0605314v1 [math.GT] 11 May 2006 — We construct an invariant JM of integral homology spheres M with values in a completion d Z[q] of the polynomial ring Z[q] such that the evaluation at"
 ---
 of T .
 Remark 4.6. There is an obvious one-to-one correspondence between bottom knots

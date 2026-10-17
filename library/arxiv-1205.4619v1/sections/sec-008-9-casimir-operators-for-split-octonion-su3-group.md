@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.961
+doc_brief: "Quaternion-Octonion Unitary Symmetries and Analogous Casimir Operators — An attempt has been made to investigate the global SU(2) and SU(3) unitary ﬂavor symmetries systematically in terms of"
 ---
 The group $SU(3)$ deals the global $SU(3)$ of quark flavors and
 the local $SU(3)_{C}$gauge symmetry of quantum Chromodynamics (QCD).

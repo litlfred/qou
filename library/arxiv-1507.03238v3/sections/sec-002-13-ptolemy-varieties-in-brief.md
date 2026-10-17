@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.889
 latex_coverage_ratio: 0.927
+doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety for SL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
 ---
 []{#sec:PtolemyBrief label="sec:PtolemyBrief"} The Ptolemy variety $P(\mathcal T)$ is given by a *Ptolemy coordinate* for each edge and a *Ptolemy relation* for each simplex, and consists of the set of solutions where each coordinate is nonzero (see Section [\[sec:PtDecCocReview\]](#sec:PtDecCocReview){reference-type="ref" reference="sec:PtDecCocReview"} for a more detailed review). Just like the gluing equation variety it parametrizes decorated representations, and depends on the triangulation. More precisely, $P(\mathcal T)$ parametrizes generically $P$-decorated boundary-unipotent $\mathop{\mathrm{SL}}(2,\mathbb C)$-representations. There are three natural modifications of $P(\mathcal T)$ (see Section [\[sec:OtherVariants\]](#sec:OtherVariants){reference-type="ref" reference="sec:OtherVariants"}):
 

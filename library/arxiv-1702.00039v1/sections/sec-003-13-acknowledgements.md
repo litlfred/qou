@@ -11,5 +11,6 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.968
+doc_brief: "Gentle introduction to Soergel bimodules I: The basics — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules."
 ---
 This work is supported by the Fondecyt project 1160152 and the Anillo project ACT 1415 PIA Conicyt. The author would like to thank very warmly Macarena Reyes for her hard work in doing most of the pictures. I would also like to thank David Plaza, Paolo Sentinelli, Sebastián Cea and Antonio Behn for detailed comments and suggestions.

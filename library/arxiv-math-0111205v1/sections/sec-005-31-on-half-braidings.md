@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.988
 latex_coverage_ratio: 0.912
+doc_brief: "arXiv:math/0111205v1 [math.CT] 19 Nov 2001 — For every tensor category C there is a braided tensor category Z(C), the ‘center’ of C."
 ---
 We begin with the definition of the quantum double $\2Z_1(\2C)$ of a (strict) monoidal
 category $\2C$. 

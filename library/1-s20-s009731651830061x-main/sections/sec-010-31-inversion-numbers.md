@@ -8,6 +8,7 @@ pages: 15-16
 source_pdf: 1-s2.0-S009731651830061X-main.pdf
 source_sha256: 8d591fe7f1673c52
 toc_source: outline
+doc_brief: "Fischer, Constant term formulas for refined enumerations of Gog and Magog trapezoids (JCTA 158, 2018, 560–604) — alternating sign matrices, plane partitions, constant-term methods."
 ---
 The two inversion numbers are deﬁned in the obvious way: Suppose M = (mi,j) is an 
 (m, n, k)-Gog trapezoid, then

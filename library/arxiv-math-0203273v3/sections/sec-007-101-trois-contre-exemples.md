@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.944
 latex_coverage_ratio: 0.885
+doc_brief: "arXiv:math/0203273v3 [math.CT] 12 Oct 2002 — 31 sections: Front matter; Introduction; Alg`ebres `a plusieurs objets"
 ---
 []{#3contrex label="3contrex"} Voici trois exemples de catégories monoı̈dales $K$-linéaires symétriques et rigides, vérifiant $End({\bf 1})=K$, abéliennes, de Wedderburn, mais *dont le radical n'est pas un idéal monoı̈dal*.
 

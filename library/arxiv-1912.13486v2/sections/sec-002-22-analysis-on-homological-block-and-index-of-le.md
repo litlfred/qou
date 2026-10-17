@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.936
 latex_coverage_ratio: 0.978
+doc_brief: "Index for a Model of 3d-3d Correspondence for Plumbed 3-Manifolds — We consider the S2 ×q S1 supersymmetric index of a 3d N = 2 theory T[M3] when M3 is a plumbed 3-manifold."
 ---
 When the 3-manifold is a lens space $M_3 = L(p,1) \simeq S^3/\mathbb{Z}_p$, the corresponding 3d $\mathcal{N}=2$ theory $T[L(p,1)]$ has been discussed in [@Gadde-Gukov-Putrov-4manifold; @Chung-Dimofte-Gukov-Sulkowski; @Gukov-Pei] and more recently in [@Gukov-Putrov-Vafa; @Gukov-Pei-Putrov-Vafa] in the context of homological blocks. Since our analysis for the plumbed 3-manifolds can be regarded as an extrapolation of this example, we study the homological block and the index of the lens space theory in detail.\
 The 3d $\mathcal{N}=2$ theory $T[L(p,1), U(N)]$ (resp. $T[L(p,1), SU(N)]$) corresponding to the lens space $M_3=L(p,1)$ is given by a 3d $\mathcal{N}=2$ vector multiplet for $G=U(N)$ (resp. $SU(N)$), an adjoint chiral multiplet with $R$-charge 2 which is charged $+1$ under $U(1)_t$ global symmetry, and there is a Chern-Simons term with a level $p$.

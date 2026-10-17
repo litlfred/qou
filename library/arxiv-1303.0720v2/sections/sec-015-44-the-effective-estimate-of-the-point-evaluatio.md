@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.953
 latex_coverage_ratio: 0.857
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 The problem with Proposition [\[pointwiseneg\]](#pointwiseneg){reference-type="ref" reference="pointwiseneg"} as it stands is the need to assume that $\psi\le0$. We now show how to reduce the assumption to a minimum.
 

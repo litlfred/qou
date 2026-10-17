@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.908
 latex_coverage_ratio: 0.949
+doc_brief: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A — This paper concerns the cohomological aspects of Donaldson– Thomas theory for Jacobi algebras and the associated cohomological Hall alge- bra, introduced"
 ---
 Assume that $\upzeta$ is a $\upmu$-generic Bridgeland stability condition. As in [@DaMe4] and the introduction, for $\mathop{\mathrm{\mathbf{d}}}\in\Uplambda_{\upmu}^{\upzeta}\setminus \{0\}$ we define the following elements of $\mathop{\mathrm{MMHM}}(\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}})$ and $\mathcal{D}^{b}(\mathop{\mathrm{MMHM}}(\mathop{\mathrm{pt}}))$, respectively $$\begin{aligned}
 \mathcal{BPS}_{W,\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}\colonequals&\begin{cases} \upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^\upzeta_{\mathop{\mathrm{\mathbf{d}}}}}\mathcal{IC}_{\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}}(\mathbb{Q})&\textrm{if }\mathcal{M}^{\upzeta\mathop{\mathrm{-st}}}_{\mathop{\mathrm{\mathbf{d}}}}\neq\emptyset ,\\0&\textrm{otherwise}\end{cases}\\

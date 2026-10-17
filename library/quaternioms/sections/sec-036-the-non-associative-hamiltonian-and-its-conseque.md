@@ -8,6 +8,7 @@ pages: 33-33
 source_pdf: quaternioms.pdf
 source_sha256: becedcbc858611dd
 toc_source: outline
+doc_brief: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 44 sections: Front matter; Introduction; Extended Related Work"
 ---
 In quantum mechanics, the Hamiltonian is the observable corresponding to the total
 energy of the system and, via the Schrödinger equation, the generator of time evolution.

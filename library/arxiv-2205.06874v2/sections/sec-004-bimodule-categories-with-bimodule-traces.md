@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.924
 latex_coverage_ratio: 0.961
+doc_brief: "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects."
 ---
 (Bi)module traces on (bi)module categories over fusion categories were first  introduced by Schaumann in \cite{G12} and investigated further in  \cite{G14}.
 We summarise (bi)module traces for finite semisimple (bi)module categories over pivotal fusion categories from \cite{G12,G14}. 

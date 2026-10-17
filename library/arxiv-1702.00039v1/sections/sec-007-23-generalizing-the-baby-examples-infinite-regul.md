@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.96
 latex_coverage_ratio: 0.992
+doc_brief: "Gentle introduction to Soergel bimodules I: The basics — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules."
 ---
 One natural way to generalize the baby examples is to consider the symmetries of a regular $n$-sided polygon. This is also a finite Coxeter group denoted $I_2(n)$ (the subindex $2$ in this notation denotes the rank of the Coxeter system, as defined in Section [\[Some definitions\]](#Some definitions){reference-type="ref" reference="Some definitions"}). A presentation of this group is given by
 

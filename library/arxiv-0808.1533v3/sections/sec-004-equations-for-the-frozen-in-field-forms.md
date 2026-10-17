@@ -8,6 +8,7 @@ pages: 28-29
 source_pdf: 0808.1533v3.pdf
 source_sha256: 3e003cc35a4e5711
 toc_source: outline
+doc_brief: "The third order helicity of magnetic ﬁelds via link maps — We introduce an alternative approach to the third order helicity of a volume preserving vector ﬁeld B, which leads us to a lower bound for"
 ---
 Equations for the frozen-in-ﬁeld forms
 Given a volume preserving vector ﬁeld B on M and a path t −→g(t) ∈SDiﬀ(M), let

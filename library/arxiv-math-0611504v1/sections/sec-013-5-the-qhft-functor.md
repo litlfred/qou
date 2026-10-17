@@ -8,6 +8,8 @@ pages: 22-22
 source_pdf: 0611504v1.pdf
 source_sha256: a33d2771c873a97e
 toc_source: outline
+doc_brief: "Quantum hyperbolic geometry — 22 sections: Front matter; Introduction; Universal QHG"
+duplicate_of: "agt-v7-n2-p13-s"
 ---
 Consider a QHFT bordism B = ( ˜Y , ˜LF, ρ, α±). For every odd integer N ≥1, we associate a ﬁnite
 dimensional complex linear space V (α±) to α±, and a linear map HN(B) : V (α−) →V (α+) to

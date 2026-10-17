@@ -8,6 +8,7 @@ pages: 16-17
 source_pdf: 2601.07042v1.pdf
 source_sha256: c2f3e302624e7abb
 toc_source: outline
+doc_brief: "A Tannakian description of the local Kaletha gerbe — We construct, for a p-adic field F, an explicit semisimple Tannakian category RigIsocF whose category of fiber functors recovers Kaletha’s Galois"
 ---
 rigid inner forms. We define the category RigIsocF to be the direct limit of the categories RIE{F,s over the
 inductive system of tuples pE, sq, where E{F is a finite Galois extension and s P N, which is ordered by

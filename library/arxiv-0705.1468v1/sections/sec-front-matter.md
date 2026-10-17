@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 0705.1468v1.pdf
 source_sha256: 4ff578cb3657e4a4
 toc_source: outline
+doc_brief: "Knots in the Skyrme-Faddeev model — The Skyrme-Faddeev model is a modiﬁed sigma model in three-dimensional space, which has string-like topological solitons classiﬁed by the integer-valued Hopf"
 ---
 arXiv:0705.1468v1  [hep-th]  10 May 2007
 Knots in the Skyrme-Faddeev model

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.933
 latex_coverage_ratio: 0.993
+doc_brief: "Categorical Quantum Volume Operator — 11 sections: Categorical Quantum Volume Operato; Introduction; Quantum tetrahedron"
 ---
 \label{subsec:Hermicity}
 For the volume operator to be a physical observable, it must be Hermitian. By looking at a specific example, we will see that for non-unitary $\C$ the volume operator is \emph{not} Hermitian in general. This is not surprising, but rather the expected behavior of generic non-unitary models. The same observation has been made, for instance, in anyon chains~\cite{Ardonne2011} and Levin--Wen string-net models~\cite{Freedman2012, Hahn2020}\@. However, we can prove that the volume operator is always Hermitian if $\C$ is unitary.

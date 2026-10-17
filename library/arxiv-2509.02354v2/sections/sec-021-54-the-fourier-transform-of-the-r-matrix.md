@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.934
 latex_coverage_ratio: 0.952
+doc_brief: "THE HOLONOMY BRAIDING FOR Uξ(sl2) IN TERMS OF GEOMETRIC QUANTUM DILOGARITHMS — We derive an explicit formula for the holonomy R-matrix of quantum sl2 at a root of unity."
 ---
 []{#sec:fourier-transform-R-mat label="sec:fourier-transform-R-mat"} In our computation of the $R$-matrix coefficients in [\[subsec:recurrences\]](#subsec:recurrences){reference-type="ref" reference="subsec:recurrences"} we used a nonstandard basis $\left\{ \def\given{\ \middle| \ }  \vbh n \given n \in \mathbb{Z}/N\mathbb{Z} \right\}$ Fourier dual to the usual highest-weight basis $\left\{ \def\given{\ \middle| \ }  \vb n \given n \in \mathbb{Z}/N\mathbb{Z} \right\}$. This turns out to give simpler relations that lead to the factorization of [\[thm:R-factorization\]](#thm:R-factorization){reference-type="ref" reference="thm:R-factorization"}. However to relate our construction to the standard one we need to return to the highest-weight basis. For a crossing with a geometrically degenerate coloring we explicitly recover the $R$-matrices defining the colored Jones polynomials and ADO invariants, generalizing a result of @Murakami2001.
 

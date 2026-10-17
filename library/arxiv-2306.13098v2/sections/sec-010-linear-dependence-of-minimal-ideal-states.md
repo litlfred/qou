@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.957
 latex_coverage_ratio: 0.979
+doc_brief: "Three generations of colored fermions with S 3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU(3)C color symmetry based on the"
 ---
 Although we have been able to construct three pairs of minimal ideals to represent three generations of fermions, these minimal ideals are not linearly independent. Indeed, one might expect a certain degree of overlap of the minimal ideals, given the condition eqn. ([\[conditionladder\]](#conditionladder){reference-type="ref" reference="conditionladder"}) above.
 

@@ -8,6 +8,7 @@ pages: 46-47
 source_pdf: 1610.09640v4.pdf
 source_sha256: db5e7a5c5e85f95f
 toc_source: outline
+doc_brief: "Derived Categories Amnon Yekutieli 14 Apr 2019 DERIVED CATEGORIES — This is the fourth (and last) prepublication version of a book on derived categories, that will be published by Cambridge"
 ---
 A splitting of an epimorphism ψ : M →M ′′ in M is a morphism α : M ′′ →M
 s.t. ψ ◦α = idM ′′. A splitting of a monomorphism φ : M ′ →M is a morphism

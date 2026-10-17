@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.908
 latex_coverage_ratio: 0.979
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 If we want to use the Lagrangian of Eq. ([\[3:2:3:lol\]](#3:2:3:lol){reference-type="ref" reference="3:2:3:lol"}) beyond the tree level, we will encounter ultraviolet divergences from loop integrals. For the regularization of the loop diagrams we will make use of dimensional regularization [@{'tHooft:fi:10}], [@Leibbrandt:1975dj:10], [@{'tHooft:1978xw:10}], because it preserves algebraic relations between the Green functions (Ward identities). We will illustrate the method by considering the following simple example, $$\label{3:2:5:drb:int}
 I=\int\frac{\mbox{d}^4k}{(2\pi)^4}\frac{i}{k^2-M^2+i0^+},$$ which shows up in the generic diagram of Fig. [1](#3:2:5:fig:dimregexample){reference-type="ref" reference="3:2:5:fig:dimregexample"}.

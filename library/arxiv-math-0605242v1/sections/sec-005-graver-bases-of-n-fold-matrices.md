@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.993
 latex_coverage_ratio: 1.0
+doc_brief: "N-Fold Integer Programming — In this article we study a broad class of integer programming problems in variable dimension."
 ---
 Fix any pair of integer matrices $A$ and $B$ with the same number of columns,
 of dimensions $r\times q$ and $s\times q$, respectively. The {\em n-fold

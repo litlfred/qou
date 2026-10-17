@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.934
 latex_coverage_ratio: 0.984
+doc_brief: "WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL — Weighted dependency graphs have been recently introduced by the second author, as a toolbox to prove central limit theorems."
 ---
 []{#sec:clt label="sec:clt"} We will now use the bounds on cumulants obtained in the previous section to show that the family of random variables $\{\sigma_i : i \in \mathbb{Z}^d \}$ has a weighted dependency graph, and we will use this fact to deduce central limit theorems. We consider any of the regimes studied in the previous section: very high temperature, or very low temperature with $+$ boundary condition, or strong magnetic field with any boundary condition. To have uniform notation, we omit from now on the notation of the boundary condition in low temperature.
 

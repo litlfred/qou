@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.857
 latex_coverage_ratio: 1.0
+doc_brief: "EXPLICIT DESCRIPTION OF CHRISTOFFEL DEFORMATIONS AND — Christoﬀel deformation of a measure on the real line consists of multipying this measure by a squared polynomial having its roots in R."
 ---
 The set of non-negative integers is denoted by $\mathbb{N}$. For $n \in \mathbb{N}$ and $a \in \mathbb{C}$, $(a)_n$ is the Pochhammer symbol: $$\begin{aligned}
 (a)_0= 1 \quad ; \quad  (a)_n := a(a+1)...(a+n-1)=\frac{\Gamma(a+n)}{\Gamma(a)}, \quad n = 1,2,...

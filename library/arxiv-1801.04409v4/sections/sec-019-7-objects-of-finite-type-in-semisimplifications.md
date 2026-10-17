@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.701
 latex_coverage_ratio: 0.977
+doc_brief: "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES — We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury."
 ---
 Let $\mathcal{D}$ be a semisimple tensor category and $X\in \mathcal{D}$. Let us say that $X$ is of finite type if the number of isomorphism classes of simple objects occurring in tensor products of $X$ and $X^*$ is finite; i.e., $X$ generates a fusion subcategory $\mathcal{D}_X\subset \mathcal{D}$. If $\overline{\mathcal{C}}$ is the semisimplification of a category $\mathcal{C}$, and $X\in \mathcal{C}$, we will say that $X$ is of finite type if so is $\overline{X}$. It is an interesting question which objects of $\mathcal{C}$ are of finite type. Note that according to Example [\[ex1\]](#ex1){reference-type="ref" reference="ex1"}(4), $X$ does not have to be of finite type even if $\mathcal{C}$ is the representation category of a finite group (e.g. $\mathcal{C}=\mathop{\mathrm{Rep}}\nolimits_\mathbf{k}(\Bbb Z/2)^2$ for ${\rm char}(\mathbf{k})=2$).
 

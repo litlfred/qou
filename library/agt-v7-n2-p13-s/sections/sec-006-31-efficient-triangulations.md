@@ -8,6 +8,7 @@ pages: 25-27
 source_pdf: agt-v7-n2-p13-s.pdf
 source_sha256: affd571adbaac3fc
 toc_source: outline
+doc_brief: "Quantum hyperbolic geometry — 22 sections: Front matter; Introduction; Universal QHG"
 ---
 Fix a surface F with r boundary components, obtained by removing from S the
 interior of small 2–disks Di such that vi 2 @Di . The boundary of F is oriented via

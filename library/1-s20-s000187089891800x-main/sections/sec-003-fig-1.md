@@ -8,6 +8,7 @@ pages: 10-14
 source_pdf: 1-s2.0-S000187089891800X-main.pdf
 source_sha256: 9844f124dcbc7f36
 toc_source: outline
+doc_brief: "Spherical Categories — 7 sections: Front matter; MONOIDAL CATEGORIES WITH DUALS; INTRODUCTION"
 ---
 to the left. This isotopy moves the loop in Fig. 1 past the point at infinity.
 Taken together with planar isotopies, such an operation on planar graphs

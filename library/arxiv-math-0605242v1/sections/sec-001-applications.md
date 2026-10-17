@@ -8,6 +8,7 @@ pages: 3-3
 source_pdf: 0605242v1.pdf
 source_sha256: 65fac7285e4a77f4
 toc_source: outline
+doc_brief: "N-Fold Integer Programming — In this article we study a broad class of integer programming problems in variable dimension."
 ---
 transportation problems and to some packing problems, as follows. In 2.1 we obtain the aforementioned
 Corollary 2.2 which provides a polynomial time solution to 3-way integer transportation problems for

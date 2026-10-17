@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.938
 latex_coverage_ratio: 0.994
+doc_brief: "Folding Mixed-Integer Linear Programs and Reflection Symmetries — For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the"
 ---
 []{#sec_lp_folding_results label="sec_lp_folding_results"} As a baseline, we compare our dimension reduction algorithm against DRCR as described in [@Grohe2014]. The improved DRCR algorithm as presented [\[sec_reflection_symmetry\]](#sec_reflection_symmetry){reference-type="ref" reference="sec_reflection_symmetry"} is denoted by R-DRCR.
 

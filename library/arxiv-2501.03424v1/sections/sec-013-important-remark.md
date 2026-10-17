@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.98
 latex_coverage_ratio: 0.98
+doc_brief: "Soergel bimodules and Kazhdan-Lusztig polynomials — This paper presents an exposition of Soergel bimodules, the categoriﬁcation of Hecke alge- bras, and their applications to various topics in"
 ---
 A positive result of Soergel's Conjecture has a very important implication in the larger theory. That is, it implies the \textit{Kazhdan-Lusztig positivity conjecture,} which asserts that the coefficients of $h_{x,y}$ are non-negative. Indeed, $h_x(B)$ lies in $\Z_{\ge 0}[v^{\pm 1}]$ for any Soergel bimodule $B.$
 

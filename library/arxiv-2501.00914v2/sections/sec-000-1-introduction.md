@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.945
 latex_coverage_ratio: 0.976
+doc_brief: "L-spaces and knot traces — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries."
 ---
 Given a knot $K\subset S^3$ and an integer $n$, the \emph{$n$-trace} $X_n(K)$ is the smooth, oriented 4-manifold with boundary obtained from $B^4$ by attaching an $n$-framed 2-handle along $K\subset \partial B^4$. We say that $X_n(K)$ \emph{detects}  $K$ if its oriented diffeomorphism type determines $K$ --- that is, if \[X_n(J)\cong X_n(K) \] implies that $J=K$. In this paper, we propose and study the following question:
 

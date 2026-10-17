@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.941
 latex_coverage_ratio: 0.969
+doc_brief: "arXiv:math/0203273v3 [math.CT] 12 Oct 2002 — 31 sections: Front matter; Introduction; Alg`ebres `a plusieurs objets"
 ---
 Supposons $r\ge
 1$ et trouvée une famille $u_A^{(r)}$ vérifiant la condition (ii) du lemme [\[l4\]](#l4){reference-type="ref" reference="l4"}. Quitte à remplacer $s$ par $s_r$, on peut supposer $s_r=s$, $u^{(r)}=1$. On a donc $\tilde s_{A,B}\in 1+{\mathcal{R}}(A\bullet B)^r$ pour tout couple d'objets $(A,B)$. Posons $n_{A,B}=1_{A\bullet 

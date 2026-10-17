@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.994
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:nucl-th/0006014v1 9 Jun 2000 — 20 sections: Front matter; Introduction; The model"
 ---
 The CD-Bonn potential has been fitted to the empirical value for the deuteron binding energy $B_d = 2.224575$ MeV [@LA82] using relativistic kinematics. Once this adjustment has been made, the other deuteron properties listed in in Table [\[tab_deu\]](#tab_deu){reference-type="ref" reference="tab_deu"} are predictions. For the asymptotic $D/S$ state ratio, we find $\eta = 0.0256$---in accurate agreement with the empirical determination by Rodning and Knutson [@RK90]. The deuteron matter radius is predicted to be $r_d = 1.966$ fm which agrees well with the value extracted from recent hydrogen-deuterium isotope shift measurements, $r_d = 1.971(6)$ fm [@MSZ95]. Note that the deuteron effective range $\rho_d \equiv \rho(-B_d,-B_d)$ and the asymptotic $S$ state $A_S$ are not directly observable quantities. Thus, 'empirical' values for $\rho_d$ and $A_S$ quoted in the literature are model dependent. Therefore, the perfect agreement between our predictions and the empirical values for $\rho_d$ and $A_S$ is of no fundamental significance. It only means that all models (including our own) are consistent with each other.
 

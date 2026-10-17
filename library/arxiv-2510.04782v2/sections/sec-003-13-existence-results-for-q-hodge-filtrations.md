@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.909
 latex_coverage_ratio: 0.834
+doc_brief: "$q$-Hodge complexes over the Habiro ring — — Peter Scholze has raised the question whether some variant of the q-de Rham complex is already defined over the Habiro ring H := limm∈N Z[q]∧ (qm−1)."
 ---
 []{#subsec:FunctorialqHodgeIntro label="subsec:FunctorialqHodgeIntro"}
 

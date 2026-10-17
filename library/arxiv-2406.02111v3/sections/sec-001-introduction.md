@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.765
 latex_coverage_ratio: 0.961
+doc_brief: "Categorical Quantum Volume Operator — 11 sections: Categorical Quantum Volume Operato; Introduction; Quantum tetrahedron"
 ---
 \label{sec:introduction}
 In the search for an all-encompassing theory of quantum gravity that successfully reconciles general relativity and quantum field theory, background-independent theories such as loop quantum gravity (LQG)~\cite{Thiemann2007,Rovelli2014,Bilson-Thompson2024} and causal dynamical triangulations~\cite{Ambjorn2012,Loll2020} are widely regarded as the main contenders to string theory/M-theory. 

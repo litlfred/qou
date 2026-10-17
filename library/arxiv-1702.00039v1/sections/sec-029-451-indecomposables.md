@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.909
+doc_brief: "Gentle introduction to Soergel bimodules I: The basics — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules."
 ---
 Why did we us the letter $\mathbb I$ to denote the set $\{R, B_s, B_r, B_{sr}, B_{rs}, B_{srs}\}$? Because they are indecomposable objects. Let us see why.
 

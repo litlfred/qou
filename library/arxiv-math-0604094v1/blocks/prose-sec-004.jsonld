@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-math-0604094v1/blocks/prose-sec-004",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Complement of Knots up to 7 Crossings",
-  "pageStart": 26,
-  "pageEnd": 58,
-  "text": "../sections/sec-004-complement-of-knots-up-to-7-crossings.md",
+  "title": "Once-Punctured Torus Bundles over the Circle",
+  "pageStart": 19,
+  "pageEnd": 26,
+  "text": "../sections/sec-004-once-punctured-torus-bundles-over-the-circle.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0604094v1/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0604094v1/manifest.jsonld",
   "provenance": "ingested"

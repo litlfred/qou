@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.919
 latex_coverage_ratio: 0.722
+doc_brief: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A — This paper concerns the cohomological aspects of Donaldson– Thomas theory for Jacobi algebras and the associated cohomological Hall alge- bra, introduced"
 ---
 We start to complete Remark [\[absRem\]](#absRem){reference-type="ref" reference="absRem"} by recalling the definition of the cohomological algebra structure on $\mathop{\mathrm{H}}(\mathcal{A}^{\upzeta,\mathcal{S}}_{W,\upmu})$ from [@KS2]. Extending ([\[XNdef\]](#XNdef){reference-type="ref" reference="XNdef"}, [\[XXNdef\]](#XXNdef){reference-type="ref" reference="XXNdef"}) we set $$\begin{aligned}
 X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}'\blacksquare\mathop{\mathrm{\mathbf{d}}}'',N} \colonequals &X_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta\mathop{\mathrm{-ss}}}\times_{G_{\mathop{\mathrm{\mathbf{d}}}'}\times G_{\mathop{\mathrm{\mathbf{d}}}''}}U_N\\

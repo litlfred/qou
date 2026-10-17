@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/topologicalinvariance3dindex/sections/sec-020",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Acknowledgments",
+  "pageStart": 51,
+  "pageEnd": 57,
+  "contains": [
+    "library/topologicalinvariance3dindex/blocks/prose-sec-020",
+    "library/topologicalinvariance3dindex/blocks/thm-sec-020-01",
+    "library/topologicalinvariance3dindex/blocks/lem-sec-020-02",
+    "library/topologicalinvariance3dindex/blocks/thm-sec-020-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/topologicalinvariance3dindex/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/topologicalinvariance3dindex/manifest.jsonld",
+  "provenance": "ingested"
+}

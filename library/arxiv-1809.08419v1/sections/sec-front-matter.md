@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1809.08419v1.pdf
 source_sha256: 7ebca632544a6ea4
 toc_source: outline
+doc_brief: "GRÖBNER-SHIRSHOV BASES FOR NON-CRYSTALLOGRAPHIC COXETER GROUPS — For the noncrystallographic Coxeter groups of type H, we construct their Gr¨obner- Shirshov bases and the corresponding standard"
 ---
 arXiv:1809.08419v1  [math.GR]  22 Sep 2018
 GR¨OBNER-SHIRSHOV BASES FOR NON-CRYSTALLOGRAPHIC COXETER

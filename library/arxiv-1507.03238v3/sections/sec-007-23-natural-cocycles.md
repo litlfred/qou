@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.895
 latex_coverage_ratio: 1.0
+doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety for SL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
 ---
 []{#sec:NaturalCocycle label="sec:NaturalCocycle"} The triangulation $\mathcal T$ of $M$ induces a decomposition $\overline \mathcal T$ of $M$ by truncated simplices.
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.979
 latex_coverage_ratio: 1.0
+doc_brief: "Relativistic corrections for lepton-nucleus scattering in the short-time approximation — 8 sections: Relativistic corrections for lepto; Introduction; Short-time approximation"
 ---
 Next, we examine the convergence of the high-$q$ expansion scheme by comparing the STA(0) and STA(1) calculations for the $^3$He and $^4$He response functions at two values of momentum transfer, namely $q=500$ and $700$ MeV/$c$. The $^3$He ($^4$He) longitudinal and transverse response functions are shown in the top (bottom) panels of Fig. [\[fig:responses_final\]](#fig:responses_final){reference-type="ref" reference="fig:responses_final"}, along with the experimental data. In the case of $^3$He, we also show the Spectral Function results from Ref. [@Andreoli:2021cxo] (orange solid lines).
 

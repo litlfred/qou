@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.975
 latex_coverage_ratio: 0.996
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 []{#subsubsection_gfcwigf label="subsubsection_gfcwigf"} For conserved currents, the spatial integrals of the charge densities are time independent, i.e., in a quantized theory the corresponding charge operators commute with the Hamilton operator. These operators are generators of infinitesimal transformations on the Hilbert space of the theory. The mass eigenstates should organize themselves in degenerate multiplets with dimensionalities corresponding to irreducible representations of the Lie group in question. For the moment, we assume that the dynamical system described by the Hamiltonian does not lead to a spontaneous symmetry breakdown. We will come back to this point later. Which irreducible representations ultimately appear, and what the actual energy eigenvalues are, is determined by the dynamics of the Hamiltonian. For example, SU(2) isospin symmetry of the strong interactions reflects itself in degenerate SU(2) multiplets such as the nucleon doublet, the pion triplet, and so on. Ultimately, the actual masses of the nucleon and the pion should follow from QCD.
 

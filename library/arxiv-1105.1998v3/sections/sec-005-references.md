@@ -8,6 +8,7 @@ pages: 11-11
 source_pdf: 1105.1998v3.pdf
 source_sha256: daf3bffad8eb2749
 toc_source: outline
+doc_brief: "Symmetry, Integrability and Geometry: Methods and Applications — We show a connection formula of the Hahn–Exton q-Bessel function around the origin and the infinity."
 ---
 References
 [1] Birkhoff G.D., The generalized Riemann problem for linear differential equations and the allied problems

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.53
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 There are three natural projection maps $\SymbolPrint{\pi_{12},\pi_{23},\pi_{13}}:\calX_3\to\calX_2$ and $\pi_{12}^*(W)+\pi_{23}^*(W)=\pi_{13}^*(W)$. If we extend the action of $G\times B^2$ on $\calX_2$ to the action of $G\times B^3$ by natural projectors $\pi_{ij}:G\times B^3\to G\times B^2$ then the maps $\pi_{ij}$ become $G\times B^3$-equivariant and hence
 

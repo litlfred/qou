@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.934
 latex_coverage_ratio: 0.966
+doc_brief: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A — This paper concerns the cohomological aspects of Donaldson– Thomas theory for Jacobi algebras and the associated cohomological Hall alge- bra, introduced"
 ---
 []{#cwcfSec label="cwcfSec"} In this section we prove Theorem [\[CWCT\]](#CWCT){reference-type="ref" reference="CWCT"}, which is a categorification of the motivic wall crossing formula ([\[WCI\]](#WCI){reference-type="ref" reference="WCI"}). In Section [\[CWCF\]](#CWCF){reference-type="ref" reference="CWCF"} we will prove that this isomorphism can be realised in terms of multiplication in the cohomological Hall algebra. Even without considering the CoHA we can still prove that there is *some* isomorphism ([\[gthmd\]](#gthmd){reference-type="ref" reference="gthmd"}). The mere existence of this isomorphism is enough for many applications.
 

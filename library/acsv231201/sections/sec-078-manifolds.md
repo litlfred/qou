@@ -8,6 +8,7 @@ pages: 456-461
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
 toc_source: outline
+doc_brief: "Analytic Combinatorics in Several Variables Expanded Second Edition — 98 sections: Front matter; Preface to the second edition; Preface to the first edition"
 ---
 Our ﬁrst two appendices develop the theoretical background necessary to un-
 derstand what it means to represent the series coeﬃcients ar of an analytic

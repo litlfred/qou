@@ -8,6 +8,7 @@ pages: 15-16
 source_pdf: 1006.1099v3.pdf
 source_sha256: 76c1c4173cdee9d8
 toc_source: outline
+doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS — There is a classical relationship in algebraic geometry between a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
 ---
 2.5. A ﬁxed point theorem. Since there are periodic, ﬁxed-point free surface diﬀeomorphisms,
 even when g = 2 Theorem 1.1 does not imply that HF(ˆρ(φ))̸ = 0 for an arbitrary mapping class

@@ -8,6 +8,7 @@ pages: 64-66
 source_pdf: 2209.06973v1.pdf
 source_sha256: cc3393a17c48b9df
 toc_source: outline
+doc_brief: "On the geometry of two state models for the colored Jones polynomial — Using the ﬂow property of the R-matrix deﬁning the colored Jones polynomial, we establish a natural bijection between the set of"
 ---
 Questions and projects
 (1) The colored Jones polynomials of alternating links has been studied in

@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.98
 latex_coverage_ratio: 0.991
+doc_brief: "BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections."
 ---
 In the previous section we defined homological invariants of 3-manifolds ${\mathcal H}_a[M_3]$ as Hilbert spaces of 6d (2,0) theory on $M_3\times D^2\times {\mathbb R}$ where ${\mathbb R}$ is the time direction. It is possible to give another definition that, in a sense, is closer to the definition of instanton [@MR956166] or monopole (Seiberg-Witten) Floer homology of 3-manifolds [@kronheimer2007monopoles] familiar to many topologists. We will mostly follow [@Witten:2011zz], where the detailed discussion can be found.
 

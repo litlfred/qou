@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 1210.6243v1.pdf
 source_sha256: 3ff2f5358b25586e
 toc_source: outline
+doc_brief: "Controlled double-slit electron diﬀraction — Double-slit diﬀraction is a corner stone of quantum mechanics."
 ---
 arXiv:1210.6243v1  [quant-ph]  22 Oct 2012
 Controlled double-slit electron diﬀraction

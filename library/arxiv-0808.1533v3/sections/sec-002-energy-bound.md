@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.97
 latex_coverage_ratio: 1.0
+doc_brief: "The third order helicity of magnetic ﬁelds via link maps — We introduce an alternative approach to the third order helicity of a volume preserving vector ﬁeld B, which leads us to a lower bound for"
 ---
 []{#sec:energy label="sec:energy"}
 

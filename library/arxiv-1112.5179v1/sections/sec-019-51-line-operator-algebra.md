@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.982
 latex_coverage_ratio: 1.0
+doc_brief: "3-Manifolds and 3d Indices — We identify a large class R of three-dimensional N = 2 superconformal ﬁeld the- ories."
 ---
 One real payoff of the 3d/4d construction is an explanation of why the index of the 3d theory satisfies the difference equations built from the operators $(\hat{x}_{\pm}, \hat{p}_{\pm})$, which we are about to identify with line operators. First, we need a simple observation about the OPE of line operators. Consider a setup with two line operators, wrapping $S^1$ and lying at different points $p_1$ and $p_2$ in $\mathcal{G}$, as defined above. Although the positions $p_1$, $p_2$ locally do not matter, the relative order along $\mathcal{G}$ is a topological invariant, as we cannot bring one operator around the other without breaking the supersymmetry preserved by the index. On the other hand, we can consider the OPE of two line operators. It is known that the OPE of two supersymmetric line operators in an abelian $\mathcal{N}=2$ gauge theory is rather simple [@GMNIII]
 

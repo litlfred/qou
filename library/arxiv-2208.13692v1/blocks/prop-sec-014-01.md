@@ -1,1 +1,1 @@
-The C-isogeny class of the Jacobian
+[\[prop: CC-isogeny class of Bring\'s Jacobian\]](#prop: CC-isogeny class of Bring's Jacobian){reference-type="ref" reference="prop: CC-isogeny class of Bring's Jacobian"} can also be strengthened in a different direction.

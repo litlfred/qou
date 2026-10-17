@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.99
 latex_coverage_ratio: 0.985
+doc_brief: "arXiv:math/0606435v2 [math.GT] 10 Oct 2007 — We show that 3-braid links with given (non-zero) Alexander or Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
 The image of the r.h.s. of \eqref{qw0} under \eqref{qw}
 will be some curve in $\bC$ that generically intersects

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.923
 latex_coverage_ratio: 0.992
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials."
 ---
 []{#subsect:Second_Main_Result label="subsect:Second_Main_Result"} It follows from the work of Lassalle -- see Proposition [\[prop:Jack-characters-basis\]](#prop:Jack-characters-basis){reference-type="ref" reference="prop:Jack-characters-basis"} -- that the functions $\mathop{\mathrm{Ch}}_{\mu}^{(\alpha)}$ span linearly the algebra of $\alpha$-polynomial functions denoted by $\Lambda_\star^{(\alpha)}$ (when $\mu$ runs over integer partitions of all sizes). Hence, there exist some rational numbers $g^{(\alpha)}_{\mu,\nu;\pi}$, depending on $\alpha$ such that $$\label{eq:definition-structure-constants}
     \mathop{\mathrm{Ch}}^{(\alpha)}_\mu \cdot \mathop{\mathrm{Ch}}^{(\alpha)}_\nu =\sum_{\substack{\pi \text{ partition} \\ \text{of any size}}} 

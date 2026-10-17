@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.775
 latex_coverage_ratio: 0.935
+doc_brief: "Soft and Supersoft X-ray Sources in Symbiotic Stars 1 — Assuming that soft X-ray sources in symbiotic stars result from strong thermonu- clear runaways, and supersoft X-ray sources from weak"
 ---
 \cite{v92} explained super-soft X-ray
 emissions by steady nuclear burning of hydrogen accreted onto WD.

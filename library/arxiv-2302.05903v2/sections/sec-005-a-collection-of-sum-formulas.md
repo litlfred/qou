@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.934
+doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials Introduction — We elaborate on the recent suggestion to consider averaging of Cauchy"
 ---
 To summarize, we can reproduce the whole collection of the single-Schur sums from [@Mac secs.1.5,3.4,3.5].
 

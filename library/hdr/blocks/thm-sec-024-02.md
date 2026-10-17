@@ -1,1 +1,1 @@
-Let λ = (λ(0),...,λ (d−1))∈P (d,n ). We have that Vλ is an irreducible representation
+Let {ξ0, ξ1, . . . , ξd−1} be the set of all d-th roots of unity (ordered arbitrarily). Let T be

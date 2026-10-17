@@ -8,6 +8,7 @@ pages: 8-13
 source_pdf: 0307092v2.pdf
 source_sha256: de2f7ddec49b2ce6
 toc_source: outline
+doc_brief: "Extended Bloch group and the Cheeger–Chern–Simons class — We deﬁne an extended Bloch group and show it is naturally isomorphic to H3(PSL(2, C)δ; Z)."
 ---
 Parameters for ideal hyperbolic simplices
 In this section we shall interpret bC as a space of parameters for what we call

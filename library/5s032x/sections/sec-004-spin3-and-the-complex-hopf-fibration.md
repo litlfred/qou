@@ -8,6 +8,7 @@ pages: 7-7
 source_pdf: 5S032X.pdf
 source_sha256: 17761383781f7bdc
 toc_source: outline
+doc_brief: "The Standard Model Symmetry and Qubit Entanglement — quantum description."
 ---
 Spin(3) and the Complex Hopf Fibration
 We will now connect the story so far with the formalism in Ref. [28]. Thus, consider matrices of the form

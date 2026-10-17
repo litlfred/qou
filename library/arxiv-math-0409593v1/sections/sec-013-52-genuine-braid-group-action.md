@@ -8,6 +8,7 @@ pages: 14-14
 source_pdf: 0409593v1.pdf
 source_sha256: ad965f5c80838824
 toc_source: outline
+doc_brief: "CATEGORIFICATION OF THE BRAID GROUPS — 19 sections: Front matter; Introduction; Self-equivalences"
 ---
 FxFyFz
 γx,yFz /

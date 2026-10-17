@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.97
 latex_coverage_ratio: 0.975
+doc_brief: "Probing the singularity at the holographic screen via $q$-holography — We study the emergence of q-deformed spacetime in a lower-dimensional gravitational system whose asymptotic region geometrizes"
 ---
 []{#s:probe label="s:probe"}
 

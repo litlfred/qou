@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.969
 latex_coverage_ratio: 0.959
+doc_brief: "Decompositions of derived categories of gerbes and families of Brauer–Severi varieties — It is well known that the category of quasi-coherent sheaves on a gerbe banded by a diagonalizable group"
 ---
 []{#sec:quasi-coher-sheav label="sec:quasi-coher-sheav"} In this section, $\Delta$ will denote a diagonalizable group scheme (over $\mathop{\mathrm{Spec}}\mathbb{Z}$) with character group $A := \mathop{\mathrm{Hom}}_{\mathop{\mathrm{Spec}}\mathbb{Z}}(\Delta, {\ensuremath{\mathbb{G}_{\operatorname{m}}}})$. Recall that $A$ is a finitely generated abelian group. We will usually use multiplicative notation for $A$, except when we identify it with something like the additive group of $\mathbb{Z}$.
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.848
 latex_coverage_ratio: 0.968
+doc_brief: "KPZ limit theorems — One-dimensional interacting particle systems, 1+1 random growth models, and two-dimensional di- rected polymers deﬁne 2d height ﬁelds."
 ---
 The formula of [@Baik-Liu19] is $$\label{eq:PKPZformula}
     F^{\mathrm{pKPZ}}_m(\mathsf{h}; \gamma, \tau)

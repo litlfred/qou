@@ -8,6 +8,7 @@ pages: 13-14
 source_pdf: 0503227v2.pdf
 source_sha256: 4e83adfdef827103
 toc_source: outline
+doc_brief: "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios — Bolthausen used a variation of Stein’s method to give an inductive proof"
 ---
 [AlD]
 D. Aldous and P. Diaconis, Longest increasing subsequences: from patience sorting

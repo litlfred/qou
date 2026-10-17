@@ -8,6 +8,7 @@ pages: 21-21
 source_pdf: 1012.5432v4.pdf
 source_sha256: ec5f6da1f813649e
 toc_source: outline
+doc_brief: "quant-ph Towards Topological Quantum Computation? - — 23 sections: Front matter; A Hamiltonian; Instantons"
 ---
 Fusion
 Similar to regular quantum ﬁeld theory of the collision of two particles in three dimensions,

@@ -8,6 +8,7 @@ pages: 102-102
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
 toc_source: outline
+doc_brief: "Stabilization in the braid groups I: MTWS Introduction — 40 sections: Front matter; Introduction; The problem"
 ---
 The proof of the MTWS
 The machinery which we need to prove Theorem 2, the MTWS, has been set up. In this

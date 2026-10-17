@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "Virial Expansions for Correlation Functions in Canonical Ensemble — The inﬁnite set of coupled integral nonlinear equations for correlation func- tions in the case of classical canonical ensemble is"
 ---
 We consider the 2-particle interaction, which is described by the potential $V_2(x,y)=\phi(|x-y|),\;\phi(0)=+\infty$. For any configuration $\gamma\in\Gamma_0$ an interaction energy is $$\label{U}
 U(\gamma)=U_{\phi}(\gamma):=\sum_{\{x,y\}\subset\gamma}\phi(|x-y|),$$ and interaction $W(\eta; \gamma)$ between particles of configuration $\eta\in\Gamma_0$ with particles of configuration $\gamma\in\Gamma_0$ is $$\label{W}

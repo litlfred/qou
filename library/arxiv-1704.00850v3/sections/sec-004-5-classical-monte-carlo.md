@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.958
 latex_coverage_ratio: 0.981
+doc_brief: "Estimating the spectral gap of a trace-class Markov operator — The utility of a Markov chain Monte Carlo algorithm is, in large part, determined by the size of the spectral gap of the corresponding"
 ---
 []{#MC label="MC"} Consider the Mtd given by $$\label{a} a(u, \cdot) = \int_{S_V}\int_{S_V}
           \pi_{U|V}(\cdot|v') r(v,dv') \pi_{V|U}(v|u) \, \nu(dv) \,, \; u \in S_U \,,$$ where $r(v,\cdot), \, v \in S_V$ is an Mtf on $S_V$ with invariant pdf $\pi_V(\cdot).$ We will show in this section that this form has utility beyond constructing sandwich algorithms. Indeed, the $k$-step Mtd of a DA algorithm (or a sandwich algorithm) can be re-expressed in the form [\[a\]](#a){reference-type="eqref" reference="a"}. This motivates the development of a general method for estimating the integral $\int_{S_U} a(u,u) \,

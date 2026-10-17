@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "Non-cyclotomic fusion categories Introduction — Etingof, Nikshych and Ostrik ask in [7, §2] if every fusion category can be completely deﬁned over a cyclotomic ﬁeld."
 ---
 Let $k$ be a field. An object in an additive category is called simple if it has no non-trivial proper subobjects. An additive category is called semisimple if every object is a direct sum of simple objects (and in particular, every indecomposable object is simple). A category is called idempotent complete (or Karoubian or psuedoabelian) if every idempotent has an image (that is, a subobject which the idempotent factors through). It is easy to see that any idempotent complete additive semisimple category is abelian. A *split semisimple category over $k$* is a semisimple category over $k$ such that every simple object $X$ is split simple, that is $\End{X} = k$. If $k$ is an algebraically closed field, then any semisimple category over $k$ is automatically split.
 

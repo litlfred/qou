@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "Soergel bimodules and Kazhdan-Lusztig polynomials — This paper presents an exposition of Soergel bimodules, the categoriﬁcation of Hecke alge- bras, and their applications to various topics in"
 ---
 \label{app2}
 The \textit{geometric representation} of a Coxeter system $(W,S)$ is a representation $V$ of $W$ wherein $V$ is a real vector space equipped with basis $\{\alpha_s \st s \in S\}$, and bilinear form 

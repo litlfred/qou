@@ -8,6 +8,7 @@ pages: 6-9
 source_pdf: Resur_and_Mld_Calc_D_SAUZIN_HAL.pdf
 source_sha256: b33f24cc76102f33
 toc_source: outline
+doc_brief: "Resurgence and Mould Calculus — 10 sections: Front matter; Introduction; Alien operators. Alien derivations"
 ---
 3.1
 Borel-Laplace summation

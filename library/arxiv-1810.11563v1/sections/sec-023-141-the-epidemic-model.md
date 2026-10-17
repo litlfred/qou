@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.975
 latex_coverage_ratio: 0.98
+doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
 ---
 The best source of confirmation of the $\CC=V$ hypothesis is to perturb the evolution of the black hole, and see if the correspondence  between GR and quantum circuits  continues to hold. For example we may allow some time-dependent perturbations to the CFT Hamiltonian and calculate the effect on the black hole geometry.  At the same time we may study the effects of time-dependent perturbations on the complexity of a quantum circuit. By comparing the two we can confirm the complexity-volume  correspondence. In this context so-called precursor operators are a useful tool.
 

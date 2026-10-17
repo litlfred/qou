@@ -8,6 +8,7 @@ pages: 71-73
 source_pdf: 0203273v3.pdf
 source_sha256: 824715d110e34305
 toc_source: inferred
+doc_brief: "arXiv:math/0203273v3 [math.CT] 12 Oct 2002 — 31 sections: Front matter; Introduction; Alg`ebres `a plusieurs objets"
 ---
 tenant en mesure d’interpr´eter (13.4) comme relation de 2-cocycle de Hochschild
 pour l’alg`ebre K⟨Ob(A)⟩.

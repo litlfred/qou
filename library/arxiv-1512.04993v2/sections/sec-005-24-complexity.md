@@ -8,6 +8,7 @@ pages: 12-14
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
 toc_source: outline
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 system in a general quantum state. Building on the work of Aharonov-Anandan-Bohm,
 Margolus-Levitin, and Lloyd, we conjecture a similar bound on the rate of growth of

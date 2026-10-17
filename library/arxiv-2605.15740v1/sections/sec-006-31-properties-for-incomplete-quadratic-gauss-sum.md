@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.899
 latex_coverage_ratio: 0.91
+doc_brief: "Bailey pairs, Eichler integrals and unified Witten-Reshetikhin-Turaev invariants — In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´e homology"
 ---
 We begin with a general result on an incomplete quadratic Gauss sum. For simplicity, we write $\chi = \chi_{\bm{p}}^{\bm{\ell}}$. Recall that $P:=p_1 p_2 p_3$.
 

@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1901.08945v2.pdf
 source_sha256: df222d76e597057f
 toc_source: outline
+doc_brief: "Decompositions of derived categories of gerbes and families of Brauer–Severi varieties — It is well known that the category of quasi-coherent sheaves on a gerbe banded by a diagonalizable group"
 ---
 arXiv:1901.08945v2  [math.AG]  19 Feb 2019
 DECOMPOSITIONS OF DERIVED CATEGORIES OF GERBES

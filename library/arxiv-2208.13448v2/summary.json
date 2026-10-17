@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2208.13448v2",
  "source_sha256": "8bfa244cf7ca867d",
- "brief": "ON THE COMPUTATION OF THE DIFFERENCE GALOIS GROUPS OF ORDER THREE EQUATIONS — In this paper we consider the problem of computing the diﬀere nce Galois groups of order three equations for a large",
- "extended": "**ON THE COMPUTATION OF THE DIFFERENCE GALOIS GROUPS OF ORDER THREE EQUATIONS**\n\n*THOMAS DREYFUS AND MARINA POULET*\n\n37 pp, 18 sections.\n\n**Abstract.** In this paper we consider the problem of computing the diﬀere nce Galois groups of order three equations for a large class of diﬀerenc e operators including the shift operator (Case S), the q-diﬀerence operator (Case Q), the Mahler operator (Case M) a nd the elliptic case (Case E). We show that the general problem c an be reduced to several ancillary problems. We prove criteria to detect the irreduc ible and imprimitive Galois groups. Finally, we give a suﬃcient condition of diﬀerentia l transcendence of solutions of order three diﬀerence equations. We also compute the diﬀe rence Galois group of an equation suggested by Wadim Zudilin.\n\n**Outline.** 1 Introduction; 2.1 Galois groups; Notations and conventions; 2 Difference algebra; 2.3 From theory to practice; 3 Galois groups of difference systems; 3.1 The reducible case; 3.2 The imprimitive case; 3.3 The primitive case; 4 Galois groups of equations of order one and ; 4.2 Galois groups of diagonal systems; 5 Galois groups of equations of order two; 6.1 Reducible case; 6 Galois groups of equations of order three; 6.2 Imprimitive case; 6.4 Summary; 7 Application to the differential transcendenc; References",
+ "brief": "ON THE COMPUTATION OF THE DIFFERENCE GALOIS GROUPS OF ORDER THREE EQUATIONS — In this paper we consider the problem of computing the diﬀerence Galois groups of order three equations for a large class",
+ "extended": "**ON THE COMPUTATION OF THE DIFFERENCE GALOIS GROUPS OF ORDER THREE EQUATIONS**\n\n*THOMAS DREYFUS AND MARINA POULET*\n\n37 pp, 20 sections.\n\n**Abstract.** In this paper we consider the problem of computing the diﬀerence Galois groups of order three equations for a large class of diﬀerence operators including the shift operator (Case S), the q-diﬀerence operator (Case Q), the Mahler operator (Case M) and the elliptic case (Case E). We show that the general problem can be reduced to several ancillary problems. We prove criteria to detect the irreducible and imprimitive Galois groups. Finally, we give a suﬃcient condition of diﬀerential transcendence of solutions of order three diﬀerence equations. We also compute the diﬀerence Galois group of an equation suggested by Wadim Zudilin.\n\n**Outline.** Front matter; 1 Introduction; 2.1 Galois groups; Notations and conventions; 2 Difference algebra; 2.2 Factorisations of difference operators; 2.3 From theory to practice; 3 Galois groups of difference systems; 3.1 The reducible case; 3.2 The imprimitive case; 3.3 The primitive case; 4 Galois groups of equations of order one and ; 4.2 Galois groups of diagonal systems; 5 Galois groups of equations of order two; 6.1 Reducible case; 6 Galois groups of equations of order three; 6.2 Imprimitive case; 6.4 Summary\n\n**Extracted claims (proposals, not verified).**\n- Theorem: For all t ∈C∗, the diﬀerence Galois group of (1.1) is GL3(C).\n- Theorem 2.1: Let G ⊂GLn(C) be the diﬀerence Galois group over (k, φ) of (2.1). Then,\n- Proposition: s 1.20 and 1.21], see also [DR15, Theorem 2.4].\n- Proposition: \\ref{prop3} then reduces the criterion on $D(G)$ to look at solutions in $\\overline{\\mathbf{k}} $ of linear $\\phi$-difference systems with coefficients in $\\overline{\\mathbf{k}}$.\n- Proposition 6.6: Assume that G is irreducible and primitive.\n- Proposition 6.11: Assume that G is irreducible and primitive. Then, D(G) = SO3(C) if",
  "tokens": {
-  "brief": 48,
-  "extended": 330
+  "brief": 49,
+  "extended": 482
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -27,75 +32,80 @@
   {
    "id": "sec-003-2-difference-algebra",
    "title": "Difference algebra",
-   "pages": "3-7"
+   "pages": "3-6"
   },
   {
-   "id": "sec-004-23-from-theory-to-practice",
+   "id": "sec-004-22-factorisations-of-difference-operators",
+   "title": "Factorisations of difference operators",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-005-23-from-theory-to-practice",
    "title": "From theory to practice",
    "pages": "7-9"
   },
   {
-   "id": "sec-005-3-galois-groups-of-difference-systems",
+   "id": "sec-006-3-galois-groups-of-difference-systems",
    "title": "Galois groups of difference systems",
    "pages": "9-9"
   },
   {
-   "id": "sec-006-31-the-reducible-case",
+   "id": "sec-007-31-the-reducible-case",
    "title": "The reducible case",
    "pages": "9-11"
   },
   {
-   "id": "sec-007-32-the-imprimitive-case",
+   "id": "sec-008-32-the-imprimitive-case",
    "title": "The imprimitive case",
    "pages": "11-19"
   },
   {
-   "id": "sec-008-33-the-primitive-case",
+   "id": "sec-009-33-the-primitive-case",
    "title": "The primitive case",
    "pages": "19-20"
   },
   {
-   "id": "sec-009-4-galois-groups-of-equations-of-order-one-and-di",
+   "id": "sec-010-4-galois-groups-of-equations-of-order-one-and-di",
    "title": "Galois groups of equations of order one and diagonal systems",
    "pages": "20-21"
   },
   {
-   "id": "sec-010-42-galois-groups-of-diagonal-systems",
+   "id": "sec-011-42-galois-groups-of-diagonal-systems",
    "title": "Galois groups of diagonal systems",
    "pages": "21-21"
   },
   {
-   "id": "sec-011-5-galois-groups-of-equations-of-order-two",
+   "id": "sec-012-5-galois-groups-of-equations-of-order-two",
    "title": "Galois groups of equations of order two",
    "pages": "21-22"
   },
   {
-   "id": "sec-012-61-reducible-case",
+   "id": "sec-013-61-reducible-case",
    "title": "Reducible case",
    "pages": "22-23"
   },
   {
-   "id": "sec-013-6-galois-groups-of-equations-of-order-three",
+   "id": "sec-014-6-galois-groups-of-equations-of-order-three",
    "title": "Galois groups of equations of order three",
    "pages": "23-30"
   },
   {
-   "id": "sec-014-62-imprimitive-case",
+   "id": "sec-015-62-imprimitive-case",
    "title": "Imprimitive case",
    "pages": "30-34"
   },
   {
-   "id": "sec-015-64-summary",
+   "id": "sec-016-64-summary",
    "title": "Summary",
    "pages": "34-34"
   },
   {
-   "id": "sec-016-7-application-to-the-differential-transcendence",
+   "id": "sec-017-7-application-to-the-differential-transcendence",
    "title": "Application to the differential transcendence",
    "pages": "34-35"
   },
   {
-   "id": "sec-017-references",
+   "id": "sec-018-references",
    "title": "References",
    "pages": "35-37"
   }
@@ -104,7 +114,8 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles"
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

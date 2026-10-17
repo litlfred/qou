@@ -9,7 +9,7 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1906.12122v2",
+  "title": "Nuclear eﬀective ﬁeld theory: status and perspectives",
   "contains": [
     "library/arxiv-1906.12122v2/sections/sec-000",
     "library/arxiv-1906.12122v2/sections/sec-001",
@@ -44,7 +44,11 @@
     "library/arxiv-1906.12122v2/sections/sec-030",
     "library/arxiv-1906.12122v2/sections/sec-031",
     "library/arxiv-1906.12122v2/sections/sec-032",
-    "library/arxiv-1906.12122v2/sections/sec-033"
+    "library/arxiv-1906.12122v2/sections/sec-033",
+    "library/arxiv-1906.12122v2/sections/sec-034",
+    "library/arxiv-1906.12122v2/sections/sec-035",
+    "library/arxiv-1906.12122v2/sections/sec-036",
+    "library/arxiv-1906.12122v2/sections/sec-037"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -57,7 +61,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1906.12122v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1906.12122v2.pdf",
     "source_sha256": "955e3eda48672e2869a025a83565121851b8ccef1494aeaddac7b4231526460e",
     "pages": 76,

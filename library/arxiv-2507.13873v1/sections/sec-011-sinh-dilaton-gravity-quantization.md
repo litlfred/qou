@@ -8,6 +8,7 @@ pages: 31-44
 source_pdf: 2507.13873v1.pdf
 source_sha256: fa1d38d08dc4976a
 toc_source: outline
+doc_brief: "Probing the singularity at the holographic screen via $q$-holography — We study the emergence of q-deformed spacetime in a lower-dimensional gravitational system whose asymptotic region geometrizes"
 ---
 Sinh dilaton gravity quantization
 In order to be self-contained, we follow here a more direct approach based on the canonical

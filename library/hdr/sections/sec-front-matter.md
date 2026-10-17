@@ -8,6 +8,7 @@ pages: 1-16
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
 toc_source: outline
+doc_brief: "Hecke algebras, generalisations and representation theory — 30 sections: Front matter; Algebras of Finite Type; Blocks"
 ---
 HAL Id: tel-01411063
 https://hal.science/tel-01411063v1

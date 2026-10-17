@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2007.15570v1",
  "source_sha256": "6e46f4346a29fd83",
- "brief": "A quantum Monte Carlo based approach to intranuclear cascades — 2 sections: Front matter; A quantum Monte Carlo based approa",
- "extended": "**A quantum Monte Carlo based approach to intranuclear cascades**\n\n*Joshua Isaacson a, William I. Jay a, Alessandro Lovato b,c, Pedro A. N. Machado a, Noemi Rocco a,b*\n\n14 pp, 2 sections.\n\n**Outline.** Front matter; A quantum Monte Carlo based approach to intran",
+ "brief": "A quantum Monte Carlo based approach to intranuclear cascades — 3 sections: Front matter; A quantum Monte Carlo based approa; A Nuclear configuration",
+ "extended": "**A quantum Monte Carlo based approach to intranuclear cascades**\n\n*Joshua Isaacson a, William I. Jay a, Alessandro Lovato b,c, Pedro A. N. Machado a, Noemi Rocco a,b*\n\n14 pp, 3 sections.\n\n**Outline.** Front matter; A quantum Monte Carlo based approach to intran; A Nuclear configuration",
  "tokens": {
-  "brief": 31,
-  "extended": 65
+  "brief": 37,
+  "extended": 71
  },
  "sections": [
   {
@@ -17,7 +17,12 @@
   {
    "id": "sec-000-a-quantum-monte-carlo-based-approach-to-intranuc",
    "title": "A quantum Monte Carlo based approach to intranuclear cascades",
-   "pages": "1-14"
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-a-nuclear-configuration",
+   "title": "A Nuclear configuration",
+   "pages": "2-14"
   }
  ],
  "provenance": {

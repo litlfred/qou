@@ -8,6 +8,7 @@ pages: 38-38
 source_pdf: mod-phi-convergence-approximation-of-discrete-measures-and-20yc5c6q3n.pdf
 source_sha256: c563cc999000e75d
 toc_source: outline
+doc_brief: "ANNALES DE L’INSTITUT FOURIER — 26 sections: Front matter; Introduction; Poisson approximation of lattice-v"
 ---
 In this section, we apply our main Theorems 3.3, 3.6 and 3.11 to vari-
 ous one-dimensional examples, most of them coming from number theory

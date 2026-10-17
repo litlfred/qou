@@ -8,6 +8,7 @@ pages: 3-8
 source_pdf: 0601458v1.pdf
 source_sha256: ef34611620cfd0bd
 toc_source: outline
+doc_brief: "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS — Interest in combinatorial interpretations of mathematical entities stems from the convenience of the concrete models they provide."
 ---
 the categoriﬁcation of a certain ring of power series. These structure types play
 an important role in enumerative combinatorics, in which “generating functions” of

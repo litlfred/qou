@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 0.972
+doc_brief: "The Mukai pairing, I: a categorical approach — We study the Hochschild homology of smooth spaces, emphasizing the importance of a pairing which generalizes Mukai’s pairing on the cohomology of K3"
 ---
 One reading of the Hirzebruch-Riemann-Roch Theorem is that it says that the usual Chern character map $\mathop{\mathrm{ch}}\colon \mathop{\mathrm{K}}_0\to \mathsf H^\bullet(X)$ is a map of inner product spaces when $\mathop{\mathrm{K}}_0(X)$ is equipped with the Euler pairing (see below) and $\mathsf H^\bullet(X)$ is equipped with the pairing $\langle x_1,x_2\rangle:=(x_1\cup x_2 \cup \mathop{\mathrm{td}}_X)\cap [X]$. It is shown in [@CalHH2] that the Hochschild homology Chern character composed with the Hochschild-Kostant-Rosenberg map $I_{\text{HKR}}$ gives the usual Chern character: $$\mathop{\mathrm{K}}_0\xrightarrow{\mathop{\mathrm{ch}}}\mathop{\mathrm{HH}}_0(X)\xrightarrow{I_\text{HKR}}
 \bigoplus_p \mathsf H^{p,p}(X).$$ Here we show that the Hochschild homology Chern character is an inner-product map when $\mathop{\mathrm{HH}}_\bullet(X)$ is equipped with the Mukai pairing.

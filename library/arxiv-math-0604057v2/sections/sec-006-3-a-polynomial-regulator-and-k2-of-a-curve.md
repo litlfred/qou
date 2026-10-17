@@ -8,6 +8,7 @@ pages: 3-3
 source_pdf: 0604057v2.pdf
 source_sha256: 649fad141dc34eb9
 toc_source: outline
+doc_brief: "VOLUME CONJECTURE, REGULATOR AND SL2(C)-CHARACTER VARIETY — In this paper, by using the regulator map of Beilinson-Deligne, we show that the quan- tization condition posed by Gukov is true for the"
 ---
 3. A-polynomial, regulator and K2 of a curve
 In this section, we brieﬂy recall the generalized volume conjecture. Using the regulator map of a

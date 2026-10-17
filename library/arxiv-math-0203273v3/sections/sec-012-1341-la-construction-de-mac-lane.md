@@ -8,6 +8,7 @@ pages: 67-70
 source_pdf: 0203273v3.pdf
 source_sha256: 824715d110e34305
 toc_source: inferred
+doc_brief: "arXiv:math/0203273v3 [math.CT] 12 Oct 2002 — 31 sections: Front matter; Introduction; Alg`ebres `a plusieurs objets"
 ---
 (A, •), on associe une petite cat´egorie mono¨ıdale stricte (Astr, ⊤), et deux foncteurs
 mono¨ıdaux B

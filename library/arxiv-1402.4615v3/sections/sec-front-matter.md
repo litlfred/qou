@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1402.4615v3.pdf
 source_sha256: b6e7c795cd1a7cd2
 toc_source: outline
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials."
 ---
 arXiv:1402.4615v3  [math.PR]  3 Feb 2015
 GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND

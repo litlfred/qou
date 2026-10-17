@@ -1,1 +1,1 @@
-Let Ω⊆Rd be open non-empty equipped with Lebesgue measure. LetA be the
+Let Ω⊆Rd be open non-empty equipped with Lebesgue measure. Let A be the

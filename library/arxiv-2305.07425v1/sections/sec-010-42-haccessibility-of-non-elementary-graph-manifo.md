@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.923
 latex_coverage_ratio: 0.993
+doc_brief: "LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS — The set of equivalence classes of cobounded actions of a group G on diﬀerent hyperbolic metric spaces carries a natural partial order."
 ---
 []{#sec:NPCgraph label="sec:NPCgraph"} Let $M$ be a 3-dimensional non-elementary graph manifold with Seifert fibered pieces $M_1,\ldots,M_k$ in its torus decomposition. There is an induced graph-of-groups structure $\mathcal{G}$ on $\pi_1(M)$ with underlying graph $\Gamma$ as follows. There is a vertex of $\Gamma$ for each $M_i$, with vertex group $\pi_1(M_{i})$. Each edge group is $\mathbb{Z}^2$, the fundamental group of a torus in the decomposition. The edge monomorphisms come from the two different gluings of the torus into the two adjacent Seifert fibered components. With this graph of groups structure, $\pi_1(M)$ is a Croke-Kleiner admissible group.
 

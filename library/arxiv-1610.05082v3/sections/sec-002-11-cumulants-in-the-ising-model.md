@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.853
 latex_coverage_ratio: 0.919
+doc_brief: "WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL — Weighted dependency graphs have been recently introduced by the second author, as a toolbox to prove central limit theorems."
 ---
 The Ising model is a mathematical model of ferro-magnetism in statistical physics. It was introduced in 1920 by Wilhelm Lenz who gave it as a problem to his Ph.D. student Ernst Ising [@Ising]. It can be defined on any finite graph, but we restrict ourselves to finite subsets $\Lambda$ of $\mathbb{Z}^d$. For any lattice site $i \in \Lambda$, there is a random variable $\sigma_i$ which is equal to either $1$ or $-1$ and represents the *spin* at site $i$. A *spin configuration* $\omega = (\sigma_i (\omega))_{i \in \Lambda}$ is an assignment of spins to every site of $\Lambda$.
 

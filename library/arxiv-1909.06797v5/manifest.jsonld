@@ -11,6 +11,7 @@
   ],
   "title": "Quantum Mechanics of Plancherel Growth",
   "contains": [
+    "library/arxiv-1909.06797v5/sections/sec-front-matter",
     "library/arxiv-1909.06797v5/sections/sec-000",
     "library/arxiv-1909.06797v5/sections/sec-001",
     "library/arxiv-1909.06797v5/sections/sec-002",
@@ -22,7 +23,9 @@
     "library/arxiv-1909.06797v5/sections/sec-008",
     "library/arxiv-1909.06797v5/sections/sec-009",
     "library/arxiv-1909.06797v5/sections/sec-010",
-    "library/arxiv-1909.06797v5/sections/sec-011"
+    "library/arxiv-1909.06797v5/sections/sec-011",
+    "library/arxiv-1909.06797v5/sections/sec-012",
+    "library/arxiv-1909.06797v5/sections/sec-013"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -47,8 +50,8 @@
       "stamp_date": "14 Apr 2021"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

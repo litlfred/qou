@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.949
 latex_coverage_ratio: 0.995
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 According to the holographic principle all physics is encoded at the boundaries of spacetime.  A good deal is known in the context of AdS/CFT about this encoding as long as we restrict our attention to the region outside horizons. Very much less is known about the holographic encoding  of physics behind black hole horizons. The  purpose of this paper is to explore a proposal for how properties of the black hole interior are represented on the holographic boundary. We propose that the quantum complexity of the boundary state is equal to the classical action of a spacetime region that extends deep inside the horizon. This region---which we call the Wheeler-DeWitt patch---is defined as the bulk domain of dependence of a bulk Cauchy slice anchored at the boundary state. For the case of one- and two-sided black holes in Anti-de Sitter space, the geometry is shown in Fig.~\ref{fig:CVduality}. Quantum complexity $\CC$ is the minimum number of elementary operations (quantum gates) needed to produce the boundary state of interest from a reference state. Calling the action of the Wheeler-DeWitt patch $\CA$, our proposal is \cite{Brown:2015bva}
 \be

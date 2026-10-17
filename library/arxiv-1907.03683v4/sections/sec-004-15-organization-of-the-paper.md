@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.89
 latex_coverage_ratio: 1.0
+doc_brief: "EXPLICIT DESCRIPTION OF CHRISTOFFEL DEFORMATIONS AND — Christoﬀel deformation of a measure on the real line consists of multipying this measure by a squared polynomial having its roots in R."
 ---
 The paper is organized as follows. In section [\[sec2\]](#sec2){reference-type="ref" reference="sec2"}, we collect definitions and basic properties of Christoffel deformations, orthogonal polnomial ensembles and determinantal point processes, and formally state that such deformations contain the description of their Palm measure.
 

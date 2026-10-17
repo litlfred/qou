@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/black-samson-phd2010sp/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "3. The Temperley-Lieb Algebra",
+  "pageStart": 22,
+  "pageEnd": 29,
+  "contains": [
+    "library/black-samson-phd2010sp/blocks/prose-sec-003",
+    "library/black-samson-phd2010sp/blocks/def-sec-003-01",
+    "library/black-samson-phd2010sp/blocks/lem-sec-003-02",
+    "library/black-samson-phd2010sp/blocks/thm-sec-003-03",
+    "library/black-samson-phd2010sp/blocks/thm-sec-003-04",
+    "library/black-samson-phd2010sp/blocks/def-sec-003-05",
+    "library/black-samson-phd2010sp/blocks/def-sec-003-06",
+    "library/black-samson-phd2010sp/blocks/lem-sec-003-07",
+    "library/black-samson-phd2010sp/blocks/lem-sec-003-08",
+    "library/black-samson-phd2010sp/blocks/cor-sec-003-09"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/black-samson-phd2010sp/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/black-samson-phd2010sp/manifest.jsonld",
+  "provenance": "ingested"
+}

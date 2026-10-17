@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.958
 latex_coverage_ratio: 0.969
+doc_brief: "Fiber Functors of Equivariantizations of Finite Tensor Categories — Let G be a finite group acting on a finite tensor category C."
 ---
 ::: theorem
 []{#thm:main_classification label="thm:main_classification"} Let $G$ act on a finite tensor category $\mathcal{C}$. Fiber functors on $\mathcal{C}^G$ are in bijection with conjugacy classes of pairs $(H,\mathcal{M})$ such that:

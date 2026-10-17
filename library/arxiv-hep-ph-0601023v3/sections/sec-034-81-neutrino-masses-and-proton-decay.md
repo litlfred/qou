@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.972
 latex_coverage_ratio: 0.992
+doc_brief: "arXiv:hep-ph/0601023v3 23 Apr 2007 — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non - su- persymmetric uniﬁcation"
 ---
 As pointed out above an important issue concerns the implications of neutrino masses and mixings
  for proton decay lifetime.  A grand unified model such as $SO(10)$  has a 

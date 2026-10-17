@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.97
 latex_coverage_ratio: 0.767
+doc_brief: "Gentle introduction to Soergel bimodules I: The basics — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules."
 ---
 In Example A we never used that $m_{sr}=3$ in our calculations. The point is that if $m_{sr}\neq 3$ then $b_{s}b_{r}b_{s}-b_{s}\neq b_{r}b_{s}b_{r}-b_{r}$. In our baby example **(B)** we have $m_{sr}=4.$ For the same reasons as before we have
 

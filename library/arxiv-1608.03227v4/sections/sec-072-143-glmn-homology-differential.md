@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.939
 latex_coverage_ratio: 0.98
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 Recall that the vector bundle $\calB_n^\vee$ over $\widetilde{\Hilb}^{free}_{1,n}$ is a vector bundle with the fiber $V$ over the point $(X,Y,v)$ where $V=\CC^n$ and $v$ is the cyclic vector. Define a section $\varphi_{m|n}$ of $\calB_n^\vee$ with the value $X^mY^n v\in V$ at the fiber at the point $(X,Y,v)$. Contraction with this section $$i_{\varphi_{m|n}}: \Lambda^\bullet \calB_n\to \Lambda^{\bullet-1}\calB_n.$$
 

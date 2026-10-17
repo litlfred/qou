@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.875
 latex_coverage_ratio: 0.977
+doc_brief: "L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS — We study (quasi-)cohomological properties through an analysis of quantum Markov semi-groups."
 ---
 The following proposition allows to construct cocycles at the expense of changing the bimodule. We will remedy this change by using Schatten-$\mathcal{S}_p$ properties below.
 

@@ -1,1 +1,1 @@
-Fix ξ∈K3(K). TheHR-moduleHR,ξ consists of collections
+Fix ξ ∈K3(K). The HR-module HR,ξ consists of collections

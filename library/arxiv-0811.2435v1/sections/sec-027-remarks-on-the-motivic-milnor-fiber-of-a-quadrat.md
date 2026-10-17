@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.995
 latex_coverage_ratio: 0.98
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 47 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 Although the theory of motivic Milnor fiber was defined over a field of characteristic zero, an essential part of considerations below has meaning over an arbitrary field $\k, char\,\k\ne 2$ if we replace the notion of motivic Milnor fiber by its $l$-adic version.
 

@@ -8,6 +8,7 @@ pages: 29-30
 source_pdf: s00209-021-02825-4.pdf
 source_sha256: 85ca5ec21f42a988
 toc_source: outline
+doc_brief: "A representation theoretic explanation of the Borcea–Brändén characterization — In 2009, Borcea and Brändén characterized all linear operators on multivariate polynomials which preserve the property"
 ---
 As in the complex case, we now obtain the Borcea–Brändén weak real stability character-
 ization as a corollary to our strong real stability characterization given in Theorem 7.2. To

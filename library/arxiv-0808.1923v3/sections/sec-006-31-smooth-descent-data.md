@@ -8,6 +8,7 @@ pages: 11-12
 source_pdf: 0808.1923v3.pdf
 source_sha256: 3c53f7c0fd9acf89
 toc_source: outline
+doc_brief: "Connections on Non-Abelian Gerbes and their Holonomy — We introduce an axiomatic framework for the parallel transport of connections on gerbes."
 ---
 (d) A descent object (triv, g) is called smooth, if the functor
 triv : P1(X)

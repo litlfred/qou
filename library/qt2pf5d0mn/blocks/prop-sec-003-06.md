@@ -1,1 +1,1 @@
-1. Trl(·) is a linear functional on Hom(A,A ).
+1. Trl(·) is a linear functional on Hom(A, A).

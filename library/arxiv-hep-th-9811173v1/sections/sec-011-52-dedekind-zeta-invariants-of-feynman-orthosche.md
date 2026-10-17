@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.987
 latex_coverage_ratio: 0.909
+doc_brief: "arXiv:hep-th/9811173v1 19 Nov 1998 — We identify 998 closed hyperbolic 3-manifolds whose volumes are rationally related to Dedekind zeta values, with coprime integers a and b giving a b vol(M) ="
 ---
 Let us try to disentangle this remarkable circumstance from its physical origin. What is the common characteristic of the Davydychev--Delbourgo (DD) hyperbolic tetrahedron at those values of the physical quantities which gave the volumes of links?
 

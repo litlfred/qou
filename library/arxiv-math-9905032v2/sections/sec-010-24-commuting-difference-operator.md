@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.968
+doc_brief: "arXiv:math/9905032v2 [math.CO] 11 Sep 1999 — We consider the asymptotics of the Plancherel mea- sures on partitions of n as n goes to inﬁnity."
 ---
 Consider the difference operators $\Delta$ and $\nabla$ on the lattice $\mathbb{Z}$, $$(\Delta f)(k)=f(k+1)-f(k)\,, \qquad (\nabla f)(k)=f(k)-f(k-1)\,.$$ Note that $\nabla=-\Delta^*$ as operators on $\ell^2(\mathbb{Z})$. Consider the following second order difference Sturm--Liouville operator
 

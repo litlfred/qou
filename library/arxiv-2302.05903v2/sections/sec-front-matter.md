@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2302.05903v2.pdf
 source_sha256: 9a17abd36cc8a317
 toc_source: outline
+doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials Introduction — We elaborate on the recent suggestion to consider averaging of Cauchy"
 ---
 MIPT/TH-06/22
 FIAN/TD-03/22

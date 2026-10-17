@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 0.964
+doc_brief: "CATEGORIFICATION OF THE BRAID GROUPS — 19 sections: Front matter; Introduction; Self-equivalences"
 ---
 ###  {#P1}
 

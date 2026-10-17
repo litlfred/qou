@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.973
 latex_coverage_ratio: 0.989
+doc_brief: "Chiral Low-Energy Constants : Status and Prospects ∗ — 6 sections: Front matter; Introduction; Tools : Large-NC and QCD asymptoti"
 ---
 As illustrated in the ${\cal O}(p^4)$ case \cite{Ecker:1988te,Ecker:1989yg} a procedure to systematically 
 disclose the structure of the resonance contributions to the LECs in $\chi PT$ is available. 

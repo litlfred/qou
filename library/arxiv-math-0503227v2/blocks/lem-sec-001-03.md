@@ -1,0 +1,1 @@
+[\[identity\]](#identity){reference-type="ref" reference="identity"} is a useful identity. Although a combinatorial proof can be given using properties of Schur functions, we defer combinatorial arguments to the more general setting of Jack polynomials in Section [\[jack\]](#jack){reference-type="ref" reference="jack"} and give an algebraic proof.

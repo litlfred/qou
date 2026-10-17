@@ -8,6 +8,7 @@ pages: 15-19
 source_pdf: 2406.02111v3.pdf
 source_sha256: d7be0c3f08b4d42a
 toc_source: outline
+doc_brief: "Categorical Quantum Volume Operator — 11 sections: Categorical Quantum Volume Operato; Introduction; Quantum tetrahedron"
 ---
 man and Ramona Wolf for an interesting exchange. SM and
 GKB thank Sundance Bilson-Thompson for illuminating dis-

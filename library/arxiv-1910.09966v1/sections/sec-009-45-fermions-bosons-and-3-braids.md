@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.768
 latex_coverage_ratio: 1.0
+doc_brief: "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics — In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds."
 ---
 In the previous subsection, we identified the hyperbolic knot complement with a fermion and the torus bundle between them as gauge bosons. The first natural question is then: which knot is related to a fermion like the electron? However, this question is meaningless in our approach. The knot/link complements are induced from the singularities of the branching set of the 4-fold branched covering of the K3 surface. However, these singularities are another expression of the change of the branching set of the 3-manifolds. With other words: the branching set, a knot or link, of a 3-manifold is not unique. There are transformations of the branching sets representing the same 3-manifold. Therefore, these complements are not uniquely connected to particles/fermions. Later, we will see that the knots represent mainly the state. However, what are the invariant properties? For that purpose, we will study the branched covering of the knot/link complement to understand the invariant properties.
 

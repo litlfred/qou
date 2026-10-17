@@ -8,6 +8,7 @@ pages: 33-35
 source_pdf: S0894-0347-00-00337-4.pdf
 source_sha256: 1c6848281fc2804c
 toc_source: outline
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY S 0894-0347(00)00337-4 — 21 sections: Front matter; Plancherel measures; Introduction"
 ---
 [1] D. Aldous and P. Diaconis, Hammersley’s interacting particle process and longest increasing
 subsequences, Prob. Theory and Rel. Fields, 103, 1995, 199–213. MR 96k:60017

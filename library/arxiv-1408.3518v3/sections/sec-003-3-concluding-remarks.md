@@ -8,6 +8,7 @@ pages: 13-15
 source_pdf: 1408.3518v3.pdf
 source_sha256: cf18585b886587c7
 toc_source: outline
+doc_brief: "On Augmentation Algorithms for Linear and Integer-Linear Programming: From Edmonds-Karp to Bland and Beyond — 5 sections: Front matter; Introduction.; Our Contributions"
 ---
 Through the notion of Graver basis, we have obtained extensions of
 classical results of Bland, Edmonds, and Karp. Our new version applies now to the case of integer-

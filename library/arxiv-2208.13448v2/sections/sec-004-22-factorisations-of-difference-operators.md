@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.896
 latex_coverage_ratio: 0.966
+doc_brief: "ON THE COMPUTATION OF THE DIFFERENCE GALOIS GROUPS OF ORDER THREE EQUATIONS — In this paper we consider the problem of computing the diﬀerence Galois groups of order three equations for a large class"
 ---
 \label{secfact}
 In this subsection, we focus on the reducible difference operators and make the relation with the reducible Galois groups and the Riccati equation.  

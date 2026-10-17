@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.988
 latex_coverage_ratio: 0.984
+doc_brief: "arXiv:math/0606435v2 [math.GT] 10 Oct 2007 — We show that 3-braid links with given (non-zero) Alexander or Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
 We extend the scope of the previous results to the
 Brandt-Lickorish-Millett-Ho polynomial. The main aim here is to prove

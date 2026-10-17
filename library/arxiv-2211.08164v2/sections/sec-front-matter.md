@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2211.08164v2.pdf
 source_sha256: aff9ff3ef5ac28be
 toc_source: outline
+doc_brief: "INFINITELY MANY RIEMANN SURFACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS — In this short note, we prove the existence of inﬁnitely many pairwise non-isomorphic, non-hyperelliptic Riemann"
 ---
 arXiv:2211.08164v2  [math.AG]  16 Apr 2024
 INFINITELY MANY RIEMANN SURFACES WITH A

@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0405258v2.pdf
 source_sha256: dbd6bf5a94deebaf
 toc_source: outline
+doc_brief: "SECOND ORDER FREENESS AND FLUCTUATIONS OF RANDOM MATRICES: II. UNITARY RANDOM MATRICES — We extend the relation between random matrices and free probability theory from the level of expectations to"
 ---
 arXiv:math/0405258v2  [math.OA]  27 Jun 2005
 SECOND ORDER FREENESS AND FLUCTUATIONS

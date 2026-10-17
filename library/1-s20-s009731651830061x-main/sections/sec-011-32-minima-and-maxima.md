@@ -8,6 +8,7 @@ pages: 16-18
 source_pdf: 1-s2.0-S009731651830061X-main.pdf
 source_sha256: 8d591fe7f1673c52
 toc_source: outline
+doc_brief: "Fischer, Constant term formulas for refined enumerations of Gog and Magog trapezoids (JCTA 158, 2018, 560–604) — alternating sign matrices, plane partitions, constant-term methods."
 ---
 3.2. Minima and maxima
 In order to involve the number of minima and the number of maxima in the Gog-

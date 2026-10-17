@@ -8,6 +8,7 @@ pages: 15-16
 source_pdf: 1801.04409v4.pdf
 source_sha256: db61d011e3775aca
 toc_source: outline
+doc_brief: "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES — We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury."
 ---
 finite groups in characteristic p.
 4.1. The result. Let char(k) = p > 0. Let G be a ﬁnite group, and

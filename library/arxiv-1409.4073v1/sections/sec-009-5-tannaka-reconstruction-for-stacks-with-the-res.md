@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.724
 latex_coverage_ratio: 0.951
+doc_brief: "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION — We introduce “sheaﬁﬁcation” functors from categories of (lax monoidal) linear functors to categories of quasi-coherent sheaves (of algebras) of"
 ---
 ::: defn
 A (contravariant) monoidal functor $\Omega\colon\catC\arr\catD$ between symmetric monoidal categories is called *strong* if the maps $$\Omega_{V}\otimes\Omega_{W}\arr\Omega_{V\otimes W}$$ are isomorphisms for all $V,W\in\catC$ and the map $J\arr F_{I}$ is an isomorphism, where $I$ and $J$ are the unities of $\catC$ and $\catD$ respectively.

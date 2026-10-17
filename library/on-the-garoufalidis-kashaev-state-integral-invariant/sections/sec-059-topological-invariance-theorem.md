@@ -8,6 +8,7 @@ pages: 56-58
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
 toc_source: outline
+doc_brief: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT — 63 sections: Front matter; ACKNOWLEDGMENTS; ABSTRACT"
 ---
 Topological Invariance Theorem
 Theorem 9 (Topological Invariance). Let M be a compact, oriented 3-manifold with

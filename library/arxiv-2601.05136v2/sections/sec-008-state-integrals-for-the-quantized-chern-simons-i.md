@@ -8,6 +8,7 @@ pages: 9-9
 source_pdf: 2601.05136v2.pdf
 source_sha256: cee15456257d3028
 toc_source: outline
+doc_brief: "State integrals for the quantized SL 2 ( C ) Chern-Simons invariant — Previous work of the author and N."
 ---
 8
 [FKV01] L. D. Faddeev, R. M. Kashaev, and A. Y.

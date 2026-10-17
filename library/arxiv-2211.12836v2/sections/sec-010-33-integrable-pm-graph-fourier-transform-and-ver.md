@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.953
 latex_coverage_ratio: 0.921
+doc_brief: "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY — We study a class of commuting Markov kernels whose simplest element describes the movement of k particles on a discrete circle of size n"
 ---
 []{#sec:integrable_graph label="sec:integrable_graph"} In this section, we assume that $A$ is diagonalizable over $\mathbb{C}$. As a direct consequence of commutativity, all $s_v, \, v\in V$ are diagonalizable. We denote by $\{u^{(i)},i=0,\ldots,|V|-1\}$ a basis of right eigenvectors and $\{w^{(i)},i=0,\ldots,|V|-1\}$ the dual basis of left eigenvectors normalized so that $w^{(i)}(v_0)=1$ (as we will see in the next lemma, any eigenvector has a nonzero coordinate along $e_{v_0}$). We suppose that $u^{(0)}=h^r$ (and thus $w^{(0)}=h^l$). Finally, we denote by $\theta_v(i)$ the eigenvalue of $s_v$ on $u^{(i)}$, so that $\overline{\theta_v(i)}$ is the eigenvalue of $s_v$ on $w^{(i)}$). As in Lemma [\[lem:Perron_sv\]](#lem:Perron_sv){reference-type="ref" reference="lem:Perron_sv"}, the coordinates of $w^{(i)}$ along $\mathcal{B}_0$ are actually given by the eigenvalues of the family $s_v$.
 

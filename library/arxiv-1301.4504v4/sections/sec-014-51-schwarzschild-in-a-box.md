@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 0.983
+doc_brief: "Quantum Computation vs. Firewalls — In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue"
 ---
 In order for Alice to have any chance of doing the AMPS experiment given our claim of exponential decoding time, she will clearly need some way of slowing down the evaporation of the black hole. The simplest thing she could imagine is letting the black hole become old and then putting it inside of some sort of reflecting box to prevent it from evaporating.
 

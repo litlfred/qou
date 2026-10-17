@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.973
 latex_coverage_ratio: 0.986
+doc_brief: "On the number of hyperbolic 3 -manifolds of a given volume Craig Hodgson and Hidetoshi Masai — The work of Jørgensen and Thurston shows that there is a ﬁnite number N(v) of orientable hyperbolic"
 ---
 []{#const label="const"} We start with the graph with $2n$ vertices shown in Figure [1](#fig.source){reference-type="ref" reference="fig.source"}. This graph is obtained by applying the gluing move in Lemma [\[Vol\]](#Vol){reference-type="ref" reference="Vol"} $n+1$ times to $W_{2n}$.
 

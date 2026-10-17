@@ -1,0 +1,1 @@
+[\[r9\]](#r9){reference-type="ref" reference="r9"} implies that for all $m\in \modN$, $J_M\mod (q^m-1)$, is of cyclotomic finite type. It follows that for all $\zeta \in \calZ$, the WRT invariant $\tau _\zeta (M)$ is of cyclotomic finite type.

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 1.0
+doc_brief: "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B →C is an exact"
 ---
 In the classification of (e.g. pointed) Hopf algebras $H$ the strategy in the Andruskiewisch-Schneider program \cite{AS10} is to consider the coradical $H_0$ (which is assumed to be a Hopf algebra, for example a group ring) and classify the possible Nichols algebras $R$, and then obtain $H$ as a lifting of $\mathrm{gr}(H)=R\#H_0$. It is an important question to determine whether this lifting is a $2$-cocycle twist, and the observation is that this holds in almost all cases \cite{AGI19}. \\
 

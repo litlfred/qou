@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.978
+doc_brief: "Fiber Functors of Equivariantizations of Finite Tensor Categories — Let G be a finite group acting on a finite tensor category C."
 ---
 A *fiber functor* on a finite tensor category $\mathcal{C}$ is an exact faithful tensor functor $F:\mathcal{C}\to\mathop{\mathrm{Vec}}_{{\Bbbk}}$. We use the monoidal constraints $$F_2:F(X)\otimes F(Y)\xrightarrow{\sim}F(X\otimes Y),
 \qquad

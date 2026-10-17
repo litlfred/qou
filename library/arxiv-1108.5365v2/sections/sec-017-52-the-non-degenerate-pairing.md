@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.731
 latex_coverage_ratio: 0.934
+doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL + — We give complete detail of the description of the GNS representation of the quantum plane A and its dual ˆ A as"
 ---
 \label{sec:Dual:pairing}
 Recall that a Hopf pairing between two Hopf algebras $\cA$ and $\cA^*$ is a non-degenerate pairing such that

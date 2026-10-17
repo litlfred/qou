@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.951
 latex_coverage_ratio: 0.98
+doc_brief: "The Mukai pairing, I: a categorical approach — We study the Hochschild homology of smooth spaces, emphasizing the importance of a pairing which generalizes Mukai’s pairing on the cohomology of K3"
 ---
 []{#subsec:Serretrace label="subsec:Serretrace"} If $X$ is a space then we consider the functor $$\mathsf{S}\colon\mathbf{D}(X)\to \mathbf{D}(X);\qquad {\mathscr E}\mapsto \omega_X[\dim
 X]\otimes {\mathscr E},$$ where $\omega_X$ is the canonical line bundle of $X$. Serre duality then gives natural, bifunctorial isomorphisms $$\eta_{{\mathscr E},{\mathscr F}}\colon\mathop{\mathrm{Hom}}_{\mathbf{D}(X)}({\mathscr E}, {\mathscr F}) \stackrel{\sim}{\longrightarrow}

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.915
 latex_coverage_ratio: 0.97
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 []{#ssec: eq push f label="ssec: eq push f"} Let $S=\CC[\calZ]$ and Lie algebra $\frh$ acts on $\calZ$. Let us assume that $R=S/I$ where $I=(f_1,\dots,f_n)$ and functions $f_i$ form a regular sequence in $S$ and $I$ is $\frh$-invariant. Let $\calZ_0=\mathrm{Spec}(R)$. The Koszul complex $K(I)=(\Lambda^\bullet W\otimes \CC[\calZ],d_K)$, $W=\CC^n$ is $\frh$-equivariant and has homologies only in degree $0$. Let $w\in R^\frh$ and $W\in S^\frh$ such that $W-w\in I$. Let us choose $\calF=(M,D,\partial)\in \MFs_\frh(\calZ_0,w)$, $M=S^k$ then we can construct a matrix factorization ${}^\frh j_*(\calF)\in \MFs_\frh(\calZ,W)$ in two steps.
 

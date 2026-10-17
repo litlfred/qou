@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1907.00949v2.pdf
 source_sha256: 865defaa34bf42be
 toc_source: outline
+doc_brief: "OPTIMIZATION ON FLAG MANIFOLDS — A ﬂag is a sequence of nested subspaces."
 ---
 OPTIMIZATION ON FLAG MANIFOLDS
 KE YE, KEN SZE-WAI WONG, AND LEK-HENG LIM

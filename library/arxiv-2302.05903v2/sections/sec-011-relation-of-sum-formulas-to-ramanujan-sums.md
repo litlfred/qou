@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.962
 latex_coverage_ratio: 1.0
+doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials Introduction — We elaborate on the recent suggestion to consider averaging of Cauchy"
 ---
 Another amusing fact about the two nice cases ([\[0powerdR\]](#0powerdR){reference-type="ref" reference="0powerdR"}) and ([\[1powerdR\]](#1powerdR){reference-type="ref" reference="1powerdR"}) is their possible relation to the celebrated Ramanujan sums [@Ram] $$\begin{aligned}
 c_{m,k}:= \sum_{(a,m)=1}^k e^{\frac{2\pi i ak}{m}}

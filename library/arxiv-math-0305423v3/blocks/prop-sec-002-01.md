@@ -1,0 +1,1 @@
+\ref{1strelate} shows that the hypothesis needed to apply the Stein method bound are satisfied. It also tells us that $W$ is an eigenvector for the Markov chain $J$, with eigenvalue $(1-\frac{2}{n+1})$. We shall generalize this observation in Section \ref{decompose}.

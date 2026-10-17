@@ -1,1 +1,1 @@
-Letpbe an oriented prime 3 manifold andf:p\int(D 3⊔D 3)→R
+\ref{sphereinp} forces both parentheses to compose to the identity $id_{S^2} = [S^2 \times I]$. And by proposition \ref{prop:keyprop}, they can do so using commutative Frobenius relations. We end up getting the trivial identity relations $p^{\times \times} = p^{\times \times} \circ id_{S^2} = id_{S^2} \circ p^{\times \times} $, and neither case constitutes an internal relation by definition.

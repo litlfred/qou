@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/s40879-023-00706-0/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Basic properties",
+  "pageStart": 3,
+  "pageEnd": 11,
+  "contains": [
+    "library/s40879-023-00706-0/blocks/prose-sec-003",
+    "library/s40879-023-00706-0/blocks/rem-sec-003-01",
+    "library/s40879-023-00706-0/blocks/lem-sec-003-02",
+    "library/s40879-023-00706-0/blocks/lem-sec-003-03",
+    "library/s40879-023-00706-0/blocks/rem-sec-003-04",
+    "library/s40879-023-00706-0/blocks/prop-sec-003-05",
+    "library/s40879-023-00706-0/blocks/prop-sec-003-06",
+    "library/s40879-023-00706-0/blocks/lem-sec-003-07"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s40879-023-00706-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s40879-023-00706-0/manifest.jsonld",
+  "provenance": "ingested"
+}

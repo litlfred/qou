@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.971
 latex_coverage_ratio: 0.917
+doc_brief: "arXiv:hep-ph/0003017v2 26 Jun 2000 — Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems."
 ---
 In the past few years, several non-Hermitian models with disorder have been introduced in the literature. We mention only the simplest model, which was motivated by the study of flux-line pinning in superconductors [@Miller; @Hata96]. Its Hamiltonian is given by $$\label{HN}
   H=\frac{1}{2m}({\bf p}+i{\bf h})^2+V({\bf r})\:,$$ where $V({\bf r})$ is a random disorder potential, **p** is the momentum operator, and $i{\bf h}$ is a constant imaginary vector potential. The new feature of such models is that a localization-delocalization transition can occur even in one and two dimensions. Although the wave functions corresponding to real eigenvalues remain localized, the wave functions of complex eigenvalues can be extended. For a detailed discussion of such models, see Refs. [@Fein; @piet].

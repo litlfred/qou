@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.809
+doc_brief: "QUASIHOMOGENEITY OF ISOLATED HYPERSURFACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY — We characterize quasihomogeneity of isolated hypersurface singu- larities by the injectivity of the map induced by"
 ---
 We consider the germ of an isolated hypersurface singularity $D\subseteq(\mathbb{C}^n,0)$. Let $\mathcal{O}=\mathcal{O}_{\mathbb{C}^n,0}$ be the ring of germs of holomorphic functions on $\mathbb{C}^n$ at the origin with maximal ideal $\mathfrak{m}$ and $f\in\mathfrak{m}^2$ a reduced defining equation of $D$. For notational simplicity, we shall write $\mathbb{C}^n$ instead of $(\mathbb{C}^n,0)$. In terms of coordinates $x_1,\dots,x_n$ on $\mathbb{C}^n$, $\mathcal{O}=\mathbb{C}\{x_1,\dots,x_n\}$ is the ring of convergent power series and $\mathfrak{m}=\langle x_1,\dots,x_n\rangle$. We abbreviate by $f_i=\frac{\partial f}{\partial{x_i}}$, $i=1,\dots,n$, the partial derivatives of $f$.
 

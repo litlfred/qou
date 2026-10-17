@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.98
 latex_coverage_ratio: 0.913
+doc_brief: "SOERGEL CALCULUS — The monoidal category of Soergel bimodules is an incarnation of the Hecke category, a fundamental object in representation theory."
 ---
 It is important to remember the key dichotomy in this paper: we will discuss two separate categories ``at once." Fix a realization of $(W,S)$, and consider the ring $R$ defined above. In
 this chapter we will introduce Soergel's monoidal category $\SBim$, which is a full subcategory of $R-\Bim$. In chapter \ref{sec-diagsbim} we will define a diagrammatic category $\DC$ by

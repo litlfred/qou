@@ -8,6 +8,7 @@ pages: 60-61
 source_pdf: 2211.12836v2.pdf
 source_sha256: 4ffbb8b21f8b175d
 toc_source: outline
+doc_brief: "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY — We study a class of commuting Markov kernels whose simplest element describes the movement of k particles on a discrete circle of size n"
 ---
 of integers (λ1 ≥λ2 ≥. . . ≥λk ≥0). We denote then by l(λ) the length of the partition λ. The
 integer λi is called the i-th part of λ, and the size ⟨λ⟩of λ is the sum of its parts. A partition is

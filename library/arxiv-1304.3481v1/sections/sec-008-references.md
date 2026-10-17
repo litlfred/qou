@@ -8,6 +8,7 @@ pages: 75-78
 source_pdf: 1304.3481v1.pdf
 source_sha256: d0840f2775c0f761
 toc_source: outline
+doc_brief: "Quadruply-graded colored homology of knots Eugene Gorsky, Sergei Gukov, and Marko Stoˇsi´c — We conjecture the existence of four independent gradings in the colored HOMFLY homology."
 ---
 [1] M. Abouzaid, On the Fukaya Categories of Higher Genus Surfaces, arXiv:math/0606598.
 [2] M.

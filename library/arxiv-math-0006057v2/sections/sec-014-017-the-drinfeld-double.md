@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.988
 latex_coverage_ratio: 0.924
+doc_brief: "arXiv:math/0006057v2 [math.QA] 10 Jun 2000 — We give a survey of the theory of ﬁnite quantum groupoids (weak Hopf algebras), including foundations of the theory and applications to ﬁnite depth"
 ---
 To define the *Drinfeld double* $D(H)$ of a quantum groupoid $H$, consider on the vector space $\widehat H^{op}\otimes_k H$ an associative multiplication $$(\phi\otimes h)(\psi\otimes g) =
 \psi_{(2)}\phi \otimes h_{(2)} g \langle\,S(h_{(1)}),\, \psi_{(1)}\,\rangle\langle\,h_{(3)},\, \psi_{(3)}\,\rangle,$$ where $\phi, \psi \in \widehat H^{op}$ and $h,g \in H$. Then one can verify that the linear span $J$ of the elements $$\begin{aligned}

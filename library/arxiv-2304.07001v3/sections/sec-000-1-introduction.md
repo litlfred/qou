@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.628
 latex_coverage_ratio: 0.962
+doc_brief: "RESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES — We prove resurgence properties for the Borel transform of a formal power series associated to elements in the Habiro ring that come from radial"
 ---
 The modern theory of resurgence began with the voluminous works of Écalle in 1981 [@e1; @e2] and 1985 [@e3]. This theory now plays a vital rôle in a remarkable number of diverse areas, to name just a few examples: nonlinear systems of ODEs and difference equations [@costin1; @kamimoto], algebraic combinatorics [@cfmt1; @cfmt2], enumerative combinatorics and quantum field theory [@BD; @MY], period integrals and string theory scattering amplitudes [@dk], wall-crossing phenomena [@ks] and matrix models [@mm]. In this paper, we are interested in a conjecture due to Costin and Garoufalidis [@cg] which connects resurgence and quantum topology. For other such interactions, see [@am; @ggm; @ggm2; @ggmw; @fw] and the references therein.
 

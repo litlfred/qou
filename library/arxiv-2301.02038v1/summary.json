@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2301.02038v1",
  "source_sha256": "27b303939826ab39",
- "brief": "Vinogradov's Cohomological Geometry of Partial Differential Equations — Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a system of possibly non-li",
- "extended": "**Vinogradov's Cohomological Geometry of Partial Differential Equations**\n\n*Fabrizio Pugliese, Giovanni Sparano, and Luca Vitagliano*\n\n26 pp, 11 sections.\n\n**Abstract.** Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a system of possibly non-li near partial dif- ferential equations and it is essentially due to Alexandre M . Vinogradov and his collaborators. Many coordinate free properties of PDEs ﬁnd their natu- ral place in Secondary Calculus including: symmetries and c onservation laws, variational principles and the coordinate free aspects of t he calculus of vari- ations, recursion operators and Hamiltonian structures, e tc. The building blocks of this language are horizontal cohomologies of diﬃe ties, i.e. inﬁnite prolongations of PDEs, and their versions with local coeﬃci ents. The main paradigm of Secondary Calculus is the principle, due to A. M.\n\n**Outline.** Introduction; 1 Geometry of PDEs; 1.1 jet spaces; 1.2 the Cartan distribution; 2 Cohomology of PDEs; 2.1 horizontal cohomology; 2.2 interpreting horizontal cohomologies; 2.3 algebraic structures on horizontal cohomol; 3 Homotopy of PDEs; 3.1 homotopy algebras; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.6: The operations (2.7) and (2.8) are well-deﬁned and independ ent\n- Theorem 2.7: The operations (2.9) and (2.10) are well-deﬁned and indepen -\n- Theorem 3.8: A splitting (2.5) induces an LR∞-algebra structure on\n- Theorem 3.10: The Chevalley-Eilenberg algebra of the LR∞-algebra of Theo-\n- Theorem: s 3.8 and 3.10 provide indications towards Vinogradov’s conjecture\n- Theorem 3.13: The graded vector space Ω •(E, VDO)[1] can be equipped with",
+ "brief": "Contemporary Mathematics — Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a system of possibly non-linear partial dif- ferential equations and it",
+ "extended": "**Contemporary Mathematics**\n\n*Vinogradov’s Cohomological Geometry*\n\n26 pp, 13 sections.\n\n**Abstract.** Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a system of possibly non-linear partial dif- ferential equations and it is essentially due to Alexandre M. Vinogradov and his collaborators. Many coordinate free properties of PDEs ﬁnd their natu- ral place in Secondary Calculus including: symmetries and conservation laws, variational principles and the coordinate free aspects of the calculus of vari- ations, recursion operators and Hamiltonian structures, etc. The building blocks of this language are horizontal cohomologies of diﬃeties, i.e. inﬁnite prolongations of PDEs, and their versions with local coeﬃcients. The main paradigm of Secondary Calculus is the principle, due to A. M.\n\n**Outline.** Front matter; Introduction; 1 Geometry of PDEs; 1.1 jet spaces; 1.2 the Cartan distribution; 1.3 diffieties; 2 Cohomology of PDEs; 2.1 horizontal cohomology; 2.2 interpreting horizontal cohomologies; 2.3 algebraic structures on horizontal cohomol; 3 Homotopy of PDEs; 3.1 homotopy algebras; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem: s \\ref{theor:LR_infty} and \\ref{theor:CE} provide indications towards \\emph{Vinogradov's conjecture} that the correct category where differential calculus on the space of\n- Proposition: \\ref{prop:diffiety} now shows that a diffiety $(\\mathscr E, \\mathscr C)$ contains most of the relevant information about the PDE $\\mathscr E_0$ defining it.\n- Definition: \\ref{def:prolong} requires some little explanations.",
  "tokens": {
   "brief": 49,
-  "extended": 426
+  "extended": 407
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
@@ -27,40 +32,45 @@
   {
    "id": "sec-003-12-the-cartan-distribution",
    "title": "the Cartan distribution",
-   "pages": "6-10"
+   "pages": "6-8"
   },
   {
-   "id": "sec-004-2-cohomology-of-pdes",
+   "id": "sec-004-13-diffieties",
+   "title": "diffieties",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-005-2-cohomology-of-pdes",
    "title": "Cohomology of PDEs",
    "pages": "10-10"
   },
   {
-   "id": "sec-005-21-horizontal-cohomology",
+   "id": "sec-006-21-horizontal-cohomology",
    "title": "horizontal cohomology",
    "pages": "10-12"
   },
   {
-   "id": "sec-006-22-interpreting-horizontal-cohomologies",
+   "id": "sec-007-22-interpreting-horizontal-cohomologies",
    "title": "interpreting horizontal cohomologies",
    "pages": "12-15"
   },
   {
-   "id": "sec-007-23-algebraic-structures-on-horizontal-cohomologi",
+   "id": "sec-008-23-algebraic-structures-on-horizontal-cohomologi",
    "title": "algebraic structures on horizontal cohomologies",
    "pages": "15-18"
   },
   {
-   "id": "sec-008-3-homotopy-of-pdes",
+   "id": "sec-009-3-homotopy-of-pdes",
    "title": "Homotopy of PDEs",
    "pages": "18-18"
   },
   {
-   "id": "sec-009-31-homotopy-algebras",
+   "id": "sec-010-31-homotopy-algebras",
    "title": "homotopy algebras",
    "pages": "18-25"
   },
   {
-   "id": "sec-010-references",
+   "id": "sec-011-references",
    "title": "References",
    "pages": "25-26"
   }

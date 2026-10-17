@@ -8,6 +8,7 @@ pages: 14-18
 source_pdf: 1-s2.0-S000187089891800X-main.pdf
 source_sha256: 9844f124dcbc7f36
 toc_source: outline
+doc_brief: "Spherical Categories — 7 sections: Front matter; MONOIDAL CATEGORIES WITH DUALS; INTRODUCTION"
 ---
 In this section we introduce spherical Hopf algebras. These are defined
 to be Hopf algebras with some additional structure which implies that the

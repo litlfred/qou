@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.985
 latex_coverage_ratio: 0.957
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 ::: proposition
 []{#intFP label="intFP"} Let ${\mathcal C}$ be a fusion category, such that $\Delta:={\rm FPdim}({\mathcal C})$ is an integer. Then ${\mathcal C}$ is pseudo-unitary. In particular, the category of representations of a semisimple finite dimensional quasi-Hopf algebra is pseudo-unitary.

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.977
 latex_coverage_ratio: 0.962
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS — We prove an upper bound for characters of the symmetric groups."
 ---
 Let $\lambda$ be a Young diagram and $N\geq r(\lambda),c(\lambda)$. We consider a random matrix $T_\lambda=(t_{ij})_{1\leq i,j\leq N}$ such that
 

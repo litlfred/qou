@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.922
 latex_coverage_ratio: 0.986
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 Finally, we will now consider the quaternionic invariant-action, $m_q$.  This new action leads to generalized ideals, which are more commonly known as Lorentz scalars, $\phi$, and the field strength tensor, $F$,
 

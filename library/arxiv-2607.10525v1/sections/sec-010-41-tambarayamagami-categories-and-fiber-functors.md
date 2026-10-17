@@ -8,6 +8,7 @@ pages: 12-13
 source_pdf: 2607.10525v1.pdf
 source_sha256: b893cb4c87ea1d66
 toc_source: outline
+doc_brief: "Fiber Functors of Equivariantizations of Finite Tensor Categories — Let G be a finite group acting on a finite tensor category C."
 ---
 group A, a nondegenerate symmetric bicharacter χ, and τ 2 = |A|−1, the category
 TY(A, χ, τ) has simple objects A ∪{m} and fusion rules

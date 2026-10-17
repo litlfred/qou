@@ -8,6 +8,7 @@ pages: 3-4
 source_pdf: 1609.08719v1.pdf
 source_sha256: f61ff2111e9a97f9
 toc_source: outline
+doc_brief: "AN EXPERIMENTAL INVESTIGATION OF NEUMANN’S CONJECTURE — We use a large census of hyperbolic 3-manifolds to experimentally investigate a conjecture of Neumann regarding the Bloch Group."
 ---
 umes for each simplex in the triangulation; we refer to section 2.4 for more details.
 Summing those volumes gives the volume of the manifold: for {∆i} the simplices

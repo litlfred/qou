@@ -8,6 +8,7 @@ pages: 14-17
 source_pdf: Black_Samson_phd2010sp.pdf
 source_sha256: c16799b0bd54ff29
 toc_source: inferred
+doc_brief: "REPRESENTATIONS OF HECKE — 11 sections: Front matter; INTRODUCTION; ILL Links and Braids"
 ---
 Links and Braids
 II.l.l.

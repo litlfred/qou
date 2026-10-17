@@ -8,6 +8,7 @@ pages: 9-10
 source_pdf: 1804.10084v1.pdf
 source_sha256: 716da9708f06d930
 toc_source: outline
+doc_brief: "Concentration of Lipschitz Functions of Negatively Dependent Variables — We explore the question whether Lipschitz functions of random variables under various forms of negative correlation satisfy"
 ---
 The failure of a ﬁxed ordering
 Here we review brieﬂy the argument presented in [5] and why it is ﬂawed. In Proposition 31, [5]

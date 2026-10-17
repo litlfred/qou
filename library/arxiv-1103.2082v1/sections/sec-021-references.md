@@ -8,6 +8,7 @@ pages: 16-17
 source_pdf: 1103.2082v1.pdf
 source_sha256: 0ac5371486b38eac
 toc_source: outline
+doc_brief: "MODIFIED TRACES ON DELIGNE’S CATEGORY Rep(St) — Deligne has deﬁned a category which interpolates among the representations of the various symmetric groups."
 ---
 [BK01]
 Bojko Bakalov and Alexander Kirillov, Jr., Lectures on tensor categories and modular functors,

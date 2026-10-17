@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.901
 latex_coverage_ratio: 0.981
+doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Young diagrams which can be regarded as a natural one-parameter deformation of some classi- cal"
 ---
 In the current paper we will use another, more general, family $(\chi^{(\alpha)}_\lambda)$ of irreducible characters in [\[eq:proba-linearcomb\]](#eq:proba-linearcomb){reference-type="eqref" reference="eq:proba-linearcomb"}. Our starting point is the family of *Jack polynomials* $J^{(\alpha)}_\lambda$ [@Jack1970/1971] which can be regarded as a deformation of the family of Schur polynomials; a deformation that depends on the parameter $\alpha>0$. We use the normalization of Jack polynomials from [@Macdonald1995 Section VI.10].
 

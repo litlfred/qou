@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.975
 latex_coverage_ratio: 0.976
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 The adjoint Higgs field  is responsible for breaking $SU(5)$ symmetry down to $SU(3)\times SU(2) \times U(1)/\mathbb{Z}_6$, \cite{Robinson}.  In the process, the fermionic $\underline{5}^*$ and $\underline{10}$ break into $\left(\hspace{1mm}SU(3)_c, \hspace{1mm}SU(2)_L, \hspace{1mm}U(1)_Y\hspace{1mm}\right)$ irreps as
 

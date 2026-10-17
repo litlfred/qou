@@ -8,6 +8,7 @@ pages: 21-22
 source_pdf: 1409.1198v1.pdf
 source_sha256: 13ecb6c28bab6744
 toc_source: outline
+doc_brief: "TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR — Categoriﬁcation is a process of lifting structures to a higher categorical level."
 ---
 4.1.1. The Cartan datum. Let I = {1, 2, . . ., n−1} consist of the set of vertices of the Dynkin diagram
 of type An−1

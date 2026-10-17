@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2602.15276v1.pdf
 source_sha256: 18d77d6aa140fc50
 toc_source: outline
+doc_brief: "Compact Q-balls and Q-shells within a $CP^N$ Skyrme-Faddeev type model — 18 sections: Front matter; Introduction; The extended Skyrme-Faddeev model"
 ---
 Compact Q-balls and Q-shells within a CP N Skyrme-Faddeev type model
 E. L. Cola¸co,1, ∗P. Klimas,1, † L. R. Livramento,2, 3, ‡ N. Sawado,4, § and S. Yanai5, ¶

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.982
 latex_coverage_ratio: 0.948
+doc_brief: "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY — We study a class of commuting Markov kernels whose simplest element describes the movement of k particles on a discrete circle of size n"
 ---
 The graph $B_{k,n}$ and its convolution algebra are related to various other fields, out of which we singled out two main ones: the Wess-Zumino-Witten models of type $A_{k-1}$ at level $n$, which is a particular model of conformal field theory, and the quantum cohomology of the Grassmannian $G_{k,n}$, which counts rational curves with target space the space of $k$-dimensional vector subspaces of $\mathbb{C}^n$. Those two concepts are actually related [@G; @GK; @KS]. Let us first briefly sketch the second one (see Appendix [\[sec:quantum_cohomology\]](#sec:quantum_cohomology){reference-type="ref" reference="sec:quantum_cohomology"} for a more detailed introduction).
 

@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.989
 latex_coverage_ratio: 0.938
+doc_brief: "arXiv:math/0006057v2 [math.QA] 10 Jun 2000 — We give a survey of the theory of ﬁnite quantum groupoids (weak Hopf algebras), including foundations of the theory and applications to ﬁnite depth"
 ---
 It was shown in [@NV3] (see Section $9$ for details) that any inclusion of type II${}_1$ factors with finite index and depth ([@GHJ], 4.1) gives rise to a quantum groupoid describing the symmetry of this inclusion. In the case of *Temperley-Lieb algebras* ([@GHJ], 2.1) we have this way the following example.
 

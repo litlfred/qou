@@ -1,1 +1,1 @@
-The mapk is an isomorphism of complexes ofGL2(O)-modules.
+The coproduct of the generating functions Θ푠is given by

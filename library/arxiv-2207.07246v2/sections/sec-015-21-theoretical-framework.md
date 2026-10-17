@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.943
 latex_coverage_ratio: 0.988
+doc_brief: "Path Integral Quantum Monte Carlo Method for Light Nuclei — 64 sections: Front matter; ABSTRACT; LIST OF TABLES"
 ---
 []{#TheoFrame label="TheoFrame"} PIMC directly calculates the expectation value of an operator $\langle \hat{O} \rangle$ as $$\langle \hat{O} \rangle= \frac{  \langle \Psi_T| e^{-H \tau_1}  \hat{O} e^{-H \tau_2 } | \Psi_T \rangle  }
 {\langle \Psi_T| e^{-H \tau} | \Psi_T \rangle}, \label{PIMCopexp}$$ where $\tau_i$ is an imaginary time and the total imaginary time $\tau=\tau_1+\tau_2$. $\Psi_T$ is a trial wave function and it can serve as the initial state of the system. $H$ is the Hamiltonian of the system, $$H=T+V, \label{HTV}$$ where $T$ and $V$ are kinetic and potential energy operators. Since the operator $\hat{O}$ is Hermitian, the numerator and denominator in Eq.([\[PIMCopexp\]](#PIMCopexp){reference-type="ref" reference="PIMCopexp"}) are real, so in PIMC it is actually calculated as, $$\langle \hat{O} \rangle

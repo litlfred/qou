@@ -8,6 +8,7 @@ pages: 15-16
 source_pdf: mod-phi-convergence-approximation-of-discrete-measures-and-20yc5c6q3n.pdf
 source_sha256: c563cc999000e75d
 toc_source: outline
+doc_brief: "ANNALES DE L’INSTITUT FOURIER — 26 sections: Front matter; Introduction; Poisson approximation of lattice-v"
 ---
 For convenience, until Section 5, we shall focus on the one-dimensional
 case (d = 1) and the corresponding torus T = R/2πZ, which we view as the

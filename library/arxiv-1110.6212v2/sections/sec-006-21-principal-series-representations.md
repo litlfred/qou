@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.962
 latex_coverage_ratio: 0.98
+doc_brief: "On calibrated representations and the Plancherel Theorem for aﬃne Hecke algebras — This paper has two main purposes."
 ---
 The large commutative subalgebra $\mathbb{C}[L]$ of $\mathscr{H}_L$ can be used to construct finite dimensional representations of $\mathscr{H}_L$. The *principal series representation* with *central character* $t\in\mathrm{Hom}(L,\mathbb{C}^{\times})$ is $$M(t)=\mathrm{Ind}_{\mathbb{C}[L]}^{\mathscr{H}_L}(\mathbb{C}v_t)=\mathscr{H}_L\otimes_{\mathbb{C}[L]}(\mathbb{C}v_t),$$ where $\mathbb{C}v_t$ is the $1$-dimensional representation of $\mathbb{C}[L]$ with $x^{\lambda}\cdot v_t=t^{\lambda} v_t$ for all $\lambda\in L$. It is clear that this representation is $|W_0|$-dimensional, and that $\{T_w\otimes v_t\mid w\in W_0\}$ is a basis of $M(t)$.
 

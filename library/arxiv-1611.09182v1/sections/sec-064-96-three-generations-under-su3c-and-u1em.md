@@ -8,6 +8,7 @@ pages: 86-89
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
 toc_source: outline
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 Three generations under SU(3)c and U(1)em
 Since the time that these irreducible representations of SU(3)c were identiﬁed within C⊗←−

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.956
 latex_coverage_ratio: 0.948
+doc_brief: "CATEGORIFICATION OF THE BRAID GROUPS — 19 sections: Front matter; Introduction; Self-equivalences"
 ---
 The key point here is that the rigidification of the braid relations at the homotopy category level is equivalent to the one at the derived category level, where the problem is trivial, since we have a genuine action of $W$.
 

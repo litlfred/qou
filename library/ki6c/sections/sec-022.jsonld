@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/ki6c/sections/sec-022",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Estimate of solutions of (35)",
+  "pageStart": 56,
+  "pageEnd": 56,
+  "contains": [
+    "library/ki6c/blocks/prose-sec-022"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki6c/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki6c/manifest.jsonld",
+  "provenance": "ingested"
+}

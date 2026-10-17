@@ -1,0 +1,1 @@
+[\[cor\]](#cor){reference-type="ref" reference="cor"} generalizes Theorems 2.5 and 3.1 in [@cg] and upon taking either $u=1$ or $k=1$ confirms Conjecture [\[cgconj\]](#cgconj){reference-type="ref" reference="cgconj"} for the trefoil knot $3_1 = T(2,3)=T(3,2)$.

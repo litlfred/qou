@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.961
 latex_coverage_ratio: 0.925
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 To make this presentation as simple as possible, we now focus our attention on the biholomorphic (bianalytic) case $q=2$. Then $$\mathbf{E}_{\otimes2}[K_2](z,z';z,z')=
 4\frac{1-|z'|^2}{(1-|z|^2)^3}+6\frac{|z-z'|^2}{(1-|z|^2)^4},$$ and if we substitute $z'=z+\epsilon$, the result is $$\begin{gathered}

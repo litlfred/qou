@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.739
 latex_coverage_ratio: 1.0
+doc_brief: "Fusion categories via string diagrams — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories."
 ---
 \label{explicit_sec}
 In this section we express the pivotal operators $T^i_{jk}$ directly in terms of the associators of the fusion category. More precisely, we introduce the {\em apex-associator monodromy} and the {\em pivotal indicators}, and in Theorem \ref{formula_piv} we express $T^i_{jk}$ as the product of the pivotal indicators with the conjugate of the apex-associator monodromy.

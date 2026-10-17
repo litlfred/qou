@@ -8,6 +8,7 @@ pages: 7-8
 source_pdf: Di_Cairano_2022_J._Phys._Commun._6_015002.pdf
 source_sha256: f75313b507f97172
 toc_source: outline
+doc_brief: "On the derivation of a Nonlinear Generalized Langevin Equation — 15 sections: Front matter; Introduction; State-of-art"
 ---
 Let us consider a Lennard-Jones-like interaction potential of the form
 

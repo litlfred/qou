@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.972
 latex_coverage_ratio: 1.0
+doc_brief: "The Mukai pairing, I: a categorical approach — We study the Hochschild homology of smooth spaces, emphasizing the importance of a pairing which generalizes Mukai’s pairing on the cohomology of K3"
 ---
 []{#subsec:iotae label="subsec:iotae"} To show that the Chern character descends to a map on K-theory we give a characterization of the Chern character similar to that of Markarian [@Mar].
 

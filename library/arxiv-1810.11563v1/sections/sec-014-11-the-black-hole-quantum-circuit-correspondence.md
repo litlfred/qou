@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.99
+doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
 ---
 Complexity is mostly studied in computer science departments.  The language is that of \it bits,  qubits, \rm  and logical \it gates\rm, not Hamiltonians and quantum fields.
 At the present time there is no completely consistent framework in which a black hole can be represented as a finite collection of qubits, the kind of system for which complexity is a reasonably well formulated concept.

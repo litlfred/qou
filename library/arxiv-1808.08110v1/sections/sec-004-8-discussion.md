@@ -8,6 +8,7 @@ pages: 15-18
 source_pdf: 1808.08110v1.pdf
 source_sha256: 4bf98566792d47bd
 toc_source: outline
+doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — We continue the study undertaken in [13] of the relevance of the exceptional Jordan algebra J8 3 of hermitian 3 × 3 octonionic matrices for the description of the"
 ---
 Discussion
 The advantage of the approach of this paper to the correspondence triality-

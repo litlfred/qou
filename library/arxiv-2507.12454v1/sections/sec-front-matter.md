@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2507.12454v1.pdf
 source_sha256: 156fd9080847b4e7
 toc_source: outline
+doc_brief: "Cohomology rings of character varieties — In this talk I give an introduction and present some recent progress towards understanding the cohomology rings of character varieties of Riemann surfaces"
 ---
 COHOMOLOGY RINGS OF CHARACTER VARIETIES
 ANTON MELLIT

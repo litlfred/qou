@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1109.3255v2.pdf
 source_sha256: dd4579be8e9b7e25
 toc_source: outline
+doc_brief: "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE PLANE AND A BINODAL CUBIC CURVE — We construct a family of Lagrangian submanifolds in the Landau– Ginzburg mirror to the projective plane equipped"
 ---
 arXiv:1109.3255v2  [math.SG]  13 Feb 2014
 FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE

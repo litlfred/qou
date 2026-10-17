@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.991
 latex_coverage_ratio: 0.924
+doc_brief: "Semideﬁnite programming bounds for binary codes from a split Terwilliger algebra — We study the upper bounds for A(n, d), the maximum size of codewords with length n and Hamming distance at least d."
 ---
 In coding theory, one of the classical problems is to determine $A(n, d)$, the maximum size of a binary $(n,d)$ code with length $n$ and minimum distance at least $d$. The (Hamming) distance distribution of a code is considered since the MacWilliams identities provide a linear relation between the distance distribution and its transform [@MS77]. With this linear relation, the maximum possible size of a code can be formulated as a linear programming problem. Delsarte showed that the transform of the distance distribution is nonnegative and used linear programming techniques to derive upper bounds on $A(n, d)$ [@Del73].
 

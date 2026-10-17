@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.976
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:math/0005038v1 [math.GR] 4 May 2000 — The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc."
 ---
 In Section [\[fn\]](#fn){reference-type="ref" reference="fn"} we will define forks and noodles. These will be one-dimensional objects in the disc designed to represent elements of the second homology and cohomology of $\tilde{C}$. We define a pairing between forks and noodles, which will be preserved by any element of the kernel of the Lawrence-Krammer representation.
 

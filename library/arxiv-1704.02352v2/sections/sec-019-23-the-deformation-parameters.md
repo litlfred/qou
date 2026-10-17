@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.904
 latex_coverage_ratio: 0.986
+doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Young diagrams which can be regarded as a natural one-parameter deformation of some classi- cal"
 ---
 In order to avoid dealing with the square root of the variable $\alpha$ which is ubiquitous in the subject of Jack deformation, we introduce an indeterminate $A := \sqrt{\alpha}$. The algebra of Laurent polynomials in the indeterminate $A$ will be denoted by $\mathbb{Q}\left[A,A^{-1}\right]$.
 

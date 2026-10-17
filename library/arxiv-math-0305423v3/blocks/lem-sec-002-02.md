@@ -1,1 +1,1 @@
-Let ν be an irreducible character of a ﬁnite group G, and χ
+\ref{induced}, this simplifies to \[ \frac{n-1}{\sqrt{2}}

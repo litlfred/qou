@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.893
+doc_brief: "Formulas on hyperbolic volume ∗ — This paper collects some important formulas on hyperbolic volume."
 ---
 As an application of our general formulas we determine the volume of the orthosceme as the function of its edge-lengthes $a$, $b$ and $c$. We note that there are formulas to transform the dihedral angles into the edge-lengthes. By the notation of the previous section these are: $$a=\frac{1}{2}\ln\frac{\sin(\alpha +\delta)}{\sin(\alpha -\delta)}, \hspace{ 0,3cm}
 c=\frac{1}{2}\ln\frac{\sin(\gamma +\delta)}{\sin(\gamma -\delta)},

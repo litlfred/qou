@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.937
 latex_coverage_ratio: 0.987
+doc_brief: "arXiv:hep-ph/0601023v3 23 Apr 2007 — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non - su- persymmetric uniﬁcation"
 ---
 The Standard Model with gauge symmetry $SU(3)_C \ \times SU(2)_L \ \times U(1)_Y$
 has a $U(1)_B$ global symmetry at the classical level, where $B$ is the baryon number,

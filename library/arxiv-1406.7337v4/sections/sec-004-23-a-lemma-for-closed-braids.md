@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.972
 latex_coverage_ratio: 0.996
+doc_brief: "Semi-Adequate Closed Braids and Volume — In this paper, we show that the volumes for a family of A-adequate closed braids can be bounded above and below in terms of the twist number, the number of"
 ---
 The main goal of this section is to produce a family of closed $n$-braids that satisfies the hypotheses of Theorem~\ref{Cor}. We will work within this family of braids throughout the rest of this paper. We begin with necessary definitions.  
 

@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 0911.4494v2.pdf
 source_sha256: 1ba1c79686b12d98
 toc_source: outline
+doc_brief: "The geometry of Markov traces — We give a geometric interpretation of the Jones-Ocneanu trace on the Hecke algebra, using the equivariant cohomology of sheaves on SLn."
 ---
 ing from surprising directions; one of the foremost was the HOMPLYPT polynomial,
 independently discovered by several groups of researchers (see [FYH+85, PT88]). In

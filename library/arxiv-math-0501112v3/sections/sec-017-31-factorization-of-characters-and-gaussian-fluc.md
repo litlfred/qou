@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.938
 latex_coverage_ratio: 0.978
+doc_brief: "arXiv:math/0501112v3 [math.CO] 31 May 2005 — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 The following theorem is the main result of this article. In order not to scare the Reader we postpone its proof to Section [\[sec:Proof-main-result\]](#sec:Proof-main-result){reference-type="ref" reference="sec:Proof-main-result"}.
 

@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-012",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Relations for Hodge and motivic correlators",
-  "pageStart": 44,
-  "pageEnd": 45,
-  "text": "../sections/sec-012-relations-for-hodge-and-motivic-correlators.md",
+  "title": "Hodge correlator integrals and shuffle relations",
+  "pageStart": 36,
+  "pageEnd": 41,
+  "text": "../sections/sec-012-hodge-correlator-integrals-and-shuffle-relations.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest.jsonld",
   "provenance": "ingested"

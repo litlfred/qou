@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.889
 latex_coverage_ratio: 0.98
+doc_brief: "Asymptotics for Toeplitz determinants: perturbation of symbols with a gap — We study the determinants of Toeplitz matrices as the size of the matrices tends to inﬁnity, in the particular case where"
 ---
 We will use a conformal map which maps the curves $\gamma_-, \gamma, \gamma_+$ in the vicinity of $z_0$ to (part of) the jump contour for $\Psi$. This is similar to the construction in \cite{Krasovsky}, which corresponds to the case $s=0$. If $s=0$, $P$ has no jump on $\gamma_c$ (see Figure \ref{figure: contour P}), and the model RH problem fits perfectly to construct the local parametrix $P$. In our situation however, $P$ does have a jump on $\gamma_c$, and for this reason we need to modify the model RH problem. A different but similar construction was done in \cite{BDIK}.
 

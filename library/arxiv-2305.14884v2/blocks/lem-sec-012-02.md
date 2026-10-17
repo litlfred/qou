@@ -1,1 +1,1 @@
-With the notation used in the proof of the previous Proposition
+With the notation used in the proof of the previous Proposition 6.6 we have

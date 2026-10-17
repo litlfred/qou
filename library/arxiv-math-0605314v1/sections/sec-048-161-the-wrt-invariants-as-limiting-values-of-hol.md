@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.959
 latex_coverage_ratio: 0.983
+doc_brief: "arXiv:math/0605314v1 [math.GT] 11 May 2006 — We construct an invariant JM of integral homology spheres M with values in a completion d Z[q] of the polynomial ring Z[q] such that the evaluation at"
 ---
 []{#sec:wrt-invariants-as label="sec:wrt-invariants-as"} As explained in the introduction, the invariant $J_M$ for an integral homology sphere $M$ unifies the WRT invariants $\tau _\zeta (M)$ for all the roots of unity in an algebraic way. It should be remarked that there is another *analytic* approach to "unify" the WRT invariants by realizing the radial limiting values of a holomorphic function defined on the unit disk $\{z\in \C;\;|z|<1\}$, studied in [@Lawrence:integrality; @Lawrence:holomorphic; @Lawrence-Rozansky; @Lawrence-Zagier; @Hikami1; @Hikami3; @Hikami4; @Hikami5].
 

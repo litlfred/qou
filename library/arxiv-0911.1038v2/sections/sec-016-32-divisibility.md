@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.8
 latex_coverage_ratio: 0.974
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS — We study asymptotics of characters of the symmetric groups on a ﬁxed conjugacy class."
 ---
 In order to prove Theorem [\[theo:main\]](#theo:main){reference-type="ref" reference="theo:main"} we would like to apply Lemma [\[lem:sie-dzieli\]](#lem:sie-dzieli){reference-type="ref" reference="lem:sie-dzieli"} to Kerov polynomials. For this, we need some interesting arithmetic properties of coefficients of Kerov polynomials. The next lemma, which was formulated as a conjecture by Światosław Gal [@Gal], shows some properties of these kind.
 

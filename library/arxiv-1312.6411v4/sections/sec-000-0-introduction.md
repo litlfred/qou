@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.996
 latex_coverage_ratio: 0.932
+doc_brief: "DUALITY AND TILTING FOR COMMUTATIVE DG RINGS — We consider commutative DG rings (better known as nonpositive strongly commutative associative unital DG algebras)."
 ---
 In this paper we are interested in {\em commutative DG rings}. 
 This is an abbreviation for strongly commutative nonpositive associative 

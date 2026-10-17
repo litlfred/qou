@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.97
 latex_coverage_ratio: 0.971
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 As a non-associative algebra, the octonions can at times seem temperamental.  Equations involving this algebra can quickly become unwieldy, due to the need to repeatedly specify the order of multiplication, by use of brackets.  The assumptions we are accustomed to making in associative algebras now do not always apply, and one might be led to wonder how (associative) groups can be described with the (non-associative) octonions.  
 

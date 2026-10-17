@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.989
 latex_coverage_ratio: 0.984
+doc_brief: "Concentration of Measure Techniques and Applications — 25 sections: Front matter; Biographical Sketch; Acknowledgments"
 ---
 We would now like to give an idea as to how the $q$-Stirling's formula arises in the problem of bounding the fluctuations of the length of the longest increasing subsequence in a Mallows random permutation. This work is ongoing, but an important step is discussed in this section. A random permutation (Mallows or otherwise), can be viewed as a set of points in a rectangle, in the following way:
 

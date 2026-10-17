@@ -8,6 +8,7 @@ pages: 8-10
 source_pdf: 1112.5179v1.pdf
 source_sha256: b58af08336c40994
 toc_source: outline
+doc_brief: "3-Manifolds and 3d Indices — We identify a large class R of three-dimensional N = 2 superconformal ﬁeld the- ories."
 ---
 The Sp(2N, Z) action
 In [22], an Sp(2N, Z) action on 3d SCFT’s with N U(1) ﬂavor symmetries was introduced.5

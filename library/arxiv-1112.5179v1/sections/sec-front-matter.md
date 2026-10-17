@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 1112.5179v1.pdf
 source_sha256: b58af08336c40994
 toc_source: outline
+doc_brief: "3-Manifolds and 3d Indices — We identify a large class R of three-dimensional N = 2 superconformal ﬁeld the- ories."
 ---
 Prepared for submission to JHEP
 3-Manifolds and 3d Indices

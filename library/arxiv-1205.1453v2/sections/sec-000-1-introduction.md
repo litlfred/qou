@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.978
 latex_coverage_ratio: 0.901
+doc_brief: "An asymptotic formula of the divergent bilateral basic hypergeometric series — We show an asymptotic formula of the divergent bilateral basic hypergeometric series 1ψ0(a; −; q, ·) with using the"
 ---
 In this paper, we show an asymptotic formula of the divergent bilateral basic hypergeometric series $${}_1\psi_0 (a;-;q;x ):=\sum_{n\in\mathbb{Z}} (a;q)_n\left\{(-1)^nq^{\frac{n(n-1)}{2}}\right\}^{-1}x^n.$$ Here, $(a;q)_n$ is the $q$-shifted factorial; $$(a;q)_n:=
 \begin{cases}

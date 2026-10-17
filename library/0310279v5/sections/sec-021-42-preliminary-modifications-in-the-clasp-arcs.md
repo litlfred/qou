@@ -8,6 +8,7 @@ pages: 45-46
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
 toc_source: outline
+doc_brief: "Stabilization in the braid groups I: MTWS Introduction — 40 sections: Front matter; Introduction; The problem"
 ---
 Preliminary modiﬁcations in the clasp arcs
 We assume from now on that our clasp annulus CA supports a braid foliation, so that

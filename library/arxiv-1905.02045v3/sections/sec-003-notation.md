@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.955
+doc_brief: "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM INVARIANTS OF HYPERBOLIC KNOTS — We obtain an exact modularity relation for the q-Pochhammer symbol."
 ---
 Given $D\subset \mathbb{R}$ and $f:D\to\mathbb{R}$, we write $\|f\|_{\infty, D}:=\sup_{t\in D}|f(t)|$. Also, given $t\in\mathbb{R}$, we write $\|t\|:=\textnormal{dist}(t,\mathbb{Z})$ and $\{t\}:=t-\lfloor t\rfloor$, where $\lfloor t\rfloor$ is the integer part of $t$. Given a property $P$, we define ${\mathbf 1}_{P}$ (or ${\mathbf 1}(P)$) to be $1$ if the property $P$ is satisfied and $0$ otherwise.
 

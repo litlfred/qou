@@ -8,6 +8,7 @@ pages: 3-6
 source_pdf: 2208.13448v2.pdf
 source_sha256: 8bfa244cf7ca867d
 toc_source: outline
+doc_brief: "ON THE COMPUTATION OF THE DIFFERENCE GALOIS GROUPS OF ORDER THREE EQUATIONS — In this paper we consider the problem of computing the diﬀerence Galois groups of order three equations for a large class"
 ---
 2.1. Galois groups. In this section, we make a short overview of the Galois theory of linear
 diﬀerence equations. For more details on what follows, we refer to [VdPS97, Chapter 1].

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.881
 latex_coverage_ratio: 0.993
+doc_brief: "Received <day> <Month>, <year> — Diﬀerent ways of representing the group 푆푈(3) within a Geometric Algebra approach are explored."
 ---
 We now discuss the explicit linking of the octonion units $e_0$ through $e_7$ with the 8 elements making up Dirac spinors in the STA. The latter are the even elements of the STA, which as mentioned above, can be derived as the full geometric algebra of 3d space, via the identification $\sigma_i = \gamma_i \gamma_0$, $i=1,2,3$, as illustrated in Fig.~\ref{fig:sta-split}.
 

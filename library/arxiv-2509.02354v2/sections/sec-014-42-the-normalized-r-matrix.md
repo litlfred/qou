@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.873
 latex_coverage_ratio: 0.94
+doc_brief: "THE HOLONOMY BRAIDING FOR Uξ(sl2) IN TERMS OF GEOMETRIC QUANTUM DILOGARITHMS — We derive an explicit formula for the holonomy R-matrix of quantum sl2 at a root of unity."
 ---
 We need to define some more log-parameters associated to a log-colored crossing $C$. Set $\epsilon = 1$ if $C$ is positive and $\epsilon = -1$ if it is negative. If $C$ is not pinched, $$K= 
   \frac{e^{2\pi i \gamma_{\lN}}}{1 - \left(b_{2'}/b_{1}\right)^{\epsilon}}$$ is not $\infty$, so we can choose $\kappa \in \mathbb{C}$ with $$e^{2\pi i \kappa} = K.$$ We will show in [\[thm:R-matrix transformation\]](#thm:R-matrix transformation){reference-type="ref" reference="thm:R-matrix transformation"} that the $R$-matrix is independent of the choice of $\kappa$, so we do not consider it to be part of a log-coloring. Extending our earlier abbreviations, define $$\begin{aligned}

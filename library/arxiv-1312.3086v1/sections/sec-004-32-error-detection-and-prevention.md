@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.982
 latex_coverage_ratio: 0.993
+doc_brief: "Quantum repeater with Rydberg blocked atomic ensembles in ﬁber-coupled cavities — 9 sections: Front matter; Introduction; The model"
 ---
 So far, we did not take into account errors and losses. Fiber loss and spontaneous emission from the Rydberg level may corrupt the state in quite the same way since they both represent the loss of an excitation. We now investigate the influence of such errors on the different steps of our scheme.
 

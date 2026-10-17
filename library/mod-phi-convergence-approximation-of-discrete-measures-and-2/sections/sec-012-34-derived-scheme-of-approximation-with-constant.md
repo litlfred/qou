@@ -8,6 +8,7 @@ pages: 35-38
 source_pdf: mod-phi-convergence-approximation-of-discrete-measures-and-20yc5c6q3n.pdf
 source_sha256: c563cc999000e75d
 toc_source: outline
+doc_brief: "ANNALES DE L’INSTITUT FOURIER — 26 sections: Front matter; Introduction; Poisson approximation of lattice-v"
 ---
 To conclude this section, let us simplify a bit the general setting of ap-
 proximation of discrete measures presented in Deﬁnition 1.10. Until now,

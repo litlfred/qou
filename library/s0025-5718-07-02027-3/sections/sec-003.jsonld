@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/s0025-5718-07-02027-3/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Method of computation on  U0  and  U",
+  "pageStart": 5,
+  "pageEnd": 6,
+  "contains": [
+    "library/s0025-5718-07-02027-3/blocks/prose-sec-003",
+    "library/s0025-5718-07-02027-3/blocks/rem-sec-003-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s0025-5718-07-02027-3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s0025-5718-07-02027-3/manifest.jsonld",
+  "provenance": "ingested"
+}

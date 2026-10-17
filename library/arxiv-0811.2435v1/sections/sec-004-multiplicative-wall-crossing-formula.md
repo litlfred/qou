@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.994
 latex_coverage_ratio: 0.985
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 47 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 The wall-crossing formulas for the numerical Donaldson-Thomas invariants do not depend on their origin and can be expressed in terms of graded Lie algebras. This is explained in Section 2. Our main application is the case of $3d$ Calabi-Yau categories. Let us recall that if ${\cal C}$ is an $Ext$-finite Calabi-Yau category of the odd dimension $d$ (e.g. $d=3$) then the Euler form
 

@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2211.13362v2.pdf
 source_sha256: 3becbeaa1135d2e1
 toc_source: outline
+doc_brief: "Double-slit experiment revisited — The double-slit experiment is one of the quintessential quantum experiments."
 ---
 Double-slit experiment revisited
 Siddhant Das*, Dirk-Andr´e Deckert*, Leopold Kellers*, Simon Krekels†,‡, and Ward

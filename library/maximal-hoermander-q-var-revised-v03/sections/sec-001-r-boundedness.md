@@ -8,6 +8,7 @@ pages: 8-8
 source_pdf: Maximal-Hoermander-q-Var-revised-v03.pdf
 source_sha256: 135332c04a1b3bb8
 toc_source: outline
+doc_brief: "q-variational Hörmander functional calculus and Schrödinger and wave maximal estimates — 11 sections: Front matter; Introduction; R-boundedness"
 ---
 as type and cotype. Moreover, we introduce the (restricted) necessary notions of Hörmander
 functional calculus and the class Λβ

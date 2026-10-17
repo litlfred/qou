@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2103.00651v1.pdf
 source_sha256: c5505d3e4891168e
 toc_source: outline
+doc_brief: "On Concentration Inequalities for Vector-Valued Lipschitz Functions — We derive two upper bounds for the probability of deviation of a vector-valued Lipschitz function of a collection of random"
 ---
 arXiv:2103.00651v1  [math.PR]  28 Feb 2021
 On Concentration Inequalities for Vector-Valued Lipschitz

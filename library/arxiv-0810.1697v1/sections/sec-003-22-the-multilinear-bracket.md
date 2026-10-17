@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.99
 latex_coverage_ratio: 0.971
+doc_brief: "ON THE CABLE EXPANSION FORMULA — In this paper, a generalized version of Morton’s formula [8] is proved."
 ---
 []{#multilinear bracket label="multilinear bracket"} Given an framed link $L$ in $M$ with components $K_1,K_2,...K_m$, denote the framing of $K_j$ by $\sigma_j$. A multilinear bracket $\langle *,*,...,*\rangle_L$ in $S(M)$ can be constructed as following:
 

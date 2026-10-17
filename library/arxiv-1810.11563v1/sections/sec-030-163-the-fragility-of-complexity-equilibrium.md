@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.982
+doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
 ---
 Let's  take the default position: If there is no reason to believe that  firewalls don't occur when the complexity stops increasing, then they probably do occur.
  How stable would such a firewall be? The naive answer is that equilibrium is  stable and not likely to be significantly disturbed by butterflies. 

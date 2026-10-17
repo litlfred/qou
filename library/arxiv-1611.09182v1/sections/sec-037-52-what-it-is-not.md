@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 0.984
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 If the standard model is to be faulted for anything, that fault would lie almost exclusively in its incompleteness.  The first  legitimate fracture in the standard model came with the discovery of neutrino oscillations, which imply that neutrinos do indeed have mass, \cite{Mann}.  Having said that, the standard model is easily amended to accommodate massive neutrinos, albeit, at the expense of having to accept a number of additional free parameters in the theory.  
 

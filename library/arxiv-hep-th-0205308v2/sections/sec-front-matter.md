@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0205308v2.pdf
 source_sha256: 2de5a4f40d80174c
 toc_source: outline
+doc_brief: "WDVV Equations as Functional Relations — 6 sections: Front matter; Introduction; WDVV and dispersionless Hirota equ"
 ---
 arXiv:hep-th/0205308v2  29 May 2006
 FIAN/TD-07/02

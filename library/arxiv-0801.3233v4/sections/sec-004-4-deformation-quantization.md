@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.987
 latex_coverage_ratio: 0.97
+doc_brief: "Contemporary Mathematics Twisted Deformation Quantization of Algebraic Varieties (Survey) — Let X be a smooth algebraic variety over a ﬁeld of characteristic 0."
 ---
 Kontsevich \cite{Ko1} proved that any Poisson deformation of a real 
 $\mrm{C}^{\infty}$ manifold $X$ can be canonically quantized. 

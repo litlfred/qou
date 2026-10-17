@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.985
 latex_coverage_ratio: 0.96
+doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
 ---
 Let's suppose that it is true that once complexity equilibrium is established, there is a high probability for a firewall. How stable is that firewall? The naive answer is that equilibrium is  stable and not likely to be significantly disturbed by butterflies. That is true for ordinary thermal equilibrium but complexity equilibrium is different.
 

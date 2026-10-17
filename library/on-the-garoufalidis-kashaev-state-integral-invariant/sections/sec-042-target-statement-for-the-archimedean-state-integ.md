@@ -8,6 +8,7 @@ pages: 46-48
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
 toc_source: outline
+doc_brief: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT — 63 sections: Front matter; ACKNOWLEDGMENTS; ABSTRACT"
 ---
 Target Statement for the Archimedean State-Integral
 Let M be a compact, oriented 3-manifold equipped with an ordered ideal tri-

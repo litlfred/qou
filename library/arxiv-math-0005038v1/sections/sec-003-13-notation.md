@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.971
 latex_coverage_ratio: 0.954
+doc_brief: "arXiv:math/0005038v1 [math.GR] 4 May 2000 — The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc."
 ---
 If $\alpha$ and $\beta$ are arcs in $D \setminus P$ such $\alpha(s) \neq \beta(s)$ for all $s \in I$ then we define $\{\alpha,\beta\}$ to be the arc in $C$ given by $$\{\alpha,\beta\}(s) = \{\alpha(s),\beta(s)\}.$$ If $y$ is a point in $D \setminus P$ and $\alpha$ is an arc in $D \setminus (P \cup \{y\})$ then we define $\{\alpha,y\}$ to be the arc in $C$ given by $$\{\alpha,y\}(s) = \{\alpha(s),y\}.$$ The same arc can be denoted by $\{y,\alpha\}$.
 

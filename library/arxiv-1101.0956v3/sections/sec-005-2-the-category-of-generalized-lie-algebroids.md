@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 0.987
+doc_brief: "ALGEBRAIC CONSTRUCTIONS IN THE CATEGORY OF VECTOR BUNDLES — In this paper we present the category of generalized Lie algebroids."
 ---
 In general, if $\mathcal{C}$ is a category, then we denote $\left\vert
 \mathcal{C}\right\vert$ the class of objects and for any $A,B{\in }

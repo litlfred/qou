@@ -8,6 +8,7 @@ pages: 17-19
 source_pdf: 1006.1099v3.pdf
 source_sha256: 76c1c4173cdee9d8
 toc_source: outline
+doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS — There is a classical relationship in algebraic geometry between a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
 ---
 plectic manifold, meaning that the homomorphisms π2(M) →R deﬁned by the symplectic form
 and the ﬁrst Chern class are positively proportional. Recall that a Lagrangian submanifold L is

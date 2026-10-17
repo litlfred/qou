@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.871
 latex_coverage_ratio: 1.0
+doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Young diagrams which can be regarded as a natural one-parameter deformation of some classi- cal"
 ---
 An *integer partition*, called also a *Young diagram*, is a weakly decreasing finite sequence $\lambda=(\lambda_1,\dots,\lambda_l)$ of positive integers $\lambda_1\geq \cdots \geq \lambda_l>0$. We also say that $\lambda$ is a partition of $|\lambda|:=\lambda_1+\cdots+\lambda_l$.
 

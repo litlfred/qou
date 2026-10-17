@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/quaternioms/sections/sec-019",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Octonionic Model: Formal Obstructions and Limits",
+  "pageStart": 17,
+  "pageEnd": 18,
+  "contains": [
+    "library/quaternioms/blocks/prose-sec-019",
+    "library/quaternioms/blocks/lem-sec-019-01",
+    "library/quaternioms/blocks/thm-sec-019-02",
+    "library/quaternioms/blocks/cor-sec-019-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/quaternioms/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/quaternioms/manifest.jsonld",
+  "provenance": "ingested"
+}

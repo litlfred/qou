@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.964
 latex_coverage_ratio: 1.0
+doc_brief: "SOERGEL CALCULUS — The monoidal category of Soergel bimodules is an incarnation of the Hecke category, a fundamental object in representation theory."
 ---
 In this section we assume that $\hg$ is a Soergel realization over a field $\Bbbk$. In this section we prove that our diagrammatic category is equivalent to Soergel bimodules.
 

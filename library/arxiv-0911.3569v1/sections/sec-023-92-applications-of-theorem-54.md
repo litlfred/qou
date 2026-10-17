@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.96
 latex_coverage_ratio: 0.923
+doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
 ---
 It is natural to consider a multivariate anaogue of the multiplier sequences
 studied by P\'olya and Schur.  Let $\lambda:\NN^m\goesto\RR$, and define

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.974
 latex_coverage_ratio: 0.975
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials."
 ---
 In the previous section we explained how to determine the coefficients $a^\mu_\rho$ (where $\rho$ runs over partitions without parts equal to $1$) of $L_\mu$ as the solution of an overdetermined linear system of equations. In this section, we extract from this system a triangular subsystem.
 

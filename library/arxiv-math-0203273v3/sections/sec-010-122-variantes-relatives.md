@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.964
 latex_coverage_ratio: 0.894
+doc_brief: "arXiv:math/0203273v3 [math.CT] 12 Oct 2002 — 31 sections: Front matter; Introduction; Alg`ebres `a plusieurs objets"
 ---
 ::: prop
 []{#P3 label="P3"} Soit $T:{\mathcal{B}}\to {\mathcal{A}}$ un $K$-foncteur radiciel entre deux petites $K$-catégories de Wedderburn. Notons $\bar {\mathcal{A}}={\mathcal{A}}/{\operatorname{rad}}({\mathcal{A}})$, $\bar {\mathcal{B}}={\mathcal{B}}/{\operatorname{rad}}({\mathcal{B}})$ et $\bar T:\bar

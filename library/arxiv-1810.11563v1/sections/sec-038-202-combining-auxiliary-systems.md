@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.992
+doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
 ---
 In thermodynamics it is important to understand how systems combine, as for example, when we combined two boxes of gas.  The question arises: What does it mean to combine two auxiliary systems? For example suppose $\CA$ is the auxiliary system corresponding to some quantum system $\CQ$. Is there a quantum system whose auxiliary is two copies of $\CA$? The first thing that comes to mind is to simply double the quantum system from $\CQ$ to two copies $\CQ \cup \CQ.$
 However the number of coordinates describing the Auxiliary system for $\CQ \cup \CQ$ is not twice the number describing the original system $\CQ$. It is the square of that number.

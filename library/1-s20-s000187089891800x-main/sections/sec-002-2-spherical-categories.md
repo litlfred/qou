@@ -8,6 +8,7 @@ pages: 9-10
 source_pdf: 1-s2.0-S000187089891800X-main.pdf
 source_sha256: 9844f124dcbc7f36
 toc_source: outline
+doc_brief: "Spherical Categories — 7 sections: Front matter; MONOIDAL CATEGORIES WITH DUALS; INTRODUCTION"
 ---
 In this section we introduce spherical categories. A pivotal category is a
 category with duals and with some additional structure and a spherical

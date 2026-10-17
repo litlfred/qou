@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.986
+doc_brief: "Generating Function for Pinsky’s Combinatorial Second Moment Formula for the Generalized Ulam Problem — Given a uniform random permutation π ∈Sn, let Zn,k be equal to the number of increasing"
 ---
 We have presented some explicit formula for the generating function of the combinatorial array $A(N,j)$.
 This arrray was introduced by Ross Pinsky in his beautiful combinatorial formula for the 2nd moment

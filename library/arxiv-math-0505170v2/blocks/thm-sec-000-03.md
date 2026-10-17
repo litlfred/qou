@@ -1,1 +1,1 @@
-was discovered in the course of research on defor mation quantization
+\ref{thm0.1} was discovered in the course of research on

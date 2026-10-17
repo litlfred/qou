@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.608
 latex_coverage_ratio: 0.988
+doc_brief: "MODIFIED TRACES ON DELIGNE’S CATEGORY Rep(St) — Deligne has deﬁned a category which interpolates among the representations of the various symmetric groups."
 ---
 \label{SS:Mnambi}  Suppose $t\in F$ and $n>0$.   By Corollary~\ref{Mbasis}, to define a linear functional on $\End_{\uRep(S_t)}(M_n)$ it suffices to give the values of the linear functional on $s_n$ and $s_nx_ns_n$.  Let $\mt_n$ be the following linear map:
 $$\begin{array}{rcl}

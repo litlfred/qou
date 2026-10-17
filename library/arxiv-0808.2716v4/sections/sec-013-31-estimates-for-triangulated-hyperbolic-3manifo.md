@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.988
 latex_coverage_ratio: 0.938
+doc_brief: "CUSP AREAS OF FAREY MANIFOLDS — This paper gives the ﬁrst explicit, two–sided estimates on the cusp area of once– punctured torus bundles, 4–punctured sphere bundles, and 2–bridge link complements."
 ---
 Recall from Section [\[sec:ford-rev\]](#sec:ford-rev){reference-type="ref" reference="sec:ford-rev"} that the Ford domain of a cusped hyperbolic manifold $M$ is a union of finite--sided polyhedra, with one ideal vertex for each cusp of $M$. Consider those faces of the Ford domain which do not meet an ideal vertex. These consist of points that are equidistant from two or more lifts of a cusp into ${\mathbb{H}}^3$. Each such face is the portion of a geodesic plane in ${\mathbb{H}}^3$ which can be "seen" from infinity. That is, the geodesic planes are Euclidean hemispheres centered on points of ${\mathbb{C}}$ (here we are considering the boundary at infinity of ${\mathbb{H}}^3$ to be ${\mathbb{C}}\cup \{\infty\}$), of some Euclidean radius. These overlap to cover all of ${\mathbb{C}}$. Looking down from infinity, one sees portions of these Euclidean spheres. These are the faces. The intersections of two adjacent faces give edges. The intersections of edges are vertices.
 

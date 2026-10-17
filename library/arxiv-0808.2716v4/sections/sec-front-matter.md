@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0808.2716v4.pdf
 source_sha256: ea66f7ddcf9e9fe6
 toc_source: outline
+doc_brief: "CUSP AREAS OF FAREY MANIFOLDS — This paper gives the ﬁrst explicit, two–sided estimates on the cusp area of once– punctured torus bundles, 4–punctured sphere bundles, and 2–bridge link complements."
 ---
 arXiv:0808.2716v4  [math.GT]  11 Feb 2010
 CUSP AREAS OF FAREY MANIFOLDS

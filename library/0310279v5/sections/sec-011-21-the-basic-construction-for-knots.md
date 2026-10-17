@@ -8,6 +8,7 @@ pages: 19-23
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
 toc_source: outline
+doc_brief: "Stabilization in the braid groups I: MTWS Introduction — 40 sections: Front matter; Introduction; The problem"
 ---
 The basic construction for knots
 Lemma 2.1.1 Let X+, X−be arbitrary disjoint closed braid representatives of the

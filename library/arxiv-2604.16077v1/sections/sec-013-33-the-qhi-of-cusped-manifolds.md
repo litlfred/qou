@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.903
 latex_coverage_ratio: 0.957
+doc_brief: "Volume Conjecture and quantum hyperbolic invariants: the figure eight knot complement — We compute the real part of the semi-classical limit of the sequence of quantum hyperbolic invariants (QHI) of"
 ---
 \label{sec:QHIcusped} The aim of this section is to introduce some general features of the QHI, provide links to the literature (thus explaining notations), and to explain the splitting formula of the QHI into the symmetry defects and the reduced QHI. We refer to \cite{GT} for the definition of the QHI of cusped manifolds by means of state sums over geometric branched ideal triangulations, and to \cite{AGT} for the general situation of non necessarily branched triangulations. The QHI of cusped manifolds used in this paper are those of \cite[Theorem 1.1]{AGT}, in the case where the bulk weights $h_f,h_c$ are zero, or are determined by the boundary weights $k_f,k_c$ (as for link complements). (By \cite[Corollary 1.8 (1)]{NA}, another choice of bulk weight would at worst modify these QHI by multiplication with a $4N$-th root of unity, which has no consequence on the results of this paper.)
 

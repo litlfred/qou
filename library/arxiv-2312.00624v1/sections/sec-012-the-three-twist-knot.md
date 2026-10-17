@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.938
 latex_coverage_ratio: 0.987
+doc_brief: "On the structure of wave functions in complex Chern–Simons theory — We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the"
 ---
 []{#sec: 52 label="sec: 52"} The state integral of the three-twist knot $\chi_{{\bf{5}}_2}(u;\hbar)$ can be expressed explicitly as [@bdp; @dimofte-levelk; @ggm2]
 

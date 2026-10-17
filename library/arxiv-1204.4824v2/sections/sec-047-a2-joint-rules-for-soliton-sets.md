@@ -8,6 +8,7 @@ pages: 76-78
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
 toc_source: outline
+doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
 ---
 Joint rules for soliton sets
 In the last subsection we discussed the rules for the soliton degeneracies µ at a joint. These

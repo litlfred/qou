@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.943
 latex_coverage_ratio: 0.991
+doc_brief: "arXiv:hep-ph/0601023v3 23 Apr 2007 — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non - su- persymmetric uniﬁcation"
 ---
 Supersymmetric proton decay involves dressing of the \bl ~violating dimension 
 five operators by gluino, chargino and neutralino exchanges which convert the dimension

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.965
 latex_coverage_ratio: 1.0
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 []{#section_dimensional_counting_analysis label="section_dimensional_counting_analysis"} In this section we provide an illustration of the dimensional counting analysis [@Gegelia:1994zz] in terms of a specific example. To that end let us consider the one-loop integral of Eq. ([\[4:3:2:Hdef\]](#4:3:2:Hdef){reference-type="ref" reference="4:3:2:Hdef"}), $$H(p^2,m^2,M^2;n)=
 -i\int \frac{\mbox{d}^n k}{(2\pi)^n} \frac{1}{k^2-2p\cdot k

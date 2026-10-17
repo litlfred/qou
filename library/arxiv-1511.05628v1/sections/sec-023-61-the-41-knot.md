@@ -8,6 +8,7 @@ pages: 22-32
 source_pdf: 1511.05628v1.pdf
 source_sha256: 3b9da2994233882b
 toc_source: outline
+doc_brief: "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY — The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coeﬃcients that"
 ---
 2 ideal tetrahedra and trace ﬁeld F41 = Q(α) = Q(√−3) where α = e2πi/6 is a root of
 x2 −x + 1 = 0 .

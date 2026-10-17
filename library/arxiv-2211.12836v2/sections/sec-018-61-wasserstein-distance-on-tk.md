@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.661
 latex_coverage_ratio: 0.955
+doc_brief: "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY — We study a class of commuting Markov kernels whose simplest element describes the movement of k particles on a discrete circle of size n"
 ---
 In [@BobLed], the authors related the Wassertein distance between two probability measures on $\mathbb{R}/2\pi\mathbb{Z}$ to a weighted norm of the difference of their Fourier transform. We will use the same method on $T_k$, taking advantage of the Fourier transform which has been defined in Section [\[Sec:Fourier_continuous\]](#Sec:Fourier_continuous){reference-type="ref" reference="Sec:Fourier_continuous"} (the reader should refer to this section for the notation used in this paragraph). For $J\in B_{k}$, set $\kappa(J):=\Vert J-\frac{k-1}{2}\mathbf{1}_k\Vert^2-\Vert \tilde{I}_0\Vert^2$. Then, according to [\[eq:Fourier_Dyson_Brownian_motion\]](#eq:Fourier_Dyson_Brownian_motion){reference-type="eqref" reference="eq:Fourier_Dyson_Brownian_motion"}, $\kappa(J)=\kappa_{k,k}(J)$ for $J\in B_{k,n}$. We first have the following result relating the Wassertein distance between two probability measures on $U(k)$ to the difference between their Fourier transform, in a similar way as in [@BobLed].
 

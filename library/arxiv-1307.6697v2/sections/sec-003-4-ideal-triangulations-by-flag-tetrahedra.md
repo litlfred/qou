@@ -8,6 +8,7 @@ pages: 8-9
 source_pdf: 1307.6697v2.pdf
 source_sha256: a3afaefdaebe0292
 toc_source: outline
+doc_brief: "REPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS — In this paper we are interested in computing representations of the funda- mental group of a 3-manifold into PGL(3, C) (in particular in PGL(2"
 ---
 We use the deﬁnition of an ideal triangulation of a 3-manifold as it is used usually in
 computations with SnapPea. It is a union of 3-simplices K = S

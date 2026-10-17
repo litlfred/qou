@@ -8,6 +8,7 @@ pages: 8-10
 source_pdf: CuspShapes.pdf
 source_sha256: 01db19e63193e6ae
 toc_source: outline
+doc_brief: "CUSP SHAPE AND TUNNEL NUMBER — We show that the set of cusp shapes of hyperbolic tunnel number one manifolds is dense in the Teichm¨uller space of the torus."
 ---
 We will glue the compression bodies of the previous section to carefully constructed
 handlebodies, obtaining manifolds with a Heegaard splitting of genus n + 1. To

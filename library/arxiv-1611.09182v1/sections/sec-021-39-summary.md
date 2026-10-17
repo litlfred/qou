@@ -8,6 +8,7 @@ pages: 24-25
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
 toc_source: outline
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 F, are simply generalized ideals under the quaternionic invariant-action, mq. These gen-
 eralized ideals transform as φ′ = LφeL = φ and F ′ = LF eL under the Lorentz group, where

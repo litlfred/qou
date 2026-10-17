@@ -8,6 +8,7 @@ pages: 48-49
 source_pdf: 1409.2849v1.pdf
 source_sha256: 7bf9646716fbb247
 toc_source: outline
+doc_brief: "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS — In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the"
 ---
 [Bax82]
 R. J. Baxter. Exactly Solved Models in Statistical Mechanics. Academic Press, 1982.

@@ -8,6 +8,7 @@ pages: 16-32
 source_pdf: qt2pf5d0mn.pdf
 source_sha256: 4c8581c3b46398e3
 toc_source: outline
+doc_brief: "UC Santa Barbara — 19 sections: Front matter; Abstract; Introduction"
 ---
 A is denoted by IA or I when it is clear from the context what the sub index should be.
 2.1

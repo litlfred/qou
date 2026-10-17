@@ -8,6 +8,7 @@ pages: 1-8
 source_pdf: qt2pf5d0mn.pdf
 source_sha256: 4c8581c3b46398e3
 toc_source: outline
+doc_brief: "UC Santa Barbara — 19 sections: Front matter; Abstract; Introduction"
 ---
 UC Santa Barbara
 UC Santa Barbara Electronic Theses and Dissertations

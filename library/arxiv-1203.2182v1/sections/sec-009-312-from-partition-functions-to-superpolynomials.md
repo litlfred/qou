@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.924
 latex_coverage_ratio: 0.986
+doc_brief: "Volume Conjecture: Reﬁned and Categoriﬁed — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebraic curve, the zero"
 ---
 As we already explained around [\[superPdef\]](#superPdef){reference-type="eqref" reference="superPdef"}, the reduced colored superpolynomial ${\cal P}^R (K; a,q,t)$ is defined as the Poincaré polynomial of the triply graded homology ${\cal H }^R_{i,j,k} (K)$ that categorifies the colored HOMFLY polynomial $P^R (K;a,q)$. Here, the word "reduced" means that the normalization is such that $P^R ({\,\raisebox{-.08cm}{\includegraphics[width=.37cm]{unknot}}\,}) = 1$. Although normalization is one of the delicate points one has to worry about, luckily it will not be a major issue for us here.
 

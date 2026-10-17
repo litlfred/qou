@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.88
 latex_coverage_ratio: 0.941
+doc_brief: "Volume Conjecture and quantum hyperbolic invariants: the figure eight knot complement — We compute the real part of the semi-classical limit of the sequence of quantum hyperbolic invariants (QHI) of"
 ---
 \label{INTREPEST} As we are going to consider the functions in \eqref{form1} when $N\rightarrow +\infty$, we re-introduce now the hidden dependence on $N$ in the notations, thus letting $(\bu_N)_N:=((\bu_{0,N},\bu_{1,N},\bu_{2,N}))_N$ be a sequence of triples of quantum shape parameters on $\Delta^0$ as in Section \ref{4_1}. Contrary to the more general situation considered in Section \ref{ASYWEIGHTS}, here we assume that $\bu_{k,N}^N$ is constant. Thus, as in \eqref{qshapeuvoct25} we write \begin{equation}\label{recapuvarmars25} \bu_{k,N} = \exp(\bl_{k,N}),\ \bl_{k,N}:= \frac{1}{N}(\Log(u_{k}) +\pi ia_{k}) + \pi i a_k, a_{k}\in \mz.\end{equation}
 Using the formula \eqref{relomS0} one can write \eqref{sumS} as

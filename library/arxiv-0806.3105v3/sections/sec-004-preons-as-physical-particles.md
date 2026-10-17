@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.993
 latex_coverage_ratio: 1.0
+doc_brief: "KNOTS AND PREONS — It is shown that the four quantum trefoil solitons that are described by the irreducible representations D3/2 mm′ of the quantum algebra SLq(2) (and that may be identiﬁed with the"
 ---
 We have so far viewed the preons only as a simple way to describe
 the algebraic structure of the knot polynomials.  If these preons

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.987
+doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
 ---
 The uncomplexity of $|max\ra$ is zero but by adding the clean qubit we bought ourselves an uncomplexity $2^K.$ But the action of the circuit will inevitably increase the complexity by roughly the number of applied gates. Assuming that \ref{G=gg} is the minimal description of $G$ then we can expect the increase of complexity to  be of order $n$ which is also the complexity of $G$. To put it another way, the application of the circuit decreases the uncomplexity from $2^K$ to $ \big( 2^K - \CC(G) \big)$. In other words the computational work in computing $\Tr G$ expends an uncomplexity  equal to the complexity of $G$.
 

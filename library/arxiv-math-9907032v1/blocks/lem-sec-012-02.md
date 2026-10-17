@@ -1,0 +1,1 @@
+[\[normvar\]](#normvar){reference-type="ref" reference="normvar"} concludes the proof of the "weak" part of Theorem [\[hext\]](#hext){reference-type="ref" reference="hext"}, since if any $\mathcal{S}$ had positive Euler characteristic, the program $L_h^*$ would have a positive objective, and thus the program $L_h$ would have no solution.

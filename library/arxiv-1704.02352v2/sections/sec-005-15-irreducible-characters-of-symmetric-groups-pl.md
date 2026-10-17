@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.862
 latex_coverage_ratio: 0.983
+doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Young diagrams which can be regarded as a natural one-parameter deformation of some classi- cal"
 ---
 The most classical choice of the family $(\chi_\lambda)$ in [\[eq:proba-linearcomb\]](#eq:proba-linearcomb){reference-type="eqref" reference="eq:proba-linearcomb"} stems from the representation theory of the symmetric groups. For a Young diagram $\lambda\in\mathbb{Y}_{n}$ with $n$ boxes let $\rho_\lambda\colon \mathfrak{S}(n) \to M_k(\mathbb{R})$ denotes the corresponding *irreducible representation* [@SaganSymmetric] of the symmetric group $\mathfrak{S}(n)$. For a permutation $\pi\in \mathfrak{S}(n)$ we define the value of the *irreducible character $\chi_\lambda$ of the symmetric group* as the fraction of the traces $$\label{eq:character-irrep}
 \chi_\lambda(\pi):= \frac{\mathop{\mathrm{Tr}}\rho_\lambda(\pi)}{\mathop{\mathrm{Tr}}\rho_\lambda(\mathop{\mathrm{id}})}.$$ Since one can identify a permutation $\pi$ with its cycle decomposition, it follows that the irreducible character $\chi_\lambda(\pi)$ is also well-defined if $\pi\in\mathcal{P}_{n}$ is a partition of $n$.

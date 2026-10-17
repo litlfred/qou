@@ -8,6 +8,7 @@ pages: 3-5
 source_pdf: 2205.06874v2.pdf
 source_sha256: 9b41365160c17ab4
 toc_source: outline
+doc_brief: "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects."
 ---
 defect surfaces of genus g ≥1, but only for the simple categorical data underlying Dijkgraaf-Witten models
 [DW90]. Here, we consider spherical fusion categories VecG and VecG′ of graded vector spaces over finite

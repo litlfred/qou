@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.819
 latex_coverage_ratio: 0.908
+doc_brief: "Volume Conjecture and quantum hyperbolic invariants: the figure eight knot complement — We compute the real part of the semi-classical limit of the sequence of quantum hyperbolic invariants (QHI) of"
 ---
 \label{loglimmars25} In this section we focus on the peculiar logarithmic limits of log-parameters \eqref{deflimlkmars26} selected by the two situations (a)-(b) of Theorem \ref{asyinvteo}. These log-parameters have the form \eqref{recapuvarmars25} (at least for $N$ large enough); that is, they have constant shape parameters $u_k\in \mc_*$ and constant edge colors $a_k\in\mz$. In this situation, and assuming \eqref{situation2}, as usual we put, for $k\in\{0,1\}$:
 $$\bl_{k,\infty}^\bu := \lim_{N\ra +\infty} \bl_{k,N}.$$

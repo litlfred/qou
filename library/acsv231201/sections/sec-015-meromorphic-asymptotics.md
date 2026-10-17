@@ -8,6 +8,7 @@ pages: 80-88
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
 toc_source: outline
+doc_brief: "Analytic Combinatorics in Several Variables Expanded Second Edition — 98 sections: Front matter; Preface to the second edition; Preface to the first edition"
 ---
 Partial fraction decomposition gives a simple algebraic method to determine
 asymptotics for rational generating functions. In this section we introduce an-

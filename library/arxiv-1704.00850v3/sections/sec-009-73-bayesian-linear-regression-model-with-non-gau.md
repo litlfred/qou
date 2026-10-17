@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.953
 latex_coverage_ratio: 0.984
+doc_brief: "Estimating the spectral gap of a trace-class Markov operator — The utility of a Markov chain Monte Carlo algorithm is, in large part, determined by the size of the spectral gap of the corresponding"
 ---
 Let $Y_1,Y_2,\dots,Y_n$ be independent $d$-dimensional random vectors from the linear regression model $$Y_i = \beta^T x_i + \Sigma^{1/2}\varepsilon_i \,,$$ where $x_i \in \mathbb{R}^{p}$ is known, while $\beta \in
     \mathbb{R}^{p \times d}$ and the $d\times d$ positive definite matrix $\Sigma$ are to be estimated. The iid errors, $\varepsilon_1,\varepsilon_2,\dots,\varepsilon_n$, are assumed to have a pdf that is a scale mixture of Gaussian densities: $$f_h(\varepsilon) = \int_{\mathbb{R}_+} \frac{u^{d/2}}{(2\pi)^{d/2}} \exp \Big( -\frac{u}{2} \varepsilon^T\varepsilon \Big) h(u) \, du,$$ where $h(\cdot)$ is a pdf with positive support, and $\mathbb{R}_+ := (0,\infty).$ For instance, if $d=1$ and $h(u)

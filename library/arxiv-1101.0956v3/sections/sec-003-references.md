@@ -8,6 +8,7 @@ pages: 15-16
 source_pdf: 1101.0956v3.pdf
 source_sha256: 28fffdb404e88501
 toc_source: outline
+doc_brief: "ALGEBRAIC CONSTRUCTIONS IN THE CATEGORY OF VECTOR BUNDLES — In this paper we present the category of generalized Lie algebroids."
 ---
 [1] C. M. Arcus,
 The generalized Lie algebroids and their applications,

@@ -8,6 +8,7 @@ pages: 4-5
 source_pdf: Di_Cairano_2022_J._Phys._Commun._6_015002.pdf
 source_sha256: f75313b507f97172
 toc_source: outline
+doc_brief: "On the derivation of a Nonlinear Generalized Langevin Equation — 15 sections: Front matter; Introduction; State-of-art"
 ---
 We now explain our main criticism to the Zwanzig’s derivation showing that the deﬁnitions (8) and (9) provided
 by Zwanzig yield a FDR which is inconsistent with the standard deﬁnition [3]. The main reason of this

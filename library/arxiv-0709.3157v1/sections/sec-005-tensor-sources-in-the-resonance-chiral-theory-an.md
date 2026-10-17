@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.959
 latex_coverage_ratio: 0.979
+doc_brief: "Chiral Lagrangians with tensor sources — The implementation of tensor sources in Chiral Lagrangians allows the computation of Green functions and form factors involving tensor currents, that is"
 ---
 It is well known that if one wishes to extend the energy domain of $\chi$PT resonances must be include as active degrees of freedom. The idea of constructing chiral Lagrangians with resonances fields was pioneered in Ref. [@EGPR], but the inclusion of tensor sources was first considered in Ref. [@CMinprogress]. For a consistent introduction of tensor sources one has to consider spin--one resonances of $J^{PC}=1^{+-}$ quantum numbers, first included in Ref. [@Zauner]. It can be shown that such resonances only manifest themselves dynamically when coupled to tensor sources [@CMinprogress]. However tensor sources also couple to vector--meson resonances. The definition of he vector and tensor form factors follow $$\begin{aligned}
  \label{eq:fvperp}

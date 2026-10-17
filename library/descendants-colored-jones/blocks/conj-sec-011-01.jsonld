@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/0.1.0/ns#"
+    }
+  ],
+  "@id": "library/descendants-colored-jones/blocks/conj-sec-011-01",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "kind": "conjecture",
+  "pageStart": 24,
+  "pageEnd": 24,
+  "text": "conj-sec-011-01.md",
+  "derivedFrom": "library/descendants-colored-jones/sections/sec-011",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/descendants-colored-jones/manifest.jsonld",
+  "provenance": "ingested"
+}

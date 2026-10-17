@@ -8,6 +8,7 @@ pages: 5-5
 source_pdf: 1610.05082v3.pdf
 source_sha256: 90c8089953ff2d97
 toc_source: outline
+doc_brief: "WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL — Weighted dependency graphs have been recently introduced by the second author, as a toolbox to prove central limit theorems."
 ---
 weighted dependency graphs. In Section 3, we discuss the cluster expansion for the Ising model in the
 three diﬀerent regimes we consider (high magnetic ﬁeld, very high temperature, very low temperature)

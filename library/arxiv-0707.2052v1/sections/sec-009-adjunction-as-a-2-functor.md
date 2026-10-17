@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.956
 latex_coverage_ratio: 0.984
+doc_brief: "The Mukai pairing, I: a categorical approach — We study the Hochschild homology of smooth spaces, emphasizing the importance of a pairing which generalizes Mukai’s pairing on the cohomology of K3"
 ---
 []{#subsec:adj2functors label="subsec:adj2functors"} As shown in Section [\[subsec:leftrightadjoints\]](#subsec:leftrightadjoints){reference-type="ref" reference="subsec:leftrightadjoints"}, in the 2-category ${\mathscr{V}\textsf{ar}}$ every 1-morphism, that is every kernel, $\Phi\colon X\to Y$ has a right adjoint $\Sigma_X\circ \Phi^{\scriptscriptstyle\vee}$. This can be extended to a 'right adjunction 2-functor' $\tau_R\colon
 {\mathscr{V}\textsf{ar}}^\text{coop}\to {\mathscr{V}\textsf{ar}}$, where ${\mathscr{V}\textsf{ar}}^\text{coop}$ means the contra-opposite 2-category of ${\mathscr{V}\textsf{ar}}$, which is the 2-category with the same collections of objects, morphisms and 2-morphisms, but in which the direction of the morphisms and the 2-morphisms are reversed.

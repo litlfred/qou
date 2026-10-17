@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.956
 latex_coverage_ratio: 0.94
+doc_brief: "MONOIDAL CATEGORIFICATION OF CLUSTER ALGEBRAS — We prove that the quantum cluster algebra structure of a unipotent quantum coordinate ring Aq(n(w)), associated with a symmetric Kac-Moody algebra and"
 ---
 For a  subring $A$ of $\Q(q)$, we say that $L$ is an $A$-{\em lattice} of
 a $\Q(q)$-vector space $V$ if

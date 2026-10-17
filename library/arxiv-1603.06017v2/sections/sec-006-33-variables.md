@@ -8,6 +8,7 @@ pages: 8-8
 source_pdf: 1603.06017v2.pdf
 source_sha256: 3ff091e40573a5dd
 toc_source: outline
+doc_brief: "Automatic Theorem Proving in Walnut — 41 sections: Front matter; Introduction; Basics"
 ---
 (quantiﬁed). For example P3 has no free variables, and can be regarded as a constant, in this case it is always true.
 We have seen that, given a predicate P, for any ordering x1,x2,...,xn of free variables and for every assignment of number

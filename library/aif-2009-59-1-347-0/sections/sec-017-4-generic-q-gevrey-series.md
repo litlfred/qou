@@ -8,6 +8,7 @@ pages: 36-36
 source_pdf: AIF_2009__59_1_347_0.pdf
 source_sha256: 35b8422990e24888
 toc_source: outline
+doc_brief: "On q-summation and confluence — 25 sections: Front matter; Introduction; Part 1. Convergent q-Borel and q-L"
 ---
 4. Generic q-Gevrey series
 We call generic q-Gevrey series a power series ˆf ∈C[[x]] satisfying a

@@ -8,6 +8,7 @@ pages: 19-28
 source_pdf: S0894-0347-00-00337-4.pdf
 source_sha256: 1c6848281fc2804c
 toc_source: outline
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY S 0894-0347(00)00337-4 — 21 sections: Front matter; Plancherel measures; Introduction"
 ---
 was stated in Section 1.4 of the Introduction. We refer the reader to Section 1.4 for
 a discussion of the relation between Theorem 4 and the results obtained in [3, 4, 25].

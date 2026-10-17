@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 0.979
+doc_brief: "Quantum Computation vs. Firewalls — In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue"
 ---
 Recall the $AdS_d$ Schwarzschild geometry $$\label{AdSsch}
 ds^2=-f(r)dt^2+\frac{dr^2}{f(r)}+r^2d\Omega_{d-2}^2,$$ with $$f(r)=1+\left(\frac{r}{R}\right)^2-\frac{\alpha}{r^{d-3}}.$$ A scalar field on this background feels an effective potential. In particular if we look for solutions of the Klein-Gordon equation of the form $$\phi\equiv r^{-\frac{d-2}{2}}e^{-i\omega t}Y_{\ell}(\Omega_{d-2})\Psi_{\omega \ell}(r),$$ it is not hard to see that $\Psi_{\omega \ell}$ must obey a Schrodinger-type equation $$-\frac{d}{dr_*^2}\Psi_{\omega \ell}+V_{eff}(r)\Psi_{\omega\ell}=\omega^2 \Psi_{\omega \ell}.$$ Here $r_*$ is a "tortoise" type coordinate obeying $$r_*'(r)=f^{-1},$$ and the effective potential is $$\begin{aligned}

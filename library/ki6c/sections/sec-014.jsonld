@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/ki6c/sections/sec-014",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Verifying the assumption of the Poisson summation formula",
+  "pageStart": 35,
+  "pageEnd": 37,
+  "contains": [
+    "library/ki6c/blocks/prose-sec-014",
+    "library/ki6c/blocks/lem-sec-014-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki6c/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki6c/manifest.jsonld",
+  "provenance": "ingested"
+}

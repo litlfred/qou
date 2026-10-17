@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.941
 latex_coverage_ratio: 0.98
+doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety for SL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
 ---
 []{#sec:Enhanced label="sec:Enhanced"} Assume that each boundary component $\partial_s M$ is a torus, and that we have fixed a meridian $\mu_s$ and a longitude $\lambda_s$ in $H_1(\partial_s M)$. The definition of $\mathcal EP(\mathcal T)$ involves a choice of *fundamental rectangle* $R_s$ for each boundary component $\partial_s M$, such that the triangulation induced on the torus obtained by identifying the sides of $R_s$ agrees with the triangulation of $\partial_s M$ induced by $\mathcal T$. It is given by the usual variables $c_{ij,k}$ as well as additional variables $m_s,l_s$ indexed by the boundary components.
 

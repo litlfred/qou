@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.761
 latex_coverage_ratio: 0.921
+doc_brief: "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2) AT EVEN ROOTS OF UNITY — We study the decomposition of tensor powers of two dimensional irreducible rep- resentations of quantum sl2 at even roots of"
 ---
 []{#tp label="tp"} We are interested in the tensor powers of the module $L(1)$ over the quantum group $U_q(\mathfrak{sl}_2)$, given explicitly by the following action of the generators: $$F v_1  = v_{-1} \quad \quad F v_{-1} =0 , \quad \quad Ev_1= 0, \quad \quad Ev_{-1} =   v_1 .$$ $$Kv_1 =  q v_1, \quad \quad  Kv_{-1} = q^{-1} v_{-1} .$$ $$E^{(l)} v_i =0, \quad \quad F^{(l)} v_i =0, \quad \quad i=1, -1 .$$ Since $L(1) \simeq T(1)$ is a tilting module, its tensor powers decompose into a direct sum of indecomposable tilting modules over $U_q(\mathfrak{sl}_2)$.
 

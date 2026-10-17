@@ -11,6 +11,8 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.988
 latex_coverage_ratio: 0.833
+doc_brief: "Czechoslovak Mathematical Journal — 9 sections: Front matter; Introduction; Composition-Diamond lemma for left"
+duplicate_of: "czechmathj-60-2010-1-4"
 ---
 In this section, we give the definitions of Kac-Moody algebra $\mathcal {G}(A)$ and Verma module over $\mathcal {G}(A)$. Then, by using Lemma [\[l3.5\]](#l3.5){reference-type="ref" reference="l3.5"}, we find a Gröbner-Shirshov basis for this Verma module.
 

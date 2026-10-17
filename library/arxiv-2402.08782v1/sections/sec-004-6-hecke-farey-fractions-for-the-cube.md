@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 0.939
+doc_brief: "Hecke–Farey coordinates for Bring’s surface Doha Kattan 1 and David Singerman 2 — The modular group Γ (which is the Hecke group H3) can be used to study triangular maps, Here we use the Hecke group"
 ---
 The main aim of this paper is to find Hecke-Farey fractions for Bring's curve, $\mathscr{M}_4(5).$   In general, for a positive integer $n$  the map $\mathcal{M}_4(n)$ has vertices of the form $\frac{a}{\sqrt 2 c}$ or $\frac{b\sqrt 2}{d}$. where $a,b,c,d\in \mathbb{Z}_n.$   These numbers are called {\it Hecke-Farey coordinates.}These two vertices are joined by an edge If and only if $ad-2bc\equiv \pm 1$ mod$\ n.$
  

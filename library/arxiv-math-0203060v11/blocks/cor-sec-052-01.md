@@ -1,0 +1,1 @@
+[\[brsym\]](#brsym){reference-type="ref" reference="brsym"} is false for degenerate categories. For example, let $\tilde {\mathcal C}$ be the fusion category corresponding to the quantum group $U_q(sl_2)$ at $q=e^{\pi

@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "1-s20-s000187089891800x-main",
  "source_sha256": "9844f124dcbc7f36",
- "brief": "Advances in Mathematics 143, 357\u0015375 (1999) Spherical Categories John W. Barrett — 6 sections: MONOIDAL CATEGORIES WITH DUALS; INTRODUCTION; SPHERICAL CATEGORIES",
- "extended": "**Advances in Mathematics 143, 357\u0015375 (1999) Spherical Categories John W. Barrett**\n\n*School of Mathematical Sciences , University of Nottingham , University Park*\n\n19 pp, 6 sections.\n\n**Outline.** 1 MONOIDAL CATEGORIES WITH DUALS; INTRODUCTION; 2 SPHERICAL CATEGORIES; FIG. 1; 3 SPHERICAL HOPF ALGEBRAS; REFERENCES",
+ "brief": "Spherical Categories — 7 sections: Front matter; MONOIDAL CATEGORIES WITH DUALS; INTRODUCTION",
+ "extended": "**Spherical Categories**\n\n*Spherical Categories*\n\n19 pp, 7 sections.\n\n**Outline.** Front matter; 1 MONOIDAL CATEGORIES WITH DUALS; INTRODUCTION; 2 SPHERICAL CATEGORIES; FIG. 1; 3 SPHERICAL HOPF ALGEBRAS; REFERENCES\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.9: A category C with dual data is coherent if, and only if, the\n- Theorem 2.9: Let C be an additive spherical category. Define the sub-\n- Proposition 3.6: If A is a spherical Hopf algebra over F then the\n- Proposition 3.7: Let A be a spherical Hopf algebra. Let x be a left\n- Proposition 3.8: Let A be a spherical Hopf algebra. Take the non-\n- Definition 1.1: A monoidal category is a category, C, together with a",
  "tokens": {
-  "brief": 40,
-  "extended": 79
+  "brief": 23,
+  "extended": 172
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-monoidal-categories-with-duals",
    "title": "MONOIDAL CATEGORIES WITH DUALS",
@@ -43,7 +48,8 @@
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles"
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.989
 latex_coverage_ratio: 1.0
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 For the remainder of this text, we will be interested only in Clifford algebras over $\mathbb{C}$, where $n$ is even.  The most common way to model these algebras is to represent them as $2^{n/2}\times2^{n/2}$ complex matrices, as mentioned above.  These complex matrices then act on spinors in the form of $2^{n/2}$-complex-dimensional column vectors.  
 

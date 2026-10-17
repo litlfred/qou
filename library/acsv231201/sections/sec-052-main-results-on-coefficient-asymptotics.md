@@ -8,6 +8,7 @@ pages: 320-340
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
 toc_source: outline
+doc_brief: "Analytic Combinatorics in Several Variables Expanded Second Edition — 98 sections: Front matter; Preface to the second edition; Preface to the first edition"
 ---
 Having approximated the asymptotics of integrals near critical multiple points,
 to determine asymptotics of ar it remains only to determine the coeﬃcients

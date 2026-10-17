@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.99
 latex_coverage_ratio: 0.99
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 Let us now identify two subspaces, which partition the algebra $\CH$.  These subspaces will be given the suggestive nomenclature $\Psi_{\textup{L}}$ and $\Psi_{\textup{R}}$, and be defined as
 \begin{equation}\begin{array}{lll}

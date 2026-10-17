@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.947
 latex_coverage_ratio: 0.91
+doc_brief: "ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS — This paper deals with exploiting symmetry for solving linear and integer programming problems."
 ---
 It is a known fact that many standard (integer) linear programming formulations of relevant problems in optimization show a lot of symmetry. In this situation a standard branch-and-cut framework repeatedly enumerates symmetric solutions, and sometimes this renders such methods useless. To address these issues the last decade saw a number of approaches to devise algorithms specialized to symmetric optimization problems. We mention a few: Margot suggests to solve symmetric integer linear programs (ILPs) via a pruned branch-and-cut approach involving techniques from computational group theory [@Margot02; @Margot03]. A recent improvement in this direction is "orbital branching" devised by Ostrowski et al. [@OstrowskiEtAl09]. Friedman [@Friedman07] as well as Kaibel and Pfetsch [@KaibelPfetsch08] treat symmetric ILPs by shrinking the domain of feasibility by cutting off symmetric solutions. Gatermann and Parrilo apply results from representation theory and invariant theory to semidefinite programming [@GatermannParrilo04], which includes linear programming as a special case. Our approach is close in spirit to this paper. See also the survey of Margot [@Margot10] for a general overview of symmetric integer linear programming.
 

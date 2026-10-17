@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.991
 latex_coverage_ratio: 0.924
+doc_brief: "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results — 11 sections: Front matter; Setting the problem; Toeplitz meets Ising"
 ---
 As already observed in [@BottSilb5] [@BottSilb6], Ehrhardt's condition on the seminorm, $|||\beta|||<1$, is not just a technical matter. In a critical calculation in 1991, Basor and Tracy [@BasTr] considered a particular symbol $f\!\left(e^{i\theta}\right)$ which has two FH singularities at $z_0=1$ and $z_1=e^{i\,\pi}=-1$ respectively $$\label{eq94}
 f\!\left(e^{i\theta}\right) =  g_{1, \frac{1}{2}}(z) \, g_{-1, -\frac{1}{2}}(z)\, e^{i\,\pi/2}$$ with $\beta_0= \frac{1}{2}, \, \beta_1 = -\frac{1}{2}$ so that $|||\beta|||=1$. By direct computation they found that as $n\to \infty$ $$\label{eq95}

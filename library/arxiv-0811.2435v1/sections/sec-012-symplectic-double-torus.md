@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.992
 latex_coverage_ratio: 0.97
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 47 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 If the skew-symmetric bilinear form on $\Gamma$ is degenerate, then the action of $\g_{\Gamma}$ on ${\mathbb T}_{\Gamma}$ is not exact. In order to remedy the problem we can embed $(\Gamma, \langle\bullet,\bullet\rangle)$ into a larger symplectic lattice. A possible choice is $\Gamma\oplus \Gamma^{\vee}$, where $\Gamma^{\vee}=\op{Hom}(\Gamma,\Z)$. The corresponding non-degenerate bilinear form is $$\langle(\gamma_1,\nu_1),(\gamma_2,\nu_2)\rangle=\langle \gamma_1,\gamma_2\rangle+\nu_2(\gamma_1)-\nu_1(\gamma_2)\,\,.$$
 

@@ -8,6 +8,7 @@ pages: 12-16
 source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
+doc_brief: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings Tomotada Ohtsuki and Yoshiyuki Yokota Introduction — We give presentations of the asymptotic expansions of the"
 ---
 Proof of Theorem 1.1 for the 61 knot
 In this section, we show a proof of Theorem 1.1 for the 61 knot.

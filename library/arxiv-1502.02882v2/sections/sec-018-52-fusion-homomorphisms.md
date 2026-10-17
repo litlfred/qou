@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.947
 latex_coverage_ratio: 0.968
+doc_brief: "Fusion categories via string diagrams — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories."
 ---
 We write $[\cat{C}]$ for the Grothendieck ring of a fusion category. The following property of quantum dimensions is well-known.
 \begin{lem} Given a pivotal structure $\gamma$ on a fusion category $\cat{C}$, the quantum dimension map $\dim_{\gamma} \colon [\cat{C}] \rightarrow

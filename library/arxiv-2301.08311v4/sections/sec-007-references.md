@@ -8,6 +8,7 @@ pages: 72-73
 source_pdf: 2301.08311v4.pdf
 source_sha256: 385139c69e18f5b0
 toc_source: outline
+doc_brief: "FLOER COHOMOLOGY AND HIGHER MUTATIONS — We extend the construction of higher mutation as introduced in [PT20] to local higher mutation, which is applicable to a larger class of monotone Lagrangians."
 ---
 [Abb14] Casim Abbas, An Introduction to Compactness results in Symplectic Field Theory, 2014th ed., Springer,
 Berlin, Germany, 2014 (en).

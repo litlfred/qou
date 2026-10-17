@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.755
 latex_coverage_ratio: 0.946
+doc_brief: "FLATNESS AND COMPLETION REVISITED — We continue investigating the interaction between ﬂatness and a- adic completion for inﬁnitely generated A-modules."
 ---
 In this paper we continue investigating the interaction between flatness 
 and adic completion for infinitely generated modules over a commutative 

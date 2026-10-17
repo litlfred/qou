@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.974
 latex_coverage_ratio: 0.98
+doc_brief: "ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS — This paper deals with exploiting symmetry for solving linear and integer programming problems."
 ---
 []{#sec:finding label="sec:finding"} For the algorithms presented it is never necessary to know the entire group of automorphisms of $\operatorname{LP}(A,b,c)$ or $\operatorname{ILP}(A,b,c)$. Generally, any subgroup will do, the larger the better. Yet here we would like to discuss the question of how to find automorphisms of integer linear programs. From the input data we will construct a labeled graph $\operatorname{G}(A,b,c)$ whose group of labeled automorphisms coincides with $\mathop{\mathrm{Sym}}(\operatorname{ILP}(A,b,c))$.
 

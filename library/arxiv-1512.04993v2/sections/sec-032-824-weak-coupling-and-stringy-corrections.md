@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.835
 latex_coverage_ratio: 1.0
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 In this paper, we have worked exclusively with strongly coupled holographic theories described in the bulk by Einstein gravity. It is natural to ask how our results and conjecture should be affected by including stringy corrections in the bulk.
 In the case of $\CN=4$ $U(N)$ SYM in $D-1=4$ where the 't Hooft coupling $\lambda$ is related to the string scale $\ell_{s}$ by $\lambda = (\lads/\ell_{s})^4$, the vanishing string scale implies infinite field theory coupling.

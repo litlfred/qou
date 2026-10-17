@@ -8,6 +8,7 @@ pages: 7-8
 source_pdf: quaternioms.pdf
 source_sha256: becedcbc858611dd
 toc_source: outline
+doc_brief: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 44 sections: Front matter; Introduction; Extended Related Work"
 ---
 Let {1, e1, . . . , e7} be the standard octonion basis with e2
 k = −1 and eiej = ±ek ac-

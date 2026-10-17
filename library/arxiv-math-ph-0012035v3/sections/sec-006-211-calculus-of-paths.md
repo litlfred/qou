@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.965
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:math-ph/0012035v3 16 Jan 2002 — In this short review main issues related to the non-Abelian Stokes theorem have been addressed."
 ---
 []{#SECTION:calculusofPaths label="SECTION:calculusofPaths"}
 

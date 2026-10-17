@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.964
 latex_coverage_ratio: 1.0
+doc_brief: "Automatic Theorem Proving in Walnut — 41 sections: Front matter; Introduction; Basics"
 ---
 \label{sec:eval}
 This is the most important command in Walnut and it stands for ``evaluate.'' This command takes two arguments. The first argument is a name for the evaluation. Name of the evaluation starts with a letter and could contain alphanumerics and underscore. The files generated as the result of the eval command, all share the name given in the first argument. The second argument is a predicate that we want to evaluate. Predicates are always placed between quotation marks. To see the definition for predicates see Section \ref{sec:predicates}. In this article we typeset predicates in math mode in \LaTeX. However, the reader should note that this typesetting is different from the one they see in the terminal. Let us see an example:

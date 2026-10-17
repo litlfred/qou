@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-math-0203194v1/blocks/prose-sec-053",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Rigid analytic spaces.",
-  "pageStart": 213,
-  "pageEnd": 216,
-  "text": "../sections/sec-053-b-rigid-analytic-spaces.md",
+  "title": "Arithmetic triangle groups. Review of Takeuchi's list.",
+  "pageStart": 186,
+  "pageEnd": 192,
+  "text": "../sections/sec-053-174-arithmetic-triangle-groups-review-of-takeuch.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203194v1/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203194v1/manifest.jsonld",
   "provenance": "ingested"

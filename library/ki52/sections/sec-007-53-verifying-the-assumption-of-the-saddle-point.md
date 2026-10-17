@@ -8,6 +8,8 @@ pages: 36-39
 source_pdf: ki52.pdf
 source_sha256: 35ad4ee5a00d4a18
 toc_source: inferred
+doc_brief: "DOI 10.4171/QT/83 — We give a presentation of the asymptotic expansion of the Kashaev invariant of the 52 knot."
+duplicate_of: "104171-qt-83"
 ---
 In this section, in Lemma 5.7, we verify the assumption of the saddle point method
 (Proposition 3.5, see also Remark 3.6 and Appendix B) when we apply Proposition 3.5

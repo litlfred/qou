@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.974
 latex_coverage_ratio: 0.989
+doc_brief: "On the geometry of two state models for the colored Jones polynomial — Using the ﬂow property of the R-matrix deﬁning the colored Jones polynomial, we establish a natural bijection between the set of"
 ---
 In the following we assume that our projection $\mathcal{K}$ is based and we consider the cyclic ordering with respect to the basing. This defines a bijection $V\leftrightarrow \underline{\mathfrak{c}-1}$ with $\mathfrak{c}$ denoting the number of crossings. The base vertex on the first component is labelled $0$ by the order because it is deleted in reduced graphs. We will usually identify vertices with their order labeling. The parametrization of the set of states is now given by integer valued vectors $\mathbf{j}=(j_0,\ldots ,j_{\mathfrak{c}-1})$, possibly with components removed, or just set equal to $0$, in the reduced case. The vector $\mathbf{i}=(i_0,\ldots ,i_{\mathfrak{c}-1})$ is similarly defined.
 

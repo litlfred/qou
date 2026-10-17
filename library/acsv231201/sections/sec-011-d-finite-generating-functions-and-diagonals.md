@@ -8,6 +8,7 @@ pages: 58-69
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
 toc_source: outline
+doc_brief: "Analytic Combinatorics in Several Variables Expanded Second Edition — 98 sections: Front matter; Preface to the second edition; Preface to the first edition"
 ---
 The more explicitly a generating function is described, the better the prospects
 are for extracting information from it. This includes not only exact formu-

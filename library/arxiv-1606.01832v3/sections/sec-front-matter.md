@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1606.01832v3.pdf
 source_sha256: da982c95b9674382
 toc_source: outline
+doc_brief: "FLATNESS AND COMPLETION REVISITED — We continue investigating the interaction between ﬂatness and a- adic completion for inﬁnitely generated A-modules."
 ---
 FLATNESS AND COMPLETION REVISITED
 AMNON YEKUTIELI

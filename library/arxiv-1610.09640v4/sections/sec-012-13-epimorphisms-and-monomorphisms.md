@@ -8,6 +8,7 @@ pages: 26-27
 source_pdf: 1610.09640v4.pdf
 source_sha256: db5e7a5c5e85f95f
 toc_source: outline
+doc_brief: "Derived Categories Amnon Yekutieli 14 Apr 2019 DERIVED CATEGORIES — This is the fourth (and last) prepublication version of a book on derived categories, that will be published by Cambridge"
 ---
 a morphism f : C →D in C is called an isomorphism if there is a morphism
 g : D →C such that f ◦g = idD and g ◦f = idC. The morphism g is called the

@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.964
 latex_coverage_ratio: 0.969
+doc_brief: "SOERGEL CALCULUS — The monoidal category of Soergel bimodules is an incarnation of the Hecke category, a fundamental object in representation theory."
 ---
 The previous section was essentially a discussion of maps $B_{\un{w}} \to Q_w$ for some $w$. Let us use this to discuss maps $B_{\un{w}} \to B_{\un{y}}$ for arbitrary expressions ${\un{w}}$ and ${\un{y}}$.
 

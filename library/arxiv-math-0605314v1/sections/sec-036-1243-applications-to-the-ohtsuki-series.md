@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 0.948
+doc_brief: "arXiv:math/0605314v1 [math.GT] 11 May 2006 — We construct an invariant JM of integral homology spheres M with values in a completion d Z[q] of the polynomial ring Z[q] such that the evaluation at"
 ---
 []{#sec:appl-ohts-seri label="sec:appl-ohts-seri"}
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.964
 latex_coverage_ratio: 0.994
+doc_brief: "On the Deﬁnitions of Diﬀerence Galois Groups — We compare several deﬁnitions of the Galois group of a linear diﬀerence equation that have arisen in algebra, analysis and model theory and show, that"
 ---
 []{#zpv label="zpv"} From now on, we assume that all fields are of characteristic $0$. Most of the statements below can be easily adapted to the positive characteristic case. Let $K$ be a difference subfield of $\calu$, $A\in \GL_n(K)$, and consider the set $\calS=\calS(\calu)$ of solutions of the equation $$\si(X)=AX,\ \det(X)\neq 0.$$ Consider $H=\Aut(K(\calS)/KC_\calu)$. We will call $H$ the *Galois group of $\si(X)=AX$ over $KC_\calu$*[^1].
 

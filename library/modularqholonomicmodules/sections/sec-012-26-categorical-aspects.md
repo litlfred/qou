@@ -8,6 +8,7 @@ pages: 23-24
 source_pdf: modular.qholonomic.modules.pdf
 source_sha256: 640303a68dd75453
 toc_source: outline
+doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised"
 ---
 ules over the q-Weyl algebra and give a proof of Lemma 1.3.
 To begin with, a gauge transformation X = P −1Y changes (3) to σY = BY where

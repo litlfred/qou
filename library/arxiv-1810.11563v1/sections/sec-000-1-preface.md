@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.949
+doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
 ---
 These lectures are a tale of two metrics on the same space---the space of states of a quantum system of $K$ qubits. One metric is familiar to you and the other probably very unfamiliar. They are extremely different measures of the distance between quantum states and they have different purposes.
 

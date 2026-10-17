@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.925
 latex_coverage_ratio: 0.959
+doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Young diagrams which can be regarded as a natural one-parameter deformation of some classi- cal"
 ---
 ::: proposition
 []{#prop:CumulantsGrowSlow label="prop:CumulantsGrowSlow"} We use the notations and assumptions of [\[theo:lln\]](#theo:lln){reference-type="ref" reference="theo:lln"}. For the random variable $\mathcal{R}_l=\mathcal{R}_l(\lambda_n)$ we define $$\label{eq:free-cumulants-exist}

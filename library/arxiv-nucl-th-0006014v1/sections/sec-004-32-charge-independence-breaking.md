@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 0.993
+doc_brief: "arXiv:nucl-th/0006014v1 9 Jun 2000 — 20 sections: Front matter; Introduction; The model"
 ---
 The major cause of CIB in the $NN$ interaction is pion mass splitting. Based upon the Bonn Full Model for the $NN$ interaction, the CIB due to pion mass splitting has been calculated carefully and systematically in Ref. [@LM98b].
 

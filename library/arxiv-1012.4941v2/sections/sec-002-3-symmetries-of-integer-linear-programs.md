@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.992
 latex_coverage_ratio: 0.973
+doc_brief: "ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS — This paper deals with exploiting symmetry for solving linear and integer programming problems."
 ---
 []{#sec:ILP label="sec:ILP"} We now turn to our main focus. Associated with $\operatorname{LP}(A,b,c)$ is the integer linear program $$\label{eq:ILP}
   \begin{array}{ll}

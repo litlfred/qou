@@ -8,6 +8,7 @@ pages: 15-16
 source_pdf: 1608.03227v4.pdf
 source_sha256: c71128e9a6c35343
 toc_source: outline
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 proof the lemma 2.1 relies on the fact that every map from Hom<0(C+, C+) is homotopically trivial and
 hence we can construct a homotopy that connects this map to 0. It appears to us that the analog of this

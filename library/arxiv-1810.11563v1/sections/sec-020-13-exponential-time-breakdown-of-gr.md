@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.951
 latex_coverage_ratio: 0.987
+doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
 ---
 \label{expTbreakdown}
 According to classical general relativity an Einstein-Rosen bridge (ERB), or  a one-sided bridge-to-nowhere, grows forever. It is interesting that this growth is bounded by quantum mechanics. To see why we  consider a diagnostic of the length of the wormhole, namely the equal time correlation between CFT fields outside the black hole horizons. If the two fields are on the same side then the correlation will be time-independent because the density matrix on each side is thermal, and therefore stationary. But if we consider correlations between opposite sides it is well known that the correlation is large at $t=0$ and decreases with the magnitude of $t$. The cause of the decrease is simple; the wormhole separating the two sides grows. Roughly speaking we expect the correlation to  exponentially decreases with the distance through the wormhole,

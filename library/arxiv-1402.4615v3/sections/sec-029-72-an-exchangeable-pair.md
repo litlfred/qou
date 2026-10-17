@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.972
 latex_coverage_ratio: 0.973
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials."
 ---
 The first step consists in building a $d$-tuple $\tilde{W}_d^*$, such that $(\tilde{W}_d,\tilde{W}_d^*)$ is an exchangeable pair. The construction that we will describe here is due to Fulman [@FulmanFluctuationChA2].
 

@@ -8,6 +8,7 @@ pages: 30-31
 source_pdf: quaternioms.pdf
 source_sha256: becedcbc858611dd
 toc_source: outline
+doc_brief: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 44 sections: Front matter; Introduction; Extended Related Work"
 ---
 The Strategy of Decomposition
 This leads to a “divide and conquer” strategy as the default method for implementing

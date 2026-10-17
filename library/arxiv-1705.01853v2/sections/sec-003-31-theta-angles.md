@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.964
 latex_coverage_ratio: 1.0
+doc_brief: "Line Operators in the Standard Model — There is an ambiguity in the gauge group of the Standard Model."
 ---
 We can now ask how the spectrum of line operators changes as we vary the $\theta$-angles. A priori, there are three such angles, one for each factor of the gauge group. We call these $\theta_{\tilde{Y}}$, $\theta_2$ and $\theta_3$. Within the framework discussed in this paper it makes sense to ask how the line operators vary under each of these. 
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.957
 latex_coverage_ratio: 0.997
+doc_brief: "Concentration of Lipschitz functionals of determinantal and other strong Rayleigh measures — Let {X1, . . ."
 ---
 To prove bounds such as [\[eq:chernoff\]](#eq:chernoff){reference-type="eqref" reference="eq:chernoff"}, one obtains an upper bound for ${\mathbb E}e^{\lambda S_n}$, and then applies Markov's inequality, choosing $\lambda$ optimally. Underlying the bounds on ${\mathbb E}e^{\lambda S_n}$ are corresponding bounds for compensated increments. Let $\Delta$ denote a variable with mean zero. Three classical exponential bounds are as follows.
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.936
 latex_coverage_ratio: 0.944
+doc_brief: "L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS — We study (quasi-)cohomological properties through an analysis of quantum Markov semi-groups."
 ---
 We fix again $(M, \tau)$ a finite von Neumann algebra with $(\Phi_t)_{t \geq 0} = (\exp(-t \Delta))_{t \geq 0}$ a quantum Markov semi-group. Let $$\partial: \mathcal{A}\rightarrow L_2(M)_\nabla: a \mapsto a \otimes \Omega_\tau$$ be the derivation of Corollary [\[Cor=Derivation\]](#Cor=Derivation){reference-type="ref" reference="Cor=Derivation"}. We shall assume that $\Delta$ satisfies certain properties that are close to being a length function.
 

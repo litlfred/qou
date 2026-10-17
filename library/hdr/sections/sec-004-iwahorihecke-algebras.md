@@ -8,6 +8,7 @@ pages: 20-20
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
 toc_source: outline
+doc_brief: "Hecke algebras, generalisations and representation theory — 30 sections: Front matter; Algebras of Finite Type; Blocks"
 ---
 In this chapter we will focus on real reﬂection groups, while in the next chapter we will see what happens
 in the complex case.

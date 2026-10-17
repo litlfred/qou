@@ -8,6 +8,7 @@ pages: 358-367
 source_pdf: 1610.09640v4.pdf
 source_sha256: db5e7a5c5e85f95f
 toc_source: outline
+doc_brief: "Derived Categories Amnon Yekutieli 14 Apr 2019 DERIVED CATEGORIES — This is the fourth (and last) prepublication version of a book on derived categories, that will be published by Cambridge"
 ---
 we begin the study of derived torsion over a connected graded ring. We adhere
 to Conventions 15.1.17 and 15.2.1. Thus K is a ﬁeld, and all graded K-rings are

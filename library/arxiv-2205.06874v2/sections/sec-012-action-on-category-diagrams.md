@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.991
+doc_brief: "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects."
 ---
 We also use the diagrammatic calculus to describe   evaluation functors $\mathrm{ev}: \Fun(\mam,\man)\times \mam\to \man$ that send a pair $(F,m)$ of a functor $F:\mam\to\man$ and an object $m\in\Ob\mam$ to the object $F(m)$ and a pair $(\nu,\alpha)$ of a natural transformation $\nu: F\Rightarrow G$ and a morphism $\alpha:m\to m'$ to the morphism
 $\nu_{m'}\circ F(\alpha)=G(\alpha)\circ \nu_m: F(m)\to G(m')$. 

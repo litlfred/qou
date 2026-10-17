@@ -8,6 +8,7 @@ pages: 46-53
 source_pdf: 1309.0865v1.pdf
 source_sha256: e610a4fa938a7cc9
 toc_source: inferred
+doc_brief: "SOERGEL CALCULUS — The monoidal category of Soergel bimodules is an incarnation of the Hecke category, a fundamental object in representation theory."
 ---
 technique, which we will discuss in the section after next.
 □

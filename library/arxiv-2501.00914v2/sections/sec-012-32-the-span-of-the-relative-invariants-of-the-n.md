@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.965
 latex_coverage_ratio: 0.959
+doc_brief: "L-spaces and knot traces — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries."
 ---
 The following key lemma is the Heegaard Floer analogue of \cite[Proposition~7.1]{bs-lspace}; the proof is essentially the same, but appears simpler since (unlike in framed instanton homology) we can work over $\F=\Z/2\Z$.
 

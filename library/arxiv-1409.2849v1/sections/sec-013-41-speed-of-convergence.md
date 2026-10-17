@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
 latex_coverage_ratio: 0.956
+doc_brief: "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS — In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the"
 ---
 \label{subsec:speedofconv}
 Getting back to our special case of the Curie-Weiss model, we denote $X_n=\frac{1}{n^{1/4}}\sum_{i=1}^n B_i$ a scaled sum of $\pm 1$ independent Bernoulli random variables; $Y_n$ the random variable with modified law 

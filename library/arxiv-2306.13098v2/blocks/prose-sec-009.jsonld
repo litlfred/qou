@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-2306.13098v2/blocks/prose-sec-009",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Linear dependence of minimal ideal states",
+  "title": "SU(3)C color symmetries of three generations",
   "pageStart": 13,
   "pageEnd": 13,
-  "text": "../sections/sec-009-linear-dependence-of-minimal-ideal-states.md",
+  "text": "../sections/sec-009-su3c-color-symmetries-of-three-generations.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2306.13098v2/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2306.13098v2/manifest.jsonld",
   "provenance": "ingested"

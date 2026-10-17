@@ -8,6 +8,7 @@ pages: 32-32
 source_pdf: 1203.2182v1.pdf
 source_sha256: 2fe21af194f65227
 toc_source: inferred
+doc_brief: "Volume Conjecture: Reﬁned and Categoriﬁed — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebraic curve, the zero"
 ---
 In this section we ﬁnd recursion relations which are satisﬁed by homological knot invariants,
 therefore, providing concrete examples for one of the new volume conjectures proposed in

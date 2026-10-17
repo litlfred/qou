@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.959
 latex_coverage_ratio: 0.974
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 []{#subsec_ca label="subsec_ca"} The invariance of ${\cal L}^0_{\rm QCD}$ under global $\mbox{SU(3)}_L\times\mbox{SU(3)}_R\times\mbox{U(1)}_V$ transformations implies that also the QCD Hamilton operator in the chiral limit, $H^0_{\rm QCD}$, exhibits a global $\mbox{SU(3)}_L\times\mbox{SU(3)}_R\times\mbox{U(1)}_V$ symmetry. As usual, the charge operators are defined as the space integrals of the charge densities, $$\begin{aligned}
 \label{2:1:4:ql}

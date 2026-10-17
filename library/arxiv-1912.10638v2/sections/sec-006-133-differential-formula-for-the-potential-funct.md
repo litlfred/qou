@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.98
 latex_coverage_ratio: 0.955
+doc_brief: "Asymptotics of some quantum invariants of the Whitehead chains — In this paper, we study the asymptotics of the colored Jones polynomials of the Whitehead chains with one belt colored by M1 and all"
 ---
 From the discussion in subsection [\[strate\]](#strate){reference-type="ref" reference="strate"}, we have already seen the importance of the potential function. Thus, it is necessary to have a better understanding about how the geometric information of a link complement is encoded in the potential function of the link. In the study of the asymptotics of the colored Jones polynomials, we discover the following formula satisfied by the potential function of the Whitehead link.
 

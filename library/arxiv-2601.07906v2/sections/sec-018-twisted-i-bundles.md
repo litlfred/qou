@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.978
 latex_coverage_ratio: 0.995
+doc_brief: "A universal sum over topologies in 3d gravity — We explore the sum over topologies in AdS3 quantum gravity and its relationship with the statistical interpretation of the boundary theory."
 ---
 \label{subsec:twisted I bundles}
 Another class of well-studied hyperbolic 3-manifolds are so-called twisted $I$-bundles, which were studied in \cite{Yin:2007at, Maxfield:2016mwh} as an example of non-handlebody saddlepoints of the gravitational path integral in 3d gravity. Let us discuss the simplest of those. Consider the Maldacena-Maoz wormhole $\Sigma_2 \times I$. We choose the moduli of the genus-2 surface $\Sigma_2$, such that it admits an orientation reversing fixed-point free diffeomorphism $\Phi: \Sigma_2 \to \Sigma_2$ with the quotient being the non-orientable surface of Euler characteristic $-1$ (also known as the van Dyck surface and topologically equal to a sphere with three crosscaps). In other words, $\Phi$ is the deck transformation of the orientation double-cover of $\Sigma_2/\Phi$. Then $\Phi$ extends to the 3-manifold $\Sigma_2 \times I$ by reflecting the interval $x \to 1-x$. Since $x \to 1-x$ is also orientation reversing, $\Phi$ \emph{preserves} the orientation of $\Sigma_2 \times I$ and the quotient $M=(\Sigma_2 \times I)/\Phi$ is an orientable hyperbolic 3-manifold with a single genus-2 boundary. 

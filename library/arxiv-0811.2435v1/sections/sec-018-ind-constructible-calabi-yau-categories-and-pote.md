@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.996
 latex_coverage_ratio: 0.972
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 47 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 Let $\k$ be a field of characteristic zero. Recall that a Calabi-Yau category of dimension $d$ is a weakly unital $\k$-linear triangulated $\A$-category ${\CC}$ (see [@KoSo2], [@KoSo3], [@So1]), such that for any two objects $E,F$ the $\Z$-graded vector space $\op{Hom}^\bullet(E,F)=\oplus_{n\in \Z}\op{Hom}^n(E,F)$ is finite-dimensional (hence the space $\op{Ext}^\bullet(E,F)$ is also finite-dimensional) and moreover:
 

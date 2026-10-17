@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 0702263v1.pdf
 source_sha256: 8ae381b4eba60286
 toc_source: outline
+doc_brief: "Chiral Low-Energy Constants ∗ — The progress in determining the coupling constants of mesonic chi- ral Lagrangians is reviewed, with emphasis on the work performed in three successive European"
 ---
 arXiv:hep-ph/0702263v1  26 Feb 2007
 UWThPh-2007-2

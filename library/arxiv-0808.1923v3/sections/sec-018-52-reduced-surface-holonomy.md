@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.948
 latex_coverage_ratio: 0.947
+doc_brief: "Connections on Non-Abelian Gerbes and their Holonomy — We introduce an axiomatic framework for the parallel transport of connections on gerbes."
 ---
 We consider a Lie 2-group $\mathfrak{G}$  defined from a smooth crossed module $(G,H,t,\alpha)$, and restrict our attention to  transport 2-functors
 \begin{equation*}

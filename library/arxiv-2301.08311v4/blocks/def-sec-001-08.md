@@ -1,1 +1,1 @@
-We define λn as the 1-form on C∗ given by λn = xdy−ydx
+We define λn as the 1-form on C∗given by λn =

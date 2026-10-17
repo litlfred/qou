@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.875
 latex_coverage_ratio: 0.906
+doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Young diagrams which can be regarded as a natural one-parameter deformation of some classi- cal"
 ---
 []{#sec:hypothesis-double-scaling label="sec:hypothesis-double-scaling"} All results of the current paper will be based on the assumption that $\alpha=\alpha(n)$ is a sequence of positive numbers such that $$\label{eq:double-scaling-refined}
 \frac{-\sqrt{\alpha}+\frac{1}{\sqrt{\alpha}}}{\sqrt{n}} = 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.934
 latex_coverage_ratio: 1.0
+doc_brief: "EXPLICIT DESCRIPTION OF CHRISTOFFEL DEFORMATIONS AND — Christoﬀel deformation of a measure on the real line consists of multipying this measure by a squared polynomial having its roots in R."
 ---
 A specific and important class of determinantal point processes are the so called *orthogonal polynomial ensembles*, see e.g. the survey [@konig] and references therein. They are $N$-points random configurations for some fixed deterministic $N$ governed by the kernel of the orthogonal projection onto the first $N$ polynomials in the Hilbert space $L^2(\mathbb{R},\mu)$ for some measure $\mu$ with finite moments of all orders. This kernel is namely the $N$-th Christoffel-Darboux kernel of the polynomials orthogonal with respect to $\mu$. For example, the classical G.U.E. from random matrix theory is the orthogonal polynomial ensemble with the Gaussian weight on $\mathbb{R}$, and is thus described by the Hermite polynomials, see e.g. [@konig] and references therein.\
 

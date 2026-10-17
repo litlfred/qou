@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.994
 latex_coverage_ratio: 0.987
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 47 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 Let $M$ be a complex manifold, $x_0\in M$. Recall, that for a germ $f$ of an analytic function at $x_0$ such that $f(x_0)=0$ one can define its *Milnor fiber* $MF_{x_0}(f)$, which is a locally trivial $C^{\infty}$-bundle over $S^1$ of manifolds with the boundary (defined only up to a diffeomorphism): $$\{z\in M|\,\,dist(z,x_0)\le\varepsilon_1, |f(z)|=\varepsilon_2\}\to S^1=\R/2\pi\Z\,\,,$$ where $z\mapsto \op{Arg}\,f(z)$. Here $dist$ is any smooth metric on $M$ near $x_0$, and there exists a constant $C=C(f,dist)$ and a positive integer $N=N(f)$ such that for $0<\varepsilon_1\le C$ and $0<\varepsilon_2<\varepsilon_1^N$ the $C^{\infty}$ type of the bundle is the same for all $\varepsilon_1,\varepsilon_2,dist$.
 

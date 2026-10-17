@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-0505056v2",
+  "title": "Matrix factorizations and link homology II",
   "contains": [
+    "library/arxiv-math-0505056v2/sections/sec-front-matter",
     "library/arxiv-math-0505056v2/sections/sec-000",
     "library/arxiv-math-0505056v2/sections/sec-001"
   ],
@@ -30,7 +31,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-0505056v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0505056v2.pdf",
     "source_sha256": "1b6580406c3d35b59f8fb18e5fba40460fe574cab85d94edf705c6c4bb2d0cbe",
     "pages": 37,

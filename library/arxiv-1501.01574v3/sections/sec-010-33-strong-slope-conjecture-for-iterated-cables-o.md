@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.937
 latex_coverage_ratio: 0.975
+doc_brief: "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL — We study the behavior of the degree of the colored Jones polynomial and the boundary slopes of knots under the operation of cabling."
 ---
 Let $D$ be a link diagram, and $x$ a crossing of $D$.  Associated to
 $D$ and $x$ are two link diagrams, each with one fewer crossing than

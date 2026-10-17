@@ -8,6 +8,7 @@ pages: 447-454
 source_pdf: 1610.09640v4.pdf
 source_sha256: db5e7a5c5e85f95f
 toc_source: outline
+doc_brief: "Derived Categories Amnon Yekutieli 14 Apr 2019 DERIVED CATEGORIES — This is the fourth (and last) prepublication version of a book on derived categories, that will be published by Cambridge"
 ---
 [1] L. Alonso, A. Jeremias and J. Lipman, Local homology and cohomology on schemes, Ann.
 Sci. ENS 30 (1997), 1-39. Correction http://www.math.purdue.edu/~lipman.

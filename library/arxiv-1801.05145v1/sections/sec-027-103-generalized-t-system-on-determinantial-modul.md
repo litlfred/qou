@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.931
 latex_coverage_ratio: 0.584
+doc_brief: "MONOIDAL CATEGORIFICATION OF CLUSTER ALGEBRAS — We prove that the quantum cluster algebra structure of a unipotent quantum coordinate ring Aq(n(w)), associated with a symmetric Kac-Moody algebra and"
 ---
 \begin{theorem} \label{thm: canonical surjection}
 Let $\lambda \in \wl^+$ and $\mu_1,\mu_2,\mu_3 \in W \lambda$ such that $\mu_1 \preceq \mu_2 \preceq \mu_3$. Then there exists a canonical epimorphism

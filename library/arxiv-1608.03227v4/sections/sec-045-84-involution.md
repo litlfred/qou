@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.923
 latex_coverage_ratio: 0.96
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 Let $w_0\in G_n$ be the longest element of the Coxeter group $S_n$: $(w_0)_{i,j}=\delta_{i+j,n+1}$. The involution $\SymbolPrint{\mathrm{D}}: G\to G$ defined by $\mathrm{D}(g)=w_0 (g^{-1})^t w_0$ preserves $B$ and the Lie version of involution $\mathrm{D}(X)=-w_0 X^t w_0$, $X\in \frg=\textup{Lie}(G)$ preserves $\frb\subset \frg$. Moreover, since $Tr(\mathrm{D}(X))=-Tr(X)$ the have automorphism of category $$\mathrm{D}:\quad \MF_{B^2}(\calX_2(G),W)\to \MF_{B^2}(\calX_2(G),W),$$ $$\mathrm{D}:\quad \MF_{B^2}(\calXr_2(G),\Wr)\to \MF_{B^2}(\calXr_2(G),\Wr).$$ The following proposition is almost tautological
 

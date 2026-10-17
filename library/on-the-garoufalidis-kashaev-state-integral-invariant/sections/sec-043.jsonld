@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/sections/sec-043",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Angle Structures and Parameter Dependence",
+  "pageStart": 48,
+  "pageEnd": 49,
+  "contains": [
+    "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-043"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/on-the-garoufalidis-kashaev-state-integral-invariant/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/on-the-garoufalidis-kashaev-state-integral-invariant/manifest.jsonld",
+  "provenance": "ingested"
+}

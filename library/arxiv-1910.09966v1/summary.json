@@ -3,12 +3,17 @@
  "doc_id": "arxiv-1910.09966v1",
  "source_sha256": "21798500c98ed25a",
  "brief": "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics — In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds.",
- "extended": "**Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics**\n\n*T. Asslmeyer-Maluga (German Aerospace Center, Berlin)*\n\n37 pp, 17 sections.\n\n**Abstract.** In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds. Here, we will use Thurston’s geometrization theorem to get a simple picture: fermions as hyperbolic knot comple- ments (a complement C(K) = S3\\ (K× D2) of a knot K carrying a hyperbolic geometry) and bosons as torus bundles. In particular, hyper- bolic 3-manifolds have a close connection to number theory (Bloch group, algebraic K-theory, quaternionic trace ﬁelds), which will be used in the description of fermions. Here, we choose the description of 3-manifolds by branched covers. Every 3-manifold can be described by a 3-fold branched cover of S3 branched along a knot. In case of knot complements, one will obtain a 3-fold branched cover of the 3-disk D3 branched along a 3-braid or 3-braids describing fermions.\n\n**Outline.** 1 Introduction; 2.1 As Warmup: Branched Coverings of 2-Manifol; 2.2 Branched Coverings of 3-Manifolds; 2.3 Branched Covering of 4-Manifolds; 2.4 Branched Coverings of Knot Complements; 4.1 K3 Surfaces and Octonions; 4.2 From Immersed Surfaces in K3 Surfaces to F; 4.3 Fermions as Knot Complements; 4.4 Torus Bundle as Gauge Fields; 4.5 Fermions, Bosons and 3-Braids; 5 Electric Charge and Quasimodularity; 5.1 Electric Charge as Dehn Twist of the Bound; 5.2 Electric Charge as a Frame of the Knot Com; 5.3 The Charge Spectrum; 5.4 Vanishing of the Magnetic Charge and Quasi; 7 Fermions and Number Theory; 9 Conclusions and Outlook",
+ "extended": "**Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics**\n\n*T. Asslmeyer-Maluga (German Aerospace Center, Berlin)*\n\n37 pp, 18 sections.\n\n**Abstract.** In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds. Here, we will use Thurston’s geometrization theorem to get a simple picture: fermions as hyperbolic knot comple- ments (a complement C(K) = S3 \\ (K × D2) of a knot K carrying a hyperbolic geometry) and bosons as torus bundles. In particular, hyper- bolic 3-manifolds have a close connection to number theory (Bloch group, algebraic K-theory, quaternionic trace ﬁelds), which will be used in the description of fermions. Here, we choose the description of 3-manifolds by branched covers. Every 3-manifold can be described by a 3-fold branched cover of S3 branched along a knot. In case of knot complements, one will obtain a 3-fold branched cover of the 3-disk D3 branched along a 3-braid or 3-braids describing fermions.\n\n**Outline.** Front matter; 1 Introduction; 2.1 As Warmup: Branched Coverings of 2-Manifol; 2.2 Branched Coverings of 3-Manifolds; 2.3 Branched Covering of 4-Manifolds; 2.4 Branched Coverings of Knot Complements; 4.1 K3 Surfaces and Octonions; 4.2 From Immersed Surfaces in K3 Surfaces to F; 4.3 Fermions as Knot Complements; 4.4 Torus Bundle as Gauge Fields; 4.5 Fermions, Bosons and 3-Braids; 5 Electric Charge and Quasimodularity; 5.1 Electric Charge as Dehn Twist of the Bound; 5.2 Electric Charge as a Frame of the Knot Com; 5.3 The Charge Spectrum; 5.4 Vanishing of the Magnetic Charge and Quasi; 7 Fermions and Number Theory; 9 Conclusions and Outlook",
  "tokens": {
   "brief": 48,
-  "extended": 412
+  "extended": 416
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.957
 latex_coverage_ratio: 0.994
+doc_brief: "Universal Properties of the Four-Body System with Large Scattering Length Abstract — Few-body systems with large scattering length have universal properties that do not depend on the details of their"
 ---
 []{#sec:effT:3body label="sec:effT:3body"}
 

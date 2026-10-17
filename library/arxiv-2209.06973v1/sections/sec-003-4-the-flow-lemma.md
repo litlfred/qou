@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.988
 latex_coverage_ratio: 0.994
+doc_brief: "On the geometry of two state models for the colored Jones polynomial — Using the ﬂow property of the R-matrix deﬁning the colored Jones polynomial, we establish a natural bijection between the set of"
 ---
 ::: lem
 []{#lem: flow lemma label="lem: flow lemma"} Let $\mathcal{K}$ be the Morse projection of a link. Then there is a natural bijection $\phi_{\pm }$ from the set of $\mathbb{Z}$-flows on $G_{\pm}\mathcal{K}$ to the set of $\mathbb{Z}$-flows of $P\mathcal{K}$. For $(+)$ it assigns the color of a blue edge of $G\mathcal{K}$ to the color of the part arc of $P\mathcal{K}$ following the transition, and assigns the red edge colors to the changes in the colors of the two incoming part arcs at the crossing corresponding to the transition. This map restricts for each $n\geq 1$ and $\pm$ to bijections of flows: $$\phi_{\pm}: \mathcal{F}_n(G_{\pm}\mathcal{K})\rightarrow \mathcal{F}^n_{\pm}(P\mathcal{K})$$

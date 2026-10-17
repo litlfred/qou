@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.647
+doc_brief: "arXiv:math-ph/0012035v3 16 Jan 2002 — In this short review main issues related to the non-Abelian Stokes theorem have been addressed."
 ---
 The described theory possesses the following "topological" gauge symmetry: $$\delta  z(x)=\theta(x), \qquad
     \delta\bar{z} (x)=\bar{\theta}(x),

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.945
 latex_coverage_ratio: 0.918
+doc_brief: "GENERALIZED VOLUME CONJECTURE AND THE A-POLYNOMIALS: THE NEUMANN–ZAGIER POTENTIAL FUNCTION AS A CLASSICAL LIMIT OF — 7 sections: Front matter; Quantum Dilogarithm Function; Examples"
 ---
 One of benefits of the quantum invariant $Z_\gamma(\mathcal{M})$ is
 that we can compute it explicitly

@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.951
 latex_coverage_ratio: 0.923
+doc_brief: "SOERGEL CALCULUS — The monoidal category of Soergel bimodules is an incarnation of the Hecke category, a fundamental object in representation theory."
 ---
 \begin{defn} A \emph{Soergel graph} is a type of graph with boundary (see Definition \ref{defn: graph}). The only decorations are boxes labelled by homogeneous $f \in R$. The vertices in this graph are of 3 types (see Figure \ref{thegenerators}):
 

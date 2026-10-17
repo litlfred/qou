@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.946
 latex_coverage_ratio: 0.929
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 []{#subsec-5.3 label="subsec-5.3"} In [@bbs], the point of departure is an approximate reproducing identity for functions in $\mathrm{A}^2_m$. To state the result, we define the kernel $$M_m(z,w) := \frac{2m}{\pi} \mathrm{e}^{2mQ(z,w)}\bar\partial_w\theta(z,w).
 \label{eq-Mm}$$ This kernel is for obvious reasons only defined in some fixed neighborhood of the diagonal. We shall be concerned with the (small) bidisk ${\mathbb D}(z_0,r)\times{\mathbb D}(z_0,r)$ where $M_m(z,w)$ is well-defined, by our assumptions (A:i)--(A:iv) above.To extend the kernel beyond the bidisk, we multiply by a smooth cut-off function $\chi_0(w)$, and think of the product as $0$ off the support of $\chi_0$ (also where $M_m(z,w)$ is undefined). The function $\chi_0(w)$ is $C^\infty$-smooth with $0\le\chi_0\le1$ throughout ${\mathbb C}$, and vanishes off ${\mathbb D}(z_0,\frac34r)$, while it has $\chi_0=1$ on $\mathbb{D}(z_0, \frac23 r)$, and is a function of the distance $|w-z_0|$. We ask in addition that the norm $\|\bar\partial\chi_0\|_{L^2(\Omega)}$ is bounded by an absolute constant, which is possible to achieve. We will use the simplified notation $$\|u\|_{m}:=\|u\|_{L^2(\Omega,\mathrm{e}^{-2mQ})}=\bigg\{\int_\Omega|u|^2\mathrm{e}^{-2mQ}

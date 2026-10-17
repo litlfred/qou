@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 5S032X.pdf
 source_sha256: 17761383781f7bdc
 toc_source: outline
+doc_brief: "The Standard Model Symmetry and Qubit Entanglement — quantum description."
 ---
 Jochen Szangolies∗
 Research at the intersection of quantum gravity and quantum information theory has seen sig-

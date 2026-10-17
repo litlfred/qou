@@ -1,1 +1,1 @@
-For a Reeb chordζ of angleπ/n fromT+ toT− we have that for ϵ> 0|Mζ(R+iϵ)| =
+For a Reeb chord ζ of angle π/n from T+ to T−we have that for ϵ > 0 |Mζ(R+iϵ)| =

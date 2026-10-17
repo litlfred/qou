@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
 latex_coverage_ratio: 0.992
+doc_brief: "Non-cyclotomic fusion categories Introduction — Etingof, Nikshych and Ostrik ask in [7, §2] if every fusion category can be completely deﬁned over a cyclotomic ﬁeld."
 ---
 In [@MR2183279 §2], Etingof, Nikshych and Ostrik ask if every fusion category over the complex numbers can be defined over a cyclotomic field. More precisely, does every fusion category over $\Complex$ have a complete rational form over a cyclotomic field? (See Section [\[sec:background\]](#sec:background){reference-type="ref" reference="sec:background"} for definitions and examples of the key notions "rational form\" and "complete rational form.\")
 

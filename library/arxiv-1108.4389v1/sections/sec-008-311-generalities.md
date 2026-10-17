@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.964
 latex_coverage_ratio: 1.0
+doc_brief: "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories."
 ---
 There is a beautiful $SL(2,{\mathbb Z})$ action on the space of 3-dimensional conformal field theories with $U(1)$ flavor symmetry. This action was first described in [@Witten-SL2] as a way to understand the meaning of different choices of boundary conditions for an abelian gauge field in $AdS_4$ in the context of $AdS_4/CFT_3$.
 

@@ -1,1 +1,1 @@
-(Vertical Transversality) cokerD1 = 0
+(Vertical Transversality) coker D1 = 0

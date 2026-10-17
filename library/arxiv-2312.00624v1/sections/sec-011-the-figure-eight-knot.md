@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.918
 latex_coverage_ratio: 0.981
+doc_brief: "On the structure of wave functions in complex Chern–Simons theory — We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the"
 ---
 []{#sec: 41 label="sec: 41"} The state integral of the figure-eight knot $\chi_{{\bf{4}}_1}(u;\hbar)$ can be expressed explicitly as [@bdp; @dimofte-levelk; @ggm2]
 

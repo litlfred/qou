@@ -8,6 +8,7 @@ pages: 5-8
 source_pdf: descendants_colored_jones.pdf
 source_sha256: f00693a5926c074f
 toc_source: outline
+doc_brief: "The descendant colored Jones polynomials — We discuss two realizations of the colored Jones polyno- mials of a knot, one appearing in an unnoticed work of the second author in 1994 on quantum"
 ---
 From their very deﬁnition, the 0-th descendants DJ(0)
 n (q) and DJ(0)(q) are

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.698
 latex_coverage_ratio: 0.953
+doc_brief: "GENERALIZED VOLUME CONJECTURE AND THE A-POLYNOMIALS: THE NEUMANN–ZAGIER POTENTIAL FUNCTION AS A CLASSICAL LIMIT OF — 7 sections: Front matter; Quantum Dilogarithm Function; Examples"
 ---
 \label{sec:41}
 

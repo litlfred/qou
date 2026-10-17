@@ -8,6 +8,7 @@ pages: 1-4
 source_pdf: 1105.0091v1.pdf
 source_sha256: 7d6f72e016b25027
 toc_source: outline
+doc_brief: "A central limit theorem for the characters of the infinite symmetric group and of the infinite Hecke algebra — In this paper, we review the representation theory of the inﬁnite symmetric group, and"
 ---
 E-mail: meliot@phare.normalesup.org
 Abstract In this paper, we review the representation theory of the inﬁnite

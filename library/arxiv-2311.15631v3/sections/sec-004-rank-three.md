@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
 latex_coverage_ratio: 0.979
+doc_brief: "Classification of connected étale algebras in pre-modular fusion categories up to rank three — We classify connected ´etale algebras A’s in pre-modular fusion categories B with rank(B) ≤3 including"
 ---
 A rank three pre-MFC has three simple objects $\{1,X,Y\}$. As we reviewed above, with the assumption of pivotal structure, there are five fusion rings, $\text{FR}^{3,2}_1,\text{FR}^{3,0}_1,\text{FR}^{3,0}_2,\text{FR}^{3,0}_3,K(1,0,2,0)$. The last with multiplicity is known [@HH07] not to admit braiding. Thus, we classify connected étale algebras in the first four[^1] pre-MFCs.
 

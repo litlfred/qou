@@ -8,6 +8,7 @@ pages: 28-28
 source_pdf: AIF_2009__59_1_347_0.pdf
 source_sha256: 35b8422990e24888
 toc_source: outline
+doc_brief: "On q-summation and confluence — 25 sections: Front matter; Introduction; Part 1. Convergent q-Borel and q-L"
 ---
 B.2. Proof of Proposition 1.5
 The equality 1φ1(q; q; q, X) = (X; q)∞, plus (B.13), where we have set

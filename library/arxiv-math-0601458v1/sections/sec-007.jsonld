@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0601458v1/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Stuff Types as a Generalization of Structure Types",
+  "pageStart": 20,
+  "pageEnd": 24,
+  "contains": [
+    "library/arxiv-math-0601458v1/blocks/prose-sec-007",
+    "library/arxiv-math-0601458v1/blocks/def-sec-007-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0601458v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0601458v1/manifest.jsonld",
+  "provenance": "ingested"
+}

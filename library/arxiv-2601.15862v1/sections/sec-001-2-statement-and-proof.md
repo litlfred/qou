@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.903
 latex_coverage_ratio: 0.754
+doc_brief: "Synthetic Differential Jet Bundles are Reduced — We have previously observed that the theory of solutions of par- tial differential equations, regarded as diffieties inside jet bundles, acquires a"
 ---
 We write $i_!$ (\cref{ToposOfFormalSmoothSets}) for the inclusion of smooth sets --- such as Fr{\'e}chet manifolds (\cref{FrechetManifoldsAsSmoothSets}) --- among formal smooth sets.
 

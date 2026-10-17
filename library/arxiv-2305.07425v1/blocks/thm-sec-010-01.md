@@ -1,1 +1,1 @@
-LetM be a non-geometric 3-manifold with empty or toroidal bounda ry. If the
+[\[thm:graphandSFmflds\]](#thm:graphandSFmflds){reference-type="ref" reference="thm:graphandSFmflds"} now follows immediately from Corollary [\[cor:SF\]](#cor:SF){reference-type="ref" reference="cor:SF"} and Proposition [\[prop:NPCgraph\]](#prop:NPCgraph){reference-type="ref" reference="prop:NPCgraph"}.

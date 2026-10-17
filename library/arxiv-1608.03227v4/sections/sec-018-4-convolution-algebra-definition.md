@@ -11,5 +11,6 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 []{#sec:convolution label="sec:convolution"} In this section we define convolution product on categories $\MFs_{B^2}(\calX_2,W)$ and $\MFs_{B^2}(\calXr_2,\Wr)$ and explain how these two convolutions are related. Thus we construct the functor $$\Phi: \MFs_{B^2}(\calXr_2,\Wr)\to \MFs_{B^2}(\calX_2,W)$$ which is an equivariant version of Knorrer periodicity functor [@Kn].

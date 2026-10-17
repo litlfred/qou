@@ -1,1 +1,1 @@
-Bring’s curve has60 Weierstrass points, on whichAut(B) acts
+There are only three orbits orbits of points of size less than 120

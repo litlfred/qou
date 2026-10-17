@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.946
 latex_coverage_ratio: 0.994
+doc_brief: "Estimating the spectral gap of a trace-class Markov operator — The utility of a Markov chain Monte Carlo algorithm is, in large part, determined by the size of the spectral gap of the corresponding"
 ---
 We begin with a toy example. Let $S_U=S_V=\mathbb{R},$ $\pi_U(u) \propto \exp(-u^2),$ and $$\pi_{V|U}(v|u) \propto \exp \Big\{ -4\Big(v-\frac{u}{2}\Big)^2
         \Big\} \,.$$ Then $$\pi_{U|V} (u|v) \propto \exp \{ -2(u-v)^2 \} \,.$$ This leads to one of the simplest DA chains known. Indeed, the Mtd, $$p(u,\cdot) = \int_{\mathbb{R}} \pi_{U|V}(\cdot|v)

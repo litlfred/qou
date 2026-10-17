@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.988
 latex_coverage_ratio: 0.967
+doc_brief: "Iterated ﬁltering methods for Markov process epidemic models — Dynamic epidemic models have proven valuable for public health decision makers as they provide useful insights into the understanding"
 ---
 []{#complications label="complications"} In the previous section we used a simple model to explain the concept of iterated filtering in order to facilitate understanding. However, reality is often way more complicated than this toy example. In the following we discuss some important complications of infectious disease data and how they can be included in POMP models.\
 **Underreporting** Underreporting is a common problem appearing in surveillance data and is usually the more pronounced the less severe the disease is. It arises for different reasons e.g. it can result from asymptomatic cases, cases where individuals do not consult the doctor, cases that are not identified as such (misdiagnosis) or cases which just get lost in the reporting system [@Gibbons2014]. One way to include underreporting in a POMP model is to change the observation model to $$\begin{aligned}

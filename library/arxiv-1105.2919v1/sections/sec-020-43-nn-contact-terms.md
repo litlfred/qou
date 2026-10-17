@@ -8,6 +8,7 @@ pages: 31-32
 source_pdf: 1105.2919v1.pdf
 source_sha256: 6d94496f2093ddd0
 toc_source: outline
+doc_brief: "Chiral eﬀective ﬁeld theory and nuclear forces — We review how nuclear forces emerge from low-energy QCD via chiral eﬀective ﬁeld theory. The presentation is accessible to the non-specialist."
 ---
 The successful test of the chiral pion-exchange contributions in peripheral partial waves in the previous
 section has shown that we got the long- and intermediate-range parts of the nuclear force right. However, for

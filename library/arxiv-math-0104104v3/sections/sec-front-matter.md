@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0104104v3.pdf
 source_sha256: e2154399f783aa9b
 toc_source: inferred
+doc_brief: "arXiv:math/0104104v3 [math.DG] 29 Mar 2002 — The purpose of this paper is to describe certain natural 4-vector ﬁelds on quaternionic ﬂag manifolds, which geometrically determine the Bruhat cell"
 ---
 arXiv:math/0104104v3  [math.DG]  29 Mar 2002
 Geometry of Four-vector Fields on

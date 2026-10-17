@@ -8,6 +8,7 @@ pages: 9-10
 source_pdf: 1810.11563v1.pdf
 source_sha256: 8e17ac8b91bc3cc9
 toc_source: outline
+doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
 ---
 Dual Role of Unitaries
 Complexity can be deﬁned for states2, but in many ways it is more natural to start with

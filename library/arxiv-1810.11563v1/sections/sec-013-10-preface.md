@@ -8,6 +8,7 @@ pages: 32-33
 source_pdf: 1810.11563v1.pdf
 source_sha256: 8e17ac8b91bc3cc9
 toc_source: outline
+doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
 ---
 Preface
 When a star collapses a horizon forms and its area grows until it reaches its ﬁnal value.

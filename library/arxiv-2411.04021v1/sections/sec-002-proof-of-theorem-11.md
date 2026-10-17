@@ -8,6 +8,7 @@ pages: 7-19
 source_pdf: 2411.04021v1.pdf
 source_sha256: f5b6980f08d25394
 toc_source: outline
+doc_brief: "On the Gram determinants of the Specht modules — For every partition λ of a positive integer n, let Sλ be the corresponding Specht module of the symmetric group Sn, and let det(λ) ∈Z denote the Gram"
 ---
 Proof of Theorem 1.1
 We fix a positive integer n and an even partition λ. Let r be the integer such that

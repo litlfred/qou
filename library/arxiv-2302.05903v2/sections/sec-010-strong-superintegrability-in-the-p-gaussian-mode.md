@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 0.967
+doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials Introduction — We elaborate on the recent suggestion to consider averaging of Cauchy"
 ---
 In the $p$-Gaussian model with the measure ([\[Gm\]](#Gm){reference-type="ref" reference="Gm"}), which is under our consideration in this paper, there is a formula for the bilinear correlator similar to ([\[da\]](#da){reference-type="ref" reference="da"}), however, in this case, one has to deal with the operators[^1] $\hat W_\Delta^{(0)}$. They are defined as $$\begin{aligned}
 \hat W_\Delta^{(0)}={1\over z_\Delta}\ :\ \prod_{i=1}^{l_\Delta}{\rm Tr}\,\left(\Lambda{\partial\over\partial\Lambda}\right)^{\delta_i}\ :

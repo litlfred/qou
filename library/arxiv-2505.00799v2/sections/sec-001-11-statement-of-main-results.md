@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.766
 latex_coverage_ratio: 0.99
+doc_brief: "Quantum Modular Forms and Resurgence — In 2010, Zagier described a new phenomenon which he called quantum mod- ularity."
 ---
 Before we give the general statement of Theorem [\[thm: Main\]](#thm: Main){reference-type="ref" reference="thm: Main"}, we highlight corollaries in some key special cases which correspond to families of quantum modular forms generalizing Zagier's original examples. We note for the reader that the definitions of various terms from the theory of resurgence are deferred until Section 2.1 for ease of exposition.
 

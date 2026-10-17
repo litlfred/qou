@@ -8,6 +8,7 @@ pages: 4-8
 source_pdf: 0310280v4.pdf
 source_sha256: 1e146ee4ebc157f2
 toc_source: outline
+doc_brief: "Stabilization in the braid groups II: Transversal simplicity of knots Introduction and description of results — 10 sections: Front matter; Introduction and description of re; The MTWS and transversal"
 ---
 Block-strand diagrams, templates and the MTWS
 Let B be the collection of all braid isotopy classes of closed braid representatives of

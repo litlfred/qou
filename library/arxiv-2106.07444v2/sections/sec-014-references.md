@@ -8,6 +8,7 @@ pages: 84-88
 source_pdf: 2106.07444v2.pdf
 source_sha256: 5acca39c07bcdddd
 toc_source: outline
+doc_brief: "FROM THE HECKE CATEGORY TO THE UNIPOTENT LOCUS — Let W be the Weyl group of a split semisimple group G. Its Hecke category HW can be built from pure perverse sheaves on the double ﬂag variety of G."
 ---
 [AHJR] P. N. Achar, A. Henderson, D. Juteau, S. Riche. Weyl Group Actions on the Springer
 Sheaf. Proc. London Math. Soc., 108(3) (2014), 1501-1528.

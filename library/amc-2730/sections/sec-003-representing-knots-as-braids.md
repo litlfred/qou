@@ -8,6 +8,7 @@ pages: 10-14
 source_pdf: amc_2730.pdf
 source_sha256: 65730074a2925c6e
 toc_source: outline
+doc_brief: "Braid representatives minimizing the number of simple walks * — Given a knot, we develop methods for finding a braid representative that minimizes the number of simple walks."
 ---
 Representing knots as braids
 One of the objectives in this paper is to find braid representations of knots that minimize

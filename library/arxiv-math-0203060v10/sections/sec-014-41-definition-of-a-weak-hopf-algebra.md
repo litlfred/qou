@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
 latex_coverage_ratio: 0.933
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 ::: definition
 []{#finite weak Hopf algebra label="finite weak Hopf algebra"} A *weak Hopf algebra* is a vector space $A$ with the structures of an associative algebra $(A,\,m,\,1)$ with a multiplication $m:A\otimes_k A\to A$ and unit $1\in A$ and a coassociative coalgebra $(A,\,\Delta,\,\epsilon)$ with a comultiplication $\Delta:A\to A\otimes_k A$ and counit $\epsilon:A\to k$ such that:

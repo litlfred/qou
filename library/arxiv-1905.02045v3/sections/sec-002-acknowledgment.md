@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM INVARIANTS OF HYPERBOLIC KNOTS — We obtain an exact modularity relation for the q-Pochhammer symbol."
 ---
 This paper was partially written during a visit of of S. Bettin at the Aix-Marseille University, a visit of S. Drappeau at the University of Genova, and a visit of both authors at ICTP Trieste. The authors thank these Institution for the hospitality and Aix-Marseille University, INdAM and ICTP for the financial support for these visits.
 

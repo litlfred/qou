@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.88
 latex_coverage_ratio: 0.91
+doc_brief: "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY — We study a class of commuting Markov kernels whose simplest element describes the movement of k particles on a discrete circle of size n"
 ---
 []{#sec:LLT label="sec:LLT"} In this section, we prove a local limit theorem for the $h$-probability measure $(\ast \mathbf{m})*\delta_I$ and deduce Corollary [\[cor:cohomology\]](#cor:cohomology){reference-type="ref" reference="cor:cohomology"}, which gives asymptotics of structure coefficients in the ring $QH(G_{k,n})$. For simplicity, we assume that $Var(\mathbf{m})=0$ to avoid any lattice issue.
 

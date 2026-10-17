@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.886
 latex_coverage_ratio: 1.0
+doc_brief: "Fractional Hopﬁons in the Faddeev-Skyrme model with a symmetry breaking potential — We construct new solutions of the Faddeev-Skyrme model with a symmetry breaking potential admitting S1 vacuum."
 ---
 A peculiar feature of the Faddeev-Skyrme model is that for a given degree $Q$, there are usually several different stable static soliton solutions of similar energy, furthermore, the number of solutions grows with $Q$. We considered both the configurations with minimal energies and the local minima in a given sector. Results of our numerical simulations are summarized in Table [\[hopftable\]](#hopftable){reference-type="ref" reference="hopftable"}.
 

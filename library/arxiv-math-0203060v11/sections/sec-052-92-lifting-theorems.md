@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.979
 latex_coverage_ratio: 1.0
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 In this subsection we will show that a nondegenerate multi-fusion category over a field of characteristic $p$, and a tensor functor between such categories, can be lifted to characteristic zero. It is an analog of the result of [@EG1], where this was shown for semisimple cosemisimple Hopf algebras and morphisms between them.
 

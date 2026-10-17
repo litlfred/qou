@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.969
 latex_coverage_ratio: 0.969
+doc_brief: "THE HOLONOMY BRAIDING FOR Uξ(sl2) IN TERMS OF GEOMETRIC QUANTUM DILOGARITHMS — We derive an explicit formula for the holonomy R-matrix of quantum sl2 at a root of unity."
 ---
 We say a $\mathcal{U}_\xi$ module $V$ has character $\chi \in \slg^*$ if $$z \cdot v = \chi(z) v \text{ for all } v \in V, z \in \mathcal{Z}_0.$$ In particular any simple $\mathcal{U}_\xi$-module has a character. Because the multiplication on characters is compatible with the coproduct the category of $\mathcal{U}_\xi$-modules with characters is graded by $\slg^*$: if $V_1, V_2$ have characters $\chi_1, \chi_2$, then $V_1 \otimes V_2$ has character $\chi_1 \cdot \chi_2$.
 

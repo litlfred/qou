@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.959
 latex_coverage_ratio: 0.989
+doc_brief: "MARKOV TRACES ON THE BIRMAN-WENZL-MURAKAMI ALGEBRAS — We classify the Markov traces factoring through the Birman-Wenzl-Murakami (BMW) algebras."
 ---
 Recall that we defined in \S \ref{secttwobmwagebras} two Markov traces $t_n^{\pm} : BMW_n^{\pm} \to S_{\pm}$. Using the Chinese
 Remainder Theorem isomorphism $\overline{S} \simeq S_+ \oplus S_-$ they

@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2010.12445v1.pdf
 source_sha256: 16e9ca22ecc1f296
 toc_source: outline
+doc_brief: "STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION — Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect(X), we are"
 ---
 arXiv:2010.12445v1  [math.AG]  22 Oct 2020
 STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION

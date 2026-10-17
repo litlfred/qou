@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 0.995
+doc_brief: "Presheaves of superselection structures in curved spacetimes — We show that superselection structures on curved spacetimes, that are expected to describe quantum charges aﬀected by the underlying"
 ---
 []{#sec.free label="sec.free"} The following construction is on the line [@DP02], where similar results are proven for the Minkowski spacetime. We prove that for every suitable compact group $G_0$, globally hyperbolic spacetime $M$ and flat bundle $\mathcal G\to M$ with suitable structure group, there is a twisted field net over which $\mathcal G$ acts as a group of internal symmetries. The \"untwisted\" net from which we start is defined by means of generalized free fields and yields a large class of toy models where the analysis of topologically trivial superselection sectors of [@GLRV01; @Ruz05] can be checked, as happens for [@DP02] in the Minkowski spacetime.
 

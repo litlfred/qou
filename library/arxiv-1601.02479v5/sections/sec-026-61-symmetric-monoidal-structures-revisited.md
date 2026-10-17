@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
 latex_coverage_ratio: 0.968
+doc_brief: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A — This paper concerns the cohomological aspects of Donaldson– Thomas theory for Jacobi algebras and the associated cohomological Hall alge- bra, introduced"
 ---
 []{#lc_signs label="lc_signs"} Let $\upzeta\in \mathbb{H}_+^{Q_0}$ be a stability condition, and let $\upmu\in(-\infty,\infty)$ be a slope. We assume that $\upzeta$ is $\upmu$-generic. We define $X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}},N}$ and $X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'',N}$ as in ([\[XNdef\]](#XNdef){reference-type="ref" reference="XNdef"}) and ([\[XXNdef\]](#XXNdef){reference-type="ref" reference="XXNdef"}) respectively. As throughout the paper, we assume that we are given a Serre subcategory of the category of finite-dimensional $\mathbb{C}Q$-modules, and denote by $$\begin{aligned}
 \omega_{\mathop{\mathrm{\mathbf{d}}},N}\colon &X^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}},N}\rightarrow X_{\mathop{\mathrm{\mathbf{d}}},N}^{\upzeta\mathop{\mathrm{-ss}}}&

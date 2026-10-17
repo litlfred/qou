@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.84
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:hep-ph/0601023v3 23 Apr 2007 — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non - su- persymmetric uniﬁcation"
 ---
 It is useful to summarize in a tabular form the range of  theory predictions  
 for the proton lifetime vs the current experimental limits.  As the report 

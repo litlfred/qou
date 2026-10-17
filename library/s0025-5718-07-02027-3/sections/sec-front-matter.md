@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: S0025-5718-07-02027-3.pdf
 source_sha256: 080b5ac8542ff19c
 toc_source: outline
+doc_brief: "MATHEMATICS OF COMPUTATIONS 0025-5718(07)02027-3 — We describe an algorithm for computing Coleman’s p-adic poly- logarithms up to a given precision."
 ---
 MATHEMATICS OF COMPUTATION
 Volume 77, Number 262, April 2008, Pages 1105–1134

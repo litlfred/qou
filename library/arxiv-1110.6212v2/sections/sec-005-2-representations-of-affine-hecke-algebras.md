@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.966
 latex_coverage_ratio: 0.983
+doc_brief: "On calibrated representations and the Plancherel Theorem for aﬃne Hecke algebras — This paper has two main purposes."
 ---
 Let $M$ be a finite dimensional $\mathscr{H}_L$-module. For each $t\in\mathrm{Hom}(L,\mathbb{C}^{\times})$ let $$\begin{aligned}
 M_t&=\{v\in M\mid x^{\lambda}\cdot v=t^{\lambda}v\quad\textrm{for all $\lambda\in L$}\}\\

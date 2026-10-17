@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.958
 latex_coverage_ratio: 0.974
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS — We study asymptotics of characters of the symmetric groups on a ﬁxed conjugacy class."
 ---
 At this step we proved Proposition [\[prop:main-prop\]](#prop:main-prop){reference-type="ref" reference="prop:main-prop"}. In order to prove Theorem [\[theo:main\]](#theo:main){reference-type="ref" reference="theo:main"} we would like to show that for each integer $g
 \geq 1$, functions $\tilde{f}_g$ and $\tilde{h}_g$ are divisible by the symmetric function $$(p_1 + 2g -1)\frac{(p_1 + 2g)(p_1 + 2g -1)(p_1 + 2g

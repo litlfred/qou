@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 From the perspective of tensor networks, the course-grained geometry encodes the minimal quantum circuit that prepares the state. In this paper we have argued that the complexity of the boundary state is given by the action of the bulk. In the bulk, the classical equations of motion are given by the principle of least action. Can gravity be understood via a principle of least computation, and if so what is the  quantum generalization?
 

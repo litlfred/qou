@@ -8,6 +8,7 @@ pages: 13-14
 source_pdf: 0911.4494v2.pdf
 source_sha256: 1ba1c79686b12d98
 toc_source: outline
+doc_brief: "The geometry of Markov traces — We give a geometric interpretation of the Jones-Ocneanu trace on the Hecke algebra, using the equivariant cohomology of sheaves on SLn."
 ---
 [BBD82]
 A. A. Beilinson, J. Bernstein, and P. Deligne, Faisceaux pervers, Analysis and topology on

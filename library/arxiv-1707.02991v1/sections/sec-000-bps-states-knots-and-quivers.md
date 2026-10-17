@@ -8,6 +8,7 @@ pages: 1-3
 source_pdf: 1707.02991v1.pdf
 source_sha256: f4f539f74403dd24
 toc_source: outline
+doc_brief: "BPS states, knots and quivers — 6 sections: Front matter; BPS states, knots and quivers; Moduli of quiver representations"
 ---
 Piotr Kucharski1, Markus Reineke2, Marko Stoˇsi´c3,4, and Piotr Su lkowski1,5
 1 Faculty of Physics, University of Warsaw,

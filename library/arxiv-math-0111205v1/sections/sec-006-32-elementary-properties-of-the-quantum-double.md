@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.968
 latex_coverage_ratio: 0.948
+doc_brief: "arXiv:math/0111205v1 [math.CT] 19 Nov 2001 — For every tensor category C there is a braided tensor category Z(C), the ‘center’ of C."
 ---
 \bdefin The center $\2Z_1(\2C)$ of a strict monoidal category $\2C$ has as objects pairs
 $(X,  e_X)$, where $X\in\2C$ and $ e_X$ is a half braiding. The morphisms are given by 

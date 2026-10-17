@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.895
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 For $F(z,w)$ holomorphic in $(z,\bar w)$ near the diagonal $z=w$ in ${\mathbb C}^2$, it is well-known that the diagonal is a set of uniqueness. In particular, the assumption $F\in{\mathbf M}_{z-w}{\mathfrak R}_1$ implies that $F(z,w)\equiv0$ holds near the diagonal. We need the analogous criterion for functions biholomorphic in each of the variables $(z,\bar w)$.
 

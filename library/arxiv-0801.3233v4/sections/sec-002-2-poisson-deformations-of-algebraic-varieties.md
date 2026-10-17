@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.938
+doc_brief: "Contemporary Mathematics Twisted Deformation Quantization of Algebraic Varieties (Survey) — Let X be a smooth algebraic variety over a ﬁeld of characteristic 0."
 ---
 In algebraic geometry we have to consider deformations as sheaves. 
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.969
 latex_coverage_ratio: 1.0
+doc_brief: "Hecke–Farey coordinates for Bring’s surface Doha Kattan 1 and David Singerman 2 — The modular group Γ (which is the Hecke group H3) can be used to study triangular maps, Here we use the Hecke group"
 ---
 Farey fractions were first introduced in \cite{SS19} for the case $q=3$.  A Farey fraction modulo $n$ is a pair $(a,c)$ where $(a,c,n)=1$ and where we identify $\frac{a}{c}$ with $\frac{-a}{-c}.$  We think of these fractions as being points on $\mathbb{H}/\Gamma(n)$. Two Farey fractions mod $n$,  $(a,c)$  and $ (b,d)$  are adjacent when $ad-bc\equiv \pm 1  \; \text{mod}\;n$. 
  

@@ -2,187 +2,112 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-nucl-th-0006014v1",
  "source_sha256": "208c7a6aaf628b30",
- "brief": "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn) — 35 sections: Scattering equation . . . . . . . ; R-matrix and partial wave decompos; Phase shifts . . . . . . . . . . .",
- "extended": "**The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn)**\n\n*Department of Physics, University of Idaho, Moscow, Idaho 8 3844, U. S. A*\n\n69 pp, 35 sections.\n\n**Outline.** 1 Scattering equation . . . . . . . . . . . . ; 2 R-matrix and partial wave decomposition . . ; 3 Phase shifts . . . . . . . . . . . . . . . .; 4 Eﬀective range expansion . . . . . . . . . .; 1 OBE amplitudes . . . . . . . . . . . . . . .; 3 Final potential expressions . . . . . . . . ; Abstract; I INTRODUCTION; II THE MODEL; III CHARGE DEPENDENCE; IV NUCLEON-NUCLEON SCA TTERING; V THE DEUTERON; VI CONCLUSIONS; Acknowledgments; 1 Scattering equation; 2 R-matrix and partial wave decomposition; 1 (q′,q ) ≡ ⟨+ + |RJ(q′,q )| + +⟩; 2 (q′,q ) ≡ ⟨+ + |RJ(q′,q )| − −⟩",
+ "brief": "arXiv:nucl-th/0006014v1 9 Jun 2000 — 20 sections: Front matter; Introduction; The model",
+ "extended": "**arXiv:nucl-th/0006014v1 9 Jun 2000**\n\n*Department of Physics, University of Idaho, Moscow, Idaho 83844, U. S. A*\n\n69 pp, 20 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 The model; 3 Charge dependence; 3.1 Charge symmetry breaking; 3.2 Charge independence breaking; 4 Nucleon-nucleon scattering; 5 The deuteron; 6 Conclusions; A Two-nucleon scattering in momentum space; A.1 Scattering equation; A.2 R-matrix and partial wave decomposition; A.3 Phase shifts; A.4 Effective range expansion; B One-boson exchange potential; B.1 OBE amplitudes; B.2 Partial wave decomposition; B.3 Final potential expressions",
  "tokens": {
-  "brief": 49,
-  "extended": 190
+  "brief": 21,
+  "extended": 154
  },
  "sections": [
   {
-   "id": "sec-000-1-scattering-equation-15",
-   "title": "Scattering equation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15",
-   "pages": "1-1"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-3"
   },
   {
-   "id": "sec-001-2-r-matrix-and-partial-wave-decomposition-18",
-   "title": "R-matrix and partial wave decomposition . . . . . . . . . . . . . . . . . . 18",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-002-3-phase-shifts-21",
-   "title": "Phase shifts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-003-4-eﬀective-range-expansion-2-4",
-   "title": "Eﬀective range expansion . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 4",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-004-1-obe-amplitudes-25",
-   "title": "OBE amplitudes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-005-3-final-potential-expressions-28",
-   "title": "Final potential expressions . . . . . . . . . . . . . . . . . . . . . . . . . . 28",
-   "pages": "1-2"
-  },
-  {
-   "id": "sec-006-abstract",
-   "title": "Abstract",
-   "pages": "2-3"
-  },
-  {
-   "id": "sec-007-i-introduction",
-   "title": "INTRODUCTION",
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
    "pages": "3-3"
   },
   {
-   "id": "sec-008-ii-the-model",
-   "title": "THE MODEL",
+   "id": "sec-001-2-the-model",
+   "title": "The model",
    "pages": "3-7"
   },
   {
-   "id": "sec-009-iii-charge-dependence",
-   "title": "CHARGE DEPENDENCE",
-   "pages": "7-10"
+   "id": "sec-002-3-charge-dependence",
+   "title": "Charge dependence",
+   "pages": "7-7"
   },
   {
-   "id": "sec-010-iv-nucleon-nucleon-sca-ttering",
-   "title": "NUCLEON-NUCLEON SCA TTERING",
+   "id": "sec-003-31-charge-symmetry-breaking",
+   "title": "Charge symmetry breaking",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-004-32-charge-independence-breaking",
+   "title": "Charge independence breaking",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-005-4-nucleon-nucleon-scattering",
+   "title": "Nucleon-nucleon scattering",
    "pages": "10-13"
   },
   {
-   "id": "sec-011-v-the-deuteron",
-   "title": "THE DEUTERON",
+   "id": "sec-006-5-the-deuteron",
+   "title": "The deuteron",
    "pages": "13-14"
   },
   {
-   "id": "sec-012-vi-conclusions",
-   "title": "CONCLUSIONS",
+   "id": "sec-007-6-conclusions",
+   "title": "Conclusions",
    "pages": "14-15"
   },
   {
-   "id": "sec-013-acknowledgments",
-   "title": "Acknowledgments",
+   "id": "sec-008-a-two-nucleon-scattering-in-momentum-space",
+   "title": "Two-nucleon scattering in momentum space",
    "pages": "15-15"
   },
   {
-   "id": "sec-014-1-scattering-equation",
+   "id": "sec-009-a1-scattering-equation",
    "title": "Scattering equation",
    "pages": "15-18"
   },
   {
-   "id": "sec-015-2-r-matrix-and-partial-wave-decomposition",
+   "id": "sec-010-a2-r-matrix-and-partial-wave-decomposition",
    "title": "R-matrix and partial wave decomposition",
-   "pages": "18-19"
+   "pages": "18-21"
   },
   {
-   "id": "sec-016-1-qq-rjqq",
-   "title": "(q′,q ) ≡ ⟨+ + |RJ(q′,q )| + +⟩",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-017-2-qq-rjqq",
-   "title": "(q′,q ) ≡ ⟨+ + |RJ(q′,q )| − −⟩",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-018-3-qq-rj-qq",
-   "title": "(q′,q ) ≡ ⟨+ − |RJ (q′,q )| + −⟩",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-019-4-qq-rj-qq-a22",
-   "title": "(q′,q ) ≡ ⟨+ − |RJ (q′,q )| − +⟩ (A22)",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-020-5-qq-rjqq",
-   "title": "(q′,q ) ≡ ⟨+ + |RJ(q′,q )| + −⟩",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-021-6-qq-rj-qq",
-   "title": "(q′,q ) ≡ ⟨+ − |RJ (q′,q )| + +⟩",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-022-5-qq-rj",
-   "title": "(q′,q ) = RJ",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-023-6-qq-a23",
-   "title": "(q,q ′). (A23)",
-   "pages": "19-21"
-  },
-  {
-   "id": "sec-024-3-phase-shifts",
+   "id": "sec-011-a3-phase-shifts",
    "title": "Phase shifts",
-   "pages": "21-23"
+   "pages": "21-24"
   },
   {
-   "id": "sec-025-l-the-asymptotic-wave-function-associated-with-v",
-   "title": "The asymptotic wave function associated with VS and δS",
-   "pages": "23-24"
-  },
-  {
-   "id": "sec-026-4-eﬀective-range-expansion",
-   "title": "Eﬀective range expansion",
-   "pages": "24-24"
-  },
-  {
-   "id": "sec-027-0-ηq-cotδc",
-   "title": "(η′)q cot(δC",
-   "pages": "24-24"
-  },
-  {
-   "id": "sec-028-0-η-2πη",
-   "title": "(η′) = 2πη ′",
+   "id": "sec-012-a4-effective-range-expansion",
+   "title": "Effective range expansion",
    "pages": "24-25"
   },
   {
-   "id": "sec-029-1-obe-amplitudes",
+   "id": "sec-013-b-one-boson-exchange-potential",
+   "title": "One-boson exchange potential",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-014-b1-obe-amplitudes",
    "title": "OBE amplitudes",
    "pages": "25-26"
   },
   {
-   "id": "sec-030-2-partial-wave-decomposition",
+   "id": "sec-015-b2-partial-wave-decomposition",
    "title": "Partial wave decomposition",
    "pages": "26-28"
   },
   {
-   "id": "sec-031-3-final-potential-expressions",
+   "id": "sec-016-b3-final-potential-expressions",
    "title": "Final potential expressions",
-   "pages": "28-33"
+   "pages": "28-32"
   },
   {
-   "id": "sec-032-01-ˆk-ψ2ky-1m",
-   "title": "(ˆk) +ψ2(k)Y 1M",
-   "pages": "33-35"
+   "id": "sec-017-c-potential-parameters",
+   "title": "Potential parameters",
+   "pages": "32-33"
   },
   {
-   "id": "sec-033-0-q-2π1-2",
-   "title": "(q) = (2/π)1/ 2",
-   "pages": "35-37"
-  },
-  {
-   "id": "sec-034-references",
-   "title": "References",
-   "pages": "37-69"
+   "id": "sec-018-d-deuteron-calculations",
+   "title": "Deuteron calculations",
+   "pages": "33-69"
   }
  ],
  "provenance": {

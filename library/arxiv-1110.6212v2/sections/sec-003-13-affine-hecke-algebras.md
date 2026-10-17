@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.952
 latex_coverage_ratio: 0.966
+doc_brief: "On calibrated representations and the Plancherel Theorem for aﬃne Hecke algebras — This paper has two main purposes."
 ---
 Standard references for affine Hecke algebras include [@lusztig], [@macblue] and [@ram1]. With the above notation, the *affine Hecke algebra* $\mathscr{H}_L$ with *parameters* $q_0,\ldots,q_n$ is the algebra over $\mathbb{C}$ with vector space basis $\{T_w\mid w\in W_L\}$ and relations $$\begin{aligned}
 T_uT_v&=T_{uv}&&\textrm{if $\ell(uv)=\ell(u)+\ell(v)$}\\

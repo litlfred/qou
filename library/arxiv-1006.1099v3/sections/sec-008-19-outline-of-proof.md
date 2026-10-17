@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.954
 latex_coverage_ratio: 0.988
+doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS — There is a classical relationship in algebraic geometry between a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
 ---
 As mentioned previously, our proof of Theorem [\[Thm:Embed\]](#Thm:Embed){reference-type="ref" reference="Thm:Embed"} constructs equivalences with quasi-isomorphic images $$D^{\pi}\EuScript{F}(\Sigma) \ \hookrightarrow \ D^{\pi}\EuScript{F}(Z) \ \hookleftarrow  \ D^{\pi}\EuScript{F}(Q_0\cap Q_1;0).$$ Both $\EuScript{F}(\Sigma_g)$ and $\EuScript{F}(Q_0 \cap Q_1)$ are naturally ${\mathbb Z}_{4g-4}$-graded, but only the underlying ${\mathbb Z}_2$-graded categories are equivalent; from this perspective, that is because the intermediate category $\EuScript{F}(Z)$ only admits a ${\mathbb Z}_2$-grading. At a technical level, the proof of Theorem [\[Thm:Embed\]](#Thm:Embed){reference-type="ref" reference="Thm:Embed"} combines five principal ingredients.
 

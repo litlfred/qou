@@ -1,1 +1,1 @@
-[Zh, Theorem 1.2] Leta> 0,d∈N ands>d min(1,a )/4. LetA = (−∆) a/2.
+[Zh, Theorem 1.2] Let a > 0, d ∈N and s > d min(1, a)/4. Let A = (−∆)a/2.

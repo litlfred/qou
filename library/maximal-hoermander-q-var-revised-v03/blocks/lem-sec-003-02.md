@@ -1,1 +1,1 @@
-Let A be a 0-sectorial operator withHα
+Let A be a 0-sectorial operator with Hα

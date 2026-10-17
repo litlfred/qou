@@ -8,6 +8,7 @@ pages: 30-31
 source_pdf: 1501.01574v3.pdf
 source_sha256: 8af5d6264a0ad5e0
 toc_source: outline
+doc_brief: "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL — We study the behavior of the degree of the colored Jones polynomial and the boundary slopes of knots under the operation of cabling."
 ---
 [1] Jason Callahan. Denominators and diﬀerences of boundary slopes for (1,1)-knots. arXiv:1301.6298.
 [2] Nathan M. Dunﬁeld. Boundary slopes of montesinos knots. http://www.uiuc.edu/~nmd/montesinos.

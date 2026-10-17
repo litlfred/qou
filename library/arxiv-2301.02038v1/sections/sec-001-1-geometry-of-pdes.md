@@ -8,6 +8,7 @@ pages: 3-3
 source_pdf: 2301.02038v1.pdf
 source_sha256: 27b303939826ab39
 toc_source: outline
+doc_brief: "Contemporary Mathematics — Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a system of possibly non-linear partial dif- ferential equations and it"
 ---
 3
 best of our knowledge, has not been yet investigated. At this stage, we can only

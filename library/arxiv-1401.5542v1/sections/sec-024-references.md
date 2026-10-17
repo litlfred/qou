@@ -8,6 +8,7 @@ pages: 20-21
 source_pdf: 1401.5542v1.pdf
 source_sha256: f7cd278a274f37c5
 toc_source: outline
+doc_brief: "THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS — The Ptolemy coordinates for boundary-unipotent SL(n, C)-representations of a 3-manifold group were introduced in [7] inspired by the A-coordinates on"
 ---
 [1] Wieb Bosma, John Cannon, and Catherine Playoust. The Magma algebra system. I. The user language.
 J. Symbolic Comput., 24(3-4):235–265, 1997. Computational algebra and number theory (London, 1993).

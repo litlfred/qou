@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.8
 latex_coverage_ratio: 1.0
+doc_brief: "MONOIDAL CATEGORIFICATION OF CLUSTER ALGEBRAS — We prove that the quantum cluster algebra structure of a unipotent quantum coordinate ring Aq(n(w)), associated with a symmetric Kac-Moody algebra and"
 ---
 \label{subsubsec: T-system} In this subsection, we  recall the {\em $T$-system} among the (unipotent) quantum minors for later use
 (see \cite{KNS11} for $T$-system).

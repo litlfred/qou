@@ -8,6 +8,7 @@ pages: 7-10
 source_pdf: Download.pdf
 source_sha256: ca9639465b08d34c
 toc_source: outline
+doc_brief: "Concentration of empirical distribution functions with applications to non-i.i.d. models — 12 sections: Front matter; Introduction; Empirical Poincaré inequalities"
 ---
 We shall now study the concentration properties of empirical measures Fn around their mean F
 based on Poincaré-type inequalities. In particular, we shall prove Theorem 1.1, which provides a

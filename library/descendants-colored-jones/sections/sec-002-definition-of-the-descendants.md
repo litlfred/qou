@@ -8,6 +8,7 @@ pages: 4-5
 source_pdf: descendants_colored_jones.pdf
 source_sha256: f00693a5926c074f
 toc_source: outline
+doc_brief: "The descendant colored Jones polynomials — We discuss two realizations of the colored Jones polyno- mials of a knot, one appearing in an unnoticed work of the second author in 1994 on quantum"
 ---
 In this section we extend the 2-parameter colored Jones function Jn(q) of a
 knot in 3-space into a 3-parameter descendant colored Jones function DJ(m)

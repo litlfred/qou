@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.951
 latex_coverage_ratio: 1.0
+doc_brief: "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects."
 ---
 If the 2-category under consideration 
  is a pivotal 2-category in the sense \cite[Def.~A.12]{G14} or, more strictly, a planar 2-category in the sense of \cite[Def.~3.2.1]{BMS}, we use the diagrams for planar 2-categories introduced in \cite[Def.~3.5]{BMS}. The main examples are  $\mathrm{Mod}^\theta(\mac)$ and $\Bimod^\theta(\mac,\mad)$ from Theorem \ref{th:pivot}. 

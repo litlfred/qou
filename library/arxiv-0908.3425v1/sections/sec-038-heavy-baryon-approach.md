@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.978
 latex_coverage_ratio: 0.985
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 []{#hb label="hb"} The first solution to the power-counting problem was provided by the heavy-baryon formulation of ChPT [@Jenkins:1990jv], [@Bernard:1992qa]. The basic idea consists in dividing an external nucleon four-momentum into a large piece close to on-shell kinematics and a soft residual contribution: $p = m v +k_p$, $v^2=1$, $v^0\ge 1$ \[often $v^\mu = (1,0,0,0)$\]. The relativistic nucleon field is expressed in terms of velocity-dependent fields, $$\Psi(x)=e^{-im v \cdot x} ({\cal N}_v +{\cal H}_v),$$ with $${\cal N}_v=e^{+im v\cdot x}\frac{1}{2}(1+v\hspace{-.5em}/)\Psi,\quad
 {\cal H}_v=e^{+im v\cdot x}\frac{1}{2}(1-v\hspace{-.5em}/)\Psi.$$ Using the equation of motion for ${\cal H}_v$, one can eliminate ${\cal H}_v$ and obtain a Lagrangian for ${\cal N}_v$ which, to lowest order, reads [@Bernard:1992qa] $$\widehat{\cal L}^{(1)}_{\pi N}=\bar{\cal N}_v(iv\cdot D + \texttt{g}_A S_v\cdot u)

@@ -8,6 +8,7 @@ pages: 19-20
 source_pdf: 0203060v10.pdf
 source_sha256: 2ccb480f4bd4a970
 toc_source: outline
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 coconnected, semisimple weak Hopf algebra. Let πi be the primitive idempotents
 in A∗

@@ -8,6 +8,7 @@ pages: 3-3
 source_pdf: hal-01215114.pdf
 source_sha256: c70f8b04a5542a1f
 toc_source: outline
+doc_brief: "FPSAC 2011, Reykjavík, Iceland — In this paper we establish a new combinatorial formula for zonal polynomials in terms of power-sums. The proof relies on the sign-reversing involution principle."
 ---
 Jack symmetric functions and zonal polynomials
 The set of partitions of a given integer n can be endowed with a partial order, called dominance order: by

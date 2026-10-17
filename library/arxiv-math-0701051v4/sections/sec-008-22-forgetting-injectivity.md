@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.969
 latex_coverage_ratio: 0.984
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS — We prove an upper bound for characters of the symmetric groups."
 ---
 For a pair of permutations $\sigma_1,\sigma_2\in S_l$ we define $\hat{N}^{\lambda}(\sigma_1,\sigma_2)$
 

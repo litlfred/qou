@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — Based on an interpretation of the quark-lepton symmetry in terms of the unimodularity of the color group SU(3) and on the existence of 3 generations, we develop an"
 ---
 The representation of $SU(3)$ on $A=\mathbb C\mbox{\rm 1\hspace {-.6em} l}\oplus E$ is the direct sum of the fundamental representation on $E$ with the trivial representation on its orthogonal complement $\mathbb C\mbox{\rm 1\hspace {-.6em} l}\simeq \mathbb C$. If one interprets $E$ as the internal space for a quark, it is therefore natural to identify $\mathbb C\mbox{\rm 1\hspace {-.6em} l}$ with the trivial internal space of the corresponding lepton in the quark-lepton symmetry. This identification connects the quark-lepton symmetry to the unimodularity of the color group $SU(3)$.\
 This raises the following question : Is there a reason for the occurrence of the division algebra $A\simeq \mathbb O$ in the present context ?

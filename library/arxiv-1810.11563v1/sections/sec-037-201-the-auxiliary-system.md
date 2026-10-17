@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.993
+doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
 ---
 Instead of using operator complexity I'm going to work with state complexity for the rest of this lecture. State complexity is the number of gates that it takes to go from a simple unentangled state of $K$ qubits to the state in question. 
 

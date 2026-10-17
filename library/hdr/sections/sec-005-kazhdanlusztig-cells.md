@@ -8,6 +8,7 @@ pages: 20-21
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
 toc_source: outline
+doc_brief: "Hecke algebras, generalisations and representation theory — 30 sections: Front matter; Algebras of Finite Type; Blocks"
 ---
 Kazhdan–Lusztig cells
 Let ι be the algebra involution on Hq(W, L) given by ι(q) = q−1 and ι(Ts) = T −1

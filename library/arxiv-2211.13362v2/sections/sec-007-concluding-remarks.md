@@ -8,6 +8,7 @@ pages: 11-15
 source_pdf: 2211.13362v2.pdf
 source_sha256: 3becbeaa1135d2e1
 toc_source: outline
+doc_brief: "Double-slit experiment revisited — The double-slit experiment is one of the quintessential quantum experiments."
 ---
 Concluding remarks
 The computation of the probability distribution of ToFs of quantum particles is one of the last

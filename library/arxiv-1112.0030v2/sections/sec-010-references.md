@@ -8,6 +8,7 @@ pages: 44-46
 source_pdf: 1112.0030v2.pdf
 source_sha256: 745f143c2df4734b
 toc_source: outline
+doc_brief: "Homological algebra of knots and BPS states Sergei Gukov and Marko Stoˇsi´c — It is known that knot homologies admit a physical description as spaces of open BPS states."
 ---
 [1] N. Reshetikhin, V. Turaev, Invariants of 3-manifolds via link polynomials and quantum
 groups, Invent. Math. 103 (1) (1991), 547–597.

@@ -8,6 +8,7 @@ pages: 5-5
 source_pdf: 0603444v2.pdf
 source_sha256: 46edfcddca963d08
 toc_source: outline
+doc_brief: "QUASIHOMOGENEITY OF ISOLATED HYPERSURFACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY — We characterize quasihomogeneity of isolated hypersurface singu- larities by the injectivity of the map induced by"
 ---
 [Arn72]
 V. I. Arnol′d, Normal forms of functions near degenerate critical points,

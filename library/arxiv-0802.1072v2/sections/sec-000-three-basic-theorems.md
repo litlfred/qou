@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.978
 latex_coverage_ratio: 0.931
+doc_brief: "A note on closed 3-braids ∗ — This is a review article about knots and links of braid index 3."
 ---
 []{#S:Three basic theorems label="S:Three basic theorems"}
 

@@ -8,6 +8,7 @@ pages: 61-62
 source_pdf: 0601458v1.pdf
 source_sha256: ef34611620cfd0bd
 toc_source: outline
+doc_brief: "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS — Interest in combinatorial interpretations of mathematical entities stems from the convenience of the concrete models they provide."
 ---
 Appendix A. A Little Higher-Dimensional Algebra
 Deﬁnition 34. A rig, or semiring, is a set R with two operations, which we cus-

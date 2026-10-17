@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.942
 latex_coverage_ratio: 0.76
+doc_brief: "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects."
 ---
 In this section we show how defect lines on trivial defect surfaces give rise to ribbon invariants.  These surfaces are labeled by a spherical fusion category $\mac$ as a $(\mac,\mac)$-bimodule category.   As $\mac$ is a spherical fusion category, its center $\mathcal Z(\mac)$ is a  ribbon category, see for instance \cite[Lemma 10.1]{TVr}. By Example \ref{ex:modulefuncs}, the monoidal category $\End_\mac(\mac)$  is  monoidally equivalent to $\mathcal Z(\mac)$. 
 Under this monoidal equivalence, an object $(a, \sigma_{-,a})$ of $\mathcal Z(\mac)$  corresponds to the $(\mac,\mac)$-bimodule functor $F=a\oo -:\mac\to\mac$ with coherence data

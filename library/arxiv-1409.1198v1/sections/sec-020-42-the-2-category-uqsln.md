@@ -8,6 +8,7 @@ pages: 22-27
 source_pdf: 1409.1198v1.pdf
 source_sha256: 13ecb6c28bab6744
 toc_source: outline
+doc_brief: "TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR — Categoriﬁcation is a process of lifting structures to a higher categorical level."
 ---
 [33]. For an elementary introduction to the categoriﬁcation of sl2 see [38].
 4.2.1. Choice of scalars Q. Associated to the Cartan datum for sln we also ﬁx a choice of scalars Q

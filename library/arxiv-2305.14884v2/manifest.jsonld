@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-2305.14884v2",
+  "title": "PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS",
   "contains": [
+    "library/arxiv-2305.14884v2/sections/sec-front-matter",
     "library/arxiv-2305.14884v2/sections/sec-000",
     "library/arxiv-2305.14884v2/sections/sec-001",
     "library/arxiv-2305.14884v2/sections/sec-002",
@@ -40,7 +41,9 @@
   },
   "meta": {
     "doc_id": "arxiv-2305.14884v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "2305.14884v2.pdf",
     "source_sha256": "ebc8e64d901c9e4f397ece6170c92d5d65045ef7fbb15d251a268327acf7e1fb",
     "pages": 48,

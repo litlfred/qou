@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
 latex_coverage_ratio: 0.996
+doc_brief: "Double-slit experiment revisited — The double-slit experiment is one of the quintessential quantum experiments."
 ---
 []{#sec:KPM label="sec:KPM"} As mentioned in the introduction, there have been many realizations of the double-slit experiment. One experiment of particular interest is that of KPM [@Pfau], which recorded not only the detected positions, but also the flight times. The resulting joint position and time distribution is displayed in Fig. [1](#eq:kurtsiefer_hist){reference-type="ref" reference="eq:kurtsiefer_hist"}, for three different locations of the detection screen. These experimentally obtained distributions show qualitative similarity with the Bohmian distributions shown in Fig. [\[fig:triple_hist\]](#fig:triple_hist){reference-type="ref" reference="fig:triple_hist"}. However, as we will explain here, this similarity is deceiving.
 

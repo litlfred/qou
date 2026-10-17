@@ -11,5 +11,6 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "Stein’s Method and Plancherel Measure of the Symmetric Group Running head: Stein’s Method and Plancherel Measure — We initiate a Stein’s method approach to the study of the Plancherel measure of the"
 ---
 The author was partially supported by National Security Agency grant MDA904-03-1-0049.

@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.944
 latex_coverage_ratio: 0.967
+doc_brief: "arXiv:hep-ph/0003017v2 26 Jun 2000 — Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems."
 ---
 The chiral random matrix partition function can be evaluated using standard random matrix methods. For simplicity, let us consider the case $\beta=2$. The fermion determinant can be written as a Grassmann integral, and averaging over the Gaussian distribution function results in a four-fermion interaction. Because of the underlying unitary invariance ([\[inv\]](#inv){reference-type="ref" reference="inv"}) of the chRMT, the fermionic variables only appear in invariant combinations of the form $\sigma^{fg} \sim \bar\psi^f_i \psi^g_i$, and the partition function can be rewritten identically in terms of these variables as [@Shur93; @HVeff] $$Z_{\nu}(m) = \int D \sigma \: e^{-{n\Sigma^2} \Tr
   \sigma \sigma^\dagger}{\det}^{\nu} (\sigma+m{\bf 1} ){\det}^{n}

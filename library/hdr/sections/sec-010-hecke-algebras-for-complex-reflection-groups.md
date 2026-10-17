@@ -8,6 +8,7 @@ pages: 26-28
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
 toc_source: outline
+doc_brief: "Hecke algebras, generalisations and representation theory — 30 sections: Front matter; Algebras of Finite Type; Blocks"
 ---
 Hecke algebras for complex reﬂection groups
 Let A be the set of reﬂecting hyperplanes of W. Let hreg := h \ S

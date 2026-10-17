@@ -1,1 +1,1 @@
-Given a coloring F = (g,f ), we have
+Given a coloring F = (g, f), we have

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.95
 latex_coverage_ratio: 0.974
+doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Young diagrams which can be regarded as a natural one-parameter deformation of some classi- cal"
 ---
 For a Young diagram $\lambda$, a real number $\alpha>0$ and an integer $k\geq 2$ we define $$\mathcal{S}_k^{(\alpha)}(\lambda):= 
 (k-1) \iint_{(x,y)\in\lambda}  \left( \sqrt{\alpha}\ x-\frac{1}{\sqrt{\alpha}}\ y \right)^{k-2}  \dif x \dif y,$$ where the integral on the right-hand side is taken over a polygon on the plane defined by the Young diagram $\lambda$ (drawn in the French convention). In order to keep the notation light we shall make the dependence on $\alpha$ implicit and we shall simply write $\mathcal{S}_k(\lambda):=\mathcal{S}_k^{(\alpha)}(\lambda)$.

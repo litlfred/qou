@@ -8,6 +8,7 @@ pages: 23-24
 source_pdf: 1610.05082v3.pdf
 source_sha256: 90c8089953ff2d97
 toc_source: outline
+doc_brief: "WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL — Weighted dependency graphs have been recently introduced by the second author, as a toolbox to prove central limit theorems."
 ---
 [1] P. Baldi and Y. Rinott, On normal approximations of distributions in terms of dependency graphs, Ann. Prob.,
 (1989), pp. 1646–1650.

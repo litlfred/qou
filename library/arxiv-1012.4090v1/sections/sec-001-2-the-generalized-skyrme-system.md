@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.955
+doc_brief: "Generalized Skyrme Crystals — This letter deals with triply-periodic (crystalline) solutions in a family of Skyrme systems, namely where the ﬁeld takes values in the squashed 3-sphere."
 ---
 In this section, we give some details of the one-parameter interpolating family of Skyrme systems. The field is denoted $\Phi_{\beta}=(\Phi_1,\Phi_2,\Phi_3,\Phi_4)$, where each component $\Phi_{\beta}$ is a function of the spatial coordinates $x^j=(x^1,x^2,x^3)=(x,y,z)$, and the constraint $\Phi_{\beta}\Phi_{\beta}=1$ is imposed. The energy density for the system, parametrized by $\alpha\in[0,1]$, is
 

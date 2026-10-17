@@ -8,6 +8,7 @@ pages: 21-23
 source_pdf: 1006.1099v3.pdf
 source_sha256: 76c1c4173cdee9d8
 toc_source: outline
+doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS — There is a classical relationship in algebraic geometry between a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
 ---
 gebraic operation which formally enlarges A to yield a more computable object: ﬁrst, passing
 to twisted complexes to give T w A; second, idempotent-completing to give Π(T w A) = T wπA.

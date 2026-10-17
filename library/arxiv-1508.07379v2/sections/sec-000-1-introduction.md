@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.997
 latex_coverage_ratio: 0.939
+doc_brief: "Convergence of Mayer and Virial expansions and the Penrose tree-graph identity Introduction — We establish new lower bounds for the convergence radius of the Mayer series and the Virial series of a"
 ---
 Continuous particle systems are an important subject of investigation in rigorous statistical mechanics. Since the thirties it was clear that the equation of state of a non ideal gas in thermodynamics can be deduced from statistical mechanics via the Mayer series of the pressure in the grand canonical ensemble. The Mayer series, proposed by Mayer (see, e.g., [@MM] and references therein) is an expansion in powers of the fugacity $\l$ of the logarithm of the Grand Canonical partition function of the the system under study, whose $n^{\rm th}$-order coefficient is given by a sum of terms indexed by the labeled connected graphs between $n$ vertices. This series was at the time only formal and the question about its convergence uniformly in the volume where the gas is confined, remained an enigma during two decades. The difficulty in dealing with this problem was basically due to challenging combinatorial structure of the Mayer coefficients.
 

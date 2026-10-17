@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.989
 latex_coverage_ratio: 1.0
+doc_brief: "Line Operators in the Standard Model — There is an ambiguity in the gauge group of the Standard Model."
 ---
 In four-dimensional Minkowski spacetime, ${\bf R}^{3,1}$, the difference between Yang-Mills with gauge group $SU(N)$ and  $SU(N)/{\bf Z}_N$ is rather formal. In particular, any local observer is blind to the distinction. Nonetheless, the different line operators mean that there are subtle differences between the two theories. This appears, for example, after confinement. In either theory, the confining phase  can be viewed as arising through the condensation of magnetic monopoles with charge $\lambda^m\in \Lambda_{mr}$. For $SU(N)$ Yang-Mills, these are the minimally charged monopoles. However, for $SU(N)/{\bf Z}_N$, these are not the minimum charge. This means that (at $\theta=0$) this theory exhibits topological order, with an emergent {\it magnetic} discrete ${\bf Z}_N$ gauge symmetry in the infra-red \cite{ast}.
 

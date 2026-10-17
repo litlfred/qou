@@ -1,0 +1,1 @@
+[\[ismart2\]](#ismart2){reference-type="ref" reference="ismart2"} is an analog of Lemma [\[ismart\]](#ismart){reference-type="ref" reference="ismart"} and is generalized in [@F3] to arbitrary spherical functions of the Gelfand pair $(S_{2n},H_{2n})$.

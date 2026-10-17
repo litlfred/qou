@@ -8,6 +8,7 @@ pages: 136-139
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
 toc_source: outline
+doc_brief: "Analytic Combinatorics in Several Variables Expanded Second Edition — 98 sections: Front matter; Preface to the second edition; Preface to the first edition"
 ---
 As in the one-dimensional case, we begin with the simplest phase function
 and a monomial amplitude. We ﬁrst state a formula for the one-dimensional

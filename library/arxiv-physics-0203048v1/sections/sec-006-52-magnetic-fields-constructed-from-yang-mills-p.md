@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.981
 latex_coverage_ratio: 0.992
+doc_brief: "arXiv:physics/0203048v1 [physics.plasm-ph] 15 Mar 2002 — An expression for a third-order link integral of three magnetic ﬁelds is presented."
 ---
 As mentioned above we now interpret the three components of the non-Abelian pure gauge Yang-Mills potential $A$ as potentials of three independent, non-vanishing magnetic fields. It is sufficient to consider only one of the three potentials $A^i$, since due to $\hat{n}^i = x^i/||\bx||$ and the cyclic symmetry of ([\[Yang-Mills-potential-components\]](#Yang-Mills-potential-components){reference-type="ref" reference="Yang-Mills-potential-components"}) in the indices $i,j,k$ all three fields can be obtained from just one field by rotations that map the $x^i$-axes on one another. From ([\[Yang-Mills-potential-components\]](#Yang-Mills-potential-components){reference-type="ref" reference="Yang-Mills-potential-components"}) we calculate the vector potential $\bA^3$ in spherical coordinates $x = r \sin\vartheta \cos\varphi$, $y = r \sin\vartheta \sin\varphi$, and $z = r \cos\vartheta$. Using unit basis vectors $\be_r,\be_\vartheta, \be_\varphi$ and fixing a value for the "coupling constant" of $q=2$, we find $$\begin{aligned}
 \fl

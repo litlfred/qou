@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.889
 latex_coverage_ratio: 0.929
+doc_brief: "$q$-Hodge complexes over the Habiro ring — — Peter Scholze has raised the question whether some variant of the q-de Rham complex is already defined over the Habiro ring H := limm∈N Z[q]∧ (qm−1)."
 ---
 Raksit [@RaksitFilteredCircle] has introduced $\infty$-categories of *derived commutative algebras*, along with filtered, graded, and differential-graded variants. The filtrations $\fil_{\Hhodge_m}^\star \qIW_m\deRham_{R/A}$ admit canonical filtered derived commutative $A[q]/(q^m-1)$-algebra structures (if $R$ is a polynomial $A$-algebra, these structures can be constructed on the level of complexes, then one can pass to animations) and the $\IE_\infty$-structure on the derived $q$-de Rham complex $\qdeRham_{R/A}$ can be canonically enhanced to a derived commutative $A[q]$-algebra structure (see [\[par:DerivedCommutativeLift\]](#par:DerivedCommutativeLift){reference-type="ref" reference="par:DerivedCommutativeLift"}).
 

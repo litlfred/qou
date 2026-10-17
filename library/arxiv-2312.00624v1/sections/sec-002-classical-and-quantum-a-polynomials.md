@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.955
 latex_coverage_ratio: 0.964
+doc_brief: "On the structure of wave functions in complex Chern–Simons theory — We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the"
 ---
 []{#sec: Apoly label="sec: Apoly"} The classical action of CS theory with complex gauge group $G_{{\mathbb C}}$ can be written as [@witten91]
 

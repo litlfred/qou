@@ -8,6 +8,7 @@ pages: 9-11
 source_pdf: 1603.06017v2.pdf
 source_sha256: 3ff091e40573a5dd
 toc_source: outline
+doc_brief: "Automatic Theorem Proving in Walnut — 41 sections: Front matter; Introduction; Basics"
 ---
 3.3
 Variables

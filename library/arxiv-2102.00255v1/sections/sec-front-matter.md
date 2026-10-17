@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2102.00255v1.pdf
 source_sha256: b63df73a9d0e1534
 toc_source: outline
+doc_brief: "RIGIDITY, RESIDUES AND DUALITY: OVERVIEW AND RECENT PROGRESS — In this article we explain the theory of rigid residue complexes in commutative algebra and algebraic geometry, summarizing the"
 ---
 RIGIDITY, RESIDUES AND DUALITY: OVERVIEW AND RECENT PROGRESS
 AMNON YEKUTIELI

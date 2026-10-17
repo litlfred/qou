@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.981
 latex_coverage_ratio: 0.991
+doc_brief: "Three generations of colored fermions with S 3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU(3)C color symmetry based on the"
 ---
 Schafer [@schafer1954algebras] showed that for CD algebras $\mathbb{A}_n$ with $n\geq 4$ ($\mathbb{A}_0=\mathbb{R}$), the derivation algebra $\mathfrak{der}(\mathbb{A}_n)$ consists of derivations of the form $a+bu\rightarrow aD+(bD)u$, where $a,b\in\mathbb{A}_{n-1}$, $u$ is the new anticommuting imaginary unit $u$ introduces in the CD construction of $\mathbb{A}_n$ from $\mathbb{A}_{n-1}$, and $D$ is a derivation of $\mathbb{A}_{n-1}$. Brown [@brown1967generalized] demonstrated that if $\theta\in Aut(\mathbb{A}_{n-1})$, then $$\begin{aligned}
 \theta'&:& a+bu\rightarrow a\theta+(b\theta)u,\\

@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1905.11619v2.pdf
 source_sha256: f634f9ec4357d5f3
 toc_source: outline
+doc_brief: "L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS — We study (quasi-)cohomological properties through an analysis of quantum Markov semi-groups."
 ---
 arXiv:1905.11619v2  [math.OA]  13 Feb 2020
 L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV

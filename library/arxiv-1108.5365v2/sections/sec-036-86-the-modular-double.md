@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.987
 latex_coverage_ratio: 0.987
+doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL + — We give complete detail of the description of the GNS representation of the quantum plane A and its dual ˆ A as"
 ---
 \label{sec:regular:MD}
 It is known that the representation space $\cP_{\l,t}$ is actually a nontrivial representation for the modular double $U_q(\gl(2,\R))\ox U_{\til[q]}(\gl(2,\R))$. In this section we describe its action using the same multiplicative unitary $\bW_m$.

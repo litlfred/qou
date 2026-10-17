@@ -8,6 +8,7 @@ pages: 51-54
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
 toc_source: outline
+doc_brief: "Hecke algebras, generalisations and representation theory — 30 sections: Front matter; Algebras of Finite Type; Blocks"
 ---
 Aﬃne and Cyclotomic Yokonuma–Hecke algebras
 We have now seen two families of algebras that are deformations of the groups algebra of the complex

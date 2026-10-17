@@ -8,6 +8,7 @@ pages: 13-15
 source_pdf: s00209-021-02825-4.pdf
 source_sha256: 85ca5ec21f42a988
 toc_source: outline
+doc_brief: "A representation theoretic explanation of the Borcea–Brändén characterization — In 2009, Borcea and Brändén characterized all linear operators on multivariate polynomials which preserve the property"
 ---
 A crucial tool of classical stability theory is the polar derivative. In particular, this notion leads
 to Laguerre’s theorem (Proposition 4.6), which is the main lemma toward Grace’s theorem.

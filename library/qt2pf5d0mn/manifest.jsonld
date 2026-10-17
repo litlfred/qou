@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "qt2pf5d0mn",
+  "title": "UC Santa Barbara",
   "contains": [
+    "library/qt2pf5d0mn/sections/sec-front-matter",
     "library/qt2pf5d0mn/sections/sec-000",
     "library/qt2pf5d0mn/sections/sec-001",
     "library/qt2pf5d0mn/sections/sec-002",
@@ -34,7 +35,9 @@
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "qt2pf5d0mn",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "qt2pf5d0mn.pdf",
     "source_sha256": "4c8581c3b46398e3ab995deba61e3241f3239401299d4461211089e0f0d7b75e",
     "pages": 106,

@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/hdr/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Iwahori–Hecke Algebras",
+  "pageStart": 20,
+  "pageEnd": 20,
+  "contains": [
+    "library/hdr/blocks/prose-sec-004",
+    "library/hdr/blocks/ex-sec-004-01",
+    "library/hdr/blocks/thm-sec-004-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hdr/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hdr/manifest.jsonld",
+  "provenance": "ingested"
+}

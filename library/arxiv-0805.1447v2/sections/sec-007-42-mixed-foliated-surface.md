@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.963
 latex_coverage_ratio: 0.988
+doc_brief: "BRAID ORDERING AND THE GEOMETRY OF CLOSED BRAID — The relationships between braid ordering and the ge- ometry of its closure is studied."
 ---
 Next we proceed to $F$ is mixed foliated case. The strategy is almost the same as tiled case, but we need to do some additional arguments to evaluate valance of vertices because the decomposition by regions do not determine cellular decomposition. First we see the same conclusion of lemma [\[lem:estimate-tiled\]](#lem:estimate-tiled){reference-type="ref" reference="lem:estimate-tiled"} holds.
 

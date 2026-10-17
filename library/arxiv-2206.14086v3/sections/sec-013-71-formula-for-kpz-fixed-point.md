@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.72
 latex_coverage_ratio: 0.981
+doc_brief: "KPZ limit theorems — One-dimensional interacting particle systems, 1+1 random growth models, and two-dimensional di- rected polymers deﬁne 2d height ﬁelds."
 ---
 Let $F_m$ be the $m$-point distribution of the KPZ fixed point with the narrow wedge initial condition. The result of [@Liu19] implies that $$\label{eq:KPZformula}
     F_m(\mathsf{h}; \gamma, \tau) 

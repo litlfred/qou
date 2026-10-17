@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.946
 latex_coverage_ratio: 0.532
+doc_brief: "Generalized Markov traces and Jucys-Murphy elements — We give a simple construction of Markov traces for Iwahori-Hecke algebras associated with infinite series of crystallographic Coxeter groups."
 ---
 \label{sec:geom-mark-trac}
 Markov traces $\tr_n^B:\He_{v,v}(B_n) \to \mathcal{A}(a), \tr_n^D:\He(D_n) \to \mathcal{A}(a)$ studied in \cite{gomi2006markov}, \cite{websterGeometryMarkovTraces2009} are specializations of traces $\tr_{n,y}^X$ satisfying the extension of the properties \ref{item:5}, \ref{item:6} for the embeddings $B_0 \to B_1$ and $D_1 \to D_2, D_0 \to D_1$. In particular, these traces satisfy

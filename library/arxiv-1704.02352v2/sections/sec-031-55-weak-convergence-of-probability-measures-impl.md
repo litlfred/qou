@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.953
 latex_coverage_ratio: 0.966
+doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Young diagrams which can be regarded as a natural one-parameter deformation of some classi- cal"
 ---
 For $\epsilon>0$ and $u_0\in\mathbb{R}$ let $\phi_\epsilon\colon \mathbb{R}\to\mathbb{R}_+$ be a function on the real line such that $\phi_\epsilon$ is supported on an $\epsilon$-neighborhood of $u_0$ and $\int \phi_\epsilon(u) \dif u = 1$. Since $\mathbb{E}f_{\Lambda_n}$ is Lipschitz with constant $1$, it follows that $$\begin{gathered}
 \label{eq:Lipschitz-is-good}

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0607416v6/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Hyperbolicity and Stability Preservers",
+  "pageStart": 3,
+  "pageEnd": 7,
+  "contains": [
+    "library/arxiv-math-0607416v6/blocks/prose-sec-002"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0607416v6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0607416v6/manifest.jsonld",
+  "provenance": "ingested"
+}

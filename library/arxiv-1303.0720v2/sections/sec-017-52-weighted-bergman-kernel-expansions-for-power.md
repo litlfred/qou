@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.959
 latex_coverage_ratio: 0.993
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 We should observe first that the above setting of power weights $\omega=\mathrm{e}^{-2mQ}$ has a natural extension to the setting of line bundles over (usually compact) complex manifolds in one or more dimensions. As the Bergman kernel is of geometric importance, it has been studied extensively in the line bundle setting (see, e.g., [@mm]). To make matters more precise, suppose we are given a (compact) complex manifold $\mathcal{X}$ and a holomorphic line bundle $L$ over $\mathcal{X}$ supplied with an Hermitian metric $h$, where in our above simplified setting $h\sim \mathrm{e}^{-2Q}$ is a local representation of the metric $h$. Next, if $m$ is a positive integer, the weight $\mathrm{e}^{-2mQ}$ appears when as the local metric associated with the tensor power $L^{\otimes m}$ of the line bundle $L$. This is often done because the initial line bundle $L$ might have admit only very few holomorphic sections.
 

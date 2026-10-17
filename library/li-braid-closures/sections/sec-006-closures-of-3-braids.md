@@ -8,6 +8,7 @@ pages: 8-9
 source_pdf: Li-braid-closures.pdf
 source_sha256: f7410e7be5bc187e
 toc_source: outline
+doc_brief: "Knot polynomials on braid closures — We explore properties of the Jones and Alexander polynomials of braid closures of braids of index 3."
 ---
 Closures of 3-braids
 We investigate the Jones and Alexander polynomials of 3-braid closures at −1.

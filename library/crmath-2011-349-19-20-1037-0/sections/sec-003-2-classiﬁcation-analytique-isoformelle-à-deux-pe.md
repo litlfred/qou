@@ -8,6 +8,7 @@ pages: 2-2
 source_pdf: CRMATH_2011__349_19-20_1037_0.pdf
 source_sha256: fd5bd0558dfe892f
 toc_source: outline
+doc_brief: "Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières — 8 sections: Front matter; Classiﬁcation analytique et théori; Notations"
 ---
 pentes non entières en cherchant une forme normale de Birkhoff-Guenther. Dans une deuxième partie, nous calculerons les
 opérateurs de Stokes associés à un module irréductible. Dans la troisième partie, nous donnerons une description matricielle

@@ -8,6 +8,7 @@ pages: 52-53
 source_pdf: 1803.04009v2.pdf
 source_sha256: 8b34299b739cd2b0
 toc_source: outline
+doc_brief: "Symmetry enhancement and closing of knots in 3d/3d correspondence — We revisit Dimofte-Gaiotto-Gukov’s construction of 3d gauge theories asso- ciated to 3-manifolds with a torus boundary."
 ---
 S-transformation of 3d SCFT
 Now it is clear why the SU(2) and SO(3) types are exchanged under the Gaiotto-Witten’s

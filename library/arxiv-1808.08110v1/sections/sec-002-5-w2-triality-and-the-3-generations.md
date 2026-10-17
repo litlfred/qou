@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — We continue the study undertaken in [13] of the relevance of the exceptional Jordan algebra J8 3 of hermitian 3 × 3 octonionic matrices for the description of the"
 ---
 We now consider the triality as corresponding to the 3 canonical Jordan subalgebras $J_{(1)}, J_{(2)}, J_{(3)}$ isomorphic to $J^8_2$ of $J^8_3$ where $J_{(1)}$ consists of the matrices of $J^8_3$ having vanishing elements in the first row and the first column, $J_{(2)}$ consists of the matrices having vanishing elements in the second row and the second column while $J_{(3)}$ consists of the matrices having vanishing elements in the third row and the third column. These 3 Jordan subalgebras $J_{(i)}$ correspond to the 3 diagonal primitive idempotent $E_{(i)}$ via $$\label{JE}
 J_{(i)}=(\mbox{\rm 1\hspace {-.6em} l}- E_{(i)} ) J^8_3(\mbox{\rm 1\hspace {-.6em} l}-E_{(i)})$$ for $i\in \{1,2,3\}$.\

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.931
 latex_coverage_ratio: 0.971
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials."
 ---
 []{#SubsectBound2 label="SubsectBound2"} For some purposes the bound on the degree of $a_\rho^\mu$ given by Proposition [\[PropBound1\]](#PropBound1){reference-type="ref" reference="PropBound1"} is not strong enough. In this section we give another bound which is related to another gradation of $\Lambda_\star^{(\alpha)}$ defined by: $$\ \deg_2(M_k)=k-2 \qquad \text{for } k\geq 2 .$$ One has the following analogue of Lemma [\[LemDeg1B\]](#LemDeg1B){reference-type="ref" reference="LemDeg1B"}:
 

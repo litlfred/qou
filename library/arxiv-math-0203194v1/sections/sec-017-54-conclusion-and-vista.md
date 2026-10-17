@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.99
 latex_coverage_ratio: 0.945
+doc_brief: "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry — 66 sections: Front matter; Purpose of this book.; Contents of this book."
 ---
 We have seen many instances of the following scenario: some familiar
 notion or phenomenon from the complex realm shows itself in two

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
 latex_coverage_ratio: 0.943
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 Before discussing the power-counting problem and its solution, let us briefly recall the principles of the renormalization procedure which will then allow us to set up a consistent power counting. At the beginning, the Lagrangian is written down in terms of bare, i.e., unrenormalized parameters and fields. In order to illustrate the procedure let us discuss ${\cal L}_{\pi N}^{(1)}$ of Eq. ([\[4:1:2:l1pin\]](#4:1:2:l1pin){reference-type="ref" reference="4:1:2:l1pin"}) and consider the free part in combination with the $\pi N$ interaction term with the smallest number of pion fields, $${\cal L}_{\pi N}^{(1)}=\bar \Psi_B \left( i\gamma^\mu
 \partial_\mu -m_B -\frac{1}{2}\frac{{\texttt{g}_A}_B}{F_B}

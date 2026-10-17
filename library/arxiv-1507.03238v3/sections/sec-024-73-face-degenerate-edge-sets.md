@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.846
 latex_coverage_ratio: 0.971
+doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety for SL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
 ---
 ::: definition
 []{#def:Descendant label="def:Descendant"} Let $\mathcal T'$ be a triangulation whose edge set contains that of $\mathcal T$. A *descendant* of $E\in\mathop{\mathrm{T}}(\mathcal T)$ is an element $E'\in\mathop{\mathrm{T}}(\mathcal T')$ such that $E'$ agrees with $E$ on the edges of $\mathcal T$. If $E'\in\mathop{\mathrm{T}}(\mathcal T')$ is a descendent of $E\in\mathop{\mathrm{T}}(\mathcal T)$ we write $E'_{|\mathcal T}=E$.

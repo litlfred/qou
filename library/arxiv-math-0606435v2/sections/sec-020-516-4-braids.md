@@ -8,6 +8,7 @@ pages: 33-35
 source_pdf: 0606435v2.pdf
 source_sha256: 6dddaf838a19f0f5
 toc_source: inferred
+doc_brief: "arXiv:math/0606435v2 [math.GT] 10 Oct 2007 — We show that 3-braid links with given (non-zero) Alexander or Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
 4-braids
 If some mountain is not of height 3, or > 2 valleys of depth 1 exist, then we are done as before (see §5.1.3).

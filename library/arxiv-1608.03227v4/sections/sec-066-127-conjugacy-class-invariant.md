@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.945
 latex_coverage_ratio: 0.954
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 In section [\[ssec: Cb\]](#ssec: Cb){reference-type="ref" reference="ssec: Cb"} we constructed for every word $\beta=\sigma_{i_1}^{\epsilon_1}\cdot\dots\cdot\sigma_{i_\ell}^{\epsilon_\ell}$ of length $\ell$ of generators of the braid group $\Brgr_n$ complexes $C_{\sigma_{i_1}^{\epsilon_1},\dots,\sigma_{i_\ell}^{\epsilon_\ell}}\in
 \MF_{B^\ell\times G}(\calX_{\ell,fc},0)$. The group $\hat{G}$ acts only on the first and last factors in $\calX_{\ell,fc}$ there is a $\hat{G}$-equivariant projection $pr^{i}:\calX_{\ell,fc}\rightarrow \frg^2\times V$: $$pr^i(X,g_1,Y_1,\dots,g_\ell,Y_\ell,u)=(X,\Ad_{g_i}(Y_i),u).$$ The image of the map $pr^1$ restricted to $\calX^{crit}_{\ell,fc}$ consists of stable triples $(X,Y,u)$, $[X,Y]=0,\CC[X,Y]u=V$. Thus we have a well-defined map $pr^1:\St_\ell\to \Hilb_n$.

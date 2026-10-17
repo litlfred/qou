@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.955
 latex_coverage_ratio: 0.982
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 The Lagrangian ${\cal L}_{\rm eff}$ of mesonic chiral perturbation theory is organized as a string of terms with an increasing number of derivatives and quark-mass terms, $$\label{3:2:3:ll2l4}
 {\cal L}_{\rm eff}={\cal L}_2 + {\cal L}_4 + {\cal L}_6 +\cdots,$$ where the subscripts refer to the order in the momentum and quark-mass expansion. The index 2, for example, denotes either two derivatives or one quark-mass term. In terms of Feynman rules, derivatives generate four-momenta. A quark-mass term counts as two derivatives because of Eqs. ([\[3:2:2:mpi2\]](#3:2:2:mpi2){reference-type="ref" reference="3:2:2:mpi2"}) - ([\[3:2:2:meta2\]](#3:2:2:meta2){reference-type="ref" reference="3:2:2:meta2"}) ($M^2\sim m_q$) in combination with the on-shell condition $p^2=M^2$. We will generically count a small four-momentum---or the corresponding derivative---and a Goldstone-boson mass as of ${\cal O}(q)$. The chiral orders in Eq. ([\[3:2:3:ll2l4\]](#3:2:3:ll2l4){reference-type="ref" reference="3:2:3:ll2l4"}) are all even \[${\cal O}(q^{2k})$, $k\geq 1$\], because Lorentz indices of derivatives always have to be contracted and quark-mass terms count as ${\cal O}(q^2)$.

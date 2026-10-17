@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.994
 latex_coverage_ratio: 0.994
+doc_brief: "ON IRREDUCIBLE CHARACTERS OF THE IWAHORI-HECKE ALGEBRA IN — We use vertex operators to compute irreducible characters of the Iwahori-Hecke algebra of type A."
 ---
 The Murnaghan-Nakayama rule is an iterative formula to compute the Hecke algebra characters. The combinatorial rule was proved by Ram [@Ram] using the Frobenius formula and the Hall-Littlewood symmetric functions. In this section, we formulate a determinant type Murnaghan-Nakayama rule and use it to compute the characters and also give a new proof of the Murnaghan-Nakayama rule.
 

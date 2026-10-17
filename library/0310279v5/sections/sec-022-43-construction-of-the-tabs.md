@@ -8,6 +8,7 @@ pages: 46-49
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
 toc_source: outline
+doc_brief: "Stabilization in the braid groups I: MTWS Introduction — 40 sections: Front matter; Introduction; The problem"
 ---
 Construction of the tabs
 In this section we modify the discs R1, . . . , Rk which we constructed in Section 2 to

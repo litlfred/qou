@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-0707.2052v1",
  "source_sha256": "0a1d1cca848706be",
- "brief": "The Mukai pairing, I: a categorical approach — We study the Hochschild homology of smooth spaces, emphasiz ing the importance of a pairing which generalizes Mukai’s pairi ng on the cohomology of K3",
- "extended": "**The Mukai pairing, I: a categorical approach**\n\n*Andrei C˘ ald˘ araru∗ and Simon Willerton †*\n\n39 pp, 28 sections.\n\n**Abstract.** We study the Hochschild homology of smooth spaces, emphasiz ing the importance of a pairing which generalizes Mukai’s pairi ng on the cohomology of K3 surfaces. We show that integral transforms between derived categories of spaces induce, functorially, linear maps on homol- ogy. Adjoint functors induce adjoint linear maps with respe ct to the Mukai pairing. We deﬁne a Chern character with values in Hoch schild homology, and we discuss analogues of the Hirzebruch-Riema nn-Roch theorem and the Cardy Condition from physics. This is done in the context of a 2-category which has spaces as its objects and in tegral kernels as its 1-morphisms.\n\n**Outline.** Front matter; Introduction; The 2-category of kernels; A reminder on 2-categories.; Serre functors; The Serre functor on D(X).; Adjoint kernels; Adjunctions in 2-categories.; Left and right adjoints of kernels.; Partial traces.; Adjunction as a 2-functor.; Induced maps on homology; Hochschild cohomology.; Hochschild homology.; Push-forward and pull-back.; The Mukai pairing and adjoint kernels; The Chern character; The Chern character as a map on K-theory.",
+ "brief": "The Mukai pairing, I: a categorical approach — We study the Hochschild homology of smooth spaces, emphasizing the importance of a pairing which generalizes Mukai’s pairing on the cohomology of K3",
+ "extended": "**The Mukai pairing, I: a categorical approach**\n\n*Andrei C˘ald˘araru∗and Simon Willerton†*\n\n39 pp, 30 sections.\n\n**Abstract.** We study the Hochschild homology of smooth spaces, emphasizing the importance of a pairing which generalizes Mukai’s pairing on the cohomology of K3 surfaces. We show that integral transforms between derived categories of spaces induce, functorially, linear maps on homol- ogy. Adjoint functors induce adjoint linear maps with respect to the Mukai pairing. We deﬁne a Chern character with values in Hochschild homology, and we discuss analogues of the Hirzebruch-Riemann-Roch theorem and the Cardy Condition from physics. This is done in the context of a 2-category which has spaces as its objects and integral kernels as its 1-morphisms.\n\n**Outline.** Front matter; Introduction; The 2-category of kernels; A reminder on 2-categories.; Serre functors; The Serre functor on D(X).; Adjoint kernels; Adjunctions in 2-categories.; Left and right adjoints of kernels.; Partial traces.; Adjunction as a 2-functor.; Induced maps on homology; Hochschild cohomology.; Hochschild homology.; Push-forward and pull-back.; The Mukai pairing and adjoint kernels; The Chern character; Definition of the Chern character.\n\n**Extracted claims (proposals, not verified).**\n- Theorem 17: If Φ and Φ† form a politely dual pair of kernels, then the\n- Theorem 27: Every kernel is reﬂexively polite.\n- Proposition 19: Given an adjunction Ψ ⊣Φ, deﬁne Φ† := Ψ ◦Σ−1\n- Proposition 20: Let Φ ∈D(X × Y) be a kernel, and let Φ∨∈D(Y × X) be\n- Proposition 21: If a kernel Φ is reﬂexively polite then so is Φ∨.\n- Proposition 22: If Φ: X →Y and Ψ: Y →Z are reﬂexively polite kernels",
  "tokens": {
-  "brief": 49,
-  "extended": 312
+  "brief": 48,
+  "extended": 419
  },
  "sections": [
   {
@@ -95,57 +95,67 @@
    "pages": "21-22"
   },
   {
-   "id": "sec-016-the-chern-character-as-a-map-on-k-theory",
+   "id": "sec-016-definition-of-the-chern-character",
+   "title": "Definition of the Chern character.",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-017-the-chern-character-as-a-map-on-k-theory",
    "title": "The Chern character as a map on K-theory.",
    "pages": "22-24"
   },
   {
-   "id": "sec-017-the-chern-character-and-inner-products",
+   "id": "sec-018-the-chern-character-and-inner-products",
    "title": "The Chern character and inner products.",
    "pages": "24-25"
   },
   {
-   "id": "sec-018-example",
+   "id": "sec-019-example",
    "title": "Example.",
    "pages": "25-25"
   },
   {
-   "id": "sec-019-open-closed-tqfts-and-the-cardy-condition",
+   "id": "sec-020-open-closed-tqfts-and-the-cardy-condition",
    "title": "Open-closed TQFTs and the Cardy Condition",
    "pages": "25-26"
   },
   {
-   "id": "sec-020-open-closed-2d-tqfts",
+   "id": "sec-021-open-closed-2d-tqfts",
    "title": "Open-closed 2d TQFTs.",
    "pages": "26-27"
   },
   {
-   "id": "sec-021-open-closed-2d-tqfts-with-d-branes",
+   "id": "sec-022-open-closed-2d-tqfts-with-d-branes",
    "title": "Open-closed 2d TQFTs with D-branes.",
    "pages": "27-28"
   },
   {
-   "id": "sec-022-the-open-closed-2d-tqft-from-a-calabi-yau-manifo",
+   "id": "sec-023-the-open-closed-2d-tqft-from-a-calabi-yau-manifo",
    "title": "The open-closed 2d TQFT from a Calabi-Yau manifold.",
    "pages": "28-29"
   },
   {
-   "id": "sec-023-the-baggy-cardy-condition",
+   "id": "sec-024-the-baggy-cardy-condition",
    "title": "The Baggy Cardy Condition.",
    "pages": "29-31"
   },
   {
-   "id": "sec-024-duality-and-partial-trace",
+   "id": "sec-025-duality-and-partial-trace",
    "title": "Duality and partial trace",
    "pages": "31-31"
   },
   {
-   "id": "sec-025-polite-duality",
+   "id": "sec-026-polite-duality",
    "title": "Polite duality.",
-   "pages": "31-38"
+   "pages": "31-35"
   },
   {
-   "id": "sec-026-references",
+   "id": "sec-027-reflexively-polite-kernels",
+   "title": "Reflexively polite kernels.",
+   "pages": "35-38"
+  },
+  {
+   "id": "sec-028-references",
    "title": "References",
    "pages": "38-39"
   }
@@ -154,7 +164,8 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles"
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

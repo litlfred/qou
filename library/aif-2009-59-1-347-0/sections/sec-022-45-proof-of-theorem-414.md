@@ -8,6 +8,7 @@ pages: 45-46
 source_pdf: AIF_2009__59_1_347_0.pdf
 source_sha256: 35b8422990e24888
 toc_source: outline
+doc_brief: "On q-summation and confluence — 25 sections: Front matter; Introduction; Part 1. Convergent q-Borel and q-L"
 ---
 We start by proving the following preparatory result:
 Proposition 4.24. — If ˆf ∈xC[[x]] is a generic q-Gevrey series, then

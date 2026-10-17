@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.949
 latex_coverage_ratio: 1.0
+doc_brief: "Linear programming bounds for unitary space time codes — The linear programming method is applied to the space Un(C) of uni- tary matrices in order to obtain bounds for codes relative to the"
 ---
 Numerical programs give accurate approximations of the best linear programming bounds over a large interval of validity, not covered by the bounds proved in Section IV. The following curves plot the linear programming bound on the diversity functions as a function of the cardinality of the code. The programs optimize the choice of a polynomial in the variables $(\cos\theta_1,\dots,\cos\theta_n)$, with degree at most equal to some parameter $D$. Increasing $D$ gives accurate results over a wider range of values for the diversity functions, but also increase the computational time. We use $D=19$ for $n=2$ and $D=13$ for $n=3$. ![image](U2SUM_ROS.eps){width="6.2cm"}\
 ![image](U2PROD_ROS.eps){width="6.2cm"}\

@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-9901120v3",
+  "title": "A table of boundary slopes of Montesinos knots Abstract Introduction Revised table",
   "contains": [
+    "library/arxiv-math-9901120v3/sections/sec-front-matter",
     "library/arxiv-math-9901120v3/sections/sec-000",
     "library/arxiv-math-9901120v3/sections/sec-001",
     "library/arxiv-math-9901120v3/sections/sec-002",
@@ -27,7 +28,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-9901120v3",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9901120v3.pdf",
     "source_sha256": "782034b674f958af57632cf8cab5c42015ed7cd01702930740b8d541141c0051",
     "pages": 4,
@@ -38,8 +41,8 @@
       "stamp_date": "18 Jun 2010"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

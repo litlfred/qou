@@ -8,6 +8,8 @@ pages: 1-1
 source_pdf: 0808.1533v1.pdf
 source_sha256: 85bb9732afdd70ea
 toc_source: outline
+doc_brief: "The third order helicity of magnetic ﬁelds via link maps — We introduce an alternative approach to the third order helicity of a volume preserving vector ﬁeld B, which leads us to a lower bound for"
+duplicate_of: "arxiv-0808.1533v3"
 ---
 arXiv:0808.1533v1  [math.DG]  11 Aug 2008
 On the third order helicity of magnetic ﬁelds

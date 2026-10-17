@@ -8,6 +8,7 @@ pages: 15-16
 source_pdf: 2501.03424v1.pdf
 source_sha256: 53e00a30fd850a5b
 toc_source: outline
+doc_brief: "Soergel bimodules and Kazhdan-Lusztig polynomials — This paper presents an exposition of Soergel bimodules, the categoriﬁcation of Hecke alge- bras, and their applications to various topics in"
 ---
 Lemma
 Suppose that λ, µ ∈h∗are compatible. Then the translation functors

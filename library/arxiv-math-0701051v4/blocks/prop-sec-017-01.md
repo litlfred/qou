@@ -1,0 +1,1 @@
+[\[prop:bipartite-graphs\]](#prop:bipartite-graphs){reference-type="ref" reference="prop:bipartite-graphs"} can be improved to the following one: $$N^\lambda(\sigma_1,\sigma_2) \leq A^{l-|C(\pi)|}n^{|C(\pi)|} \frac{1}{n}.$$

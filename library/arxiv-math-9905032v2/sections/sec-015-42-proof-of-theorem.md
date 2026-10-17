@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.996
 latex_coverage_ratio: 0.818
+doc_brief: "arXiv:math/9905032v2 [math.CO] 11 Sep 1999 — We consider the asymptotics of the Plancherel mea- sures on partitions of n as n goes to inﬁnity."
 ---
 []{#s42 label="s42"}
 

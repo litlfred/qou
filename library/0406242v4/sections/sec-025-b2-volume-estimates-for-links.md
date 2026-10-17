@@ -8,6 +8,7 @@ pages: 41-44
 source_pdf: 0406242v4.pdf
 source_sha256: 27e48b483007b824
 toc_source: outline
+doc_brief: "On canonical triangulations of once-punctured torus bundles and two-bridge link complements Introduction — 28 sections: Front matter; Introduction; The canonical triangulation"
 ---
 Volume estimates for links
 The volumes of link complements can also be estimated in terms of diagrams. We

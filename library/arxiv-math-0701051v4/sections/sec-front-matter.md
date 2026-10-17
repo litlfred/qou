@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0701051v4.pdf
 source_sha256: 4592a048c3b84a8d
 toc_source: outline
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS — We prove an upper bound for characters of the symmetric groups."
 ---
 arXiv:math/0701051v4  [math.RT]  21 Mar 2011
 ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS

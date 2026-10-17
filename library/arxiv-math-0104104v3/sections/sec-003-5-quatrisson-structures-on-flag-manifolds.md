@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.988
 latex_coverage_ratio: 0.929
+doc_brief: "arXiv:math/0104104v3 [math.DG] 29 Mar 2002 — The purpose of this paper is to describe certain natural 4-vector ﬁelds on quaternionic ﬂag manifolds, which geometrically determine the Bruhat cell"
 ---
 Following \cite{Lu2} 
 we will produce the quatrisson structure on the full flag of 

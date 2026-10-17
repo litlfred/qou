@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.974
 latex_coverage_ratio: 0.956
+doc_brief: "arXiv:math/0006057v2 [math.QA] 10 Jun 2000 — We give a survey of the theory of ﬁnite quantum groupoids (weak Hopf algebras), including foundations of the theory and applications to ﬁnite depth"
 ---
 An analogue of the Blattner-Montgomery duality theorem for
 actions of quantum groupoids was proven in \cite{N2}.

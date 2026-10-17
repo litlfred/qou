@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.97
 latex_coverage_ratio: 1.0
+doc_brief: "Fricke S-duality in CHL models — We consider four dimensional CHL models with sixteen spacetime supersym- metries obtained from orbifolds of type IIA superstring on K3×T 2 by a ZN symmetry acting"
 ---
 Let us now determine the lattice $\Lambda_m$ of purely magnetic charges. Once again, we will focus on the case $\lambda=1$, postponing the discussion of the general case to section [\[s:genlatticeem\]](#s:genlatticeem){reference-type="ref" reference="s:genlatticeem"}.
 

@@ -8,6 +8,7 @@ pages: 189-258
 source_pdf: 0601023v3.pdf
 source_sha256: 875ab040b50487a1
 toc_source: inferred
+doc_brief: "arXiv:hep-ph/0601023v3 23 Apr 2007 — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non - su- persymmetric uniﬁcation"
 ---
 Detailed analysis of upper bounds
 In this appendix we give details of the analysis presented in Sec.(5.6). As

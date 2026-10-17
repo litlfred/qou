@@ -8,6 +8,7 @@ pages: 182-185
 source_pdf: 1610.09640v4.pdf
 source_sha256: db5e7a5c5e85f95f
 toc_source: outline
+doc_brief: "Derived Categories Amnon Yekutieli 14 Apr 2019 DERIVED CATEGORIES — This is the fourth (and last) prepublication version of a book on derived categories, that will be published by Cambridge"
 ---
 K-injective and K-projective DG modules in K(A, M) behave in the opposite cate-
 gory K(A, M)op, and then use this to prove existence of contravariant triangulated

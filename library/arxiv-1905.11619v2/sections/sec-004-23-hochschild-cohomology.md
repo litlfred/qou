@@ -8,6 +8,7 @@ pages: 4-5
 source_pdf: 1905.11619v2.pdf
 source_sha256: f634f9ec4357d5f3
 toc_source: outline
+doc_brief: "L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS — We study (quasi-)cohomological properties through an analysis of quantum Markov semi-groups."
 ---
 [Tho08] and also [CoSh05]) through the bar resolution as follows. Let Fn be the space of all linear
 maps f : A⊗n →H to a ﬁxed A-A bimodule H. For f ∈Fn we deﬁne dnf : A⊗n+1 →H by

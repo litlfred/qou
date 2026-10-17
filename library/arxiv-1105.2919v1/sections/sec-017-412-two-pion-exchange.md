@@ -8,6 +8,7 @@ pages: 21-25
 source_pdf: 1105.2919v1.pdf
 source_sha256: 6d94496f2093ddd0
 toc_source: outline
+doc_brief: "Chiral eﬀective ﬁeld theory and nuclear forces — We review how nuclear forces emerge from low-energy QCD via chiral eﬀective ﬁeld theory. The presentation is accessible to the non-specialist."
 ---
 The exchange of two or more pions always involves loop diagrams, which implies that we are faced with
 a non-trivial problem. To conduct such calculations, a scheme of ﬁeld-theoretic perturbation theory as well

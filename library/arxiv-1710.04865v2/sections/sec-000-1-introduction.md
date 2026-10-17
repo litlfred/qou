@@ -11,6 +11,8 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.883
 latex_coverage_ratio: 0.923
+doc_brief: "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS — Using a result of Takata, we prove a formula for the colored Jones polynomial of the double twist knots K(−m,−p) and"
+duplicate_of: "cjdoubletwistfinal"
 ---
 Let $K$ be a knot and $J_{N}(K; q)$ be the usual $N$th colored Jones polynomial, normalized to be $1$ for the unknot. It is often useful to determine a $q$-hypergeometric expression for $J_{N}(K; q)$, and such expressions have been computed for a variety of knots (e.g., [@habiro; @hikami1; @hikami2; @thang; @masbaum; @walsh]). These have applications to the AJ conjecture [@hikami1], the generalized Volume conjecture [@gukov; @hikami3], the computation of WRT invariants [@bhl; @hikami4] and quantum modular and mock modular forms [@folsom; @go; @hl1; @hl2; @zagier].
 

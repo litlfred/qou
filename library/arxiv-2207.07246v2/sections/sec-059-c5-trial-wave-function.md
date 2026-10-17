@@ -8,6 +8,7 @@ pages: 149-154
 source_pdf: 2207.07246v2.pdf
 source_sha256: 91e70e5fe39e07a5
 toc_source: outline
+doc_brief: "Path Integral Quantum Monte Carlo Method for Light Nuclei — 64 sections: Front matter; ABSTRACT; LIST OF TABLES"
 ---
 Trial Wave Function
 The trial wave function used in AFDMC for the N-particle system has the following

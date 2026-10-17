@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-003",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Loops with massive particles",
-  "pageStart": 16,
-  "pageEnd": 18,
-  "text": "../sections/sec-003-5-loops-with-massive-particles.md",
+  "title": "Basic Definitions",
+  "pageStart": 12,
+  "pageEnd": 13,
+  "text": "../sections/sec-003-31-basic-definitions.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-9511320v1/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-9511320v1/manifest.jsonld",
   "provenance": "ingested"

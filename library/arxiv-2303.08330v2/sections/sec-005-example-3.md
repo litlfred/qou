@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.805
 latex_coverage_ratio: 0.992
+doc_brief: "A Cable Knot and BPS-Series II — This is a companion paper to earlier work of the author, which generalizes to an inﬁnite family of (2, 2w + 1)-cabling of the ﬁgure eight knot (|w| > 3) and proposes"
 ---
 We next consider $K=C_{(13,2)}(\bm{4_1})$.
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.988
+doc_brief: "Compact Q-balls and Q-shells within a $CP^N$ Skyrme-Faddeev type model — 18 sections: Front matter; Introduction; The extended Skyrme-Faddeev model"
 ---
 This paper successfully generalizes the compact Q-ball type solutions for scalar field models possessing a ${C}P^N$ target space. Specifically, we have investigated the extended Skyrme-Faddeev (ESF) model, which augments the traditional Skyrme-Faddeev framework with the inclusion of a potential and quartic interaction terms. The main objective of this study was to analyze the influence of these quartic terms on the properties of compact Q-balls.
 

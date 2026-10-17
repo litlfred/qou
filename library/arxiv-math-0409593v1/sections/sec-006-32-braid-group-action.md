@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.962
 latex_coverage_ratio: 0.927
+doc_brief: "CATEGORIFICATION OF THE BRAID GROUPS — 19 sections: Front matter; Introduction; Self-equivalences"
 ---
 Let us now construct a non-obvious lift of the action of $W$ on $D^b(A\operatorname{\!-modgr}\nolimits)$ to an action of $B_W$ on $K^b(A\operatorname{\!-modgr}\nolimits)$.
 

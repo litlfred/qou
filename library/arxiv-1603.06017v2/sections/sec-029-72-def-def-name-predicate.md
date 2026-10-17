@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.963
 latex_coverage_ratio: 1.0
+doc_brief: "Automatic Theorem Proving in Walnut — 41 sections: Front matter; Introduction; Basics"
 ---
 \label{sec:def}
 The word def stands for define. The syntax for this command is exactly the same as the syntax for eval command. The only difference between this command and eval is that the automaton constructed is saved in the directory ``/Walnut/Automata Library/'' for later use.  Suppose we write the following:

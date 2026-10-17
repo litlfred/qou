@@ -8,6 +8,7 @@ pages: 12-13
 source_pdf: 1006.1099v3.pdf
 source_sha256: 76c1c4173cdee9d8
 toc_source: outline
+doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS — There is a classical relationship in algebraic geometry between a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
 ---
 determined up to isomorphism by its second Stiefel-Whitney class w2(E) ∈H2(Y ; Z2).
 Let

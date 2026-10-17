@@ -1,0 +1,1 @@
+[\[identity2\]](#identity2){reference-type="ref" reference="identity2"} is the $\alpha$ version of Lemma [\[identity\]](#identity){reference-type="ref" reference="identity"}. The proof is combinatorial, as opposed to the algebraic argument given for Lemma [\[identity\]](#identity){reference-type="ref" reference="identity"}.

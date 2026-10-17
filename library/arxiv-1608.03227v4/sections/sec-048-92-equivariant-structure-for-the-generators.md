@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 0.983
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 In this subsection we discuss the equivariant structure of the generators of the braid group. We also introduce the matrix factorization $\calC_\bullet$ that corresponds to the blob or fat point in the MOY calculus [@MOY]. We use this connection later to relate our homology theory of links to the HOMFLY-PT polynomial.
 

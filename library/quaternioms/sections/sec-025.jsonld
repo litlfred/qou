@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/quaternioms/sections/sec-025",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Emerging Applications and Future Directions—Elaboration",
+  "pageStart": 22,
+  "pageEnd": 22,
+  "contains": [
+    "library/quaternioms/blocks/prose-sec-025"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/quaternioms/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/quaternioms/manifest.jsonld",
+  "provenance": "ingested"
+}

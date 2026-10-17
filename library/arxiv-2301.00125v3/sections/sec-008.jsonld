@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2301.00125v3/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A Bonferroni inequalities and Bell polynomials",
+  "pageStart": 16,
+  "pageEnd": 21,
+  "contains": [
+    "library/arxiv-2301.00125v3/blocks/prose-sec-008",
+    "library/arxiv-2301.00125v3/blocks/prop-sec-008-01",
+    "library/arxiv-2301.00125v3/blocks/rem-sec-008-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2301.00125v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2301.00125v3/manifest.jsonld",
+  "provenance": "ingested"
+}

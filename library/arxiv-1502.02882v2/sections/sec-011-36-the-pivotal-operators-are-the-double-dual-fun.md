@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.964
 latex_coverage_ratio: 0.985
+doc_brief: "Fusion categories via string diagrams — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories."
 ---
 \label{pivops}
 Our approach to the `double dual functor' on a fusion category $\cat{C}$ been to encode it in a canonical monoidal endofunctor $\mathcal{T} : \cat{C} \rightarrow \cat{C}$, whose underlying functor is simply the identity. The advantage of our approach is that it is canonical, not requiring arbitrary choices of duals for objects. Such fixed initial choices of duals tend to complicate calculations, as the expression for $\omega_{V,W}$ in equation \eqref{defn_omega} below shows.  We now connect our approach to the usual approach, taking more care than is common in the literature. 

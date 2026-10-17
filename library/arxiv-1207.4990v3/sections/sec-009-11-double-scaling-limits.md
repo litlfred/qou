@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 0.565
+doc_brief: "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results — 11 sections: Front matter; Setting the problem; Toeplitz meets Ising"
 ---
 []{#sec-ds label="sec-ds"} Of all the challenges in Toeplitz theory that arise from the Ising model, the deepest is the issue of the double-scaling limit (or in physicists' parlance, simply the scaling limit), $T\to T_c$ and $n\to\infty$. We have already mentioned the importance of this problem in physics. At the purely mathematical level, the issue is the following: Suppose one has a Toeplitz determinant $D_n(\varphi)$ with a symbol that depends on some external parameter, say $t$, $\varphi\!\left(e^{i\theta}\right) = \varphi_t \!\left(e^{i\theta}\right)$. For $t>0$, $\varphi_t$ is regular, but at $t=0$, $\varphi_t$ has a (Fisher-Hartwig) singularity, and hence, as we know, the nature of the asymptotics of $D_n(\varphi_t)$ as $n\to\infty$ is different for $t>0$ and $t=0$. This raises the general question: How does one describe the transition from the one kind of asymptotics to the other as $n\to\infty$ and $t\downarrow 0$?
 

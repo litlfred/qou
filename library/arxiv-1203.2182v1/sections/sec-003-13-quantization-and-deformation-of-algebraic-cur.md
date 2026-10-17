@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.894
 latex_coverage_ratio: 0.941
+doc_brief: "Volume Conjecture: Reﬁned and Categoriﬁed — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebraic curve, the zero"
 ---
 The above structure -- and its "refinement" that we are going to construct -- is not limited to applications in knot theory. Similar mathematical structure appears in matrix models [@BIPZ; @Dijkgraaf:1990rs; @Fukuma:1990jw], in four-dimensional ${\mathcal{N}}=2$ supersymmetric gauge theories [@SW-I; @Nekrasov; @NS; @Braverman:2004cr], and in topological string theory [@ADKMV; @DHSV; @DHS; @ACDKV].
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.987
 latex_coverage_ratio: 0.959
+doc_brief: "Contemporary Mathematics — Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a system of possibly non-linear partial dif- ferential equations and it"
 ---
 Some of the horizontal cohomologies have nice interpretations, sometimes informal, sometimes more precise. In this subsection we illustrate some of them. We begin with horizontal cohomology with trivial coefficients.
 

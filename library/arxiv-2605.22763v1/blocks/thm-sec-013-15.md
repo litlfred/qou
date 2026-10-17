@@ -1,1 +1,1 @@
-If𝐺is a simple connected graph on𝑛vertices, then
+If 𝐺is a simple connected graph on 𝑛vertices, then

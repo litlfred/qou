@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.992
 latex_coverage_ratio: 0.992
+doc_brief: "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results — 11 sections: Front matter; Setting the problem; Toeplitz meets Ising"
 ---
 []{#section4 label="section4"} After Onsager announced formula [\[eq15\]](#eq15){reference-type="eqref" reference="eq15"} for $M_0$ in 1948, and again in 1949, but did not provide a proof, three years went by until a derivation of the formula was found by Yang in a tour de force in 1952 [@Yan1]. Yang's method is based on results of Kaufman and Onsager, but his approach is different, and he does not explicitly use Toeplitz determinants. In his Selected Papers in 2005 ([@Yan2]), Yang described the long and winding road that led him to the Kaufman-Onsager formula [\[eq15\]](#eq15){reference-type="eqref" reference="eq15"}. The story has much charm:
 

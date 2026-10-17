@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.937
 latex_coverage_ratio: 0.967
+doc_brief: "Volume Conjecture and quantum hyperbolic invariants: the figure eight knot complement — We compute the real part of the semi-classical limit of the sequence of quantum hyperbolic invariants (QHI) of"
 ---
 \label{QHIintro2} Again denote $M:=S^3 \setminus 4_1$, the figure-eight knot complement. Let $(T,b)$ be its usual geometric triangulation with two tetrahedra $U$ and $V$, and with a \textit{branching} $b$ (i.e. an orientation of edges without cycles) as shown in Figure \ref{Teight}.
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.939
 latex_coverage_ratio: 0.965
+doc_brief: "On calibrated representations and the Plancherel Theorem for aﬃne Hecke algebras — This paper has two main purposes."
 ---
 Suppose now that $q_0,q_1,\ldots,q_n>1$. Define an involution $*$ on $\mathscr{H}_L$ and the *canonical trace functional* $\mathrm{Tr}:\mathscr{H}_L\to\mathbb{C}$ by $$\begin{aligned}
 \bigg(\sum_{w\in W_L}c_wT_w\bigg)^*=\sum_{w\in W_L}\overline{c_w}T_{w^{-1}}\quad\textrm{and}\quad \mathrm{Tr}\bigg(\sum_{w\in W_L}c_wT_w\bigg)=c_1.

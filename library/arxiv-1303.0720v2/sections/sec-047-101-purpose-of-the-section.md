@@ -8,6 +8,7 @@ pages: 37-40
 source_pdf: 1303.0720v2.pdf
 source_sha256: 389ab465e81a0667
 toc_source: outline
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 Sections 7 (see especially Remark 7.6) and 9 to form asymptotic expressions for Bergman’s ﬁrst
 and second metric (see Section 3) in the context of ω = e−2mQ. We will generally assume that

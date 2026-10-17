@@ -8,6 +8,7 @@ pages: 1-3
 source_pdf: amc_2730.pdf
 source_sha256: 65730074a2925c6e
 toc_source: outline
+doc_brief: "Braid representatives minimizing the number of simple walks * — Given a knot, we develop methods for finding a braid representative that minimizes the number of simple walks."
 ---
 Introduction
 The Jones polynomial VLptq is an invariant of knots and links defined using quantum rep-

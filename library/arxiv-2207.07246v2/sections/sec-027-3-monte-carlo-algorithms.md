@@ -8,6 +8,7 @@ pages: 61-61
 source_pdf: 2207.07246v2.pdf
 source_sha256: 91e70e5fe39e07a5
 toc_source: outline
+doc_brief: "Path Integral Quantum Monte Carlo Method for Light Nuclei — 64 sections: Front matter; ABSTRACT; LIST OF TABLES"
 ---
 In this chapter, we introduce how we sample the probability distribution Plr(R) in
 Eq.(2.92) and also our algorithm for performing the other parts of the PIMC calcula-

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 0.981
+doc_brief: "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES — We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury."
 ---
 The above results generalize to pivotal tensor categories ([@EGNO], Subsection 4.7) such that $\dim^L X=0$ if and only if $\dim^R X=0$ for any indecomposable object $X\in \mathcal{C}$ (an example of such a category which is not spherical is the category of representations of the Taft Hopf algebra). Namely, in such a category, for any endomorphism $h: X\to X$ of an indecomposable object $X$, one has $\text{Tr}^L(h)=0$ if and only if $\text{Tr}^R(h)=0$. Thus, if $f: X\to Y$ is a morphism between arbitrary objects of $\mathcal{C}$, then the condition that for any $g:Y\to X$, one has $\text{Tr}^L(f\circ g)=0$ is equivalent to the condition that for any $g:Y\to X$, one has $\text{Tr}^R(f\circ g)=0$. One then defines $f$ to be negligible if any of these two equivalent conditions is satisfied. Then Lemma [\[charneg\]](#charneg){reference-type="ref" reference="charneg"}, Lemma [\[tensid\]](#tensid){reference-type="ref" reference="tensid"} and Proposition [\[semisi\]](#semisi){reference-type="ref" reference="semisi"} generalize verbatim, with analogous proofs.
 

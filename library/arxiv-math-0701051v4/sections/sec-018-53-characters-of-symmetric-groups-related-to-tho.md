@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.628
 latex_coverage_ratio: 0.968
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS — We prove an upper bound for characters of the symmetric groups."
 ---
 Vershik and Kerov [@VershikKerov1981] proved that if $\pi$ is a fixed permutation with the lengths of non-trivial cycles $k_1,\dots,k_r$ then for any Young diagram $\lambda$ with $n$ boxes
 

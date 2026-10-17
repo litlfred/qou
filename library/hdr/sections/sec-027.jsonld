@@ -1,0 +1,54 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/hdr/sections/sec-027",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Knot invariants",
+  "pageStart": 57,
+  "pageEnd": 68,
+  "contains": [
+    "library/hdr/blocks/prose-sec-027",
+    "library/hdr/blocks/thm-sec-027-01",
+    "library/hdr/blocks/rem-sec-027-02",
+    "library/hdr/blocks/thm-sec-027-03",
+    "library/hdr/blocks/rem-sec-027-04",
+    "library/hdr/blocks/thm-sec-027-05",
+    "library/hdr/blocks/rem-sec-027-06",
+    "library/hdr/blocks/rem-sec-027-07",
+    "library/hdr/blocks/rem-sec-027-08",
+    "library/hdr/blocks/rem-sec-027-09",
+    "library/hdr/blocks/rem-sec-027-10",
+    "library/hdr/blocks/thm-sec-027-11",
+    "library/hdr/blocks/cor-sec-027-12",
+    "library/hdr/blocks/rem-sec-027-13",
+    "library/hdr/blocks/prop-sec-027-14",
+    "library/hdr/blocks/thm-sec-027-15",
+    "library/hdr/blocks/thm-sec-027-16",
+    "library/hdr/blocks/thm-sec-027-17",
+    "library/hdr/blocks/prop-sec-027-18",
+    "library/hdr/blocks/rem-sec-027-19",
+    "library/hdr/blocks/thm-sec-027-20",
+    "library/hdr/blocks/thm-sec-027-21",
+    "library/hdr/blocks/rem-sec-027-22",
+    "library/hdr/blocks/rem-sec-027-23",
+    "library/hdr/blocks/thm-sec-027-24",
+    "library/hdr/blocks/rem-sec-027-25",
+    "library/hdr/blocks/rem-sec-027-26",
+    "library/hdr/blocks/prop-sec-027-27",
+    "library/hdr/blocks/thm-sec-027-28",
+    "library/hdr/blocks/thm-sec-027-29",
+    "library/hdr/blocks/prop-sec-027-30",
+    "library/hdr/blocks/prop-sec-027-31",
+    "library/hdr/blocks/rem-sec-027-32",
+    "library/hdr/blocks/prop-sec-027-33"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hdr/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hdr/manifest.jsonld",
+  "provenance": "ingested"
+}

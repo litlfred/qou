@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.993
 latex_coverage_ratio: 0.987
+doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
 ---
 Earlier I talked about the meaning of the bounce in figure \ref{Foliated-BTZ2} . It resembles the entropy bounce of a confined gas if one constrains the gas to be in a very low entropy state at $t=0$. Let me give names to the various regions of the Penrose diagram. The left and right shaded regions are the left and right black hole exteriors. The upper un-shaded region is the black hole interior in which the complexity evolves in a manner consistent with the second law of complexity (complexity increases). The lower un-shaded region is the counter-intuitive region where complexity decreases. In general relativity it is the \it white hole \rm interior.
 

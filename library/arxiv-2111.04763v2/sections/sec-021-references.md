@@ -8,6 +8,7 @@ pages: 56-59
 source_pdf: 2111.04763v2.pdf
 source_sha256: 760a7f9794e8baaa
 toc_source: outline
+doc_brief: "Resurgence of Chern-Simons theory at the trivial flat connection — Some years ago, it was conjectured by the first author that the Chern–Simons perturbation theory of a 3-manifold at the trivial flat"
 ---
 [AH06]
 Jorgen Ellegaard Andersen and Soren Kold Hansen, Asymptotics of the quantum invariants for

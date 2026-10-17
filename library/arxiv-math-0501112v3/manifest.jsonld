@@ -41,7 +41,9 @@
     "library/arxiv-math-0501112v3/sections/sec-026",
     "library/arxiv-math-0501112v3/sections/sec-027",
     "library/arxiv-math-0501112v3/sections/sec-028",
-    "library/arxiv-math-0501112v3/sections/sec-029"
+    "library/arxiv-math-0501112v3/sections/sec-029",
+    "library/arxiv-math-0501112v3/sections/sec-030",
+    "library/arxiv-math-0501112v3/sections/sec-031"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -70,8 +72,8 @@
       "stamp_date": "31 May 2005"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

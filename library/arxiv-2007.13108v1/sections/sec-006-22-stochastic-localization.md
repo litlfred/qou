@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.944
 latex_coverage_ratio: 0.976
+doc_brief: "Log concavity and concentration of Lipschitz functions on the Boolean hypercube — It is well-known that measures whose density is the form e−V where V is a uniformly convex potential on Rn attain"
 ---
 \label{sec:stochastic}
 We construct a stochastic process driven by a Brownian motion, which we refer to as \emph{stochastic localization}. A somewhat similar process was originally used in \cite{Eldan-thin-KLS} to establish concentration properties for log-concave measures on $\RR^n$. Here we use a discrete version, similar to the construction which appears in \cite{Eldan-taming, eldan2020spectral}. In this section we occasionally allow ourselves to omit some of the details of the proofs, and the reader is referred to \cite{Eldan-taming} for more rigorous derivations. \\

@@ -8,6 +8,7 @@ pages: 180-187
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
 toc_source: outline
+doc_brief: "Analytic Combinatorics in Several Variables Expanded Second Edition — 98 sections: Front matter; Preface to the second edition; Preface to the first edition"
 ---
 We end this chapter by deﬁning some additional constructions that will be
 required in Chapters 10 and 11.

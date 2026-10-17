@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
 latex_coverage_ratio: 0.992
+doc_brief: "On the number of hyperbolic 3 -manifolds of a given volume Craig Hodgson and Hidetoshi Masai — The work of Jørgensen and Thurston shows that there is a ﬁnite number N(v) of orientable hyperbolic"
 ---
 Thurston and Jørgensen (see [@Th]) showed that the set of volumes of finite volume orientable complete hyperbolic $3$-manifolds is a closed, non-discrete, well ordered subset of $\mathbb{R}_{>0}$ of order type $\omega^\omega$. Further, the number $N(v)$ of complete orientable hyperbolic $3$-manifolds of volume $v$ is finite for all $v\in \mathbb{R}_{>0}$. In this paper we study how $N(v)$ varies with $v$.
 

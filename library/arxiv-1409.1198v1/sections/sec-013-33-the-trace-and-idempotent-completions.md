@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.985
 latex_coverage_ratio: 0.943
+doc_brief: "TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR — Categoriﬁcation is a process of lifting structures to a higher categorical level."
 ---
 A {\em projection} or {\em idempotent} in $\cat{Vect}_{\k}$ is an endomorphism $p \maps V \to V$ satisfying the relation $p^2=p$.  In this case, $(\Id_V-p )\maps V \to V$ is also an idempotent and together these two idempotents decompose the space $V$ into a direct sum of the image of the projection $p$ and the image of the projection $\Id_V-p$.
 

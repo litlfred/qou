@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.989
 latex_coverage_ratio: 0.678
+doc_brief: "BPS states, knots and quivers — 6 sections: Front matter; BPS states, knots and quivers; Moduli of quiver representations"
 ---
 In this letter we presented a surprising duality between knots and quivers, which underlies the supersymmetric quiver quantum mechanics description of BPS states in brane systems describing knots. To conclude, let us indicate various directions in which relations presented above could be generalized. It is natural to expect that various properties, well known on one side of the duality, should have their counterparts on the other side.
 

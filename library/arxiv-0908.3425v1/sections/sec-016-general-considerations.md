@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.993
 latex_coverage_ratio: 0.986
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 []{#subsec_gc label="subsec_gc"} Let us consider a physical system described by a Lagrangian which is invariant under a compact Lie group $G$. We assume the ground state of the system to be invariant under only a subgroup $H$ of $G$, giving rise to $n=n_G-n_H$ Goldstone bosons. Each of these Goldstone bosons will be described by an independent field $\phi_i$ which is a smooth real function on Minkowski space $M^4$. These fields are collected in an $n$-component vector $\Phi=(\phi_1,\cdots,\phi_n)$, defining the vector space $M_1$. Our aim is to find a mapping $\varphi$ which uniquely associates with each pair $(g,\Phi)\in G\times M_1$ an element $\varphi(g,\Phi)\in M_1$ with the following properties: $$\begin{aligned}
 \label{4:2:condmap1}

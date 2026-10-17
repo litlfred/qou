@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.978
 latex_coverage_ratio: 0.978
+doc_brief: "THE HOLONOMY BRAIDING FOR Uξ(sl2) IN TERMS OF GEOMETRIC QUANTUM DILOGARITHMS — We derive an explicit formula for the holonomy R-matrix of quantum sl2 at a root of unity."
 ---
 []{#sec:R-matrix-computations label="sec:R-matrix-computations"} This section contains computations with the $R$-matrices. We refer frequently to the identities concerning shifted $q$-factorials and quantum dilogarithms collected in [\[sec:quantum-dilogarithms\]](#sec:quantum-dilogarithms){reference-type="ref" reference="sec:quantum-dilogarithms"}.
 

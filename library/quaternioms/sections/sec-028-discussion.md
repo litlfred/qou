@@ -8,6 +8,7 @@ pages: 25-26
 source_pdf: quaternioms.pdf
 source_sha256: becedcbc858611dd
 toc_source: outline
+doc_brief: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 44 sections: Front matter; Introduction; Extended Related Work"
 ---
 Associativity as a computational boundary. The associative nature of H preserves
 Hilbert-space axioms (inner product, adjoint), enables a canonical tensor structure, and

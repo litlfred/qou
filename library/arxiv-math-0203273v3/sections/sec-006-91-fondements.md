@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.948
 latex_coverage_ratio: 0.948
+doc_brief: "arXiv:math/0203273v3 [math.CT] 12 Oct 2002 — 31 sections: Front matter; Introduction; Alg`ebres `a plusieurs objets"
 ---
 ::: defn
 []{#dkim.1 label="dkim.1"} a) Un objet $A\in {\mathcal{A}}$ est *pairement de dimension finie au sens de Kimura* s'il existe un entier $n>0$ tel que $\Lambda^n(A)=0$.\

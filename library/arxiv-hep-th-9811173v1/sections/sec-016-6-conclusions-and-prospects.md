@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 0.988
+doc_brief: "arXiv:hep-th/9811173v1 19 Nov 1998 — We identify 998 closed hyperbolic 3-manifolds whose volumes are rationally related to Dedekind zeta values, with coprime integers a and b giving a b vol(M) ="
 ---
 Perhaps more than in any other piece of research which either author has undertaken, this work has been vitally enabled by the internet. It provided us with the opportunity to blend number theory, topology, geometry, analysis, physics and computer science, in a global empirical mixing bowl, thanks to:
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.98
 latex_coverage_ratio: 0.993
+doc_brief: "Deducing the symmetry of the standard model from the automorphism and structure groups of the exceptional Jordan algebra ∗ — We continue the study undertaken in [DV] of the exceptional Jordan algebra"
 ---
 Equivalent constructions of the Lie algebras ${\mathfrak e}_n$ with $n  = 6,7,8$ have been proposed by Freudenthal and Tits around 1958, with improved formulations published later. In the summary below we follow [@BS], as well as [@B] where more references to the early work can be found.
 

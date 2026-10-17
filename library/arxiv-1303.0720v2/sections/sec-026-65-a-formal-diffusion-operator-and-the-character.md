@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.981
 latex_coverage_ratio: 0.954
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 Next, to define the diffusion operator ${\mathbf S}$, we need the two differential operators $${{\pmb{\partial}}}_w=\partial_w-\frac{\partial_w\theta}{\bar\partial_{w}\theta}
 \bar\partial_{w},\qquad

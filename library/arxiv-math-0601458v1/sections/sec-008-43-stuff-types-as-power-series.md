@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.976
 latex_coverage_ratio: 0.988
+doc_brief: "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS — Interest in combinatorial interpretations of mathematical entities stems from the convenience of the concrete models they provide."
 ---
 Once we have the mechanics of groupoids, stuff types, and their cardinalities, it becomes possible to extend the analogy with formal power series which began structure types. Although for the purposes of quantum mechanics, we are mainly interested in the *Hilbert space* structure of formal power series, it is worth pointing out that more of the algebraic and arithmetical properties of power series can also be recovered. In particular, we will next see that the cardinality maps for stuff types and groupoids lets us find analogs of the evaluation of a power series at a real number - and, by extension, the composition of two power series. These could not, in general, be done with just structure types.
 

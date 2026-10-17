@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2510.21576v1",
  "source_sha256": "17a79b59d590c8da",
- "brief": "Relativistic corrections for lepton-nucleus scattering in the short-time approximation — 7 sections: Relativistic corrections for lepto; Introduction; Short-time approximation",
- "extended": "**Relativistic corrections for lepton-nucleus scattering in the short-time approximation**\n\n*L. Andreoli1,2,∗ R. Weiss3,† G. Chambers-Wall 3,‡ A. Gnech 1,2,§ S. Pastore3,4,¶ M. Piarulli3,4,∗∗ and S. Gandolfi 5*\n\n17 pp, 7 sections.\n\n**Outline.** Relativistic corrections for lepton-nucleus sc; Introduction; Short-time approximation; Results; Cross Sections; Conclusions; Acknowledgments",
+ "brief": "Relativistic corrections for lepton-nucleus scattering in the short-time approximation — 8 sections: Relativistic corrections for lepto; Introduction; Short-time approximation",
+ "extended": "**Relativistic corrections for lepton-nucleus scattering in the short-time approximation**\n\n*L. Andreoli1,2,∗R. Weiss3,† G. Chambers-Wall3,‡ A. Gnech1,2,§ S. Pastore3,4,¶ M. Piarulli3,4,∗∗and S. Gandolfi5*\n\n17 pp, 8 sections.\n\n**Outline.** Relativistic corrections for lepton-nucleus sc; Introduction; Short-time approximation; Results; Convergence of the high-q expansion scheme; Cross Sections; Conclusions; Acknowledgments",
  "tokens": {
   "brief": 43,
-  "extended": 96
+  "extended": 106
  },
  "sections": [
   {
@@ -27,20 +27,25 @@
   {
    "id": "sec-003-results",
    "title": "Results",
-   "pages": "8-11"
+   "pages": "8-10"
   },
   {
-   "id": "sec-004-cross-sections",
+   "id": "sec-004-convergence-of-the-high-q-expansion-scheme",
+   "title": "Convergence of the high-q expansion scheme",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-005-cross-sections",
    "title": "Cross Sections",
    "pages": "11-11"
   },
   {
-   "id": "sec-005-conclusions",
+   "id": "sec-006-conclusions",
    "title": "Conclusions",
    "pages": "11-12"
   },
   {
-   "id": "sec-006-acknowledgments",
+   "id": "sec-007-acknowledgments",
    "title": "Acknowledgments",
    "pages": "12-17"
   }

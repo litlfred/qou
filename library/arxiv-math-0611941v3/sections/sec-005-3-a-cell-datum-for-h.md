@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
 latex_coverage_ratio: 0.983
+doc_brief: "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR — Let H be the one-parameter Hecke algebra associated to a ﬁnite Weyl group W, deﬁned over a ground ring in which “bad” primes for W are invertible."
 ---
 []{#secDatum label="secDatum"} We keep the notation of the previous sections. In order to show that ${\mathcal{H}}$ is "cellular" in the sense of Graham--Lehrer [@GrLe Definition 1.1], we must specify a quadruple $(\Lambda,M,C,*)$ satisfying the following conditions.
 

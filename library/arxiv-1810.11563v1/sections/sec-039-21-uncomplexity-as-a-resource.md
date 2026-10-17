@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
 ---
 In discussing computational work it is helpful to separate what can be done by reversible (unitary) operations from what can be done by applying measurements. Starting with a maximally complex state, or any other state, the complexity can be eliminated by  measuring  all Pauli $Z$ operators. The outcome will be a unentangled product state which can be brought to the state $|000...0\ra$ by applying no more than $K$ single qubit gates. This would have the effect of restoring the uncomplexity to its maximal value\footnote{Notice that we did the same thing by adding a single clean qubit.}.
 

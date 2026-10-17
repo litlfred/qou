@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.899
 latex_coverage_ratio: 0.946
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS — We prove an upper bound for characters of the symmetric groups."
 ---
 Biane [@Biane1998] proved that if the permutation $\pi$ is fixed, its non-trivial cycle lengths are equal to $k_1,\dots,k_r\geq 2$, and the Young diagram $\lambda$ is balanced (i.e. $r(\lambda),c(\lambda)=O(\sqrt{n})$) then $$\chi^\lambda(\pi) = \frac{1}{(n)_{|\mathop{\mathrm{supp}}(\pi)|}}
 \prod_{i=1}^r R_{k_i+1}(\lambda) + O\left(n^{-\frac{|\pi|+2}{2}}\right).$$

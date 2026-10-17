@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.959
 latex_coverage_ratio: 1.0
+doc_brief: "Linear programming bounds for unitary space time codes — The linear programming method is applied to the space Un(C) of uni- tary matrices in order to obtain bounds for codes relative to the"
 ---
 From the explicit description of the zonal functions [\[P1\]](#P1){reference-type="eqref" reference="P1"}, we have deduced convenient polynomials of low degree which verify the positivity property. Using formula ([\[FUNDA\]](#FUNDA){reference-type="ref" reference="FUNDA"}) we derive the analytic bounds of Theorems [\[THM1\]](#THM1){reference-type="ref" reference="THM1"} and [\[THM2\]](#THM2){reference-type="ref" reference="THM2"}.\
 

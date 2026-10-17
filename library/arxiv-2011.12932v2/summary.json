@@ -2,35 +2,65 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2011.12932v2",
  "source_sha256": "23709542c5652a29",
- "brief": "MODULAR CATEGORIES AND TQFTS BEYOND SEMISIMPLICITY — Vladimir Turaev discovered in the early years of quantum topol- ogythatthenotionofmodularcategorywasanappropriatestructureforbuild- ing",
- "extended": "**MODULAR CATEGORIES AND TQFTS BEYOND SEMISIMPLICITY**\n\n*CHRISTIAN BLANCHET AND MARCO DERENZI*\n\n26 pp, 5 sections.\n\n**Abstract.** Vladimir Turaev discovered in the early years of quantum topol- ogythatthenotionofmodularcategorywasanappropriatestructureforbuild- ing 3-dimensional Topological Quantum Field Theories (TQFTs for short) con- taining invariants of links in 3-manifolds such as Witten–Reshetikhin–Turaev ones. In recent years, generalized notions of modular categories, which relax the semisimplicity requirement, have been successfully used to extend Turaev’s construction to various non-semisimple settings. We report on these recent de- velopments in the domain, showing the richness of Vladimir’s lineage.\n\n**Outline.** 1 Introduction; Semisimple constructions; Early non-semisimple constructions; Appendix A. Ends; References",
+ "brief": "MODULAR CATEGORIES AND TQFTS BEYOND SEMISIMPLICITY — Vladimir Turaev discovered in the early years of quantum topol- ogy that the notion of modular category was an appropriate structure for build",
+ "extended": "**MODULAR CATEGORIES AND TQFTS BEYOND SEMISIMPLICITY**\n\n*CHRISTIAN BLANCHET AND MARCO DERENZI*\n\n26 pp, 11 sections.\n\n**Abstract.** Vladimir Turaev discovered in the early years of quantum topol- ogy that the notion of modular category was an appropriate structure for build- ing 3-dimensional Topological Quantum Field Theories (TQFTs for short) con- taining invariants of links in 3-manifolds such as Witten–Reshetikhin–Turaev ones. In recent years, generalized notions of modular categories, which relax the semisimplicity requirement, have been successfully used to extend Turaev’s construction to various non-semisimple settings. We report on these recent de- velopments in the domain, showing the richness of Vladimir’s lineage.\n\n**Outline.** Front matter; 1 Introduction; 2 Historical overview; Definition of TQFT; Semisimple constructions; Early non-semisimple constructions; Renormalized non-semisimple constructions; 4 Semisimple quantum invariants and TQFTs; 7 Non-semisimple quantum invariants and TQFTs; Appendix A. Ends; References\n\n**Extracted claims (proposals, not verified).**\n- Proposition: A.1. If C is a rigid fusion category and Γ(C) = {Vi | i ∈I} is a set\n- Proposition: A.2. If C = H-mod is the category of ﬁnite-dimensional represen-",
  "tokens": {
-  "brief": 47,
-  "extended": 210
+  "brief": 48,
+  "extended": 314
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
    "pages": "1-2"
   },
   {
-   "id": "sec-001-semisimple-constructions",
+   "id": "sec-001-2-historical-overview",
+   "title": "Historical overview",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-002-definition-of-tqft",
+   "title": "Definition of TQFT",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-003-semisimple-constructions",
    "title": "Semisimple constructions",
    "pages": "2-3"
   },
   {
-   "id": "sec-002-early-non-semisimple-constructions",
+   "id": "sec-004-early-non-semisimple-constructions",
    "title": "Early non-semisimple constructions",
-   "pages": "3-20"
+   "pages": "3-4"
   },
   {
-   "id": "sec-003-appendix-a-ends",
+   "id": "sec-005-renormalized-non-semisimple-constructions",
+   "title": "Renormalized non-semisimple constructions",
+   "pages": "4-7"
+  },
+  {
+   "id": "sec-006-4-semisimple-quantum-invariants-and-tqfts",
+   "title": "Semisimple quantum invariants and TQFTs",
+   "pages": "7-16"
+  },
+  {
+   "id": "sec-007-7-non-semisimple-quantum-invariants-and-tqfts",
+   "title": "Non-semisimple quantum invariants and TQFTs",
+   "pages": "16-20"
+  },
+  {
+   "id": "sec-008-appendix-a-ends",
    "title": "Appendix A. Ends",
    "pages": "20-24"
   },
   {
-   "id": "sec-004-references",
+   "id": "sec-009-references",
    "title": "References",
    "pages": "24-26"
   }
@@ -39,7 +69,8 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles"
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

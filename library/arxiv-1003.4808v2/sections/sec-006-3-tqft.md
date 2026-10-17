@@ -8,6 +8,7 @@ pages: 13-15
 source_pdf: 1003.4808v2.pdf
 source_sha256: 72301d4bee491f86
 toc_source: outline
+doc_brief: "Quantum Field Theory and the Volume Conjecture — 15 sections: Front matter; Preliminaries; The many dimensions of the volume"
 ---
 the “quantum G-invariants” of knots and links. This was supplied by quantum Chern-
 Simons theory with compact gauge group G in [3], and reinterpreted via quantum

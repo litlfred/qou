@@ -8,6 +8,7 @@ pages: 91-93
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
 toc_source: outline
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 As a non-associative algebra, one might have naturally expected that R⊗C⊗H⊗O would
 not be ﬁt to describe the action of groups. And with no more than 32 complex dimensions,

@@ -8,6 +8,7 @@ pages: 31-34
 source_pdf: 1110.6212v2.pdf
 source_sha256: 1923b6a0bfdc810f
 toc_source: outline
+doc_brief: "On calibrated representations and the Plancherel Theorem for aﬃne Hecke algebras — This paper has two main purposes."
 ---
 Constants and c-functions
 We write σ1(x) = 1 + x and σ2(x) = 1 + x + x2.

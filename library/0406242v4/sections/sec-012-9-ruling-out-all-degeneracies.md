@@ -8,6 +8,7 @@ pages: 23-23
 source_pdf: 0406242v4.pdf
 source_sha256: 27e48b483007b824
 toc_source: outline
+doc_brief: "On canonical triangulations of once-punctured torus bundles and two-bridge link complements Introduction — 28 sections: Front matter; Introduction; The canonical triangulation"
 ---
 Ruling out all degeneracies
 Easy Fact 9.1 If U and V are positive constants, the function deﬁned on (−1, 1) by

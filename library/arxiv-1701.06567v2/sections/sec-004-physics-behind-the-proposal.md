@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.972
 latex_coverage_ratio: 1.0
+doc_brief: "BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections."
 ---
 From physics point of view, the homological invariants ${\mathcal H}_a[M_3]$ can be realized by the following M-theory geometry, $$\begin{aligned}
 \begin{matrix}

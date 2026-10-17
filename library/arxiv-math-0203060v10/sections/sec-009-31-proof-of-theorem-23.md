@@ -8,6 +8,7 @@ pages: 10-10
 source_pdf: 0203060v10.pdf
 source_sha256: 2ccb480f4bd4a970
 toc_source: outline
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 the ﬁrst part of the result follows directly from Theorem 2.27 for i = 2. The second
 part is a consequence of a combinatorial fact that there are only ﬁnitely many homo-

@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1508.07379v2",
  "source_sha256": "c3dbf93d1cac198e",
- "brief": "Convergence of Mayer and Virial expansions and the Penrose t ree-graph identity — We establish new lower bounds for the convergence radius of the Ma yer series and the Virial series of a continuous",
- "extended": "**Convergence of Mayer and Virial expansions and the Penrose t ree-graph identity**\n\n*Aldo Procacci ∗, Sergio A. Yuhjtman †*\n\n15 pp, 5 sections.\n\n**Abstract.** We establish new lower bounds for the convergence radius of the Ma yer series and the Virial series of a continuous particle system interacting via a stable a nd tempered pair potential. Our bounds considerably improve those given by Penrose and Ruelle in 1963 for the Mayer series and by Lebowitz and Penrose in 1964 for the Virial s eries. To get our results we exploit the tree-graph identity given by Penrose in 1967 using a ne w partition scheme based on minimum spanning trees.\n\n**Outline.** 1 Introduction; 2 Model and Results; 3.1 General Penrose identity; 3.2 Partition scheme via minimum spanning tree; 5 Comparison with recent results and concludin\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: , id est a new tree graph inequality, deduced from the Penrose tree-g raph identity. In\n- Theorem 0: Let V be a stable and tempered pair potential with stability\n- Theorem 0: via a direct bound on Cn(β, Λ) by using the old Penrose tree-graph identity proposed\n- Theorem 1: Let V be a stable and tempered pair potential with stability const ant B. Then the\n- Theorem 2: Let V (x) be a pair potential. Let n ≥ 2. Let M :\n- Theorem 1: follows now straightforwardly. Indeed, from Prop osition 1 and Lemma 3 we get the",
+ "brief": "Convergence of Mayer and Virial expansions and the Penrose tree-graph identity Introduction — We establish new lower bounds for the convergence radius of the Mayer series and the Virial series of a",
+ "extended": "**Convergence of Mayer and Virial expansions and the Penrose tree-graph identity Introduction**\n\n*Aldo Procacci∗, Sergio A. Yuhjtman†*\n\n15 pp, 6 sections.\n\n**Abstract.** We establish new lower bounds for the convergence radius of the Mayer series and the Virial series of a continuous particle system interacting via a stable and tempered pair potential. Our bounds considerably improve those given by Penrose and Ruelle in 1963 for the Mayer series and by Lebowitz and Penrose in 1964 for the Virial series. To get our results we exploit the tree-graph identity given by Penrose in 1967 using a new partition scheme based on minimum spanning trees.\n\n**Outline.** Front matter; 1 Introduction; 2 Model and Results; 3.1 General Penrose identity; 3.2 Partition scheme via minimum spanning tree; 5 Comparison with recent results and concludin\n\n**Extracted claims (proposals, not verified).**\n- Theorem: [\\[teo1\\]](#teo1){reference-type=\"ref\" reference=\"teo1\"} follows now straightforwardly.",
  "tokens": {
   "brief": 49,
-  "extended": 348
+  "extended": 246
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",

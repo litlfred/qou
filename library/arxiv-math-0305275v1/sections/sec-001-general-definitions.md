@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 0.991
+doc_brief: "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds Introduction — Let W be a compact manifold and let ρ be a representation of its fundamental group into PSL(2, C)."
 ---
 []{#s uno label="s uno"} We fix here the class of manifolds we consider, namely the class of ideally triangulated cusped manifolds. Since we work with cusped manifolds, we want to fix a structure on the cusps.
 

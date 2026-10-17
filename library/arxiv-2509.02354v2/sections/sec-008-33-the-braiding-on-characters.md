@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.894
 latex_coverage_ratio: 0.987
+doc_brief: "THE HOLONOMY BRAIDING FOR Uξ(sl2) IN TERMS OF GEOMETRIC QUANTUM DILOGARITHMS — We derive an explicit formula for the holonomy R-matrix of quantum sl2 at a root of unity."
 ---
 []{#sec:braiding root of unity label="sec:braiding root of unity"} Next we describe how $\mathcal{R}$ gives an action of the braid group on $\mathcal{Z}_{0}$-characters. Set $Y = 1 + K_1^{-N} E_1^N F_2^N K_2^N \in \mathcal{Z}_0 \otimes \mathcal{Z}_0$. In the ring $\mathcal{U}_\xi^{\otimes 2}[Y^{-1}]$ the element $(1 - q^{-1} K_1^{-1} E_1 F_2 K_2)$ is invertible, so $\mathcal{R}$ induces a map $$\mathcal{R}:
   \mathcal{U}_\xi^{\otimes 2}

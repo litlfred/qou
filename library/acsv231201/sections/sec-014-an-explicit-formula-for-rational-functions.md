@@ -8,6 +8,7 @@ pages: 78-80
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
 toc_source: outline
+doc_brief: "Analytic Combinatorics in Several Variables Expanded Second Edition — 98 sections: Front matter; Preface to the second edition; Preface to the first edition"
 ---
 For rational functions in one variable, it is possible to determine an exact for-
 mula for an when n is suﬃciently large. For instance, when ρ , 0 the equality

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.92
 latex_coverage_ratio: 1.0
+doc_brief: "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects."
 ---
 To prove the triangulation independence of the state sum, we first show that the state sums of 3-balls $M$ that shell to fine neighbourhoods of defect 
 discs $D$ are given as cyclic evaluations of certain polygon diagrams. 

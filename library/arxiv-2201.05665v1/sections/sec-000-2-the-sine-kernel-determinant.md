@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2201.05665v1.pdf
 source_sha256: bad7bde03d199a73
 toc_source: outline
+doc_brief: "HAROLD WIDOM’S WORK IN RANDOM MATRIX THEORY — This is a survey of Harold Widom’s work in random matrices."
 ---
 groundbreaking results concerning the distribution functions of random matrix theory, touch
 on the remarkable universality of the Tracy-Widom distributions in mathematics and physics,

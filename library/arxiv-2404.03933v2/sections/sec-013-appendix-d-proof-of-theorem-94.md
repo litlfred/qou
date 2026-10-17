@@ -8,6 +8,7 @@ pages: 41-42
 source_pdf: 2404.03933v2.pdf
 source_sha256: 48aff6e97e1f1267
 toc_source: outline
+doc_brief: "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2) AT EVEN ROOTS OF UNITY — We study the decomposition of tensor powers of two dimensional irreducible rep- resentations of quantum sl2 at even roots of"
 ---
 Proof. For k0̸ = l −1 we get
 chT(k)(et)

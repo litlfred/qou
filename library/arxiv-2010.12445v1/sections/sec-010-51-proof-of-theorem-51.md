@@ -8,6 +8,7 @@ pages: 20-23
 source_pdf: 2010.12445v1.pdf
 source_sha256: 16e9ca22ecc1f296
 toc_source: outline
+doc_brief: "STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION — Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect(X), we are"
 ---
 5.1. Proof of Theorem 5.1. The entire section is dedicated to the proof of Theorem 5.1. In
 particular we assume the hypothesis and notation in its statement.

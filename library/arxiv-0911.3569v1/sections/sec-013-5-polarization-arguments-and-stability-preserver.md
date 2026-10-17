@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.8
+doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
 ---
 For $\kappa\in\NN^m$ and a set $\S\subseteq\CC[\x]$ of polynomials,
 let $\S^{\leq\kappa}$ be the set of all $f\in\S$ such that $\deg_i(f)\leq

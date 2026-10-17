@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.935
 latex_coverage_ratio: 1.0
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS — We study asymptotics of characters of the symmetric groups on a ﬁxed conjugacy class."
 ---
 []{#sec:Goulden-Rattan label="sec:Goulden-Rattan"} For a partition $\lambda$ let $m_{\lambda}$ denote the monomial symmetric function in variables $x_1,x_2,\dots$. In this paper we consider the particular evaluation of the monomial symmetric function at $x_i=i$, for $i=1,\dots ,k-1$, and $x_i=0$, for $i\geq k$, and write this as $\hat{m}_{\lambda}$. Let $A(t)$ be a formal power series. We denote the coefficient of $t^k$ in $A(t)$ by $[t^k]A(t)$.
 

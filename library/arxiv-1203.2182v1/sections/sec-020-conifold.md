@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.959
 latex_coverage_ratio: 0.86
+doc_brief: "Volume Conjecture: Reﬁned and Categoriﬁed — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebraic curve, the zero"
 ---
 We now repeat the above calculation for the conifold, whose ordinary mirror curve in general framing takes the form [@abmodel]: $$A^{\text{ref}} (x,y;q_1=1) = 1 - y + x(-y)^f + Q x (-y)^{f+1} \; = \; 0 \,.    \label{mirrorConif}$$ To find the refined and quantum version of this curve, we again consider the brane located along the preferred direction of the conifold. More precisely, we wish to consider the brane amplitude normalized by the closed string partition function. Such an amplitude can be written as $$Z_{\text{BPS}}^{\text{open}} \; = \; \sum_{k=0}^{\infty} a_k = \sum_{R=(k)}  s_R(x) f_R(q_1,q_2)^{-f} \frac{b_R}{b_{\bullet}},   \label{Zopen-coni}$$ where $$\begin{aligned}
 b_R & = & \sum_{P} (-Q)^{|P|} C_{P\bullet R}(q_1^{-1},q_2^{-1})  C_{P^t \bullet \bullet}(q_2^{-1},q_1^{-1})  \nonumber\\

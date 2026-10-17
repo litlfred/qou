@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.845
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:hep-th/9211141v1 1 Dec 1992 — 11 sections: Front matter; INTRODUCTION AND SUMMARY OF RESULT; The System of Partial Differential"
 ---
 []{#subsec:sum_ode label="subsec:sum_ode"} For the special case $J=(s,\infty)$ the above equations can be used to show that $q(s;\lambda)$ (the quantity $q$ of the last section corresponding to the end-point $s$) satisfies $$q^{\prime\prime}= s\,  q + 2 q^3 \, ,\ \ \ (^\prime={d\over ds})
 \label{p2}$$ with $$q(s;\lambda) \sim \sqrt{\lambda}\> {\rm Ai}(s)

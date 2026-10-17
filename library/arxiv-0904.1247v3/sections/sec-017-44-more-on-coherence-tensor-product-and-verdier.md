@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.978
 latex_coverage_ratio: 0.927
+doc_brief: "THE CHARACTER THEORY OF A COMPLEX GROUP — We apply the ideas of derived algebraic geometry and topological ﬁeld theory to the representation theory of reductive groups."
 ---
 Since $f^!$ for a smooth morphism $f:X\to Y$ preserves coherence, one may define coherent ${\mathcal D}$-modules on a stack by requiring coherence locally on smooth covers. We denote by $\mathcal D_{coh}(X)\subset {\mathcal D}(X)$ the full subcategory of coherent ${\mathcal D}$-modules.
 

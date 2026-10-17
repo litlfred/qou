@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.973
 latex_coverage_ratio: 0.976
+doc_brief: "Automatic Theorem Proving in Walnut — 41 sections: Front matter; Introduction; Basics"
 ---
 Recall that a subword $W[i..i+n-1]$ is a palindrome if $W[i+k]=W[i+n-1-k]$ for all $k<n$. The following calculates the palindromes in the Thue-Morse word\footnote{In specific terms, this calculation constructs an automaton accepting $(i,n)$'s for which $W[i..i+n-1]$ is a palindrome.}:
 \begin{lstlisting}[style=cmd]

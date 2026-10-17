@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 0.969
+doc_brief: "arXiv:math-ph/0012035v3 16 Jan 2002 — In this short review main issues related to the non-Abelian Stokes theorem have been addressed."
 ---
 We could continue the idea of the previous section and try to generalize it to higher-dimensional (topological) theories. To this end we should use a generalization of the non-Abelian Stokes theorem to non-Abelian forms of higher degree, e.g. following the approach proposed in Eq.[\[STop\]](#STop){reference-type="ref" reference="STop"}, and yielding the resluts obtained in \[Bro94\].
 

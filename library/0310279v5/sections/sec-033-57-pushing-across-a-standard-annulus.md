@@ -8,6 +8,7 @@ pages: 100-102
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
 toc_source: outline
+doc_brief: "Stabilization in the braid groups I: MTWS Introduction — 40 sections: Front matter; Introduction; The problem"
 ---
 ♦
 A region R has a tree foliation if, after a sequence of bb–exchanges the foliation is

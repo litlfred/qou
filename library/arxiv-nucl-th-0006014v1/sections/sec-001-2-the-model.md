@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.987
 latex_coverage_ratio: 0.682
+doc_brief: "arXiv:nucl-th/0006014v1 9 Jun 2000 — 20 sections: Front matter; Introduction; The model"
 ---
 As discussed in the Introduction, the CD-Bonn potential is based upon meson exchange. We include all mesons with masses below the nucleon mass, i. e., $\pi$, $\eta$, $\rho(770)$, and $\omega(782)$. Besides this, we introduce two scalar-isoscalar $\sigma$ bosons.
 

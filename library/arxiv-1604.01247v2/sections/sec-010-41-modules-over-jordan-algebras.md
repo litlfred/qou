@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.994
 latex_coverage_ratio: 0.987
+doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — Based on an interpretation of the quark-lepton symmetry in terms of the unimodularity of the color group SU(3) and on the existence of 3 generations, we develop an"
 ---
 There are general definitions of bimodules for classes of algebras [@sch:1995], [@jac:1968] or for categories of algebras [@mdv:2001]. For Jordan algebras this reduces to the following (see also in [@kas-ovs-she:2011]). Let $J$ be a Jordan algebra and let $M$ be a vector space equipped with left and right actions of $J$ $$J\otimes M\rightarrow M,\>\>\> x\otimes\Phi\mapsto x\Phi\in M$$ $$M\otimes J\rightarrow M, \>\>\> \Phi\otimes x\mapsto \Phi x\in M$$ for $x\in J$, $\Phi\in M$. Define a bilinear product on $J\oplus M$ by setting $$(x+\Phi)(x'+\Phi')=xx'+(x\Phi'+\Phi x').$$ Then $M$ is said to be *a Jordan bimodule over* $J$ if $J\oplus M$ endowed with the above product is a Jordan algebra. This is equivalent to the following conditions (i), (ii) and (iii) : $$\left\{
 \begin{array}{l}

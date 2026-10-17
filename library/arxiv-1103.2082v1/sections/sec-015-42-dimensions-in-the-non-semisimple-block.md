@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.96
 latex_coverage_ratio: 1.0
+doc_brief: "MODIFIED TRACES ON DELIGNE’S CATEGORY Rep(St) — Deligne has deﬁned a category which interpolates among the representations of the various symmetric groups."
 ---
 \label{Dimsec}  By \cite[Theorem 6.4]{CO1} the category $\uRep(S_0)$ has a unique nontrivial block.  The indecomposables in this block can be described explicitly and are denoted by $L_n=L((1^n))$ for $n \in \Z_{\geq 0}$.   In this section we compute the modified dimensions $\md_{\mt}\left( L_n\right)$ for all $n>0$.  
 

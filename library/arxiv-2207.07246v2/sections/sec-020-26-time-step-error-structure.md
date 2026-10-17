@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.902
 latex_coverage_ratio: 0.985
+doc_brief: "Path Integral Quantum Monte Carlo Method for Light Nuclei — 64 sections: Front matter; ABSTRACT; LIST OF TABLES"
 ---
 []{#secErrEst label="secErrEst"} For the AV6' interaction, there are only the first 6 operators in Eq.([\[AV6\'\]](#AV6'){reference-type="ref" reference="AV6'"}), so $\mathcal{G}$ is 1, and Eq.([\[propagatorN2LOVTV\]](#propagatorN2LOVTV){reference-type="ref" reference="propagatorN2LOVTV"}) becomes the high-accuracy Trotter formula[^1] ([@Feynman1948RMP; @SchmidtLee95a]) which has $\mathcal{O}(\Delta \tau)^3$ accuracy and can be denoted as $U_S(\Delta \tau)$, $$U_S(\Delta \tau) \equiv
 e^{-\frac{\mathcal{V}^\dagger}{2} \Delta \tau }

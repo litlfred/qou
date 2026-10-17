@@ -8,6 +8,7 @@ pages: 51-52
 source_pdf: 1312.6411v4.pdf
 source_sha256: ceac22eb8ffe87e6
 toc_source: outline
+doc_brief: "DUALITY AND TILTING FOR COMMUTATIVE DG RINGS — We consider commutative DG rings (better known as nonpositive strongly commutative associative unital DG algebras)."
 ---
 [ABIM] L.L. Avramov, R.-O. Buchweitz, S.B. Iyengar and C. Miller, Homology of perfect complexes,
 Advances in Mathematics 223 (2010) 1731-1781.

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.991
 latex_coverage_ratio: 0.991
+doc_brief: "Deducing the symmetry of the standard model from the automorphism and structure groups of the exceptional Jordan algebra ∗ — We continue the study undertaken in [DV] of the exceptional Jordan algebra"
 ---
 A non-compact real form of the simply connected Lie group $E_6$, the (reduced) *structure group* of the exceptional Jordan algebra $J=H_3 ({\mathbb O})$, can be defined as the group of determinant preserving linear transformations of $J$ where, for $X$ given by ([\[eq26\]](#eq26){reference-type="ref" reference="eq26"}), $$\begin{aligned}
 \det X &= &\frac13 \, {\rm tr} (X^3) - \frac12 \, {\rm tr} X^2 \, {\rm tr} X + \frac16 \, ({\rm tr} X)^3 \\

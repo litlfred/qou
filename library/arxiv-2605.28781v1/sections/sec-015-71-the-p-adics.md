@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.917
 latex_coverage_ratio: 0.523
+doc_brief: "The sum-product conjecture is false for real numbers — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily large A ⊂R (whose elements are algebraic integers in a"
 ---
 We now explain the $p$-adic variant. If the field $K$ in Lemma [\[lem-main\]](#lem-main){reference-type="ref" reference="lem-main"} has a prime lying over $p$ that is split, for example, if $p$ splits completely in $K$, then $K$ embeds into $\mathbb Q_p$ and thus the set $A \subseteq \mathcal O_K$ constructed in Lemma [\[lem-main\]](#lem-main){reference-type="ref" reference="lem-main"} embeds into $\mathbb Z_p$. Thus, to prove the analogue of Theorem [\[th-headline\]](#th-headline){reference-type="ref" reference="th-headline"} in $\mathbb Z_p$, it suffices to prove the following variant of Theorem [\[th-tower\]](#th-tower){reference-type="ref" reference="th-tower"}.
 

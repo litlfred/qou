@@ -1,1 +1,1 @@
-The face-centres are exactly the points ﬁxed by an order- 5 auto-
+Bring’s curve has 60 Weierstrass points, on which Aut(B) acts

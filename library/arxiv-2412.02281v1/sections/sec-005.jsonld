@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2412.02281v1/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Explicit Expression of Connection Formula of the Equation (5)",
+  "pageStart": 7,
+  "pageEnd": 10,
+  "contains": [
+    "library/arxiv-2412.02281v1/blocks/prose-sec-005",
+    "library/arxiv-2412.02281v1/blocks/prop-sec-005-01",
+    "library/arxiv-2412.02281v1/blocks/lem-sec-005-02",
+    "library/arxiv-2412.02281v1/blocks/prop-sec-005-03",
+    "library/arxiv-2412.02281v1/blocks/lem-sec-005-04",
+    "library/arxiv-2412.02281v1/blocks/lem-sec-005-05",
+    "library/arxiv-2412.02281v1/blocks/prop-sec-005-06",
+    "library/arxiv-2412.02281v1/blocks/thm-sec-005-07",
+    "library/arxiv-2412.02281v1/blocks/cor-sec-005-08",
+    "library/arxiv-2412.02281v1/blocks/rem-sec-005-09"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2412.02281v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2412.02281v1/manifest.jsonld",
+  "provenance": "ingested"
+}

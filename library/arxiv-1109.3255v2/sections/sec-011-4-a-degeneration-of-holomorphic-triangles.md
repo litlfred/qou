@@ -8,6 +8,7 @@ pages: 32-32
 source_pdf: 1109.3255v2.pdf
 source_sha256: dd4579be8e9b7e25
 toc_source: outline
+doc_brief: "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE PLANE AND A BINODAL CUBIC CURVE — We construct a family of Lagrangian submanifolds in the Landau– Ginzburg mirror to the projective plane equipped"
 ---
 Since we have set up our Lagrangians as ﬁbered over paths, a holomorphic triangle
 with boundary on the Lagrangians composed with the projection is a holomorphic

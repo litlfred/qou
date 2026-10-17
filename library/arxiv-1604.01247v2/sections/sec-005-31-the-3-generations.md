@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.972
 latex_coverage_ratio: 1.0
+doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — Based on an interpretation of the quark-lepton symmetry in terms of the unimodularity of the color group SU(3) and on the existence of 3 generations, we develop an"
 ---
 There are 6 flavours of quark-lepton $$(u,\nu_e),\> (d,e),\> (c,\nu_\mu),\> (s,\mu),\> (t,\nu_\tau),\> (b,\tau)$$ which can be grouped in 3 generations of doublets of quark-lepton which are the columns of the following table
 

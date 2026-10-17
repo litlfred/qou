@@ -8,5 +8,6 @@ pages: 20-20
 source_pdf: 0811.2435v1.pdf
 source_sha256: 615b04eca83bcade
 toc_source: outline
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 47 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 Stability conditions for graded Lie algebras

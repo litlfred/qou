@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0507033v2.pdf
 source_sha256: 57509b3ce5f9f8cc
 toc_source: inferred
+doc_brief: "Cluster Formation and The Virial Equation of State of Low-Density Nuclear Matter — 15 sections: Front matter; Nuclear Statistical Equilibrium; Introduction"
 ---
 arXiv:nucl-th/0507033v2  2 Jun 2006
 Cluster Formation and The Virial Equation of State of Low-Density Nuclear Matter

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.714
 latex_coverage_ratio: 1.0
+doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety for SL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
 ---
 []{#sec:DiagonalAction label="sec:DiagonalAction"} If $c$ is the number of boundary components and $T\subset G$ is the subgroup of diagonal matrices, the torus $T^c$ acts on $P$-decorations, Ptolemy assignments and natural cocycles. This action is called the *diagonal action* and is illustrated in Figure [1](#fig:DiagonalAction){reference-type="ref" reference="fig:DiagonalAction"}.
 

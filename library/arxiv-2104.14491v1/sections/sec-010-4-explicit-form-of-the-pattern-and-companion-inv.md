@@ -8,6 +8,7 @@ pages: 8-8
 source_pdf: 2104.14491v1.pdf
 source_sha256: 1aea658f17283df1
 toc_source: outline
+doc_brief: "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia"
 ---
 Explicit form of the pattern and companion invariants
 Now we give an explicit form of the two basic ingredients in PPCD formulae from sec.3.2.

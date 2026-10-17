@@ -8,6 +8,8 @@ pages: 20-21
 source_pdf: symmetry-11-01298.pdf
 source_sha256: 595648c84501e8a6
 toc_source: outline
+doc_brief: "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics — In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds."
+duplicate_of: "arxiv-1910.09966v1"
 ---
 In [66,67], we discussed the appearance of quantum states from knots known as Turaev–Drinfeld
 quantization. The idea for the following construction can be simply expressed. We start with two

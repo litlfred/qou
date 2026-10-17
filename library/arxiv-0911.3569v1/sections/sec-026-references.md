@@ -8,6 +8,7 @@ pages: 29-30
 source_pdf: 0911.3569v1.pdf
 source_sha256: 4e7c15c9724fb453
 toc_source: outline
+doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
 ---
 1. J. Borcea and P. Br¨and´en, Applications of stable polynomials to mixed determinants: John-
 son’s conjectures, unimodality, and symmetrized Fischer products, Duke Math. J. 143

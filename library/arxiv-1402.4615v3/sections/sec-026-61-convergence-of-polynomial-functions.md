@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.897
 latex_coverage_ratio: 0.924
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials."
 ---
 Let us recall equation [\[eq:exp_Ch\]](#eq:exp_Ch){reference-type="eqref" reference="eq:exp_Ch"}, which gives us the expectation of Jack characters with respect to Jack measure: $$\mathbb{E}_{\mathbb{P}_n^{(\alpha)}}(\mathop{\mathrm{Ch}}^{(\alpha)}_\mu)=\begin{cases}
     n(n-1)\cdots(n-k+1) & \text{if }\mu=1^k \text{ for some }k \leq n,\\

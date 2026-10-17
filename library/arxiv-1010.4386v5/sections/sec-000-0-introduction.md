@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.993
 latex_coverage_ratio: 0.907
+doc_brief: "ON THE HOMOLOGY OF COMPLETION AND TORSION — Let A be a commutative ring, and a a weakly proregular ideal in A."
 ---
 Let $A$ be a commutative ring, and let $\a$ be an ideal in it. 
 (We do not assume that $A$ is noetherian or $\a$-adically complete.)

@@ -8,6 +8,7 @@ pages: 26-27
 source_pdf: 1907.00949v2.pdf
 source_sha256: 865defaa34bf42be
 toc_source: outline
+doc_brief: "OPTIMIZATION ON FLAG MANIFOLDS — A ﬂag is a sequence of nested subspaces."
 ---
 [1] P.-A. Absil, C. G. Baker, and K. A. Gallivan. Trust-region methods on Riemannian manifolds. Found. Comput.
 Math., 7(3):303–330, 2007.

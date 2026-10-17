@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1707.06608v1.pdf
 source_sha256: 7b7db6dce87dc81e
 toc_source: outline
+doc_brief: "Fractional Hopﬁons in the Faddeev-Skyrme model with a symmetry breaking potential — We construct new solutions of the Faddeev-Skyrme model with a symmetry breaking potential admitting S1 vacuum."
 ---
 Fractional Hopﬁons in the Faddeev-Skyrme model with a
 symmetry breaking potential

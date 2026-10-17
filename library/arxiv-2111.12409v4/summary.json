@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2111.12409v4",
  "source_sha256": "3f0b94ee06fe79bf",
- "brief": "On the generalisation of Roth’s theorem Paolo Dolce Francesco Zucconi 0 Introduction 1 0.1 History . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1 — We",
- "extended": "**On the generalisation of Roth’s theorem Paolo Dolce Francesco Zucconi 0 Introduction 1 0.1 History . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1**\n\n21 pp, 9 sections.\n\n**Abstract.** We present two generalisations of Roth’s approximation theorem on proper adelic curves, assuming some technical conditions on the behavior of the logarithmi c absolute values. We illustrate how tightening such assumptions makes our inequalities strong er. As special cases we recover Corvaja’s results [Cor97] for ﬁelds admitting a product formula, and Vojta’s ones [ Voj21] for arithmetic function ﬁelds. 0 Introduction 0.1 History The celebrated Roth’s theorem proved in [ Rot55] asserts that the irrationality measure of a real algebraic number is 2. An equivalent, but more detailed stat ement is the following: Theorem 0.1 (Roth). Let α be a real algebraic number and let ε > 0 be a real number.\n\n**Outline.** 0 Introduction; 0.1 History; 0.2 Results in this paper; 1 Adelic curves; 2 The interpolating polynomial; 3 Integral estimates; Appendices; A Construction of the interpolating polynomial; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 0.1: Let α be a real algebraic number and let ε > 0 be a real number. Then there\n- Theorem 0.2: [Cor97, Corollaire 1]. Assume that (k, Vk) satisﬁes the product formula. Let α1, . . . , αn\n- Theorem 0.3: [Voj21, Theorem 4.5] Consider a couple (K, MK ) where K is an arithmetic function\n- Theorem: (A). Let X = ( K, Ω , φ) be a proper adelic curve satisfying the strong µ-equicontinuity\n- Theorem: (B). Let X = ( K, Ω , φ) be a proper adelic curve satisfying the µ-equicontinuity condition\n- Theorem 1.8: The following statements hold:",
+ "brief": "On the generalisation of Roth’s theorem — We present two generalisations of Roth’s approximation theorem on proper adelic curves, assuming some technical conditions on the behavior of the logarithmic",
+ "extended": "**On the generalisation of Roth’s theorem**\n\n*Paolo Dolce*\n\n21 pp, 10 sections.\n\n**Abstract.** We present two generalisations of Roth’s approximation theorem on proper adelic curves, assuming some technical conditions on the behavior of the logarithmic absolute values. We illustrate how tightening such assumptions makes our inequalities stronger. As special cases we recover Corvaja’s results [Cor97] for ﬁelds admitting a product formula, and Vojta’s ones [Voj21] for arithmetic function ﬁelds. 0\n\n**Outline.** Front matter; 0 Introduction; 0.1 History; 0.2 Results in this paper; 1 Adelic curves; 2 The interpolating polynomial; 3 Integral estimates; Appendices; A Construction of the interpolating polynomial; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 0.1: Let α be a real algebraic number and let ε > 0 be a real number. Then there\n- Theorem 0.2: [Cor97, Corollaire 1]. Assume that (k, Vk) satisﬁes the product formula. Let α1, . . . , αn\n- Theorem 0.3: [Voj21, Theorem 4.5] Consider a couple (K, MK) where K is an arithmetic function\n- Theorem: \\ref{smallroth} is equivalent to Theorem \\bref{thm:main}{A}.\n- Theorem: \\bref{thm:main}{(A)} implies Theorem \\ref{CorCorv}.\n- Proposition: \\ref{interpolationpoly}$(4)$ says that,",
  "tokens": {
   "brief": 49,
-  "extended": 434
+  "extended": 314
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-0-introduction",
    "title": "Introduction",

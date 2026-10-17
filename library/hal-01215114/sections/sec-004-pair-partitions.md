@@ -8,6 +8,7 @@ pages: 3-4
 source_pdf: hal-01215114.pdf
 source_sha256: c70f8b04a5542a1f
 toc_source: outline
+doc_brief: "FPSAC 2011, Reykjavík, Iceland — In this paper we establish a new combinatorial formula for zonal polynomials in terms of power-sums. The proof relies on the sign-reversing involution principle."
 ---
 Pair partitions
 Deﬁnition 2 A pair-partition of [2n] = {1, . . . , 2n} is a set of pairwise disjoint two-element sets, such

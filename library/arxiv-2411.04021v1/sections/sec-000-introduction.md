@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.964
 latex_coverage_ratio: 0.966
+doc_brief: "On the Gram determinants of the Specht modules — For every partition λ of a positive integer n, let Sλ be the corresponding Specht module of the symmetric group Sn, and let det(λ) ∈Z denote the Gram"
 ---
 Let $n$ be a positive integer and let $\mathfrak{S}_n$ be the symmetric group of $n$ letters. There is a canonical bilinear form on the Specht module $S^{\lambda}$ for a partition $\lambda$ of $n$, arising from the embedding of the Specht module in a permutation representation. In [@JamesMurphyFormula], James and Murphy introduced the determinant $\det(\lambda) \in \mathbb{Z}$ of the Gram matrix of the canonical bilinear form of $S^{\lambda}$ with respect to the standard basis. For any prime $p$, we define the integer $a_{\lambda}^{(p)}$ such that $$\det(\lambda)=m \cdot p^{a_{\lambda}^{(p)}},$$ where $m$ is coprime to $p$. We further denote $f_{\lambda}:=\dim(S^{\lambda})$ and say that $\lambda$ is *even* (resp. *odd*) if and only if $f_{\lambda}$ is.
 

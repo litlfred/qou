@@ -8,6 +8,7 @@ pages: 11-12
 source_pdf: 2305.07425v1.pdf
 source_sha256: 2f7d2ac5818b6af4
 toc_source: outline
+doc_brief: "LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS — The set of equivalence classes of cobounded actions of a group G on diﬀerent hyperbolic metric spaces carries a natural partial order."
 ---
 between the Seifert components do not identify (unoriented) Seifert ﬁbers up to homotopy.
 We will call a non-geometric manifold M a mixed manifold if it is not a graph manifold. If

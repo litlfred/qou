@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.877
 latex_coverage_ratio: 0.767
+doc_brief: "THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS — The Ptolemy coordinates for boundary-unipotent SL(n, C)-representations of a 3-manifold group were introduced in [7] inspired by the A-coordinates on"
 ---
 \begin{definition}\label{def:BoundaryNonDeg}
 Let $\rho$ be an $(\SL(n,\C),N)$-representation, and let $I_i$ denote the image of the peripheral subgroup corresponding to cusp $i$. We say that $\rho$ is \emph{boundary-non-degenerate} if each $I_i$ has an element whose Jordan canonical form has a single (maximal) Jordan block.

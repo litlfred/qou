@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.963
 latex_coverage_ratio: 1.0
+doc_brief: "Fricke S-duality in CHL models — We consider four dimensional CHL models with sixteen spacetime supersym- metries obtained from orbifolds of type IIA superstring on K3×T 2 by a ZN symmetry acting"
 ---
 It is convenient to introduce a generating function, called the *helicity string partition function* in [@Kiritsis:1997hj]: $$Z( \upsilon, \bar{ \upsilon})=\text{Tr}(-1)^F e^{2\pi i  \upsilon J_3^{R}} e^{2\pi i \bar{ \upsilon} J_3^{L}} q^{L_0} \bar{q}^{\bar{L}_0},$$ where $( \upsilon, \bar{ \upsilon})$ are chemical potentials for the left- and right-moving spacetime helicities $(J_3^{R}, J_3^L)$. From the generating function $Z( \upsilon, \bar{ \upsilon})$ one can compute the associated helicity supertraces $B_n$ can then be computed by taking derivatives of the partition function: $$B_n=\left(\frac{1}{2\pi i} \frac{\partial}{\partial \upsilon}+\frac{1}{2\pi i} \frac{\partial}{\partial \bar\upsilon}\right)^n Z(\upsilon,\bar \upsilon)\Big|_{\upsilon=\bar \upsilon=0}\ .$$
 

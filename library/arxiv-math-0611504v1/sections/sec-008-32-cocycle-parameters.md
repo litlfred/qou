@@ -8,6 +8,8 @@ pages: 14-16
 source_pdf: 0611504v1.pdf
 source_sha256: a33d2771c873a97e
 toc_source: outline
+doc_brief: "Quantum hyperbolic geometry — 22 sections: Front matter; Introduction; Universal QHG"
+duplicate_of: "agt-v7-n2-p13-s"
 ---
 respective fundamental groups.
 Fix an e-triangulation (T, b) of F. Denote by Z(T, b) the space of PSL(2, C)-valued 1-cocycles on

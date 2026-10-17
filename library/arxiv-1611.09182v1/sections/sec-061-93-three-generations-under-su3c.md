@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.988
 latex_coverage_ratio: 0.976
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 Knowing that the $\Lambda_n\nu$ behave as an eight dimensional representation under the action of $\left[\Lambda_m\nu \hspace{0.5mm} , \hspace{1.5mm}\cdot\hspace{1.5mm}\right]$, one might wonder how objects of the more general form $a\nu$ behave under $\left[\Lambda_m\nu \hspace{0.5mm} ,\hspace{1.5mm}\cdot\hspace{1.5mm}\right]$.
 

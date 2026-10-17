@@ -1,1 +1,1 @@
-(a) The monodromy matrix is given by
+The two cocycles (4) ΩU and ΩV are equal and modular.

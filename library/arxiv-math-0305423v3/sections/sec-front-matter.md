@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 0305423v3.pdf
 source_sha256: e4554f9084ba4935
 toc_source: outline
+doc_brief: "Stein’s Method and Plancherel Measure of the Symmetric Group Running head: Stein’s Method and Plancherel Measure — We initiate a Stein’s method approach to the study of the Plancherel measure of the"
 ---
 arXiv:math/0305423v3  [math.RT]  11 Nov 2003
 Stein’s Method and Plancherel Measure of the Symmetric Group

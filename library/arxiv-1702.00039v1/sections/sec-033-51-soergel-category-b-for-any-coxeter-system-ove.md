@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.994
 latex_coverage_ratio: 0.975
+doc_brief: "Gentle introduction to Soergel bimodules I: The basics — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules."
 ---
 []{#any label="any"} Let $(W,S)$ be an arbitrary Coxeter system. Consider $V=\oplus_{s\in S} \mathbb{R}e_s$ the Geometric Representation. It is a linear representation defined by the formula $$s\cdot e_r=  e_r+2\, \mathrm{cos}\, \biggl(\frac{\pi}{m_{sr}}\biggr) e_s \hspace{1cm}\mathrm{for\ all\ }s, r \in S,$$ where $m_{sr}$ is the order of the element $sr$ in $W.$ By convention $\pi/\infty =0.$
 

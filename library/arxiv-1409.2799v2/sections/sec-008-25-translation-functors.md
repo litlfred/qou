@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.945
 latex_coverage_ratio: 0.983
+doc_brief: "Diagram categories for Uq-tilting modules at roots of unity — We give a diagrammatic presentation of the category of Uq(sl2)-tilting modules T for q being a root of unity and introduce a grading on"
 ---
 \label{sub-translation}
 Fix $\lambda\in\mathcal A_0$ and 

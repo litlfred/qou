@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.931
 latex_coverage_ratio: 0.971
+doc_brief: "Semi-Adequate Closed Braids and Volume — In this paper, we show that the volumes for a family of A-adequate closed braids can be bounded above and below in terms of the twist number, the number of"
 ---
 We now continue our study of volume bounds for hyperbolic A-adequate closed braids by translating our diagrammatic volume bounds from earlier to volume bounds in terms of the stable penultimate coefficient $\beta_{K}'$ of the colored Jones polynomial. Recall from the introduction that we denote the *$j^{th}$ colored Jones polynomial* of a link $K$ by $$J_{K}^{j}(t)=\alpha_{j}t^{m_{j}}+\beta_{j}t^{m_{j}-1}+\cdots+\beta_{j}'t^{r_{j}+1}+\alpha_{j}'t^{r_{j}},$$ where $j \in \mathbb{N}$ and where the degree of each monomial summand decreases from left to right. The following corollary of Theorem [\[mytheorem\]](#mytheorem){reference-type="ref" reference="mytheorem"} is a more precise version of Corollary [\[newcor\]](#newcor){reference-type="ref" reference="newcor"} from the introduction.
 

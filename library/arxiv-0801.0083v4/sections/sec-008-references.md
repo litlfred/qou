@@ -8,6 +8,7 @@ pages: 36-36
 source_pdf: 0801.0083v4.pdf
 source_sha256: 8e38b9e56d246709
 toc_source: outline
+doc_brief: "CENTRAL EXTENSIONS OF GERBES — We introduce the notion of central extension of gerbes on a topo- logical space X."
 ---
 [Be]
 J. Benabou, Introduction to bicategories, in “Report of the Midwest Category Seminar I”,

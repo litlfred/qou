@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.952
 latex_coverage_ratio: 0.989
+doc_brief: "Combinatorial optimization in geometry (Rivin) — extends and unifies results on ideal polyhedra in H³ to singular Euclidean structures on surfaces, possibly with infinitely many singularities."
 ---
 Let us assume that the complex $T$ has no boundary, and that the function $\Delta$ is such that all of the cone angles (computed using Lemma [\[cona\]](#cona){reference-type="ref" reference="cona"}) are equal to $2\pi$, so that any realization is Euclidean (and hence can be developed into the plane). Then, we can combine theorems [\[infmain\]](#infmain){reference-type="ref" reference="infmain"} and [\[andreevthm\]](#andreevthm){reference-type="ref" reference="andreevthm"} to get
 

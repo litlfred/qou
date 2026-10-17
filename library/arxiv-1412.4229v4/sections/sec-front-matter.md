@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1412.4229v4.pdf
 source_sha256: 248d6a1e28a76a94
 toc_source: outline
+doc_brief: "THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS — Let A →B be a homomorphism of commutative rings."
 ---
 THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS
 AMNON YEKUTIELI

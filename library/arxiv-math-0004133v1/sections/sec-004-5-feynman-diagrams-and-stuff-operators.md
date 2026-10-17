@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:math/0004133v1 [math.QA] 20 Apr 2000 — ‘Categoriﬁcation’ is the process of replacing equations by isomor- phisms."
 ---
 From here we could go in various directions. But since we are dreaming about the future of mathematics, let us choose a rather speculative one, and discuss some applications of categorification to *quantum theory*. By now it is clear that categorification is necessary for understanding the connections between quantum field theory and topology. It has even played a role in some attempts to find a quantum theory of gravity. But having reviewed these subjects elsewhere [@HDA0; @HDA2; @Planck], we restrict ourselves here to some of the simplest aspects of quantum physics.
 

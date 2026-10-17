@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/chinta-2025-j-phys-a-math-theor-58-035203/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The building block of heat kernels of graphs",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "contains": [
+    "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-002",
+    "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/thm-sec-002-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/chinta-2025-j-phys-a-math-theor-58-035203/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/chinta-2025-j-phys-a-math-theor-58-035203/manifest.jsonld",
+  "provenance": "ingested"
+}

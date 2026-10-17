@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0911.4494v2.pdf
 source_sha256: 1ba1c79686b12d98
 toc_source: outline
+doc_brief: "The geometry of Markov traces — We give a geometric interpretation of the Jones-Ocneanu trace on the Hecke algebra, using the equivariant cohomology of sheaves on SLn."
 ---
 arXiv:0911.4494v2  [math.AG]  8 Jul 2010
 The geometry of Markov traces

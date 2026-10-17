@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0203273v3/sections/sec-028",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Families of representations",
+  "pageStart": 128,
+  "pageEnd": 138,
+  "contains": [
+    "library/arxiv-math-0203273v3/blocks/prose-sec-028",
+    "library/arxiv-math-0203273v3/blocks/lem-sec-028-01",
+    "library/arxiv-math-0203273v3/blocks/lem-sec-028-02",
+    "library/arxiv-math-0203273v3/blocks/lem-sec-028-03",
+    "library/arxiv-math-0203273v3/blocks/lem-sec-028-04",
+    "library/arxiv-math-0203273v3/blocks/lem-sec-028-05",
+    "library/arxiv-math-0203273v3/blocks/lem-sec-028-06",
+    "library/arxiv-math-0203273v3/blocks/lem-sec-028-07",
+    "library/arxiv-math-0203273v3/blocks/thm-sec-028-08",
+    "library/arxiv-math-0203273v3/blocks/thm-sec-028-09",
+    "library/arxiv-math-0203273v3/blocks/thm-sec-028-10"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203273v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203273v3/manifest.jsonld",
+  "provenance": "ingested"
+}

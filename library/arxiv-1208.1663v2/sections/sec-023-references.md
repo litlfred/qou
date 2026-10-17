@@ -8,6 +8,7 @@ pages: 28-29
 source_pdf: 1208.1663v2.pdf
 source_sha256: 87e94e429d58386c
 toc_source: outline
+doc_brief: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of ideal triangulations of 3-manifolds with r torii boundary"
 ---
 [1] Michel Brion and Mich`ele Vergne. Residue formulae, vector partition functions and lattice points in
 rational polytopes. J. Amer. Math. Soc., 10(4):797–833, 1997.

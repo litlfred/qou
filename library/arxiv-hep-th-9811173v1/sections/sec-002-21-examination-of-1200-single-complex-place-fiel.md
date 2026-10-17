@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.992
 latex_coverage_ratio: 0.992
+doc_brief: "arXiv:hep-th/9811173v1 19 Nov 1998 — We identify 998 closed hyperbolic 3-manifolds whose volumes are rationally related to Dedekind zeta values, with coprime integers a and b giving a b vol(M) ="
 ---
 It became clear, from studying [@AMS:JB; @AMS:SB; @AMS:RK; @AMS:DZ], that there are unspecified rational relations of the form ([\[ab\]](#ab){reference-type="ref" reference="ab"}) between Dedekind zeta values and volumes of some, but not all, of the manifolds in the Hodgson--Weeks census. We soon found that 30 of the first 32 census manifolds have rational Dedekind-zeta invariants, with $a\le46$ and $b\le3$. The 2 exceptions are manifolds ${\rm m}003(-4,1)$ and ${\rm m}004(+7,1)$, whose invariant trace fields have 2 complex places.
 

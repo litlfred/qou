@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.987
 latex_coverage_ratio: 0.92
+doc_brief: "A Tannakian description of the local Kaletha gerbe — We construct, for a p-adic field F, an explicit semisimple Tannakian category RigIsocF whose category of fiber functors recovers Kaletha’s Galois"
 ---
 []{#sec:Descent label="sec:Descent"} We want to descend the Tannakian category $RP_{E/F,s}$ to a Tannakian category over $F$. The first step is to define a canonical $\Gamma_{L_E/F}$-action on the ring $R_{E/F}$.
 

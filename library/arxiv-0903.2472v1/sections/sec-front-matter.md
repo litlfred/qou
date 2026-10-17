@@ -8,6 +8,7 @@ pages: 1-10
 source_pdf: 0903.2472v1.pdf
 source_sha256: 637cfd1d4d833c02
 toc_source: inferred
+doc_brief: "Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group — We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with"
 ---
 arXiv:0903.2472v1  [hep-th]  13 Mar 2009
 Preprint typeset in JHEP style - HYPER VERSION

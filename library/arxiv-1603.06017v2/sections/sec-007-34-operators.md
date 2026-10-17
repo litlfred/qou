@@ -8,6 +8,7 @@ pages: 8-9
 source_pdf: 1603.06017v2.pdf
 source_sha256: 3ff091e40573a5dd
 toc_source: outline
+doc_brief: "Automatic Theorem Proving in Walnut — 41 sections: Front matter; Introduction; Basics"
 ---
 • If ?S appears inside a pair of parentheses or brackets, then the number system S is effective from the place it occurs in
 the predicate to the nearest closing parenthesis or bracket6.

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.919
 latex_coverage_ratio: 0.985
+doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non-abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal 2-bundles."
 ---
 Recall that the stack $\bun\Gamma-$ of principal $\Gamma$-bundles is monoidal if $\Gamma$ is a Lie 2-group (Proposition \ref{prop:monoidalstack}). Associated to the monoidal stack $\bun\Gamma-$ we have a pre-2-stack 
 \begin{equation*}

@@ -8,6 +8,7 @@ pages: 92-94
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
 toc_source: inferred
+doc_brief: "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry — 66 sections: Front matter; Purpose of this book.; Contents of this book."
 ---
 5.3.1. In our three basic examples, we have GCp = GL2, D∨= P1.
 In example 4.2.1, J′ ⊂J = (Gm)2 is the one-dimensional torus T with

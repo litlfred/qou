@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.967
 latex_coverage_ratio: 1.0
+doc_brief: "Line Operators in the Standard Model — There is an ambiguity in the gauge group of the Standard Model."
 ---
 The chiral nature of the Standard Model means that the theta angle $\theta_2$ can be rotated away. Here we review this argument. In fact, as we will see,  a more careful statement is that a linear combination of $\theta_2$ and $\tilde{\theta}$ can be removed.
 

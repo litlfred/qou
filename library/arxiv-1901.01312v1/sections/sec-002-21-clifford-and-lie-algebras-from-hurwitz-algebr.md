@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.697
 latex_coverage_ratio: 1.0
+doc_brief: "Braided fermions from Hurwitz algebras — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of"
 ---
 Unlike Lie and Clifford algebras, there are only a finite number of Hurwitz algebras[^1]. These algebras are very generative. Given a Hurwitz algebra identified with a spinor space, one acts on this spinor space with the algebra itself, from the left, right, or from both sides. Sometimes this does not make a difference, and sometimes it does. Considering all the repeated nested actions generate the adjoint algebras, which are specific Clifford algebras. The bivectors of a Clifford algebra close under commutation, providing a representation of the Lie algebra that preserves the metric of the associated pseudo-orthogonal space.
 

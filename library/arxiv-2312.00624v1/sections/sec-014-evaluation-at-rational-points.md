@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.952
 latex_coverage_ratio: 0.997
+doc_brief: "On the structure of wave functions in complex Chern–Simons theory — We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the"
 ---
 Following the conventions of [@ak], the state integral for the $\bm{4}_1$-knot takes the form $$\label{41ak}
 \chi_{\bm{4}_1}(u;\hbar) = \frac{1}{2 \pi {\mathsf{b}}} {\rm e}^{-\frac{x}{2}-\frac{x}{2 {\mathsf{b}}^2}-\frac{{\rm i}x^2}{2 \pi {\mathsf{b}}^2}} \int_{{\mathbb R}+ {\rm i}0} \frac{\Phi_{{\mathsf{b}}}\left(\frac{x-y}{2 \pi {\mathsf{b}}} \right)}{\Phi_{{\mathsf{b}}}\left(\frac{y}{2 \pi {\mathsf{b}}} \right)} {\rm e}^{\frac{{\rm i}x y}{\pi {\mathsf{b}}^2}} dy \, ,$$ where $x = 2 \pi {\mathsf{b}}u$ and $\hbar = 2 \pi {\mathsf{b}}^2$, as before, while $\Phi_{{\mathsf{b}}}(z)$ denotes the Faddeev's quantum dilogarithm. We refer to Appendix [\[app: faddeev\]](#app: faddeev){reference-type="ref" reference="app: faddeev"} for its definition and some useful properties. Let us define the function $$f(y) = \frac{\Phi_{{\mathsf{b}}}\left(\frac{x-y}{2 \pi {\mathsf{b}}} \right)}{\Phi_{{\mathsf{b}}}\left(\frac{y}{2 \pi {\mathsf{b}}} \right)} {\rm e}^{\frac{{\rm i}x y}{\pi {\mathsf{b}}^2}} \, ,$$ where we consider $x \in {\mathbb R}$ fixed. The singularities of $f(y)$ are poles located at the points $$\label{y-poles}

@@ -8,6 +8,7 @@ pages: 5-6
 source_pdf: Di_Cairano_2022_J._Phys._Commun._6_015002.pdf
 source_sha256: f75313b507f97172
 toc_source: outline
+doc_brief: "On the derivation of a Nonlinear Generalized Langevin Equation — 15 sections: Front matter; Introduction; State-of-art"
 ---
 In this section, we formalize the derivation introduced in the previous section.
 We consider a Hamiltonian function describing a classical physical system composed by a heat bath (P)

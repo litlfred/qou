@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0805.1447v2.pdf
 source_sha256: b7ee20b0a7f5f3da
 toc_source: outline
+doc_brief: "BRAID ORDERING AND THE GEOMETRY OF CLOSED BRAID — The relationships between braid ordering and the ge- ometry of its closure is studied."
 ---
 arXiv:0805.1447v2  [math.GT]  22 Oct 2008
 BRAID ORDERING AND THE GEOMETRY OF

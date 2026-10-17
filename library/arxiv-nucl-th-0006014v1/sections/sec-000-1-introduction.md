@@ -8,6 +8,7 @@ pages: 3-3
 source_pdf: 0006014v1.pdf
 source_sha256: 208c7a6aaf628b30
 toc_source: inferred
+doc_brief: "arXiv:nucl-th/0006014v1 9 Jun 2000 — 20 sections: Front matter; Introduction; The model"
 ---
 In the 1970’s and 80’s, a comprehensive ﬁeldtheoretic meson-exchange model for the
 nucleon-nucleon (NN) interaction was developed at the University of Bonn.

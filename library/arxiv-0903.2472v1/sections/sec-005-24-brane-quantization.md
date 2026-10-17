@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.932
 latex_coverage_ratio: 0.969
+doc_brief: "Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group — We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with"
 ---
 Now, let us briefly describe how the problem of quantizing the moduli space of flat connections, ${{\cal M}}_{{\rm flat}}(G_{{\mathbb{C}}},\Sigma)$, would look in the new approach [@gukov-2008] based on the topological A-model and D-branes. Although it can be useful for a better understanding of Chern-Simons theory with complex gauge group, this discussion is not crucial for the rest of the paper and the reader not interested in this approach may skip directly to Section [1](#sec:statesum){reference-type="ref" reference="sec:statesum"}.
 

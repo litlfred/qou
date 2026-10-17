@@ -8,6 +8,7 @@ pages: 35-37
 source_pdf: 1712.04212v4.pdf
 source_sha256: 521911fc8724f3c2
 toc_source: outline
+doc_brief: "CONCENTRATION OF 1-LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY WITH DIRICHLET BOUNDARY CONDITION — In this paper, we consider a concentration of measure problem on Riemannian manifolds with"
 ---
 [1] D. Bakry and M. ´Emery, Diﬀusions hypercontractives, S´eminaire de proba-
 bilit´es, XIX, 1983/84, 177–206, Lecture Notes in Math., 1123, Springer, Berlin,

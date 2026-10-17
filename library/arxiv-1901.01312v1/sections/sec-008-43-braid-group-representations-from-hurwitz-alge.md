@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.871
+doc_brief: "Braided fermions from Hurwitz algebras — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of"
 ---
 Using known isomorphisms between division algebras and Clifford algebras, one can investigate the braid content of (hyper)complex division algebras. The complex number algebra $\mathbb{C}$ is isomorphic to the real Clifford algebras $C\ell(0,1)\cong C\ell^+(2,0)$, where the $+$ indicates the even subalgebra of a Clifford algebra. A representation of $B_2$ in terms of $\mathbb{C}$ is given by $$\begin{aligned}
 \label{complexgenerators}

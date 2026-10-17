@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.967
 latex_coverage_ratio: 0.947
+doc_brief: "arXiv:math/0111205v1 [math.CT] 19 Nov 2001 — For every tensor category C there is a braided tensor category Z(C), the ‘center’ of C."
 ---
 \label{gss}
 If $\2C$ is a braided spherical tensor category a theorem of Deligne, cf.\ \cite[Proposition

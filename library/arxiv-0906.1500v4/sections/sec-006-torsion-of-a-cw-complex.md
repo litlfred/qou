@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.975
 latex_coverage_ratio: 0.992
+doc_brief: "TWISTED ALEXANDER INVARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS — We study a computational method of the hyperbolic Reidemeister torsion (also"
 ---
 Let $W$ be a finite CW-complex and $(V, \rho)$ be a pair of a vector
 space with an inner product over $\FF$ and a homomorphism of $\pi_1(W)$

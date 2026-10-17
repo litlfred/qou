@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2304.09377v2.pdf
 source_sha256: 76ae6c6058f4a9f9
 toc_source: outline
+doc_brief: "Symmetry, Integrability and Geometry: Methods and Applications — We discuss a matrix of periodic holomorphic functions in the upper and lower half-plane which can be obtained from a factorization of"
 ---
 Symmetry, Integrability and Geometry: Methods and Applications
 SIGMA 19 (2023), 082, 39 pages

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.98
 latex_coverage_ratio: 0.994
+doc_brief: "Higher Dimensional Algebra VII: Groupoidiﬁcation — Groupoidiﬁcation is a form of categoriﬁcation in which vector spaces are replaced by groupoids and linear operators are replaced by spans of"
 ---
 In this section we prove that our process of turning groupoids into vector spaces and spans of groupoids into linear operators is indeed a functor. We first show that the process preserves identities, then show associativity of composition, from which many other things follow, including the preservation of composition. The lemmas in this section add up to a proof of the following theorem:
 

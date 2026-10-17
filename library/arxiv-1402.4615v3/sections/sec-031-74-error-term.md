@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.895
 latex_coverage_ratio: 0.968
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials."
 ---
 []{#subsec:ErrorTerm label="subsec:ErrorTerm"} In the previous Section, we have checked that the pair $(\tilde{W}_d, \tilde{W}_d^*)$ of the random vectors satisfies the assumptions of Theorem [\[theo:MultivariateStein\]](#theo:MultivariateStein){reference-type="ref" reference="theo:MultivariateStein"}. In order to prove that the random vector $\tilde{W}_d$ is asymptotically Gaussian, we need to show that quantities $A$ and $B$ from Theorem [\[theo:MultivariateStein\]](#theo:MultivariateStein){reference-type="ref" reference="theo:MultivariateStein"} vanish as $n \to \infty$. This section is devoted to making these calculations.
 

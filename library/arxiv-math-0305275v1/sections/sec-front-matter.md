@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0305275v1.pdf
 source_sha256: 9b356a9d716a0d3e
 toc_source: outline
+doc_brief: "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds Introduction — Let W be a compact manifold and let ρ be a representation of its fundamental group into PSL(2, C)."
 ---
 arXiv:math/0305275v1  [math.GT]  19 May 2003
 Hyperbolic volume of representations of fundamental

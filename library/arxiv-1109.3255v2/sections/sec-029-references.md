@@ -8,6 +8,7 @@ pages: 70-72
 source_pdf: 1109.3255v2.pdf
 source_sha256: dd4579be8e9b7e25
 toc_source: outline
+doc_brief: "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE PLANE AND A BINODAL CUBIC CURVE — We construct a family of Lagrangian submanifolds in the Landau– Ginzburg mirror to the projective plane equipped"
 ---
 1. Mohammed Abouzaid, Homogeneous coordinate rings and mirror symmetry for toric varieties,
 Geom. Topol. 10 (2006), 1097–1157 (electronic). MR 2240909 (2007h:14052)

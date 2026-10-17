@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.966
 latex_coverage_ratio: 0.99
+doc_brief: "arXiv:hep-ph/0601023v3 23 Apr 2007 — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non - su- persymmetric uniﬁcation"
 ---
 The SO(10) models in 5D which have been investigated by  a number of 
  authors~\cite{Dermisek:2001hp,Kim:2002im}.

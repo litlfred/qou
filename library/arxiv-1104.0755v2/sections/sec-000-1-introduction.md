@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.981
 latex_coverage_ratio: 0.877
+doc_brief: "A connection formula between the Ramanujan function and the q -Airy function — We show a connection formula between two diﬀerent q-Airy func- tions."
 ---
 In the study of the $q$-analysis, it is known that there exist several different $q$-special functions corresponding to a special function defined by a differential equation. For example, three types of $q$-Bessel functions are known. We denote them $J_\nu^{(1)}(x;q)$, $J_\nu^{(2)}(x;q)$ and $J_\nu^{(3)}(x;q)$ due to Ismail [@Is]. The first and the second one are called Jackson's first and second $q$-Bessel function and the third one is called the Hahn-Exton $q$-Bessel function. Similarly, two types of $q$-Airy functions are known. We denote them $\operatorname{A}_q(x)$ and $\operatorname{Ai}_q(x)$. The first one is called the Ramanujan function and the second one is called the $q$-Airy function.
 

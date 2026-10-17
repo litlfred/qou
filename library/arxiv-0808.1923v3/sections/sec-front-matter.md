@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0808.1923v3.pdf
 source_sha256: 3c53f7c0fd9acf89
 toc_source: outline
+doc_brief: "Connections on Non-Abelian Gerbes and their Holonomy — We introduce an axiomatic framework for the parallel transport of connections on gerbes."
 ---
 arXiv:0808.1923v3  [math.DG]  24 Sep 2013
 Connections on Non-Abelian Gerbes and their Holonomy

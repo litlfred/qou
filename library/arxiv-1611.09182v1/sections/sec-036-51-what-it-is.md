@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.972
 latex_coverage_ratio: 1.0
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 The standard model of particle physics is the result of decades of collaboration, which began roughly in the 1930s, and converged finally on its current state in 1979, \cite{ramjbsm}.  It is a mosaic of our best efforts in particle physics over that half century.  In the decades since 1979, the standard model has seen little in the way of alterations, and yet has survived rigorous experimental testing, nearly completely unscathed.
 

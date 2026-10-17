@@ -11,6 +11,8 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.901
 latex_coverage_ratio: 0.956
+doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised"
+duplicate_of: "modularqholonomicmodules"
 ---
 We will introduce a state integral in Section~\ref{subsec.heine.stateint} which
 factorises as a finite sum of products of solutions of the module $M$ associated

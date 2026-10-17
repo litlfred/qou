@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.947
 latex_coverage_ratio: 1.0
+doc_brief: "Braided fermions from Hurwitz algebras — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of"
 ---
 There are several possibilities for extending the braid- and Hurwitz algebraic description from a single generation to exactly three generations. The algebra $C\ell(6)$ is large enough to represent three generations of fermions that transform as required under the unbroken symmetries [@furey2014generations]. It is however not yet clear how this three generation model relates to the single generation model based on minimal ideals.
 

@@ -8,6 +8,7 @@ pages: 60-62
 source_pdf: 1402.4615v3.pdf
 source_sha256: b6e7c795cd1a7cd2
 toc_source: outline
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials."
 ---
 top degree part of the coefﬁcients of linear terms in Kerov polynomials. This proves
 a conjecture of Lassalle [Las09, page 31].

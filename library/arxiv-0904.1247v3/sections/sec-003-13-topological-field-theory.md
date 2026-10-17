@@ -8,6 +8,7 @@ pages: 9-12
 source_pdf: 0904.1247v3.pdf
 source_sha256: 4a6f4dee6af66dac
 toc_source: outline
+doc_brief: "THE CHARACTER THEORY OF A COMPLEX GROUP — We apply the ideas of derived algebraic geometry and topological ﬁeld theory to the representation theory of reductive groups."
 ---
 of topological ﬁeld theory (TFT). We will not give a formal introduction to TFT but rather remind
 the reader of its broad outline informally and illustrate it via the example of ﬁnite group gauge

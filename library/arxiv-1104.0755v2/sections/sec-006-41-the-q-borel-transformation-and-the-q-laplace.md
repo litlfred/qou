@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.955
 latex_coverage_ratio: 0.846
+doc_brief: "A connection formula between the Ramanujan function and the q -Airy function — We show a connection formula between two diﬀerent q-Airy func- tions."
 ---
 ::: defi
 For $f(t)=\sum_{n\ge 0}a_nt^n$, the $q$-Borel transformation is defined by $$g(\tau )=\left(\mathcal{B}_qf\right)(\tau ):=\sum_{n\ge 0}a_nq^{-\frac{n(n-1)}{2}}\tau^n,$$ and the $q$-Laplace transformation is given by $$\left(\mathcal{L}_qg\right)(t):=\frac{1}{2\pi i}\int_{|\tau |=r}g(\tau )\theta\left(\frac{t}{\tau}\right)\frac{d\tau}{\tau },\qquad 0<r<\frac{1}{|q^2|}.$$

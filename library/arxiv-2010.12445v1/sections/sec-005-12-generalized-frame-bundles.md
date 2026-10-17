@@ -8,6 +8,7 @@ pages: 6-10
 source_pdf: 2010.12445v1.pdf
 source_sha256: 16e9ca22ecc1f296
 toc_source: outline
+doc_brief: "STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION — Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect(X), we are"
 ---
 Generalized frame bundles. In this section we study frame bundles of general vector
 bundles. We ﬁx a category X ﬁbered in groupoids over R.

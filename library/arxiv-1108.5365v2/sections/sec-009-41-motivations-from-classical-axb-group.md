@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.956
 latex_coverage_ratio: 0.967
+doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL + — We give complete detail of the description of the GNS representation of the quantum plane A and its dual ˆ A as"
 ---
 \label{sec:QPlane:ax+b}
 Recall that the classical $ax+b$ group is the group $G$ of affine transformations on the real line $\R$, where $a>0$ and $b\in\R$, and they can be represented by a matrix of the form (we use the transposed version):

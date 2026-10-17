@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1608.07234v3",
  "source_sha256": "311730670d2fdcb7",
- "brief": "DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS AKSHAY VENKA TESH — We describe a graded extension of the usual Hecke algebra: i t acts in a graded fashion on the cohomology of an",
- "extended": "**DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS AKSHAY VENKA TESH**\n\n87 pp, 4 sections.\n\n**Abstract.** We describe a graded extension of the usual Hecke algebra: i t acts in a graded fashion on the cohomology of an arithmetic group Γ . Under favorable conditions, the cohomology is freely generated in a single degree over this g raded Hecke algebra. From this construction we extract an action of certainp-adic Galois cohomology groups on H ˚ pΓ , Qpq, and formulate the central conjecture: the motivic Q-lattice inside these Galois cohomology groups preserves H ˚ pΓ , Qq.\n\n**Outline.** 1 Introduction; 2 Derived Hecke algebra; Index of symbols and important notation; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 5.2: , proved in §5, studies the case when G is (the Q-group corresponding\n- Theorem 7.6: , proved in §6 and §7, treats the case of χ associated to a tempered coho-\n- Theorem: More precisely, we are going to describe a map\n- Proposition: There exists N0pmq such that for each pair of prime ideals q, q1\n- Proposition: Let y1 belong to either Gv{Kv or Gv{Iv. Let Γ be an ℓ-Sylow\n- Proposition: We may ﬁlter krG{I 1s byG-submodulesF 0 ĂF 1 ĂF 2 Ă... such that:",
+ "brief": "DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS — We describe a graded extension of the usual Hecke algebra: it acts in a graded fashion on the cohomology of an arithmetic group Γ.",
+ "extended": "**DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS**\n\n*AKSHAY VENKATESH*\n\n87 pp, 14 sections.\n\n**Abstract.** We describe a graded extension of the usual Hecke algebra: it acts in a graded fashion on the cohomology of an arithmetic group Γ. Under favorable conditions, the cohomology is freely generated in a single degree over this graded Hecke algebra. From this construction we extract an action of certain p-adic Galois cohomology groups on H˚pΓ, Qpq, and formulate the central conjecture: the motivic Q-lattice inside these Galois cohomology groups preserves H˚pΓ, Qq.\n\n**Outline.** Front matter; 1 Introduction; 2 Derived Hecke algebra; 3 Torus localization and Satake isomorphism; 4 Iwahori-Hecke algebra; 5 The trivial representation; 6 Setup for patching; 7 Patching and the derived Hecke algebra; 8 The reciprocity law; 9 Some very poor evidence for the main conject; Appendix A. Remedial algebra; Appendix B.  Koszul algebra; other odds and en; Index of symbols and important notation; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 5.2: , proved in §5, studies the case when G is (the Q-group corresponding\n- Theorem 7.6: , proved in §6 and §7, treats the case of χ associated to a tempered coho-\n- Proposition: There exists N0pmq such that for each pair of prime ideals q, q1\n- Lemma: There is an isomorphism X˚pAq » Av{pAv X Kvq; let M be the centralizer in G of",
  "tokens": {
   "brief": 47,
-  "extended": 302
+  "extended": 351
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -17,15 +22,60 @@
   {
    "id": "sec-001-2-derived-hecke-algebra",
    "title": "Derived Hecke algebra",
-   "pages": "11-85"
+   "pages": "11-21"
   },
   {
-   "id": "sec-002-index-of-symbols-and-important-notation",
+   "id": "sec-002-3-torus-localization-and-satake-isomorphism",
+   "title": "Torus localization and Satake isomorphism",
+   "pages": "21-26"
+  },
+  {
+   "id": "sec-003-4-iwahori-hecke-algebra",
+   "title": "Iwahori-Hecke algebra",
+   "pages": "26-31"
+  },
+  {
+   "id": "sec-004-5-the-trivial-representation",
+   "title": "The trivial representation",
+   "pages": "31-39"
+  },
+  {
+   "id": "sec-005-6-setup-for-patching",
+   "title": "Setup for patching",
+   "pages": "39-50"
+  },
+  {
+   "id": "sec-006-7-patching-and-the-derived-hecke-algebra",
+   "title": "Patching and the derived Hecke algebra",
+   "pages": "50-55"
+  },
+  {
+   "id": "sec-007-8-the-reciprocity-law",
+   "title": "The reciprocity law",
+   "pages": "55-74"
+  },
+  {
+   "id": "sec-008-9-some-very-poor-evidence-for-the-main-conjectur",
+   "title": "Some very poor evidence for the main conjecture: Tori and the trivial representation",
+   "pages": "74-76"
+  },
+  {
+   "id": "sec-009-appendix-a-remedial-algebra",
+   "title": "Appendix A. Remedial algebra",
+   "pages": "76-82"
+  },
+  {
+   "id": "sec-010-appendix-b-koszul-algebra-other-odds-and-ends",
+   "title": "Appendix B.  Koszul algebra; other odds and ends",
+   "pages": "82-85"
+  },
+  {
+   "id": "sec-011-index-of-symbols-and-important-notation",
    "title": "Index of symbols and important notation",
    "pages": "85-86"
   },
   {
-   "id": "sec-003-references",
+   "id": "sec-012-references",
    "title": "References",
    "pages": "86-87"
   }

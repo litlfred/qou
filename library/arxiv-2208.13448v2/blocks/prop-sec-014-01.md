@@ -1,0 +1,1 @@
+\ref{prop3} then reduces the criterion on $D(G)$ to look at solutions in $\overline{\mathbf{k}} $ of linear $\phi$-difference systems with coefficients in $\overline{\mathbf{k}}$. More precisely the condition $X=X^t$ drops the number of unknowns from $9$ to

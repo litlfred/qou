@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.944
 latex_coverage_ratio: 0.997
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials."
 ---
 []{#SubsectProjN label="SubsectProjN"} Recall that $\Lambda_\star^{(\alpha)}$ is a subalgebra of the algebra of functions on all Young diagrams. The latter has a natural projection map $\varphi_n$ onto $\mathcal{F}(\mathcal{Y}_n,\mathbb{Q})$, the algebra of functions on Young diagrams of size $n$. As Jack symmetric functions $J_\lambda$ form a basis of the symmetric function ring, the functions $(\theta_\mu)_{\mu \vdash n}$ form a basis of $\mathcal{F}(\mathcal{Y}_n,\mathbb{Q})$ (see [@FerayInductionJM Proposition 4.1]).
 

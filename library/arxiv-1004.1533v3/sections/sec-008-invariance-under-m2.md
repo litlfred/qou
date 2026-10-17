@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.848
 latex_coverage_ratio: 0.844
+doc_brief: "TURAEV-VIRO INVARIANTS AS AN EXTENDED TQFT — In this paper we show how one can extend Turaev-Viro invariants, deﬁned for an arbitrary spherical fusion category C, to 3-manifolds with cor- ners."
 ---
 The invariance under M2 is seen as follows. By definition, the edge being
 removed is incident to exactly two faces $c_1, c_2$. Each face bounds the

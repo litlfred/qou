@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2409.09372v4.pdf
 source_sha256: b7eed67ec102ab3d
 toc_source: outline
+doc_brief: "Markov traces on degenerate cyclotomic Hecke algebras — Let Hn(u) be the degenerate cyclotomic Hecke algebra with parameter u = {u1, . . . , um}."
 ---
 MARKOV TRACES ON DEGENERATE CYCLOTOMIC HECKE ALGEBRAS
 DEKE ZHAO

@@ -8,6 +8,7 @@ pages: 39-44
 source_pdf: 1012.5432v4.pdf
 source_sha256: ec5f6da1f813649e
 toc_source: outline
+doc_brief: "quant-ph Towards Topological Quantum Computation? - — 23 sections: Front matter; A Hamiltonian; Instantons"
 ---
 The author would like to thank F. Wilczek for advising her thesis (the ﬂagstone for this
 paper) and for subsequently suggesting she “condense a paper out of it”. In addition, she

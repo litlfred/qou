@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.972
 latex_coverage_ratio: 1.0
+doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — Based on an interpretation of the quark-lepton symmetry in terms of the unimodularity of the color group SU(3) and on the existence of 3 generations, we develop an"
 ---
 In the identification of the octonion algebra $\mathbb O$ as $\mathbb C\oplus \mathbb C^3$, the octonionic conjugate of $(z,Z)=z+Z$ is $\overline{(z,Z)}=(\bar z,-Z)=\bar z-Z$.\
 On the other hand if one interprets $Z\in \mathbb C^3$ as an internal quark state and $z\in \mathbb C$ as an internal state of the corresponding lepton, the charge conjugation ${\cal C}$ induces the complex conjugation in $\mathbb C^3$ and in $\mathbb C$ that is $${\cal C}(z+Z)=\bar z+\bar Z$$ for $z\in \mathbb C$, $Z\in \mathbb C^3$.\

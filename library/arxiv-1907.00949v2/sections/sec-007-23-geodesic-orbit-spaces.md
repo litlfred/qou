@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
 latex_coverage_ratio: 0.935
+doc_brief: "OPTIMIZATION ON FLAG MANIFOLDS — A ﬂag is a sequence of nested subspaces."
 ---
 Let $M = G/H$ be a homogeneous space of $G$. If $M$ has a Riemannian metric $g$ such that every geodesic in $M$ is an orbit of a one-parameter subgroup of $G$, then we say that $(M,g)$ is a *geodesic orbit space*. The following result [@KS2000] will allow us to construct several interesting examples.
 

@@ -1,1 +1,1 @@
-Supposeg is one of the following:
+Suppose g is one of the following:

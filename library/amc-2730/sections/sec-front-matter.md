@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: amc_2730.pdf
 source_sha256: 65730074a2925c6e
 toc_source: outline
+doc_brief: "Braid representatives minimizing the number of simple walks * — Given a knot, we develop methods for finding a braid representative that minimizes the number of simple walks."
 ---
 ISSN 1855-3966 (printed edn.), ISSN 1855-3974 (electronic edn.)
 ARS MATHEMATICA CONTEMPORANEA 23 (2023) #P1.10

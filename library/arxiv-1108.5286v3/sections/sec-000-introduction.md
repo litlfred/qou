@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
 latex_coverage_ratio: 0.979
+doc_brief: "Hochschild homology of aﬃne Hecke algebras Maarten Solleveld Contents — Let H = H(R, q) be an aﬃne Hecke algebra with complex, possibly unequal parameters q, which are not roots of unity."
 ---
 \addcontentsline{toc}{section}{Introduction}
 

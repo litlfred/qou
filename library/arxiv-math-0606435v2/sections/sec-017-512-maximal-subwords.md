@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.755
 latex_coverage_ratio: 0.99
+doc_brief: "arXiv:math/0606435v2 [math.GT] 10 Oct 2007 — We show that 3-braid links with given (non-zero) Alexander or Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
 Here we start the technical considerations needed to prove 
 theorem \reference{thmwf}. We consider the form \eqref{wd},

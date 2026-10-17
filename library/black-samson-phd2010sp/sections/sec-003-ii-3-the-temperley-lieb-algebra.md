@@ -8,6 +8,7 @@ pages: 22-29
 source_pdf: Black_Samson_phd2010sp.pdf
 source_sha256: c16799b0bd54ff29
 toc_source: inferred
+doc_brief: "REPRESENTATIONS OF HECKE — 11 sections: Front matter; INTRODUCTION; ILL Links and Braids"
 ---
 The Temperley-Lieb Algebra
 Definition 11.3.1. The Temperley-Lieb algebra T Ld(a) is the unital, associative algebra over C(v)

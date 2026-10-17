@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.957
 latex_coverage_ratio: 0.974
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 []{#subsec_pcacpeef label="subsec_pcacpeef"} Finally, the technique of coupling the QCD Lagrangian to external fields also allows us to determine the current divergences for rigid external fields, i.e., fields which are *not* simultaneously transformed. For the sake of simplicity we restrict ourselves to the two-flavor sector. (The generalization to the three-flavor case is straightforward.)
 

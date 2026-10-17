@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0709.3157v1.pdf
 source_sha256: 22a0d9a93c9dcb8d
 toc_source: outline
+doc_brief: "Chiral Lagrangians with tensor sources — The implementation of tensor sources in Chiral Lagrangians allows the computation of Green functions and form factors involving tensor currents, that is"
 ---
 arXiv:0709.3157v1  [hep-ph]  20 Sep 2007
 Chiral Lagrangians with tensor sources

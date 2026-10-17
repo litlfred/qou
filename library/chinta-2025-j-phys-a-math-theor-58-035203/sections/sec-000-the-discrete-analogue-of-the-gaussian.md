@@ -8,6 +8,7 @@ pages: 1-3
 source_pdf: Chinta_2025_J._Phys._A__Math._Theor._58_035203.pdf
 source_sha256: baba83ca76c773d4
 toc_source: outline
+doc_brief: "The discrete analogue of the Gaussian — 13 sections: Front matter; The discrete analogue of the Gauss; Introduction"
 ---
 To cite this article: Gautam Chinta et al 2025 J. Phys. A: Math. Theor. 58 035203
  

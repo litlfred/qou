@@ -8,6 +8,7 @@ pages: 13-18
 source_pdf: 2607.10525v1.pdf
 source_sha256: b893cb4c87ea1d66
 toc_source: outline
+doc_brief: "Fiber Functors of Equivariantizations of Finite Tensor Categories — Let G be a finite group acting on a finite tensor category C."
 ---
 4.3. Classification of fiber functors for Rep(Hp). The only subgroups in Theo-
 rem 3.6 are J = {e} and J = C2. The first gives the C2-orbits of fiber functors on Cp.

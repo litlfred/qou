@@ -8,6 +8,7 @@ pages: 37-39
 source_pdf: 2412.04241v2.pdf
 source_sha256: 308d1dd1c42bd979
 toc_source: outline
+doc_brief: "The Habiro ring of a number field — We introduce the Habiro ring of a number field K and modules over it graded by K3(K)."
 ---
 the dilogarithm function, the Bloch group, and their p-adic counterparts. The dilogarithm
 function, defined initially for |x| < 1 by

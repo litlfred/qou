@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.994
 latex_coverage_ratio: 0.994
+doc_brief: "arXiv:math/9910147v1 [math.QA] 27 Oct 1999 — We study the tensor product of principal unitary representations of the quantum Lorentz Group, prove a decomposition theorem and compute the associated"
 ---
 In [@BR1] we have pursued the work of Podles-Woronowicz [@PW] and Pusz [@Pu]: we have shown that the unitary representations of ${\mathfrak U}_q(sl(2,\mathbb{C})_{\RR})$ can be nicely expressed in terms of one variable complex continuation of $6j$ symbols of ${\mathfrak U}_q(su(2))$. Using this result we were able to construct the characters of these unitary representations and prove a Plancherel theorem for $L^2$ functions. One has to work in the category of $C^{*}$ multiplier Hopf algebras [@PW; @Wo2] in order to handle functional analysis problems.\
 Let $G$ be the complex Lie group $SL(2,\mathbb{C})$ and denote by $\{{\buildrel {\lambda} \over {\Pi}}, \lambda\in  {\frac{1}{2}}\mathbb{Z}\times \RR\}$ the set of principal unitary representations of $G$. The Plancherel measure is given by $P(\lambda)d\lambda = {\frac{1}{2}}(m^2+\rho^2)d\rho$ where $\lambda=(m, \rho)$ and ${\buildrel {\lambda} \over {\Pi}}$ is equivalent to ${\buildrel {-\lambda} \over {\Pi}}$. Naimark [@N] has shown the following decomposition theorem:

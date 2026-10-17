@@ -8,6 +8,8 @@ pages: 23-24
 source_pdf: 1710.04865v2.pdf
 source_sha256: ac8f436173d550e8
 toc_source: outline
+doc_brief: "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS — Using a result of Takata, we prove a formula for the colored Jones polynomial of the double twist knots K(−m,−p) and"
+duplicate_of: "cjdoubletwistfinal"
 ---
 [1] S. Ahlgren, B. Kim, Dissections of a “strange” function, Int. J. Number Theory 11 (2015), no. 5, 1557–1562.
 [2] G. E. Andrews, J. Sellers, Congruences for the Fishburn numbers, J. Number Theory 161 (2016), 298–310.

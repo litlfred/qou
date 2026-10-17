@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.945
 latex_coverage_ratio: 0.843
+doc_brief: "Fusion categories via string diagrams — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories."
 ---
 \label{Form_piv_op}
 We now show how to compute the pivotal operators directly in terms of the associator matrix elements. More precisely, we express them in terms of the {\em apex associator monodromy}.

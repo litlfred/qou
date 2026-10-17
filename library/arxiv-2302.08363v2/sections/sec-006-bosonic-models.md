@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.957
 latex_coverage_ratio: 1.0
+doc_brief: "On the structure of trans-series in quantum field theory — Many observables in quantum field theory can be expressed in terms of trans-series, in which one adds to the perturbative series a typically"
 ---
 Using the techniques described in \cite{mmr-an}, one can extract the trans-series of the free energy from the equations above. 
 In this section we will concentrate on the bosonic models, which include the $O(N)$ non-linear sigma model 

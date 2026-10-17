@@ -8,6 +8,7 @@ pages: 309-311
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
 toc_source: outline
+doc_brief: "Analytic Combinatorics in Several Variables Expanded Second Edition — 98 sections: Front matter; Preface to the second edition; Preface to the first edition"
 ---
 Multiple point asymptotics
 The asymptotic behavior of the coeﬃcients ar of a convergent Laurent expan-

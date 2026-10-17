@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.954
 latex_coverage_ratio: 1.0
+doc_brief: "Universal Properties of the Four-Body System with Large Scattering Length Abstract — Few-body systems with large scattering length have universal properties that do not depend on the details of their"
 ---
 We now consider the universal correlations in the three-body system for negative scattering length. In particular, we focus on the correlation between the binding energies in the three- and four-body systems. Such correlations were first observed in nuclear physics and are known as Tjon lines [@Tjo75]. For recent discussions of the nuclear Tjon line in the context of the EFT for short-range interactions and low-momentum nucleon-nucleon potentials, see Refs. [@Platter:2004zs; @Nogga:2004ab]. The Tjon lines for spinless bosons with positive scattering length were discussed in [@Platter04] for the range of binding energies relevant to $^4$He atoms.
 

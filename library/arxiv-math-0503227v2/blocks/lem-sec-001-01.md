@@ -1,0 +1,1 @@
+[\[ismart\]](#ismart){reference-type="ref" reference="ismart"} states that the $X_j$ are martingale differences satisfying special properties. We remark that [@F3] extends this lemma to more general conjugacy classes and groups. The notation $\ee(A|\cdot)$ means the expected value of $A$ given $\cdot$.

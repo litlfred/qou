@@ -8,6 +8,7 @@ pages: 41-42
 source_pdf: s00209-021-02825-4.pdf
 source_sha256: 85ca5ec21f42a988
 toc_source: outline
+doc_brief: "A representation theoretic explanation of the Borcea–Brändén characterization — In 2009, Borcea and Brändén characterized all linear operators on multivariate polynomials which preserve the property"
 ---
 1. Borcea, J., Brändén, P.: The Lee–Yang and Pólya–Schur programs. I. Linear operators preserving stability.
 Inventiones Mathematicae 177(3), 541–569 (2009)

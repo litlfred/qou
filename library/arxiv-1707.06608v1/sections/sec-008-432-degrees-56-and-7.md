@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.972
 latex_coverage_ratio: 1.0
+doc_brief: "Fractional Hopﬁons in the Faddeev-Skyrme model with a symmetry breaking potential — We construct new solutions of the Faddeev-Skyrme model with a symmetry breaking potential admitting S1 vacuum."
 ---
 The $Q=5$ minimal energy solution is $5(\ensuremath{\mathcal{L}}_{1,2}\between\ensuremath{\mathcal{L}}_{1,2})_{\ensuremath{\mathcal{L}}_{1,2}}$, it is a link, which is similar to the usual minimal energy charge five Hopfion in the massless Faddeev-Skyrme model. However, the structure of the energy density of this solution in the model with Heisenberg type potential is different, one can clearly identify four linked tubes, see Table [\[hopftable\]](#hopftable){reference-type="ref" reference="hopftable"}. Confirming the general pattern we also found the dihedrally symmetric configuration $5(\ensuremath{\mathcal{A}}_1\between\ensuremath{\mathcal{A}}_1)_{\widetilde\ensuremath{\mathcal{A}}_{5,1}}$ with energy about $5 \%$ above the global minimum.
 

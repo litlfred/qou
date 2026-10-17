@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0503227v2.pdf
 source_sha256: 4e83adfdef827103
 toc_source: outline
+doc_brief: "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios — Bolthausen used a variation of Stein’s method to give an inductive proof"
 ---
 arXiv:math/0503227v2  [math.CO]  8 Aug 2006
 An Inductive Proof of the Berry-Esseen Theorem for Character

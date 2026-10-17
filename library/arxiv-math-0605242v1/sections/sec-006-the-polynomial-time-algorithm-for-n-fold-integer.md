@@ -8,6 +8,7 @@ pages: 13-16
 source_pdf: 0605242v1.pdf
 source_sha256: 65fac7285e4a77f4
 toc_source: outline
+doc_brief: "N-Fold Integer Programming — In this article we study a broad class of integer programming problems in variable dimension."
 ---
 The polynomial time algorithm for n-fold integer programming
 We now provide the polynomial time algorithm for the generalized n-fold integer programming problem

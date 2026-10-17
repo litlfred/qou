@@ -1,1 +1,1 @@
-There exists an absolute constantc >0such that there are arbi-
+[\[th-headline\]](#th-headline){reference-type="ref" reference="th-headline"} is easily deduced from the following more general result.

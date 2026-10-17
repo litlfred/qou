@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.888
 latex_coverage_ratio: 0.962
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials."
 ---
 We now use [@ReinertRollin2009 Corollary 3.1], which gives an estimate for $$\left| \mathbb{E}_n^{(\alpha)}h(\tilde{W}_d) - \mathbb{E}h(\tilde{\Xi}_d) \right|$$ for non-smooth test functions $h$. In particular, we shall consider functions $h$ in the set $\mathcal{H}$ of indicator functions of convex sets. We have the following result, which is stronger than Theorem [\[theo:SpeedConvergence\]](#theo:SpeedConvergence){reference-type="ref" reference="theo:SpeedConvergence"}.
 

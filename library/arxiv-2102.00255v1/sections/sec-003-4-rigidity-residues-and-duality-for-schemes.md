@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.981
 latex_coverage_ratio: 0.975
+doc_brief: "RIGIDITY, RESIDUES AND DUALITY: OVERVIEW AND RECENT PROGRESS — In this article we explain the theory of rigid residue complexes in commutative algebra and algebraic geometry, summarizing the"
 ---
 Recall that $\K$ is a regular finite dimensional noetherian base ring.
 We use the notation $\cat{Sch} \ftover \K$ for the category of finite type (FT) 

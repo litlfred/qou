@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.9
 latex_coverage_ratio: 0.971
+doc_brief: "Gentle introduction to Soergel bimodules I: The basics — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules."
 ---
 A natural way to generalize the equilateral triangle is to consider the following tesselation of the Euclidean plane by equilateral triangles
 

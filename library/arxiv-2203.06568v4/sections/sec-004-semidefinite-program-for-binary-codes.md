@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.941
 latex_coverage_ratio: 1.0
+doc_brief: "Semideﬁnite programming bounds for binary codes from a split Terwilliger algebra — We study the upper bounds for A(n, d), the maximum size of codewords with length n and Hamming distance at least d."
 ---
 Collecting all the mentioned linear and semidefinite constraints, we have the following SDP on $A(n,d)$ with variables $x_{i, j,i',j'}^{t,t'} \in\mathbb{C}$: $$\begin{aligned}
     {\rm maximize\ } &\sum_{a = 0}^{n} \sum_{i+i' = a} \binom{n_{1}}{i}\binom{n_{2}}{i'} x_{i, 0, i', 0}^{0, 0}.  \notag\\

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2305.07425v1/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Croke-Kleiner admissible groups and H–inaccessibility",
+  "pageStart": 8,
+  "pageEnd": 8,
+  "contains": [
+    "library/arxiv-2305.07425v1/blocks/prose-sec-006"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2305.07425v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2305.07425v1/manifest.jsonld",
+  "provenance": "ingested"
+}

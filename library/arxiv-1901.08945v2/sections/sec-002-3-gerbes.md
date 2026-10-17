@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.969
 latex_coverage_ratio: 0.951
+doc_brief: "Decompositions of derived categories of gerbes and families of Brauer–Severi varieties — It is well known that the category of quasi-coherent sheaves on a gerbe banded by a diagonalizable group"
 ---
 []{#sec:gerbes-and-twisted label="sec:gerbes-and-twisted"} In this section, we collect some results from the theory on gerbes, bandings by abelian groups and the relation to cohomology. Throughout the section, $S$ will be an arbitrary algebraic stack. By a *stack* we mean a, not necessarily algebraic, stack in groupoids over the big *fppf* site of schemes over $S$. The symbol $\Delta$ will always denote an abelian group in $S_{\operatorname{fppf}}$. Later on, we will specialize to the situation when $\Delta$ is a diagonalizable group. Accordingly, we will use multiplicative notation for $\Delta$ and its cohomology groups $\mathop{\mathrm{H}}^i(S_{\operatorname{fppf}}, \Delta)$.
 

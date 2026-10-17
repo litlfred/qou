@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.971
 latex_coverage_ratio: 0.971
+doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials Introduction — We elaborate on the recent suggestion to consider averaging of Cauchy"
 ---
 Note that the averaging procedure allows one to evaluate various sums of combinatorics quantities by evaluating the Gaussian moment. For instance (using the Fröbenius formula [@Fulton]), $$\begin{aligned}
 \left<p_\Delta\right>^{\bf A}=\sum_R\psi_R(\Delta)\left<S_R\right>^{\bf A}=\sum_R\psi_R(\Delta)

@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1508.07379v2.pdf
 source_sha256: c3dbf93d1cac198e
 toc_source: outline
+doc_brief: "Convergence of Mayer and Virial expansions and the Penrose tree-graph identity Introduction — We establish new lower bounds for the convergence radius of the Mayer series and the Virial series of a"
 ---
 arXiv:1508.07379v2  [math-ph]  9 Dec 2016
 Convergence of Mayer and Virial expansions and the Penrose tree-graph

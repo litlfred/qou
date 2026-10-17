@@ -1,1 +1,1 @@
-[18, Theorem 3.10.2] If ζ ⊢ n, then
+[\[thm:n_n-1\]](#thm:n_n-1){reference-type="ref" reference="thm:n_n-1"} implies the following result.

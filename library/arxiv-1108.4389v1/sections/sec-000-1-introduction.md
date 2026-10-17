@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.99
 latex_coverage_ratio: 0.969
+doc_brief: "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories."
 ---
 []{#sec:intro label="sec:intro"} One of the predictions of String Theory/M-Theory is the existence of a discrete family of maximally symmetric six-dimensional conformal field theories, labeled by a simply-laced Lie algebra $\mathfrak{g}$. These theories lack a Lagrangian definition, but some of their properties are known. The existence of such six-dimensional SCFT's has a simple, but perhaps surprising, consequence: it allows a geometric description of many lower-dimensional supersymmetric field theories. Indeed, one can define large families of $6-d$ dimensional theories $T[M_d,\mathfrak{g}]$ via compactification of the six-dimensional theory labeled by $\mathfrak{g}$ on a $d$-dimensional manifold $M_d$. If the compactification is accompanied by an appropriate twist, it will lead to theories with $6-d$ dimensional supersymmetry. In order to fully exploit this type of construction, one should ideally give an alternative explicit definition of these "effective" theories directly in $6-d$ dimensions. If that can be accomplished, the result is a large family of theories defined in $6-d$ dimensions, whose properties are controlled by the geometry of $d$-dimensional manifolds.
 

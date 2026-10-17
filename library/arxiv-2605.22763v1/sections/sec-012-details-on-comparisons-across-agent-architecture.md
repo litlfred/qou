@@ -8,6 +8,7 @@ pages: 27-30
 source_pdf: 2605.22763v1.pdf
 source_sha256: 1fe6b92bb5eb0b45
 toc_source: outline
+doc_brief: "Advancing Mathematics Research with AI-Driven Formal Proof Search — 15 sections: Front matter; Introduction; AlphaProof Nexus"
 ---
 Figure 9 reports, for each Erdős problem, the distribution of computational costs for successful
 runs, along with the solve rate for each agent. We note a large variance in the cost for most

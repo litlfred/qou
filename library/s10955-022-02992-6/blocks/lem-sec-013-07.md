@@ -1,0 +1,1 @@
+Let D1 beaﬁniteunionofboundedconvexregularclosedsubsetsofRd andlet D2

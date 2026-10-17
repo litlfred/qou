@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.736
 latex_coverage_ratio: 0.947
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 The statement that a fusion category over a field of characteristic zero cannot be nontivially deformed is known as Ocneanu rigidity, because its formulation and proof for unitary categories was suggested (but not published) by Ocneanu. Later Blanchard and Wassermann ([@BWa; @Wa]) proposed an algebraic version of Ocneanu's argument, which proves the following result.
 

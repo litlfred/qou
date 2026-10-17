@@ -8,6 +8,7 @@ pages: 13-14
 source_pdf: 0610105v2.pdf
 source_sha256: 5f3bd6d31a419d4d
 toc_source: outline
+doc_brief: "Universal Properties of the Four-Body System with Large Scattering Length Abstract — Few-body systems with large scattering length have universal properties that do not depend on the details of their"
 ---
 We thank Eric Braaten for discussions. This research was supported by the U.S. Depart-
 ment of Energy under grant DE-FG02-93ER40756, by the DFG through funds provided to

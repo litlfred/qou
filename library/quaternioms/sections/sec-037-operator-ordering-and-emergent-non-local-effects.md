@@ -8,6 +8,7 @@ pages: 33-35
 source_pdf: quaternioms.pdf
 source_sha256: becedcbc858611dd
 toc_source: outline
+doc_brief: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 44 sections: Front matter; Introduction; Extended Related Work"
 ---
 The ﬁrst major challenge in formulating a consistent octonionic quantum theory
 arises when considering Hamiltonians that describe interacting subsystems. In standard

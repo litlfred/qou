@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.963
 latex_coverage_ratio: 0.995
+doc_brief: "Cocycle Actions on Hidden Quantum Markov Models: Symmetry Protection and Topological Order — We develop a symmetry action framework for hidden quantum Markov models (HQMMs) tailored to"
 ---
 []{#Sect_Discussion label="Sect_Discussion"}
 

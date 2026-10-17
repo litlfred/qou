@@ -11,6 +11,8 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.994
 latex_coverage_ratio: 0.801
+doc_brief: "Czechoslovak Mathematical Journal — 9 sections: Front matter; Introduction; Composition-Diamond lemma for left"
+duplicate_of: "czechmathj-60-2010-1-4"
 ---
 Let $X$ be a set and $``<"$ a well order on $X^*$. Let $S\subset
 k\langle X\rangle$ with each $s\in S$ monic. Then $k\langle X\rangle

@@ -8,6 +8,7 @@ pages: 49-51
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
 toc_source: outline
+doc_brief: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT — 63 sections: Front matter; ACKNOWLEDGMENTS; ABSTRACT"
 ---
 Algebraic Background
 Definition 11 (Cochains on an Ordered Ideal Triangulation). Let X be an ordered

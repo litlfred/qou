@@ -1,1 +1,1 @@
-If (H,G,ρ,a ) is a crossed module andG is a categorical group, then
+If (H, G, ρ, a) is a crossed module and G is a categorical group, then

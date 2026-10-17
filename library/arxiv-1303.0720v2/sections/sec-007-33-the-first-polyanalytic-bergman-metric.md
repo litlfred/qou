@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
 latex_coverage_ratio: 0.956
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 We continue the setting of the preceding subsection. Following in the footsteps of Bergman (see Subsection [\[subsec-BM\]](#subsec-BM){reference-type="ref" reference="subsec-BM"}), we would like to introduce polyanalytic analogues of Bergman's first and second metrics, respectively. Let us first discuss a property of the weighted Bergman kernel $K=K_1$ (with $q=1$). *The function $K(z,w)$ on $\Omega\times\Omega$ is uniquely determined by its diagonal restriction $K(z,z)$*. This is so because because the diagonal $z=w$ is a set of uniqueness for functions holomorphic in $(z,\bar w)$. So, if we fix the weight $\omega$, the first and second Bergman metrics both retain all essential properties of the kernel $K(z,w)$ itself. The same can not be said for the weighted $q$-analytic Bergman kernel $K_q$. To remedy this, we consider the double-diagonal restriction $z=w$ and $z'=w'$ in the lifted kernel $\mathbf{E}_{\otimes2}[K_q]$ instead: $$\mathbf{E}_{\otimes2}[K_q](z,z';z,z')=
 \sum_{j=1}^{+\infty}|\mathbf{E}[\phi_j](z,z')|^2,

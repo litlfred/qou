@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.951
 latex_coverage_ratio: 0.921
+doc_brief: "Hecke–Farey coordinates for Bring’s surface Doha Kattan 1 and David Singerman 2 — The modular group Γ (which is the Hecke group H3) can be used to study triangular maps, Here we use the Hecke group"
 ---
 In \cite{Sin88, KS22} it was shown that the Farey map $\hat{\mathscr{M}}_{3}$ is the universal triangular map.  The Farey map is a map on the upper-half plane whose vertices are the extended rationals $\mathbb{Q}\cup \{\infty\}$
    and where two rationals $\frac{a}{c}$ and $\frac{b}{d}$ are joined by an edge if and only if $ad-bc=\pm 1.$ We sometimes refer to the  rational $\frac{a}{c}$ as a {\it Farey coordinate.} The automorphism group of $\hat{\mathscr{M}}_{3}$ is the classical modular group $\Gamma.$ Another way of constructing $\mathbb{F}$ is as the map whose vertex set is the extended rationals (the images of $\infty$ under $\Gamma$)  and whose edge set is the images of the imaginary axis under $\Gamma.$

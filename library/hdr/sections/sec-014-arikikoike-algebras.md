@@ -8,6 +8,7 @@ pages: 31-32
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
 toc_source: outline
+doc_brief: "Hecke algebras, generalisations and representation theory — 30 sections: Front matter; Algebras of Finite Type; Blocks"
 ---
 We will see more on canonical basic sets for type
 G(l, 1, n) in the next chapter.

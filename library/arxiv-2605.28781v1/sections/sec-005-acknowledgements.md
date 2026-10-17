@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.891
 latex_coverage_ratio: 0.891
+doc_brief: "The sum-product conjecture is false for real numbers — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily large A ⊂R (whose elements are algebraic integers in a"
 ---
 We thank Akshat Mudgal for clarifying the quantitative aspects of [@Mu24], and suggesting that our construction could also be used to prove something like Theorem [\[th-linearmain\]](#th-linearmain){reference-type="ref" reference="th-linearmain"}. We thank Jacob Fox and Sarah Peluse for many helpful comments and Spencer Dembner for his careful reading of an earlier version of this article.
 

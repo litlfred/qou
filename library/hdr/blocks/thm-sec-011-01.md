@@ -1,1 +1,1 @@
-Let m = (mC,j)(C∈A/W)(0⩽j⩽eC−1)
+Let E ∈Irr(W). The Schur element sE is an element of ZK[v, v−1] of the form

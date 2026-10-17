@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.936
 latex_coverage_ratio: 0.972
+doc_brief: "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE — The Fricke-Macbeath surface is the unique Hurwitz surface of genus 7 with 504 conformal automorphisms."
 ---
 It is worth noting that the motivation behind adopting the above action of $\Del$ is that it provides the classical tessellation of a fundamental domain, given as a regular 14-gon inside $\disk$, for the Klein quartic. This is illustrated in Figure [1](#fig:237_klein){reference-type="ref" reference="fig:237_klein"}.
 

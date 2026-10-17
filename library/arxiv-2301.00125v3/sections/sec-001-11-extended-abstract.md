@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.934
+doc_brief: "Generating Function for Pinsky’s Combinatorial Second Moment Formula for the Generalized Ulam Problem — Given a uniform random permutation π ∈Sn, let Zn,k be equal to the number of increasing"
 ---
 In two papers Ross Pinsky considered a random variable $Z_{n,k}$ equal to the number of increasing subsequences of length $k$
 in a uniform random permutation $\pi \in S_n$. 

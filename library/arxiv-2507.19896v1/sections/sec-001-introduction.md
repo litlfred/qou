@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.847
 latex_coverage_ratio: 0.974
+doc_brief: "Generalized Markov traces and Jucys-Murphy elements — We give a simple construction of Markov traces for Iwahori-Hecke algebras associated with infinite series of crystallographic Coxeter groups."
 ---
 A two-variable link invariant -- the HOMFLY-PT polynomial -- can be recovered using a family of trace functions on Iwahori-Hecke algebras in type $A$ satisfying analogues of the conditions in Markov's theorem for the braid group (usually called ``Markov moves'') \cite{jonesHeckeAlgebraRepresentations1987}. The analogues of Markov moves can be formulated for Iwahori-Hecke algebras of other Coxeter groups, leading to a general notion of the Markov trace, see, for example, \cite{geckTraceFunctionsIwahoriHecke1998}, \cite{geckMarkovTracesKnot2004}, \cite{gomi2006markov},  \cite{websterGeometryMarkovTraces2009}. The Markov traces where classified in type $A$, where there is, up to some change of scaling, a unique Markov trace, by Ocneanu and Jones \cite{jonesHeckeAlgebraRepresentations1987}, and in types $B$ and $D$ by Geck and Lambropoulou \cite{geckMarkovTracesKnot2004}, \cite{geckTraceFunctionsIwahoriHecke1998}. In type $B$, Markov traces produce the invariants of the solid torus links \cite{lambropoulou1994solid} \cite{geckMarkovTracesKnot2004}.
 

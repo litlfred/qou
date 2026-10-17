@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.957
 latex_coverage_ratio: 0.919
+doc_brief: "TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR — Categoriﬁcation is a process of lifting structures to a higher categorical level."
 ---
 We have now described two flavors of decategorification.  One which we will refer to as the {\em Grothendieck decategorification} which is closely connected to the notion of dimension, graded dimension, and Euler characteristic.
 Our second notion of decategorification, which we will call the {\em trace decategorification}, seems to generalize the Grothendieck group decategorification in much the same way that the trace of linear map generalizes the dimension of a vector space $\dim(V) = \tr(1_V)$.   The trace decategorification is closely connected with the usual trace and it gives rise to a notion of traced Euler characteristic.

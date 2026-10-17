@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
 latex_coverage_ratio: 0.968
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 Let $A$ be a weak Hopf algebra and let $B \subset A$ be a weak Hopf subalgebra. We will define a complex $C^\bullet(A, B)$ that generalizes the subcomplex of the co-Hochschild complex of a Hopf algebra consisting of invariants of the adjoint action, cf. [@S; @Sch].
 

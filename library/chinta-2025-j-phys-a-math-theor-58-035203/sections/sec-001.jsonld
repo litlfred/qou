@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/chinta-2025-j-phys-a-math-theor-58-035203/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Introduction",
+  "pageStart": 3,
+  "pageEnd": 7,
+  "contains": [
+    "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-001",
+    "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prop-sec-001-01",
+    "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prop-sec-001-02",
+    "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/thm-sec-001-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/chinta-2025-j-phys-a-math-theor-58-035203/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/chinta-2025-j-phys-a-math-theor-58-035203/manifest.jsonld",
+  "provenance": "ingested"
+}

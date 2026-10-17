@@ -8,6 +8,7 @@ pages: 27-28
 source_pdf: 2502.02662v1.pdf
 source_sha256: 3f87983ce379a8d6
 toc_source: outline
+doc_brief: "The String Dual to Two-dimensional Yang-Mills Theory Revisited — We propose that chiral two-dimensional Yang-Mills theory on a Riemann surface X is dual to a deformed stationary subsector of the"
 ---
 Phase Transitions
 Two-dimensional Yang-Mills theory admits a phase transition on the sphere [11]. Indeed, its

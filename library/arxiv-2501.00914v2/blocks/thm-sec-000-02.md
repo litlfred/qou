@@ -1,1 +1,1 @@
-follows from a combination of two results which may each be of independent interest.
+~\ref{thm:main-lspace-zero} relies on a deep relationship between the symplectic Floer homology of a surface diffeomorphism and the Heegaard Floer homology of its mapping torus, established via a combination of work by Lee--Taubes \cite{lee-taubes} and Kutluhan--Lee--Taubes \cite{klt1}.

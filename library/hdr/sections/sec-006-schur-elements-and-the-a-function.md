@@ -8,6 +8,7 @@ pages: 21-23
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
 toc_source: outline
+doc_brief: "Hecke algebras, generalisations and representation theory — 30 sections: Front matter; Algebras of Finite Type; Blocks"
 ---
 Schur elements and the a-function
 From now on, set R := Z[q, q−1] and let K ⊆C be a ﬁeld such that he algebra K(q)Hq(W, L) is split

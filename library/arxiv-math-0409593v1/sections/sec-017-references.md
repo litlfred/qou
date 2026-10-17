@@ -8,6 +8,7 @@ pages: 21-22
 source_pdf: 0409593v1.pdf
 source_sha256: ad965f5c80838824
 toc_source: outline
+doc_brief: "CATEGORIFICATION OF THE BRAID GROUPS — 19 sections: Front matter; Introduction; Self-equivalences"
 ---
 [AnStr]
 H.H. Andersen and C. Stroppel, Twisting functors on O, Representation Theory 7 (2003),

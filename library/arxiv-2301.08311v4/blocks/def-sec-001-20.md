@@ -1,1 +1,1 @@
-A cylindrical path is defined as a map γ : R→ C∗ such that
+A cylindrical path is defined as a map γ : R →C∗such that

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.954
 latex_coverage_ratio: 0.964
+doc_brief: "$q$-Hodge complexes over the Habiro ring — — Peter Scholze has raised the question whether some variant of the q-de Rham complex is already defined over the Habiro ring H := limm∈N Z[q]∧ (qm−1)."
 ---
 In [\[sec:HabiroRingsEtale\]](#sec:HabiroRingsEtale){reference-type="ref" reference="sec:HabiroRingsEtale"}, we'll recall and generalise the construction of *Habiro rings of étale extensions* from [@HabiroRingOfNumberField], and we'll relate them to the rings of *$q$-Witt vectors* from [@qWitt]. This is a special case of our more general results in [\[sec:HabiroDescent\]](#sec:HabiroDescent){reference-type="ref" reference="sec:HabiroDescent"}, but much less technical, so it will be worthwhile to spell out the étale case first.
 

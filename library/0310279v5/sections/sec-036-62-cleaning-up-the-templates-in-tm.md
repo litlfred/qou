@@ -8,6 +8,7 @@ pages: 106-109
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
 toc_source: outline
+doc_brief: "Stabilization in the braid groups I: MTWS Introduction — 40 sections: Front matter; Introduction; The problem"
 ---
 Cleaning up the templates in T (m)
 Our goal is to prove that no block in any template in T (m) has full braid index, however

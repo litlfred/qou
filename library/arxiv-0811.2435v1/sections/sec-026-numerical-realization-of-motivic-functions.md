@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.987
 latex_coverage_ratio: 0.944
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 47 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 This section is not used in further consideration, its goal is only to show that the abstractly defined ring $\overline{{\cal M}}^{G,\mu}(X)$ can be realized as certain ring of functions with numerical values.
 

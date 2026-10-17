@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.953
 latex_coverage_ratio: 0.86
+doc_brief: "Gentle introduction to Soergel bimodules I: The basics — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules."
 ---
 Kazhdan-Lusztig polynomials were discovered (or invented) in 1979, but it was only in 1990 that Matthew Dyer gave a formula  \cite{Dy} to calculate inductively the Kazhdan-Lusztig basis for a Universal Coxeter system (we will not reproduce here the proof, although it is not a difficult one). In this case, every element has only one expression as a product of elements of $S$. 
 

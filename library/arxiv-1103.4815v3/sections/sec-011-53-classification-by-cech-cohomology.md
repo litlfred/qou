@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.937
 latex_coverage_ratio: 0.942
+doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non-abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal 2-bundles."
 ---
 In this section we prove that Versions I (\v Cech $\Gamma$-1-cocycles) and III ($\Gamma$-bundle gerbes) are equivalent. For this purpose, 
 we extract a \v Cech cocycle from a $\Gamma$-bundle gerbe $\mathcal{G}$ over $M$, and prove that this procedure defines a bijection on the level of equivalence classes (Theorem \ref{th:gerbesclass}). First we have to ensure the existence of appropriate open covers.

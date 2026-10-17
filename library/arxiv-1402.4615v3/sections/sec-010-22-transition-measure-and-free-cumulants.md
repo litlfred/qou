@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.905
 latex_coverage_ratio: 0.966
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials."
 ---
 []{#subsect:TransMeasure label="subsect:TransMeasure"} Kerov [@KerovTransitionMeasure] introduced the notion of *transition measure* of a Young diagram. This is a probability measure $\mu_\lambda$ on the real line $\mathbb{R}$ associated to $\lambda$ and defined by its Cauchy transform: $$G_{\mu_\lambda}(z) = \int_\mathbb{R}\frac{d\mu_\lambda(x)}{z-x} =
 \frac{\prod_{o \in \mathbb{O}_\lambda} z-o}{\prod_{i \in \mathbb{I}_\lambda} z-i}.$$ In particular, transition measure is supported on $\mathbb{I}_\lambda$. Besides, its *moment generating series* is given by $$\sum_{k \ge 0} M^{(1)}_k(\lambda) \, t^k := \frac{1}{t} \, G_{\mu_\lambda}(1/t)

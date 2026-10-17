@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.932
 latex_coverage_ratio: 0.982
+doc_brief: "THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS — The Ptolemy coordinates for boundary-unipotent SL(n, C)-representations of a 3-manifold group were introduced in [7] inspired by the A-coordinates on"
 ---
 Fix an ordering of the $1$-cells of $\T$ and of the cusps of $M$. As mentioned in Remark~\ref{rm:PickRepresentative} the Ptolemy variety can be regarded as a subset of the ambient space $\C^e$. 
 

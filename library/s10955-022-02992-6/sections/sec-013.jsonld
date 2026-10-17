@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/s10955-022-02992-6/sections/sec-013",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Application to Concrete Hard-Core Models",
+  "pageStart": 25,
+  "pageEnd": 41,
+  "contains": [
+    "library/s10955-022-02992-6/blocks/prose-sec-013",
+    "library/s10955-022-02992-6/blocks/thm-sec-013-01",
+    "library/s10955-022-02992-6/blocks/rem-sec-013-02",
+    "library/s10955-022-02992-6/blocks/thm-sec-013-03",
+    "library/s10955-022-02992-6/blocks/thm-sec-013-04",
+    "library/s10955-022-02992-6/blocks/rem-sec-013-05",
+    "library/s10955-022-02992-6/blocks/ex-sec-013-06",
+    "library/s10955-022-02992-6/blocks/lem-sec-013-07",
+    "library/s10955-022-02992-6/blocks/thm-sec-013-08",
+    "library/s10955-022-02992-6/blocks/rem-sec-013-09",
+    "library/s10955-022-02992-6/blocks/thm-sec-013-10",
+    "library/s10955-022-02992-6/blocks/rem-sec-013-11",
+    "library/s10955-022-02992-6/blocks/prop-sec-013-12",
+    "library/s10955-022-02992-6/blocks/thm-sec-013-13",
+    "library/s10955-022-02992-6/blocks/rem-sec-013-14",
+    "library/s10955-022-02992-6/blocks/prop-sec-013-15"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10955-022-02992-6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10955-022-02992-6/manifest.jsonld",
+  "provenance": "ingested"
+}

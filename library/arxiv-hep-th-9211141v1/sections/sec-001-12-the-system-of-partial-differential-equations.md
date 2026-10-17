@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.86
 latex_coverage_ratio: 0.881
+doc_brief: "arXiv:hep-th/9211141v1 1 Dec 1992 — 11 sections: Front matter; INTRODUCTION AND SUMMARY OF RESULT; The System of Partial Differential"
 ---
 []{#subsec:sum_pde label="subsec:sum_pde"} We set $$J=\bigcup_{j=1}^m\left(a_{2j-1},a_{2j}\right)$$ and write $D(J;\lambda)$ for the Fredholm determinant of $K$ acting on $J$. We think of this as a function of $a=(a_1,\ldots,a_{2m})$. Then $$d_a \log D(J;\lambda) = - \sum_{j=1}^{2m} (-1)^j R(a_j,a_j)\, da_j
 \label{dlog_tau}$$ where $R(x,y)$ is the kernel of the operator $K(I-K)^{-1}$ and $d_a$ denotes exterior differentiation with respect to the $a_j$'s. We introduce quantities $$q_j=(I-K)^{-1} A(a_j)\, , \ \ p_j=(I-K)^{-1} A^\prime(a_j)\, ,

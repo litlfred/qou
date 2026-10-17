@@ -8,6 +8,7 @@ pages: 47-51
 source_pdf: 1610.09640v4.pdf
 source_sha256: db5e7a5c5e85f95f
 toc_source: outline
+doc_brief: "Derived Categories Amnon Yekutieli 14 Apr 2019 DERIVED CATEGORIES — This is the fourth (and last) prepublication version of a book on derived categories, that will be published by Cambridge"
 ---
 Deﬁnition 2.7.1. An object I ∈M is called an injective object if for every mor-
 phism γ : M →I and every monomorphism ψ : M ↣N, there exists a morphism

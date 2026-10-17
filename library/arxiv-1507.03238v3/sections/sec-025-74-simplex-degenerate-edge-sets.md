@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.859
 latex_coverage_ratio: 0.932
+doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety for SL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
 ---
 Given a simplex-degenerate edge set $E\in \mathop{\mathrm{T}}(\mathcal T)$. Let $d(E)$ denote the number of degenerate simplices.
 

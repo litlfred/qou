@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.929
 latex_coverage_ratio: 0.958
+doc_brief: "The exponential-logarithmic equivalence classes of surreal numbers — 9 sections: Front matter; Introduction.; Preliminaries on surreal numbers."
 ---
 []{#sect:kappa-sign label="sect:kappa-sign"} For any $a\in\textbf{No}$ and $n\in\mathbb{N}$, we denote by $\kappa_{a,n}:=\log^n(\kappa_a)$ and $\kappa_{a,-n}=\exp^n(\kappa_a)$, where $\log^0$ and $\exp^0$ are equal to the identity map on $\textbf{No}$. The aim of this section is to show that $\kappa_{a,n}$ and $\kappa_{a,-n}$ for any $n$ are elements of $\omega^{\omega^{No}}$, and to give their sign sequence. In order to do so, we introduce the following auxiliary map $\iota$ and give its sign sequence.
 

@@ -1,1 +1,1 @@
-For any δ∈ (0,i Λ) and holomorphic strip u : [0,∞)×
+For any δ ∈(0, iΛ) and holomorphic strip u : [0, ∞) ×

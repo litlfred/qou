@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.857
 latex_coverage_ratio: 0.973
+doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Young diagrams which can be regarded as a natural one-parameter deformation of some classi- cal"
 ---
 []{#subsec:refinedasymptotics label="subsec:refinedasymptotics"} In order to find more subtle relationships between the asymptotics of various quantities appearing in [\[def:approx-factorization-charactersB\]](#def:approx-factorization-charactersB){reference-type="ref" reference="def:approx-factorization-charactersB"} we need an analogue of Equation [\[eq:Kerov-polynomial-gamma0\]](#eq:Kerov-polynomial-gamma0){reference-type="eqref" reference="eq:Kerov-polynomial-gamma0"} between the character $\mathop{\mathrm{Ch}}_l$ and the free cumulants in the generic case $\alpha\neq 1$. We present below two such formulas: the one from [0.0.1](#sec:rough-estimate){reference-type="ref" reference="sec:rough-estimate"} is conceptually simpler and will be sufficient for the scaling when $\alpha$ is fixed; in the case of the double scaling limit we will need a more involved formula from [0.0.2](#sec:top-degree-by-Sniady){reference-type="ref" reference="sec:top-degree-by-Sniady"}.
 

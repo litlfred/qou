@@ -1,1 +1,1 @@
-Let f be continuous along Φ D, D < ∞ and g∈ L1
+Let f be continuous along ΦD, D < ∞and g ∈L1

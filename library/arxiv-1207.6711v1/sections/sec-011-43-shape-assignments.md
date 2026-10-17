@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.903
 latex_coverage_ratio: 0.873
+doc_brief: "GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were"
 ---
 We now introduce the generalized shape parameters. We will need to replace the traditional labeling of the shape parameters $z^\prime$ and $z^{\prime\prime}$ by a notation, which better exhibits the symmetry and naturally allows for a unified treatment of the gluing equations for all $n\geq 2$. 
 

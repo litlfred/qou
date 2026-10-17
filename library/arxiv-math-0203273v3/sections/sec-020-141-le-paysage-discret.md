@@ -8,6 +8,7 @@ pages: 79-112
 source_pdf: 0203273v3.pdf
 source_sha256: 824715d110e34305
 toc_source: inferred
+doc_brief: "arXiv:math/0203273v3 [math.CT] 12 Oct 2002 — 31 sections: Front matter; Introduction; Alg`ebres `a plusieurs objets"
 ---
 14.1.1. Le cas non mono¨ıdal. Soit A une petite K-cat´egorie de Wedderburn. Con-
 sid´erons la cat´egorie G(A) dont les objets sont les sections de πA, un morphisme de

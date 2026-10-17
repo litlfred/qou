@@ -8,6 +8,7 @@ pages: 26-29
 source_pdf: 0906.1500v4.pdf
 source_sha256: 9a586f6d134ca47f
 toc_source: inferred
+doc_brief: "TWISTED ALEXANDER INVARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS — We study a computational method of the hyperbolic Reidemeister torsion (also"
 ---
 the sense that they are given by Poincar´e duality. In the case of link exteriors, using
 such homology orientations we will ﬁx numbers of sign indeterminacy in our formulas.

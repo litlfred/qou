@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.997
 latex_coverage_ratio: 1.0
+doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
 ---
 Wormholes or Einstein-Rosen bridges grow with time.
 To illustrate this fact we  examine the Penrose diagram \ref{Foliated-BTZ2} of an AdS ``eternal" black hole, or what is really two entangled black holes connected by an Einstein-Rosen bridge.

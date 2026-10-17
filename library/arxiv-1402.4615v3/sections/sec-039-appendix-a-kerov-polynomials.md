@@ -8,6 +8,7 @@ pages: 59-60
 source_pdf: 1402.4615v3.pdf
 source_sha256: b6e7c795cd1a7cd2
 toc_source: outline
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials."
 ---
 In this Section, we answer some questions of Lassalle concerning Kerov polyno-
 mials [Las09]. The results are consequences of the methods or results from Section

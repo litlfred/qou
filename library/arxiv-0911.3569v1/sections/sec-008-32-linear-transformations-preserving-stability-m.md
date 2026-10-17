@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.974
+doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
 ---
 \begin{lemma}[Lieb-Sokal Lemma, Lemma 2.1 of \cite{BB5}]
 Let $g(\x)+yf(\x)\in\Stab[\x,y]$ be stable and such that

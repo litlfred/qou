@@ -8,6 +8,7 @@ pages: 3-6
 source_pdf: amc_2730.pdf
 source_sha256: 65730074a2925c6e
 toc_source: outline
+doc_brief: "Braid representatives minimizing the number of simple walks * — Given a knot, we develop methods for finding a braid representative that minimizes the number of simple walks."
 ---
 The colored Jones polynomial and walks along braids
 Given a knot K and integer N ě 2, the colored Jones polynomial JN,Kpqq is a Laurent

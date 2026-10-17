@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/generalised-markov-traces-and-jucys-murphy-element/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Introduction",
+  "pageStart": 1,
+  "pageEnd": 4,
+  "contains": [
+    "library/generalised-markov-traces-and-jucys-murphy-element/blocks/prose-sec-002",
+    "library/generalised-markov-traces-and-jucys-murphy-element/blocks/prop-sec-002-01",
+    "library/generalised-markov-traces-and-jucys-murphy-element/blocks/cor-sec-002-02",
+    "library/generalised-markov-traces-and-jucys-murphy-element/blocks/prop-sec-002-03",
+    "library/generalised-markov-traces-and-jucys-murphy-element/blocks/prop-sec-002-04",
+    "library/generalised-markov-traces-and-jucys-murphy-element/blocks/cor-sec-002-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/generalised-markov-traces-and-jucys-murphy-element/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/generalised-markov-traces-and-jucys-murphy-element/manifest.jsonld",
+  "provenance": "ingested"
+}

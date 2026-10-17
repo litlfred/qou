@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.99
+doc_brief: "Compact Q-balls and Q-shells within a $CP^N$ Skyrme-Faddeev type model — 18 sections: Front matter; Introduction; The extended Skyrme-Faddeev model"
 ---
 To obtain a solution for the radial function $f(r)$, we assume it can be expressed as a power series expansion around the center, $r=0$: $$f(r)=\sum_{k=0}^{\infty}a_k r^k.\label{expansion-center}$$ By substituting this series into the field equation [\[eq:radial\]](#eq:radial){reference-type="eqref" reference="eq:radial"} and expanding the equation into a power series in $r$, we can solve for the coefficients, $a_k$. This is achieved by setting each coefficient of the resulting series to zero, which allows us to determine the unique values of the $a_k$ coefficients that satisfy the field equation. For our calculations, we will focus on the first few coefficients, $a_k$, as they determine the leading behavior of the radial function near the center. The values of these coefficients are heavily dependent on the number $l$, which determines the number of scalar fields, $N=2l+1$.
 

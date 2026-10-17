@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.572
+doc_brief: "Generalized Skyrme Crystals — This letter deals with triply-periodic (crystalline) solutions in a family of Skyrme systems, namely where the ﬁeld takes values in the squashed 3-sphere."
 ---
 We have studied triply-periodic stable solutions (local minima of the energy) in a family of Skyrme-type systems parametrized by $\alpha\in[0,1]$, which interpolates between the standard Skyrme model (at $\alpha=0$) and the Skyrme-Faddeev system (at $\alpha=1$). At $\alpha=0$, the lowest-energy crystal resembles a cubic lattice of half-skyrmion particles, and this picture persists near $\alpha=0$, as one would expect. But for larger values of $\alpha$, various other configurations are preferred (that is, have lower energy-per-charge): for example, vortex-antivortex arrays and multi-sheet structures.
 

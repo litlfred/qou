@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.974
 latex_coverage_ratio: 0.938
+doc_brief: "BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections."
 ---
 Let $Z_{SU(2)_k}[M_3]$ be the partition function of $SU(2)$ Chern-Simons theory with "bare" level $(k-2)$ on $M_3$, also known as the WRT invariant. We use the standard "physics" normalization where $$Z_{SU(2)_k}\left[S^2\times S^1\right]=1,$$ and $$Z_{SU(2)_k}\left[S^3\right]=\sqrt{\frac2k}\sin\left(\frac\pi k\right).$$ The following conjecture was proposed in [@Gukov:2016gkn].[^1]
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.968
 latex_coverage_ratio: 0.953
+doc_brief: "MODIFIED TRACES ON DELIGNE’S CATEGORY Rep(St) — Deligne has deﬁned a category which interpolates among the representations of the various symmetric groups."
 ---
 \label{SS:traces} For any objects $V,W$ of $\cat$ and $f \in \End_{\cat}( V \otimes W)$, set
 \begin{equation}\label{E:trL}

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.939
 latex_coverage_ratio: 0.95
+doc_brief: "Semi-Adequate Closed Braids and Volume — In this paper, we show that the volumes for a family of A-adequate closed braids can be bounded above and below in terms of the twist number, the number of"
 ---
 One of the current aims of knot theory is to strengthen the relationships among the hyperbolic volume of the link complement, the colored Jones polynomial, and data extracted from link diagrams. In a recent monograph, Futer, Kalfagianni, and Purcell ([@Guts], or see [@Survey] for a survey of results) showed that, for sufficiently twisted negative braid closures and for certain Montesinos links, the volume of the link complement can be bounded above and below in terms of the twist number of an A-adequate link diagram. The results for Montesinos links were recently generalized by Purcell and Finlinson in [@Montesinos]. Similar results for alternating links were previously given by Lackenby in [@Lackenby], with the lower bounds improved upon by Agol, Storm, and W. Thurston in [@AgolStorm] and the upper bounds improved upon by Agol and D. Thurston in the appendix of [@Lackenby] and more recently improved upon by Dasbach and Tsvietkova in [@Refined]. In a previous paper ([@Me]), the author showed that the volumes for a large family of A-adequate link complements can be bounded in terms of two diagrammatic quantities: the twist number and the number of certain alternating tangles in a given A-adequate diagram.
 

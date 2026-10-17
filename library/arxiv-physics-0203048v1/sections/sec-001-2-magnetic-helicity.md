@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.987
 latex_coverage_ratio: 0.583
+doc_brief: "arXiv:physics/0203048v1 [physics.plasm-ph] 15 Mar 2002 — An expression for a third-order link integral of three magnetic ﬁelds is presented."
 ---
 Magnetic helicity of a field $\bB$ with arbitrary vector potential $\bA$ is defined as $$H(\bB) = \int_V \bA \cdot \bB \dxxx\,,  \quad\quad\quad 
   \bB \cdot \bn|_{\partial V} =0,                  \label{heldef}$$ which can readily be shown to be gauge invariant if no magnetic flux crosses the boundary of the volume. Since it is quadratic in magnetic flux it is often referred to as a second-order topological invariant. Magnetic helicity measures the total mutual linkage of magnetic flux. This interpretation can be motivated if we envisage a simple system of two isolated and closed flux tubes $U_1$ and $U_2$ with vanishingly small cross-section. The latter condition ensures that the (self-)helicities of the flux tubes vanish. Moffatt (1969) has shown that for this configuration the helicity integral yields $H(\bB) = 2\,\phi_1\phi_2\,\text{lk}(U_1,U_2)$, where $\text{lk}(U_1,U_2)$ is the Gauß  linking number (Gauß 1867) of the two tubes and where $\phi_i$ is the magnetic flux in the tube $U_i$. Introducing an asymptotic linking number, Arnol'd (1974) was able to extend this interpretation to the generic case where field lines are not necessarily closed (see also Arnol'd & Khesin 1998, Part III, §4).

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.948
 latex_coverage_ratio: 0.974
+doc_brief: "BRAID ORDERING AND THE GEOMETRY OF CLOSED BRAID — The relationships between braid ordering and the ge- ometry of its closure is studied."
 ---
 Now we give a geometric description of Dehornor ordering given in [@fgrrw]. Let $\Gamma$ be a graph in $D_{n}$ consisting of horizontal line which connects puncture points. See figure [1](#fig:braidorder_meaning){reference-type="ref" reference="fig:braidorder_meaning"}. We identify braid groups as a relative mapping class group $MCG(D_{n},\partial D_{n})$, which is a group of isotopy classes of homeomorphisms of $D_{n}$ whose restriction to boundary $\partial D_{n}$ is an identity. For braid $\alpha, \beta$, consider the image of graph $\Gamma$. By performing isotopy, we can assume $\alpha(\Gamma)$ and $\beta(\Gamma)$ have minimal intersections. If $\alpha \neq \beta$, these graphs must be different, so at some puncture point two graphs will diverge. We say $\beta >_{geom} \alpha$ if at divergence point, $\beta(\Gamma)$ moves left side of $\alpha(\Gamma)$. See figure [1](#fig:braidorder_meaning){reference-type="ref" reference="fig:braidorder_meaning"}. In [@fgrrw] it is proved that this relation $>_{geom}$ coincide with Dehornoy ordering $>$.
 

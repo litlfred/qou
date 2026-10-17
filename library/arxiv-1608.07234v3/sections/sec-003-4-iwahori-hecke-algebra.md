@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.833
 latex_coverage_ratio: 0.943
+doc_brief: "DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS — We describe a graded extension of the usual Hecke algebra: it acts in a graded fashion on the cohomology of an arithmetic group Γ."
 ---
 \label{IHA}
  In this section, we collect a few important facts about Iwahori--Hecke algebras. 

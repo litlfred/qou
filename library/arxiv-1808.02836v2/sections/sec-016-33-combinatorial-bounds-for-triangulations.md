@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.957
 latex_coverage_ratio: 0.974
+doc_brief: "On minimal ideal triangulations of cusped hyperbolic 3–manifolds Introduction — Previous work of the authors studies minimal triangulations of closed 3–manifolds using a characterisation of low"
 ---
 The set-up and notation of the previous subsection is continued. Let $$\begin{aligned}
 n_{\mathfrak{qtt}}(\mathcal{T})&= \text{ number of tetrahedra of type } \Delta_{\mathfrak{qtt}}, \\

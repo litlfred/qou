@@ -8,6 +8,7 @@ pages: 11-11
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
 toc_source: outline
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 In this ﬁrst chapter, we introduce an attempt to describe established results in particle
 physics, while working from the fewest initial assumptions possible. Our only input will

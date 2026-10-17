@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.892
 latex_coverage_ratio: 0.953
+doc_brief: "Volume Conjecture and quantum hyperbolic invariants: the figure eight knot complement — We compute the real part of the semi-classical limit of the sequence of quantum hyperbolic invariants (QHI) of"
 ---
 \label{4_1} Fix an orientation of $M=S^3\setminus 4_1$. Denote by $\lambda_{K}$ and $\mu_{K}$ the canonical longitude and the meridian of $K$, oriented so that the ordered pair $(\mu_K,\lambda_K)$ followed by the outward normal to $\partial \bar{M}$ defines a positive frame of $\bar{M}$. We denote also by $\lambda_K$, $\mu_K$ their classes in $H_1(\partial \bar M; \mz)$.
 

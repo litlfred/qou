@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.957
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:hep-th/9304063v2 29 Jan 1999 — 10 sections: Front matter; Introduction and Statement of Resu; The System of Partial Differential"
 ---
 Again we take $J=(0,s)$ and consider asymptotics as $s\ra\iy$. From the random matrix point of view the interesting quantities are E(n;s) :=    D(J;) \_. []{#E_n label="E_n"} This is the probability that exactly $n$ eigenvalues lie in $J$. The asymptotics of $E(0,s)=D(J;1)$ are obtained from ([\[Drep\]](#Drep){reference-type="ref" reference="Drep"}) using the asymptotics of $q(s;1)$ or equivalently $\sigma(s;1)$ obtained from ([\[qeq\]](#qeq){reference-type="ref" reference="qeq"}) or ([\[sigma_eq\]](#sigma_eq){reference-type="ref" reference="sigma_eq"}), respectively. (Our derivation is heuristic since as far as we are aware the corresponding Painlevé connection problem has not been rigorously solved.) We find that as $s\ra\iy$, $$\begin{aligned}
 E(0;s)&=&\tau_{\al}\,  {e^{-s/4+\al\st{s}}\over

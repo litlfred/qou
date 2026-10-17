@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.984
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 The cohomology theory that controls deformations of tensor categories and tensor functors is the cohomology theory developed in [@CY; @Y1; @Y2; @Da], which we will call the Yetter cohomology theory. This theory associates to any tensor category ${\mathcal C}$ and a tensor functor $F$ for ${\mathcal C}$ to another tensor category ${\mathcal C}'$, a sequence of cohomology spaces $H^i_F({\mathcal C})$ (See Section 7). If $F$ is the identity functor, then these groups are simply denoted by $H^i({\mathcal C})$. Namely, first order deformations of ${\mathcal C}$ are elements of $H^3({\mathcal C})$, while first order deformations of a tensor structure on a given functor $F$ between fixed tensor categories ${\mathcal C},{\mathcal C}'$ are elements of $H^2_F({\mathcal C})$. Obstructions to such deformations lie, respectively, in $H^4({\mathcal C})$ and $H^3_F({\mathcal C})$.
 

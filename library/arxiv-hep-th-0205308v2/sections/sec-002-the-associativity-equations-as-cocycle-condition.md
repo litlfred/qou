@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.948
 latex_coverage_ratio: 0.96
+doc_brief: "WDVV Equations as Functional Relations — 6 sections: Front matter; Introduction; WDVV and dispersionless Hirota equ"
 ---
 We shall now derive some consequences of ([\[defc\]](#defc){reference-type="ref" reference="defc"}). For a fixed index $a$ $$d\varphi_k = dT_{ai}\,({\sf C}_a\sp{-1})\sp{i}_{\ k}$$ whence for any $b$ $$d\varphi_k = dT_{ai}\,({\sf C}_a\sp{-1})\sp{i}_{\ k}
 = dT_{bj}\,({\sf C}_b\sp{-1})\sp{j}_{\ k}.$$ From these it follows that $$\label{tcct}

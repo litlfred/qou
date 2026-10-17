@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.938
 latex_coverage_ratio: 1.0
+doc_brief: "Quantum Mechanics of Plancherel Growth — Growth of Young diagrams, equipped with Plancherel measure, follows the automodel equation of Kerov."
 ---
 Fluctuations of Young diagrams have been under investigation in the mathematics literature \cite{Kerovfluctuation,johansson1998,2003math.4010I,2005math.1112S,2006math.7635B,BogachevSu,2014arXiv1402.4615D,2016arXiv160805163E,2017arXiv170402352D,2004math.5191M,2004math.5258M,2006math.6431C}. A \emph{rescaled} Young diagram defined in (\ref{eq:vk}) in the $k\ra \infty$ limit takes the form of limit shape (denoted by $\Omega$, as defined in \eqref{eq:kerovfunction}). However there can be large $k$ corrections to this result and we call such corrections as fluctuations of limit shape diagram $\Omega$. Kerov studied the Gaussian fluctuations around the limit shape of Young diagrams $\Omega$ endowed with Plancherel measure in \cite{Kerovfluctuation}. In \cite{2003math.4010I}, Ivanov and Olshanki reconstructed a proof of Kerov's result on fluctuations around the limit shape from his unpublished work notes, 1999. The central result pertains to large $k$ corrections to the limit shape which can be stated as
 

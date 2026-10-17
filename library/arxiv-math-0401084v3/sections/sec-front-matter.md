@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0401084v3.pdf
 source_sha256: f56bbd4cee4f3418
 toc_source: outline
+doc_brief: "THE COLORED JONES POLYNOMIALS OF THE — We calculate limits of the colored Jones polynomials of the ﬁgure- eight knot and conclude that in most cases they determine the volumes and the Chern–Simons"
 ---
 arXiv:math/0401084v3  [math.GT]  9 Mar 2006
 THE COLORED JONES POLYNOMIALS OF THE

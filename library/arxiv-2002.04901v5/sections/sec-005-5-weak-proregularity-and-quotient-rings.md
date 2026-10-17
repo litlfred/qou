@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 0.955
+doc_brief: "WEAK PROREGULARITY, DERIVED COMPLETION, ADIC FLATNESS — We begin by recalling the role that weak proregularity of an ideal in a commu- tative ring has in derived completion and adic ﬂatness."
 ---
 Again $A$ is some commutative ring. The purpose of this extremely technical 
 section is to prove Theorem \ref{thm:105}. 

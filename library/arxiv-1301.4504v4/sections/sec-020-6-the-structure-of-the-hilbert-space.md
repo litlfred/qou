@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.99
 latex_coverage_ratio: 0.998
+doc_brief: "Quantum Computation vs. Firewalls — In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue"
 ---
 []{#options label="options"} The main argument of this paper is now complete, and although the paper is already long, we can't resist making a few comments about the possible implications of our results for how to think about the interior of a black hole. In the introduction we briefly discussed two alternatives, "strong complementarity" and "standard complementarity", for how to think about Alice the infalling observer's quantum mechanics. It is very important to decide which, if either, of these frameworks is the correct way to think about black hole interiors. In this section we assess the status of each in turn in light of our computational arguments. This section has substantial overlap with a paper by Susskind [@Susskind:2013tg] appearing simultaneously with this one, and which explains some of these ideas in more detail.
 

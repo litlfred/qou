@@ -8,6 +8,7 @@ pages: 112-115
 source_pdf: 0203273v3.pdf
 source_sha256: 824715d110e34305
 toc_source: inferred
+doc_brief: "arXiv:math/0203273v3 [math.CT] 12 Oct 2002 — 31 sections: Front matter; Introduction; Alg`ebres `a plusieurs objets"
 ---
 pos´e de caract´eristique nulle), pour un K-groupe afﬁne G et une extension L/K, il
 y a lieu de distinguer entre les L-groupes afﬁnes pRed(G×K L) et pRed(G)×K L.

@@ -8,6 +8,7 @@ pages: 8-11
 source_pdf: Maximal-Hoermander-q-Var-revised-v03.pdf
 source_sha256: 135332c04a1b3bb8
 toc_source: outline
+doc_brief: "q-variational Hörmander functional calculus and Schrödinger and wave maximal estimates — 11 sections: Front matter; Introduction; R-boundedness"
 ---
 Preliminaries
 In this section, we recall the notions on Banach space geometry and functional calculus that we

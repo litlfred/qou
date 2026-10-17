@@ -8,6 +8,7 @@ pages: 5-7
 source_pdf: Download.pdf
 source_sha256: ca9639465b08d34c
 toc_source: outline
+doc_brief: "Concentration of empirical distribution functions with applications to non-i.i.d. models — 12 sections: Front matter; Introduction; Empirical Poincaré inequalities"
 ---
 We assume that the random variables X1,...,Xn have a joint distribution μ on Rn, satisfying
 the Poincaré-type inequality (1.1). For a bounded smooth function f on the real line, we apply it

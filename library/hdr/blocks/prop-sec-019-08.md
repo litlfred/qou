@@ -1,1 +1,1 @@
-Let λ, λ′∈P (l,n ). If [∆(Eλ) : L(Eλ′
+Set B := {E ∈Irr(W) | KZ(L(E))̸ = 0}.

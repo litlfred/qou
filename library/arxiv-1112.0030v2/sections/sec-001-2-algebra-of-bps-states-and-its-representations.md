@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.933
 latex_coverage_ratio: 0.971
+doc_brief: "Homological algebra of knots and BPS states Sergei Gukov and Marko Stoˇsi´c — It is known that knot homologies admit a physical description as spaces of open BPS states."
 ---
 \label{sec:algebra}
 

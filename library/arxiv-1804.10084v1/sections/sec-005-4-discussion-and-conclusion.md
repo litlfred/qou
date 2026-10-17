@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 0.525
+doc_brief: "Concentration of Lipschitz Functions of Negatively Dependent Variables — We explore the question whether Lipschitz functions of random variables under various forms of negative correlation satisfy"
 ---
 Let us discuss briefly the notion of negative regression and how it relates to other notions of negative dependence. It is fair to say that most known examples that satisfy negative association or negative regression actually satisfy the strong Rayleigh property as well. For example, random variables arising in the context of random spanning trees, determinantal point processes and exclusion dynamics processes are in this category. However, there are ensembles of random variables satisfying negative regression and not stronger notions of negative dependence. We want to mention a few examples here.
 

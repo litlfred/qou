@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.959
 latex_coverage_ratio: 0.959
+doc_brief: "Concentration of Lipschitz functionals of determinantal and other strong Rayleigh measures — Let {X1, . . ."
 ---
 Let $\{ X_n : n \geq 1 \}$ be independent Bernoulli random variables with respective means $\{ p_n \}$. Let $S_n := \sum_{k=1}^n X_k$ denote the partial sums, $\mu_n := {\mathbb E}S_n = \sum_{k=1}^n p_k$ denote the means and $V_n := \sum_{k=1}^n p_k (1-p_k)$ denote the variance of $S_n$. The simple and well known one-sided tail estimate for $S_n$ is the classical Gaussian bound $$\label{eq:chernoff}
 {\mathbb P}(S_n - \mu_n \geq a) \leq

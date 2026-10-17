@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.894
 latex_coverage_ratio: 0.957
+doc_brief: "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight."
 ---
 We will interpret Proposition [\[neglipropbi\]](#neglipropbi){reference-type="ref" reference="neglipropbi"} as saying that the function $M_{2,m}(z,w)$ is a local bi-reproducing kernel $\text{mod}(m\mathrm{e}^{-\delta m})$, with $\delta=\delta_0>0$. Generally, we say that a function $L_m(z,w)$ defined on ${\mathbb D}(z_0,r)$ and biholomorphic in $z$ is a *a local bi-reproducing kernel* $\text{mod}(\mathrm{e}^{-\delta m})$ if $$u(z)=\int_{\Omega}u(w)\chi_0(w)L_m(z,w)\,\mathrm{e}^{-2mQ(w)}\mathrm{d}A(w) 
 +\mathrm{O}(\|u\|_{m} \mathrm{e}^{mQ(z)-m\delta}),

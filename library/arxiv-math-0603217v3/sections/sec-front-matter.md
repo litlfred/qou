@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0603217v3.pdf
 source_sha256: d7375d4fee00dd98
 toc_source: outline
+doc_brief: "A VERSION OF THE VOLUME CONJECTURE — We propose a version of the volume conjecture that would relate a certain limit of the colored Jones polynomials of a knot to the volume function deﬁned by a"
 ---
 arXiv:math/0603217v3  [math.GT]  15 Apr 2006
 A VERSION OF THE VOLUME CONJECTURE

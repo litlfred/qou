@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.892
 latex_coverage_ratio: 0.961
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 Before we describe the last step of our construction of the knot invariant let us discuss the structure of the scheme $\SymbolPrint{\calX^{crit}_\ell}:=\Spec(R_\ell)$. First, we describe a particular set of generators of the ideal $\Icr_\ell$. Let us notice that we can rewrite the intermediate potential $W_{i,i+1}$ as follows $$\label{eq: two forms of crit}
 \SymbolPrint{W_{i,i+1}}= \Tr(\Ad^{-1}_{g_i}(X)Y_i-\Ad^{-1}_{g_{i+1}}(X)Y_{i+1})$$

@@ -8,6 +8,7 @@ pages: 22-22
 source_pdf: 1-s2.0-S002212362200012X-main.pdf
 source_sha256: 6fc7d28c8d40bf42
 toc_source: outline
+doc_brief: "Journal of Functional Analysis Log concavity and concentration of Lipschitz functions on the Boolean hypercube — 15 sections: Front matter; Log concavity and concentration of; Introduction"
 ---
 [1] Nima Anari, Kuikui Liu, Shayan Oveis Gharan, Spectral independence in high-dimensional ex-
 panders and applications to the hardcore model, arXiv preprint, arXiv :2001 .00303, 2020.

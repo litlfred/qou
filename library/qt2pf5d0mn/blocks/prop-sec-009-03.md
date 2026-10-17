@@ -1,1 +1,1 @@
-LetD0 =D({e},G,ρ 0,a 0), then
+Let D0 = D({e}, G, ρ0, a0), then

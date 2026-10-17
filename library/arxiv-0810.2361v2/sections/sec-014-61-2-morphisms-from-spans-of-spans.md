@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.96
 latex_coverage_ratio: 0.956
+doc_brief: "2-VECTOR SPACES AND GROUPOIDS — This paper describes a relationship between essentially ﬁnite groupoids and 2-vector spaces."
 ---
 We begin by noting that the diagram ([\[eq:spanspan\]](#eq:spanspan){reference-type="ref" reference="eq:spanspan"}), which weakly commutes up to isomorphisms $\zeta_s$ and $\zeta_t$, gives rise to a diagram of pullback functors: $$\label{eq:spanspanpullback}
 \xymatrix{

@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: S0025-5718-07-02027-3.pdf
 source_sha256: 080b5ac8542ff19c
 toc_source: outline
+doc_brief: "MATHEMATICS OF COMPUTATIONS 0025-5718(07)02027-3 — We describe an algorithm for computing Coleman’s p-adic poly- logarithms up to a given precision."
 ---
 It is well known that, for a number ﬁeld k with ring of integers Ok, there is a
 relation between the regulator of the group of units of Ok, O∗

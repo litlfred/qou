@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-2303.08330v2",
+  "title": "A Cable Knot and BPS-Series II",
   "contains": [
+    "library/arxiv-2303.08330v2/sections/sec-front-matter",
     "library/arxiv-2303.08330v2/sections/sec-000",
     "library/arxiv-2303.08330v2/sections/sec-001",
     "library/arxiv-2303.08330v2/sections/sec-002",
@@ -21,7 +22,9 @@
     "library/arxiv-2303.08330v2/sections/sec-007",
     "library/arxiv-2303.08330v2/sections/sec-008",
     "library/arxiv-2303.08330v2/sections/sec-009",
-    "library/arxiv-2303.08330v2/sections/sec-010"
+    "library/arxiv-2303.08330v2/sections/sec-010",
+    "library/arxiv-2303.08330v2/sections/sec-011",
+    "library/arxiv-2303.08330v2/sections/sec-012"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -34,7 +37,9 @@
   },
   "meta": {
     "doc_id": "arxiv-2303.08330v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "2303.08330v2.pdf",
     "source_sha256": "94981fa0a792b3fab2d0d5f6c2376a6de076a4198f4bff31c908e20e376d9db0",
     "pages": 17,
@@ -45,8 +50,8 @@
       "stamp_date": "9 Jan 2024"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

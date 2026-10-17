@@ -8,6 +8,7 @@ pages: 8-11
 source_pdf: S0025-5718-07-02027-3.pdf
 source_sha256: 080b5ac8542ff19c
 toc_source: outline
+doc_brief: "MATHEMATICS OF COMPUTATIONS 0025-5718(07)02027-3 — We describe an algorithm for computing Coleman’s p-adic poly- logarithms up to a given precision."
 ---
 To compute Lin(z) for z̸ = 1 in U1 we use the following result.
 Proposition 5.1 ([7, Proposition 7.1]). For n ≥2 the function

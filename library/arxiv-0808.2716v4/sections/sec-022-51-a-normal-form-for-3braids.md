@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.953
 latex_coverage_ratio: 0.979
+doc_brief: "CUSP AREAS OF FAREY MANIFOLDS — This paper gives the ﬁrst explicit, two–sided estimates on the cusp area of once– punctured torus bundles, 4–punctured sphere bundles, and 2–bridge link complements."
 ---
 We begin with some notation. Let $\sigma_1$ and $\sigma_2$ be generators for $B_3$, the braid group on three strands, as in Figure [\[fig:3braid-generators\]](#fig:3braid-generators){reference-type="ref" reference="fig:3braid-generators"}. Thus a positive word in $\sigma_1$ and $\sigma_2^{-1}$ represents an alternating braid diagram. Let $C =
 (\sigma_1 \sigma_2)^3$ denote a full twist of all three strands; $C$ generates the center of $B_3$. For a braid $w \in B_3$, let $\hat{w}$ denote the link obtained as the closure of $w$. Note that $\hat{w}$ only depends on the conjugacy class of $w$. We denote the conjugacy relation by $\sim$.

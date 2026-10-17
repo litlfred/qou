@@ -8,6 +8,7 @@ pages: 127-128
 source_pdf: 0203273v3.pdf
 source_sha256: 824715d110e34305
 toc_source: inferred
+doc_brief: "arXiv:math/0203273v3 [math.CT] 12 Oct 2002 — 31 sections: Front matter; Introduction; Alg`ebres `a plusieurs objets"
 ---
 PETER O’SULLIVAN
 The object of this appendix is to determine when proreductive envelopes are ﬁ-

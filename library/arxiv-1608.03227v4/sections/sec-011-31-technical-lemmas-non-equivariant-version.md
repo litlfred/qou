@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.952
 latex_coverage_ratio: 0.968
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 We keep notations consistent with the previous section. Let $\SymbolPrint{\Mod_{per}}(\calZ)$ be a category of $\mathbb{Z} _2$-graded free $\CC[\calZ]$ modules with endomorphisms. An object $\calF\in \Mod_{per}(\calZ)$ is a pair $(M,D)$, $M=M^0\oplus M^1$, $M^i=\CC[\calZ]^{d_i}$ and $D\in \Hom_{\CC[\calZ]}(M^1,M^0)\oplus \Hom_{\CC[\calZ]}(M^0,M^1)$. The space of morphisms between two elements of $\Mod_{per}(\calZ)$ consists of morphisms of the corresponding $\CC[\calZ]$-modules that intertwine the endomorphisms.
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.945
 latex_coverage_ratio: 1.0
+doc_brief: "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL — We study the behavior of the degree of the colored Jones polynomial and the boundary slopes of knots under the operation of cabling."
 ---
 To define the colored Jones polynomial, we first recall the definition of the Chebyshev polynomials of the second kind. For $n \ge 0$, the polynomial $S_n(x)$ is defined recursively as follows:
 \begin{equation}

@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0707.2052v1.pdf
 source_sha256: 0a1d1cca848706be
 toc_source: outline
+doc_brief: "The Mukai pairing, I: a categorical approach — We study the Hochschild homology of smooth spaces, emphasizing the importance of a pairing which generalizes Mukai’s pairing on the cohomology of K3"
 ---
 arXiv:0707.2052v1  [math.AG]  13 Jul 2007
 The Mukai pairing, I: a categorical approach

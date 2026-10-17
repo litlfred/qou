@@ -8,6 +8,7 @@ pages: 86-87
 source_pdf: 1608.07234v3.pdf
 source_sha256: 311730670d2fdcb7
 toc_source: outline
+doc_brief: "DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS — We describe a graded extension of the usual Hecke algebra: it acts in a graded fashion on the cohomology of an arithmetic group Γ."
 ---
 [1] Patrick Allen, Bao Le Hung, Ana Caraiani, Frank Calegari, Toby Gee, David Helm, James New-
 ton, Richard Taylor, Jack Thorne, and Peter Scholze. Potential automorphy over CM ﬁelds. preprint,

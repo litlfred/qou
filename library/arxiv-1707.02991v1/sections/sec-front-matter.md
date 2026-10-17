@@ -8,5 +8,6 @@ pages: 1-1
 source_pdf: 1707.02991v1.pdf
 source_sha256: f4f539f74403dd24
 toc_source: outline
+doc_brief: "BPS states, knots and quivers — 6 sections: Front matter; BPS states, knots and quivers; Moduli of quiver representations"
 ---
 CALT-2017-039

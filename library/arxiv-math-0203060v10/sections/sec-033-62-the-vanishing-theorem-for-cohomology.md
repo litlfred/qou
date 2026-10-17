@@ -8,6 +8,7 @@ pages: 25-27
 source_pdf: 0203060v10.pdf
 source_sha256: 2ccb480f4bd4a970
 toc_source: outline
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 dimensional semisimple (and hence, cosemisimple) weak Hopf algebra.
 Lemma 6.2. Suppose that A is indecomposable. Let qi be a primitive idempotent

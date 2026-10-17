@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.984
+doc_brief: "Concentration of Measure Techniques and Applications — 25 sections: Front matter; Biographical Sketch; Acknowledgments"
 ---
 The Fisher-Yates algorithm is a method of obtaining a uniform random permutation from a finite set. The algorithm was first introduced by Fisher and Yates in [@FisherYates]. Their original introduction of the algorithm was as a \"paper and pencil\" type algorithm for generating a random permutation of $n$ numbers by hand. The algorithm was first presented as a computer algorithm by Durstenfeld [@Durstenfeld] and became more widely known in a work by Knuth [@Knuth].
 

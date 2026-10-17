@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.992
 latex_coverage_ratio: 0.849
+doc_brief: "arXiv:nucl-th/0006014v1 9 Jun 2000 — 20 sections: Front matter; Introduction; The model"
 ---
 The difference between the masses of neutron and proton represents the most basic cause for CSB of the nuclear force. Therefore, it is important to have a very thorough accounting of this effect.
 

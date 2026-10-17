@@ -8,6 +8,7 @@ pages: 57-60
 source_pdf: 1101.3374v1.pdf
 source_sha256: 01d76c1d259c1d51
 toc_source: outline
+doc_brief: "Pontryagin invariants and integral formulas for Milnor's triple linking number — To each three-component link in the 3-sphere, we associate a geometrically natural characteristic map from the 3-torus"
 ---
 [1820]
 Jean-Baptiste Biot and Felix Savart, Note sur le magnetisme de la pile de Volta, Annales

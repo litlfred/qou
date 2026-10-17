@@ -8,6 +8,7 @@ pages: 23-24
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
 toc_source: outline
+doc_brief: "Hecke algebras, generalisations and representation theory — 30 sections: Front matter; Algebras of Finite Type; Blocks"
 ---
 Families of characters and Rouquier families
 The families of characters are a special partition of the set of irreducible representations of W. In the

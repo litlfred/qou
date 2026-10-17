@@ -1,1 +1,1 @@
-If a = (a1,...,a n), b = (b1,...,b n−2) satisfy
+If a = (a1, ..., an), b = (b1, ..., bn−2) satisfy

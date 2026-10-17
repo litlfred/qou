@@ -8,6 +8,7 @@ pages: 22-33
 source_pdf: 1608.02961v3.pdf
 source_sha256: ef3805c23133b8f2
 toc_source: outline
+doc_brief: "Perturbative and nonperturbative aspects of complex Chern-Simons Theory Contents — We present an elementary review of some aspects of Chern-Simons theory with complex gauge group SL(N, C)."
 ---
 The Quantum Modularity Conjecture
 Our ﬁnal topic concerns the relation between complex Chern-Simons theory and Zagier’s

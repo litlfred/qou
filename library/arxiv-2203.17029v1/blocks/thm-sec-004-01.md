@@ -1,1 +1,1 @@
-The equation ( 28) has two important extensions, each containing important informa tion
+~\ref{thm.heine} states that the generalised $q$-hypergeometric equation in

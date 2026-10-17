@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.994
 latex_coverage_ratio: 0.524
+doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials Introduction — We elaborate on the recent suggestion to consider averaging of Cauchy"
 ---
 In this paper we raised the trick of [@2212.04859] to the level of a *method*, applicable to a large variety of functions and providing a unified treatment of the so far sporadic set of amusing identities. We emphasize its conceptual relation to the Borel transform, which is used in physics to explain and put under control the ambiguity of divergent series. As we demonstrate, the abilities of our suggested *combinatorial Borel transform* are much wider and applications are not restricted to divergent series. There are plenty of different directions to develop these ideas, and also a number of conceptual questions to resolve, of which we mention just two.
 

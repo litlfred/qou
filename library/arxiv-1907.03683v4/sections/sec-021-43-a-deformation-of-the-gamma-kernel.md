@@ -8,6 +8,7 @@ pages: 26-28
 source_pdf: 1907.03683v4.pdf
 source_sha256: eb8cc2ddfc8c0739
 toc_source: outline
+doc_brief: "EXPLICIT DESCRIPTION OF CHRISTOFFEL DEFORMATIONS AND — Christoﬀel deformation of a measure on the real line consists of multipying this measure by a squared polynomial having its roots in R."
 ---
 in the principal or in the complementary series cases. In [9] and [11], the authors show that
 with such a choice of parameters, the z-measure, viewed as a point process on Z′, converges as

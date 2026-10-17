@@ -8,6 +8,7 @@ pages: 31-35
 source_pdf: 2302.08363v2.pdf
 source_sha256: c2244e03b17048fb
 toc_source: outline
+doc_brief: "On the structure of trans-series in quantum field theory — Many observables in quantum field theory can be expressed in terms of trans-series, in which one adds to the perturbative series a typically"
 ---
 Conclusions and open problems
 In this paper we have addressed a question which we think is important in the resurgence program

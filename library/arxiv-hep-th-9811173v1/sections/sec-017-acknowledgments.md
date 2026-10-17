@@ -8,6 +8,7 @@ pages: 27-54
 source_pdf: 9811173v1.pdf
 source_sha256: 986bf57947746523
 toc_source: inferred
+doc_brief: "arXiv:hep-th/9811173v1 19 Nov 1998 — We identify 998 closed hyperbolic 3-manifolds whose volumes are rationally related to Dedekind zeta values, with coprime integers a and b giving a b vol(M) ="
 ---
 We thank David Bailey, Oliver Goodman, and Al Manoharan, for adapting PSLQ, Snap,
 and SnapPea to our chosen platforms; without their personal help our work would not

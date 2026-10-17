@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.976
 latex_coverage_ratio: 0.984
+doc_brief: "Iterated ﬁltering methods for Markov process epidemic models — Dynamic epidemic models have proven valuable for public health decision makers as they provide useful insights into the understanding"
 ---
 In the following we perform inference for the two epidemiological parameters $\beta$ and $\gamma$ on a set of simulated data from the model where we apply the iterated filtering algorithm presented in Section [\[iterated_filtering\]](#iterated_filtering){reference-type="ref" reference="iterated_filtering"}.\
 **Data** We consider a closed population with $\mathcal{N}=10\ 000$ individuals of whom one is initially infectious and the rest are susceptible. A realization from the model presented above with $\beta=1$ and $\gamma=0.5$ for $N=50$ weeks where $t_n=n$ for $n=1,\dots,N$ was simulated. Figure [1](#sim_data){reference-type="ref" reference="sim_data"} shows the number of weekly reported cases where it is assumed that all cases are reported.

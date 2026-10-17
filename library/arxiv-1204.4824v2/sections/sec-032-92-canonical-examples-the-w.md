@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.922
 latex_coverage_ratio: 0.99
+doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
 ---
 The $\wnet_{\vartheta}$ discussed in previous sections, which arose naturally from the
 physics of theories of class $S$, are essentially examples of spectral networks.

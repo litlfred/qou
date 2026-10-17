@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.989
 latex_coverage_ratio: 0.967
+doc_brief: "Hochschild homology of aﬃne Hecke algebras Maarten Solleveld Contents — Let H = H(R, q) be an aﬃne Hecke algebra with complex, possibly unequal parameters q, which are not roots of unity."
 ---
 Let $k$ be real valued and let $q$ be positive. We will investigate what happens to the 
 homology of the algebras 

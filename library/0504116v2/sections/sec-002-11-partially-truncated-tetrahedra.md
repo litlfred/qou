@@ -8,6 +8,7 @@ pages: 2-4
 source_pdf: 0504116v2.pdf
 source_sha256: 24a8c998e40aed5d
 toc_source: outline
+doc_brief: "On deformations of hyperbolic 3-manifolds with geodesic boundary (Frigerio, AGT 6 (2006) 435–457) — the solution variety of consistency equations for a geometric partially truncated triangulation…"
 ---
 Partially truncated tetrahedra
 A partially truncated tetrahedron is a pair (∆, I), where ∆is a tetrahedron and I is a

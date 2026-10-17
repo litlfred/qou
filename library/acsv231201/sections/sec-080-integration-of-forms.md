@@ -8,6 +8,7 @@ pages: 470-474
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
 toc_source: outline
+doc_brief: "Analytic Combinatorics in Several Variables Expanded Second Edition — 98 sections: Front matter; Preface to the second edition; Preface to the first edition"
 ---
 The only thing remaining before deﬁning integration on manifolds is to discuss
 domains of integration. For each p ≥1, let ∆p denote the standard p-simplex

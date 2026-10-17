@@ -8,6 +8,8 @@ pages: 10-19
 source_pdf: ki52.pdf
 source_sha256: 35ad4ee5a00d4a18
 toc_source: inferred
+doc_brief: "DOI 10.4171/QT/83 — We give a presentation of the asymptotic expansion of the Kashaev invariant of the 52 knot."
+duplicate_of: "104171-qt-83"
 ---
 In this section, we calculate Gaussian integrals by the saddle point method. We calculate
 a Gaussian integral in Proposition 3.1, a Gaussian integral with perturbative terms in

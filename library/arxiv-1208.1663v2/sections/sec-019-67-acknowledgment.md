@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.875
 latex_coverage_ratio: 0.549
+doc_brief: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of ideal triangulations of 3-manifolds with r torii boundary"
 ---
 The author wishes to thank Greg Blekherman, Nathan Dunfield, Christoph Koutschan, Henry Segerman and Josephine Yu for enlightening conversations. The author wishes to especially thank Tudor Dimofte for explaining the 3D index, and for his generous sharing of his ideas.
 

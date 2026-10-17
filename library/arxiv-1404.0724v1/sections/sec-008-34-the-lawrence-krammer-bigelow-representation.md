@@ -8,6 +8,8 @@ pages: 13-15
 source_pdf: 1404.0724v1.pdf
 source_sha256: ea40edaad77c1617
 toc_source: outline
+doc_brief: "Introduction to Representations of Braid Groups — These are lecture notes prepared for a minicourse given at the Cimpa Research School Algebraic and geometric aspects of representation the- ory, held"
+duplicate_of: "ariasabad2015-revcolmat"
 ---
 The Lawrence-Krammer-Bigelow representation
 We will now discuss another homological representation introduced by R. Lawrence [23] and

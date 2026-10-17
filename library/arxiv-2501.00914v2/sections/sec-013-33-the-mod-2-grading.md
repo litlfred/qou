@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.988
 latex_coverage_ratio: 0.972
+doc_brief: "L-spaces and knot traces — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries."
 ---
 Heegaard Floer homology has  a canonical $\Z/2\Z$ grading, with respect to which $\hfhat(Y)$ has Euler characteristic $|H_1(Y;\Z)|$ if this order is finite, and $0$ otherwise.  We will write the graded pieces as $\hfhat_\geven(Y)$ and $\hfhat_\godd(Y)$.
 

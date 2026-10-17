@@ -8,6 +8,7 @@ pages: 63-66
 source_pdf: 0605314v1.pdf
 source_sha256: 5fb8b89b432401ea
 toc_source: inferred
+doc_brief: "arXiv:math/0605314v1 [math.GT] 11 May 2006 — We construct an invariant JM of integral homology spheres M with values in a completion d Z[q] of the polynomial ring Z[q] such that the evaluation at"
 ---
 tion of integral homology spheres (more precisely, integral homology 3-balls) are
 homology cylinders over a surface [12, 15] (see also [8, 14]). (In [15] they are called

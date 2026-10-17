@@ -8,6 +8,7 @@ pages: 38-38
 source_pdf: s40879-023-00706-0.pdf
 source_sha256: 4c5af312d2e5d6a7
 toc_source: outline
+doc_brief: "Bring’s curve: old and new — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
 ---
 We now investigate the theta characteristics of Bring’s curve, which in [3] were shown
 to be equivalent to spin structures, and as such we will use the terms interchangeably.

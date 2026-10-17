@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.96
 latex_coverage_ratio: 0.976
+doc_brief: "A central limit theorem for the characters of the infinite symmetric group and of the infinite Hecke algebra — In this paper, we review the representation theory of the inﬁnite symmetric group, and"
 ---
 []{#clt label="clt"} In the previous paragraph, it was shown that all the coherent systems of measures $(\mathbb{P}_{n,\omega})_{n \in \mathbb{N}}$ have a property of concentration, that can be seen at the level of characters or directly for the geometry of the random partitions. In this section, we shall prove that the concentration is always gaussian, which is quite a striking fact. However, the geometric version of our central limit theorem will be a little less precise than the algebraic one: indeed, one cannot study with our method of moments the fluctuations of rows or columns corresponding to equal coordinates of the point $\omega$ of the Thoma simplex. This will be done in §[\[oconnell\]](#oconnell){reference-type="ref" reference="oconnell"} by entirely different methods, that relie essentially on the interpretation of the measures $\mathbb{P}_{n,\omega}$ as push-forwards of the measures $\mathbb{Q}_{n,\omega}$.
 

@@ -8,6 +8,7 @@ pages: 37-41
 source_pdf: 1006.1099v3.pdf
 source_sha256: 76c1c4173cdee9d8
 toc_source: outline
+doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS — There is a classical relationship in algebraic geometry between a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
 ---
 the origin. We equip this with a symplectic form giving the exceptional divisor area c > 0. Let
 Clk denote the Cliﬀord algebra associated to a non-degenerate quadratic form on Ck, of total

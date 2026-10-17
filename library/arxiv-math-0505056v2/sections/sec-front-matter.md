@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0505056v2.pdf
 source_sha256: 1b6580406c3d35b5
 toc_source: outline
+doc_brief: "Matrix factorizations and link homology II — To a presentation of an oriented link as the closure of a braid we assign a complex of bigraded vector spaces."
 ---
 arXiv:math/0505056v2  [math.QA]  31 Jan 2006
 Matrix factorizations and link homology II

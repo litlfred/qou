@@ -1,1 +1,1 @@
-There exists s0,C > 0 such that
+There exists s0, C > 0 such that

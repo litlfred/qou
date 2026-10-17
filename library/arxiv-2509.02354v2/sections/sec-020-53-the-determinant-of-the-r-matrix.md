@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.879
 latex_coverage_ratio: 0.933
+doc_brief: "THE HOLONOMY BRAIDING FOR Uξ(sl2) IN TERMS OF GEOMETRIC QUANTUM DILOGARITHMS — We derive an explicit formula for the holonomy R-matrix of quantum sl2 at a root of unity."
 ---
 Here we compute the determinant of the $R$-matrix, a key step in the proof of [\[thm:RIII\]](#thm:RIII){reference-type="ref" reference="thm:RIII"}.
 

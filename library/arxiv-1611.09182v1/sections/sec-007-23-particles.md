@@ -8,6 +8,7 @@ pages: 13-13
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
 toc_source: outline
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 them?
 Similar in spirit is an earlier spaceless graph model, proposed by Kribs and Markopoulou

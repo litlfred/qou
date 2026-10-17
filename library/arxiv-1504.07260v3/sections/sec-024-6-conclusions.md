@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.987
 latex_coverage_ratio: 0.997
+doc_brief: "Fricke S-duality in CHL models — We consider four dimensional CHL models with sixteen spacetime supersym- metries obtained from orbifolds of type IIA superstring on K3×T 2 by a ZN symmetry acting"
 ---
 []{#sec:conclusions label="sec:conclusions"} In this paper we have analysed a large class of non-geometric CHL models and showed that they exhibit larger symmetries than previously expected. These models are in particular invariant under Fricke involution $S\to -1/(NS)$ which lies outside of the $SL(2,\mathbb{Z})$-symmetry of the original unorbifolded model. We showed that this leads to new non-trivial heterotic-type II dualities and gives rise to strong constraints on the associated electric and magnetic charge lattices. In particular, for self-dual CHL models these lattice are required to be $N$-modular. We also demonstrated that Fricke S-duality is compatible with the counting of 1/2 BPS-states by calculating the relevant helicity supertraces and verified the invariance of certain BPS-saturated topological couplings.
 

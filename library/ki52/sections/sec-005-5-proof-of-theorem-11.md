@@ -8,6 +8,8 @@ pages: 28-30
 source_pdf: ki52.pdf
 source_sha256: 35ad4ee5a00d4a18
 toc_source: inferred
+doc_brief: "DOI 10.4171/QT/83 — We give a presentation of the asymptotic expansion of the Kashaev invariant of the 52 knot."
+duplicate_of: "104171-qt-83"
 ---
 In this section, we give a proof of Theorem 1.1. In Section 5.1, we give a proof of the
 theorem by using lemmas proved in Sections 5.2, 5.3 and 5.4. In Section 5.2, we show

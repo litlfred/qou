@@ -8,6 +8,7 @@ pages: 42-44
 source_pdf: 1111.2828v2.pdf
 source_sha256: 90e2f5a9b978d403
 toc_source: outline
+doc_brief: "THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a parametrization of the set of conjugacy classes of"
 ---
 [1] A.C. Aitken. Determinants and Matrices. Oliver and Boyd, Edinburgh, 1939.
 [2] Nicolas Bergeron, Elisha Falbel, and Antonin Guilloux. Tetrahedra of ﬂags, volume and homology of SL(3), 2011.

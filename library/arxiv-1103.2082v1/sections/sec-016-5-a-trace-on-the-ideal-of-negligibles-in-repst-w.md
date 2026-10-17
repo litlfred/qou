@@ -11,5 +11,6 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "MODIFIED TRACES ON DELIGNE’S CATEGORY Rep(St) — Deligne has deﬁned a category which interpolates among the representations of the various symmetric groups."
 ---
 We now consider the general case when $t$ is a nonnegative integer.  Let $\mN$ be the tensor ideal of negligible morphisms and let $\ideal = \ideal (\mN )$. Recall that by definition we call the objects of $\ideal$ \emph{negligible}.  In this section we show there exists a nonzero trace on $\ideal$ in $\uRep(S_t)$ when $t$ is a nonnegative integer.

@@ -8,6 +8,7 @@ pages: 25-34
 source_pdf: 1909.06797v5.pdf
 source_sha256: 87095d7e46ebe286
 toc_source: outline
+doc_brief: "Quantum Mechanics of Plancherel Growth — Growth of Young diagrams, equipped with Plancherel measure, follows the automodel equation of Kerov."
 ---
 In this paper we show that the growth of Young diagrams equipped with Plancherel measure can be
 studied through a simple unitary matrix model, namely Gross-Witten-Wadia model. Considering

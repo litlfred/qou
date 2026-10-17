@@ -2,60 +2,65 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2406.02111v3",
  "source_sha256": "d7be0c3f08b4d42a",
- "brief": "Categorical Quantum Volume Operator — 10 sections: Introduction; Quantum tetrahedron; Volume operator",
- "extended": "**Categorical Quantum Volume Operator**\n\n*Alexander Hahn ,1,∗ Sebastian Murk ,2,† Sukhbinder Singh,3,‡ and Gavin K. Brennen 1,§*\n\n19 pp, 10 sections.\n\n**Outline.** Introduction; Quantum tetrahedron; Volume operator; Spin networks and graph states; String diagrams; Derivation of the categorical volume operator; Beyond ribbon fusion categories; Hermiticity of the categorical volume operator; Discussion and Conclusions; References",
+ "brief": "Categorical Quantum Volume Operator — 11 sections: Categorical Quantum Volume Operato; Introduction; Quantum tetrahedron",
+ "extended": "**Categorical Quantum Volume Operator**\n\n*Alexander Hahn ,1, ∗Sebastian Murk ,2, † Sukhbinder Singh,3, ‡ and Gavin K. Brennen*\n\n19 pp, 11 sections.\n\n**Outline.** Categorical Quantum Volume Operator; Introduction; Quantum tetrahedron; Volume operator; Spin networks and graph states; String diagrams; Derivation of the categorical volume operator; Beyond ribbon fusion categories; Hermiticity of the categorical volume operator; Discussion and Conclusions; References",
  "tokens": {
-  "brief": 25,
-  "extended": 107
+  "brief": 30,
+  "extended": 116
  },
  "sections": [
   {
-   "id": "sec-000-introduction",
+   "id": "sec-000-categorical-quantum-volume-operator",
+   "title": "Categorical Quantum Volume Operator",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-introduction",
    "title": "Introduction",
    "pages": "1-2"
   },
   {
-   "id": "sec-001-quantum-tetrahedron",
+   "id": "sec-002-quantum-tetrahedron",
    "title": "Quantum tetrahedron",
    "pages": "2-3"
   },
   {
-   "id": "sec-002-volume-operator",
+   "id": "sec-003-volume-operator",
    "title": "Volume operator",
    "pages": "3-3"
   },
   {
-   "id": "sec-003-spin-networks-and-graph-states",
+   "id": "sec-004-spin-networks-and-graph-states",
    "title": "Spin networks and graph states",
    "pages": "3-5"
   },
   {
-   "id": "sec-004-string-diagrams",
+   "id": "sec-005-string-diagrams",
    "title": "String diagrams",
    "pages": "5-6"
   },
   {
-   "id": "sec-005-derivation-of-the-categorical-volume-operator",
+   "id": "sec-006-derivation-of-the-categorical-volume-operator",
    "title": "Derivation of the categorical volume operator",
    "pages": "6-9"
   },
   {
-   "id": "sec-006-beyond-ribbon-fusion-categories",
+   "id": "sec-007-beyond-ribbon-fusion-categories",
    "title": "Beyond ribbon fusion categories",
    "pages": "9-11"
   },
   {
-   "id": "sec-007-hermiticity-of-the-categorical-volume-operator",
+   "id": "sec-008-hermiticity-of-the-categorical-volume-operator",
    "title": "Hermiticity of the categorical volume operator",
    "pages": "11-14"
   },
   {
-   "id": "sec-008-discussion-and-conclusions",
+   "id": "sec-009-discussion-and-conclusions",
    "title": "Discussion and Conclusions",
    "pages": "14-15"
   },
   {
-   "id": "sec-009-references",
+   "id": "sec-010-references",
    "title": "References",
    "pages": "15-19"
   }

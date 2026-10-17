@@ -8,6 +8,8 @@ pages: 1-1
 source_pdf: 0611504v1.pdf
 source_sha256: a33d2771c873a97e
 toc_source: outline
+doc_brief: "Quantum hyperbolic geometry — 22 sections: Front matter; Introduction; Universal QHG"
+duplicate_of: "agt-v7-n2-p13-s"
 ---
 arXiv:math/0611504v1  [math.GT]  16 Nov 2006
 QUANTUM HYPERBOLIC GEOMETRY

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.919
 latex_coverage_ratio: 0.966
+doc_brief: "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects."
 ---
 Let $\mam$ a finite semisimple  $\C$-linear category, equipped with a trace $\theta$ in the sense of Definition \ref{def:moduletrace} and let $I$ be a set of representatives of the isomorphism classes of its simple objects. 
 Then  every object $x$ in $\mam$ can be expressed as a direct sum $x\cong \oplus_{m\in I} m^{\oplus n_{xm}}$ with multiplicities $n_{xm}=\dim_\C \Hom_\mam(m,x)\in\mathbb N_0$. 

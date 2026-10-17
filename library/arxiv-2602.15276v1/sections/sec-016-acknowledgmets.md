@@ -8,6 +8,7 @@ pages: 40-44
 source_pdf: 2602.15276v1.pdf
 source_sha256: 18d77d6aa140fc50
 toc_source: outline
+doc_brief: "Compact Q-balls and Q-shells within a $CP^N$ Skyrme-Faddeev type model — 18 sections: Front matter; Introduction; The extended Skyrme-Faddeev model"
 ---
 This study was financed in part by the Coordena¸c˜ao de Aperfei¸coamento de Pessoal de N´ıvel
 Superior – Brasil (CAPES) – Finance Code 001. N.S. was supported in part by JSPS KAKENHI

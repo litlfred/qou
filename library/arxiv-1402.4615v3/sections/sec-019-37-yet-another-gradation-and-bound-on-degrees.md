@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.94
 latex_coverage_ratio: 0.973
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials."
 ---
 The gradation introduced in Section [\[SubsectBound2\]](#SubsectBound2){reference-type="ref" reference="SubsectBound2"} is suitable for some purposes (as we have seen in the previous section), but it has the unpleasant aspect that all homogeneous spaces have an infinite dimension. In particular, Proposition [\[PropBound2\]](#PropBound2){reference-type="ref" reference="PropBound2"} does not give any information on the maximal power of $M_2$ which can appear in $L_\mu$. In this section we propose a way to avoid this difficulty. It is technical but will be useful in the next section.
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.938
 latex_coverage_ratio: 0.994
+doc_brief: "Chiral Low-Energy Constants ∗ — The progress in determining the coupling constants of mesonic chi- ral Lagrangians is reviewed, with emphasis on the work performed in three successive European"
 ---
 At lowest order in the chiral expansion, there are only two LECs $B$
 and $F$. $B$ depends on the QCD renormalization scale

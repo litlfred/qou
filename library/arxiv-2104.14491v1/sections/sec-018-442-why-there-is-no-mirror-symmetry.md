@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.812
 latex_coverage_ratio: 0.778
+doc_brief: "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia"
 ---
 Because the $\mathtt{Tw}_+$ and $\mathtt{Tw}_-$ are the two distinct families, and their polynomials are not related in any simple way (see App.[\[app:coltw\]](#app:coltw){reference-type="ref" reference="app:coltw"}).
 

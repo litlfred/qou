@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.901
 latex_coverage_ratio: 1.0
+doc_brief: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A — This paper concerns the cohomological aspects of Donaldson– Thomas theory for Jacobi algebras and the associated cohomological Hall alge- bra, introduced"
 ---
 []{#framedSec label="framedSec"} Framed moduli spaces will play a central role in what follows. Their cohomology provides an approximation to the cohomology of $\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}}}$, in a way which we will make precise in Section [\[cohaDT\]](#cohaDT){reference-type="ref" reference="cohaDT"}.
 

@@ -8,6 +8,7 @@ pages: 34-37
 source_pdf: 2501.00914v2.pdf
 source_sha256: d94bd6edf8544d4a
 toc_source: outline
+doc_brief: "L-spaces and knot traces — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries."
 ---
 [AJOT13] T. Abe, I. D. Jong, Y. Omae, and M. Takeuchi. Annulus twist and diffeomorphic 4-manifolds. Math. Proc.
 Cambridge Philos. Soc., 155(2):219–235, 2013. 1

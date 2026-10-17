@@ -1,1 +1,1 @@
-For atwo-level broken strip ( u, D) = ((uin,uout), D). The
+For a two-level broken strip (u, D) = ((uin, uout), D). The

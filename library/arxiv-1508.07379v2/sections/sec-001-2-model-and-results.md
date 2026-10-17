@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
 latex_coverage_ratio: 0.993
+doc_brief: "Convergence of Mayer and Virial expansions and the Penrose tree-graph identity Introduction — We establish new lower bounds for the convergence radius of the Mayer series and the Virial series of a"
 ---
 []{#sec2 label="sec2"}
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.937
 latex_coverage_ratio: 0.977
+doc_brief: "Quadruply-graded colored homology of knots Eugene Gorsky, Sergei Gukov, and Marko Stoˇsi´c — We conjecture the existence of four independent gradings in the colored HOMFLY homology."
 ---
 \label{sec:bosonic}
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.963
 latex_coverage_ratio: 0.971
+doc_brief: "Quadruply-graded colored homology of knots Eugene Gorsky, Sergei Gukov, and Marko Stoˇsi´c — We conjecture the existence of four independent gradings in the colored HOMFLY homology."
 ---
 \subsection{General structure}
 As explained in Section \ref{sec:geomphys}, the unreduced $\lambda$-colored homology $\bar{\CH}^{\lambda}(K)$ for any rectangular diagram $\lambda$ and any knot $K$ is a free module over the unreduced $\lambda$-colored homology of the unknot $\bar{\CH}^{\lambda}(U)$. Therefore, for every knot $K$ the unreduced homology $\bar{\CH}^{\lambda}(K)$ is determined by the reduced homology ${\CH}^{\lambda}(K)$

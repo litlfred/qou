@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.894
 latex_coverage_ratio: 0.865
+doc_brief: "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B →C is an exact"
 ---
 \label{subsection:internal-hom} Let $\ca$ be a  tensor category and $\Mo$ be  a left $\C$-module category. For any pair of objects $M, N\in\Mo$, the \emph{internal Hom} is an object $\uhom(M,N)\in \C$ representing the left exact functor $$\Hom_{\Mo}(-\triangleright M,N):\ca^{\op}\to \vect_\ku.$$ This means that, there are natural isomorphisms
 $$\Hom_{\ca}(X,\uhom_\Mo(M,N))\simeq \Hom_{\Mo}(X\triangleright M,N).$$

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.977
 latex_coverage_ratio: 0.992
+doc_brief: "On minimal ideal triangulations of cusped hyperbolic 3–manifolds Introduction — Previous work of the authors studies minimal triangulations of closed 3–manifolds using a characterisation of low"
 ---
 We remark that for closed hyperbolic 3--manifolds, currently no infinite families of minimal triangulations are known. In the case of compact manifolds with non-empty boundary, lower bounds on complexity are known through work of [@Bucher-simplicial-2015] and [@Jaco-bounds-2016], where it is independently shown that they are attained by $S_g\times[0,1],$ where $S_g$ is a closed orientable surface of genus $g\ge 1.$
 

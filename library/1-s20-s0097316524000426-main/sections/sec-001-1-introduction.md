@@ -8,6 +8,7 @@ pages: 1-3
 source_pdf: 1-s2.0-S0097316524000426-main.pdf
 source_sha256: 76a8ab857163aa09
 toc_source: outline
+doc_brief: "Journal of Combinatorial Theory, Series A Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions — 8 sections: Front matter; Proof of a conjecture of Ballantin; Introd"
 ---
 Recall that a partition of a positive integer n is an integer sequence λ = (λ1, λ2, . . . , λk)
 such that λ1 ≥λ2 ≥· · · ≥λk > 0 and λ1 + λ2 + · · · + λk = n. The numbers λi are called 

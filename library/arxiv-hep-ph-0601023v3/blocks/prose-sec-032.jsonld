@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-hep-ph-0601023v3/blocks/prose-sec-032",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Details of the analysis on testing GUTs",
-  "pageStart": 184,
-  "pageEnd": 189,
-  "text": "../sections/sec-032-17-details-of-the-analysis-on-testing-guts.md",
+  "title": "Discrete Symmetries and proton stability",
+  "pageStart": 124,
+  "pageEnd": 127,
+  "text": "../sections/sec-032-79-discrete-symmetries-and-proton-stability.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0601023v3/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0601023v3/manifest.jsonld",
   "provenance": "ingested"

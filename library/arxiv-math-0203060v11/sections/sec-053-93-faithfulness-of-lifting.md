@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.98
 latex_coverage_ratio: 0.976
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 In this section we will show that the lifting procedure of nondegenerate fusion (braided, symmetric) categories is faithful, i.e. if two such categories over $k$ have equivalent liftings, then they are equivalent. We will also show that if two tensor functors from a nondegenerate fusion category over $k$ to another fusion category have isomorphic liftings, then they are isomorphic.
 

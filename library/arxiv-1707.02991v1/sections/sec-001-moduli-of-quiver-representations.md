@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.966
 latex_coverage_ratio: 0.966
+doc_brief: "BPS states, knots and quivers — 6 sections: Front matter; BPS states, knots and quivers; Moduli of quiver representations"
 ---
 We now turn to a seemingly unrelated field of moduli of quiver representations. A quiver $Q$ is an oriented graph with a finite set of vertices $Q_0$ and finitely many arrows between vertices $\alpha:i\rightarrow j$. On ${\bf Z}Q_0$, we define the Euler form of $Q$ by $\langle {\bm d},{\bm e}\rangle_Q=\sum_{i\in Q_0}d_ie_i-\sum_{\alpha:i\rightarrow j}d_ie_j.$ A quiver representation assigns to each vertex $i\in Q_0$ a vector space of dimension $d_i$ and a linear map to each arrow. Recently it turned out that the structure of moduli spaces of quiver representations is very rich, and it is a natural playground for the theory of (motivic) Donaldson-Thomas invariants, Cohomological Hall Algebras, etc.
 

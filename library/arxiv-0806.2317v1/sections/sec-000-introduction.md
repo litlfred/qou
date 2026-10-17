@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.983
 latex_coverage_ratio: 0.979
+doc_brief: "Bounds for codes and designs in complex subspaces — We introduce the concepts of complex Grassmannian codes and designs."
 ---
 In this paper, we introduce the concept of complex Grassmannian codes and designs: codes and designs in the collection of fixed-rank subspaces of a complex vector space.
 

@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/s0894-0347-00-00337-4/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Commuting difference operator",
+  "pageStart": 14,
+  "pageEnd": 14,
+  "contains": [
+    "library/s0894-0347-00-00337-4/blocks/prose-sec-009",
+    "library/s0894-0347-00-00337-4/blocks/prop-sec-009-01",
+    "library/s0894-0347-00-00337-4/blocks/rem-sec-009-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s0894-0347-00-00337-4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s0894-0347-00-00337-4/manifest.jsonld",
+  "provenance": "ingested"
+}

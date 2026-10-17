@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.961
 latex_coverage_ratio: 0.984
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 So far, essentially all of the manifestly Lorentz-invariant calculations have been restricted to the one-loop level. One of the exceptions is the chiral expansion of the nucleon mass which, in the framework of the reformulated infrared regularization, has been calculated up to and including ${\cal O}(q^6)$ [@Schindler:2006ha; @Schindler:2007dr]: $$\label{Mass:Exp}
     m_N = m +k_1 M^2 +k_2 \,M^3 +k_3 M^4 \ln\frac{M}{\mu}

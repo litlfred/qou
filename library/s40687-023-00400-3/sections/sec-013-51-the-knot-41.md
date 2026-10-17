@@ -8,6 +8,8 @@ pages: 21-21
 source_pdf: s40687-023-00400-3.pdf
 source_sha256: fd7638a8cf512a99
 toc_source: outline
+doc_brief: "TWISTED NEUMANN–ZAGIER MATRICES — The Neumann–Zagier matrices of an ideal triangulation are integer matrices with symplectic properties whose entries encode the number of tetrahedra that wind around"
+duplicate_of: "arxiv-2109.00379v1"
 ---
 In Sect. 3.1, we already gave the twisted NZ matrices of the 41 knot. Using the same
 notation, we now give the remaining data, namely the shapes of the complete hyperbolic

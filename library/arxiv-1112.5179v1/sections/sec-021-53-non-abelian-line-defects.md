@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.985
 latex_coverage_ratio: 0.951
+doc_brief: "3-Manifolds and 3d Indices — We identify a large class R of three-dimensional N = 2 superconformal ﬁeld the- ories."
 ---
 There are natural ways to use the three-dimensional theories $T_M$ to define domain walls in the UV for four-dimensional ${\cal N}=2$ $SU(2)$ gauge theories. A full account of that construction will be the subject of a future publication [@DGGV-hybrid]. For now, we will content ourselves with sketching some interesting directions of inquiry. For simplicity, we will focus on the example of $SU(2)$ ${\cal N}=2^*$ SYM.
 

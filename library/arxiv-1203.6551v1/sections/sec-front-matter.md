@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1203.6551v1.pdf
 source_sha256: a8e84f8ed63dbcca
 toc_source: outline
+doc_brief: "On the number of hyperbolic 3 -manifolds of a given volume Craig Hodgson and Hidetoshi Masai — The work of Jørgensen and Thurston shows that there is a ﬁnite number N(v) of orientable hyperbolic"
 ---
 arXiv:1203.6551v1  [math.GT]  29 Mar 2012
 On the number of hyperbolic 3-manifolds of a given volume

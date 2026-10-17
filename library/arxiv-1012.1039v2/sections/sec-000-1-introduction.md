@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.972
 latex_coverage_ratio: 0.972
+doc_brief: "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS — Let M be a hyperbolic n–manifold whose cusps have torus cross- sections."
 ---
 Simplicial volume was defined for manifolds by Gromov in [@gromov:vbc]. For an $n$-dimensional closed manifold $M$ of constant sectional curvature $K=-1$, the simplicial volume $\|M\|$ is proportional to the (Riemannian) volume $\mathrm{Vol}(M)$, and the ratio is the volume of a regular ideal hyperbolic $n$--simplex; in particular, it depends only on the dimension [@gromov:vbc 0.4]. More generally, [@gromov:vbc 0.3,0.5], for constants $a\le b< 0$, there is a constant $C=C(a,b,n)>1$ so that if the sectional curvatures $K$ satisfy $a \le K \le b$, then $$\label{propclosed}
  \mathrm{Vol}(M)/C \le \|M\| \le C\mathrm{Vol}(M).$$

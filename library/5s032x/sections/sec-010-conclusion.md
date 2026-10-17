@@ -8,6 +8,7 @@ pages: 16-20
 source_pdf: 5S032X.pdf
 source_sha256: 17761383781f7bdc
 toc_source: outline
+doc_brief: "The Standard Model Symmetry and Qubit Entanglement — quantum description."
 ---
 CONCLUSION
 The present study draws inspiration and arguments from several disparate sources, aiming to integrate them into

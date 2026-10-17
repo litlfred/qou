@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.853
 latex_coverage_ratio: 0.903
+doc_brief: "Categorical Quantum Volume Operator — 11 sections: Categorical Quantum Volume Operato; Introduction; Quantum tetrahedron"
 ---
 \label{sec:discussion_conclusions}
 In condensed matter physics, the categorification of spin models such as the Heisenberg model and certain lattice gauge theories has given rise to several physically rich anyonic lattice models that realize both conventional and exotic quantum phases of matter. Motivated by these developments, here we have introduced a categorification of the quantum volume operator [Sec.~\ref{sec:Qvol}] that plays a fundamental role in the description of discrete spacetime geometries underlying the formulation of background-independent candidate theories of quantum gravity such as LQG.

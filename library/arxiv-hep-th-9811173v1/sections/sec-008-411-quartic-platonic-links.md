@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.979
+doc_brief: "arXiv:hep-th/9811173v1 19 Nov 1998 — We identify 998 closed hyperbolic 3-manifolds whose volumes are rationally related to Dedekind zeta values, with coprime integers a and b giving a b vol(M) ="
 ---
 Our first guess, that the 4 non-self-dual platonic links might yield quadratic number fields, failed. Nonetheless, it is interesting to determine their number fields, and hence obtain accurate volumes. This is clearly a taxing job. To prepare for it, we first tackled a problem of similar complexity, where an accurate answer could be inferred.
 

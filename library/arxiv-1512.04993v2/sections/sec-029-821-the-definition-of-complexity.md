@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 In this paper we have defined complexity as the number of primitive gates in the minimal quantum circuit that builds our state. This definition is not ideal. For example, in our definition the value of the complexity depends on the choice of  the set of primitive gates.
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.919
 latex_coverage_ratio: 1.0
+doc_brief: "THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS — The Ptolemy coordinates for boundary-unipotent SL(n, C)-representations of a 3-manifold group were introduced in [7] inspired by the A-coordinates on"
 ---
 \label{sec:HigherPtolemy}
 Many of our results generalize in a straightforward way to the higher rank Ptolemy varieties $P_n(\T)$. We recall the definition of these below, and refer to~\cite{GaroufalidisThurstonZickert,GaroufalidisGoernerZickert} for details.

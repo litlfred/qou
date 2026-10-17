@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.963
 latex_coverage_ratio: 0.981
+doc_brief: "A universal sum over topologies in 3d gravity — We explore the sum over topologies in AdS3 quantum gravity and its relationship with the statistical interpretation of the boundary theory."
 ---
 \label{sec:typicality}
 In the previous subsection, we have stated the requirements of crossing symmetry and modular invariance on the moments of CFT data, which were clearly based on the same requirements as in the regular CFT bootstrap. Now we will state an additional assumption on the ensemble, to which we refer as \emph{typicality}, which has its origin in the theory of quantum chaos.

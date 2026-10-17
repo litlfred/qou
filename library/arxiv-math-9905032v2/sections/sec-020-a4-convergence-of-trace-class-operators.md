@@ -8,6 +8,7 @@ pages: 40-43
 source_pdf: 9905032v2.pdf
 source_sha256: ba933d4cb484964b
 toc_source: inferred
+doc_brief: "arXiv:math/9905032v2 [math.CO] 11 Sep 1999 — We consider the asymptotics of the Plancherel mea- sures on partitions of n as n goes to inﬁnity."
 ---
 be Hermitian nonnegative operators in L1(H). The following proposi-
 tion is a special case of Theorem 2.20 in the book [31] (we are grateful

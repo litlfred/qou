@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.932
 latex_coverage_ratio: 0.982
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 []{#ssec: Gslice label="ssec: Gslice"} As we mentioned earlier, $\MF_{B^2}(\calX_2,W)^G$ signifies $B^2$-equivariant matrix factorizations from $\MFs_{B^2}(\calX_2,W)$ that $G$-invariant. This description becomes simpler when
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.962
 latex_coverage_ratio: 1.0
+doc_brief: "Fractional Hopﬁons in the Faddeev-Skyrme model with a symmetry breaking potential — We construct new solutions of the Faddeev-Skyrme model with a symmetry breaking potential admitting S1 vacuum."
 ---
 It is known that, according to the scaling arguments of the Derrick's theorem, stable soliton solitons may exist in the truncated $c_2=0$ submodel of ([\[lagr\]](#lagr){reference-type="ref" reference="lagr"}), which contains only Skyrme term and a potential [@Foster:2010zb; @Adam-compact]. This submodel effectively corresponds to the infinite mass limit $m\to \infty$. Interestingly, these Hopfions usually are solitons with compact support, the configuration possess no exponentially decaying tail, instead the field components attain the vacuum values outside some finite domain in space.
 

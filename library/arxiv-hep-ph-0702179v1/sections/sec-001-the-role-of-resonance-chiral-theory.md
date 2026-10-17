@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.976
 latex_coverage_ratio: 0.99
+doc_brief: "Large-NC estimate of the chiral low-energy constants ∗ — 5 sections: Front matter; Introduction; The role of Resonance Chiral Theor"
 ---
 As illustrated in the ${\cal O}(p^4)$ case \cite{Ecker:1988te,Ecker:1989yg} a procedure to systematically determine
 the resonance contributions to the LECs in $\chi PT$ is available. Essentially the idea is to construct a Lagrangian

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.987
 latex_coverage_ratio: 0.963
+doc_brief: "Compact Q-balls and Q-shells within a $CP^N$ Skyrme-Faddeev type model — 18 sections: Front matter; Introduction; The extended Skyrme-Faddeev model"
 ---
 Following the methodology established in [@Klimas:2017eft], we consider an odd number of scalar fields, specifically $N=2l+1$. For convenience, the field index $i=1, 2, \ldots, N$ is replaced by the corresponding angular momentum index $m=-l, \ldots, l$. We introduce spherical coordinates $(r, \theta, \phi)$ and apply the following ansatz for the field components $u_m(t, r, \theta, \phi)$: $$u_m(t,r,\theta,\phi):=\sqrt{\frac{4\pi}{2l+1}}f(r)Y_{lm}(\theta,\phi)e^{i\omega t}.\label{ansatz}$$ In this definition, $Y_{lm}(\theta, \phi)$ represents the spherical harmonics, $f(r)$ is a non-negative radial profile function ($f(r) \ge 0$), and $\omega$ is the oscillation frequency. This specific ansatz enables the reduction of both the Lagrangian and the field equations to a radial form.
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.971
 latex_coverage_ratio: 1.0
+doc_brief: "MARKOV TRACES ON THE BIRMAN-WENZL-MURAKAMI ALGEBRAS — We classify the Markov traces factoring through the Birman-Wenzl-Murakami (BMW) algebras."
 ---
 The plan of the paper is as follows. In \S 2 we compile a few results on the `cubic Hecke algebra' on 3 strands, namely
 the quotient of the group algebra of $B_3$ by a generic cubic relations $(s_i -a)(s_i-b)(s_i-c) = 0$. The finite-dimensionality

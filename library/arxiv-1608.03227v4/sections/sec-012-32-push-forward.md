@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.945
 latex_coverage_ratio: 0.99
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 []{#ssec: noneq push f label="ssec: noneq push f"} Let us assume that $R=S/I$ where $I=(f_1,\dots,f_n)$ and functions $f_i$ form a regular sequence in $S$. In other words, the Koszul complex $K(I)=(\Lambda^\bullet W\otimes \CC[\calZ],d_K)$, $W=\CC^n$ has homologies only in degree $0$. For $W\in S$ let $w$ be its image under the quotient map $j\colon S\rightarrow R$.
 

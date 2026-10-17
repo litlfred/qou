@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.927
 latex_coverage_ratio: 0.987
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS — We prove an upper bound for characters of the symmetric groups."
 ---
 Unfortunately, the canonical tool for calculating characters, the Murnaghan--Nakayama rule, quickly becomes cumbersome and hence intractable for computing characters corresponding to large Young diagrams. Nevertheless Roichman [@Roichman1996] showed that it is possible to use it to find an upper bound for characters, namely he proved that there exist constants $0<q<1$ and $b>0$ such that $$\label{eq:roichman}
  |\chi^{\lambda}(\pi) | \leq 

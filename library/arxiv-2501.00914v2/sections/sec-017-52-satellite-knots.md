@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.946
 latex_coverage_ratio: 0.975
+doc_brief: "L-spaces and knot traces — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries."
 ---
 In this subsection we show that if $K$ is a satellite L-space knot of the same genus as $T_{p,q}$, and if $S^3_r(K) \cong S^3_r(T_{p,q})$, then $r$ must be large enough so that their common $r$-surgery is an L-space.
 

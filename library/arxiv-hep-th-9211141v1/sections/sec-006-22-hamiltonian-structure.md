@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.686
 latex_coverage_ratio: 0.948
+doc_brief: "arXiv:hep-th/9211141v1 1 Dec 1992 — 11 sections: Front matter; INTRODUCTION AND SUMMARY OF RESULT; The System of Partial Differential"
 ---
 []{#subsec:hamiltonian label="subsec:hamiltonian"} The partial differential equations ([\[airy_1\]](#airy_1){reference-type="ref" reference="airy_1"})--([\[airy_6\]](#airy_6){reference-type="ref" reference="airy_6"}) can be rewritten in a compact form that reveals a symplectic structure with ([\[airy_7\]](#airy_7){reference-type="ref" reference="airy_7"}) defining a family of commuting Hamiltonians. To see this we first change the notation slightly $$\begin{aligned}
 q_{2j}&=& -{i\over 2} x_{2j},\ \ \ \ p_{2j}=-i y_{2j}, \\

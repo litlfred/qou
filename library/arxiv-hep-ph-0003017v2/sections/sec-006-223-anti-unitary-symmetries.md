@@ -8,6 +8,7 @@ pages: 16-17
 source_pdf: 0003017v2.pdf
 source_sha256: 1660907865346bdf
 toc_source: inferred
+doc_brief: "arXiv:hep-ph/0003017v2 26 Jun 2000 — Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems."
 ---
 elements of W to be real, complex, or quaternion real for β = 1, β = 2, and
 β = 4, respectively.

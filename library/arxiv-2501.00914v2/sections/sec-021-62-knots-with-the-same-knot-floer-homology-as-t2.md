@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.953
 latex_coverage_ratio: 0.988
+doc_brief: "L-spaces and knot traces — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries."
 ---
 We know that $\hfkhat(K)$ detects the trefoil $T_{2,3}$ \cite{ghiggini} and the cinquefoil $T_{2,5}$ \cite{frw-cinquefoil}, but not whether it detects other knots $T_{2,2g+1}$ with $g \geq 3$.  However, we can combine Proposition~\ref{prop:casson-t2n} with work of Baker--Motegi \cite{baker-motegi-twist} on L-space satellites to show that any other knot whose knot Floer homology agrees with that of $T_{2,2g+1}$ must be hyperbolic.
 

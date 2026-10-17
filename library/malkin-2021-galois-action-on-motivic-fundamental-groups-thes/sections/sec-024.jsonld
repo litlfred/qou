@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-024",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Relations for correlators",
+  "pageStart": 87,
+  "pageEnd": 89,
+  "contains": [
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-024"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest.jsonld",
+  "provenance": "ingested"
+}

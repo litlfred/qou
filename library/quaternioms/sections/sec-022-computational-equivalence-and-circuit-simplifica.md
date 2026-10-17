@@ -8,6 +8,7 @@ pages: 20-20
 source_pdf: quaternioms.pdf
 source_sha256: becedcbc858611dd
 toc_source: outline
+doc_brief: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 44 sections: Front matter; Introduction; Extended Related Work"
 ---
 Having established a consistent framework for n-quaternionic qubit states and uni-
 versal gates, we now address a pivotal question: Does the richer algebraic structure of

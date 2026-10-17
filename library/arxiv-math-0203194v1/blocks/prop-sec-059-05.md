@@ -1,0 +1,1 @@
+Standard domains are connected.

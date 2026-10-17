@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 1908.07065v3.pdf
 source_sha256: c43e413aed71aef1
 toc_source: outline
+doc_brief: "Non-perturbative approaches to the quantum Seiberg–Witten curve — We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve of N = 2, SU(2) super Yang–Mills"
 ---
 Prepared for submission to JHEP
 Non-perturbative approaches to the quantum

@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.992
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:hep-th/9811173v1 19 Nov 1998 — We identify 998 closed hyperbolic 3-manifolds whose volumes are rationally related to Dedekind zeta values, with coprime integers a and b giving a b vol(M) ="
 ---
 Now we turn to the study of cusped manifolds, complementary to knots and links. Packaged with SnapPea [@SnapPea], there are the 4,815 orientable cusped manifolds of the Hildebrand--Weeks census [@HiW], triangulated by no more than 7 ideal tetrahedra, and 114 non-orientable manifolds, triangulated by no more than 5. Making $4929\times1200$ comparisons with the Dedekind zeta values of Section 2.1, we found 7 new single-complex-place fields, beyond those from the Hodgson--Weeks census. Then the CGHN file `cusped.fields` confirmed these finds and yielded the remaining 5 fields of Table 14, with larger discriminants. In Table 14, we give the rational Dedekind-zeta invariant of a selected cusped manifold for each of the 12 new fields.
 

@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0203048v1.pdf
 source_sha256: 47204f32280e91a3
 toc_source: inferred
+doc_brief: "arXiv:physics/0203048v1 [physics.plasm-ph] 15 Mar 2002 — An expression for a third-order link integral of three magnetic ﬁelds is presented."
 ---
 arXiv:physics/0203048v1  [physics.plasm-ph]  15 Mar 2002
 Towards a third-order topological invariant for

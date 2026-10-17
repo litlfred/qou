@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.942
 latex_coverage_ratio: 0.878
+doc_brief: "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS — In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the"
 ---
 Consider the one-dimensional Ising model of parameter $\alpha=0$, and $\beta$ arbitrary. We have shown in Section \ref{sec:ising} the complex mod-Gaussian convergence of $(n^{-1/4}\,M_n)_{n \in \N}$ with parameters $n^{1/2}\,\E^{2\beta}$ and limiting function $\psi(z)=\exp(-(3\E^{6\beta}-\E^{2\beta})\,z^4/24)$. Restricted to $\R$, this limiting function is integrable, and again one has $\mathrm{L}^1$-mod-convergence. Indeed, recall that 
 $$\esper[\E^{t M_n}]=\frac{Z_n(\IS,t,\beta)}{Z_n(\IS,0,\beta)}=\frac{1}{2}\left(a_+(t,\beta)\left(\frac{\lambda_+(t,\beta)}{2\cosh \beta}\right)^{n-1}+a_-(t,\beta)\left(\frac{\lambda_-(t,\beta)}{2\cosh \beta}\right)^{n-1}\right).$$

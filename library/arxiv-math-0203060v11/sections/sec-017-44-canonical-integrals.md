@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.898
 latex_coverage_ratio: 0.918
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 Using the squared antipode, one can construct integrals on a weak Hopf algebra $A$ called the *canonical integrals*. Namely, we have the following proposition, a particular case of which was proved in [@BNSz].
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.933
 latex_coverage_ratio: 0.982
+doc_brief: "The String Dual to Two-dimensional Yang-Mills Theory Revisited — We propose that chiral two-dimensional Yang-Mills theory on a Riemann surface X is dual to a deformed stationary subsector of the"
 ---
 []{#ExtendedHurwitz label="ExtendedHurwitz"} In the context of the string description of two-dimensional Yang-Mills theory, one needs to sum over covering maps of all degrees $d$ [@Gross:1992tu; @Gross:1993hu]. This motivates the introduction of an overarching grand canonical version of the Hurwitz theories with gauge groups $S_d$ that takes into account coverings of all degrees simultaneously [@IvanovKerov; @OP1; @Benizri:2024mpx].[^1]
 

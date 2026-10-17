@@ -8,6 +8,7 @@ pages: 16-17
 source_pdf: 2305.07425v1.pdf
 source_sha256: 2f7d2ac5818b6af4
 toc_source: outline
+doc_brief: "LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS — The set of equivalence classes of cobounded actions of a group G on diﬀerent hyperbolic metric spaces carries a natural partial order."
 ---
 whose statement we recall for the convenience of the reader.
 Theorem 1.1. Let M be a non-geometric 3-manifold with empty or toroidal boundary. If the

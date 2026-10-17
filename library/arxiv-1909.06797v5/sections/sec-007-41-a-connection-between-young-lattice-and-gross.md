@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.929
 latex_coverage_ratio: 0.947
+doc_brief: "Quantum Mechanics of Plancherel Growth — Growth of Young diagrams, equipped with Plancherel measure, follows the automodel equation of Kerov."
 ---
 The Gross-Witten-Wadia model is a well studied unitary matrix model in physics. The partition function for this model is defined over an ensemble of $N\times N$ unitary matrices with a real potential $\Tr U+\Tr U^{\dagger}$, where the $trace$ is taken over fundamental representations. The partition function of GWW model is given by
 

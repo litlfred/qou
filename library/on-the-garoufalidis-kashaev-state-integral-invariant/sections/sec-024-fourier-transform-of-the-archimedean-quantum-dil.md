@@ -8,6 +8,7 @@ pages: 24-26
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
 toc_source: outline
+doc_brief: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT — 63 sections: Front matter; ACKNOWLEDGMENTS; ABSTRACT"
 ---
 Fourier transform of the Archimedean quantum dilogarithm
 Lemma 1. Let F be an Archimedean local field (R or C), and set A := c

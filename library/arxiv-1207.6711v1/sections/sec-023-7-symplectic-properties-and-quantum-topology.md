@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.891
 latex_coverage_ratio: 0.962
+doc_brief: "GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were"
 ---
 \label{sec:Symplectic}
 In this section we prove Theorem~\ref{thm:soft}. This is done by generalizing some of the combinatorial properties of triangulations studied by Neumann~\cite{NeumannComb}. The first part follows immediately from Proposition~\ref{prop:BetaStarBeta} below, and the second part is an elementary counting argument. We assume for simplicity that the triangulation $\T$ is oriented. 

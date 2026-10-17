@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.991
+doc_brief: "Quaternion-Octonion SU (3) Flavor Symmetry — Starting with the quaternionic formulation of isospin SU(2) group, we have derived the relations for diﬀerent components of isospin with quark states."
 ---
 The Lie algebra of $SU(3)$ exhibits most of the features of the larger
 Lie algebras. The elements of $SU(3)$ group may be obtained in terms

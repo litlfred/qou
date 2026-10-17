@@ -1,1 +1,1 @@
-IfJandKare ffpf knots such thatS 3
+If J and K are ffpf knots such that S3

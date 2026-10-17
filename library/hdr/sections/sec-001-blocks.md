@@ -8,6 +8,7 @@ pages: 16-16
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
 toc_source: outline
+doc_brief: "Hecke algebras, generalisations and representation theory — 30 sections: Front matter; Algebras of Finite Type; Blocks"
 ---
 Blocks
 We deﬁne the block-idempotents of A to be the primitive idempotents of the centre Z(A) of A. Let K be

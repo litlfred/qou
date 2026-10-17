@@ -8,6 +8,7 @@ pages: 69-69
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
 toc_source: outline
+doc_brief: "Stabilization in the braid groups I: MTWS Introduction — 40 sections: Front matter; Introduction; The problem"
 ---
 Pushing across thin annuli
 While we have been able, up to now, to make the tacit assumption that we are working

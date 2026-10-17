@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.955
 latex_coverage_ratio: 0.875
+doc_brief: "Hecke–Farey coordinates for Bring’s surface Doha Kattan 1 and David Singerman 2 — The modular group Γ (which is the Hecke group H3) can be used to study triangular maps, Here we use the Hecke group"
 ---
 We want want to give each   vertex of  $\mathscr{M}_4(5)$ a Hecke-Farey coordinate.  These will have the form $\frac{a}{c\sqrt 2}$ or $\frac{b\sqrt 2}{d}$ where $a,b,c,d$ lie in the set $\{0,1,2,3,4\}$. Now $\frac{a}{c\sqrt 2} = \frac{x}{y\sqrt 2}$ if  and only if $a=\pm x$ and $c=\pm y$, etc. so we can easily work out all the 24 Hecke- Farey fractions representing the points of $\mathscr{M}_{4}(5)$. These are presented in Table \ref {tab:tab6}.
 

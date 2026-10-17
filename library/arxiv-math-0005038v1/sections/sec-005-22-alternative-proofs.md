@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.971
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:math/0005038v1 [math.GR] 4 May 2000 — The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc."
 ---
 There are many possible approaches to proving the Basic Lemma. The proof given above is a compromise of sorts, since it proves the existence of an appropriate element of $H_2(\tilde{C})$, but does so in a non-constructive way.
 

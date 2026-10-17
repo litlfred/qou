@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.931
 latex_coverage_ratio: 0.913
+doc_brief: "arXiv:hep-th/9811173v1 19 Nov 1998 — We identify 998 closed hyperbolic 3-manifolds whose volumes are rationally related to Dedekind zeta values, with coprime integers a and b giving a b vol(M) ="
 ---
 Mathematically speaking, the results of Section 2, while numerically striking, are of a rational character [@DZ:Invent; @DZ:JMPS; @DZ:Texel] that was expected by specialists of $K$-theory (which we are not). The challenge is not to understand why a rational Dedekind-zeta invariant exists, but to learn how to derive (as opposed to measure) it. The cusped results of Section 3 were of the same character as for closed manifolds: hyperbolic knots and links have rational Dedekind-zeta invariants if their complementary cusped manifolds have single-complex-place invariant trace fields. Here, in Section 4, we address the question raised by the sparsity of quadratic entries in Tables 2 and 14: where are the quadratic links with (negated) discriminants beyond the first 4 entries in the integer sequence A003657 of Neil Sloane's on-line encyclopedia[^1] $$\underline3,\underline4,\underline7,\underline8,
 \underline{11},\underline{15},19,\underline{20},23,\underline{24},31,35,

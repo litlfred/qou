@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.946
 latex_coverage_ratio: 1.0
+doc_brief: "The Mukai pairing, I: a categorical approach — We study the Hochschild homology of smooth spaces, emphasizing the importance of a pairing which generalizes Mukai’s pairing on the cohomology of K3"
 ---
 []{#def:defmaps label="def:defmaps"} For spaces $X$ and $Y$ and a kernel $\Phi\colon X\to Y$ define the push-forward on Hochschild homology $\Phi_*\colon \mathop{\mathrm{HH}}_\bullet(X)\to \mathop{\mathrm{HH}}_\bullet(Y)$ as follows $$\Phi_*\left(\raisebox{-.45\height}{}\right):=\raisebox{-.45\height}{}.$$ For the reader still unhappy with diagrams, for $v\in
 \mathop{\mathrm{Hom}}^\bullet(\Sigma_X^{-1},\mathsf {Id}_X)$, define $\Phi_*(v)\in \mathop{\mathrm{Hom}}^\bullet(\Sigma_Y^{-1},\mathsf {Id}_Y)$ as the following composite, which is read from the above diagram by reading upwards from the bottom: $$\begin{aligned}

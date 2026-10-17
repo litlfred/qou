@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.74
+doc_brief: "arXiv:hep-ph/9308276v1 14 Aug 1993 — The most general chiral Lagrangian for electroweak interactions with the complete set of SU(2)L × U(1)Y invariant operators up to dimen- sion four is considered."
 ---
 We start by writing down the electroweak chiral Lagrangian that is $\gs$ invariant and contains the whole set of CP-invariant operators up to dimension four. We will use the notation of ref. [@F] that is closely related to Longhitano's notation, and will restrict our study to the bosonic sector of electroweak theory. The basic building blocks that are used in the construction of the Lagrangian are the following: $$\begin{aligned}
 T & \equiv & U \tau^3 U^\dagger \nonumber\\[2mm] V_\mu & \equiv &

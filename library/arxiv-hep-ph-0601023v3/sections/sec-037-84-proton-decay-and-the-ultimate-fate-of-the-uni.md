@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.977
 latex_coverage_ratio: 0.989
+doc_brief: "arXiv:hep-ph/0601023v3 23 Apr 2007 — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non - su- persymmetric uniﬁcation"
 ---
 Since quantum gravity effects could destabilize the proton, the eventual fate of 
 	 the universe would be governed by  the proton lifetime~\cite{Dicus:1981ab,Adams:1996xe}. 

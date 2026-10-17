@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.981
 latex_coverage_ratio: 0.99
+doc_brief: "A Matrix Bernstein Inequality for Strong Rayleigh Distributions * — The Entropy method provides a powerful framework for proving scalar concentration in- equalities by establishing functional"
 ---
 In this paper, we build on the work of \cite{CT13} to obtain matrix concentration of Lipshitz matrix-valued functions using functional inequalities without any stringent assumptions on the rotational symmetry of the random matrices. Our strategy seems general enough that it should work for proving Matrix concentration for a large class of interesting Markov chains for which scalar spectral gap inequalities are proved using the chain decomposition idea of \cite{JSTV04}. We also believe our techniques should be extendible to prove similar concentration for strong log-concave polynomials \cite{ALGV19,CGM19} and would hence imply matrix concentration for uniform distributions on any matroid.
 

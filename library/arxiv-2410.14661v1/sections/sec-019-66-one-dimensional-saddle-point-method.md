@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.826
 latex_coverage_ratio: 0.822
+doc_brief: "ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM INVARIANTS III: THE RESHETIKHIN-TURAEV INVARIANTS OF CLOSED HYPERBOLIC 3-MANIFOLDS OBTAINED BY DOING INTEGRAL SURGERY ALONG THE TWIST KNOT — This is the"
 ---
 []{#appendix-onedim label="appendix-onedim"} Consider the function, $$\begin{aligned}
  \hat{V}(\theta_1,\theta_2,\theta_3;m_1,m_2,m_3)=\hat{V}(\theta_1,\theta_2,\theta_3)-2\pi\sqrt{-1}m_1\theta_1-2\pi\sqrt{-1}m_2\theta_2-2\pi\sqrt{-1}m_3\theta_3.         

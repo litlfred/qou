@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2402.04839v2/sections/sec-021",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Equivalence of volumes: m015, m016 and m017",
+  "pageStart": 27,
+  "pageEnd": 28,
+  "contains": [
+    "library/arxiv-2402.04839v2/blocks/prose-sec-021"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2402.04839v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2402.04839v2/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.972
 latex_coverage_ratio: 0.986
+doc_brief: "arXiv:physics/0203048v1 [physics.plasm-ph] 15 Mar 2002 — An expression for a third-order link integral of three magnetic ﬁelds is presented."
 ---
 It is interesting to note that the new third-order invariant comes on an equal footing as the conservation of helicity, since both invariants where derived from the same identity ([\[Chern-Simons\]](#Chern-Simons){reference-type="ref" reference="Chern-Simons"}). However, contrary to the conservation of helicity, the third-order integral cannot be applied to a single magnetic field, but requires a triplet of fields. Thus we have to interpret this integral in the sense of the cross-helicity rather than the total helicity. A forthcoming paper will deal with the question of how a single magnetic field might be split into a triplet of fields with the required properties $\nabla\cdot\bG^i=0$, thereby linking the given *cross* third-order invariant and a *total* third-order invariant.
 

@@ -8,6 +8,7 @@ pages: 16-17
 source_pdf: 2011.13340v1.pdf
 source_sha256: e73876ed2c923608
 toc_source: outline
+doc_brief: "A Matrix Bernstein Inequality for Strong Rayleigh Distributions * — The Entropy method provides a powerful framework for proving scalar concentration in- equalities by establishing functional"
 ---
 [ABY19]
 Richard Aoun, Marwa Banna, and Pierre Youssef, Matrix poincaré inequalities and concen-

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.918
 latex_coverage_ratio: 1.0
+doc_brief: "Path Integral Quantum Monte Carlo Method for Light Nuclei — 64 sections: Front matter; ABSTRACT; LIST OF TABLES"
 ---
 The root mean square (rms) radius $r_m$ can be interpreted as the average distance between any one of the particles and the system's center of mass. The label of the nucleon does not matter, so we can just take nucleon number 1 as reference. The operator can be written as[^1], $$\begin{aligned}
 \hat{r}_m = \left| \hat{\bm{r}}_1 - \frac{1}{A}\sum_{j=1}^A \hat{\bm{r}}_j \right|,

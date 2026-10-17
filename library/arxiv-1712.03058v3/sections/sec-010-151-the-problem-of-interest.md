@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.971
 latex_coverage_ratio: 0.972
+doc_brief: "Iterated ﬁltering methods for Markov process epidemic models — Dynamic epidemic models have proven valuable for public health decision makers as they provide useful insights into the understanding"
 ---
 Typical infectious disease data collected by public health authorities often consists of reported incidences in given time periods. Other important characteristics of an epidemic such as recovery times of the individual or contact network are not observed. The method presented is a useful tool to analyze routinely collected surveillance data because it gives insights into the mechanism of disease spread which is crucial if one wants to e.g. assess the risk of emerging pathogens or evaluate the impact of control measures such as vaccination.\
 In this section we describe how to carry out inference for the parameters of a POMP where the underlying disease transmission model is assumed to be a simple Markovian SIR model, given that we observe the number of newly reported cases aggregated by week. We use the algorithm presented in Section [\[iterated_filtering\]](#iterated_filtering){reference-type="ref" reference="iterated_filtering"} for a simulated data set and illustrate how the algorithm performs.\

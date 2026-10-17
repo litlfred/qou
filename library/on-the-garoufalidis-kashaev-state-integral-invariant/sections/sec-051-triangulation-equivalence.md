@@ -8,6 +8,7 @@ pages: 54-54
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
 toc_source: outline
+doc_brief: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT — 63 sections: Front matter; ACKNOWLEDGMENTS; ABSTRACT"
 ---
 Triangulation Equivalence
 Definition 13. Two ordered triangulations X and X′ of a 3-manifold are Pachner-

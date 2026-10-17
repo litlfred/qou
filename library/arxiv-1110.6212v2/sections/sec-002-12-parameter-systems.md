@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.975
 latex_coverage_ratio: 0.976
+doc_brief: "On calibrated representations and the Plancherel Theorem for aﬃne Hecke algebras — This paper has two main purposes."
 ---
 Let $q_0,q_1,\ldots,q_n\in\mathbb{C}^{\times}$ be such that $q_i=q_j$ whenever $s_i$ and $s_j$ are conjugate in $W_Q$. We call the sequence $(q_i)$ a *parameter system*. By [@bourbaki IV, §5, No.5, Prop 5] the product $$q_w=q_{i_1}\cdots q_{i_{\ell}}\quad\textrm{(where $w=s_{i_1}\cdots s_{i_{\ell}}\in W_Q$ is reduced)}$$ does not depend on the particular reduced expression for $w$. If $\alpha\in W_0\alpha_i\cap W_0\alpha_j$ then $s_i$ and $s_j$ are conjugate in $W_0$, and hence for $\alpha\in R_0$ we define $$q_{\alpha}=q_i\qquad\textrm{if $\alpha\in W_0 \alpha_i$}.$$
 

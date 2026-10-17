@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.966
 latex_coverage_ratio: 0.976
+doc_brief: "SOERGEL CALCULUS — The monoidal category of Soergel bimodules is an incarnation of the Hecke category, a fundamental object in representation theory."
 ---
 Let us fix a light leaves map $\LL_{{\un{x}},\eb}$, with $\eb$ expressing $w$. Let ${\un{w}}$ be the target of the map. Now consider what happens after the passage $\DC \to \Kar(\DC_Q)$. The target $B_{\un{w}}$ splits up into standard summands, with a unique summand isomorphic to $Q_w$. For each subsequence $\fb$ of ${\un{x}}$ which also expresses $w$ we have a summand $Q_\fb \sumset B_{\un{w}}$ isomorphic to $Q_w$, and this is sent by $\LL_{{\un{w}},\eb}$ into the unique summand $Q_w \sumset B_{\un{w}}$ with some coefficient $p^\eb_\fb \in Q$. For the conventions used to calculate this coefficient, see section \ref{subsec-compute}. A priori this coefficient depends on the choices made in the construction of $\LL_{{\un{w}},\eb}$.
 

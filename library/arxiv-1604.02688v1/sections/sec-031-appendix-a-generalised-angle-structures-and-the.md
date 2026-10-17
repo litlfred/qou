@@ -8,6 +8,7 @@ pages: 50-51
 source_pdf: 1604.02688v1.pdf
 source_sha256: bdcafe379519287c
 toc_source: outline
+doc_brief: "THE 3D-INDEX AND NORMAL SURFACES — Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index, associated to a suitable ideal triangulation of a 3-manifold with torus boundary"
 ---
 The relationship between angle structures and geometric structures is often described by
 saying that a generalised angle structure is a solution to the “linear part” of Thurston’s gluing

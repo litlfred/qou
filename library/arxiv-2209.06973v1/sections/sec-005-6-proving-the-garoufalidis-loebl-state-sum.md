@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.988
 latex_coverage_ratio: 0.995
+doc_brief: "On the geometry of two state models for the colored Jones polynomial — Using the ﬂow property of the R-matrix deﬁning the colored Jones polynomial, we establish a natural bijection between the set of"
 ---
 We will now rewrite the usual state-sum contributions as described in [@G] into the Garoufalidis Loebl state-sum contributions using the above identities and the flow Lemma. There two important steps: The first will be to transform the formulas in the last section into formulas for the $(+)$-model (increasing colors on overcrossing arcs at overcrossings). The second is to rewrite the two functions $f_{\pm }$ into a single vertex contribution formula, depending on the crossing sign.
 

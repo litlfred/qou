@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.976
 latex_coverage_ratio: 0.977
+doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — Based on an interpretation of the quark-lepton symmetry in terms of the unimodularity of the color group SU(3) and on the existence of 3 generations, we develop an"
 ---
 Let $J$ be a unital Jordan algebra with center (= centroid) $Z(J)$ and let ${\mbox{Der}}(J)$ be the Lie algebra and $Z(J)$-module of derivations of $J$. A *(derivation-based) connection* $\nabla$ on a unital $J$-module $M$ is a linear mapping $X\mapsto \nabla_X$ of ${\mbox{Der}}(J)$ into the linear endomorphisms of $M$ such that $$\left\{
  \begin{array}{l}

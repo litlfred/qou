@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.941
 latex_coverage_ratio: 1.0
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials."
 ---
 Another natural question on asymptotics of Jack measure is the behavior of the first few rows of the Young diagrams. This kind of results, orthogonal to the ones in this paper, is called *edge fluctuations*. Our law of large number on the bulk on Young diagrams implies that, for any fixed positive integer $k$ and real number $C<1$, $$\mathbb{P}\left[ \frac{(\lambda_{(n)})_k}{\sqrt{n}} \leq \frac{2\, C}{\sqrt{\alpha}} \right] \to 0,$$ while Lemma [\[lem:FiniteSupport\]](#lem:FiniteSupport){reference-type="ref" reference="lem:FiniteSupport"} tells us that $(\lambda_{(n)})_k/\sqrt{n}$ exceeds $(2e)/\sqrt{\alpha}$ with exponentially small probability.
 

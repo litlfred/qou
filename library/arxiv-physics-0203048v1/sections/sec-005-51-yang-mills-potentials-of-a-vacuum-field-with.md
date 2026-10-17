@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.955
 latex_coverage_ratio: 0.97
+doc_brief: "arXiv:physics/0203048v1 [physics.plasm-ph] 15 Mar 2002 — An expression for a third-order link integral of three magnetic ﬁelds is presented."
 ---
 An $SU(2)$ Yang-Mills vacuum field is now constructed on a time slice $\reals^3$ of $\reals^4$ using the mapping $g: \reals^3 \rightarrow SU(2)$ (see e.g. Frankel 1997, Itzykson and Zuber 1980) $$g(\bx) \,=\, \text{exp}\left[\frac{i\pi \; x^j \sigma_j}
                           {\sqrt{||\bx||^2 + \lambda^2}}\right].

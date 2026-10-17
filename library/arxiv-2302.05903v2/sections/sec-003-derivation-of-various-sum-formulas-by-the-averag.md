@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.971
 latex_coverage_ratio: 0.952
+doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials Introduction — We elaborate on the recent suggestion to consider averaging of Cauchy"
 ---
 The averaging method can be easily modified to handle more examples. Say, we can ask the average $\left<S_R\right>=1$ only for *even* diagrams $R$, i.e. with all rows of even lengths, and vanishes otherwise. The corresponding measure is still Gaussian, $$\begin{aligned}
 \text{\bf Measure B}: \ \ \ \ \ \ \ \ \ \ \

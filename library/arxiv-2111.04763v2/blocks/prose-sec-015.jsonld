@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-2111.04763v2/blocks/prose-sec-015",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "References",
-  "pageStart": 56,
-  "pageEnd": 59,
-  "text": "../sections/sec-015-references.md",
+  "title": "Borel resummation and Stokes constants",
+  "pageStart": 42,
+  "pageEnd": 47,
+  "text": "../sections/sec-015-44-borel-resummation-and-stokes-constants.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2111.04763v2/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2111.04763v2/manifest.jsonld",
   "provenance": "ingested"

@@ -8,6 +8,7 @@ pages: 62-62
 source_pdf: 0601458v1.pdf
 source_sha256: ef34611620cfd0bd
 toc_source: outline
+doc_brief: "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS — Interest in combinatorial interpretations of mathematical entities stems from the convenience of the concrete models they provide."
 ---
 We saw that in the special case where the groupoid Z0 of colourings was a set,
 the category of groupoid-coloured sets had objects which were maps from sets S

@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.974
 latex_coverage_ratio: 0.944
+doc_brief: "arXiv:math/0203273v3 [math.CT] 12 Oct 2002 — 31 sections: Front matter; Introduction; Alg`ebres `a plusieurs objets"
 ---
 *Dans tout ce paragraphe, on suppose que $({\mathcal{A}},\bullet)$ est $K$-linéaire monoı̈dale rigide, symétrique, et que $End({\bf 1}) =K$* (en revanche, on ne suppose pas ${\mathcal{A}}$ abélienne).
 

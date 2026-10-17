@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.95
 latex_coverage_ratio: 0.981
+doc_brief: "Categorical Quantum Volume Operator — 11 sections: Categorical Quantum Volume Operato; Introduction; Quantum tetrahedron"
 ---
 \label{subsec:string_diagrams}
 A fusion category is uniquely specified by its skeletal data, see e.g.\ Refs.~\cite{Bridgeman2020,Barter2022}\@. That is

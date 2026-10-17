@@ -8,6 +8,8 @@ pages: 22-26
 source_pdf: 1404.0724v1.pdf
 source_sha256: ea40edaad77c1617
 toc_source: outline
+doc_brief: "Introduction to Representations of Braid Groups — These are lecture notes prepared for a minicourse given at the Cimpa Research School Algebraic and geometric aspects of representation the- ory, held"
+duplicate_of: "ariasabad2015-revcolmat"
 ---
 The Yang-Baxter equation and quasi-triangular bialgebras
 The Yang-Baxter equation was originally introduced in the ﬁeld of statistical mechanics. Solu-

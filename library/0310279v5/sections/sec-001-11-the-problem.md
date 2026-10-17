@@ -8,6 +8,7 @@ pages: 1-5
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
 toc_source: outline
+doc_brief: "Stabilization in the braid groups I: MTWS Introduction — 40 sections: Front matter; Introduction; The problem"
 ---
 The problem
 Let X be an oriented link type in the oriented 3–sphere S3 or R3 = S3 \ {∞}. A

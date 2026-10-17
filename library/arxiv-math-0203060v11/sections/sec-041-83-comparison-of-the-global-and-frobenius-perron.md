@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
 latex_coverage_ratio: 0.978
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 ::: proposition
 []{#domi label="domi"} Let ${\mathcal C}$ be a fusion category. Then for any simple object $V$ of ${\mathcal C}$ one has $|V|^2\le {\rm FPdim}(V)^2$, and hence $\dim({\mathcal C})\le {\rm FPdim}({\mathcal C})$. Hence, if $\dim({\mathcal C})={\rm FPdim}({\mathcal C})$ then $|V|^2={\rm FPdim}(V)^2$ for all simple objects $V$.

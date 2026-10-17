@@ -3,12 +3,17 @@
  "doc_id": "arxiv-2411.03801v2",
  "source_sha256": "a7f1f6fa74cb0949",
  "brief": "1-LOOP EQUALS TORSION FOR TWO-BRIDGE KNOTS — Motivated by the conjectured asymptotics of the Kashaev invariant, Dimofte and the first author introduced a power series associated to a suitable ideal",
- "extended": "**1-LOOP EQUALS TORSION FOR TWO-BRIDGE KNOTS**\n\n*STAVROS GAROUFALIDIS AND SEOKBEOM YOON*\n\n24 pp, 14 sections.\n\n**Abstract.** Motivated by the conjectured asymptotics of the Kashaev invariant, Dimofte and the first author introduced a power series associated to a suitable ideal triangulation of a cusped hyperbolic 3-manifold, proved that its constant (1-loop) term is a topological invariant and conjectured that it equals to the adjoint Reidemeister torsion. We prove this conjecture for hyperbolic 2-bridge knots by combining the work of Ohtsuki–Takata with an explicit computation.\n\n**Outline.** 1 Introduction; 2.1 The 1-loop invariant; 2 Two invariants from the asymptotics of the K; 2.2 Essential open diagrams and their potentia; 2.3 The Ohtsuki–Takata invariant; 3 From planar diagrams to ideal triangulations; 3.1 Octahedral decomposition; 3.2 Collapsing the octahedral decomposition to; 4 Proof of the main theorem; 4.1 Flattening of the collapsed triangulation; 4.2 Variable reduction; Appendix A. Further discussion on collapsing; Appendix B. Braid closures; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: The 1-loop equals torsion conjecture holds for hyperbolic 2-bridge knots.\n- Theorem 4.1: For ˚D as above, τ(T˚D) =±ω(˚D).\n- Definition 2.1: The 1-loop invariant of an essential triangulationT is defined as\n- Definition 2.5: The Ohtsuki–Takata invariant of an essential open diagram ˚D is\n- Lemma 4.2: We have⟨f,e⟩ = 2 for all C-edges e.\n- Lemma 4.3: We have⟨f,e⟩ = 2 for all R-edges e.",
+ "extended": "**1-LOOP EQUALS TORSION FOR TWO-BRIDGE KNOTS**\n\n*STAVROS GAROUFALIDIS AND SEOKBEOM YOON*\n\n24 pp, 15 sections.\n\n**Abstract.** Motivated by the conjectured asymptotics of the Kashaev invariant, Dimofte and the first author introduced a power series associated to a suitable ideal triangulation of a cusped hyperbolic 3-manifold, proved that its constant (1-loop) term is a topological invariant and conjectured that it equals to the adjoint Reidemeister torsion. We prove this conjecture for hyperbolic 2-bridge knots by combining the work of Ohtsuki–Takata with an explicit computation.\n\n**Outline.** Front matter; 1 Introduction; 2.1 The 1-loop invariant; 2 Two invariants from the asymptotics of the K; 2.2 Essential open diagrams and their potentia; 2.3 The Ohtsuki–Takata invariant; 3 From planar diagrams to ideal triangulations; 3.1 Octahedral decomposition; 3.2 Collapsing the octahedral decomposition to; 4 Proof of the main theorem; 4.1 Flattening of the collapsed triangulation; 4.2 Variable reduction; Appendix A. Further discussion on collapsing; Appendix B. Braid closures; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: The 1-loop equals torsion conjecture holds for hyperbolic 2-bridge knots.\n- Definition 2.1: The 1-loop invariant of an essential triangulation T is defined as\n- Lemma: B.1. Let ei and ej be two edges of T˚",
  "tokens": {
   "brief": 49,
-  "extended": 383
+  "extended": 341
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",

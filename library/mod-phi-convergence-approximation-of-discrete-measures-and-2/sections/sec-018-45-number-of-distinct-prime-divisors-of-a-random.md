@@ -8,6 +8,7 @@ pages: 56-58
 source_pdf: mod-phi-convergence-approximation-of-discrete-measures-and-20yc5c6q3n.pdf
 source_sha256: c563cc999000e75d
 toc_source: outline
+doc_brief: "ANNALES DE L’INSTITUT FOURIER — 26 sections: Front matter; Introduction; Poisson approximation of lattice-v"
 ---
 As pointed out in the introduction, number theory provides another area
 where the phenomenon of mod-Poisson convergence is prominent; see in

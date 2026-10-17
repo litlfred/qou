@@ -8,6 +8,7 @@ pages: 14-21
 source_pdf: amc_2730.pdf
 source_sha256: 65730074a2925c6e
 toc_source: outline
+doc_brief: "Braid representatives minimizing the number of simple walks * — Given a knot, we develop methods for finding a braid representative that minimizes the number of simple walks."
 ---
 Semi-simple walks and cyclic permutation
 The main result in this section is an invariance property which asserts that under the cyclic

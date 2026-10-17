@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.976
+doc_brief: "Quaternion-Octonion SU (3) Flavor Symmetry — Starting with the quaternionic formulation of isospin SU(2) group, we have derived the relations for diﬀerent components of isospin with quark states."
 ---
 The $I$, $U$ and $V$ - spin algebras are closed. Let us obtain
 the commutation relations of shift operators $I_{\pm},\, U_{\pm},\, V_{\pm}$

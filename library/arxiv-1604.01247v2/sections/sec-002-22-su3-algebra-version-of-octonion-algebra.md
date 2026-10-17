@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.987
 latex_coverage_ratio: 0.987
+doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — Based on an interpretation of the quark-lepton symmetry in terms of the unimodularity of the color group SU(3) and on the existence of 3 generations, we develop an"
 ---
 One can combine the 3-linear form $v$ on $E$ with the Hilbertian scalar product to define an antibilinear antisymmetric product $(Z_1,Z_2)\mapsto Z_1\vartimes Z_2$ on $E$ by $$v(Z_1,Z_2,Z_3)=\langle Z_1\vartimes  Z_2,Z_3\rangle
 \label{vectp}$$ for any $Z_1,Z_2,Z_3\in E$. In the $SU(3)$-basis $(e_1,e_2,e_3)$ and the corresponding identification of $E$ with $\mathbb C^3$ this product reads $$(Z_1\vartimes  Z_2)^k=\varepsilon_{k\ell m} \bar Z^\ell_1 \bar Z^m_2

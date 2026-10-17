@@ -11,6 +11,8 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.98
 latex_coverage_ratio: 0.98
+doc_brief: "Czechoslovak Mathematical Journal — 9 sections: Front matter; Introduction; Composition-Diamond lemma for left"
+duplicate_of: "czechmathj-60-2010-1-4"
 ---
 In this section, by using Lemma [\[l3.5\]](#l3.5){reference-type="ref" reference="l3.5"}, we find a basis of Verma module over Lie algebras of coefficients of free conformal algebras.
 

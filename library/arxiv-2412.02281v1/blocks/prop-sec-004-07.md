@@ -1,1 +1,1 @@
-For a = (a1,...,a n), b = (b1,...,b n−2) satisfying (13), we have
+For a = (a1, ..., an), b = (b1, ..., bn−2) satisfying (13), we have

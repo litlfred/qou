@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.923
 latex_coverage_ratio: 0.996
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 []{#sec_aop4 label="sec_aop4"} A discussion of the masses at ${\cal O}(q^4)$ is one of the simplest applications of chiral perturbation theory beyond the tree level. For that purpose let us consider ${\cal L}_2 + {\cal L}_4$ for QCD with finite quark masses but in the absence of external fields. We restrict ourselves to the limit of isospin symmetry, i.e., $m_u=m_d=\hat m$. In order to determine the masses we calculate the self energies $\Sigma(p^2)$ of the Goldstone bosons.
 

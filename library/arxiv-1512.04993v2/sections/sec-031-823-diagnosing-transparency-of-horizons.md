@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 One interesting relation between complexity and Einstein-Rosen bridges involves the ``transparency" or ``opacity" of the horizon: it has been conjectured that black holes with growing complexity have transparent horizons \cite{opacity} while those with decreasing complexity have opaque horizons. This result found support in the shock wave analysis, both for CV-duality (see \cite{opacity}) and, in this paper, for CA-duality.
 

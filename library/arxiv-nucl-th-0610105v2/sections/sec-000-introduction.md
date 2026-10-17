@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.962
 latex_coverage_ratio: 0.997
+doc_brief: "Universal Properties of the Four-Body System with Large Scattering Length Abstract — Few-body systems with large scattering length have universal properties that do not depend on the details of their"
 ---
 []{#sec:intro label="sec:intro"} Effective theories are a powerful framework to exploit a separation of scales in a physical system. The long-distance degrees of freedom must be included dynamically in the effective theory, while short-distance physics enters only through the values of a few coupling constants, often called low-energy constants. Effective theories are widely used in many areas of physics. Recently, a considerable effort was devoted to applying effective field theories in nuclear and atomic physics [@Bedaque:2002mn; @Epelbaum:2005pn; @Braaten:2004rn]. If there is no exchange of massless particles, any interaction will appear short ranged at sufficiently low energy. One can then use a very general effective theory with short-range interactions only to describe the universal low-energy properties of the system. Such a theory can be applied to a wide range of systems from nuclear and particle physics to atomic and molecular physics.
 

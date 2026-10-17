@@ -8,6 +8,7 @@ pages: 3-9
 source_pdf: 1-s2.0-S0097316524000426-main.pdf
 source_sha256: 76a8ab857163aa09
 toc_source: outline
+doc_brief: "Journal of Combinatorial Theory, Series A Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions — 8 sections: Front matter; Proof of a conjecture of Ballantin; Introd"
 ---
 In order to prove Conjecture 1.1, we need a formula of p3(n) due to Cayley [5], where 
 p3(n) denotes the number of partitions of n into parts not exceeding 3. The generating 

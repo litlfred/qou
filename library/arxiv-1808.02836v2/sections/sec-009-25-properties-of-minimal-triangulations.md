@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.972
 latex_coverage_ratio: 0.994
+doc_brief: "On minimal ideal triangulations of cusped hyperbolic 3–manifolds Introduction — Previous work of the authors studies minimal triangulations of closed 3–manifolds using a characterisation of low"
 ---
 An ideal triangulation of a topologically finite 3--manifold $M$ is *minimal* if it uses the smallest number of simplices in an ideal triangulation of $M.$ The number of ideal simplices in a minimal ideal triangulation of $M$ is denoted $c(M)$ and termed the *complexity* of $M.$
 

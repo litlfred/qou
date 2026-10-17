@@ -8,6 +8,7 @@ pages: 19-21
 source_pdf: 2404.19155v2.pdf
 source_sha256: 45b9ed90006536b3
 toc_source: outline
+doc_brief: "Octahedral coordinates from the Wirtinger presentation — Let ρ be a representation of a knot group (or more generally, the funda- mental group of a tangle complement) into SL2(C) expressed in terms"
 ---
 18
 [DG12] N. M. Dunfield and S. Garoufalidis,

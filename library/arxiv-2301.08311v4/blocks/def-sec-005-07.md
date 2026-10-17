@@ -1,1 +1,1 @@
-A map u : D→ CPn with boundary on the Lagrangian
+A map u : D →CPn with boundary on the Lagrangian

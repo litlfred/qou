@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 0.984
+doc_brief: "ON IRREDUCIBLE CHARACTERS OF THE IWAHORI-HECKE ALGEBRA IN — We use vertex operators to compute irreducible characters of the Iwahori-Hecke algebra of type A."
 ---
 The Hecke algebra $H_n(q)$ is a $(H_n(q), H_n(q))$-bimodule under the left and right regular actions, and the two actions mutually commute with each other. As a result $$H_n(q)=\bigoplus_{\lambda\vdash n} V_{\lambda}\otimes V^{\lambda}$$ where $V_{\lambda}$ (resp. $V^{\lambda}$) is the irreducible left (resp. right) $H_n(q)$-module labeled by $\lambda$.
 

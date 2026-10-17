@@ -3,7 +3,7 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-math-0305275v1/blocks/thm-sec-003-01",
@@ -12,8 +12,8 @@
     "doco:Section"
   ],
   "kind": "theorem",
-  "pageStart": 15,
-  "pageEnd": 21,
+  "pageStart": 9,
+  "pageEnd": 15,
   "text": "thm-sec-003-01.md",
   "derivedFrom": "library/arxiv-math-0305275v1/sections/sec-003",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0305275v1/manifest.jsonld",

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.969
 latex_coverage_ratio: 0.99
+doc_brief: "BPS states, knots and quivers — 6 sections: Front matter; BPS states, knots and quivers; Moduli of quiver representations"
 ---
 We illustrate the above correspondence in the example of trefoil knot, whose reduced colored HOMFLY-PT polynomials arise by setting $t=-1$ in ([\[Pr-31\]](#Pr-31){reference-type="ref" reference="Pr-31"}). Using the $q$-binomial identity $(z;q)_k=\sum_i {k \brack i} (-z)^i q^{\frac{i(i-1)}{2}}$, the $q$-binomial and the last product in ([\[Pr-31\]](#Pr-31){reference-type="ref" reference="Pr-31"}) take form $${r \brack k} \big(\frac{a^2}{q^2};q^2\big)_k = \sum_{i=0}^k \frac{(q^2;q^2)_r  \big( - \frac{a^2}{q^2} \big)^i q^{i(i-1)} }{(q^2;q^2)_{r-k} (q^2;q^2)_i (q^2;q^2)_{k-i}}.$$ Introducing $r=d_1+d_2+d_3, k=d_2+d_3, i=d_3$ with $d_i\geq 0$, and normalizing $P_r(a,q)$ by $(q^2;q^2)_r$, the generating function ([\[Pz2\]](#Pz2){reference-type="ref" reference="Pz2"}) can be rewritten as in ([\[PxC\]](#PxC){reference-type="ref" reference="PxC"}) $$\begin{aligned}
 &P(x) = \sum_{r=0}^{\infty} \frac{P_r(a,q)}{(q^2;q^2)_r} x^r = \nonumber \\

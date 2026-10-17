@@ -8,6 +8,7 @@ pages: 31-32
 source_pdf: 2607.03827v1.pdf
 source_sha256: 965d69603381942a
 toc_source: outline
+doc_brief: "Affine cellular algebras and asymptotic algebras — The theory of affine cellular algebras A is extended to incorporate their asymptotic algebras ˆA, clarifying unexpected differences between"
 ---
 [1] Michael Francis Atiyah and Ian Grant Macdonald, Introduction to commutative algebra, Addison-Wesley Publishing
 Co., Reading, Mass.-London-Don Mills, Ont., 1969.

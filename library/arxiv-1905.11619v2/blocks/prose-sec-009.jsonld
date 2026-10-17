@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/arxiv-1905.11619v2/blocks/prose-sec-009",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Gradient-Sp estimates",
-  "pageStart": 11,
-  "pageEnd": 16,
-  "text": "../sections/sec-009-42-gradient-sp-estimates.md",
+  "title": "Schatten Sp-estimates for the Ornstein-Uhlenbeck semi-group on q-Gaussians",
+  "pageStart": 10,
+  "pageEnd": 11,
+  "text": "../sections/sec-009-4-schatten-sp-estimates-for-the-ornstein-uhlenbe.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1905.11619v2/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1905.11619v2/manifest.jsonld",
   "provenance": "ingested"

@@ -8,6 +8,7 @@ pages: 18-19
 source_pdf: 2205.06874v2.pdf
 source_sha256: 9b41365160c17ab4
 toc_source: outline
+doc_brief: "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects."
 ---
 Bordered diagrams
 Using the diagrammatic calculus from the previous sections, we define a generalisation of 2-category diagrams

@@ -8,6 +8,7 @@ pages: 28-29
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
 toc_source: outline
+doc_brief: "Hecke algebras, generalisations and representation theory — 30 sections: Front matter; Algebras of Finite Type; Blocks"
 ---
 Schur elements and the a-function
 The canonical symmetrising form τ on H(W) (see Assumptions 3.4) can be extended to K(v)H(W) by

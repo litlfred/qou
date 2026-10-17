@@ -8,6 +8,8 @@ pages: 9-10
 source_pdf: 0611504v1.pdf
 source_sha256: a33d2771c873a97e
 toc_source: outline
+doc_brief: "Quantum hyperbolic geometry — 22 sections: Front matter; Introduction; Universal QHG"
+duplicate_of: "agt-v7-n2-p13-s"
 ---
 pseudomanifold (Z, T ) a trace tensor HN(T ), as follows. Deﬁne an N-state of T as a function that
 gives every 2-simplex an index, with values in {0, . . . , N −1}. Every N-state determines an entry

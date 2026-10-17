@@ -1,1 +1,1 @@
-[14] IfC is a spherical category, then
+[14] If C is a spherical category, then

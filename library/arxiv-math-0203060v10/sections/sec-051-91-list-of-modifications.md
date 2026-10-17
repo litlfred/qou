@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.908
 latex_coverage_ratio: 0.96
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 Fusion and multi-fusion categories in characteristic $p$ are defined in the same way as in charactersitic zero. Below we will describe the modifications which need to be made to validate the statements from the previous sections in this case.
 

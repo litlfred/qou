@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.845
 latex_coverage_ratio: 0.529
+doc_brief: "arXiv:math/0501112v3 [math.CO] 31 May 2005 — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 ::: theorem
 []{#claim:mnozenie2 label="claim:mnozenie2"} []{#claim:mnozenie label="claim:mnozenie"} Let $i_1<\cdots<i_{n+1}$ be integers and for each $1\leq s\leq n$ let $\pi_s$ be a partition of the set $\rho_s=\{i_{s}+1,i_{s}+2,\dots,i_{s+1}\}$. We denote $$\pi_1 \bullet \cdots \bullet \pi_n=   (\pi_1 \cup \cdots \cup \pi_n) \vee

@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1304.3481v1.pdf
 source_sha256: d0840f2775c0f761
 toc_source: outline
+doc_brief: "Quadruply-graded colored homology of knots Eugene Gorsky, Sergei Gukov, and Marko Stoˇsi´c — We conjecture the existence of four independent gradings in the colored HOMFLY homology."
 ---
 arXiv:1304.3481v1  [math.QA]  11 Apr 2013
 Quadruply-graded colored homology of knots

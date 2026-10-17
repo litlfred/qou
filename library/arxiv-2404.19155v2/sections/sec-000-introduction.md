@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.78
 latex_coverage_ratio: 0.878
+doc_brief: "Octahedral coordinates from the Wirtinger presentation — Let ρ be a representation of a knot group (or more generally, the funda- mental group of a tangle complement) into SL2(C) expressed in terms"
 ---
 Studying representations of knot and $3$-manifold groups into $\slg$ is important in low-dimensional topology. The isometry group of hyperbolic $3$-space is $\pslg$, so this problem is closely related to the study of hyperbolic structures [@ThurstonNotes]. While one can study representations algebraically, say via the Wirtinger presentation of the knot group, it is sometimes better to work more geometrically. For example, for geometric invariants like the hyperbolic volume it is usually better to work with the geometric parameters of an ideal triangulation of the knot complement than directly with $\rho$.
 

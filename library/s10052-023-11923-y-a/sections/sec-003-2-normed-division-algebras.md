@@ -8,6 +8,8 @@ pages: 2-5
 source_pdf: s10052-023-11923-y_a.pdf
 source_sha256: 73d1a03532d62ef7
 toc_source: outline
+doc_brief: "Three generations of colored fermions with S 3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU(3)C color symmetry based on the"
+duplicate_of: "arxiv-2306.13098v2"
 ---
 and octonions O. In Sect. 3 we review the construction of
 one generation of fermions with unbroken SU(3)c ×U(1)em

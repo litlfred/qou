@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.945
 latex_coverage_ratio: 0.983
+doc_brief: "arXiv:hep-ph/0003017v2 26 Jun 2000 — Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems."
 ---
 For masses in the domain of Eq. ([\[range\]](#range){reference-type="ref" reference="range"}), we can equate the mass dependence of the QCD partition function and the mass dependence of the effective partition function. Equating the coefficients of the expansion in powers of the mass then gives us the so-called Leutwyler-Smilga sum rules [@Leut92]. The QCD partition function can be expanded as $$\label{ZQCDnu}
   {Z^{\rm QCD}_\nu(m)} = \frac {\langle 

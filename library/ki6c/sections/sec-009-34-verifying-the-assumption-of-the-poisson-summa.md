@@ -8,6 +8,7 @@ pages: 20-22
 source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
+doc_brief: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings Tomotada Ohtsuki and Yoshiyuki Yokota Introduction — We give presentations of the asymptotic expansions of the"
 ---
 Verifying the assumption of the Poisson summation formula
 In this section, we verify the assumption of the Poisson summation formula in Lemma 3.4,

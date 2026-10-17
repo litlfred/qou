@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.976
 latex_coverage_ratio: 0.986
+doc_brief: "arXiv:hep-ph/0601023v3 23 Apr 2007 — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non - su- persymmetric uniﬁcation"
 ---
 As shown in the previous section the proton decay predictions arising 
  from the gauge $d=6$ operators depend on the fermion mixing, 

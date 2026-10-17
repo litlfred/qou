@@ -8,6 +8,7 @@ pages: 6-8
 source_pdf: S0025-5718-07-02027-3.pdf
 source_sha256: 080b5ac8542ff19c
 toc_source: outline
+doc_brief: "MATHEMATICS OF COMPUTATIONS 0025-5718(07)02027-3 — We describe an algorithm for computing Coleman’s p-adic poly- logarithms up to a given precision."
 ---
 In this section we explain how to compute Lin(z) on all residue discs except U0,
 U1 and U∞. The residue discs U0 and U∞were discussed in the previous section,

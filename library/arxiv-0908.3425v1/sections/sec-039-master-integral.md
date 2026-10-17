@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.99
 latex_coverage_ratio: 0.99
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 []{#subsubsection_master_integral label="subsubsection_master_integral"} We have seen that the modified minimal subtraction scheme $\widetilde{\rm MS}$ does not produce the desired power counting. We will discuss the power-counting problem in terms of the dimensionally regularized one-loop integral $$\begin{aligned}
 \label{4:3:2:Hdef}

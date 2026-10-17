@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: Generalised_Markov_traces_and_Jucys-Murphy_element.pdf
 source_sha256: 9246e10a44d0b4aa
 toc_source: outline
+doc_brief: "Glasgow Mathematical Journal (2026), 1–10 — We give a simple construction of Markov traces for Iwahori–Hecke algebras associated with the crystallographic Coxeter groups of types An, Bn and Dn."
 ---
 2020 Mathematics Subject Classiﬁcation: Primary - 20C08, 57K14, 57K18
 Abstract

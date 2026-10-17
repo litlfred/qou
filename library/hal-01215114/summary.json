@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "hal-01215114",
  "source_sha256": "c70f8b04a5542a1f",
- "brief": "FPSAC 2011, Reykjavík, Iceland DMTCS proc. AO, 2011, 317–328 Dual combinatorics of zonal polynomials — In this paper we establish a new combinatorial formula for zonal polynomials in terms of",
- "extended": "**FPSAC 2011, Reykjavík, Iceland DMTCS proc. AO, 2011, 317–328 Dual combinatorics of zonal polynomials**\n\n*Valentin Féray1 and Piotr Śniady2,3*\n\n12 pp, 18 sections.\n\n**Abstract.** In this paper we establish a new combinatorial formula for zonal polynomials in terms of power-sums. The proof relies on the sign-reversing involution principle. We deduce from it formulas for zonal characters, which are deﬁned as suitably normalized coefﬁcients in the expansion of zonal polynomials in terms of power-sum symmetric functions. These formulas are analogs of recent developments on irreducible character values of symmetric groups. The existence of such formulas could have been predicted from the work of M. Lassalle who formulated two positivity conjectures for Jack characters, which we prove in the special case of zonal polynomials. Résumé. Dans cet article, nous établissons une nouvelle formule combinatoire pour les polynômes zonaux en fonction des fonctions puissance. La preuve utilise le principe de l’involution changeant les signes.\n\n**Outline.** Introduction; Symmetric functions; Notations; Jack symmetric functions and zonal polynomials; Pair partitions; The main result; Zonal polynomials in terms of pair-partition; Application; Combinatorial interpretation; Links between pair-partitions and zonal charac; Proof of Theorem 3; Combinatorial lemmas; Orthogonality; Normalization; Combinatorial formulas for zonal characters; Via numbers of embeddings; In terms of free cumulants; Conclusion",
+ "brief": "FPSAC 2011, Reykjavík, Iceland — In this paper we establish a new combinatorial formula for zonal polynomials in terms of power-sums. The proof relies on the sign-reversing involution principle.",
+ "extended": "**FPSAC 2011, Reykjavík, Iceland**\n\n*DMTCS proc. AO, 2011, 317–328*\n\n12 pp, 20 sections.\n\n**Abstract.** In this paper we establish a new combinatorial formula for zonal polynomials in terms of power-sums. The proof relies on the sign-reversing involution principle. We deduce from it formulas for zonal characters, which are deﬁned as suitably normalized coefﬁcients in the expansion of zonal polynomials in terms of power-sum symmetric functions. These formulas are analogs of recent developments on irreducible character values of symmetric groups. The existence of such formulas could have been predicted from the work of M. Lassalle who formulated two positivity conjectures for Jack characters, which we prove in the special case of zonal polynomials. Résumé. Dans cet article, nous établissons une nouvelle formule combinatoire pour les polynômes zonaux en fonction des fonctions puissance. La preuve utilise le principe de l’involution changeant les signes.\n\n**Outline.** Front matter; Introduction; Symmetric functions; Notations; Jack symmetric functions and zonal polynomials; Pair partitions; The main result; Zonal polynomials in terms of pair-partition; Application; Combinatorial interpretation; Links between pair-partitions and zonal charac; Proof of Theorem 3; Combinatorial lemmas; Triangularity; Orthogonality; Normalization; Combinatorial formulas for zonal characters; Via numbers of embeddings\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3: Let λ be a partition and T be a bijective ﬁlling of 2λ. One has:\n- Theorem 9: Let ν be a partition of the integer k and S1, S2 be two ﬁxed pair-partitions of the set [2k]\n- Theorem 10: Let ν be a partition of the integer k and S1, S2 be two ﬁxed pair-partitions of [2k] such that\n- Theorem 11: Let ν be a partition of an integer k and S1, S2 be two ﬁxed pair-partitions of [2k] such that\n- Proposition 1: Fix α > 0. There exists a (unique) family of functions J(α)\n- Lemma 4: Let λ and µ be two partitions of the same integer n. If λ does not dominate µ then for any",
  "tokens": {
-  "brief": 47,
-  "extended": 375
+  "brief": 48,
+  "extended": 511
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
@@ -67,35 +72,40 @@
   {
    "id": "sec-011-combinatorial-lemmas",
    "title": "Combinatorial lemmas",
-   "pages": "6-8"
+   "pages": "6-7"
   },
   {
-   "id": "sec-012-orthogonality",
+   "id": "sec-012-triangularity",
+   "title": "Triangularity",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-013-orthogonality",
    "title": "Orthogonality",
    "pages": "8-9"
   },
   {
-   "id": "sec-013-normalization",
+   "id": "sec-014-normalization",
    "title": "Normalization",
    "pages": "9-9"
   },
   {
-   "id": "sec-014-combinatorial-formulas-for-zonal-characters",
+   "id": "sec-015-combinatorial-formulas-for-zonal-characters",
    "title": "Combinatorial formulas for zonal characters",
    "pages": "9-9"
   },
   {
-   "id": "sec-015-via-numbers-of-embeddings",
+   "id": "sec-016-via-numbers-of-embeddings",
    "title": "Via numbers of embeddings",
    "pages": "9-10"
   },
   {
-   "id": "sec-016-in-terms-of-free-cumulants",
+   "id": "sec-017-in-terms-of-free-cumulants",
    "title": "In terms of free cumulants",
    "pages": "10-11"
   },
   {
-   "id": "sec-017-conclusion",
+   "id": "sec-018-conclusion",
    "title": "Conclusion",
    "pages": "11-12"
   }
@@ -104,7 +114,8 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles"
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.98
 latex_coverage_ratio: 0.981
+doc_brief: "OPTIMIZATION ON FLAG MANIFOLDS — A ﬂag is a sequence of nested subspaces."
 ---
 In numerical analysis, flags naturally arise in finite elements, multigrid, spectral and pseudospectral methods, wavelets, iterative matrix computations, etc, in several ways.
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.978
 latex_coverage_ratio: 0.89
+doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
 ---
 \bn
 In describing relative complexity  I've  suppressed issues having to do with coarse-graining by epsilon balls. For example in \ref{uggggv}, \ref{U=ggggV2},  \ref{U=ggggV3}, and \ref{U=ggggV4}

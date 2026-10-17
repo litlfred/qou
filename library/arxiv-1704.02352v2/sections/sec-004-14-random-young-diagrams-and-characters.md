@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.985
 latex_coverage_ratio: 0.957
+doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Young diagrams which can be regarded as a natural one-parameter deformation of some classi- cal"
 ---
 The names *integer partitions* and *Young diagrams* are equivalent, but they are used in different contexts; for this reason we will use two symbols $\mathcal{P}_{n}$ and $\mathbb{Y}_{n}$ to denote the same object: *the set of integer partitions of $n$*, also known as *the set of Young diagrams with $n$ boxes*. Any function on the set of partitions (or its some subset) will be referred to as *character*.
 

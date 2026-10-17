@@ -8,6 +8,7 @@ pages: 25-27
 source_pdf: 2010.12445v1.pdf
 source_sha256: 16e9ca22ecc1f296
 toc_source: outline
+doc_brief: "STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION — Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect(X), we are"
 ---
 Symn OX ≃OX so the hypothesis of 5.1 are satisﬁed.
 Proposition 5.20. Let X be a quasi-compact ﬁbered category over R. Then FibX ,{OX} is the

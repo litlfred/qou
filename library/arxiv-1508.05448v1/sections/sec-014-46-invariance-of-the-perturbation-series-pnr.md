@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.993
 latex_coverage_ratio: 0.974
+doc_brief: "Concentration of Measure Techniques and Applications — 25 sections: Front matter; Biographical Sketch; Acknowledgments"
 ---
 Let us write $$\mathcal{P}_N(r)\, =\, \sum_{\sigma \in \{+1,-1\}^{N-1}} \mathcal{P}_N(\sigma;r)\, ,$$ for $$\mathcal{P}_N(\sigma;r)\,
 =\, 

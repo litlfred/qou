@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.957
 latex_coverage_ratio: 0.892
+doc_brief: "arXiv:math/0203273v3 [math.CT] 12 Oct 2002 — 31 sections: Front matter; Introduction; Alg`ebres `a plusieurs objets"
 ---
 []{#prb label="prb"} Soient $s,s'$ deux sections monoı̈dales strictes de $\pi_{\mathcal{A}}$. Il s'agit de montrer qu'il existe une famille $(u_A)_{A\in
 {\mathcal{A}}}, u_A \in 1_A +{\mathcal{R}}(A,A)$, telle que pour tous $A,B\in {\mathcal{A}}$ on ait $s'(f)= u_As(f)(u_A)^{-1}$ pour tout $f\in 

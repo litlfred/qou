@@ -11,6 +11,7 @@
   ],
   "title": "modularqholonomicmodules",
   "contains": [
+    "library/modularqholonomicmodules/sections/sec-front-matter",
     "library/modularqholonomicmodules/sections/sec-000",
     "library/modularqholonomicmodules/sections/sec-001",
     "library/modularqholonomicmodules/sections/sec-002",
@@ -40,7 +41,9 @@
     "library/modularqholonomicmodules/sections/sec-026",
     "library/modularqholonomicmodules/sections/sec-027",
     "library/modularqholonomicmodules/sections/sec-028",
-    "library/modularqholonomicmodules/sections/sec-029"
+    "library/modularqholonomicmodules/sections/sec-029",
+    "library/modularqholonomicmodules/sections/sec-030",
+    "library/modularqholonomicmodules/sections/sec-031"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",

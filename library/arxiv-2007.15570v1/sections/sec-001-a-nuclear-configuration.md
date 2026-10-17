@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.99
 latex_coverage_ratio: 0.828
+doc_brief: "A quantum Monte Carlo based approach to intranuclear cascades — 3 sections: Front matter; A quantum Monte Carlo based approa; A Nuclear configuration"
 ---
 []{#sec:nuclear-configuration label="sec:nuclear-configuration"}
 

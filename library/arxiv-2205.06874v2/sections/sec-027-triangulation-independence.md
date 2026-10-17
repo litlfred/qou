@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.951
 latex_coverage_ratio: 0.994
+doc_brief: "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects."
 ---
 In this section we  show  that  any two generic transversal triangulations of a  3-manifold with defect data yield the same state sum if they agree at its boundary. 
 Note that this does not follow directly from  Corollary \ref{cor:pachner}, because it is not guaranteed a priori  that such triangulations are related by \emph{generic  transversal} bistellar moves. 

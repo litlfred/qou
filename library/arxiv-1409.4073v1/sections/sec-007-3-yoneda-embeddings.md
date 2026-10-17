@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.791
 latex_coverage_ratio: 0.953
+doc_brief: "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION — We introduce “sheaﬁﬁcation” functors from categories of (lax monoidal) linear functors to categories of quasi-coherent sheaves (of algebras) of"
 ---
 In this section we address the problem of when the Yoneda functor $\mathop{\mathrm{\textup{QCoh}}}_{A}\stX\arr\L_{R}(\shC,A)$ is fully faithful and describe its essential image. This will led us to the notion of generating category and left exactness for functors in $\L_{R}(\shC,A)$.
 

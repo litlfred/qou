@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.5
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 In this text, the \it complex conjugate \rm of an element $a$ will be denoted $a^*$.   The conjugate $*$ maps the complex $i\mapsto -i$, in the usual way.  
 

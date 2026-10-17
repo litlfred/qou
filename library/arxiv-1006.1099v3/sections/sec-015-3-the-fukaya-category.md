@@ -8,6 +8,7 @@ pages: 16-17
 source_pdf: 1006.1099v3.pdf
 source_sha256: 76c1c4173cdee9d8
 toc_source: outline
+doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS — There is a classical relationship in algebraic geometry between a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
 ---
 identity functor. Modulo Remark 5.30, the instanton Floer homologies of other SO(3)-bundles
 FLOER COHOMOLOGY AND PENCILS OF QUADRICS

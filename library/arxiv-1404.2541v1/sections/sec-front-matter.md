@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1404.2541v1.pdf
 source_sha256: edb7c9b2b1561ac3
 toc_source: outline
+doc_brief: "The Stokes phenomenon for the Ramanujan’s q -diﬀerence equation and its higher order extension — We show connection formulae of local solutions of the Ramanu- jan equation between the origin and the"
 ---
 arXiv:1404.2541v1  [math.CA]  9 Apr 2014
 The Stokes phenomenon for the Ramanujan’s

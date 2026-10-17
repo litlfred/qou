@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.97
 latex_coverage_ratio: 0.99
+doc_brief: "On the number of hyperbolic 3 -manifolds of a given volume Craig Hodgson and Hidetoshi Masai — The work of Jørgensen and Thurston shows that there is a ﬁnite number N(v) of orientable hyperbolic"
 ---
 In this section we study the closed hyperbolic manifolds obtained by Dehn filling on the figure eight knot complement and its sister, denoted $m004$ and $m003$ respectively in SnapPea notation. We will use the ideas described in the previous section to prove the following.
 

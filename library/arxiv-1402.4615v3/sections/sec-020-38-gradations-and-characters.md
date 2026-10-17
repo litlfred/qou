@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.905
 latex_coverage_ratio: 0.967
+doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials."
 ---
 []{#SubsectDegCh label="SubsectDegCh"} In the previous sections we have defined three different gradations. The elements of our favorite basis $(\mathop{\mathrm{Ch}}_\mu)$ are not homogeneous, but have the following nice property: if we define $$V_i^d := \{x \in \Lambda_\star^{(\alpha)}: \deg_i(x) \leq d\}$$ then, for $i=1$ and $i=3$, each $V_i^d$ is spanned linearly by the functions $\mathop{\mathrm{Ch}}_\mu$ that it contains (this comes from a direct dimension argument). This simple observation will be useful later.
 

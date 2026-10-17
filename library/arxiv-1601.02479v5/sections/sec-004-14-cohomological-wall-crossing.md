@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.906
 latex_coverage_ratio: 0.99
+doc_brief: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A — This paper concerns the cohomological aspects of Donaldson– Thomas theory for Jacobi algebras and the associated cohomological Hall alge- bra, introduced"
 ---
 Our second main result is a (relative) cohomological lift of the following incarnation of the wall crossing formula, with $\int$ denoting the Kontsevich--Soibelman integration map: $$\label{WCI}
 \int[\mathfrak{M}^{\mathcal{S}},\upphi_{\mathop{\mathrm{Tr}}(W)}]=\prod_{\infty\xrightarrow{\upmu}-\infty}\int[\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\upmu},\upphi_{\mathop{\mathrm{Tr}}(W)}].$$ This is an identity in the completed motivic quantum torus of finite-dimensional modules of the Jacobi algebra for the pair $(Q,W)$. Instead of defining any of the terms in ([\[WCI\]](#WCI){reference-type="ref" reference="WCI"}) we refer the reader to [@JoyceMF] and [@KS1] for more details on motivic Hall algebras and integration maps in the general theory of motivic Donaldson--Thomas invariants, or [@DaMe4] for the specific case of the motivic Hall algebra of representations of a Jacobi algebra.

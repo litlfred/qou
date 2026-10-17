@@ -8,6 +8,7 @@ pages: 32-34
 source_pdf: 2406.05311v1.pdf
 source_sha256: c431fca150329547
 toc_source: outline
+doc_brief: "Draft of June 11, 2024 A QUANTUM MURNAGHAN–NAKAYAMA RULE FOR THE FLAG MANIFOLD — In this paper, we give a rule for the multiplication of a Schubert class by a tautological class in the (small)"
 ---
 1. Sami H. Assaf and Peter McNamara, A Pieri rule for skew shapes, JCTA 118 (2011), no. 1, 277–290.
 2. Jason Bandlow, Anne Schilling, and Mike Zabrocki, The Murnaghan–Nakayama rule for k-Schur func-

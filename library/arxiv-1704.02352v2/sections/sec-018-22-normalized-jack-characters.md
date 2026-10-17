@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.923
 latex_coverage_ratio: 0.905
+doc_brief: "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Young diagrams which can be regarded as a natural one-parameter deformation of some classi- cal"
 ---
 The usual way of viewing the characters of the symmetric groups is to fix the irreducible representation $\lambda$ and to consider the character as a function of the conjugacy class $\pi$. However, there is also another very successful viewpoint due to Kerov and Olshanski [@KerovOlshanski1994], called *dual approach*, which suggests to do roughly the opposite. Lassalle [@Lassalle2008a; @Lassalle2009] adapted this idea to the framework of Jack characters. In order for this dual approach to be successful one has to choose the most convenient normalization constants. In the current paper we will use the normalization introduced by Dołęga and Féray [@DolegaFeray2014] which offers some advantages over the original normalization of Lassalle. Thus, with the right choice of the multiplicative constant, the unnormalized Jack character $\chi^{(\alpha)}_\lambda$ from [\[eq:character-Jack-unnormalized-zmiana\]](#eq:character-Jack-unnormalized-zmiana){reference-type="eqref" reference="eq:character-Jack-unnormalized-zmiana"} becomes the *normalized Jack character $\mathop{\mathrm{Ch}}^{(\alpha)}_\pi(\lambda)$*, defined as follows.
 

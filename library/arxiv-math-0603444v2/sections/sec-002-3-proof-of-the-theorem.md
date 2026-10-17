@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.992
 latex_coverage_ratio: 0.931
+doc_brief: "QUASIHOMOGENEITY OF ISOLATED HYPERSURFACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY — We characterize quasihomogeneity of isolated hypersurface singu- larities by the injectivity of the map induced by"
 ---
 We denote the $n$th local cohomology module of $\mathcal{O}$ supported at the origin by $$H:=H_0^n(\mathcal{O})
 =H^{n-1}(\mathbb{C}^n\smallsetminus\{0\},\mathcal{O})

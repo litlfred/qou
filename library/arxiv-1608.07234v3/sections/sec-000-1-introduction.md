@@ -8,6 +8,7 @@ pages: 1-11
 source_pdf: 1608.07234v3.pdf
 source_sha256: 311730670d2fdcb7
 toc_source: outline
+doc_brief: "DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS — We describe a graded extension of the usual Hecke algebra: it acts in a graded fashion on the cohomology of an arithmetic group Γ."
 ---
 Introduction
 1

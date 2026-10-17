@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1010.5321v3.pdf
 source_sha256: c6bb20926b1f291f
 toc_source: outline
+doc_brief: "Formulas on hyperbolic volume ∗ — This paper collects some important formulas on hyperbolic volume."
 ---
 compute such an integral. We will use to this calculation the system of hyperbolic orthogonal
 coordinates.

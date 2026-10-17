@@ -8,6 +8,7 @@ pages: 32-33
 source_pdf: 1010.4386v5.pdf
 source_sha256: 168226dbb5a479ed
 toc_source: outline
+doc_brief: "ON THE HOMOLOGY OF COMPLETION AND TORSION — Let A be a commutative ring, and a a weakly proregular ideal in A."
 ---
 [AJL1]
 L. Alonso, A. Jeremias and J. Lipman, Local homology and cohomology on schemes,

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.98
 latex_coverage_ratio: 0.98
+doc_brief: "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects."
 ---
 We use the usual graphical calculus for monoidal categories, suppressing the tensor unit and  coherence data. Morphisms in diagrams are composed from top to bottom and tensor products  from the right to the left.  
 

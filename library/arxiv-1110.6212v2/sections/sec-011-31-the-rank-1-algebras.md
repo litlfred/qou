@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.979
 latex_coverage_ratio: 0.993
+doc_brief: "On calibrated representations and the Plancherel Theorem for aﬃne Hecke algebras — This paper has two main purposes."
 ---
 \noindent(1) The $\tilde{A}_1(q)$, $L=Q$, algebra has generators $T=T_1$ and $x=x^{\alpha_1^{\vee}}$ with relations
 \begin{align*}

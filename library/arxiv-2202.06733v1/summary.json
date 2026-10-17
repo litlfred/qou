@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2202.06733v1",
  "source_sha256": "e670632090447f14",
- "brief": "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE — Diﬀerent ways of representing the groupSU(3) within a Geometric Algebra approach are",
- "extended": "**Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE**\n\n*Some recent results forSU(3) and Octonions within the*\n\n20 pp, 12 sections.\n\n**Abstract.** Diﬀerent ways of representing the groupSU(3) within a Geometric Algebra approach are explored. As part of this we consider characteristic multivectors for SU(3), and how these are linked with decomposition of generators into commut- ing bivectors. The setting for this work is within a 6d Euclidean Cliﬀord Algebra. We then go on to consider whether the fundamental forces of particle physics might arisefromsymmetryconsiderationsinjustthe4dgeometricalgebraofspacetime— the STA. As part of this, a representation ofSU(3)is found wholly within the STA, involvingpreservationofabivectornorm.WealsoshowhowOctonionscanbefully representedwithintheSpacetimeAlgebra,whichwebelievewillbeusefulinmaking them understandable and accessible to a new community in Physics and Engineer- ing.\n\n**Outline.** Abstract; 1 Introduction; 2 Characteristic multivectors and SU(3); 2.2 The characteristic polynomial and the Cayl; 2.4 The characteristic polynomial and Cayley-H; 3 GA and the forces of nature; 3.1 Strong forces; 4 Octonions and the STA; 4.1 Explicit assignment of octonion units to S; 5 Octonions, the STA and particle physics; 6 Future prospects; References",
+ "brief": "Received <day> <Month>, <year> — Diﬀerent ways of representing the group 푆푈(3) within a Geometric Algebra approach are explored.",
+ "extended": "**Received <day> <Month>, <year>**\n\n*Revised <day> <Month>, <year>;*\n\n20 pp, 13 sections.\n\n**Abstract.** Diﬀerent ways of representing the group 푆푈(3) within a Geometric Algebra approach are explored. As part of this we consider characteristic multivectors for 푆푈(3), and how these are linked with decomposition of generators into commut- ing bivectors. The setting for this work is within a 6d Euclidean Cliﬀord Algebra. We then go on to consider whether the fundamental forces of particle physics might arise from symmetry considerations in just the 4d geometric algebra of spacetime — the STA. As part of this, a representation of 푆푈(3) is found wholly within the STA, involving preservation of a bivector norm. We also show how Octonions can be fully represented within the Spacetime Algebra, which we believe will be useful in making them understandable and accessible to a new community in Physics and Engineer- ing.\n\n**Outline.** Front matter; Abstract; 1 Introduction; 2 Characteristic multivectors and SU(3); 2.2 The characteristic polynomial and the Cayl; 2.4 The characteristic polynomial and Cayley-H; 3 GA and the forces of nature; 3.1 Strong forces; 4 Octonions and the STA; 4.1 Explicit assignment of octonion units to S; 5 Octonions, the STA and particle physics; 6 Future prospects; References",
  "tokens": {
-  "brief": 48,
-  "extended": 338
+  "brief": 32,
+  "extended": 327
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-abstract",
    "title": "Abstract",

@@ -8,6 +8,7 @@ pages: 41-42
 source_pdf: 1112.0030v2.pdf
 source_sha256: 745f143c2df4734b
 toc_source: outline
+doc_brief: "Homological algebra of knots and BPS states Sergei Gukov and Marko Stoˇsi´c — It is known that knot homologies admit a physical description as spaces of open BPS states."
 ---
 The Poincare polynomial of the H3 homology of the ﬁgure-eight knot 41 is
 given by:

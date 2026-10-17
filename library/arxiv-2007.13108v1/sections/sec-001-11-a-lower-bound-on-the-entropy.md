@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.964
 latex_coverage_ratio: 0.982
+doc_brief: "Log concavity and concentration of Lipschitz functions on the Boolean hypercube — It is well-known that measures whose density is the form e−V where V is a uniformly convex potential on Rn attain"
 ---
 Our second result addresses the question of finding conditions under which the entropy of the measure $\nu$ is close to that of the corresponding product measure, having the same marginals as $\nu$. This result is inspired by a corresponding bound due to Anari, Oveis-Gharan and Vinzant \cite[Theorem 5.2]{AOV1}, see the discussion below.
 

@@ -8,6 +8,7 @@ pages: 8-8
 source_pdf: quaternioms.pdf
 source_sha256: becedcbc858611dd
 toc_source: outline
+doc_brief: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 44 sections: Front matter; Introduction; Extended Related Work"
 ---
 The unit spheres of the normed division algebras, S0 ⊂R, S1 ⊂C, S3 ⊂H, and
 S7 ⊂O, are parallelizable and admit Hopf ﬁbrations that often guide intuition about

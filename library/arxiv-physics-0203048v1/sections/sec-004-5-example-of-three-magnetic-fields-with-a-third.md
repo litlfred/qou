@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.976
 latex_coverage_ratio: 0.977
+doc_brief: "arXiv:physics/0203048v1 [physics.plasm-ph] 15 Mar 2002 — An expression for a third-order link integral of three magnetic ﬁelds is presented."
 ---
 In this section we want to give an example of three magnetic fields not confined to flux tubes, which firstly allow for one-form potentials that obey $\d(A^i \wedge A^j)=0$ and where secondly the integral invariant ([\[H-3-continuous-integral\]](#H-3-continuous-integral){reference-type="ref" reference="H-3-continuous-integral"}) yields a non-trivial result. The existence of such an example proves that the new invariant is indeed a generalization of the third-order invariant derived from a Massey triple product which was applicable merely to unlinked flux tubes. The fields we construct show an extraordinary high symmetry. For this reason they are interesting in their own right.
 

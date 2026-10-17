@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.989
+doc_brief: "arXiv:hep-ph/9308276v1 14 Aug 1993 — The most general chiral Lagrangian for electroweak interactions with the complete set of SU(2)L × U(1)Y invariant operators up to dimen- sion four is considered."
 ---
 In this paper, we have considered the electroweak chiral Lagrangian that parametrizes electroweak interactions in the case of a heavy Higgs boson. This Lagrangian has been obtained as the low energy effective theory of the standard model when the Higgs particle is integrated out to one--loop order. In particular, we have analyzed the subset of effective operators that contribute to the two-- and three--point Green's functions for gauge bosons. The leading contributions of a heavy Higgs to these operators, including logarithms of the Higgs mass plus finite (non-logarithmic) terms, have been explicitely calculated.
 

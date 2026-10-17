@@ -8,6 +8,7 @@ pages: 6-6
 source_pdf: s00209-021-02825-4.pdf
 source_sha256: 85ca5ec21f42a988
 toc_source: outline
+doc_brief: "A representation theoretic explanation of the Borcea–Brändén characterization — In 2009, Borcea and Brändén characterized all linear operators on multivariate polynomials which preserve the property"
 ---
 Here, we discuss basic notation and results related to polynomials and stability. In particular,
 we discuss in more detail the notation and consequences related to the use of homogeneous

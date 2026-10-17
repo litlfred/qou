@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.817
 latex_coverage_ratio: 0.951
+doc_brief: "Contemporary Mathematics — Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a system of possibly non-linear partial dif- ferential equations and it"
 ---
 Systems of algebraic equations can be encoded geometrically in an algebraic variety. This apparently harmless observation is the starting point for the development of such a successful branch of modern Mathematics as Algebraic Geometry. One of the leading principles behind most of the mathematical work of Alexandre M. Vinogradov is that Partial Differential Equations (PDEs) should be treated in a similar way. Namely, let $x = (x^1, \ldots, x^n)$ be some independent variables, let $u = (u^1, \ldots, u^m)$ be some dependent variables, and let 
 

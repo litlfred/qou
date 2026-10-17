@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.975
 latex_coverage_ratio: 0.972
+doc_brief: "Universal Properties of the Four-Body System with Large Scattering Length Abstract — Few-body systems with large scattering length have universal properties that do not depend on the details of their"
 ---
 The four-body spectrum is most conveniently discussed in a generalized Efimov plot. This plot was introduced by Vitaly Efimov to summarize the universal properties of the three-body spectrum [@Efimov71; @Braaten:2004rn]. The set of all possible low-energy three-body states can be represented as points $(a^{-1}, K)$ on the plane whose horizontal axis is $1/a$ and whose vertical axis is the momentum variable
 

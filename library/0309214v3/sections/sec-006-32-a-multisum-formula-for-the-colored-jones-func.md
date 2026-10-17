@@ -8,6 +8,7 @@ pages: 13-16
 source_pdf: 0309214v3.pdf
 source_sha256: 53967ef30b0aedb9
 toc_source: outline
+doc_brief: "The colored Jones function is q –holonomic — A function of several variables is called holonomic if, roughly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many linear"
 ---
 A multisum formula for the colored Jones function of a
 knot

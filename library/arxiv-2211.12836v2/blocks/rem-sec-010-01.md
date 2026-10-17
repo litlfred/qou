@@ -1,0 +1,1 @@
+that $s_{v}^h$ is also diagonalizable on $L^2_h(V)$ with same eigenvalues $\theta_v(i),\overline{\theta_v(i)}$ and left and right eigenvectors $$\tilde{u}^{(i)}=\frac{1}{h^r}\cdot u^{(i)},\, \tilde{w}^{(i)}=\frac{1}{h^l}\cdot w^{(i)}.$$ (beware that left eigenvectors are taken with respect to the adjoint $(\cdot)^{h,*})$).

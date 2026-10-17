@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.972
 latex_coverage_ratio: 0.839
+doc_brief: "Markov traces on degenerate cyclotomic Hecke algebras — Let Hn(u) be the degenerate cyclotomic Hecke algebra with parameter u = {u1, . . . , um}."
 ---
 []{#Sec:BK-trace label="Sec:BK-trace"} In this section we construct a $\mathbb{C}(\boldsymbol{u})$--linear function on $H_n(\boldsymbol{u})$ by using the standard bases and show it constitutes a non-normalized Markov trace, thereby proving Theorem [\[Them:Markov-BK\]](#Them:Markov-BK){reference-type="ref" reference="Them:Markov-BK"} from the introduction.
 

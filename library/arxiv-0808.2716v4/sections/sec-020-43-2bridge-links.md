@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.968
 latex_coverage_ratio: 0.98
+doc_brief: "CUSP AREAS OF FAREY MANIFOLDS — This paper gives the ﬁrst explicit, two–sided estimates on the cusp area of once– punctured torus bundles, 4–punctured sphere bundles, and 2–bridge link complements."
 ---
 ::: theorem
 []{#thm:2bridge label="thm:2bridge"} Let $K$ be a 2--bridge link in $S^3$, whose reduced alternating diagram has twist number $t$. Let $C$ be a maximal neighborhood about the cusps of $S^3 {\smallsetminus}K$, in which the two cusps have equal volume if $K$ has two components. Then $$\frac{8\sqrt{3}}{147}\,(t-1) \: \leq \: {\rm area}({\partial}C) \: <\:

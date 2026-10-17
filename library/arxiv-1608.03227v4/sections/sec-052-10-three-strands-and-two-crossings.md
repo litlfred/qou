@@ -11,5 +11,6 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.95
 latex_coverage_ratio: 1.0
+doc_brief: "January 30, 2018 KNOT HOMOLOGY AND SHEAVES ON THE HILBERT SCHEME OF POINTS ON THE PLANE — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on"
 ---
 []{#sec: three str 2 label="sec: three str 2"} In this section we compute explicitly the matrix factorizations $\calC_1\bar{\star}\calC_2$ and $\calC_2\bar{\star}\calC_1$. Both of these matrix factorizations turn out to be Koszul matrix factorizations and we start with explanations for the equations defining these Koszul factorizations. Then we proceed with computations of the convolution.

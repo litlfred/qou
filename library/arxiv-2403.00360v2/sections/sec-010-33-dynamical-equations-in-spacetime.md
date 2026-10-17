@@ -8,6 +8,7 @@ pages: 12-12
 source_pdf: 2403.00360v2.pdf
 source_sha256: b0764ca18a83a84f
 toc_source: outline
+doc_brief: "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular"
 ---
 ciple satisfies the following Euler-Lagrange (EL) equations. For a suitable value of the
 parameter s > 0, the function ℓ: F →R+

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
 latex_coverage_ratio: 0.912
+doc_brief: "MODIFIED TRACES ON DELIGNE’S CATEGORY Rep(St) — Deligne has deﬁned a category which interpolates among the representations of the various symmetric groups."
 ---
 Consider the indecomposable object $L(\Box)$ in the category $\uRep(S_0)$.  We will define a trace on the ideal $\ideal_{L(\Box)}$ by verifying by explicit computation that $L(\Box)$ admits an ambidextrous trace.  
 

@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
     }
   ],
   "@id": "library/symmetry-11-01298/blocks/prose-sec-018",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Fermions and Number Theory",
-  "pageStart": 21,
-  "pageEnd": 22,
-  "text": "../sections/sec-018-fermions-and-number-theory.md",
+  "title": "Drinfeld–Turaev Quantization and Quantum States",
+  "pageStart": 20,
+  "pageEnd": 21,
+  "text": "../sections/sec-018-drinfeldturaev-quantization-and-quantum-states.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/symmetry-11-01298/manifest.jsonld",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/symmetry-11-01298/manifest.jsonld",
   "provenance": "ingested"

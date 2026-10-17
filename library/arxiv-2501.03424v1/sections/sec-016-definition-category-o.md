@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.763
 latex_coverage_ratio: 0.933
+doc_brief: "Soergel bimodules and Kazhdan-Lusztig polynomials — This paper presents an exposition of Soergel bimodules, the categoriﬁcation of Hecke alge- bras, and their applications to various topics in"
 ---
 \textit{Category} $\mathcal{O}$ is the abelian full subcategory of Rep($\g$) with 
 $$V = \bigoplus_{\lambda \in \h^*} V[\lambda]$$

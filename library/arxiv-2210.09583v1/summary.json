@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2210.09583v1",
  "source_sha256": "38fc6fa465a06a7b",
- "brief": "A NEW PRESENTATION OF THE osp(1|2)-POL YNOMIAL LINK INVARIANT — There is a known connection between the osp(1|2n) polynomial knot invariant J n K and the so(2n + 1) knot invariant soJ n K studied by",
- "extended": "**A NEW PRESENTATION OF THE osp(1|2)-POL YNOMIAL LINK INVARIANT**\n\n*AND CATEGORIFICATION*\n\n17 pp, 13 sections.\n\n**Abstract.** There is a known connection between the osp(1|2n) polynomial knot invariant J n K and the so(2n + 1) knot invariant soJ n K studied by Clark [ 10] and Blumen [ 4]. In the rank one case, the uncolored Uq(osp(1|2)) link invariant is equal to the Ut−1q(sl2) link invariant where t2 = − 1. W e deﬁne a skein relation similar to the Kauﬀman bracket, and use that to recover an oriented link invariant which coincides with Clark’s uncolored osp(1|2)-link invariant. This deﬁnition also comes from the representation theory of Uq,π (sl2), but using diﬀerent methods from Clark. W e show that our invariant is easily categoriﬁed by a slightly modiﬁed ve rsion of Khovanov homology equipped with an extra /CI 4-grading. W e also construct a similarly modiﬁed version of P utyra’s covering Khovanov homology [ 28].\n\n**Outline.** 1 Introduction; 1.1 Results; 1.2 Acknowledgements; 2 osp(1|2) braid invariant; 3 Explanation using representation theory; 3.2 Quantum covering group; 3.1 Parameters; 4 Two Categorifications; 4.1 Normal Khovanov Homology; 4.2 e-graded Khovanov Homology; 4.2.1 R1; 4.3 e-graded Covering Khovanov Homology; References",
+ "brief": "A NEW PRESENTATION OF THE osp(1|2)-POLYNOMIAL LINK INVARIANT — There is a known connection between the osp(1|2n) polynomial knot invariant Jn K and the so(2n + 1) knot invariant soJn K studied by",
+ "extended": "**A NEW PRESENTATION OF THE osp(1|2)-POLYNOMIAL LINK INVARIANT**\n\n*AND CATEGORIFICATION*\n\n17 pp, 14 sections.\n\n**Abstract.** There is a known connection between the osp(1|2n) polynomial knot invariant Jn K and the so(2n + 1) knot invariant soJn K studied by Clark [10] and Blumen [4]. In the rank one case, the uncolored Uq(osp(1|2)) link invariant is equal to the Ut−1q(sl2) link invariant where t2 = −1. We deﬁne a skein relation similar to the Kauﬀman bracket, and use that to recover an oriented link invariant which coincides with Clark’s uncolored osp(1|2)-link invariant. This deﬁnition also comes from the representation theory of Uq,π(sl2), but using diﬀerent methods from Clark. We show that our invariant is easily categoriﬁed by a slightly modiﬁed version of Khovanov homology equipped with an extra Z4-grading. We also construct a similarly modiﬁed version of Putyra’s covering Khovanov homology [28]. This suggests that the similarity between the two invariants holds at the categoriﬁed level as well.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Results; 1.2 Acknowledgements; 2 osp(1|2) braid invariant; 3 Explanation using representation theory; 3.2 Quantum covering group; 3.1 Parameters; 4 Two Categorifications; 4.1 Normal Khovanov Homology; 4.2 e-graded Khovanov Homology; 4.2.1 R1; 4.3 e-graded Covering Khovanov Homology; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: [10, Theorem 4.24] Let K be any oriented knot, and let ospJλ\n- Theorem 2.13: bJ is an invariant of oriented links.\n- Theorem 3.6: [10, Theorem 3.8, Corollary 3.9] There is a covariant functor J from the category\n- Theorem 3.8: n is a odd weight Uq,π-module homomorphism.\n- Theorem 3.10: u is a an odd weight Uq,π-module homomorphism.\n- Theorem 3.12: ρq,τ : Bn →T Ln(d) deﬁnes a Bn-representation inside T Ln(d), namely a group",
  "tokens": {
-  "brief": 49,
-  "extended": 314
+  "brief": 48,
+  "extended": 462
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -79,7 +84,8 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles"
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

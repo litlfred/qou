@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.877
 latex_coverage_ratio: 0.901
+doc_brief: "THE COLORED JONES POLYNOMIALS OF THE — We calculate limits of the colored Jones polynomials of the ﬁgure- eight knot and conclude that in most cases they determine the volumes and the Chern–Simons"
 ---
 Let $K$ be a knot and $J_N(K;t)$ be the colored Jones polynomial of $K$ in the three-sphere $S^3$ corresponding to the $N$-dimensional representation of $sl_2(\mathbb{C})$ (see for example [@Kirby/Melvin:INVEM91]). We normalize it so that $J_N(\text{unknot};t)=1$.
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.77
 latex_coverage_ratio: 0.839
+doc_brief: "N-Fold Integer Programming — In this article we study a broad class of integer programming problems in variable dimension."
 ---
 The integer programming problem is the following discrete
 optimization problem, where $\N$ denotes the set of nonnegative

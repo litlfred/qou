@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.918
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:math/0501112v3 [math.CO] 31 May 2005 — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 Let us have a look on the main result (Theorem and Definition [\[theo:main\]](#theo:main){reference-type="ref" reference="theo:main"}) for the simplest nontrivial case of $n=2$. This will give us a heuristical insight into the problems which we shall encounter in the proof.
 

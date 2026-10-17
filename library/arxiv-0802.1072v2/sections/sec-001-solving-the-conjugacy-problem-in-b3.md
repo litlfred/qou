@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.86
 latex_coverage_ratio: 0.991
+doc_brief: "A note on closed 3-braids ∗ — This is a review article about knots and links of braid index 3."
 ---
 []{#S:conjugacy label="S:conjugacy"}
 

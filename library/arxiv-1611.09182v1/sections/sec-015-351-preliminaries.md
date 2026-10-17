@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.981
+doc_brief: "Standard model physics from an algebra? — 69 sections: Front matter; Abstract; Acknowledgements"
 ---
 We will now find that left- and right-handed Weyl spinors, Majorana spinors, and Dirac spinors are all generalized ideals under the same complex invariant-action, 
 \begin{equation}\label{cma}

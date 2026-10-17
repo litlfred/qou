@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.952
 latex_coverage_ratio: 0.918
+doc_brief: "TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR — Categoriﬁcation is a process of lifting structures to a higher categorical level."
 ---
 Categorification is perhaps best explained by defining decategorification.  Quite broadly, {\em decategorification} is a rigorously defined procedure for forgetting information and reducing the complexity of a given mathematical structure.   A bit more formally, a {\em decategorification} can be thought of as a map
 \[

@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0203194v1/sections/sec-061",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Drinfeld symmetric space.",
+  "pageStart": 225,
+  "pageEnd": 230,
+  "contains": [
+    "library/arxiv-math-0203194v1/blocks/prose-sec-061",
+    "library/arxiv-math-0203194v1/blocks/ex-sec-061-01",
+    "library/arxiv-math-0203194v1/blocks/ex-sec-061-02",
+    "library/arxiv-math-0203194v1/blocks/lem-sec-061-03",
+    "library/arxiv-math-0203194v1/blocks/ex-sec-061-04",
+    "library/arxiv-math-0203194v1/blocks/prop-sec-061-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203194v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203194v1/manifest.jsonld",
+  "provenance": "ingested"
+}

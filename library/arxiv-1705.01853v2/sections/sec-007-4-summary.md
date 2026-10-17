@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.978
 latex_coverage_ratio: 1.0
+doc_brief: "Line Operators in the Standard Model — There is an ambiguity in the gauge group of the Standard Model."
 ---
 The global structure of the Standard Model gauge group depends on the choice of quotient $\Gamma$. The differences in these theories described above are rather formal in nature. Just because a line operator exists in a theory does not mean that it is available to experimenters.  It is clearly interesting to better understand the physical implications of the different choices of $\Gamma$ to see if they may reveal themselves in some way in our world. 
 

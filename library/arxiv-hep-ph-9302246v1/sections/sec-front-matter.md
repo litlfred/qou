@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 9302246v1.pdf
 source_sha256: 2d352297255be8de
 toc_source: inferred
+doc_brief: "arXiv:hep-ph/9302246v1 11 Feb 1993 — We present a calculation of the coupling constants in the massive spin-1 ﬁeld chiral Lagrangian to chiral O(p3) in the context of the extended Nambu–Jona-Lasinio"
 ---
 arXiv:hep-ph/9302246v1  11 Feb 1993
 CPT-93/P.2871

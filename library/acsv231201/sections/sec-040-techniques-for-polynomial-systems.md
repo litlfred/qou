@@ -8,6 +8,7 @@ pages: 240-244
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
 toc_source: outline
+doc_brief: "Analytic Combinatorics in Several Variables Expanded Second Edition — 98 sections: Front matter; Preface to the second edition; Preface to the first edition"
 ---
 Before turning to the computations used in our asymptotic analyses, we ﬁrst in-
 troduce the algebraic background needed to describe our approach. The critical

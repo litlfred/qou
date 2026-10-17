@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.987
 latex_coverage_ratio: 0.988
+doc_brief: "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES — We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury."
 ---
 For Tannakian categories in characteristic zero, André and Kahn showed that the semisimplification functor $\bold S$ admits a splitting $\bold S^*$, and used it to show the existence and uniqueness (up to conjugation) of the reductive envelope of any affine proalgebraic group in characteristic zero. In this subsection we review this theory (cf. [@AK],[@S]).
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.967
+doc_brief: "Gentle introduction to Soergel bimodules I: The basics — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules."
 ---
 As said in the abstract, this paper is an introduction to Soergel bimodules. We give many examples and show explicit calculations with the Hecke algebra and the Hecke category (one of its incarnations being Soergel bimodules). Most of the other Hecke categories (categorifications of the Hecke algebra) such as category $\mathcal{O}$, Elias-Williamson diagrammatic category, Sheaves on moment graphs, 2-braid groups and Parity Sheaves over Schubert varieties, are left for follow-ups of this paper. The applications of this theory are also left for the follow-ups.
 

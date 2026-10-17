@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1012.1039v2.pdf
 source_sha256: acb2575050db419d
 toc_source: outline
+doc_brief: "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS — Let M be a hyperbolic n–manifold whose cusps have torus cross- sections."
 ---
 arXiv:1012.1039v2  [math.GT]  19 Jul 2011
 SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC

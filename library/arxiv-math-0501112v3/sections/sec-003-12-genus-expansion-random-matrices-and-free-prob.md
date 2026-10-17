@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.939
 latex_coverage_ratio: 0.977
+doc_brief: "arXiv:math/0501112v3 [math.CO] 31 May 2005 — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 Free probability of Voiculescu [@VoiculescuDykemaNica] is a non-commutative probability theory which turned out to be very successful in describing random matrices. The combinatorial structure behind this theory is the lattice of non-crossing partitions [@Kreweras] and the corresponding notion of free cumulants [@Speicher1997]. It was Biane [@Biane1998] who realized that the same structure describes the leading terms in the asymptotic description of representations of symmetric groups. In this way some notions concerning random matrices were matched (via free probability theory) to some notions concerning representations of symmetric groups.
 

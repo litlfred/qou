@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.711
 latex_coverage_ratio: 0.871
+doc_brief: "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS — We derive explicit dimension formulas for irreducible MF-spherical KF-re- presentations where KF is the maximal compact subgroup of the"
 ---
 Recall our notation $\mathbb{E}=\mathbb{C}(a,b,c,d,q,t)$ for the field of rational functions in six indeterminates $a,b,c,d,q$ and $t$. Let $W=S_n\ltimes \{\pm 1\}^n$, acting on $\mathbb{Z}^n$ by permutations and sign-changes of the coordinates, and acting on the algebra $\mathbb{E}[z^{\pm 1}]=\mathbb{E}[z_1^{\pm 1},\ldots,z_n^{\pm 1}]$ by permutations and inversions of the independent variables $z_i$. The cone $\Lambda_n\subset \mathbb{Z}^n$ is a fundamental domain for the $W$-action on $\mathbb{Z}^n$. The dominance order on $\Lambda_n$ is the partial order $\leq$ defined by $\lambda\leq\mu$ if $\sum_{j=1}^{i}\lambda_j\leq\sum_{j=1}^i\mu_j$ for $1 \le i \le n$. An $\mathbb{E}$-basis of the algebra $\mathbb{E}[z^{\pm 1}]^W$ of $W$-invariant Laurent polynomials is given by the symmetric monomials $m_\lambda(z):=\sum_{\mu\in W\lambda}z^\mu$ ($\lambda\in
 \Lambda_n$).

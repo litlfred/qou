@@ -1,1 +1,1 @@
-IfKis an L-space knot thenX 0(K)detectsK.
+\ref{thm:main} follows from a combination of two results which may each be of independent interest. The first says that any single trace detects \emph{whether} a given knot is an L-space knot:

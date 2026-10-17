@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.996
 latex_coverage_ratio: 1.0
+doc_brief: "Knots in the Skyrme-Faddeev model — The Skyrme-Faddeev model is a modiﬁed sigma model in three-dimensional space, which has string-like topological solitons classiﬁed by the integer-valued Hopf"
 ---
 In this section the results of a large number of energy minimization simulations are presented. Hopf charges up to sixteen are studied, with initial conditions consisting of a variety of links and knots, created using the rational map ansatz discussed above.
 

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.907
 latex_coverage_ratio: 0.873
+doc_brief: "ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM INVARIANTS III: THE RESHETIKHIN-TURAEV INVARIANTS OF CLOSED HYPERBOLIC 3-MANIFOLDS OBTAINED BY DOING INTEGRAL SURGERY ALONG THE TWIST KNOT — This is the"
 ---
 In this section, we prove the Lemma [\[lemma-volumeestimate\]](#lemma-volumeestimate){reference-type="ref" reference="lemma-volumeestimate"} which gives the estimation of the critical value $\zeta_{\mathbb{R}}(p,q)$. Recall that $\zeta_{\mathbb{R}}(p,q)$ is given by $$\begin{aligned}
         \zeta_{\mathbb{R}}(p,q)=\text{Re} \hat{V}(p,q,\theta_1^0,\theta_2^0,\theta_3^0), 

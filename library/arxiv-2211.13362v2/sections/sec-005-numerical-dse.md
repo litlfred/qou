@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.931
 latex_coverage_ratio: 0.613
+doc_brief: "Double-slit experiment revisited — The double-slit experiment is one of the quintessential quantum experiments."
 ---
 <figure id="bohmianplots">
 <figure id="fig:triple_hist">

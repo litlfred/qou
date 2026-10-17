@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1207.4990v3",
  "source_sha256": "02aa065f4f65b857",
- "brief": "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results Percy Deift — 10 sections: Setting the problem; Toeplitz meets Ising; Back to Isi",
- "extended": "**Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results Percy Deift**\n\n*Courant Institute, New York*\n\n70 pp, 10 sections.\n\n**Outline.** 1 Setting the problem; 2 Toeplitz meets Ising; 4 Back to Ising; 5 New questions for SSLT; 6 Fisher-Hartwig singularities. Fisher-Hartwig; 7 Basor-Tracy conjecture; 8 Hankel and Toeplitz+Hankel determinants; 9 Some applications; 10 Block Toeplitz matrices; 11 Double-scaling limits",
+ "brief": "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results — 11 sections: Front matter; Setting the problem; Toeplitz meets Ising",
+ "extended": "**Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results**\n\n*Percy Deift*\n\n70 pp, 11 sections.\n\n**Outline.** Front matter; 1 Setting the problem; 2 Toeplitz meets Ising; 4 Back to Ising; 5 New questions for SSLT; 6 Fisher-Hartwig singularities. Fisher-Hartwig; 7 Basor-Tracy conjecture; 8 Hankel and Toeplitz+Hankel determinants; 9 Some applications; 10 Block Toeplitz matrices; 11 Double-scaling limits\n\n**Extracted claims (proposals, not verified).**\n- Theorem: [\\[BT\\]](#BT){reference-type=\"ref\" reference=\"BT\"} can also be used to analyze the asymptotic behavior of the eigenvalues $\\lambda^{(n)}_1 \\le \\lambda^{(n)}_2 \\le \\dots \\le",
  "tokens": {
-  "brief": 50,
-  "extended": 120
+  "brief": 47,
+  "extended": 175
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
   {
    "id": "sec-000-1-setting-the-problem",
    "title": "Setting the problem",
@@ -63,7 +68,8 @@
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles"
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }
