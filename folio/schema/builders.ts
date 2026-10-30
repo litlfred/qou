@@ -1,5 +1,7 @@
 /**
- * Re-export from canonical location at schemas/builders.ts.
+ * Re-export from the canonical locations. The theorem-family builders live in
+ * folio-assistant-sci (mathpaper-vocabulary.ts); the rest in cat-harness-tools
+ * (schemas/builders.ts, moved from cat-harness in bean 8lcl, 2026-10-30).
  * @module folio/schema/builders
  */
 export {
@@ -8,11 +10,13 @@ export {
   lemma,
   proposition,
   corollary,
-  algorithm,
   conjecture,
+  proof,
+} from "../../folio-assistant/folio-assistant-sci/schemas/mathpaper-vocabulary";
+export {
+  algorithm,
   example,
   remark,
-  proof,
   prose,
   equation,
   diagram,
@@ -27,4 +31,4 @@ export {
   paperRef,
   folio,
   document,
-} from "../../folio-assistant/cat-harness/schemas/builders";
+} from "../../folio-assistant/cat-harness-tools/schemas/builders";
