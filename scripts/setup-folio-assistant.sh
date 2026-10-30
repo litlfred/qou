@@ -239,7 +239,9 @@ CLONE_ABS="$(cd "$CLONE_DIR" && pwd)" || die "cannot resolve $CLONE_DIR"
 # not start after a stock setup. The layout is still DETECTED, because the
 # bibliography bridge below applies to a pre-split clone only, but it is kept
 # in PLATFORM_SPLIT rather than inferred from where the link points.
-if [ -f "$CLONE_ABS/cat-harness/schemas/types.ts" ]; then
+# The schemas code moved to cat-harness-tools/schemas/ on 2026-10-30 (bean 8lcl);
+# either location means the split layout.
+if [ -f "$CLONE_ABS/cat-harness-tools/schemas/types.ts" ] || [ -f "$CLONE_ABS/cat-harness/schemas/types.ts" ]; then
   PLATFORM_ABS="$CLONE_ABS"
   PLATFORM_SPLIT=1
   PLATFORM_LAYOUT="split (code under cat-harness/)"

@@ -245,4 +245,12 @@
 # c56b73b80 (same tree). A fresh setup-folio-assistant.sh clone at that pin laid
 # down all 11 layers (~607 MB).
 #
-0fba270b873e766d29a8ae797c7b88f08522cc26
+#
+# BUMPED 2026-10-30 to b61e856 (folio-assistant#2774 merged), bean 8lcl: the
+# cat-harness schemas code moved to cat-harness-tools (cat-harness#773,
+# cat-harness-tools#952; owner card "A. One coordinated move"). qou's imports
+# of folio-assistant/cat-harness/schemas/<x> now name
+# folio-assistant/cat-harness-tools/schemas/<group>/<x>, in the same commit,
+# because neither spelling resolves at the other pin. No maths content changed.
+#
+b61e85669af5e43b7f5f63c7cc69c291ca1a2600
