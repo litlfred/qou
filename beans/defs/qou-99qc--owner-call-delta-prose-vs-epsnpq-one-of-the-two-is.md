@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-10-11T12:58:59Z
+updated_at: 2026-11-14T09:00:13Z
 parent: qou-10v9
 ---
 
@@ -3394,3 +3394,73 @@ Asked in the six-part frame on PR #7718 (comment 6130340849). The four options w
 ### Cross-link (2026-10-11)
 
 the p-n interface convention R3 made canonical is the one the corpus's uniqueness theorem does NOT cover (it fails `BarInvariant`), so "canonical" there is not proved canonicity. Record: [`2026-10-11-atom-word-provenance.md`](../../docs/audits/2026-10-11-atom-word-provenance.md).
+
+
+
+## 2026-11-14 — a scalar per step: the γγ strand-tower route is closed by an IDENTITY, and reading 3 is magnitude-blind (PR litlfred/qou#7817)
+
+Producer `computations/probes/gg_ntower/gg_scalar_per_step_probe.py` (8/8, exact
+over ℚ(q), 70 dps at q₀); write-up `scalar_per_step_results.md`. **Re-derivation
+record, not a search.** Nothing wired, nothing selected, nothing re-scored.
+
+Answering the 2026-10-10 question ("what element or functional supplies a factor
+above 1 on the ruled base") on the one route `gg_ntower` listed as untested:
+**pair creation by Jones projections**, two strands per collision — the
+physically natural γγ vertex, since γγ → e⁺e⁻ creates particles rather than
+braiding existing ones. The vertex is forced, not chosen: σ has eigenvalues q and
+−q⁻¹, so `e_p = (q·1 − σ_p)/(q + q⁻¹)` is the unique U_q(sl₂)-invariant cup.
+
+### Three invariants, every residual exactly 0 over ℚ(q)
+
+- **I1 (new)** `e₀e₂ · Σ₁ = q² · e₀e₂`, both sides, all 7 two-row blocks at
+  n = 4,5,6, with `Σ₁ = σ₁σ₀σ₂σ₁`. The cabled crossing on a double singlet is the
+  scalar q² — the two-strand analogue of the sorry-free `mul_jonesIdempotent`.
+- **I2** `tr_M(y·e_m) = tr_M(y)/[2]_q²` for y ∈ H_m, 7 words, n = 3,4,5.
+- **I3** `tr_M(V₀³V_j³) = tr_M(V₀³)²` for j = 2 (**chain**) and j = 3 (disjoint).
+  Stronger than `explanation.md`, which claims multiplicativity only for the
+  disjoint s = +3 case; verified on a published element (#7733 s=+2 k=2).
+
+### The closure, and why it is scope (b)
+
+I1 gives `e₀e₂·Σ₁^c = q^{2c}·e₀e₂`, hence
+
+    tr_M(e₀e₂ Σ₁^c) = q^{2c}/[2]_q⁴ = q^{4+2c}/(q²+1)⁴
+
+verified against the closed form at **every c = 1…8**, step ratio **exactly**
+q² = 1.2320524541667639313. `F_required = 1.75923699418`, and the family passes
+**through** it between c = 5 (F = 1.634) and c = 6 (F = 2.013).
+
+**🛑 So reading 3 does not bound magnitude.** Frobenius positivity on every block
+with y_λ > 0 — ruled canonical 2026-09-12, whole word 2026-09-13, every strand
+count 2026-10-12 — admits every c while tr_M grows without limit. Measured three
+independent ways: this family (every c admissible, unbounded); the sibling
+pair-creation construction (10 of 12 admissible across a 7.6× range, and
+`χ_(3)(R_3) = 0` *exactly* for all 12 so the trace collapses to one scalar
+regardless); and the composed tower, already on record as "rejects nothing and
+admits everything H₃ rejected".
+
+**Scope (b), with a named invariant, for the stated class only:** every "fresh
+strands per collision" γγ construction whose collisions are joined by a chain (I3)
+or a cabled double singlet (I1) contributes **a scalar per step** — a geometric
+family, whose step index is a free unbounded knob. Picking the c that clears 1 is
+selection against the target, which §NO FITTING names as a fitted discrete
+parameter. **No c is adopted.**
+
+### What this does NOT close
+
+**No nucleon** — no quark letters, no flavour, no two-nucleon level — so this
+answers the *mechanism* half of the 2026-10-11 ask and **not** the deliverable
+half. Silent on the base, ε, z and the ladder; silent on placements that are
+neither a chain nor a cabled double singlet, and on creation at the bottom.
+
+One derivation worth carrying forward from the same review, **not** re-derived
+here: the corpus's 3-letter quark block is provably **not** γγ-produced on two
+sorry-free invariants — odd length against `gammaGamma_length_even`, and writhe
+∈ {±1,±3} against `writhe_eq_zero`. That justifies *replacing* the quark template
+rather than re-sweeping its 8 members, which is what the 2026-10-12 "derive it, do
+not pick it" ruling asks for.
+
+Verification: probe exit 0 8/8; `precision-gates.sh` full mode RED line sha256
+`7c24bef867293db6…` **byte-identical with and without this probe** (a `--changed`
+A/B was run first and was VOID — it skipped, examining nothing); 13 sibling audit
+witnesses restored by name per `qou-v0t8`.
