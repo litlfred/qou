@@ -1665,6 +1665,71 @@
       "adjudicated_by": "agent (re-audit 2026-10-10, bean qou-am5t)",
       "date": "2026-10-10",
       "source_hash": "adfb5f133f3c"
+    },
+    {
+      "path": "computations/probes/frobenius_s_parity_convention_d_probe.py",
+      "target": "zC",
+      "source_hash": "d0bc5d2292e1",
+      "line_when_adjudicated": 64,
+      "scope": "<module>",
+      "source": "zC = sp.sqrt(qs) / (qs + 1)",
+      "verdict": "comparison",
+      "rationale": "The probe's subject is that the bar involution q -> 1/q acts DIFFERENTLY on the two Markov parameters, and the symbolic z_C is one of the two things being differentiated. zD is bound on the line above (:63) and the four checks that consume the pair are adjacent: 'z_D(1/q) == z_D(q) - h' (:68) against 'z_C(1/q) == z_C(q)  (C is bar-invariant)' (:69-70) and 'z_C(1/q) != z_C(q) - h  (C trace NOT bar-equivariant)' (:71-72). The module docstring states the contrast it exists to establish: 'convention D: tr IS bar-equivariant ... convention C: z_C is bar-invariant but tr_C is NOT bar-equivariant'. Binding only z_D would leave the D result with nothing to be a result ABOUT -- bar-equivariance of the trace is only informative against a parameter that lacks it. Note the C value here does reach the exit code, via check(), but what is asserted is C's CONTRASTING property, never a canonical quantity; the probe writes no witness at all. Same shape as the adjudicated phi1_is_chain_additive_iff_z_is_an_eigenvalue_probe entry, whose CHECK 6 likewise asserts a property at both conventions.",
+      "adjudicated_by": "claude (session 01FsqmWKMezLw7W86Up44M8Y)",
+      "date": "2026-11-14",
+      "bean": "qou-fd2u"
+    },
+    {
+      "path": "computations/probes/frobenius_s_parity_convention_d_probe.py",
+      "target": "zc",
+      "source_hash": "a91071e8b2b4",
+      "line_when_adjudicated": 191,
+      "scope": "<module>",
+      "source": "zc = mp.sqrt(Q0) / (Q0 + 1)",
+      "verdict": "comparison",
+      "rationale": "The numeric half of the same contrast, under a banner the probe prints itself: 'CONTRAST, excised C, uud' (:195). zc feeds three invariants() calls at the proton pin (:192-194) whose only consumer is that printed line and the final check 'C: Phi_1(S beta; q0) != Phi_1(beta; 1/q0)  (no evaluation flip)' (:197-198) -- i.e. the measurement is that convention C does NOT have the evaluation flip which :177-178 asserts for D on seven chains. A negative of that shape cannot be stated without evaluating the negative case. Nothing in the file is reported as canonical from the C arm: the file writes no witness ('No witness is written', :33, verified -- no WitnessBuilder import, no frobenius-s-parity witness in the tree, and running it leaves the tree clean).",
+      "adjudicated_by": "claude (session 01FsqmWKMezLw7W86Up44M8Y)",
+      "date": "2026-11-14",
+      "bean": "qou-fd2u"
+    },
+    {
+      "path": "computations/probes/v9_markov_trace_convention_d_probe.py",
+      "target": "z_c",
+      "source_hash": "ae3d7ba1fb95",
+      "line_when_adjudicated": 161,
+      "scope": "main",
+      "source": "z_c = 1 / (t0 + 1 / t0)",
+      "verdict": "comparison",
+      "rationale": "The probe exists to show that Rust v9's tr_markov_f64 is wrong TWICE -- wrong Markov parameter (convention C) and wrong functional (z^len instead of the Ocneanu recursion) -- and separating the two errors requires evaluating the correct trace at the WRONG z. That is exactly what this binding is for: z_c is bound beside z_d (:160-161) and the two are evaluated against the same exact trace, emitted as the sibling witness columns 'tr_markov_D' and 'tr_markov_C_correct_trace' (:187-188). The C column is named for what it isolates. Binding only z_D would merge the two defects into one number and lose the decomposition the probe is for. The C value reaches no assertion (all three add_assertion calls at :210-216 are the formal-z identity and the cyclicity/Markov counters) and does not affect the exit code (:218, cyc_fail/mar_fail only); the witness declares its own frame as 'z_convention: D: q^3/(q^2+1)' (:204) and is set_audit_only. Measured: 'tr_markov_C_correct_trace' occurs in exactly two files in the repo, this producer and its own witness -- zero downstream consumers.",
+      "adjudicated_by": "claude (session 01FsqmWKMezLw7W86Up44M8Y)",
+      "date": "2026-11-14",
+      "bean": "qou-m7py"
+    },
+    {
+      "path": "computations/qbeta/qbeta_cos_resummation_d_probe.py",
+      "target": "z_C_historical",
+      "source_hash": "61e010173b69",
+      "line_when_adjudicated": 92,
+      "scope": "main",
+      "source": "z_C_historical = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))",
+      "verdict": "comparison",
+      "rationale": "This producer replaces a convention-C producer for prop:q-beta-cos-resummation, and the C eigenphase is recomputed only so the figures the block published until this landed ('eps_DeltaS 1015 -> 185 ppm') can be SCOPED as C-measured rather than quoted or silently dropped. Its docstring states the limit explicitly: 'the convention-C eigenphase is recomputed here ONLY as a labelled historical comparison (*_C_historical), so the old figure can be scoped rather than quoted. Nothing canonical in this file uses it.' (:27-30). Verified against the code, not the comment: the C value reaches one labelled cell ('formA_cos_C_historical', :101) plus two labelled witness fields ('z_C_historical', 'cos_alpha_C_historical', :180-181), and reaches NONE of the five assertions -- 'vals' (:133-135) and PUBLISHED_PPM (:68-73) contain no C key, and ruled_moves_away / chain_identity read only D cells -- so it cannot move the exit code (:209-212). Binding only z_D would leave the superseded published figure with no identified provenance.",
+      "adjudicated_by": "claude (session 01FsqmWKMezLw7W86Up44M8Y)",
+      "date": "2026-11-14",
+      "bean": "qou-zuva"
+    },
+    {
+      "path": "computations/spectral_decomposition_qvalue_d.py",
+      "target": "<return>",
+      "source_hash": "81f975ad164b",
+      "line_when_adjudicated": 72,
+      "scope": "_z_convention_C_HISTORICAL",
+      "source": "return mp.sqrt(q) / (q + 1)",
+      "verdict": "comparison",
+      "rationale": "The convention-D replacement for the float-only convention-C producer fsh-guts/deprecated/computations/rosso-jones-qvalues.py. The C helper exists to identify the provenance of the figures cor:spectral-decomposition-qvalue quoted before 2026-10-10 (named in the docstring: 'Sr-90 Q_bare 0.944 MeV, F_Pauli 0.6382'), which is also why the discrepant ln-vs-log_q normalisation is emitted alongside rather than resolved. Its own docstring scopes it: 'Used ONLY for the labelled provenance comparison below; never in a reported D value' (:70-71), and the witness carries the same statement as a caveat (:447-450). Verified by reading all sixteen uses of Z_C_HIST: every one lands in a field suffixed _C_HISTORICAL or in a printed '[C hist: ...]' column; the four assertions (:417-427) are all D, the combined-formula branch uses F_deg2_D / qbare_D only, and main() returns 0 unconditionally. Measured: 'Q_bare_C_HISTORICAL', 'tr_M_C_HISTORICAL' and 'pauli_C_HISTORICAL' each occur in exactly two files, this producer and its own witness -- zero downstream consumers. NOTE: --propose-ledger does NOT stub this site. Its D binding Z_D (:66) is inline, unlike the he4_body_order_shortfall_location_probe case, but it sits at <module> scope while the C binding sits inside the helper, and _scope_of requires the SAME enclosing scope -- so the co-binding hint cannot fire. Adjudicated by hand for that reason; source_hash computed with the audit's own _site_hash. That hash is shared with five already-adjudicated entries because _site_hash covers the source line only, not the path; the ledger key is (path, target, source_hash), so the rows remain distinct.",
+      "adjudicated_by": "claude (session 01FsqmWKMezLw7W86Up44M8Y)",
+      "date": "2026-11-14",
+      "bean": "qou-wlnx"
     }
   ]
 }

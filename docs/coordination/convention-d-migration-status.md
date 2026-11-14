@@ -685,8 +685,14 @@ comparison.
   comparison arms, those two bean titles are wrong; if the beans are right, the
   sites are leaks. The two readings are mutually exclusive and this is the thing
   to settle first.
-- `computations/probes/frobenius_s_parity_convention_d_probe.py` (sites 1–2) is
-  named in **no bean at all** — measured, `grep -rl` over `beans/defs/` returns 0.
+- ~~`frobenius_s_parity_convention_d_probe.py` (sites 1–2) is named in no bean
+  at all.~~ **Wrong, and invalidated by the commit that recorded it.** The arc
+  bean `qou-fd2u` (created 2026-10-10T08:52:03Z) predates the claim and records
+  this probe's own result; the creating commit is titled *"probe: Frobenius
+  S-parity of Φ₁ under convention D (qou-fd2u)"*. `qou-t1a0`, created by me
+  three minutes after the claim, also names the file — so the grep was already
+  false when it was committed. The accurate statement is: *the filename appears
+  in no bean; the arc bean is `qou-fd2u`.*
 - **The other roots** (`tools`, the shape audit, the Lean audit, the three
   disagreeing witness detectors) are not re-measured in this section. §3b–§3e
   still carry their 2026-10-10 figures and should not be quoted as current.
@@ -715,12 +721,24 @@ They take ledger rows, not migration.
   for `alpha_C_historical` only, emitted `:180` as a labelled data field, while
   `Q_ruled` / `cos_D` use `z_D`.
 
-**So the `qou-zuva` / `qou-wlnx` contradiction resolves against the beans.** Both
-titles — *"M6: redo q-beta-cos-resummation family in convention D"* and *"M6: redo
-spectral-decomposition-qvalue in convention D"* — assert work that is **already
-done**: both files are convention D and retain a labelled C arm on purpose.
-Sites 1–3 (`frobenius_s_parity_convention_d_probe.py:64`, `:191`;
-`v9_markov_trace_convention_d_probe.py:161`) are **not** triaged yet.
+**🛑 There was no contradiction — that framing was a false dichotomy, and it was
+mine.** I wrote above that "exactly one reading can be right" for sites 4 and 5.
+Both readings are right: **those producers are the two beans' own delivered
+artefacts.** `qou-zuva`'s 2026-10-10 entry records *"New producer
+`computations/qbeta/qbeta_cos_resummation_d_probe.py` + witness (5/5, Q0_OK)"*
+and *"C figure reproduces as 1014.8 → 185.1 (labelled historical)"* — the bean
+**asked for** the labelled C arm. The creating commits cite the beans by name
+(`d994e144a8` *"qou-zuva: convention-D mpmath producer for
+q-beta-cos-resummation"*, `b2408388ca` *"qou-wlnx: convention-D mpmath producer
+for spectral-decomposition-qvalue"*).
+
+So "redo in convention D" **was satisfied**, by a D producer that keeps a
+labelled C provenance column, and each bean stays open on *derivational*
+items that have nothing to do with the C binding — `qou-zuva` on the cosine
+being an untested definition under D and on no admissible factor > 1 existing
+on the ruled base; `qou-wlnx` on the Pauli branch having no replacement and
+the q-weighted method having no D producer. Neither title needs correcting as
+urgently as I implied, and neither site is a leak.
 
 ### 🛑 The documented command tells you to delete the ledger
 
@@ -797,6 +815,69 @@ registry's `updated` is now **70** days stale. One omission: §3b's reproduced
 block stops at the ACTIONABLE line and so hides a `C-SPECIALISED CLOSED FORMS`
 section the audit prints, carrying the standing instruction *"re-verify by
 RUNNING it, not by reading it"*.
+
+### ✅ Landed: all five adjudicated, `BLOCKING` 5 → 0
+
+All five are **(a) deliberate two-arm C-vs-D comparison arms**. The measurement
+that settles (a) against (b) is **downstream consumers, of which there are
+none**: each C-labelled witness field — `tr_markov_C_correct_trace`,
+`formA_cos_C_historical`, `cos_alpha_C_historical`, `Q_bare_C_HISTORICAL`,
+`tr_M_C_HISTORICAL`, `pauli_C_HISTORICAL` — occurs in exactly **two** files
+across `computations/ scripts/ docs/ folio/ tools/ qou-mass/ beans/`: its own
+producer and its own witness. (Two now read three, because this section quotes
+them.) No C value reaches an assertion, a canonical witness field, or an exit
+code. Sites 1–2 write **no witness at all** (`:33` *"No witness is written"*,
+verified: no `WitnessBuilder`, no such witness in the tree).
+
+Five rows added to [`docs/audits/convention-c-comparison-ledger.json`](../audits/convention-c-comparison-ledger.json),
+`entries` 143 → 148, each `verdict: "comparison"`, keyed `qou-fd2u` (sites 1–2),
+`qou-m7py` (3), `qou-zuva` (4), `qou-wlnx` (5). Every `source_hash` was
+**recomputed independently** from the live file with the audit's own
+`_site_hash` before landing, not copied. Result:
+
+```
+python3 scripts/convention-c-value-audit.py --root computations   # exit 0
+  convention-C bindings (confirmed): 148
+      of which adjudicated in the ledger: 148
+      BLOCKING (confirmed, unadjudicated): 0
+```
+
+Site 5's hash `81f975ad164b` is shared with five existing entries, because
+`_site_hash` covers the source **line** only and six files contain the identical
+`return mp.sqrt(q) / (q + 1)`. The ledger key is the `(path, target,
+source_hash)` **triple**, so the rows stay distinct — do not read the shared hash
+as an error.
+
+Site 5 also needed writing by hand: `--propose-ledger` cannot stub it, for a
+**third** reason distinct from both precedents already in the ledger. Its D arm
+*is* an inline binding (`Z_D` at `:66`), unlike the `he4_body_order_shortfall`
+case where the D arm is a call — but `_scope_of` requires the same **enclosing
+scope**, and the C binding sits inside a helper while `Z_D` is at module scope.
+The restriction is deliberate (*"file-level would over-credit"*), so this is the
+hint working as designed.
+
+### 🛑 `BLOCKING` 0 is a transient floor, not a finish line
+
+The ledger's own commit history makes this the **fifth** recurrence in ten weeks,
+so today's 0 → 5 is not a regression and the earlier 0 was not a finish:
+
+| date | ledger commit | movement | entries |
+|---|---|---|---:|
+| 2026-08-30 | *"adjudicate the five convention-C sites I introduced today"* | 5 → 0 | 97 → 101 |
+| 2026-08-30 | — | 11 → 5 | — |
+| 2026-08-31 | `20551ccc7b` *"audit(qou-t9r1)"* | 5 → 0 | 106 → 111 |
+| 2026-09-06 | `ef341f5d70` | 0 → **26** *"because sibling sessions landed new probes since"* | 111 → 137 |
+| 2026-10-10 | `c81dc7602e` | 6 → 0 | 137 → 143 |
+| **2026-11-14** | *this* | 5 → 0 | 143 → **148** |
+
+**The count re-accretes whenever a D-subject producer lands with its comparison
+arm** — which is the healthy case, since a D result about C needs a C arm to be a
+result about. Read `BLOCKING > 0` as an **unregistered-comparison queue**, not as
+a migration regression. The four commits behind today's five all postdate both
+§3a's baseline (`77695711d`, 2026-10-10T06:45:58Z) *and* the ledger pass that
+drove `BLOCKING` 6 → 0 (`c81dc7602e`, 10:04:10Z), by 7–24 hours: `d994e144a8`
+13:55Z, `314adf6e671` 13:59Z, `b2408388ca` 13:59Z, `0510f0a5b2` (2026-10-11)
+07:16Z. Dated via the GitHub API, because the shallow clone cannot see them.
 
 ### One registry drift noted in passing
 
