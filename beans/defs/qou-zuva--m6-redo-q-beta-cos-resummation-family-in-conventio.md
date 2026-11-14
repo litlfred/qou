@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-10T08:58:08Z
-updated_at: 2026-10-10T13:27:09Z
+updated_at: 2026-11-14T07:19:20Z
 parent: qou-d8c7
 ---
 
@@ -15,3 +15,29 @@ nuclear-interactions/q-beta-cos-resummation.md:8,12 and table data use z_C; resi
 2026-10-10: redone in D on PR #7562 (subagent, reviewed). Ruled base 0.4447004085 MeV (-431571.8 ppm); cos factor 0.99918 makes it worse (-432037.5 ppm), forced since cos<=1 and F_required>1. Form A historical: +1677.6 -> +856.8 ppm with D phase (was 5.49x under C, now 1.96x). Bar-evenness argument for the cosine fails under D (z_D(1/q) != z_D(q)), so cosine is now a tested definition, not derived. OPEN: Lean sibling still markovZC (eigenphase_bar_involution false under D); downstream eps_DeltaS 1015->185 ppm still C; no D producer/witness (computation field points at old producer). Stays open.
 
 2026-10-10 (branch claude/q-beta-cos-resummation-d-2026-10-10, commits 39879de5d 1787c85d6 a331b5aa0): leftovers (1)-(3) done. (1) Lean sibling restated in D: eigenphase uses markovZD = q^3/(q^2+1); class + q_beta_cos_resummation now on alpha_D. C kept, labelled C-historical (markovZC, eigenphaseC, eigenphaseC_bar_involution; deprecated alias eigenphase_bar_involution kept because 4 library docstrings + 3 probes + 1 witness cite it). New sorry-free D theorems: markovZD_bar_ne (z_D(1/q) != z_D(q), q>0, q!=1), eigenphase_bar_even_sum (alpha_D(1/q)+alpha_D(q) = (q^2-1)^2/(2q^2)), eigenphase_not_bar_odd. lean-direct -DautoImplicit=false exit 0, axioms propext/Classical.choice/Quot.sound. (2) eps_DeltaS recomputed under D (mpmath, proton pin, Q_ref 0.78233341): Form A 1014.8 -> 518.2 ppm; ruled z_D base -261056.6 -> -261338.4 ppm. C figure reproduces as 1014.8 -> 185.1 (labelled historical). Only site quoting 1015->185 is the block's .ts authorNote; now scoped C-measured with D beside it. docs/coordination/1ppb.md carries the C 305 ppm as a dated ledger record, left alone. (3) New producer computations/qbeta/qbeta_cos_resummation_d_probe.py + qbeta-cos-resummation-d.witness.json (5/5, Q0_OK), reproduces every block number (4.7e-11 values, 0.047 ppm residuals); computation field repointed. Side note: |z_D(q) - z_D(1/q)| = h exactly. Still OPEN (why bean stays open): the cosine is an untested definition under D (no derivation), the transfer-matrix eigenphase identification is circular/unproved (qou-pdix/qou-cds1), and no admissible factor > 1 exists on the ruled base.
+
+
+
+## 2026-11-14 — your C binding is ADJUDICATED; your title reads as if undone work remains (PR litlfred/qou#7817)
+
+`scripts/convention-c-value-audit.py --root computations` reported this file as a
+`BLOCKING` unadjudicated convention-C binding (one of five, after the count went
+0 -> 5 since the 2026-10-10 status-doc measurement). Triaged and **adjudicated as
+a deliberate comparison arm**, not a leak — a row is now in
+`docs/audits/convention-c-comparison-ledger.json` and the audit exits 0 at
+148/148, BLOCKING 0.
+
+**No work is implied for you by that.** The decisive measurement is that the
+C-labelled witness fields have **zero downstream consumers** — each occurs in
+exactly two files, this producer and its own witness — and no C value reaches an
+assertion, a canonical field or the exit code.
+
+**One caution for whoever reads this bean next.** The title *"redo ... in
+convention D"* reads as outstanding work and is not: your own 2026-10-10 entry
+records the convention-D producer and witness that satisfied it, and the creating
+commit is titled after this bean. A session triaging the audit output briefly
+concluded that your title and the comparison-arm reading were mutually exclusive
+("exactly one reading can be right"); that was a false dichotomy and is retracted
+— both are true. What keeps this bean open is its derivational items, which the C
+binding has nothing to do with. Retitling is an owner call under §ASK THE OWNER
+and was not done.

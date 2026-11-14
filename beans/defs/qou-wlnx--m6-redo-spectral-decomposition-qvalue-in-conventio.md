@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-10T08:58:07Z
-updated_at: 2026-10-10T15:04:08Z
+updated_at: 2026-11-14T07:19:21Z
 parent: qou-d8c7
 ---
 
@@ -22,3 +22,29 @@ predicted-spectra/spectral-decomposition-qvalue.md:23 defines z = z_C in the cha
 observations/qvalue-observation.md now labels F_deg2 0.5904, F_Pauli 0.6382, Sr-90 Q_bare 0.944 / 0.557, MAE 4.4 % / RMS 5.4 % as convention-C outputs of the q-weighted method in computations/_deprecated/qvalue-representation-theory.py. That file is float64, uses Z_m = 1/(sqrt q + 1/sqrt q) (convention C), and hard-codes F_DEG2 = 0.5904 / F_PAULI = 0.6382 at lines 45-46 rather than computing them. The block links to the D table in rem:spectral-decomposition-qvalue-interpretation and quotes D figures only from spectral-decomposition-qvalue-d.witness.json: F_deg2 3.68442; Pauli Markov-trace form 0 (y_(1^3)=0); Sr-90 Q_bare 0.05482 (-90.0 %), combined 0.20198 (-63.0 %); ranges 8-98 % bare and 1-100 % combined. It states that the q-weighted stage itself (q / q^-1 channel weights) has NOT been re-derived under D, because the D producer recomputes the corollary's bare normalisation, and that 0.6382 is unreproduced under either convention. validate: 9 issues (baseline).
 
 Still open, NOT closeable: (1) no replacement for the Pauli branch; (2) the q-weighted method has no D producer; (3) the table sibling tbl:qvalue-observation-table-data still carries the C-era q-weighted rows (0.590 / 0.377 F_shell column). It is scoped by the referring prose but was not itself edited.
+
+
+
+## 2026-11-14 — your C binding is ADJUDICATED; your title reads as if undone work remains (PR litlfred/qou#7817)
+
+`scripts/convention-c-value-audit.py --root computations` reported this file as a
+`BLOCKING` unadjudicated convention-C binding (one of five, after the count went
+0 -> 5 since the 2026-10-10 status-doc measurement). Triaged and **adjudicated as
+a deliberate comparison arm**, not a leak — a row is now in
+`docs/audits/convention-c-comparison-ledger.json` and the audit exits 0 at
+148/148, BLOCKING 0.
+
+**No work is implied for you by that.** The decisive measurement is that the
+C-labelled witness fields have **zero downstream consumers** — each occurs in
+exactly two files, this producer and its own witness — and no C value reaches an
+assertion, a canonical field or the exit code.
+
+**One caution for whoever reads this bean next.** The title *"redo ... in
+convention D"* reads as outstanding work and is not: your own 2026-10-10 entry
+records the convention-D producer and witness that satisfied it, and the creating
+commit is titled after this bean. A session triaging the audit output briefly
+concluded that your title and the comparison-arm reading were mutually exclusive
+("exactly one reading can be right"); that was a false dichotomy and is retracted
+— both are true. What keeps this bean open is its derivational items, which the C
+binding has nothing to do with. Retitling is an owner call under §ASK THE OWNER
+and was not done.
