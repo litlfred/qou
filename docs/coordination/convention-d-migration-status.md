@@ -645,7 +645,7 @@ the internal consistency of the count is itself the evidence.
 | 2 | `computations/probes/frobenius_s_parity_convention_d_probe.py:191` | `zc = mp.sqrt(Q0)/(Q0+1)` | yes |
 | 3 | `computations/probes/v9_markov_trace_convention_d_probe.py:161` | `z_c = 1/(t0 + 1/t0)` | yes |
 | 4 | `computations/qbeta/qbeta_cos_resummation_d_probe.py:92` | `z_C_historical = 1/(√q + 1/√q)` | yes |
-| 5 | `computations/spectral_decomposition_qvalue_d.py:72` | `_z_convention_C_HISTORICAL()` → `√q/(q+1)` | no |
+| 5 | `computations/spectral_decomposition_qvalue_d.py:72` | `_z_convention_C_HISTORICAL()` → `√q/(q+1)` | **not reported — see below; the file does co-bind** |
 
 ### 🛑 Do NOT drain these, and `qou-ztee` predicted this exact report
 
@@ -690,6 +690,113 @@ comparison.
 - **The other roots** (`tools`, the shape audit, the Lean audit, the three
   disagreeing witness detectors) are not re-measured in this section. §3b–§3e
   still carry their 2026-10-10 figures and should not be quoted as current.
+
+### Corrections and additions, same day
+
+**My "co-bound? no" for site 5 was wrong, and the hint cannot support that
+reading.** The `[co-bound with z_D]` marker is **scope-local**: site 5's C arm
+sits inside the helper `_z_convention_C_HISTORICAL`, while `Z_D = Q0**3/(Q0**2+1)
+# convention D (canonical)` is bound at **module** scope on line 66 of the same
+file. So the file plainly binds both conventions and the marker still does not
+fire. **Read the absence of a co-binding marker as carrying no information**
+whenever the C binding's scope is a function. The marker is advisory by design
+and the C confirmation itself is correct — this is a reporting weakness, not a
+false positive.
+
+**Sites 4 and 5 are settled: labelled two-convention comparisons, D canonical.**
+They take ledger rows, not migration.
+
+- `spectral_decomposition_qvalue_d.py` — `Z_D` canonical at `:66`; the C value
+  returned by `_z_convention_C_HISTORICAL` at `:72`, whose docstring reads *"Used
+  ONLY for the labelled provenance comparison below; never in a reported D
+  value"*; every table row at `:322–328` emits `tr_M_D` / `pauli_D` **beside**
+  `tr_M_C_HISTORICAL` / `pauli_C_HISTORICAL`.
+- `qbeta_cos_resummation_d_probe.py` — `z_C_historical` bound `:92`, used `:93`
+  for `alpha_C_historical` only, emitted `:180` as a labelled data field, while
+  `Q_ruled` / `cos_D` use `z_D`.
+
+**So the `qou-zuva` / `qou-wlnx` contradiction resolves against the beans.** Both
+titles — *"M6: redo q-beta-cos-resummation family in convention D"* and *"M6: redo
+spectral-decomposition-qvalue in convention D"* — assert work that is **already
+done**: both files are convention D and retain a labelled C arm on purpose.
+Sites 1–3 (`frobenius_s_parity_convention_d_probe.py:64`, `:191`;
+`v9_markov_trace_convention_d_probe.py:161`) are **not** triaged yet.
+
+### 🛑 The documented command tells you to delete the ledger
+
+`python3 scripts/convention-c-value-audit.py --root tools` — the form §8
+reproduces and §3a documents — exits 0 and prints:
+
+```
+!! 143 ledger entr(y/ies) match nothing — the site moved, changed or went away.
+   Non-blocking; prune them.
+```
+
+**Obeying that would take `BLOCKING` from 5 to 148.** Measured with
+`grep -c '^     stale:'`: `tools` 143, `qou-mass` 143, `folio` 143, `scripts`
+143, `computations` **0**. The ledger is intact — `json.load(...)['entries']` is
+143 and the `computations` run reads all 143 as adjudicated.
+
+It is a **scope artifact**: the ledger keys on `computations/` paths, so a run
+scoped to a tree containing none of them legitimately matches nothing. This is
+the taxonomy's rows-33/43/44 class — a guard correct on one scan scope and wrong
+on another — and the fix belongs at the **report** (suppress or re-word the
+banner when the scanned root is disjoint from the ledger's key prefix), never at
+the ledger. **Do not prune.**
+
+### The five are a frozen tranche, not a moving front
+
+All four files are byte-identical to their 2026-10-13 state
+(`git diff --stat 610233d1a HEAD -- <the four>` is empty) and all exist at the
+shallow boundary, while §3a measured 0 `BLOCKING` on 2026-10-10. So the five
+landed in a 3-day window and have not moved in the month since — which supports
+adjudication over a drain.
+
+**Cause is not establishable in an agent clone, and the obvious attempt lies.**
+The clone is shallow (55 commits, boundary `610233d1a` = 2026-10-13) and §3a's
+own measurement commit `77695711d` is **absent** (`git cat-file -t` → *"Not a
+valid object name"*), so the window the drift happened in is unfetchable.
+`git log --diff-filter=A` on these files points at `610233d1a`, which is the
+**graft boundary** (100,511 files / 19.2 M insertions), not an authoring commit —
+read that output as *"predates the clone"*, never as *"added then"*. Same
+shallow-clone trap this repo already documents for `scriptCommitSha`.
+
+### What re-measured clean
+
+§3b, §3d and §3e are **unchanged in every convention-C figure**, so the drift is
+confined to §3a:
+
+| table | figure | 2026-10-10 | 2026-11-14 |
+|---|---|---:|---:|
+| §3b | ACTIONABLE sites | 13 | **13** |
+| §3b | live producer sites | 1 (`qbeta_ck_cache.py:140`) | **1, line verified exact** |
+| §3b | deliberately C-named | 119 | 123 |
+| §3d | convention-C Lean **defs** | 23 → 0 actionable | **23 → 0 actionable** |
+| §3d | `.lean` files scanned | 3923 | 4090 |
+| §3d | D defs / all sites | 57 / 203 | 62 / 224 |
+| §3e | witness structural | 0 | **0** |
+| §3e | witness symbolic | 1 (`y-lambda-macdonald-telescope`) | **1, same file, 14 expressions** |
+| §3e | fingerprint | 1 (`sdp-o3-falsifier`, 1.45e-17) | **1, same hit** (`1.4509405274e-17`, 3542 witnesses scanned) |
+| §3a (tools) | confirmed / BLOCKING / D | 0 / 0 / 8 | **0 / 0 / 8** |
+
+§3d's convention-C conclusion is **byte-stable across a +167-file corpus
+change**, with all growth on the D side. The `§3e` fingerprint hit is confirmed
+as the same float64 zero, and there was **no worktree inflation** —
+`git worktree list` shows only the main checkout, so the no-worktree constraint
+held.
+
+§3b's single most load-bearing claim verifies exactly, with a nuance worth
+keeping: `qbeta_ck_cache.py` does not silently compute in C under D — `:324`
+selects the convention, and the **D path `raise SystemExit(2)` at `:131`** after
+printing the two sorry-free Lean results that forbid the z-swap. A non-zero exit
+that is a guard working correctly.
+
+Two figures the doc states that have moved and are **harmless**: §3a's prose
+"6 sites" of the convention-neutral `1/[2]_q` shape is now **10**, and the
+registry's `updated` is now **70** days stale. One omission: §3b's reproduced
+block stops at the ACTIONABLE line and so hides a `C-SPECIALISED CLOSED FORMS`
+section the audit prints, carrying the standing instruction *"re-verify by
+RUNNING it, not by reading it"*.
 
 ### One registry drift noted in passing
 
