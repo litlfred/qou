@@ -611,3 +611,87 @@ where the `re.I` bug *over*-blocked (a false deliberate hid a defect).
 file is reproducible by the commands in §8 — re-run them rather than quoting
 this file, and if a number here disagrees with a fresh run, the fresh run is
 right and this file is stale.*
+
+---
+
+## 12. Re-measured 2026-11-14 — §3a has drifted, and the obvious fix is the wrong one
+
+§1 and §3a were measured on 2026-10-10 against `main` `77695711d`. Re-run today
+against `main` `fee4ad592` with the command §8 names:
+
+```bash
+python3 scripts/convention-c-value-audit.py --root computations
+```
+
+| quantity | §3a, 2026-10-10 | measured 2026-11-14 | drift |
+|---|---:|---:|---|
+| confirmed C bindings | 143 | **148** | +5 |
+| of which adjudicated in the ledger | 143 | 143 | — |
+| **BLOCKING** (confirmed, unadjudicated) | **0** | **5** | **+5** |
+| convention-D bindings | 576 | **597** | +21 |
+
+**So §1's "`BLOCKING` 0" is stale**, and the audit now exits 1 rather than 0.
+
+**The ledger did not break, and that was checked before anything was concluded.**
+A failed ledger load would report all 148 as `BLOCKING`, not 5. 143 are still
+read as adjudicated, so the five are new sites rather than a tooling artifact —
+the internal consistency of the count is itself the evidence.
+
+### The five
+
+| # | site | binding | co-bound with `z_D` at the same site? |
+|---|---|---|---|
+| 1 | `computations/probes/frobenius_s_parity_convention_d_probe.py:64` | `zC = sp.sqrt(qs)/(qs+1)` | yes |
+| 2 | `computations/probes/frobenius_s_parity_convention_d_probe.py:191` | `zc = mp.sqrt(Q0)/(Q0+1)` | yes |
+| 3 | `computations/probes/v9_markov_trace_convention_d_probe.py:161` | `z_c = 1/(t0 + 1/t0)` | yes |
+| 4 | `computations/qbeta/qbeta_cos_resummation_d_probe.py:92` | `z_C_historical = 1/(√q + 1/√q)` | yes |
+| 5 | `computations/spectral_decomposition_qvalue_d.py:72` | `_z_convention_C_HISTORICAL()` → `√q/(q+1)` | no |
+
+### 🛑 Do NOT drain these, and `qou-ztee` predicted this exact report
+
+`qou-ztee` (`completed`, 2026-09-06) is the bean that *built* the adjudication
+ledger, and it was written to forecast precisely this moment:
+
+> as the C surface drains, the census converges to a **floor** consisting
+> entirely of deliberate comparison arms. At that point the report reads
+> *"N confirmed convention-C bindings, exit 1"* with every entry deliberate, and
+> the obvious next move — *"drain the last N"* — **deletes measurements**.
+
+Its ruling: **"If the count is wrong, fix the REPORT."** Restructuring a
+comparison probe so the detector stops seeing it is AGENTS.md §1a audit-dodging —
+a move whose only effect is to make an audit pass without changing anything real,
+and exactly what this value-level detector was built to defeat.
+
+Four of the five are **co-bound with `z_D` at the same site**, which `qou-ztee`
+notes "is itself a value-level signal and needs no name or comment". That is
+consistent with the comparison-arm reading and is **not sufficient to establish
+it** — a filename or a variable spelled `z_C_historical` is a label, and this
+repo's 58-row detector-blindness taxonomy is built almost entirely out of
+mistaking a label for the thing. Each of the five needs its code read to
+establish whether the C value reaches a reported result or only a printed
+comparison.
+
+### What is NOT yet established in this section
+
+- **The triage of the five** — comparison arm (⇒ ledger row) vs genuine leak
+  (⇒ migration) vs dead historical path. In progress; rows go in
+  `docs/audits/convention-c-comparison-ledger.json`, keyed on path + target +
+  a source-line hash, and `--propose-ledger` stubs candidates whose D arm is an
+  inline binding.
+- **Two of the five are already claimed by `in-progress` beans that say the
+  opposite of "adjudicate"**: `qou-zuva` *"M6: redo q-beta-cos-resummation family
+  in convention D"* (site 4) and `qou-wlnx` *"M6: redo spectral-decomposition-qvalue
+  in convention D"* (site 5), both last touched 2026-10-10. If those sites are
+  comparison arms, those two bean titles are wrong; if the beans are right, the
+  sites are leaks. The two readings are mutually exclusive and this is the thing
+  to settle first.
+- `computations/probes/frobenius_s_parity_convention_d_probe.py` (sites 1–2) is
+  named in **no bean at all** — measured, `grep -rl` over `beans/defs/` returns 0.
+- **The other roots** (`tools`, the shape audit, the Lean audit, the three
+  disagreeing witness detectors) are not re-measured in this section. §3b–§3e
+  still carry their 2026-10-10 figures and should not be quoted as current.
+
+### One registry drift noted in passing
+
+§2 says the registry's `blocked_on_rederivation` holds **12** rows; the file
+holds **13**. The registry's own `updated` field still reads 2026-09-05.
