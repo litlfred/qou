@@ -1,0 +1,181 @@
+{
+ "computation": "gg-scalar-per-step",
+ "scriptFile": "gg_scalar_per_step_probe.py",
+ "kind": "re-derivation record (no search, no selection)",
+ "issue": 7727,
+ "beans": [
+  "qou-cds1",
+  "qou-99qc",
+  "qou-ales"
+ ],
+ "q0": "1.1099785827513808075916690956107688798744991218736",
+ "q0Anchor": "physical_proton",
+ "markov_convention": "D (z = q^3/(q^2+1))",
+ "compute_dps": 70,
+ "checks": {
+  "S_projector_and_jones_eigenvalue": true,
+  "I1_cabled_crossing_on_double_singlet_is_q_squared": true,
+  "I2_top_generator_once_collapses": true,
+  "I3_chain_and_disjoint_multiplicativity": true,
+  "C_closed_form_matches_every_c": true,
+  "C_ratio_is_exactly_q_squared": true,
+  "C_family_straddles_the_requirement": true,
+  "conclusion_scope_b_named_invariant": true
+ },
+ "data": {
+  "I1_by_block": {
+   "n=5 lam=(5, 0)": {
+    "right": true,
+    "left": true,
+    "dim": 1
+   },
+   "n=5 lam=(4, 1)": {
+    "right": true,
+    "left": true,
+    "dim": 4
+   },
+   "n=5 lam=(3, 2)": {
+    "right": true,
+    "left": true,
+    "dim": 5
+   },
+   "n=6 lam=(6, 0)": {
+    "right": true,
+    "left": true,
+    "dim": 1
+   },
+   "n=6 lam=(5, 1)": {
+    "right": true,
+    "left": true,
+    "dim": 5
+   },
+   "n=6 lam=(4, 2)": {
+    "right": true,
+    "left": true,
+    "dim": 9
+   },
+   "n=6 lam=(3, 3)": {
+    "right": true,
+    "left": true,
+    "dim": 5
+   }
+  },
+  "I2_by_word": {
+   "n=3 y=s0": {
+    "zero": true,
+    "residual": "0"
+   },
+   "n=4 y=s0": {
+    "zero": true,
+    "residual": "0"
+   },
+   "n=4 y=s0 s1": {
+    "zero": true,
+    "residual": "0"
+   },
+   "n=4 y=s1 s0^-1": {
+    "zero": true,
+    "residual": "0"
+   },
+   "n=5 y=s0": {
+    "zero": true,
+    "residual": "0"
+   },
+   "n=5 y=s0 s1": {
+    "zero": true,
+    "residual": "0"
+   },
+   "n=5 y=s1 s0^-1": {
+    "zero": true,
+    "residual": "0"
+   }
+  },
+  "I3": {
+   "tr_M_V0_cubed_exact": "(-q**12 + 3*q**10 - 2*q**8 + 4*q**6 - 2*q**4 + 3*q**2 - 1)/(q**8 + 2*q**6 + q**4)",
+   "tr_M_V0_cubed_at_q0": "0.99856216383678726595",
+   "rows": {
+    "one_strand_sharing_s_plus_2": {
+     "n": 5,
+     "zero": true,
+     "residual": "0",
+     "tr_M_at_q0": "0.99712639504640677422"
+    },
+    "disjoint_s_plus_3": {
+     "n": 6,
+     "zero": true,
+     "residual": "0",
+     "tr_M_at_q0": "0.99712639504640677422"
+    }
+   }
+  },
+  "C": {
+   "closed_form": "q**(4+2*c)/(q**2+1)**4",
+   "q_squared_at_q0": "1.23205245416676393127",
+   "rows": {
+    "c=1": {
+     "closed_form_matches": true,
+     "tr_M_at_q0": "0.075347701481196768126",
+     "ratio_to_previous": null,
+     "F_vs_abs_tr_Delta_S": "0.709250695802"
+    },
+    "c=2": {
+     "closed_form_matches": true,
+     "tr_M_at_q0": "0.092832320525733191938",
+     "ratio_to_previous": "1.2320524541667639313",
+     "F_vs_abs_tr_Delta_S": "0.873834060382"
+    },
+    "c=3": {
+     "closed_form_matches": true,
+     "tr_M_at_q0": "0.114374288329725232",
+     "ratio_to_previous": "1.2320524541667639313",
+     "F_vs_abs_tr_Delta_S": "1.07660939863"
+    },
+    "c=4": {
+     "closed_form_matches": true,
+     "tr_M_at_q0": "0.14091512263021503919",
+     "ratio_to_previous": "1.2320524541667639313",
+     "F_vs_abs_tr_Delta_S": "1.32643925176"
+    },
+    "c=5": {
+     "closed_form_matches": true,
+     "tr_M_at_q0": "0.1736148226657669334",
+     "ratio_to_previous": "1.2320524541667639313",
+     "F_vs_abs_tr_Delta_S": "1.63424273543"
+    },
+    "c=6": {
+     "closed_form_matches": true,
+     "tr_M_at_q0": "0.21390256834508566244",
+     "ratio_to_previous": "1.2320524541667639313",
+     "F_vs_abs_tr_Delta_S": "2.01347277289"
+    },
+    "c=7": {
+     "closed_form_matches": true,
+     "tr_M_at_q0": "0.26353918428213674246",
+     "ratio_to_previous": "1.2320524541667639313",
+     "F_vs_abs_tr_Delta_S": "2.48070407124"
+    },
+    "c=8": {
+     "closed_form_matches": true,
+     "tr_M_at_q0": "0.32469409876391363232",
+     "ratio_to_previous": "1.2320524541667639313",
+     "F_vs_abs_tr_Delta_S": "3.05635753903"
+    }
+   },
+   "F_required_order_zero_E0": "1.75923699418",
+   "abs_tr_M_Delta_S_at_zD": "0.106235639848092790892142",
+   "crossing": {
+    "last_c_below": 5,
+    "first_c_at_or_above": 6
+   },
+   "NOT_A_SELECTION": "The crossing is reported so the magnitude is on the record. Reading 3 admits every c, so choosing the c that clears F_required would be selection against the target -- a fitted discrete parameter under AGENTS.md NO FITTING. No c is adopted."
+  },
+  "conclusion": {
+   "scope": "(b) structural exclusion -- a proved identity forbids the ingredient",
+   "invariant": "e_0 e_2 * Sigma_1 = q**2 * e_0 e_2 (I1), hence tr_M geometric in c (C)",
+   "statement": "Every 'fresh strands per collision' gamma-gamma construction whose collisions are joined by a chain (I3) or by a cabled double singlet (I1) contributes a SCALAR PER STEP. The resulting family is geometric, so its step index is a free unbounded knob, and reading 3 -- Frobenius positivity on every block with y_lambda > 0, at every strand count -- does not bound it. Magnitude therefore cannot be derived on this route; it can only be selected, which is forbidden.",
+   "what_it_does_not_close": "It does not deliver a nucleon (no quark letters, no flavour, no two-nucleon level), so the deliverable half of the 2026-10-11 ask is untouched. It says nothing about the base, epsilon, z or the ladder.",
+   "reading_3_is_magnitude_blind": "Measured three independent ways: admissible at every c = 1..8 here while tr_M grows without bound; 10 of 12 configurations admissible across a 7.6x magnitude range in the sibling pair-creation construction; and the composed tower 'rejects nothing and admits everything H_3 rejected'."
+  }
+ },
+ "wall_seconds": 1
+}
