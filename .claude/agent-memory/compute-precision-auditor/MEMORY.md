@@ -405,6 +405,36 @@ records), then diff `environment` against `origin/main` for every touched witnes
 witness itself records 1.3.0, re-run under 1.3.0: mpmath renders `str(mpf('inf'))` as
 `+inf` in 1.3.0 and `inf` in 1.4.1, which churns unrelated fields.
 
+**🛑 And that `pip install` can silently install into an interpreter you are not
+running — measured 2026-11-14.** This remedy is written as a bare `pip install`,
+and on a fresh container `pip`/`python3` are **different Pythons**: `pip` resolved
+to `/usr/local/lib/python3.13/site-packages` while `python3` is **3.11.18**. So
+`pip install mpmath` printed *"Requirement already satisfied … mpmath 1.3.0"* and
+`python3 -c "import mpmath"` still raised `ModuleNotFoundError` — the remedy
+reports success and changes nothing for the interpreter that will run the producer.
+
+**The canonical interpreter is 3.13, not plain `python3`.** The committed
+`environment` blocks record `"python": "3.13.16"` (e.g.
+`qbeta-ladder-form-cannot-reach-ruled-base.witness.json`), so pin the version
+explicitly:
+
+```sh
+python3.13 -m pip install 'mpmath==1.4.1' clarabel   # the canonical env
+python3.11 -m pip install mpmath sympy numpy scipy   # what bare `python3` uses
+python3.13 -c "import sys,mpmath; print(sys.version, mpmath.__version__)"
+```
+
+Expect `pip` to warn `sympy 1.14.0 requires mpmath<1.4 … you have 1.4.1`. That
+conflict is in the **recorded canonical environment itself** and is not yours to
+resolve — the witnesses carry sympy 1.14.0 beside mpmath 1.4.1.
+
+`pyhecke_native` is **not on PyPI** (404), so no `pip install` reaches it; build it
+and install the wheel for the interpreter you will use —
+`cd tools/pyhecke-native && maturin build --release --interpreter python3.13`,
+then `pip install target/wheels/*.whl`. It is a `cdylib` with LTO and takes
+**minutes**, so background it; and note a `cp311` wheel does **not** load in 3.13
+(and vice versa), which is the one thing the ABI tag in the filename is telling you.
+
 ## BASELINE — re-measure, do not quote
 
 Everything here is a *method*, not an answer.
