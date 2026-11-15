@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-12T20:57:48Z
-updated_at: 2026-10-13T14:11:42Z
+updated_at: 2026-11-15T11:50:00Z
 parent: qou-vo9t
 ---
 
@@ -65,3 +65,13 @@ Base `f56e6d2b1f`. All nine consumers named above as "not edited" are re-scoped 
 Old text of every block is recorded verbatim in its authorNotes. run-validate 9 → 8 (the drop is the no-orphan-sidecar warning clearing once qa-sweep created test/results; no content change).
 
 **Still carrying withdrawn statements, NOT in the nine and NOT edited (owner call):** `QOU/FluidDynamics/yekutieli_levi_unification.lean` (step (d) as a class field; branch A/B theorems), `QOU/FluidDynamics/qou_ns_in_qou.lean` (`QOUFluidUniverseLevi`, `qou_levi_nondegenerate`, branch A), `ns-singularity-descartes-proof.md` (lists "non-degeneracy of the Levi form via the core-Levi equivalence" as input 3 of the NS-singularity theorem), `ns-singularity-descartes-interpretation.md` ("core-Levi bounding"), and the stale titles for prop:core-levi-form / conj:levi-degeneracy in `index-of-definitions/definition-index.md`. The conjecture (branch B) remains open; this bean stays in-progress.
+
+## 2026-11-15 — leftovers re-scoped (owner option 1), commit bb9fbdf6d on `claude/bold-gates-00l1bl`
+
+Owner chose option 1 ("re-scope all five, and search for files the old scan missed") in the project thread "Settle open-problem leftovers".
+- `yekutieli_levi_unification.lean`: step (d) fields and the branch A/B theorems removed; steps (c)/(e) kept as `ns_obstruction_iff_localCohom`.
+- `qou_ns_in_qou.lean`: `QOUFluidUniverseLevi`, `qou_levi_nondegenerate` removed. **Flagged, not changed:** the base chain still models `NS(A) = e(ξ)|_Σ` with `χ ≠ 0 → NS(A) ≠ 0`, which contradicts the restated `thm:ns-singularity-descartes` item 3 (`H²(Σ,·) = 0`). Owner call.
+- `ns-singularity-descartes-proof.md` (step 3 withdrawn), `-interpretation` (rewritten, old text in authorNotes), `definition-index.md` (three stale rows).
+- **Missed by the earlier scan:** `prop:root-of-unity-truncation` (box "NS blows up ⟺ Levi non-degenerate ⟺ κ = O(1)" and the κ² = condition-number paragraph) plus its library twin `root_of_unity_truncation.lean`; `ns-obstruction-intro.md` (two stale titles). Re-scoped the same way.
+- Not touched: `Elaboration.lean` `GeneralisedLeviConditions` (CR-manifold Levi signature, unrelated).
+Status stays in-progress: branch (B) is open.
