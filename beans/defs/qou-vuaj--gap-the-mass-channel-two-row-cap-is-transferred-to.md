@@ -1,7 +1,7 @@
 ---
 # qou-vuaj
 title: 'GAP: the mass-channel two-row cap is transferred to the DECAY channel, and its own source forbids that'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -91,3 +91,13 @@ Full 41-bean triage table and the method behind it: [`docs/coordination/conventi
 
 
 2026-11-15: moved under epic `qou-wxhi` (c_k ladder under convention D). Previous parent kept in history.
+
+
+## Round 44 Update (2026-11-15 — Owner Ruling `Q-WXHI-1 = 1`, PR `litlfred/qou#8058`)
+
+- **Ruling executed (`Q-WXHI-1 = 1`)**: Parameterized `computations/qbeta/qbeta_d_frame_terminus_probe.py` across three explicit D-frame relaxation regimes withouthardcoding a fibre dimension $N$:
+  1. **Regime 1 (1-parameter Ocneanu Markov curve $Y_\lambda(z)$)**: $g(z) = (2 q z - q^2 + 1)/(q^2 + 1)$ reaches $g_{\text{req}} = 0.8891258104$ at $z_{\text{req}} = 0.9985003026 \in (z_D, q)$, where $Y_{(1^3)}(z_{\text{req}}) = -0.0141306962 < 0$ violates weight positivity ($Y_{(1^3)}(z) < 0$ on all of $(z_D, q)$). Weight positivity ($Y_\lambda \ge 0$) + non-triviality ($Y_{(2,1)} > 0$) restricts $z \in (-1/q, z_D]$, capping $g(z) \le g(z_D) = 0.5054042265 < g_{\text{req}}$.
+  2. **Regime 2 (1-parameter affine slice at fixed $y_{(2,1)}(z_D) = 1/[2]_q^2$)**: $g(t) = g(z_D) - 2t \le g(z_D)$ for all $t = y_{(1^3)} \ge 0$ ($t_{\text{req}} = -0.1918607920 < 0$).
+  3. **Regime 3 (general 2-simplex abandoning both $z = z_D$ and the Ocneanu Markov relation)**: feasible for $t = y_{(1^3)} \in [0, 0.0554370948]$.
+- Regenerated `computations/qbeta/qbeta-d-frame-terminus.witness.json` (`4/4` assertions pass, `0` raw float64s).
+- **PR**: [`litlfred/qou#8058`](https://github.com/litlfred/qou/pull/8058) (`cc8046889bb857a933d60f20c74e29d4c8739d8a`). Status kept `in-progress` pending PR merge.

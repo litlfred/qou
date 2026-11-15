@@ -1,7 +1,7 @@
 ---
 # qou-pmkh
 title: 'GAP: convention-D re-derivation for the four C-premised computations sites'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -83,3 +83,9 @@ pieces of research, not a sweep.
 
 
 2026-11-15: moved under epic `qou-wxhi` (c_k ladder under convention D). Previous parent kept in history.
+
+
+## Round 44 Update (2026-11-15 — Owner Ruling `Q-WXHI-2 = 1`, PR `litlfred/qou#8058`)
+
+- **Ruling executed (`Q-WXHI-2 = 1`)**: Built the canonical Convention-D bar-parity decomposition $\bar{z}_D = 1/(q^3+q) = z_D - h$ ($z_D = z_D^{\text{even}} + z_D^{\text{odd}}$ with $z_D^{\text{even}} = (q^4+1)/(2q(q^2+1)) = z_D - h/2 = 0.508158$ and $z_D^{\text{odd}} = +h/2 = 0.104530$) and evaluated Vector 3 across Routes D1 ($z_D^{\text{even}}$), D2 ($\frac12(b_A(z_D)+b_A(z_D-h))$), and D3 ($z_D^{\text{odd}} = h/2$) in `computations/deltalambda/deltalambda_bareven_b4_magnitude_probe.py`, regenerating `computations/deltalambda/deltalambda-bareven-b4-magnitude.witness.json` (`13/13` assertions pass, `0` raw float64s).
+- **PR**: [`litlfred/qou#8058`](https://github.com/litlfred/qou/pull/8058) (`cc8046889bb857a933d60f20c74e29d4c8739d8a`). Status kept `in-progress` pending PR merge.

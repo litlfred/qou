@@ -1,7 +1,7 @@
 ---
 # qou-cds2
 title: 'S2 (SCIENCE): pyhecke.gram.z and the Gram singularity — the ruling answers the convention, not the singularity'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -991,3 +991,9 @@ Every one of them reads C/muon numbers today.
 
 
 2026-11-15: moved under epic `qou-wxhi` (c_k ladder under convention D). Previous parent kept in history.
+
+
+## Round 44 Update (2026-11-15 — Owner Ruling `Q-WXHI-2 = 1`, PR `litlfred/qou#8058`)
+
+- **Ruling executed (`Q-WXHI-2 = 1`)**: Regenerated `computations/confinement-operator-selection.witness.json` via `computations/confinement-operator-selection.py` at canonical Convention D ($z_D = q_0^3/(q_0^2+1) = 0.6126880371464652$, Moore-Penrose pseudoinverse on $H_3/\text{rad}$ with `gram_det = -1.4583173593018384e-17`) and proton pin $q_0 = 1.1099785827513808$, stamped `q0Anchor: "proton"` + 50-digit `q0Value`, stripped the 9 null/STUB LP-dual keys (`qou-lpio`), and updated `confinement-operator-selection-table{1,2}-data.md` ($\operatorname{tr}_M(X) = 0.544/0.699/0.526/0.541/0.887/0.621$) and `confinement-operator-selection.ts`.
+- **PR**: [`litlfred/qou#8058`](https://github.com/litlfred/qou/pull/8058) (`cc8046889bb857a933d60f20c74e29d4c8739d8a`). Status kept `in-progress` pending PR merge.
