@@ -111,7 +111,7 @@ the companion map, `docs/audits/2026-11-15-standard-model-eightfold-way-corpus-m
 | anomaly cancellation ⇒ N_c = 3 | see the note below | **absent** on all six grep paths (corpus map §5) |
 | CKM | flavour ≠ mass eigenbasis | see corpus map (`sm-params-ckm`) |
 | confinement | only colour singlets are asymptotic | absent; corpus "confinement" is mostly the SDP/LP homonym (corpus map §10). The epic hypothesis reads it as "quark labels invisible at order t⁰"; that is not a derivation |
-| colour-factor ratio | one-gluon 3̄ : 6 = −2/3 : +1/3, ratio 2 | **measured miss by exactly 2**: level-3 channel gives ratio 1 because \|det T\| = 1 (`computations/probes/level_three_colour_channel_probe.py`) |
+| colour-factor ratio | one-gluon 3̄ : 6 = −2/3 : +1/3, ratio 2 | **measured miss by exactly 2**: level-3 channel gives ratio 1 because \|det T\| = 1 (`computations/probes/level_three_colour_channel_probe.py`). **Explained by sibling PR #7830 (bean `qou-sl3f`, not yet merged):** the Hecke σ is the gl_N braiding; the SU(N) braiding q^(−1/N)σ has eigenvalue exponents −(N+1)/N on Λ² and (N−1)/N on Sym² (= 2c_R), ratio (N+1)/(N−1) = 2 at N = 3. Checked independently here. Adopting the SU(N) frame is an owner decision. |
 
 ### Note on anomaly cancellation (so it is not mis-cited)
 
