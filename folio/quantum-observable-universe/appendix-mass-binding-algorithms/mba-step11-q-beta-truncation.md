@@ -67,7 +67,7 @@ establishes the precision ladder and the convergence rate.*
   > wire/un-wire decision, which is what drove the four-session flip-flop (#1452 ↔ #1479).
   >
   > **Also note the whole ladder is convention-C-frame and not yet re-derived under D**
-  > (`qou-cds1`): `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` (sorry-free) makes the
+  > (`qou-cds1`): `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` makes the
   > C-frame ladder and the mass channel's three-row forcing mutually exclusive, so this is
   > not a $z$-swap. Treat every $c_k$ conclusion above as **C-conditional** until that
   > lands.*

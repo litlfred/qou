@@ -42,7 +42,7 @@ $f^{\lambda} = \tilde f^{\lambda}(1)$ their number per shape. $\blacksquare$
 
 **Machine verification.** The Lean sibling decides the exponent multisets and
 proves the identity for $n = 3, 4$ from the computable RSK insertion
-(kernel-checked, sorry-free); exact symbolic verification for $n \leq 8$ (all
+(kernel-checked); exact symbolic verification for $n \leq 8$ (all
 $764$ involutions at $n = 8$) is recorded in
 `computations/lever1-kernel-maj-involution-identification.witness.json`, and
 the transfer-operator reconstruction extends the exact cross-checks to

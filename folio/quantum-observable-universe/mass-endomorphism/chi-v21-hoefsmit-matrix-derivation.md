@@ -55,7 +55,7 @@ for the V_(2,1) coefficients.
 ## Not yet formalised
 
 ~~The **full Lean matrix-product trace derivation**~~ **is now formalised
-and proved sorry-free** (`chi_v21_matrix_trace_identity`, 2026-09-04). The
+and proved** (`chi_v21_matrix_trace_identity`, 2026-09-04). The
 three obstacles listed below are recorded as history; items 2 and 3 are
 resolved, and item 1 turned out not to be needed — the $\sigma_0, \sigma_1$
 matrices are declared locally rather than imported.

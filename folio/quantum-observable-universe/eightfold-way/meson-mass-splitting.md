@@ -61,7 +61,7 @@ $$
   4m_K^2 - 3m_\eta^2 - m_\pi^2 \;=\; 0
   \qquad\text{for \emph{all} } a, b, c .
 $$
-This is proved sorry-free over any commutative ring in
+This is proved over any commutative ring in
 `QOU/Eightfold/GellMannOkuboIdentity.lean`
 (`gmo_identity`), together with the sharper consequence
 `gmo_cannot_discriminate`: two arbitrarily different breaking

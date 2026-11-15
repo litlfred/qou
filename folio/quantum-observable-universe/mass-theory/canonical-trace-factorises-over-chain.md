@@ -135,7 +135,7 @@ carrying the difference-based
 $B = Q_\beta\bigl(\mathrm{tr}_M(W_{\text{free}}) - \mathrm{tr}_M(W_{\text{atom}})\bigr)$
 route with it by the same factor.
 
-`QOU.Mass.IntraOrderingInvariance` (sorry-free) proves the split. Given the
+`QOU.Mass.IntraOrderingInvariance` proves the split. Given the
 connected-sum input — $\mathrm{tr}_M(W_{\text{atom}}) = F \prod_i (z + d_i)$ and
 $\mathrm{tr}_M(W_{\text{free}}) = F$ — the ratio is
 $\prod_i (z+d_i)$ for **any** intra factor $F \neq 0$, so two orderings with
@@ -156,7 +156,7 @@ word is $\beta_{\mathrm{Bor}}$ is measured in
 
 ## What is formalised, what is checked, what is cited
 
-`QOU.Mass.ChainTraceFactor` (sorry-free) proves the factor algebra: the
+`QOU.Mass.ChainTraceFactor` proves the factor algebra: the
 affine law $\mathrm{tr}_2(\sigma + d) = z + d$ from the level-2 Wenzl weights
 (`twoStrandTrace_eq`); the mirror factor $z - h = 1/(q(q^2+1))$ and
 $\mathrm{tr}_2(\sigma)\,\mathrm{tr}_2(\sigma^{-1}) = 1/[2]_q^2$, hence

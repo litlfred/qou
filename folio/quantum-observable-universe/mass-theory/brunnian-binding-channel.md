@@ -56,12 +56,12 @@ coordination count is therefore a parity fact, not a modelling choice.
 ## Scope
 
 The channel structure, the Brunnian reduction, the coordination-unit map for minimal bonds, and the
-bar-parity orthogonality are proved (`QOU.Mass.BrunnianBindingChannel`, sorry-free). The two further
+bar-parity orthogonality are proved (`QOU.Mass.BrunnianBindingChannel`). The two further
 residuals are now also settled. The mass $\leftrightarrow$ self, binding $\leftrightarrow$ mutual
 assignment is a theorem of the crossing partition plus the mass-deficit definition of binding
 ($B = \sum_i m_i^{\text{isolated}} - m^{\text{assembly}} = -(\text{mutual energy})$; the self
 energies cancel), so binding is exactly the inter-component pairing
-(`QOU.Mass.SelfMutualPartition`, sorry-free); and the crossing-count $\to$ coordination coefficient
+(`QOU.Mass.SelfMutualPartition`); and the crossing-count $\to$ coordination coefficient
 is $\tfrac{1}{2}\lvert\text{inter-crossings}\rvert$ in general, giving $\binom{A}{2}$ units and
 per-nucleon $z = A-1$ for a complete graph of minimal single clasps. This is the discrete
 counterpart of the unsigned-invariant resolution reached independently on the electromagnetic-linking
@@ -69,7 +69,7 @@ side. The additive partition lifts to the mass observable — whose self carrier
 q-dimension Markov self-trace $\mathrm{lw}$ — through the archimedean functor
 $\tau = \log$: a multiplicative amplitude has an additive free energy $E = \log T$, so the
 mass-deficit binding equals the connected (interaction) free energy $-\log I$, which is positive
-exactly when the assembly amplitude is suppressed (`QOU.Mass.ArchimedeanTraceBridge`, sorry-free).
+exactly when the assembly amplitude is suppressed (`QOU.Mass.ArchimedeanTraceBridge`).
 
 **Two multiplicative structures must be kept apart here, and an earlier version of this paragraph
 conflated them.** For the normalised Jones polynomial the *connected sum* is exactly multiplicative,

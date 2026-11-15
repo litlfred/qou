@@ -18,7 +18,7 @@ Were the instance in hand, theorems that carry [`def:motivic-galois-character`](
 What *is* unconditional is a narrower result on a different route:
 `lean/QOU/LiftingDescent/MotivicPerpetualObstructionFromTrace.lean`
 derives the obstruction from the prime-ideal-collapse invariant
-$C = a_0(-1) + 2 a_1(-1)$, sorry-free, without going through a
+$C = a_0(-1) + 2 a_1(-1)$, without going through a
 `MotivicGaloisCharacter` instance at all.
 
 ## Coherence
