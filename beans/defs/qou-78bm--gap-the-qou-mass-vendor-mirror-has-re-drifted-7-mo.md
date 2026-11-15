@@ -111,3 +111,7 @@ is an owner decision (it changes a hook, not a number, so neither exemption appl
 
 Duplicate of `qou-a0j7` (work-plan reorganisation 2026-10-04). Evidence: recurring "qou-mass vendor mirror red/re-drifted" observations of the same missing sync; 1 main commits
 Content is untouched; only this work item is closed.
+
+<!-- 2026-11-15 port note -->
+
+Port note, 2026-11-15: the entry above was ported from PR #7481, but the qou-mass mirror drain it describes (commit 5c6ed636b) was **not** ported. On `main` `0d3ee898f`, `scripts/sync-qou-mass-vendor.py --check` reports 1 missing and 13 drifted modules, so that drain is still owed. It is tracked by `qou-a0j7`, the bean this one was scrapped into.
