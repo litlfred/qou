@@ -84,11 +84,16 @@ strength separates "bound by 2.2 MeV" from "just unbound". A coupling ratio (wha
 eigenvalue gives) and an energy ratio across the bound/virtual threshold are different
 observables, so 2 against 33.7 is not like-for-like.
 
-**The 0.066 MeV denominator is also soft.**
-- The scale ħ²/(m_N a²) gives **0.116 MeV** for the nn scattering length a = −18.9 fm.
-- It gives **0.074 MeV** for the np singlet a = −23.7 fm.
-- **0.066** corresponds to a ≈ 25 fm.
-- I did not trace where 0.066 comes from.
+**Correction (same day): the 0.066 MeV denominator is NOT soft.** An earlier version of this
+section called it soft, from the zero-range scale ħ²/(m_N a²). That was my error.
+- With the effective-range correction (a = −23.74 fm, r = 2.77 fm), the np ¹S₀ virtual-state pole
+  sits at κ ≈ 0.0398 fm⁻¹. That gives E = (ħ²/m_N)κ² ≈ 41.47 × 0.001584 ≈ **0.0657 MeV**, i.e. the
+  0.066 used.
+- The probes label it correctly as the np ¹S₀ (T = 1) virtual state
+  (`channel_asymmetry_crossing_budget_bound_probe.py:126`). That pair has the same nucleon content
+  as the deuteron, so the target is well defined.
+- Only the category point above stands. Nothing else repeated the "soft" claim: no bean or PR
+  comment did, and the chat statement is superseded by this one.
 
 ### Decision for the owner: the nuclear ratio
 
@@ -109,9 +114,19 @@ observables, so 2 against 33.7 is not like-for-like.
 **Option 3: change the channel.** Treat T = 0 as spin-isospin S = 1 (Wigner N = 4). This gives
 5/3, which is worse. Listed for completeness.
 
-**Recommendation (judgement).** Option 1, and trace the 0.066 MeV source first.
+**Recommendation (judgement).** Option 1.
 
 **Default.** Option 2: nothing changes.
+
+**OWNER RULING 2026-11-15: Option 1.** The one-crossing coupling ratio against
+B_d / E_virtual(¹S₀) is recorded as an **ill-posed comparison**, a category mismatch between a
+coupling and an energy across the bound/virtual threshold, not as a 33.7× miss.
+- Recorded in beans `qou-o8ww` and `qou-vlrq` by append.
+- The probes that quote 33.7 as a target (≥ 10 under `computations/probes/`) were **deliberately not
+  edited**. A docstring edit changes `scriptHash` and drifts their witnesses. They are dated records
+  of what they measured; their "miss" readings are superseded by this ruling.
+- The live follow-up: derive a coupling → binding step (two-body bound-state energy from a derived
+  coupling and range, no fit) and compare *that* to B_d and E_virtual.
 
 ## 5. Verification
 
@@ -122,3 +137,102 @@ observables, so 2 against 33.7 is not like-for-like.
   - q⁴ − (q − q⁻¹)q² − 1 = (q − 1)(q³ + 1)/1, as the left side q⁴ − q³ + q − 1;
   - the SU(N) exponents −(N+1)/N and (N−1)/N;
   - the scattering-length scale figures in §4.
+
+## 6. Decision for the owner: which single factor carries the q-deformation
+
+**The decision.** Under quark = strand with V = colour ⊗ spin ⊗ flavour, P3 proves that at most one
+factor can carry the Hecke braiding at q₀. Which one is a choice about what the substrate's q
+*means*, so it belongs to the owner.
+
+### A cheap measurement that separates the options
+
+This was run before framing, per AGENTS.md: measure before asking. Klein-Kreisler & Ruiz-Altaba
+compute the nucleon moment ratio for U_q(su₂) **isospin**, eq. (4.8), with m_u = m_d
+(`library/arxiv-hep-ph-9612303v1`, sec-001 lines 211-221, transcribed from the section text).
+Evaluated in exact rational arithmetic:
+
+| q | μ_n/μ_p | vs measured −0.684979 |
+|---|---|---|
+| 1 | −0.666667 | −2.7 % |
+| 0.992 (their fit) | −0.684699 | −0.04 % |
+| q₀ = 1.1099786 | −0.462140 | −32.5 % |
+| 1/q₀ | −0.933389 | +36.3 % |
+| √q₀ = 1.0535552 (if U_q's q = √(Hecke q)) | −0.557957 | −18.5 % |
+| 1/√q₀ | −0.790754 | +15.4 % |
+
+**Reading (scope (a)).** Under this one model, an isospin deformation of size q₀ moves μ_n/μ_p by
+15–36 %, while the undeformed quark model is 2.7 % off.
+
+**Caveats.**
+- The formula is transcribed from OCR'd section text. It is visibly not q ↔ q⁻¹ symmetric, although
+  the paper says those are physically equivalent, so a transcription or convention issue is
+  possible.
+- The q normalisation between U_q(su₂) and our Hecke q is not settled here.
+
+So this disfavours "isospin deformed at q₀" at one comparison point. It does not exclude it.
+
+### Option I: deform isospin (the current corpus, convention D)
+
+- **Means.** The H_n(q) action at N = 2 is the isospin action. Colour and spin braid classically.
+- **Keeps.** Every convention-D result, read as an isospin-sector statement:
+  - `JimboActionKernel`;
+  - the Ocneanu/Wenzl weights;
+  - the 2026-09-08 Q_β z_D ruling;
+  - the mass and binding channel.
+- **Loses.**
+  - **Colour dynamics.** Classical colour has crossing eigenvalues ±1, so colour exchange energies
+    −log|μ| vanish. The QCD colour-factor ratio is then not a substrate observable. Colour
+    contributes only the q = 1 constraint (1³) plus Fermi statistics (P1).
+  - **Confinement** would have to come from elsewhere.
+- **Risks.**
+  - The moment test above: q₀-sized isospin deformation is 15–36 % off μ_n/μ_p, under one model.
+  - Physical isospin breaking is ~10⁻³ (e.g. (m_n − m_p)/m), against q₀ − 1 ≈ 0.11. A q-deformation
+    is not a breaking, but its moment signature must still be small.
+- **Commits to.** Treating colour as a classical label throughout, and finding the nuclear
+  T-dependence inside isospin.
+
+### Option II: deform colour (level 3, SU(3) frame)
+
+- **Means.** H_n(q) acts as U_q(gl₃), in the SU(3) frame q^{−1/3}σ, on the colour factor. Isospin and
+  spin braid classically.
+- **Keeps / gains.**
+  - The colour one-gluon ratio comes out as exactly 2 (sibling #7830).
+  - The colour singlet (1³) is present, with weight q⁶/(Φ₃Φ₆)³ = 1/27 at q = 1.
+  - The deformed factor is the one physics gauges.
+  - μ_n/μ_p stays at the classical −2/3, 2.7 % off, because isospin is undeformed.
+- **Loses / re-reads.**
+  - Convention D (r = 2) stops being *the* substrate channel. JimboActionKernel stays true
+    mathematics, but its physical reading moves.
+  - The canonical Markov parameter would become z₃ = q⁵/(q⁴+q²+1), which reopens the 2026-09-08
+    Q_β ruling.
+  - The mass and binding dashboards rest on r = 2.
+- **Costs.**
+  - No N = 3 Jimbo action is formalised (gap G1).
+  - The 2026-10-10 level-3 test measured the Borromean trace near-match at 2.69e-4, ~1100× worse
+    than level 2. That figure is in the **gl₃** frame; the **SU(3)-frame** value has not been
+    measured.
+- **Commits to.** A corpus-wide re-reading of every r = 2 result. This is the largest blast radius
+  of the three options.
+
+### Option III: deform neither factor alone
+
+- **Means.** The crossing on V ⊗ V has three eigenvalues (P3), so the substrate algebra is a cubic
+  quotient of the braid group, strictly larger than H_n(q).
+- **Costs.** It abandons H_n(q) as the substrate algebra: every Hecke, Markov and Wenzl result
+  becomes a statement about a quotient.
+- **Commits to.** New foundations. Listed for completeness.
+
+### Default
+
+Nothing is chosen. "Quark = strand" stays a framing in `qou-qs1d`, P3 records the fork, and the
+corpus continues as Option I without having said so.
+
+### Recommendation (judgement, not a finding)
+
+Measure one more thing, then choose between I and II:
+- re-run the 2026-10-10 Borromean near-match in the **SU(3) frame**;
+- settle the U_q-vs-Hecke q normalisation for the moment test.
+
+If the SU(3)-frame near-match is comparable to level 2, Option II is physically natural and its
+moment prediction is the better one. I lean II on physics grounds, but its blast radius is the
+whole r = 2 corpus, so it should not be chosen on one moment ratio.
