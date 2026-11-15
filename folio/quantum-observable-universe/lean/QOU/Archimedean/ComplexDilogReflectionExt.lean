@@ -26,6 +26,7 @@ Sorry-free, no axioms beyond the standard three. Beans `qou-ph1k`, `qou-gkco`.
 -/
 import QOU.Archimedean.ComplexDilogBridge
 import QOU.MathlibExt.ComplexDilogarithmUnique
+import QOU.MathlibExt.ComplexRogersDilog
 
 namespace QOU.Archimedean
 
@@ -83,6 +84,16 @@ theorem one_sub_mem_notCut_of_mem_reflDomain {z : ℂ} (hz : z ∈ reflDomain) :
   show 1 - (1 - z) ∈ slitPlane
   rw [sub_sub_cancel]
   exact mem_slitPlane_of_mem_reflDomain hz
+
+/-- **`reflDomain` is the Rogers domain.** Both are `ℂ` with the two real cuts
+`(−∞,0]` and `[1,∞)` removed: `reflDomain_eq` writes this set as
+`slitPlane ∩ (1 − ·)⁻¹' slitPlane`, and `one_sub_mem_slitPlane_iff` identifies the
+second factor with `notCut`. -/
+theorem reflDomain_eq_rogersDomain : reflDomain = rogersDomain := by
+  rw [reflDomain_eq]
+  ext z
+  simp only [Set.mem_inter_iff, Set.mem_preimage, rogersDomain]
+  rw [one_sub_mem_slitPlane_iff]
 
 theorem half_mem_reflDomain : (1 / 2 : ℂ) ∈ reflDomain :=
   Or.inr ⟨by norm_num, by norm_num⟩
