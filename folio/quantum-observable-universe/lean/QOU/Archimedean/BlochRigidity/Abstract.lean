@@ -76,7 +76,10 @@ structure DolbeaultStructure where
   cont : ∀ {z f}, mem z f → ContinuousAt f z
   /-- Analytic axiom 2: Cauchy–Riemann at a point. -/
   cauchyRiemann : ∀ {z f}, mem z f → c₂ (d f z) = 0 → DifferentiableAt ℂ f z
-  /-- Analytic axiom 3: `d f = 0` on a connected open set makes `f` constant there. -/
+  /-- Analytic axiom 3: `d f = 0` on a connected open set makes `f` constant there. This is
+  unit simplicity (flat sections of the trivial object are constants, `H⁰ = ℂ`). It is dual to
+  non-degenerate integration plus exactness of compactly supported top forms; see
+  `eq_smul_one_of_stokes` in `IntegrationBridge`. -/
   const : ∀ {U : Set ℂ} {f}, IsOpen U → IsPreconnected U →
     (∀ z ∈ U, mem z f ∧ d f z = 0) → ∀ z ∈ U, ∀ w ∈ U, f z = f w
 

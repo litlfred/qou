@@ -1071,6 +1071,7 @@ import QOU.Archimedean.BlochRigidity.Derivative
 import QOU.Archimedean.BlochRigidity.Growth
 import QOU.Archimedean.BlochRigidity.Holomorphic
 import QOU.Archimedean.BlochRigidity.Instance
+import QOU.Archimedean.BlochRigidity.IntegrationBridge
 import QOU.Archimedean.BlochRigidity.LinearSections
 import QOU.Archimedean.BlochRigidity.ReebPlane
 import QOU.Archimedean.BlochRigidity.Regularity
