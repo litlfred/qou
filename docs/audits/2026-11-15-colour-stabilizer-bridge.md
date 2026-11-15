@@ -255,3 +255,31 @@ and its witness `quantum-g2-colour-stabilizer-probe.witness.json`.
 - Kuperberg, *Spiders for rank 2 Lie algebras*, CMP 180 (1996), arXiv q-alg/9712003.
 - Albuquerque & Majid, *Quasialgebra structure of the octonions*, J. Algebra 220 (1999), arXiv math/9802116. It is already a bib key `albuquerque-majid1999` cited in `OctonionCocycle.lean`, but the text is not held. Its deformation is a sign 3-cocycle on (ℤ/2)³ (q = −1-type), not a continuous q, so it does not by itself answer the q₀ question.
 - A standard source for PBW root vectors and their coproducts in U_q(g₂) (Jantzen, *Lectures on Quantum Groups*, or Lusztig's book) would let B be stated symbolically.
+
+### 8.1 Check D: no U_q(g₂) braiding restricts to a Hecke operator on 3⊗3 (generic q)
+
+Added 2026-11-15 by the thread that took over stream 6c. Producer
+[`computations/eightfold/quantum_g2_braiding_on_colour_triplet_probe.py`](../../computations/eightfold/quantum_g2_braiding_on_colour_triplet_probe.py),
+witness `quantum-g2-braiding-on-colour-triplet.witness.json`. Exact linear algebra over the field
+ℚ(q) (sympy `DomainMatrix`), with q a symbol, not a sample. Same module and coproduct as §8.
+
+**Why the triplet is forced.** Each weight of the 3 = span{v₁, v₆, v₅} has multiplicity 1 in V₇. So
+any K-stable 3-dimensional subspace carrying the triplet's weights *is* this span. This closes the
+§8 scope gap "other q-deformed embeddings of the triplet" for K-stable embeddings.
+
+**Result.**
+- dim End_{U_q(g₂)}(V₇ ⊗ V₇) = 4 over ℚ(q), as expected from V₇⊗V₇ = 1 ⊕ 7 ⊕ 14 ⊕ 27.
+- The elements of that algebra that map W = 3⊗3 into itself form a 2-dimensional subspace.
+- **Every one of them acts on W as a scalar.**
+- Classical control at q = 1 (exact rationals, classical U(g₂); companion producer `quantum_g2_braiding_on_colour_triplet_points_probe.py`, which also re-checks q = 2, 3, 5/2): the W-preserving subspace is
+  3-dimensional and contains non-scalar elements (the flip).
+
+**Consequence.** Every braiding Ř_{V₇,V₇} is a U_q(g₂)-endomorphism of V₇⊗V₇. If one restricted to W
+as a Hecke operator with two distinct eigenvalues, as Jimbo's Ř does on ℚ³⊗ℚ³, it would appear above
+as a non-scalar W-preserving element. None exists over ℚ(q). So, for generic q, **no element of the
+quantum-G₂ braid algebra on V₇⊗V₇ restricts to the tower's crossing on the colour triplet**, whatever
+the value of q_{g₂}, including q₀^{1/3}. This upgrades §8 (b) from "four rational points, U_q(n⁺)
+only" to a statement over ℚ(q) for the whole intertwiner algebra.
+
+**Scope.** (b) for the statement over ℚ(q), i.e. generic q. Specialisation to a particular q₀ can
+only enlarge the W-preserving subspace at finitely many q, and is not claimed. No Lean.
