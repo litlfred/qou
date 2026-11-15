@@ -77,3 +77,8 @@ Pre-registered checks C1-C4 all held (exact Q(q), sympy; files in project folder
   braidToAlg never reduces to normal form, and -0 = +0 in augmentedBraidElement.
 - Info reading: m(unlink_n) = (2 cosh lambda)^n = partition function of n two-state systems (2^n at q=1).
 Owner choice 2026-11-15: record (this note) + Lean the exclusion (PR) + then the info-theory route.
+
+## Update 2026-11-15 (Lean + info route)
+- PR #8005 (issue #8004): exclusion theorem (additive braid-invariant ⇒ c·writhe) sorry-free; HeckeGS σ⁻¹ and photon σ₀⁻¹ fixed; reduced cost + |τ| ≤ M·cost bound with Mₙ(q) as hypothesis.
+- Info route (project file qou-crossing-energy/result-info.md): 𝔪(q=1) = 2^{components} on all 11 test braids (proof sketch: tr = z^{n−cyc} at q=1, z=1/2). 𝔪 is not a positive state sum (trefoil, Borromean). 𝔈 = 𝔪c_q² is linear in 𝔪, so not Landauer-derivable; Landauer gives T·ln 𝔪.
+- Still open: Lean the q=1 counting theorem; owner call on vertex-algebra-relations axiom tr(σ)=tr(σ⁻¹).
