@@ -98,3 +98,7 @@ Owner choice 2026-11-15: record (this note) + Lean the exclusion (PR) + then the
 
 - `markov_average_c1` (PR #8005): Σ y_λ c₁(V_λ) = (2z − h)/[2] for every n, from tr(1)=1, tr(σ)=z only; `eigen_trace_split`: χ_λ(σ) = f h/2 + c₁[2]/2 (the crossing-energy split with ℓ↔f, w↔c₁).
 - `trace_deltaS`: tr_z(Δ_S) = −(h/2)(2z − h), so the z_D/augmentation Q_β ratio α is the same (2z − h)/[2]. Δ_S = −(h/4)Σ(σᵢ+σᵢ⁻¹). Told the Q_β thread; no durable Q_β edit made.
+
+## 2026-11-15: sign structure (continue, option 1)
+
+- χ_λ(σ^ε) = ε·f·h/2 + c₁·[2]/2 but E(σ^ε) = ε·[2]/2 + h/2: in a trace the sign rides on the dimension term, in E on the writhe term; related by q ↦ iq. E uses the two eigenvalues of σ (symmetric channel for +, antisymmetric for −), not those of σ⁻¹. No new Lean (all one-line ring facts). PR #8005 ready; merge blocked by auto mode pending owner wording.
