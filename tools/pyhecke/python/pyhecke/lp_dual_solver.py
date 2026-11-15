@@ -5,7 +5,8 @@ Per `prop:operator-selection-lp`, every knot-operator-selection block
 must compute BOTH primal and dual:
 
     primal: min Σ t_i x_i  s.t.  Σ x_i = n_target,  Gx ≥ 0,  x_i ≥ -M
-    dual:   max n_target · y_0  s.t.  y_0 + Σ G_{ji} y_i ≤ t_j,  y_i ≥ 0
+    dual:   max n_target · y_0 − M Σ w_j  s.t.  y_0 + Σ G_{ij} y_i + w_j = t_j,
+            y_i ≥ 0, w_j ≥ 0   (equalities: x is free apart from the box)
 
 The dual variables are the SHADOW PRICES:
     y_0^*  = marginal cost of unit target mass (binding-energy density)
@@ -15,7 +16,8 @@ The active demand channels are A = {i : y_i^* > 0} — the
 "most receptive sub-braids on the shell".
 
 Strong duality (no LP duality gap):
-    Σ t_i x_i^*  =  n_target · y_0^*
+    Σ t_i x_i^*  =  n_target · y_0^* − M Σ w_j^*
+(= n_target · y_0^* when no box constraint is active).
 
 This module is the canonical entry point. Any operator-selection
 compute SHOULD use `solve_operator_selection_lp` to get a witness
