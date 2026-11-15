@@ -47,8 +47,7 @@ singlet $(1^3)$ live on the same three strands and are equally available
 to the same link.  Brunnian-ness --- that removing any one component
 frees the other two --- is a statement about sublink triviality, and no
 argument in this framework connects it to the Young-symmetriser
-decomposition of $V^{\otimes 3}$.  Earlier drafts asserted
-such a connection; it is withdrawn as a non-sequitur.  The channel
+decomposition of $V^{\otimes 3}$.  The channel
 selection is carried entirely by the Hecke projector, not by the
 topology.
 

@@ -28,7 +28,7 @@ the list cannot silently break the pointers.
 | The $S_4$ bridge selects the Klein quartic | **refuted** (machine-verified), and not narrowly: the $S_4$-invariant quartics form a pencil, so *infinitely many* pairwise non-isomorphic genus-3 curves admit $S_4$ (Fermat is the member $t = 0$ of the pencil, $t$ being the pencil parameter, not a partition). The datum has essentially no separating power | `s4_genus3_competitor_fermat.py`, `s4_genus3_pencil_infinite_family.py` |
 | Bring $\to$ Klein-quartic genus degeneration | **excluded** under its own three premises (scope-(b)): the pinch supplies an $S_4$-stable pair of marked points, and $S_4$ has *no orbit of size $\le 2$* on $\mathbb{P}^2$, since the $3$-dimensional representation and its restriction to $A_4$ are both absolutely irreducible. No smooth plane quartic carries such a pair, and Klein is not hyperelliptic. Rescue requires explicitly dropping one premise: hyperelliptic target, multi-node/separating pinch, or non-faithful $S_4$ | `s4_marked_pair_obstruction.py` |
 | Octonionic $\mathbf{3}$ not excluded by the $\mathrm{Sym}^2$ gate | literature decomposition: at dimension three, passing the gate forces a complex-type summand (**proved**, Lean), and that the Günaydin--Gürsey triple is complex type is the cited $\mathrm{SU}(3)_{\mathrm{c}}$-irreducibility input, not a formalised one | `Sym2GateFSTrichotomy.lean` |
-| The octonion algebra $\mathbb{O}$ and $G_2 = \mathrm{Aut}(\mathbb{O})$ | **closed** 2026-08-29: [definition](#def:octonion-algebra) authored in [the colour-algebra section](#sec:color-algebra). The row previously read "never defined … no definition to point at", which invited a hunt for a missing source; the gap was **exposition only**. The citation side was already closed (\cite{baez2002}, with $\mathrm{Der}(\mathbb{O}) = \mathfrak{g}_2$ recorded) and so was the Lean side (nine `QOU/MathlibExt/Octonion*.lean` files, including the concrete Baez-convention `octMul`). What was missing was a content block for them to point at | `QOU.MathlibExt.OctonionDerivations` |
+| The octonion algebra $\mathbb{O}$ and $G_2 = \mathrm{Aut}(\mathbb{O})$ | **closed** 2026-08-29: [definition](#def:octonion-algebra) authored in [the colour-algebra section](#sec:color-algebra). The citation (\cite{baez2002}, with $\mathrm{Der}(\mathbb{O}) = \mathfrak{g}_2$) and the Lean formalisation (nine `QOU/MathlibExt/Octonion*.lean` files, including the concrete Baez-convention `octMul`) were already in place; the gap was exposition only | `QOU.MathlibExt.OctonionDerivations` |
 | Continuous $G_2$ completion ($S^6 = G_2/\mathrm{SU}(3)_{\mathrm{c}}$) | **open**: Mathlib gap (no `Octonion` type, no $G_2$ Lie group) — infrastructure, not structural | item *Continuous $G_2$ completion* |
 | Flavour vs. colour ($\mathrm{SU}(3)_{\mathrm{f}}$ vs. $\mathrm{SU}(3)_{\mathrm{c}}$) | **open**: whether same, different, or groupoid-dual | item *Flavour versus colour separation* |
 | Gell-Mann–Okubo has no discriminating power | **proved** (Lean): $4m_K^2 - 3m_\eta^2 - m_\pi^2 = 0$ identically for *any* first-order octet breaking | `GellMannOkuboIdentity.lean` |
@@ -175,7 +175,7 @@ Gell-Mann--Nishijima relation cannot be closed.
    assignments, $4$ survive
    (`strand-twist-y-battery.witness.json`) --- but that ratio
    carries *no* corroboration, and is not a $2500\!:\!1$ filter.
-   Proved sorry-free in
+   Proved in
    `QOU/StandardModel/TwistBatteryVacuity.lean`: the spectrum
    battery is exactly $T = 3Q$ (the $-2I_3$ common to candidate and
    target cancels, leaving the defining equation of
@@ -213,17 +213,13 @@ Gell-Mann--Nishijima relation cannot be closed.
    are the same, different, or related by a groupoid-level duality
    is open, and **the $\mathrm{Sym}^2$ gate cannot settle it.**
 
-   An earlier version of this item claimed the gate shows the two
-   *cannot* both come from the same construction, on the grounds that
-   it excludes the icosahedral triple $T_1$ while the $G_2$ route
-   passes.  That is withdrawn.  The premise compares **two different
-   objects** and establishes only that those two differ; the
-   conclusion is about **one construction supplying two roles**, which
-   does not follow.  (The cited support was also misattributed: the
-   $T_1$ comparison is in
+   In particular the gate does not show that the two *cannot* both
+   come from the same construction. That it excludes the icosahedral
+   triple $T_1$ while the $G_2$ route passes compares **two different
+   objects** and establishes only that those two differ, not that one
+   construction cannot supply both roles. (The $T_1$ comparison is in
    [the Schur--Weyl proposition](#prop:schur-weyl-eightfold), where it
-   is stated carefully as *not excluded* on a literature
-   decomposition, not in the colour-algebra section.)
+   is stated as *not excluded* on a literature decomposition.)
 
    The failure is structural, not a repairable gap in the inference.
    `Sym2GateFSTrichotomy.gate_forces_complex_of_dim_three` proves that
