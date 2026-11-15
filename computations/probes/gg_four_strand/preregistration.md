@@ -29,3 +29,22 @@ On 4 strands the generators are σ₀, σ₁, σ₂, so a vertex σ_sσ_{s+1}^{�
 Lengths are extended to m = 1..6 (4 + 16 + 64 + 256 + 1024 + 4096 = 5460 words) so that
 m = 3 and m = 6 are both covered. R3 becomes "passing words using both sites". Everything
 else is unchanged.
+
+## Amendment 2 (2026-11-15, before any run): J₄-projected reading 3 on the m = 6 flavour-changing candidates
+
+Requested by the n ≥ 4 doublet thread (draft PR #7957). Its explicit 3-dim (3,1) representation of H₄(q)
+(`n4_left_doublet_flavour_probe.py`) supplies the projectors PL (left line of σ₁), PR (right line), and
+Ja, Jb (J₄ = σ₃σ₂σ₁²σ₂σ₃ eigenlines inside PL; Ja + Jb = PL).
+
+Candidates: every m = 6 word that passed reading 3 in the first run AND contains a site-1 vertex
+(flavour-changing under J₄, per that thread). Words with no site-1 vertex are excluded by that criterion.
+
+Readouts at q₀ (proton, base module's 40 dps), for each candidate w in the (3,1) rep:
+- d_a = tr(Ja w Ja), d_b = tr(Jb w Jb), d_R = tr(PR w PR)  (d_a + d_b + d_R = χ_(3,1)(w));
+- flip = tr(Ja w Jb w Ja).
+
+Consistency check T1 (must pass before readouts are trusted): tr(w) in the explicit rep equals the base
+module's χ_(3,1)(w) to 1e-30 on every candidate.
+
+Pass criterion ("projected reading 3"): d_a ≥ −TOL and d_b ≥ −TOL and d_R ≥ −TOL. Reported per word, with
+counts. No word is selected by its numbers; all candidates are listed. Scope (a).
