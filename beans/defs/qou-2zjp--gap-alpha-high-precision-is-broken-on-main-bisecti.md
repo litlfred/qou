@@ -1,13 +1,13 @@
 ---
 # qou-2zjp
 title: 'GAP: alpha_high_precision is broken on main — bisection bracket no longer contains a root'
-status: todo
+status: scrapped
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T14:53:43Z
-updated_at: 2026-10-04T15:19:43Z
+updated_at: 2026-11-15T14:00:00Z
 parent: qou-3l2l
 ---
 
@@ -346,3 +346,14 @@ inert: `q_parameter` selects the anchor by `Path(sys.argv[0]).stem`, so running
 the deprecated file directly still rebinds the constants to the **muon** pin.
 Removing the entry would silently flip that file to proton, which is why I have
 left it alone and recorded it instead.
+
+## 2026-11-15 — scrapped as moot (verified against main 828885d7e)
+
+`computations/alpha_high_precision.py` no longer exists on main (excised), so there
+is no broken producer left to bisect. The leftover `"alpha_high_precision"` entry in
+the `ideal_muon` list of `computations/q0_anchor_manifest.json` is removed on branch
+`claude/qbeta-alpha-bean-triage-2026-11-15`. Inert references remain in generated
+audit outputs (`computations/audits/proton-pin-assertion-verdicts.json`,
+`manifest-inert-entry-audit.json`) and in
+`computations/alpha/script-qa/alpha_high_precision.script-qa.json`; they are records
+and are left for their producers. Closed on owner instruction (decision card, 2026-11-15).
