@@ -1,3 +1,3 @@
 import { prose } from "../../schema/builders";
 
-export default prose({ title: "Chapter close — Gravity and spacetime" });
+export default prose({ label: "prose:outro-gravity-spacetime", title: "Chapter close — Gravity and spacetime" });

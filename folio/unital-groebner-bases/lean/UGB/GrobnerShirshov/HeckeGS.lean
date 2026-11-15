@@ -3,6 +3,7 @@ import UGB.GrobnerShirshov.AlgOps
 import UGB.GrobnerShirshov.CompositionLemma
 import Mathlib.Data.Real.Basic
 import Mathlib.Logic.Function.Basic
+import Mathlib.Tactic.Abel
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.Order.BigOperators.Group.Finset
 
@@ -53,7 +54,7 @@ carries and which are not this file's to discharge.
 | `gs_basis_of_empty_lm` | **theorem** | why the sentinel had to go |
 | `one_does_not_reduce_to_zero` | **theorem** | non-degeneracy of the repaired predicate |
 | `hecke_not_gs_basis_four` | **theorem** | the refutation (§4e) |
-| `embedGenerator`, `braidToAlg`, `augmentedBraidElement`, `heckeCost` | **def** | unchanged |
+| `embedGenerator`, `braidLettersToAlg`, `braidToAlg`, `augmentedBraidElement`, `heckeCost` | **def** | σ⁻¹ and photon-sign corrected 2026-11-15 (§5) |
 
 No axiom is declared in this file. The framework axioms it *uses* live in
 `Basic.lean` (`normal_form_exists`) and `CompositionLemma.lean`
@@ -684,20 +685,32 @@ noncomputable def embedPositiveGen {n : ℕ} (i : Fin n) :
   AlgElement.singleton [⟨i⟩]
 
 /-- Embed a negative generator `σᵢ⁻¹` via the Hecke relation inverse:
-    `σᵢ⁻¹ = (q⁻¹ - q)σᵢ + q⁻¹`.
+    `σᵢ⁻¹ = σᵢ - (q - q⁻¹)`.
 
-    Derived from `σᵢ² = (q-q⁻¹)σᵢ + 1`:
-    `σᵢ · ((q⁻¹-q)σᵢ + q⁻¹) = (q⁻¹-q)σᵢ² + q⁻¹σᵢ`
-    `= (q⁻¹-q)((q-q⁻¹)σᵢ + 1) + q⁻¹σᵢ`
-    `= -(q-q⁻¹)²σᵢ + (q⁻¹-q) + q⁻¹σᵢ`
-    `= (-(q²-2+q⁻²) + q⁻¹)σᵢ + (q⁻¹-q)`
-    After simplification, this equals `1` (the identity). -/
+    Derived from `σᵢ² = (q-q⁻¹)σᵢ + 1`: multiplying by `σᵢ⁻¹` gives
+    `σᵢ = (q-q⁻¹) + σᵢ⁻¹`, i.e. the skein relation `σᵢ - σᵢ⁻¹ = q - q⁻¹`.
+    Check: `σᵢ(σᵢ - (q-q⁻¹)) = σᵢ² - (q-q⁻¹)σᵢ = 1`.
+
+    **Corrected 2026-11-15 (bean `qou-078y`).** This read
+    `σᵢ⁻¹ = (q⁻¹ - q)σᵢ + q⁻¹`, whose product with `σᵢ` is
+    `(q⁻¹-q)(q-q⁻¹)σᵢ + (q⁻¹-q) + q⁻¹σᵢ`, which is not `1` for any `q ≠ ±1`
+    (at `q = 2` it is `-(5/4)σᵢ - 3/2`). -/
 noncomputable def embedNegativeGen {n : ℕ} (i : Fin n) (hp : HeckeParams) :
     AlgElement (HeckeGen n) ℝ :=
   AlgElement.ofTerms [
-    ([⟨i⟩], hp.q⁻¹ - hp.q),
-    ([], hp.q⁻¹)
+    ([⟨i⟩], 1),
+    ([], -(hp.q - hp.q⁻¹))
   ]
+
+/-- **The corrected inverse is an inverse.** In any ring, an element `x`
+    satisfying the Hecke quadratic `x² = h·x + 1` with `h` commuting with `x`
+    is invertible with inverse `x - h`. With `h = q - q⁻¹` this is the formula
+    `embedNegativeGen` encodes. -/
+theorem hecke_inverse_eq_sub {R : Type*} [Ring R] (x h : R) (hc : Commute x h)
+    (hx : x * x = h * x + 1) : x * (x - h) = 1 ∧ (x - h) * x = 1 := by
+  constructor
+  · rw [mul_sub, hx, hc.eq]; abel
+  · rw [sub_mul, hx]; abel
 
 /-- Embed a signed braid generator into `AlgElement`.
     Positive index → singleton monomial.
@@ -712,49 +725,71 @@ noncomputable def embedGenerator {n : ℕ} [NeZero n]
   then embedPositiveGen ⟨g.toNat % n, Nat.mod_lt _ hn⟩
   else embedNegativeGen ⟨g.natAbs % n, Nat.mod_lt _ hn⟩ hp
 
-/-- Embed a braid word (list of signed generators) into `AlgElement`
-    by left-multiplying each generator's embedding successively.
+/-- Embed a braid word given as explicit letters `(i, sign)` into
+    `AlgElement`, `true` = `σᵢ`, `false` = `σᵢ⁻¹`, by left-multiplying each
+    generator's embedding successively: for `[l₁, l₂, l₃]` the value is
+    `embed(l₁) · embed(l₂) · embed(l₃)`.
 
-    Uses `AlgElement.leftMulGen` from AlgOps.lean to avoid needing
-    general convolution.  For a word `[g₁, g₂, g₃]`:
-    `braidToAlg = embed(g₁) · embed(g₂) · embed(g₃)`
+    Positive letters are singletons, so the product is `leftMulGen σᵢ`.
+    Negative letters are `σᵢ - (q - q⁻¹)`, so the product distributes as
+    `σᵢ · acc - (q - q⁻¹) · acc`.
 
-    Since each embedded generator is itself an `AlgElement` (not a single
-    generator), we need `AlgElement` multiplication.  We approximate this
-    by folding over the word, using `leftMulWord` for the singleton terms
-    and `add`/`smul` for the inverse terms.
+    **This is a product in the FREE algebra.** No Hecke relation is applied, so
+    the result is in general not a normal form, and `heckeCost` of it is the
+    cost of an unreduced word expansion, not of the Hecke-algebra element. The
+    reduced cost is `HeckeReducedCost.IsReducedCost`, which takes the normal
+    form in the completed system first. -/
+noncomputable def braidLettersToAlg {n : ℕ} (hp : HeckeParams)
+    (letters : List (Fin n × Bool)) : AlgElement (HeckeGen n) ℝ :=
+  letters.foldr
+    (fun l acc =>
+      if l.2
+      then AlgElement.leftMulGen ⟨l.1⟩ acc
+      else
+        -- σᵢ⁻¹ · acc = σᵢ · acc - (q - q⁻¹) · acc
+        AlgElement.add
+          (AlgElement.leftMulGen ⟨l.1⟩ acc)
+          (AlgElement.smul (-(hp.q - hp.q⁻¹)) acc))
+    (AlgElement.singleton [])
 
-    For positive generators (which are singletons `[σᵢ]`), the
-    multiplication is simply `leftMulGen σᵢ`.  For negative generators
-    (which are 2-term sums), we distribute the multiplication. -/
+/-- Decode the signed-integer braid encoding: `g ≥ 0` is `σ_{g mod n}`, and
+    `g < 0` is `σ_{|g| mod n}⁻¹`.
+
+    **Limitation of this encoding.** `-0 = 0`, so `σ₀⁻¹` has no code: the
+    integer `-(0 : ℤ)` decodes to the positive letter `σ₀`. Callers that need
+    `σ₀⁻¹` must build letters directly and use `braidLettersToAlg`. -/
+def decodeSigned {n : ℕ} [NeZero n] (g : ℤ) : Fin n × Bool :=
+  have hn : 0 < n := Nat.pos_of_ne_zero (NeZero.ne n)
+  if g ≥ 0
+  then (⟨g.toNat % n, Nat.mod_lt _ hn⟩, true)
+  else (⟨g.natAbs % n, Nat.mod_lt _ hn⟩, false)
+
+/-- Embed a braid word in the signed-integer encoding (see `decodeSigned`
+    for its `σ₀⁻¹` limitation). -/
 noncomputable def braidToAlg {n : ℕ} [NeZero n] (hp : HeckeParams)
     (generators : List ℤ) : AlgElement (HeckeGen n) ℝ :=
-  have hn : 0 < n := Nat.pos_of_ne_zero (NeZero.ne n)
-  generators.foldr
-    (fun g acc =>
-      if g ≥ 0
-      then AlgElement.leftMulGen ⟨g.toNat % n, Nat.mod_lt _ hn⟩ acc
-      else
-        -- σᵢ⁻¹ · acc = (q⁻¹ - q) · σᵢ · acc + q⁻¹ · acc
-        let i : Fin n := ⟨g.natAbs % n, Nat.mod_lt _ hn⟩
-        AlgElement.add
-          (AlgElement.smul (hp.q⁻¹ - hp.q) (AlgElement.leftMulGen ⟨i⟩ acc))
-          (AlgElement.smul hp.q⁻¹ acc))
-    (AlgElement.singleton [])
+  braidLettersToAlg hp (generators.map decodeSigned)
 
 /-- The augmented braid element for threading: prepend the photon
     strand above the hadron, then un-braid below.
 
     `augmentedBraid β_H = σ_n · σ_{n-1} · … · σ₁ · β_H · σ₁⁻¹ · … · σ_n⁻¹`
 
-    In the `B_{n+1}` embedding. -/
+    In the `B_{n+1}` embedding (generators `σ₀, …, σ_n` indexed by `Fin (n+1)`).
+
+    **Corrected 2026-11-15 (bean `qou-078y`).** The photon letters are now
+    built as explicit `(i, sign)` pairs. They were written as signed integers
+    `-(i : ℤ)`, and for `i = 0` that is `+0`, so the first un-braiding letter
+    came out as the positive `σ₀` instead of `σ₀⁻¹`. The hadron word keeps the
+    signed-integer encoding for its callers; see `decodeSigned`. -/
 noncomputable def augmentedBraidElement {n : ℕ} (hp : HeckeParams)
     (hadron_generators : List ℤ) : AlgElement (HeckeGen (n + 1)) ℝ :=
-  let photon_above := (List.finRange (n + 1)).reverse.map
-    (fun i => (i.val : ℤ))
-  let photon_below := (List.finRange (n + 1)).map
-    (fun i => -(i.val : ℤ))
-  braidToAlg hp (photon_above ++ hadron_generators ++ photon_below)
+  let photon_above : List (Fin (n + 1) × Bool) :=
+    (List.finRange (n + 1)).reverse.map (fun i => (i, true))
+  let photon_below : List (Fin (n + 1) × Bool) :=
+    (List.finRange (n + 1)).map (fun i => (i, false))
+  braidLettersToAlg hp
+    (photon_above ++ hadron_generators.map decodeSigned ++ photon_below)
 
 /-! ## §6  Hecke Cost (Constructive) -/
 

@@ -1,32 +1,32 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T10:56:27.682868+00:00",
-  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-15T20:05:29.313386+00:00",
+  "commitSha": "00f892cd443d9253ae4a5e26d9d83cd0b0eb6929",
   "assertions": [
     {
       "name": "wenzl_matches_binding_canonical",
-      "computed": "0.0386950499630501880952277758702168906323440702509959123161258420197195",
+      "computed": "4.299769800349828918000901448753314040452604391890349518044080810971369e-52",
       "expected": 0,
-      "passed": false,
+      "passed": true,
       "tolerance": "1e-10",
-      "source": "Wenzl-bridge joint-word Δtr = binding_canonical Δtr to 11 digits (3e-12). Both Wenzl JM; the residual is the factorized-product vs joint-word free-trace construction detail, far below the 0.17 Plancherel gap."
+      "source": "Convention-D Wenzl-bridge joint-word Δtr = binding_canonical delta_tr_exact to 50 digits at the proton pin (both use z_D = q^3/(q^2+1) and borromean intra-nucleon ordering)."
     },
     {
       "name": "conventions_differ",
-      "computed": "0.1324613169715897154799043583265557560343225964156707543505408246469472",
-      "expected": 0.171,
-      "passed": false,
+      "computed": "0.1466024051781358303569214167323291443370418430750937633103133683162251",
+      "expected": "0.147",
+      "passed": true,
       "tolerance": "0.01",
-      "source": "Wenzl JM (0.5952) ≠ Plancherel (0.4241): per-block weight difference"
+      "source": "Convention-D Wenzl JM (0.1470) ≠ Plancherel (0.0004) at proton pin: per-block weight difference (historical convention-C grouped values were 0.5952 vs 0.4241)."
     }
   ],
-  "allPassed": false,
-  "durationMs": 189,
+  "allPassed": true,
+  "durationMs": 278,
   "computation": "trace-convention-reconciliation",
   "scriptFile": "trace_convention_reconciliation.py",
-  "scriptHash": "db8bc6229925",
-  "scriptCommitSha": "8cdcf3865a88511af6f8dc3d4831e956cb60df1f",
+  "scriptHash": "ccd06fb7a142",
+  "scriptCommitSha": "00f892cd443d9253ae4a5e26d9d83cd0b0eb6929",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,14 +34,13 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "cvxpy": "absent"
   },
   "invocation": {
     "argv": [
@@ -49,21 +48,39 @@
     ],
     "reproduce": "python3 -u computations/trace_convention_reconciliation.py"
   },
-  "description": "Reconcile binding-trace conventions: the 29% Δtr gap between binding_canonical (0.5952) and the per-bond probe (0.4241) is a y_λ weight-scheme difference (Wenzl JM vs normalized-Plancherel), not a framework inconsistency. binding_canonical's factorized Δtr = Wenzl-bridge on the joint word EXACTLY. Wenzl JM is canonical; the deuteron +0.19% result stands.",
+  "description": "Reconcile binding-trace conventions under canonical Convention D (z_D = q^3/(q^2+1), Wenzl N=2 two-row cap) at the 50-digit proton pin: binding_canonical's Δtr(²H) (0.147047) matches the Wenzl-bridge on the joint H₆ word to all 50 digits, whereas normalized-Plancherel gives 0.000444 (a y_λ weight-scheme difference, not a framework inconsistency; historical convention-C grouped values were 0.5952 vs 0.4241).",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "markov_convention": "D"
+  },
   "data": {
+    "markov_convention": "D",
     "deuteron_delta_tr": {
-      "wenzl_jm_joint_word": "0.5565446604044382119047722241297831093677",
-      "binding_canonical_reported": "0.5952397103674884",
-      "wenzl_matches_canonical_residual": "0.038695",
-      "normalized_plancherel": "0.4240833434328484964248678658032273533333",
-      "wenzl_over_plancherel": "1.312347369975317861102189303756436054946"
+      "wenzl_jm_joint_word": "0.1470466779804084691094947290199176910037",
+      "binding_canonical_reported": "0.1470466779804084691094947290199176910037",
+      "wenzl_matches_canonical_residual": "4.29977e-52",
+      "normalized_plancherel": "0.0004442728022726387525733122875885466666667",
+      "wenzl_over_plancherel": "330.982849339874102719236221239144876636",
+      "historical_convention_c_grouped_reported": "0.5952397103674884"
     },
     "resolution": {
-      "gap_cause": "y_λ weight scheme (Wenzl Jones-Markov vs q-Schur Plancherel)",
-      "canonical_convention": "Wenzl JM (mass/binding chain)",
+      "gap_cause": "y_λ weight scheme (Convention-D Wenzl Jones-Markov vs q-Schur Plancherel)",
+      "canonical_convention": "Convention D — Wenzl JM at N=2 (z_D = q^3/(q^2+1)), proton pin",
       "probe_error": "binding-per-bond used Plancherel weights",
-      "deuteron_result": "+0.19% (Wenzl) is correct and stands",
+      "deuteron_result": "Wenzl-bridge joint-word Δtr matches binding_canonical delta_tr_exact to 50 digits under Convention D at the proton pin",
       "A_ge_3_status": "genuine open problem — single-link volume fails -60% in the correct Wenzl convention"
-    }
-  }
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "binding-canonical.witness.json",
+        "sha256": "1aa27b97f0dd025876ff61cc08fee88793f0cfd58e95b5487993aaa161cb652b",
+        "size_bytes": 7691,
+        "commitSha": "692eb5cf1013e50d8876e934257aa4d6cbf3d2da",
+        "scriptCommitSha": "b070004cd5286ba850d4546daa6680e74a8fe8a2",
+        "computedAt": "2026-09-06T10:45:41.527610+00:00"
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

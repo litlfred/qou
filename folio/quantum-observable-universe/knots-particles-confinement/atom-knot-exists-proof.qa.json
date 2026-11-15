@@ -199,7 +199,7 @@
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554",
         "severity": "critical",
-        "evidence": "folio/quantum-observable-universe/particle-interactions/atom-knot-exists-proof.md:4: First/Second/Third bullet cadence \u2014 characteristic LLM structural crutch"
+        "evidence": "folio/quantum-observable-universe/particle-interactions/atom-knot-exists-proof.md:4: First/Second/Third bullet cadence — characteristic LLM structural crutch"
       },
       {
         "field_hash": {
@@ -646,7 +646,7 @@
           "in_degree": 0,
           "cone_size": 1,
           "depth": 1,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -961,6 +961,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-11"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b2d158d76840",
+          "ts": "55d5874039ed"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:04.539Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "minor",
+        "evidence": "(S↔P column of prop:atom-knot-exists row) Lean builds the record `{Z, N, protonBlock := [], neutronBlock := [], interBlock := []}`, so the existence is vacuous. The Z+N ≥ 1 hypothesis, the closed braid and H_{3(Z+N)} do not appear. Proof: takes the \"Markov closure\" of a Hecke-algebra element T_w (closures are of braids; T_p, T_n are general NFs, not single T_w), and the product of three T's is not in general a single T_w"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1362,7 +1378,7 @@
         },
         "reviewed_at": "2026-08-15T12:14:43.238Z",
         "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
-        "evidence": "First/Second/Third/Fourth construction narration \u2014 standard proof structure, no emphasis-announcing",
+        "evidence": "First/Second/Third/Fourth construction narration — standard proof structure, no emphasis-announcing",
         "notes": "pass-with-note: proof narration, not meta-commentary"
       }
     ],
@@ -1522,6 +1538,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T21:56:04.539Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

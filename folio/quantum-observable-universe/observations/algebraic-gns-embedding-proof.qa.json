@@ -624,7 +624,7 @@
           "in_degree": 0,
           "cone_size": 15,
           "depth": 12,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1025,6 +1025,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "field_hash": {
+          "md": "46aa3666b49f",
+          "ts": "de94586a6dd0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:00:14.010Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "[sidecar review 2026-11-15, issue #8030] **The statement's uniqueness claim is false as written.** \"H_∞(q) carries a unique tracial state tr_M satisfying positivity.\" Counterexample: the one-dimensional representation σ_i ↦ q (compatible with every inclusion H_n ⊂ H_{n+1}) is a *-homomorphism to ℂ for real q with σ_i* = σ_i, so τ(x*x) = \\ | τ(x)\\ | ² ≥ 0, τ(1) = 1, and τ is tracial; but τ(σ_i) = q ≠ z_D = tr_M(σ_i). Uniqueness needs the Markov condition, which the prf uses but the statement omits. The rest of the prf (colimit, Markov extension, Jones positivity on TL with δ = [2]_q ≥ 2, GNS) is a reasonable assembly of cited results. The codomain \"R⊗ℝ\" for a general ring R is undefined; positivity needs an ordered field."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1415,7 +1431,7 @@
         "reviewed_at": "2026-08-15T10:30:59.394Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
-        "evidence": "1 negation-contrast construction(s): \", not M itself.\" \u2014 state the positive claim directly"
+        "evidence": "1 negation-contrast construction(s): \", not M itself.\" — state the positive claim directly"
       },
       {
         "field_hash": {
@@ -1760,6 +1776,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T22:00:14.010Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -1213,6 +1213,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "168912d4a190",
+          "ts": "d8e9c7ffa377",
+          "lean": "c55ef72a7c2a",
+          "lean_statement": "55469f7d55c7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:00:14.530Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "[sidecar review 2026-11-15, issue #8030] Library ref `QOU.Experimental.LocalSubstrateQ` is a `def … : Prop` (\\ | q − q_measured\\ | ≤ Δq), never asserted. The sibling structure carries `defining_eq` and `q_approx` as fields; no theorem states existence or uniqueness of the root. Checked: the unique root of (1−q⁻¹)² = Vol(4₁)/(m_μ/m_e) with CODATA-2022 206.7682827 is 1.109978595642739… (matches the live anchor). The md's \"q = 1.1097 ± 0.001\" contains it (difference 2.8e−4), but 1.10998 does not round to 1.1097. prf: uniqueness argument (f(q) = (1−q⁻¹)² strictly increasing) is correct. \"The ±0.001 propagates from the CODATA uncertainty (2.2e−8)\" is wrong: that propagates to ~1e−9 on q; ±0.001 is a chosen tolerance. \"Aligns with hadronic mass predictions\" is an empirical remark inside a proof."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1370,7 +1388,7 @@
         "scope": "limited",
         "ruling": "partial",
         "referee_argument": "Body presents q_0 as fixed by the muon identity; the block's witness pins q_0 on m_p/m_e and demotes m_mu/m_e to a 9.5-sigma prediction.",
-        "rebuttal": "partial \u2014 disclosed in sibling substrate-anchor-alternatives.md and re-pin audit 2026-05-30; muon identity is the legitimate transparent cross-check, but .md/.lean read stale vs the 2026-05-28 re-pin.",
+        "rebuttal": "partial — disclosed in sibling substrate-anchor-alternatives.md and re-pin audit 2026-05-30; muon identity is the legitimate transparent cross-check, but .md/.lean read stale vs the 2026-05-28 re-pin.",
         "evidence": [
           {
             "text": "local-substrate-q.md:11-21 vs .ts:21-24 witness anchor 'm_p/m_e'"
@@ -1412,7 +1430,7 @@
         "scope": "limited",
         "ruling": "partial",
         "referee_argument": "Lean hardcodes m_mu/m_e and proves only range-membership of the muon constant; never references m_p/m_e, so the formal artifact is one re-pin behind production.",
-        "rebuttal": "partial \u2014 Lean honestly scoped ('NOT part of the formal proof chain', validation:not_checked); muon identity remains valid as cross-check.",
+        "rebuttal": "partial — Lean honestly scoped ('NOT part of the formal proof chain', validation:not_checked); muon identity remains valid as cross-check.",
         "evidence": [
           {
             "text": "local-substrate-q.lean:17 'm_mu/m_e = 206.7682830'"
@@ -1454,7 +1472,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": "Could unique_q_solution be a self-assuming projection?",
-        "rebuttal": "rebutted \u2014 genuinely derives exists-unique via Real.sqrt inversion, sorry-free (linarith/ring/Real.sq_sqrt); well-posedness proved.",
+        "rebuttal": "rebutted — genuinely derives exists-unique via Real.sqrt inversion, sorry-free (linarith/ring/Real.sq_sqrt); well-posedness proved.",
         "evidence": [
           {
             "text": "local-substrate-q.lean:65-95"
@@ -1495,7 +1513,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": "Does the volume conjecture smuggle an unproved bridge?",
-        "rebuttal": "rebutted \u2014 flagged as tau-side naming not derivation; Vol(4_1)=2*Cl_2(pi/3)~2.0299 is the standard figure-8 value, SnapPy-witnessed to 1e-14.",
+        "rebuttal": "rebutted — flagged as tau-side naming not derivation; Vol(4_1)=2*Cl_2(pi/3)~2.0299 is the standard figure-8 value, SnapPy-witnessed to 1e-14.",
         "evidence": [
           {
             "text": "local-substrate-q-proof.md:11-16"
@@ -1534,7 +1552,7 @@
         },
         "result": "warn",
         "verdict": "survivable-objection",
-        "referee_argument": "The headline equation (1-q^-1)^2 = Vol(4_1)/(m_mu/m_e) presents q_0 as muon-determined, but the live pin (and the block's own witness) is the proton ratio m_p/m_e \u2014 a cross-check identity stated as the determination (disclosure gap, not a math error).",
+        "referee_argument": "The headline equation (1-q^-1)^2 = Vol(4_1)/(m_mu/m_e) presents q_0 as muon-determined, but the live pin (and the block's own witness) is the proton ratio m_p/m_e — a cross-check identity stated as the determination (disclosure gap, not a math error).",
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
@@ -1544,7 +1562,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.627343Z",
         "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81",
-        "evidence": "The headline equation (1-q^-1)^2 = Vol(4_1)/(m_mu/m_e) presents q_0 as muon-determined, but the live pin (and the block's own witness) is the proton ratio m_p/m_e \u2014 a cross-check identity stated as the determination (disclosure gap, not a math error)."
+        "evidence": "The headline equation (1-q^-1)^2 = Vol(4_1)/(m_mu/m_e) presents q_0 as muon-determined, but the live pin (and the block's own witness) is the proton ratio m_p/m_e — a cross-check identity stated as the determination (disclosure gap, not a math error)."
       },
       {
         "result": "pass",
@@ -1733,7 +1751,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling folio/quantum-observable-universe/observations/local-substrate-q.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/observations/local-substrate-q.lean:1 \u2014 folio/quantum-observable-universe/observations/local-substrate-q.lean:72:12: error(lean.unknownIdentifier): Unknown constant `Real.sqrt_lt_one`"
+        "evidence": "folio/quantum-observable-universe/observations/local-substrate-q.lean:1 — folio/quantum-observable-universe/observations/local-substrate-q.lean:72:12: error(lean.unknownIdentifier): Unknown constant `Real.sqrt_lt_one`"
       },
       {
         "field_hash": {
@@ -2383,6 +2401,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T22:00:14.530Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
