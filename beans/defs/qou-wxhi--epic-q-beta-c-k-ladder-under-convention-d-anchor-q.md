@@ -5,7 +5,7 @@ status: todo
 type: epic
 priority: high
 created_at: 2026-11-15T17:33:01Z
-updated_at: 2026-11-15T17:34:40Z
+updated_at: 2026-11-15T17:42:33Z
 parent: qou-10v9
 ---
 
@@ -45,3 +45,7 @@ Tracking issue: litlfred/qou#7939.
 
 
 Correction from the Q_beta thread (2026-11-15): the -18.5 % is the all-pairs strand reading in level1-qvalues.py; the adjacent-crossing reading gives -2.9 % under D. Which reading is intended is an open owner card in the Q_beta thread. Both are diagnostics only.
+
+
+
+2026-11-15 17:42Z, from the n>=4 doublet thread: the candidate Delta is the same 3-strand word w (e.g. V^3) restricted to the two J_4 = s3 s2 s1^2 s2 s3 eigenlines in the (3,1) block of H_4: Ja (eigenvalue q^-2, over (3)) and Jb (q^4, over (2,1)). Which line is n is an open owner call there. Lean is in progress in QOU/QuarkState/FlavourDoubletFourStrands.lean; scripts are in /mnt/project-files/qou-n4-doublet/. Next step here: confinement SDP plus reading 3 on each line, then the implied D-frame ladder factor, computed for BOTH labellings (no selection by residual).
