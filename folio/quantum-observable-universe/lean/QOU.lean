@@ -841,6 +841,13 @@ import QOU.QBeta.FiveTwoRogersExtend
 import QOU.QBeta.FiveTwoFiveTermArguments
 import QOU.QBeta.FiveTwoRogersReflection
 import QOU.QBeta.FiveTwoAbelFiveTerm
+import QOU.QBeta.DilogTheory
+import QOU.Archimedean.BlochRigidity.Reflection
+import QOU.QBeta.DilogTheoryArchimedean
+import QOU.QBeta.BarEvenJet
+import QOU.QBeta.BarEvenJetArchimedean
+import QOU.QBeta.FaddeevCompactCurve
+import QOU.Archimedean.IdealTetVolumeRigidity
 -- The Li₂-continuation / scalar-IFT chain this lane rests on is wired at the
 -- top of this file (with the other MathlibExt imports), not here — it is
 -- general analytic infrastructure, not 5₂ content.
