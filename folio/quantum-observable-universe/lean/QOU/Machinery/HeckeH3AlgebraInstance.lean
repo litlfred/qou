@@ -42,7 +42,9 @@ variable {R : Type*} [CommRing R]
 ring structure. The parameter `h = q − q⁻¹` pins the product. -/
 @[ext]
 structure H3A (R : Type*) [CommRing R] (h : R) where
-  /-- NF coordinates on the basis `[γ, σ₀, σ₁, L₊, L₋, e⁻]`. -/
+  /-- NF coordinates on the basis `[γ, σ₀, σ₁, L₊, L₋, e⁻]` (the `gram.NF_NAMES` labels).
+  In THIS ring's product, coordinate 3 is `σ₁ * σ₀` and coordinate 4 is `σ₀ * σ₁`;
+  see the orientation note on `mulNF`. -/
   v : Fin 6 → R
 
 namespace H3A

@@ -32,7 +32,9 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
+import _path_bridge  # noqa: E402, F401 — substrate/ modules (_precision, …)
 
+import json  # noqa: E402
 import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
@@ -54,15 +56,36 @@ hbar_q = 1 - 1 / q
 vol_b3 = 8 * mp.catalan
 lw_FA = linking_weight_family_a(q)
 
-# Atom data: A, Z, N, atlas Vol, CODATA (central registry), tr_M (markov_peel @ q_0)
+# |tr_M(β_atom)| on the CANONICAL functional: borromean word (owner ruling
+# qou-hu1f), convention D (ruling 2026-08-15), proton pin. Read at run time.
+# Until 2026-11-15 this table hardcoded the retired grouped-word /
+# convention-C traces (proton 1.06530622861, neutron 0.92323329718,
+# deuteron 0.38828647154, tritium 0.10405210674, ³He 0.20654081702,
+# ⁴He 0.05534833516) — tracker #7735.
+def _canonical_tr_m(key: str) -> mp.mpf:
+    if key != "helium-4":
+        from canonical_trm_reference import tr_m_nucleon  # noqa: PLC0415
+        return tr_m_nucleon(key)          # refuses a pin / ordering mismatch
+    # ⁴He: owned only by canonical-tr-m-via-chi-cache; check its pin here.
+    from q_parameter import Q_50_DIGIT_STR  # noqa: PLC0415
+    w = json.loads((HERE / "canonical-tr-m-via-chi-cache.witness.json")
+                   .read_text(), parse_float=str)
+    row = {r["atom"]: r for r in w["results"]}["helium-4"]
+    if (w.get("q0Anchor") != "proton"
+            or abs(mp.mpf(row["q_0_50dps"]) - mp.mpf(Q_50_DIGIT_STR)) > mp.mpf("1e-40")):
+        raise ValueError("chi-cache ⁴He row is not at this run's proton pin")
+    return abs(mp.mpf(row["tr_M_q0"]))
+
+
+# Atom data: A, Z, N, atlas Vol, CODATA (central registry), canonical |tr_M|
 ATOMS = [
     # (atom, A, Z, N, Vol(K_atom), CODATA_MeV, tr_M_abs)
-    ("p",   1, 1, 0, mp.mpf("7.32772475341775"),  M_P_MEV_VALIDATION,   mp.mpf("1.06530622861")),
-    ("n",   1, 0, 1, mp.mpf("7.32772475341775"),  M_N_MEV_VALIDATION,   mp.mpf("0.92323329718")),
-    ("D",   2, 1, 1, mp.mpf("4.40083251608"),     M_D_MEV_VALIDATION,   mp.mpf("0.38828647154")),
-    ("T",   3, 1, 2, mp.mpf("8.28631681780"),     M_T_MEV_VALIDATION,   mp.mpf("0.10405210674")),
-    ("3He", 3, 2, 1, mp.mpf("7.32772475341775"),  M_HE3_MEV_VALIDATION, mp.mpf("0.20654081702")),
-    ("4He", 4, 2, 2, mp.mpf("29.31089901367"),    M_HE4_MEV_VALIDATION, mp.mpf("0.05534833516")),
+    ("p",   1, 1, 0, mp.mpf("7.32772475341775"),  M_P_MEV_VALIDATION,   _canonical_tr_m("proton")),
+    ("n",   1, 0, 1, mp.mpf("7.32772475341775"),  M_N_MEV_VALIDATION,   _canonical_tr_m("neutron")),
+    ("D",   2, 1, 1, mp.mpf("4.40083251608"),     M_D_MEV_VALIDATION,   _canonical_tr_m("deuteron")),
+    ("T",   3, 1, 2, mp.mpf("8.28631681780"),     M_T_MEV_VALIDATION,   _canonical_tr_m("tritium")),
+    ("3He", 3, 2, 1, mp.mpf("7.32772475341775"),  M_HE3_MEV_VALIDATION, _canonical_tr_m("helium-3")),
+    ("4He", 4, 2, 2, mp.mpf("29.31089901367"),    M_HE4_MEV_VALIDATION, _canonical_tr_m("helium-4")),
 ]
 
 

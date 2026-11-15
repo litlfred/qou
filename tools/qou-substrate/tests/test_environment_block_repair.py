@@ -121,3 +121,34 @@ def test_repair_is_idempotent_so_two_containers_cannot_ping_pong(tmp_path):
     assert json.loads(
         (tmp_path / "env-monotonic-probe.witness.json").read_text(encoding="utf-8")
     )["environment"] == repaired["environment"]
+
+
+# --- cvxpy is recorded even when absent ------------------------------------
+#
+# Bean context: PR #7796 measured `binding_energy(1,1)` at -15.8142 MeV
+# without cvxpy and +0.5381 MeV with it, because the SDP leg falls back to 0.
+# The stamp must therefore distinguish "absent" from "not recorded".
+
+def test_cvxpy_key_always_present():
+    from qou_substrate.witness import capture_environment, CVXPY_ABSENT
+    env = capture_environment()
+    assert "cvxpy" in env
+    try:
+        import importlib.metadata as md
+        expected = md.version("cvxpy")
+    except Exception:
+        expected = CVXPY_ABSENT
+    assert env["cvxpy"] == expected
+
+
+def test_cvxpy_absent_is_a_downgrade_and_install_is_a_repair():
+    from qou_substrate.witness import CVXPY_ABSENT
+    with_cvx = dict(FULL, cvxpy="1.6.0")
+    without = dict(FULL, cvxpy=CVXPY_ABSENT)
+    d = _environment_delta(with_cvx, without)
+    assert d["downgraded"] == ["cvxpy 1.6.0 -> absent"]
+    assert _environment_is_repair(with_cvx, without) is False
+    assert _environment_is_repair(without, with_cvx) is True
+    # A pre-stamp block (no key) gaining an explicit "absent" is provenance
+    # added, not lost.
+    assert _environment_is_repair(FULL, without) is True

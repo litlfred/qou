@@ -2,7 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:confinement-universality",
-  title: "Confinement universality: nucleon NF independent of photon polarization",
+  title: "Confinement universality: the confinement stage depends only on the flavours",
   tags: [
     "confinement",
     "universality",
@@ -17,15 +17,24 @@ export default proposition({
   uses: ["prop:four-term-pair-nucleon"],
   authorNotes: [
     {
+      kind: "refined-framing",
+      date: "2026-11-15",
+      body:
+        "**Definitional reading adopted (owner E1 = (a), bean `qou-qs2u`).** The statement now takes the quark " +
+        "flavours as an input and is true by construction: the confinement word contains no photon coefficient. " +
+        "The previous framing, a derived decoupling and the categorical expression of asymptotic freedom, is " +
+        "withdrawn. The substantive reading (universality over the photon states that produce the nucleon " +
+        "flavours) is tracked as a bean, conditional on the flavour map.",
+    },
+    {
       kind: "note",
       date: "2026-08-08",
       body:
-        "**§7c base-ring note (archimedean specialisation).** " +
-        "The Lean module `lean/QOU/Interactions/confinementUniversality.lean` " +
-        "quantifies over photon polarisation coefficients `(φ₀, φ₁, φ₀₁)`, which are continuous physical parameters. " +
-        "The `ℝ` is therefore forced by the statement itself rather than " +
-        "chosen, so the block sits on the archimedean side of the §7c wall " +
-        "by construction.",
+        "**§7c base-ring note (superseded 2026-11-15).** " +
+        "This note said the `ℝ` was forced by the statement. It is not: the statement " +
+        "and proof use no structure of the coefficient type. The Lean context is now " +
+        "parametrised by the coefficient type `K` and the NF type `M`, and `K = ℂ` " +
+        "covers circular polarisations (bean `qou-qs2u`, PR #7825).",
     },
   ],
 

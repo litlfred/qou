@@ -782,7 +782,12 @@ user's last message, not the most recently mentioned file.
       SHA-256 prefixes) drift from the current file contents;
       refresh by deleting the stale `criteria.<crit>` entry from
       the `.qa.json` and running
-      `bun run folio-assistant/content/pipeline/qa-sweep.ts <path> --only <crit>`
+      `bun run folio-assistant/cat-harness-tools/pipeline/qa-sweep.ts <path> --only <crit>`
+      (path corrected 2026-11-15: `content/pipeline/` no longer exists in the
+      platform. It takes ONE path per call — extra paths are ignored silently.
+      At platform pin `b61e856` it does not load at all: the pinned
+      `folio-assistant-sci` layer still imports `cat-harness/schemas/kg/cat-harness`,
+      which moved to `cat-harness-tools/schemas/`. See bean `qou-4jhp`)
       (single canonical invocation; use `/integration-audit
       <axis>` to batch a whole axis). Witnesses are stale when
       `witness.scriptHash` (SHA-256 prefix of producer file
@@ -4040,7 +4045,7 @@ When a user request arrives, route to the right skill(s):
 | "devils advocate / why is this wrong / what will reviewers argue / adversarial review / red team / referee objection / counterexample / break this proof / poke holes" | `local/devils-advocate-watcher` (per-block + Lean adversarial review; 4 lenses + adjudicator; emits `da-*` sidecars) | reader |
 | "/integration-watch devils-advocate / da / adversarial" | `local/integration-watch` (dispatcher → devils-advocate-watcher child) | reader |
 | "bold defined terms / tighten definition / no rambling / no preamble in defn / one definition per block / each thing its own definition / tight theorem/prop/lemma statement / no interpretation in a theorem-prop-lemma-conjecture / statement should be pure / interpretation should be a follow-on remark / graduate-level formal math book style / informal register / contractions / hype / rhetorical header / why-question header / consequence header / academic header register / no Why…? or Consequence. section headers / definition in the wrong block / misplaced definition / definition clarity / setup clarity audit" | `local/definition-clarity-audit` (defn+statement clarity scanner; 8 criteria — `clarity-defterm-bold` / `clarity-defn-single` / `clarity-defn-tight` / `clarity-stmt-tight` / `clarity-stmt-pure` (a theorem/prop/lemma/conjecture must carry only its claim; interpretation moves to a follow-on `remark`) / `clarity-grad-style` (graduate-level formal-math register) / `clarity-rhetorical-header` (section headers must be noun-phrase academic, not "Why…?"/"Consequence." rhetorical/colloquial) + inverse `clarity-defn-misplaced` (a non-`definition` block secretly carrying a definition); emits `clarity-*` sidecars) | reader |
-| "QA report / .qa.json / multi-reviewer / hash staleness / per-block audit sidecar" | `folio-assistant/content/pipeline/qa-sweep.ts` + `qa-staleness.ts` (CLI), `folio-assistant/schemas/block-qa.ts` (schema) | collaborator |
+| "QA report / .qa.json / multi-reviewer / hash staleness / per-block audit sidecar" | `folio-assistant/cat-harness-tools/pipeline/qa-sweep.ts` + `qa-staleness.ts` (CLI), `folio-assistant/cat-harness-tools/schemas/sdlc/block-qa.ts` (schema) | collaborator |
 | "session todos / work plan / what's left / track progress / beans" | `local/todo-manager` (session work-plan via the `beans` CLI) + `local/bean-coordination` | reader |
 | "process feedback / review todos / triage open feedback" | `local/todo-review` (content-feedback triage) | reader |
 | "prepare merge auto / auto merge / resolve and merge / ship it" | `local/prepare-merge-auto` (full autonomous merge pipeline: coordinate siblings → prepare-merge → resolve comments → merge) | collaborator |

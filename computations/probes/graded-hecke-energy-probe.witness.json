@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-13T11:53:15.736910+00:00",
-  "commitSha": "b1b7e4b259ecfe514ded4b0c52c5b415f7196cdb",
+  "computedAt": "2026-11-15T08:10:35.934800+00:00",
+  "commitSha": "0b439d162cbc7d51ba6548b7b2da5979549e7375",
   "assertions": [
     {
       "name": "cumulative_at_max_grade_matches_target[proton]",
@@ -21,17 +21,17 @@
     {
       "name": "cumulative_at_max_grade_matches_target[deuteron]",
       "computed": "0.15196833920423160759266569775106614127124096465526",
-      "expected": "0.3882864715477132",
-      "passed": false,
+      "expected": "0.15196833920423160759266569775106614127124096465526",
+      "passed": true,
       "tolerance": "1e-10"
     }
   ],
-  "allPassed": false,
-  "durationMs": 81,
+  "allPassed": true,
+  "durationMs": 78,
   "computation": "graded-hecke-energy-probe",
   "scriptFile": "graded_hecke_energy_probe.py",
-  "scriptHash": "609562e893a6",
-  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
+  "scriptHash": "30304187e470",
+  "scriptCommitSha": "4d9079b65406a2629fa1921a87593e9faaec6178",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,14 +39,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e87a23f8d6fd6732"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -143,12 +144,12 @@
         "Z": 1,
         "N": 1,
         "include_inter": true,
-        "target_tr_M": "0.3882864715477132",
+        "target_tr_M": "0.15196833920423160759266569775106614127124096465526",
         "num_partitions": 4,
         "num_grades": 4,
         "max_grade": 3,
-        "effective_confinement_level_tight": -1,
-        "effective_confinement_level_loose_1e_minus_3": -1,
+        "effective_confinement_level_tight": 3,
+        "effective_confinement_level_loose_1e_minus_3": 3,
         "per_grade_cumulative": [
           {
             "grade": 0,
