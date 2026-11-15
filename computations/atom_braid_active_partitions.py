@@ -218,7 +218,12 @@ def main() -> int:
 
         observed_active_count = len(active)
 
-        match = (observed_active_count <= predicted_active)
+        # A bound "observed <= predicted" is vacuously true when nothing was
+        # computed. Measured 2026-11-15 in a container without pyhecke_native:
+        # every partition raised NotImplementedError, observed = 0, and the
+        # assertion PASSED. A partition that errored is not a zero; the bound
+        # holds only if every chi was actually evaluated.
+        match = (not chi_errors) and (observed_active_count <= predicted_active)
 
         result = {
             "Z": Z, "N": N, "A": A, "n_0": n0,
