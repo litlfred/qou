@@ -181,3 +181,26 @@ the non-pure passers grow with m. It does not settle the shortest failing pure l
 sampled (10, 12, 16, 20) or reached through powers, so a shorter failing pure word may exist. The Lean bound
 `pure_gg_reading3` is not contradicted: its interval 1 ≤ q ≤ 1 + (1/12)/m excludes q₀ for every m ≥ 1 except
 m = 1. Scope (a).
+
+## Amendment 5: shortest failing pure word at q₀ (pre-registered)
+
+`gg_four_strand_shortest_failing_pure_probe.py`; witness `gg-four-strand-shortest-failing-pure.witness.json`.
+Same representation and convention as amendment 4 (q₀ proton, convention D, 40 dps).
+
+S1, every pure word of length 9, 10, 11 (22528, 102400, 315392 words): **all pass.** The smallest level
+character over pure words falls slowly with length (0.3484, 0.3298, 0.3200). With amendment 4 this makes
+**every pure word of length ≤ 11 pass at q₀.**
+
+S2, squares (and cubes for |u| = 7) of every pure u with 7 ≤ |u| ≤ 11:
+
+| \|u\| | length of u² | pure u tested | u² fails |
+|---|---|---|---|
+| 7 | 14 (u³: 21) | 1792 | 0 (u³: 0) |
+| 8 | 16 | 3584 | 0 |
+| 9 | 18 | 22528 | **3** |
+| 10 | 20 | 102400 | 10 |
+| 11 | 22 | 315392 | 34 |
+
+**Shortest failing pure word found: length 18**, e.g. (B0.B0.V0.V0.B0.B0.V0.V0.B0)², smallest level character
+−0.1487. Not settled: lengths 12 to 17, where only powers were tested, so a failing pure word of length 12–17
+that is not a power may exist. Scope (a).
