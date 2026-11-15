@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-15T19:00:22Z
-updated_at: 2026-11-15T20:01:13Z
+updated_at: 2026-11-15T20:02:13Z
 ---
 
 Opened 2026-11-15 from owner question on a decay trigger and translating ILP/SDP likelihood into a rate; owner chose 'bean both gaps, then probe'. prop:hadron-half-life: Γ_β = |W|²μ₀/(2π³)·[2]_q·|M_q|²·f(Q). W(q) has a D closed form (qou-egvf); μ₀, |M_q|² (prop:trace-ratio-observable, proportionality only) and f(Q) do not. def:beta-decay-skein says WHAT, not WHEN. LP/SDP shadow prices are used only for shell binding from measured Q-values. Candidate to test, pre-registered: per-step probability = trace weight of the channel where the insertion reduces to the daughter. half-life-as-q-probe states environmental predictions (neutron-star q ≫ q₀; 1e-9 per metre) with no derivation — scope (a). Neutron lifetime not derived.
@@ -46,3 +46,7 @@ At each letter of a word, the vertex's deviation from the bare letter is δ = W(
 
 
 RESULT 4 (PR #7979, ac53c140f1): the prediction held. Every site gives −h/[2] whatever the letter's sign, so the sum is −len·h/[2]; the mirror vertex gives +len·h/[2]. Neither leptons nor local interference carry chirality. Open: dressing by the rest of the word, where the a-part q² ratio could enter, and the spin/helicity sector.
+
+
+## PRE-REGISTRATION 5 (2026-11-15 20:04Z): dressing on the actual state, written before computing
+Space (C²)^⊗3 ⊗ V ⊗ V*, 32-dimensional: quark strands 1–3 and a created pair on strands 4–5. Initial state |u d d⟩ ⊗ coev_{45} (plain). For a word w on strands 1–3 and each site k, replace letter k by its deviation δ_k = W(letter) − letter (corpus vertex, or the mirror with P_L ↔ P_R), act with the full word, then apply the emission crossing Ř on strands (3,4) as in #7973 arm A. A(w) = Σ_k of the component on |p-labels⟩_{123} ⊗ |d ūbar⟩_{45}, where p-labels means any basis state with two u and one d. Report A_corpus, A_mirror and |A_c|²/|A_m|², exact in q, for s1 s2⁻¹, (s1 s2⁻¹)³, s1⁴, (s1 s2)⁵. Expectation, stated in advance: they differ, because the dd pair lies in the left line P₊, which δ_corpus keeps and δ_mirror kills. Whatever comes out gets reported.
