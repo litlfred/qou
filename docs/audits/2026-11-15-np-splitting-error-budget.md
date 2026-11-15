@@ -311,3 +311,22 @@ The derivation-chain thread found this independently (`/mnt/project-files/qou-de
 - (T_n − T_p)/T_full = −7.7 %, against the measured +0.14 %. A weight-space route therefore needs a derived suppression of about 55× **and** a sign flip.
 
 **Consequence for the FE/EF test (to be pre-registered by the sibling).** It must state its order in h in advance. The level-2 weight is O(h); FE/EF per crossing is O(h/[2]); h ≈ 0.209 at q₀. Both the suppression and the sign have to come out of the derivation; neither may be chosen.
+## 22. Second-order weak terms FE and EF on the ruled nucleon (sibling thread, 2026-11-15)
+Pre-registered probe `np_second_order_weak_fe_ef_probe.py` (output `probe_output_fe_ef.txt`). Exact over Q(q). Same R, K = diag(q, 1/q), u = e₁ and element V³ as §18. E = e₁₂, F = e₂₁; of the two standard coproducts only Δ(E) = E⊗K + 1⊗E (F mirrored with K⁻¹) commutes with σ₁, σ₂, so it is forced, and [E, F] = (K − K⁻¹)/(q − q⁻¹) is checked. Pre-registered test: is |ln|r_X|| > 2 ln q, where r_X = t_n(X·V³)/t_p(X·V³)? Ratios do not depend on how E and F are normalised.
+
+| inserted X | r_X (exact) | \|ln\|r_X\|\| / 2 ln q at q₀ | sign vs X = 1 |
+|---|---|---|---|
+| 1 (control) | q⁻² | 1 | — |
+| FE | q⁻²·A | 2.2824 | **opposite** (t_n > t_p) |
+| EF | q⁻²/A | 4.2824 | same |
+| FE + EF, Casimir | q⁻² | 1 | same |
+
+A = ([2]² + χ₍₂,₁₎(V³))/[3], with χ₍₂,₁₎(V³) = −(q⁴−q²+1)(q⁸−2q⁶−2q²+1)/q⁶ the trace on the 2-dimensional Hecke irrep (χ₍₃₎(V³) = 1). **A = 2 at q = 1**, and A = 1.98373 at q₀. V⁶ agrees to 0.6 % (2.2686, 4.2686).
+
+**Mechanism (algebraic).** Braids commute with E, F, K, so on each weight space the trace splits over the U_q isotypic sectors V₃/₂ ⊗ M₍₃₎ ⊕ V₁/₂ ⊗ M₍₂,₁₎. FE and EF act on each sector by scalars: on T³ = +½ FE is [3] on V₃/₂ and 0 on V₁/₂, and on T³ = −½ it is [2]² and 1; EF is the mirror. So FE and EF re-weight the isospin-3/2 sector against the isospin-1/2 sector differently on p and n. The Cartan involution ω (E ↔ F, K ↔ K⁻¹) swaps the p and n weight spaces and swaps FE with EF. Two consequences, checked over all 341 words in σ₁^{±1}, σ₂^{±1} of length ≤ 4 with no failure:
+- r_FE · r_EF = q⁻⁴ for every word.
+- Any ω-symmetric second-order insertion (FE + EF, or the Casimir) gives r = q⁻² exactly, so it adds nothing to the level-2 weight.
+
+**Reading (scope a).** Yes, FE alone and EF alone give a larger |ln r| than the level-2 weight. But (1) which one is inserted is a choice, and the two give opposite signs relative to q⁻² (FE makes the proton trace the smaller one). Picking one would be selection unless the W process fixes the order. (2) The extra factor A → 2 as q → 1. It is a classical isospin Clebsch weight (3/2 versus 1/2 sector), not a q-effect, so it survives the isospin-symmetric limit. That is the same 3/2-versus-1/2 distinction that PR #7975 showed is not n versus p. (3) The symmetric combination, which is the only one fixed without an ordering choice, returns exactly q⁻². So the second-order terms do not supply a derived u/d asymmetry beyond the level-2 weight. MeV figures (all conditional on a scale: S0 = α·|ln r| under H_α, D1 = E₀^full·|t_n − t_p|) are in the probe output and are comparison only: FE 1.783 / 1.072 MeV, EF 3.346 / 2.059 MeV, against CODATA 1.2933. None is selected.
+
+Not formalised in Lean yet. The natural statement is a pair of lemmas on the explicit 3×3 weight-space matrices of `NucleonWeightSpaceTraces.lean`: FE and EF as sector scalars, and the ω-swap identities above.
