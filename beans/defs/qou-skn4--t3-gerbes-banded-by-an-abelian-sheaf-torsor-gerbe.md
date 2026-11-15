@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-10-12T19:48:14Z
-updated_at: 2026-11-15T18:10:00Z
+updated_at: 2026-11-15T17:55:17Z
 parent: qou-533l
 ---
 
@@ -41,3 +41,9 @@ Lean-direct exits 0; standard axioms.
 - PR #7945 (issue #7944): `QOU/MathlibExt/CechColimit.lean`, sorry-free. Refinement map on Čech H², a colimit `CechH2` over admissible covers, and the T2b lifting obstruction as a cover-independent class (`cechObstruction`, `_indep_lift`, `_pull`, `_eq_one_of_lift`).
 - Still open: the converse (trivial in colimit ⇒ lift on a refinement) needs filtered covers (G1b). The scope note's degree-2 injectivity claim was not claimed.
 - R3 plan: /mnt/project-files/qou-leftovers/r3-cohomology-route.md. The Kummer class is δ(T_S) for 1→μ_n→𝒪*→𝒪*→1, and δ(L) = deg L mod n. Missing pieces: H²(S,μ_n)≅ℤ/n (no Čech–singular comparison in Mathlib) and the Kummer sequence on a Riemann surface.
+
+## 2026-11-15 G1b and R3 landed on PR #7945 (still open, not merged)
+
+- G1b `CechColimitConverse.lean`, sorry-free. It has the prism homotopy, `Cover.meet` from pullbacks, and `isCoverDirected_topology` (the covers of a Grothendieck topology with pullbacks are directed). It proves `cechClass_eq_one_iff` (trivial in the colimit iff a coboundary on a refinement) and `cechObstruction_eq_one_iff` (lifts on a finer cover iff the class is trivial).
+- R3 `CechKummerSurface.lean` has `CechH2.map` and `cechKummer_eq_map_chern`, both sorry-free. Conditional on `KummerSurfaceData`: trivial iff n ∣ χ, and χ = −6 gives n ∣ 6.
+- Still open: the Čech–singular comparison and orientation (`KummerSurfaceData`), Poincaré–Hopf `deg c₁(T_S) = χ`, and local real lifts of the tangent cocycle. Not planned (Mathlib-scale).

@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-15T17:35:00Z
-updated_at: 2026-11-15T18:10:00Z
+updated_at: 2026-11-15T17:55:17Z
 parent: qou-lx8f
 ---
 
@@ -40,3 +40,7 @@ strand tower. With the relations as written, κ_n ≡ 0.
 - PR #7945 (issue #7944): `QOU/MathlibExt/CechColimit.lean`, sorry-free. Refinement map on Čech H², a colimit `CechH2` over admissible covers, and the T2b lifting obstruction as a cover-independent class (`cechObstruction`, `_indep_lift`, `_pull`, `_eq_one_of_lift`).
 - Still open: the converse (trivial in colimit ⇒ lift on a refinement) needs filtered covers (G1b). The scope note's degree-2 injectivity claim was not claimed.
 - R3 plan: /mnt/project-files/qou-leftovers/r3-cohomology-route.md. The Kummer class is δ(T_S) for 1→μ_n→𝒪*→𝒪*→1, and δ(L) = deg L mod n. Missing pieces: H²(S,μ_n)≅ℤ/n (no Čech–singular comparison in Mathlib) and the Kummer sequence on a Riemann surface.
+
+## 2026-11-15 R3 conditional theorem (PR #7945)
+
+The Kummer class of C-5a is now a defined colimit class. `cechKummer_eq_map_chern` (sorry-free) proves it is the Chern class reduced mod n. Conditional on `KummerSurfaceData` and deg c₁(T_S) = χ, it is trivial iff n ∣ χ, which for Bring's curve is n ∣ 6. The link to an R-matrix trace is NOT made; that is still R2. This bean stays open.
