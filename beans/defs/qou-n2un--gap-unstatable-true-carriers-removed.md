@@ -7,7 +7,7 @@ tags:
     - lean-foundations
     - devacuify
 created_at: 2026-11-15T14:05:00Z
-updated_at: 2026-11-15T21:07:47Z
+updated_at: 2026-11-15T21:21:03Z
 parent: qou-6qbv
 ---
 
@@ -85,3 +85,8 @@ Next: CategoricalQExtDeriv.exists_axiom and frobeniusForm_unique.
 - energy_path_independent repair is NOT attempted. It is unclear that the Hecke-step count is invariant across reduction paths even when the system is confluent, since the Hecke rule branches into a sum. This needs a definition of "energy of a path" before a claim can be stated.
 - jonesMarkov_H3 is proved: the Jones–Markov repair at n = 3 on the concrete NF model of H₃(q). Second defect found: the removed markov_pos quantified over all of H_n, which forces z² − hz − 1 = 0.
 - q-Casimir repair is deferred. It needs a constructed 𝒰_q(sl₂) in Lean (a presented algebra), which is a large build and not a patch.
+
+
+## 2026-11-15 — both remaining B repairs (PR #7915)
+- q-Casimir: U_q(sl₂) built as RingQuot of the free algebra on E,F,K,K'; `Uq.casimir_central` proved; `Uq.nontrivial` via the 2-dim rep. Eigenvalue [j]_q[j+1]_q on V_j still open.
+- Energy (8f00e50d47): E(ξ)=Σ|c_w|ℓ(w). Path independence = telescoping (`energyPath_telescopes`). The .md per-step formula |c|·|h| is wrong: the true change is |c|(|h|(ℓ−1)−2), and it is negative at h=1/5 on σ₁σ₁ (`heckeStep_can_lower_energy`). .md claim 3 needs an owner decision to correct.
