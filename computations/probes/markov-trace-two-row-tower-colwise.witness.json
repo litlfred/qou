@@ -1,0 +1,59 @@
+{
+ "description": "Run record of the column-by-column two-row tower trace (two_row_tower_trace.rs) for 19F and 20Ne: an independent confirmation of the certified values, which come from hecke-tower-trace (markov-trace-two-row-tower-rust.witness.json, PR #7800). Same element, same convention-D trace, same 2^pn normalisation.",
+ "producer": "tools/hecke-engine/src/bin/two_row_tower_trace.rs",
+ "producer_commit": "afcfc61f183",
+ "q0": "1.1099785827513808075916690956107688798744991218736",
+ "q0_anchor": "proton",
+ "z": "q^3/(q^2+1)",
+ "prec_bits": 300,
+ "written_to_certificates": false,
+ "certificate_note": "Not the certificate source: the certificates cite markov-trace-two-row-tower-rust.witness.json. This file records the second method.",
+ "rows": [
+  {
+   "isotope": "19f",
+   "z": 9,
+   "n": 10,
+   "a": 19,
+   "pn": 90,
+   "tr_markov_d": "4.45571132742366303398408904292610857578602489531211737921857e-5",
+   "self_check_worst_residual": "1.17818e-89",
+   "elapsed_seconds": 5941.9,
+   "threads": 4,
+   "argv": [
+    "two_row_tower_trace",
+    "9",
+    "10",
+    "--threads",
+    "4"
+   ],
+   "hecke_tower_trace_value": "0.0000445571132742366303398408904292610857578602489531211737921857",
+   "abs_diff_vs_hecke_tower_trace": "0.0"
+  },
+  {
+   "isotope": "20ne",
+   "z": 10,
+   "n": 10,
+   "a": 20,
+   "pn": 100,
+   "tr_markov_d": "-1.12197210960344249469338424731145921507732362303957318383160e-5",
+   "self_check_worst_residual": "1.17818e-89",
+   "elapsed_seconds": 14996.0,
+   "threads": 4,
+   "argv": [
+    "two_row_tower_trace",
+    "10",
+    "10",
+    "--threads",
+    "4",
+    "--checkpoint",
+    "20ne.ck",
+    "--chunk",
+    "2000"
+   ],
+   "note": "resumed from checkpoint (49 of ~93 chunks) after the first segment died on a full disk; elapsed_seconds covers the final segment only",
+   "producer_commit": "817527f0e99",
+   "hecke_tower_trace_value": "-0.000011219721096034424946933842473114592150773236230395731838316",
+   "abs_diff_vs_hecke_tower_trace": "0.0"
+  }
+ ]
+}
