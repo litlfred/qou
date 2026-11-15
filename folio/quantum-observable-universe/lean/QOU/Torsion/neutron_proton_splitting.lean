@@ -9,7 +9,7 @@ import Mathlib.Analysis.SpecialFunctions.Log.Basic
 *The model neutron–proton splitting is*
 
 ```
-  Δm := α · |Φ(udd) − Φ(uud)| = 3.7449 · 0.3476 = 1.30172724   (MeV units)
+  Δm := α · |Φ(udd) − Φ(uud)| = 3.7449 · 0.2815 = 1.05418935   (MeV units)
 ```
 
 *where `Φ(uud)` and `Φ(udd)` are the quantum-dilogarithm volumes of the
@@ -24,17 +24,19 @@ provenance-cited hypothesis fields (`NeutronProtonSplittingNumerics`) and the
 value is derived from them by arithmetic.  Porting the exact closed forms of
 the traced-volumes themselves stays open.
 
-The two `Φ` volumes (`Φ(uud) ≈ -0.8785`, `Φ(udd) ≈ -1.2261`) **are derived**:
+The two `Φ` volumes (`Φ(uud) ≈ -0.6149`, `Φ(udd) ≈ -0.8964`, convention D) **are derived**:
 they are the canonical Hecke **traced-volume** of the quark orderings
 (uud = `[1,1,0]`, udd = `[1,0,0]`), `Φ(K) = Σᵢ log|V̂ᵢ(K)|` with
 `V̂ᵢ = z·M₁₀ + M₁₁` the transfer-matrix product over the quark crossings
 (`computations/level1-qvalues.py`, `HeckeRational.traced_volume`).  This has an
-exact closed form — `log` of a rational function of `q` — e.g.
-`Φ(udd) = log|(q²+1)²(10000q² − 4993q − 10000) / (40000 q³)|` (with the
-NF-basis constant `z = 4993/10000`).  That `z` is the rounded convention-C
-value `√q/(q+1)`; the canonical convention is D (`z = q³/(q²+1)`), under which
-the same construction gives a different `|ΔΦ| ≈ 0.2815`.  The pinned values below
-are therefore convention-C, and the convention-D re-derivation is open.  Provenance + symbolic derivation:
+exact closed form — `log` of a rational function of `q` and the Markov
+parameter `z`.  The pins below use the canonical convention-D parameter
+`z = q³/(q²+1)` at the proton `q₀` (owner ruling 2026-11-15: replace the
+convention-C values with convention D).  The audit's closed forms were written
+with the convention-C `z = 4993/10000` (rounded `√q/(q+1)`), which gave
+`Φ(uud) ≈ -0.8785`, `Φ(udd) ≈ -1.2261`, `Δm ≈ 1.3017`; those are kept only as a
+historical comparison.  The strand pairing is the all-pairs reading of
+`level1-qvalues.py` (each strand with every later strand).  Provenance + symbolic derivation:
 `docs/audits/2026-07-11-quark-volume-provenance.md`.  (This transfer-matrix
 `V̂ᵢ` is a *different* object from the `Φ_q` q-Pochhammer of
 `QOU.MathlibExt.QuantumDilogarithm`.)  They remain opaque
@@ -74,11 +76,12 @@ def predictedNeutronProtonSplitting [ctx : NeutronProtonSplittingContext] : ℝ 
     - `α = 3.7449` — the binding scale `m_e·8G` (`m_e = 0.511 MeV`,
       `G` Catalan's constant, `8G ≈ 7.3286`); same scale as the atomic
       mass formula.
-    - `Φ(uud) = −0.8785`, `Φ(udd) = −1.2261` — the canonical Hecke
+    - `Φ(uud) = −0.6149`, `Φ(udd) = −0.8964` — the canonical Hecke
       traced-volumes of the quark orderings; **derived** in the corpus
       with exact closed forms (`log` of a rational function of `q`), see
       `docs/audits/2026-07-11-quark-volume-provenance.md` and
-      `computations/level1-qvalues.py`.  Decimal pins at manuscript
+      `computations/level1-qvalues.py`, evaluated at convention D
+      (`z = q³/(q²+1)`, all-pairs reading).  Decimal pins at manuscript
       precision (4 d.p.); porting the closed forms themselves to Lean is
       the remaining formalization item.
 
@@ -88,16 +91,16 @@ class NeutronProtonSplittingNumerics extends NeutronProtonSplittingContext where
   /-- Binding-scale pin `α = m_e·8G ≈ 3.7449` (provenance above). -/
   α_val : α = 3.7449
   /-- Proton (uud) traced-volume pin (provenance above). -/
-  Φ_uud_val : Φ_uud = -0.8785
+  Φ_uud_val : Φ_uud = -0.6149
   /-- Neutron (udd) traced-volume pin (provenance above). -/
-  Φ_udd_val : Φ_udd = -1.2261
+  Φ_udd_val : Φ_udd = -0.8964
 
 /-- **Neutron-proton mass splitting** ([`prop:neutron-proton-splitting`]),
     conditional on the corpus-pinned numerics — **sorry-free**.
 
     The framework *prediction* is `α · |Φ(udd) − Φ(uud)|`
     (`predictedNeutronProtonSplitting`); with the pinned values it equals
-    exactly `3.7449 · 0.3476 = 1.30172724` (MeV units).
+    exactly `3.7449 · 0.2815 = 1.05418935` (MeV units).
 
     This statement is model mathematics only.  The comparison with the
     measured (CODATA) splitting is an empirical claim and lives in the
@@ -109,13 +112,13 @@ class NeutronProtonSplittingNumerics extends NeutronProtonSplittingContext where
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/neutron-proton-splitting.md
 theorem neutron_proton_splitting [cm : NeutronProtonSplittingNumerics] :
     (predictedNeutronProtonSplitting = cm.α * |cm.Φ_udd - cm.Φ_uud|) ∧
-    (predictedNeutronProtonSplitting = (3.7449 : ℝ) * 0.3476) := by
+    (predictedNeutronProtonSplitting = (3.7449 : ℝ) * 0.2815) := by
   constructor
   · rfl
   · unfold predictedNeutronProtonSplitting
     rw [cm.α_val, cm.Φ_uud_val, cm.Φ_udd_val]
-    have h1 : (-1.2261 : ℝ) - (-0.8785) = -0.3476 := by norm_num
-    rw [h1, abs_neg, abs_of_pos (by norm_num : (0.3476 : ℝ) > 0)]
+    have h1 : (-0.8964 : ℝ) - (-0.6149) = -0.2815 := by norm_num
+    rw [h1, abs_neg, abs_of_pos (by norm_num : (0.2815 : ℝ) > 0)]
 
 /-- **The exact-equality form is refutable as written** — the base class
     never relates the fields the conclusion names, so `∀ instances` admits

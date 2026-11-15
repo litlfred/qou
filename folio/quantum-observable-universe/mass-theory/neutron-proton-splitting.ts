@@ -20,6 +20,22 @@ export default proposition({
     },
     {
       kind: "status",
+      date: "2026-11-15",
+      body:
+        "**Convention C replaced by convention D (owner ruling 2026-11-15: " +
+        "replace convention-C values with convention D even if worse).** The " +
+        "Phi pins were computed with z = 4993/10000 (rounded convention-C " +
+        "sqrt(q)/(q+1)). Recomputed at 50 dps with z = q^3/(q^2+1) at the " +
+        "proton q0, all-pairs strand reading of level1-qvalues.py: " +
+        "Phi(uud) = -0.6148859839, Phi(udd) = -0.8963949769, |dPhi| = " +
+        "0.2815089929, model value 1.0542 MeV, -18.49 % vs CODATA 2022. The " +
+        "adjacent-crossing reading (pn_splitting_proof_provenance_probe.py) " +
+        "gives -2.875 % under D but does not reproduce the old neutron value, " +
+        "so the all-pairs reading is kept. The C figure (+0.65 %) stays in " +
+        "the prose only as a labelled historical comparison.",
+    },
+    {
+      kind: "status",
       date: "2026-08-14",
       body:
         "**Lean carrier restructured — sorry-free (bean `qou-octr`, PR #5019).** " +
