@@ -1,13 +1,13 @@
 ---
 # qou-zx9y
 title: 'A5: formalize the Ghat_bot frame assembly — 17,534 pairs measured, 0 proved'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-10T07:03:50Z
-updated_at: 2026-10-10T07:03:50Z
+updated_at: 2026-11-15T20:59:00Z
 parent: qou-3e6w
 ---
 
@@ -61,3 +61,9 @@ where one exists.
 
 **Do not close until the frame assembly is proved or explicitly scoped as unformalised in the
 consuming claim.**
+
+## 2026-11-15 — PR opened (`Q-3E6W-1 = 1`)
+
+- PR: https://github.com/litlfred/qou/pull/8000 (`claude/qou-fo7l-zx9y-2026-11-15`, head `59133917a93a808efb21853b8dfef6b8cd35880e`)
+- Formalised `one_body_sub_le_mul_of_antitone`, `ghatBot`, `ghatBot_frame_bound`, and `sum_ghatBot_frame_bound` sorry-free in `folio/quantum-observable-universe/lean/QOU/BraidKnot/SearchCoercivity.lean`.
+- Verified with `lean -DautoImplicit=false -s 65536` (`0` warnings, `0` `sorry`, `#print axioms` -> `[propext, Classical.choice, Quot.sound]`).

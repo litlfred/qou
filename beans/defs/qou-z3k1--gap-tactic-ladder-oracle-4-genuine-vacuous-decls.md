@@ -1,7 +1,7 @@
 ---
 # qou-z3k1
 title: 'GAP: tactic-ladder oracle finds 3 vacuous decls the vacuity audit misses (+2 definitional restatements)'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - lean
 created_at: 2026-08-08T00:05:00Z
-updated_at: 2026-10-04T15:14:54Z
+updated_at: 2026-11-15T20:59:00Z
 parent: qou-6qbv
 ---
 
@@ -259,3 +259,8 @@ re-work item 1. The file is also candid about it in its own docstring
    has an `isDefProof` arm that opts Prop-valued `def`s in (`PROP_CONCLUSION`
    includes `=`), added because "36/99 placeholder-canonical projections are
    `def`-kind". This declaration is precisely what that arm was written for.
+
+## 2026-11-15 — PR opened for item 2 `hadron_operations_closure` (`Q-6QBV-1 = 1`)
+
+- PR: https://github.com/litlfred/qou/pull/8001 (`claude/qou-z3k1-ajfl-z9fx-2026-11-15`, head `dc257cfe44475b4d418b26d8e48c2b5566459344`)
+- Replaced the standalone `axiom Hadron : ℕ → Type` and vacuous `∃ h', h' = op n h` conjuncts in `folio/quantum-observable-universe/knots-particles-confinement/hadron-operations-closure.lean` with a concrete carrier `HadronState n` (`Hadron n`) and proved braiding involution + alternating sign flip, Hopf-linking two-sided invertibility, skein idempotence + linear mass decomposition, and fusion associativity + mass additivity sorry-free.

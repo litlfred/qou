@@ -1,13 +1,13 @@
 ---
 # qou-z9fx
 title: 'GAP: docstring-states-a-VALUE the body does not compute — the schurElement/hookDim class'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T21:41:57Z
-updated_at: 2026-10-04T15:14:53Z
+updated_at: 2026-11-15T20:59:00Z
 parent: qou-6qbv
 ---
 
@@ -147,3 +147,8 @@ by `zero_mul`"*, body exactly that) and `nLambda` (*"Content-bearing via `n`
 (the partition's size)"*, body `:= n`). The convention works when it is
 maintained; `hookDim` is what happens when a later pass edits the body without
 it.
+
+## 2026-11-15 — PR opened (`Q-6QBV-1 = 1`)
+
+- PR: https://github.com/litlfred/qou/pull/8001 (`claude/qou-z3k1-ajfl-z9fx-2026-11-15`, head `dc257cfe44475b4d418b26d8e48c2b5566459344`)
+- Wired real `cellContent`, `cellHook`, `nLambda`, `hookDim` (`n! / ∏ cellHook`), `wenzlSchurElement` (`Q^{n(λ)} · ∏ (1 - X Q^c)/(1 - Q^h)`), and non-vacuous `MarkovTraceFamilyOneDim.unique` in `folio/quantum-observable-universe/mass-theory/y-lambda-closed-form-wenzl-bridge.lean`.

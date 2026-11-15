@@ -1,11 +1,11 @@
 ---
 # qou-fo7l
 title: 'lean-library-sweep''s UNVERIFIED verdict is non-deterministic: it names a different present-on-disk package each run'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-10T13:04:28Z
-updated_at: 2026-10-10T13:04:28Z
+updated_at: 2026-11-15T20:59:00Z
 parent: qou-3e6w
 ---
 
@@ -72,3 +72,9 @@ the constructed `LEAN_PATH`, and whether the named olean exists under each root.
 If the named package is present on disk every time, the bug is in the shadow
 link or the path order, and the fix is in `lean-shadow-verify.sh` /
 `lean-library-sweep.py`, not in the olean trees.
+
+## 2026-11-15 — PR opened (`Q-3E6W-1 = 1`)
+
+- PR: https://github.com/litlfred/qou/pull/8000 (`claude/qou-fo7l-zx9y-2026-11-15`, head `59133917a93a808efb21853b8dfef6b8cd35880e`)
+- Fixed `find_oleans()` to pick by largest non-empty `.olean` count, deterministically sorted `siblings` and `pkg_roots` (ordering `PKG` and `ROOT` package roots ahead of other `folio/*` roots and filtering out incomplete package roots), sorted `missing` diagnostics by module name before reporting `UNVERIFIED`, and classified Mathlib dependency packages (`Qq`, `Batteries`, `LeanSearchClient`, `Aesop`, `Plausible`, `ImportGraph`, `ProofWidgets`) as `mathlib dep cache`.
+- Verified with 5 consecutive runs of `python3 scripts/lean-library-sweep.py --only-exact QOU.BraidKnot.PenaltyFamilyCeiling --jobs 2` -> 5/5 `1 ok, 0 RED, 0 UNVERIFIED`.
