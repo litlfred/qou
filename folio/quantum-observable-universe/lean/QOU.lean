@@ -1059,6 +1059,7 @@ import QOU.HyperellipticQuintic.zeta5_residue_monodromy
 
 import QOU.Archimedean.BorromeanQuark
 import QOU.Archimedean.EmCouplingBringZeroMode
+import QOU.Archimedean.BringZeroModeClausenWitness
 import QOU.Archimedean.BringEllipticFactor
 import QOU.Archimedean.SigmaJGeometricCarrier
 import QOU.Archimedean.HodgeWeilRealStructure
