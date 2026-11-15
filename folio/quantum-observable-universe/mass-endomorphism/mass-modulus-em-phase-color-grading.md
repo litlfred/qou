@@ -14,7 +14,7 @@ This forms the multiplicative companion of the additive complex-volume reconstru
 | **electromagnetism** | argument $\arg\mathrm{tr}_M$ | spacetime / $S_2$ | continuous $U(1)$ |
 | **color** | $S_3$ irrep grading | color / $S_3$ | discrete |
 
-Mass evaluates the magnitude that survives both sectors. The argument evaluates the continuous $U(1)$ framing/Chern–Simons phase. This provides the $\mathrm{Im}\mathfrak{V}$ channel, picked up as the ribbon twist $q^{2w\,c(\lambda)}$ on a framed knot of writhe $w$ ([`bar-parity-split`](../mass-theory/bar-parity-split.md)). It lives in the spacetime block, where we read it as the electromagnetic phase. Color provides the discrete grading of the algebra element across the $H_3(q)$ representations, before the trace collapses it to a scalar.
+Mass evaluates the magnitude that survives both sectors. The argument evaluates the continuous $U(1)$ framing/Chern–Simons phase. This provides the $\mathrm{Im}\mathfrak{V}$ channel, picked up as the ribbon twist $q^{2w\,c(\lambda)}$ on a framed knot of writhe $w$. The identification of this channel with a bar-odd part is conjectural ([`conj:bar-parity-split`](../mass-theory/bar-parity-split.md)). It lives in the spacetime block, where we read it as the electromagnetic phase. Color provides the discrete grading of the algebra element across the $H_3(q)$ representations, before the trace collapses it to a scalar.
 
 ## Color is not the phase
 

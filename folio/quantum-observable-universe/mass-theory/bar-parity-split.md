@@ -1,17 +1,7 @@
-The bar-involution $\sigma$ defined by $q \mapsto q^{-1}$ and $\sigma^2 = \mathrm{id}$ ([`def:bar-involution`](#def:bar-involution)) splits any element $x$ into a $\sigma$-fixed even part and a $\sigma$-anti odd part:
-$$
-\mathrm{even}(x) = x + \sigma x, \qquad
-\mathrm{odd}(x) = x - \sigma x, \qquad
-\mathrm{even}(x) + \mathrm{odd}(x) = 2x.
-$$
+**Conjecture.** *There is a fibre element $F$, specified independently of the binding and $\mathfrak{Q}_\beta$ data, such that the binding trace is read off the bar-even part of $F$ and the $\mathfrak{Q}_\beta$ residue is read off its bar-odd part.*
 
-Applying this to the fibre Habiro element $F$ that controls the substrate separates the two observables:
+Here the parity is taken with respect to the bar-involution $\sigma$, $q \mapsto q^{-1}$, $\sigma^2 = \mathrm{id}$ ([`def:bar-involution`](#def:bar-involution)), and the even and odd parts are $x + \sigma x$ and $x - \sigma x$ ([`lem:bar-involution-parity-decomposition`](#lem:bar-involution-parity-decomposition)). The binding trace is $\tau = \mathrm{tr}\, B$ of [`prop:sl2-prolongation-recurrence`](#prop:sl2-prolongation-recurrence); it is bar-even, being a function of $(q+q^{-1})/2 = \cosh\lambda$.
 
-- **even ($\cosh$, bar-symmetric)**: The binding trace $\tau = \mathrm{tr}\, B$ from [`prop:sl2-prolongation-recurrence`](#prop:sl2-prolongation-recurrence). This is the curvature-free transport, $(q+q^{-1})/2 = \cosh\lambda$.
-- **odd ($\sinh$, bar-antisymmetric)**: The $\mathfrak{Q}_\beta$ residue-A / $c_k$ ladder. This is the curvature defect, $(q-q^{-1})/2 = \sinh\lambda$, representing the bar-odd Habiro dual of $\alpha_{\mathrm{EM}}$.
+**Status of the two sides.** The decomposition lemma holds for every element of every module with an involution, so it does not by itself support the conjecture. The content lies in the identification of the two readouts. When $F$ ranges over the same space as the readouts and both readouts are the identity, a suitable $F$ exists if and only if the binding trace is bar-even and the $\mathfrak{Q}_\beta$ residue is bar-odd: the sum of the two is such an $F$, and conversely the odd part of any element is $\sigma$-anti. None of the $\mathfrak{Q}_\beta$ trace functionals on record is bar-odd. Each carries the factor $h = q - q^{-1} = 2\sinh\lambda$ and vanishes at $q = 1$, which is a weaker property. The conjecture therefore requires a specified element $F$ with readout maps other than the identity, and no such $F$ has yet been given. For the nucleon element used for $\mathfrak{Q}_\beta$, the natural candidate $F = \mathfrak{n} - \mathfrak{p}$ with the Markov trace as readout fails as well. The trace intertwines the bar-involution with $q \mapsto q^{-1}$, and the readout factors as $h\,g$, where $g$ is the trace of the remaining context words. The readout is therefore bar-odd if and only if $g$ is bar-even, and here $g$ is not.
 
-Binding (mass-average) and $\beta$-decay ($\mathfrak{Q}_\beta$) represent the even and odd parities of a single bar-graded element. Pinning either parity constrains the other.
-
-The bar-even/bar-odd split corresponds to the real/imaginary split of the complex volume $\mathfrak{V}$ ([`conj:binding-qbeta-complex-volume`](#conj:binding-qbeta-complex-volume)). The continuation $\lambda \mapsto i\theta$ sends $\cosh\lambda \mapsto \cos\theta$ and $\sinh\lambda \mapsto i\sin\theta$. The bar-even part becomes $\mathrm{Re}\,\mathfrak{V} = \mathfrak{E}_{\mathrm{bind}}$ and the bar-odd part becomes $\mathrm{Im}\,\mathfrak{V} = \mathfrak{Q}_\beta$. The additive projections $x \mapsto x \pm \sigma x$ permit a single identity on $\mathfrak{V}$ to descend to both channels simultaneously.
-
-Mapping this algebraic decomposition to the physical dichotomy of binding and decay provides a rigorous interpretive framework for the Quantum Observable Universe.
+**Relation to the complex volume.** If the conjecture holds, the bar-even/bar-odd split is a candidate for the real/imaginary split of the complex volume $\mathfrak{V}$ of [`conj:binding-qbeta-complex-volume`](#conj:binding-qbeta-complex-volume). Under the continuation $\lambda \mapsto i\theta$, $\cosh\lambda \mapsto \cos\theta$ and $\sinh\lambda \mapsto i\sin\theta$, so a bar-even part would continue to a real quantity and a bar-odd part to an imaginary one.
