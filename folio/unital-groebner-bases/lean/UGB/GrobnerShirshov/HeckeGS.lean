@@ -676,6 +676,20 @@ theorem hecke_is_gs_basis_false :
   exact NotAGSBasis.hecke_not_gs_basis_four
     ⟨2, by norm_num, by norm_num⟩ (h 4 NotAGSBasis.hn4 ⟨2, by norm_num, by norm_num⟩)
 
+/-- **The former axiom `dist_algebra_gs_basis` is false.**
+
+It asserted that every rewriting system over every field is a
+Gröbner–Shirshov basis (its `DistAlgGenerators` argument was unused).
+The Hecke system at `n = 4` refutes it. The axiom was deleted from
+`UGB.GrobnerShirshov.NormalForms`. -/
+theorem dist_algebra_gs_basis_false :
+    ¬ (∀ (_dg : DistAlgGenerators) (G : Type) (k : Type) [Field k]
+        (ord : AdmissibleOrder G) [DecidableEq G] (sys : RewritingSystem G k),
+        IsGrobnerShirshovBasis G k ord sys) := by
+  intro h
+  exact NotAGSBasis.hecke_not_gs_basis_four ⟨2, by norm_num, by norm_num⟩
+    (h ⟨2, Nat.prime_two, 1⟩ _ ℝ _ _)
+
 /-! ## §5  Braid Word Embedding (Constructive) -/
 
 /-- Embed a positive generator `σᵢ` as the singleton monomial `[σᵢ]`. -/

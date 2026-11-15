@@ -84,12 +84,19 @@ structure IsNormalForm (support : List (List ℕ)) : Prop where
 
 /-- The Gröbner division algorithm preserves well-foundedness.
     Given any element of H_n(q), the division algorithm terminates
-    and produces a unique normal form remainder. -/
+    and produces a unique normal form remainder.
+
+    **Was an axiom; now proved (2026-11-15).** As stated, the conclusion
+    does not mention `elem`, so it only says that *some* normal-form
+    support exists, and the empty support is one. The intended content
+    (the remainder of `elem` is in normal form, and it is unique) needs
+    the division algorithm itself and is open in Lean (bean `qou-n2un`). -/
 -- Ref: [unital-groebner-bases:thm:ugb-main-theorem]
-axiom division_terminates_unique (n : ℕ) (q : ℝ) (hq : q > 1) :
-  ∀ elem : List (List ℕ × ℝ),  -- element as list of (word, coeff) pairs
-  ∃ nf : List (List ℕ × ℝ),    -- normal form
-  IsNormalForm (nf.map Prod.fst)
+theorem division_terminates_unique (_n : ℕ) (_q : ℝ) (_hq : _q > 1) :
+    ∀ _elem : List (List ℕ × ℝ),  -- element as list of (word, coeff) pairs
+    ∃ nf : List (List ℕ × ℝ),    -- normal form
+    IsNormalForm (nf.map Prod.fst) :=
+  fun _ => ⟨[], ⟨by simp, by simp, by simp⟩⟩
 
 /-- Base case: the identity element is in normal form. -/
 -- Ref: [manuscript] §6/shell-closure-normal-form

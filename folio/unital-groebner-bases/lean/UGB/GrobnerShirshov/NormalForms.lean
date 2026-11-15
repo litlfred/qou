@@ -25,7 +25,7 @@ appearing in the QOU manuscript:
   under the deg-lex order on `{E_+, K, K⁻¹, E_-}`.
 - `pbw_monomials_are_normal_forms`: PBW monomials are exactly the
   normal-form monomials under the `q`-Serre rewriting system.
-- `dist_algebra_gs_basis`: the relations of `Dist(G)` form a GS basis.
+- `dist_algebra_gs_basis` (removed 2026-11-15, it was false as stated; see §5).
 
 ## References
 
@@ -716,28 +716,18 @@ structure DistAlgGenerators where
   /-- The number of Lie algebra generators. -/
   num_generators : ℕ
 
-/-- **GS basis for `Dist(G)`** ([fred2005, Proposition 3.8]):
-    The relations of the distribution algebra of the non-commutative
-    formal group `G / ℤ_p` form a Gröbner–Shirshov basis under the
-    filtration-compatible order.
+/-! **The former axiom `dist_algebra_gs_basis` was false** (removed
+    2026-11-15). It asserted that *every* rewriting system over every field
+    is a Gröbner–Shirshov basis; its `DistAlgGenerators` argument was never
+    used, so nothing tied `sys` to the relations of `Dist(G)`. The Hecke
+    system at `n = 4` is not a GS basis
+    (`Hecke.NotAGSBasis.hecke_not_gs_basis_four`), which refutes it; the
+    refutation is `dist_algebra_gs_basis_false` in
+    `UGB.GrobnerShirshov.HeckeGS` (it cannot live here, because `HeckeGS`
+    imports this file).
 
-    The S-polynomial computations are the characteristic-`p` analogues
-    of those for `U_q(su(2))`, with `q` specialised to a `p`-th root
-    of unity.  The normal forms coincide with the Lusztig divided-power
-    basis.
-
-    Axiomatised because the concrete construction of `Dist(G)` as a
-    `RewritingSystem` requires the specific relations from [fred2005, §3],
-    which depend on the formal group law of `G`.
-
-    Reference: [fred2005, Proposition 3.8]. -/
--- Ref: [fred2005] Proposition 3.8 (relations of Dist(G) form a GS basis under filtration-compatible order)
-axiom dist_algebra_gs_basis
-    (dg : DistAlgGenerators)
-    (G : Type u)
-    (k : Type v) [Field k]
-    (ord : AdmissibleOrder G) [DecidableEq G]
-    (sys : RewritingSystem G k) :
-    IsGrobnerShirshovBasis G k ord sys
+    The true statement ([fred2005, Proposition 3.8]) needs the concrete
+    rewriting system of `Dist(G)` built from the formal group law; it is
+    open in Lean. -/
 
 end UGB.GrobnerShirshov
