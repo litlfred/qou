@@ -86,7 +86,7 @@ $$
   \alpha_0 = 1, \qquad
   \alpha_1 = 0, \qquad
   \alpha_2 = z^2, \qquad
-  \alpha_3 = h \cdot z^2 + z = z(1 + q^{1/2} - q^{-1/2}),
+  \alpha_3 = h \cdot z^2 + z = z(hz + 1) = \frac{q^3(q^4+1)}{(q^2+1)^2},
 $$
 
 *all closed $q$-algebraic forms (no fitting; verified to
