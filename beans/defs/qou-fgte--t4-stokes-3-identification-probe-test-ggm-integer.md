@@ -7,8 +7,10 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-27T14:57:31Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-11-15T17:33:13Z
 parent: qou-avtq
+blocked_by:
+    - qou-cds1
 ---
 
 ## Verdict note (2026-08-01, PR #4521)

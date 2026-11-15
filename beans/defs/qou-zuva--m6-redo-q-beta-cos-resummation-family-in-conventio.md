@@ -5,8 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-10T08:58:08Z
-updated_at: 2026-11-15T13:30:00Z
-parent: qou-d8c7
+updated_at: 2026-11-15T17:33:09Z
+parent: qou-wxhi
 ---
 
 nuclear-interactions/q-beta-cos-resummation.md:8,12 and table data use z_C; residual +305.7 ppm is C-measured (6 users). Overlaps qou-cds1. Owner pick 2026-10-10 (M6 Decision 4): bean up and redo in convention D. Work on PR #7562.
@@ -19,3 +19,7 @@ nuclear-interactions/q-beta-cos-resummation.md:8,12 and table data use z_C; resi
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+
+
+2026-11-15: moved under epic `qou-wxhi` (c_k ladder under convention D). Previous parent kept in history.

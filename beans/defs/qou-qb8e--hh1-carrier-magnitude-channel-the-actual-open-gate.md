@@ -7,8 +7,10 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T10:15:00Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-11-15T17:33:13Z
 parent: qou-avtq
+blocked_by:
+    - qou-cds1
 ---
 
 Successor to qou-qb8b + qou-qb8d, which between them settled the PARITY channel

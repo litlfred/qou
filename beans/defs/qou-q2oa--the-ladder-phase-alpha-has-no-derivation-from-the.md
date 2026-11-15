@@ -7,8 +7,8 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T11:40:16Z
-updated_at: 2026-10-04T15:11:10Z
-parent: qou-10v9
+updated_at: 2026-11-15T17:33:08Z
+parent: qou-wxhi
 ---
 
 Parent tranche: `qou-cds1` (S1 — re-derive the Q_β `c_k` ladder under D).
@@ -169,3 +169,7 @@ projection `α − h²/4` is a question about the framing, not the weights.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-21 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+
+2026-11-15: moved under epic `qou-wxhi` (c_k ladder under convention D). Previous parent kept in history.

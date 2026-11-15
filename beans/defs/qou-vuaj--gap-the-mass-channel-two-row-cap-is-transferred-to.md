@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T12:16:30Z
-updated_at: 2026-10-10T07:47:09Z
-parent: qou-cdx1
+updated_at: 2026-11-15T17:33:09Z
+parent: qou-wxhi
 ---
 
 VERIFIED FROM PRIMARY SOURCES 2026-09-04. Surfaced by a sibling audit
@@ -87,3 +87,7 @@ source. Live, and it is a correctness question about convention D's scope (the
 D7 ruling), not about residual C.
 
 Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.
+
+
+
+2026-11-15: moved under epic `qou-wxhi` (c_k ladder under convention D). Previous parent kept in history.

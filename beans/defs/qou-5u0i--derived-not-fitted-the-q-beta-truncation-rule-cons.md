@@ -7,8 +7,10 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-10T03:27:53Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-11-15T17:33:10Z
 parent: qou-avtq
+blocked_by:
+    - qou-cds1
 ---
 
 

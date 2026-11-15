@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T08:04:34Z
-updated_at: 2026-10-04T15:19:52Z
-parent: qou-cdx1
+updated_at: 2026-11-15T17:33:09Z
+parent: qou-wxhi
 ---
 
 Four convention-C sites in computations/ that must NOT stay on C but CANNOT be
@@ -79,3 +79,7 @@ pieces of research, not a sweep.
 - **All four dispositions re-verified symbolically**, not cited: `((q²+1)z−q³)|_{z_D} = 0`; `det G|_{z_C,q₀} = −0.1892052191`; `bar(z_C)−z_C = 0`; `bar(z_D)−z_D = −h`.
 - **Gram item: the replacement theorem is DERIVED** — see qou-cds2 above. That was the largest of the four.
 - Two c₃ items remain blocked on qou-cds1; the bar-decomposition item (the only one pmkh owns outright) is still open, and must be built on `bar(z_D) = z_D − h`.
+
+
+
+2026-11-15: moved under epic `qou-wxhi` (c_k ladder under convention D). Previous parent kept in history.

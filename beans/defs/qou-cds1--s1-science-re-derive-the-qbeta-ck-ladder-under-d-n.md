@@ -7,8 +7,8 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-11-15T11:47:03Z
-parent: qou-avtq
+updated_at: 2026-11-15T17:33:08Z
+parent: qou-wxhi
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -8759,3 +8759,7 @@ Asked: does the 2026-08-30 "no gluon" ruling exclude the 2-letter gluon tail in 
 **Consequence, as entry (2) stated.** Every convention-D functional on `Δ_S` is `a_(3)·χ_(3)(Δ_S)`, so the functional side of "what supplies a factor above 1" reduces to the trivial-block weight `{y_(3), 1}`.
 
 **Scope.** That this representation IS the `(2,1)` irreducible for generic `q` is the standard Hoefsmit fact and is not re-proved. The basis-free theorem does not need it. Nothing numerical enters.
+
+
+
+2026-11-15: moved under epic `qou-wxhi` (c_k ladder under convention D). Previous parent kept in history.

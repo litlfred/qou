@@ -7,8 +7,10 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-19T14:21:19Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-11-15T17:33:14Z
 parent: qou-avtq
+blocked_by:
+    - qou-cds1
 ---
 
 Four corpus sites state Q_beta bar-oddness as established fact. Per qou-e58e the supporting quantity tr_M(q0^-1) is not currently computable, so the honest status is fibre-level and CONDITIONAL. Note the classification: this is not an over-claimed "open" nor an over-claimed "refuted" -- it is ASSERTED, a third class the (a)/(b) scoping rule does not name. Cheap; prevents a later agent building on it. Depends on nothing, but its resolution changes if qou-e58e lands and the quantity turns out to check out. Doc: option E.

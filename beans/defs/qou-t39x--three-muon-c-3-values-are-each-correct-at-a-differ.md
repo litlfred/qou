@@ -7,8 +7,10 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T02:27:01Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-11-15T17:33:14Z
 parent: qou-avtq
+blocked_by:
+    - qou-cds1
 ---
 
 Found chasing the root cause behind `qou-kt8o` (the `dc_3/dq ≈ 4.6e6`

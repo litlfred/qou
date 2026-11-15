@@ -7,8 +7,10 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T17:10:14Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-11-15T17:33:13Z
 parent: qou-avtq
+blocked_by:
+    - qou-cds1
 ---
 
 AN UNVERIFIED IDENTIFICATION, flagged as a CANDIDATE in PR #4513 and in the

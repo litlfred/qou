@@ -7,8 +7,10 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-06-30T20:35:58Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-11-15T17:33:11Z
 parent: qou-avtq
+blocked_by:
+    - qou-cds1
 ---
 
 SCOPING (2026-07-06, PR #3434 — probe NOT run, deliberately):

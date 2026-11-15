@@ -7,8 +7,8 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-10-04T15:11:09Z
-parent: qou-5vkl
+updated_at: 2026-11-15T17:33:09Z
+parent: qou-wxhi
 ---
 
 Parent: `qou-cdx1`. Predecessor: `qou-wgta` item 11. **Highest-risk item in the
@@ -987,3 +987,7 @@ drop the 3 real provenance keys as well as the 9 stubs. Not done.
 `nuclear-interactions/confinement-lp`, `confinement-operator-selection-proof`,
 `predicted-spectra/meson-to-proton-via-borromean`, and the definition index.
 Every one of them reads C/muon numbers today.
+
+
+
+2026-11-15: moved under epic `qou-wxhi` (c_k ladder under convention D). Previous parent kept in history.

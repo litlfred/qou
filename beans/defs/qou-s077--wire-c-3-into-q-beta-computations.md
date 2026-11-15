@@ -8,8 +8,10 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-07-07T19:12:42Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-11-15T17:33:14Z
 parent: qou-avtq
+blocked_by:
+    - qou-cds1
 ---
 
 

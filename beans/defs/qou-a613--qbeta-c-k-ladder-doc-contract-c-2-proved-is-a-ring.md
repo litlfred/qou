@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T16:47:05Z
-updated_at: 2026-10-10T08:30:00Z
-parent: qou-avtq
+updated_at: 2026-11-15T17:33:08Z
+parent: qou-wxhi
 ---
 
 > **⚠ REWRITTEN 2026-08-16T21:05Z after `origin/main` moved.** The first version
@@ -173,3 +173,7 @@ Evidence: F3b is still present. `folio/.../appendix-mass-binding-algorithms/mba-
 
 Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+
+
+2026-11-15: moved under epic `qou-wxhi` (c_k ladder under convention D). Previous parent kept in history.

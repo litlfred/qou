@@ -7,8 +7,10 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-06-24T03:18:40Z
-updated_at: 2026-10-10T10:40:00Z
+updated_at: 2026-11-15T17:33:12Z
 parent: qou-avtq
+blocked_by:
+    - qou-cds1
 ---
 
 ## 2026-06-24 — PR #2723: Kashiwara b² Q_β wired into production neutron
