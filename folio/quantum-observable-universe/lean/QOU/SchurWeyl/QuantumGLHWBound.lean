@@ -428,4 +428,20 @@ theorem sum_sq_finrank_hwSpace_le (q : L) (hq : q ≠ 0) (hq2 : q - q⁻¹ ≠ 0
 
 end Summed
 
+section OccWeights
+
+/-- The weights occurring in `(K^d)^{⊗(m+1)}`: contents of words of length `m + 1`. -/
+def occWeights (d m : ℕ) : Finset (Fin d → ℕ) :=
+  Finset.univ.image fun a : Fin (m + 1) → Fin d => content a
+
+/-- **`(★)`** for the G3.4 double-centraliser argument (#7864), in its agreed interface. -/
+theorem hstar_occWeights {d : ℕ} {L : Type*} [Field L] (q : L) (hq : q ≠ 0)
+    (hq2 : q - q⁻¹ ≠ 0) (hgen : GenericParameter.NotRootOfUnity q) (m : ℕ) :
+    ∑ μ ∈ occWeights d m, Module.finrank L (hwSpace q m μ) ^ 2
+      ≤ ∑ lam : JimboGL.RowCapIdx d m,
+          Fintype.card (StandardYoungTableau (partitionShape lam.1)) ^ 2 :=
+  sum_sq_finrank_hwSpace_le q hq hq2 hgen m
+
+end OccWeights
+
 end QOU.SchurWeyl.QuantumGL
