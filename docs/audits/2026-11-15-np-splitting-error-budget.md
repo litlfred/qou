@@ -276,3 +276,19 @@ A side observation, not used to select anything: α = m_e·8G is m_e times the v
 **Route 4 (Lean).** In `neutron-proton-mass-splitting.lean`, `class ScaleHypothesis (α Δm : ℝ)` with field `conversion : Δm = α·|Φ(udd) − Φ(uud)|` is content-bearing and has **no instance**. `splitting_of_scaleHypothesis` proves |Δm − 1.0541| < 0.001 conditional on it. lean-direct `-DautoImplicit=false` exit 0.
 
 **Route 2 (pending).** m_n − m_p = Q_β + m_e is kinematics. The corpus has no block linking the n–p splitting to Q_β (grep over content found none). This is being coordinated with the Q_β thread.
+
+## 20. Route 2: n − p = Q_β + m_e on the ruled base
+
+The identity Δm = m_n − m_p = Q_β + m_e is the β-decay kinematics. It is not a new hypothesis. So Δm inherits the status of Q_β. Under the 2026-09-08 ruling, ε is the Markov trace at z_D. Recomputed (mpmath, 30 dps):
+
+| Q_β cell | Q_β (MeV) | Δm (MeV) | vs CODATA 1.29333 |
+|---|---|---|---|
+| z_D, order-zero E₀ (ruled base) | 0.4447004 | 0.9557 | −26.11 % |
+| z_D, tower-summed E₀ (δ_S element) | 0.4491 | 0.9601 | −25.77 % |
+| nuc11_interleaved dashboard cell | 0.6519 | 1.1629 | −10.09 % (element fails the reading-3 whole-word SDP; not admissible) |
+
+The production witness value of 1.2938 MeV (+0.04 %) comes from `q_beta_kashiwara_n2_mev`. That function is built on Form A (z = 1, inadmissible under D), on z_C, and on a phase whose carrier is proved vacuous. Its docstring says N = 2 was "chosen by target precision". It is fit-tier, as found by the derivation-chain audit (`/mnt/project-files/qou-derivation-chain/derivation-chain-audit-2026-11-15.md` §5.3).
+
+**Result (scope (a)):** route 2 gives no derived n − p closer than −26 %. The admissible derived cells sit at −26 %. The one cell nearer to measurement uses an element that the confinement SDP rejects. Route 2 does not supply a derivation of H_α either. The Q_β route uses the linear E₀·|Δtrace| form, and H_α is the log form α·ΔΦ. These are different functionals, so neither route validates the other.
+
+Route 2 depends on the open Q_β ladder under D (`qou-cds1`) and on the element choice (`qou-99qc`). It cannot close before they do. No number here is selected by residual.
