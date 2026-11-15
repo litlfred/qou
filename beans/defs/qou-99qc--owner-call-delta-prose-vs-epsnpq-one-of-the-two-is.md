@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-15T23:30:39Z
+updated_at: 2026-11-15T23:31:36Z
 parent: qou-10v9
 ---
 
@@ -3511,3 +3511,12 @@ Corpus status, checked first:
 Setup: as in ε-TR1, with the trace over the isospin-½ multiplicity space. Charge per strand: Q = T³ + Y/2 on V (strands 1–4), and Q = −(T³ + Y/2) of the index on the V* strand 5. X = Σ_{a<b≤5} Q_a Q_b (diagonal), inserted after Δ_S and before Ř₃₄. Report the first-order shift δε = d/dg [Tr M(Δ_S then 1+gX) / Tr M(1)] at g=0 for n→p and p→n, as exact functions of (q, Y), for words V⁰, V³ and V⁶.
 Questions: (i) is δε_np ≠ δε_pn? (ii) Which part is Y-independent? (iii) Does the asymmetry survive at q = 1 (classical) or vanish there?
 Prediction: the asymmetry is nonzero. At q = 1 it reduces to classical charge algebra (as in EM1), and the braid adds corrections. No coupling value is chosen and nothing is compared to data.
+
+
+### RESULT ε-EM1 (2026-11-15 23:50Z), coulomb_in_decay_epsilon_probe.py
+With the Coulomb insertion X = Σ_{a<b≤5} Q_aQ_b between Δ_S and the emission crossing, traced over the isospin-½ space:
+- δε/ε = (Y² − 2Y − 1)/2 for n→p, and (Y² + 2Y − 1)/2 for p→n.
+- These are EXACTLY independent of q and of the word (V⁰, V³, V⁶).
+- Asymmetry = 2Y exactly. It is zero at Y = 0.
+Prediction (i) holds only for Y ≠ 0. Prediction (iii) 'the braid adds corrections' FAILS: in this placement the braid adds nothing, and the charge enters as pure classical charge algebra (the Y·T³ cross term).
+Reading (scope a): on canonically traced isospin-½ states, the whole n↔p asymmetry this route can produce is carried by the hypercharge Y, linearly. Since Y is OPEN in the corpus (eightfold-open-problems; conj:sm-hypercharge-invariant; strand-twist-datum is a free label), the n–p break via charge is gated on deriving Y. It is not gated on the braid.
