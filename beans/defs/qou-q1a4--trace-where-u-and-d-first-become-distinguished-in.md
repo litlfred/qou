@@ -8,7 +8,7 @@ tags:
     - needs-owner
     - convention-d
 created_at: 2026-11-15T18:54:18Z
-updated_at: 2026-11-15T20:12:41Z
+updated_at: 2026-11-15T20:13:56Z
 parent: qou-avtq
 ---
 
@@ -65,3 +65,6 @@ A grep of folio/ content and Lean for an isospin orientation convention (e₁ = 
 
 
 2026-11-15 CORRECTION (§21): §18's 't_p is negative' was wrong. t_p = +0.40872, t_n = +0.33174 at q0. Under the linear form the neutron is LIGHTER (wrong sign), a scope-(a) negative. Bridge B (derivation-chain thread): a linear map normalised by the electron gives m_p/m_e ~ 1; a weight-space route needs ~55x derived suppression plus a sign flip. FE/EF must pre-register its order in h.
+
+
+2026-11-15 §22: FE/EF (sibling thread, folded into #7966). FE alone or EF alone gives a larger |ln r|, but the two have opposite signs and the choice between them is an ordering choice. The omega-symmetric insertion gives exactly q^-2. The extra factor A -> 2 at q=1 is the isospin 3/2-vs-1/2 weight. No derived u/d term beyond q^-2 on the U_q side. H_alpha still open.
