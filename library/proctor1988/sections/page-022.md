@@ -1,0 +1,72 @@
+---
+doc_id: proctor1988
+doc_title: "Odd symplectic groups"
+section_id: page-022
+section_title: "Page 22"
+pages: 22-22
+pdf_page: 22
+source_pdf: proctor1988.pdf
+source_sha256: 6604537cf1556c05
+text_source: ocr
+granularity: page
+doc_brief: "Proctor, Odd symplectic groups (Invent. Math. 92, 307–332, 1988) — symplectic groups on odd-dimensional spaces (not reductive), with a Weyl-type character formula whose denominator is a product over the positive roots of type BC_n."
+---
+328 R.A. Proctor
+
+above. Taking the union of all of the bases just constructed, we obtain a basis
+for ¥¢' as claimed. In particular suppose that 1(A)>n+m. No T}' can have
+more than m squares in the first column of 4/u. By Lemma 8.1, one has % =0
+if I(u)>n. So the basis just constructed is empty if /(A)>n+m, implying that
+Yo} =0. By Lemma 8.2, the GL,, weights of the basis vectors are as claimed.
+By Lemma 8.1, the Sp,,, weights of the basis vectors are also as claimed, since
+® commutes with GL,,,>Sp,,.
+
+Let v~ be the unique weight vector (up to scalar multiple) in V7? of GL 2,4
+weight (0, Ans ms Antm—1> +++> 95 Am+1> Ams Am=15 +++5 44). Note that ve V4. We
+will show that ¥' is indecomposable with respect to Sp.,,,, by showing that
+an arbitrary vector ve ¥¢' can be moved to v™ via actions of the Lie algebra
+SPn,m- Collecting all of the Sp., representations in ¥;' of highest weight
+together, set
+
+1s! = BU (TE).
+
+T%
+
+Use the Casimir operator for sp2, to project v to some non-zero v, in some
+Us’. Within %’, actions of sp2, can be used to move v, to an non-zero vz
+of GL, weight (0, 1,,0, 4,-1,---, 0,41). Let Y be the subspace of V spanned
+by §e7, 63, 00, Ons Cntis +s entm and set GLzy_:=GL(Y). Let Glin
+=GL,4mOSPon,m be the GL2,,4,, subgroup [GL, x GL,,]><C"". Let Y be the
+subspace of ¥? obtained by restricting the Young projection operator for ¥*
+to @*Y. Note that both v,¢%* and v- ¢%*. Hence v, can be moved to v™
+on account of the well-known indecomposability of @* with respect to
+Gls, O
+
+The following result is a restatement of a step in the above proof in the
+special case m= 1.
+
+Corollary 8.1. Restricting the Sp2,,, representation ¥;' to Sp2,x GL, yields
+a sum of irreducible Sp, x GL, representations with the following highest weights
+(u, b,). Each pSA such that A/u has at most one square in a column occurs exactly
+once. Then b, =|A|—|p| is the GL, weight.
+
+Proof of Theorem 2.2. We must confirm that the given formula is equal to
+the sum of the Sp,,-2¢Sp,,-1 characters described in Corollary 8.1, ignoring
+the GL, factor since z was set to 1. Use part (b) of Proposition 7.1 to express
+the formula of Theorem 2.2 with determinants, and divide the last column of
+the top and bottom by 2. Also, set pj=A;+n—i. So far in the numerator we
+have \ ,
+
+WRT + yp Pm cisnisjsn-1-
+
+Use the identity from Section 0 to express the denominator as a product over
+n-1
+
+the positive BC,_, roots. This is just [] (vy}—y; +) times the C,_, root product.
+j=l
+
+ie. the Sp,,-2 character formula denominator. Subtract the last row of the
+
+numerator from all other rows and then divide the jth column (1 Sj <n-!)
+
+by the factor (y}— y; *) from the denominator. The nth column is almost entirc!y

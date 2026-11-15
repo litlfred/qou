@@ -1,0 +1,1 @@
+Recall that one of the four axioms which must be satisfied in order for a finite set of vectors in Euclidean space to be a root system is that no multiple of a root can occur except —1 times the root.

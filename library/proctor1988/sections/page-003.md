@@ -1,0 +1,65 @@
+---
+doc_id: proctor1988
+doc_title: "Odd symplectic groups"
+section_id: page-003
+section_title: "Page 3"
+pages: 3-3
+pdf_page: 3
+source_pdf: proctor1988.pdf
+source_sha256: 6604537cf1556c05
+text_source: ocr
+granularity: page
+doc_brief: "Proctor, Odd symplectic groups (Invent. Math. 92, 307–332, 1988) — symplectic groups on odd-dimensional spaces (not reductive), with a Weyl-type character formula whose denominator is a product over the positive roots of type BC_n."
+---
+Odd symplectic groups 309
+
+which have an even number of minus signs. The alternating sum over the group
+can be written
+xx yrty Zipz7
+Y (- 1 x7 = X24 772 y? +y7? 2247772
+
+geW(Dny XPHXTM ya py Ms 2742773]
+
+where the subscript “D” means only the monomials with an even number of
+negative exponents are to be taken. But if y,=0 then we can replace the entries
+1+1 in the ith row by 1’s and erase the subscript “D”. For D, the vector
+p=(n—1,n—2,..., 1,0), and so the left hand side of the denominator identity
+IS:
+
+2 2
+
+x?P4x72 0 yPpy 2 22427
+Yo (HV x*Ma|xt exo pty ztz7t
+oeW(Dy) 1 1 1
+
+It is aesthetically pleasing to do without the subscript “D”. When else can
+this be done? If we set x;=1 then every entry in the jth column becomes 1+ 1.
+Then as before the subscript “D” can be dropped; for example take x,=z=1:
+
+XM XT pay
+Y (— 1! x2 =lx7 4x77 yRpyT?2 Ih
+oeW(D,) ment XIB$ xT pM py 7% 1
+
+Recall that one of the four axioms which must be satisfied in order for
+a finite set of vectors in Euclidean space to be a root system is that no multiple
+of a root can occur except —1 times the root. This axiom is not required
+by some authors; one then has “non-reduced” root systems. But the only non-
+teduced root systems which are not reduced (ordinary) root systems are the
+systems BC,,,n2 1, for which 4(BC,)= 4(B,)U 4(C,) [Hmph, p. 41 and Ex. 12.3].
+No simple Lie group corresponds to the non-reduced root system BC,,. In fact,
+one reason for requiring the no-multiples axiom is that then root systems corre-
+spond exactly to simple complex Lie algebras.
+
+Although no simple Lie group is associated to the root system BC,_,, one
+can still ask if there is a Vandermonde-like identity associated to it. There
+were two denominator identities associated to the Weyl group W(BC,); perhaps
+a BC, _, identity would be a second identity associated to W(D,). Keeping the
+resthetically desirable x,=1 form above in mind, guessing values for p soon
+leads to
+
+> (- 1) x2) = Tl (xt/2 — x74),
+aeW (Dn) n=1  geAt+(BCn-1)
+
+Where p=(n—4,n—3, ..., 3,4), and x is n-variate on the left but (n—1)-variate
+Cn the right. We have reached the goal of this section: This identity can be
+thought of as a Vandermonde or “denominator” identity for the non-reduced

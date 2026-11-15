@@ -1,0 +1,66 @@
+---
+doc_id: proctor1988
+doc_title: "Odd symplectic groups"
+section_id: page-004
+section_title: "Page 4"
+pages: 4-4
+pdf_page: 4
+source_pdf: proctor1988.pdf
+source_sha256: 6604537cf1556c05
+text_source: ocr
+granularity: page
+doc_brief: "Proctor, Odd symplectic groups (Invent. Math. 92, 307–332, 1988) — symplectic groups on odd-dimensional spaces (not reductive), with a Weyl-type character formula whose denominator is a product over the positive roots of type BC_n."
+---
+310
+
+root system BC, _,. To our knowledge this identity is new. When n=3 we
+have
+
+R.A. Proctor
+
+Mi-x7? yroy 2 giz? xe=x73 y3a-y73 23-773
+a 3 (3 7 a oa
+X?—X72 yr—y "2 72-7272 x?=x7? y?-y"? 72-2771 C,
+x@—x72 yRoyT? gig? xtoxtt yloyct glogt
+x?4x72 yp? py"? 224277 xi¢xc? yity? 1
+xt4x7t ylty7t zt4+z27! XP+X? y+y? 1 BC,
+1 1 1
+1 1 1 etx? yety? 1
+x3 — x73 yroy? x2—x72 y2-y?
+ee eee eee on ten Cc,
+X?-xX7? yR—y™? xt—x7h yl—y
+xt+x7! yl+y7! xe+¢x72 1 RC
+1 1
+1 1 +x? 1 ,
+|x?—x7}| |xt—x7}| Cc
+Fig. 1a. Left hand sides
+Fee ee ee Fee ee ee
+(ay Fax ayioryrax ty a) (ty Fax aye yxy)
+1 1 one oa
+(x?z~2—x~2z2)(x?z2?—x~2z72) (x?z272—x7222)(x?z2?—x~2z7 2) Cc
+14 en 1
+(yiz-2—y72z2(y2z2—yo2z-2)— (y2z72—y72z3)(y2z2 —po2z2)
+Fee yee eee ee - - _
+(x?—x™2)(y?—y"?)(z?—-z 2) (xt —x7")(y'—y7")(@t 27)
+alt wid, id ai 4, ala -1 4 aa -i 4
+(ay Fx ayaQetyr—xo2y" 2) (ty Fx Fy Oryx 7?)
+(x2272—x~?z2)(x2z?—x 72272) (x? —x7')(y!—y74) BC,
+14 were 14
+(22-2 y"Fza\(yazt—y#2-8) (x7 Ay")
+Fer ger Oe Fe ee ee
+(ty Fox aya ye—x zy 7) Cay Fx zy Oryx 2y7)
+a -1,.1 -1, - - 2
+(x? x7 2)(y?—y7?) (x4 x7 \(yt—y7*)
+Sees eee Oe a ee eves 1
+(Py —x Fy) ye— x Fy" 9) (xP —x" QF — x") BC
+(x2 x72) (x! —x7') Cc
+
+Fig. 1b. Right hand sides
+
+3 s 3 3
+x?+x72 2+y 2 | A
+
+ge ae [GF -xhot-y Aat xO"
+XP4+x°2 yprty 2? Weis or OU a
+pk a (x2 y"?2—x 7 y*)(x? 2x? 2)
+XP+x°2 yrty? 1

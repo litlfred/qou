@@ -2707,6 +2707,8 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "tarabunga2025" },
   // 2026-11-15: Turaev 1988, split from the GDZ scan of Invent. Math. 92 and ingested as library/turaev1988/.
   { id: "turaev1988" },
+  // 2026-11-15: Proctor 1988, same scan, ingested as library/proctor1988/.
+  { id: "proctor1988" },
 ];
 
 export const references: Reference[] = assemble(ORDER);

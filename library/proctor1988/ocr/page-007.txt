@@ -1,0 +1,53 @@
+Odd symplectic groups 313
+
+The group Sp,,-, cannot be realized as a Lie subgroup of Sp,,. A recurring
+theme throughout the paper will be that things (e.g. character identities and
+decompositions) work out almost (but not quite) as nicely for Sp2,-, as for
+Sp2,. For example, the numerator of the character formula for Sp,,-, is an
+alternating sum over the Weyl group W(D,), but with one variable then set
+to 1. This “twist” may help to explain the long delay in noticing the Sp,,_,
+results obtained here. In Section 7 it will be described how F.L. Bauer in 1954
+and R.C. King in 1979 empirically observed quantities which we now know
+are odd symplectic characters.
+
+Corollary 2.1 expresses the dimension of a given trace-free Sp,,_, tensor
+representation as a product over the positive roots of D,. The Sp2,—, versions
+of some other standard character identities are given in Section 3. The form
+of these identities is usually completely determined by analogy with the existing
+identities for Sp,,, SO2.,+1,, and SO,,. So the Sp,,, identities can be viewed
+as filling gaps created by displaying the existing identities in the ladder frame-
+work described above. For example, one of the new identities expresses the
+dimension of the Ath representation (for / fixed) of Sp2,-,; as a polynomial
+in n. This polynomial can be combined with the analogous polynomial for
+Sp2, to obtain a polynomial P,(N) for the dimension of the Ath representation
+of Spy. Before it had been known that if |AJ=k and N=2n, then P,(2n)
+=(—1)'Q,(—2n), where Q,(N) denotes the analogous dimension polynomial
+for the orthogonal group Oy. Now this identity holds for N=2n+1 as well.
+The defining of the groups Sp,,_, also permits the completion of an overall
+pretty picture for Gelfand patterns for representations of classical groups.
+
+The combinatorial identity Corollary 4.1 was the original motivation for
+this work. Product identities of this form which enumerate various sets of plane
+partitions have been studied by combinatorialists on and off over the last 80
+years, so it is somewhat surprising that this identity had not been found before.
+(The p=0 case was conjectured by Stanley in 1976 [Stn1], where the result
+is erroneously listed as a theorem). Our original proof of this identity for odd
+p used the King-Zhelobenko tableaux description for weights of Sp,,, together
+with the Weyl dimension product formula. The desire to extend this proof to
+the case of even p led to the definition of Sp,,_, and to Theorem 2.1.
+
+Our main result Theorem 2.1 is actually stated for the more general intermedi-
+ate symplectic groups. Fix n=0 and m=O and let V=C?"*". Let B be the
+bilinear form on V whose matrix is formed by embedding the usual 2n x 2n
+form for Sp,,, in the upper left hand corner of a (2n+m) x (2n-+m) matrix whose
+other entries are 0. (Any skew-symmetric bilinear form of rank 2n can be put
+into this form.) Define Sp.,,,, to be the subgroup of GL2n+m Which fixes B.
+One has Spo, m [Span X GL, ]><C3"", where C, is the additive group of com-
+plex numbers. Note that GLy=Spo,v and Spy=Spon,9 OF Sp2,,1, depending
+upon whether N=2n or 2n+1. So for fixed N, the Sp.,,», Such that 2n+m=N
+interpolate between GLy and Spy.
+
+Unlike the situation for SPan it is not true that the character of every compo-
+nent of @* V for Sp2,4, also arises as the character of a trace free representation
+‘n some @'V, The fact that Sp2,+1 is not reductive also complicates the decom-
+Position of @*V in other ways. Conjecture 5.1 proposes the existence of a tab-

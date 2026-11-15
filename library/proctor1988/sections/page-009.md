@@ -1,0 +1,68 @@
+---
+doc_id: proctor1988
+doc_title: "Odd symplectic groups"
+section_id: page-009
+section_title: "Page 9"
+pages: 9-9
+pdf_page: 9
+source_pdf: proctor1988.pdf
+source_sha256: 6604537cf1556c05
+text_source: ocr
+granularity: page
+doc_brief: "Proctor, Odd symplectic groups (Invent. Math. 92, 307–332, 1988) — symplectic groups on odd-dimensional spaces (not reductive), with a Weyl-type character formula whose denominator is a product over the positive roots of type BC_n."
+---
+Odd symplectic groups 315
+
+{1<I<...<n<a<n+1<...<n+m} such that T,j;<T,.,,, and T,j;ST,j41-
+An N-semistandard tableau is said to be (n,m)-symplectic if the entries i and
+7 do not occur below the ith row for 1<i<n. (This is a special case of the
+meaning assigned to the same terminology in [Prc1]). Let b;(T) be the number
+of ’'s appearing in T.
+
+If 9: Sp2n,m— GL(W) is a representation, then weW is a weight vector of
+weight (Cy, 0-65 Cm) if ed) w=yi... yanzprt... zante w for d
+=Diag(y,,¥i 1, +++) n> In is Z15 -++> Zm)- Itreducible polynomial representations
+of GLy are indexed by partitions 4 with /(A)< N. If || =k then the Ath representa-
+tion of GLy can be realized on a subspace ¥*< @*V of Young symmetry
+type A. This representation has a weight basis indexed by N-semistandard tab-
+leaux of shape 2. If the axis basis is chosen for the space of weights IE’, then
+the coordinates of the highest weight are (A,, A>, ..., Ay). Irreducible representa-
+tions of Sp,,, are indexed by partitions 4 with [(A)Sn. Let N=2n. In [Weyl]
+the Ath representation of Sp., is realized on the trace free subspace ¥%' of
+the GLy module ¥*. Zhelobenko and King showed that the weights of this
+representation are described by (n,0)-symplectic tableaux of shape 4 [Kngl,
+Zhl1]. The highest weight of this representation is (A,, A, ..., 4,) in axis coordi-
+nates. Our main result generalizes this viewpoint of Weyl to the intermediate
+symplectic groups Sp2,, m- (All proofs for this section appear in Section 8).
+
+Theorem 2.1. Let 1 be a partition of k such that I(A)S2n+m. Let ¥V*C@*V
+be an irreducible GL ,4 module of Young symmetry type A. The trace free sub-
+space ¥¢" is an indecomposable Sp2,,m module. If I(A)>n-+m then ¥¢ = {0}. If
+I(a)Sn+m then ¥; has a weight basis which is indexed by the (n, m)-symplectic
+tableaux of shape 4. The weight vector indexed by the tableau T has weight
+(6, (T)—b;(T), ..., ba(T)—by(T), Bn4 1 (T), «+5 Ontm(T)).
+
+A byproduct of the proof of this theorem is the “branching rule” for restrict-
+ing a trace free Sp>,,4, representation to the subgroup Sp,,. (See Corollary
+8.1). From the branching rule the following result is obtained. This theorem
+States the central point of the paper: The trace free representations of Sp2,-1
+have a character formula which is nearly identical in form to the usual Weyl
+character formula.
+
+Theorem 2.2. Let 2 be such that I(A)Sn. Let ~, be the indecomposable representa-
+tion @: Spo,—-1 ~ GL(%"). Then
+
+Trace[p,(Diag(y,, yi", ++) Ya-10 Ya 2=D)]
+
+> (— 1 yea +0) y (— 1 yor to)
+
+aeW (Dn) n= 1 oeW (Dn) n= 1
+~ TL 8? -y"#?)
+1
+YX (-1) Co) yoo) aed+(BCn- 1)
+oeW(Dn) n= 1
+
+Here y is n-variate except in the product over the positive roots of BC,_,, where
+Y=(V1,..., Yn—4). The vector 4=(A,, ...,4,) (row lengths) is as for C, or Spon,
+whereas the vector p=(n—4,n—3, ..., 3,4) is as for B,. And I(a) is the Coxeter
+length of oe W(D,), the Weyl group of type D,.

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/proctor1988/sections/page-014",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 14",
+  "pageStart": 14,
+  "pageEnd": 14,
+  "contains": [
+    "library/proctor1988/blocks/prose-page-014"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/proctor1988",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/proctor1988",
+  "provenance": "ingested"
+}

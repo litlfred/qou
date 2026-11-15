@@ -1,0 +1,58 @@
+---
+doc_id: proctor1988
+doc_title: "Odd symplectic groups"
+section_id: page-024
+section_title: "Page 24"
+pages: 24-24
+pdf_page: 24
+source_pdf: proctor1988.pdf
+source_sha256: 6604537cf1556c05
+text_source: ocr
+granularity: page
+doc_brief: "Proctor, Odd symplectic groups (Invent. Math. 92, 307–332, 1988) — symplectic groups on odd-dimensional spaces (not reductive), with a Weyl-type character formula whose denominator is a product over the positive roots of type BC_n."
+---
+330 R.A. Proctor
+
+weakly decreasing condition. The entries on the resulting main diagonal describe
+the shape of the original (n—1, 1)-symplectic tableau. Each shifted plane partition
+described in part (b) arises exactly once in this fashion. Hence the number
+of plane partitions is given by the dimension formula for ¥% in Corollary 2.1.
+The factors in the first (second) half of the product formula arise from the
+D,, positive roots e;—e;(e;+e,). Part (a) can be proved in the same fashion
+using(n, 0)-symplectic tableaux for Sp,,. O
+
+9. The Gelfand-Zelevinsky definition
+
+Gelfand and Zelevinsky define their notion of symplectic group simultaneously
+on odd and even dimensional vector spaces as follows: Let V be an N-dimension-
+al complex vector space and consider the action of GL(V) on V*@®A?7V*.
+According to Lemma 1 of [GeZv] there is a unique open (dense) orbit for
+this action. It consists of all (€,@) such that +0, @ has maximal rank, and
+ker € ker p=0. Choose any such (€, g) and define GZ(V, €, @) to be the sub-
+group of GL(V) which fixes (€, g). Let V=(C and use the notation of Section
+2 for the axis bases of V and V*. When N=2n+1 the description of Spoj41
+(defined by B on C?"*') given in Section1 can be used to see that
+GZ(C?"*', f,.,,B)=Sp2,. Now consider N=2n+2 and V=C?"*?. Let o be
+the usual bilinear form B, and again choose €=f,,,. Then define GZ2,41
+=GZ(C?"*?, f,,,, B). Re-order the basis for c2"*? to
+
+Cnt 19€ns +5 Cty Cis +++ Cn» Cx#y- Then for the Lie algebra of GZ,,,,, one finds
+0 0 0
+a,
+a
+822n+1= ‘ Spon 0
+wi'
+—b,
+
+c by... byay...a, 0
+
+Note that GZ,,,;=Sp2,><H2,, where H,, is the Heisenberg group correspond-
+ing to the Heisenberg algebra defined in Section 6. The “first” maximal parabolic
+subgroup of Sp,,+2 fixes the line spanned by egpy. Let Pb2,,, denote this
+subgroup. The Lie algebra pb,,,, is the same as above, except the upper left
+and lower right corner 0’s should be replaced by —z and z respectively. Let
+H<C?"*? be the null space of €=f,,,. Then the restriction of GZ2n+1 '
+H is SSpon41-
+
+Altogether there are four reasonable contenders for the title of “odd sym-
+plectic group”:
