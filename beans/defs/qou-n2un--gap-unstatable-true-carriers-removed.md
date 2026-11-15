@@ -7,7 +7,7 @@ tags:
     - lean-foundations
     - devacuify
 created_at: 2026-11-15T14:05:00Z
-updated_at: 2026-11-15T20:47:32Z
+updated_at: 2026-11-15T20:50:20Z
 parent: qou-6qbv
 ---
 
@@ -72,3 +72,8 @@ Branch `claude/lean-devacuify-true-carriers-2026-11-15`, PR #7915.
 ## 2026-11-15: Habiro (e78dac67ac)
 Existence and uniqueness of the Habiro expansion are proved, so those two axioms are removed. The termination-bound axiom was FALSE: M(M+1) ≤ 2(deg p+1) fails at p = 1 − u, and the refutation is not_habiro_termination_bound_old. It is replaced by the proved bound M(M−1) ≤ 2 deg p.
 Next: CategoricalQExtDeriv.exists_axiom and frobeniusForm_unique.
+
+## 2026-11-15: q-ext-deriv and Frobenius (b3cba7d35e)
+- CategoricalQExtDeriv.exists_axiom is removed and proved, with the unit Frobenius–Hopf object as the witness. Note: the structure puts no law on d, so the existence is cheap.
+- frobeniusForm_unique_of_schur is proved (preadditive with kernels, monoidal-preadditive, A and 𝟙 simple). frobeniusForm_unique_axiom is KEPT.
+- GAP: does frobeniusForm_unique_axiom hold without linear structure or simplicity of 𝟙? No counterexample is known. In Schur-type categories the unit forces A ≅ 𝟙. A counterexample would need a non-abelian category with zero morphisms and a simple A ≇ 𝟙 carrying a Frobenius–Hopf structure.
