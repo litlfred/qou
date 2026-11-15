@@ -44,6 +44,9 @@ under the six permutations of `(a, b, c)`, so `6S` is the sum over triples of th
 `S₃`-orbit sum, and each orbit sum is the three-point curvature, which the Arnold relation and
 the braid relations kill (`orbit_sum_zero`).
 
+Part III proves the converse for every `n` (`isFlat_of_curvature_zero`), so flatness and the
+relations are equivalent (`curvature_zero_iff_isFlat`).
+
 Combined with Part I (`casimir_curvature_zero`): **for every Lie algebra, every invariant
 `Ω`, every family of slot representations and every `n`, the KZ-type connection
 `Σ_{i<j} Ω_{ij} d log(z_i − z_j)` is flat.** This is the algebraic half of Drinfeld–Kohno;
@@ -411,7 +414,7 @@ theorem connForm_smul (M : Fin n → Fin n → A) (z u : Fin n → k) (c : k) :
   simp only [Pi.smul_apply, smul_eq_mul]; ring
 
 theorem connForm_translation (M : Fin n → Fin n → A) (z : Fin n → k) :
-    connForm M z (fun _ => 1) = 0 := by
+    connForm M z (fun _ : Fin n => (1 : k)) = 0 := by
   simp [connForm, omegaAt]
 
 /-- `ι_E ω = ½ Σ_{i ≠ j} M_{ij}`, independent of the point `z`. -/
@@ -428,7 +431,297 @@ theorem euler_commute [CharZero k] {M : Fin n → Fin n → A} (hsym : ∀ i j, 
     Commute (connForm M z u) (connForm M z z) :=
   sub_eq_zero.1 (curvature_zero_of_isFlat z u z hsym hM hz)
 
+/-! ### The transverse part
+
+`ω` is additive in the tangent vector, kills translations, and is homogeneous of degree `−1`
+in the base point. So on the quotient of the tangent space by `span{T, E}` (translations and
+the Euler field) the transverse part `ω(u) mod k·ι_E ω` is well defined: shifting `u` by
+`a·E + b·T` shifts `ω(u)` by `a·ι_E ω` only (`connForm_add_euler_translation`). -/
+
+theorem connForm_add (M : Fin n → Fin n → A) (z u w : Fin n → k) :
+    connForm M z (u + w) = connForm M z u + connForm M z w := by
+  unfold connForm omegaAt
+  rw [← Finset.sum_add_distrib]
+  refine Finset.sum_congr rfl fun p _ => ?_
+  rw [← add_smul]; congr 1
+  simp only [Pi.add_apply]; ring
+
+theorem connForm_add_euler_translation (M : Fin n → Fin n → A) (z u : Fin n → k) (a b : k) :
+    connForm M z (u + a • z + b • (fun _ : Fin n => (1 : k))) =
+      connForm M z u + a • connForm M z z := by
+  rw [connForm_add, connForm_add, connForm_smul, connForm_smul, connForm_translation, smul_zero,
+    add_zero]
+
+/-- Homogeneity: `ω` at the dilated point `c·z` is `c⁻¹ ω` at `z`. -/
+theorem connForm_dilate (M : Fin n → Fin n → A) (z u : Fin n → k) (c : k) :
+    connForm M (c • z) u = c⁻¹ • connForm M z u := by
+  unfold connForm omegaAt
+  rw [Finset.smul_sum]
+  refine Finset.sum_congr rfl fun p _ => ?_
+  rw [smul_smul]; congr 1
+  simp only [Pi.smul_apply, smul_eq_mul, div_eq_mul_inv]
+  rw [← mul_sub, mul_inv]; ring
+
+/-- Translation invariance in the base point. -/
+theorem connForm_shift (M : Fin n → Fin n → A) (z u : Fin n → k) (b : k) :
+    connForm M (z + b • (fun _ : Fin n => (1 : k))) u = connForm M z u := by
+  simp [connForm, omegaAt]
+
 end PartII
+
+/-! ## Part III — zero curvature ⇒ relations, for every `n`
+
+The converse of Part II, so that flatness and the relations are **equivalent** for every `n`
+(the content block proves this at `n = 3` only). The argument is purely algebraic: `ω(e_i)` is
+the residue sum `Σ_b (z_i − z_b)⁻¹ M_{ib}` (`connForm_single`), and moving a single point `z_m`
+turns `[ω(e_i), ω(e_j)] = 0` into a rational function of one variable with simple poles. Clearing
+denominators and Lagrange interpolation at three fresh points (`pole_two`; `pole_one` for one
+pole) isolates each pole coefficient. The pole at `z_m = z_i` gives `first_residue`; moving a
+fourth point `z_{m'}` inside it gives `disjoint_commute`; and with those, `first_residue`
+collapses to `[M_{ab}, M_{ac} + M_{bc}] = 0`. Configurations are sampled at `i ↦ (i : k)` and its
+one-point updates, so only `CharZero k` (for an infinite supply of fresh points) is used. No
+limits, no analysis.
+-/
+
+section Converse
+
+variable {k : Type*} [Field k] {A : Type*} [Ring A] [Algebra k A] {n : ℕ}
+
+/-- A function of `s` of the form `K₀ + (a − s)⁻¹ K₁` vanishing at two distinct points
+has `K₁ = 0`. -/
+theorem pole_one {a s₁ s₂ : k} {K₀ K₁ : A} (h12 : s₁ ≠ s₂)
+    (e1 : K₀ + (a - s₁)⁻¹ • K₁ = 0) (e2 : K₀ + (a - s₂)⁻¹ • K₁ = 0) : K₁ = 0 := by
+  have hd : (a - s₁)⁻¹ - (a - s₂)⁻¹ ≠ 0 := by
+    rw [sub_ne_zero]; intro h
+    exact h12 (by have := inv_injective h; linear_combination -this)
+  have : ((a - s₁)⁻¹ - (a - s₂)⁻¹) • K₁ = 0 := by
+    rw [sub_smul]; linear_combination (norm := module) e1 - e2
+  exact (smul_eq_zero.1 this).resolve_left hd
+
+/-- A function of `s` of the form `K₀ + (a − s)⁻¹ K₁ + (b − s)⁻¹ K₂`, `a ≠ b`, vanishing at
+three distinct points off `{a, b}` has `K₁ = 0`. -/
+theorem pole_two {a b s₁ s₂ s₃ : k} {K₀ K₁ K₂ : A} (hab : a ≠ b) (h12 : s₁ ≠ s₂) (h13 : s₁ ≠ s₃)
+    (h23 : s₂ ≠ s₃) (h1a : s₁ ≠ a) (h2a : s₂ ≠ a) (h3a : s₃ ≠ a) (h1b : s₁ ≠ b) (h2b : s₂ ≠ b)
+    (h3b : s₃ ≠ b)
+    (e1 : K₀ + (a - s₁)⁻¹ • K₁ + (b - s₁)⁻¹ • K₂ = 0)
+    (e2 : K₀ + (a - s₂)⁻¹ • K₁ + (b - s₂)⁻¹ • K₂ = 0)
+    (e3 : K₀ + (a - s₃)⁻¹ • K₁ + (b - s₃)⁻¹ • K₂ = 0) : K₁ = 0 := by
+  -- clear denominators: q(s) = (a−s)(b−s)K₀ + (b−s)K₁ + (a−s)K₂ vanishes at s₁, s₂, s₃
+  have q : ∀ s : k, s ≠ a → s ≠ b → K₀ + (a - s)⁻¹ • K₁ + (b - s)⁻¹ • K₂ = 0 →
+      ((a - s) * (b - s)) • K₀ + (b - s) • K₁ + (a - s) • K₂ = 0 := by
+    intro s hsa hsb e
+    have ha : a - s ≠ 0 := sub_ne_zero.2 (Ne.symm hsa)
+    have hb : b - s ≠ 0 := sub_ne_zero.2 (Ne.symm hsb)
+    have := congrArg (fun x => ((a - s) * (b - s)) • x) e
+    simp only [smul_add, smul_smul, smul_zero] at this
+    rw [← this]
+    congr 2
+    · field_simp
+    · field_simp
+  have q1 := q _ h1a h1b e1
+  have q2 := q _ h2a h2b e2
+  have q3 := q _ h3a h3b e3
+  -- Lagrange: D · q(a) = Σ N_r(a) q(s_r), and q(a) = (b − a) K₁
+  have key : ((s₁ - s₂) * (s₁ - s₃) * (s₂ - s₃) * (b - a)) • K₁ = 0 := by
+    linear_combination (norm := module)
+      ((a - s₂) * (a - s₃) * (s₂ - s₃)) • q1 - ((a - s₁) * (a - s₃) * (s₁ - s₃)) • q2 +
+        ((a - s₁) * (a - s₂) * (s₁ - s₂)) • q3
+  have hD : (s₁ - s₂) * (s₁ - s₃) * (s₂ - s₃) * (b - a) ≠ 0 := by
+    exact mul_ne_zero (mul_ne_zero (mul_ne_zero (sub_ne_zero.2 h12) (sub_ne_zero.2 h13))
+      (sub_ne_zero.2 h23)) (sub_ne_zero.2 (Ne.symm hab))
+  exact (smul_eq_zero.1 key).resolve_left hD
+
+/-- `ω(e_a) = Σ_b (z_a − z_b)⁻¹ M_{ab}`: the residue sum at the point `a`. -/
+def resid (M : Fin n → Fin n → A) (z : Fin n → k) (a : Fin n) : A := ∑ b, (z a - z b)⁻¹ • M a b
+
+theorem connForm_single [CharZero k] {M : Fin n → Fin n → A} (hsym : ∀ i j, M i j = M j i) (z : Fin n → k)
+    (a : Fin n) : connForm M z (Pi.single a 1) = resid M z a := by
+  unfold connForm resid omegaAt
+  rw [Fintype.sum_prod_type]
+  simp only [Pi.single_apply, sub_div, mul_sub, sub_smul, Finset.sum_sub_distrib, ite_div,
+    zero_div, mul_ite, mul_zero, ite_smul, zero_smul, one_div, Finset.sum_ite_eq',
+    Finset.mem_univ, if_true]
+  rw [Finset.sum_eq_single a (fun b _ hb => by simp [hb]) (by simp)]
+  simp only [if_true, ← Finset.sum_sub_distrib]
+  refine Finset.sum_congr rfl fun b _ => ?_
+  rw [hsym b a, ← neg_sub (z a) (z b), inv_neg, mul_neg, neg_smul, sub_neg_eq_add, ← add_smul]
+  congr 1; rw [← add_mul, ← two_mul, mul_inv_cancel₀ two_ne_zero, one_mul]
+
+theorem sum_split (f : Fin n → A) (m : Fin n) :
+    ∑ b, f b = f m + ∑ b, if b = m then 0 else f b := by
+  have : ∀ b, f b = (if b = m then f b else 0) + (if b = m then 0 else f b) := by
+    intro b; split_ifs <;> simp
+  conv_lhs => rw [Finset.sum_congr rfl fun b _ => this b]
+  rw [Finset.sum_add_distrib, Finset.sum_ite_eq']; simp
+
+omit [Field k] in
+theorem update_injective [DecidableEq k] {z : Fin n → k} (hz : Function.Injective z) {s : k}
+    (hs : s ∉ Finset.univ.image z) (m : Fin n) : Function.Injective (Function.update z m s) := by
+  have hne : ∀ b, z b ≠ s := fun b hb => hs (Finset.mem_image.2 ⟨b, Finset.mem_univ _, hb⟩)
+  intro a b h
+  by_cases ha : a = m <;> by_cases hb : b = m
+  · rw [ha, hb]
+  · rw [ha, Function.update_self, Function.update_of_ne hb] at h; exact absurd h.symm (hne b)
+  · rw [hb, Function.update_self, Function.update_of_ne ha] at h; exact absurd h (hne a)
+  · rw [Function.update_of_ne ha, Function.update_of_ne hb] at h; exact hz h
+
+/-- `ω(e_a)` with the term at `m` removed. -/
+def residOff (M : Fin n → Fin n → A) (z : Fin n → k) (a m : Fin n) : A :=
+  ∑ b, (if b = m then (0 : k) else (z a - z b)⁻¹) • M a b
+
+theorem resid_update {M : Fin n → Fin n → A} (z : Fin n → k) {a m : Fin n} (ham : a ≠ m)
+    (s : k) : resid M (Function.update z m s) a = residOff M z a m + (z a - s)⁻¹ • M a m := by
+  unfold resid residOff
+  rw [sum_split _ m, add_comm, Function.update_self, Function.update_of_ne ham]
+  congr 1
+  refine Finset.sum_congr rfl fun b _ => ?_
+  split_ifs with hb
+  · simp
+  · rw [Function.update_of_ne hb]
+
+/-- **First residue.** If `[ω(e_i), ω(e_j)] = 0` on all of configuration space, then for every
+`m ∉ {i, j}` the coefficient of the pole at `z_m = z_i` vanishes:
+`[M_{im}, ω(e_j) − (pole at m)] + (z_j − z_i)⁻¹ [M_{im}, M_{jm}] = 0`. -/
+theorem first_residue [CharZero k] [DecidableEq k] {M : Fin n → Fin n → A}
+    (hR : ∀ z : Fin n → k, Function.Injective z → ∀ a b,
+      resid M z a * resid M z b = resid M z b * resid M z a)
+    {i j m : Fin n} (hij : i ≠ j) (him : i ≠ m) (hjm : j ≠ m) (z : Fin n → k)
+    (hz : Function.Injective z) :
+    M i m * residOff M z j m - residOff M z j m * M i m +
+      (z j - z i)⁻¹ • (M i m * M j m - M j m * M i m) = 0 := by
+  set Xi := residOff M z i m
+  set Xj := residOff M z j m
+  set P := M i m
+  set Q := M j m
+  have zij : z i ≠ z j := hz.ne hij
+  -- the identity at a fresh value `s` of `z_m`
+  have hs : ∀ s : k, s ∉ Finset.univ.image z →
+      (Xi * Xj - Xj * Xi) + (z i - s)⁻¹ • (P * Xj - Xj * P +
+        (z j - z i)⁻¹ • (P * Q - Q * P)) +
+        (z j - s)⁻¹ • (Xi * Q - Q * Xi - (z j - z i)⁻¹ • (P * Q - Q * P)) = 0 := by
+    intro s hsT
+    have hne : ∀ b, z b ≠ s := fun b hb => hsT (Finset.mem_image.2 ⟨b, Finset.mem_univ _, hb⟩)
+    have h := hR _ (update_injective hz hsT m) i j
+    rw [resid_update z him, resid_update z hjm, ← sub_eq_zero] at h
+    have hαβ : (z i - s)⁻¹ * (z j - s)⁻¹ =
+        (z j - z i)⁻¹ * (z i - s)⁻¹ - (z j - z i)⁻¹ * (z j - s)⁻¹ := by
+      have h1 : z i - s ≠ 0 := sub_ne_zero.2 (hne i)
+      have h2 : z j - s ≠ 0 := sub_ne_zero.2 (hne j)
+      have h3 : z j - z i ≠ 0 := sub_ne_zero.2 zij.symm
+      field_simp; ring
+    rw [← h]
+    simp only [add_mul, mul_add, smul_mul_assoc, mul_smul_comm, smul_smul, smul_add, smul_sub,
+      hαβ, mul_comm (z j - s)⁻¹ (z i - s)⁻¹]
+    module
+  -- three fresh values
+  obtain ⟨s₁, h1⟩ := Infinite.exists_notMem_finset (Finset.univ.image z)
+  obtain ⟨s₂, h2⟩ := Infinite.exists_notMem_finset (insert s₁ (Finset.univ.image z))
+  obtain ⟨s₃, h3⟩ := Infinite.exists_notMem_finset (insert s₂ (insert s₁ (Finset.univ.image z)))
+  simp only [Finset.mem_insert, not_or] at h2 h3
+  have mem : ∀ b, z b ∈ Finset.univ.image z := fun b => Finset.mem_image_of_mem z (Finset.mem_univ b)
+  have nz : ∀ {s : k}, s ∉ Finset.univ.image z → ∀ b, s ≠ z b := fun hs b h => hs (h ▸ mem b)
+  exact pole_two zij (Ne.symm h2.1) (Ne.symm h3.2.1) (Ne.symm h3.1) (nz h1 i) (nz h2.2 i)
+    (nz h3.2.2 i) (nz h1 j) (nz h2.2 j) (nz h3.2.2 j) (hs _ h1) (hs _ h2.2) (hs _ h3.2.2)
+
+theorem residOff_update {M : Fin n → Fin n → A} (z : Fin n → k) {j m m' : Fin n} (hjm' : j ≠ m')
+    (hmm' : m ≠ m') (s : k) :
+    residOff M (Function.update z m' s) j m =
+      (∑ b, (if b = m' then (0 : A) else (if b = m then (0 : k) else (z j - z b)⁻¹) • M j b)) +
+        (z j - s)⁻¹ • M j m' := by
+  unfold residOff
+  rw [sum_split _ m', add_comm, if_neg hmm'.symm, Function.update_self,
+    Function.update_of_ne hjm']
+  congr 1
+  refine Finset.sum_congr rfl fun b _ => ?_
+  split_ifs with h1 h2 <;> simp_all [Function.update_of_ne]
+
+/-- The point-sample used to reach configuration space. -/
+theorem natCast_injective [CharZero k] : Function.Injective (fun i : Fin n => ((i : ℕ) : k)) :=
+  Nat.cast_injective.comp Fin.val_injective
+
+/-- **Second residue: disjoint commutators vanish.** -/
+theorem disjoint_commute [CharZero k] [DecidableEq k] {M : Fin n → Fin n → A}
+    (hR : ∀ z : Fin n → k, Function.Injective z → ∀ a b,
+      resid M z a * resid M z b = resid M z b * resid M z a)
+    {i j m m' : Fin n} (hij : i ≠ j) (him : i ≠ m) (hjm : j ≠ m) (him' : i ≠ m') (hjm' : j ≠ m')
+    (hmm' : m ≠ m') : M i m * M j m' = M j m' * M i m := by
+  set z : Fin n → k := fun i => ((i : ℕ) : k)
+  have hz : Function.Injective z := natCast_injective
+  have zij : z i ≠ z j := hz.ne hij
+  obtain ⟨R2, hR2⟩ : ∃ R2 : A, R2 = ∑ b, (if b = m' then (0 : A) else
+      (if b = m then (0 : k) else (z j - z b)⁻¹) • M j b) := ⟨_, rfl⟩
+  have hs : ∀ s : k, s ∉ Finset.univ.image z →
+      (M i m * R2 - R2 * M i m + (z j - z i)⁻¹ • (M i m * M j m - M j m * M i m)) +
+        (z j - s)⁻¹ • (M i m * M j m' - M j m' * M i m) = 0 := by
+    intro s hsT
+    have h := first_residue hR hij him hjm _ (update_injective hz hsT m')
+    rw [residOff_update z hjm' hmm', Function.update_of_ne hjm', Function.update_of_ne him',
+      ← hR2] at h
+    rw [← h]
+    simp only [mul_add, add_mul, smul_mul_assoc, mul_smul_comm]
+    module
+  obtain ⟨s₁, h1⟩ := Infinite.exists_notMem_finset (Finset.univ.image z)
+  obtain ⟨s₂, h2⟩ := Infinite.exists_notMem_finset (insert s₁ (Finset.univ.image z))
+  simp only [Finset.mem_insert, not_or] at h2
+  exact sub_eq_zero.1 (pole_one (Ne.symm h2.1) (hs _ h1) (hs _ h2.2))
+
+/-- **Flat ⇒ relations, every `n`.** If `ω ∧ ω = 0` at every configuration of distinct points
+for all tangent vectors, the residues satisfy the infinitesimal pure braid relations. The
+diagonal residues `M_{ii}` never enter `ω` (`ω_{ii} = 0`), so they are unconstrained by
+curvature; the relations that mention them hold when they are central (`hdiag`). -/
+theorem isFlat_of_curvature_zero [CharZero k] {M : Fin n → Fin n → A}
+    (hsym : ∀ i j, M i j = M j i) (hdiag : ∀ i a b, M i i * M a b = M a b * M i i)
+    (hF : ∀ z : Fin n → k, Function.Injective z → ∀ u v, omegaWedgeOmega M z u v = 0) :
+    IsFlatLogConnection M := by
+  classical
+  have hR : ∀ z : Fin n → k, Function.Injective z → ∀ a b,
+      resid M z a * resid M z b = resid M z b * resid M z a := by
+    intro z hz a b
+    have h := hF z hz (Pi.single a 1) (Pi.single b 1)
+    rw [omegaWedgeOmega, connForm_single hsym, connForm_single hsym] at h
+    exact sub_eq_zero.1 h
+  refine ⟨fun i j l m hil him hjl hjm => ?_, fun a b c hab hac hbc => ?_⟩
+  · by_cases hij : i = j
+    · subst hij; exact hdiag i l m
+    by_cases hlm : l = m
+    · subst hlm; exact (hdiag l i j).symm
+    exact disjoint_commute hR hil hij (Ne.symm hjl) him hlm hjm
+  · -- `[M_ab, M_ac + M_bc] = 0` from the first residue at `(i, m, j) = (a, b, c)`
+    set z : Fin n → k := fun i => ((i : ℕ) : k)
+    have hz : Function.Injective z := natCast_injective
+    have h := first_residue hR hac hab (Ne.symm hbc) z hz
+    have hX : M a b * residOff M z c b - residOff M z c b * M a b =
+        (z c - z a)⁻¹ • (M a b * M c a - M c a * M a b) := by
+      unfold residOff
+      rw [Finset.mul_sum, Finset.sum_mul, ← Finset.sum_sub_distrib,
+        Finset.sum_eq_single a]
+      · rw [if_neg hab.symm.symm, mul_smul_comm, smul_mul_assoc, smul_sub]
+      · intro d _ hda
+        by_cases hdb : d = b
+        · simp [hdb]
+        by_cases hdc : d = c
+        · simp [hdc]
+        rw [if_neg hdb, mul_smul_comm, smul_mul_assoc, ← smul_sub,
+          disjoint_commute hR hac hab (Ne.symm hbc) (Ne.symm hda) (Ne.symm hdc) (Ne.symm hdb), sub_self,
+          smul_zero]
+      · simp
+    rw [hX, ← smul_add] at h
+    have hca : z c - z a ≠ 0 := sub_ne_zero.2 (hz.ne hac.symm)
+    have h' := (smul_eq_zero.1 h).resolve_left (inv_ne_zero hca)
+    rw [hsym c a, hsym c b] at h'
+    rw [← sub_eq_zero, ← h']
+    noncomm_ring
+
+/-- **Flatness ⇔ the infinitesimal pure braid relations, for every `n`.** For symmetric residues
+whose diagonal entries are central, `ω ∧ ω = 0` on all of configuration space iff the residues
+satisfy the relations. -/
+theorem curvature_zero_iff_isFlat [CharZero k] {M : Fin n → Fin n → A}
+    (hsym : ∀ i j, M i j = M j i) (hdiag : ∀ i a b, M i i * M a b = M a b * M i i) :
+    (∀ z : Fin n → k, Function.Injective z → ∀ u v, omegaWedgeOmega M z u v = 0) ↔
+      IsFlatLogConnection M :=
+  ⟨isFlat_of_curvature_zero hsym hdiag, fun hM z hz u v => curvature_zero_of_isFlat z u v hsym hM hz⟩
+
+end Converse
 
 /-! ## Part I + Part II -/
 
@@ -495,7 +788,8 @@ theorem kzResidue_isFlat : IsFlatLogConnection (kzResidue (k := k) (n := n)) := 
   · refine (commute_sub_central ?_ _ _).eq
     rw [Commute, SemiconjBy, ← map_mul, ← map_mul, swap_comm_disj hil him hjl hjm]
   · have hsum : kzResidue (k := k) i l + kzResidue j l =
-        (MonoidAlgebra.of k (Perm (Fin n)) (swap i l) + MonoidAlgebra.of k (Perm (Fin n)) (swap j l)) - algebraMap k _ (2⁻¹ + 2⁻¹ : k) := by
+        (MonoidAlgebra.of k (Perm (Fin n)) (swap i l) +
+          MonoidAlgebra.of k (Perm (Fin n)) (swap j l)) - algebraMap k _ (2⁻¹ + 2⁻¹ : k) := by
       simp only [kzResidue, map_add]; abel
     rw [hsum]
     refine (commute_sub_central ?_ _ _).eq
@@ -503,7 +797,8 @@ theorem kzResidue_isFlat : IsFlatLogConnection (kzResidue (k := k) (n := n)) := 
       swap_mul_swap_eq hil hjl, swap_mul_swap_eq' hil hjl, add_comm]
 
 /-- **The `𝔰𝔩₂` KZ connection is flat on `n` points, for every `n`.** -/
-theorem kz_sl2_curvature_zero [CharZero k] (z : Fin n → k) (hz : Function.Injective z) (u v : Fin n → k) :
+theorem kz_sl2_curvature_zero [CharZero k] (z : Fin n → k) (hz : Function.Injective z)
+    (u v : Fin n → k) :
     omegaWedgeOmega (kzResidue (k := k) (n := n)) z u v = 0 :=
   curvature_zero_of_isFlat z u v kzResidue_symm kzResidue_isFlat hz
 
