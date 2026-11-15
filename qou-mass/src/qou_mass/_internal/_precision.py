@@ -21,11 +21,14 @@ Tier-2 item 2a for the promotion rationale.
     ~15 significant digits.  The float64-padding ratchet is what catches it
     (worked case: `nonet_mixing_purity.py`, PR #5023).
 
-    Note the mirror hazard in the other direction: some modules raise global
-    `mp.dps` as an import side effect (e.g. `y_lambda_su_n` sets 50 at module
-    scope, correctly — see `wedderburn_jones_markov.y_lambda_at`).  So an
-    unset dps can be silently too low, and a set one silently too high.  Both
-    present as "the number looks fine, at the wrong precision".
+    Note the mirror hazard in the other direction: a module that calls
+    `set_compute_dps(N)` at module scope ASSIGNS the global `mp.dps` as an
+    import side effect, which can LOWER a caller already running higher.
+    `y_lambda_su_n` did exactly this (`set_compute_dps(50)`) until 2026-10-13;
+    it now builds its constants inside a local `mp.workdps`.  Library modules
+    should do the same.  So an unset dps can be silently too low, and an
+    import-assigned one silently lower than the caller set.  Both present as
+    "the number looks fine, at the wrong precision".
 """
 
 from __future__ import annotations
