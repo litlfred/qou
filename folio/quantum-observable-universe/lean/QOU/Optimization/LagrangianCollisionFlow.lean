@@ -34,6 +34,8 @@ import Mathlib.Data.Fintype.Lattice
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Abel
+import Mathlib.Topology.Algebra.Module.FiniteDimension
+import Mathlib.Topology.Instances.Matrix
 
 namespace QOU.Optimization.LagrangianCollisionFlow
 
@@ -130,5 +132,52 @@ theorem step_shrinks_distance {c : ι → ℝ} {x : ι → Fin m → ℝ}
     apply mul_neg_of_pos_of_neg hs
     linarith
   nlinarith
+
+/-! ### Unobservability inside a cell
+
+The observable outcome of the flow is the selected word, i.e. the active one.
+Where a word is the *unique* active word, it stays the unique active word on a
+whole open neighbourhood: the multiplier can move without any observable change.
+Observable events (a change of selected word, the knot step) can only happen on
+the walls where two words tie.  This is the precise form of "non-directly-
+observable behaviour before the collision". -/
+
+/-- The cell where word `i` is the unique active word. -/
+def cell (c : ι → ℝ) (x : ι → Fin m → ℝ) (i : ι) : Set (Fin m → ℝ) :=
+  {ν | ∀ j, j ≠ i → c i - ν ⬝ᵥ x i < c j - ν ⬝ᵥ x j}
+
+omit [Fintype ι] [Nonempty ι] in
+theorem continuous_lagr (c : ι → ℝ) (x : ι → Fin m → ℝ) (j : ι) :
+    Continuous (fun ν : Fin m → ℝ => c j - ν ⬝ᵥ x j) :=
+  continuous_const.sub (continuous_id.dotProduct continuous_const)
+
+/-- **Cells are open.** -/
+omit [Nonempty ι] in
+theorem isOpen_cell (c : ι → ℝ) (x : ι → Fin m → ℝ) (i : ι) : IsOpen (cell c x i) := by
+  have : cell c x i = ⋂ j, {ν | j ≠ i → c i - ν ⬝ᵥ x i < c j - ν ⬝ᵥ x j} := by
+    ext ν; simp [cell]
+  rw [this]
+  refine isOpen_iInter_of_finite (fun j => ?_)
+  by_cases hji : j = i
+  · simp [hji]
+  · simpa [hji] using isOpen_lt (continuous_lagr c x i) (continuous_lagr c x j)
+
+/-- In its cell, word `i` is active. -/
+theorem active_of_mem_cell {c : ι → ℝ} {x : ι → Fin m → ℝ} {i : ι} {ν : Fin m → ℝ}
+    (h : ν ∈ cell c x i) : Active c x ν i := by
+  unfold Active dual
+  apply le_antisymm (Finset.inf'_le _ (Finset.mem_univ i))
+  refine Finset.le_inf' _ _ (fun j _ => ?_)
+  by_cases hji : j = i
+  · rw [hji]
+  · exact (h j hji).le
+
+/-- **The selected word is locally constant**: around any point of a cell there
+is a neighbourhood on which the same word is active. -/
+theorem selected_locally_constant {c : ι → ℝ} {x : ι → Fin m → ℝ} {i : ι}
+    {μ : Fin m → ℝ} (h : μ ∈ cell c x i) :
+    ∀ᶠ ν in nhds μ, Active c x ν i :=
+  Filter.mem_of_superset ((isOpen_cell c x i).mem_nhds h)
+    (fun _ hν => active_of_mem_cell hν)
 
 end QOU.Optimization.LagrangianCollisionFlow
