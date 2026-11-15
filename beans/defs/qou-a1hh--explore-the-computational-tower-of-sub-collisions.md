@@ -127,3 +127,6 @@ At m ≤ 6 on 4 strands: every pure γγ word passes reading 3 (560/560); the on
 - Amendment 3 (q-threshold on pure γγ words, 4 strands): m(q* − 1) ≥ 1.187 on m ≤ 12 (m = 9, 12 sampled); first failure always level-2 χ_(1,1).
 - Lean `QOU.QuarkState.GammaGammaFourStrandPureBound.pure_gg_reading3`: every pure γγ word of length m passes reading 3 for 1 ≤ q ≤ 1 + (1/12)/m. Sorry-free; axioms propext/choice/Quot.sound. Generic lemma `QOU.MathlibExt.ListProdPerturbation.prod_perturb`.
 - Still open: a sharp constant (measured ≥ 1.187 vs proved 1/12), whether long pure words fail at q₀ (the bound reaches q₀ only for m = 1), and pure ⟺ pass for m > 6.
+
+## 2026-11-15 — amendment 4: pure ⟺ pass FAILS at q₀ for long words (c0e1d67e816, branch claude/gg-pure-long-words-q0-2026-11-15)
+At q₀ (proton, conv D, 40 dps). Exhaustive m = 7, 8: every pure word passes (min level char 0.50999), but 208 non-pure words pass at m = 8. Powers u^k of the 560 pure u (|u| = 3..6, k ≤ 10): 18 have a failing power, earliest at length 24 (u = V0.B0.V0.V0.B0.B0, k = 4). Seeded samples: pure fails 1/2000 at m = 24, 6/2000 at m = 30; non-pure passers 9 → 80 from m = 10 to 30. So pure ⟺ pass is false at q₀ in both directions. Still open: the shortest failing pure length (9..23 only sampled), and the sharp constant. Scope (a).
