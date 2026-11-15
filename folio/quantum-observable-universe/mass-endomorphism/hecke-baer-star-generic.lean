@@ -1,4 +1,7 @@
 import Mathlib.Algebra.Star.Basic
+import Mathlib.Algebra.Field.ZMod
+import Mathlib.Data.Matrix.Mul
+import Mathlib.LinearAlgebra.Matrix.ConjTranspose
 import Mathlib.Algebra.Module.Basic
 import Mathlib.LinearAlgebra.Matrix.ToLin
 
@@ -135,24 +138,59 @@ def failure_locus (n : ℕ) (R : Type*) [Monoid R] : Set R :=
     (Narrative note only; a former vacuous `example : True := trivial`
     that carried this comment was removed per AGENTS.md §1a.) -/
 
-/-! ## Main theorem (sketch) -/
+/-! ## Main theorem: the former axiom was false
 
-/-- **External axiom (Kassel 1995 §V.5; Hoefsmit; manuscript
-    §prop:hecke-baer-star-generic): Wedderburn blocks `M_d(R)` are
-    Baer-* rings at generic q.** -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 §V.5
-axiom hecke_baer_star_generic_sketch_axiom :
-    ∀ {R : Type*} [Field R] [StarRing R] (n : ℕ) (q : R) (d : ℕ),
-      Nonempty (BaerStarRing (Matrix (Fin d) (Fin d) R))
+**Removed 2026-11-15.** The axiom `hecke_baer_star_generic_sketch_axiom`
+claimed that `M_d(R)` is a Baer-*-ring for *every* field `R` with *every*
+`StarRing` structure, and the theorem `hecke_baer_star_generic_sketch`
+only added a hypothesis on `q`, which the conclusion never mentions. That
+is false. Over `𝔽₂` with the trivial star, `M_2(𝔽₂)` with the transpose is
+not Baer-*: the left annihilator of `s = !![1,0;1,0]` is the set of
+matrices whose rows lie in `span (1,1)`, and the only symmetric matrix
+with that row space, `!![1,1;1,1]`, squares to `0`. So no self-adjoint
+idempotent generates it. `not_hecke_baer_star_generic_sketch` below proves
+this.
 
-/-- **Theorem (`prop:hecke-baer-star-generic`).** At generic `q`
-    (outside the failure locus), each Wedderburn block `M_d(R)` of
-    `H_n(q)` is a Baer-*-ring. -/
-theorem hecke_baer_star_generic_sketch
-    {R : Type*} [Field R] [StarRing R]
-    (n : ℕ) (q : R) (_h_gen : q ∉ failure_locus n R)
-    (d : ℕ) :
-    Nonempty (BaerStarRing (Matrix (Fin d) (Fin d) R)) :=
-  hecke_baer_star_generic_sketch_axiom n q d
+The manuscript claim needs a star that is positive (e.g. complex
+conjugation, where `M_d(ℂ)` is a C*-algebra and is Baer-*). A repaired
+statement with that hypothesis is recorded as open in bean `qou-n2un`. -/
+
+instance fact_prime_two_baer : Fact (Nat.Prime 2) := ⟨Nat.prime_two⟩
+
+/-- Over `𝔽₂`, a symmetric idempotent `2 × 2` matrix that kills
+    `!![1,0;1,0]` on the right is zero. -/
+theorem symm_idem_annihilator_eq_zero :
+    ∀ p : Matrix (Fin 2) (Fin 2) (ZMod 2),
+      p * p = p → p.transpose = p → p * !![1, 0; 1, 0] = 0 → p = 0 := by
+  decide
+
+/-- `M_2(𝔽₂)` with the transpose (trivial star on `𝔽₂`) is not Baer-*. -/
+theorem not_baerStarRing_matrix_zmod_two :
+    letI : StarRing (ZMod 2) := starRingOfComm
+    ¬ BaerStarRing (Matrix (Fin 2) (Fin 2) (ZMod 2)) := by
+  letI : StarRing (ZMod 2) := starRingOfComm
+  intro h
+  obtain ⟨p, hid, hstar, hiff⟩ := h.baer_right {!![1, 0; 1, 0]}
+  have hp : p * !![1, 0; 1, 0] = 0 := (hiff p).2 ⟨1, (one_mul p).symm⟩ _ rfl
+  have hT : p.transpose = p := by
+    have : star p = p.transpose := by
+      ext i j; simp [Matrix.star_apply]; rfl
+    rw [← this, hstar]
+  have h0 := symm_idem_annihilator_eq_zero p hid hT hp
+  have hJ : ∀ s ∈ ({!![1, 0; 1, 0]} : Set (Matrix (Fin 2) (Fin 2) (ZMod 2))),
+      !![(1 : ZMod 2), 1; 1, 1] * s = 0 := by
+    intro s hs; rw [Set.mem_singleton_iff.mp hs]; decide
+  obtain ⟨y, hy⟩ := (hiff _).1 hJ
+  rw [h0, mul_zero] at hy
+  exact absurd hy (by decide)
+
+/-- **The former axiom is false.** -/
+theorem not_hecke_baer_star_generic_sketch :
+    ¬ ∀ {R : Type} [Field R] [StarRing R] (_n : ℕ) (_q : R) (d : ℕ),
+      Nonempty (BaerStarRing (Matrix (Fin d) (Fin d) R)) := by
+  intro h
+  letI : StarRing (ZMod 2) := starRingOfComm
+  obtain ⟨hb⟩ := h (R := ZMod 2) 0 0 2
+  exact not_baerStarRing_matrix_zmod_two hb
 
 end QOU.BraidKnot.HeckeBaerStarGeneric
