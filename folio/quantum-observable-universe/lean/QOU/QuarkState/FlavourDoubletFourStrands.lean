@@ -44,7 +44,18 @@ projectors).
 Model statements about `H₄(q)`. Nothing here identifies `u, d` with physical quarks or
 nucleons, and no empirical number enters. The physical reading (flavour = J₄ label,
 weak vertex = the `γγ` vertex touching strand 4) is an interpretation, scope (a).
-Three-strand words still mix the left and right lines of `σ₁` (not addressed here).
+
+**The `J₄` label is not `n` vs `p`** (scoping note, added 2026-11-15). `J₄` commutes with
+`H₃`, so its two eigenspaces are the `H₃` isotypic sectors inside the `(3,1)` of `H₄`.
+On `Ja` both `σ₁` and `σ₂` act by `q`: it is the `H₃` trivial sector `(3)`. `Jb` is the
+`(2,1)` sector. Under Schur–Weyl duality these are the three-strand isospin `3/2` and `1/2`
+sectors, not the weight `T³`. No Hecke element, the weak vertex included, changes `T³`,
+because Hecke elements commute with the quantum-group action (bean `qou-0whz`, C2;
+`OverStrandWeight.lean` fixes `u` as the `T³ = +½` weight). So `eJ`, `fJ` and
+`weak_site3_flips` change the three-strand isospin multiplicity, not `n ↔ p`.
+
+The weak vertex on `σ₁` and `σ₃` keeps the left and right lines of `σ₁`; the leak between
+them comes from `σ₂` (`weak_site1_keeps_lines`, `weak_site3_keeps_lines`, `s2_leaks`).
 
 Hypotheses: `q ≠ 0`, `q² + 1 ≠ 0`, `q⁴ + q² + 1 ≠ 0`, and `q² ≠ 1` (distinct `J₄`
 eigenvalues); `q⁴ + 1 ≠ 0` for non-vanishing.
@@ -391,5 +402,35 @@ theorem weak_site3_flips_back :
   rw [hba, smul_zero, add_zero, neg_mul, neg_smul]
 
 end JM
+
+/-! ### Where the left/right leak comes from
+
+The weak vertex on `σ₁` or `σ₃` never moves a state between the left and right lines of
+`σ₁`: both letters are diagonal in this basis, so their left projectors commute with
+`PL`. The leak between the lines comes from the letter `σ₂` alone. -/
+
+section Leak
+
+variable {q : K} (hq : q ≠ 0) (hn : q ^ 2 + 1 ≠ 0)
+include hq hn
+
+/-- The left projector of `σ₁` is `PL`. -/
+theorem letterPL_s1 : letterPL q (s1 q) = PL := by unfold letterPL s1 PL; mat3
+
+/-- The weak vertex on `σ₁` keeps the left and right lines of `σ₁`. -/
+theorem weak_site1_keeps_lines : Commute (weakAt q (s1 q)) PL := by
+  unfold Commute SemiconjBy weakAt letterPL s1 PL; mat3
+
+/-- The weak vertex on `σ₃` keeps the left and right lines of `σ₁`. -/
+theorem weak_site3_keeps_lines : Commute (weakAt q (s3 q)) PL := by
+  unfold Commute SemiconjBy weakAt letterPL s3 PL; mat3
+
+/-- **The leak is `σ₂`.** It moves the left line of `σ₁` into the right line. -/
+theorem s2_leaks : PR * s2 q * PL ≠ 0 := by
+  intro h
+  have h20 := congrArg (fun M => M 2 0) h
+  simp [PR, PL, s2, Matrix.mul_apply, Fin.sum_univ_three, hq, hn] at h20
+
+end Leak
 
 end QOU.QuarkState.FlavourDoubletFour
