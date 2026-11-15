@@ -130,4 +130,42 @@ theorem two_term {φ : F → A}
   rw [← h]
   abel
 
+/-- **The mixed-derivative identity is the cocycle identity (generic field).** Differentiating
+the five-term relation once in `y` and once in `x̄` gives a three-term identity in the values
+`p, r, s` of the second-derivative coefficient `β` at `a = y/x`, `ab`, `b = (1-x)/(1-y)`. Here `X, Y`
+stand for the conjugates of `x, y`. That identity is the nonzero multiple
+`x(Y-1) / (y(X-1)(X-Y)(x-y))` of the cocycle identity for `ρ = β·N`, `N(z) = z Z (1-z)(1-Z)`.
+Pure field algebra. -/
+theorem cocycle_of_mixed {x y X Y p r s : F}
+    (hx0 : x ≠ 0) (hx1 : x ≠ 1) (hy1 : y ≠ 1) (hxy : x ≠ y)
+    (hX0 : X ≠ 0) (hX1 : X ≠ 1) (hY1 : Y ≠ 1) (hXY : X ≠ Y)
+    (H : p * (-Y / X ^ 2) * (1 / x)
+        - r * (-Y / (X ^ 2 * (1 - Y))) * ((1 - x) / (x * (1 - y) ^ 2))
+        + s * (-1 / (1 - Y)) * ((1 - x) / (1 - y) ^ 2) = 0) :
+    r * ((y / x * ((1 - x) / (1 - y))) * (Y / X * ((1 - X) / (1 - Y)))
+          * (1 - y / x * ((1 - x) / (1 - y))) * (1 - Y / X * ((1 - X) / (1 - Y))))
+      = p * ((y / x) * (Y / X) * (1 - y / x) * (1 - Y / X)) * ((1 - X) / (1 - Y))
+        + y / x * (s * (((1 - x) / (1 - y)) * ((1 - X) / (1 - Y))
+            * (1 - (1 - x) / (1 - y)) * (1 - (1 - X) / (1 - Y)))) := by
+  have h1x : 1 - x ≠ 0 := sub_ne_zero.2 (Ne.symm hx1)
+  have h1y : 1 - y ≠ 0 := sub_ne_zero.2 (Ne.symm hy1)
+  have h1X : 1 - X ≠ 0 := sub_ne_zero.2 (Ne.symm hX1)
+  have h1Y : 1 - Y ≠ 0 := sub_ne_zero.2 (Ne.symm hY1)
+  have hY1' : Y - 1 ≠ 0 := sub_ne_zero.2 hY1
+  have hxy' : x - y ≠ 0 := sub_ne_zero.2 hxy
+  have hXY' : X - Y ≠ 0 := sub_ne_zero.2 hXY
+  have key : r * ((y / x * ((1 - x) / (1 - y))) * (Y / X * ((1 - X) / (1 - Y)))
+          * (1 - y / x * ((1 - x) / (1 - y))) * (1 - Y / X * ((1 - X) / (1 - Y))))
+      - (p * ((y / x) * (Y / X) * (1 - y / x) * (1 - Y / X)) * ((1 - X) / (1 - Y))
+        + y / x * (s * (((1 - x) / (1 - y)) * ((1 - X) / (1 - Y))
+            * (1 - (1 - x) / (1 - y)) * (1 - (1 - X) / (1 - Y)))))
+      = (y * (X - 1) * (X - Y) * (x - y) / (x * (Y - 1))) *
+        (p * (-Y / X ^ 2) * (1 / x)
+        - r * (-Y / (X ^ 2 * (1 - Y))) * ((1 - x) / (x * (1 - y) ^ 2))
+        + s * (-1 / (1 - Y)) * ((1 - x) / (1 - y) ^ 2)) := by
+    field_simp
+    ring
+  rw [H, mul_zero, sub_eq_zero] at key
+  exact key
+
 end QOU.Archimedean.BlochRigidity

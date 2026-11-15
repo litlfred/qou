@@ -113,4 +113,63 @@ theorem one_sub_odd {φ : ℂ → ℝ}
     norm_num at this
     linarith
 
+/-- **The mixed-derivative identity forces `β·|z|²|1-z|² = k·Im z`.** Substitute
+`x = (1-b)/(1-ab)`, `y = a x` (so `y/x = a`, `(1-x)/(1-y) = b`), apply `cocycle_of_mixed` with
+`X = x̄`, `Y = ȳ`, and conclude with `cocycle_eq_mul_im`. The hypothesis `h` is exactly what the
+chain rule produces from the five-term relation; the proof itself uses no analysis. -/
+theorem mixed_eq_mul_im {β : ℂ → ℝ}
+    (h : ∀ x y : ℂ, x ≠ 0 → x ≠ 1 → y ≠ 0 → y ≠ 1 → x ≠ y →
+      (β (y / x) : ℂ) * (starRingEnd ℂ) (-y / x ^ 2) * (1 / x)
+        - (β (y / x * ((1 - x) / (1 - y))) : ℂ) * (starRingEnd ℂ) (-y / (x ^ 2 * (1 - y)))
+            * ((1 - x) / (x * (1 - y) ^ 2))
+        + (β ((1 - x) / (1 - y)) : ℂ) * (starRingEnd ℂ) (-1 / (1 - y))
+            * ((1 - x) / (1 - y) ^ 2) = 0) :
+    ∃ k : ℝ, ∀ z : ℂ, z ≠ 0 → z ≠ 1 → β z * normSq z * normSq (1 - z) = k * z.im := by
+  apply cocycle_eq_mul_im (ρ := fun z => β z * normSq z * normSq (1 - z))
+  intro a b ha0 ha1 hb0 hb1 hab
+  have hab' : 1 - a * b ≠ 0 := sub_ne_zero.2 (Ne.symm hab)
+  have h1a : 1 - a ≠ 0 := sub_ne_zero.2 (Ne.symm ha1)
+  have h1b : 1 - b ≠ 0 := sub_ne_zero.2 (Ne.symm hb1)
+  have hba : 1 - b * a ≠ 0 := by rwa [mul_comm]
+  set x : ℂ := (1 - b) / (1 - a * b) with hxdef
+  set y : ℂ := a * x with hydef
+  have hx0 : x ≠ 0 := div_ne_zero h1b hab'
+  have hy0 : y ≠ 0 := mul_ne_zero ha0 hx0
+  have h1x : 1 - x = b * (1 - a) / (1 - a * b) := by
+    rw [hxdef, eq_div_iff hab']; field_simp; ring
+  have h1y : 1 - y = (1 - a) / (1 - a * b) := by
+    rw [hydef, hxdef]; field_simp; ring
+  have hx1 : x ≠ 1 := fun e => by
+    have : 1 - x = 0 := by rw [e]; ring
+    rw [h1x] at this; exact div_ne_zero (mul_ne_zero hb0 h1a) hab' this
+  have hy1 : y ≠ 1 := fun e => by
+    have : 1 - y = 0 := by rw [e]; ring
+    rw [h1y] at this; exact div_ne_zero h1a hab' this
+  have hxy : x ≠ y := fun e => by
+    have : x * (1 - a) = 0 := by rw [hydef] at e; linear_combination e
+    rcases mul_eq_zero.1 this with h | h
+    · exact hx0 h
+    · exact h1a h
+  have hya : y / x = a := by rw [hydef]; field_simp
+  have hyb : (1 - x) / (1 - y) = b := by rw [h1x, h1y]; field_simp
+  have Hc := h x y hx0 hx1 hy0 hy1 hxy
+  rw [hya, hyb] at Hc
+  have cj : ∀ z : ℂ, z ≠ 0 → (starRingEnd ℂ) z ≠ 0 := fun z hz => by
+    simpa using hz
+  have cj1 : ∀ z : ℂ, z ≠ 1 → (starRingEnd ℂ) z ≠ 1 := fun z hz => by
+    intro e; apply hz; simpa using congrArg (starRingEnd ℂ) e
+  have hXY : (starRingEnd ℂ) x ≠ (starRingEnd ℂ) y := fun e =>
+    hxy (by simpa using congrArg (starRingEnd ℂ) e)
+  simp only [map_div₀, map_neg, map_pow, map_mul, map_sub, map_one] at Hc
+  have K := cocycle_of_mixed hx0 hx1 hy1 hxy (cj x hx0) (cj1 x hx1) (cj1 y hy1) hXY Hc
+  have hYX : (starRingEnd ℂ) y / (starRingEnd ℂ) x = (starRingEnd ℂ) a := by
+    rw [← map_div₀, hya]
+  have hYb : (1 - (starRingEnd ℂ) x) / (1 - (starRingEnd ℂ) y) = (starRingEnd ℂ) b := by
+    rw [← map_one (starRingEnd ℂ), ← map_sub, ← map_sub, ← map_div₀, hyb]
+  rw [hya, hyb, hYX, hYb] at K
+  push_cast
+  rw [← mul_conj, ← mul_conj, ← mul_conj, ← mul_conj, ← mul_conj, ← mul_conj]
+  simp only [map_mul, map_sub, map_one]
+  linear_combination K
+
 end QOU.Archimedean.BlochRigidity
