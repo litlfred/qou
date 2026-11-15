@@ -44,21 +44,22 @@ structure QResolvent (H : Type*) where
       Encoded at the element level via a nominal multiplication. -/
   inverse_witness : ∀ x : H, R (delta_q x) = x
 
-/-- **Resolvent identity.**
-
-    For two spectral parameters `s₁, s₂` with resolvents `R₁, R₂`,
-    the first resolvent identity holds:
-      R₁ - R₂ = (s₂ - s₁) · R₁ · R₂,
-    stated at the element level (the only structure the abstract
-    `QResolvent` carries) as
-      ∀ x, R₁.R x - R₂.R x = (R₂.s - R₁.s) * R₁.R (R₂.R x).
-
-    This is the mate of the coproduct Δ_q on 𝓗_q under the Laplace
-    pairing. -/
+/-- **The former axiom `QResolvent.first_identity` was false** (removed
+    2026-11-15). It claimed the first resolvent identity
+      `∀ x, R₁.R x - R₂.R x = (R₂.s - R₁.s) * R₁.R (R₂.R x)`
+    for every pair of `QResolvent`s, but the structure only records
+    `R ∘ delta_q = id`, which does not tie `R` to the spectral parameter `s`.
+    Over `ℤ`, take `delta_q = R = id` with `s = 0` and `s = 1`: at `x = 1`
+    the identity reads `0 = 1`. A true identity needs the field
+    `(s + delta_q) ∘ R = id` in an algebra; recorded as open in bean
+    `qou-n2un`. -/
 -- Ref: [kassel1995] Quantum Groups, §IV.4
-axiom QResolvent.first_identity {H : Type*} [AddCommGroup H] [Mul H]
-    (R₁ R₂ : QResolvent H) :
-    ∀ x : H, R₁.R x - R₂.R x = (R₂.s - R₁.s) * R₁.R (R₂.R x)
+theorem QResolvent.not_first_identity :
+    ¬ ∀ (R₁ R₂ : QResolvent ℤ) (x : ℤ),
+        R₁.R x - R₂.R x = (R₂.s - R₁.s) * R₁.R (R₂.R x) := by
+  intro h
+  have := h ⟨id, 0, id, fun _ => rfl⟩ ⟨id, 1, id, fun _ => rfl⟩ 1
+  simp at this
 
 end
 

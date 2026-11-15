@@ -243,37 +243,23 @@ theorem eigenvalue_expectation (d : SpectralIdempotentData) :
 
     The axiom below marks the inductive step that references the Markov
     trace machinery (an external proof). -/
-/-- **External axiom (Jones 1987 Theorem 5.1; Diaconis-Ram 2000):
-    Markov-trace factorisation via per-vertex volumes.**
-
-    Recursive application of the Markov property (stabilisation +
-    cyclicity) gives the totalTrace as a product of per-vertex
-    volumes.  Pending the full Mathlib port of the Markov trace
-    machinery in markov-trace-product.lean. -/
+/-- **The former axiom `markov_chain_factorization_axiom` was false**
+    (removed 2026-11-15, with its wrapper `markov_chain_factorization_exists`).
+    It quantified `totalTrace : ℝ` universally, so it asserted that every
+    real number equals the product of vertex volumes. The intended statement
+    needs `totalTrace` to be the Markov trace of the braid, which this file
+    does not define; recorded as open in bean `qou-n2un`. -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
---      — Jones, "Hecke algebra representations of braid groups and link
---      polynomials," Ann. Math. 126 (1987). Verified against the
---      published version.
--- Ref: [diaconis-ram2000] Diaconis & Ram, "Analysis of systematic scan Metropolis algorithms using Iwahori-Hecke algebra techniques," Ann. Appl. Probab. 12 (2000), arXiv:math/0401318
-axiom markov_chain_factorization_axiom :
-    ∀ (n : ℕ) (_hn : n ≥ 2)
+theorem not_markov_chain_factorization_unconstrained :
+    ¬ ∀ (n : ℕ) (_hn : n ≥ 2)
       (steps : Fin (n - 1) → MarkovTransitionStep)
       (totalTrace : ℝ)
       (_h_markov : ∀ i, (steps i).z = (steps ⟨0, by omega⟩).z),
-        totalTrace = Finset.univ.prod (fun i => (steps i).vertexVolume)
-
--- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
---      — Jones, "Hecke algebra representations of braid groups and link
---      polynomials," Ann. Math. 126 (1987). Verified against the
---      published version.
--- Ref: [diaconis-ram2000] Diaconis & Ram, "Analysis of systematic scan Metropolis algorithms using Iwahori-Hecke algebra techniques," Ann. Appl. Probab. 12 (2000), arXiv:math/0401318
-theorem markov_chain_factorization_exists
-    (n : ℕ) (hn : n ≥ 2)
-    (steps : Fin (n - 1) → MarkovTransitionStep)
-    (totalTrace : ℝ)
-    (h_markov : ∀ i, (steps i).z = (steps ⟨0, by omega⟩).z) :
-    totalTrace =
-      Finset.univ.prod (fun i => (steps i).vertexVolume) :=
-  markov_chain_factorization_axiom n hn steps totalTrace h_markov
+        totalTrace = Finset.univ.prod (fun i => (steps i).vertexVolume) := by
+  intro h
+  let st : MarkovTransitionStep := ⟨0, 0, 1, one_ne_zero⟩
+  have := h 2 le_rfl (fun _ => st)
+    ((Finset.univ.prod (fun _ : Fin (2 - 1) => st.vertexVolume)) + 1) (fun _ => rfl)
+  linarith
 
 end QOU.Braiding

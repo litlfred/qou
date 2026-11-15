@@ -173,45 +173,45 @@ structure JonesMarkovTrace (H : HeckeAlgebraData) where
       H.mul T_inv (H.T last) = H.one →
       tr (H.mul x T_inv) = z_neg * tr x
 
-/-! ## Existence Axiom -/
+/-! ## The former existence axiom was false
 
-/-- **Axiom (Jones, 1987)**: the Jones–Markov trace exists for any Hecke
-    algebra with q not a root of unity.
+`jones_markov_trace_exists : ∀ H : HeckeAlgebraData, JonesMarkovTrace H` was
+removed 2026-11-15, together with its three consequences (`markov_trace_one`,
+`markov_z_ne_zero`, `all_irreps_detected`), which used nothing else.
 
-    This is the core external result. The proof is a 54-page construction
-    in Jones (1987) §3–5, involving:
-    - Ocneanu's trace on the tower of relative commutants (§3)
-    - The Markov property from the inclusion H_n ↪ H_{n+1} (§4)
-    - Link invariance via Markov's theorem and writhe normalisation (§5)
+Jones's theorem is true for the Hecke algebra, but `HeckeAlgebraData` carries
+no relations: `mul`, `one` and `T` are arbitrary. On the one-point carrier,
+`markov_pos` forces `z = 1` and `markov_neg` forces `z₋ = 1`, while
+`z_neg_spec` says `z₋ = z − (q − q⁻¹)` with `q − q⁻¹ ≠ 0` in `ℤ[q, q⁻¹]`.
+A correct statement needs the Hecke relations as fields of the data (or the
+concrete `H₃` trace `QOU.Machinery.H3.trM`, which is proved); recorded as open
+in bean `qou-n2un`. -/
 
-    We axiomatise this as: given valid Hecke algebra data, the structure
-    `JonesMarkovTrace` is inhabited. -/
--- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
---      — Jones, "Hecke algebra representations of braid groups and link
---      polynomials," Ann. Math. 126 (1987). Verified against the
---      published version., Theorem 5.1
-axiom jones_markov_trace_exists (H : HeckeAlgebraData) :
-    JonesMarkovTrace H
+/-- `q ≠ q⁻¹` in `R_q = ℤ[q, q⁻¹]`. -/
+theorem q_param_ne_q_inv_param : q_param ≠ q_inv_param := by
+  intro h
+  have h' : (Finsupp.single (1:ℤ) (1:ℤ) : ℤ →₀ ℤ) = Finsupp.single (-1) 1 := h
+  have := (Finsupp.single_left_inj one_ne_zero).mp h'
+  omega
 
-/-! ## Consequences -/
+/-- **No Jones–Markov trace exists on unconstrained `HeckeAlgebraData`.** -/
+-- Ref: [jones1987] §3 (The Markov trace), Theorem 5.1
+theorem not_forall_jonesMarkovTrace :
+    ¬ ∀ H : HeckeAlgebraData.{0}, Nonempty (JonesMarkovTrace H) := by
+  intro hall
+  let H : HeckeAlgebraData :=
+    { n := 2, carrier := Unit, q := 0, q_ne_one := zero_ne_one, mul := fun _ _ => (),
+      one := (), T := fun _ => () }
+  obtain ⟨J⟩ := hall H
+  have h1 : J.tr () = 1 := J.tr_one
+  have hp := J.markov_pos le_rfl ()
+  have hn := J.markov_neg le_rfl () () rfl rfl
+  have hs := J.z_neg_spec
+  simp only [H, h1, mul_one] at hp hn
+  have hT : q_param - q_inv_param = 0 := by
+    have : J.z_neg = J.z := by rw [← hn, ← hp]
+    rw [hs] at this; linear_combination -this
+  exact q_param_ne_q_inv_param (sub_eq_zero.mp hT)
 
-/-- The Markov trace of the identity is 1 (from normalisation). -/
-theorem markov_trace_one (H : HeckeAlgebraData) :
-    (jones_markov_trace_exists H).tr H.one = 1 :=
-  (jones_markov_trace_exists H).tr_one
-
-/-- The Markov parameter is nonzero. -/
-theorem markov_z_ne_zero (H : HeckeAlgebraData) :
-    (jones_markov_trace_exists H).z ≠ 0 :=
-  (jones_markov_trace_exists H).z_ne_zero
-
-/-- **Every irreducible H_n(q)-module is detected by the Markov trace.**
-    This is the key consequence that feeds into knot eigenbasis completeness:
-    combined with Alexander surjectivity, it ensures every summand of V^⊗n
-    is reached by some knot type. -/
-theorem all_irreps_detected (H : HeckeAlgebraData)
-    (i : Fin (jones_markov_trace_exists H).numIrreps) :
-    ∃ (a : H.carrier), (jones_markov_trace_exists H).tr a ≠ 0 :=
-  (jones_markov_trace_exists H).nondeg i
 
 end QOU.Braiding
