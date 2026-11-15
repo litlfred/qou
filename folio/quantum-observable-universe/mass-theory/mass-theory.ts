@@ -397,6 +397,7 @@ export default chapter({
         "qbeta-formalize-first-gates-intro",
         "toroidal-harmonics-delta-lambda",
         "q-beta-over-e0-classical-vanishing",
+        "q-beta-over-e0-classical-vanishing-ladder-reading",
         "q-beta-over-e0-classical-vanishing-proof",
         "qbeta-c8-c10-silver-rationals",
         "q-beta-c-k-recursion-from-habiro-q-difference",
@@ -421,6 +422,7 @@ export default chapter({
         "q-beta-direction-sanity-gate",
         "q-beta-direction-sanity-gate-proof",
         "q-beta-c-k-leading-bias-correction-identity",
+        "q-beta-c-k-leading-bias-correction-identity-extraction-check",
         "q-beta-c-k-leading-bias-correction-identity-proof",
         "q-beta-bar-even-kernel-typeclass",
         "mass-side-kernel-formalize-first-gates",
@@ -1231,6 +1233,7 @@ export default chapter({
         // Re-homed orphan: kaon/pion mass ratio from Hecke χ^{(2,1)}(σ_1^5)
         // + Seifert volumes (structured near-match, ~290 ppm vs PDG).
         "meson-kaon-pion-hecke-seifert",
+        "meson-kaon-pion-hecke-seifert-comparison",
         "meson-kaon-pion-hecke-seifert-proof",
         // Gen-3 extension: φ(1020) = T(2,7), m_φ/m_π ≈ 7.320 (2167 ppm vs
         // PDG); the torus tower tracks the strange-vector line, not the η.
