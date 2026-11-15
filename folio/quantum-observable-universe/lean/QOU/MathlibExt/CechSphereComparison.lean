@@ -1,4 +1,5 @@
 import QOU.MathlibExt.CechSphereHemispheres
+import QOU.MathlibExt.CechGoodRefinement
 
 /-!
 # Comparing the hemisphere cover with all open covers of `S²` (C2, open)
@@ -18,6 +19,8 @@ instance is given) and proves the downstream step C3 conditionally on it.
   cover is a bijection onto `Ȟ²(S², G)`. Not proved here.
 * `sphereEquiv`, `sphereEquiv_eq_one_iff`, `sphereEquiv_map`: given C2,
   `Ȟ²(S², G) ≃ G`, natural in `G`.
+* `isCoverDirected_isOpenCover`, `hemiComputesCech_of_good`: C2 follows once every
+  open cover has a good refinement (see `CechGoodRefinement`).
 * `kummerSurfaceData_sphere` (**C3, conditional on C2**): `KummerSurfaceData`
   on `S²` over all open covers, for `ℤ` and `μ_n`.
 
@@ -76,6 +79,21 @@ class HemiComputesCech (G : Type) [TopologicalSpace G] [CommGroup G] [IsTopologi
   bijective : Function.Bijective
     (H2.toCech (Cov := IsOpenCover (X := S2)) (tetCover hemi) hemi_isOpenCover :
       H2 (tetCover hemi).obj (contPresheaf S2 G) → CechH2 (contPresheaf S2 G) (IsOpenCover (X := S2)))
+
+/-- Open covers of `⊤ : Opens X` form a directed system. -/
+theorem isCoverDirected_isOpenCover : IsCoverDirected (IsOpenCover (X := X)) :=
+  fun 𝒱 𝒲 h𝒱 h𝒲 => ⟨Cover.inf 𝒱 𝒲, isOpenCover_inf 𝒱 𝒲 h𝒱 h𝒲,
+    ⟨Cover.infLeft 𝒱 𝒲⟩, ⟨Cover.infRight 𝒱 𝒲⟩⟩
+
+/-- **C2 reduced to one cover at a time.** If every open cover of `S²` has a
+good refinement relative to the hemisphere cover, then C2 holds. -/
+theorem hemiComputesCech_of_good (G : Type) [TopologicalSpace G] [CommGroup G]
+    [IsTopologicalGroup G] [DiscreteTopology G]
+    (hgood : ∀ 𝒱, IsOpenCover 𝒱 →
+      HasGoodRefinement (IsOpenCover (X := S2)) (tetCover hemi) (contPresheaf S2 G) 𝒱) :
+    HemiComputesCech G :=
+  ⟨toCech_bijective_of_good (contPresheaf_comm (X := S2)) isCoverDirected_isOpenCover
+    (tetCover hemi) hemi_isOpenCover hgood⟩
 
 section Conditional
 
