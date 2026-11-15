@@ -13,7 +13,7 @@ parent: qou-avtq
 
 ## The source, and why it is decisive
 
-`library/1172-3/sections/sec-005-6-the-twisting-element.md` (Habiro, *On the
+`library/1172-3/sections/sec-002-6-the-twisting-element.md` (Habiro, *On the
 colored Jones polynomials of some simple links*, §6) — already in
 `references.ts` as docId `1172-3`, so this is a **citation**, not a new result.
 

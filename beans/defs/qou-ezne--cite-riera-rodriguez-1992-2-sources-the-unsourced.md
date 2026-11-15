@@ -21,7 +21,7 @@ carries `duplicate_of: "pjm-v154-n1-p09-s"` and has no `INDEX.md` row —
 **one work, not two sources**; `references.ts` already records it under `alternates`.
 
 **What §2 supplies, and the corpus asserts unsourced.**
-`library/pjm-v154-n1-p09-s/sections/sec-001-2-the-universal-cover-of-brings-curve-if-b-b-is.md`
+`library/pjm-v154-n1-p09-s/sections/page-004.md`
 (pp. 2–8) constructs `Γ*` as the **(2,4,5) triangle group** from a 20-sided
 non-euclidean polygon with angles π/5, π/4, π/2; defines `φ : Γ* → S₅`, sets
 `Γ = ker φ` and shows it torsion-free; and concludes **`B = Δ/Γ` has genus 4**
