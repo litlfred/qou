@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:modular-s-transform-q-q-tilde",
   title:
-    "Modular $S$-transform $q \\leftrightarrow \\tilde q = \\exp(2\\pi i / \\tau)$ for Hecke parameter analytic continuation",
+    "Modular $S$-transform $q \\leftrightarrow \\tilde q = \\exp(-2\\pi i / \\tau)$ for Hecke parameter analytic continuation",
   lean: {
     ref: "qou:QOU.BraidsAndKnots.ModularSTransformQQTilde",
     validation: "not_checked",
