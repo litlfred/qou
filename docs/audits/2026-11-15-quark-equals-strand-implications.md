@@ -236,3 +236,7 @@ Measure one more thing, then choose between I and II:
 If the SU(3)-frame near-match is comparable to level 2, Option II is physically natural and its
 moment prediction is the better one. I lean II on physics grounds, but its blast radius is the
 whole r = 2 corpus, so it should not be chosen on one moment ratio.
+
+**OWNER RULING 2026-11-15 (relayed by coordinator session_01M5GA1LmsEf8tSMxFjMkmnn): Option C
+for colour ("D1 = C") — no change for now.** Colour stays an input; "quark = strand" stays a framing.
+The §6 options above remain open; this ruling defers them.

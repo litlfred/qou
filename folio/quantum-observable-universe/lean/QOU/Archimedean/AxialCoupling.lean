@@ -216,6 +216,12 @@ theorem std_trace_braid_dependent :
     - h₀₂ alone: tr_std/tr_sym ≈ 1.12 → g_A ≈ 1.86 (+46%)
     - ⅓(h₀₁+h₁₂+h₀₂): tr_std/tr_sym ≈ 0.766 → g_A ≈ 1.277 (+0.1%)
 
+    **Scope (owner ruling 2026-11-15, PR #7823).** Keeping the 3-fold average because it
+    lands at +0.1 % against PDG is a selection against the target, i.e. a fit under the
+    NO-FITTING directive, and the `5/3` prefactor is imported from the naive quark model.
+    `g_A` is therefore NOT derived; see `observations/hadron-half-life-verification.md`,
+    item 3. This theorem proves only that two traced volumes differ.
+
     Formally: the color-averaged traced volume differs from each
     individual half-Borromean traced volume. -/
 theorem color_avg_essential :
