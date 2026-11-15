@@ -1126,7 +1126,7 @@ the trichotomy's routes — symmetric in the pair (O1-proof), unsigned so nonzer
 sat at `todo` with `updated_at == created_at` for a month.
 
 It is now **scrapped**, on two corrections verified against the primary source
-(`library/arxiv-0808.1533v1/sections/sec-001-energy-bound.md:203-216`, Komendarczyk
+(`library/arxiv-0808.1533v1/sections/sec-005-energy-bound.md:203-216`, Komendarczyk
 eq. 43) rather than taken from the audit trail:
 
 1. The bound's invariant is `ac(L_k, L)` — one component against the whole link,
