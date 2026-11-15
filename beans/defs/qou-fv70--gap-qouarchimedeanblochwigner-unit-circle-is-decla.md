@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T02:22:50Z
-updated_at: 2026-10-04T15:20:21Z
+updated_at: 2026-11-15T18:12:08Z
 parent: qou-r9ih
 ---
 
@@ -60,3 +60,9 @@ FOUR docstrings across those two files cite
 `predicted-spectra/bloch-wigner-mathlib-filler.lean`, which DOES NOT EXIST --
 that block has `.md` and `.ts` siblings and no `.lean`. Dead citations, same
 class as the `substrate-anchor-alternatives.md` pointer AGENTS.md records.
+
+
+
+## 2026-11-15, PR #7946
+
+`BlochWignerUnitCircle.lean` now defines `BlochWigner_unit_circle := Cl_2` (was `opaque`), so qou-006b's field is decidable and true by IVT. **The duplicate name is NOT fixed**: `BlochWignerMathlibFiller.lean` still defines the same constant, and importing both still collides. Both bodies are now `Cl_2`, so the fix is to delete one; left for a separate change.

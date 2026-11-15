@@ -11,7 +11,7 @@ tags:
     - 8f-open
     - lean
 created_at: 2026-09-03T09:08:30Z
-updated_at: 2026-10-10T07:56:52Z
+updated_at: 2026-11-15T18:12:08Z
 parent: qou-8lxd
 ---
 
@@ -39,3 +39,9 @@ specific Bloch-group class from the Yekutieli triple on `{T(2,9), T(3,5)}`.
 
 So a green Lean file here would mean nothing either way. The bean's instruction
 stands: **no instance exists; none should be added.**
+
+
+
+## 2026-11-15, PR #7946 (issue #7942)
+
+The owner chose to give `BlochWigner_unit_circle` its documented body `Cl_2`, so the field is now **true by IVT** (`bringZeroModeBlochClass_holds`, sorry-free, standard axioms), exactly as this bean predicted. Per this bean's triage it is a **named theorem, not a global instance** (commit 6ff8649b54), so `[BringZeroModeBlochClass]` on `bring_zero_mode_additive_form` is not discharged silently. The angle-rationality sharpening is `BringZeroModeRootOfUnityClass` (no instance). **The open claim, the Bloch-class identification on {T(2,9), T(3,5)}, is untouched; this bean stays open.** The class should eventually be restated to carry that identification.
