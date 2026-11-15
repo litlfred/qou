@@ -95,9 +95,15 @@ of that). So every diagnostic depends on k only through m = 3 + k, and the
 placement of the segment before or after the tail is not a degree of freedom.
 This is checked numerically (check P1 below), not assumed.
 
-## 3. Step 2 enumeration space
+## 3. Step 2 enumeration space (pre-registered in its own commit, before computing)
 
-Pre-registered in a separate commit (below), before any computation.
+Elements `E_k = CORE · TAIL_x · Vᵏ`, x ∈ {p, n}, with **k ∈ {0, 1, 2, 3}**.
+Bound: k ≤ 3 is the largest member any corpus side-rule names (F6 gives k = 3);
+k = 2 is included because it lies between named members. Four elements per
+nucleon; nothing outside this space is evaluated. The γγ condition holds for
+every member by construction (the gluon segment is a γγ word). The reading-3
+condition (whole word, both nucleons) is then evaluated and the survivors are
+counted. All four are reported with all diagnostics, in k order. No ranking.
 
 ## 4. Calibration checks (must pass before any diagnostic is reported)
 
