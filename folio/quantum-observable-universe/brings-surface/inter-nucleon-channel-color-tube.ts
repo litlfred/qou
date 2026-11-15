@@ -34,7 +34,7 @@ export default conjecture({
   ],
   cites: [
     "kashaev1997",
-    "faddeev1996",
+    "faddeev_kashaev1994",
     "ohtsuki2002",
     "khovanovlauda2009",
     "kashiwara1991",
