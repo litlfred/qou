@@ -14,6 +14,7 @@ export default conjecture({
     "rem:vol-as-motivic-period",
   ],
   cites: [
+    "garoufalidis2013",
     "kashaev1997",
     "neumann-zagier1985",
     "kashaev-tirkkonen2014",
