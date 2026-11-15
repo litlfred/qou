@@ -1,0 +1,44 @@
+2314 Stavros Garoufalidis and Rinat Kashaev
+
+Let us comment on the chirality properties of the descendant colored
+Jones functions. It is well-known that the Jones polynomial (and its colored
+versions) are chiral invariants of knots. Explicitly, if A* denotes the mirror of
+a Knot K then JK" (9) = = Jn(q~') which implies that HK*(g) = Hy(q7!) and
+py m) (2,4) _ py —™) —-1 ?).
+
+4. A conjecture
+
+We end this section with a conjecture. Let us denote by r + 1 the size of the
+matrix J.
+
+Conjecture 2.4. The top row of the matrix J of the conjectured knot in-
+variants [GZ] is a rational near combination of r +1 consecutive terms of
+the descendant invariant DJ”) (q).
+
+2.5. Examples
+
+In this section we give explicit formulas for the descendant colored Jones
+polynomials and their recursions for the trefoil (a non-hyperbolic knot) and
+for the two simplest hyperbolic knots, the 4, and 52 knots.
+
+For the 3; knot, we have H3!(q) = (—1)*g2*(*+%) for all k > 0 [Hab02,
+Mas03). It follows from Equation (5) that the descendant colored Jones poly-
+nomials DJ? (a, q) satisfy the inhomogeneous linear q-difference equation
+
+(7) -qns DJ) (ge, q) +4 (a 447 gq m+2 Ty 31; (MD) Cy, )
++4 ( _ q”*) DIM (a, q) =1
+
+for m € Z. We can write the above q-difference equation in operator form by
+introducing the operators S,, and Q,, which act on f(m) by (Smnf)(m) =
+f(m +1), (Qmf)(m) = q”f(m) and satisfy the q-commutation relation
+SimQm = (QmSm. Then, Equation (7) takes the form B2: DJ) = 1 where
+
+(8) BY(Sin, Qms 24) = —PQmSin + (@ +27')Q?QmnSim + (1 — GQm):
+
+We next consider the 4, knot, whose Habiro polynomials are given by
+Hi'(q) = 1 for all k > 0, hence
+
+Co
+
+(9) DJA (x, g) =r Keqage(q aig eg.
+k=0

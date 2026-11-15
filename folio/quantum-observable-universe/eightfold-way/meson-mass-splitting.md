@@ -43,11 +43,10 @@ $$
   4 m_K^2 = 3 m_\eta^2 + m_\pi^2.
 $$
 
-**Gell-Mann--Okubo cannot test this, and the question was mis-posed.**
-Earlier drafts treated the relation as something the framework should
-*derive*, and compared its $\approx 6\%$ experimental deviation
-against a $\approx 3.3\%$ figure from the $q$-deformation of the adjoint
-quantum dimension.  Both moves are withdrawn.
+**Gell-Mann--Okubo cannot test this.** The relation is not something the
+framework should *derive*, and its $\approx 6\%$ experimental deviation
+is not comparable with the $\approx 3.3\%$ figure from the
+$q$-deformation of the adjoint quantum dimension.
 
 First-order $\mathrm{SU}(3)_{\mathrm{f}}$ breaking means the mass operator is a
 singlet plus an octet piece transforming like $\lambda_8$, so that
@@ -61,7 +60,7 @@ $$
   4m_K^2 - 3m_\eta^2 - m_\pi^2 \;=\; 0
   \qquad\text{for \emph{all} } a, b, c .
 $$
-This is proved sorry-free over any commutative ring in
+This is proved over any commutative ring in
 `QOU/Eightfold/GellMannOkuboIdentity.lean`
 (`gmo_identity`), together with the sharper consequence
 `gmo_cannot_discriminate`: two arbitrarily different breaking

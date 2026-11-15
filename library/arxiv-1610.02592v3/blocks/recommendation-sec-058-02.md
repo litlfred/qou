@@ -1,0 +1,1 @@
+The non-trivial embedding $\varphi$ sends the core curve of $D^2\times S^1$ to some non-trivial knot $H\subset S^3$ called the \emph{companion} of $K$: we should think of $K$ as orbiting as a ``satellite'' around its companion $H$, with orbit path $K'$.

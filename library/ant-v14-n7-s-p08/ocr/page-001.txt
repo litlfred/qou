@@ -1,0 +1,49 @@
+ALGEBRA AND NUMBER THEORY 14:7 (2020)
+https: //doi.org/10.2140/ant.2020.14.1911
+
+Burgess bounds for
+short character sums evaluated at forms
+
+Lillian B. Pierce and Junyan Xu
+
+We establish a Burgess bound for short multiplicative character sums in arbitrary dimensions, in which
+the character is evaluated at a homogeneous form that belongs to a very general class of “‘admissible”
+forms. This n-dimensional Burgess bound is nontrivial for sums over boxes of sidelength at least g°, with
+B > 1/2—1/(2(n+ 1)). This is the first Burgess bound that applies in all dimensions to generic forms
+of arbitrary degree. Our approach capitalizes on a recent stratification result for complete multiplicative
+character sums evaluated at rational functions, due to the second author.
+
+1. Introduction
+
+The celebrated Burgess bound [1957] proves that for x a nonprincipal multiplicative Dirichlet character
+modulo a prime q, the character sum
+
+SIN,H)= DD xt)
+
+xeZ
+N<x<N+H
+
+is bounded for every integer r > 1 by
+[S(N, H)| <<, HIM Y" Jog g. (1-1)
+
+From this it can be deduced that S(N, H) admits a nontrivial bound o(H) for H as small as H = q!/4+«,
+for any « > 0. Bounds for S(N, H) have many applications, and as we survey in Section 1C, Burgess’s
+influential work set records that remain the best known today.
+
+This paper proves the first n-dimensional Burgess bound for short multiplicative character sums evalu-
+ated at generic homogeneous polynomial arguments of arbitrarily large degree. Let x be a nonprincipal
+multiplicative character modulo a prime q. Let n > 1 be a fixed dimension, and F € Z[x,,...,x,] a form
+of degree D. For any N = (Nj,...,Nn) € R", H=(AM,..., Hn) € R4,, define
+
+SF;N,I)= So X(F@)). (1-2)
+
+xeZ"
+xi €(Ni,Ni+Hi]
+
+Given H, we will define || H|| = H, --- H,, so that in particular, || H'|| is a trivial bound for |S(F; N, H)|.
+Previous to the work of this paper, when the lengths H; are short, that is << qi! 2+€ nontrivial bounds for
+
+MSC2010: 11L40.
+Keywords: character sums.
+
+1911

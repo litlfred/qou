@@ -10,6 +10,7 @@ source_sha256: 3499c40ea150a617
 toc_source: outline
 doc_brief: "Constructing equivalences between fusion categories of quantum groups and of vertex operator algebras via quantum gauge groups — This paper establishes connections between a problem posed by"
 ---
+Appendix A. Historical remarks on rigidity in affine Lie algebra and
 vertex operator algebra categories
 The original work by Finkelberg refers to the cited work in physics by Moore and Seiberg
 and in algebraic geometry by Beilinson, Feigin, and Mazur [4] for the rigid braided tensor

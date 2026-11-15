@@ -1,0 +1,46 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0203160v3",
+ "source": {
+  "structure_sha256": "a84f478d72d40af25ad556602a5d27cd81e14931527abe71f4ab931597d0297d",
+  "file": "0203160v3.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:math/0203160v3 [math.QA] 28 Oct 2002",
+  "authors": "Momar Dieng",
+  "arxiv": {
+   "id": "math/0203160",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "28 Oct 2002"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "recommendation": 1
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We always consider unitary connections (i.e. operators $\\nabla _{\\alpha }$ should be anti Hermitian).",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-3-connections-and-complex-structures.md",
+   "section_title": "Connections and complex structures.",
+   "pages": "6-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

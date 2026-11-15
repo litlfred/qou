@@ -1,0 +1,1 @@
+This gives a contradiction to the triangulation being minimal due to Theorem [\[lem:bdEfficient\]](#lem:bdEfficient){reference-type="ref" reference="lem:bdEfficient"} and thus $\varphi\co\operatorname{LST}^{\star}\to M$ must be an embedding. ◻ :::

@@ -8,6 +8,7 @@ pages: 30-32
 source_pdf: 0406276v1.pdf
 source_sha256: 8fdf4b5950e8b5f5
 toc_source: inferred
+doc_brief: "The GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE — 16 sections: Front matter; Linking integrals in S3 and H3 .; Historical background."
 ---
 If  V  is a smooth vector field on  R3  with compact support,  then the Woltjer-
 Moffatt formula for its helicity, 
@@ -50,7 +51,6 @@ H(V)  =  ∫H3×H3  Pyx V(x)  ×  V(y)  ∙  ∇y ϕ(x, y)  dx dy ,
  
 where     ϕ(α)  =  (1/(4π)) csch α . 
  
-31
  
 ∙ In formula (1), if  V  is divergence-free, then the third integral in the definition 
 of  H(V)  vanishes. 
@@ -82,7 +82,4 @@ Then its helicity is given by
  
 If  V  is a right-invariant unit vector field on  S3 ,  then  BS(V)  =  ½ V ,  and hence 
  
-                     H(V)  =  + π2 . 
- 
- 
-32
+                     H(V)  =  + π2 .

@@ -1,0 +1,68 @@
+(wl, w2) = w;
+nom = wlxcnj w2*(zl*cnj 21 + 22«cnj 22) — z1*cnj z2*(wl*cnj wl + w2xcnj w2);
+den = z1*cnj z2xcnj wl*xw2 — wlxcnj w2*cnj z1*z2
+in if den 0 then
+mk-poincare-line-cmat (Re(ixden)) (ixnom)
+else if z1xcnj 22 # 0 then
+mk-poincare-line-cmat 0 (i*z1*cnj z2)
+else if wl*xcnj w2 # 0 then
+mk-poincare-line-cmat 0 (i*w1*cnj w2)
+else
+mk-poincare-line-cmat 0 i)
+
+lemma poincare-line-cvec-cmat-AeqD:
+assumes poincare-line-cvec-cmat z w = (A, B, C, D)
+shows A = D
+using assms
+by (cases z, cases w) (auto split: if-split-asm)
+
+lemma poincare-line-cvec-cmat-hermitean [simp]:
+shows hermitean (poincare-line-cvec-cmat z w)
+by (cases z, cases w) (auto split: if-split-asm simp del: mk-poincare-line-cmat-def)
+
+lemma poincare-line-cvec-cmat-nonzero [simp]:
+assumes z # vec-zero w # vec-zero
+shows poincare-line-cvec-cmat z w # mat-zero
+proof—
+
+obtain z1 22 wl w2 where *: z = (21, 22) w = (wl, w2)
+by (cases z, cases w, auto)
+
+let ?den = z1xcnj z2*cnj wl*w2 — wlxcnj w2*cnj z1*22
+show ?thesis
+proof (cases ?den # 0)
+case True
+have is-real (i « ?den)
+using eq-cnj-iff-reallof i * ?den]
+by (simp add: field-simps)
+hence Re (i x ?den) 4 0
+using <?den # 0>
+by (metis complex-i-not-zero complex-surj mult-eq-0-iff zero-complex. code)
+thus ?thesis
+using * «?den # 0»
+by (simp del: mk-poincare-line-cmat-def mat-zero-def add: mk-poincare-line-cmat-zero-iff )
+next
+case False
+thus ?thesis
+using *
+by (simp del: mk-poincare-line-cmat-def mat-zero-def add: mk-poincare-line-cmat-zero-iff )
+qed
+qed
+
+lift-definition poincare-line-hcoords-clmat :: complex-homo-coords = complex-homo-coords => circline-mat is poincare-line-cvec-cmat
+using poincare-line-cvec-cmat-hermitean poincare-line-cvec-cmat-nonzero
+by simp
+
+lift-definition poincare-line :: complex-homo = complez-homo => circline is poincare-line-hcoords-clmat
+proof transfer
+fix za zb wa wb
+assume za # vec-zero zb # vec-zero wa # vec-zero wh # vec-zero
+assume 2a ®y 2b wa %v wh
+obtain zal za2 zb1 zb2 wal wa2 whl wb2 where
+*: (zal, 2a2) = za (zb1, 2b2) = 2b
+(wal, wa2) = wa (wb1, wb2) = wb
+by (cases za, cases zb, cases wa, cases wb, auto)
+obtain kz kw where
+xxi kz A Okw # 0 2b1 = kz * zal 2b2 = kz * za2 whl = kw * wal wb2 = kw * wa2
+
+18

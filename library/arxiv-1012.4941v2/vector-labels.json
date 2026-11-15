@@ -1,0 +1,1158 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1012.4941v2",
+  "pages": [
+    {
+      "page": 15,
+      "rotation": 0,
+      "drawings": 41,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. The reduced ILP graph for (10)."
+      ],
+      "labels": [
+        {
+          "text": "SYMMETRIC LINEAR AND INTEGER PROGRAMS",
+          "bbox": [
+            207.96,
+            88.84,
+            403.99,
+            95.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "15",
+          "bbox": [
+            496.08,
+            88.84,
+            504.01,
+            95.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            246.8,
+            114.38,
+            251.78,
+            124.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            360.19,
+            114.38,
+            365.17,
+            124.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ρ1",
+          "bbox": [
+            216.14,
+            140.69,
+            225.26,
+            151.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ρ2",
+          "bbox": [
+            244.48,
+            140.69,
+            253.61,
+            151.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ρ3",
+          "bbox": [
+            272.83,
+            140.69,
+            281.96,
+            151.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ζ1",
+          "bbox": [
+            329.92,
+            142.0,
+            338.21,
+            152.65
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ζ2",
+          "bbox": [
+            358.27,
+            142.0,
+            366.56,
+            152.65
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ζ3",
+          "bbox": [
+            386.61,
+            142.0,
+            394.9,
+            152.65
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "α11",
+          "bbox": [
+            185.19,
+            197.61,
+            199.48,
+            208.26
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "α12",
+          "bbox": [
+            213.54,
+            197.61,
+            227.83,
+            208.26
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "α13",
+          "bbox": [
+            241.89,
+            197.61,
+            256.17,
+            208.26
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "α21",
+          "bbox": [
+            270.23,
+            197.61,
+            284.52,
+            208.26
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "α22",
+          "bbox": [
+            298.58,
+            197.61,
+            312.87,
+            208.26
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "α23",
+          "bbox": [
+            326.93,
+            197.61,
+            341.22,
+            208.26
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "α31",
+          "bbox": [
+            355.27,
+            197.61,
+            369.56,
+            208.26
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "α32",
+          "bbox": [
+            383.62,
+            197.61,
+            397.91,
+            208.26
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "α33",
+          "bbox": [
+            411.97,
+            197.61,
+            426.26,
+            208.26
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            246.8,
+            256.11,
+            251.78,
+            266.07
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            303.5,
+            256.11,
+            308.48,
+            266.07
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            360.19,
+            256.11,
+            365.17,
+            266.07
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 1. The reduced ILP graph for (10).",
+          "bbox": [
+            209.4,
+            287.11,
+            402.6,
+            297.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proposition 38. The map γ 7→ψ∗",
+          "bbox": [
+            108.0,
+            316.84,
+            264.72,
+            328.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMSY10",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "γ is an isomorphism from the group of labeled automor-",
+          "bbox": [
+            260.28,
+            318.06,
+            503.96,
+            330.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "phisms of the graph G′(A, b, c) to the group Sym(ILP(A, b, c)) ∩Sym(n).",
+          "bbox": [
+            108.0,
+            329.2,
+            422.21,
+            341.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Proof. We describe the inverse map. To this end let σ be a symmetry of ILP(A, b, c) which",
+          "bbox": [
+            108.0,
+            349.98,
+            504.01,
+            360.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "acts on the standard basis of Rn. Hence σ induces a permutation φ of the rows of the",
+          "bbox": [
+            108.0,
+            360.03,
+            503.98,
+            372.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "extended matrix (A|b) and a permutation ψ of the columns of A. It is obvious how φ and",
+          "bbox": [
+            108.0,
+            374.13,
+            504.01,
+            384.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ψ induce permutations of the row nodes and of the column nodes of G′.",
+          "bbox": [
+            108.0,
+            384.04,
+            438.6,
+            396.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "By the same",
+          "bbox": [
+            447.0,
+            386.13,
+            504.1,
+            396.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "reasoning as in the proof of Lemma 37 the pair (φ, ψ) uniquely extends to a labeled graph",
+          "bbox": [
+            108.0,
+            398.13,
+            504.13,
+            408.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "automorphism γ(σ) of the reduced ILP graph.",
+          "bbox": [
+            108.0,
+            410.01,
+            310.2,
+            419.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We omit the straightforward proofs that the equations γ(ψ∗",
+          "bbox": [
+            120.0,
+            420.64,
+            386.4,
+            431.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "γ) = γ and ψ∗",
+          "bbox": [
+            381.96,
+            420.64,
+            446.76,
+            433.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "γ(σ) = σ both",
+          "bbox": [
+            442.32,
+            422.01,
+            504.01,
+            435.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "hold. From these it follows that the map γ 7→ψ∗",
+          "bbox": [
+            108.0,
+            433.48,
+            322.92,
+            444.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "γ is bijective. In both groups the multipli-",
+          "bbox": [
+            318.48,
+            434.85,
+            503.95,
+            447.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "cations are given by concatenations of maps. A direct computation yields ψ∗",
+          "bbox": [
+            108.0,
+            445.48,
+            445.08,
+            456.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "γ1γ2 = ψ∗",
+          "bbox": [
+            440.64,
+            445.48,
+            482.04,
+            460.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "γ1ψ∗",
+          "bbox": [
+            477.6,
+            445.48,
+            497.04,
+            458.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "γ2;",
+          "bbox": [
+            492.6,
+            446.85,
+            504.0,
+            458.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "□",
+          "bbox": [
+            496.2,
+            456.24,
+            503.94,
+            466.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "all maps are acting on the left. Hence the group structures are preserved.",
+          "bbox": [
+            108.0,
+            458.73,
+            429.12,
+            468.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We now explain how the full ILP graph G(A, b, c) diﬀers from the restricted ILP graph",
+          "bbox": [
+            120.0,
+            479.25,
+            504.13,
+            489.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "G′(A, b, c). The key to the construction of G′(A, b, c) is the map γ 7→ψ∗",
+          "bbox": [
+            108.0,
+            489.04,
+            428.88,
+            501.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "γ yielding a linear",
+          "bbox": [
+            424.44,
+            491.25,
+            504.05,
+            503.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "transformation which acts as a permutation of the standard basis of Rn. In order to allow for",
+          "bbox": [
+            108.0,
+            500.91,
+            504.05,
+            513.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "signed permutations certain nodes have to be duplicated: each column node ζj in G′(A, b, c)",
+          "bbox": [
+            108.0,
+            513.04,
+            504.03,
+            526.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "gets a twin node ˆζj in G(A, b, c), each matrix coeﬃcient node αij corresponding to a non-",
+          "bbox": [
+            108.0,
+            525.93,
+            504.08,
+            539.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "zero coeﬃcient gets a twin node ˆαij. Moreover, we add further nodes representing negatives",
+          "bbox": [
+            108.0,
+            540.45,
+            504.08,
+            551.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of non-zero coeﬃcients in the matrix A and the objective function c unless nodes with",
+          "bbox": [
+            108.0,
+            552.45,
+            504.01,
+            562.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "these labels already exist.",
+          "bbox": [
+            108.0,
+            564.33,
+            224.04,
+            574.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "This way ILP(A, b, c) has less than twice as many nodes as",
+          "bbox": [
+            232.8,
+            564.33,
+            504.08,
+            574.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ILP′(A, b, c); it is always strictly less as the nodes corresponding to the coeﬃcients in b are",
+          "bbox": [
+            108.0,
+            574.24,
+            504.1,
+            586.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "never duplicated. We also add edges such that ﬁrst ˆαij is adjacent to ρi and ˆζj for all i",
+          "bbox": [
+            108.0,
+            586.77,
+            503.95,
+            600.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and j, second ˆζj is adjacent to µ−cj, third ˆαij is adjacent to κ−aij, and, ﬁnally, the twins",
+          "bbox": [
+            108.0,
+            600.09,
+            503.96,
+            614.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "are matched up: αij is adjacent to ˆαij and ˆζj is adjacent to ζj. The labeling is extended",
+          "bbox": [
+            108.0,
+            614.13,
+            504.01,
+            628.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "in a way such that twins share the same label; the nodes newly introduced for negatives of",
+          "bbox": [
+            108.0,
+            628.65,
+            504.04,
+            638.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "coeﬃcients receive new singleton labels.",
+          "bbox": [
+            108.0,
+            640.65,
+            281.16,
+            650.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Each labeled graph automorphism of G′(A, b, c) uniquely extends to a labeled graph",
+          "bbox": [
+            120.0,
+            650.56,
+            504.13,
+            662.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "automorphism of G(A, b, c), but the automorphism group of the non-reduced ILP graph is",
+          "bbox": [
+            108.0,
+            664.53,
+            503.96,
+            674.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "larger, in general. We have the following result.",
+          "bbox": [
+            108.0,
+            676.53,
+            315.48,
+            686.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

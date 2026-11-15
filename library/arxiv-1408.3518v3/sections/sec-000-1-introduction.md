@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1408.3518v3
-doc_title: "On Augmentation Algorithms for Linear and Integer-Linear Programming:"
+doc_title: "On Augmentation Algorithms for Linear and Integer-Linear Programming: From Edmonds-Karp to Bland and Beyond"
 section_id: sec-000-1-introduction
 section_title: "Introduction."
 section_number: 1
 pages: 1-4
 source_pdf: 1408.3518v3.pdf
 source_sha256: cf18585b886587c7
-doc_brief: "On Augmentation Algorithms for Linear and Integer-Linear Programming: — 4 sections: Introduction.; Our Contributions; Proofs"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.67
+latex_prose_ratio: 0.952
+latex_coverage_ratio: 0.998
+doc_brief: "On Augmentation Algorithms for Linear and Integer-Linear Programming: From Edmonds-Karp to Bland and Beyond — 13 sections: Front matter; Introduction.; Our Contributions"
 ---
 We consider a general framework for solving linear programs (LPs) and integer-linear programs (ILPs) of the form
 \begin{equation} \label{themilp}

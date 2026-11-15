@@ -24,11 +24,10 @@
     "library/bn/sections/sec-009",
     "library/bn/sections/sec-010",
     "library/bn/sections/sec-011",
-    "library/bn/sections/sec-012",
-    "library/bn/sections/sec-013"
+    "library/bn/sections/sec-012"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "bn",
     "title_source": "pdf-info",
@@ -38,8 +37,8 @@
     "pages": 64,
     "arxiv": null,
     "doi": null,
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

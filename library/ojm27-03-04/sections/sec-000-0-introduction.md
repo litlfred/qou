@@ -1,6 +1,6 @@
 ---
 doc_id: ojm27-03-04
-doc_title: "Title Hyperbolic 3-manifolds with totally geodesic boundary Author(s)"
+doc_title: "Hyperbolic 3-manifolds with totally geodesic boundary"
 section_id: sec-000-0-introduction
 section_title: "Introduction"
 section_number: 0
@@ -8,6 +8,7 @@ pages: 2-3
 source_pdf: ojm27_03_04.pdf
 source_sha256: b357cc8378dae3fd
 toc_source: inferred
+doc_brief: "Fujii, Hyperbolic 3-manifolds with totally geodesic boundary (Osaka J. Math. 27(3), 1990, 539–553)."
 ---
 In this paper, we study compact oriented hyperbolic 3-manifolds each of
 which has a totally geodesic boundary. By a hyperbolic manifold, we mean a

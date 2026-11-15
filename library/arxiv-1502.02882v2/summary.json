@@ -2,22 +2,27 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1502.02882v2",
  "source_sha256": "43641c6f3aed63dd",
- "brief": "Fusion categories via string diagrams Bruce Bartlett — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories.",
- "extended": "**Fusion categories via string diagrams Bruce Bartlett**\n\n36 pp, 23 sections.\n\n**Abstract.** We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories. These results include: the quadruple dual is canonically isomorphic to the identity, positivity of the paired dimensions, and Ocneanu rigidity. We introduce the pairing convention as a convenient graphical framework for working with fusion categories. We use this framework to express the pivotal operators as a product of the apex associator monodromy and the pivotal indicators. We also characterize pivotal structures as solutions of an explicit set of algebraic equations over the complex numbers.\n\n**Outline.** 1 Introduction; 2 String diagrams; 2.1 Conventions for general monoidal categorie; 2.2 Conventions for fusion categories; 3 The pivotal operators on a fusion category; 3.2 The pairing convention; 3.1 Fusion and Frobenius-Peron dimensions; 3.2.1 Further graphical conventions; 3.3 The pivotal operators; 3.4 Positivity of paired dimensions; 3.5 The pivotal operators as a monoidal functo; 3.6 The pivotal operators are the double dual ; 4 Explicit formula for the pivotal operators; 4.2 The pivotal indicators; 4.1 Monodromy interpretation of the pivotal op; 4.3 Formula for the pivotal operators; 5 Pivotal structures; 5.1 Explicit equations for pivotal structures",
+ "brief": "Fusion categories via string diagrams — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories.",
+ "extended": "**Fusion categories via string diagrams**\n\n*Bruce Bartlett*\n\n36 pp, 24 sections.\n\n**Abstract.** We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories. These results include: the quadruple dual is canonically isomorphic to the identity, positivity of the paired dimensions, and Ocneanu rigidity. We introduce the pairing convention as a convenient graphical framework for working with fusion categories. We use this framework to express the pivotal operators as a product of the apex associator monodromy and the pivotal indicators. We also characterize pivotal structures as solutions of an explicit set of algebraic equations over the complex numbers.\n\n**Outline.** Front matter; 1 Introduction; 2 String diagrams; 2.1 Conventions for general monoidal categorie; 2.2 Conventions for fusion categories; 3 The pivotal operators on a fusion category; 3.1 Fusion and Frobenius-Peron dimensions; 3.2 The pairing convention; 3.2.1 Further graphical conventions; 3.3 The pivotal operators; 3.4 Positivity of paired dimensions; 3.5 The pivotal operators as a monoidal functo; 3.6 The pivotal operators are the double dual ; 4 Explicit formula for the pivotal operators; 4.1 Monodromy interpretation of the pivotal op; 4.2 The pivotal indicators; 4.3 Formula for the pivotal operators; 5 Pivotal structures",
  "tokens": {
-  "brief": 48,
-  "extended": 353
+  "brief": 44,
+  "extended": 345
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-3"
+   "pages": "1-4"
   },
   {
    "id": "sec-001-2-string-diagrams",
    "title": "String diagrams",
-   "pages": "3-4"
+   "pages": "4-4"
   },
   {
    "id": "sec-002-21-conventions-for-general-monoidal-categories",
@@ -35,14 +40,14 @@
    "pages": "7-7"
   },
   {
-   "id": "sec-005-32-the-pairing-convention",
-   "title": "The pairing convention",
-   "pages": "7-7"
+   "id": "sec-005-31-fusion-and-frobenius-peron-dimensions",
+   "title": "Fusion and Frobenius-Peron dimensions",
+   "pages": "7-8"
   },
   {
-   "id": "sec-006-31-fusion-and-frobenius-peron-dimensions",
-   "title": "Fusion and Frobenius-Peron dimensions",
-   "pages": "7-10"
+   "id": "sec-006-32-the-pairing-convention",
+   "title": "The pairing convention",
+   "pages": "8-10"
   },
   {
    "id": "sec-007-321-further-graphical-conventions",
@@ -72,16 +77,16 @@
   {
    "id": "sec-012-4-explicit-formula-for-the-pivotal-operators",
    "title": "Explicit formula for the pivotal operators",
-   "pages": "20-20"
-  },
-  {
-   "id": "sec-013-42-the-pivotal-indicators",
-   "title": "The pivotal indicators",
    "pages": "20-21"
   },
   {
-   "id": "sec-014-41-monodromy-interpretation-of-the-pivotal-opera",
+   "id": "sec-013-41-monodromy-interpretation-of-the-pivotal-opera",
    "title": "Monodromy interpretation of the pivotal operators",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-014-42-the-pivotal-indicators",
+   "title": "The pivotal indicators",
    "pages": "21-24"
   },
   {

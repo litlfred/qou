@@ -1,0 +1,1 @@
+This matching procedure is summarized in the following simple condition: $$\Gamma_{\rm R}^{\rm SM}(\mu ) =\Gamma_{\rm R}^{\rm EChL}(\mu ) \; , \;\;\;\;\;\;\;\;\;\;\;\;\mu\leq \mh$$ where the large Higgs mass limit in the left-hand side must be understood throughout.

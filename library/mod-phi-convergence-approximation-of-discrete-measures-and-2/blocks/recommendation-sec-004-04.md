@@ -1,0 +1,1 @@
+On the other hand, we consider only three distances among those studied in [34], but there should be no diﬃculty in adapting our results to the other distances, such as the Wasserstein metric and the Hellinger/Matusita metric.

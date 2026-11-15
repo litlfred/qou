@@ -1,0 +1,1 @@
+In this case the propagator should be obtained by inverting the operator -£, ie. it should be a the integral operator with kernel G(t — s), where G(t) is an even function satisfying the differential equation —G"(t) = d(t).

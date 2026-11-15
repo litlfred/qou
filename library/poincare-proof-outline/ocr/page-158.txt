@@ -1,0 +1,65 @@
+lemma unit-disc-fir-preserves-poincare-on-ray [simp]:
+assumes unit-disc-fix M p € unit-disc a € unit-disc b € unit-disc
+shows poincare-on-ray (moebius-pt M p) (moebius-pt M a) (moebius-pt M b) <—> poincare-on-ray p a b
+using assms
+unfolding poincare-on-ray-def
+by auto
+
+lemma unit-disc-fiz-preserves-poincare-in-angle [simp]:
+assumes unit-disc-fix M p € unit-disc a € unit-disc b € unit-disc c € unit-disc
+shows poincare-in-angle (moebius-pt M p) (moebius-pt M a) (moebius-pt M b) (moebius-pt M c) <—> poincare-in-angle
+pabc (is ?lhs <—+ ?rhs)
+proof
+assume ?/hs
+then obtain Mz where *: Mz € unit-disc
+poincare-between (moebius-pt M a) Mx (moebius-pt M c)
+Mz # moebius-pt M a Mz 4 moebius-pt M c poincare-on-ray (moebius-pt M p) (moebius-pt M b) Mx
+moebius-pt M b #4 moebius-pt M a moebius-pt M b #4 moebius-pt M c moebius-pt M p # moebius-pt M b
+unfolding poincare-in-angle-def
+by auto
+obtain « where Mz = moebius-pt M x x € unit-disc
+by (metis «(1) assms(1) image-iff unit-disc-fix-iff)
+thus ?rhs
+using * assms
+unfolding poincare-in-angle-def
+by auto
+next
+assume ?rhs
+then obtain z where *: x € unit-disc
+poincare-between a xc
+x#ax#c poincare-on-ray p bx
+bAabzAcpHFdH
+unfolding poincare-in-angle-def
+by auto
+thus ?lhs
+using assms
+unfolding poincare-in-angle-def
+by auto (rule-tac =moebius-pt M x in berl, auto)
+qed
+
+lemma unit-disc-fit-preserves-poincare-ray-meets-line [simp]:
+assumes unit-disc-fix M a € unit-disc b € unit-disc c € unit-disc d € unit-disc
+shows poincare-ray-meets-line (moebius-pt M a) (moebius-pt M b) (moebius-pt M c) (moebius-pt M d) <—>+ poincare-ray-meets-line
+abcd (is ?lhs <> ?rhs)
+proof
+assume ?/hs
+then obtain Mz where +: Mz € unit-disc poincare-on-ray Mx (moebius-pt M a) (moebius-pt M b)
+poincare-on-line Mx (moebius-pt M c) (moebius-pt M d)
+unfolding poincare-ray-meets-line-def
+by auto
+obtain « where Mz = moebius-pt M x x € unit-disc
+by (metis «(1) assms(1) image-iff unit-disc-fix-iff)
+thus ?rhs
+using assms *
+unfolding poincare-ray-meets-line-def poincare-on-line-def
+by auto
+next
+assume ?rhs
+then obtain z where «: x € unit-disc poincare-on-ray x a b
+poincare-on-line x c d
+unfolding poincare-ray-meets-line-def
+by auto
+thus ?lhs
+using assms *
+unfolding poincare-ray-meets-line-def poincare-on-line-def
+by auto (rule-tac =moebius-pt M x in berl, auto)

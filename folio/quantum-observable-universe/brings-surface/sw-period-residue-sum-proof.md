@@ -21,9 +21,8 @@ left-hand side with the prolonged period $a_D^{(n)}$ of
 shape: the period is computed by collecting residues, with no contour
 integration — *once $E$ is known*.
 
-**Scope (corrected 2026-08-29, bean `qou-6v5l`).** This argument previously ran
-over all $k$ poles and appealed to "the period over the generating cycle of
-$\mathcal{S}_c$". Neither step is available. $\mathbb{P}^1(\mathbb{C})$ has
+**Scope.** The argument cannot run over all $k$ poles, nor appeal to a period
+over a generating cycle of $\mathcal{S}_c$. $\mathbb{P}^1(\mathbb{C})$ has
 $H_1 = 0$, so there is no generating cycle; and the residue theorem on a compact
 Riemann surface states that the residues over *all* poles **sum to zero**, which
 would give $a_D^{(n)} = 0$ at every level rather than the positive binding period

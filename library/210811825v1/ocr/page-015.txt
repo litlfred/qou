@@ -1,0 +1,44 @@
+greater detail about the formulation of Equation (1.2) in Section 2.1, where we define
+the Laplacian and its domain, and prove that_the eigenfunctions ¢; exist and form an
+orthonormal basis of the L* space of fanctionslon the mashce
+
+The interplay between hyperbolic surfaces and Fuchsian groups gives us additional
+tools to analyze their spectral theory. tLChapter 2. wb give an outline of hyperbolic
+geometry, and the analytical methods used to investigate the spectra of these surfaces.
+We introduce Selberg’s trace formula (Theorem 2.47), and give a generalization to cases
+
+where an isometry group is acting.
+
+Eigenvalue Problems
+
+A topic of central interest in this work is the eigenvalue spectrum of the Laplacian cor-
+responding to a particular closed or boundary value problem, which will take the form
+of one of the following. We follow the definitions of [15]. The Riemann surfaces that
+we consider have no boundary, so their eigenvalues and eigenfunctions satisfy the closed
+
+eigenvalue problem:
+
+Definition 1.5 (Closed eigenvalue problem) For a connected, compact surface M,
+find all X € R such that
+Ad - Ad =0
+
+has nontrivial solutions ¢ € C?(M).
+
+In practice, we will not tackle the closed eigenvalue problem head on. It is not possible
+to calculate such eigenvalues explicitly, and the surface as a whole is often too compli-
+cated to analyze. Rather, we will use the symmetry of the surface to break the closed
+problem down into one of the following, where we consider a boundary value problem on
+a subspace of the surface. We define the following problems on the more general setting
+of a connected, smooth, oriented Riemannian manifold M. Additional conditions will
+be specified. Giving the definitions on general manifolds will allow us to consider these
+
+problems on sub-manifolds later.
+
+Definition 1.6 (Dirichlet eigenvalue problem) For 0M #4 0, M compact and con-
+nected, find all \ € R such that
+Ad — Ao = 0
+
+has nontrivial solutions ¢ € C?(M).C°(M) that satisfy the boundary condition
+o=0
+
+on OM.

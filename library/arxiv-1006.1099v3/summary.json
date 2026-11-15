@@ -2,27 +2,32 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1006.1099v3",
  "source_sha256": "76c1c4173cdee9d8",
- "brief": "FLOER COHOMOLOGY AND PENCILS OF QUADRICS IV AN SMITH — There is a classical relationship in algebraic geometry bet ween a hyperelliptic curve and an associated pencil of quadric hypersurfaces.",
- "extended": "**FLOER COHOMOLOGY AND PENCILS OF QUADRICS IV AN SMITH**\n\n70 pp, 32 sections.\n\n**Abstract.** There is a classical relationship in algebraic geometry bet ween a hyperelliptic curve and an associated pencil of quadric hypersurfaces. W e investigate symplectic aspects of this relationship, with a view to applications in low-dimen sional topology.\n\n**Outline.** 1 Introduction; 1.1 Two contexts; 1.2 The theorem; 1.3 Entropy; 1.4 Representation varieties; 1.5 Instanton Floer homology; 1.7 Homological Mirror Symmetry; 1.8 Another birational motivation; 1.9 Outline of proof; 2 The representation variety; 2.2 Monodromy and degenerations; 2.3 Fibred 3-manifolds; 2.4 Faithfulness; 3 The Fukaya category; 3.1 Floer and quantum cohomology; 3.2 Higher order products; 3.3 Twisting and generation; 3.5 Grading and deformations\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: There is a C-linear equivalence of Z2-graded split-closed triangulated categories\n- Theorem 1.4: A diﬀeomorphism φ∈ ˜Γ hyp\n- Theorem 1.5: Forg≥ 2, ˆρ : ˆΓ(Σ g)−→π0 Symp M(Σ g) does not factor through the symplectic\n- Theorem 1.6: If φ∈ Symp M(Σ g) represents a class in im(ˆρ) then φ ﬁxes a point of M(Σ g).\n- Theorem 2.13: The eigenvalues of quantum cap-product ∗h by the generator h ∈\n- Theorem 2.16: Let k > 1. Suppose that V ⊂ M is an Sk-ﬁbred co-",
+ "brief": "FLOER COHOMOLOGY AND PENCILS OF QUADRICS — There is a classical relationship in algebraic geometry between a hyperelliptic curve and an associated pencil of quadric hypersurfaces.",
+ "extended": "**FLOER COHOMOLOGY AND PENCILS OF QUADRICS**\n\n*IVAN SMITH*\n\n70 pp, 38 sections.\n\n**Abstract.** There is a classical relationship in algebraic geometry between a hyperelliptic curve and an associated pencil of quadric hypersurfaces. We investigate symplectic aspects of this relationship, with a view to applications in low-dimensional topology.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Two contexts; 1.2 The theorem; 1.3 Entropy; 1.4 Representation varieties; 1.5 Instanton Floer homology; 1.7 Homological Mirror Symmetry; 1.8 Another birational motivation; 1.9 Outline of proof; 2 The representation variety; 2.1 Topology; 2.2 Monodromy and degenerations; 2.3 Fibred 3-manifolds; 2.4 Faithfulness; 2.5 A fixed point theorem; 3 The Fukaya category; 3.1 Floer and quantum cohomology",
  "tokens": {
-  "brief": 48,
-  "extended": 334
+  "brief": 44,
+  "extended": 197
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-1"
+   "pages": "2-2"
   },
   {
    "id": "sec-001-11-two-contexts",
    "title": "Two contexts",
-   "pages": "1-1"
+   "pages": "2-2"
   },
   {
    "id": "sec-002-12-the-theorem",
    "title": "The theorem",
-   "pages": "1-3"
+   "pages": "2-3"
   },
   {
    "id": "sec-003-13-entropy",
@@ -57,115 +62,140 @@
   {
    "id": "sec-009-2-the-representation-variety",
    "title": "The representation variety",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-010-21-topology",
+   "title": "Topology",
    "pages": "9-10"
   },
   {
-   "id": "sec-010-22-monodromy-and-degenerations",
+   "id": "sec-011-22-monodromy-and-degenerations",
    "title": "Monodromy and degenerations",
    "pages": "10-12"
   },
   {
-   "id": "sec-011-23-fibred-3-manifolds",
+   "id": "sec-012-23-fibred-3-manifolds",
    "title": "Fibred 3-manifolds",
    "pages": "12-13"
   },
   {
-   "id": "sec-012-24-faithfulness",
+   "id": "sec-013-24-faithfulness",
    "title": "Faithfulness",
-   "pages": "13-16"
+   "pages": "13-15"
   },
   {
-   "id": "sec-013-3-the-fukaya-category",
+   "id": "sec-014-25-a-fixed-point-theorem",
+   "title": "A fixed point theorem",
+   "pages": "15-17"
+  },
+  {
+   "id": "sec-015-3-the-fukaya-category",
    "title": "The Fukaya category",
-   "pages": "16-17"
+   "pages": "17-17"
   },
   {
-   "id": "sec-014-31-floer-and-quantum-cohomology",
+   "id": "sec-016-31-floer-and-quantum-cohomology",
    "title": "Floer and quantum cohomology",
    "pages": "17-19"
   },
   {
-   "id": "sec-015-32-higher-order-products",
+   "id": "sec-017-32-higher-order-products",
    "title": "Higher order products",
    "pages": "19-21"
   },
   {
-   "id": "sec-016-33-twisting-and-generation",
+   "id": "sec-018-33-twisting-and-generation",
    "title": "Twisting and generation",
-   "pages": "21-26"
+   "pages": "21-23"
   },
   {
-   "id": "sec-017-35-grading-and-deformations",
+   "id": "sec-019-34-functors-from-quilts",
+   "title": "Functors from quilts",
+   "pages": "23-26"
+  },
+  {
+   "id": "sec-020-35-grading-and-deformations",
    "title": "Grading and deformations",
    "pages": "26-26"
   },
   {
-   "id": "sec-018-36-formality",
+   "id": "sec-021-36-formality",
    "title": "Formality",
-   "pages": "26-30"
+   "pages": "26-29"
   },
   {
-   "id": "sec-019-4-from-the-base-locus-to-the-relative-quadric",
+   "id": "sec-022-37-the-fukaya-category-of-a-curve",
+   "title": "The Fukaya category of a curve",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-023-4-from-the-base-locus-to-the-relative-quadric",
    "title": "From the base locus to the relative quadric",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-024-41-the-fukaya-category-of-a-quadric",
+   "title": "The Fukaya category of a quadric",
    "pages": "30-33"
   },
   {
-   "id": "sec-020-42-hyperelliptic-curves-and-quadrics",
+   "id": "sec-025-42-hyperelliptic-curves-and-quadrics",
    "title": "Hyperelliptic curves and quadrics",
    "pages": "33-36"
   },
   {
-   "id": "sec-021-43-idempotents-for-functors",
+   "id": "sec-026-43-idempotents-for-functors",
    "title": "Idempotents for functors",
    "pages": "36-37"
   },
   {
-   "id": "sec-022-44-an-illustrative-example",
+   "id": "sec-027-44-an-illustrative-example",
    "title": "An illustrative example",
    "pages": "37-41"
   },
   {
-   "id": "sec-023-45-idempotents-and-blow-ups",
+   "id": "sec-028-45-idempotents-and-blow-ups",
    "title": "Idempotents and blow-ups",
    "pages": "41-49"
   },
   {
-   "id": "sec-024-46-spinning",
+   "id": "sec-029-46-spinning",
    "title": "Spinning",
    "pages": "49-52"
   },
   {
-   "id": "sec-025-5-from-the-curve-to-the-relative-quadric",
+   "id": "sec-030-5-from-the-curve-to-the-relative-quadric",
    "title": "From the curve to the relative quadric",
    "pages": "52-52"
   },
   {
-   "id": "sec-026-51-matching-spheres",
+   "id": "sec-031-51-matching-spheres",
    "title": "Matching Spheres",
    "pages": "52-54"
   },
   {
-   "id": "sec-027-52-thimbles",
+   "id": "sec-032-52-thimbles",
    "title": "Thimbles",
    "pages": "54-56"
   },
   {
-   "id": "sec-028-53-exterior-algebra",
+   "id": "sec-033-53-exterior-algebra",
    "title": "Exterior Algebra",
    "pages": "56-59"
   },
   {
-   "id": "sec-029-54-the-cubic-term",
+   "id": "sec-034-54-the-cubic-term",
    "title": "The cubic term",
    "pages": "59-62"
   },
   {
-   "id": "sec-030-55-finite-determinacy",
+   "id": "sec-035-55-finite-determinacy",
    "title": "Finite determinacy",
    "pages": "62-67"
   },
   {
-   "id": "sec-031-references",
+   "id": "sec-036-references",
    "title": "References",
    "pages": "67-70"
   }
@@ -174,8 +204,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

@@ -1,0 +1,93 @@
+Physics Reports 470 (2009) 151-238
+
+Contents lists available at ScienceDirect
+
+PHYSICS REPORTS
+
+Physics Reports
+
+journal homepage: www.elsevier.com/locate/physrep
+
+The Magnus expansion and some of its applications
+
+S. Blanes?, F. Casas, J.A. Oteo‘, J. Ros °**
+
+* Instituto de Matematica Multidisciplinar, Universidad Politécnica de Valencia, E-46022 Valencia, Spain
+> Departament de Matematiques, Universitat Jaume I, E-12071 Castell6n, Spain
+
+© Departament de Fisica Teorica, Universitat de Valéncia, E-46100 Burjassot, Valencia, Spain
+
+4 IFIC, Centre Mixt Universitat de Valéncia-CSIC, E-46100 Burjassot, Valencia, Spain
+
+ARTICLE INFO ABSTRACT
+
+Article history:
+
+Accepted 13 November 2008
+Available online 25 November 2008
+editor: D.L. Mills
+
+Approximate resolution of linear systems of differential equations with varying coefficients
+is a recurrent problem, shared by a number of scientific and engineering areas, ranging
+from Quantum Mechanics to Control Theory. When formulated in operator or matrix form,
+the Magnus expansion furnishes an elegant setting to build up approximate exponential
+
+PACS:
+03.65
+02.30.Hq
+02.60.Cb
+02.20.Rt
+
+representations of the solution of the system. It provides a power series expansion for
+the corresponding exponent and is sometimes referred to as Time-Dependent Exponential
+Perturbation Theory. Every Magnus approximant corresponds in Perturbation Theory to
+a partial re-summation of infinite terms with the important additional property of
+preserving, at any order, certain symmetries of the exact solution.
+
+The goal of this review is threefold. First, to collect a number of developments
+scattered through half a century of scientific literature on Magnus expansion. They
+concern the methods for the generation of terms in the expansion, estimates of the radius
+of convergence of the series, generalizations and related non-perturbative expansions.
+Second, to provide a bridge with its implementation as generator of especial purpose
+numerical integration methods, a field of intense activity during the last decade. Third,
+to illustrate with examples the kind of results one can expect from Magnus expansion,
+in comparison with those from both perturbative schemes and standard numerical
+integrators. We buttress this issue with a revision of the wide range of physical applications
+found by Magnus expansion in the literature.
+
+© 2008 Elsevier B.V. All rights reserved.
+
+Contents
+
+1. Introduction...
+
+1.1.
+1.2.
+
+2. The Magnus expansion (ME)...
+
+2.1.
+2.2.
+2.3.
+24.
+25.
+2.6.
+2.7.
+
+Motivation, overview wand history.
+Mathematical preliminaries and notations..
+
+A proof of Magnus’ Theorem
+Formulae for the first terms in Magnus expansion .
+Magnus expansion generator.
+
+Magnus expansion and time-dependent perturbation theory
+Graph theoretical analysis of Magnus expansion.
+Time-symmetry of the expansion....
+Convergence of the Magnus expansion
+
+* Corresponding author at: Departament de Fisica Tedrica, Universitat de Valéncia, E-46100 Burjassot, Valencia, Spain.
+E-mail address: Jose.Ros@uv.es (J. Ros).
+
+0370-1573/$ - see front matter © 2008 Elsevier B.V. All rights reserved.
+doi: 10.1016/j.physrep.2008.11.001

@@ -1,0 +1,64 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-024
+section_title: "Page 24"
+section_number: null
+pages: 24-24
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+396 T. Ohtsuki (Editor)
+
+where the second integral is over the domain {(z,w) € C? | |z| =|w| =1, 0<
+arg(w) < arg(z) < 27}, and the equality is obtained by putting z = e?™v~!'
+and w = e?"V—!8_ By applying the saddle point method® the asymptotic be-
+
+haviour might be described by a critical value of
+
+2
+
+1
+> — 2Lio(z) — Lig(—) — log z log w. (6)
+WwW
+
+Since a critical value of this function gives a hyperbolic volume of S? — Ks, ,
+this formal argument suggests Conjecture 1.19 for Ks,
+
+It was shown by Yokota [409], following ideas due to Kashaev [196] and Thurston
+[382], that the hyperbolic volume of the complement of any hyperbolic knot Kv
+is given by a critical value of such a function as (6), which is obtained from a
+similar computation of Jjyy(K) as above.
+
+Problem 1.20 Justify the above arguments rigorously.
+
+Remark The asymptotic behaviour of Jy(K) might be described by using
+quantum invariants of S?— K. We have some ways to compute the asymptotic
+behaviour of such a quantum invariant, say, when K is a fibered knot (in this
+case, S? — K is homeomorphic to a mapping torus of a homeomorphism of a
+punctured surface), and when we choose a simplicial decomposition of (a closure
+of) S*— K. For details, see remarks of Conjecture 7.12.
+
+The following conjecture is a complexification of the volume conjecture (Con-
+jecture 1.19).
+
+Conjecture 1.21 (H. Murakami, J. Murakami, M. Okamoto, T. Takata,
+Y. Yokota [297]) For a hyperbolic link L,
+
+anv—1- lim edn (h) = CS($* — L) + V=Ivol($* = L)
+
+Noo
+for an appropriate choice of a branch of the logarithm, where CS and vol denote
+the Chern-Simons invariant and the hyperbolic volume respectively. Moreover,
+
+In+1(Z) 1 3 = 3
+Jim ap = OP (as 98 — L) + V=Ivol( L))). (7)
+Remark It is shown [297], by formal calculations (such as (4) and (5)), that
+Conjecture 1.21 is “true” for Ks,,K6,, K6,,K7., Ks, and the Whitehead link.
+
+5The saddle point method in multi-variables is not established yet. This might be a tech-
+nical difficulty.
+
+Geometry & Topology Monographs, Volume 4 (2002)

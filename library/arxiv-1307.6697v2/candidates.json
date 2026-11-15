@@ -1,0 +1,106 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1307.6697v2",
+ "source": {
+  "structure_sha256": "a3afaefdaebe0292a144037347f9903eace2aea5da25618894915438daa27e2e",
+  "file": "1307.6697v2.pdf"
+ },
+ "provenance": {
+  "title": "REPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS",
+  "authors": "INTO PGL(3, C): EXACT COMPUTATIONS IN LOW COMPLEXITY",
+  "arxiv": {
+   "id": "1307.6697",
+   "version": "2",
+   "primary_class": "math.RT",
+   "stamp_date": "3 Dec 2013"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "recommendation": 5
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The numerical scheme introduced in SnapPea should converge to this solution.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "One should be aware that the compatibility conditions do not imply immediately the existence of a geometric structure.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-4-ideal-triangulations-by-flag-tetrahedra.md",
+   "section_title": "Ideal triangulations by flag tetrahedra",
+   "pages": "8-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "One should think of these as su\ufb03cient conditions for the existence of a 0-skeleton compatible with the side pairings.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-4-ideal-triangulations-by-flag-tetrahedra.md",
+   "section_title": "Ideal triangulations by flag tetrahedra",
+   "pages": "8-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We compute: (1) Solving the constraints on gluing decorated tetrahedra, which reduces to study a constructible set de\ufb01ned implicitly by (a) The consistency relations which de\ufb01ne Edge and Face equations (4.1), (b) The holonomy equations (see section 5), (c) The cross-ratio equations (see 3.1), (d) The restrictions on the coordinate values, precisely zi,j must be di\ufb00erent from 0 and 1.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-6-computational-steps.md",
+   "section_title": "Computational steps",
+   "pages": "12-16",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "There is no interest in describing them in detail here, but this straight- forward step must be carefully implemented if one wants to succeed in the determination of the solutions.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-6-computational-steps.md",
+   "section_title": "Computational steps",
+   "pages": "12-16",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

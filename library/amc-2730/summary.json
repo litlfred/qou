@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "amc-2730",
  "source_sha256": "65730074a2925c6e",
- "brief": "(Also available at http://amc-journal.eu) Braid representatives minimizing the number of simple walks* Hans U. Boden † , Matthew Shimoda ‡ — Given a knot, we develop methods for finding a braid",
- "extended": "**(Also available at http://amc-journal.eu) Braid representatives minimizing the number of simple walks* Hans U. Boden † , Matthew Shimoda ‡**\n\n*Mathematics & Statistics, McMaster University, Hamilton, Ontario, Canada*\n\n27 pp, 6 sections.\n\n**Abstract.** Given a knot, we develop methods for finding a braid representative that minimizes the number of simple walks. Such braids lead to an efficient method for computing the colored Jones polynomial of the knot, following an approach developed by Armond and implemented by Hajij and Levitt. We use this method to compute the colored Jones poly- nomial in closed form for the knots 52, 61, and 72. The set of simple walks can change under reflection, rotation, and cyclic permutation of the braid, and we prove an invariance property which relates the simple walks of a braid to those of its reflection under cyclic permutation. We study the growth rate of the number of simple walks for families of torus knots. Finally, we present a table of braid words that minimize the number of simple walks for knots up to 13 crossings.\n\n**Outline.** Introduction; The colored Jones polynomial and walks along b; The colored Jones polynomial in closed form; Representing knots as braids; Semi-simple walks and cyclic permutation; Minimal braid representatives",
+ "brief": "Braid representatives minimizing the number of simple walks * — Given a knot, we develop methods for finding a braid representative that minimizes the number of simple walks.",
+ "extended": "**Braid representatives minimizing the number of simple walks ***\n\n*Mathematics & Statistics, McMaster University, Hamilton, Ontario, Canada*\n\n27 pp, 9 sections.\n\n**Abstract.** Given a knot, we develop methods for finding a braid representative that minimizes the number of simple walks. Such braids lead to an efficient method for computing the colored Jones polynomial of the knot, following an approach developed by Armond and implemented by Hajij and Levitt. We use this method to compute the colored Jones poly- nomial in closed form for the knots 52, 61, and 72. The set of simple walks can change under reflection, rotation, and cyclic permutation of the braid, and we prove an invariance property which relates the simple walks of a braid to those of its reflection under cyclic permutation. We study the growth rate of the number of simple walks for families of torus knots. Finally, we present a table of braid words that minimize the number of simple walks for knots up to 13 crossings.\n\n**Outline.** Front matter; Introduction; The colored Jones polynomial and walks along b; The colored Jones polynomial in closed form; Representing knots as braids; Semi-simple walks and cyclic permutation; Simple walks on (2,n) torus braids; Simple walks on (3,n) torus braids; Minimal braid representatives",
  "tokens": {
-  "brief": 48,
-  "extended": 324
+  "brief": 43,
+  "extended": 326
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
@@ -32,10 +37,20 @@
   {
    "id": "sec-004-semi-simple-walks-and-cyclic-permutation",
    "title": "Semi-simple walks and cyclic permutation",
-   "pages": "14-21"
+   "pages": "14-17"
   },
   {
-   "id": "sec-005-minimal-braid-representatives",
+   "id": "sec-005-simple-walks-on-2n-torus-braids",
+   "title": "Simple walks on (2,n) torus braids",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-006-simple-walks-on-3n-torus-braids",
+   "title": "Simple walks on (3,n) torus braids",
+   "pages": "18-21"
+  },
+  {
+   "id": "sec-007-minimal-braid-representatives",
    "title": "Minimal braid representatives",
    "pages": "21-27"
   }

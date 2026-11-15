@@ -1,0 +1,91 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2505.02719v2",
+ "source": {
+  "structure_sha256": "1803d10aa55c18cf0c92c3c0a19755f22dd355dd84c8a9406dfae09898d2b013",
+  "file": "2505.02719v2.pdf"
+ },
+ "provenance": {
+  "title": "On the Palais-Smale condition in geometric knot theory",
+  "authors": "Nicolas Freches, Henrik Schumacher, Daniel Steenebr\u00fcgge, and Heiko von der Mosel",
+  "arxiv": {
+   "id": "2505.02719",
+   "version": "2",
+   "primary_class": "math.CA",
+   "stamp_date": "2 Mar 2026"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 4,
+  "by_kind": {
+   "recommendation": 4
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We should also point out the substantial advances in the numerical treatment of such problems as in [7, 5, 6, 77, 76, 59].",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We are going to prove that $(x_{k})_{k \\in \\N}$ must also be strongly convergent in $\\HL$ to a point $x_\\infty$; because condition \\ref{condL} then implies that $x_\\infty$ lies in $\\ML$, which proves the theorem.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-006-energies-on-submanifolds-of-hilbert-spaces.md",
+   "section_title": "Energies on submanifolds of Hilbert spaces",
+   "pages": "8-12",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The interval $\\intervalcc{0,1}$ is compact, so $F$ must have a minimizer $t_0 \\in \\intervalcc{0,1}$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-010-the-topology-of-arclength-manifolds.md",
+   "section_title": "The topology of arclength manifolds",
+   "pages": "20-23",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Because of $\\varGamma(t_0) \\in U$ and because $U$ is open, the minimum value must be positive: $2\\varepsilon\\ceq F(t_0) > 0$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-010-the-topology-of-arclength-manifolds.md",
+   "section_title": "The topology of arclength manifolds",
+   "pages": "20-23",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

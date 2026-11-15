@@ -1,0 +1,30 @@
+Chapitre 3
+The standard torsion
+
+Here M is a compact connected orientable 3-manifold, whose boundary is a torus.
+In this chapter we pick X a one-dimensional component of irreducible type of the
+character variety X (/), and denote by k(X) its function field. Here we consider the
+action of the fundamental group 7(/) on the 2-dimensional vector space k(X)?
+through the tautological representation p : 7(M) > SLo(k(X)), and the correspon-
+ding cohomological complex C*(M,p). When this complex is acyclic (for instance
+when X is a component of the character variety of a hyperbolic manifold that carries
+the holonomy character, say a geometric component), the Reidemeister torsion of
+this complex defines a rational function on the complex curve X. We prove that
+this function’s zeros are precisely characters yj € X where the residual cohomology
+group H'(M, p) are not trivial, and that this function is regular (it has no poles on
+X). Moreover, we consider X a smooth projective model, and show that an ideal
+point of X is a pole of the torsion function if it detects an incompressible surface
+that splits M into two handlebodies and which satisfies the following condition : the
+boundary slope 7 is known (see [CCG*94]) to be mapped by the limit representa-
+tion on a matrix with eigenvalue a root of unity. Moreover the order of this root
+of unity divides the minimal number of boundary components of any component of
+the incompressible surface © associated to this ideal point by the construction of
+Section We assume that the root of unity is 1, and we will say that the boun-
+dary curve has trivial eigenvalues. Such an assumption is motivated by numerical
+computations, and by the fact that it occurs in many known examples. In fact it has
+been a difficult task to find roots of unity different of +1 with this construction, see
+for the first known example. The results of this chapter will be the core of
+
+the upcoming paper [Ben17]|, we summarize them in the following theorems :
+
+83

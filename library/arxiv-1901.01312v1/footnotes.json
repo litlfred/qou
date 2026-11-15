@@ -1,0 +1,840 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1901.01312v1",
+ "status": "determined",
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "1",
+   "text": "OtherschemeshavealsobeenabletoreproducethestructureoftheHarariandShupepreonmodel.One such example is a knot model by Finkelstein, in which the trefoil knots, understood as the j = 3/2 irreducible representations of the quantum group SUq(2), form the basis of fermion states [4, 5]. In that scheme the Rishons",
+   "marks": [
+    {
+     "page": 1,
+     "context": "thesuccessofthatmodelwhilealsoavoidingsomeofitsshortcomings"
+    }
+   ],
+   "block": "library/arxiv-1901.01312v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "2",
+   "text": "InsuchcasestheunderlyingspinnetworksofLQGareq-deformed,givingaframingtoitsedgesandrequiring that these edges be labelled by representations of the quantum group Uq(2) instead of its classical counterpart [11].",
+   "marks": [
+    {
+     "page": 2,
+     "context": "I"
+    },
+    {
+     "page": 2,
+     "context": "I2= J"
+    },
+    {
+     "page": 2,
+     "context": "I2= J2= K"
+    }
+   ],
+   "block": "library/arxiv-1901.01312v1/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p002-2",
+   "page": 2,
+   "mark": "3",
+   "text": "Adivisionalgebraisanalgebraoveraﬁeldwheredivisionisalwayspossible,withtheexceptionofdivisionby zero. In a split algebra on the other hand, there exists at least one x ∈A such that Q2(x) = xx∗= 0 where Q(x) is the norm of A deﬁned in terms of a conjugation x 7→x∗. For a division algebra, the multiplicative inverse of an element x is given by x∗/Q2(x).",
+   "marks": [
+    {
+     "page": 2,
+     "context": "splitalgebras(split-C, H, O)"
+    }
+   ],
+   "block": "library/arxiv-1901.01312v1/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p003-1",
+   "page": 3,
+   "mark": "4",
+   "text": "WeusethetermHurwitzalgebrahereinsteadofnormeddivisionalgebrabecause,thereductionofspinor spaces considered by Dixon [12], and the construction of minimal ideals considered by Furey [15] depend on the existence of nilpotents and primitive idempotents. These do not exist in normed division algebras, but do in their split algebra cousins. For example, when working in C ⊗H or C ⊗O one uses a primitive idempotent to select a split basis to work with.",
+   "marks": [
+    {
+     "page": 3,
+     "context": "andCliﬀordalgebras,thereareonlyaﬁnitenumberofHurwitzalgebras"
+    }
+   ],
+   "block": "library/arxiv-1901.01312v1/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "5",
+   "text": "Acircularbraidonnstringshasnstringsattachedtotheouteredgesoftwocircleswhichlieinparallelplanes in R3.",
+   "marks": [
+    {
+     "page": 4,
+     "context": "2(−e"
+    },
+    {
+     "page": 4,
+     "context": "2(e"
+    },
+    {
+     "page": 5,
+     "context": "2(1 + ek+1ek)formarepresentationofthecircular"
+    }
+   ],
+   "block": "library/arxiv-1901.01312v1/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "6",
+   "text": "Orientableheremeaningthatthesurfaceboundedbytheribbonbraidisorientable.",
+   "marks": [
+    {
+     "page": 6,
+     "context": "braidsareinterchangeable,andthatanyorientable"
+    }
+   ],
+   "block": "library/arxiv-1901.01312v1/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p006-2",
+   "page": 6,
+   "mark": "7",
+   "text": "Theactionofthebasisstatesintheidealisontheidentity[0, 0, 0]fromlefttoright.Thusforexample, ug [1, 1, 0](σ−1",
+   "marks": [
+    {
+     "page": 6,
+     "context": "theminimalleftidealSuofCℓ(6),asineqn.,(6)isrecovered"
+    }
+   ],
+   "block": "library/arxiv-1901.01312v1/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p006-3",
+   "page": 6,
+   "mark": "2",
+   "text": "σ1) = [0, 0, 0](σ1σ2)(σ2σ3)(σ−1",
+   "marks": [
+    {
+     "page": 5,
+     "context": "elements{e1, e2, ..., en}withe"
+    },
+    {
+     "page": 5,
+     "context": "satisfythebraidrelations(7).Although[23]assumesthate"
+    },
+    {
+     "page": 5,
+     "context": "holdswhene"
+    },
+    {
+     "page": 5,
+     "context": "2(1 + I),σ"
+    },
+    {
+     "page": 5,
+     "context": "3(aswellassevendistinctcopiesofB"
+    },
+    {
+     "page": 6,
+     "context": "2,(σ"
+    }
+   ],
+   "block": "library/arxiv-1901.01312v1/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "8",
+   "text": "One may ask, why not identify a ±πtwist with a charge of ±e/3 instead?In that case the braid words would be odd instead. The problem is that when combining three such ribbons together, all the quarks would correspond to unorientable braids.",
+   "marks": [
+    {
+     "page": 7,
+     "context": "rictourselvestobraidscomposedofanevennumberofbraidgenerators"
+    }
+   ],
+   "block": "library/arxiv-1901.01312v1/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p007-2",
+   "page": 7,
+   "mark": "9",
+   "text": "Itisassumedherethateveryparticlehasacorrespondingantiparticle.Ifoneconstructsaparticleusingan electric charge of 2e/3 on one or more ribbons, then the corresponding antiparticle cannot be constructed because σ−4 lies in the same equivalence class as σ4",
+   "marks": [
+    {
+     "page": 7,
+     "context": "2e/3andaribbonwithcharge−2e/3inaconsistentmanner"
+    }
+   ],
+   "block": "library/arxiv-1901.01312v1/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p007-3",
+   "page": 7,
+   "mark": "1",
+   "text": ".",
+   "marks": [
+    {
+     "page": 6,
+     "context": "2σ"
+    },
+    {
+     "page": 6,
+     "context": "1,(σ3σ"
+    },
+    {
+     "page": 6,
+     "context": "2σ"
+    },
+    {
+     "page": 6,
+     "context": "2σ"
+    }
+   ],
+   "block": "library/arxiv-1901.01312v1/blocks/prose-sec-011"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p006-4",
+   "page": 6,
+   "mark": "2",
+   "text": "σ1) = [0, 0, 0]α1α3ω†ω. →",
+   "block": "library/arxiv-1901.01312v1/blocks/prose-sec-009"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "c",
+   "context": "thefournormeddivisionalgebrasareB2andB"
+  },
+  {
+   "page": 1,
+   "mark": "a",
+   "context": "3,exactlythoserequiredtorepresent"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "Figure1.QuaternionmultiplicationI"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "Figure1.QuaternionmultiplicationI2= J"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "Figure1.QuaternionmultiplicationI2= J2= K"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "eie0= e0ei= ei,e"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "0= e"
+  },
+  {
+   "page": 4,
+   "mark": "4",
+   "context": "2(−e5 + ie"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "2(−e"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "2(−e3 + ie"
+  },
+  {
+   "page": 4,
+   "mark": "6",
+   "context": "2(−e"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "2(−e6 + ie"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "α"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "α"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "α"
+  },
+  {
+   "page": 4,
+   "mark": "4",
+   "context": "2(e5 + ie"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "2(e"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "2(e3 + ie"
+  },
+  {
+   "page": 4,
+   "mark": "6",
+   "context": "2(e"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "2(e6 + ie"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "whichalsoservesasabasisforCℓ(6).Itisreadilycheckedthatαiandα"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "{αi, αj} = 0,{α"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "i, α"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "j} = 0,{α"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "i, α"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "The{α"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "}spanonethreecomplex-dimensionalMTIS.Itisreadilycheckedthatα"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "ωω"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "ωω†= α1α2α3α"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "3α"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "2α"
+  },
+  {
+   "page": 4,
+   "mark": "u",
+   "context": "S"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "νωω"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "2ωω"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "2ωω† +¯d"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "2ωω† +¯dbα"
+  },
+  {
+   "page": 4,
+   "mark": "r",
+   "context": "¯d"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "¯drα"
+  },
+  {
+   "page": 4,
+   "mark": "g",
+   "context": "¯d"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "¯dgα"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "1ωω"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "3ωω"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "3ωω"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "3ωω† + u"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "3ωω† + ubα"
+  },
+  {
+   "page": 4,
+   "mark": "r",
+   "context": "u"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "urα"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "3α"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "2ωω"
+  },
+  {
+   "page": 4,
+   "mark": "g",
+   "context": "u"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "ugα"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "1α"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "2α"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "1ωω"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "e+α"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "3α"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "2α"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "1ωω"
+  },
+  {
+   "page": 4,
+   "mark": "r",
+   "context": "whereν,¯d"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "k=1forall"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "k=1forallkand"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "k=1forallkande"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "k=1forallkandek"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "k=1forallkandeke"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "k=1forallkandekel=−e"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "k=1forallkandekel=−el"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "k=1forallkandekel=−ele"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "k=1forallkandekel=−elekfor"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "2(1 + e"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "2(1 + ek+1"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "2(1 + ek+1e"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "2(1 + ek+1ek)form"
+  },
+  {
+   "page": 5,
+   "mark": "c",
+   "context": "1 + ek+1ek)formarepresentationofthecircular5ArtinbraidgroupB"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "2(1 + e"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "2(1 + ek+1"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "2(1 + ek+1e"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "2(1 + e"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "2(1 + e1"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "2(1 + e1e"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "k=1forall"
+  },
+  {
+   "page": 5,
+   "mark": "c",
+   "context": "ﬁndaquaternionicrepresentationofthebraidgroupB"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "2(1 + J),σ"
+  },
+  {
+   "page": 5,
+   "mark": "c",
+   "context": "distinctcopiesofB"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "3(aswellassevendistinctcopiesofB2generatedfrom"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "3(aswellassevendistinctcopiesofB2generatedfrome"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "alleldisk,therelevantbraidgroupisactuallythecircularversionB"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "α"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "iin[15]withbraidsinB"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "svectorisatopologicalinvariant.Inparticular,thegeneratorsofB"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "thisas[0, 0, 0]B= B[0, 0, 0]whereB∈B"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "braidwordsinB"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "[0, 0, 1]B= [0, 0, 0](σ1σ2)B,u"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "¯d"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "(σ1σ2) 7→α"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "1,(σ"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "1,(σ3σ1) 7→α"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "2,(σ2σ"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "2,(σ2σ3) 7→α"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "2σ17→ωω"
+  },
+  {
+   "page": 6,
+   "mark": "u",
+   "context": "theminimalleftidealS"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "2σ1andinsteadtakeωω"
+  },
+  {
+   "page": 7,
+   "mark": "c",
+   "context": "B2andB"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "3usingCandHrespectivelynaturallyplaces"
+  },
+  {
+   "page": 7,
+   "mark": "c",
+   "context": "the C and H representationsof B2and B"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "H+= σ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "[σ"
+  },
+  {
+   "page": 7,
+   "mark": "4",
+   "context": "[σ"
+  },
+  {
+   "page": 7,
+   "mark": "6",
+   "context": "1](= [σ"
+  },
+  {
+   "page": 7,
+   "mark": "4",
+   "context": "ively,orequivalently,electricchargesof0,e/3,and−e/3.Becauseσ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "asa + bI + cJ + dKwitha"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "asa + bI + cJ + dKwitha2+ b"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "asa + bI + cJ + dKwitha2+ b2+ c"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "asa + bI + cJ + dKwitha2+ b2+ c2+ d"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "Thisgives2 × 4 + 2"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "σ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1, σ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "2,andσ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "3.Writteninpuretwistform,σ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "1=[1,"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1=[1, 1, −1],σ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "2=[1, −1, 1],andσ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "3=[−1,"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "σ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "σ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "σ"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "quaternionicrepresentationsofB2andB"
+  }
+ ]
+}

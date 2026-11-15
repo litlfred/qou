@@ -1,0 +1,61 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 221
+
+Table 2
+Algorithms for the numerical integration of (307) or (308): (Algorithm 1) with scheme (298), and (Algorithm 2) with scheme (302).
+Algorithm 1: Standard split Algorithm 1: Magnus split
+Go = (tn); Po = P(tn):
+qo = (tn); Po = P(tn); do i=1,k ,
+Shot TP) =T'( +h); Vi@ =V' Gy +ah, 4)
+1,m enddo
+Pi-1 — haiV' (ta, gi-1) ch t= than
+ta + ha; Vi(q) = oi V,(@) +--- + oY (Q)
+Gi-1 + AbiT' (ty, pi) Tip) = paT{(P) +--+ + pint (P)
+ty = ty + hb; i—1 — AVi(Gi-1)
+pet Gi = 1 + AT»)
+enddo
+which can be obtained from the time-dependent Hamiltonian
+—et 1 2 et 1 4 1 2
+AGP O=TRH+VG) =e" sp +e" | aa — 54 — dcos(wt)q (307)
+
+or equivalently from
+
+d fq T'(t, p) ep 0
+dt {3| = [ne af~) 0 [> e'(q—q?+Scos(wt)) f° (308)
+Notice that this system already has the form (305), each part being exactly solvable. In consequence, the splitting method
+
+shown in (298) can be used here. The procedure is described as Algorithm 1 in Table 2.
+Observe that the leap-frog composition (281) corresponds to m = 2 and
+
+aq=a=-, b; = 1, b, = 0. (309)
+
+Since by = O one stage can be saved (with a trivial modification of the algorithm) and the scheme is considered as a one
+stage method. An efficient symmetric 5-stage fourth order integrator is given by the coefficients (m = 6)
+gate yay, (310)
+2
+i=0,1,...,6 with yo = ye = Oand yy = yy = ya = ys = 1/(4— 4), yy = 1-44.
+
+Alternatively, we can use the Magnus integrator (302). Since the kinetic energy is quadratic in momenta, we can apply
+the fourth-order method MNg-4. If we take the fourth-order Gauss-Legendre quadrature rule for the evaluation of the time-
+dependent function then we can consider (303), where the coefficients aj, bj are given in Table 1. Here, A(t) plays the role of
+T'(t, p) and B(t) plays the role of V’(t, q) (they are not interchangeable, otherwise the performance seriously deteriorates).
+The computation of one time step is shown as Algorithm 2 in Table 2.
+
+We take € = 1/20,5 = 1/4, = 1 and initial conditions q(0) = 1.75, p(0) = 0. We integrate up tot = 107 and
+measure the average error in phase space, in terms of the number of force evaluations for different time steps (in logarithmic
+scale). The results are shown in Fig. 20. The scheme MN¢-4 has 6 stages per step, but only two time-evaluations. For this
+reason, in the figure, we have considered, as the number of evaluations per step, both two and six (left and right curves
+connected by an arrow). The superiority of the new splitting Magnus integrators for this problem is evident. If the time-
+dependent functions dominate the cost of the algorithm, the superiority is even higher. Surprisingly, the method shows
+better stability than the leap-frog method, which attains the highest stability possible among the splitting methods for
+autonomous problems.
+
+6. Some applications of the numerical integrators based on ME
+
+In this section we collect several examples where the numerical integration methods based on the Magnus expansion
+have been applied in the recent literature. Special attention is dedicated to the numerical integration of the Schrédinger
+equation, since the Magnus series expansion has been extensively used in this setting almost since its very formulation.
+The time-independent Schrédinger equation can be considered as a particular example of a Sturm-Liouville problem, so we
+also review the applicability of Magnus based techniques in this context. Then we consider a particular nonlinear system
+(the differential Riccati equation) which can be, in some sense, linearized, so that at the end one may work with finite-
+dimensional matrices. Finally, we summarize a recent but noteworthy application: the design of new classes of numerical
+schemes for the integration of stochastic differential equations.

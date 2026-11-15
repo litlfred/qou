@@ -1,0 +1,21 @@
+{
+  "$schema": "folio-document-images/v1",
+  "doc_id": "arxiv-1803.04009v2",
+  "images": [
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.004695,
+        "imagesOnPage": 1,
+        "page": 6
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    }
+  ]
+}

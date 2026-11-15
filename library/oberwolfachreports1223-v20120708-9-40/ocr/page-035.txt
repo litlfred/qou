@@ -1,0 +1,52 @@
+Invariants in Low-Dimensional Topology and Knot Theory 35
+
+Hochschild boundary 0, = 37j9(—1)'di, where dj(2o, ...,@n) = (0, ++, Ti-1, Vi *
+V1, V2 ay), for 0 <i <n and
+
+dy (20, 4n) = (tn * 29, 05 Pn-1)-
+
+Again, (C,,,d;) is a presimplicial module. If (X,*) is a monoid, one can define
+n+1 homomorphisms s; : Cr — Cn41, called degeneracy maps, by $;(20,...,2n) =
+(wo, .--,€i, 1, Vi44,.--,%n) (similarly, in the case of group homology of a monoid, we
+put, $;(@4,...,0) = (1,...,@4,1, Ui44,...,%n)). We check that in both cases the
+following conditions hold:
+
+(1) djdj = dj_1d; for i<j,
+
+(2) sisy = Sj418i, OStS fn,
+. ff sjadi ifi<y,
+
+(3) dis; -{ sj ifi> ZHI,
+(4) dis; = dizisi = Ide,,.
+
+(Cn, di, ;) satisfying conditions (1)-(4) above is called a simplicial module (Z-
+module in our case). If we replace (4) by a weaker condition djs; = dj+1s; we deal
+with a weak simplicial module, the concept useful in the theory of homology of
+distributive structures (spindles or quandles).
+
+1.4. Homology of distributive structures. Recall that a shelf (X;*) is a set
+X with a right self-distributive binary operation « : X x X > X (ie. (a*b)*ce=
+(a * c) * (bx c)). We define a (one-term) distributive chain complex C,,,0,) as
+follows: Cy = ZX"+1 and the boundary operation 0S) = eo (—1)'di, where
+di(X0, ..-,€n) = (Lo * Vi, --, Vin * Vi, Vig, +, Ln).
+
+(Cn, d;) is a presimplicial module. If we define s; : Cy > Cn41 by $;(Xo,.-.,Un) =
+(ao, «+, Vi-1, © » i441, +-,Un), then (Cy, d;, ;) satisfies conditions (1)-(3) of sim-
+plicial module, and if (X;*) is a spindle (a x a = a), then (C,,d;,s;) is a weak
+simplicial module and degenerate homology (not necessarily trivial) can be defined.
+
+If (X; *) is a rack then the complex co , 0) is acyclic, but in the general case
+of a shelf or spindle homology can be nontrivial with nontrivial free and torsion
+part (joint work with A. Crans, K. Putyra and A. Sikora [1, 5, 6]).
+
+1.5. Multi-term distributive homology. One generalize one term distributive
+homology as follows. Let X be a set and Bin(X) the set of all binary operations
+on X (in fact a monoid with composition a *1 *2b = (a *1 b) *2 b and a xo b =
+a). We say that S C Bin(X) is a distributive set if for any pair *1,*. € S
+we have (a *; b) *2 ¢ = (a *2 c) *; (b *2 ). If (*1,...,*,) is a distributive set, we
+define a multiterm chain complex by taking any linear combination of 0), that is
+(Cp, 0001) is defined by Cy = ZX"! and 4) = ay ACD) 4... + apO),
+where a; € Z. We computed with K. Putyra [5] various multiterm homology,
+including that for finite distributive lattices (including Boolean algebras). Also
+multiterm homology based on the distributive embedding of G to Bin(G), given
+by Greg Mezera, where g > *g with a *gb = ab~'gb is of great interest.

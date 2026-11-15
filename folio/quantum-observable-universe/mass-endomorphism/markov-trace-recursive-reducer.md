@@ -105,8 +105,7 @@ amounts to in the index encoding.
 | neutron | $\sigma_1^6 \sigma_2^4 \sigma_1^{-1}$ | $H_3$ | $1.464034\ldots$ |
 | deuteron disjoint | $\sigma_1^7\sigma_2^4 \oplus \sigma_4^6\sigma_5^4\sigma_4^{-1}$ | $H_6$ | $\mathrm{tr}_M(p)\cdot\mathrm{tr}_M(n)$ |
 
-The two numeric entries are read from
-`computations/markov/markov-trace-recursive.witness.json`, evaluated at
+The two numeric entries are evaluated at
 $z = q^{3}/(q^{2}+1)$. They are *not* nucleon mass inputs: these braid words are
 not the canonical nucleon words, so the values must not be used for mass
 predictions.

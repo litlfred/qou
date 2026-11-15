@@ -1,0 +1,267 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-hep-ph-9612303v1",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "†",
+   "text": "(martin@teorica1.iﬁsicacu.unam.mx,marti@teorica0.iﬁsicacu.unam.mx)",
+   "marks": [
+    {
+     "page": 1,
+     "context": "M.Klein-KreislerandM.Ruiz-Altaba"
+    }
+   ],
+   "block": "library/arxiv-hep-ph-9612303v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "1",
+   "text": "Donotconfusethebaryons∆++,∆+,etc.withthecoproducts∆and∆′= P◦∆!",
+   "marks": [
+    {
+     "page": 4,
+     "context": "∆′(S−) |u > ⊗|¯d >= −q"
+    },
+    {
+     "page": 4,
+     "context": "−q"
+    },
+    {
+     "page": 5,
+     "context": "byactingon|∆++>= |uuu >with(1 ⊗∆)∆(I−) = (∆⊗1)∆(I−)"
+    },
+    {
+     "page": 5,
+     "context": "+q"
+    },
+    {
+     "page": 5,
+     "context": "|p >∼q−1/2|udu > +q"
+    },
+    {
+     "page": 5,
+     "context": "|n >∼q−1/2|udd > +q"
+    }
+   ],
+   "block": "library/arxiv-hep-ph-9612303v1/blocks/prose-sec-001"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "[I+, I−] =qI"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "[I+, I−] =qI3−q−I"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "[I"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "∆(I±) = I± ⊗qI"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "∆(I±) = I± ⊗qI3+ q−I"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "∆(I"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "∆(I3) = I"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "∆(I3) = I3 ⊗1 + 1 ⊗I"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "wechoose∆′ascoproduct,sothattheI"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "|π"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "1 + q"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "1 + q−2+ (1 + q"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "1 + q−2+ (1 + q2)"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "1 + q"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "1 + q2+ (1 + q−2)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "(1 + q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "(1 + q2)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "2(1 + q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "2(1 + q2)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1 + q−2+ (1 + q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1 + q−2+ (1 + q2)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "(1 + q−2)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "(1 + q−2)2−(1 + q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "2(1 + q−2)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1 + q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1 + q2+ (1 + q−2)"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "(mu + md)(1 + q−2−q"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "(mu + md)(1 + q−2−q2) + q"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "(mu + 4md)(1 −q−2+ q"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "mπ±= mπ"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "mπ"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "ofcosα,ifq=e"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "δEmπ"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "δEmπ0= −4"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "q + q−1E"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "∼mπ"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "π−m"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "π=4.59MeV,takesusthentotherealvalue"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "π"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "massesintheusualway.Itmaybethattheπ"
+  }
+ ]
+}

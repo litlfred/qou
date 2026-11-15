@@ -1,0 +1,43 @@
+438 Roberto Frigerio
+
+Definition 1.1 A partially truncated triangulation T of an orientable 3—manifold N is
+good if any tetrahedron in T has at most one ideal vertex.
+
+Kojima proved in [10] that every hyperbolic N has a canonical decomposition into
+partially truncated polyhedra, rather than tetrahedra. Any polyhedron in a canonical
+decomposition has at most one ideal vertex, so triangulations arising as subdivisions
+of Kojima decompositions are examples of good triangulations. In the vast majority
+of cases the Kojima decomposition actually consists of tetrahedra, or at least can be
+subdivided into a geometric partially truncated triangulation. For instance, it is proved
+in Frigerio—Martelli—Petronio [6] that there exist exactly 5192 hyperbolic manifolds
+with non-empty geodesic boundary which can be (topologically) triangulated by at
+most four partially truncated tetrahedra: their Kojima decomposition can always be
+subdivided into a triangulation, and is itself a triangulation in 5108 cases. These facts
+strongly support the following:
+
+Conjecture 1.2. Any hyperbolic N with non-empty geodesic boundary admits a good
+geometric triangulation.
+
+1.3. Moduli for partially truncated tetrahedra
+
+The following result implies that the dihedral angles can be used as moduli for geometric
+tetrahedra.
+
+Theorem 1.3 Let A be a partially truncated tetrahedron and Iet A) be the set of
+edges of A. The geometric realizations of A are parameterized up to isometry by
+the dihedral angle assignments 9: A!) — (0, x) such that for each vertex v of A, if
+€1,€2,€3 are the edges that emanate from v, then 6(e1) + 0(e2) + A(e3) is equal to 7
+for ideal v and less than 7 for non-ideal v.
+
+Having introduced moduli for geometric tetrahedra, our next task is to determine, given
+a triangulated manifold, which values of moduli define a global hyperbolic structure on
+the manifold. The following well-known hyperbolic trigonometry formulae will prove
+useful later:
+
+Lemma 1.4 With notation as in Figure 2 we have
+
+cosh a, = (cos a2 - cos a3 + cos a1)/(sin a2 - sin a3),
+
+cosh bj = (cosh cp - coshc3 + cosh c;)/(sinh co - sinhc3).
+
+Algebraic & Geometric Topology 6 (2006)

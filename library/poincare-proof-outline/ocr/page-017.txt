@@ -1,0 +1,81 @@
+unfolding positive-x-azis-def
+by auto
+
+moreover
+
+have moebius-pt Mv # On
+using <u # v) *
+by (metis moebius-pt-neg-1)
+
+moreover
+
+have moebius-pt Mv 4 on
+using (unit-disc-fir M> (v © unit-discy
+using unit-disc-fir-discl
+by fastforce
+
+ultimately
+
+show ?thesis
+using <is-poincare-line ly «{u, v} C circline-set ly <unit-disc-fix M>
+using is-poincare-line-0-real-is-z-axis|of moebius-circline M 1 moebius-pt M v]
+by (rule-tac c=M in eal, force)
+
+qed
+
+When proving facts about h-lines, without loss of generality it can be assumed that h-line is the x-axis (if the
+property being proved is invariant under Mobius transformations that fix the unit disc).
+
+lemma wlog-line-x-azis:
+assumes is-line: is-poincare-line H
+assumes «z-axis: P x-axis
+assumes preserves: /\ M. [unit-disc-fix M; P (moebius-circline M H)] => P H
+shows P H
+using assms
+using ex-unit-disc-fiz-is-poincare-line-to-x-axis|of H]
+by auto
+
+4.2 Construction of the h-line between the two given points
+Next we show how to construct the (unique) h-line between the two given points in the Poincaré model
+
+Geometrically, h-line can be constructed by finding the inverse point of one of the two points and by constructing
+the circle (or line) trough it and the two given points.
+
+Algebraically, for two given points u and v in C, the h-line matrix coefficients can be A = i- (uv — vu) and
+B=i- (v(\ul? +1) — u(\v|? + 1)).
+
+We need to extend this to homogenous coordinates. There are several degenerate cases.
+
+- If {z,w} = {0),, co),} then there is no unique h-line (any line trough zero is an h-line).
+
+- If z and w are mutually inverse, then the construction fails (both geometric and algebraic).
+
+- If z and w are different points on the unit circle, then the standard construction fails (only geometric).
+
+- None of this problematic cases occur when z and w are inside the unit disc.
+
+We express the construction algebraically, and construct the Hermitean circline matrix for the two points given
+in homogenous coordinates. It works correctly in all cases except when the two points are the same or are
+mutually inverse.
+
+definition mk-poincare-line-cmat :: real = complex = complex-mat where
+[simp]: mk-poincare-line-cmat A B = (cor A, B, cnj B, cor A)
+
+lemma mk-poincare-line-cmat-zero-iff:
+mk-poincare-line-cmat A B = mat-zero<—+ A= 0A B=0
+by auto
+
+lemma mk-poincare-line-cmat-hermitean
+[simp]: hermitean (mk-poincare-line-cmat A B)
+by simp
+
+lemma mk-poincare-line-cmat-scale:
+cor k *sm mk-poincare-line-cmat A B = mk-poincare-line-cmat (k * A) (k * B)
+by simp
+
+definition poincare-line-cvec-cmat :: complex-vec => complex-vec = complez-mat where
+
+[simp]: poincare-line-cvec-cmat zw =
+(let (21, 22) = 2;
+
+17

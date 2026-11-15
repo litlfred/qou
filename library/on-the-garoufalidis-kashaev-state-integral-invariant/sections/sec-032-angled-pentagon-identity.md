@@ -1,52 +1,60 @@
 ---
 doc_id: on-the-garoufalidis-kashaev-state-integral-invariant
-doc_title: "On the Garoufalidis-Kashaev state-integral invariant"
+doc_title: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT"
 section_id: sec-032-angled-pentagon-identity
 section_title: "Angled Pentagon Identity"
 section_number: null
 pages: 36-40
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
-doc_brief: "On the Garoufalidis-Kashaev state-integral invariant — 61 sections: ACKNOWLEDGMENTS; ABSTRACT; LIST OF TABLES"
+toc_source: outline
+doc_brief: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT — 67 sections: Front matter; ACKNOWLEDGMENTS; ABSTRACT"
 ---
-A central result is the angle-dependent pentagon identity :
+Angled Pentagon Identity
+A central result is the angle-dependent pentagon identity:
 Theorem 5 (Angled Pentagon Identity). Let Ψi := Ψai,ci. Then:
-Ψ1(α,x)Ψ 3(β,y ) =
+Ψ1(α, x)Ψ3(β, y) =
 Z
-bB×B
-Ψ0(α−γ,x/z )Ψ2(γ,z )Ψ4(β−γ,y/z )·α(y/z)β(x/z)
-γ(xy/z2) d(γ,z ),
+b
+B×B
+Ψ0(α −γ, x/z)Ψ2(γ, z)Ψ4(β −γ, y/z) · α(y/z)β(x/z)
+γ(xy/z2)
+d(γ, z),
 (3.5)
 provided the angle parameters satisfy:
-a1 =a0 +a2,a 3 =a2 +a4,c 1 =c0 +a4,c 3 =a0 +c4,c 2 =c1 +c3.
+a1 = a0 + a2, a3 = a2 + a4, c1 = c0 + a4, c3 = a0 + c4, c2 = c1 + c3.
 These relations correspond to a 2–3 Pachner move in the triangulated 3-manifold
 and guarantee the invariance of the state-integral under such local modifications.
 Remark 5. The undeformed pentagon identity (3.3) is recovered by setting all angle
-parameters ai,ci to zero. In this limit, the angled pentagon identity (3.5) reduces to
+parameters ai, ci to zero. In this limit, the angled pentagon identity (3.5) reduces to
 the classical pentagon identity for the primitive quantum dilogarithm. Thus, (3.5)
 27
 may be viewed as a true deformation of this fundamental identity, incorporating angle
 dependence in a geometrically meaningful way.
-Proof of Remark. When ai =ci = 0 for i = 0,..., 4, Recall
-Ψ0,0(α,x) = 1
-α(1−x)∥1−x∥.
-To check this equals the inverse–Fourier transform ˜φ(α,x), make the explicit change
+Proof of Remark. When ai = ci = 0 for i = 0, . . . , 4, Recall
+Ψ0,0(α, x) =
+1
+α(1 −x)∥1 −x∥.
+To check this equals the inverse–Fourier transform ˜φ(α, x), make the explicit change
 of variables
-y =x,y− 1 =−(1−x), 1−y−1 = x− 1
-x ,∥1−y−1∥ =∥x− 1∥
-∥x∥ ,
-together withα(−1) = 1 under the self–dual Haar measure. One then recovers exactly
-˜φ(α,x).
+y = x, y −1 = −(1 −x), 1 −y−1 = x −1
+x
+, ∥1 −y−1∥= ∥x −1∥
+∥x∥
+,
+together with α(−1) = 1 under the self–dual Haar measure. One then recovers exactly
+˜φ(α, x).
 Moreover all linear relations
-a1 =a0 +a2,...,c 2 =c1 +c3
+a1 = a0 + a2, . . . , c2 = c1 + c3
 Finally, specialize the general symmetry relation (3.15) to the trivial-angle case
-(a,c) = (0, 0):
+(a, c) = (0, 0):
 α(y/z)β(x/z)
-γ(xy/z2) =γ(z).
+γ(xy/z2)
+= γ(z).
 This turns the integrand into the classical form and yields
-˜φ(α,x) ˜φ(β,y )α(y)β(x) =
+˜φ(α, x) ˜φ(β, y)α(y)β(x) =
 Z
-˜φ(β−γ,y/z ) ˜φ(γ,z ) ˜φ(α−γ,x/z )γ(z)d(γ,z ),
+˜φ(β −γ, y/z) ˜φ(γ, z) ˜φ(α −γ, x/z)γ(z)d(γ, z),
 which is the classical pentagon (3.3). This completes the check.
 28
 Hierarchy of the Pentagon Identities
@@ -55,40 +63,45 @@ distributional equality on a Gaussian group. They differ only by the choice of
 1. the underlying Gaussian group G, and
 2. an angle deformation implemented by rescalings and multiplicative characters
 (the “angle parameters”).
-The universal pentagon For a Gaussian group (G,⟨·⟩) and a quantum diloga-
-rithm Φ∈S ′(G) the distributional identity
-Φ(x)Φ(y) =γG
+The universal pentagon For a Gaussian group (G, ⟨·⟩) and a quantum diloga-
+rithm Φ ∈S′(G) the distributional identity
+Φ(x)Φ(y) = γG
 Z
 G3
-⟨x−u;y−w⟩
-⟨u−v +w⟩ Φ(u)Φ(v)Φ(w)d(u,v,w ) (∗)
+⟨x −u; y −w⟩
+⟨u −v + w⟩Φ(u)Φ(v)Φ(w)d(u, v, w)
+(∗)
 is the master equation. No coordinates have been fixed.
-Specialisation to the local–field Gaussian group. Choosing G = cF××F×
-with⟨(α,x)⟩ =α(x) and the elementary dilogarithm
-φ(α,x) = α(1 +x)
+Specialisation to the local–field Gaussian group. Choosing G = c
+F × × F ×
+with ⟨(α, x)⟩= α(x) and the elementary dilogarithm
+φ(α, x) = α(1 + x)
 reduces (∗) to the un–angled local-field pentagon
-˜φ(α,x) ˜φ(β,y )α(y)β(x) =
+˜φ(α, x) ˜φ(β, y)α(y)β(x) =
 Z
 G
-˜φ(β−γ,y/z ) ˜φ(γ,z ) ˜φ(α−γ,x/z )γ(z)d(γ,z ), (4.7)
+˜φ(β −γ, y/z) ˜φ(γ, z) ˜φ(α −γ, x/z)γ(z)d(γ, z),
+(4.7)
 where ˜φ is the inverse Fourier transform (Lemma 4.1).
-Introducing angles by a coordinate–and–character deformation. For
-(a,c)∈ R×F× define
+Introducing angles by a coordinate–and–character deformation.
+For
+(a, c) ∈R × F × define
 29
-Ψa,c(α,x) = 1
-α((1− ¨ax)¨c)
+Ψa,c(α, x) =
+1
+α((1 −¨ax)¨c)
 ∥¨ax∥˙c
-∥1− ¨ax∥1−˙a.
-Equivalently, one obtains Ψa,c from φ(α,x) = α(1 +x) by:
-1. an affine shift x7→ 1− ¨ax,
-2. a dilation x7→x/¨a, and
-3. multiplication by the unitary character fa,c(α,x) =∥x∥˙c/α(¨c).
-Each of these steps leaves the pentagon-kernel ⟨x−u;y−w⟩/⟨u−v +w⟩ invariant,
+∥1 −¨ax∥1−˙a.
+Equivalently, one obtains Ψa,c from φ(α, x) = α(1 + x) by:
+1. an affine shift x 7→1 −¨ax,
+2. a dilation x 7→x/¨a, and
+3. multiplication by the unitary character fa,c(α, x) = ∥x∥˙c/α(¨c).
+Each of these steps leaves the pentagon-kernel ⟨x −u; y −w⟩/⟨u −v + w⟩invariant,
 so Ψa,c satisfies the angled pentagon under the usual angle relations.
 Special cases and collapses. starting from the universal distributional pen-
 tagon, specialise to the local–field Gaussian group to obtain the un-angled identity,
-and twist by the automorphisms generated by (a,c) ∈C to reach the angled identity;
-conversely, settinga =c = 0 collapses the hierarchy in the reverse direction.
+and twist by the automorphisms generated by (a, c) ∈C to reach the angled identity;
+conversely, setting a = c = 0 collapses the hierarchy in the reverse direction.
 This generality underlies the topological invariance of the state-integral: Pachner
 equivalence implies equal invariants, even after angle deformation.
 This completes the construction of the angle-dependent dilogarithmic weights used

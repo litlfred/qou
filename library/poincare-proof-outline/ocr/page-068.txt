@@ -1,0 +1,68 @@
+from <z € unit-discy
+
+obtain z’ where z’: z = of-complezx z'
+using inf-or-of-complez|of z]
+by auto
+
+hence z’ = ?z'
+by simp
+
+obtain cz where cz: cz = (1 — (cmod z’)*)
+by auto
+
+have cz > 0cz < 1
+using <z € unit-disc> 2’ cz
+using unit-disc-cmod-square-lt-1
+by fastforce+
+
+obtain R where R: R = ?R
+by blast
+
+have R > 0
+using cosh-gt-1[of r] «r > 0>
+by (subst R) simp
+
+obtain k where k: k = cz * R+ 1
+by auto
+
+have k > 1
+using k «R > 0) «cz > 0»
+by simp
+
+hence cmod k = k
+by simp
+
+let ?RR = cz * sqrt(R*(R+1))/k
+
+have cmod z' + cz * sqrt(R x (R+1))<k
+proof—
+have ((R+1)—R)? > 0
+by simp
+hence (R+1)? — 2«Rx(R+1) + R? > 0
+unfolding power2-diff
+by (simp add: field-simps)
+hence (R+1)? + 2*R*(R+1) + R? — 4*Rx(R+1) > 0
+by simp
+hence (2*R+1)? / 4 > R*(R+1)
+using power2-sum|of R+1 R]
+by (simp add: field-simps)
+hence sqrt(R*(R+1)) < (2*R+1) / 2
+using «R > 0>
+by (smt arith-geo-mean-sqrt power-divide real-sqrt-four real-sqrt-pow2 zero-le-mult-iff)
+hence sqrt(R*(R+1)) — R < 1/2
+by (simp add: field-simps)
+hence (1 + (cmod z')) * (sqrt(R*(R+1)) — R) < (1 + (emod z’)) « (1 / 2)
+by (subst mult-strict-left-mono, simp, smt norm-not-less-zero, simp)
+also have ... < 1
+using <z € unit-disc> z'
+by auto
+finally have (1 — cmod z') « ((1 + cmod z’) * (sqrt(R*x(R+1)) — R)) < (1 — cmod 2’) * 1
+using (z € unit-discy z’
+by (subst mult-strict-left-mono, simp-all)
+hence cz * (sqrt (Rx(R+1)) — R) < 1 — cmod z’
+using square-diff-square-factored[of 1 cmod z’|
+by (subst cz, subst (asm) mult.assoc|symmetric], simp add: power2-eq-square field-simps)
+hence cmod z' + cz * sqrt(Rx(R+1)) < 1+ Rx cz
+by (simp add: field-simps)
+
+68

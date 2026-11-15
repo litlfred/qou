@@ -1,0 +1,66 @@
+We have computed the Rouquier families associated with no and each essential hyperplane:
+
+e With the use of GAP3 for all exceptional complex reflection groups [Ch4]; the results can be found
+on my webpage , while very recently, together with Jean Michel, we programmed the algo-
+rithm described in in the GAP3 package CHEVIE (see chevie/contr/rouquierblockdata.g).
+
+¢ Combinatorially for the groups of type G(I,1,n) [Ch3]; we will see more on these results in the
+next chapter.
+
+e With the use of Clifford theory for the groups G(I,p,n), for n > 2 or n = 2 and p odd, from the
+Rouquier families for G(I,1,n) [Ch5).
+
+e Applying the algorithm of for G(1, 2,2) [Ch5}.
+
+e With the use of Clifford theory for the groups G(I, p,2), for p even, from the Rouquier families for
+G(1, 2,2) [Ch5].
+
+A consequence of the above results is the following:
+
+Proposition 3.12 The Rouquier families associated with no essential hyperplane are trivial if and only
+
+if W = G4 or W is of type G(I,1,n).
+
+Note that, by definition, the Rouquier families associated with an essential hyperplane are not trivial
+for any complex reflection group.
+
+Now, part of the algorithm used for the determination of the Rouquier families is the easy-to-prove
+fact that the function a+ A is constant on the Rouquier families (see, for example, Proposition
+2.9]). However, we have also managed to show that, similarly to the real case, both functions a and A
+are constant on the Rouquier families, for all cyclotomic Hecke algebras of all complex reflection groups:
+
+e With the use of GAP3 for all exceptional complex reflection groups [Ch2]; the programme used,
+Degval.g, is available on my webpage :
+
+e Combinatorially for the groups of type G(I,1,n) (Ch3].
+
+e With the use of Clifford theory for the groups G(I,p,n), for n > 2 or n = 2 and p odd, from the
+analogous result for G(I,1,n) [Ch5].
+
+e With explicit calculations for G(I,2,2) [Ch5].
+
+e With the use of Clifford theory for the groups G(I,p,2), for p even, from the analogous result for
+G(I, 2,2) [Ch5].
+
+Finally, we would like to point out that the semicontinuity property of the Rouquier families is part
+of the block behaviour of algebras whose Schur elements are of the form We have studied the block
+theory of this type of algebras, which we call essential algebras, in [Ch4]. Besides generic Hecke algebras
+of complex reflection groups, another example of essential algebras are the Yokonuma—Hecke algebras
+which will be studied in the last chapter.
+
+3.4 Decomposition maps and canonical basic sets
+
+Given a cyclotomic Hecke algebra Hy,,,(W) and a ring homomorphism 6 : q+ 7 € C \ {0}, we obtain a
+semisimplicity criterion and a decomposition map exactly as in A canonical basic set with respect
+to @ is also defined in the same way.
+
+In [ChJal], we showed the existence of canonical basic sets with respect to any @ for all cyclotomic
+Hecke algebras associated with finite Coxeter groups, that is, when the weight function L in the definition
+of H_(W, L) is also allowed to take negative values.
+
+For non-Coxeter complex reflection groups, things become more complicated. For W = G(l,1,n),
+consider the specialised Ariki-Koike algebra with relations
+
+(s— Cery(s— Cer) (sce) =0, (ti —Ce)(ti +1) =0 ford=1,...,n—-1,
+
+27

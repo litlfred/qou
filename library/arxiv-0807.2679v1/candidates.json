@@ -1,0 +1,46 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0807.2679v1",
+ "source": {
+  "structure_sha256": "69ef10f8e70fc6f6fded518e9653f2f222f5a42cea4d29eee37d20dc92db0d66",
+  "file": "0807.2679v1.pdf"
+ },
+ "provenance": {
+  "title": "A cabling formula for the colored Jones polynomial",
+  "authors": "Roland van der Veen",
+  "arxiv": {
+   "id": "0807.2679",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "17 Jul 2008"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "recommendation": 1
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The sum of these indices must be the index of $\\mu$, that is $w$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-proof-of-the-cabling-formula.md",
+   "section_title": "Proof of the cabling formula",
+   "pages": "4-10",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

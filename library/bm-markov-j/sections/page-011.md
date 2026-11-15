@@ -1,13 +1,15 @@
 ---
 doc_id: bm-markov-j
-doc_title: "Journal of Knot Theory and Its Ramifications, Vol. 11, No. 3 (2002) 295-310 © World Scientific Publishing Company"
+doc_title: "On Markov's Theorem"
 section_id: page-011
 section_title: "Page 11"
-section_number: null
 pages: 11-11
+pdf_page: 11
 source_pdf: bm-markov-j.pdf
 source_sha256: ffc46b9daf7dc858
-toc_source: undetermined
+text_source: ocr
+granularity: page
+doc_brief: "On Markov's Theorem — 16 sections: Page 1; Page 2; Page 3"
 ---
 On Markov’s Theorem 305
 

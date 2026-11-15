@@ -17,24 +17,14 @@ through their image under the Wedderburn embedding — a step this
 proof does **not** discharge, and which the corpus still cannot
 supply.
 
-*Updated 2026-09-05 (bean `qou-kp2z`).*  Bean `qou-qb7p` gave three
-reasons the corpus could not supply this step.  Two of them have since
-been removed and one has not, so the clause remains an open obligation
-for a narrower reason than before.  **Removed:** the only formalised
-embedding was `QOU.HeckeAlgebra.Wedderburn.wedderburnEmbed`, declared
-`opaque` ("keeps the embedding opaque pending concrete construction")
-and registering as a fourth axiom beside `propext`, `Classical.choice`
-and `Quot.sound` in any `#print axioms` that reached it.  It is now a
-real construction — `QOU.HeckeAlgebra.Wedderburn.blockDiagonal`, with
-footprint exactly those three — and the `opaque` has been deleted.
-**Not removed, and decisive here:** the shape objection is untouched.
-The constructed map has the *same* type
-$\bigoplus_\lambda M_{f^\lambda} \to M_{n!}$, assembling blocks into
-one matrix rather than splitting one block's scalar $C_{(2,1)}$ into
-three coefficients; building it changed its status, not its direction
-or its arity.  The landing in $M_{n!}$ is additionally conditional on
-the RSK identity $\sum_\lambda (f^\lambda)^2 = n!$, carried as the
-named hypothesis `RSKDimIdentity` and discharged by nothing here.
+The obstruction is one of shape.  The formalised Wedderburn embedding
+`QOU.HeckeAlgebra.Wedderburn.blockDiagonal` is a concrete construction
+(axiom footprint `propext`, `Classical.choice`, `Quot.sound`), but it has
+type $\bigoplus_\lambda M_{f^\lambda} \to M_{n!}$: it assembles blocks
+into one matrix rather than splitting one block's scalar $C_{(2,1)}$ into
+three coefficients.  The landing in $M_{n!}$ is additionally conditional on
+the RSK identity $\sum_\lambda (f^\lambda)^2 = n!$, carried as the named
+hypothesis `RSKDimIdentity` and discharged by nothing here.
 
 That objection is now a **theorem**, not a remark
 (`QOU/HeckeAlgebra/WedderburnTrace.lean`).  The naive form — "three
@@ -136,26 +126,6 @@ for step = 1..A:
 B_unified = Σ_λ cumulative_λ
 ```
 
-> **Provenance and scope (2026-08-25).** The witness named here is absent
-> from the tree — added 2026-04-15 in commit `e2814e577f` under
-> `folio-assistant/computations/`, lost in the miga migration. Recovered
-> ([analysis](https://github.com/litlfred/qou/blob/main/docs/audits/2026-08-25-atom-mass-complete-wedderburn-witness-recovered.md)), its `data.mass_by_level` does carry 19 rows
-> from H to $^{208}$Pb, so the coverage claim below is fair, and its
-> $\mathrm{BW}(k{=}5)$ column is accurate ($^3\mathrm{H} \to {}^3\mathrm{He}$:
-> $0.018228$ against $0.01861$ measured).
->
-> Its **assertions** are another matter. Seven of them test the inaccurate
-> NF-trace column against experiment with a tolerance set just above each
-> discrepancy — $Q({}^3\mathrm{H} \to {}^3\mathrm{He})$ is recorded as
-> *passing* at $13\,017\%$ error under a tolerance $14\,319\%$ of the
-> expected value. A bound sized to its own miss is a fit, and the owner
-> directive of 2026-08-25 is **no fitting**. The contrast is inside the same
-> file: $B(\mathrm{T})$ and $B({}^3\mathrm{He})$ carry tolerances of $0.0004$
-> and $0.0001$ and are recorded as *failing* at $0.0\%$ error.
->
-> Cite the $\mathrm{BW}(k{=}5)$ figures if any; do not cite the NF-trace
-> Q-values as confirmed.
-
 **Witness:** `mass-qvalue-by-level.witness.json` — every isotope
 ($^1$H to $^{208}$Pb), per-step rows recording per-partition
 contributions; restartable from any
@@ -164,6 +134,12 @@ $(A, Z_k, N_k, \{\ln|\mathrm{tr}|_\lambda\}, \mathrm{cumulative})$.
 **Comparison snapshot** (binding energy at $k = 5$, MeV):
 
 See [Table](#tbl:unified-iterative-correction-table-data).
+
+Only the $\mathrm{BW}(k{=}5)$ column of that comparison agrees with
+experiment ($^3\mathrm{H} \to {}^3\mathrm{He}$: $0.018228$ against
+$0.01861$ measured). The NF-trace $Q$-values are not confirmed: their
+recorded tolerances were set just above each discrepancy, and a bound
+sized to its own miss is a fit.
 
 The unified path uses **one** symbolic algorithm with **zero**
 fitted parameters and **no special-case branches**.  The

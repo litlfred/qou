@@ -15,6 +15,11 @@ contrapositive:
    (`CSEvaluationFaithful`, contrapositive);
 4. which contradicts perpetual obstruction (`κ_n ≠ 0` for all `n`).
 
+Note (2026-11-15, owner decision, PR #7747, bean `qou-lx8f`): the premise of
+step 4 is withdrawn for the Kummer tower of Bring's surface, where `κ_n = 0`
+for `n ∣ χ = -6`. Only the weaker "κ_n ≠ 0 for `n ∤ 6`" is available, and it
+does not by itself contradict closure at finite height.
+
 The prune in `QOU.Archimedean.SurrealGradingPrune` showed the *squeeze* cannot
 supply step 1→4. This file examines the contrapositive itself, which is the
 corpus's other route. Result: **step 1 ⟹ 2 is invalid as stated, and becomes

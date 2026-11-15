@@ -1,0 +1,60 @@
+A representation theoretic explanation... 1395
+
+A.2 Decomposition of V(A) @ V(w)
+
+Fix A, 2 € Ng, and let V(A) and V (2) denote the irreducible representations of (SL2(C))”"
+given by the outer tensor products:
+
+VQ) = VA) B---BVOAm) V(u) = V(m1) B+ BV (un)
+
+We next generalize the above results to the inner tensor product of these two representations,
+V(A)® V(y). In particular, we determine the decomposition of this tensor product and define
+a multivariate apolarity form. Note that these statements strictly generalize the previous
+analogous statements.
+
+Proposition A.10 (c.f. Proposition A.7) Let u < 4. We have the following decomposition of
+V(A) ® V(), as a representation of (SL2(C))", into irreducible components.
+
+VQ) @V(u) = i) VA+p—2a)
+
+asp
+Proof We compute:
+
+VA) ®@ V(t) = (V1) BV Am) ® (V(r) Bl--- BV (itm)
+= (VO1) @ Vi) B+ B (VOm) @ Vm)
+
+(@ Va + He — 200) b..- 6 ( BD Vem + tin — 200)
+
+1 SHI Lm Sm
+
+Ile
+
+=@Qvastu-20)
+
+asp
+
+The last step uses the distributive law for sums and tensor products of representations. 0
+
+Theorem A.11 (c.f. Theorem A.8) For any B € Ng, define uP? := UF! R.-. BUF. Define
+
+m
+
+DP similarly. For any u <  € No. the maps
+
+UP VA) ®@V(u) > VA+B)® V(u+ B)
+DP: VA+B)® V(u+t B) > VOA)® Vu)
+
+restrict to SL2(C)-invariant isomorphisms on the components of V(A) @® V(u) =
+Been V(a +p — 2a). Finally, D® restricts to the zero map on the other irreducible com-
+ponents of V(X. + B) @ V(u + B).
+
+Proof Follows by induction on f, using Theorem A.8. Oo
+Definition 3.4 (c.f. Definition 3.3) We call the map
+uy
+VQ) @VA) 2 VO") @ VO") S VO") =C
+the apolarity form of V (A).
+
+Corollary A.12 (c.f. Corollary A.9) The apolarity form is the unique (up to scalar) nondegen-
+erate (SL2(C))"-invariant bilinear form on V (A).
+
+D Springer

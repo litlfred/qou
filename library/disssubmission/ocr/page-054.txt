@@ -1,0 +1,51 @@
+46 Chapter 3 — Perverse sheaves on semiabelian varieties
+
+we have a commutative diagram
+
+8*(RAi(Px)) —— 8*(Rfe(Py))
+
+| |=
+
+RAE) RAE)
+
+where the vertical arrows are isomorphisms due to the smooth base change
+theorem [38, th. I.7.3]. Furthermore, by construction i*(x’) = i*(%). Hence
+it will be enough to prove the lemma in the case of the trivial torsor, and this
+has been done in [41, cor. 2.3.2]. O
+
+Let us now return to our semiabelian variety X. For later reference it will
+be convenient to reformulate the observation in theorem 3.1 in the following
+equivalent way.
+
+COROLLARY 3.3. Suppose that A= X/T satisfies axiom GV(A), and
+let K € D(X) be a constructible sheaf complex. For all degrees r € Z and a
+generic character ¥ € T1(X) then
+
+HE(X, Ky) = H'(X,Ky) = H°(X,"H"(K),),
+where the first isomorphism is induced by the forget support morphism.
+
+Proof. For the perverse cohomology groups P. = ”H"(K) and x € II(X)
+we have (P,)y = ?H'(K,) since twisting by 7 is a t-exact functor for the
+perverse f-structure. Only finitely many P, are non-zero, so for generic x
+and all r theorem 3.1 says that the hypercohomology groups H?(X,(P-),)
+and H*(X,(P-)y) will be isomorphic to each other via the forget support
+morphism, and vanish for all s 4 0. Then the spectral sequences
+
+ES’ = H(X,(P,)y) => H'**(X,Ky)
+ES’ = H2(X,(Pp)y) => HI+(X,Ky)
+
+c
+
+degenerate, and our claim follows since the forget support map between the
+limit terms is induced from the one between the £-terms. O
+
+3.2. Some properties of convolution
+
+Before proceeding further, it will be convenient to collect some basic
+properties of convolution for later reference. As in [106, sect. 2.1] one sees
+that the derived category D = D(X) is a symmetric monoidal category with
+respect to the convolution product +; and also with respect to *.. In both
+cases the unit object 1 is the rank one skyscraper sheaf supported in the
+neutral element of the group variety X. For K € D we consider the Verdier
+dual D(K) and define the adjoint dual by the formula KY = (—id)*D(K)
+where as usual —id : X —> X denotes the inversion morphism.

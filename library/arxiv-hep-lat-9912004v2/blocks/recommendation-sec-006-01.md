@@ -1,0 +1,1 @@
+The "microscopic" distributions should be in the chUE universality class and prediction ([\[Pmin\]](#Pmin){reference-type="ref" reference="Pmin"}) should apply in particular for the smallest eigenvalue for $T<T_c$.

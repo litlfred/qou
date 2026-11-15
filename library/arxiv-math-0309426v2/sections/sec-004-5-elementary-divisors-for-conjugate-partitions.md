@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0309426v2
-doc_title: "arXiv:math/0309426v2 [math.RT] 1 Jul 2004"
+doc_title: "ELEMENTARY DIVISORS OF SPECHT MODULES"
 section_id: sec-004-5-elementary-divisors-for-conjugate-partitions
 section_title: "Elementary divisors for conjugate partitions"
 section_number: 5
@@ -10,7 +10,8 @@ source_sha256: f2aa01164d9f243c
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.943
-latex_coverage_ratio: 0.967
+latex_coverage_ratio: 0.852
+doc_brief: "ELEMENTARY DIVISORS OF SPECHT MODULES — 9 sections: Front matter; Introduction and statement of main; The Hecke algebra and permutation"
 ---
 \label{SecConj}
 

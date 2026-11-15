@@ -7,11 +7,12 @@ section_number: 5.3
 pages: 32-34
 source_pdf: 2208.13692v1.pdf
 source_sha256: 567eff9fb44ef3e5
-doc_brief: "Bring's curve: old and new — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
-duplicate_of: "s40879-023-00706-0"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.87
-latex_coverage_ratio: 0.992
+latex_coverage_ratio: 0.996
+doc_brief: "Bring’s curve: old and new — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
+duplicate_of: "s40879-023-00706-0"
 ---
 In the previous subsection, we were able to fully characterise the odd theta characteristics on Bring's curve without too much difficulty through the use of existing work giving the stalls of the canonical embedding. The story for even characteristics is different, as the line bundle corresponding to a generic even theta characteristic has no sections, which is an obstacle to their study [@Takagi2009]. In [@Dolgachev1993] the authors were able to use the Scorza correspondence to calculate the orbit decomposition of even spin structures on Klein's curve, but at the time of writing the theory of the Scorza map has not been developed far enough to cover Bring's curve. The Scorza quartic necessary to extend Dolgachev and Kanev's work beyond $g=3$, wherein it becomes a codimension-1 hypersurface in $\mathbb{P}^{g-1}$, has been proven to exist for a generic even spin curve (that is a pair consisting of a curve and an even theta characteristic on it); it has only been explicitly found for trigonal curves in $g=4$ [@Takagi2009]. In [@Burns1983], motivated by its realisation via an elliptic modular surface, Burns identified a theta characteristic on Bring's curve invariant under the $A_5$ subgroup of the automorphism group, though he described this characteristic only in terms of two line bundles on the curve, not directly in terms of points on the curve. We shall now fully classify the orbits of the even characteristics and give an explicit description of Burns' divisor in the process.
 

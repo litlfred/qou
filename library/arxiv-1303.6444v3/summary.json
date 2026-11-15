@@ -3,10 +3,10 @@
  "doc_id": "arxiv-1303.6444v3",
  "source_sha256": "4f12ace2197f70ca",
  "brief": "VIRIAL EXPANSION BOUNDS — In the 1960s, the technique of using cluster expansion bounds in order to achieve bounds on the virial expansion was developed by Lebowitz and Penrose (1964) and Ruelle",
- "extended": "**VIRIAL EXPANSION BOUNDS**\n\n*STEPHEN JAMES TATE*\n\n14 pp, 14 sections.\n\n**Abstract.** In the 1960s, the technique of using cluster expansion bounds in order to achieve bounds on the virial expansion was developed by Lebowitz and Penrose (1964) and Ruelle (1969). This technique is generalised to more recent cluster expansion bounds by Poghosyan and Ueltschi (2009), which are related to the work of Procacci (2007) and the tree-graph identity, detailed by Brydges (1986). The bounds achieved by Lebowitz and Penrose can also be sharpened by doing the actual optimisation and achieving ex- pressions in terms of the Lambert W-function. The diﬀerent bound from the cluster expansion shows some improvements for bounds on the convergence of the virial expan- sion in the case of positive potentials, which are allowed to have a hard core.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Background to the Paper; 2 Main Results; 3 Obtaining the Relationship; 4 General Derivation: Derivation for Theorem 2; 5 Derivation of Corollary 2.2 and comparisons ; 5.2 Morais-Procacci Bound; 5.3 Lebowitz-Penrose; 5.4 Comparison of the Bounds; 6 The Alternative Bound: Corollary 2.3; 7 Comparison of the Separate Bound: Propositio; Appendix A. Lagrange Inversion; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.1: Assuming cluster coeﬃcient bounds of the form:\n- Proposition 2.4: The bound in Corollary 2.3 is better than that\n- Corollary 2.2: The cluster expansion bounds:\n- Corollary 2.3: For cluster expansion bounds:",
+ "extended": "**VIRIAL EXPANSION BOUNDS**\n\n*STEPHEN JAMES TATE*\n\n14 pp, 14 sections.\n\n**Abstract.** In the 1960s, the technique of using cluster expansion bounds in order to achieve bounds on the virial expansion was developed by Lebowitz and Penrose (1964) and Ruelle (1969). This technique is generalised to more recent cluster expansion bounds by Poghosyan and Ueltschi (2009), which are related to the work of Procacci (2007) and the tree-graph identity, detailed by Brydges (1986). The bounds achieved by Lebowitz and Penrose can also be sharpened by doing the actual optimisation and achieving ex- pressions in terms of the Lambert W-function. The diﬀerent bound from the cluster expansion shows some improvements for bounds on the convergence of the virial expan- sion in the case of positive potentials, which are allowed to have a hard core.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Background to the Paper; 2 Main Results; 3 Obtaining the Relationship; 4 General Derivation: Derivation for Theorem 2; 5 Derivation of Corollary 2.2 and comparisons ; 5.2 Morais-Procacci Bound; 5.3 Lebowitz-Penrose; 5.4 Comparison of the Bounds; 6 The Alternative Bound: Corollary 2.3; 7 Comparison of the Separate Bound: Propositio; Appendix A. Lagrange Inversion; References",
  "tokens": {
   "brief": 48,
-  "extended": 383
+  "extended": 315
  },
  "sections": [
   {
@@ -84,8 +84,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

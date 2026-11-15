@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.894
 latex_coverage_ratio: 0.994
+doc_brief: "A Unitary Matrix Model for q-deformed Plancherel Growth — In this paper we construct a unitary matrix model that captures the asymptotic growth of Young diagrams under q-deformed Plancherel measure."
 ---
 \label{sec:umm-droplet}
 In order to give a Hilbert space description of the \qd growth process we need to find a UMM whose large $N$ phase can capture the growth of Young diagrams. For ordinary Plancherel growth it was shown in \cite{Chattopadhyay:2019pkl} that using the Frobenius formula one can write the partition function as GWW model. In case of \qd Plancherel growth (\ref{eq:qdeformedgrowthpf2}), it is tricky to use the Frobenius formula for \qd dimension. So, we take a different route. We use the droplet picture \cite{duttagopakumar,Chattopadhyay} to find the UMM that captures the asymptotic growth of Young diagrams under \qd Plancherel measure. Eynard \cite{Eynard:2008mt} also gave a matrix model for \qd Plancherel growth. The partition function was given by an integral over hermitian matrices with eigenvalues running over a circle of some specified radius. Similar connection was also pointed out in \cite{1998math.10105B}. Here, we explicitly find the unitary matrix model.

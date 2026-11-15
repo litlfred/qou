@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408099v1
-doc_title: "arXiv:hep-th/9408099v1 17 Aug 1994"
+doc_title: "Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD"
 section_id: sec-021-173-finding-the-curves
 section_title: "Finding the Curves"
 section_number: 17.3
@@ -8,6 +8,7 @@ pages: 75-81
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
 toc_source: inferred
+doc_brief: "Seiberg–Witten, Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD (1994) — exact metric on the moduli space of quantum vacua and exact stable-state spectrum for SU(2) with…"
 ---
 Now we would like to ﬁnd a suitable set of curves Ca on which λ will have poles. In this
 section we set v = 1 and work on the uncompactiﬁed manifold X given by y2 = F(x, u).

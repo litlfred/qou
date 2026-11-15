@@ -1,0 +1,55 @@
+3.7. Variation of Tannaka groups in families 63
+
+local ring Gs, = Ay is a discrete valuation ring. Its residue field k(s) can be
+identified naturally with the function field k(D) of the reduced irreducible
+subvariety D — S via the diagram
+
+A
+
+A/p ——= k(D)
+| A
+
+~
+Ap ——> Ap/PAp
+
+== k(s)
+
+where the dotted arrows exist by the universal property of the localization
+functor. Hence we can replace S by the strict Henselization Spec(As!) which
+still has § and 7 as geometric points. From theorem 3.15 we then obtain an
+embedding
+
+G(L(dy,)) > G(Sy,)
+for the nearby cycles on the corresponding abelian scheme, and our claim
+follows because for a smooth morphism Y — S one has '¥(dy,) = dy. O
+
+To obtain a constructibility statement for the stratifications defined by
+the Tannaka groups, we need to impose some finiteness conditions on the
+perverse sheaves on the fibres. To simply the notation, let us temporarily
+assume that X is an abelian variety over S = Spec(k). Let P € P(X) bea
+perverse sheaf, and consider the equivalence
+
+@: (P) —>+ Rep,(G(P))
+
+from corollary 3.10. In what follows we will be particularly interested in
+the determinant character
+
+det(@(P)).
+
+Like any character of the Tannaka group, this determinant corresponds by
+part (b) of proposition 1.6 to a perverse skyscraper sheaf 6, € P(X) which
+is supported on a closed point x € X. In this context the following two
+conditions are equivalent:
+
+e the determinant det(@(P)) is a torsion character of order n,
+
+e the corresponding point x € X is a torsion point of order n.
+In many applications P is isomorphic to its adjoint dual PY = (—idy)*D(P)
+so that @(P) is self-dual and the above conditions hold with n = 2.
+
+LEMMA 3.19. Let d,n € N. Then there exists a finite set of subgroups
+of Gla(A) with the property that for every simple perverse sheaf P € P(X)
+of Euler characteristic 4(P) = d with
+det(@(P))®”" = 1,
+
+the Tannaka group G(P) is isomorphic to one of these finitely many groups.

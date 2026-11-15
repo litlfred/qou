@@ -1,0 +1,52 @@
+Galois action on the principal block and cyclic Sylow subgroups 1959
+
+Let In(B) = {x1,..-, x,} and write x;(1) = p?~¢*"'b;, where |P| = p%, |D| = p“, h; > 0 is the
+height of x; and p does not divide b;, for 1 <i < tf. Arrange the elements in Irr(B) in such a way that
+Irro(B) = {xX1,.--, Xx}, So that hj = 1 for allk +1 < j <t. By [Navarro 1998, Theorem 3.28] we have
+
+that W(1) = p**~4c, where c is a nonnegative integer relatively prime to p. Thus, evaluating (3) at | ¢ G
+we obtain
+k t
+pie DRY PMR
+i=l jak+l
+
+As d > 1, we get an be =0 mod p. Since p € {2, 3}, we have that b? = 1 mod p for every 1 <i <k,
+and hence k is divisible by p.
+
+Recall that the group A = (01) acts on Irro(B), and as such, we may view A as having order a power
+of p. Since |Irro(B)”'| = |Irro(B)4|, we obtain that p divides |Irro(B)*'| by the class equation for group
+actions. oO
+
+The conclusion of the result above does not hold if p > 3, as the dihedral group D2, provides a
+counterexample. Indeed, D2, has a unique p-block and every irreducible character has p’-degree and is
+o,-fixed. Hence |Irr,(Bo(D2,))'| = |Irr(D2))| = 2+ (p — 1)/2 < p.
+
+Finally, we prove the main result of this section.
+
+Theorem 1.5. Let p € {2, 3}. Let G be a finite group and let B be a p-block of G with a nontrivial normal
+defect group D. Then
+|Irro(B)"'|= p_ if, andonly if, D is cyclic.
+
+In particular, Conjecture B follows from the Alperin-McKay—Navarro conjecture.
+
+Proof. By Lemma 1.3 we know that the “if” implication holds. We now assume that |Irr9(B)°'| = p and
+we work to show that D is cyclic.
+
+Write C = Cg(D) and let 6 € Irr(CD) be the canonical character of B. Let {AHR be a complete
+set of representatives of the G/CD-orbits on Irr(D/®(D)) \ {1p}. By Lemma 1.2 we may assume that
+Go = G and
+
+t
+Inro(B)" = |_J r(G | 6,)
+
+i=l
+
+is a disjoint union. If p = 2, then
+
+t
+2 = [Iero(B)"| = [Irr(G | 0)|+ )“[ler(G | 4,
+i=l
+Since D is nontrivial by hypothesis, we have that t > 1. Thus tf = | and the characters @ and 6,, are fully
+ramified with respect to their inertia subgroups. In particular, there are positive integers e and e; such that
+|G: C|=e? and Go, :Cl= ei. Suppose that |D| = 2”. Since G/CD acts transitively on the nontrivial
+elements of D/®(D), we have that 2”—1=|G:G,,| = (e/e,)? = f?. The equality f? + 1 = 2” forces

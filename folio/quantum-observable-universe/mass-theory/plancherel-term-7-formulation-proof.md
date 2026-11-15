@@ -48,11 +48,10 @@ sequence's collapse at $E_1$
 with $\mathrm{HH}^0 = Z(H_n(R, q))$ paired against the logarithmic
 Frobenius integral.*
 
-**Naming note.** *Earlier drafts (and the legacy formalism
-the formal derivation) referred to $w_\lambda(q) =
-\dim_q^2/[n]_q!$ as the "q-Plancherel weight" and claimed
-$\sum_\lambda w_\lambda(q) = 1$ via a "q-Plancherel identity"
-$\sum_\lambda \dim_q^2 V_\lambda = [n]_q!$. That identity does not
+**Naming note.** *The weight $w_\lambda(q) =
+\dim_q^2/[n]_q!$ is not a "q-Plancherel weight", and
+$\sum_\lambda w_\lambda(q) \neq 1$: the "q-Plancherel identity"
+$\sum_\lambda \dim_q^2 V_\lambda = [n]_q!$ does not
 hold in $H_n(R, q)$ at generic $q$ — the Hecke algebra is a flat
 deformation with $\dim_{\mathbb{Q}(q)} H_n = n!$ and Wedderburn–Artin
 gives the classical Plancherel identity
@@ -81,8 +80,7 @@ nuclear binding $B_\mathrm{nucl}$ from
 > (`QOU.BraidKnot.WordFiltration.map_pow_eq_bot`); the Coxeter-length reading
 > fails a dimension count at $n \leq 3$; and the rewrite-depth reading is
 > identically zero once `def:hecke-normal-form` fixes $T_w$ as the unique
-> normal-form basis indexed by $S_n$. Analysis:
-> [`docs/audits/2026-08-16-three-gb-filtrations-one-name.md`](../../../docs/audits/2026-08-16-three-gb-filtrations-one-name.md).
+> normal-form basis indexed by $S_n$.
 > **Not claimed:** that this block's conclusion is false — only that the step
 > it rests on is unestablished, and that the obvious ways to establish it do
 > not work.

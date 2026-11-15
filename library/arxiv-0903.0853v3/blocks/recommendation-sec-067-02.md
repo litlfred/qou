@@ -1,0 +1,1 @@
+We shall therefore concentrate on one of its $q$-analogs, the $q$-Euler or Tshakaloff series $\text{\tencyr\cyracc Ch}(z)$ (see equation [\[eqn:Tshakaloff\]](#eqn:Tshakaloff){reference-type="eqref" reference="eqn:Tshakaloff"}, page ).

@@ -1,14 +1,9 @@
-> **Superseded by the Habiro-ring identification.**
-> The per-rung c_k coefficients below are the Taylor expansion of the
-> EXACT, FINITE Habiro sum `Σ_{m=0}^{M} a_m(u) · (u;u)_m` with
-> `a_m ∈ ℤ[u]` and `M = 8` (proton/neutron). The precision ladder was
-> useful when the closed form was unknown; now that the Habiro
-> identification is established, the exact evaluation is used
-> (no rung-by-rung truncation). See
-> [`prop:habiro-precision-ladder-equivalence`](habiro-precision-ladder-equivalence.md).
->
-> The content below is retained for HISTORICAL reference and for the
-> derivation narrative (it shows how the pattern was discovered).
+The per-rung coefficients $c_k$ below are the Taylor coefficients of the
+finite Habiro sum $\sum_{m=0}^{M} a_m(u)\,(u;u)_m$ with $a_m \in \mathbb{Z}[u]$
+and $M = 8$ for the proton and neutron
+([Habiro–ladder equivalence](habiro-precision-ladder-equivalence.md)).
+The exact evaluation uses that sum directly, with no rung-by-rung truncation;
+the ladder records how the per-rung structure arises.
 
 ## Per-rung categorical sources
 
@@ -93,7 +88,7 @@ truncation-order section above). N=3 lands at 13.15 ppb, above that target.
 The **signed** column is strictly decreasing at both documented pins: with
 the live $c_5 = -(b^2 + 1/2)$ every rung factor $1 + c_k u^k$ has $c_k < 0$
 and is therefore below 1. **That is not what the non-monotonicity claim is
-about, and an earlier draft of this paragraph got it backwards.** The claim
+about.** The claim
 concerns the residual *magnitude* — whether the approximation gets worse —
 and on magnitude the signature **survives, and survives only under the live
 coefficient**. At the proton pin:
@@ -104,11 +99,10 @@ coefficient**. At the proton pin:
 | 5 | **6.2260 ppb** (increases) | 5.5551 ppb (decreases) |
 
 So the $N{=}4 \to N{=}5$ non-monotonicity is produced by the **live**
-$c_5 = -(b^2+1/2)$ and is *absent* under the superseded $+12.87$ — the
-reverse of what the earlier draft asserted, which read the signed column
-where $-6.1698 \to -6.2260$ is decreasing. The ladder does carry a
-numerical signature of its own inexactness, now on the correct coefficient
-for the first time.
+$c_5 = -(b^2+1/2)$ and is *absent* under the superseded $+12.87$. Reading the
+signed column, where $-6.1698 \to -6.2260$ is decreasing, gives the reverse
+conclusion. The ladder therefore carries a numerical signature of its own
+inexactness on the live coefficient.
 
 **Caveat:** the crossing is only $0.91\,\%$, computed with $c_3$ at the
 recorded proton extraction and at the proton pin alone, so it is not robust

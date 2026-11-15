@@ -1,0 +1,58 @@
+---
+doc_id: ds15v1-2008
+doc_title: "Rogers-Ramanujan-Slater Type Identities"
+section_id: page-040
+section_title: "Page 40"
+pages: 40-40
+pdf_page: 40
+source_pdf: ds15v1-2008.pdf
+source_sha256: aef155a324c6fdf4
+text_source: ocr
+granularity: page
+doc_brief: "Rogers-Ramanujan-Slater Type Identities — In this survey article, we present an expanded version of Lucy Slater’s famous list of identities of the Rogers-Ramanujan type, including identities of"
+---
+(M.-S. [32, Eq. (1.40)]) (5.18.6)
+
+6 Inter-Dependence Between Identities
+
+A number of pairs of identities on Slater’s list are easily seen to be equivalent, either by
+simply replacing g by —q (for example, $24 and $30), replacing gq by q? (for example, S2
+and $7), specializing a free parameter in a general series = product identity (for example,
+S8) or rearranging the finite g-products on the series side (for example, $10 and S47).
+
+After eliminating one of each such pair of identities from the list of identities, a natural
+question is: how independent from each other are the identities in the remaining set? In
+this section we describe a number of non-trivial ways in which pairs, or larger sets, of
+identities are dependent.
+
+6.1 Series-Equivalent Identities
+
+Suppose we have an identity of the form
+Infinite Series; = Infinite Product x Infinite Seriess, (6.1.1)
+
+where each side contains one or more free parameters. It is immediately clear that if,
+for particular values of the parameters, either series has a representation as an infinite
+product, then so does the other. We say two identities of Rogers-Ramanujan type are
+series-equivalent, if one can be derived from the other by specializing the free parameters
+in an identity of the type at (6.1.1).
+
+We next list some general series transformations. Most can be derived as limiting
+cases of transformations between basic hypergeometric series. Let a, b, c, d, y and q € C,
+lq] <1. Then
+
+y! a,b q)ng)? (=ey/ab)" _ —* ttle yf c/a, — gyngn VP(—9)" (6.1.2)
+— (61GQn — (c, cy/ab, 5 Dn
+ico 1d) n n(n—1)/2.,.n Joo v/b: ghin- 1)/2 —p)r
+3 (4; Q)nd yy 52! — Qn (=b)" (6.13)
+< — (b:G)n(4 Dn es Do ORG Qn
+S (a3 angry" SS (=ay)rgnr
+= (9: oo DT: (6.1.4)
+dX (On dX (=13@)n(G On
+3 (a; DnqGan Dean _ (-7; Qo 6 : 5)
+n=0 (-ay; Q)n(4; Qn (-ay; Doo
+ico Grr 1)/2 oo an? mi yn
+x q
+= 6.1.6
+ior (44) > Cae (6.1.6)
+
+THE ELECTRONIC JOURNAL OF COMBINATORICS 15 (2008), #DS15 40

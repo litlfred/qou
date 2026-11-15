@@ -1,0 +1,54 @@
+Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values 1735
+degree at most d in the variables By,),¢, such that we have
+
+» Prrw' ddadva (Qe?) ica, (Bn (Eocmes, itd, Bepy(K))
+()ae{l,.... gL}
+
+,&@
+= Pw ia (0° Bo’ Bn Mocmert, hat, seuntt)) G-4)
+
+Proof. The set {0,..., &/é — 1}4 admits a partition, which depends only on d, indexed by the set of
+couples (E,o), where E is a partition of {1,...,d} and o is a permutation of {1,..., 1E}, defined as
+follows: for each (v1, ..., vq) € [0, k— 1]%, and each such (E, a), we say that (vj,..., vg) € (E,o) if
+and only if, for all, i, i’, a
+
+y=v;  fori,i’ € Pow),
+
+Vie< Uj’ forié Ps a) i’ € Po(atl)-
+
+By the proof of Lemma 3A.2, the function (vj)¢t> Pw,w’,d;)g,(vi)¢ 18 constant on each term of that partition
+(since £7 = & for all € € w(K), we have £7 = for all v E N*). We split the left-hand side of (3-4) as
+aiuetl..n&/d0-1) = 2(E,0) DQiae(E,o) and we compute each subsum )7(,,),(£,)- By multilinearity
+we can assume that Py,w’,(;)4,(v;)¢ i8 a Monomial in the g@l¥s+1~-¥/—!), Thus the subsum is a function of
+the type
+
+eee (3-5)
+
+O<b) <<iy<M-1
+
+applied to 0; = Vo (+1) — Voi) — 1 and T; = q®, where d’, M €N*, J = {ij,...,i-} C {1,...,d’} with
+
+i) <+++<i,, and 7j,,..., 7;, formal variables. Moreover, >> 1 is a polynomial function of
+
+i<it]<-<j
+(i, j) with coefficients in Z. Thus we can express (3-5) by Lemma 3A.3. This provides the result. OO
+
+3B. The relation of iteration of the harmonic Frobenius of series. Using the result of Section 3A we
+can now formalize the iteration of the harmonic Frobenius from the point of view of series. We refer to
+K (eoupn yz. =T]w harmonic word K-w defined in [Jarossay 2015, Section 3].
+
+Definition 3B.1. Let the map of iteration of the harmonic Frobenius of series be the map iter> (A, A“,a):
+K (eoupy) py > KIA, A“, a} Meoupy)%, defined by, for any word w,
+
+har
+
+itera PMI = DY Paw anu A 4, Bn Vocmest bd th, tony (ky) f Lv’).
+w’ word on COUN
+Let us now finish the proof of (0-5). By Lemmas 3A.1, 3A.2 and Proposition 3A.4, the only thing to
+check is the convergence of the series, which are infinite sums over (/;)qg € N¢. This follows from the
+following facts:
+
+(a) For any n € N*, it follows from pe <n that vp(/n) > — log(n)/log(p); moreover, for any
+n € N*, we have v,(B,) > —1 (this is part of von Staudt—Clausen’s theorem). Thus for all /, m, we
+have v, (Bi) > —1—log(l + 1)/log(p), and, given that |§|, = |1—&|) = 1 for all € € wy(K) \ (1,
+we have, for all /, m, and € € wy (K) \ {1}, vp (Bi, (&)) >0.

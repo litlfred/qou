@@ -1,23 +1,191 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "0510388v1",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "c83c0f6a2eaa74f322292f0da9046fd07d7c1fcd07c30f7b4faf39ecfb66ff12",
   "file": "0510388v1.pdf"
  },
  "provenance": {
-  "title": "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE",
+  "title": "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck",
   "authors": "Dennis DeTurck and Herman Gluck",
   "arxiv": null,
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
+  "candidates": 11,
+  "by_kind": {
+   "recommendation": 11
+  },
   "formalization_candidates": 0
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The integral formulas in this paper contain vectors lying in different tangent spaces; in non-Euclidean settings these vectors must be moved to a common location to be combined.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-organization.md",
+   "section_title": "ORGANIZATION",
+   "pages": "2-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Hence the components of this gradient must also be harmonic functions.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-004-3-magnetic-fields-in-r3-s3-and-h3.md",
+   "section_title": "Magnetic fields in R3 , S3 and H3 .",
+   "pages": "8-12",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "To keep signs straight, the orientation of the disk, combined with the orientation of the normal direction, should give the chosen orientation on the ambient space.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-4-left-invariant-vector-fields-on-s3.md",
+   "section_title": "Left-invariant vector fields on S3 .",
+   "pages": "12-15",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Their difference is a field which is simultaneously divergence-free and curl-free, and hence, since S3 is simply connected, must be zero.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-4-left-invariant-vector-fields-on-s3.md",
+   "section_title": "Left-invariant vector fields on S3 .",
+   "pages": "12-15",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "\u2219 In R3 , conditions (1) and (2) characterize the Green's operator, because the difference Gr1(f) \u2014 Gr2(f) between two candidates for the Green's operator is a harmonic function which goes to zero at infinity, and hence must be identically zero.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-006-5-scalar-valued-greens-operators-in-r3-s3-and-h3.md",
+   "section_title": "Scalar-valued Green's operators in R3 , S3 and H3 .",
+   "pages": "15-17",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "By property (2), they go to zero at infinity and hence must be identically zero.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-007-6-vector-valued-greens-operators-in-r3-s3-and-h3.md",
+   "section_title": "Vector-valued Green's operators in R3 , S3 and H3 .",
+   "pages": "17-21",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "we must choose \u03d5 to satisfy the ODE",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-031-28-the-curl-of-av-\u03d5y.md",
+   "section_title": "The curl of A(V, \u03d5)(y) .",
+   "pages": "60-63",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "we must choose \u03d5 to satisfy the ODE",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-053-49-the-curl-of-av-\u03d5y.md",
+   "section_title": "The curl of A(V, \u03d5)(y) .",
+   "pages": "92-94",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "But there is an issue which must be dealt with first.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-059-54-proof-scheme-for-theorem-1.md",
+   "section_title": "Proof scheme for Theorem 1.",
+   "pages": "101-104",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We must show that in left-translation format, we have",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-060-55-proof-of-theorem-1-formula-1.md",
+   "section_title": "Proof of Theorem 1, formula (1).",
+   "pages": "104-106",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We must show that in parallel transport format, we have",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-061-56-proof-of-theorem-1-formulas-2-and-3.md",
+   "section_title": "Proof of Theorem 1, formulas (2) and (3) .",
+   "pages": "106-107",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
 }

@@ -1,13 +1,15 @@
 ---
 doc_id: yuasa-rims-kokyuroku-2163-05
-doc_title: "Twist formulas for one-row colored A» webs and sl; tails of (2, 2m)-torus links"
+doc_title: "Twist formulas for one-row colored A_2 webs and sl_3 tails of (2,2m)-torus links"
 section_id: page-002
 section_title: "Page 2"
-section_number: null
 pages: 2-2
+pdf_page: 2
 source_pdf: yuasa-rims-kokyuroku-2163-05.pdf
 source_sha256: fa2a585b45c2185d
-toc_source: undetermined
+text_source: ocr
+granularity: page
+doc_brief: "Twist formulas for one-row colored A_2 webs and sl_3 tails of (2,2m)-torus links — 11 sections: Page 1; Page 2; Page 3"
 ---
 1) in [AD11], for T(2, 2m) in [Haj16], for a pretzel knot P(2k +1, 2, 21+ 1) in [EH17], for
 knots with small crossing numbers in [KO16], [BO17], and [GL15]. Especially, the tail of

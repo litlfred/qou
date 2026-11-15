@@ -1,0 +1,36 @@
+Problems on invariants of knots and 3-manifolds 533
+
+It is shown in [169] that Col;(L) is invariant under the (2,2)-move (see Figure
+20). The following conjecture implies that the (2,2)-move would topologically
+characterize the partition of the set of links given by Cols(L).
+
+Conjecture 12.5 (Y. Nakanishi, T. Harikae [220, Conjecture 1.59 (6)]) Any
+link can be related to a trivial link by a sequence of (2,2)-moves.
+
+Remark This conjecture holds for algebraic links; see [220, Conjecture 1.59
+(6)], [337], and references therein.
+
+Figure 20: The 3-move and the (2,2)-move
+
+12.4 Knotted trivalent graphs
+
+D. Bar-Natan and D. Thurston [39, 40, 384] developed the theory of knotted
+trivalent graphs and their algebra, related to shadow surfaces of V. Turaev [388]
+and Lie groups/algebras.
+
+A knotted trivalent graph (KTG) is a (framed) embedding of a (ribbon) trivalent
+graph I into $?, where framing is an integer of a half integer (hence, the ribbon
+of a trivalent graph is not necessarily orientable). There are four operations of
+KTG’s: connected sum, unzip, bubbling and unknot; see Figure 21. Any KTG
+(in particular, any link) can be obtained from copies of tetrahedron and Mébius
+strip with +1/2 framing by applying KTG operations. Further, two sequences
+of KTG operations give the same KTG, if and only if they are related by
+certain (finitely many) relations including the pentagon and hexagon relations
+(see [40]). Thus, the theory of KTG’s is finitely presented in this sense.
+
+The Kontsevich invariant of framed links have an extension for KTG’s (see
+[301]) and the extended Kontsevich invariant is well-behaved under the KTG
+
+Section 12.4 was written by T. Ohtsuki, following seminar talks given by D. Thurston.
+
+Geometry & Topology Monographs, Volume 4 (2002)

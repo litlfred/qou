@@ -1,0 +1,5849 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-math-0605314v1",
+  "pages": [
+    {
+      "page": 15,
+      "rotation": 0,
+      "drawings": 70,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4.1. (a) A 3-component bottom tangle T = T1 ∪T2 ∪T3. (b) Its closure cl(L) = L1 ∪L2 ∪L3.",
+        "Figure 4.2. Fundamental tangles: vertical line, positive and neg- ative crossings, local minimum and local maximum. Here the ori- entations are arbitrary.",
+        "Figure 4.3. How to put elements of Uh on the strings. For each string in the positive and the negative crossings, “S′” should be replaced with id if the string is oriented downward, and by S oth- erwise."
+      ],
+      "labels": [
+        {
+          "text": "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANT",
+          "bbox": [
+            193.2,
+            93.89,
+            418.7,
+            100.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "15",
+          "bbox": [
+            477.33,
+            93.89,
+            485.26,
+            100.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "T1",
+          "bbox": [
+            205.89,
+            160.05,
+            215.83,
+            174.42
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            7.01,
+            8.93
+          ]
+        },
+        {
+          "text": "T2",
+          "bbox": [
+            237.76,
+            160.05,
+            247.71,
+            174.42
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            7.01,
+            8.93
+          ]
+        },
+        {
+          "text": "T3",
+          "bbox": [
+            267.72,
+            160.05,
+            277.67,
+            174.42
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            7.01,
+            8.93
+          ]
+        },
+        {
+          "text": "L1",
+          "bbox": [
+            323.19,
+            168.34,
+            333.13,
+            182.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            7.01,
+            8.93
+          ]
+        },
+        {
+          "text": "L2",
+          "bbox": [
+            355.06,
+            168.34,
+            365.01,
+            182.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            7.01,
+            8.93
+          ]
+        },
+        {
+          "text": "L3",
+          "bbox": [
+            385.02,
+            168.34,
+            394.97,
+            182.7
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            7.01,
+            8.93
+          ]
+        },
+        {
+          "text": "(a)",
+          "bbox": [
+            234.57,
+            185.55,
+            250.64,
+            196.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            8.93
+          ]
+        },
+        {
+          "text": "(b)",
+          "bbox": [
+            353.15,
+            185.55,
+            369.21,
+            196.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            8.93
+          ]
+        },
+        {
+          "text": "Figure 4.1. (a) A 3-component bottom tangle T = T1 ∪T2 ∪T3.",
+          "bbox": [
+            162.48,
+            210.67,
+            449.41,
+            229.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(b) Its closure cl(L) = L1 ∪L2 ∪L3.",
+          "bbox": [
+            162.48,
+            220.71,
+            320.41,
+            241.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSS10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            216.37,
+            270.08,
+            220.29,
+            278.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            6.53
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            264.89,
+            270.08,
+            268.8,
+            278.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            6.53
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            313.4,
+            270.08,
+            317.32,
+            278.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            6.53
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            361.91,
+            270.08,
+            365.83,
+            278.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            6.53
+          ]
+        },
+        {
+          "text": "Figure 4.2. Fundamental tangles: vertical line, positive and neg-",
+          "bbox": [
+            162.48,
+            291.43,
+            449.51,
+            301.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ative crossings, local minimum and local maximum. Here the ori-",
+          "bbox": [
+            162.48,
+            303.81,
+            449.6,
+            313.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "entations are arbitrary.",
+          "bbox": [
+            162.48,
+            315.69,
+            263.43,
+            325.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "κ −1",
+          "bbox": [
+            478.67,
+            350.31,
+            489.21,
+            361.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "S’( )",
+          "bbox": [
+            191.8,
+            350.35,
+            209.73,
+            357.82
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            128.19,
+            350.74,
+            131.18,
+            358.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "β",
+          "bbox": [
+            202.9,
+            350.74,
+            206.18,
+            358.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "α",
+          "bbox": [
+            161.91,
+            351.59,
+            165.69,
+            359.38
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "S’( )",
+          "bbox": [
+            151.67,
+            352.06,
+            169.6,
+            359.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            384.76,
+            352.87,
+            387.74,
+            360.66
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "α",
+          "bbox": [
+            223.39,
+            359.7,
+            227.16,
+            367.49
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            317.73,
+            360.13,
+            320.72,
+            367.92
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "S’( )",
+          "bbox": [
+            213.14,
+            360.17,
+            231.07,
+            367.63
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "κ",
+          "bbox": [
+            335.66,
+            360.56,
+            338.94,
+            368.35
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "S’( )",
+          "bbox": [
+            257.11,
+            361.02,
+            275.04,
+            368.49
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "β",
+          "bbox": [
+            268.21,
+            361.41,
+            271.49,
+            369.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "Figure 4.3. How to put elements of Uh on the strings. For each",
+          "bbox": [
+            162.48,
+            392.11,
+            449.55,
+            403.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "string in the positive and the negative crossings, “S′” should be",
+          "bbox": [
+            162.48,
+            402.99,
+            449.4,
+            414.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "replaced with id if the string is oriented downward, and by S oth-",
+          "bbox": [
+            162.48,
+            416.37,
+            449.48,
+            426.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "erwise.",
+          "bbox": [
+            162.48,
+            428.37,
+            192.0,
+            438.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "depicted in Figure 4.1 (b). For any oriented, ordered framed link L, there is a",
+          "bbox": [
+            126.72,
+            453.93,
+            485.34,
+            463.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "bottom tangle whose closure is isotopic to L.",
+          "bbox": [
+            126.72,
+            465.93,
+            322.81,
+            475.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The linking matrix of a bottom tangle T = T1 ∪· · · ∪Tn is deﬁned as that of the",
+          "bbox": [
+            138.6,
+            477.59,
+            485.28,
+            496.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "closure T . Thus the linking number of Ti and Tj, i̸ = j, is deﬁned as the linking",
+          "bbox": [
+            126.72,
+            489.59,
+            485.37,
+            506.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "number of the corresponding components in cl(T ), and the framing of Ti is deﬁned",
+          "bbox": [
+            126.72,
+            499.47,
+            485.3,
+            513.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSS10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "as the framing of the closure of Ti.",
+          "bbox": [
+            126.72,
+            513.69,
+            277.93,
+            524.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A link or a bottom tangle is called algebraically-split if the linking matrix is",
+          "bbox": [
+            138.6,
+            525.69,
+            485.4,
+            535.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "diagonal.",
+          "bbox": [
+            126.72,
+            537.57,
+            166.23,
+            547.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "For n ≥0, let BT0",
+          "bbox": [
+            138.6,
+            547.23,
+            223.93,
+            566.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSS10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n denote the subset of BTn consisting of algebraically-split,",
+          "bbox": [
+            219.96,
+            547.23,
+            485.67,
+            562.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMSS10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "0-framed bottom tangles. Set BT0 = S",
+          "bbox": [
+            126.72,
+            554.27,
+            297.98,
+            598.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR10",
+            "CMR7",
+            "CMSS10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n≥0 BT0",
+          "bbox": [
+            297.96,
+            559.59,
+            332.65,
+            579.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSS10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n ⊂BT.",
+          "bbox": [
+            328.68,
+            559.59,
+            363.61,
+            581.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMSS10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "4.2. Universal sl2 invariant of bottom tangles. For each ribbon Hopf algebra",
+          "bbox": [
+            126.72,
+            580.62,
+            485.5,
+            592.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "H, there is a “universal invariant” of links and tangles from which one can recover",
+          "bbox": [
+            126.72,
+            592.77,
+            485.59,
+            602.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the operator invariants, such as the colored Jones polynomials.",
+          "bbox": [
+            126.72,
+            604.77,
+            412.57,
+            614.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Such universal",
+          "bbox": [
+            421.08,
+            604.77,
+            485.55,
+            614.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "invariants has been studied in [42, 43, 72, 53, 66, 33, 35, 34]. Here we need only",
+          "bbox": [
+            126.72,
+            616.77,
+            485.38,
+            626.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the case of bottom tangles, which is described in [20].",
+          "bbox": [
+            126.72,
+            628.65,
+            360.5,
+            638.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "For T = T1 ∪· · · ∪Tn ∈BTn, we deﬁne the universal sl2 invariant JT ∈U ˆ⊗n",
+          "bbox": [
+            138.6,
+            639.29,
+            484.81,
+            661.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSS10",
+            "CMSY10",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "h",
+          "bbox": [
+            472.68,
+            647.81,
+            477.35,
+            654.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "of T as follows.",
+          "bbox": [
+            126.72,
+            654.57,
+            197.05,
+            664.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We choose a diagram for T , which is obtained from copies of",
+          "bbox": [
+            205.44,
+            654.57,
+            485.47,
+            664.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "fundamental tangle, see Figure 4.2, by pasting horizontally and vertically. For each",
+          "bbox": [
+            126.72,
+            666.45,
+            485.42,
+            676.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "copy of fundamental tangle in the diagram of T , we put elements of Uh with the",
+          "bbox": [
+            126.72,
+            678.45,
+            485.28,
+            689.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "rule described in Figure 4.3. We set",
+          "bbox": [
+            126.72,
+            690.45,
+            283.13,
+            700.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 16,
+      "rotation": 0,
+      "drawings": 15,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4.4. The Borromean tangle B ∈BT0"
+      ],
+      "labels": [
+        {
+          "text": "16",
+          "bbox": [
+            126.72,
+            93.89,
+            134.65,
+            100.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "KAZUO HABIRO",
+          "bbox": [
+            273.95,
+            93.89,
+            338.02,
+            100.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Figure 4.4. The Borromean tangle B ∈BT0",
+          "bbox": [
+            204.48,
+            169.71,
+            404.17,
+            189.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSS10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "3.",
+          "bbox": [
+            400.2,
+            172.05,
+            407.53,
+            183.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            253.08,
+            192.47,
+            267.47,
+            229.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ˆ⊗n",
+          "bbox": [
+            367.92,
+            198.77,
+            379.08,
+            211.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "J(T1) ⊗· · · ⊗J(Tn) ∈U",
+          "bbox": [
+            269.16,
+            201.95,
+            366.8,
+            221.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR5",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "JT =",
+          "bbox": [
+            228.0,
+            202.17,
+            250.39,
+            213.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            379.56,
+            202.17,
+            382.33,
+            212.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "h",
+          "bbox": [
+            366.84,
+            207.41,
+            371.51,
+            214.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "where for each i = 1, . . . , n, the ith tensorand J(Ti) is deﬁned to be the product",
+          "bbox": [
+            126.72,
+            220.89,
+            485.46,
+            232.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of the elements put on the component Ti. Here the elements read oﬀalong each",
+          "bbox": [
+            126.72,
+            232.89,
+            485.4,
+            243.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "component are written from right to left. Then JT does not depend on the choice",
+          "bbox": [
+            126.72,
+            244.89,
+            485.4,
+            256.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of diagram, and deﬁnes an isotopy invariant of bottom tangles.",
+          "bbox": [
+            126.72,
+            256.77,
+            401.53,
+            266.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "4.3. Universal sl2-invariant of algebraically-split, 0-framed bottom tan-",
+          "bbox": [
+            126.72,
+            276.9,
+            485.24,
+            287.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "gles. For any left Uh-module W, let Inv(W) denote the invariant part of W, deﬁned",
+          "bbox": [
+            126.72,
+            288.78,
+            485.31,
+            299.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "by",
+          "bbox": [
+            126.72,
+            301.05,
+            137.26,
+            311.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Inv(W) = {w ∈W | x · w = ǫ(x)w",
+          "bbox": [
+            204.84,
+            318.11,
+            353.81,
+            335.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "∀x ∈Uh}.",
+          "bbox": [
+            364.08,
+            318.11,
+            407.29,
+            335.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Recall that we regard Uh as a left Uh-module via the adjoint action. For n ≥0,",
+          "bbox": [
+            138.6,
+            335.51,
+            485.41,
+            352.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the completed tensor product U ˆ⊗n",
+          "bbox": [
+            126.72,
+            345.77,
+            277.56,
+            359.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "is equipped with a left Uh-module structure ⊲n",
+          "bbox": [
+            281.28,
+            349.05,
+            484.92,
+            359.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "h",
+          "bbox": [
+            265.32,
+            354.41,
+            269.99,
+            361.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "in the standard way: For x = P x1 ⊗· · · ⊗xn ∈U",
+          "bbox": [
+            126.72,
+            355.79,
+            346.4,
+            400.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ˆ⊗n",
+          "bbox": [
+            347.52,
+            360.17,
+            358.68,
+            373.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "and y ∈Uh we have",
+          "bbox": [
+            362.4,
+            363.35,
+            449.02,
+            380.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "h",
+          "bbox": [
+            346.44,
+            368.81,
+            351.11,
+            375.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            255.12,
+            373.67,
+            269.51,
+            410.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(y(1) ⊲x1) ⊗· · · ⊗(y(n) ⊲xn).",
+          "bbox": [
+            269.52,
+            383.15,
+            395.89,
+            400.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "y ⊲n x =",
+          "bbox": [
+            216.0,
+            383.37,
+            252.31,
+            394.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ˆ⊗0",
+          "bbox": [
+            196.8,
+            402.29,
+            206.89,
+            415.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "= Q[[h]] is given the trivial left Uh-module structure. For any",
+          "bbox": [
+            210.84,
+            404.72,
+            485.4,
+            416.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "In particular, U",
+          "bbox": [
+            126.72,
+            405.69,
+            195.68,
+            415.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "h",
+          "bbox": [
+            195.72,
+            410.93,
+            200.38,
+            417.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "ˆ⊗n",
+          "bbox": [
+            205.56,
+            416.69,
+            216.72,
+            429.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "subset X ⊂Inv(U",
+          "bbox": [
+            126.72,
+            419.87,
+            204.44,
+            437.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "), we set",
+          "bbox": [
+            217.2,
+            420.09,
+            254.06,
+            430.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "h",
+          "bbox": [
+            204.48,
+            425.33,
+            209.15,
+            432.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "ˆ⊗n",
+          "bbox": [
+            322.2,
+            436.49,
+            333.36,
+            449.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": ") ∩X.",
+          "bbox": [
+            333.84,
+            439.67,
+            360.12,
+            456.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Inv(X) = Inv(U",
+          "bbox": [
+            251.88,
+            439.89,
+            321.08,
+            449.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "h",
+          "bbox": [
+            321.12,
+            445.13,
+            325.79,
+            452.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "For n ≥0, we set",
+          "bbox": [
+            138.6,
+            456.95,
+            213.74,
+            474.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "q )˜⊗n) ⊂( ˜Uev",
+          "bbox": [
+            293.28,
+            472.49,
+            354.22,
+            492.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "q )˜⊗n.",
+          "bbox": [
+            345.48,
+            472.49,
+            373.09,
+            488.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Kn = Inv(( ˜Uev",
+          "bbox": [
+            238.92,
+            473.13,
+            302.02,
+            492.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "q )˜⊗n, i.e.,",
+          "bbox": [
+            438.96,
+            493.01,
+            485.29,
+            508.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "One can easily see that Kn is the ˜Uq-invariant part of the ˜Uq-module ( ˜Uev",
+          "bbox": [
+            126.72,
+            493.17,
+            447.7,
+            512.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "we have",
+          "bbox": [
+            126.72,
+            507.69,
+            161.14,
+            517.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "q )˜⊗n | y ⊲n x = ǫ(y)x",
+          "bbox": [
+            250.2,
+            520.67,
+            346.26,
+            542.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Kn = {x ∈( ˜Uev",
+          "bbox": [
+            190.92,
+            522.45,
+            258.94,
+            542.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "for all y ∈˜Uq}.",
+          "bbox": [
+            356.16,
+            522.45,
+            421.09,
+            542.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The main result of this subsection is the following.",
+          "bbox": [
+            138.6,
+            542.37,
+            359.67,
+            552.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 4.1. If T ∈BT0",
+          "bbox": [
+            126.72,
+            558.63,
+            245.41,
+            578.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR7",
+            "CMSS10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n, n ≥0, then we have JT ∈Kn.",
+          "bbox": [
+            241.44,
+            560.75,
+            384.18,
+            579.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "To prove Theorem 4.1, we use the following two results from [20].",
+          "bbox": [
+            138.6,
+            579.57,
+            424.45,
+            589.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proposition 4.2 (Uh case of [20, Proposition 8.2]). For any n-component bottom",
+          "bbox": [
+            126.72,
+            598.02,
+            485.38,
+            609.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "tangle T ∈BTn, we have JT ∈Inv(U ˆ⊗n",
+          "bbox": [
+            126.72,
+            608.81,
+            299.64,
+            630.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSS10",
+            "CMSY10",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ").",
+          "bbox": [
+            300.12,
+            612.09,
+            307.02,
+            622.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "h",
+          "bbox": [
+            287.4,
+            617.33,
+            292.07,
+            624.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "ˆ⊗n",
+          "bbox": [
+            406.2,
+            636.53,
+            417.36,
+            649.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Proposition 4.3 (Uh case of [20, Corollary 9.15]). Let Xn ⊂U",
+          "bbox": [
+            126.72,
+            639.66,
+            405.08,
+            658.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ", n ≥0, be sub-",
+          "bbox": [
+            417.84,
+            639.71,
+            485.37,
+            656.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "h",
+          "bbox": [
+            405.12,
+            645.17,
+            409.79,
+            652.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "sets satisfying the following conditions.",
+          "bbox": [
+            126.72,
+            651.81,
+            296.35,
+            661.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1. 1 ∈X0, 1 ∈X1, and JB ∈X3. Here B ∈BT0",
+          "bbox": [
+            138.6,
+            664.11,
+            372.01,
+            684.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSS10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "3 is the Borromean tangle",
+          "bbox": [
+            368.04,
+            666.45,
+            485.39,
+            678.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "depicted in Figure 4.4.",
+          "bbox": [
+            151.32,
+            678.45,
+            249.55,
+            688.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2. If x ∈Xl and y ∈Xm with l, m ≥0, then x ⊗y ∈Xl+m.",
+          "bbox": [
+            138.6,
+            690.23,
+            398.58,
+            707.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 22,
+      "rotation": 0,
+      "drawings": 39,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 6.1. The bottom tangle c+ ∈BT2.",
+        "Figure 6.2. A graphical proof of (6.6)."
+      ],
+      "labels": [
+        {
+          "text": "22",
+          "bbox": [
+            126.72,
+            93.89,
+            134.65,
+            100.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "KAZUO HABIRO",
+          "bbox": [
+            273.95,
+            93.89,
+            338.02,
+            100.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Figure 6.1. The bottom tangle c+ ∈BT2.",
+          "bbox": [
+            211.2,
+            172.47,
+            400.81,
+            193.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSS10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ξ (VV’)=",
+          "bbox": [
+            133.42,
+            221.55,
+            166.63,
+            231.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Courier",
+            "Symbol"
+          ],
+          "sizes": [
+            7.11
+          ]
+        },
+        {
+          "text": "ξ (V) ξ (V’)",
+          "bbox": [
+            432.56,
+            222.05,
+            478.06,
+            232.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Courier",
+            "Symbol"
+          ],
+          "sizes": [
+            7.11
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            243.12,
+            222.1,
+            247.39,
+            230.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            7.11
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            333.52,
+            222.1,
+            337.79,
+            230.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            7.11
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            424.94,
+            222.61,
+            429.21,
+            231.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            7.11
+          ]
+        },
+        {
+          "text": "V",
+          "bbox": [
+            371.11,
+            223.63,
+            375.37,
+            232.51
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            7.11
+          ]
+        },
+        {
+          "text": "V’",
+          "bbox": [
+            402.59,
+            226.67,
+            411.13,
+            235.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            7.11
+          ]
+        },
+        {
+          "text": "V’",
+          "bbox": [
+            295.43,
+            235.81,
+            303.96,
+            244.7
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            7.11
+          ]
+        },
+        {
+          "text": "V",
+          "bbox": [
+            287.3,
+            246.99,
+            291.57,
+            255.87
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            7.11
+          ]
+        },
+        {
+          "text": "V  V’",
+          "bbox": [
+            214.17,
+            249.53,
+            235.5,
+            258.41
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Courier"
+          ],
+          "sizes": [
+            7.11
+          ]
+        },
+        {
+          "text": "Figure 6.2. A graphical proof of (6.6).",
+          "bbox": [
+            218.16,
+            277.27,
+            393.88,
+            287.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The quantity −q−2JK(P ′′",
+          "bbox": [
+            126.72,
+            306.39,
+            241.57,
+            325.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1 ) is known as the reduced Jones polynomial of K, and",
+          "bbox": [
+            235.56,
+            308.01,
+            485.43,
+            320.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "appears in the original paper of Jones [31, Proposition 12.5]. Some examples of",
+          "bbox": [
+            126.72,
+            319.89,
+            485.44,
+            329.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "JK(P ′′",
+          "bbox": [
+            126.72,
+            330.39,
+            156.13,
+            345.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n ) are given in Section 14.3.",
+          "bbox": [
+            150.12,
+            331.89,
+            273.63,
+            344.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "It is clear that the universal invariant JT determines the colored Jones polyno-",
+          "bbox": [
+            138.6,
+            343.77,
+            485.37,
+            355.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "mials JK(Vn), hence the reduced Jones polynomials JK(P ′′",
+          "bbox": [
+            126.72,
+            353.43,
+            383.05,
+            369.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSS10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n ). Conversely, Theorem",
+          "bbox": [
+            377.04,
+            355.77,
+            485.42,
+            368.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "6.4 implies that the universal invariant JT is determined by the JK(P ′′",
+          "bbox": [
+            126.72,
+            366.27,
+            436.69,
+            381.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n ), hence by",
+          "bbox": [
+            430.68,
+            367.77,
+            485.38,
+            380.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the JK(Vn) as is presumably well known.",
+          "bbox": [
+            126.72,
+            377.31,
+            307.22,
+            390.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSS10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "By (6.2), we have",
+          "bbox": [
+            138.6,
+            391.65,
+            215.39,
+            401.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            272.52,
+            407.09,
+            277.44,
+            414.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            267.72,
+            407.63,
+            282.11,
+            444.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "{n + 1 + i}2i+1",
+          "bbox": [
+            285.0,
+            410.39,
+            350.65,
+            427.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "JK(Vn) =",
+          "bbox": [
+            221.4,
+            414.99,
+            265.03,
+            427.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSS10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "JK(P ′′",
+          "bbox": [
+            352.32,
+            415.35,
+            381.73,
+            431.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(6.5)",
+          "bbox": [
+            126.72,
+            417.33,
+            147.28,
+            427.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "i ),",
+          "bbox": [
+            375.72,
+            417.33,
+            388.81,
+            429.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "{1}",
+          "bbox": [
+            310.56,
+            423.95,
+            325.62,
+            441.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "i=0",
+          "bbox": [
+            268.56,
+            431.33,
+            281.41,
+            438.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "where the sum may be replaced with P∞",
+          "bbox": [
+            126.72,
+            437.15,
+            314.3,
+            481.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i=0 since {n + 1 + i}2i+1 = 0 for i > n.",
+          "bbox": [
+            306.36,
+            444.59,
+            485.41,
+            461.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(Conversely, one can use (6.1) to obtain a formula for the reduced Jones polynomials",
+          "bbox": [
+            126.72,
+            456.81,
+            485.38,
+            466.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "in terms of the colored Jones polynomials.) (6.5) implies the following.",
+          "bbox": [
+            126.72,
+            468.69,
+            435.86,
+            478.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proposition 6.5. If K is a knot, then for each n ≥0 the nth colored Jones polyno-",
+          "bbox": [
+            126.72,
+            487.26,
+            485.13,
+            504.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "mial JK(Vn) is determined modulo ({2n+1}2n) by JK(V0), JK(V1), . . . , JK(Vn−1).",
+          "bbox": [
+            126.72,
+            497.19,
+            485.34,
+            516.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSS10",
+            "CMSY10",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "6.3. Proof of Proposition 6.3.",
+          "bbox": [
+            126.72,
+            517.98,
+            272.45,
+            528.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "6.3.1. The homomorphism ξ : RQ[[h]] →Z(Uh). Let c+ denote the 2-component",
+          "bbox": [
+            126.72,
+            539.15,
+            485.55,
+            558.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMTI10",
+            "MSBM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "bottom tangle depicted in Figure 6.1. We have",
+          "bbox": [
+            126.72,
+            551.25,
+            331.58,
+            561.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            285.84,
+            560.75,
+            300.23,
+            597.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ˆ⊗2",
+          "bbox": [
+            411.84,
+            567.05,
+            422.05,
+            580.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "S(α)S(β′) ⊗α′β ∈Inv(U",
+          "bbox": [
+            301.92,
+            568.35,
+            410.72,
+            587.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Jc+ = (S ⊗1)(R21R) =",
+          "bbox": [
+            181.08,
+            570.23,
+            283.15,
+            587.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "h ),",
+          "bbox": [
+            410.76,
+            570.45,
+            429.25,
+            583.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "where R = P α ⊗β = P α′ ⊗β′.",
+          "bbox": [
+            126.72,
+            582.35,
+            271.93,
+            627.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁne a continuous Q[[h]]-algebra homomorphism ξ : RQ[[h]] →Z(Uh) by",
+          "bbox": [
+            138.6,
+            601.04,
+            459.11,
+            620.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10",
+            "MSBM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            311.76,
+            613.07,
+            326.15,
+            650.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "S(α)S(β′)try",
+          "bbox": [
+            327.84,
+            620.79,
+            383.84,
+            632.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "q(α′β)",
+          "bbox": [
+            379.8,
+            620.79,
+            407.68,
+            634.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ξ(y) := (1 ⊗try",
+          "bbox": [
+            204.24,
+            620.93,
+            270.92,
+            639.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "q)(Jc+) =",
+          "bbox": [
+            266.88,
+            622.77,
+            309.07,
+            634.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "for y ∈RQ[[h]]. Indeed, we can verify",
+          "bbox": [
+            126.72,
+            641.63,
+            287.15,
+            658.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ξ(V V ′) = ξ(V )ξ(V ′)",
+          "bbox": [
+            261.72,
+            658.11,
+            350.32,
+            674.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(6.6)",
+          "bbox": [
+            126.72,
+            660.21,
+            147.28,
+            670.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "graphically as depicted in Figure 6.2. We can also verify ξ(V1) = C by computation.",
+          "bbox": [
+            126.72,
+            676.11,
+            485.43,
+            689.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSS10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Since the Ci, i ≥0, are linearly independent in Z(Uh), it follows that ξ is injective.",
+          "bbox": [
+            126.72,
+            688.97,
+            485.29,
+            707.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 34,
+      "rotation": 0,
+      "drawings": 32,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 9.1. A fusing identity."
+      ],
+      "labels": [
+        {
+          "text": "34",
+          "bbox": [
+            126.72,
+            93.89,
+            134.65,
+            100.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "KAZUO HABIRO",
+          "bbox": [
+            273.95,
+            93.89,
+            338.02,
+            100.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "...",
+          "bbox": [
+            266.88,
+            118.22,
+            274.03,
+            126.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Li1",
+          "bbox": [
+            252.24,
+            119.46,
+            264.03,
+            129.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "Lir",
+          "bbox": [
+            274.2,
+            119.82,
+            285.94,
+            129.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI6",
+            "CMMI8"
+          ],
+          "sizes": [
+            4.98,
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "...",
+          "bbox": [
+            350.04,
+            125.78,
+            357.19,
+            133.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "...",
+          "bbox": [
+            268.56,
+            132.14,
+            275.71,
+            140.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "= P",
+          "bbox": [
+            313.44,
+            157.77,
+            330.86,
+            193.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "K",
+          "bbox": [
+            373.44,
+            165.54,
+            380.58,
+            173.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "K",
+          "bbox": [
+            293.52,
+            167.94,
+            300.66,
+            175.91
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "e",
+          "bbox": [
+            356.76,
+            181.86,
+            360.69,
+            189.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "...",
+          "bbox": [
+            268.32,
+            195.5,
+            275.47,
+            203.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "...",
+          "bbox": [
+            353.88,
+            202.94,
+            361.03,
+            210.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Figure 9.1. A fusing identity.",
+          "bbox": [
+            238.2,
+            235.15,
+            373.83,
+            245.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "9.2. Twisting theorem.",
+          "bbox": [
+            126.72,
+            261.78,
+            239.93,
+            272.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 9.4. Let L1 ∪· · · ∪Lm ∪K be an (m + 1)-component, algebraically-split,",
+          "bbox": [
+            126.72,
+            279.66,
+            484.89,
+            298.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "0-framed link such that K is an unknot. Set L = L1 ∪· · · ∪Lm, and let L(K,±1)",
+          "bbox": [
+            126.72,
+            291.59,
+            484.91,
+            310.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "denote the framed link in S3 obtained from L by ±1-framed surgery along K. Then,",
+          "bbox": [
+            126.72,
+            300.81,
+            485.22,
+            321.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "for any x1, . . . , xm ∈ˆP, we have",
+          "bbox": [
+            126.72,
+            314.37,
+            269.42,
+            335.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "JL∪K(x1, . . . , xm, ω∓1) = JL(K,±1)(x1, . . . , xm).",
+          "bbox": [
+            203.04,
+            330.99,
+            408.85,
+            348.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(9.3)",
+          "bbox": [
+            126.72,
+            332.97,
+            147.28,
+            342.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proof. By Theorem 8.2, it suﬃces to prove (9.3) for x1, . . . , xm ∈P. In fact, we",
+          "bbox": [
+            126.72,
+            351.11,
+            485.39,
+            369.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "will show (9.3) for x1, . . . , xm ∈RQ(v). (Well-deﬁnedness of the left-hand side of",
+          "bbox": [
+            126.72,
+            363.11,
+            485.47,
+            381.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(9.3) in this case follows from the argument below.) Apply the standard “fusing”",
+          "bbox": [
+            126.72,
+            375.33,
+            485.36,
+            385.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "argument to the strands running through the unknot K, see Figure 9.1. In the left-",
+          "bbox": [
+            126.72,
+            387.33,
+            485.25,
+            397.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "hand side, the strands running through K are paired in such a way that each pair",
+          "bbox": [
+            126.72,
+            399.21,
+            485.37,
+            409.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "contains two segments from the same component of L in the opposite orientations.",
+          "bbox": [
+            126.72,
+            411.21,
+            485.55,
+            421.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "By fusing these strands, we obtain a linear combination of trivalent colored graphs,",
+          "bbox": [
+            126.72,
+            423.21,
+            485.55,
+            433.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "where each term has exactly one edge e running through K, colored by an even",
+          "bbox": [
+            126.72,
+            435.09,
+            485.43,
+            445.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "number. Hence, there is y ∈SQ(v) such that",
+          "bbox": [
+            126.72,
+            446.87,
+            318.64,
+            464.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "JL∪K(x1, . . . , xm, ω∓1) = JH(y, ω∓1) = ⟨ω∓1, y⟩,",
+          "bbox": [
+            198.96,
+            462.39,
+            411.37,
+            481.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "where H denotes the Hopf link with 0-framings. By Proposition 9.1, the right-hand",
+          "bbox": [
+            126.72,
+            480.57,
+            485.56,
+            490.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "side is equal to JU∓(y), where U∓denotes the ∓1-framed unknot. Since we have",
+          "bbox": [
+            126.72,
+            492.35,
+            478.33,
+            509.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "JU∓(y) = JL(K,±1)(x1, . . . , xm),",
+          "bbox": [
+            237.48,
+            508.65,
+            372.85,
+            520.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "we have (9.3).",
+          "bbox": [
+            126.72,
+            525.45,
+            187.57,
+            535.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "10. The invariant JM",
+          "bbox": [
+            252.36,
+            545.35,
+            358.35,
+            556.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "In this section, we construct an invariant JM ∈d",
+          "bbox": [
+            138.6,
+            561.47,
+            373.43,
+            598.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Z[q] of an integral homology",
+          "bbox": [
+            357.72,
+            563.84,
+            485.52,
+            574.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "sphere M.",
+          "bbox": [
+            126.72,
+            576.81,
+            171.37,
+            586.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "10.1. Admissible framed links and the Hoste moves. A framed link L in S3",
+          "bbox": [
+            126.72,
+            593.33,
+            484.81,
+            604.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "is said to be admissible if L is algebraically split and ±1-framed. Surgery on S3",
+          "bbox": [
+            126.72,
+            605.33,
+            484.81,
+            623.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "along an admissible framed link yields an integral homology sphere. Conversely,",
+          "bbox": [
+            126.72,
+            618.69,
+            485.65,
+            628.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "each integral homology sphere M can be obtained as the result of surgery on S3",
+          "bbox": [
+            126.72,
+            629.21,
+            484.81,
+            640.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "along an admissible framed link.",
+          "bbox": [
+            126.72,
+            642.57,
+            268.0,
+            652.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In the deﬁnition of the Reshetikhin-Turaev invariant [73] and its variants, one",
+          "bbox": [
+            138.6,
+            654.57,
+            485.41,
+            664.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "uses Kirby’s theorem [37] or its variant by Fenn and Rourke [6]. Fenn and Rourke’s",
+          "bbox": [
+            126.72,
+            666.45,
+            485.51,
+            676.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "theorem states that two framed links in S3 yields orientation-preserving homeomor-",
+          "bbox": [
+            126.72,
+            674.85,
+            485.49,
+            688.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "phic results of surgery if and only if they are related by a sequence of isotopies and",
+          "bbox": [
+            126.72,
+            690.45,
+            485.42,
+            700.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 35,
+      "rotation": 0,
+      "drawings": 34,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 10.1. A Fenn-Rourke move."
+      ],
+      "labels": [
+        {
+          "text": "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANT",
+          "bbox": [
+            193.2,
+            93.89,
+            418.7,
+            100.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "35",
+          "bbox": [
+            477.33,
+            93.89,
+            485.26,
+            100.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "...",
+          "bbox": [
+            258.15,
+            112.28,
+            266.53,
+            127.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.17
+          ]
+        },
+        {
+          "text": "...",
+          "bbox": [
+            379.7,
+            116.3,
+            388.08,
+            131.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.17
+          ]
+        },
+        {
+          "text": "...",
+          "bbox": [
+            258.15,
+            124.34,
+            266.53,
+            139.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.17
+          ]
+        },
+        {
+          "text": "surgery",
+          "bbox": [
+            305.97,
+            128.98,
+            332.1,
+            139.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.04
+          ]
+        },
+        {
+          "text": "along K",
+          "bbox": [
+            305.97,
+            138.36,
+            331.66,
+            149.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.04
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            209.9,
+            139.91,
+            216.04,
+            151.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.28
+          ]
+        },
+        {
+          "text": "1  full twists",
+          "bbox": [
+            358.7,
+            147.43,
+            398.01,
+            159.37
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.02
+          ]
+        },
+        {
+          "text": "K",
+          "bbox": [
+            217.49,
+            164.3,
+            222.98,
+            174.44
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.6
+          ]
+        },
+        {
+          "text": "inverse",
+          "bbox": [
+            301.05,
+            165.62,
+            326.29,
+            176.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.04
+          ]
+        },
+        {
+          "text": "...",
+          "bbox": [
+            379.7,
+            173.94,
+            388.08,
+            188.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.17
+          ]
+        },
+        {
+          "text": "operation",
+          "bbox": [
+            301.05,
+            175.0,
+            331.43,
+            185.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.04
+          ]
+        },
+        {
+          "text": "...",
+          "bbox": [
+            258.15,
+            176.18,
+            266.53,
+            191.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.17
+          ]
+        },
+        {
+          "text": "Figure 10.1. A Fenn-Rourke move.",
+          "bbox": [
+            225.6,
+            214.15,
+            386.53,
+            224.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Fenn-Rourke moves, where a Fenn-Rourke move is either surgery on a unknotted,",
+          "bbox": [
+            126.72,
+            236.49,
+            485.32,
+            246.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "±1-framed component, or the inverse operation. See Figure 10.1.",
+          "bbox": [
+            126.72,
+            248.27,
+            410.53,
+            265.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We use the following version of Fenn-Rourke’s theorem, which was conjectured",
+          "bbox": [
+            138.6,
+            260.49,
+            485.42,
+            270.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "by Hoste [28].",
+          "bbox": [
+            126.72,
+            272.37,
+            186.73,
+            282.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 10.1 ([21]). Two admissible framed links L and L′ in S3 yield orientation-",
+          "bbox": [
+            126.72,
+            285.33,
+            492.1,
+            299.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "preserving homeomorphic results of surgery if and only if L and L′ are related by",
+          "bbox": [
+            126.72,
+            297.21,
+            485.33,
+            311.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "a sequence of isotopies and Hoste moves. Here a Hoste move is deﬁned to be a",
+          "bbox": [
+            126.72,
+            312.81,
+            485.32,
+            322.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Fenn-Rourke move between two admissible framed links.",
+          "bbox": [
+            126.72,
+            324.81,
+            370.27,
+            334.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "10.2. Deﬁnition of JM. Let M be an integral homology sphere. Choose an ad-",
+          "bbox": [
+            126.72,
+            341.1,
+            485.38,
+            352.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "missible framed link L = L1 ∪· · · ∪Lm in S3 such that S3",
+          "bbox": [
+            126.72,
+            349.65,
+            378.13,
+            371.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "L ∼= M. For i = 1, . . . , m,",
+          "bbox": [
+            373.56,
+            350.39,
+            485.41,
+            373.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "let fi = ±1 denote the framing of Li. Let L0 = L0",
+          "bbox": [
+            126.72,
+            361.65,
+            354.61,
+            382.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1 ∪· · · ∪L0",
+          "bbox": [
+            350.64,
+            363.89,
+            400.81,
+            384.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "m denote the link L",
+          "bbox": [
+            396.84,
+            365.25,
+            485.34,
+            377.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "with 0 framings. Set",
+          "bbox": [
+            126.72,
+            377.13,
+            216.17,
+            387.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "JM = JL0(ω−f1, ω−f2, . . . , ω−fm) ∈d",
+          "bbox": [
+            217.56,
+            391.55,
+            390.35,
+            428.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Z[q].",
+          "bbox": [
+            374.64,
+            394.04,
+            394.45,
+            404.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(10.1)",
+          "bbox": [
+            126.72,
+            395.01,
+            152.32,
+            404.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 10.2. For an integral homology sphere M, the element JM ∈d",
+          "bbox": [
+            126.72,
+            416.03,
+            466.67,
+            453.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMEX10",
+            "CMMI10",
+            "CMMI7",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Z[q] de-",
+          "bbox": [
+            450.96,
+            418.52,
+            485.25,
+            429.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ﬁned in (10.1) does not depend on the choice of L.",
+          "bbox": [
+            126.72,
+            431.37,
+            359.94,
+            441.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Hence, the correspondence",
+          "bbox": [
+            368.16,
+            431.37,
+            485.18,
+            441.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "M 7→JM deﬁnes an invariant of integral homology spheres with values in d",
+          "bbox": [
+            126.72,
+            442.19,
+            466.19,
+            482.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI7",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Z[q].",
+          "bbox": [
+            450.48,
+            444.56,
+            470.58,
+            455.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proof. Let I(L) denote the right-hand side of (10.1). Clearly, I(L) is an isotopy",
+          "bbox": [
+            126.72,
+            462.09,
+            485.51,
+            472.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "invariant of admissible framed links. By Theorem 10.1, it suﬃces to prove that I(L)",
+          "bbox": [
+            126.72,
+            473.97,
+            485.31,
+            483.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "is invariant under Hoste moves. Observe that I(L) is invariant under permutation",
+          "bbox": [
+            126.72,
+            485.97,
+            485.46,
+            495.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of components. Therefore, it suﬃces to show that if the last component Lm of L is",
+          "bbox": [
+            126.72,
+            497.97,
+            485.37,
+            509.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "an unknot, then",
+          "bbox": [
+            126.72,
+            509.85,
+            196.72,
+            519.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "JL0(ω−f1, . . . , ω−fm−1, ω−fm) = J(L0\\L0m)Lm(ω−f1, . . . , ω−fm−1),",
+          "bbox": [
+            178.08,
+            524.07,
+            457.69,
+            541.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "where (L0 \\ L0",
+          "bbox": [
+            126.72,
+            539.51,
+            189.49,
+            560.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "m)Lm is obtained from L0 \\ L0",
+          "bbox": [
+            185.52,
+            539.51,
+            316.57,
+            560.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "m by performing surgery along Lm with",
+          "bbox": [
+            312.6,
+            543.45,
+            485.3,
+            555.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "framing fm. This identity follows from Theorem 9.4. Hence the assertion.",
+          "bbox": [
+            126.72,
+            555.33,
+            449.05,
+            565.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "In Section 11.4, we give an alternative proof of Theorem 10.2.",
+          "bbox": [
+            138.6,
+            573.33,
+            408.73,
+            583.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "10.3. Some remarks. If M and L are as above, then we have the following formula",
+          "bbox": [
+            126.72,
+            590.94,
+            485.37,
+            601.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "for JM:",
+          "bbox": [
+            126.72,
+            603.21,
+            159.01,
+            613.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0010 m",
+          "bbox": [
+            258.72,
+            614.99,
+            274.67,
+            652.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 ki(ki+3)\u0011",
+          "bbox": [
+            319.8,
+            614.99,
+            366.19,
+            652.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI5",
+            "CMMI7",
+            "CMR5",
+            "CMR7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∞",
+          "bbox": [
+            233.64,
+            615.99,
+            241.58,
+            627.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            230.4,
+            616.67,
+            244.79,
+            653.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Y",
+          "bbox": [
+            264.72,
+            616.67,
+            277.45,
+            653.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−fi",
+          "bbox": [
+            315.48,
+            621.96,
+            326.9,
+            628.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "JL0(P ′",
+          "bbox": [
+            366.24,
+            624.27,
+            395.53,
+            640.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "k1, . . . , P ′",
+          "bbox": [
+            391.8,
+            624.27,
+            434.41,
+            640.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(−fi)kiv",
+          "bbox": [
+            277.56,
+            624.41,
+            313.95,
+            643.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(10.2)",
+          "bbox": [
+            126.72,
+            626.25,
+            152.32,
+            636.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "JM =",
+          "bbox": [
+            188.76,
+            626.25,
+            213.67,
+            637.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "km).",
+          "bbox": [
+            430.68,
+            626.25,
+            448.69,
+            638.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i=1",
+          "bbox": [
+            264.6,
+            640.25,
+            277.45,
+            647.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "k1,... ,km=0",
+          "bbox": [
+            216.48,
+            640.49,
+            258.73,
+            647.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMR5",
+            "CMR7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "In particular, if L is a knot (i.e., m = 1), then we have",
+          "bbox": [
+            126.72,
+            653.25,
+            365.27,
+            663.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "∞",
+          "bbox": [
+            274.44,
+            667.11,
+            282.38,
+            679.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            271.2,
+            667.79,
+            285.59,
+            704.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2 k(k+3) {2k + 1}k+1",
+          "bbox": [
+            323.64,
+            670.43,
+            407.17,
+            690.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(∓1)kv∓1",
+          "bbox": [
+            285.72,
+            674.38,
+            327.03,
+            694.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "JM = JL0(ω∓1) =",
+          "bbox": [
+            189.84,
+            675.39,
+            268.39,
+            688.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "JL0(P ′′",
+          "bbox": [
+            408.84,
+            675.39,
+            440.41,
+            691.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(10.3)",
+          "bbox": [
+            126.72,
+            677.37,
+            152.32,
+            687.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "k ).",
+          "bbox": [
+            434.4,
+            677.37,
+            447.61,
+            689.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "{1}",
+          "bbox": [
+            373.92,
+            683.99,
+            388.98,
+            701.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "k=0",
+          "bbox": [
+            271.2,
+            691.61,
+            285.61,
+            698.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.915
 latex_coverage_ratio: 0.687
+doc_brief: "arXiv:astro-ph/0203462v1 26 Mar 2002 — We present a high-resolution (R=75,000, S/N ∼500) spectroscopic analysis of the bright (V=11.7), extreme halo giant CS 31082-001 ([Fe/H] = −2.9), obtained in an"
 ---
 []{#neutron capture label="neutron capture"}
 

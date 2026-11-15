@@ -37,7 +37,7 @@ rigid â€” zero free parameters once the hadron's quark content fixes the braid â
 so the conjecture predicts the strange / charm splitting with nothing left to
 tune. The Lean class [`QOU.MassTheory.ComplexMassConstituent`](complex-mass-constituent-functional.lean)
 carries this as two content fields, the winding-tower law and the light-doublet
-anchor, and the sorry-free conditional theorem `charm_block_determined` shows the
+anchor, and the conditional theorem `charm_block_determined` shows the
 charm block equals $\mathrm{contRatio}(5)$ times the up block.
 
 **Status: OPEN (primary conjecture).** No instance of the class is exhibited.

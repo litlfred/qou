@@ -1,0 +1,65 @@
+1914 Lillian B. Pierce and Junyan Xu
+
+5
+
+For H = q»** for small x, we obtain a nontrivial bound || H\\q~* with savings approximately of size
+
+_ mt ,
+~4n—b*
+
+n
+
+ask > 0.
+
+Remark. In the approximate value of the savings 6, stated above (and similarly in Corollary 1.4 below),
+the symbol ~ is used to denote that certain approximations were used in the derivation, such as (i) letting
+the value 6; = |(r — 1)/(n — 1)] be approximated by r/(n — 1), which is reasonable, for fixed n, for the
+very large values of r = r(x) that are chosen when « — 0; and (ii) considering the limiting case k > 0 in
+order to isolate the main term in computations. More details are given in Section 7A.
+
+The threshold 6, defined in (1-7) has appeared in n-dimensional Burgess bounds that were previously
+proved in very special cases, such as [Burgess 1967b; 1968; Davenport and Lewis 1963] (see Section 1C2
+for an overview, including the stronger results [Chang 2008; 2009; Bourgain and Chang 2010; Heath-
+Brown 2016]).
+
+In full generality, our main result Theorem 1.1 is in fact stronger than Corollary 1.3, as it can allow
+one or more of the lengths H; to be smaller than q*", as long as other H; are commensurably larger.
+We cannot let Hj vary in a completely uncontrolled fashion, since our savings comes from the smallest
+parameter Hin; thus we assume that H is proportionate, in the sense that Hmin > || H||°/" for some
+constant 0 < co < 1. The relation (1-9) below shows that if we take cg smaller so that Hin becomes a
+decreasing proportion of ||H||, for our Burgess bound to be nontrivial the geometric mean || H||!/” is
+
+forced into an ever shorter range near q!/2.
+
+Corollary 1.4. For each n > 2 andr > 1, Theorem 1.1 with the parameters n,r provides a nontrivial
+upper bound |S(F; N, H)| = 0n,+.a,p(\|H||) for all H = (M,..., Hn) with HminHmax < q'*'/?© as
+long as Hmin > ||H\\/" for some 0 < co < 1 and || H||!/" = q° with B in the range
+
+1__@@-1_ ge
+
+2 20(n+c0) (1-8)
+
+1
++ 42°
+
+1
+2
+in which © = On, = Lr — 1)/(n — 1) J. This range includes a nonempty interval of B < 5 as soon as
+r > (1/eo+1)(n— 1) +1, so that co® > 1. In particular this range always requires || H||!/" = q? with
+1 co 1 1
+
+2~ Ynteo) = 2~ Unt’ (9)
+
+B> Bryeo =
+
+Alternatively, we can state that Theorem 1.1 obtains a nontrivial upper bound if
+
+|| | Hin > g"7**
+
+for some small x. As k — 0 we obtain a nontrivial bound || H\\q~* with
+
+~ (n+)? 2
+x ———_k".
+4(n— 1)
+
+in

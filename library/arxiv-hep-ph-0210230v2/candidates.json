@@ -1,0 +1,76 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-hep-ph-0210230v2",
+ "source": {
+  "structure_sha256": "22ef0025652cf016e253a7e22b2f924ab2bba5a582471177aa4975c47fcfb91d",
+  "file": "0210230v2.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:hep-ph/0210230v2 3 Jan 2003",
+  "authors": "M. Czakona, J. Gluzab, J. Hejczykc",
+  "arxiv": {
+   "id": "hep-ph/0210230",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "3 Jan 2003"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 3,
+  "by_kind": {
+   "recommendation": 3
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "As a consequence, care must be taken in \ufb01tting procedures of models beyond the SM, where usually, only tree-level couplings modi\ufb01ed by the SM radiative corrections are considered.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-001.md",
+   "section_title": "Page 1",
+   "pages": "1-1",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "If this is not done, parameters which depend strongly on quantum e\ufb00ects should be left free in \ufb01ts, though essential physics is lost in this way.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-005.md",
+   "section_title": "Page 5",
+   "pages": "5-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Though we have restricted ourselves to the case of the minimal LR model, the results already show that \ufb01ne-tuning of the heavy sector parameters must be done to recover experimental data.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-005.md",
+   "section_title": "Page 5",
+   "pages": "5-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

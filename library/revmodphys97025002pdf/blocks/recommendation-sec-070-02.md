@@ -1,0 +1,1 @@
+As Table XXXVIII shows, the decrease in the recom- mended value of the fine-structure constant α by 4.5 times its 2018 uncertainty significantly influences the recommended value of many other constants.

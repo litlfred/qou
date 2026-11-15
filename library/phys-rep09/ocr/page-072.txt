@@ -1,0 +1,61 @@
+222 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+
+OF SU,4
+
+-1
+
+MN,-4 s2
+
+LOG(ERROR)
+
+5
+
+1.5 2 25 3 3.5
+LOG(N. EVAL.)
+
+Fig. 20. Average error versus number of force evaluations in the numerical integration of (308) using second and fourth order symplectic integrators
+for general separable systems (S2 corresponds to the second order leapfrog method with coefficients (309) and SUs4 to the fourth order method with
+coefficients (310)) and the fourth order symplectic Runge-Kutta-Nystr6m method MN¢-4 with initial conditions q(0) = 1.75, p(0) = Oande = 1/20,
+$= 1/4,0=1.
+
+6.1. Case study: Numerical treatment of the Schrédinger equation
+
+Before embarking on the use of numerical methods based on the Magnus expansion in the integration of the Schrodinger
+equation, let us establish first the theoretical framework which allows one to use numerical integrators in this setting for
+obtaining approximate solutions in time and space.
+
+6.1.1. Time-dependent Schrédinger equation
+To keep the treatment as simple as possible, we commence by considering the one-dimensional time-dependent
+Schrédinger equation (fi = 1)
+a) 1 a?
+i—w(t,x) = Hw(t,x) = —~— W(t, x) + V@)w(e, x), (311)
+at 2 dx?
+with initial condition y (0, x) = Wo(x). If we look for a solution of the form y(t, x) = $(t)g(x), itis clear that, by substituting
+into (311), one gets #(t) = e~, where E is a constant and (x) is the solution of the second order differential equation
+
+oy
+
+dx?
+If E > V the solution is oscillatory, whereas if E < V the solution is a linear combination of exponentially increasing and
+decreasing functions. For bounded problems, this last condition always takes place at the boundaries. Since
+
+five. pPax = [ Ipeo de < oo, (313)
+
+it is clear that the exponentially increasing solutions have to be canceled, and this can only occur for certain values of the
+constant E, which are precisely the eigenvalues of the problem.
+
+Let us assume that the system has only a discrete spectrum, and denote by {En, @n}p°.9, with Ej < Ej, i < j, the complete
+set of eigenvalues and associated eigenvectors. It is well known that we can take {y,}7°., as an orthonormal basis and, since
+(311) is linear, any solution can be written as
+
++V(x)y = Eg. (312)
+
+oo
+VEX = Dore gne). (314)
+n=0
+Using the standard notation for the inner product, one has
+(gaa) |e, x)) = il OR (x) We (t, x)dx = cy ew (315)
+
+and
+
+Gna) (t, x))1? = lenl?

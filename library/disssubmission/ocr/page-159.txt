@@ -1,0 +1,45 @@
+APPENDIX A
+
+Reductive super groups
+
+In this appendix we recall the definition of an algebraic super group and
+collect some basic facts about these in the reductive case. Working over an
+algebraically closed field A of characteristic zero, algebraic super groups
+are built from algebraic groups by a “super commutative thickening” of
+their Lie algebra: Let G = (G, gi, Q) be a triple consisting of
+
+e a classical algebraic group G over A, for which we consider the
+adjoint representation on the Lie algebra go = Lie(G),
+
+e a finite-dimensional algebraic representation g; of the group G
+over A, given by a homomorphism Ad; : G > Gi(g1),
+
+e a G-equivariant quadratic form Q : g; — go, for which we denote
+by b: gi X g1 — go the corresponding symmetric A-bilinear form
+with the property that Q(v) = b(v,v) for all v € gi.
+
+The “super commutative thickening” we are interested in is the super vector
+space g = go @ gi. As usual for super vector spaces, the vectors x € gq are
+called homogenous of degree |x| = a for a € {0,1}. The Lie bracket on go
+together with the bilinear form b and with the differential ad) = Lie(Ad))
+of Ad, define a A-bilinear map
+
+[.-]: 9g —> g_ such that Ixy) = (<1) PPT. pag
+
+for all homogenous x,y € g. The triple G is called an algebraic super group
+over A if for all homogenous x,y,z € g the super Jacobi identity
+
+(1) be bal] + (1) baal] + (DEMME fe9]] = 0
+
+holds, so that g becomes a super Lie algebra in the sense of [92]. In the
+present setting this is equivalent to the requirement that
+
+ad\(Q(v))(v) =0 forall veg,
+
+as one may check by plugging in v = ax + by+ cz with fixed x,y,z € gi
+and with indeterminate coefficients a,b,c. Of course any classical algebraic
+group G over A can be considered as the super group G = (G,0,0). A more
+interesting class of examples can be constructed from affine super Hopf
+algebras as we will explain below.
+
+151

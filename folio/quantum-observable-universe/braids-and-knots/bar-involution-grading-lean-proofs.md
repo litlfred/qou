@@ -1,6 +1,6 @@
 This remark is the $\mathbb{Z}/2\mathbb{Z}$ bar-grading Lean $\leftrightarrow$
 paper bridge for the [bar-involution](#def:bar-involution): the bar-grading
-subring/module structure and the sorry-free Lean theorems with their
+subring/module structure and the Lean theorems with their
 narrative proofs.
 
 ## Proofs (Lean $\leftrightarrow$ paper bridge)

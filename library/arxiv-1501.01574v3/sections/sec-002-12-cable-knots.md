@@ -7,10 +7,11 @@ section_number: 1.2
 pages: 2-4
 source_pdf: 1501.01574v3.pdf
 source_sha256: 8af5d6264a0ad5e0
-doc_brief: "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL — We study the behavior of the degree of the colored Jones polyn omial and the boundary slopes of knots under the operation of cabling."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.943
 latex_coverage_ratio: 0.989
+doc_brief: "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL — We study the behavior of the degree of the colored Jones polynomial and the boundary slopes of knots under the operation of cabling."
 ---
 Suppose $K$ is a knot with framing 0, and $p,q$ are coprime integers.
 The $(p,q)$-cable $K_{p,q}$ of $K$ is the $0$-framed satellite of $K$ with

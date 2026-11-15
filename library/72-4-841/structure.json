@@ -8,7 +8,7 @@
   "pages": 12,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:17Z",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -31,7 +31,7 @@
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "Euclidean Quantum Gravity on a Flat Lattice Kei-ichi KONDO Department of Physics, Nagoya University, Nagoya 464 \u00a7 1. Introduction The unification of Einstein's general relativity with quantum field theory is a difficult problem, which physicists have so far failed to solve. This is because Einstein",
+   "heading": "Euclidean Quantum Gravity on a Flat Lattice Kei-ichi KONDO Department of Physics, Nagoya University, Nagoya 464 § 1. Introduction The unification of Einstein's general relativity with quantum field theory is a difficult problem, which physicists have so far failed to solve. This is because Einstein",
    "text": "Progress of Theoretical Physics, Vol. 72, No.4, October 1984 Euclidean Quantum Gravity on a Flat Lattice",
    "corroborated_by": [],
    "browser_print": false
@@ -40,31 +40,7 @@
  "toc": [
   {
    "level": 1,
-   "title": "\u00a7 3. Reflection positivity",
-   "page": 6,
-   "source": "inferred",
-   "number": null,
-   "confidence": 0.6,
-   "evidence": [
-    "style"
-   ],
-   "page_label": "846"
-  },
-  {
-   "level": 1,
-   "title": "'\"ffi",
-   "page": 6,
-   "source": "inferred",
-   "number": null,
-   "confidence": 0.6,
-   "evidence": [
-    "style"
-   ],
-   "page_label": "846"
-  },
-  {
-   "level": 2,
-   "title": "i/ep7",
+   "title": "§ 3. Reflection positivity",
    "page": 6,
    "source": "inferred",
    "number": null,
@@ -230,41 +206,17 @@
   {
    "id": "sec-000-3-reflection-positivity",
    "number": null,
-   "title": "\u00a7 3. Reflection positivity",
+   "title": "§ 3. Reflection positivity",
    "level": 1,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 1068,
-   "n_words": 217,
-   "label_start": "846",
-   "label_end": "846"
-  },
-  {
-   "id": "sec-001-ffi",
-   "number": null,
-   "title": "'\"ffi",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 13,
-   "n_words": 5,
-   "label_start": "846",
-   "label_end": "846"
-  },
-  {
-   "id": "sec-002-iep7",
-   "number": null,
-   "title": "i/ep7",
-   "level": 2,
    "page_start": 6,
    "page_end": 12,
-   "n_chars": 14419,
-   "n_words": 2277,
+   "n_chars": 15518,
+   "n_words": 2501,
    "label_start": "846",
    "label_end": "852"
   },
   {
-   "id": "sec-003-appendix",
+   "id": "sec-001-appendix",
    "number": null,
    "title": "Appendix",
    "level": 3,
@@ -279,7 +231,7 @@
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 4,
+  "toc_entries": 2,
   "toc_inferred_entries": 4,
   "toc_inferred_mean_confidence": 0.625,
   "toc_inferred_empty_share": 0.25,
@@ -292,7 +244,22 @@
    "count": 0,
    "items": []
   },
-  "sections": 5,
-  "chars_total": 29581
+  "sections": 3,
+  "chars_total": 29599,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": "'\"ffi",
+    "page": 6,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "i/ep7",
+    "page": 6,
+    "action": "dropped",
+    "why": "opens in lower case"
+   }
+  ]
  }
 }

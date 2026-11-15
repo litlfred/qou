@@ -1,0 +1,51 @@
+Problems on invariants of knots and 3-manifolds 393
+
+Remark (A. Stoimenow) For the common lower bound of 2u and 1— y for
+knots, 2gs, there is a 15 crossing knot K with 2g.(K) < min deg, (Fx(a71, z)).
+Morton [285] conjectured long ago that 1 — x(L) > mindeg,(Pz,(I,m)). There
+are recent counterexamples, but only of 19 to 21 crossings. Ferrand [125] ob-
+served that very often mindeg)(Px(I,m)) > mindeg,(Fx (a7, z)) (he conjec-
+tures it in particular always to hold for alternating AK), so replacing
+‘min deg, (F(a7!, z))’ for ‘min deg; (Px (I,m))’ enhances the difficulty of Mor-
+ton’s problem (the counterexamples are no longer such).
+
+1.3. The volume conjecture
+
+In [196] R. Kashaev defined a series of invariants (L)y € C of a link L for
+N = 2,3,--- by using the quantum dilogarithm. In [198] he observed, by
+formal calculations, that
+
+Qn lim resid) = vol(S* — L)
+for L = Ky,,Ks5,, K6,, where vol(S? — L) denotes the hyperbolic volume of
+53 — L. Further, he conjectured that this formula holds for any hyperbolic link
+L. In 1999, H. Murakami and J. Murakami [296] proved that (L)jy = Jy(L)
+for any link L, where Jy(L) denotes the N-colored Jones polynomial? of L
+
+evaluated at e2"™V—1/N
+
+Conjecture 1.19 (The volume conjecture, [198, 296]) For any knot K,
+log | Jn (K)|
+
+27+ lim = v3||S° — K||, 2
+tim REN FOF 98 — x), 2)
+where ||-|| denotes the simplicial volume and v3 denotes the hyperbolic volume
+
+of the regular ideal tetrahedron.
+
+Remark For a hyperbolic knot K, (2) implies that
+log |Jn(4)|
+
+. dim —2ewk 3
+Qn jim, NV vol(S° — kK).
+
+Remark [296] Both sides of (2) behave well under the connected sum and
+the mutation of knots. Namely,
+
+||S° — (a #K)|| = ||$° — Kil] +||S° ~ Koll,
+
+Jn (WK #2) = In(41) Jn (Ka),
+
+>This is the invariant obtained as the quantum invariant of links associated with the N-
+dimensional irreducible representation of the quantum group U,(sl2).
+
+Geometry & Topology Monographs, Volume 4 (2002)

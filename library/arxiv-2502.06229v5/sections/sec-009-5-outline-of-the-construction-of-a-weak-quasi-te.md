@@ -10,6 +10,7 @@ source_sha256: 3499c40ea150a617
 toc_source: outline
 doc_brief: "Constructing equivalences between fusion categories of quantum groups and of vertex operator algebras via quantum gauge groups — This paper establishes connections between a problem posed by"
 ---
+Outline of the construction of a weak quasi-tensor structure on the
 Zhu algebra A(Vgk) via Wenzl quantisation isomorphism and Drinfeld
 twist method.
 Let (C, ⊗, ι, α) be a semisimple complex tensor category (possibly braided, rigid, ribbon)

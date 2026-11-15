@@ -7,10 +7,11 @@ section_number: 6
 pages: 24-28
 source_pdf: 1010.4386v5.pdf
 source_sha256: 168226dbb5a479ed
-doc_brief: "ON THE HOMOLOGY OF COMPLETION AND TORSION — Let A be a commutative ring, and a a weakly proregular ideal in A."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.996
+latex_coverage_ratio: 0.96
+doc_brief: "ON THE HOMOLOGY OF COMPLETION AND TORSION — Let A be a commutative ring, and a a weakly proregular ideal in A."
 ---
 \label{sec:MGM}
 

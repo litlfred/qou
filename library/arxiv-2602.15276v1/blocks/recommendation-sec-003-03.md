@@ -1,0 +1,1 @@
+Should the condition $\beta\to 0$ and $\gamma\to 0$ be satisfied concurrently, the full model simplifies considerably, reducing solely to the $\mathbb{C}P^N$ model incorporating only the potential term.

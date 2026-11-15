@@ -1,0 +1,1 @@
+If one is to compare $\LL_{{\un{x}},\eb}$ with $\LL_{{\un{x}},\fb}$ for two subsequences $\eb,\fb$ both expressing $w$, then they should have the same target ${\un{w}}$, and this is generally assumed.

@@ -1,0 +1,86 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "exploring-the-geometric-buchberger-algorithm-in-integer-prog",
+ "source": {
+  "structure_sha256": "73854bc5e3bcffb077c7b33c26ca1cb507db17677f21112024bea49d2484bef1",
+  "file": "Exploring the Geometric Buchberger Algorithm in Integer Programming.pdf"
+ },
+ "provenance": {
+  "title": null,
+  "authors": null,
+  "arxiv": null,
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 4,
+  "by_kind": {
+   "recommendation": 4
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "When no such s exists, x must already be an optimal solution.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-002.md",
+   "section_title": "Page 2",
+   "pages": "2-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This can be done even if multiple integer programs in the family IP4,-(-) must be solved as long as an upper bound of all the relevant right-hand sides b with respect to < is available.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-003.md",
+   "section_title": "Page 3",
+   "pages": "3-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "A support tree is a binary tree where each internal node has a label i with the interpretation that any vector g such that i \u00a2 supp g* must be stored in the left subtree of the node, and similarly, if i \u20ac supp g* then g must be stored in its right subtree.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-004.md",
+   "section_title": "Page 4",
+   "pages": "4-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Note that, in order to find a reducer for u, upon finding an element g \u20ac G with supp g* C supp vu\u2019, in general, one must also check whether g* < u*, and backtrack to keep looking for a reducer in case this condition is not satisfied.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-004.md",
+   "section_title": "Page 4",
+   "pages": "4-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

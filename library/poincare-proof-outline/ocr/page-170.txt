@@ -1,0 +1,73 @@
+by (smt insert-subset poincare-collinear-def unique-poincare-line zero-in-unit-disc)
+hence 0);, € circline-set (poincare-line i1 i2)
+
+using poincare-collinear3-poincare-line-general{of On i1 i2|
+
+using <i1 4 i2> <i2 € unit-circle-set» unit-circle-set-def
+
+by force
+
+moreover
+
+have ?lx = ?li
+using <ideal-points ?lx = {i1, i2}> «a1 # x2» ideal-points-line-unique
+by auto
+
+ultimately
+
+show False
+using ‘7— poincare-collinear {On, t1, 22}>
+using (zl # £2) poincare-line-poincare-collinear3-general
+by auto
+qed
+
+ultimately
+
+show ?thesis
+using <?al € unit-disc» «?a2 € unit-discy
+by blast
+qed
+qed
+qed
+thus ?thesis
+using ‘zl € unit-disc» «x2 € unit-disc «- poincare-collinear {a, x1, x2}>
+by blast
+qed
+
+11.9 Interpretation of locales
+
+global-interpretation PoincareTarskiAbsolute: TarskiAbsolute where cong = p-congruent and betw = p-between
+defines p-on-line = Poincare TarskiAbsolute.on-line and
+p-on-ray = Poincare TarskiAbsolute.on-ray and
+p-in-angle = PoincareTarskiAbsolute.in-angle and
+p-ray-meets-line = Poincare TarskiAbsolute.ray-meets-line
+proof—
+show TarskiAbsolute p-congruent p-between
+proof
+
+1. Reflexivity of congruence
+
+fix ry
+show p-congruent © y y ©
+unfolding p-congruent-def
+by transfer (simp add: poincare-distance-sym)
+next
+
+2. Transitivity of congruence
+
+fix ryzuvw
+show p-congruent zy zu A p-congruent x y v w —+ p-congruent zu vw
+by (transfer, simp)
+next
+
+3. Identity of congruence
+
+fix cry z
+show p-congruent ty zz—> x= y
+unfolding p-congruent-def
+by transfer (simp add: poincare-distance-eq-0-iff)
+next
+
+4. Segment construction
+
+170

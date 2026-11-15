@@ -7,10 +7,11 @@
   "bytes": 576529,
   "pages": 41,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,29 @@
    "stamp_date": "2 Feb 2009"
   },
   "doi": null,
-  "title": "A REVISION OF THE PROOFOF THE KEPLER CONJECTURE",
+  "title": "A REVISION OF THE PROOF OF THE KEPLER CONJECTURE",
   "authors_raw": "THOMAS C. HALES, JOHN HARRISON, SEAN MCLAUGHLIN, TOBIAS NIPKOW",
   "title_lines": [
-   "A REVISION OF THE PROOFOF THE KEPLER",
+   "A REVISION OF THE PROOF OF THE KEPLER",
    "CONJECTURE"
   ],
   "abstract": "The Kepler conjecture asserts that no packing of congruent balls in three-dimensional Euclidean space has density greater than that of the face-centered cubic packing. The original proof, announced in 1998 and published in 2006, is long and complex. The process of revision and review did not end with the publication of the proof. This article summarizes the current status of a long-term initiative to reorganize the original proof into a more transparent form and to provide a greater level of certification of the correctness of the computer code and other details of the proof. A final part of this article lists errata in the original proof of the Kepler conjecture.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20181028155518Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.4",
-   "Title": ""
-  }
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181028155518Z"
+  },
+  "title_raw": "A REVISION OF THE PROOF OF THE KEPLER CONJECTURE",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "A REVISION OF THE PROOF OF THE KEPLER CONJECTURE Contents Introduction Part 1. Formal Proof Initiative The Flyspeck project Blueprint edition of the Kepler conjecture Formalizing the ordinary mathematics Standard ML reimplementation of code Proving nonlinear inequalities with Bernstein bases Tame gr",
+   "outline": "Introduction",
+   "text": "A REVISION OF THE PROOF OF THE KEPLER CONJECTURE",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "A REVISION OF THE PROOFOF THE KEPLER CONJECTURE"
  },
  "toc": [
   {
@@ -41,222 +51,723 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Part 1. Formal Proof Initiative",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "The Flyspeck project",
    "page": 3,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Blueprint edition of the Kepler conjecture",
    "page": 5,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Formalizing the ordinary mathematics",
    "page": 7,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Standard ML reimplementation of code",
    "page": 10,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Proving nonlinear inequalities with Bernstein bases",
    "page": 12,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Tame graph enumeration",
    "page": 16,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Verifying linear programs",
    "page": 19,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "Part 2. Addendum to and Errata in the Original Proof",
    "page": 22,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "Biconnected graphs",
    "page": 22,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "Errata listing",
    "page": 35,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "35"
   },
   {
    "level": 2,
    "title": "References",
    "page": 38,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "A hypermap is a combinatorial structure attached to a planar graph",
+   "page": 20,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Refuting a potential counterexample to the Kepler conjecture",
+   "page": 21,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "In this figure (not to scale), segments represent geodesic arcs on the unit sphere. The shaded region is a subregion whose boundary is not a simple polygon. We wish to rigidly slide the triangle containing the vertex w until a new visible distinguished edge forms (say from w to u). We will show that",
+   "page": 23,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Theorem 3 breaks into various cases: (a) two edges with distinct endpoints, (b) three or more edges, (c) two edges, or (d) a single edge passing through the triangle {0, v, w}",
+   "page": 25,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "In this figure (not to scale), segments represent geodesic arcs on the unit sphere. The two shaded regions represent subregions",
+   "page": 28,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "The upright diagonal u cannot be placed over any of the regions A, B, C, D. The lines (not to scale) represent geodesic arcs on the sphere passing through the pairs of points in {p(u1), p(u2), p(v)}, where p denotes projection to the unit sphere",
+   "page": 32,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1383,
+   "n_words": 222,
+   "label_start": null,
+   "label_end": "2"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 3,
-   "n_chars": 3014,
-   "n_words": 482
+   "n_chars": 2447,
+   "n_words": 400,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
-   "id": "sec-001-1-the-flyspeck-project",
+   "id": "sec-001-part-1-formal-proof-initiative",
+   "number": null,
+   "title": "Part 1. Formal Proof Initiative",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 31,
+   "n_words": 5,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-002-1-the-flyspeck-project",
    "number": "1",
    "title": "The Flyspeck project",
    "level": 2,
    "page_start": 3,
    "page_end": 5,
-   "n_chars": 5609,
-   "n_words": 896
+   "n_chars": 5634,
+   "n_words": 921,
+   "label_start": "3",
+   "label_end": "5"
   },
   {
-   "id": "sec-002-2-blueprint-edition-of-the-kepler-conjecture",
+   "id": "sec-003-2-blueprint-edition-of-the-kepler-conjecture",
    "number": "2",
    "title": "Blueprint edition of the Kepler conjecture",
    "level": 2,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 5002,
-   "n_words": 825
+   "n_chars": 5032,
+   "n_words": 856,
+   "label_start": "5",
+   "label_end": "7"
   },
   {
-   "id": "sec-003-3-formalizing-the-ordinary-mathematics",
+   "id": "sec-004-3-formalizing-the-ordinary-mathematics",
    "number": "3",
    "title": "Formalizing the ordinary mathematics",
    "level": 2,
    "page_start": 7,
    "page_end": 10,
-   "n_chars": 8118,
-   "n_words": 1301
+   "n_chars": 8193,
+   "n_words": 1341,
+   "label_start": "7",
+   "label_end": "10"
   },
   {
-   "id": "sec-004-4-standard-ml-reimplementation-of-code",
+   "id": "sec-005-4-standard-ml-reimplementation-of-code",
    "number": "4",
    "title": "Standard ML reimplementation of code",
    "level": 2,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 6775,
-   "n_words": 1065
+   "n_chars": 6790,
+   "n_words": 1080,
+   "label_start": "10",
+   "label_end": "12"
   },
   {
-   "id": "sec-005-5-proving-nonlinear-inequalities-with-bernstein",
+   "id": "sec-006-5-proving-nonlinear-inequalities-with-bernstein",
    "number": "5",
    "title": "Proving nonlinear inequalities with Bernstein bases",
    "level": 2,
    "page_start": 12,
    "page_end": 16,
-   "n_chars": 6639,
-   "n_words": 1162
+   "n_chars": 6705,
+   "n_words": 1245,
+   "label_start": "12",
+   "label_end": "16"
   },
   {
-   "id": "sec-006-6-tame-graph-enumeration",
+   "id": "sec-007-6-tame-graph-enumeration",
    "number": "6",
    "title": "Tame graph enumeration",
    "level": 2,
    "page_start": 16,
    "page_end": 19,
-   "n_chars": 8468,
-   "n_words": 1378
+   "n_chars": 8547,
+   "n_words": 1457,
+   "label_start": "16",
+   "label_end": "19"
   },
   {
-   "id": "sec-007-7-verifying-linear-programs",
+   "id": "sec-008-7-verifying-linear-programs",
    "number": "7",
    "title": "Verifying linear programs",
    "level": 2,
    "page_start": 19,
    "page_end": 22,
-   "n_chars": 4596,
-   "n_words": 757
+   "n_chars": 4630,
+   "n_words": 792,
+   "label_start": "19",
+   "label_end": "22"
   },
   {
-   "id": "sec-008-part-2-addendum-to-and-errata-in-the-original-pr",
+   "id": "sec-009-part-2-addendum-to-and-errata-in-the-original-pr",
    "number": null,
    "title": "Part 2. Addendum to and Errata in the Original Proof",
    "level": 1,
    "page_start": 22,
    "page_end": 22,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "22",
+   "label_end": "22"
   },
   {
-   "id": "sec-009-8-biconnected-graphs",
+   "id": "sec-010-8-biconnected-graphs",
    "number": "8",
    "title": "Biconnected graphs",
    "level": 2,
    "page_start": 22,
    "page_end": 35,
-   "n_chars": 28298,
-   "n_words": 4749
+   "n_chars": 29120,
+   "n_words": 5573,
+   "label_start": "22",
+   "label_end": "35"
   },
   {
-   "id": "sec-010-9-errata-listing",
+   "id": "sec-011-9-errata-listing",
    "number": "9",
    "title": "Errata listing",
    "level": 2,
    "page_start": 35,
    "page_end": 38,
-   "n_chars": 8474,
-   "n_words": 1382
+   "n_chars": 8607,
+   "n_words": 1500,
+   "label_start": "35",
+   "label_end": "38"
   },
   {
-   "id": "sec-011-references",
+   "id": "sec-012-references",
    "number": null,
    "title": "References",
    "level": 2,
    "page_start": 38,
    "page_end": 41,
-   "n_chars": 8412,
-   "n_words": 1123
+   "n_chars": 8466,
+   "n_words": 1177,
+   "label_start": "38",
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 13,
-  "sections": 12,
-  "chars_total": 93405,
+  "toc_inferred_entries": 0,
+  "figure_entries": 6,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 14,
+  "chars_total": 95585,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "revision.tex",
@@ -269,92 +780,102 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.994,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-001-1-the-flyspeck-project",
+     "id": "sec-001-part-1-formal-proof-initiative",
+     "title": "Part 1. Formal Proof Initiative",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-1-the-flyspeck-project",
      "title": "The Flyspeck project",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-2-blueprint-edition-of-the-kepler-conjecture",
+     "id": "sec-003-2-blueprint-edition-of-the-kepler-conjecture",
      "title": "Blueprint edition of the Kepler conjecture",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-003-3-formalizing-the-ordinary-mathematics",
+     "id": "sec-004-3-formalizing-the-ordinary-mathematics",
      "title": "Formalizing the ordinary mathematics",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-004-4-standard-ml-reimplementation-of-code",
+     "id": "sec-005-4-standard-ml-reimplementation-of-code",
      "title": "Standard ML reimplementation of code",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-005-5-proving-nonlinear-inequalities-with-bernstein",
+     "id": "sec-006-5-proving-nonlinear-inequalities-with-bernstein",
      "title": "Proving nonlinear inequalities with Bernstein bases",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-006-6-tame-graph-enumeration",
+     "id": "sec-007-6-tame-graph-enumeration",
      "title": "Tame graph enumeration",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-007-7-verifying-linear-programs",
+     "id": "sec-008-7-verifying-linear-programs",
      "title": "Verifying linear programs",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-008-part-2-addendum-to-and-errata-in-the-original-pr",
+     "id": "sec-009-part-2-addendum-to-and-errata-in-the-original-pr",
      "title": "Part 2. Addendum to and Errata in the Original Proof",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-009-8-biconnected-graphs",
+     "id": "sec-010-8-biconnected-graphs",
      "title": "Biconnected graphs",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-010-9-errata-listing",
+     "id": "sec-011-9-errata-listing",
      "title": "Errata listing",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-011-references",
+     "id": "sec-012-references",
      "title": "References",
      "result": "no matching \\section"
     }

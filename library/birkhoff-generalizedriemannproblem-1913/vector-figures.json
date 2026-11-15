@@ -1,0 +1,132 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "birkhoff-generalizedriemannproblem-1913",
+  "figures": [
+    {
+      "id": "vfig-p004",
+      "file": "figures/vfig-p004.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 4
+      },
+      "page": 4,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": [
+        0.0,
+        720.0,
+        468.0,
+        760.0
+      ],
+      "assembly": {
+        "drawings": 1,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              0.0,
+              720.0,
+              468.0,
+              760.0
+            ],
+            "drawings": 1,
+            "pageEdge": true,
+            "rendered": true,
+            "labels": [
+              "All use subject to https://about.jstor.org/terms"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              0.0,
+              720.0,
+              468.0,
+              760.0
+            ],
+            "parent": null,
+            "labels": [
+              "All use subject to https://about.jstor.org/terms"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 0,
+        "connectors": [],
+        "between": [],
+        "outside": 44
+      }
+    },
+    {
+      "id": "vfig-p019",
+      "file": "figures/vfig-p019.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 19
+      },
+      "page": 19,
+      "rotation": 0,
+      "captionLabels": [
+        "2"
+      ],
+      "region": [
+        0.0,
+        720.0,
+        468.0,
+        760.0
+      ],
+      "assembly": {
+        "drawings": 1,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              0.0,
+              720.0,
+              468.0,
+              760.0
+            ],
+            "drawings": 1,
+            "pageEdge": true,
+            "rendered": true,
+            "labels": [
+              "All use subject to https://about.jstor.org/terms"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              0.0,
+              720.0,
+              468.0,
+              760.0
+            ],
+            "parent": null,
+            "labels": [
+              "All use subject to https://about.jstor.org/terms"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 0,
+        "connectors": [],
+        "between": [],
+        "outside": 44
+      }
+    }
+  ]
+}

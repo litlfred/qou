@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2605.28781v1
-doc_title: "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS"
+doc_title: "The sum-product conjecture is false for real numbers"
 section_id: sec-010-4-the-construction
 section_title: "The construction"
 section_number: 4
 pages: 9-11
 source_pdf: 2605.28781v1.pdf
 source_sha256: eee6d535af1996ca
-doc_brief: "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily largeA⊂R(whose elements are algebraic integers in a number"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.93
+latex_prose_ratio: 0.936
+latex_coverage_ratio: 0.677
+doc_brief: "The sum-product conjecture is false for real numbers — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily large A ⊂R (whose elements are algebraic integers in a"
 ---
 In this section we use the algebraic number theory facts of the previous section to prove Theorems [\[th-main\]](#th-main){reference-type="ref" reference="th-main"} and [\[th-mainmult\]](#th-mainmult){reference-type="ref" reference="th-mainmult"}.
 

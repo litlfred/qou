@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0004133v1
-doc_title: "arXiv:math/0004133v1 [math.QA] 20 Apr 2000"
+doc_title: "From Finite Sets to Feynman Diagrams"
 section_id: sec-001-2-equality-and-isomorphism
 section_title: "Equality and Isomorphism"
 section_number: 2
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.985
 latex_coverage_ratio: 1.0
+doc_brief: "From Finite Sets to Feynman Diagrams — ‘Categoriﬁcation’ is the process of replacing equations by isomor- phisms."
 ---
 []{#equality label="equality"}
 

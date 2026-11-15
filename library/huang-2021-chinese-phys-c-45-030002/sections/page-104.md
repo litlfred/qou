@@ -1,0 +1,437 @@
+---
+doc_id: huang-2021-chinese-phys-c-45-030002
+doc_title: "The AME 2020 atomic mass evaluation (I). Evaluation of input data, and adjustment procedures"
+section_id: page-104
+section_title: "Page 104"
+section_number: null
+pages: 104-104
+source_pdf: Huang_2021_Chinese_Phys._C_45_030002.pdf
+source_sha256: 1dd3329ed87476c8
+toc_source: undetermined
+doc_brief: "The AME 2020 atomic mass evaluation (I). Evaluation of input data, and adjustment procedures — 343 sections: Page 1; Page 2; Page 3"
+---
+Chinese Physics C Vol. 45, No. 3 (2021) 030002
+Table I. Comparison of input data and adjusted values (continued, Explanation of Table on page 030002-30)
+Item
+Input value
+Adjusted value
+vi
+Dg
+Signf.
+Main inﬂ.
+Lab
+F
+Reference
+62Ni(3He,n)64Zn
+6118
+12
+6117.5
+0.6
+−0.0
+U
+Oak
+72Gr39
+64Zn(d,α)62Cu
+7508
+15
+7494.3
+0.8
+−0.9
+U
+MIT
+67Sp09
+64Zn(p,t)62Zn
+−12493
+10
+−12496.8
+0.8
+−0.4
+U
+Bld
+72Fa08
+64Ni(14C,15O)63Fe
+−11387
+60
+−11299
+4
+1.5
+U
+Ors
+82De.A
+∗
+64Ni(34S,35Ar)63Fe
+−17931
+260
+−18348
+4
+−1.6
+U
+Hei
+83Wi.B
+64Ni(t,α)63Co
+7266
+20
+7277
+19
+0.6
+1
+86
+86 63Co
+LAl
+66Bl15
+63Ni(n,γ)64Ni
+9657.32
+0.4
+9657.46
+0.20
+0.4
+–
+75Wi06
+Z
+9657.58
+0.24
+−0.5
+–
+ILn
+92Ha21
+ave.
+9657.51
+0.21
+−0.2
+1
+98
+87 64Ni
+average
+63Cu(n,γ)64Cu
+7916.07
+0.12
+7915.868
+0.024
+−1.7
+U
+BNn
+83De28
+Z
+7915.52
+0.08
+4.4
+B
+02Bo11
+7916.14
+0.16
+−1.7
+U
+Bdn
+06Fi.A
+7915.867
+0.024
+0.0
+1
+100
+91 64Cu
+16Te05
+63Cu(d,p)64Cu
+5697
+8
+5691.302
+0.024
+−0.7
+U
+MIT
+64Sp12
+64Zn(n,d)63Cu
+−5520
+50
+−5488.6
+0.6
+0.6
+U
+65Wa14
+64Zn(d,t)63Zn
+−5604.9
+1.7
+−5604.7
+1.5
+0.1
+1
+76
+73 63Zn
+NDm
+76Jo01
+64Co(β −)64Ni
+7000
+500
+7307
+20
+0.6
+U
+69Wa15
+7000
+400
+0.8
+U
+74Ra31
+64Ni(t,3He)64Co
+−7288
+20
+2
+LAl
+72Fl17
+64Cu(β +)64Ni
+1673.4
+1.0
+1674.62
+0.21
+1.2
+U
+83Ch47
+64Ni(p,n)64Cu
+−2458
+6
+−2456.96
+0.21
+0.2
+U
+61Va19
+−2458.22
+0.31
+4.1
+B
+PTB
+92Bo02
+Z
+64Cu(β −)64Zn
+577.8
+1.0
+579.6
+0.6
+1.8
+1
+42
+32 64Zn
+83Ch47
+64Ga(β +)64Zn
+7072
+30
+7171.2
+1.5
+3.3
+B
+60Ja07
+64Zn(p,n)64Ga
+−7951
+4
+−7953.5
+1.5
+−0.6
+1
+14
+12 64Ga
+Tex
+72Da.A
+64Zn(3He,t)64Ga
+−7206
+8
+−7189.8
+1.5
+2.0
+U
+MSU
+74Ro16
+∗
+64Zn(3He,t)64Gai
+−9141
+17
+−9096.8
+2.5
+2.6
+U
+MIT
+70Hi06
+−9110
+6
+2.2
+1
+17
+17 64Gai
+71Be29
+∗
+64Gai(IT)64Ga
+1905.1
+2.3
+1907.0
+2.2
+0.8
+1
+88
+83 64Gai
+74Ro16
+64Ge(β +)64Ga
+4410
+250
+4517
+4
+0.4
+U
+73Da01
+∗
+∗64V−u
+Trends from Mass Surface TMS suggest 64V 370 keV less bound
+GAu
+∗∗
+∗64Mn−u
+Original –45270(350) µu or M −A=–42170(330) keV
+GAu
+∗∗
+∗64Mn−u
+Original –46270(350) µu or M −A=–43100(330) keV
+GAu
+∗∗
+∗64Mn−u
+M −A=–42430(280) keV for mixture gs+m at 174.1(0.5) (4+) keV
+Nub211 ∗∗
+∗64Ni(14C,17O)61Fe
+Cited in reference and conﬁrmed in PrvCom sep 88
+84De33 ∗∗
+∗64Ni(18O,20Ne)62Fe
+Q−Q(62Ni(18O,20Ne))=–2843(20), Q(62)=923(4) keV
+AHW
+∗∗
+∗64Ni(14C,15O)63Fe
+Original –11743(60) reinterpreted as (3/2−) 356.2 level in 63Fe
+GAu
+∗∗
+∗64Zn(3He,t)64Ga
+M −A=–58819(8); Q rebuilt with Ame1971
+GAu
+∗∗
+∗64Zn(3He,t)64Gai
+CDE=9879(6) Q =–9115(6); recalibration +5 keV for 58Ni(p,n)58Cui from Ame1961
+MMC124∗∗
+∗64Ge(β +)64Ga
+Eβ+=2960(250) to (1+) level at 427.03 keV
+Ens073
+∗∗
+65Cr−u
+−29286
+837
+−30390#
+220#
+−1.3
+D
+MT1
+1.0
+20Me06
+∗
+65Mn−u
+−43900
+600
+−43980
+4
+−0.1
+U
+TO5
+1.5
+94Se12
+−43500
+500
+−0.6
+U
+TO6
+1.5
+98Ba.A
+−43790
+330
+−0.6
+U
+MT1
+1.0
+11Es06
+65Mn−85Rb.765
+23500.6
+4.0
+2
+MA8
+1.0
+12Na15
+65Fe−u
+−54680
+300
+−54985
+5
+−0.7
+U
+TO3
+1.5
+90Tu01
+∗
+−55270
+320
+0.6
+U
+TO5
+1.5
+94Se12
+∗
+−54290
+380
+−1.2
+U
+TO6
+1.5
+98Ba.A
+∗
+−54985.9
+5.4
+0.2
+o
+MS1
+1.0
+08Bl05
+∗
+O2−65Fe.492
+16881.7
+2.7
+2
+MS1
+1.0
+10Fe01
+∗
+65Co−u
+−63537.9
+2.3
+−63537.9
+2.2
+−0.0
+o
+MS1
+1.0
+08Bl05
+O2−65Co.492
+21089.9
+1.1
+2
+MS1
+1.0
+10Fe01
+65Ni−85Rb.765
+−2438.0
+2.4
+−2434.6
+0.5
+1.4
+U
+MA8
+1.0
+07Gu09
+C5 H5−65Cu
+111384
+4
+111335.7
+0.7
+−3.0
+B
+R10
+4.0
+74De22
+030002-103

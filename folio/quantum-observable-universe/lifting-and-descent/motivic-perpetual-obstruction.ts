@@ -47,4 +47,12 @@ export default theorem({
     ref: "qou:QOU.LiftingDescent.motivic_perpetual_obstruction_frobenius",
     validation: "not_checked",
   },
+  authorNotes: [
+    {
+      kind: "refined-framing",
+      date: "2026-11-15",
+      body:
+        "Re-scoped 2026-11-15 (owner decision, PR #7747, bean qou-lx8f): the previous text read: \"This theorem subsumes every prior argument for the non-vanishing of $\\kappa_n$ in the brane tower.\"",
+    },
+  ],
 });

@@ -1,0 +1,1 @@
+In other words, should $\sigma^{-1}(\{R,L\})$ be empty, then there is one multi-morphism from $\sigma$ to $M$ for each linear order on $\sigma^{-1}(M)$; should $\sigma^{-1}(\{R,L\})$ not be empty, then there are no multi-morphisms from $\sigma$ to $M$.

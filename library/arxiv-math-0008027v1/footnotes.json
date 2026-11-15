@@ -1,0 +1,1148 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-math-0008027v1",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [],
+ "uncalled_notes": [
+  {
+   "id": "fn-p009-1",
+   "page": 9,
+   "mark": "39",
+   "text": "(1997), no. 3, 269–275. [3] H. Murakami and J. Murakami, The colored Jones polynomials and the simplicial volume of a knot, Report No. 20, 1998/99, Institut Mittag-Leﬄer, arXiv:math.GT/9905075. [4] H. Murakami, J. Murakami, M. Okamoto, T. Takata, and Y. Yokota, Kashaev’s conjecture and the Chern–Simons invariants of knots and links, in preparation. [5] W.D. Neumann, Combinatorics of triangulations and the Chern-Simons invariant for hy- perbolic 3-manifolds, Topology ’90 (Columbus, OH, 1990) (Berlin), de Gruyter, Berlin, 1992, pp. 243–271. [6] W.D. Neumann and D. Zagier, Volumes of hyperbolic three-manifolds, Topology 24 (1985), no. 3, 307–332.",
+   "block": "library/arxiv-math-0008027v1/blocks/prose-sec-004"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "Conjecture1.1(Kashaev).If L is hyperbolic,i.e.S"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "whereVol(L)isthevolumeofS"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": ".Put(x)"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": ".Put(x)n=Q"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "k=1(1 −x"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "k=1(1 −xk)for"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "ifl̸= mandq"
+  },
+  {
+   "page": 2,
+   "mark": "l",
+   "context": "ifl̸= mandqk, q"
+  },
+  {
+   "page": 2,
+   "mark": "m",
+   "context": "ifl̸= mandqk, ql, q"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "ifl̸= mandqk, ql, qm, q"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "\u0000 k"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "\u0000 k"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "isanN"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "isanN2× N"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "\u0000 k"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "Nq"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "\u0000 k"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "LetµbeanN× N-matrixwithµ"
+  },
+  {
+   "page": 2,
+   "mark": "q",
+   "context": "l= −δk,l+1"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "l= −δk,l+1q"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "Then(R, µ, −q"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "−q"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": ":µ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "theKashaevinvariant⟨4"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "R−1\u00010,"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "N−1,0R"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "N−1,0R0,"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "N−1µ"
+  },
+  {
+   "page": 3,
+   "mark": "4",
+   "context": "= N"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "q"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "q"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "q1−(k+1)"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "= N"
+  },
+  {
+   "page": 3,
+   "mark": "b",
+   "context": "=N.Herea∈[b, c]meansthatq"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "=N.Herea∈[b, c]meansthatqb,q"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "q"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "(−1)[j−1]q−j−([j−1]+1)([j−1]−2"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "⟨4"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "⟨41⟩N= N"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "= N"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "q−(m−l+1)"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "= (−1)[m−l]q([m−l]+1)([m−l]−2"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "=(−1)N−1−α"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "InthissectionIwilldescribehowtodecomposeaknotcomplementS"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "andthecomplementoftheregularneighborhoodofthepointisS"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "3.1.IdealtetrahedrondecompositionofS"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "composeS"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "leavesmadefrom△b+b"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "leavesmadefrom△b+brb"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "leavesmadefrom△b+brbl∪△c+c"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "leavesmadefrom△b+brbl∪△c+crc"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "leavesmadefrom△b+brbl∪△c+crcl,△c−c"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "leavesmadefrom△b+brbl∪△c+crcl,△c−clc"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "leavesmadefrom△b+brbl∪△c+crcl,△c−clcr∪△d−d"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "leavesmadefrom△b+brbl∪△c+crcl,△c−clcr∪△d−dld"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "leavesmadefrom△b+brbl∪△c+crcl,△c−clcr∪△d−dldr,△d+d"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "leavesmadefrom△b+brbl∪△c+crcl,△c−clcr∪△d−dldr,△d+drd"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "leavesmadefrom△b+brbl∪△c+crcl,△c−clcr∪△d−dldr,△d+drdl∪△a+a"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "leavesmadefrom△b+brbl∪△c+crcl,△c−clcr∪△d−dldr,△d+drdl∪△a+ara"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "and△a−a"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "and△a−ala"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "and△a−alar∪△b−b"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "and△a−alar∪△b−blb"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "madefrom△d−d"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "madefrom△d−dld"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "madefrom△d−dldrand△a−a"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "madefrom△d−dldrand△a−ala"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "madefrom△d−dldrand△a−alar,andLeavesβ,γ,andδarefrom△a+a"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "madefrom△d−dldrand△a−alar,andLeavesβ,γ,andδarefrom△a+ara"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "△b+b"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "△b+brb"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "△b+brbl,△b−b"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "△b+brbl,△b−blb"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "△b+brbl,△b−blbrand△c−c"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "△b+brbl,△b−blbrand△c−clc"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "△b+brbl,△b−blbrand△c−clcr,and△c+c"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "△b+brbl,△b−blbrand△c−clcr,and△c+crc"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "△b+brbl,△b−blbrand△c−clcr,and△c+crcland△d+d"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "△b+brbl,△b−blbrand△c−clcr,and△c+crcland△d+drd"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "Wecalltheresultingvertex+∞.SimilarlytheeightverticesB"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "Wecalltheresultingvertex+∞.SimilarlytheeightverticesB1,D"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "Wecalltheresultingvertex+∞.SimilarlytheeightverticesB1,D1,B"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "calltheresultingvertex+∞.SimilarlytheeightverticesB1,D1,B2,D"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "ltheresultingvertex+∞.SimilarlytheeightverticesB1,D1,B2,D2,A"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "C"
+  },
+  {
+   "page": 5,
+   "mark": "4",
+   "context": "C3,A"
+  },
+  {
+   "page": 5,
+   "mark": "4",
+   "context": "C3,A4,andC"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "NowwehaveanidealtetrahedrondecompositionofS"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "3.2.IdealtetrahedrondecompositionofS"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "tetrahedrondecompositionofS"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "hedrondecompositionofS"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "· · ·=E"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "· · ·=E4=F"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "IntheﬁrstoctahedronE"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "IntheﬁrstoctahedronE1-A"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "IntheﬁrstoctahedronE1-A1B"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "IntheﬁrstoctahedronE1-A1B1C"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "IntheﬁrstoctahedronE1-A1B1C1D"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "IntheﬁrstoctahedronE1-A1B1C1D1-F"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "1"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "1a"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "1"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "1a"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "1"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "1b"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "1"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "1b"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "1which make Leaf β"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "1which make Leaf β1.Therefore the tetrahedron F"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "1which make Leaf β1.Therefore the tetrahedron F1E"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "1which make Leaf β1.Therefore the tetrahedron F1E1A"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "1which make Leaf β1.Therefore the tetrahedron F1E1A1B"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "1which make Leaf β1.Therefore the tetrahedron F1E1A1B1and F"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "which make Leaf β1.Therefore the tetrahedron F1E1A1B1and F1E"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "ich make Leaf β1.Therefore the tetrahedron F1E1A1B1and F1E1B"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "h make Leaf β1.Therefore the tetrahedron F1E1A1B1and F1E1B1C"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "1"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "1a"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "1"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "1a"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "1"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "1b"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "1"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "1b"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "1with F"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "hedron F"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "hedron F1E"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "hedron F1E1C"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "hedron F1E1C1D"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "hedron F1E1C1D1and F"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "hedron F1E1C1D1and F1E"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "hedron F1E1C1D1and F1E1D"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "hedron F1E1C1D1and F1E1D1A"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "hedron F1E1C1D1and F1E1D1A1(they are the joins E"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "hedron F1E1C1D1and F1E1D1A1(they are the joins E1C"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "hedron F1E1C1D1and F1E1D1A1(they are the joins E1C1∗D"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "hedron F1E1C1D1and F1E1D1A1(they are the joins E1C1∗D1F"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "edron F1E1C1D1and F1E1D1A1(they are the joins E1C1∗D1F1and E"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "ron F1E1C1D1and F1E1D1A1(they are the joins E1C1∗D1F1and E1A"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": " F1E1C1D1and F1E1D1A1(they are the joins E1C1∗D1F1and E1A1∗D"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "1E1C1D1and F1E1D1A1(they are the joins E1C1∗D1F1and E1A1∗D1F"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "3"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "3c"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "3"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "3c"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "3"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "3d"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "3"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "3d"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "3whichmakeLeafδ"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "Inthetetrahedron decomposition of S"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "1,"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "3,"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "1,"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "4,"
+  },
+  {
+   "page": 7,
+   "mark": "c",
+   "context": "4,"
+  },
+  {
+   "page": 7,
+   "mark": "c",
+   "context": "1and"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "1andc"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "1and"
+  },
+  {
+   "page": 7,
+   "mark": "l",
+   "context": "1andd"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "3and"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "3anda"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "3and"
+  },
+  {
+   "page": 7,
+   "mark": "l",
+   "context": "3andb"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "3,"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "3,a"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "4and"
+  },
+  {
+   "page": 7,
+   "mark": "l",
+   "context": "4anda"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "4and"
+  },
+  {
+   "page": 7,
+   "mark": "l",
+   "context": "4andb"
+  },
+  {
+   "page": 7,
+   "mark": "c",
+   "context": "4and"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "4and c"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "2,"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "2,and"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "c"
+  },
+  {
+   "page": 7,
+   "mark": "c",
+   "context": "2and"
+  },
+  {
+   "page": 7,
+   "mark": "l",
+   "context": "2andc"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "2and"
+  },
+  {
+   "page": 7,
+   "mark": "l",
+   "context": "2andd"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "2and"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "2anda"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "1, a"
+  },
+  {
+   "page": 7,
+   "mark": "l",
+   "context": "1, a"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "1, b"
+  },
+  {
+   "page": 7,
+   "mark": "l",
+   "context": "1, b"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "3, c"
+  },
+  {
+   "page": 7,
+   "mark": "l",
+   "context": "3, c"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "3, d"
+  },
+  {
+   "page": 7,
+   "mark": "l",
+   "context": "3, d"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "havethetriangulationofthecusptorusofS"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "compositionofS"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "2weassociate"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "4weassociate"
+  },
+  {
+   "page": 8,
+   "mark": "r",
+   "context": "4weassociated∈C,where∗is+,−,"
+  },
+  {
+   "page": 8,
+   "mark": "l",
+   "context": "4weassociated∈C,where∗is+,−,r,or"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "2and"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "4are similartothetrianglesparameterized by"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "4are similartothetrianglesparameterized byband"
+  },
+  {
+   "page": 8,
+   "mark": "l",
+   "context": "Inourexamplewehavetwoedges,oneconnectingb"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "2and"
+  },
+  {
+   "page": 8,
+   "mark": "r",
+   "context": "2andb"
+  },
+  {
+   "page": 8,
+   "mark": "l",
+   "context": "otherconnectingd"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "4and"
+  },
+  {
+   "page": 8,
+   "mark": "r",
+   "context": "4andd"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "From(3.1)wehaveb=dandthentherestareallequivalenttob"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "⟨4"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "−Li"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "−Li2(z) + Li"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "whereLi"
+  },
+  {
+   "page": 9,
+   "mark": "z",
+   "context": "whereLi2(z)=−R"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "correspondstoq"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "correspondstoqjandthat−Li"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "correspondstoqjandthat−Li2(z)andLi"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "correspondstoqjandthat−Li2(z)andLi2(z−1)correspondsto(q)"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "spondstoqjandthat−Li2(z)andLi2(z−1)correspondsto(q)jand(q−1)"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "\u0014N V (z"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "withV (z) := −Li"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "withV (z) := −Li2(z) + Li"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "withV (z) := −Li2(z) + Li2(z−1)andz"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "withV (z) := −Li2(z) + Li2(z−1)andz0satisﬁesd V (z"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "z"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "0−z"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "b"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "which coincides with (4.1)!Observe that −Li"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "coincides with (4.1)!Observe that −Li2(z) corresponds to (q)"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "Figure3.19.ThecusptorusofS"
+  }
+ ]
+}

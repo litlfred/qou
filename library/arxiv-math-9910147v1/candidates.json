@@ -1,0 +1,76 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-9910147v1",
+ "source": {
+  "structure_sha256": "1feefdb019e76ea7b036b9c89ffb7869d7c933b90dda19c30515e3d177c11522",
+  "file": "9910147v1.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:math/9910147v1 [math.QA] 27 Oct 1999",
+  "authors": "Laboratoire de Physique Math\u00e9matique et Th\u00e9orique\u2020",
+  "arxiv": {
+   "id": "math/9910147",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "27 Oct 1999"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 3,
+  "by_kind": {
+   "recommendation": 3
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "One should generalize our work to obtain explicit expressions for intertwiners of two representations in the set of principal and complementary series.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-010-6-conclusion.md",
+   "section_title": "Conclusion",
+   "pages": "26-26",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This should as well gives non trivial relations on orthogonal polynomials.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-010-6-conclusion.md",
+   "section_title": "Conclusion",
+   "pages": "26-26",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In the sequel we shall frequently use the following notations:",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-012-71-formulae-on-basic-hypergeometric-functions.md",
+   "section_title": "Formulae on Basic Hypergeometric Functions.",
+   "pages": "26-28",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

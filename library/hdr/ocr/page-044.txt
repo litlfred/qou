@@ -1,0 +1,63 @@
+definition captures all a-functions for G(J,1,m) in the literature: the function a™ for me,; = sjl — ej,
+j = 9,...,1—1, given by Jacon and studied in the context of Uglov’s work on canonical bases
+for higher level Fock spaces, and also the a-function for type B, (J = 2) arising from the Kazhdan—
+Lusztig theory for Iwahori—Hecke algebras with unequal parameters (see 6.7]). We have shown
+in [CGG] §5] that this a-function is compatible with the ordering on category O given by Proposition
+Consequently, the a-function also defines a highest weight category structure on O, that is, we
+have the following:
+
+Proposition 5.16 Let A, ’ € P(l,n). If [A(E*) : L(E?’)| 4 0, then either X= or apy < ag.
+
+The above result, combined with Proposition [5.9] yields the following:
+
+Corollary 5.17 Let W = G(I,1,n). Let (so,..., 81-1) € Z! and e € Zso. Let k be defined as in .
+IfX€Pll,n), then KZ(L(E>)) 4 0 if and only if E* belongs to the canonical basic set of Hx(W) with
+respect to the a-function above.
+
+Thus, we obtain the existence of canonical basic sets for Ariki-Koike algebras without the use of
+Ariki’s Theorem. On the other hand, the description of the canonical basic sets for Ariki-Koike algebras
+by Main Theorem] yields a description of the set B = {E> € Inr(W)|KZ(L(E%)) 4 0}: we have
+that E> € B if and only if A is an Uglov /-partition.
+
+Finally, we expect a result similar to Corollary [5-17] to hold in the case where W = G(I,p,n) for
+p>.
+
+Remark 5.18 By repeating the proof of [CGG] Proposition 4.6] for W = G(I,1,n), we can obtain that
+the images of the standard modules via the KZ-functor agree with the Specht modules defined by the
+cellular structure on the Ariki-Koike algebras in [DJM], provided that the parameters k are chosen to
+belong to the so-called “asymptotic region” (see Proposition 6.4] for the explicit description of this
+region).
+
+5.3 Rational Cherednik Algebras at t = 0
+
+Let us now consider the rational Cherednik algebra Ho,<(W). Set 2% := C[h]” @ C[h*]”. We define the
+restricted rational Cherednik algebra to be
+
+Ho,c(W) := Ho,c(W)/21-Ho,<(W),
+
+where %4 denotes the ideal of 2% consisting of elements with zero constant term. This algebra was
+originally introduced, and extensively studied, in [Go]. The PBW Theorem implies that, as a vector
+space,
+
+Ho.c(W) & Cpe" @ CW] @ C[4"]°"
+
+where C{h]°°” = C[b]/(C[b]’) is the coinvariant algebra. Since W is a complex reflection group,
+C[h]°°” has dimension |W| and is isomorphic to the regular representation as a C[W]-module. Thus,
+dimcHo <(W) = |W.
+
+Let E € Irr(W). We set _ _
+A(E) = Ho.c(W) @cip-Joow ww E,
+
+where C[h*]°° acts trivially on E (that is, C[h*]¢° acts on E as zero) and W acts naturally. The
+module A(E) is the baby Verma module of Ho,<(W) associated with E. We summarise, as is done in
+
+Proposition 4.3], the results of applied to this situation.
+
+Proposition 5.19 Let E, E’ € Irr(W).
+
+(a) The baby Verma module A(E) has a simple head, L(E). Hence, A(E) is indecomposable.
+(b) A(E) = A(E’) if and only if E = E'.
+
+(c) The set {L(E)|E € Irr(W)} is a complete set of pairwise non-isomorphic simple Ho,.-modules.
+
+41

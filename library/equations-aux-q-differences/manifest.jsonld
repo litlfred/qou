@@ -23,10 +23,11 @@
     "library/equations-aux-q-differences/sections/sec-008",
     "library/equations-aux-q-differences/sections/sec-009",
     "library/equations-aux-q-differences/sections/sec-010",
-    "library/equations-aux-q-differences/sections/sec-011"
+    "library/equations-aux-q-differences/sections/sec-011",
+    "library/equations-aux-q-differences/sections/sec-012"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "equations-aux-q-differences",
     "title_source": "slug",
@@ -35,8 +36,8 @@
     "pages": 30,
     "arxiv": null,
     "doi": null,
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

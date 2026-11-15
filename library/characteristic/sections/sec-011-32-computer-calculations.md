@@ -8,6 +8,7 @@ pages: 6-11
 source_pdf: characteristic.pdf
 source_sha256: 42bd31da2754488f
 toc_source: inferred
+doc_brief: "ON THE CHARACTERISTIC AND DEFORMATION VARIETIES OF A KNOT — The colored Jones function of a knot is a sequence of Laurent polynomials in one variable, whose nth term is the Jones polynomial of the"
 ---
 and (5) has no closed form. However, it is guaranteed to obey nontrivial recursion relations. Moreover, these
 relations can be found by computer. There are various programs that can compute the recursion relations

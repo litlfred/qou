@@ -8,6 +8,7 @@ pages: 2-5
 source_pdf: 9807106v2.pdf
 source_sha256: e3cd089e3df5d71f
 toc_source: inferred
+doc_brief: "An Extension of the Character Ring of sl(3) and Its Quantisation P. Furlan∗,† — We construct a commutative ring with identity which extends the ring of characters of ﬁnite dimensional representations"
 ---
 The aim of this work is to describe the characters (one-dimensional representations)
 of the fusion algebra of g = bsl(n)k WZW conformal models at rational (shifted) level

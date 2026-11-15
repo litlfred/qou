@@ -8,7 +8,7 @@
   "pages": 10,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:19Z",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,7 +21,7 @@
    "stamp_date": "11 Dec 2013"
   },
   "doi": null,
-  "title": "Quantum repeater with Rydberg blocked atomic ensembles in \ufb01ber-coupled cavities",
+  "title": "Quantum repeater with Rydberg blocked atomic ensembles in ﬁber-coupled cavities",
   "authors_raw": "E. Brion, F. Carlier, V. M. Akulin",
   "title_lines": [
    "Quantum repeater with Rydberg blocked atomic ensembles in fiber-coupled cavities"
@@ -36,7 +36,7 @@
   "title_source": "heading",
   "title_verified": true,
   "title_evidence": {
-   "heading": "Quantum repeater with Rydberg blocked atomic ensembles in \ufb01ber-coupled cavities",
+   "heading": "Quantum repeater with Rydberg blocked atomic ensembles in ﬁber-coupled cavities",
    "text": "Quantum repeater with Rydberg blocked atomic ensembles in fiber-coupled cavities",
    "corroborated_by": [
     "text"
@@ -182,7 +182,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "Physical implementation of our scheme with Cs atoms. The \ufb01gure shows the states |jl\u27e9j=0,1;l=L,R,A , |\u03d5+,\u2212,A\u27e9and",
+   "title": "Physical implementation of our scheme with Cs atoms. The ﬁgure shows the states |jl⟩j=0,1;l=L,R,A , |ϕ+,−,A⟩and",
    "page": 7,
    "confidence": 0.7,
    "evidence": [
@@ -207,7 +207,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "(Color online) a) Generic behaviour of the probability pK (n) for K = 1000 and three di\ufb00erent values of P0 = 0.1, 0.2, 0.3. The probability is a peaked curve around",
+   "title": "(Color online) a) Generic behaviour of the probability pK (n) for K = 1000 and three diﬀerent values of P0 = 0.1, 0.2, 0.3. The probability is a peaked curve around",
    "page": 9,
    "confidence": 0.9,
    "evidence": [
@@ -220,7 +220,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "(Color online) Comparison of \u00afn (P0, N)and 2nmax",
+   "title": "(Color online) Comparison of ¯n (P0, N)and 2nmax",
    "page": 9,
    "confidence": 0.9,
    "evidence": [
@@ -329,8 +329,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1123,
-   "n_words": 160,
+   "n_chars": 1120,
+   "n_words": 159,
    "label_start": null,
    "label_end": null
   },
@@ -341,8 +341,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 6192,
-   "n_words": 997,
+   "n_chars": 6199,
+   "n_words": 996,
    "label_start": null,
    "label_end": "2"
   },
@@ -353,7 +353,7 @@
    "level": 1,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 6405,
+   "n_chars": 6408,
    "n_words": 1080,
    "label_start": "2",
    "label_end": "3"
@@ -364,58 +364,82 @@
    "title": "The scheme",
    "level": 1,
    "page_start": 3,
+   "page_end": 3,
+   "n_chars": 421,
+   "n_words": 74,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-003-31-the-different-steps-of-the-scheme",
+   "number": "3.1",
+   "title": "The different steps of the scheme",
+   "level": 2,
+   "page_start": 3,
    "page_end": 5,
-   "n_chars": 6470,
-   "n_words": 1290,
+   "n_chars": 6049,
+   "n_words": 1214,
    "label_start": "3",
    "label_end": "5"
   },
   {
-   "id": "sec-003-32-error-detection-and-prevention",
+   "id": "sec-004-32-error-detection-and-prevention",
    "number": "3.2",
    "title": "Error detection and prevention",
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 6754,
-   "n_words": 1192,
+   "n_chars": 6779,
+   "n_words": 1194,
    "label_start": "5",
    "label_end": "6"
   },
   {
-   "id": "sec-004-4-a-physical-implementation",
+   "id": "sec-005-4-a-physical-implementation",
    "number": "4",
    "title": "A physical implementation",
    "level": 1,
    "page_start": 6,
    "page_end": 8,
-   "n_chars": 5395,
+   "n_chars": 5414,
    "n_words": 991,
    "label_start": "6",
    "label_end": "8"
   },
   {
-   "id": "sec-005-5-discussion",
+   "id": "sec-006-5-discussion",
    "number": "5",
    "title": "Discussion",
    "level": 1,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 2648,
+   "n_chars": 2655,
    "n_words": 458,
    "label_start": "8",
    "label_end": "8"
   },
   {
-   "id": "sec-006-6-conclusion",
+   "id": "sec-007-6-conclusion",
    "number": "6",
    "title": "Conclusion",
    "level": 1,
    "page_start": 8,
-   "page_end": 10,
-   "n_chars": 6542,
-   "n_words": 1249,
+   "page_end": 9,
+   "n_chars": 1194,
+   "n_words": 182,
    "label_start": "8",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-008-a-derivation-of-the-expression-of-the-average-nu",
+   "number": "A",
+   "title": "Derivation of the expression of the average number of steps in entanglement generation",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 5305,
+   "n_words": 1058,
+   "label_start": "9",
    "label_end": "10"
   }
  ],
@@ -433,13 +457,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 8,
-  "chars_total": 41529,
+  "sections": 10,
+  "chars_total": 41544,
+  "furniture_lines_stripped": 9,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "article.tex",
    "tex_sections": 8,
-   "overlaid": 4,
+   "overlaid": 6,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -454,8 +479,8 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.606,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.679,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -470,15 +495,23 @@
      "result": "no matching \\section"
     },
     {
-     "id": "sec-003-32-error-detection-and-prevention",
-     "title": "Error detection and prevention",
-     "prose_ratio": 0.982,
-     "coverage_ratio": 0.997,
+     "id": "sec-003-31-the-different-steps-of-the-scheme",
+     "title": "The different steps of the scheme",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-4-a-physical-implementation",
+     "id": "sec-004-32-error-detection-and-prevention",
+     "title": "Error detection and prevention",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-4-a-physical-implementation",
      "title": "A physical implementation",
      "prose_ratio": 0.97,
      "coverage_ratio": 1.0,
@@ -486,19 +519,25 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-5-discussion",
+     "id": "sec-006-5-discussion",
      "title": "Discussion",
      "prose_ratio": 0.97,
-     "coverage_ratio": 0.988,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-6-conclusion",
+     "id": "sec-007-6-conclusion",
      "title": "Conclusion",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.371,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-a-derivation-of-the-expression-of-the-average-nu",
+     "title": "Derivation of the expression of the average number of steps in entanglement generation",
+     "result": "no matching \\section"
     }
    ]
   }

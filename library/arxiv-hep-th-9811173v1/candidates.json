@@ -1,15 +1,13 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-hep-th-9811173v1",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "986bf57947746523a0647891dc9e452d9b60bf99a7257d33140d146056e1bf7e",
   "file": "9811173v1.pdf"
  },
  "provenance": {
-  "title": "b vol(M) = (\u2212D)3/ 2 (2\u03c0)2n\u2212 4 \u03b6K(2) 2\u03b6(2) for a manifold M whose invariant trace \ufb01eldK has a single complex place, discriminant D, degree n, and Dedekind zeta value \u03b6K(2). The largest numerator of the 998 invariants of",
-  "authors": null,
+  "title": "arXiv:hep-th/9811173v1 19 Nov 1998",
+  "authors": "J. M. Borweina) and D. J. Broadhurstb)",
   "arxiv": {
    "id": "hep-th/9811173",
    "version": "1",
@@ -18,11 +16,76 @@
   },
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
+  "candidates": 4,
+  "by_kind": {
+   "recommendation": 4
+  },
   "formalization_candidates": 0
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Then, in Section 5, we shall explain how we were led to Figs.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-008-41-signpost-integer-sequence-a003657.md",
+   "section_title": "Signpost: integer sequence A003657",
+   "pages": "8-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "A little doodling should convince the reader that non-alternating daisy-chain links must have an even number of components.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-016-410-a-48-crossing-daisy-chain-link-at-d-24.md",
+   "section_title": "A 48-crossing daisy-chain link at $D=-24$",
+   "pages": "12-13",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The rationale for the underlinings in ([\\[iq\\]](#iq){reference-type=\"ref\" reference=\"iq\"}) should now be clear: it was these 10 imaginary-quadratic fields that had been distinguished by the Feynman orthoschemes of Table 22, which initiated our studies.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-021-53-two-of-feynmans-links-are-missing.md",
+   "section_title": "Two of Feynman's links are missing",
+   "pages": "18-19",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "If the reader has access to SnapPea, s/he should certainly not miss the opportunity to click in a depiction of the non-alternating knot in Fig.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-024-56-dedekind-zeta-values-from-maximally-symmetric.md",
+   "section_title": "Dedekind zeta values from maximally symmetric knots",
+   "pages": "23-25",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
 }

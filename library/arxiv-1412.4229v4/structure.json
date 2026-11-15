@@ -7,10 +7,11 @@
   "bytes": 777925,
   "pages": 44,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,28 @@
    "stamp_date": "24 Oct 2015"
   },
   "doi": null,
-  "title": "THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS AMNON YEKUTIELI",
-  "authors_raw": null,
+  "title": "THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS",
+  "authors_raw": "AMNON YEKUTIELI",
   "title_lines": [
-   "THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS",
-   "AMNON YEKUTIELI"
+   "THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS"
   ],
-  "abstract": "Let A \u2192 B be a homomorphism of commutative rings. Thesquar- ing operationis a functorSqB/Afrom the derived categoryD(B) of complexes of B-modules into itself. This operation is needed for the de\ufb01nition ofrigid complexes(inthesenseofVandenBergh), thatinturnleadstoanewapproach to Grothendieck duality for rings, schemes and even DM stacks. In our paper with J.J. Zhang from 2008 we introduced the squaring oper- ation, and explored some of its properties. Unfortunately some of the proofs in that paper had severe gaps in them. In the present paper we reproduce the construction of the squaring opera- tion. This is done in a more general context than in the \ufb01rst paper: here we consider a homomorphism A \u2192 B of commutative DG rings. Our \ufb01rst main result is thatthe square SqB/A(M ) of a DG B-module M is independent of the resolutions used to present it. Our second main result is onthe trace func- toriality of the squaring operation. We give precise statements and complete correct proofs. In a subsequent paper we will reproduce the remaining parts of the 2008 paper that require \ufb01xing. This will allow us to proceed with the other papers, mentioned in the bibliography, on the rigid approach to Grothendieck duality. The proofs of the main results require a substantial amount of foundational work on commutative and noncommutative DG rings, including a study of semi-free DG rings, their lifting properties, and their homotopies. This part of the paper could be of independent interest.",
+  "abstract": "Let A →B be a homomorphism of commutative rings. The squar- ing operation is a functor SqB/A from the derived category D(B) of complexes of B-modules into itself. This operation is needed for the deﬁnition of rigid complexes (in the sense of Van den Bergh), that in turn leads to a new approach to Grothendieck duality for rings, schemes and even DM stacks. In our paper with J.J. Zhang from 2008 we introduced the squaring oper- ation, and explored some of its properties. Unfortunately some of the proofs in that paper had severe gaps in them. In the present paper we reproduce the construction of the squaring opera- tion. This is done in a more general context than in the ﬁrst paper: here we consider a homomorphism A →B of commutative DG rings. Our ﬁrst main result is that the square SqB/A(M) of a DG B-module M is independent of the resolutions used to present it. Our second main result is on the trace func- toriality of the squaring operation. We give precise statements and complete correct proofs. In a subsequent paper we will reproduce the remaining parts of the 2008 paper that require ﬁxing. This will allow us to proceed with the other papers, mentioned in the bibliography, on the rigid approach to Grothendieck duality. The proofs of the main results require a substantial amount of foundational work on commutative and noncommutative DG rings, including a study of semi-free DG rings, their lifting properties, and their homotopies. This part of the paper could be of independent interest.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20180916010016Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.12",
-   "Title": ""
-  }
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20180916010016Z"
+  },
+  "title_raw": "THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS Contents Introduction Some Facts on DG Rings and Modules Resolutions of DG Modules Central Pairs of DG Rings and their Resolutions DG Ring Homotopies Pairs of DG Modules, Compound Resolutions, and Rectangles The Rectangle Operation The Squaring Operati",
+   "outline": "0. Introduction",
+   "text": "THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS AMNON YEKUTIELI"
  },
  "toc": [
   {
@@ -41,159 +50,546 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "0"
+   "number": "0",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Some Facts on DG Rings and Modules",
    "page": 7,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Resolutions of DG Modules",
    "page": 12,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Central Pairs of DG Rings and their Resolutions",
    "page": 16,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "DG Ring Homotopies",
    "page": 23,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Pairs of DG Modules, Compound Resolutions, and Rectangles",
    "page": 26,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The Rectangle Operation",
    "page": 32,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The Squaring Operation",
    "page": 38,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 43,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1593,
+   "n_words": 269,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-0-introduction",
    "number": "0",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 12,
-   "n_chars": 28667,
-   "n_words": 4871
+   "page_end": 7,
+   "n_chars": 16025,
+   "n_words": 3015,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-2-resolutions-of-dg-modules",
+   "id": "sec-001-1-some-facts-on-dg-rings-and-modules",
+   "number": "1",
+   "title": "Some Facts on DG Rings and Modules",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 12,
+   "n_chars": 13547,
+   "n_words": 2807,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-2-resolutions-of-dg-modules",
    "number": "2",
    "title": "Resolutions of DG Modules",
    "level": 1,
    "page_start": 12,
    "page_end": 16,
-   "n_chars": 8673,
-   "n_words": 1379
+   "n_chars": 9001,
+   "n_words": 1752,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-3-central-pairs-of-dg-rings-and-their-resolution",
+   "id": "sec-003-3-central-pairs-of-dg-rings-and-their-resolution",
    "number": "3",
    "title": "Central Pairs of DG Rings and their Resolutions",
    "level": 1,
    "page_start": 16,
    "page_end": 23,
-   "n_chars": 19441,
-   "n_words": 3281
+   "n_chars": 20146,
+   "n_words": 3995,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-4-dg-ring-homotopies",
+   "id": "sec-004-4-dg-ring-homotopies",
    "number": "4",
    "title": "DG Ring Homotopies",
    "level": 1,
    "page_start": 23,
    "page_end": 26,
-   "n_chars": 7565,
-   "n_words": 1248
+   "n_chars": 7867,
+   "n_words": 1560,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-5-pairs-of-dg-modules-compound-resolutions-and-r",
+   "id": "sec-005-5-pairs-of-dg-modules-compound-resolutions-and-r",
    "number": "5",
    "title": "Pairs of DG Modules, Compound Resolutions, and Rectangles",
    "level": 1,
    "page_start": 26,
    "page_end": 32,
-   "n_chars": 12704,
-   "n_words": 2365
+   "n_chars": 13170,
+   "n_words": 2865,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-6-the-rectangle-operation",
+   "id": "sec-006-6-the-rectangle-operation",
    "number": "6",
    "title": "The Rectangle Operation",
    "level": 1,
    "page_start": 32,
-   "page_end": 37,
-   "n_chars": 8247,
-   "n_words": 1407
+   "page_end": 38,
+   "n_chars": 11969,
+   "n_words": 2420,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-7-the-squaring-operation",
+   "id": "sec-007-7-the-squaring-operation",
    "number": "7",
    "title": "The Squaring Operation",
    "level": 1,
-   "page_start": 37,
+   "page_start": 38,
    "page_end": 43,
-   "n_chars": 14096,
-   "n_words": 2423
+   "n_chars": 11131,
+   "n_words": 2242,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-references",
+   "id": "sec-008-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 43,
    "page_end": 44,
-   "n_chars": 3613,
-   "n_words": 486
+   "n_chars": 3624,
+   "n_words": 497,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 9,
-  "sections": 8,
-  "chars_total": 103006,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 10,
+  "chars_total": 108073,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 13,
-   "overlaid": 6,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -201,61 +597,74 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-0-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.616,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.591,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-001-2-resolutions-of-dg-modules",
+     "id": "sec-001-1-some-facts-on-dg-rings-and-modules",
+     "title": "Some Facts on DG Rings and Modules",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-2-resolutions-of-dg-modules",
      "title": "Resolutions of DG Modules",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.93,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-3-central-pairs-of-dg-rings-and-their-resolution",
+     "id": "sec-003-3-central-pairs-of-dg-rings-and-their-resolution",
      "title": "Central Pairs of DG Rings and their Resolutions",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-003-4-dg-ring-homotopies",
+     "id": "sec-004-4-dg-ring-homotopies",
      "title": "DG Ring Homotopies",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.96,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-004-5-pairs-of-dg-modules-compound-resolutions-and-r",
+     "id": "sec-005-5-pairs-of-dg-modules-compound-resolutions-and-r",
      "title": "Pairs of DG Modules, Compound Resolutions, and Rectangles",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.961,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-005-6-the-rectangle-operation",
+     "id": "sec-006-6-the-rectangle-operation",
      "title": "The Rectangle Operation",
      "prose_ratio": 0.742,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.965,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-006-7-the-squaring-operation",
+     "id": "sec-007-7-the-squaring-operation",
      "title": "The Squaring Operation",
-     "prose_ratio": 0.307,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.423,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-007-references",
+     "id": "sec-008-references",
      "title": "References",
      "result": "no matching \\section"
     }

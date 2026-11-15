@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-nucl-th-0006014v1
-doc_title: "arXiv:nucl-th/0006014v1 9 Jun 2000"
+doc_title: "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn)"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-3
 source_pdf: 0006014v1.pdf
 source_sha256: 208c7a6aaf628b30
 toc_source: inferred
+doc_brief: "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn) — 56 sections: Front matter; Introduction; The model"
 ---
 arXiv:nucl-th/0006014v1  9 Jun 2000
 The high-precision, charge-dependent Bonn nucleon-nucleon
@@ -45,7 +46,6 @@ APPENDIXES
 A
 Two-nucleon scattering in momentum space
 15
-1
 Scattering equation
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 15
@@ -98,4 +98,3 @@ in nuclear few- and many-body systems, where underbinding is a persistent
 problem.
 PACS numbers: 13.75.Cs, 21.30.Cb, 25.40.Cm, 25.40.Dn, 24.80.+y
 Typeset using REVTEX
-2

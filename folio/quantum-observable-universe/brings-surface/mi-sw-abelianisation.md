@@ -13,6 +13,6 @@ Let $\mathcal{S}_c \cong \mathbb{P}^1(\mathbb{C})$ be the exceptional divisor at
 \end{equation}
 ```
 
-where $\lVert\cdot\rVert_{J^n}$ denotes the Killing-form norm projected onto the $n$-th jet component, and $\lambda_{\mathrm{SW}}^{(n)}$ is the $n$-th prolonged Seiberg--Witten differential.
+where $\lVert\cdot\rVert_{J^n}$ denotes the Killing-form norm projected onto the $n$-th jet component, and $\lambda_{\mathrm{SW}}^{(n)}$ is the $n$-th prolonged Seiberg--Witten differential. The unprolonged objects are those of Seiberg and Witten: for $\mathcal{N}=2$ $SU(2)$ gauge theory with matter hypermultiplets, the periods $(a, a_D)$ of a meromorphic differential on a family of elliptic curves determine the exact low-energy metric and the masses of the stable BPS states \cite{seiberg-witten1994b}. Mathematically, a Seiberg--Witten differential is a meromorphic $1$-form $\lambda$ on the total space of an algebraically integrable system with $d\lambda = \sigma$, the symplectic form, so that its periods are special coordinates on the base \cite[\S2]{donagi1997}.
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs—real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. The generic categorical/$q$-deformation identities it relies upon remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

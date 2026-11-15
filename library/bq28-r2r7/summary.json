@@ -2,24 +2,78 @@
  "_schema": "library-summary/v1",
  "doc_id": "bq28-r2r7",
  "source_sha256": "38419a88531ebce7",
- "brief": "Classical and Quantum Algorithms for Characters of the Symmetric Group — 1 sections: Document",
- "extended": "**Classical and Quantum Algorithms for Characters of the Symmetric Group**\n\n*Classical and Quantum Algorithms for Characters of the Symmetric Group*\n\n15 pp, 1 sections.\n\n**Outline.** Document\n\n**Extracted claims (proposals, not verified).**\n- Corollary 1: There exists a constant B > 0 such that\n- Lemma 1: Suppose that x, y ∈{0, 1}Z are bit strings and\n- Lemma 2: The current operator Jℓis an MPO with bond\n- Lemma 3: Let g ∈Sn be a permutation and Cg ⊆Sn be\n- Lemma 4: Suppose that P0 and P1 are probability distri-\n- Lemma 4: implies that the conjecture is true if there",
+ "brief": "Classical and Quantum Algorithms for Characters of the Symmetric Group — 12 sections: Front matter; I.. INTRODUCTION; II.. GROUP THEORY REFRESHER",
+ "extended": "**Classical and Quantum Algorithms for Characters of the Symmetric Group**\n\n*Classical and Quantum Algorithms for Characters of the Symmetric Group*\n\n15 pp, 12 sections.\n\n**Outline.** Front matter; I.. INTRODUCTION; II.. GROUP THEORY REFRESHER; III.. BUILDING THE CHARACTER; IV.. CLASSICAL MPS ALGORITHMS; V.. QUANTUM ALGORITHM; VI.. CLASSICAL COMPLEXITY OF SAMPLING; A.. Granularity and quantum advantage; B.. Row and column sampling; VII.. CLASSICAL MPS ALGORITHM FOR KOSTKA NUMBE; . ACKNOWLEDGMENTS; . DATA AVAILABILITY",
  "tokens": {
-  "brief": 23,
-  "extended": 143
+  "brief": 36,
+  "extended": 130
  },
  "sections": [
   {
-   "id": "sec-000-document",
-   "title": "Document",
-   "pages": "1-15"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-i-introduction",
+   "title": "I.. INTRODUCTION",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-ii-group-theory-refresher",
+   "title": "II.. GROUP THEORY REFRESHER",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-iii-building-the-character",
+   "title": "III.. BUILDING THE CHARACTER",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-003-iv-classical-mps-algorithms",
+   "title": "IV.. CLASSICAL MPS ALGORITHMS",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-004-v-quantum-algorithm",
+   "title": "V.. QUANTUM ALGORITHM",
+   "pages": "7-10"
+  },
+  {
+   "id": "sec-005-vi-classical-complexity-of-sampling",
+   "title": "VI.. CLASSICAL COMPLEXITY OF SAMPLING",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-006-a-granularity-and-quantum-advantage",
+   "title": "A.. Granularity and quantum advantage",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-007-b-row-and-column-sampling",
+   "title": "B.. Row and column sampling",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-008-vii-classical-mps-algorithm-for-kostka-numbers",
+   "title": "VII.. CLASSICAL MPS ALGORITHM FOR KOSTKA NUMBERS",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-009-acknowledgments",
+   "title": ". ACKNOWLEDGMENTS",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-010-data-availability",
+   "title": ". DATA AVAILABILITY",
+   "pages": "14-15"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

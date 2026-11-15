@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2409.09372v4
-doc_title: "MARKOV TRACES ON DEGENERATE CYCLOTOMIC HECKE ALGEBRAS DEKE ZHAO Dedicated to Professor Yingbo Zhang on the occasion of her 80th birthday"
+doc_title: "Markov traces on degenerate cyclotomic Hecke algebras"
 section_id: sec-003-4-non-normalized-markov-traces
 section_title: "Non-normalized Markov traces"
 section_number: 4
 pages: 10-13
 source_pdf: 2409.09372v4.pdf
 source_sha256: b7eed67ec102ab3d
-doc_brief: "MARKOV TRACES ON DEGENERATE CYCLOTOMIC HECKE ALGEBRAS DEKE ZHAO Dedicated to Professor Yingbo Zhang on the occasion of her 80th birthday — LetH n(u) be the degenerate cyclotomic Hecke algebra with"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.986
-latex_coverage_ratio: 0.994
+latex_prose_ratio: 0.972
+latex_coverage_ratio: 0.839
+doc_brief: "Markov traces on degenerate cyclotomic Hecke algebras — Let Hn(u) be the degenerate cyclotomic Hecke algebra with parameter u = {u1, . . . , um}."
 ---
 []{#Sec:BK-trace label="Sec:BK-trace"} In this section we construct a $\mathbb{C}(\boldsymbol{u})$--linear function on $H_n(\boldsymbol{u})$ by using the standard bases and show it constitutes a non-normalized Markov trace, thereby proving Theorem [\[Them:Markov-BK\]](#Them:Markov-BK){reference-type="ref" reference="Them:Markov-BK"} from the introduction.
 

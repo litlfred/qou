@@ -2,37 +2,27 @@
  "_schema": "library-summary/v1",
  "doc_id": "fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma",
  "source_sha256": "d3d3bf68955ad775",
- "brief": "On totally geodesic boundaries of hyperbolic 3-manifolds — 5 sections: An ideal tetrahedral decomposition; (a)). We write S=S(z). The three n; A deformation space of the hyperbo",
- "extended": "**On totally geodesic boundaries of hyperbolic 3-manifolds**\n\n*By a hyperbolic manifold, we will mean a Riemannian manifold with con-*\n\n14 pp, 5 sections.\n\n**Outline.** 1 An ideal tetrahedral decomposition of a hype; 1.1 (a)). We write S=S(z). The three numbers z; 2 A deformation space of the hyperbolic struct; 3 Deformations of the flat structure of the cu; References",
+ "brief": "On totally geodesic boundaries of hyperbolic 3-manifolds — 3 sections: Front matter; An ideal tetrahedral decomposition; UdC",
+ "extended": "**On totally geodesic boundaries of hyperbolic 3-manifolds**\n\n*KODAI MATH. J*\n\n14 pp, 3 sections.\n\n**Outline.** Front matter; 1 An ideal tetrahedral decomposition of a hype; F UdC",
  "tokens": {
-  "brief": 44,
-  "extended": 92
+  "brief": 31,
+  "extended": 44
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-an-ideal-tetrahedral-decomposition-of-a-hyperb",
-   "title": "An ideal tetrahedral decomposition of a hyperbolic 3-manifold with",
-   "pages": "2-2"
+   "title": "An ideal tetrahedral decomposition of a hyperbolic 3-manifold with two torus cusps.",
+   "pages": "2-10"
   },
   {
-   "id": "sec-001-11-a-we-write-ssz-the-three-numbers-z-z-z-lz-and",
-   "title": "(a)). We write S=S(z). The three numbers z, z' :=(z-l)/z and z\" : = l/(l-z)",
-   "pages": "2-5"
-  },
-  {
-   "id": "sec-002-2-a-deformation-space-of-the-hyperbolic-structur",
-   "title": "A deformation space of the hyperbolic structure on the 3-manifold",
-   "pages": "5-8"
-  },
-  {
-   "id": "sec-003-3-deformations-of-the-flat-structure-of-the-cusp",
-   "title": "Deformations of the flat structure of the cusp torus of the hyperbolic",
-   "pages": "8-13"
-  },
-  {
-   "id": "sec-004-references",
-   "title": "References",
-   "pages": "13-14"
+   "id": "sec-001-f-udc",
+   "title": "UdC",
+   "pages": "10-14"
   }
  ],
  "provenance": {

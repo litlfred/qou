@@ -577,6 +577,24 @@ and [`.claude/skills/local/bean-coordination.md`](.claude/skills/local/bean-coor
 The plan is the agent's source of truth for "what next" — not the
 user's last message, not the most recently mentioned file.
 
+> **🟧 BEANS ARE BRANCH-MOUNTED, NOT ON MAIN (owner ruling 2026-10-10,
+> re-confirmed 2026-11-15; issue #7642).** `beans/` (`beans.json` + `defs/`)
+> lives on the branch `cat/cat-harness/beans`, declared in `qou.json` as
+> `source: {kind: branch, keyedBy: tip}`, and is gitignored on main. The
+> SessionStart hook (`scripts/mount-fsh-guts.sh`) installs the platform if it
+> is absent and mounts `beans/` with `state:mount`. There is **no read-only
+> fallback** (owner, 2026-11-15). By hand:
+> `./scripts/setup-folio-assistant.sh && bun folio-assistant/cat-harness-tools/scripts/state-mount.ts`.
+> The `beans` CLI works on the mount unchanged, because `.beans.yml` still says
+> `path: beans/defs`. **A bean edit is no longer a commit in your PR.** Push it
+> back with `bun folio-assistant/cat-harness-tools/scripts/branch-store.ts push
+> --id beans`. That is a splice with `expect`; it never forces, and two writers
+> of one file get `conflict`, so re-read and retry. The CLI never pushes, so an
+> edit you have not pushed is lost when the container goes. If the mount
+> failed, an empty `beans list` means the work plan is **unreachable**, not
+> that there is no work. Every `beans/defs/...` path below names a file in the
+> mount.
+
 > **Migration note (2026-06-19).** Beans **supersede** the older
 > `TodoWrite`-tool / `todos/*.json` work-plan mechanism. Wherever this
 > document still says *"TodoWrite list"* / *"todo list"* below, read it
@@ -587,7 +605,12 @@ user's last message, not the most recently mentioned file.
 > the Folio-Assistant Infrastructure Migration — the `miga` epic.)
 
 > **A bean is an APPEND-ONLY ledger, and concurrent appends collide on
-> essentially every landing (measured 2026-09-13).** `main` takes **169
+> essentially every landing (measured 2026-09-13).** *(Since the beans
+> branch mount (issue #7642), beans are no longer merged through PRs, so the
+> merge-time collision below no longer happens on `main`. A concurrent write
+> now surfaces as `conflict` from `branch-store.ts push --id beans`. The record
+> below is kept as history, and `bean-append-merge.py` is only for a branch
+> cut before the mount.)* `main` takes **169
 > commits / 24 h**; `beans/defs/qou-brng--…` is touched by **9** of them and
 > `beans/defs/qou-zlra--…` by **6**, so a branch that appends to `qou-brng`
 > goes un-mergeable roughly **every 2.7 h**. In the #7237 / #7245 /
@@ -1920,7 +1943,10 @@ corpus — run the **corpus-grep checklist**:
    lists that document's extracted theorems and definitions if you want
    the claims rather than the prose.
 
-6. **The beans** — `grep -rl <topic> beans/defs/`. The work-plan tracker is a
+6. **The beans** — `grep -rl <topic> beans/defs/`, **on the mount**
+   (`beans/` is mounted from `cat/cat-harness/beans`; if `beans/defs` is
+   missing, run `state-mount` first, or this path is an empty grep that reads
+   as a clean bill). The work-plan tracker is a
    corpus in its own right (tens of thousands of files) and it is where a
    prior agent's *conclusion* most often sits before it reaches an audit
    doc or a content block. It is **not** covered by paths 1–5: `beans/`
@@ -2918,6 +2944,14 @@ discipline review will catch it. Full framing:
 >   bonds: `−1.2277` MeV (³H) vs AME `+1.8081`, `−0.7973` MeV (³He) vs
 >   `+1.0443`. Audit: `docs/audits/2026-09-12-ursell-partition-function-for-b3.md`,
 >   beans `qou-rwhv` / `qou-rraz`.
+>
+>   🛑 **Those two magnitudes, and the chain bonds `μ_e` they come from, are on a
+>   SUPERSEDED word (owner, 2026-11-15).** The γγ rule now covers the nuclear bond
+>   letters, so the single-crossing interface letters `g_{3k+2} + d_k` of
+>   `atom_braid_word_3A` are not canonical. The figures stay as records; the Lean
+>   theorems above take generic bond weights and still stand. Redo waits on a
+>   γγ-selected word per nucleus (#7876). Record:
+>   `docs/audits/2026-11-15-gg-rule-rescopes-old-letter-binding.md`.
 >
 >   🛑 **"A bond factor above 1" is NECESSARY, NOT SUFFICIENT — do not read the
 >   sentence above as "find an attractive letter and the sign follows"** (owner

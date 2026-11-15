@@ -1,0 +1,38 @@
+Section 2.3 Monoidal 2-categories with Duals
+
+and tensor product of morphisms in C, respectively. Vertical composition is just the
+regular composition of morphisms in C.
+
+Conversely, given C,a 2-category with one object *, by reversing the rules in the
+above paragraph one can define a monoidal category.
+
+Thus, a 2-category is in some sense a generalization of monoidal categories. And
+similar to the case of monoidal categories, the coherence theorem for 2-categories shows
+that every 2-category is equivalent to a strict 2-category in an appropriate sense.
+
+A (semi-strict) monoidal 2-category with duals is a (strict) 2-category C with the
+
+following structures:
+e For A,B €C°, there is an object A@ BE C°;
+
+e For f € Hom'(A, B),C € C°, there are 1-morphisms f @C € Hom!(A@C,B®C)
+and C'@ f € Hom'(C ® A,C @ B);
+
+e For a € Hom*(f,g),C € C°, there are 2-morphisms a @ C € Hom?(f @ C,g @ C)
+and C@a€ Hom?(C' ® f,C ® q);
+
+e For f € Hom! (A, B),g € Hom!(C, D), there is a 2-morphism, called the tensorator,
+
+@jg i (A@g)o(f @D) = (fF @C)o(B@g);
+e There is a unit object 1 € C°;
+
+e For f € Hom'(A, B), there is a 1-morphism f* € Hom!(B, A), a 2-morphism
+ip: 14 => fo f*, and a 2-morphism e; : f* o f => Ig called the dual, the unit,
+
+and the counit of f, respectively;
+
+e For A € C®, there is an object A* € C°, a l-morphism i, : 1 —> A® A* and
+
+a 1-morphism e,4 : A* @ A —> 1 called the dual, the unit and the counit of A,
+
+29

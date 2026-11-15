@@ -1,0 +1,1 @@
+The reader should appreciate that in this way every subfactor with finite index provides us with a $\7C$-linear $*$-2-category with two objects and with non-strict spherical structure, thus in particular with a Morita context for the tensor categories $\Hom_{B\subset A}(A,A)$ and $\Hom_{B\subset A}(B,B)$.

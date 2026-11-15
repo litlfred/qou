@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2205.06874v2
-doc_title: "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg"
+doc_title: "State sum models with defects based on spherical fusion categories"
 section_id: sec-009-diagrams-for-pivotal-2-categories
 section_title: "Diagrams for pivotal 2-categories"
 section_number: null
 pages: 13-14
 source_pdf: 2205.06874v2.pdf
 source_sha256: 9b41365160c17ab4
-doc_brief: "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg — We define a"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.951
-latex_coverage_ratio: 0.951
+latex_coverage_ratio: 1.0
+doc_brief: "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects."
 ---
 If the 2-category under consideration 
  is a pivotal 2-category in the sense \cite[Def.~A.12]{G14} or, more strictly, a planar 2-category in the sense of \cite[Def.~3.2.1]{BMS}, we use the diagrams for planar 2-categories introduced in \cite[Def.~3.5]{BMS}. The main examples are  $\mathrm{Mod}^\theta(\mac)$ and $\Bimod^\theta(\mac,\mad)$ from Theorem \ref{th:pivot}. 

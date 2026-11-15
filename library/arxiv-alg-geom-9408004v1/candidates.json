@@ -1,15 +1,13 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-alg-geom-9408004v1",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "d3bc00265294aa022d04eeb71dd63d3b7e866ed63f8428ecc88053e7b174e8a8",
   "file": "9408004v1.pdf"
  },
  "provenance": {
-  "title": "Eyal Markman 2 University of Michigan",
-  "authors": "To Professor Hirzebruch, on his 65 th birthday",
+  "title": "arXiv:alg-geom/9408004v1 9 Aug 1994",
+  "authors": "CALABI-YAU THREEFOLDS",
   "arxiv": {
    "id": "alg-geom/9408004",
    "version": "1",
@@ -18,11 +16,166 @@
   },
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
+  "candidates": 10,
+  "by_kind": {
+   "recommendation": 10
+  },
   "formalization_candidates": 0
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Given a C\u221esymplectic mani- fold (X , \u03c3) with Lagrangian \ufb01bration \u03c0 : X \u2192U, there is a natural a\ufb03ne structure on the \ufb01bers Xu [AG,2.42]; so if these \ufb01bers are compact, they must be tori.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-front-matter-page-2.md",
+   "section_title": "Front matter (page 2)",
+   "pages": "2-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Equivalently, \u03c3 should be invariant under translation by the section sm,n : u 7\u2192m + p(u)n, for any m, n \u2208Zg, which happens if and only if the sections sm,n are La- grangian.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-006-front-matter-page-7.md",
+   "section_title": "Front matter (page 7)",
+   "pages": "7-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The result is that in order to have a Lagrangian structure, p\u2212must be locally constant on U, while p+ satis\ufb01es a cubic condition as above.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-007-front-matter-page-8.md",
+   "section_title": "Front matter (page 8)",
+   "pages": "8-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "At \ufb01rst sight it also seems plausible that a maximal \u03bd(B), as well as each component of \u03bd(A0( f X/ f M)), should actually be Lagrangian; there are, however, counterexamples to this.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-017-front-matter-page-18.md",
+   "section_title": "Front matter (page 18)",
+   "pages": "18-18",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It is not clear (to us) what the precise mathematical formulation of this conjecture should be.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-020-front-matter-page-21.md",
+   "section_title": "Front matter (page 21)",
+   "pages": "21-21",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This should satisfy: (a) dt : H1(TX) \u223c\u2192H1,1(X\u2032) is an isomorphism.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-020-front-matter-page-21.md",
+   "section_title": "Front matter (page 21)",
+   "pages": "21-21",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "(Ideally, we should be able to extract both partition functions from the system, and the formal transform of step (2) should interchange them.) An abstract system should consist at least of the following data: 22",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-021-front-matter-page-22.md",
+   "section_title": "Front matter (page 22)",
+   "pages": "22-22",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "If this is so, one must be able to extract both the A- and B-model data (i.e. the two partition functions) from a given system.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-022-front-matter-page-23.md",
+   "section_title": "Front matter (page 23)",
+   "pages": "23-23",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This of course depends on the discrete choice of a Lagrangian basis for H3(X, Z); we do not see how to avoid this choice, so it must either be built into the axioms, or be deducible somehow from knowing the collection of all normal functions (and in particular, their monodromy).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-022-front-matter-page-23.md",
+   "section_title": "Front matter (page 23)",
+   "pages": "23-23",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "By continuity, one expects no contribution from any locally constant normal function, so w\u03bd should depend only on \u03b4\u03bd.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-024-front-matter-page-25.md",
+   "section_title": "Front matter (page 25)",
+   "pages": "25-25",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
 }

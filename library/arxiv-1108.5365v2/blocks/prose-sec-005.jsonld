@@ -2,15 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1108.5365v2/blocks/prose-sec-005",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "The quantum dilogarithm",
-  "pageStart": 16,
-  "pageEnd": 19,
-  "text": "../sections/sec-005-3-the-quantum-dilogarithm.md",
+  "title": "The multiplicative unitary",
+  "pageStart": 13,
+  "pageEnd": 15,
+  "text": "../sections/sec-005-24-the-multiplicative-unitary.md",
   "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1108.5365v2",
   "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1108.5365v2",
   "provenance": "ingested"

@@ -1,0 +1,1 @@
+The claim should follow from the work of Iwaki and Nakanishi \cite{IN}, although a careful proof would require additional continuity arguments to take care of differentials with multiple saddle connections.

@@ -1,0 +1,1 @@
+What this must mean is that in the formula for $\mathcal{O}_N^{(2)}(z_1,z_2)$ for $z_1$ and $z_2$ close, and both near the circle, there must be an edge correction, which leads to a counter-balancing divergence.

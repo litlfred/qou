@@ -8,6 +8,7 @@ pages: 29-31
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
 toc_source: inferred
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 27 sections: Front matter; INTRODUCTION; PRELIMINARIES"
 ---
 For those readers interested in the history of the Biot–Savart Law, we recommend R. A. R.
 Tricker’s little volume, Early Electrodynamics, The First Law of Circulation.49 It contains exten-
@@ -29,8 +30,6 @@ substantial help in reviewing and revising the manuscript.
 903
 J. Math. Phys., Vol. 42, No. 2, February 2001
 The Biot–Savart operator
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 5L. Woltjer, ‘‘A theorem on force-free magnetic ﬁelds,’’ Proc. Natl. Acad. Sci. U.S.A. 44, 489–491 ~1958!.
 6H. K. Moffatt, ‘‘The degree of knottedness of tangled vortex lines,’’ J. Fluid Mech. 35, 117–129 ~1969!.
 7C. F. Gauss, ‘‘Integral formula for linking number,’’ in Zur Mathematischen Theorie de Electrodynamische Wirkungen,
@@ -114,8 +113,6 @@ Mathematics, No. 1607 ~Springer-Verlag, Berlin, 1995!.
 904
 J. Math. Phys., Vol. 42, No. 2, February 2001
 Cantarella, DeTurck, and Gluck
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 45J. Cantarella, D. DeTurck, and H. Gluck, ‘‘Hodge decomposition of vector ﬁelds on bounded domains in 3-space,’’ Am.
 Math. Mon. ~to appear!.
 46D. Grifﬁths, Introduction to Electrodynamics, 2nd ed. ~Prentice–Hall, New Jersey, 1989!.
@@ -129,5 +126,3 @@ Philosophy ~October, 1820!.
 905
 J. Math. Phys., Vol. 42, No. 2, February 2001
 The Biot–Savart operator
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42

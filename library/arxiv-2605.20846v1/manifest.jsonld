@@ -11,6 +11,7 @@
   ],
   "title": "Topological Field Theories and the Algebraic Structures of the Two-Sphere",
   "contains": [
+    "library/arxiv-2605.20846v1/sections/sec-front-matter",
     "library/arxiv-2605.20846v1/sections/sec-000",
     "library/arxiv-2605.20846v1/sections/sec-001",
     "library/arxiv-2605.20846v1/sections/sec-002",
@@ -27,10 +28,13 @@
     "library/arxiv-2605.20846v1/sections/sec-013",
     "library/arxiv-2605.20846v1/sections/sec-014",
     "library/arxiv-2605.20846v1/sections/sec-015",
-    "library/arxiv-2605.20846v1/sections/sec-016"
+    "library/arxiv-2605.20846v1/sections/sec-016",
+    "library/arxiv-2605.20846v1/sections/sec-017",
+    "library/arxiv-2605.20846v1/sections/sec-018",
+    "library/arxiv-2605.20846v1/sections/sec-019"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -52,8 +56,8 @@
       "stamp_date": "20 May 2026"
     },
     "doi": null,
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

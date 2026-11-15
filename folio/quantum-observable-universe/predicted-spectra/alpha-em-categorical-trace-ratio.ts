@@ -43,6 +43,16 @@ export default proposition({
   ],
   authorNotes: [
     {
+      kind: "caveat",
+      date: "2026-09-05",
+      body: "Pin mismatch measured 2026-09-05 (bean qou-i229) by computations/probes/two_blocks_publish_the_two_sides_of_one_identity_at_different_pins_probe.py (6/6).",
+    },
+    {
+      kind: "note",
+      date: "2026-09-05",
+      body: "**Corrected 2026-09-05.** This section previously read *\"The witness assertion\nvalidates this match: `delta-q-decoration.witness.json`.\"* That witness\ndeclares a **different** block (`def:delta-q-decoration`), carries\nMarkov-trace machinery rather than any of these four quantities, and is\nanchored `q0Anchor: proton` — so it validates nothing here and disagrees on\nthe pin. This is why the candidate-producer sweep found no witness among 3277\ncarrying more than one of this table's figures.",
+    },
+    {
       kind: "refined-framing",
       date: "2026-08-09",
       body:

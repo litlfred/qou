@@ -2,46 +2,61 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1312.3086v1",
  "source_sha256": "ff328e7c7cbdc70c",
- "brief": "Quantum repeater with Rydberg blocked atomic ensembles in fiber-coupled cavities — 7 sections: Introduction; The sequence; At the end of this sequence, the s",
- "extended": "**Quantum repeater with Rydberg blocked atomic ensembles in fiber-coupled cavities**\n\n*E. Brion, F. Carlier, V. M. Akulin*\n\n10 pp, 7 sections.\n\n**Outline.** Introduction; 2 The sequence; IV At the end of this sequence, the states of ; Discussion; Conclusion; Acknowledgments; 2 P+∞",
+ "brief": "Quantum repeater with Rydberg blocked atomic ensembles in ﬁber-coupled cavities — 10 sections: Front matter; Introduction; The model",
+ "extended": "**Quantum repeater with Rydberg blocked atomic ensembles in ﬁber-coupled cavities**\n\n*E. Brion, F. Carlier, V. M. Akulin*\n\n10 pp, 10 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 The model; 3 The scheme; 3.1 The different steps of the scheme; 3.2 Error detection and prevention; 4 A physical implementation; 5 Discussion; 6 Conclusion; A Derivation of the expression of the average ",
  "tokens": {
-  "brief": 39,
-  "extended": 70
+  "brief": 33,
+  "extended": 98
  },
  "sections": [
   {
-   "id": "sec-000-introduction",
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-4"
+   "pages": "1-2"
   },
   {
-   "id": "sec-001-2-the-sequence",
-   "title": "The sequence",
-   "pages": "4-5"
+   "id": "sec-001-2-the-model",
+   "title": "The model",
+   "pages": "2-3"
   },
   {
-   "id": "sec-002-iv-at-the-end-of-this-sequence-the-states-of-the",
-   "title": "At the end of this sequence, the states of the subn-",
-   "pages": "5-8"
+   "id": "sec-002-3-the-scheme",
+   "title": "The scheme",
+   "pages": "3-3"
   },
   {
-   "id": "sec-003-discussion",
+   "id": "sec-003-31-the-different-steps-of-the-scheme",
+   "title": "The different steps of the scheme",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-004-32-error-detection-and-prevention",
+   "title": "Error detection and prevention",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-005-4-a-physical-implementation",
+   "title": "A physical implementation",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-006-5-discussion",
    "title": "Discussion",
    "pages": "8-8"
   },
   {
-   "id": "sec-004-conclusion",
+   "id": "sec-007-6-conclusion",
    "title": "Conclusion",
    "pages": "8-9"
   },
   {
-   "id": "sec-005-acknowledgments",
-   "title": "Acknowledgments",
-   "pages": "9-9"
-  },
-  {
-   "id": "sec-006-2-p",
-   "title": "P+∞",
+   "id": "sec-008-a-derivation-of-the-expression-of-the-average-nu",
+   "title": "Derivation of the expression of the average number of steps in entanglement generation",
    "pages": "9-10"
   }
  ],

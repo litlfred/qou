@@ -1,6 +1,6 @@
 ---
 doc_id: disssubmission
-doc_title: "I NAUGURAL -D ISSERTATION T ANNAKIAN C ATEGORIES OF P ERVERSE S HEAVES ON A BELIAN V ARIETIES"
+doc_title: "Tannakian categories of perverse sheaves on abelian varieties"
 section_id: sec-050-bibliography
 section_title: "Bibliography"
 section_number: null
@@ -8,6 +8,7 @@ pages: 177-181
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
 toc_source: inferred
+doc_brief: "Tannakian categories of perverse sheaves on abelian varieties — 52 sections: Front matter; Introduction; Some commonly used notations"
 ---
 1. Andr´e, Y. and Kahn, B., Nilpotence, radicaux et structures monoidales, Rend. Sem.
 Mat. Univ. Padova 108 (2002), 107–209.

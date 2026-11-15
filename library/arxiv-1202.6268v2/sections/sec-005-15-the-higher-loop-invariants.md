@@ -4,13 +4,14 @@ doc_title: "THE QUANTUM CONTENT OF THE GLUING EQUATIONS"
 section_id: sec-005-15-the-higher-loop-invariants
 section_title: "The higher-loop invariants"
 section_number: 1.5
-pages: 6-7
+pages: 6-8
 source_pdf: 1202.6268v2.pdf
 source_sha256: 209af6ae25439050
-doc_brief: "THE QUANTUM CONTENT OF THE GLUING EQUATIONS — The gluing equations of a cusped hyperbolic 3-manifold M are a system of polynomial equations in the shapes of an ideal triangulation T of M that"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.778
-latex_coverage_ratio: 0.908
+latex_prose_ratio: 0.944
+latex_coverage_ratio: 0.944
+doc_brief: "THE QUANTUM CONTENT OF THE GLUING EQUATIONS — The gluing equations of a cusped hyperbolic 3-manifold M are a system of polynomial equations in the shapes of an ideal triangulation T of M that"
 ---
 []{#sub.nloop label="sub.nloop"}
 

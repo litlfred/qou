@@ -1,0 +1,63 @@
+MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 37
+
+Lemma 5.6. Let <(n), u(n), A(n), n > 0, be sequences satisfying the equations
+
+etn) = (7?) win =a
+
+a
+
+n(n) = > (") Mn =i).
+
+a
+
+Assume also that e(n) = (") f(n), where f is a polynomial such that f(0) = 0.
+
+Then (0) = 0, A(n) has finitely many nonzero values, and Y\(—1)"—!X(n)/2n =
+f'(0).
+Proof. Let us first consider any sequences é(n), p(n), and A(n) linked by the equa-
+tions of the lemma. Let E(z), M(z), and L(z) be their generating functions (i.e.
+E(z) = Dy>0 e(n)z” etc.). We claim that
+pe) EVIE, bevE®,
+
+~  2(1 — 42) 2/1 —4z2
+To see this, it suffices to consider the case A; = 64; for some k. In this case,
+
+m2) (:") ("; ‘ me zy (: *) (") pt
+
+in
+
+But the function
+2p+
+F(z) := > ( - ") ap
+equals
+
+R(2)=—4 (=e *).
+
+V1l—-4z 22
+
+as may be easily seen by induction from the recursion F,, = z~!(F,-1—F,—2), r > 2.
+Substituting this in the formula for E(z), one gets (after trivial simplifications)
+
+pay -LtvIZE i-viE®,
+(= 2(1 — 42) ( 2/1 —dz
+
+as desired.
+
+Now assume that ¢(n) satisfies the polynomiality condition. This means that
+E(z) = P(2d)|:-0 7 where P is a polynomial with vanishing constant term.
+To prove our claim, it suffices to consider the case P(z) = (1+ a)* — 1, where a is
+a formal parameter (so P’(0) = In(1 + a)). In this case we get
+
+1 1
+
+E(z)= _
+@) Vl-4t+ajz V1-4z
+Hence,
+1 1
+L(u) = (————-. - 1)
+l+u’/1— 4au(1 +x)
+Therefore,
+
+So(- 1) /2k = if L(u)du/u = >» (””) (-1)?"!a? [ 21-2)? lde.
+
+k ~ pel

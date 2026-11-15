@@ -10,7 +10,8 @@ source_sha256: 1660907865346bdf
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.925
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.987
+doc_brief: "arXiv:hep-ph/0003017v2 26 Jun 2000 — Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems."
 ---
 []{#failure label="failure"}
 

@@ -3,12 +3,17 @@
  "doc_id": "deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin",
  "source_sha256": "db149864ce367da2",
  "brief": "Triple linking numbers, ambiguous Hopf invariants and integral formulas for three-component links — Three-component links in the 3-dimensional sphere were classi- fied up to link homotopy by John",
- "extended": "**Triple linking numbers, ambiguous Hopf invariants and integral formulas for three-component links**\n\n*AND INTEGRAL FORMULAS FOR*\n\n33 pp, 9 sections.\n\n**Abstract.** Three-component links in the 3-dimensional sphere were classi- fied up to link homotopy by John Milnor in his senior thesis, pub- lished in 1954. A complete set of invariants is given by the pairwise linking numbers p, q and r of the components, and by the residue class of one further integer µ, the “triple linking number” of the ti- tle, which is well-defined modulo the greatest common divisor of p, q and r. To each such linkL we associate a geometrically natural charac- teristic map gL from the 3-torus to the 2-sphere in such a way that link homotopies of L become homotopies of gL. Maps of the 3-torus to the 2-sphere were classified up to homotopy by Lev Pontryagin in 1941.\n\n**Outline.** Statement of results; Background and motivation; Explicit formula for the characteristic map gL; An asymmetric version of the characteristic ma; Sketch of the topological proof of Theorem A; Sketch of the algebraic proof of Theorem A; Sketch of the proof of Theorem B; The fundamental solution of the Laplacian on t; Completing the proof of Theorem B\n\n**Extracted claims (proposals, not verified).**\n- Theorem: A. The pairwise linking numbers p, q and r of the link L are\n- Theorem: B. If the pairwise linking numbers p, q and r of the three\n- Theorem: s A and B above give a similar formulation of Milnor’s triple\n- Proposition 1: The fundamental solution of the scalar Laplacian on the",
+ "extended": "**Triple linking numbers, ambiguous Hopf invariants and integral formulas for three-component links**\n\n*AND INTEGRAL FORMULAS FOR*\n\n33 pp, 10 sections.\n\n**Abstract.** Three-component links in the 3-dimensional sphere were classi- fied up to link homotopy by John Milnor in his senior thesis, pub- lished in 1954. A complete set of invariants is given by the pairwise linking numbers p, q and r of the components, and by the residue class of one further integer µ, the “triple linking number” of the ti- tle, which is well-defined modulo the greatest common divisor of p, q and r. To each such link L we associate a geometrically natural charac- teristic map gL from the 3-torus to the 2-sphere in such a way that link homotopies of L become homotopies of gL. Maps of the 3-torus to the 2-sphere were classified up to homotopy by Lev Pontryagin in 1941.\n\n**Outline.** Front matter; Statement of results; Background and motivation; Explicit formula for the characteristic map gL; An asymmetric version of the characteristic ma; Sketch of the topological proof of Theorem A; Sketch of the algebraic proof of Theorem A; Sketch of the proof of Theorem B; The fundamental solution of the Laplacian on t; Completing the proof of Theorem B",
  "tokens": {
   "brief": 48,
-  "extended": 388
+  "extended": 307
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-3"
+  },
   {
    "id": "sec-000-statement-of-results",
    "title": "Statement of results",
@@ -59,8 +64,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

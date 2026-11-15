@@ -1,0 +1,51 @@
+44 Don Zagier
+
+SL(2,Z) (bosonic case) or at least °(2) (fermionic case), even though the indi-
+vidual functions f4,s,c will in general have level greater than 2. For instance,
+in the Rogers-Ramanujan identities given above, each of the two functions
+(23) is modular (up to multiplication by a root of unity) only on the modular
+group Io(5) of level 5 (and on a yet much smaller group if we do not allow
+scalar multiples), but the vector space which they span is invariant under all
+of SL(2,Z) by eq. (24). From a purely mathematical point of view, the mo-
+tivation for the conjecture comes from the asymptotic analysis, discussed in
+subsection B, and from the known examples, some of which we now describe.
+
+B. Examples and discussion. In this subsection we describe a number of
+examples which give numerical support for Nahm’s conjecture and which show
+that two plausible alternative versions of the conjecture—one with a stronger
+and one with a weaker hypothesis on the matrix A—are not tenable.
+
+(a) Rank one examples. If r = 1, then the parameters A, B and C are
+simply rational numbers and exactly seven cases are known where f4,8,c(2)
+is a modular function, given by the following table:
+
+Table 1. The modular functions fa,s,c for r= 1
+
+A B C fa,p,c(2)
+2 0 —1/60 95,1(z)/n(z)
+1 11/60 95,2(z)/n(z)
+1 0  =1/48 | n(z)?/n(2/2)n(2z)
+1/21/24 n(2z)/n(z)
+1/2 1/24 2n(2z)/n(z)
+1/2 0 = 1/40] 45,1(2/4)/08(2)
+1/2 1/40 95,2(2/4)/0s(z)
+
+with 05,;(z) and n(z) as in (23) and 03(z) = 7,,.5(4) gq? /8 = n(z)n(4z)/n(22).
+The first two entries in this table are just the Rogers-Ramanujan identities
+with which we began the discussion, and the product 7(z)fa,e,c(z) in all
+
+An?
+
+seven cases is a unary theta series (i.e., a function )>e(n)q*” with e(n) an
+even periodic function and A a positive rational number). We will see in sub-
+section B that these are the only triples (A, B,C) € Q4 x Q? for which f4.p,c
+is modular. On the other hand, the element €4 when r = 1 consists of a single
+element [Q:], where 1 — Qi = Q?, so by the discussion in example (c) of §2B
+we know that the only values of A > 0 for which condition (i) of the conjecture
+is satisfied are A = 1/2, 1 or 2 (corresponding to Q; = (—1+ V5)/2, 1/2 and
+(3 — V5)/2, respectively). Thus Nahm’s conjecture holds for r = 1.
+
+(b) Totally real, or torsion in the Bloch group? In the above examples,
+the element Q; was a totally real algebraic number. It is reasonable to ask
+whether the requirement for modularity is really condition (i) of the conjecture
+or merely the more elementary (but stronger) condition that equation (25) has

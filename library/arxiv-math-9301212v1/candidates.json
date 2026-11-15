@@ -1,0 +1,46 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-9301212v1",
+ "source": {
+  "structure_sha256": "029787800ddf73e564ca6ad432065a5b807b660e394c5624d951be82153f8c45",
+  "file": "9301212v1.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:math/9301212v1 [math.GT] 1 Jan 1993",
+  "authors": "AMERICAN MATHEMATICAL SOCIETY",
+  "arxiv": {
+   "id": "math/9301212",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "1 Jan 1993"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "recommendation": 1
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "(It was proved in [FH] that \ufb01nite energy implies tame.) Since an essential knot must have three or more crossings, we obtain the following Corollary.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-002.md",
+   "section_title": "Page 2",
+   "pages": "2-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

@@ -8,7 +8,9 @@ pages: 30-31
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
 toc_source: inferred
+doc_brief: "Reidemeister torsion on character varieties — 52 sections: Front matter; Introduction; Character varieties and Reidemeist"
 ---
+The tree
 Let K be an extension of k, we deﬁne a k-discrete valuation as a surjective map
 v : K →Z ∪{∞} such that
 — v(0) = +∞
@@ -51,4 +53,3 @@ that vertices at distance 1 are linked by an edge. This graph is connected since
 any two vertices admit representatives L, L′ such that L = Ov ⊕Ov and L′ =
 Ov ⊕td([L],[L′])Ov, hence a path joining L to L′ can be constructed as Lk = Ov ⊕tkOv
 with k = 0, . . . , d([L], [L′]). In fact it can be shown that T is a tree, see [SB77].
-1.3.2

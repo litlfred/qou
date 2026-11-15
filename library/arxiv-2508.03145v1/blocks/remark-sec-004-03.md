@@ -1,1 +1,0 @@
-Onecanalsogiveamoreintrinsicdescriptionof QCohLSym(F ),

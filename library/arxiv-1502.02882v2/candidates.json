@@ -1,0 +1,166 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1502.02882v2",
+ "source": {
+  "structure_sha256": "43641c6f3aed63dd287a423ba8abcda0b4d36b3df9bdd585fed35339436d8f01",
+  "file": "1502.02882v2.pdf"
+ },
+ "provenance": {
+  "title": "Fusion categories via string diagrams",
+  "authors": "Bruce Bartlett",
+  "arxiv": {
+   "id": "1502.02882",
+   "version": "2",
+   "primary_class": "math.QA",
+   "stamp_date": "20 Jul 2015"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 9,
+  "by_kind": {
+   "recommendation": 9
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The rule (at least for simple objects V ) is that if left and right dual structure maps appear in a diagram, then they cannot be chosen independently but must be correlated in the following way: when paired together, they must give the fusion dimension of V .",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This equation should be regarded as an infinite number of equations, one for each fixed parenthesis scheme (this may include insertions of the unit object $1$ of the monoidal category) of the source and target objects, which are taken to be the same on both sides of the equation.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-21-conventions-for-general-monoidal-categories.md",
+   "section_title": "Conventions for general monoidal categories",
+   "pages": "4-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "For each such choice of parenthesis schemes, one should insert an appropriate sequence of associators and unit isomorphisms in order to make each side well-typed.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-21-conventions-for-general-monoidal-categories.md",
+   "section_title": "Conventions for general monoidal categories",
+   "pages": "4-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Then we can estimate the operator norm of the operators $A_j$ from the proof of Theorem \\ref{realpositive} as follows: \\begin{eqnarray*} \\| A_j \\mathbf{x} \\| &=& \\sum_{k} d^+_k \\left| \\sum_i \\Tr(T^i_{jk}) x_i \\right| \\\\ & \\leq & \\sum_{k, i} d^+_k N^i_{jk} |x_i| \\\\ & = & \\sum_{i,k} d^+_k N^k_{j i^*} |x_i| \\\\ & = & d^+_j \\sum_i d^+_{i^*} |x_i| \\\\ & = & d^+_j \\|x\\| \\, . \\end{eqnarray*} In the second line we used $\\Tr(T^i_{jk}) \\leq N^i_{jk}$, in the third line the symmetry $N^i_{jk} = N^k_{ji^*}$, in the fourth line we used the definition of the Frobenius-Perron dimensions, and in the fifth line we used $d^+_{i^*} = d^+_{i}$. \\end{proof} \\begin{cor} In a pseudo-unitary fusion category, the pivotal operators $T^i_{jk}$ are the identity maps. \\label{pseudo_unitary} \\end{cor} \\begin{proof} Combining eq. \\eqref{FPeqn} with Proposition \\ref{homprop} and Corollary \\ref{char_pseudo_cor}, we have \\[ d_j d_k = \\sum_i \\Tr(T^i_{jk}) d_i \\leq \\sum_i N^i_{jk} d_i = d_j d_k \\] and hence we must have $T^i_{jk} = \\id$. \\end{proof}",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-34-positivity-of-paired-dimensions.md",
+   "section_title": "Positivity of paired dimensions",
+   "pages": "14-16",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Firstly, every ring homomorphism \\[ [\\Rep(G)] \\rightarrow \\mathbb{C} \\] must take the form $V \\mapsto \\Tr_V(g)$ for some fixed $g \\in G$ --- because a character like this certainly {\\em is} a ring homomorphism, and there are as many such distinct characters as there are conjugacy classes in the group, which must exhaust all the ring homomorphisms since $[\\Rep(G)]_\\mathbb{C}$ is isomorphic to the space of functions on the conjugacy classes.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-018-52-fusion-homomorphisms.md",
+   "section_title": "Fusion homomorphisms",
+   "pages": "27-28",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Secondly, in $\\Rep(G)$ the paired dimensions $d_{\\{i,i^*\\}}$ are just $\\dim(V_i)^2$, so that a fusion homomorphism must satisfy $| f(V_i) | = \\dim V_i$. \\end{proof}",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-018-52-fusion-homomorphisms.md",
+   "section_title": "Fusion homomorphisms",
+   "pages": "27-28",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "For a 2-cocycle A \u2208Z2(C), that is, a collection of linear opera- tors Ai jk satisfying (43),the vanishing of H2(C) means that Ai jk must take the form Ai jk = (cj \u2212ci + ck) id (47) for some scalars ci, cj, ck.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-022-62-vanishing-of-cohomology.md",
+   "section_title": "Vanishing of cohomology",
+   "pages": "32-36",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "(48) The vanishing of H2(C) means that the equations (48) must force the ai jk, \u03b1 to all be equal for di\ufb00erent \u03b1 and furthermore take the form (47).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-022-62-vanishing-of-cohomology.md",
+   "section_title": "Vanishing of cohomology",
+   "pages": "32-36",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Thus Ocneanu rigidity implies in particular that su\ufb03ciently many associators must be nonzero.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-022-62-vanishing-of-cohomology.md",
+   "section_title": "Vanishing of cohomology",
+   "pages": "32-36",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

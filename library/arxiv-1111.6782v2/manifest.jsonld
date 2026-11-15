@@ -9,15 +9,16 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1111.6782v2",
+  "title": "Stationary Points of O’Hara’s Knot Energies",
   "contains": [
     "library/arxiv-1111.6782v2/sections/sec-front-matter",
     "library/arxiv-1111.6782v2/sections/sec-000",
     "library/arxiv-1111.6782v2/sections/sec-001",
-    "library/arxiv-1111.6782v2/sections/sec-002"
+    "library/arxiv-1111.6782v2/sections/sec-002",
+    "library/arxiv-1111.6782v2/sections/sec-003"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -27,7 +28,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1111.6782v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1111.6782v2.pdf",
     "source_sha256": "5acfde49432e59e3329c6e402a39496934d5df3682eed4b337f9c32c1eca81a1",
     "pages": 19,

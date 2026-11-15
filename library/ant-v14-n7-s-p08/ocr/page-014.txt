@@ -1,0 +1,45 @@
+1924 Lillian B. Pierce and Junyan Xu
+
+(4) = (1): Now we suppose that there exists such an n x (n—1) matrix B and f €k[x2,..., x,] such
+that F(x) = f (xB). Since multiplication by B is a linear map from k” to k”~!, the nullspace of this map
+is nontrivial and hence there exists 0 4 m € k” such that mB = 0; consequently
+
+F(x) = f(xB) = f(xB+mB) = f((x+m)B)= F(x+m).
+This implies (2), which certainly implies (1), concluding the proof of the lemma. oO
+
+3C. All but finitely many primes. In the introduction we stated that forms that are “admissible” over Z
+are “admissible” over F, for all but finitely many primes. The formal statement is here:
+
+Lemma 3.4. Let A > 1 be fixed. Let F € Z[x,,...,%n] and suppose F factors as F = GH with
+G, H EZ[x,..., Xn] and H being A-th power-free over Z. Furthermore, assume that H is nondegenerate
+over Z, in the sense that there isno A € GL,(Z) such that H (x A) € Z[x2, ..., Xn]. Then for all but finitely
+many primes q, the reduction of F modulo q is (A, q)-admissible.
+
+Proof. For a fixed prime q, we reduce F, G, H modulo q to f, g,h € Fg[x1,.-., Xn]. By Lemma 3.22
+of [Xu 2018], since H is A-th power-free over Z then for all but finitely many primes g, h is A-th
+power-free over F,. Letting Q; denote this finite set of exceptional primes, then for all g ¢ Q1, we have
+that f = g4h with h being A-th power-free over F,. As a consequence of Lemma 3.2 (6), since H is
+nondegenerate over Z, the reduction h of H modulo gq can be invariant under a nontrivial translation in Fe
+only for finitely many primes g; we will call this exceptional set Q2. Finally, let Q3 denote the primes
+q < deg F. We now proceed to consider the primes g ¢ Q; U Q2 U Q3; for such primes, / is not invariant
+under any nontrivial translation in F”, and (3) in Lemma 3.3 shows that cannot be made independent of
+any indeterminate by a linear change of variables in GL, (F,). This proves the lemma. (Here we excluded
+primes in Q3 because we cite Lemma 3.3, but we note that the specific implications of this lemma that
+we employ here do not need the assumption q > deg F.) oO
+
+3D. Permutations of variables. Within the Burgess method, we will use a variant of the Menshov—
+Rademacher method for deducing bounds for maximal moments from nonmaximal moments. To carry
+out this argument in our setting, we will need to reorder the variables x, x2,..., xX, in F(x) so that a
+corresponding tuple of parameters (k;, ...,k,) satisfies the ordering ky < kz <--+-<k,. Thus we are led
+to consider forms resulting from F when the variables are permuted. For any permutation z of {1,...,n},
+define the form F(X) from the form F(X) by setting F(X 1,..., Xn) = F (Xa), --., Xxin))-
+
+Lemma 3.5. Let A > | and a prime q be fixed. If a form F € [x1,..., Xn] has the property that its
+reduction modulo q is (A, q)-admissible, then for every permutation m on a set of n elements, the
+
+reduction modulo q of Fz is (A, q)-admissible.
+
+Proof. Letting f denote the reduction of F modulo q, we write f = g4h with h being A-th power-free
+over F,; then correspondingly for the permuted versions, if f, denotes the reduction of F, modulo q
+then fr =(gz)4h_ with h, being A-th power-free over Fg. Moreover, h can be made independent of at
+least one variable after a GL, (F,) change of variable if and only if hz can. oO

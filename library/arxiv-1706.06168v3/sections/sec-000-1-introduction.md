@@ -4,13 +4,13 @@ doc_title: "A Representation Theoretic Explanation of the Borcea-Brändén Chara
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
-pages: 1-4
+pages: 1-5
 source_pdf: 1706.06168v3.pdf
 source_sha256: ab3383a95f369922
 toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.872
-latex_coverage_ratio: 0.993
+latex_prose_ratio: 0.97
+latex_coverage_ratio: 0.991
 doc_brief: "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨and´en characterized all linear operators on multivariate polynomials which preserve the"
 ---
 In 1914, Pólya and Schur [@polya1914zwei] characterized the set of diagonal linear operators on polynomials which preserve real-rootedness. Since this seminal paper, much work has been done in extending this characterization to other classes of linear operators. This program in essence came to a close in 2009 with a paper of Borcea and Brändén [@bb1], which gave a complete characterization of linear operators on polynomials which preserve real-rootedness.

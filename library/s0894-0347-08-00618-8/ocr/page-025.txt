@@ -1,0 +1,61 @@
+NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS 545,
+
+Note that since the Rayleigh/h-NLC+ property is also closed under conditioning,
+projections, and external fields, Theorem [4.8] and slight modifications of the above
+arguments actually yield the following stronger version of Theorem [4.9]
+
+Theorem 4.10. [fj € Py is PHR, then it is CNA+.
+
+Since homogeneous Rayleigh polynomials need not be stable, strongly Rayleigh
+=> PHR strictly. As we will see in {7 one also has PHR > CNA+ strictly.
+
+4.3. Stochastic domination and truncations. Recall the notion of stochastic
+domination from Definition 2.14] in It turns out that for strongly Rayleigh
+measures, stochastic domination is intimately connected with central notions in
+the theory of stable and real-rooted polynomials, namely the notions of interlacing
+zeros and proper position [7] [8] [66]. In particular, this connection allows
+us to extend one of Lyons’ main results and to answer Pemantle’s questions
+on stochastic domination for truncations of “negatively dependent” measures [65]
+
+(cf. $2.5).
+
+4.3.1. Partial orders for strongly Rayleigh measures and polynomials. Let a, <
+
+a2 <+++ <a, and fy < By <---< Bm be the zeros of two real-rooted polynomials
+p,q € R{z]. These zeros are interlacing if they can be ordered so that either ay <
+By < ag < Bg < +++ or By < ay < By < ag <---. If the zeros of p,q interlace,
+then the Wronskian W\p, q| := p'q — pq’ is either non-negative or non-positive on
+the whole real axis R; see, e.g., [50] [66]. We say that p and q are in proper position,
+denoted p < gq, if the zeros of p and q interlace and W[p,q| < 0. For technical
+reasons, we also say that the zeros of the polynomial 0 interlace the zeros of any
+(non-zero) real-rooted polynomial and write 0 < p and p < 0.
+
+The following theorem proved in provides a notion of proper position for
+multivariate polynomials.
+
+Theorem 4.11. Let f,g € R[a,...,2n]. The following are equivalent:
+
+(1) The polynomial g +if € C[a,..., Zn] is stable.
+
+(2) The polynomial g + zn4if € Riz . ++ 32n2n41] ts real stable.
+
+(3) For all \ € RY and pw € R” we have
+f(At+ ph) K gt + 1),
+where f (At + pw) = f(Ait + wa,..-,Ant + un), EC.
+
+We say that the polynomials f,g € R[z,...,2n] are in proper position, written
+f <4, if any of the equivalent conditions in Theorem [4.1 ]Jare satisfied.
+
+Remark 4.1. The typical proper position is between a real stable polynomial and
+any of its partial derivatives: if f € R{z1,...,2n] is real stable, then 0jf < f
+for all j € [n]. If f < g and a is a real number, then either f(a, z2,...,2n) <
+G(O, 22,++.,2n) OF f(a, 22,..-,2n) = g(a, 22,..-, Zn) = 0; see [9]. Note also that by
+
+Theorem [4.11] (3) one has f <g @ af « 6g for any a, 3 € Ry.
+
+We define a partial order < on the set of strongly Rayleigh probability measures
+on 2!") as follows.
+
+Definition 4.1. Let SR, be the set of strongly Rayleigh probability measures on
+al"]. First, define a (preliminary) partial order <’ on SR, by setting p<! v if there
+exists a sequence of strongly Rayleigh probability measures ju = uo, [1,--., We = V

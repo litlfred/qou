@@ -1,0 +1,69 @@
+---
+doc_id: springer-1976-invent-36-173
+doc_title: "springer-1976-invent-36-173"
+section_id: page-007
+section_title: "Page 7"
+pages: 7-7
+pdf_page: 7
+source_pdf: springer-1976-invent-36-173.pdf
+source_sha256: dc3217946960a8e0
+text_source: ocr
+granularity: page
+doc_brief: "Trigonometric Sums, Green Functions of Finite Groups and Representations of Weyl Groups — 35 sections: Page 1; Page 2; Page 3"
+---
+Trigonometric Sums 179
+
+(ii) (p=2, G quasi-simple). If g' does not contain strongly regular elements
+then G is either of type B, (122), C,, D2,, E;, Eg, Fy, Gz (i.e. one of the types
+whose Weyl group contains —1) or G is isomorphic to SO(41+2) for some l21.
+
+If g’ does not contain strongly regular elements then by 2.4 some w+1 acts
+trivially on g’. We now use the following lemma. For part (i) of it see e.g. [22,
+p. 210] and part (ii) is a direct consequence of (i).
+
+2.6. Lemma. Let I be a finite group of linear transformations of a real vector
+space V, fixing a lattice L. Let | be a prime number and let } be the transformation
+of L/IL induced by yeTl.
+
+(i) If y+1, }=1, then |=2 and the order of y is a power of 2;
+
+(ii) If the kernel A of the reduction map y+>j is nontrivial it is a normal
+2-subgroup A of I’. The isotypic subspaces of V for A are permuted by the elements
+of T. ;
+
+The character group X of T is a W-module and there is a W-equivariant
+isomorphism ¢: X @zk —> t’, with
+
+<A, $(A@x)> =xdA(A).
+
+So the action of W on t’ is obtained by extension of the base field from the action
+of W on X/pX. We can then apply 2.6, with T=W, V=X @,R, L=X@l, l=p
+and 2.5 (i) follows from 2.6 (i). It remaining to prove 2.5 (ii).
+
+So let p=2, G quasi-simple. If —1eW then no strongly regular elements
+exist in t’. Let —1¢W and assume that (in the previous situation) the group 4
+is nontrivial. Now G is of one of the types A,,D,,,,,E,. A Weyl group of type
+A, (i.e. S,,,) does not contain a nontrivial normal 2-subgroup if !>1, and neither
+does the Weyl group of type E, (which is an extension of Z/2Z by a simple group
+of order 25920, see e.g. [5, p. 229]). A Weyl group of type D,,,, is a semi-direct
+product S,,,,-(Z/2Z)*'. We then must have 4¢(Z/2Z)?'. Using 2.6 (ii) it
+follows that we have equality. The assertion for this type can now be checked
+by looking at the 3 possible actions of W on X.
+
+2.7. Lemma. Let f: G—> G, be a separable morphism, whose kernel is central.
+If A’ég; is strongly regular then so is (df) A’eg’.
+
+(df) is the dual of df: g—> g,. Since f is separable, df is surjective and (df)
+injective. Let f T= T,. We identify the Weyl group of T, in G, with W. We may
+assume A’et,. Then w- (df) A'=(df) A’ implies w- A’= A’, by the injectivity of
+df’. This proves the assertion.
+
+Let G be the adjoint group of G. It is characterized by the following properties:
+G is a semisimple adjoint group, there is a surjective morphism 2: G+ G whose
+scheme-theoretic kernel is central and which defines an isomorphism of the
+unipotent radical of any Borel subgroup onto its image.
+
+2.8. Lemma. There is a strongly regular element A’eG’ such that (dn) A’ is
+also strongly regular if and only if either p is odd and ® has no components of type
+Az, in case p=3; or if p=2 and G has only irreducible components of type A,
+(+1, 3) and Eg.

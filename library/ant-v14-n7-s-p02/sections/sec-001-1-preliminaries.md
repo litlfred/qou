@@ -8,6 +8,7 @@ pages: 6-14
 source_pdf: ant-v14-n7-s-p02.pdf
 source_sha256: fd2121feb180b282
 toc_source: inferred
+doc_brief: "Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values — 10 sections: Front matter; Introduction; Preliminaries"
 ---
 In this section we establish the framework of this paper. We review some deﬁnitions and properties about
 the pro-unipotent fundamental groupoid of P1 \ {0, µN, ∞}, some results from [Jarossay 2015] and we

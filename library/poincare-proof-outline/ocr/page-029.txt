@@ -1,0 +1,73 @@
+There is an h-line trough every two points in the Poincaré model
+
+lemma ex-poincare-line-two-points:
+assumes z 4 w
+shows 4 l. is-poincare-line | A z € circline-set 1 A w € circline-set 1
+using assms
+by (rule-tac z=poincare-line z w in exI, simp)
+
+lemma poincare-collinear-doubleton [simp]:
+assumes u € unit-disc v € unit-disc
+shows poincare-collinear {u, v}
+using assms
+using exz-poincare-line-one-point[of u|
+using ex-poincare-line-two-points|of u v|
+by (cases u = v) (simp-all add: poincare-collinear-def )
+
+4.2.3. Uniqueness of h-lines
+The only h-line between two points is the one obtained by the line-construction.
+
+First we show this only for two different points inside the disc.
+
+lemma unique-poincare-line:
+assumes in-disc: u # vu € unit-disc v € unit-disc
+assumes on-l: u € circline-set lv € circline-set | is-poincare-line |
+shows | = poincare-line u v
+using assms
+using unique-is-poincare-line[of u v | poincare-line u v]
+unfolding circline-set-def
+by auto
+
+The assumption that the points are inside the disc can be relaxed.
+
+lemma unique-poincare-line-general:
+assumes in-disc: u #4 v u # inversion v
+assumes on-l: u € circline-set lv € circline-set | is-poincare-line |
+shows | = poincare-line u v
+using assms
+using unique-is-poincare-line-generallof u v | poincare-line u v|
+unfolding circline-set-def
+by auto
+
+The explicit line construction enables us to prove that there exists a unique h-line through any given two
+h-points (uniqueness part was already shown earlier).
+
+First we show this only for two different points inside the disc.
+
+lemma ex1-poincare-line:
+assumes u # v u € unit-disc v € unit-disc
+shows 3! 1. is-poincare-line | \ wu € circline-set | A v € circline-set |
+proof (rule ex1I)
+let 21 = poincare-line uv
+show is-poincare-line ?1 A u € circline-set ?l A v € circline-set #1
+using assms
+unfolding circline-set-def
+by auto
+next
+fix |
+assume is-poincare-line | A u € circline-set 1 A v € circline-set |
+thus | = poincare-line uv
+using unique-poincare-line assms
+by auto
+qed
+
+The assumption that the points are in the disc can be relaxed.
+
+lemma ex1-poincare-line-general:
+
+assumes u # v u # inversion v
+
+shows 3! 1. is-poincare-line | \ wu € circline-set | A v € circline-set |
+proof (rule ex1I)
+
+29

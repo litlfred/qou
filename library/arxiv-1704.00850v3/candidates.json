@@ -1,0 +1,91 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1704.00850v3",
+ "source": {
+  "structure_sha256": "09dd9c99453ba251bf59236fd6af5f5061182c60f2bd752e82688dbd04680b31",
+  "file": "1704.00850v3.pdf"
+ },
+ "provenance": {
+  "title": "Estimating the spectral gap of a trace-class Markov operator",
+  "authors": "Qian Qin, James P. Hobert and Kshitij Khare",
+  "arxiv": {
+   "id": "1704.00850",
+   "version": "3",
+   "primary_class": "math.ST",
+   "stamp_date": "4 Apr 2019"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 4,
+  "by_kind": {
+   "recommendation": 4
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Since $\\Phi$ is Harris ergodic, $\\lambda_1$ must be strictly less than $1$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-2-markov-operators.md",
+   "section_title": "Markov operators",
+   "pages": "4-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Thus, under suitable conditions, for almost any $u \\in S_U$, $$\\begin{aligned} \\lim\\limits_{k \\to \\infty} s_k(u) &:= \\lim\\limits_{k \\to \\infty} \\int_{S_V} \\int_{S_U} \\frac{\\pi_{U|V}^2(u|v)}{\\psi(u)} \\pi_{V|U}(v|u') p^{(k)}(u,u') \\, \\mu(du') \\, \\nu(dv) \\\\ &= \\int_{S_V} \\int_{S_U} \\frac{\\pi_{U|V}^2(u|v)}{\\psi(u)} \\pi_{U,V}(u',v) \\, \\mu(du') \\, \\nu(dv) \\\\ &= \\frac{p(u,u) \\pi_U(u)}{\\psi(u)}. \\end{aligned}$$ As $k \\to \\infty$, we expect $$D'^2 = \\int_{S_U} s_k(u) \\, \\mu(du) - s_k^2 \\to \\int_{S_U} \\frac{p(u,u) \\pi_U(u)}{\\psi(u)} \\, \\mu(du) - 1.$$ Suppose that $\\psi(u) \\approx \\pi_U(u)$, then heuristically, $$\\int_{S_U} \\frac{p(u,u) \\pi_U(u)}{\\psi(u)} \\, \\mu(du) - 1 \\approx \\int_{S_U} p(u,u) \\mu(du) - 1 = s_1 - 1.$$ Thus, if the sum of $P$'s eigenvalues, $s_1$, is relatively small, we recommend picking $\\psi(\\cdot)$s that resemble $\\pi_U(\\cdot)$, with possibly heavier tails (to ensure that the moment condition [\\[momentconddual\\]](#momentconddual){reference-type=\"eqref\" reference=\"momentconddual\"} holds).",
+   "strength": null,
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-6-efficiency-of-the-algorithm.md",
+   "section_title": "Efficiency of the algorithm",
+   "pages": "15-17",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We do not recommend increasing $k$ indefinitely.",
+   "strength": null,
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-6-efficiency-of-the-algorithm.md",
+   "section_title": "Efficiency of the algorithm",
+   "pages": "15-17",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "As $\\lambda$ increases, so does $s_k$ for any given $k$, and thus one must increase $k$ in order to find a useful upper bound.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-007-71-gaussian-chain.md",
+   "section_title": "Gaussian chain",
+   "pages": "17-19",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

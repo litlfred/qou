@@ -1,0 +1,5091 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "angled-survey",
+  "pages": [
+    {
+      "page": 5,
+      "rotation": 0,
+      "drawings": 35,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. Left: the shape of an ideal tetrahedron is deﬁned by three dihedral angles. Right: the gluing of tetrahedra, seen from an ideal vertex."
+      ],
+      "labels": [
+        {
+          "text": "163",
+          "bbox": [
+            419.05,
+            60.6,
+            431.0,
+            67.6
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "FROM ANGLED TRIANGULATIONS TO HYPERBOLIC STRUCTURES",
+          "bbox": [
+            117.78,
+            60.8,
+            386.24,
+            67.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            427.45,
+            60.8,
+            431.42,
+            67.77
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "∞",
+          "bbox": [
+            167.91,
+            84.91,
+            177.87,
+            94.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "β",
+          "bbox": [
+            176.82,
+            130.4,
+            182.45,
+            140.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "α",
+          "bbox": [
+            135.4,
+            141.8,
+            141.77,
+            151.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "γ",
+          "bbox": [
+            203.94,
+            142.0,
+            209.09,
+            151.96
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "α",
+          "bbox": [
+            186.6,
+            152.4,
+            192.96,
+            162.36
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "γ",
+          "bbox": [
+            155.15,
+            153.49,
+            160.3,
+            163.46
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "β",
+          "bbox": [
+            158.85,
+            171.9,
+            164.48,
+            181.86
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "z",
+          "bbox": [
+            175.74,
+            177.19,
+            180.37,
+            187.15
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            150.28,
+            188.87,
+            155.26,
+            198.83
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            203.1,
+            188.87,
+            208.08,
+            198.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 1. Left: the shape of an ideal tetrahedron is deﬁned by",
+          "bbox": [
+            108.54,
+            210.38,
+            395.39,
+            222.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "three dihedral angles. Right: the gluing of tetrahedra, seen from",
+          "bbox": [
+            108.54,
+            224.33,
+            395.49,
+            234.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "an ideal vertex.",
+          "bbox": [
+            108.54,
+            236.26,
+            175.87,
+            246.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "assume that the fourth vertex lies at z ∈C, with Im(z) > 0. This number z ∈C",
+          "bbox": [
+            72.65,
+            267.18,
+            431.34,
+            277.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "determines T up to isometry.",
+          "bbox": [
+            72.66,
+            279.39,
+            199.58,
+            289.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Suppose we move T by an orientation–preserving isometry of H3, so that three",
+          "bbox": [
+            90.61,
+            290.06,
+            431.33,
+            301.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "vertices again lie at 0, 1, ∞, the fourth vertex again lies in the upper half-plane,",
+          "bbox": [
+            72.66,
+            303.06,
+            431.31,
+            313.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "and edge e is mapped to the edge 0∞. Then the fourth vertex of T will be sent to",
+          "bbox": [
+            72.66,
+            315.0,
+            431.36,
+            325.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "one of",
+          "bbox": [
+            72.66,
+            327.22,
+            98.97,
+            337.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "z′ = z −1",
+          "bbox": [
+            199.01,
+            340.76,
+            243.6,
+            357.72
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            306.84,
+            341.04,
+            311.83,
+            351.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "z′′ =",
+          "bbox": [
+            273.6,
+            343.68,
+            294.3,
+            357.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(2.1)",
+          "bbox": [
+            72.66,
+            347.74,
+            93.14,
+            357.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "z,",
+          "bbox": [
+            179.58,
+            347.74,
+            187.38,
+            357.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1 −z .",
+          "bbox": [
+            298.26,
+            347.74,
+            324.42,
+            364.56
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "or",
+          "bbox": [
+            254.76,
+            347.75,
+            263.63,
+            357.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "z",
+          "bbox": [
+            229.92,
+            354.59,
+            234.55,
+            364.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The corresponding number z, z′, or z′′ is called the shape parameter of e. Notice",
+          "bbox": [
+            72.67,
+            366.66,
+            431.38,
+            380.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "that opposite edges of T have the same shape parameter, and that zz′z′′ = −1.",
+          "bbox": [
+            72.65,
+            378.66,
+            431.34,
+            392.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The arguments",
+          "bbox": [
+            72.65,
+            394.19,
+            138.36,
+            404.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "arg z′ > 0,",
+          "bbox": [
+            228.53,
+            404.21,
+            273.12,
+            418.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "arg z′′ > 0",
+          "bbox": [
+            284.76,
+            404.21,
+            328.86,
+            418.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "arg z > 0,",
+          "bbox": [
+            175.13,
+            408.34,
+            216.89,
+            418.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "represent the dihedral angles of T, or equivalently the angles of the Euclidean",
+          "bbox": [
+            72.66,
+            424.61,
+            431.29,
+            434.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "triangle with vertices 0, 1, z. If one of the vertices of T is truncated by a horosphere,",
+          "bbox": [
+            72.67,
+            436.54,
+            431.3,
+            446.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the intersection will be a Euclidean triangle in precisely this similarity class. This",
+          "bbox": [
+            72.67,
+            448.49,
+            431.28,
+            458.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Euclidean triangle of intersection between T and a horosphere is called a boundary",
+          "bbox": [
+            72.67,
+            460.41,
+            431.33,
+            470.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "triangle of T. See Figure 1, left.",
+          "bbox": [
+            72.68,
+            472.41,
+            212.59,
+            482.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The tiling of ∂M by boundary triangles of the tetrahedra provides a way to",
+          "bbox": [
+            90.63,
+            484.34,
+            431.4,
+            494.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "understand what conditions are required to glue the tetrahedra coherently.",
+          "bbox": [
+            72.69,
+            496.29,
+            399.06,
+            506.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Definition 2.2. Let C be an oriented surface with a speciﬁed triangulation",
+          "bbox": [
+            90.64,
+            513.47,
+            431.29,
+            525.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(for example, a boundary torus of M with the tessellation by boundary triangles).",
+          "bbox": [
+            72.68,
+            527.41,
+            431.4,
+            537.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A segment in C is an embedded arc in one triangle, which is disjoint from the",
+          "bbox": [
+            72.68,
+            539.35,
+            431.38,
+            549.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "vertices of C, and whose endpoints lie in distinct edges of C. A normal closed",
+          "bbox": [
+            72.68,
+            551.34,
+            431.31,
+            561.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "curve σ ⊂C is an immersed closed curve that is transverse to the edges of C, such",
+          "bbox": [
+            72.69,
+            563.0,
+            431.32,
+            573.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "that the intersection between σ and a triangle is a union of segments.",
+          "bbox": [
+            72.68,
+            575.21,
+            376.15,
+            585.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Definition 2.3. Let τ be an ideal triangulation of M, and let C be one torus",
+          "bbox": [
+            90.62,
+            592.4,
+            431.32,
+            604.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "component of ∂M. Then τ induces a tessellation of C by boundary triangles. If",
+          "bbox": [
+            72.67,
+            606.34,
+            431.31,
+            616.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "each tetrahedron of τ is assigned a hyperbolic shape, then every corner of each",
+          "bbox": [
+            72.66,
+            618.28,
+            431.4,
+            628.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "boundary triangle can be labeled with the corresponding shape parameter.",
+          "bbox": [
+            72.66,
+            630.28,
+            398.99,
+            640.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Let σ be an oriented normal closed curve in C. Then every segment of σ in",
+          "bbox": [
+            90.61,
+            642.21,
+            431.31,
+            652.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a triangle of C cuts oﬀa single vertex of a triangle, labeled with a single shape",
+          "bbox": [
+            72.67,
+            654.14,
+            431.34,
+            664.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Licensed to Temple Univ.  Prepared on Tue Jul 30 15:53:49 EDT 2019for download from IP 155.247.31.215.",
+          "bbox": [
+            32.94,
+            658.57,
+            269.97,
+            665.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            4.94
+          ]
+        },
+        {
+          "text": "License or copyright restrictions may apply to redistribution; see https://www.ams.org/publications/ebooks/terms",
+          "bbox": [
+            32.94,
+            666.81,
+            276.79,
+            673.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            4.94
+          ]
+        }
+      ]
+    },
+    {
+      "page": 6,
+      "rotation": 0,
+      "drawings": 16,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2. A normal path σ passing through the tessellation of a torus by boundary triangles."
+      ],
+      "labels": [
+        {
+          "text": "DAVID FUTER AND FRANC¸ OIS GU´ERITAUD",
+          "bbox": [
+            165.84,
+            59.05,
+            338.1,
+            67.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "164",
+          "bbox": [
+            73.0,
+            60.6,
+            84.95,
+            67.6
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            72.66,
+            60.8,
+            76.63,
+            67.77
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "z7",
+          "bbox": [
+            288.47,
+            106.99,
+            297.05,
+            117.77
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "z2",
+          "bbox": [
+            197.97,
+            109.49,
+            206.55,
+            120.27
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "z4 z5",
+          "bbox": [
+            236.47,
+            110.49,
+            256.55,
+            122.2
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "z8",
+          "bbox": [
+            308.72,
+            115.99,
+            317.3,
+            126.77
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "z1",
+          "bbox": [
+            176.22,
+            118.99,
+            184.8,
+            129.77
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "z6",
+          "bbox": [
+            267.47,
+            119.49,
+            276.05,
+            130.27
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "z3",
+          "bbox": [
+            216.72,
+            121.74,
+            225.3,
+            132.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 2. A normal path σ passing through the tessellation of a",
+          "bbox": [
+            108.54,
+            166.4,
+            395.42,
+            178.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "torus by boundary triangles.",
+          "bbox": [
+            108.53,
+            180.35,
+            232.64,
+            190.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "parameter (see Figure 2). Let z1, . . . , zk be the sequence of shape parameters cor-",
+          "bbox": [
+            72.64,
+            209.8,
+            431.35,
+            221.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "responding to the segments of σ. Then the holonomy of σ is deﬁned to be",
+          "bbox": [
+            72.66,
+            221.74,
+            396.09,
+            231.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "k",
+          "bbox": [
+            246.9,
+            237.25,
+            251.13,
+            244.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "\u0002",
+          "bbox": [
+            241.86,
+            237.67,
+            256.25,
+            247.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(2.2)",
+          "bbox": [
+            72.64,
+            247.43,
+            93.12,
+            257.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "H(σ) =",
+          "bbox": [
+            205.72,
+            247.43,
+            239.07,
+            257.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ϵi log(zi),",
+          "bbox": [
+            257.94,
+            247.43,
+            298.32,
+            258.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i=1",
+          "bbox": [
+            242.64,
+            261.49,
+            255.55,
+            268.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "where ϵi = 1 for corners of triangles to the left of σ and ϵi = −1 for corners",
+          "bbox": [
+            72.65,
+            272.23,
+            431.31,
+            283.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of triangles to the right of σ.",
+          "bbox": [
+            72.66,
+            284.5,
+            207.97,
+            294.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We always choose the branch of the log where",
+          "bbox": [
+            217.39,
+            284.51,
+            431.33,
+            294.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0 < arg(zi) < π for Im(zi) > 0.",
+          "bbox": [
+            72.66,
+            296.44,
+            207.18,
+            307.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Definition 2.4. Thurston’s gluing equations for a triangulation τ require, in",
+          "bbox": [
+            90.59,
+            312.5,
+            431.29,
+            324.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "brief, that the holonomy of every curve σ ⊂∂M should be trivial.",
+          "bbox": [
+            72.65,
+            326.23,
+            378.61,
+            336.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "More pre-",
+          "bbox": [
+            387.07,
+            326.51,
+            431.31,
+            336.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "cisely, the system consists of edge equations and completeness equations. The edge",
+          "bbox": [
+            72.65,
+            338.44,
+            431.3,
+            348.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "equation for an edge e of τ requires that all the shape parameters adjacent to e",
+          "bbox": [
+            72.65,
+            350.38,
+            431.3,
+            360.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "satisfy",
+          "bbox": [
+            72.66,
+            362.32,
+            100.42,
+            372.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "k",
+          "bbox": [
+            219.42,
+            377.89,
+            223.65,
+            384.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "\u0002",
+          "bbox": [
+            214.44,
+            378.31,
+            228.83,
+            388.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(2.3)",
+          "bbox": [
+            72.66,
+            388.0,
+            93.15,
+            397.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "log(zi) = 2πi.",
+          "bbox": [
+            230.52,
+            388.01,
+            289.56,
+            398.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i=1",
+          "bbox": [
+            215.16,
+            402.07,
+            228.07,
+            409.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "The completeness equations require that, if ∂M consists of k tori, there should be a",
+          "bbox": [
+            72.66,
+            413.14,
+            431.36,
+            423.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "collection of simple closed normal curves σ1, . . . , σ2k spanning H1(∂M), such that",
+          "bbox": [
+            72.67,
+            425.08,
+            429.27,
+            436.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∀j.",
+          "bbox": [
+            273.24,
+            441.25,
+            285.6,
+            451.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(2.4)",
+          "bbox": [
+            72.65,
+            441.53,
+            93.14,
+            451.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "H(σj) = 0",
+          "bbox": [
+            218.33,
+            441.53,
+            263.28,
+            452.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "As the name suggests, the completeness equations ensure we obtain a complete",
+          "bbox": [
+            90.6,
+            459.6,
+            431.29,
+            469.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "metric.",
+          "bbox": [
+            72.65,
+            471.53,
+            103.13,
+            481.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proposition 2.5. Let τ be an ideal triangulation of M. Suppose that each",
+          "bbox": [
+            90.6,
+            487.64,
+            431.32,
+            499.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ideal tetrahedron of τ is assigned a non-degenerate hyperbolic shape with positive",
+          "bbox": [
+            72.65,
+            501.58,
+            431.38,
+            511.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "imaginary part, as above. If the shape parameters of the tetrahedra satisfy the edge",
+          "bbox": [
+            72.66,
+            513.52,
+            431.32,
+            523.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "gluing equations, these metric tetrahedra can be glued together to obtain a (possibly",
+          "bbox": [
+            72.66,
+            525.51,
+            431.42,
+            535.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "incomplete) hyperbolic metric on M∖∂M. This metric will be complete if and only",
+          "bbox": [
+            72.66,
+            537.17,
+            431.27,
+            547.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "if the completeness equations are satisﬁed.",
+          "bbox": [
+            72.65,
+            549.38,
+            256.36,
+            559.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proof. Because all hyperbolic ideal triangles are isometric, there is no ob-",
+          "bbox": [
+            90.6,
+            565.5,
+            431.29,
+            577.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "struction to gluing the tetrahedra isometrically along the interiors of their faces.",
+          "bbox": [
+            72.66,
+            579.45,
+            431.33,
+            589.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "If the edge equation is satisﬁed for every edge of τ, then this isometric gluing",
+          "bbox": [
+            72.66,
+            591.38,
+            431.28,
+            601.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "along faces of τ extends continuously across the edges. Thus we obtain a (possibly",
+          "bbox": [
+            72.66,
+            603.31,
+            431.26,
+            613.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "incomplete) hyperbolic metric on M∖∂M and a developing map D : \u0003",
+          "bbox": [
+            72.66,
+            614.01,
+            385.98,
+            626.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "M →H3.",
+          "bbox": [
+            374.82,
+            615.56,
+            416.04,
+            626.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "M →H3 is an isometry. It is well-",
+          "bbox": [
+            276.02,
+            626.7,
+            431.29,
+            640.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "If the metric on M is complete, then D : \u0003",
+          "bbox": [
+            90.6,
+            627.55,
+            287.17,
+            640.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "known that the deck transformations corresponding to a component of ∂M must be",
+          "bbox": [
+            72.66,
+            642.28,
+            431.31,
+            652.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "parabolic isometries of H3. In particular, if a cusp of M is lifted to ∞in the upper",
+          "bbox": [
+            72.66,
+            652.94,
+            431.34,
+            664.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Licensed to Temple Univ.  Prepared on Tue Jul 30 15:53:49 EDT 2019for download from IP 155.247.31.215.",
+          "bbox": [
+            32.94,
+            658.57,
+            269.97,
+            665.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            4.94
+          ]
+        },
+        {
+          "text": "License or copyright restrictions may apply to redistribution; see https://www.ams.org/publications/ebooks/terms",
+          "bbox": [
+            32.94,
+            666.81,
+            276.79,
+            673.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            4.94
+          ]
+        }
+      ]
+    },
+    {
+      "page": 11,
+      "rotation": 0,
+      "drawings": 65,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3. The leading–trailing deformation along σ increases the angles marked + and decreases the angles marked ⊖.",
+        "Figure 4. The leading–trailing deformation about a single edge e of M. Every increase to an angle in a tetrahedron is canceled out by a decrease to an adjacent angle."
+      ],
+      "labels": [
+        {
+          "text": "169",
+          "bbox": [
+            419.05,
+            60.6,
+            431.0,
+            67.6
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "FROM ANGLED TRIANGULATIONS TO HYPERBOLIC STRUCTURES",
+          "bbox": [
+            117.78,
+            60.8,
+            386.24,
+            67.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "11",
+          "bbox": [
+            423.43,
+            60.8,
+            431.36,
+            67.77
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            311.08,
+            88.25,
+            318.82,
+            98.21
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⊖",
+          "bbox": [
+            177.83,
+            89.2,
+            185.57,
+            99.16
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⊖",
+          "bbox": [
+            298.08,
+            93.7,
+            305.82,
+            103.66
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⊖",
+          "bbox": [
+            256.32,
+            96.95,
+            264.06,
+            106.91
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            280.83,
+            96.99,
+            288.57,
+            106.96
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            195.32,
+            97.48,
+            203.06,
+            107.44
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            231.58,
+            98.24,
+            239.32,
+            108.2
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⊖",
+          "bbox": [
+            212.58,
+            100.44,
+            220.32,
+            110.41
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⊖",
+          "bbox": [
+            183.83,
+            130.19,
+            191.57,
+            140.15
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            308.08,
+            130.5,
+            315.82,
+            140.46
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⊖",
+          "bbox": [
+            280.32,
+            130.7,
+            288.06,
+            140.66
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            207.58,
+            131.23,
+            215.32,
+            141.2
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            262.83,
+            131.99,
+            270.57,
+            141.95
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⊖",
+          "bbox": [
+            225.83,
+            134.45,
+            233.57,
+            144.41
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            238.58,
+            138.49,
+            246.32,
+            148.45
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⊖",
+          "bbox": [
+            249.83,
+            139.2,
+            257.57,
+            149.16
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 3. The leading–trailing deformation along σ increases the",
+          "bbox": [
+            108.54,
+            166.39,
+            395.42,
+            178.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "angles marked + and decreases the angles marked ⊖.",
+          "bbox": [
+            108.54,
+            180.05,
+            340.74,
+            190.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of Δi, a −1 in the coordinate corresponding to the trailing corner of Δi, and 0’s",
+          "bbox": [
+            72.65,
+            209.29,
+            431.3,
+            220.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "otherwise.",
+          "bbox": [
+            72.66,
+            221.51,
+            116.47,
+            231.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Finally, the leading-trailing deformation corresponding to σ is the vector w(σ) =",
+          "bbox": [
+            90.6,
+            233.4,
+            432.78,
+            243.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0004",
+          "bbox": [
+            72.65,
+            237.66,
+            83.16,
+            247.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "i w(σi).",
+          "bbox": [
+            83.16,
+            245.35,
+            116.16,
+            258.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Example 4.2. Let e be an edge of M, and suppose for simplicity that all",
+          "bbox": [
+            90.6,
+            261.44,
+            431.34,
+            273.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tetrahedra adjacent to e are distinct. Let σ be a simple closed curve on ∂M, running",
+          "bbox": [
+            72.65,
+            275.39,
+            431.27,
+            285.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "counterclockwise about one endpoint of e. The boundary triangles intersected by σ",
+          "bbox": [
+            72.65,
+            287.32,
+            430.96,
+            297.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "have angles αi, βi, γi, labeled clockwise with αi inside σ. Then the leading–trailing",
+          "bbox": [
+            72.65,
+            299.26,
+            431.28,
+            310.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "deformation w(σ) adds 1 to every βi and subtracts 1 from every γi, keeping the",
+          "bbox": [
+            72.67,
+            311.23,
+            431.31,
+            322.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "angle sum in each tetrahedron equal to π. In addition, the dihedral angle marked",
+          "bbox": [
+            72.66,
+            323.2,
+            431.27,
+            333.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "βi is adjacent to the same edge of M as the dihedral angle marked γi+1. Thus the",
+          "bbox": [
+            72.66,
+            335.14,
+            431.32,
+            346.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "angle sum at each edge is unchanged. (See Figure 4.) Observe that w(σ) has no",
+          "bbox": [
+            72.66,
+            347.05,
+            431.33,
+            357.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "eﬀect at all on the dihedral angles αi adjacent to e.",
+          "bbox": [
+            72.65,
+            359.08,
+            297.13,
+            370.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "⊖",
+          "bbox": [
+            375.39,
+            418.44,
+            383.13,
+            428.4
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            388.49,
+            419.53,
+            396.24,
+            429.49
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            347.3,
+            438.85,
+            355.04,
+            448.81
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⊖",
+          "bbox": [
+            416.22,
+            439.95,
+            423.96,
+            449.91
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            228.8,
+            442.0,
+            236.54,
+            451.97
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⊖",
+          "bbox": [
+            280.61,
+            443.47,
+            288.35,
+            453.43
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⊖",
+          "bbox": [
+            237.29,
+            445.81,
+            245.03,
+            455.78
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            270.66,
+            446.99,
+            278.4,
+            456.95
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "α1",
+          "bbox": [
+            392.93,
+            447.03,
+            403.26,
+            457.81
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            111.15,
+            447.86,
+            118.89,
+            457.83
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "α2",
+          "bbox": [
+            379.53,
+            447.91,
+            389.86,
+            458.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "⊖",
+          "bbox": [
+            121.58,
+            449.4,
+            129.32,
+            459.36
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⊖",
+          "bbox": [
+            343.56,
+            450.56,
+            351.3,
+            460.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            419.3,
+            451.8,
+            427.04,
+            461.76
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "α3",
+          "bbox": [
+            375.7,
+            458.74,
+            386.02,
+            469.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e",
+          "bbox": [
+            254.86,
+            458.97,
+            259.49,
+            468.94
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "α5",
+          "bbox": [
+            398.52,
+            459.62,
+            408.85,
+            470.4
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "α3",
+          "bbox": [
+            83.78,
+            464.68,
+            94.11,
+            475.46
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "α4",
+          "bbox": [
+            140.99,
+            467.46,
+            151.32,
+            478.24
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "α4",
+          "bbox": [
+            386.81,
+            467.81,
+            397.13,
+            478.59
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "⊖",
+          "bbox": [
+            410.29,
+            482.24,
+            418.03,
+            492.2
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⊖",
+          "bbox": [
+            111.15,
+            483.13,
+            118.89,
+            493.1
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            124.64,
+            483.13,
+            132.39,
+            493.09
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            354.98,
+            485.31,
+            362.72,
+            495.27
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⊖",
+          "bbox": [
+            272.41,
+            488.25,
+            280.15,
+            498.22
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            239.05,
+            489.13,
+            246.79,
+            499.09
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            401.3,
+            490.21,
+            409.04,
+            500.18
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⊖",
+          "bbox": [
+            229.09,
+            490.6,
+            236.83,
+            500.56
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            284.99,
+            490.89,
+            292.73,
+            500.85
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⊖",
+          "bbox": [
+            365.22,
+            491.01,
+            372.96,
+            500.98
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 4. The leading–trailing deformation about a single edge e",
+          "bbox": [
+            108.54,
+            536.3,
+            395.47,
+            548.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of M. Every increase to an angle in a tetrahedron is canceled out",
+          "bbox": [
+            108.54,
+            550.24,
+            395.41,
+            560.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "by a decrease to an adjacent angle.",
+          "bbox": [
+            108.54,
+            562.18,
+            261.33,
+            572.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In the more general setting, we will prove in Lemma 4.5 that leading–trailing",
+          "bbox": [
+            90.59,
+            588.41,
+            431.26,
+            598.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "deformations are always tangent to A(τ). To do that, we need a better understand-",
+          "bbox": [
+            72.65,
+            600.05,
+            431.22,
+            610.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ing of the interaction between diﬀerent deformations.",
+          "bbox": [
+            72.65,
+            612.28,
+            304.67,
+            622.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Definition 4.3. Let τ be an ideal triangulation of M, and let ρ, σ be oriented",
+          "bbox": [
+            90.59,
+            628.32,
+            431.35,
+            640.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "normal closed curves on ∂M that intersect transversely (if at all). Deﬁne the signed",
+          "bbox": [
+            72.66,
+            642.26,
+            431.27,
+            652.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "intersection number ι(ρ, σ) to be the number of times that σ crosses ρ from right to",
+          "bbox": [
+            72.66,
+            654.2,
+            431.33,
+            664.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Licensed to Temple Univ.  Prepared on Tue Jul 30 15:53:49 EDT 2019for download from IP 155.247.31.215.",
+          "bbox": [
+            32.94,
+            658.57,
+            269.97,
+            665.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            4.94
+          ]
+        },
+        {
+          "text": "License or copyright restrictions may apply to redistribution; see https://www.ams.org/publications/ebooks/terms",
+          "bbox": [
+            32.94,
+            666.81,
+            276.79,
+            673.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            4.94
+          ]
+        }
+      ]
+    },
+    {
+      "page": 12,
+      "rotation": 0,
+      "drawings": 51,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 5. Decomposing σ into smaller curves. Left: when two segments of σ pass through the same boundary triangle, we may cut and rejoin to form two normal curves σ′, σ′′. Right: a local isotopy in the complement of the vertices may be required to ensure that σ′, σ′′ are again normal curves."
+      ],
+      "labels": [
+        {
+          "text": "DAVID FUTER AND FRANC¸ OIS GU´ERITAUD",
+          "bbox": [
+            165.85,
+            59.05,
+            338.11,
+            67.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "170",
+          "bbox": [
+            73.0,
+            60.6,
+            84.95,
+            67.6
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "12",
+          "bbox": [
+            72.66,
+            60.8,
+            80.6,
+            67.77
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "σ",
+          "bbox": [
+            77.51,
+            93.12,
+            83.2,
+            103.08
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "σ",
+          "bbox": [
+            200.9,
+            97.1,
+            206.59,
+            107.07
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⇒",
+          "bbox": [
+            320.56,
+            109.97,
+            334.38,
+            123.78
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⇒",
+          "bbox": [
+            126.83,
+            157.35,
+            136.8,
+            167.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⇒",
+          "bbox": [
+            313.83,
+            173.21,
+            326.43,
+            185.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "σ′′",
+          "bbox": [
+            296.43,
+            203.03,
+            307.06,
+            214.54
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "σ′′",
+          "bbox": [
+            133.23,
+            214.97,
+            143.87,
+            226.48
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "σ′",
+          "bbox": [
+            73.53,
+            215.03,
+            81.88,
+            226.48
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "σ′",
+          "bbox": [
+            224.79,
+            215.03,
+            233.13,
+            226.47
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 5. Decomposing σ into smaller curves. Left: when two",
+          "bbox": [
+            108.54,
+            237.02,
+            395.45,
+            249.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "segments of σ pass through the same boundary triangle, we may",
+          "bbox": [
+            108.54,
+            250.96,
+            395.4,
+            260.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "cut and rejoin to form two normal curves σ′, σ′′. Right: a local",
+          "bbox": [
+            108.55,
+            261.42,
+            395.46,
+            272.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "isotopy in the complement of the vertices may be required to ensure",
+          "bbox": [
+            108.54,
+            274.91,
+            395.38,
+            284.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "that σ′, σ′′ are again normal curves.",
+          "bbox": [
+            108.54,
+            283.26,
+            266.44,
+            296.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "left, minus the number of times that σ crosses ρ from left to right. This deﬁnition",
+          "bbox": [
+            72.66,
+            318.89,
+            431.31,
+            328.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "has a few immediate properties:",
+          "bbox": [
+            72.65,
+            330.83,
+            211.7,
+            340.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "• It is anti-symmetric: ι(ρ, σ) = −ι(σ, ρ).",
+          "bbox": [
+            103.31,
+            344.58,
+            283.84,
+            354.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "• It depends only on the homology classes of σ and ρ in H1(∂M).",
+          "bbox": [
+            103.3,
+            356.58,
+            392.33,
+            367.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "• By considering a transverse pushoﬀof σ, one obtains ι(σ, σ) = 0.",
+          "bbox": [
+            103.31,
+            368.52,
+            396.16,
+            378.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Lemma 4.4. Let ρ, σ be oriented normal closed curves on ∂M that intersect",
+          "bbox": [
+            90.58,
+            384.38,
+            431.28,
+            396.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "transversely, if at all. Then",
+          "bbox": [
+            72.65,
+            398.32,
+            192.82,
+            408.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "∂",
+          "bbox": [
+            203.45,
+            412.36,
+            208.73,
+            422.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "∂w(σ)Im(H(ρ)) = 2 ι(ρ, σ).",
+          "bbox": [
+            192.36,
+            419.08,
+            312.93,
+            435.9
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Recall that Im(H(ρ)) is the linear, angled part of the holonomy in Deﬁnition",
+          "bbox": [
+            90.57,
+            442.49,
+            431.33,
+            452.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2.3.",
+          "bbox": [
+            72.63,
+            454.43,
+            88.11,
+            464.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proof. The proof involves three steps.",
+          "bbox": [
+            90.57,
+            470.36,
+            263.7,
+            482.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Step 1 introduces several simplifying assumptions with no loss of generality.",
+          "bbox": [
+            90.57,
+            486.4,
+            431.36,
+            496.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "First, it will help to assume that every tetrahedron T is embedded in M (that",
+          "bbox": [
+            72.66,
+            498.83,
+            431.35,
+            508.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "is, T does not meet itself along an edge or face). This assumption can always be",
+          "bbox": [
+            72.65,
+            510.77,
+            431.34,
+            520.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "met by passing to a ﬁnite–sheeted cover of M, since π1(M) is residually ﬁnite by",
+          "bbox": [
+            72.65,
+            522.7,
+            431.35,
+            533.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Selberg’s lemma. Note that the tetrahedra, angles, boundary curves, holonomies,",
+          "bbox": [
+            72.66,
+            534.71,
+            431.16,
+            544.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "and leading–trailing deformations all lift naturally to covers. This assumption also",
+          "bbox": [
+            72.66,
+            546.65,
+            431.3,
+            556.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "implies that boundary triangles Δi, Δj meet in either at most one edge or at most",
+          "bbox": [
+            72.66,
+            558.58,
+            431.29,
+            570.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "one vertex.",
+          "bbox": [
+            72.66,
+            570.53,
+            120.67,
+            580.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Next, no generality is lost by assuming that σ passes through each boundary",
+          "bbox": [
+            90.6,
+            582.52,
+            431.28,
+            592.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "triangle at most once. For, if two segments σi, σj run through the same boundary",
+          "bbox": [
+            72.67,
+            594.45,
+            431.27,
+            605.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "triangle Δ, we may cut and rejoin the curve σ into a pair of shorter normal closed",
+          "bbox": [
+            72.66,
+            606.4,
+            431.32,
+            616.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "curves σ′, σ′′. See Figure 5. (To ensure that σ′ and σ′′ are normal curves, it may",
+          "bbox": [
+            72.65,
+            614.76,
+            431.26,
+            628.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "be necessary to move them by isotopy in the complement of the vertices, as in the",
+          "bbox": [
+            72.66,
+            630.35,
+            431.34,
+            640.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "right panel of the ﬁgure.) Note that this operation is natural and topologically",
+          "bbox": [
+            72.66,
+            642.29,
+            431.33,
+            652.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "additive: we have w(σ) = w(σ′) + w(σ′′), and ι(ρ, σ) = ι(ρ, σ′) + ι(ρ, σ′′). Thus, if",
+          "bbox": [
+            72.66,
+            652.74,
+            431.32,
+            664.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Licensed to Temple Univ.  Prepared on Tue Jul 30 15:53:49 EDT 2019for download from IP 155.247.31.215.",
+          "bbox": [
+            32.94,
+            658.57,
+            269.97,
+            665.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            4.94
+          ]
+        },
+        {
+          "text": "License or copyright restrictions may apply to redistribution; see https://www.ams.org/publications/ebooks/terms",
+          "bbox": [
+            32.94,
+            666.81,
+            276.79,
+            673.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            4.94
+          ]
+        }
+      ]
+    },
+    {
+      "page": 15,
+      "rotation": 0,
+      "drawings": 9,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 7. When σ crosses ρ from right to left, the part of the polygon P to the left of ρ contains an excess of two +’s."
+      ],
+      "labels": [
+        {
+          "text": "173",
+          "bbox": [
+            419.05,
+            60.6,
+            431.0,
+            67.6
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "FROM ANGLED TRIANGULATIONS TO HYPERBOLIC STRUCTURES",
+          "bbox": [
+            117.78,
+            60.8,
+            386.24,
+            67.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "15",
+          "bbox": [
+            423.43,
+            60.8,
+            431.36,
+            67.77
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "ρ",
+          "bbox": [
+            304.36,
+            88.4,
+            309.51,
+            98.37
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⊖",
+          "bbox": [
+            254.68,
+            104.79,
+            262.42,
+            114.76
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            224.68,
+            106.08,
+            232.42,
+            116.04
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            280.18,
+            108.41,
+            287.92,
+            118.37
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⊖",
+          "bbox": [
+            311.01,
+            112.14,
+            318.75,
+            122.1
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "σ",
+          "bbox": [
+            189.33,
+            115.74,
+            195.02,
+            125.7
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⊖",
+          "bbox": [
+            227.68,
+            157.46,
+            235.42,
+            167.42
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            186.34,
+            159.08,
+            194.09,
+            169.04
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            251.35,
+            159.74,
+            259.09,
+            169.71
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⊖",
+          "bbox": [
+            284.01,
+            163.46,
+            291.75,
+            173.43
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 7. When σ crosses ρ from right to left, the part of the",
+          "bbox": [
+            108.54,
+            189.27,
+            395.43,
+            201.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "polygon P to the left of ρ contains an excess of two +’s.",
+          "bbox": [
+            108.54,
+            203.21,
+            353.78,
+            213.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Finally, if σ enters and leaves P on the same side of ρ, the interior of P con-",
+          "bbox": [
+            90.59,
+            241.25,
+            431.28,
+            251.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tributes 0 to ι(ρ, σ). Also, the part of P to the left of ρ will have the same number",
+          "bbox": [
+            72.65,
+            253.19,
+            431.18,
+            263.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of +’s and ⊖’s, hence w(σ1 ∪. . . ∪σj) does not aﬀect the angular component of",
+          "bbox": [
+            72.64,
+            264.84,
+            431.36,
+            276.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "H(ρ).",
+          "bbox": [
+            72.66,
+            277.12,
+            97.43,
+            287.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Summing these contributions over the (disjoint) polygons of intersection, we",
+          "bbox": [
+            90.59,
+            289.07,
+            431.31,
+            299.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "□",
+          "bbox": [
+            423.57,
+            300.72,
+            431.31,
+            310.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "conclude that ∂Im(H(ρ))/∂w(σ) = 2 ι(ρ, σ), as desired.",
+          "bbox": [
+            72.65,
+            300.96,
+            314.15,
+            310.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We can now show that every leading–trailing deformation w(σ) is tangent to",
+          "bbox": [
+            90.57,
+            322.8,
+            431.34,
+            332.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A(τ).",
+          "bbox": [
+            72.62,
+            334.49,
+            96.68,
+            344.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Lemma 4.5. Let p ∈A(τ) be an angle structure, and let σ be an oriented",
+          "bbox": [
+            90.55,
+            352.26,
+            431.23,
+            364.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "normal curve on a cusp of M. Then the vector w(σ) is tangent to A(τ). In other",
+          "bbox": [
+            72.6,
+            365.98,
+            431.27,
+            376.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "p + εw(σ) ∈A(τ).",
+          "bbox": [
+            250.42,
+            377.92,
+            331.03,
+            388.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "words, for all suﬃciently small ε > 0,",
+          "bbox": [
+            72.58,
+            378.19,
+            236.67,
+            388.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proof. Let us check the conditions of Deﬁnition 3.1. By condition (1) of the",
+          "bbox": [
+            90.5,
+            395.68,
+            431.21,
+            407.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "deﬁnition, p lies in the open set (0, π)3n. Thus, for suﬃciently small ε, we have",
+          "bbox": [
+            72.57,
+            408.37,
+            431.26,
+            419.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "p + εw(σ) ∈(0, π)3n also.",
+          "bbox": [
+            72.66,
+            418.02,
+            184.2,
+            431.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Next, observe that in Deﬁnition 4.1, every vector w(σi) only aﬀects a single",
+          "bbox": [
+            90.6,
+            433.57,
+            431.27,
+            444.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "tetrahedron. In this tetrahedron, εw(σi) adds ε to the dihedral angle on one (lead-",
+          "bbox": [
+            72.66,
+            445.51,
+            431.38,
+            456.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ing) pair of opposite edges, and adds −ε to the dihedral angle on another (trail-",
+          "bbox": [
+            72.66,
+            457.2,
+            431.36,
+            467.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ing) pair of opposite edges. Thus the deformation of angles coming from w(σi)",
+          "bbox": [
+            72.66,
+            469.38,
+            431.31,
+            480.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "keeps the angle sum equal to π in every tetrahedron. Clearly, the same is true for",
+          "bbox": [
+            72.66,
+            481.42,
+            431.3,
+            491.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "w(σ) = \u0004",
+          "bbox": [
+            72.66,
+            485.58,
+            118.68,
+            503.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMEX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "i w(σi).",
+          "bbox": [
+            118.68,
+            493.33,
+            151.68,
+            506.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Finally, we check condition (3) of Deﬁnition 3.1. Let e be an edge of M, and",
+          "bbox": [
+            90.6,
+            505.3,
+            431.3,
+            515.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "let ρ be a normal closed curve on ∂M that encircles one endpoint of e. Because",
+          "bbox": [
+            72.67,
+            517.24,
+            431.35,
+            527.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ρ is homotopically trivial, we have ι(ρ, σ) = 0. Thus, by Lemma 4.4, deforming",
+          "bbox": [
+            72.68,
+            529.23,
+            431.29,
+            539.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the dihedral angles along w(σ) does not change the imaginary part of H(ρ). But",
+          "bbox": [
+            72.67,
+            541.13,
+            431.32,
+            551.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Im(H(ρ)) is nothing other than the sum of dihedral angles about edge e; this sum",
+          "bbox": [
+            72.66,
+            553.1,
+            431.29,
+            563.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "□",
+          "bbox": [
+            423.59,
+            564.76,
+            431.34,
+            574.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "stays constant, equal to 2π.",
+          "bbox": [
+            72.65,
+            565.04,
+            192.89,
+            575.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "There is a convenient choice of leading–trailing deformations that will span",
+          "bbox": [
+            90.59,
+            586.89,
+            431.28,
+            596.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "TpA(τ).",
+          "bbox": [
+            72.65,
+            598.57,
+            107.15,
+            609.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Proposition 4.6. For every edge ei of M, where 1 ≤i ≤n, choose a normal",
+          "bbox": [
+            90.59,
+            616.34,
+            431.29,
+            629.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "closed curve ρi about one endpoint of ei. In addition, if M has k cusps, choose",
+          "bbox": [
+            72.65,
+            630.34,
+            431.38,
+            641.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "simple closed normal curves σ1, . . . , σ2k that will span H1(∂M). Then the vectors",
+          "bbox": [
+            72.66,
+            642.28,
+            431.25,
+            653.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "w(ρi) and w(σj) span the tangent space TpA(τ).",
+          "bbox": [
+            72.65,
+            653.95,
+            285.7,
+            665.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Licensed to Temple Univ.  Prepared on Tue Jul 30 15:53:49 EDT 2019for download from IP 155.247.31.215.",
+          "bbox": [
+            32.94,
+            658.57,
+            269.97,
+            665.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            4.94
+          ]
+        },
+        {
+          "text": "License or copyright restrictions may apply to redistribution; see https://www.ams.org/publications/ebooks/terms",
+          "bbox": [
+            32.94,
+            666.81,
+            276.79,
+            673.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            4.94
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+In chapter [\[chapter:asymptotictheory\]](#chapter:asymptotictheory){reference-type="ref" reference="chapter:asymptotictheory"} we shall develop a more restrictive notion of asymptotics.\ The underlying idea, coming from the thesis [@JLM] of Jose-Luis Martins, is that an asymptotic theory is related to a dynamical system.

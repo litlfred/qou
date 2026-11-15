@@ -1,0 +1,36 @@
+2326 Stavros Garoufalidis and Rinat Kashaev
+
+to which ones assigns respectively the identity operators and ¢ and 7 maps
+of Equation (7) of [Kas]. In our case, we fix a primitive root of unity ¢ of
+order N, a (discrete spectral parameter) n € Z/NZ and a planar projection
+D of a long knot K’. We color each arc of D by an element of Z/NZ, place r-
+matrices at the crossings (using the fixed spectral parameter at all crossings),
+according to the rules described below, and sum over all indices. The result
+of this contraction is a complex number that depends on the colors i and 7
+of the outgoing and incoming arcs of the diagram of the long knot. These
+complex numbers arrange in a matrix
+
+(49) (Dy nn € Matn(Z[N*, ¢])
+
+The r-matrices given below are rigid, i.e., satisfy the Yang-Baxter equation
+(9) and the inverse matrix equation (10) of [Kas]. The next theorem follows
+from the results of [Kas].
+
+Theorem 3.1. The state-sum (D) yn» depends on the long knot K and not
+on the planar projection D used.
+
+It remains to explain the rules for the r-matrices.
+Starting with the case with m = n = 0, we get the following rules for the
+four types of positive crossings
+
+(50)
+
+x = x = < =Vige(Q)er, ~x< =Vieig (OC *
+and for the four types of esate crossings
+
+(51)
+
+<< = ~< = x< =Vignu(Qe*, < =Viniga(QQer em.
+
+Note that the weights of the negative crossings are the complex conjugates of
+the corresponding weights of the positive crossings.

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408113v2
-doc_title: "arXiv:hep-th/9408113v2 25 Aug 1994"
+doc_title: "Dilogarithm identities"
 section_id: sec-007-21-dilogarithm-and-partitions
 section_title: "Dilogarithm and partitions."
 section_number: 2.1
@@ -8,6 +8,7 @@ pages: 34-53
 source_pdf: 9408113v2.pdf
 source_sha256: dadd96e1155e820f
 toc_source: inferred
+doc_brief: "Dilogarithm identities — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
 ---
 2.1.1. Rogers-Ramanujan and Gordon-Andrews identities
 Theorem C. Let a be an integer, 1 ≤a ≤k + 1. Then
@@ -50,7 +51,6 @@ Dilogarithm identities
 where Ni = ni + . . . + nk, (q)n := (q; q)n and (x; q)n = (1 −x)(1 −qx) · · ·(1 −qn−1x).
 The Rogers-Ramanujan identities correspond to k = 1, a = 1, or 2 in (2.1a).
 Note that the second equality (2.1.b) follows from the Jacobi triple-product formula
-X
 m∈Z
 xmq
 1
@@ -410,7 +410,6 @@ examine the asymptotic behavior of the numbers #|Ck,n,a| and #|Bk,n,a| as n →�
 well known from the theory of partitions (see e.g. [An1]) that if we introduce the partition
 function p(n) using the expansion of the generating function
 ∞
-X
 n=0
 p(n)qn =
 ∞
@@ -466,7 +465,6 @@ where zi,
 1 ≤i ≤k, satisfy the following system of algebraic equations
 zi =
 k
-Y
 j=1
 (1 −zj)2Bij.
 Proof. Using Cauchy’s theorem, aN−1 can be expressed as the integral
@@ -1623,7 +1621,6 @@ Dilogarithm identities
 51
 where Pk(m; s, N) := N + 1 −min(l −s + 1, k) −δs,1 −δs,l+1 −2
 l
-X
 j=1
 min(j, k)mj ≥0.
 10. Prove the following identity
@@ -1708,7 +1705,6 @@ Anatol N. Kirillov
 It is clear that (Bailey’s pair inversion rule)
 αn =
 n
-X
 k=0
 M ∗
 nkβk.
@@ -1815,7 +1811,6 @@ n > 0,
 β′
 n :=
 n
-X
 k=0
 akqk2−k
 (q)n−k

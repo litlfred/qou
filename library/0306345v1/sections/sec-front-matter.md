@@ -8,6 +8,8 @@ pages: 1-1
 source_pdf: 0306345v1.pdf
 source_sha256: 936aa08026b2683b
 toc_source: inferred
+doc_brief: "Skein-theoretical derivation of some formulas of Habiro — We use skein theory to compute the coeﬃcients of certain power series considered by Habiro in his theory of sl2 invariants of integral homol"
+duplicate_of: "agt-v3-n1-p17-p"
 ---
 ISSN 1472-2739 (on-line) 1472-2747 (printed)
 537

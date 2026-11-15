@@ -1,0 +1,54 @@
+524 J. BORCEA, P. BRANDEN, AND T. M. LIGGETT
+
+that the class of strongly Rayleigh measures is invariant under partial symmetriza-
+tion (this and several other properties fail, for example, for Rayleigh measures). As
+a consequence, in §5]we provide an answer to the aforementioned problem and show
+that if the initial distribution of a symmetric exclusion process is strongly Rayleigh,
+then so is the distribution at time t > 0; therefore, by the results in {4.2} the latter
+distribution is strongly negatively associated (CNA+). In particular, this solves an
+open problem of Pemantle and Liggett [55] stating that the distribution of a
+symmetric exclusion process at time t > 0 with non-random/deterministic initial
+configuration is negatively associated, and shows that the same is actually true
+whenever the initial distribution is strongly Rayleigh. In a later paper [56], Liggett
+has applied these results to prove convergence to the normal and Poisson laws for
+various functionals of the symmetric exclusion process.
+
+In {6] we establish equivalences between several negative dependence properties
+for the class of almost symmetric/exchangeable measures that we define in {2.]]
+This extends Pemantle’s corresponding theorem for symmetric measures and con-
+firms his conjecture on strong negative association (CNA+) in the almost exchange-
+able case. The results in {6Jare also useful in {7 as they allow us to show that the
+examples we construct there provide counterexamples to the series of conjectures on
+ultra log-concave rank sequences proposed in [72] to which we already alluded.
+We note that Corollary [6.6]in {6] was subsequently proved by different methods in
+[48], where it was additionally shown that almost exchangeable measures satisfy
+the (strong) Feder-Mihail property.
+
+The aforementioned connections between the negative dependence properties
+satisfied by strongly Rayleigh measures and the geometry of zero sets of their gen-
+erating polynomials are much in the same spirit as e.g. Rota’s philosophy about
+the ubiquity of zeros of polynomials in combinatorics [67]. In the present context,
+these connections actually prove to have fruitful consequences for both the theory
+of negative dependence and the theory of real stable and hyperbolic polynomials, as
+they give new insight and further potential applications in these and related areas.
+
+2. A PLETHORA OF NEGATIVE DEPENDENCE PROPERTIES AND CONJECTURES
+
+In this section we explain in terms of generating polynomials the probabilistic
+notions and negative dependence properties studied in e.g. [72], and we
+clarify the connections between these as well as new classes of probability measures
+that we introduce below. We then formulate the problems and conjectures made
+in [f that we solve in the next sections.
+
+2.1. Negative dependence concepts. Recall that a (real or complex) multivari-
+ate polynomial is said to be multi-affine if it has degree at most one in each variable.
+Denote by $%,, n € N, the set of all probability measures on the Boolean algebra
+alm], (In the finite case we will always assume that the o-algebra is the full alge-
+bra.) For i € [n] the i-th coordinate function on 2!”] is an atomic (binary) random
+variable given by X;(S) = 1 if € S and 0 otherwise, where S$ C [n], while the char-
+acteristic function yg of S is defined by ys(T’) = 1 if T = S and 0 otherwise. Using
+the inclusion-exclusion principle one can show that any such characteristic function
+may be written as a multi-affine polynomial in Xj,..., X,. Any scalar function
+Fe= sein} F(S)xg on 2!) may therefore be viewed as a multi-affine polynomial
+in Xq,...,Xn. By abuse of notation the latter is written as F(X1,...,X,), and
+

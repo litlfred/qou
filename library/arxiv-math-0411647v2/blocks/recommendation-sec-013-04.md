@@ -1,0 +1,1 @@
+For $\rho\in\mathop{\mathrm{NC}}(T)$ we shall denote (with a small abuse of notation) by $\rho_{\mathop{\mathrm{comp}}}\in\mathop{\mathrm{NC}}(S)$ the biggest non--crossing partition with a property that $\rho\cup\rho_{\mathop{\mathrm{comp}}}$ is non--crossing.

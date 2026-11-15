@@ -1,38 +1,51 @@
 476 A. Ram
+
 Proof. The theorem follows immediately from Theorem 3.8 and Theorem
-4.13(a). 
-5 Formulas for the irreducible characters of H f
-(5.1) Theorem. For each T., e Sf, there exists a Z[q] linear combination
-Co = Z aou T. ,
-μf
-aoue Z[q], such that x(T.) = x(co) for all characters x of Hf.
-Proof. Let c be a composition of f and let u be the partition of f determined by
+4.13(a). O
+
+5 Formulas for the irreducible characters of H,
+
+(5.1) Theorem. For each T,, o€S,, there exists a Z[q] linear combination
+Co= >) Gort, »
+ube
+
+4g,€Z[q], such that x(T,) = x(cz) for all characters x of Hy.
+
+Proof. Let c be a composition of f and let yw be the partition of f determined by
 rearranging the parts of c in decreasing order. Then by Theorem 4.2 we know that
-tr(DT,.) = tr(DT,.). Since the Schur functions Sa(x1, X2, : : : , xn) are linearly inde-
-pendent, it follows from Theorem 3.8 that ×^(T,.) = x(T,.) for all irreducible
-characters x~ of Hf. This shows that it is sufficient to prove that there exists a Z[q]
+tr(DT,,) = tr(DT,,). Since the Schur functions Sa, X2,...,X,) are linearly inde-
+pendent, it follows from Theorem 3.8 that y7(Z,,) = x E,) for all irreducible
+
+characters 7 of H. This shows that it is sufficient to prove that there exists a Z {q]
 linear combination
-d。=  bocT,
-cf
-bacEC(q), such that x(T) = x(d.) for all characters × of Hf:
-Let x be a character of Hr and let eSf. Let i be the first i such that
+
+d, = ¥ bach, »
+crf
+
+b,-€ €(q), such that x(Z;) = x(d,) for all characters y of Hy.
+
+Let x be a character of Hy and let aeS,. Let i be the first i such that
 o(i) > i + 1. The proof is by induction on i and reverse induction on o(i). Note that
-any  that does not have such an i is of the form ?c for some c f.
-  =()  ( s ()=   that
-t(osj) < t(o) and thus T = Ts;9j.
-Case 1 t(s;osi) > t(os;):
+any o that does not have such an i is of the form y, for some cFf.
+
+Let j=o(i)—1. Since o '(j)>i and o ‘(j+1)=i we have that
+£(as;) < ¢(c) and thus 7, = 7;,,g;.-
+
+Case 1 ¢(s;os;) > ¢(08;):
 Then
-x(T) = x(Tsj9j)
-= x(g;Ts;)
-= x(Tsjos;) .
-Note now that for the permutation o' - Sjos; we have o'(i) = j = o(i) - 1.
-Case 2 t(sjos;) < t(os;):
-Then Tas, = g;Tsjos; and thus T。 = gj;Tsjs;9j. So
-x(T) = x(g;Tsjas;9j)
-= x(g} Tjasj)
-= (q - 1)x(g;Tsjos;) + qx(Tsjosj)
-= (q - 1)x(Tas,) + qx(Tsjas;) .
-Here again, for each of the permutations o' - os; and o' - Sjos; we have that
-g'(i) = j = (i) - 1.
-Thus x(T) can be written as a linear combination of x(T.) where for each o' we
-have that o'(i) =- o(i) -- 1. This completes the induction. 
+(Ts) = x(Tos,93)
+
+= X(9;Tes,)
+= X(Ty0s,) +
+Note now that for the permutation o’ = s;os; we have o'(i) = j = o(i) — 1.
+Case 2 ¢(s;as;) < ¢(a8;):
+Then 7,;,, = 9jT;,0s, and thus T, = gj T;,as,9j- SO
+X(Ta) = X(Gj Tis08593)
+= 1095 Teos,)
+= (q — )xXGjTyos;) + 1X(Tiyas;)
+= (¢ — Ix(Les,) + 4x (Teyos;) -
+Here again, for each of the permutations o’ = os; and o’ = s,os; we have that
+o'(i) =j =o(i)-— 1.
+
+Thus x(7,) can be written as a linear combination of y(T;-) where for each a’ we
+have that o’(i) = o(i) — 1. This completes the induction. 0

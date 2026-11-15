@@ -8,10 +8,10 @@ pages: 2-4
 source_pdf: 1172-3.pdf
 source_sha256: e9c32f59e9db7970
 toc_source: inferred
+doc_brief: "ON THE COLORED JONES POLYNOMIALS OF SOME SIMPLE LINKS — 4 sections: Front matter; RESULTS; THE KAUFFMAN BRACKET SKEIN MODULE"
 ---
 Here we list our results of calculations. In the following the links are
 assumed to be framed with framings zero.
-35
 ON THE COLORED JONES POLYNOMIALS OF SOME SIMPLE LINKS
 $3_{l}$
 $-3_{1}$
@@ -39,7 +39,6 @@ $W$-and
 $W_{+}$ denote the Whitehead links and let
 \copyright denote the
 Borromean rings as shown in Figure 2. We have
-36
 KAZUO HABIRO
 $\langle e_{m}, e_{n}\rangle_{W}+=\sum_{=i0}^{n}(-\min(m,))^{i}1a\frac{1}{2}i(i+3)(a-a-1)3i\frac{[m+i+1]![n+i+1]![i]!}{[m-i]![n-i]![2p+1]!}$
 $\langle e_{m}, e_{n}\rangle_{W_{-}}=\sum_{i=0}^{\mathrm{I}\mathrm{n}\mathrm{i}\mathrm{n}}a^{-i}\frac{1}{2}(i+3)(a-a^{-1})^{3i_{\frac{[m+i+1]![n+i+1]![i]!}{[m-i]![n-i]![2p+1]!}}}(m,n)$

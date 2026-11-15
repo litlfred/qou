@@ -1,0 +1,6504 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "mod-phi-convergence-approximation-of-discrete-measures-and-2",
+  "pages": [
+    {
+      "page": 19,
+      "rotation": 0,
+      "drawings": 34,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2.1. The cut-function c(ξ)."
+      ],
+      "labels": [
+        {
+          "text": "1132",
+          "bbox": [
+            62.36,
+            49.84,
+            82.29,
+            59.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "R. CHHAIBI, F. DELBAEN, P.-L. MÉLIOT & A. NIKEGHBALI",
+          "bbox": [
+            107.16,
+            50.98,
+            340.33,
+            58.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Theorem 2.3 (Norm estimate). — Take ε small enough so that γ(ε) ⩽",
+          "bbox": [
+            72.33,
+            76.55,
+            385.14,
+            87.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular",
+            "LMRomanCaps10-Regular",
+            "LMRomanSlant10-Regular",
+            "MSAM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "σ2",
+          "bbox": [
+            63.56,
+            88.1,
+            71.82,
+            96.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            292.37,
+            89.61,
+            296.34,
+            96.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "2 , and suppose that λ is large enough so that λ ⩾",
+          "bbox": [
+            65.95,
+            91.15,
+            286.01,
+            104.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman7-Regular",
+            "LMRomanSlant10-Regular",
+            "MSAM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "σ2 . Then:",
+          "bbox": [
+            289.98,
+            91.29,
+            331.48,
+            103.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMRoman5-Regular",
+            "LMRomanSlant10-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "r",
+          "bbox": [
+            232.05,
+            104.06,
+            249.9,
+            142.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "!!",
+          "bbox": [
+            308.1,
+            104.06,
+            323.88,
+            141.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            253.95,
+            114.58,
+            258.93,
+            124.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "e−λMε2",
+          "bbox": [
+            325.53,
+            116.25,
+            355.26,
+            131.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic5-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "πε + λ∥φ′∥∞",
+          "bbox": [
+            251.1,
+            119.45,
+            307.6,
+            138.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∥bµ −bν∥A ⩽∥ψ −χ∥A",
+          "bbox": [
+            90.06,
+            121.07,
+            187.04,
+            158.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula",
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "MSAM10",
+            "rsfs7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1 + CH",
+          "bbox": [
+            198.56,
+            121.32,
+            229.36,
+            132.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            344.87,
+            123.34,
+            348.27,
+            128.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            244.33,
+            138.58,
+            254.29,
+            175.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "+ Cr+1 βr+1(ε) (ε−1 +",
+          "bbox": [
+            144.31,
+            143.71,
+            242.12,
+            164.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "5(r + 1))",
+          "bbox": [
+            254.29,
+            147.32,
+            292.83,
+            157.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            294.02,
+            154.24,
+            296.79,
+            164.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "r",
+          "bbox": [
+            229.38,
+            160.02,
+            232.72,
+            165.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic5-Regular"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "2 + 1",
+          "bbox": [
+            229.44,
+            160.02,
+            244.79,
+            170.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman5-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "( σ2",
+          "bbox": [
+            201.81,
+            160.26,
+            215.14,
+            172.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 λ)",
+          "bbox": [
+            209.27,
+            162.44,
+            228.18,
+            175.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            241.4,
+            165.1,
+            244.79,
+            170.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "where Cr+1 is a constant depending only on r:",
+          "bbox": [
+            62.36,
+            181.89,
+            265.73,
+            193.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman7-Regular",
+            "LMRomanSlant10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "s",
+          "bbox": [
+            222.95,
+            193.94,
+            232.91,
+            231.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            285.86,
+            197.86,
+            293.2,
+            235.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            254.21,
+            197.87,
+            261.54,
+            235.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            201.38,
+            205.39,
+            206.36,
+            215.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2π",
+          "bbox": [
+            234.11,
+            205.39,
+            244.77,
+            215.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "r + 3",
+          "bbox": [
+            261.54,
+            205.39,
+            284.67,
+            222.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Cr+1 =",
+          "bbox": [
+            151.55,
+            212.13,
+            183.69,
+            223.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "3 Γ",
+          "bbox": [
+            237.13,
+            212.13,
+            254.21,
+            228.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            293.2,
+            212.13,
+            295.97,
+            222.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(r + 1)!",
+          "bbox": [
+            187.65,
+            218.97,
+            220.1,
+            228.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            279.69,
+            218.97,
+            284.67,
+            228.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In order to prove this theorem, we introduce the cut function ξ ∈T 7→",
+          "bbox": [
+            72.32,
+            237.86,
+            385.15,
+            257.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "c(ξ) that is piecewise linear, vanishes outside of [−ε, ε], and is equal to 1",
+          "bbox": [
+            62.36,
+            252.82,
+            385.15,
+            270.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "on [−ε",
+          "bbox": [
+            62.36,
+            264.34,
+            91.83,
+            283.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2, ε",
+          "bbox": [
+            87.96,
+            264.34,
+            102.62,
+            278.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2], see Figure 2.1.",
+          "bbox": [
+            98.75,
+            266.02,
+            175.82,
+            278.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "c(ξ)",
+          "bbox": [
+            262.16,
+            345.57,
+            279.04,
+            355.54
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ξ",
+          "bbox": [
+            339.06,
+            373.92,
+            343.42,
+            383.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−ε",
+          "bbox": [
+            178.5,
+            385.67,
+            191.32,
+            404.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ε",
+          "bbox": [
+            240.37,
+            385.67,
+            244.14,
+            392.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "ε",
+          "bbox": [
+            154.89,
+            387.75,
+            159.53,
+            397.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ε",
+          "bbox": [
+            268.27,
+            387.75,
+            272.92,
+            397.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            187.45,
+            393.02,
+            191.42,
+            400.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            240.27,
+            393.02,
+            244.23,
+            400.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Figure 2.1. The cut-function c(ξ).",
+          "bbox": [
+            149.65,
+            419.01,
+            297.87,
+            428.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular",
+            "LMRomanSlant10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Lemma 2.4. — Under the assumptions of Theorem 2.3,",
+          "bbox": [
+            72.32,
+            455.12,
+            318.46,
+            466.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRomanCaps10-Regular",
+            "LMRomanSlant10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "!!",
+          "bbox": [
+            295.43,
+            467.57,
+            311.21,
+            504.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "r",
+          "bbox": [
+            219.39,
+            467.58,
+            237.24,
+            506.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(1 −c) eλφ",
+          "bbox": [
+            99.96,
+            476.14,
+            156.35,
+            519.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula",
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            241.28,
+            478.09,
+            246.27,
+            488.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "e−λMε2",
+          "bbox": [
+            312.87,
+            479.77,
+            342.6,
+            494.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic5-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "πε + λ∥φ′∥∞",
+          "bbox": [
+            238.43,
+            482.96,
+            294.94,
+            501.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A ⩽",
+          "bbox": [
+            156.35,
+            484.69,
+            175.23,
+            498.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10",
+            "rsfs7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1 + CH",
+          "bbox": [
+            185.89,
+            484.83,
+            216.7,
+            495.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            344.79,
+            484.83,
+            347.56,
+            494.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            332.21,
+            486.85,
+            335.6,
+            491.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "Proof. — Note that |(1 −c(ξ)) eλφ(ξ)| vanishes on [−ε",
+          "bbox": [
+            72.32,
+            513.99,
+            304.58,
+            532.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular",
+            "LMRomanSlant10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2, ε",
+          "bbox": [
+            300.71,
+            513.99,
+            315.37,
+            528.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2], and is smaller",
+          "bbox": [
+            311.5,
+            515.67,
+            385.16,
+            528.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "than e−λMξ2 ⩽e−λMε2",
+          "bbox": [
+            62.36,
+            524.78,
+            160.59,
+            542.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic5-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular",
+            "MSAM10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "everywhere else. We then use Proposition 2.1:",
+          "bbox": [
+            166.11,
+            531.55,
+            365.75,
+            541.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            150.21,
+            534.07,
+            153.6,
+            539.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "Z",
+          "bbox": [
+            143.94,
+            542.42,
+            149.48,
+            579.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(1 −c) eλφ",
+          "bbox": [
+            65.9,
+            547.51,
+            122.29,
+            590.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula",
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "−c′eλφ + (1 −c) λφ′ eλφ",
+          "bbox": [
+            244.82,
+            547.51,
+            358.89,
+            590.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula",
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "|1 −c| eλ Re(φ) + CH",
+          "bbox": [
+            156.28,
+            552.09,
+            242.13,
+            573.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A ⩽",
+          "bbox": [
+            122.29,
+            556.06,
+            141.17,
+            570.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10",
+            "rsfs7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "L 2",
+          "bbox": [
+            358.88,
+            560.91,
+            370.45,
+            568.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman5-Regular",
+            "rsfs7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "T",
+          "bbox": [
+            149.48,
+            565.96,
+            154.12,
+            572.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "c′eλφ",
+          "bbox": [
+            204.37,
+            572.76,
+            236.99,
+            615.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula",
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(1 −c) eλφ",
+          "bbox": [
+            312.67,
+            572.76,
+            369.06,
+            615.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula",
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "⩽e−λMε2",
+          "bbox": [
+            133.42,
+            576.38,
+            173.67,
+            591.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic5-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular",
+            "MSAM10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "L 2 + CH λ∥φ′∥∞",
+          "bbox": [
+            236.99,
+            579.58,
+            310.51,
+            598.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular",
+            "rsfs7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "+ CH",
+          "bbox": [
+            178.07,
+            581.45,
+            201.68,
+            592.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            163.28,
+            583.47,
+            166.68,
+            588.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "L 2",
+          "bbox": [
+            369.06,
+            586.16,
+            380.62,
+            594.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman5-Regular",
+            "rsfs7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "ANNALES DE L’INSTITUT FOURIER",
+          "bbox": [
+            62.36,
+            621.45,
+            180.44,
+            626.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98
+          ]
+        }
+      ]
+    },
+    {
+      "page": 26,
+      "rotation": 0,
+      "drawings": 20,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3.1. The Hermite function G9; it attains its global extremas at the smallest zeroes of H10."
+      ],
+      "labels": [
+        {
+          "text": "1139",
+          "bbox": [
+            365.23,
+            49.84,
+            385.15,
+            59.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "APPROXIMATION OF DISCRETE MEASURES",
+          "bbox": [
+            135.32,
+            50.98,
+            312.2,
+            58.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "with a remainder uniform in k ∈Z. Last, we use the fact that",
+          "bbox": [
+            62.36,
+            75.48,
+            331.93,
+            94.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Z ∞",
+          "bbox": [
+            160.38,
+            89.66,
+            178.28,
+            126.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula",
+            "LMMathSymbols7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "dt",
+          "bbox": [
+            233.69,
+            96.7,
+            242.82,
+            106.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "e−t2",
+          "bbox": [
+            182.24,
+            98.38,
+            200.29,
+            113.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic5-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2π = e−α2",
+          "bbox": [
+            236.89,
+            98.38,
+            282.18,
+            121.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic5-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 e−itα",
+          "bbox": [
+            195.74,
+            101.57,
+            225.24,
+            113.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 ,",
+          "bbox": [
+            276.76,
+            101.73,
+            287.14,
+            113.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            9.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            228.59,
+            102.89,
+            236.89,
+            120.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−∞",
+          "bbox": [
+            165.91,
+            114.76,
+            180.08,
+            126.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "is the Fourier transform of the standard Gaussian distribution evaluated at",
+          "bbox": [
+            62.36,
+            129.88,
+            385.22,
+            139.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ξ = −α, and by taking the (r + 1)-th derivative with respect to α, we get:",
+          "bbox": [
+            62.36,
+            142.58,
+            385.14,
+            159.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Z ∞",
+          "bbox": [
+            106.4,
+            155.31,
+            124.3,
+            192.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula",
+            "LMMathSymbols7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0010",
+          "bbox": [
+            302.81,
+            157.81,
+            308.75,
+            194.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0011",
+          "bbox": [
+            330.74,
+            157.81,
+            336.69,
+            194.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "∂r",
+          "bbox": [
+            281.45,
+            160.97,
+            290.99,
+            172.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "dt",
+          "bbox": [
+            208.32,
+            162.35,
+            217.45,
+            172.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(it)r+1 e−t2",
+          "bbox": [
+            126.6,
+            164.02,
+            174.92,
+            179.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic5-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e−α2",
+          "bbox": [
+            308.76,
+            164.02,
+            328.55,
+            179.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic5-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 e−itα",
+          "bbox": [
+            170.38,
+            167.21,
+            199.88,
+            179.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2π = (−1)r+1",
+          "bbox": [
+            211.53,
+            167.21,
+            271.5,
+            186.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            203.23,
+            168.54,
+            211.53,
+            185.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            338.35,
+            169.09,
+            341.12,
+            179.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            323.13,
+            171.11,
+            326.52,
+            176.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "∂αr+1",
+          "bbox": [
+            273.2,
+            175.28,
+            299.45,
+            185.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "−∞",
+          "bbox": [
+            111.93,
+            180.4,
+            126.1,
+            192.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "□",
+          "bbox": [
+            377.4,
+            195.38,
+            385.14,
+            205.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "hence the claimed result.",
+          "bbox": [
+            62.36,
+            195.52,
+            170.92,
+            205.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The computation of the local distance amounts then to ﬁnd the maximum",
+          "bbox": [
+            72.32,
+            212.81,
+            385.18,
+            222.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "in k ∈Z of the previous quantity. Recall that the r-th Hermite polynomial",
+          "bbox": [
+            62.36,
+            223.51,
+            385.16,
+            242.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Hr(α) is deﬁned by",
+          "bbox": [
+            62.36,
+            238.71,
+            147.4,
+            249.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0010",
+          "bbox": [
+            190.47,
+            253.25,
+            196.42,
+            290.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0011",
+          "bbox": [
+            218.4,
+            253.25,
+            224.35,
+            290.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Gr(α) = ∂r",
+          "bbox": [
+            130.07,
+            256.41,
+            183.69,
+            275.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e−α2",
+          "bbox": [
+            196.42,
+            259.46,
+            216.21,
+            274.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic5-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "= (−1)r Hr(α) e−α2",
+          "bbox": [
+            227.12,
+            259.46,
+            312.49,
+            281.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic5-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 .",
+          "bbox": [
+            307.07,
+            262.81,
+            317.45,
+            274.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            210.79,
+            266.55,
+            214.19,
+            271.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "∂αr",
+          "bbox": [
+            170.95,
+            270.72,
+            186.9,
+            281.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The local extremas of Gr correspond to the zeros of Hr+1, since G′",
+          "bbox": [
+            62.36,
+            287.14,
+            358.01,
+            299.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "r(α) =",
+          "bbox": [
+            355.72,
+            288.52,
+            385.15,
+            300.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "r(α) −α Hr(α)) e−α2",
+          "bbox": [
+            101.07,
+            298.88,
+            192.07,
+            320.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic5-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "= (−1)r+1 Hr+1(α) e−α2",
+          "bbox": [
+            199.01,
+            298.88,
+            306.55,
+            320.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic5-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(−1)r (H′",
+          "bbox": [
+            62.36,
+            299.83,
+            104.17,
+            320.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "= Gr+1(α). De-",
+          "bbox": [
+            313.5,
+            303.44,
+            385.15,
+            314.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            186.65,
+            305.96,
+            190.04,
+            310.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            301.14,
+            305.96,
+            304.53,
+            310.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "note zr+1 the smallest absolute value of a zero of Hr+1; it is 0 when r is",
+          "bbox": [
+            62.36,
+            316.39,
+            385.15,
+            327.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "even, and it can be shown that in any case it corresponds to the global",
+          "bbox": [
+            62.36,
+            329.35,
+            385.18,
+            339.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "extrema of |Gr|; see [56, Chapter 6], and Figure 3.1 for an illustration.",
+          "bbox": [
+            62.36,
+            342.05,
+            370.05,
+            359.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Gr(α)",
+          "bbox": [
+            286.2,
+            426.12,
+            312.6,
+            436.83
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "α",
+          "bbox": [
+            356.29,
+            443.91,
+            362.66,
+            453.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "zr+1",
+          "bbox": [
+            219.53,
+            451.83,
+            238.16,
+            462.53
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 3.1. The Hermite function G9; it attains its global extremas at",
+          "bbox": [
+            72.32,
+            541.15,
+            375.2,
+            551.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman7-Regular",
+            "LMRomanSlant10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the smallest zeroes of H10.",
+          "bbox": [
+            72.33,
+            554.1,
+            188.32,
+            564.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman7-Regular",
+            "LMRomanSlant10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "TOME 70 (2020), FASCICULE 3",
+          "bbox": [
+            62.36,
+            621.45,
+            160.98,
+            626.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98
+          ]
+        }
+      ]
+    },
+    {
+      "page": 47,
+      "rotation": 0,
+      "drawings": 17,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4.1. Domain of analyticity of the generating series gΘ(z)."
+      ],
+      "labels": [
+        {
+          "text": "1160",
+          "bbox": [
+            62.36,
+            49.84,
+            82.29,
+            59.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "R. CHHAIBI, F. DELBAEN, P.-L. MÉLIOT & A. NIKEGHBALI",
+          "bbox": [
+            107.16,
+            50.98,
+            340.33,
+            58.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "R",
+          "bbox": [
+            239.27,
+            107.21,
+            246.83,
+            117.18
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "LMMathItalic10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "φ",
+          "bbox": [
+            274.14,
+            126.14,
+            280.08,
+            136.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "r",
+          "bbox": [
+            254.88,
+            141.39,
+            259.37,
+            151.35
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "LMMathItalic10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            217.93,
+            142.38,
+            222.91,
+            152.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 4.1. Domain of analyticity of the generating series gΘ(z).",
+          "bbox": [
+            83.16,
+            221.44,
+            364.36,
+            232.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular",
+            "LMRomanSlant10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "with a uniform remainder on compact subsets of C. Hence, (ℓn)n∈N con-",
+          "bbox": [
+            62.36,
+            248.16,
+            385.15,
+            266.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRomanSlant10-Regular",
+            "MSBM10",
+            "MSBM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "verges mod-Poisson with parameters λn = θ log n + K and limit",
+          "bbox": [
+            62.36,
+            263.37,
+            341.14,
+            274.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRomanSlant10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Γ(θ)",
+          "bbox": [
+            229.26,
+            279.2,
+            248.19,
+            289.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ψ(ξ) =",
+          "bbox": [
+            189.84,
+            285.94,
+            219.78,
+            295.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Γ(θeiξ).",
+          "bbox": [
+            223.74,
+            285.94,
+            257.67,
+            302.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Moreover, the convergence of residues ψn →ψ happens in every space C r,",
+          "bbox": [
+            62.36,
+            306.43,
+            385.15,
+            327.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRomanSlant10-Regular",
+            "rsfs10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "with a norm ∥ψn −ψ∥C r which is each time O( 1",
+          "bbox": [
+            62.36,
+            319.93,
+            275.75,
+            340.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic5-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular",
+            "LMRomanSlant10-Regular",
+            "rsfs7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n).",
+          "bbox": [
+            271.3,
+            321.61,
+            284.07,
+            334.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRomanSlant10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Note that the last part of the theorem (convergence in every space C r)",
+          "bbox": [
+            72.32,
+            339.32,
+            385.15,
+            351.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "rsfs10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "is an immediate consequence of the estimate of EΘ,n[ezℓn], and of the ana-",
+          "bbox": [
+            62.36,
+            352.25,
+            385.17,
+            365.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic5-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular",
+            "MSBM10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "lyticity of all terms in",
+          "bbox": [
+            62.36,
+            367.45,
+            157.66,
+            377.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "EΘ,n[eiξℓn] e−(θ log n+K)(eiξ−1) = ψn(ξ).",
+          "bbox": [
+            140.74,
+            382.28,
+            306.77,
+            397.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic5-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular",
+            "LMRoman7-Regular",
+            "MSBM10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "On the other hand, in the case of the Ewens measure, one has K = 0 and",
+          "bbox": [
+            62.36,
+            404.77,
+            385.16,
+            414.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "r = 1, and in the case of the uniform measure, one has moreover θ = 1.",
+          "bbox": [
+            62.36,
+            417.72,
+            373.18,
+            427.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Γ(θ)",
+          "bbox": [
+            292.17,
+            428.13,
+            307.33,
+            435.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Because of the inﬁnite product representation of",
+          "bbox": [
+            72.32,
+            430.72,
+            282.99,
+            440.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Γ(θeiξ), one can restate",
+          "bbox": [
+            287.44,
+            430.72,
+            385.14,
+            443.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic5-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 4.2 as follows. If one looks at a generalized weighted measure with",
+          "bbox": [
+            62.36,
+            443.88,
+            385.14,
+            453.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a generating series gΘ(z) that satisﬁes the hypotheses of Theorem 4.2, then",
+          "bbox": [
+            62.36,
+            456.83,
+            385.15,
+            467.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "E[eiξℓn]",
+          "bbox": [
+            68.69,
+            472.95,
+            100.19,
+            485.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic5-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular",
+            "MSBM10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            181.41,
+            484.01,
+            190.12,
+            521.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            358.34,
+            484.01,
+            374.39,
+            527.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            205.57,
+            489.98,
+            212.9,
+            527.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            273.36,
+            489.98,
+            280.69,
+            527.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0012 1",
+          "bbox": [
+            342.64,
+            489.98,
+            356.65,
+            527.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1 + θ(eiξ −1)",
+          "bbox": [
+            212.9,
+            493.65,
+            272.16,
+            514.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∞",
+          "bbox": [
+            193.04,
+            494.04,
+            200.99,
+            505.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Y",
+          "bbox": [
+            190.65,
+            494.57,
+            203.38,
+            531.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "e−θ(eiξ−1)",
+          "bbox": [
+            282.35,
+            497.95,
+            320.9,
+            514.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic5-Regular",
+            "LMMathSymbols5-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "= e(θ(log n+γ)+K)(eiξ−1)",
+          "bbox": [
+            81.42,
+            500.87,
+            179.24,
+            514.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic5-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            181.41,
+            501.94,
+            190.12,
+            539.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            365.68,
+            501.94,
+            378.82,
+            539.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula",
+            "LMMathItalic10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "θ+j−1 + O",
+          "bbox": [
+            297.21,
+            502.21,
+            342.36,
+            514.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic5-Regular",
+            "LMMathSymbols5-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            9.96
+          ]
+        },
+        {
+          "text": "θ + j −1",
+          "bbox": [
+            232.23,
+            510.84,
+            271.19,
+            528.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            351.17,
+            511.08,
+            357.14,
+            521.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "j=1",
+          "bbox": [
+            190.12,
+            518.25,
+            203.91,
+            525.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Therefore, in this setting, one can deal with the asymptotics of (ℓn)n∈N in",
+          "bbox": [
+            62.36,
+            533.59,
+            385.16,
+            549.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "MSBM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the same way as in Section 4.1, but with parameters λn = θHn + K, and",
+          "bbox": [
+            62.36,
+            546.54,
+            381.44,
+            558.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            260.77,
+            557.46,
+            268.11,
+            594.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0013k",
+          "bbox": [
+            309.46,
+            557.46,
+            319.67,
+            594.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula",
+            "LMMathItalic7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∞",
+          "bbox": [
+            247.95,
+            561.51,
+            255.89,
+            573.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            244.72,
+            562.04,
+            259.11,
+            599.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "θ",
+          "bbox": [
+            286.31,
+            564.99,
+            290.98,
+            574.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "p1(Θ) = 0 ;",
+          "bbox": [
+            122.75,
+            571.6,
+            174.28,
+            582.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "EUFM10",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "pk⩾2(Θ) =",
+          "bbox": [
+            195.86,
+            571.6,
+            241.96,
+            582.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "EUFM10",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular",
+            "MSAM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(Θ)",
+          "bbox": [
+            62.36,
+            571.73,
+            77.86,
+            581.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            322.0,
+            571.73,
+            324.77,
+            581.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "θ + j −1",
+          "bbox": [
+            269.3,
+            578.31,
+            308.27,
+            595.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "j=1",
+          "bbox": [
+            245.03,
+            585.72,
+            258.81,
+            592.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "ANNALES DE L’INSTITUT FOURIER",
+          "bbox": [
+            62.36,
+            621.45,
+            180.44,
+            626.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98
+          ]
+        }
+      ]
+    },
+    {
+      "page": 50,
+      "rotation": 0,
+      "drawings": 25,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4.2. The functional graph associated to the function f : [[1, 8]] →[[1, 8]] with word 38471814, here with one connected compo- nent."
+      ],
+      "labels": [
+        {
+          "text": "1163",
+          "bbox": [
+            365.23,
+            49.84,
+            385.15,
+            59.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "APPROXIMATION OF DISCRETE MEASURES",
+          "bbox": [
+            135.32,
+            50.98,
+            312.2,
+            58.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "rooted tree is constructed recursively by taking a node and connecting to",
+          "bbox": [
+            62.36,
+            77.74,
+            385.18,
+            87.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "it a set of trees (also, Cayley’s theorem gives card Tn = nn−1).",
+          "bbox": [
+            62.36,
+            89.32,
+            336.63,
+            102.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "EUFM10",
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            263.79,
+            117.78,
+            268.77,
+            127.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "8",
+          "bbox": [
+            263.79,
+            146.12,
+            268.77,
+            156.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            292.13,
+            146.12,
+            297.11,
+            156.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            178.75,
+            174.47,
+            183.73,
+            184.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            235.44,
+            174.47,
+            240.42,
+            184.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            178.75,
+            231.16,
+            183.73,
+            241.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "7",
+          "bbox": [
+            235.44,
+            231.16,
+            240.42,
+            241.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            150.4,
+            259.51,
+            155.38,
+            269.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 4.2. The functional graph associated to the function f",
+          "bbox": [
+            72.32,
+            282.7,
+            363.73,
+            292.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRomanSlant10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ":",
+          "bbox": [
+            372.42,
+            282.7,
+            375.19,
+            292.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "[[1, 8]] →[[1, 8]] with word 38471814, here with one connected compo-",
+          "bbox": [
+            72.33,
+            295.4,
+            375.18,
+            312.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRomanSlant10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "nent.",
+          "bbox": [
+            72.33,
+            308.6,
+            94.19,
+            318.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRomanSlant10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The class C = (Cn)n∈N of cycles on such trees has generating series",
+          "bbox": [
+            72.33,
+            333.94,
+            363.93,
+            349.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "EUFM10",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "MSBM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∞",
+          "bbox": [
+            135.99,
+            350.64,
+            143.93,
+            362.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            132.77,
+            351.16,
+            147.15,
+            388.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "zn",
+          "bbox": [
+            150.32,
+            352.73,
+            160.32,
+            364.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n! |Cn|",
+          "bbox": [
+            151.2,
+            360.6,
+            180.74,
+            384.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "EUFM10",
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "C(z) =",
+          "bbox": [
+            98.52,
+            360.85,
+            129.69,
+            370.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n=0",
+          "bbox": [
+            132.46,
+            374.72,
+            147.46,
+            381.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            280.78,
+            379.9,
+            288.11,
+            417.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            329.51,
+            379.9,
+            336.84,
+            417.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "∞",
+          "bbox": [
+            135.99,
+            383.95,
+            143.93,
+            395.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            132.77,
+            384.48,
+            147.15,
+            421.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            165.31,
+            384.48,
+            179.69,
+            421.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "|Tk1| |Tk2| · · · |Tkr|",
+          "bbox": [
+            198.73,
+            387.18,
+            277.93,
+            404.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "EUFM10",
+            "LMMathItalic5-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            305.82,
+            387.42,
+            311.8,
+            397.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "zn",
+          "bbox": [
+            338.5,
+            392.29,
+            348.5,
+            404.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            121.94,
+            394.17,
+            129.69,
+            404.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "r n!",
+          "bbox": [
+            230.74,
+            401.0,
+            245.92,
+            410.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "k1, . . . , kr",
+          "bbox": [
+            288.11,
+            401.0,
+            328.79,
+            411.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n=0",
+          "bbox": [
+            132.46,
+            408.04,
+            147.46,
+            415.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "k1+···+kr=n",
+          "bbox": [
+            149.13,
+            408.39,
+            195.87,
+            420.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic5-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman5-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "∞",
+          "bbox": [
+            135.68,
+            418.62,
+            143.62,
+            430.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            132.45,
+            419.14,
+            146.84,
+            456.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            169.54,
+            419.14,
+            183.93,
+            456.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "|Tk1| · · · |Tkr|",
+          "bbox": [
+            198.8,
+            421.84,
+            255.51,
+            439.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "EUFM10",
+            "LMMathItalic5-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            149.7,
+            422.09,
+            154.68,
+            432.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(k1)! · · · (kr)! zk1+···+kr",
+          "bbox": [
+            199.54,
+            426.95,
+            298.47,
+            452.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic5-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            121.94,
+            428.83,
+            129.69,
+            438.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "r",
+          "bbox": [
+            149.81,
+            435.66,
+            154.3,
+            445.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "r=1",
+          "bbox": [
+            132.65,
+            442.7,
+            146.65,
+            449.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "k1,...,kr⩾1",
+          "bbox": [
+            157.54,
+            442.8,
+            195.94,
+            450.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic5-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman5-Regular",
+            "LMRoman7-Regular",
+            "MSAM7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            210.89,
+            449.58,
+            218.22,
+            486.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            257.79,
+            449.58,
+            265.13,
+            486.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "∞",
+          "bbox": [
+            135.68,
+            453.64,
+            143.62,
+            465.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            132.46,
+            454.16,
+            146.84,
+            491.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(T(z))r",
+          "bbox": [
+            149.7,
+            455.73,
+            181.17,
+            467.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            235.51,
+            457.11,
+            240.5,
+            467.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            121.94,
+            463.85,
+            129.69,
+            473.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "= log",
+          "bbox": [
+            185.85,
+            463.85,
+            209.1,
+            473.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            266.79,
+            463.85,
+            269.56,
+            473.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1 −T(z)",
+          "bbox": [
+            219.41,
+            470.43,
+            256.6,
+            487.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "r",
+          "bbox": [
+            163.41,
+            470.68,
+            167.9,
+            480.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "r=1",
+          "bbox": [
+            132.65,
+            477.72,
+            146.65,
+            484.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "On the second line of this computation, the multinomial coeﬃcient comes",
+          "bbox": [
+            62.36,
+            491.18,
+            385.16,
+            501.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "from the choice of the distribution of the integers of [[1, n]] into the r dif-",
+          "bbox": [
+            62.36,
+            504.13,
+            385.16,
+            514.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ferent trees, and the factor 1",
+          "bbox": [
+            62.36,
+            515.4,
+            192.73,
+            527.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "r comes from the fact that r distinct cyclic",
+          "bbox": [
+            188.79,
+            517.09,
+            385.15,
+            530.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "permutations of the choices yield the same cycle of trees. Finally, a func-",
+          "bbox": [
+            62.36,
+            530.04,
+            385.15,
+            540.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tional graph is a set of cycles of trees, so,",
+          "bbox": [
+            62.36,
+            542.99,
+            242.29,
+            552.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "∞",
+          "bbox": [
+            163.84,
+            559.01,
+            171.78,
+            570.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            160.62,
+            559.53,
+            175.0,
+            596.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "zn",
+          "bbox": [
+            178.17,
+            561.1,
+            188.17,
+            572.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            296.06,
+            562.48,
+            301.04,
+            572.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n! |Fn| = exp(C(z)) =",
+          "bbox": [
+            179.05,
+            568.97,
+            276.0,
+            593.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "EUFM10",
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "F(z) =",
+          "bbox": [
+            126.41,
+            569.22,
+            157.54,
+            579.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1 −T(z).",
+          "bbox": [
+            279.96,
+            569.22,
+            321.1,
+            593.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n=0",
+          "bbox": [
+            160.3,
+            583.09,
+            175.31,
+            590.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "TOME 70 (2020), FASCICULE 3",
+          "bbox": [
+            62.36,
+            621.45,
+            160.98,
+            626.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98
+          ]
+        }
+      ]
+    },
+    {
+      "page": 77,
+      "rotation": 0,
+      "drawings": 614,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 5.1. The function e−x2+y2"
+      ],
+      "labels": [
+        {
+          "text": "1190",
+          "bbox": [
+            62.36,
+            49.84,
+            82.29,
+            59.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "R. CHHAIBI, F. DELBAEN, P.-L. MÉLIOT & A. NIKEGHBALI",
+          "bbox": [
+            107.16,
+            50.98,
+            340.33,
+            58.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "where the ek,n’s are obtained from the parameters",
+          "bbox": [
+            62.36,
+            77.61,
+            281.1,
+            88.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "EUFM10",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            267.26,
+            92.77,
+            272.18,
+            99.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            262.53,
+            93.3,
+            276.91,
+            130.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            282.07,
+            96.25,
+            287.05,
+            106.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "p1,n = 0 ;",
+          "bbox": [
+            156.97,
+            102.86,
+            200.28,
+            114.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "EUFM10",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "pk⩾2,n =",
+          "bbox": [
+            221.87,
+            102.86,
+            259.76,
+            114.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "EUFM10",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular",
+            "MSAM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "jk",
+          "bbox": [
+            279.77,
+            109.18,
+            288.68,
+            119.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "j=1",
+          "bbox": [
+            262.83,
+            116.98,
+            276.61,
+            123.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "by the same recipe as in Section 4. The scheme of approximation of (ℓn)n∈N",
+          "bbox": [
+            62.36,
+            130.51,
+            384.65,
+            146.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "MSBM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of order r = 1 is the Poissonian approximation",
+          "bbox": [
+            62.36,
+            143.46,
+            265.69,
+            153.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0010",
+          "bbox": [
+            160.52,
+            151.52,
+            166.47,
+            188.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0011",
+          "bbox": [
+            202.27,
+            151.52,
+            208.22,
+            188.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "eiξ+eiζ",
+          "bbox": [
+            167.67,
+            160.61,
+            190.12,
+            167.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic5-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "νn(k, l) = e−Hn (Hn)k+l",
+          "bbox": [
+            238.61,
+            162.23,
+            343.52,
+            181.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic5-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Hn",
+          "bbox": [
+            149.11,
+            164.29,
+            160.02,
+            171.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic5-Regular",
+            "LMMathItalic7-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            192.07,
+            164.29,
+            202.27,
+            176.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols7-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            177.58,
+            168.19,
+            180.97,
+            173.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "c",
+          "bbox": [
+            99.16,
+            170.13,
+            109.12,
+            207.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "νn(ξ, ζ) = e",
+          "bbox": [
+            98.97,
+            170.35,
+            149.11,
+            181.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ";",
+          "bbox": [
+            214.26,
+            170.35,
+            217.03,
+            180.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2k+l k! l!.",
+          "bbox": [
+            308.5,
+            170.35,
+            348.55,
+            187.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "It satisﬁes the hypotheses (H1d) and (H2d), with β(2,0)",
+          "bbox": [
+            62.36,
+            190.6,
+            307.0,
+            203.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "= β(0,2)",
+          "bbox": [
+            311.03,
+            190.6,
+            344.98,
+            203.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "= −p2,n",
+          "bbox": [
+            349.0,
+            190.65,
+            383.46,
+            210.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "EUFM7",
+            "LMMathItalic5-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            289.95,
+            196.94,
+            294.87,
+            203.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            327.93,
+            196.94,
+            332.85,
+            203.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "8",
+          "bbox": [
+            374.6,
+            199.21,
+            378.57,
+            206.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "4 . Since H(2,0)(x, y) = x2 −1, H(1,1)(x, y) = xy and",
+          "bbox": [
+            138.59,
+            204.51,
+            385.16,
+            225.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and β(1,1)",
+          "bbox": [
+            62.36,
+            205.44,
+            105.82,
+            218.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "= −p2,n",
+          "bbox": [
+            111.42,
+            205.49,
+            147.45,
+            225.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "EUFM7",
+            "LMMathItalic5-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            88.77,
+            211.78,
+            93.69,
+            218.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "H(0,2)(x, y) = y2 −1, Theorems 5.8 and 5.9 ensure that",
+          "bbox": [
+            62.36,
+            217.46,
+            303.87,
+            238.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e−x2+y2",
+          "bbox": [
+            208.24,
+            230.59,
+            243.57,
+            285.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula",
+            "LMMathItalic5-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "+ o",
+          "bbox": [
+            307.66,
+            230.59,
+            327.99,
+            285.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula",
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            327.98,
+            230.99,
+            335.32,
+            268.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            370.42,
+            230.99,
+            377.76,
+            268.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            350.38,
+            238.51,
+            355.36,
+            248.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "π",
+          "bbox": [
+            147.67,
+            238.52,
+            153.35,
+            248.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(2 −(x + y)2)",
+          "bbox": [
+            247.42,
+            243.38,
+            307.66,
+            262.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "dL(µn, νn) =",
+          "bbox": [
+            71.97,
+            245.26,
+            127.05,
+            255.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "sup",
+          "bbox": [
+            183.23,
+            245.26,
+            198.23,
+            255.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ";",
+          "bbox": [
+            379.42,
+            245.26,
+            382.19,
+            255.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            232.04,
+            247.28,
+            235.43,
+            252.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "6 (log n)2",
+          "bbox": [
+            131.01,
+            251.45,
+            169.86,
+            262.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(log n)2",
+          "bbox": [
+            336.51,
+            251.45,
+            368.73,
+            262.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(x,y)∈R2",
+          "bbox": [
+            174.88,
+            254.77,
+            206.08,
+            268.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman5-Regular",
+            "LMRoman7-Regular",
+            "MSBM7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "\u0012Z",
+          "bbox": [
+            167.64,
+            261.24,
+            180.52,
+            298.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            310.81,
+            261.24,
+            318.14,
+            298.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            335.15,
+            261.24,
+            342.48,
+            298.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            365.37,
+            261.24,
+            372.7,
+            298.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "π",
+          "bbox": [
+            144.88,
+            268.76,
+            150.56,
+            278.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            351.43,
+            268.76,
+            356.42,
+            278.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "R2 e−x2+y2",
+          "bbox": [
+            180.51,
+            269.81,
+            223.61,
+            292.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic5-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular",
+            "MSBM7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "|2 −(x + y)2| dx dy",
+          "bbox": [
+            227.46,
+            273.63,
+            310.45,
+            292.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "dTV(µn, νn) =",
+          "bbox": [
+            65.33,
+            275.5,
+            127.05,
+            286.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "+ o",
+          "bbox": [
+            320.35,
+            275.5,
+            335.15,
+            285.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            212.08,
+            277.53,
+            215.47,
+            282.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "24 log n",
+          "bbox": [
+            131.01,
+            282.34,
+            164.79,
+            292.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "log n",
+          "bbox": [
+            343.68,
+            282.34,
+            364.17,
+            292.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "since P",
+          "bbox": [
+            62.36,
+            293.29,
+            97.29,
+            337.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathExtension10-Regula",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "βα Hα(x)",
+          "bbox": [
+            120.64,
+            295.38,
+            154.24,
+            305.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic5-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "2 ((x + y)2 −2) = π2",
+          "bbox": [
+            179.71,
+            297.11,
+            269.95,
+            318.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "= −p2",
+          "bbox": [
+            158.2,
+            298.75,
+            185.24,
+            318.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "EUFM7",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "12 (2 −(x + y)2).",
+          "bbox": [
+            262.07,
+            299.6,
+            336.31,
+            318.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "σα",
+          "bbox": [
+            132.48,
+            306.16,
+            141.9,
+            313.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic5-Regular",
+            "LMMathItalic7-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "|α|=2",
+          "bbox": [
+            97.29,
+            306.21,
+            117.28,
+            318.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            146.44,
+            361.29,
+            150.67,
+            369.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            146.44,
+            388.69,
+            150.67,
+            396.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            296.84,
+            407.34,
+            301.07,
+            415.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            146.44,
+            416.08,
+            150.67,
+            424.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            274.67,
+            424.23,
+            278.9,
+            432.2
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "0 0.5 1",
+          "bbox": [
+            196.4,
+            433.42,
+            224.41,
+            445.61
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "LMMathItalic8-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "y",
+          "bbox": [
+            288.33,
+            440.79,
+            292.86,
+            449.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic9-Regular"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "−2",
+          "bbox": [
+            250.72,
+            442.23,
+            261.54,
+            450.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols8-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "x",
+          "bbox": [
+            188.61,
+            449.13,
+            193.83,
+            458.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic9-Regular"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Figure 5.1. The function e−x2+y2",
+          "bbox": [
+            119.72,
+            470.93,
+            263.15,
+            486.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic5-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular",
+            "LMRomanSlant10-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "|2 −(x + y)2|.",
+          "bbox": [
+            267.0,
+            474.75,
+            327.79,
+            493.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular",
+            "LMRomanSlant10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            251.62,
+            478.65,
+            255.01,
+            483.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "For the local distance, one checks at once that the maximum of the",
+          "bbox": [
+            72.33,
+            499.34,
+            385.15,
+            509.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "function f(x, y) = e−x2+y2",
+          "bbox": [
+            62.36,
+            509.15,
+            175.74,
+            524.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic5-Regular",
+            "LMMathSymbols7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "|2 −(x + y)2| is obtained when x = y = 0, so",
+          "bbox": [
+            179.59,
+            512.97,
+            375.4,
+            531.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            164.21,
+            516.87,
+            167.61,
+            521.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "π",
+          "bbox": [
+            226.21,
+            527.07,
+            231.89,
+            537.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "dL(µn, νn) =",
+          "bbox": [
+            150.52,
+            533.81,
+            205.59,
+            544.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "3 (log n)2 (1 + o(1)),",
+          "bbox": [
+            209.55,
+            533.81,
+            297.0,
+            550.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Regular",
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "see Figure 5.1. For the total variation distance, a computer algebra system",
+          "bbox": [
+            62.36,
+            555.94,
+            385.17,
+            565.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(SageMath) yields the approximate value 12.162 . . . for the integral. As",
+          "bbox": [
+            62.36,
+            568.9,
+            385.17,
+            579.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMono10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "in the one-dimensional case (Example 1.6 and Section 4.3), one can on",
+          "bbox": [
+            62.36,
+            581.85,
+            385.18,
+            591.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ANNALES DE L’INSTITUT FOURIER",
+          "bbox": [
+            62.36,
+            621.45,
+            180.44,
+            626.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman5-Regular"
+          ],
+          "sizes": [
+            4.98
+          ]
+        }
+      ]
+    }
+  ]
+}

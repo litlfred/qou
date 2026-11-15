@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.983
 latex_coverage_ratio: 0.971
+doc_brief: "FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS — Factorization homology theories of topological manifolds, after Beilinson, Drinfeld and Lurie, are homology-type theories for topological n-manifolds"
 ---
 ::: definition
 The $\infty$-category of $\mathop{\mathrm{{\mathcal D}\sf isk}}_n^B$-algebras in $\mathcal V$ $$\mathop{\mathrm{\mathsf{Alg}}}_{\mathop{\mathrm{{\mathcal D}\sf isk}}_n^B}(\mathcal V)~:=~\mathop{\mathrm{\sf Fun}}^\otimes(\mathop{\mathrm{{\mathcal D}\sf isk}}^B_n, \mathcal V)$$ is the $\infty$-category of symmetric monoidal functors.

@@ -1,0 +1,70 @@
+by auto
+qed
+
+lemma ideal-points-poincare-line-conjugate [simp):
+assumesu € unit-disc v € unit-disc u # vu
+assumes ideal-points (poincare-line uv) = {i1, i2}
+shows ideal-points (poincare-line (conjugate u) (conjugate v)) = {conjugate i1, conjugate i2}
+using assms
+by auto
+
+end
+theory Poincare-Distance
+
+imports Poincare-Lines-Ideal-Points Hyperbolic-Functions
+begin
+
+5 H-distance in the Poincaré model
+
+Informally, the h-distance between the two h-points is defined as the absolute value of the logarithm of the cross
+ratio between those two points and the two ideal points.
+
+abbreviation Re-cross-ratio where Re-cross-ratio z uv w = Re (to-complez (cross-ratio z u v w))
+
+definition calc-poincare-distance :: complex-homo = complex-homo => complex-homo = complez-homo => real where
+[simp]: calc-poincare-distance u il v i2 = abs (In (Re-cross-ratio u il v i2))
+
+definition poincare-distance-pred :: complex-homo = complex-homo => real = bool where
+[simp]: poincare-distance-pred u v d <—>
+(u=vAd=0)V (u#vA(V il 22. ideal-points (poincare-line uv) = {il, i2} —> d = calc-poincare-distance
+u il v i2))
+
+definition poincare-distance :: complez-homo = complex-homo => real where
+poincare-distance uv = (THE d. poincare-distance-pred u v d)
+
+We shown that the described cross-ratio is always finite, positive real number.
+
+lemma distance-cross-ratio-real-positive:
+assumes u € unit-disc and v € unit-disc and u 4 v
+shows V il i2. ideal-points (poincare-line u v) = {il, i2} —
+cross-ratio u il v i2 # cop A is-real (to-complex (cross-ratio u il v i2)) \ Re-cross-ratio u il v i2 > 0
+(is ?P wu v)
+proof (rule wlog-positive-x-axis[OF assms])
+fix x
+assume *: is-real x 0 < Rex Rex < 1
+hence x 4 -—1 44 1
+by auto
+hence ««: of-complez x # oop of-complex x # On of-complex x # of-complex (—1) of-complex 1 # of-complex x
+of-complex x € circline-set z-axis
+using *
+unfolding circline-set--axis
+by (auto simp add: of-complex-inj)
+
+have *««: 0, 4 of-complex (—1) 0, 4 of-complex 1
+by (metis of-complez-zero-iff zero-neq-neg-one, simp)
+
+have ****: —c-140x-1#0
+using (x # —1) «x@ # 1)
+by (metis add.inverse-inverse eq-iff-diff-eq-0, simp)
+
+have poincare-line 0; (of-complez x) = x-axis
+using **
+by (simp add: poincare-line-0-real-is-x-axis)
+
+thus ?P 0), (of-complex x)
+USING ¥ * KK FORK
+using cross-ratio-not-inf|of 0, of-complex 1 of-complex (—1) of-complex x|
+using cross-ratio-not-inf|of 0, of-complex (—1) of-complex 1 of-complex x]
+using cross-ratio-real[of 0 —1 x 1] cross-ratio-real{of 0 1 « —1]
+
+44

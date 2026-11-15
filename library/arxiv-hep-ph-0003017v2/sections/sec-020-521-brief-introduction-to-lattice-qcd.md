@@ -8,7 +8,9 @@ pages: 32-33
 source_pdf: 0003017v2.pdf
 source_sha256: 1660907865346bdf
 toc_source: inferred
+doc_brief: "arXiv:hep-ph/0003017v2 26 Jun 2000 — Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems."
 ---
+BRIEF INTRODUCTION TO LATTICE QCD
 QCD is a renormalizable quantum ﬁeld theory that must be regularized. This
 can be done by formulating the theory on a discrete lattice with lattice spacing a
 [139]. The largest momentum is then π/a. The quark ﬁelds live on the sites and
@@ -67,4 +69,3 @@ described by the corresponding nonchiral ensembles (see also Ref. [145]). Finall
 Dirac operators obeying the Ginsparg-Wilson condition, Eq. (99), have the same
 anti-unitary symmetries as the continuum Dirac operator, but the eigenvalues
 are located on the complex unit circle [62].
-5.2.2

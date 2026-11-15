@@ -1,0 +1,54 @@
+The Dilogarithm Function Al
+
+Finally, specializing a fourth time to t = 0 and using L(+00) = 77/3 = 2L(1),
+
+we find
+_ sin? (1/n) 6
+L()7! L{( —-— ) =4--,
+, (Sa) n
+
+an equation well known in the physics literature.
+
+3 Dilogarithms and modular functions
+
+A fascinating and almost completely unsolved problem is to understand
+the overlap between the classes of g-hypergeometric functions and modular
+forms or functions, the prototypical case being given by the famous Rogers-
+Ramanujan identities. Nahm’s conjecture gives us a first glimpse of an an-
+swer, which surprisingly involves dilogarithms and the Bloch group. In sub-
+sections A and B we describe the conjecture and some of the examples which
+motivate it, while subsection C contains an asymptotic analysis of the q-series
+involved and the proof that the conjecture is true in the simplest case.
+
+A. q-hypergeometric series and Nahm’s conjecture. Consider the two
+power series G(q) and H(q) by
+
+n?
+
+G(q) = ir ye H@ = » a. (al <1).
+
+where (q)n, as in §1 denotes the product (1—q)(1—q?) --- (1—-q"). The classical
+Rogers-Ramanujan identities—discovered by Rogers in 1897, rediscovered by
+Ramanujan in 1915 and then given a third proof by both authors jointly
+and many further proofs in subsequent years—says that these two series have
+product developments
+
+Gq) = Il I =. Aq) = Il re
+
+n= +1 (mod 5) n= +2 (mod 5)
+
+The important thing here is not so much that these functions have product ex-
+pansions as that, up to rational powers of g, they are both modular functions.
+Indeed, by the Jacobi triple product formula, we can rewrite the identities as
+
+1 n 5n? nm 1 n 5n? 3n) /2
+GQ) = BUCH eM", Ha) = BH Cy gerne
+
+oo neZ (a)oo neZ
+
+or, even more intelligently, as
+
+95,1(2)
+mz)”
+
+gag) = (23)

@@ -8,7 +8,7 @@
   "pages": 25,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T18:57:53Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -21,7 +21,7 @@
   },
   "doi": null,
   "title": "On structure constants and fusion rules in the SL(2,C)/SU(2) WZNW model",
-  "authors_raw": "J. Teschner",
+  "authors_raw": "SL(2, C)/SU(2) WZNW MODEL",
   "title_lines": [
    "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE"
   ],
@@ -44,166 +44,560 @@
    ],
    "browser_print": false
   },
-  "title_note": "title/authors set by hand from page 1; the automatic title pick read the second title line only. Published Nucl. Phys. B 546 (1999) 390-422 (not checked against the publisher record here)."
+  "title_note": "title/authors set by hand from page 1; the automatic title pick read the second title line only. Published Nucl. Phys. B 546 (1999) 390-422 (not checked against the publisher record here).",
+  "title_prev": "arXiv:hep-th/9712256v2 27 Jun 1998"
  },
- "toc": [
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "40 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (40 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed): one section per page.",
+ "figures": [],
+ "pages": [
   {
-   "level": 1,
-   "title": "Introduction",
-   "page": 1,
-   "source": "inferred",
-   "number": "1"
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Canonical Quantization, Symmetries",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "The bootstrap",
-   "page": 7,
-   "source": "inferred",
-   "number": "3"
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Structure constants",
-   "page": 10,
-   "source": "inferred",
-   "number": "4"
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Fusion rules",
-   "page": 15,
-   "source": "inferred",
-   "number": "5"
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Conclusions",
-   "page": 19,
-   "source": "inferred",
-   "number": "6"
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Appendix",
-   "page": 20,
-   "source": "inferred",
-   "number": "7"
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "References",
-   "page": 25,
-   "source": "inferred",
-   "number": null
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   }
  ],
- "toc_source": "inferred",
  "sections": [
   {
-   "id": "sec-front-matter",
+   "id": "page-001",
    "number": null,
-   "title": "Front matter",
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 556,
-   "n_words": 83
+   "n_chars": 3088,
+   "n_words": 489,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-000-1-introduction",
-   "number": "1",
-   "title": "Introduction",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 2,
-   "n_chars": 5686,
-   "n_words": 915
-  },
-  {
-   "id": "sec-001-2-canonical-quantization-symmetries",
-   "number": "2",
-   "title": "Canonical Quantization, Symmetries",
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
    "level": 1,
    "page_start": 2,
-   "page_end": 7,
-   "n_chars": 10625,
-   "n_words": 2106
+   "page_end": 2,
+   "n_chars": 3423,
+   "n_words": 565,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
-   "id": "sec-002-3-the-bootstrap",
-   "number": "3",
-   "title": "The bootstrap",
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1810,
+   "n_words": 354,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 2019,
+   "n_words": 429,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 2761,
+   "n_words": 517,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 2388,
+   "n_words": 486,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
    "level": 1,
    "page_start": 7,
-   "page_end": 10,
-   "n_chars": 7556,
-   "n_words": 1386
+   "page_end": 7,
+   "n_chars": 2650,
+   "n_words": 495,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
-   "id": "sec-003-4-structure-constants",
-   "number": "4",
-   "title": "Structure constants",
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 2080,
+   "n_words": 375,
+   "label_start": "8",
+   "label_end": "8"
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 2823,
+   "n_words": 533,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
    "level": 1,
    "page_start": 10,
-   "page_end": 15,
-   "n_chars": 11609,
-   "n_words": 2207
+   "page_end": 10,
+   "n_chars": 2740,
+   "n_words": 484,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
-   "id": "sec-004-5-fusion-rules",
-   "number": "5",
-   "title": "Fusion rules",
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 2701,
+   "n_words": 483,
+   "label_start": "11",
+   "label_end": "11"
+  },
+  {
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 2669,
+   "n_words": 546,
+   "label_start": "12",
+   "label_end": "12"
+  },
+  {
+   "id": "page-013",
+   "number": null,
+   "title": "Page 13",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 2573,
+   "n_words": 489,
+   "label_start": "13",
+   "label_end": "13"
+  },
+  {
+   "id": "page-014",
+   "number": null,
+   "title": "Page 14",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 2215,
+   "n_words": 438,
+   "label_start": "14",
+   "label_end": "14"
+  },
+  {
+   "id": "page-015",
+   "number": null,
+   "title": "Page 15",
    "level": 1,
    "page_start": 15,
-   "page_end": 19,
-   "n_chars": 12733,
-   "n_words": 2364
+   "page_end": 15,
+   "n_chars": 2917,
+   "n_words": 521,
+   "label_start": "15",
+   "label_end": "15"
   },
   {
-   "id": "sec-005-6-conclusions",
-   "number": "6",
-   "title": "Conclusions",
+   "id": "page-016",
+   "number": null,
+   "title": "Page 16",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 2533,
+   "n_words": 466,
+   "label_start": "16",
+   "label_end": "16"
+  },
+  {
+   "id": "page-017",
+   "number": null,
+   "title": "Page 17",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 3218,
+   "n_words": 599,
+   "label_start": "17",
+   "label_end": "17"
+  },
+  {
+   "id": "page-018",
+   "number": null,
+   "title": "Page 18",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 3042,
+   "n_words": 606,
+   "label_start": "18",
+   "label_end": "18"
+  },
+  {
+   "id": "page-019",
+   "number": null,
+   "title": "Page 19",
    "level": 1,
    "page_start": 19,
-   "page_end": 20,
-   "n_chars": 2775,
-   "n_words": 438
+   "page_end": 19,
+   "n_chars": 3856,
+   "n_words": 621,
+   "label_start": "19",
+   "label_end": "19"
   },
   {
-   "id": "sec-006-7-appendix",
-   "number": "7",
-   "title": "Appendix",
+   "id": "page-020",
+   "number": null,
+   "title": "Page 20",
    "level": 1,
    "page_start": 20,
-   "page_end": 25,
-   "n_chars": 11310,
-   "n_words": 2372
+   "page_end": 20,
+   "n_chars": 2085,
+   "n_words": 397,
+   "label_start": "20",
+   "label_end": "20"
   },
   {
-   "id": "sec-007-references",
+   "id": "page-021",
    "number": null,
-   "title": "References",
+   "title": "Page 21",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 2325,
+   "n_words": 504,
+   "label_start": "21",
+   "label_end": "21"
+  },
+  {
+   "id": "page-022",
+   "number": null,
+   "title": "Page 22",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 2423,
+   "n_words": 490,
+   "label_start": "22",
+   "label_end": "22"
+  },
+  {
+   "id": "page-023",
+   "number": null,
+   "title": "Page 23",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 2010,
+   "n_words": 421,
+   "label_start": "23",
+   "label_end": "23"
+  },
+  {
+   "id": "page-024",
+   "number": null,
+   "title": "Page 24",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 2166,
+   "n_words": 493,
+   "label_start": "24",
+   "label_end": "24"
+  },
+  {
+   "id": "page-025",
+   "number": null,
+   "title": "Page 25",
    "level": 1,
    "page_start": 25,
    "page_end": 25,
-   "n_chars": 3624,
-   "n_words": 539
+   "n_chars": 3934,
+   "n_words": 609,
+   "label_start": "25",
+   "label_end": "25"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 8,
-  "toc_inferred_entries": 8,
-  "sections": 9,
-  "chars_total": 66474
- },
- "structure_note": "Sectioning: split by hand at the paper's numbered section headings (automatic heading inference picked display-math lines)."
+  "toc_entries": 0,
+  "toc_inferred_entries": 40,
+  "toc_inferred_mean_confidence": 0.0,
+  "toc_inferred_empty_share": 0.05,
+  "toc_inferred_method": "regex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 25,
+  "chars_total": 66449,
+  "furniture_lines_stripped": 0
+ }
 }

@@ -1,0 +1,179 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-2311.02632v2",
+  "figures": [
+    {
+      "id": "vfig-p004",
+      "file": null,
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 4
+      },
+      "page": 4,
+      "rotation": 0,
+      "captionLabels": [
+        "1",
+        "2"
+      ],
+      "region": null,
+      "assembly": {
+        "drawings": 5,
+        "background": 0,
+        "groups": [],
+        "boxes": [],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              242.91,
+              667.13,
+              277.16,
+              667.13
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              252.87,
+              669.52,
+              277.16,
+              669.52
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              279.55,
+              667.13,
+              297.41,
+              667.13
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              321.36,
+              659.07,
+              345.64,
+              659.07
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              363.87,
+              667.13,
+              382.47,
+              667.13
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 0
+      },
+      "unrendered_reason": "no drawing component on this page contains a text line, so there is no labelled region to render -- the caption candidates are recorded and nothing is claimed about what the page draws"
+    },
+    {
+      "id": "vfig-p011",
+      "file": null,
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 11
+      },
+      "page": 11,
+      "rotation": 0,
+      "captionLabels": [
+        "3"
+      ],
+      "region": null,
+      "assembly": {
+        "drawings": 6,
+        "background": 0,
+        "groups": [],
+        "boxes": [],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              228.13,
+              588.56,
+              235.4,
+              588.56
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              245.49,
+              591.72,
+              253.01,
+              591.72
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              252.35,
+              614.38,
+              257.49,
+              614.38
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.87,
+              614.38,
+              312.02,
+              614.38
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              353.0,
+              628.72,
+              358.15,
+              628.72
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              407.72,
+              628.72,
+              412.87,
+              628.72
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 0
+      },
+      "unrendered_reason": "no drawing component on this page contains a text line, so there is no labelled region to render -- the caption candidates are recorded and nothing is claimed about what the page draws"
+    }
+  ]
+}

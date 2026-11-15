@@ -1,0 +1,61 @@
+5.2 Two-body-sector
+
+Cc 272 2 3 3
+Ss f
+Vato = ~—3 3D) >) D ps) Viess (A): (5.15)
+@ SJ=1 1
+% sy :
+7 - &
+VnLto = 7 7) 2d VsPs mrs, Vey (#1): (5.16)
+i
+8 Cras? :
+VNLo = 2 DV ses) » VPs: (it) : (5.17)
+a S=1 S's
+iClous)-k 3, 3
+9 gS); = = > =
+Vxto = >! » » » Ls rr (@) Ves @) + Ths @)Vpp(@)]:, (5.18)
+a S=11/=1
+with €, ,,, the totally antisymmetric Levi-Civita tensor in three dimensions. Finally, we also include the
+
+following SO(3) breaking term
+
+Csog
+VxLo = Dips (i) Vis (i) (5.19)
+
+which allows us to remove lattice artefacts (unphysical partial wave mixing) due to rotational symmetry
+breaking. Rotational symmetry breaking is caused by the breakdown of the continuum SO(3) group to
+the SO(3, Z), which consists of a finite number of irreducible representations and consequently allows a
+mixing of partial waves, which should not mix in the continuum. More details can be found in [33, 80,
+82, 83, 132]. Specifically, this term is tuned to remove the mixing between the 35,3D, and the 3D, *G,
+channels, but the physical mixing like e.g. 35 iD, is of course not affected. Unphysical partial wave
+mixing in higher waves is so small that it can be ignored. More details of the notation can be found
+App. B.
+
+At N2LO, there are no further contact terms. Further, we need to include the TPEP at NLO and N2LO.
+While they are largely absorbed in the NLO contact terms for a very coarse lattice, they play an important
+role for finer lattices [115]. At NLO, the TPEP reads
+
+3 = s
+
+TPEP : py (Hy) py () : 2(< 4 2 TPEP, | >
+
+Vxto = » {> ry [4M; (594 — 4g, - 1) Vato (hy - fy)
+ity fy \ T=1 T
+
++ (2394 — 10g4 - 1) Varo (it, — iy) + 4894 Maar gi — p)|
+
+NLO NLO
+3
+394 ‘ TPEP,4 (5.20)
+- V, (A, — 7,8 1,S9)ps, (1) ps, (Hr)
+oar F| 2, NLO 1 2
+
+- y Vata (iy — fiy)ps (741) ps (iy) = |
+S=l
+
+with the Fourier-transformed parts
+
+Vato” @) =F [LAN @, (5.21)
+Vato (#) =F [L(G 4" |@). (5.22)
+
+53

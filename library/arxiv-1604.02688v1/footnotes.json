@@ -1,0 +1,3612 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1604.02688v1",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p015-1",
+   "page": 15,
+   "mark": "1",
+   "text": "Oursignconventionisoppositetothatin[Til08]andReginav.4.96([Bur]),butisconsistentwiththe boundary map deﬁned in [Neu92] and discussed in §7 below.",
+   "marks": [
+    {
+     "page": 15,
+     "context": "(SeeTillmann[Til08]forthedetails."
+    }
+   ],
+   "block": "library/arxiv-1604.02688v1/blocks/prose-sec-010"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p056-1",
+   "page": 56,
+   "mark": "14",
+   "text": "(2006), no. 5, 969–1026. [Neu92] Walter D. Neumann, Combinatorics of triangulations and the Chern-Simons invariant for hyper- bolic 3-manifolds, Topology ’90 (Columbus, OH, 1990), Ohio State Univ. Math. Res. Inst. Publ., vol. 1, de Gruyter, Berlin, 1992, pp. 243–271. [NZ85] Walter D. Neumann and Don Zagier, Volumes of hyperbolic three-manifolds, Topology 24 (1985), no. 3, 307–332. [Pie88] Riccardo Piergallini, Standard moves for standard polyhedra and spines, Rend. Circ. Mat. Palermo (2) Suppl. (1988), no. 18, 391–414, Third National Conference on Topology (Italian) (Trieste, 1986). [Rub97] J. H. Rubinstein, Polyhedral minimal surfaces, Heegaard splittings and decision problems for 3- dimensional manifolds, Geometric topology (Athens, GA, 1993), AMS/IP Stud. Adv. Math., vol. 2, Amer. Math. Soc., Providence, RI, 1997, pp. 1–20. [Sto00] Michelle Stocking, Almost normal surfaces in 3-manifolds, Trans. Amer. Math. Soc. 352 (2000), no. 1, 171–207.",
+   "block": "library/arxiv-1604.02688v1/blocks/prose-sec-033"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "The 3D-index is a collection of formal power series in q"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "T"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "i.e.formalLaurentseriesinq"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "nshowthatthedeﬁnitionof3D-indexcanbeextendedtogiveaq-seriesI"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "a = 0andb ∈H1(∂M; 2Z);wehaveI"
+  },
+  {
+   "page": 3,
+   "mark": "b",
+   "context": "T(b) = IT(2"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "T(b) = IT(2b)inthenotationof[GHRS15].HereI"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "thattheseriesforthe3D-indexI"
+  },
+  {
+   "page": 3,
+   "mark": "b",
+   "context": "T(b)cansometimesconvergefor"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "triangulationTisnot1-eﬃcient(sotheseriesforI"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "heindexforatriangulationisbuiltupfromthetetrahedronindexI∆:Z"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "2"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "2e)"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "(−1)n"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "where (q)n= Π"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i=1(1 −q"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "i=1(1 −qi) is the"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "i=1(1 −qi) is the q-Pochhammer symbol (by convention (q)"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "coincideswiththecoeﬃcientsofz"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "I∆(m, e)(q)z"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "(1 −zq"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "e∈ZI∆(m, e)(q)"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "e∈ZI∆(m, e)(q)z"
+  },
+  {
+   "page": 4,
+   "mark": "s",
+   "context": "2)"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "andcoeﬃcient(−1)"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "I∆(m, e)I∆(m, e + c)q"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "q"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "qe"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "= q−x"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "A=qA:02:13,"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "A= qA:02:13,right:"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "j=z"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "j) = πfor"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Given k = (k1, . . . , kn) ∈Z"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "P"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "i=1"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "i=1k"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "i=1kiE"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "i"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "ik"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "k∈Z"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "wherethesummationisovera(suitable)sublatticeZ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "wherethesummationisovera(suitable)sublatticeZn−r⊂Z"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Moregenerally,the3D-indexgivesafunctionIT: H1(∂M; Z)∼= Z"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "Moregenerally,the3D-indexgivesafunctionIT: H1(∂M; Z)∼= Z2"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "nationP"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "i=1"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i=1k"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i=1kiE"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "i=1kiEi + P"
+  },
+  {
+   "page": 7,
+   "mark": "h",
+   "context": "h=1(p"
+  },
+  {
+   "page": 7,
+   "mark": "h",
+   "context": "h=1(phM"
+  },
+  {
+   "page": 7,
+   "mark": "h",
+   "context": "h=1(phMh + q"
+  },
+  {
+   "page": 7,
+   "mark": "h",
+   "context": "h=1(phMh + qhL"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "h=1(phMh + qhLh)correspondingtotetrahedronσ"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "i"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "ik"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "k∈Z"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "ere[γ] ∈H1(∂M; Z)isthehomologyclassofγandthesummationisoverZ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "] ∈H1(∂M; Z)isthehomologyclassofγandthesummationisoverZn−r⊂Z"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Choosing generators µ, λ for H1(∂M, Z) = Z"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 8,
+   "mark": "10",
+   "context": "Forexample,uptotermsoforderq"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "IT(0) = 1 −2q −3q"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "IT(0) = 1 −2q −3q2+ 2q"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "IT(0) = 1 −2q −3q2+ 2q3+ 8q"
+  },
+  {
+   "page": 8,
+   "mark": "5",
+   "context": "IT(0) = 1 −2q −3q2+ 2q3+ 8q4+ 18q"
+  },
+  {
+   "page": 8,
+   "mark": "6",
+   "context": "IT(0) = 1 −2q −3q2+ 2q3+ 8q4+ 18q5+ 18q"
+  },
+  {
+   "page": 8,
+   "mark": "7",
+   "context": "IT(0) = 1 −2q −3q2+ 2q3+ 8q4+ 18q5+ 18q6+ 14q"
+  },
+  {
+   "page": 8,
+   "mark": "8",
+   "context": "IT(0) = 1 −2q −3q2+ 2q3+ 8q4+ 18q5+ 18q6+ 14q7−12q"
+  },
+  {
+   "page": 8,
+   "mark": "9",
+   "context": "IT(0) = 1 −2q −3q2+ 2q3+ 8q4+ 18q5+ 18q6+ 14q7−12q8−52q"
+  },
+  {
+   "page": 8,
+   "mark": "10",
+   "context": "T(0) = 1 −2q −3q2+ 2q3+ 8q4+ 18q5+ 18q6+ 14q7−12q8−52q9−106q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "IT(µ) = 2q −2q"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "IT(µ) = 2q −2q2+ 2q"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "IT(µ) = 2q −2q2+ 2q3+ 8q"
+  },
+  {
+   "page": 8,
+   "mark": "5",
+   "context": "IT(µ) = 2q −2q2+ 2q3+ 8q4+ 16q"
+  },
+  {
+   "page": 8,
+   "mark": "6",
+   "context": "IT(µ) = 2q −2q2+ 2q3+ 8q4+ 16q5+ 16q"
+  },
+  {
+   "page": 8,
+   "mark": "7",
+   "context": "IT(µ) = 2q −2q2+ 2q3+ 8q4+ 16q5+ 16q6+ 10q"
+  },
+  {
+   "page": 8,
+   "mark": "8",
+   "context": "IT(µ) = 2q −2q2+ 2q3+ 8q4+ 16q5+ 16q6+ 10q7−14q"
+  },
+  {
+   "page": 8,
+   "mark": "9",
+   "context": "IT(µ) = 2q −2q2+ 2q3+ 8q4+ 16q5+ 16q6+ 10q7−14q8−52q"
+  },
+  {
+   "page": 8,
+   "mark": "10",
+   "context": "IT(µ) = 2q −2q2+ 2q3+ 8q4+ 16q5+ 16q6+ 10q7−14q8−52q9−102q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "IT(2µ) = −q −q"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "IT(2µ) = −q −q2+ 3q"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "IT(2µ) = −q −q2+ 3q3+ 6q"
+  },
+  {
+   "page": 8,
+   "mark": "5",
+   "context": "IT(2µ) = −q −q2+ 3q3+ 6q4+ 12q"
+  },
+  {
+   "page": 8,
+   "mark": "6",
+   "context": "IT(2µ) = −q −q2+ 3q3+ 6q4+ 12q5+ 9q"
+  },
+  {
+   "page": 8,
+   "mark": "7",
+   "context": "IT(2µ) = −q −q2+ 3q3+ 6q4+ 12q5+ 9q6+ 3q"
+  },
+  {
+   "page": 8,
+   "mark": "8",
+   "context": "IT(2µ) = −q −q2+ 3q3+ 6q4+ 12q5+ 9q6+ 3q7−19q"
+  },
+  {
+   "page": 8,
+   "mark": "9",
+   "context": "IT(2µ) = −q −q2+ 3q3+ 6q4+ 12q5+ 9q6+ 3q7−19q8−50q"
+  },
+  {
+   "page": 8,
+   "mark": "10",
+   "context": "IT(2µ) = −q −q2+ 3q3+ 6q4+ 12q5+ 9q6+ 3q7−19q8−50q9−88q"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "IT(λ) = q"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "IT(λ) = q3+ 2q"
+  },
+  {
+   "page": 8,
+   "mark": "5",
+   "context": "IT(λ) = q3+ 2q4+ 5q"
+  },
+  {
+   "page": 8,
+   "mark": "6",
+   "context": "IT(λ) = q3+ 2q4+ 5q5+ 2q"
+  },
+  {
+   "page": 8,
+   "mark": "7",
+   "context": "IT(λ) = q3+ 2q4+ 5q5+ 2q6−3q"
+  },
+  {
+   "page": 8,
+   "mark": "8",
+   "context": "IT(λ) = q3+ 2q4+ 5q5+ 2q6−3q7−16q"
+  },
+  {
+   "page": 8,
+   "mark": "9",
+   "context": "IT(λ) = q3+ 2q4+ 5q5+ 2q6−3q7−16q8−32q"
+  },
+  {
+   "page": 8,
+   "mark": "10",
+   "context": "IT(λ) = q3+ 2q4+ 5q5+ 2q6−3q7−16q8−32q9−52q"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "IT(4µ + λ) = q −q"
+  },
+  {
+   "page": 8,
+   "mark": "5",
+   "context": "IT(4µ + λ) = q −q4−2q"
+  },
+  {
+   "page": 8,
+   "mark": "6",
+   "context": "IT(4µ + λ) = q −q4−2q5−5q"
+  },
+  {
+   "page": 8,
+   "mark": "7",
+   "context": "IT(4µ + λ) = q −q4−2q5−5q6−8q"
+  },
+  {
+   "page": 8,
+   "mark": "8",
+   "context": "IT(4µ + λ) = q −q4−2q5−5q6−8q7−10q"
+  },
+  {
+   "page": 8,
+   "mark": "9",
+   "context": "IT(4µ + λ) = q −q4−2q5−5q6−8q7−10q8−11q"
+  },
+  {
+   "page": 8,
+   "mark": "10",
+   "context": "IT(4µ + λ) = q −q4−2q5−5q6−8q7−10q8−11q9−6q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "2λ) = −2"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "2λ) = −2q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "2λ) = −2q3/2 + 4"
+  },
+  {
+   "page": 8,
+   "mark": "7",
+   "context": "2λ) = −2q3/2 + 4q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "2λ) = −2q3/2 + 4q7/2 + 10"
+  },
+  {
+   "page": 8,
+   "mark": "9",
+   "context": "2λ) = −2q3/2 + 4q7/2 + 10q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "2λ) = −2q3/2 + 4q7/2 + 10q9/2 + 14"
+  },
+  {
+   "page": 8,
+   "mark": "11",
+   "context": "2λ) = −2q3/2 + 4q7/2 + 10q9/2 + 14q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "2λ) = −2q3/2 + 4q7/2 + 10q9/2 + 14q11/2 + 10"
+  },
+  {
+   "page": 8,
+   "mark": "13",
+   "context": "2λ) = −2q3/2 + 4q7/2 + 10q9/2 + 14q11/2 + 10q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "2λ) = −2q3/2 + 4q7/2 + 10q9/2 + 14q11/2 + 10q13/2 −2"
+  },
+  {
+   "page": 8,
+   "mark": "15",
+   "context": "2λ) = −2q3/2 + 4q7/2 + 10q9/2 + 14q11/2 + 10q13/2 −2q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "λ) = −2q3/2 + 4q7/2 + 10q9/2 + 14q11/2 + 10q13/2 −2q15/2 −32"
+  },
+  {
+   "page": 8,
+   "mark": "17",
+   "context": ") = −2q3/2 + 4q7/2 + 10q9/2 + 14q11/2 + 10q13/2 −2q15/2 −32q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "/2 + 4q7/2 + 10q9/2 + 14q11/2 + 10q13/2 −2q15/2 −32q17/2 −68"
+  },
+  {
+   "page": 8,
+   "mark": "19",
+   "context": "2 + 4q7/2 + 10q9/2 + 14q11/2 + 10q13/2 −2q15/2 −32q17/2 −68q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "2λ) = −q −q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "2λ) = −q −q2 + 2"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "2λ) = −q −q2 + 2q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "2λ) = −q −q2 + 2q3 + 7"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "2λ) = −q −q2 + 2q3 + 7q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "2λ) = −q −q2 + 2q3 + 7q4 + 11"
+  },
+  {
+   "page": 8,
+   "mark": "5",
+   "context": "2λ) = −q −q2 + 2q3 + 7q4 + 11q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "2λ) = −q −q2 + 2q3 + 7q4 + 11q5 + 11"
+  },
+  {
+   "page": 8,
+   "mark": "6",
+   "context": "2λ) = −q −q2 + 2q3 + 7q4 + 11q5 + 11q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "2λ) = −q −q2 + 2q3 + 7q4 + 11q5 + 11q6 + 3"
+  },
+  {
+   "page": 8,
+   "mark": "7",
+   "context": "2λ) = −q −q2 + 2q3 + 7q4 + 11q5 + 11q6 + 3q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "2λ) = −q −q2 + 2q3 + 7q4 + 11q5 + 11q6 + 3q7 −17"
+  },
+  {
+   "page": 8,
+   "mark": "8",
+   "context": "2λ) = −q −q2 + 2q3 + 7q4 + 11q5 + 11q6 + 3q7 −17q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "2λ) = −q −q2 + 2q3 + 7q4 + 11q5 + 11q6 + 3q7 −17q8 −49"
+  },
+  {
+   "page": 8,
+   "mark": "9",
+   "context": "2λ) = −q −q2 + 2q3 + 7q4 + 11q5 + 11q6 + 3q7 −17q8 −49q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "2λ) = −q −q2 + 2q3 + 7q4 + 11q5 + 11q6 + 3q7 −17q8 −49q9 −88"
+  },
+  {
+   "page": 8,
+   "mark": "10",
+   "context": "λ) = −q −q2 + 2q3 + 7q4 + 11q5 + 11q6 + 3q7 −17q8 −49q9 −88q"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "2λ) = −q"
+  },
+  {
+   "page": 8,
+   "mark": "5",
+   "context": "2λ) = −q1/2 + q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "2λ) = −q1/2 + q5/2 + 4"
+  },
+  {
+   "page": 8,
+   "mark": "7",
+   "context": "2λ) = −q1/2 + q5/2 + 4q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "2λ) = −q1/2 + q5/2 + 4q7/2 + 7"
+  },
+  {
+   "page": 8,
+   "mark": "9",
+   "context": "2λ) = −q1/2 + q5/2 + 4q7/2 + 7q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "2λ) = −q1/2 + q5/2 + 4q7/2 + 7q9/2 + 7"
+  },
+  {
+   "page": 8,
+   "mark": "11",
+   "context": "2λ) = −q1/2 + q5/2 + 4q7/2 + 7q9/2 + 7q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "2λ) = −q1/2 + q5/2 + 4q7/2 + 7q9/2 + 7q11/2 + 3"
+  },
+  {
+   "page": 8,
+   "mark": "13",
+   "context": "2λ) = −q1/2 + q5/2 + 4q7/2 + 7q9/2 + 7q11/2 + 3q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "2λ) = −q1/2 + q5/2 + 4q7/2 + 7q9/2 + 7q11/2 + 3q13/2 −12"
+  },
+  {
+   "page": 8,
+   "mark": "15",
+   "context": "2λ) = −q1/2 + q5/2 + 4q7/2 + 7q9/2 + 7q11/2 + 3q13/2 −12q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": " −q1/2 + q5/2 + 4q7/2 + 7q9/2 + 7q11/2 + 3q13/2 −12q15/2 −31"
+  },
+  {
+   "page": 8,
+   "mark": "17",
+   "context": "−q1/2 + q5/2 + 4q7/2 + 7q9/2 + 7q11/2 + 3q13/2 −12q15/2 −31q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "q5/2 + 4q7/2 + 7q9/2 + 7q11/2 + 3q13/2 −12q15/2 −31q17/2 −62"
+  },
+  {
+   "page": 8,
+   "mark": "19",
+   "context": "5/2 + 4q7/2 + 7q9/2 + 7q11/2 + 3q13/2 −12q15/2 −31q17/2 −62q"
+  },
+  {
+   "page": 9,
+   "mark": "7",
+   "context": "in Z"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "in Z7"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "givevectorsinZ"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "givevectorsinZ3"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "•AregulartriangulationofasetofpointsA={ai}inR"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "pointsverticallytopoints(ai, ti)inR"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "hullinR"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "hullinRn+1,andthenprojectingbacktoR"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "thisdeﬁnitiontoH"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "attheQ-normalsurfacesolutionspaceQ(T; R)forTisasubsetofR□∼=R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "ttheQ-normalsurfacesolutionspaceQ(T; R)forTisasubsetofR□∼=R3"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "S= (a1, b1, c1, a2, b2, c2, . . . , an, bn, cn) ∈(R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "S= (a1, b1, c1, a2, b2, c2, . . . , an, bn, cn) ∈(R3)"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "S= (a1, b1, c1, a2, b2, c2, . . . , an, bn, cn) ∈(R3)n= R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "S= (a1, b1, c1, a2, b2, c2, . . . , an, bn, cn) ∈(R3)n= R3"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "LetQ(T; Z)=Q(T; R) ∩Z"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "LetQ(T; Z)=Q(T; R) ∩Z3"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "Q(T; Z+)=Q(T; Z) ∩R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "Q(T; Z+)=Q(T; Z) ∩R3"
+  },
+  {
+   "page": 13,
+   "mark": "7",
+   "context": "1](alsoseeLuo-Tillmann[LT08,§2])showsthatthespace˜N(T; R) ⊂R"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "](alsoseeLuo-Tillmann[LT08,§2])showsthatthespace˜N(T; R) ⊂R7"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "whichforgetstriangularcoordinates,givingtheimageN(T; R)⊂R"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "whichforgetstriangularcoordinates,givingtheimageN(T; R)⊂R3"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "(seeTillmann[Til08]).WecanalsoregardCasthelinearmapC: R"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "(seeTillmann[Til08]).WecanalsoregardCasthelinearmapC: R3"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "(seeTillmann[Til08]).WecanalsoregardCasthelinearmapC: R3n→R"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "(seeTillmann[Til08]).WecanalsoregardCasthelinearmapC: R3n→R3"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "ω: R"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "ω: R3"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "ω: R3n× R"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "ω: R3n× R3"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "n) ∈(R"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "n) ∈(R3)"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "ItfollowsthatS∈R"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "ItfollowsthatS∈R3"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "fact,C(Tj)=0soω(x, Tj)=−ω(Tj, x)=−C(Tj)·x=0forallx∈R"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "fact,C(Tj)=0soω(x, Tj)=−ω(Tj, x)=−C(Tj)·x=0forallx∈R3"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "i=1, all tetrahedral solutions {T"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "k=1.Henceforeachchoiceof"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "k=1.Henceforeachchoiceofx"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "k=1.Henceforeachchoiceofxi, y"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "k=1.Henceforeachchoiceofxi, yj, p"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "k=1.Henceforeachchoiceofxi, yj, pk, q"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "k=1.Henceforeachchoiceofxi, yj, pk, qk∈Rweobtain"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "j+ b"
+  },
+  {
+   "page": 15,
+   "mark": "c",
+   "context": "j+ bj"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "j+ c"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "j+ cj"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "j"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "jb"
+  },
+  {
+   "page": 15,
+   "mark": "c",
+   "context": "j"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "jc"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "j"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "ja"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "ifSandS′havequadcoordinatesinR"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "ifSandS′havequadcoordinatesinR3"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": " tetrahedral solutions span the real vector space N(T; R) ⊂R"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "tetrahedral solutions span the real vector space N(T; R) ⊂R3"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "Q(T; R) ⊂R"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Q(T; R) ⊂R3"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "equationsofTollefson[Tol98].Explicitly,letZE∼=Z"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "equationsofTollefson[Tol98].Explicitly,letZE∼=ZnandZ□∼=Z"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "equationsofTollefson[Tol98].Explicitly,letZE∼=ZnandZ□∼=Z3"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "LetC0=ZV∼=Z"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "LetC0=ZV∼=Zr, C1=ZE∼=Z"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "LetC0=ZV∼=Zr, C1=ZE∼=Zn, J=Z□∼=Z"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "LetC0=ZV∼=Zr, C1=ZE∼=Zn, J=Z□∼=Z3"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "whereJ= Z□/T∼= Z"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "whereJ= Z□/T∼= Z2"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "{(f, g) ∈H"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "{(f, g) ∈H1(M; Z/2Z) × H"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "wherei∗:H"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "wherei∗:H1(M; Z/2Z)→H"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "−−−→H"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "∼= Ker(H"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "∼= Ker(H1(M; Z/2Z) →H"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "∼= Ker(H1(M; Z/2Z) →H1(∂M; Z/2Z)) ∼= H"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "s.Further,K = Ker(H1(∂M; Z) →H1(M; Z/2Z))isasubgroupofindex2"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "N(T; Z)/Q0(T; Z)∼= Im H0∼= H"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "Chooseasimplicial1-cocyclez∈Z"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "tointegers0, 1∈Zgivinga1-cochain˜z∈C"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "WeﬁrstextendthetetrahedralindexJ∆toafunctionJ: Z"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "WeﬁrstextendthetetrahedralindexJ∆toafunctionJ: Z3"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "WeﬁrstextendthetetrahedralindexJ∆toafunctionJ: Z3n→Z((q"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "I(S) = (−q"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "j"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jm"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jmjT"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "jmjTjwith"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jmjTjwithm"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "jmjTjwithmj∈ZthenJ(S)=(−q"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "j"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jm"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "j"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jm"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "I: Q(T; Z)/T →Z((q"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "jZT"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "iZE"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "I"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "I"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "I(S"
+  },
+  {
+   "page": 21,
+   "mark": "k",
+   "context": "i"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "ik"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "ikiE"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "k=(k1,...,kn−r)∈Z"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "T(0) is a sum over closed normal classes in Q"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "Corollary 8.2.In particular, the index I"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "I"
+  },
+  {
+   "page": 21,
+   "mark": "k",
+   "context": "i"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "ik"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "ikiE"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "k=(k1,...,kn−r)∈Z"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "Remark8.3.ItfollowsimmediatelyfromthedeﬁnitionthatI"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "T(−b) = I"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "appliestothecaseswherea = 0andb ∈H1(∂M; 2Z).WethenhaveI"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "notationof[GHRS15].ForthecomplementMofaknotinS"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "I"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "j) = (a"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "j) = (aj−m"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "j) = (aj−mj, b"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "j) = (aj−mj, bj−m"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "j) = (aj−mj, bj−mj, c"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "j) = (aj−mj, bj−mj, cj−m"
+  },
+  {
+   "page": 21,
+   "mark": "m",
+   "context": "j) = (aj−mj, bj−mj, cj−mj)and"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "j) = (aj−mj, bj−mj, cj−mj)andm"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "j) = (aj−mj, bj−mj, cj−mj)andmj= min{a"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "j) = (aj−mj, bj−mj, cj−mj)andmj= min{aj, b"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "j) = (aj−mj, bj−mj, cj−mj)andmj= min{aj, bj, c"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "2δ(S∗)ofdegree"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "indexsum(29)contributesatermI([S]) = (−q"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "xsum(29)contributesatermI([S]) = (−q1/2)−χ(S∗)J(S∗)oflowestq"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "proofthatthesumI"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "Theorem8.6.TheindexsumforI"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "T(0)converges(as"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "teger k≥0, (kS)∗= kScontributes a term to the sum (31) for I"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "T(0) with"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "T(0) with q"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "χ(S) ≤0.SotheindexsumcannotconvergeasaformalLaurentseriesinq"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "i"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "in"
+  },
+  {
+   "page": 22,
+   "mark": "d",
+   "context": "ini"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "inid(S"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "inid(Si)forallS"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "inid(Si)forallSi∈Q(T; R+)andallintegers"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "inid(Si)forallSi∈Q(T; R+)andallintegersn"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "i"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "in"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "iniS"
+  },
+  {
+   "page": 22,
+   "mark": "d",
+   "context": "i"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "id(n"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "id(niS"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "+) can written (not necessarily uniquely) as a ﬁnite sum S=P"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "i=1"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i=1n"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i=1niF"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "Nowconsiderfi(x) = d(xFi) = −χ(Fi)x + δ(Fi)x"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "en each S∈N(T; Z) can be written as a linear combination S=P"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "i=1"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i=1x"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i=1xiF"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "i=1xiFi with"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i=1xiFi with x"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "and,usingLemma8.7,itsq"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "i"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "ia"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "iai"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "iaix"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "i"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "ib"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "xi∈Z+.HenceI"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "T(0)convergesas"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "Theorem8.8.IfTis1-eﬃcient,thenI"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "T(b)convergesforall"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "T(b)convergesforallaand"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "aI"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "GivenS∈Q"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "GivenS∈Qb(T; Z+)wecanwriteS=Px"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "GivenS∈Qb(T; Z+)wecanwriteS=PxiF"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "GivenS∈Qb(T; Z+)wecanwriteS=PxiFiwherex"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "GivenS∈Qb(T; Z+)wecanwriteS=PxiFiwherexi∈Z+and∂S=(Ps"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "GivenS∈Qb(T; Z+)wecanwriteS=PxiFiwherexi∈Z+and∂S=(Psix"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "ThenS=S"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "ThenS=S0+ S"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "ThenS=S0+ S1whereS"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "i∈I"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "i∈I0"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i∈I0x"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i∈I0xiF"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "i∈I0xiFiandS"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "i∈I1"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i∈I1x"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i∈I1xiF"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "i∈I1"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i∈I1s"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "i∈I1si"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i∈I1six"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "i∈I1sixi= 1.SoS"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i∈I1sixi= 1.SoS1belongstotheﬁniteset{F"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i∈I1sixi= 1.SoS1belongstotheﬁniteset{Fi:"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "i∈I1sixi= 1.SoS1belongstotheﬁniteset{Fi: i ∈I"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "i∈I1sixi= 1.SoS1belongstotheﬁniteset{Fi: i ∈I1and"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i∈I1sixi= 1.SoS1belongstotheﬁniteset{Fi: i ∈I1ands"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "i∈I1sixi= 1.SoS1belongstotheﬁniteset{Fi: i ∈I1andsi= 1},andS"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "all(a,b)I"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Now consider fi(x) = d(xFi) = −χ(Fi)x+δ(Fi)x"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "en each S∈Q(T; Z) can be written as a linear combination S=P"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "i=1"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i=1x"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i=1xiF"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "i=1xiFi with"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i=1xiFi with x"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "and,usingLemma8.7,itsq"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "i"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "ia"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "iai"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "iaix"
+  },
+  {
+   "page": 23,
+   "mark": "b",
+   "context": "i"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "ib"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "T(xµ + yλ) = δ"
+  },
+  {
+   "page": 24,
+   "mark": "y",
+   "context": "T(xµ + yλ) = δ0,x+6"
+  },
+  {
+   "page": 24,
+   "mark": "x",
+   "context": "T(xµ + yλ) = δ0,x+6yfor"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "ample11.2,isnotspun1-eﬃcient.HereI"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "x,yI"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "itturnsoutthattheseriesI"
+  },
+  {
+   "page": 24,
+   "mark": "b",
+   "context": "T(b)mayconvergeforsome"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "T(b)mayconvergeforsomeb̸=0evenwhentheseriesI"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "is embedded and −χ(S′)+2δ(S, S′) ≤0.Then the index sum for I"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "ss Sk= S + kS′contributes a term in the index sum (30) for I"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "withq"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "= −χ(S) −kχ(S′) + δ(S) + 2kδ(S, S′) + k"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "= d(S) + k (−χ(S′) + 2δ(S, S′)) + k"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "embeddedand−χ(S′) + 2δ(S, S′) ≤0.ThentheindexsumI"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "(−χ(Fi) + 2δ(Fi, Sj))xi + δ(Fi)x"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "fi(x) := (−χ(Fi) + 2δ(Fi, S1))x + δ(Fi)x"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "andd(S) ≤D.HencetheindexsumforI"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "T(b)convergesifandonlyifTdoesnotcontain"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "I"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "move.Thenforalla, basabove,I"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "T(b) = I"
+  },
+  {
+   "page": 25,
+   "mark": "6",
+   "context": "2Z,bytheresultsofSection"
+  },
+  {
+   "page": 26,
+   "mark": "a",
+   "context": "TocomputetheindexI"
+  },
+  {
+   "page": 26,
+   "mark": "a",
+   "context": "T(b),wechoose"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "T(b),wechooseanormalclassS"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "T(b),wechooseanormalclassS0with[S"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "T(b),wechooseanormalclassS0with[S0]2=aand[∂S"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "wherek=(ki)∈Z"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "es that the map k = (ki) 7→PkiEi +T is an isomorphism from Z"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "S"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "Sk= S"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "Sk= S0 +Pk"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "Sk= S0 +PkiE"
+  },
+  {
+   "page": 26,
+   "mark": "a",
+   "context": "homologyclassesdonotchange.)ThentheindexsumforI"
+  },
+  {
+   "page": 26,
+   "mark": "a",
+   "context": "˜T(b)has"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "˜S˜k=˜S"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "˜S˜k=˜S0 + k"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "˜S˜k=˜S0 + k0 ˜E"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "rek0istheintegerweightonthenewedgeclass˜E0in˜T,andk= (ki) ∈Z"
+  },
+  {
+   "page": 26,
+   "mark": "a",
+   "context": "move.Thenforalla, basabove,I"
+  },
+  {
+   "page": 26,
+   "mark": "a",
+   "context": "T(b) = I"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "nationωoforientednormalarcsinT∂with"
+  },
+  {
+   "page": 27,
+   "mark": "12",
+   "context": "negativeintegervectorsinR"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "quadrilateralcurvescorrespondto(1, 0), (0, 1), (1, 1)∈Z"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "10.2.Degreesofindexterms.Recall,fromequation(32),thattheq"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "Soχ( ˜S)=χ(S∗)+P(gcd(p"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "Soχ( ˜S)=χ(S∗)+P(gcd(pi, q"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "Soχ( ˜S)=χ(S∗)+P(gcd(pi, qi)−p"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "Soχ( ˜S)=χ(S∗)+P(gcd(pi, qi)−pi−q"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "i(p"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "i(pi+q"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "igcd(p"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "igcd(pi, p"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "i"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "ip"
+  },
+  {
+   "page": 30,
+   "mark": "q",
+   "context": "ipi"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "ipiq"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "i(p"
+  },
+  {
+   "page": 30,
+   "mark": "q",
+   "context": "i(pi"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "i(piq"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "i(piqi −p"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "i(piqi −pi −q"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "i(piqi −pi −qi + gcd(p"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "i(piqi −pi −qi + gcd(pi, q"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "M,andassumethatMisnotasolidtorusorT"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "notT"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "orT"
+  },
+  {
+   "page": 33,
+   "mark": "3",
+   "context": "closedorientable3-manifoldMotherthanS"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "solidtorusorT"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "thecontributionofStothe3D-indexsumhasq"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Thisresultfailsfor1-eﬃcienttriangulationsofthesolidtorusandT"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "1.If Tis a 1-eﬃcient ideal triangulation then the 3D-index I"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "powerseriesinq"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "powerseriesinq1/2,notjustaformalLaurentseriesinq"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "Ingeneral,weexpectthattheminimumq"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "Ingeneral,weexpectthattheminimumq1/2-degreedminofI"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "torus or T"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "integermultipleofb.Thentheminimumq"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "integermultipleofb.Thentheminimumq1/2-degreedminofI"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "ask→+∞.Infact,dminI"
+  },
+  {
+   "page": 34,
+   "mark": "k",
+   "context": "T(kb) ≤−χ(S)"
+  },
+  {
+   "page": 34,
+   "mark": "k",
+   "context": "T(kb) ≤−χ(S)kforalleven"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "≥0, kShas ∂(kS) = kb and [kS] = 0 so contributes a term to I"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "withd(kS)∗) = d(kS) = −χ(S)k + δ(S)k"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "oundaryb = ±4µ ± λandEulercharacteristicχ = −1givingaterminI"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "boundaryapositivemultipleofb,sobyLemma10.22thisistheminimumq"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "I"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "T(kb).(Compare the calculations for I"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "T(8µ+2λ) = IT(4µ+λ) and I"
+  },
+  {
+   "page": 35,
+   "mark": "0",
+   "context": "11.2,wehaveI"
+  },
+  {
+   "page": 35,
+   "mark": "0",
+   "context": "T((xµ + yλ))=δ"
+  },
+  {
+   "page": 35,
+   "mark": "y",
+   "context": "T((xµ + yλ))=δ0,x+6"
+  },
+  {
+   "page": 35,
+   "mark": "0",
+   "context": "MöbiusstripSwithboundaryb=±(6µ−λ)givingacontributiontoI"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "I∆(0, k)q"
+  },
+  {
+   "page": 35,
+   "mark": "q",
+   "context": "I∆(0, k)qk= I(0, q, q) =(qq−1;"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 36,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "qkI∆(x + 4y, k + y)(−q"
+  },
+  {
+   "page": 36,
+   "mark": "y",
+   "context": "qkI∆(x + 4y, k + y)(−q1/2)−x−4"
+  },
+  {
+   "page": 36,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "qk′(−q"
+  },
+  {
+   "page": 36,
+   "mark": "y",
+   "context": "qk′(−q1/2)−x−6"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "(−q"
+  },
+  {
+   "page": 36,
+   "mark": "y",
+   "context": "(−q1/2)−x−6"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "11.3.T"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "11.3.T2× I.Thereisauniquetriangulationof T"
+  },
+  {
+   "page": 36,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "qk"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "= J∆(k"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "= J∆(k2 −y"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "= J∆(k2 −y1, 0, 0)J∆(x"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "= J∆(k2 −y1, 0, 0)J∆(x2, y"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "= J∆(k2 −y1, 0, 0)J∆(x2, y1, x"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "= J∆(k2 −y1, 0, 0)J∆(x2, y1, x1 + y"
+  },
+  {
+   "page": 36,
+   "mark": "y",
+   "context": "= J∆(k2 −y1, 0, 0)J∆(x2, y1, x1 + y2)q"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "= J∆(k2 −y1, 0, 0)J∆(x2, y1, x1 + y2)qy"
+  },
+  {
+   "page": 36,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "qk"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "qk2−y"
+  },
+  {
+   "page": 36,
+   "mark": "q",
+   "context": "I∆(0, ℓ)qℓ= I(0, q, q) =(qq−1;"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "sibletoruswhichsplitsthemanifoldintwoSeifertﬁbrespiecesSFS[D"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "SFS[A"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "kI∆(0, −k)"
+  },
+  {
+   "page": 37,
+   "mark": "x",
+   "context": "IT(xµ + yλ) =(−1)"
+  },
+  {
+   "page": 37,
+   "mark": "q",
+   "context": "IT(xµ + yλ) =(−1)x"
+  },
+  {
+   "page": 37,
+   "mark": "a",
+   "context": "IT(a¯µ + b¯λ) =(−1)"
+  },
+  {
+   "page": 37,
+   "mark": "q",
+   "context": "IT(a¯µ + b¯λ) =(−1)a"
+  },
+  {
+   "page": 37,
+   "mark": "a",
+   "context": "IT(a¯µ + b¯λ) =(−1)aq"
+  },
+  {
+   "page": 37,
+   "mark": "a",
+   "context": "1 −q"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "•H2(X, ∂X; Z/2Z) × H1(∂X; Z)∼=Z/2Z × Z"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "•H2(X, ∂X; Z/2Z) × H1(∂X; Z)∼=Z/2Z × Z2withZ"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "has([S1]2, [∂S1]) = (¯1, 0) ∈Z/2Z × Z"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "2E"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "•Mhas([M]2, [∂M]) = (0, 2µ) ∈Z/2Z × Z"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "•Lhas([L]2, [∂L]) = (0, 2λ) ∈Z/2Z × Z"
+  },
+  {
+   "page": 38,
+   "mark": "0",
+   "context": "2(M+L+T"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "2(M+L+T0−T"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "(0, µ + λ) ∈Z/2Z × Z"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "Tocomputetheindexforthe‘even’class(¯0, 2x, 2y)∈Z/2Z × Z"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "qk"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "qk1+k"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "qk"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "qk1+k"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "Ieven(0, 0) = 1 −q −q"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "Ieven(0, 0) = 1 −q −q2+ 6q"
+  },
+  {
+   "page": 38,
+   "mark": "4",
+   "context": "Ieven(0, 0) = 1 −q −q2+ 6q3+ 9q"
+  },
+  {
+   "page": 38,
+   "mark": "5",
+   "context": "Ieven(0, 0) = 1 −q −q2+ 6q3+ 9q4+ 12q"
+  },
+  {
+   "page": 38,
+   "mark": "6",
+   "context": "Ieven(0, 0) = 1 −q −q2+ 6q3+ 9q4+ 12q5−5q"
+  },
+  {
+   "page": 38,
+   "mark": "7",
+   "context": "Ieven(0, 0) = 1 −q −q2+ 6q3+ 9q4+ 12q5−5q6−34q"
+  },
+  {
+   "page": 38,
+   "mark": "8",
+   "context": "Ieven(0, 0) = 1 −q −q2+ 6q3+ 9q4+ 12q5−5q6−34q7−79q"
+  },
+  {
+   "page": 38,
+   "mark": "9",
+   "context": "Ieven(0, 0) = 1 −q −q2+ 6q3+ 9q4+ 12q5−5q6−34q7−79q8−118q"
+  },
+  {
+   "page": 38,
+   "mark": "10",
+   "context": "en(0, 0) = 1 −q −q2+ 6q3+ 9q4+ 12q5−5q6−34q7−79q8−118q9−118q"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "Tocomputetheindexforthe‘odd’class(¯1, 2x, 2y) ∈Z/2Z × Z"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "thecoset(S1 + E + T)/Tbytakingedgecoeﬃcients(0,"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "2+ k"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "2+ k1, k"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "2+ k1, k2),"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "2+ k1, k2),k"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "2+ k1, k2),k1, k"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "(−q"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "(−q1/2)q"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "(−q1/2)qk"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "(−q1/2)qk1+k"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "−q"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "−q1/2+k"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "−q1/2+k1+k"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "Iodd(0, 0) = −q"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "Iodd(0, 0) = −q1/2−2q"
+  },
+  {
+   "page": 38,
+   "mark": "5",
+   "context": "Iodd(0, 0) = −q1/2−2q3/2+2q"
+  },
+  {
+   "page": 38,
+   "mark": "7",
+   "context": "Iodd(0, 0) = −q1/2−2q3/2+2q5/2+8q"
+  },
+  {
+   "page": 38,
+   "mark": "9",
+   "context": "Iodd(0, 0) = −q1/2−2q3/2+2q5/2+8q7/2+11q"
+  },
+  {
+   "page": 38,
+   "mark": "11",
+   "context": "Iodd(0, 0) = −q1/2−2q3/2+2q5/2+8q7/2+11q9/2+6q"
+  },
+  {
+   "page": 38,
+   "mark": "13",
+   "context": "Iodd(0, 0) = −q1/2−2q3/2+2q5/2+8q7/2+11q9/2+6q11/2−17q"
+  },
+  {
+   "page": 38,
+   "mark": "15",
+   "context": "dd(0, 0) = −q1/2−2q3/2+2q5/2+8q7/2+11q9/2+6q11/2−17q13/2−57q"
+  },
+  {
+   "page": 38,
+   "mark": "17",
+   "context": "= −q1/2−2q3/2+2q5/2+8q7/2+11q9/2+6q11/2−17q13/2−57q15/2−100q"
+  },
+  {
+   "page": 38,
+   "mark": "19",
+   "context": "q3/2+2q5/2+8q7/2+11q9/2+6q11/2−17q13/2−57q15/2−100q17/2−124q"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "Fortheclass(¯0, 1, 1)∈Z/2Z × Z"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "qk"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "qk1+k"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "qk"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "qk1+k"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "= −q + 4q"
+  },
+  {
+   "page": 38,
+   "mark": "4",
+   "context": "= −q + 4q3+ 7q"
+  },
+  {
+   "page": 38,
+   "mark": "5",
+   "context": "= −q + 4q3+ 7q4+ 6q"
+  },
+  {
+   "page": 38,
+   "mark": "6",
+   "context": "= −q + 4q3+ 7q4+ 6q5−7q"
+  },
+  {
+   "page": 38,
+   "mark": "7",
+   "context": "= −q + 4q3+ 7q4+ 6q5−7q6−32q"
+  },
+  {
+   "page": 38,
+   "mark": "8",
+   "context": "= −q + 4q3+ 7q4+ 6q5−7q6−32q7−65q"
+  },
+  {
+   "page": 38,
+   "mark": "9",
+   "context": "= −q + 4q3+ 7q4+ 6q5−7q6−32q7−65q8−89q"
+  },
+  {
+   "page": 38,
+   "mark": "10",
+   "context": "= −q + 4q3+ 7q4+ 6q5−7q6−32q7−65q8−89q9−81q"
+  },
+  {
+   "page": 40,
+   "mark": "a",
+   "context": "i=1(with"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": "i=1(witha"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": "i=1(withai>b"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "thenthesolidtorusS"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "thenthesolidtorusS1× D"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "n-annularisshorthandforSeifertﬁbrespacesoverthediskoverthanS"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "nnularisshorthandforSeifertﬁbrespacesoverthediskoverthanS1×D"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "oof.IfMishyperbolicoraSeifertﬁbrespaceoverthedisk(otherthanS"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": ".IfMishyperbolicoraSeifertﬁbrespaceoverthedisk(otherthanS1×D"
+  },
+  {
+   "page": 41,
+   "mark": "n",
+   "context": "t Tbe an ideal triangulation with n tetrahedra and Λ = {λi}3"
+  },
+  {
+   "page": 41,
+   "mark": "n",
+   "context": "asetof3"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "thatifMisa2-cuspedmanifoldwiththreeS"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "thatifMisa2-cuspedmanifoldwiththreeS1× D"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "Mis homeomorphic to T"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "annulus with one exceptional ﬁbre.However, all of the S"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "annulus with one exceptional ﬁbre.However, all of the S1×D"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "e distance one from each other,and so if a manifold admits S"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "stance one from each other,and so if a manifold admits S1× D"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "1}thenitmustbeT"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "1,"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "1,"
+  },
+  {
+   "page": 42,
+   "mark": "a",
+   "context": "1}willresultin"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "S"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "S1× D"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "T"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "P× S"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "thetotalnumberoftriangulationsforeachvalueofn,S"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "thetotalnumberoftriangulationsforeachvalueofn,S1× D"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "ofsolidtori,similarlyforT"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "ofsolidtori,similarlyforT2× IandP× S"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "S"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "S1× D"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "S"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "S1× D"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "S"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "S1× D"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "SFS[D"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "SFS[D"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "SFS[D"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "SFS[D"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "SFS[D"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "SFS[D2(2, 1)(3, 1)] ∪SFS[A"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "Example12.5.TrefoilComplement.Thetrefoilcomplement(SFS[D"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "n+1, by adding a boundary torus to S"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "n+1, by adding a boundary torus to Sn+1until S"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "n+1, by adding a boundary torus to Sn+1until Sn+1∩B"
+  },
+  {
+   "page": 50,
+   "mark": "q",
+   "context": "n+1, with the property that for each copy of"
+  },
+  {
+   "page": 50,
+   "mark": "2",
+   "context": ", with the property that for each copy of qC01:23+qD01:23+tE"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "th the property that for each copy of qC01:23+qD01:23+tE2+tE"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "e property that for each copy of qC01:23+qD01:23+tE2+tE3+(tC"
+  },
+  {
+   "page": 50,
+   "mark": "2",
+   "context": "operty that for each copy of qC01:23+qD01:23+tE2+tE3+(tC3+tD"
+  },
+  {
+   "page": 50,
+   "mark": "a",
+   "context": "n+1thereis"
+  },
+  {
+   "page": 50,
+   "mark": "q",
+   "context": "n+1thereisacopyof"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "n+1.However,ifT"
+  },
+  {
+   "page": 50,
+   "mark": "a",
+   "context": "n+1.However,ifTnadmits"
+  },
+  {
+   "page": 51,
+   "mark": "3",
+   "context": "j)]∈R"
+  },
+  {
+   "page": 51,
+   "mark": "n",
+   "context": "j)]∈R3"
+  },
+  {
+   "page": 51,
+   "mark": "3",
+   "context": "tetrahedraand ∂Mconsistsof rtori.Avector x ∈R"
+  },
+  {
+   "page": 51,
+   "mark": "n",
+   "context": "tetrahedraand ∂Mconsistsof rtori.Avector x ∈R3"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "whereAisthe(2n + 2r) × 3nmatrixwithrowsEi, Tj, Mk, Lkandb∈R"
+  },
+  {
+   "page": 51,
+   "mark": "n",
+   "context": "whereAisthe(2n + 2r) × 3nmatrixwithrowsEi, Tj, Mk, Lkandb∈R2"
+  },
+  {
+   "page": 51,
+   "mark": "r",
+   "context": "reAisthe(2n + 2r) × 3nmatrixwithrowsEi, Tj, Mk, Lkandb∈R2n+2"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "z∈R"
+  },
+  {
+   "page": 51,
+   "mark": "n",
+   "context": "z∈R2"
+  },
+  {
+   "page": 51,
+   "mark": "r",
+   "context": "z∈R2n+2"
+  },
+  {
+   "page": 51,
+   "mark": "x",
+   "context": "i"
+  },
+  {
+   "page": 51,
+   "mark": "i",
+   "context": "ix"
+  },
+  {
+   "page": 51,
+   "mark": "i",
+   "context": "ixiE"
+  },
+  {
+   "page": 51,
+   "mark": "y",
+   "context": "j"
+  },
+  {
+   "page": 51,
+   "mark": "j",
+   "context": "jy"
+  },
+  {
+   "page": 51,
+   "mark": "j",
+   "context": "jyjT"
+  },
+  {
+   "page": 51,
+   "mark": "p",
+   "context": "k"
+  },
+  {
+   "page": 51,
+   "mark": "k",
+   "context": "kp"
+  },
+  {
+   "page": 51,
+   "mark": "k",
+   "context": "kpkM"
+  },
+  {
+   "page": 51,
+   "mark": "q",
+   "context": "k"
+  },
+  {
+   "page": 51,
+   "mark": "k",
+   "context": "kq"
+  },
+  {
+   "page": 51,
+   "mark": "k",
+   "context": "kqkL"
+  },
+  {
+   "page": 51,
+   "mark": "k",
+   "context": "p"
+  },
+  {
+   "page": 51,
+   "mark": "k",
+   "context": "pk= q"
+  },
+  {
+   "page": 51,
+   "mark": "x",
+   "context": "i"
+  },
+  {
+   "page": 51,
+   "mark": "i",
+   "context": "ix"
+  },
+  {
+   "page": 51,
+   "mark": "i",
+   "context": "ixiE"
+  },
+  {
+   "page": 51,
+   "mark": "y",
+   "context": "j"
+  },
+  {
+   "page": 51,
+   "mark": "j",
+   "context": "jy"
+  },
+  {
+   "page": 51,
+   "mark": "j",
+   "context": "jyjT"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "i"
+  },
+  {
+   "page": 51,
+   "mark": "x",
+   "context": "i2"
+  },
+  {
+   "page": 51,
+   "mark": "i",
+   "context": "i2x"
+  },
+  {
+   "page": 51,
+   "mark": "y",
+   "context": "j"
+  },
+  {
+   "page": 51,
+   "mark": "j",
+   "context": "jy"
+  },
+  {
+   "page": 52,
+   "mark": "v",
+   "context": "2π(sumofcornerangles)to"
+  },
+  {
+   "page": 52,
+   "mark": "n",
+   "context": "2π(sumofcornerangles)tov,"
+  },
+  {
+   "page": 52,
+   "mark": "e",
+   "context": "2=n/2to"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "2=n/2toeand"
+  },
+  {
+   "page": 52,
+   "mark": "f",
+   "context": "2=n/2toeand1to"
+  },
+  {
+   "page": 52,
+   "mark": "a",
+   "context": "2=n/2toeand1tof,socontributes"
+  },
+  {
+   "page": 52,
+   "mark": "i",
+   "context": "2π(2π −θ"
+  },
+  {
+   "page": 52,
+   "mark": "i",
+   "context": "2π(2π −θi)whereθ"
+  },
+  {
+   "page": 52,
+   "mark": "i",
+   "context": "2π(2π −θi)whereθiisthesumofinternalanglesatthe"
+  },
+  {
+   "page": 52,
+   "mark": "g",
+   "context": "χP+k"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "2π(anglesum)"
+  },
+  {
+   "page": 54,
+   "mark": "x",
+   "context": "qα(q)"
+  },
+  {
+   "page": 54,
+   "mark": "q",
+   "context": "qα(q)x"
+  },
+  {
+   "page": 54,
+   "mark": "x",
+   "context": "qα(q)xqwhere"
+  },
+  {
+   "page": 54,
+   "mark": "q",
+   "context": "qα(q)xqwherex"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "2πα·(4M +L) = (−t"
+  },
+  {
+   "page": 54,
+   "mark": "t",
+   "context": "2πα·(4M +L) = (−t2−2"
+  },
+  {
+   "page": 54,
+   "mark": "3",
+   "context": "2πα·(4M +L) = (−t2−2t"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "2πα·(4M +L) = (−t2−2t3)+(−1+t"
+  },
+  {
+   "page": 54,
+   "mark": "t",
+   "context": "2πα·(4M +L) = (−t2−2t3)+(−1+t2+2"
+  },
+  {
+   "page": 54,
+   "mark": "3",
+   "context": "2πα·(4M +L) = (−t2−2t3)+(−1+t2+2t"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "2L + 1T"
+  },
+  {
+   "page": 54,
+   "mark": "m",
+   "context": "TheoremA.11(Farkas’Lemma).IfAisarealm×nmatrixandb∈R"
+  },
+  {
+   "page": 54,
+   "mark": "m",
+   "context": "standardEuclideaninnerproductonR"
+  },
+  {
+   "page": 54,
+   "mark": "n",
+   "context": "{x∈R"
+  },
+  {
+   "page": 54,
+   "mark": "m",
+   "context": "{x∈Rn|Ax=b, x>0}isnon-emptyifandonlyifforallz∈R"
+  },
+  {
+   "page": 55,
+   "mark": "3",
+   "context": "the notation from the proof of Theorem A.2, a vector x ∈R"
+  },
+  {
+   "page": 55,
+   "mark": "n",
+   "context": "the notation from the proof of Theorem A.2, a vector x ∈R3"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "forallz∈R"
+  },
+  {
+   "page": 55,
+   "mark": "n",
+   "context": "forallz∈R2"
+  },
+  {
+   "page": 55,
+   "mark": "r",
+   "context": "forallz∈R2n+2"
+  },
+  {
+   "page": 55,
+   "mark": "x",
+   "context": "i"
+  },
+  {
+   "page": 55,
+   "mark": "i",
+   "context": "ix"
+  },
+  {
+   "page": 55,
+   "mark": "i",
+   "context": "ixiE"
+  },
+  {
+   "page": 55,
+   "mark": "y",
+   "context": "j"
+  },
+  {
+   "page": 55,
+   "mark": "j",
+   "context": "jy"
+  },
+  {
+   "page": 55,
+   "mark": "j",
+   "context": "jyjT"
+  },
+  {
+   "page": 55,
+   "mark": "p",
+   "context": "k"
+  },
+  {
+   "page": 55,
+   "mark": "k",
+   "context": "kp"
+  },
+  {
+   "page": 55,
+   "mark": "k",
+   "context": "kpkM"
+  },
+  {
+   "page": 55,
+   "mark": "q",
+   "context": "k"
+  },
+  {
+   "page": 55,
+   "mark": "k",
+   "context": "kq"
+  },
+  {
+   "page": 55,
+   "mark": "k",
+   "context": "kqkL"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "i"
+  },
+  {
+   "page": 55,
+   "mark": "x",
+   "context": "i2"
+  },
+  {
+   "page": 55,
+   "mark": "i",
+   "context": "i2x"
+  },
+  {
+   "page": 55,
+   "mark": "y",
+   "context": "j"
+  },
+  {
+   "page": 55,
+   "mark": "j",
+   "context": "jy"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "JohnBerge,TheknotsinD"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "JohnBerge,TheknotsinD2× S"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "e,TheknotsinD2× S1whichhavenontrivialDehnsurgeriesthatyieldD"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "eknotsinD2× S1whichhavenontrivialDehnsurgeriesthatyieldD2× S"
+  }
+ ]
+}

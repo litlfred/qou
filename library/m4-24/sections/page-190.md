@@ -1,0 +1,96 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-190
+section_title: "Page 190"
+section_number: null
+pages: 190-190
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+562
+
+[334]
+
+[335]
+
+[336]
+
+[337|
+
+[338]
+
+[339]
+
+[340]
+
+[341]
+
+[342]
+
+[343]
+
+[344]
+
+[345]
+
+[346]
+
+T. Ohtsuki (Editor)
+
+JH Przytycki, Skein module of links in a handlebody, from “Topology 90, Proc.
+of the Research Semester in Low Dimensional Topology at OSU”, (B Apanasov,
+WDNeumann, A W Reid, LSiebenmann, editors), De Gruyter Verlag (1992)
+315-342
+
+JH Przytycki, Quantum group of links in a handlebody, from: “Deformation
+Theory and Quantum Groups with Applications to Mathematical Physics”,
+(M Gerstenhaber, J D Stasheff, editors), Contemporary Mathematics 134, Amer.
+Math. Soc. Providence, RI (1992) 235-245
+
+JH Przytycki, Vassiliev-Gusarov skein modules of 3-manifolds and criteria
+for periodicity of knots, from “Low-Dimensional Topology, Knoxville 1992”
+(K Johannson, editor), International Press, Cambridge, MA (1994) 157-176
+
+JH Przytycki, 3-coloring and other elementary invariants of knots, from:
+“Knot theory (Warsaw 1995)”, Banach Center Publ. 42, Polish Acad. Sci. War-
+saw (1998) 275-295
+
+JH Przytycki, A q-analogue of the first homology group of a 3-manifold,
+from: “ Perspectives on Quantization (Proceedings of the joint AMS-IMS-—
+SIAM conference on Quantization, Mount Holyoke College 1996)” (L A Coburn,
+MA Rieffel, editors), Contemporary Mathematics 214, Amer. Math. Soc. Prov-
+idence, RI (1998) 135-144
+
+JH Przytycki, Fundamentals of Kauffman bracket skein modules, Kobe J.
+Math. 16 (1999) 45-66
+
+JH Przytycki, Kauffman bracket skein module of a connected sum of 3-
+manifolds, Manuscripta Math. 101 (2000) 199-207
+
+JH Przytycki, Homotopy and q-homotopy skein modules of 3-manifolds: an
+example in Algebra Situs, from: “Knots, braids, and mapping class groups:
+papers dedicated to Joan S. Birman (New York 1998)”, AMS/IP Stud. Adv.
+Math. 24, Amer. Math. Soc. Providence, RI (2001) 143-170
+
+JH Przytycki, Skein module deformations of elementary moves on links, from:
+“Invariants of Knots and 3—manifolds (Kyoto 2001)” (T Ohtsuki, et al, editors),
+Geom. Topol. Monogr. 4 (2002) 313-335
+
+JH Przytycki, AS Sikora, Skein algebra of a group, from: “Knot theory
+(Warsaw 1995)”, Banach Center Publ. 42, Polish Acad. Sci. Warsaw (1998)
+297-306
+
+JH Przytycki, AS Sikora, On Skein Algebras and Sl2(C)-—Character Vari-
+eties, Topology 39 (2000) 115-148
+
+JH Przytycki, T Tsukamoto, The fourth skein module and the Montesinos—
+Nakanishi conjecture for 3-algebraic links, J. Knot Theory Ramifications 10
+(2001) 959-982
+
+N Reshetikhin, V G Turaev, Invariants of 3—manifolds via link polynomials
+and quantum groups, Invent. Math. 103 (1991) 547-597
+
+Geometry & Topology Monographs, Volume 4 (2002)

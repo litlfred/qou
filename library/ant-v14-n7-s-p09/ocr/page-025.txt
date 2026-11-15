@@ -1,0 +1,49 @@
+Galois action on the principal block and cyclic Sylow subgroups 1977
+
+Using this information and the description of Z(K) in [Gorenstein et al. 2002, Table 1.12.6], compu-
+tation with the Chevalley relations yields that the element s{ := /tg, (6) is not G*-conjugate to s{z for any
+1AzeE Z(G*). If 5 € FX, we see that Sy is F*-fixed, and we write 5; := Sy. Otherwise, let sy, € W induce
+the reflection corresponding to a}. Then s; := sf is F*-fixed, where g € G* satisfies g | F*(g) = Sq.
+(Note that such a g exists by the Lang—Steinberg theorem.)
+
+Let F3 denote a generating field automorphism such that F3(hq(t)) = he (3) forae @andte Fr.
+Then s; is G*-conjugate to F3(s{), taking for example Sg, as the conjugating element. Hence sj is also
+G*-conjugate to F3(s1). Since the Cg*(1*(s1)) is connected, using [Bonnafé 2005, Corollary 2.8(a)], this
+yields that the G*-conjugacy class of 5} is fixed by field automorphisms, using [Digne and Michel 1991,
+(3.25)]. Further, by construction, the G*-conjugacy class of sj is fixed by graph automorphisms unless
+® is type D4. In the latter case, we may make similar considerations using s{ := hq, (5).
+
+Now, further taking s7 := hg,(—1) and 53 € K F* an element of order larger than 4, we obtain properties
+(1)-(4). oO
+
+Theorem 3.7 now follows from Propositions 3.8—3.14, completing the proof of Theorem A.
+
+Acknowledgements
+
+The authors would like to thank Gabriel Navarro for an inspiring conversation on Galois action and
+generating properties of Sylow subgroups during the Workshop on Representations of Finite Groups at
+the MFO in March 2019, and for further discussion on the topic. They would also like to thank the MSRI
+in Berkeley, CA, and its generous staff for providing a collaborative and productive work environment
+during their residency in the summer of 2019. In addition, they thank Gunter Malle for his thorough
+reading of an early draft of this manuscript and for his helpful comments. Part of this work was done
+while the first-named author was visiting the Department of Mathematical and Computer Sciences at
+MSU Denver and the Department of Mathematics at the TU Kaiserslautern. She would like to thank
+everyone at both departments for their warm hospitality. Last but not least, the authors are indebted to the
+anonymous referee for valuable suggestions.
+
+References
+
+[Alperin 1976] J. L. Alperin, “Isomorphic blocks”, J. Algebra 43:2 (1976), 694-698. MR Zbl
+[Bonnafé 2005] C. Bonnafé, “Quasi-isolated elements in reductive groups”, Comm. Algebra 33:7 (2005), 2315-2337. MR Zbl
+
+[Broué and Michel 1989] M. Broué and J. Michel, “Blocs et séries de Lusztig dans un groupe réductif fini”, J. Reine Angew.
+Math. 395 (1989), 56-67. MR Zbl
+
+[Cabanes and Enguehard 2004] M. Cabanes and M. Enguehard, Representation theory of finite reductive groups, New Math.
+Monogr. 1, Cambridge Univ. Press, 2004. MR Zbl
+
+[Carter 1985] R. W. Carter, Finite groups of Lie type: conjugacy classes and complex characters, Wiley, New York, 1985. MR
+Zbl
+
+[Carter and Fong 1964] R. Carter and P. Fong, “The Sylow 2-subgroups of the finite classical groups”, J. Algebra 1 (1964),
+139-151. MR Zbl

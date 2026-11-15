@@ -6,6 +6,7 @@ export default remark({
   title:
     "Lattice gauge theory as a proposed $q\\to 1$ shadow of the $q$-deformed surface state-sum",
   tags: ["yekutieli", "brings-surface", "non-abelian-stokes", "lattice-gauge"],
+  cites: ["broda2002"],
   uses: [
     "thm:qu-to-qou",
   ],

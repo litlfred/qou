@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.925
 latex_coverage_ratio: 0.985
+doc_brief: "MOD-φ CONVERGENCE, I: NORMALITY ZONES AND PRECISE DEVIATIONS — In this paper, we use the framework of mod-φ convergence to prove pre- cise large or moderate deviations for quite general sequences of"
 ---
 We now present the definition and some properties of the Legendre-Fenchel transform, a classical tool in large deviation theory (see \emph{e.g.} \cite[Section 2.2]{DZ98}) that we shall use a lot in this paper. The Legendre-Fenchel transform is the following operation on (convex) functions:
 \begin{definition}

@@ -1,0 +1,50 @@
+2 R. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392
+
+1. Introduction
+
+In the Euclidean space R", log-concave measures, namely measures whose density is of
+; ,
+
+the form e~U
+
+with U being a convex potential are known to satisfy several concentration
+inequalities. For instance, if a probability measure v is absolutely continuous with respect
+to the standard Gaussian measure y on R", with a corresponding density dv = eV dy
+
+where the potential V : R" —> R satisfies the condition
+WV <(1-6)In, (1)
+
+then any 1-Lipschitz test function ¢, will satisfy Var, [y] < }, see e.g., [15]. In fact, much
+stronger concentration, for instance in the form of a logarithmic Sobolev inequality, is
+known to hold in this case.
+
+The objective of this work is to try to generalize the notion of log-concavity to the
+Boolean hypercube in a way that analogous concentration inequalities are attained. De-
+fine C, := {—1,1}". We say that a function y : C, > R is 1-(Hamming)-Lipschitz
+if
+
+le(@) — e(y)| < |le-ylla, Vay € Cn.
+
+Let ps be the uniform measure on Cn. Suppose that dv = e’ du. Given a 1-Lipschitz
+function ¢, it is a trivial fact that Var,[y] < n?, and this bound is sharp in general (e.g.,
+take v(x) = )>, a; and v which assigns mass 1/2 to (—1,--- ,—1) and (1,...,1)). We are
+interested in the question of finding sufficient conditions on the potential V, analogous
+to (1), under which a nontrivial bound for Var, |p] is implied. Let us mention that in the
+case of the continuous hypercube, concentration results of this nature were obtained by
+Klartag ((11]).
+
+It is clear that any potential V : C,, > R is the restriction of some convex function
+on R” to C,, meaning that the notion of convexity has to either consider the discrete
+derivatives of V or to consider the continuous Hessian applied to a suitably chosen
+interpolation. Our suggested notion of convexity is roughly based on the multi-linear
+interpolation, but the formal definition will first be given in terms of the logarithmic
+Laplace transform. Define,
+
+Liv\(«) = log fe” dv(y), Va €R”.
+Cn
+
+The function £[v] is known as the log-Laplace transform of the measure v. We are now
+ready to define our main notion of semi-log-concavity.
+
+Definition 1. (Semi log-concave measures). Given a measure v on C,, we say that v is
+8-semi-log-concave if

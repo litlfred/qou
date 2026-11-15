@@ -8,6 +8,7 @@ pages: 1-4
 source_pdf: ant-v14-n7-s-p10.pdf
 source_sha256: 8d3e47aa779ad9c7
 toc_source: inferred
+doc_brief: "Abelian extensions in dynamical Galois theory — 11 sections: Front matter; Introduction; Some algebraic lemmas"
 ---
 Let K be a number ﬁeld with algebraic closure K. Let φ(x) ∈K[x] be a polynomial of degree d ≥2, and
 denote by φn = φ ◦· · · ◦φ the n-fold composition of φ with itself. Let α ∈K be a nonexceptional point
@@ -32,7 +33,6 @@ and Jones [2005; 2007; 2008; 2013]. Much of the current research in this area fo
 MSC2010: primary 11R32; secondary 11G50, 11R18, 37P30.
 Keywords: arithmetic dynamics, dynamical Galois theory, arboreal representations, Weil height, small points, Arakelov–Zhang
 pairing.
-1981
 1982
 Jesse Andrews and Clayton Petsche
 cases in which Gal(K∞/K) is large in the sense that the arboreal Galois representation ρ is surjective, or

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-012-32-maurer-cartan-equation-in-diﬀerential-graded
 section_title: "Maurer-Cartan equation in diﬀerential graded Lie algebras"
 section_number: 3.2
@@ -8,6 +8,7 @@ pages: 7-8
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
 This part is essentially standard (see [GM], [HS1], [SS], ...).
 Let g be a diﬀerential graded Lie algebra over ﬁeld k of characteristic zero. Below we recall the list of

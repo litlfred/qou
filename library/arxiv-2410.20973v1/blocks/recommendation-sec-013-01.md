@@ -1,0 +1,1 @@
+The magenta curve represents the tail at the intersection of the set Cp4,ϑ with the green lines. state integral decomposition we should see the contribution from I−2,0, as we indeed verify in Section 4.2.4.

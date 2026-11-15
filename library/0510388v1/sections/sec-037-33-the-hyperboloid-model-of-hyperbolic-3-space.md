@@ -1,6 +1,6 @@
 ---
 doc_id: 0510388v1
-doc_title: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck"
+doc_title: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space"
 section_id: sec-037-33-the-hyperboloid-model-of-hyperbolic-3-space
 section_title: "The hyperboloid model of hyperbolic 3-space."
 section_number: 33
@@ -8,6 +8,7 @@ pages: 72-74
 source_pdf: 0510388v1.pdf
 source_sha256: c83c0f6a2eaa74f3
 toc_source: inferred
+doc_brief: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space — 64 sections: Front matter; ORGANIZATION; STATEMENTS OF RESULTS"
 ---
 In part  C ,  we considered the standard Euclidean inner product in  R4 , 
  
@@ -35,7 +36,6 @@ H3  =  { x ∊ R1,3 :  < x , x >  =  1   and   x0  >  0 } .
                                             inside Minkowski 4-space  
  
  
-73 
  
  
                                                                                                            
@@ -65,8 +65,4 @@ v ∙ w  =  — < v , w > .
  
 Because the tangent vectors to  H3  are spacelike, this gives a positive definite 
 inner product on each tangent space  TxH3 .  The resulting Riemannian metric is 
-complete and has constant curvature  —1 . 
- 
- 
- 
-74
+complete and has constant curvature  —1 .

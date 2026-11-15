@@ -1,0 +1,60 @@
+Chapter 5 The Tjon band in Nuclear Lattice Effective Field Theory
+
+discretization we use also an O(a’) improved one,
+
+33 5 2
+= 60 +2) 1)"o, . (5.6)
+
+I=1 s=1
+
+As already argued in Ref. [32], this smearing improves the S wave description above a relative momentum
+of 50 MeV, and hence reduces the clustering instability for the few-body systems like 4He. The long-range
+OPE is given by
+
+on ;
+Hopp =~ 5 oy » Gs_s, (ay — 7): o4 4 (1) p(y) : (5.7)
+8 S.J My Ny
+where the pion propagator is
+5 Ws Is,
+
+Gs,5,(G) = Wag? (5.8)
+
+with omk
+ds = sin m ‘), (5.9)
+
+in momentum space. The pion mass is M, = 134.98 MeV. For the pion-nucleon coupling constant
+and the pion decay constant, we use the values g, = 1.29 (to account for the Goldberger-Treiman
+discrepancy) and F,, = 92.2 MeV. While there are various ways to regularize the long-range part with a
+Gaussian smearing function in momentum space or an analog function directly in position space [22], a
+similar analysis was done in Chapter 4 for the NLEFT approach where it was argued that the hard cut-off
+regularization due to lattice spacing is sufficient for the values of a we use in this chapter.
+
+The NLO contact interaction contribution consists of ten terms totally. First, we have to include two
+operators which are not NLO operators by power counting but are necessary for accounting for the
+back-reaction of the NLO fits on the LO contribution. More precisely, for a coarse lattice spacing, these
+represent the full non-local structure of the TPEP [82] while for finer lattices they could be dropped. In
+addition, these additional terms assure that the NLO contributions can be treated perturbatively. Therefore,
+we keep them for consistency. These terms read,
+
+AC
+
+Vato = “7! de @)p (i) (5.10)
+AC;
+
+Vato = LT Yatoenas (5.11)
+
+Then we have the seven standard NLO contact interactions,
+
+Vato =~ PYLON GE (5.12)
+fz I=1
+
+Cp 3 3
+
+Vxto = a Dds Deu i Vir ft), (5.13)
+T=1 l=1
+Cs 3 3. 3
+
+Vato = Dy ps () Vips (#) 5 (5.14)
+na S=1 l=1
+
+52

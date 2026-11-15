@@ -1,0 +1,51 @@
+5.4. Néron-Severi lattices 109
+
+and the top quotient defines a surjection
+H(Y*,Z) = EZ > EY = EY = HP(Y,Z)*.
+
+By construction of the spectral sequence this surjection coincides with the
+map q* induced by the quotient morphism gq: Y —> Y*.
+
+The spectral sequence also shows that the kernel K of this surjection is
+an extension of (Z/2Z)® by Z/2Z. In fact K = (Z/2Z)? because K must be
+a 2-torsion group: If we denote by
+
+qi: H?(Y,Z) —> H’(¥*,Z)
+the Gysin map (i.e. the Poincaré dual to the pushforward on homology),
+
+then qq* is multiplication by the degree deg(q) = 2, hence for any a € K
+it follows that 20 = qiq*(a) = q)(0) = 0 as claimed.
+
+To conclude the proof, note that F = H?(Y*,Z)/K is a subgroup of
+the free abelian group H?(Y,Z). As such the group F is torsion-free and
+therefore equal to the free part of H*(Y+,Z), whose rank is h*(Y*+) = 34
+by the computation of Hodge numbers in lemma 5.8. Oo
+
+5.4. Néron-Severi lattices
+
+Recall that in the setting of the previous section we have embeddings of
+free abelian groups
+
+H?(X,Z) C H?(Y,Z)* Cc H?(Y,Z).
+
+In what follows we equip these groups with the integral bilinear form that
+is given by the intersection form on Y. The goal of the present section is to
+determine the structure of the obtained integral lattices with respect to this
+bilinear form, for which we first briefly recall from [22] some basic notions
+from lattice theory that will be used throughout.
+
+By a lattice we mean a pair consisting of a finitely generated free abelian
+group L and a non-degenerate symmetric bilinear form b : L x L —> Z,
+though we will usually suppress the bilinear form in the notation. Such a
+lattice is called even if b(A,A) € 2Z for all A € L. For integers n 4 0 we
+denote by L(n) the lattice with the same underlying free abelian group as L
+but with the bilinear form n- b in place of b. As usual, by an embedding of
+lattices we mean an embedding of free abelian groups which respects the
+bilinear forms, and similarly for isomorphisms of lattices. For example, the
+diagonal embedding
+
+diag: L2) GL? =L@L
+is given by A ++ (A, A). We also remark that any lattice can be defined with
+
+respect to a chosen basis ¢1,...,én of the underlying free abelian group by
+the corresponding Gram matrix — the non-degenerate integral symmetric

@@ -1,0 +1,1308 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2011.12932v2",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "1",
+   "text": "AcronymforHomotopyQuantumFieldTheory,anotionintroducedbyTuraev.",
+   "marks": [
+    {
+     "page": 1,
+     "context": "HQFTs"
+    }
+   ],
+   "block": "library/arxiv-2011.12932v2/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p003-1",
+   "page": 3,
+   "mark": "2",
+   "text": "Factorizabilityistheappropriatenon-degeneracyconditionforribbonHopfalgebrasinthe non-semisimple setting, see Section 6.",
+   "marks": [
+    {
+     "page": 3,
+     "context": "oriented3-manifoldsstartingfromﬁnite-dimensionalfactorizable"
+    }
+   ],
+   "block": "library/arxiv-2011.12932v2/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p004-1",
+   "page": 4,
+   "mark": "3",
+   "text": "Verybrieﬂy,anETQFTisa2-categoricalanalogueofaTQFT,i.e.asymmetricmonoidal 2-functor from a 2-category of cobordisms to a 2-category of linear categories (several choises are possible also for the target). Kerler and Lyubashenko’s 2-functors are only deﬁned for connected surfaces, with symmetric monoidal structure induced by connected sum instead of disjoint union.",
+   "marks": [
+    {
+     "page": 4,
+     "context": "dTQFT(ETQFTforshort)satisfyingonlyweakmonoidalityproperties."
+    }
+   ],
+   "block": "library/arxiv-2011.12932v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "4",
+   "text": "RemarkthattheconventionusedherefororientationsisoppositetotheoneusedbyTuraev, but also widely used.",
+   "marks": [
+    {
+     "page": 6,
+     "context": "Thesediagramsarereadfrombottomtotop."
+    }
+   ],
+   "block": "library/arxiv-2011.12932v2/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p006-2",
+   "page": 6,
+   "mark": "5",
+   "text": "Thisconditionisnotnecessary,butconvenient.",
+   "marks": [
+    {
+     "page": 6,
+     "context": "Next,letusﬁxanalgebraicallyclosed"
+    }
+   ],
+   "block": "library/arxiv-2011.12932v2/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "6",
+   "text": "A ribbon graph isclosedif it has no boundary vertices,and thus represents an endomorphism of the tensor unit of C under the Reshetikhin–Turaev functor FC.",
+   "marks": [
+    {
+     "page": 7,
+     "context": "alinvariantRTCofclosedoriented3-manifoldsdecoratedwithclosed"
+    }
+   ],
+   "block": "library/arxiv-2011.12932v2/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p010-1",
+   "page": 10,
+   "mark": "7",
+   "text": "Thetermtensoridealisoftenusedinstead.Remarkhoweverthattherearetwoconcurring notions of tensor ideal, with the other one arising in the context of modiﬁed traces. In order to avoid confusion, we use Mac Lane’s terminology here.",
+   "marks": [
+    {
+     "page": 10,
+     "context": "formalinearcongruence"
+    }
+   ],
+   "block": "library/arxiv-2011.12932v2/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p012-1",
+   "page": 12,
+   "mark": "8",
+   "text": "Suchalabelingiscalledr-admissiblein[8],butwechangeterminologyherebecauseadmis- sibility will be a diﬀerent condition, and a key one, in the non-semisimple construction.",
+   "marks": [
+    {
+     "page": 12,
+     "context": "A labeling i : Eg→Iis r-triangular"
+    }
+   ],
+   "block": "library/arxiv-2011.12932v2/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p015-1",
+   "page": 15,
+   "mark": "9",
+   "text": "ThesourceofΛmightbeadiﬀerentinvertibleobjectingeneral,calledtheobjectofintegrals, but here we are supposing C is modular.",
+   "marks": [
+    {
+     "page": 15,
+     "context": "WhenCismodular,anintegralofthecoendLisamorphism"
+    }
+   ],
+   "block": "library/arxiv-2011.12932v2/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p015-2",
+   "page": 15,
+   "mark": "10",
+   "text": "Thestatementisaparticularcaseofamuchmoregeneralexistenceanduniquenessresult, see [25, Thm. 5.5].",
+   "marks": [
+    {
+     "page": 15,
+     "context": "is non-degenerate.Thanks to [25, Cor. 5.6], for a modular"
+    }
+   ],
+   "block": "library/arxiv-2011.12932v2/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p015-3",
+   "page": 15,
+   "mark": "11",
+   "text": "Again,hypothesesforthisresultcanbeconsiderablyrelaxed,butweprefertoavoidintro- ducing more terminology.",
+   "marks": [
+    {
+     "page": 15,
+     "context": "ensional representations of a ﬁnite-dimensional factorizable"
+    }
+   ],
+   "block": "library/arxiv-2011.12932v2/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p016-1",
+   "page": 16,
+   "mark": "12",
+   "text": "OurnotationforthecategoryofbichromegraphsRΛfeaturestheintegralΛinorderto highlight the relevant functor this category supports, but remark that the deﬁnition of RΛ itself is actually independent of the choice of Λ.",
+   "marks": [
+    {
+     "page": 16,
+     "context": "canbearrangedasmorphismsofacategory"
+    }
+   ],
+   "block": "library/arxiv-2011.12932v2/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p018-1",
+   "page": 18,
+   "mark": "13",
+   "text": "Projectivecoverscoincidewithinjectiveenvelopesinmodularcategories.",
+   "marks": [
+    {
+     "page": 18,
+     "context": "fortheDrinfeldmapD:L→Eandtheinjectiveenvelope"
+    }
+   ],
+   "block": "library/arxiv-2011.12932v2/blocks/prose-sec-010"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p025-1",
+   "page": 25,
+   "mark": "2",
+   "text": "(1993), No. 2, 171–194. [40] G. Lusztig, Finite Dimensional Hopf Algebras Arising from Quantized Universal Enveloping Algebras, J. Amer. Math. Soc. 3 (1990), No. 1, 257–296. [41] V. Lyubashenko, Invariants of 3-Manifolds and Projective Representations of Mapping Class Groups via Quantum Groups at Roots of Unity, Comm. Math. Phys. 172 (1995), No. 3, 467– 516; arXiv:hep-th/9405167. [42] V. Lyubashenko, Modular Transformations for Tensor Categories, J. Pure Appl. Algebra 98 (1995), No. 3, 279–327. [43] V. Lyubashenko, Squared Hopf Algebras, Mem. Amer. Math. Soc. 142 (1999), No. 677. [44] S. Majid, Reconstruction Theorems and Rational Conformal Field Theories, Internat. J. Modern Phys. A 6 (1991), No. 24, 4359–4374.",
+   "block": "library/arxiv-2011.12932v2/blocks/prose-sec-013"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "dim"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "dimk VC(Σ) = LC(Σ × S"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "qsl"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "qsl"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "qsl2for"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "qsl"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "qsl2and¯U"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "qsl2and¯Uqsl"
+  },
+  {
+   "page": 5,
+   "mark": "16",
+   "context": "qsl2and¯Uqsl2have inﬁnite order [7,"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "interpretframedlinksinS"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "D"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "ribbon graph, and if L ⊂S"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "V"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "⊂R"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "{k} := q"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "{k}′:= q"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "E"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "Er= F"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "K"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "KEK−1= q"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "E"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "EaF"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "EaFbK"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "−2bcK"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "−2bcKbE"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "−2bcKbEa ⊗K"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "+2bcE"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "+2bcEaK"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "+2bcEaKb ⊗F aK"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "F"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "FaK"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "FaKbE"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "F"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "FaK"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "FaKbE"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "{a"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "i∈V"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "K · a"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "i= q"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "i= qn−2"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "i= qn−2i"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "i= qn−2ia"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "E · a"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "i= [i][n −i + 1]a"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "F· a"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "i= a"
+  },
+  {
+   "page": 10,
+   "mark": "q",
+   "context": "n+1:=0.These¯U"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "n+1:=0.These¯Uqsl"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "wherea"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "−1:=a"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "identityidVr−1oftheso-calledSteinbergmoduleV"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "S:= (S(C)"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "S:= (S(C)2i,"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "S:= (S(C)2i,2"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i(e)∼= V"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i(e)∼= Vi(e)in the decomposition of V"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i(e)∼= Vi(e)in the decomposition of Vi(e′) ⊗V"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "Asanexample,thestatespaceofthetorusΣ1= S"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "Asanexample,thestatespaceofthetorusΣ1= S1× S"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "i⊗V"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "coevV"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "D"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "admissibleclosedbichromegraph,andifL⊂S"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "C(Σ)∼=VC( ¯Σ)isnolongernatural,as"
+  },
+  {
+   "page": 17,
+   "mark": "g",
+   "context": "C(Σ"
+  },
+  {
+   "page": 17,
+   "mark": "g",
+   "context": "C(Σ"
+  },
+  {
+   "page": 18,
+   "mark": "g",
+   "context": "C(Σ"
+  },
+  {
+   "page": 18,
+   "mark": "c",
+   "context": "−2cd−(b+c)(b−d)F bK"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "−2cd−(b+c)(b−d)F bKcE"
+  },
+  {
+   "page": 18,
+   "mark": "b",
+   "context": "−2cd−(b+c)(b−d)F bKcEa ⊗E"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "−2cd−(b+c)(b−d)F bKcEa ⊗EbK"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "r"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "E"
+  },
+  {
+   "page": 18,
+   "mark": "b",
+   "context": "EaF"
+  },
+  {
+   "page": 18,
+   "mark": "c",
+   "context": "EaFbK"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "{1}2"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "{1}2r−2 δa,r−1δb,r−1δc,"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "{a"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "i, x"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "j, y"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "j, b"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "i∈P"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "i∈Pn| 0 ⩽i ⩽n,"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "K · a"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "i= q"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "i= qn−2"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "i= qn−2i"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "i= qn−2ia"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "E · a"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "i= [i][n −i + 1]a"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "F· a"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "i= a"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "K · x"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "j= q−n−2"
+  },
+  {
+   "page": 19,
+   "mark": "x",
+   "context": "j= q−n−2j−2"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "j= q−n−2j−2x"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "E · x"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "j= −[j][n + j + 1]x"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "x"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "F· x"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "a"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "K · y"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "j= q−n−2"
+  },
+  {
+   "page": 19,
+   "mark": "y",
+   "context": "j= q−n−2j−2"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "j= q−n−2j−2y"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "a"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "E · y"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "−[j][n + j + 1]y"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "F· y"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "j= y"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "K · b"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "i= q"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "i= qn−2"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "i= qn−2i"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "i= qn−2ib"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "x"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "E · b"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "a"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "i−1+ [i][n −i + 1]b"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "b"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "F· b"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "y"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "wherea"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "−1:=a"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "n+1:=x"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "−1:=y"
+  },
+  {
+   "page": 19,
+   "mark": "g",
+   "context": "C(Σ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "VC(Σg)asaquotientofC(P0, ad⊗g).IntheexampleofthetorusΣ1=S"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "C(Σg)asaquotientofC(P0, ad⊗g).IntheexampleofthetorusΣ1=S1× S"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "C(Σ"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "C(Σ1) ∼= Z( ¯U"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "C(Σ1) ∼= Z( ¯Uqsl"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "dimC VC(Σ1) = dimC Z( ¯Uqsl2) =3"
+  },
+  {
+   "page": 20,
+   "mark": "q",
+   "context": "CforC=¯U"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "ιa ⊗(π"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "where{ιa∈C(Vi, X)|1⩽a⩽n(X, i)}and{π"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "eU:= (dV"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "{ρ"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "b∈kfor"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "thereexistscalarsm"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "π"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "m"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "m"
+  },
+  {
+   "page": 21,
+   "mark": "b",
+   "context": "bρ"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "bι"
+  },
+  {
+   "page": 21,
+   "mark": "b",
+   "context": "κb ⊗(ρ"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "m"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "bι"
+  },
+  {
+   "page": 21,
+   "mark": "b",
+   "context": "bιa⊗(ρ"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "ιa ⊗(π"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "{π"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "{ρ"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "b∈k for all"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "are dual bases for every for i ∈I, there exist scalars (fi)"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "(fi)"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "bκ"
+  },
+  {
+   "page": 21,
+   "mark": "b",
+   "context": "bκa◦π"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "((f◦ιa) ⊗(π"
+  },
+  {
+   "page": 21,
+   "mark": "b",
+   "context": "c((κ"
+  },
+  {
+   "page": 21,
+   "mark": "c",
+   "context": "c((κb◦π"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "c((κb◦πc ◦ι"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "c((κb◦πc ◦ιa) ⊗(π"
+  },
+  {
+   "page": 21,
+   "mark": "b",
+   "context": "(fi)"
+  },
+  {
+   "page": 21,
+   "mark": "b",
+   "context": "c(κ"
+  },
+  {
+   "page": 21,
+   "mark": "c",
+   "context": "c(κb⊗(π"
+  },
+  {
+   "page": 21,
+   "mark": "b",
+   "context": "(fi)"
+  },
+  {
+   "page": 21,
+   "mark": "b",
+   "context": "(fi)"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "c(κ"
+  },
+  {
+   "page": 21,
+   "mark": "c",
+   "context": "c(κa⊗((π"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "b◦(ρ"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "i◦(ρ"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i) ◦(jY)"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "(ι"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "(ιa ⊗(π"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "((ιa ◦π"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "foreveryobjectX∈C.Since(jVi0)"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i0foranyﬁxed"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "i0foranyﬁxedi"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "(jV"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "(jVi0)"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "(jVi0)i ◦f"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "(jVi0)i ◦fi= dV"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "f"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "(x · va) ⊗ϕ"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "where{va∈X|1 ⩽a ⩽n}and{ϕ"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "{ψ"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "b∈kfor"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "thereexistscalarsm"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "ϕ"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "m"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "m"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "bψ"
+  },
+  {
+   "page": 22,
+   "mark": "v",
+   "context": "b"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "bv"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "(x · wb) ⊗ψ"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "b(x · v"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "b(x · va) ⊗ψ"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "m"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "(x · va) ⊗ϕ"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "(x(1)yS(x(2)) · va) ⊗ϕ"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "(x(1)y · va) ⊗(x(2) · ϕ"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "f(x · va) ⊗ϕ"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "x · f(va) ⊗ϕ"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "x · va ⊗f∗(ϕ"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "dH(u)a ⊗dH(u)"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "withdH(u)a∈HanddH(u)"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "dH(u)"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "dH(x · u)"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "dH(u)"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "dH(u)"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "dH(u)"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "dH(u)"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "dX(u)a ⊗dX(u)"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "withdX(u)a∈XanddX(u)"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "dH(u)"
+  },
+  {
+   "page": 23,
+   "mark": "b",
+   "context": "dH(u)a(1)(dH(u)a · vb) ⊗ϕ"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "dX(u)"
+  },
+  {
+   "page": 23,
+   "mark": "b",
+   "context": "dX(u)a(1 · vb)dX(u)a ⊗ϕ"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "dX(u)"
+  },
+  {
+   "page": 23,
+   "mark": "b",
+   "context": "dX(u)a(vb)dX(u)a ⊗ϕ"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "dX(u)a ⊗dX(u)"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "ϕ"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "ϕ"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "ϕ"
+  }
+ ]
+}

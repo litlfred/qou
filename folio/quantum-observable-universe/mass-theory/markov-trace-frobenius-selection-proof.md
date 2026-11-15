@@ -222,7 +222,7 @@ $y_{(n-k,k)} = [\,n-2k+1\,]_q / [2]_q^{\,n}$.
 
 *Formal status.* The elimination above is
 `QOU.BraidsAndKnots.markovWeights_eq_jones_of_threeRow_eq_zero`
-(sorry-free, division-free, over a commutative domain), the spurious
+(division-free, over a commutative domain), the spurious
 branch is `markovWeights_degenerate_root`, and the fibre-side
 antecedent is `markovWeights_eq_jones_of_fibre_categorical`. The
 general-$n$ closed form is *not* proved by induction in Lean: what is
@@ -254,4 +254,4 @@ What is *not* claimed: that $\mathrm{tr}_M$ is non-degenerate on
 $H_n(R, q)$ (it is not, for $n \geq 3$), that non-degeneracy selects
 it (it does not — every nowhere-vanishing weight vector gives a
 non-degenerate form), or that the antecedent is established (the
-fibre-categorical premise is open, bean `qou-n1dj`). $\blacksquare$
+fibre-categorical premise is open). $\blacksquare$

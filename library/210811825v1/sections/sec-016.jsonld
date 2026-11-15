@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/210811825v1/sections/sec-016",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Spectral theory of the Klein quartic",
+  "pageStart": 103,
+  "pageEnd": 108,
+  "contains": [
+    "library/210811825v1/blocks/prose-sec-016"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/210811825v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/210811825v1",
+  "provenance": "ingested"
+}

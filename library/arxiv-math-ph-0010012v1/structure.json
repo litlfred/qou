@@ -8,7 +8,7 @@
   "pages": 7,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -26,7 +26,7 @@
   "title_lines": [
    "From random polynomials to symplectic geometry"
   ],
-  "abstract": "We review some recent results on random polynomials and their generalizations in complex and symplectic geometry. The main theme is the universality of statistics of zeros and critical points of (generalized) polynomials of degree N on length scales of order D \u221a N (complex case), resp. D N (real case).",
+  "abstract": "We review some recent results on random polynomials and their generalizations in complex and symplectic geometry. The main theme is the universality of statistics of zeros and critical points of (generalized) polynomials of degree N on length scales of order D √ N (complex case), resp. D N (real case).",
   "docinfo": {
    "Title": "arXiv:math-ph/0010012v1  10 Oct 2000",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
@@ -477,8 +477,8 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 376,
-   "n_words": 66,
+   "n_chars": 374,
+   "n_words": 65,
    "label_start": "4",
    "label_end": "5"
   },
@@ -489,8 +489,8 @@
    "level": 2,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 1462,
-   "n_words": 254,
+   "n_chars": 1562,
+   "n_words": 269,
    "label_start": "5",
    "label_end": "5"
   },
@@ -558,7 +558,8 @@
    "items": []
   },
   "sections": 17,
-  "chars_total": 25590,
+  "chars_total": 25688,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -666,7 +667,7 @@
     {
      "id": "sec-011-33-universality-and-scaling-of-correlations",
      "title": "Universality and scaling of correlations",
-     "prose_ratio": 0.945,
+     "prose_ratio": 0.989,
      "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
@@ -700,7 +701,7 @@
      "title": "Quantum ergodicity and random waves",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.451,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

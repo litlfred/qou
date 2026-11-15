@@ -1,0 +1,1 @@
+We would have derived the same result if we had used $(\hat x_-,\hat p_-)$ in the dictionary, as it should be: the half-index for a bare hemisphere should intertwine the line defects acting on opposite sides of the equator.

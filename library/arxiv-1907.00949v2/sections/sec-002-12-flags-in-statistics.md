@@ -7,10 +7,11 @@ section_number: 1.2
 pages: 3-4
 source_pdf: 1907.00949v2.pdf
 source_sha256: 865defaa34bf42be
-doc_brief: "OPTIMIZATION ON FLAG MANIFOLDS — A ﬂag is a sequence of nested subspaces."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.969
-latex_coverage_ratio: 0.924
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.947
+doc_brief: "OPTIMIZATION ON FLAG MANIFOLDS — A ﬂag is a sequence of nested subspaces."
 ---
 Although not usually viewed in this manner, classical multivariate data analysis techniques [@MKB] may be cast as nested subspace-searching problems, i.e., constrained or unconstrained optimization problems on the flag manifold.
 

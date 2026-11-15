@@ -8,6 +8,7 @@ pages: 30-34
 source_pdf: nrarith.pdf
 source_sha256: 085ec9541ddc6cd4
 toc_source: inferred
+doc_brief: "Arithmetic of hyperbolic manifolds (Neumann–Reid) — survey of arithmetic Kleinian groups: an arithmetic M = H³/Γ is determined up to commensurability by its invariant trace field and quaternion…"
 ---
 In this section we prove parts (iv) and (v) of Theorem 5.1.
 Lemma 8.1. Let (p, s) be such that C(p, s) is non-arithmetic. The cusp parameter τ is
@@ -15,8 +16,6 @@ not in Q(√−1) or Q(√−3), unless (|p + s|, |s|) = (6, 6).
 Proof. Since τ +2 = −4/z we must just show that z is not in Q(√−1) or Q√−3). If
 p = 0 then equations (6.4) and (6.5) give x = exp((s+2)πi/2s), and since z = x−x −1,
 it is easy to see that z is in Q(√−1) or Q(√−3) if and only if |s| = 3, 4, or 6. The
-Arithmetic of Hyperbolic Manifolds
-303
 Table 3. [k(W ′(p, s)):Q]
 |s|
 0
@@ -262,8 +261,6 @@ orbifolds are all arithmetic. Thus W ′′(p, s) is the orientable commensurato
 Finally, suppose |(p + s|, |s|) = (6, 6). By Table 2, the cusp parameter of W ′′(p, s)
 lies in Q(√−3).
 Now, W ′′(p, s) cannot cover an orbifold with a non-rigid cusp by
-304
-Walter D. Neumann and Alan W. Reid
 (0,3)
 (0,4)
 (1,−4)
@@ -313,8 +310,6 @@ Proof of Theorem 5.1 (v). Recall that we have already shown that the C(p, s) of 
 that the others do not. If C(p, s) has an orientation reversing commensurability, then its
 orientable commensurator quotient W ′′(p, s) admits an orientation reversing symmetry,
 so the cusp of W ′′(p, s) also does. The result thus follows from the following lemma.
-Arithmetic of Hyperbolic Manifolds
-305
 0
 −1
 −2
@@ -337,8 +332,6 @@ Fig. 20 superimposes the previous two ﬁgures—it is clear that the only (p + 
 points for which the cusp of W ′′(p, s) admits an orientation reversing isometry are those
 with p + s = 0, s = 0, or p + s = ±s, or {|p + s|, |s|} ∈{{3, 1}, {3, 2}, {4, 2}}. By
 Theorem 5.1 part (iii), this proves the lemma.
-306
-Walter D. Neumann and Alan W. Reid
 0
 −1
 −2

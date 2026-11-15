@@ -7,8 +7,8 @@
   "bytes": 312747,
   "pages": 19,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -22,167 +22,445 @@
   ],
   "abstract": null,
   "docinfo": {
+   "Producer": "itext-paulo-155 (itextpdf.sf.net-lowagie.com); modified using iText® 5.1.0 ©2000-2011 1T3XT BVBA",
    "Creator": "pdftk 1.44 - www.pdftk.com",
-   "Producer": "itext-paulo-155 (itextpdf.sf.net-lowagie.com); modified using iText\u00ae 5.1.0 \u00a92000-2011 1T3XT BVBA",
    "CreationDate": "D:20200703182809+02'00'"
+  },
+  "title_raw": "Czechoslovak Mathematical Journal",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Czechoslovak Mathematical Journal",
+   "text": "Czechoslovak Mathematical Journal",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
- "toc": [
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "8 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (8 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed): one section per page.",
+ "figures": [],
+ "pages": [
   {
-   "level": 1,
-   "title": "Introduction",
-   "page": 2,
-   "source": "inferred",
-   "number": "1"
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "Composition-Diamond lemma for left ideals of a free algebra",
-   "page": 4,
-   "source": "inferred",
-   "number": "2"
+   "physical": 2,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Composition-Diamond lemma for \u201cdouble-free\u201d modules",
-   "page": 6,
-   "source": "inferred",
-   "number": "3"
+   "physical": 3,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Highest weight modules over sl2",
-   "page": 9,
-   "source": "inferred",
-   "number": "4"
+   "physical": 4,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Verma modules over Kac-Moody algebras",
-   "page": 11,
-   "source": "inferred",
-   "number": "5"
+   "physical": 5,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Verma modules over the coefficient algebra of a",
-   "page": 12,
-   "source": "inferred",
-   "number": "6"
+   "physical": 6,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Universal enveloping module for a Sabinin algebra",
-   "page": 14,
-   "source": "inferred",
-   "number": "7"
+   "physical": 7,
+   "label": "64",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "References",
-   "page": 18,
-   "source": "inferred",
-   "number": null
+   "physical": 8,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "69",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "70",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "71",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "72",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "73",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "74",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "75",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "76",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   }
  ],
- "toc_source": "inferred",
  "sections": [
   {
-   "id": "sec-front-matter",
+   "id": "page-001",
    "number": null,
-   "title": "Front matter",
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
-   "page_end": 2,
-   "n_chars": 1693,
-   "n_words": 252
+   "page_end": 1,
+   "n_chars": 650,
+   "n_words": 91,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-000-1-introduction",
-   "number": "1",
-   "title": "Introduction",
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
    "level": 1,
    "page_start": 2,
-   "page_end": 4,
-   "n_chars": 3490,
-   "n_words": 658
+   "page_end": 2,
+   "n_chars": 2032,
+   "n_words": 332,
+   "label_start": "59",
+   "label_end": "59"
   },
   {
-   "id": "sec-001-2-composition-diamond-lemma-for-left-ideals-of-a",
-   "number": "2",
-   "title": "Composition-Diamond lemma for left ideals of a free algebra",
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 2460,
+   "n_words": 433,
+   "label_start": "60",
+   "label_end": "60"
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
    "level": 1,
    "page_start": 4,
-   "page_end": 6,
-   "n_chars": 5049,
-   "n_words": 1145
+   "page_end": 4,
+   "n_chars": 2056,
+   "n_words": 429,
+   "label_start": "61",
+   "label_end": "61"
   },
   {
-   "id": "sec-002-3-composition-diamond-lemma-for-double-free-modu",
-   "number": "3",
-   "title": "Composition-Diamond lemma for \u201cdouble-free\u201d modules",
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 2454,
+   "n_words": 492,
+   "label_start": "62",
+   "label_end": "62"
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
    "level": 1,
    "page_start": 6,
-   "page_end": 9,
-   "n_chars": 6863,
-   "n_words": 1620
+   "page_end": 6,
+   "n_chars": 1694,
+   "n_words": 348,
+   "label_start": "63",
+   "label_end": "63"
   },
   {
-   "id": "sec-003-4-highest-weight-modules-over-sl2",
-   "number": "4",
-   "title": "Highest weight modules over sl2",
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 2279,
+   "n_words": 497,
+   "label_start": "64",
+   "label_end": "64"
+  },
+  {
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1659,
+   "n_words": 340,
+   "label_start": "65",
+   "label_end": "65"
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
    "level": 1,
    "page_start": 9,
-   "page_end": 11,
-   "n_chars": 2481,
-   "n_words": 598
+   "page_end": 9,
+   "n_chars": 2030,
+   "n_words": 413,
+   "label_start": "66",
+   "label_end": "66"
   },
   {
-   "id": "sec-004-5-verma-modules-over-kac-moody-algebras",
-   "number": "5",
-   "title": "Verma modules over Kac-Moody algebras",
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1924,
+   "n_words": 420,
+   "label_start": "67",
+   "label_end": "67"
+  },
+  {
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
    "level": 1,
    "page_start": 11,
-   "page_end": 12,
-   "n_chars": 2984,
-   "n_words": 707
+   "page_end": 11,
+   "n_chars": 2075,
+   "n_words": 452,
+   "label_start": "68",
+   "label_end": "68"
   },
   {
-   "id": "sec-005-6-verma-modules-over-the-coefficient-algebra-of",
-   "number": "6",
-   "title": "Verma modules over the coefficient algebra of a",
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
    "level": 1,
    "page_start": 12,
-   "page_end": 14,
-   "n_chars": 3633,
-   "n_words": 794
+   "page_end": 12,
+   "n_chars": 1604,
+   "n_words": 322,
+   "label_start": "69",
+   "label_end": "69"
   },
   {
-   "id": "sec-006-7-universal-enveloping-module-for-a-sabinin-alge",
-   "number": "7",
-   "title": "Universal enveloping module for a Sabinin algebra",
+   "id": "page-013",
+   "number": null,
+   "title": "Page 13",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 1438,
+   "n_words": 309,
+   "label_start": "70",
+   "label_end": "70"
+  },
+  {
+   "id": "page-014",
+   "number": null,
+   "title": "Page 14",
    "level": 1,
    "page_start": 14,
-   "page_end": 18,
-   "n_chars": 5230,
-   "n_words": 1279
+   "page_end": 14,
+   "n_chars": 1677,
+   "n_words": 336,
+   "label_start": "71",
+   "label_end": "71"
   },
   {
-   "id": "sec-007-references",
+   "id": "page-015",
    "number": null,
-   "title": "References",
+   "title": "Page 15",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 1766,
+   "n_words": 428,
+   "label_start": "72",
+   "label_end": "72"
+  },
+  {
+   "id": "page-016",
+   "number": null,
+   "title": "Page 16",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 1316,
+   "n_words": 270,
+   "label_start": "73",
+   "label_end": "73"
+  },
+  {
+   "id": "page-017",
+   "number": null,
+   "title": "Page 17",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 1442,
+   "n_words": 261,
+   "label_start": "74",
+   "label_end": "74"
+  },
+  {
+   "id": "page-018",
+   "number": null,
+   "title": "Page 18",
    "level": 1,
    "page_start": 18,
+   "page_end": 18,
+   "n_chars": 3255,
+   "n_words": 489,
+   "label_start": "75",
+   "label_end": "75"
+  },
+  {
+   "id": "page-019",
+   "number": null,
+   "title": "Page 19",
+   "level": 1,
+   "page_start": 19,
    "page_end": 19,
-   "n_chars": 3945,
-   "n_words": 637
+   "n_chars": 668,
+   "n_words": 117,
+   "label_start": "76",
+   "label_end": "76"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 8,
-  "sections": 9,
-  "chars_total": 35368
+  "toc_entries": 0,
+  "toc_inferred_entries": 8,
+  "toc_inferred_mean_confidence": 0.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "regex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 19,
+  "chars_total": 34479,
+  "furniture_lines_stripped": 0
  }
 }

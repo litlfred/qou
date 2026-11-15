@@ -1,0 +1,1 @@
+Because of Lemma~\ref{lem:noRsarepi}, $\beta_B w_p$ must be~$\pi$, so, by the previous case, all tetrahedra are flat. \end{itemize} Therefore, if either $w_p$ or $s$ has an assigned angle of~$\pi$, $\mathcal{V}(\beta)=0$. \end{proof}

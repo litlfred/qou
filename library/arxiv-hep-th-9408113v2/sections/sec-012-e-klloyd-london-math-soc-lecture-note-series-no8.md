@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408113v2
-doc_title: "arXiv:hep-th/9408113v2 25 Aug 1994"
+doc_title: "Dilogarithm identities"
 section_id: sec-012-e-klloyd-london-math-soc-lecture-note-series-no8
 section_title: "K.Lloyd), London Math. Soc., Lecture Note Series, No.82, Cambridge University"
 section_number: E
@@ -8,6 +8,7 @@ pages: 95-96
 source_pdf: 9408113v2.pdf
 source_sha256: dadd96e1155e820f
 toc_source: inferred
+doc_brief: "Dilogarithm identities — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
 ---
 Press, Cambridge, 1983, 187-199.
 [Stn2] R.P. Stanley. The stable behavior of some characters of SL(n, C). Linear and Multil.

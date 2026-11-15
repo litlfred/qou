@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2507.12454v1
-doc_title: "COHOMOLOGY RINGS OF CHARACTER VARIETIES ANTON MELLIT"
+doc_title: "Cohomology rings of character varieties"
 section_id: sec-000-1-classical-motivation
 section_title: "Classical motivation"
 section_number: 1
 pages: 1-3
 source_pdf: 2507.12454v1.pdf
 source_sha256: 156fd9080847b4e7
-doc_brief: "COHOMOLOGY RINGS OF CHARACTER VARIETIES ANTON MELLIT — In this talk I give an introduction and present some recent progress towards understanding the cohomology rings of character varieties of"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.94
-latex_coverage_ratio: 0.972
+latex_prose_ratio: 0.917
+latex_coverage_ratio: 0.956
+doc_brief: "Cohomology rings of character varieties — In this talk I give an introduction and present some recent progress towards understanding the cohomology rings of character varieties of Riemann surfaces"
 ---
 One way character varieties naturally arise is as follows. Suppose we have a linear ODE $$\label{eq:ODE}
         \frac\partial{\partial t} \vec{\varphi}(t) = A(t) \vec{\varphi}(t)\quad(t\in \mathbb{C}).$$ Here $A(t)$ is an $n\times n$ matrix-valued meromorphic function of one complex variable $t$, and we are looking for vector-valued solutions $\vec{\varphi}(t)$. Let $t_1,\ldots, t_k$ be the poles of $A(t)$ (including $\infty$ if necessary), which we call *punctures*. Choose a basepoint $\ast$, away from the poles of $A(t)$. In a neighborhood of $\ast$, we have an $n$-dimensional vector space of solutions of the ODE [\[eq:ODE\]](#eq:ODE){reference-type="eqref" reference="eq:ODE"}. For any loop $\gamma$ based at $\ast$ avoiding the punctures, solving the ODE along $\gamma$ produces a linear transformation of the space of solutions. Choosing a basis, we obtain the *monodromy representation* of the fundamental group $$\rho:\pi_1(*, \mathbb{P}^1(\mathbb{C})\setminus\{t_1,\ldots,t_k\}) \to \mathrm{GL}_n(\mathbb{C}).$$ A different choice of basis produces an equivalent representation.

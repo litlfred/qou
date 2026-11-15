@@ -1,0 +1,55 @@
+154 J.J. Graham and G.I. Lehrer
+
+the following facts are well known (cf. loc. cit.). The group I’, has
+generating set {f1,01,02,...,0n—1} with relations
+
+0,0; = 0,0; if |i—j|A1
+Oi4101 = 141010141 for i= 1,2,...,.n—-1
+€107€101 = 01810181
+
+foi = oi: if i Al.
+
+Define elements rT = £,0102...0n—1 and On = TOn-177! in Ty.
+Then 7 is represented as a “twist”, and the following facts are well
+known (cf [18, §2]).
+
+Proposition 4.2. (i) We have ra;t~! = oi41 for each i, where
+
+the subscripts are taken mod n.
+(ii) The element r” is in the centre of T', (this follows from (i)).
+
+(4.1)
+
+(iii) The elements {o1,...,0n-1} are Coxeter generators of the Artin
+group B,, of type Ay-1, t.e. of the classical braid group on n strings.
+(iv) The elements {o1,...,0,} are Coxeter generators of the Artin
+
+group A,, of affine type An_1.
+
+(v) There is an exact sequence 1 —> A, —>T, —> Z— 1, where
+An —> Ty is inclusion andl, — Z is the map taking 1"; ...0;)' €
+T, toreZ.
+
+(vi) If &41 = oi&o1 (i =1,2,...,n—1), then &,...,& generate a
+free abelian subgroup of rank n of [, andr” = €,...&, is in the centre
+of Tp.
+
+4.2. Some Hecke algebras
+
+Let R be a commutative ring as in §2, and fix elements g,Q € R*.
+The various Hecke algebras with which we are concerned all emanate
+from the group ring RI’, where I, is the Artin braid group of type B,,
+as above.
+
+Definition 4.3. Let 5; be the element S; = (oi — q)(oi +.q7') of
+RI, (i =1,2,...,n). The affine Hecke algebra He(q) of GL, over R is
+defined by _
+
+Ha(q) = RV /(S1)-
+
+Note that since S;,...,S, are all conjugate in RI’, the ideal (81)
+is equal to (S;,...,5,). Let 7: REPn —> H2(q) be the natural map. We
+then write
+
+(4.4)
+

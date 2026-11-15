@@ -1,93 +1,86 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "schechtman-varchenko1991-arrangements",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "0100fd32438740f03e9fb686d8b3687161e9bbe93b8a2ed9a540d869d6d00970",
   "file": "schechtman-varchenko1991-arrangements.pdf"
  },
  "provenance": {
-  "title": "Arrangements of hyperplanes and Lie algebra homology",
-  "authors": "Vadim V. Schechtman and Alexander N. Varchenko",
+  "title": null,
+  "authors": null,
   "arxiv": null,
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 5,
+  "candidates": 4,
   "by_kind": {
-   "theorem": 3,
-   "corollary": 1,
-   "example": 1
+   "recommendation": 4
   },
-  "formalization_candidates": 4
+  "formalization_candidates": 0
  },
  "candidates": [
   {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "4.6",
-   "name": null,
-   "statement": "mentioned in 0.1 says that for general k integrals over covariant-",
-   "section_file": "sections/sec-000-0-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-5",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "4.6",
-   "name": null,
-   "statement": "4.6.7 Remark. The idea of the above proof arose from the discussion with Misha",
-   "section_file": "sections/sec-004-4-topology.md",
-   "section_title": "Topology",
-   "pages": "19-25",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "corollary",
-   "source_kind": "corollary",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
    "number": null,
    "name": null,
-   "statement": "The maps : induce isomorphisms of complexes",
-   "section_file": "sections/sec-006-6-contravariant-form-ii.md",
-   "section_title": "Contravariant form, II",
-   "pages": "32-44",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "6.16.2",
-   "name": null,
-   "statement": "defines canonical isomorphisms of complexes of vector bun-",
-   "section_file": "sections/sec-007-7-knizhnik-zamolodchikov-equations.md",
-   "section_title": "Knizhnik-Zamolodchikov equations",
-   "pages": "44-55",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "example",
-   "source_kind": "example",
-   "number": null,
-   "name": null,
-   "statement": "3 =(t1 t3)-1(z1 t3)-1(z1 z2)-1(z2 -t2)-1",
-   "section_file": "sections/sec-007-7-knizhnik-zamolodchikov-equations.md",
-   "section_title": "Knizhnik-Zamolodchikov equations",
-   "pages": "44-55",
+   "statement": "It may be considered as the continua- tion of the theme initiated by Arnold, Brieskorn, Orlik-Solomon,... ([Br, OS, C)}).",
+   "strength": "may",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-001.md",
+   "section_title": "Page 1",
+   "pages": "1-1",
    "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In view of results of \u00a7 6, this theorem may be considered as a generalization of the Shapovalov determinant formula [Sh]",
+   "strength": "may",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-002.md",
+   "section_title": "Page 2",
+   "pages": "2-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This formula should be compared with [V, Theorem 1.1].",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-016.md",
+   "section_title": "Page 16",
+   "pages": "16-16",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We may, and shall suppose that n=2.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-051.md",
+   "section_title": "Page 51",
+   "pages": "51-51",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   }
  ]
 }

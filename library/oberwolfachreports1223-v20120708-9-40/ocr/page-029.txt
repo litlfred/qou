@@ -1,0 +1,63 @@
+Invariants in Low-Dimensional Topology and Knot Theory 29
+
+The algebras Yq,,(w) support the Juyumaya trace with parameters z,2,...,
+xa—1 in C\{0} [4, Theorem 12], a unique linear Markov trace tr : U,,39 Ya,n(w) —>
+Clz,a1,...,@¢_1]. Trying to normalize and re-scale the Juyumaya trace according
+to the Markov braid equivalence, in order to obtain a link invariant, turns out to be
+impossible, basically because tr(ae,) #4 tr(en)tr(a), unless the trace parameters
+@1,...,%q—1 Satisfy the so-called E-system [5, 6]:
+
+a Umt+sld—s = Lm Sahn Uslq—s (m=1,...,d-—1)
+
+where the sub-indices on the x;’s are regarded modulo d and ao := 1. As it is
+
+shown in [5] (in the Appendix by Paul Gérardin), the solutions of the E-s
+
+parametrized by the non-empty subsets S of Z/dZ. The case E := tr (e;) = 1 leads
+
+to the “trivial” solution: 21 a d-th root of unity and «, = x7" (m=1,...,d—1).
+Given a solution Xg = {x1,...,xg_1} of the E-system, a link isotopy invariant
+
+As was defined in [6], depending on the variables u, z:
+
+As(@) = DY“ (Vay) (tr 0 6) (a),
+where a € By, for any n € N, 6 : CB, — Yapn(u) is the natural algebra
+
+homomorphism that maps the braid generator o; to the algebra generator gj,
+
+e(a) is the sum of the exponents of the braid generators in the braid word a,
+dy = Uewe
+uz
+
+1—dyu =
+
+¢ = 1
+pand Dy = TSE aE FI"
+
+3. COMPARING P AND Ag
+
+It is natural to ask how the invariants P and As compare. Computational data
+so far do not indicate that one invariant is stronger than the other. Thus, it is
+possible that the two invariants are topologically equivalent. For comparing the
+two invariants we would like to introduce a given solution of the E-system as early
+in the construction as possible. Therefore, in [1] we first consider the specialization
+map 0: C[z,a1,...,ta—1] —> C[z], given by z+ z and am ++ Xm (m=1,...,d—
+1), for x1,...,xa-1 € C \ {0}. Then we consider the specialized Juyumaya trace
+0 otr with parameter z and we show that, as in the case of the Ocneanu trace,
+this is uniquely determined by its values on the elements gw,,, tr(Gw,,) = zn),
+We show this by considering the linear map y : U,,s9 Yan(u) — Unso Ya.n(u)
+defined inductively on Yq,,(u), for all n € N, by the following rules:
+
+el) = 1
+P(WnIngn—1 ++ Gitt) = Gnip(Wngn—1---gitf)
+plates) = xxp(wn)
+
+where wy, € Yan(u), X1,--.,Xa—-1 € C \ {0}, xo = 1 and k € Z/dZ. Then we show
+that troy = #otr and that y(Ya,,(u)) is the C-linear subspace of Yq, (u) spanned
+by the elements gu,,.
+
+Mapping now g; +> G; and t” +> x, (m=1,...,d—1) does not define an
+
+algebra homomorphism between Yq,,(u) and H,(w), unless we are in the case
+E = 1. In this case we can then show that P and Ag coincide.
+

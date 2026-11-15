@@ -8,6 +8,7 @@ pages: 1-6
 source_pdf: 72-4-841.pdf
 source_sha256: c852d7d7dcc2662c
 toc_source: inferred
+doc_brief: "Progress of Theoretical Physics, Vol. 72, No.4, October 1984 Euclidean Quantum Gravity on a Flat Lattice — 3 sections: Front matter; § 3. Reflection positivity; Appendix"
 ---
 841 
 Progress of Theoretical Physics, Vol. 72, No.4, October 1984 

@@ -642,8 +642,9 @@ theorem enstrophy_grade_one_of_dissipation_closure {ε D Ω : K}
 Within the ω-grade-1 cap (`enstrophy_grade_one_of_dissipation_closure`), the
 remaining open content of the super-classical side is classified exhaustively
 by **one surreal-valued criterion: is `ε · Ω` infinitesimal?** The trichotomy
-below is the enstrophy-grade mirror of the Levi growth trichotomy
-(`levi_growth_trichotomy`). -/
+below is the enstrophy-grade analogue of the growth-exponent trichotomy in
+`levi_growth_trichotomy` (that file no longer carries Levi data: re-scoped
+2026-10-13, `conj:levi-degeneracy`). -/
 
 /-- **Saturation forces blow-up.** If `ε · Ω` is *not* infinitesimal (the flow
     saturates the grade-1 cap, `α = 1`), then `Ω` is not a finite surreal —

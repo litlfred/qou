@@ -106,8 +106,3 @@ $q_0$ out. Wenzl's unitarity range is the whole real positive line,
 so every $q \in \mathbb{R}_{>0}$ satisfies it equally. The value of
 $q_0$ is fixed by the CAL-2 calibration, not by unitarity.
 
-**Note (2026-10-10).** This paragraph previously said unitarity
-"explains why" the substrate has $q = q_0$ and that $q_0$ is "locked
-by the unitarity requirement". Both claims contradicted this block's
-own statement of Wenzl's criterion, under which the admissible range
-is all of $\mathbb{R}_{>0}$. The conjecture itself is unchanged.

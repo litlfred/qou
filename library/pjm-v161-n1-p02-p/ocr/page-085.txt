@@ -1,0 +1,43 @@
+108 JOAN S. BIRMAN AND WILLIAM W. MENASCO
+
+COROLLARY 7.2. & is a composite knot or link if and only if the
+Schreier representative of the conjugacy class of W or W-' has one of
+the following normal forms
+
+a, “a3, where u>v > 2.
+Cla"an0;"a2, whereu>v>0.
+
+Proof. By [Mo, 1] or [B-M, IV] a composite link which is a closed
+3-braid is conjugate to (a;)%(a2)’, where |a| > 2, |b] > 2. The first
+case occurs when a and b have opposite signs and the second when
+they have the same sign. Oo
+
+Our next corollary is an analogue of the Tait conjecture which holds
+for links of braid index 3.
+
+Coro.iary 7.3. Let & and 2’ be links of braid index 3, and let
+D and D’ be diagrams which represent & and &' and which have
+3 Seifert circles. Then Y = &' only if the algebraic crossing numbers
+of D and D’ agree.
+
+Proof. By a theorem of Yamada [Y] every diagram with 3 Seifert
+circles may be changed to a 3-braid diagram without changing the
+algebraic crossing number. Since algebraic crossing number is a con-
+jugacy class invariant, and since the two conjugacy classes in the excep-
+tional case (iii) of §7.2 have the same exponent sum, the assertion fol-
+lows. Qa
+
+Remark. A different proof of Corollary 7.3 is given in [J] for n = 3
+and 4. We hope to be able to prove in a later paper in this series that
+Corollary 7.3 is true for every braid index.
+
+CoroLiary 7.4. There is an algorithm to compute the genus of a
+link of braid index 3, if one begins with a closed 3-braid representative.
+
+Proof. Let F be a Bennequin surface, with OF = L a 3-braid rep-
+resentative of the given link &. Let uw be the number of components
+in L and let r be the number of bands in the disc-band decomposi-
+tion of F. Then the genus g of F, which is also the genus of 2,
+is determined by r and yw and the number of discs in the disc-band
+decomposition, which is 3. The number r is also the letter length
+of any shortest word W in the generators a,, a), a; of B;. Using

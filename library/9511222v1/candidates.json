@@ -1,0 +1,176 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "9511222v1",
+ "source": {
+  "structure_sha256": "2870b5b709d1f3586b0e3a4b50c7c5be76727c42f1c1ea037c4124047b8d18d7",
+  "file": "9511222v1.pdf"
+ },
+ "provenance": {
+  "title": null,
+  "authors": null,
+  "arxiv": null,
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 10,
+  "by_kind": {
+   "recommendation": 10
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In order to specify this arrangement, we shall say that \\ is a (d, p)-partition.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-008.md",
+   "section_title": "Page 8",
+   "pages": "8-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It should be noted that if fy = p and thus |A)| = 1, then the irreducible H,,,-module V> is also an irreducible fp n-module.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-011.md",
+   "section_title": "Page 11",
+   "pages": "11-11",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We must be very careful here, because, although the action of h commutes with the action of o\u00b0, the action of g and g~! do not.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-012.md",
+   "section_title": "Page 12",
+   "pages": "12-12",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In view of Lemma 3.18 and (3.14) we shall try to compute the values of y*(ha ),",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-012.md",
+   "section_title": "Page 12",
+   "pages": "12-12",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In fact we shall prove the following theorem.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-012.md",
+   "section_title": "Page 12",
+   "pages": "12-12",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "But any permutation a such that 72 = o~*L must have all cycles of length +, it follows that w = w as given in (3.21).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-014.md",
+   "section_title": "Page 14",
+   "pages": "14-14",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This fact and the explicit form of w; in (3.21) implies that each \u00a2; must be divisible by y.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-014.md",
+   "section_title": "Page 14",
+   "pages": "14-14",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall compute the values of the Fj(Z) explicitly in Lemma 3.30, but first we must introduce a bit more notation. _ - - -",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-015.md",
+   "section_title": "Page 15",
+   "pages": "15-15",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Each poset P, is planar, and each linear extension of P, must place the sharp corner s (a minimal element of P) immediately after u in the ordering, so we have",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-020.md",
+   "section_title": "Page 20",
+   "pages": "20-20",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In particular, when k = 1, the poset P must be connected (cc = 1), and",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-023.md",
+   "section_title": "Page 23",
+   "pages": "23-23",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

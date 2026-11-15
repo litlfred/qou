@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0709.3157v1
-doc_title: "V . Mateu"
+doc_title: "Chiral Lagrangians with tensor sources"
 section_id: sec-001-qcd-in-the-presence-of-external-sources
 section_title: "QCD in the presence of external sources"
 section_number: null
 pages: 2-3
 source_pdf: 0709.3157v1.pdf
 source_sha256: 22a0d9a93c9dcb8d
-doc_brief: "V . Mateu — The implementation of tensor sources in Chiral Lagrangians allows the computation of Green functions and form factors involving tensor currents , that is, quark bilinears of the form ¯qi"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.99
+latex_coverage_ratio: 0.98
+doc_brief: "Chiral Lagrangians with tensor sources — The implementation of tensor sources in Chiral Lagrangians allows the computation of Green functions and form factors involving tensor currents, that is"
 ---
 The external field method was first introduced by Leutwyler [@Leut], and makes easier the computation of QCD Green functions and form factors. It enforces chiral Ward identities exactly by promoting the global chiral symmetry to a local one. The basic idea is to introduce in the QCD action a set of local fields coupled to the QCD currents : $$\!Z[v_{\mu},a_{\mu},s,p,{\bar{t}}_{\,\mu\nu}]=\!\!\int\! {\cal{D}}{\bar{q}}\,{\cal{D}}q\,{\cal{D}}G_{\mu} \,{\mathrm{exp}}\!\left[i\!\int\! d^4x\,\left\{ {\cal{L}}_{QCD}^0+{\cal{L}}_{ext}(v_{\mu},a_{\mu},s,p,{\bar{t}}_{\mu\nu})\right\}\right],$$ where ${\cal{L}}^0_{QCD}$ is the massless QCD Lagrangian and $$\label{sources}
 {\cal{L}}_{ext}\,=\,{\bar{q}}\,\,\gamma_{\mu}\,(v^{\mu}+\gamma_5\,a^{\mu})\,q-{\bar{q}}\,(s-i\,\gamma_5\,p)\,q+{\bar{q}}

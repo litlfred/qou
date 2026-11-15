@@ -67,4 +67,3 @@ study of Dirac operators, by expanding an analog in conformal field theory of th
 breaking work by Neshveyev and Tuset on Dirac operators for compact quantum groups
 in the setting of Kazhdan-Lusztig theorem for real values of the quantization parameter q
 [79].
-29

@@ -7,10 +7,11 @@ section_number: 2.1
 pages: 4-10
 source_pdf: 2208.14188v2.pdf
 source_sha256: 92a7651c81b799b3
-doc_brief: "Resurgence in complex Chern-Simons theory at generic levels — In this note we study the resurgent structure of sl(2, C) Chern-Simons state integral model on knot complements S3\41,S 3\52 with generic"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.972
-latex_coverage_ratio: 0.911
+latex_coverage_ratio: 0.987
+doc_brief: "Resurgence in complex Chern-Simons theory at generic levels — In this note we study the resurgent structure of sl(2, C) Chern-Simons state integral model on knot complements S3\41, S3\52 with generic"
 ---
 The $sl(2,\IC)$ Chern-Simons theory on a three manifold $M$ has action
 \begin{equation}

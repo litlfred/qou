@@ -8,6 +8,7 @@ pages: 56-57
 source_pdf: symmetry-04-00039-v3.pdf
 source_sha256: 1aa8a81916887f8e
 toc_source: inferred
+doc_brief: "Knots on a Torus: A Model of the Elementary Particles — Two knots; just two rudimentary knots, the unknot and the trefoil."
 ---
 The difference between how bosons and higher spin fermions are portrayed in our model and in the 
 SM was discussed in Section 9. It evokes some experimentation that as mentioned in [1] “points to the 

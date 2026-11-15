@@ -1,0 +1,1 @@
+Assuming otherwise, Lemma~\ref{lem:prelim-satellite-surgeries} says that the companion torus of $K=P(C)$ is incompressible in $S^3_0(K)$, so then $S^3_0(T_{p,q})$ must also be toroidal, whence $S^3_0(K) \cong S^3_0(T_{\pm2,3})$ by Lemma~\ref{lem:torus-surgery-essential}.

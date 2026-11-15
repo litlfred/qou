@@ -1,0 +1,70 @@
+228 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+6.4. Stochastic differential equations
+
+In recent years, the use of stochastic differential equations (SDEs) has become widespread in the simulation of random
+phenomena appearing in physics, engineering, economics etc, such as turbulent diffusion, polymer dynamics and investment
+finance [197]. Although models based on SDEs can offer a more realistic representation of the system than ordinary
+differential equations, the design of effective numerical schemes for solving SDEs is, in comparison with ODEs, a less
+developed field of research. This fact notwithstanding, it is true that, recently, new classes of integration methods have
+been constructed which automatically incorporate conservation properties the SDE possesses. Since some of the methods
+are based precisely on the Magnus expansion, we briefly review their main features here, and refer the reader to the more
+advanced literature on the subject [197-199].
+
+A SDE in its general form is usually written as
+
+d
+dy(t) = gol, y¥O)dt+ D gilt, yOAWj®, yO) =o, YER", (346)
+
+j=l
+
+where gj, (j => 0), are m-vector-valued functions. The function go is the deterministic continuous component (called the
+drift coefficient), the gj, (j = 1), represent the stochastic continuous components (the diffusion coefficients) and Wj are d
+independent Wiener processes. A Wiener process W (also called Brownian motion) is a stochastic process [197] satisfying
+
+w(0) = 0, E[W(t)] = 0, Var[W(t) —W(s)]=t—s, t>s
+
+which has independent increments on non-overlapping intervals. In other words, a Wiener process is normally distributed
+with mean or expectation value E equal to zero and variance t.
+Eq. (346) can be written in integral form as
+
+t d t
+y(t) =yo+ | 80(s, y(s))ds + >> | gi(s, y(s))AW;(s). (347)
+0 j=1 0
+The d integrals in (347) cannot be considered as Riemann-Stieltjes integrals, since the sample paths of a Wiener process
+are not of bounded variation. In fact, if different choices are made for the point 7; (in the subintervals [t;_1, t;] of a given
+partition) where the function is evaluated, then the approximating sums for each gj,
+
+N
+git. vm) Wi) -—W(ti-1)), = Ot + (1 — @)ti-a, (348)
+
+i=1
+converge (in the mean-square sense) to different values of the integral, depending on the value of 6 [35]. Thus, for instance,
+
+b
+i] W(t)dW(t) = sw) —wa)) + (0 - ;) (b—a).
+
+If@ = 0, then 7 = t;_, (the left-hand point of each subinterval) and the resulting integral is called an It6 integral; if6 = 1/2
+(so that the midpoint is used instead), one has a Stratonovich integral. These are the two main choices and, although they
+are related, the particular election depends ultimately on the nature of the process to be modeled [35]. It can be shown that
+the Stratonovich calculus satisfies the Riemann-Stieltjes rules of calculus, and thus it is the natural choice here.
+
+When dealing with numerical methods for solving (346), there are two ways of measuring accuracy [197]. The first is
+strong convergence, essential when the aim is to get numerical approximations to the trajectories which are close to the exact
+solution. The second is weak convergence, when only certain moments of the solution are of interest. Thus, if 7, denotes the
+numerical approximation to y(tn) after n steps with constant step size h = (tn — fo)/n, then the numerical solution ¥
+converges strongly to the exact solution y with strong global order p if there exist C > 0 (independent of h) and é > Osuch
+that
+
+E[|ljn — Y(tn) II] < Ch?, he (0,4).
+
+It is worth noticing that p can be fractional, since the root mean-square order of the Wiener process is h'/?, One of the
+simplest procedures for solving (346) numerically is the so-called Euler-Maruyama method [200],
+d
+Yn = Int YIBiltns Yn)s (349)
+
+j=0
+where
+h=tni-—th Jo=h, Jj = Wi(tn41) — W(t), j= l,...,d.
+
+This scheme turns out to be of strong order 1/2. Here the J; can be computed as VJhN;, where the Nj are N(0, 1) normally
+distributed independent random variables [35].

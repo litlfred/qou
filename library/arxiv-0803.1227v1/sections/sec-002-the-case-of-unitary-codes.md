@@ -7,10 +7,11 @@ section_number: null
 pages: 3-5
 source_pdf: 0803.1227v1.pdf
 source_sha256: cf72e0fcdc7f3ddf
-doc_brief: "Linear programming bounds for unitary space time codes — The linear programming method is applied to the space Un(C) of uni- tary matrices in order to obtain bounds for codes relative to the"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.98
+latex_prose_ratio: 0.984
+latex_coverage_ratio: 0.992
+doc_brief: "Linear programming bounds for unitary space time codes — The linear programming method is applied to the space Un(C) of uni- tary matrices in order to obtain bounds for codes relative to the"
 ---
 As a particular case we set $G=\U_n(\C)\times \U_n(\C)$ and $X=\U_n(\C)$. For $g=U\times V$ and $x=M$ we set $gx=UMV^{-1}$. In this context the orbit of a pair $(x,y)$ is characterized by the eigenvalues $(e^{i\theta_1},...,e^{i\theta_n})$ of the unitary matrix $xy^{-1}$. The Peter-Weil theorem gives a decomposition of $L^2(X)$ into irreducible subspaces $$\label{dec}
 L^2(X)=\oplus (V_{\chi}\otimes V_{\conj{\chi}})$$ where the sum runs over all irreducible representations $V_{\chi}$ of $\U_n(\C)$. It is worth noticing that the $G$-subspaces $V_{\chi}\otimes V_{\conj{\chi}}$ are pairwise non isomorphic. From this decomposition one can deduce the following theorem :

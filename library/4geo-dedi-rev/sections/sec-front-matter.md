@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 4GEO-DEDI-REV.pdf
 source_sha256: e4d52947b71a3f37
 toc_source: inferred
+doc_brief: "On the quantum Teichmüller invariants of fibred cusped 3-manifolds — 26 sections: Front matter; ON THE QUANTUM TEICHM ¨ULLER INVAR; ON THE QUANTUM TEICHM ¨ULLER INVAR"
 ---
 HAL Id: hal-01812027
 https://hal.science/hal-01812027v1

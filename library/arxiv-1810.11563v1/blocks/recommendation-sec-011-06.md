@@ -1,0 +1,1 @@
+The graph must double back on itself and revisit previously visited epsilon-balls\footnote{If we follow an epsilon ball from the identity it will not in general perfectly coincide with an epsilon ball after executing a loop.

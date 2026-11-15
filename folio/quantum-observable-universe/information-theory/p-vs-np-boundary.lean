@@ -229,7 +229,9 @@ theorem nontorsion_full_tree (_qt : NonTorsionReal) (c : ℕ) (hc : c > 0) :
 /-- The unified picture:
     - NS obstruction depends on χ(A) (topological)
     - Computational obstruction depends on deg P_L (topological)
-    - Both use the perpetual obstruction (complementary subgroups)
+    - Both use the perpetual obstruction (complementary subgroups); for the
+      NS side this is withdrawn: the Kummer obstruction on Bring's surface
+      vanishes for `n ∣ 6` (re-scoped 2026-11-15, PR #7747, bean `qou-lx8f`)
     - Both are resolved at the q-scale (q > 1)
     - Both are open at the classical limit (q → 1)
 

@@ -1,0 +1,50 @@
+5.7. Jacobian varieties 125
+
+For partitions & = (@,Q,...) such that 2g —2 > a > O% >--- > 0, one
+can define the Brill-Noether sheaf
+
+Pdq © Perv(X,C)
+
+as the simple perverse sheaf corresponding to the irreducible representation
+of Slog2(C) whose highest weight is given by the conjugate partition a’
+in the basis of the weights defined by the diagonal entries of matrices. For
+instance, the singleton partitions @ = (a) correspond to the fundamental
+representations, and for these it has been shown in loc. cit. that
+
+6; = dw, and So9-2-i = o_w; for O0<i<g-l,
+
+where the second equality is due to the Riemann-Roch theorem. Now the
+Tannakian formalism provides a means to decompose arbitrary convolution
+products between these perverse intersection cohomology sheaves via the
+combinatorial Littlkewood-Richardson rule for the decomposition of tensor
+products of irreducible representations of Slzx2(C), see [46, sect. 9.3.5]
+and [106, sect. 5.4]. In the special case of fundamental representations this
+gives the formula
+
+n
+PSm*?bn = Tan ® Ba Simsin-i) for m>n,
+i=0
+where Tp € D?(X,C) is a negligible sheaf complex in the sense that all
+its perverse cohomology sheaves have Euler characteristic zero. In fact it
+has been shown in lemma 27 of loc. cit. that T,, (and more generally any
+negligible direct summand of a convolution of Brill-Noether sheaves) is a
+direct sum of degree shifts of dy = Cx[g]. As an application we have the
+following result concerning the difference morphism.
+
+LEMMA 5.25. Let X = JC be the Jacobian variety of a non-hyperelliptic
+smooth projective curve of even genus g = 2n. Then over some Zariski-open
+dense subset U C X there exists an irreducible local system Ly of complex
+vector spaces such that
+
+dnx(Cc,xc,)|u = Cu Lu.
+
+Proof. A Bertini-type argument like the one in lemma 5.3 shows that
+over some Zariski-open dense subset U C X the morphism d,, restricts to a
+finite étale cover. Furthermore, if S$ denotes the singular locus of W,, then
+for dimension reasons the closed subset (S x Wn) U (Wn X S) C Wr X Wh is
+mapped under the difference morphism
+
+&n: WnxWn — xX
+
+to a proper closed subset of X, so we can assume that g;,,'(U) is contained
+in (W,, \S) x (W,, \S). The Riemann-Kempf singularity theorem [48, p. 348]

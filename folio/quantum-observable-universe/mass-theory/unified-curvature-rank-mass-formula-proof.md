@@ -8,8 +8,7 @@ survives the GB-filtration spectral sequence.
 stratifies $H_n(R, q)$ by the curvature rank of **words**; that
 $e_\lambda$ carries a GB-depth $\mathrm{depth}(\lambda)$ indexed by the
 *partition* is a further identification, not stated there and assumed
-here (see
-`docs/audits/2026-08-16-word-depth-vs-partition-depth-bridge-is-unstated.md`).
+here.
 Granting it, the centre splits as $Z = \bigoplus_{k} Z_k$ with $Z_k$ the
 depth-$k$ direct summand. The block-restricted Frobenius integral
 $\int_{A_\lambda} = \int_A \circ\, e_\lambda$
@@ -18,9 +17,9 @@ extracts the $\lambda$-component. Wedderburn-weighted logarithms of
 those components, binned by depth, give the $\mathfrak{m}^{(k)}$
 functionals. $\square$
 
-**Mapping to the historical "six terms + Term 7" labelling.**
-*Earlier drafts named seven terms; in the unified picture each maps
-to a curvature-rank stratum or partial sum:*
+**Mapping to the "six terms + Term 7" labelling.**
+*The seven named terms each map to a curvature-rank stratum or
+partial sum:*
 
 See [Table](#tbl:unified-curvature-rank-mass-formula-table-data).
 

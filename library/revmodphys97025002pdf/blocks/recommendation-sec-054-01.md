@@ -1,0 +1,1 @@
+ratio mμ=me The 2022 recommended value for the muonium hyperfine splitting is ΔEMuðthÞ þ δthðMuÞ ¼ h × 4 463 302 776ð51Þ Hz ½1.1 × 10−8; ð186Þ which is consistent both in value and uncertainty with the most accurately measured value of Eq.

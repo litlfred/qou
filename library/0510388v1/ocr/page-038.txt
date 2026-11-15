@@ -1,0 +1,33 @@
+15. The vector triple product in R*.
+
+Let Xo = (1,0,0,0), X; = (0, 1,0,0), X2 = (0,0,1,0) and X; = (0, 0, 0, 1)
+be the standard orthonormal basis for R*. Then, for x,v,w € R*, we define the
+vector triple product
+
+Xo Xi XQ XB
+Vo Vi V2 V3
+Wo Wi W2 W3
+Xo Xi X. X3
+
+[x, v, w] = det € R'‘.
+
+Note that the first three rows of the above "determinant" consist of real numbers,
+while the last row consists of vectors in R*. The value [x, v, w] of this
+determinant is a vector, orthogonal to x , v and w, whose length is equal to the
+volume of the 3-dimensional parallelepiped spanned by x, v and w. Note that
+[x, V, W] is an alternating, multilinear function of its three arguments.
+
+For y € R*, we have
+
+Xo X1 X2 X3
+Vo Vi V2 V3
+Wo Wi W2 W3
+Yo Yi y2 Y3
+
+<[x,v, w],y> = det
+
+If A € SO(4), then
+
+[Ax, Av, Aw] = A[x, v, w].
+
+38

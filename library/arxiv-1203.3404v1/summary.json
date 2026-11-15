@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1203.3404v1",
  "source_sha256": "2318b14fb2702665",
- "brief": "On local solutions of the Ramanujan equation and their connection formulae — We show connection formulae of local solutions of the Ramanu jan equation between the origin and the inﬁnity.",
- "extended": "**On local solutions of the Ramanujan equation and their connection formulae**\n\n19 pp, 8 sections.\n\n**Abstract.** We show connection formulae of local solutions of the Ramanu jan equation between the origin and the inﬁnity. These solution s are given by the Ramanujan function, the q-Airy function and the divergent basic hypergeometric series 2ϕ 0(0, 0; −; q, x ). We use two diﬀerent q- Borel-Laplace transformations to obtain our connection fo rmulae.\n\n**Outline.** 1 Introduction; 2 Basic notations; 3.1 The Ramanujan function Aq(x); 3.2 The q-Airy function Aiq(x); 3.3 Covering transformations; 3.5 The q-Borel transformation and the q-Lapla; 3.6 The connection formula of the q-Airy funct; 4.2 The connection formula and alternate repre\n\n**Extracted claims (proposals, not verified).**\n- Lemma 2: For any entire function f ,\n- Lemma 4: For any k ∈ N, λ ∈ C∗, one can get;\n- Lemma 5: For any x ∈ C∗ \\ [1;q], the function eq(x/q ) has the following\n- Lemma 6: For any entire function f (x), we have",
+ "brief": "On local solutions of the Ramanujan equation and their connection formulae — We show connection formulae of local solutions of the Ramanujan equation between the origin and the inﬁnity.",
+ "extended": "**On local solutions of the Ramanujan equation and their connection formulae**\n\n*Takeshi MORITA∗*\n\n19 pp, 14 sections.\n\n**Abstract.** We show connection formulae of local solutions of the Ramanujan equation between the origin and the inﬁnity. These solutions are given by the Ramanujan function, the q-Airy function and the divergent basic hypergeometric series 2ϕ0(0, 0; −; q, x). We use two diﬀerent q- Borel-Laplace transformations to obtain our connection formulae.\n\n**Outline.** Front matter; 1 Introduction; 2 Basic notations; 3 Two types of the q-analogue of the Airy func; 3.1 The Ramanujan function Aq(x); 3.2 The q-Airy function Aiq(x); 3.3 Covering transformations; 3.4 The q-Airy equation around the infinity; 3.5 The q-Borel transformation and the q-Lapla; 3.6 The connection formula of the q-Airy funct; 4 Connection formula of the divergent series 2; 4.1 Two different q-exponential functions; 4.2 The connection formula and alternate repre; 4.3 The connection formula of the series 20(0,",
  "tokens": {
   "brief": 46,
   "extended": 250
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -20,42 +25,66 @@
    "pages": "7-8"
   },
   {
-   "id": "sec-002-31-the-ramanujan-function-aqx",
+   "id": "sec-002-3-two-types-of-the-q-analogue-of-the-airy-functi",
+   "title": "Two types of the q-analogue of the Airy function and the connection formula",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-003-31-the-ramanujan-function-aqx",
    "title": "The Ramanujan function Aq(x)",
    "pages": "8-9"
   },
   {
-   "id": "sec-003-32-the-q-airy-function-aiqx",
+   "id": "sec-004-32-the-q-airy-function-aiqx",
    "title": "The q-Airy function Aiq(x)",
    "pages": "9-10"
   },
   {
-   "id": "sec-004-33-covering-transformations",
+   "id": "sec-005-33-covering-transformations",
    "title": "Covering transformations",
    "pages": "10-11"
   },
   {
-   "id": "sec-005-35-the-q-borel-transformation-and-the-q-laplace",
+   "id": "sec-006-34-the-q-airy-equation-around-the-infinity",
+   "title": "The q-Airy equation around the infinity",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-007-35-the-q-borel-transformation-and-the-q-laplace",
    "title": "The q-Borel transformation and the q-Laplace transformation",
    "pages": "11-12"
   },
   {
-   "id": "sec-006-36-the-connection-formula-of-the-q-airy-function",
+   "id": "sec-008-36-the-connection-formula-of-the-q-airy-function",
    "title": "The connection formula of the q-Airy function",
-   "pages": "12-14"
+   "pages": "12-13"
   },
   {
-   "id": "sec-007-42-the-connection-formula-and-alternate-represen",
+   "id": "sec-009-4-connection-formula-of-the-divergent-series-200",
+   "title": "Connection formula of the divergent series 20(0,0;-;q,)",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-010-41-two-different-q-exponential-functions",
+   "title": "Two different q-exponential functions",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-011-42-the-connection-formula-and-alternate-represen",
    "title": "The connection formula and alternate representation",
-   "pages": "14-19"
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-012-43-the-connection-formula-of-the-series-2000-q",
+   "title": "The connection formula of the series 20(0,0;-;q,)",
+   "pages": "15-19"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

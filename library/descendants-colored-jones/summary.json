@@ -3,74 +3,89 @@
  "doc_id": "descendants-colored-jones",
  "source_sha256": "f00693a5926c074f",
  "brief": "The descendant colored Jones polynomials — We discuss two realizations of the colored Jones polyno- mials of a knot, one appearing in an unnoticed work of the second author in 1994 on quantum",
- "extended": "**The descendant colored Jones polynomials**\n\n*Stavros Garoufalidis and Rinat Kashaev*\n\n28 pp, 13 sections.\n\n**Abstract.** We discuss two realizations of the colored Jones polyno- mials of a knot, one appearing in an unnoticed work of the second author in 1994 on quantum R-matrices at roots of unity obtained from solutions of the pentagon identity, and another formulated in terms of a sequence of elements of the Habiro ring appearing in recent work of D. Zagier and the ﬁrst author on the Reﬁned Quantum Modularity Conjecture.\n\n**Outline.** Introduction; The descendant colored Jones polynomials of a ; Properties of the descendants; A conjecture; Examples; The colored Jones polynomials at roots of unit; R-matrices with a spectral parameter; Proof of the gauge symmetry equations; Knot invariants; An example; A conjecture; Acknowledgements; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3.1: The state-sum ⟨D⟩N,n depends on the long knot K and not\n- Proposition 2.2: Each family of invariants {Jn(q)|n ∈ Z≥0}, {DJ(m)",
+ "extended": "**The descendant colored Jones polynomials**\n\n*Stavros Garoufalidis and Rinat Kashaev*\n\n28 pp, 16 sections.\n\n**Abstract.** We discuss two realizations of the colored Jones polyno- mials of a knot, one appearing in an unnoticed work of the second author in 1994 on quantum R-matrices at roots of unity obtained from solutions of the pentagon identity, and another formulated in terms of a sequence of elements of the Habiro ring appearing in recent work of D. Zagier and the ﬁrst author on the Reﬁned Quantum Modularity Conjecture.\n\n**Outline.** Front matter; Introduction; The descendant colored Jones polynomials of a ; A conjectured matrix-valued invariant from GZ:; Definition of the descendants; Properties of the descendants; A conjecture; Examples; The colored Jones polynomials at roots of unit; R-matrices with a spectral parameter; Proof of the gauge symmetry equations; Knot invariants; An example; A conjecture; Acknowledgements; References",
  "tokens": {
   "brief": 47,
-  "extended": 261
+  "extended": 237
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-introduction",
    "title": "Introduction",
-   "pages": "1-3"
+   "pages": "2-3"
   },
   {
    "id": "sec-001-the-descendant-colored-jones-polynomials-of-a-kn",
    "title": "The descendant colored Jones polynomials of a knot",
-   "pages": "3-5"
+   "pages": "3-3"
   },
   {
-   "id": "sec-002-properties-of-the-descendants",
+   "id": "sec-002-a-conjectured-matrix-valued-invariant-from-gzkas",
+   "title": "A conjectured matrix-valued invariant from GZ:kashaev,GZ:qseries",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-003-definition-of-the-descendants",
+   "title": "Definition of the descendants",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-004-properties-of-the-descendants",
    "title": "Properties of the descendants",
    "pages": "5-8"
   },
   {
-   "id": "sec-003-a-conjecture",
+   "id": "sec-005-a-conjecture",
    "title": "A conjecture",
    "pages": "8-8"
   },
   {
-   "id": "sec-004-examples",
+   "id": "sec-006-examples",
    "title": "Examples",
    "pages": "8-12"
   },
   {
-   "id": "sec-005-the-colored-jones-polynomials-at-roots-of-unity",
+   "id": "sec-007-the-colored-jones-polynomials-at-roots-of-unity",
    "title": "The colored Jones polynomials at roots of unity",
    "pages": "12-13"
   },
   {
-   "id": "sec-006-r-matrices-with-a-spectral-parameter",
+   "id": "sec-008-r-matrices-with-a-spectral-parameter",
    "title": "R-matrices with a spectral parameter",
    "pages": "13-15"
   },
   {
-   "id": "sec-007-proof-of-the-gauge-symmetry-equations",
+   "id": "sec-009-proof-of-the-gauge-symmetry-equations",
    "title": "Proof of the gauge symmetry equations",
    "pages": "15-19"
   },
   {
-   "id": "sec-008-knot-invariants",
+   "id": "sec-010-knot-invariants",
    "title": "Knot invariants",
    "pages": "19-23"
   },
   {
-   "id": "sec-009-an-example",
+   "id": "sec-011-an-example",
    "title": "An example",
    "pages": "23-24"
   },
   {
-   "id": "sec-010-a-conjecture",
+   "id": "sec-012-a-conjecture",
    "title": "A conjecture",
    "pages": "24-24"
   },
   {
-   "id": "sec-011-acknowledgements",
+   "id": "sec-013-acknowledgements",
    "title": "Acknowledgements",
    "pages": "24-24"
   },
   {
-   "id": "sec-012-references",
+   "id": "sec-014-references",
    "title": "References",
    "pages": "24-28"
   }
@@ -79,8 +94,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-math-0603444v2
-doc_title: "QUASIHOMOGENEITY OF ISOLATED HYPERSURF ACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY"
+doc_title: "QUASIHOMOGENEITY OF ISOLATED HYPERSURFACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY"
 section_id: sec-001-2-relation-to-the-logarithmic-comparison-theorem
 section_title: "Relation to the logarithmic comparison theorem"
 section_number: 2
 pages: 2-2
 source_pdf: 0603444v2.pdf
 source_sha256: 46edfcddca963d08
-doc_brief: "QUASIHOMOGENEITY OF ISOLATED HYPERSURF ACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY — W e characterize quasihomogeneity of isolated hypersurfac e singu- larities by the injectivity of the map induced"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.967
+latex_prose_ratio: 0.993
+latex_coverage_ratio: 0.979
+doc_brief: "QUASIHOMOGENEITY OF ISOLATED HYPERSURFACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY — We characterize quasihomogeneity of isolated hypersurface singu- larities by the injectivity of the map induced by"
 ---
 The map $d_1$ is well-known in the context of the logarithmic comparison theorem: By Grothendieck's comparison theorem [@Gro66], the cohomology of the complement $U=\mathbb{C}^n\smallsetminus D$ of a germ of a reduced divisor $D\subseteq\mathbb{C}^n$ is computed by the complex $\Omega^\bullet(\star D)$. If the inclusion $\Omega^\bullet(\log D)\subseteq\Omega^\bullet(\star D)$ is a quasi--isomorphism then $\Omega^\bullet(\log D)$ computes the cohomology of $U$ and one says that the logarithmic comparison theorem, or briefly LCT, holds for $D$. The characterization of LCT is an open problem and the subject of active current research [@Tor05]. Mainly the two extremal cases of isolated singularities and free divisors have been studied. By definition, $D$ is free if $\mathop{\mathrm{Der}}(-\log D)$ is $\mathcal{O}$-free of rank necessarily equal to $n$. Freeness of $D$ means that it is either smooth or its singular locus $\mathop{\mathrm{Sing}}(D)$ is of pure codimension $1$ in $D$. Thus the two cases coincide for singularities in dimension $n=2$ and are disjoint if $n\ge3$.
 

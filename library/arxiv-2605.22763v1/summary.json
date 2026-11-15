@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2605.22763v1",
  "source_sha256": "1fe6b92bb5eb0b45",
- "brief": "Advancing mathematics research with AI-driven formal proof search — 14 sections: Introduction; AlphaProof Nexus; Systematic Evaluation on Open Prob",
- "extended": "**Advancing mathematics research with AI-driven formal proof search**\n\n*Bérczi2, Francisco J. R. Ruiz1, Arun Suggala1, Adam Zsolt Wagner1, Eric Wieser1, Lei Yu1, Aja Huang1, Miklós*\n\n59 pp, 14 sections.\n\n**Outline.** Introduction; AlphaProof Nexus; Systematic Evaluation on Open Problems; Deployment in Mathematics Research; Impact of Agent Architecture and Model; Discussion; Materials and Methods; Further Details on AlphaProof Nexus Agents; Prompts; Supplementary Text; Related Work; Selection of Erdős and OEIS Problems; Details on Comparisons across Agent Architectu; Deformalized Lean Proofs\n\n**Extracted claims (proposals, not verified).**\n- Theorem: (i).There is an infinite set𝐴⊆ℕ satisfying that there are no distinct𝑎,𝑏,𝑐∈𝐴\n- Theorem: There exists an infinite set𝐴⊂ℤ + with no distinct𝑎,𝑏,𝑐∈𝐴 with 𝑏,𝑐 > 𝑎,\n- Theorem: Let M(𝑆) denote the set of multiples of a subset𝑆⊆ℕ , and let𝑑(𝑋) denote\n- Theorem: is still used to construct a counterexample, but with additional constraints to\n- Theorem: Let𝐴⊂ℝ 2 be an infinite set for which there exists some𝜖 >0such that in any\n- Theorem: , any finite coloring of the edges of the infinite complete graph must contain a",
+ "brief": "Advancing Mathematics Research with AI-Driven Formal Proof Search — 29 sections: Front matter; Introduction; AlphaProof Nexus",
+ "extended": "**Advancing Mathematics Research with AI-Driven Formal Proof Search**\n\n*AI-Driven Formal Proof Search*\n\n59 pp, 29 sections.\n\n**Outline.** Front matter; Introduction; AlphaProof Nexus; Systematic Evaluation on Open Problems; Deployment in Mathematics Research; Impact of Agent Architecture and Model; Discussion; Materials and Methods; Further Details on AlphaProof Nexus Agents; Prompts; Supplementary Text; Related Work; Selection of Erdős and OEIS Problems; Details on Comparisons across Agent Architectu; Deformalized Lean Proofs; Erdős #12-(ii); Erdős #125; Erdős #138, Differences Variant",
  "tokens": {
-  "brief": 36,
-  "extended": 292
+  "brief": 31,
+  "extended": 148
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
@@ -77,14 +82,83 @@
   {
    "id": "sec-013-deformalized-lean-proofs",
    "title": "Deformalized Lean Proofs",
-   "pages": "30-59"
+   "pages": "30-31"
+  },
+  {
+   "id": "sec-014-erdős-12-ii",
+   "title": "Erdős #12-(ii)",
+   "pages": "31-34"
+  },
+  {
+   "id": "sec-015-erdős-125",
+   "title": "Erdős #125",
+   "pages": "34-35"
+  },
+  {
+   "id": "sec-016-erdős-138-differences-variant",
+   "title": "Erdős #138, Differences Variant",
+   "pages": "35-35"
+  },
+  {
+   "id": "sec-017-erdős-741-i",
+   "title": "Erdős #741-(i)",
+   "pages": "35-37"
+  },
+  {
+   "id": "sec-018-erdős-741-ii",
+   "title": "Erdős #741-(ii)",
+   "pages": "37-37"
+  },
+  {
+   "id": "sec-019-alphaproof-nexus-resultsblobmainapnoutputserdosp",
+   "title": "alphaproof-nexus-results/blob/main/APNOutputs/ErdosProblems/erdos_12",
+   "pages": "37-38"
+  },
+  {
+   "id": "sec-020-erdős-26-more-general-variant",
+   "title": "Erdős #26, More General Variant",
+   "pages": "38-39"
+  },
+  {
+   "id": "sec-021-erdős-846",
+   "title": "Erdős #846",
+   "pages": "39-41"
+  },
+  {
+   "id": "sec-022-erdős-152",
+   "title": "Erdős #152",
+   "pages": "41-42"
+  },
+  {
+   "id": "sec-023-oeis-conjectures",
+   "title": "OEIS Conjectures",
+   "pages": "42-47"
+  },
+  {
+   "id": "sec-024-a-variant-of-the-graph-reconstruction-conjecture",
+   "title": "A variant of the Graph Reconstruction Conjecture",
+   "pages": "47-51"
+  },
+  {
+   "id": "sec-025-log-concavity-of-hilbert-sequences",
+   "title": "Log-Concavity of Hilbert Sequences",
+   "pages": "51-57"
+  },
+  {
+   "id": "sec-026-a-convergence-proof-of-modified-anchored-gradien",
+   "title": "A Convergence Proof of Modified Anchored Gradient Descent-Ascent",
+   "pages": "57-58"
+  },
+  {
+   "id": "sec-027-written-on-the-wall-conjecture-2",
+   "title": "Written on the Wall, Conjecture 2",
+   "pages": "58-59"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

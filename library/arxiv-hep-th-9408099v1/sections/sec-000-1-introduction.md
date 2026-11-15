@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408099v1
-doc_title: "arXiv:hep-th/9408099v1 17 Aug 1994"
+doc_title: "Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
@@ -8,6 +8,7 @@ pages: 2-7
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
 toc_source: inferred
+doc_brief: "Seiberg–Witten, Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD (1994) — exact metric on the moduli space of quantum vacua and exact stable-state spectrum for SU(2) with…"
 ---
 The holomorphic properties of supersymmetric ﬁeld theories [1-3] can be a powerful
 tool in deriving exact results about them [3-6]. In N = 1 theories in four dimensions,

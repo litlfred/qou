@@ -1,0 +1,72 @@
+---
+doc_id: ds15v1-2008
+doc_title: "Rogers-Ramanujan-Slater Type Identities"
+section_id: page-046
+section_title: "Page 46"
+pages: 46-46
+pdf_page: 46
+source_pdf: ds15v1-2008.pdf
+source_sha256: aef155a324c6fdf4
+text_source: ocr
+granularity: page
+doc_brief: "Rogers-Ramanujan-Slater Type Identities — In this survey article, we present an expanded version of Lucy Slater’s famous list of identities of the Rogers-Ramanujan type, including identities of"
+---
+= PGP 00 — (PPP oc
+— FEO PGP 27: (m = 3)
+34 14 crue
+
+= (-9?, =F, 0°: 0 — (-4
+=~ F (-9"°, = 3848 Poo + P
+
+Note that the right sides required some elementary manipulations in the cases m = 3 and
+m= 4,
+Now suppose we have a finite set of “Series S; = Product P;” identities (1 <i <n).
+
+Clearly
+i=1 i=l
+
+holds for any set of complex constants a;. If, for a certain set of a;, (6.2.3) follows as
+a consequence of the Jacobi triple product identity, then we say the identities S; = P,,
+1<i<nare JTP-dependent, in the sense that any one identity can be derived from
+the other n — 1 identities taken together with the Jacobi triple product identity. As an
+example, consider the following three identities from Slater’s list:
+
+(PP )n id” (G7 PP)
+1+ = $93
+» (@: Dan. 1G Q)n Ce (S93)
+> (eq 3).q n(n+2) _ _ (4, q®, @: GP") x0 (S91)
+na (4; Qan+2(9; Dn (93 Doo
+> (eq 3).q n(n+3) _ _ (@, @, @: Poe (S90)
+(4; Qan+2(9; Dn (9; Doo
+
+ll
+°
+
+n
+
+One easily checks that the sum side of $93 - ¢gx$91 - q?x$10 is identically 1, while the
+product side being identically 1 follows from the m = 2 case of (6.2.2). Thus the identities
+$90, S91 and $93 are JTP-dependent.
+
+Before compiling a table of sets of identities which are JTP-dependent, we first exhibit
+two other qg-products which, like (g;q)oo. at (6.2.2), have infinitely many expressions as
+sums of triple products.
+
+Firstly, if we replace q by q* and set. x = —q, we get that
+
+(Pa) _ (_g6 90 16, 16) -q(- 142 16. 16) (m=2 (6.2.4)
+Cg Pw ETE TT 0 = MOT TTT 003 m = 2) 2.
+=P PPP x0 — UP? V5?) 20
+— PC. 0:0 )00; (m = 3)
+
+A4 0 "ee
+
+fd sq
+
+q
+=(-¢, oP Pao —q(-9",
+(<9? -G go. (m= 4)
+
+= P(-9?, 9, doo +
+
+THE ELECTRONIC JOURNAL OF COMBINATORICS 15 (2008), #DS15 46

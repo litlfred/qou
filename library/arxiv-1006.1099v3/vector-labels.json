@@ -1,0 +1,4581 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1006.1099v3",
+  "pages": [
+    {
+      "page": 29,
+      "rotation": 0,
+      "drawings": 17,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. Lagrangian spheres from the g = 2 pentagram and its g = 3 cousin; on the left one radial path and one basic path are also dotted."
+      ],
+      "labels": [
+        {
+          "text": "FLOER COHOMOLOGY AND PENCILS OF QUADRICS",
+          "bbox": [
+            189.72,
+            81.89,
+            400.63,
+            88.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "29",
+          "bbox": [
+            496.08,
+            81.89,
+            504.01,
+            88.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Remark 3.21. For the ring R = C[x]/⟨x2 −1⟩, the Hochschild cohomology2 group of the category",
+          "bbox": [
+            86.4,
+            107.37,
+            504.21,
+            128.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of Z2-graded modules has rank 2 if deg(x) is even and rank 1 if deg(x) is odd (the latter fact is",
+          "bbox": [
+            86.4,
+            122.57,
+            503.96,
+            133.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the computation of Example 3.20 in the special case k = 1, where the underlying product on A",
+          "bbox": [
+            86.4,
+            135.21,
+            504.03,
+            145.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "is itself deformed). This comes down to the fact that the group",
+          "bbox": [
+            86.4,
+            147.09,
+            363.01,
+            157.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "HomR⊗R(R ⊗R, R)",
+          "bbox": [
+            250.8,
+            163.43,
+            339.63,
+            180.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of bimodule homomorphisms has rank 2 in the ﬁrst case, comprising the elements 1⊗1 7→α1+βx,",
+          "bbox": [
+            86.4,
+            179.87,
+            503.88,
+            197.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "but only rank 1 in the second, since for a Z2-graded map one must have 1 ⊗1 7→α1. From",
+          "bbox": [
+            86.4,
+            191.33,
+            504.14,
+            209.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "another viewpoint, when deg(x) is even, R is semisimple, splitting into two orthogonal idempotent",
+          "bbox": [
+            86.4,
+            203.97,
+            504.02,
+            213.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "summands, but when deg(x) is odd the idempotents are not of pure degree and there is no such",
+          "bbox": [
+            86.4,
+            215.97,
+            504.01,
+            225.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "splitting.",
+          "bbox": [
+            86.4,
+            227.85,
+            125.16,
+            237.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "p→P1 to be the unique curve branched",
+          "bbox": [
+            334.68,
+            243.17,
+            504.13,
+            264.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "3.7. The Fukaya category of a curve. Take Σg ∼= C",
+          "bbox": [
+            86.4,
+            244.19,
+            330.87,
+            265.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "over the points {0, ξj, 1 ≤j ≤2g + 1}, where ξ is a primitive (2g + 1)-st root of unity. We",
+          "bbox": [
+            86.4,
+            257.81,
+            503.98,
+            276.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "can exhibit embedded circles in C via matching arcs amongst these points, i.e. the projections",
+          "bbox": [
+            86.4,
+            271.17,
+            504.08,
+            281.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of Z2-invariant curves to P1. For instance, when g = 2, 5 Lagrangian submanifolds {Lj} of C",
+          "bbox": [
+            86.4,
+            281.69,
+            503.31,
+            300.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "are determined by the arcs of the pentagram on the left of Figure 1 (the vertices are the 5th",
+          "bbox": [
+            86.4,
+            295.05,
+            504.01,
+            305.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "roots of unity); more generally there is a spikier (2g + 1)-gram deﬁning 2g + 1 associated spheres",
+          "bbox": [
+            86.4,
+            306.93,
+            504.08,
+            316.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "permuted by the obvious cyclic symmetry. In an act of shameless innumeracy, we will refer to all",
+          "bbox": [
+            86.4,
+            318.93,
+            504.0,
+            328.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "these ﬁgures as pentagrams. If we divide C by the lift of this cyclic group action from P1 to C,",
+          "bbox": [
+            86.4,
+            327.33,
+            504.0,
+            340.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "orb in an orbifold S2 with",
+          "bbox": [
+            391.32,
+            339.21,
+            504.01,
+            355.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "all the circles {Lj} are identiﬁed with a single immersed circle ¯L ⊂S2",
+          "bbox": [
+            86.4,
+            340.29,
+            395.89,
+            359.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "3 orbifold points each of order 2g + 1 (these come from the unique preimage of 0 ∈P1 in C and",
+          "bbox": [
+            86.4,
+            351.21,
+            504.01,
+            371.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the two preimages of ∞∈P1). This immersed curve actually bounds no teardrops, hence Floer",
+          "bbox": [
+            86.4,
+            365.33,
+            504.05,
+            383.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "theory can be deﬁned unproblematically for it, or one can work equivariantly upstairs.",
+          "bbox": [
+            86.4,
+            378.69,
+            463.68,
+            388.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 1. Lagrangian spheres from the g = 2 pentagram and its g = 3 cousin;",
+          "bbox": [
+            122.28,
+            546.35,
+            468.24,
+            557.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "on the left one radial path and one basic path are also dotted.",
+          "bbox": [
+            122.28,
+            559.17,
+            393.84,
+            569.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "For any symplectic surface Σg, ωΣ of genus g ≥2, let σ : ST Σ →Σ be the projection from",
+          "bbox": [
+            98.4,
+            597.47,
+            504.02,
+            614.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the unit tangent bundle. Seidel deﬁnes the balanced Fukaya category, an A∞-category linear",
+          "bbox": [
+            86.4,
+            609.69,
+            504.05,
+            620.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "over C, with respect to an auxiliary choice of one-form θ ∈Ω1(ST Σ) which is a primitive for the",
+          "bbox": [
+            86.4,
+            620.21,
+            503.98,
+            638.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "pullback of the symplectic form, dθ = σ∗ωΣ. (Such forms exist since, by the Gysin sequence,",
+          "bbox": [
+            86.4,
+            632.07,
+            504.12,
+            644.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "H2(ST Σ, R) = 0 for g(Σ) ≥2.) Objects of the balanced Fukaya category are simple closed",
+          "bbox": [
+            86.4,
+            644.21,
+            504.13,
+            662.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "curves L ⊂Σ for which R",
+          "bbox": [
+            86.4,
+            649.31,
+            200.3,
+            694.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L ι∗",
+          "bbox": [
+            200.28,
+            655.95,
+            215.52,
+            671.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Lθ = 0, where ιL : L →ST Σ is the tangent lift of L֒ →Σ (these",
+          "bbox": [
+            211.44,
+            657.23,
+            503.98,
+            674.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "curves should be equipped with orientations and Spin structures as usual). Homotopically trivial",
+          "bbox": [
+            86.4,
+            669.57,
+            504.12,
+            679.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2Classically, HH∗would be 2-periodic and we’re just taking HH0 and HH1.",
+          "bbox": [
+            86.4,
+            690.38,
+            373.27,
+            701.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR6",
+            "CMR7",
+            "CMR8",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            6.97,
+            7.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 38,
+      "rotation": 0,
+      "drawings": 5,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3. A Lagrangian torus in O(−1)"
+      ],
+      "labels": [
+        {
+          "text": "38",
+          "bbox": [
+            86.4,
+            81.89,
+            94.33,
+            88.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "IVAN SMITH",
+          "bbox": [
+            270.96,
+            81.89,
+            319.44,
+            88.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Figure 3. A Lagrangian torus in O(−1)",
+          "bbox": [
+            204.96,
+            205.19,
+            385.47,
+            223.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "All the holomorphic disks with boundaries on the ﬁbres of the moment map can be computed",
+          "bbox": [
+            86.4,
+            233.49,
+            504.01,
+            243.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "explicitly, cf. [19, 7]; in this case the torus bounds 3 families of Maslov index 2 disks, all having",
+          "bbox": [
+            86.4,
+            245.49,
+            504.06,
+            255.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the same area, so T is in fact monotone. The three dotted lines emanating from the black dot",
+          "bbox": [
+            86.4,
+            257.49,
+            504.03,
+            267.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "in Figure 3 are schematic images of the three Maslov index 2 disks through a point; the disks",
+          "bbox": [
+            86.4,
+            269.37,
+            504.08,
+            279.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "actually ﬁbre over arcs in the aﬃne structure on the moment polytope determined by complex",
+          "bbox": [
+            86.4,
+            281.37,
+            504.09,
+            291.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "rather than symplectic geometry, but the disks do intersect the boundary facets as indicated. We",
+          "bbox": [
+            86.4,
+            293.25,
+            503.98,
+            303.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "equip T with the Spin structure which is bounding on both factors. The contributions of these",
+          "bbox": [
+            86.4,
+            305.25,
+            503.98,
+            315.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "disks to the Floer diﬀerential and product can be determined explicitly exactly as in op. cit.;",
+          "bbox": [
+            86.4,
+            317.25,
+            503.88,
+            327.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the Lagrangian moment map ﬁbres with non-zero Floer cohomology for some Spin structure are",
+          "bbox": [
+            86.4,
+            329.13,
+            504.1,
+            339.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "precisely those lying over critical values of the superpotential, which in this example is",
+          "bbox": [
+            86.4,
+            341.13,
+            461.96,
+            351.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "W(z1, z2) = z1 + z2 + ecz1z2.",
+          "bbox": [
+            228.48,
+            355.49,
+            361.8,
+            368.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The constituent monomials are indexed by the toric boundary strata of the moment polytope,",
+          "bbox": [
+            86.4,
+            373.53,
+            504.0,
+            383.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "cf. [7, Proposition 4.3], with the logarithm of the corresponding coeﬃcient giving the distance",
+          "bbox": [
+            86.4,
+            385.53,
+            503.98,
+            395.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of the deﬁning hyperplane from the origin in R2. There is a unique critical point (−e−c, −e−c)",
+          "bbox": [
+            86.4,
+            395.91,
+            504.03,
+            414.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "lying over the ﬁbre of the moment map given by the black dot (c, c) = (−log|z1|, −log|z2|). Since",
+          "bbox": [
+            86.4,
+            409.19,
+            503.98,
+            426.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the critical point is non-degenerate, this torus has HF(T 2, T 2) ∼= Cl2.",
+          "bbox": [
+            86.4,
+            418.43,
+            391.32,
+            438.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "□",
+          "bbox": [
+            496.2,
+            419.09,
+            503.94,
+            429.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Remark 4.20. The torus T is actually special Lagrangian with respect to the pullback of the",
+          "bbox": [
+            86.4,
+            439.41,
+            503.98,
+            449.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "holomorphic volume form dz1/z1 ∧dz2/z2 from C2. The pullback has ﬁrst order poles along the",
+          "bbox": [
+            86.4,
+            449.93,
+            503.98,
+            469.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "proper transforms of the axes and the exceptional divisor, hence any Maslov index 2 disk must",
+          "bbox": [
+            86.4,
+            463.29,
+            504.02,
+            473.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "meet this locus transversely once, as in Figure 3.",
+          "bbox": [
+            86.4,
+            475.17,
+            299.16,
+            485.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "For another viewpoint on the Lagrangian torus T ⊂O(−1), recall the construction of the",
+          "bbox": [
+            98.4,
+            492.95,
+            503.98,
+            510.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "symplectic blow-up. We let",
+          "bbox": [
+            86.4,
+            505.17,
+            205.46,
+            515.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "((z1, z2), [w1 : w2]) ∈C2 × P1 \f\f z1w2 = w1z2",
+          "bbox": [
+            220.8,
+            512.63,
+            411.13,
+            555.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\b",
+          "bbox": [
+            214.92,
+            513.11,
+            220.73,
+            550.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "O(−1) =",
+          "bbox": [
+            173.04,
+            521.15,
+            212.22,
+            538.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "be the standard embedding of the tautological line bundle and write O(−1)δ = Φ−1(B(δ)) for",
+          "bbox": [
+            86.4,
+            536.67,
+            504.05,
+            555.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the preimage of the ball B(δ) ⊂C2 under the ﬁrst projection Φ. The standard symplectic form",
+          "bbox": [
+            86.4,
+            546.57,
+            504.02,
+            567.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "giving the exceptional sphere area πχ2 > 0 is just Ωχ = Φ∗ωstd + χ2π∗",
+          "bbox": [
+            86.4,
+            558.45,
+            400.08,
+            573.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "P1ωF S, where ωF S is the",
+          "bbox": [
+            395.64,
+            562.05,
+            503.98,
+            573.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "MSBM7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "appropriately normalised Fubini-Study form on the projective line. The basic observation, see",
+          "bbox": [
+            86.4,
+            574.05,
+            503.98,
+            584.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "e.g. [66, Lemma 7.11], is that",
+          "bbox": [
+            86.4,
+            586.05,
+            214.94,
+            596.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            299.64,
+            594.35,
+            309.6,
+            631.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "χ2 + δ2\\B(χ), ωstd) ⊂C2.",
+          "bbox": [
+            309.72,
+            600.93,
+            422.52,
+            620.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(O(−1)δ\\O(−1)0, Ωχ) ∼= (B(",
+          "bbox": [
+            167.88,
+            600.95,
+            299.67,
+            620.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(4.6)",
+          "bbox": [
+            483.48,
+            603.81,
+            504.03,
+            613.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Thus there is a symplectic form on the blow-up with area c on the exceptional sphere whenever",
+          "bbox": [
+            86.4,
+            620.01,
+            504.06,
+            629.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a ball of radius strictly larger than c/√",
+          "bbox": [
+            86.4,
+            624.47,
+            262.94,
+            641.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "π embeds in the original space. Now take the equator",
+          "bbox": [
+            262.8,
+            631.89,
+            504.05,
+            641.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "S1 ⊂P1 = E inside the exceptional divisor.",
+          "bbox": [
+            86.4,
+            640.07,
+            289.92,
+            660.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Consider the union of the circles inside ﬁbres",
+          "bbox": [
+            298.2,
+            643.89,
+            504.09,
+            653.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "lying over the equator which bound disks of area c; from the above discussion, such a tubular",
+          "bbox": [
+            86.4,
+            655.89,
+            503.93,
+            665.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "neighbourhood embeds in the blow-up (in general this will be true if c is suﬃciently small, but a",
+          "bbox": [
+            86.4,
+            667.77,
+            503.94,
+            677.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ball of any size ﬁts in C2). The torus T swept out by these ﬁbres of constant radius is Lagrangian,",
+          "bbox": [
+            86.4,
+            678.41,
+            504.36,
+            689.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "since via Equation 4.6 it comes from a Cliﬀord-type torus inside a sphere in C2; it is invariant",
+          "bbox": [
+            86.4,
+            690.29,
+            504.14,
+            701.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 40,
+      "rotation": 0,
+      "drawings": 15,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4. The symplectic cut of a Lagrangian tube in Blp∐q(C2) (the dotted balls are collapsed in performing the blow-up)"
+      ],
+      "labels": [
+        {
+          "text": "40",
+          "bbox": [
+            86.4,
+            81.89,
+            94.33,
+            88.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "IVAN SMITH",
+          "bbox": [
+            270.96,
+            81.89,
+            319.44,
+            88.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Remark 4.24. Non-triviality of HF(T, T ) implies that the Lagrangian correspondences Γi are",
+          "bbox": [
+            86.4,
+            111.21,
+            504.1,
+            122.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "non-trivial elements of their Fukaya categories. Note that the individual correspondences Γ1 ∼= S1",
+          "bbox": [
+            86.4,
+            120.35,
+            503.53,
+            141.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and Γ2 ∼= S3 cannot split for reasons of degree: in both cases only the identity lives in HF ev.",
+          "bbox": [
+            86.4,
+            131.61,
+            493.56,
+            153.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The composite correspondence Γ1 ◦Γ2 has an idempotent summand which deﬁnes a functor",
+          "bbox": [
+            98.4,
+            152.99,
+            499.74,
+            171.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Φ(e+) : F({pt}) →T wπF(X)",
+          "bbox": [
+            231.96,
+            167.57,
+            358.47,
+            186.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "EUSM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(4.8)",
+          "bbox": [
+            483.48,
+            169.41,
+            504.02,
+            179.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "which takes the unique Lagrangian submanifold of the base locus {pt} to an object on the RHS",
+          "bbox": [
+            86.4,
+            185.51,
+            503.89,
+            202.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "with the same Floer cohomology; i.e. the summand of the functor is fully faithful. To obtain a",
+          "bbox": [
+            86.4,
+            197.73,
+            503.94,
+            207.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "slightly less trivial example, one can consider blowing up a collection of points in C2 by equal",
+          "bbox": [
+            86.4,
+            206.01,
+            504.12,
+            219.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "amounts.",
+          "bbox": [
+            86.4,
+            221.61,
+            126.12,
+            231.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Taking a common size for the blow-ups implies that the resulting space contains",
+          "bbox": [
+            135.12,
+            221.61,
+            504.08,
+            231.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Lagrangian 2-spheres, which arise from the symplectic cut of trivial Lagrangian cylinders in C2.",
+          "bbox": [
+            86.4,
+            232.13,
+            504.0,
+            243.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Example 4.25. Let p = (0, 0) ∈C2 and consider the arc γ ⊂R+ ⊂C = {w = 0} ⊂C2, with",
+          "bbox": [
+            86.4,
+            247.79,
+            504.01,
+            268.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "co-ordinates (z, w) on C2. The blow-up at p is eﬀected symplectically by choosing a ball with",
+          "bbox": [
+            86.4,
+            262.13,
+            504.01,
+            273.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "boundary",
+          "bbox": [
+            86.4,
+            275.49,
+            128.01,
+            285.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ε = {|z|2 + |w|2 = ε2}",
+          "bbox": [
+            247.32,
+            283.41,
+            349.26,
+            304.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "S3",
+          "bbox": [
+            241.2,
+            285.65,
+            251.89,
+            297.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and quotienting out Hopf circles. Suppose now we consider the circles {|w| = ε} lying over the",
+          "bbox": [
+            86.4,
+            301.55,
+            503.98,
+            318.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "arc γ ⊂{w = 0}. The union of these circles is a Lagrangian tube in C2 which meets S3",
+          "bbox": [
+            86.4,
+            310.05,
+            461.17,
+            330.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ε only over",
+          "bbox": [
+            456.6,
+            313.77,
+            504.18,
+            326.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the end-point of γ at the origin, where the intersection is precisely the circle {z = 0, |w| = ε}",
+          "bbox": [
+            86.4,
+            325.43,
+            504.06,
+            342.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "which is collapsed in forming the blow-up, cf. Figure 4.",
+          "bbox": [
+            86.4,
+            337.65,
+            327.72,
+            347.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 4. The symplectic cut of a Lagrangian tube in Blp∐q(C2) (the dotted",
+          "bbox": [
+            122.28,
+            496.01,
+            468.13,
+            508.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "balls are collapsed in performing the blow-up)",
+          "bbox": [
+            122.28,
+            509.25,
+            323.18,
+            519.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The Lagrangian tube therefore deﬁnes a smooth Lagrangian disk in Blp(C2). If we now blow",
+          "bbox": [
+            86.4,
+            546.65,
+            504.11,
+            558.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "up C2 at p = (0, 0) and q = (2, 0), with equal weights c = πε2 at the two-points, there is a",
+          "bbox": [
+            86.4,
+            556.41,
+            503.94,
+            569.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Lagrangian sphere L ⊂Blp∐qC2 in the homology class ±(E1 −E2). This arises from a pair of",
+          "bbox": [
+            86.4,
+            568.41,
+            504.04,
+            590.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "such disks, and is naturally a matching sphere associated to a path γ ⊂C = {w = 0} between",
+          "bbox": [
+            86.4,
+            583.25,
+            504.01,
+            600.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the points p = (0, 0) and q = (2, 0).",
+          "bbox": [
+            86.4,
+            595.89,
+            239.64,
+            605.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Lemma 4.26. The torus T ⊂Bl0(C2) meets the Lagrangian disk ∆which is the symplectic cut",
+          "bbox": [
+            86.4,
+            612.53,
+            504.07,
+            630.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of R≥0 × {|w| = ε} cleanly in a circle. The Floer cohomology HF(T 2, ∆) ∼= H∗(S1).",
+          "bbox": [
+            86.4,
+            623.03,
+            453.89,
+            644.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Proof. The disk ∆ﬁbres over the horizontal arc emanating from the vertex on the y-axis in the",
+          "bbox": [
+            86.4,
+            643.89,
+            503.98,
+            653.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "moment image of Figure 3. The disk and the torus meet cleanly along the circle where z = ε ∈R+.",
+          "bbox": [
+            86.4,
+            655.25,
+            504.0,
+            672.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "We claim the Morse-Bott-Floer diﬀerential vanishes: it is enough to see that HF(T 2, ∆)̸ =",
+          "bbox": [
+            86.4,
+            666.41,
+            503.94,
+            684.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "0.",
+          "bbox": [
+            86.4,
+            679.77,
+            94.2,
+            689.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "To prove this, we introduce a Lefschetz ﬁbration viewpoint on these constructions.",
+          "bbox": [
+            102.72,
+            679.77,
+            478.44,
+            689.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The",
+          "bbox": [
+            486.84,
+            679.77,
+            503.98,
+            689.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "trivial ﬁbration C2 →C which is projection to the z-co-ordinate induces a Lefschetz ﬁbration on",
+          "bbox": [
+            86.4,
+            687.83,
+            504.01,
+            708.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 46,
+      "rotation": 0,
+      "drawings": 12,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 5. The moment polytope for F1 and associated divisors"
+      ],
+      "labels": [
+        {
+          "text": "46",
+          "bbox": [
+            86.4,
+            81.89,
+            94.33,
+            88.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "IVAN SMITH",
+          "bbox": [
+            270.96,
+            81.89,
+            319.44,
+            88.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Example 4.35. (Auroux) The hypothesis on dim(B) plays a deﬁnite role. Take a pencil of linear",
+          "bbox": [
+            86.4,
+            111.21,
+            504.05,
+            121.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "hyperplanes in P3 with base locus P1 and blow that up. This may be done torically, and we",
+          "bbox": [
+            86.4,
+            119.61,
+            503.98,
+            133.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "obtain a toric variety whose moment map is a truncated tetrahedron. The Lagrangian L × T 2 is",
+          "bbox": [
+            86.4,
+            131.61,
+            503.96,
+            152.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "just the monotone torus T 3 which is the central ﬁbre of that moment map, and it bounds one",
+          "bbox": [
+            86.4,
+            143.49,
+            503.98,
+            157.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "family of Maslov index 2 disks for each facet of the moment polytope, in particular it bounds 5",
+          "bbox": [
+            86.4,
+            159.09,
+            503.94,
+            169.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "families, not all of which miss the reference hyperplane Href if this is taken to be one face of the",
+          "bbox": [
+            86.4,
+            171.09,
+            503.98,
+            182.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "tetrahedron.",
+          "bbox": [
+            86.4,
+            182.97,
+            140.28,
+            192.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "This is because the original Lagrangian L ⊂B is an equatorial S1 ⊂P1, in particular it bounds",
+          "bbox": [
+            98.4,
+            191.15,
+            503.96,
+            212.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Maslov index 2 disks. The natural map H2(B) →H2(B, L) is not surjective; although the ﬁrst",
+          "bbox": [
+            86.4,
+            206.63,
+            504.02,
+            223.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Chern class “contains” Href with multiplicity d = 2, the actual toric divisor which naturally",
+          "bbox": [
+            86.4,
+            218.85,
+            504.09,
+            230.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "represents it does not contain Href with multiplicity 2, but rather Href and another homologous",
+          "bbox": [
+            86.4,
+            230.85,
+            504.21,
+            242.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "component.",
+          "bbox": [
+            86.4,
+            242.73,
+            136.8,
+            252.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Away from B ∩Href, the original net of hyperplanes on X deﬁnes a map to P2. Blowing up",
+          "bbox": [
+            98.4,
+            260.21,
+            504.01,
+            278.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "along B, one obtains a map φ from Y \\(E ∩Href) to the ﬁrst Hirzebruch surface F1. Then",
+          "bbox": [
+            86.4,
+            272.93,
+            482.65,
+            290.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "φ",
+          "bbox": [
+            358.08,
+            288.41,
+            362.86,
+            295.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "−→F1 →P1, with the second map",
+          "bbox": [
+            352.44,
+            290.81,
+            504.01,
+            310.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(1) the projection map π is the composite Y \\(E ∩Href)",
+          "bbox": [
+            103.32,
+            292.07,
+            349.71,
+            309.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the natural projection;",
+          "bbox": [
+            121.08,
+            304.17,
+            220.08,
+            314.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(2) the proper transforms of H0 and H∞lie over the ﬁbres of F1 over 0, ∞∈P1;",
+          "bbox": [
+            103.32,
+            314.81,
+            456.48,
+            333.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(3) the divisors E and Href (minus their common intersection) live over the −1 respectively",
+          "bbox": [
+            103.32,
+            327.83,
+            504.09,
+            345.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "+1 section of F1.",
+          "bbox": [
+            121.08,
+            339.41,
+            195.0,
+            350.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "This is pictured schematically in Figure 5, via the usual moment map image for F1. The ﬁbre",
+          "bbox": [
+            86.4,
+            354.29,
+            503.98,
+            365.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "over the centre of gravity • is a monotone Lagrangian torus T ⊂F1.",
+          "bbox": [
+            86.4,
+            366.17,
+            383.16,
+            383.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 5. The moment polytope for F1 and associated divisors",
+          "bbox": [
+            154.8,
+            543.35,
+            435.68,
+            555.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Lemma 4.36. Assuming that dimC(B) > 1 and that the hypotheses (4.10, 4.11) hold, then",
+          "bbox": [
+            86.4,
+            588.9,
+            503.96,
+            599.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMTI10",
+            "MSBM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ΓL̸ = 0 for a Lagrangian sphere L ⊂B.",
+          "bbox": [
+            86.4,
+            600.95,
+            258.53,
+            619.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Proof. The proof uses a degeneration argument modelled on deformation to the normal cone;",
+          "bbox": [
+            86.4,
+            620.01,
+            504.12,
+            629.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "compare to [95, Section 5]. We symplectically blow up Y × C along E × {0}; the resulting space",
+          "bbox": [
+            86.4,
+            631.25,
+            504.1,
+            648.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "W has an obvious projection p to C, which we take to be holomorphic. The zero-ﬁbre has two",
+          "bbox": [
+            86.4,
+            643.25,
+            504.06,
+            653.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "components, one of which C0 is diﬀeomorphic to E but with a K¨ahler form of smaller volume",
+          "bbox": [
+            86.4,
+            655.89,
+            504.1,
+            667.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(shifted in cohomology class by a real multiple of the divisor E), and the other of which C1 is",
+          "bbox": [
+            86.4,
+            667.77,
+            503.97,
+            679.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the projective completion of the normal bundle to E, hence is the total space of an F1-bundle",
+          "bbox": [
+            86.4,
+            679.13,
+            503.98,
+            690.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "over B. We can arrange that:",
+          "bbox": [
+            86.4,
+            691.65,
+            215.4,
+            701.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 57,
+      "rotation": 0,
+      "drawings": 24,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 6. Possible holomorphic triangles"
+      ],
+      "labels": [
+        {
+          "text": "FLOER COHOMOLOGY AND PENCILS OF QUADRICS",
+          "bbox": [
+            189.72,
+            81.89,
+            400.63,
+            88.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "57",
+          "bbox": [
+            496.08,
+            81.89,
+            504.01,
+            88.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "is determined by the non-degeneracy of Poincar´e duality, via its trace, hence will be independent",
+          "bbox": [
+            86.4,
+            111.21,
+            503.91,
+            121.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "□",
+          "bbox": [
+            496.2,
+            121.01,
+            503.94,
+            130.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of the compactiﬁcation to Z.",
+          "bbox": [
+            86.4,
+            123.21,
+            212.16,
+            133.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "To compute the algebra structure on H(A) (taken inside Z) completely, we must therefore",
+          "bbox": [
+            98.4,
+            140.68,
+            504.1,
+            151.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "EUSM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "understand Floer products amongst 3 diﬀerent Lagrangians. Since 3 distinct pentagram spheres",
+          "bbox": [
+            86.4,
+            153.45,
+            504.09,
+            163.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "are pairwise transverse or cleanly intersecting, holomorphic pearls reduce to Morse-Bott Floer",
+          "bbox": [
+            86.4,
+            165.45,
+            504.05,
+            175.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "trajectories, in which we count holomorphic triangles which may have non-trivial cycle constraints",
+          "bbox": [
+            86.4,
+            177.33,
+            504.08,
+            187.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(or attached ﬂowlines) at a corner mapping to a clean intersection. Lemma 5.12 implies that such",
+          "bbox": [
+            86.4,
+            189.33,
+            504.01,
+            199.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a Floer disk projects to a holomorphic triangle in P1 with boundary on the pentagram (but in",
+          "bbox": [
+            86.4,
+            197.73,
+            504.01,
+            211.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "principle holomorphic triangles in Z might project onto P1). There are only two distinct possible",
+          "bbox": [
+            86.4,
+            211.85,
+            503.98,
+            223.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "boundary patterns for the boundary of the triangle in P1, modulo the rotation action by Z2g+1",
+          "bbox": [
+            86.4,
+            223.85,
+            503.41,
+            235.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(in either picture any of the three vertices might be the output of the Floer product). These are",
+          "bbox": [
+            86.4,
+            237.21,
+            504.1,
+            247.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "depicted in Figure 6 in the case g = 2.",
+          "bbox": [
+            86.4,
+            249.09,
+            253.68,
+            259.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 6. Possible holomorphic triangles",
+          "bbox": [
+            203.16,
+            378.23,
+            387.32,
+            389.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In Z̸=∞, the generators of the exterior algebra are given by (Z2g+1 orbits of) the idempotent",
+          "bbox": [
+            86.4,
+            416.81,
+            504.02,
+            428.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "summands of the Floer cohomology of the clean intersection spheres (lying over interval vertices)",
+          "bbox": [
+            86.4,
+            429.45,
+            504.14,
+            439.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "and the isolated external vertices. Lemma 5.11 implies that we can choose Z2-gradings which",
+          "bbox": [
+            86.4,
+            440.69,
+            504.01,
+            451.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "reproduce those of F(Σg). From [93] and [29], or by direct computation, these are as follows:",
+          "bbox": [
+            86.4,
+            452.44,
+            491.4,
+            463.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "EUSM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(1) HF ∗(Lγ, Le−2iπ/(2g+1)γ) ∼= H∗(S2g)[1] is concentrated in odd degree;",
+          "bbox": [
+            103.32,
+            464.63,
+            417.84,
+            484.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY10",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(2) HF ∗(Lγ, Le−4iπ/(2g+1γ) ∼= C is concentrated in even degree.",
+          "bbox": [
+            103.32,
+            476.75,
+            378.12,
+            496.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMSY10",
+            "CMSY5",
+            "CMSY7",
+            "MSBM10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "To clarify, for the small holomorphic triangle on the left of Figure 6 with the anticlockwise",
+          "bbox": [
+            98.4,
+            493.77,
+            504.1,
+            503.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "boundary orientation that it inherits as a holomorphic disk in C, the clean intersections at the",
+          "bbox": [
+            86.4,
+            505.13,
+            503.98,
+            515.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "internal vertices will be concentrated in odd degree when viewed as inputs, and will have output",
+          "bbox": [
+            86.4,
+            517.65,
+            504.02,
+            527.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the even degree external vertex. (Thus, the output is even degree read anticlockwise, meaning",
+          "bbox": [
+            86.4,
+            529.65,
+            504.06,
+            539.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "viewed as a morphism going from the upper edge to the lower.)",
+          "bbox": [
+            86.4,
+            541.65,
+            377.3,
+            551.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In Z̸=∞(and in the aﬃne",
+          "bbox": [
+            385.32,
+            541.65,
+            503.98,
+            552.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "hyperelliptic curve) there are rigid holomorphic triangles projecting to these small triangles, and",
+          "bbox": [
+            86.4,
+            553.53,
+            504.01,
+            563.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "their cyclically rotated versions, which deﬁne the exterior algebra structure. The existence of",
+          "bbox": [
+            86.4,
+            565.53,
+            504.04,
+            575.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "these triangles determines the mod 2 degrees of the Floer generators of the algebra H(A).",
+          "bbox": [
+            86.4,
+            576.64,
+            479.28,
+            587.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "EUSM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Lemma 5.15. No rigid holomorphic triangle in Z has boundary which projects to the second",
+          "bbox": [
+            86.4,
+            595.26,
+            504.05,
+            605.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "triangle of Figure 6.",
+          "bbox": [
+            86.4,
+            607.53,
+            174.17,
+            617.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proof. The mod 2 gradings of the vertices preclude existence of any rigid triangle, recalling that",
+          "bbox": [
+            86.4,
+            625.53,
+            504.02,
+            635.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "µ2 has degree zero. For instance, on the right of Figure 6, if the external vertices are the inputs,",
+          "bbox": [
+            86.4,
+            633.93,
+            503.88,
+            647.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "□",
+          "bbox": [
+            496.2,
+            647.33,
+            503.94,
+            657.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "they each have odd degree, but the internal vertex as an output also has odd degree.",
+          "bbox": [
+            86.4,
+            649.53,
+            456.84,
+            659.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Return to the small triangle of Figure 6. Label the Lagrangians on that triangle: L′′ is the",
+          "bbox": [
+            98.4,
+            664.17,
+            503.98,
+            677.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "vertical side, L the lower side and L′ the upper side. Let p ∈HF odd(L, L′) be the Floer generator",
+          "bbox": [
+            86.4,
+            676.17,
+            504.18,
+            696.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "at the external vertex, viewed as an input.",
+          "bbox": [
+            86.4,
+            691.65,
+            271.8,
+            701.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 58,
+      "rotation": 0,
+      "drawings": 17,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 7. Lagrange surgery at a vertex"
+      ],
+      "labels": [
+        {
+          "text": "58",
+          "bbox": [
+            86.4,
+            81.89,
+            94.33,
+            88.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "IVAN SMITH",
+          "bbox": [
+            270.96,
+            81.89,
+            319.44,
+            88.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "F(Z)(p, ·) : HF odd(L′′, L) →HF ev(L′′, L′) is an isomorphism.",
+          "bbox": [
+            217.2,
+            109.71,
+            485.21,
+            128.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7",
+            "CMTI10",
+            "EUSM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Lemma 5.16. The product µ2",
+          "bbox": [
+            86.4,
+            109.85,
+            221.17,
+            121.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Proof. Consider the Lagrange surgery L#L′ of L and L′ at p, as depicted by the curved path",
+          "bbox": [
+            86.4,
+            128.13,
+            504.01,
+            141.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "in Figure 7. This surgery is equivalently given by taking the Dehn twist of L′ about L. The",
+          "bbox": [
+            86.4,
+            140.13,
+            503.98,
+            153.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "surgery is Hamiltonian isotopic, via matching spheres, to a sphere L#L′ which is disjoint from",
+          "bbox": [
+            86.4,
+            152.01,
+            504.02,
+            165.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "L′′, namely that deﬁned by the basic path between the leftmost two vertices of Figure 6.",
+          "bbox": [
+            86.4,
+            166.11,
+            473.64,
+            177.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 7. Lagrange surgery at a vertex",
+          "bbox": [
+            206.4,
+            305.27,
+            384.09,
+            316.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The exact triangle for monotone Dehn twists implies there is an exact triangle in F(Z)",
+          "bbox": [
+            86.4,
+            352.36,
+            465.63,
+            363.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "EUSM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L′",
+          "bbox": [
+            336.0,
+            371.67,
+            345.13,
+            383.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(5.3)",
+          "bbox": [
+            483.48,
+            371.97,
+            504.03,
+            381.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L",
+          "bbox": [
+            244.8,
+            372.93,
+            251.57,
+            382.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "bDDDDDDDD",
+          "bbox": [
+            254.52,
+            377.4,
+            285.78,
+            409.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "XYATIP10",
+            "XYDASH10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "|yyyyyyyy",
+          "bbox": [
+            303.24,
+            381.48,
+            334.14,
+            414.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "XYATIP10",
+            "XYDASH10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "[1]",
+          "bbox": [
+            260.64,
+            399.05,
+            269.13,
+            406.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "L#L′",
+          "bbox": [
+            281.52,
+            409.11,
+            305.77,
+            420.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "This gives a long exact sequence of Floer cohomology groups in Z",
+          "bbox": [
+            86.4,
+            429.45,
+            373.63,
+            439.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "· · · →HF(L′′, L) →HF(L′′, L′) →HF(L′′, L#L′) →· · ·",
+          "bbox": [
+            170.64,
+            445.47,
+            419.76,
+            464.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∼",
+          "bbox": [
+            410.4,
+            462.75,
+            416.62,
+            469.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Since the terms HF(L′′, L#L′) = 0, we deduce µ2(p, ·) : HF(L′′, L)",
+          "bbox": [
+            86.4,
+            464.79,
+            400.35,
+            483.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "−→HF(L′′, L′) is an",
+          "bbox": [
+            405.48,
+            464.79,
+            504.01,
+            483.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "□",
+          "bbox": [
+            496.2,
+            475.97,
+            503.94,
+            485.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "isomorphism.",
+          "bbox": [
+            86.4,
+            478.17,
+            144.24,
+            488.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Non-vanishing of µ2(p, ·) a posteriori implies that the algebraic number of triangles in Z with",
+          "bbox": [
+            98.4,
+            497.45,
+            504.01,
+            515.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the boundary conditions on the left of Figure 6 is non-zero. The same argument proves that right",
+          "bbox": [
+            86.4,
+            510.69,
+            504.15,
+            520.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "multiplication by p also deﬁnes an isomorphism",
+          "bbox": [
+            86.4,
+            522.69,
+            294.14,
+            532.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "µ2",
+          "bbox": [
+            278.76,
+            539.62,
+            286.95,
+            548.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "F(Z)(·,p)",
+          "bbox": [
+            283.56,
+            540.99,
+            314.63,
+            549.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMR5",
+            "CMR7",
+            "CMSY7",
+            "EUSM5"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "HF odd(L′, L′′)",
+          "bbox": [
+            210.24,
+            544.95,
+            273.51,
+            556.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "−−−−−−→HF ev(L, L′′).",
+          "bbox": [
+            276.24,
+            544.95,
+            380.16,
+            563.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(5.4)",
+          "bbox": [
+            483.48,
+            546.93,
+            504.03,
+            556.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Poincar´e duality in Floer cohomology is graded commutative [92, Section 12e]. Together with",
+          "bbox": [
+            86.4,
+            564.93,
+            504.01,
+            574.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "associativity of Floer cup-product, Lemma 5.14 and Lemma 5.16 together imply that H(A) is",
+          "bbox": [
+            86.4,
+            576.04,
+            503.96,
+            586.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "EUSM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "still given by an exterior algebra after compactiﬁcation from Z̸=∞to Z, compare to [93, Section",
+          "bbox": [
+            86.4,
+            588.81,
+            504.01,
+            599.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "10]. Explicitly, in the notation of that paper, the generators of Λ1 arise from p = ξ3 and the",
+          "bbox": [
+            86.4,
+            597.21,
+            503.98,
+            612.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "two idempotents ξ1, ξ2 of HF odd(L′′, L), or rather their Z2g+1-orbits. The generators of Λ2 are",
+          "bbox": [
+            86.4,
+            609.09,
+            504.1,
+            624.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the Poincar´e dual cycles ¯ξ3, ¯ξ1, ¯ξ2, and the unit respectively fundamental class of the pentagram",
+          "bbox": [
+            86.4,
+            622.29,
+            504.14,
+            635.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "spheres give the generators 1 ∈Λ0 and q ∈Λ3. Lemma 5.16 and its cousin (5.4) implies that",
+          "bbox": [
+            86.4,
+            633.21,
+            504.02,
+            653.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ξ2 ·ξ3 = ¯ξ1 and ξ3 ·ξ1 = ¯ξ2, for suitably chosen signs of the generators, whilst Lemma 5.14 implies",
+          "bbox": [
+            86.4,
+            646.17,
+            503.97,
+            667.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "that ξi · ¯ξi = q = −¯ξi · ξi. These relations deﬁne an exterior algebra.",
+          "bbox": [
+            86.4,
+            658.17,
+            382.8,
+            679.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Corollary 5.17. If g ≥2, the Floer cohomology algebra generated by the pentagram spheres in",
+          "bbox": [
+            86.4,
+            679.5,
+            503.96,
+            696.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Z is Λ(C3) ⋊Z2g+1 (graded mod 2).",
+          "bbox": [
+            86.4,
+            690.29,
+            244.37,
+            703.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

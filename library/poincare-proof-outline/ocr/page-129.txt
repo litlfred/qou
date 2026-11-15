@@ -1,0 +1,67 @@
+let ?yz = poincare-line y z
+let ?v = calc-z-azis-intersection ?yz
+
+assume poincare-between y (of-complex v) z
+
+hence of-complex v € circline-set ?yz
+using in-disc <of-complex v € unit-disc»
+using distinct poincare-between-poincare-collinear|of y of-complex v z|
+using unique-poincare-line[of y z]
+by (auto simp add: poincare-collinear-def )
+moreover
+have of-complex v € circline-set x-axis
+using <is-real v)
+unfolding circline-set-x-azxis
+by auto
+moreover
+have ?yz # x-axis
+proof (rule ccontr)
+assume 7— ?thesis
+hence {0n, y, z} C circline-set (poincare-line y z)
+unfolding circline-set-def
+using distinct poincare-linelof y 2]
+by auto
+hence poincare-collinear {On, y, z}
+unfolding poincare-collinear-def
+using distinct
+by force
+thus False
+using (- poincare-collinear {On, y, z}>
+by simp
+qed
+ultimately
+have ?v = of-complez v intersects-z-azis ?yz
+using unique-calc-a-azis-intersection|of poincare-line y z of-complex v]
+using intersects-x-azis-iff[of ?yz]
+using distinct <of-complex v € unit-disc»
+by (metis Intl is-poincare-line-poincare-line) +
+
+have intersects-x-azis-positive ?yz
+using «Re v > 0» <of-complex v € unit-disc»
+using <of-complex v € circline-set ?yz» <of-complex v € circline-set x-axis)
+using intersects-x-azis-positive-iff [of ?yz| <y # z» <?yz # x-axis)
+unfolding positive-x-azis-def
+by force
+
+have y ¢ circline-set x-axis
+proof (rule ccontr)
+assume 7— ?thesis
+moreover
+hence poincare-line y (of-complez v) = x-axis
+using distinct <of-complex v € circline-set x-axis)
+using in-disc <of-complex v € unit-disc»
+using wnique-poincare-line[of y of-complex v x-axis]
+by simp
+moreover
+have z € circline-set (poincare-line y (of-complez v))
+using <of-complex v € circline-set ?yz)
+using wnique-poincare-line[of y of-complex v poincare-line y 2]
+using in-disc <of-complex v € unit-disc) distinct
+using poincare-line[of y z]
+unfolding circline-set-def
+by (metis distinct-length-2-or-more is-poincare-line-poincare-line mem-Collect-eq)
+ultimately
+have y € circline-set z-axis z € circline-set x-axis
+by auto
+
+129

@@ -8,6 +8,7 @@ pages: 1-4
 source_pdf: 0606435v2.pdf
 source_sha256: 6dddaf838a19f0f5
 toc_source: inferred
+doc_brief: "arXiv:math/0606435v2 [math.GT] 10 Oct 2007 — We show that 3-braid links with given (non-zero) Alexander or Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
 arXiv:math/0606435v2  [math.GT]  10 Oct 2007
 PROPERTIES OF CLOSED 3-BRAIDS
@@ -29,7 +30,6 @@ Keywords: link polynomial, positive braid, strongly quasi-positive link, 3-braid
 ﬁber, incompressible surface, braid index, Burau representation
 AMS subject classiﬁcation: 57M25 (primary), 20F36, 32S55 (secondary)
 Contents
-1
 Introduction
 2
 2
@@ -212,4 +212,3 @@ mial was exhibited in [St2]. Here we extend this study to the Alexander polynomi
 3-braid links with given ∆, and in particular show no non-trivial 3-braid knot has trivial polynomial. In [B], Birman
 constructed some pairs of different 3-braid links with the same polynomials and proposed the problem to understand
 4
-1

@@ -1,0 +1,73 @@
+---
+doc_id: springer-1976-invent-36-173
+doc_title: "springer-1976-invent-36-173"
+section_id: page-032
+section_title: "Page 32"
+pages: 32-32
+pdf_page: 32
+source_pdf: springer-1976-invent-36-173.pdf
+source_sha256: dc3217946960a8e0
+text_source: ocr
+granularity: page
+doc_brief: "Trigonometric Sums, Green Functions of Finite Groups and Representations of Weyl Groups — 35 sections: Page 1; Page 2; Page 3"
+---
+204 T.A. Springer
+
+Let D be the distinguished set of coset representatives of W/W’ formed by the
+de W with I(dw’)=I(d)+1(w), if we W’ (see [5, p. 37]). It then follows that
+
+mek —L1p'|—
+2,max I(d)=4|0|—$10|—1. (3)
+deD
+
+Assume that all roots of ® have the same length. Then by a result of Carter
+[6] we have, h denoting the Coxeter number of @ and ht the height function on 9,
+
+I(d)=h—1—ht(d- ),
+if d-A>0. Hence imax I()=h—2, and (3) implies that
+
+deD
+
+||—|0|=4h-6,
+
+which is a known result, proved in [5, p. 170].
+
+7.15. PSp,. We now discuss the Green functions of a simple group of type B,
+(p +2). We take G= PSp,. We use the notations of 7.9. Now ®* = {a, B,a+ B,2«+ B},
+the long positive roots being B,a+2,. It follows from the results of [4, part E,
+Ch. IV, §2] that there are 4 nilpotent classes in g. We shall represent them by
+elements X;, with dim@%,=i. We have 3 classes represented by X,=0,
+Xo=X,+X, (the regular class), X,= X7_4, (See 7.13). The remaining class is the
+subregular one, represented by X, = X,4,-
+
+A discussion of subregular unipotents of G is given in [30, 3.10], and for
+nilpotents of g the discussion is similar. One can also find the results for g from
+those for G by using the Cayley map x++(x—1)(x+1)~!. The result is that
+&§ is a union of 3 projective lines, which are defined over k (this last point
+following from 7.11). It follows from the results of [4, part E] that Z,(X;) is
+connected unless i=1 and that C(X,) has order 2. Using 6.11 it follows that
+dim Vy, ,=2 if 6=1 and =1 if $+1 (notations of 6.9).
+
+There are 5 nilpotent G’-orbits in g*, represented by Xy, X,,X,,X4 and
+an element X{ which is G-conjugate to X, (see 6.2). Denoting the centralizers
+by Z;, Z,, we have IZol=4°, |Z1|=299(q—1), 1Z;"|=243 (q+), |Z5|=4*(q? - D),
+|Z4|=|G"|=q4(q?—-1)(q*- 1).
+
+The Weyl group W has 5 conjugacy classes, represented by 1, 5,, 59, 5,5,,
+-1=(s, 59)? (where s, is the reflection defined by ye®). W has one irreducible
+character x of degree 2, that of the standard representation, and 4 irreducible
+characters of degree 1, among which the sign character e.
+
+T being a k-split maximal torus, let T,, be the F-stable maximal torus obtained
+by twisting T with weW. Let Q,,=Q,,¢. One easily sees that the Lie algebras
+of the T,, contain F-stable strongly regular elements if q>3, so the Q,, are defined
+for q>3.
+
+By 7.4 we have Q,,(X9)=1, moreover
+
+Q,(X4)=e(w)(q? — 1)(q* — Iq? — x(w) q+ e(w)),
+
+see the remark after 7.2.
+It follows from 6.3 and 6.10 that
+
+A(X )=(x(w) + c(w)qt1,  Q(XY=(x(w)— tw) q+ 1,

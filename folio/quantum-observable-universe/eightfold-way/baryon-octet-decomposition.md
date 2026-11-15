@@ -46,7 +46,7 @@ Every other eightfold relation this chapter examines --- [Gell-Mann--Okubo](#rem
 [Coleman--Glashow](#rem:u-spin-coleman-glashow) --- turns out to be an identity
 of its first-order ansatz, true for all parameter values and therefore evidence
 for no mechanism.  This one is different, and the difference is machine-checked
-sorry-free in `QOU/Eightfold/OctetWeightDegeneracy.lean`:
+in `QOU/Eightfold/OctetWeightDegeneracy.lean`:
 
 - The decuplet's ten weights are pairwise distinct
   (`decuplet_weights_nodup`); the octet's eight are not

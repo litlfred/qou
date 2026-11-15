@@ -87,6 +87,7 @@ export default chapter({
         "yekutieli-setting-explicit",
         "qu-to-qou",
         "qu-to-qou-su2",
+        "jet-tower-splitting-bring",
       ],
     }),
     section({

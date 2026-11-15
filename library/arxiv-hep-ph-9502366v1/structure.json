@@ -8,7 +8,7 @@
   "pages": 57,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,13 +20,13 @@
    "stamp_date": "22 Feb 1995"
   },
   "doi": null,
-  "title": "arXiv:hep-ph/9502366v1 22 Feb 1995",
-  "authors_raw": "Departament de F\u00b4\u0131sica Te\u00f2rica and Institut de F\u00b4\u0131sica Corpuscular",
+  "title": "Chiral Perturbation Theory",
+  "authors_raw": "Departament de F´ısica Teòrica and Institut de F´ısica Corpuscular",
   "title_lines": [
    "Chiral Perturbation Theory",
    "A Pich"
   ],
-  "abstract": "An introduction to the basic ideas and methods of Chiral Perturbation Theory is presented. Several phenomenological applica- tions of the e\ufb00ective Lagrangian technique to strong, electromagnetic and weak interactions are discussed. To be published in Reports on Progress in Physics February 1995 1",
+  "abstract": "An introduction to the basic ideas and methods of Chiral Perturbation Theory is presented. Several phenomenological applica- tions of the eﬀective Lagrangian technique to strong, electromagnetic and weak interactions are discussed. To be published in Reports on Progress in Physics February 1995",
   "docinfo": {
    "Title": "arXiv:hep-ph/9502366v1  22 Feb 1995",
    "Producer": "GPL Ghostscript 10.01.2",
@@ -44,7 +44,8 @@
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:hep-ph/9502366v1 22 Feb 1995"
  },
  "toc": [
   {
@@ -78,7 +79,7 @@
   },
   {
    "level": 1,
-   "title": "E\ufb00ective chiral Lagrangian at lowest order",
+   "title": "Eﬀective chiral Lagrangian at lowest order",
    "page": 5,
    "source": "inferred",
    "number": "3",
@@ -190,7 +191,7 @@
   },
   {
    "level": 1,
-   "title": "\u2206S = 1 non-leptonic weak interactions",
+   "title": "∆S = 1 non-leptonic weak interactions",
    "page": 27,
    "source": "inferred",
    "number": "8",
@@ -330,7 +331,7 @@
   },
   {
    "level": 1,
-   "title": "E\ufb00ective theory at the electroweak scale",
+   "title": "Eﬀective theory at the electroweak scale",
    "page": 47,
    "source": "inferred",
    "number": "12",
@@ -404,7 +405,7 @@
   {
    "kind": "table",
    "number": "2",
-   "title": "V , A, S, S1 and \u03b71 contributions to the coupling constants Lr",
+   "title": "V , A, S, S1 and η1 contributions to the coupling constants Lr",
    "page": 24,
    "confidence": 0.8,
    "evidence": [
@@ -416,7 +417,7 @@
   {
    "kind": "table",
    "number": "3",
-   "title": "Leading-order (\u03b1s = 0) predictions for the Li\u2019s, within the QCD-inspired",
+   "title": "Leading-order (αs = 0) predictions for the Li’s, within the QCD-inspired",
    "page": 26,
    "confidence": 0.8,
    "evidence": [
@@ -428,7 +429,7 @@
   {
    "kind": "table",
    "number": "4",
-   "title": "Predicted and measured values of the quadratic slope parameters in the K \u21923\u03c0 amplitudes (Kambor et al 1992). All values are given in units of 10\u22128",
+   "title": "Predicted and measured values of the quadratic slope parameters in the K →3π amplitudes (Kambor et al 1992). All values are given in units of 10−8",
    "page": 30,
    "confidence": 0.8,
    "evidence": [
@@ -464,7 +465,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "2\u03b3-invariant-mass distribution for KL \u2192\u03c00\u03b3\u03b3: O(p4) (\u00b7 \u00b7 \u00b7 \u00b7 \u00b7 \u00b7), O(p6) with",
+   "title": "2γ-invariant-mass distribution for KL →π0γγ: O(p4) (· · · · · ·), O(p6) with",
    "page": 54,
    "confidence": 0.8,
    "evidence": [
@@ -476,7 +477,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "Measured (Barr et al 1992) 2\u03b3-invariant-mass distribution for KL \u2192\u03c00\u03b3\u03b3",
+   "title": "Measured (Barr et al 1992) 2γ-invariant-mass distribution for KL →π0γγ",
    "page": 54,
    "confidence": 0.8,
    "evidence": [
@@ -1008,45 +1009,45 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 242,
-   "n_words": 30,
+   "page_end": 2,
+   "n_chars": 548,
+   "n_words": 73,
    "label_start": "1",
-   "label_end": "1"
+   "label_end": "2"
   },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
-   "page_end": 3,
-   "n_chars": 6116,
-   "n_words": 950,
-   "label_start": "1",
-   "label_end": "3"
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 7635,
+   "n_words": 1190,
+   "label_start": "2",
+   "label_end": "4"
   },
   {
    "id": "sec-001-2-chiral-symmetry",
    "number": "2",
    "title": "Chiral symmetry",
    "level": 1,
-   "page_start": 3,
+   "page_start": 4,
    "page_end": 5,
-   "n_chars": 4599,
-   "n_words": 755,
-   "label_start": "3",
+   "n_chars": 2805,
+   "n_words": 477,
+   "label_start": "4",
    "label_end": "5"
   },
   {
-   "id": "sec-002-3-e\ufb00ective-chiral-lagrangian-at-lowest-order",
+   "id": "sec-002-3-eﬀective-chiral-lagrangian-at-lowest-order",
    "number": "3",
-   "title": "E\ufb00ective chiral Lagrangian at lowest order",
+   "title": "Eﬀective chiral Lagrangian at lowest order",
    "level": 1,
    "page_start": 5,
    "page_end": 11,
-   "n_chars": 12101,
-   "n_words": 2272,
+   "n_chars": 11985,
+   "n_words": 2251,
    "label_start": "5",
    "label_end": "11"
   },
@@ -1057,8 +1058,8 @@
    "level": 2,
    "page_start": 11,
    "page_end": 13,
-   "n_chars": 4123,
-   "n_words": 705,
+   "n_chars": 4083,
+   "n_words": 698,
    "label_start": "11",
    "label_end": "13"
   },
@@ -1068,22 +1069,22 @@
    "title": "The chiral anomaly",
    "level": 2,
    "page_start": 13,
-   "page_end": 15,
-   "n_chars": 4363,
-   "n_words": 758,
+   "page_end": 16,
+   "n_chars": 6833,
+   "n_words": 1186,
    "label_start": "13",
-   "label_end": "15"
+   "label_end": "16"
   },
   {
    "id": "sec-005-51-decay-constants",
    "number": "5.1",
    "title": "Decay constants",
    "level": 2,
-   "page_start": 15,
+   "page_start": 16,
    "page_end": 16,
-   "n_chars": 3449,
-   "n_words": 664,
-   "label_start": "15",
+   "n_chars": 990,
+   "n_words": 230,
+   "label_start": "16",
    "label_end": "16"
   },
   {
@@ -1093,8 +1094,8 @@
    "level": 2,
    "page_start": 16,
    "page_end": 18,
-   "n_chars": 4258,
-   "n_words": 802,
+   "n_chars": 4218,
+   "n_words": 795,
    "label_start": "16",
    "label_end": "18"
   },
@@ -1105,8 +1106,8 @@
    "level": 2,
    "page_start": 18,
    "page_end": 21,
-   "n_chars": 5902,
-   "n_words": 1095,
+   "n_chars": 5832,
+   "n_words": 1084,
    "label_start": "18",
    "label_end": "21"
   },
@@ -1117,8 +1118,8 @@
    "level": 1,
    "page_start": 21,
    "page_end": 25,
-   "n_chars": 9798,
-   "n_words": 1920,
+   "n_chars": 9718,
+   "n_words": 1906,
    "label_start": "21",
    "label_end": "25"
   },
@@ -1129,20 +1130,20 @@
    "level": 1,
    "page_start": 25,
    "page_end": 27,
-   "n_chars": 4553,
-   "n_words": 770,
+   "n_chars": 4513,
+   "n_words": 763,
    "label_start": "25",
    "label_end": "27"
   },
   {
    "id": "sec-010-8-s-1-non-leptonic-weak-interactions",
    "number": "8",
-   "title": "\u2206S = 1 non-leptonic weak interactions",
+   "title": "∆S = 1 non-leptonic weak interactions",
    "level": 1,
    "page_start": 27,
    "page_end": 30,
-   "n_chars": 8527,
-   "n_words": 1430,
+   "n_chars": 8477,
+   "n_words": 1420,
    "label_start": "27",
    "label_end": "30"
   },
@@ -1153,8 +1154,8 @@
    "level": 2,
    "page_start": 30,
    "page_end": 36,
-   "n_chars": 14324,
-   "n_words": 2412,
+   "n_chars": 14204,
+   "n_words": 2391,
    "label_start": "30",
    "label_end": "36"
   },
@@ -1177,8 +1178,8 @@
    "level": 1,
    "page_start": 36,
    "page_end": 38,
-   "n_chars": 3740,
-   "n_words": 678,
+   "n_chars": 3700,
+   "n_words": 671,
    "label_start": "36",
    "label_end": "38"
   },
@@ -1189,8 +1190,8 @@
    "level": 2,
    "page_start": 38,
    "page_end": 39,
-   "n_chars": 1948,
-   "n_words": 306,
+   "n_chars": 1918,
+   "n_words": 302,
    "label_start": "38",
    "label_end": "39"
   },
@@ -1201,8 +1202,8 @@
    "level": 2,
    "page_start": 39,
    "page_end": 41,
-   "n_chars": 5711,
-   "n_words": 947,
+   "n_chars": 5671,
+   "n_words": 940,
    "label_start": "39",
    "label_end": "41"
   },
@@ -1213,8 +1214,8 @@
    "level": 2,
    "page_start": 41,
    "page_end": 42,
-   "n_chars": 2373,
-   "n_words": 380,
+   "n_chars": 2363,
+   "n_words": 377,
    "label_start": "41",
    "label_end": "42"
   },
@@ -1225,8 +1226,8 @@
    "level": 1,
    "page_start": 42,
    "page_end": 45,
-   "n_chars": 5869,
-   "n_words": 1121,
+   "n_chars": 5799,
+   "n_words": 1110,
    "label_start": "42",
    "label_end": "45"
   },
@@ -1237,8 +1238,8 @@
    "level": 2,
    "page_start": 45,
    "page_end": 46,
-   "n_chars": 2131,
-   "n_words": 404,
+   "n_chars": 2121,
+   "n_words": 401,
    "label_start": "45",
    "label_end": "46"
   },
@@ -1249,20 +1250,20 @@
    "level": 1,
    "page_start": 46,
    "page_end": 47,
-   "n_chars": 2944,
-   "n_words": 533,
+   "n_chars": 2914,
+   "n_words": 529,
    "label_start": "46",
    "label_end": "47"
   },
   {
-   "id": "sec-020-12-e\ufb00ective-theory-at-the-electroweak-scale",
+   "id": "sec-020-12-eﬀective-theory-at-the-electroweak-scale",
    "number": "12",
-   "title": "E\ufb00ective theory at the electroweak scale",
+   "title": "Eﬀective theory at the electroweak scale",
    "level": 1,
    "page_start": 47,
    "page_end": 49,
-   "n_chars": 3145,
-   "n_words": 524,
+   "n_chars": 3105,
+   "n_words": 517,
    "label_start": "47",
    "label_end": "49"
   },
@@ -1285,8 +1286,8 @@
    "level": 1,
    "page_start": 49,
    "page_end": 50,
-   "n_chars": 177,
-   "n_words": 33,
+   "n_chars": 167,
+   "n_words": 30,
    "label_start": "49",
    "label_end": "50"
   },
@@ -1297,8 +1298,8 @@
    "level": 1,
    "page_start": 50,
    "page_end": 57,
-   "n_chars": 12964,
-   "n_words": 2448,
+   "n_chars": 12814,
+   "n_words": 2423,
    "label_start": "50",
    "label_end": "57"
   }
@@ -1318,6 +1319,7 @@
    "items": []
   },
   "sections": 25,
-  "chars_total": 128341
+  "chars_total": 127397,
+  "furniture_lines_stripped": 113
  }
 }

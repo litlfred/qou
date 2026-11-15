@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408099v1
-doc_title: "arXiv:hep-th/9408099v1 17 Aug 1994"
+doc_title: "Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD"
 section_id: sec-019-171-the-meaning-of-the-residues
 section_title: "The Meaning Of The Residues"
 section_number: 17.1
@@ -8,6 +8,7 @@ pages: 71-73
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
 toc_source: inferred
+doc_brief: "Seiberg–Witten, Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD (1994) — exact metric on the moduli space of quantum vacua and exact stable-state spectrum for SU(2) with…"
 ---
 The Nf = 4 theory is controlled by a curve y2 = F(x, u, mi, τ) and a diﬀerential form
 λ obeying

@@ -1,0 +1,45 @@
+5.4. Néron-Severi lattices 113
+
+Proof. This is a direct application of the criterion for the extension of
+lattice isomorphisms in [62]. Let us briefly check that the two conditions
+in loc. cit. are satisfied in this case: The first condition is that the rank r
+of the two primitive sublattices and the signature (s;,s_) = (35,51) of the
+ambient lattice Ly satisfy
+
+2(r+1) < (sp +s_)—|s,—s_|,
+
+which in the present situation is granted by our assumption that r < 34. The
+second condition concerns primitive vectors v € Ly which are characteristic
+in the sense that b(v, w) = b(w,w) mod 2Z for all vectors w € Ly. But in the
+case at hand this condition is void because an even unimodular lattice does
+not contain any primitive characteristic vectors. So by loc. cit. the given
+isomorphism @p can be extended to an automorphism @ as claimed. Oo
+
+To finish the proof of proposition 5.12 it remains to deal with the square
+on the left hand side in the diagram of that proposition. For this we need to
+compute the image of the weak Lefschetz embedding, by which we mean
+the sublattice
+
+Ly = H?(X,Z) C Lf = H°(Y,Z)*.
+
+Note that K = U'? @ A has signature (13, 15) and discriminant —3 whereas
+the even unimodular lattice L = U!? © Eg(—1) has signature (13,21). So
+the orthocomplement K+ of any embedding
+
+i: KOOL
+
+must be a negative definite even lattice of rank six with discriminant 3,
+hence abstractly isomorphic to E¢(—1) by the classification of lattices with
+small discriminant in [21]. Thus the proof of proposition 5.12 is completed
+by the following computation.
+
+LEMMA 5.17. With notations as above, there exists an isomorphism of
+lattices
+Ly —> K(2).
+Proof. Consider the embedding i: Y = © ©, — X. By definition the
+
+Gysin morphism i; on cohomology is the Poincaré dual of the pushforward
+morphism i, on homology, so we have a commutative diagram
+
+H” ( Y, Z) H"4 (xX, Z)
+A4—n (Y, Z) a Ag ni ,Z).

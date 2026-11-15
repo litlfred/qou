@@ -1,0 +1,48 @@
+70 Chapter 4 — The Tannaka group of the theta divisor
+
+of the group G(dc), and this implies that the Tannaka group G(dg) of the
+theta divisor has the form given above.
+
+The high fundamental representation in the above example is accounted
+for by the particular symmetry of the theta divisor of Jacobian varieties, and
+in general it is reasonable to expect the Tannaka groups G(dg) to be much
+larger. One may speculate [110] whether among all ppav’s of dimension g
+only Jacobian varieties have the above Tannaka groups — this would give
+a Tannakian answer for the Schottky problem to characterize the locus of
+Jacobian varieties in the moduli space
+
+Ay = He/Spr9(Z),
+
+where .#, denotes the Siegel upper half space. More generally, one may
+ask for the stratification of .2/, defined by the invariant G(de).
+
+In this context, let us say that a statement holds for a general ppav of
+dimension g if it holds for every ppav in a Zariski-open dense subset of
+the moduli space .%. For example, the theta divisor of a general ppav is
+smooth by the results of Andreotti and Mayer [4]. For the open stratum
+in the above-mentioned stratification of .2/ we discuss in this chapter the
+following conjecture which goes back to the preprint [67].
+
+CONJECTURE 4.1. IfX is a complex ppav of dimension g equipped with
+a smooth symmetric theta divisor © C X, then
+
+G(5e) = { for g odd,
+
+Spe(C) for g even,
+and 8g corresponds to the standard representation of this group.
+
+Intuitively, this conjecture says that in marked contrast with the singular
+situation for Jacobian varieties, for a smooth theta divisor © the Tannaka
+group G(dg) should be as large as possible — see lemma 4.6 below. Let
+us take a look at some small examples to begin with. The case g = 1 is
+of course trivial. For g = 2 every ppav with a smooth theta divisor is the
+Jacobian of a smooth hyperelliptic curve; then our conjecture holds by the
+result of [106] quoted above. Similarly, for g = 3 every ppav with a smooth
+theta divisor is the Jacobian of a smooth non-hyperelliptic curve, and in
+this case the conjecture holds since the second fundamental representation
+of Sl4(C)/pz corresponds to the standard representation of SO¢(C) via the
+exceptional isomorphism between these two groups. So the first open case
+of our conjecture occurs for g = 4. This is the first case where the realm of
+Jacobian varieties is left, hence also the first non-trivial case of the Schottky
+problem, and indeed we will see in corollary 4.4 below that in this case the
+invariant G(dq) determines the locus of Jacobian varieties in .~%.

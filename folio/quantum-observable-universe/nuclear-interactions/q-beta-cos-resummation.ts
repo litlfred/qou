@@ -38,6 +38,11 @@ export default proposition({
     status: "experimental",
   },
   authorNotes: [
+    {
+      kind: "refined-framing",
+      date: "2026-10-10",
+      body: "*Until 2026-10-10 this block was stated in convention C, $z = 1/(\\sqrt q + 1/\\sqrt q) \\approx 0.4993203342$, with Form A as the base, and claimed a tightening of the CODATA residual from $+1677.5$ ppm to $+305.7$ ppm ($5.49\\times$; recomputed at the current proton pin, $+306.05$ ppm). It also stated that the classical cosine beats the $q$-deformed cosine by $\\approx 7$ ppm; that figure is convention-C and has not been re-measured under D.*",
+    },
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "status",

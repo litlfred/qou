@@ -1,0 +1,1 @@
+In section [\[necessary\]](#necessary){reference-type="ref" reference="necessary"} we describe a set of constraints which must be satisfied by the dihedral angles of any (not necessarily Delaunay) triangulation.

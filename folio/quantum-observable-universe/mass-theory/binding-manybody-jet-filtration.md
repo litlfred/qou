@@ -99,8 +99,8 @@ element.
 unconstrained formal power series the shift relation determines exactly one
 kernel coefficient per body order, and conversely: for any body sequence with
 $B_2 \neq 0$ the map $\{r_k\} \leftrightarrow \{B_n\}$ is a **bijection**
-([`QOU.Mass.BindingScalarKernelParityExclusion.kernel_coeff_existsUnique`](../lean/QOU/Mass/BindingScalarKernelParityExclusion.lean),
-sorry-free). So the unconstrained ansatz constrains *nothing*: it reparametrises
+([`QOU.Mass.BindingScalarKernelParityExclusion.kernel_coeff_existsUnique`](../lean/QOU/Mass/BindingScalarKernelParityExclusion.lean)).
+So the unconstrained ansatz constrains *nothing*: it reparametrises
 the unknown weights, it does not remove them, and "$\rho\cdot A$ is an output of
 the recursion" is false unless $R$ is independently pinned. All of the ansatz's
 content therefore lies in the **finiteness** of the Laurent window.

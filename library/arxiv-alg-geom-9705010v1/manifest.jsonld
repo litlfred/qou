@@ -40,10 +40,12 @@
     "library/arxiv-alg-geom-9705010v1/sections/sec-025",
     "library/arxiv-alg-geom-9705010v1/sections/sec-026",
     "library/arxiv-alg-geom-9705010v1/sections/sec-027",
-    "library/arxiv-alg-geom-9705010v1/sections/sec-028"
+    "library/arxiv-alg-geom-9705010v1/sections/sec-028",
+    "library/arxiv-alg-geom-9705010v1/sections/sec-029",
+    "library/arxiv-alg-geom-9705010v1/sections/sec-030"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",
@@ -64,8 +66,8 @@
       "stamp_date": "7 May 1997"
     },
     "doi": null,
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

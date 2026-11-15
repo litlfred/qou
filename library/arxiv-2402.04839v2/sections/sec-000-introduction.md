@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2402.04839v2
-doc_title: "On a volume invariant of 3–manifolds"
+doc_title: "On a volume invariant of 3-manifolds"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
 pages: 1-3
 source_pdf: 2402.04839v2.pdf
 source_sha256: daf09811c350a2ad
-doc_brief: "On a volume invariant of 3-manifolds (Kegel, Ray, Spreer, Thompson, Tillmann) — defines topological volume vol_t(M), the smallest volume of a hyperbolic-link complement in M; bounds and a…"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.978
+latex_coverage_ratio: 0.981
+doc_brief: "On a volume invariant of 3-manifolds (Kegel, Ray, Spreer, Thompson, Tillmann) — defines topological volume vol_t(M), the smallest volume of a hyperbolic-link complement in M; bounds and a…"
 ---
 Let $M$ be a closed 3--manifold.
 A topological invariant $\volt(M)$\footnote{The reader may interpret this as a quantification of how much potential the manifold has. We read this as \emph{topological volume} or \emph{volume topologique}. The name was coined with permission of Michel Boileau and Joan Porti.} is defined in~\cite{BBBMP} in an account of a complete proof of Thurston's Geometrisation Conjecture. Roughly speaking, this is the minimal volume of the complement of a (possibly empty) hyperbolic link in $M.$ Here we begin the study of this invariant in its own right by establishing some basic properties and computing it for certain families of non-hyperbolic 3--manifolds.

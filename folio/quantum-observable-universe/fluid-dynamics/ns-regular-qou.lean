@@ -3,25 +3,21 @@ import Mathlib.Data.Int.Basic
 -- Ref: [leitner2026] Ch. 7, §ns-regular-qou
 -- NS-regular quantum observable universe
 
-/-- An **NS-regular** quantum observable universe is one where the
-    NS obstruction class vanishes: `NS(A) = 0`.
+/-- Data of a quantum observable universe as used by the NS-regularity
+    classification of the sibling `.md`: the substrate parameter and the
+    Euler characteristic `χ(A) = tr(κ₀)`.
 
-    Per the sibling `.md`, the NS obstruction `NS(A) = κ₀|_Σ` depends
-    only on the categorical data through the Euler characteristic
-    `χ(A) = tr(κ₀)`, and the regularity dichotomy is
-    `NS(A) = 0 ⟺ χ(A) = 0`. We therefore carry the Euler
-    characteristic `chi` as data and encode NS-regularity as its
-    genuine defining property `chi = 0` (not a `: True` placeholder).
-
-    NS-regularity implies global regularity of the classical
-    (`q = 1`) Navier–Stokes specialisation: no finite-time blowup. -/
+    **No regularity field.** An earlier version carried `regular : chi = 0`,
+    encoding the dichotomy `NS(A) = 0 ⟺ χ(A) = 0`, and a docstring saying
+    NS-regularity implies global regularity of classical Navier–Stokes. Both
+    are retracted (2026-10-12, owner decision): `NS(A) = κ₀|_Σ` lies in
+    `H²(Σ, 𝓑) = 0` for the one-dimensional collision locus `Σ`, so it vanishes
+    for every `χ(A)`, and "NS-regular" is a label for the categorical class
+    only, with no consequence for classical solutions. A non-degenerate NS
+    invariant is open; until one is defined there is no property to encode. -/
 structure NSRegularQOU where
   /-- Substrate parameter q > 1. -/
   q : ℝ
   q_gt_one : 1 < q
-  /-- The Euler characteristic `χ(A) = tr(κ₀)` of the categorical
-      data — the only invariant the NS obstruction depends on. -/
+  /-- The Euler characteristic `χ(A) = tr(κ₀)` of the categorical data. -/
   chi : ℤ
-  /-- The NS obstruction vanishes: `NS(A) = 0`, equivalently `χ(A) = 0`
-      (the NS-regular row of the dichotomy table in the `.md`). -/
-  regular : chi = 0

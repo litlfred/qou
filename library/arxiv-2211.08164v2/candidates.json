@@ -1,15 +1,13 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2211.08164v2",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "aff9ff3ef5ac28be3bd457a9e79832ec60e7a69b95c070e09043659fc75d6ce6",
   "file": "2211.08164v2.pdf"
  },
  "provenance": {
-  "title": "INFINITELY MANY RIEMANN SURF ACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS",
-  "authors": "SEBASTI \u00b4AN REYES-CAROCCA AND PIETRO SPEZIALI",
+  "title": "INFINITELY MANY RIEMANN SURFACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS",
+  "authors": "SEBASTI\u00c1N REYES-CAROCCA AND PIETRO SPEZIALI",
   "arxiv": {
    "id": "2211.08164",
    "version": "2",
@@ -18,81 +16,91 @@
   },
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
   "candidates": 5,
   "by_kind": {
-   "theorem": 3,
-   "remark": 1,
-   "corollary": 1
+   "recommendation": 5
   },
-  "formalization_candidates": 4
+  "formalization_candidates": 0
  },
  "candidates": [
   {
-   "kind": "theorem",
-   "source_kind": "theorem",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
    "number": null,
    "name": null,
-   "statement": "There are in\ufb01nitely many pairwise non-isomorphic, non-hyp erelliptic com-",
+   "statement": "At the end of this paper, we shall discuss some future directions and open questions.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
    "section_file": "sections/sec-000-1-introduction-and-statement-of-the-result.md",
    "section_title": "Introduction and statement of the result",
    "pages": "1-2",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   },
   {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "A non-hyperelliptic compact Riemann surface X of genus three has",
+   "statement": "In particular, the order of $G$ must satisfy $$|G|=12|G_P| \\,\\, \\mbox{ or } \\,\\, |G|=24|G_P|$$ where $G_P$ stands for the stabiliser subgroup of a \\we point $P$ of $X.$ It follows that the order of $G$ must be divisible by 12 and consequently, by \\cite[Theorem 16]{bars}, the Riemann surface either belongs to $\\mathscr{K}_3$ or is isomorphic to the Picard curve $$\\mathscr{Q} : x^4 +y^4 +z^3x= 0.$$",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
    "section_file": "sections/sec-002-3-proof-of-the-main-theorem.md",
    "section_title": "Proof of the main theorem",
    "pages": "3-6",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "2",
-   "name": null,
-   "statement": "There is a transitive action on the Weierstrass points on a co mpact",
-   "section_file": "sections/sec-003-4-simple-weierstrass-points.md",
-   "section_title": "Simple Weierstrass points",
-   "pages": "6-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "4.1",
-   "name": null,
-   "statement": "The Weierstrass points of Fermat\u2019s quartic were obtained by Hasse in",
-   "section_file": "sections/sec-003-4-simple-weierstrass-points.md",
-   "section_title": "Simple Weierstrass points",
-   "pages": "6-7",
    "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   },
   {
-   "kind": "corollary",
-   "source_kind": "corollary",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
    "number": null,
    "name": null,
-   "statement": "For every prime number p /greaterorequalslant5, there are in\ufb01nitely many pairwise non-",
-   "section_file": "sections/sec-008-the-case-of-positive-characteristic.md",
-   "section_title": "The case of positive characteristic",
-   "pages": "8-8",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "statement": "In addition, the parity of the actual weight of such a point must agree with the parity of the expected weight.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-3-proof-of-the-main-theorem.md",
+   "section_title": "Proof of the main theorem",
+   "pages": "3-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Thus, one sees that $P$ must be fixed by an involution conjugate to $b$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-3-proof-of-the-main-theorem.md",
+   "section_title": "Proof of the main theorem",
+   "pages": "3-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It then follows from the preceding discussion that $R$ must be fixed by an involution conjugate to $b$ and therefore the surface possesses, in addition to $P$ and its whole $G$-orbit, 12 \\we points of weight 2.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-3-proof-of-the-main-theorem.md",
+   "section_title": "Proof of the main theorem",
+   "pages": "3-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   }
  ]
 }

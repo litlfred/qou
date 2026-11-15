@@ -1,0 +1,1 @@
+Interestingly, all these polynomials factor into linear factors in $z$, and the constraint ([\[tempered\]](#tempered){reference-type="ref" reference="tempered"}) again leads to the aforementioned conclusion: the deformation parameter $t$ must be a root of unity.

@@ -1,15 +1,13 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-hep-ph-0702263v1",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "8ae381b4eba60286de841a313e8653030f43c6f6a0c157fcc8043b46b41eb644",
   "file": "0702263v1.pdf"
  },
  "provenance": {
-  "title": "Chiral Low-Energy Constants \u2217 Gerhard Ecker Faculty of Physics, Univ. of Vienna",
-  "authors": "Boltzmanngasse 5, A-1090 Vienna, Austria",
+  "title": "Chiral Low-Energy Constants \u2217",
+  "authors": "Gerhard Ecker",
   "arxiv": {
    "id": "hep-ph/0702263",
    "version": "1",
@@ -18,11 +16,31 @@
   },
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
+  "candidates": 1,
+  "by_kind": {
+   "recommendation": 1
+  },
   "formalization_candidates": 0
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The example of elastic meson meson scattering raises the legitimate question why one should bother at all with resonance Lagrangians?",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-strong-interactions.md",
+   "section_title": "Strong interactions",
+   "pages": "3-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
 }

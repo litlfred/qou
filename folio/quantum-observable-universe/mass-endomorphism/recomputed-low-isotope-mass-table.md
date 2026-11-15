@@ -49,7 +49,7 @@ See [Table 3](#tbl:recomputed-low-isotope-mass-table-table3-data).
 
 #### Single-wrap symbolic versus typed-crossings 6-term form
 
-An earlier draft used the typed-crossings 6-term decomposition ([`beta-decay-energy-scale.md`](../nuclear-interactions/beta-decay-energy-scale.md)) with $|\Delta(\mathrm{net})| = 0.18829$, yielding $\mathfrak{Q}_\beta^{(\text{6-term})} = 0.7882$ MeV ($+0.747\%$). The single-wrap form is tighter by a factor of 4.46. The $L_\pm$ and $e^-$ contributions vanish exactly in the symbolic single-wrap difference, but pick up small asymmetric finite-size contributions in the typed-crossings basis. The single-wrap form stands as the canonical prediction; the typed-crossings form remains in the witness solely for cross-checking.
+The typed-crossings 6-term decomposition ([`beta-decay-energy-scale.md`](../nuclear-interactions/beta-decay-energy-scale.md)) has $|\Delta(\mathrm{net})| = 0.18829$ and yields $\mathfrak{Q}_\beta^{(\text{6-term})} = 0.7882$ MeV ($+0.747\%$). The single-wrap form is tighter by a factor of 4.46. The $L_\pm$ and $e^-$ contributions vanish exactly in the symbolic single-wrap difference, but pick up small asymmetric finite-size contributions in the typed-crossings basis. The single-wrap form stands as the canonical prediction; the typed-crossings form remains in the witness solely for cross-checking.
 
 #### Basis dependence
 

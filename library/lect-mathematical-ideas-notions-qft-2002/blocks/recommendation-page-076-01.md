@@ -1,0 +1,1 @@
+Thus, a fermionic field in field theory of dimension d > 1 cannot be scalar valued, but rather must take values in a real representation S of SO,(V), such that there exists a nonzero intertwining operator V > Sym?S*.

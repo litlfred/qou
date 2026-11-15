@@ -7,10 +7,11 @@ section_number: null
 pages: 21-23
 source_pdf: 2502.02662v1.pdf
 source_sha256: 3f87983ce379a8d6
-doc_brief: "The String Dual to Two-dimensional Yang-Mills Theory Revisited — We propose that chiral two-dimensional Yang-Mills theory on a Riemann surface X is dual to a deformed stationary subsector of the"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.981
-latex_coverage_ratio: 0.987
+latex_coverage_ratio: 0.993
+doc_brief: "The String Dual to Two-dimensional Yang-Mills Theory Revisited — We propose that chiral two-dimensional Yang-Mills theory on a Riemann surface X is dual to a deformed stationary subsector of the"
 ---
 The description of the correlation functions of chiral Yang-Mills theory in terms of a partial permutation algebra enables us to provide an explicit string dual by deforming the Gromov-Witten theory. We symbolically define this deformed Gromov-Witten theory as: $$\mathcal{L}_{GW} \to \mathcal{L}_{GW} - t\, \tau_1 + \log \Tilde{\Omega}_{u}^{2-2G} \, ,
     \label{StringDualLagrangian}$$ where the expression of the exponential distance operator at degree $d$ in terms of Gromov-Witten operators can be written using equation [\[SubRule\]](#SubRule){reference-type="eqref" reference="SubRule"} : $$\Tilde{\Omega}_{u} := \sum_{\substack{r\\ \text{minimal}}} u^{\lvert r \rvert} \left(\sum_{\substack{l\leq \lvert d_r \rvert\\ s\, \vdash \, l}} \zeta_{r,s}\, g_s^{\lvert r \rvert-\lvert s \rvert} \tau_{s-1} \right)  \, .

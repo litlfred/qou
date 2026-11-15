@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-ph-0012035v3
-doc_title: "arXiv:math-ph/0012035v3 16 Jan 2002"
+doc_title: "Non-Abelian Stokes theorem in action"
 section_id: sec-016-3-applications
 section_title: "Applications"
 section_number: 3
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "Non-Abelian Stokes theorem in action — In this short review main issues related to the non-Abelian Stokes theorem have been addressed."
 ---
 The number of applications of the non-Abelian Stokes theorem is not so large as in the case of the Abelian Stokes theorem but neverthelles it is the main motivation to formulate the non-Abelian Stokes theorem at all. It is interesting to note that in contradistinction to the Abelian Stokes theorem, which formulation is "homogenous" (unique), different formulations of the non-Abelian Stokes theorem are usefull for particular purposes/applications. From a purely techincal point of view, one can classify applications of the non-Abelian Stokes theorem as exact and approximate. The term *exact applications* means that one can perform successfully an "exact calculus" to obtain an interesting result, whereas the term *approximate application* means that a more or less controllable approximation (typically, perturbative) is involved in the calculus. Since exact applications seem to be more convincing and more illustrative for the subject we will basically confine ourselves only to presentation few of them.
 

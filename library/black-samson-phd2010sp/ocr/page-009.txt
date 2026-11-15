@@ -1,0 +1,29 @@
+CHAPTER I
+INTRODUCTION
+
+1.1. Historical Background
+
+The Alexander polynomial has a history dating back to the early days of algebraic topology.
+The original definition ([1]) came from analyzing the group of deck transformations on the infinite
+cyclic cover of the complement of a knot. In the same paper, Alexander reduced the calculation of
+the invariant to a combinatorial procedure using knot diagrams. Decades later, Conway introduced
+a special normalization of the invariant ([9]) extended to links, denoted V(L), that was recursively
+
+computable using a skein relation on the diagrams (see Figure I.1).
+
+x XU
+
+Lo
+Figure I.1: The Conway skein relation: V(L4) - V(L_) =z V(Lo)
+
+Following the discovery by Jones of a new invariant ({23] and also [10, Chapter 9] for
+an interesting account of the discovery), there was an explosion of interest in the industry of
+producing link invariants using skein theories. Within a year, a two-variable polynomial invariant
+was simultaneously introduced by several independent groups of authors, all of whose names are
+celebrated in the acronym: HOMFLYPT ((14] and [84]). Using the skein theoretic approach, we
+first pass to a diagram of the link, which involves the choice of a generic projection onto a plane.
+The verification that a function on these diagrams is well-defined as a function of the original link
+reduces to the formal task of checking invariance under the Reidemeister moves. Much of the
+geometry of three dimensional space is lost in the passage to a diagram, but the trade-off is that
+
+many of the tools of representation theory which have no obvious connection to the original link

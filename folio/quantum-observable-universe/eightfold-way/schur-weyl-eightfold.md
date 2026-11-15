@@ -67,7 +67,7 @@ $\ell(\lambda) \leq \dim V$, which the single-fibre construction fixes at $2$,
 and the Drinfeld--Jimbo quantisation does not change dimensions.
 
 **The obstruction, and what is machine-checked about it.**
-The following are verified sorry-free in
+The following are verified in
 `QOU/Eightfold/RowCapObstruction.lean`:
 
 - `weyl_dim_alt_eq_zero_iff` --- the alternating channel
@@ -95,7 +95,7 @@ formula gives $\dim V_{(1^3)} = \binom{N}{3}$, and that the Schur--Weyl row
 cap is $\ell(\lambda) \leq N$, are standard and cited --- carried by the
 definition names and docstrings, not proved.  The file's own docstring
 concedes the boundary, noting that Worpitzky's identity is not formalised
-here.  So the tier is *standard mathematics, with a sorry-free
+here.  So the tier is *standard mathematics, with a
 machine-checked arithmetic instance* --- not *proved* in the sense the other
 Lean-backed rows of this chapter use.
 
@@ -106,7 +106,7 @@ exclusion, and the invariant justifying it is the Schur--Weyl row cap.
 
 **The $N = 2$ half of the duality is machine-checked.**
 `QOU/SchurWeyl/JimboActionKernel.lean` builds the Jimbo action of $H_n(q)$ on
-$V^{\otimes n}$ with $\dim V = 2$ and proves, sorry-free over an ordered field
+$V^{\otimes n}$ with $\dim V = 2$ and proves over an ordered field
 at generic $q$: the induced trace is the Markov trace with
 $z = q^3/(q^2+1)$ (`jimboTrace_eq_wtrace`); the kernel of the action is
 exactly the trace radical, i.e. the blocks with three or more rows

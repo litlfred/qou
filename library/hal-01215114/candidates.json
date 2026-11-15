@@ -1,0 +1,71 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "hal-01215114",
+ "source": {
+  "structure_sha256": "c70f8b04a5542a1f7ca757bcc435276bab7992822a8fad87de813dd54d1739a1",
+  "file": "hal-01215114.pdf"
+ },
+ "provenance": {
+  "title": "FPSAC 2011, Reykjav\u00edk, Iceland",
+  "authors": "DMTCS proc. AO, 2011, 317\u2013328",
+  "arxiv": null,
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 3,
+  "by_kind": {
+   "recommendation": 3
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Links between pair-partitions and zonal characters It should be stressed that a previous link between pair-partitions and zonal characters can be found in the work of Goulden and Jackson [GJ96].",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-links-between-pair-partitions-and-zonal-characte.md",
+   "section_title": "Links between pair-partitions and zonal characters",
+   "pages": "5-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The pigeon-hole principle shows that this column must contain a repeated entry.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-011-combinatorial-lemmas.md",
+   "section_title": "Combinatorial lemmas",
+   "pages": "6-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Moreover, the image of an element in a loop of length 2\u2113must be in a loop of the same length 2\u2113and the images of two elements in two different loops must be in two different loops.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-011-combinatorial-lemmas.md",
+   "section_title": "Combinatorial lemmas",
+   "pages": "6-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

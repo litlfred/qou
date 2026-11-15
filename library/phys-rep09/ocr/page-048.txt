@@ -1,0 +1,65 @@
+198 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+
+1.0 =
+Exact
+—-—-> Iterative-2
+0.8 4 — — — Magnus-2
+— > 1st order
+4
+2 oe
+SB
+©
+Q
+2
+a
+§ 044
+ES
+c
+£
+fs
+0.2 4
+0.0 r 7
+0 1 2
+
+Fig. 13. Rectangular step: Transition probability in the two level system as a function of y, for € = 1. Lines are coded as in Fig. 12. Computations are done
+in the Interaction Picture.
+
+may be guessed by inspection. For the Floquet operator we get
+
+00 oo
+| @ po, 9 @o @o\k 2 ®o @o\k
+rFua-i| —p— = — S*(ak+1)(—) |, 218
+[Fo +9) OU (S) a+ Oa +n(2)| ( )
+and the associated transformation results from
+00 ES
+= 1p?" | si @oyk ot ok
+AW) = ip? anion Se 0 (2) ; X()
+ge k
+~ifsin (wt) q + wo (cos (ot) — Np] 2  (“) . (219)
+wo ko @
+
+The resulting series may be summed in closed form, thus yielding the Floquet operator
+
+2 2
+-@0 B 2 . B
+F=-i— — ———__ } +p’ |} -i—_—_., 220
+2 ( @o(p? — 5) P 4a (p? — 1) (220)
+with p = w/w. Its eigenvalues are the so-called Floquet eigenenergies [124]
+1 p?
+E, = @ {n+ =} + ——~—.... 221
+’ »( :) 40 (1) en
+The corresponding A transformation after summation of the series in (219) is
+, B/@o . 2 Bsinat
+A(t) =i (p sin wt) q + (cos wt — 1)p+ + cos wt ) ——— ]. (222)
+1—p? 1-p? oO)
+
+Notice that, as they should, both operators are skew-Hermitian and reproduce the exact solution of the problem.
+5. Numerical integration methods based on the Magnus expansion
+5.1. Introduction
+
+The Magnus expansion, as formulated in Section 2, has found extensive use in mathematical physics, quantum chemistry,
+control theory etc, essentially as a perturbative tool in the treatment of the linear equation
+Y’=A(t)Y, — Y(to) = Yo. (223)
+
+When the recurrence (49)-(50) is applied, one is able to explicitly get the successive terms 2; in the series, defining @ as
+linear combinations of multivariate integrals containing commutators acting iteratively on the coefficient matrix A, as in

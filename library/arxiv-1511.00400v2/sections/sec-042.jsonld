@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1511.00400v2/sections/sec-042",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "B.2 Generic representations in the distinguished component.",
+  "pageStart": 49,
+  "pageEnd": 55,
+  "contains": [
+    "library/arxiv-1511.00400v2/blocks/prose-sec-042"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1511.00400v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1511.00400v2",
+  "provenance": "ingested"
+}

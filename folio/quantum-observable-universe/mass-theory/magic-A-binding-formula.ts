@@ -30,6 +30,11 @@ export default proposition({
   ],
   lean: { ref: "qou:QOU.BraidKnot.magic_A_binding_formula" },
   authorNotes: [
+    {
+      kind: "deprecated",
+      date: "2026-09-05",
+      body: "Retired as a knot-selection route by owner ruling 2026-09-05. See docs/audits/2026-09-05-binding-route-consolidation-no-knot-selection.md.",
+    },
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). The underlying categorical content is generic; the formula is stated over $\\mathbb{R}$ for the MeV comparison." },
     {
       kind: "status",

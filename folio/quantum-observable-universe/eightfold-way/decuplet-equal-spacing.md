@@ -12,7 +12,7 @@ $\Omega^-$ could be read off from the three lighter states.  The particle was
 found in 1964 within $0.6\%$ of the extrapolated value.
 
 **The rule carries no information about the breaking mechanism.**  This is a
-theorem, machine-checked sorry-free in
+theorem, machine-checked in
 `QOU/Eightfold/DecupletEqualSpacing.lean`: the three spacings are all equal for
 *every* choice of the first-order octet-breaking parameters $a, b, c$, over any
 commutative ring.  Their common value is $-4b - 6c$, and the second difference

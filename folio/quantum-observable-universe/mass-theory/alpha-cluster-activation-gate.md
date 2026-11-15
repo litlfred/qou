@@ -30,7 +30,7 @@ whereas a Borromean triple of $\alpha$-clusters opens the gate.
 
 ## Lean structure
 
-All four parts are formalized sorry-free (generic commutative ring where the
+All four parts are formalized (generic commutative ring where the
 statement permits):
 
 - **(1)–(2)** `QOU.Mass.MilnorIndeterminacyGate` —

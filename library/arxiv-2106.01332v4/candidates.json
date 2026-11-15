@@ -1,15 +1,13 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2106.01332v4",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "44c19a99624997bfbc59bdd31e9e1f3bdf8ed67ce44ef8e239bf2cd45244ce41",
   "file": "2106.01332v4.pdf"
  },
  "provenance": {
-  "title": "Braided matter interactions in quantum gravity via 1-handle attachment",
-  "authors": "Niels Gresnigt, 1,\u2217 Antonino Marcian\u00f2,2, 3,\u2020 and Emanuele Zappala 4,\u2021",
+  "title": "Braided matter interactions in quantum gravity via 1 -handle attachment",
+  "authors": "Niels Gresnigt,1, \u2217Antonino Marcian\u00f2,2, 3, \u2020 and Emanuele Zappala4, \u2021",
   "arxiv": {
    "id": "2106.01332",
    "version": "4",
@@ -18,40 +16,61 @@
   },
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 2,
+  "candidates": 3,
   "by_kind": {
-   "theorem": 2
+   "recommendation": 3
   },
-  "formalization_candidates": 2
+  "formalization_candidates": 0
  },
  "candidates": [
   {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "LetC ={X0,Y,X 1} be a cobordism. Then C can be obtained as:",
-   "section_file": "sections/sec-005-l-using-the-de\ufb01nition-of-braided-network-a-frame.md",
-   "section_title": "Using the de\ufb01nition of braided network, a framed link L is",
-   "pages": "7-10",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "statement": "In the tetravelent scheme one lacks a means to pick out those tetravalent braids that should be mapped to the SM particles.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-a-the-trivalent-scheme.md",
+   "section_title": "A The trivalent scheme",
+   "pages": "5-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   },
   {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "2",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "LetN be a trivalent (oriented) braided network and let n\u2265 1. Then, KLn(N ) is an isotopy invariant",
-   "section_file": "sections/sec-006-vi-isotopy-inv-ariants-of-braided-networks.md",
-   "section_title": "ISOTOPY INV ARIANTS OF BRAIDED NETWORKS",
-   "pages": "10-13",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "statement": "Resorting to cobordism, particles, as any states, must be represented on the boundary of the 2-complexes associated to the space-time bulk.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-011-vii-possible-pre-geometric-unification-of-matter.md",
+   "section_title": "VII Possible pre-geometric unification of matter and gravity",
+   "pages": "13-15",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Ultimately, any convincing theory of matter and quantum gravity must address these important questions, and make actual predictions that can be tested experimentally.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-011-vii-possible-pre-geometric-unification-of-matter.md",
+   "section_title": "VII Possible pre-geometric unification of matter and gravity",
+   "pages": "13-15",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   }
  ]
 }

@@ -1,0 +1,52 @@
+MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 15
+Remark. We agree that the empty graph is not connected.
+
+Proof. For any graphs [;, T, let [;T'2 stand for the disjoint union of Ty and TPs,
+and for any graph I let [” denote the disjoint union of n copies of [. Then every
+graph can be uniquely written as re see re, where I’; are connected non-isomorphic
+graphs. Moreover, it is clear that Fr,r, = Fr, Fr,, o(0iT2) = 6(11) + b(12), and
+jAut(Pft ...T%)| = T],((Aut(L;)|*"4;!). Thus, exponentiating the equation of
+Theorem 3.4, and using the above facts together with the Taylor series for the
+function e”, we arrive at Theorem 3.3. As the Theorem 3.3 has been proved, so is
+Theorem 3.4 in|
+
+3.6. Loop expansion. It is very important to note that since summation in The-
+orem 3.4 is over connected Feynman diagrams, the number b([) is the number of
+loops in I minus 1. In particular, the lowest coefficient in h is that of h-', and
+it is the sum over all trees; the next coefficient is of f°, and it is the sum over all
+diagrams with one loop (cycle); the next coefficient to h is the sum over two-loop
+diagrams, and so on. Therefore, physicists refer to the expansion of Theorem 3.4
+as loop expansion.
+
+Let us study the two most singular terms in this expansion (with respect to h),
+ie. the terms given by the sum over trees and 1-loop graphs.
+
+Let ao be the critical point of the function S. It exists and is unique, since g; are
+assumed to be formal parameters. Let G™)(n) denote the set of classes of graphs
+in G.(n) with 7 loops. Let
+
+Fr
+(In(Z/Zo))5 = So TT 9% 3S jAut(T)|"
+
+: TeGG)(n)
+Theorem 3.5.
+(10) (In(Z/Zo))o = —S(2o),
+and
+(11) (In(Z/Zo))1 = phn
+
+Proof. First note that the statement is purely combinatorial. This means, in par-
+ticular, that it is sufficient to check that the statement yields the correct asymptotic
+expansion of the right hand sides of equations (10),(11). in the case when S is a
+polynomial with real coefficients of the form B(a#,x2)/2+ an Gi Bi(a,x,...,x)/i!.
+To do this, let Z = h-4/? f, e~5()/*, where B is a sufficiently small box around 0.
+For sufficiently small g;, the function S has a unique global maximum point zo in
+B, which is nondegenerate. Thus, by the steepest descent formula, we have
+
+Z/Zo = e8(*)/"*T(h),
+where I(h) = 4/ eee +aih+azh? +---) (asymptotically). Thus,
+_,. 1, det(B)
+a 1,1, dete)
+In(Z/Zo) = —S(ao)h-* + 5 In Tet S"(ro)
+This implies the result. Oo
+
++O(h).

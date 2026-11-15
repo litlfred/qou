@@ -1,0 +1,48 @@
+24 Don Zagier
+
+has simply L(1/2) = 7?/12, L((3 — V5)/2) = 17/15 instead of the previous
+expressions involving log?(2) and log?((1 + V5)/2)) and the same holds also
+for more complicated identities involving several values of the dilogarithm
+at algebraic arguments. Such identities, of which several will be discussed
+in §2, reflect the fact that the corresponding linear combination of arguments
+represents a torsion element in the Bloch group of Q. They play a role in
+quantum field theory, where the constants appearing on the right-hand sides
+of the identities, renormalized by dividing by L(1), occur as central charges
+of certain rational conformal field theories.
+
+B. The enhanced dilogarithm. The Bloch- Wigner dilogarithm is the imag-
+inary part of Lig(z) (corrected by a multiple of log |z| Li(z) to make its ana-
+lytic properties better) and hence vanishes on P1(R), while the Rogers dilog-
+arithm is the restriction of Lig(z) (corrected by a multiple of log |z| Li, (z) to
+make its analytic properties better) to P'(R) and takes its values most nat-
+urally in the circle group R/(x?/2)Z. It is reasonable to ask whether there
+is then a function D(z) with values in C/(x?/2)Z or at least C/?Q whose
+imaginary part is D(z) and whose restriction to P!(IR) is L(z). In fact such a
+function does not exist if we demand that the argument belongs to P!(C), but
+it does exist if we either pass to a suitable infinite covering of P!(C)  {0, 1,00}
+or else consider only combinations )> nj D(z) where 5° n;[z;] belongs to the
+Bloch group Be defined in §4 of Chapter I. This extended function, which
+following [47] we call the “enhanced dilogarithm,” plays an important role in
+W. Nahm’s article in this volume and is discussed in some detail there, so we
+will be relatively brief here.
+
+We begin with the extension of Lig and D to covers of punctured projective
+space. Let X = P*(C) \ {0,1, 00}. Its fundamental group is the free group
+on two generators and its universal cover X is isomorphic to the complex
+upper half-plane § (with covering map given by the classical Legendre mod-
+ular function A: 9§/I'(2) > X), and naturally Lig becomes a single-valued
+holomorphic function on this universal cover, but we do not have to go this
+far if we only want the values of Lio(z) modulo 7?Q. Instead, it suffices to
+take the universal abelian cover X : the abelianization of 11(X) is Z@Z, with
+generators corresponding to the monodromy around 0 and 1 and hence to the
+multi-valuedness of log(z) and log(1 — z), so X is given by choosing branches
+of these two logarithms, i.e.,
+
+X = {(u,v) €C? |e"+e” =1},
+
+with covering map 7 : Xx given by (u,v) 6 z =e" = 1-—e”. It is on
+this space that we will define D.
+
+Actually, to get a C/47?Z-valued version of Liz, we do not even need to
+pass to xX, but only to the smaller abelian cover corresponding to choosing a
+branch of log(1 — z) only, i.e., the cover X’ = C — 27iZ, with covering map

@@ -1,8 +1,6 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "bm-markov-j",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "ffc46b9daf7dc8587b80f368ce98844401d688e77a32759c4d18a6446ca6079a",
   "file": "bm-markov-j.pdf"
@@ -13,11 +11,121 @@
   "arxiv": null,
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
+  "candidates": 7,
+  "by_kind": {
+   "recommendation": 7
+  },
   "formalization_candidates": 0
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The foliation may be used to decompose the surface F into a union of foliated 2-cells, each of which contains exactly one singularity of the foliation.",
+   "strength": "may",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-005.md",
+   "section_title": "Page 5",
+   "pages": "5-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Destabilizing along end tiles: If the tiling has a vertex of valence 1, then that vertex must be in an aa-tile which is glued to itself (see Figure 6), forming a trivial loop.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-007.md",
+   "section_title": "Page 7",
+   "pages": "7-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The graph G must be a tree, because G is a deformation retract of D and D is a disc.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-009.md",
+   "section_title": "Page 9",
+   "pages": "9-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "However this is impossible because these arcs intersect once in the tile, however A is an annulus and arcs of the type we have just described must intersect an even number of times.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-011.md",
+   "section_title": "Page 11",
+   "pages": "11-11",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Ifa tile T has a negative vertex and intersects X = OF then T must be type ab.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-011.md",
+   "section_title": "Page 11",
+   "pages": "11-11",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In fact, cases (vi),(viii),(ix),(x) and (xi) also do not occur because each of those presupposes the existence of a negative vertex in A, however if we begin at a negative vertex in A and travel along singular leaves without leaving A we must eventually arrive at a singular leaf in A which has one endpoint at a negative vertex and the other on X, but that is impossible.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-011.md",
+   "section_title": "Page 11",
+   "pages": "11-11",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We must prove that X; = X2.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-012.md",
+   "section_title": "Page 12",
+   "pages": "12-12",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
 }

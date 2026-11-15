@@ -1,0 +1,29 @@
+45
+
+Figure V.2: A state (xy,¢) for a and the corresponding state (Go. w(y).€) for Ba.
+
+(e) = (m(y).€) for each state of af, we obtain the equality A(aZ) = A(Ba).
+
+To prove invariance under the stabilization move (II.3), observe that the crossing aq must
+be resolved straight through in order to form an admissible permutation diagram. Assume that
+€q—1 = + (the other case is similar). Then, for each state (x,¢) for a, either sign on strand d forms
+a state for agg. Call them (y,¢€4), respectively.
+
+Calculate the contribution to the state-sum for each such pair of states:
+
+(€4)M(acay,é+) + (e-)M(a0a,y,€-)
+= (o-=) (€)M (a,x, €)
+
+(d]
+= oa ul (€)M(a, x, €) (V.7)
+Now, A(acg) = A(q) follows once the global normalizations are included. i]
+
+Figure V.3: The states (y,e,) and (y,¢_) for aon associated to the state (x,¢) for a.
+
+Theorem V.2.2. For any link L and any choice of braid word w whose closure is L,
+A(w) = A(L).
+
+Proof. By Lemma V.2.1, the function A is a link invariant, so it suffices to show that it agrees
+with the Alexander-Conway polynomial. There are two things to show: the skein relation and the
+
+Conway normalization.

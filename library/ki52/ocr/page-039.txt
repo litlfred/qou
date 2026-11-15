@@ -1,0 +1,51 @@
+. max {—R, go(t, s)} if t+2s <1,
+go(t,s) = .
+—R if t+2s>1.
+
+We note that, since g(t, s) > —oo ast+s > 3, o.(t, 5) is continuous, and similarly, since
+go(t, 8) + —oo as t+ 2s > 1, g(t, s) is continuous. We put
+
+Ay = {(t+46- H(t, s)V—1, s+6- jolt, s)V—1) € C’ | (t,s) € A}.
+We show (62), as follows. From the definition of A’,
+ad’ c {(t,s) €C? | ReV(t,s) <p}.
+Further, by Lemmas 5.5 and 5.6,
+ReV(t+6- Gilt, s)V—I, s+6- Golt,s)V—1) < V(t,s)
+
+for any 6 € [0,1] and any (t,s) € A’. Hence, (62) holds.
+We show (60) and (61), as follows. Consider the following functions
+
+F(t,s,X,Y) = ReV(t+ XV—I, s+ YV—1),
+h(t,s) = F(t, s, H(t, s), go(t,s)).
+
+When t + 2s > 1, —A(t,s) is sufficiently large (because we let R be sufficiently large),
+and (61) holds in this case. When t + 2s < 1, it is shown from the definitions of g(t, s)
+and gp(t,s) that 26 = 0 at X = g(t,s) and $6 = 0 at Y = g(t, s). Hence, Im & =
+Im & = Oat (t+ m(t,s)/—1, 5 + g(t, s)V—1). Further, oh = Re & and $4 = Re &
+at (t+ m(t,s)V—I, s + g2(t,s)V/—1). Therefore, when (t, s) is a critial point of h(t, s),
+(t + g(t, s)V—T, s + o(t,s)V—1) is a critical point of V. It follows that h(t,s) has a
+unique maximal point at (t,s) = (Ret., Res,). Therefore, (60) and (61) hold. Oo
+
+5.4 Verifying the assumption of the Poisson summation formula
+
+In this section, in Lemma 5.8, we verify the assumption of the Poisson summation formula
+(Proposition 4.6, see also Remark 4.8 and Appendix B) when we apply Proposition 4.6
+and Remark 4.8 to (14). As in the previous section, we consider V(t, s) instead of V(t, s)
+in this section.
+We calculate a critical point (¢,, 8,) € A’ of Re V(t, s), as follows. Putting x = e2"v—!#
+and y = e2"V—! 5, we have that
+ai )),
+
+2 ped 1
+ga Re V(t, s) = Re (~2log(1—")),
+
+JR
+
+o ReV(t,s) = Re ( — log (1 -
+
+R
+
+since t,s € R. Hence, putting x, = e?™¥—! and y, = e™V—1 sr,
+
+| a, —1| = | yu —1| = 1,
+
+39

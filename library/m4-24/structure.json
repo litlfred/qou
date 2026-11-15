@@ -6,17 +6,20 @@
   "sha256": "cf7c5e29b818e647496e888378db7a8620be5386f357691c4c48b51f1ca1f5fe",
   "bytes": 3957038,
   "pages": 200,
-  "text_source": "embedded",
+  "text_source": "ocr",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:25Z",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "runContext": {
+   "sha256": "fdc2f7cc20b88144f0858359280ef0fc6b855b4e033e1ea71185102d259a719f"
+  }
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
   "title": "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface",
-  "authors_raw": "The workshop and seminars on \u201cInvariants of knots and 3-manifolds\u201d was held at",
+  "authors_raw": "The workshop and seminars on “Invariants of knots and 3-manifolds” was held at",
   "title_lines": [
    "Problems on invariants of knots and 3-manifolds",
    "Edited by T. Ohtsuki",
@@ -29,1820 +32,24 @@
    "Creator": "dvips 5.83 Copyright 1998 Radical Eye Software",
    "CreationDate": "D:191040709161951"
   },
-  "title_raw": "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface",
+  "title_raw": "Problems on invariants of knots and 3-manifolds Edited by T. OHTSUKI",
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
    "metadata": "m4-24.dvi",
    "heading": "Problems on invariants of knots and 3-manifolds Preface",
-   "text": "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface",
+   "text": "Problems on invariants of knots and 3-manifolds Edited by T. OHTSUKI",
    "corroborated_by": [],
    "browser_print": false
-  }
+  },
+  "title_prev": "Problems on invariants of knots and 3-manifolds Edited by T. OHTSUKI"
  },
- "toc": [
-  {
-   "level": 1,
-   "title": "Preface",
-   "page": null,
-   "source": "inferred",
-   "number": null,
-   "confidence": 0.75,
-   "evidence": [
-    "contents",
-    "body"
-   ],
-   "page_label": null
-  },
-  {
-   "level": 1,
-   "title": "Introduction",
-   "page": 5,
-   "source": "inferred",
-   "number": "0",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "377"
-  },
-  {
-   "level": 1,
-   "title": "Polynomial invariants of knots",
-   "page": 8,
-   "source": "inferred",
-   "number": "1",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "380"
-  },
-  {
-   "level": 2,
-   "title": "The Jones polynomial",
-   "page": 8,
-   "source": "inferred",
-   "number": "1.1",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "380"
-  },
-  {
-   "level": 3,
-   "title": "Does the Jones polynomial distinguish the trivial knot?",
-   "page": 9,
-   "source": "inferred",
-   "number": "1.1.1",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "381"
-  },
-  {
-   "level": 3,
-   "title": "Characterization and interpretation of the Jones polynomial",
-   "page": 10,
-   "source": "inferred",
-   "number": "1.1.2",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "382"
-  },
-  {
-   "level": 3,
-   "title": "Numerical experiments",
-   "page": 14,
-   "source": "inferred",
-   "number": "1.1.3",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "386"
-  },
-  {
-   "level": 3,
-   "title": "Categori\ufb01cation of the Jones polynomial",
-   "page": 16,
-   "source": "inferred",
-   "number": "1.1.4",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "388"
-  },
-  {
-   "level": 2,
-   "title": "The HOMFLY, Q, and Kau\ufb00man polynomials",
-   "page": 18,
-   "source": "inferred",
-   "number": "1.2",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "390"
-  },
-  {
-   "level": 2,
-   "title": "The volume conjecture",
-   "page": 21,
-   "source": "inferred",
-   "number": "1.3",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "393"
-  },
-  {
-   "level": 1,
-   "title": "Finite type invariants of knots",
-   "page": 26,
-   "source": "inferred",
-   "number": "2",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "398"
-  },
-  {
-   "level": 2,
-   "title": "Torsion and Vassiliev invariants",
-   "page": 27,
-   "source": "inferred",
-   "number": "2.1",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "399"
-  },
-  {
-   "level": 2,
-   "title": "Do Vassiliev invariants distinguish knots?",
-   "page": 29,
-   "source": "inferred",
-   "number": "2.2",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "401"
-  },
-  {
-   "level": 2,
-   "title": "Can Vassiliev invariants detect other invariants?",
-   "page": 30,
-   "source": "inferred",
-   "number": "2.3",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "402"
-  },
-  {
-   "level": 2,
-   "title": "Vassiliev invariants and crossing numbers",
-   "page": 31,
-   "source": "inferred",
-   "number": "2.4",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "403"
-  },
-  {
-   "level": 2,
-   "title": "Dimensions of spaces of Vassiliev invariants",
-   "page": 33,
-   "source": "inferred",
-   "number": "2.5",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "405"
-  },
-  {
-   "level": 2,
-   "title": "Milnor invariants",
-   "page": 36,
-   "source": "inferred",
-   "number": "2.6",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "408"
-  },
-  {
-   "level": 2,
-   "title": "Finite type invariants of virtual knots",
-   "page": 37,
-   "source": "inferred",
-   "number": "2.7",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "409"
-  },
-  {
-   "level": 2,
-   "title": "Finite type invariants derived from local moves",
-   "page": 40,
-   "source": "inferred",
-   "number": "2.8",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "412"
-  },
-  {
-   "level": 2,
-   "title": "Loop \ufb01nite type invariants",
-   "page": 43,
-   "source": "inferred",
-   "number": "2.9",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "415"
-  },
-  {
-   "level": 2,
-   "title": "Goussarov-Habiro theory for knots",
-   "page": 46,
-   "source": "inferred",
-   "number": "2.10",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "418"
-  },
-  {
-   "level": 2,
-   "title": "Other problems",
-   "page": 50,
-   "source": "inferred",
-   "number": "2.11",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "422"
-  },
-  {
-   "level": 1,
-   "title": "The Kontsevich invariant",
-   "page": 52,
-   "source": "inferred",
-   "number": "3",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "424"
-  },
-  {
-   "level": 2,
-   "title": "Calculation of the Kontsevich invariant",
-   "page": 52,
-   "source": "inferred",
-   "number": "3.1",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "424"
-  },
-  {
-   "level": 2,
-   "title": "Does the Kontsevich invariant distinguish knots?",
-   "page": 53,
-   "source": "inferred",
-   "number": "3.2",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "425"
-  },
-  {
-   "level": 2,
-   "title": "Characterization and interpretation of the Kontsevich invariant",
-   "page": 53,
-   "source": "inferred",
-   "number": "3.3",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "425"
-  },
-  {
-   "level": 2,
-   "title": "The Kontsevich invariant in a \ufb01nite \ufb01eld",
-   "page": 54,
-   "source": "inferred",
-   "number": "3.4",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "426"
-  },
-  {
-   "level": 2,
-   "title": "The Kontsevich invariant in arrow diagrams",
-   "page": 55,
-   "source": "inferred",
-   "number": "3.5",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "427"
-  },
-  {
-   "level": 2,
-   "title": "The Chern-Simons series of con\ufb01guration space integrals",
-   "page": 57,
-   "source": "inferred",
-   "number": "3.6",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "429"
-  },
-  {
-   "level": 2,
-   "title": "Associators",
-   "page": 60,
-   "source": "inferred",
-   "number": "3.7",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "432"
-  },
-  {
-   "level": 2,
-   "title": "Graph cohomology",
-   "page": 63,
-   "source": "inferred",
-   "number": "3.8",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "435"
-  },
-  {
-   "level": 2,
-   "title": "The loop expansion of the Kontsevich invariant",
-   "page": 65,
-   "source": "inferred",
-   "number": "3.9",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "437"
-  },
-  {
-   "level": 2,
-   "title": "The Kontsevich invariant of links in \u03a3 \u00d7 [0, 1]",
-   "page": 71,
-   "source": "inferred",
-   "number": "3.10",
-   "confidence": 0.8,
-   "evidence": [
-    "contents",
-    "body",
-    "number"
-   ],
-   "page_label": "443"
-  },
-  {
-   "level": 1,
-   "title": "Skein modules",
-   "page": 73,
-   "source": "inferred",
-   "number": "4",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "445"
-  },
-  {
-   "level": 2,
-   "title": "The Kau\ufb00man bracket skein module",
-   "page": 74,
-   "source": "inferred",
-   "number": "4.1",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "446"
-  },
-  {
-   "level": 2,
-   "title": "The Hom\ufb02ypt skein module",
-   "page": 75,
-   "source": "inferred",
-   "number": "4.2",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "447"
-  },
-  {
-   "level": 2,
-   "title": "The Kau\ufb00man skein module",
-   "page": 76,
-   "source": "inferred",
-   "number": "4.3",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "448"
-  },
-  {
-   "level": 2,
-   "title": "The q-homotopy skein module",
-   "page": 77,
-   "source": "inferred",
-   "number": "4.4",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "449"
-  },
-  {
-   "level": 2,
-   "title": "The (4, \u221e) skein module",
-   "page": 78,
-   "source": "inferred",
-   "number": "4.5",
-   "confidence": 0.8,
-   "evidence": [
-    "contents",
-    "body",
-    "number"
-   ],
-   "page_label": "450"
-  },
-  {
-   "level": 2,
-   "title": "Other problems",
-   "page": 81,
-   "source": "inferred",
-   "number": "4.6",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "453"
-  },
-  {
-   "level": 1,
-   "title": "Quandles",
-   "page": 83,
-   "source": "inferred",
-   "number": "5",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "455"
-  },
-  {
-   "level": 2,
-   "title": "Classi\ufb01cation of quandles",
-   "page": 83,
-   "source": "inferred",
-   "number": "5.1",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "455"
-  },
-  {
-   "level": 2,
-   "title": "Representations of knot quandles",
-   "page": 86,
-   "source": "inferred",
-   "number": "5.2",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "458"
-  },
-  {
-   "level": 2,
-   "title": "(Co)homology of quandles",
-   "page": 87,
-   "source": "inferred",
-   "number": "5.3",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "459"
-  },
-  {
-   "level": 2,
-   "title": "Quandle cocycle invariant",
-   "page": 89,
-   "source": "inferred",
-   "number": "5.4",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "461"
-  },
-  {
-   "level": 2,
-   "title": "Quantum quandles",
-   "page": 92,
-   "source": "inferred",
-   "number": "5.5",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "464"
-  },
-  {
-   "level": 2,
-   "title": "Rack (co)homology",
-   "page": 92,
-   "source": "inferred",
-   "number": "5.6",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "464"
-  },
-  {
-   "level": 1,
-   "title": "Braid group representations",
-   "page": 94,
-   "source": "inferred",
-   "number": "6",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "466"
-  },
-  {
-   "level": 2,
-   "title": "The Temperley-Lieb algebra",
-   "page": 94,
-   "source": "inferred",
-   "number": "6.1",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "466"
-  },
-  {
-   "level": 2,
-   "title": "The Burau representation",
-   "page": 95,
-   "source": "inferred",
-   "number": "6.2",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "467"
-  },
-  {
-   "level": 2,
-   "title": "The Hecke and BMW algebras",
-   "page": 96,
-   "source": "inferred",
-   "number": "6.3",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "468"
-  },
-  {
-   "level": 2,
-   "title": "Other problems",
-   "page": 97,
-   "source": "inferred",
-   "number": "6.4",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "469"
-  },
-  {
-   "level": 1,
-   "title": "Quantum and perturbative invariants of 3-manifolds",
-   "page": 99,
-   "source": "inferred",
-   "number": "7",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "471"
-  },
-  {
-   "level": 2,
-   "title": "Witten-Reshetikhin-Turaev invariants and quantum invariants",
-   "page": 99,
-   "source": "inferred",
-   "number": "7.1",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "471"
-  },
-  {
-   "level": 2,
-   "title": "The asymptotic expansion conjecture",
-   "page": 102,
-   "source": "inferred",
-   "number": "7.2",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "474"
-  },
-  {
-   "level": 2,
-   "title": "The volume conjecture",
-   "page": 109,
-   "source": "inferred",
-   "number": "7.3",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "481"
-  },
-  {
-   "level": 2,
-   "title": "Quantum hyperbolic invariants of 3-manifolds",
-   "page": 113,
-   "source": "inferred",
-   "number": "7.4",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "485"
-  },
-  {
-   "level": 2,
-   "title": "Perturbative invariants",
-   "page": 116,
-   "source": "inferred",
-   "number": "7.5",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "488"
-  },
-  {
-   "level": 1,
-   "title": "Topological quantum \ufb01eld theory",
-   "page": 121,
-   "source": "inferred",
-   "number": "8",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "493"
-  },
-  {
-   "level": 2,
-   "title": "Classi\ufb01cation and characterization of TQFT\u2019s",
-   "page": 122,
-   "source": "inferred",
-   "number": "8.1",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "494"
-  },
-  {
-   "level": 2,
-   "title": "Spin TQFT\u2019s",
-   "page": 123,
-   "source": "inferred",
-   "number": "8.2",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "495"
-  },
-  {
-   "level": 2,
-   "title": "Homotopy QFT\u2019s",
-   "page": 124,
-   "source": "inferred",
-   "number": "8.3",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "496"
-  },
-  {
-   "level": 2,
-   "title": "Geometric construction of TQFT\u2019s",
-   "page": 124,
-   "source": "inferred",
-   "number": "8.4",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "496"
-  },
-  {
-   "level": 2,
-   "title": "Half-projective and homological TQFT\u2019s",
-   "page": 126,
-   "source": "inferred",
-   "number": "8.5",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "498"
-  },
-  {
-   "level": 1,
-   "title": "The state-sum invariants of 3-manifolds derived from 6j-symbols",
-   "page": 134,
-   "source": "inferred",
-   "number": "9",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "506"
-  },
-  {
-   "level": 2,
-   "title": "Monoidal categories, 6j-symbols, and subfactors",
-   "page": 134,
-   "source": "inferred",
-   "number": "9.1",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "506"
-  },
-  {
-   "level": 2,
-   "title": "Turaev-Viro invariants and the state-sum invariants derived from monoidal categories",
-   "page": 136,
-   "source": "inferred",
-   "number": "9.2",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "508"
-  },
-  {
-   "level": 2,
-   "title": "The state-sum invariants derived from ribbon categories",
-   "page": 139,
-   "source": "inferred",
-   "number": "9.3",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "511"
-  },
-  {
-   "level": 2,
-   "title": "Turaev-Viro-Ocneanu invariants",
-   "page": 140,
-   "source": "inferred",
-   "number": "9.4",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "512"
-  },
-  {
-   "level": 1,
-   "title": "Casson invariant and \ufb01nite type invariants of 3-manifolds",
-   "page": 142,
-   "source": "inferred",
-   "number": "10",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "514"
-  },
-  {
-   "level": 2,
-   "title": "Casson and Rokhlin invariants",
-   "page": 142,
-   "source": "inferred",
-   "number": "10.1",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "514"
-  },
-  {
-   "level": 2,
-   "title": "Finite type invariants",
-   "page": 145,
-   "source": "inferred",
-   "number": "10.2",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "517"
-  },
-  {
-   "level": 3,
-   "title": "Torsion and \ufb01nite type invariants",
-   "page": 146,
-   "source": "inferred",
-   "number": "10.2.1",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "518"
-  },
-  {
-   "level": 3,
-   "title": "Do \ufb01nite type invariants distinguish homology 3-spheres?",
-   "page": 146,
-   "source": "inferred",
-   "number": "10.2.2",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "518"
-  },
-  {
-   "level": 3,
-   "title": "Dimensions of spaces of \ufb01nite type invariants",
-   "page": 146,
-   "source": "inferred",
-   "number": "10.2.3",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "518"
-  },
-  {
-   "level": 3,
-   "title": "Vogel\u2019s algebra",
-   "page": 148,
-   "source": "inferred",
-   "number": "10.2.4",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "520"
-  },
-  {
-   "level": 3,
-   "title": "Other problems",
-   "page": 150,
-   "source": "inferred",
-   "number": "10.2.5",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "522"
-  },
-  {
-   "level": 2,
-   "title": "Goussarov-Habiro theory",
-   "page": 151,
-   "source": "inferred",
-   "number": "10.3",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "523"
-  },
-  {
-   "level": 3,
-   "title": "Goussarov-Habiro theory for 3-manifolds",
-   "page": 151,
-   "source": "inferred",
-   "number": "10.3.1",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "523"
-  },
-  {
-   "level": 3,
-   "title": "Goussarov-Habiro theory for spin and spinc 3-manifolds",
-   "page": 153,
-   "source": "inferred",
-   "number": "10.3.2",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "525"
-  },
-  {
-   "level": 1,
-   "title": "The LMO invariant",
-   "page": 155,
-   "source": "inferred",
-   "number": "11",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "527"
-  },
-  {
-   "level": 2,
-   "title": "Calculation of the LMO invariant",
-   "page": 155,
-   "source": "inferred",
-   "number": "11.1",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "527"
-  },
-  {
-   "level": 2,
-   "title": "Does the LMO invariant distinguish integral homology 3-spheres?",
-   "page": 155,
-   "source": "inferred",
-   "number": "11.2",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "527"
-  },
-  {
-   "level": 2,
-   "title": "Characterization of the image of the LMO invariant",
-   "page": 156,
-   "source": "inferred",
-   "number": "11.3",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "528"
-  },
-  {
-   "level": 2,
-   "title": "Variations of the LMO invariant",
-   "page": 156,
-   "source": "inferred",
-   "number": "11.4",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "528"
-  },
-  {
-   "level": 2,
-   "title": "Re\ufb01nements of the LMO invariant",
-   "page": 156,
-   "source": "inferred",
-   "number": "11.5",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "528"
-  },
-  {
-   "level": 2,
-   "title": "Other problems",
-   "page": 157,
-   "source": "inferred",
-   "number": "11.6",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "529"
-  },
-  {
-   "level": 1,
-   "title": "Other problems",
-   "page": 158,
-   "source": "inferred",
-   "number": "12",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "530"
-  },
-  {
-   "level": 2,
-   "title": "(Pseudo) Legendrian knot invariants",
-   "page": 158,
-   "source": "inferred",
-   "number": "12.1",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "530"
-  },
-  {
-   "level": 2,
-   "title": "Knots and \ufb01nite groups",
-   "page": 159,
-   "source": "inferred",
-   "number": "12.2",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "531"
-  },
-  {
-   "level": 2,
-   "title": "The numbers of 3-, 5-colorings and some local moves",
-   "page": 160,
-   "source": "inferred",
-   "number": "12.3",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "532"
-  },
-  {
-   "level": 2,
-   "title": "Knotted trivalent graphs",
-   "page": 161,
-   "source": "inferred",
-   "number": "12.4",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "533"
-  },
-  {
-   "level": 2,
-   "title": "Quantum groups",
-   "page": 165,
-   "source": "inferred",
-   "number": "12.5",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "537"
-  },
-  {
-   "level": 2,
-   "title": "Other problems",
-   "page": 166,
-   "source": "inferred",
-   "number": "12.6",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "538"
-  },
-  {
-   "level": 1,
-   "title": "Bibliography",
-   "page": 171,
-   "source": "inferred",
-   "number": null,
-   "confidence": 0.5,
-   "evidence": [
-    "contents"
-   ],
-   "page_label": null
-  },
-  {
-   "level": 1,
-   "title": "Index of contributors",
-   "page": 195,
-   "source": "inferred",
-   "number": null,
-   "confidence": 0.9,
-   "evidence": [
-    "contents",
-    "body",
-    "style"
-   ],
-   "page_label": "567"
-  },
-  {
-   "level": 1,
-   "title": "Index",
-   "page": 196,
-   "source": "inferred",
-   "number": null,
-   "confidence": 0.75,
-   "evidence": [
-    "contents",
-    "body"
-   ],
-   "page_label": "568"
-  }
- ],
- "toc_source": "inferred",
- "toc_undetermined_reason": null,
- "figures": [
-  {
-   "kind": "figure",
-   "number": "1",
-   "title": "Three links L+, L\u2212, L0",
-   "page": 8,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "380"
-  },
-  {
-   "kind": "figure",
-   "number": "2",
-   "title": "The upper pictures show the distribution of zeros of the Jones polynomial for alternating knots of 11 and 12 crossings [262]. The lower picture shows the distribution of zeros of the Jones polynomial for 12 crossing non-alternating knots [262]. See [262] for further pictures for alternating knots wi",
-   "page": 14,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "386"
-  },
-  {
-   "kind": "figure",
-   "number": "3",
-   "title": "The upper pictures show the distribution of zeros of the Jones polynomial for n-twist knots, with n from 1 to 50 and from 51 to 100, respectively [262]. The lower pictures show the distribution of zeros of the Jones polynomial for (2, 2n \u22121) torus knots, with n from 1 to 50 and from 51 to 100, respe",
-   "page": 15,
-   "confidence": 0.7,
-   "evidence": [
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": null
-  },
-  {
-   "kind": "figure",
-   "number": "4",
-   "title": "The distribution of pairs of the hyperbolic volume of knot complements and \u03c0 log VK(\u22121) for alternating knots with 13 crossings [112]",
-   "page": 16,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "388"
-  },
-  {
-   "kind": "figure",
-   "number": "5",
-   "title": "The distributions of pairs of the hyperbolic volume of knot complements and \u03c0 log VK(\u22121)/ log degVK(t). The upper picture is for all alternating knots with 12 and 13 crossings and samples of alternating knots with 14, 15, and 16 crossings, and the lower picture is for all knots with 13 or fewer cros",
-   "page": 17,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": null
-  },
-  {
-   "kind": "figure",
-   "number": "6",
-   "title": "The AS, IHX, STU, and FI relations",
-   "page": 27,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "399"
-  },
-  {
-   "kind": "figure",
-   "number": "7",
-   "title": "A 2-torsion element in A(\u2193\u2193; Z) due to Dogolazky\u2013Kneissler",
-   "page": 29,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "401"
-  },
-  {
-   "kind": "figure",
-   "number": "8",
-   "title": "The plottings of the set (9) for some family of knots [325]",
-   "page": 32,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": null
-  },
-  {
-   "kind": "table",
-   "number": "1",
-   "title": "Some dimensions given in [67, 224]",
-   "page": 33,
-   "confidence": 0.6,
-   "evidence": [
-    "in-sequence"
-   ],
-   "page_label": "405"
-  },
-  {
-   "kind": "table",
-   "number": "2",
-   "title": "A table of \u03b2d,u [67, 224]",
-   "page": 35,
-   "confidence": 0.8,
-   "evidence": [
-    "referenced",
-    "in-sequence"
-   ],
-   "page_label": null
-  },
-  {
-   "kind": "table",
-   "number": "3",
-   "title": "Upper bounds \u03bed of dimA(S1)(d)/FI (see [373])",
-   "page": 36,
-   "confidence": 0.6,
-   "evidence": [
-    "in-sequence"
-   ],
-   "page_label": "408"
-  },
-  {
-   "kind": "figure",
-   "number": "9",
-   "title": "The 6T and the oriented FI, AS, IHX, and STU relations. Here, a thick dashed line implies the sum of the two orientations, and corresponding thin dashed lines of pictures in the same formula have the same (arbitrarily given) orientation",
-   "page": 38,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": null
-  },
-  {
-   "kind": "figure",
-   "number": "10",
-   "title": "Some local moves among oriented knots. The strands of both sides of a \u2206 move and an n-gon move have any orientations such that corresponding strands from opposite sides of the moves are oriented in the same way. Each side of an n-gon move has n strands",
-   "page": 41,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": null
-  },
-  {
-   "kind": "figure",
-   "number": "11",
-   "title": "De\ufb01nition of the surgery on a Y graph. Dotted lines imply strands possibly knotting and linking",
-   "page": 43,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "415"
-  },
-  {
-   "kind": "figure",
-   "number": "12",
-   "title": "The knot KT is obtained from the 2-parallel of a 2-strand tangle T by adding the tangle depicted in solid lines in the right picture. The dotted lines imply strands possibly knotted and linked in some fashion",
-   "page": 68,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": null
-  },
-  {
-   "kind": "figure",
-   "number": "13",
-   "title": "The multi-linear relations. Here, f(t), g(t) \u2208S, and a, b are scalars",
-   "page": 69,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": null
-  },
-  {
-   "kind": "figure",
-   "number": "14",
-   "title": "The push relation",
-   "page": 69,
-   "confidence": 0.7,
-   "evidence": [
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": null
-  },
-  {
-   "kind": "figure",
-   "number": "15",
-   "title": "L3, \u00b7 \u00b7 \u00b7 , L0, L\u221eare framed links which are identical except in a ball, where they di\ufb00er as shown in the pictures. Links Lk for k = 4, 5, \u00b7 \u00b7 \u00b7 are similarly de\ufb01ned",
-   "page": 78,
-   "confidence": 0.9,
-   "evidence": [
-    "referenced",
-    "in-sequence",
-    "graphic"
-   ],
-   "page_label": "450"
-  },
-  {
-   "kind": "table",
-   "number": "4",
-   "title": "A table of some connected quandles. The second column shows the numbers of isomorphism classes of connected quandles of order n. We denote Z[t\u00b11]/(n) by \u039bn. Conj(Sm) denotes the conjugation quandle of the mth symmetric group Sm. An icosahedral quandle is a quandle whose elements are the vertices of",
-   "page": 84,
-   "confidence": 0.8,
-   "evidence": [
-    "referenced",
-    "in-sequence"
-   ],
-   "page_label": null
-  },
-  {
-   "kind": "table",
-   "number": "5",
-   "title": "The cohomologies of the quandles, except for the last one, in the table are due to [264]. From a table in [264] we omit one of two dual quandles and quandles that are not connected (see remarks on Problem 5.6). The 2nd homology of Z[t\u00b11]/(p, t\u2212a) is due to [284]. See [264, 284] for computations of c",
-   "page": 88,
-   "confidence": 0.8,
-   "evidence": [
-    "referenced",
-    "in-sequence"
-   ],
-   "page_label": null
-  },
-  {
-   "kind": "figure",
-   "number": "17",
-   "title": "The generator \u03c33 of B5 (the left picture) and the generator e3 of TL5 (the right picture)",
-   "page": 95,
-   "confidence": 0.8,
-   "evidence": [
-    "referenced",
-    "graphic"
-   ],
-   "page_label": "467"
-  },
-  {
-   "kind": "figure",
-   "number": "18",
-   "title": "6j-symbols and related objects",
-   "page": 136,
-   "confidence": 0.8,
-   "evidence": [
-    "referenced",
-    "graphic"
-   ],
-   "page_label": "508"
-  },
-  {
-   "kind": "table",
-   "number": "6",
-   "title": "Subfactors, their monoidal categories, and S-matrices",
-   "page": 137,
-   "confidence": 0.8,
-   "evidence": [
-    "referenced",
-    "in-sequence"
-   ],
-   "page_label": null
-  },
-  {
-   "kind": "figure",
-   "number": "19",
-   "title": "Monoidal, ribbon, modular categories and their consequences",
-   "page": 139,
-   "confidence": 0.5,
-   "evidence": [],
-   "page_label": "511"
-  },
-  {
-   "kind": "table",
-   "number": "7",
-   "title": "Some dimensions for Problem 10.10",
-   "page": 147,
-   "confidence": 0.8,
-   "evidence": [
-    "referenced",
-    "in-sequence"
-   ],
-   "page_label": null
-  },
-  {
-   "kind": "figure",
-   "number": "20",
-   "title": "The 3-move and the (2,2)-move",
-   "page": 161,
-   "confidence": 0.8,
-   "evidence": [
-    "referenced",
-    "graphic"
-   ],
-   "page_label": "533"
-  },
-  {
-   "kind": "figure",
-   "number": "21",
-   "title": "Four operations of KTG\u2019s [40]. The left hand side of the connected sum denotes a disjoint union of two separate graphs",
-   "page": 162,
-   "confidence": 0.8,
-   "evidence": [
-    "referenced",
-    "graphic"
-   ],
-   "page_label": null
-  },
-  {
-   "kind": "figure",
-   "number": "22",
-   "title": "Links, 3-manifolds, KTG\u2019s, and shadow surfaces",
-   "page": 164,
-   "confidence": 0.7,
-   "evidence": [
-    "referenced"
-   ],
-   "page_label": null
-  },
-  {
-   "kind": "figure",
-   "number": "23",
-   "title": "Two ways to obtain 3-manifolds from shadow surfaces",
-   "page": 165,
-   "confidence": 0.5,
-   "evidence": [],
-   "page_label": "537"
-  }
- ],
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "102 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (102 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed): one section per page.",
+ "figures": [],
  "pages": [
   {
    "physical": 1,
@@ -1853,33 +60,37 @@
   },
   {
    "physical": 2,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "ii",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
    "physical": 3,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "iii",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
    "physical": 4,
+   "label": "iv",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
    "label": null,
    "source": null,
    "confidence": 0.0,
    "evidence": []
-  },
-  {
-   "physical": 5,
-   "label": "377",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
   },
   {
    "physical": 6,
@@ -1897,30 +108,24 @@
   },
   {
    "physical": 8,
-   "label": "380",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 9,
-   "label": "381",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 10,
-   "label": "382",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 11,
@@ -1945,12 +150,10 @@
   },
   {
    "physical": 14,
-   "label": "386",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 15,
@@ -1961,12 +164,10 @@
   },
   {
    "physical": 16,
-   "label": "388",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 17,
@@ -1977,12 +178,10 @@
   },
   {
    "physical": 18,
-   "label": "390",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 19,
@@ -2000,12 +199,10 @@
   },
   {
    "physical": 21,
-   "label": "393",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 22,
@@ -2037,21 +234,17 @@
   },
   {
    "physical": 26,
-   "label": "398",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 27,
-   "label": "399",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 28,
@@ -2062,30 +255,24 @@
   },
   {
    "physical": 29,
-   "label": "401",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 30,
-   "label": "402",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 31,
-   "label": "403",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 32,
@@ -2096,12 +283,10 @@
   },
   {
    "physical": 33,
-   "label": "405",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 34,
@@ -2119,21 +304,17 @@
   },
   {
    "physical": 36,
-   "label": "408",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 37,
-   "label": "409",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 38,
@@ -2151,12 +332,10 @@
   },
   {
    "physical": 40,
-   "label": "412",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 41,
@@ -2174,12 +353,10 @@
   },
   {
    "physical": 43,
-   "label": "415",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 44,
@@ -2197,12 +374,10 @@
   },
   {
    "physical": 46,
-   "label": "418",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 47,
@@ -2227,12 +402,10 @@
   },
   {
    "physical": 50,
-   "label": "422",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 51,
@@ -2243,39 +416,31 @@
   },
   {
    "physical": 52,
-   "label": "424",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 53,
-   "label": "425",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 54,
-   "label": "426",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 55,
-   "label": "427",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 56,
@@ -2286,12 +451,10 @@
   },
   {
    "physical": 57,
-   "label": "429",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 58,
@@ -2309,12 +472,10 @@
   },
   {
    "physical": 60,
-   "label": "432",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 61,
@@ -2332,12 +493,10 @@
   },
   {
    "physical": 63,
-   "label": "435",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 64,
@@ -2348,12 +507,10 @@
   },
   {
    "physical": 65,
-   "label": "437",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 66,
@@ -2392,12 +549,10 @@
   },
   {
    "physical": 71,
-   "label": "443",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 72,
@@ -2408,57 +563,45 @@
   },
   {
    "physical": 73,
-   "label": "445",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 74,
-   "label": "446",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 75,
-   "label": "447",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 76,
-   "label": "448",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 77,
-   "label": "449",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 78,
-   "label": "450",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 79,
@@ -2476,12 +619,10 @@
   },
   {
    "physical": 81,
-   "label": "453",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 82,
@@ -2492,12 +633,10 @@
   },
   {
    "physical": 83,
-   "label": "455",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 84,
@@ -2515,21 +654,17 @@
   },
   {
    "physical": 86,
-   "label": "458",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 87,
-   "label": "459",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 88,
@@ -2540,12 +675,10 @@
   },
   {
    "physical": 89,
-   "label": "461",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 90,
@@ -2563,12 +696,10 @@
   },
   {
    "physical": 92,
-   "label": "464",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 93,
@@ -2579,39 +710,31 @@
   },
   {
    "physical": 94,
-   "label": "466",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 95,
-   "label": "467",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 96,
-   "label": "468",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 97,
-   "label": "469",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 98,
@@ -2622,12 +745,10 @@
   },
   {
    "physical": 99,
-   "label": "471",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 100,
@@ -2645,12 +766,10 @@
   },
   {
    "physical": 102,
-   "label": "474",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 103,
@@ -2696,12 +815,10 @@
   },
   {
    "physical": 109,
-   "label": "481",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 110,
@@ -2726,12 +843,10 @@
   },
   {
    "physical": 113,
-   "label": "485",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 114,
@@ -2749,12 +864,10 @@
   },
   {
    "physical": 116,
-   "label": "488",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 117,
@@ -2786,39 +899,31 @@
   },
   {
    "physical": 121,
-   "label": "493",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 122,
-   "label": "494",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 123,
-   "label": "495",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 124,
-   "label": "496",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 125,
@@ -2829,12 +934,10 @@
   },
   {
    "physical": 126,
-   "label": "498",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 127,
@@ -2887,12 +990,10 @@
   },
   {
    "physical": 134,
-   "label": "506",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 135,
@@ -2903,12 +1004,10 @@
   },
   {
    "physical": 136,
-   "label": "508",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 137,
@@ -2926,21 +1025,17 @@
   },
   {
    "physical": 139,
-   "label": "511",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 140,
-   "label": "512",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 141,
@@ -2951,12 +1046,10 @@
   },
   {
    "physical": 142,
-   "label": "514",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 143,
@@ -2974,21 +1067,17 @@
   },
   {
    "physical": 145,
-   "label": "517",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 146,
-   "label": "518",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 147,
@@ -2999,12 +1088,10 @@
   },
   {
    "physical": 148,
-   "label": "520",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 149,
@@ -3015,21 +1102,17 @@
   },
   {
    "physical": 150,
-   "label": "522",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 151,
-   "label": "523",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 152,
@@ -3040,12 +1123,10 @@
   },
   {
    "physical": 153,
-   "label": "525",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 154,
@@ -3056,66 +1137,52 @@
   },
   {
    "physical": 155,
-   "label": "527",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 156,
-   "label": "528",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 157,
-   "label": "529",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 158,
-   "label": "530",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 159,
-   "label": "531",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 160,
-   "label": "532",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 161,
-   "label": "533",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 162,
@@ -3140,21 +1207,17 @@
   },
   {
    "physical": 165,
-   "label": "537",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 166,
-   "label": "538",
-   "source": "contents",
-   "confidence": 0.6,
-   "evidence": [
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 167,
@@ -3193,1389 +1256,2684 @@
   },
   {
    "physical": 172,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "544",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
    "physical": 173,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "545",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
   },
   {
    "physical": 174,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "546",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
    "physical": 175,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "547",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
   },
   {
    "physical": 176,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "548",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
    "physical": 177,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "549",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
   },
   {
    "physical": 178,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "550",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
    "physical": 179,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "551",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
   },
   {
    "physical": 180,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "552",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
    "physical": 181,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "553",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
   },
   {
    "physical": 182,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "554",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
    "physical": 183,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "555",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
   },
   {
    "physical": 184,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "556",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
    "physical": 185,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "557",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
   },
   {
    "physical": 186,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "558",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
    "physical": 187,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "559",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
   },
   {
    "physical": 188,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "560",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
    "physical": 189,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "561",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
   },
   {
    "physical": 190,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "562",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
    "physical": 191,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "563",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
   },
   {
    "physical": 192,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "564",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
    "physical": 193,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "565",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
   },
   {
    "physical": 194,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "566",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
   },
   {
    "physical": 195,
    "label": "567",
-   "source": "contents",
-   "confidence": 0.6,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "contents"
+    "interpolated"
    ]
   },
   {
    "physical": 196,
    "label": "568",
-   "source": "contents",
-   "confidence": 0.6,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "contents"
+    "interpolated"
    ]
   },
   {
    "physical": 197,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "569",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
   },
   {
    "physical": 198,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "570",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
    "physical": 199,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "571",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
   },
   {
    "physical": 200,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "572",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   }
  ],
  "sections": [
   {
-   "id": "sec-front-matter",
+   "id": "page-001",
    "number": null,
-   "title": "Front matter",
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 70,
-   "n_words": 12,
+   "n_chars": 2711,
+   "n_words": 417,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-000-preface",
+   "id": "page-002",
    "number": null,
-   "title": "Preface",
+   "title": "Page 2",
    "level": 1,
-   "page_start": 1,
-   "page_end": 5,
-   "n_chars": 11037,
-   "n_words": 2840,
-   "label_start": null,
-   "label_end": "377"
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1877,
+   "n_words": 264,
+   "label_start": "ii",
+   "label_end": "ii"
   },
   {
-   "id": "sec-001-0-introduction",
-   "number": "0",
-   "title": "Introduction",
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1695,
+   "n_words": 254,
+   "label_start": "iii",
+   "label_end": "iii"
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1692,
+   "n_words": 257,
+   "label_start": "iv",
+   "label_end": "iv"
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
    "level": 1,
    "page_start": 5,
-   "page_end": 8,
-   "n_chars": 5617,
-   "n_words": 864,
-   "label_start": "377",
-   "label_end": "380"
+   "page_end": 5,
+   "n_chars": 2143,
+   "n_words": 323,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-1-polynomial-invariants-of-knots",
-   "number": "1",
-   "title": "Polynomial invariants of knots",
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 2992,
+   "n_words": 446,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1494,
+   "n_words": 234,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
    "level": 1,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 3,
-   "n_words": 1,
-   "label_start": "380",
-   "label_end": "380"
+   "n_chars": 1133,
+   "n_words": 203,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-11-the-jones-polynomial",
-   "number": "1.1",
-   "title": "The Jones polynomial",
-   "level": 2,
-   "page_start": 8,
-   "page_end": 9,
-   "n_chars": 1118,
-   "n_words": 202,
-   "label_start": "380",
-   "label_end": "381"
-  },
-  {
-   "id": "sec-004-111-does-the-jones-polynomial-distinguish-the-tr",
-   "number": "1.1.1",
-   "title": "Does the Jones polynomial distinguish the trivial knot?",
-   "level": 3,
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
    "page_start": 9,
-   "page_end": 10,
-   "n_chars": 1625,
-   "n_words": 291,
-   "label_start": "381",
-   "label_end": "382"
+   "page_end": 9,
+   "n_chars": 1281,
+   "n_words": 221,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-112-characterization-and-interpretation-of-the-j",
-   "number": "1.1.2",
-   "title": "Characterization and interpretation of the Jones polynomial",
-   "level": 3,
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
+   "level": 1,
    "page_start": 10,
-   "page_end": 14,
-   "n_chars": 10450,
-   "n_words": 1778,
-   "label_start": "382",
-   "label_end": "386"
+   "page_end": 10,
+   "n_chars": 1824,
+   "n_words": 319,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-113-numerical-experiments",
-   "number": "1.1.3",
-   "title": "Numerical experiments",
-   "level": 3,
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 2708,
+   "n_words": 457,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 2597,
+   "n_words": 445,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-013",
+   "number": null,
+   "title": "Page 13",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 2533,
+   "n_words": 411,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-014",
+   "number": null,
+   "title": "Page 14",
+   "level": 1,
    "page_start": 14,
-   "page_end": 16,
-   "n_chars": 2909,
-   "n_words": 526,
-   "label_start": "386",
-   "label_end": "388"
+   "page_end": 14,
+   "n_chars": 1560,
+   "n_words": 241,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-114-categori\ufb01cation-of-the-jones-polynomial",
-   "number": "1.1.4",
-   "title": "Categori\ufb01cation of the Jones polynomial",
-   "level": 3,
+   "id": "page-015",
+   "number": null,
+   "title": "Page 15",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 1576,
+   "n_words": 269,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-016",
+   "number": null,
+   "title": "Page 16",
+   "level": 1,
    "page_start": 16,
-   "page_end": 18,
-   "n_chars": 1660,
-   "n_words": 266,
-   "label_start": "388",
-   "label_end": "390"
+   "page_end": 16,
+   "n_chars": 1354,
+   "n_words": 253,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-12-the-homfly-q-and-kau\ufb00man-polynomials",
-   "number": "1.2",
-   "title": "The HOMFLY, Q, and Kau\ufb00man polynomials",
-   "level": 2,
+   "id": "page-017",
+   "number": null,
+   "title": "Page 17",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 883,
+   "n_words": 211,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-018",
+   "number": null,
+   "title": "Page 18",
+   "level": 1,
    "page_start": 18,
-   "page_end": 21,
-   "n_chars": 5360,
-   "n_words": 994,
-   "label_start": "390",
-   "label_end": "393"
+   "page_end": 18,
+   "n_chars": 1466,
+   "n_words": 249,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-009-13-the-volume-conjecture",
-   "number": "1.3",
-   "title": "The volume conjecture",
-   "level": 2,
+   "id": "page-019",
+   "number": null,
+   "title": "Page 19",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 1891,
+   "n_words": 324,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-020",
+   "number": null,
+   "title": "Page 20",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 1983,
+   "n_words": 353,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-021",
+   "number": null,
+   "title": "Page 21",
+   "level": 1,
    "page_start": 21,
-   "page_end": 26,
-   "n_chars": 7309,
-   "n_words": 1378,
-   "label_start": "393",
-   "label_end": "398"
+   "page_end": 21,
+   "n_chars": 1925,
+   "n_words": 343,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-010-2-finite-type-invariants-of-knots",
-   "number": "2",
-   "title": "Finite type invariants of knots",
+   "id": "page-022",
+   "number": null,
+   "title": "Page 22",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 1412,
+   "n_words": 286,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-023",
+   "number": null,
+   "title": "Page 23",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 1617,
+   "n_words": 303,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-024",
+   "number": null,
+   "title": "Page 24",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 2034,
+   "n_words": 363,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-025",
+   "number": null,
+   "title": "Page 25",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 945,
+   "n_words": 170,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-026",
+   "number": null,
+   "title": "Page 26",
    "level": 1,
    "page_start": 26,
-   "page_end": 27,
-   "n_chars": 2099,
-   "n_words": 391,
-   "label_start": "398",
-   "label_end": "399"
+   "page_end": 26,
+   "n_chars": 1980,
+   "n_words": 365,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-011-21-torsion-and-vassiliev-invariants",
-   "number": "2.1",
-   "title": "Torsion and Vassiliev invariants",
-   "level": 2,
+   "id": "page-027",
+   "number": null,
+   "title": "Page 27",
+   "level": 1,
    "page_start": 27,
-   "page_end": 29,
-   "n_chars": 3470,
-   "n_words": 557,
-   "label_start": "399",
-   "label_end": "401"
+   "page_end": 27,
+   "n_chars": 848,
+   "n_words": 141,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-012-22-do-vassiliev-invariants-distinguish-knots",
-   "number": "2.2",
-   "title": "Do Vassiliev invariants distinguish knots?",
-   "level": 2,
+   "id": "page-028",
+   "number": null,
+   "title": "Page 28",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 2039,
+   "n_words": 330,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-029",
+   "number": null,
+   "title": "Page 29",
+   "level": 1,
    "page_start": 29,
-   "page_end": 30,
-   "n_chars": 1485,
-   "n_words": 241,
-   "label_start": "401",
-   "label_end": "402"
+   "page_end": 29,
+   "n_chars": 1676,
+   "n_words": 261,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-013-23-can-vassiliev-invariants-detect-other-invaria",
-   "number": "2.3",
-   "title": "Can Vassiliev invariants detect other invariants?",
-   "level": 2,
+   "id": "page-030",
+   "number": null,
+   "title": "Page 30",
+   "level": 1,
    "page_start": 30,
-   "page_end": 31,
-   "n_chars": 2366,
-   "n_words": 413,
-   "label_start": "402",
-   "label_end": "403"
+   "page_end": 30,
+   "n_chars": 2370,
+   "n_words": 404,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-014-24-vassiliev-invariants-and-crossing-numbers",
-   "number": "2.4",
-   "title": "Vassiliev invariants and crossing numbers",
-   "level": 2,
+   "id": "page-031",
+   "number": null,
+   "title": "Page 31",
+   "level": 1,
    "page_start": 31,
-   "page_end": 33,
-   "n_chars": 2633,
-   "n_words": 498,
-   "label_start": "403",
-   "label_end": "405"
+   "page_end": 31,
+   "n_chars": 1818,
+   "n_words": 335,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-015-25-dimensions-of-spaces-of-vassiliev-invariants",
-   "number": "2.5",
-   "title": "Dimensions of spaces of Vassiliev invariants",
-   "level": 2,
+   "id": "page-032",
+   "number": null,
+   "title": "Page 32",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 1222,
+   "n_words": 208,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-033",
+   "number": null,
+   "title": "Page 33",
+   "level": 1,
    "page_start": 33,
-   "page_end": 36,
-   "n_chars": 4579,
-   "n_words": 957,
-   "label_start": "405",
-   "label_end": "408"
+   "page_end": 33,
+   "n_chars": 1639,
+   "n_words": 303,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-016-26-milnor-invariants",
-   "number": "2.6",
-   "title": "Milnor invariants",
-   "level": 2,
+   "id": "page-034",
+   "number": null,
+   "title": "Page 34",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 1654,
+   "n_words": 310,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-035",
+   "number": null,
+   "title": "Page 35",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 1298,
+   "n_words": 280,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-036",
+   "number": null,
+   "title": "Page 36",
+   "level": 1,
    "page_start": 36,
-   "page_end": 37,
-   "n_chars": 3226,
-   "n_words": 560,
-   "label_start": "408",
-   "label_end": "409"
+   "page_end": 36,
+   "n_chars": 2254,
+   "n_words": 390,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-017-27-finite-type-invariants-of-virtual-knots",
-   "number": "2.7",
-   "title": "Finite type invariants of virtual knots",
-   "level": 2,
+   "id": "page-037",
+   "number": null,
+   "title": "Page 37",
+   "level": 1,
    "page_start": 37,
-   "page_end": 40,
-   "n_chars": 3233,
-   "n_words": 587,
-   "label_start": "409",
-   "label_end": "412"
+   "page_end": 37,
+   "n_chars": 2130,
+   "n_words": 364,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-018-28-finite-type-invariants-derived-from-local-mov",
-   "number": "2.8",
-   "title": "Finite type invariants derived from local moves",
-   "level": 2,
+   "id": "page-038",
+   "number": null,
+   "title": "Page 38",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 585,
+   "n_words": 130,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-039",
+   "number": null,
+   "title": "Page 39",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 1222,
+   "n_words": 243,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-040",
+   "number": null,
+   "title": "Page 40",
+   "level": 1,
    "page_start": 40,
-   "page_end": 43,
-   "n_chars": 5270,
-   "n_words": 990,
-   "label_start": "412",
-   "label_end": "415"
+   "page_end": 40,
+   "n_chars": 1913,
+   "n_words": 360,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-019-29-loop-\ufb01nite-type-invariants",
-   "number": "2.9",
-   "title": "Loop \ufb01nite type invariants",
-   "level": 2,
+   "id": "page-041",
+   "number": null,
+   "title": "Page 41",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 905,
+   "n_words": 183,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-042",
+   "number": null,
+   "title": "Page 42",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 42,
+   "n_chars": 1587,
+   "n_words": 278,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-043",
+   "number": null,
+   "title": "Page 43",
+   "level": 1,
    "page_start": 43,
-   "page_end": 46,
-   "n_chars": 6685,
-   "n_words": 1179,
-   "label_start": "415",
-   "label_end": "418"
+   "page_end": 43,
+   "n_chars": 1878,
+   "n_words": 334,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-020-210-goussarov-habiro-theory-for-knots",
-   "number": "2.10",
-   "title": "Goussarov-Habiro theory for knots",
-   "level": 2,
+   "id": "page-044",
+   "number": null,
+   "title": "Page 44",
+   "level": 1,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 2388,
+   "n_words": 418,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-045",
+   "number": null,
+   "title": "Page 45",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 2270,
+   "n_words": 391,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-046",
+   "number": null,
+   "title": "Page 46",
+   "level": 1,
    "page_start": 46,
-   "page_end": 50,
-   "n_chars": 5938,
-   "n_words": 999,
-   "label_start": "418",
-   "label_end": "422"
+   "page_end": 46,
+   "n_chars": 2467,
+   "n_words": 430,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-021-211-other-problems",
-   "number": "2.11",
-   "title": "Other problems",
-   "level": 2,
+   "id": "page-047",
+   "number": null,
+   "title": "Page 47",
+   "level": 1,
+   "page_start": 47,
+   "page_end": 47,
+   "n_chars": 1837,
+   "n_words": 324,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-048",
+   "number": null,
+   "title": "Page 48",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 48,
+   "n_chars": 1532,
+   "n_words": 251,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-049",
+   "number": null,
+   "title": "Page 49",
+   "level": 1,
+   "page_start": 49,
+   "page_end": 49,
+   "n_chars": 2039,
+   "n_words": 332,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-050",
+   "number": null,
+   "title": "Page 50",
+   "level": 1,
    "page_start": 50,
-   "page_end": 52,
-   "n_chars": 4001,
-   "n_words": 695,
-   "label_start": "422",
-   "label_end": "424"
+   "page_end": 50,
+   "n_chars": 2368,
+   "n_words": 414,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-022-3-the-kontsevich-invariant",
-   "number": "3",
-   "title": "The Kontsevich invariant",
+   "id": "page-051",
+   "number": null,
+   "title": "Page 51",
+   "level": 1,
+   "page_start": 51,
+   "page_end": 51,
+   "n_chars": 1682,
+   "n_words": 274,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-052",
+   "number": null,
+   "title": "Page 52",
    "level": 1,
    "page_start": 52,
    "page_end": 52,
-   "n_chars": 810,
-   "n_words": 129,
-   "label_start": "424",
-   "label_end": "424"
+   "n_chars": 2130,
+   "n_words": 350,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-023-31-calculation-of-the-kontsevich-invariant",
-   "number": "3.1",
-   "title": "Calculation of the Kontsevich invariant",
-   "level": 2,
-   "page_start": 52,
-   "page_end": 53,
-   "n_chars": 1266,
-   "n_words": 220,
-   "label_start": "424",
-   "label_end": "425"
-  },
-  {
-   "id": "sec-024-32-does-the-kontsevich-invariant-distinguish-kno",
-   "number": "3.2",
-   "title": "Does the Kontsevich invariant distinguish knots?",
-   "level": 2,
+   "id": "page-053",
+   "number": null,
+   "title": "Page 53",
+   "level": 1,
    "page_start": 53,
    "page_end": 53,
-   "n_chars": 639,
-   "n_words": 101,
-   "label_start": "425",
-   "label_end": "425"
+   "n_chars": 2141,
+   "n_words": 357,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-025-33-characterization-and-interpretation-of-the-ko",
-   "number": "3.3",
-   "title": "Characterization and interpretation of the Kontsevich invariant",
-   "level": 2,
-   "page_start": 53,
-   "page_end": 54,
-   "n_chars": 3062,
-   "n_words": 493,
-   "label_start": "425",
-   "label_end": "426"
-  },
-  {
-   "id": "sec-026-34-the-kontsevich-invariant-in-a-\ufb01nite-\ufb01eld",
-   "number": "3.4",
-   "title": "The Kontsevich invariant in a \ufb01nite \ufb01eld",
-   "level": 2,
+   "id": "page-054",
+   "number": null,
+   "title": "Page 54",
+   "level": 1,
    "page_start": 54,
-   "page_end": 55,
-   "n_chars": 612,
-   "n_words": 108,
-   "label_start": "426",
-   "label_end": "427"
+   "page_end": 54,
+   "n_chars": 2377,
+   "n_words": 370,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-027-35-the-kontsevich-invariant-in-arrow-diagrams",
-   "number": "3.5",
-   "title": "The Kontsevich invariant in arrow diagrams",
-   "level": 2,
+   "id": "page-055",
+   "number": null,
+   "title": "Page 55",
+   "level": 1,
    "page_start": 55,
-   "page_end": 57,
-   "n_chars": 3638,
-   "n_words": 602,
-   "label_start": "427",
-   "label_end": "429"
+   "page_end": 55,
+   "n_chars": 1785,
+   "n_words": 298,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-028-36-the-chern-simons-series-of-con\ufb01guration-space",
-   "number": "3.6",
-   "title": "The Chern-Simons series of con\ufb01guration space integrals",
-   "level": 2,
+   "id": "page-056",
+   "number": null,
+   "title": "Page 56",
+   "level": 1,
+   "page_start": 56,
+   "page_end": 56,
+   "n_chars": 1959,
+   "n_words": 321,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-057",
+   "number": null,
+   "title": "Page 57",
+   "level": 1,
    "page_start": 57,
-   "page_end": 60,
-   "n_chars": 8274,
-   "n_words": 1489,
-   "label_start": "429",
-   "label_end": "432"
+   "page_end": 57,
+   "n_chars": 1929,
+   "n_words": 329,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-029-37-associators",
-   "number": "3.7",
-   "title": "Associators",
-   "level": 2,
+   "id": "page-058",
+   "number": null,
+   "title": "Page 58",
+   "level": 1,
+   "page_start": 58,
+   "page_end": 58,
+   "n_chars": 2746,
+   "n_words": 489,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-059",
+   "number": null,
+   "title": "Page 59",
+   "level": 1,
+   "page_start": 59,
+   "page_end": 59,
+   "n_chars": 2436,
+   "n_words": 417,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-060",
+   "number": null,
+   "title": "Page 60",
+   "level": 1,
    "page_start": 60,
-   "page_end": 63,
-   "n_chars": 5043,
-   "n_words": 977,
-   "label_start": "432",
-   "label_end": "435"
+   "page_end": 60,
+   "n_chars": 1473,
+   "n_words": 253,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-030-38-graph-cohomology",
-   "number": "3.8",
-   "title": "Graph cohomology",
-   "level": 2,
+   "id": "page-061",
+   "number": null,
+   "title": "Page 61",
+   "level": 1,
+   "page_start": 61,
+   "page_end": 61,
+   "n_chars": 2146,
+   "n_words": 368,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-062",
+   "number": null,
+   "title": "Page 62",
+   "level": 1,
+   "page_start": 62,
+   "page_end": 62,
+   "n_chars": 1059,
+   "n_words": 203,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-063",
+   "number": null,
+   "title": "Page 63",
+   "level": 1,
    "page_start": 63,
-   "page_end": 65,
-   "n_chars": 3948,
-   "n_words": 620,
-   "label_start": "435",
-   "label_end": "437"
+   "page_end": 63,
+   "n_chars": 1811,
+   "n_words": 302,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-031-39-the-loop-expansion-of-the-kontsevich-invarian",
-   "number": "3.9",
-   "title": "The loop expansion of the Kontsevich invariant",
-   "level": 2,
+   "id": "page-064",
+   "number": null,
+   "title": "Page 64",
+   "level": 1,
+   "page_start": 64,
+   "page_end": 64,
+   "n_chars": 2909,
+   "n_words": 460,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-065",
+   "number": null,
+   "title": "Page 65",
+   "level": 1,
    "page_start": 65,
-   "page_end": 71,
-   "n_chars": 8701,
-   "n_words": 1660,
-   "label_start": "437",
-   "label_end": "443"
+   "page_end": 65,
+   "n_chars": 2233,
+   "n_words": 355,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-032-310-the-kontsevich-invariant-of-links-in-\u03c3-0-1",
-   "number": "3.10",
-   "title": "The Kontsevich invariant of links in \u03a3 \u00d7 [0, 1]",
-   "level": 2,
+   "id": "page-066",
+   "number": null,
+   "title": "Page 66",
+   "level": 1,
+   "page_start": 66,
+   "page_end": 66,
+   "n_chars": 1334,
+   "n_words": 262,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-067",
+   "number": null,
+   "title": "Page 67",
+   "level": 1,
+   "page_start": 67,
+   "page_end": 67,
+   "n_chars": 1923,
+   "n_words": 347,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-068",
+   "number": null,
+   "title": "Page 68",
+   "level": 1,
+   "page_start": 68,
+   "page_end": 68,
+   "n_chars": 912,
+   "n_words": 192,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-069",
+   "number": null,
+   "title": "Page 69",
+   "level": 1,
+   "page_start": 69,
+   "page_end": 69,
+   "n_chars": 1109,
+   "n_words": 202,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-070",
+   "number": null,
+   "title": "Page 70",
+   "level": 1,
+   "page_start": 70,
+   "page_end": 70,
+   "n_chars": 1609,
+   "n_words": 308,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-071",
+   "number": null,
+   "title": "Page 71",
+   "level": 1,
    "page_start": 71,
-   "page_end": 73,
-   "n_chars": 3047,
-   "n_words": 553,
-   "label_start": "443",
-   "label_end": "445"
+   "page_end": 71,
+   "n_chars": 1876,
+   "n_words": 323,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-033-4-skein-modules",
-   "number": "4",
-   "title": "Skein modules",
+   "id": "page-072",
+   "number": null,
+   "title": "Page 72",
+   "level": 1,
+   "page_start": 72,
+   "page_end": 72,
+   "n_chars": 1315,
+   "n_words": 233,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-073",
+   "number": null,
+   "title": "Page 73",
    "level": 1,
    "page_start": 73,
-   "page_end": 74,
-   "n_chars": 2404,
-   "n_words": 385,
-   "label_start": "445",
-   "label_end": "446"
-  },
-  {
-   "id": "sec-034-41-the-kau\ufb00man-bracket-skein-module",
-   "number": "4.1",
-   "title": "The Kau\ufb00man bracket skein module",
-   "level": 2,
-   "page_start": 74,
-   "page_end": 75,
-   "n_chars": 3254,
-   "n_words": 569,
-   "label_start": "446",
-   "label_end": "447"
-  },
-  {
-   "id": "sec-035-42-the-hom\ufb02ypt-skein-module",
-   "number": "4.2",
-   "title": "The Hom\ufb02ypt skein module",
-   "level": 2,
-   "page_start": 75,
-   "page_end": 76,
-   "n_chars": 1312,
-   "n_words": 239,
-   "label_start": "447",
-   "label_end": "448"
-  },
-  {
-   "id": "sec-036-43-the-kau\ufb00man-skein-module",
-   "number": "4.3",
-   "title": "The Kau\ufb00man skein module",
-   "level": 2,
-   "page_start": 76,
-   "page_end": 77,
-   "n_chars": 2222,
-   "n_words": 406,
-   "label_start": "448",
-   "label_end": "449"
-  },
-  {
-   "id": "sec-037-44-the-q-homotopy-skein-module",
-   "number": "4.4",
-   "title": "The q-homotopy skein module",
-   "level": 2,
-   "page_start": 77,
-   "page_end": 78,
-   "n_chars": 913,
-   "n_words": 166,
-   "label_start": "449",
-   "label_end": "450"
-  },
-  {
-   "id": "sec-038-45-the-4-skein-module",
-   "number": "4.5",
-   "title": "The (4, \u221e) skein module",
-   "level": 2,
-   "page_start": 78,
-   "page_end": 81,
-   "n_chars": 6531,
-   "n_words": 1177,
-   "label_start": "450",
-   "label_end": "453"
-  },
-  {
-   "id": "sec-039-46-other-problems",
-   "number": "4.6",
-   "title": "Other problems",
-   "level": 2,
-   "page_start": 81,
-   "page_end": 83,
-   "n_chars": 2122,
-   "n_words": 377,
-   "label_start": "453",
-   "label_end": "455"
-  },
-  {
-   "id": "sec-040-5-quandles",
-   "number": "5",
-   "title": "Quandles",
-   "level": 1,
-   "page_start": 83,
-   "page_end": 83,
-   "n_chars": 1757,
-   "n_words": 345,
-   "label_start": "455",
-   "label_end": "455"
-  },
-  {
-   "id": "sec-041-51-classi\ufb01cation-of-quandles",
-   "number": "5.1",
-   "title": "Classi\ufb01cation of quandles",
-   "level": 2,
-   "page_start": 83,
-   "page_end": 86,
-   "n_chars": 4978,
-   "n_words": 959,
-   "label_start": "455",
-   "label_end": "458"
-  },
-  {
-   "id": "sec-042-52-representations-of-knot-quandles",
-   "number": "5.2",
-   "title": "Representations of knot quandles",
-   "level": 2,
-   "page_start": 86,
-   "page_end": 87,
-   "n_chars": 3110,
-   "n_words": 536,
-   "label_start": "458",
-   "label_end": "459"
-  },
-  {
-   "id": "sec-043-53-cohomology-of-quandles",
-   "number": "5.3",
-   "title": "(Co)homology of quandles",
-   "level": 2,
-   "page_start": 87,
-   "page_end": 88,
-   "n_chars": 2404,
-   "n_words": 490,
-   "label_start": "459",
+   "page_end": 73,
+   "n_chars": 2474,
+   "n_words": 391,
+   "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-044-54-quandle-cocycle-invariant",
-   "number": "5.4",
-   "title": "Quandle cocycle invariant",
-   "level": 2,
-   "page_start": 88,
-   "page_end": 92,
-   "n_chars": 7953,
-   "n_words": 1592,
+   "id": "page-074",
+   "number": null,
+   "title": "Page 74",
+   "level": 1,
+   "page_start": 74,
+   "page_end": 74,
+   "n_chars": 2020,
+   "n_words": 344,
    "label_start": null,
-   "label_end": "464"
+   "label_end": null
   },
   {
-   "id": "sec-045-55-quantum-quandles",
-   "number": "5.5",
-   "title": "Quantum quandles",
-   "level": 2,
+   "id": "page-075",
+   "number": null,
+   "title": "Page 75",
+   "level": 1,
+   "page_start": 75,
+   "page_end": 75,
+   "n_chars": 1736,
+   "n_words": 297,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-076",
+   "number": null,
+   "title": "Page 76",
+   "level": 1,
+   "page_start": 76,
+   "page_end": 76,
+   "n_chars": 1729,
+   "n_words": 306,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-077",
+   "number": null,
+   "title": "Page 77",
+   "level": 1,
+   "page_start": 77,
+   "page_end": 77,
+   "n_chars": 2111,
+   "n_words": 371,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-078",
+   "number": null,
+   "title": "Page 78",
+   "level": 1,
+   "page_start": 78,
+   "page_end": 78,
+   "n_chars": 1681,
+   "n_words": 318,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-079",
+   "number": null,
+   "title": "Page 79",
+   "level": 1,
+   "page_start": 79,
+   "page_end": 79,
+   "n_chars": 2097,
+   "n_words": 342,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-080",
+   "number": null,
+   "title": "Page 80",
+   "level": 1,
+   "page_start": 80,
+   "page_end": 80,
+   "n_chars": 2141,
+   "n_words": 393,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-081",
+   "number": null,
+   "title": "Page 81",
+   "level": 1,
+   "page_start": 81,
+   "page_end": 81,
+   "n_chars": 1578,
+   "n_words": 284,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-082",
+   "number": null,
+   "title": "Page 82",
+   "level": 1,
+   "page_start": 82,
+   "page_end": 82,
+   "n_chars": 1538,
+   "n_words": 260,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-083",
+   "number": null,
+   "title": "Page 83",
+   "level": 1,
+   "page_start": 83,
+   "page_end": 83,
+   "n_chars": 2358,
+   "n_words": 426,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-084",
+   "number": null,
+   "title": "Page 84",
+   "level": 1,
+   "page_start": 84,
+   "page_end": 84,
+   "n_chars": 1584,
+   "n_words": 308,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-085",
+   "number": null,
+   "title": "Page 85",
+   "level": 1,
+   "page_start": 85,
+   "page_end": 85,
+   "n_chars": 2674,
+   "n_words": 497,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-086",
+   "number": null,
+   "title": "Page 86",
+   "level": 1,
+   "page_start": 86,
+   "page_end": 86,
+   "n_chars": 2391,
+   "n_words": 409,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-087",
+   "number": null,
+   "title": "Page 87",
+   "level": 1,
+   "page_start": 87,
+   "page_end": 87,
+   "n_chars": 2123,
+   "n_words": 391,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-088",
+   "number": null,
+   "title": "Page 88",
+   "level": 1,
+   "page_start": 88,
+   "page_end": 88,
+   "n_chars": 1555,
+   "n_words": 292,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-089",
+   "number": null,
+   "title": "Page 89",
+   "level": 1,
+   "page_start": 89,
+   "page_end": 89,
+   "n_chars": 2001,
+   "n_words": 380,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-090",
+   "number": null,
+   "title": "Page 90",
+   "level": 1,
+   "page_start": 90,
+   "page_end": 90,
+   "n_chars": 1838,
+   "n_words": 358,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-091",
+   "number": null,
+   "title": "Page 91",
+   "level": 1,
+   "page_start": 91,
+   "page_end": 91,
+   "n_chars": 2411,
+   "n_words": 468,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-092",
+   "number": null,
+   "title": "Page 92",
+   "level": 1,
    "page_start": 92,
    "page_end": 92,
-   "n_chars": 292,
-   "n_words": 51,
-   "label_start": "464",
-   "label_end": "464"
+   "n_chars": 1884,
+   "n_words": 358,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-046-56-rack-cohomology",
-   "number": "5.6",
-   "title": "Rack (co)homology",
-   "level": 2,
-   "page_start": 92,
-   "page_end": 94,
-   "n_chars": 1813,
-   "n_words": 308,
-   "label_start": "464",
-   "label_end": "466"
+   "id": "page-093",
+   "number": null,
+   "title": "Page 93",
+   "level": 1,
+   "page_start": 93,
+   "page_end": 93,
+   "n_chars": 1591,
+   "n_words": 265,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-047-6-braid-group-representations",
-   "number": "6",
-   "title": "Braid group representations",
+   "id": "page-094",
+   "number": null,
+   "title": "Page 94",
    "level": 1,
    "page_start": 94,
    "page_end": 94,
-   "n_chars": 171,
-   "n_words": 46,
-   "label_start": "466",
-   "label_end": "466"
+   "n_chars": 1525,
+   "n_words": 277,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-048-61-the-temperley-lieb-algebra",
-   "number": "6.1",
-   "title": "The Temperley-Lieb algebra",
-   "level": 2,
-   "page_start": 94,
-   "page_end": 95,
-   "n_chars": 2153,
-   "n_words": 417,
-   "label_start": "466",
-   "label_end": "467"
-  },
-  {
-   "id": "sec-049-62-the-burau-representation",
-   "number": "6.2",
-   "title": "The Burau representation",
-   "level": 2,
+   "id": "page-095",
+   "number": null,
+   "title": "Page 95",
+   "level": 1,
    "page_start": 95,
-   "page_end": 96,
-   "n_chars": 2667,
-   "n_words": 512,
-   "label_start": "467",
-   "label_end": "468"
+   "page_end": 95,
+   "n_chars": 1901,
+   "n_words": 352,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-050-63-the-hecke-and-bmw-algebras",
-   "number": "6.3",
-   "title": "The Hecke and BMW algebras",
-   "level": 2,
+   "id": "page-096",
+   "number": null,
+   "title": "Page 96",
+   "level": 1,
    "page_start": 96,
-   "page_end": 97,
-   "n_chars": 1853,
-   "n_words": 321,
-   "label_start": "468",
-   "label_end": "469"
+   "page_end": 96,
+   "n_chars": 1922,
+   "n_words": 339,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-051-64-other-problems",
-   "number": "6.4",
-   "title": "Other problems",
-   "level": 2,
+   "id": "page-097",
+   "number": null,
+   "title": "Page 97",
+   "level": 1,
    "page_start": 97,
-   "page_end": 99,
-   "n_chars": 923,
-   "n_words": 154,
-   "label_start": "469",
-   "label_end": "471"
+   "page_end": 97,
+   "n_chars": 1706,
+   "n_words": 271,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-052-7-quantum-and-perturbative-invariants-of-3-manif",
-   "number": "7",
-   "title": "Quantum and perturbative invariants of 3-manifolds",
+   "id": "page-098",
+   "number": null,
+   "title": "Page 98",
+   "level": 1,
+   "page_start": 98,
+   "page_end": 98,
+   "n_chars": 767,
+   "n_words": 130,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-099",
+   "number": null,
+   "title": "Page 99",
    "level": 1,
    "page_start": 99,
    "page_end": 99,
-   "n_chars": 9,
-   "n_words": 2,
-   "label_start": "471",
-   "label_end": "471"
+   "n_chars": 1765,
+   "n_words": 323,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-053-71-witten-reshetikhin-turaev-invariants-and-quan",
-   "number": "7.1",
-   "title": "Witten-Reshetikhin-Turaev invariants and quantum invariants",
-   "level": 2,
-   "page_start": 99,
-   "page_end": 102,
-   "n_chars": 6469,
-   "n_words": 1189,
-   "label_start": "471",
-   "label_end": "474"
+   "id": "page-100",
+   "number": null,
+   "title": "Page 100",
+   "level": 1,
+   "page_start": 100,
+   "page_end": 100,
+   "n_chars": 1826,
+   "n_words": 338,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-054-72-the-asymptotic-expansion-conjecture",
-   "number": "7.2",
-   "title": "The asymptotic expansion conjecture",
-   "level": 2,
+   "id": "page-101",
+   "number": null,
+   "title": "Page 101",
+   "level": 1,
+   "page_start": 101,
+   "page_end": 101,
+   "n_chars": 2350,
+   "n_words": 394,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-102",
+   "number": null,
+   "title": "Page 102",
+   "level": 1,
    "page_start": 102,
-   "page_end": 109,
-   "n_chars": 15938,
-   "n_words": 2888,
-   "label_start": "474",
-   "label_end": "481"
+   "page_end": 102,
+   "n_chars": 2303,
+   "n_words": 356,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-055-73-the-volume-conjecture",
-   "number": "7.3",
-   "title": "The volume conjecture",
-   "level": 2,
+   "id": "page-103",
+   "number": null,
+   "title": "Page 103",
+   "level": 1,
+   "page_start": 103,
+   "page_end": 103,
+   "n_chars": 2415,
+   "n_words": 416,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-104",
+   "number": null,
+   "title": "Page 104",
+   "level": 1,
+   "page_start": 104,
+   "page_end": 104,
+   "n_chars": 2492,
+   "n_words": 440,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-105",
+   "number": null,
+   "title": "Page 105",
+   "level": 1,
+   "page_start": 105,
+   "page_end": 105,
+   "n_chars": 2281,
+   "n_words": 373,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-106",
+   "number": null,
+   "title": "Page 106",
+   "level": 1,
+   "page_start": 106,
+   "page_end": 106,
+   "n_chars": 1827,
+   "n_words": 333,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-107",
+   "number": null,
+   "title": "Page 107",
+   "level": 1,
+   "page_start": 107,
+   "page_end": 107,
+   "n_chars": 2274,
+   "n_words": 397,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-108",
+   "number": null,
+   "title": "Page 108",
+   "level": 1,
+   "page_start": 108,
+   "page_end": 108,
+   "n_chars": 1718,
+   "n_words": 353,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-109",
+   "number": null,
+   "title": "Page 109",
+   "level": 1,
    "page_start": 109,
-   "page_end": 113,
-   "n_chars": 8188,
-   "n_words": 1367,
-   "label_start": "481",
-   "label_end": "485"
+   "page_end": 109,
+   "n_chars": 2067,
+   "n_words": 361,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-056-74-quantum-hyperbolic-invariants-of-3-manifolds",
-   "number": "7.4",
-   "title": "Quantum hyperbolic invariants of 3-manifolds",
-   "level": 2,
+   "id": "page-110",
+   "number": null,
+   "title": "Page 110",
+   "level": 1,
+   "page_start": 110,
+   "page_end": 110,
+   "n_chars": 2267,
+   "n_words": 364,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-111",
+   "number": null,
+   "title": "Page 111",
+   "level": 1,
+   "page_start": 111,
+   "page_end": 111,
+   "n_chars": 2380,
+   "n_words": 386,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-112",
+   "number": null,
+   "title": "Page 112",
+   "level": 1,
+   "page_start": 112,
+   "page_end": 112,
+   "n_chars": 2446,
+   "n_words": 411,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-113",
+   "number": null,
+   "title": "Page 113",
+   "level": 1,
    "page_start": 113,
-   "page_end": 116,
-   "n_chars": 9306,
-   "n_words": 1585,
-   "label_start": "485",
-   "label_end": "488"
+   "page_end": 113,
+   "n_chars": 2463,
+   "n_words": 413,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-057-75-perturbative-invariants",
-   "number": "7.5",
-   "title": "Perturbative invariants",
-   "level": 2,
+   "id": "page-114",
+   "number": null,
+   "title": "Page 114",
+   "level": 1,
+   "page_start": 114,
+   "page_end": 114,
+   "n_chars": 2396,
+   "n_words": 404,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-115",
+   "number": null,
+   "title": "Page 115",
+   "level": 1,
+   "page_start": 115,
+   "page_end": 115,
+   "n_chars": 2513,
+   "n_words": 395,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-116",
+   "number": null,
+   "title": "Page 116",
+   "level": 1,
    "page_start": 116,
-   "page_end": 121,
-   "n_chars": 7918,
-   "n_words": 1516,
-   "label_start": "488",
-   "label_end": "493"
+   "page_end": 116,
+   "n_chars": 2344,
+   "n_words": 381,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-058-8-topological-quantum-\ufb01eld-theory",
-   "number": "8",
-   "title": "Topological quantum \ufb01eld theory",
+   "id": "page-117",
+   "number": null,
+   "title": "Page 117",
+   "level": 1,
+   "page_start": 117,
+   "page_end": 117,
+   "n_chars": 1877,
+   "n_words": 315,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-118",
+   "number": null,
+   "title": "Page 118",
+   "level": 1,
+   "page_start": 118,
+   "page_end": 118,
+   "n_chars": 1819,
+   "n_words": 319,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-119",
+   "number": null,
+   "title": "Page 119",
+   "level": 1,
+   "page_start": 119,
+   "page_end": 119,
+   "n_chars": 2065,
+   "n_words": 408,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-120",
+   "number": null,
+   "title": "Page 120",
+   "level": 1,
+   "page_start": 120,
+   "page_end": 120,
+   "n_chars": 1512,
+   "n_words": 265,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-121",
+   "number": null,
+   "title": "Page 121",
    "level": 1,
    "page_start": 121,
-   "page_end": 122,
-   "n_chars": 2275,
-   "n_words": 418,
-   "label_start": "493",
-   "label_end": "494"
-  },
-  {
-   "id": "sec-059-81-classi\ufb01cation-and-characterization-of-tqfts",
-   "number": "8.1",
-   "title": "Classi\ufb01cation and characterization of TQFT\u2019s",
-   "level": 2,
-   "page_start": 122,
-   "page_end": 123,
-   "n_chars": 2809,
-   "n_words": 475,
-   "label_start": "494",
-   "label_end": "495"
-  },
-  {
-   "id": "sec-060-82-spin-tqfts",
-   "number": "8.2",
-   "title": "Spin TQFT\u2019s",
-   "level": 2,
-   "page_start": 123,
-   "page_end": 124,
-   "n_chars": 1322,
-   "n_words": 243,
-   "label_start": "495",
-   "label_end": "496"
-  },
-  {
-   "id": "sec-061-83-homotopy-qfts",
-   "number": "8.3",
-   "title": "Homotopy QFT\u2019s",
-   "level": 2,
-   "page_start": 124,
-   "page_end": 124,
-   "n_chars": 751,
-   "n_words": 146,
-   "label_start": "496",
-   "label_end": "496"
-  },
-  {
-   "id": "sec-062-84-geometric-construction-of-tqfts",
-   "number": "8.4",
-   "title": "Geometric construction of TQFT\u2019s",
-   "level": 2,
-   "page_start": 124,
-   "page_end": 126,
-   "n_chars": 3638,
-   "n_words": 668,
-   "label_start": "496",
-   "label_end": "498"
-  },
-  {
-   "id": "sec-063-85-half-projective-and-homological-tqfts",
-   "number": "8.5",
-   "title": "Half-projective and homological TQFT\u2019s",
-   "level": 2,
-   "page_start": 126,
-   "page_end": 134,
-   "n_chars": 18066,
-   "n_words": 3094,
-   "label_start": "498",
-   "label_end": "506"
-  },
-  {
-   "id": "sec-064-9-the-state-sum-invariants-of-3-manifolds-derive",
-   "number": "9",
-   "title": "The state-sum invariants of 3-manifolds derived from 6j-symbols",
-   "level": 1,
-   "page_start": 134,
-   "page_end": 134,
-   "n_chars": 427,
-   "n_words": 62,
-   "label_start": "506",
-   "label_end": "506"
-  },
-  {
-   "id": "sec-065-91-monoidal-categories-6j-symbols-and-subfactors",
-   "number": "9.1",
-   "title": "Monoidal categories, 6j-symbols, and subfactors",
-   "level": 2,
-   "page_start": 134,
-   "page_end": 136,
-   "n_chars": 4826,
-   "n_words": 873,
-   "label_start": "506",
-   "label_end": "508"
-  },
-  {
-   "id": "sec-066-92-turaev-viro-invariants-and-the-state-sum-inva",
-   "number": "9.2",
-   "title": "Turaev-Viro invariants and the state-sum invariants derived from monoidal categories",
-   "level": 2,
-   "page_start": 136,
-   "page_end": 139,
-   "n_chars": 5215,
-   "n_words": 891,
-   "label_start": "508",
-   "label_end": "511"
-  },
-  {
-   "id": "sec-067-93-the-state-sum-invariants-derived-from-ribbon",
-   "number": "9.3",
-   "title": "The state-sum invariants derived from ribbon categories",
-   "level": 2,
-   "page_start": 139,
-   "page_end": 140,
-   "n_chars": 3800,
-   "n_words": 626,
-   "label_start": "511",
-   "label_end": "512"
-  },
-  {
-   "id": "sec-068-94-turaev-viro-ocneanu-invariants",
-   "number": "9.4",
-   "title": "Turaev-Viro-Ocneanu invariants",
-   "level": 2,
-   "page_start": 140,
-   "page_end": 142,
-   "n_chars": 2964,
-   "n_words": 452,
-   "label_start": "512",
-   "label_end": "514"
-  },
-  {
-   "id": "sec-069-10-casson-invariant-and-\ufb01nite-type-invariants-of",
-   "number": "10",
-   "title": "Casson invariant and \ufb01nite type invariants of 3-manifolds",
-   "level": 1,
-   "page_start": 142,
-   "page_end": 142,
-   "n_chars": 14,
-   "n_words": 2,
-   "label_start": "514",
-   "label_end": "514"
-  },
-  {
-   "id": "sec-070-101-casson-and-rokhlin-invariants",
-   "number": "10.1",
-   "title": "Casson and Rokhlin invariants",
-   "level": 2,
-   "page_start": 142,
-   "page_end": 145,
-   "n_chars": 6925,
-   "n_words": 1228,
-   "label_start": "514",
-   "label_end": "517"
-  },
-  {
-   "id": "sec-071-102-finite-type-invariants",
-   "number": "10.2",
-   "title": "Finite type invariants",
-   "level": 2,
-   "page_start": 145,
-   "page_end": 146,
-   "n_chars": 1822,
-   "n_words": 342,
-   "label_start": "517",
-   "label_end": "518"
-  },
-  {
-   "id": "sec-072-1021-torsion-and-\ufb01nite-type-invariants",
-   "number": "10.2.1",
-   "title": "Torsion and \ufb01nite type invariants",
-   "level": 3,
-   "page_start": 146,
-   "page_end": 146,
-   "n_chars": 223,
-   "n_words": 41,
-   "label_start": "518",
-   "label_end": "518"
-  },
-  {
-   "id": "sec-073-1022-do-\ufb01nite-type-invariants-distinguish-homolo",
-   "number": "10.2.2",
-   "title": "Do \ufb01nite type invariants distinguish homology 3-spheres?",
-   "level": 3,
-   "page_start": 146,
-   "page_end": 146,
-   "n_chars": 109,
-   "n_words": 13,
-   "label_start": "518",
-   "label_end": "518"
-  },
-  {
-   "id": "sec-074-1023-dimensions-of-spaces-of-\ufb01nite-type-invarian",
-   "number": "10.2.3",
-   "title": "Dimensions of spaces of \ufb01nite type invariants",
-   "level": 3,
-   "page_start": 146,
-   "page_end": 147,
-   "n_chars": 1771,
-   "n_words": 358,
-   "label_start": "518",
+   "page_end": 121,
+   "n_chars": 2346,
+   "n_words": 420,
+   "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-075-1024-vogels-algebra",
-   "number": "10.2.4",
-   "title": "Vogel\u2019s algebra",
-   "level": 3,
-   "page_start": 147,
-   "page_end": 150,
-   "n_chars": 3038,
-   "n_words": 579,
+   "id": "page-122",
+   "number": null,
+   "title": "Page 122",
+   "level": 1,
+   "page_start": 122,
+   "page_end": 122,
+   "n_chars": 2213,
+   "n_words": 353,
    "label_start": null,
-   "label_end": "522"
+   "label_end": null
   },
   {
-   "id": "sec-076-1025-other-problems",
-   "number": "10.2.5",
-   "title": "Other problems",
-   "level": 3,
+   "id": "page-123",
+   "number": null,
+   "title": "Page 123",
+   "level": 1,
+   "page_start": 123,
+   "page_end": 123,
+   "n_chars": 1733,
+   "n_words": 321,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-124",
+   "number": null,
+   "title": "Page 124",
+   "level": 1,
+   "page_start": 124,
+   "page_end": 124,
+   "n_chars": 1814,
+   "n_words": 316,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-125",
+   "number": null,
+   "title": "Page 125",
+   "level": 1,
+   "page_start": 125,
+   "page_end": 125,
+   "n_chars": 2263,
+   "n_words": 397,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-126",
+   "number": null,
+   "title": "Page 126",
+   "level": 1,
+   "page_start": 126,
+   "page_end": 126,
+   "n_chars": 2228,
+   "n_words": 389,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-127",
+   "number": null,
+   "title": "Page 127",
+   "level": 1,
+   "page_start": 127,
+   "page_end": 127,
+   "n_chars": 2523,
+   "n_words": 441,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-128",
+   "number": null,
+   "title": "Page 128",
+   "level": 1,
+   "page_start": 128,
+   "page_end": 128,
+   "n_chars": 2522,
+   "n_words": 435,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-129",
+   "number": null,
+   "title": "Page 129",
+   "level": 1,
+   "page_start": 129,
+   "page_end": 129,
+   "n_chars": 2460,
+   "n_words": 417,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-130",
+   "number": null,
+   "title": "Page 130",
+   "level": 1,
+   "page_start": 130,
+   "page_end": 130,
+   "n_chars": 2431,
+   "n_words": 413,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-131",
+   "number": null,
+   "title": "Page 131",
+   "level": 1,
+   "page_start": 131,
+   "page_end": 131,
+   "n_chars": 2505,
+   "n_words": 393,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-132",
+   "number": null,
+   "title": "Page 132",
+   "level": 1,
+   "page_start": 132,
+   "page_end": 132,
+   "n_chars": 2495,
+   "n_words": 399,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-133",
+   "number": null,
+   "title": "Page 133",
+   "level": 1,
+   "page_start": 133,
+   "page_end": 133,
+   "n_chars": 1587,
+   "n_words": 258,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-134",
+   "number": null,
+   "title": "Page 134",
+   "level": 1,
+   "page_start": 134,
+   "page_end": 134,
+   "n_chars": 2251,
+   "n_words": 405,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-135",
+   "number": null,
+   "title": "Page 135",
+   "level": 1,
+   "page_start": 135,
+   "page_end": 135,
+   "n_chars": 2180,
+   "n_words": 373,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-136",
+   "number": null,
+   "title": "Page 136",
+   "level": 1,
+   "page_start": 136,
+   "page_end": 136,
+   "n_chars": 1454,
+   "n_words": 229,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-137",
+   "number": null,
+   "title": "Page 137",
+   "level": 1,
+   "page_start": 137,
+   "page_end": 137,
+   "n_chars": 2191,
+   "n_words": 384,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-138",
+   "number": null,
+   "title": "Page 138",
+   "level": 1,
+   "page_start": 138,
+   "page_end": 138,
+   "n_chars": 2508,
+   "n_words": 405,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-139",
+   "number": null,
+   "title": "Page 139",
+   "level": 1,
+   "page_start": 139,
+   "page_end": 139,
+   "n_chars": 2152,
+   "n_words": 346,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-140",
+   "number": null,
+   "title": "Page 140",
+   "level": 1,
+   "page_start": 140,
+   "page_end": 140,
+   "n_chars": 2231,
+   "n_words": 357,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-141",
+   "number": null,
+   "title": "Page 141",
+   "level": 1,
+   "page_start": 141,
+   "page_end": 141,
+   "n_chars": 2529,
+   "n_words": 377,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-142",
+   "number": null,
+   "title": "Page 142",
+   "level": 1,
+   "page_start": 142,
+   "page_end": 142,
+   "n_chars": 2051,
+   "n_words": 332,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-143",
+   "number": null,
+   "title": "Page 143",
+   "level": 1,
+   "page_start": 143,
+   "page_end": 143,
+   "n_chars": 1816,
+   "n_words": 322,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-144",
+   "number": null,
+   "title": "Page 144",
+   "level": 1,
+   "page_start": 144,
+   "page_end": 144,
+   "n_chars": 2091,
+   "n_words": 359,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-145",
+   "number": null,
+   "title": "Page 145",
+   "level": 1,
+   "page_start": 145,
+   "page_end": 145,
+   "n_chars": 2388,
+   "n_words": 414,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-146",
+   "number": null,
+   "title": "Page 146",
+   "level": 1,
+   "page_start": 146,
+   "page_end": 146,
+   "n_chars": 1483,
+   "n_words": 234,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-147",
+   "number": null,
+   "title": "Page 147",
+   "level": 1,
+   "page_start": 147,
+   "page_end": 147,
+   "n_chars": 1515,
+   "n_words": 285,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-148",
+   "number": null,
+   "title": "Page 148",
+   "level": 1,
+   "page_start": 148,
+   "page_end": 148,
+   "n_chars": 1267,
+   "n_words": 265,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-149",
+   "number": null,
+   "title": "Page 149",
+   "level": 1,
+   "page_start": 149,
+   "page_end": 149,
+   "n_chars": 1419,
+   "n_words": 269,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-150",
+   "number": null,
+   "title": "Page 150",
+   "level": 1,
    "page_start": 150,
-   "page_end": 151,
-   "n_chars": 2097,
-   "n_words": 330,
-   "label_start": "522",
-   "label_end": "523"
+   "page_end": 150,
+   "n_chars": 2196,
+   "n_words": 351,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-077-103-goussarov-habiro-theory",
-   "number": "10.3",
-   "title": "Goussarov-Habiro theory",
-   "level": 2,
+   "id": "page-151",
+   "number": null,
+   "title": "Page 151",
+   "level": 1,
    "page_start": 151,
    "page_end": 151,
-   "n_chars": 6,
-   "n_words": 1,
-   "label_start": "523",
-   "label_end": "523"
+   "n_chars": 1966,
+   "n_words": 314,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-078-1031-goussarov-habiro-theory-for-3-manifolds",
-   "number": "10.3.1",
-   "title": "Goussarov-Habiro theory for 3-manifolds",
-   "level": 3,
-   "page_start": 151,
-   "page_end": 153,
-   "n_chars": 4421,
-   "n_words": 761,
-   "label_start": "523",
-   "label_end": "525"
+   "id": "page-152",
+   "number": null,
+   "title": "Page 152",
+   "level": 1,
+   "page_start": 152,
+   "page_end": 152,
+   "n_chars": 1980,
+   "n_words": 351,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-079-1032-goussarov-habiro-theory-for-spin-and-spinc",
-   "number": "10.3.2",
-   "title": "Goussarov-Habiro theory for spin and spinc 3-manifolds",
-   "level": 3,
+   "id": "page-153",
+   "number": null,
+   "title": "Page 153",
+   "level": 1,
    "page_start": 153,
-   "page_end": 155,
-   "n_chars": 3638,
-   "n_words": 636,
-   "label_start": "525",
-   "label_end": "527"
+   "page_end": 153,
+   "n_chars": 2348,
+   "n_words": 384,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-080-11-the-lmo-invariant",
-   "number": "11",
-   "title": "The LMO invariant",
+   "id": "page-154",
+   "number": null,
+   "title": "Page 154",
+   "level": 1,
+   "page_start": 154,
+   "page_end": 154,
+   "n_chars": 2030,
+   "n_words": 349,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-155",
+   "number": null,
+   "title": "Page 155",
    "level": 1,
    "page_start": 155,
    "page_end": 155,
-   "n_chars": 371,
-   "n_words": 56,
-   "label_start": "527",
-   "label_end": "527"
+   "n_chars": 2013,
+   "n_words": 342,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-081-111-calculation-of-the-lmo-invariant",
-   "number": "11.1",
-   "title": "Calculation of the LMO invariant",
-   "level": 2,
-   "page_start": 155,
-   "page_end": 155,
-   "n_chars": 1325,
-   "n_words": 241,
-   "label_start": "527",
-   "label_end": "527"
-  },
-  {
-   "id": "sec-082-112-does-the-lmo-invariant-distinguish-integral",
-   "number": "11.2",
-   "title": "Does the LMO invariant distinguish integral homology 3-spheres?",
-   "level": 2,
-   "page_start": 155,
-   "page_end": 156,
-   "n_chars": 526,
-   "n_words": 78,
-   "label_start": "527",
-   "label_end": "528"
-  },
-  {
-   "id": "sec-083-113-characterization-of-the-image-of-the-lmo-inv",
-   "number": "11.3",
-   "title": "Characterization of the image of the LMO invariant",
-   "level": 2,
+   "id": "page-156",
+   "number": null,
+   "title": "Page 156",
+   "level": 1,
    "page_start": 156,
    "page_end": 156,
-   "n_chars": 564,
-   "n_words": 87,
-   "label_start": "528",
-   "label_end": "528"
+   "n_chars": 1991,
+   "n_words": 325,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-084-114-variations-of-the-lmo-invariant",
-   "number": "11.4",
-   "title": "Variations of the LMO invariant",
-   "level": 2,
-   "page_start": 156,
-   "page_end": 156,
-   "n_chars": 329,
-   "n_words": 54,
-   "label_start": "528",
-   "label_end": "528"
-  },
-  {
-   "id": "sec-085-115-re\ufb01nements-of-the-lmo-invariant",
-   "number": "11.5",
-   "title": "Re\ufb01nements of the LMO invariant",
-   "level": 2,
-   "page_start": 156,
-   "page_end": 157,
-   "n_chars": 2382,
-   "n_words": 449,
-   "label_start": "528",
-   "label_end": "529"
-  },
-  {
-   "id": "sec-086-116-other-problems",
-   "number": "11.6",
-   "title": "Other problems",
-   "level": 2,
+   "id": "page-157",
+   "number": null,
+   "title": "Page 157",
+   "level": 1,
    "page_start": 157,
-   "page_end": 158,
-   "n_chars": 456,
-   "n_words": 69,
-   "label_start": "529",
-   "label_end": "530"
+   "page_end": 157,
+   "n_chars": 2194,
+   "n_words": 369,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-087-121-pseudo-legendrian-knot-invariants",
-   "number": "12.1",
-   "title": "(Pseudo) Legendrian knot invariants",
-   "level": 2,
+   "id": "page-158",
+   "number": null,
+   "title": "Page 158",
+   "level": 1,
    "page_start": 158,
-   "page_end": 159,
-   "n_chars": 2999,
-   "n_words": 524,
-   "label_start": "530",
-   "label_end": "531"
+   "page_end": 158,
+   "n_chars": 2208,
+   "n_words": 387,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-088-122-knots-and-\ufb01nite-groups",
-   "number": "12.2",
-   "title": "Knots and \ufb01nite groups",
-   "level": 2,
+   "id": "page-159",
+   "number": null,
+   "title": "Page 159",
+   "level": 1,
    "page_start": 159,
-   "page_end": 160,
-   "n_chars": 1540,
-   "n_words": 255,
-   "label_start": "531",
-   "label_end": "532"
+   "page_end": 159,
+   "n_chars": 2071,
+   "n_words": 334,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-089-123-the-numbers-of-3--5-colorings-and-some-local",
-   "number": "12.3",
-   "title": "The numbers of 3-, 5-colorings and some local moves",
-   "level": 2,
+   "id": "page-160",
+   "number": null,
+   "title": "Page 160",
+   "level": 1,
    "page_start": 160,
-   "page_end": 161,
-   "n_chars": 2437,
-   "n_words": 413,
-   "label_start": "532",
-   "label_end": "533"
+   "page_end": 160,
+   "n_chars": 2285,
+   "n_words": 385,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-090-124-knotted-trivalent-graphs",
-   "number": "12.4",
-   "title": "Knotted trivalent graphs",
-   "level": 2,
+   "id": "page-161",
+   "number": null,
+   "title": "Page 161",
+   "level": 1,
    "page_start": 161,
-   "page_end": 165,
-   "n_chars": 7384,
-   "n_words": 1212,
-   "label_start": "533",
-   "label_end": "537"
+   "page_end": 161,
+   "n_chars": 1773,
+   "n_words": 283,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-091-125-quantum-groups",
-   "number": "12.5",
-   "title": "Quantum groups",
-   "level": 2,
+   "id": "page-162",
+   "number": null,
+   "title": "Page 162",
+   "level": 1,
+   "page_start": 162,
+   "page_end": 162,
+   "n_chars": 1213,
+   "n_words": 209,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-163",
+   "number": null,
+   "title": "Page 163",
+   "level": 1,
+   "page_start": 163,
+   "page_end": 163,
+   "n_chars": 2445,
+   "n_words": 400,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-164",
+   "number": null,
+   "title": "Page 164",
+   "level": 1,
+   "page_start": 164,
+   "page_end": 164,
+   "n_chars": 1926,
+   "n_words": 306,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-165",
+   "number": null,
+   "title": "Page 165",
+   "level": 1,
    "page_start": 165,
-   "page_end": 166,
-   "n_chars": 1821,
-   "n_words": 284,
-   "label_start": "537",
-   "label_end": "538"
+   "page_end": 165,
+   "n_chars": 2004,
+   "n_words": 311,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-092-126-other-problems",
-   "number": "12.6",
-   "title": "Other problems",
-   "level": 2,
+   "id": "page-166",
+   "number": null,
+   "title": "Page 166",
+   "level": 1,
    "page_start": 166,
+   "page_end": 166,
+   "n_chars": 1691,
+   "n_words": 273,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-167",
+   "number": null,
+   "title": "Page 167",
+   "level": 1,
+   "page_start": 167,
+   "page_end": 167,
+   "n_chars": 2729,
+   "n_words": 446,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-168",
+   "number": null,
+   "title": "Page 168",
+   "level": 1,
+   "page_start": 168,
+   "page_end": 168,
+   "n_chars": 2542,
+   "n_words": 426,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-169",
+   "number": null,
+   "title": "Page 169",
+   "level": 1,
+   "page_start": 169,
+   "page_end": 169,
+   "n_chars": 2276,
+   "n_words": 404,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-170",
+   "number": null,
+   "title": "Page 170",
+   "level": 1,
+   "page_start": 170,
+   "page_end": 170,
+   "n_chars": 982,
+   "n_words": 192,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-171",
+   "number": null,
+   "title": "Page 171",
+   "level": 1,
+   "page_start": 171,
+   "page_end": 171,
+   "n_chars": 2210,
+   "n_words": 326,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-172",
+   "number": null,
+   "title": "Page 172",
+   "level": 1,
+   "page_start": 172,
+   "page_end": 172,
+   "n_chars": 2250,
+   "n_words": 311,
+   "label_start": "544",
+   "label_end": "544"
+  },
+  {
+   "id": "page-173",
+   "number": null,
+   "title": "Page 173",
+   "level": 1,
+   "page_start": 173,
+   "page_end": 173,
+   "n_chars": 2511,
+   "n_words": 357,
+   "label_start": "545",
+   "label_end": "545"
+  },
+  {
+   "id": "page-174",
+   "number": null,
+   "title": "Page 174",
+   "level": 1,
+   "page_start": 174,
+   "page_end": 174,
+   "n_chars": 2472,
+   "n_words": 377,
+   "label_start": "546",
+   "label_end": "546"
+  },
+  {
+   "id": "page-175",
+   "number": null,
+   "title": "Page 175",
+   "level": 1,
+   "page_start": 175,
+   "page_end": 175,
+   "n_chars": 2612,
+   "n_words": 405,
+   "label_start": "547",
+   "label_end": "547"
+  },
+  {
+   "id": "page-176",
+   "number": null,
+   "title": "Page 176",
+   "level": 1,
+   "page_start": 176,
+   "page_end": 176,
+   "n_chars": 2350,
+   "n_words": 346,
+   "label_start": "548",
+   "label_end": "548"
+  },
+  {
+   "id": "page-177",
+   "number": null,
+   "title": "Page 177",
+   "level": 1,
+   "page_start": 177,
+   "page_end": 177,
+   "n_chars": 2431,
+   "n_words": 354,
+   "label_start": "549",
+   "label_end": "549"
+  },
+  {
+   "id": "page-178",
+   "number": null,
+   "title": "Page 178",
+   "level": 1,
+   "page_start": 178,
+   "page_end": 178,
+   "n_chars": 2506,
+   "n_words": 361,
+   "label_start": "550",
+   "label_end": "550"
+  },
+  {
+   "id": "page-179",
+   "number": null,
+   "title": "Page 179",
+   "level": 1,
+   "page_start": 179,
+   "page_end": 179,
+   "n_chars": 2551,
+   "n_words": 375,
+   "label_start": "551",
+   "label_end": "551"
+  },
+  {
+   "id": "page-180",
+   "number": null,
+   "title": "Page 180",
+   "level": 1,
+   "page_start": 180,
+   "page_end": 180,
+   "n_chars": 2384,
+   "n_words": 366,
+   "label_start": "552",
+   "label_end": "552"
+  },
+  {
+   "id": "page-181",
+   "number": null,
+   "title": "Page 181",
+   "level": 1,
+   "page_start": 181,
+   "page_end": 181,
+   "n_chars": 2453,
+   "n_words": 354,
+   "label_start": "553",
+   "label_end": "553"
+  },
+  {
+   "id": "page-182",
+   "number": null,
+   "title": "Page 182",
+   "level": 1,
+   "page_start": 182,
+   "page_end": 182,
+   "n_chars": 2501,
+   "n_words": 363,
+   "label_start": "554",
+   "label_end": "554"
+  },
+  {
+   "id": "page-183",
+   "number": null,
+   "title": "Page 183",
+   "level": 1,
+   "page_start": 183,
+   "page_end": 183,
+   "n_chars": 2478,
+   "n_words": 350,
+   "label_start": "555",
+   "label_end": "555"
+  },
+  {
+   "id": "page-184",
+   "number": null,
+   "title": "Page 184",
+   "level": 1,
+   "page_start": 184,
+   "page_end": 184,
+   "n_chars": 2403,
+   "n_words": 337,
+   "label_start": "556",
+   "label_end": "556"
+  },
+  {
+   "id": "page-185",
+   "number": null,
+   "title": "Page 185",
+   "level": 1,
+   "page_start": 185,
+   "page_end": 185,
+   "n_chars": 2220,
+   "n_words": 340,
+   "label_start": "557",
+   "label_end": "557"
+  },
+  {
+   "id": "page-186",
+   "number": null,
+   "title": "Page 186",
+   "level": 1,
+   "page_start": 186,
+   "page_end": 186,
+   "n_chars": 2496,
+   "n_words": 364,
+   "label_start": "558",
+   "label_end": "558"
+  },
+  {
+   "id": "page-187",
+   "number": null,
+   "title": "Page 187",
+   "level": 1,
+   "page_start": 187,
+   "page_end": 187,
+   "n_chars": 2629,
+   "n_words": 379,
+   "label_start": "559",
+   "label_end": "559"
+  },
+  {
+   "id": "page-188",
+   "number": null,
+   "title": "Page 188",
+   "level": 1,
+   "page_start": 188,
+   "page_end": 188,
+   "n_chars": 2561,
+   "n_words": 369,
+   "label_start": "560",
+   "label_end": "560"
+  },
+  {
+   "id": "page-189",
+   "number": null,
+   "title": "Page 189",
+   "level": 1,
+   "page_start": 189,
+   "page_end": 189,
+   "n_chars": 2289,
+   "n_words": 338,
+   "label_start": "561",
+   "label_end": "561"
+  },
+  {
+   "id": "page-190",
+   "number": null,
+   "title": "Page 190",
+   "level": 1,
+   "page_start": 190,
+   "page_end": 190,
+   "n_chars": 2598,
+   "n_words": 379,
+   "label_start": "562",
+   "label_end": "562"
+  },
+  {
+   "id": "page-191",
+   "number": null,
+   "title": "Page 191",
+   "level": 1,
+   "page_start": 191,
+   "page_end": 191,
+   "n_chars": 2421,
+   "n_words": 332,
+   "label_start": "563",
+   "label_end": "563"
+  },
+  {
+   "id": "page-192",
+   "number": null,
+   "title": "Page 192",
+   "level": 1,
+   "page_start": 192,
+   "page_end": 192,
+   "n_chars": 2485,
+   "n_words": 361,
+   "label_start": "564",
+   "label_end": "564"
+  },
+  {
+   "id": "page-193",
+   "number": null,
+   "title": "Page 193",
+   "level": 1,
+   "page_start": 193,
+   "page_end": 193,
+   "n_chars": 2446,
+   "n_words": 336,
+   "label_start": "565",
+   "label_end": "565"
+  },
+  {
+   "id": "page-194",
+   "number": null,
+   "title": "Page 194",
+   "level": 1,
+   "page_start": 194,
+   "page_end": 194,
+   "n_chars": 2107,
+   "n_words": 315,
+   "label_start": "566",
+   "label_end": "566"
+  },
+  {
+   "id": "page-195",
+   "number": null,
+   "title": "Page 195",
+   "level": 1,
+   "page_start": 195,
    "page_end": 195,
-   "n_chars": 68040,
-   "n_words": 10524,
-   "label_start": "538",
+   "n_chars": 1907,
+   "n_words": 320,
+   "label_start": "567",
    "label_end": "567"
   },
   {
-   "id": "sec-093-index-of-contributors",
+   "id": "page-196",
    "number": null,
-   "title": "Index of contributors",
+   "title": "Page 196",
    "level": 1,
-   "page_start": 195,
+   "page_start": 196,
+   "page_end": 196,
+   "n_chars": 1931,
+   "n_words": 307,
+   "label_start": "568",
+   "label_end": "568"
+  },
+  {
+   "id": "page-197",
+   "number": null,
+   "title": "Page 197",
+   "level": 1,
+   "page_start": 197,
+   "page_end": 197,
+   "n_chars": 2131,
+   "n_words": 375,
+   "label_start": "569",
+   "label_end": "569"
+  },
+  {
+   "id": "page-198",
+   "number": null,
+   "title": "Page 198",
+   "level": 1,
+   "page_start": 198,
+   "page_end": 198,
+   "n_chars": 2068,
+   "n_words": 348,
+   "label_start": "570",
+   "label_end": "570"
+  },
+  {
+   "id": "page-199",
+   "number": null,
+   "title": "Page 199",
+   "level": 1,
+   "page_start": 199,
+   "page_end": 199,
+   "n_chars": 2063,
+   "n_words": 344,
+   "label_start": "571",
+   "label_end": "571"
+  },
+  {
+   "id": "page-200",
+   "number": null,
+   "title": "Page 200",
+   "level": 1,
+   "page_start": 200,
    "page_end": 200,
-   "n_chars": 11349,
-   "n_words": 1935,
-   "label_start": "567",
-   "label_end": null
+   "n_chars": 1465,
+   "n_words": 246,
+   "label_start": "572",
+   "label_end": "572"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 97,
-  "toc_inferred_entries": 97,
-  "toc_inferred_mean_confidence": 0.938,
-  "toc_inferred_empty_share": 0.043,
-  "toc_inferred_method": "contents",
-  "figure_entries": 29,
-  "figure_sequence_gaps": [
-   "figure 16"
-  ],
+  "toc_entries": 0,
+  "toc_inferred_entries": 102,
+  "toc_inferred_mean_confidence": 0.0,
+  "toc_inferred_empty_share": 0.059,
+  "toc_inferred_method": "regex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
   "page_label_conflicts": {
    "count": 0,
    "items": []
   },
-  "toc_alignment": {
-   "listed_not_found": {
-    "count": 1,
-    "items": [
-     "Bibliography"
-    ]
-   },
-   "found_not_listed": {
-    "count": 1,
-    "items": [
-     "2 (X) for each connected quandle X . More gener-"
-    ]
-   },
-   "page_mismatch": {
-    "count": 0,
-    "items": []
-   }
-  },
-  "sections": 95,
-  "chars_total": 399523
+  "sections": 200,
+  "chars_total": 400313,
+  "furniture_lines_stripped": 0
  }
 }

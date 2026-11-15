@@ -1,6 +1,6 @@
 ---
 doc_id: 1172-5
-doc_title: "OPTIMISTIC CALCULATIONS ABOUT $\mathrm{W}\mathrm{I}\mathrm{T}\mathrm{T}\mathrm{E}\mathrm{N}-\mathrm{R}\mathrm{E}\mathrm{s}\mathrm{H}\mathrm{E}\mathrm{T}\mathrm{I}\mathrm{K}\mathrm{"
+doc_title: "Optimistic calculations about the Witten-Reshetikhin-Turaev invariants of closed three-manifolds obtained from the figure-eight knot by integral Dehn surgeries"
 section_id: sec-002-4-dehn-surgery-along-the-figure-eight-knot
 section_title: "DEHN SURGERY ALONG THE FIGURE-EIGHT KNOT"
 section_number: 4
@@ -8,6 +8,7 @@ pages: 4-8
 source_pdf: 1172-5.pdf
 source_sha256: 21b7a0e13bd208fc
 toc_source: inferred
+doc_brief: "Optimistic calculations about the Witten-Reshetikhin-Turaev invariants of closed three-manifolds obtained from the figure-eight knot by integral Dehn surgeries — I calculate optimistically asymptotic"
 ---
 Put $k:=2,$
 $n_{1}:=n,$ $n_{2}:=m,$
@@ -43,7 +44,6 @@ Therefore (3.5) turns out to be
 $\{$
 $z^{p/2}(1-zw)=w-z$ ,
 $(1-Zw)(w-z)=zw$ ,
-73
 from which we have
 (4.2)
 $\{$
@@ -114,7 +114,6 @@ $V(\zeta_{2^{-1}},\omega 2)=V(\zeta_{2}, \omega_{2})$,
 $V(\overline{\zeta_{2}},\overline{\omega_{2}})1=\overline{V(\zeta 2,\omega 2)}$,
 with
 $V(\zeta_{1},\omega_{1})=13.76750570+0.1\cross 10^{-8_{\sqrt{-1}}}$
-74
 and
 $V(\zeta_{2},\omega_{2})=1.340917487+1.284485301\sqrt{-1}$
 by MAPLE V.
@@ -178,7 +177,6 @@ over a circle. For a detail see [4, p. 95] again. Both the volume and the Chern-
 Simons invariant vanish in this case and Observation 4.2 holds putting
 $(\zeta_{0},\omega 0)=$
 (0.381966011, 1).
-75
 FIGURE
 2.
 $\omega_{p}$ is indicated by a dot for $p=4n+2(n=$
@@ -206,7 +204,6 @@ Note that 1.$973920880=2\pi^{2}\cross 0.09999999995$ . I guess this is the sum o
 Simons invariants of the two pieces (with suitably chosen metrics), which one might
 regard as the Chern-Simons invariant of the toroidal manifold
 $M_{4}$ .
-76
 4.6.
 $\infty$-surgery of the ﬁgure-eight knot. Put
 $\zeta_{\infty}:=\exp(-\frac{2\pi\sqrt{-1}}{p})$ and

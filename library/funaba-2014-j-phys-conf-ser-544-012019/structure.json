@@ -7,8 +7,8 @@
   "bytes": 1168000,
   "pages": 13,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -22,201 +22,330 @@
   ],
   "abstract": null,
   "docinfo": {
-   "CreationDate": "D:20140915095617+01'00'",
+   "Producer": "pdfTeX-1.40.14; modified using iText® 5.5.13.5 ©2000-2026 iText Group NV (IOP Publishing Ltd; licensed version)",
    "Creator": "TeX",
-   "Producer": "pdfTeX-1.40.14; modified using iText\u00ae 5.5.13.5 \u00a92000-2026 iText Group NV (IOP Publishing Ltd; licensed version)"
+   "CreationDate": "D:20140915095617+01'00'"
+  },
+  "title_raw": "Conference Series",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Möbius invariant energy of tori of revolution",
+   "text": "Conference Series",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
- "toc": [
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "5 inferred entries, 60% of them starting on page(s) 2, 4 of 13 — a list found ON a page, not the document's structure",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (5 inferred entries, 60% of them starting on page(s) 2, 4 of 13 — a list found ON a page, not the document's structure): one section per page.",
+ "figures": [
   {
-   "level": 1,
-   "title": "Introduction and main result",
-   "page": 2,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Computation of the energy of a torus",
-   "page": 4,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Using symmetry, we have only to compute integrals over the following four regions",
-   "page": 5,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "I11\u2212 \u03c0 cos\u03b1",
-   "page": 8,
-   "source": "inferred",
-   "number": "16"
-  },
-  {
-   "level": 1,
-   "title": "I12\u2212 \u03c0 sin\u03b1",
-   "page": 8,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "I13 + \u03c0(R + cos\u03b1)",
-   "page": 8,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "I14\u2212 \u03c0 cos\u03b1",
-   "page": 8,
-   "source": "inferred",
-   "number": "16"
-  },
-  {
-   "level": 1,
-   "title": "I15\u2212 \u03c0 sin\u03b1",
-   "page": 8,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "Application as another motivation",
-   "page": 12,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 13,
-   "source": "inferred",
-   "number": null
+   "kind": "figure",
+   "number": "1",
+   "title": "Parts of the domains of integration of I1 (blue or light grey) and I4 (red or dark grey) near the point x",
+   "page": 6,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
   }
  ],
- "toc_source": "inferred",
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-front-matter",
+   "id": "page-001",
    "number": null,
-   "title": "Front matter",
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
-   "page_end": 2,
-   "n_chars": 978,
-   "n_words": 163
+   "page_end": 1,
+   "n_chars": 584,
+   "n_words": 105,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-000-1-introduction-and-main-result",
-   "number": "1",
-   "title": "Introduction and main result",
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
    "level": 1,
    "page_start": 2,
-   "page_end": 4,
-   "n_chars": 5942,
-   "n_words": 1101
+   "page_end": 2,
+   "n_chars": 2744,
+   "n_words": 478,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-001-2-computation-of-the-energy-of-a-torus",
-   "number": "2",
-   "title": "Computation of the energy of a torus",
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 3051,
+   "n_words": 577,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
    "level": 1,
    "page_start": 4,
-   "page_end": 5,
-   "n_chars": 2260,
-   "n_words": 511
+   "page_end": 4,
+   "n_chars": 2141,
+   "n_words": 509,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
-   "id": "sec-002-1-using-symmetry-we-have-only-to-compute-integra",
-   "number": "1",
-   "title": "Using symmetry, we have only to compute integrals over the following four regions",
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
    "level": 1,
    "page_start": 5,
-   "page_end": 8,
-   "n_chars": 3937,
-   "n_words": 937
+   "page_end": 5,
+   "n_chars": 1675,
+   "n_words": 422,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
-   "id": "sec-003-16-i11-\u03c0-cos\u03b1",
-   "number": "16",
-   "title": "I11\u2212 \u03c0 cos\u03b1",
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1192,
+   "n_words": 334,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1345,
+   "n_words": 399,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
    "level": 1,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 1485,
+   "n_words": 431,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
-   "id": "sec-004-8-i12-\u03c0-sin\u03b1",
-   "number": "8",
-   "title": "I12\u2212 \u03c0 sin\u03b1",
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
    "level": 1,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1252,
+   "n_words": 369,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
-   "id": "sec-005-8-i13-\u03c0r-cos\u03b1",
-   "number": "8",
-   "title": "I13 + \u03c0(R + cos\u03b1)",
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
    "level": 1,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1308,
+   "n_words": 404,
+   "label_start": "9",
+   "label_end": "9"
   },
   {
-   "id": "sec-006-16-i14-\u03c0-cos\u03b1",
-   "number": "16",
-   "title": "I14\u2212 \u03c0 cos\u03b1",
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
    "level": 1,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 1783,
+   "n_words": 498,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
-   "id": "sec-007-8-i15-\u03c0-sin\u03b1",
-   "number": "8",
-   "title": "I15\u2212 \u03c0 sin\u03b1",
-   "level": 1,
-   "page_start": 8,
-   "page_end": 12,
-   "n_chars": 5024,
-   "n_words": 1272
-  },
-  {
-   "id": "sec-008-3-application-as-another-motivation",
-   "number": "3",
-   "title": "Application as another motivation",
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
    "level": 1,
    "page_start": 12,
-   "page_end": 13,
-   "n_chars": 1976,
-   "n_words": 365
+   "page_end": 12,
+   "n_chars": 1866,
+   "n_words": 422,
+   "label_start": "11",
+   "label_end": "11"
   },
   {
-   "id": "sec-009-references",
+   "id": "page-013",
    "number": null,
-   "title": "References",
+   "title": "Page 13",
    "level": 1,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 1398,
-   "n_words": 225
+   "n_chars": 2016,
+   "n_words": 338,
+   "label_start": "12",
+   "label_end": "12"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 10,
-  "sections": 11,
-  "chars_total": 21515
+  "toc_entries": 0,
+  "toc_inferred_entries": 5,
+  "toc_inferred_mean_confidence": 0.73,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 13,
+  "chars_total": 22442,
+  "furniture_lines_stripped": 12
  }
 }

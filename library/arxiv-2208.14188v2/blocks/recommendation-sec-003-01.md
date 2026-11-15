@@ -1,0 +1,1 @@
+In this case, \eqref{eq:Sthij} should be generalised to \begin{equation} s_+[F](\tau) = \mf{S}_\theta s_-[F](\tau),\quad \mf{S}_\theta = \prod_{\arg\iota=\theta} \mf{S}_\iota. \end{equation} The order of the product of the local Stokes matrices is irrelevant due to the locality condition.

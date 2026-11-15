@@ -66,4 +66,3 @@ construction of a Drinfeld twist first performed by Drinfeld for the Drinfeld ca
 Drinfeld coboundary is closely related to the ribbon structure, and thus it is relevant for
 the ribbon preserving property of the KLF equivalence, similarly to the case of Drinfeld-
 Kohno theorem.
-10.

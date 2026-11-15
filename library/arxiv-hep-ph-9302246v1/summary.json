@@ -2,181 +2,61 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-hep-ph-9302246v1",
  "source_sha256": "2d352297255be8de",
- "brief": "We present a calculation of the coupling constants in the massive spin -1 ﬁeld chiral Lagrangian to chiral O(p3) in the context of the extended Nambu–Jona-Lasinio model described in Ref. [1].",
- "extended": "**arxiv-hep-ph-9302246v1**\n\n44 pp, 34 sections.\n\n**Abstract.** We present a calculation of the coupling constants in the massive spin -1 ﬁeld chiral Lagrangian to chiral O(p3) in the context of the extended Nambu–Jona-Lasinio model described in Ref. [1]. Phenomenological applications of this Lag rangian to anomalous and non-anomalous low-energy hadronic transitions in volving spin-1 particles are also discussed. January 1993 CPT-93/P.2871\n\n**Outline.** Abstract; 1 Introduction; 2 The low-energy chiral Lagrangians; 6 K 0; 0 B0 (1 + O(M)). (2.7); 8 (x):; 8 (x) ≡; 6 K ∗0; 1 K +; 1 K 0; 2 C (2) tr (SAµ Aµ ) + 1; 3 The ENJL cut-oﬀ model of QCD; 2 (1 ± γ5) Ψ. The couplings GS and GV are; 2 W +; 2 (Σ − γ5 ∆) (3.11); 4 The anomalous sector; 4 U l µ U † rν U l α U † rβ + i U ∂µ lν lα U †; 3 (1 − gA)",
+ "brief": "Massive Spin-1 Field Chiral Lagrangian from an Extended Nambu-Jona-Lasinio Model of QCD — We present a calculation of the coupling constants in the massive spin-1 ﬁeld chiral Lagrangian to chiral",
+ "extended": "**Massive Spin-1 Field Chiral Lagrangian from an Extended Nambu-Jona-Lasinio Model of QCD**\n\n*Joaquim Prades*\n\n44 pp, 10 sections.\n\n**Abstract.** We present a calculation of the coupling constants in the massive spin-1 ﬁeld chiral Lagrangian to chiral O(p3) in the context of the extended Nambu–Jona-Lasinio model described in Ref. [1]. Phenomenological applications of this Lagrangian to anomalous and non-anomalous low-energy hadronic transitions involving spin-1 particles are also discussed. January 1993 CPT-93/P.2871\n\n**Outline.** Front matter; 1 Introduction; 2 The low-energy chiral Lagrangians; 3 The ENJL cut-off model of QCD; 4 The anomalous sector; 5 The non-anomalous sector; 6 Phenomenological applications; 6.1 Vector resonance decays; 7 Conclusions; Acknowledgements",
  "tokens": {
-  "brief": 47,
-  "extended": 200
+  "brief": 48,
+  "extended": 195
  },
  "sections": [
   {
-   "id": "sec-000-abstract",
-   "title": "Abstract",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-2"
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
    "pages": "2-2"
   },
   {
-   "id": "sec-002-2-the-low-energy-chiral-lagrangians",
+   "id": "sec-001-2-the-low-energy-chiral-lagrangians",
    "title": "The low-energy chiral Lagrangians",
-   "pages": "2-3"
+   "pages": "2-8"
   },
   {
-   "id": "sec-003-6-k-0",
-   "title": "K 0",
-   "pages": "3-3"
+   "id": "sec-002-3-the-enjl-cut-off-model-of-qcd",
+   "title": "The ENJL cut-off model of QCD",
+   "pages": "8-12"
   },
   {
-   "id": "sec-004-0-b0-1-om-27",
-   "title": "B0 (1 + O(M)). (2.7)",
-   "pages": "3-5"
-  },
-  {
-   "id": "sec-005-8-x",
-   "title": "(x):",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-006-8-x",
-   "title": "(x) ≡",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-007-6-k-0",
-   "title": "K ∗0",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-008-1-k",
-   "title": "K +",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-009-1-k-0",
-   "title": "K 0",
-   "pages": "5-8"
-  },
-  {
-   "id": "sec-010-2-c-2-tr-saµ-aµ-1",
-   "title": "C (2) tr (SAµ Aµ ) + 1",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-011-3-the-enjl-cut-oﬀ-model-of-qcd",
-   "title": "The ENJL cut-oﬀ model of QCD",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-012-2-1-γ5-ψ-the-couplings-gs-and-gv-are",
-   "title": "(1 ± γ5) Ψ. The couplings GS and GV are",
-   "pages": "8-9"
-  },
-  {
-   "id": "sec-013-2-w",
-   "title": "W +",
-   "pages": "9-10"
-  },
-  {
-   "id": "sec-014-2-σ-γ5-311",
-   "title": "(Σ − γ5 ∆) (3.11)",
-   "pages": "10-12"
-  },
-  {
-   "id": "sec-015-4-the-anomalous-sector",
+   "id": "sec-003-4-the-anomalous-sector",
    "title": "The anomalous sector",
-   "pages": "12-13"
+   "pages": "12-16"
   },
   {
-   "id": "sec-016-4-u-l-µ-u-rν-u-l-α-u-rβ-i-u-µ-lν-lα-u-rβ",
-   "title": "U l µ U † rν U l α U † rβ + i U ∂µ lν lα U † rβ",
-   "pages": "13-14"
-  },
-  {
-   "id": "sec-017-3-1-ga",
-   "title": "(1 − gA)",
-   "pages": "14-16"
-  },
-  {
-   "id": "sec-018-5-the-non-anomalous-sector",
+   "id": "sec-004-5-the-non-anomalous-sector",
    "title": "The non-anomalous sector",
    "pages": "16-19"
   },
   {
-   "id": "sec-019-6-phenomenological-applications",
+   "id": "sec-005-6-phenomenological-applications",
    "title": "Phenomenological applications",
    "pages": "19-19"
   },
   {
-   "id": "sec-020-61-vector-resonance-decays",
+   "id": "sec-006-61-vector-resonance-decays",
    "title": "Vector resonance decays",
-   "pages": "19-20"
+   "pages": "19-35"
   },
   {
-   "id": "sec-021-2-in-both-cases-we-assume-nonet",
-   "title": "In both cases we assume nonet",
-   "pages": "20-23"
-  },
-  {
-   "id": "sec-022-3-the-amplitude-for-ω-πππ0-has-the-form",
-   "title": "The amplitude for ω → π+π−π0 has the form,",
-   "pages": "23-25"
-  },
-  {
-   "id": "sec-023-1-p2-kα-pb",
-   "title": "(p2 + k)α pb",
-   "pages": "25-28"
-  },
-  {
-   "id": "sec-024-62-the-decay-π0η-γℓℓ",
-   "title": "The decay π0(η) → γℓ+ℓ−",
-   "pages": "28-31"
-  },
-  {
-   "id": "sec-025-3-mev-if-we-assume-that-the-reported-partial-wid",
-   "title": "MeV. If we assume that the reported partial width for the decay a1 → (ππ)S π is",
-   "pages": "31-33"
-  },
-  {
-   "id": "sec-026-3-h-ǫµναβ-εµ",
-   "title": "H ǫµναβ εµ",
-   "pages": "33-33"
-  },
-  {
-   "id": "sec-027-27-h-2-ma1",
-   "title": "H 2 Ma1",
-   "pages": "33-33"
-  },
-  {
-   "id": "sec-028-076-given-the-poor-experimental-information-we-h",
-   "title": "Given the poor experimental information we have on a1-decays, both sets of",
-   "pages": "33-33"
-  },
-  {
-   "id": "sec-029-64-kl-π0γγ-π0ee",
-   "title": "KL → π0γ∗γ∗ → π0e+e−",
-   "pages": "33-35"
-  },
-  {
-   "id": "sec-030-9-m-2",
-   "title": "M 2",
-   "pages": "35-35"
-  },
-  {
-   "id": "sec-031-7-conclusions",
+   "id": "sec-007-7-conclusions",
    "title": "Conclusions",
    "pages": "35-36"
   },
   {
-   "id": "sec-032-acknowledgements",
+   "id": "sec-008-acknowledgements",
    "title": "Acknowledgements",
-   "pages": "36-36"
-  },
-  {
-   "id": "sec-033-references",
-   "title": "References",
    "pages": "36-44"
   }
  ],

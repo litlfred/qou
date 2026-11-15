@@ -8,6 +8,7 @@ pages: 10-12
 source_pdf: 0809.4303v2.pdf
 source_sha256: 21e28259b9c8542f
 toc_source: inferred
+doc_brief: "Exact vortex solutions in an extended Skyrme-Faddeev model — We construct exact vortex solutions in 3 + 1 dimensions to a theory which is an extension, due to Gies, of the Skyrme-Faddeev model, and"
 ---
 [1] L. D. Faddeev, “Quantization of solitons,”, Princeton preprint IAS Print-75-QS70
 (1975).
@@ -45,7 +46,6 @@ arXiv:0805.1624.
 Niemi-Shabanov decomposition,” Phys. Rev. D 63, 125023 (2001), hep-th/0102026
 [12] J. Gladikowski and M. Hellmund, “Static solitons with non-zero Hopf number,” Phys.
 Rev. D 56, 5194 (1997) [arXiv:hep-th/9609035].
-9
 [13] L. A. Ferreira and A.C. Ris´erio do Bonﬁm, Self-dual Hopﬁons, in preparation.
 [14] M. Hirayama, C. G. Shi and J. Yamashita, “Elliptic solutions of the Skyrme model,”
 Phys. Rev. D 67, 105009 (2003) [arXiv:hep-th/0303092];
@@ -78,10 +78,8 @@ Lett. B 158, 424 (1985).
 Dimensional Skyrme Model,” Z. Phys. C 65, 165 (1995) [arXiv:hep-th/9406160].
 [24] C. Adam, J. Sanchez-Guillen and A. Wereszczynski, “Hopf solitons and Hopf Q-balls
 on S3,” Eur. Phys. J. C 47, 513 (2006) [arXiv:hep-th/0602008].
-10
 [25] N. Sawado, N. Shiiki and S. Tanaka, “Hopf soliton solutions from low energy ef-
 fective action of SU(2) Yang-Mills theory,” Mod. Phys. Lett. A 21, 1189 (2006)
 [arXiv:hep-ph/0511208].
 [26] F. V. Gubarev, L. Stodolsky and V. I. Zakharov, “On the signiﬁcance of the quantity
 A**2,” Phys. Rev. Lett. 86, 2220 (2001) [arXiv:hep-ph/0010057].
-11

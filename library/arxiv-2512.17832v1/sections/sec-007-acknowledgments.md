@@ -7,15 +7,18 @@ section_number: null
 pages: 5-5
 source_pdf: 2512.17832v1.pdf
 source_sha256: 7cad0d880361a6c3
+toc_source: outline
 doc_brief: "From Lead to Helium: Discovery Potential for Jet Quenching in the Smallest Collision Systems — 9 sections: From Lead to Helium: Discovery Pot; Introduction; Nuclear modification factor"
 ---
-nizers and participants of theLight Ion Collisions at the
-LHC 2025workshop, which was formative in generating
+The authors thank the orga-
+nizers and participants of the Light Ion Collisions at the
+LHC 2025 workshop, which was formative in generating
 the ideas in this manuscript. Conversations with Petja
 Paakkinen, Hannu Paukkunen, John Jowett, Maciej Slu-
 pecki, and Florian Jonas were particularly insightful. We
 thank Cristian Baldenegro for providing us with prelim-
-inary CMS data. CF and WAH thank CERN-TH for
+inary CMS data.
+CF and WAH thank CERN-TH for
 hospitality during the course of this work. Computations
 were performed using facilities provided by the Univer-
 sity of Cape Town’s ICTS High Performance Computing

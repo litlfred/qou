@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2605.28781v1
-doc_title: "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS"
+doc_title: "The sum-product conjecture is false for real numbers"
 section_id: sec-006-2-sketch-of-the-construction
 section_title: "Sketch of the construction"
 section_number: 2
-pages: 5-6
+pages: 5-7
 source_pdf: 2605.28781v1.pdf
 source_sha256: eee6d535af1996ca
-doc_brief: "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily largeA⊂R(whose elements are algebraic integers in a number"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.976
+latex_prose_ratio: 0.995
+latex_coverage_ratio: 0.969
+doc_brief: "The sum-product conjecture is false for real numbers — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily large A ⊂R (whose elements are algebraic integers in a"
 ---
 In this section we give a sketch of the construction which is used to prove Theorem [\[th-main\]](#th-main){reference-type="ref" reference="th-main"}. The construction is a high-dimensional version of the standard Balog--Wooley example first introduced in [@BalogWooleyLowEnergy]. In its simplest one-dimensional form, one takes $$A=GP,$$ where $G$ is a short geometric progression and $P$ is an interval. The multiplicative structure of $G$ gives[^1] $$\mathopen{}\left| GG\mathclose{}\right|\ll \mathopen{}\left| G\mathclose{}\right|,$$ while the additive structure of $P$ keeps $GP+GP$ inside a relatively short interval. This gives examples for which both $\mathopen{}\left| A+A\mathclose{}\right|$ and $\mathopen{}\left| AA\mathclose{}\right|$ are smaller than the trivial bound $\mathopen{}\left| A\mathclose{}\right|^{2}$, but only by a logarithmic factor in $\mathopen{}\left| A\mathclose{}\right|$. This example was used by Balog and Wooley [@BalogWooleyLowEnergy] to show that the natural additive energy variant of the sum-product conjecture is false, yet it falls short of being a counterexample to the original conjecture since the geometric progression is exponentially sparse, which allows $A+A$ to still have size $\geq \mathopen{}\left| A\mathclose{}\right|^{2-o(1)}$.
 

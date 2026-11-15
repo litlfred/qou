@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-hep-th-0001202v2
-doc_title: "arXiv:hep-th/0001202v2 29 Jan 2000"
+doc_title: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees"
 section_id: sec-004-5-bigrading-the-full-hopf-algebra-of-rooted-tree
 section_title: "Bigrading the full Hopf algebra of rooted trees"
 section_number: 5
-pages: 6-7
+pages: 6-8
 source_pdf: 0001202v2.pdf
 source_sha256: b2e3e22ea3d51c0b
 toc_source: inferred
 text_source: latex
-latex_prose_ratio: 0.964
+latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees — The renormalization of quantum ﬁeld theory twists the antipode of a non- cocommutative Hopf algebra"
 ---
 Given how long it took to compute the data that eventually led to the generating principle for the Connes-Moscovici subalgebra, one might be daunted by the task of inferring the bigrading of the full Hopf algebra of undecorated rooted trees. In fact, we discovered this first, by mere consideration of the first 8 entries in the first column of Table 3. Thanks to [@BK1] we had an extremely efficient `Reduce` implementation of the coproduct ([\[D\]](#D){reference-type="ref" reference="D"}). The severity of the challenge of understanding the range and kernel of $U_k$, i.e. the difficulty of the computation of $\Delta^k$, increases drastically with $k$. At $k=1$ it was possible to solve $U_1(X):=(P\otimes P)(\Delta(X))=0$, for weights $n\le8$, using a few hours of CPUtime, notwithstanding the fact that at $n=8$ the number of products of trees is $r_9=286$.
 

@@ -6,10 +6,12 @@
   "sha256": "591d0bdf2c48d12f91d6c9a4beec32978bc1e9a9448b04ef0efdc4a84315373b",
   "bytes": 1400591,
   "pages": 82,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,20 +21,34 @@
    "stamp_date": "8 Oct 2025"
   },
   "doi": null,
-  "title": "q-Hodge complexes over the Habiro ring",
-  "authors_raw": "October 9, 2025",
-  "abstract": "\u2014 Peter Scholze has raised the question whether some variant of the q-de Rham complex is already defined over theHabiro ringH := limm\u2208N Z[q]\u2227 (qm\u22121). Such a variant should then be called (algebraic) Habiro cohomology. We show that algebraic Habiro cohomology exists whenever theq-de Rham complex can be equipped with aq-Hodge filtration: aq-deformation of the Hodge filtration, subject to some reasonable conditions. To any suchq-Hodge filtration we associate a small modification of theq-de Rham complex, which we call theq-Hodge complex, and show that it descends canonically to the Habiro ring. This construction recovers and generalises theHabiro ring of a number fieldfrom [GSWZ24] and is closely related to the q-de Rham\u2013Witt complexes from [Wag24] as well as, conjecturally, to Scholze\u2019sanalytic Habiro stack[Sch25]. While there\u2019s no canonicalq-Hodge filtration in general, we show that it does exist in many cases of interest. For example, for a smooth schemeX over Z, the q-de Rham complexq9\u2126X/Z can be equipped with a canonicalq-Hodge filtration as soon as one inverts all primesp\u2a7d dim(X/Z).",
-  "docinfo": {
-   "Author": "Ferdinand Wagner",
-   "Creator": "arXiv GenPDF (tex2pdf:e76afa9)",
-   "Producer": "pikepdf 8.15.1",
-   "Title": "$q$-Hodge complexes over the Habiro ring"
-  },
+  "title": "$q$-Hodge complexes over the Habiro ring",
+  "authors_raw": "Ferdinand Wagner",
   "title_lines": [
-   "q-Hodge complexes over the Habiro ring",
-   "Ferdinand Wagner"
+   "q-Hodge complexes over the Habiro ring"
   ],
-  "title_prev": "q-Hodge complexes over the Habiro ring Ferdinand Wagner"
+  "abstract": "— Peter Scholze has raised the question whether some variant of the q-de Rham complex is already defined over the Habiro ring H := limm∈N Z[q]∧ (qm−1). Such a variant should then be called (algebraic) Habiro cohomology. We show that algebraic Habiro cohomology exists whenever the q-de Rham complex can be equipped with a q-Hodge filtration: a q-deformation of the Hodge filtration, subject to some reasonable conditions. To any such q-Hodge filtration we associate a small modification of the q-de Rham complex, which we call the q-Hodge complex, and show that it descends canonically to the Habiro ring. This construction recovers and generalises the Habiro ring of a number field from [GSWZ24] and is closely related to the q-de Rham–Witt complexes from [Wag24] as well as, conjecturally, to Scholze’s analytic Habiro stack [Sch25]. While there’s no canonical q-Hodge filtration in general, we show that it does exist in many cases of interest. For example, for a smooth scheme X over Z, the q-de Rham complex q9ΩX/Z can be equipped with a canonical q-Hodge filtration as soon as one inverts all primes p ⩽dim(X/Z).",
+  "docinfo": {
+   "Title": "$q$-Hodge complexes over the Habiro ring",
+   "Author": "Ferdinand Wagner",
+   "Producer": "pikepdf 8.15.1",
+   "Creator": "arXiv GenPDF (tex2pdf:e76afa9)"
+  },
+  "title_raw": "q-Hodge complexes over the Habiro ring",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "$q$-Hodge complexes over the Habiro ring",
+   "heading": "q -Hodge complexes over the Habiro ring",
+   "outline": "1 Introduction",
+   "text": "q-Hodge complexes over the Habiro ring",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "q-Hodge complexes over the Habiro ring"
  },
  "toc": [
   {
@@ -40,179 +56,886 @@
    "title": "Introduction",
    "page": 3,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Habiro cohomology",
    "page": 3,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "q-Hodge filtrations and Habiro descent",
    "page": 4,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Existence results for q-Hodge filtrations",
    "page": 7,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Organisation of this paper",
    "page": 10,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 1,
-   "title": "Habiro rings of \u00e9tale extensions",
+   "title": "Habiro rings of étale extensions",
    "page": 13,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "A general descent principle",
    "page": 13,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
-   "title": "Habiro rings of \u00e9tale extensions",
+   "title": "Habiro rings of étale extensions",
    "page": 15,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 1,
    "title": "Habiro descent for q-Hodge complexes",
    "page": 20,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "q-Hodge filtrations and the q-Hodge complex",
    "page": 20,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "The main result",
    "page": 25,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 2,
-   "title": "Deformations of q-de Rham\u2013Witt complexes",
+   "title": "Deformations of q-de Rham–Witt complexes",
    "page": 28,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
   },
   {
    "level": 2,
-   "title": "The Nygaard filtration on q-de Rham\u2013Witt complexes",
+   "title": "The Nygaard filtration on q-de Rham–Witt complexes",
    "page": 32,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 2,
    "title": "The twisted q-Hodge filtration",
    "page": 40,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   },
   {
    "level": 2,
    "title": "Habiro descent for q-Hodge complexes",
    "page": 45,
    "source": "outline",
-   "number": "3.6"
+   "number": "3.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
   },
   {
    "level": 2,
    "title": "Habiro descent for q-de Rham complexes",
    "page": 48,
    "source": "outline",
-   "number": "3.7"
+   "number": "3.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "48"
   },
   {
    "level": 2,
    "title": "Habiro descent in derived commutative algebras",
    "page": 50,
    "source": "outline",
-   "number": "3.8"
+   "number": "3.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "50"
   },
   {
    "level": 1,
    "title": "Functorial q-Hodge filtrations",
    "page": 53,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "53"
   },
   {
    "level": 2,
    "title": "Functorial q-Hodge filtrations away from small primes",
    "page": 53,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "53"
   },
   {
    "level": 2,
    "title": "Functorial q-Hodge filtrations for certain quasi-regular quotients",
    "page": 60,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "60"
   },
   {
    "level": 1,
    "title": "A The q-de Rham complex",
    "page": 69,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "69"
   },
   {
    "level": 2,
    "title": "A.1 Rationalised q-crystalline cohomology",
    "page": 70,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "70"
   },
   {
    "level": 2,
    "title": "A.2 The global q-de Rham complex",
    "page": 74,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "74"
   },
   {
    "level": 1,
    "title": "B Habiro-completion",
    "page": 77,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "77"
   },
   {
    "level": 1,
    "title": "References",
    "page": 81,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "81"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 52,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 55,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 56,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 57,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 58,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 59,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 60,
+   "label": "60",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 62,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 63,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 64,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 65,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 66,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 67,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 68,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 69,
+   "label": "69",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "70",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 72,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 73,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 74,
+   "label": "74",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 76,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 77,
+   "label": "77",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 78,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 79,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 80,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 81,
+   "label": "81",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 82,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 3123,
+   "n_words": 779,
+   "label_start": null,
+   "label_end": "3"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -220,8 +943,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 190,
-   "n_words": 29
+   "n_chars": 177,
+   "n_words": 31,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
    "id": "sec-001-11-habiro-cohomology",
@@ -230,8 +955,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 5649,
-   "n_words": 854
+   "n_chars": 5651,
+   "n_words": 916,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-002-12-q-hodge-filtrations-and-habiro-descent",
@@ -239,142 +966,312 @@
    "title": "q-Hodge filtrations and Habiro descent",
    "level": 2,
    "page_start": 4,
-   "page_end": 10,
-   "n_chars": 16748,
-   "n_words": 2485
+   "page_end": 7,
+   "n_chars": 5860,
+   "n_words": 1034,
+   "label_start": "4",
+   "label_end": "7"
   },
   {
-   "id": "sec-003-14-organisation-of-this-paper",
+   "id": "sec-003-13-existence-results-for-q-hodge-filtrations",
+   "number": "1.3",
+   "title": "Existence results for q-Hodge filtrations",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 10571,
+   "n_words": 1762,
+   "label_start": "7",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-004-14-organisation-of-this-paper",
    "number": "1.4",
    "title": "Organisation of this paper",
    "level": 2,
    "page_start": 10,
    "page_end": 13,
-   "n_chars": 7326,
-   "n_words": 1100
+   "n_chars": 7196,
+   "n_words": 1315,
+   "label_start": "10",
+   "label_end": "13"
   },
   {
-   "id": "sec-004-2-habiro-rings-of-\u00e9tale-extensions",
+   "id": "sec-005-2-habiro-rings-of-étale-extensions",
    "number": "2",
-   "title": "Habiro rings of \u00e9tale extensions",
+   "title": "Habiro rings of étale extensions",
    "level": 1,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 562,
-   "n_words": 94
+   "n_chars": 534,
+   "n_words": 97,
+   "label_start": "13",
+   "label_end": "13"
   },
   {
-   "id": "sec-005-21-a-general-descent-principle",
+   "id": "sec-006-21-a-general-descent-principle",
    "number": "2.1",
    "title": "A general descent principle",
    "level": 2,
    "page_start": 13,
-   "page_end": 14,
-   "n_chars": 2410,
-   "n_words": 321
+   "page_end": 15,
+   "n_chars": 7562,
+   "n_words": 1438,
+   "label_start": "13",
+   "label_end": "15"
   },
   {
-   "id": "sec-006-22-habiro-rings-of-\u00e9tale-extensions",
+   "id": "sec-007-22-habiro-rings-of-étale-extensions",
    "number": "2.2",
-   "title": "Habiro rings of \u00e9tale extensions",
+   "title": "Habiro rings of étale extensions",
    "level": 2,
-   "page_start": 14,
-   "page_end": 25,
-   "n_chars": 29360,
-   "n_words": 4450
+   "page_start": 15,
+   "page_end": 20,
+   "n_chars": 9804,
+   "n_words": 1773,
+   "label_start": "15",
+   "label_end": "20"
   },
   {
-   "id": "sec-007-32-the-main-result",
+   "id": "sec-008-3-habiro-descent-for-q-hodge-complexes",
+   "number": "3",
+   "title": "Habiro descent for q-Hodge complexes",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 796,
+   "n_words": 134,
+   "label_start": "20",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-009-31-q-hodge-filtrations-and-the-q-hodge-complex",
+   "number": "3.1",
+   "title": "q-Hodge filtrations and the q-Hodge complex",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 25,
+   "n_chars": 12824,
+   "n_words": 2190,
+   "label_start": "20",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-010-32-the-main-result",
    "number": "3.2",
    "title": "The main result",
    "level": 2,
    "page_start": 25,
    "page_end": 28,
-   "n_chars": 9403,
-   "n_words": 1376
+   "n_chars": 9321,
+   "n_words": 1559,
+   "label_start": "25",
+   "label_end": "28"
   },
   {
-   "id": "sec-008-33-deformations-of-q-de-rhamwitt-complexes",
+   "id": "sec-011-33-deformations-of-q-de-rhamwitt-complexes",
    "number": "3.3",
-   "title": "Deformations of q-de Rham\u2013Witt complexes",
+   "title": "Deformations of q-de Rham–Witt complexes",
    "level": 2,
    "page_start": 28,
-   "page_end": 40,
-   "n_chars": 31339,
-   "n_words": 4984
+   "page_end": 32,
+   "n_chars": 9269,
+   "n_words": 1657,
+   "label_start": "28",
+   "label_end": "32"
   },
   {
-   "id": "sec-009-35-the-twisted-q-hodge-filtration",
+   "id": "sec-012-34-the-nygaard-filtration-on-q-de-rhamwitt-compl",
+   "number": "3.4",
+   "title": "The Nygaard filtration on q-de Rham–Witt complexes",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 40,
+   "n_chars": 21167,
+   "n_words": 3885,
+   "label_start": "32",
+   "label_end": "40"
+  },
+  {
+   "id": "sec-013-35-the-twisted-q-hodge-filtration",
    "number": "3.5",
    "title": "The twisted q-Hodge filtration",
    "level": 2,
    "page_start": 40,
-   "page_end": 50,
-   "n_chars": 25704,
-   "n_words": 4041
+   "page_end": 45,
+   "n_chars": 12076,
+   "n_words": 2176,
+   "label_start": "40",
+   "label_end": "45"
   },
   {
-   "id": "sec-010-38-habiro-descent-in-derived-commutative-algebra",
+   "id": "sec-014-36-habiro-descent-for-q-hodge-complexes",
+   "number": "3.6",
+   "title": "Habiro descent for q-Hodge complexes",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 48,
+   "n_chars": 7405,
+   "n_words": 1361,
+   "label_start": "45",
+   "label_end": "48"
+  },
+  {
+   "id": "sec-015-37-habiro-descent-for-q-de-rham-complexes",
+   "number": "3.7",
+   "title": "Habiro descent for q-de Rham complexes",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 50,
+   "n_chars": 5671,
+   "n_words": 982,
+   "label_start": "48",
+   "label_end": "50"
+  },
+  {
+   "id": "sec-016-38-habiro-descent-in-derived-commutative-algebra",
    "number": "3.8",
    "title": "Habiro descent in derived commutative algebras",
    "level": 2,
    "page_start": 50,
    "page_end": 53,
-   "n_chars": 8576,
-   "n_words": 1218
+   "n_chars": 8494,
+   "n_words": 1336,
+   "label_start": "50",
+   "label_end": "53"
   },
   {
-   "id": "sec-011-4-functorial-q-hodge-filtrations",
+   "id": "sec-017-4-functorial-q-hodge-filtrations",
    "number": "4",
    "title": "Functorial q-Hodge filtrations",
    "level": 1,
    "page_start": 53,
    "page_end": 53,
-   "n_chars": 490,
-   "n_words": 73
+   "n_chars": 459,
+   "n_words": 73,
+   "label_start": "53",
+   "label_end": "53"
   },
   {
-   "id": "sec-012-41-functorial-q-hodge-filtrations-away-from-smal",
+   "id": "sec-018-41-functorial-q-hodge-filtrations-away-from-smal",
    "number": "4.1",
    "title": "Functorial q-Hodge filtrations away from small primes",
    "level": 2,
    "page_start": 53,
    "page_end": 60,
-   "n_chars": 20643,
-   "n_words": 3072
+   "n_chars": 19928,
+   "n_words": 3536,
+   "label_start": "53",
+   "label_end": "60"
   },
   {
-   "id": "sec-013-42-functorial-q-hodge-filtrations-for-certain-qu",
+   "id": "sec-019-42-functorial-q-hodge-filtrations-for-certain-qu",
    "number": "4.2",
    "title": "Functorial q-Hodge filtrations for certain quasi-regular quotients",
    "level": 2,
    "page_start": 60,
-   "page_end": 81,
-   "n_chars": 54208,
-   "n_words": 8245
+   "page_end": 69,
+   "n_chars": 22787,
+   "n_words": 4058,
+   "label_start": "60",
+   "label_end": "69"
   },
   {
-   "id": "sec-014-references",
+   "id": "sec-020-a-the-q-de-rham-complex",
+   "number": null,
+   "title": "A The q-de Rham complex",
+   "level": 1,
+   "page_start": 69,
+   "page_end": 70,
+   "n_chars": 2837,
+   "n_words": 474,
+   "label_start": "69",
+   "label_end": "70"
+  },
+  {
+   "id": "sec-021-a1-rationalised-q-crystalline-cohomology",
+   "number": null,
+   "title": "A.1 Rationalised q-crystalline cohomology",
+   "level": 2,
+   "page_start": 70,
+   "page_end": 74,
+   "n_chars": 12630,
+   "n_words": 2381,
+   "label_start": "70",
+   "label_end": "74"
+  },
+  {
+   "id": "sec-022-a2-the-global-q-de-rham-complex",
+   "number": null,
+   "title": "A.2 The global q-de Rham complex",
+   "level": 2,
+   "page_start": 74,
+   "page_end": 77,
+   "n_chars": 5403,
+   "n_words": 958,
+   "label_start": "74",
+   "label_end": "77"
+  },
+  {
+   "id": "sec-023-b-habiro-completion",
+   "number": null,
+   "title": "B Habiro-completion",
+   "level": 1,
+   "page_start": 77,
+   "page_end": 81,
+   "n_chars": 9566,
+   "n_words": 1675,
+   "label_start": "77",
+   "label_end": "81"
+  },
+  {
+   "id": "sec-024-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 81,
    "page_end": 82,
-   "n_chars": 4645,
-   "n_words": 578
+   "n_chars": 4703,
+   "n_words": 636,
+   "label_start": "81",
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 25,
-  "sections": 15,
-  "chars_total": 217253,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "October 9,"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 26,
+  "chars_total": 215814,
+  "furniture_lines_stripped": 59,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "q-Habiro_arXiv.tex",
    "tex_sections": 20,
-   "overlaid": 11,
+   "overlaid": 17,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -382,10 +1279,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.941,
-     "coverage_ratio": 0.8,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -393,104 +1295,170 @@
      "id": "sec-001-11-habiro-cohomology",
      "title": "Habiro cohomology",
      "prose_ratio": 0.913,
-     "coverage_ratio": 0.858,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-12-q-hodge-filtrations-and-habiro-descent",
      "title": "q-Hodge filtrations and Habiro descent",
-     "prose_ratio": 0.914,
-     "coverage_ratio": 0.821,
+     "prose_ratio": 0.746,
+     "coverage_ratio": 0.941,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-14-organisation-of-this-paper",
+     "id": "sec-003-13-existence-results-for-q-hodge-filtrations",
+     "title": "Existence results for q-Hodge filtrations",
+     "prose_ratio": 0.909,
+     "coverage_ratio": 0.836,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-14-organisation-of-this-paper",
      "title": "Organisation of this paper",
      "prose_ratio": 0.954,
-     "coverage_ratio": 0.799,
+     "coverage_ratio": 0.967,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-2-habiro-rings-of-\u00e9tale-extensions",
-     "title": "Habiro rings of \u00e9tale extensions",
+     "id": "sec-005-2-habiro-rings-of-étale-extensions",
+     "title": "Habiro rings of étale extensions",
      "prose_ratio": 0.923,
-     "coverage_ratio": 0.786,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-21-a-general-descent-principle",
+     "id": "sec-006-21-a-general-descent-principle",
      "title": "A general descent principle",
-     "prose_ratio": 0.187,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.585,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-006-22-habiro-rings-of-\u00e9tale-extensions",
-     "title": "Habiro rings of \u00e9tale extensions",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.095,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "id": "sec-007-22-habiro-rings-of-étale-extensions",
+     "title": "Habiro rings of étale extensions",
+     "prose_ratio": 0.59,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-007-32-the-main-result",
+     "id": "sec-008-3-habiro-descent-for-q-hodge-complexes",
+     "title": "Habiro descent for q-Hodge complexes",
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-31-q-hodge-filtrations-and-the-q-hodge-complex",
+     "title": "q-Hodge filtrations and the q-Hodge complex",
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-32-the-main-result",
      "title": "The main result",
      "prose_ratio": 0.884,
-     "coverage_ratio": 0.787,
+     "coverage_ratio": 0.932,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-33-deformations-of-q-de-rhamwitt-complexes",
-     "title": "Deformations of q-de Rham\u2013Witt complexes",
-     "prose_ratio": 0.95,
-     "coverage_ratio": 0.781,
+     "id": "sec-011-33-deformations-of-q-de-rhamwitt-complexes",
+     "title": "Deformations of q-de Rham–Witt complexes",
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-35-the-twisted-q-hodge-filtration",
+     "id": "sec-012-34-the-nygaard-filtration-on-q-de-rhamwitt-compl",
+     "title": "The Nygaard filtration on q-de Rham–Witt complexes",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-35-the-twisted-q-hodge-filtration",
      "title": "The twisted q-Hodge filtration",
-     "prose_ratio": 0.92,
-     "coverage_ratio": 0.786,
+     "prose_ratio": 0.679,
+     "coverage_ratio": 0.941,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-38-habiro-descent-in-derived-commutative-algebra",
+     "id": "sec-014-36-habiro-descent-for-q-hodge-complexes",
+     "title": "Habiro descent for q-Hodge complexes",
+     "prose_ratio": 0.482,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-015-37-habiro-descent-for-q-de-rham-complexes",
+     "title": "Habiro descent for q-de Rham complexes",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-38-habiro-descent-in-derived-commutative-algebra",
      "title": "Habiro descent in derived commutative algebras",
      "prose_ratio": 0.889,
-     "coverage_ratio": 0.81,
+     "coverage_ratio": 0.929,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-4-functorial-q-hodge-filtrations",
+     "id": "sec-017-4-functorial-q-hodge-filtrations",
      "title": "Functorial q-Hodge filtrations",
      "prose_ratio": 0.927,
-     "coverage_ratio": 0.902,
+     "coverage_ratio": 0.95,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-41-functorial-q-hodge-filtrations-away-from-smal",
+     "id": "sec-018-41-functorial-q-hodge-filtrations-away-from-smal",
      "title": "Functorial q-Hodge filtrations away from small primes",
      "prose_ratio": 0.933,
-     "coverage_ratio": 0.815,
+     "coverage_ratio": 0.968,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-42-functorial-q-hodge-filtrations-for-certain-qu",
+     "id": "sec-019-42-functorial-q-hodge-filtrations-for-certain-qu",
      "title": "Functorial q-Hodge filtrations for certain quasi-regular quotients",
-     "prose_ratio": 0.934,
-     "coverage_ratio": 0.476,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.932,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-014-references",
+     "id": "sec-020-a-the-q-de-rham-complex",
+     "title": "A The q-de Rham complex",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-a1-rationalised-q-crystalline-cohomology",
+     "title": "A.1 Rationalised q-crystalline cohomology",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-a2-the-global-q-de-rham-complex",
+     "title": "A.2 The global q-de Rham complex",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-b-habiro-completion",
+     "title": "B Habiro-completion",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-references",
      "title": "References",
      "result": "no matching \\section"
     }

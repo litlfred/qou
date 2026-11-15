@@ -1,0 +1,1 @@
+This suggests that one should set \begin{equation} \label{eq:technical-condition} [m_{st}]_x = [m_{st}]_y = 0. \end{equation} This is the technical condition mentioned in Definition \ref{defn:realization}.
