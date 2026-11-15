@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-15T19:00:22Z
-updated_at: 2026-11-15T19:49:44Z
+updated_at: 2026-11-15T19:52:31Z
 ---
 
 Opened 2026-11-15 from owner question on a decay trigger and translating ILP/SDP likelihood into a rate; owner chose 'bean both gaps, then probe'. prop:hadron-half-life: Γ_β = |W|²μ₀/(2π³)·[2]_q·|M_q|²·f(Q). W(q) has a D closed form (qou-egvf); μ₀, |M_q|² (prop:trace-ratio-observable, proportionality only) and f(Q) do not. def:beta-decay-skein says WHAT, not WHEN. LP/SDP shadow prices are used only for shell binding from measured Q-values. Candidate to test, pre-registered: per-step probability = trace weight of the channel where the insertion reduces to the daughter. half-life-as-q-probe states environmental predictions (neutron-star q ≫ q₀; 1e-9 per metre) with no derivation — scope (a). Neutron lifetime not derived.
@@ -31,3 +31,9 @@ Fact used: Hom_{U_q}(V, V⊗V⊗V*) ≅ End_{U_q}(V⊗V) = span{1, Ř}, so every
 
 
 RESULT 2 (PR #7977, a6c632fc1f): the prediction held. The W⁻ amplitude b is +1/[2] on the left line and −1/[2] on the right, the same magnitude. Chirality is only in the non-emitting part a, as a ratio of q². The corpus W gives b = 2/(q²+1). So at one crossing the emission rate cannot see chirality. Next candidate: chirality enters through what follows the vertex (W⁻ → e⁻ ν̄ on the lepton strands), or across several crossings.
+
+
+## PRE-REGISTRATION 3 (2026-11-15 19:55Z): lepton strands, written before computing
+Owner choice: both, leptons first. Leptons are taken as a second copy of the same doublet V (ν = the K = q vector, e = the other); this is an ASSUMPTION about how leptons carry T³.
+Q3a: dim End_{U_q}(V⊗V*), and the action of each equivariant endomorphism on the W⁻ line (weight −1). Prediction: dimension 2, spanned by id and coev∘ev, and coev∘ev kills the W⁻ line, so any quark-pair → lepton-pair transfer acts on W⁻ as a single scalar.
+Q3b: the full chain amplitude n → p e⁻ ν̄ = b_q · c · b_ℓ, for the four left/right choices of the quark and lepton vertices (b = ±1/[2] from PR #7977). Prediction: |amplitude|² is the same for all four (chirality-blind). Only the sign differs: LL = RR = +, LR = RL = −. So the sign can matter only through interference, which is test 4.
