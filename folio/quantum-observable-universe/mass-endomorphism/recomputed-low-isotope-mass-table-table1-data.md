@@ -1,7 +1,7 @@
 | Atom | $Z$ | $N$ | $n = 3A$ | canonical $|\mathrm{tr}_M|$ | hybrid partition-sum | rel err |
 |---|:-:|:-:|:-:|---:|---:|---:|
-| $p$ | 1 | 0 | 3 | 1.0653062286 | 1.0653062286 | $3.96 \times 10^{-15}$ |
-| $n$ | 0 | 1 | 3 | 0.9232332972 | 0.9232332972 | $4.21 \times 10^{-15}$ |
-| $D$ | 1 | 1 | 6 | 0.3882864715 | 0.3882864715 | $7.01 \times 10^{-15}$ |
-| $T$ | 1 | 2 | 9 | 0.1040521187 | 0.1040521187 | $1.07 \times 10^{-14}$ |
-| $^{3}\mathrm{He}$ | 2 | 1 | 9 | 0.2065408586 | 0.2065408586 | $1.03 \times 10^{-14}$ |
+| $p$ | 1 | 0 | 3 | {{ qou.computations.tr-m-q-hecke-seminormal.data.cross_check_table.0.canonical_abs_tr_M | precision: 10 }} | {{ qou.computations.tr-m-q-hecke-seminormal.data.cross_check_table.0.q_hecke_partition_sum | precision: 10 }} | ${{ qou.computations.tr-m-q-hecke-seminormal.data.cross_check_table.0.rel_err_vs_canonical | precision: 3 | scientific }}$ |
+| $n$ | 0 | 1 | 3 | {{ qou.computations.tr-m-q-hecke-seminormal.data.cross_check_table.1.canonical_abs_tr_M | precision: 10 }} | {{ qou.computations.tr-m-q-hecke-seminormal.data.cross_check_table.1.q_hecke_partition_sum | precision: 10 }} | ${{ qou.computations.tr-m-q-hecke-seminormal.data.cross_check_table.1.rel_err_vs_canonical | precision: 3 | scientific }}$ |
+| $D$ | 1 | 1 | 6 | {{ qou.computations.tr-m-q-hecke-seminormal.data.cross_check_table.2.canonical_abs_tr_M | precision: 10 }} | {{ qou.computations.tr-m-q-hecke-seminormal.data.cross_check_table.2.q_hecke_partition_sum | precision: 10 }} | ${{ qou.computations.tr-m-q-hecke-seminormal.data.cross_check_table.2.rel_err_vs_canonical | precision: 3 | scientific }}$ |
+| $T$ | 1 | 2 | 9 | {{ qou.computations.tr-m-q-hecke-seminormal.data.cross_check_table.3.canonical_abs_tr_M | precision: 10 }} | {{ qou.computations.tr-m-q-hecke-seminormal.data.cross_check_table.3.q_hecke_partition_sum | precision: 10 }} | ${{ qou.computations.tr-m-q-hecke-seminormal.data.cross_check_table.3.rel_err_vs_canonical | precision: 3 | scientific }}$ |
+| $^{3}\mathrm{He}$ | 2 | 1 | 9 | {{ qou.computations.tr-m-q-hecke-seminormal.data.cross_check_table.4.canonical_abs_tr_M | precision: 10 }} | {{ qou.computations.tr-m-q-hecke-seminormal.data.cross_check_table.4.q_hecke_partition_sum | precision: 10 }} | ${{ qou.computations.tr-m-q-hecke-seminormal.data.cross_check_table.4.rel_err_vs_canonical | precision: 3 | scientific }}$ |
