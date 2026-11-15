@@ -64,3 +64,20 @@ to judge.
 
 Scope (a): this six-letter alphabet, H₃, the proton pin. Other tower levels are not computed here;
 on three-strand families they coincide with H₃ (#7702 × #7733).
+
+## Addendum (2026-11-15, not pre-registered): step-3 tail rules with the k = 1 gluon
+
+Producer `step3_rules_with_gluon.py`, exact sympy over ℚ(q), proton pin. Calibration: without the gluon, it reproduces the step-3 table (main `b611c74d815`) exactly. Rules: R1 = (σ₀, σ₁⁻¹), R2 = (σ₀⁻¹, σ₁), R4 = the bar-fixed average on both generators. Element: CORE·T·V. χ_(3) > 0 throughout, so χ_(2,1) decides reading 3.
+
+| rule | passes at q₀, no gluon | passes at q₀, with V |
+|---|---|---|
+| R1 | 000, 011, 101, 110 | **001, 010, 100, 111** |
+| R2 | 001, 010, 100, 111 | 000, 001, 101, 110 |
+| R4 | 001, 010, 100, 111 | 001, 010, 100, 111 |
+
+- Every rule still passes on exactly 4 of 8 placements, so appending the gluon does not make any rule decide the placement.
+- With V, R1 and R4 pass on the same four placements, and that set includes the builder placement 001. R1@001 flips from fail (−0.42477) to pass (+0.26331; root 1.495025, which is the k = 2 gluon root).
+- **Exact identity.** χ_(2,1)(CORE·TAIL_p·V) = −(q⁴+1)/(4q²) · χ_(2,1)(CORE·σ₀σ₀σ₁⁻¹) and χ_(2,1)(CORE·TAIL_n·V) = −(q²+1)²/(4q²) · χ_(2,1)(CORE·σ₀σ₀σ₁⁻¹). So the census-tail element with the k = 1 gluon is, on the (2,1) block, a negative multiple of R1@001 without the gluon. This is why both share the root 1.429157. They are different words, so the identity is about characters only.
+- As before, nothing here names a flavour: R1, R2 and R4 give identical elements for p and n.
+
+Full table: run the producer. Nothing is ranked or selected.
