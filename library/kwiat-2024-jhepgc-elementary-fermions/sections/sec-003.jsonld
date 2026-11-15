@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Introduction",
+  "pageStart": 1,
+  "pageEnd": 2,
+  "contains": [
+    "library/kwiat-2024-jhepgc-elementary-fermions/blocks/prose-sec-003",
+    "library/kwiat-2024-jhepgc-elementary-fermions/blocks/recommendation-sec-003-01",
+    "library/kwiat-2024-jhepgc-elementary-fermions/blocks/recommendation-sec-003-02",
+    "library/kwiat-2024-jhepgc-elementary-fermions/blocks/recommendation-sec-003-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/kwiat-2024-jhepgc-elementary-fermions",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/kwiat-2024-jhepgc-elementary-fermions",
+  "provenance": "ingested"
+}

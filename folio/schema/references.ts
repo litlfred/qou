@@ -2705,6 +2705,18 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "fukuda2012" },
   { id: "melnikov2025" },
   { id: "tarabunga2025" },
+  // 2026-11-15: owner uploads (commit 947381c) ingested into library/ (epic qou-s4ws).
+  { id: "grimus1993lr" },
+  { id: "czakon-gluza-hejczyk-2003" },
+  { id: "doty-giaquinto-2002" },
+  { id: "fileviezperez-ohmer-2017" },
+  { id: "alvarado-aranda-2018" },
+  { id: "crivellin-matias-2022" },
+  { id: "du1995weyl" },
+  { id: "du-fu-qschur-survey" },
+  { id: "lee-yang-1956" },
+  { id: "wu1957parity" },
+  { id: "kwiat2024" },
 ];
 
 export const references: Reference[] = assemble(ORDER);

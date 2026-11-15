@@ -1,0 +1,191 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "lee-yang-1956-physrev-104-254",
+ "source": {
+  "structure_sha256": "843105e97ca1fe26cd4b3a2075c81794cfad0cfca712ee02e5fec1d9bf07ae2c",
+  "file": "lee-yang-1956-physrev-104-254.pdf"
+ },
+ "provenance": {
+  "title": "Question of Parity Conservation in Weak Interactions",
+  "authors": "T. D. LEE, Columbia",
+  "arxiv": null,
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 11,
+  "by_kind": {
+   "recommendation": 11
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It supplies rather an incentive for an examination of the question of parity conservation. ) To decide unequivocally whether parity is conserved in weak interactions, one must perform an experiment to deter- mine whether weak interactions differentiate the right from the left.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-001.md",
+   "section_title": "Page 1",
+   "pages": "1-1",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "As we shall see, however, the accuracy of these experi- ments is not good.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-001.md",
+   "section_title": "Page 1",
+   "pages": "1-1",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall see, however, that even this high degree of accuracy is not. sufhcient to supply an experimental proof of parity conservation in the weak interactions.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-002.md",
+   "section_title": "Page 2",
+   "pages": "2-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Thus the observed probability function must be an even function of y~.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-003.md",
+   "section_title": "Page 3",
+   "pages": "3-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "However, this polarization must be circular in nature and therefore may not lend itself to easy experimental detection.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-003.md",
+   "section_title": "Page 3",
+   "pages": "3-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "POSSIBLE EXPERIMENTAL TESTS OF PARITY CONSERVATION IN MESON AND HYPERON DECAYS To have a sensitive unequivocal test of whether parity is conserved in weak interactions, one must decide whether the weak interactions differentiate between the right and the left.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-003.md",
+   "section_title": "Page 3",
+   "pages": "3-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "A reQection with respect to the production plane must then leave the whole process invariant.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-004.md",
+   "section_title": "Page 4",
+   "pages": "4-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "If this is the case, it should be pointed out, there must exist two kinds of protons ptr and pr\u201ethe right-handed one and the left-handed one.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-005.md",
+   "section_title": "Page 5",
+   "pages": "5-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Furthermore, at the present time the protons in the laboratory must be predomi- nantly of one kind in order to produce the supposedly observed asymmetry, and also to give rise to the observed Fermi-Dirac statistical character of the proton.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-005.md",
+   "section_title": "Page 5",
+   "pages": "5-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This means that the free oscillation period between them must be longer than the age of the universe.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-005.md",
+   "section_title": "Page 5",
+   "pages": "5-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Furthermore, the numbers of ps and pr, must be separately conserved.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-005.md",
+   "section_title": "Page 5",
+   "pages": "5-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}
