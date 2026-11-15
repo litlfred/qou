@@ -1,40 +1,24 @@
 {
-  "engine": "python-int+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T08:28:34.325688+00:00",
-  "commitSha": "341f84e662b84ccd804bff3b941d966ccc68cae8",
+  "engine": "python-int",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-15T12:04:12.587480+00:00",
+  "commitSha": "feba43ae5ecf8819426326f7d02a9ea928cead2f",
   "assertions": [
     {
       "name": "trefoil_calibrator_pins_actions",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1.0",
+      "expected": "1.0",
       "passed": true,
       "tolerance": "0.5",
       "source": "(C.9) annihilates delta(e,3m) only for the pinned action convention"
-    },
-    {
-      "name": "assembly_certified_by_annihilator",
-      "computed": 0.0,
-      "expected": 1.0,
-      "passed": false,
-      "tolerance": "0.5",
-      "source": "L41 residual identically zero on the (m,e) grid for a candidate"
-    },
-    {
-      "name": "certified_candidate_unique",
-      "computed": 0.0,
-      "expected": 1.0,
-      "passed": false,
-      "tolerance": "0.5",
-      "source": "exactly one candidate assembly is annihilated"
     }
   ],
-  "allPassed": false,
-  "durationMs": 15,
+  "allPassed": true,
+  "durationMs": 3,
   "computation": "qbeta-g3-annihilator-certification",
   "scriptFile": "qbeta_g3_annihilator_certification.py",
-  "scriptHash": "06befa8aa454",
-  "scriptCommitSha": "341f84e662b84ccd804bff3b941d966ccc68cae8",
+  "scriptHash": "89d1a6caf8ff",
+  "scriptCommitSha": "feba43ae5ecf8819426326f7d02a9ea928cead2f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,34 +26,32 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "cvxpy": "absent"
   },
-  "description": "A_omega step 1 tranche 3: anchor-independent certification of the 4_1 total-index assembly by the quantum A-polynomial annihilator (DGG C.7, glyph-decoded), with operator conventions pinned analytically and verified by the trefoil calibrator (C.9). Certified assembly becomes the input for the GGM Stokes reading (step 2).",
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_g3_annihilator_certification.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_g3_annihilator_certification.py"
+  },
+  "description": "A_omega step 1 tranche 3, REDUCED 2026-10-10: the trefoil calibrator (C.9) alone. It pins the operator action convention analytically and shows it unique among the 16 combinations. The annihilator-certification half is retired -- its helpers are a corpus-adjudicated numerical bug (1ppq-qbeta.md #3813) and the provider already certifies the assembly.",
   "contentBlock": "conj:im-q-physical-role",
   "data": {
-    "operator": "L41 = (q^(1/2)M - q^(-1/2)M^-1)l^-1 - (M - M^-1)(M^2 + M^-2 - M - M^-1 - q - q^-1) + (q^(-1/2)M - q^(1/2)M^-1)l",
     "actions": "Mf = q^(m/2) f(m,e-1); lf = -q^(e/2) f(m+1,e) (trefoil-calibrated, unique)",
     "calibrator": {
       "pinned_ok": true,
       "unique": true,
       "n_conventions_passing": 1
     },
-    "residuals": {
-      "q^(-1·e₂)": {
-        "max_nonzero_terms": 21,
-        "worst": "(2, 1, '+1·q^-4 -1·q^-3 -1·q^-2 -1·q^-1')"
-      },
-      "q^(1·e₂)": {
-        "error": "candidate non-convergent at grid point"
-      }
+    "retired": {
+      "what": "annihilator_residual + the assemble/_assemble/sadd/smono/struncate_top helper chain, and the two assertions assembly_certified_by_annihilator and certified_candidate_unique",
+      "why": "imported tet_norm and _dense_mul, which no longer exist; the corpus adjudicates tet_norm as a numerical bug and the provider's main() step [5] already certifies the assembly and records PASS",
+      "ruling": "owner, relayed 2026-10-10: keep only trefoil_calibrate(), drop the superseded FAIL, do not port"
     },
-    "certified_candidates": [],
-    "anchor_status": "n/a",
-    "verdict": "Trefoil calibrator pins the operator actions (M̂f=q^(m/2)f(m,e−1), ℓ̂f=−q^(e/2)f(m+1,e); unique among 16 conventions: True). Annihilator certification: no candidate annihilated — operator reading or assembly space needs revisit; uniqueness False. Anchor status: n/a. Exact arithmetic throughout; scope-(a); no fit; no c_k wired."
+    "verdict": "Trefoil calibrator pins the operator actions (Mf=q^(m/2)f(m,e-1), lf=-q^(e/2)f(m+1,e)); it annihilates delta(e,3m) for that convention and for no other of the 16 combinations (passing: 1, unique: True). The annihilator-certification half of this probe is RETIRED -- see the module docstring: its two missing helpers are a corpus-adjudicated numerical bug, and the provider's own main() step [5] already certifies the assembly and records PASS. Exact integer arithmetic; scope-(a); no fit; no c_k wired."
   }
 }
