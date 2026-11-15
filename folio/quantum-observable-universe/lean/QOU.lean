@@ -152,6 +152,7 @@ import QOU.MathlibExt.OctonionComplexStructure
 import QOU.QuantumObservableUniverse.CalculusDimensionObstruction
 import QOU.QuantumObservableUniverse.SelfDualityDegree
 import QOU.StandardModel.ColourStabilizerAction
+import QOU.StandardModel.ColourBridge
 import QOU.StandardModel.ThetaQcdFramingCp
 import QOU.StandardModel.SecondCrossingInvariant
 -- Information content of the eightfold-way hypercharge battery: the RH half

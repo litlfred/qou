@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:sm-colour-stabilizer-action",
   title: "Colour stabilizer action on the state space",
   lean: {
-    ref: "qou:QOU.StandardModel.ColourStabilizerAction",
+    ref: "qou:QOU.StandardModel.ColourBridge",
     validation: "not_checked",
   },
   uses: ["def:gauge-action-groupoid", "conj:sm-gauge-truncation"],
@@ -54,6 +54,22 @@ export default conjecture({
         "complexification, with one 3 vs 3bar bit, and only at q = 1. " +
         "No q-deformed G2 braiding restricts to the tower crossing on the " +
         "colour triplet at generic q.",
+    },
+    {
+      kind: "status",
+      date: "2026-11-15",
+      body:
+        "**Restated (option A, owner-approved; bean qou-cb3r).** The Lean " +
+        "reference is now the strengthened class `ColourBridge K g q` " +
+        "(`QOU/StandardModel/ColourBridge.lean`): an injective Lie hom " +
+        "g -> gl3(K), K-linear (K intended Q(i), carrying +L_e or -L_e; the " +
+        "sign is the 3 vs 3bar bit, left unfixed), whose primitive coproducts " +
+        "commute with Jimbo's crossing R(q, 1/q) on K^3 (x) K^3. Intended " +
+        "instance: g = su3 e (x) Q(i), at q = 1; not provided. Proved " +
+        "sorry-free: `ColourBridge.q_eq_one_of_e01_mem` (E01 in the image " +
+        "forces q = 1) and `colourBridge_gl3_one` (the class is satisfiable " +
+        "at q = 1, by gl3 itself). The old class `ColourStabilizerAction` " +
+        "stays in the library as the dimension-count calibration above.",
     },
   ],
 });
