@@ -13,7 +13,7 @@ export default example({
     "rem:three-euler-characteristics",
   ],
   tags: ["descartes", "chi", "derivation", "example", "motivic-galois"],
-  cites: ["braden-disney-hogg-2022"],
+  cites: ["reyescarocca2022", "braden-disney-hogg-2022"],
   authorNotes: [
     {
       kind: "note",

@@ -1,4 +1,4 @@
-Let $\mathcal{S}_c \cong \mathbb{P}^1(\mathbb{C})$ be the exceptional divisor at a branch point $z_c$ ([Bring's surface smoothness](#rem:brings-smoothness)). Let $\lambda_{\mathrm{SW}}^{(n)}$ be the $n$-th prolonged Seiberg--Witten differential of the [MI--SW abelianisation](#prop:mi-sw-abelianisation), a meromorphic $1$-form with poles only at the branch points. Let $\gamma$ be a cycle enclosing a subset $E$ of those poles. Then
+Let $\mathcal{S}_c \cong \mathbb{P}^1(\mathbb{C})$ be the exceptional divisor at a branch point $z_c$ ([Bring's surface smoothness](#rem:brings-smoothness)). Let $\lambda_{\mathrm{SW}}^{(n)}$ be the $n$-th prolonged Seiberg--Witten differential of the [MI--SW abelianisation](#prop:mi-sw-abelianisation), a meromorphic $1$-form with poles only at the branch points. (For the general notion of a Seiberg--Witten differential, a meromorphic $1$-form $\lambda$ with $d\lambda = \sigma$ whose periods are special coordinates, see \cite[\S2]{donagi1997}.) Let $\gamma$ be a cycle enclosing a subset $E$ of those poles. Then
 
 $$
 \oint_{\gamma}\lambda_{\mathrm{SW}}^{(n)}
