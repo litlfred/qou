@@ -122,7 +122,10 @@ def main() -> int:
         # rendering of "this path has no recorded value", and is what the
         # stale literals were obscuring. Restore them only from an actual
         # markov_peel run, never from the bridge.
-        "deuteron": "0.3882864715477132785110659223165687998713135876719",
+        # deuteron REMOVED (tracker #7735 item K): it held the superseded
+        # grouped/convention-C bridge literal 0.38828647…, not a markov_peel
+        # output, so by the rule above it is absent. tritium/helium-3/helium-4
+        # below are the same class and remain (follow-up).
         "tritium":  "0.10405211867552603688391599234819295816123485565186",
         "helium-3": "0.20654085856226245265787611060659401118755340576172",
         "helium-4": "0.055348345876697992162807082650033407844603061676025",
