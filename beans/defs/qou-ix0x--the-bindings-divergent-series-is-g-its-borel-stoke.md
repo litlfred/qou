@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T08:46:20Z
-updated_at: 2026-10-12T19:36:53Z
+updated_at: 2026-11-15T17:10:00Z
 parent: qou-v2om
 ---
 
@@ -532,3 +532,7 @@ the tree are inside the new file's own prose. The new file is written so as not
 to depend on it (`map_bondCount` / `quotientEval_bondCount` state the transport
 directly), so the mathematics stands alone; but "the hinge under #7216 class D"
 describes a hinge under something still on a branch.
+
+## 2026-11-15 — re-scoped by the γγ rule
+
+The owner ruled that the γγ selection rule also covers the nuclear bond letters. Any number in this bean computed on the single-crossing interface letters of `atom_braid_word_3A` (`d_k`, `μ_e`, the chain law `∏(z_D + d_k)`, the `b₃` magnitudes −1.2277 / −0.7973 MeV, or a sign map on that word) is now a record of a superseded word, not a current result. Lean results stated for generic bond weights are unaffected. The redo waits on a γγ-selected word per nucleus (PR #7876). Record: `docs/audits/2026-11-15-gg-rule-rescopes-old-letter-binding.md`. The bean stays open.

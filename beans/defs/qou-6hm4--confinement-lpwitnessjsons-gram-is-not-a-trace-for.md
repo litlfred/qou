@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-22T15:30:19Z
-updated_at: 2026-10-04T15:15:38Z
+updated_at: 2026-11-15T17:10:00Z
 parent: qou-v2om
 ---
 
@@ -399,3 +399,7 @@ glob error while filing qou-isu5. It is the correct analysis and it belongs
 with this bean, so it stays; qou-isu5 carries the same text as the primary.)
 
 Full derivation, blast radius and cross-checks: qou-isu5.
+
+## 2026-11-15 — re-scoped by the γγ rule
+
+The owner ruled that the γγ selection rule also covers the nuclear bond letters. Any number in this bean computed on the single-crossing interface letters of `atom_braid_word_3A` (`d_k`, `μ_e`, the chain law `∏(z_D + d_k)`, the `b₃` magnitudes −1.2277 / −0.7973 MeV, or a sign map on that word) is now a record of a superseded word, not a current result. Lean results stated for generic bond weights are unaffected. The redo waits on a γγ-selected word per nucleus (PR #7876). Record: `docs/audits/2026-11-15-gg-rule-rescopes-old-letter-binding.md`. The bean stays open.
