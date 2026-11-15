@@ -316,7 +316,7 @@
 | [thm:six-term-mass-formula-complete](#thm:six-term-mass-formula-complete) | Six-term mass formula: derivation + computation index | Ch 12 | `qou:QOU.BraidKnot.six_term_mass_formula_complete` |
 | [thm:birthday-axioms-underdetermine](#thm:birthday-axioms-underdetermine) | The birthday axioms do not characterise Conway's birthday: a two-valued function satisfies all six | Ch 12 | `qou:QOU.AppendixSurreals.HyperrealTransfer.flatBirthday_avg_le` |
 | [thm:diophantine-birthday-trajectory](#thm:diophantine-birthday-trajectory) | The birthday-trajectory separation: impossible at the birthday, unobstructed at the trajectory, and blocked only by a quantifier | Ch 26 | `qou:QOU.AppendixSurreals.liouvilleWith_separates` |
-| [thm:ns-singularity-descartes](#thm:ns-singularity-descartes) | The Descartes universe is NS-singular: Navier--Stokes admits finite-time blowup | Ch 18 | `qou:QOU.FluidDynamics.ns_singularity_descartes` |
+| [thm:ns-singularity-descartes](#thm:ns-singularity-descartes) | Topology of the Reeb bundle of the Descartes universe | Ch 18 | `qou:QOU.FluidDynamics.ns_singularity_descartes` |
 | [thm:gluing-certification-mechanical-reach](#thm:gluing-certification-mechanical-reach) | The exact gluing verification is mechanical to degree 14 and 14 tetrahedra: neither predicted ceiling exists | Ch 12 | `qou:QOU.Knot.GeneratedCertifiedHigh.Cert10100.satisfiesEdgeEquations` |
 | [thm:aomega-fourone-dt-count](#thm:aomega-fourone-dt-count) | The figure-eight Stokes integer $A_\omega(4_1) = 3$ is a BPS/DT count (conditional on the Stokes--DT--BPS bridge) | Ch 12 | `qou:QOU.QBeta.aomega_fourOne_dt_count` |
 | [thm:geometry-of-incompleteness](#thm:geometry-of-incompleteness) | The geometry of incompleteness: a Turing-complete QOU has a nonempty horizon | Ch 20 | `qou:QOU.Information.geometry_of_incompleteness` |
@@ -489,7 +489,7 @@
 | [prop:rigid-monoidal-structural-gap-invariance](#prop:rigid-monoidal-structural-gap-invariance) | Convention-independence of the structural gap: the brane-tower factors through the rigid monoidal Markov trace on the Type-B-folded Hecke category | Ch 12 | `qou:QOU.BraidKnot.RigidMonoidalStructuralGapInvariance` |
 | [prop:categorical-chain-convergence-mechanisms](#prop:categorical-chain-convergence-mechanisms) | Convergence of $\mathfrak{Q}_\beta^{\text{cat}}$'s infinite product: per-knot c(K) brane-tower bound + inter-knot linking-number locality (Habiro-ring interpretation) | Ch 7 | `qou:QOU.BraidKnot.categorical_chain_convergence_mechanisms` |
 | [prop:quantum-dilog-convergence](#prop:quantum-dilog-convergence) | Convergence of the quantum dilogarithm $\Phi_q$ on $\lvert z\rvert < q$ | Ch 12 | `qou:QOU.MassEndomorphism.PhiQConvergence.quantumDilog_multipliable` |
-| [prop:core-levi-form](#prop:core-levi-form) | Core aspect ratio equals Levi form condition number on the normal plane | Ch 18 | `qou:QOU.FluidDynamics.core_levi_form` |
+| [prop:core-levi-form](#prop:core-levi-form) | The Levi datum of the vorticity plane field is the single scalar $\xi\cdot\mathrm{curl}\,\xi$ | Ch 18 | `qou:QOU.FluidDynamics.CoreLevi.core_levi_form` |
 | [prop:corrected-markov-trace](#prop:corrected-markov-trace) | Corrected Markov trace of the trefoil braid | Ch 12 | `qou:QOU.ParticleInteractions.corrected_markov_trace` |
 | [prop:cosimplicial-crossed-groupoid](#prop:cosimplicial-crossed-groupoid) | Cosimplicial crossed groupoid | Ch 4 | `qou:QOU.LiftingDescent.cosimplicial_crossed_groupoid_exists` |
 | [prop:skein-coulomb-enhancement](#prop:skein-coulomb-enhancement) | Coulomb enhancement from electron-proton Skein crossings | Ch 14 | `qou:QOU.Archimedean.skein_coulomb_enhancement` |
@@ -1142,7 +1142,7 @@
 | [conj:knot-factor-frobenius-pairing](#conj:knot-factor-frobenius-pairing) | Knot factor as Frobenius self-pairing ratio | Ch 12 | `qou:QOU.BraidKnot.KnotFactorFrobeniusPairing` |
 | [conj:q-gl-kummer-filtration](#conj:q-gl-kummer-filtration) | Kummer filtration on $q$-local systems | Ch 22 | `qou:QOU.QGeometricLanglands.q_gl_kummer_filtration` |
 | [conj:n-v-leading-order-derivation](#conj:n-v-leading-order-derivation) | Leading-order $N_v = |S_5| \cdot q_0^{90}$ ($= 120 \cdot q_0^{90}$) | Ch 15 | `qou:QOU.Observations.n_v_leading_order` |
-| [conj:levi-degeneracy](#conj:levi-degeneracy) | Levi degeneracy conjecture: contact non-degeneracy at vortex collision determines NS regularity | Ch 18 | `qou:QOU.FluidDynamics.LeviDegeneracy` |
+| [conj:levi-degeneracy](#conj:levi-degeneracy) | Levi degeneracy conjecture: a vanishing Levi scalar $\xi\cdot\mathrm{curl}\,\xi$ on the high-vorticity set prevents blow-up | Ch 18 | `qou:QOU.FluidDynamics.LeviDegeneracyQ1.LeviDegeneracy` |
 | [conj:tetraplectic-askey-localisation](#conj:tetraplectic-askey-localisation) | Local Askey-scheme approximation of the $S_5$-isotypic states on the Bring cone | Ch 6 | — |
 | [conj:lifted-crossing-locality](#conj:lifted-crossing-locality) | Locality of lifted-crossing contributions in the mass expansion | Ch 12 | `qou:QOU.ParticleInteractions.LiftedCrossingLocality` |
 | [conj:lusztig-canonical-basis-q-eq-1](#conj:lusztig-canonical-basis-q-eq-1) | Lusztig canonical basis at $q = 1$ — decategorification of Kashiwara crystal via Kazhdan–Lusztig polynomials | Ch 19 | `qou:QOU.BraidsAndKnots.LusztigCanonicalBasisQEq1` |
