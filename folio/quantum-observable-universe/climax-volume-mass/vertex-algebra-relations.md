@@ -465,14 +465,14 @@ $$
 
 where $\check{R}_{(n)}$ is the $R$-matrix at brane level $n$. The class $\kappa_n = 0$ if and only if jet prolongation determines the level-$(n+1)$ braiding entirely from the level-$n$ braiding.
 
-**Perpetual obstruction** (C-5a): When $\chi(A) = -6$,
+**Kummer persistence** (C-5a): When $\chi(A) = -6$, item 3 of the [QU-to-QOU theorem](#thm:qu-to-qou) gives
 
 $$
-  \kappa_n  \neq  0
-  \qquad \forall n \geq 0.
+  \kappa_n = 0 \iff n \mid 6,
+  \qquad n \geq 1,
 $$
 
-In Hecke generators: at every brane level, there exist braid words $\beta_{n+1} \in H_{n+1}(q)$ that cannot be expressed as $L_{-1}(\mathcal{B}_n)$ for any $\mathcal{B}_n \in H_n(R, q)$. The jet corrections and the base obstruction occupy complementary subgroups; cancellation is impossible.
+for the Kummer obstruction $\chi(A) \bmod n$. This relation formerly asserted $\kappa_n \neq 0$ for all $n$, on the ground that jet corrections and the base obstruction occupy complementary subgroups; that argument is withdrawn. Whether the $R$-matrix class defined above coincides with the Kummer obstruction is open.
 
 *Scope.* This restates item 3 of [QU-to-QOU](#thm:qu-to-qou) in its earlier, jet-tower form, which is retracted. Item 3 now states persistence in the Kummer tower (the obstruction $\chi(\mathcal{S}) \bmod n$ to an $n$-th root of the Reeb bundle), not at every level of the jet tower. For the bands used in this corpus the complementary-subgroup step is not established on a closed surface such as Bring's. There $H^2(\mathcal{S}, \mathcal{O}_{\mathcal{S}}) = 0$, so the jet corrections $\delta_n$ vanish. For the band $\mathbb{Z}$, the group $H^2(\mathcal{S}, \mathbb{Z}) \cong \mathbb{Z}$ has no non-trivial complement. For $\mathcal{O}^{\times}$ and $\mathbb{G}_m$, the obstruction group itself is zero. See the scope note in the [proof of QU-to-QOU](#prf:qu-to-qou).
 

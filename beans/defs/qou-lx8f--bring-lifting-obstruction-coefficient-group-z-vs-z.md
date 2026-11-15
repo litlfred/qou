@@ -85,3 +85,17 @@ A fourth reason, Hom(divisible, Z) = 0, holds only for divisible R. I scoped it 
 Owner chose "restate item 3 of thm:qu-to-qou as a degree condition" in the project thread "Settle open-problem leftovers". On this branch item 3 already reads (since 2026-10-12): ξ has an n-th root iff n | χ(S), obstruction χ mod n ∈ H²(S, μ_n); for Bring n ∈ {1,2,3,6}. So the statement needs no further edit.
 
 **Open, owner call:** 66 files under `folio/` still say "perpetual obstruction", including `thm:motivic-perpetual-obstruction` and `axiom yekutieli_perpetual` (`climax-volume-mass/vertex-algebra-jet-relations.lean:146`, an `axiom`). Not swept: AGENTS.md §ASK THE OWNER.
+
+## 2026-11-15 — "perpetual obstruction" re-scope applied (owner option 1, PR #7747)
+
+Audit: /mnt/project-files/qou-leftovers/perpetual-obstruction-audit.md (66 files; 24 flagged, 42 left).
+Lean (commit 0e71fb90d): axiom yekutieli_perpetual removed; qu-to-qou field perpetual -> kummer_persistence
+(+ qu_to_qou_obstruction_persists_iff, qu_to_qou_chi_neg_six); BringsObstruction now carries the degree
+condition and derives the obstructed levels; docstring notes on 5 files. All lean-direct exit 0.
+
+Prose (11 edits in 10 blocks + millennium-bounds authorNote). On review, q-gl-intro and
+q-gl-obstruction-classical-compatibility were reclassified to A (they already say density-1 Kummer levels),
+and substrate-gm-torsion already carries a Scope paragraph; left as is.
+Old text of blocks whose schema drops authorNotes (prose/table) is recorded here:
+- climax-volume-mass/vertex-algebra-relations-table3-data: "\neq 0$ | Perpetual obstruction |"
+- introduction/chapter-overview: "revealing a perpetual obstruction $\kappa_0$ that blocks infinite jet refinement."

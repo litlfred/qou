@@ -11,6 +11,12 @@ export default proposition({
   ],
   authorNotes: [
     {
+      kind: "refined-framing",
+      date: "2026-11-15",
+      body:
+        "Re-scoped 2026-11-15 (owner decision, PR #7747, bean qou-lx8f): the previous text read: \"Consequently, $\\kappa_n \\neq 0$ unconditionally for all $n$.\"",
+    },
+    {
       kind: "caveat",
       date: "2026-10-13",
       body:
