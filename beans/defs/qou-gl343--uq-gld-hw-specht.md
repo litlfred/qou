@@ -8,7 +8,7 @@ tags:
     - quark-state
     - schur-weyl
 created_at: 2026-11-15T10:20:00Z
-updated_at: 2026-11-15T11:10:00Z
+updated_at: 2026-11-15T17:20:00Z
 parent: qou-gl34
 ---
 
@@ -24,3 +24,14 @@ Owner ruling via coordinator 2026-11-15: "work G3.4, dispatch siblings". Direct 
 - Open: the bridge `rowDiagram μ = partitionShape λ` (sorted nonzero parts), so the bound reads
   with the `Fintype.card (StandardYoungTableau (partitionShape λ))` used in `finrank_range_jimbo`.
 - Open (the "=" and HW_λ ≅ S_λ halves): follow from G3.4 itself once the sandwich closes.
+
+## 2026-11-15: the "=" half proved (branch claude/gl343-hw-dim-equality-2026-11-15)
+
+`QuantumGLHWDim.lean`, sorry-free, standard axioms only:
+
+- `sum_sq_finrank_hwSpace_eq`: Σ_μ (dim HW_μ)² = Σ_{λ ⊢ m+1, ℓ(λ) ≤ d} (f^λ)².
+- `finrank_hwSpace_eq_numSYT`: dim HW_μ = f^μ for every dominant μ of total weight m+1.
+
+Both hold over a linearly ordered field at q not a root of unity. The proof squeezes G3.4 (`range_jimbo_eq_commutant`), `finrank_range_jimbo` and `hstar_occWeights` together.
+
+Still open: HW_λ ≅ S_λ as H-modules, and the any-field case (#7874).
