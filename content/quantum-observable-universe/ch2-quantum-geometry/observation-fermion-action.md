@@ -28,7 +28,7 @@ $e_-$ onto $\bigwedge^2$ (fermionic).
   $e_+$: symmetric states remain symmetric.  The commutator
   of two observations vanishes on bosons
   ([two-observer parallelogram](#rem:two-observer-parallelogram)):
-  $[I_1, I_2](\alpha_p) = 0$ when
+  $[O_1, O_2](\alpha) = 0$ when
   $\alpha$ is a boson.  Bosons can be observed without
   interference.
 
@@ -43,7 +43,7 @@ $e_-$ onto $\bigwedge^2$ (fermionic).
   ([observation energy](#prop:observation-energy)).
 
   The commutator is non-zero on fermions:
-  $[I_1, I_2](\alpha_p) \neq 0$.  Two
+  $[O_1, O_2](\alpha) \neq 0$.  Two
   observers acting on the same fermion interfere because
   each observation rotates the $\bigwedge^2$ component in a
   different direction in the colour fibre, and these

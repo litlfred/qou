@@ -1,6 +1,6 @@
 **Proposition.**
-*Let $\mathfrak{I}\in \Gamma(U, \mathrm{Ad}(J^1 \mathcal{S}))$
-be an observation ([observation](#def:observation)) with
+*Let $O \colon A \to A$ be an observation
+([observation](#def:observation)) with
 substrate perturbation $\delta q$.  Then:*
 
 1. **(Quantum energy increases.)** *The quantum Planck constant
@@ -27,7 +27,7 @@ substrate perturbation $\delta q$.  Then:*
      S_{q'}
      \;=\;
      S_q \;+\; \delta q \cdot \frac{\partial S_q}{\partial q}
-     \;+\; O((\delta q)^2)
+     \;+\; \mathcal{O}((\delta q)^2)
    $$
 
    *The first-order shift $\partial S_q / \partial q$ is the
