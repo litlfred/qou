@@ -9,8 +9,11 @@ export default algorithm({
         "Maintenance contract (working channel, not published prose): the " +
         "$\\mathfrak{Q}_\\beta$ subdir ledger `docs/coordination/1ppq-qbeta.md` " +
         "carries the $c_k$ reversal-history table. Any inclusion/exclusion " +
-        "decision must update both that ledger and the canonical witness " +
-        "`computations/q-beta-predicted.witness.json`.",
+        "decision must update both that ledger and the canonical tiered $c_k$ cache " +
+        "`computations/qbeta/qbeta-ck-cache.witness.json` (which is C-frame, " +
+        "`markov_convention: \"C\"`, pending the Convention-D re-derivation under " +
+        "`qou-cds1` / `qou-wxhi`; downstream $Q_{N_2}$ consumer: " +
+        "`computations/q-beta-predicted.witness.json`).",
     },
   ],
   label: "alg:ck-truncation-ladder",
@@ -20,8 +23,8 @@ export default algorithm({
   ],
   computation: {
     engine: "python+mpmath",
-    script: "computations/q_beta_predicted.py",
-    witness: "computations/q-beta-predicted.witness.json",
+    script: "computations/qbeta/qbeta_ck_cache.py",
+    witness: "computations/qbeta/qbeta-ck-cache.witness.json",
     status: "verified",
   },
   tags: [

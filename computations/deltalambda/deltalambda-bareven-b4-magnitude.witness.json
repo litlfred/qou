@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-05T18:02:48.710574+00:00",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "computedAt": "2026-11-15T22:42:09.761594+00:00",
+  "commitSha": "a729482cb284bb439f697cd1efc4eef26bf9cd6f",
   "assertions": [
     {
       "name": "g_reeb_bar_even",
@@ -12,6 +12,24 @@
     },
     {
       "name": "z_naive_bar_even",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "z_D_bar_equals_z_D_minus_h",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "z_D_even_bar_invariant",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "z_D_odd_equals_half_h",
       "computed": "True",
       "expected": "True",
       "passed": true
@@ -31,14 +49,14 @@
     {
       "name": "rho_strong_3_is_3p81",
       "computed": "3.81279774906226661180053890956358142994350988520818126248614",
-      "expected": 3.8128,
+      "expected": "3.8128",
       "passed": true,
       "tolerance": "0.001"
     },
     {
       "name": "rho_strong_4_is_13p03",
       "computed": "13.0315686436625831774063924383656861870678600861507576982761",
-      "expected": 13.032,
+      "expected": "13.032",
       "passed": true,
       "tolerance": "0.02"
     },
@@ -55,6 +73,15 @@
       "passed": true
     },
     {
+      "name": "d_frame_routes_land_both_targets",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "D-frame routes",
+      "source": "Coherence count over all 5 physical Convention-D bar(z_D) = z_D - h evaluations (D1_z_D_even_iso, D2_z_D_cumulant_sym_iso, D2_z_D_minus_h_writhe, D3_z_D_odd_half_h_writhe, D3_z_D_odd_half_h_iso): Route D1 (z_D^{even} = z_D - h/2 = 0.508158, ISO), Route D2 (1/2(b_A(z_D)+b_A(z_D-h)), ISO and WRITHE barred branch z_D-h), and Route D3 (z_D^{odd} = h/2 = 0.104530, WRITHE and ISO). Every route misses the strong targets {3.8128, 13.0316} by >20% against the 5% gate."
+    },
+    {
       "name": "single_m_lands_both_targets",
       "computed": 0,
       "expected": 0,
@@ -68,8 +95,8 @@
   "durationMs": 0,
   "computation": "deltalambda-bareven-b4-magnitude",
   "scriptFile": "deltalambda_bareven_b4_magnitude_probe.py",
-  "scriptHash": "b40660b9ebea",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "scriptHash": "80e912f636e2",
+  "scriptCommitSha": "a729482cb284bb439f697cd1efc4eef26bf9cd6f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -77,14 +104,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
   },
   "invocation": {
     "argv": [
@@ -92,16 +119,43 @@
     ],
     "reproduce": "python3 -u computations/deltalambda/deltalambda_bareven_b4_magnitude_probe.py"
   },
-  "description": "Vector-3 forward test: bar-even symmetrization of the b_A=-ln det(I+mG) cumulant does NOT crack the isospin-even strong binding magnitude. The parameter-free magnitude (g_reeb, z_naive) is bar-even => symmetrization is a structural no-op; steelmanned with a free bar-odd m no single m lands both isospin-corrected strong targets {3.81, 13.03}. Honest negative, scope-(a) + scope-(b) sub-result. No fit, audit-only.",
+  "description": "Vector-3 forward test: bar-even symmetrization of the b_A=-ln det(I+mG) cumulant does NOT crack the isospin-even strong binding magnitude. Evaluated in both C-frame (g_reeb, z_naive bar-even => structural no-op) and canonical Convention D via bar(z_D) = 1/(q^3+q) = z_D - h (z_D = z_D^{even} + h/2, routes D1/D2/D3, bean qou-pmkh / Q-WXHI-2 = 1), plus a free-m steelman coherence scan: no parameter-free or free m lands both isospin-corrected strong targets {3.81, 13.03}. Honest negative, scope-(a) + scope-(b) sub-result. No fit, audit-only.",
   "contentBlock": "rem:ohtsuki-tower-bar-parity",
-  "tier": "structural (exact det closed forms + bar-parity argument; no fit, no AME inversion)",
+  "tier": "structural (exact det closed forms + C/D bar-parity argument; no fit, no AME inversion)",
   "result": {
     "bar_parity_of_parameter_free_magnitude": {
       "g_reeb": "0.44672706790566138",
       "g_reeb_bar_even": true,
       "z_naive": "0.499320334183694452",
       "z_naive_bar_even": true,
-      "consequence": "m(q^-1)=m(q) => b_A(q)=b_A(q^-1) for every A => bar-even symmetrization is a STRUCTURAL NO-OP on the actual construction."
+      "consequence": "m(q^-1)=m(q) => b_A(q)=b_A(q^-1) for every A at g_reeb and z_C => bar-even symmetrization is a STRUCTURAL NO-OP on those bar-even magnitudes."
+    },
+    "d_frame_bar_parity_decomposition": {
+      "convention": "D",
+      "bean": "qou-pmkh",
+      "ruling": "Q-WXHI-2 = 1",
+      "z_D": "0.612688037146465252",
+      "z_D_bar": "0.403627738350825936",
+      "h": "0.209060298795639315",
+      "z_D_is_bar_even": false,
+      "z_D_bar_equals_z_D_minus_h": true,
+      "z_D_shift_residual": "3.88938e-62",
+      "z_D_even": "0.508157887748645594",
+      "z_D_even_formula": "(z_D + bar(z_D))/2 = (q^4+1)/(2 q (q^2+1)) = z_D - h/2",
+      "z_D_even_bar_invariant": true,
+      "z_D_odd": "0.104530149397819658",
+      "z_D_odd_formula": "(z_D - bar(z_D))/2 = +h/2 = (q^2-1)/(2q)",
+      "z_D_odd_equals_half_h": true,
+      "z_D_reconstruction_residual": "0.0",
+      "d_frame_routes_examined": [
+        "D1_z_D_even_iso",
+        "D2_z_D_cumulant_sym_iso",
+        "D2_z_D_minus_h_writhe",
+        "D3_z_D_odd_half_h_writhe",
+        "D3_z_D_odd_half_h_iso"
+      ],
+      "d_frame_lands_both_count": 0,
+      "reading": "Under canonical Convention D, z_D = q^3/(q^2+1) is bar-NEITHER: bar(z_D) = 1/(q^3+q) = z_D - h, so z_D = z_D^{even} + z_D^{odd} with z_D^{even} = z_D - h/2 = 0.508158 and z_D^{odd} = +h/2 = 0.104530. Across all three D-frame routes (D1: m = z_D^{even}; D2: 1/2(b_A(z_D)+b_A(z_D-h)); D3: m = z_D^{odd} = h/2 symmetrized), 0 of 5 physical evaluations land both strong targets {3.8128, 13.0316} within 5%."
     },
     "algebraic_preflight": {
       "writhe_det_matches_closed_form": true,
@@ -152,6 +206,66 @@
           "rho4_err_pct": "-68.96",
           "bar_even_is_noop": true
         }
+      },
+      "z_D_even_route_D1": {
+        "m": "0.508157887748645594",
+        "formula": "z_D^{even} = (z_D + bar(z_D))/2 = (q^4+1)/(2 q (q^2+1)) = z_D - h/2",
+        "below_ceiling": false,
+        "writhe": {
+          "excluded": "z_D^{even} = 0.508158 >= 1/sqrt(5) = 0.447214 => det(I+mS) < 0 (unphysical) at A=4",
+          "det_A4": "-0.21594732911"
+        },
+        "iso": {
+          "rho3": "2.40342",
+          "rho4": "4.02653",
+          "rho3_err_pct": "-36.96",
+          "rho4_err_pct": "-69.1",
+          "bar_even_is_noop": true
+        }
+      },
+      "z_D_cumulant_sym_route_D2": {
+        "m_unbarred_z_D": "0.612688037146465252",
+        "m_barred_z_D_minus_h": "0.403627738350825936",
+        "formula": "b_A^{D,even} = 1/2 (b_A(z_D) + b_A(z_D - h))",
+        "bar_even_is_noop": false,
+        "writhe": {
+          "unbarred_z_D_below_ceiling": false,
+          "barred_z_D_minus_h_below_ceiling": true,
+          "det_A4_at_z_D": "-0.547744172023",
+          "det_A4_at_z_D_minus_h": "0.155214951231",
+          "excluded_full_average": "unbarred branch z_D = 0.612688 > 1/sqrt(5) has det_A4 < 0 (unphysical)",
+          "barred_branch_only_z_D_minus_h": {
+            "rho3": "2.48536",
+            "rho4": "10.476",
+            "rho3_err_pct": "-34.82",
+            "rho4_err_pct": "-19.61"
+          }
+        },
+        "iso": {
+          "all_dets_positive": true,
+          "rho3": "2.37349",
+          "rho4": "3.94745",
+          "rho3_err_pct": "-37.75",
+          "rho4_err_pct": "-69.71"
+        }
+      },
+      "z_D_odd_half_h_route_D3": {
+        "m": "0.104530149397819658",
+        "formula": "z_D^{odd} = (z_D - bar(z_D))/2 = +h/2 = (q^2-1)/(2q); symmetrized via 1/2(b_A(h/2)+b_A(-h/2))",
+        "below_ceiling": true,
+        "below_iso_pole_one_third": true,
+        "writhe": {
+          "rho3": "3.03383",
+          "rho4": "6.11363",
+          "rho3_err_pct": "-20.43",
+          "rho4_err_pct": "-53.09"
+        },
+        "iso": {
+          "rho3": "3.03383",
+          "rho4": "6.211",
+          "rho3_err_pct": "-20.43",
+          "rho4_err_pct": "-52.34"
+        }
       }
     },
     "steelman_coherence_scan_free_m": {
@@ -199,15 +313,16 @@
     },
     "verdict": {
       "classification": "HONEST NEGATIVE (scope-(a)) with a scope-(b) sub-result.",
-      "scope_b_subresult": "The parameter-free bond magnitude is bar-even (proved here) AND the A=4 writhe cumulant det is even in m (Lean B4CumulantBarEven.lean) => bar-even symmetrization is a structural no-op at the dominant A=4 magnitude wall.",
-      "scope_a_negative": "No single parameter-free (or even free) m reproduces BOTH isospin-corrected strong ratios {3.81, 13.03}: WRITHE rho4=13.03 forces rho3=2.466 (-35.3%); WRITHE rho3=3.81 has no root at all (rho3_writhe caps at 2.91 < 3.81 over the whole window); ISO raw rho4 caps at ~6; ISO bar-even DOES reach rho4=13.03 at m=0.31900 while still physical (all dets > 0), but rho3_even there is 3.435 (-9.9%). Bar-even symmetrization does NOT tame the overshoot (#3952) because the construction is already in the bar-even sector -- there is no bar-odd part to isolate.",
-      "consistency": "Consistent with (not a re-derivation of) the 2026-06-25 scope-(b) pruning that 4He binding must be bar-even; here the b_A cumulant is shown to be ALREADY bar-even, so the overshoot is a genuine bar-even magnitude problem. Nothing wired, no fit, no AME inversion."
+      "scope_b_subresult": "The parameter-free bond magnitude g_reeb (and C-frame z_C) is bar-even AND the A=4 writhe cumulant det is even in m (Lean B4CumulantBarEven.lean) => bar-even symmetrization is a structural no-op at the dominant A=4 magnitude wall; under canonical Convention D, bar(z_D) = 1/(q^3+q) = z_D - h decomposes z_D into z_D^{even} = z_D - h/2 and z_D^{odd} = +h/2 (bean qou-pmkh).",
+      "scope_a_negative": "No single parameter-free (C-frame, D-frame bar-decomposed, or even free) m reproduces BOTH isospin-corrected strong ratios {3.81, 13.03}: under D, Route D1 (z_D^{even}=0.508158) is above the WRITHE ceiling and gives ISO rho3=2.40342 (-36.96%), rho4=4.02653 (-69.10%); Route D2 (1/2(b_A(z_D)+b_A(z_D-h))) gives ISO rho3=2.37349 (-37.75%), rho4=3.94745 (-69.71%) and WRITHE barred-branch rho3=2.48536 (-34.82%), rho4=10.476 (-19.61%); Route D3 (z_D^{odd}=h/2=0.104530) gives WRITHE rho3=3.03383 (-20.43%), rho4=6.11363 (-53.09%) and ISO rho3=3.03383 (-20.43%), rho4=6.21100 (-52.34%). In the free-m steelman scan, WRITHE rho4=13.03 forces rho3=2.466 (-35.3%); WRITHE rho3=3.81 has no root at all (rho3_writhe caps at 2.91 < 3.81); ISO raw rho4 caps at ~6; ISO bar-even reaches rho4=13.03 at m=0.31900 (all dets > 0), where rho3_even is 3.435 (-9.9%).",
+      "consistency": "Consistent with (not a re-derivation of) the 2026-06-25 scope-(b) pruning that 4He binding must be bar-even; here the b_A cumulant is shown to be ALREADY bar-even at g_reeb/z_C and non-rescuing across all three Convention-D bar(z_D) = z_D - h routes, so the overshoot is a genuine bar-even magnitude problem. Nothing wired, no fit, no AME inversion."
     }
   },
   "context": {
     "axis": "Delta_lambda magnitude wall -- Vector 3 (bar-even symmetrized b_A cumulant)",
     "attack_vector_map": "docs/audits/2026-07-18-deltalambda-attack-vector-map.md",
     "q0_convention": "experimental/proton pin, read by name from q_parameter.Q_50_DIGIT_STR (bean qou-9ugp)",
+    "markov_convention_d_decomposition": "bar(z_D) = 1/(q^3+q) = z_D - h; z_D^{even} = z_D - h/2, z_D^{odd} = +h/2 (bean qou-pmkh, Q-WXHI-2 = 1)",
     "q0": "1.1099785827513808075916690956107688798744991218736",
     "no_fit": true
   },
