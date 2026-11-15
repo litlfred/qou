@@ -116,29 +116,32 @@ theorem compositum_rank_decomposition_full :
     `Σ n_i · D[Z_{K_i}] = 2/(3π)` in the compositum
     `Q(ζ_15)`-Bloch group.
 
-    The class field is stated as the existence of a unit-circle
-    angle witness `θ` with `BlochWigner_unit_circle θ =
-    bringZeroModeValue = 2/(3π)` (the strengthened shape required by
-    the downstream `BringZeroModeBlochClass`); a concrete instance
-    must produce both the knot multi-set (witnessing where the sum
-    comes from) and the equality. The abstract field formulation
+    The class field is the algebraic Bloch–Wigner combination
+    `Σ nᵢ · D(zᵢ) = 2/(3π)` required by the downstream
+    `BringZeroModeBlochClass` (restated 2026-11-15, issue #7942; the
+    earlier unit-circle-angle field was true by the intermediate value
+    theorem and so carried no content).  A concrete instance must also
+    exhibit the knots the shapes `zᵢ` come from.  The field is expected
+    to be false; see `BringZeroModeBlochClass`. The abstract field formulation
     insulates this file from the Mathlib-pending Bloch group
     infrastructure. -/
 -- Ref: [leitner2026] conj:bring-hyperbolic-knot-bloch-decomposition
 class BringHyperbolicDecomposition : Prop where
-  /-- The finite-multi-set Bloch-Wigner sum realises `2/(3π)` via a
-      concrete unit-circle angle witness `θ`, in the strengthened
-      form required by the downstream `BringZeroModeBlochClass`
-      (the trivial `∃ z, z = bringZeroModeValue` loophole is closed). -/
+  /-- The finite-multi-set Bloch–Wigner sum over algebraic shapes in the
+      upper half plane realises `2/(3π)`, in the form required by the
+      downstream `BringZeroModeBlochClass`. -/
   -- Ref: [borel1974], [thurston1978], [suslin1991]
-  bw_sum_realised : ∃ θ : ℝ, BlochWigner_unit_circle θ = bringZeroModeValue
+  bw_sum_realised :
+    ∃ (s : Finset ℂ) (n : ℂ → ℤ),
+      (∀ z ∈ s, IsAlgebraic ℚ z ∧ 0 < z.im) ∧
+      ∑ z ∈ s, (n z : ℝ) * BlochWigner_lob z = bringZeroModeValue
 
 /-- **Conditional theorem.** If a `BringHyperbolicDecomposition` is
     given, then the `BringZeroModeBlochClass` hypothesis required
     by `prop:em-coupling-bring-zero-mode` is inhabited.
 
-    Proof: both classes assert the same existential statement
-    `∃ z, z = 2/(3π)`; the implication is a direct unpacking. The
+    Proof: both classes assert the same algebraic Bloch–Wigner sum;
+    the implication is a direct unpacking. The
     content of the conditional is purely logical bridging — the
     structural mathematics lives entirely inside the
     `BringHyperbolicDecomposition` class instance, which is the

@@ -48,22 +48,22 @@
   Ref: filler at content/.../predicted-spectra/bloch-wigner-mathlib-filler.lean
   Ref: [suslin1991], [bloch2000] for the Bloch-Suslin K-theory framework
 -/
-import Mathlib.Data.Real.Basic
+import QOU.Archimedean.ClausenFunctionMathlibFiller
 
 namespace QOU.Archimedean
 
 /-- The Bloch-Wigner dilogarithm on the unit circle:
-    `D(e^{iθ}) = Cl_2 θ`, where `Cl_2` is the Clausen function.
+    `D(e^{iθ}) = Cl_2 θ`, where `Cl_2` is the Clausen function
+    (`ClausenFunctionMathlibFiller.lean`).
 
-    Declared as `noncomputable opaque` rather than `axiom`: the
-    function exists with this signature, but its body is sealed
-    pending the canonical Clausen-function integration (Phase 3
-    research-grade closure).  Downstream consumers depend only on
-    the signature.
-
-    See the sibling filler at
-    `folio/quantum-observable-universe/predicted-spectra/bloch-wigner-mathlib-filler.lean`
-    for the candidate body `Cl_2 θ`. -/
-noncomputable opaque BlochWigner_unit_circle (_θ : ℝ) : ℝ
+    **2026-11-15 (owner decision, issue #7942):** this was a
+    `noncomputable opaque` with no body, which made every statement
+    about its values independent of Lean.  It now carries its documented
+    body `Cl_2 θ`.  Consequence: the old `BringZeroModeBlochClass` field
+    (*some* real angle) became an intermediate-value fact
+    (`BringZeroModeClausenWitness.lean`), so the field was restated over
+    algebraic Bloch–Wigner combinations; it has no instance.  The root-of-unity (transcendence-obstructed)
+    version is the separate class `BringZeroModeRootOfUnityClass`. -/
+noncomputable def BlochWigner_unit_circle (θ : ℝ) : ℝ := Cl_2 θ
 
 end QOU.Archimedean
