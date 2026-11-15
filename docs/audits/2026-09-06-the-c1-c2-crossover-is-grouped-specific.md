@@ -28,7 +28,7 @@ gives the Borromean coefficients. Weighted by `ℏ_q = 0.099081716044258508`
 | nn | 2 | 9/4 | 217/16 | 0.5972 | **0** | 1/16 | **INFINITE** |
 | T | 3 | 163/64 | 3285/128 | 0.9984 | 1/64 | 99/128 | **4.9045** |
 | ³He | 3 | 85/32 | 3451/128 | 1.0057 | 1/8 | 157/128 | **0.9722** |
-| ⁴He | 4 | 259/128 | 15307/512 | 1.4639 | 7/128 | *(needs P=4)* | *(not measured)* |
+| ⁴He | 4 | 259/128 | 15307/512 | 1.4639 | 7/128 | 439/512 | **1.5535** |
 
 ## The finding: #6559's argument was carried entirely by the ordering
 
@@ -82,8 +82,16 @@ there.
   the derived floor two ways, and `a₁ = 7/128` against the `c₁(⁴He)` of #6931,
   which **independently confirms the one row that PR's own probe could only
   assert circularly**.
-- **`c₃` is not re-measured at all.** #6607's comparable-not-diverging result is
-  therefore **convention-scoped**, not refuted. It needs `P = 5`.
+- ~~**`c₃` is not re-measured at all.**~~ **🛑 SETTLED 2026-09-06 — bean
+  `qou-yaig`
+  ([`2026-09-06-c3-under-borromean-the-second-order-is-the-only-bad-one.md`](2026-09-06-c3-under-borromean-the-second-order-is-the-only-bad-one.md)).**
+  Measured across all six cases (`pp 67/16`, `pn 43/8`, `nn 27/4`, `T 101/16`,
+  `³He 839/128`, `⁴He 1329/256`; and at fourth order `c₄`: `pp -585/128`,
+  `pn 109/192`, `nn 27/32`, `T 743/384`, `³He 10001/1536`, `⁴He 43079/6144`).
+  #6607's conclusion that order 3 shrinks relative to order 2 (`c₃·ℏ³ / c₂·ℏ²`
+  = `0.4023, 0.6817, 10.7008, 0.8087, 0.5295, 0.5999`) **survives** on the five
+  cases where `c₁ ≠ 0` — the second order is an isolated jump caused by small
+  Borromean `c₁`, not the onset of divergence.
 - **This says nothing about the physics.** Scope-(a). It is a statement about
   which of two braid-word conventions a series-ordering argument was computed
   in.
