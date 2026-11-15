@@ -32,3 +32,5 @@ Do not close until the coproduct is derived (AGENTS §13a).
 Neither (a) nor (b) yields a usable density. Candidate (c), a coproduct fixed by some other framework principle, stays open.
 Side finding: the corpus carries two distinct 'Plancherel trace' objects (with and without q^{-κ_λ}).
 Side finding: the Lean coCasimirSum constant 0.14496 is stale against the witness value 0.17312. The inequalities still hold.
+
+2026-11-15: the stale coCasimirSum is fixed. DeltaLambdaRefutation.lean now carries the regenerated witness figures (rho-k-h3a-co-casimir.witness.json, 2026-10-05, proton pin): coCasimirSum 0.173120471677, targetSigned -4.353367491256, closureGap 4.526487962933 (12-figure truncations; the gap identity is exact over Q). lean-direct exit 0, axioms [propext, Classical.choice, Quot.sound]. The refutation verdict is unchanged. The two-"Plancherel trace" rename is still open and waits on the owner.
