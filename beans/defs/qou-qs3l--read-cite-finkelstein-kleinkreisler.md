@@ -1,7 +1,7 @@
 ---
 # qou-qs3l
 title: 'Read and assess Finkelstein (Knots and preons) and Klein-Kreisler (q-deformed quark wavefunctions)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
@@ -18,3 +18,7 @@ Held, uncited in content: `library/arxiv-0806.3105v3` (Finkelstein: quark famili
 
 ## 2026-11-15 — owner ruling D3 = yes, state the mismatch
 When a quark-state block cites finkelstein2008 / kleinkreisler1996, it must say that their mixed (2,1)-type state is a preon (Finkelstein) / nucleon (Klein-Kreisler), not a single quark. No block cites them yet.
+
+## 2026-11-15 — closed (owner card "Close three, keep qs5m")
+
+Evidence: assessment docs/audits/2026-11-15-quark-state-library-citations.md (PR #7823, merged); owner ruling D3 recorded above. No open conjecture in this bean.
