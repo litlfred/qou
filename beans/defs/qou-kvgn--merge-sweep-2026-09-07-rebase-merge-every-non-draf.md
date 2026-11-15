@@ -1,13 +1,13 @@
 ---
 # qou-kvgn
 title: 'Merge sweep 2026-09-07: rebase-merge every non-draft open PR whose mergeable_state is clean, verify replay per PR, report the table'
-status: todo
+status: scrapped
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T18:25:28Z
-updated_at: 2026-10-04T15:13:19Z
+updated_at: 2026-11-15T13:31:00Z
 parent: qou-5vkl
 ---
 
@@ -28,3 +28,7 @@ Drafts skipped: #7124 #7101 #6878 #6681 #6233 #5338 #5330 #4845.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Closed 2026-11-15 (owner tap, ops bean triage)
+
+Status set to `scrapped`: a one-off merge sweep from 2026-09-07; superseded by the 2026-11-15 idle-PR triage (project file qou-handover/idle-pr-triage.md), which dispositioned the open PRs again.
