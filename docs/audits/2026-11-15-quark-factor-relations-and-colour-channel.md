@@ -104,13 +104,13 @@ the companion map, `docs/audits/2026-11-15-standard-model-eightfold-way-corpus-m
 | relation | physics content | substrate status |
 |---|---|---|
 | spin–statistics + colour antisymmetry | colour (1³) ⇒ spin–flavour–space symmetric (SU(6) 56) | **conditional**: §2, given four S₃ factors + Fermi + Δ⁺⁺ |
-| μ_p/μ_n = −3/2 | from the 56 + μ ∝ Q | **conditional** + imported charges |
+| μ_p/μ_n = −3/2 | from the 56 + μ ∝ Q | **conditional** + imported charges. Contrast `g_A`: `AxialCoupling.lean` imports the SU(6) 5/3 and selects a colour average against PDG (corpus map §7) |
 | Lorentz: chirality = helicity when massless; mass mixes L/R | needs momentum and a Dirac structure | **absent** in Hecke-word language. The chirality unit u is a point of S² that no structure fixes (#7818, #7820) |
 | weak isospin acts on L only | SU(2)_L on left doublets | a level-2 factor exists (convention D) but nothing ties it to L-chirality. **absent** |
 | Q = T₃ + Y, Y chirality-dependent | Y_Q = 1/6, Y_u = 2/3, Y_d = −1/3, Y_L = −½, Y_e = −1 | see corpus map (`sm-hypercharge-invariant`); μ̄₁₂₃ is the candidate second invariant |
-| anomaly cancellation ⇒ N_c = 3 | see the note below | **absent** as a derivation |
+| anomaly cancellation ⇒ N_c = 3 | see the note below | **absent** on all six grep paths (corpus map §5) |
 | CKM | flavour ≠ mass eigenbasis | see corpus map (`sm-params-ckm`) |
-| confinement | only colour singlets are asymptotic | the epic hypothesis reads it as "quark labels invisible at order t⁰"; that is not a derivation |
+| confinement | only colour singlets are asymptotic | absent; corpus "confinement" is mostly the SDP/LP homonym (corpus map §10). The epic hypothesis reads it as "quark labels invisible at order t⁰"; that is not a derivation |
 | colour-factor ratio | one-gluon 3̄ : 6 = −2/3 : +1/3, ratio 2 | **measured miss by exactly 2**: level-3 channel gives ratio 1 because \|det T\| = 1 (`computations/probes/level_three_colour_channel_probe.py`) |
 
 ### Note on anomaly cancellation (so it is not mis-cited)
