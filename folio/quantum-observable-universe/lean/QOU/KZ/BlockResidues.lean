@@ -25,7 +25,7 @@ Drinfeld category.
 
 Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S2)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S2)
 -/
 
 namespace QOU.KZ.BlockResidues

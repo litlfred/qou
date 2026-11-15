@@ -35,7 +35,7 @@ whose term-wise integration gives `a₂ = −τ/4` and `a₄ = −v₃/8`
 ## References
 
 - [neumann-zagier1985] Neumann & Zagier, Topology 24 (1985). https://doi.org/10.1016/0040-9383(85)90004-7
-- [manuscript] computations/qbeta/qbeta_ohtsuki_nz_bridge_b4_probe.py (the measurement);
+- [leitner2026] computations/qbeta/qbeta_ohtsuki_nz_bridge_b4_probe.py (the measurement);
   QOU/Knot/FigureEightComplexVolume.lean (the order-u² file this extends).
 -/
 

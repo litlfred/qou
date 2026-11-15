@@ -32,7 +32,7 @@ here, and no instance is supplied.
 
 ## References
 
-- [manuscript] §Regularity breakdown at q = 1: the classical limit as a phase transition, `conj:regularity-breakdown`
+- [leitner2026] §Regularity breakdown at q = 1: the classical limit as a phase transition, `conj:regularity-breakdown`
 - [necas-ruzicka-sverak1996] — exclusion of the continuous self-similar profile
 -/
 
@@ -81,7 +81,7 @@ namespace QOU.FluidDynamics
     something: each field is refutable by a wrong object, and the
     negative controls below exhibit such objects.
 
-    Ref: [manuscript] §Regularity breakdown at q = 1: the classical limit
+    Ref: [leitner2026] §Regularity breakdown at q = 1: the classical limit
     as a phase transition, `conj:regularity-breakdown` -/
 class RegularityBreakdown (enstrophy : ℝ → ℝ) (T : ℝ) (sheetDim : ℝ)
     (profile : ℝ → ℝ) (period : ℝ) : Prop where

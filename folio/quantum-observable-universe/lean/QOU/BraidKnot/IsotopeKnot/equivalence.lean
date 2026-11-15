@@ -69,7 +69,7 @@ concept categorically — element = isotope class.*
     The Lean encoding below splits the manuscript claim into named
     sub-claim fields; concretisation requires per-block manuscript
     translation. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/isotope-knot-equivalence.ts
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/isotope-knot-equivalence.ts
 theorem equivalence [ctx : EquivalenceContext] :
     Equivalence ctx.isotope :=
   ⟨ctx.claim_reflexivity, fun h => ctx.claim_symmetry _ _ h, fun h1 h2 => ctx.claim_transitivity _ _ _ h1 h2⟩

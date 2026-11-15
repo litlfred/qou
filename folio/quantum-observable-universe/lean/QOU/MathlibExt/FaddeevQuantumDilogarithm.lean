@@ -22,7 +22,7 @@ input) and **derive consequences from those axioms** — nothing here constructs
 -- Ref: [faddeev1995] Faddeev, "Discrete Heisenberg–Weyl group and modular
 --        group", Lett. Math. Phys. 34 (1995) 249. https://doi.org/10.1007/BF01872779
 -- Ref: [faddeev1994] the quantum dilogarithm. https://doi.org/10.1007/BF02101594
--- Ref: [manuscript] docs/audits/2026-07-11-qbeta-c3-barodd-sleak-phib-target.md
+-- Ref: [leitner2026] docs/audits/2026-07-11-qbeta-c3-barodd-sleak-phib-target.md
 -/
 
 namespace QOU.MathlibExt.FaddeevQuantumDilogarithm

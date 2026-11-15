@@ -43,7 +43,7 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
     For nucleons: the binding (Borromean volume ≈ 7.33) dominates
     the quark crossing sum (3 trefoils ≈ 3 × 0.31), giving
     E_cross < 0. -/
--- Ref: [manuscript] Ch. 5, §torus-hopf-stability
+-- Ref: [leitner2026] Ch. 5, §torus-hopf-stability
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the

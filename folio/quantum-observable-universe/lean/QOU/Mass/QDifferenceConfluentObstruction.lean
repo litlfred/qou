@@ -31,7 +31,7 @@
   `first_order_cancellation` is generic-`R` (§7c); the exclusion lemma is
   wall-side (ℝ — uses ordering and the archimedean property).
 
-  -- Ref: [manuscript] mass-theory, prop:binding-genfun-qdifference;
+  -- Ref: [leitner2026] mass-theory, prop:binding-genfun-qdifference;
   --      docs/audits/2026-07-20-qdifference-kernel-confluent-narrowing.md
 -/
 

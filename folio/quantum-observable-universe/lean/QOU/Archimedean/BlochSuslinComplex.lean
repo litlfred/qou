@@ -32,7 +32,7 @@ calibration `figure8_calibration_complex` now evaluates at the genuine shape
 -- Ref: [suslin1991] Suslin, K_3 of a field, and the Bloch group, Trudy Mat. Inst. Steklova 183 (1991) 217-239.
 -- Ref: [bloch2000] Bloch, Higher Regulators, Algebraic K-Theory, and Zeta Functions of Elliptic Curves, AMS CRM 11 (2000).
 -- Ref: [zagier1991] Zagier, "Polylogarithms, Dedekind zeta functions and the algebraic K-theory of fields" (1991).
--- Ref: [manuscript] prop:archimedean-functor-uniqueness
+-- Ref: [leitner2026] prop:archimedean-functor-uniqueness
 -/
 
 namespace QOU.Archimedean

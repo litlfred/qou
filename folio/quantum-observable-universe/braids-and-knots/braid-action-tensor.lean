@@ -16,7 +16,7 @@ LaTeX label: `prop:braid-action-tensor`
 ## References
 
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
-- [manuscript] §4-path-integrals-and-braiding/braid-action-tensor
+- [leitner2026] §4-path-integrals-and-braiding/braid-action-tensor
 -/
 
 open CategoryTheory MonoidalCategory BraidedCategory
@@ -31,7 +31,7 @@ universe u v
 
     Each Artin generator σ_i acts by applying the braiding c_{V,V}
     at positions i, i+1 and identity elsewhere. -/
--- Ref: [kassel1995], [manuscript] §4
+-- Ref: [kassel1995], [leitner2026] §4
 structure BraidActionTensor (C : Type u) [Category.{v} C]
     [MonoidalCategory C] [BraidedCategory C] where
   /-- The object V to be tensored. -/

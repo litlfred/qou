@@ -59,7 +59,7 @@ content of `S-GB-spectral-collapse` and it remains an assertion.  What is no lon
 assumed is the step *from* concentration *to* collapse, and the discharge below
 takes the real page family rather than `PUnit`.
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory
 -/
 
 namespace QOU.Mathlib.ConcentratedColumnCollapse

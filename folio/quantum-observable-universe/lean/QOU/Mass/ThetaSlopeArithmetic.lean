@@ -58,7 +58,7 @@
   which growth quantity that number is. That identification — Newton slope ↔
   q-Gevrey order, or ↔ level — is the premise that remains.
 
-  -- Ref: [manuscript] docs/audits/2026-07-20-qlift-gauge-gap-synthesis.md
+  -- Ref: [leitner2026] docs/audits/2026-07-20-qlift-gauge-gap-synthesis.md
   -- Ref: [ramis-sauloy-zhang2013] Astérisque 355 §1.3.2 (order/level), §2.2 (Newton polygon), §2.3.2 + Ex. 3.3.3 (level = slope difference)
 -/
 

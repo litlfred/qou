@@ -48,8 +48,8 @@ theorem b_at_one_cubed : b_at_one^3 = 3 * Real.sqrt 3 / 8 := by
 
 /-- **The exact symbolic-match lemma.**
     `-2 · b(1)³ = -2 · (3·√3 / 8) = -(3·√3) / 4`. -/
--- Ref: [manuscript] prop:q-beta-categorical-precision-ladder §"Story B c_3"
--- Ref: [manuscript] probe_q_beta_cat_per_factor_decomposition.py (sympy symbolic match)
+-- Ref: [leitner2026] prop:q-beta-categorical-precision-ladder §"Story B c_3"
+-- Ref: [leitner2026] probe_q_beta_cat_per_factor_decomposition.py (sympy symbolic match)
 theorem F3_eps6_leading_eq_neg_2b_cubed :
     -2 * b_at_one^3 = -(3 * Real.sqrt 3) / 4 := by
   rw [b_at_one_cubed]

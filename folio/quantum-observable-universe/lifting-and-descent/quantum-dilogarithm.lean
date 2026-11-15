@@ -20,7 +20,7 @@ LaTeX label: `cor:quantum-dilogarithm`
 ## References
 
 - [faddeev1994] https://doi.org/10.1007/BF02101456
-- [manuscript] §3-lifting-of-quantum-torsion/quantum-dilogarithm
+- [leitner2026] §3-lifting-of-quantum-torsion/quantum-dilogarithm
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical

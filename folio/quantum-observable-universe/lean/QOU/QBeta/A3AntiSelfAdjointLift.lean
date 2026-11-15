@@ -85,7 +85,7 @@ witness / audit, downstream of the substrate→archimedean wall.
 
 ## References
 
-- [manuscript] `conj:qdifference-kernel-prolongation-symbol` (the DM q-cubic period /
+- [leitner2026] `conj:qdifference-kernel-prolongation-symbol` (the DM q-cubic period /
   Yekutieli-Stokes datum that would derive the anti-self-adjoint amplitude `E`);
   `QOU.QBeta.A3OffBlockDerivation` (ROUTE 2-b — the self-adjoint reduction this file
   extends: `magnitudeFactor_le_one`, `observed_lift_unreachable`);

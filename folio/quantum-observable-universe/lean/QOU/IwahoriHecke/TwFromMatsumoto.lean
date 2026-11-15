@@ -50,7 +50,7 @@ than assuming it, which is what made the discharge auditable.
 
 -- Ref: [matsumoto1964] DOI 10.1090/S0002-9904-1964-11211-9
 -- Ref: [humphreys1990] §7.1, §7.4
--- Ref: [manuscript] bean qou-06h7
+-- Ref: [leitner2026] bean qou-06h7
 -/
 
 namespace QOU.IwahoriHecke.TwMatsumoto

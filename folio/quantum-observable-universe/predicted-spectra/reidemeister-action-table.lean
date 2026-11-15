@@ -20,7 +20,7 @@ LaTeX label: `prop:reidemeister-action-table`
 
 ## References
 
-- [manuscript] §5/reidemeister-action-table
+- [leitner2026] §5/reidemeister-action-table
 - [jones1987] https://doi.org/10.2307/1971403
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
@@ -97,7 +97,7 @@ def BraidMove.preservesTrace : BraidMove → Prop
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
--- Ref: [manuscript] §5/reidemeister-action-table
+-- Ref: [leitner2026] §5/reidemeister-action-table
 -- Note: the archimedean hypothesis `1 < q` is dropped — it is not
 -- meaningful over `R_q` (Laurent polynomials carry no order). The ring
 -- `R_q = ℤ[q,q⁻¹]` carries no `Inv` instance, so the inverse of the
@@ -117,14 +117,14 @@ theorem reidemeister_action_table (T : R_q)
 
     The classical limit sets both the parameter and its inverse to `1`
     (`q⁻¹` is named explicitly since `R_q` has no `Inv` instance). -/
--- Ref: [manuscript] §5/reidemeister-action-table
+-- Ref: [leitner2026] §5/reidemeister-action-table
 theorem classical_hecke_involution (T : R_q) (q qi : R_q) (hq : q = 1) (hqi : qi = 1)
     (h_hecke : T ^ 2 = (q - qi) * T + 1) :
     T ^ 2 = 1 := by
   subst hq hqi; simpa using h_hecke
 
 /-- R3 (Yang-Baxter) and far-commutativity preserve volume and trace. -/
--- Ref: [manuscript] §5/reidemeister-action-table
+-- Ref: [leitner2026] §5/reidemeister-action-table
 theorem r3_preserves_volume : BraidMove.R3_YangBaxter.preservesVolume := by
   exact trivial
 

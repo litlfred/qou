@@ -69,7 +69,7 @@ attribute [instance] GBSpectralSequence.gradedAdd GBSpectralSequence.E_infty_add
 
     Conditional on `[GBSpectralSequence R]`, the differential
     squares to zero and the spectral sequence converges. -/
--- Ref: [manuscript] `prop:gb-spectral-sequence`,
+-- Ref: [leitner2026] `prop:gb-spectral-sequence`,
 --      [weibel1994] §5.5
 theorem gb_spectral_sequence
     {R : Type u} [CommRing R] [s : GBSpectralSequence R] (ℓ : ℕ) :

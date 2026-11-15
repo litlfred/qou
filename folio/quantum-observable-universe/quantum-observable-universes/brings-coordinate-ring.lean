@@ -33,10 +33,10 @@ structure BringsCoordinateRing where
   spectralModes : ℕ := 2 * genus
   /-- `S₅` acts on the coordinate ring by permutation
       of homogeneous coordinates. -/
-  -- Ref: [manuscript] Chapter 5
+  -- Ref: [leitner2026] Chapter 5
   s5_action : Equiv.Perm (Fin 5) → carrier → carrier
   /-- The `S₅` action is compatible with multiplication. -/
-  -- Ref: [manuscript] Chapter 5
+  -- Ref: [leitner2026] Chapter 5
   s5_mul_compat :
     ∀ (σ : Equiv.Perm (Fin 5)) (a b : carrier),
       s5_action σ (a * b) = s5_action σ a * s5_action σ b

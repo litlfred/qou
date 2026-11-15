@@ -109,7 +109,7 @@ instance hypothesis and carry the §3b-cond "conditional on
 instance is added here and every downstream conditional becomes
 unconditional automatically.
 
-Ref: [manuscript] §EW-residual, observed at q_0 to relative error
+Ref: [leitner2026] §EW-residual, observed at q_0 to relative error
 1.30e-3 (k=3, top-two ratio against cot θ_W) and 1.42e-3 (k=4,
 pairwise-ratio search in dim-768 spectrum).
 -/
@@ -178,7 +178,7 @@ axioms that are genuine assumptions among ones that are merely unspecified
 constants — and the `Axiom` suffix invited reading it as a claim about the
 scale, which it never was. The value is `0`; it is hidden behind `opaque`, so
 nothing downstream can unfold it and no consumer gains a fact from it. -/
--- Ref: [manuscript] docs/audits/2026-05-06-staircase-ew-residual-conjecture.md
+-- Ref: [leitner2026] docs/audits/2026-05-06-staircase-ew-residual-conjecture.md
 opaque canonicalScaleAxiom {R : Type*} [CommRing R] [Inv R]
     (_q : R) (_k : ℕ) : R := 0
 
@@ -210,6 +210,6 @@ banner.  Closing the conjecture means constructing
 instance can be added and every downstream conditional becomes
 unconditional automatically.
 
-Ref: [manuscript] docs/audits/2026-05-06-staircase-ew-residual-conjecture.md -/
+Ref: [leitner2026] docs/audits/2026-05-06-staircase-ew-residual-conjecture.md -/
 
 end QOU.StaircaseCornerHook

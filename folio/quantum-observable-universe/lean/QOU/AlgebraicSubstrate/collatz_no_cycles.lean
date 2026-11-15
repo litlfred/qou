@@ -100,7 +100,7 @@ is a consequence of consecutive integers being coprime
 […truncated; see manuscript for remainder…]
 
     The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/appendix-surreals/collatz-no-cycles.ts
+-- Ref: [leitner2026] quantum-observable-universe/appendix-surreals/collatz-no-cycles.ts
 theorem collatz_no_cycles [ctx : CollatzNoCyclesContext] :
     ctx.q_int_3 - ctx.q * ctx.q_int_2 = 1 ∧
     ∀ P : ℝ, ctx.is_periodic P → P = 1 :=

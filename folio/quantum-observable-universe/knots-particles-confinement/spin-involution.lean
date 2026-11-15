@@ -20,7 +20,7 @@ the `σ`-eigenvalue.
 This sibling packages the four spin-involution axioms as a
 structure and records the projection identity used downstream.
 
--- Ref: [manuscript] def:spin-involution
+-- Ref: [leitner2026] def:spin-involution
 -- Ref: [kassel1995] Kassel, "Quantum Groups," GTM 155, Springer (1995)
 -/
 

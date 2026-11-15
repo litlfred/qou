@@ -60,9 +60,9 @@ normalised even-negative stacked words `σ^{−2k}` do unbind (`SingleCrossingAl
 Part (A) is over `ℂ` because `σ_y` needs `√−1`; no ordering, no `Real.*` — it is exact
 matrix algebra. Part (B) is over `ℝ` by nature (an ordering statement with `Real.sqrt`).
 
--- Ref: [manuscript] computations/probes/two_nucleon_sector_sign_probe.py
--- Ref: [manuscript] docs/audits/2026-08-16-two-nucleon-sector-final-state-eight-closures.md
--- Ref: [manuscript] docs/audits/2026-08-31-1s0-target-rescope-and-what-it-does-not-excuse.md
+-- Ref: [leitner2026] computations/probes/two_nucleon_sector_sign_probe.py
+-- Ref: [leitner2026] docs/audits/2026-08-16-two-nucleon-sector-final-state-eight-closures.md
+-- Ref: [leitner2026] docs/audits/2026-08-31-1s0-target-rescope-and-what-it-does-not-excuse.md
 -/
 
 namespace QOU.QBeta.TensorCouplingSinglet

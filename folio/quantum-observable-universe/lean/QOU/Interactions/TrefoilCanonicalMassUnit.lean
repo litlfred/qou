@@ -101,17 +101,17 @@ open QOU.HeckeAlgebra
 /-! ## §1  Already-proved algebraic facts (no sorry, no class) -/
 
 /-- The CODATA electron mass is strictly positive. -/
--- Ref: [manuscript] quantum-observable-universe/observations/three-calibration-inputs-context.ts
+-- Ref: [leitner2026] quantum-observable-universe/observations/three-calibration-inputs-context.ts
 theorem trefoil_mass_unit_pos : (0 : ℝ) < m_e_MeV_codata := m_e_MeV_codata_pos
 
 /-- Any positive mass is a valid QOU mass unit (trivially: if m > 0 then m > 0).
     This is the structural check that `m_e_MeV_codata` satisfies the positivity
     requirement for a mass calibration anchor. -/
--- Ref: [manuscript] quantum-observable-universe/observations/three-calibration-inputs-context.ts
+-- Ref: [leitner2026] quantum-observable-universe/observations/three-calibration-inputs-context.ts
 theorem m_e_is_valid_mass_anchor : 0 < m_e_MeV_codata := trefoil_mass_unit_pos
 
 /-- `m_e_MeV_codata ≠ 0`. Required for the mass formula to be nondegenerate. -/
--- Ref: [manuscript] quantum-observable-universe/observations/three-calibration-inputs-context.ts
+-- Ref: [leitner2026] quantum-observable-universe/observations/three-calibration-inputs-context.ts
 theorem m_e_ne_zero : m_e_MeV_codata ≠ (0 : ℝ) := ne_of_gt trefoil_mass_unit_pos
 
 /-- The trefoil e⁻ NF coefficient of B₃ is exactly zero (pulled from
@@ -158,7 +158,7 @@ theorem trefoil_b3_nf_coeff_zero :
     Status: PRIMARY CONJECTURE (open, no Lean proof from substrate).
     The class is left without an instance until a derivation is available.
     @conjecture: primary -/
--- Ref: [manuscript] quantum-observable-universe/knots-particles-confinement/
+-- Ref: [leitner2026] quantum-observable-universe/knots-particles-confinement/
 --      binding-knots-visual-inventory.md §"Trefoil = electron"
 class TrefoilElectronMassConj
     (T : HeckeElement 2) (rho : ℕ) (m_e_cat : ℝ) : Prop where
@@ -175,14 +175,14 @@ class TrefoilElectronMassConj
     naming their values, which is why they are stated here instead. -/
 
 /-- The trefoil braid word has 2 strands. -/
--- Ref: [manuscript] quantum-observable-universe/knots-particles-confinement/
+-- Ref: [leitner2026] quantum-observable-universe/knots-particles-confinement/
 --      binding-knots-visual-inventory.md §"Trefoil = electron"
 theorem trefoil_strand_count_eq_two :
     QOU.KnotTheory.trefoil.strands = 2 := rfl
 
 /-- The trefoil braid word has 3 crossings — the three positive letters
     of `σ₀³`.  Matches `QOU.KnotRegistry.trefoil_crossing_count`. -/
--- Ref: [manuscript] quantum-observable-universe/knots-particles-confinement/
+-- Ref: [leitner2026] quantum-observable-universe/knots-particles-confinement/
 --      binding-knots-visual-inventory.md §"Trefoil = electron"
 theorem trefoil_crossing_count_eq_three :
     QOU.KnotTheory.trefoil.crossingCount = 3 := rfl
@@ -217,7 +217,7 @@ variable (T : HeckeElement 2) (rho : ℕ) (m_e_cat : ℝ)
     positive by `norm_num`. The hypothesis is used substantively — without
     it, positivity of an arbitrary `categoricalMassMeV` would need `ρ > 0`,
     `m_e_cat > 0` and `tr_M T ≠ 0` as separate assumptions. -/
--- Ref: [manuscript] quantum-observable-universe/observations/three-calibration-inputs-context.ts
+-- Ref: [leitner2026] quantum-observable-universe/observations/three-calibration-inputs-context.ts
 theorem trefoil_topological_mass_pos [ctx : TrefoilElectronMassConj T rho m_e_cat] :
     0 < categoricalMassMeV rho m_e_cat T := by
   rw [ctx.trefoil_mass_eq_m_e]
@@ -232,7 +232,7 @@ theorem trefoil_topological_mass_pos [ctx : TrefoilElectronMassConj T rho m_e_ca
     m_e_MeV_codata`; cancel the nonzero factor. This is a genuine
     consequence, and it is what makes the conjecture a constraint on `T`
     rather than a definition of a free quantity. -/
--- Ref: [manuscript] quantum-observable-universe/observations/three-calibration-inputs-context.ts
+-- Ref: [leitner2026] quantum-observable-universe/observations/three-calibration-inputs-context.ts
 theorem trefoil_cat_mass_normalised [ctx : TrefoilElectronMassConj T rho m_e_cat] :
     categoricalMass rho m_e_cat T = 1 := by
   have h := ctx.trefoil_mass_eq_m_e
@@ -245,7 +245,7 @@ theorem trefoil_cat_mass_normalised [ctx : TrefoilElectronMassConj T rho m_e_cat
 
     Any positive real multiple of the trefoil mass is positive: every
     particle mass `n · m_e` (for `n > 0`) is positive. -/
--- Ref: [manuscript] quantum-observable-universe/observations/three-calibration-inputs-context.ts
+-- Ref: [leitner2026] quantum-observable-universe/observations/three-calibration-inputs-context.ts
 theorem trefoil_mass_multiple_pos [TrefoilElectronMassConj T rho m_e_cat]
     (n : ℝ) (hn : 0 < n) :
     0 < n * categoricalMassMeV rho m_e_cat T :=
@@ -255,7 +255,7 @@ theorem trefoil_mass_multiple_pos [TrefoilElectronMassConj T rho m_e_cat]
 
     Any ratio of a positive mass `m` to the trefoil mass is positive —
     the normalisation `m / m_e > 0`. -/
--- Ref: [manuscript] quantum-observable-universe/observations/three-calibration-inputs-context.ts
+-- Ref: [leitner2026] quantum-observable-universe/observations/three-calibration-inputs-context.ts
 theorem mass_ratio_pos [TrefoilElectronMassConj T rho m_e_cat]
     (m : ℝ) (hm : 0 < m) :
     0 < m / categoricalMassMeV rho m_e_cat T :=
@@ -264,7 +264,7 @@ theorem mass_ratio_pos [TrefoilElectronMassConj T rho m_e_cat]
 /-- **Theorem (conditional on `TrefoilElectronMassConj`).**
 
     The square of the trefoil mass is positive. -/
--- Ref: [manuscript] quantum-observable-universe/observations/three-calibration-inputs-context.ts
+-- Ref: [leitner2026] quantum-observable-universe/observations/three-calibration-inputs-context.ts
 theorem trefoil_topological_mass_sq_pos [TrefoilElectronMassConj T rho m_e_cat] :
     0 < categoricalMassMeV rho m_e_cat T ^ 2 :=
   pow_pos (trefoil_topological_mass_pos T rho m_e_cat) 2
@@ -273,7 +273,7 @@ theorem trefoil_topological_mass_sq_pos [TrefoilElectronMassConj T rho m_e_cat] 
 
     The trefoil mass times its crossing count is positive, combining the
     conditional mass positivity with the unconditional crossing count. -/
--- Ref: [manuscript] quantum-observable-universe/observations/three-calibration-inputs-context.ts
+-- Ref: [leitner2026] quantum-observable-universe/observations/three-calibration-inputs-context.ts
 theorem trefoil_mass_times_crossings_pos [TrefoilElectronMassConj T rho m_e_cat] :
     0 < categoricalMassMeV rho m_e_cat T
         * (QOU.KnotTheory.trefoil.crossingCount : ℝ) := by

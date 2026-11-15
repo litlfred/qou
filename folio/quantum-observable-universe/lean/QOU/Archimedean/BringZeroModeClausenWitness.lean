@@ -23,7 +23,7 @@ an algebraic Bloch class).  That stronger statement is
 `BringZeroModeRootOfUnityClass` below; it is recorded as a conjecture with no
 instance, and nothing here proves or refutes it.
 
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
 -/
 
 namespace QOU.Archimedean

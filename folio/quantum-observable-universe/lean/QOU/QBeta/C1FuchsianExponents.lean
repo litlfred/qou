@@ -63,7 +63,7 @@ multiplier.
 archimedean.  Sorry-free.
 
 -- Ref: [ramis-sauloy-zhang2013] https://arxiv.org/abs/0903.0853
--- Ref: [manuscript] docs/audits/2026-08-08-rsz-c1-infinity-route-closed.md
+-- Ref: [leitner2026] docs/audits/2026-08-08-rsz-c1-infinity-route-closed.md
 -/
 import Mathlib.Algebra.Polynomial.Degree.Lemmas
 import Mathlib.Algebra.Polynomial.Derivative

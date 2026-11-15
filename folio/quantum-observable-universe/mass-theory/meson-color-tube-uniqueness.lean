@@ -32,8 +32,8 @@
   normalisation** — the same smaller-scope open math shared with
   PRs #1444 + the merged #1445.
 
-  Ref: [manuscript] prop:meson-color-tube-uniqueness
-       [manuscript] prop:alpha-shift-torus-knot
+  Ref: [leitner2026] prop:meson-color-tube-uniqueness
+       [leitner2026] prop:alpha-shift-torus-knot
        [audit] docs/audits/2026-05-30-alpha-shift-universal-derivation-chain.md
        [audit] docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md
 -/

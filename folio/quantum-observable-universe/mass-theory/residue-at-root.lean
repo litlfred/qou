@@ -35,7 +35,7 @@ theorem residue_of_product {R : Type u} [CommRing R] [ResidueAtRoot R]
     (n : ℕ) (x y : R) :
     residue n (x * y) =
       residue n x * residue n y := by
-  -- Ref: [manuscript] prop:residue-at-root
+  -- Ref: [leitner2026] prop:residue-at-root
   exact RingHom.map_mul _ x y
 
 end QOU.BraidKnot

@@ -61,7 +61,7 @@ content of `QOU.SU2Emergence`'s fields and remains an assumption. This file
 narrows the gap from "the rank and the subgroup are both assumed" to "the
 realisation is assumed"; it does not close it.
 
-`-- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/su2-emergence.md`
+`-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/su2-emergence.md`
 -/
 import QOU.su2_emergence_volume_determinant
 import QOU.BraidsAndKnots.VolumeConstraintForcesFibreTwo

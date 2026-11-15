@@ -20,7 +20,7 @@ The two forms are equivalent by `hecke_log_decomposition`
 Status: conjecture, single-anchor verified at (Z,N)=(2,2) for ⁴He with
 0.71% gap (predicted 13.103 MeV vs extracted 13.20 MeV).
 
-Ref: [manuscript] conj:magic-shell-stabilization
+Ref: [leitner2026] conj:magic-shell-stabilization
 Ref: probe_delta_coupling_leading_form.py
 Ref: probe_delta_coupling_q_edgeworth.py (refutes q-Edgeworth κ_3 alternative)
 Ref: docs/audits/2026-05-17-delta-coupling-substrate-derivation.md
@@ -67,7 +67,7 @@ theorem delta_coupling_substrate_at_2_2 [inst : DeltaCouplingSubstrateForm] :
     inst.delta_coupling 2 2 =
       2 * inst.E_0 * Real.log (1 / (inst.q0 - inst.q0⁻¹)) := by
   -- Direct from `closed_form` at (Z, N) = (2, 2): (Z+N) - 2 = 2.
-  -- Ref: [manuscript] conj:magic-shell-stabilization
+  -- Ref: [leitner2026] conj:magic-shell-stabilization
   -- Numerical: 2 · 4.18598 · 1.56513 = 13.10322883 MeV
   --   vs extracted +13.20 MeV (gap +0.71%)
   -- See probe_delta_coupling_leading_form.py witness for full data.

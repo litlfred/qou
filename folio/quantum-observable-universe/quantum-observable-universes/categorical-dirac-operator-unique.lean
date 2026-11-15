@@ -14,7 +14,7 @@ LaTeX: `\label{prop:categorical-dirac-operator-unique}`
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/categorical-dirac-operator-unique
+- [leitner2026] §2-quantum-observable-universes/categorical-dirac-operator-unique
 - [connes1994] Noncommutative Geometry
 -/
 

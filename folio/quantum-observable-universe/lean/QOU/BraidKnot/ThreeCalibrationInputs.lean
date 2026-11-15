@@ -60,7 +60,7 @@ numerical comparison cites the calibration block); an inhabitant of
 this `Prop` for a given `obs` is the per-observable factorization
 witness.
 
-Ref: [manuscript] `prop:three-calibration-inputs`
+Ref: [leitner2026] `prop:three-calibration-inputs`
 -/
 def three_calibration_inputs
     (cal : ThreeCalibrationInputs) (obs : ℝ) : Prop :=

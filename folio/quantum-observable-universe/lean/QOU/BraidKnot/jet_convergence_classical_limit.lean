@@ -51,6 +51,6 @@ class jet_convergence_classical_limit where
 -- asserts nothing about the *actual* `a_k(β)`.  Removed here — the honest
 -- open state is a content-bearing class with no instance, matching the
 -- sibling `jet_filtered_knot_factor`.
--- Ref: [manuscript] quantum-observable-universe/mass-theory/jet-convergence-classical-limit.ts
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/jet-convergence-classical-limit.ts
 
 end QOU.BraidKnot

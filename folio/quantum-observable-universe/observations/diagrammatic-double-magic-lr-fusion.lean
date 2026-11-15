@@ -53,7 +53,7 @@ refer to `QOU.Interactions.LRFusion.DoubleMagicConjecture`, a **different**
 class of the same name in the library tree (repaired separately 2026-08-31),
 and to a docstring cross-reference to it.
 
--- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
+-- Ref: [leitner2026] conj:diagrammatic-double-magic-lr-fusion
 -- Ref: [ariki1996] Ariki, "On the decomposition numbers of the Hecke algebra of G(m, 1, n)," J. Math. Kyoto Univ. 36 (1996)
 -- Ref: [ram1991]     title: — see folio/schema/references.ts
 -- Ref: [geckpfeiffer2000] Geck & Pfeiffer, "Characters of Finite Coxeter Groups and Iwahori-Hecke Algebras," LMS Monographs 21, OUP 2000
@@ -113,7 +113,7 @@ def LRFusionData.SelfConjugate {Z N : ℕ} (d : LRFusionData Z N) {n : ℕ}
     partition at each level is self-conjugate, the LR product
     collapses to a unique self-conjugate fused partition with
     multiplicity one. -/
--- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
+-- Ref: [leitner2026] conj:diagrammatic-double-magic-lr-fusion
 class DoubleMagicConjecture (Z N : ℕ) extends LRFusionData Z N where
   /-- Precondition: both `Z` and `N` are magic numbers. -/
   doubleMagic : DoubleMagic Z N
@@ -143,7 +143,7 @@ open scoped Classical in
 /-- Conditional theorem: under the double-magic conjecture, the LR
     product is concentrated at the unique fused self-conjugate
     partition. -/
--- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion §"Statement"
+-- Ref: [leitner2026] conj:diagrammatic-double-magic-lr-fusion §"Statement"
 theorem lr_concentrated
     (Z N : ℕ) [c : DoubleMagicConjecture Z N]
     (ν : c.Partition (Z + N)) :
@@ -155,7 +155,7 @@ theorem lr_concentrated
 /-- Conditional theorem: under the double-magic conjecture, the
     fused partition `ν_{ZN}` is the unique partition with non-zero
     LR coefficient. -/
--- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion §"Statement"
+-- Ref: [leitner2026] conj:diagrammatic-double-magic-lr-fusion §"Statement"
 theorem nu_unique
     (Z N : ℕ) [c : DoubleMagicConjecture Z N]
     (ν : c.Partition (Z + N)) (hν : c.lr c.lambdaZ c.muN ν ≠ 0) :
@@ -166,7 +166,7 @@ theorem nu_unique
 /-- Biconditional characterisation of `ν_{ZN}`: under the
     conjecture, `ν` equals the fused partition iff the LR
     coefficient is non-zero (equivalently, equal to 1). -/
--- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion §"Statement"
+-- Ref: [leitner2026] conj:diagrammatic-double-magic-lr-fusion §"Statement"
 theorem nu_iff_lr_nonzero
     (Z N : ℕ) [c : DoubleMagicConjecture Z N]
     (ν : c.Partition (Z + N)) :
@@ -181,7 +181,7 @@ open scoped Classical in
     coefficient at any `ν` is exactly `1` if `ν = ν_{ZN}` and `0`
     otherwise. The two cases together fully characterise the LR
     product as a Kronecker delta. -/
--- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion §"Statement"
+-- Ref: [leitner2026] conj:diagrammatic-double-magic-lr-fusion §"Statement"
 theorem lr_kronecker
     (Z N : ℕ) [c : DoubleMagicConjecture Z N]
     (ν : c.Partition (Z + N)) :
@@ -200,7 +200,7 @@ theorem lr_kronecker
     saturated-shell hypotheses, so `c^{ν'}_{λ μ} = c^{ν}_{λ μ} = 1 ≠ 0`. LR
     rigidity off the fused partition then forces `ν' = ν_{ZN}` — which is
     self-conjugacy. -/
--- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion §"Statement"
+-- Ref: [leitner2026] conj:diagrammatic-double-magic-lr-fusion §"Statement"
 -- Ref: [geckpfeiffer2000] Geck & Pfeiffer, LMS Monographs 21, OUP 2000
 theorem nu_selfConjugate
     (Z N : ℕ) [c : DoubleMagicConjecture Z N] :

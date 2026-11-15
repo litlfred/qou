@@ -58,7 +58,7 @@ That is the honest state, and it is a strictly smaller gap than the one this bra
 
 -- Ref: [jones1987] Hecke algebra representations of braid groups and link polynomials
 -- Ref: [markov1936] the theorem, not proved here
--- Ref: [manuscript] bean qou-k4oq
+-- Ref: [leitner2026] bean qou-k4oq
 -/
 
 namespace QOU.IwahoriHecke.JonesNormalisation

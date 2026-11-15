@@ -4,7 +4,7 @@
   Evidence: H₃ (0.10%), H₄ (0.020%), H₅ (0.006%).
   Geometric mean ratio r ≈ 4.1.
 
-  Ref: [manuscript] §5.10, prop:hecke-convergence-bound
+  Ref: [leitner2026] §5.10, prop:hecke-convergence-bound
 -/
 
 import Mathlib.Data.Real.Basic

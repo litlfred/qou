@@ -98,7 +98,7 @@ namespace KazhdanLusztigClassicalLimit
 /-- Unconditional consequence: every normal form's classical-limit
     statistic is bosonic or fermionic — no exotic statistics survive
     the `q → 1` collapse. -/
--- Ref: [manuscript] braids-and-knots/kazhdan-lusztig-classical-limit
+-- Ref: [leitner2026] braids-and-knots/kazhdan-lusztig-classical-limit
 theorem statSign_klMap_pm_one
     {R : Type u} [CommRing R] {q : R}
     [H : HeckeAnyonicSubstrate R q]
@@ -114,7 +114,7 @@ theorem statSign_klMap_pm_one
     statistical sign of any classical-limit image is `+1` — i.e. the
     classical limit yields ℤ/2-statistics (bosons/fermions only),
     never higher-order anyonic phases. -/
--- Ref: [manuscript] braids-and-knots/kazhdan-lusztig-classical-limit
+-- Ref: [leitner2026] braids-and-knots/kazhdan-lusztig-classical-limit
 theorem statSign_sq_eq_one
     {R : Type u} [CommRing R] {q : R}
     [H : HeckeAnyonicSubstrate R q]
@@ -170,7 +170,7 @@ def canonical (R : Type u) [CommRing R] (q : R)
   KLBasisElt := PUnit
   klMap _ := PUnit.unit
   statSign _ := 1
-  -- Ref: [manuscript] conj:kazhdan-lusztig-classical-limit (§3b-cond conjectural class;
+  -- Ref: [leitner2026] conj:kazhdan-lusztig-classical-limit (§3b-cond conjectural class;
   --      discharged here by `statSign _ := 1`, not by a `sorry` and not by the conjecture)
   kl_compatible_with_tau _ _ := Or.inl rfl
 

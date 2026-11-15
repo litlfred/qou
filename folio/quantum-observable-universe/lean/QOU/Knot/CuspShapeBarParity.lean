@@ -41,8 +41,8 @@ That real-vs-compact split is the fibre-vs-observable `Im q` wall — the bar-od
 (`barOdd ω ^ 2 = −3`).  The archimedean rapidity `ln q₀` lives on the `ℝ`
 specialisation side; everything here is generic-field (§7c), no `c_k` wired.
 
--- Ref: [manuscript] folio/quantum-observable-universe/braids-and-knots/approach-to-exceptional-divisor.md
--- Ref: [manuscript] docs/audits/2026-07-11-planck-tick-disqualifier.md
+-- Ref: [leitner2026] folio/quantum-observable-universe/braids-and-knots/approach-to-exceptional-divisor.md
+-- Ref: [leitner2026] docs/audits/2026-07-11-planck-tick-disqualifier.md
 -/
 
 namespace QOU.Knot.CuspShapeBarParity

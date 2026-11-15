@@ -101,7 +101,7 @@ together with the LP supporting facts: (i) nontrivial primal optimum,
 (ii) positive net dual `y₀* > 0`, (iii) nonempty active set, (iv) active ⇔
 positive shadow price, (v) strong duality `primal_obj = dual_obj`. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP strong duality + complementary slackness / KKT)
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.md
 theorem confinement_frobenius_reciprocity
     [ctx : ConfinementFrobeniusReciprocityContext] :
     (∀ O : ctx.Observable,

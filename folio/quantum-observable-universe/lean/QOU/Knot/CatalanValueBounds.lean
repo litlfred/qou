@@ -21,7 +21,7 @@
   Archimedean (ℝ).
 
   -- Ref: [zagier1986] DOI 10.1007/BFb0084581
-  -- Ref: [manuscript] binding-scale-catalan
+  -- Ref: [leitner2026] binding-scale-catalan
 -/
 
 import Mathlib.Analysis.PSeries

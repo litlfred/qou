@@ -39,7 +39,7 @@ hook-length formula in Mathlib would discharge (A)/(C) too; that is the open fil
 Base ring `ℝ`: the statement uses `Real.sqrt` (Cauchy–Schwarz) and division/order
 (AGENTS.md §7c: archimedean ordered field is the correct home).
 
--- Ref: [manuscript] docs/audits/2026-07-11-keystone-c8-superexp-proof.md
+-- Ref: [leitner2026] docs/audits/2026-07-11-keystone-c8-superexp-proof.md
 -/
 import Mathlib.Algebra.Order.BigOperators.Ring.Finset
 import Mathlib.Data.Real.Sqrt

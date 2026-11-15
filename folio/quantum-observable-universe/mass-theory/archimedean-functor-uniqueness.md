@@ -45,7 +45,7 @@ $$
 
 > **Theorem (conditional on [`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit)).**
 > The upstream conjecture is axiomatised in Lean as the typeclass
-> [`QOU.QPochhammer.ArchimedeanLimit`](../braids-and-knots/dilogarithm-archimedean-limit.lean);
+> [`QOU.QPochhammer.ArchimedeanLimit`](dilogarithm-archimedean-limit.lean);
 > the Bloch-Suslin pentagon-uniqueness theorem [`suslin1991`,
 > `bloch2000`] is similarly axiomatised as
 > [`QOU.Archimedean.BlochSuslinUniqueness`](archimedean-functor-uniqueness.lean).

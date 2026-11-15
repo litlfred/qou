@@ -89,7 +89,7 @@
     PI-4  order/genus lemmas (`p ≤ ρ`, exponent of convergence ≤ order).
     PI-5  Jensen ⇒ zero-counting ⇒ the factorization (deepest; needs Nevanlinna).
 
-  -- Ref: [manuscript] standard complex analysis: Ahlfors, *Complex Analysis*,
+  -- Ref: [leitner2026] standard complex analysis: Ahlfors, *Complex Analysis*,
      3rd ed., §5.3 (Weierstrass products) + §5.3.2 (Hadamard's theorem);
      Conway, *Functions of One Complex Variable I*, XI.§2–3.
 -/
@@ -181,7 +181,7 @@ def IsGenus (a : ℕ → ℂ) (p : ℕ) : Prop :=
     for every `p ≥ 1` and would not suffice. -/
 theorem norm_one_sub_weierstrassFactor_le (p : ℕ) {z : ℂ} (hz : ‖z‖ ≤ 1) :
     ‖1 - weierstrassFactor p z‖ ≤ ‖z‖ ^ (p + 1) := by
-  -- Ref: [manuscript] Ahlfors §5.3, Lemma; Conway XI.§2, Lemma 2.6.
+  -- Ref: [leitner2026] Ahlfors §5.3, Lemma; Conway XI.§2, Lemma 2.6.
   have hdef : weierstrassFactor p z
       = QOU.Mathlib.WeierstrassFactorEstimate.weierstrassFactor p z := rfl
   rw [hdef]
@@ -194,7 +194,7 @@ theorem norm_one_sub_weierstrassFactor_le (p : ℕ) {z : ℂ} (hz : ‖z‖ ≤ 
 theorem multipliable_canonicalProduct {a : ℕ → ℂ} (p : ℕ)
     (ha : ∀ n, a n ≠ 0) (hsum : Summable (fun n => 1 / ‖a n‖ ^ (p + 1)))
     (z : ℂ) : Multipliable (fun n => weierstrassFactor p (z / a n)) := by
-  -- Ref: [manuscript] Ahlfors §5.3, Theorem 5; Conway XI.§2, Theorem 2.4.
+  -- Ref: [leitner2026] Ahlfors §5.3, Theorem 5; Conway XI.§2, Theorem 2.4.
   -- PROVED 2026-08-08. The estimate does the work, but note where the `‖z‖ ≤ 1`
   -- hypothesis is discharged: it is NOT true for every `n`, only eventually.
   -- Summability forces `1/‖aₙ‖^{p+1} → 0`, hence `‖aₙ‖ → ∞`, hence `‖z/aₙ‖ ≤ 1`

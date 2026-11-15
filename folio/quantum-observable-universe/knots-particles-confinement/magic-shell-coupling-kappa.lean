@@ -53,8 +53,8 @@ Nothing here is wired to production, and nothing reads the withdrawn value.
 
 LaTeX: `\label{def:magic-shell-coupling-kappa}`
 
-Ref: [manuscript] def:magic-shell-coupling-kappa
-Ref: [manuscript] prop:compound-beta-shell-calibration (formerly parent)
+Ref: [leitner2026] def:magic-shell-coupling-kappa
+Ref: [leitner2026] prop:compound-beta-shell-calibration (formerly parent)
 -/
 
 namespace QOU.BraidKnot

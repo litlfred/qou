@@ -15,7 +15,7 @@ where h = q - q^{-1} is the Hecke skein deformation and
 Proof: h = (q² - 1)/q = (q - 1)(q + 1)/q = ℏ_q · (q + 1).
 Taking 1/h and log gives the decomposition.
 
-Ref: [manuscript] prop:boltzmann-constant
+Ref: [leitner2026] prop:boltzmann-constant
 Ref: probe_delta_coupling_q_edgeworth.py (numerical verification to 50 dps)
 -/
 import QOU.HeckeAlgebra.QSubstrate
@@ -38,7 +38,7 @@ theorem hecke_skein_factorization (q : ℝ) (hq : 0 < q) :
 theorem hecke_log_decomposition (q : ℝ) (hq : 1 < q) :
     Real.log (1 / (q - q⁻¹)) =
       Real.log (1 / ((q - 1) / q)) - Real.log (1 + q) := by
-  -- Ref: [manuscript] prop:boltzmann-constant
+  -- Ref: [leitner2026] prop:boltzmann-constant
   -- Strategy: use hecke_skein_factorization to rewrite the LHS, then
   -- 1/(a·b) = (1/a)·(1/b), then Real.log_mul + Real.log_one_div.
   have hq_pos : 0 < q := lt_trans zero_lt_one hq

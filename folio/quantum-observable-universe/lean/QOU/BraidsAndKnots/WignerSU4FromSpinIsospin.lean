@@ -80,7 +80,7 @@ the supermultiplet statement can be made at all.
 
 `ℝ`, because `Real.log` appears in the capacity law. Nothing else archimedean is used.
 
--- Ref: [manuscript] quantum-observable-universe/nuclear-interactions/wigner-su4-from-spin-isospin.ts
+-- Ref: [leitner2026] quantum-observable-universe/nuclear-interactions/wigner-su4-from-spin-isospin.ts
 -/
 
 namespace QOU.BraidsAndKnots
@@ -96,7 +96,7 @@ satisfy the two laws (see `wignerSU4FromSpinIsospin_refutable`).
 **No instance is provided.** Downstream results consume this as
 `[WignerSU4FromSpinIsospin E_0 W E_gate B_AME c]` and are genuinely conditional on it.
 
--- Ref: [manuscript] conj:wigner-su4-from-spin-isospin -/
+-- Ref: [leitner2026] conj:wigner-su4-from-spin-isospin -/
 class WignerSU4FromSpinIsospin
     (E_0 : ℝ) (W E_gate B_AME c : ℕ → ℝ) : Prop where
   /-- The dynamic cluster capacity is dictated by the Plancherel weight `W A` of the SU(4)

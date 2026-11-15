@@ -87,7 +87,7 @@ sibling's `P` must satisfy, noted here, not proved (no concrete `σ` on `P`'s en
 
 ## References
 
-- [manuscript] `QOU.MathlibExt.QCharacter` (`IsQChar.ratio_qInvariant` — the elliptic
+- [leitner2026] `QOU.MathlibExt.QCharacter` (`IsQChar.ratio_qInvariant` — the elliptic
   normalisation freedom that IS the residual gauge; `c1_det_character`);
   `QOU.QBeta.A3AntiSelfAdjointLift` (`amplitude_surjective`/`amplitude_injective`/`amplitude_nonzero`
   — `E` is the single free/unique/forced DOF);

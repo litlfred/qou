@@ -52,7 +52,7 @@ of Step 1 and are tracked separately; nothing here is used as a substitute for t
 Base ring (§7c): generic `Ring R` for the recursion; generic `Field K` with `[CharZero K]` only
 where a polynomial is evaluated at the integers. Nothing archimedean. Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §2 Step 1, §5
+-- Ref: [leitner2026] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §2 Step 1, §5
 -- Ref: [drinfeld1991] (renormalised KZ monodromy; this file is only the formal local step)
 -/
 

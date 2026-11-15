@@ -45,7 +45,7 @@ antisymmetry hypothesis (they are false without it):
 
 - [fulton-harris1991] Representation Theory: A First Course, §2 (Frobenius
   character formula; isotype projectors of `S₃`).
-- [manuscript] `docs/audits/2026-08-30-statement-b-brunnian-isotype-exclusion.md`
+- [leitner2026] `docs/audits/2026-08-30-statement-b-brunnian-isotype-exclusion.md`
 -/
 
 open scoped BigOperators

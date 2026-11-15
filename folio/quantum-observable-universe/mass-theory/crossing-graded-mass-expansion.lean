@@ -15,7 +15,7 @@
   for a given atomic-link configuration.  The coefficient fields
   are the conjectural content.
 
-  Ref: [manuscript] Ch 11 §8 / crossing-graded-mass-expansion
+  Ref: [leitner2026] Ch 11 §8 / crossing-graded-mass-expansion
   Ref: [thurston1978] http://library.msri.org/books/gt3m/
 -/
 
@@ -57,7 +57,7 @@ class CrossingGradedMassExpansion (K : Type*) where
         (List.range (crossingCount k + 1)).reverse.foldl
           (fun acc n => acc * (depth k).value + gbCoeff k n) 0
   -- Ref: [thurston1978] http://library.msri.org/books/gt3m/
-  -- Ref: [manuscript] Ch 11 §8 / crossing-graded-mass-expansion
+  -- Ref: [leitner2026] Ch 11 §8 / crossing-graded-mass-expansion
   -- The `expansion` field is the conjectural claim; instances must
   -- verify it per atomic-link configuration via explicit GB reduction
   -- and volume computation (SnapPy).
@@ -107,7 +107,7 @@ private lemma reverse_range_succ_getLast (c : ℕ) :
     foldl, so its value on the reversed range is `gbCoeff k`
     applied to the range's last element, which is `0`.
 
-    Ref: [manuscript] Ch 11 §8 / crossing-graded-mass-expansion -/
+    Ref: [leitner2026] Ch 11 §8 / crossing-graded-mass-expansion -/
 theorem mass_at_zero_depth
     {K : Type*} [CrossingGradedMassExpansion K]
     (k : K) (h : (CrossingGradedMassExpansion.depth k).value = 0) :

@@ -62,9 +62,9 @@ intermediate value theorem (`instBringZeroModeBlochClass` in
 Bloch class: the open sub-problem above is unchanged and now lives in the
 stronger, root-of-unity class `BringZeroModeRootOfUnityClass` (no instance).
 
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
--- Ref: [manuscript] prop:archimedean-functor-uniqueness
--- Ref: [manuscript] prop:force-carrier-bring-uniqueness
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] prop:archimedean-functor-uniqueness
+-- Ref: [leitner2026] prop:force-carrier-bring-uniqueness
 -- Ref: [suslin1991] Trudy Mat. Inst. Steklova 183 (1991) 217-239.
 -- Ref: [bloch2000]  AMS CRM Monograph 11 (2000).
 -- Ref: [thurston1978] The geometry and topology of three-manifolds.
@@ -74,19 +74,19 @@ namespace QOU.Archimedean
 
 /-- Carrier for the additive Bring zero-mode contribution as a real
     number; the candidate value at g = 4 is `2/(3π)`. -/
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
 noncomputable def bringZeroModeValue : ℝ := 2 / (3 * Real.pi)
 
 /-- Genus-Hodge form: at genus `g` the candidate additive correction
     is `2g / (4π(g-1))`. At `g = 4` this evaluates to `2/(3π)` —
     proved unconditionally below. -/
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
 noncomputable def hodgeRatio (g : ℝ) : ℝ := 2 * g / (4 * Real.pi * (g - 1))
 
 /-- Unconditional algebraic identity: at `g = 4`,
     `2g/(4π(g-1)) = 2/(3π)`. This is pure arithmetic — no class
     instance required. -/
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
 theorem hodgeRatio_at_g4 : hodgeRatio 4 = bringZeroModeValue := by
   unfold hodgeRatio bringZeroModeValue
   have hπ : Real.pi ≠ 0 := Real.pi_ne_zero
@@ -298,8 +298,8 @@ theorem bringZeroMode_fully_tiling_derived :
     See `em-coupling-bring-zero-mode.md` §"open computational
     sub-problem" for the 3-phase roadmap.
 -/
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
--- Ref: [manuscript] PR #952 (PSLQ negative on canonical unit-circle basis)
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] PR #952 (PSLQ negative on canonical unit-circle basis)
 -- Ref: [suslin1991], [bloch2000] (full BlochGroup framework)
 class BringZeroModeBlochClass : Prop where
   /-- The τ_arch-image of the Bring-surface Bloch class equals
@@ -320,7 +320,7 @@ class BringZeroModeBlochClass : Prop where
       an intermediate-value fact (`exists_Cl_2_eq_bringZeroModeValue`), so it
       no longer encodes the angle identification; that content moved to
       `BringZeroModeRootOfUnityClass`. -/
-  -- Ref: [manuscript] prop:archimedean-functor-uniqueness
+  -- Ref: [leitner2026] prop:archimedean-functor-uniqueness
   bring_zero_mode_realised :
     ∃ θ : ℝ, BlochWigner_unit_circle θ = bringZeroModeValue
 
@@ -336,7 +336,7 @@ class BringZeroModeBlochClass : Prop where
     the numerical match at `q₀` (which is empirical and tracked
     separately).
 -/
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
 theorem bring_zero_mode_additive_form
     [hZ : BringZeroModeBlochClass] :
     ∃ θ : ℝ, BlochWigner_unit_circle θ = hodgeRatio 4 := by
@@ -352,7 +352,7 @@ theorem bring_zero_mode_additive_form
 --     `instBringZeroModeBlochClass` in `BringZeroModeClausenWitness.lean`.) -/
 -- Per AGENTS.md §3b-cond we provide NO global instance.
 -- instance canonical_bloch : BringZeroModeBlochClass where
---   -- Ref: [manuscript] prop:em-coupling-bring-zero-mode — identifying the
+--   -- Ref: [leitner2026] prop:em-coupling-bring-zero-mode — identifying the
 --   --      explicit Bloch class [Z] ∈ B(ℂ) on the genus-4 force-carrier pair
 --   --      {T(2,9), T(3,5)} whose τ_arch-image equals 2/(3π) is research-grade
 --   --      and open (PR #952: PSLQ refutes the canonical unit-circle bases).

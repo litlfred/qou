@@ -88,7 +88,7 @@ def closure2 : Braid2 → Link
 The 2-strand 2-crossing Markov closure is the Hopf link — discharging
 Atom 1 of `rem:markov-closure-map-axiomatic`. -/
 
--- Ref: [manuscript] rem:braid-link-types
+-- Ref: [leitner2026] rem:braid-link-types
 -- Ref: [alexander1923] (the Alexander-Markov closure theorem)
 -- Ref: [jones1985] doi:10.2307/1971403
 /-- **The atomic theorem**: the Markov closure of σ² in B_2 is the
@@ -177,8 +177,8 @@ theorem jonesAtOne_doubleHopf_eq_four :
 
 /-! ## Composing the chain: σ² → Hopf → -2 -/
 
--- Ref: [manuscript] prop:q-beta-c3-hopf-three-fold-markov
--- Ref: [manuscript] rem:braid-link-types
+-- Ref: [leitner2026] prop:q-beta-c3-hopf-three-fold-markov
+-- Ref: [leitner2026] rem:braid-link-types
 /-- **Chain composition**: σ² in B_2 has Markov-closure-Jones-at-1 value -2.
     Closes by chaining `closure2_at_two_crossings_eq_hopf` and
     `jonesAtOne_hopf_eq_neg_two`. -/

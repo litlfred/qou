@@ -11,7 +11,7 @@ export default definition({
     validation: "not_checked",
   },
   uses: ["def:down-quark"],
-  cites: ["manuscript"],
+  cites: ["leitner2026"],
   computation: {
     engine: "python",
     script: "computations/codata_masses.py",

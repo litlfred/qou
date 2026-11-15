@@ -176,7 +176,7 @@ the witness value `2.1225825095`).
 -/
 
 /-- Trivial-zero skeleton: every numerical field is `0`. -/
--- Ref: [manuscript] habiro-residue-sum-equivalence §"Skeleton"
+-- Ref: [leitner2026] habiro-residue-sum-equivalence §"Skeleton"
 noncomputable instance trivialZero : HabiroResidueSumEquivalence where
   q_0 := 0
   q_0_nonneg := le_refl 0

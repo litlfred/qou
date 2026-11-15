@@ -14,7 +14,7 @@ The Lean encoding records the rank claim against an abstract
 `SymplecticSelfDualContext` carrying the categorical data
 `(V, V^∨, φ, φ^∨)` and the rank function.
 
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/volume-from-rigidity.md
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/volume-from-rigidity.md
 -/
 
 namespace QOU
@@ -47,7 +47,7 @@ class SymplecticSelfDualContext where
 
     Under the alternating condition `φ^∨ = −φ` plus simplicity of
     `V`, the categorical rank is exactly `2`. -/
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/volume-from-rigidity.md
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/volume-from-rigidity.md
 theorem volume_from_rigidity
     [ctx : SymplecticSelfDualContext] (h_simple : ctx.simple) :
     ctx.rank ctx.V = 2 :=

@@ -301,7 +301,7 @@ noncomputable def JetOrderIndependence.ofPivots (pivots : ℕ → ℚ × ℚ × 
     full rank `3` at every order via `ofPivots`; higher-order pivots come
     from the same compute at higher jet truncation.
 
-    -- Ref: [manuscript] conj:three-knot-jet-order-independence -/
+    -- Ref: [leitner2026] conj:three-knot-jet-order-independence -/
 def jetPivots : ℕ → ℚ × ℚ × ℚ := fun _ => (1/4, 2, 1/8)
 
 /-- **GB-elimination certificate at the Reid-1991 base order (PROVED,

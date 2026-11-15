@@ -20,7 +20,7 @@ LaTeX label: `prop:gram-determinant-plancherel-ratio`
 
 ## References
 
-- [manuscript] §5/gram-determinant-plancherel-ratio
+- [leitner2026] §5/gram-determinant-plancherel-ratio
 - [jones1987] https://doi.org/10.2307/1971403 — Jones polynomial of torus knots
 -/
 
@@ -82,7 +82,7 @@ noncomputable def gramKappa (n : ℕ)
     not flag this, and that part is correct as stated: its nearest criterion,
     `proof-no-unused-hypothesis-rfl`, needs an UNUSED binder, and every binder
     here is consumed by `gramKappa n q_factorial n_factorial cs cw`. -/
--- Ref: [manuscript] §5/gram-determinant-plancherel-ratio
+-- Ref: [leitner2026] §5/gram-determinant-plancherel-ratio
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
@@ -153,7 +153,7 @@ theorem gram_determinant_plancherel_ratio
     `CharacterDecomposition` placeholder — IS the open work, and it is upstream
     of discharging the `sorry`, not downstream of it. Unlike the superseded
     axiom, the conclusion here constrains `gramKappa`. -/
--- Ref: [manuscript] §5/gram-determinant-plancherel-ratio
+-- Ref: [leitner2026] §5/gram-determinant-plancherel-ratio
 -- Ref: [jones1987] https://doi.org/10.2307/1971403 — Jones polynomial of torus knots
 theorem gram_kappa_numerical_value
     (n : ℕ) (q_factorial n_factorial : ℝ)

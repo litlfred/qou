@@ -26,7 +26,7 @@ infrastructure that does not yet exist (`Real.dilog`, `BlochGroup`,
 the Suslin map $K_3^{\text{ind}}(\mathbb{C}) \to \mathbb{R}$); see
 each class's docstring.
 
--- Ref: [manuscript] prop:archimedean-functor-uniqueness
+-- Ref: [leitner2026] prop:archimedean-functor-uniqueness
 -- Ref: [suslin1991] Suslin, K_3 of a field, and the Bloch group,
    Trudy Mat. Inst. Steklova 183 (1991) 217-239.
 -- Ref: [bloch2000] Bloch, Higher Regulators, Algebraic K-Theory,
@@ -108,7 +108,7 @@ statement modulo the two named classes. The QOU-novel content is
 the conjunction of the four hypotheses on `τ_arch`; the classical
 input is `BlochSuslinUniqueness`.
 -/
--- Ref: [manuscript] prop:archimedean-functor-uniqueness
+-- Ref: [leitner2026] prop:archimedean-functor-uniqueness
 -- Ref: [suslin1991] Trudy Mat. Inst. Steklova 183 (1991) 217-239.
 theorem archimedean_functor_uniqueness
     (D τ_arch : ℝ → ℝ)

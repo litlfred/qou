@@ -71,7 +71,7 @@ it would put an archimedean field on every one of them — the §7c wall in
 reverse. A mixin costs the three archimedean descendants one word in their
 `extends` clause and leaves the other twelve untouched.
 
--- Ref: [manuscript] quantum-observable-universe/information-theory/reeb-operations-per-planck.md
+-- Ref: [leitner2026] quantum-observable-universe/information-theory/reeb-operations-per-planck.md
 -/
 
 namespace QOU.Shared

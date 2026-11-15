@@ -28,7 +28,7 @@ LaTeX labels: `conj:p-vs-np-boundary`, `conj:qou-p-neq-np`,
 
 - [cook1971] https://doi.org/10.1145/800157.805047
 - [freedman2003] https://doi.org/10.1090/S0273-0979-02-00964-3
-- [manuscript] §9/p-vs-np-boundary
+- [leitner2026] §9/p-vs-np-boundary
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical

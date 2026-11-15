@@ -15,7 +15,7 @@ and vanishing of the obstruction is necessary and sufficient for the lift.
 ## References
 
 - [yekutieli2010] Central Extensions of Gerbes, §3
-- [manuscript] §3
+- [leitner2026] §3
 -/
 
 namespace QOU
@@ -29,7 +29,7 @@ namespace QOU
     to 𝔊' if and only if κ(x) = 0.
 
     LaTeX: `\label{def:yekutieli-lifting-condition}` -/
--- Ref: [yekutieli2010] §3, [manuscript] §3
+-- Ref: [yekutieli2010] §3, [leitner2026] §3
 structure YekutieliLiftingCondition where
   /-- The obstruction space (representing H²(𝒮, ℬ)). -/
   ObstructionSpace : Type*

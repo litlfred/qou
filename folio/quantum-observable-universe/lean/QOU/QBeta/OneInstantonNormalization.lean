@@ -44,7 +44,7 @@ actual `𝔙_q` is exhibited. Distinct from the refuted `β = 3/2` (a type error
 anchor-dependence lives in the exponent. Verified `lean`-direct (exit 0), sorry-free.
 
 -- Ref: [garoufalidis-gu-marino2021] https://doi.org/10.1007/s00220-021-04076-0 (Stokes = rotated 3d-index; discontinuity)
--- Ref: [manuscript] docs/audits/2026-07-25-aomega-normalization-one-instanton-map.md
+-- Ref: [leitner2026] docs/audits/2026-07-25-aomega-normalization-one-instanton-map.md
 -/
 
 namespace QOU.QBeta.OneInstantonNormalization

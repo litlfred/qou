@@ -75,7 +75,7 @@ is a unit) — and no ordering or `Real.*` appears anywhere.
 
 Bean `qou-z9ws`.
 
--- Ref: [manuscript] quantum-observable-universe/measurement-observation/sorting-color-energy.md
+-- Ref: [leitner2026] quantum-observable-universe/measurement-observation/sorting-color-energy.md
 -/
 
 namespace QOU.BraidKnot
@@ -86,7 +86,7 @@ variable {R : Type*} [CommRing R]
 
 The manuscript's ground relation for the generator `σᵢ`, evaluated at a
 scalar by which `σᵢ` acts on a summand. -/
--- Ref: [manuscript] quantum-observable-universe/measurement-observation/sorting-color-energy.md
+-- Ref: [leitner2026] quantum-observable-universe/measurement-observation/sorting-color-energy.md
 def heckeRelation (q : Rˣ) (x : R) : Prop :=
   (x - (q : R)) * (x + ((q⁻¹ : Rˣ) : R)) = 0
 
@@ -105,7 +105,7 @@ A scalar by which `σᵢ` acts on a summand, satisfying the Hecke relation, is
 forced to be `q` or `−q⁻¹`.  `NoZeroDivisors` is doing real work: over a
 general `CommRing` a scalar can satisfy the relation without being either
 root. -/
--- Ref: [manuscript] quantum-observable-universe/measurement-observation/sorting-color-energy.md
+-- Ref: [leitner2026] quantum-observable-universe/measurement-observation/sorting-color-energy.md
 theorem eq_or_eq_of_heckeRelation [NoZeroDivisors R] {q : Rˣ} {x : R}
     (h : heckeRelation q x) :
     x = (q : R) ∨ x = -((q⁻¹ : Rˣ) : R) := by
@@ -139,7 +139,7 @@ caller-supplied data.
 **Named, not asserted** — but, unlike the other carriers drained under this
 bean, it is also *derived* here, from the Hecke relation: see
 `sorting_color_energy_of_heckeRelation`. -/
--- Ref: [manuscript] quantum-observable-universe/measurement-observation/sorting-color-energy.md
+-- Ref: [leitner2026] quantum-observable-universe/measurement-observation/sorting-color-energy.md
 def sorting_color_energy (q : Rˣ) (sym_eigenvalue wedge_eigenvalue : R) : Prop :=
   sym_eigenvalue = (q : R) ∧ wedge_eigenvalue = -((q⁻¹ : Rˣ) : R)
 
@@ -151,7 +151,7 @@ the *other* channel's value, then they are the manuscript's `q` and `−q⁻¹`.
 The two `≠` hypotheses are the channel identification — which summand is
 `Sym²` and which is `Λ²`. That is what the missing representation theory
 would supply; everything downstream of it is proved. -/
--- Ref: [manuscript] quantum-observable-universe/measurement-observation/sorting-color-energy.md
+-- Ref: [leitner2026] quantum-observable-universe/measurement-observation/sorting-color-energy.md
 theorem sorting_color_energy_of_heckeRelation [NoZeroDivisors R] {q : Rˣ}
     {sym_eigenvalue wedge_eigenvalue : R}
     (hsym : heckeRelation q sym_eigenvalue)

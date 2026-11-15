@@ -93,7 +93,7 @@ Refs:
   - content/.../predicted-spectra/force-knot-identification.md (T(3,5) weak)
   - content/.../particle-interactions/lepton-meson-torus-knot-dictionary.lean
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  -- Ref: [manuscript] Ch. "Predicted Spectra" §force-knot-identification
+  -- Ref: [leitner2026] Ch. "Predicted Spectra" §force-knot-identification
 -/
 
 namespace QOU.ParticleInteractions.WeakIsospinT3

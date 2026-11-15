@@ -22,8 +22,8 @@ The Z/2 symmetry q ↔ q⁻¹ exchanges β⁻ ↔ β⁺.
 LaTeX label: `def:beta-decay-skein`
 
 ## References
-- [manuscript] §6/beta-decay-skein
-- [manuscript] §6/force-knot-identification
+- [leitner2026] §6/beta-decay-skein
+- [leitner2026] §6/force-knot-identification
 
 **Ground ring**: `ℝ` (archimedean realisation).
 Evaluates formal results at q₀ ≈ 1.1098 for comparison with
@@ -39,7 +39,7 @@ namespace QOU.Archimedean
 
 /-- The T_{3,5} torus knot — the weak force mediator.
     Braid word: (σ₁σ₂)⁵ in B₃, with 10 crossings. -/
--- Ref: [manuscript] §6/force-knot-identification
+-- Ref: [leitner2026] §6/force-knot-identification
 structure WeakVertex where
   /-- Number of crossings in the T_{3,5} braid. -/
   crossings : ℕ := 10
@@ -53,16 +53,16 @@ structure WeakVertex where
   budget : electron_crossings + neutrino_crossings + reduction_crossings = crossings
 
 /-- The canonical weak vertex with its 10-crossing budget. -/
--- Ref: [manuscript] §6/force-knot-identification
+-- Ref: [leitner2026] §6/force-knot-identification
 def weakVertex : WeakVertex where
   budget := by norm_num
 
 /-- The weak vertex has 10 crossings. -/
--- Ref: [manuscript] §6/force-knot-identification
+-- Ref: [leitner2026] §6/force-knot-identification
 theorem weak_vertex_crossings : weakVertex.crossings = 10 := rfl
 
 /-- The crossing budget sums correctly. -/
--- Ref: [manuscript] §6/force-knot-identification
+-- Ref: [leitner2026] §6/force-knot-identification
 theorem crossing_budget_correct :
     weakVertex.electron_crossings + weakVertex.neutrino_crossings +
     weakVertex.reduction_crossings = weakVertex.crossings :=
@@ -74,7 +74,7 @@ theorem crossing_budget_correct :
 
 /-- A nuclear link configuration: proton count, neutron count, and
     the Gröbner normal form data. -/
--- Ref: [manuscript] §6/beta-decay-skein
+-- Ref: [leitner2026] §6/beta-decay-skein
 structure NuclearLink where
   /-- Number of protons. -/
   p : ℕ
@@ -99,7 +99,7 @@ def NuclearLink.A (l : NuclearLink) : ℕ := l.p + l.n
     - 7 crossings → nuclear re-reduction (R2 moves)
 
     Produces: daughter nucleus + electron T_{2,3} + antineutrino K_{0_1}. -/
--- Ref: [manuscript] §6/beta-decay-skein, §6/force-knot-identification
+-- Ref: [leitner2026] §6/beta-decay-skein, §6/force-knot-identification
 structure BetaMinusDecay where
   /-- The parent nucleus. -/
   parent : NuclearLink
@@ -128,7 +128,7 @@ def BetaMinusDecay.Q_q (d : BetaMinusDecay) : ℝ :=
     Mirror of β⁻ under q ↔ q⁻¹.
 
     Produces: daughter nucleus + positron σ(T_{2,3}) + neutrino K_{0_1}. -/
--- Ref: [manuscript] §6/beta-decay-skein, §6/force-knot-identification
+-- Ref: [leitner2026] §6/beta-decay-skein, §6/force-knot-identification
 structure BetaPlusDecay where
   /-- The parent nucleus. -/
   parent : NuclearLink
@@ -155,19 +155,19 @@ def BetaPlusDecay.Q (d : BetaPlusDecay) : ℝ :=
 /-- The weak asymmetry: S_ab(q) - S_ba(q) = (q - q⁻¹)(μ_a - μ_b)/(q^½ + q^⁻½).
     This vanishes at q = 1 (no weak force in classical limit)
     and vanishes when μ_a = μ_b (no flavour asymmetry). -/
--- Ref: [manuscript] §6/beta-decay-skein
+-- Ref: [leitner2026] §6/beta-decay-skein
 noncomputable def weakAsymmetry (q mu_a mu_b : ℝ) (hq : 0 < q) : ℝ :=
   (q - 1/q) * (mu_a - mu_b) / (q ^ (1/2 : ℝ) + q ^ (-(1/2 : ℝ)))
 
 /-- The weak asymmetry vanishes at q = 1. -/
--- Ref: [manuscript] §6/beta-decay-skein
+-- Ref: [leitner2026] §6/beta-decay-skein
 theorem weakAsymmetry_classical (mu_a mu_b : ℝ) :
     weakAsymmetry 1 mu_a mu_b (by norm_num) = 0 := by
   unfold weakAsymmetry
   norm_num
 
 /-- The weak asymmetry vanishes when μ_a = μ_b. -/
--- Ref: [manuscript] §6/beta-decay-skein
+-- Ref: [leitner2026] §6/beta-decay-skein
 theorem weakAsymmetry_equal_mass (q mu : ℝ) (hq : 0 < q) :
     weakAsymmetry q mu mu hq = 0 := by
   unfold weakAsymmetry
@@ -175,7 +175,7 @@ theorem weakAsymmetry_equal_mass (q mu : ℝ) (hq : 0 < q) :
 
 /-- The Q-value of β⁻ decay is positive when the parent action exceeds
     the daughter action plus the electron mass. -/
--- Ref: [manuscript] §6/beta-decay-skein
+-- Ref: [leitner2026] §6/beta-decay-skein
 theorem beta_minus_Q_pos (d : BetaMinusDecay)
     (h : d.daughter.action + d.m_e < d.parent.action) :
     0 < d.Q_q := by
@@ -183,7 +183,7 @@ theorem beta_minus_Q_pos (d : BetaMinusDecay)
   linarith
 
 /-- Top-level alias matching the manifest declaration. -/
--- Ref: [manuscript] §6/beta-decay-skein
+-- Ref: [leitner2026] §6/beta-decay-skein
 def BetaDecaySkein := BetaMinusDecay
 
 -- ═══════════════════════════════════════════════════════════════════
@@ -192,13 +192,13 @@ def BetaDecaySkein := BetaMinusDecay
 
 /-- The pair Skein mass S_ab(q) = (q·μ_a + q⁻¹·μ_b)/(q^½ + q^{-½}).
     This is the "mass formula" for a crossing between flavours a and b. -/
--- Ref: [manuscript] §6/beta-decay-skein
+-- Ref: [leitner2026] §6/beta-decay-skein
 noncomputable def pairSkeinMass (q mu_a mu_b : ℝ) (hq : 0 < q) : ℝ :=
   (q * mu_a + (1/q) * mu_b) / (q ^ (1/2 : ℝ) + q ^ (-(1/2 : ℝ)))
 
 /-- The Z/2 symmetry: S_ab(q⁻¹) = S_ba(q).
     Exchanging q ↔ q⁻¹ swaps the role of flavours a and b. -/
--- Ref: [manuscript] §6/beta-decay-skein
+-- Ref: [leitner2026] §6/beta-decay-skein
 theorem pair_skein_Z2_symmetry (q mu_a mu_b : ℝ) (hq : 0 < q) :
     pairSkeinMass (1/q) mu_a mu_b (by positivity) =
     pairSkeinMass q mu_b mu_a hq := by
@@ -214,7 +214,7 @@ theorem pair_skein_Z2_symmetry (q mu_a mu_b : ℝ) (hq : 0 < q) :
     ring_nf
 
 /-- The weak asymmetry is antisymmetric: A(q, μ_a, μ_b) = -A(q, μ_b, μ_a). -/
--- Ref: [manuscript] §6/beta-decay-skein
+-- Ref: [leitner2026] §6/beta-decay-skein
 theorem weakAsymmetry_antisymmetric (q mu_a mu_b : ℝ) (hq : 0 < q) :
     weakAsymmetry q mu_a mu_b hq = -weakAsymmetry q mu_b mu_a hq := by
   unfold weakAsymmetry
@@ -222,7 +222,7 @@ theorem weakAsymmetry_antisymmetric (q mu_a mu_b : ℝ) (hq : 0 < q) :
 
 /-- The Q-value sign determines decay direction: β⁻ is energetically
     allowed iff the parent action exceeds the daughter action + m_e. -/
--- Ref: [manuscript] §6/beta-decay-skein
+-- Ref: [leitner2026] §6/beta-decay-skein
 theorem beta_plus_Q_pos (d : BetaPlusDecay)
     (h : d.daughter.action + d.m_e < d.parent.action) :
     0 < d.Q := by
@@ -231,28 +231,28 @@ theorem beta_plus_Q_pos (d : BetaPlusDecay)
 
 /-- The crossing energy q - q⁻¹ at q = 1.110 ≈ 0.2091.
     This is the energy released per crossing change d → u. -/
--- Ref: [manuscript] beta-decay-from-q.witness.json
+-- Ref: [leitner2026] beta-decay-from-q.witness.json
 noncomputable def crossingEnergyAtQ : ℝ := 1.110 - 1 / 1.110
 
 /-- The crossing energy is positive (q > 1 → d → u releases energy). -/
--- Ref: [manuscript] §6/beta-decay-skein
+-- Ref: [leitner2026] §6/beta-decay-skein
 theorem crossingEnergy_pos : 0 < crossingEnergyAtQ := by
   unfold crossingEnergyAtQ; norm_num
 
 /-- The Skein amplitude s = q^½ - q^{-½} at q = 1.110.
     Witness: 0.10440737953277479. -/
--- Ref: [manuscript] beta-decay-matrix.witness.json
+-- Ref: [leitner2026] beta-decay-matrix.witness.json
 noncomputable def skeinAmplitudeAtQ : ℝ := Real.sqrt 1.110 - 1 / Real.sqrt 1.110
 
 /-- The electron mass m_e = 3 · E_× · μ₀ where E_× = ½(q - q⁻¹).
     With μ₀ = 1.6296 MeV/Skein: m_e = 3 × 0.10452 × 1.6296 ≈ 0.511 MeV. -/
--- Ref: [manuscript] beta-decay-from-q.witness.json
+-- Ref: [leitner2026] beta-decay-from-q.witness.json
 noncomputable def electronMass_from_q : ℝ := 3 * (1.110 - 1 / 1.110) / 2 * 1.6296
 
 /-- Beta decay locality: the Skein crossing change affects exactly
     one generator σ_k per converting nucleon. The remaining A-1
     nucleons contribute unchanged transfer matrices. -/
--- Ref: [manuscript] §6/beta-decay-skein
+-- Ref: [leitner2026] §6/beta-decay-skein
 theorem beta_decay_locality (d : BetaMinusDecay) :
     d.daughter.p = d.parent.p + 1 ∧
     d.daughter.n = d.parent.n - 1 ∧

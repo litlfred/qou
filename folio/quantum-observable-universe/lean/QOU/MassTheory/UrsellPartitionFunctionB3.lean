@@ -72,7 +72,7 @@ the two definitions of `b₃` together on the nose.
 
 -- Ref: [jansen2022cluster] https://doi.org/10.1007/s10955-022-02992-6 — Ursell functions by
    the cluster property, alternating sign on non-negative potentials (§3.1).
--- Ref: [manuscript] docs/audits/2026-08-08-binding-functional-attack-vectors-and-li2q-guard.md
+-- Ref: [leitner2026] docs/audits/2026-08-08-binding-functional-attack-vectors-and-li2q-guard.md
    §10a — `μ = e^{−B/α}`, the Boltzmann identification the Mayer variable rests on.
 -/
 

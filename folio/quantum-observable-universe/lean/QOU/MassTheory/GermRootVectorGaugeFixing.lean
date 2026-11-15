@@ -76,9 +76,9 @@ No `ℝ`, no ordering, no `Real.*`, no archimedean evaluation anywhere.
 
 - Ref: [yekutieli2015] https://doi.org/10.1142/9537 — non-abelian multiplicative
   integration and Stokes' theorem on surfaces.
-- Ref: [manuscript] `quantum-observable-universes/germ-commutator-q-curvature.md`
+- Ref: [leitner2026] `quantum-observable-universes/germ-commutator-q-curvature.md`
   — `[δq₁, δq₂] = F_q`, the two-observer germ definition of the `q`-curvature.
-- Ref: [manuscript] `docs/audits/2026-08-09-nastokes-gauge-fixing-germ-root-vector.md`
+- Ref: [leitner2026] `docs/audits/2026-08-09-nastokes-gauge-fixing-germ-root-vector.md`
 -/
 
 namespace QOU.MassTheory.GermRootVectorGauge

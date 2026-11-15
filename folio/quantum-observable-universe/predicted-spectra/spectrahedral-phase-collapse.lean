@@ -34,7 +34,7 @@ determinant for the `(2,1)` representation is strictly negative, rendering the S
 -/
 theorem hadronic_melt_at_supergolden (u : ℝ) (hu_pos : u > 0) (h_melt : u^3 + u - 1 < 0) :
     (gramMatrix u).det < 0 := by
-  -- Ref: [manuscript] §spectrahedral-phase-collapse
+  -- Ref: [leitner2026] §spectrahedral-phase-collapse
   -- Discharged via the GramMatrixH3Symbolic 6-factor factorization
   --   det = −(detFactor1·detFactor2·detFactor3⁵·detFactor4⁵·detFactor5·detFactor6).
   -- In the melt regime `u³+u−1 < 0` we have `0 < u < 1` (else `u³+u−1 ≥ 1 > 0`),
@@ -80,7 +80,7 @@ H₂ trace defs; a vacuous placeholder would be a trivial skeleton, not a theore
 (electrons, neutrinos) project into the 1-dimensional Wedderburn channels, whose
 traces scale as `q^n` and are therefore strictly positive for `q > 1` — so their
 Gram matrices stay positive-definite across the whole `q > 1` regime. -/
--- Ref: [manuscript] §spectrahedral-phase-collapse
+-- Ref: [leitner2026] §spectrahedral-phase-collapse
 theorem lepton_unconditional_stability (q : ℝ) (hq_gt_one : q > 1) :
     ∀ n : ℕ, (0 : ℝ) < q ^ n :=
   fun n => pow_pos (by linarith) n

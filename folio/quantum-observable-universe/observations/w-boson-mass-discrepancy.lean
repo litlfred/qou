@@ -26,7 +26,7 @@ LaTeX label: `rem:w-boson-mass-discrepancy`
 
 ## References
 
-- [manuscript] Ch. 7, §Physical Observations
+- [leitner2026] Ch. 7, §Physical Observations
 - [jones1985] https://doi.org/10.1090/S0273-0979-1985-15304-2
 - CDF II: https://doi.org/10.1126/science.abk1781
 - ATLAS: https://doi.org/10.1140/epjc/s10052-024-12632-6
@@ -164,7 +164,7 @@ noncomputable def w_z_ratio : ℝ :=
 
 /-- The Higgs/W δq ratio equals α_s/α_W exactly — no free parameters.
     This is because δq ∝ α; the factors (q₀-1) and 1/|χ| cancel. -/
--- Ref: [manuscript] Ch. 7, §Vertex δq formula
+-- Ref: [leitner2026] Ch. 7, §Vertex δq formula
 theorem higgs_w_ratio_exact :
     delta_q_H / delta_q_W_CDF = α_s / α_W := by
   unfold delta_q_H delta_q_W_CDF delta_q
@@ -188,7 +188,7 @@ theorem higgs_w_ratio_exact :
     absurdly loose. `π > 3` gives the first conjunct and `π < 4` the second,
     so `Real.pi_gt_d6` / `Real.pi_lt_d6` are far more than enough. Nothing
     was missing except the reduction to `K / π`. -/
--- Ref: [manuscript] Ch. 7, §Vertex δq formula
+-- Ref: [leitner2026] Ch. 7, §Vertex δq formula
 theorem forward_backward_agreement :
     delta_m_W_predicted < 2 * delta_m_W_observed ∧
     delta_m_W_observed < 2 * delta_m_W_predicted := by
@@ -230,7 +230,7 @@ theorem q₀_sq_bounds : (1.232 : ℝ) < q₀ ^ 2 ∧ q₀ ^ 2 < 1.233 := by
 
 /-- The sensitivity ∂ ln m / ∂ ln q = (q₀² + 1)/(q₀² - 1) ∈ (9, 11).
     Uses q₀² ∈ (1.232, 1.233) to bound the ratio. -/
--- Ref: [manuscript] Ch. 7, §Mass predictions and CODATA Comparison
+-- Ref: [leitner2026] Ch. 7, §Mass predictions and CODATA Comparison
 theorem sensitivity_range :
     9 < sensitivity q₀ ∧ sensitivity q₀ < 11 := by
   obtain ⟨hlo, hhi⟩ := q₀_sq_bounds
@@ -244,7 +244,7 @@ theorem sensitivity_range :
 
 /-- The geometric factor κ is exactly 1/6, derived from the Euler
     characteristic of the Bring surface via Gauss-Bonnet. -/
--- Ref: [manuscript] Ch. 2, §Bring surface geometry
+-- Ref: [leitner2026] Ch. 2, §Bring surface geometry
 theorem kappa_is_inv_chi : kappa = 1 / (6 : ℝ) := kappa_val
 
 end QOU.Observations.WBoson

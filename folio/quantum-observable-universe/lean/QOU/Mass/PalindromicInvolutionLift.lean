@@ -98,7 +98,7 @@ Ground ring: `[Field K]` for the lift (it divides), `[CharZero K]` for the rigid
 (it inverts `16` and `24`). Nothing archimedean appears except in the explicitly
 real-valued `dilation_gt_one_not_involutive`, which is about an ordering.
 
--- Ref: [manuscript] docs/audits/2026-09-07-w1-route2-fibre-monodromy-is-order-two.md (W1 routes 1-2)
+-- Ref: [leitner2026] docs/audits/2026-09-07-w1-route2-fibre-monodromy-is-order-two.md (W1 routes 1-2)
 -/
 
 namespace QOU.Mass.PalindromicInvolutionLift

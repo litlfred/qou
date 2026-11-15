@@ -32,7 +32,7 @@ class MyWedderburnClaim (R : Type*) [Field R]
     w_tilde my_partition = 3 / 14
 ```
 
--- Ref: [manuscript] braids-and-knots/wedderburn-weight-canonical.md (shared)
+-- Ref: [leitner2026] braids-and-knots/wedderburn-weight-canonical.md (shared)
 -/
 
 namespace QOU.Shared

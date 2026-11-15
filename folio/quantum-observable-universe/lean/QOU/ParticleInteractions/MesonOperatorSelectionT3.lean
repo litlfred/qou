@@ -82,7 +82,7 @@ Refs:
   - content/.../particle-interactions/lepton-meson-torus-knot-dictionary.lean
   - content/.../predicted-spectra/knot-operator-selection.md
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  -- Ref: [manuscript] Ch. "Predicted Spectra" §knot-operator-selection
+  -- Ref: [leitner2026] Ch. "Predicted Spectra" §knot-operator-selection
 -/
 
 namespace QOU.ParticleInteractions.MesonOperatorSelectionT3

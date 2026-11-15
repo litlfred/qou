@@ -17,7 +17,7 @@ Ground ring `R_q = ℤ[q, q⁻¹]` from `QOU.Archimedean.GroundRing`;
 
 ## References
 
-- [manuscript] §3, Definition: Hadron
+- [leitner2026] §3, Definition: Hadron
 - [jones1987] Hecke Algebra Representations of Braid Groups
 -/
 
@@ -26,7 +26,7 @@ namespace QOU
 /-- A **hadron**: a common base point on `S²` (spherical coordinates
     `θ, φ`) together with its constituent knot types (valence quarks
     in the knot picture), of which there must be at least two. -/
--- Ref: [manuscript] §3, Definition: Hadron
+-- Ref: [leitner2026] §3, Definition: Hadron
 structure Hadron where
   /-- Spherical coordinate `θ` of the common base point. -/
   theta : Archimedean.R_q

@@ -29,7 +29,7 @@ See
 [2026-05-04 GAP 6a + 18a scoping](../../../../../docs/audits/2026-05-04-gap-6a-18a-scoping.md)
 for the outstanding work.
 
-Ref: [manuscript] conj:mass-endomorphism
+Ref: [leitner2026] conj:mass-endomorphism
 LaTeX label: scoping for `conj:mass-endomorphism`
 -/
 
@@ -37,7 +37,7 @@ namespace QOU.MassEndomorphism
 
 /-- Zero-mass model of `MassEndomorphism ℤ β`.  Not an `instance` — see
     the module docstring. -/
--- Ref: [manuscript] conj:mass-endomorphism §"What is known", Step 1
+-- Ref: [leitner2026] conj:mass-endomorphism §"What is known", Step 1
 --      (the flat case `tr_transient = 0`)
 def trivial_int_zero (β : Type*) :
     MassEndomorphism ℤ β where

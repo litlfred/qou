@@ -30,7 +30,7 @@ universe u v
     the braiding.
 
     LaTeX: `\label{def:classical-limit-functor}`
-    Ref: [manuscript] Chapter 8, Section 5
+    Ref: [leitner2026] Chapter 8, Section 5
 
     **`is_exact : Prop` removed 2026-09-07 — universe-`Prop` typed, neither read
     nor constructed. Exactness of the functor needs additive structure on `Cq`
@@ -50,7 +50,7 @@ structure ClassicalLimitFunctor
   [functorMonoidal : functor.Monoidal]
   /-- Quantum gap collapse: ℏ_q → 0 as q → 1.
       Expressed as: the functor sends the braiding to the symmetric swap. -/
-  -- Ref: [manuscript] Chapter 8, Section 5
+  -- Ref: [leitner2026] Chapter 8, Section 5
   braiding_trivializes :
     ∀ (X Y : Cq),
       functor.map (β_ X Y).hom =

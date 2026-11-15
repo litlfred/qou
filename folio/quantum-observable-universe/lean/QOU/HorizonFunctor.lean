@@ -75,6 +75,6 @@ def HorizonFunctor.ofSpace {X : Type} [TopologicalSpace X] {ι : Type}
   boundary a := frontier (region a) ∩ {c | A0 c = 0}
   boundary_nonobservable _ _ hc hobs := hobs hc.2
 
--- Ref: [manuscript] quantum-observable-universe/information-theory/horizon-functor.ts
+-- Ref: [leitner2026] quantum-observable-universe/information-theory/horizon-functor.ts
 
 end QOU

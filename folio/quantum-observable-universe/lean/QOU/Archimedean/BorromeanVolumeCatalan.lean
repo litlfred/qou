@@ -254,7 +254,7 @@ theorem vol_B3_numerical_bounds_via_catalan :
     This is the LEADING factor of the canonical mass formula
     `m(𝓑₃) = m_e · VolDensity(𝓑₃) = m_e · (8G/ℏ_q²) · linking_weight(q)`.
 
-    -- Ref: [manuscript] see `computations/_li_2_q_util.vol_density_borromean`
+    -- Ref: [leitner2026] see `computations/_li_2_q_util.vol_density_borromean`
             for the production implementation; this theorem is the
             categorical statement of its first factor. -/
 theorem geom_leading_eq_8G_over_hbar_q_sq (q : ℝ) (hq : q > 1) :

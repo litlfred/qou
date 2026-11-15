@@ -836,7 +836,7 @@ The two `6·n²` scalars cancel and the nine rows collapse to the content cubic 
 `ring`. -/
 theorem sumSqHooks_eq_sumSqContents_add_sq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
     sumSqHooks l = sumSqContents l + (sz l : ℤ) ^ 2 := by
-  -- Ref: [manuscript] docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md §"Proof of (A)"
+  -- Ref: [leitner2026] docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md §"Proof of (A)"
   -- Step 1: bridge to Finset double sum + cast the ℕ hook to its ℤ form (exact on cells).
   have hook_eq : sumSqHooks l = ∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0),
       ((l.getD i 0 : ℤ) - j + (colLen l j : ℤ) - i - 1) ^ 2 := by

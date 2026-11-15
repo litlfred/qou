@@ -78,7 +78,7 @@ theorem deltaQ_eq_h_mul_qbracket (q : Rˣ) (w : ℕ) :
     q-dimension decoration at the writhe exponent `w = (m-1)p` factors as `h`
     times the quantum integer `[(m-1)p]_q`.  Pre-archimedean (no `ℝ`, no `π`);
     sorry-free.  `m = 2` recovers `δ_q(T_{2,k}) = h[k]_q` (`w = k`). -/
--- Ref: [manuscript] mass-theory/torus-knot-delta-q-writhe
+-- Ref: [leitner2026] mass-theory/torus-knot-delta-q-writhe
 theorem torus_deltaQ_eq_h_qbracket (q : Rˣ) (m p : ℕ) :
     deltaQ q (torusWrithe m p)
       = ((q : R) - (↑q⁻¹ : R)) * qbracket q (torusWrithe m p) :=

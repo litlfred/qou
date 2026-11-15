@@ -26,6 +26,13 @@ there exists a grouplike $g \in G^{(n)} \setminus G^{(n-1)}$ whose
 $\tau_{\mathrm{arch}}$-image generates a non-trivial class in
 $\mathcal{P}_n / \mathcal{P}_{n-1}$.*
 
+The depth filtration on periods used here is the one induced from the
+depth filtration $D$ of the motivic fundamental group of
+$\mathbb{P}^1 \setminus \{0, \infty, \mu_N\}$, where $D^1$ is the kernel
+of $\pi_1(X) \to \pi_1(\mathbb{G}_m)$ and $D^n$ is its lower central series
+\cite{deligne-goncharov2005} (§6.1). The grading by $D$-degree exists only
+in the $\omega$-realisation (§6.2 of the same reference).
+
 ### Stratification dictionary
 
 | Depth $n$ | Grouplike at depth $n$ | Goncharov class |

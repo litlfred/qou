@@ -14,7 +14,7 @@ of |V_i^par / V_i^dau|^2 over affected generators i ≤ p.
 LaTeX label: `prop:trace-ratio-observable`
 
 ## References
-- [manuscript] Ch. 7, §trace-ratio-observable
+- [leitner2026] Ch. 7, §trace-ratio-observable
 
 **Ground ring**: `ℝ` (archimedean realisation).
 Evaluates formal results at q₀ ≈ 1.1098 for comparison with
@@ -43,7 +43,7 @@ noncomputable def trace_ratio_product
 
 /-- Generators i > p cancel between parent and daughter:
     if V_par i = V_dau i then the ratio is 1. -/
--- Ref: [manuscript] Ch. 7, §trace-ratio-observable
+-- Ref: [leitner2026] Ch. 7, §trace-ratio-observable
 theorem generator_cancellation (V_par V_dau : ℕ → ℝ) (i p : ℕ)
     (hi : p < i) (heq : V_par i = V_dau i) (hne : V_dau i ≠ 0) :
     (V_par i / V_dau i) ^ 2 = 1 := by
@@ -58,7 +58,7 @@ theorem generator_cancellation (V_par V_dau : ℕ → ℝ) (i p : ℕ)
     This is the main proposition: the exponential growth of individual
     Markov traces cancels in the ratio, leaving a finite product over
     only the generators affected by the nucleon conversion. -/
--- Ref: [manuscript] Ch. 7, §trace-ratio-observable
+-- Ref: [leitner2026] Ch. 7, §trace-ratio-observable
 theorem trace_ratio_observable (q : ℝ) (hq : 1 < q)
     (V_par V_dau : ℕ → ℝ) (p : ℕ)
     (hcancel : ∀ i, p < i → V_par i = V_dau i)

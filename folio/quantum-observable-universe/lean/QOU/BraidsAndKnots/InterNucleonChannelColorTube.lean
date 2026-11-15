@@ -43,7 +43,7 @@ The substrate-pure realisation of the flavor-only projection is implemented
 in `computations/closed_form_tau_M.py` under
 `pn_convention="bring_color_weighted"` (PROVED, PR #690/#942).
 
--- Ref: [manuscript] conj:inter-nucleon-channel-color-tube
+-- Ref: [leitner2026] conj:inter-nucleon-channel-color-tube
 -/
 
 namespace QOU.BraidsAndKnots
@@ -142,7 +142,7 @@ theorem chiralitySign_mem (c₁ c₂ : ColorSheet) (F₁ F₂ : NucleonColorCont
     projection `uniformColorTubeData` below witnesses satisfiability but is
     deliberately not registered, because it is the flavor-only collapse the
     conjecture identifies as missing the per-arc structure. -/
--- Ref: [manuscript] conj:inter-nucleon-channel-color-tube
+-- Ref: [leitner2026] conj:inter-nucleon-channel-color-tube
 class InterNucleonChannelColorTube [BringFiberAction] where
   /-- The categorical weight of a color-sheet pair given the source/target
       nucleon flavor content. -/

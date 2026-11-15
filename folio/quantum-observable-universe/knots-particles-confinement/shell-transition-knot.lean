@@ -1,4 +1,4 @@
--- Ref: [manuscript] Ch. 4
+-- Ref: [leitner2026] Ch. 4
 -- Stability pairs from Borromean spin-orbit shell-transition levels.
 -- The 3 crossings of B_3 set the shell-transition threshold at N ≥ 3.
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
@@ -28,7 +28,7 @@ theorem hoCumulative_eq_sum (N : ℕ) :
     simp only [hoCumulative, hoShellSize]
     -- Need: (n+2)(n+3)(n+4)/3 = (n+1)(n+2)(n+3)/3 + (n+2)(n+3).
     -- Numerator identity: (n+2)(n+3)(n+4) = (n+1)(n+2)(n+3) + 3·(n+2)(n+3).
-    -- Ref: [manuscript] Ch. 4
+    -- Ref: [leitner2026] Ch. 4
     have hnum :
         (n + 1 + 1) * (n + 1 + 2) * (n + 1 + 3)
           = (n + 1) * (n + 2) * (n + 3) + ((n + 1 + 1) * (n + 1 + 2)) * 3 := by

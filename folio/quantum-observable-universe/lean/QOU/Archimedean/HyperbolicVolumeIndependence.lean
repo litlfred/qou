@@ -37,7 +37,7 @@ class HyperbolicVolumeIndependenceAxiom : Prop where
 -- The conjecture itself.
 -- Ref: [zagier1986] Zagier, "Hyperbolic manifolds and special values
 --        of Dedekind zeta-functions" — Borel–Zagier circle of conjectures.
--- Ref: [manuscript] quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.md
+-- Ref: [leitner2026] quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.md
 noncomputable instance [HyperbolicVolumeIndependenceAxiom] : HyperbolicVolumeIndependence :=
   HyperbolicVolumeIndependenceAxiom.independence
 

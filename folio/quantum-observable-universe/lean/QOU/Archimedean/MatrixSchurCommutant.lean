@@ -36,7 +36,7 @@ irreducibility; it does not assume the τ-identification, construct `τ`, or
 register any `TauRhoHodgeLift` instance. `1/(8π)` stays a phase-4 identification.
 
 -- Ref: [serre1977] Linear Representations of Finite Groups (Schur's lemma)
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
 -/
 import Mathlib.LinearAlgebra.Matrix.ToLin
 import Mathlib.LinearAlgebra.Eigenspace.Triangularizable

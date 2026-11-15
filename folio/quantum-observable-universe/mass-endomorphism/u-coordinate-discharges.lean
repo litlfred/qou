@@ -44,7 +44,7 @@ The squared off-diagonal coupling
 `b² = (q^4 + q² + 1)/(q² + 1)²` becomes `(u² + u + 1)/(u + 1)²`
 under `u = q²`. -/
 
--- Ref: [manuscript] rem:u-coordinate-discharges §"b² in u"
+-- Ref: [leitner2026] rem:u-coordinate-discharges §"b² in u"
 -- Ref: [hoefsmit1974]
 /-- `hoefsmit_b_sq q = (u² + u + 1)/(u + 1)²` with `u = q²`. -/
 theorem hoefsmit_b_sq_in_u (q : ℝ) (hq : q ≠ 0) :
@@ -59,7 +59,7 @@ theorem hoefsmit_b_sq_in_u (q : ℝ) (hq : q ≠ 0) :
 
 `dim_q V_(2,1) = q + q⁻¹` so `dim_q² = q² + 2 + q⁻² = u + 2 + u⁻¹`. -/
 
--- Ref: [manuscript] rem:u-coordinate-discharges §"dim_q V_(2,1)"
+-- Ref: [leitner2026] rem:u-coordinate-discharges §"dim_q V_(2,1)"
 -- Ref: [wenzl1988]
 /-- The squared q-dimension of `V_(2,1)` equals `u + 2 + u⁻¹` with
     `u = q²`. -/
@@ -71,7 +71,7 @@ theorem dimQ_V21_sq_in_u (q : ℝ) (hq : q ≠ 0) :
 
 /-! ## Hecke root-sum / root-product identities -/
 
--- Ref: [manuscript] rem:u-coordinate-discharges §"Hecke root sum"
+-- Ref: [leitner2026] rem:u-coordinate-discharges §"Hecke root sum"
 /-- The Hecke quadratic root sum `q − q⁻¹ = u^{-1/2}·(u − 1)`
     expressed multiplicatively: `q · (q − q⁻¹) = u − 1` with
     `u = q²`. -/
@@ -89,14 +89,14 @@ are:
   V_(3):     q · q = u
   V_(1,1,1): (-q⁻¹) · (-q⁻¹) = u⁻¹ -/
 
--- Ref: [manuscript] rem:u-coordinate-discharges §"per-block eigenvalues"
+-- Ref: [leitner2026] rem:u-coordinate-discharges §"per-block eigenvalues"
 /-- σ_i eigenvalue squared on `V_(3)` equals `u = q²`. -/
 theorem sigma_eigval_V3_sq_eq_u (q : ℝ) (i : Fin 2) :
     (sigma_eigval_V3 q i)^2 = uCoord q := by
   unfold sigma_eigval_V3 uCoord
   ring
 
--- Ref: [manuscript] rem:u-coordinate-discharges §"per-block eigenvalues"
+-- Ref: [leitner2026] rem:u-coordinate-discharges §"per-block eigenvalues"
 /-- σ_i eigenvalue squared on `V_(1,1,1)` equals `u⁻¹ = q⁻²`. -/
 theorem sigma_eigval_V111_sq_eq_u_inv (q : ℝ) (hq : q ≠ 0) (i : Fin 2) :
     (sigma_eigval_V111 q i)^2 = (uCoord q)⁻¹ := by
@@ -109,7 +109,7 @@ theorem sigma_eigval_V111_sq_eq_u_inv (q : ℝ) (hq : q ≠ 0) (i : Fin 2) :
 
 Total `dim_q² = 1 + (q+q⁻¹)² + 1 = 2 + u + 2 + u⁻¹ = u + 4 + u⁻¹`. -/
 
--- Ref: [manuscript] rem:u-coordinate-discharges §"Wedderburn completeness"
+-- Ref: [leitner2026] rem:u-coordinate-discharges §"Wedderburn completeness"
 /-- Sum of squared q-dimensions at H_3 equals `u + 4 + u⁻¹` with
     `u = q²`. -/
 theorem dimQ_sq_sum_H3_in_u (q : ℝ) (hq : q ≠ 0) :

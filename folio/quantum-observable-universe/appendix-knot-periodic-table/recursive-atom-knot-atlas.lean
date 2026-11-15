@@ -94,7 +94,7 @@ structure AtlasEntry where
     inputs enumerated below; consult the rendered markdown on every
     build.  The two seed entries here ensure
     `principledAtlas atomKnotAtlas ≠ []`. -/
--- Ref: [manuscript] §recursive atom-knot atlas — proton, neutron
+-- Ref: [leitner2026] §recursive atom-knot atlas — proton, neutron
 def atomKnotAtlas : List AtlasEntry := [
   { name := "proton",
     ell := 1, n_0 := 3,
@@ -153,7 +153,7 @@ def principledAtlas : List AtlasEntry → List AtlasEntry
 def AtlasIsWitnessDerived : Prop := atomKnotAtlas.length ≥ 1
 
 theorem atlas_witness_derived : AtlasIsWitnessDerived := by
-  -- Ref: [manuscript] prop:recursive-atom-knot-atlas §"Build-pipeline integration"
+  -- Ref: [leitner2026] prop:recursive-atom-knot-atlas §"Build-pipeline integration"
   -- + the renderer recursive_atom_knot_atlas_render.py.
   -- The atomKnotAtlas list above contains the canonical proton +
   -- neutron entries; length ≥ 1 closes by decide.
@@ -200,7 +200,7 @@ def PrincipledPathForAtomKnot : Prop :=
   principledAtlas atomKnotAtlas = atomKnotAtlas
 
 theorem principled_path_for_atom_knot : PrincipledPathForAtomKnot := by
-  -- Ref: [manuscript] prop:confinement-sdp + def:confined-particle.
+  -- Ref: [leitner2026] prop:confinement-sdp + def:confined-particle.
   -- Both seed entries (proton, neutron) carry methodology =
   -- principledDerivation, so principledAtlas filters none out.
   show principledAtlas atomKnotAtlas = atomKnotAtlas
@@ -224,7 +224,7 @@ def FiltrationCertificateFormat : Prop :=
   ∀ e ∈ atomKnotAtlas, e.braid_word ≠ ""
 
 theorem filtration_certificate_format_specified : FiltrationCertificateFormat := by
-  -- Ref: [manuscript] gb-filtration-jet-order.witness.json §framework.
+  -- Ref: [leitner2026] gb-filtration-jet-order.witness.json §framework.
   -- `atomKnotAtlas` is a `List`, so we exhaust membership via
   -- `cases he` (NOT `fin_cases`, which expects a Fin / Fintype).
   intro e he

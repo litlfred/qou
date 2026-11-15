@@ -74,7 +74,7 @@ tree is built on — `TypeA.IwahoriHeckeOfSn` and `Balanced.BalancedHecke` are b
 
 -- Ref: [humphreys1990] §7.1 (the Coxeter presentation of the Hecke algebra)
 -- Ref: [geckpfeiffer2000] §4.4 (type A: the braid/commutation split)
--- Ref: [manuscript] beans `qou-0fmb`, `qou-img9`
+-- Ref: [leitner2026] beans `qou-0fmb`, `qou-img9`
 -/
 
 namespace QOU.IwahoriHecke.CoxeterCarrier

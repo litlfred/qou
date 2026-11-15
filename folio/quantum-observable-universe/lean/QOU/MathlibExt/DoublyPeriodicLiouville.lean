@@ -33,7 +33,7 @@ substrate `b` — those remain the genuine analytic-`Φ_b` inputs. It converts t
 bespoke `uniqueUpToScalar` hypothesis into two smaller, standard facts (entire ratio +
 independent periods), with the Liouville-elliptic step now a proved lemma.
 
--- Ref: [manuscript] docs/audits/2026-07-13-phib-proof-status-and-monodromy-datum-gap-audit.md (G3, Liouville input)
+-- Ref: [leitner2026] docs/audits/2026-07-13-phib-proof-status-and-monodromy-datum-gap-audit.md (G3, Liouville input)
 -/
 
 namespace QOU.MathlibExt.DoublyPeriodicLiouville

@@ -91,7 +91,7 @@ synthesis theorem records this equivalence at the abstract class
 level; concrete specialisations (e.g. for `V_(2,1)` of `H_3`) connect
 the per-anchor data via explicit polynomial identities. -/
 
--- Ref: [manuscript] prop:tau-M-asymptotic-rep-theory §"Synthesis"
+-- Ref: [leitner2026] prop:tau-M-asymptotic-rep-theory §"Synthesis"
 -- Ref: [kashiwara1990-duke] Duke Math. J. 71 (1993) 839–858 (DOI 10.1215/S0012-7094-93-07131-1 — distinct from kashiwara1990 = CMP BF02097367)
 -- Ref: [macdonald1995] (Macdonald: Symmetric Functions and Hall Polynomials)
 -- Ref: [habiro2004cyclotomic] Habiro, "Cyclotomic completions of polynomial rings," arXiv:math/0209324

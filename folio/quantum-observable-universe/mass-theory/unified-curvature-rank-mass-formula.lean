@@ -23,7 +23,7 @@ with paper labels:
 Term 6 vs Term 7 are now seen as adjacent strata of the same
 spectral-sequence ladder, not competing conjectures.
 
--- Ref: [manuscript] prop:unified-curvature-rank-mass-formula
+-- Ref: [leitner2026] prop:unified-curvature-rank-mass-formula
 -/
 
 namespace QOU.WedderburnMass
@@ -67,7 +67,7 @@ noncomputable def unified_curvature_rank_mass
     combined with `(List.range n).filter (· ≥ 3) = (List.range (n-3)).map (· + 3)`.
     Routine Mathlib completion; axiomatised pending the exact
     `List.foldl_append + List.filter_range` lemma forms. -/
--- Ref: [manuscript] prop:unified-curvature-rank-mass-formula
+-- Ref: [leitner2026] prop:unified-curvature-rank-mass-formula
 axiom term_6_plus_term_7_eq_high_strata_axiom :
     ∀ (alphas : ℕ → ℝ) (blocks : List StratumBlock) (n : ℕ) (_h_n : 4 ≤ n),
       unified_curvature_rank_mass alphas blocks n
@@ -93,7 +93,7 @@ theorem term_6_plus_term_7_eq_high_strata
       Term 6 = α_3 · Φ_3
       Term 7 = Σ_{k≥4} α_k · Φ_k
 -/
--- Ref: [manuscript] prop:unified-curvature-rank-mass-formula
+-- Ref: [leitner2026] prop:unified-curvature-rank-mass-formula
 theorem paper_terminology_mapping
     (alphas : ℕ → ℝ) (blocks : List StratumBlock) (n : ℕ) (h_n : 4 ≤ n) :
     -- The seven paper labels are an EXHAUSTIVE enumeration of the

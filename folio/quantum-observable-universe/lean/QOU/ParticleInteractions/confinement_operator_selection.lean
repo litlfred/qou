@@ -190,7 +190,7 @@ class BorromeanConfinement extends BrunnianConfinement where
     nontrivial Brunnian `n`-braid: it exists iff `n ≥ 3` (baryon/meson
     dichotomy), is the unique-by-minimality Brunnian selection, and at `n = 3`
     equals the Borromean braid `𝓑₃ = (σ₀σ₁⁻¹)³`. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-operator-selection.ts
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/confinement-operator-selection.ts
 theorem confinement_operator_selection [ctx : BorromeanConfinement] :
     (∀ n, (∃ b : ctx.Braid n, ctx.confine n = some b) ↔ 3 ≤ n) ∧
     (∀ n (b : ctx.Braid n), ctx.confine n = some b →

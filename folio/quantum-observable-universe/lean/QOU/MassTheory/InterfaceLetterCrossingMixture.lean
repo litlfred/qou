@@ -26,7 +26,7 @@ grade makes the like-nucleon pairs the extremes (`pp` unentangled, `nn` fully en
 while the two-body spectrum needs the *unlike* pair singled out (bean `qou-q8vl`). Beans
 `qou-1x56`, `qou-8r6b`.
 
--- Ref: [manuscript] def:hecke-skein-convention; prop:hecke-markov-transition
+-- Ref: [leitner2026] def:hecke-skein-convention; prop:hecke-markov-transition
 -/
 import Mathlib.Algebra.Algebra.Defs
 import Mathlib.Algebra.Module.LinearMap.Defs

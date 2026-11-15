@@ -8,7 +8,7 @@ Stage S5 of bean `qou-zoyv`. Hom-sets of `D_ℏ` are the `sl₂`-equivariant mat
 composition is matrix multiplication and `⊗` is the Kronecker product, both bilinear. So `D_ℏ` is
 preadditive, `ℂ`-linear, and monoidal-linear. Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S5)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S5)
 -/
 
 noncomputable section

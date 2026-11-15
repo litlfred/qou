@@ -13,7 +13,7 @@ Stage S3 of bean `qou-zoyv`. The block hexagon
 `sl₂` residues are central and cancel. Pulled back along the leg bijections this gives
 Mathlib's two hexagon axioms in matrix form. Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S3)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S3)
 -/
 
 noncomputable section

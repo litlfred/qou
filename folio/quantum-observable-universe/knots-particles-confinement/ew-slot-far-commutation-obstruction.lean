@@ -35,7 +35,7 @@ LaTeX label: `prop:ew-slot-far-commutation-obstruction`.
 
 ## References
 
-- [manuscript] particle-interactions/ew-slot-far-commutation-obstruction
+- [leitner2026] particle-interactions/ew-slot-far-commutation-obstruction
 - `thm:hoefsmit-ew-cell-content` (the disjoint-pair `n = 6` construction; the
   far-commutation `σ_i σ_j = σ_j σ_i`, `|i − j| ≥ 2`)
 - `conj:categorical-linking-operation` (`Lk_R^{(k)}` — the inter-slot braiding

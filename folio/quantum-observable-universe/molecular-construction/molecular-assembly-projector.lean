@@ -15,7 +15,7 @@ in the narrative and in `assembly-projector-exists`.
 
 ## References
 - [wenzl1988] https://doi.org/10.1007/BF01393695
-- [manuscript] Ch. 12, Definition: Molecular assembly projector
+- [leitner2026] Ch. 12, Definition: Molecular assembly projector
 -/
 
 namespace QOU.Molecular

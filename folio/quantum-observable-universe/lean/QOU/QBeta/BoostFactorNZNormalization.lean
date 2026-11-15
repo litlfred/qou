@@ -34,8 +34,8 @@
 
   Base ring: genuinely archimedean (`Real.sqrt`, `Real.sin`) — §7c-correct `ℝ`.
 
-  -- Ref: [manuscript] docs/audits/2026-08-01-c3-boost-factor-nz-half-normalization-and-precision-ceiling.md
-  -- Ref: [manuscript] conj:binding-qbeta-complex-volume; PR #4515 (qou-iyj5)
+  -- Ref: [leitner2026] docs/audits/2026-08-01-c3-boost-factor-nz-half-normalization-and-precision-ceiling.md
+  -- Ref: [leitner2026] conj:binding-qbeta-complex-volume; PR #4515 (qou-iyj5)
   -- Ref: [murakami-murakami2001] https://doi.org/10.1007/BF02392716
 -/
 import Mathlib.Analysis.SpecialFunctions.Sqrt

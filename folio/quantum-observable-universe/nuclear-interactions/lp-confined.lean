@@ -13,7 +13,7 @@ complete braid, not any of its sub-words.
 LaTeX label: `def:lp-confined`
 
 ## References
-- [manuscript] §2/lp-dual-stability
+- [leitner2026] §2/lp-dual-stability
 -/
 
 namespace QOU.ParticleInteractions
@@ -25,14 +25,14 @@ abbrev H3Vector := Fin 6 → ℝ
 abbrev GramMatrix := Matrix (Fin 6) (Fin 6) ℝ
 
 /-- `x` is **LP-stable** for Gram matrix `G` iff `G x ≥ 0` componentwise. -/
--- Ref: [manuscript] §2/lp-dual-stability
+-- Ref: [leitner2026] §2/lp-dual-stability
 def LPStable (G : GramMatrix) (x : H3Vector) : Prop :=
   ∀ i, 0 ≤ (G.mulVec x) i
 
 /-- An element `x` is **LP-confined** for Gram matrix `G` relative to a
     family of proper sub-braid coordinate vectors `subBraids` iff `x`
     itself is LP-stable and none of the proper sub-braids is LP-stable. -/
--- Ref: [manuscript] §2/lp-dual-stability
+-- Ref: [leitner2026] §2/lp-dual-stability
 def LPConfined (G : GramMatrix) (x : H3Vector)
     (subBraids : List H3Vector) : Prop :=
   LPStable G x ∧ ∀ s ∈ subBraids, ¬ LPStable G s

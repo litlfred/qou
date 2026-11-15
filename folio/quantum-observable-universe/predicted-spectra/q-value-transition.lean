@@ -20,7 +20,7 @@ The equivalence Q_q = T_e + T_ν + T_recoil holds only at q = 1.
 LaTeX label: `def:Q-value-transition`
 
 ## References
-- [manuscript] §6/q-value-transition
+- [leitner2026] §6/q-value-transition
 
 **Ground ring**: `ℝ` (archimedean realisation).
 Evaluates formal results at q₀ ≈ 1.1098 for comparison with
@@ -37,7 +37,7 @@ namespace QOU.Archimedean
 /-- The 𝒬_q-value of a beta decay transition.
     Defined as the categorical action difference — NOT as a sum of
     kinetic energies.  Classical energy conservation is NOT assumed. -/
--- Ref: [manuscript] §6/q-value-transition
+-- Ref: [leitner2026] §6/q-value-transition
 structure QqValue where
   /-- Substrate parameter. -/
   q : ℝ
@@ -53,7 +53,7 @@ structure QqValue where
   S_antineutrino : ℝ := 0
 
 /-- The 𝒬_q-value: action difference (primary definition). -/
--- Ref: [manuscript] §6/q-value-transition
+-- Ref: [leitner2026] §6/q-value-transition
 noncomputable def QqValue.value (Q : QqValue) : ℝ :=
   Q.S_parent - Q.S_daughter - Q.S_electron - Q.S_antineutrino
 
@@ -66,7 +66,7 @@ noncomputable def QqValue.value (Q : QqValue) : ℝ :=
 
     Note: this is NONZERO at q ≠ 1.  Classical energy conservation
     (δ_q = 0) holds ONLY at q = 1. -/
--- Ref: [manuscript] §6/q-value-transition
+-- Ref: [leitner2026] §6/q-value-transition
 structure QAnomaly where
   /-- The categorical 𝒬_q. -/
   Q_q : ℝ
@@ -76,16 +76,16 @@ structure QAnomaly where
   delta_q : ℝ := Q_q - T_total
 
 /-- ℏ_q = 1 - q⁻¹ (quantum Planck constant). -/
--- Ref: [manuscript] §6/q-value-transition
+-- Ref: [leitner2026] §6/q-value-transition
 noncomputable def hbarQ' (q : ℝ) : ℝ := 1 - 1 / q
 
 /-- The self-deformation shift Δq_eff = (A-1)/A² · ℏ_q². -/
--- Ref: [manuscript] §6/hadron-q-self-correction
+-- Ref: [leitner2026] §6/hadron-q-self-correction
 noncomputable def delta_q_eff (q : ℝ) (A : ℕ) : ℝ :=
   ((A : ℝ) - 1) / (A : ℝ) ^ 2 * (hbarQ' q) ^ 2
 
 /-- The self-deformation is positive for A ≥ 2 and q > 1. -/
--- Ref: [manuscript] §6/hadron-q-self-correction
+-- Ref: [leitner2026] §6/hadron-q-self-correction
 theorem delta_q_eff_pos {q : ℝ} {A : ℕ} (hq : 1 < q) (hA : 2 ≤ A) :
     0 < delta_q_eff q A := by
   unfold delta_q_eff hbarQ'
@@ -102,7 +102,7 @@ theorem delta_q_eff_pos {q : ℝ} {A : ℕ} (hq : 1 < q) (hA : 2 ≤ A) :
     positivity
 
 /-- At q = 1, the anomaly vanishes (classical limit). -/
--- Ref: [manuscript] §6/q-value-transition
+-- Ref: [leitner2026] §6/q-value-transition
 theorem delta_q_eff_classical (A : ℕ) : delta_q_eff 1 A = 0 := by
   unfold delta_q_eff hbarQ'
   simp
@@ -112,11 +112,11 @@ theorem delta_q_eff_classical (A : ℕ) : delta_q_eff 1 A = 0 := by
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- Crossing energy at a single crossing change d→u: q - q⁻¹. -/
--- Ref: [manuscript] §6/q-value-transition
+-- Ref: [leitner2026] §6/q-value-transition
 noncomputable def singleCrossingDelta (q : ℝ) : ℝ := q - 1 / q
 
 /-- The single-crossing energy difference is positive for q > 1. -/
--- Ref: [manuscript] §6/q-value-transition
+-- Ref: [leitner2026] §6/q-value-transition
 theorem singleCrossingDelta_pos {q : ℝ} (hq : 1 < q) :
     0 < singleCrossingDelta q := by
   unfold singleCrossingDelta
@@ -126,7 +126,7 @@ theorem singleCrossingDelta_pos {q : ℝ} (hq : 1 < q) :
   linarith
 
 /-- At q = 1: crossing change releases zero energy (no weak force). -/
--- Ref: [manuscript] §6/q-value-transition
+-- Ref: [leitner2026] §6/q-value-transition
 theorem singleCrossingDelta_classical : singleCrossingDelta 1 = 0 := by
   unfold singleCrossingDelta; norm_num
 
@@ -142,7 +142,7 @@ theorem singleCrossingDelta_classical : singleCrossingDelta 1 = 0 := by
     Note: this is NOT classical conservation.  The daughter nucleus
     lives in a shifted q-environment due to the re-reduction
     R2 moves in the Hecke algebra. -/
--- Ref: [manuscript] §6/q-value-transition
+-- Ref: [leitner2026] §6/q-value-transition
 structure QDeformedBalance where
   /-- Original substrate parameter. -/
   q : ℝ
@@ -170,20 +170,20 @@ structure QDeformedBalance where
 
 /-- Tritium self-deformation: Δq_eff(³H) = (3-1)/3² · ℏ_q² = 2/9 · ℏ_q².
     At q = 1.110: ℏ_q² ≈ 0.009816, so Δq ≈ 0.00218. -/
--- Ref: [manuscript] beta-decay-from-q.witness.json
+-- Ref: [leitner2026] beta-decay-from-q.witness.json
 theorem tritium_self_deformation :
     delta_q_eff 1.110 3 = (2 : ℝ) / 9 * (hbarQ' 1.110) ^ 2 := by
   unfold delta_q_eff
   norm_num
 
 /-- Tritium self-deformation is positive. -/
--- Ref: [manuscript] §6/q-value-transition
+-- Ref: [leitner2026] §6/q-value-transition
 theorem tritium_delta_q_pos : 0 < delta_q_eff 1.110 3 := by
   apply delta_q_eff_pos (by norm_num : (1 : ℝ) < 1.110) (by norm_num : 2 ≤ 3)
 
 /-- The self-deformation decreases with mass number: Δq_eff(A+1) < Δq_eff(A)
     for A ≥ 2 and q > 1.  Tritium (A=3) has the largest correction. -/
--- Ref: [manuscript] §6/hadron-q-self-correction
+-- Ref: [leitner2026] §6/hadron-q-self-correction
 theorem delta_q_decreasing {q : ℝ} (hq : 1 < q) {A : ℕ} (hA : 2 ≤ A) :
     delta_q_eff q (A + 1) < delta_q_eff q A := by
   unfold delta_q_eff
@@ -204,22 +204,22 @@ theorem delta_q_decreasing {q : ℝ} (hq : 1 < q) {A : ℕ} (hA : 2 ≤ A) :
 
 /-- Q_q-value for tritium: total log-ratio = -0.1021.
     Source: beta-decay-matrix.witness.json, σ₀ + σ₁ contributions. -/
--- Ref: [manuscript] beta-decay-matrix.witness.json
+-- Ref: [leitner2026] beta-decay-matrix.witness.json
 noncomputable def tritium_ln_ratio : ℝ := -0.1021
 
 /-- The tritium Q_q is negative (daughter has lower action than parent). -/
--- Ref: [manuscript] beta-decay-matrix.witness.json
+-- Ref: [leitner2026] beta-decay-matrix.witness.json
 theorem tritium_Q_q_negative : tritium_ln_ratio < 0 := by
   unfold tritium_ln_ratio; norm_num
 
 /-- Per-generator contribution fractions.
     σ₀ contributes 22% and σ₁ contributes 78% of the total. -/
--- Ref: [manuscript] beta-decay-matrix.witness.json
+-- Ref: [leitner2026] beta-decay-matrix.witness.json
 noncomputable def sigma0_fraction : ℝ := 0.0229 / 0.1021  -- ≈ 0.224
 noncomputable def sigma1_fraction : ℝ := 0.0792 / 0.1021  -- ≈ 0.776
 
 /-- The two generator fractions sum to 1. -/
--- Ref: [manuscript] beta-decay-matrix.witness.json
+-- Ref: [leitner2026] beta-decay-matrix.witness.json
 theorem generator_fractions_sum :
     sigma0_fraction + sigma1_fraction = 1 := by
   unfold sigma0_fraction sigma1_fraction

@@ -98,7 +98,7 @@ Wedderburn strata defined by partition height
 are $S$-stable. Apply the proposition. $\square$
 
 **Empirical confirmation.**
-[`alpha-5-lp-dual-crystal.witness.json`](computations/alpha/alpha-5-lp-dual-crystal.witness.json)
+[`alpha-5-lp-dual-crystal.witness.json`](../../../computations/alpha/alpha-5-lp-dual-crystal.witness.json)
 verifies $y_0^*(T) = y_0^*({}^3\mathrm{He})$ to machine
 precision (= 570.6762 at $q_0$, = 26.8242 in ht=6 stratum, and
 exactly equal across the entire $q$-sweep).

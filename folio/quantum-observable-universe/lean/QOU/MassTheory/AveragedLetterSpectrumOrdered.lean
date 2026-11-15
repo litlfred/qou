@@ -23,7 +23,7 @@ checker would be the exact defect the rule is written against. The documented
 downgrade path (`pairedReal`, a `foo` / `foo_real` pair) does not apply either,
 since there is no generic twin to pair with — the order is the content.
 
-`-- Ref: [manuscript] docs/audits/2026-08-25-vol-trm-division-of-labour-is-sound.md`
+`-- Ref: [leitner2026] docs/audits/2026-08-25-vol-trm-division-of-labour-is-sound.md`
 -/
 import QOU.MassTheory.AveragedLetterSpectrum
 import Mathlib.Algebra.Order.Field.Basic

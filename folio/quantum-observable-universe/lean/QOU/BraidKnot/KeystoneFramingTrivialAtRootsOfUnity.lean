@@ -104,7 +104,7 @@ It closes one named route, with its invariant on the table.
 
 -- Ref: [beasleywitten2005] https://doi.org/10.4310/jdg/1143593746
 -- Ref: [bakalovkirillov2001] Lectures on Tensor Categories and Modular Functors
--- Ref: [manuscript] docs/coordination/s5-so3-keystone.md
+-- Ref: [leitner2026] docs/coordination/s5-so3-keystone.md
 -/
 
 namespace QOU.BraidKnot.Keystone

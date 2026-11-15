@@ -76,8 +76,8 @@ so the hypothesis constrains the caller's data rather than data an instance
 chose.  The conclusion is not the hypothesis: it is the two-sided
 consequence, reached by composing the selection input with itself through
 `lamStar`. -/
--- Ref: [manuscript] prop:mass-coefficient-shadow-price (the LP-duality input)
--- Ref: [manuscript] braids-and-knots/local-shadow-ordering
+-- Ref: [leitner2026] prop:mass-coefficient-shadow-price (the LP-duality input)
+-- Ref: [leitner2026] braids-and-knots/local-shadow-ordering
 theorem decay_channel_unique {ι : Type*}
     (lamStar : ι) (IsMinimiser : ι → Prop) (OnBoundary : ℝ → Prop) (q : ℝ)
     (hsel : ¬ OnBoundary q → ∀ lam : ι, IsMinimiser lam → lam = lamStar)
@@ -98,7 +98,7 @@ rather than carried as an axiom, which is what the previous encoding did.
 
 Continuity of `E` on `[q₁, q₂]` is a hypothesis; neither this file nor the
 manuscript establishes it. -/
--- Ref: [manuscript] prop:unstable-atom-decay-channel §Connection to phase boundary
+-- Ref: [leitner2026] prop:unstable-atom-decay-channel §Connection to phase boundary
 theorem phase_boundary_crossing (E : ℝ → ℝ) (q₁ q₂ : ℝ) (hq : q₁ ≤ q₂)
     (hcont : ContinuousOn E (Set.Icc q₁ q₂))
     (hstable : E q₁ ≤ 0) (hunstable : 0 ≤ E q₂) :
@@ -117,7 +117,7 @@ boundary variety inside it.
 Both conjuncts are derived.  This is the declaration the block's `lean.ref`
 names; until 2026-08-31 the ref resolved to this file and this file did not
 declare it. -/
--- Ref: [manuscript] prop:unstable-atom-decay-channel
+-- Ref: [leitner2026] prop:unstable-atom-decay-channel
 theorem decay_channel {ι : Type*}
     (lamStar : ι) (IsMinimiser : ι → Prop) (OnBoundary : ℝ → Prop)
     (E : ℝ → ℝ) (q q₁ q₂ : ℝ)

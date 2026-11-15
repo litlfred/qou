@@ -27,7 +27,7 @@ bounded-degree (bwsd), of which `KeystoneLRAmplitudeReal` (#4365) supplies the
 case; it does **not** prove the gauge row satisfies the hypotheses.  No fit; nothing
 wired; L2 unchanged.
 
--- Ref: [manuscript] docs/coordination/s5-so3-keystone.md
+-- Ref: [leitner2026] docs/coordination/s5-so3-keystone.md
 -/
 import QOU.BraidKnot.KeystoneHabiroRootFamily
 import Mathlib.Tactic.ComputeDegree

@@ -52,7 +52,7 @@ Kontsevich structure from a *larger* closure where an integer weight combines wi
 ingredients — that is untested here. Nothing is fit; nothing is wired.
 
 -- Ref: [barnatan1995] On the Vassiliev knot invariants, Topology 34 (1995) 423–472.
--- Ref: [manuscript] deltalambda GAP-A-4 audit 2026-08-01; milnor_weight_parity_convergence_probe.py.
+-- Ref: [leitner2026] deltalambda GAP-A-4 audit 2026-08-01; milnor_weight_parity_convergence_probe.py.
 -/
 import Mathlib.Tactic
 

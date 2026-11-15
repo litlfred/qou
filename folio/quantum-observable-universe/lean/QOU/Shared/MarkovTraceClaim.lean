@@ -33,7 +33,7 @@ theorem my_block [ctx : MyBlockClaim] :
   ctx.claim_identity
 ```
 
--- Ref: [manuscript] braids-and-knots/markov-trace.md (shared)
+-- Ref: [leitner2026] braids-and-knots/markov-trace.md (shared)
 -/
 
 namespace QOU.Shared

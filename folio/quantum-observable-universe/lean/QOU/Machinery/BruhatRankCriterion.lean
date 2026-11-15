@@ -58,7 +58,7 @@ form the induction consumes.
 -- Ref: [bjornerbrenti2005] Björner & Brenti, *Combinatorics of Coxeter Groups*, Thm 2.1.5
 -- Ref: [mathas1999] Mathas, *Iwahori–Hecke Algebras and Schur Algebras of the Symmetric
 --      Group*, Proposition 3.7
--- Ref: [manuscript] beans qou-f3mc, qou-phir;
+-- Ref: [leitner2026] beans qou-f3mc, qou-phir;
 --      `computations/hecke/dipper_james_rank_criterion_probe.py`
 -/
 

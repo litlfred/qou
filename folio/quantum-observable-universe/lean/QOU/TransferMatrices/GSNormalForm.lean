@@ -59,7 +59,7 @@ This does **not** formalise the proposition. Three things are missing, and none 
 
 So this discharges the two load-bearing computations and leaves the structural claim narrative.
 
--- Ref: [manuscript] folio/quantum-observable-universe/appendix-transfer-matrices/tm-gs-normal-form.md
+-- Ref: [leitner2026] folio/quantum-observable-universe/appendix-transfer-matrices/tm-gs-normal-form.md
 -/
 
 namespace QOU.TransferMatrices.GSNormalForm

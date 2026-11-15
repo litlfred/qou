@@ -103,7 +103,7 @@ noncomputable def dressedAnnihilationRatio : ℝ := (1.109978595554181 : ℝ) ^ 
     `q > 1.1` gives `q¹⁰ > 1.1¹⁰ > 2.5`, hence `q⁻¹⁰ < 0.4 < 0.537`.  The
     substrate anchor never enters, which is the point: the claim does not
     depend on which `q₀` pin is in force. -/
--- Ref: [manuscript] quantum-observable-universe/nuclear-interactions/atomic-lp-stability.md
+-- Ref: [leitner2026] quantum-observable-universe/nuclear-interactions/atomic-lp-stability.md
 theorem bare_ne_dressed_ratio (q : ℝ) (hq : (1.1 : ℝ) < q) :
     bareAnnihilationRatio ≠ q ^ (-10 : ℤ) := by
   unfold bareAnnihilationRatio
@@ -122,7 +122,7 @@ theorem bare_ne_dressed_ratio (q : ℝ) (hq : (1.1 : ℝ) < q) :
 
     The substrate instance of `bare_ne_dressed_ratio`; sorry-free, and no
     longer sensitive to which `q₀` pin the literal records. -/
--- Ref: [manuscript] quantum-observable-universe/nuclear-interactions/atomic-lp-stability.md
+-- Ref: [leitner2026] quantum-observable-universe/nuclear-interactions/atomic-lp-stability.md
 theorem annihilation_ratios_distinct :
     bareAnnihilationRatio ≠ dressedAnnihilationRatio :=
   bare_ne_dressed_ratio _ (by norm_num)
@@ -139,7 +139,7 @@ caller-supplied data:
 projection nor a `sorry` is the honest form here. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP feasibility / kernel of constraint matrix)
 -- Ref: [wenzl1990] https://doi.org/10.1007/BF02097372 (Markov trace / dressed eigenvalue channels)
--- Ref: [manuscript] quantum-observable-universe/nuclear-interactions/atomic-lp-stability.md
+-- Ref: [leitner2026] quantum-observable-universe/nuclear-interactions/atomic-lp-stability.md
 def atomic_lp_stability {Candidate : Type}
     (normalised : Candidate → Prop)
     (bareVolume dressedVolume : Candidate → ℝ) : Prop :=
@@ -147,7 +147,7 @@ def atomic_lp_stability {Candidate : Type}
   (¬ ∃ X : Candidate, normalised X ∧ dressedVolume X = 0)
 
 /-- Bare hydrogen is LP-unstable — the first half of the hypothesis. -/
--- Ref: [manuscript] quantum-observable-universe/nuclear-interactions/atomic-lp-stability.md
+-- Ref: [leitner2026] quantum-observable-universe/nuclear-interactions/atomic-lp-stability.md
 theorem bare_is_lp_unstable {Candidate : Type} {normalised : Candidate → Prop}
     {bareVolume dressedVolume : Candidate → ℝ}
     (h : atomic_lp_stability normalised bareVolume dressedVolume) :
@@ -155,7 +155,7 @@ theorem bare_is_lp_unstable {Candidate : Type} {normalised : Candidate → Prop}
 
 /-- The 𝓑₃ dressing stabilises the atom — the second half of the
 hypothesis. -/
--- Ref: [manuscript] quantum-observable-universe/nuclear-interactions/atomic-lp-stability.md
+-- Ref: [leitner2026] quantum-observable-universe/nuclear-interactions/atomic-lp-stability.md
 theorem dressed_is_lp_stable {Candidate : Type} {normalised : Candidate → Prop}
     {bareVolume dressedVolume : Candidate → ℝ}
     (h : atomic_lp_stability normalised bareVolume dressedVolume) :

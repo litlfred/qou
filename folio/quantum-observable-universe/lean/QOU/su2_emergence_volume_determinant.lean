@@ -37,7 +37,7 @@ hypothesis-restating tautology `g.det = 1 ⊢ g.det = 1`.  The
 conclusions now genuinely differ from the hypotheses (subgroup
 membership, not the determinant equation itself).
 
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/su2-emergence-volume-determinant.md
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/su2-emergence-volume-determinant.md
 -/
 
 open Matrix
@@ -54,7 +54,7 @@ namespace QOU
     the coercion to matrices.  The conclusion is SL(2)-membership
     (existence of the lift), derived from the determinant hypothesis —
     not a restatement of it. -/
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/su2-emergence-volume-determinant.md
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/su2-emergence-volume-determinant.md
 theorem su2_emergence_volume_determinant
     (g : Matrix (Fin 2) (Fin 2) ℂ) (h_det : g.det = 1) :
     ∃ s : Matrix.SpecialLinearGroup (Fin 2) ℂ,
@@ -68,7 +68,7 @@ theorem su2_emergence_volume_determinant
     constraint `g.det = 1`, then `G` is contained in the image of
     `SL(2)` inside `M₂(ℂ)`.  Derived pointwise from
     `su2_emergence_volume_determinant`. -/
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/su2-emergence-volume-determinant.md
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/su2-emergence-volume-determinant.md
 theorem su2_emergence_gauge_group_special_linear
     (G : Set (Matrix (Fin 2) (Fin 2) ℂ))
     (h_all_det : ∀ g ∈ G, g.det = 1) :
@@ -86,7 +86,7 @@ theorem su2_emergence_gauge_group_special_linear
     (The U(2) half repeats the sibling's one-step derivation inline
     rather than importing the module, keeping this file verifiable
     standalone.) -/
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/su2-emergence-volume-determinant.md
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/su2-emergence-volume-determinant.md
 theorem su2_emergence_combined
     (g : Matrix (Fin 2) (Fin 2) ℂ)
     (h_dag : g * star g = 1)

@@ -13,7 +13,7 @@ surreal mass-gap bound (`rem:yang-mills-surreal-bound`) take
 conclude the OS / Wightman reconstruction of the standard part on
 ℝ⁴.
 
--- Ref: [manuscript] quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.ts
+-- Ref: [leitner2026] quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.ts
 -- Ref: [osterwalder1973] Osterwalder–Schrader, "Axioms for Euclidean Green's functions I," Commun. Math. Phys. 31 (1973)
 -- Ref: [osterwalder1975] Osterwalder–Schrader, "Axioms for Euclidean Green's functions II," Commun. Math. Phys. 42 (1975)
 -/
@@ -52,7 +52,7 @@ class OSReflectionPositivity (ReflectionPositive : Prop) : Prop where
       half, the antipode-twisted Frobenius pairing
       ⟨θ(φ), φ⟩_F is non-negative in End_C(𝟙). The class instance
       is the §3b-cond conjectural witness. -/
-  -- Ref: [manuscript] conj:os-reflection-positivity-from-reeb
+  -- Ref: [leitner2026] conj:os-reflection-positivity-from-reeb
   holds : ReflectionPositive
 
 end QOU.AppendixSurreals

@@ -70,7 +70,7 @@ Three further changes:
 
 Bean `qou-z9ws`.
 
--- Ref: [manuscript] conj:shared-denominator-cusp-holonomy
+-- Ref: [leitner2026] conj:shared-denominator-cusp-holonomy
 -- Ref: [thurston1978] manuscript: The geometry and topology of 3-manifolds
 -- Ref: [neumann-zagier1985] Volumes of hyperbolic three-manifolds — see folio/schema/references.ts
 -/
@@ -129,13 +129,13 @@ theorem exists_geometricShape : ∃ z : ℂ, GeometricShape z :=
     hypothesis about the caller's cusp data rather than about an assignment
     the instance chose — see `exists_geometricShape` and the module docstring
     for what happened when the shape was existentially quantified instead. -/
--- Ref: [manuscript] conj:shared-denominator-cusp-holonomy
+-- Ref: [leitner2026] conj:shared-denominator-cusp-holonomy
 class SharedDenominatorCuspHolonomy
     (q x : ℝ) (n : ℕ) (shape : Fin n → ℂ) : Prop where
   /-- For each algebraic denominator zero `x = q^{-k}` (i.e. each
       `k < n` with `1 - x q^k = 0`), the matched complex cusp shape
       parameter `shape k` is `GeometricShape`. -/
-  -- Ref: [manuscript] conj:shared-denominator-cusp-holonomy §proof sketch
+  -- Ref: [leitner2026] conj:shared-denominator-cusp-holonomy §proof sketch
   cusp_complete_of_root :
     ∀ (k : Fin n), 1 - x * q ^ (k : ℕ) = 0 → GeometricShape (shape k)
 
@@ -149,7 +149,7 @@ Derived: the conclusion is a conjunction of three consequences of
 `GeometricShape (shape k)`, not that proposition, so this is not the class
 field restated.  The previous version *was* — it read
 `:= h.cusp_complete_of_root`. -/
--- Ref: [manuscript] conj:shared-denominator-cusp-holonomy
+-- Ref: [leitner2026] conj:shared-denominator-cusp-holonomy
 theorem shared_denominator_cusp_holonomy
     (q x : ℝ) (n : ℕ) (shape : Fin n → ℂ)
     [h : SharedDenominatorCuspHolonomy q x n shape] (k : Fin n)
@@ -174,7 +174,7 @@ every real shape.
 This replaces `newton_seed_completeness`, which had the same type as
 `shared_denominator_cusp_holonomy` above and a docstring claiming a
 Newton–Raphson seeding property its statement did not contain. -/
--- Ref: [manuscript] conj:shared-denominator-cusp-holonomy §implication
+-- Ref: [leitner2026] conj:shared-denominator-cusp-holonomy §implication
 theorem seed_is_not_the_cusp_shape
     (q x : ℝ) (n : ℕ) (shape : Fin n → ℂ)
     [h : SharedDenominatorCuspHolonomy q x n shape] (k : Fin n)

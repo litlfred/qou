@@ -40,7 +40,7 @@ Sorry-free.
 
 -- Ref: [ecalle1981] Fonctions résurgentes, tome I
 -- Ref: [sauzin2014] https://arxiv.org/abs/1405.0356
--- Ref: [manuscript] docs/audits/2026-08-08-rsz-c1-infinity-route-closed.md
+-- Ref: [leitner2026] docs/audits/2026-08-08-rsz-c1-infinity-route-closed.md
 -/
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Positivity

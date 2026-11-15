@@ -42,7 +42,7 @@ volume mass term `mass_volume = Vol_Hopf · c` then vanishes, and the
 total mass `mass_total = mass_volume + mass_skein` collapses to the
 Skein mass.  Both numerical clauses are *derived* from the geometric
 hypotheses, not projected. -/
--- Ref: [manuscript] quantum-observable-universe/observations/nucleon-borromean-topology.ts
+-- Ref: [leitner2026] quantum-observable-universe/observations/nucleon-borromean-topology.ts
 theorem nucleon_borromean_topology
     {Vol_Hopf c mass_volume mass_skein mass_total : ℝ}
     (h_vol_hopf : Vol_Hopf = 0)

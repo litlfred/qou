@@ -71,7 +71,7 @@ noncomputable def chi_V3_difference_factored (q : ℝ) : ℝ :=
 noncomputable def chi_V3_difference_polynomial (q : ℝ) : ℝ :=
   -(q^5 + q^3 - q - q⁻¹) / 4
 
--- Ref: [manuscript] rem:chi-v3-closed-form-proof
+-- Ref: [leitner2026] rem:chi-v3-closed-form-proof
 -- Ref: [jones1985] doi:10.2307/1971403
 /-- **Closed form for `χ_(3)(β_n) − χ_(3)(β_p)`** (factored). -/
 theorem chi_V3_difference_eq_factored (q : ℝ) (hq : q ≠ 0) :
@@ -81,7 +81,7 @@ theorem chi_V3_difference_eq_factored (q : ℝ) (hq : q ≠ 0) :
   field_simp
   ring
 
--- Ref: [manuscript] rem:chi-v3-closed-form-proof
+-- Ref: [leitner2026] rem:chi-v3-closed-form-proof
 /-- **Factored ↔ polynomial form** identity. -/
 theorem chi_V3_difference_factored_eq_polynomial (q : ℝ) (hq : q ≠ 0) :
     chi_V3_difference_factored q = chi_V3_difference_polynomial q := by
@@ -89,7 +89,7 @@ theorem chi_V3_difference_factored_eq_polynomial (q : ℝ) (hq : q ≠ 0) :
   field_simp
   ring
 
--- Ref: [manuscript] rem:chi-v3-closed-form-proof
+-- Ref: [leitner2026] rem:chi-v3-closed-form-proof
 /-- **Closed form for `χ_(3)(β_n) − χ_(3)(β_p)`** (polynomial form). -/
 theorem chi_V3_difference_eq_polynomial (q : ℝ) (hq : q ≠ 0) :
     chi_V3_beta_n q - chi_V3_beta_p q
@@ -103,7 +103,7 @@ The probe `probe_per_wedderburn_block_ck.py` reports the ε^k
 coefficients of `(χ_n − χ_p)|_{q = 1 + ε}` for k = 0..12. We
 cross-check the closed form at sample integer points. -/
 
--- Ref: [manuscript] rem:chi-v3-closed-form-proof
+-- Ref: [leitner2026] rem:chi-v3-closed-form-proof
 /-- Numerical check at `q = 2`:
     `-(2^5 + 2^3 - 2 - 1/2)/4 = -(32 + 8 - 2 - 0.5)/4 = -37.5/4 = -75/8`. -/
 theorem chi_V3_difference_at_two :
@@ -111,7 +111,7 @@ theorem chi_V3_difference_at_two :
   unfold chi_V3_difference_polynomial
   norm_num
 
--- Ref: [manuscript] rem:chi-v3-closed-form-proof
+-- Ref: [leitner2026] rem:chi-v3-closed-form-proof
 /-- At `q = 1`: the difference vanishes (proton/neutron are
     indistinguishable at the classical limit). -/
 theorem chi_V3_difference_at_one :
@@ -149,7 +149,7 @@ noncomputable def chi_V3_polynomial_part (q : ℝ) : ℝ :=
 noncomputable def chi_V3_geom_part (q : ℝ) : ℝ :=
   q⁻¹ / 4
 
--- Ref: [manuscript] rem:chi-v3-closed-form-proof §"ε^k pattern"
+-- Ref: [leitner2026] rem:chi-v3-closed-form-proof §"ε^k pattern"
 /-- **Decomposition**: the V_(3) closed form splits as
     polynomial part + geometric part. -/
 theorem chi_V3_difference_decomposition (q : ℝ) (hq : q ≠ 0) :
@@ -165,7 +165,7 @@ The probe `probe_per_wedderburn_block_ck.py` reports the ε^k
 coefficients for the V_(3) difference (k = 0..12). We cross-check
 the closed form at concrete sample points `ε = 0.5` and `ε = 1`. -/
 
--- Ref: [manuscript] rem:chi-v3-closed-form-proof
+-- Ref: [leitner2026] rem:chi-v3-closed-form-proof
 /-- At `q = 1` (ε = 0): the polynomial part is `−(1 + 1 − 1)/4 = −1/4`.
     Together with the geometric part `1/4` (below) this gives the full
     difference `0` at `q = 1`, consistent with `chi_V3_difference_at_one`. -/
@@ -174,7 +174,7 @@ theorem chi_V3_polynomial_part_at_one :
   unfold chi_V3_polynomial_part
   norm_num
 
--- Ref: [manuscript] rem:chi-v3-closed-form-proof
+-- Ref: [leitner2026] rem:chi-v3-closed-form-proof
 /-- At `q = 1` (ε = 0): the geometric part is `1/4`. -/
 theorem chi_V3_geom_part_at_one :
     chi_V3_geom_part 1 = 1 / 4 := by

@@ -70,7 +70,7 @@ class jet_filtered_knot_factor (R : Type*) where
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Per AGENTS.md §3b-cond we provide NO global instance.
--- Ref: [manuscript] quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts
 -- noncomputable instance : jet_filtered_knot_factor := sorry
 
 end QOU.BraidKnot

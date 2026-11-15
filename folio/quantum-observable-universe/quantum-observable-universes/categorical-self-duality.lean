@@ -19,7 +19,7 @@ LaTeX label: `prop:categorical-self-duality`
 ## References
 
 - [donaldson1990] https://doi.org/10.1093/oso/9780198535874.001.0001
-- [manuscript] §1-quantum-observable-universe/categorical-self-duality
+- [leitner2026] §1-quantum-observable-universe/categorical-self-duality
 -/
 
 open CategoryTheory MonoidalCategory
@@ -34,7 +34,7 @@ universe u v
     - F_∇ is the curvature of the connection ∇
     - ⋆_q is the q-deformed Hodge star
     - λ is the Frobenius form -/
--- Ref: [donaldson1990], [manuscript] §1
+-- Ref: [donaldson1990], [leitner2026] §1
 structure CategoricalYangMills (C : Type u) [Category.{v} C]
     [MonoidalCategory C] [CategoryTheory.BraidedCategory C] [CategoryTheory.Limits.HasZeroMorphisms C] where
   /-- The Frobenius–Hopf object A. -/
@@ -57,7 +57,7 @@ structure CategoricalYangMills (C : Type u) [Category.{v} C]
   projMinus : curvatureSpace ⟶ antiSelfDualForms
 
 /-- **Instanton condition**: F_∇ is self-dual (F⁻ = 0). -/
--- Ref: [donaldson1990], [manuscript] §1
+-- Ref: [donaldson1990], [leitner2026] §1
 structure Instanton (C : Type u) [Category.{v} C]
     [MonoidalCategory C] [CategoryTheory.BraidedCategory C] [CategoryTheory.Limits.HasZeroMorphisms C]
     extends CategoricalYangMills C where
@@ -67,7 +67,7 @@ structure Instanton (C : Type u) [Category.{v} C]
     curvature ≫ projMinus = 0
 
 /-- **Self-duality theorem**: critical points of S[∇] are instantons. -/
--- Ref: [donaldson1990], [manuscript] §1
+-- Ref: [donaldson1990], [leitner2026] §1
 theorem categorical_self_duality {C : Type u} [Category.{v} C]
     [MonoidalCategory C] [CategoryTheory.BraidedCategory C] [CategoryTheory.Limits.HasZeroMorphisms C]
     (ym : CategoricalYangMills C)

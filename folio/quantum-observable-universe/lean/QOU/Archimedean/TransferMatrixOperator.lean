@@ -35,7 +35,7 @@ structure TransferMatrixOperator (R : Type*) [Field R] where
   /-- `b' = ca + db` (the constant part). -/
   reduceB_def : ∀ a b c d : R, reduceB a b c d = c * a + d * b
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory/transfer-matrix-operator-properties.ts
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/transfer-matrix-operator-properties.ts
 
 /-- The identity operator `T = 0·σ + 1` acts trivially: `(aσ+b) ↦ aσ + b`. -/
 theorem reduce_identity {R : Type*} [Field R]

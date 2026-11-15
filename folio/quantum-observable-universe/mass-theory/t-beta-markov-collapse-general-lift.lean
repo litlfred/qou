@@ -144,7 +144,7 @@ theorem smul_one_sq {R : Type u} [CommRing R] {A : Type v} [Ring A]
     (`S • X = (algebraMap R A S) * X`) and non-commutative ring
     manipulation.  Queued as a separate commit on this branch.
 
-    Ref: [manuscript] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
+    Ref: [leitner2026] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
          §"Categorical reading" + prop:t-beta-markov-frobenius-collapse .md
          §"Proof — Lagrangian / completing-the-square argument" -/
 theorem completing_the_square_general (R : Type u) [CommRing R]
@@ -152,7 +152,7 @@ theorem completing_the_square_general (R : Type u) [CommRing R]
     (τ : NormalizedTrace R A) (X : A) (S : R) :
     τ.tau (X * X) =
       τ.tau ((X - S • 1) * (X - S • 1)) + 2 * (S * τ.tau X) - S * S := by
-  -- Ref: [manuscript] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
+  -- Ref: [leitner2026] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
   -- Per copilot-review #1761 thread 5: theorem statement uses `- S * S`
   -- directly (using τ.tau_one = 1 inline) rather than `- S * S * τ.tau 1`,
   -- which reduces downstream simp/rw churn.
@@ -202,7 +202,7 @@ theorem completing_the_square_general (R : Type u) [CommRing R]
     coordinate-vector Euclidean norm on `ℝ^6`, NOT the categorical
     Frobenius norm on H_3(ℝ, q).
 
-    Ref: [manuscript] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
+    Ref: [leitner2026] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
          §"Categorical reading" + prop:t-beta-markov-frobenius-collapse .md -/
 theorem markov_frobenius_min_norm_lift
     (R : Type u) [Field R] [LinearOrder R] [IsStrictOrderedRing R]
@@ -211,7 +211,7 @@ theorem markov_frobenius_min_norm_lift
     [PSDTrace R A τ]
     (S : R) (X : A) (h_constraint : τ.tau X = S) :
     S * S ≤ τ.tau (X * X) := by
-  -- Ref: [manuscript] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
+  -- Ref: [leitner2026] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
   -- Step 1: invoke completing-the-square (statement uses simplified
   --   `- S * S` form; τ_one absorbed inline).
   have h := completing_the_square_general R A τ X S
@@ -241,7 +241,7 @@ theorem markov_frobenius_min_norm_lift
     - (⇐) `X = S • 1` ⇒ `τ(X*X) = τ((S•1)*(S•1)) = τ((S²)•1)
       = S² τ(1) = S²` by NormalizedTrace.tau_one.
 
-    Ref: [manuscript] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
+    Ref: [leitner2026] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
          §"Proof — Lagrangian / completing-the-square argument" -/
 theorem markov_frobenius_min_norm_uniqueness
     (R : Type u) [Field R] [LinearOrder R] [IsStrictOrderedRing R]
@@ -250,7 +250,7 @@ theorem markov_frobenius_min_norm_uniqueness
     [PSDTrace R A τ] [NonDegTrace R A τ]
     (S : R) (X : A) (h_constraint : τ.tau X = S) :
     τ.tau (X * X) = S * S ↔ X = S • 1 := by
-  -- Ref: [manuscript] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
+  -- Ref: [leitner2026] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
   constructor
   · -- Forward direction (⇒): τ(X²) = S² ⇒ X = S•1
     intro h_eq

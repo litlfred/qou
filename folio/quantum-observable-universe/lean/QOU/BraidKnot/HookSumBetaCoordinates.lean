@@ -55,7 +55,7 @@ coordinates.
 All sums over `ℤ`, matching `HookSumClosedForm` and `PieceAGeneral`.  No `ℝ`, no
 ordering, no archimedean input.
 
--- Ref: [manuscript] computations/deltalambda/rev_beta_coordinate_identity_probe.py
+-- Ref: [leitner2026] computations/deltalambda/rev_beta_coordinate_identity_probe.py
 -/
 
 namespace QOU.BraidKnot.HookSum

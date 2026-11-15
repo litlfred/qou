@@ -37,7 +37,7 @@ inductive Flavor where
     Instances at specific substrate parameter values (e.g. `q = q₀`)
     live in sibling files; this class carries only the structural
     signature + positivity. -/
--- Ref: [manuscript] braids-and-knots/flavor-dressing-functor
+-- Ref: [leitner2026] braids-and-knots/flavor-dressing-functor
 class FlavorDressingFunctor where
   /-- Dressed-mass scale at each flavor, in physical units (MeV). -/
   μ : Flavor → ℝ

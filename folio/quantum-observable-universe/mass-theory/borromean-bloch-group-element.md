@@ -140,7 +140,7 @@ also closes the loop:
 - **Bar-symmetry status**: bar-symmetric.  The Beilinson regulator
   $r_2[z] = \mathrm{Im}\,\mathrm{Li}_2(z) + \ldots$ is bar-symmetric
   under $q \mapsto q^{-1}$ because $\mathrm{Li}_2^q$ is bar-symmetric
-  (per [`bar-involution.md`](bar-involution.md) Table 2 — Rogers
+  (per [`bar-involution.md`](../braids-and-knots/bar-involution.md) Table 2 — Rogers
   q-dilog is bar-symmetric, Faddeev's $\Phi_q$ alone is bar-anti-
   symmetric).
 

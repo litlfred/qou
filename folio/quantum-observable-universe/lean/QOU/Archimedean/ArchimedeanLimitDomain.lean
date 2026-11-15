@@ -19,7 +19,7 @@ real part, `Re Li₂(x)`, not at the `tsum`; that needs the complex dilogarithm
 (PR #7913 has the reflection bricks).  For the α_EM chain only `x ∈ (0,1)`
 is used.
 
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit
+-- Ref: [leitner2026] conj:dilogarithm-archimedean-limit
 -/
 
 namespace QOU.Archimedean

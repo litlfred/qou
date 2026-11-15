@@ -24,7 +24,7 @@ namespace QOU.Braiding
 This is the formal content of the QOU analogue of Einstein's hope for
 `g_[μν]`: the sign-blind antisymmetric sector is what survives when the
 symmetric sector is cancelled by pairing. -/
--- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+-- Ref: [leitner2026] Ch. 7, §crossing-energy-decomposition
 theorem pair_cancellation (p m : ℕ) (q : ℝ) :
     crossingEnergy p m q + crossingEnergy m p q = 2 * asymChannel p m q := by
   unfold crossingEnergy asymChannel antisymmetricWeight

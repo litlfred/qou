@@ -58,7 +58,7 @@ class LerayProfileContext (R : Type*) [CommRing R] where
     (`mul_one` per component).
 
     LaTeX: `\label{prop:leray-profile}` -/
--- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/leray-profile.ts
+-- Ref: [leitner2026] quantum-observable-universe/fluid-dynamics/leray-profile.ts
 theorem leray_profile {R : Type*} [CommRing R] [ctx : LerayProfileContext R] :
     ctx.V 0 = ∑ n : Fin (ctx.j_max + 1), ctx.V_coeff n := by
   rw [ctx.profile_expansion 0]

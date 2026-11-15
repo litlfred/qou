@@ -35,7 +35,7 @@ proof) is the upstream target.
 **References**:
 - Yekutieli, *Nonabelian Multiplicative Integration on Surfaces*
   (World Scientific 2015), DOI 10.1142/9165.
-- [manuscript] `def:yekutieli-multiplicative-trace`.
+- [leitner2026] `def:yekutieli-multiplicative-trace`.
 -/
 
 namespace QOU.Mathlib.NonAbelianStokes
@@ -316,7 +316,7 @@ instance YekutieliFiniteSliceMultTrace_canonical (G : Type u) [Group G]
 
     See the "Substrate theorem" note above for what this replaced. -/
 -- Ref: [yekutieli2015] yekutieli2015 §3 (Stokes on piecewise-affine surfaces);
---      [manuscript] def:yekutieli-multiplicative-trace.
+--      [leitner2026] def:yekutieli-multiplicative-trace.
 theorem yekutieli_finite_slice_substrate {G : Type u} [Group G] {z : G}
     (Y : YekutieliFiniteSliceMultTrace G z) (n : ℕ) :
     Y.trace n = z ^ n := by
