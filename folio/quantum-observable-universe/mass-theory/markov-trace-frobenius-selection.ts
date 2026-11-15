@@ -20,6 +20,15 @@ export default proposition({
   lean: {
     ref: "qou:QOU.BraidsAndKnots.markovWeights_eq_jones_of_fibre_categorical",
   },
+  // The numerical-verification table in the .md reads this witness
+  // (validator val-block-computation, 2026-11-15); same pairing as
+  // q-hecke-seminormal-character-closure.ts.
+  computation: {
+    engine: "mpmath",
+    script: "computations/atomic_tr_m_mpfr_50dps.py",
+    witness: "computations/atomic-tr-m-mpfr-50dps-proton.witness.json",
+    status: "verified",
+  },
   authorNotes: [
     {
       kind: "caveat",
