@@ -479,7 +479,9 @@ if __name__ == "__main__":
     print()
     print(f"m_p/m_e = {p_total / e_total:.4f}  (CODATA: 1836.152, error {abs(p_total/e_total - 1836.152)/1836.152*100:.2f}%)")
     print(f"m_n/m_e = {n_total / e_total:.4f}  (CODATA: 1838.684, error {abs(n_total/e_total - 1838.684)/1838.684*100:.2f}%)")
-    print(f"m_n/m_p = {n_total / p_total:.6f}  (CODATA: 1.001378, error {abs(n_total/p_total - 1.001378)/1.001378*100:.4f}%)")
+    from qou_substrate.codata import codata as _codata
+    _np = float(_codata("neutron-proton mass ratio").value_str)  # float64-ok: display-only % error in a report line
+    print(f"m_n/m_p = {n_total / p_total:.6f}  (CODATA: {_np:.6f}, error {abs(n_total/p_total - _np)/_np*100:.4f}%)")
     print(f"m_n - m_p (units of m_e) = {(n_total - p_total)/e_total:.4f}  (CODATA: 2.531)")
     print(f"Δm (MeV) = {(n_total - p_total)/e_total * 0.51100:.4f}  (CODATA: 1.293 MeV)")
 

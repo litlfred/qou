@@ -598,5 +598,6 @@ if __name__ == "__main__":
                                   + (q_int_err(10)/q_int(10))**2)
     print(f"  α          = {alpha:.10f} ± {alpha_err:.2e}")
     print(f"  1/α        = {inv_alpha:.6f} ± {inv_alpha**2 * alpha_err:.4f}")
-    print(f"  CODATA 1/α = 137.035999084 ± 0.000000021")
+    _ainv = _codata("inverse fine-structure constant")
+    print(f"  CODATA 1/α = {_ainv.value_str} ± {_ainv.uncertainty_str}")
     print(f"  Rational:    {Q_RAT_NUM}/{Q_RAT_DEN}")

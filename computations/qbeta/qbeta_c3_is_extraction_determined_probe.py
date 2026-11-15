@@ -214,7 +214,7 @@ def main() -> int:
     mn_ame = mp.mpf(str(M_N_MEV))
     check("choice_of_neutron_mass_dwarfs_the_near_match_gap",
           sens > 3 * mp.mpf("3.4671"),
-          f"CODATA-2022 direct m_n = 939.56542194 vs AME-derived 939.56542179 -- "
+          f"CODATA-2022 direct m_n = 939.56542194 vs AME-derived 939.56542179 -- "  # noqa: P31 — compares the two on purpose
           f"both documented, neither wrong. Choosing between them moves Q_beta by "
           f"{mp.nstr(dQ_ppb, 6)} ppb and, through the {mp.nstr(1/rung, 6)}x "
           f"extraction amplification, the extracted c_3 by {mp.nstr(sens, 5)} % -- "

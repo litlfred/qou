@@ -164,9 +164,10 @@ def main() -> int:
     ppm_with_ktheory = (m_p_with_ktheory - m_p) / m_p * 1e6
     print(f"\n  m_p with K-theory c_4 = -3/4: {mp.nstr(m_p_with_ktheory, 12)} MeV  "
           f"({mp.nstr(ppm_with_ktheory, 6)} ppm)")
-    print(f"  m_p with Reading-A h²-only:    938.2773607 MeV  (+5.62 ppm)")
-    print(f"  m_p with c_4 = -α (curiosity): 938.2720439 MeV  (-0.05 ppm)")
-    print(f"  m_p CODATA:                     938.2720882 MeV  (0 ppm)")
+    print(f"  m_p with Reading-A h²-only:    938.2773607 MeV  (+5.62 ppm)")  # noqa: P31 — a recorded prescreen result, not CODATA
+    print(f"  m_p with c_4 = -α (curiosity): 938.2720439 MeV  (-0.05 ppm)")  # noqa: P31 — a recorded prescreen result, not CODATA
+    from qou_substrate.codata import codata as _codata
+    print(f"  m_p CODATA:                     {_codata('proton mass energy equivalent in MeV').value_str} MeV  (0 ppm)")
 
     print(f"\n[Verdict on K-theory prediction]")
     if abs(ppm_with_ktheory) > 100:

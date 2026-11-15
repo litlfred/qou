@@ -205,7 +205,7 @@ def main() -> int:
     # what it actually holds.
     mislabel = sum(1 for _ in re.finditer(r"CODATA α_EM = 1/137\.035999206",
                                           claim_src))
-    print(f"    producer sites still calling 137.035999206 'CODATA' = {mislabel}"
+    print(f"    producer sites still calling 137.035999206 'CODATA' = {mislabel}"  # noqa: P31 — names the mislabel it counts
           f"   (was 4)")
     check("no site now presents the Rb-87 value as a CODATA adjustment; the "
           "constant's value is unchanged", mislabel == 0)
