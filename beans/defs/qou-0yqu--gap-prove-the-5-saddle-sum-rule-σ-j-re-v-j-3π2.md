@@ -1,13 +1,13 @@
 ---
 # qou-0yqu
 title: 'GAP: prove the 5₂ saddle sum rule Σ_j Re V_j = -3π²/2'
-status: completed
+status: todo
 type: feature
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-03T14:28:26Z
-updated_at: 2026-11-15T17:08:00Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-r9ih
 ---
 
@@ -1137,24 +1137,3 @@ Bloch-group computation is blind here for the reason in G4.
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
-
-## 2026-11-15 — update (branch `claude/volume-dilog-bricks-2026-11-15`)
-
-PROOF (modulo one cited step) — doc https://claude.ai/artifact/9xU2nSF4sTbGnNEPRtUf19. The cubic is y²=(1−y)³, the NZ equation of H=(2 3). Galois-invariant flattening 2u=3v ⇒ ξⱼ=3[uⱼ,vⱼ]∈B̂(ℂ), Im 3ℒ₁=Vol(5₂). Step A (Lean, `FiveTwoStepALogAlgebra.lean`, sorry-free): Vⱼ−3ℒⱼ = (21,21,−3)·π²/6 in real part. Step B (cited: Zickert 2015 B̂(F)≅K₃^ind(F) natural in embeddings; Quillen transfer; K₃^ind(ℚ)=ℤ/24): Σ3ℒⱼ∈(π²/6)ℤ. Step C: Arb certifies Σ3ℒⱼ=−48·π²/6 (±3e-7). Hence ΣRe Vⱼ=−9·π²/6=−3π²/2. Also: `hrefl` discharged at the three roots (`FiveTwoReflectionDischarged.lean`, `fiveTwo_sum_reflection`). STAYS OPEN (rule 13a) until the Zickert step is checked against the source.
-
-
-## 2026-11-15T17:08Z — CLOSED: the sum rule is proved on main (owner tap)
-
-The subject of this bean, Σⱼ Re Vⱼ = −3π²/2, is a sorry-free Lean theorem on
-`main`: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule` (closed form
-for Σ Li₂(yⱼ)), `fiveTwo_sum_V`, and `fiveTwoSaddleSumRule_holds` (instance of
-`FiveTwoSaddleSumRule` at the saddle data). `#print axioms` re-checked
-2026-11-15: `[propext, Classical.choice, Quot.sound]`. The root existence is
-discharged (`SaddleRoots.ofRealRoot`), not assumed.
-
-**Correction to my note above (same day):** I wrote "proved modulo one cited
-step". That was a second, independent route (extended Bloch group, conditional on
-Zickert 2015), not the first proof. This bean was stale — its body kept saying
-"verified to 80 dps, unproved" after the pentagon proof landed — and I relied on
-it instead of grepping the Lean. The Bloch-group recast stays open under
-`qou-xblo`. Closed on the owner's tap, PR #7913.

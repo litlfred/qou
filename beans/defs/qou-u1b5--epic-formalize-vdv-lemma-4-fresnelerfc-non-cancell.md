@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-11T00:36:10Z
-updated_at: 2026-11-15T13:50:00Z
+updated_at: 2026-11-15T11:48:19Z
 parent: qou-n4nr
 ---
 
@@ -118,7 +118,3 @@ D and E != 0, and all three survive".  So the Whitehead-link VC is PROVED IN THE
 LITERATURE; what is open HERE is its formalization.  Do not describe this epic
 as an open mathematical problem -- it is an open formalization of a published
 theorem, with three corrected-spec bricks remaining.
-
-## 2026-11-15 — update (branch `claude/volume-dilog-bricks-2026-11-15`)
-
-Reduction landed: `vdVWhiteheadLemma4_of_gaussianModel [WhiteheadOuterGaussianModel] : VdVWhiteheadLemma4` (p=2) in `QOU/Knot/WhiteheadLemma4Reduction.lean`, plus general `norm_tsum_cgaussTerm_ge` (Poisson, chirped Gaussian non-cancellation) in `QOU/MathlibExt/ComplexGaussianSumNonCancellation.lean`. Both sorry-free. Remaining open input is the phase-free carrier `WhiteheadOuterGaussianModel`: Σ_{n<N}|w_N(n)−A_N e^{−π(n−N/2)²/(2N)}| ≤ A_N√N/4 with w_N(n)=(2n+1)Σ_k S_{n,k}. Numerically ratio 0.070→0.015 for N=20..320 (∝N^{-1/2}). Next: vdV Lemma 2a/2b window + log-concave tails (qou-vy77, qou-kc8h).

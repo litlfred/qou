@@ -1,13 +1,13 @@
 ---
 # qou-ph1k
 title: 'GAP: complex Li₂ — extend LiTwo to ℂ and |z|>1, with the complex reflection identity'
-status: completed
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-03T14:48:28Z
-updated_at: 2026-11-15T13:50:00Z
+updated_at: 2026-10-04T15:19:51Z
 parent: qou-r9ih
 ---
 
@@ -69,7 +69,3 @@ whole sum rule.
 - `QOU/Archimedean/DilogReflection.lean` (sorry-free, the exemplar to extend)
 - `QOU/QBeta/FiveTwoSaddleSumRule.lean` (the abstract-`Li` consumer)
 - bean `qou-0yqu` (the sum-rule proof gap this unblocks)
-
-## 2026-11-15 — closed (branch `claude/volume-dilog-bricks-2026-11-15`)
-
-Proved: `cLiTwoExt_reflection` in `QOU/Archimedean/ComplexDilogReflectionExt.lean` — Li₂(z)+Li₂(1−z)=π²/6−log z·log(1−z) on ℂ∖((−∞,0]∪[1,∞)) (principal log), by the identity theorem from the ball(½,½) case. Sorry-free, axioms [propext, Classical.choice, Quot.sound].

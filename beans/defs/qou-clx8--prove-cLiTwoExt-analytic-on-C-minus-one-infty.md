@@ -1,7 +1,7 @@
 ---
 # qou-clx8
 title: Prove cLiTwoExt analytic on ℂ ∖ [1,∞) — closes the last Route 5 plumbing link
-status: completed
+status: todo
 type: task
 priority: normal
 tags:
@@ -11,7 +11,7 @@ tags:
     - mathlib-gap
     - reorg-2026-10-04
 created_at: 2026-08-07T15:20:00Z
-updated_at: 2026-11-15T13:50:00Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-n4nr
 ---
 
@@ -425,7 +425,3 @@ Re-close it when the work its body names is actually done.
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
-
-## 2026-11-15 — closed (branch `claude/volume-dilog-bricks-2026-11-15`)
-
-Already proved on main: `analyticOnNhd_cLiTwoExt`, `differentiableOn_cLiTwoExt` in `QOU/MathlibExt/ComplexDilogarithmDeriv.lean` (2026-08-08); re-verified lean-direct exit 0, standard axioms only.

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-11T00:36:12Z
-updated_at: 2026-11-15T13:50:00Z
+updated_at: 2026-10-04T15:21:06Z
 parent: qou-n4nr
 ---
 
@@ -46,7 +46,3 @@ The value of the limit integral is in hand; the sum-to-integral step is not.
 
 So this brick becomes: CITE integral_vdv_step4, do not build erfc infra.
 Ledger: docs/coordination/whitehead-link-volume-conjecture-join.md
-
-## 2026-11-15 — update (branch `claude/volume-dilog-bricks-2026-11-15`)
-
-The Fresnel/erfc non-cancellation is now covered by `half_sqrt_le_norm_tsum_whiteheadGauss` (‖Σ_ℤ G‖ ≥ √N/2, N≥16) in `WhiteheadLemma4Reduction.lean`, sorry-free. Instance VdVWhiteheadLemma4 now waits only on `WhiteheadOuterGaussianModel` (see qou-u1b5).

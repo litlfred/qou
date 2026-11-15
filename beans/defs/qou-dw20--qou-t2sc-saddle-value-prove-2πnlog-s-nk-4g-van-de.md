@@ -1,14 +1,14 @@
 ---
 # qou-dw20
 title: 'qou-t2sc saddle-value: prove (2π/N)log S_{n*,k*} → 4G (van der Veen Clausen/Lobachevsky max-value; the single open hsaddle input of whitehead_vc_of_saddle_value)'
-status: completed
+status: todo
 type: task
 priority: normal
 tags:
     - close-candidate
     - reorg-2026-10-04
 created_at: 2026-08-01T23:54:37Z
-updated_at: 2026-11-15T13:50:00Z
+updated_at: 2026-10-04T15:13:40Z
 parent: qou-n4nr
 ---
 
@@ -44,7 +44,3 @@ REMAINING = the CONVERGENCE half only (new child bean) — the big Riemann-sum c
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-01 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
-
-## 2026-11-15 — closed (branch `claude/volume-dilog-bricks-2026-11-15`)
-
-Discharged on main: `whitehead_vc_innerSum_half` (`QOU/Knot/WhiteheadSaddleClausen.lean`, sorry-free) proves the ⌊N/2⌋ inner-sum limit 4G via the explicit saddle term `whiteheadS_explicit_saddle_tendsto`.
