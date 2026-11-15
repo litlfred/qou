@@ -98,8 +98,18 @@ def check(N):
     cap = sp.Matrix.vstack(dE.T, dF.T, (dK - one).T).nullspace()
     assert len(cup) == 1 and len(cap) == 1
     cup, cap = cup[0], cap[0].T
+    cup = cup / cup[m]  # normalise a_0 = 1 at v_0 (x) v_m
     lam = sp.simplify((kron(cap, I) * kron(I, cup))[0, 0])
     cap = cap / lam
+    # Closed forms (Lean targets for Stage 3b):
+    #   cup a_p = (-1)^p q^{p(m-p-1)} / qbinom(m,p)   (= hwCoef q m m m p)
+    #   cap b_p = (-1)^m q^{m-2p} / a_p               (quantum-trace weight, FS sign)
+    for pp in range(d):
+        qb = qfact(m) / (qfact(pp) * qfact(m - pp))
+        a_pp = (-1)**pp * q**(pp * (m - pp - 1)) / qb
+        assert sp.simplify(cup[pp * d + m - pp] - a_pp) == 0, ("cup", N, pp)
+        assert sp.simplify(cap[pp * d + m - pp] - (-1)**m * q**(m - 2 * pp) / a_pp) == 0, ("cap", N, pp)
+    print(f"N={N}: cup/cap closed forms OK")
     assert sp.simplify(kron(cap, I) * kron(I, cup) - I) == sp.zeros(d)
     assert sp.simplify(kron(I, cap) * kron(cup, I) - I) == sp.zeros(d)
     X = sp.simplify(kron(cap, kron(I, I)) * kron(I, kron(M, I)) * kron(I, kron(I, cup)))
@@ -110,10 +120,24 @@ def check(N):
         i0 = next(i for i in range(d * d) if w[i] != 0)
         c = sp.simplify((X * w)[i0] / w[i0])
         assert sp.simplify(X * w - c * w) == sp.zeros(d * d, 1)
+        # Term-by-term: read the eigenvalue at output v_j (x) v_0 (j = m - n). The sum over the
+        # support v_k (x) v_{j-k} of w_j reproduces van der Veen's sum over k with NO summation
+        # identity: each entry X[(j,0),(k,j-k)] is a single product of R-matrix entries.
+        j = m - n
+        o = j * d
+        terms = [sp.factor(X[o, i] * w[i] / w[o]) for i in range(d * d) if w[i] != 0]
+        vdv_terms = []
+        for kk in range(N - n):
+            pr = 1
+            for jj in range(1, n + 1):
+                pr *= (1 - t**(N - jj - kk)) * (1 - t**(jj + kk)) / (1 - t**jj)
+            vdv_terms.append(sp.factor((-1)**(N - 1) * t**sp.Rational(N * (N - 1), 2)
+                                       * t**(-N * (n + kk)) * pr))
+        assert sorted(map(str, terms)) == sorted(map(str, vdv_terms)), ("termwise", N, n)
         ratio = sp.simplify(c / clasp_vdv(N, n, t))
         good = sp.simplify(ratio - (-1)**(N - 1)) == 0
         ok &= good
-        print(f"N={N} n={n}: X/C_vdv = {ratio}  {'OK' if good else 'MISMATCH'}")
+        print(f"N={N} n={n}: X/C_vdv = {ratio}, termwise match  {'OK' if good else 'MISMATCH'}")
     return ok
 
 
