@@ -18,6 +18,7 @@ export default conjecture({
   ],
   cites: [
     "kontsevich1995",
+    "deligne-goncharov2005",
     "zagier1986",
     "bloch2000",
     "suslin1991",
