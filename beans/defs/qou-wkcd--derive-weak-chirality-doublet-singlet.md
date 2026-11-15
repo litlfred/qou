@@ -63,3 +63,7 @@ Open: D-W2 (long-braid limit as mechanism), D-W3 (second singlet space). Audit �
   now uncited (wordImage_ne_neg_negCrossing). BalancedIndexCharacter.lean.
 Lean verified at 4139a76ee (lean-direct exit 0, no sorryAx). Precision gates: the RED
 ratchets are tree-wide and do not name this branch's probe (no witness added).
+
+
+## 2026-11-15 owner ruling (thread 'Map SM and eightfold way', decision card): D-H2 restated at the pair level
+D-H2 = no stays for single letters (flip_ne_swap). Added: on γγ pairs the swap ι: σ ↦ −σ⁻¹ sends V = σᵢσᵢ₊₁⁻¹ to V̄ = σᵢ⁻¹σᵢ₊₁ (signs cancel on even words), so the pair orientation bit V/V̄ IS the chirality mirror. Flavour must come from elsewhere (n ≥ 4 lead, qou-wkcd). Lean lemma ι(V)=V̄ not yet written. Evidence: PR #7741 gg_two_orientations (03b13f15561), gg_decay (6ff2aaaa8bf).

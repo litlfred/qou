@@ -7,7 +7,7 @@ priority: normal
 tags:
     - quark-state
 created_at: 2026-11-15T08:45:00Z
-updated_at: 2026-11-15T17:25:00Z
+updated_at: 2026-11-15T08:45:00Z
 parent: qou-usxh
 ---
 
@@ -43,7 +43,6 @@ Open:
 - **Still open:**
   - what fixes the photon letter orientation;
   - which placement is canonical (qou-ales).
-
 
 ## 2026-11-15 — γγ-built nucleon (PR #7741, `h2_gg_atom/`, `h2_gg_electron/`; owner decision C)
 

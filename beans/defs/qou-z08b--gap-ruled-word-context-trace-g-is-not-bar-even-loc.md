@@ -4,7 +4,7 @@ title: 'GAP: ruled-word context trace g is not bar-even; locate the bar-breaking
 status: todo
 type: task
 created_at: 2026-11-15T09:59:54Z
-updated_at: 2026-11-15T17:25:00Z
+updated_at: 2026-11-15T11:30:00Z
 parent: qou-qs0e
 ---
 
@@ -44,7 +44,6 @@ Probe qbeta_isospin_module_map_probe.py, 11/11, exact over Q(q); audit section 1
 - 14 fixed candidates x 20 state pairs x 2 idempotents: 0 of 560 map psi_p to psi_n, exactly or up to scalar. No candidate commutes with the core.
 - Centraliser solve: 4 of 40 settings hit, all degenerate: psi_n = q^-2 psi_p (sigma0 u/d letters cancel; P+(sigma1) absorbs the last letter's flavour as an eigenvalue). None with the gluon.
 - Next: n >= 4 only, gated on Stream 11's corner-multiplicity = flavour check (#7867).
-
 
 ## 2026-11-15 — γγ-built nucleon (PR #7741, `h2_gg_atom/`, `h2_gg_electron/`; owner decision C)
 

@@ -109,3 +109,7 @@ gg_symmetry: inverse/mirror/swap of Vᵏ keep the full level-3 characters and th
 but change the level-2 restriction (V³: χ_(1,1) 1.0112 vs V̄³ 0.9830). Pre-registered check S0 failed at level 2.
 h2_mirror_electron: electron V̄³, V̄⁶, V⁹, V̄⁹ with nucleon V³/V⁶ → passing bonds exactly {bare, V³@4, V³@5}.
 So H₂ cannot select the electron. Still OPEN (owner card pending): which observable decides the electron.
+
+
+## 2026-11-15 owner ruling (thread 'Map SM and eightfold way', decision card): D-H2 restated at the pair level
+D-H2 = no stays for single letters (flip_ne_swap). Added: on γγ pairs the swap ι: σ ↦ −σ⁻¹ sends V = σᵢσᵢ₊₁⁻¹ to V̄ = σᵢ⁻¹σᵢ₊₁ (signs cancel on even words), so the pair orientation bit V/V̄ IS the chirality mirror. Flavour must come from elsewhere (n ≥ 4 lead, qou-wkcd). Lean lemma ι(V)=V̄ not yet written. Evidence: PR #7741 gg_two_orientations (03b13f15561), gg_decay (6ff2aaaa8bf).
