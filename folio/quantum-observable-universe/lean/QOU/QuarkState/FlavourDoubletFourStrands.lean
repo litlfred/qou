@@ -347,6 +347,49 @@ theorem eJ_ne_zero (h4 : q ^ 4 + 1 ≠ 0) : eJ q ≠ 0 := by
   apply hx
   simpa using congrArg (fun M => M 0 0) h
 
+/-! ### The weak vertex on the `J₄` doublet
+
+The corpus weak vertex on a letter `σ` is `σ − h·P_L(σ)` with `h = q − q⁻¹` and
+`P_L(σ) = [2]⁻¹(σ + q⁻¹)` (`WeakVertexLeftProjector.weakVertex_sub_letter`). Written out
+here for the three letters of the `(3,1)` representation. -/
+
+/-- The left projector of a letter: `[2]⁻¹ (σ + q⁻¹)`. -/
+def letterPL (q : K) (s : Matrix (Fin 3) (Fin 3) K) : Matrix (Fin 3) (Fin 3) K :=
+  (q + q⁻¹)⁻¹ • (s + q⁻¹ • (1 : Matrix (Fin 3) (Fin 3) K))
+
+/-- The weak vertex on a letter: `σ − h·P_L(σ)`. -/
+def weakAt (q : K) (s : Matrix (Fin 3) (Fin 3) K) : Matrix (Fin 3) (Fin 3) K :=
+  s - (q - q⁻¹) • letterPL q s
+
+/-- A weak vertex on strand 1 or 2 keeps the `J₄` flavour: it commutes with `J₄`. -/
+theorem weak_site1_comm : Commute (weakAt q (s1 q)) (J4 q) := by
+  have h := J4_comm_s1 hq hn
+  exact h.sub_left (((h.add_left ((Commute.one_left _).smul_left _)).smul_left _).smul_left _)
+
+/-- See `weak_site1_comm`. -/
+theorem weak_site2_comm : Commute (weakAt q (s2 q)) (J4 q) := by
+  have h := J4_comm_s2 hq hn
+  exact h.sub_left (((h.add_left ((Commute.one_left _).smul_left _)).smul_left _).smul_left _)
+
+/-- **The strand-4 weak vertex converts the `J₄` flavour, by the `sl₂` raising operator.**
+Between `Jb` and `Ja` the insertion `weakAt − σ₃ = −h·P_L(σ₃)` is `−h/[2]` times `eJ`. -/
+theorem weak_site3_flips :
+    Ja q * (weakAt q (s3 q) - s3 q) * Jb q = (-(q - q⁻¹) * (q + q⁻¹)⁻¹) • eJ q := by
+  have hab := Ja_Jb hq hn hD
+  unfold weakAt letterPL eJ
+  simp only [sub_sub_cancel_left, Matrix.mul_neg, Matrix.neg_mul, Matrix.mul_smul,
+    Matrix.smul_mul, Matrix.mul_add, Matrix.add_mul, Matrix.mul_one, smul_smul]
+  rw [hab, smul_zero, add_zero, neg_mul, neg_smul]
+
+/-- The reverse direction, by the lowering operator `fJ`. -/
+theorem weak_site3_flips_back :
+    Jb q * (weakAt q (s3 q) - s3 q) * Ja q = (-(q - q⁻¹) * (q + q⁻¹)⁻¹) • fJ q := by
+  have hba := Jb_Ja hq hn hD
+  unfold weakAt letterPL fJ
+  simp only [sub_sub_cancel_left, Matrix.mul_neg, Matrix.neg_mul, Matrix.mul_smul,
+    Matrix.smul_mul, Matrix.mul_add, Matrix.add_mul, Matrix.mul_one, smul_smul]
+  rw [hba, smul_zero, add_zero, neg_mul, neg_smul]
+
 end JM
 
 end QOU.QuarkState.FlavourDoubletFour
