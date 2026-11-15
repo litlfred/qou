@@ -8,7 +8,7 @@ tags:
     - needs-owner
     - convention-d
 created_at: 2026-11-15T18:54:18Z
-updated_at: 2026-11-15T19:35:23Z
+updated_at: 2026-11-15T19:42:37Z
 parent: qou-avtq
 ---
 
@@ -53,3 +53,6 @@ A grep of folio/ content and Lean for an isospin orientation convention (e₁ = 
 
 
 **2026-11-15 §17.** Lean NucleonWeightSpaceTraces.lean (sorry-free): an explicit intertwiner shows every braid word has equal plain trace on the p and n weight spaces, so level-2 n/p = q^{∓2} is word-independent and proved. Scale: Φ = Σ log V̂ᵢ, and α = m_e·∏V̂ᵢ(B₃) is built from the same object. The asserted α·ΔΦ multiplies a volume by a log-volume, whereas the corpus scale block is linear in the volume. Still open.
+
+
+**2026-11-15 §18 (e7e9b93deb2).** Derivation attempt with the corpus's derived scale E₀ = m_e/(q(q−1)), tower-summed, used linearly on the D trace restricted to the γγ nucleon V³: 0.3254 MeV (−74.8 %), and V⁶ agrees to 0.6 %. The log form with E₀ gives −31.8 %, but the log form has no corpus support. The derivation does not close. Proposed wording for the n–p block (Option A: named hypothesis H_α; Option B: demote to conjecture) is at qou-np-splitting/proposed-np-block-wording.md, not applied.
