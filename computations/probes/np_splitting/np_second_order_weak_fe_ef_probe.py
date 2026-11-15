@@ -111,3 +111,12 @@ chi21 = sp.factor(sp.simplify(plain - 1))   # chi_(3)(V^3) = q*q^{-1}... = 1 on 
 A = sp.factor(sp.simplify((br*1 + chi21)/tr3))
 print('chi_(2,1)(V^3) =', chi21, ' at q=1:', chi21.subs(q,1), ' at q0:', mp.nstr(num(chi21),12))
 print('A =', A, ' at q=1:', A.subs(q,1), ' at q0:', mp.nstr(num(A),12))
+
+# --- Follow-up (2026-11-15, raised by the weak-vertex thread, pre-registered before running):
+# state-dependent order. The neutron's virtual loop is FE (go to p and back), and the proton's is EF.
+# Question: does r_state = t_n(FE.W)/t_p(EF.W) differ from q^-2? Also the reverse assignment.
+print('\n=== state-dependent order (follow-up) ===')
+for wname, W in (('V^3', V**3), ('V^6', V**6)):
+    for lab, Xn, Xp in (('n:FE, p:EF', F*E, E*F), ('n:EF, p:FE', E*F, F*E)):
+        r = sp.factor(sp.simplify(t(Xn*W, N)/t(Xp*W, P)))
+        print(f'{wname} {lab}: r = {r}   r*q^2 = {sp.factor(sp.simplify(r*q**2))}')

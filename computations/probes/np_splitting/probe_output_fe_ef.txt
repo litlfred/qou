@@ -43,3 +43,9 @@ n: eigenvalues FE on weight space: {1: 2, (q**2 + 1)**2/q**2: 1}  EF: {(q**2 - q
 words tested 341, failures 0
 chi_(2,1)(V^3) = -(q**4 - q**2 + 1)*(q**8 - 2*q**6 - 2*q**2 + 1)/q**6  at q=1: 2  at q0: 1.99418581298
 A = -(q**4 + 1)*(q**4 - q**3 - q**2 - q + 1)*(q**4 + q**3 - q**2 + q + 1)/(q**4*(q**2 - q + 1)*(q**2 + q + 1))  at q=1: 2  at q0: 1.98373023145
+
+=== state-dependent order (follow-up) ===
+V^3 n:FE, p:EF: r = q**(-2)   r*q^2 = 1
+V^3 n:EF, p:FE: r = q**(-2)   r*q^2 = 1
+V^6 n:FE, p:EF: r = q**(-2)   r*q^2 = 1
+V^6 n:EF, p:FE: r = q**(-2)   r*q^2 = 1
