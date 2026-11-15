@@ -355,7 +355,19 @@ def main() -> int:
                 "The identification of the two-strand Wedderburn blocks with "
                 "3bar and 6 is inherited from level_three_colour_channel_probe "
                 "and is not constructed here.")
-            print(f"\nWitness: {wb.save()}")
+            # Record the pin. q0 enters only B4/B5 via q_parameter.q_at
+            # (proton default; stem not in ideal_muon). B1-B3 are q0-free.
+            from qou_substrate.witness import resolve_q0_anchor as _rq0
+            _q0a, _q0v = _rq0(__file__)
+            extra = {"q0Anchor": _q0a,
+                     "q0AnchorReason": (
+                         "q0 enters only the B4/B5 numerical arms via "
+                         "q_parameter.q_at, which resolves to the proton pin "
+                         "(standing compute default, 2026-08-07 directive). "
+                         "B1-B3 are symbolic or exact-rational and q0-free.")}
+            if _q0v:
+                extra["q0Value"] = _q0v
+            print(f"\nWitness: {wb.save(extra)}")
         except Exception as e:  # pragma: no cover
             print(f"\n(witness emit skipped: {e})")
     return 0 if all_ok else 1

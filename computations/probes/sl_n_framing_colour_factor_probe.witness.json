@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-15T08:15:15.454885+00:00",
-  "commitSha": "99781d7aa881ade637e1aa31c702034f3c3bfd91",
+  "computedAt": "2026-11-15T08:23:52.389961+00:00",
+  "commitSha": "9225bee9db0c4bf5aa229ea317948e5207fce58f",
   "assertions": [
     {
       "name": "B1_sl_exponent_is_twice_colour_factor_all_N",
@@ -49,8 +49,8 @@
   "durationMs": 13,
   "computation": "sl_n_framing_colour_factor_probe",
   "scriptFile": "sl_n_framing_colour_factor_probe.py",
-  "scriptHash": "792a12cbb8bc",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "8d47599567ed",
+  "scriptCommitSha": "963140a79de0ddc5287c3506af153ddd23e92a0d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,6 +60,7 @@
   "environment": {
     "python": "3.13.18",
     "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
@@ -140,5 +141,8 @@
   "caveats": [
     "Applying the SU(N) frame to colour observables is a modelling ruling (bean qou-sl3f), not established here. Rescaling sigma multiplies an unnormalised Markov trace of a word by c^writhe and shifts the Markov parameter z -> c z; it must not be applied to already-ruled gl/convention-D observables without an owner decision.",
     "The identification of the two-strand Wedderburn blocks with 3bar and 6 is inherited from level_three_colour_channel_probe and is not constructed here."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0AnchorReason": "q0 enters only the B4/B5 numerical arms via q_parameter.q_at, which resolves to the proton pin (standing compute default, 2026-08-07 directive). B1-B3 are symbolic or exact-rational and q0-free.",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
