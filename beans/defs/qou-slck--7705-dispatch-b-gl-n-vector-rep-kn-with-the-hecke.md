@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-12T18:13:10Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-15T13:40:00Z
 parent: qou-59vq
 ---
 
@@ -33,3 +33,7 @@ Parent `qou-xhci` → `qou-59vq`. The old parent was missing or absent, so the b
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## Re-scoped 2026-11-15 (owner tap, E1 bean triage)
+
+OS faithfulness is closed for m+1 ≤ n. **Still open:** m+1 > n. This bean now tracks only that.
