@@ -1,0 +1,51 @@
+2.3. An axiomatic framework 31
+
+Furthermore, the essential image P of the perverse cohomology
+functors
+
+PH" = Pt<,o?ts,: DP
+
+is a full abelian subcategory of D, and rat : P —> Perv(X, A) is an
+exact functor between the respective abelian categories.
+
+(D3) Perverse decomposition. For all K € D we have a (non-canonical)
+isomorphism
+
+K = @’a "(k)[n.
+
+neZ
+(D4) Semisimplicity. In (D2) the abelian category P is semisimple.
+
+(D5) Hard Lefschetz. In D there exists an invertible object 1(1) whose
+image in Perv(X,A) under rat is the Tate twist of 1. For all K,L
+in D and all i > 0 we have functorial Lefschetz isomorphisms
+
+PH-'(KxL) & PH'(K*L)(i),
+where the Tate twist (7) means i-fold convolution with 1(1).
+
+We do not assume D to be triangulated, indeed we will later deal with the
+following non-triangulated categories.
+
+EXAMPLE 2.3. The axioms (D1) — (D5) hold if D C D?(X,A) is the
+full subcategory of all direct sums of degree shifts of semisimple perverse
+sheaves which in case char(k) > 0 are defined over some finite field.
+
+For k= C this follows from [35] together with [14], [43], or alternatively
+from [87] and [78]. On the other hand, for char(k) > 0 one can invoke the
+mixedness results of [69] and [10]. Note that in the above example we could
+also replace the category D by the full subcategory of objects of geometric
+origin in the sense of [10, sect. 6.2.4].
+
+EXAMPLE 2.4. The axioms (D1) — (D5) hold for k = C and A= Q if
+one takes D to be the full subcategory of D?(MHM(X)) consisting of all
+direct sums of degree shifts of semisimple Hodge modules.
+
+In the above setting we consider a full subcategory N of D consisting
+of objects that are negligible for our purposes. In our later application this
+will be the category of objects which become isomorphic to zero in the
+André-Kahn quotient category D. Again, since we want to proceed as far
+as possible over a base field of arbitrary characteristic, we formulate the
+required properties as the following axioms.
+
+(N1) Stability. We have N*D CN, and N is stable under taking retracts,
+degree shifts, perverse truncations and adjoint duals.

@@ -1,0 +1,1 @@
+Hence, though we shall see independence of coordinates by looking at the ﬁrst order asymptotics of Xn (captured by the inﬁnitely divisible law φ), the higher order asymptotics will shed light on the non- independence of the coordinates (this being captured by the limiting residue ψ(ξ), which does not factorize in general).

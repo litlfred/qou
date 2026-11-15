@@ -7,11 +7,17 @@
   "bytes": 192171,
   "pages": 16,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 6,
+    "reason": "13 of 556 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,20 +27,34 @@
    "stamp_date": "9 May 2006"
   },
   "doi": null,
-  "title": "N-Fold Integer Programming Jes\u00fas A. De Loera\u2217 Raymond Hemmecke \u2020 Shmuel Onn \u2021 Robert Weismantel \u00a7",
+  "title": "N-Fold Integer Programming",
   "authors_raw": null,
   "title_lines": [
    "N-Fold Integer Programming",
-   "Jes\u00fas A. De Loera\u2217 Raymond Hemmecke \u2020 Shmuel Onn \u2021 Robert Weismantel \u00a7"
+   "Jesús A. De Loera ∗",
+   "Raymond Hemmecke †",
+   "Shmuel Onn ‡",
+   "Robert Weismantel §"
   ],
-  "abstract": "In this article we study a broad class of integer programming problem s in variable dimension. We show that these so-termed n-fold integer programming problems are polynomial time solvable. Our proof involves two heavy ingredients discovered recently: the equivalence of linear optimization and so-called directed augmentation, and the stabilization of certa in Graver bases. We discuss several applications of our algorithm to multiway transpo rtation problems and to packing problems. One important consequence of our results is a po lynomial time algorithm for the d-dimensional integer transportation problem for long multiway table s. Another interesting application is a new algorithm for the classical cutting stock problem.",
+  "abstract": "In this article we study a broad class of integer programming problems in variable dimension. We show that these so-termed n-fold integer programming problems are polynomial time solvable. Our proof involves two heavy ingredients discovered recently: the equivalence of linear optimization and so-called directed augmentation, and the stabilization of certain Graver bases. We discuss several applications of our algorithm to multiway transportation problems and to packing problems. One important consequence of our results is a polynomial time algorithm for the d-dimensional integer transportation problem for long multiway tables. Another interesting application is a new algorithm for the classical cutting stock problem.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181029054554-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20181029054554-04'00'"
+  },
+  "title_raw": "N-Fold Integer Programming Jesús A. De Loera ∗ Raymond Hemmecke † Shmuel Onn ‡ Robert Weismantel §",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "N-Fold Integer Programming",
+   "outline": "Introduction",
+   "text": "N-Fold Integer Programming Jesús A. De Loera ∗ Raymond Hemmecke † Shmuel Onn ‡ Robert Weismantel §",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "N-Fold Integer Programming Jesús A. De Loera∗ Raymond Hemmecke † Shmuel Onn ‡ Robert Weismantel §"
  },
  "toc": [
   {
@@ -42,53 +62,202 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Applications",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "High dimensional transportation problems",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Some packing problems",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Graver bases and directed augmentation",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Graver bases of n-fold matrices",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The polynomial time algorithm for n-fold integer programming",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 879,
+   "n_words": 124,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -96,8 +265,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 4771,
-   "n_words": 959
+   "n_chars": 4219,
+   "n_words": 822,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-applications",
@@ -106,8 +277,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 901,
-   "n_words": 158
+   "n_chars": 1399,
+   "n_words": 225,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-high-dimensional-transportation-problems",
@@ -116,8 +289,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 6,
-   "n_chars": 6544,
-   "n_words": 1309
+   "n_chars": 6523,
+   "n_words": 1255,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-some-packing-problems",
@@ -126,8 +301,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 8,
-   "n_chars": 5112,
-   "n_words": 1126
+   "n_chars": 4764,
+   "n_words": 906,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-graver-bases-and-directed-augmentation",
@@ -136,8 +313,10 @@
    "level": 1,
    "page_start": 8,
    "page_end": 11,
-   "n_chars": 8159,
-   "n_words": 1676
+   "n_chars": 8029,
+   "n_words": 1512,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-graver-bases-of-n-fold-matrices",
@@ -146,8 +325,10 @@
    "level": 1,
    "page_start": 11,
    "page_end": 13,
-   "n_chars": 5186,
-   "n_words": 1236
+   "n_chars": 5136,
+   "n_words": 1159,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-the-polynomial-time-algorithm-for-n-fold-integer",
@@ -156,16 +337,26 @@
    "level": 1,
    "page_start": 13,
    "page_end": 16,
-   "n_chars": 7570,
-   "n_words": 1277
+   "n_chars": 7568,
+   "n_words": 1222,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 7,
-  "sections": 7,
-  "chars_total": 38243,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 38517,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -178,10 +369,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.77,
+     "coverage_ratio": 0.839,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -189,14 +385,14 @@
      "id": "sec-001-applications",
      "title": "Applications",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.036,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.013,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-002-high-dimensional-transportation-problems",
      "title": "High dimensional transportation problems",
      "prose_ratio": 0.987,
-     "coverage_ratio": 0.996,
+     "coverage_ratio": 0.966,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -204,22 +400,22 @@
      "id": "sec-003-some-packing-problems",
      "title": "Some packing problems",
      "prose_ratio": 0.995,
-     "coverage_ratio": 0.99,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-004-graver-bases-and-directed-augmentation",
      "title": "Graver bases and directed augmentation",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-005-graver-bases-of-n-fold-matrices",
      "title": "Graver bases of n-fold matrices",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.993,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
@@ -228,8 +424,8 @@
      "id": "sec-006-the-polynomial-time-algorithm-for-n-fold-integer",
      "title": "The polynomial time algorithm for n-fold integer programming",
      "prose_ratio": 0.974,
-     "coverage_ratio": 0.428,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.413,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

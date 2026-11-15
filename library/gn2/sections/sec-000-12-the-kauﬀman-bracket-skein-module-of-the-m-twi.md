@@ -8,6 +8,7 @@ pages: 2-3
 source_pdf: gn2.pdf
 source_sha256: ffe8965c496dbb2f
 toc_source: inferred
+doc_brief: "SOME RESULTS ABOUT THE KAUFFMAN BRACKET SKEIN MODULE OF THE TWIST KNOT EXTERIOR — In this paper, we list in explicit form the factoring relations of the Kauﬀman bracket skein module (KBSM for short)"
 ---
 Denote by Km the m-twist knot (m ≥0) in S3, by EKm its exterior (i.e.
 the
@@ -32,8 +33,6 @@ The proof relies on the following theorems.
 Theorem 2 (Przytycki [P2]). The KBSM of the genus 2 handlebody is the free
 C[t, t−1]-module with basis xiyjzk, i, j, k ∈Z≥0, where x, y and z are the curves
 from Figure 3.
-SKEIN MODULE OF THE TWIST KNOT EXTERIOR
-3
 x
 y
 z

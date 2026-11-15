@@ -1,0 +1,1 @@
+(Referring to Figure 28(a), the gray braid strands represent X−.) Since any braid that enters the 2–sphere ∆θ ∪c ∆c must puncture ∆θ, and can only exit by puncturing ∆c, we conclude that only X−can intersect ∆θ.

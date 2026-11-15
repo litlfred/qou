@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-2007.13108v1",
+  "title": "Log concavity and concentration of Lipschitz functions on the Boolean hypercube",
   "contains": [
+    "library/arxiv-2007.13108v1/sections/sec-front-matter",
     "library/arxiv-2007.13108v1/sections/sec-000",
     "library/arxiv-2007.13108v1/sections/sec-001",
     "library/arxiv-2007.13108v1/sections/sec-002",
@@ -21,10 +22,11 @@
     "library/arxiv-2007.13108v1/sections/sec-007",
     "library/arxiv-2007.13108v1/sections/sec-008",
     "library/arxiv-2007.13108v1/sections/sec-009",
-    "library/arxiv-2007.13108v1/sections/sec-010"
+    "library/arxiv-2007.13108v1/sections/sec-010",
+    "library/arxiv-2007.13108v1/sections/sec-011"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -34,7 +36,9 @@
   },
   "meta": {
     "doc_id": "arxiv-2007.13108v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "2007.13108v1.pdf",
     "source_sha256": "b298478f5f5b948df63ffd7aaccf2c6940ff65dcd23b1e25a39071a7dc7d40fa",
     "pages": 17,

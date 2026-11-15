@@ -1,0 +1,5972 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1803.04009v2",
+ "status": "determined",
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p003-1",
+   "page": 3,
+   "mark": "1",
+   "text": "ThesystemcanbegeneralizedtothecasewhenaknotKisreplacedbyalinkLwithseveralcompo- nents. We use the letter K for knot and L for link.",
+   "marks": [
+    {
+     "page": 3,
+     "context": "6dA1(2,0)-SCFTonR"
+    },
+    {
+     "page": 3,
+     "context": "witharegularco-dimensiontwodefectalongR"
+    },
+    {
+     "page": 3,
+     "context": "−−−−−−−−−−−−−−−−−−−→T6d[M, K]onR"
+    },
+    {
+     "page": 3,
+     "context": "e Mis a compact (closed) 3-manifold and Kis a knot inside M."
+    },
+    {
+     "page": 3,
+     "context": "appearsasvacuaonR2× S"
+    }
+   ],
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "2",
+   "text": "A simple example which illustrates the point is the T 2compactiﬁcation of the 6d N= (2, 0) A1theory on T 2. The moduli space of this theory is [R5 × S1]/Z2, where S1 comes from the integral of the 2-form ﬁeld on T 2. On the other hand, the moduli space of 4d N = 4 SYM is R6/Z2. Only after picking a point on [R5 × S1]/Z2 and taking the low energy limit, the 6d N = (2, 0) theory on T 2 becomes the 4d N = 4 SYM. In this case the moduli space is connected, but still there is no single 4d eﬀective theory describing the whole moduli space of vacua.",
+   "marks": [
+    {
+     "page": 7,
+     "context": "ergyeﬀectiveﬁeldtheorywhichdescribesthephysicsnearthatpoint."
+    },
+    {
+     "page": 7,
+     "context": "T6donR"
+    },
+    {
+     "page": 7,
+     "context": "if we compactify the 3d spacetime to R"
+    },
+    {
+     "page": 7,
+     "context": "6dN= (2, 0)onR"
+    },
+    {
+     "page": 7,
+     "context": "5dN= 2SYMonR"
+    },
+    {
+     "page": 7,
+     "context": "/ theoryT6d[M]onR"
+    },
+    {
+     "page": 7,
+     "context": "After compactiﬁcation on M, the supersymmetry is deﬁned on R"
+    },
+    {
+     "page": 7,
+     "context": "Fromthepointofviewofthesuper-algebraonR"
+    }
+   ],
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p007-2",
+   "page": 7,
+   "mark": "3",
+   "text": "Ongeneralgrounds,onemayonlyexpectthat5dSYMdescribesthemodulispaceonlyinthelimit of very small radius of S1. However, somewhat miraculously, it is believed that 5d SYM describes even a ﬁnite radius of S1.",
+   "marks": [
+    {
+     "page": 7,
+     "context": "supersymmetricYang-Mills(5dSYM)theorydescription.Theset-upis"
+    }
+   ],
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p008-1",
+   "page": 8,
+   "mark": "4",
+   "text": "Thegaugeinvarianceispreservedasfollows.Thesupersymmetryisconsideredinthetwodimensional space R2, and hence the direction along the knot K is considered as a kind of “internal manifold”. Let t be the coordinate along K. Then, the kinetic term along this direction comes not from the Kahler potential, W ⊃˜E∂tE. This term combines with (2.13) to form a covariant but from the twisted superpotential as f derivative ˜E(∂t + A)E, where we have used eµ ∼E ˜E (see Appendix B.1).",
+   "marks": [
+    {
+     "page": 8,
+     "context": "Thismeansthatweintegratetheone-formtr(eνAi)dyioverK."
+    }
+   ],
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p009-1",
+   "page": 9,
+   "mark": "5",
+   "text": "WhentheconnectionAisreducible,wecanturnontheexpectationvaluesofthevectormultiplets V = (Aµ=0,1, φk=0,1). These branches are very important in 4d class S theories [28, 29]. However, in the 3d theories considered in this paper, we only consider points on the moduli space on which A is irreducible. Therefore, we can neglect those branches.",
+   "marks": [
+    {
+     "page": 9,
+     "context": "ofthemodulispaceofvacua"
+    }
+   ],
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p014-1",
+   "page": 14,
+   "mark": "6",
+   "text": "Moregenerally,foranidealtriangulationofaknot/linkcomplementNwith♯Ttorusboundariesthe number of linearly independent internal edge variables are k −♯T .",
+   "marks": [
+    {
+     "page": 14,
+     "context": "g k-internal edge variables in eq. (2.28), only k −1 of them"
+    }
+   ],
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p023-1",
+   "page": 23,
+   "mark": "7",
+   "text": "Ingeneral,theexistenceofthisoperatorisguaranteedonlyfortheorieswith8supercharges.However, this operator often exists due to the remnant of 8 supercharges preserved by codimension-2 defects of the",
+   "marks": [
+    {
+     "page": 23,
+     "context": "s a chiral operator in the adjoint representation of su(2)A,"
+    }
+   ],
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p023-2",
+   "page": 23,
+   "mark": "6",
+   "text": "d N = (2, 0) theory. Indeed, the operator µ is absent only for some special cases. These points will be important and discussed in more detail below.",
+   "marks": [
+    {
+     "page": 22,
+     "context": "and Sec. 2.2.Comparing the moduli space of T"
+    },
+    {
+     "page": 22,
+     "context": "Mvacua(TDGG[N, XA]onR2× S1) ⊂Mvacua(T"
+    },
+    {
+     "page": 22,
+     "context": "onsonNasemphasizedin[20].SoweseethatTDGGcannotbeidenticaltoT"
+    },
+    {
+     "page": 23,
+     "context": "canonlycaptureasubsectorofT"
+    },
+    {
+     "page": 23,
+     "context": "ne3dtheorywhichdescribesallcomponentsofmodulispaceofvacuaofT"
+    },
+    {
+     "page": 23,
+     "context": "vacuaofT"
+    },
+    {
+     "page": 23,
+     "context": "ThenapossibilityisthatTDGGmightbeidentiﬁedwithT"
+    },
+    {
+     "page": 23,
+     "context": "ﬂavorsymmetryassociatedtotheknotwhileT"
+    },
+    {
+     "page": 23,
+     "context": "ﬂavorsymmetryassociatedtotheknotwhileT6dandhenceT"
+    },
+    {
+     "page": 23,
+     "context": "usingthesu(2)symmetryandT[SU(2)]theoryonT"
+    },
+    {
+     "page": 23,
+     "context": "The su(2) SL(2, Z) on T"
+    },
+    {
+     "page": 23,
+     "context": "(2, Z) on T6dis deﬁned as follows.The transformed theory ϕ·T"
+    },
+    {
+     "page": 23,
+     "context": "T"
+    },
+    {
+     "page": 23,
+     "context": "T6d[N, rA + sB; pA + qB] = ϕ · T"
+    },
+    {
+     "page": 23,
+     "context": ":= couplingthedualitywalltheoryT[SU(2), ϕ]toT"
+    },
+    {
+     "page": 23,
+     "context": "T[SU(2), ϕ] and T"
+    },
+    {
+     "page": 23,
+     "context": " holomorphic moment map operator associated to thesu(2)Aof T"
+    },
+    {
+     "page": 23,
+     "context": "MotivatedbythesimilaritiesanddiﬀerencesbetweenT"
+    },
+    {
+     "page": 23,
+     "context": "T"
+    },
+    {
+     "page": 23,
+     "context": "−−−−−−−−−−−−−−−→T"
+    }
+   ],
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p026-1",
+   "page": 26,
+   "mark": "8",
+   "text": "Toseethis,considera4dmanifoldS2",
+   "marks": [
+    {
+     "page": 26,
+     "context": "1/2,"
+    }
+   ],
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p026-2",
+   "page": 26,
+   "mark": "1",
+   "text": "× S2",
+   "marks": [
+    {
+     "page": 26,
+     "context": "⟨E"
+    }
+   ],
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p026-3",
+   "page": 26,
+   "mark": "2",
+   "text": ".Then,takethesubgroupU(1) ⊂SO(3)byA =1",
+   "marks": [
+    {
+     "page": 25,
+     "context": "(T1)"
+    },
+    {
+     "page": 25,
+     "context": "T1↔(T2)"
+    },
+    {
+     "page": 26,
+     "context": "elldeﬁned.ThismeansthatwhentheA-cycleisSO(3)type,onlythe(T2)"
+    },
+    {
+     "page": 26,
+     "context": "Γ(2) ⊂SL(2, Z)2generatedbyS1and(T2)"
+    },
+    {
+     "page": 26,
+     "context": "(2) ⊂SL(2, Z)2generatedbyS1and(T2)2.ThesegeneratorsS1and(T2)"
+    },
+    {
+     "page": 26,
+     "context": "⟨E"
+    }
+   ],
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p027-1",
+   "page": 27,
+   "mark": "9",
+   "text": "WethankY.Tachikawaforthisargument.",
+   "marks": [
+    {
+     "page": 27,
+     "context": "thetable1withagrouptheoreticalargument,wecanargue"
+    }
+   ],
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p028-1",
+   "page": 28,
+   "mark": "10",
+   "text": "LetφbetheneutralscalarchiralﬁeldandletΣbetwistedchiralﬁeldwhichcomesfromu(1)vector multiplets in 2d. Then the Cartan components of eµ and µ are given by Σ and φ. However, in the discussion of Sec. 2.1, we have to exchange the role of chiral and twisted chiral by regarding φ as twisted chiral and Σ as chiral, because of the subtle mirror symmetry in the relation between 5d SYM and T 6d in (2.8).",
+   "marks": [
+    {
+     "page": 28,
+     "context": "metry,thereisatwistedchiraloperatoreµandachiraloperatorµ,"
+    }
+   ],
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p029-1",
+   "page": 29,
+   "mark": "11",
+   "text": "Here notice the diﬀerence between T 6d irred[M, K] and T 6d[M, K]. The T 6d[M] theory after removing knot still have a supersymmetric vacuum because there is always trivial ﬂat connection on any closed 3-manifold irred[M, K] on R2 × S1) after M. The trivial ﬂat connection on M disappears in the moduli space Mvacua(T 6d put on the vacua PSCF T .",
+   "marks": [
+    {
+     "page": 29,
+     "context": "irred[M, K]willbeatheorywithsupersymmetrybroken."
+    }
+   ],
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p034-1",
+   "page": 34,
+   "mark": "1",
+   "text": ")(4k+1)µ1−kλ1",
+   "marks": [
+    {
+     "page": 34,
+     "context": "I(−λ"
+    },
+    {
+     "page": 34,
+     "context": "I(−λ1,µ2;µ"
+    },
+    {
+     "page": 34,
+     "context": "1(e"
+    },
+    {
+     "page": 34,
+     "context": "1(e1, m2, −m"
+    },
+    {
+     "page": 34,
+     "context": "I(4µ"
+    },
+    {
+     "page": 34,
+     "context": "I(4µ1−λ"
+    },
+    {
+     "page": 34,
+     "context": "I(4µ1−λ1,2µ2−λ2;µ"
+    },
+    {
+     "page": 34,
+     "context": "1(e"
+    },
+    {
+     "page": 34,
+     "context": "1(e1, 2m2 + e2, 2e"
+    },
+    {
+     "page": 34,
+     "context": "1(e1, 2m2 + e2, 2e1 −m"
+    },
+    {
+     "page": 34,
+     "context": "I(−λ"
+    },
+    {
+     "page": 34,
+     "context": "I(−λ1,µ2;µ"
+    },
+    {
+     "page": 34,
+     "context": "(m1, m2, e1, e2; x) = I(4µ"
+    },
+    {
+     "page": 34,
+     "context": "(m1, m2, e1, e2; x) = I(4µ1−λ"
+    },
+    {
+     "page": 34,
+     "context": "(m1, m2, e1, e2; x) = I(4µ1−λ1,2µ2−λ2;µ"
+    }
+   ],
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-007"
+  },
+  {
+   "id": "fn-p036-1",
+   "page": 36,
+   "mark": "12",
+   "text": "Ingeneral,R-chargeofBPSmonopoleoperatorsV+, V−ofcharge±1arerelatedtotheR-chargesof P qa(1 −R(Φa)) where qa is the u(1)gauge charge of Φa. chiral multiplets Φa as R(V±) = 1",
+   "marks": [
+    {
+     "page": 36,
+     "context": "weinparticularlychoose"
+    }
+   ],
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-007"
+  },
+  {
+   "id": "fn-p038-1",
+   "page": 38,
+   "mark": "13",
+   "text": "TheirtheoryT 6d (irred)c[M] is diﬀerent from our T 6d irred[M] theory. For example, when M is a Lens space, their T 6d (irred)c[M] is a non-trivial SCFT while supersymmetry is broken in our T 6d irred[M] theory. As discussed in section 2.1, we need to specify a point P ∈Mvacua(T 6d[M] on R3) to obtain a 3d eﬀective theory. Their theory may correspond to diﬀerent choice of P other than PSCFT in (1.2).",
+   "marks": [
+    {
+     "page": 38,
+     "context": "(irred)c[M],labelledbySeifertmanifoldsM."
+    }
+   ],
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-007"
+  },
+  {
+   "id": "fn-p040-1",
+   "page": 40,
+   "mark": "14",
+   "text": "Taking account of orientation reversal in (3.39), the boundary 1-cycle basis (µ2, λ2) of the S3\\52induced from the basis of S3\\52",
+   "marks": [
+    {
+     "page": 40,
+     "context": "formingaDehnﬁlling.Combing(3.30),(3.45)and(4.3),wehave"
+    }
+   ],
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p040-2",
+   "page": 40,
+   "mark": "1",
+   "text": "canbeidentiﬁedwith(µ, −λ)=(meridian,-(longitude))oftheknotcomplement. For S3\\41 case, on the other hand, the (µ2, λ2) can be identiﬁed with (µ, λ) without sign change. Note that there is no orientation reversal in (3.27).",
+   "marks": [
+    {
+     "page": 40,
+     "context": "irred[(m004)pµ2+(λ2+2µ2)= (S3\\4"
+    },
+    {
+     "page": 40,
+     "context": "irred[(S3\\4"
+    },
+    {
+     "page": 40,
+     "context": "irred[(S3\\4"
+    }
+   ],
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p053-1",
+   "page": 53,
+   "mark": "15",
+   "text": "Inthepresenceofbackgroundﬁeldsfor1-formcentersymmetry,itcantakenonzerobutﬁxedvalues determined by the background ﬁeld.",
+   "marks": [
+    {
+     "page": 53,
+     "context": "ˆaw2= 0."
+    }
+   ],
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-016"
+  },
+  {
+   "id": "fn-p054-1",
+   "page": 54,
+   "mark": "16",
+   "text": "Thereisnowaytopreservethediﬀeomorphisminvarianceofthefull6dspaceX6becausethesplitting (B.13) breaks it.",
+   "marks": [
+    {
+     "page": 54,
+     "context": "afewchoiceswhichpreservethediﬀeomorphisminvarianceofX3andM3,"
+    }
+   ],
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-017"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p026-4",
+   "page": 26,
+   "mark": "2",
+   "text": "(a, −a), and include the magnetic ﬂuxes of f = da on each S2",
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p026-5",
+   "page": 26,
+   "mark": "1",
+   "text": "andS2",
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p026-6",
+   "page": 26,
+   "mark": "2",
+   "text": "asn1=",
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p026-7",
+   "page": 26,
+   "mark": "1",
+   "text": "fandn2=",
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p026-8",
+   "page": 26,
+   "mark": "2",
+   "text": "f.Onecan S2 S2",
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p026-9",
+   "page": 26,
+   "mark": "2",
+   "text": "π",
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p026-10",
+   "page": 26,
+   "mark": "2",
+   "text": "π check that this conﬁguration gives the instanton number 1",
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p026-11",
+   "page": 26,
+   "mark": "2",
+   "text": "n1n2.",
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p056-1",
+   "page": 56,
+   "mark": "17",
+   "text": "(2013), no. 3 479–599, [arXiv:1102.4847]. [13] J. Ellegaard Andersen and R. Kashaev, A TQFT from Quantum Teichmüller Theory, Commun.Math.Phys. 330 (2014) 887–934, [arXiv:1109.6295]. [14] T. D. Dimofte and S. Garoufalidis, The Quantum content of the gluing equations, Geom. Topol. 17 (2013) 1253–1316, [arXiv:1202.6268]. [15] S. Kim, The Complete superconformal index for N=6 Chern-Simons theory, Nucl. Phys. B821 (2009) 241–284, [arXiv:0903.4172]. [Erratum: Nucl. Phys.B864,884(2012)].",
+   "block": "library/arxiv-1803.04009v2/blocks/prose-sec-017"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "a",
+   "context": "DongminGang"
+  },
+  {
+   "page": 1,
+   "mark": "b",
+   "context": "DongminGangaandKazuyaYonekura"
+  },
+  {
+   "page": 2,
+   "mark": "6",
+   "context": "6dA1(2,0)theoryon3-manifolds:T"
+  },
+  {
+   "page": 2,
+   "mark": "d",
+   "context": "6dA1(2,0)theoryon3-manifolds:T6"
+  },
+  {
+   "page": 2,
+   "mark": "6",
+   "context": "6dA1(2,0)theoryon3-manifolds:T6dandT"
+  },
+  {
+   "page": 2,
+   "mark": "d",
+   "context": "6dA1(2,0)theoryon3-manifolds:T6dandT6"
+  },
+  {
+   "page": 2,
+   "mark": "6",
+   "context": "DehnﬁllingonT"
+  },
+  {
+   "page": 2,
+   "mark": "d",
+   "context": "DehnﬁllingonT6"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "6dA1(2,0)-SCFTonR1,"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "witharegularco-dimensiontwodefectalongR1,"
+  },
+  {
+   "page": 3,
+   "mark": "6",
+   "context": "−−−−−−−−−−−−−−−−−−−→T"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "−−−−−−−−−−−−−−−−−−−→T6"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "−−−−−−−−−−−−−−−−−−−→T6d[M, K]onR1,"
+  },
+  {
+   "page": 3,
+   "mark": "6",
+   "context": "theory,sayT"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "theory,sayT6"
+  },
+  {
+   "page": 3,
+   "mark": "6",
+   "context": "-trivialtaskisﬁndingﬁeldtheoreticaldescriptionofthe3dtheoryT"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "trivialtaskisﬁndingﬁeldtheoreticaldescriptionofthe3dtheoryT6"
+  },
+  {
+   "page": 3,
+   "mark": "6",
+   "context": "oftheT"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "oftheT6"
+  },
+  {
+   "page": 3,
+   "mark": "6",
+   "context": "T"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "appearsasvacuaonR"
+  },
+  {
+   "page": 3,
+   "mark": "6",
+   "context": "to appear as the vacua of T"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "to appear as the vacua of T6"
+  },
+  {
+   "page": 3,
+   "mark": "6",
+   "context": "associatedtotheknotKwhileT"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "associatedtotheknotKwhileT6"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "deformedbyδW= µ"
+  },
+  {
+   "page": 4,
+   "mark": "6",
+   "context": "T"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 4,
+   "mark": "6",
+   "context": "−−−−−−−−−−−−−−−→T"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "−−−−−−−−−−−−−−−→T6"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "Hereµ=(µ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Hereµ=(µ1, µ"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "Hereµ=(µ1, µ2, µ"
+  },
+  {
+   "page": 4,
+   "mark": "6",
+   "context": "symmetryassociatedtotheknotwhileT"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "symmetryassociatedtotheknotwhileT6"
+  },
+  {
+   "page": 4,
+   "mark": "6",
+   "context": "symmetryofT"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "symmetryofT6"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "ymmetryofT6d[M, K]isbrokenbythesuperpotentialdeformationδW=µ"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "AfterS"
+  },
+  {
+   "page": 4,
+   "mark": "6",
+   "context": "As an intermediate step, we introduce a 3d SCFT T"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "As an intermediate step, we introduce a 3d SCFT T6"
+  },
+  {
+   "page": 4,
+   "mark": "6",
+   "context": "is the IR ﬁxed point of T"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "is the IR ﬁxed point of T6"
+  },
+  {
+   "page": 4,
+   "mark": "6",
+   "context": "UnlikeT"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "UnlikeT6"
+  },
+  {
+   "page": 4,
+   "mark": "6",
+   "context": "UnlikeT6d[M, K],T"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "UnlikeT6d[M, K],T6"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "TDGG[M= S"
+  },
+  {
+   "page": 4,
+   "mark": "6",
+   "context": "BaseontheproposedrelationbetweenT"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "BaseontheproposedrelationbetweenT6"
+  },
+  {
+   "page": 5,
+   "mark": "6",
+   "context": "M.ThetheoryisdenotedasT"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "M.ThetheoryisdenotedasT6"
+  },
+  {
+   "page": 5,
+   "mark": "6",
+   "context": "irred[M]andhassimilar6dinterpretationasT"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "irred[M]andhassimilar6dinterpretationasT 6"
+  },
+  {
+   "page": 5,
+   "mark": "6",
+   "context": "Asconcreteexamples,ﬁeldtheoreticdescriptionsofT"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "Asconcreteexamples,ﬁeldtheoreticdescriptionsofT6"
+  },
+  {
+   "page": 5,
+   "mark": "6",
+   "context": "foldsaregivenin[23].OneinterestingaspectofourconstructionofT"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "oldsaregivenin[23].OneinterestingaspectofourconstructionofT6"
+  },
+  {
+   "page": 5,
+   "mark": "6",
+   "context": "closed3-manifoldgivediﬀerentﬁeldtheoreticaldescriptionsofT"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "closed3-manifoldgivediﬀerentﬁeldtheoreticaldescriptionsofT6"
+  },
+  {
+   "page": 5,
+   "mark": "6",
+   "context": "called“3dindex”whichisnothingbutthesuperconformalindexoftheT"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "alled“3dindex”whichisnothingbutthesuperconformalindexoftheT6"
+  },
+  {
+   "page": 5,
+   "mark": "6",
+   "context": "gaugetheoryisdenotedasT"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "gaugetheoryisdenotedasT6"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": ":= (N∪(D2 × S"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "withA ∼(contractibleboundarycycleofD2 × S"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "K:= {p} × S"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "K:= {p} × S1⊂D2 × S"
+  },
+  {
+   "page": 6,
+   "mark": "6",
+   "context": "6dA1(2,0)theoryon3-manifolds:T"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "6dA1(2,0)theoryon3-manifolds:T6"
+  },
+  {
+   "page": 6,
+   "mark": "6",
+   "context": "6dA1(2,0)theoryon3-manifolds:T6dandT"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "6dA1(2,0)theoryon3-manifolds:T6dandT6"
+  },
+  {
+   "page": 6,
+   "mark": "6",
+   "context": "T"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 6,
+   "mark": "6",
+   "context": "T"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 6,
+   "mark": "6",
+   "context": "irred[M, K] = (ThelowenergylimitofT"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "irred[M, K] = (ThelowenergylimitofT 6"
+  },
+  {
+   "page": 7,
+   "mark": "6",
+   "context": "resulting3dtheoryisdenotedasT"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "resulting3dtheoryisdenotedasT6"
+  },
+  {
+   "page": 7,
+   "mark": "6",
+   "context": "resulting3dtheoryisdenotedasT6d[M]andT"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "resulting3dtheoryisdenotedasT6d[M]andT6"
+  },
+  {
+   "page": 7,
+   "mark": "6",
+   "context": "irred[M],respectively.FortheT"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "irred[M],respectively.FortheT 6"
+  },
+  {
+   "page": 7,
+   "mark": "6",
+   "context": "ThereasonthatweconsiderT"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "ThereasonthatweconsiderT6"
+  },
+  {
+   "page": 7,
+   "mark": "6",
+   "context": "T"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 7,
+   "mark": "6",
+   "context": "Inotherwords,T"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "Inotherwords,T6"
+  },
+  {
+   "page": 7,
+   "mark": "6",
+   "context": "In T"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "In T6"
+  },
+  {
+   "page": 7,
+   "mark": "6",
+   "context": "T"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "T6donR2×S"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "if we compactify the 3d spacetime to R2×S"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "6dN= (2, 0)onR2× S"
+  },
+  {
+   "page": 7,
+   "mark": "6",
+   "context": "/ theoryT"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "/ theoryT6"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "/ theoryT6d[M]onR2× S"
+  },
+  {
+   "page": 8,
+   "mark": "6",
+   "context": "T"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "3A"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "g"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "g"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "YMisthegaugecouplingof5dSYMwhichisrelatedtotheradiusRofS"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "whereg"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "8π"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "g"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Thisistheresultsin[6–8]inthelimitS"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Thisistheresultsin[6–8]inthelimitS2→R"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "coupledtwofundamentalhypermultiplets(E"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "Thismeansthatweintegratetheone-formtr(eνA"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "Thismeansthatweintegratetheone-formtr(eνAi)dy"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "ofthemodulispaceofvacua5onR"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "ofthemodulispaceofvacua5onR2× S"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "Mvacua(T"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "Mvacua(T6"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Mvacua(T6d[M, K]onR"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Mvacua(T6d[M, K]onR2× S"
+  },
+  {
+   "page": 9,
+   "mark": "e",
+   "context": "groupPSL(2, C)withtheholonomye"
+  },
+  {
+   "page": 9,
+   "mark": "e",
+   "context": "ρhol(A) := (PSL(2, C)holonomymatrixalongA-cycle) = e"
+  },
+  {
+   "page": 9,
+   "mark": "e",
+   "context": "Noticethattheeigenvaluesofe"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "modulispaceofvacuaonR"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "modulispaceofvacuaonR3,Mvacua(T"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "modulispaceofvacuaonR3,Mvacua(T6"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "modulispaceofvacuaonR3,Mvacua(T6d[M, K]onR"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "arbitarypointP∈Mvacua(T"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "arbitarypointP∈Mvacua(T6"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "arbitarypointP∈Mvacua(T6d[M, K]onR"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "pointP∈Mvacua(T6d[M, K]onR3).Then,ifwecompactifythetheoryonS"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "on Mvacua(T"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "on Mvacua(T6"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "on Mvacua(T6d[M, K]onR"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "ofvacuaonR"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "ofvacuaonR2× S"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "ofvacuaonR2× S1denotedasMvacua(T"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "ofvacuaonR2× S1denotedasMvacua(T6"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "ofvacuaonR2× S1denotedasMvacua(T6d[M, K]onR"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "ofvacuaonR2× S1denotedasMvacua(T6d[M, K]onR2× S"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "P→M(P) ⊂Mvacua(T"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "P→M(P) ⊂Mvacua(T6"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "P→M(P) ⊂Mvacua(T6d[M, K]onR"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "P→M(P) ⊂Mvacua(T6d[M, K]onR2× S"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "conditionthattheradiusofS"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "The explicit forms of Mvacua(T"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "The explicit forms of Mvacua(T6"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "The explicit forms of Mvacua(T6d[M, K]onR"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "AftercompactiﬁcationonS"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "R"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "R2×S"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "theconnectionAhyp∈Mvacua(T"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "theconnectionAhyp∈Mvacua(T6"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "theconnectionAhyp∈Mvacua(T6d[M, K]onR"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "theconnectionAhyp∈Mvacua(T6d[M, K]onR2× S"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "toasquashed3-spherepartitionfunction[30]ofT"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "toasquashed3-spherepartitionfunction[30]ofT6"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "T"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "beddedintoahyperbolicupperhalfplaneH"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "boundaryofH"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": " log z),whichisthecross-ratioofthepositionsofitsverticeson∂H"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "H"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "H3={(y, w):y∈R+, w∈C}withmetricds"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "H3={(y, w):y∈R+, w∈C}withmetricds2(H"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "dy"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "UsingtheisometryofH"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "y"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "edge.ForanidealtetrahedroninH"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "e−Z"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "Ii∈{0,"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "Ii∈{0, 1,"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "i∈C\\{0,"
+  },
+  {
+   "page": 12,
+   "mark": "z",
+   "context": "i∈C\\{0, 1} :"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i∈C\\{0, 1} : z"
+  },
+  {
+   "page": 12,
+   "mark": "z",
+   "context": "i∈C\\{0, 1} : zi"
+  },
+  {
+   "page": 12,
+   "mark": "z",
+   "context": "i"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "theDehnsurgerycomponentχ"
+  },
+  {
+   "page": 13,
+   "mark": "j",
+   "context": "i, Z"
+  },
+  {
+   "page": 14,
+   "mark": "b",
+   "context": "(a,"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 14,
+   "mark": "†",
+   "context": "d4θΦ"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "i"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "ieV"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "ieViΦ"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "2Σ"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "2ΣiV"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "theﬁeldstrengthofthevectormultipletVi.ThetheoryTstepIhasu(1)"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "xplicit,oneneedstodecomposeaSp(2k, Z)intoproductsof“T-type(g"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "K),”“S-type(g"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "g"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "g"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "0(U−1)"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "(V1, . . . , Vk))beaLagrangianforatheoryTwithU(1)"
+  },
+  {
+   "page": 15,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "Lg"
+  },
+  {
+   "page": 15,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "Lg"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "gN-transformedtheorystillhasu(1)"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "whosebackgroundgaugeﬁeldsareVXA:= V"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "whosebackgroundgaugeﬁeldsareVXA:= V1, . . . , VCk−1:= V"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "Asaﬁnalstep,webreaktheU(1)"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "An internal edge CI=P"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "i=1(GIiZ"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "Iiisnonzeroforeach"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "i)of"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "i)ofi-thtetrahedronappearsinCIforall"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "i)ofi-thtetrahedronappearsinCIforalli = 1 . . . k.Upon"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "eGIiZ"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "6K(K"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "triangulationinto"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "kK(K"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "\u0000 K(K"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "kK(K"
+  },
+  {
+   "page": 17,
+   "mark": "e",
+   "context": "B"
+  },
+  {
+   "page": 17,
+   "mark": "e",
+   "context": "A"
+  },
+  {
+   "page": 17,
+   "mark": "†",
+   "context": "AeV ΦA + Φ"
+  },
+  {
+   "page": 17,
+   "mark": "†",
+   "context": "Φ"
+  },
+  {
+   "page": 17,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 17,
+   "mark": "†",
+   "context": "M"
+  },
+  {
+   "page": 17,
+   "mark": "†",
+   "context": "M†eUM+ (Tp)"
+  },
+  {
+   "page": 17,
+   "mark": "†",
+   "context": "M†eUM+ (Tp)†eWTp + (Tm)"
+  },
+  {
+   "page": 17,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 17,
+   "mark": "†",
+   "context": "Φ"
+  },
+  {
+   "page": 17,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 17,
+   "mark": "†",
+   "context": "Φ"
+  },
+  {
+   "page": 17,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "Example :N= S"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "π1(S"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "∂(S"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "= π1(T"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "= π1(T2) = Z × Z = ⟨µ, ν⟩⊂π1(S"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "∂(S"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "→π1(S"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": ":S"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "Figure3.Thesimplestidealtriangulationofm004 = S"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "2+ 2Z"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "1+ 2Z"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "D[S"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "1, z"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "2:"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "i−1 = 0,"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "i−1 = 0,z"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "i−1 = 0,zi"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "i"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "i= −1,"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "1)"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "1)2"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "2"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "2z"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "2= 1}i=1,"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "complement.Theholonomymatricesalongthebasis(α, β, γ)ofπ1(S"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "1"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "1"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "1"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "1"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "1"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "e"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "e"
+  },
+  {
+   "page": 19,
+   "mark": "g",
+   "context": "Km004"
+  },
+  {
+   "page": 19,
+   "mark": "s",
+   "context": "whichcanbedecomposedintogm004= g"
+  },
+  {
+   "page": 19,
+   "mark": "g",
+   "context": "Jm004"
+  },
+  {
+   "page": 19,
+   "mark": "t",
+   "context": "Jm004g"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "LTstep1(V"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "LTstep1(V1, V"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "2Σ"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "2Σ1V"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 20,
+   "mark": "†",
+   "context": "d4θ(Φ"
+  },
+  {
+   "page": 20,
+   "mark": "e",
+   "context": "1"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "1eV"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "1eV1Φ"
+  },
+  {
+   "page": 20,
+   "mark": "†",
+   "context": "1eV1Φ1 + Φ"
+  },
+  {
+   "page": 20,
+   "mark": "e",
+   "context": "2"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "2eV"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "2eV2Φ"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "2Σ"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "2Σ2V"
+  },
+  {
+   "page": 20,
+   "mark": "e",
+   "context": "1"
+  },
+  {
+   "page": 20,
+   "mark": "e",
+   "context": "2"
+  },
+  {
+   "page": 20,
+   "mark": "†",
+   "context": "Φ"
+  },
+  {
+   "page": 20,
+   "mark": "†",
+   "context": "2Φ1 + Φ"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "Example:N= S"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 20,
+   "mark": "†",
+   "context": "d4θ(Φ"
+  },
+  {
+   "page": 20,
+   "mark": "†",
+   "context": "XΦX+ Φ"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "1:= C"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "1:= C3+ C"
+  },
+  {
+   "page": 21,
+   "mark": "5",
+   "context": "1:= C3+ C4+ 2C"
+  },
+  {
+   "page": 21,
+   "mark": "6",
+   "context": "1:= C3+ C4+ 2C5−C"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "2:= C"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "2:= C1+ C"
+  },
+  {
+   "page": 21,
+   "mark": "5",
+   "context": "2:= C1+ C2−C"
+  },
+  {
+   "page": 21,
+   "mark": "6",
+   "context": "2:= C1+ C2−C5+ 2C"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "Mparameter(TDGG[N, XA]onR"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "Mparameter(TDGG[N, XA]onR2× S"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "Mparameter(TDGG[N, XA]onR"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "Mparameter(TDGG[N, XA]onR2× S"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "ﬁeldintheS"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "thebackgroundﬂavorgaugeﬁeldaroundS"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "ﬁeldsofthetheoryonR"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "ﬁeldsofthetheoryonR2× S"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "Mparameter(TDGG[N, XA]onR"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "Mparameter(TDGG[N, XA]onR2× S"
+  },
+  {
+   "page": 21,
+   "mark": "k",
+   "context": "∂Σ"
+  },
+  {
+   "page": 21,
+   "mark": "f",
+   "context": "∂Σk"
+  },
+  {
+   "page": 21,
+   "mark": "f",
+   "context": "= 1, ∂XA"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "= 1arejusttheconditionforthevacuaonS"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "∂Σ"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "∂Σk"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "R"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "XA.Inotherwords,theequation∂XA"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "TDGGtheoryonacurvedbackgroundcalledsquashed3-sphere(S"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "dσ"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "dσ1 . . . dσNVI"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "dσ1 . . . dσNVIb({σ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "bbecomeR"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "bbecomeR2 × S"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "whereS"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "2πib"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "2πib2"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "Theequations{exp(∂Σ"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "Theequations{exp(∂Σi"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "anadditionalrelatione"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "anadditionalrelationea=(−1)ϵ Qzα"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "Mvacua(TDGG[N, XA]onR"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "Mvacua(TDGG[N, XA]onR2× S"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "=Mparameter(TDGG[N, XA]onR"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "=Mparameter(TDGG[N, XA]onR2× S"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "twistedsuperpotential"
+  },
+  {
+   "page": 22,
+   "mark": "d",
+   "context": "and Sec. 2.2.Comparing the moduli space of T6"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "Mvacua(TDGG[N, XA]onR"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "Mvacua(TDGG[N, XA]onR2× S"
+  },
+  {
+   "page": 22,
+   "mark": "d",
+   "context": "Mvacua(TDGG[N, XA]onR2× S1) ⊂Mvacua(T6"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "Mvacua(TDGG[N, XA]onR2× S1) ⊂Mvacua(T6d[N, A]onR"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "Mvacua(TDGG[N, XA]onR2× S1) ⊂Mvacua(T6d[N, A]onR2× S"
+  },
+  {
+   "page": 22,
+   "mark": "d",
+   "context": "nsonNasemphasizedin[20].SoweseethatTDGGcannotbeidenticaltoT6"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": "canonlycaptureasubsectorofT6"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": "e3dtheorywhichdescribesallcomponentsofmodulispaceofvacuaofT6"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": "vacuaofT6"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": "ThenapossibilityisthatTDGGmightbeidentiﬁedwithT6"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": "ﬂavorsymmetryassociatedtotheknotwhileT6"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": "ﬂavorsymmetryassociatedtotheknotwhileT6dandhenceT6"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": "usingthesu(2)symmetryandT[SU(2)]theoryonT6"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": "The su(2) SL(2, Z) on T6"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": "2, Z) on T6dis deﬁned as follows.The transformed theory ϕ·T6"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": "T6d[N, rA + sB; pA + qB] = ϕ · T6"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": ":= couplingthedualitywalltheoryT[SU(2), ϕ]toT6"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": "T[SU(2), ϕ] and T6"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": "holomorphic moment map operator associated to thesu(2)Aof T6"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": "MotivatedbythesimilaritiesanddiﬀerencesbetweenT6"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "deformedbyδW= µ"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": "−−−−−−−−−−−−−−−→T6"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "Here,µ"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "Here,µ3istheCartancomponentofthemomentmapoperatorµ={µ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "Here,µ3istheCartancomponentofthemomentmapoperatorµ={µ1, µ"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "ere,µ3istheCartancomponentofthemomentmapoperatorµ={µ1, µ2, µ"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "adjointrepresentationofsu(2)A.TheδW=µ"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "thechiraloperatorµ"
+  },
+  {
+   "page": 24,
+   "mark": "6",
+   "context": "ThusweneedtwostepsfromT"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "ThusweneedtwostepsfromT6"
+  },
+  {
+   "page": 24,
+   "mark": "6",
+   "context": "vacuum,PSCFT,oftheT"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "vacuum,PSCFT,oftheT6"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "vacuum,PSCFT,oftheT6dtheoryonR"
+  },
+  {
+   "page": 24,
+   "mark": "6",
+   "context": "wedeformtheintermediatetheory,T"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "wedeformtheintermediatetheory,T6"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "irred,byaddingtheCartancomponent(µ"
+  },
+  {
+   "page": 24,
+   "mark": "6",
+   "context": "ydependingonthetheory.However,generically(butnotalways),theT"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "dependingonthetheory.However,generically(butnotalways),theT6"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "ST"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "Chern-Simons levelk(+theoriginalvaluebeforeT"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "Therefore,thedeformationbyµ"
+  },
+  {
+   "page": 24,
+   "mark": "6",
+   "context": "Inparticular,thedeformationbreaksthesu(2)AinT"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "Inparticular,thedeformationbreaksthesu(2)AinT6"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "δW=µ"
+  },
+  {
+   "page": 24,
+   "mark": "6",
+   "context": "su(2)AofT"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "su(2)AofT6"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "theknot,butalsowhytheSL(2, Z)actionontheboundaryT"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "δW=µ"
+  },
+  {
+   "page": 24,
+   "mark": "6",
+   "context": "T"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "δW=µ"
+  },
+  {
+   "page": 24,
+   "mark": "6",
+   "context": "T"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 25,
+   "mark": "b",
+   "context": "(a,"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "3A"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "(2.92)and(2.93)undertheexplicitbreakingsu(2)A→U(1)XAbyW=µ"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "chiralﬁelds(E"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "W= φ˜EiE"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "The su(2)Hacts on the index i of (E"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "ation.See Appendix B for more details.The Cartan component µ"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "map operator of this symmetry su(2)Cis given by µ"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "byµ"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "W= φ˜EiE"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "Thus,anF-termconditionis˜EiE"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "Thus,anF-termconditionis˜EiEi= 1.Then˜EiandE"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "Namely,(E"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "u(1)⊂u(2)whichactson(E"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "d SU(3) symmetry.Using the argument, we prove that TDGG[M= S"
+  },
+  {
+   "page": 27,
+   "mark": "6",
+   "context": "From the relation between T"
+  },
+  {
+   "page": 27,
+   "mark": "d",
+   "context": "From the relation between T6"
+  },
+  {
+   "page": 27,
+   "mark": "6",
+   "context": "momentmapoperatorµinT"
+  },
+  {
+   "page": 27,
+   "mark": "d",
+   "context": "momentmapoperatorµinT6"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "momentmapofT[SU(2)]theorywhichisputalongaknotK.AfterS"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "irredtheory on R"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "irredtheory on R2×S"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "s not contain µ if there is no PSL(2, C) ﬂat-connection in χ"
+  },
+  {
+   "page": 28,
+   "mark": "6",
+   "context": "T"
+  },
+  {
+   "page": 28,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "irred[N, A]onR"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "irred[N, A]onR2 × S"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "irred[N, A]onR2 × S1foranyradiusofS"
+  },
+  {
+   "page": 28,
+   "mark": "6",
+   "context": "⇒µisabsentinT"
+  },
+  {
+   "page": 28,
+   "mark": "d",
+   "context": "⇒µisabsentinT6"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "irred[N, A]onR"
+  },
+  {
+   "page": 28,
+   "mark": "6",
+   "context": "⇒µisabsentinT"
+  },
+  {
+   "page": 28,
+   "mark": "d",
+   "context": "⇒µisabsentinT6"
+  },
+  {
+   "page": 28,
+   "mark": "6",
+   "context": "⇒TDGG[N, XA] = T"
+  },
+  {
+   "page": 28,
+   "mark": "d",
+   "context": "⇒TDGG[N, XA] = T6"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "Strictlyspeaking,thestepfromR"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "Strictlyspeaking,thestepfromR2× S"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "Strictlyspeaking,thestepfromR2× S1toR"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 29,
+   "mark": "6",
+   "context": "cycle,weexpectthattheresulting3dtheoryT"
+  },
+  {
+   "page": 29,
+   "mark": "d",
+   "context": "cycle,weexpectthattheresulting3dtheoryT6"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "irred[M, K]willbe"
+  },
+  {
+   "page": 29,
+   "mark": "6",
+   "context": "tiononT"
+  },
+  {
+   "page": 29,
+   "mark": "d",
+   "context": "tiononT6"
+  },
+  {
+   "page": 29,
+   "mark": "6",
+   "context": "computes the superconformal index of the theory T"
+  },
+  {
+   "page": 29,
+   "mark": "d",
+   "context": "computes the superconformal index of the theory T6"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "exceptforexoticcases.Asanexample,seeTable2forthecasewhenN= S"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "Table2.ClosabilityofboundarycyclesofN= S"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "Example:N=S"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "Example:N= (S"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "Example:N= (S3\\5"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "1)"
+  },
+  {
+   "page": 30,
+   "mark": "007",
+   "context": "1)3µ1−2λ1= m"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "1)3µ1−2λ1= m007andA = µ"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "linkisdenotedby5"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "1,the1stlinkwith"
+  },
+  {
+   "page": 30,
+   "mark": "5",
+   "context": "1,the1stlinkwith2componentsand"
+  },
+  {
+   "page": 30,
+   "mark": "4",
+   "context": "1,the1stlinkwith2componentsand5crossings,asshowninFig."
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "Theorientationofthelinkcomplement(S"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "Theorientationofthelinkcomplement(S3\\5"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "Whiteheadlink(5"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "TheoverlineintheequationN=(S"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "TheoverlineintheequationN=(S3\\5"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "1)"
+  },
+  {
+   "page": 31,
+   "mark": "007",
+   "context": "1)3µ1−2λ1meansthatN=m"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "orientation to the one induced from S"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "orientation to the one induced from S3\\5"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "ofH1(∂N, Z)=⟨µ2, λ2⟩onNfromthebasischoiceofH1(∂(S"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "ofH1(∂N, Z)=⟨µ2, λ2⟩onNfromthebasischoiceofH1(∂(S3\\5"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "1), Z)=⟨µ"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "1), Z)=⟨µ1, µ"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "1), Z)=⟨µ1, µ2, λ"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "1), Z)=⟨µ1, µ2, λ1, λ"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "NA= (S"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "NA= (S3\\5"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "1)"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "1)3µ1−2λ1,µ2= (S"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "1)3µ1−2λ1,µ2= (S3\\(unknot))"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "Table 1, we expect the u(1)Xµ2in TDGG[m007, Xµ"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "2+ Z"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "aµ2= −Z"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "1−Z"
+  },
+  {
+   "page": 31,
+   "mark": "4",
+   "context": "b"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "b4µ2−λ2= 2(−iπ + Z"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "b4µ2−λ2= 2(−iπ + Z1 + Z"
+  },
+  {
+   "page": 31,
+   "mark": "4",
+   "context": "P"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "2"
+  },
+  {
+   "page": 31,
+   "mark": "4",
+   "context": "2b"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "2b4µ"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "2b4µ2−λ"
+  },
+  {
+   "page": 32,
+   "mark": "g",
+   "context": "Km007"
+  },
+  {
+   "page": 32,
+   "mark": "s",
+   "context": "Thematrixcanbedecomposedintogm007= g"
+  },
+  {
+   "page": 32,
+   "mark": "g",
+   "context": "Jm007"
+  },
+  {
+   "page": 32,
+   "mark": "t",
+   "context": "Jm007g"
+  },
+  {
+   "page": 32,
+   "mark": "007",
+   "context": "LT DGG[m"
+  },
+  {
+   "page": 32,
+   "mark": "4",
+   "context": "LT DGG[m007,Xµ2;P"
+  },
+  {
+   "page": 32,
+   "mark": "†",
+   "context": "Φ"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "1"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "1eV"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "1eV1−V"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "1eV1−V2Φ"
+  },
+  {
+   "page": 32,
+   "mark": "†",
+   "context": "1eV1−V2Φ1 + Φ"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "2"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2eV"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2eV2Φ"
+  },
+  {
+   "page": 32,
+   "mark": "†",
+   "context": "2eV2Φ2 + Φ"
+  },
+  {
+   "page": 32,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "3"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "3e−V"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "3e−V1−V"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "3e−V1−V2Φ"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2Σ"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2Σ2V"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "2Σ2V2 + 2VXΣ"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2Σ2V2 + 2VXΣ1 + 2VCΣ"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "d2θΦ1Φ"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "2Φ"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "termcomesfromaneasyinternaledgeC"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "termcomesfromaneasyinternaledgeC1,OC1=Φ"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "termcomesfromaneasyinternaledgeC1,OC1=Φ1Φ"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "2Φ"
+  },
+  {
+   "page": 32,
+   "mark": "u",
+   "context": "2Φ3.Thetheoryhas"
+  },
+  {
+   "page": 32,
+   "mark": "007",
+   "context": "LT DGG[m"
+  },
+  {
+   "page": 32,
+   "mark": "4",
+   "context": "LT DGG[m007,Xµ2;P"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2Σ"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2Σ2V"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2Σ2V2 + 2VCΣ"
+  },
+  {
+   "page": 32,
+   "mark": "†",
+   "context": "2Σ2V2 + 2VCΣ2 + Φ"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "2"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2eV"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2eV2Φ"
+  },
+  {
+   "page": 32,
+   "mark": "p",
+   "context": "2eV2Φ2 + (T"
+  },
+  {
+   "page": 32,
+   "mark": "†",
+   "context": "2eV2Φ2 + (Tp)"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2eV2Φ2 + (Tp)†eVX+V"
+  },
+  {
+   "page": 32,
+   "mark": "p",
+   "context": "2eV2Φ2 + (Tp)†eVX+V2T"
+  },
+  {
+   "page": 32,
+   "mark": "m",
+   "context": "2eV2Φ2 + (Tp)†eVX+V2Tp + (T"
+  },
+  {
+   "page": 32,
+   "mark": "†",
+   "context": "2eV2Φ2 + (Tp)†eVX+V2Tp + (Tm)"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2eV2Φ2 + (Tp)†eVX+V2Tp + (Tm)†e−VX+V"
+  },
+  {
+   "page": 32,
+   "mark": "p",
+   "context": "2eV2Φ2 + (Tp)†eVX+V2Tp + (Tm)†e−VX+V2T"
+  },
+  {
+   "page": 32,
+   "mark": "†",
+   "context": "2eV2Φ2 + (Tp)†eVX+V2Tp + (Tm)†e−VX+V2Tp + M"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2eV2Φ2 + (Tp)†eVX+V2Tp + (Tm)†e−VX+V2Tp + M†e−2V"
+  },
+  {
+   "page": 32,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2Φ"
+  },
+  {
+   "page": 32,
+   "mark": "m",
+   "context": "2+ T"
+  },
+  {
+   "page": 32,
+   "mark": "p",
+   "context": "2+ TmT"
+  },
+  {
+   "page": 32,
+   "mark": "m",
+   "context": "2(T"
+  },
+  {
+   "page": 32,
+   "mark": "p",
+   "context": "2(Tm + T"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "2(Tm + Tp), φ"
+  },
+  {
+   "page": 32,
+   "mark": "m",
+   "context": "2(T"
+  },
+  {
+   "page": 32,
+   "mark": "p",
+   "context": "2(Tm −T"
+  },
+  {
+   "page": 32,
+   "mark": "m",
+   "context": "2+ T"
+  },
+  {
+   "page": 32,
+   "mark": "p",
+   "context": "2+ TmT"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2Φ"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2M(φ"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "1+ φ"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2+ φ"
+  },
+  {
+   "page": 33,
+   "mark": "3",
+   "context": "N= (S"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "N= (S3\\5"
+  },
+  {
+   "page": 33,
+   "mark": "3",
+   "context": "N′= (S"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "N′= (S3\\5"
+  },
+  {
+   "page": 33,
+   "mark": "k",
+   "context": "1)(4"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "andL(4k−1, −k)=(N′)µ2respectively.Applying(3.9)withµ=µ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "ndL(4k−1, −k)=(N′)µ2respectively.Applying(3.9)withµ=µ2andλ=λ"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "Figure5.Arationalsurgerycalculus[41]showsthat(S"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Figure5.Arationalsurgerycalculus[41]showsthat(S3\\5"
+  },
+  {
+   "page": 34,
+   "mark": "a",
+   "context": "1)µ2+kλ2is"
+  },
+  {
+   "page": 34,
+   "mark": "k",
+   "context": "1)µ2+kλ2isatwistknotK"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "3.19).CombiningtheD8-symmetry(A.27)oftheWhiteheadlinkindexI5"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "I(−λ1,µ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "I(−λ1,µ2;µ1,"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "I(−λ1,µ2;µ1,2µ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "I(−λ1,µ2;µ1,2µ2+λ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(m1, m2, e1, e2; x) = I5"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1(e1, m"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1(e1, m2, −m1, e"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1(e1, m2, −m1, e2 −m"
+  },
+  {
+   "page": 34,
+   "mark": "x",
+   "context": "1(e1, m2, −m1, e2 −m2;"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "S3\\5"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "I(4µ1−λ1,"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "I(4µ1−λ1,2µ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "I(4µ1−λ1,2µ2−λ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "I(4µ1−λ1,2µ2−λ2;µ1,λ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "I(4µ1−λ1,2µ2−λ2;µ1,λ2−µ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(m1, m2, e1, e2) = I5"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1(e1,"
+  },
+  {
+   "page": 34,
+   "mark": "m",
+   "context": "1(e1, 2"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1(e1, 2m"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1(e1, 2m2 + e"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1(e1, 2m2 + e2,"
+  },
+  {
+   "page": 34,
+   "mark": "e",
+   "context": "1(e1, 2m2 + e2, 2"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1(e1, 2m2 + e2, 2e1 −m1, m"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1(e1, 2m2 + e2, 2e1 −m1, m2 + e"
+  },
+  {
+   "page": 34,
+   "mark": "x",
+   "context": "1(e1, 2m2 + e2, 2e1 −m1, m2 + e2;"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "S3\\5"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "I(−λ1,µ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "I(−λ1,µ2;µ1,"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "I(−λ1,µ2;µ1,2µ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "I(−λ1,µ2;µ1,2µ2+λ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(m1, m2, e1, e2; x) = I(4µ1−λ1,"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(m1, m2, e1, e2; x) = I(4µ1−λ1,2µ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(m1, m2, e1, e2; x) = I(4µ1−λ1,2µ2−λ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(m1, m2, e1, e2; x) = I(4µ1−λ1,2µ2−λ2;µ1,λ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(m1, m2, e1, e2; x) = I(4µ1−λ1,2µ2−λ2;µ1,λ2−µ"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "S3\\5"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "S3\\5"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "I(µ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "I(µ2;2µ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "I(µ2;2µ2+λ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1)µ1+kλ1(m"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1)µ1+kλ1(m2, e"
+  },
+  {
+   "page": 34,
+   "mark": "x",
+   "context": "1)µ1+kλ1(m2, e2;"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1)µ1+kλ1(m2, e2; x) = I(2µ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1)µ1+kλ1(m2, e2; x) = I(2µ2−λ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1)µ1+kλ1(m2, e2; x) = I(2µ2−λ2;λ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1)µ1+kλ1(m2, e2; x) = I(2µ2−λ2;λ2−µ"
+  },
+  {
+   "page": 34,
+   "mark": "k",
+   "context": "1)(4"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1)(4k+1)µ1−kλ1(m"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1)(4k+1)µ1−kλ1(m2, −e"
+  },
+  {
+   "page": 34,
+   "mark": "x",
+   "context": "1)(4k+1)µ1−kλ1(m2, −e2;"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "(S"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(S3\\5"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "(S"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(S3\\5"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "⇒I(µ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "⇒I(µ2;2µ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "⇒I(µ2;2µ2+λ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1)µ1+kλ1(m"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1)µ1+kλ1(m2, e"
+  },
+  {
+   "page": 34,
+   "mark": "x",
+   "context": "1)µ1+kλ1(m2, e2;"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1)µ1+kλ1(m2, e2; x) = I(2µ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1)µ1+kλ1(m2, e2; x) = I(2µ2−λ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1)µ1+kλ1(m2, e2; x) = I(2µ2−λ2;µ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1)µ1+kλ1(m2, e2; x) = I(2µ2−λ2;µ2−λ"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "(S"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(S3\\5"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "(S"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(S3\\5"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "(S"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "(S3\\5"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "1)µ1+λ1= (S"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "1)µ1+λ1= (S3\\4"
+  },
+  {
+   "page": 35,
+   "mark": "004",
+   "context": "1)µ1+λ1= (S3\\41) = m"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "(S"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "(S3\\5"
+  },
+  {
+   "page": 35,
+   "mark": "5",
+   "context": "1)"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "1)5µ1−λ1= (SisterofS"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "1)5µ1−λ1= (SisterofS3\\4"
+  },
+  {
+   "page": 35,
+   "mark": "003",
+   "context": "1)5µ1−λ1= (SisterofS3\\41) = m"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "m004issameastheorientationinducedfromaDehnﬁllingonS"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "m004issameastheorientationinducedfromaDehnﬁllingonS3\\5"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "bλ2+2µ2= 4Z"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "aµ2= Z"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "aµ2= Z1 −Z"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "1−2Z"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "bµ2−λ2= 2Z"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "a2µ2−λ2= 2Z"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "a2µ2−λ2= 2Z1 −2Z"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "1−Z"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "P"
+  },
+  {
+   "page": 35,
+   "mark": "b",
+   "context": "2"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "2b"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "2b2µ"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "2b2µ2+λ"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "X"
+  },
+  {
+   "page": 35,
+   "mark": "a",
+   "context": "2"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "2a"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "2a2µ"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "2a2µ2−λ"
+  },
+  {
+   "page": 35,
+   "mark": "004",
+   "context": "LT DGG[m"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "LT DGG[m004,Xµ2;P"
+  },
+  {
+   "page": 35,
+   "mark": "003",
+   "context": "LT DGG[m004,Xµ2;P2µ2+λ2](VX, VC) = LT DGG[m"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "LT DGG[m004,Xµ2;P2µ2+λ2](VX, VC) = LT DGG[m003,X"
+  },
+  {
+   "page": 35,
+   "mark": "e",
+   "context": "1"
+  },
+  {
+   "page": 35,
+   "mark": "e",
+   "context": "2"
+  },
+  {
+   "page": 35,
+   "mark": "†",
+   "context": "Φ"
+  },
+  {
+   "page": 35,
+   "mark": "†",
+   "context": "2Φ1 + Φ"
+  },
+  {
+   "page": 35,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 35,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 36,
+   "mark": "8",
+   "context": "2T"
+  },
+  {
+   "page": 36,
+   "mark": "3",
+   "context": "2T8 + T"
+  },
+  {
+   "page": 36,
+   "mark": "e",
+   "context": "2 )"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "2 )e"
+  },
+  {
+   "page": 36,
+   "mark": "e",
+   "context": "2 )e2I∆(−e2, −e1 + 2e2; x)I∆(−e2, e1 −e2; x)u"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "2 )e2I∆(−e2, −e1 + 2e2; x)I∆(−e2, e1 −e2; x)ue"
+  },
+  {
+   "page": 36,
+   "mark": "u",
+   "context": "1"
+  },
+  {
+   "page": 36,
+   "mark": "e",
+   "context": "1u"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "1ue"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "(e1,e2)∈Z"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "Im003/m004(u1, u2; x) = 1 −(χ1,1)x −(χ0,0 + χ1,1)x"
+  },
+  {
+   "page": 36,
+   "mark": "3",
+   "context": "1, u2; x) = 1 −(χ1,1)x −(χ0,0 + χ1,1)x2+ (χ2,2 −χ0,0 −χ1,1)x"
+  },
+  {
+   "page": 36,
+   "mark": "4",
+   "context": "+ (χ3,0 + χ2,2 + χ0,3 −χ0,0)x"
+  },
+  {
+   "page": 36,
+   "mark": "5",
+   "context": "(χ3,0 + χ2,2 + χ0,3 −χ0,0)x4+ (χ0,3 + 2χ1,1 + 2χ2,2 + χ3,0)x"
+  },
+  {
+   "page": 37,
+   "mark": "b",
+   "context": "+)"
+  },
+  {
+   "page": 37,
+   "mark": "x",
+   "context": "u1)"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "−(u1u2 + u"
+  },
+  {
+   "page": 37,
+   "mark": "u",
+   "context": "1"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "1u"
+  },
+  {
+   "page": 37,
+   "mark": "x",
+   "context": "1u2)"
+  },
+  {
+   "page": 37,
+   "mark": "u",
+   "context": "1"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "1u"
+  },
+  {
+   "page": 37,
+   "mark": "u",
+   "context": "u1"
+  },
+  {
+   "page": 37,
+   "mark": "x",
+   "context": "u1u2)"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "u"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "(R, j3, ∆)=(1,"
+  },
+  {
+   "page": 37,
+   "mark": "3",
+   "context": "2,"
+  },
+  {
+   "page": 37,
+   "mark": "j",
+   "context": "∆where"
+  },
+  {
+   "page": 37,
+   "mark": "3",
+   "context": "(S"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "(S3\\5"
+  },
+  {
+   "page": 37,
+   "mark": "3",
+   "context": "1)µ1−2λ1= S"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "1)µ1−2λ1= S3\\5"
+  },
+  {
+   "page": 37,
+   "mark": "3",
+   "context": "(S"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "(S3\\5"
+  },
+  {
+   "page": 37,
+   "mark": "017",
+   "context": "1)−7µ1+2λ1= m"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "1+ 2Z"
+  },
+  {
+   "page": 37,
+   "mark": "3",
+   "context": "2+ Z"
+  },
+  {
+   "page": 37,
+   "mark": "3",
+   "context": "2+ Z"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "b−2µ2−λ2= 2(2Z"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "1−2Z"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "aµ2= −Z"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "aµ2= −Z1 + Z"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "bλ2−µ2= 2Z"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "1−2Z"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "a2µ2−λ2= −2Z"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "a2µ2−λ2= −2Z1 + 2Z"
+  },
+  {
+   "page": 37,
+   "mark": "b",
+   "context": "2"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "2b−2µ"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "2b−2µ2−λ"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "X"
+  },
+  {
+   "page": 37,
+   "mark": "a",
+   "context": "2"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "2a"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "2a2µ"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "2a2µ2−λ"
+  },
+  {
+   "page": 38,
+   "mark": "g",
+   "context": "Km015"
+  },
+  {
+   "page": 38,
+   "mark": "s",
+   "context": "Thematrixgm015/m017canbedecomposedintogm015/m017= g"
+  },
+  {
+   "page": 38,
+   "mark": "g",
+   "context": "Jm015"
+  },
+  {
+   "page": 38,
+   "mark": "t",
+   "context": "Jm015g"
+  },
+  {
+   "page": 38,
+   "mark": "015",
+   "context": "LT DGG[m"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "LT DGG[m015,Xµ2;P−2µ2−λ2](VX, VC"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "LT DGG[m015,Xµ2;P−2µ2−λ2](VX, VC1, VC"
+  },
+  {
+   "page": 38,
+   "mark": "017",
+   "context": "LT DGG[m015,Xµ2;P−2µ2−λ2](VX, VC1, VC2) = LT DGG[m"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "LT DGG[m015,Xµ2;P−2µ2−λ2](VX, VC1, VC2) = LT DGG[m017,X"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "P−2µ2−λ2](VX, VC1, VC2) = LT DGG[m017,X2µ2−λ2;Pλ2−µ2](VX, VC"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "−λ2](VX, VC1, VC2) = LT DGG[m017,X2µ2−λ2;Pλ2−µ2](VX, VC1, VC"
+  },
+  {
+   "page": 38,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "2(ΣC"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "2(ΣC1−Σ)(VC"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "2(ΣC1−Σ)(VC1−V ) + 2ΣVC"
+  },
+  {
+   "page": 38,
+   "mark": "e",
+   "context": "2"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "2eV Φ"
+  },
+  {
+   "page": 38,
+   "mark": "†",
+   "context": "2eV Φ2 + Φ"
+  },
+  {
+   "page": 38,
+   "mark": "†",
+   "context": "Φ"
+  },
+  {
+   "page": 38,
+   "mark": "e",
+   "context": "1"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "1eV −VXΦ"
+  },
+  {
+   "page": 38,
+   "mark": "†",
+   "context": "1eV −VXΦ1 + Φ"
+  },
+  {
+   "page": 38,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 38,
+   "mark": "e",
+   "context": "3"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "3eV +VX−VC"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "3eV +VX−VC1Φ"
+  },
+  {
+   "page": 38,
+   "mark": "6",
+   "context": "Inthissection,wegeneralizetheDGG’sconstructiontoobtainT"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "Inthissection,wegeneralizetheDGG’sconstructiontoobtainT6"
+  },
+  {
+   "page": 38,
+   "mark": "6",
+   "context": "of3dtheory,whichwewilldenoteT"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "of3dtheory,whichwewilldenoteT6"
+  },
+  {
+   "page": 38,
+   "mark": "c",
+   "context": "(irred)"
+  },
+  {
+   "page": 39,
+   "mark": "6",
+   "context": "DehnﬁllingonT"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "DehnﬁllingonT6"
+  },
+  {
+   "page": 39,
+   "mark": "6",
+   "context": "T"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 39,
+   "mark": "a",
+   "context": "irred[NpA+qB] = (Giving"
+  },
+  {
+   "page": 39,
+   "mark": "6",
+   "context": "irred[NpA+qB] = (GivinganilpotentvevtoµofT"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "irred[NpA+qB] = (GivinganilpotentvevtoµofT 6"
+  },
+  {
+   "page": 39,
+   "mark": "6",
+   "context": "T"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 39,
+   "mark": "6",
+   "context": "Table 3.Basic property of T"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "Table 3.Basic property of T6"
+  },
+  {
+   "page": 39,
+   "mark": "6",
+   "context": "ThetheoryT"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "ThetheoryT6"
+  },
+  {
+   "page": 39,
+   "mark": "6",
+   "context": "irred[N, pA + B]isrelatedtothetheoryT"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "irred[N, pA + B]isrelatedtothetheoryT 6"
+  },
+  {
+   "page": 39,
+   "mark": "p",
+   "context": "ST"
+  },
+  {
+   "page": 39,
+   "mark": "6",
+   "context": "T"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 39,
+   "mark": "6",
+   "context": "irred[N, pA + B] = T"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "irred[N, pA + B] = T 6"
+  },
+  {
+   "page": 39,
+   "mark": "p",
+   "context": "irred[N, A; B] −su(2)"
+  },
+  {
+   "page": 39,
+   "mark": "6",
+   "context": "where su(2)pisgaugingthesu(2) symmetry ofT"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "where su(2)pisgaugingthesu(2) symmetry ofT6"
+  },
+  {
+   "page": 39,
+   "mark": "6",
+   "context": "meansthecontributionofT"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "meansthecontributionofT6"
+  },
+  {
+   "page": 39,
+   "mark": "6",
+   "context": "whywearewritingBexplicitlyinthenotationT"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "whywearewritingBexplicitlyinthenotationT6"
+  },
+  {
+   "page": 39,
+   "mark": "6",
+   "context": "T"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 39,
+   "mark": "6",
+   "context": "irred[NpA+B] = (Gaugingsu(2)ofT"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "irred[NpA+B] = (Gaugingsu(2)ofT 6"
+  },
+  {
+   "page": 39,
+   "mark": "p",
+   "context": "irred[N, A; B]withadditionalCSlevel"
+  },
+  {
+   "page": 39,
+   "mark": "6",
+   "context": "wherewehaveassumedthatAisnon-closableandhenceT"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "wherewehaveassumedthatAisnon-closableandhenceT6"
+  },
+  {
+   "page": 40,
+   "mark": "6",
+   "context": "T"
+  },
+  {
+   "page": 40,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 40,
+   "mark": "3",
+   "context": "irred[(m003)p(2µ2−λ2)+(µ2−λ2)= (S"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "irred[(m003)p(2µ2−λ2)+(µ2−λ2)= (S3\\5"
+  },
+  {
+   "page": 40,
+   "mark": "5",
+   "context": "1)"
+  },
+  {
+   "page": 40,
+   "mark": "p",
+   "context": "1)5µ1−λ1,"
+  },
+  {
+   "page": 40,
+   "mark": "u",
+   "context": "=A"
+  },
+  {
+   "page": 40,
+   "mark": "0",
+   "context": "=Au(1)"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "=Au(1)0vectorcoupledto"
+  },
+  {
+   "page": 40,
+   "mark": "6",
+   "context": "T"
+  },
+  {
+   "page": 40,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 40,
+   "mark": "3",
+   "context": "irred[(m004)pµ2+(λ2+2µ2)= (S"
+  },
+  {
+   "page": 40,
+   "mark": "u",
+   "context": "=A"
+  },
+  {
+   "page": 40,
+   "mark": "0",
+   "context": "=Au(1)"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "=Au(1)0vectorcoupledto"
+  },
+  {
+   "page": 40,
+   "mark": "6",
+   "context": "T"
+  },
+  {
+   "page": 40,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 40,
+   "mark": "3",
+   "context": "irred[(m015)pµ2+(−2µ2−λ2)= (S"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "irred[(m015)pµ2+(−2µ2−λ2)= (S3\\5"
+  },
+  {
+   "page": 40,
+   "mark": "u",
+   "context": "=A"
+  },
+  {
+   "page": 40,
+   "mark": "3",
+   "context": "=Au(1)−1/2vectorcoupledto"
+  },
+  {
+   "page": 40,
+   "mark": "u",
+   "context": "theSU(2)(resp.SO(3))inawaythat2su(2)=(±1)"
+  },
+  {
+   "page": 40,
+   "mark": "u",
+   "context": "2)"
+  },
+  {
+   "page": 40,
+   "mark": "6",
+   "context": "operation ﬁlps the signs of CS levels of the T"
+  },
+  {
+   "page": 40,
+   "mark": "d",
+   "context": "operation ﬁlps the signs of CS levels of the T6"
+  },
+  {
+   "page": 40,
+   "mark": "6",
+   "context": "T"
+  },
+  {
+   "page": 40,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 40,
+   "mark": "3",
+   "context": "irred[(S"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "irred[(S3\\5"
+  },
+  {
+   "page": 40,
+   "mark": "u",
+   "context": "1)5µ1−λ1,p(2µ2−λ)+(µ2−λ2)] has"
+  },
+  {
+   "page": 40,
+   "mark": "6",
+   "context": "T"
+  },
+  {
+   "page": 40,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 40,
+   "mark": "3",
+   "context": "irred[(S"
+  },
+  {
+   "page": 40,
+   "mark": "6",
+   "context": "T"
+  },
+  {
+   "page": 40,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 40,
+   "mark": "3",
+   "context": "irred[(S"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "irred[(S3\\5"
+  },
+  {
+   "page": 40,
+   "mark": "u",
+   "context": "irred[(S3\\52)(p−2)µ+λ] has"
+  },
+  {
+   "page": 40,
+   "mark": "3",
+   "context": "(S"
+  },
+  {
+   "page": 40,
+   "mark": "3",
+   "context": "(S3\\41)−5µ+λ= (S"
+  },
+  {
+   "page": 40,
+   "mark": "6",
+   "context": "wecanconcludethatT"
+  },
+  {
+   "page": 40,
+   "mark": "d",
+   "context": "wecanconcludethatT6"
+  },
+  {
+   "page": 40,
+   "mark": "3",
+   "context": "irred[(S"
+  },
+  {
+   "page": 40,
+   "mark": "u",
+   "context": "irred[(S3\\41)(p+2)µ2+λ2]hasaccidental"
+  },
+  {
+   "page": 40,
+   "mark": "p",
+   "context": "irred[(S3\\41)(p+2)µ2+λ2]hasaccidentalu(1)symmetryfor"
+  },
+  {
+   "page": 41,
+   "mark": "3",
+   "context": "(S"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "(S3\\5"
+  },
+  {
+   "page": 41,
+   "mark": "5",
+   "context": "1)"
+  },
+  {
+   "page": 41,
+   "mark": "6",
+   "context": "T"
+  },
+  {
+   "page": 41,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 41,
+   "mark": "0",
+   "context": "irred[Weeks] = (TwochiralﬁeldscoupledtoU(1)"
+  },
+  {
+   "page": 43,
+   "mark": "6",
+   "context": "lefthandsideof(4.11)aftergaugingU(1)bkgispreciselythetheoryT"
+  },
+  {
+   "page": 43,
+   "mark": "d",
+   "context": "efthandsideof(4.11)aftergaugingU(1)bkgispreciselythetheoryT6"
+  },
+  {
+   "page": 43,
+   "mark": "6",
+   "context": "WeconcludethatthetheoryT"
+  },
+  {
+   "page": 43,
+   "mark": "d",
+   "context": "WeconcludethatthetheoryT6"
+  },
+  {
+   "page": 43,
+   "mark": "6",
+   "context": "T"
+  },
+  {
+   "page": 43,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 43,
+   "mark": "6",
+   "context": "by a duality.Inour constructionT"
+  },
+  {
+   "page": 43,
+   "mark": "d",
+   "context": "by a duality.Inour constructionT6"
+  },
+  {
+   "page": 43,
+   "mark": "3",
+   "context": "byperformingDehnsurgeryalongalinkLinS"
+  },
+  {
+   "page": 43,
+   "mark": "3",
+   "context": "M= (S"
+  },
+  {
+   "page": 43,
+   "mark": "p",
+   "context": "M= (S3\\L)"
+  },
+  {
+   "page": 43,
+   "mark": "6",
+   "context": "of Mgive diﬀerent gauge theory descriptions of T"
+  },
+  {
+   "page": 43,
+   "mark": "d",
+   "context": "of Mgive diﬀerent gauge theory descriptions of T6"
+  },
+  {
+   "page": 43,
+   "mark": "6",
+   "context": "dualities amongT"
+  },
+  {
+   "page": 43,
+   "mark": "d",
+   "context": "dualities amongT6"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": "omponentand1stcomponent.Right:Asequenceofbasicmovesshowing(S"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": "(S"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": "As depicted in ﬁgure 6,topologically(S"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": "As depicted in ﬁgure 6,topologically(S3\\41)−5µ+λ= (S"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": "irred[(S"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "irred[(S3\\4"
+  },
+  {
+   "page": 44,
+   "mark": "u",
+   "context": "irred[(S3\\41)−5µ+λ] =A"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "irred[(S3\\41)−5µ+λ] =Au(1)"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "irred[(S3\\41)−5µ+λ] =Au(1)0vectorcoupledto"
+  },
+  {
+   "page": 44,
+   "mark": "6",
+   "context": "T"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": "irred[(S"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "irred[(S3\\5"
+  },
+  {
+   "page": 44,
+   "mark": "5",
+   "context": "irred[(S3\\52)"
+  },
+  {
+   "page": 44,
+   "mark": "u",
+   "context": "irred[(S3\\52)5µ+λ] =A"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": "irred[(S3\\52)5µ+λ] =Au(1)−1/2vectorcoupledto"
+  },
+  {
+   "page": 44,
+   "mark": "6",
+   "context": "T"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "T6"
+  },
+  {
+   "page": 44,
+   "mark": "6",
+   "context": "The theory in the numerator of the ﬁrst line is the theory T"
+  },
+  {
+   "page": 44,
+   "mark": "d",
+   "context": "he theory in the numerator of the ﬁrst line is the theory T6"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": "irred[S"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "irred[S3\\4"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": "irred[S3\\41, µ] = T DGG[S"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "irred[S3\\41, µ] = T DGG[S3\\4"
+  },
+  {
+   "page": 45,
+   "mark": "6",
+   "context": "indexofT"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "indexofT6"
+  },
+  {
+   "page": 45,
+   "mark": "3",
+   "context": "2+j"
+  },
+  {
+   "page": 45,
+   "mark": "i",
+   "context": "Nγ)"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "Nγ)"
+  },
+  {
+   "page": 45,
+   "mark": "x",
+   "context": "Nγ)k+i;"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "(e2,...,ek)∈Z"
+  },
+  {
+   "page": 45,
+   "mark": "r",
+   "context": "1 −x"
+  },
+  {
+   "page": 45,
+   "mark": "e",
+   "context": "I∆(m, e; x)u"
+  },
+  {
+   "page": 45,
+   "mark": "r",
+   "context": "1 −x"
+  },
+  {
+   "page": 45,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 45,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 45,
+   "mark": "e",
+   "context": "2"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "2e)"
+  },
+  {
+   "page": 45,
+   "mark": "n",
+   "context": "2(|e| −e)and(x)"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "2(|e| −e)and(x)n:= (1 −x)(1 −x"
+  },
+  {
+   "page": 45,
+   "mark": "n",
+   "context": "2(|e| −e)and(x)n:= (1 −x)(1 −x2) . . . (1 −x"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "I∆(0, 0; x) = 1 −x −2x"
+  },
+  {
+   "page": 45,
+   "mark": "3",
+   "context": "I∆(0, 0; x) = 1 −x −2x2−2x"
+  },
+  {
+   "page": 45,
+   "mark": "4",
+   "context": "I∆(0, 0; x) = 1 −x −2x2−2x3−2x"
+  },
+  {
+   "page": 45,
+   "mark": "6",
+   "context": "I∆(0, 0; x) = 1 −x −2x2−2x3−2x4+ x"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "2 )"
+  },
+  {
+   "page": 45,
+   "mark": "3",
+   "context": "3A"
+  },
+  {
+   "page": 45,
+   "mark": "3",
+   "context": "A"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "TheindexisawavefunctioninaHilbertHk=0(∂N)=Hk=0(T"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "Classically,thephasespaceonT"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "actingontheHilbert-spaceHk=0(T"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "O[Hk=0(T"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "ThealgebraactsonHk=0(T"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "BasisofHk=0(T"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "(m,e)∈Z"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "solid torus D2 ×S"
+  },
+  {
+   "page": 46,
+   "mark": "3",
+   "context": "solid torus D2 ×S1= S"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "ˆ¯b/2)|D2 × S"
+  },
+  {
+   "page": 46,
+   "mark": "b",
+   "context": "ˆ"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "ˆb/2)|D2 × S"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "HeretheboundarycycleBcorrespondstotheshrinkablecycleinD2 × S"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "∂(D2 × S"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "Intheclassicallimitx=eℏ→1,theoperatorequationbecome(eb/2+ 1)"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "reﬂectsthefactthatﬂat-connectionsonD2 × S"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "⟨m, e|D2 × S"
+  },
+  {
+   "page": 47,
+   "mark": "m",
+   "context": "2(−1)"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "A ∈H1(∂(D2 × S"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "(D2 × S"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "B∈H1(∂(D2 × S"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "⇒INpA+qB(x) = ⟨D2 × S"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "⟨D2 × S"
+  },
+  {
+   "page": 47,
+   "mark": "4",
+   "context": "(m,e,m′,e′)∈Z"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "⟨D2 × S"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "(m,e)∈Z"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "(m,e)∈Z"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "2(−1)"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "(m,e)∈Z"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "(m,e)∈Z"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "(m,e)∈Z"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "(m,e)∈Z"
+  },
+  {
+   "page": 48,
+   "mark": "3",
+   "context": "Example:(S"
+  },
+  {
+   "page": 48,
+   "mark": "3",
+   "context": "Example:(S3\\41)−5µ+λ= (S"
+  },
+  {
+   "page": 48,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 48,
+   "mark": "x",
+   "context": "S3\\41(m, e;"
+  },
+  {
+   "page": 48,
+   "mark": "1",
+   "context": "2 )−(e"
+  },
+  {
+   "page": 48,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 48,
+   "mark": "x",
+   "context": "S3\\52(m, e;"
+  },
+  {
+   "page": 48,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 48,
+   "mark": "x",
+   "context": "S3\\52(m, e;"
+  },
+  {
+   "page": 48,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 48,
+   "mark": "x",
+   "context": "S3\\41(m, e;"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "(m,e)∈Z"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "(m,e)∈Z"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "= 1 −x −2x"
+  },
+  {
+   "page": 48,
+   "mark": "3",
+   "context": "= 1 −x −2x2−x"
+  },
+  {
+   "page": 48,
+   "mark": "4",
+   "context": "= 1 −x −2x2−x3−x"
+  },
+  {
+   "page": 48,
+   "mark": "5",
+   "context": "= 1 −x −2x2−x3−x4+ x"
+  },
+  {
+   "page": 48,
+   "mark": "6",
+   "context": "= 1 −x −2x2−x3−x4+ x5+ 2x"
+  },
+  {
+   "page": 48,
+   "mark": "7",
+   "context": "= 1 −x −2x2−x3−x4+ x5+ 2x6+ 7x"
+  },
+  {
+   "page": 48,
+   "mark": "8",
+   "context": "= 1 −x −2x2−x3−x4+ x5+ 2x6+ 7x7+ 8x"
+  },
+  {
+   "page": 48,
+   "mark": "9",
+   "context": "= 1 −x −2x2−x3−x4+ x5+ 2x6+ 7x7+ 8x8+ 12x"
+  },
+  {
+   "page": 49,
+   "mark": "3",
+   "context": "Example:(S"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "Example:(S3\\5"
+  },
+  {
+   "page": 49,
+   "mark": "3",
+   "context": "1)µ1+kλ1=(S"
+  },
+  {
+   "page": 49,
+   "mark": "k",
+   "context": "1)µ1+kλ1=(S3\\K"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "5"
+  },
+  {
+   "page": 49,
+   "mark": "4",
+   "context": "1denotesWhiteheadlinkdepictedinFigure"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "1−Z"
+  },
+  {
+   "page": 49,
+   "mark": "3",
+   "context": "2−Z"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "aµ2= Z"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "bλ2= 2(Z"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "I(µ"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "I(µ1,µ"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "I(µ1,µ2;λ"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "I(µ1,µ2;λ1,λ"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "(m1, m2, e1, e2; x) = I5"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "1(m"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "1(m1, m"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "1(m1, m2, e"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "1(m1, m2, e1, e"
+  },
+  {
+   "page": 49,
+   "mark": "x",
+   "context": "1(m1, m2, e1, e2;"
+  },
+  {
+   "page": 49,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "S3\\5"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "(−x"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "(−x1/2)−e"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "(−x1/2)−e1−e"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "(−x1/2)−e1−e2+m"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "(−x1/2)−e1−e2+m1+m"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "(−x1/2)−e1−e2+m1+m2+2"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "(−x1/2)−e1−e2+m1+m2+2n"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "(−x1/2)−e1−e2+m1+m2+2n1+2"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "(−x1/2)−e1−e2+m1+m2+2n1+2n"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "(n1,n2)∈Z"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "1(m"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "1(m1, m"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "1(m1, m2, e"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "1(m1, m2, e1, e"
+  },
+  {
+   "page": 49,
+   "mark": "8",
+   "context": "1(m1, m2, e1, e2)enjoysfollowingD"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "TheWhiteheadindexI5"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "2= 1, (S"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "2= 1, (S1S"
+  },
+  {
+   "page": 49,
+   "mark": "8",
+   "context": "2= 1, (S1S2)"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "S1, S2: S"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "1= S"
+  },
+  {
+   "page": 49,
+   "mark": "3",
+   "context": "complementS"
+  },
+  {
+   "page": 50,
+   "mark": "1",
+   "context": "2.InS"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "φ,andtwopairsofchiralmultiplets(E"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "φ,andtwopairsofchiralmultiplets(Ei,˜Ei)(i=1, 2)whereE"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "W= φ˜EiE"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "actsontheindexiof(E"
+  },
+  {
+   "page": 50,
+   "mark": "f",
+   "context": "2π"
+  },
+  {
+   "page": 50,
+   "mark": "f",
+   "context": "2πf,where"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "j= E"
+  },
+  {
+   "page": 50,
+   "mark": "j",
+   "context": "j= Ei ˜E"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "(µH)"
+  },
+  {
+   "page": 50,
+   "mark": "k",
+   "context": "2( ˜E"
+  },
+  {
+   "page": 50,
+   "mark": "k",
+   "context": "2( ˜EkE"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "2( ˜EkEk)δ"
+  },
+  {
+   "page": 50,
+   "mark": "f",
+   "context": "2π"
+  },
+  {
+   "page": 51,
+   "mark": "i",
+   "context": "Itiseasytoseethatsu(2)HisofSO(3)type.Theﬁelds(E"
+  },
+  {
+   "page": 51,
+   "mark": "i",
+   "context": "Now,thecenter−1∈SU(2)Hmultipliesthe(E"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "us consider a monopole background of the above U(2) on S"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "So, the gauge U(1) has magnetic ﬂux +1/2 on S"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "class w2∈H"
+  },
+  {
+   "page": 51,
+   "mark": "w",
+   "context": "2"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "2w"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "2w2mod"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "f= dabetheﬁeldstrengthoftheU(1)gaugeﬁeld,F= dA + A"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "2G = πw"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "2 tr F= πw"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "Thisrepresentstheanomaly.Theanomalypolynomialis"
+  },
+  {
+   "page": 52,
+   "mark": "w",
+   "context": "2"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "2w"
+  },
+  {
+   "page": 52,
+   "mark": "w",
+   "context": "2w2(SO(3)C)"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "2w2(SO(3)C)w"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "Let us compactify the 6d theory on S"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "Let us compactify the 6d theory on S1and consider X6= S"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "H3(S"
+  },
+  {
+   "page": 53,
+   "mark": "w",
+   "context": "ˆa"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "ˆaw"
+  },
+  {
+   "page": 53,
+   "mark": "b",
+   "context": "ˆaw2= 0.15Ontheotherhand,for ˆ"
+  },
+  {
+   "page": 53,
+   "mark": "w",
+   "context": "ˆb"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "ˆbw"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "Inthiscase,bytakingX3= S"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "imension-2 defect along X3×K⊂X6.After the reduction on the S"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "fect along X3×K⊂X6.After the reduction on the S1of the X3= S"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "idertheknotcomplementN3:=M3\\K.TheboundaryofN3isatorus,∂N3∼=T"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "On∂N3∼=T"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "factcanbeseenasfollows.Therecanbeanontrivialmagneticﬂuxw2onS"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "X× S"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "where S"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "X⊂X"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "X⊂X2and S"
+  },
+  {
+   "page": 55,
+   "mark": "3",
+   "context": "M⊂M"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "M⊂M3.This is possible only if [S"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "M] ∈H"
+  },
+  {
+   "page": 55,
+   "mark": "3",
+   "context": "M] ∈H1(M"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "M] ∈H1(M3, Z"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "p × S"
+  },
+  {
+   "page": 55,
+   "mark": "p",
+   "context": "M,where"
+  },
+  {
+   "page": 55,
+   "mark": "a",
+   "context": "M,wherepis"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "M,wherepisapointonS"
+  },
+  {
+   "page": 55,
+   "mark": "p",
+   "context": "X.Ifweletthepoint"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "X.IfweletthepointpgoaroundS"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "S"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "X×S"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "M]∈H"
+  },
+  {
+   "page": 55,
+   "mark": "3",
+   "context": "M]∈H1(M"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "M]∈H1(M3, Z"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "hand,if[S"
+  },
+  {
+   "page": 56,
+   "mark": "3",
+   "context": "M∈M"
+  },
+  {
+   "page": 56,
+   "mark": "1",
+   "context": "•Holonomies around cycles S"
+  },
+  {
+   "page": 56,
+   "mark": "1",
+   "context": "M] ∈H"
+  },
+  {
+   "page": 56,
+   "mark": "3",
+   "context": "M] ∈H1(M"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "M] ∈H1(M3, Z"
+  },
+  {
+   "page": 56,
+   "mark": "1",
+   "context": "[S"
+  },
+  {
+   "page": 56,
+   "mark": "1",
+   "context": "if[S"
+  }
+ ]
+}

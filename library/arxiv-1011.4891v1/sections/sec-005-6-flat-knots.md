@@ -8,7 +8,9 @@ pages: 13-16
 source_pdf: 1011.4891.pdf
 source_sha256: c3529df5dd909b5e
 toc_source: inferred
+doc_brief: "Mechanical Normal Forms of Knots and Flat Knots A.B.Sossinsky Independent University of Moscow Institute for Problems in Mechanics RAS Dedicated to the memory of V.I.Arnold — A new type of knot"
 ---
+§6. Flat knots
 Flat mechanical knots were described in the previous section. Numerous
 experiments of the following type were performed with them: the device
 was knotted (i.e., given the shape of some planar knot diagram and pressed

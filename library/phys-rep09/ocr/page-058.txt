@@ -1,0 +1,78 @@
+208 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+
+Order 6:
+1 1
+[6] _ oI6) _ [6])2 _ [6])2 = 7
+cl = 2 (: pe ) (: 10 2 r)) = C(h) + O(h’). (271)
+
+Three matrix-matrix products are required in addition to the three commutators involved in the computation of 2!°!, fora
+total of nine matrix-matrix products per step.
+
+5.5. Numerical illustration: The Rosen-Zener model revisited
+
+Next we apply the previous numerical schemes to the integration of the differential equation governing the evolution of
+a particular quantum two-level system. Our purpose here is to illustrate the main issues involved, and compare the different
+approximations obtained with both the analytical treatment done in Section 4 and the exact result. Specifically, we consider
+the Rosen-Zener model in the Interaction Picture already analyzed in Section 4.1.2. In this case, the equation to be solved is
+U; = H,(t)U;, or equivalently, Eq. (223) with Y(t) = U;(t) and coefficient matrix (fh = 1)
+
+A(t) = A(t) = —iV(s) (0; cos(Es) — 02 sin(Es)) = —ib(s)-o. (272)
+
+Here V(s) = Vo/ cosh(s), € = wT ands = t/T. Given the initial condition |+) = (1, 0)" at t = —oo, our purpose is to get
+an approximate value for the transition probability to the state |—) = (0, 1)" at t = +00. Its exact expression is collected
+in the first line of Eq. (204), which we reproduce here for the reader’s convenience:
+
+ind
+sin’ y
+Pex = |(U;)12(+00, —00)|? = —>——_,, (273)
+cosh* (7 & /2)
+with y = 2VoT.
+To obtain, in practice, a numerical approximation to P.,, we have to integrate the equation in a sufficiently large time
+interval. We take the initial condition at sy) = —25 and the numerical integration is carried out until ss = 25. Then, we
+
+determine (U;)12(S, So).
+
+As a first numerical test, we take a fixed (and relatively large) time step h such that the whole numerical integration in the
+time interval s € [5o, s;] is carried out with 50 evaluations of the vector b(s) for all methods. In this way, their computational
+cost is similar.
+
+To illustrate the qualitative behavior of Magnus integrators in comparison with standard Runge-Kutta schemes, the
+following methods are considered:
+
+e Explicit first-order Euler (E1): Yni1 = Yn + MA(ty)Yn with th, = t + hand h = 1 (solid lines with squares in the
+figures).
+
+e Explicit fourth-order Runge-Kutta (RK4), i.e., scheme (227) with h = 2, since only two evaluations of b(s) per step are
+required in the linear case (solid lines with triangles).
+
+e Second-order Magnus (M2): we consider the midpoint rule (one evaluation per step) to approximate (2; taking h = 1
+(dashed lines), i.e.,
+
+. _sin(hb,)
+
+Yn41 = exp (—ihb, - 0) Y, = {| cos(hb,)I — i hb b,-o ) Yn (274)
+
+in
+with b, = b(t, + h/2) and by, = ||b,||. The trapezoidal rule is equally valid by considering b, = (b(t,) + b(t, + h))/2.
+
+e Fourth-order Magnus (M4). Using the fourth-order Gauss-Legendre rule to approximate the integrals and taking h = 2,
+one has the scheme (254) which, for this problem, reads
+
+b, = b(t, + ch), bz = b(t, + coh),
+
+h 3
+d= "oy +b) — 9 ie x br) (275)
+Yn41 = exp (—ihd- 0) Y,
+
+; 8, Q=Ft Re (dotted lines).
+
+We choose € = 0.3 and € = 1, and each numerical integration is carried out for different values of y in the range
+y € [0, 277]. We plot the corresponding approximations to the transition probability in a similar way as in Fig. 7 for the
+analytical treatment. Thus we obtain the plots of Fig. 14. As expected, the performance of the methods deteriorates as y
+increases. Notice, also, that the qualitative behavior of the different numerical schemes is quite similar as that exhibited
+by the analytical approximations. Euler and Runge-Kutta methods do not preserve unitarity and may lead to transition
+probabilities greater than 1 (just like the standard perturbation theory). On the other hand, for sufficiently small values of
+y (inside the convergence domain of the Magnus series) the fourth-order Magnus method improves the result achieved by
+the second-order, whereas for large values of y, a higher order method does not necessarily lead to a better approximation.
+
+with c; =

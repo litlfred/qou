@@ -8,7 +8,9 @@ pages: 37-39
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
 toc_source: inferred
+doc_brief: "Reidemeister torsion on character varieties — 52 sections: Front matter; Introduction; Character varieties and Reidemeist"
 ---
+The non-split case
 Let S be an incompressible surface associated to an ideal point v ∈ˆX which is,
 again, union of n parallel copies S = S1 ∪. . . ∪Sn, and we assume now that M \ Si
 is connected. Hence [Si] = 0 ∈H2(M; ∂M), and in particular ∂Si is a homological
@@ -69,4 +71,3 @@ the matrix ¯ρ1(∂Σ1) are roots of unity, of order that divides the number of
 37
 components of any surface Σi, hence those eigenvalues are equal to 1, and it achieves
 the proof.
-1.4

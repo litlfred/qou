@@ -2,27 +2,32 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1010.5321v3",
  "source_sha256": "c6bb20926b1f291f",
- "brief": "Formulas on hyperbolic volume — This paper collects some important formulas on hyperbolic volume.",
- "extended": "**Formulas on hyperbolic volume**\n\n*Budapest University of Technology and Economics*\n\n16 pp, 16 sections.\n\n**Abstract.** This paper collects some important formulas on hyperbolic volume. To determine con- crete values of volume function is a very hard question requiring the knowledge of various methods. Our goal to give a non-elementary integral on the volume of the orthosceme (obtain it without using the Schl¨ aﬂi diﬀerential formula), using edge-lengthes as the only parameters.\n\n**Outline.** 1 Introduction; 2 General formulas; 1.1 Notation; 2.1 Coordinate system based on paracycles (hor; 2.2 Volume in the Poincare half-space model; 2.3 Hyperbolic orthogonal coordinate system; 2.4 Coordinate system based on spherical hyper; 2.5 Volume in the projective model; 3 The three dimensional case; 3.1 Formulas of J. Bolyai; 3.2 Formulas of N.I.Lobachevsky; 3.3 Once more again on the volume of the ortho; 3.3.1 The 3-dimensional case; 3.3.2 The case of dimension two; 3.3.3 The case of dimension n; 3.4 Further results on concrete volumes\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: Let the edges of an orthosceme be a,b,c , respectively where a⊥b and (a,b )⊥c. If\n- Theorem 2: Opposite dihedral angles of ideal tetrahedron are equal to e ach\n- Theorem 3: LetR be a Lambert cube with essential angles wk, 0 ≤wk ≤\n- Theorem 4: Let O be an ideal symmetric octahedron with all vertices on\n- Theorem 5: The volume of the hyperbolic tetrahedron T\n- Theorem 6: The volume of the simplex T is",
+ "brief": "Formulas on hyperbolic volume ∗ — This paper collects some important formulas on hyperbolic volume.",
+ "extended": "**Formulas on hyperbolic volume ∗**\n\n*Budapest University of Technology and Economics*\n\n16 pp, 17 sections.\n\n**Abstract.** This paper collects some important formulas on hyperbolic volume. To determine con- crete values of volume function is a very hard question requiring the knowledge of various methods. Our goal to give a non-elementary integral on the volume of the orthosceme (obtain it without using the Schl¨aﬂi diﬀerential formula), using edge-lengthes as the only parameters.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Notation; 2 General formulas; 2.1 Coordinate system based on paracycles (hor; 2.2 Volume in the Poincare half-space model; 2.3 Hyperbolic orthogonal coordinate system; 2.4 Coordinate system based on spherical hyper; 2.5 Volume in the projective model; 3 The three dimensional case; 3.1 Formulas of J. Bolyai; 3.2 Formulas of N.I.Lobachevsky; 3.3 Once more again on the volume of the ortho; 3.3.1 The 3-dimensional case; 3.3.2 The case of dimension two; 3.3.3 The case of dimension n; 3.4 Further results on concrete volumes",
  "tokens": {
   "brief": 24,
-  "extended": 376
+  "extended": 264
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-2-general-formulas",
-   "title": "General formulas",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-002-11-notation",
+   "id": "sec-001-11-notation",
    "title": "Notation",
    "pages": "1-2"
+  },
+  {
+   "id": "sec-002-2-general-formulas",
+   "title": "General formulas",
+   "pages": "2-2"
   },
   {
    "id": "sec-003-21-coordinate-system-based-on-paracycles-horocyc",
@@ -94,8 +99,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

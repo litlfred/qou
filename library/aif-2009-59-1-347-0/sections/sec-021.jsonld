@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/aif-2009-59-1-347-0/sections/sec-021",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Two formal q-Borel transforms",
+  "pageStart": 36,
+  "pageEnd": 38,
+  "contains": [
+    "library/aif-2009-59-1-347-0/blocks/prose-sec-021"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/aif-2009-59-1-347-0",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/aif-2009-59-1-347-0",
+  "provenance": "ingested"
+}

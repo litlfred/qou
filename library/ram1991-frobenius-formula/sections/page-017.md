@@ -1,0 +1,65 @@
+---
+doc_id: ram1991-frobenius-formula
+doc_title: "A Frobenius formula for the characters of the Hecke algebras"
+section_id: page-017
+section_title: "Page 17"
+pages: 17-17
+pdf_page: 17
+source_pdf: ram1991-frobenius-formula.pdf
+source_sha256: 26b2fc85338d9150
+text_source: ocr
+granularity: page
+doc_brief: "A Frobenius formula for the characters of the Hecke algebras — 28 sections: Page 1; Page 2; Page 3"
+---
+A Frobenius formula for the characters of the Hecke algebras 477
+
+The following corollary is an immediate consequence of Theorem 5.1.
+
+(5.2) Corollary. Any character of H; is determined by its values on the elements T,,,
+abs.
+
+Since H, is semisimple and its irreducible components are indexed by partitions
+of f, every character of Hy must be a linear combination of the irreducible
+characters 7, Af, of H,. This implies that the set of values 7(T,,), ALF, is actually
+a minimal set of values necessary to determine the character y of Hy.
+
+The following is an example to illustrate the algorithm used for finding the
+linear combination c, in Theorem 5.1. The notation is such that 3421 denotes the
+
+p (; 2 3
+permutation
+
+342 ') in two line notation.
+
+X(T3a21) = (4 — 1)x(Toaa1) + 9X(To3a1)
+= (4 — 1I)(q — 1)x(Ta3a1) + 9x(Taa14)) + 9X(Ta3a1)
+
+=(q—1? + 97,+ @- YaT,x,, -
+
+A formula in terms of characters of the symmetric group
+For each partition A =(A,,...,4,) of f let 7: CS; C be the character of the
+representation of Sy given by inducing the trivial representation of the group
+
+Si, x... S,, to Sp. Let f*(u) denote the value ¢* on elements of S, of cycle type
+u. It is well known that the *() are the coefficients in the expansion,
+
+=) ¢*(wm x), (5.3)
+A
+
+of the power symmetric functions p,(x) in terms of the monomial symmetric
+functions m,(x) in the variables x,,..., Xp.
+
+(5.4) Theorem. Let A+ fand let y* be the irreducible character of the Hecke algebra
+H, corresponding to 4. Then
+
+1
+0G) =——ym ple 8, 00")
+
+where v? is given by (1.1) and yf, is the irreducible character of S ; corresponding to the
+partition yu. The v; are the parts of the partition v.
+
+Proof. Using the expansions in (4.10),
+
+hy (XL — sx) = x h,(X (1 — t))m,(Y)\s,cxym,7)
+
+-s Mee =F) 5X) Ps(P)lscemcr -

@@ -1,0 +1,62 @@
+the question of which simple modules are killed by the KZ-functor. We also proved that the images of
+the standard modules via the KZ-functor are isomorphic to the cell modules of Hecke algebras.
+
+As far as the case t = 0 is concerned, Gordon introduced and studied extensively a finite-
+dimensional quotient of the rational Cherednik algebra, called the restricted rational Cherednik algebra,
+whose simple modules are parametrised by Irr(W). The decomposition of this algebra into blocks induces
+a partition of Irr(W), known as Calogero—Moser partition. It is believed that there exists a connection
+between the Calogero—Moser partition and the families of characters, first suggested by Gordon and
+Martino for type B. In every case studied so far, the partition into Rouquier families (for a
+suitably chosen cyclotomic Hecke algebra) refines the Calogero—Moser partition (“Martino’s conjecture” ),
+while for finite Coxeter groups the two partitions coincide. The reasons for this connection are still
+unknown, since there is no apparent connection between Hecke algebras and rational Cherednik algebras
+at t = 0. Inspired by this, and in an effort to construct a generalised Kazhdan-Lusztig cell theory, Bonnafé
+and Rouquier have used the Calogero—Moser partition to develop a “Calogero—Moser cell theory” which
+can be applied to all complex reflection groups [BoRo2]. The fruits of this very recent approach
+remain to be seen.
+
+Yokonuma-Hecke algebras were introduced by Yokonuma in the context of finite reductive groups
+as generalisations of Iwahori—Hecke algebras. They are defined as endomorphism rings of the permutation
+representation with respect to a maximal unipotent subgroup, and can thus be regarded as particular
+cases of unipotent Hecke algebras. We will focus here on Yokonuma—Hecke algebras of type A, which
+can be also defined independently as deformations of group algebras of complex reflection groups of type
+G(1,1,n). We thus obtain another type of Hecke algebras associated to G(I,1,n), different from Ariki-
+Koike algebras. Having studied the representation theory of Yokonuma-Hecke algebras in [ChPdA]],
+we have discovered many similarities with the representation theory of Iwahori—Hecke algebras of type
+A; these similarities are explained by a result of Lusztig [Lu7], who has proved that Yokonuma—Hecke
+algebras are isomorphic to direct sums of matrix algebras over tensor products of certain subalgebras of
+Iwahori-Hecke algebras.
+
+We have now introduced and studied many interesting new algebras in the Yokonuma—Hecke algebra
+setting, which are obtained as generalisations (or, as called in [JuLa5], “framisations”) of important
+algebras in the Iwahori-Hecke algebra setting. First of all, we have the affine and cyclotomic Yokonuma—
+Hecke algebras, which generalise respectively the affine Hecke algebras of type A and the Ariki—Koike
+algebras [ChPdA2]. In fact, we have shown in that affine Yokonuma—Hecke algebras appear
+also naturally in the study of p-adic reductive groups, arising from a construction analogous to the one
+used by Yokonuma, while cyclotomic Yokonuma-Hecke algebras give rise to both Ariki-Koike algebras
+and classical Yokonuma-—Hecke algebras of type A, both as quotients and as particular cases. Further,
+we have three possible generalisations of the Temperley—Lieb algebra: the Yokonuma—Temperley—Lieb
+algebra [GJKLI], the Framisation of the Temperley—Lieb algebra and the Complex Reflection
+Temperley—Lieb algebra [GJKL2]. Our study of the structure and the representation theory of these
+three algebras in indicates that the Framisation of the Temperley—Lieb algebra is the
+most natural analogue of the Temperley—Lieb algebra in this setting.
+
+One of the reasons that Yokonuma~—Hecke algebras have attracted a lot of interest recently is their
+topological applications. After Jones’s method [Jo3], the Ocneanu trace on the Iwahori-Hecke
+algebra of type A and its quotient, the Temperley—Lieb algebra, can be used to define isotopy invariants
+for classical knots and links, known as the Homflypt polynomial (or 2-variable Jones polynomial) and
+the Jones polynomial respectively. In a similar way, using the Markov trace on the Yokonuma-Hecke
+algebra of type A defined by Juyumaya [Ju2], one can define 2-variable isotopy invariants for framed,
+classical and singular knots and links (see [JuLal]—[JuLad], [CJKT}).
+
+For the past years, we have been trying to compare the family of 2-variable isotopy invariants of
+oriented classical links arising from Yokonuma-Hecke algebras with the Homflypt polynomial, which
+is included in this family (see (ChLa]). Very recently, we were successful in proving that we have
+indeed obtained a new family of invariants, which are not topologically equivalent to the Homflypt
+polynomial [CJKT]. In fact, we have shown that our invariants are topologically equivalent to the
+Homflypt polynomial on knots, but they distinguish links that the Homflypt polynomial does not. Besides
+computational data, we have given a diagrammatic proof based on the following result: the invariants
+from Yokonuma-Hecke algebras can be defined diagrammatically via a special skein relation involving
+only crossings between different components. This fact is very important in its own right, since there
+are very few link invariants defined through skein relations. Finally, we have generalised this family of
+

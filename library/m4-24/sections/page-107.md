@@ -1,0 +1,61 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-107
+section_title: "Page 107"
+section_number: null
+pages: 107-107
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+Problems on invariants of knots and 3-manifolds A479
+
+Remark (J.E. Andersen) The special max proposed in Conjecture 7.9 is
+certainly needed, as shown by the example of the mapping torus of the diffeo-
+morphism —Jd of a torus. The quantum SU(2) invariant of this manifold is
+easily seen to be r—1, since —Id is represented trivially for all levels, however,
+there are flat SU(2) connections for which (h, — h9) > 2.
+
+The Conjecture 7.9 implies the following growth rate.
+
+Conjecture 7.10 (The growth rate conjecture) Let d = max{dp,...,d,}-.
+Then |Z¢(M)| = O(r¢).
+
+It is well known that the quantum invariants only grows like r to some power.
+The power is bounded from above by some simple function (depending on G)
+of the Heegaard genus of the manifold.
+
+Remark (J.E. Andersen)
+
+(1) Suppose that M is a closed 3-manifold satisfying that 7¢(M) = 7°(S°)
+for all r. If the growth rate conjecture 7.10 is true for the group G, then there
+is no non-central representation of 7(M) to G.
+
+(2) Kronheimer and Mrowka have proposed a program using Seiberg-Witten
+theory and Floer homology to establish that any 3-manifold M obtained from
+S3 by +1 surgery along a non-trivial knot K has a non-trivial (and therefore
+non-abelian) representation of 7|(M) to SU(2). Suppose that this is the case
+and the growth rate conjecture 7.10 is true. Then, Jx,< = Ju for all c =
+1,2,--- if and only if K is the trivial knot U, where Jx,- denotes the colored
+Jones polynomial of a knot K with a color c.
+
+At this time we do not know of a topological interpretation of the values of I fi
+and v; which makes sense in all cases. Let us simply just propose the following
+
+Conjecture 7.11 There is a construct of the right measure, say tyy(A)!/2
+for A € M,, from the square root of the Reidemeister torsion generalizing the
+
+non-degenerate case explained above and such that
+
+eV Tidy, _ | eV TBA 4 hy tha)/Ag (A)t?,
+AEM:
+
+Conjectures 7.7 and 7.9 together with Conjecture 7.11 were first proved for
+mapping tori of all finite order diffeomorphisms of all surfaces of genus at least
+two in [6]. Recently, Conjecture 7.7 was proved for all Seifert fibered spaces in
+[168] by supplementing the calculations in [353] and [354] with the need analytic
+estimates.
+
+Geometry & Topology Monographs, Volume 4 (2002)

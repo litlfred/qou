@@ -7,10 +7,11 @@ section_number: null
 pages: 37-44
 source_pdf: 2603.12136v1.pdf
 source_sha256: e9c50616344b24e0
-doc_brief: "Folding Mixed-Integer Linear Programs and Reflection Symmetries — For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.98
-latex_coverage_ratio: 0.776
+latex_prose_ratio: 0.95
+latex_coverage_ratio: 0.991
+doc_brief: "Folding Mixed-Integer Linear Programs and Reflection Symmetries — For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the"
 ---
 []{#sec_dimred_milp label="sec_dimred_milp"}
 

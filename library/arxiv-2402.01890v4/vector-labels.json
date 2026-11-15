@@ -1,0 +1,1490 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-2402.01890v4",
+  "pages": [
+    {
+      "page": 14,
+      "rotation": 0,
+      "drawings": 82,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1: Example using n = 6, k = 3."
+      ],
+      "labels": [
+        {
+          "text": "λ",
+          "bbox": [
+            117.45,
+            67.1,
+            122.23,
+            75.47
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "|Std(λ)|",
+          "bbox": [
+            133.33,
+            83.64,
+            161.43,
+            98.16
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "Φ(ν)",
+          "bbox": [
+            109.52,
+            104.68,
+            126.31,
+            113.06
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            206.75,
+            108.77,
+            210.84,
+            117.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            289.09,
+            108.77,
+            293.18,
+            117.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "9",
+          "bbox": [
+            357.55,
+            108.77,
+            361.64,
+            117.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            416.08,
+            108.77,
+            420.18,
+            117.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            468.67,
+            108.77,
+            476.88,
+            117.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            206.75,
+            140.52,
+            210.84,
+            148.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            288.1,
+            140.52,
+            292.19,
+            148.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            357.55,
+            140.52,
+            361.64,
+            148.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            415.09,
+            140.52,
+            419.18,
+            148.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            470.65,
+            140.52,
+            474.74,
+            148.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            206.75,
+            184.17,
+            210.84,
+            192.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            288.1,
+            184.17,
+            292.19,
+            192.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            357.55,
+            184.17,
+            361.64,
+            192.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            415.09,
+            184.17,
+            419.18,
+            192.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            470.65,
+            184.17,
+            474.76,
+            192.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            206.75,
+            227.82,
+            210.84,
+            236.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            288.1,
+            227.82,
+            292.19,
+            236.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            357.55,
+            227.82,
+            361.64,
+            236.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            415.09,
+            227.82,
+            419.18,
+            236.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            470.65,
+            227.82,
+            474.74,
+            236.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            206.75,
+            261.55,
+            210.84,
+            269.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            288.1,
+            261.55,
+            292.19,
+            269.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            357.55,
+            261.55,
+            361.64,
+            269.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            415.09,
+            261.55,
+            419.18,
+            269.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            470.65,
+            261.55,
+            474.74,
+            269.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "dim G3(λ)",
+          "bbox": [
+            99.0,
+            261.84,
+            134.94,
+            270.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            5.58,
+            8.37
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            520.72,
+            265.74,
+            523.49,
+            275.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 1: Example using n = 6, k = 3.",
+          "bbox": [
+            222.87,
+            286.95,
+            389.14,
+            296.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Let us illustrate d) of Theorem 7, using n = 6 and k = 3. In that case n ≥2k and so by Theorem 2 and Theorem 6",
+          "bbox": [
+            71.64,
+            318.46,
+            555.32,
+            335.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "we have dim Z3,6",
+          "bbox": [
+            56.69,
+            328.19,
+            128.59,
+            340.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "sph = dim SP3 = 31. On the other hand, from (6.18) we get Par3,6",
+          "bbox": [
+            117.57,
+            328.19,
+            400.94,
+            347.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "sph = {(6), (5, 1), (4, 2), (3, 3), (4, 1, 1)}",
+          "bbox": [
+            390.62,
+            330.48,
+            555.31,
+            347.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and since Par≤6",
+          "bbox": [
+            56.69,
+            342.89,
+            127.92,
+            355.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "= Par3 = {(3), (2, 1), (13)} we have via the definition of Φ in (6.7) that {Φ(ν) | ν ∈Par≤6",
+          "bbox": [
+            132.74,
+            342.89,
+            537.76,
+            362.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "3 } =",
+          "bbox": [
+            527.56,
+            345.35,
+            555.31,
+            365.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            117.72,
+            350.49,
+            121.7,
+            357.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "{(5, 1), (4, 1, 1), (3, 3)}. The table in Figure 1 gives the Kostka numbers Kλ,Φ(ν) and hence dim G3(λ) for λ ∈Par3,6",
+          "bbox": [
+            56.69,
+            355.01,
+            549.82,
+            374.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "sph,",
+          "bbox": [
+            539.51,
+            357.55,
+            555.31,
+            369.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "via c) of the Theorem.",
+          "bbox": [
+            56.69,
+            369.19,
+            155.35,
+            379.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Summing the squares of the numbers of the last row of the table we get 32 + 42 + 22 + 12 + 12 = 31, as expected.",
+          "bbox": [
+            71.64,
+            383.82,
+            555.3,
+            397.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Similarly, we can use the table to illustrate b) of Theorem 7, at least at dimension level. Indeed, summing the",
+          "bbox": [
+            71.64,
+            405.06,
+            555.32,
+            415.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "products of the numbers of the first and the last row we get 1 × 3 + 5 × 4 + 9 × 2 + 5 × 1 + 10 × 1 = 56 = dim S3V6.",
+          "bbox": [
+            56.69,
+            415.95,
+            555.31,
+            434.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Remark 3. As already mentioned in the introduction, A. Wilson has shown that SPk coincides with the multiset",
+          "bbox": [
+            56.69,
+            436.94,
+            555.31,
+            454.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "partition algebra MPk(x) that was introduced in [40].",
+          "bbox": [
+            56.69,
+            448.96,
+            305.31,
+            466.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The definition of MPk(x) is quite different from the",
+          "bbox": [
+            314.16,
+            448.96,
+            555.32,
+            466.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "definition of SPk, but in Lemma 5.12 of [40] the authors prove that MPk(x) arises from Pk via idempotent",
+          "bbox": [
+            56.69,
+            460.91,
+            555.31,
+            478.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "truncation with respect to a certain idempotent e′",
+          "bbox": [
+            56.69,
+            471.52,
+            277.7,
+            483.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "k, defined in terms of the orbit basis for Pk. Wilson shows that",
+          "bbox": [
+            275.41,
+            472.8,
+            555.31,
+            490.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the two idempotents e′",
+          "bbox": [
+            56.69,
+            483.48,
+            156.11,
+            495.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "k and ek in fact coincide.",
+          "bbox": [
+            153.82,
+            485.07,
+            263.2,
+            497.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Example 1. Suppose that n ≥2k. Then by Remark 2 the partitions (n −k, k) and (n −k, 1k) both belong to",
+          "bbox": [
+            56.69,
+            511.59,
+            555.32,
+            530.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "par. Moreover, by Lemma 4, we also have that (n −k, k) belongs to Park,n",
+          "bbox": [
+            72.08,
+            523.54,
+            397.99,
+            543.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Park,n",
+          "bbox": [
+            56.69,
+            523.98,
+            83.77,
+            536.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "sph but (n −k, 1k) does not.",
+          "bbox": [
+            386.31,
+            524.71,
+            509.59,
+            543.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Remark 4. In analogy with SPk, it would seem natural also to introduce an antispherical partition algebra ASPk",
+          "bbox": [
+            56.69,
+            545.7,
+            554.64,
+            563.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000 1",
+          "bbox": [
+            218.4,
+            552.14,
+            229.48,
+            566.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            304.66,
+            556.75,
+            309.22,
+            566.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "P",
+          "bbox": [
+            233.67,
+            557.34,
+            244.19,
+            567.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "and where sign(σ) is the usual sign of σ ∈Sk. On the",
+          "bbox": [
+            312.92,
+            557.62,
+            555.32,
+            575.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "EUFM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "via ASPk = fnPkfn, where fn = ιk",
+          "bbox": [
+            56.69,
+            557.72,
+            216.07,
+            575.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "σ∈Sk sign(σ)σ",
+          "bbox": [
+            244.19,
+            557.97,
+            304.3,
+            575.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMSY7",
+            "EUFM7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "k!",
+          "bbox": [
+            224.16,
+            563.64,
+            230.81,
+            570.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "other hand, for any transposition σ ∈Sk we have that σfn = fnσ = −fn and so ASPk is a small algebra, since in",
+          "bbox": [
+            56.69,
+            569.57,
+            555.31,
+            586.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "EUFM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "fact rkC[x] ASPk = 2 for k ≥2.",
+          "bbox": [
+            56.69,
+            581.63,
+            192.59,
+            600.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "BBOLD7",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Even so, if n ≥2k, one could still develop analogues for ASPk of our results for SPk, by replacing SkVn with",
+          "bbox": [
+            71.64,
+            599.48,
+            555.31,
+            617.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the exterior power module Vk Vn = (V ⊗n)fn. Then ASPk is in Schur-Weyl duality with CSn on Vk Vn and we",
+          "bbox": [
+            56.69,
+            607.8,
+            555.31,
+            629.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "BBOLD10",
+            "CMEX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7",
+            "EUFM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "have CSn-module isomorphisms",
+          "bbox": [
+            56.69,
+            624.41,
+            197.31,
+            635.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "BBOLD10",
+            "CMMI7",
+            "CMR10",
+            "EUFM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001 ∼= S(n −k, 1k) ⊕S(n −k + 1, 1k−1)",
+          "bbox": [
+            310.92,
+            638.36,
+            473.11,
+            663.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Vk Vn ∼= IndSn",
+          "bbox": [
+            138.9,
+            641.67,
+            202.63,
+            665.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "EUFM7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "S(n −k) ⊗S(1k)",
+          "bbox": [
+            236.34,
+            645.31,
+            310.93,
+            663.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            231.78,
+            645.46,
+            236.34,
+            655.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(6.29)",
+          "bbox": [
+            529.84,
+            646.68,
+            555.31,
+            656.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Sn−k×Sk",
+          "bbox": [
+            191.58,
+            651.66,
+            229.04,
+            663.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMSY5",
+            "CMSY7",
+            "EUFM7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "where the last isomorphism follows from the Littlewood-Richardson rule. The two Specht modules appear with",
+          "bbox": [
+            56.69,
+            668.6,
+            555.34,
+            678.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "multiplicity one in (6.29), and so we deduce that ASPk has two simple modules, each of dimension one. This is in",
+          "bbox": [
+            56.69,
+            680.3,
+            555.32,
+            697.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "accordance with rkC[x] ASPk = 2.",
+          "bbox": [
+            56.69,
+            692.26,
+            204.25,
+            711.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "BBOLD7",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "We shall not consider ASPk further in the paper.",
+          "bbox": [
+            71.64,
+            710.19,
+            289.11,
+            727.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "14",
+          "bbox": [
+            301.02,
+            757.72,
+            310.98,
+            767.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

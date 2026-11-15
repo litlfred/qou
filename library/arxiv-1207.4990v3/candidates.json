@@ -1,0 +1,181 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1207.4990v3",
+ "source": {
+  "structure_sha256": "02aa065f4f65b8579392ae32b61e27d93ee2501be3b13b0f4e7bc99aa1ba0fbb",
+  "file": "1207.4990v3.pdf"
+ },
+ "provenance": {
+  "title": "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results",
+  "authors": "Percy Deift",
+  "arxiv": {
+   "id": "1207.4990",
+   "version": "3",
+   "primary_class": "math.FA",
+   "stamp_date": "1 Dec 2012"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 10,
+  "by_kind": {
+   "recommendation": 10
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In particular such correlations $\\left\\langle \\prod_{(i,j)\\in A} \\sigma_{i,j} \\right\\rangle$ should model physical phenomena such as phase transitions.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-setting-the-problem.md",
+   "section_title": "Setting the problem",
+   "pages": "3-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In the presence of an external magnetic field, one must add a term of the form $h \\sum_{(i, j)\\in \\Lambda} \\sigma_{i,j}$ to $E_\\Lambda(\\sigma)$, $h\\in \\mathbb{R}$, but the most complete results have been obtained only when the field is absent, and we will always assume $h=0$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-setting-the-problem.md",
+   "section_title": "Setting the problem",
+   "pages": "3-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Onsager's analysis allows for different interaction constants $J_1 \\neq J_2$, in which case equation [\\[eq12\\]](#eq12){reference-type=\"eqref\" reference=\"eq12\"} for $T_c$ must be replaced by $$\\label{eq14} \\sinh \\left( \\frac{2J_1}{k_B\\, T_c}\\right) \\sinh \\left(\\frac{2J_2}{k_B\\, T_c}\\right) =1.$$",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-setting-the-problem.md",
+   "section_title": "Setting the problem",
+   "pages": "3-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The only thing I did not know was how to fill out the holes in the mathematics and show the epsilons and deltas and all of that, and the limiting processes; I did not know just how it should be done and what mathematicians really knew about limiting processes in that ball park.\" As it turned out, by that point, mathematicians knew a lot!",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-2-toeplitz-meets-ising.md",
+   "section_title": "Toeplitz meets Ising",
+   "pages": "9-12",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Presumably to allay any concerns about priority, Onsager assures Kaufman at the end of the letter that \"There will be time for all these things.\" As one reads [@Ons2] [@Ons3], one senses the faint hint of regret that Onsager must have felt for such optimism.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-2-toeplitz-meets-ising.md",
+   "section_title": "Toeplitz meets Ising",
+   "pages": "9-12",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "If the matrices $U$ in the ensembles carry a weight $e^{-\\beta\\,{\\mathrm{tr}}\\,Q(U)}$, then the energy in the corresponding Coulomb gas must be replaced by $$H_n(\\theta_0,\\dots,\\theta_{n-1})=-\\sum_{0\\le j<k\\le n-1}\\log | e^{i\\theta_j}-e^{i\\theta_k} |+\\sum_{j=0}^{n-1}Q(e^{i\\theta_j})$$ where $Q$ now plays the role of an external force acting on the charges.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-3-szegos-theorem.md",
+   "section_title": "Szego's Theorem",
+   "pages": "12-23",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In such situations when $X= X_n$, or $Y=Y_n$, is varying, there is no general procedure to follow and each problem must be addressed on an ad hoc basis.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-3-szegos-theorem.md",
+   "section_title": "Szego's Theorem",
+   "pages": "12-23",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "One must analyze lower order terms, in fact go \"beyond all orders\" in the language of Kruskal, to capture the exponential decay in Wu's result [\\[eq64\\]](#eq64){reference-type=\"eqref\" reference=\"eq64\"} (see Remark [\\[degen\\]](#degen){reference-type=\"ref\" reference=\"degen\"} below).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-6-fisher-hartwig-singularities-fisher-hartwig-co.md",
+   "section_title": "Fisher-Hartwig singularities. Fisher-Hartwig conjecture",
+   "pages": "29-36",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "::: remark []{#remark6 label=\"remark6\"} Formulae [\\[eq103\\]](#eq103){reference-type=\"eqref\" reference=\"eq103\"} and [\\[eq106\\]](#eq106){reference-type=\"eqref\" reference=\"eq106\"} should be compared respectively with formulae [\\[eq61\\]](#eq61){reference-type=\"eqref\" reference=\"eq61\"} and [\\[eq52\\]](#eq52){reference-type=\"eqref\" reference=\"eq52\"} in [@FisHart1]. :::",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-006-7-basor-tracy-conjecture.md",
+   "section_title": "Basor-Tracy conjecture",
+   "pages": "36-40",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In order to recover $p_N(n)$ as $N,\\, n\\to\\infty$ from [\\[eq129\\]](#eq129){reference-type=\"eqref\" reference=\"eq129\"} [\\[eq130\\]](#eq130){reference-type=\"eqref\" reference=\"eq130\"} one must analyze the double-scaling limit for the determinant as $\\lambda$, $n\\to\\infty$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-010-11-double-scaling-limits.md",
+   "section_title": "Double-scaling limits",
+   "pages": "49-70",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

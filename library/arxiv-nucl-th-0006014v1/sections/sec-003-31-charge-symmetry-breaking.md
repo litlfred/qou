@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-nucl-th-0006014v1
-doc_title: "arXiv:nucl-th/0006014v1 9 Jun 2000"
+doc_title: "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn)"
 section_id: sec-003-31-charge-symmetry-breaking
 section_title: "Charge symmetry breaking"
 section_number: 3.1
-pages: 7-9
+pages: 8-9
 source_pdf: 0006014v1.pdf
 source_sha256: 208c7a6aaf628b30
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.992
-latex_coverage_ratio: 0.849
+latex_coverage_ratio: 0.996
+doc_brief: "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn) — 56 sections: Front matter; Introduction; The model"
 ---
 The difference between the masses of neutron and proton represents the most basic cause for CSB of the nuclear force. Therefore, it is important to have a very thorough accounting of this effect.
 

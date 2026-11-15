@@ -1,8 +1,6 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1301.6953v1",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "8c9231d0832df3b6f9fa790e80c2caeb63a3b6c75d187d76ada0f42769ec4372",
   "file": "1301.6953v1.pdf"
@@ -18,11 +16,121 @@
   },
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
+  "candidates": 7,
+  "by_kind": {
+   "recommendation": 7
+  },
   "formalization_candidates": 0
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "For those of you who like to know more I recommend looking up the slides from my talk at the symposium in Granada in his memory [1].",
+   "strength": null,
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "2-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "For now, fit All of Tab.~\\ref{tab2} and \\cite{newfit} should be regarded as the standard values for the $L_i^r$.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-3-determining-low-energy-constants-in-the-contin.md",
+   "section_title": "Determining low-energy-constants in the continuum",
+   "pages": "5-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "One thus expects that by heavily using current algebra it should be possible to obtain chiral logarithms for almost any process. one can always expand in soft momenta over hard momenta/large masses in a way which is analogous to the treatment of infrared divergences in QED.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-4-hard-pion-chpt.md",
+   "section_title": "Hard pion ChPT",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The resulting part is analytic in the soft stuff and should thus be describable by an effective Lagrangian with coupling constants dependent on the external given momenta (Weinberg's folklore theorem \\cite{Weinberg0}) Lagrangian in hadron fields with all orders of derivatives.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-4-hard-pion-chpt.md",
+   "section_title": "Hard pion ChPT",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This effective Lagrangian should be thought of as a Lagrangian in hadron fields but all possible orders of the momenta included: possibly an infinite number of terms If symmetries are present, the Lagrangian should respect them.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-4-hard-pion-chpt.md",
+   "section_title": "Hard pion ChPT",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The Lagrangian should be complete in the neighbourhood of the original process and loop diagrams with this effective Lagrangian should reproduce the non-analyticities in the light masses.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-4-hard-pion-chpt.md",
+   "section_title": "Hard pion ChPT",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Something like hard pion ChPT should exist.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-4-hard-pion-chpt.md",
+   "section_title": "Hard pion ChPT",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
 }

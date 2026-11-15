@@ -1,0 +1,50 @@
+Hence, by Lemma 2.2, putting
+
+t-t)X ifX> ifxX >Y
+m(x.y,2) = ({OTON Hxsoy (01 uve
+—($-t)X if xX <0 ($;-s+t)(Y-X) ifx<Y
+4 (s-—4)Y ify >o0 0 if#Y>Z
+-(s-4)Y ifY <0 (4-s+u)(Z-Y) ifY <Z
+4 (;-u)Z ifX>0
+—(4-u)Z ifX <0)’
+it is sufficient to show that F(X, Y, Z) 4 00 as X°+Y?+Z? > oo. Since F(c X,cY,cZ) =
+cF(X,Y, Z) for any c > 0, it is sufficient to show that F(X,Y,Z) is positive on the unit
+sphere {(X,Y, Z) € R®? | X?+Y?+ 27? =1}.
+Note that all of the five summands in the right-hand side of the formula of F(X, Y, Z)
+are non-negative. Further, the first summand is positive if X # 0, the third summand
+
+is positive if Y # 0, and the last summand is positive if Z # 0. Hence, F(X,Y,Z) is
+positive on the unit sphere, as required. oO
+
+Lemma 5.5. When we apply Proposition 2.6 to (81), the assumption of Proposition 2.6
+holds.
+
+Proof. We show that there exists a homotopy AS (0 < 6 < 1) between Aj = A’ and Aj
+such that
+
+(to, 80, uo) € Ai, (91)
+Ai — {(to, 50, uo)} C {(t,s,u) € C | Re V(t, s,u) < s}, (92)
+
+dds c {(t,s,u) eC? | ReV(t,s,u) <<}. (93)
+
+At each fiber of the projection C? > R*, we consider the behavior of f(X,Y,Z) =
+ReV(t+ X/—1, s+ YV-I, u+ ZV-1) —¢. By Lemma 5.3, f has a unique minimal
+
+point. We put this minimal point to be (X,Y, Z) = (a(t, 5,U), go(t, 5, u), ga(t, 5, u)). We
+define the ending of the homotopy to be the set of these minimal points,
+
+AL = {(t+m(t,s,uV-l, s+ o(t,s,u)V-1, ut+ g(t, s,u)Vv—1) eC? | (t,s,u) € A’.
+
+Further, we define the internal part of the homotopy by setting it along the flow from
+(t, s,u) determined by the vector field ( - ae — 2h, — 26).
+We can show (91), (92) and (93) by Lemma 5.1 in a similar way as the proof of Lemma
+
+3.9. Oo
+
+A Estimate of solutions of systems of equations
+
+In Sections 3.2, 4.2 and 5.2, we estimate solutions of some systems of equations by using
+numerical solutions obtained by Newton’s method. As mentioned in Remarks 3.1, 3.2 and
+
+an
+an

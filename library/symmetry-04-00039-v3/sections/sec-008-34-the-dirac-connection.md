@@ -8,6 +8,7 @@ pages: 20-22
 source_pdf: symmetry-04-00039-v3.pdf
 source_sha256: 1aa8a81916887f8e
 toc_source: inferred
+doc_brief: "Knots on a Torus: A Model of the Elementary Particles — Two knots; just two rudimentary knots, the unknot and the trefoil."
 ---
 The fact that traverse in our model does, indeed proceed one way through the fermion component 
 and the opposite way through the antifermion highlights how yet another historically iconic item, in 
@@ -140,213 +141,60 @@ m
 
  
 (3-10)
-Symmetry 2012, 4 
- 
-59 
- 
-where
-
-
-
-
-T
-T
-1
-2
-3
-4
-,
-,  
-,
-
-
-
-
-
-
-
-
- and 
-z
-x
-y
-x
-y
-z
-    i
-          (i
-+ 
-)
-(i
-)       
-i
-    
-S
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-These equations have traveling wave solutions with exponents proportional to linear combinations 
-of the time and space variables—i.e., to 
-
-
- 
-  
-  where 
-, 
-, 
-T
-x
-y
-z
-t
-k x
-k
-k
-k
-k
-
-
-
-
-
-
-, 
- and k
-
-
- being the radial 
-frequency and momentum eigenvector, respectively, which implies the equivalent form 
-K
-K
-m
-m
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
+Symmetry 2012, 4 59
+
+wherey, =(Vi5W%)" > We =(W.W,)" and
+
+s.{ ® (id, + 6,)
+(i0,-0,)  -id
+
+Zz
+
+These equations have traveling wave solutions with exponents proportional to linear combinations
+
+of the time and space variables—i.e., to wt + k «x where k = (K. k,, k, y’ , @ and k being the radial
+frequency and momentum eigenvector, respectively, which implies the equivalent form
+oy, +Ky, =my,
+oy, +Ky, =—my,
+
+(ke kik)
+Ke (k,+ik,) —k, (3-12)
+
+is essentially a spin matrix. Especially noteworthy is the sign reversal, a break in symmetry of the
+
 (3-11)
-where 
-     
-       (
-)
- 
- (
-)   
-z
-x
-y
-x
-y
-z
-k
-k
-ik
-K
-k
-ik
-k
-
-
-
-
-
-
-
-
-
-
-
- 
-(3-12)
-is essentially a spin matrix. Especially noteworthy is the sign reversal, a break in symmetry of the 
-mass term, that is the eigenvalue, in the second of the two coupled equations above. Thus, what we 
-have on the RHS of Equations (3-10) or (3-11) is a four-component vector whose upper half,
-
-, 
-constitutes a positive energy representation of a two-component spinor and whose lower half,
-
-, 
-constitutes a negative energy (an antiparticle) representation of a similar spinor.  
-What is intriguing for present purposes is the coupling in either Equations (3-10) or (3-11) between 
- and 
-
-
-
-, the two-vector halves of the four component state vector, in particular, its circular nature. 
-That is, we see that
- depends on 
-
-
-
-
-(as modified by the spin matrix) and conversely, 
- depends on 
-
-
-
-in the same manner. It turns out that this dependence implies a relationship between 
-our particle model and the Dirac theory and to exhibit that, we begin by rewriting Equations 3-11 as 
-1
-1
-(
-) 
-(
-) 
-K
-m
-K
-m
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-(3-13)
-We can then demonstrate the circular nature of this pair of equations, explicitly, by the operational 
-diagram of Figure 21.  
-Figure 21. Dirac equation output; a fermion and antifermion bound pair. 
- 
-In view of the preceding discussion of fusion, the topology of this diagram is seen to be identical to 
-that of the MS model of a boson: a bound state comprised of a spin ½ “fermion” on the left with 
-counterclockwise traverse and positive mass, and its conjugate “antifermion” on the right with 
-clockwise traverse and negative mass. Or, to put it another way: the MS model is also a manifestation 
-of this emergent Dirac formalism. Additional implications are discussed in Section 7. 
+
+where
+
+mass term, that is the eigenvalue, in the second of the two coupled equations above. Thus, what we
+have on the RHS of Equations (3-10) or (3-11) is a four-component vector whose upper half, y, ,
+
+constitutes a positive energy representation of a two-component spinor and whose lower half, y, ,
+
+constitutes a negative energy (an antiparticle) representation of a similar spinor.
+
+What is intriguing for present purposes is the coupling in either Equations (3-10) or (3-11) between
+y, and y,,, the two-vector halves of the four component state vector, in particular, its circular nature.
+
+That is, we see that y, dependson y, (as modified by the spin matrix) and conversely,
+
+y, depends on y,, in the same manner. It turns out that this dependence implies a relationship between
+
+our particle model and the Dirac theory and to exhibit that, we begin by rewriting Equations 3-11 as
+Vy=-K (o-m) v,
+
+Y,=-K'(@+m) y, G13)
+
+We can then demonstrate the circular nature of this pair of equations, explicitly, by the operational
+diagram of Figure 21.
+
+Figure 21. Dirac equation output; a fermion and antifermion bound pair.
+
+In view of the preceding discussion of fusion, the topology of this diagram is seen to be identical to
+that of the MS model of a boson: a bound state comprised of a spin % “fermion” on the left with
+counterclockwise traverse and positive mass, and its conjugate “antifermion” on the right with
+clockwise traverse and negative mass. Or, to put it another way: the MS model is also a manifestation
+of this emergent Dirac formalism. Additional implications are discussed in Section 7.
 Symmetry 2012, 4 
  
 60

@@ -2,45 +2,65 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-hep-th-9711057v2",
  "source_sha256": "acf5cdd7fe848f43",
- "brief": "The microscopic spectrum of the QCD Dirac operator with finite quark masses — 7 sections: INTRODUCTION; RANDOM-MATRIX THEORY FOR FINITE QU; CALCULATION OF OBSERVABLES",
- "extended": "**The microscopic spectrum of the QCD Dirac operator with finite quark masses**\n\n*T. Wilke1, T. Guhr1, and T. Wettig2*\n\n12 pp, 7 sections.\n\n**Outline.** I INTRODUCTION; II RANDOM-MATRIX THEORY FOR FINITE QUARK MASSE; III CALCULATION OF OBSERVABLES; 1 INf (−m1) · · · mNf; 1 (z); IV DISCUSSION; Acknowledgments",
+ "brief": "arXiv:hep-th/9711057v2 30 Apr 1998 — 11 sections: Front matter; Introduction; Random-matrix theory for finite qu",
+ "extended": "**arXiv:hep-th/9711057v2 30 Apr 1998**\n\n*T. Wilke1, T. Guhr1, and T. Wettig2*\n\n12 pp, 11 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Random-matrix theory for finite quark masses; 2.1 Formulation of the model; 2.2 Construction of orthogonal polynomials; 2.3 A duality of matrix ensembles; 3 Calculation of observables; 3.1 Microscopic spectral correlators and densi; 3.2 Distribution of the smallest eigenvalue; 4 Discussion; Acknowledgments",
  "tokens": {
-  "brief": 41,
-  "extended": 77
+  "brief": 28,
+  "extended": 113
  },
  "sections": [
   {
-   "id": "sec-000-i-introduction",
-   "title": "INTRODUCTION",
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
    "pages": "1-2"
   },
   {
-   "id": "sec-001-ii-random-matrix-theory-for-finite-quark-masses",
-   "title": "RANDOM-MATRIX THEORY FOR FINITE QUARK MASSES",
-   "pages": "2-6"
+   "id": "sec-001-2-random-matrix-theory-for-finite-quark-masses",
+   "title": "Random-matrix theory for finite quark masses",
+   "pages": "2-2"
   },
   {
-   "id": "sec-002-iii-calculation-of-observables",
-   "title": "CALCULATION OF OBSERVABLES",
+   "id": "sec-002-21-formulation-of-the-model",
+   "title": "Formulation of the model",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-003-22-construction-of-orthogonal-polynomials",
+   "title": "Construction of orthogonal polynomials",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-004-23-a-duality-of-matrix-ensembles",
+   "title": "A duality of matrix ensembles",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-005-3-calculation-of-observables",
+   "title": "Calculation of observables",
    "pages": "6-6"
   },
   {
-   "id": "sec-003-1-inf-m1-mnf",
-   "title": "INf (−m1) · · · mNf",
-   "pages": "6-7"
+   "id": "sec-006-31-microscopic-spectral-correlators-and-density",
+   "title": "Microscopic spectral correlators and density",
+   "pages": "6-8"
   },
   {
-   "id": "sec-004-1-z",
-   "title": "(z)",
-   "pages": "7-9"
+   "id": "sec-007-32-distribution-of-the-smallest-eigenvalue",
+   "title": "Distribution of the smallest eigenvalue",
+   "pages": "8-9"
   },
   {
-   "id": "sec-005-iv-discussion",
-   "title": "DISCUSSION",
+   "id": "sec-008-4-discussion",
+   "title": "Discussion",
    "pages": "9-10"
   },
   {
-   "id": "sec-006-acknowledgments",
+   "id": "sec-009-acknowledgments",
    "title": "Acknowledgments",
    "pages": "10-12"
   }

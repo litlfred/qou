@@ -1,0 +1,1 @@
+Since these theories are mirror symmetric their indices must be the same, and that is precisely what we see in [\[tettri\]](#tettri){reference-type="eqref" reference="tettri"} and [\[tetST\]](#tetST){reference-type="eqref" reference="tetST"}.

@@ -1,0 +1,1 @@
+We also note that $R(\beta)$ should be a better bound, for large $\beta$ or small temperature, since it is linear in $\beta$, whereas $C(\beta)$ is exponential in $\beta$ and that this $\zeta(\beta)$ could be understood better to explore the comparison of these two bounds.

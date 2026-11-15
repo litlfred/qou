@@ -1,0 +1,54 @@
+5.2 Estimate of the range of A’
+
+In this section, we calculate the concrete values of the bounds of the inequalities in (79)
+so that they satisfy that A — A’ C (78).
+
+Putting A as in Section 2.2, we have that
+ReV(t,s,u) = 2A(t)+A(s—t) —2A(s) + A(s—u) +2A(u).
+We consider the domain
+{(t,s,u) eA | 2A(t) + A(s — t) —2A(s) + A(s—u) +2A(u) > ch, (82)
+
+where we put ¢ = 0.906072... as in (86). We note that this domain is symmetric with
+respect to the exchange of t and u. The aim of this section is to show that this domain
+is included in the interior of the domain A’ of (79). We graphically show the set of (¢, s)
+satisfying that Re V(t, s,u) >¢ for some u in Figure 4.
+
+8 <07
+SA
+
+0.65 F t<0.3
+
+~
+o6ot 3
+
+7
+
+o
+
+0.3 < s—t
+0.55 F
+0.54 <s
+f f :
+0.20 0.25 0.30
+
+Figure 4: The set of (t,s) satisfying that Re V(t,s,u) >¢ for some u
+
+We can show (see Lemma C.1) that the domain (82) is a compact convex domain and
+its boundary is a smooth closed surface whose Gaussian curvature is positive everywhere.
+
+We calculate the minimal value tyjn and the maximal value tymax of t. We consider the
+plane t = c for a constant c. The range of t is given as the range of c such that this plane
+and the domain (82) has non-empty intersection. Since the domain (82) is a compact
+convex domain whose boundary is a smooth closed surface, the maximal and minimal
+values are given by the planes tangent to this domain. The tangent points of such planes
+are given by solutions of the following equations,
+
+2 A(t) + A(s —t) —2A(s)+ A(s—u)+2A(u) = ¢,
+
+20 A(t) + A(s — t) — 2A(s) + A(s — u) + 2.A(u)) = 0,
+o(3 A(t) + A(s — #) — 2A(s) + A(s—u) +2A(u)) = 0.
+
+Since the boundary of the domain (82) is a smooth closed surface whose Gaussian cur-
+vature is positive everywhere, there are exactly two such tangent points, and the above
+
+48

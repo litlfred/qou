@@ -1,13 +1,14 @@
 ---
 doc_id: arxiv-math-0006057v2
-doc_title: "arXiv:math/0006057v2 [math.QA] 10 Jun 2000"
+doc_title: "Finite Quantum Groupoids and Their Applications"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
-pages: 1-4
+pages: 1-3
 source_pdf: 0006057v2.pdf
 source_sha256: c881434fe9f4b04f
 toc_source: inferred
+doc_brief: "Finite Quantum Groupoids and Their Applications — We give a survey of the theory of ﬁnite quantum groupoids (weak Hopf algebras), including foundations of the theory and applications to ﬁnite depth"
 ---
 arXiv:math/0006057v2  [math.QA]  10 Jun 2000
 FINITE QUANTUM GROUPOIDS AND THEIR APPLICATIONS
@@ -223,40 +224,3 @@ In this section we give deﬁnitions and discuss basic properties of ﬁnite qua
 groupoids. Most of the material presented here can be found in [BNSz] and [NV1].
 Throughout this paper we use Sweedler’s notation for comultiplication, writing
 ∆(b) = b(1) ⊗b(2). Let k be a ﬁeld.
-2.1. Deﬁnition of the quantum groupoid. By quantum groupoids or weak Hopf
-algebras we understand the objects introduced in [BNSz], [BSz1] as a generalization
-of ordinary Hopf algebras.
-Deﬁnition 2.1.1. A (ﬁnite) quantum groupoid over k is a ﬁnite dimensional k-
-vector space H with the structures of an associative algebra (H, m, 1) with multi-
-plication m : H ⊗k H →H and unit 1 ∈H and a coassociative coalgebra (H, ∆, ε)
-with comultiplication ∆: H →H ⊗k H and counit ε : H →k such that:
-4
-DMITRI NIKSHYCH AND LEONID VAINERMAN
-(i) The comultiplication ∆is a (not necessarily unit-preserving) homomorphism
-of algebras such that
-(∆⊗id)∆(1) = (∆(1) ⊗1)(1 ⊗∆(1)) = (1 ⊗∆(1))(∆(1) ⊗1),
-(1)
-(ii) The counit is a k-linear map satisfying the identity:
-ε(fgh) = ε(fg(1)) ε(g(2)h) = ε(fg(2)) ε(g(1)h),
-(2)
-for all f, g, h ∈H.
-(iii) There is a linear map S : H →H, called an antipode, such that, for all h ∈H,
-m(id ⊗S)∆(h)
-=
-(ε ⊗id)(∆(1)(h ⊗1)),
-(3)
-m(S ⊗id)∆(h)
-=
-(id ⊗ε)((1 ⊗h)∆(1)),
-(4)
-m(m ⊗id)(S ⊗id ⊗S)(∆⊗id)∆(h)
-=
-S(h).
-(5)
-A quantum groupoid is a Hopf algebra if and only if the comultiplication is
-unit-preserving if and only if the counit is a homomorphism of algebras.
-A morphism between quantum groupoids H1 and H2 is a map α : H1 →H2
-which is both algebra and coalgebra homomorphism preserving unit and counit
-and which intertwines the antipodes of H1 and H2, i.e., α ◦S1 = S2 ◦α. The image
-of a morphism is clearly a quantum groupoid. The tensor product of two quantum
-groupoids is deﬁned in an obvious way.

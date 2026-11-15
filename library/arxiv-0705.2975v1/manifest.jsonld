@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-0705.2975v1",
+  "title": "On the Deﬁnitions of Diﬀerence Galois Groups",
   "contains": [
+    "library/arxiv-0705.2975v1/sections/sec-front-matter",
     "library/arxiv-0705.2975v1/sections/sec-000",
     "library/arxiv-0705.2975v1/sections/sec-001",
     "library/arxiv-0705.2975v1/sections/sec-002",
@@ -18,10 +19,11 @@
     "library/arxiv-0705.2975v1/sections/sec-004",
     "library/arxiv-0705.2975v1/sections/sec-005",
     "library/arxiv-0705.2975v1/sections/sec-006",
-    "library/arxiv-0705.2975v1/sections/sec-007"
+    "library/arxiv-0705.2975v1/sections/sec-007",
+    "library/arxiv-0705.2975v1/sections/sec-008"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
     "searched": [
@@ -36,7 +38,9 @@
   },
   "meta": {
     "doc_id": "arxiv-0705.2975v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0705.2975v1.pdf",
     "source_sha256": "683d6bd44cea670426e95e11717cb371716d90c20b72a84518ec929c32b1620b",
     "pages": 31,

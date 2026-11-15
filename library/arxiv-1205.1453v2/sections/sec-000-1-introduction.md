@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1205.1453v2
-doc_title: "An asymptotic formula of the divergent bilateral basic hypergeometric series Takeshi MORITA∗"
+doc_title: "An asymptotic formula of the divergent bilateral basic hypergeometric series"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-5
 source_pdf: 1205.1453v2.pdf
 source_sha256: 29d1b1fd9466a3d8
-doc_brief: "An asymptotic formula of the divergent bilateral basic hypergeometric series Takeshi MORITA∗ — We show an asymptotic formula of the divergent bilateral bas ic hypergeometric series 1ψ 0(a; −;q, ·)"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.994
+latex_prose_ratio: 0.978
+latex_coverage_ratio: 0.901
+doc_brief: "An asymptotic formula of the divergent bilateral basic hypergeometric series — We show an asymptotic formula of the divergent bilateral basic hypergeometric series 1ψ0(a; −; q, ·) with using the"
 ---
 In this paper, we show an asymptotic formula of the divergent bilateral basic hypergeometric series $${}_1\psi_0 (a;-;q;x ):=\sum_{n\in\mathbb{Z}} (a;q)_n\left\{(-1)^nq^{\frac{n(n-1)}{2}}\right\}^{-1}x^n.$$ Here, $(a;q)_n$ is the $q$-shifted factorial; $$(a;q)_n:=
 \begin{cases}

@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1411.6062v2",
  "source_sha256": "5abd328d027de43c",
- "brief": "EVALUATION OF STATE INTEGRALS AT RATIONAL POINTS — Multi-dimensional state-integrals of products of Faddeev’s quant um diloga- rithms arise frequently in Quantum Topology, quantum Teichm¨ uller t",
- "extended": "**EVALUATION OF STATE INTEGRALS AT RATIONAL POINTS**\n\n*STA VROS GAROUF ALIDIS AND RINAT KASHAEV*\n\n18 pp, 12 sections.\n\n**Abstract.** Multi-dimensional state-integrals of products of Faddeev’s quant um diloga- rithms arise frequently in Quantum Topology, quantum Teichm¨ uller t heory and complex Chern–Simons theory. Using the quasi-periodicity property of the quantum dilogarithm, we evaluate 1-dimensional state-integrals at rational points and exp ress the answer in terms of the Rogers dilogarithm, the cyclic (quantum) dilogarithm and ﬁnite st ate-sums at roots of unity. We illustrate our results with the evaluation of the state-inte grals of the 4 1, 5 2 and (−2,3,7) pretzel knots at rational points.\n\n**Outline.** 1 Introduction; 1.1 State-integrals and their q-series; 1.2 The Rogers and the cyclic dilogarithms; 1.3 Evaluation of state-integrals; 1.4 The quantum dilogarithm at roots of unity; Acknowledgments; 2 Integrals of quasi-periodic functions; 2.1 Some lemmas from complex analysis; 2.2 Applications to 1-dimensional state-integr; 3 Proof of Theorem 1.9; Appendix A. Some useful properties of the quan; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: follows from a lemma from complex analysis regarding integrals of quas i-\n- Corollary 1.3: When M = N = 1 and ( A, B ) = (1 , 2), we choose λ to be a negative real\n- Lemma 2.1: Let f :U→ C be an analytic function satisfying the functional equation\n- Lemma 2.2: (a) We have g( x)∈ C(x) and S( x, y )∈ C(x, y ).\n- Lemma 2.3: Let f( z), g( z), S( x, y ) be as above and λ a real number in general position\n- Lemma 3.2: For any complex root of unity q of order M, we have",
+ "brief": "EVALUATION OF STATE INTEGRALS AT RATIONAL POINTS — Multi-dimensional state-integrals of products of Faddeev’s quantum diloga- rithms arise frequently in Quantum Topology, quantum Teichm¨uller theory",
+ "extended": "**EVALUATION OF STATE INTEGRALS AT RATIONAL POINTS**\n\n*STAVROS GAROUFALIDIS AND RINAT KASHAEV*\n\n18 pp, 14 sections.\n\n**Abstract.** Multi-dimensional state-integrals of products of Faddeev’s quantum diloga- rithms arise frequently in Quantum Topology, quantum Teichm¨uller theory and complex Chern–Simons theory. Using the quasi-periodicity property of the quantum dilogarithm, we evaluate 1-dimensional state-integrals at rational points and express the answer in terms of the Rogers dilogarithm, the cyclic (quantum) dilogarithm and ﬁnite state-sums at roots of unity. We illustrate our results with the evaluation of the state-integrals of the 41, 52 and (−2, 3, 7) pretzel knots at rational points.\n\n**Outline.** Front matter; 1 Introduction; 1.1 State-integrals and their q-series; 1.2 The Rogers and the cyclic dilogarithms; 1.3 Evaluation of state-integrals; 1.4 The quantum dilogarithm at roots of unity; Acknowledgments; 2 Integrals of quasi-periodic functions; 2.1 Some lemmas from complex analysis; 2.2 Applications to 1-dimensional state-integr; 2.3 The case of the (-2,3,7) pretzel knot; 3 Proof of Theorem 1.9; Appendix A. Some useful properties of the quan; References",
  "tokens": {
-  "brief": 48,
-  "extended": 416
+  "brief": 49,
+  "extended": 295
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -52,20 +57,25 @@
   {
    "id": "sec-008-22-applications-to-1-dimensional-state-integrals",
    "title": "Applications to 1-dimensional state-integrals: proof of Theorem 1.1",
-   "pages": "10-13"
+   "pages": "10-11"
   },
   {
-   "id": "sec-009-3-proof-of-theorem-19",
+   "id": "sec-009-23-the-case-of-the--237-pretzel-knot",
+   "title": "The case of the (-2,3,7) pretzel knot",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-010-3-proof-of-theorem-19",
    "title": "Proof of Theorem 1.9",
    "pages": "13-16"
   },
   {
-   "id": "sec-010-appendix-a-some-useful-properties-of-the-quantum",
+   "id": "sec-011-appendix-a-some-useful-properties-of-the-quantum",
    "title": "Appendix A. Some useful properties of the quantum dilogarithm",
    "pages": "16-16"
   },
   {
-   "id": "sec-011-references",
+   "id": "sec-012-references",
    "title": "References",
    "pages": "16-18"
   }
@@ -74,8 +84,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

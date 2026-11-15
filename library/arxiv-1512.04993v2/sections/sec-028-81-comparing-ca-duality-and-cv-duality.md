@@ -4,13 +4,14 @@ doc_title: "Complexity, action, and black holes"
 section_id: sec-028-81-comparing-ca-duality-and-cv-duality
 section_title: "Comparing CA-duality and CV-duality"
 section_number: 8.1
-pages: 48-50
+pages: 48-49
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
-doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.975
-latex_coverage_ratio: 0.728
+latex_coverage_ratio: 0.992
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 \label{subsec:implications}
 

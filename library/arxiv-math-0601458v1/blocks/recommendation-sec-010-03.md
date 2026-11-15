@@ -1,0 +1,1 @@
+Similar results are true for higher-dimensional categories ($n$-categories, for any $n$), while functors which fail to have these properties are in various senses "forgetful" - not being equivalences, they must forget information about the source category.

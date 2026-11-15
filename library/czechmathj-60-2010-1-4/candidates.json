@@ -1,0 +1,56 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "czechmathj-60-2010-1-4",
+ "source": {
+  "structure_sha256": "7595f81d1398d0bfdb2bc0fd44c5a0653dbcdeecec6804bdec90e7e3bfee5092",
+  "file": "CzechMathJ_60-2010-1_4.pdf"
+ },
+ "provenance": {
+  "title": "Czechoslovak Mathematical Journal",
+  "authors": "Yuqun Chen; Yongshan Chen; Chanyan Zhong",
+  "arxiv": null,
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "recommendation": 2
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Each copy of any part of this document must contain these Terms of use.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-001.md",
+   "section_title": "Page 1",
+   "pages": "1-1",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall prove that all compositions in SX\u2217Y are trivial modulo SX\u2217Y .",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-009.md",
+   "section_title": "Page 9",
+   "pages": "9-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

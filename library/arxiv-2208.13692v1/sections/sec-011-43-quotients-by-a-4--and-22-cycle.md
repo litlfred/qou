@@ -7,11 +7,12 @@ section_number: 4.3
 pages: 21-24
 source_pdf: 2208.13692v1.pdf
 source_sha256: 567eff9fb44ef3e5
-doc_brief: "Bring's curve: old and new — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
-duplicate_of: "s40879-023-00706-0"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.958
-latex_coverage_ratio: 0.962
+latex_coverage_ratio: 0.984
+doc_brief: "Bring’s curve: old and new — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
+duplicate_of: "s40879-023-00706-0"
 ---
 []{#subsec: quotients by 4 and 2-2 cycle label="subsec: quotients by 4 and 2-2 cycle"} Armed with the knowledge of the genus of the quotients we expect we shall now write them explicitly. We will begin with the 2,2-cycle corresponding to $U^2$ with the 4-cycle $U$ arising in the discussion. Recall that we have $$U^2:[X,Y,Z]\rightarrow [X,Z,Y], \quad \psi(U^2)=(12)(34)  .$$ The normaliser of $\left\langle (12)(34) \right\rangle$ in $S_5$ is $N_{S_5}(\left\langle (12)(34) \right\rangle)=\left\langle (12), (1324) \right\rangle\cong D_8$. As we remarked earlier, $N_{S_5}(\left\langle (12)(34) \right\rangle)/\left\langle (12)(34) \right\rangle\cong V_4$ are symmetries which remain when we go to the quotient $\mathcal{B}/\left\langle U^2 \right\rangle$ and we expect the quotient genus-2 curve to have (at least) this $V_4$ symmetry group. One of these involutions, which we will later see to be $\overline{(12)} = \overline{(34)}$,[^1] is the hyperelliptic involution of the quotient curve and so further quotienting by this symmetry gives $\mathbb{P}^1$. Quotienting by the other two involutions will yield elliptic curves, and we will complete this construction now, both from the perspective of the HC-model, and the $\mathbb{P}^4$-model.
 

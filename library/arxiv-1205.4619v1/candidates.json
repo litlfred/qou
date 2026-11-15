@@ -1,15 +1,13 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1205.4619v1",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "8c76e30a52dca57172c7e85a53f7bf3a80d81a537d4ff204b11c852a2a374709",
   "file": "1205.4619v1.pdf"
  },
  "provenance": {
   "title": "Quaternion-Octonion Unitary Symmetries and Analogous Casimir Operators",
-  "authors": "Pushpa(1), P. S. Bisht (1), Tianjun Li (2) and O. P. S. Negi (1.2)\u2217",
+  "authors": "Pushpa(1), P. S. Bisht(1), Tianjun Li(2) and O. P. S. Negi(1.2)\u2217",
   "arxiv": {
    "id": "1205.4619",
    "version": "1",
@@ -18,11 +16,31 @@
   },
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
+  "candidates": 1,
+  "by_kind": {
+   "recommendation": 1
+  },
   "formalization_candidates": 0
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "\\begin{gather} \\psi^{\\star\\shortmid}\\cong\\left(\\begin{array}{c} \\bar{u'}\\\\ \\bar{d'} \\end{array}\\right)\\Longleftrightarrow U^{\\star}\\psi^{\\star}\\cong\\exp\\left(\\alpha_{j}e_{j}/2\\right)\\left(\\begin{array}{c} \\bar{u}\\\\ \\bar{d} \\end{array}\\right).\\label{eq:15} \\end{gather} It should be noted that the quark doublet $\\left(u,d\\right)$ and anti-quark doublet $\\left(\\bar{u},\\bar{d}\\right)$ transform differently under $SU(2)_{f}$ transformations.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-2-quaternion-gauge-theory-and-isospin.md",
+   "section_title": "Quaternion Gauge Theory and Isospin",
+   "pages": "2-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
 }

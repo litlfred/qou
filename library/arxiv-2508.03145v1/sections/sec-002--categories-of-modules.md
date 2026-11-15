@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2508.03145v1
-doc_title: "Θ-Categories and Tannakian duality"
+doc_title: "Θ -Categories and Tannakian duality"
 section_id: sec-002--categories-of-modules
 section_title: "-Categories of modules"
 section_number: null
 pages: 11-14
 source_pdf: 2508.03145v1.pdf
 source_sha256: 2bf03452cb503e96
-doc_brief: "Θ-Categories and Tannakian duality — We introduce a notion ofΘ-categories, which is a refinement of the notion of symmetric monoidal∞-categories."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.994
-latex_coverage_ratio: 0.881
+latex_coverage_ratio: 0.978
+doc_brief: "Θ -Categories and Tannakian duality — We introduce a notion of Θ-categories, which is a refinement of the notion of symmetric monoidal ∞-categories."
 ---
 To conclude this part on $\Theta$-categories, we will define a $\Theta$-category of left $B$-modules for a given $\Theta$-algebra $B \in \Theta\text{-}\mathsf{CAlg}(T^\Theta)$. To this end, we first consider the underlying commutative algebra $B_0:=U_{E_\infty}^{\Theta}(B)$ and the corresponding symmetric monoidal $\infty$-category $\mathsf{LMod}_{B_0}(T)$ of left $B_0$-modules in $T$ endowed with its natural symmetric monoidal structure $\otimes_{B_0}$. It will be denoted by $B_0\text{-}\mathsf{Mod}(T)$.
 

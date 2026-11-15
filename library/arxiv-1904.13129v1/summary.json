@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1904.13129v1",
  "source_sha256": "dfa7fd0ebf1ab8c4",
- "brief": "On the regularity of critical points for O’Hara’s knot energies: From smoothness to analyticity — W e prove the analyticity of smooth critical points for O’Har a’s knot energies E α,p , with p = 1",
- "extended": "**On the regularity of critical points for O’Hara’s knot energies: From smoothness to analyticity**\n\n*Nicole Vorderobermeier*\n\n24 pp, 6 sections.\n\n**Abstract.** W e prove the analyticity of smooth critical points for O’Har a’s knot energies E α,p , with p = 1 and 2 < α < 3, subject to a ﬁxed length constraint. This implies, together with the main result in [ BR13], that bounded energy critical points of E α, 1 subject to a ﬁxed length constraint are not only C∞ but also analytic. Our approach is based on Cauchy’s method o f majorants and a decomposition of the gradient that was adapted from the Möbius energy case E 2, 1 in [ BV19].\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 2.2 Properties of analytic functions; 6 The form of the lower order remainder terms ; References",
+ "brief": "On the regularity of critical points for O’Hara’s knot energies: From smoothness to analyticity — We prove the analyticity of smooth critical points for O’Hara’s knot energies Eα,p, with p = 1 and 2",
+ "extended": "**On the regularity of critical points for O’Hara’s knot energies: From smoothness to analyticity**\n\n*Nicole Vorderobermeier*\n\n24 pp, 11 sections.\n\n**Abstract.** We prove the analyticity of smooth critical points for O’Hara’s knot energies Eα,p, with p = 1 and 2 < α < 3, subject to a ﬁxed length constraint. This implies, together with the main result in [BR13], that bounded energy critical points of Eα,1 subject to a ﬁxed length constraint are not only C∞but also analytic. Our approach is based on Cauchy’s method of majorants and a decomposition of the gradient that was adapted from the Möbius energy case E2,1 in [BV19].\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 2.1 Fractional Sobolev spaces; 2.2 Properties of analytic functions; 3 Decomposition of the first variation of E; 4 An estimate for the Q term; 5 A fractional leibniz rule and the form of PT; 6 The form of the lower order remainder terms ; 7 Proof of the main theorem by Cauchy's method; References",
  "tokens": {
   "brief": 49,
-  "extended": 199
+  "extended": 247
  },
  "sections": [
   {
@@ -22,20 +22,45 @@
   {
    "id": "sec-001-2-preliminaries",
    "title": "Preliminaries",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-21-fractional-sobolev-spaces",
+   "title": "Fractional Sobolev spaces",
    "pages": "3-4"
   },
   {
-   "id": "sec-002-22-properties-of-analytic-functions",
+   "id": "sec-003-22-properties-of-analytic-functions",
    "title": "Properties of analytic functions",
-   "pages": "4-14"
+   "pages": "4-6"
   },
   {
-   "id": "sec-003-6-the-form-of-the-lower-order-remainder-terms-r1",
+   "id": "sec-004-3-decomposition-of-the-first-variation-of-e",
+   "title": "Decomposition of the first variation of E",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-005-4-an-estimate-for-the-q-term",
+   "title": "An estimate for the Q term",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-006-5-a-fractional-leibniz-rule-and-the-form-of-pt-q",
+   "title": "A fractional leibniz rule and the form of PT Q",
+   "pages": "9-14"
+  },
+  {
+   "id": "sec-007-6-the-form-of-the-lower-order-remainder-terms-r1",
    "title": "The form of the lower order remainder terms R1 and R2",
-   "pages": "14-23"
+   "pages": "14-17"
   },
   {
-   "id": "sec-004-references",
+   "id": "sec-008-7-proof-of-the-main-theorem-by-cauchys-method-of",
+   "title": "Proof of the main theorem by Cauchy's method of majorants",
+   "pages": "17-23"
+  },
+  {
+   "id": "sec-009-references",
    "title": "References",
    "pages": "23-24"
   }

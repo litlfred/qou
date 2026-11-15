@@ -1,0 +1,1 @@
+In fact ${\mathfrak{so}}(6)$ is simple, so this nontrivial map must be an injection $$d\rho_{\rm{odd}}\colon{\mathfrak{so}}(6) \to {\mathfrak{su}}(4),$$ and because the dimension is 15 on both sides, this map is also onto.

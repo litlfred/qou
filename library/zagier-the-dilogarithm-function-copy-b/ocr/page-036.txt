@@ -1,0 +1,50 @@
+38 Don Zagier
+
+form [x] with x € C \ {0,1} are these examples and the ones deduced from
+them using [1/2] = —[z] and [1 — x] = —[z], ie., the nine numbers x = 1/2,
+—1, 2, (£14 V5)/2 and (3+ V5)/2. (Compare this list with the special values
+of the dilogarithm given in §1 of Chapter I.) Indeed, for the element [2] to
+belong to the Bloch group of C after tensoring with Q), we must have that
+x \ (1— 2) = 0 up to torsion, ie. x = at?, 1 — x = Gt for some non-zero
+complex number t, integers p and q, and roots of unity a and 3. Moreover, x
+must be totally real if [x] is to be torsion in Be, since this condition implies
+that D(x”) = 0 for all conjugates «7 and D is non-zero for non-real arguments
+(cf. the picture in §3 of Chapter I), so we must in fact have x = +t, 1—x = +t4
+with ¢ totally real. Replacing x by one of the six numbers x, 1—x, 1/x, 1-1/2,
+1/(1 — x) or x/(a — 1), we may assume that 0 < 1—a < # < 1 and hence
+that = t?, l-x =t! withO <t<1landq>p>1. But it is easily checked
+that the only equations of the form ¢? + t? = 1 with g > p > 1 which have
+only real roots are t+t = 1 and t+ ¢t? = 1, corresponding to x = 1/2 and
+x = (V5 —1)/2, as claimed.
+
+Remark about torsion. In examples (a) and (b), we showed that the
+elements € under consideration were torsion in the Bloch group by writing
+some multiple of them as a combination of five-term relations, and that they
+were non-trivial by computing the Rogers dilogarithm L(€) and checking that
+L(€)/L(1) had a non-trivial denominator. This method would not work if €
+belonged to a number field F’ having no real embeddings, but in that case we
+could use instead the enhanced dilogarithm of §1B (with respect to a fixed
+embedding of F into C) and check numerically that its value was torsion
+but not zero. This would also work, of course, for a field having both real
+and non-real embeddings , e.g. for example (b) and the embedding given
+
+by « = \/(-1—V/5)/2. Note, however, that in contrast to the real case,
+the statement that a torsion element of the Bloch group is non-trivial is not
+absolute, but depends on the number field, because it can happen that an
+element which is non-trivial torsion in the Bloch group of one number field
+becomes trivial in the Bloch group of a larger field containing more roots
+of unity. A simple example where this happens is given by € = [—1] € Bg,
+which is non-trivial in Bg because the number L(—1)/L(1) = —1/2 is non-
+integral, but which is trivial in Bgy;) because applying the duplication relation
+[2?] = 2[x] + 2[-z] (an easy consequence of the five-term relation) to x = i
+gives [—1] = 2{i] + 2[1/i] = 0. As a less trivial example, we saw in example (a)
+that the inverse golden ratio a is 10-torsion in Br for F = Q(V5), but if we
+pass to the field F = Q(¢), where ¢ is a 5th root of unity, then it becomes
+zero because modulo the relations [x] = —[1 — 2] and [x] = —[x/(x — 1)] we
+have
+
+V(—6, 140) = [-C] + +) + [FC] + FF C/(-@-1)] + [P +-+1] = [1a].
+
+In fact, a theorem of Merkur’ev and Suslin [27] implies that this phenom-
+enon always happens: every torsion element in the Bloch group of a number
+

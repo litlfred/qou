@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.96
 latex_coverage_ratio: 0.96
+doc_brief: "FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS — Factorization homology theories of topological manifolds, after Beilinson, Drinfeld and Lurie, are homology-type theories for topological n-manifolds"
 ---
 We now discuss factorization homology of $n$-disk algebras coming from Lie algebras. Our results are closely analogous to those above about the factorization homology of $n$-disk algebras coming from topological spaces. For simplicity, we assume our Lie algebras are defined over a fixed field $k$ of characteristic zero.
 

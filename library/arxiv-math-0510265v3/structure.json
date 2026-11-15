@@ -8,7 +8,7 @@
   "pages": 19,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -26,7 +26,7 @@
    "Triply-graded link homology and Hochschild",
    "homology of Soergel bimodules"
   ],
-  "abstract": "We trade matrix factorizations and Koszul complexes for Hochschild homology of Soergel bimodules to modify the construction of triply- graded link homology and relate it to Kazhdan-Lusztig theory. Hochschild homology. Let R be a k-algebra, where k is a \ufb01eld, Re = R \u2297k Rop be the enveloping algebra of R, and M be an R-bimodule (equivalently, a left Re-module). The functor of R-coinvariants associates to M the factorspace MR = M/[R, M], where [R, M] is the subspace of M spanned by vectors of the form rm \u2212mr. We have MR = R \u2297Re M. The R-coinvariants functor is right exact and its i-th derived functor takes M to TorRe i (R, M). The latter space is also denoted HHi(R, M) and called the i-th Hochschild homology of M. The Hochschild homology of M is the direct sum HH(R, M) def = \u2295 i\u22650HHi(R, M). To compute Hochschild homology, we choose a resolution of the R-bimodule R by projective R-bimodules . . . \u2212\u2192P2 \u2212\u2192P1 \u2212\u2192P0 \u2212\u2192R \u2212\u21920, and tensor the resolution with M : . . . \u2212\u2192P2 \u2297Re M \u2212\u2192P1 \u2297Re M \u2212\u2192P0 \u2297Re M \u2212\u21920. Homology of this complex is isomorphic to the Hochschild homology of M. 1",
+  "abstract": "We trade matrix factorizations and Koszul complexes for Hochschild homology of Soergel bimodules to modify the construction of triply- graded link homology and relate it to Kazhdan-Lusztig theory. Hochschild homology. Let R be a k-algebra, where k is a ﬁeld, Re = R ⊗k Rop be the enveloping algebra of R, and M be an R-bimodule (equivalently, a left Re-module). The functor of R-coinvariants associates to M the factorspace MR = M/[R, M], where [R, M] is the subspace of M spanned by vectors of the form rm −mr. We have MR = R ⊗Re M. The R-coinvariants functor is right exact and its i-th derived functor takes M to TorRe i (R, M). The latter space is also denoted HHi(R, M) and called the i-th Hochschild homology of M. The Hochschild homology of M is the direct sum HH(R, M) def = ⊕ i≥0HHi(R, M). To compute Hochschild homology, we choose a resolution of the R-bimodule R by projective R-bimodules . . . −→P2 −→P1 −→P0 −→R −→0, and tensor the resolution with M : . . . −→P2 ⊗Re M −→P1 ⊗Re M −→P0 ⊗Re M −→0. Homology of this complex is isomorphic to the Hochschild homology of M. 1",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript SVN PRE-RELEASE 8.62",
    "Creator": "LaTeX with hyperref package",
@@ -65,7 +65,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "From left to right: R-bimodules R, M, N \u2297R M; Hochschild homology of M",
+   "title": "From left to right: R-bimodules R, M, N ⊗R M; Hochschild homology of M",
    "page": 3,
    "confidence": 0.7,
    "evidence": [
@@ -89,7 +89,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "To the left picture we assign R3-bimodule B2 \u2297B1 \u2297B2; to the right picture\u2013the Hochschild homology of this bimodule",
+   "title": "To the left picture we assign R3-bimodule B2 ⊗B1 ⊗B2; to the right picture–the Hochschild homology of this bimodule",
    "page": 6,
    "confidence": 0.7,
    "evidence": [
@@ -101,7 +101,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "A resolution D of a braid\u2019s closure",
+   "title": "A resolution D of a braid’s closure",
    "page": 9,
    "confidence": 0.7,
    "evidence": [
@@ -325,6 +325,7 @@
    "items": []
   },
   "sections": 2,
-  "chars_total": 34408
+  "chars_total": 34408,
+  "furniture_lines_stripped": 0
  }
 }

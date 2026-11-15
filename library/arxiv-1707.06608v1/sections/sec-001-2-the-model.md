@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1707.06608v1
-doc_title: "Fractional Hopfions in the Faddeev-Skyrme model with a symmetry breaking potential"
+doc_title: "Fractional Hopﬁons in the Faddeev-Skyrme model with a symmetry breaking potential"
 section_id: sec-001-2-the-model
 section_title: "The model"
 section_number: 2
 pages: 2-5
 source_pdf: 1707.06608v1.pdf
 source_sha256: 7b7db6dce87dc81e
-doc_brief: "Fractional Hopfions in the Faddeev-Skyrme model with a symmetry breaking potential — We construct new solutions of the Faddeev-Skyrme model with a symmetry breaking potential admittingS1 vacuum."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.988
+latex_prose_ratio: 0.972
+latex_coverage_ratio: 0.849
+doc_brief: "Fractional Hopﬁons in the Faddeev-Skyrme model with a symmetry breaking potential — We construct new solutions of the Faddeev-Skyrme model with a symmetry breaking potential admitting S1 vacuum."
 ---
 The Lagrangian density of the Faddeev-Skyrme model in (3+1)-dimensional flat space can be written in terms of the real triplet of scalar fields $\vec\phi=(\phi_1,\phi_2,\phi_3)$ as [@Faddeev-Hopf; @Faddeev:1996zj] $$\label{lagr}
 \ensuremath{\mathcal{L}}=\int d^3 x\left[c_2\partial_\mu \vec\phi\cdot\partial^\mu \vec\phi -

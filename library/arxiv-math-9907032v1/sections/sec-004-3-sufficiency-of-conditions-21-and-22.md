@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9907032v1
-doc_title: "arXiv:math/9907032v1 [math.GT] 6 Jul 1999"
+doc_title: "Combinatorial optimization in geometry"
 section_id: sec-004-3-sufficiency-of-conditions-21-and-22
 section_title: "Sufficiency of conditions 2.1 and 2.2"
 section_number: 3
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.968
 latex_coverage_ratio: 0.995
+doc_brief: "Combinatorial optimization in geometry (Rivin) — extends and unifies results on ideal polyhedra in H³ to singular Euclidean structures on surfaces, possibly with infinitely many singularities."
 ---
 []{#suff label="suff"}
 

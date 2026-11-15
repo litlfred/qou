@@ -7,10 +7,11 @@
   "bytes": 156101,
   "pages": 14,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,30 @@
    "stamp_date": "29 Feb 2012"
   },
   "doi": null,
-  "title": "Quaternion Octonion Reformulation of Grand Unified Theories",
-  "authors_raw": "Pushpa(1), P. S. Bisht (1,2), Tianjun Li (2) and O. P. S. Negi (1.2)",
+  "title": "Quaternion Octonion Reformulation of Grand Uniﬁed Theories",
+  "authors_raw": "Unified Theories",
   "title_lines": [
-   "Quaternion Octonion Reformulation of Grand",
-   "Unified Theories"
+   "Quaternion Octonion Reformulation of Grand"
   ],
-  "abstract": "In this paper, Grand Uni\ufb01ed theories are discussed in terms o f quater- nions and octonions by using the relation between quaternio n basis el- ements with Pauli matrices and Octonions with Gell Mann \u03bb matri- ces. Connection between the unitary groups of GUTs and the no rmed division algebra has been established to re-describe the SU (5) gauge group. We have thus described the SU (5) gauge group and its subgroup SU (3)C \u00d7 SU (2)L \u00d7 U (1) by using quaternion and octonion basis ele- ments. As such the connection between U (1) gauge group and complex number, SU (2) gauge group and quaternions and SU (3) and octonions is established. It is concluded that the division algebra ap proach to the the theory of uni\ufb01cation of fundamental interactions as the case of GUTs leads to the consequences towards the new understanding of t hese theories which incorporate the existence of magnetic monopole and dy on.",
+  "abstract": "In this paper, Grand Uniﬁed theories are discussed in terms of quater- nions and octonions by using the relation between quaternion basis el- ements with Pauli matrices and Octonions with Gell Mann λ matri- ces. Connection between the unitary groups of GUTs and the normed division algebra has been established to re-describe the SU(5) gauge group. We have thus described the SU(5) gauge group and its subgroup SU(3)C × SU(2)L × U(1) by using quaternion and octonion basis ele- ments. As such the connection between U(1) gauge group and complex number, SU(2) gauge group and quaternions and SU(3) and octonions is established. It is concluded that the division algebra approach to the the theory of uniﬁcation of fundamental interactions as the case of GUTs leads to the consequences towards the new understanding of these theories which incorporate the existence of magnetic monopole and dyon.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20210614201324-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20210614201324-04'00'"
+  },
+  "title_raw": "Quaternion Octonion Reformulation of Grand",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Quaternion Octonion Reformulation of Grand Uniﬁed Theories",
+   "outline": "1 Introduction",
+   "text": "Quaternion Octonion Reformulation of Grand",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Quaternion Octonion Reformulation of Grand Unified Theories"
  },
  "toc": [
   {
@@ -41,32 +52,158 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "SU(5) Gauge Symmetry",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Quaternion-Octonion Reformulation of SU(5) gauge Symmetry",
    "page": 5,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Discussion and Conclusion",
    "page": 11,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1522,
+   "n_words": 229,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -74,8 +211,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 4302,
-   "n_words": 727
+   "n_chars": 4264,
+   "n_words": 677,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-su5-gauge-symmetry",
@@ -83,32 +222,56 @@
    "title": "SU(5) Gauge Symmetry",
    "level": 1,
    "page_start": 3,
-   "page_end": 11,
-   "n_chars": 8443,
-   "n_words": 1897
+   "page_end": 5,
+   "n_chars": 2191,
+   "n_words": 418,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-4-discussion-and-conclusion",
+   "id": "sec-002-3-quaternion-octonion-reformulation-of-su5-gauge",
+   "number": "3",
+   "title": "Quaternion-Octonion Reformulation of SU(5) gauge Symmetry",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 11,
+   "n_chars": 6189,
+   "n_words": 1435,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-4-discussion-and-conclusion",
    "number": "4",
    "title": "Discussion and Conclusion",
    "level": 1,
    "page_start": 11,
    "page_end": 14,
-   "n_chars": 5533,
-   "n_words": 928
+   "n_chars": 5495,
+   "n_words": 867,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 4,
-  "sections": 3,
-  "chars_total": 18278,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 5,
+  "chars_total": 19661,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "anc/gut.tex",
    "tex_sections": 4,
-   "overlaid": 3,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -116,26 +279,39 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-su5-gauge-symmetry",
      "title": "SU(5) Gauge Symmetry",
-     "prose_ratio": 0.991,
-     "coverage_ratio": 0.988,
+     "prose_ratio": 0.989,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-4-discussion-and-conclusion",
-     "title": "Discussion and Conclusion",
-     "prose_ratio": 1.0,
+     "id": "sec-002-3-quaternion-octonion-reformulation-of-su5-gauge",
+     "title": "Quaternion-Octonion Reformulation of SU(5) gauge Symmetry",
+     "prose_ratio": 0.988,
      "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-4-discussion-and-conclusion",
+     "title": "Discussion and Conclusion",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.643,
      "result": "overlaid",
      "converter": "latex"
     }

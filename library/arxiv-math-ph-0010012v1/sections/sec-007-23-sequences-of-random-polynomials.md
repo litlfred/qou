@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.973
 latex_coverage_ratio: 0.965
+doc_brief: "arXiv:math-ph/0010012v1 10 Oct 2000 — We review some recent results on random polynomials and their generalizations in complex and symplectic geometry."
 ---
 We are often interested in sequences of polynomials $\{s_N\}$ chosen independently and at random from ${\mathcal H}_N$ from either a Gaussian or spherical ensemble. We thereform form the product probability space $({\mathcal H}_{\infty}, \mu_{\infty})$, defined by $${\mathcal H}_{\infty} = {\mathcal H}_1 \times {\mathcal H}_2 \times \cdots \times {\mathcal H}_N \times \cdots,\;\;\; \mu_{\infty} = \times_{N = 1}^{\infty} \mu_N, \;\; (\mu_N = \gamma_N\;
 \mbox{or}\; \nu_N).$$ When we say that a sequence of polynomials $\{s_N\}$ of increasing degerees does something almost surely, we mean that the set of such sequences has measure one in this product ensemble.

@@ -1,0 +1,48 @@
+x = ysinh(r) sin(2y).
+The Riemannian measure and length element in terms of (r, y) are now
+
+ds* = dr? + (2sinh(r))?dy”,
+dz = (2sinhr)dr dy.
+
+These give us formulae for the area of a disk D:
+Area(D) = 4m sinh? (+) ,
+rea(D) = 47 sin (5) .
+and circumference of its boundary
+\(OD) = 2rsinh(r),
+
+where we normalize the disk to be centred at i and take r as above to be its radius. The
+
+Laplacian takes the form
+
+OP 1 0 1 om
+A=-(|=>+ stam :
+Or? tanhr Or — (2sinhr)? Oy?
+and eigenfunctions are Legendre p functions
+
+P(cosh(r)) =aP: (s,1= 5) 15 = S)
+
+where
+
+oF \(a, b; ¢ 2) = » one (s)p = 8---(s+k—1)
+
+is the hypergeometric function and E ha — s) are the eigenvalues. The full derivation
+
+of these eigenfunctions is given in [38].
+
+2.3.2 Cylinders
+
+Not all domains in hyperbolic surfaces satisfy the isoperimetric inequality. It may still
+be desirable to investigate the eigenvalues of such vill see a particular case
+of this when we look at the Bolza surface in Section 3.4. One region that does not,
+in general, satisfythe isoperimetric inequality is the hyperbolic cylinder. We take the
+definition from ch
+
+Definition 2.31 (Hyperbolic Cylinder) A hyperbolic cylinder C, with core geodesic y
+of length l, is the quotient of Hl by a hyperbolic isometry
+
+e/? 0
+T= ( 0 Jn) 1>0.
+
+The core geodesic is the image of the axis of T under the quotient map H/(r).
+
+38

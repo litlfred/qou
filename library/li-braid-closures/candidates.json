@@ -1,0 +1,116 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "li-braid-closures",
+ "source": {
+  "structure_sha256": "f7410e7be5bc187e038f6354fe46bdada6fccf4bbc7810344a29ce54bb8d07d6",
+  "file": "Li-braid-closures.pdf"
+ },
+ "provenance": {
+  "title": "Knot polynomials on braid closures",
+  "authors": "January 29, 2025",
+  "arxiv": null,
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "recommendation": 6
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Indeed, if a split link has two circles, then it must be the unlink on two circles, which has Jones polynomial \u22121 \u221a t(1 + t).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "If L splits into L1 and L2, then by the skein relations [1, Example 6.7] we have XL(q, \u039b) = \u2212(1 \u2212\u039bq)XL1(q, \u039b)XL2(q, \u039b) \u221a \u039b(1 \u2212q) , which must equal zero if \u039bq = 1 and q\u0338 = 1.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "If we substitute t = \u03b6n = e2\u03c0i/n into Example 2.20 above, the denominator vanishes, implying that the numerator must vanish too.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-the-homflypt-polynomial.md",
+   "section_title": "The HOMFLYPT polynomial",
+   "pages": "6-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In particular, we must have n X i=1 (\u22121)i\u03c7\u00b5i(\u03b1) = 0 at t = \u03b6n.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-the-homflypt-polynomial.md",
+   "section_title": "The HOMFLYPT polynomial",
+   "pages": "6-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Here, we shall consider two extremal cases: when \u02c6\u03b1 is split and when \u02c6\u03b1 is a knot.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-006-closures-of-3-braids.md",
+   "section_title": "Closures of 3-braids",
+   "pages": "8-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Substituting t = \u22121, it must then be the case that \u03c7(1,1,1,1)(\u03b1) \u2212\u03c7(2,1,1)(\u03b1) + \u03c7(2,2)(\u03b1) = 0 for all \u03b1 \u2208B4 upon specialization to t = \u22121, which can also seen to be true as, applying categorification, we have the long exact sequence 0 \u2212\u2192S(1,1,1,1) \u22121 \u2212\u2192S(2,1,1) \u22121 \u2212\u2192S(2,2) \u22121 \u2212\u21920 due to one of the main results developed in [4].",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-4-braids-and-beyond.md",
+   "section_title": "4-braids and beyond",
+   "pages": "15-15",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

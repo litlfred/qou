@@ -8,7 +8,7 @@
   "pages": 258,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,12 +21,12 @@
    "stamp_date": "23 Apr 2007"
   },
   "doi": null,
-  "title": "arXiv:hep-ph/0601023v3 23 Apr 2007",
+  "title": "Proton Stability in Grand Unified Theories, in Strings and in Branes",
   "authors_raw": "Grand Unified Theories",
   "title_lines": [
    "Proton Stability"
   ],
-  "abstract": "A broad overview of the current status of proton stability in uni- \ufb01ed models of particle interactions is given which includes non - su- persymmetric uni\ufb01cation, SUSY and SUGRA uni\ufb01ed models, uni\ufb01- cation based on extra dimensions, and string-M-theory models. The extra dimensional uni\ufb01cation includes 5D and 6D and universal extra dimensional (UED) models, and models based on warped geometry. Proton stability in a wide array of string theory and M theory models is reviewed. These include Calabi-Yau models, grand uni\ufb01ed models with Kac-Moody levels k > 1, a new class of heterotic string models, models based on intersecting D branes, and string landscape models. The destabilizing e\ufb00ect of quantum gravity on the proton is discussed. The possibility of testing grand uni\ufb01ed models, models based on extra dimensions and string-M-theory models via their distinctive modes is investigated. The proposed next generation proton decay experi- ments, HyperK, UNO, MEMPHYS, ICARUS, LANNDD (DUSEL), and LENA would shed signi\ufb01cant light on the nature of uni\ufb01cation complementary to the physics at the LHC. Mathematical tools for the computation of proton lifetime are given in the appendices. Prospects for the future are discussed.",
+  "abstract": "A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non - su- persymmetric uniﬁcation, SUSY and SUGRA uniﬁed models, uniﬁ- cation based on extra dimensions, and string-M-theory models. The extra dimensional uniﬁcation includes 5D and 6D and universal extra dimensional (UED) models, and models based on warped geometry. Proton stability in a wide array of string theory and M theory models is reviewed. These include Calabi-Yau models, grand uniﬁed models with Kac-Moody levels k > 1, a new class of heterotic string models, models based on intersecting D branes, and string landscape models. The destabilizing eﬀect of quantum gravity on the proton is discussed. The possibility of testing grand uniﬁed models, models based on extra dimensions and string-M-theory models via their distinctive modes is investigated. The proposed next generation proton decay experi- ments, HyperK, UNO, MEMPHYS, ICARUS, LANNDD (DUSEL), and LENA would shed signiﬁcant light on the nature of uniﬁcation complementary to the physics at the LHC. Mathematical tools for the computation of proton lifetime are given in the appendices. Prospects for the future are discussed.",
   "docinfo": {
    "Title": "arXiv:hep-ph/0601023v3  23 Apr 2007",
    "Producer": "GPL Ghostscript 10.01.2",
@@ -38,13 +38,14 @@
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:hep-ph/0601023v3 23 Apr 2007",
-   "heading": "Proton Stability in Grand Uni\ufb01ed Theories, in Strings and in Branes",
+   "heading": "Proton Stability in Grand Uniﬁed Theories, in Strings and in Branes",
    "text": "Proton Stability",
    "corroborated_by": [
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:hep-ph/0601023v3 23 Apr 2007"
  },
  "toc": [
   {
@@ -487,7 +488,7 @@
     "latex",
     "body"
    ],
-   "page_label": null
+   "page_label": "111"
   },
   {
    "level": 2,
@@ -643,7 +644,7 @@
     "latex",
     "body"
    ],
-   "page_label": null
+   "page_label": "136"
   },
   {
    "level": 3,
@@ -735,19 +736,6 @@
     "body"
    ],
    "page_label": "147"
-  },
-  {
-   "level": 1,
-   "title": "$d=5$ contributions to the decay of the proton",
-   "page": 154,
-   "source": "inferred",
-   "number": "12",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": "154"
   },
   {
    "level": 1,
@@ -860,7 +848,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "Idealized p \u2192e+\u03c00 decay in Super-Kamiokande [26]. Fig.(1) gives a schematic presentation of an ideal p \u2192e+\u03c00 decay. Here,",
+   "title": "Idealized p →e+π0 decay in Super-Kamiokande [26]. Fig.(1) gives a schematic presentation of an ideal p →e+π0 decay. Here,",
    "page": 13,
    "confidence": 0.7,
    "evidence": [
@@ -872,7 +860,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "Idealized p \u2192K+\u03bd decay in Super-Kamiokande, K+ \u2192\u03c0+\u03c00",
+   "title": "Idealized p →K+ν decay in Super-Kamiokande, K+ →π+π0",
    "page": 14,
    "confidence": 0.9,
    "evidence": [
@@ -885,7 +873,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "Idealized p \u2192K+\u03bd decay in Super-Kamiokande, K+ \u2192\u00b5+\u03bd\u00b5",
+   "title": "Idealized p →K+ν decay in Super-Kamiokande, K+ →µ+νµ",
    "page": 14,
    "confidence": 0.9,
    "evidence": [
@@ -921,7 +909,7 @@
   {
    "kind": "table",
    "number": "3",
-   "title": "Contributions to the Bij coe\ufb03cients in a realistic minimal non-SUSY SU(5) [211]",
+   "title": "Contributions to the Bij coeﬃcients in a realistic minimal non-SUSY SU(5) [211]",
    "page": 65,
    "confidence": 0.6,
    "evidence": [
@@ -932,7 +920,7 @@
   {
    "kind": "table",
    "number": "4",
-   "title": "P and P\u2032 parities of the components of bulk Higgs multiplets",
+   "title": "P and P′ parities of the components of bulk Higgs multiplets",
    "page": 79,
    "confidence": 0.6,
    "evidence": [
@@ -943,7 +931,7 @@
   {
    "kind": "table",
    "number": "5",
-   "title": "P and P\u2032 parities for the components of bulk gauge multiplets In setting up the Lagrangian in 5D we have to make sure that the Lagrangian is invariant under the full Z2 \u00d7 Z\u2032",
+   "title": "P and P′ parities for the components of bulk gauge multiplets In setting up the Lagrangian in 5D we have to make sure that the Lagrangian is invariant under the full Z2 × Z′",
    "page": 80,
    "confidence": 0.8,
    "evidence": [
@@ -955,7 +943,7 @@
   {
    "kind": "table",
    "number": "6",
-   "title": "P and P\u2032 parities of SO(10) vector and chiral multiplets",
+   "title": "P and P′ parities of SO(10) vector and chiral multiplets",
    "page": 86,
    "confidence": 0.6,
    "evidence": [
@@ -966,7 +954,7 @@
   {
    "kind": "table",
    "number": "7",
-   "title": "C parities and matter parities from Ref. [310] where L1\u00b1 = (L1 \u00b1",
+   "title": "C parities and matter parities from Ref. [310] where L1± = (L1 ±",
    "page": 106,
    "confidence": 0.6,
    "evidence": [
@@ -977,7 +965,7 @@
   {
    "kind": "table",
    "number": "8",
-   "title": "The U(1) quantum numbers of the \ufb01elds in a class of string derived models [394] From Table (8) one \ufb01nds that baryon and lepton number dimension four",
+   "title": "The U(1) quantum numbers of the ﬁelds in a class of string derived models [394] From Table (8) one ﬁnds that baryon and lepton number dimension four",
    "page": 123,
    "confidence": 0.6,
    "evidence": [
@@ -988,7 +976,7 @@
   {
    "kind": "table",
    "number": "9",
-   "title": "Properties of the dimension six operators under SU(3)L \u00d7 SU(3)R. To obtain the e\ufb00ective Lagrangian for the operators we want to simulate the transformations of Table (9) using the baryon and meson \ufb01elds. For the baryons we introduce the matrix",
+   "title": "Properties of the dimension six operators under SU(3)L × SU(3)R. To obtain the eﬀective Lagrangian for the operators we want to simulate the transformations of Table (9) using the baryon and meson ﬁelds. For the baryons we introduce the matrix",
    "page": 177,
    "confidence": 0.6,
    "evidence": [
@@ -1012,7 +1000,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "Gauge contributions to the decay of the proton. In this case the decay of the proton is mediated by vector leptoquarks. The \ufb01elds \u03a8, \u03c8 and \u03a6 are quark \ufb01elds and l corresponds to the leptons. A possible contribution is: \u03a8 = uL, \u03c8 = (uC)L, \u03a6 = (dC",
+   "title": "Gauge contributions to the decay of the proton. In this case the decay of the proton is mediated by vector leptoquarks. The ﬁelds Ψ, ψ and Φ are quark ﬁelds and l corresponds to the leptons. A possible contribution is: Ψ = uL, ψ = (uC)L, Φ = (dC",
    "page": 252,
    "confidence": 0.7,
    "evidence": [
@@ -1024,7 +1012,7 @@
   {
    "kind": "figure",
    "number": "6",
-   "title": "Higgs contributions to the decay of the proton. In this case proton decay is mediated by scalar leptoquarks T. The \ufb01elds Q = (uL, dL) and L = (\u03bdL, eL)",
+   "title": "Higgs contributions to the decay of the proton. In this case proton decay is mediated by scalar leptoquarks T. The ﬁelds Q = (uL, dL) and L = (νL, eL)",
    "page": 253,
    "confidence": 0.7,
    "evidence": [
@@ -1036,7 +1024,7 @@
   {
    "kind": "figure",
    "number": "7",
-   "title": "Values of the gauge couplings of the Standard Model at di\ufb00erent scales",
+   "title": "Values of the gauge couplings of the Standard Model at diﬀerent scales",
    "page": 254,
    "confidence": 0.7,
    "evidence": [
@@ -1048,7 +1036,7 @@
   {
    "kind": "figure",
    "number": "8",
-   "title": "Plot of lines of constant M\u03a33",
+   "title": "Plot of lines of constant MΣ3",
    "page": 255,
    "confidence": 0.9,
    "evidence": [
@@ -1061,7 +1049,7 @@
   {
    "kind": "figure",
    "number": "9",
-   "title": "Values of the gauge couplings at di\ufb00erent scales, in the",
+   "title": "Values of the gauge couplings at diﬀerent scales, in the",
    "page": 256,
    "confidence": 0.7,
    "evidence": [
@@ -1073,7 +1061,7 @@
   {
    "kind": "figure",
    "number": "10",
-   "title": "Isoplot for the upper bounds on the total proton lifetime in years in the Majorana neutrino case in the MX\u2013\u03b1GUT plane",
+   "title": "Isoplot for the upper bounds on the total proton lifetime in years in the Majorana neutrino case in the MX–αGUT plane",
    "page": 257,
    "confidence": 0.9,
    "evidence": [
@@ -1086,7 +1074,7 @@
   {
    "kind": "figure",
    "number": "11",
-   "title": "Isoplot for the upper bounds on the total proton lifetime in years in the Dirac neutrino case in the MX\u2013\u03b1GUT plane. The value of the unifying coupling constant is varied from 1/60 to 1/10. The conventional values for MX and \u03b1GUT in SUSY GUTs are marked in thick lines. The experimentally excluded reg",
+   "title": "Isoplot for the upper bounds on the total proton lifetime in years in the Dirac neutrino case in the MX–αGUT plane. The value of the unifying coupling constant is varied from 1/60 to 1/10. The conventional values for MX and αGUT in SUSY GUTs are marked in thick lines. The experimentally excluded reg",
    "page": 258,
    "confidence": 0.7,
    "evidence": [
@@ -1933,10 +1921,12 @@
   },
   {
    "physical": 111,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "111",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
   },
   {
    "physical": 112,
@@ -2128,10 +2118,12 @@
   },
   {
    "physical": 136,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "136",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
   },
   {
    "physical": 137,
@@ -3022,8 +3014,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 5,
-   "n_chars": 5560,
-   "n_words": 1290,
+   "n_chars": 5558,
+   "n_words": 1289,
    "label_start": null,
    "label_end": "5"
   },
@@ -3034,7 +3026,7 @@
    "level": 1,
    "page_start": 5,
    "page_end": 12,
-   "n_chars": 17531,
+   "n_chars": 17542,
    "n_words": 2852,
    "label_start": "5",
    "label_end": "12"
@@ -3046,325 +3038,589 @@
    "level": 1,
    "page_start": 12,
    "page_end": 17,
-   "n_chars": 10763,
-   "n_words": 1842,
+   "n_chars": 9199,
+   "n_words": 1585,
    "label_start": "12",
    "label_end": "17"
   },
   {
-   "id": "sec-002-31-baryon-number-violation-in-the-standard-model",
+   "id": "sec-002-3-nucleon-decay-in-non-supersymmetric-scenarios",
+   "number": "3",
+   "title": "Nucleon decay in non-supersymmetric scenarios",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 1558,
+   "n_words": 256,
+   "label_start": "17",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-003-31-baryon-number-violation-in-the-standard-model",
    "number": "3.1",
    "title": "Baryon number violation in the Standard Model",
    "level": 2,
    "page_start": 17,
-   "page_end": 22,
-   "n_chars": 8772,
-   "n_words": 1758,
+   "page_end": 18,
+   "n_chars": 1384,
+   "n_words": 248,
    "label_start": "17",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-004-32-grand-unification-and-gauge-contributions-to",
+   "number": "3.2",
+   "title": "Grand unification and gauge contributions to the decay of the proton",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 22,
+   "n_chars": 7425,
+   "n_words": 1515,
+   "label_start": "18",
    "label_end": "22"
   },
   {
-   "id": "sec-003-33-proton-decay-induced-by-scalar-leptoquarks",
+   "id": "sec-005-33-proton-decay-induced-by-scalar-leptoquarks",
    "number": "3.3",
    "title": "Proton decay induced by scalar leptoquarks",
    "level": 2,
    "page_start": 22,
-   "page_end": 27,
-   "n_chars": 8518,
-   "n_words": 1566,
+   "page_end": 25,
+   "n_chars": 3296,
+   "n_words": 691,
    "label_start": "22",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-006-4-nucleon-decay-in-susy-and-sugra-unified-theori",
+   "number": "4",
+   "title": "Nucleon decay in SUSY and SUGRA unified theories",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 27,
+   "n_chars": 5223,
+   "n_words": 873,
+   "label_start": "25",
    "label_end": "27"
   },
   {
-   "id": "sec-004-41-r-parity-violation-and-the-decay-of-the-proto",
+   "id": "sec-007-41-r-parity-violation-and-the-decay-of-the-proto",
    "number": "4.1",
    "title": "R-parity violation and the decay of the proton",
    "level": 2,
    "page_start": 27,
-   "page_end": 40,
-   "n_chars": 28481,
-   "n_words": 5122,
+   "page_end": 30,
+   "n_chars": 4727,
+   "n_words": 908,
    "label_start": "27",
+   "label_end": "30"
+  },
+  {
+   "id": "sec-008-42-supersymmetry-breaking-and-sugra-unification",
+   "number": "4.2",
+   "title": "Supersymmetry breaking and SUGRA unification",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 36,
+   "n_chars": 15323,
+   "n_words": 2728,
+   "label_start": "30",
+   "label_end": "36"
+  },
+  {
+   "id": "sec-009-43-effect-of-cp-violating-phases-on-proton-lifet",
+   "number": "4.3",
+   "title": "Effect of CP violating phases on proton lifetime",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 40,
+   "n_chars": 8464,
+   "n_words": 1491,
+   "label_start": "36",
    "label_end": "40"
   },
   {
-   "id": "sec-005-44-doublet-triplet-splitting-problem",
+   "id": "sec-010-44-doublet-triplet-splitting-problem",
    "number": "4.4",
    "title": "Doublet-triplet splitting problem",
    "level": 2,
    "page_start": 40,
-   "page_end": 48,
-   "n_chars": 15462,
-   "n_words": 2773,
+   "page_end": 42,
+   "n_chars": 4311,
+   "n_words": 827,
    "label_start": "40",
+   "label_end": "42"
+  },
+  {
+   "id": "sec-011-45-proton-decay-in-su5-supersymmetric-grand-unif",
+   "number": "4.5",
+   "title": "Proton decay in $SU(5)$ supersymmetric grand unification",
+   "level": 2,
+   "page_start": 42,
+   "page_end": 48,
+   "n_chars": 11132,
+   "n_words": 1941,
+   "label_start": "42",
    "label_end": "48"
   },
   {
-   "id": "sec-006-46-nucleon-decay-in-so10-theories",
+   "id": "sec-012-46-nucleon-decay-in-so10-theories",
    "number": "4.6",
    "title": "Nucleon decay in SO(10) theories",
    "level": 2,
    "page_start": 48,
-   "page_end": 67,
-   "n_chars": 36238,
-   "n_words": 6617,
+   "page_end": 54,
+   "n_chars": 10918,
+   "n_words": 2035,
    "label_start": "48",
+   "label_end": "54"
+  },
+  {
+   "id": "sec-013-47-proton-decay-in-models-with-unified-symmetry",
+   "number": "4.7",
+   "title": "Proton decay in models with unified symmetry breaking",
+   "level": 2,
+   "page_start": 54,
+   "page_end": 56,
+   "n_chars": 4381,
+   "n_words": 790,
+   "label_start": "54",
+   "label_end": "56"
+  },
+  {
+   "id": "sec-014-5-testing-grand-unification",
+   "number": "5",
+   "title": "Testing grand unification",
+   "level": 1,
+   "page_start": 56,
+   "page_end": 57,
+   "n_chars": 2273,
+   "n_words": 362,
+   "label_start": "56",
+   "label_end": "57"
+  },
+  {
+   "id": "sec-015-51-textures-planck-scale-effects-and-proton-deca",
+   "number": "5.1",
+   "title": "Textures, Planck scale effects and proton decay",
+   "level": 2,
+   "page_start": 57,
+   "page_end": 60,
+   "n_chars": 5933,
+   "n_words": 1094,
+   "label_start": "57",
+   "label_end": "60"
+  },
+  {
+   "id": "sec-016-52-gravitational-smearing-effects",
+   "number": "5.2",
+   "title": "Gravitational smearing effects",
+   "level": 2,
+   "page_start": 60,
+   "page_end": 62,
+   "n_chars": 5717,
+   "n_words": 1008,
+   "label_start": "60",
+   "label_end": "62"
+  },
+  {
+   "id": "sec-017-53-constraints-from-gauge-coupling-unification",
+   "number": "5.3",
+   "title": "Constraints from gauge coupling unification",
+   "level": 2,
+   "page_start": 62,
+   "page_end": 67,
+   "n_chars": 7022,
+   "n_words": 1327,
+   "label_start": "62",
    "label_end": "67"
   },
   {
-   "id": "sec-007-54-testing-guts-through-proton-decay",
+   "id": "sec-018-54-testing-guts-through-proton-decay",
    "number": "5.4",
    "title": "Testing GUTs through proton decay",
    "level": 2,
    "page_start": 67,
-   "page_end": 71,
-   "n_chars": 7796,
-   "n_words": 1495,
+   "page_end": 68,
+   "n_chars": 2707,
+   "n_words": 498,
    "label_start": "67",
+   "label_end": "68"
+  },
+  {
+   "id": "sec-019-55-proton-decay-in-flipped-su5",
+   "number": "5.5",
+   "title": "Proton decay in flipped $SU(5)$",
+   "level": 2,
+   "page_start": 68,
+   "page_end": 71,
+   "n_chars": 5089,
+   "n_words": 996,
+   "label_start": "68",
    "label_end": "71"
   },
   {
-   "id": "sec-008-56-upper-bound-on-the-proton-lifetime-in-guts",
+   "id": "sec-020-56-upper-bound-on-the-proton-lifetime-in-guts",
    "number": "5.6",
    "title": "Upper bound on the proton lifetime in GUTs",
    "level": 2,
    "page_start": 71,
-   "page_end": 73,
-   "n_chars": 5404,
-   "n_words": 923,
+   "page_end": 72,
+   "n_chars": 3200,
+   "n_words": 561,
    "label_start": "71",
+   "label_end": "72"
+  },
+  {
+   "id": "sec-021-6-unification-in-extra-dimensions-and-proton-dec",
+   "number": "6",
+   "title": "Unification in Extra Dimensions and Proton Decay",
+   "level": 1,
+   "page_start": 72,
+   "page_end": 73,
+   "n_chars": 2202,
+   "n_words": 363,
+   "label_start": "72",
    "label_end": "73"
   },
   {
-   "id": "sec-009-61-proton-decay-in-models-with-5d",
+   "id": "sec-022-61-proton-decay-in-models-with-5d",
    "number": "6.1",
    "title": "Proton decay in models with 5D",
    "level": 2,
    "page_start": 73,
    "page_end": 84,
-   "n_chars": 21008,
-   "n_words": 3912,
+   "n_chars": 21035,
+   "n_words": 3917,
    "label_start": "73",
    "label_end": "84"
   },
   {
-   "id": "sec-010-62-so10-models-in-5d",
+   "id": "sec-023-62-so10-models-in-5d",
    "number": "6.2",
    "title": "SO(10) models in 5D",
    "level": 2,
    "page_start": 84,
-   "page_end": 88,
-   "n_chars": 7798,
-   "n_words": 1489,
+   "page_end": 87,
+   "n_chars": 5915,
+   "n_words": 1093,
    "label_start": "84",
+   "label_end": "87"
+  },
+  {
+   "id": "sec-024-63-5d-trinification",
+   "number": "6.3",
+   "title": "5D Trinification",
+   "level": 2,
+   "page_start": 87,
+   "page_end": 88,
+   "n_chars": 1894,
+   "n_words": 398,
+   "label_start": "87",
    "label_end": "88"
   },
   {
-   "id": "sec-011-64-6d-models",
+   "id": "sec-025-64-6d-models",
    "number": "6.4",
    "title": "6D models",
    "level": 2,
    "page_start": 88,
-   "page_end": 96,
-   "n_chars": 12017,
-   "n_words": 2377,
+   "page_end": 94,
+   "n_chars": 8350,
+   "n_words": 1655,
    "label_start": "88",
+   "label_end": "94"
+  },
+  {
+   "id": "sec-026-65-gauge-higgs-unification",
+   "number": "6.5",
+   "title": "Gauge-Higgs unification",
+   "level": 2,
+   "page_start": 94,
+   "page_end": 96,
+   "n_chars": 3668,
+   "n_words": 722,
+   "label_start": "94",
    "label_end": "96"
   },
   {
-   "id": "sec-012-66-proton-decay-in-universal-extra-dimension-ued",
+   "id": "sec-027-66-proton-decay-in-universal-extra-dimension-ued",
    "number": "6.6",
    "title": "Proton decay in universal extra dimension (UED) models",
    "level": 2,
    "page_start": 96,
    "page_end": 99,
-   "n_chars": 5128,
-   "n_words": 881,
+   "n_chars": 5172,
+   "n_words": 887,
    "label_start": "96",
    "label_end": "99"
   },
   {
-   "id": "sec-013-67-proton-decay-in-warped-geometry",
+   "id": "sec-028-67-proton-decay-in-warped-geometry",
    "number": "6.7",
    "title": "Proton decay in warped geometry",
    "level": 2,
    "page_start": 99,
    "page_end": 101,
-   "n_chars": 5771,
-   "n_words": 1043,
+   "n_chars": 5799,
+   "n_words": 1047,
    "label_start": "99",
    "label_end": "101"
   },
   {
-   "id": "sec-014-68-proton-stability-in-kink-backgrounds",
+   "id": "sec-029-68-proton-stability-in-kink-backgrounds",
    "number": "6.8",
    "title": "Proton stability in kink backgrounds",
    "level": 2,
    "page_start": 101,
    "page_end": 102,
-   "n_chars": 3351,
-   "n_words": 549,
+   "n_chars": 3386,
+   "n_words": 553,
    "label_start": "101",
    "label_end": "102"
   },
   {
-   "id": "sec-015-7-proton-decay-in-string-models",
+   "id": "sec-030-7-proton-decay-in-string-models",
    "number": "7",
    "title": "Proton Decay in String Models",
    "level": 1,
    "page_start": 102,
-   "page_end": 103,
-   "n_chars": 1846,
-   "n_words": 314,
+   "page_end": 104,
+   "n_chars": 4623,
+   "n_words": 758,
    "label_start": "102",
-   "label_end": null
+   "label_end": "104"
   },
   {
-   "id": "sec-016-71-proton-stability-in-calabi-yau-models",
+   "id": "sec-031-71-proton-stability-in-calabi-yau-models",
    "number": "7.1",
    "title": "Proton Stability in Calabi-Yau Models",
    "level": 2,
-   "page_start": 103,
-   "page_end": 111,
-   "n_chars": 15093,
-   "n_words": 2695,
-   "label_start": null,
-   "label_end": null
+   "page_start": 104,
+   "page_end": 109,
+   "n_chars": 8166,
+   "n_words": 1558,
+   "label_start": "104",
+   "label_end": "109"
   },
   {
-   "id": "sec-017-73-a-new-class-of-heterotic-string-models",
+   "id": "sec-032-72-kac-moody-level-k1-string-models-and-proton-d",
+   "number": "7.2",
+   "title": "Kac-Moody level $k>1$ string models and proton decay",
+   "level": 2,
+   "page_start": 109,
+   "page_end": 111,
+   "n_chars": 4201,
+   "n_words": 698,
+   "label_start": "109",
+   "label_end": "111"
+  },
+  {
+   "id": "sec-033-73-a-new-class-of-heterotic-string-models",
    "number": "7.3",
    "title": "A new class of heterotic string models",
    "level": 2,
    "page_start": 111,
+   "page_end": 112,
+   "n_chars": 2474,
+   "n_words": 416,
+   "label_start": "111",
+   "label_end": "112"
+  },
+  {
+   "id": "sec-034-74-proton-decay-in-m-theory-compactifications",
+   "number": "7.4",
+   "title": "Proton decay in M theory compactifications",
+   "level": 2,
+   "page_start": 112,
    "page_end": 114,
-   "n_chars": 6438,
-   "n_words": 1124,
-   "label_start": null,
+   "n_chars": 3994,
+   "n_words": 713,
+   "label_start": "112",
    "label_end": "114"
   },
   {
-   "id": "sec-018-75-proton-decay-in-intersecting-d-brane-models",
+   "id": "sec-035-75-proton-decay-in-intersecting-d-brane-models",
    "number": "7.5",
    "title": "Proton decay in intersecting D brane models",
    "level": 2,
    "page_start": 114,
    "page_end": 117,
-   "n_chars": 5880,
-   "n_words": 1105,
+   "n_chars": 5920,
+   "n_words": 1111,
    "label_start": "114",
    "label_end": "117"
   },
   {
-   "id": "sec-019-76-nucleon-stability-in-string-landscape-models",
+   "id": "sec-036-76-nucleon-stability-in-string-landscape-models",
    "number": "7.6",
    "title": "Nucleon stability in string landscape models",
    "level": 2,
    "page_start": 117,
-   "page_end": 124,
-   "n_chars": 14638,
-   "n_words": 2571,
+   "page_end": 121,
+   "n_chars": 8264,
+   "n_words": 1444,
    "label_start": "117",
+   "label_end": "121"
+  },
+  {
+   "id": "sec-037-77-proton-decay-from-black-hole-and-wormhole-eff",
+   "number": "7.7",
+   "title": "Proton decay from black hole and wormhole effects",
+   "level": 2,
+   "page_start": 121,
+   "page_end": 122,
+   "n_chars": 2569,
+   "n_words": 446,
+   "label_start": "121",
+   "label_end": "122"
+  },
+  {
+   "id": "sec-038-78-u1-string-symmetries-and-proton-stability",
+   "number": "7.8",
+   "title": "$U(1)$ string symmetries and proton stability",
+   "level": 2,
+   "page_start": 122,
+   "page_end": 124,
+   "n_chars": 3796,
+   "n_words": 679,
+   "label_start": "122",
    "label_end": "124"
   },
   {
-   "id": "sec-020-79-discrete-symmetries-and-proton-stability",
+   "id": "sec-039-79-discrete-symmetries-and-proton-stability",
    "number": "7.9",
    "title": "Discrete Symmetries and proton stability",
    "level": 2,
    "page_start": 124,
    "page_end": 127,
-   "n_chars": 7547,
-   "n_words": 1279,
+   "n_chars": 7586,
+   "n_words": 1283,
    "label_start": "124",
    "label_end": "127"
   },
   {
-   "id": "sec-021-8-other-aspects",
+   "id": "sec-040-8-other-aspects",
    "number": "8",
    "title": "Other Aspects",
    "level": 1,
    "page_start": 127,
    "page_end": 128,
-   "n_chars": 1217,
-   "n_words": 202,
+   "n_chars": 1227,
+   "n_words": 203,
    "label_start": "127",
    "label_end": "128"
   },
   {
-   "id": "sec-022-81-neutrino-masses-and-proton-decay",
+   "id": "sec-041-81-neutrino-masses-and-proton-decay",
    "number": "8.1",
    "title": "Neutrino masses and proton decay",
    "level": 2,
    "page_start": 128,
    "page_end": 133,
-   "n_chars": 10330,
-   "n_words": 1846,
+   "n_chars": 10359,
+   "n_words": 1850,
    "label_start": "128",
    "label_end": "133"
   },
   {
-   "id": "sec-023-82-proton-stability-and-dark-matter",
+   "id": "sec-042-82-proton-stability-and-dark-matter",
    "number": "8.2",
    "title": "Proton stability and dark matter",
    "level": 2,
    "page_start": 133,
-   "page_end": 137,
-   "n_chars": 7399,
-   "n_words": 1252,
+   "page_end": 135,
+   "n_chars": 2969,
+   "n_words": 481,
    "label_start": "133",
+   "label_end": "135"
+  },
+  {
+   "id": "sec-043-83-exotic-b-l-violation",
+   "number": "8.3",
+   "title": "Exotic $B \\ \\& \\ L$ violation",
+   "level": 2,
+   "page_start": 135,
+   "page_end": 135,
+   "n_chars": 5,
+   "n_words": 1,
+   "label_start": "135",
+   "label_end": "135"
+  },
+  {
+   "id": "sec-044-831-delta-b-1-violation-and-other-non-standard-b",
+   "number": "8.3.1",
+   "title": "$|\\Delta B| \\ > \\ 1$ violation and other non-standard $B\\& L$ violation",
+   "level": 3,
+   "page_start": 135,
+   "page_end": 136,
+   "n_chars": 2558,
+   "n_words": 446,
+   "label_start": "135",
+   "label_end": "136"
+  },
+  {
+   "id": "sec-045-832-b-l-violation-involving-higher-generations",
+   "number": "8.3.2",
+   "title": "$B \\ \\& \\ L$ violation involving higher generations",
+   "level": 3,
+   "page_start": 136,
+   "page_end": 137,
+   "n_chars": 1767,
+   "n_words": 307,
+   "label_start": "136",
    "label_end": "137"
   },
   {
-   "id": "sec-024-833-monopole-catalyzed-proton-decay",
+   "id": "sec-046-833-monopole-catalyzed-proton-decay",
    "number": "8.3.3",
    "title": "Monopole catalyzed proton decay",
    "level": 3,
    "page_start": 137,
    "page_end": 138,
-   "n_chars": 2399,
-   "n_words": 419,
+   "n_chars": 2427,
+   "n_words": 422,
    "label_start": "137",
    "label_end": "138"
   },
   {
-   "id": "sec-025-84-proton-decay-and-the-ultimate-fate-of-the-uni",
+   "id": "sec-047-84-proton-decay-and-the-ultimate-fate-of-the-uni",
    "number": "8.4",
    "title": "Proton decay and the ultimate fate of the universe",
    "level": 2,
    "page_start": 138,
    "page_end": 139,
-   "n_chars": 1297,
-   "n_words": 236,
+   "n_chars": 1346,
+   "n_words": 244,
    "label_start": "138",
    "label_end": "139"
   },
   {
-   "id": "sec-026-9-summary-and-outlook",
+   "id": "sec-048-9-summary-and-outlook",
    "number": "9",
    "title": "Summary and Outlook",
    "level": 1,
    "page_start": 139,
    "page_end": 144,
-   "n_chars": 13398,
-   "n_words": 2199,
+   "n_chars": 13415,
+   "n_words": 2201,
    "label_start": "139",
    "label_end": "144"
   },
   {
-   "id": "sec-027-10-summary-table-of-p-decay-predictions",
+   "id": "sec-049-10-summary-table-of-p-decay-predictions",
    "number": "10",
    "title": "Summary Table of p decay predictions",
    "level": 1,
    "page_start": 144,
    "page_end": 146,
-   "n_chars": 2784,
-   "n_words": 523,
+   "n_chars": 2821,
+   "n_words": 529,
    "label_start": "144",
    "label_end": null
   },
   {
-   "id": "sec-028-acknowledgments",
+   "id": "sec-050-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 1,
@@ -3376,73 +3632,133 @@
    "label_end": "147"
   },
   {
-   "id": "sec-029-appendices",
+   "id": "sec-051-appendices",
    "number": null,
    "title": "APPENDICES",
    "level": 1,
    "page_start": 147,
+   "page_end": 147,
+   "n_chars": 1,
+   "n_words": 1,
+   "label_start": "147",
+   "label_end": "147"
+  },
+  {
+   "id": "sec-052-11-mathematical-aspects-of-su5-and-so10-unificat",
+   "number": "11",
+   "title": "Mathematical aspects of $SU(5)$ and $SO(10)$ unification",
+   "level": 1,
+   "page_start": 147,
    "page_end": 162,
-   "n_chars": 17719,
-   "n_words": 3597,
+   "n_chars": 17674,
+   "n_words": 3589,
    "label_start": "147",
    "label_end": "162"
   },
   {
-   "id": "sec-030-13-dressing-of-the-d5-operators",
+   "id": "sec-053-13-dressing-of-the-d5-operators",
    "number": "13",
    "title": "Dressing of the d=5 operators",
    "level": 1,
    "page_start": 162,
    "page_end": 168,
-   "n_chars": 8075,
-   "n_words": 1716,
+   "n_chars": 8103,
+   "n_words": 1720,
    "label_start": "162",
    "label_end": "168"
   },
   {
-   "id": "sec-031-14-sparticle-spectrum-and-renormalization",
+   "id": "sec-054-14-sparticle-spectrum-and-renormalization",
    "number": "14",
    "title": "Sparticle spectrum and renormalization",
    "level": 1,
    "page_start": 168,
-   "page_end": 184,
-   "n_chars": 21257,
-   "n_words": 4619,
+   "page_end": 173,
+   "n_chars": 5015,
+   "n_words": 1300,
    "label_start": "168",
+   "label_end": "173"
+  },
+  {
+   "id": "sec-055-15-renormalization-of-the-d5-and-d6-operators",
+   "number": "15",
+   "title": "Renormalization of the $d=5$ and $d=6$ operators",
+   "level": 1,
+   "page_start": 173,
+   "page_end": 174,
+   "n_chars": 2991,
+   "n_words": 602,
+   "label_start": "173",
+   "label_end": "174"
+  },
+  {
+   "id": "sec-056-16-effective-lagrangian-for-nucleon-decay",
+   "number": "16",
+   "title": "Effective lagrangian for nucleon decay",
+   "level": 1,
+   "page_start": 174,
+   "page_end": 184,
+   "n_chars": 13245,
+   "n_words": 2709,
+   "label_start": "174",
    "label_end": "184"
   },
   {
-   "id": "sec-032-17-details-of-the-analysis-on-testing-guts",
+   "id": "sec-057-17-details-of-the-analysis-on-testing-guts",
    "number": "17",
    "title": "Details of the analysis on testing GUTs",
    "level": 1,
    "page_start": 184,
    "page_end": 189,
-   "n_chars": 7183,
-   "n_words": 1425,
+   "n_chars": 7221,
+   "n_words": 1431,
    "label_start": "184",
    "label_end": "189"
   },
   {
-   "id": "sec-033-18-detailed-analysis-of-upper-bounds",
+   "id": "sec-058-18-detailed-analysis-of-upper-bounds",
    "number": "18",
    "title": "Detailed analysis of upper bounds",
    "level": 1,
    "page_start": 189,
-   "page_end": 258,
-   "n_chars": 111305,
-   "n_words": 17684,
+   "page_end": 192,
+   "n_chars": 6219,
+   "n_words": 1161,
    "label_start": "189",
+   "label_end": "192"
+  },
+  {
+   "id": "sec-059-19-relating-4d-parameters-to-parameters-of-m-the",
+   "number": "19",
+   "title": "Relating 4D parameters to parameters of M theory",
+   "level": 1,
+   "page_start": 192,
+   "page_end": 196,
+   "n_chars": 4473,
+   "n_words": 856,
+   "label_start": "192",
+   "label_end": null
+  },
+  {
+   "id": "sec-060-20-gauge-coupling-unification-in-string-models",
+   "number": "20",
+   "title": "Gauge coupling unification in string models",
+   "level": 1,
+   "page_start": 196,
+   "page_end": 258,
+   "n_chars": 100564,
+   "n_words": 15660,
+   "label_start": null,
    "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 62,
+  "toc_entries": 61,
   "toc_inferred_entries": 62,
   "toc_inferred_mean_confidence": 1.0,
-  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_empty_share": 0.032,
   "toc_inferred_method": "latex",
   "figure_entries": 20,
   "figure_sequence_gaps": [],
@@ -3452,11 +3768,8 @@
   },
   "toc_alignment": {
    "listed_not_found": {
-    "count": 2,
-    "items": [
-     "A new class of heterotic string models",
-     "B & L violation involving higher generations"
-    ]
+    "count": 0,
+    "items": []
    },
    "found_not_listed": {
     "count": 0,
@@ -3467,13 +3780,22 @@
     "items": []
    }
   },
-  "sections": 35,
-  "chars_total": 456902,
+  "sections": 62,
+  "chars_total": 457295,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": "$d=5$ contributions to the decay of the proton",
+    "page": 154,
+    "action": "dropped",
+    "why": "opens in lower case"
+   }
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "PR-April-10.tex",
    "tex_sections": 62,
-   "overlaid": 32,
+   "overlaid": 58,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -3489,76 +3811,180 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.997,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.998,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-experimental-bounds-and-future-searches",
      "title": "Experimental bounds and future searches",
-     "prose_ratio": 0.94,
+     "prose_ratio": 0.934,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-31-baryon-number-violation-in-the-standard-model",
+     "id": "sec-002-3-nucleon-decay-in-non-supersymmetric-scenarios",
+     "title": "Nucleon decay in non-supersymmetric scenarios",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-31-baryon-number-violation-in-the-standard-model",
      "title": "Baryon number violation in the Standard Model",
-     "prose_ratio": 0.953,
+     "prose_ratio": 0.937,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-32-grand-unification-and-gauge-contributions-to",
+     "title": "Grand unification and gauge contributions to the decay of the proton",
+     "prose_ratio": 0.951,
      "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-003-33-proton-decay-induced-by-scalar-leptoquarks",
+     "id": "sec-005-33-proton-decay-induced-by-scalar-leptoquarks",
      "title": "Proton decay induced by scalar leptoquarks",
-     "prose_ratio": 0.969,
-     "coverage_ratio": 0.982,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.97,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-004-41-r-parity-violation-and-the-decay-of-the-proto",
+     "id": "sec-006-4-nucleon-decay-in-susy-and-sugra-unified-theori",
+     "title": "Nucleon decay in SUSY and SUGRA unified theories",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-41-r-parity-violation-and-the-decay-of-the-proto",
      "title": "R-parity violation and the decay of the proton",
-     "prose_ratio": 0.922,
-     "coverage_ratio": 0.993,
+     "prose_ratio": 0.895,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-005-44-doublet-triplet-splitting-problem",
+     "id": "sec-008-42-supersymmetry-breaking-and-sugra-unification",
+     "title": "Supersymmetry breaking and SUGRA unification",
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-43-effect-of-cp-violating-phases-on-proton-lifet",
+     "title": "Effect of CP violating phases on proton lifetime",
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-44-doublet-triplet-splitting-problem",
      "title": "Doublet-triplet splitting problem",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-45-proton-decay-in-su5-supersymmetric-grand-unif",
+     "title": "Proton decay in $SU(5)$ supersymmetric grand unification",
      "prose_ratio": 0.94,
-     "coverage_ratio": 0.969,
+     "coverage_ratio": 0.966,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-006-46-nucleon-decay-in-so10-theories",
+     "id": "sec-012-46-nucleon-decay-in-so10-theories",
      "title": "Nucleon decay in SO(10) theories",
-     "prose_ratio": 0.923,
-     "coverage_ratio": 0.989,
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-007-54-testing-guts-through-proton-decay",
-     "title": "Testing GUTs through proton decay",
-     "prose_ratio": 0.976,
-     "coverage_ratio": 0.993,
+     "id": "sec-013-47-proton-decay-in-models-with-unified-symmetry",
+     "title": "Proton decay in models with unified symmetry breaking",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-008-56-upper-bound-on-the-proton-lifetime-in-guts",
-     "title": "Upper bound on the proton lifetime in GUTs",
-     "prose_ratio": 0.925,
+     "id": "sec-014-5-testing-grand-unification",
+     "title": "Testing grand unification",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-51-textures-planck-scale-effects-and-proton-deca",
+     "title": "Textures, Planck scale effects and proton decay",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-52-gravitational-smearing-effects",
+     "title": "Gravitational smearing effects",
+     "prose_ratio": 0.945,
      "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-009-61-proton-decay-in-models-with-5d",
+     "id": "sec-017-53-constraints-from-gauge-coupling-unification",
+     "title": "Constraints from gauge coupling unification",
+     "prose_ratio": 0.844,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-018-54-testing-guts-through-proton-decay",
+     "title": "Testing GUTs through proton decay",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-019-55-proton-decay-in-flipped-su5",
+     "title": "Proton decay in flipped $SU(5)$",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-020-56-upper-bound-on-the-proton-lifetime-in-guts",
+     "title": "Upper bound on the proton lifetime in GUTs",
+     "prose_ratio": 0.888,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-021-6-unification-in-extra-dimensions-and-proton-dec",
+     "title": "Unification in Extra Dimensions and Proton Decay",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-022-61-proton-decay-in-models-with-5d",
      "title": "Proton decay in models with 5D",
      "prose_ratio": 0.938,
      "coverage_ratio": 0.989,
@@ -3566,23 +3992,39 @@
      "converter": "latex"
     },
     {
-     "id": "sec-010-62-so10-models-in-5d",
+     "id": "sec-023-62-so10-models-in-5d",
      "title": "SO(10) models in 5D",
-     "prose_ratio": 0.963,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-011-64-6d-models",
+     "id": "sec-024-63-5d-trinification",
+     "title": "5D Trinification",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-025-64-6d-models",
      "title": "6D models",
-     "prose_ratio": 0.981,
-     "coverage_ratio": 0.997,
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-012-66-proton-decay-in-universal-extra-dimension-ued",
+     "id": "sec-026-65-gauge-higgs-unification",
+     "title": "Gauge-Higgs unification",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-027-66-proton-decay-in-universal-extra-dimension-ued",
      "title": "Proton decay in universal extra dimension (UED) models",
      "prose_ratio": 0.983,
      "coverage_ratio": 0.996,
@@ -3590,7 +4032,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-013-67-proton-decay-in-warped-geometry",
+     "id": "sec-028-67-proton-decay-in-warped-geometry",
      "title": "Proton decay in warped geometry",
      "prose_ratio": 0.945,
      "coverage_ratio": 1.0,
@@ -3598,37 +4040,55 @@
      "converter": "latex"
     },
     {
-     "id": "sec-014-68-proton-stability-in-kink-backgrounds",
+     "id": "sec-029-68-proton-stability-in-kink-backgrounds",
      "title": "Proton stability in kink backgrounds",
      "prose_ratio": 0.969,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-015-7-proton-decay-in-string-models",
+     "id": "sec-030-7-proton-decay-in-string-models",
      "title": "Proton Decay in String Models",
-     "prose_ratio": 0.534,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-016-71-proton-stability-in-calabi-yau-models",
-     "title": "Proton Stability in Calabi-Yau Models",
-     "prose_ratio": 0.956,
-     "coverage_ratio": 0.876,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-017-73-a-new-class-of-heterotic-string-models",
-     "title": "A new class of heterotic string models",
-     "prose_ratio": 0.955,
+     "prose_ratio": 0.973,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-018-75-proton-decay-in-intersecting-d-brane-models",
+     "id": "sec-031-71-proton-stability-in-calabi-yau-models",
+     "title": "Proton Stability in Calabi-Yau Models",
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-032-72-kac-moody-level-k1-string-models-and-proton-d",
+     "title": "Kac-Moody level $k>1$ string models and proton decay",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-033-73-a-new-class-of-heterotic-string-models",
+     "title": "A new class of heterotic string models",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-034-74-proton-decay-in-m-theory-compactifications",
+     "title": "Proton decay in M theory compactifications",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-035-75-proton-decay-in-intersecting-d-brane-models",
      "title": "Proton decay in intersecting D brane models",
      "prose_ratio": 0.934,
      "coverage_ratio": 1.0,
@@ -3636,31 +4096,47 @@
      "converter": "latex"
     },
     {
-     "id": "sec-019-76-nucleon-stability-in-string-landscape-models",
+     "id": "sec-036-76-nucleon-stability-in-string-landscape-models",
      "title": "Nucleon stability in string landscape models",
-     "prose_ratio": 0.952,
-     "coverage_ratio": 0.989,
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-020-79-discrete-symmetries-and-proton-stability",
+     "id": "sec-037-77-proton-decay-from-black-hole-and-wormhole-eff",
+     "title": "Proton decay from black hole and wormhole effects",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-038-78-u1-string-symmetries-and-proton-stability",
+     "title": "$U(1)$ string symmetries and proton stability",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-039-79-discrete-symmetries-and-proton-stability",
      "title": "Discrete Symmetries and proton stability",
      "prose_ratio": 0.968,
-     "coverage_ratio": 0.99,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-021-8-other-aspects",
+     "id": "sec-040-8-other-aspects",
      "title": "Other Aspects",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.973,
+     "coverage_ratio": 0.961,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-022-81-neutrino-masses-and-proton-decay",
+     "id": "sec-041-81-neutrino-masses-and-proton-decay",
      "title": "Neutrino masses and proton decay",
      "prose_ratio": 0.972,
      "coverage_ratio": 0.992,
@@ -3668,31 +4144,53 @@
      "converter": "latex"
     },
     {
-     "id": "sec-023-82-proton-stability-and-dark-matter",
+     "id": "sec-042-82-proton-stability-and-dark-matter",
      "title": "Proton stability and dark matter",
-     "prose_ratio": 0.953,
-     "coverage_ratio": 0.979,
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-024-833-monopole-catalyzed-proton-decay",
+     "id": "sec-043-83-exotic-b-l-violation",
+     "title": "Exotic $B \\ \\& \\ L$ violation",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-044-831-delta-b-1-violation-and-other-non-standard-b",
+     "title": "$|\\Delta B| \\ > \\ 1$ violation and other non-standard $B\\& L$ violation",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-045-832-b-l-violation-involving-higher-generations",
+     "title": "$B \\ \\& \\ L$ violation involving higher generations",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-046-833-monopole-catalyzed-proton-decay",
      "title": "Monopole catalyzed proton decay",
      "prose_ratio": 0.95,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-025-84-proton-decay-and-the-ultimate-fate-of-the-uni",
+     "id": "sec-047-84-proton-decay-and-the-ultimate-fate-of-the-uni",
      "title": "Proton decay and the ultimate fate of the universe",
      "prose_ratio": 0.977,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-026-9-summary-and-outlook",
+     "id": "sec-048-9-summary-and-outlook",
      "title": "Summary and Outlook",
      "prose_ratio": 0.983,
      "coverage_ratio": 1.0,
@@ -3700,7 +4198,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-027-10-summary-table-of-p-decay-predictions",
+     "id": "sec-049-10-summary-table-of-p-decay-predictions",
      "title": "Summary Table of p decay predictions",
      "prose_ratio": 0.84,
      "coverage_ratio": 1.0,
@@ -3708,7 +4206,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-028-acknowledgments",
+     "id": "sec-050-acknowledgments",
      "title": "Acknowledgments",
      "prose_ratio": 0.992,
      "coverage_ratio": 1.0,
@@ -3716,15 +4214,21 @@
      "converter": "latex"
     },
     {
-     "id": "sec-029-appendices",
+     "id": "sec-051-appendices",
      "title": "APPENDICES",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-052-11-mathematical-aspects-of-su5-and-so10-unificat",
+     "title": "Mathematical aspects of $SU(5)$ and $SO(10)$ unification",
      "prose_ratio": 0.976,
      "coverage_ratio": 0.935,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-030-13-dressing-of-the-d5-operators",
+     "id": "sec-053-13-dressing-of-the-d5-operators",
      "title": "Dressing of the d=5 operators",
      "prose_ratio": 0.962,
      "coverage_ratio": 0.724,
@@ -3732,27 +4236,59 @@
      "converter": "latex"
     },
     {
-     "id": "sec-031-14-sparticle-spectrum-and-renormalization",
+     "id": "sec-054-14-sparticle-spectrum-and-renormalization",
      "title": "Sparticle spectrum and renormalization",
-     "prose_ratio": 0.948,
-     "coverage_ratio": 0.938,
+     "prose_ratio": 0.92,
+     "coverage_ratio": 0.842,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-032-17-details-of-the-analysis-on-testing-guts",
+     "id": "sec-055-15-renormalization-of-the-d5-and-d6-operators",
+     "title": "Renormalization of the $d=5$ and $d=6$ operators",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-056-16-effective-lagrangian-for-nucleon-decay",
+     "title": "Effective lagrangian for nucleon decay",
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-057-17-details-of-the-analysis-on-testing-guts",
      "title": "Details of the analysis on testing GUTs",
      "prose_ratio": 0.958,
-     "coverage_ratio": 0.964,
+     "coverage_ratio": 0.956,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-033-18-detailed-analysis-of-upper-bounds",
+     "id": "sec-058-18-detailed-analysis-of-upper-bounds",
      "title": "Detailed analysis of upper bounds",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.337,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-059-19-relating-4d-parameters-to-parameters-of-m-the",
+     "title": "Relating 4D parameters to parameters of M theory",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-060-20-gauge-coupling-unification-in-string-models",
+     "title": "Gauge coupling unification in string models",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.198,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

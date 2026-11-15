@@ -8,7 +8,7 @@
   "pages": 26,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -36,7 +36,7 @@
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "Statistical analysis and the equivalent of a Thouless energy in lattice QCD Dirac spectra where i / D [ A ] = i / \u2202 + g / A a t a is the massless Euclidean Dirac operator. The coupling constant is denoted by g and the t a are the generators of the gauge group. The distribution of the color gauge \ufb01el",
+   "heading": "Statistical analysis and the equivalent of a Thouless energy in lattice QCD Dirac spectra where i / D [ A ] = i / ∂ + g / A a t a is the massless Euclidean Dirac operator. The coupling constant is denoted by g and the t a are the generators of the gauge group. The distribution of the color gauge ﬁel",
    "text": "Statistical analysis and the equivalent of a Thouless energy in lattice QCD Dirac spectra",
    "corroborated_by": [],
    "browser_print": false
@@ -245,7 +245,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "Average level density \u00af\u03c1(\u03bb) for \u03b2 = 2.4 and \u03b2 = 2.5 (left plot) and integrated average level density",
+   "title": "Average level density ¯ρ(λ) for β = 2.4 and β = 2.5 (left plot) and integrated average level density",
    "page": 15,
    "confidence": 0.9,
    "evidence": [
@@ -258,7 +258,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "Di\ufb00erence between the integrated level density",
+   "title": "Diﬀerence between the integrated level density",
    "page": 16,
    "confidence": 0.9,
    "evidence": [
@@ -271,7 +271,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "Value of the quantity L \u2212",
+   "title": "Value of the quantity L −",
    "page": 17,
    "confidence": 0.9,
    "evidence": [
@@ -297,7 +297,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "Integrated two\u2013point functions number variance \u03a32(L), spectral rigidity \u22063(L) for small L on a 164-lattice. The solid line represent the RMT predictions and the dots the data. On this scale the presented data points do not depend on unfolding. Note the di\ufb00erence in the scale of the L axes between \u22063",
+   "title": "Integrated two–point functions number variance Σ2(L), spectral rigidity ∆3(L) for small L on a 164-lattice. The solid line represent the RMT predictions and the dots the data. On this scale the presented data points do not depend on unfolding. Note the diﬀerence in the scale of the L axes between ∆3",
    "page": 18,
    "confidence": 0.9,
    "evidence": [
@@ -310,7 +310,7 @@
   {
    "kind": "figure",
    "number": "6",
-   "title": "The two\u2013point correlation function X2(r)(left) and the cluster function Y2(r) (right) as a function of r, compared with the GSE predictions. The result is independent of the unfolding approach",
+   "title": "The two–point correlation function X2(r)(left) and the cluster function Y2(r) (right) as a function of r, compared with the GSE predictions. The result is independent of the unfolding approach",
    "page": 18,
    "confidence": 0.9,
    "evidence": [
@@ -323,7 +323,7 @@
   {
    "kind": "figure",
    "number": "7",
-   "title": "Deviations from RMT predictions for di\ufb00erent lattices sizes V and gauge couplings \u03b2. Shown are di\ufb00erent regions of the spectrum as indicated in the upper left part of the plots",
+   "title": "Deviations from RMT predictions for diﬀerent lattices sizes V and gauge couplings β. Shown are diﬀerent regions of the spectrum as indicated in the upper left part of the plots",
    "page": 19,
    "confidence": 0.9,
    "evidence": [
@@ -349,7 +349,7 @@
   {
    "kind": "figure",
    "number": "9",
-   "title": "Deviations of the spectral rigidity \u22063(L) and number variance \u03a32(L) from the RMT-predictions on a 164-lattice for large L. From top to bottom the results for polynomial with degree n = 3, Gaussian and local unfolding with averaging interval length k = 100 are shown. Note the di\ufb00erent scale on the ab",
+   "title": "Deviations of the spectral rigidity ∆3(L) and number variance Σ2(L) from the RMT-predictions on a 164-lattice for large L. From top to bottom the results for polynomial with degree n = 3, Gaussian and local unfolding with averaging interval length k = 100 are shown. Note the diﬀerent scale on the ab",
    "page": 21,
    "confidence": 0.9,
    "evidence": [
@@ -362,7 +362,7 @@
   {
    "kind": "figure",
    "number": "10",
-   "title": "Comparison between RMT and lattice data by unfolding each con\ufb01guration separately with a polynomial",
+   "title": "Comparison between RMT and lattice data by unfolding each conﬁguration separately with a polynomial",
    "page": 22,
    "confidence": 0.9,
    "evidence": [
@@ -375,7 +375,7 @@
   {
    "kind": "figure",
    "number": "11",
-   "title": "Integrated three\u2013point and four\u2013point function, skewness \u03b31(L) and excess \u03b32(L), respectively, as de\ufb01ned in Eqs.(21)-(24)",
+   "title": "Integrated three–point and four–point function, skewness γ1(L) and excess γ2(L), respectively, as deﬁned in Eqs.(21)-(24)",
    "page": 22,
    "confidence": 0.9,
    "evidence": [
@@ -388,7 +388,7 @@
   {
    "kind": "figure",
    "number": "12",
-   "title": "The three\u2013point correlation function X3(s1, s2)(left) and the cluster function Y3(s1, s2)(right) as a function of s2 for di\ufb00erent values of s1 = 0.70, 1.40 and 2.55 (from top to bottom), compared with the GSE predictions. As in Fig. 6 the results are independent of the unfolding approach",
+   "title": "The three–point correlation function X3(s1, s2)(left) and the cluster function Y3(s1, s2)(right) as a function of s2 for diﬀerent values of s1 = 0.70, 1.40 and 2.55 (from top to bottom), compared with the GSE predictions. As in Fig. 6 the results are independent of the unfolding approach",
    "page": 23,
    "confidence": 0.9,
    "evidence": [
@@ -401,7 +401,7 @@
   {
    "kind": "figure",
    "number": "13",
-   "title": "Di\ufb00erence between the \ufb01tted polynom like staircase function and the real staircase function for one arbitrarily chosen con\ufb01guration (upper part). The lower part shows the di\ufb00erence between the staircase found by ensemble averaging and a polynom \ufb01t to it. The degrees of the polynomials are n = 4, 5",
+   "title": "Diﬀerence between the ﬁtted polynom like staircase function and the real staircase function for one arbitrarily chosen conﬁguration (upper part). The lower part shows the diﬀerence between the staircase found by ensemble averaging and a polynom ﬁt to it. The degrees of the polynomials are n = 4, 5",
    "page": 23,
    "confidence": 0.9,
    "evidence": [
@@ -414,7 +414,7 @@
   {
    "kind": "figure",
    "number": "14",
-   "title": "Square of the Fourier transform of the oscillation shown in Fig. 13, but for d(N(\u03bb) \u2212Npoly(\u03bb))/d\u03bb instead of N(\u03bb) \u2212Npoly(\u03bb), as given by Eq.(29)",
+   "title": "Square of the Fourier transform of the oscillation shown in Fig. 13, but for d(N(λ) −Npoly(λ))/dλ instead of N(λ) −Npoly(λ), as given by Eq.(29)",
    "page": 24,
    "confidence": 0.9,
    "evidence": [
@@ -427,7 +427,7 @@
   {
    "kind": "figure",
    "number": "15",
-   "title": "Number variance \u03a32(L) and spectral rigidity \u22063(L) for polynomial unfolding with the withdraw of the long wave length oscillations, as explained in the text. In each plot the data corresponds from top to bottom to a cut of fcut = 0, 1.5\u00b7(2a), 3.0 \u00b7 (2a), 7.0 \u00b7 (2a) and 10.0 \u00b7 (2a), respectively",
+   "title": "Number variance Σ2(L) and spectral rigidity ∆3(L) for polynomial unfolding with the withdraw of the long wave length oscillations, as explained in the text. In each plot the data corresponds from top to bottom to a cut of fcut = 0, 1.5·(2a), 3.0 · (2a), 7.0 · (2a) and 10.0 · (2a), respectively",
    "page": 24,
    "confidence": 0.9,
    "evidence": [
@@ -440,7 +440,7 @@
   {
    "kind": "figure",
    "number": "16",
-   "title": "Possible scenarios for the spectral rigidity. Plotted are the linear Poisson behavior and the logarithmic increase of the Gaussian ensembles (GE) as predicted by RMT, respectively. \u2019A\u2019 correspond to a saturation due to shortest periodic orbits and \u2019B\u2019 to linear increase due the scale set by a Thoule",
+   "title": "Possible scenarios for the spectral rigidity. Plotted are the linear Poisson behavior and the logarithmic increase of the Gaussian ensembles (GE) as predicted by RMT, respectively. ’A’ correspond to a saturation due to shortest periodic orbits and ’B’ to linear increase due the scale set by a Thoule",
    "page": 25,
    "confidence": 0.9,
    "evidence": [
@@ -705,25 +705,13 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 4998,
-   "n_words": 814,
+   "n_chars": 5366,
+   "n_words": 865,
    "label_start": "1",
    "label_end": "2"
   },
   {
-   "id": "sec-001-31-unfolding",
-   "number": "3.1",
-   "title": "Unfolding",
-   "level": 2,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 248,
-   "n_words": 34,
-   "label_start": "2",
-   "label_end": "2"
-  },
-  {
-   "id": "sec-002-2-complete-dirac-spectra-in-su2-gauge-theory",
+   "id": "sec-001-2-complete-dirac-spectra-in-su2-gauge-theory",
    "number": "2",
    "title": "Complete Dirac spectra in SU(2) gauge theory",
    "level": 1,
@@ -735,15 +723,27 @@
    "label_end": "2"
   },
   {
-   "id": "sec-003-3-data-analysis",
+   "id": "sec-002-3-data-analysis",
    "number": "3",
    "title": "Data analysis",
    "level": 1,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 2100,
-   "n_words": 361,
+   "n_chars": 671,
+   "n_words": 113,
    "label_start": "2",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-003-31-unfolding",
+   "number": "3.1",
+   "title": "Unfolding",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1415,
+   "n_words": 246,
+   "label_start": "3",
    "label_end": "3"
   },
   {
@@ -752,14 +752,26 @@
    "title": "Ensemble unfolding",
    "level": 3,
    "page_start": 3,
-   "page_end": 5,
-   "n_chars": 8264,
-   "n_words": 1397,
+   "page_end": 4,
+   "n_chars": 3135,
+   "n_words": 519,
    "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-005-312-configuration-unfolding",
+   "number": "3.1.2",
+   "title": "Configuration unfolding",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 5102,
+   "n_words": 875,
+   "label_start": "4",
    "label_end": "5"
   },
   {
-   "id": "sec-005-313-windowing",
+   "id": "sec-006-313-windowing",
    "number": "3.1.3",
    "title": "Windowing",
    "level": 3,
@@ -771,19 +783,31 @@
    "label_end": "5"
   },
   {
-   "id": "sec-006-32-nearest-neighbor-spacing-distribution",
+   "id": "sec-007-32-nearest-neighbor-spacing-distribution",
    "number": "3.2",
    "title": "Nearest Neighbor Spacing Distribution",
    "level": 2,
    "page_start": 5,
-   "page_end": 7,
-   "n_chars": 5788,
-   "n_words": 1018,
+   "page_end": 6,
+   "n_chars": 925,
+   "n_words": 166,
    "label_start": "5",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-008-33-two--point-spectral-correlations",
+   "number": "3.3",
+   "title": "Two--Point Spectral Correlations",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 4827,
+   "n_words": 848,
+   "label_start": "6",
    "label_end": "7"
   },
   {
-   "id": "sec-007-34-higher-order-spectral-correlations",
+   "id": "sec-009-34-higher-order-spectral-correlations",
    "number": "3.4",
    "title": "Higher Order Spectral Correlations",
    "level": 2,
@@ -795,7 +819,7 @@
    "label_end": "8"
   },
   {
-   "id": "sec-008-35-qualitative-discussion-of-the-deviations-for",
+   "id": "sec-010-35-qualitative-discussion-of-the-deviations-for",
    "number": "3.5",
    "title": "Qualitative discussion of the deviations for configuration unfolding",
    "level": 2,
@@ -807,7 +831,7 @@
    "label_end": "10"
   },
   {
-   "id": "sec-009-4-summary-and-discussion",
+   "id": "sec-011-4-summary-and-discussion",
    "number": "4",
    "title": "Summary and discussion",
    "level": 1,
@@ -819,7 +843,7 @@
    "label_end": "12"
   },
   {
-   "id": "sec-010-acknowledgments",
+   "id": "sec-012-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 1,
@@ -845,13 +869,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 12,
-  "chars_total": 63581,
+  "sections": 14,
+  "chars_total": 63624,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "bulk.tex",
    "tex_sections": 15,
-   "overlaid": 9,
+   "overlaid": 13,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -866,19 +891,13 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.93,
-     "coverage_ratio": 0.996,
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-001-31-unfolding",
-     "title": "Unfolding",
-     "prose_ratio": 0.089,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-002-2-complete-dirac-spectra-in-su2-gauge-theory",
+     "id": "sec-001-2-complete-dirac-spectra-in-su2-gauge-theory",
      "title": "Complete Dirac spectra in SU(2) gauge theory",
      "prose_ratio": 0.959,
      "coverage_ratio": 0.993,
@@ -886,22 +905,39 @@
      "converter": "latex"
     },
     {
-     "id": "sec-003-3-data-analysis",
+     "id": "sec-002-3-data-analysis",
      "title": "Data analysis",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.421,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
-    },
-    {
-     "id": "sec-004-311-ensemble-unfolding",
-     "title": "Ensemble unfolding",
-     "prose_ratio": 0.978,
-     "coverage_ratio": 0.997,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-005-313-windowing",
+     "id": "sec-003-31-unfolding",
+     "title": "Unfolding",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-311-ensemble-unfolding",
+     "title": "Ensemble unfolding",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-312-configuration-unfolding",
+     "title": "Configuration unfolding",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-313-windowing",
      "title": "Windowing",
      "prose_ratio": 0.992,
      "coverage_ratio": 1.0,
@@ -909,15 +945,23 @@
      "converter": "latex"
     },
     {
-     "id": "sec-006-32-nearest-neighbor-spacing-distribution",
+     "id": "sec-007-32-nearest-neighbor-spacing-distribution",
      "title": "Nearest Neighbor Spacing Distribution",
-     "prose_ratio": 0.964,
-     "coverage_ratio": 0.996,
+     "prose_ratio": 0.985,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-007-34-higher-order-spectral-correlations",
+     "id": "sec-008-33-two--point-spectral-correlations",
+     "title": "Two--Point Spectral Correlations",
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-34-higher-order-spectral-correlations",
      "title": "Higher Order Spectral Correlations",
      "prose_ratio": 0.98,
      "coverage_ratio": 1.0,
@@ -925,7 +969,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-008-35-qualitative-discussion-of-the-deviations-for",
+     "id": "sec-010-35-qualitative-discussion-of-the-deviations-for",
      "title": "Qualitative discussion of the deviations for configuration unfolding",
      "prose_ratio": 0.982,
      "coverage_ratio": 0.989,
@@ -933,7 +977,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-009-4-summary-and-discussion",
+     "id": "sec-011-4-summary-and-discussion",
      "title": "Summary and discussion",
      "prose_ratio": 0.978,
      "coverage_ratio": 1.0,
@@ -941,7 +985,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-010-acknowledgments",
+     "id": "sec-012-acknowledgments",
      "title": "Acknowledgments",
      "prose_ratio": 0.928,
      "coverage_ratio": 0.975,

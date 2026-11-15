@@ -1,0 +1,46 @@
+8 R. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392
+
+by conditioning are pairwise-negatively correlated, then it has a spectral gap polynomial
+in n. It seems however, that the assumption of homogeneity is crucial in this case.
+Finally, Theorem 6 seems rather closely related to [3, Theorem 5.2], and the former
+can be thought of as a soft and modified version of the latter: Indeed, condition (5),
+compared to (7) is invariant under coordinate reflections and softer in the sense that
+8 can be larger than 1, but otherwise rather similar. The proof of the latter is simpler
+and basically reduces to an application of Jensen’s inequality, whereas our proof (a small
+variation thereof also implies the latter bound) is slightly more complicated and uses
+stochastic calculus; we do not know if it can be attained by more elementary techniques.
+
+Acknowledgments
+
+We'd like to thank Bo’az Klartag for a fruitful discussion, as well as Nima Anari, Jan
+Vondrak and Pranav Nuti for some enlightening comments on a preliminary version of
+this manuscript.
+
+2. Preliminaries and a stochastic construction
+
+Throughout this section, we fix a probability measure v on C,, and a Lipschitz test
+function py: C, > R.
+
+2.1. Some preliminary definitions
+
+For a vector w € R", define the tilt of the measure v as
+
+dT wu (3
+dv(x)
+
+= Z(w) tev)
+
+where
+Z,(w) = [eeoran
+Ch
+
+In other words, 7,,v is the measure obtained by adding an external field, w, to the measure
+vy. Also define the functions
+
+a,(w) = [etron(a), A,(w) := Je —a,(w))®? dryv(a) = Cov(t wv),
+Ch
+
+the center of mass and the covariance matriz of the tilt Twv.
+A well-known calculation gives,
+
+a,(w) = VL[v|(w),  Ar(w) = V?L[v](w) (8)

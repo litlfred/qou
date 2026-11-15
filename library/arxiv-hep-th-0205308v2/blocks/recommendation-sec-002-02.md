@@ -1,0 +1,1 @@
+Such will hold for *any* integrable system, but this does not mean the associativity equations ([\[WDVV\]](#WDVV){reference-type="ref" reference="WDVV"}) or ([\[crossmatr\]](#crossmatr){reference-type="ref" reference="crossmatr"}) must hold.

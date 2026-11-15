@@ -1,0 +1,1 @@
+It should be noted that his formulation is slightly different from ours, due to a distinct choice of presentation of $\mathscr{H}_{m,n}(q,\bm{u})$, as well as the standard elements $g(\bm{\mu})$. \end{rem}

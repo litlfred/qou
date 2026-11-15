@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-112",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "NC MGM Equivalence",
+  "pageStart": 377,
+  "pageEnd": 385,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-112",
+    "library/arxiv-1610.09640v4/blocks/recommendation-sec-112-01",
+    "library/arxiv-1610.09640v4/blocks/recommendation-sec-112-02",
+    "library/arxiv-1610.09640v4/blocks/recommendation-sec-112-03",
+    "library/arxiv-1610.09640v4/blocks/recommendation-sec-112-04",
+    "library/arxiv-1610.09640v4/blocks/recommendation-sec-112-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "provenance": "ingested"
+}

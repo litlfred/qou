@@ -1,0 +1,1 @@
+\bn It should be obvious from these remarks that quantum complexity is really a branch of geometry---right-invariant geometry\footnote{See Dowling, Nielsen \url{https://arxiv.org/pdf/quant-ph/0701004.pdf} }

@@ -1,0 +1,59 @@
+MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 53
+
+analogy, by completing the square we would get
+eRe B (XS pia(ts).X P5 ats) — gh LD mivjG(tity)/2r? _ AL. c; pepjlti—t|/2r°
+where B(q,q) = f @’dt. Thus, it is natural to define the correlators by the formula
+< cipiatts)/r eipnalte)/" = eh Lig; pipsltits|/27?
+
+We note that this theory, unlike the line-valued one, does satisfy the clustering
+property. Indeed, if }* p; = 0 (as we assumed), then (assuming t; > tz > ... > tn),
+we have
+
+n-1
+Se pip; (ti—ty) = S0(tj-ty41) (Djyat-+Pn) (Pi t..tps) = — So (ty—-ty41) (pit...+D;)’,
+i<j j=l j
+
+so the clustering property follows from the fact that (p, +... + pj)? > 0.
+
+7.13. Massless quantum mechanics on the circle. Consider now the theory
+with Lagrangian ¢°/2, where q is a function on the circle of length L. In this
+case, according to the Feynman yoga, we must invert the operator —d?/dt? on the
+circle R/LZ, or equivalently solve the differential equation —G"’(t) = 6(t). Here we
+run into trouble: the operator —d?/dt? is not invertible, since it has eigenfunction
+1 with eigenvalue 0; correspondingly, the differential equation in question has no
+solutions, as f G’'dt must be zero, so —G"(t) cannot equal 6(t) (one may say that
+the quadratic form in the exponential is degenerate, and therefore the Gaussian
+integral turns out to be meaningless). This problem can be resolved by the following
+technique of “killing the zero mode”. Namely, let us invert the operator —d?/dt?
+on the space {q € C®(IR/LZ) : f qdt = 0} (this may be interpreted as integration
+over this codimension one subspace, on which the quadratic form is nondegenerate).
+This means that we must find the solution of the differential equation —G"(t) =
+
+6(t) — ¢, such that fGdt = 0. Such solution is indeed unique, and it equals
+
+Git) = (ee b/2)* = +, t € [0, L]. Thus, for example < q(0)? >= L/12.
+
+Higher correlation functions are defined in the usual way. Moreover, one can
+define the theory with an arbitrary potential using the standard procedure with
+Feynman diagrams.
+
+Finally, let us consider the circle valued version of the same theory. Thus, our
+integration variable is a map q: R/LZ > R/2zrZ. Let us first consider integration
+over degree zero maps. Then we should argue in the same way as in the case t € R,
+and make the definition
+
+< elpia(ts)/7 eipna(tn)/ 0 = eh LL; pupjG(ti—ts)/2r°
+
+where }°> p; = 0. (Here subscript 0 stands for degree zero maps). Assuming that
+1>t,...,t, > 0, we find after a short calculation
+
+< ciPia(ts)/7 eiPna(tn)/” x9 — eae (Dic; Pri ltt |+(E pats)? /L)
+
+(the second summand disappears as L — oo, and we recover the answer on the
+line).
+
+It is, however, more natural (as we will see later) to integrate over all (and not
+only degree zero) maps g. Namely, let N be an integer. Then all maps of degree N
+have the form q(t) + 2mrNt/L, where q is a map of degree zero. Thus, if we want to
+integrate over maps of degree NV, we should compute the same integral as in degree
+zero, but with shift q > q+ 2mrNt/L. But it is easy to see that this shift results

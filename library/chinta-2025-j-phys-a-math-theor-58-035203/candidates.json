@@ -1,0 +1,86 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "chinta-2025-j-phys-a-math-theor-58-035203",
+ "source": {
+  "structure_sha256": "baba83ca76c773d4d3734983720d36dbcb6610d9019256b0d218b6f10da2a492",
+  "file": "Chinta_2025_J._Phys._A__Math._Theor._58_035203.pdf"
+ },
+ "provenance": {
+  "title": "The discrete analogue of the Gaussian",
+  "authors": "View the article online for updates and enhancements",
+  "arxiv": null,
+  "doi": "10.1088/1751-8121/ada64b"
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 4,
+  "by_kind": {
+   "recommendation": 4
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "7 The third-named author acknowledges grant support by the Swiss NSF Grants 200020-200400, 200021-212864 and the Swedish Research Council Grant 104651320. \u2217Author to whom any correspondence should be addressed.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-the-discrete-analogue-of-the-gaussian.md",
+   "section_title": "The discrete analogue of the Gaussian",
+   "pages": "2-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Original Content from this work may be used under the terms of the Creative Commons Attribution 4.0 licence.",
+   "strength": "may",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-the-discrete-analogue-of-the-gaussian.md",
+   "section_title": "The discrete analogue of the Gaussian",
+   "pages": "2-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Any further distribution of this work must maintain attribution to the author(s) and the title of the work, journal citation and DOI. \u00a9 2025 The Author(s).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-the-discrete-analogue-of-the-gaussian.md",
+   "section_title": "The discrete analogue of the Gaussian",
+   "pages": "2-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It should be noted that other authors have pointed out the potential usefulness of (3) and distinguished the difference between (3) and (6); see section 2.6 of [Li24] who refers to earlier work by the same author in [Li90].",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-010-8-potential-applications-to-differential-privacy.md",
+   "section_title": "Potential applications to differential privacy",
+   "pages": "20-21",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

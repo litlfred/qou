@@ -1,93 +1,56 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "ft-dpm-quaternion-kernel-ieee-tit-2014",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "aa2f1eb73610a81b0c8ae9e25dec4824ade6661ae3598f907289d9161ecded35",
   "file": "FT_DPM_Quaternion_Kernel_IEEE_TIT_2014.pdf"
  },
  "provenance": {
-  "title": "5736 IEEE TRANSACTIONS ON INFORMATION THEORY , VOL. 60, NO. 9, SEPTEMBER 2014 Quaternion Reproducing Kernel Hilbert Spaces:",
-  "authors": "Existence and Uniqueness Conditions",
+  "title": "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions",
+  "authors": "Felipe A. Tobar and Danilo P. Mandic, Fellow, IEEE",
   "arxiv": null,
   "doi": "10.1109/TIT.2014.2333734"
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 5,
+  "candidates": 2,
   "by_kind": {
-   "lemma": 1,
-   "theorem": 2,
-   "remark": 2
+   "recommendation": 2
   },
-  "formalization_candidates": 3
+  "formalization_candidates": 0
  },
  "candidates": [
   {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "2",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "Let K = Kr +iK i + jK j +kK k be a quaternion",
-   "section_file": "sections/sec-000-c-quaternion-kernels.md",
-   "section_title": "Quaternion Kernels",
-   "pages": "5-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "3",
-   "name": null,
-   "statement": "Let K and \u2212\u2192K be arbitrary quaternion- and",
-   "section_file": "sections/sec-000-c-quaternion-kernels.md",
-   "section_title": "Quaternion Kernels",
-   "pages": "5-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "8",
-   "name": null,
-   "statement": "The vector-valued representation of a QRKHS",
-   "section_file": "sections/sec-000-c-quaternion-kernels.md",
-   "section_title": "Quaternion Kernels",
-   "pages": "5-7",
+   "statement": "HIGH-DIMENSIONAL KERNELS We shall now revisit existing approaches to high- dimensional kernels in order to highlight the differences between our proposed quaternion kernel framework and those based upon existing high-dimensional kernels.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-008-iv-comparison-to-other.md",
+   "section_title": "COMPARISON TO OTHER",
+   "pages": "4-5",
    "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   },
   {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "2",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "gives the justi\ufb01cation for the design and imple-",
-   "section_file": "sections/sec-000-c-quaternion-kernels.md",
-   "section_title": "Quaternion Kernels",
-   "pages": "5-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "9",
-   "name": null,
-   "statement": "Note from Eqs. (10) and (11) that, owing to",
-   "section_file": "sections/sec-004-2-xt-we-arrive-at.md",
-   "section_title": "(x)]T we arrive at",
+   "statement": "(11) To show that KQ P is positive semide\ufb01nite, we shall \ufb01rst consider its factorisation of the form KQ P(x, y) = \u03c6H(x)\u03c6(y).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-015-a-polynomial-kernel-the-quaternion-cubic-example.md",
+   "section_title": "Polynomial Kernel: The Quaternion Cubic Example",
    "pages": "7-8",
    "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   }
  ]
 }

@@ -7,10 +7,11 @@ section_number: 1.1
 pages: 3-5
 source_pdf: 1409.2849v1.pdf
 source_sha256: 7bf9646716fbb247
-doc_brief: "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS — In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.973
-latex_coverage_ratio: 0.942
+latex_coverage_ratio: 0.954
+doc_brief: "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS — In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the"
 ---
 \label{subsec:brisesymm}
 We consider again a sequence of real-valued random variables $(X_n)_{n \in \N}$, but this time we assume that their Laplace transforms $\esper[\E^{zX_n}]$ are convergent in an open disk of radius $c>0$. In this case, they are automatically well-defined and holomorphic in a band of the complex plane $\mathcal{B}_c = \{z \in \CC,\,\,|\mathrm{Re}(z)|<c\}$ (see \cite[Theorem 6]{LS52}, and \cite{Ess45} for a general survey of the properties of Laplace and Fourier transforms of probability measures).\medskip

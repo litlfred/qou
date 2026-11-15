@@ -7,10 +7,11 @@ section_number: null
 pages: 12-15
 source_pdf: 2507.13873v1.pdf
 source_sha256: fa1d38d08dc4976a
-doc_brief: "Probing the singularity at the holographic screen via q-holography — We study the emergence ofq-deformed spacetime in a lower-dimensional gravitational system whose asymptotic region geometrizes the"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.931
-latex_coverage_ratio: 0.964
+latex_coverage_ratio: 0.997
+doc_brief: "Probing the singularity at the holographic screen via q-holography — We study the emergence of q-deformed spacetime in a lower-dimensional gravitational system whose asymptotic region geometrizes the"
 ---
 []{#s:classical label="s:classical"} The most natural approach is to look for a bulk gravitational theory whose asymptotic symmetries reproduce the SL$_q(2)$ algebra, which was used to constrain the two-point function. As we shall see, it turns out that the most natural candidate is Liouville gravity [@Polyakov:1981rd; @Distler:1988jt; @David:1988hj; @Knizhnik:1988ak]. This is a string theory consisting of a spacelike Liouville CFT, a matter CFT and the usual bc ghost system ensuring cancellation of the conformal anomaly. If we select a timelike Liouville CFT as the matter sector, then we have a simple Lagrangian description. Through a field redefinition [@Kyono:2017pxs; @Mertens:2020hbs; @Fan:2021bwt], this theory can be reformulated as a two-dimensional dilaton gravity model with a $\sinh$ profile for the dilaton potential. Concretely, the theory on a manifold $\mathcal{M}$ with holographic boundary $\partial \mathcal{M}$ is defined by the Euclidean action: $$\label{Liouville}
 S = -\frac{1}{2} \int_\mathcal{M} d^2x \sqrt{g}\left(\Phi R + \frac{\sinh 2\pi b^2 \Phi}{\pi b^2}\right) - \oint_{\partial \mathcal{M}} d \tau\,\sqrt{h}\,\bigg(\Phi K-\sqrt{\frac{\cosh(2\pi b^2 \Phi)-1}{2\pi^2 b^4}}\bigg).$$ The boundary term contains both the GHY boundary term, and a holographic counterterm required to obtain a finite on-shell action that is essentially unique. We provide a detailed discussion on this counterterm in general dilaton gravity models in Appendix [\[a:counter\]](#a:counter){reference-type="ref" reference="a:counter"}.

@@ -11,6 +11,7 @@
   ],
   "title": "Quantum hyperbolic geometry",
   "contains": [
+    "library/agt-v7-n2-p13-s/sections/sec-front-matter",
     "library/agt-v7-n2-p13-s/sections/sec-000",
     "library/agt-v7-n2-p13-s/sections/sec-001",
     "library/agt-v7-n2-p13-s/sections/sec-002",
@@ -29,10 +30,15 @@
     "library/agt-v7-n2-p13-s/sections/sec-015",
     "library/agt-v7-n2-p13-s/sections/sec-016",
     "library/agt-v7-n2-p13-s/sections/sec-017",
-    "library/agt-v7-n2-p13-s/sections/sec-018"
+    "library/agt-v7-n2-p13-s/sections/sec-018",
+    "library/agt-v7-n2-p13-s/sections/sec-019",
+    "library/agt-v7-n2-p13-s/sections/sec-020",
+    "library/agt-v7-n2-p13-s/sections/sec-021",
+    "library/agt-v7-n2-p13-s/sections/sec-022",
+    "library/agt-v7-n2-p13-s/sections/sec-023"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "agt-v7-n2-p13-s",
     "title_source": "pdf-info",
@@ -42,8 +48,8 @@
     "pages": 73,
     "arxiv": null,
     "doi": "10.2140/agt.2007.7.845",
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

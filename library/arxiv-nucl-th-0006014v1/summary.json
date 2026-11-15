@@ -2,187 +2,292 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-nucl-th-0006014v1",
  "source_sha256": "208c7a6aaf628b30",
- "brief": "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn) — 35 sections: Scattering equation . . . . . . . ; R-matrix and partial wave decompos; Phase shifts . . . . . . . . . . .",
- "extended": "**The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn)**\n\n*Department of Physics, University of Idaho, Moscow, Idaho 8 3844, U. S. A*\n\n69 pp, 35 sections.\n\n**Outline.** 1 Scattering equation . . . . . . . . . . . . ; 2 R-matrix and partial wave decomposition . . ; 3 Phase shifts . . . . . . . . . . . . . . . .; 4 Eﬀective range expansion . . . . . . . . . .; 1 OBE amplitudes . . . . . . . . . . . . . . .; 3 Final potential expressions . . . . . . . . ; Abstract; I INTRODUCTION; II THE MODEL; III CHARGE DEPENDENCE; IV NUCLEON-NUCLEON SCA TTERING; V THE DEUTERON; VI CONCLUSIONS; Acknowledgments; 1 Scattering equation; 2 R-matrix and partial wave decomposition; 1 (q′,q ) ≡ ⟨+ + |RJ(q′,q )| + +⟩; 2 (q′,q ) ≡ ⟨+ + |RJ(q′,q )| − −⟩",
+ "brief": "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn) — 56 sections: Front matter; Introduction; The model",
+ "extended": "**The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn)**\n\n*Department of Physics, University of Idaho, Moscow, Idaho 83844, U. S. A*\n\n69 pp, 56 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 The model; 3 Charge dependence; 3.1 Charge symmetry breaking; 3.2 Charge independence breaking; 4 Nucleon-nucleon scattering; 5 The deuteron; 6 Conclusions; A Two-nucleon scattering in momentum space; A.1 Scattering equation; A.2 R-matrix and partial wave decomposition; A.3 Phase shifts; A.4 Effective range expansion; B One-boson exchange potential; B.1 OBE amplitudes; B.2 Partial wave decomposition; B.3 Final potential expressions",
  "tokens": {
-  "brief": 49,
-  "extended": 190
+  "brief": 32,
+  "extended": 165
  },
  "sections": [
   {
-   "id": "sec-000-1-scattering-equation-15",
-   "title": "Scattering equation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15",
-   "pages": "1-1"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-3"
   },
   {
-   "id": "sec-001-2-r-matrix-and-partial-wave-decomposition-18",
-   "title": "R-matrix and partial wave decomposition . . . . . . . . . . . . . . . . . . 18",
-   "pages": "1-1"
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "3-4"
   },
   {
-   "id": "sec-002-3-phase-shifts-21",
-   "title": "Phase shifts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21",
-   "pages": "1-1"
+   "id": "sec-001-2-the-model",
+   "title": "The model",
+   "pages": "4-7"
   },
   {
-   "id": "sec-003-4-eﬀective-range-expansion-2-4",
-   "title": "Eﬀective range expansion . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 4",
-   "pages": "1-1"
+   "id": "sec-002-3-charge-dependence",
+   "title": "Charge dependence",
+   "pages": "7-8"
   },
   {
-   "id": "sec-004-1-obe-amplitudes-25",
-   "title": "OBE amplitudes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25",
-   "pages": "1-1"
+   "id": "sec-003-31-charge-symmetry-breaking",
+   "title": "Charge symmetry breaking",
+   "pages": "8-9"
   },
   {
-   "id": "sec-005-3-final-potential-expressions-28",
-   "title": "Final potential expressions . . . . . . . . . . . . . . . . . . . . . . . . . . 28",
-   "pages": "1-2"
+   "id": "sec-004-32-charge-independence-breaking",
+   "title": "Charge independence breaking",
+   "pages": "9-10"
   },
   {
-   "id": "sec-006-abstract",
-   "title": "Abstract",
-   "pages": "2-3"
-  },
-  {
-   "id": "sec-007-i-introduction",
-   "title": "INTRODUCTION",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-008-ii-the-model",
-   "title": "THE MODEL",
-   "pages": "3-7"
-  },
-  {
-   "id": "sec-009-iii-charge-dependence",
-   "title": "CHARGE DEPENDENCE",
-   "pages": "7-10"
-  },
-  {
-   "id": "sec-010-iv-nucleon-nucleon-sca-ttering",
-   "title": "NUCLEON-NUCLEON SCA TTERING",
+   "id": "sec-005-4-nucleon-nucleon-scattering",
+   "title": "Nucleon-nucleon scattering",
    "pages": "10-13"
   },
   {
-   "id": "sec-011-v-the-deuteron",
-   "title": "THE DEUTERON",
+   "id": "sec-006-5-the-deuteron",
+   "title": "The deuteron",
    "pages": "13-14"
   },
   {
-   "id": "sec-012-vi-conclusions",
-   "title": "CONCLUSIONS",
+   "id": "sec-007-6-conclusions",
+   "title": "Conclusions",
    "pages": "14-15"
   },
   {
-   "id": "sec-013-acknowledgments",
-   "title": "Acknowledgments",
+   "id": "sec-008-a-two-nucleon-scattering-in-momentum-space",
+   "title": "Two-nucleon scattering in momentum space",
    "pages": "15-15"
   },
   {
-   "id": "sec-014-1-scattering-equation",
+   "id": "sec-009-a1-scattering-equation",
    "title": "Scattering equation",
    "pages": "15-18"
   },
   {
-   "id": "sec-015-2-r-matrix-and-partial-wave-decomposition",
+   "id": "sec-010-a2-r-matrix-and-partial-wave-decomposition",
    "title": "R-matrix and partial wave decomposition",
-   "pages": "18-19"
+   "pages": "18-21"
   },
   {
-   "id": "sec-016-1-qq-rjqq",
-   "title": "(q′,q ) ≡ ⟨+ + |RJ(q′,q )| + +⟩",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-017-2-qq-rjqq",
-   "title": "(q′,q ) ≡ ⟨+ + |RJ(q′,q )| − −⟩",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-018-3-qq-rj-qq",
-   "title": "(q′,q ) ≡ ⟨+ − |RJ (q′,q )| + −⟩",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-019-4-qq-rj-qq-a22",
-   "title": "(q′,q ) ≡ ⟨+ − |RJ (q′,q )| − +⟩ (A22)",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-020-5-qq-rjqq",
-   "title": "(q′,q ) ≡ ⟨+ + |RJ(q′,q )| + −⟩",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-021-6-qq-rj-qq",
-   "title": "(q′,q ) ≡ ⟨+ − |RJ (q′,q )| + +⟩",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-022-5-qq-rj",
-   "title": "(q′,q ) = RJ",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-023-6-qq-a23",
-   "title": "(q,q ′). (A23)",
-   "pages": "19-21"
-  },
-  {
-   "id": "sec-024-3-phase-shifts",
+   "id": "sec-011-a3-phase-shifts",
    "title": "Phase shifts",
-   "pages": "21-23"
+   "pages": "21-24"
   },
   {
-   "id": "sec-025-l-the-asymptotic-wave-function-associated-with-v",
-   "title": "The asymptotic wave function associated with VS and δS",
-   "pages": "23-24"
-  },
-  {
-   "id": "sec-026-4-eﬀective-range-expansion",
-   "title": "Eﬀective range expansion",
-   "pages": "24-24"
-  },
-  {
-   "id": "sec-027-0-ηq-cotδc",
-   "title": "(η′)q cot(δC",
-   "pages": "24-24"
-  },
-  {
-   "id": "sec-028-0-η-2πη",
-   "title": "(η′) = 2πη ′",
+   "id": "sec-012-a4-effective-range-expansion",
+   "title": "Effective range expansion",
    "pages": "24-25"
   },
   {
-   "id": "sec-029-1-obe-amplitudes",
+   "id": "sec-013-b-one-boson-exchange-potential",
+   "title": "One-boson exchange potential",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-014-b1-obe-amplitudes",
    "title": "OBE amplitudes",
    "pages": "25-26"
   },
   {
-   "id": "sec-030-2-partial-wave-decomposition",
+   "id": "sec-015-b2-partial-wave-decomposition",
    "title": "Partial wave decomposition",
    "pages": "26-28"
   },
   {
-   "id": "sec-031-3-final-potential-expressions",
+   "id": "sec-016-b3-final-potential-expressions",
    "title": "Final potential expressions",
-   "pages": "28-33"
+   "pages": "28-32"
   },
   {
-   "id": "sec-032-01-ˆk-ψ2ky-1m",
-   "title": "(ˆk) +ψ2(k)Y 1M",
-   "pages": "33-35"
+   "id": "sec-017-c-potential-parameters",
+   "title": "Potential parameters",
+   "pages": "32-33"
   },
   {
-   "id": "sec-033-0-q-2π1-2",
-   "title": "(q) = (2/π)1/ 2",
-   "pages": "35-37"
+   "id": "sec-018-deuteron-calculations-page-33",
+   "title": "Deuteron calculations (page 33)",
+   "pages": "33-33"
   },
   {
-   "id": "sec-034-references",
-   "title": "References",
-   "pages": "37-69"
+   "id": "sec-019-deuteron-calculations-page-34",
+   "title": "Deuteron calculations (page 34)",
+   "pages": "34-34"
+  },
+  {
+   "id": "sec-020-deuteron-calculations-page-35",
+   "title": "Deuteron calculations (page 35)",
+   "pages": "35-35"
+  },
+  {
+   "id": "sec-021-deuteron-calculations-page-36",
+   "title": "Deuteron calculations (page 36)",
+   "pages": "36-36"
+  },
+  {
+   "id": "sec-022-deuteron-calculations-page-37",
+   "title": "Deuteron calculations (page 37)",
+   "pages": "37-37"
+  },
+  {
+   "id": "sec-023-deuteron-calculations-page-38",
+   "title": "Deuteron calculations (page 38)",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-024-deuteron-calculations-page-39",
+   "title": "Deuteron calculations (page 39)",
+   "pages": "39-39"
+  },
+  {
+   "id": "sec-025-deuteron-calculations-page-40",
+   "title": "Deuteron calculations (page 40)",
+   "pages": "40-40"
+  },
+  {
+   "id": "sec-026-deuteron-calculations-page-41",
+   "title": "Deuteron calculations (page 41)",
+   "pages": "41-41"
+  },
+  {
+   "id": "sec-027-deuteron-calculations-page-42",
+   "title": "Deuteron calculations (page 42)",
+   "pages": "42-42"
+  },
+  {
+   "id": "sec-028-deuteron-calculations-page-43",
+   "title": "Deuteron calculations (page 43)",
+   "pages": "43-43"
+  },
+  {
+   "id": "sec-029-deuteron-calculations-page-44",
+   "title": "Deuteron calculations (page 44)",
+   "pages": "44-44"
+  },
+  {
+   "id": "sec-030-deuteron-calculations-page-45",
+   "title": "Deuteron calculations (page 45)",
+   "pages": "45-45"
+  },
+  {
+   "id": "sec-031-deuteron-calculations-page-46",
+   "title": "Deuteron calculations (page 46)",
+   "pages": "46-46"
+  },
+  {
+   "id": "sec-032-deuteron-calculations-page-47",
+   "title": "Deuteron calculations (page 47)",
+   "pages": "47-47"
+  },
+  {
+   "id": "sec-033-deuteron-calculations-page-48",
+   "title": "Deuteron calculations (page 48)",
+   "pages": "48-48"
+  },
+  {
+   "id": "sec-034-deuteron-calculations-page-49",
+   "title": "Deuteron calculations (page 49)",
+   "pages": "49-49"
+  },
+  {
+   "id": "sec-035-deuteron-calculations-page-50",
+   "title": "Deuteron calculations (page 50)",
+   "pages": "50-50"
+  },
+  {
+   "id": "sec-036-deuteron-calculations-page-51",
+   "title": "Deuteron calculations (page 51)",
+   "pages": "51-51"
+  },
+  {
+   "id": "sec-037-deuteron-calculations-page-52",
+   "title": "Deuteron calculations (page 52)",
+   "pages": "52-52"
+  },
+  {
+   "id": "sec-038-deuteron-calculations-page-53",
+   "title": "Deuteron calculations (page 53)",
+   "pages": "53-53"
+  },
+  {
+   "id": "sec-039-deuteron-calculations-page-54",
+   "title": "Deuteron calculations (page 54)",
+   "pages": "54-54"
+  },
+  {
+   "id": "sec-040-deuteron-calculations-page-55",
+   "title": "Deuteron calculations (page 55)",
+   "pages": "55-55"
+  },
+  {
+   "id": "sec-041-deuteron-calculations-page-56",
+   "title": "Deuteron calculations (page 56)",
+   "pages": "56-56"
+  },
+  {
+   "id": "sec-042-deuteron-calculations-page-57",
+   "title": "Deuteron calculations (page 57)",
+   "pages": "57-57"
+  },
+  {
+   "id": "sec-043-deuteron-calculations-page-58",
+   "title": "Deuteron calculations (page 58)",
+   "pages": "58-58"
+  },
+  {
+   "id": "sec-044-deuteron-calculations-page-59",
+   "title": "Deuteron calculations (page 59)",
+   "pages": "59-59"
+  },
+  {
+   "id": "sec-045-deuteron-calculations-page-60",
+   "title": "Deuteron calculations (page 60)",
+   "pages": "60-60"
+  },
+  {
+   "id": "sec-046-deuteron-calculations-page-61",
+   "title": "Deuteron calculations (page 61)",
+   "pages": "61-61"
+  },
+  {
+   "id": "sec-047-deuteron-calculations-page-62",
+   "title": "Deuteron calculations (page 62)",
+   "pages": "62-62"
+  },
+  {
+   "id": "sec-048-deuteron-calculations-page-63",
+   "title": "Deuteron calculations (page 63)",
+   "pages": "63-63"
+  },
+  {
+   "id": "sec-049-deuteron-calculations-page-64",
+   "title": "Deuteron calculations (page 64)",
+   "pages": "64-64"
+  },
+  {
+   "id": "sec-050-deuteron-calculations-page-65",
+   "title": "Deuteron calculations (page 65)",
+   "pages": "65-65"
+  },
+  {
+   "id": "sec-051-deuteron-calculations-page-66",
+   "title": "Deuteron calculations (page 66)",
+   "pages": "66-66"
+  },
+  {
+   "id": "sec-052-deuteron-calculations-page-67",
+   "title": "Deuteron calculations (page 67)",
+   "pages": "67-67"
+  },
+  {
+   "id": "sec-053-deuteron-calculations-page-68",
+   "title": "Deuteron calculations (page 68)",
+   "pages": "68-68"
+  },
+  {
+   "id": "sec-054-deuteron-calculations-page-69",
+   "title": "Deuteron calculations (page 69)",
+   "pages": "69-69"
   }
  ],
  "provenance": {

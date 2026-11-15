@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9806163v1/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The Weight Formula",
+  "pageStart": 16,
+  "pageEnd": 21,
+  "contains": [
+    "library/arxiv-math-9806163v1/blocks/prose-sec-009",
+    "library/arxiv-math-9806163v1/blocks/recommendation-sec-009-01",
+    "library/arxiv-math-9806163v1/blocks/recommendation-sec-009-02",
+    "library/arxiv-math-9806163v1/blocks/recommendation-sec-009-03",
+    "library/arxiv-math-9806163v1/blocks/recommendation-sec-009-04",
+    "library/arxiv-math-9806163v1/blocks/recommendation-sec-009-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9806163v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9806163v1",
+  "provenance": "ingested"
+}

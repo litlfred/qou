@@ -1,0 +1,64 @@
+5.3 Verifying the assumption of the saddle point method
+
+In this section, in Lemma 5.7, we verify the assumption of the saddle point method
+(Proposition 3.5, see also Remark 3.6 and Appendix B) when we apply Proposition 3.5
+and Remark 3.6 to (46). The arguments of this section are due to Yokota [44].
+
+Let V(t,s) and V(t, s) be as in Section 2.2. As shown in Appendix B, V(t, s) uniformly
+converges to V(t, s) on A’ as N -— oo. Hence, as mentioned in Remarks 3.3 and 3.6
+and Appendix B, the saddle point method of the problem can be reduced to the saddle
+point method of an integral of the form f ¢(t,s) e% V(ts)dtds. Therefore, we verify the
+assumption of the saddle point method for Vit, s). We recall that the differentials of
+
+V(t, 8) are given in (47).
+In order to show Lemma 5.7 below, we calculate the behavior of the following function,
+
+fro(51,62) = ReV(t+6,V—1, 8+ bV—1) —<,.
+The differentials of this function are given by
+
+a) Ou
+
+~ fis(d1,52) = Re (v-1 {V(t+5iv—1, s+5,V-1))
+
+00; ot
+
+1 1
+
+= =I ( = log (1 = =) — 2nV-1 (t+s- 5))
+= Arg (1— =) +2m(t+s— 5): (58)
+
+a) 0.
+
+—frs(d1,52) = Re (va <V (t+ iV—1, s+ 62v-1))
+
+069 Os
+
+= -Im ( = 2 og (11) = 22V=1 (t+ 2s ~1))
+
+2 2
+where x = e2tv=l (t+51V=1) and y= e2tv=l (s+d2V—T) |
+
+= 2 (Arg(1~ =) +2n(5t+s—5)), (59)
+
+Lemma 5.5 (Yokota [44]). Fiving (t,s) € A’ and 6. € R, we regard fi5(X,62) as a
+function of X € R.
+
+(1) Ift+s> §, then fi,5(X, 62) is monotonically increasing for X € R.
+
+(2) Ift+s <3, then fis(X,52) has a unique minimal point at X = gi(t,s), where
+
+1 lo sin 2r(t + s)
+
+t,s) = —
+n(t,s) 20 sin 27s
+
+i.€., ft,s(X, 52) is monotonically decreasing for X < gi(t,s), and is monotonically increas-
+ing for X > gilt, s).
+
+Proof. We put x = 2™V-M4XV-)_ Then, 1/x = 2% e"V-T!, We put 6 = Arg (1 — +)
+
+in this proof. Since t < i, @ is in the following range,
+
+0 <0 < (5-1),
+
+36

@@ -8,7 +8,7 @@
   "pages": 9,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -223,7 +223,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "Histograms for the distribution of (a) the \ufb01rst 9",
+   "title": "Histograms for the distribution of (a) the ﬁrst 9",
    "page": 7,
    "confidence": 0.9,
    "evidence": [
@@ -398,14 +398,26 @@
    "title": "Expectations from chRMT",
    "level": 1,
    "page_start": 2,
-   "page_end": 4,
-   "n_chars": 8484,
-   "n_words": 1487,
+   "page_end": 3,
+   "n_chars": 5843,
+   "n_words": 1012,
    "label_start": "2",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-004-3-gauge-field-configurations-and-analysis",
+   "number": "3",
+   "title": "Gauge field configurations and analysis",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2604,
+   "n_words": 470,
+   "label_start": "3",
    "label_end": "4"
   },
   {
-   "id": "sec-004-4-reporting-the-results",
+   "id": "sec-005-4-reporting-the-results",
    "number": "4",
    "title": "Reporting the results",
    "level": 1,
@@ -417,7 +429,7 @@
    "label_end": "4"
   },
   {
-   "id": "sec-005-41-eigenvalue-density",
+   "id": "sec-006-41-eigenvalue-density",
    "number": "4.1",
    "title": "Eigenvalue density",
    "level": 2,
@@ -429,7 +441,7 @@
    "label_end": "6"
   },
   {
-   "id": "sec-006-42-level-spacing-distribution",
+   "id": "sec-007-42-level-spacing-distribution",
    "number": "4.2",
    "title": "Level spacing distribution",
    "level": 2,
@@ -441,7 +453,7 @@
    "label_end": "7"
   },
   {
-   "id": "sec-007-43-soft-inner-edge",
+   "id": "sec-008-43-soft-inner-edge",
    "number": "4.3",
    "title": "Soft inner edge",
    "level": 2,
@@ -453,7 +465,7 @@
    "label_end": "8"
   },
   {
-   "id": "sec-008-5-summary-and-conclusions",
+   "id": "sec-009-5-summary-and-conclusions",
    "number": "5",
    "title": "Summary and conclusions",
    "level": 1,
@@ -479,13 +491,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 10,
-  "chars_total": 37805,
+  "sections": 11,
+  "chars_total": 37768,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "paper-rev.tex",
    "tex_sections": 10,
-   "overlaid": 7,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -501,14 +514,14 @@
      "id": "sec-000-11-chiral-random-matrix-theory",
      "title": "Chiral Random Matrix Theory",
      "prose_ratio": 0.233,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-001-1-introduction",
      "title": "Introduction",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.46,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-002-12-temperature-transition",
@@ -521,13 +534,21 @@
     {
      "id": "sec-003-2-expectations-from-chrmt",
      "title": "Expectations from chRMT",
-     "prose_ratio": 0.94,
-     "coverage_ratio": 0.998,
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-4-reporting-the-results",
+     "id": "sec-004-3-gauge-field-configurations-and-analysis",
+     "title": "Gauge field configurations and analysis",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-4-reporting-the-results",
      "title": "Reporting the results",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -535,7 +556,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-41-eigenvalue-density",
+     "id": "sec-006-41-eigenvalue-density",
      "title": "Eigenvalue density",
      "prose_ratio": 0.955,
      "coverage_ratio": 1.0,
@@ -543,7 +564,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-42-level-spacing-distribution",
+     "id": "sec-007-42-level-spacing-distribution",
      "title": "Level spacing distribution",
      "prose_ratio": 0.93,
      "coverage_ratio": 1.0,
@@ -551,7 +572,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-43-soft-inner-edge",
+     "id": "sec-008-43-soft-inner-edge",
      "title": "Soft inner edge",
      "prose_ratio": 0.943,
      "coverage_ratio": 1.0,
@@ -559,7 +580,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-5-summary-and-conclusions",
+     "id": "sec-009-5-summary-and-conclusions",
      "title": "Summary and conclusions",
      "prose_ratio": 0.909,
      "coverage_ratio": 0.987,

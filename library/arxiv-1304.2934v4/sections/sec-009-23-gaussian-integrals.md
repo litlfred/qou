@@ -9,8 +9,9 @@ source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
 toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.874
-latex_coverage_ratio: 0.944
+latex_prose_ratio: 0.926
+latex_coverage_ratio: 0.947
+doc_brief: "MOD-φ CONVERGENCE, I: NORMALITY ZONES AND PRECISE DEVIATIONS — In this paper, we use the framework of mod-φ convergence to prove pre- cise large or moderate deviations for quite general sequences of"
 ---
 Some computations involving the Gaussian density are used several times throughout the paper, so we decided to present them together here.
 

@@ -1,0 +1,196 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2106.07444v2",
+ "source": {
+  "structure_sha256": "5acca39c07bcdddd870a36a840a97c79a675d3c3c309d596ead9ea2f0c902602",
+  "file": "2106.07444v2.pdf"
+ },
+ "provenance": {
+  "title": "FROM THE HECKE CATEGORY TO THE UNIPOTENT LOCUS",
+  "authors": "MINH-T\u00c2M QUANG TRINH",
+  "arxiv": {
+   "id": "2106.07444",
+   "version": "2",
+   "primary_class": "math.RT",
+   "stamp_date": "21 Jun 2021"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 11,
+  "by_kind": {
+   "recommendation": 11
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In particular, the retraction should transport the doubled weight filtration $\\bm{w}_{\\leq 2\\ast}$ on the compactly-supported cohomology of $[\\cal{Z}(\\beta)/G]$ to the perverse filtration $\\bm{p}_{\\leq \\ast}$ on the cohomology of $\\cal{B}_\\nu^\\mathit{aff}$, up to a degree shift.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-introduction.md",
+   "section_title": "Introduction",
+   "pages": "2-15",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Since $\\cal{E}$ is the shifted restriction of $i^\\ast E$ to $C$, it must be pure.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-2-mixed-categories-in-representation-theory.md",
+   "section_title": "Mixed Categories in Representation Theory",
+   "pages": "22-30",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Proposition [\\[prop:molien\\]](#prop:molien){reference-type=\"ref\" reference=\"prop:molien\"} then suggests that the weights $\\mathsf{tr}_\\phi$ should involve bivariate Molien series.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-007-7-the-decategorified-trace.md",
+   "section_title": "The Decategorified Trace",
+   "pages": "45-52",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "To prove the first statement, we must show that $$\\begin{aligned} (\\psi, \\langle{\\tilde{\\beta}}\\rangle_{\\bm{q}})_W = \\sum_{\\phi \\in \\hat{W}} {\\{\\phi, \\psi\\}} \\phi_{\\bm{q}}(\\tilde{\\beta}) \\in \\bb{Q}_W(\\bm{q}^{\\frac{1}{2}}) \\end{aligned}$$ actually belongs to $\\bb{Z}[\\bm{q}_0]$ for all $\\psi \\in \\hat{W}$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-007-7-the-decategorified-trace.md",
+   "section_title": "The Decategorified Trace",
+   "pages": "45-52",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The following observations show that their degrees must be $|\\beta| - r$:",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-007-7-the-decategorified-trace.md",
+   "section_title": "The Decategorified Trace",
+   "pages": "45-52",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Before we can use Theorem [\\[thm:orthogonality\\]](#thm:orthogonality){reference-type=\"ref\" reference=\"thm:orthogonality\"}, we must rewrite the left-hand side of the orthogonality identity:",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-008-8-delignelusztig-theory.md",
+   "section_title": "Deligne\u2013Lusztig Theory",
+   "pages": "52-61",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Since the (diagonalizable) roots of $I$ do not deform, the deformation of $q$ along this path shows that the following operators must have the same eigenvalue spectrum:",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-9-periodic-braids.md",
+   "section_title": "Periodic Braids",
+   "pages": "61-64",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In this case, $\\zeta$ must be a root of unity.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-9-periodic-braids.md",
+   "section_title": "Periodic Braids",
+   "pages": "61-64",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Namely, $W$ must be of type $E_8$ or type $H_4$ and the denominator of $\\nu$ in lowest terms must be $15$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-010-10-the-rational-daha.md",
+   "section_title": "The Rational DAHA",
+   "pages": "64-71",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "By Lemma-Postulate A.9.1(2), we must prove s(1q)m1(q) = (1 \u2212q)\u2212r.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-011-appendix-a-coxeter-groups-and-their-characters.md",
+   "section_title": "Appendix A. Coxeter Groups and Their Characters",
+   "pages": "71-78",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "By Theorem 7, it should be possible to decompose \u27e8\u03b2\u27e90 q into a Z[q]-linear combination of total Springer representations Qu, as we run over representatives u of GF -orbits in UF .",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-013-appendix-c-examples-of-the-decategorified-trace.md",
+   "section_title": "Appendix C. Examples of the Decategorified Trace",
+   "pages": "82-84",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

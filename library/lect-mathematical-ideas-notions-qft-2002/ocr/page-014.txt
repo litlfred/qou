@@ -1,0 +1,69 @@
+14 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY
+
+For this purpose, we will consider the group G of permutations of T, which
+preserves “flowers” (i.e. endpoints of any two edges outgoing from the same flower
+end up again in the same flower). This group involves
+
+1) permutations of “flowers” with a given valency;
+
+2) permutation of the i edges inside each i-valent “flower” .
+
+More precisely, the group G is the semidirect product ([]; Sn,) « ([]; $7‘). Note
+that |G] = ]],(4!)"‘nj!, which is the product of the numbers in the denominator of
+the formula (9).
+
+The group G acts on the set, of all pairings o of T. Moreover, it acts transitively
+on the set Pp of pairings of T which yield a given graph T. Moreover, it is easy to
+see that the stabilizer of a given pairing is Aut(I). Thus, the number of pairings
+
+giving [ is
+Ti (@)"*ni!
+|Aut(T)|
+Tyna!
+F,=
+» rc |Aut( Dy
+
+Finally, note that the exponent of h in equation (9) is }7;(i/2 — 1), which is the
+number of edges of I minus the number of vertices, i.e. b([). Substituting this into
+(9), we get the result.
+
+Example. Let d= 1, V =R, g; = g, B; = —z’ for all i (where z is a formal
+variable), h = 1. Then we find the asymptotic expansion
+
+Hence,
+
+2k
+
+1 ee aay gert n z
+el "Se" Sa
+
+n>0  TEG(n,k)
+
+where G(n,k) is the set of isomorphism classes of graphs with n vertices and k
+edges. Expanding the left hand side, we set
+
+> ya ern’ /2
+>
+k TEG(n, »)| n!
+and hence
+» 1 n2k
+TAuuh)) 2"kin!?
+PEeG(n,k) |Aut([)| — 2*kIn!
+
+Exercise. Check this by direct combinatorics.
+
+3.5. Sum over connected diagrams. Now we will show that the logarithm of
+the partition function Z is also given by summation over diagrams, but with only
+connected diagrams taken into account. This significantly simplifies the analysis
+of Z in the first few orders of perturbation theory, since the number of connected
+diagrams with a given number of vertices and edges is significantly smaller than
+the number of all diagrams.
+
+Theorem 3.4. Let Zo = oo Then one has
+pe)
+
+In(Z/Zo) = >~ T] 9?" » Taw
+
+i TeG.(n)
+
+where G.(n) is the set of connected graphs in G(n).

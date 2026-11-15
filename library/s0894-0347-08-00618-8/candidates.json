@@ -1,0 +1,86 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "s0894-0347-08-00618-8",
+ "source": {
+  "structure_sha256": "7c0b2ca41992b21ca897acfe77482872d71b86252ca061cfa300cb0e0a7975d1",
+  "file": "S0894-0347-08-00618-8.pdf"
+ },
+ "provenance": {
+  "title": "AMERICAN MATHEMATICAL SOCIETY S 0894-0347(08)00618-8",
+  "authors": "Article electronically published on September 19, 2008",
+  "arxiv": null,
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 4,
+  "by_kind": {
+   "recommendation": 4
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Note that in order for this de\ufb01nition to make sense we should also relabel the variables using indices in [|S|].",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-21-negative-dependence-concepts.md",
+   "section_title": "Negative dependence concepts",
+   "pages": "4-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Therefore, f(z(t)) is a polyno- mial in t that is a constant multiple of the characteristic polynomial of a Hermitian matrix, and so it must have all real zeros.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-008-31-real-stable-polynomials-and-transcendental-en.md",
+   "section_title": "Real stable polynomials and transcendental entire functions",
+   "pages": "13-15",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In order for a solution to Problem 3.5 to be useful in settling Conjecture 2.2, the negative dependence property should be satis\ufb01ed by non-random/deterministic distributions and should imply NA.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-012-35-interacting-particle-systems-and-exclusion-ev.md",
+   "section_title": "Interacting particle systems and exclusion evolutions",
+   "pages": "20-21",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The analog of (25) that we must check is (28) \u0004 i<j \u0004 k,\u2113 (fj \u2212fi)cicjdkd\u2113 * (hk \u2212h\u2113)ak+ia\u2113+j + (gk \u2212g\u2113)bk+ib\u2113+j + (hk \u2212g\u2113)ak+ib\u2113+j + (gk \u2212h\u2113)a\u2113+jbk+i + \u22650, where now the fk\u2019s, gk\u2019s and hk\u2019s are obtained by symmetrizing F and G with respect to the \ufb01eld on the set of coordinates {X1, . . . , Xm} in the case of F and {Xm+1, . . . , Xn} in the case of G.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-019-6-almost-exchangeable-measures.md",
+   "section_title": "Almost exchangeable measures",
+   "pages": "33-41",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

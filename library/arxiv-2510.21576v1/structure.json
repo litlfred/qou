@@ -7,11 +7,11 @@
   "bytes": 2054563,
   "pages": 17,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -22,16 +22,32 @@
   },
   "doi": null,
   "title": "Relativistic corrections for lepton-nucleus scattering in the short-time approximation",
-  "authors_raw": "L. Andreoli1,2,\u2217 R. Weiss3,\u2020 G. Chambers-Wall 3,\u2021 A. Gnech 1,2,\u00a7 S. Pastore3,4,\u00b6 M. Piarulli3,4,\u2217\u2217 and S. Gandolfi 5",
+  "authors_raw": "L. Andreoli1,2,∗R. Weiss3,† G. Chambers-Wall3,‡ A. Gnech1,2,§ S. Pastore3,4,¶ M. Piarulli3,4,∗∗and S. Gandolfi5",
   "title_lines": [
    "Relativistic corrections for lepton-nucleus scattering in the short-time approximation"
   ],
   "abstract": null,
   "docinfo": {
+   "Title": "Relativistic corrections for lepton-nucleus scattering in the short-time approximation",
    "Author": "Lorenzo Andreoli; Ronen Weiss; Graham Chambers-Wall; Alex Gnech; Saori Pastore; Maria Piarulli; Stefano Gandolfi",
-   "Creator": "arXiv GenPDF (tex2pdf:e76afa9)",
    "Producer": "pikepdf 8.15.1",
-   "Title": "Relativistic corrections for lepton-nucleus scattering in the short-time approximation"
+   "Creator": "arXiv GenPDF (tex2pdf:e76afa9)"
+  },
+  "title_raw": "Relativistic corrections for lepton-nucleus scattering in the short-time approximation",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Relativistic corrections for lepton-nucleus scattering in the short-time approximation",
+   "heading": "Relativistic corrections for lepton-nucleus scattering in the short-time approximation",
+   "outline": "Relativistic corrections for lepton-nucleus scattering in the short-time approximation",
+   "text": "Relativistic corrections for lepton-nucleus scattering in the short-time approximation",
+   "corroborated_by": [
+    "heading",
+    "outline",
+    "text",
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -40,129 +56,461 @@
    "title": "Relativistic corrections for lepton-nucleus scattering in the short-time approximation",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Abstract",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Electron-nucleus scattering cross section",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "One-Body Electromagnetic Current",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 3,
    "title": "Low-momentum transfer nonrelativistic reduction",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 3,
    "title": "High-momentum transfer nonrelativistic reduction",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 3,
    "title": "Comparing low- and high-momentum transfer nonrelativistic reductions",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Short-time approximation",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Relativistic Final-States Kinematics",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Results",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 3,
    "title": "High-q expansion scheme and relativistic final-state kinematics",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 3,
    "title": "Convergence of the high-q expansion scheme",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 3,
    "title": "Cross Sections",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Conclusions",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Acknowledgments",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Comparison with the Rosenbluth cross section",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "References",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Ratio of the longitudinal responses obtained using: i) the highand low-q expansion schemes for the one-body charge orator at LO (blue solid line); and ii) the Darwin-Foldy correction to the charge operator and the low-q expansion at LO (orange dashed line). See text for explanation",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Ratio of the transverse responses obtained using the LO high-q and LO low-q expansion schemes for the one-body current operator. See text for explanations",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "We will compare the STA(n) with those of Refs. [17, 24] obtained using the correlated-propagator along with oneand two-body electromagnetic currents, denoted with ‘STA’. We stress that the STA calculations are based on the low-q nonrelativistic reduction of the single-nucleon",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Left panel: Transverse response density for 4He at q = 700 MeV/c, as a function of relative and center of mass energies, e and E. Results are from Ref. [24] and include the correlated-propagator along with oneand two-nucleon currents. Right panel: Contour plot of the figure in the left panel. See te",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Longitudinal (left) and transverse (right) response functions for 3He at q = 700 MeV/c. Solid blue and dashed red lines show STA and STA(0) results, respectively. Green dashed lines correspond to STA(0)NRδ results",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Longitudinal (left) and transverse (right) response functions for 3He (top panels) and 4He (bottom panels), at q = 500 and q = 700 MeV/c. The solid blue lines are STA calculations without the relativistic treatment discussed in this work. The solid red (dashed purple) lines use the new currents up t",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Inclusive double-differential cross sections for electron scattering on 3He for different values of beam energy ε and scattering angle θ . The dashed blue (solid red) lines are STA calculations without (with) the relativistic treatment discussed in this work. Units are in nb/sr GeV. Experimental dat",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "The same as Fig. 7, but for 4He",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "15"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-000-relativistic-corrections-for-lepton-nucleus-scat",
@@ -171,8 +519,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1389,
-   "n_words": 187
+   "n_chars": 1393,
+   "n_words": 191,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-001-introduction",
@@ -180,72 +530,200 @@
    "title": "Introduction",
    "level": 2,
    "page_start": 1,
-   "page_end": 6,
-   "n_chars": 24982,
-   "n_words": 3924
+   "page_end": 2,
+   "n_chars": 8602,
+   "n_words": 1266,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
-   "id": "sec-002-short-time-approximation",
+   "id": "sec-002-electron-nucleus-scattering-cross-section",
+   "number": null,
+   "title": "Electron-nucleus scattering cross section",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 2457,
+   "n_words": 465,
+   "label_start": "2",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-003-one-body-electromagnetic-current",
+   "number": null,
+   "title": "One-Body Electromagnetic Current",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1220,
+   "n_words": 228,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-004-low-momentum-transfer-nonrelativistic-reduction",
+   "number": null,
+   "title": "Low-momentum transfer nonrelativistic reduction",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1497,
+   "n_words": 250,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-005-high-momentum-transfer-nonrelativistic-reduction",
+   "number": null,
+   "title": "High-momentum transfer nonrelativistic reduction",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 7202,
+   "n_words": 1276,
+   "label_start": "4",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-006-comparing-low--and-high-momentum-transfer-nonrel",
+   "number": null,
+   "title": "Comparing low- and high-momentum transfer nonrelativistic reductions",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 4136,
+   "n_words": 726,
+   "label_start": "5",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-007-short-time-approximation",
    "number": null,
    "title": "Short-time approximation",
    "level": 2,
    "page_start": 6,
-   "page_end": 8,
-   "n_chars": 8237,
-   "n_words": 1315
+   "page_end": 7,
+   "n_chars": 3880,
+   "n_words": 670,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-003-results",
+   "id": "sec-008-relativistic-final-states-kinematics",
+   "number": null,
+   "title": "Relativistic Final-States Kinematics",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 4480,
+   "n_words": 772,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-009-results",
    "number": null,
    "title": "Results",
    "level": 2,
    "page_start": 8,
-   "page_end": 11,
-   "n_chars": 7104,
-   "n_words": 1134
+   "page_end": 10,
+   "n_chars": 2826,
+   "n_words": 476,
+   "label_start": "8",
+   "label_end": "10"
   },
   {
-   "id": "sec-004-cross-sections",
+   "id": "sec-010-high-q-expansion-scheme-and-relativistic-final-s",
+   "number": null,
+   "title": "High-q expansion scheme and relativistic final-state kinematics",
+   "level": 3,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 2540,
+   "n_words": 418,
+   "label_start": "10",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-011-convergence-of-the-high-q-expansion-scheme",
+   "number": null,
+   "title": "Convergence of the high-q expansion scheme",
+   "level": 3,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 1739,
+   "n_words": 279,
+   "label_start": "10",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-012-cross-sections",
    "number": null,
    "title": "Cross Sections",
    "level": 3,
    "page_start": 11,
    "page_end": 11,
-   "n_chars": 2668,
-   "n_words": 406
+   "n_chars": 2696,
+   "n_words": 421,
+   "label_start": "11",
+   "label_end": "11"
   },
   {
-   "id": "sec-005-conclusions",
+   "id": "sec-013-conclusions",
    "number": null,
    "title": "Conclusions",
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 4152,
-   "n_words": 693
+   "n_chars": 4180,
+   "n_words": 712,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
-   "id": "sec-006-acknowledgments",
+   "id": "sec-014-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 2,
    "page_start": 12,
+   "page_end": 16,
+   "n_chars": 5416,
+   "n_words": 1030,
+   "label_start": "12",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-015-comparison-with-the-rosenbluth-cross-section",
+   "number": null,
+   "title": "Comparison with the Rosenbluth cross section",
+   "level": 2,
+   "page_start": 16,
    "page_end": 17,
-   "n_chars": 13479,
-   "n_words": 2330
+   "n_chars": 8041,
+   "n_words": 1383,
+   "label_start": "16",
+   "label_end": "17"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 18,
-  "sections": 7,
-  "chars_total": 62011,
+  "toc_inferred_entries": 0,
+  "figure_entries": 8,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 16,
+  "chars_total": 62305,
+  "furniture_lines_stripped": 16,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
    "tex_sections": 13,
-   "overlaid": 3,
+   "overlaid": 13,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -260,42 +738,115 @@
     {
      "id": "sec-001-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.574,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-002-short-time-approximation",
-     "title": "Short-time approximation",
-     "prose_ratio": 0.556,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-003-results",
-     "title": "Results",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.744,
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-cross-sections",
-     "title": "Cross Sections",
-     "prose_ratio": 0.891,
-     "coverage_ratio": 0.982,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-005-conclusions",
-     "title": "Conclusions",
-     "prose_ratio": 1.0,
+     "id": "sec-002-electron-nucleus-scattering-cross-section",
+     "title": "Electron-nucleus scattering cross section",
+     "prose_ratio": 0.938,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-acknowledgments",
+     "id": "sec-003-one-body-electromagnetic-current",
+     "title": "One-Body Electromagnetic Current",
+     "prose_ratio": 0.926,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-low-momentum-transfer-nonrelativistic-reduction",
+     "title": "Low-momentum transfer nonrelativistic reduction",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-high-momentum-transfer-nonrelativistic-reduction",
+     "title": "High-momentum transfer nonrelativistic reduction",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-comparing-low--and-high-momentum-transfer-nonrel",
+     "title": "Comparing low- and high-momentum transfer nonrelativistic reductions",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-short-time-approximation",
+     "title": "Short-time approximation",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-relativistic-final-states-kinematics",
+     "title": "Relativistic Final-States Kinematics",
+     "prose_ratio": 0.932,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-results",
+     "title": "Results",
+     "prose_ratio": 0.935,
+     "coverage_ratio": 0.901,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-high-q-expansion-scheme-and-relativistic-final-s",
+     "title": "High-q expansion scheme and relativistic final-state kinematics",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-convergence-of-the-high-q-expansion-scheme",
+     "title": "Convergence of the high-q expansion scheme",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-cross-sections",
+     "title": "Cross Sections",
+     "prose_ratio": 0.891,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-conclusions",
+     "title": "Conclusions",
+     "prose_ratio": 0.652,
+     "coverage_ratio": 0.923,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-acknowledgments",
      "title": "Acknowledgments",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-comparison-with-the-rosenbluth-cross-section",
+     "title": "Comparison with the Rosenbluth cross section",
      "result": "no matching \\section"
     }
    ]

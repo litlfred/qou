@@ -1,0 +1,50 @@
+Concentration of empirical distribution functions 1405
+Hence, for the random variable
+gy =max{ max [Fy (x;—) — Fi—)}. max LF O—1) — Faai—vI.
+1<i<N 1<i<N
+
+we have that
+Pléy > Br} <2(N — Ne2""77, (72)
+
+Now, take any point x € R different from all of the x;’s and select i from 1,...,m such that
+Xj-1 <x <x;. Then, by (7.1),
+
+Fy(x) — F(x) S$ Fri) — FQi-1)
+1
+=[FnQi-) — FQi—)] + [FQi-) — F@i-)1 sv + WN’
+Similarly,
+
+F(x) — Fr(x) < FQi-) — Fn @i-1)
+
+1
+=[F(i-) — FQi-1)] + [FQi-1) — Fn i-1)] Ss En + Ny
+
+Therefore, | F,(x) — F(x)| < &y + x which also extends by continuity from the right to all
+points x;. Thus, || F, — Fl <&v + ¥ and, by (7.2),
+
+1
+P| Fn — Fil > Br+ x <2(N — le2"*/27,
+
+Note that this also holds automatically in the case N = 1. Choose N = (gl + 1. We then have
+¥ < Br and get
+
+2
+P(l| Fn — Fl > 26r) < e277,
+br
+
+Finally, changing 26r into r, we arrive at the bound (1.5) of Theorem 1.2,
+
+3
+Pll — Fil >risSexn{-2 (2) | (73)
+
+and so the constant c = 2/27.
+It remains to derive the bound on the mean E|| F,, — F'||. Given 0 < rg < 1, we can write,
+
+using (7.3),
+1 ro 1
+EF, — F | -/ wll — Fil >rjar= | +/
+0 0 1
+
+(7.4)
+<1" to 2 ro °
+S10 0 Pp TB :

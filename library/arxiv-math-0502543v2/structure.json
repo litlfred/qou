@@ -6,8 +6,9 @@
   "sha256": "227ef8150cb08faffa97580266e1708285e686b00fe527276827d90af633bd7f",
   "bytes": 129801,
   "pages": 12,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -19,130 +20,284 @@
    "stamp_date": "22 Mar 2005"
   },
   "doi": null,
-  "title": "CONTINUITY OF VOLUMES \u2013 ON A GENERALIZATION OF A CONJECTURE OF J.W.MILNOR",
-  "authors_raw": null,
-  "abstract": "In his paper [6] J. Milnor conjectured that the volume of n-dimensional hyperbolic and spherical simplices, as a function of the dihedral angles, extends continuously to the closure of the space of allowable angles. A prove of this conjecture was rec ently given by F . Luo ([5]1). In this paper we give a simple proof of this conjecture, prove much sharper regularity results, and then extend the method to apply to a large class of convex polytopes. The simplex argument works without change in dimensions greate r than 3 (and for spherical simplices in all dimensions), so th e bulk of this paper is concerned with the three-dimensional argum ent. The estimates relating the diameter of a polyhedron to the le ngth of the systole of the polar polyhedron are of independent int erest. 1. I ntroduction Consider the set of simplices in Hn or Sn. It is well-known that this set is parametrized by the (ordered) collection of dihedralangles, and we may call the set of assignements of dihedral angles of geom etric simplices in Hn as a subset \u2126Hn \u2282 Rn(n+1)/2 and similarly , the set of dihedral angle assignements of of geometric simplices in Sn as a subset \u2126Sn \u2282 Rn(n+1)/2. These sets are open, since they are de\ufb01ned by collections of strict inequalities (which are polynomial i n the cosines of the dihedral angles). One may then view the volumeV of a simplex as a function V on \u2126Xn. A natural question, then, is that of boundary regularity of V on \u2126. This question was, in fact, asked (in a weaker form of: does V admit a continuous extension to \u2126) by John Milnor 1 in [6]. An answer to Milnor\u2019s question was given to F. Luo in [5 ]. Date: November 11, 2018.",
+  "title": "CONTINUITY OF VOLUMES – ON A GENERALIZATION OF A CONJECTURE OF J.W.MILNOR",
+  "authors_raw": "A CONJECTURE OF J.W.MILNOR",
+  "title_lines": [
+   "CONTINUITY OF VOLUMES – ON A GENERALIZATION OF"
+  ],
+  "abstract": null,
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20220421113900-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20220421113900-04'00'"
   },
-  "title_lines": [
-   "CONTINUITY OF VOLUMES \u2013 ON A GENERALIZATION OF",
-   "A CONJECTURE OF J.W.MILNOR",
-   "IGOR RIVIN"
-  ],
-  "title_prev": "CONTINUITY OF VOLUMES \u2013 ON A GENERALIZATION OF A CONJECTURE OF J.W.MILNOR IGOR RIVIN"
+  "title_raw": "CONTINUITY OF VOLUMES – ON A GENERALIZATION OF",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "CONTINUITY OF VOLUMES – ON A GENERALIZATION OF A CONJECTURE OF J.W.MILNOR Consider the set of simplices in H n or S n . It is well-known that this set is parametrized by the (ordered) collection of dihedral angles, and we may call the set of assignements of dihedral angles of geometric simplices in",
+   "outline": "1. Introduction",
+   "text": "CONTINUITY OF VOLUMES – ON A GENERALIZATION OF",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "CONTINUITY OF VOLUMES – ON A GENERALIZATION OF"
  },
- "toc": [
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "4 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (4 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed): one section per page.",
+ "figures": [],
+ "pages": [
   {
-   "level": 1,
-   "title": "Introduction",
-   "page": 1,
-   "source": "outline",
-   "number": "1"
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "A simple proof for simplices (among other things)",
-   "page": 3,
-   "source": "outline",
-   "number": "2"
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "Convex polytopes",
-   "page": 5,
-   "source": "outline",
-   "number": "3"
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "Degeneration estimates",
-   "page": 7,
-   "source": "outline",
-   "number": "4"
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "References",
-   "page": 11,
-   "source": "outline",
-   "number": null
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   }
  ],
- "toc_source": "outline",
  "sections": [
   {
-   "id": "sec-000-2-a-simple-proof-for-simplices-among-other-thing",
-   "number": "2",
-   "title": "A simple proof for simplices (among other things)",
+   "id": "page-001",
+   "number": null,
+   "title": "Page 1",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 2200,
+   "n_words": 367,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 2334,
+   "n_words": 403,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
    "level": 1,
    "page_start": 3,
-   "page_end": 5,
-   "n_chars": 3558,
-   "n_words": 705
+   "page_end": 3,
+   "n_chars": 1931,
+   "n_words": 345,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-3-convex-polytopes",
-   "number": "3",
-   "title": "Convex polytopes",
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 2041,
+   "n_words": 393,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
    "level": 1,
    "page_start": 5,
-   "page_end": 11,
-   "n_chars": 12088,
-   "n_words": 2659
+   "page_end": 5,
+   "n_chars": 2098,
+   "n_words": 363,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-references",
+   "id": "page-006",
    "number": null,
-   "title": "References",
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 2258,
+   "n_words": 446,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1466,
+   "n_words": 293,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1679,
+   "n_words": 338,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1011,
+   "n_words": 219,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 2145,
+   "n_words": 438,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
    "level": 1,
    "page_start": 11,
+   "page_end": 11,
+   "n_chars": 2113,
+   "n_words": 368,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
+   "level": 1,
+   "page_start": 12,
    "page_end": 12,
-   "n_chars": 1722,
-   "n_words": 263
+   "n_chars": 934,
+   "n_words": 128,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 5,
-  "sections": 3,
-  "chars_total": 17368,
-  "latex_overlay": {
-   "_schema": "latex-math-overlay/v1",
-   "main": "myluo.tex",
-   "tex_sections": 4,
-   "overlaid": 1,
-   "thresholds": {
-    "title": 0.85,
-    "prose": 0.6,
-    "coverage": 0.5
-   },
-   "sections": [
-    {
-     "id": "sec-000-2-a-simple-proof-for-simplices-among-other-thing",
-     "title": "A simple proof for simplices (among other things)",
-     "prose_ratio": 0.994,
-     "coverage_ratio": 0.989,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-001-3-convex-polytopes",
-     "title": "Convex polytopes",
-     "prose_ratio": 0.582,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-002-references",
-     "title": "References",
-     "result": "no matching \\section"
-    }
-   ]
-  }
+  "toc_entries": 0,
+  "toc_inferred_entries": 4,
+  "toc_inferred_mean_confidence": 0.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "regex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 12,
+  "chars_total": 22210,
+  "furniture_lines_stripped": 0,
+  "outline_rejected": "1 of 5 outline entries name a heading the pages print (< 50%), e.g. \"Introduction\""
  }
 }

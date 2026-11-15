@@ -1,0 +1,1 @@
+Note that we should only consider the case )> p; = 0, otherwise the group of translations along the circle acts nontrivially on the integrand, and hence under any reasonable definition the integral should be zero.

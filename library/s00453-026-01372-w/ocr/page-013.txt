@@ -1,0 +1,54 @@
+Algorithmica (2026) 88:21 Page 130f19 21
+
+A 1-Negative Association and Weak Negative Regression
+
+In the following lemmata, we show that weak negative regression implies 1-negative
+association in general. We then show that the reverse implication holds for binary
+random variables, but give an example showing that it does not hold in general.
+
+Claim A.1 Jf a collection of random variables X,,..., Xn satisfies weak negative
+regression, then it satisfies 1-negative association.
+
+Proof Assume X1,..., Xn satisfy weak negative regression; we will prove that it
+also satisfies 1-negative association. Let f and g be monotone functions such that f
+depends on X; for some subset J C [n] and g depends on X; fori ¢ J. Without loss
+of generality, let us assume that f and g are non-decreasing.
+
+First, define the function F(a) = E[ f(X)|X; = a]. Evaluating the expectation
+E[ f (X7)g(X;)], we can express it via the law of total expectation as
+
+EL f(X1)g(Xi))] = ElE[f (X1)|Xilg(Xi)] = EL F(X) g (Xi).
+
+Next, we observe that by the definition of weak negative regression, F(a) is non-
+increasing. Therefore, random variables F(X;) and g(X;) are negatively correlated,
+yielding
+
+ELF(X;)g@(Xi)] < ELF (X,)JElg(X3)].
+
+Converting E[ F (X;)] back into the terms of f and g, we find
+EL F(X) Ele (Xi)] = ELf(X)JELg(X)].
+
+The overall inequality E[ f(X7)g(Xi)] < El f(X1)JE[g(X;)] thus holds, which estab-
+lishes that X;,..., X, are 1-negatively associated, completing the proof. Oo
+
+Claim A.2 If a collection of binary random variables X\,..., Xn satisfies 1-negative
+association, then it satisfies weak negative regression.
+
+Proof Recall that we wish to prove that for any non-decreasing function f depending
+on some subset J C [n] and any i ¢ J, we have that
+
+EL f(X7)|Xi = 0) = EL f(X7)|X; = U-
+
+By the definition of 1-negative association, we obtain that for any monotone functions
+g which depends on X;, the following inequality holds:
+
+EL f(X)g(Xi)] Ss ELf(X))] - Elg(X)]- (10)
+
+Without loss of generality, we may assume that E[ f (X7)|X; = 1] = 0 by shifting f
+by aconstant. By choosing g to be the identity function, we can apply the law of total
+probability to obtain
+
+ELf(X7) - (XA) = PrlX; = 01 -ELf(XDIX; = 01 8)
++ Pr[X; = 1) -ELf (XIX; = 1]- g(1) =0.
+
+cay Springer

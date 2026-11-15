@@ -1,0 +1,24 @@
+31. Finding an explicit formula for W .
+The core issue is to solve the equation
+F(a) = (t—«a)’/(1 + cosa),
+
+after which we will have
+
+W = (1/8n°) F + an appropriate function whose Laplacian is constant.
+Note that
+
+F = F" +2F'cota = (1/sin’a) (sin’a F'),
+which tells us that sin’a is an integrating factor for our equation.
+Thus we must solve
+(sin’a. F')' = (w—a)’ sin’. / (1 + cosa) = (w—a)’ (1 — cosa).
+
+This integrates to
+
+sin’a F' = “n—a)'/3 — (n—a) sina + 2(n—a) cosa + 2sina.
+
+Notice that the right hand side vanishes at a = 2, so we do not add a constant
+of integration. Dividing through by sin’. , we get
+
+F! = “n—a)'/3 sina — (n—a)/sina + (21—a) cosa + 2 sina) /sin’a..
+
+69

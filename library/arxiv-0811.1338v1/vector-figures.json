@@ -1,0 +1,464 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-0811.1338v1",
+  "figures": [
+    {
+      "id": "vfig-p029",
+      "file": "figures/vfig-p029.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 29
+      },
+      "page": 29,
+      "rotation": 0,
+      "captionLabels": [
+        "24"
+      ],
+      "region": [
+        352.56,
+        53.16,
+        538.59,
+        273.49
+      ],
+      "assembly": {
+        "drawings": 283,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              352.56,
+              53.16,
+              431.28,
+              122.01
+            ],
+            "drawings": 44,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "V~",
+              "C",
+              "II (r)  [keV]"
+            ]
+          },
+          {
+            "bbox": [
+              459.86,
+              53.16,
+              538.59,
+              122.04
+            ],
+            "drawings": 47,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "V~",
+              "C",
+              "III (r)  [keV]"
+            ]
+          },
+          {
+            "bbox": [
+              352.56,
+              128.91,
+              431.28,
+              197.77
+            ],
+            "drawings": 44,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "V~",
+              "T",
+              "II (r)  [keV]"
+            ]
+          },
+          {
+            "bbox": [
+              459.86,
+              128.91,
+              538.59,
+              197.77
+            ],
+            "drawings": 47,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "V~",
+              "T",
+              "III (r)  [keV]"
+            ]
+          },
+          {
+            "bbox": [
+              352.56,
+              204.63,
+              431.28,
+              273.49
+            ],
+            "drawings": 50,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "V~",
+              "S",
+              "II (r)  [keV]"
+            ]
+          },
+          {
+            "bbox": [
+              459.86,
+              204.63,
+              538.59,
+              273.49
+            ],
+            "drawings": 51,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "V~",
+              "S",
+              "III (r)  [keV]"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              352.56,
+              60.42,
+              431.25,
+              122.01
+            ],
+            "parent": "b1",
+            "labels": [
+              "C"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              352.56,
+              53.16,
+              431.25,
+              122.01
+            ],
+            "parent": null,
+            "labels": [
+              "V~",
+              "II (r)  [keV]"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              459.86,
+              53.16,
+              538.55,
+              122.01
+            ],
+            "parent": null,
+            "labels": [
+              "V~",
+              "C",
+              "III (r)  [keV]"
+            ]
+          },
+          {
+            "id": "b3",
+            "bbox": [
+              352.56,
+              128.91,
+              431.25,
+              197.77
+            ],
+            "parent": null,
+            "labels": [
+              "V~",
+              "T",
+              "II (r)  [keV]"
+            ]
+          },
+          {
+            "id": "b4",
+            "bbox": [
+              459.86,
+              128.91,
+              538.55,
+              197.77
+            ],
+            "parent": null,
+            "labels": [
+              "V~",
+              "T",
+              "III (r)  [keV]"
+            ]
+          },
+          {
+            "id": "b5",
+            "bbox": [
+              352.56,
+              204.63,
+              431.25,
+              273.49
+            ],
+            "parent": null,
+            "labels": [
+              "V~",
+              "S",
+              "II (r)  [keV]"
+            ]
+          },
+          {
+            "id": "b6",
+            "bbox": [
+              459.86,
+              204.63,
+              538.55,
+              273.49
+            ],
+            "parent": null,
+            "labels": [
+              "V~",
+              "S",
+              "III (r)  [keV]"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 11,
+        "connectors": [
+          {
+            "from": "b0",
+            "to": "b1",
+            "bbox": [
+              352.56,
+              53.16,
+              352.56,
+              122.01
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b1",
+            "bbox": [
+              431.25,
+              53.16,
+              431.25,
+              122.01
+            ]
+          }
+        ],
+        "between": [
+          "0",
+          "50",
+          "100",
+          "150",
+          "0",
+          "20",
+          "40",
+          "60",
+          "-40",
+          "-30",
+          "-20",
+          "-10",
+          "0"
+        ],
+        "outside": 173
+      }
+    },
+    {
+      "id": "vfig-p038",
+      "file": "figures/vfig-p038.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 38
+      },
+      "page": 38,
+      "rotation": 0,
+      "captionLabels": [
+        "33"
+      ],
+      "region": [
+        60.83,
+        55.03,
+        300.34,
+        162.38
+      ],
+      "assembly": {
+        "drawings": 455,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              60.83,
+              55.03,
+              174.87,
+              162.38
+            ],
+            "drawings": 85,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "(a",
+              "1S0 )",
+              "-1  [fm",
+              "-1]"
+            ]
+          },
+          {
+            "bbox": [
+              186.27,
+              55.03,
+              300.34,
+              162.38
+            ],
+            "drawings": 88,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "(a",
+              "3S1 )",
+              "-1  [fm",
+              "-1]"
+            ]
+          },
+          {
+            "bbox": [
+              316.91,
+              -88.35,
+              567.14,
+              265.76
+            ],
+            "drawings": 282,
+            "pageEdge": true,
+            "rendered": false,
+            "labels": [
+              "38",
+              "190",
+              "195",
+              "200",
+              "205",
+              "210",
+              "Mπ [MeV]",
+              "10",
+              "-6",
+              "10",
+              "-4",
+              "10",
+              "-2",
+              "10",
+              "0",
+              "B3 [MeV]",
+              "ground state",
+              "1st excited",
+              "2nd excited",
+              "FIG. 34 Binding energies B3 of the triton ground and ﬁrst",
+              "two excited states as a function of Mπ. The circles, squares,",
+              "and diamonds give the chiral EFT result, while the solid lines",
+              "are calculations in the pionless theory. The vertical dotted",
+              "line indicates the critical pion mass M crit",
+              "and the dashed"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              60.83,
+              55.05,
+              174.87,
+              162.36
+            ],
+            "parent": null,
+            "labels": [
+              "(a",
+              "1S0 )",
+              "-1  [fm",
+              "-1]"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              186.27,
+              55.05,
+              300.34,
+              162.36
+            ],
+            "parent": null,
+            "labels": [
+              "(a",
+              "3S1 )",
+              "-1  [fm",
+              "-1]"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              316.91,
+              -88.35,
+              567.14,
+              265.76
+            ],
+            "parent": null,
+            "labels": [
+              "38",
+              "190",
+              "195",
+              "200",
+              "205",
+              "210",
+              "Mπ [MeV]",
+              "10",
+              "-6",
+              "10",
+              "-4",
+              "10",
+              "-2",
+              "10",
+              "0",
+              "B3 [MeV]",
+              "FIG. 34 Binding energies B3 of the triton ground and ﬁrst",
+              "two excited states as a function of Mπ. The circles, squares,",
+              "and diamonds give the chiral EFT result, while the solid lines",
+              "are calculations in the pionless theory. The vertical dotted",
+              "line indicates the critical pion mass M crit",
+              "and the dashed"
+            ]
+          },
+          {
+            "id": "b3",
+            "bbox": [
+              467.05,
+              140.65,
+              529.56,
+              169.62
+            ],
+            "parent": "b2",
+            "labels": [
+              "ground state",
+              "1st excited",
+              "2nd excited"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 102,
+        "connectors": [],
+        "between": [],
+        "outside": 131
+      }
+    }
+  ]
+}

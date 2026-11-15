@@ -1,0 +1,2177 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin",
+  "pages": [
+    {
+      "page": 10,
+      "rotation": 0,
+      "drawings": 1,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 3: The delta move L →L′"
+      ],
+      "labels": [
+        {
+          "text": "260",
+          "bbox": [
+            42.52,
+            33.29,
+            56.35,
+            42.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "DETURC, GLUCK, KOMENDARCZYK, MELVIN et al",
+          "bbox": [
+            160.63,
+            33.29,
+            391.2,
+            42.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSL9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "(℘xv)x−1 = ℘1(vx−1), we have explicitly",
+          "bbox": [
+            42.52,
+            63.68,
+            235.91,
+            79.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "℘1(yx−1) −℘1(zx−1)",
+          "bbox": [
+            200.2,
+            89.65,
+            300.26,
+            103.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "egL(s, t, u) =",
+          "bbox": [
+            126.79,
+            98.8,
+            186.89,
+            117.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "∥℘1(yx−1) −℘1(zx−1)∥",
+          "bbox": [
+            194.75,
+            105.32,
+            305.71,
+            118.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "where x = x(s), y = y(t) and z = z(u) parametrize the components of",
+          "bbox": [
+            42.52,
+            129.15,
+            391.18,
+            140.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "L. This map is easily seen to be homotopic to the characteristic map gL",
+          "bbox": [
+            42.52,
+            145.41,
+            390.69,
+            157.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "defined above.",
+          "bbox": [
+            42.52,
+            161.66,
+            110.41,
+            172.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The restriction of egL to ∗×S1 ×S1 is the negative of the Gauss map for",
+          "bbox": [
+            53.43,
+            173.82,
+            391.2,
+            196.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "the link ℘1((Y ∪Z)x−1), and so, noting that ℘1 is orientation reversing",
+          "bbox": [
+            42.52,
+            192.42,
+            391.19,
+            206.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(with the usual sign conventions), its degree is the linking number of Y",
+          "bbox": [
+            42.52,
+            210.44,
+            388.76,
+            221.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "with Z. Since gL is homotopic to egL, the same is true for gL. But then",
+          "bbox": [
+            42.52,
+            226.7,
+            391.19,
+            245.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "it follows from the symmetry of gL that its degree on S1 × ∗× S1 is the",
+          "bbox": [
+            42.52,
+            238.86,
+            391.18,
+            255.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "linking number of X with Z, and its degree on S1 × S1 × ∗is the linking",
+          "bbox": [
+            42.52,
+            255.12,
+            391.2,
+            270.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "number of X with Y . This proves the first statement in Theorem A.",
+          "bbox": [
+            42.52,
+            275.48,
+            370.32,
+            286.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "This version egL of the characteristic map will also facilitate the topo-",
+          "bbox": [
+            53.43,
+            291.74,
+            391.19,
+            310.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "logical proof of the rest of Theorem A, to be given next.",
+          "bbox": [
+            42.52,
+            308.0,
+            311.48,
+            318.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            42.52,
+            343.27,
+            50.6,
+            357.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Sketch of the topological proof of Theorem A",
+          "bbox": [
+            66.74,
+            343.27,
+            388.23,
+            357.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Starting with a link in the 3-sphere, consider the delta move shown in",
+          "bbox": [
+            53.43,
+            373.02,
+            391.19,
+            383.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBXTI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 3, which may be thought of as a higher order variant of a crossing",
+          "bbox": [
+            42.52,
+            389.28,
+            391.24,
+            400.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "change. It takes place within a 3-ball, outside of which the link is left",
+          "bbox": [
+            42.52,
+            405.53,
+            391.22,
+            416.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "fixed. This move was introduced by Matveev [1987].",
+          "bbox": [
+            42.52,
+            421.79,
+            292.09,
+            432.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 3: The delta move L →L′",
+          "bbox": [
+            136.73,
+            560.56,
+            296.48,
+            573.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 11,
+      "rotation": 0,
+      "drawings": 1,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 4: Seifert surfaces for L and L′"
+      ],
+      "labels": [
+        {
+          "text": "TRIPLE LINKING NUMBERS AND INTEGRAL FORMULAS",
+          "bbox": [
+            56.69,
+            33.29,
+            318.3,
+            42.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSL9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "261",
+          "bbox": [
+            391.55,
+            33.29,
+            405.38,
+            42.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSL9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "It was shown by Murakami and Nakanishi [1989] that an appropriate",
+          "bbox": [
+            67.6,
+            67.64,
+            405.42,
+            78.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "sequence of such moves can transform any link into any other link with",
+          "bbox": [
+            56.69,
+            83.9,
+            405.4,
+            94.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the same number of components, provided the two links have the same",
+          "bbox": [
+            56.69,
+            100.16,
+            405.37,
+            111.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "pairwise linking numbers.",
+          "bbox": [
+            56.69,
+            116.42,
+            178.72,
+            127.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The key organizational idea for this proof of Theorem A is to show that",
+          "bbox": [
+            67.6,
+            132.68,
+            405.39,
+            143.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the delta move, when applied to the three components X, Y and Z of the",
+          "bbox": [
+            56.69,
+            148.94,
+            405.36,
+            159.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "link L, as shown in Figure 3, increases its Milnor µ-invariant by 1, while",
+          "bbox": [
+            56.69,
+            165.2,
+            405.38,
+            176.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "increasing the Pontryagin ν-invariant of its characteristic map gL by 2.",
+          "bbox": [
+            56.69,
+            181.45,
+            395.63,
+            194.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "The fact that the delta move increases µ by 1 is well known to ex-",
+          "bbox": [
+            67.6,
+            197.71,
+            405.36,
+            208.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "perts; our proof relies on the geometric formula for µ due to Mellor and",
+          "bbox": [
+            56.69,
+            213.97,
+            405.37,
+            224.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Melvin [2003] in terms of how each link component pierces the Seifert",
+          "bbox": [
+            56.69,
+            230.23,
+            405.38,
+            241.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "surfaces of the other two components, plus a count of the triple point in-",
+          "bbox": [
+            56.69,
+            246.49,
+            405.4,
+            257.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "tersections of these surfaces. In particular, one can use a family of Seifert",
+          "bbox": [
+            56.69,
+            262.75,
+            405.37,
+            273.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "surfaces that differ only near the delta move, as shown in Figure 4.",
+          "bbox": [
+            56.69,
+            279.01,
+            377.23,
+            289.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 4: Seifert surfaces for L and L′",
+          "bbox": [
+            139.88,
+            436.99,
+            321.66,
+            449.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "To see how the delta move affects the ν-invariant, we will view ν as",
+          "bbox": [
+            67.6,
+            466.86,
+            405.35,
+            477.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "a relative Euler class, following Gompf [1998] and Cencelj, Repovˇs and",
+          "bbox": [
+            56.69,
+            483.12,
+            405.39,
+            494.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Skopenkov [2007].",
+          "bbox": [
+            56.69,
+            499.38,
+            141.87,
+            510.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "To that end let L and L′ be two three-component links in S3 with the",
+          "bbox": [
+            67.6,
+            511.68,
+            405.36,
+            526.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "same pairwise linking numbers p, q and r, and let L and L′ be the framed",
+          "bbox": [
+            56.69,
+            527.94,
+            405.36,
+            542.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "links in the 3-torus1 that are the preimages of a common regular value",
+          "bbox": [
+            56.69,
+            544.2,
+            405.37,
+            559.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "1For the reader’s convenience, all subsets of T 3 in this section are written in black-",
+          "bbox": [
+            69.13,
+            565.52,
+            405.38,
+            578.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI9",
+            "CMR6",
+            "CMR9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "board bold to distinguish them from subsets of S3.",
+          "bbox": [
+            56.69,
+            581.0,
+            262.35,
+            591.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI9",
+            "CMR6",
+            "CMR9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 15,
+      "rotation": 0,
+      "drawings": 1,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 7: The two clasps"
+      ],
+      "labels": [
+        {
+          "text": "TRIPLE LINKING NUMBERS AND INTEGRAL FORMULAS",
+          "bbox": [
+            56.69,
+            33.29,
+            318.3,
+            42.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSL9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "265",
+          "bbox": [
+            391.55,
+            33.29,
+            405.38,
+            42.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSL9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Figure 7: The two clasps",
+          "bbox": [
+            171.63,
+            162.61,
+            290.42,
+            173.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "along X = X′ from 1 to −i to −1 to i and back to 1, which is the",
+          "bbox": [
+            56.69,
+            191.65,
+            405.37,
+            206.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "direction in which this component is oriented. Then right multiplication",
+          "bbox": [
+            56.69,
+            211.87,
+            405.41,
+            222.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "by x−1 gradually rotates this component in the opposite direction. In the",
+          "bbox": [
+            56.69,
+            224.17,
+            405.4,
+            239.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "image 3-space, it looks like the vertical axis is moving downwards. At the",
+          "bbox": [
+            56.69,
+            244.39,
+            405.36,
+            255.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "same time, the great circle C through j and k is gradually rotated in the",
+          "bbox": [
+            56.69,
+            260.65,
+            405.38,
+            271.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "direction from j towards −k. A small tubular neighborhood of C follows",
+          "bbox": [
+            56.69,
+            276.76,
+            405.35,
+            287.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "this rotation and twists as it goes, dragged by the downward motion of",
+          "bbox": [
+            56.69,
+            293.17,
+            405.4,
+            304.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the vertical axis.",
+          "bbox": [
+            56.69,
+            309.42,
+            135.88,
+            320.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Now focusing on the left clasp, and starting with x = 1, we see that the",
+          "bbox": [
+            67.6,
+            325.68,
+            405.35,
+            336.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "arrow⃗f2 from green f to red 2 points up. As x moves around X′ from 1",
+          "bbox": [
+            56.69,
+            337.98,
+            405.36,
+            352.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "towards −i (up on the blue vertical axis) a loop of upward pointing vectors",
+          "bbox": [
+            56.69,
+            358.06,
+            405.42,
+            369.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "is traced out, passing successively through⃗e1,⃗d2,⃗e3, and finally back to",
+          "bbox": [
+            56.69,
+            374.46,
+            405.38,
+            385.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "f2. In Figure 8, the 3-torus is depicted as a cube, in which this loop is",
+          "bbox": [
+            56.69,
+            390.72,
+            405.39,
+            401.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "shown near the front left corner of the bottom red-green square, traced",
+          "bbox": [
+            56.69,
+            406.98,
+            405.39,
+            417.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "in a counterclockwise direction. When the progression of x(s) values is",
+          "bbox": [
+            56.69,
+            423.24,
+            405.35,
+            434.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "taken into account, we get the orange spiral curve shown above this loop.",
+          "bbox": [
+            56.69,
+            439.5,
+            405.39,
+            450.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "This is one component of L′, and is oriented according to the convention",
+          "bbox": [
+            56.69,
+            453.37,
+            405.39,
+            466.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "for framed links.",
+          "bbox": [
+            56.69,
+            472.01,
+            135.31,
+            482.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Focusing on the right clasp and repeating the above procedure, we",
+          "bbox": [
+            67.6,
+            488.27,
+            405.39,
+            499.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "get the orange spiral curve shown at the right rear, lying over the loop",
+          "bbox": [
+            56.69,
+            504.53,
+            405.4,
+            515.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "a5⃗b6⃗c5⃗b4. This is the other component of L′, and is also oriented accord-",
+          "bbox": [
+            56.69,
+            518.41,
+            405.36,
+            531.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "ing to convention.2",
+          "bbox": [
+            56.69,
+            535.39,
+            146.38,
+            547.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2In fact, one need not go through the careful analysis to determine the orientations",
+          "bbox": [
+            69.13,
+            556.85,
+            405.4,
+            567.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6",
+            "CMR9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "of the spirals. All that is important is that they are oppositely oriented, which follows",
+          "bbox": [
+            56.69,
+            571.47,
+            405.42,
+            580.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "from the fact that the pairwise linking numbers for the Borromean rings are zero.",
+          "bbox": [
+            56.69,
+            584.62,
+            386.42,
+            593.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 25,
+      "rotation": 0,
+      "drawings": 2,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 12 shows the graph of the corresponding fundamental solution of the scalar Laplacian on the 2-torus S1 × S1, displayed over the range −3π ≤x, y ≤3π. If we think of the 2-torus as obtained from a square by identifying opposite sides, then this shows the function φ to have a nega- tive infinite minimum at the single vertex, two saddle points in the middle of the two edges, and a maximum in the middle of the square. Presum- ably the fundamental solution φ on the 3-torus displays a corresponding distribution of critical points."
+      ],
+      "labels": [
+        {
+          "text": "TRIPLE LINKING NUMBERS AND INTEGRAL FORMULAS",
+          "bbox": [
+            56.69,
+            33.29,
+            318.3,
+            42.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSL9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "275",
+          "bbox": [
+            391.55,
+            33.29,
+            405.38,
+            42.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSL9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "where F : T 3 →R3 −{0} is the map defined in Section 3, and where",
+          "bbox": [
+            56.69,
+            63.54,
+            405.38,
+            78.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "subscripts denote partial derivatives.",
+          "bbox": [
+            56.69,
+            83.9,
+            231.89,
+            94.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Therefore, to make the integral formula (‡) explicit, it remains to obtain",
+          "bbox": [
+            67.6,
+            100.02,
+            405.37,
+            111.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "an explicit formula for the Biot-Savart operator on the 3-torus. As in the",
+          "bbox": [
+            56.69,
+            116.42,
+            405.41,
+            127.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "case of R3, this depends on having an explicit formula for the fundamental",
+          "bbox": [
+            56.69,
+            130.29,
+            405.43,
+            143.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "solution of the scalar Laplacian.",
+          "bbox": [
+            56.69,
+            148.94,
+            209.44,
+            159.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "6.1",
+          "bbox": [
+            56.69,
+            179.67,
+            73.9,
+            191.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The fundamental solution of the Laplacian on the",
+          "bbox": [
+            87.35,
+            179.67,
+            379.99,
+            191.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "3-torus",
+          "bbox": [
+            87.33,
+            196.41,
+            127.91,
+            208.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Proposition 1. The fundamental solution of the scalar Laplacian on the",
+          "bbox": [
+            56.69,
+            220.53,
+            405.36,
+            231.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "3-torus T 3 = S1 × S1 × S1 is given by the formula",
+          "bbox": [
+            56.69,
+            232.69,
+            297.12,
+            247.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "∞",
+          "bbox": [
+            240.18,
+            254.75,
+            248.66,
+            262.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "ei(mx+ny+pz)",
+          "bbox": [
+            276.3,
+            257.15,
+            334.43,
+            269.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "φ(x, y, z) = −1",
+          "bbox": [
+            120.97,
+            258.81,
+            208.79,
+            277.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            236.54,
+            263.67,
+            252.29,
+            274.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "m2 + n2 + p2 .",
+          "bbox": [
+            274.37,
+            266.19,
+            341.08,
+            284.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "8π3",
+          "bbox": [
+            197.67,
+            272.82,
+            213.96,
+            284.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "m,n,p=−∞",
+          "bbox": [
+            225.33,
+            281.6,
+            263.5,
+            287.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR6",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "m2+n2+p2̸=0",
+          "bbox": [
+            220.49,
+            287.69,
+            268.34,
+            295.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR6",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "Even though we have expressed φ in terms of complex exponentials, the",
+          "bbox": [
+            67.6,
+            304.58,
+            405.36,
+            315.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "value of φ is real for real values of x, y and z because of the symmetry",
+          "bbox": [
+            56.69,
+            320.83,
+            405.34,
+            331.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of the coefficients, and can therefore also be expressed as a Fourier cosine",
+          "bbox": [
+            56.69,
+            337.09,
+            405.35,
+            348.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "series.",
+          "bbox": [
+            56.69,
+            353.35,
+            85.32,
+            364.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 12 shows the graph of the corresponding fundamental solution",
+          "bbox": [
+            67.6,
+            369.61,
+            405.41,
+            380.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of the scalar Laplacian on the 2-torus S1 × S1, displayed over the range",
+          "bbox": [
+            56.69,
+            381.77,
+            405.37,
+            396.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "−3π ≤x, y ≤3π. If we think of the 2-torus as obtained from a square by",
+          "bbox": [
+            56.69,
+            401.99,
+            405.4,
+            413.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "identifying opposite sides, then this shows the function φ to have a nega-",
+          "bbox": [
+            56.69,
+            418.39,
+            405.35,
+            429.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "tive infinite minimum at the single vertex, two saddle points in the middle",
+          "bbox": [
+            56.69,
+            434.65,
+            405.4,
+            445.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of the two edges, and a maximum in the middle of the square. Presum-",
+          "bbox": [
+            56.69,
+            450.91,
+            405.38,
+            461.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ably the fundamental solution φ on the 3-torus displays a corresponding",
+          "bbox": [
+            56.69,
+            467.17,
+            405.39,
+            478.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "distribution of critical points.",
+          "bbox": [
+            56.69,
+            483.42,
+            197.22,
+            494.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "To see why the proposition is true, begin with functions u and v in",
+          "bbox": [
+            67.6,
+            499.68,
+            405.36,
+            510.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "C∞(T 3), with Fourier series",
+          "bbox": [
+            56.69,
+            514.18,
+            190.27,
+            526.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            110.74,
+            537.8,
+            126.49,
+            548.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            270.19,
+            537.8,
+            285.94,
+            548.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "umnpei(mx+ny+pz)",
+          "bbox": [
+            128.31,
+            538.11,
+            210.07,
+            552.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "vmnpei(mx+ny+pz),",
+          "bbox": [
+            287.77,
+            538.11,
+            372.1,
+            552.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "u =",
+          "bbox": [
+            89.95,
+            540.32,
+            107.71,
+            551.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "and",
+          "bbox": [
+            221.48,
+            540.32,
+            239.07,
+            551.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "v =",
+          "bbox": [
+            249.97,
+            540.32,
+            267.16,
+            551.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "where the sums are over all (m, n, p) ∈Z3. The following observations",
+          "bbox": [
+            56.69,
+            562.31,
+            405.37,
+            575.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "result from elementary calculations (ignoring convergence issues):",
+          "bbox": [
+            56.69,
+            580.96,
+            369.28,
+            591.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+Arithmetic of Hyperbolic Manifolds 303
+
+Table 3. [k(W’(p, s)):Q]
+
+ls} 0 1 2 3 4 5 6 7 8 9 10 11 12 13
+[p+ s|
+0 22 4 2 6 4 64104 2
+1 23 4 5 6 7 8 9 10 1 12
+2 22 4 3 6 4 8 5 106 1
+3 2 2 2 2 3 4 4 6 7 69 0 8 1
+4 2 3 2 3 2 4 3 6 4 8 5 10 6 WF
+5 4 4 4 4 4 4 5 6 7 8 8 0 11 12
+6 2 5 3 4 3 5 2 6 4 65 0 4 1
+7 6 6 6 6 6 6 6 6 7 8 9 1 ll 12
+8 4 7 4 7 4 7 4 7 4 8 5 10 6 2
+9 6 8 8 6 8 8 6 8 8 6 9 10 8 1
+10 49 5 9 5 8 5 9 5 9 4 1:0 6 12
+ia 10 10 10 10 10 10 10 10 10 10 10 10 11 12
+12 41168 61141168 6 4 12
+13 12 12 12 12 12 12 12 12 12 12 12 12 122 12
+
+cases |s| = 3 or 4 are arithmetic, so the only case is |s| = 6. If p+ 2s = 0 then
+C(p,s) is commensurable with C(0,s) by part (i) of Theorem 5.1, so again, the only
+non-arithmetic case with z in Q(V—1) or Q(V—3) is |s| = 6. Finally, if p 4 0
+and p+ 2s ¥ 0 then the proof of Theorem 6.3 shows that z is an algebraic integer
+divisor of 4. The only algebraic integer divisors of 4 with positive imaginary part in
+Q(V—=1) or Q(V—3) are z =i, 2%, 44, 1+%, -1+%, 242i, -2+2i, w, Qw,
+4w, —®, —26, and —40, where w = exp(27i/3). One computes directly that these
+correspond to (p + s,s) = (3,3), (00,00), (3,-3), (1,3), (3,1), (1,-3), (3,-1),
+(2,3), (0,4), (2,—3), (3,2), (4,0), (3, -2), respectively, which are arithmetic cases,
+and thus excluded in the lemma. oO
+
+Proof of Theorem 5.1 (iv). An orbifold cusp is called rigid if its fundamental group is
+the non-abelian split extension of Z/n by (Z@Z) with n = 3, 4, or 6. In this case the
+parameter 7 of a flat torus covering a horosphere section of the cusp must be in Q(./—1)
+or Q(Y-3).
+
+Suppose C(p, s) is nonarithmetic and (|p+-s|, |s]) 4 (6,6). By Lemma 8.1, C(p, s)
+cannot cover an orbifold with a rigid cusp. On the other hand, by the Thurston/Jorgenson
+theory (cf., [T, Chapter 5]) the quotient W"(p,s) of C(p,s) has volume less than
+vol(W") = 0.918. If W’(p,s) non-trivially covered the orientable commensurator
+quotient of C(p,s), then this commensurator quotient would have volume at most half
+this value, namely <= 0.459. But this volume bound puts the commensurator quotient
+on Adams’ list of smallest orientable orbifolds with non-rigid cusps ([A1]), and these
+orbifolds are all arithmetic. Thus W’’(p, s) is the orientable commensurator quotient.
+
+Finally, suppose |(p + s|,|s|) = (6,6). By Table 2, the cusp parameter of W’(p, s)
+lies in Q(\/—3). Now, W’(p,s) cannot cover an orbifold with a non-rigid cusp by

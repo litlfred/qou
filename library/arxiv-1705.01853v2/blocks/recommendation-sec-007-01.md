@@ -1,0 +1,1 @@
+The resolution to this was given long ago \cite{corrigan}: the magnetic monopole must also carry colour magnetic charge, and this provides an extra contribution to the Dirac quantisation condition, rendering the spectrum consistent.

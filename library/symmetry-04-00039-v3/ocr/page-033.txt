@@ -1,0 +1,64 @@
+Symmetry 2012, 4 71
+
+Here, a, and #,, are as defined in connection with Equation (3-20) of Section 3.3, coefficients
+¢ and m are the number of down and up quirks in the FMS, respectively, and p and q are the
+
+number of antidown and antiup antiquirks in the conjugate FMS.
+For example, to compute the structural degeneracy associated with the fusion of a B and a C* we write
+
+B (2d + u)(d* + 2u*) C* = BC* (2x + 2y) (6-3)
+
+which we recognize as the relevant entry in Table 3-1.
+
+In [3] it is shown how this formalism can be combined with the symbolic convolution
+introduced above.
+
+The salient feature in second order fusion is that the junctions available for fusion therein depend
+on junction selection in the first fusion, a contingency, which we note in passing, implicates a Markov
+process. Here, we describe the structure and the contingencies of the process (determined in an ad hoc
+way) and show how the results are thereby enhanced. Appendix B shows how the process can be
+formalized using the vector algebra developed in the foregoing.
+
+Table 3-2 lists (with explanation below) half of all the second order fusion permutations (including
+potential exclusions) in dictionary order with coefficients that embody the contingencies—32 words
+with eight potential exclusions. With the letter exchanges noted above, a second such figure exists for
+a total of 64 words with 16 exclusions in accordance with the discussion of direct products above.
+
+Table 3-2. Half of contingency-enhanced permutaions; second-order fusion.
+
+AA*A (x)(2x*) BA*A (2x)(2x*)
+
+AA*B (x)(4x*) BA*B (2x)(4x*)
+
+AA#C (x)(2x*) BA*C (2x)(2x*)
+
+[AA*D] [BA*D]
+
+ABA (2x)(x*) BB*A {(4x)(x*) + (y)(4x*}
+AB*B (2x)(2x* + y*) BB*B {(4x)(2x* +y*) + (y)(4x*}
+AB*C (2x)(x* + 2y*) BB*C {(4x)(x* + 2y*) + (v)(2y*)}
+
+AB*D (2x)(y*) BB*D (4x)(*)
+
+[AC*A] BC*A (2y)(x*)
+
+AC*B (x)(2y*) BC*B {(2x)(2y*) + (2y)(2x* + y*)}
+
+AC*C (x)(4y*) BC*C {(2x)(x* + 2y*) + (2y)(x* + 2y*)}
+
+AC#*D (x)(2y*) BC*D {(2x)(2y*) + (2y)Q*)}
+
+[AD*A] [BD*A]
+
+[AD*B] BD*B (y)(2y*)
+[AD*C] BD*C (y)(4y*)
+[AD*D] BD*D (y)(2y*)
+
+As an example of the way in which contingency factors determine the entrees of this table, consider
+the word BB*B in terms of a fusion sequence that proceeds from left to right (although the result is
+independent of direction): the coefficient in this case is {(4x)(2x* + y*) + (v)(4x*)}. In translation, this
+says that the two d quirks in the first B letter and the two d* antiquirks in B* can form an x type
+junction in four ways in the first fusion. Once this occurs, the remaining d* antiquirk in B* then has
+the choice of two d quirks in the second B and the u* antiquirk in B* and the u quirk in the second B
+
+can form a y junction in one way. A y junction can also form to begin with (but in one way) between

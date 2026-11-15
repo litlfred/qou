@@ -1,0 +1,1 @@
+We shall now give some complements to the results in [\[subsection:extensionsofqdifferencemodules\]](#subsection:extensionsofqdifferencemodules){reference-type="ref" reference="subsection:extensionsofqdifferencemodules"}, in the form of index theorems.

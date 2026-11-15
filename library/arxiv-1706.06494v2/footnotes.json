@@ -1,0 +1,820 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1706.06494v2",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "2",
+   "text": "N −→",
+   "marks": [
+    {
+     "page": 1,
+     "context": "\u0001e−φ"
+    },
+    {
+     "page": 1,
+     "context": "dφ e−φ"
+    },
+    {
+     "page": 1,
+     "context": "dφ e−φ2Nφ"
+    }
+   ],
+   "block": "library/arxiv-1706.06494v2/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "1",
+   "text": "Wecomparethespectrumobtainedfromthetransfermatrix",
+   "marks": [
+    {
+     "page": 2,
+     "context": "obtainthisspectrum"
+    }
+   ],
+   "block": "library/arxiv-1706.06494v2/blocks/prose-sec-front-matter"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p001-2",
+   "page": 1,
+   "mark": "1",
+   "text": "+ 2k ,",
+   "block": "library/arxiv-1706.06494v2/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "726",
+   "text": "(2007). [11] L. Bonnes, H. Büchler, and S. Wessel, New J. Phys. 12, 053027 (2010).",
+   "block": "library/arxiv-1706.06494v2/blocks/prose-sec-front-matter"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "†",
+   "context": "ChristopherKörber,1, ∗EvanBerkowitz,1,"
+  },
+  {
+   "page": 1,
+   "mark": "‡",
+   "context": "ChristopherKörber,1, ∗EvanBerkowitz,1, †andThomasLuu1,"
+  },
+  {
+   "page": 1,
+   "mark": "j",
+   "context": "cjφ"
+  },
+  {
+   "page": 1,
+   "mark": "f",
+   "context": "f¯ψ"
+  },
+  {
+   "page": 1,
+   "mark": "f",
+   "context": "f¯ψfψ"
+  },
+  {
+   "page": 1,
+   "mark": "f",
+   "context": "f¯ψfψf,where"
+  },
+  {
+   "page": 1,
+   "mark": "k",
+   "context": "\u0000 1+2"
+  },
+  {
+   "page": 1,
+   "mark": "k",
+   "context": "dφ e−φ2Nφ2"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "λ(k)ˆρ"
+  },
+  {
+   "page": 2,
+   "mark": "†",
+   "context": "ˆaf,iˆa"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "ˆρ"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "ˆρ"
+  },
+  {
+   "page": 2,
+   "mark": "†",
+   "context": "whereˆa"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "f,i(ˆ"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "f,i(ˆaf,i)is"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "fˆ"
+  },
+  {
+   "page": 2,
+   "mark": "†",
+   "context": "fˆa"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "forafermionofspeciesfatsiteiandˆρ"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "f,iˆ"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "\u0000 1+2"
+  },
+  {
+   "page": 2,
+   "mark": "m",
+   "context": "\u0014(−cj)"
+  },
+  {
+   "page": 2,
+   "mark": "j",
+   "context": "\u0014(−cj)m"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "m∈M(2"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "M(2"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "m ∈N"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "m ∈N2"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "−λ(k)\u0011m"
+  },
+  {
+   "page": 2,
+   "mark": "j",
+   "context": "λ(M)∝c"
+  },
+  {
+   "page": 2,
+   "mark": "j",
+   "context": "λ(M)∝cj1 · · · c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "3"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "3c"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "γ"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "4"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "4c"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "4"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "4c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "4c1"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "4c1c"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "2γ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "2γ3,"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "2γ3,1"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "2γ3,1c"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "8γ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "8γ3,"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "8γ3,1"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "8γ3,1c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "6"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "6c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "45"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "45c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "14"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "14c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "5"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "5c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "5c1"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "5c1c"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "γ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "3γ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "c"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "c2c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "45"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "45c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "2835"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "2835c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "63"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "63c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "63c2"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "63c2c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "1"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "1"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "105"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "105c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "105c1"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "105c1c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "105c1c2"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "105c1c2c"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "2γ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "2γ3,"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "2γ3,1"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "2γ3,1c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "2γ3,1c1"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "2γ3,1c1c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "2γ3,1c1c2"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "2γ3,1c1c2c"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "3γ"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "3,1"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "3,1c"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "γ"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "γ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "3γ"
+  },
+  {
+   "page": 3,
+   "mark": "4",
+   "context": "c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "2"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "2c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "1"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "1c"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "1"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "1c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "180"
+  },
+  {
+   "page": 3,
+   "mark": "4",
+   "context": "180c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "14175"
+  },
+  {
+   "page": 3,
+   "mark": "4",
+   "context": "14175c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "105"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "105c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "10395"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "10395c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "2"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "2c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "7644"
+  },
+  {
+   "page": 3,
+   "mark": "4",
+   "context": "7644c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "1"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "γ"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "γ3,1+3γ"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "8"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "8c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "8c1"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "8c1c"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "c1c"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "2"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "2c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "945"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "945c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "1"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "1c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "3150"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "3150c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "1"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "1c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "1575"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "1575c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "1575c1"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "1575c1c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "1155"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "1155c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "1155c1"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "1155c1c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "2"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "2"
+  },
+  {
+   "page": 3,
+   "mark": "4",
+   "context": "γ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "9γ"
+  },
+  {
+   "page": 3,
+   "mark": "4",
+   "context": "c"
+  },
+  {
+   "page": 3,
+   "mark": "4",
+   "context": "c"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "−φ"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "2[a"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "f,0−a"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "c1φi,t + c2φ"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "i,t+ c"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "i,t+ c3φ"
+  },
+  {
+   "page": 4,
+   "mark": "8",
+   "context": "re1:E(τ)/κfordiﬀerentsystems.Allsystemswerestudiedwith2 × 10"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "nα(n)φ"
+  }
+ ]
+}

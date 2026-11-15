@@ -7,10 +7,11 @@ section_number: 4.2
 pages: 18-19
 source_pdf: 2403.00360v2.pdf
 source_sha256: b0764ca18a83a84f
-doc_brief: "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.974
-latex_coverage_ratio: 0.995
+latex_coverage_ratio: 1.0
+doc_brief: "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular"
 ---
 []{#sec:gaugegroup label="sec:gaugegroup"} Obtaining the gauge group of the standard model is a key objective for any fundamental physical theory. Here we summarize the current status of this quest in both approaches and discuss what we can learn from a comparison.
 

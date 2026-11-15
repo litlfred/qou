@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "kohno1987-aif",
  "source_sha256": "88c5119985dfe878",
- "brief": "Monodromy representations of braid groups and Yang-Baxter equations — 8 sections: Front matter; Introduction; MONODROMY OF INTEGRABLE CONNECTION",
- "extended": "**Monodromy representations of braid groups and Yang-Baxter equations**\n\n*TOSHITAKE KOHNO*\n\n23 pp, 8 sections.\n\n**Outline.** Front matter; Introduction; 1 MONODROMY OF INTEGRABLE CONNECTIONS ARISING; 1.2 Description of the monodromy by means; 9 (y) = 1 +; 2 MONODROMY OF /i-POINT FUNCTIONS; 2.2 Monodromy associated with higher represent; Bibliography\n\n**Extracted claims (proposals, not verified).**\n- Definition: of primary fields. - We are interested in operators on the\n- Corollary 2.2.6: to our situation (see also",
+ "brief": "Monodromy representations of braid groups and Yang-Baxter equations — 6 sections: Front matter; MONODROMY REPRESENTATIONS OF BRAID; INTRODUCTION",
+ "extended": "**Monodromy representations of braid groups and Yang-Baxter equations**\n\n*TOSHITAKE KOHNO*\n\n23 pp, 6 sections.\n\n**Outline.** Front matter; MONODROMY REPRESENTATIONS OF BRAID GROUPS AND ; INTRODUCTION; 1 MONODROMY OF INTEGRABLE CONNECTIONS ARISING ; 1.1 Construction of connections.; 2 MONODROMY OF /i-POINT FUNCTIONS IN TWO DIMEN",
  "tokens": {
   "brief": 36,
-  "extended": 129
+  "extended": 82
  },
  "sections": [
   {
@@ -15,46 +15,35 @@
    "pages": "1-2"
   },
   {
-   "id": "sec-000-introduction",
-   "title": "Introduction",
+   "id": "sec-000-monodromy-representations-of-braid-groups-and-ya",
+   "title": "MONODROMY REPRESENTATIONS OF BRAID GROUPS AND YANG-BAXTER EQUATIONS",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-001-introduction",
+   "title": "INTRODUCTION",
    "pages": "2-4"
   },
   {
-   "id": "sec-001-1-monodromy-of-integrable-connections-arising",
-   "title": "MONODROMY OF INTEGRABLE CONNECTIONS ARISING",
-   "pages": "4-6"
+   "id": "sec-002-1-monodromy-of-integrable-connections-arising-fr",
+   "title": "MONODROMY OF INTEGRABLE CONNECTIONS ARISING FROM CLASSICAL YANG-BAXTER EQUATIONS",
+   "pages": "4-4"
   },
   {
-   "id": "sec-002-12-description-of-the-monodromy-by-means",
-   "title": "Description of the monodromy by means",
-   "pages": "6-10"
+   "id": "sec-003-11-construction-of-connections",
+   "title": "Construction of connections.",
+   "pages": "4-13"
   },
   {
-   "id": "sec-003-9-y-1",
-   "title": "(y) = 1 +",
-   "pages": "10-13"
-  },
-  {
-   "id": "sec-004-2-monodromy-of-i-point-functions",
-   "title": "MONODROMY OF /i-POINT FUNCTIONS",
-   "pages": "13-18"
-  },
-  {
-   "id": "sec-005-22-monodromy-associated-with-higher-representati",
-   "title": "Monodromy associated with higher representations",
-   "pages": "18-22"
-  },
-  {
-   "id": "sec-006-bibliography",
-   "title": "Bibliography",
-   "pages": "22-23"
+   "id": "sec-004-2-monodromy-of-i-point-functions-in-two-dimensio",
+   "title": "MONODROMY OF /i-POINT FUNCTIONS IN TWO DIMENSIONAL CONFORMAL FIELD THEORY",
+   "pages": "13-23"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

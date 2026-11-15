@@ -8,7 +8,7 @@
   "pages": 44,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,12 +21,12 @@
    "stamp_date": "10 Jun 2000"
   },
   "doi": null,
-  "title": "arXiv:math/0006057v2 [math.QA] 10 Jun 2000",
+  "title": "Finite Quantum Groupoids and Their Applications",
   "authors_raw": "DMITRI NIKSHYCH AND LEONID VAINERMAN",
   "title_lines": [
    "FINITE QUANTUM GROUPOIDS AND THEIR APPLICATIONS"
   ],
-  "abstract": "We give a survey of the theory of \ufb01nite quantum groupoids (weak Hopf algebras), including foundations of the theory and applications to \ufb01nite depth subfactors, dynamical deformations of quantum groups, and invariants of knots and 3-manifolds.",
+  "abstract": "We give a survey of the theory of ﬁnite quantum groupoids (weak Hopf algebras), including foundations of the theory and applications to ﬁnite depth subfactors, dynamical deformations of quantum groups, and invariants of knots and 3-manifolds.",
   "docinfo": {
    "Title": "arXiv:math/0006057v2  [math.QA]  10 Jun 2000",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
@@ -38,13 +38,14 @@
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:math/0006057v2 [math.QA] 10 Jun 2000",
-   "heading": "FINITE QUANTUM GROUPOIDS AND THEIR APPLICATIONS Contents Introduction De\ufb01nitions and Examples De\ufb01nition of the quantum groupoid Counital maps and subalgebras Properties of the antipode The dual quantum groupoid Examples : groupoid algebras and their duals Examples : quantum transformation groupoids",
+   "heading": "FINITE QUANTUM GROUPOIDS AND THEIR APPLICATIONS Contents Introduction Deﬁnitions and Examples Deﬁnition of the quantum groupoid Counital maps and subalgebras Properties of the antipode The dual quantum groupoid Examples : groupoid algebras and their duals Examples : quantum transformation groupoids",
    "text": "FINITE QUANTUM GROUPOIDS AND THEIR APPLICATIONS",
    "corroborated_by": [
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:math/0006057v2 [math.QA] 10 Jun 2000"
  },
  "toc": [
   {
@@ -821,14 +822,26 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 4,
-   "n_chars": 8623,
-   "n_words": 1409,
+   "page_end": 3,
+   "n_chars": 7111,
+   "n_words": 1137,
    "label_start": null,
+   "label_end": "3"
+  },
+  {
+   "id": "sec-000-01-definition-of-the-quantum-groupoid",
+   "number": "0.1",
+   "title": "Definition of the quantum groupoid",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1437,
+   "n_words": 260,
+   "label_start": "3",
    "label_end": "4"
   },
   {
-   "id": "sec-000-02-counital-maps-and-subalgebras",
+   "id": "sec-001-02-counital-maps-and-subalgebras",
    "number": "0.2",
    "title": "Counital maps and subalgebras",
    "level": 2,
@@ -840,7 +853,7 @@
    "label_end": "5"
   },
   {
-   "id": "sec-001-03-properties-of-the-antipode",
+   "id": "sec-002-03-properties-of-the-antipode",
    "number": "0.3",
    "title": "Properties of the antipode",
    "level": 2,
@@ -852,7 +865,7 @@
    "label_end": "7"
   },
   {
-   "id": "sec-002-04-the-dual-quantum-groupoid",
+   "id": "sec-003-04-the-dual-quantum-groupoid",
    "number": "0.4",
    "title": "The dual quantum groupoid",
    "level": 2,
@@ -864,7 +877,7 @@
    "label_end": "7"
   },
   {
-   "id": "sec-003-05-examples-groupoid-algebras-and-their-duals",
+   "id": "sec-004-05-examples-groupoid-algebras-and-their-duals",
    "number": "0.5",
    "title": "Examples : groupoid algebras and their duals",
    "level": 2,
@@ -876,7 +889,7 @@
    "label_end": "8"
   },
   {
-   "id": "sec-004-06-examples-quantum-transformation-groupoids",
+   "id": "sec-005-06-examples-quantum-transformation-groupoids",
    "number": "0.6",
    "title": "Examples : quantum transformation groupoids",
    "level": 2,
@@ -888,7 +901,7 @@
    "label_end": "8"
   },
   {
-   "id": "sec-005-07-examples-temperley-lieb-algebras",
+   "id": "sec-006-07-examples-temperley-lieb-algebras",
    "number": "0.7",
    "title": "Examples : Temperley-Lieb algebras",
    "level": 2,
@@ -900,7 +913,7 @@
    "label_end": "9"
   },
   {
-   "id": "sec-006-08-other-versions-of-a-quantum-groupoid",
+   "id": "sec-007-08-other-versions-of-a-quantum-groupoid",
    "number": "0.8",
    "title": "Other versions of a quantum groupoid",
    "level": 2,
@@ -912,31 +925,31 @@
    "label_end": "10"
   },
   {
-   "id": "sec-007-09-integrals-in-quantum-groupoids",
+   "id": "sec-008-09-integrals-in-quantum-groupoids",
    "number": "0.9",
    "title": "Integrals in quantum groupoids",
    "level": 2,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 1619,
-   "n_words": 327,
+   "n_chars": 1616,
+   "n_words": 326,
    "label_start": "10",
    "label_end": "11"
   },
   {
-   "id": "sec-008-010-hopf-modules",
+   "id": "sec-009-010-hopf-modules",
    "number": "0.10",
    "title": "Hopf modules",
    "level": 2,
    "page_start": 11,
    "page_end": 13,
-   "n_chars": 4544,
-   "n_words": 921,
+   "n_chars": 3890,
+   "n_words": 777,
    "label_start": "11",
    "label_end": "13"
   },
   {
-   "id": "sec-009-013-smash-products",
+   "id": "sec-010-013-smash-products",
    "number": "0.13",
    "title": "Smash products",
    "level": 2,
@@ -948,19 +961,19 @@
    "label_end": "13"
   },
   {
-   "id": "sec-010-012-module-and-comodule-algebras",
+   "id": "sec-011-012-module-and-comodule-algebras",
    "number": "0.12",
    "title": "Module and comodule algebras",
    "level": 2,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 1406,
-   "n_words": 302,
+   "n_chars": 2137,
+   "n_words": 459,
    "label_start": "13",
    "label_end": "14"
   },
   {
-   "id": "sec-011-014-duality-for-actions",
+   "id": "sec-012-014-duality-for-actions",
    "number": "0.14",
    "title": "Duality for actions",
    "level": 2,
@@ -972,31 +985,31 @@
    "label_end": "16"
   },
   {
-   "id": "sec-012-016-quasitriangular-quantum-groupoids",
+   "id": "sec-013-016-quasitriangular-quantum-groupoids",
    "number": "0.16",
    "title": "Quasitriangular quantum groupoids",
    "level": 2,
    "page_start": 16,
    "page_end": 19,
-   "n_chars": 4662,
-   "n_words": 831,
+   "n_chars": 4659,
+   "n_words": 830,
    "label_start": "16",
    "label_end": "19"
   },
   {
-   "id": "sec-013-017-the-drinfeld-double",
+   "id": "sec-014-017-the-drinfeld-double",
    "number": "0.17",
    "title": "The Drinfeld double",
    "level": 2,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 2459,
-   "n_words": 492,
+   "n_chars": 2532,
+   "n_words": 505,
    "label_start": "19",
    "label_end": "20"
   },
   {
-   "id": "sec-014-018-ribbon-quantum-groupoids",
+   "id": "sec-015-018-ribbon-quantum-groupoids",
    "number": "0.18",
    "title": "Ribbon quantum groupoids",
    "level": 2,
@@ -1008,79 +1021,127 @@
    "label_end": "21"
   },
   {
-   "id": "sec-015-019-towards-modular-categories",
+   "id": "sec-016-019-towards-modular-categories",
    "number": "0.19",
    "title": "Towards modular categories",
    "level": 2,
    "page_start": 21,
    "page_end": 23,
-   "n_chars": 4103,
-   "n_words": 718,
+   "n_chars": 4100,
+   "n_words": 717,
    "label_start": "21",
    "label_end": "23"
   },
   {
-   "id": "sec-016-020-twisting-of-quantum-groupoids",
+   "id": "sec-017-020-twisting-of-quantum-groupoids",
    "number": "0.20",
    "title": "Twisting of quantum groupoids",
    "level": 2,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 3947,
-   "n_words": 729,
+   "n_chars": 4023,
+   "n_words": 740,
    "label_start": "23",
    "label_end": "24"
   },
   {
-   "id": "sec-017-021-dynamical-twists-of-hopf-algebras",
+   "id": "sec-018-021-dynamical-twists-of-hopf-algebras",
    "number": "0.21",
    "title": "Dynamical twists of Hopf algebras",
    "level": 2,
    "page_start": 24,
-   "page_end": 28,
-   "n_chars": 8484,
-   "n_words": 1637,
+   "page_end": 27,
+   "n_chars": 7084,
+   "n_words": 1381,
    "label_start": "24",
    "label_end": null
   },
   {
-   "id": "sec-018-024-existence-of-the-haar-integral",
+   "id": "sec-019-023-definitions",
+   "number": "0.23",
+   "title": "Definitions",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 1382,
+   "n_words": 254,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-020-024-existence-of-the-haar-integral",
    "number": "0.24",
    "title": "Existence of the Haar integral",
    "level": 2,
    "page_start": 28,
-   "page_end": 35,
-   "n_chars": 18594,
-   "n_words": 3492,
+   "page_end": 31,
+   "n_chars": 7319,
+   "n_words": 1363,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-019-029-action-on-a-subfactor",
+   "id": "sec-021-026-c-quantum-groupoids-and-unitary-modular-cate",
+   "number": "0.26",
+   "title": "$C^*$-quantum groupoids and unitary modular categories",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 3634,
+   "n_words": 655,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-022-027-actions-of-c-quantum-groupoids-on-von-neuman",
+   "number": "0.27",
+   "title": "Actions of $C^*$-quantum groupoids on von Neumann algebras",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 33,
+   "n_chars": 1900,
+   "n_words": 387,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-023-028-construction-of-a-c-quantum-groupoid-from-a",
+   "number": "0.28",
+   "title": "Construction of a $C^*$-quantum groupoid from a depth 2 subfactor",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 35,
+   "n_chars": 5530,
+   "n_words": 1055,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-024-029-action-on-a-subfactor",
    "number": "0.29",
    "title": "Action on a subfactor",
    "level": 2,
    "page_start": 35,
-   "page_end": 36,
-   "n_chars": 2735,
-   "n_words": 530,
+   "page_end": 37,
+   "n_chars": 3178,
+   "n_words": 612,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-020-030-a-galois-correspondence",
+   "id": "sec-025-030-a-galois-correspondence",
    "number": "0.30",
    "title": "A Galois correspondence",
    "level": 2,
-   "page_start": 36,
+   "page_start": 37,
    "page_end": 38,
-   "n_chars": 4604,
-   "n_words": 911,
+   "n_chars": 4236,
+   "n_words": 841,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-021-031-bimodule-categories",
+   "id": "sec-026-031-bimodule-categories",
    "number": "0.31",
    "title": "Bimodule categories",
    "level": 2,
@@ -1092,7 +1153,7 @@
    "label_end": null
   },
   {
-   "id": "sec-022-032-principal-graphs",
+   "id": "sec-027-032-principal-graphs",
    "number": "0.32",
    "title": "Principal graphs",
    "level": 2,
@@ -1110,7 +1171,7 @@
   "toc_entries": 32,
   "toc_inferred_entries": 32,
   "toc_inferred_mean_confidence": 0.984,
-  "toc_inferred_empty_share": 0.043,
+  "toc_inferred_empty_share": 0.036,
   "toc_inferred_method": "latex",
   "figure_entries": 0,
   "figure_sequence_gaps": [],
@@ -1126,7 +1187,7 @@
    "found_not_listed": {
     "count": 1,
     "items": [
-     "8.2 Construction of a C\u2217-quantum groupoid from a depth 2 subfactor."
+     "8.2 Construction of a C∗-quantum groupoid from a depth 2 subfactor."
     ]
    },
    "page_mismatch": {
@@ -1134,13 +1195,18 @@
     "items": []
    }
   },
-  "sections": 24,
-  "chars_total": 106125,
+  "sections": 29,
+  "chars_total": 106113,
+  "furniture_lines_stripped": 0,
+  "pages_read_in_print_order": [
+   13,
+   33
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 32,
-   "overlaid": 21,
+   "overlaid": 25,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1153,7 +1219,15 @@
      "result": "no matching \\section"
     },
     {
-     "id": "sec-000-02-counital-maps-and-subalgebras",
+     "id": "sec-000-01-definition-of-the-quantum-groupoid",
+     "title": "Definition of the quantum groupoid",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.929,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-02-counital-maps-and-subalgebras",
      "title": "Counital maps and subalgebras",
      "prose_ratio": 0.937,
      "coverage_ratio": 0.946,
@@ -1161,7 +1235,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-03-properties-of-the-antipode",
+     "id": "sec-002-03-properties-of-the-antipode",
      "title": "Properties of the antipode",
      "prose_ratio": 0.98,
      "coverage_ratio": 0.928,
@@ -1169,7 +1243,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-04-the-dual-quantum-groupoid",
+     "id": "sec-003-04-the-dual-quantum-groupoid",
      "title": "The dual quantum groupoid",
      "prose_ratio": 0.913,
      "coverage_ratio": 0.955,
@@ -1177,7 +1251,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-05-examples-groupoid-algebras-and-their-duals",
+     "id": "sec-004-05-examples-groupoid-algebras-and-their-duals",
      "title": "Examples : groupoid algebras and their duals",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.894,
@@ -1185,7 +1259,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-06-examples-quantum-transformation-groupoids",
+     "id": "sec-005-06-examples-quantum-transformation-groupoids",
      "title": "Examples : quantum transformation groupoids",
      "prose_ratio": 0.982,
      "coverage_ratio": 1.0,
@@ -1193,7 +1267,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-07-examples-temperley-lieb-algebras",
+     "id": "sec-006-07-examples-temperley-lieb-algebras",
      "title": "Examples : Temperley-Lieb algebras",
      "prose_ratio": 0.989,
      "coverage_ratio": 0.938,
@@ -1201,7 +1275,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-08-other-versions-of-a-quantum-groupoid",
+     "id": "sec-007-08-other-versions-of-a-quantum-groupoid",
      "title": "Other versions of a quantum groupoid",
      "prose_ratio": 0.97,
      "coverage_ratio": 0.97,
@@ -1209,7 +1283,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-007-09-integrals-in-quantum-groupoids",
+     "id": "sec-008-09-integrals-in-quantum-groupoids",
      "title": "Integrals in quantum groupoids",
      "prose_ratio": 0.917,
      "coverage_ratio": 0.95,
@@ -1217,29 +1291,28 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-010-hopf-modules",
+     "id": "sec-009-010-hopf-modules",
      "title": "Hopf modules",
-     "prose_ratio": 0.931,
-     "coverage_ratio": 0.954,
+     "prose_ratio": 0.809,
+     "coverage_ratio": 0.947,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-009-013-smash-products",
+     "id": "sec-010-013-smash-products",
      "title": "Smash products",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-010-012-module-and-comodule-algebras",
+     "id": "sec-011-012-module-and-comodule-algebras",
      "title": "Module and comodule algebras",
      "prose_ratio": 0.885,
-     "coverage_ratio": 0.585,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "coverage_ratio": 0.338,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-011-014-duality-for-actions",
+     "id": "sec-012-014-duality-for-actions",
      "title": "Duality for actions",
      "prose_ratio": 0.974,
      "coverage_ratio": 0.956,
@@ -1247,7 +1320,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-012-016-quasitriangular-quantum-groupoids",
+     "id": "sec-013-016-quasitriangular-quantum-groupoids",
      "title": "Quasitriangular quantum groupoids",
      "prose_ratio": 0.992,
      "coverage_ratio": 0.937,
@@ -1255,15 +1328,15 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-017-the-drinfeld-double",
+     "id": "sec-014-017-the-drinfeld-double",
      "title": "The Drinfeld double",
      "prose_ratio": 0.988,
-     "coverage_ratio": 0.923,
+     "coverage_ratio": 0.924,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-018-ribbon-quantum-groupoids",
+     "id": "sec-015-018-ribbon-quantum-groupoids",
      "title": "Ribbon quantum groupoids",
      "prose_ratio": 0.989,
      "coverage_ratio": 0.947,
@@ -1271,7 +1344,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-019-towards-modular-categories",
+     "id": "sec-016-019-towards-modular-categories",
      "title": "Towards modular categories",
      "prose_ratio": 0.969,
      "coverage_ratio": 0.953,
@@ -1279,47 +1352,79 @@
      "converter": "latex"
     },
     {
-     "id": "sec-016-020-twisting-of-quantum-groupoids",
+     "id": "sec-017-020-twisting-of-quantum-groupoids",
      "title": "Twisting of quantum groupoids",
-     "prose_ratio": 0.962,
+     "prose_ratio": 0.985,
      "coverage_ratio": 0.97,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-021-dynamical-twists-of-hopf-algebras",
+     "id": "sec-018-021-dynamical-twists-of-hopf-algebras",
      "title": "Dynamical twists of Hopf algebras",
-     "prose_ratio": 0.992,
-     "coverage_ratio": 0.974,
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-018-024-existence-of-the-haar-integral",
-     "title": "Existence of the Haar integral",
-     "prose_ratio": 0.972,
-     "coverage_ratio": 0.981,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-019-029-action-on-a-subfactor",
-     "title": "Action on a subfactor",
-     "prose_ratio": 0.826,
-     "coverage_ratio": 0.958,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-020-030-a-galois-correspondence",
-     "title": "A Galois correspondence",
-     "prose_ratio": 0.977,
-     "coverage_ratio": 0.878,
+     "id": "sec-019-023-definitions",
+     "title": "Definitions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.931,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-021-031-bimodule-categories",
+     "id": "sec-020-024-existence-of-the-haar-integral",
+     "title": "Existence of the Haar integral",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-026-c-quantum-groupoids-and-unitary-modular-cate",
+     "title": "$C^*$-quantum groupoids and unitary modular categories",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-022-027-actions-of-c-quantum-groupoids-on-von-neuman",
+     "title": "Actions of $C^*$-quantum groupoids on von Neumann algebras",
+     "prose_ratio": 0.667,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-028-construction-of-a-c-quantum-groupoid-from-a",
+     "title": "Construction of a $C^*$-quantum groupoid from a depth 2 subfactor",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.809,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-024-029-action-on-a-subfactor",
+     "title": "Action on a subfactor",
+     "prose_ratio": 0.936,
+     "coverage_ratio": 0.945,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-025-030-a-galois-correspondence",
+     "title": "A Galois correspondence",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-026-031-bimodule-categories",
      "title": "Bimodule categories",
      "prose_ratio": 0.962,
      "coverage_ratio": 0.967,
@@ -1327,11 +1432,11 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-022-032-principal-graphs",
+     "id": "sec-027-032-principal-graphs",
      "title": "Principal graphs",
      "prose_ratio": 0.95,
      "coverage_ratio": 0.338,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

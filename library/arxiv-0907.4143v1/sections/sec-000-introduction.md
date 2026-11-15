@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0907.4143v1
-doc_title: "Soft and Supersoft X-ray Sources in Symbiotic Stars1"
+doc_title: "Soft and Supersoft X-ray Sources in Symbiotic Stars 1"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
 pages: 1-2
 source_pdf: 0907.4143v1.pdf
 source_sha256: a2090d1e574b27db
-doc_brief: "Soft and Supersoft X-ray Sources in Symbiotic Stars1 — Assuming that soft X-ray sources in symbiotic stars result from strong thermonu- clear runaways, and supersoft X-ray sources from weak"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.781
+doc_brief: "Soft and Supersoft X-ray Sources in Symbiotic Stars 1 — Assuming that soft X-ray sources in symbiotic stars result from strong thermonu- clear runaways, and supersoft X-ray sources from weak"
 ---
 \label{intro} Symbiotic stars (SySs) are usually interacting
 binaries, composed of a cool star, a hot component and a nebula. The

@@ -1,0 +1,53 @@
+Arithmetic of Hyperbolic Manifolds 285
+
+(a) if 7 is loxodromic, then wu is not real, and exactly four conjugates of wu lie off the
+unit circle;
+
+(b) if 7 is hyperbolic, then wu is real, and exactly two conjugates of w lie off the unit
+circle;
+
+(c) £0(y) = log M(P) or 2log M(P) according as y is loxodromic or hyperbolic,
+where P = P(x) is the monic integral polynomial of u.
+
+Proof. We prove the Kleinian case; the Fuchsian case is similar. Note that u + u~! =
+try € k(T) =k. On the other hand, w is not in k: wu € k implies that the quaternion
+algebra is a matrix algebra, so k = Q(/—d) and u isaunitin this field, which contradicts
+the assumption |u| > 1. Thus wu has degree 2 over k and u~! is the other root of the
+minimal polynomial u? — utry + 1 =0.
+
+For any real embedding o:k — R, extend o to w:k(u) — C. We claim that
+|w(u)| = 1. Indeed, if |2(w)| # 1 then for sufficiently large positive integers t we
+have |o(try*)| = |v(u' + u-‘)| > 2, which contradicts Theorem 4.3 and its following
+Remark 1. Parts (a) and (b) of the Lemma now follow. Moreover, M(P) = |u|? or |u|
+according as u is complex or real, so part (c) also follows. Oo
+
+4.5. Lemma 4.9 has a converse, as pointed out to us by Ted Chinburg:
+
+Lemma 4.10. Suppose wu is an algebraic integer such that |u| > 1, u~? is a conjugate
+
+of u, and wu satisfies one of conditions (a) or (b) of Lemma 4.9. Then, in case (a) (resp.
+case (b)) there is a Kleinian (resp. Fuchsian) group T derived from a quaternion algebra
+and a loxodromic (resp. hyperbolic) element y € I’ with try = u+u-!. Moreover,
+in case (b) we can require I’ to be a subgroup of a Kleinian group 19 derived from a
+quaternion algebra.
+
+Before we prove this converse, we describe its implications for short geodesics.
+The conjectured smallest Mahler measure of approximately 1.176780821 is attained by
+an example P(x) = 10° + 29 — 2? — 26 — 2° —a2+— 23 +241 due to Lehmer
+[Le] given in 1933 (see [Boy] for a discussion). It has just one real root outside the
+unit circle. The smallest known Mahler measure for a polynomial with a complex
+root outside the unit circle is approximately 1.2013961862, attained by an example
+Po(x) = a8 + ot? 4 a! — 13 — ott 29 — 27? —25 +2? +241 of D. W. Boyd
+[Boy]. Lemma 4.10 implies the existence of a hyperbolic 3-orbifold M, containing
+a hyperbolic 2-suborbifold N; with a hyperbolic geodesic of length 2log M(Pi) *
+0.324715228, and also a hyperbolic 3-orbifold M2 with a loxodromic geodesic of
+length log M(P2) * 0.18348436; all these orbifolds being derived from quaternion
+algebras. By Lemma 4.9, these are the conjectural shortest lengths for hyperbolic resp.
+loxodromic geodesics in hyperbolic 2- or 3-orbifolds derived from quaternion algebras.
+The conjectural shortest lengths in arithmetic orbifolds would be half these (approx.
+0.162357614 resp. 0.09174218), and can also be realized in examples by the following
+theorem of Chinburg (private communication), which we prove below.
+
+Theorem 4.11. Suppose [ is a Kleinian or Fuchsian group which is derived from a
+quaternion algebra and y € I is a loxodromic or hyperbolic element. Then there is a
+group V9 commensurable with T. containing an element yo with yj = in PSL2C.

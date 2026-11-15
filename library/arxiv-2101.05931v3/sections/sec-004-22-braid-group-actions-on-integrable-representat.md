@@ -9,8 +9,9 @@ source_pdf: 2101.05931v3.pdf
 source_sha256: 41eaa81b97ede8e9
 toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.747
-latex_coverage_ratio: 0.985
+latex_prose_ratio: 0.776
+latex_coverage_ratio: 0.971
+doc_brief: "CATEGORICAL BRAID GROUP ACTIONS — Let g be a semisimple simply-laced Lie algebra of ﬁnite type."
 ---
 Given a $U_q(\fg)$-module $V$ and $\mu \in X$ we let $V_\mu$ denote the $\mu$ weight space of $V$.  
 For $\lambda \in X_+$ we let $L(\lambda)$ be the irreducible representation of $U_q(\fg)$ of highest weight $\lambda$.  Let $\Iso_\lambda(V)$ denote the $\lambda$-isotypic component of $V$.  We say that $V$ is \textbf{isotypic} if there exists $\lambda \in X_+$ such that $V=\Iso_\lambda(V)$.
@@ -52,7 +53,4 @@ A fundamental structure of $V$, discovered by Lusztig, is that it admits (severa
     \st_i\sone_\mu=\sum_{b-a=(\mu,\alpha_i)}(-q)^{-b}E_i^{(a)}F_i^{(b)}\sone_\mu.
 \end{align}
 Note that the indexing set of this sum is infinite, but the sum itself is finite on $V$.
-In the notation of \cite{Lusbook}, $\st_i=\st''_{i,-1}$.  (Note that the formula given in \cite{Lusbook} is more complicated. This simpler form was initially observed in \cite{CR} in the non-quantum setting, and generalised in \cite{CKM} to the quantum setting.). The assignment $\theta_i \mapsto \st_i$ defines an action of $B$ on $V$, and so we can unambiguously write $\st_w$ for any $w\in W$.  
-
-
-\section{Categorical representations of $U_q(\fg)$}
+In the notation of \cite{Lusbook}, $\st_i=\st''_{i,-1}$.  (Note that the formula given in \cite{Lusbook} is more complicated. This simpler form was initially observed in \cite{CR} in the non-quantum setting, and generalised in \cite{CKM} to the quantum setting.). The assignment $\theta_i \mapsto \st_i$ defines an action of $B$ on $V$, and so we can unambiguously write $\st_w$ for any $w\in W$.

@@ -1,6 +1,6 @@
 ---
 doc_id: fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma
-doc_title: "M. FUJJI"
+doc_title: "On totally geodesic boundaries of hyperbolic 3-manifolds"
 section_id: sec-000-1-an-ideal-tetrahedral-decomposition-of-a-hyperb
 section_title: "An ideal tetrahedral decomposition of a hyperbolic 3-manifold with two torus cusps."
 section_number: 1
@@ -8,6 +8,7 @@ pages: 2-10
 source_pdf: fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf
 source_sha256: d3d3bf68955ad775
 toc_source: inferred
+doc_brief: "On totally geodesic boundaries of hyperbolic 3-manifolds — 3 sections: Front matter; An ideal tetrahedral decomposition; UdC"
 ---
 two torus cusps.
 In this section, we construct a 3-manifold M which has a complete hyperbolic
@@ -320,44 +321,3 @@ fs
 —1)=0,
 l)=0,
 1)0*27 — 1)(^29—
-β—l)=0,
-2 — 1)ZS4Z86 = 0 ,
-TOTALLY GEODESIC BOUNDARIES OF HYPERBOLIC 3-MANIFOLDS
-fιι>:=Zt(zi,—ΐ){zu—ί)—(zl,— 
-ΐ){zSi—l)zt,zti=O,
-fii
-/i.
-fu
-fu
-fu
-/l.
-Λ.
-Λ.
-fvL
-J23
-fu
-/.,
-/,.
-/.T
-/28
-/2ί
-/ . .
-253
-a — 1 > 3 3 = 0 ,
-1)—Ui-
-3i —1)=0,
-— 1)220*24 =
-M 
-1 = 0 ,
-= 2 β(2 2 β—l)2 2i(2 β
-= 24(25—1
-= (Z26 — l)(2sβ—
-6—1)284
-2 —1)(2 8 6 — l ) 2 s β = 0 .
-From the definitions of //s, for any z in a certain open neighborhood (7 of
-the original solution z° in C
-36, z satisfies both the equations (*) and uχ—1 if and
-only if it satisfies the equations (***). In this paper we are concerning only
-the case where z is near z°, so it suffices to consider the reduced deformation
-space WΓ\U=F'\Qf 
-- , 0), where

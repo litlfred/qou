@@ -1,0 +1,41 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "0803219",
+ "source": {
+  "structure_sha256": "8e37e11b8c8953c817210bf7f975bdf3d98860b8d102cfa8463e40914f1f38ec",
+  "file": "0803219.pdf"
+ },
+ "provenance": {
+  "title": "ACTA MATHEMATICA VIETNAMICA AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS",
+  "authors": "HITOSHI MURAKAMI",
+  "arxiv": null,
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "recommendation": 1
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Therefore d should equal m + m\u22121 \u22121 and m uniquely de\ufb01nes a representation.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-41-representations-of-the-fundamental-group-of-t.md",
+   "section_title": "Representations of the fundamental group of the trefoil knot. We",
+   "pages": "24-26",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

@@ -8,6 +8,8 @@ pages: 1-1
 source_pdf: 1206.6004v2.pdf
 source_sha256: b490672c8c3557dd
 toc_source: outline
+doc_brief: "Bring's Curve: its Period Matrix and the Vector of Riemann Constants — Bring’s curve is the genus 4 Riemann surface with automorphism group of maximal size, S5."
+duplicate_of: "sigma12-065"
 ---
 Symmetry, Integrability and Geometry: Methods and Applications
 SIGMA 8 (2012), 065, 20 pages
@@ -27,4 +29,3 @@ Ramanujan. In particular we recover their period matrix; further, the vector of 
 constants will be identified.
 Key words: Bring’s curve; vector of Riemann constants
 2010 Mathematics Subject Classiﬁcation: 14H45; 14H55; 14Q05
-1

@@ -1,0 +1,1 @@
+\medskip\noindent {\it Remark.} We shall see below (\ref{para::2.3.3}) that on the other hand, an \'etale covering of $S$ which is a finite \'etale covering of a topological covering is not necessarily temperate.

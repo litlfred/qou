@@ -1,0 +1,68 @@
+apply (auto simp add: poincare-line-0-real-is-x-axis doubleton-eq-iff circline-set-x-axis)
+apply (subst cross-ratio, simp-all, subst Re-complex-div-gt-0, simp, subst mult-neg-neg, simp-all)+
+done
+next
+fix Muv
+let ?Mu = moebius-pt Mu and ?Mv = moebius-pt M v
+assume *: unit-disc-fix M u € unit-disc v € unit-disc u # v
+?P ?Mu ?Mv
+show ?P uv
+proof safe
+fix il i2
+let ?cr = cross-ratio u il v i2
+assume %«: ideal-points (poincare-line uv) = {i1, i2}
+have i1 Auil Avi2fAui2Arvil F i2
+using ideal-points-different|OF *(2—3), of i1 i2] xx «uA vw
+by auto
+hence 0 < Re (to-complex ?cr) A is-real (to-complex ?cr) \ ?er # &h
+using * **
+apply (erule-tac c=moebius-pt M il in allE)
+apply (erule-tac c=moebius-pt M i2 in allE)
+apply (subst (asm) ideal-points-poincare-line-moebius|of M u v il i2], simp-all)
+done
+thus 0 < Re (to-complex ?cr) is-real (to-complex ?cr) ?cr = con => False
+by simp-all
+qed
+qed
+
+Next we can show that for every different points from the unit disc there is exactly one number that satisfies
+the h-distance predicate.
+
+lemma distance-unique:
+assumes u € unit-disc and v € unit-disc
+shows 3! d. poincare-distance-pred u v d
+proof (cases u = v)
+case True
+thus ?thesis
+by auto
+next
+case False
+obtain if i2 where «: il 4 i2 ideal-points (poincare-line u v) = {il, i2}
+using obtain-ideal-points|OF is-poincare-line-poincare-line| (u # v»
+by blast
+let ?d = calc-poincare-distance u il v i2
+show ?thesis
+proof (rule ex11)
+show poincare-distance-pred uv ?d
+using * <u # v>
+proof (simp del: calc-poincare-distance-def, safe)
+fix i1' i2’
+assume {i1, i2} = {il’, i2'}
+hence *«: (i1' = il A i2'= i2) v (i1' = i2 A i2' = il)
+using doubleton-eq-iff [of i1 i2 i1' i2']
+by blast
+have all-different. uA iLuAWvAiUvA Duk il us i2'vAil' vs i2' il 4 i2
+using ideal-points-different|OF assms, of i1 i2] * ** cu # uv»
+by auto
+
+show calc-poincare-distance u il v i2 = cale-poincare-distance u il’ v i2'
+proof—
+
+let ?cr = cross-ratio u il v i2
+
+let ?cr’ = cross-ratio u il’ v i2'
+
+have Re (to-complex ?cr) > 0 is-real (to-complex ?cr)
+Re (to-complex ?cr') > 0 is-real (to-complex ?cr’)
+using False distance-cross-ratio-real-positive|OF assms(1—2)] * **
+by auto

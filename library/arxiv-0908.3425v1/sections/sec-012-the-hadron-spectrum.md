@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0908.3425v1
-doc_title: "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer"
+doc_title: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector"
 section_id: sec-012-the-hadron-spectrum
 section_title: "The hadron spectrum"
 section_number: null
 pages: 17-19
 source_pdf: 0908.3425v1.pdf
 source_sha256: 5e88d45bbc1c1b9b
-doc_brief: "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer — We provide an introduction to the basic concepts of chiral pe rturbation theory and discuss some"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.963
-latex_coverage_ratio: 0.907
+latex_coverage_ratio: 0.924
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 []{#subsec_hs label="subsec_hs"} We saw in Section [\[subsubsec_agsl\]](#subsubsec_agsl){reference-type="ref" reference="subsubsec_agsl"} that the QCD Lagrangian possesses an $\mbox{SU(3)}_L\times\mbox{SU(3)}_R\times \mbox{U(1)}_V$ symmetry in the chiral limit in which the light quark masses vanish. From symmetry considerations involving the Hamiltonian $H^0_{\rm QCD}$ only, one would naively expect that hadrons organize themselves into approximately degenerate multiplets fitting the dimensionalities of irreducible representations of the group $\mbox{SU(3)}_L\times\mbox{SU(3)}_R\times\mbox{U(1)}_V$. The $\mbox{U(1)}_V$ symmetry results in baryon number conservation and leads to a classification of hadrons into mesons ($B=0$) and baryons ($B=1$). The linear combinations $Q_{aV}=Q_{aR}+Q_{aL}$ and $Q_{aA}=Q_{aR}-Q_{aL}$ of the left- and right-handed charge operators commute with $H^0_{\rm QCD}$, have opposite parity, and thus for states of positive parity one would expect the existence of degenerate states of negative parity (parity doubling) which can be seen as follows.
 

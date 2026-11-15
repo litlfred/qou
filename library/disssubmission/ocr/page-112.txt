@@ -1,0 +1,49 @@
+104 Chapter 5 — A family of surfaces
+
+of maximal subgroups in [23, p. 26] shows that any such subgroup M must
+be conjugate to one of the following subgroups:
+
+(a) the simple subgroup W* (Eg) of index two which is the kernel of
+the sign homomorphism sgn : W(E,) —> {+1},
+
+(b) the stabilizer of a line through some minimal vector in the dual
+lattice EG = {v € Eg ®z Q| (v,w) € Z Vw € Eo},
+
+(c) the stabilizer of a line through some root vector inside E¢, with the
+symmetric group G¢ as a subgroup of index two,
+
+(d) three other subgroups, two of order 24 - 34 and one of order 27 -3°.
+
+Furthermore, any proper subgroup of the simple group in (a) is by the table
+of loc. cit. also contained in some of the maximal subgroups described in
+cases (b), (c) or (d). So for the proof of theorem 5.1 it will suffice to show
+that for a general ppav the monodromy group G cannot be contained in any
+of the subgroups listed in (b), (c) and (d).
+
+One tool for this will be the Tannakian formalism of convolution given
+in chapters 2 and 3. Indeed, consider the perverse intersection cohomology
+sheaf dg = Ce[g— 1] € Perv(X,C). Over the open dense subset U C X it
+turns out that the local system underlying V, can be identified with a direct
+summand of the convolution
+
+dq 59 € D?(X,C),
+
+as we will show in section 5.6. Since for a general ppav of dimension g = 4
+we know the Tannaka group G(de) = Sp24(C) from theorem 4.2, it will then
+follow via the representation theory of the symplectic group that the local
+system underlying V is irreducible — in other words, the monodromy
+group G acts irreducibly on the stalks Eg ®z C of this local system, see
+proposition 5.23. Hence G cannot be contained in the stabilizer of a line as
+described in the above cases (b) or (c).
+
+The remaining cases cannot be excluded with the same argument, in fact
+some of the subgroups in case (d) act irreducibly on Eg ®z C. An example
+is given in appendix C. However, a look at the group orders shows that the
+maximal subgroups in case (d) do not contain the alternating group 26 as a
+subgroup, so the proof of theorem 5.1 will be finished if we can show that
+for a general ppav there exists an embedding
+
+A, O G.
+
+For this we use a degeneration argument to fill in the dotted lines in the
+following Hasse diagram, where G(d2) is the Galois group of the difference

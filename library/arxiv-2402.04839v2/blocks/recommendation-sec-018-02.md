@@ -1,0 +1,1 @@
+We devise such a procedure by determining how many terms of the Taylor series expansion of ∆volW and ∆volP we must consider, in order to certify that they have distinct function values at pi qi , aj bj ∈Q.

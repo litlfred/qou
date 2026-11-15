@@ -1,0 +1,45 @@
+Concentration of empirical distribution functions 1409
+Lemma 8.1. G(x +h) — G(x — h) < 2¢(x)h + £h3/? for all x € Rand h > 0.
+Since G is concentrated on the interval [—2, 2], for |x| > 2, we have a simple bound G(x +
+
+h)—G(x-h)< on, As a result, one may derive from (8.2) an improved variant of (8.3). In
+particular, if |x| > 2, then
+
+6/7
+E|F,(x) — G(x) < IF — G+ c(2) ;
+
+The more general statement for all x € R is given by the following result.
+
+Theorem 8.2. Let &jx (1 < j < k <n) be independent and satisfy a logarithmic Sobolev in-
+equality with constant 07, with Eé jx = 0 and Var(& jx) = 1. For all x €R,
+
+6/7 2/3
+ElF,(x) — G(x)| < |F — G+ c|(2) + eo?(2) | (8.4)
+
+where C is an absolute constant.
+
+A similar uniform bound may also be shown to hold for Esup, <, | Fn(y) — G(y)| (@@ < 0) and
+Esup,5, |Fn(y) — G(y)| (x = 0). Note that in comparison with (8.3), there is an improvement
+for the points x at distance not more than (24/7 from +2.
+
+Proof of Theorem 8.2. According to the bound (8.2) and Lemma 8.1, for any h > 0, we may
+write E] F,(x) — G(x)| < || F — Gll + 39(h), where y(h) = g(xyh + 137 + 5,6 = (2).
+We shall now estimate the minimum of this function. Write h = ( He)!" with parameter
+
+a > 0 to be specified later on. If g(x) < av/h, then
+
+gh) < (+ ayh3/? + a= 2d aye" (8.5)
+
+: : : 7 7 7
+Note that the requirement on g(x) is equivalent to a(x) < Tra: Thus, we set A = aay and
+
+take a = 1+ 2A!/®, Since a > 1, we get > oe > A. Hence, we may apply (8.5). Using
+
+(+a)4/7 < (2a)*/7 and a4/7 < 1 + ((2A)!/%)4/7 = 1 4 (2A)?/?!, we finally get that
+gh) <2-2V7(1+ (2A) e987 < (69/7 ¢ AE),
+This is the desired expression in square brackets in (8.4) and Theorem 8.2 follows. O
+
+Finally, let us comment on the meaning of the general Corollary 6.5 in the matrix model above.
+To every interval J on the real line, we associate the number
+
+Ny; =card{i <n: X; € 1}

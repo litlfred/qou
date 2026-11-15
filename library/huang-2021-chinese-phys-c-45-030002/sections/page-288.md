@@ -1,0 +1,446 @@
+---
+doc_id: huang-2021-chinese-phys-c-45-030002
+doc_title: "The AME 2020 atomic mass evaluation (I). Evaluation of input data, and adjustment procedures"
+section_id: page-288
+section_title: "Page 288"
+section_number: null
+pages: 288-288
+source_pdf: Huang_2021_Chinese_Phys._C_45_030002.pdf
+source_sha256: 1dd3329ed87476c8
+toc_source: undetermined
+doc_brief: "The AME 2020 atomic mass evaluation (I). Evaluation of input data, and adjustment procedures — 343 sections: Page 1; Page 2; Page 3"
+---
+Chinese Physics C Vol. 45, No. 3 (2021) 030002
+Table I. Comparison of input data and adjusted values (continued, Explanation of Table on page 030002-30)
+Item
+Input value
+Adjusted value
+vi
+Dg
+Signf.
+Main inﬂ.
+Lab
+F
+Reference
+198Hg(n,γ)199Hg
+6665.2
+0.5
+6663.1
+0.6
+−4.3
+B
+CRn
+75Lo03
+199Hg(γ,n)198Hg
+−6590
+90
+−6663.1
+0.6
+−0.8
+U
+Phi
+60Ge01
+199Pt(β −)199Au
+1690
+50
+1705.1
+2.1
+0.3
+U
+64Jo09
+199Au(β −)199Hg
+453.0
+1.0
+452.3
+0.6
+−0.7
+1
+38
+20 199Au
+68Be06
+199Tl(β +)199Hg
+1420
+150
+1487
+28
+0.4
+U
+75Ma05
+∗
+199Pb(β +)199Tl
+2870
+110
+2828
+29
+−0.4
+U
+70Do.A
+∗
+199Bim(IT)199Bi
+667
+5
+667
+3
+−0.1
+–
+80Br23
+667
+5
+−0.1
+–
+85St02
+ave.
+667
+4
+−0.1
+1
+98
+64 199Bim
+average
+199Atm(IT)199At
+255
+20
+244.0
+1.0
+−0.6
+o
+Jya
+13Ja06
+∗
+244
+1
+2
+Jya
+14Au03
+∗199Pb−u
+M −A=–24961(28) keV for mixture gs+m at 429.5(2.7) keV
+Nub211 ∗∗
+∗199Bi−u
+M −A=–20071(28) keV for 199Bim at 667(3) keV
+Nub211 ∗∗
+∗199Po−u
+M −A=–14980(100) keV for mixture gs+m at 311.7(2.7) keV
+Nub211 ∗∗
+∗199Po−u
+M −A=–14909(35) keV for 199Pom at 311.7(2.7) keV
+Nub211 ∗∗
+∗199Pom(α)195Pbm
+Also Eα=6059(5) keV from uncorrelated decays
+96Ta18
+∗∗
+∗199Tl(β +)199Hg
+KL+<500(100) giving Q <1620, (1/2−,3/2−) level at 1221.17 fed. Reanalyzed
+Ens073
+∗∗
+∗199Pb(β +)199Tl
+p+ =0.04(0.01) to 3/2+ level at 366.89 keV, recalculated
+Ens073
+∗∗
+∗199Atm(IT)199At
+Combining lines 110(20) 160(20) 240(30) as read from Fig. 8a
+GAu
+∗∗
+200Au−u
+−29237
+34
+−29243
+29
+−0.2
+1
+71
+71 200Au
+GS3
+1.0
+08Ch.A
+200Aum−u
+−28135
+33
+−28163
+28
+−0.8
+1
+73
+73 200Aum
+GS3
+1.0
+08Ch.A
+200Hg−C 13C 35Cl5
+120707.97
+1.22
+120708.6
+0.6
+0.2
+U
+H34
+2.5
+80Ko25
+200Hg−165Ho 35Cl
+69116
+33
+69145.1
+1.0
+0.2
+U
+R04
+4.0
+64De15
+200Hg−163Dy 37Cl
+73527
+42
+73687.1
+0.9
+1.0
+U
+R04
+4.0
+64De15
+200Pb−u
+−28179
+30
+−28181
+11
+−0.1
+R
+GS2
+1.0
+05Li24
+200Bi−u
+−21888
+57
+−21869
+24
+0.3
+R
+GS2
+1.0
+05Li24
+∗
+200Po−u
+−18170
+104
+−18188
+8
+−0.2
+U
+GS1
+1.0
+00Ra23
+−18204
+30
+0.5
+U
+GS2
+1.0
+05Li24
+200Hg−208Pb.962
+−9205
+28
+−9212.3
+1.2
+−0.3
+U
+MA6
+1.0
+01Sc41
+200Hg 35Cl−198Hg 37Cl
+4525
+2
+4507.9
+0.6
+−2.1
+U
+H17
+4.0
+64Mc07
+4508.80
+0.48
+−0.8
+1
+28
+17 200Hg
+H33
+2.5
+80Ko25
+200Po(α)196Pb
+5979.8
+5.
+5981.6
+1.8
+0.4
+–
+67Si09
+Z
+5980.0
+3.
+0.5
+–
+67Tr06
+Z
+5983.4
+3.
+−0.6
+–
+70Ra14
+Z
+5981.8
+5.0
+−0.0
+–
+Ara
+96Ta18
+∗
+ave.
+5981.5
+1.9
+0.1
+1
+99
+79 196Pb
+average
+200At(α)196Bi
+6594.9
+5.
+6596.2
+1.3
+0.3
+3
+67Tr06
+Z
+6596.9
+2.
+−0.4
+3
+Ora
+75Ba.B
+Z
+6593.1
+5.
+0.6
+o
+Lvn
+87Va09
+6596.1
+2.
+0.0
+3
+Lvn
+92Hu04
+6593.1
+5.0
+0.6
+3
+Ara
+96Ta18
+6599.1
+6.
+−0.5
+U
+Jya
+05Uu02
+200Atm(α)196Bi
+6708.3
+5.
+6709.1
+2.6
+0.2
+3
+Ora
+75Ba.B
+Z
+6705.4
+5.
+0.7
+o
+Lvn
+87Va09
+6709.5
+3.
+−0.1
+3
+Lvn
+92Hu04
+200Atm(α)196Bim
+6542.8
+5.
+6542.7
+1.3
+−0.0
+4
+67Tr06
+Z
+6542.9
+2.
+−0.1
+4
+Ora
+75Ba.B
+Z
+6540.0
+5.
+0.5
+o
+Lvn
+87Va09
+6542.1
+2.
+0.3
+4
+Lvn
+92Hu04
+6545.1
+5.0
+−0.5
+4
+Ara
+96Ta18
+6544.1
+6.
+−0.2
+U
+Jya
+05Uu02
+200Atm(α)196Bin
+6439.5
+5.
+6437.5
+2.0
+−0.4
+4
+67Tr06
+∗
+6438.5
+5.
+−0.2
+4
+Ora
+75Ba.B
+∗
+6433.8
+5.
+0.7
+o
+Lvn
+87Va09
+∗
+6439.2
+3.
+−0.6
+4
+Lvn
+92Hu04
+∗
+6430.5
+5.0
+1.4
+4
+Ara
+96Ta18
+∗
+6436.7
+6.
+0.1
+4
+Jya
+05Uu02
+∗
+030002-287

@@ -1,0 +1,1316 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-math-0411505v2",
+  "pages": [
+    {
+      "page": 5,
+      "rotation": 0,
+      "drawings": 20,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. From a planar projection to the arc-graph. Transitions in the planar projection are indicated by dashed paths, and the corresponding edges in the arc-graph are blue (depicted with a small circle on them) or red"
+      ],
+      "labels": [
+        {
+          "text": "If β is a weight function on the set of edges of G and f is a ﬂow on G, then",
+          "bbox": [
+            84.0,
+            74.49,
+            414.13,
+            84.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "• the weight β(f) of f is given by β(f) = Q",
+          "bbox": [
+            96.72,
+            82.45,
+            290.56,
+            126.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "e β(e)f(e), where β(e) is the weight of the edge e.",
+          "bbox": [
+            290.64,
+            88.24,
+            504.36,
+            102.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000f(e1)+f(e2)+...",
+          "bbox": [
+            471.6,
+            95.65,
+            532.76,
+            132.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI7",
+            "CMR5",
+            "CMR7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            532.68,
+            95.65,
+            537.24,
+            132.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "• The multiplicity at a vertex v with outgoing edges e1, e2, . . . is given by multv(f) =",
+          "bbox": [
+            96.72,
+            103.19,
+            468.9,
+            114.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            537.24,
+            103.41,
+            540.0,
+            113.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "f(e1),f(e2),...",
+          "bbox": [
+            480.0,
+            109.24,
+            529.04,
+            116.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR5",
+            "CMR7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "and the multiplicity of f is given by mult(f) = Q",
+          "bbox": [
+            106.68,
+            110.05,
+            322.48,
+            154.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "v multv(f).",
+          "bbox": [
+            322.44,
+            117.21,
+            370.2,
+            130.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "• If A is a subset of edges then we let f(A) = P",
+          "bbox": [
+            96.72,
+            122.05,
+            310.99,
+            166.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "e∈A f(e).",
+          "bbox": [
+            310.92,
+            129.21,
+            349.44,
+            142.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Let us summarize Foata-Zeilberger’s theorem [FZ, Theorem 1.1] here. For the sake of completeness we",
+          "bbox": [
+            84.0,
+            144.33,
+            539.98,
+            154.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "include its proof in Appendix A.",
+          "bbox": [
+            72.0,
+            156.33,
+            213.72,
+            166.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 3. If (G, B) is a weighted digraph, then",
+          "bbox": [
+            72.0,
+            175.26,
+            292.88,
+            185.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            314.28,
+            191.73,
+            319.26,
+            201.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(1)",
+          "bbox": [
+            72.0,
+            198.57,
+            84.75,
+            208.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ζ(G, B)",
+          "bbox": [
+            231.24,
+            198.57,
+            264.26,
+            208.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            274.32,
+            198.57,
+            282.06,
+            208.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "det(I −B)",
+          "bbox": [
+            293.28,
+            205.19,
+            340.23,
+            215.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            299.28,
+            213.13,
+            313.67,
+            249.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(2)",
+          "bbox": [
+            72.0,
+            222.33,
+            84.74,
+            232.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            274.32,
+            222.33,
+            282.06,
+            232.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "β(f) mult(f).",
+          "bbox": [
+            322.56,
+            222.33,
+            380.76,
+            232.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "f∈F(G)",
+          "bbox": [
+            292.08,
+            236.92,
+            321.11,
+            243.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Remark 2.3. For r = 1, the above Theorem states that",
+          "bbox": [
+            72.0,
+            252.57,
+            311.9,
+            262.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "∞",
+          "bbox": [
+            314.88,
+            268.13,
+            322.82,
+            275.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            311.64,
+            269.17,
+            326.03,
+            305.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            282.96,
+            271.53,
+            287.94,
+            281.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "xn",
+          "bbox": [
+            328.08,
+            276.41,
+            338.64,
+            288.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1 −x =",
+          "bbox": [
+            274.08,
+            278.37,
+            308.58,
+            295.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n=0",
+          "bbox": [
+            311.4,
+            292.12,
+            326.41,
+            299.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "where x = b11. Thus, Theorem 3 is a version of the geometric series summation.",
+          "bbox": [
+            72.0,
+            305.25,
+            421.92,
+            315.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Another formula for the inverse of a determinant, the MacMahon Master Theorem, has been mentioned",
+          "bbox": [
+            84.0,
+            324.45,
+            540.01,
+            334.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "in the introduction. We will need its quantum version, proved in [GLZ].",
+          "bbox": [
+            72.0,
+            336.33,
+            385.91,
+            346.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In r-dimensional quantum algebra we have r indeterminates xi (1 ≤i ≤r), satisfying the commutation",
+          "bbox": [
+            84.0,
+            348.11,
+            540.13,
+            359.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "relations xjxi = qxixj for all 1 ≤i < j ≤r. Further we are given a right-quantum matrix A. We assume",
+          "bbox": [
+            72.0,
+            360.11,
+            540.1,
+            371.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "that the indeterminates of A commute with the xi’s. The following theorem has been proven recently in",
+          "bbox": [
+            72.0,
+            372.21,
+            540.01,
+            382.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "[GLZ].",
+          "bbox": [
+            72.0,
+            384.21,
+            100.44,
+            394.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 4. Let A be a right-quantum matrix of size r. For 1 ≤i ≤r let Xi = Pr",
+          "bbox": [
+            72.0,
+            396.25,
+            465.1,
+            440.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMEX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "j=1 aijxj, and for",
+          "bbox": [
+            461.4,
+            403.41,
+            539.87,
+            416.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "any vector (m1, . . . , mr) of non-negative integers let GA(m1, . . . , mr) be the coeﬃcient of xm1",
+          "bbox": [
+            72.0,
+            414.05,
+            477.51,
+            426.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMTI10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1 xm2",
+          "bbox": [
+            467.04,
+            414.05,
+            494.67,
+            428.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR5",
+            "CMR7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ". . . xmr",
+          "bbox": [
+            497.28,
+            414.77,
+            526.66,
+            426.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "in",
+          "bbox": [
+            531.36,
+            416.25,
+            539.96,
+            426.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "r",
+          "bbox": [
+            516.24,
+            420.89,
+            519.94,
+            427.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Qr",
+          "bbox": [
+            72.0,
+            420.97,
+            85.06,
+            457.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            484.2,
+            421.12,
+            488.17,
+            428.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "i=1 Xmi",
+          "bbox": [
+            81.36,
+            425.93,
+            115.34,
+            441.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ". Then",
+          "bbox": [
+            116.28,
+            428.13,
+            146.12,
+            438.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "i",
+          "bbox": [
+            104.76,
+            433.13,
+            107.58,
+            440.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "∞",
+          "bbox": [
+            234.12,
+            440.57,
+            242.06,
+            447.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            230.88,
+            441.61,
+            245.27,
+            478.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "GA(m1, . . . , mr) = 1/Ferm(A).",
+          "bbox": [
+            261.72,
+            450.81,
+            395.76,
+            461.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "m1,...,mr=0",
+          "bbox": [
+            216.12,
+            464.68,
+            260.05,
+            472.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMR5",
+            "CMR7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "3. The arc-graph of a knot projection",
+          "bbox": [
+            206.04,
+            487.17,
+            405.83,
+            497.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Given a knot projection K, we deﬁne the arc-graph GK as follows:",
+          "bbox": [
+            84.0,
+            505.17,
+            374.4,
+            516.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "• The vertices of GK are in 1-1 correspondence with the arcs of K.",
+          "bbox": [
+            96.72,
+            520.07,
+            388.92,
+            531.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "• The edges of GK are in 1-1 correspondence with transitions of K, when we walk along K and we",
+          "bbox": [
+            96.72,
+            532.07,
+            539.99,
+            543.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "either go under a crossing (blue edges), or jump up at a crossing (red edges) according to Figure 1.",
+          "bbox": [
+            106.68,
+            544.17,
+            539.64,
+            554.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ja",
+          "bbox": [
+            354.35,
+            576.32,
+            364.32,
+            593.08
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Palatino-Italic"
+          ],
+          "sizes": [
+            9.7,
+            12.6
+          ]
+        },
+        {
+          "text": "ja",
+          "bbox": [
+            221.03,
+            583.59,
+            231.0,
+            600.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Palatino-Italic"
+          ],
+          "sizes": [
+            9.7,
+            12.6
+          ]
+        },
+        {
+          "text": "ia",
+          "bbox": [
+            208.91,
+            610.26,
+            218.88,
+            627.02
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Palatino-Italic"
+          ],
+          "sizes": [
+            9.7,
+            12.6
+          ]
+        },
+        {
+          "text": "a",
+          "bbox": [
+            254.97,
+            610.26,
+            260.56,
+            622.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Palatino-Italic"
+          ],
+          "sizes": [
+            12.6
+          ]
+        },
+        {
+          "text": "i+1",
+          "bbox": [
+            262.24,
+            617.24,
+            275.66,
+            627.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Palatino-Italic"
+          ],
+          "sizes": [
+            9.7
+          ]
+        },
+        {
+          "text": "ia",
+          "bbox": [
+            334.96,
+            619.95,
+            344.93,
+            636.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Palatino-Italic"
+          ],
+          "sizes": [
+            9.7,
+            12.6
+          ]
+        },
+        {
+          "text": "a",
+          "bbox": [
+            393.13,
+            622.38,
+            398.73,
+            635.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Palatino-Italic"
+          ],
+          "sizes": [
+            12.6
+          ]
+        },
+        {
+          "text": "i+1",
+          "bbox": [
+            400.4,
+            629.36,
+            413.82,
+            639.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Palatino-Italic"
+          ],
+          "sizes": [
+            9.7
+          ]
+        },
+        {
+          "text": "Figure 1. From a planar projection to the arc-graph. Transitions in the planar projection are indicated by",
+          "bbox": [
+            95.88,
+            651.17,
+            516.16,
+            662.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSS9",
+            "CMSSBX10"
+          ],
+          "sizes": [
+            8.97,
+            10.91
+          ]
+        },
+        {
+          "text": "dashed paths, and the corresponding edges in the arc-graph are blue (depicted with a small circle on them) or",
+          "bbox": [
+            95.88,
+            664.79,
+            516.03,
+            673.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSS9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "red",
+          "bbox": [
+            95.88,
+            676.79,
+            107.83,
+            685.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSS9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "More formally, GK is a weighted digraph deﬁned as follows.",
+          "bbox": [
+            84.0,
+            700.53,
+            343.92,
+            711.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            303.96,
+            714.76,
+            307.93,
+            721.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        }
+      ]
+    }
+  ]
+}

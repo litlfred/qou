@@ -1,0 +1,62 @@
+5.1.2 A change of parameters and the c-function
+
+In order to relate rational Cherednik algebras with cyclotomic Hecke algebras via the KZ-functor in the
+next subsection, we need to change the parametrisation of H,,,(W). As in 48.1] let A denote the set of
+reflecting hyperplanes of W. For H € A, let Wi be the pointwise stabiliser of H in W. The group Wy
+is cyclic and its order, denoted by ec, only depends on the orbit C € A/W that H belongs to. We have
+
+that
+S= J Wr\ {1}.
+HEA
+
+For each s € Wz \ {1}, we have Kera, = H. Without loss of generality, we may assume that a, = as’
+and a¥ = ay, for all s,s’ € Wy \ {1}. Set ay := a, and ay, := a¥. Then the third relation in
+
+becomes
+[ne] = (une) -2 BOD YY els)s vee yeh,
+HEA (@j7,0H) ew.
+seWu \{1}
+
+We define a family of complex numbers k = (ke,;)(cea/w)(0<j<ec—1) by
+
+ec—1
+-2 > c(s)s = > > det(s) (ke, —kej-1)|s for HEC,
+seWu\{1} seWu\{1} \ J=0
+with ke, = 0. This implies that
+ec—1
+
+(= 3 aetloy J (ke,j — ke.j-1)-
+
+From now on, we will denote by Hy,(W) the quotient of TV* » W by the relations:
+
+fer,%2] =0, [usa] =0, [ya] =(y.2) + Yo Bewlen. 2)
+
+YH
+HEA (a,0H)
+
+where
+ec-1
+
+Vn = > > det(w) ke — kej—1) | w
+
+weWy\{1} \ j=0
+for all x1,72,a € h* and y),42,y € §. We have H,(W) = Hi ,.(W).
+Let E € Irr(W). We denote by cg the scalar by which the element
+
+ec-1
+- > > ( > (det wre) ke € Z(C[W])
+HEA j=0 \weWu
+
+acts on £. We obtain thus a function c : Irr(W) > C, E+ cg. The c-function defines an ordering <,
+on the category © as follows: For all E, E’ € Irr(W),
+
+E' <, E if and only if cg — ce € Zo.
+
+Remark 5.7 If cz — cg ¢ Z \ {0} for all E, E’ € Irr(W), then D is the identity matrix, and thus O is
+semisimple.
+
+Remark 5.8 In the rational Cherednik algebra literature the function c is usually taken to be the
+negative of the one defined here. In the context of this chapter the above definition is more natural. In
+both cases we obtain an ordering on the category O.
+
+37

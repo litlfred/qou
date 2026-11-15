@@ -1,0 +1,43 @@
+The descendant colored Jones polynomials 2317
+
+(Warning: the above formula is q times the evaluation of the n-th colored
+Jones polynomial at the n-th root of unity.) Given this formula, we can define
+a 2-parameter family of descendants (elements of the Habiro ring) by
+
++ g)2
+(16) DJap(q) = 3 (<iq fomteDibakto (GD (a,b €Z).
+k,l>0 CO
+
+Then, DJay(q) is a g-holonomic module in two variables. Experimentally, it
+appears that the span over Q(q) of DJa»(q) for (a,b) in some cone coincides
+with the span of {1, DIO DIM, DJ}. For instance, we have:
+
+DJio = (3—q7})DIO + (1 — 3q¢)DIM + PDIO
+DJ_10 = 3qDI® — 3@DIM + FDI
+DUia = 84 q7—q ))DIO + (1— 9g! — 3g)DIM + PDIO — P+ ¢74
+DJo,1 = —DJI© 4 qDIM +1
+DJ-1-1 = 2qDJ — PDIM.
+
+In the examples given above for the 31, 4; and 52 knots, we observed two
+phenomena for the annihilating polynomial B(S;,,Qm,2,q) with respect to
+m of the descendant colored Jones polynomials, namely:
+
+(a) The degree of B(Sin,Qm,,q) is greater than or equal to the degree of
+the A-polynomial of a knot [CCG*94] (which conjecturally coincides
+with the degree of the minimal inhomogeneous recursion of the colored
+Jones polynomials). Let 6 denote this difference.
+
+(b) B(Sim,;Qm,2,q) is monic and the coefficient of $3, in B(Sm,Qm,2,q)
+vanishes when m = —6,—d + 1,...,—j — 1 for j = 0,...,6—1. This
+implies that the Z[g*]-span of DJ (2, q) for m > 0 equals to the span
+of DJ“ (x, q) for m =0,...,deg(A) — 1.
+
+The above observations hold for all twist knots A’, considered in [Mas03,
+Fig. 3], where Ky = 3), K_y = 4; and Ky = 52. Their A-polynomials were
+computed by Hoste-Shanahan [HS04] and the A polynomials (i.e. a minimal
+recursion for the colored Jones polynomials) was computed in [L06]. The re-
+cursions for the Habiro polynomials of the twist knots was given in [GS06],
+and, using this, one can obtain recursions for the descendant colored Jones
+polynomials with respect to m. An explicit computation shows that the B-
+polynomials of twist knots satisfy the above mentioned two properties. More-
+over, the degrees of the A-polynomials, the B-polynomials and the excess

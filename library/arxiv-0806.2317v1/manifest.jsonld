@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-0806.2317v1",
+  "title": "Bounds for codes and designs in complex subspaces",
   "contains": [
+    "library/arxiv-0806.2317v1/sections/sec-front-matter",
     "library/arxiv-0806.2317v1/sections/sec-000",
     "library/arxiv-0806.2317v1/sections/sec-001",
     "library/arxiv-0806.2317v1/sections/sec-002",
@@ -24,7 +25,7 @@
     "library/arxiv-0806.2317v1/sections/sec-010"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -34,7 +35,9 @@
   },
   "meta": {
     "doc_id": "arxiv-0806.2317v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0806.2317v1.pdf",
     "source_sha256": "c54e80d460413a5e63ba14144065186a96e50c74471d5619f314374a7c97e5cd",
     "pages": 33,

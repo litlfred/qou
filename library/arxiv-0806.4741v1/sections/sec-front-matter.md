@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0806.4741v1.pdf
 source_sha256: 5e7ad85a99fb3552
 toc_source: outline
+doc_brief: "The deformation quantizations of the hyperbolic plane — We describe the space of (all) invariant deformation quantizations on the hyperbolic plane D as solutions of the evolution of a second order"
 ---
 The deformation quantizations of the hyperbolic plane
 P. Bieliavsky
@@ -33,4 +34,3 @@ The present work presents a uniﬁed method producing every quantization of D, a
 2-dimensional context, an exact solution to Weinstein’s WKB quantization program within geometric
 terms. The construction reveals the existence of a metric of Lorentz signature canonically attached (or
 ‘dual’) to the geometry of the hyperbolic plane through the quantization process.
-1

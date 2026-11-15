@@ -6,10 +6,12 @@
   "sha256": "acb2575050db419d1240392a1be451b27a093aec31d6ef767e62698d265b5fe1",
   "bytes": 305110,
   "pages": 22,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +22,27 @@
   },
   "doi": null,
   "title": "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS",
-  "authors_raw": "KOJI FUJIW ARA AND JASON FOX MANNING",
-  "abstract": "Let M be a hyperbolic n\u2013manifold whose cusps have torus cross- sections. In [FM10], the authors constructed a variety of no npositively and negatively curved spaces as \u201c2 \u03c0 \u2013\ufb01llings\u201d of M by replacing the cusps of M with compact \u201cpartial cones\u201d of their boundaries. These 2 \u03c0 \u2013\ufb01llings are closed pseudomanifolds, and so have a fundamental class. W e show th at the simplicial volume of any such 2 \u03c0 \u2013\ufb01lling is positive, and bounded above by Vol(M ) vn , where vn is the volume of a regular ideal hyperbolic n\u2013simplex. This result gener- alizes the fact that hyperbolic Dehn \ufb01lling of a 3\u2013manifold d oes not increase hyperbolic volume. In particular, we obtain information about the simplicial v olumes of some 4\u2013dimensional homology spheres described by Ratcli\ufb00e and T schantz, answer- ing a question of Belegradek and establishing the existence of 4\u2013dimensional homology spheres with positive simplicial volume.",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181030164753-04'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  },
-  "title_prev": "where vn is the volume of a regular ideal hyperbolic n\u2013simplex. This result gener- alizes the fact that hyperbolic Dehn filling of a 3\u2013manifold d oes not increase hyperbolic volume",
+  "authors_raw": "KOJI FUJIWARA AND JASON FOX MANNING",
   "title_lines": [
    "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC",
    "MANIFOLDS"
-  ]
+  ],
+  "abstract": "Let M be a hyperbolic n–manifold whose cusps have torus cross- sections. In [FM10], the authors constructed a variety of nonpositively and negatively curved spaces as “2π–ﬁllings” of M by replacing the cusps of M with compact “partial cones” of their boundaries. These 2π–ﬁllings are closed pseudomanifolds, and so have a fundamental class. We show that the simplicial volume of any such 2π–ﬁlling is positive, and bounded above by Vol(M) vn , where vn is the volume of a regular ideal hyperbolic n–simplex. This result gener- alizes the fact that hyperbolic Dehn ﬁlling of a 3–manifold does not increase hyperbolic volume. In particular, we obtain information about the simplicial volumes of some 4–dimensional homology spheres described by Ratcliﬀe and Tschantz, answer- ing a question of Belegradek and establishing the existence of 4–dimensional homology spheres with positive simplicial volume.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181030164753-04'00'"
+  },
+  "title_raw": "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS 1. Introduction Simplicial volume was deﬁned for manifolds by Gromov in [Gro82]. For an n -dimensional closed manifold M of constant sectional curvature K = − 1, the simplicial volume ∥ M ∥ is proportional to the (Riemannian) volume Vol( M ), an",
+   "outline": "1. Introduction",
+   "text": "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -41,74 +50,274 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Outline",
    "page": 4,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Simplicial volume and duality",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Gromov norms",
    "page": 4,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Symmetrization",
    "page": 6,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Main result",
    "page": 8,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Appendix A. A proportionality theorem",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Appendix B. (Anti)Symmetrization of chains",
    "page": 18,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Acknowledgments",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1042,
+   "n_words": 157,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -116,8 +325,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 9440,
-   "n_words": 1687
+   "n_chars": 9423,
+   "n_words": 1670,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-11-outline",
@@ -126,8 +337,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 426,
-   "n_words": 70
+   "n_chars": 422,
+   "n_words": 66,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-2-simplicial-volume-and-duality",
@@ -137,7 +350,9 @@
    "page_start": 4,
    "page_end": 4,
    "n_chars": 117,
-   "n_words": 18
+   "n_words": 18,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-21-gromov-norms",
@@ -146,8 +361,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 5544,
-   "n_words": 1026
+   "n_chars": 5452,
+   "n_words": 979,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-22-symmetrization",
@@ -156,8 +373,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 8,
-   "n_chars": 2948,
-   "n_words": 590
+   "n_chars": 2918,
+   "n_words": 560,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-3-main-result",
@@ -166,8 +385,10 @@
    "level": 1,
    "page_start": 8,
    "page_end": 14,
-   "n_chars": 16656,
-   "n_words": 3414
+   "n_chars": 16603,
+   "n_words": 3361,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-appendix-a-a-proportionality-theorem",
@@ -176,8 +397,10 @@
    "level": 1,
    "page_start": 14,
    "page_end": 18,
-   "n_chars": 11307,
-   "n_words": 2271
+   "n_chars": 11210,
+   "n_words": 2203,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-007-appendix-b-antisymmetrization-of-chains",
@@ -186,8 +409,10 @@
    "level": 1,
    "page_start": 18,
    "page_end": 20,
-   "n_chars": 3125,
-   "n_words": 706
+   "n_chars": 3063,
+   "n_words": 641,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-008-acknowledgments",
@@ -196,8 +421,10 @@
    "level": 1,
    "page_start": 20,
    "page_end": 20,
-   "n_chars": 429,
-   "n_words": 71
+   "n_chars": 423,
+   "n_words": 65,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-009-references",
@@ -206,16 +433,26 @@
    "level": 1,
    "page_start": 20,
    "page_end": 22,
-   "n_chars": 4501,
-   "n_words": 660
+   "n_chars": 4445,
+   "n_words": 604,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 10,
-  "sections": 10,
-  "chars_total": 54493,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 11,
+  "chars_total": 55118,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -228,10 +465,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.997,
-     "coverage_ratio": 0.951,
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -255,7 +497,7 @@
      "id": "sec-003-21-gromov-norms",
      "title": "Gromov norms",
      "prose_ratio": 0.971,
-     "coverage_ratio": 0.969,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -263,15 +505,15 @@
      "id": "sec-004-22-symmetrization",
      "title": "Symmetrization",
      "prose_ratio": 0.94,
-     "coverage_ratio": 0.949,
+     "coverage_ratio": 0.955,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-3-main-result",
      "title": "Main result",
-     "prose_ratio": 0.997,
-     "coverage_ratio": 0.986,
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "pandoc"
     },

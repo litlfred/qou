@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2404.02087v1",
  "source_sha256": "ac92bd0dff8ad907",
- "brief": "Extreme plasmons Aakash A. Sahai 1 1Department of Electrical Engineering, University of Colorado Denver, Denver, CO 80204 ∗ Nanosciences largely rely on plasmons which are quasiparticles constituted b",
- "extended": "**Extreme plasmons Aakash A. Sahai 1 1Department of Electrical Engineering, University of Colorado Denver, Denver, CO 80204 ∗ Nanosciences largely rely on plasmons which are quasiparticles constituted by collective oscilla-**\n\n10 pp, 14 sections.\n\n**Outline.** Extreme plasmons; Introduction; Modified independent electron approximation; Quantum framework; Quantum system: Degeneracy and Correlation; Wigner quantum phase-space; Small-amplitude plasmons: Quantum model; Quantum coherence limit; Relativistic quantum dynamics; Controlled excitation; Surface crunch-in plasmon; Fields of the extreme plasmon; Conclusion; Acknowledgments",
+ "brief": "Extreme plasmons — 15 sections: Extreme plasmons; Introduction; Quantum framework",
+ "extended": "**Extreme plasmons**\n\n10 pp, 15 sections.\n\n**Outline.** Extreme plasmons; Introduction; Quantum framework; Quantum system: Degeneracy and Correlation; Wigner quantum phase-space; Modified independent electron approximation; Small-amplitude plasmons: Quantum model; Quantum coherence limit; Relativistic quantum dynamics; Controlled excitation; Surface crunch-in plasmon; Quantum kinetic equation using FQ(k,p); Fields of the extreme plasmon; Conclusion; Acknowledgments",
  "tokens": {
-  "brief": 50,
-  "extended": 158
+  "brief": 20,
+  "extended": 117
  },
  "sections": [
   {
@@ -20,24 +20,24 @@
    "pages": "1-2"
   },
   {
-   "id": "sec-002-modified-independent-electron-approximation",
-   "title": "Modified independent electron approximation",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-003-quantum-framework",
+   "id": "sec-002-quantum-framework",
    "title": "Quantum framework",
    "pages": "2-2"
   },
   {
-   "id": "sec-004-quantum-system-degeneracy-and-correlation",
+   "id": "sec-003-quantum-system-degeneracy-and-correlation",
    "title": "Quantum system: Degeneracy and Correlation",
    "pages": "2-2"
   },
   {
-   "id": "sec-005-wigner-quantum-phase-space",
+   "id": "sec-004-wigner-quantum-phase-space",
    "title": "Wigner quantum phase-space",
    "pages": "2-3"
+  },
+  {
+   "id": "sec-005-modified-independent-electron-approximation",
+   "title": "Modified independent electron approximation",
+   "pages": "3-3"
   },
   {
    "id": "sec-006-small-amplitude-plasmons-quantum-model",
@@ -65,17 +65,22 @@
    "pages": "6-7"
   },
   {
-   "id": "sec-011-fields-of-the-extreme-plasmon",
-   "title": "Fields of the extreme plasmon",
-   "pages": "7-9"
+   "id": "sec-011-quantum-kinetic-equation-using-fqkp",
+   "title": "Quantum kinetic equation using FQ(k,p)",
+   "pages": "7-8"
   },
   {
-   "id": "sec-012-conclusion",
+   "id": "sec-012-fields-of-the-extreme-plasmon",
+   "title": "Fields of the extreme plasmon",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-013-conclusion",
    "title": "Conclusion",
    "pages": "9-10"
   },
   {
-   "id": "sec-013-acknowledgments",
+   "id": "sec-014-acknowledgments",
    "title": "Acknowledgments",
    "pages": "10-10"
   }

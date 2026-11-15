@@ -2,121 +2,81 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-astro-ph-0203462v1",
  "source_sha256": "337c24b051365f0a",
- "brief": "1Astronomy & Astrophysics manuscript no. (will be inserted by hand later) — We present a high-resolution (R=75,000, S/N ∼ 500) spectroscopic analysis of the bright (V=11.7), extreme halo giant CS",
- "extended": "**1Astronomy & Astrophysics manuscript no. (will be inserted by hand later)**\n\n*The extreme r-element rich, iron-poor halo giant CS 31082-001*\n\n20 pp, 22 sections.\n\n**Abstract.** We present a high-resolution (R=75,000, S/N ∼ 500) spectroscopic analysis of the bright (V=11.7), extreme halo giant CS 31082-001 ([Fe/H] = −2.9), obtained in an ESO-VLT Large Programme dedicated to very metal-poor stars. We ﬁnd CS 31082-001 to be extremely rich in r-process elements, comparable in this respect only to the similarly metal-poor, but carbon-enriched, giant CS 22892-052 . As a result of the extreme overabundance of the heaviest r-process elements, and negligible blending from CH and CN mo lecular lines, a reliable measurement is obtained of the U II line at 386 nm, for the ﬁrst time in a halo star, along with numerous lines of Th II, as well as lines of 25 other r-process elements. Abundance estimates for a total of 43 ele ments (44 counting Hydrogen) are reported in CS 31082-001 , almost half of the entire perio dic table.\n\n**Outline.** Front matter; 1 Observatoire de Paris-Meudon, GEPI, 2 pl. Ju; 2 GRAAL, Universit´ e de Montpellier II, F-340; 3 Observatoire de Paris, GEPI, 61 av. de l’Obs; 5 Lund Observatory, Box 43, S-221 00 Lund, Swe; 6 Astronomical Observatory, NBIfAFG, Juliane M; 1 Introduction; 2 Observations and reductions; 1 In the two frames that were obtained through; 3 Abundance analysis, and derived abundances o; 3.1 Model atmosphere and stellar parameters; 3.2 Abundances of light and iron-peak elements; 2 In the classical notation where log ǫ(H) = 1; 4 Neutron-capture elements; 4.1 Linelists and physical data; 4.2 Error budget; 4.3 The lighter elements, 38 ≤Z≤48; 4.4 The second-peak elements, 56 ≤Z≤72",
+ "brief": "arXiv:astro-ph/0203462v1 26 Mar 2002 — We present a high-resolution (R=75,000, S/N ∼500) spectroscopic analysis of the bright (V=11.7), extreme halo giant CS 31082-001 ([Fe/H] = −2.9), obtained in an",
+ "extended": "**arXiv:astro-ph/0203462v1 26 Mar 2002**\n\n*The extreme r-element rich, iron-poor halo giant CS 31082-001*\n\n20 pp, 14 sections.\n\n**Abstract.** We present a high-resolution (R=75,000, S/N ∼500) spectroscopic analysis of the bright (V=11.7), extreme halo giant CS 31082-001 ([Fe/H] = −2.9), obtained in an ESO-VLT Large Programme dedicated to very metal-poor stars. We ﬁnd CS 31082-001 to be extremely rich in r-process elements, comparable in this respect only to the similarly metal-poor, but carbon-enriched, giant CS 22892-052 . As a result of the extreme overabundance of the heaviest r-process elements, and negligible blending from CH and CN molecular lines, a reliable measurement is obtained of the U II line at 386 nm, for the ﬁrst time in a halo star, along with numerous lines of Th II, as well as lines of 25 other r-process elements. Abundance estimates for a total of 43 elements (44 counting Hydrogen) are reported in CS 31082-001 , almost half of the entire periodic table.\n\n**Outline.** Front matter; 1 Introduction; 2 Observations and reductions; 3 Abundance analysis, and derived abundances o; 3.1 Model atmosphere and stellar parameters; 3.2 Abundances of light and iron-peak elements; 4 Neutron-capture elements; 4.1 Linelists and physical data; 4.2 Error budget; 4.3 The lighter elements, 38$\\leq$Z$\\leq$48; 4.4 The second-peak elements, 56$\\leq$Z$\\leq$7; 4.5 The third-peak elements and the actinides,; 5 Is the r-process universal ?; 7 Conclusions and future work",
  "tokens": {
-  "brief": 48,
-  "extended": 433
+  "brief": 49,
+  "extended": 371
  },
  "sections": [
   {
    "id": "sec-front-matter",
    "title": "Front matter",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-000-1-observatoire-de-paris-meudon-gepi-2-pl-jules-j",
-   "title": "Observatoire de Paris-Meudon, GEPI, 2 pl. Jules Janssen, F- 92195 Meudon Cedex, France",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-001-2-graal-universit-e-de-montpellier-ii-f-34095-mo",
-   "title": "GRAAL, Universit´ e de Montpellier II, F-34095 Montpellier Cedex 05, France",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-002-3-observatoire-de-paris-gepi-61-av-de-lobservato",
-   "title": "Observatoire de Paris, GEPI, 61 av. de l’Observatoire, F-75 014 Paris, France",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-003-5-lund-observatory-box-43-s-221-00-lund-sweden",
-   "title": "Lund Observatory, Box 43, S-221 00 Lund, Sweden",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-004-6-astronomical-observatory-nbifafg-juliane-marie",
-   "title": "Astronomical Observatory, NBIfAFG, Juliane Maries Vej 30, DK-2100 Copenhagen, Denmark",
    "pages": "1-2"
   },
   {
-   "id": "sec-005-1-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
    "pages": "2-2"
   },
   {
-   "id": "sec-006-2-observations-and-reductions",
+   "id": "sec-001-2-observations-and-reductions",
    "title": "Observations and reductions",
    "pages": "2-3"
   },
   {
-   "id": "sec-007-1-in-the-two-frames-that-were-obtained-through-t",
-   "title": "In the two frames that were obtained through the image",
+   "id": "sec-002-3-abundance-analysis-and-derived-abundances-of-t",
+   "title": "Abundance analysis, and derived abundances of the lighter elements",
    "pages": "3-3"
   },
   {
-   "id": "sec-008-3-abundance-analysis-and-derived-abundances-of",
-   "title": "Abundance analysis, and derived abundances of",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-009-31-model-atmosphere-and-stellar-parameters",
+   "id": "sec-003-31-model-atmosphere-and-stellar-parameters",
    "title": "Model atmosphere and stellar parameters",
    "pages": "3-5"
   },
   {
-   "id": "sec-010-32-abundances-of-light-and-iron-peak-elements",
+   "id": "sec-004-32-abundances-of-light-and-iron-peak-elements",
    "title": "Abundances of light and iron-peak elements",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-011-2-in-the-classical-notation-where-log-ǫh-12-and",
-   "title": "In the classical notation where log ǫ(H) = 12 and [X /H] =",
    "pages": "5-7"
   },
   {
-   "id": "sec-012-4-neutron-capture-elements",
+   "id": "sec-005-4-neutron-capture-elements",
    "title": "Neutron-capture elements",
    "pages": "7-7"
   },
   {
-   "id": "sec-013-41-linelists-and-physical-data",
+   "id": "sec-006-41-linelists-and-physical-data",
    "title": "Linelists and physical data",
    "pages": "7-7"
   },
   {
-   "id": "sec-014-42-error-budget",
+   "id": "sec-007-42-error-budget",
    "title": "Error budget",
    "pages": "7-8"
   },
   {
-   "id": "sec-015-43-the-lighter-elements-38-z48",
-   "title": "The lighter elements, 38 ≤Z≤48",
+   "id": "sec-008-43-the-lighter-elements-38leqzleq48",
+   "title": "The lighter elements, 38$\\leq$Z$\\leq$48",
    "pages": "8-10"
   },
   {
-   "id": "sec-016-44-the-second-peak-elements-56-z72",
-   "title": "The second-peak elements, 56 ≤Z≤72",
+   "id": "sec-009-44-the-second-peak-elements-56leqzleq72",
+   "title": "The second-peak elements, 56$\\leq$Z$\\leq$72",
    "pages": "10-11"
   },
   {
-   "id": "sec-017-45-the-third-peak-elements-and-the-actinides",
-   "title": "The third-peak elements and the actinides,",
+   "id": "sec-010-45-the-third-peak-elements-and-the-actinides-76l",
+   "title": "The third-peak elements and the actinides, 76$\\leq$Z$\\leq$92",
    "pages": "11-13"
   },
   {
-   "id": "sec-018-5-is-the-r-process-universal",
+   "id": "sec-011-5-is-the-r-process-universal",
    "title": "Is the r-process universal ?",
    "pages": "13-16"
   },
   {
-   "id": "sec-019-7-conclusions-and-future-work",
+   "id": "sec-012-7-conclusions-and-future-work",
    "title": "Conclusions and future work",
-   "pages": "16-16"
-  },
-  {
-   "id": "sec-020-references",
-   "title": "References",
    "pages": "16-20"
   }
  ],

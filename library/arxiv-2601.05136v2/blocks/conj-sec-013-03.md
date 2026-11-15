@@ -1,1 +1,0 @@
-LetK beahyperbolicknot. Supposethat ρisadecoratedrepresentationof D that

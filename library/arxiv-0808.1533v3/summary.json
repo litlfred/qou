@@ -2,31 +2,71 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-0808.1533v3",
  "source_sha256": "3e003cc35a4e5711",
- "brief": "On the third order helicity of magnetic fields on invariant domains in S³ — We introduce an alternative approach to the third order heli city of a volume preserving vector ﬁeld B, which leads us to a",
- "extended": "**On the third order helicity of magnetic fields on invariant domains in S³**\n\n*October 28, 2018*\n\n30 pp, 4 sections.\n\n**Abstract.** We introduce an alternative approach to the third order heli city of a volume preserving vector ﬁeld B, which leads us to a lower bound for the L2-energy of B. The proposed approach exploits correspondence between the Milnor ¯ µ 123-invariant for 3-component links and the homotopy invariants of maps to conﬁguration sp aces, and we provide a simple geometric proof of this fact in the case of Borromean l inks. Based on these connections we develop a formulation for the third order hel icity of B on invariant un- linked domains of B, and provide Arnold’s style ergodic interpretation of this invariant as an average asymptotic ¯µ 123-invariant of orbits of B.\n\n**Outline.** Introduction; Energy bound.; Comparison to the known approaches via Massey ; Zero contribution of short paths to the time a\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.2: Let L = {L1, L2, L3} be a 3-component Borromean link in S3, consider the\n- Theorem: For orbits {O 1(x), O 2(y)} of B1 and B2 through x, y ∈ M, we introduce the\n- Theorem 3.1: Given B1, B2 ∈ SVect(M), The following\n- Theorem 4.3: On every unlinked invariant handlebody T in\n- Theorem 4.3: We begin by observing that given a volume preserving vector ﬁeld B on M and its ﬂow\n- Theorem 5.1: For any real valued L1-function F",
+ "brief": "On the third order helicity of magnetic fields on invariant domains in S³ — We introduce an alternative approach to the third order helicity of a volume preserving vector ﬁeld B, which leads us to a",
+ "extended": "**On the third order helicity of magnetic fields on invariant domains in S³**\n\n*R. Komendarczyk∗†*\n\n30 pp, 12 sections.\n\n**Abstract.** We introduce an alternative approach to the third order helicity of a volume preserving vector ﬁeld B, which leads us to a lower bound for the L2-energy of B. The proposed approach exploits correspondence between the Milnor ¯µ123-invariant for 3-component links and the homotopy invariants of maps to conﬁguration spaces, and we provide a simple geometric proof of this fact in the case of Borromean links. Based on these connections we develop a formulation for the third order helicity of B on invariant un- linked domains of B, and provide Arnold’s style ergodic interpretation of this invariant as an average asymptotic ¯µ123-invariant of orbits of B.\n\n**Outline.** Front matter; Introduction; The Milnor mu-123-invariant and the Hopf degre; Invariants of volume preserving flows. Helicit; Definition of ``mu-123-helicity'' on invariant; The ergodic interpretation of H-123; Flux formula for H-123.; Energy bound.; Comparison to the known approaches via Massey ; Equations for the frozen-in-field forms; Zero contribution of short paths to the time a; Notation in Section ??",
  "tokens": {
   "brief": 49,
-  "extended": 354
+  "extended": 303
  },
  "sections": [
   {
-   "id": "sec-000-introduction",
-   "title": "Introduction",
-   "pages": "1-21"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
   },
   {
-   "id": "sec-001-energy-bound",
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-the-milnor-mu-123-invariant-and-the-hopf-degree",
+   "title": "The Milnor mu-123-invariant and the Hopf degree.",
+   "pages": "3-10"
+  },
+  {
+   "id": "sec-002-invariants-of-volume-preserving-flows-helicities",
+   "title": "Invariants of volume preserving flows. Helicities.",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-003-definition-of-mu-123-helicity-on-invariant-unlin",
+   "title": "Definition of ``mu-123-helicity'' on invariant unlinked handlebodies.",
+   "pages": "11-15"
+  },
+  {
+   "id": "sec-004-the-ergodic-interpretation-of-h-123",
+   "title": "The ergodic interpretation of H-123",
+   "pages": "15-19"
+  },
+  {
+   "id": "sec-005-flux-formula-for-h-123",
+   "title": "Flux formula for H-123.",
+   "pages": "19-21"
+  },
+  {
+   "id": "sec-006-energy-bound",
    "title": "Energy bound.",
    "pages": "21-25"
   },
   {
-   "id": "sec-002-comparison-to-the-known-approaches-via-massey-pr",
+   "id": "sec-007-comparison-to-the-known-approaches-via-massey-pr",
    "title": "Comparison to the known approaches via Massey products.",
-   "pages": "25-29"
+   "pages": "25-28"
   },
   {
-   "id": "sec-003-zero-contribution-of-short-paths-to-the-time-ave",
+   "id": "sec-008-equations-for-the-frozen-in-field-forms",
+   "title": "Equations for the frozen-in-field forms",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-009-zero-contribution-of-short-paths-to-the-time-ave",
    "title": "Zero contribution of short paths to the time average",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-010-notation-in-section",
+   "title": "Notation in Section ??",
    "pages": "29-30"
   }
  ],
@@ -34,8 +74,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

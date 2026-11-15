@@ -1,0 +1,48 @@
+3.1. Vanishing theorems revisited 43
+
+The group II(X) of continuous characters ¥ : 1{(X,0) —> A* admits a
+natural product decomposition
+
+T(X) = M(X)p x T(X);,
+where
+T1(X)p = { x € TX): x" = 1 for some n with / {n }
+
+denotes the subgroup of all characters of finite order prime to / and where by
+definition II(X); is the group of all characters that factor over the maximal
+pro-/-quotient 7 (X,0); = 2{(X,0);. The latter is a free Z;-module of finite
+rank [17]. So with the same arguments as in [41, sect. 3.2] the set II(X),
+of pro-/-characters can be identified with the set of A-valued points of a
+scheme in a natural way (even though as in loc. cit. the multiplication of
+characters does not come from a group scheme structure). This being said,
+we consider the set of all tame characters
+
+mx) = JJ x-Xx)
+
+XET(X)
+
+as the disjoint union of the infinitely many components x - II(X); indexed
+by the torsion characters y € II(X),, and we say that a statement holds for
+a generic character if it holds for all characters in an open subset of II(X)
+that is dense in each of these components.
+
+For sheaf complexes K € D(X) and characters y € II(X) we consider as
+in the previous chapters the twist Ky = K ®, Ly by the local system Ly. Our
+Tannakian constructions will be based on the following generic vanishing
+assumption for such character twists.
+
+ASSUMPTION GV(X). Let P € P(X). Then for generic x € TI(X) the
+forget support map
+He(X,Py) —> H*(X,Py)
+is an isomorphism, and
+
+H'(X,Py) = Hi(X,Py) = 0 forall i#0.
+
+For complex abelian varieties this is precisely the content of the generic
+vanishing theorem 1.1, the claim about the forget support map being trivial
+in that case. At present we do not know whether the assumption GV (X) also
+holds for abelian varieties over an algebraically closed field k of positive
+characteristic p = char(k) > 0, but in any case the semiabelian version can
+be deduced from the abelian one as follows.
+
+THEOREM 3.1. If the maximal abelian variety quotient A = X /T of X
+satisfies the assumption GV (A), then also GV(X) holds.

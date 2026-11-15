@@ -7,7 +7,8 @@
   "bytes": 365838,
   "pages": 28,
   "text_source": "embedded",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,17 +21,25 @@
   },
   "doi": null,
   "title": "REPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS",
-  "authors_raw": "INTO PGL (3, C): EXACT COMPUTATIONS IN LOW COMPLEXITY",
+  "authors_raw": "INTO PGL(3, C): EXACT COMPUTATIONS IN LOW COMPLEXITY",
   "title_lines": [
    "REPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS"
   ],
-  "abstract": "In this paper we are interested in computing representation s of the funda- mental group of a 3-manifold into PGL (3,C) (in particular in PGL (2,C),PGL(3,R) and PU(2,1)). The representations are obtained by gluing decorated tet rahedra of \ufb02ags as in [10, 2]. W e list complete computations (giving 0-dimensional or 1 -dimensional solution sets (for unipotent boundary holonomy) for the \ufb01rst complet e hyperbolic non-compact manifolds with \ufb01nite volume which are obtained gluing less t han three tetrahedra with a description of the computer methods used to \ufb01nd them. The me thods we use work for non-unipotent boundary holonomy as shown in some examples.",
+  "abstract": "In this paper we are interested in computing representations of the funda- mental group of a 3-manifold into PGL(3, C) (in particular in PGL(2, C), PGL(3, R) and PU(2, 1)). The representations are obtained by gluing decorated tetrahedra of ﬂags as in [10, 2]. We list complete computations (giving 0-dimensional or 1-dimensional solution sets (for unipotent boundary holonomy) for the ﬁrst complete hyperbolic non-compact manifolds with ﬁnite volume which are obtained gluing less than three tetrahedra with a description of the computer methods used to ﬁnd them. The methods we use work for non-unipotent boundary holonomy as shown in some examples.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181106171114-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20181106171114-05'00'"
+  },
+  "title_raw": "REPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "REPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS INTO PGL (3 , C ) : EXACT COMPUTATIONS IN LOW COMPLEXITY. Contents Introduction Three geometric structures on three manifolds Flag tetrahedra Ideal triangulations by ﬂag tetrahedra Holonomy of a decoration Computational steps An example: the ﬁgure",
+   "outline": "1. Introduction",
+   "text": "REPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -39,67 +48,467 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Three geometric structures on three manifolds",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "Flag tetrahedra",
    "page": 5,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Ideal triangulations by flag tetrahedra",
    "page": 8,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "Holonomy of a decoration",
    "page": 9,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "Computational steps",
    "page": 12,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "An example: the figure-eight knot",
    "page": 16,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 1,
    "title": "Description of the unipotent solutions for the first hyperbolic manifolds",
    "page": 20,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 1,
    "title": "References",
    "page": 27,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The cross-ratio coordinates (or z-coordinates)",
+   "page": 7,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Triangulation of m004",
+   "page": 17,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "17"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The holonomy of the ﬁgure eight cusp. The red line corresponds to L and the green line to M",
+   "page": 17,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "17"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Description of the solutions",
+   "page": 22,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Triangulation of m007 ◮f1 = Y 3 −2Y 2 −1",
+   "page": 23,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "23"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Triangulation of m009",
+   "page": 23,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "23"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Triangulation of m015",
+   "page": 25,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "25"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Triangulation of Whitehead link complement",
+   "page": 26,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "26"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 860,
+   "n_words": 129,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -107,8 +516,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 11396,
-   "n_words": 1932
+   "n_chars": 11284,
+   "n_words": 1807,
+   "label_start": null,
+   "label_end": "4"
   },
   {
    "id": "sec-001-2-three-geometric-structures-on-three-manifolds",
@@ -117,8 +528,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 2399,
-   "n_words": 490
+   "n_chars": 2376,
+   "n_words": 465,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-002-3-flag-tetrahedra",
@@ -127,8 +540,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 8,
-   "n_chars": 6147,
-   "n_words": 1192
+   "n_chars": 6086,
+   "n_words": 1131,
+   "label_start": "5",
+   "label_end": "8"
   },
   {
    "id": "sec-003-4-ideal-triangulations-by-flag-tetrahedra",
@@ -137,8 +552,10 @@
    "level": 1,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 4366,
-   "n_words": 839
+   "n_chars": 4310,
+   "n_words": 783,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
    "id": "sec-004-5-holonomy-of-a-decoration",
@@ -147,8 +564,10 @@
    "level": 1,
    "page_start": 9,
    "page_end": 12,
-   "n_chars": 6564,
-   "n_words": 1301
+   "n_chars": 6498,
+   "n_words": 1235,
+   "label_start": "9",
+   "label_end": "12"
   },
   {
    "id": "sec-005-6-computational-steps",
@@ -157,8 +576,10 @@
    "level": 1,
    "page_start": 12,
    "page_end": 16,
-   "n_chars": 12312,
-   "n_words": 2313
+   "n_chars": 12153,
+   "n_words": 2154,
+   "label_start": "12",
+   "label_end": "16"
   },
   {
    "id": "sec-006-7-an-example-the-figure-eight-knot",
@@ -167,8 +588,10 @@
    "level": 1,
    "page_start": 16,
    "page_end": 20,
-   "n_chars": 9006,
-   "n_words": 2040
+   "n_chars": 8790,
+   "n_words": 1824,
+   "label_start": "16",
+   "label_end": "20"
   },
   {
    "id": "sec-007-8-description-of-the-unipotent-solutions-for-the",
@@ -177,8 +600,10 @@
    "level": 1,
    "page_start": 20,
    "page_end": 27,
-   "n_chars": 11265,
-   "n_words": 2518
+   "n_chars": 11088,
+   "n_words": 2341,
+   "label_start": "20",
+   "label_end": "27"
   },
   {
    "id": "sec-008-references",
@@ -187,15 +612,41 @@
    "level": 1,
    "page_start": 27,
    "page_end": 28,
-   "n_chars": 3204,
-   "n_words": 491
+   "n_chars": 3176,
+   "n_words": 463,
+   "label_start": "27",
+   "label_end": "28"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 9,
-  "sections": 9,
-  "chars_total": 66659
+  "toc_inferred_entries": 0,
+  "figure_entries": 8,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "Introduction"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 10,
+  "chars_total": 66621,
+  "furniture_lines_stripped": 0
  }
 }

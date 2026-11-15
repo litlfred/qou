@@ -1,0 +1,48 @@
+dt € Qo,/, and of H € H°(8M, Adop),. Then the torsion of this complex is (see
+GKZ94| Appendix A, Proposition 18])
+
+tor(D* ® k(Y))
+
+tor(Cone(¢) @ k(Y)) = tor(C*(M, Adop))
+
+(2.1)
+
+We deduce the following lemma :
+Lemma 2.3.7. The torsion of the complex Cone(¢) ® k(Y) is ; E€k(Y)
+
+Proof. By construction tor(D*@k(Y)) = dt@ HA, and the result follows from fromula
+
+(2.1). Oo
+
+Now we can apply Theorem to the rationally exact complex Cone(¢), and
+obtain u(f) = 0;(—1)'*! length(H*(Cone(¢))). Now we compute the cohomology of
+this complex.
+
+The exact sequence 0 + D* — Cone(¢) + C*t!(M,Adop), + 0 induces the
+long exact sequence in cohomology : 0 — H°(Cone(¢)) > H!(M,Adop),
+0%, j, > H*(Cone(¢)) + H?(M, Adop), + H°(OM, Adop); + H?(M, Adop), >
+H?(Cone(¢)) + 0
+
+Lemma 2.3.8. The morphism a is surjective.
+
+Proof. We construct a section s : 0%), + H 1(M, Adop), as follows. Let 6 :
+Qo,/k — Oy, be a morphism of O,-modules, equivalently, by the universal pro-
+perty of Q, 6 is a k-derivation O, + O,. We define s(0) € H1(M, Adop), by the
+formula s(9)(y) = 0(p(y))p(7)~* where by 6(p(7)) we mean that we apply @ to each
+coefficient of p(y). We compute directly that Tr s(@(y)) = @(det p(y)) = 0, and that
+
+8(A(96)) = s(A(q)) + Ad op(g)s(4(6)).
+Then a0 s(8)(Y,) = Tr((p(7))) = @(Y,), and the lemma is proved. Oo
+
+Lemma 2.3.9. The morphism a is injective, hence H®(Cone(¢)) = 0.
+
+Proof. By the Universal Coefficient Theorem, H!(M, Adop), ~ Hi(M, Adop)* ~
+O, because H,(M, Adop) ~ k(Y). The lemma follows. Oo
+
+Lemma 2.3.10. Denote by T the torsion part of the module H,(M, Adop),. The
+O,-module H*(Cone(¢)) is isomorphic to the torsion module T.
+
+Proof. Again by Universal Coefficient Theorem, there is an isomorphism
+H?(M, Adop), © H2(M, Ad op)* © Ext(Hi(M, Adop),,O,) x O, ®T
+
+56

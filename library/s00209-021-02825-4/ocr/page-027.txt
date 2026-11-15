@@ -1,0 +1,57 @@
+A representation theoretic explanation... 1385
+
+(a) Symb(T) is (H™ x H'?)-stable.
+(b) T = po- v for some weakly stable polynomial po € V(a) and some linear functional
+
+wy.
+
+Notice that our naive guess at strong stability results which emulate the Borcea—Brandén
+characterization (Corollaries 6.9 and 6.10) was incorrect. We actually needed to consider
+closed circular stability regions Cx, so that their complements in CP! would be open (ie.,
+to ensure Grace pair disjointness, which is required to apply Theorem 6.2). We see this play
+out in condition (ii)(a) of Corollary 6.12.
+
+7 Stability properties of real linear operators
+
+Borcea and Brandén also classified the class of weak real stability preserving linear operators.
+As in the complex case, they showed that weak real stability preservation of a linear operator
+T is almost equivalent to real stability of the associated symbol Symbz g(T). We have to say
+“almost equivalent” here because there are certain weak real stability preserving operators for
+which the corresponding symbol is not real stable. As before, this implies a certain dimension
+restriction: such operators must have image of dimension at most two.
+
+We will now characterize all strong real stability preserving linear operators. As above,
+strong real stability preservation will serve to eliminate the degeneracy condition of the
+Borcea—Brindén characterization. In this section, we duplicate the outline of our previous
+discussion on complex operators, making use of arguments similar to those found in [1] to
+fill in the gaps.
+
+Further, we also obtain a characterization of a certain class of operators which preserve
+ray- and interval-rootedness. The question of a full characterization of such operators is as
+of yet still an open problem (see [3]). Here, we answer this question for operators which
+preserve both strong ray- or interval-rootedness as well as weak real-rootedness.
+
+7.1 Weak real stability preservation
+
+Borcea and Brandén obtain the following characterization of weak real stability preserving
+linear operators. Recall the notion of proper position (denoted by <) given in Definition 4.8.
+Theorem | .2 (Borcea—Brandén) Fix 4 € Nj’ and any linear operator T : Ry[x1,..-, Xm] >
+R[x, ..., Xm]. The following are equivalent.
+
+(i) T maps real stable polynomials to weakly real stable polynomials.
+(ii) One of the following holds:
+
+(a) Symbz,(T) is 12" -stable.
+(b) Symbg,(T) is (H™ x H'?)-stable.
+(c) T has image of dimension at most two, and is of the form
+
+T:prrqg-Wilp) +r: yop)
+
+where q,r € R[x1,..., Xm] are weakly real stable such that g <r, and W, 2 are
+real linear functionals.
+
+As in the case of complex operators, the degeneracy condition (ii)(c) is the result of allow-
+ing weak real stability preserving operators. We now give an example which demonstrates
+its necessity.
+
+D Springer

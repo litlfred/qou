@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-0806.2317v1",
  "source_sha256": "c54e80d460413a5e",
- "brief": "Bounds for codes and designs in complex subspaces Aidan Roy ∗ — We introduce the concepts of complex Grassmannian codes and designs.",
- "extended": "**Bounds for codes and designs in complex subspaces Aidan Roy ∗**\n\n*Institute for Quantum Information Science, University of C algary*\n\n33 pp, 11 sections.\n\n**Abstract.** We introduce the concepts of complex Grassmannian codes and designs. Let Gm,n denote the set of m-dimensional subspaces of Cn: then a code is a ﬁnite subset of Gm,n in which few distances occur, while a design is a ﬁnite subset of Gm,n that polynomially approximates the entire set. Using Delsa rte’s linear programming techniques, we ﬁnd upper bounds for the size of a code and lower bounds for the size of a design, and we show that association s chemes can occur when the bounds are tight. These results are motivated by the bounds for real subspaces recently found by Bachoc, Coulangeon and Nebe, an d the bounds generalize those of Delsarte, Goethals and Seidel for codes and designs on the complex unit sphere.\n\n**Outline.** Introduction; Orbitals; Representations; Symmetric spaces; Zonal polynomials; Bounds; Other bounds; Examples; Designs; Association schemes; Acknowledgements",
+ "brief": "Bounds for codes and designs in complex subspaces — We introduce the concepts of complex Grassmannian codes and designs.",
+ "extended": "**Bounds for codes and designs in complex subspaces**\n\n*Aidan Roy∗*\n\n33 pp, 12 sections.\n\n**Abstract.** We introduce the concepts of complex Grassmannian codes and designs. Let Gm,n denote the set of m-dimensional subspaces of Cn: then a code is a ﬁnite subset of Gm,n in which few distances occur, while a design is a ﬁnite subset of Gm,n that polynomially approximates the entire set. Using Delsarte’s linear programming techniques, we ﬁnd upper bounds for the size of a code and lower bounds for the size of a design, and we show that association schemes can occur when the bounds are tight. These results are motivated by the bounds for real subspaces recently found by Bachoc, Coulangeon and Nebe, and the bounds generalize those of Delsarte, Goethals and Seidel for codes and designs on the complex unit sphere.\n\n**Outline.** Front matter; Introduction; Orbitals; Representations; Symmetric spaces; Zonal polynomials; Bounds; Other bounds; Examples; Designs; Association schemes; Acknowledgements",
  "tokens": {
-  "brief": 33,
-  "extended": 264
+  "brief": 30,
+  "extended": 250
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",

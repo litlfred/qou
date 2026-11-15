@@ -1,6 +1,6 @@
 ---
 doc_id: ki6c
-doc_title: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings Tomotada Ohtsuki and Yoshiyuki Yokota Introduction"
+doc_title: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings"
 section_id: sec-002-22-some-behaviors-of-the-dilogarithm-function
 section_title: "Some behaviors of the dilogarithm function"
 section_number: 2.2
@@ -8,7 +8,9 @@ pages: 6-7
 source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
+doc_brief: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings — We give presentations of the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings."
 ---
+Some behaviors of the dilogarithm function
 In this section, we show some behaviors of the dilogarithm function.
 We put
 Λ(t) = Re
@@ -131,32 +133,11 @@ e2π√−1 (t+X√−1)))
 the “X ≥0” part of the lemma is satisﬁed.
 6
 Further, by (7) and (10),
-Li2
-(
-e2π√−1 ˜t)
-+ Li2
-(
-e−2π√−1 ˜t)
-= 2π2(˜t2 −˜t + 1
-6
-)
-.
+
+F F > 1
+Lio(2"YT) + Lig(e PVT) = 2? (P —E+ a):
 Hence,
-Re
-1
-2π√−1
-(
-Li2
-(
-e2π√−1 (t+X√−1))
-+ Li2
-(
-e−2π√−1 (t+X√−1)))
-= 2π
-(
-t −1
-2
-)
-X.
-Therefore, we obtain the “X < 0” part of the lemma from the “X ≥0” part.
-2.3
+1 ; 1
+Re (Lin(PX MAD) 4 Lig(e VND) = a(t 5) x.
+Qr/-1 2
+Therefore, we obtain the “X < 0” part of the lemma from the “X > 0” part. O

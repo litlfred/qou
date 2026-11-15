@@ -3,12 +3,17 @@
  "doc_id": "arxiv-1108.3035v2",
  "source_sha256": "935bf1bd3e13821b",
  "brief": "Random Matrix Theory for the Hermitian Wilson Dirac Operator and the chGUE – GUE Transition — We introduce a random two-matrix model interpolating between a chiral Hermitian (2n + ν) × (2n+ν) matrix",
- "extended": "**Random Matrix Theory for the Hermitian Wilson Dirac Operator and the chGUE – GUE Transition**\n\n*Gernot Akemann1 and Taro Nagao2*\n\n27 pp, 5 sections.\n\n**Abstract.** We introduce a random two-matrix model interpolating between a chiral Hermitian (2n + ν) × (2n+ν) matrix and a second Hermitian matrix without symmetries. These are taken from the chiral Gaussian Unitary Ensemble (chGUE) and Gaussian Unitary Ensemble (GUE), respectively. In the microscopic large-n limit in the vicinity of the chGUE (which we denote by weakly non-chiral limit) this theory is in one to one correspondence to the partition function of Wilson chiral perturbation theory in the epsilon regime, such as the related two matrix-model previously introduced in [20, 21]. For a generic number of ﬂavours and rectangular block matrices in the chGUE part we derive an eigenvalue representation for the partition function displaying a Pfaﬃan structure.\n\n**Outline.** 1 Introduction; 2 The Random Matrix Model; 3 The eigenvalue picture; 5 The microscopic weakly non-chiral large-N li; 6 Conclusions",
+ "extended": "**Random Matrix Theory for the Hermitian Wilson Dirac Operator and the chGUE – GUE Transition**\n\n*Gernot Akemann1 and Taro Nagao2*\n\n27 pp, 15 sections.\n\n**Abstract.** We introduce a random two-matrix model interpolating between a chiral Hermitian (2n + ν) × (2n+ν) matrix and a second Hermitian matrix without symmetries. These are taken from the chiral Gaussian Unitary Ensemble (chGUE) and Gaussian Unitary Ensemble (GUE), respectively. In the microscopic large-n limit in the vicinity of the chGUE (which we denote by weakly non-chiral limit) this theory is in one to one correspondence to the partition function of Wilson chiral perturbation theory in the epsilon regime, such as the related two matrix-model previously introduced in [20, 21]. For a generic number of ﬂavours and rectangular block matrices in the chGUE part we derive an eigenvalue representation for the partition function displaying a Pfaﬃan structure.\n\n**Outline.** Front matter; 1 Introduction; 2 The Random Matrix Model; 3 The eigenvalue picture; 4 All density correlation functions for finite; 5 The microscopic weakly non-chiral large-N li; 6 Conclusions; A Equivalence to the partition function of Wch; A.1 Alternative representation of Nf=1 WchPT; B Consistency checks of the partition function; B.1 The GUE limit a1 for =0; B.2 The chGUE limit a0 and factorisation; C Skew-orthogonal polynomials; C.1 Expectation value of a single characterist; C.2 The odd polynomials R2j+1(x)",
  "tokens": {
   "brief": 49,
-  "extended": 267
+  "extended": 364
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -22,17 +27,62 @@
   {
    "id": "sec-002-3-the-eigenvalue-picture",
    "title": "The eigenvalue picture",
-   "pages": "5-15"
+   "pages": "5-9"
   },
   {
-   "id": "sec-003-5-the-microscopic-weakly-non-chiral-large-n-limi",
+   "id": "sec-003-4-all-density-correlation-functions-for-finite-n",
+   "title": "All density correlation functions for finite-N",
+   "pages": "9-15"
+  },
+  {
+   "id": "sec-004-5-the-microscopic-weakly-non-chiral-large-n-limi",
    "title": "The microscopic weakly non-chiral large-N limit",
    "pages": "15-18"
   },
   {
-   "id": "sec-004-6-conclusions",
+   "id": "sec-005-6-conclusions",
    "title": "Conclusions",
-   "pages": "18-27"
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-006-a-equivalence-to-the-partition-function-of-wchpt",
+   "title": "A Equivalence to the partition function of WchPT",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-007-a1-alternative-representation-of-nf1-wchpt",
+   "title": "A.1 Alternative representation of Nf=1 WchPT",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-008-b-consistency-checks-of-the-partition-function-a",
+   "title": "B Consistency checks of the partition function and factorisation",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-009-b1-the-gue-limit-a1-for-0",
+   "title": "B.1 The GUE limit a1 for =0",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-010-b2-the-chgue-limit-a0-and-factorisation",
+   "title": "B.2 The chGUE limit a0 and factorisation",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-011-c-skew-orthogonal-polynomials",
+   "title": "C Skew-orthogonal polynomials",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-012-c1-expectation-value-of-a-single-characteristic",
+   "title": "C.1 Expectation value of a single characteristic polynomial",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-013-c2-the-odd-polynomials-r2j1x",
+   "title": "C.2 The odd polynomials R2j+1(x)",
+   "pages": "24-27"
   }
  ],
  "provenance": {

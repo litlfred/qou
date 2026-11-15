@@ -7,10 +7,11 @@ section_number: null
 pages: 15-16
 source_pdf: 0401084v3.pdf
 source_sha256: f56bbd4cee4f3418
-doc_brief: "Some limits of the colored Jones polynomials of the figure-eight knot — W e calculate limits of the colored Jones polynomials of the ﬁ gure- eight knot and conclude that in most cases they determine"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.987
-latex_coverage_ratio: 0.958
+latex_prose_ratio: 0.88
+latex_coverage_ratio: 0.971
+doc_brief: "Some limits of the colored Jones polynomials of the figure-eight knot — We calculate limits of the colored Jones polynomials of the ﬁgure- eight knot and conclude that in most cases they determine"
 ---
 In this appendix, we will consider integral surgeries along the figure-eight knot.
 

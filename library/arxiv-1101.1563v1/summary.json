@@ -2,35 +2,49 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1101.1563v1",
  "source_sha256": "0c45b250fc4a2a49",
- "brief": "Gröbner-Shirshov bases for categories — In this paper we establish Composition-Diamond lemma for small categ ories. We give Gr¨ obner-Shirshov bases for simplicial category and cyclic c ategory.",
- "extended": "**Gröbner-Shirshov bases for categories**\n\n*School of Mathematical Sciences, South China Normal Univer sity*\n\n20 pp, 3 sections.\n\n**Abstract.** In this paper we establish Composition-Diamond lemma for small categ ories. We give Gr¨ obner-Shirshov bases for simplicial category and cyclic c ategory.\n\n**Outline.** 1 Introduction; 3 Free categories and free category partial al; 4 Composition-Diamond lemma for categories\n\n**Extracted claims (proposals, not verified).**\n- Theorem 4.4: Let S ⊂ kC (X) be a nonempty\n- Theorem 5.1: Let X, S be deﬁned as the above, the generating set and the relation se t\n- Theorem 5.4: Let Y , S be deﬁned as the above, the generating set and the relation se t\n- Corollary: The set of all irreducible NLSW’s [ u] such that u does not contain any\n- Corollary 5.2: In the category C(X|S), each morphism\n- Lemma 4.2: Let a1s1b1, a 2s2b2 be monic S-words. If S is a Gr¨ obner-Shirshov basis in",
+ "brief": "Gröbner-Shirshov bases for categories — In this paper we establish Composition-Diamond lemma for small categories. We give Gr¨obner-Shirshov bases for simplicial category and cyclic category.",
+ "extended": "**Gröbner-Shirshov bases for categories**\n\n*School of Mathematical Sciences, South China Normal University*\n\n20 pp, 6 sections.\n\n**Abstract.** In this paper we establish Composition-Diamond lemma for small categories. We give Gr¨obner-Shirshov bases for simplicial category and cyclic category.\n\n**Outline.** Front matter; 1 Introduction; 2 A short survey on Gröbner-Shirshov bases; 3 Free categories and free category partial al; 4 Composition-Diamond lemma for categories; 5 Gröbner-Shirshov bases for the simplicial ca",
  "tokens": {
-  "brief": 48,
-  "extended": 230
+  "brief": 47,
+  "extended": 130
  },
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "title": "Introduction",
-   "pages": "1-7"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
   },
   {
-   "id": "sec-001-3-free-categories-and-free-category-partial-alge",
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-a-short-survey-on-gröbner-shirshov-bases",
+   "title": "A short survey on Gröbner-Shirshov bases",
+   "pages": "2-7"
+  },
+  {
+   "id": "sec-002-3-free-categories-and-free-category-partial-alge",
    "title": "Free categories and free category partial algebras",
    "pages": "7-8"
   },
   {
-   "id": "sec-002-4-composition-diamond-lemma-for-categories",
+   "id": "sec-003-4-composition-diamond-lemma-for-categories",
    "title": "Composition-Diamond lemma for categories",
-   "pages": "8-20"
+   "pages": "8-11"
+  },
+  {
+   "id": "sec-004-5-gröbner-shirshov-bases-for-the-simplicial-cate",
+   "title": "Gröbner-Shirshov bases for the simplicial category and the cyclic category",
+   "pages": "11-20"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

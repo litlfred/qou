@@ -6,10 +6,12 @@
   "sha256": "c2244e03b17048fb95c7aebc7d093ef2c83b41e07ca0db4ec8ec11f0162d7655",
   "bytes": 1170692,
   "pages": 35,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +22,29 @@
   },
   "doi": null,
   "title": "On the structure of trans-series in quantum field theory",
-  "authors_raw": "Marcos Mari\u00f1oa, Ramon Miravitllasa and Tom\u00e1s Reisb",
-  "abstract": "Many observables in quantum field theory can be expressed in terms of trans-series, in which one adds to the perturbative series a typically infinite sum of exponentially small corrections, due to instantons or to renormalons. Even after Borel resummation of the series in the coupling constant, one has to sum this infinite series of small exponential corrections. It has been argued that this leads to a new divergence, which is sometimes called the divergence of the OPE. We show that, in some interesting examples in quantum field theory, the series of small exponential corrections is convergent, order by order in the coupling constant. In particular, we give numerical evidence for this convergence property in the case of the free energy of integrable asymptotically free theories, which has been intensively studied recently in the framework of resurgence. Our results indicate that, in these examples, the Borel resummed trans-series leads to a well defined function, and there are no further divergences. arXiv:2302.08363v2 [hep-th] 5 Mar 2025",
-  "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20250306014034Z",
-   "Creator": "LaTeX with hyperref",
-   "Producer": "medialab",
-   "Title": ""
-  },
-  "title_prev": "Prepared for submission to JHEP On the structure of trans-series in quantum field theory",
+  "authors_raw": "Marcos Mariñoa, Ramon Miravitllasa and Tomás Reisb",
   "title_lines": [
    "On the structure of trans-series in",
    "quantum field theory"
-  ]
+  ],
+  "abstract": "Many observables in quantum field theory can be expressed in terms of trans-series, in which one adds to the perturbative series a typically infinite sum of exponentially small corrections, due to instantons or to renormalons. Even after Borel resummation of the series in the coupling constant, one has to sum this infinite series of small exponential corrections. It has been argued that this leads to a new divergence, which is sometimes called the divergence of the OPE. We show that, in some interesting examples in quantum field theory, the series of small exponential corrections is convergent, order by order in the coupling constant. In particular, we give numerical evidence for this convergence property in the case of the free energy of integrable asymptotically free theories, which has been intensively studied recently in the framework of resurgence. Our results indicate that, in these examples, the Borel resummed trans-series leads to a well defined function, and there are no further divergences. arXiv:2302.08363v2 [hep-th] 5 Mar 2025",
+  "docinfo": {
+   "Producer": "medialab",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20250306014034Z"
+  },
+  "title_raw": "On the structure of trans-series in quantum field theory",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "On the structure of trans-series in quantum field theory",
+   "outline": "Introduction",
+   "text": "On the structure of trans-series in quantum field theory",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -41,109 +52,659 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Trans-series and their structure",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "The large N sigma model, revisited",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
-   "title": "Complex Chern\u2013Simons theory",
+   "title": "Complex Chern–Simons theory",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "Integrable models",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "The free energy of integrable models",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Bosonic models",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 3,
    "title": "Trans-series computation",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 3,
    "title": "Numerical analysis",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
-   "title": "The Gross\u2013Neveu model",
+   "title": "The Gross–Neveu model",
    "page": 24,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 3,
    "title": "Summary of the recursive problem",
    "page": 25,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 3,
    "title": "Leading orders in alpha",
    "page": 28,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 3,
    "title": "Numerical analysis",
    "page": 29,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
   },
   {
    "level": 3,
    "title": "Large N solution",
    "page": 31,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 1,
    "title": "Conclusions and open problems",
    "page": 31,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The sequences (3.24) for n = 1 (left) and n = 6 (right), represented by black dots, together with their Richardson transforms of order 3, represented by red dots",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The singularity structure of the large N two point function is shown on the left, in the p2/m2 plane. There is a single branch cut singularity at −9, as it follows from (3.23). At finite N, it has been argued in [32] that there will be many singularities along the negative real axis, at positions −(",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The free energy F(h) has a branch cut singularity at h = m",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Generic singularity structure of σ(ω). The second integral in (5.14) or (5.15) is integrated over",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Sequence |a0,ℓ/a0,ℓ+1| for the free energy of the O(8) non-linear sigma model (black), together with the 1st (red) and 2nd (orange) Richardson transforms. The dashed line is the value R to which the sequences converge",
+   "page": 22,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "21"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Sequence ℓlog",
+   "page": 23,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Parameters R and bn of the asymptotics (2.8), for the free energy of the O(N) non-linear sigma model at different values of N. We extract the parameters from the leading n = 0 and subleading n = 1 corrections in ˜α. For the radius R, we find numerical evidence that this parameter does not depend on",
+   "page": 23,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Parameters R and bn of the asymptotics (2.8), for the free energy of the SU(N) PCF model at different values of N",
+   "page": 24,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "23"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Estimates for the radius of convergence R as a function of ∆= (N −2)−1",
+   "page": 30,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "29"
+  },
+  {
+   "kind": "table",
+   "number": "3",
+   "title": "Estimated radius as a function of N, using 200 numeric coefficients. R is the radius in the y-plane, while Rh is the radius in the h-plane",
+   "page": 30,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "29"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "0",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "10",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "13",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "14",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "19",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "23",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "24",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "27",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "28",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "30",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1495,
+   "n_words": 217,
+   "label_start": "0",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -151,8 +712,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 5921,
-   "n_words": 952
+   "n_chars": 5932,
+   "n_words": 950,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-001-trans-series-and-their-structure",
@@ -161,8 +724,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 5,
-   "n_chars": 4303,
-   "n_words": 722
+   "n_chars": 4343,
+   "n_words": 733,
+   "label_start": "2",
+   "label_end": "4"
   },
   {
    "id": "sec-002-the-large-n-sigma-model-revisited",
@@ -171,18 +736,22 @@
    "level": 1,
    "page_start": 5,
    "page_end": 9,
-   "n_chars": 9663,
-   "n_words": 1786
+   "n_chars": 9750,
+   "n_words": 1844,
+   "label_start": "4",
+   "label_end": "8"
   },
   {
    "id": "sec-003-complex-chernsimons-theory",
    "number": null,
-   "title": "Complex Chern\u2013Simons theory",
+   "title": "Complex Chern–Simons theory",
    "level": 1,
    "page_start": 9,
    "page_end": 11,
-   "n_chars": 4589,
-   "n_words": 798
+   "n_chars": 4628,
+   "n_words": 812,
+   "label_start": "8",
+   "label_end": "10"
   },
   {
    "id": "sec-004-integrable-models",
@@ -191,8 +760,10 @@
    "level": 1,
    "page_start": 11,
    "page_end": 11,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 17,
+   "n_words": 2,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
    "id": "sec-005-the-free-energy-of-integrable-models",
@@ -201,8 +772,10 @@
    "level": 2,
    "page_start": 11,
    "page_end": 14,
-   "n_chars": 5003,
-   "n_words": 807
+   "n_chars": 4547,
+   "n_words": 829,
+   "label_start": "10",
+   "label_end": "13"
   },
   {
    "id": "sec-006-bosonic-models",
@@ -210,88 +783,155 @@
    "title": "Bosonic models",
    "level": 2,
    "page_start": 14,
-   "page_end": 20,
-   "n_chars": 13631,
-   "n_words": 2621
+   "page_end": 15,
+   "n_chars": 2746,
+   "n_words": 501,
+   "label_start": "13",
+   "label_end": "14"
   },
   {
-   "id": "sec-007-numerical-analysis",
+   "id": "sec-007-trans-series-computation",
+   "number": null,
+   "title": "Trans-series computation",
+   "level": 3,
+   "page_start": 15,
+   "page_end": 20,
+   "n_chars": 10978,
+   "n_words": 2206,
+   "label_start": "14",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-008-numerical-analysis",
    "number": null,
    "title": "Numerical analysis",
    "level": 3,
    "page_start": 20,
-   "page_end": 23,
-   "n_chars": 6358,
-   "n_words": 1306
+   "page_end": 24,
+   "n_chars": 7497,
+   "n_words": 1515,
+   "label_start": "19",
+   "label_end": "23"
   },
   {
-   "id": "sec-008-the-grossneveu-model",
+   "id": "sec-009-the-grossneveu-model",
    "number": null,
-   "title": "The Gross\u2013Neveu model",
+   "title": "The Gross–Neveu model",
    "level": 2,
-   "page_start": 23,
+   "page_start": 24,
    "page_end": 25,
-   "n_chars": 3372,
-   "n_words": 667
+   "n_chars": 2328,
+   "n_words": 457,
+   "label_start": "23",
+   "label_end": "24"
   },
   {
-   "id": "sec-009-summary-of-the-recursive-problem",
+   "id": "sec-010-summary-of-the-recursive-problem",
    "number": null,
    "title": "Summary of the recursive problem",
    "level": 3,
    "page_start": 25,
-   "page_end": 29,
-   "n_chars": 6110,
-   "n_words": 1225
+   "page_end": 28,
+   "n_chars": 4204,
+   "n_words": 856,
+   "label_start": "24",
+   "label_end": "27"
   },
   {
-   "id": "sec-010-numerical-analysis",
+   "id": "sec-011-leading-orders-in-alpha",
+   "number": null,
+   "title": "Leading orders in alpha",
+   "level": 3,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 1934,
+   "n_words": 387,
+   "label_start": "27",
+   "label_end": "28"
+  },
+  {
+   "id": "sec-012-numerical-analysis",
    "number": null,
    "title": "Numerical analysis",
    "level": 3,
    "page_start": 29,
    "page_end": 31,
-   "n_chars": 3526,
-   "n_words": 639
+   "n_chars": 3553,
+   "n_words": 649,
+   "label_start": "28",
+   "label_end": "30"
   },
   {
-   "id": "sec-011-large-n-solution",
+   "id": "sec-013-large-n-solution",
    "number": null,
    "title": "Large N solution",
    "level": 3,
    "page_start": 31,
    "page_end": 31,
-   "n_chars": 1872,
-   "n_words": 348
+   "n_chars": 1885,
+   "n_words": 347,
+   "label_start": "30",
+   "label_end": "30"
   },
   {
-   "id": "sec-012-conclusions-and-open-problems",
+   "id": "sec-014-conclusions-and-open-problems",
    "number": null,
    "title": "Conclusions and open problems",
    "level": 1,
    "page_start": 31,
    "page_end": 35,
-   "n_chars": 11960,
-   "n_words": 1956
+   "n_chars": 11919,
+   "n_words": 1889,
+   "label_start": "30",
+   "label_end": "34"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 15,
-  "sections": 13,
-  "chars_total": 76308,
+  "toc_inferred_entries": 0,
+  "figure_entries": 10,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "Introduction"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 16,
+  "chars_total": 77756,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "structurev2-1TR.tex",
    "tex_sections": 13,
-   "overlaid": 6,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
     "coverage": 0.5
    },
    "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
@@ -300,8 +940,8 @@
     {
      "id": "sec-001-trans-series-and-their-structure",
      "title": "Trans-series and their structure",
-     "prose_ratio": 0.481,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.486,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-002-the-large-n-sigma-model-revisited",
@@ -310,72 +950,88 @@
     },
     {
      "id": "sec-003-complex-chernsimons-theory",
-     "title": "Complex Chern\u2013Simons theory",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "title": "Complex Chern–Simons theory",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-004-integrable-models",
      "title": "Integrable models",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.5,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-the-free-energy-of-integrable-models",
      "title": "The free energy of integrable models",
      "prose_ratio": 0.946,
-     "coverage_ratio": 0.823,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-006-bosonic-models",
      "title": "Bosonic models",
-     "prose_ratio": 0.968,
-     "coverage_ratio": 0.971,
+     "prose_ratio": 0.957,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-007-numerical-analysis",
+     "id": "sec-007-trans-series-computation",
+     "title": "Trans-series computation",
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-numerical-analysis",
      "title": "Numerical analysis",
-     "prose_ratio": 0.866,
-     "coverage_ratio": 0.956,
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-008-the-grossneveu-model",
-     "title": "The Gross\u2013Neveu model",
+     "id": "sec-009-the-grossneveu-model",
+     "title": "The Gross–Neveu model",
      "prose_ratio": 0.952,
-     "coverage_ratio": 0.817,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-009-summary-of-the-recursive-problem",
+     "id": "sec-010-summary-of-the-recursive-problem",
      "title": "Summary of the recursive problem",
-     "prose_ratio": 0.635,
-     "coverage_ratio": 0.964,
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-010-numerical-analysis",
+     "id": "sec-011-leading-orders-in-alpha",
+     "title": "Leading orders in alpha",
+     "prose_ratio": 0.403,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-numerical-analysis",
      "title": "Numerical analysis",
-     "prose_ratio": 0.378,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.384,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-011-large-n-solution",
+     "id": "sec-013-large-n-solution",
      "title": "Large N solution",
-     "prose_ratio": 0.326,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.329,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-012-conclusions-and-open-problems",
+     "id": "sec-014-conclusions-and-open-problems",
      "title": "Conclusions and open problems",
      "result": "no matching \\section"
     }

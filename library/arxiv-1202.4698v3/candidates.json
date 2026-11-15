@@ -1,8 +1,6 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1202.4698v3",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "54171c652161ca5b3bfd107ccf3504d24fa91944ca3ed60b71945f6cb9f61e62",
   "file": "1202.4698.pdf"
@@ -18,11 +16,136 @@
   },
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
+  "candidates": 8,
+  "by_kind": {
+   "recommendation": 8
+  },
   "formalization_candidates": 0
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "One should note, however, that our definition of the $3j$ coefficients \\rf{b-3j} is not canonical, we might equally well use $\\big(\\,{}^{\\al_3}_{x_3}\\,|\\,{}^{\\al_2}_{x_2}\\,{}^{\\al_1}_{x_1}\\big)_b'$ in \\rf{CGdef}, with \\begin{equation} \\label{3jrenorm} \\big(\\,{}^{\\al_3}_{x_3}\\,|\\,{}^{\\al_2}_{x_2}\\,{}^{\\al_1}_{x_1}\\big)_{b}':= M(\\al_3,\\al_2,\\al_1) \\big(\\,{}^{\\al_3}_{x_3}\\,|\\,{}^{\\al_2}_{x_2}\\, {}^{\\al_1}_{x_1}\\big)_b^{\\rm an}\\,. \\end{equation} This will satisfy \\rf{inter} for arbitrary functions $M(\\al_3,\\al_2,\\al_1)$.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-22-normalized-clebsch-gordan-coefficients-for-th.md",
+   "section_title": "Normalized Clebsch-Gordan coefficients for the modular double",
+   "pages": "3-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "There is one algebraic relation that should be satisfied among the three generators $\\CL_s$, $\\CL_t$, $\\CL_u$.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-016-52-the-quantization-problem.md",
+   "section_title": "The quantization problem",
+   "pages": "14-15",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Considering the representation $\\pi_s$, for example, we will find that $\\pi_s(\\CL_t)$ can be represented in the form \\begin{equation}\\label{Diffop} \\pi_s(\\CL_t)\\psi_s(l_s)\\,=\\,\\big[ D_+(l_s)e^{+\\sk_s}+D_0(l_s)+D_-(l_s)e^{-\\sk_s}\\big]\\psi_s(l_s)\\,. \\end{equation} This formula should of course reproduce \\rf{FN-FK} or \\rf{FN-FK'} in the classical limit, but due to ordering issues and other possible quantum corrections it is a priori far from obvious how to define the coefficients $D_\\ep(l_s)$, $\\ep=-,0,+$.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-016-52-the-quantization-problem.md",
+   "section_title": "The quantization problem",
+   "pages": "14-15",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Furthermore, by analyzing the classical limit of the relations the relations \\rf{duality'} with the help of the saddle-point method one may see that the function $S_L^{st}(l_s,l_t)$ which describes the leading semiclassical asymptotics of the kernel $A_L^{st}(l_s,l_t)$ via \\begin{equation} A_L^{st}(l_s,l_t)\\,=\\,\\exp\\bigg(\\frac{1}{4\\pi \\textup{i} b^2} S_L^{st}(l_s,l_t)\\bigg) \\big(1+\\CO(b^2)\\big)\\,, \\end{equation} must coincide with the generating function for the canonical transformation between the Darboux-coordinates $(l_s,k_s)$ and $(l_t,k_t)$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-019-55-classical-limit.md",
+   "section_title": "Classical limit",
+   "pages": "17-18",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Choosing the two theories to be the $N_f=4$ theory and its $S$-dual, for example, the arguments from \\cite{Drukker:2010jp} suggest that the partition function of the full theory should be given by an expression of the form \\begin{equation}\\label{dualwall} \\int_{({Q}/{2}+\\textup{i}\\BR)^2}d\\al_sd\\al_t\\; (\\CG_{\\al_s}^{(s)}(A|Z))^*\\,G_{\\al_s\\al_t} \\big[\\,{}^{\\al_3}_{\\al_4}\\,{}^{\\al_2}_{\\al_1}\\,\\big]\\, \\CG_{\\al_t}^{(t)}(A|{Z}')\\,, \\end{equation} using the notations from Section \\ref{Liou}.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-021-61-three-dimensional-gauge-theories-on-duality-w.md",
+   "section_title": "Three-dimensional gauge theories on duality walls",
+   "pages": "18-19",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Roughly speaking, the idea is that there should exist a duality between certain families of three-dimensional supersymmetric gauge theories and Chern-Simons theories on suitable three-manifolds.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-021-61-three-dimensional-gauge-theories-on-duality-w.md",
+   "section_title": "Three-dimensional gauge theories on duality walls",
+   "pages": "18-19",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This raises several interesting questions which should be clarified, including, in particular, the interpretation of normalization changes for b-$6j$ symbols (\\ref{norm}) from the point of view of supersymmetric gauge theories.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-024-64-applications-to-the-geometric-construction-of.md",
+   "section_title": "Applications to the geometric construction of three-dimensional gauge theories?",
+   "pages": "21-22",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "(B.11) To get the desired transformation formulas one should use the following asymptotic formulas when some of the parameters go to in\ufb01nity lim u\u2192\u221ee \u03c0i 2 B2,2(u)Sb(u) = 1, for arg b < arg u < arg 1/b + \u03c0, lim u\u2192\u221ee\u2212\u03c0i 2 B2,2(u)Sb(u) = 1, for arg b \u2212\u03c0 < arg u < arg 1/b.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-031-b2-useful-corollaries.md",
+   "section_title": "B.2 Useful corollaries.",
+   "pages": "25-28",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
 }

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0806.2317v1
-doc_title: "Bounds for codes and designs in complex subspaces Aidan Roy ∗"
+doc_title: "Bounds for codes and designs in complex subspaces"
 section_id: sec-004-zonal-polynomials
 section_title: "Zonal polynomials"
 section_number: null
 pages: 10-14
 source_pdf: 0806.2317v1.pdf
 source_sha256: c54e80d460413a5e
-doc_brief: "Bounds for codes and designs in complex subspaces Aidan Roy ∗ — We introduce the concepts of complex Grassmannian codes and designs."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.94
+latex_coverage_ratio: 0.929
+doc_brief: "Bounds for codes and designs in complex subspaces — We introduce the concepts of complex Grassmannian codes and designs."
 ---
 \label{sec:zonal}
 

@@ -1,0 +1,54 @@
+Burgess bounds for short character sums evaluated at forms 1937
+
+After taking absolute values, we can obtain an upper bound by increasing the sum to run over all tuples 6
+with 5; < t;. We get
+
+[S(F;m,k)| < S° |S(F;m+ Vins, 2).
+
+6
+0<8; St;
+
+Then by Hélder’s inequality,
+
+n 2r-1
+|S(F; m, k)|" < (Ile + ») So DS SCR m+ 274 ov, 247",
+i=l 6 v
+
+0<5;<t; O<v;<2%
+
+where we have possibly enlarged the right-hand side by summing over all possible values for Um_3,; up to 2°.
+Recalling that for each m we chose k above to be the length at which the maximum is attained, we then have
+
+S(F; wk ria Perel S(F; gts ,2t-8 2r
+ee LD shims ov, 2-8)|
+
+é m
+|mj|<2q 0<5; <1; O<v; <25i |m;|<2q
+
+KT" SE pF SO SUF: m, 2°),
+é
+
+m (mod q)
+055; 5h
+
+where T := []}_, (¢; + 1). Now we perform the key step that accommodates the fact that we only achieve
+a saving in the smallest direction of the box.
+
+6D. Application of the nonmaximal upper bound. We would like to apply Lemma 6.1 to the innermost
+sums over m. Fix 6 (with 0 < 6; < ¢; for each i). Notice that we may not have tf, — 5; <t,—5) <-+-<t,—5,
+
+even though f) < t2 <--- <t,, so we may need to reorder t — 6 before applying Lemma 6.1. Let o be a
+
+permutation of {1, 2,...,} (depending on 6) such that
+te (1) — Sa (1) S ta 2) — 662) S +++ S ta(n) — Sa(n)- (6-5)
+Given an n-tuple x, let x¢ = (Xo(1), Xo(2)1 «+ +s Xo(ny), and 28 = (QoS, |, Boon —Fo™), Recall
+the discussion on permutations of variables in Section 3D; for any permutation z of {1,...,} define the
+form F;(X) by setting Fx (X1,..., Xn) = F(Xaqy,.-., Xaqn))-
+Letting o~! be the permutation inverse of o, then
+SFim2%*)= Do x(FQx)) = So X(Fo-1 (Xe) = S(Fg-15 me, 2°),
+xe(m,m+2'~>) Xq (Mg Mz +20 ~So
+
+Note that m, ranges over all n-tuples with coordinates modulo q as m does, and that the last argument in
+S(F,-1; mg, 2’—*) satisfies the requirement (6-5) so that we may apply Lemma 6.1 with n, r, D, A, q, x
+as before but now to the form F,-1; here we use the uniformity of Lemma 6.1 with respect to the form.
+(We recall from Lemma 3.5 that the reduction modulo qg of F,-1 is (A, q)-admissible if and only if F is.)

@@ -1,15 +1,13 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-0111022v1",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "fea7f118014838fe28843b30f7a8f6fb2b913d5198eb668c074eb541ca6ed6b7",
   "file": "0111022v1.pdf"
  },
  "provenance": {
-  "title": "Some remarks on q-deformed multiple polylogarithms Karl-Georg Schlesinger Erwin Schr\u00a8 odinger Institute for Mathematical Physics Boltzmanngasse 9",
-  "authors": "A-1090 Vienna, Austria",
+  "title": "arXiv:math/0111022v1 [math.QA] 2 Nov 2001",
+  "authors": "Karl-Georg Schlesinger",
   "arxiv": {
    "id": "math/0111022",
    "version": "1",
@@ -18,94 +16,91 @@
   },
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 6,
+  "candidates": 5,
   "by_kind": {
-   "lemma": 3,
-   "remark": 2,
-   "conjecture": 1
+   "recommendation": 5
   },
-  "formalization_candidates": 3
+  "formalization_candidates": 0
  },
  "candidates": [
   {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "2",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "The rational linear span of the Lin1,...,n m (z1,...,z m;q) forms an",
-   "section_file": "sections/sec-001-1-motivation.md",
+   "statement": "Therefore, the quantum state space of a noncommutative gauge theory over $S^{4,\\theta }$ should always carry a corepresentation of $SU_q\\left( 2\\right)$.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-motivation.md",
    "section_title": "Motivation",
-   "pages": "1-10",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "5",
-   "name": null,
-   "statement": "For the ordered de\ufb01nition of the q-deformed multiple polyloga-",
-   "section_file": "sections/sec-001-1-motivation.md",
-   "section_title": "Motivation",
-   "pages": "1-10",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "6",
-   "name": null,
-   "statement": "There is a q-deformation \u2206 q of the coproduct \u2206 of Z which turns",
-   "section_file": "sections/sec-001-1-motivation.md",
-   "section_title": "Motivation",
-   "pages": "1-10",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "1",
-   "name": null,
-   "statement": "The commutators for the full algebra of q-deformed multiple poly-",
-   "section_file": "sections/sec-001-1-motivation.md",
-   "section_title": "Motivation",
-   "pages": "1-10",
+   "pages": "1-11",
    "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   },
   {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "2",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "The Hopf algebra of Connes and Kreimer is supposed to be re-",
-   "section_file": "sections/sec-001-1-motivation.md",
+   "statement": "So, at least if we treat the quantum field theories on $S^{4,\\theta }$ perturbatively, starting from a system of free $q$-oscillators, we should, again, be led to expressions in terms of $q$-special functions.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-motivation.md",
    "section_title": "Motivation",
-   "pages": "1-10",
+   "pages": "1-11",
    "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   },
   {
-   "kind": "conjecture",
-   "source_kind": "conjecture",
-   "number": "7",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "By the arguments given in the introductory section and by",
-   "section_file": "sections/sec-001-1-motivation.md",
+   "statement": "In conclusion, both arguments suggest that perturbative quantum field theory on $S^{4,\\theta }$ should have a formulation in terms of $q$-special functions.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-motivation.md",
    "section_title": "Motivation",
-   "pages": "1-10",
+   "pages": "1-11",
    "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Since in usual quantum gauge theories on commutative space-time, the weights of Feynman graphs can be calculated as values of so called multiple polylogarithms (see [@BK], [@Kre]) and this fact plays a considerable role for the structural properties of quantum field theory (see [@CK], [@Kon], [@KoSo]), a first step toward perturbative quantum field theory on $S^{4,\\theta }$ should be to look for $q$ -deformations of multiple polylogarithms.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-motivation.md",
+   "section_title": "Motivation",
+   "pages": "1-11",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This means that we should allow the arguments of the $q$-deformed multiple $\\zeta$-values - i.e. the indices of the $q$-deformed multiple polylogarithms - to become noncommuting variabels, too.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-motivation.md",
+   "section_title": "Motivation",
+   "pages": "1-11",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   }
  ]
 }

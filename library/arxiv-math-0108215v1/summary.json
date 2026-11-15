@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0108215v1",
  "source_sha256": "191784d2ccb3415a",
- "brief": "Möbius Energy of Thick Knots Eric J. Rawdon 2 — The M¨ obius energy of a knot is an energy functional for smoot h curves based on an idea of self-repelling.",
- "extended": "**Möbius Energy of Thick Knots Eric J. Rawdon 2**\n\n*Department of Mathematics and Computer Science*\n\n16 pp, 19 sections.\n\n**Abstract.** The M¨ obius energy of a knot is an energy functional for smoot h curves based on an idea of self-repelling. If a knot has a thick tubular neigh borhood, we would intuitively expect the energy to be low. In this paper, we giv e explicit bounds for energy in terms of the ropelength of the knot, i.e. the ratio o f the length of a thickest tube to its radius.\n\n**Outline.** Front matter; Abstract; 1 Introduction; 2 Research supported by Chatham College, the U; 3 Research supported by NSF grant #DMS9706789; 2 The Lemmas; 1 Each element of Rlow is < each element of Rh; 1 If the inequality is strict, then for each ρ; 1 The set Y ∩ S[2, r1) is a monotone union of ; 3 Thick knots have bounded energy; 4 EL(K)2 . (4); 4 L2 − π; 2 L . (6); 2 L + 4 . (7); 4 L2 . (8); 3 (33 − 13), then our proof stops here. The qu; 3 ((b + 1)3 − 13). For b > P , notice that ℓ∗(; 3 For 1 ≤ j ≤ n, we claim |x − y| > 2 + ( j − ",
+ "brief": "arXiv:math/0108215v1 [math.GT] 30 Aug 2001 — The M¨obius energy of a knot is an energy functional for smooth curves based on an idea of self-repelling.",
+ "extended": "**arXiv:math/0108215v1 [math.GT] 30 Aug 2001**\n\n*Department of Mathematics and Computer Science*\n\n16 pp, 4 sections.\n\n**Abstract.** The M¨obius energy of a knot is an energy functional for smooth curves based on an idea of self-repelling. If a knot has a thick tubular neighborhood, we would intuitively expect the energy to be low. In this paper, we give explicit bounds for energy in terms of the ropelength of the knot, i.e. the ratio of the length of a thickest tube to its radius.\n\n**Outline.** Front matter; 1 Introduction; 2 The Lemmas; 3 Thick knots have bounded energy",
  "tokens": {
-  "brief": 39,
-  "extended": 260
+  "brief": 37,
+  "extended": 144
  },
  "sections": [
   {
@@ -15,94 +15,19 @@
    "pages": "1-1"
   },
   {
-   "id": "sec-000-abstract",
-   "title": "Abstract",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-002-2-research-supported-by-chatham-college-the-univ",
-   "title": "Research supported by Chatham College, the University of Io wa, and NSF grant",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-003-3-research-supported-by-nsf-grant-dms9706789",
-   "title": "Research supported by NSF grant #DMS9706789",
    "pages": "1-3"
   },
   {
-   "id": "sec-004-2-the-lemmas",
+   "id": "sec-001-2-the-lemmas",
    "title": "The Lemmas",
-   "pages": "3-7"
+   "pages": "3-8"
   },
   {
-   "id": "sec-005-1-each-element-of-rlow-is-each-element-of-rhigh",
-   "title": "Each element of Rlow is < each element of Rhigh. Thus,",
-   "pages": "7-7"
-  },
-  {
-   "id": "sec-006-1-if-the-inequality-is-strict-then-for-each-ρ-r1",
-   "title": "If the inequality is strict, then for each ρ ∈ (r1, r′",
-   "pages": "7-7"
-  },
-  {
-   "id": "sec-007-1-the-set-y-s2-r1-is-a-monotone-union-of-sets",
-   "title": "The set Y ∩ S[2, r1) is a monotone union of sets,",
-   "pages": "7-8"
-  },
-  {
-   "id": "sec-008-3-thick-knots-have-bounded-energy",
+   "id": "sec-002-3-thick-knots-have-bounded-energy",
    "title": "Thick knots have bounded energy",
-   "pages": "8-9"
-  },
-  {
-   "id": "sec-009-4-elk2-4",
-   "title": "EL(K)2 . (4)",
-   "pages": "9-10"
-  },
-  {
-   "id": "sec-010-4-l2-π",
-   "title": "L2 − π",
-   "pages": "10-10"
-  },
-  {
-   "id": "sec-011-2-l-6",
-   "title": "L . (6)",
-   "pages": "10-10"
-  },
-  {
-   "id": "sec-012-2-l-4-7",
-   "title": "L + 4 . (7)",
-   "pages": "10-10"
-  },
-  {
-   "id": "sec-013-4-l2-8",
-   "title": "L2 . (8)",
-   "pages": "10-10"
-  },
-  {
-   "id": "sec-014-3-33-13-then-our-proof-stops-here-the-quadratic",
-   "title": "(33 − 13), then our proof stops here. The quadratic bound (4) is valid and",
-   "pages": "10-11"
-  },
-  {
-   "id": "sec-015-3-b-13-13-for-b-p-notice-that-ℓ2-b-ℓ2-p",
-   "title": "((b + 1)3 − 13). For b > P , notice that ℓ∗(2, b] = ℓ∗(2, P ]",
-   "pages": "11-12"
-  },
-  {
-   "id": "sec-016-3-for-1-j-n-we-claim-x-y-2-j-1δ-for-all-y-wj-exc",
-   "title": "For 1 ≤ j ≤ n, we claim |x − y| > 2 + ( j − 1)δ for all y ∈ Wj, except",
-   "pages": "12-14"
-  },
-  {
-   "id": "sec-017-references",
-   "title": "References",
-   "pages": "14-16"
+   "pages": "8-16"
   }
  ],
  "provenance": {

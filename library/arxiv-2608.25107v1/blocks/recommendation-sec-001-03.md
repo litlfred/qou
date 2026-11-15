@@ -1,0 +1,1 @@
+Conventional generators do not provide this information directly as derivatives, so analyses must obtain it through additional parameter-response machinery [@Stowell:2016jfr; @Chakrani:2022tey; @GENIE:2024ufm; @Abe:2025yaa; @T2K:2026cqe].

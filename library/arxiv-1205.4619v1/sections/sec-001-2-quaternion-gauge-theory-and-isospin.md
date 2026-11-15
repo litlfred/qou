@@ -7,10 +7,11 @@ section_number: 2
 pages: 2-6
 source_pdf: 1205.4619v1.pdf
 source_sha256: 8c76e30a52dca571
-doc_brief: "Quaternion-Octonion Unitary Symmetries and Analogous Casimir Operators — An attempt has been made to investigate the global SU (2) and SU (3) unitary ﬂavor symmetries systematically in terms of"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.995
+latex_coverage_ratio: 0.995
+doc_brief: "Quaternion-Octonion Unitary Symmetries and Analogous Casimir Operators — An attempt has been made to investigate the global SU(2) and SU(3) unitary ﬂavor symmetries systematically in terms of"
 ---
 Let $\phi(x)$ be a quaternionic field ($Q$ field) and expressed
 as 

@@ -1,0 +1,59 @@
+---
+doc_id: schechtman-varchenko1991-arrangements
+doc_title: "Arrangements of hyperplanes and Lie algebra homology"
+section_id: page-056
+section_title: "Page 56"
+pages: 56-56
+pdf_page: 56
+source_pdf: schechtman-varchenko1991-arrangements.pdf
+source_sha256: 0100fd32438740f0
+text_source: ocr
+granularity: page
+doc_brief: "Arrangements of hyperplanes and Lie algebra homology — 56 sections: Page 1; Page 2; Page 3"
+---
+194
+
+[OS]
+
+[svi]
+[SV2]
+[SV3]
+
+[Sh]
+
+[Vv]
+
+Arrangements of hyperplanes and Lie algebra homology
+
+Orlik, P., Solomon, L.: Combinatorics and topology of complements of hyperplanes.
+Invent. Math. 56, 167-189 (1980)
+
+Schechtman, V.V., Varchenko, A.N.: Integral representations of n-point conformal
+correlators in the WZW model. MPI/89-51, Bonn (Preprint 1989)
+
+Schechtman, V.V., Varchenko, A.N.: Hypergeometric solutions of Knizhnik-Zamo-
+lodchikov equations. Lett. Math. Phys. 20, 279-283 (1990)
+
+Schechtman, V.V., Varchenko, A.N.: Quantum groups and homology of local sys-
+tems. IAS (Preprint 1990)
+
+Shapovalov, N.N.: On a bilinear form on the universal enveloping algebra of a
+complex semisimple Lie algebra (in Russian). Funct. Anal. Appl. 6, No. 4, 65 70
+(1972)
+
+Varchenko, A.N.: Euler Beta-function, Vander Monde determinant. Legendre equa-
+tion and critical values of linear functions on an arrangement of hyperplanes. I.
+(in Russian). Izv. Akad. Nauk SSSR, Ser. Mat. 53, No. 6, 1206- 1235 (1989)
+
+Note added in proof
+
+The Aomoto conjecture mentioned in 4.6.8, has been proved recently in Esnault, H., Schecht-
+man, V., Viehweg, E.: Cohomology of local systems on the complement of hyperplanes. [AS
+(Preprint 1991). It implies a more precise form of 7.2.8. In Varchenko, A.: Bilinear form of
+real configuration of hyperplanes. IAS (Preprint 1991) the bilinear form B is defined for any
+arrangement @ in a real affine space and any collection of exponents b: @>@€. The form
+B is a “quantum” analog of the contravariant form S, see [SV3]. In a distinguished basis
+any element of the matrix of the form B is a product of the exponents of some hyperplanes
+of the arrangement. It is proven that the determinant of B is a product of the binomials
+of the shape (1—(/Tb)*), where ITb is a product of the exponents of some hyperplanes. The
+contravariant form S is an appropriate limit of the form B when all exponents tend to 1.

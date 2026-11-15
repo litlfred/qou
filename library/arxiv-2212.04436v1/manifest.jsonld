@@ -9,12 +9,17 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-2212.04436v1",
+  "title": "Dilute neutron star matter from neural-network quantum states",
   "contains": [
-    "library/arxiv-2212.04436v1/sections/sec-000"
+    "library/arxiv-2212.04436v1/sections/page-001",
+    "library/arxiv-2212.04436v1/sections/page-002",
+    "library/arxiv-2212.04436v1/sections/page-003",
+    "library/arxiv-2212.04436v1/sections/page-004",
+    "library/arxiv-2212.04436v1/sections/page-005",
+    "library/arxiv-2212.04436v1/sections/page-006"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -24,7 +29,9 @@
   },
   "meta": {
     "doc_id": "arxiv-2212.04436v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "2212.04436v1.pdf",
     "source_sha256": "0f98a851d030ec05262ee046de574af7467facf7b8ea5b6f6440457f44e6c02b",
     "pages": 6,
@@ -35,8 +42,8 @@
       "stamp_date": "8 Dec 2022"
     },
     "doi": null,
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

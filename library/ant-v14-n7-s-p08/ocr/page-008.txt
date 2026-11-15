@@ -1,0 +1,49 @@
+1918 Lillian B. Pierce and Junyan Xu
+
+2. Method of proof: an overview
+
+In this section we recall the main points of the Burgess method in dimension 1, outline the difficulties that
+arise in n > 2 dimensions, and then sketch how we overcome these difficulties to obtain our main theorem.
+
+At its heart, the Burgess method in the classical 1-dimensional setting builds from a character sum
+S(N; H) of length H < q, a character sum over a complete set of residues modulo g. Doing so by a
+Fourier expansion only works efficiently if the sum is not too short, that is, if the character sum is of
+length at least H >> q!/?+® (see Section A.3). When H « q!/?+*, Burgess’s method instead dissects
+and translates the “short” sum into many “short-short” sums of length H/p for some prime p of size
+roughly P (with P to be chosen optimally in terms of H and q). Averaging this process over sufficiently
+many choices of p, the short-short sums become distributed across a long interval of length q. If this
+process is done with enough redundancy, the starting points of these short-short sums nearly cover a full
+set of residues modulo g. Simultaneously, Burgess considers not just an average of these short-short
+sums, but a 2r-th moment, leading to the study of a sum over starting points m, of the form
+
+So max |S(n, K)/". (2-1)
+ay KS2H/P
+
+At this point, positivity allows one to sum over all 1 < m <q so that the sum over m is a complete
+set of residues. The Menshov—Rademacher technique allows one to deduce a bound for this maximal
+moment (2-1) from a bound for the nonmaximal moment
+
+So San," (2-2)
+
+m (mod q)
+
+in which we think of m as varying over the starting points of the short-short sums and k < 2H /P as being
+the new short-short length. We may write (2-2) equivalently as
+
+» S > xFey(n)), (2-3)
+
+Xp yee x2,€(0,k] m (mod q)
+
+in which Fy,}(m) = (m + x1)(m + x2)47!--- (m +.x2,)471. If Fixj(m) is not a perfect A-th power
+modulo gq, then the Weil bound O(q'/”) applies to the sum over m, and we say the tuple x is “good”
+(which is the generic case); otherwise x is “bad” (which is a sparse case) and we apply the trivial bound
+O(q) to the sum over m. Balancing the contributions of these two cases leads to the optimal choice of P
+and the Burgess bound (1-1).
+
+Generalizing this argument to the n-dimensional case, we will prove in (5-9) that for any r > 1,
+
+1/(2r)
+SF: N, HI) < (og PP" Hr)" ( ymax iS(Fsm 49) . (2-4)
+a KS2H/P
+
+|mj|<2q

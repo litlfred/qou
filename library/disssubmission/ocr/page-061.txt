@@ -1,0 +1,48 @@
+3.4. Tannakian categories 53
+
+diagrams in [41, appendix A.5.4] show that the morphism
+
+A = H°(X,1) “"S H°(X, PY xin P) = H°(X,PY *,P) = HY @\H
+is the coevaluation in the category of vector spaces, and dually for ev. Since
+the category of vector spaces of finite dimension over A is rigid, it follows
+that on hypercohomology y— idp induces the zero morphism. Accordingly
+the perverse subquotient Q = P/ker(y—idp) of P has H*(X,Q) =0. By
+definition of Pin; it follows that Q = 0 and hence that y— idp = 0. O
+
+This in particular allows to define the Tannaka groups we are interested
+in, generalizing those in corollary 2.14. For P € P we denote by (P) C P
+the full subcategory of all objects which are isomorphic to subquotients of
+convolution powers of P@ PY. Recall that full subcategories of this form
+are said to be finitely tensor generated. By construction they inherit from P
+the structure of a rigid symmetric monoidal A-linear abelian category, and
+we claim that they are neutral Tannakian in the following sense.
+
+COROLLARY 3.10. For every P € P there exists an affine algebraic
+group G = G(P) over A and an equivalence
+
+@: (P) —> Rep,(G)
+
+with the rigid symmetric monoidal A-linear abelian category Rep,(G) of
+finite-dimensional algebraic representations of G.
+
+Proof. Consider P as an object of the lifted category Pj, C P. By
+theorem 3.1 there exists a character 7 € II(X) such that all constituents
+of all convolution powers
+
+(POPY)y *int °° * *int (POPY)y
+
+have their hypercohomology concentrated in degree zero (indeed these are
+countably many conditions, and identifying I1(X); as in [41, sect. 3.2] with
+the set of A-valued points of the affine scheme Spec(A ®z, Zi[[tH,-..-,t]])
+for some n > 0 one checks that I1(X); cannot be covered by countably many
+proper closed subsets — for this one may proceed by induction on n, using
+the description of ideals given in proposition A.2.2.3 of loc. cit.). For such
+a character 7 the functor Q > H°(X,Qy) is a fibre functor from (P) to
+the category of finite-dimensional vector spaces, and our corollary follows
+from theorem 3.9 via the Tannakian formalism [33, th. 2.11]. O
+
+The above fibre functor depends on the chosen character twist (though
+all choices lead to isomorphic Tannaka groups), and this is the reason why
+we have restricted ourselves to finitely tensor generated subcategories. For
+a more canonical construction one may as in [41, th. 3.7.5] take the functor
+which to a perverse sheaf assigns the generic fibre of its Mellin transform,

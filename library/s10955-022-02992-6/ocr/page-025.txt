@@ -1,0 +1,60 @@
+Cluster Expansions: Necessary... Page 25 0f 47 33
+
+4 Application to Concrete Hard-Core Models
+
+Our main results (Theorems 2.1, 2.6 and 2.7) provide characterizations of the domain of
+absolute convergence for the activity expansions py (x1, ..., Xn} Z) from which well-known
+classical criteria are easily recovered (Corollaries 2.2, 2.3 and 2.8). In this section, we illus-
+trate how our convergence conditions provide new, “practitioner-type” sufficient conditions
+in concrete hard-core models, both discrete and continuous. Our goal here is not to improve
+on the best available conditions, but to provide upper bounds on the convergence radii that
+are of reasonable computational feasibility. In the one-dimensional setup of the Tonks gas,
+however, we are able to go as far as to recover the characterization of absolute convergence
+from [13].
+
+4.1 Single-Type Subset Polymers in Z¢
+
+Consider the setup of subset polymers from Chapter 2.4. Suppose there is some finite non-
+empty set S C Z@ and a scalar z > 0 such that
+
+(4.1)
+
+Z, X is a translate of S,
+2(X) = .
+0, otherwise.
+
+We call polymers with non-zero activity active polymers. Define
+V(D) = |{X €X| 2X) >0, XND FB},
+
+the number of active polymers intersecting a finite domain D C Z4. Notice V({x}) = |SI,
+for all x € Z¢.
+
+Theorem 4.1 Let z(-) be the activity function from (4.1). Suppose there exists a > 0 such
+that
+
+[Spe2V Dz < etl] — 1, (4.2)
+
+Then T (D; z) is absolutely convergent for all finite subsets D C Z4, thus the activity expan-
+SIONS Py(X1,-.-5 Xn; Z) converge absolutely for alln € N and all (x1, ...,Xn) € X".
+
+Remark 4.1 Notice that Theorem 4.1 improves on the upper bounds for the convergence
+radii given by Kotecky—Preiss and by Gruber—Kunz. The improvement over the Gruber—
+Kunz condition is achieved by a more sophisticated choice of the ansatz function a in the
+proof of the theorem. However, although we do not have a general proof that the result by
+Fernandez—Procacci is stronger, notice that for all non-pathological examples we considered
+(e.g., non-overlapping dimers or cubes) Fernandez—Procacci provides better bounds than
+Theorem 4.1.
+
+Example 4.1 (Hypercubes) If S = {1,..., ky4 with k € N, condition (4.2) becomes
+
+exp(ak@) — 1
+z= sup a
+a>o k* exp(a(2k — 1)°)
+Carrying out the optimization over a yields the condition
+
+1 yee
+
+id, _—_
+Ck- "zs (: Q-1/k4
+
+D Springer

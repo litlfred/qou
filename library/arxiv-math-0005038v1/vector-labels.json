@@ -1,0 +1,2768 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-math-0005038v1",
+  "pages": [
+    {
+      "page": 3,
+      "rotation": 0,
+      "drawings": 12,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. A fork F and a parallel copy F ′."
+      ],
+      "labels": [
+        {
+          "text": "BRAID GROUPS ARE LINEAR",
+          "bbox": [
+            247.08,
+            93.14,
+            364.94,
+            100.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            481.32,
+            93.14,
+            485.29,
+            100.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "T (F)",
+          "bbox": [
+            302.04,
+            151.41,
+            324.87,
+            161.37
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "T (F ′)",
+          "bbox": [
+            302.04,
+            168.9,
+            327.51,
+            181.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "F ′",
+          "bbox": [
+            315.96,
+            202.74,
+            326.05,
+            215.13
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "F",
+          "bbox": [
+            284.04,
+            205.17,
+            290.45,
+            215.13
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "d1",
+          "bbox": [
+            291.0,
+            235.05,
+            300.13,
+            245.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "d2",
+          "bbox": [
+            311.04,
+            235.05,
+            320.17,
+            245.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 1. A fork F and a parallel copy F ′.",
+          "bbox": [
+            209.16,
+            256.62,
+            402.84,
+            269.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and",
+          "bbox": [
+            126.72,
+            286.29,
+            142.81,
+            296.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "[x, y] = x−1y−1xy.",
+          "bbox": [
+            265.92,
+            295.5,
+            346.08,
+            308.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Throughout this paper, I will denote the interval [0, 1]. Braids compose from right",
+          "bbox": [
+            126.72,
+            312.69,
+            485.42,
+            322.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to left. Arcs compose from left to right.",
+          "bbox": [
+            126.72,
+            324.69,
+            300.24,
+            334.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2. Forks and Noodles",
+          "bbox": [
+            250.2,
+            345.31,
+            361.91,
+            355.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In this section we deﬁne forks and noodles and a pairing between them. The",
+          "bbox": [
+            138.6,
+            363.57,
+            485.26,
+            373.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "idea of using a fork to represent an element of H2( ˜C) is due to Krammer [Kra].",
+          "bbox": [
+            126.72,
+            373.17,
+            473.52,
+            385.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A fork is an embedded tree F ⊂D with four vertices d1, pi, pj and z such that",
+          "bbox": [
+            138.6,
+            387.44,
+            485.3,
+            399.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "F ∩∂D = {d1}, F ∩P = {pi, pj}, and all three edges have z as a vertex. The edge",
+          "bbox": [
+            126.72,
+            399.57,
+            485.38,
+            410.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "containing d1 is called the handle of F. The union of the other two edges is a single",
+          "bbox": [
+            126.72,
+            411.32,
+            485.38,
+            422.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "edge, which we call the tine edge of F and denote by T (F).",
+          "bbox": [
+            126.72,
+            423.2,
+            385.8,
+            433.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "For a given fork F we can deﬁne a parallel copy of F to be an embedded tree F ′",
+          "bbox": [
+            138.6,
+            433.02,
+            484.81,
+            445.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "as shown in Figure 1. The ﬁve punctures at the top of the ﬁgure may be replaced by",
+          "bbox": [
+            126.72,
+            447.45,
+            485.37,
+            457.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "any number, and any orientation-preserving self-homeomorphism may be applied",
+          "bbox": [
+            126.72,
+            459.33,
+            485.29,
+            469.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to the entire ﬁgure. The tine edge T (F ′) of F ′ is deﬁned analogously to that of F.",
+          "bbox": [
+            126.72,
+            467.73,
+            485.28,
+            481.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "For any fork F, we deﬁne a surface ˜Σ(F) in ˜C as follows. Let F ′ be a parallel",
+          "bbox": [
+            138.6,
+            480.33,
+            485.52,
+            493.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "copy of F. Let z be the vertex contained in all three edges of F, and let z′ be the",
+          "bbox": [
+            126.72,
+            492.33,
+            485.26,
+            505.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "vertex contained in all three edges of F ′. We deﬁne the surface Σ(F) to be the set",
+          "bbox": [
+            126.72,
+            505.5,
+            485.3,
+            517.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of points in C which can be written in the form {x, y}, where x ∈T (F) \\ P and",
+          "bbox": [
+            126.72,
+            519.81,
+            485.41,
+            529.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "y ∈T (F ′) \\ P. Let β1 be an arc from d1 to z along the handle of F and let β2 be",
+          "bbox": [
+            126.72,
+            529.38,
+            485.26,
+            543.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "an arc from d2 to z′ along the handle of F ′. Let ˜β be the lift of {β1, β2} to ˜C which",
+          "bbox": [
+            126.72,
+            540.93,
+            485.41,
+            555.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "starts at ˜c0. Let ˜Σ(F) be the lift of Σ(F) to ˜C which contains ˜β(1).",
+          "bbox": [
+            126.72,
+            554.73,
+            423.0,
+            567.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A noodle is an embedded edge N ⊂D \\ P with endpoints d1 and d2. For a given",
+          "bbox": [
+            138.6,
+            569.0,
+            485.41,
+            580.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "noodle N we deﬁne the surface Σ(N) to be the set of points {x, y} ∈C such that x",
+          "bbox": [
+            126.72,
+            581.25,
+            485.33,
+            591.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "and y are distinct points in N. Let ˜Σ(N) be the lift of Σ(N) to ˜C which contains",
+          "bbox": [
+            126.72,
+            591.33,
+            485.37,
+            603.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "˜c0.",
+          "bbox": [
+            126.72,
+            605.85,
+            138.24,
+            615.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Let F be a fork and let N be a noodle. We deﬁne ⟨N, F⟩∈Λ as follows.",
+          "bbox": [
+            138.6,
+            617.85,
+            455.4,
+            627.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "qatb(qatb ˜Σ(N), ˜Σ(F)).",
+          "bbox": [
+            290.4,
+            632.01,
+            386.4,
+            646.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            270.84,
+            633.8,
+            285.23,
+            657.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⟨N, F⟩=",
+          "bbox": [
+            225.48,
+            636.21,
+            264.42,
+            646.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a,b∈Z",
+          "bbox": [
+            267.24,
+            649.38,
+            288.27,
+            657.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Here qatb ˜Σ(N) denotes the image of ˜Σ(N) under the covering transformation qatb,",
+          "bbox": [
+            126.72,
+            661.41,
+            485.28,
+            675.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and (qatb ˜Σ(N), ˜Σ(F)) denotes the algebraic intersection number of the two surfaces",
+          "bbox": [
+            126.72,
+            674.13,
+            485.48,
+            687.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "in ˜C.",
+          "bbox": [
+            126.72,
+            687.93,
+            148.92,
+            700.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "rotation": 0,
+      "drawings": 10,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2. Arcs."
+      ],
+      "labels": [
+        {
+          "text": "4",
+          "bbox": [
+            126.72,
+            93.14,
+            130.69,
+            100.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "STEPHEN J. BIGELOW",
+          "bbox": [
+            261.0,
+            93.14,
+            350.98,
+            100.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "ν(pi)",
+          "bbox": [
+            217.32,
+            110.61,
+            238.95,
+            121.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ν(pj)",
+          "bbox": [
+            376.68,
+            110.61,
+            399.27,
+            121.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "β2",
+          "bbox": [
+            302.04,
+            150.45,
+            311.65,
+            160.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "✛",
+          "bbox": [
+            302.04,
+            152.89,
+            312.0,
+            164.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LINE10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "β3",
+          "bbox": [
+            248.16,
+            160.41,
+            257.77,
+            170.37
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "β1",
+          "bbox": [
+            350.88,
+            162.33,
+            360.49,
+            172.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "✠",
+          "bbox": [
+            257.16,
+            162.85,
+            267.12,
+            174.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "LINE10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "■",
+          "bbox": [
+            346.8,
+            172.81,
+            356.76,
+            184.25
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "LINE10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "❄",
+          "bbox": [
+            202.44,
+            174.85,
+            212.4,
+            186.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "LINE10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "γ1",
+          "bbox": [
+            192.48,
+            177.33,
+            201.61,
+            187.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "γ2",
+          "bbox": [
+            402.6,
+            177.33,
+            411.73,
+            187.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "pj",
+          "bbox": [
+            384.72,
+            179.37,
+            393.05,
+            189.83
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "✻",
+          "bbox": [
+            401.64,
+            180.85,
+            411.6,
+            192.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "LINE10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "pi",
+          "bbox": [
+            212.4,
+            181.29,
+            220.26,
+            191.75
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "❘α1",
+          "bbox": [
+            247.2,
+            182.77,
+            267.49,
+            195.21
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "LINE10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "α3",
+          "bbox": [
+            335.88,
+            183.33,
+            346.21,
+            193.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "u1",
+          "bbox": [
+            239.28,
+            185.25,
+            249.01,
+            195.21
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "u2",
+          "bbox": [
+            353.88,
+            185.25,
+            363.61,
+            195.21
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "✲α2",
+          "bbox": [
+            292.08,
+            192.73,
+            310.33,
+            212.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "LINE10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "✒",
+          "bbox": [
+            336.84,
+            192.73,
+            346.8,
+            204.17
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "LINE10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 2. Arcs.",
+          "bbox": [
+            268.92,
+            258.67,
+            343.08,
+            269.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Lemma 2.1 (The Basic Lemma). The pairing between forks and noodles is well-",
+          "bbox": [
+            126.72,
+            287.82,
+            485.24,
+            298.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "deﬁned. Furthermore, if [σ] lies in the kernel of the Lawrence-Krammer represen-",
+          "bbox": [
+            126.72,
+            299.84,
+            485.36,
+            310.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tation then",
+          "bbox": [
+            126.72,
+            311.84,
+            174.2,
+            321.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⟨N, F⟩= ⟨N, σ(F)⟩",
+          "bbox": [
+            264.0,
+            326.25,
+            347.91,
+            336.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "for every fork F and noodle N.",
+          "bbox": [
+            126.72,
+            342.2,
+            263.33,
+            352.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2.1. Proof of the Basic Lemma. The problem is that one cannot necessarily",
+          "bbox": [
+            126.72,
+            361.38,
+            485.49,
+            371.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "deﬁne an algebraic intersection number between two properly embedded surfaces,",
+          "bbox": [
+            126.72,
+            373.65,
+            485.52,
+            383.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "since it might be possible to eliminate intersections by pushing them oﬀto inﬁnity.",
+          "bbox": [
+            126.72,
+            385.65,
+            485.28,
+            395.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We overcome this problem by proving the existence of an immersed closed surface",
+          "bbox": [
+            126.72,
+            397.53,
+            485.38,
+            407.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "˜Σ2(F) which is equal to (1 −q)2(1 + qt)˜Σ(F) outside a small neighborhood of the",
+          "bbox": [
+            126.72,
+            407.13,
+            485.26,
+            419.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "punctures.",
+          "bbox": [
+            126.72,
+            421.65,
+            172.2,
+            431.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Let F be a fork. Let the endpoints of T (F) be pi and pj. Let ν(pi) and ν(pj)",
+          "bbox": [
+            138.6,
+            433.53,
+            485.31,
+            444.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "be disjoint ǫ-neighborhoods of pi and pj respectively such that ν(pk) ∩P = {pk}",
+          "bbox": [
+            126.72,
+            445.53,
+            485.34,
+            456.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "for k = i, j. Let U be the set of {x, y} ∈C such that at least one of x and y",
+          "bbox": [
+            126.72,
+            457.53,
+            485.0,
+            467.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "lies in ν(pi) ∪ν(pj). Fix a basepoint u0 = {u1, u2} ∈U, where u1 ∈ν(pi) and",
+          "bbox": [
+            126.72,
+            469.41,
+            485.41,
+            480.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "u2 ∈ν(pj). Let ˜U be the pre-image of U in ˜C. Choose a lift ˜u0 of u0 to ˜C. We",
+          "bbox": [
+            126.72,
+            479.97,
+            485.26,
+            493.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "start by analyzing π1(U, u0).",
+          "bbox": [
+            126.72,
+            494.37,
+            250.92,
+            504.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Using the arcs shown in Figure 2, we deﬁne the following elements of π1(U, u0).",
+          "bbox": [
+            138.6,
+            506.37,
+            485.28,
+            516.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "a1",
+          "bbox": [
+            234.24,
+            524.73,
+            243.49,
+            534.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            253.92,
+            524.73,
+            261.66,
+            534.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "{γ1, u2},",
+          "bbox": [
+            271.56,
+            524.73,
+            308.64,
+            534.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "a2",
+          "bbox": [
+            234.24,
+            539.73,
+            243.49,
+            549.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            253.92,
+            539.73,
+            261.66,
+            549.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "{u1, γ2},",
+          "bbox": [
+            271.56,
+            539.73,
+            308.64,
+            549.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "b1",
+          "bbox": [
+            235.2,
+            554.61,
+            243.49,
+            564.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            253.92,
+            554.61,
+            261.66,
+            564.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "{α1, β1β2β3}{α2α3, u1},",
+          "bbox": [
+            271.56,
+            554.61,
+            376.2,
+            564.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "b2",
+          "bbox": [
+            235.2,
+            569.61,
+            243.49,
+            579.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            253.92,
+            569.61,
+            261.66,
+            579.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "{α1α2α3, β1}{u2, β2β3}.",
+          "bbox": [
+            271.56,
+            569.61,
+            376.2,
+            579.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Note that b1 and b2 are homotopic in C, but not in U.",
+          "bbox": [
+            126.72,
+            587.97,
+            365.04,
+            599.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The following relations hold in π1(U).",
+          "bbox": [
+            138.6,
+            599.85,
+            303.96,
+            609.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(1)",
+          "bbox": [
+            126.72,
+            618.21,
+            139.47,
+            628.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "[a1, a2]",
+          "bbox": [
+            281.52,
+            618.21,
+            310.92,
+            628.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            320.88,
+            618.21,
+            328.62,
+            628.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1,",
+          "bbox": [
+            338.64,
+            618.21,
+            346.44,
+            628.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(2)",
+          "bbox": [
+            126.72,
+            633.21,
+            139.47,
+            643.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "[a1, b1a1b1]",
+          "bbox": [
+            264.0,
+            633.21,
+            310.92,
+            643.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            320.88,
+            633.21,
+            328.62,
+            643.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1,",
+          "bbox": [
+            338.64,
+            633.21,
+            346.44,
+            643.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(3)",
+          "bbox": [
+            126.72,
+            648.09,
+            139.47,
+            658.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "[a2, b2a2b2]",
+          "bbox": [
+            264.0,
+            648.09,
+            310.92,
+            658.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            320.88,
+            648.09,
+            328.62,
+            658.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1.",
+          "bbox": [
+            338.64,
+            648.09,
+            346.44,
+            658.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The ﬁrst of these is obvious. The second follows from the fact that b1a1b1 is equal",
+          "bbox": [
+            126.72,
+            666.45,
+            485.4,
+            677.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "in π1(U) to {u1, δ}, where δ is a curve based at u2 which passes counterclockwise",
+          "bbox": [
+            126.72,
+            678.45,
+            485.5,
+            689.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "around p1 and u1. The third follows by a similar argument.",
+          "bbox": [
+            126.72,
+            690.45,
+            387.12,
+            701.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 9,
+      "rotation": 0,
+      "drawings": 7,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3. The edge E1 and the noodle N4"
+      ],
+      "labels": [
+        {
+          "text": "BRAID GROUPS ARE LINEAR",
+          "bbox": [
+            247.08,
+            93.14,
+            364.94,
+            100.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "9",
+          "bbox": [
+            481.32,
+            93.14,
+            485.29,
+            100.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "d1",
+          "bbox": [
+            291.0,
+            235.05,
+            300.13,
+            245.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "d2",
+          "bbox": [
+            311.04,
+            235.05,
+            320.17,
+            245.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 3. The edge E1 and the noodle N4",
+          "bbox": [
+            210.48,
+            258.67,
+            401.05,
+            270.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "otherwise we could isotope T (F ′) so as to have fewer points of intersection with N.",
+          "bbox": [
+            126.72,
+            281.34,
+            485.4,
+            293.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Thus ak −ai is greater than zero, contradicting the fact that ai is maximal among",
+          "bbox": [
+            126.72,
+            295.77,
+            485.46,
+            307.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "all integers ai′. Therefore our assumption that bi,j > bi,i must have been false, so",
+          "bbox": [
+            126.72,
+            307.77,
+            485.34,
+            319.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "bi,j = bi,i.",
+          "bbox": [
+            126.72,
+            319.65,
+            169.2,
+            331.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The proof that bi,j = bj,j is similar. This completes the proof of the claim.",
+          "bbox": [
+            138.6,
+            331.65,
+            464.28,
+            343.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "This claim, together with the formula for ǫi,j given in Claim 3.3, implies that if",
+          "bbox": [
+            138.6,
+            349.53,
+            485.31,
+            360.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "mi,j is maximal then ǫi,j = −mi,j|(q = 1, t = −1). Thus all maximal monomials",
+          "bbox": [
+            126.72,
+            361.53,
+            485.36,
+            372.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "occur with the same sign in equation (8). Therefore ⟨N, F⟩cannot equal zero. This",
+          "bbox": [
+            126.72,
+            373.41,
+            485.36,
+            383.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "completes the proof of the Key Lemma.",
+          "bbox": [
+            126.72,
+            385.41,
+            300.12,
+            395.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "3.3. Proof of the Theorem. In this subsection we use the Basic Lemma and the",
+          "bbox": [
+            126.72,
+            403.14,
+            485.26,
+            413.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Key Lemma to prove that the Lawrence-Krammer representation is faithful. The",
+          "bbox": [
+            126.72,
+            415.29,
+            485.26,
+            425.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "following lemma will be useful.",
+          "bbox": [
+            126.72,
+            427.29,
+            261.12,
+            437.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Lemma 3.6. Let α and β be simple closed curves in D \\ P which intersect trans-",
+          "bbox": [
+            126.72,
+            443.94,
+            485.36,
+            454.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "versely at ﬁnitely many points. The following are equivalent.",
+          "bbox": [
+            126.72,
+            455.96,
+            390.65,
+            465.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "• α is isotopic relative to ∂D ∪P to a simple closed curve which intersects β at",
+          "bbox": [
+            141.36,
+            470.0,
+            485.23,
+            480.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "fewer points,",
+          "bbox": [
+            151.32,
+            481.88,
+            206.69,
+            491.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "• α and β cobound a “digon”, that is, an embedded disc in D\\P whose boundary",
+          "bbox": [
+            141.36,
+            493.88,
+            485.31,
+            504.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "consists of one subarc of α and one subarc of β.",
+          "bbox": [
+            151.32,
+            505.88,
+            360.41,
+            516.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A proof can be found in [PR99, Proposition 3.7], or [FLP91, Proposition 3.10].",
+          "bbox": [
+            138.6,
+            523.05,
+            482.52,
+            533.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Suppose σ ∈H(D, P) is a homomorphism representing an element of the kernel",
+          "bbox": [
+            138.6,
+            534.93,
+            485.4,
+            544.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of the Lawrence-Krammer representation. We will show that σ is isotopic relative",
+          "bbox": [
+            126.72,
+            546.93,
+            485.5,
+            556.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to ∂D ∪P to the identity map.",
+          "bbox": [
+            126.72,
+            558.93,
+            263.16,
+            568.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Take D to be the unit disc centered at the origin in the complex plane, and",
+          "bbox": [
+            138.6,
+            570.81,
+            485.41,
+            580.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "take p1, . . . , pn to be real numbers satisfying −1 < p1 < · · · < pn < 1.",
+          "bbox": [
+            126.72,
+            582.81,
+            461.52,
+            594.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "For",
+          "bbox": [
+            470.76,
+            582.81,
+            485.33,
+            592.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "i = 1, . . . , n −1, let Ei be the horizontal edge from pi to pi+1. For i = 1, . . . , n, let",
+          "bbox": [
+            126.72,
+            594.81,
+            485.3,
+            606.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Ni be the noodle which winds around pi and no other punctures, intersecting the",
+          "bbox": [
+            126.72,
+            606.69,
+            485.26,
+            618.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "real axis twice. See Figure 3.",
+          "bbox": [
+            126.72,
+            618.69,
+            252.84,
+            628.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Let F be a fork such that T (F) = E1. Then ⟨N3, F⟩= 0. By the Basic Lemma,",
+          "bbox": [
+            138.6,
+            630.57,
+            485.4,
+            640.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "⟨N3, σ(F)⟩= 0. By the Key Lemma, it follows that σ(E1) is isotopic relative to",
+          "bbox": [
+            126.72,
+            642.57,
+            485.34,
+            652.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∂D ∪P to an arc which is disjoint from N3. By composing σ with an element of",
+          "bbox": [
+            126.72,
+            654.57,
+            485.44,
+            664.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "I(D, P) if necessary, we can assume that σ(E1) is disjoint from N3.",
+          "bbox": [
+            126.72,
+            666.45,
+            422.04,
+            676.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Similarly, σ(E1) can be isotoped so as to be disjoint from N4. By Lemma 3.6,",
+          "bbox": [
+            138.6,
+            678.45,
+            485.4,
+            688.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "this isotopy can be performed by a sequence of moves which consist of eliminating",
+          "bbox": [
+            126.72,
+            690.45,
+            485.34,
+            700.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

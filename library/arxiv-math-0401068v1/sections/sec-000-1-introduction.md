@@ -7,10 +7,11 @@ section_number: 1
 pages: 1-2
 source_pdf: 0401068v1.pdf
 source_sha256: 8168d7e7f6069978
-doc_brief: "THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS — @We show that for a twist knot, the A-polynomial can be obtained fr om recur- rences for the summand in Masbaum’s formula of the"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.986
+latex_prose_ratio: 0.857
+latex_coverage_ratio: 0.984
+doc_brief: "THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS — @We show that for a twist knot, the A-polynomial can be obtained from recur- rences for the summand in Masbaum’s formula of the"
 ---
 The colored Jones polynomial is a one variable polynomial invariant of a knot colored with irreducible finite dimensional representation of $sl(2,\mathbb{C})$ [@Turaev:INVEM88]. The original Jones polynomial [@Jones:link_polynomials] corresponds to the colored Jones polynomial of a knot colored with the irreducible 2-dimensional representation. On the other hand, in [@Cooper/Culler/Gillet/Long/Shalen:INVEM94], D.Cooper, M.Culler, H.Gillet, D.D.Long, and P.R.Shalen introduced a two variable polynomial invariant $A_K(l,m)$ of a knot $K$, called the $A$-polynomial, by using the representations of the fundamental group of the complement of the knot into $SL_2(\mathbb{C})$. In this paper, we prove that for a twist knot, the $A$-polynomial can be obtained from the colored Jones polynomial.
 

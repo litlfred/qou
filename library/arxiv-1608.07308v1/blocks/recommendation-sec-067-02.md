@@ -1,0 +1,1 @@
+In particular, Conjecture [\[conj:homfly\]](#conj:homfly){reference-type="ref" reference="conj:homfly"} implies that $\mathrm{End}(P_T)$ should be the tensor product of the homology on the "bottom row" with an exterior algebra.

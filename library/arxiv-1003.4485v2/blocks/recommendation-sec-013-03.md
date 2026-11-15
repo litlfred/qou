@@ -1,0 +1,1 @@
+In the special case where $G = \mathrm{Spin}(n)$, this topological group is called the `string group', since to consistently define superstrings propagating on a spin manifold, we must reduce its structure group from $\mathrm{Spin}(n)$ to this group \cite{Witten:1988}.

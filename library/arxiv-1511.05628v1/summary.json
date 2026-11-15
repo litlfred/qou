@@ -3,149 +3,179 @@
  "doc_id": "arxiv-1511.05628v1",
  "source_sha256": "3b9da2994233882b",
  "brief": "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY — The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coeﬃcients that",
- "extended": "**QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY**\n\n*TUDOR DIMOFTE AND STAVROS GAROUFALIDIS*\n\n41 pp, 28 sections.\n\n**Abstract.** The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coeﬃcients that appears in the asymptotics of the Kashaev invariant at each root of unity. Our goal is to construct a power series from a Neumann-Zagier datum (i.e., an ideal triangulation of the knot complement and a geo- metric solution to the gluing equations) and a complex root of unity ζ. We prove that the coeﬃcients of our series lie in the trace ﬁeld of the knot, adjoined a complex root of unity. We conjecture that our series are those that appear in the Quantum Modularity Conjecture and conﬁrm that they match the numerical asymptotics of the Kashaev invariant (at various roots of unity) computed by Zagier and the ﬁrst author.\n\n**Outline.** 1 Introduction; 1.1 Quantum modular forms; 2.1 Ideal triangulations and Neumann-Zagier da; 2.2 The 1-loop invariant at level k; 2.4 Feynman diagrams for the n-loop invariant; 2.5 The 2-loop invariant in detail; 2.6 The 3-loop invariant; 2.7 Matching with the numerical asymptotics of; 2.8 Topological invariance; 3 Proofs; 3.1 Proof of Theorem 2.6; 3.2 Some identities of the cyclic dilogarithm; 3.3 Proof of Theorem 2.2; 4 Complex Chern-Simons theory; 4.1 Basic structure; 4.2 A singular limit; 4.3 State integrals; 4.4 Derivation of the torsion\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.6: The coeﬃcients of the power series φ+\n- Lemma 2.8: For a Z-non-degenerate Neumann-Zagier datum γ, we have\n- Lemma 3.1: [GZ] The summation in Equation (12) is k-periodic.",
+ "extended": "**QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY**\n\n*TUDOR DIMOFTE AND STAVROS GAROUFALIDIS*\n\n41 pp, 34 sections.\n\n**Abstract.** The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coeﬃcients that appears in the asymptotics of the Kashaev invariant at each root of unity. Our goal is to construct a power series from a Neumann-Zagier datum (i.e., an ideal triangulation of the knot complement and a geo- metric solution to the gluing equations) and a complex root of unity ζ. We prove that the coeﬃcients of our series lie in the trace ﬁeld of the knot, adjoined a complex root of unity. We conjecture that our series are those that appear in the Quantum Modularity Conjecture and conﬁrm that they match the numerical asymptotics of the Kashaev invariant (at various roots of unity) computed by Zagier and the ﬁrst author.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Quantum modular forms; 1.2 Zagier's Quantum Modularity Conjecture; 2 The definition of ,; 2.1 Ideal triangulations and Neumann-Zagier da; 2.2 The 1-loop invariant at level k; 2.3 The n-loop invariants at level k for n 2; 2.4 Feynman diagrams for the n-loop invariant; 2.5 The 2-loop invariant in detail; 2.6 The 3-loop invariant; 2.7 Matching with the numerical asymptotics of; 2.8 Topological invariance; 3 Proofs; 3.1 Proof of Theorem 2.6; 3.2 Some identities of the cyclic dilogarithm; 3.3 Proof of Theorem 2.2; 4 Complex Chern-Simons theory",
  "tokens": {
   "brief": 48,
-  "extended": 423
+  "extended": 373
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-1"
+   "pages": "2-2"
   },
   {
    "id": "sec-001-11-quantum-modular-forms",
    "title": "Quantum modular forms",
-   "pages": "1-4"
+   "pages": "2-3"
   },
   {
-   "id": "sec-002-21-ideal-triangulations-and-neumann-zagier-data",
+   "id": "sec-002-12-zagiers-quantum-modularity-conjecture",
+   "title": "Zagier's Quantum Modularity Conjecture",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-003-2-the-definition-of",
+   "title": "The definition of ,",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-004-21-ideal-triangulations-and-neumann-zagier-data",
    "title": "Ideal triangulations and Neumann-Zagier data",
    "pages": "4-6"
   },
   {
-   "id": "sec-003-22-the-1-loop-invariant-at-level-k",
+   "id": "sec-005-22-the-1-loop-invariant-at-level-k",
    "title": "The 1-loop invariant at level k",
-   "pages": "6-8"
+   "pages": "6-7"
   },
   {
-   "id": "sec-004-24-feynman-diagrams-for-the-n-loop-invariant",
+   "id": "sec-006-23-the-n-loop-invariants-at-level-k-for-n-2",
+   "title": "The n-loop invariants at level k for n 2",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-007-24-feynman-diagrams-for-the-n-loop-invariant",
    "title": "Feynman diagrams for the n-loop invariant",
    "pages": "8-9"
   },
   {
-   "id": "sec-005-25-the-2-loop-invariant-in-detail",
+   "id": "sec-008-25-the-2-loop-invariant-in-detail",
    "title": "The 2-loop invariant in detail",
    "pages": "9-11"
   },
   {
-   "id": "sec-006-26-the-3-loop-invariant",
+   "id": "sec-009-26-the-3-loop-invariant",
    "title": "The 3-loop invariant",
    "pages": "11-11"
   },
   {
-   "id": "sec-007-27-matching-with-the-numerical-asymptotics-of-th",
+   "id": "sec-010-27-matching-with-the-numerical-asymptotics-of-th",
    "title": "Matching with the numerical asymptotics of the Kashaev invariant",
    "pages": "11-11"
   },
   {
-   "id": "sec-008-28-topological-invariance",
+   "id": "sec-011-28-topological-invariance",
    "title": "Topological invariance",
    "pages": "11-12"
   },
   {
-   "id": "sec-009-3-proofs",
+   "id": "sec-012-3-proofs",
    "title": "Proofs",
    "pages": "12-12"
   },
   {
-   "id": "sec-010-31-proof-of-theorem-26",
+   "id": "sec-013-31-proof-of-theorem-26",
    "title": "Proof of Theorem 2.6",
    "pages": "12-14"
   },
   {
-   "id": "sec-011-32-some-identities-of-the-cyclic-dilogarithm",
+   "id": "sec-014-32-some-identities-of-the-cyclic-dilogarithm",
    "title": "Some identities of the cyclic dilogarithm",
    "pages": "14-14"
   },
   {
-   "id": "sec-012-33-proof-of-theorem-22",
+   "id": "sec-015-33-proof-of-theorem-22",
    "title": "Proof of Theorem 2.2",
    "pages": "14-15"
   },
   {
-   "id": "sec-013-4-complex-chern-simons-theory",
+   "id": "sec-016-4-complex-chern-simons-theory",
    "title": "Complex Chern-Simons theory",
    "pages": "15-15"
   },
   {
-   "id": "sec-014-41-basic-structure",
+   "id": "sec-017-41-basic-structure",
    "title": "Basic structure",
    "pages": "15-16"
   },
   {
-   "id": "sec-015-42-a-singular-limit",
+   "id": "sec-018-42-a-singular-limit",
    "title": "A singular limit",
    "pages": "16-17"
   },
   {
-   "id": "sec-016-43-state-integrals",
+   "id": "sec-019-43-state-integrals",
    "title": "State integrals",
    "pages": "17-19"
   },
   {
-   "id": "sec-017-44-derivation-of-the-torsion",
+   "id": "sec-020-44-derivation-of-the-torsion",
    "title": "Derivation of the torsion",
    "pages": "19-20"
   },
   {
-   "id": "sec-018-45-ambiguities",
+   "id": "sec-021-45-ambiguities",
    "title": "Ambiguities",
    "pages": "20-20"
   },
   {
-   "id": "sec-019-5-computations",
+   "id": "sec-022-5-computations",
    "title": "Computations",
    "pages": "20-20"
   },
   {
-   "id": "sec-020-51-how-the-data-was-computed",
+   "id": "sec-023-51-how-the-data-was-computed",
    "title": "How the data was computed",
    "pages": "20-21"
   },
   {
-   "id": "sec-021-52-a-sample-computation",
+   "id": "sec-024-52-a-sample-computation",
    "title": "A sample computation",
    "pages": "21-22"
   },
   {
-   "id": "sec-022-6-data",
+   "id": "sec-025-6-data",
    "title": "Data",
    "pages": "22-22"
   },
   {
-   "id": "sec-023-61-the-41-knot",
+   "id": "sec-026-61-the-41-knot",
    "title": "The 41 knot",
-   "pages": "22-32"
+   "pages": "22-25"
   },
   {
-   "id": "sec-024-63-the-61-knot",
+   "id": "sec-027-62-the-52-knot-and-its-partner-the--237-pretzel",
+   "title": "The 52 knot and its partner, the (-2,3,7) pretzel knot",
+   "pages": "25-32"
+  },
+  {
+   "id": "sec-028-63-the-61-knot",
    "title": "The 61 knot",
-   "pages": "32-38"
+   "pages": "32-35"
   },
   {
-   "id": "sec-025-65-the-912-knot",
+   "id": "sec-029-64-the--23-3-and-the--239-partner-pretzel-knots",
+   "title": "The (-2,3,-3) and the (-2,3,9) partner pretzel knots",
+   "pages": "35-38"
+  },
+  {
+   "id": "sec-030-65-the-912-knot",
    "title": "The 912 knot",
    "pages": "38-39"
   },
   {
-   "id": "sec-026-acknowledgements",
+   "id": "sec-031-acknowledgements",
    "title": "Acknowledgements",
    "pages": "39-39"
   },
   {
-   "id": "sec-027-references",
+   "id": "sec-032-references",
    "title": "References",
    "pages": "39-41"
   }
@@ -154,8 +184,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

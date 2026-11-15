@@ -1,0 +1,70 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 233
+
+Recently, this time-honored wave equation has been treated in two different ways, both using ME. From a more formal
+point of view, in [229] Helmholtz equation is analyzed following the well known procedure followed by Feshbach and Villars
+to convert the second order relativistic quantum Klein-Gordon differential equation for spin-0 particles in a first order
+differential equation involving two components wave functions (the original wave function and its time derivative). The
+evolution operator for Helmholtz equation is then a 2 x 2 matrix which evolves according to the fundamental equation (4),
+with the only difference that now the evolution parameter is x instead of t. In [229] the whole procedure is explained and
+the main physical consequence, which amounts to the addition of correcting terms to the Hamiltonian, is discussed in the
+case of an axially symmetric graded-index medium, i.e. one in which the refractive index is a polynomial.
+
+Helmholtz equation has also been investigated with the help of ME in [227,230,231]. Here, the propagation in a slowly
+varying waveguide is considered, and the boundary value problem is converted into an initial value problem by the
+introduction of appropriate operators which are shown to satisfy Eq. (4). Numerical methods to fourth order borrowed
+from [37] are then used.
+
+Since the mid 19th century, the polarization state of light, and in general electromagnetic radiation or any other
+transverse waves, is described by the so-called Stokes parameters, which constitute a four-dimensional vector S(w)
+depending on the frequency w. When the light traverses an optical element which acts on its polarization state, the in
+and out Stokes vectors are related by
+
+Sour(@) = M(@)Sin(@), (359)
+where the 4 x 4 matrix M(w) is called the Mueller matrix. It can be proved [232,233] that it satisfies the equation
+M'(w) = H(@)M(), ~~ M(wo) = Mo, (360)
+
+where, now, the prime denotes derivative with respect to the real independent variable w. For systems with zero
+polarization-dependent loss (PDL) and no polarization mode dispersion (PMD), H(w) is constant, whereas with PDL and
+PDM, the previous equation is just our Eq. (4) and the appropriateness of ME is apparent. The matrix H(@) in this application
+has a Hermitian and a non-Hermitian component. ME has allowed a recursive calculation of successive orders of the
+frequency variation of the Mueller matrix. This yields PMD and PDL compensators that counteract the effects of PMD and
+PDL with increased accuracy.
+
+Also related to the use of Stokes vector, one can mention the so-called radiative transfer equation for polarized light. It is
+relevant in Astrophysics to measure the magnetic fields in the Sun and stars. That equation gives the variation of $(z) with
+the light path z
+
+d
+—S(z) = —K(z)S(z) + J,
+dz
+
+where S is the Stokes vector, K is a 4 x 4 matrix which describes absorption in the presence of Zeeman effect and J stands
+for the emission term. In [234-236] ME is used to obtain an exponential solution.
+
+7.6. General Relativity
+
+To illustrate, once more, the pervasive presence of the linear differential equation (4), let us mention reference [237] in
+which the aim is to determine the time elapsed between two events when the space-time is treated as in General Relativity.
+Then it turns out to be necessary to solve a two-point boundary value problem for null geodesics. In so doing, one needs
+to know a Jacobian whose expression involves a 8 x 8 matrix function obeying the basic Eq. (4). In [237] an eighth order
+numerical method from [39] is used, which is proved to be an efficient scheme.
+
+7.7. Search of periodic orbits
+
+The search of periodic orbits for some non-linear differential autonomous equations, x’ = f(x), x € R¢ is of interest in
+Celestial Mechanics (periodic orbits of the N-body problem) as well as in the general theory of dynamical systems. Due to
+the complexity of this process, it is important to have efficient numerical algorithms.
+
+The Lindstedt-Poincaré technique is frequently used to calculate periodic orbits. An iterative process proposed in [238]
+consists of starting with a guessed periodic orbit, and this guess is subsequently improved by solving a correlation non-
+autonomous linear differential equation. The numerical integration of this equation is carried out by means of Magnus
+integrators.
+
+7.8. Geometric control of mechanical systems
+
+Many mechanical systems studied in control theory can be modeled by an ordinary differential equation of the form
+[90,239]
+
+X() = folx() + D> uit) £iK(0), (361)
+
+i=1

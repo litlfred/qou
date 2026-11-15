@@ -8,6 +8,7 @@ pages: 12-13
 source_pdf: 1011.4891.pdf
 source_sha256: c3529df5dd909b5e
 toc_source: inferred
+doc_brief: "Mechanical Normal Forms of Knots and Flat Knots A.B.Sossinsky Independent University of Moscow Institute for Problems in Mechanics RAS Dedicated to the memory of V.I.Arnold — A new type of knot"
 ---
 Experimenting with our mechanical device (of diameter to length ratio
 s = d/L = 0.004), we were unable to ﬁnd any knots that have more than one
@@ -34,4 +35,3 @@ to be able to work with highly idealized mechanical models with tiny values
 of the parameter s, and this can only be done by computer simulation after
 an appropriate energy functional (imitating the resilience of our device) has
 been found.
-13

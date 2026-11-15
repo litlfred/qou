@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2404.02087v1
-doc_title: "Extreme plasmons Aakash A. Sahai 1 1Department of Electrical Engineering, University of Colorado Denver, Denver, CO 80204 ∗ Nanosciences largely rely on plasmons which are quasipar"
+doc_title: "Extreme plasmons"
 section_id: sec-001-introduction
 section_title: "Introduction"
 section_number: null
 pages: 1-2
 source_pdf: 2404.02087v1.pdf
 source_sha256: ac92bd0dff8ad907
-doc_brief: "Extreme plasmons Aakash A. Sahai 1 1Department of Electrical Engineering, University of Colorado Denver, Denver, CO 80204 ∗ Nanosciences largely rely on plasmons which are quasiparticles constituted b"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.93
+latex_coverage_ratio: 0.977
+doc_brief: "Extreme plasmons — 15 sections: Extreme plasmons; Introduction; Quantum framework"
 ---
 Plasmons \cite{Pines-PhysRev-1953, Pines-Bohm-PhysRev-1952, Ritchie-surface-plasmon} underpin nanosciences \cite{plasmonics-1} by making possible nanometric energy confinement. Nanometric size of these quasiparticles constituted by collective oscillations of delocalized, conduction band electron gas is realizable only due to the innately quantum nature of the gas which allows ultra-high densities, $n_0\simeq10^{24}\mathrm{cm^{-3}}$ that enforce a characteristic wavelength:
 \begin{align}\label{eq:plasmonic-wavelength}

@@ -1,0 +1,56 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-116
+section_title: "Page 116"
+section_number: null
+pages: 116-116
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+488 T. Ohtsuki (Editor)
+
+used to compute the volume of oriented ideal hyperbolic tetrahedra. In the
+case of Jy(L) there are also some numerical computations (sometimes using
+formal manipulations) - see for instance the first section of the present volume
+for details. In the case of QHI, we develop in [43, 44] (see also [46]) a theory of
+scissors congruence classes for triples (W, L, p) which gives a natural framework
+for a formulation of a volume conjecture.
+
+This goes roughly as follows. One constructs a ‘Bloch-like’ group P(D) based
+on D-decorated tetrahedra, which maps via an explicit idealization map F onto
+an enriched version P(Z) of the classical Bloch group, built on hyperbolic ideal
+tetrahedra. Any D-triangulation T of (W,L, p) leads to elements cp(W, L, p) €
+P(D) and cz(W,L, p) = F(cp(W,L,p)) € P(Z). They are respectively called
+the D- and Z-scissors congruence classes of (W,L,p). The QHI essentially
+depend on the D-class, and for any given D-triangulation T the 6j-symbols
+occurring in Hy(T) depend on the moduli of the hyperbolic tetrahedra of the
+idealization F (T) of T. By using the classical Rogers dilogarithm one can also
+define a dilogarithmic invariant R(W,L,p) which only depends on the Z-class.
+
+Conjecture 7.25 (S. Baseilhac, R. Benedetti) (Real Volume Conjecture for
+QHI) For any triple (W,L,p) one has:
+
+Jim (2n/N?) log(|Kw(W, L, p)|) = Im R(cr(W, L, p)) «
+
+Remark From the explicit formula of Hy(T) one easily shows that the left-
+hand side of Conjecture 7.25, if it exists, only depends on the moduli of the
+hyperbolic tetrahedra of F(T). A natural problem is to find a geometric
+interpretation of the dilogarithmic invariant. Indeed, for scissors congruence
+classes built with ideal triangulations of genuine (non-compact finite volume)
+hyperbolic 3-manifolds M, a similar dilogarithmic invariant gives i(Vol(M) +
+iCS(M)), where Vol is the Volume and CS is the Chern-Simons invariant (see
+[309]).
+
+In [46] one proposes a complex version of Conjecture 7.25, for the whole Ky
+(not only its modulus).
+
+7.5 Perturbative invariants
+The perturbative SO(3) invariant (or the Ohtsuki series) r5°3)(M) = q0 Ad
+
+(q—1)4 € Ql[q—1]] of a rational homology 3-sphere M is the invariant charac-
+terized by the property that v0 dale2"V-1/" — 1)4 for any k is congruent to
+
+Geometry & Topology Monographs, Volume 4 (2002)

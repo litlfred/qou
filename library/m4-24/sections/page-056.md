@@ -1,0 +1,61 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-056
+section_title: "Page 56"
+section_number: null
+pages: 56-56
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+428 T. Ohtsuki (Editor)
+
+is to use an involution on the strata, but, in this case, such an involution takes
+the following left diagram to the right diagram,
+
+1 Y
+Y 1
+! ; ' ;
+aan a
+— ALA
+
+where the right diagram is equal to 0 by definition, while the left one is not
+necessarily equal to 0.
+
+(M. Polyak) Each of the following three approaches gives all Vassiliev invari-
+ants.
+
+e Construction of the Kontsevich invariant using monodromy along solu-
+tions of the KZ equation.
+
+e Configuration space integrals motivated by perturbative Chern-Simons
+theory.
+
+e Gauss diagram formulas, which count configurations of crossings of knot
+diagrams.
+
+The invariants derived from these three approaches are expected to be naturally
+equivalent in the following sense.!?!% The integral of the second approach
+gives an integral presentation of the mapping degree of a certain map on a
+configuration space, and it is shown in the degree 2 case [331] that the invariants
+of the first and third approaches can be obtained by localizing the integral
+presentation with respect to appropriate volume forms on the target space. A
+technical difficulty to show this in a general degree is to compute the localization
+on the “hidden strata”; it is a part of the boundary of a configuration space,
+whose contribution to the derivative of the integral is killed by an involution
+on the strata.
+
+Problem 3.11 (M. Polyak) Find another way to kill the hidden strata, so
+that the above three approaches can naturally present the mapping degree of
+the same map.
+
+128. Poirier [328] showed the equivalence between the invariants derived from the first and
+second approaches, under the assumption of the vanishing of anomaly, by comparing these
+invariants for quasi-tangles (see Question 3.12).
+
+18D). Thurston suggests that Etingof-Kazhdan R matrices [117] might be helpful to relate
+the invariants derived from the first and third approaches.
+
+Geometry & Topology Monographs, Volume 4 (2002)

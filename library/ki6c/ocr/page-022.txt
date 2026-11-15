@@ -1,0 +1,50 @@
+and hence, (46) is satisfied.
+
+As for (24) and (25), similarly as above, it is sufficient to show that
+
+—(2n—e') < Re (2.0 + 8V=1,s~ov-1.n)) < Ine
+
+for some e’ > 0. The middle term is calculated as
+
+Re (20 (0+ dV=1,s— 6v=1.u)) = 2 Arg(1— 2) — Arg(1—y) — 2e(t~- 3),
+
+06
+
+where x = e?™¥—!', Since 0 <t < 3,
+
+—2n(5 —t) < Arg(l—2) < 0.
+Further, since Arg (1 — y) is in the range mentioned above,
+—2n(5 = t) < Re (20 +6/-1,s — 6V—1, uw) < Qn(1 —t— s).
+Therefore, since t > 0.03 and s > 0,
+20 -0.5 < Re (20+ 6v=, s—dV-I, w)) < 2n-0.97,
+and hence, (47) is satisfied.
+
+3.5 Verifying the assumption of the saddle point method
+
+(47)
+
+In this section, we verify the assumption of the saddle point method in Lemma 3.9. In
+order to show this lemma, we show Lemmas 3.5-3.8 in advance. As we mentioned in
+Remark 2.7, we verify the assumption for V(t,s,u) instead of V(t,s,u), since V(t, 5, u)
+
+converges uniformly to V(t, s,u) on A’ in the form mentioned in Remark 2.7.
+
+In the proof of Lemma 3.9, by (43), it is sufficient to decrease Re V(t, , u) by 0.142571...
+by pushing t,s,u into the imaginary directions. In order to calculate this concretely,
+
+putting . _
+f(X,Y,Z) = ReV(t+ XV—1,s+YV-1,u+ ZV-l) —<,,
+
+we consider the behavior of f at each fiber of the projection C? > R?*.
+
+Lemma 3.5 ((34]). Fiving X and Y, we regard f as a function of Z.
+(1) ft+s+u>, then f is monotonically decreasing.
+(2) Ift+stu<, then f has a unique minimal point at Z = g3(t,s,u), where
+
+sin 2r(t + s)
+t,s,u) = —log— ees)
+gs(t, 854) Qn sin 2n($ —t—s—u)
+
+In particular, g3(t,s,u) goes to co ast +s+u> $ —0.
+
+22

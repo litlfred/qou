@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1412.4229v4
-doc_title: "THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS AMNON YEKUTIELI"
+doc_title: "THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS"
 section_id: sec-000-0-introduction
 section_title: "Introduction"
 section_number: 0
-pages: 1-12
+pages: 1-7
 source_pdf: 1412.4229v4.pdf
 source_sha256: 248d6a1e28a76a94
-doc_brief: "THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS AMNON YEKUTIELI — Let A → B be a homomorphism of commutative rings."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.616
+latex_prose_ratio: 0.996
+latex_coverage_ratio: 0.591
+doc_brief: "THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS — Let A →B be a homomorphism of commutative rings."
 ---
 \numberwithin{equation}{subsection}
 

@@ -1,0 +1,181 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1011.4891v1",
+ "source": {
+  "structure_sha256": "c3529df5dd909b5efe96805705472d703aefd7589d597c8edc9c1e4c359f47fc",
+  "file": "1011.4891.pdf"
+ },
+ "provenance": {
+  "title": "Mechanical Normal Forms of Knots and Flat Knots A.B.Sossinsky Independent University of Moscow Institute for Problems in Mechanics RAS Dedicated to the memory of V.I.Arnold",
+  "authors": null,
+  "arxiv": {
+   "id": "1011.4891",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "22 Nov 2010"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 10,
+  "by_kind": {
+   "recommendation": 10
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The reader should not misunderstand the meaning of Observation 1: it claims that whenever we started from a knot diagram with seven crossings or less of a prime knot, our mechanical knot acquired the shape of exactly one of the forms shown in Fig.1.",
+   "strength": "should-not",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-the-mechanical-model.md",
+   "section_title": "The mechanical model",
+   "pages": "2-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Here we note that in ideal versions of the model, it should be required that there be no friction preventing the sliding of one branch of the fat knot along another branch, and that the weight of the mechanism be negligible as compared with its resilience (internal energy).",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-2-the-idealized-models.md",
+   "section_title": "The idealized models",
+   "pages": "6-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Note that in the idealized versions the ratio s := d/L must be very small but positive, and the normal forms depend (up to homothety) on that ratio, so that for idealized mechanical knots we should speak of mechanical s-normal forms.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-2-the-idealized-models.md",
+   "section_title": "The idealized models",
+   "pages": "6-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "To transform this de\ufb01nition into a rigorous mathemat- ical one, we should replace the mechanical device by an electronic one \u2013 a smooth knot supplied with an appropriate energy functional (depending on s), and de\ufb01ne the s-normal form(s) of the knot as its positions minimizing this functional.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-2-the-idealized-models.md",
+   "section_title": "The idealized models",
+   "pages": "6-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "\u201cReidemeister move\u201d forming a little loop 8 \u2022 perform the second Reidemeister move \u21262 in both directions (Figure 4); note that the boundary conditions for the simplifying move (in which two crossing points disappear) are not the same as those for the move \u2126+ 2 which creates two new crossing points; in the second case the \u201cboundary points\u201d A and B are \ufb01xed, in the \ufb01rst one they are allowed to slide, but along \ufb01xed directions; we also note that, under certain conditions, the choice of the branch of the knot that passes over the other in the move \u2126+ 2 is not predetermined (in a sense, it must be considered random), although under other conditions the global con\ufb01guration of the knot determines which of the branches overpasses; Figure 4.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-4-local-moves-of-mechanical-knots.md",
+   "section_title": "Local moves of mechanical knots",
+   "pages": "7-12",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The second Reidemeister move destroying crossing points \u2022 perform the second Reidemeister move \u21262 (Figure 5); here the \u201cbound- ary points\u201d must be allowed to slide in the directions indicated.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-4-local-moves-of-mechanical-knots.md",
+   "section_title": "Local moves of mechanical knots",
+   "pages": "7-12",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The second Reidemeister move creating crossing points \u2022 perform the third Reidemeister move \u21263 (Figure 6); here the \u201cboundary points\u201d must be allowed to slide in the directions indicated.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-4-local-moves-of-mechanical-knots.md",
+   "section_title": "Local moves of mechanical knots",
+   "pages": "7-12",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It should also be noted that the Reidemeister moves as performed by our mechanical knot look like the corresponding local moves, but actually are not, rigorously speaking, local.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-4-local-moves-of-mechanical-knots.md",
+   "section_title": "Local moves of mechanical knots",
+   "pages": "7-12",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The Whitney trick It should be understood that, in the process depicted in the \ufb01gure, here again the device was constrained from above by a pane of glass placed just above the table and parallel to it (otherwise the loops would have forced the knot to jump up o\ufb00the table and each would have self-annihilated itself independently of the other one).",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-4-local-moves-of-mechanical-knots.md",
+   "section_title": "Local moves of mechanical knots",
+   "pages": "7-12",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Such functionals should include not only a \u03b4-function-like repulsive term, but other terms related to curvature, torsion, twisting numbers, and whatnot.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-006-7-perspectives-new-knot-energies-for-computer-si.md",
+   "section_title": "\u00a77. Perspectives: new knot energies for computer simulations",
+   "pages": "16-18",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+that is, it is decreasing on the interval containing t; and ,/ use + 1/4 (recalling our
+bound on the first eigenvalue). We calculate the value of }7, h(t;) using the geometric
+
+side of Selberg’s trace formula. We only have precise information about the multiplicity
+
+of the systole, so we use the test function
+. 4
+[] h(t) = a)
+
+as in [38], so that the Fourier transform
+
+1
+~ 19214
+
+g(§) ((g — 4L)*sen(é — 4L) — 4(€ — 2L)*sgn( — 2L) — 4(2L + €)*sgn(2L + €)
+
++(4L + €)3sen(4L + €) + 6€%sgn(€
+
+is supported on [—4L,4L], where 4L is taken to be less than the length of the second
+
+primitive geodesic. Using the formula from Section 3.2, we know this is
+2arccosh (3 + 2V2) ~ 4.896904895356152.
+In this way, we only get a contribution from the first length
+2arecosh (1+ v2) ~ 3.057141839.
+We can choose any
+
+1
+Le< 5 arccosh (3 + 2v2) ;
+however, we vlant our bound to be optimal. We can run a program in Mathematica (see
+
+Appendix F) to numerically plot how the bound on m changes when we evaluate the
+
+geometric side of the formula for different values of L. In this way, we find that defining
+
+h(t) as above with L= a gives the strongest bound on m. To do our analysis, we alter
+
+Theorem 2.47 by using the equality
+
+1% g(t
+kez) -—b Itt)
+2m Jo sinh (4)
+for the point pair invariant. In our case, g(t) has compact support in [-#, 9235), so the
+
+trace formula is
+
+B g(t hig(h
+y h(pi) = [ = a dt +24 (sats aes)
+
+The right hand side of this equation can be evaluated explicitly using Mathematica. It
+
+is equal to the rather complicated
+
+200 / : 1 ; 1
+m 74805201\/2 + /2 (x 2+ V2 (27900 Lip (csr) — 55800 Lig (-<sim)
+
+78

@@ -1,0 +1,51 @@
+120 Chapter 5 — A family of surfaces
+
+Suppose now that X has dimension g > 2 and is principally polarized
+with a symmetric theta divisor © C X, and consider the perverse intersection
+cohomology sheaf
+
+de = ICe[g—1] € Perv(X,C).
+
+This is a semisimple perverse sheaf and arises via intermediate extension
+from the constant sheaf on the smooth locus of the theta divisor. Thus we
+have dg = Ce|[g — 1] if the theta divisor is smooth, but later on we will also
+deal with isolated singularities.
+
+LEMMA 5.20. Jf the theta divisor © has at most isolated singularities,
+then for every clean perverse sheaf P and all n € Z, any simple negligible
+subquotient of "H" (dg * P) is isomorphic to dy = Cx|g].
+
+Proof. By Verdier duality it suffices to show this for n < 0. Since the
+theta divisor is a local complete intersection, by [65, lemma III.6.5] the
+shifted constant sheaf Ag = Ce[g — 1] is perverse, so we have an exact
+sequence of perverse sheaves
+
+0— kK — Ao — bo — 0
+
+where «x is a skyscraper sheaf supported on the finite set of singular points
+of the theta divisor. Convolution with the clean perverse sheaf P yields a
+distinguished triangle
+
+KP —> loxP Sox p 14
+
+where « * P is again a clean perverse sheaf. By the corresponding long
+exact sequence of perverse cohomology groups, it will therefore suffice to
+show that every simple negligible subquotient of 7H” (A@ * P) for n < 0 must
+be isomorphic to dy. But this follows as in [110, ex. 3] from the excision
+sequence for the ample divisor © C X with affine complement X \ @, using
+Artin’s vanishing theorem. Oo
+
+Let us now consider the convolution square dg * dg. Due to Gabber’s
+decomposition theorem this is a direct sum of degree shifts of semisimple
+perverse sheaves. So we can write
+
+59 *59 = S?(S9) 6 A*(5g)
+
+where the symmetric square and the alternating square on the right hand side
+are by definition the maximal direct summands on which the commutativity
+constraint
+
+S = S505 : de * 6g —> be * do
+
+from section 2.1 acts by +1 resp. by —1. We want to relate the above sheaf
+complexes to the variations of Hodge structures V; in lemma 5.10. In this

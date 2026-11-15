@@ -1,0 +1,70 @@
+by (smt mult-le-0-iff)
+
+ultimately
+
+have «: Re (to-complex ?cr) < 0 <> ?rhs
+by (simp add: divide-less-0-iff)
+
+show ?thesis
+proof
+assume ?/hs
+have is-real (to-complex ?cr) Re (to-complex ?cr) < 0
+using <?lhs» distinct
+unfolding poincare-between-def Let-def
+by auto
+thus ?rhs
+using *
+by simp
+next
+assume ?rhs
+hence Re (to-complex ?cr) < 0
+using *
+by simp
+moreover
+have {0;, of-complex (cor x), of-complex (cor y), inversion (of-complex (cor x))} C circline-set x-axis
+using (xz # 0» is-real-inversion|of cor x]
+using inf-or-of-complez|of inversion ?z]
+by (auto simp del: inversion-of-complez)
+hence is-real (to-complex ?cr)
+using four-points-on-circline-iff-cross-ratio-real[OF distinct]
+by auto
+ultimately
+show ?lhs
+using distinct
+unfolding poincare-between-def Let-def
+by auto
+qed
+qed
+
+lemma poincare-between-Ouv:
+assumes u € unit-disc and v € unit-disc and u # 0, and v On
+shows poincare-between 0; uv <—~>
+(let u’ = to-complex u; v' = to-complez v in Arg u' = Arg v' A cmod u' < cmod v’) (is ?P uv)
+proof (cases u = v)
+case True
+thus ?thesis
+by simp
+next
+case False
+have V v. v € unit-dise \ v A On A v 4 u —> (poincare-between On uv + (let u' = to-complezx u; v' = to-complex
+v in Arg u' = Arg v' A cmod u’ < cmod v')) (is ?P’ u)
+proof (rule wlog-rotation-to-positive-z-azis)
+show u € unit-disc u # On
+by fact+
+next
+fix x
+assume *: is-real zr 0 < Rex Rex < 1
+hence of-complez « € unit-disc of-complex « # 0; of-complex x € circline-set x-axis
+unfolding circline-set-x-axis
+by (auto simp add: cmod-eq-Re)
+show ?P’ (of-complez x)
+proof safe
+fix v
+assume v € unit-disc v # On v 4 of-complex x poincare-between 0}, (of-complex x) v
+hence v € circline-set z-axis
+using poincare-between-poincare-line-uvz|of On of-complex x v|
+using poincare-line-0-real-is-z-axis|of of-complex 2]
+using <of-compler x # On) (vu # On? (v F of-complex x) <of-complex x € unit-disc> <of-complex x € circline-set
+x-axis)
+
+82

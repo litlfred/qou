@@ -1,0 +1,5908 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2505.02719v2",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "1",
+   "text": "The relevant ranges for the parameters of all three energy families will be discussed below, in connection with their respective energy spaces.",
+   "marks": [
+    {
+     "page": 2,
+     "context": "energy 𝐸2,"
+    },
+    {
+     "page": 2,
+     "context": "dsthatarefiniteforsmoothembeddedcurves𝛾:R/Z→R𝑛forareasonable"
+    }
+   ],
+   "block": "library/arxiv-2505.02719v2/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p003-1",
+   "page": 3,
+   "mark": "2",
+   "text": "For TP( 𝑝,𝑞)this was shown in [15, Theorem 1.1], for intM( 𝑝,𝑞)see [17, Theorem 1], and for 𝐸𝛼,𝑝we refer to [9, Theorem 1.1].",
+   "marks": [
+    {
+     "page": 2,
+     "context": "𝜅"
+    },
+    {
+     "page": 2,
+     "context": "ent kinds of gradient flows for various knot energies, the 𝐿"
+    },
+    {
+     "page": 2,
+     "context": ", and Hilbert or Banach gradient flows [37, 42], as well as𝐿"
+    },
+    {
+     "page": 2,
+     "context": "energy 𝐸"
+    },
+    {
+     "page": 3,
+     "context": "theseenergiestheunderlyingenergyspace"
+    },
+    {
+     "page": 3,
+     "context": "2𝑝,"
+    },
+    {
+     "page": 3,
+     "context": "spaces, and we write 𝑊1+𝑠,"
+    },
+    {
+     "page": 3,
+     "context": "energy (1.1), whose energy space equals 𝐻"
+    },
+    {
+     "page": 3,
+     "context": "for the tangent-point energies TP(𝑝,"
+    },
+    {
+     "page": 3,
+     "context": "es TP(𝑝,2)for𝑝∈(4, 5), and integral Menger curvature intM(𝑝,"
+    }
+   ],
+   "block": "library/arxiv-2505.02719v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p004-1",
+   "page": 4,
+   "mark": "3",
+   "text": "This does not change the respective parameter range for 𝐸𝛼,1, or for TP( 𝑝,𝑞)and intM( 𝑝,𝑞)if 𝑞∈(1, 2].",
+   "marks": [
+    {
+     "page": 3,
+     "context": "(R/Z)"
+    },
+    {
+     "page": 4,
+     "context": "shrink slightly"
+    }
+   ],
+   "block": "library/arxiv-2505.02719v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "5",
+   "text": "[15, Theorem 1.5], [17, Theorem 4], [16, Theorem 1.2]",
+   "marks": [
+    {
+     "page": 6,
+     "context": "Inviewoftheexistingregularityresults"
+    }
+   ],
+   "block": "library/arxiv-2505.02719v2/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p017-1",
+   "page": 17,
+   "mark": "6",
+   "text": "Explicitly given in (3.14) in our proof of Proposition 3.3 below.",
+   "marks": [
+    {
+     "page": 17,
+     "context": "Again, as before, the same formula"
+    }
+   ],
+   "block": "library/arxiv-2505.02719v2/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p017-2",
+   "page": 17,
+   "mark": "7",
+   "text": "Notice that the nullspace ker( D𝛴𝛾)splits 𝐻1+𝑠(R/Z, R𝑛) because the latter is a Hilbert space.",
+   "marks": [
+    {
+     "page": 17,
+     "context": " in the case𝑠=1.Therefore, we can apply the preimage theorem"
+    }
+   ],
+   "block": "library/arxiv-2505.02719v2/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p020-1",
+   "page": 20,
+   "mark": "8",
+   "text": "For 𝑠= 1 simply replace the double integral in (3.22) by ⟨𝛾′′, ℎ′′⟩𝐿2.",
+   "marks": [
+    {
+     "page": 20,
+     "context": "product"
+    }
+   ],
+   "block": "library/arxiv-2505.02719v2/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p028-1",
+   "page": 28,
+   "mark": "9",
+   "text": "In [51, Lemma 3.1] 𝐸b was shown to be of class 𝐶1,1 loc on 𝐻2",
+   "marks": [
+    {
+     "page": 28,
+     "context": "an apply Theorem 2.4 and Corollaries 2.6 and 2.7 to conclude"
+    }
+   ],
+   "block": "library/arxiv-2505.02719v2/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p032-1",
+   "page": 32,
+   "mark": "2",
+   "text": "𝜚1",
+   "marks": [
+    {
+     "page": 31,
+     "context": "𝐸"
+    },
+    {
+     "page": 31,
+     "context": "(L**) on the Hilbert submanifold A"
+    },
+    {
+     "page": 31,
+     "context": "notice first that the smooth arclength submanifold A"
+    },
+    {
+     "page": 31,
+     "context": "zof the Hilbert space H≔𝐻"
+    },
+    {
+     "page": 31,
+     "context": "knotsinH,whichfollowsfrom[58,Theorem3.1]fortheMöbiusenergy𝐸"
+    },
+    {
+     "page": 31,
+     "context": "forintM(𝑝,"
+    },
+    {
+     "page": 31,
+     "context": "We concentrate here on the tangent-point energies TP(𝑝,"
+    },
+    {
+     "page": 31,
+     "context": "ucialtoolwillbethefollowingsplittingofthedifferentialofTP(𝑝,"
+    },
+    {
+     "page": 31,
+     "context": "D(TP(𝑝,"
+    },
+    {
+     "page": 32,
+     "context": "Lemma 4.6 (𝑸TPelliptic)Let𝑓∈𝐿"
+    },
+    {
+     "page": 32,
+     "context": "2−1.Then there are constants 0 < 𝐶1≤𝐶"
+    },
+    {
+     "page": 32,
+     "context": "𝐿"
+    },
+    {
+     "page": 32,
+     "context": "𝐿2+ 𝑄𝑇𝑃( 𝑓,𝑓)≤𝐶"
+    },
+    {
+     "page": 32,
+     "context": "andℎ≔𝑓in (4.14) yields the upper bound on∥𝑓∥𝐿"
+    }
+   ],
+   "block": "library/arxiv-2505.02719v2/blocks/prose-sec-014"
+  },
+  {
+   "id": "fn-p034-1",
+   "page": 34,
+   "mark": "10",
+   "text": "The explicit formula for the differential of TP( 𝑝,2)is restated in (4.24) in the proof of Lemma 4.7 below.",
+   "marks": [
+    {
+     "page": 34,
+     "context": "SinceD(TP(𝑝,2))𝛾˜ℎcontains"
+    }
+   ],
+   "block": "library/arxiv-2505.02719v2/blocks/prose-sec-014"
+  },
+  {
+   "id": "fn-p035-1",
+   "page": 35,
+   "mark": "11",
+   "text": "We follow the convention of [15] thatÆdenotes any kind of product.",
+   "marks": [
+    {
+     "page": 35,
+     "context": "D(TP)𝛾𝑌𝛾⟨𝛾′, ℎ′⟩is a finite sum of expressions of type"
+    }
+   ],
+   "block": "library/arxiv-2505.02719v2/blocks/prose-sec-014"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "4",
+   "text": "The additional symmetry constraint considered in [33,Theorem 1.1] is of lower order and can be omitted to obtain global minimizers. This was carried out in [31, Theorem 2.1] but there for the non-smooth ropelength functional, which can be viewed as the 𝐿∞-limit of TP1/𝑞 𝑞, or of M1/𝑝 as 𝑞or 𝑝tends to infinity. 𝑝",
+   "block": "library/arxiv-2505.02719v2/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p028-2",
+   "page": 28,
+   "mark": "r",
+   "text": "(R/Z, R𝑛).",
+   "block": "library/arxiv-2505.02719v2/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p048-1",
+   "page": 48,
+   "mark": "10",
+   "text": "1007/978-3-319-14648-5. [3] H. W. Alt. Linear functional analysis. Universitext. An application-oriented introduction, Translated from the German edition by Robert Nürnberg. Springer-Verlag London, Ltd., London, 2016, pp. xii+435. doi:",
+   "block": "library/arxiv-2505.02719v2/blocks/prose-sec-020"
+  },
+  {
+   "id": "fn-p048-2",
+   "page": 48,
+   "mark": "10",
+   "text": "1007/978-1-4471-7280-2. [4] D. V. Anosov. “Certain homotopies in the space of closed curves”. In: Mathematics of the USSR-Izvestiya",
+   "block": "library/arxiv-2505.02719v2/blocks/prose-sec-020"
+  },
+  {
+   "id": "fn-p048-3",
+   "page": 48,
+   "mark": "17",
+   "text": "3 (1981), pp. 423–453. doi: 10.1070/IM1981v017n03ABEH001367. [5] S. Bartels and P. Reiter. “Numerical solution of a bending-torsion model for elastic rods”. In: Numer. Math. 146.4 (2020), pp. 661–697. doi: 10.1007/s00211-020-01156-6. [6] S. Bartels and P. Reiter. “Stability of a simple scheme for the approximation of elastic knots and self- avoiding inextensible curves”. In: Math. Comp. 90.330 (2021), pp. 1499–1526. doi: 10.1090/mcom/ 3633.",
+   "block": "library/arxiv-2505.02719v2/blocks/prose-sec-020"
+  },
+  {
+   "id": "fn-p050-1",
+   "page": 50,
+   "mark": "10",
+   "text": "2307/1969467. [45] J. R. Munkres. Topology. 2nd ed. Upper Saddle River, NJ: Prentice Hall, 2000. [46] J. O’Hara. “Energy functionals of knots”. In: Topology - Hawaii. Proceedings of a conference, held at the University of Hawaii, Honolulu, HI, USA, August 12-18, 1990. Singapore: World Scientific, 1992, pp. 201–214. [47] J. O’Hara. “Energy functionals of knots. II”. In: Topology Appl. 56.1 (1994), pp. 45–61. doi: 10.1016/ 0166-8641(94)90108-2. [48] J. O’Hara. “Energy of a knot”. In: Topology 30.2 (1991), pp. 241–247. doi: 10.1016/0040-9383(91) 90010-2. [49] J. O’Hara. Energy of knots and conformal geometry. Vol. 33. Series on Knots and Everything. River Edge, NJ: World Scientific Publishing Co. Inc., 2003, pp. xiv+288. doi: 10.1142/9789812795304.",
+   "block": "library/arxiv-2505.02719v2/blocks/prose-sec-021"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "tionals intM( 𝑝,𝑞).Even the tangent-point energies TP( 𝑝,"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "forclosedcurves𝛾:R/Z→R"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "𝑅(𝑝,𝑞)(𝛾(𝑢), 𝛾(𝑣), 𝛾(𝑤))"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "𝑅(𝑝,𝑞)(𝛾(𝑢), 𝛾(𝑣), 𝛾(𝑤))d𝑢"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "𝑅(𝑝,𝑞)(𝛾(𝑢), 𝛾(𝑣), 𝛾(𝑤))d𝑢d𝑤"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "eenergiestheunderlyingenergyspace2isafractionalSobolevspace𝑊"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "spaces, and we write 𝑊"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "spaces, and we write 𝑊1+𝑠,2=𝐻"
+  },
+  {
+   "page": 3,
+   "mark": "8",
+   "context": "3,"
+  },
+  {
+   "page": 3,
+   "mark": "b",
+   "context": "3), as well as total energies of the form T≔𝐸"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "A"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "𝛾∈𝐻"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "andshowinTheorem3.1thatA"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "andshowinTheorem3.1thatA1+𝑠isasmoothsubmanifoldof𝐻"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "A"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "𝛾∈A"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "that the open subset of all regular knots in𝐻"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "the submanifolds A"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "the submanifolds A1+𝑠and A"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "2, 1]and"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "2, 1]and z∈R𝑛.In addition, if two knots 𝛾"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "and 𝛾1lie in the same connected component of A"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "to allow for the compact embedding 𝐻"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "to allow for the compact embedding 𝐻2↩→𝑊"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "nd𝑞are chosen as in (1.6) and (1.9).Then the total energyT≔𝐸"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "the arclength submanifold A"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "z⊂𝐻"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "embed compactly into 𝐶"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "/Z, R𝑛).For example, the energy space of the Möbius energy 𝐸"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": ", R𝑛).For example, the energy space of the Möbius energy 𝐸2,"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "proof a slightly smaller Banach space that does embed into 𝐶"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "m 1.2 (Bending energy plus Möbius energy)The total energyT≔𝐸"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(Bending energy plus Möbius energy)The total energyT≔𝐸b + 𝜃𝐸"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "ending energy plus Möbius energy)The total energyT≔𝐸b + 𝜃𝐸2,"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "stricted to A"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "zsatisfies the (PS)-condition for every 𝜃> 0 and"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "energies TP(𝑝,"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "energies TP(𝑝,2)for𝑝∈(4, 5)whose energy space 𝐻"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Theorem 1.3 (Tangent-point energies TP( 𝒑,"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Thenthetangent-pointenergyTP(𝑝,"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "ngent-pointenergyTP(𝑝,2)restrictedtothearclengthsubmanifoldA"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "𝐻"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "ThisresultcarriesovertoO’Hara’senergies𝐸𝛼,"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "curvature functionals intM(𝑝,"
+  },
+  {
+   "page": 5,
+   "mark": "8",
+   "context": "3,"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "sequences and of minimizing knots for the total energies T=𝐸"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "andletT=𝐸"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "Kbe a connected component of the arclength submanifold A"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "arclength submanifold, i.e., for K= A"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "mentionedbefore,connectedcomponentsofA"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "For the pure tangent-point energies TP(𝑝,"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "re tangent-point energies TP(𝑝,2), which are even of class 𝐶"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": " tangent-point energies TP(𝑝,2), which are even of class 𝐶1,"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "arclength submanifold of the larger Hilbert space 𝐻"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "Corollary 1.5 (Minimizing knots for TP( 𝒑,"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "LetKbeaconnectedcomponentofthearclengthsubmanifoldA"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "aminimizing(PS)-sequenceandaminimizingknotforTP(𝑝,"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "K= A"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "If the energies are of class 𝐶"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "If the energies are of class 𝐶1,"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "intM(𝑝,"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "F=𝐸"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "F=𝐸2,"
+  },
+  {
+   "page": 5,
+   "mark": "8",
+   "context": "3,"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "m 1.6 (Gradient flow for total energies)Fix𝜃>0andz∈R𝑛,setM≔A"
+  },
+  {
+   "page": 6,
+   "mark": "e",
+   "context": "considertherestriction"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "considertherestrictioneT≔T |MofthetotalenergyT≔𝐸"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "such that 𝜙(·, 𝛾"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "such that 𝜙(·, 𝛾0)∈𝐶"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "such that 𝜙(·, 𝛾0)∈𝐶1([0, ∞), M)for every knot 𝛾"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "d𝑡𝜙(𝑡, 𝛾"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "= −∇eT (𝜙(𝑡, 𝛾"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "The function 𝑡↦→eT (𝜙(𝑡, 𝛾"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "n 𝑡↦→eT (𝜙(𝑡, 𝛾0)) is strictly decreasing on [0, ∞) unless 𝛾"
+  },
+  {
+   "page": 6,
+   "mark": "e",
+   "context": "rictly decreasing on [0, ∞) unless 𝛾0 is a critical knot for"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "𝜙(𝑡, 𝛾"
+  },
+  {
+   "page": 6,
+   "mark": "e",
+   "context": "𝜙(𝑡, 𝛾0)subconverges to a critical point 𝛾∞of"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "to a critical point 𝛾∞ofeT, which is ambiently isotopic to 𝛾"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "for the𝐿"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "for the𝐿2-gradient flow of 𝐸"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "for the𝐿2-gradient flow of 𝐸b + 𝐸"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "for the𝐿2-gradient flow of 𝐸b + 𝐸2,"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "𝐿"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "potentials containing 𝐸"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "potentials containing 𝐸2,"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "respecttosomegeometricmetric,oftendenoted𝐿"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "respecttosomegeometricmetric,oftendenoted𝐿2(d𝑠),or𝐻"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "restrictthe𝐻"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "intrinsic) 𝐻"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": " energies in (1.11) contain the tangent-point energies TP(𝑝,"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "Theorem 1.7 (Gradient flow for TP( 𝒑,"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "setM≔A"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "⊂𝐻"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "⊂𝐻1+𝑠(𝑝)(R/Z, R𝑛).Thenforanygiveninitialknot𝛾"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "or the gradient flow (1.12) on Mwithin the same knot class[𝛾"
+  },
+  {
+   "page": 6,
+   "mark": "e",
+   "context": "gradient flow (1.12) on Mwithin the same knot class[𝛾0](with"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "TP ≔TP(𝑝,"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "TP ≔TP(𝑝,2)|M), along which"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "replaced by the restriction"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "TP-critical point.Moreover, the flow subconverges to a"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "initial knot 𝛾"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "initial knot 𝛾0 is a"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "of the same knot type as 𝛾"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "esult carries over to the integral Menger curvatures intM(𝑝,"
+  },
+  {
+   "page": 6,
+   "mark": "8",
+   "context": "3,"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "3)and to 𝐸𝛼,"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "gradient flow for intM(𝑝,"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "which even leads to full convergence of the flow for TP(𝑝,"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "tangent-point energies TP(𝑝,"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "8 (Smoothness of critical points of total energies)LetT𝜈𝜃≔𝜈𝐸"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "hness of critical points of total energies)LetT𝜈𝜃≔𝜈𝐸b+𝜃TP(𝑝,"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "for𝑝∈(4, 5), 𝜈, 𝜃≥0 with 𝜈+ 𝜃>0, and M∈{A"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "for𝑝∈(4, 5), 𝜈, 𝜃≥0 with 𝜈+ 𝜃>0, and M∈{A1+𝑠(𝜈), A"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": " also holds if one replaces the tangent-point energies TP(𝑝,"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "curvaturefunctionalsintM(𝑝,"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "3),orbyO’Hara’senergies𝐸𝛼,"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "3),orbyO’Hara’senergies𝐸𝛼,1for𝛼∈(2,"
+  },
+  {
+   "page": 7,
+   "mark": "8",
+   "context": "3,"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "nd subconvergence to critical points for energies of class 𝐶"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": " subconvergence to critical points for energies of class 𝐶1,"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "an alternative proof that works for energies that are only 𝐶"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "contains the proofs that the sets A"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "contains the proofs that the sets A1+𝑠and A"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "submanifolds of the Hilbert space 𝐻"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 7,
+   "mark": "z",
+   "context": "2, 1]and"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "m (Theorem 5.3) and of the pure tangent-point energies TP(𝑝,"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "class 𝐶"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": " 𝐶1on an open subset O⊂H.Moreover, we suppose that M⊂Ois a 𝐶"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "Since M⊂His a 𝐶"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "Ouraimistofindsufficientcriteriaforthe(PS)-conditionof"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "(B)(Boundedness) Every (PS)-sequence for"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "(L)(Limit in M) Every convergent (PS)-sequence of"
+  },
+  {
+   "page": 9,
+   "mark": "e",
+   "context": "Theorem 2.1 ((PS)-condition for"
+  },
+  {
+   "page": 9,
+   "mark": "e",
+   "context": "(D) above, the restricted energy"
+  },
+  {
+   "page": 9,
+   "mark": "e",
+   "context": "Proof.Let (𝑥𝑘)𝑘⊂M be a (PS)-sequence for"
+  },
+  {
+   "page": 10,
+   "mark": "e",
+   "context": "𝑥𝑘ℎ𝑘|=| D"
+  },
+  {
+   "page": 10,
+   "mark": "e",
+   "context": "𝑥𝑘ℎ𝑘|≤∥D"
+  },
+  {
+   "page": 10,
+   "mark": "e",
+   "context": "Because(𝑥𝑘)𝑘∈Nisa(PS)-sequencefor"
+  },
+  {
+   "page": 10,
+   "mark": "e",
+   "context": "Because(𝑥𝑘)𝑘∈Nisa(PS)-sequenceforeE,wehave∥D"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "𝐶"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "In addition to the original energy E∈𝐶"
+  },
+  {
+   "page": 10,
+   "mark": "e",
+   "context": "addition to the original energy E∈𝐶1(O) with its restriction"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "M⊂O⊂H↩→B, we consider another functionalF∈𝐶"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "𝐶"
+  },
+  {
+   "page": 10,
+   "mark": "e",
+   "context": "𝐶1(O).Notethat,ingeneral,a(PS)-sequencefortherestriction"
+  },
+  {
+   "page": 10,
+   "mark": "e",
+   "context": "(PS)-sequence for the individual functionals"
+  },
+  {
+   "page": 10,
+   "mark": "e",
+   "context": "(PS)-sequence for the individual functionalseEor"
+  },
+  {
+   "page": 10,
+   "mark": "e",
+   "context": "of"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "Corollary 2.3 ((PS)-condition for the total energy"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "E∈𝐶"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "E∈𝐶1(O) and F∈𝐶"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "), and (L*) are satisfied.Then for every 𝜃>0 the restriction"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "Proof.By adding suitable constants, we may assume that"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "oof.By adding suitable constants, we may assume thateE≥0 and"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "be a (PS)-sequence for"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": " (PS)-sequence foreT.By definition, there is a 𝐾∈R such that"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "Now"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "E(𝑥𝑘)=eE(𝑥𝑘)≤eE(𝑥𝑘) + 𝜃"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "under F ; this follows from"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "𝜃"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "𝑥𝑘ℎ𝑘=D"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "𝑥𝑘ℎ𝑘|≤∥D"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "The sequence(𝑥𝑘)𝑘∈N is a (PS)-sequence for"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "𝑘→∞∥D"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "All this together implies that | D"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "et(M, 𝑔)be a Riemannian manifold without boundary of class 𝐶"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "the set of connecting 𝐶"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "𝑐∈𝐶"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "𝐶"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "is manifold we consider energy functionals E: M→R of class 𝐶"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": " manifold we consider energy functionals E: M→R of class 𝐶1,"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "Theorem 2.4 (Gradient flow)LetE∈𝐶"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "Theorem 2.4 (Gradient flow)LetE∈𝐶1,"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "𝜙(·, 𝑥)∈𝐶"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "𝑔𝜉(𝜏)"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "𝑔𝜉(𝜏)d𝜏for"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "𝑠∥∇E(𝜉(𝜏))∥𝑔𝜉(𝜏)"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "𝑠∥∇E(𝜉(𝜏))∥𝑔𝜉(𝜏) d𝜏≤(𝑡−𝑠)"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "𝑔𝜉(𝜏)"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "𝑡𝑗∥¤𝜉(𝜏)∥𝑔𝜉(𝜏)"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "𝑡𝑗∥∇E(𝜉(𝜏))∥𝑔𝜉(𝜏)"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "𝑘→∞(𝑡𝑘−𝑠𝑚)"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "𝑘→∞(𝑡𝑘−𝑠𝑚)1/2 (E(𝑥) −𝑒)"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "=(𝑡+−𝑠𝑚)"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "=(𝑡+−𝑠𝑚)1/2(E(𝑥) −𝑒)"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "𝑔𝜉(𝜏)"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "𝑔𝜉(𝜏)"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "𝐶"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "ition 2.5 (Symmetry-preserving gradient flow)Let𝐺beagroupof𝐶"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "oftheRiemannianmanifold(M, 𝑔).SupposethatE∈𝐶"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "oftheRiemannianmanifold(M, 𝑔).SupposethatE∈𝐶1,"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "is 𝐺-symmetric andEis 𝐺-invariant under a group 𝐺of 𝐶"
+  },
+  {
+   "page": 15,
+   "mark": "c",
+   "context": "Proof.Choose 𝑥"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Eis𝐺-invariantunderagroup𝐺of𝐶"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Eveniftheenergyisonlyin𝐶"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Corollary 2.8 (Minimizers)LetE∈𝐶"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "mizing sequence (𝑥𝑘)𝑘∈N of E|Ksuch that E(𝑥𝑘)≤inf(E|K) + 1/𝑘"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "is a 𝜎> 0 and a 𝐶"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "0∥𝑐′(𝜏)∥𝑔𝑐(𝜏)"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "𝐻"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "𝐻1+𝑠(R/Z, R𝑛)≔𝑊"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "𝐻1+𝑠(R/Z, R𝑛)≔𝑊1+𝑠,"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "whichembedsintotheclassicHölderspace𝐶"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "𝐶"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "2, 1).Therefore,thesubsets𝐻"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "(R/Z, R𝑛)or𝐻"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "ely injective curves are open subsets of the Hilbert space 𝐻"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "well as their intersection 𝐻"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "3.1.The arclength manifolds N"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "3.1.The arclength manifolds N1+𝑠and A"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "𝐻"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "(R/Z, R𝑛)={𝛾∈𝐻"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "length parametrized curves as a submanifold of the open set𝐻"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "𝐻"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "for𝛾∈𝐻"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "which is a smooth function on the set𝐻"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "2, 1) thatthedifferentialD𝛴𝛾: 𝑇𝛾𝐻"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "(R/Z, R𝑛)≃𝐻"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "for𝛾∈𝐻"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "(R/Z, R𝑛),ℎ∈𝐻"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "∥D𝛴𝛾∥L(𝐻"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "a bounded right inverse 𝑌𝛾∈L(𝐻𝑠(R/Z), 𝐻"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "( 𝑓))=𝑓for all𝑓∈𝐻𝑠(R/Z), so thatD𝛴𝛾is surjective for any 𝛾∈𝐻"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "N"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "N1+𝑠≔𝐻"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "(R/Z, R𝑛)=\u0000𝛴|𝐻"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "\u0001−1(0)= N"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "\u0001−1(0)= N1+𝑠∩𝐻"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "A"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "A1+𝑠≔𝐻"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "ia(R/Z, R𝑛)=\u0000𝛴|𝐻"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "2, 1].The sets N"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "curves, and A"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "𝐻"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "(R/Z, R𝑛)and 𝐻"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "N"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "≔{𝛾∈N"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "≔{𝛾∈N1+𝑠: 𝛾(0)= z},andA"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "≔{𝛾∈A"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "Thecorrespondingambientspace𝐻"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "(R/Z, R𝑛)≔{𝛾∈𝐻"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "affinesubspaceandthereforealsoasmoothsubmanifoldof𝐻"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "come up with a suitable projection later, we express N"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "N"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "=\u0000𝛴|𝐻"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(R/Z,R𝑛)× 𝑃"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "where the point evaluation 𝑃0:𝐻"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "This linear map is a smooth submersion at every 𝛾∈𝐻"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "𝑇𝛾𝐻"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "(R/Z, R𝑛)≃𝐻"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "for allℎ∈𝐻"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "The differential of the product map𝛴× 𝑃0:𝐻"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "anditpossessesasboundedrightinversethemap𝑍𝛾:𝐻𝑠(R/Z)× R𝑛→𝐻"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "shownthatthedifferentialD(𝛴, 𝑃0)𝛾issurjectiveforanycurve 𝛾∈𝐻"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "\u0001−1(0, z)= N"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "A"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "∩𝐻"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "=\u0000𝛴|𝐻"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(R/Z,R𝑛)× 𝑃"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 18,
+   "mark": "z",
+   "context": "2, 1] and"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "the sets N"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "and A"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "𝛾(0)=zaresmoothsubmanifoldsoftheopensubsets𝐻"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "(R/Z, R𝑛)and𝐻"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "The tangent space of the arclength manifold N"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "e tangent space of the arclength manifold N1+𝑠at a curve 𝛾∈N"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "𝑇𝛾N"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "ℎ∈𝐻"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "whereas for N"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "𝑇𝛾N"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "ℎ∈𝐻"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Analogously, one finds 𝑇𝛾A"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Analogously, one finds 𝑇𝛾A1+𝑠= 𝑇𝛾N"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Analogously, one finds 𝑇𝛾A1+𝑠= 𝑇𝛾N1+𝑠for 𝛾∈A"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Analogously, one finds 𝑇𝛾A1+𝑠= 𝑇𝛾N1+𝑠for 𝛾∈A1+𝑠and 𝑇𝛾A"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "= 𝑇𝛾N"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "if 𝛾∈A"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "A"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "A1+𝑠, N"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "𝛾:𝐻"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "𝛾:𝐻1+𝑠(R/Z, R𝑛)→𝐻"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "0𝑓(𝑢) 𝛾′(𝑢)"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "𝛾′(𝑢)"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "𝛾is indeed bounded because of [37, Lemma 5.3], since 𝛾′∈𝐶"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "|𝑉𝛾𝑓|≤𝐶∥𝑓∥𝐶"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "edding constant from the compact Morrey embedding 𝐻𝑠(R/Z)↩→𝐶"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "forallℎ∈𝐻"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "𝛾ℎ∈𝑇𝛾Mforallℎ∈𝐻"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "𝛾ℎ∥𝐻"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "𝛾ℎ∥𝐻1+𝑠≤(1 +˜𝐶𝐶𝛴)∥ℎ∥𝐻"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "𝛾ℎ∥𝐻1+𝑠≤(1 +˜𝐶𝐶𝛴)∥ℎ∥𝐻1+𝑠=: 𝐶𝛾∥ℎ∥𝐻"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "for allℎ∈𝐻"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "where the constant˜𝐶=˜𝐶(𝑛, 𝑠, ∥𝛾∥𝐻"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "the norm∥𝛾∥𝐻"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "2, 1],"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "Corollary 3.4 (Bounded linear projection onto 𝑻𝜸N"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "N"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "N1+𝑠, A"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": ", and𝛾∈Mz≔{𝜂∈M:𝜂(0)=z}, the mapping prM"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": ":𝐻"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "𝐻"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "prM"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "𝛾transfers to prM"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "𝛾, and with (prM"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "𝛾ℎ)′andprM"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "ℎ(0)=0wefindby(3.17)and(3.12)thatprM"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "prM"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "thebasicabstractconditions(E)and(P)forthearclengthmanifoldsA"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "A"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "2, 1]and"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "A"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "A1+𝑠, A"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": ", N"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": ", N1+𝑠, N"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "𝐻"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "(R/Z, R𝑛),orO≔𝐻"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "H≔𝐻"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "H≔𝐻1+𝑠(R/Z, R𝑛),whichembedscompactlyintotheBanachspaceB≔𝐶"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "in(3.13)forM∈{A"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "in(3.13)forM∈{A1+𝑠, N"
+  },
+  {
+   "page": 20,
+   "mark": "e",
+   "context": "Suppose 𝛾∈M is critical for the restricted energy"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "e 𝛾∈M is critical for the restricted energyeE≔E|M, where E∈𝐶"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "subset of the Hilbert space H=𝐻"
+  },
+  {
+   "page": 20,
+   "mark": "e",
+   "context": "bset of the Hilbert space H=𝐻1+𝑠(R/Z, R𝑛)with M⊂O.ThenDE𝛾ℎ=D"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "Fixapointz∈R𝑛and𝑠∈(0, 1].TheHilbertspaceH=𝐻"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "⟨𝑓, ℎ⟩H≔⟨𝑓, ℎ⟩𝐻"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "⟨𝑓, ℎ⟩H≔⟨𝑓, ℎ⟩𝐻1+𝑠=⟨𝑓, 𝑔⟩𝐿"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "⟨𝑓, ℎ⟩H≔⟨𝑓, ℎ⟩𝐻1+𝑠=⟨𝑓, 𝑔⟩𝐿2+ ⟨𝑓′, 𝑔′⟩𝐿"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "N"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "⊂N"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "⊂N1+𝑠⊂𝐻"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "(R/Z, R𝑛)⊂𝐻"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "A"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "⊂A"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "⊂A1+𝑠⊂𝐻"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "(R/Z, R𝑛)⊂𝐻"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "N"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "N1+𝑠, N"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": ", A"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": ", A1+𝑠, A"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "𝛾M.So, Mis a smooth Riemannian submanifold of the open set 𝐻"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "𝐻"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "𝑐∈𝐶"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "anarbitraryregularclosedcurve𝛾∈𝐻"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "L(𝛾)L(𝛾|[0,𝑡]) for 𝑡∈[0,"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "𝛾:[0,"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "𝛾:[0, 1]→[0,"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "arc :𝐻"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "(R/Z, R𝑛)→𝐻"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "for𝛾∈𝐻"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "is continuous with respect to the 𝐻"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "theinjectivityofacurvesothatwehavetheinclusionarc(𝐻"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "(R/Z, R𝑛))⊂A"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "𝐻"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "(R/Z, R𝑛)⊂𝐻"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "𝐻1+𝑠(R/Z, R𝑛)stronglydeformationretractsontothesubmanifoldsN"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "and N"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 21,
+   "mark": "z",
+   "context": "2, 1] and"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "2, 1] and z ∈R𝑛, whereas 𝐻"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "onto A"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "onto A1+𝑠and A"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "Proof.If 𝛾∈N"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "(3.25).Therefore, the mapping arc:𝐻"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "(R/Z, R𝑛)→𝐻"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "(R/Z, R𝑛)= N"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "with arc |N"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "with arc |N1+𝑠=IdN"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "with arc |N1+𝑠=IdN1+𝑠,whence a retraction onto N"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "compose the map arc with the smooth shift 𝜏z:𝐻"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "compose the map arc with the smooth shift 𝜏z:𝐻1+𝑠(R/Z, R𝑛)→𝐻"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "𝜏z(ℎ)≔ℎ+ z −ℎ(0)satisfying𝜏z(𝛾)=𝛾forall𝛾∈A"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "𝜏z ◦arc :𝐻"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "(R/Z, R𝑛)→N"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": " weneedtoconstructahomotopybetweentheidentitymapontheset O≔𝐻"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "and the retraction onto N"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "and the retraction onto N1+𝑠, and N"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "𝛾)′(𝑡)>0 for any 𝑡∈[0,"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "this family 𝜙𝜂(𝜎) as a mapping 𝜙·(·):O × [0, 1]→𝐻"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "for all 𝑡∈R one has Arc(𝜂, 0)= 𝜂for all 𝜂∈O, and Arc(𝜂, 1)∈N"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "𝜂so that Arc(𝜂,"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "retraction onto N"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "retraction onto N1+𝑠.For 𝛾∈N"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "strong deformation retraction of Oonto N"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "Ifwefixapointz∈R𝑛totreatthearclengthsubmanifoldN"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "insteadofN"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": " 𝜎∈[0, 1] yields a strong deformation retraction of O onto N"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "Arc(𝜂, 1)(0)∈N"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "forevery𝜂∈O.Inaddition,for𝛾∈N"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "Replacing N"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "Replacing N1+𝑠and𝐻"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "byA"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "byA1+𝑠and𝐻"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "parametrizedcurvestopologically:Astheknotspace𝐻"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "retracts ontoA"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "retracts ontoA1+𝑠and also ontoA"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "2, 1].If two knots 𝛾"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "𝛾"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "𝛾1 lie in the same connected component of A"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "1 lie in the same connected component of A1+𝑠then they are 𝐶"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "other hand, two knots 𝛾"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "other hand, two knots 𝛾0, 𝛾"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "other hand, two knots 𝛾0, 𝛾1∈A"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "other hand, two knots 𝛾0, 𝛾1∈A1+𝑠are 𝐶"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "componentofA"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "componentofA1+𝑠.AllstatementsremaintrueifwereplaceA"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "componentofA1+𝑠.AllstatementsremaintrueifwereplaceA1+𝑠byA"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "ItsufficestotreatA≔A"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "If𝛾"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "If𝛾0, 𝛾"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "thesameconnectedcomponentofthesmoothsubmanifoldA⊂O≔𝐻"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "𝐽(·, 𝜎)∈Aisa𝐶"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "𝐻"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "𝐻1+𝑠(R/Z, R𝑛)↩→𝐶"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "embedding that 𝐽is also of class 𝐶"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "s also of class 𝐶1(R/Z × [0, 1], R𝑛)so that 𝐽constitutes a 𝐶"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "Let𝐽∈𝐶"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "consider the metric space𝑋≔𝐶"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "consider the metric space𝑋≔𝐶1(R/Z, R𝑛)with the 𝐶"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "der the metric space𝑋≔𝐶1(R/Z, R𝑛)with the 𝐶1-norm.Define 𝛤∈𝐶"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "𝛤(𝑡)≔𝐽(·, 𝑡).The set 𝑈≔𝐶"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "𝜂∈𝑋\\𝑈∥𝛾−𝜂∥𝐶"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": ".The interval [0, 1] is compact, so 𝐹must have a minimizer 𝑡"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "𝐶∞(R/Z × [0, 1], R𝑛) is dense in 𝐶"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "so that∥𝐽−𝐻∥𝐶"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "𝑡↦→∥𝛤(𝑡) −𝐺(𝑡)∥𝐶"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "𝐿∞≤∥𝐽−𝐻∥𝐶"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "𝐿∞≤∥𝐽−𝐻∥𝐶1([0,"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "𝐺(𝑡)∈𝐵𝜀(𝛤(𝑡)) ∩𝐶"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "𝐺(𝑡)∈𝐵𝜀(𝛤(𝑡)) ∩𝐶2(R/Z, R𝑛)⊂𝑈∩𝐶"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "𝐺(𝑡)∈𝐵𝜀(𝛤(𝑡)) ∩𝐶2(R/Z, R𝑛)⊂𝑈∩𝐶2(R/Z, R𝑛)= 𝐶"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Since the embedding 𝐶"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "Since the embedding 𝐶2(R/Z, R𝑛)↩→𝐻"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "an element of 𝐶∞([0, 1], 𝐻"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "𝛤"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "𝛤1(𝑡)≔(1 −𝑡) 𝛾"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "Noticethat𝐺(0)∈𝐵𝜀(𝛾0),𝐺(1)∈𝐵𝜀(𝛾1),thattheseballscontainedin𝐶"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "convex,andthatknotclassesarestableundersmall𝐶"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "have𝛤"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "have𝛤1, 𝛤"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "have𝛤1, 𝛤2∈𝐶∞([0, 1], 𝐻"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "continuous path from 𝛾0to 𝛾1in 𝐻"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "E :O≔𝐻"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "ThelattermeansthatE(𝜂)=E(𝜂◦𝜓)forany𝜂∈O,where𝜓∈𝐻"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": " isactuallyasmoothsubmersion, sinceitsdifferentialDL𝜂: 𝑇𝜂O≃𝐻"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "𝛺"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "𝑇𝛾𝛺"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "𝜈∈𝐻"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "𝛺"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "≔{𝛾∈𝛺"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "𝑇𝛾𝛺"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "={𝜈∈𝑇𝛾𝛺"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "We now relate the arclength manifolds N"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "We now relate the arclength manifolds N1+𝑠and N"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "to 𝛺"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "to 𝛺1+𝑠and 𝛺"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "invariant energies E∈𝐶"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "Note that as before, since A"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "Note that as before, since A1+𝑠and A"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "are open subsets of N"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "are open subsets of N1+𝑠and N"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "theopenset𝐻"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "andM∈{N"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "andM∈{N1+𝑠, A"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "andM∈{N1+𝑠, A1+𝑠}.If𝛾∈M∩𝐻"
+  },
+  {
+   "page": 24,
+   "mark": "e",
+   "context": "parameter-invariantenergy"
+  },
+  {
+   "page": 24,
+   "mark": "e",
+   "context": "𝜆∈R.IfEispositively𝛼-homogeneousforsome𝛼∈R,then𝜆=𝛼E(𝛾)=𝛼"
+  },
+  {
+   "page": 24,
+   "mark": "e",
+   "context": "particular,if𝛼≠0and"
+  },
+  {
+   "page": 24,
+   "mark": "e",
+   "context": "icular,if𝛼≠0andeE(𝛾)≠0then 𝜆≠0,whereasifEisscale-invariantor"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "sary in the following decomposition of tangent vectors 𝜈∈𝑇𝛾𝛺"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "Lemma 3.11 (Decomposition of tangent vectors)Forany𝛾∈N"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "Lemma 3.11 (Decomposition of tangent vectors)Forany𝛾∈N1+𝑠∩𝐻"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "𝛺"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "𝛺1+𝑠and𝜈∈𝑇𝛾𝛺"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "𝛺1+𝑠and𝜈∈𝑇𝛾𝛺1+𝑠thereexistsℎ∈𝑇𝛾N"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "𝛺1+𝑠and𝜈∈𝑇𝛾𝛺1+𝑠thereexistsℎ∈𝑇𝛾N1+𝑠andafunction𝜚∈𝐻"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "Likewise, if 𝛾∈N"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "∩𝐻"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "∩𝐻2+𝑠(R/Z, R𝑛)for some fixed z∈R𝑛then every𝜈∈𝑇𝛾𝛺"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "decomposed as in (3.32) where now ℎ∈𝑇𝛾N"
+  },
+  {
+   "page": 25,
+   "mark": "d",
+   "context": "0⟨𝜈′(𝑢), 𝛾′(𝑢)⟩R𝑛"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "0⟨𝜈′(𝑢), 𝛾′(𝑢)⟩R𝑛d𝑢, which is of class 𝐻"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "7, Proposition A.5]), and satisfies𝜚(0)= 0 =𝜚(1) since 𝜈∈𝑇𝛾𝛺"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "on R/Z.The function ℎ≔𝜈−𝜚𝛾′is in 𝐻"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "ℎ∈𝑇𝛾N"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "WiththesameAnsatzfor𝜚oneobtainsfor𝛾∈N"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "and𝜈∈𝑇𝛾𝛺"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "𝜈(0) −𝜚(0)𝛾′(0)= 0 so that ℎ∈𝑇𝛾N"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "Withthisdecompositionoftangentvectorsof𝛺"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "Withthisdecompositionoftangentvectorsof𝛺1+𝑠and𝛺"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": " mentioned earlier, it suffices to prove the theorem for M=N"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "Forarbitrary𝜈∈𝑇𝛾𝛺"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "𝜚∈𝐻"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "𝜑𝜏≔IdR + 𝜏𝜚∈𝐻"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "𝜏(𝑡)= 1 + 𝜏𝜚′(𝑡)≥1 −|𝜏| ∥𝜚′∥𝐶"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "𝜏(𝑡)= 1 + 𝜏𝜚′(𝑡)≥1 −|𝜏| ∥𝜚′∥𝐶0≥1 −𝜏"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "𝜏(𝑡)= 1 + 𝜏𝜚′(𝑡)≥1 −|𝜏| ∥𝜚′∥𝐶0≥1 −𝜏0𝐶𝐸∥𝜚∥𝐻"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "if|𝜏|≤𝜏"
+  },
+  {
+   "page": 25,
+   "mark": "e",
+   "context": "DE𝛾(𝜈−ℎ)=DE𝛾(𝜈) −DE𝛾(ℎ)=DE𝛾(𝜈) −D"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "Since𝜈∈𝑇𝛾𝛺"
+  },
+  {
+   "page": 25,
+   "mark": "e",
+   "context": "𝜆= 𝜆L(𝛾)= 𝜆DL𝛾(𝛾)=DE𝛾(𝛾)= 𝛼E(𝛾)= 𝛼"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 25,
+   "mark": "z",
+   "context": "2, 1],"
+  },
+  {
+   "page": 25,
+   "mark": "z",
+   "context": "2, 1], z ∈R𝑛andM"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "2, 1], z ∈R𝑛andMz∈{N"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": ", A"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "If𝛾∈Mz∩𝐻"
+  },
+  {
+   "page": 25,
+   "mark": "z",
+   "context": "eE≔E|M"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "eE≔E|Mz,then𝛾iscriticalforE−𝜆L−⟨Υ, 𝑃"
+  },
+  {
+   "page": 25,
+   "mark": "e",
+   "context": "positively 𝛼-homogeneous for some 𝛼∈R, then 𝜆+ ⟨Υ, z⟩= 𝛼"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "Proof.Again we may focus on Mz= N"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "vector𝜈∈𝑇𝛾𝛺"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "toobtain(3.32)withafunction𝜚∈𝐻"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "submanifold𝛺"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "as preimage as𝛺"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "proof 𝜆+⟨Υ, z⟩= 𝜆L(𝛾)+⟨Υ, 𝑃"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "proof 𝜆+⟨Υ, z⟩= 𝜆L(𝛾)+⟨Υ, 𝑃0(𝛾)⟩= 𝜆DL𝛾(𝛾)+⟨Υ, ( D𝑃"
+  },
+  {
+   "page": 26,
+   "mark": "e",
+   "context": "+⟨Υ, z⟩= 𝜆L(𝛾)+⟨Υ, 𝑃0(𝛾)⟩= 𝜆DL𝛾(𝛾)+⟨Υ, ( D𝑃0)𝛾(𝛾)⟩=DE𝛾(𝛾)= 𝛼"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "Lemma 3.13LetM={N"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "Lemma 3.13LetM={N1+𝑠, A"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "E∈𝐶"
+  },
+  {
+   "page": 26,
+   "mark": "z",
+   "context": "E∈𝐶1(O)isinvariantundertranslations,thenacriticalpoint𝛾∈M"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "O≔𝐻"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "r(R/Z, R𝑛) of immersions in the Hilbert space H≔𝐻"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "compactly intoB≔𝐶"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "by arclength.If 𝛾∈N"
+  },
+  {
+   "page": 27,
+   "mark": "e",
+   "context": "Theorem 4.1Let z ∈R𝑛be fixed.Then the restriction"
+  },
+  {
+   "page": 27,
+   "mark": "b",
+   "context": "Theorem 4.1Let z ∈R𝑛be fixed.Then the restrictione𝐸𝑏≔𝐸"
+  },
+  {
+   "page": 27,
+   "mark": "b",
+   "context": "be fixed.Then the restrictione𝐸𝑏≔𝐸b|Mof the elastic energy 𝐸"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "any one of the submanifolds Mz∈{A"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "z, N"
+  },
+  {
+   "page": 27,
+   "mark": "b",
+   "context": "Proof.Condition (e) is trivially satisfied for 𝑒≔0, and 𝐸"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "Proof.Condition (e) is trivially satisfied for 𝑒≔0, and 𝐸b∈𝐶"
+  },
+  {
+   "page": 27,
+   "mark": "e",
+   "context": "sup𝑘∈N"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "𝐿"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "∥𝛾𝑘∥𝐶"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "Concerningthesplitting(S),weaddtheinnerproduct±⟨𝛾, ℎ⟩𝐻"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "𝐻"
+  },
+  {
+   "page": 27,
+   "mark": "b",
+   "context": "D(𝐸"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "2|𝛾′′|2 + |𝛾|\u0001 d𝑢≤∥ℎ∥𝐶"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "|R𝛾ℎ|≤∥ℎ∥𝐶"
+  },
+  {
+   "page": 27,
+   "mark": "b",
+   "context": "D(𝐸"
+  },
+  {
+   "page": 27,
+   "mark": "b",
+   "context": "𝛾)ℎ=D(𝐸"
+  },
+  {
+   "page": 27,
+   "mark": "d",
+   "context": "R/Z|𝛾′′|2𝑓"
+  },
+  {
+   "page": 28,
+   "mark": "b",
+   "context": "D(𝐸"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "≤𝐶∥𝑓∥𝐶"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "in 𝐶"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "Z), the map in (4.4) extends to a continuous linear map on 𝐶"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "From the compact embedding H↩→B= 𝐶"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "N"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "𝛾∈N"
+  },
+  {
+   "page": 28,
+   "mark": "e",
+   "context": "z,whichestablishescondition(L*)for"
+  },
+  {
+   "page": 28,
+   "mark": "b",
+   "context": "z,whichestablishescondition(L*)foreF≡eE≔𝐸"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "z,whichestablishescondition(L*)foreF≡eE≔𝐸b|N"
+  },
+  {
+   "page": 28,
+   "mark": "z",
+   "context": "z,whichestablishescondition(L*)foreF≡eE≔𝐸b|N2"
+  },
+  {
+   "page": 28,
+   "mark": "e",
+   "context": "rem 4.1 implies (B), which allows us to apply Theorem 2.1 to"
+  },
+  {
+   "page": 28,
+   "mark": "b",
+   "context": "4.1 implies (B), which allows us to apply Theorem 2.1 toeE=𝐸"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": " implies (B), which allows us to apply Theorem 2.1 toeE=𝐸b|N"
+  },
+  {
+   "page": 28,
+   "mark": "z",
+   "context": "implies (B), which allows us to apply Theorem 2.1 toeE=𝐸b|N2"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "Corollary 4.2 (Bending energy satisfies (PS) onN"
+  },
+  {
+   "page": 28,
+   "mark": "b",
+   "context": "The restricted bending energy 𝐸"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "The restricted bending energy 𝐸b|N"
+  },
+  {
+   "page": 28,
+   "mark": "b",
+   "context": "e𝐸𝑏≔𝐸"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "e𝐸𝑏≔𝐸b|N"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "Corollary 4.3 (Critical points and gradient flow for 𝑬b onN"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "Foranycurve𝛾∈N"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "zsuchthatD( e𝐸𝑏)𝛾≠0thereissome𝛾𝑐∈N"
+  },
+  {
+   "page": 28,
+   "mark": "e",
+   "context": "and"
+  },
+  {
+   "page": 28,
+   "mark": "e",
+   "context": "ande𝐸𝑏(𝛾𝑐)<e𝐸𝑏(𝛾).Thereisan"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "ande𝐸𝑏(𝛾𝑐)<e𝐸𝑏(𝛾).Thereisane𝐸𝑏-minimizingimmersion𝛾min∈N"
+  },
+  {
+   "page": 28,
+   "mark": "e",
+   "context": "z,i.e.,"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "infN"
+  },
+  {
+   "page": 28,
+   "mark": "z",
+   "context": "infN2"
+  },
+  {
+   "page": 28,
+   "mark": "e",
+   "context": "infN2z"
+  },
+  {
+   "page": 28,
+   "mark": "e",
+   "context": "oreover,we have long-time existence for the gradient flow of"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": ",we have long-time existence for the gradient flow ofe𝐸𝑏on N"
+  },
+  {
+   "page": 28,
+   "mark": "e",
+   "context": "which"
+  },
+  {
+   "page": 28,
+   "mark": "e",
+   "context": "hiche𝐸𝑏is strictly decreasing unless the initial curve is an"
+  },
+  {
+   "page": 28,
+   "mark": "e",
+   "context": "the flow subconverges to an"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "in 𝐿\u0000𝐻"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "0,"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "𝐿"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "𝑙≔⟨𝛾′, 𝑒𝑙⟩,it suffices to express the𝐿"
+  },
+  {
+   "page": 29,
+   "mark": "d",
+   "context": "𝑘∈Z|𝑘|𝑡−1"
+  },
+  {
+   "page": 29,
+   "mark": "d",
+   "context": "𝑘∈Z"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "𝑙)𝑘|𝑘|𝑡−1)𝑘∈ℓ"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "is finite if(ˆ𝑓𝑘|𝑘|1−𝑡)𝑘∈ℓ"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "is finite if(ˆ𝑓𝑘|𝑘|1−𝑡)𝑘∈ℓ2,i.e.,if𝑓∈𝐻"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "𝐶"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "⟨𝑔,𝑓⟩𝐿"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "is finite if(|𝑘|−𝜎(𝑡−2,𝜀)ˆ𝑓𝑘)𝑘∈ℓ"
+  },
+  {
+   "page": 29,
+   "mark": "d",
+   "context": "R/Z|𝛾′′|2𝑓"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "𝐿(𝐻"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "𝐿(𝐻1−𝑡,R𝑛)∥𝑓∥𝐻"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "𝐿"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "𝐿"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "ofclass𝐻𝑡−1(R/Z)≡\u0000𝐻"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "𝜚so that the fractional Sobolev space 𝑊"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "compactlyinto𝐶"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "compactlyinto𝐶1(R/Z, R𝑛);see[37,TheoremA.2].Since 𝑊"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "compactlyinto𝐶1(R/Z, R𝑛);see[37,TheoremA.2].Since 𝑊2,"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "𝑊"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "𝑊1+𝜎,"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "𝑊"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "𝜚,"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "(1.9)oftheparameterrangethatwehaveacompactembeddingof𝑊"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "(1.9)oftheparameterrangethatwehaveacompactembeddingof𝑊2,"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "defineH≔𝐻"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "defineH≔𝐻2(R/Z, R𝑛),O≔𝐻"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "ir(R/Z, R𝑛),B≔𝐶"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "bendingenergy𝐸b,andaddtheBanachspacesC≔𝑊"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "U≔𝑊"
+  },
+  {
+   "page": 30,
+   "mark": "b",
+   "context": "gative.Moreover, it follows from [51, Proposition 4.8] that𝐸"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "ive.Moreover, it follows from [51, Proposition 4.8] that𝐸b∈𝐶"
+  },
+  {
+   "page": 30,
+   "mark": "b",
+   "context": "ddition, we have checked conditions (B*), (S), and (D) for 𝐸"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "tion, we have checked conditions (B*), (S), and (D) for 𝐸b|A"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "projection prA"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "ℎ∈𝐻"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": " which is formulated for general fractional Sobolev spaces 𝑊"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "copy the proof of Proposition 3.3 line by line replacing ℎ∈𝐻"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "𝐸𝛼,𝑝}.Thekeyobservation is the following:Any sequence(𝛾𝑘)𝑘⊂A"
+  },
+  {
+   "page": 30,
+   "mark": "e",
+   "context": "with uniformly bounded knot energy, i.e., with 𝐹≔sup𝑘∈N"
+  },
+  {
+   "page": 30,
+   "mark": "e",
+   "context": "ly bounded knot energy, i.e., with 𝐹≔sup𝑘∈NeF (𝛾𝑘)< ∞, where"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "ed knot energy, i.e., with 𝐹≔sup𝑘∈NeF (𝛾𝑘)< ∞, whereeF=F◦𝜄|A"
+  },
+  {
+   "page": 30,
+   "mark": "z",
+   "context": "d knot energy, i.e., with 𝐹≔sup𝑘∈NeF (𝛾𝑘)< ∞, whereeF=F◦𝜄|A2"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "embeddingH↩→B=𝐶"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "in𝐶"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "Tosummarize,𝛾∞∈A"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "beenshownintheproofofTheorem1.1forthesamechoiceofspacesH≔𝐻"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "B≔𝐶"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "B≔𝐶1(R/Z, R𝑛)andO≔𝐻"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "the slightly smaller Hilbert space C≔𝐻"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "natural energy space 𝐻"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "natural energy space 𝐻3/2(R/Z, R𝑛) for the Möbius energy 𝐸"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "natural energy space 𝐻3/2(R/Z, R𝑛) for the Möbius energy 𝐸2,"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "Theorem 3.1] it was shown that 𝐸"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "Theorem 3.1] it was shown that 𝐸2,"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "Theorem 3.1] it was shown that 𝐸2,1is of class 𝐶"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "Theorem 3.1] it was shown that 𝐸2,1is of class 𝐶1,"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "locon the open subset U≔𝐻"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "𝐸2,"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "Tunder consideration are of class 𝐶"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "RiemannianmetricfromtheinnerproductonH.Moreover,therequired𝐶"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "emannianmetricfromtheinnerproductonH.Moreover,therequired𝐶1,"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "notsinH,whichfollowsfrom[58,Theorem3.1]fortheMöbiusenergy𝐸2,"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": " 1.1], the underlying energy spaces are the Hilbert spaces 𝐻"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "toBlattandReiter,see[15].Let𝛾∈𝐻"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "ℎ∈𝐻"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "𝛾is a “remainder term”, which is well-defined for all ℎ∈B= 𝐶"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "2−1.Then there are constants"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "2−1.Then there are constants 0 < 𝐶"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "𝐶"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "𝐻"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "for all𝑓∈𝐻"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "𝐻"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "Proof.Proposition 4.5 implies that there is some 𝑘"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "|𝑘|>𝑘"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "≤𝜚𝑘"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "if we set 𝐶"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "2"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "22+𝑠min{𝜚∗,"
+  },
+  {
+   "page": 33,
+   "mark": "0",
+   "context": "forallsuchℎ.Bydensityofsmoothfunctionswiththefirst2𝑘"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "∥(𝛿𝑘,𝑘0ˆ𝑓𝑘|𝑘|𝑡)𝑘∥ℓ"
+  },
+  {
+   "page": 33,
+   "mark": "0",
+   "context": ":ℎ∈𝐶∞, ˆℎ𝑘= 0 for|𝑘|≤𝑘"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "𝛿𝑘,𝑘0equals1if|𝑘|>𝑘0and0if|𝑘|≤𝑘0.Thisimpliesthat(ˆ𝑓𝑘|𝑘|𝑡)𝑘∈ℓ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "2ˆ𝑓𝑘)𝑘∈ℓ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "togetherwiththeassumptionthat𝑓∈𝐿"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "togetherwiththeassumptionthat𝑓∈𝐿2(R/Z, R𝑛)showsthat((1+𝑘"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "abbreviatetheenergybyTP≔TP(𝑝,"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "abbreviatetheenergybyTP≔TP(𝑝,2)andconsidertheopensubsetO≔𝐻"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "oftheHilbertspaceH≔𝐻"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "B≔𝐶"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "1(R/Z, R𝑛).Clearly, TP is non-negative, and it is of class 𝐶"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "Corollary3.5todeducecondition(E)forthearclengthsubmanifoldA"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "prA"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": ": 𝑇𝛾O→𝑇𝛾A"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "Towardscondition(L)wetakea(PS)-sequence(𝛾𝑚)𝑚⊂A"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "forTP |A"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "BythecompactembeddingH↩→Bwefinda𝐶"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "Therefore, 𝛾∞∈A"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "𝑚⌋𝑠,"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "𝑚⌋𝑠,2≤𝐶,where⌊·⌋𝑠,"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "characterizing the fractional Sobolev space 𝐻"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "obolev space 𝐻1+𝑠as subspace of the standard Sobolev space 𝐻"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "𝑚|=1onR/Z,sothatsup𝑚∈N∥𝛾𝑚∥𝐻"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Q(𝛾, ℎ)≔2 𝑄TP(𝛾, ℎ) + 2⟨𝛾, ℎ⟩𝐿"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "𝛾ℎ−2 ⟨𝛾, ℎ⟩𝐿"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "fullsplittingcondition(S).The𝐿"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "TP(𝑝,"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "for𝛾∈A"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "⟨𝛾, ℎ⟩𝐿"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "⟨𝛾, ℎ⟩𝐿2≤∥𝛾∥𝐿"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "⟨𝛾, ℎ⟩𝐿2≤∥𝛾∥𝐿2 ∥ℎ∥𝐿"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "d𝜃1 d𝜃2 d𝑤d𝑢· ∥ℎ∥𝐶"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "𝑠,2.So,RisboundedonTP(𝑝,"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "(IdH−prA"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "𝑌𝛾DΣ𝛾ℎ+ prA"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "=𝑌𝛾⟨𝛾′, ℎ′⟩+ prA"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "SinceD(TP(𝑝,"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "bound | D(TP(𝑝,"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "controlledonTP(𝑝,"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "controlledonTP(𝑝,2)-controlledsubsetsofA"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "below,since𝐻"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "below,since𝐻3/2+𝜀(R/Z, R𝑛)embedsinto 𝐶"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "for 𝑆𝛾≔D(TP(𝑝,"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "point energy TP(𝑝,"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "point energy TP(𝑝,2)for any 𝑝∈(4, 5) is of class𝐶"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "point energy TP(𝑝,2)for any 𝑝∈(4, 5) is of class𝐶1,"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "locon the open subset O≔𝐻"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "of the Hilbert space H≔𝐻"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "space H≔𝐻1+𝑠(𝑝)(R/Z, R𝑛) for 𝑠(𝑝) as in (1.10).In fact TP(𝑝,"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "Theorem1.3.Ofcourse,TP(𝑝,"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "D(TP(𝑝,"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "or each 𝜀> 0 there is a constant 𝐶𝜀= 𝐶𝜀(∥𝛾∥𝐻( 𝑝−1)/2 , TP(𝑝,"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "| D(TP(𝑝,"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "Proof.Abbreviate TP ≔TP(𝑝,"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "[0,1]𝐾𝑔(𝑝)(𝑢, 𝑤, 𝑠"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "[0,1]𝐾𝑔(𝑝)(𝑢, 𝑤, 𝑠1, . . . , 𝑠𝐾) Æ 𝜓(𝑢+ 𝑠𝐾𝑤)"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "[0,1]𝐾𝑔(𝑝)(𝑢, 𝑤, 𝑠1, . . . , 𝑠𝐾) Æ 𝜓(𝑢+ 𝑠𝐾𝑤) d𝜃"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "[0,1]𝐾𝑔(𝑝)(𝑢, 𝑤, 𝑠1, . . . , 𝑠𝐾) Æ 𝜓(𝑢+ 𝑠𝐾𝑤) d𝜃1 · · · d𝜃𝐾"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "[0,1]𝐾𝑔(𝑝)(𝑢, 𝑤, 𝑠1, . . . , 𝑠𝐾) Æ 𝜓(𝑢+ 𝑠𝐾𝑤) d𝜃1 · · · d𝜃𝐾d𝑤"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "0𝑓(𝑢) 𝛾′(𝑢)"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "𝛾′(𝑢)𝑉𝛾𝑓"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "=: Υ"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "=: Υ1𝑓(𝑥) + Υ"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "|𝑔(𝑝)(𝑢, 𝑤, 𝑠1, . . . , 𝑠𝐾)|≤𝐶(TP(𝛾))|𝛾′(𝑢+𝑠"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "|𝑔(𝑝)(𝑢, 𝑤, 𝑠1, . . . , 𝑠𝐾)|≤𝐶(TP(𝛾))|𝛾′(𝑢+𝑠1𝑤)−𝛾′(𝑢+𝑠"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "[0,1]𝐾𝑔(𝑝)(𝑢, 𝑤, 𝑠"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "[0,1]𝐾𝑔(𝑝)(𝑢, 𝑤, 𝑠1, . . . , 𝑠𝐾) Æ𝑉𝛾𝑓𝜃"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "[0,1]𝐾𝑔(𝑝)(𝑢, 𝑤, 𝑠1, . . . , 𝑠𝐾) Æ𝑉𝛾𝑓𝜃1 · · · d𝜃𝐾"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "[0,1]𝐾𝑔(𝑝)(𝑢, 𝑤, 𝑠1, . . . , 𝑠𝐾) Æ𝑉𝛾𝑓𝜃1 · · · d𝜃𝐾d𝑤"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "that this is bounded by˜𝐶∥ℎ∥𝐻"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "to the present case 𝑞= 2,𝑝∈(4, 5)to obtain for general ℎ∈𝐻"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "2"
+  },
+  {
+   "page": 36,
+   "mark": "e",
+   "context": "=:"
+  },
+  {
+   "page": 36,
+   "mark": "3",
+   "context": "𝑄𝛾ℎ+e𝑅"
+  },
+  {
+   "page": 36,
+   "mark": "4",
+   "context": "𝑄𝛾ℎ+e𝑅3ℎ+e𝑅"
+  },
+  {
+   "page": 36,
+   "mark": "e",
+   "context": "Noticethatforthelasttwosummands"
+  },
+  {
+   "page": 36,
+   "mark": "3",
+   "context": "Noticethatforthelasttwosummandse𝑅"
+  },
+  {
+   "page": 36,
+   "mark": "e",
+   "context": "and"
+  },
+  {
+   "page": 36,
+   "mark": "4",
+   "context": "ande𝑅"
+  },
+  {
+   "page": 36,
+   "mark": "e",
+   "context": "The term"
+  },
+  {
+   "page": 36,
+   "mark": "3",
+   "context": "The terme𝑅"
+  },
+  {
+   "page": 36,
+   "mark": "e",
+   "context": "Finally, we need to investigate"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "0𝛾′(𝑡"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "0𝛾′(𝑡1)"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "0𝛾′(𝑡1) d𝜃"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "0(𝑌𝛾𝑓)′(𝑡"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "0(𝑌𝛾𝑓)′(𝑡2)"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "0(𝑌𝛾𝑓)′(𝑡2) d𝜃"
+  },
+  {
+   "page": 36,
+   "mark": "e",
+   "context": "for 𝑡𝑖= 𝑢+ 𝜃𝑖𝑤,𝑖= 1, 2, we rewrite the numerator of"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "= 2𝑤"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "0(A + B)"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "0(A + B) d𝜃"
+  },
+  {
+   "page": 36,
+   "mark": "d",
+   "context": "0(A + B) d𝜃1"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "0(A + B) d𝜃1 d𝜃"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "𝛾′(𝑢)𝛾′(𝑡"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "𝛾′(𝑢)𝛾′(𝑡1), (Υ"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "𝛾′(𝑢)𝛾′(𝑡1), (Υ1 𝑓)′(𝑡"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "𝛾′(𝑢)𝛾′(𝑡1), (Υ1 𝑓)′(𝑡2)−⟨𝛾′(𝑡"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "𝛾′(𝑢)𝛾′(𝑡1), (Υ1 𝑓)′(𝑡2)−⟨𝛾′(𝑡2), 𝛾′(𝑢)⟩(Υ"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "𝛾′(𝑢)𝛾′(𝑡"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "𝛾′(𝑢)𝛾′(𝑡1), 𝛾′(𝑡"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "𝛾′(𝑢)𝛾′(𝑡"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "𝛾′(𝑢)𝛾′(𝑡1), (Υ"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "𝛾′(𝑢)𝛾′(𝑡1), (Υ2 𝑓)′(𝑡"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "𝛾′(𝑢)𝛾′(𝑡1), (Υ2 𝑓)′(𝑡2) −⟨𝛾′(𝑡"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "𝛾′(𝑢)𝛾′(𝑡1), (Υ2 𝑓)′(𝑡2) −⟨𝛾′(𝑡2), 𝛾′(𝑢)⟩(Υ"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "𝛾′(𝑢)𝛾′(𝑡"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "𝛾′(𝑢)𝛾′(𝑡1),𝑉−𝛾′(𝑡"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "𝛾′(𝑢)𝛾′(𝑡1),𝑉−𝛾′(𝑡2) ⟨𝛾′(𝑡"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "𝛾′(𝑢)𝛾′(𝑡1),𝑉−𝛾′(𝑡2) ⟨𝛾′(𝑡2),𝑉⟩−⟨𝛾′(𝑡"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "𝛾′(𝑢)𝛾′(𝑡"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "𝛾′(𝑢)𝛾′(𝑡"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "𝛾′(𝑢)𝛾′(𝑡1), 𝛾′(𝑡"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "2⟨𝛾′(𝑡"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "2⟨𝛾′(𝑡1) −⟨𝛾′(𝑡"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "2⟨𝛾′(𝑡1) −⟨𝛾′(𝑡1), 𝛾′(𝑢)⟩𝛾′(𝑢),𝑉⟩|𝛾′(𝑡"
+  },
+  {
+   "page": 37,
+   "mark": "e",
+   "context": "ing(4.25)–(4.27)with(4.28)and(4.29),everysummandconstituting"
+  },
+  {
+   "page": 37,
+   "mark": "b",
+   "context": "T𝜈𝜃≔𝜈𝐸"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "T𝜈𝜃≔𝜈𝐸b + 𝜃TP(𝑝,"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "N"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "N2⊂O≔𝐻"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "r(R/Z, R𝑛)⊂𝐻"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "A"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "A1+𝑠⊂O≔𝐻"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "(R/Z, R𝑛)⊂𝐻"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "Forafixedpointz∈R𝑛andM∈{N"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "Forafixedpointz∈R𝑛andM∈{N1+𝑠, A"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "for allℎ∈𝐻"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "Theorem 5.1Fix a point z ∈R𝑛and let U be an open subset of N"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "em 5.1Fix a point z ∈R𝑛and let U be an open subset of N2or N"
+  },
+  {
+   "page": 38,
+   "mark": "b",
+   "context": "point of 𝐸"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "emma 3.13 allows us to assume that 𝛾is 𝐸b|U-critical for U⊂N"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "for all ℎ∈𝐻"
+  },
+  {
+   "page": 38,
+   "mark": "b",
+   "context": "R/Z|𝛾′′|2 ⟨𝛾′, ℎ′⟩d𝑢,𝐹𝛾ℎ≔𝐷(𝐸"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "Δ"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "Δ"
+  },
+  {
+   "page": 38,
+   "mark": "4",
+   "context": "𝛾∈𝐻"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "Corollary 5.2 (𝑬𝒃critical curves)Let z∈R𝑛and M∈{N"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "Corollary 5.2 (𝑬𝒃critical curves)Let z∈R𝑛and M∈{N2, N"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "Mis critical for 𝐸𝑏−𝜆L on the open subset 𝐻"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "𝐻"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "𝐻2(R/Z, R𝑛)for 𝜆= −𝐸𝑏(𝛾)≤−(2𝜋)"
+  },
+  {
+   "page": 39,
+   "mark": "b",
+   "context": "orem 3.10, which shows that 𝛾is critical for 𝐸"
+  },
+  {
+   "page": 39,
+   "mark": "b",
+   "context": "rem 3.10, which shows that 𝛾is critical for 𝐸b −𝜆L for 𝜆= −𝐸"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "curvature together with Hölder’s inequality gives 𝐸b(𝛾)≥(2𝜋)"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": " 5.3Let 𝜃>0, 𝑝∈(4, 5), z∈R𝑛, and let Ube an open subset of A"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "et 𝜃>0, 𝑝∈(4, 5), z∈R𝑛, and let Ube an open subset of A2or A"
+  },
+  {
+   "page": 39,
+   "mark": "b",
+   "context": "every critical point of T=𝐸"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "every critical point of T=𝐸b + 𝜃TP(𝑝,"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "sintheproofofTheorem5.1wemayfocusonT |U-criticalknots𝛾forU⊂A"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "Δ"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "Δ2𝛾=𝐹𝛾−𝑅𝛾−𝜃D(TP(𝑝,"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "D(TP(𝑝,"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "Δ"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "amount min{4 −(𝑝−1),"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "y 5.4 (Critical knots under length constraint)Letz∈R𝑛andM∈{A"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "z, A"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "ir(R/Z, R𝑛)⊂𝐻"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "for T−𝜆Lon the open subset 𝐻"
+  },
+  {
+   "page": 39,
+   "mark": "b",
+   "context": "wasdonein[33,(1.4)].Here,forexample,onecouldconsiderS≔𝐸"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "nein[33,(1.4)].Here,forexample,onecouldconsiderS≔𝐸b+ 𝜃(TP(𝑝,"
+  },
+  {
+   "page": 39,
+   "mark": "4",
+   "context": "33,(1.4)].Here,forexample,onecouldconsiderS≔𝐸b+ 𝜃(TP(𝑝,2)◦𝜄)"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "𝜆= −S(𝛾)≤−𝐸b(𝛾)≤−(2𝜋)"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "≤−(2𝜋)2. If 𝛾is non-trivially knotted, one even has 𝜆< −(4𝜋)"
+  },
+  {
+   "page": 40,
+   "mark": "4",
+   "context": "sin"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "forTP(𝑝,"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "eenestablishedin[24],whichleadstothe improvedupperbound−(2𝜋)"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "𝜃TP"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "on𝜆,oreventhestrictupperbound−(4𝜋)"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "on𝜆,oreventhestrictupperbound−(4𝜋)2−𝜃TP"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "manifolds A"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "manifolds A1+𝑠or A"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": ".Then every critical knot 𝛾of TP(𝑝,"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "Proof.Bysubstitutingthesplitting(4.10)into(5.1)forE=TP(𝑝,"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "for all ℎ∈𝐻"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "𝐹𝛾ℎ≔D(TP(𝑝,"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "Since TP(𝑝,"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "Corollary 5.7 (TP( 𝒑,"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "Corollary 5.7 (TP( 𝒑,2)critical knots)Letz∈R𝑛andM∈{A"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "Corollary 5.7 (TP( 𝒑,2)critical knots)Letz∈R𝑛andM∈{A1+𝑠, A"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "MiscriticalforTP(𝑝,"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "knot𝛾oftherestrictedenergyTP(𝑝,"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "𝐻"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "(R/Z, R𝑛)⊂𝐻"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "(R/Z, R𝑛)⊂𝐻1+𝑠(R/Z, R𝑛) for 𝜆=(4 −𝑝) TP(𝑝,"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "vatureintM(𝑝,"
+  },
+  {
+   "page": 41,
+   "mark": "8",
+   "context": "7,"
+  },
+  {
+   "page": 41,
+   "mark": "a",
+   "context": "7)under"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "knots,butitreliesonasplittingofthedifferentialD intM(𝑝,"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "This splitting is of the same kind as that ofD TP(𝑝,"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "aconsequence,lengthconstrainedTP(𝑝,"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "TP(𝑝,"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "TP(𝑝,2)|M-criticalknots,arereal-analyticforM∈{A"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "TP(𝑝,2)|M-criticalknots,arereal-analyticforM∈{A1+𝑠, A"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "arc :𝐻"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "(R/Z, R𝑛)→𝐻"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "fromtheregular𝐻"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "fromtheregular𝐻1+𝑠-curvestothearclengthparametrized𝐻"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "respect to the 𝐻"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "L(𝛾)L(𝛾|[0,𝑡]) for 𝑡∈[0,"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "𝐻"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "𝜓∈𝐻"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "𝐻"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "𝜓∈𝐻"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "Thespace𝐻"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "((0, 1))isthesetoforientation-preserving𝐻"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "terval[0, 1],anditssubspace𝐻"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "2, 1]theinversionoperator−1:𝐻"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "((0, 1))→𝐻"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "well-defined and continuous.In addition, we have for any 𝜓∈𝐻"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "𝐻"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "𝐻1+𝑠≡𝐻"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "𝐻1+𝑠≡𝐻1+𝑠((0, 1))embedscontinuouslyinto𝐶"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "𝐻1+𝑠≡𝐻1+𝑠((0, 1))embedscontinuouslyinto𝐶1([0, 1]),any𝜓∈𝐻"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "≡𝐻"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "∥𝜓′∥𝐶"
+  },
+  {
+   "page": 42,
+   "mark": "d",
+   "context": "|𝜓(𝑤)−𝜓(𝑣)|1+2𝑠𝜓′(𝑤)𝜓′(𝑢)"
+  },
+  {
+   "page": 42,
+   "mark": "d",
+   "context": "|𝜓(𝑤)−𝜓(𝑣)|1+2𝑠𝜓′(𝑤)𝜓′(𝑢) d𝑤"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "𝑠,"
+  },
+  {
+   "page": 42,
+   "mark": "d",
+   "context": "|𝜓(𝑤)−𝜓(𝑣)|1+2𝑠"
+  },
+  {
+   "page": 42,
+   "mark": "d",
+   "context": "|𝜓(𝑤)−𝜓(𝑣)|1+2𝑠d𝑤"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "𝐶"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "𝐶"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": ".Since the map 𝑟:[𝑐, ∞)→(0,"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "diffeomorphism 𝜓∈𝐻"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "derivative 𝜙′= 𝑟◦𝜓′◦𝜙is of class 𝐻𝑠((0, 1))and therefore 𝜙∈𝐻"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "Nowconsiderasequence(𝜓𝑘)𝑘⊂𝐻"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "convergingto𝜓∞in𝐻"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "of the compact embedding𝐻"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "of the compact embedding𝐻1+𝑠↩→𝐶"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "∞in 𝐻"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "∥𝜙𝑘−𝜙∞∥𝐶"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "∥𝜙𝑘−𝜙∞∥𝐶0=∥𝜙∞◦𝜓∞◦𝜙𝑘−𝜙∞◦𝜓𝑘◦𝜙𝑘∥𝐶"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "∥𝜙𝑘−𝜙∞∥𝐶0=∥𝜙∞◦𝜓∞◦𝜙𝑘−𝜙∞◦𝜓𝑘◦𝜙𝑘∥𝐶0=∥𝜙∞◦𝜓∞−𝜙∞𝜓𝑘∥𝐶"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "at 𝜙𝑘isahomeomorphismof [0, 1] ontoitself, weobtain ∥𝜙𝑘−𝜙∞∥𝐶"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "𝐶"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "𝐶0 ∥𝜓𝑘−𝜓∞∥𝐶"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "𝐶"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "𝑐"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "𝐶"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "𝐶"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "𝑐"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "𝐶"
+  },
+  {
+   "page": 42,
+   "mark": "a",
+   "context": "𝐶0→0,since𝜙𝑘is"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "diffeomorphism and 𝜓𝑘→𝜓∞in 𝐶"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "∞is uniformly continuous on[0,"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "ly continuous on[0, 1], and we already showed that 𝜙𝑘→𝜙∞in 𝐶"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "ntinuous on[0, 1], and we already showed that 𝜙𝑘→𝜙∞in 𝐶0([0,"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "∞⌋𝑠,"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "∞◦𝜙∞⌋𝑠,"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "𝐶"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "∞◦𝜙∞∥𝐶"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "converges to zero as 𝑘→∞, since the 𝐶"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "∞∥𝐶"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "∞◦𝜙∞)⌋𝑠,"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "𝑐"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "𝑘∥𝐶"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "∞◦𝜙∞⌋𝑠,"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "𝑘◦𝜙𝑘⌋𝑠,"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "∞∥𝐶"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "𝑐"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "∞∥𝐶"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "∞⌋𝑠,"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "𝑐"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "𝑘∥𝐶"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "𝑘⌋𝑠,"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "mlypositivelyboundedfrombelowbecauseoftheconvergence𝜓𝑘→𝜓∞in𝐶"
+  },
+  {
+   "page": 43,
+   "mark": "0",
+   "context": "The 𝐶"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "𝑐"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "∞◦𝜙∞⌋𝑠,"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "∞◦𝜙𝑘⌋𝑠,"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "∞◦𝜙∞⌋𝑠,"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "𝑠,"
+  },
+  {
+   "page": 43,
+   "mark": "d",
+   "context": "𝑘(𝑣)"
+  },
+  {
+   "page": 43,
+   "mark": "d",
+   "context": "𝑘(𝑣) d𝑤"
+  },
+  {
+   "page": 43,
+   "mark": "0",
+   "context": "𝐶"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "𝑠,"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "∞⌋𝑠,"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "∞◦𝜙∞⌋𝑠,"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "∞⌋𝑠,"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "Corollary A.3Therestrictionoftheinversionoperator−1to𝐻"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "map onto 𝐻"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "𝐻"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "((0, 1)) × 𝐻"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "((0, 1)) × 𝐻1+𝑠(R/Z, R𝑛)→𝐻"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "Thechainrule[37,LemmaA.4]yieldsℎ◦𝜓∈𝐻"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "As to continuity, consider a sequence (𝜓𝑘, ℎ𝑘)𝑘⊂𝐻"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "((0, 1))×𝐻"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "in 𝐻"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "in 𝐻1+𝑠× 𝐻"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "in 𝐻1+𝑠× 𝐻1+𝑠to a limiting pair(𝜓∞, ℎ∞)∈𝐻"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "((0, 1)) × 𝐻"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "∥ℎ𝑘◦𝜓𝑘−ℎ∞◦𝜓∞∥𝐶"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "∥ℎ𝑘◦𝜓𝑘−ℎ∞◦𝜓∞∥𝐶0≤∥ℎ𝑘◦𝜓𝑘−ℎ∞◦𝜓𝑘∥𝐶"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "∥ℎ𝑘◦𝜓𝑘−ℎ∞◦𝜓∞∥𝐶0≤∥ℎ𝑘◦𝜓𝑘−ℎ∞◦𝜓𝑘∥𝐶0+ ∥ℎ∞◦𝜓𝑘−ℎ∞◦𝜓∞∥𝐶"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "≤∥ℎ𝑘−ℎ∞∥𝐶"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "∞∥𝐶"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "∞∥𝐶0∥𝜓𝑘−𝜓∞∥𝐶"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "∥(ℎ𝑘◦𝜓𝑘)′−(ℎ∞◦𝜓∞)′∥𝐶"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "∞∥𝐶"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "∞◦𝜓∞∥𝐶"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "𝑘∥𝐶"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "∞◦𝜓∞∥𝐶"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "∞∥𝐶"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "∞isuniformlycontinuousonR/Zand𝜓𝑘→𝜓∞in𝐶"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "𝑘⌋𝑠,"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "∞◦𝜓∞)𝜓∞⌋𝑠,"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "∞∥𝐶"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "∞◦𝜓∞∥𝐶"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "𝑘⌋𝑠,"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "∞◦𝜓𝑘⌋𝑠,"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "∞◦𝜓∞⌋𝑠,"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "𝑘∥𝐶"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "∞◦𝜓∞∥𝐶"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "∞⌋𝑠,"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "∞◦𝜓∞⌋𝑠,"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "∞∥𝐶"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "bymeansoftheproductrule[37,PropositionA.5].The𝑘-dependent𝐶"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "𝑘⌋𝑠,"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "∞◦𝜓∞⌋𝑠,"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "∞◦𝜓∞∥𝐶"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "𝑘∥𝐶"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "𝐶"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "∞∥𝐶"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "for𝑘≫1,because𝜓𝑘→𝜓∞in𝐶"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "𝛹:𝐻"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "(R/Z, R𝑛)→𝐻"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "Proof.It is clear that𝛹𝛾∈𝐻"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "((0, 1)) for any 𝛾∈𝐻"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "Forasequenceofcurves(𝛾𝑘)𝑘∈N⊂𝐻"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "(R/Z, R𝑛)with𝛾𝑘→𝛾∞in𝐻"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "class 𝐶"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "the 𝐶"
+  },
+  {
+   "page": 45,
+   "mark": "0",
+   "context": "∥𝜓𝑘(·) −𝜓∞∥𝐶"
+  },
+  {
+   "page": 45,
+   "mark": "0",
+   "context": "𝐶"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "𝑐"
+  },
+  {
+   "page": 45,
+   "mark": "0",
+   "context": "For the 𝐶"
+  },
+  {
+   "page": 45,
+   "mark": "0",
+   "context": "𝐶"
+  },
+  {
+   "page": 45,
+   "mark": "0",
+   "context": "∞∥𝐶"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "𝑐"
+  },
+  {
+   "page": 45,
+   "mark": "0",
+   "context": "∞∥𝐶"
+  },
+  {
+   "page": 45,
+   "mark": "0",
+   "context": "∞∥𝐶"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "∞⌋𝑠,"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "∞⌋𝑠,"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "𝑐"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "∞⌋𝑠,"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "position of continuous operators.Furthermore, for 𝛾∈𝐻"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "Lemma A.6 (Triple integrals)Let 𝑠∈(0, 1),𝜚∈[1, ∞), and 𝛾∈𝑊"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "Theorem B.1Let𝛺⊂R𝑚beaboundedLipschitzdomain.Let𝜎, 𝜎"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "Theorem B.1Let𝛺⊂R𝑚beaboundedLipschitzdomain.Let𝜎, 𝜎1, 𝜎"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "and𝑝, 𝑝"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "and𝑝, 𝑝1, 𝑝"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "\u0001+\u0000𝜎"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "\u0001, and\u0000𝜎"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "•max {𝑝"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "•max {𝑝1, 𝑝"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "\u0001, and 𝜎"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "\u0001, and 𝜎1 + 𝜎"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "𝑊𝜎"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "𝑊𝜎1,𝑝"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "𝑊𝜎1,𝑝1(𝛺) × 𝑊𝜎"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "𝑊𝜎1,𝑝1(𝛺) × 𝑊𝜎2,𝑝"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "𝑊𝜎1,𝑝1(𝛺) × 𝑊𝜎2,𝑝2(𝛺)→𝑊𝜎,𝑝(𝛺),(𝑢"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "𝑊𝜎1,𝑝1(𝛺) × 𝑊𝜎2,𝑝2(𝛺)→𝑊𝜎,𝑝(𝛺),(𝑢1, 𝑢"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "𝑊𝜎1,𝑝1(𝛺) × 𝑊𝜎2,𝑝2(𝛺)→𝑊𝜎,𝑝(𝛺),(𝑢1, 𝑢2)↦→𝑢"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "𝑊𝜎1,𝑝1(𝛺) × 𝑊𝜎2,𝑝2(𝛺)→𝑊𝜎,𝑝(𝛺),(𝑢1, 𝑢2)↦→𝑢1 · 𝑢"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "𝐻𝑡(R/Z) × 𝐻𝑡(R/Z)→𝐻𝜎(𝑡,𝜀)(R/Z),(𝑢"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "𝐻𝑡(R/Z) × 𝐻𝑡(R/Z)→𝐻𝜎(𝑡,𝜀)(R/Z),(𝑢1, 𝑢"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "𝐻𝑡(R/Z) × 𝐻𝑡(R/Z)→𝐻𝜎(𝑡,𝜀)(R/Z),(𝑢1, 𝑢2)↦→𝑢"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "𝐻𝑡(R/Z) × 𝐻𝑡(R/Z)→𝐻𝜎(𝑡,𝜀)(R/Z),(𝑢1, 𝑢2)↦→𝑢1 · 𝑢"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "for 𝜏∈[0,"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "Here, we regard 𝑢"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "Here, we regard 𝑢1 · 𝑢"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "prove.So, we may focus on 𝑡∈[0,"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "4,"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "2)>0,suchthat𝜎(𝑡, 𝜀)>0forall𝜀∈(0, 𝜀"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "Theorem B.1 for 𝜎"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "Theorem B.1 for 𝜎1= 𝜎"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "2) −𝜀≤𝑡−𝜀< 𝑡for 𝜀∈(0, 𝜀"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "and𝑝"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "and𝑝1=𝑝"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "and𝑝1=𝑝2=𝑝≔2,toobtaintheresultfirstforall𝜀∈(0, 𝜀"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "and𝑝1=𝑝2=𝑝≔2,toobtaintheresultfirstforall𝜀∈(0, 𝜀0(𝑡)].For𝜀>𝜀"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "observe that 𝜎(𝑡, 𝜀)< 𝜎(𝑡, 𝜀0(𝑡))so that 𝐻𝜎(𝑡,𝜀"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "CaseII:𝑡∈(0, 1/4].Inthiscase𝜎≡𝜎(𝑡, 𝜀)≤−𝜀<0,and𝑢"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "CaseII:𝑡∈(0, 1/4].Inthiscase𝜎≡𝜎(𝑡, 𝜀)≤−𝜀<0,and𝑢1· 𝑢"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "R/Z𝑢"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "R/Z𝑢1 · 𝑢"
+  },
+  {
+   "page": 46,
+   "mark": "d",
+   "context": "R/Z𝑢1 · 𝑢2 · 𝑣"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "for all 𝑞∈[1, 2/(1 + 2𝜎)]=[1, 1/(2𝑡−𝜀)], whereas 𝐻𝑡(R/Z)↩→𝐿"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "1−2𝑡,"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "2𝑡∈[1,"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "≤∥𝑢"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "≤∥𝑢1∥𝐿𝑝∥𝑢"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "≤∥𝑢1∥𝐿𝑝∥𝑢2∥𝐿𝑝∥𝑣∥𝐿𝑞≤𝐶∥𝑢"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "≤∥𝑢1∥𝐿𝑝∥𝑢2∥𝐿𝑝∥𝑣∥𝐿𝑞≤𝐶∥𝑢1∥𝐻𝑡∥𝑢"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "R/Z𝑢"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "R/Z𝑢1 · 𝑢"
+  },
+  {
+   "page": 46,
+   "mark": "d",
+   "context": "R/Z𝑢1 · 𝑢2 · 𝑣"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "≤∥𝑢"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "≤∥𝑢1∥𝐿"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "≤∥𝑢1∥𝐿2 ∥𝑢"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "≤∥𝑢1∥𝐿2 ∥𝑢2∥𝐿"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "≤∥𝑢1∥𝐿2 ∥𝑢2∥𝐿2 ∥𝑣∥𝐿∞≤𝐶∥𝑢"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "≤∥𝑢1∥𝐿2 ∥𝑢2∥𝐿2 ∥𝑣∥𝐿∞≤𝐶∥𝑢1∥𝐻𝑡∥𝑢"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "R/Z𝑢"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "R/Z𝑢1 · 𝑢"
+  },
+  {
+   "page": 46,
+   "mark": "d",
+   "context": "R/Z𝑢1 · 𝑢2 · 𝑣"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "secondmapwenote,thatitsufficestoprovethestatementforall𝜀∈(0,"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "𝐻𝜎(𝑡−2,𝜀"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "𝐻𝜎(𝑡−2,𝜀1)(R/Z)⊂𝐻𝜎(𝑡−2,𝜀"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "𝐻𝜎(𝑡−2,𝜀1)(R/Z)⊂𝐻𝜎(𝑡−2,𝜀2)(R/Z)for all 0 < 𝜀"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "𝐻𝜎(𝑡−2,𝜀1)(R/Z)⊂𝐻𝜎(𝑡−2,𝜀2)(R/Z)for all 0 < 𝜀1≤𝜀"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "2].Now𝜎(𝑡−2, 𝜀)≥0 for all 𝜀∈(0,"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "TheoremB.1withthechoice𝜎≔𝜎(𝑡−2, 𝜀),𝜎"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "TheoremB.1withthechoice𝜎≔𝜎(𝑡−2, 𝜀),𝜎1≔𝜎, 𝜎"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "𝑝"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "𝑝1=𝑝"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "depending on 𝜀∈(0,"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "CaseIIIa:𝜀∈(2(𝑡−2),"
+  },
+  {
+   "page": 47,
+   "mark": "0",
+   "context": "𝐶"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "𝐿"
+  },
+  {
+   "page": 47,
+   "mark": "0",
+   "context": "𝐿2 ∥𝛾′∥𝐶"
+  },
+  {
+   "page": 47,
+   "mark": "0",
+   "context": "2,"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "𝜎"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "𝜎1≔𝑡−1 ≥1 >𝜎"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "𝜎1≔𝑡−1 ≥1 >𝜎2≡𝜎≔−𝜎(𝑡−2, 𝜀)∈(0,"
+  },
+  {
+   "page": 47,
+   "mark": "d",
+   "context": "R/Z|𝛾′′|2𝑓"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "𝐻𝑡(R/Z, R𝑛) × 𝐻"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "𝐻𝑡(R/Z, R𝑛) × 𝐻1−𝜏(R/Z, R𝑛)→𝐻"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "R/Z⟨𝛾′, ℎ′⟩𝑓"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "R/Z⟨𝛾′, ℎ′⟩𝑓"
+  },
+  {
+   "page": 48,
+   "mark": "1",
+   "context": "𝑓d𝑥|≤∥𝑓𝛾′∥𝐻𝜏∥ℎ′∥𝐻−𝜏≤𝐶∥𝑓∥𝐻𝑡−1 ∥𝛾∥𝐻𝑡∥ℎ′∥𝐻−𝜏≤𝐶∥𝑓∥𝐻𝑡−1 ∥𝛾∥𝐻𝑡∥ℎ∥𝐻"
+  },
+  {
+   "page": 48,
+   "mark": "1",
+   "context": "holds for all𝑓∈𝐻𝑡−1(R/Z)and ℎ∈𝐻"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "A. Dall’Acqua and P. Pozzi. “A Willmore-Helfrich 𝐿"
+  }
+ ]
+}

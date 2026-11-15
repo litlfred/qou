@@ -20,4 +20,3 @@ that we consider here it comes almost for free. Many more known inequalities can
 and some new ones can be designed [86,102]. It is important to keep in mind that in generic quantum
 states the relations derived in the connectome limit might not hold. Since it is an open question whether
 and how much the connectome relations may be violated, we will discuss some possibilities in section 6.
-5

@@ -1,0 +1,76 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1907.03683v4",
+ "source": {
+  "structure_sha256": "eb8cc2ddfc8c0739d117c22d5275d35c54c83fa10144f8e7491329b3a4db5978",
+  "file": "1907.03683v4.pdf"
+ },
+ "provenance": {
+  "title": "EXPLICIT DESCRIPTION OF CHRISTOFFEL DEFORMATIONS AND",
+  "authors": "PALM MEASURES OF THE PLANCHEREL MEASURE, THE",
+  "arxiv": {
+   "id": "1907.03683",
+   "version": "4",
+   "primary_class": "math.PR",
+   "stamp_date": "7 Mar 2024"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 3,
+  "by_kind": {
+   "recommendation": 3
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Theorem [\\[thmpalmbessel\\]](#thmpalmbessel){reference-type=\"ref\" reference=\"thmpalmbessel\"} thus gives a description of the TASEP with \\\"frozen\\\" sites, i.e. sites which must always be occupied, see Theorem [\\[thmpalmbessel\\]](#thmpalmbessel){reference-type=\"ref\" reference=\"thmpalmbessel\"} and remark [\\[remtasep\\]](#remtasep){reference-type=\"ref\" reference=\"remtasep\"} below.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-13-background-and-motivations-characteristic-pol.md",
+   "section_title": "Background and motivations: characteristic polynomials and Palm measures",
+   "pages": "2-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "As mentioned in the introduction, our result must be compared with the one from [19], where a hierarchy of Palm deformations of the process with the Gamma kernel is established.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-022-43-a-deformation-of-the-gamma-kernel.md",
+   "section_title": "A deformation of the Gamma kernel",
+   "pages": "26-28",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The factor (1\u2212\u03be)2 appearing in our statement should be interpreted as (1\u2212\u03be)2k in order to recover Borodin-Olshanski Theorem from [9] and [11] in the case k = 0.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-022-43-a-deformation-of-the-gamma-kernel.md",
+   "section_title": "A deformation of the Gamma kernel",
+   "pages": "26-28",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

@@ -3,199 +3,108 @@
  "doc_id": "alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari",
  "source_sha256": "c99ca1cd756f7aa6",
  "brief": "Theta Functions, Modular Invariance, and Strings — We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some quantities of interest in string",
- "extended": "**Theta Functions, Modular Invariance, and Strings**\n\n*Theta Functions, Modular Invariance, and Strings*\n\n40 pp, 36 sections.\n\n**Abstract.** We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some quantities of interest in string theory. In particular, we show that the spin structure dependence of the chiral Dirac determinant on a Riemann surface is given by Riemann's theta function. We use this result to investigate the modular invariance of multiloop heterotic string amplitudes.\n\n**Outline.** 1 Introduction; 2 L. Alvarez-Gaume, G. Moore, and C. Vafa; 2 Fermions on a Torus; 4 L. Alvarez-Gaume, G. Moore, and C. Vafa; 6 L. Alvarez-Gaume, G. Moore, and C. Vafa; 3 Mathematical Background; L Alvarez-Gaume, G. Moore, and C. Vafa; 10 L. Alvarez-Gaume, G. Moore, and C. Vafa; 12 L. Alvarez-Gaume, G. Moore, and C. Vafa; 14 L. Alvarez-Gaume, G. Moore, and C. Vafa; 1 We thank Dan Freed for explaining this to us; 16 L. Alvarez-Gaume, G. Moore, and C. Vafa; 2 Under a change of homology basis A shifts by; 18 L. Alvarez-Gaume, G. Moore, and C. Vafa; 4 Holomorphic Factorization; 20 L. Alvarez-Gaume, G. Moore, and C. Vafa; 22 L. Alvarez-Gaume, G. Moore, and C. Vafa; 5 Chiral Dirac Determinants\n\n**Extracted claims (proposals, not verified).**\n- Corollary: θ(e|Ω) = 0 iff there exist g — \\ points Pl9 ....P^^εΣ so that",
+ "extended": "**Theta Functions, Modular Invariance, and Strings**\n\n*Theta Functions, Modular Invariance, and Strings*\n\n40 pp, 18 sections.\n\n**Abstract.** We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some quantities of interest in string theory. In particular, we show that the spin structure dependence of the chiral Dirac determinant on a Riemann surface is given by Riemann's theta function. We use this result to investigate the modular invariance of multiloop heterotic string amplitudes.\n\n**Outline.** Front matter; 1 Introduction; 17 Vi; 10 L. Alvarez-Gaume, G. Moore, and C. Vafa Usi; Ω-Ωy; d Theta Functions; 18 L. Alvarez-Gaume, G. Moore, and C. Vafa cas; LooJ; 4 Holomorphic Factorization; 1 -εj dsTrδϊ); 1 -εj dsTrδϊ) tD-ί-e-\"; 1 \" ~Az(p)Az(-p).; W PJ>, '; Vfl^dtlΩ/; Γo lΊ; Γl OΊ Γl oΊ; (EL ED (EL ED; References",
  "tokens": {
   "brief": 48,
-  "extended": 343
+  "extended": 217
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-2"
+   "pages": "1-3"
   },
   {
-   "id": "sec-001-2-l-alvarez-gaume-g-moore-and-c-vafa",
-   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
-   "pages": "2-2"
+   "id": "sec-001-17-vi",
+   "title": "Vi",
+   "pages": "3-10"
   },
   {
-   "id": "sec-002-2-fermions-on-a-torus",
-   "title": "Fermions on a Torus",
-   "pages": "2-4"
+   "id": "sec-002-10-l-alvarez-gaume-g-moore-and-c-vafa-using-34-w",
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa Using (3.4) with θ = ωb η = cθp it follows that Ω^—Ω^, and if one uses again (3.4) with θ = ή, and η holomorphic, then ^$θΛθ",
+   "pages": "10-14"
   },
   {
-   "id": "sec-003-4-l-alvarez-gaume-g-moore-and-c-vafa",
-   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
-   "pages": "4-6"
+   "id": "sec-003-ω-ωy",
+   "title": "Ω-Ωy",
+   "pages": "14-14"
   },
   {
-   "id": "sec-004-6-l-alvarez-gaume-g-moore-and-c-vafa",
-   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
-   "pages": "6-6"
+   "id": "sec-004-d-theta-functions",
+   "title": "Theta Functions",
+   "pages": "14-18"
   },
   {
-   "id": "sec-005-3-mathematical-background",
-   "title": "Mathematical Background",
-   "pages": "6-8"
-  },
-  {
-   "id": "sec-006-l-alvarez-gaume-g-moore-and-c-vafa",
-   "title": "Alvarez-Gaume, G. Moore, and C. Vafa",
-   "pages": "8-10"
-  },
-  {
-   "id": "sec-007-10-l-alvarez-gaume-g-moore-and-c-vafa",
-   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
-   "pages": "10-12"
-  },
-  {
-   "id": "sec-008-12-l-alvarez-gaume-g-moore-and-c-vafa",
-   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
-   "pages": "12-14"
-  },
-  {
-   "id": "sec-009-14-l-alvarez-gaume-g-moore-and-c-vafa",
-   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
-   "pages": "14-15"
-  },
-  {
-   "id": "sec-010-1-we-thank-dan-freed-for-explaining-this-to-us",
-   "title": "We thank Dan Freed for explaining this to us",
-   "pages": "15-16"
-  },
-  {
-   "id": "sec-011-16-l-alvarez-gaume-g-moore-and-c-vafa",
-   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
-   "pages": "16-17"
-  },
-  {
-   "id": "sec-012-2-under-a-change-of-homology-basis-a-shifts-by-a",
-   "title": "Under a change of homology basis A shifts by an even half point, defined below",
-   "pages": "17-18"
-  },
-  {
-   "id": "sec-013-18-l-alvarez-gaume-g-moore-and-c-vafa",
-   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "id": "sec-005-18-l-alvarez-gaume-g-moore-and-c-vafa-case-there",
+   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa case there are six odd spin structures associated to the theta functions ioj",
    "pages": "18-18"
   },
   {
-   "id": "sec-014-4-holomorphic-factorization",
+   "id": "sec-006-looj",
+   "title": "LooJ",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-007-4-holomorphic-factorization",
    "title": "Holomorphic Factorization",
    "pages": "18-20"
   },
   {
-   "id": "sec-015-20-l-alvarez-gaume-g-moore-and-c-vafa",
-   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
+   "id": "sec-008-1--εj-dstrδϊ",
+   "title": "-εj dsTrδϊ)",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-009-1--εj-dstrδϊ-td-ί-e",
+   "title": "-εj dsTrδϊ) tD-ί-e-\"",
    "pages": "20-22"
   },
   {
-   "id": "sec-016-22-l-alvarez-gaume-g-moore-and-c-vafa",
-   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
-   "pages": "22-23"
+   "id": "sec-010-1-azpaz-p",
+   "title": "\" ~Az(p)Az(-p).",
+   "pages": "22-22"
   },
   {
-   "id": "sec-017-5-chiral-dirac-determinants",
-   "title": "Chiral Dirac Determinants",
-   "pages": "23-24"
+   "id": "sec-011-w-pj",
+   "title": "PJ>, '",
+   "pages": "22-28"
   },
   {
-   "id": "sec-018-24-l-alvarez-gaume-g-moore-and-c-vafa",
-   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
-   "pages": "24-25"
+   "id": "sec-012-vfldtlω",
+   "title": "Vfl^dtlΩ/",
+   "pages": "28-34"
   },
   {
-   "id": "sec-019-9-qi",
-   "title": "Qi",
-   "pages": "25-26"
+   "id": "sec-013-γo-lί",
+   "title": "Γo lΊ",
+   "pages": "34-34"
   },
   {
-   "id": "sec-020-26-l-alvarez-gaume-g-moore-and-c-vafa",
-   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
-   "pages": "26-27"
+   "id": "sec-014-γl-oί-γl-oί",
+   "title": "Γl OΊ Γl oΊ",
+   "pages": "34-37"
   },
   {
-   "id": "sec-021-6-bosonization",
-   "title": "Bosonization",
-   "pages": "27-28"
-  },
-  {
-   "id": "sec-022-28-l-alvarez-gaume-g-moore-and-c-vafa",
-   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
-   "pages": "28-29"
-  },
-  {
-   "id": "sec-023-7-modular-invariance-in-the-heterotic-string",
-   "title": "Modular Invariance in the Heterotic String",
-   "pages": "29-30"
-  },
-  {
-   "id": "sec-024-30-l-alvarez-gaume-g-moore-and-c-vafa",
-   "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
-   "pages": "30-30"
-  },
-  {
-   "id": "sec-025-5-this-is-very-clearly-explained-in-31",
-   "title": "This is very clearly explained in [31]",
-   "pages": "30-31"
-  },
-  {
-   "id": "sec-026-3-v-detlmω5",
-   "title": "V (detlmΩ)5",
-   "pages": "31-31"
-  },
-  {
-   "id": "sec-027-6-after-an-integration-by-parts",
-   "title": "After an integration by parts",
-   "pages": "31-37"
-  },
-  {
-   "id": "sec-028-8-conclusions",
-   "title": "Conclusions",
+   "id": "sec-015-el-ed-el-ed",
+   "title": "(EL ED (EL ED",
    "pages": "37-38"
   },
   {
-   "id": "sec-029-references",
+   "id": "sec-016-references",
    "title": "References",
-   "pages": "38-38"
-  },
-  {
-   "id": "sec-030-4-martinec-e-nonrenormalization-theorems-and-fer",
-   "title": "Martinec, E.: Nonrenormalization theorems and fermionic string finiteness. Princeton",
-   "pages": "38-39"
-  },
-  {
-   "id": "sec-031-12-gunning-r-introduction-to-riemann-surfaces-pr",
-   "title": "Gunning, R.: Introduction to Riemann surfaces princeton Math. Notes. Princeton, NJ:",
-   "pages": "39-39"
-  },
-  {
-   "id": "sec-032-14-fay-j-theta-functions-on-riemann-surfaces-spr",
-   "title": "Fay, J.: Theta functions on Riemann surfaces Springer notes in math., Vol. 352. Berlin,",
-   "pages": "39-39"
-  },
-  {
-   "id": "sec-033-16-alvarez-o-conformal-anomalies-and-the-index-t",
-   "title": "Alvarez, O.: Conformal anomalies and the index theorem. Berkeley preprint",
-   "pages": "39-39"
-  },
-  {
-   "id": "sec-034-21-the-generalization-of-quillens-theorem-has-be",
-   "title": "The generalization of Quillen's theorem has been independently derived by Belavin and",
-   "pages": "39-39"
-  },
-  {
-   "id": "sec-035-26-we-owe-this-observation-to-phil-nelson",
-   "title": "We owe this observation to Phil Nelson",
-   "pages": "39-40"
+   "pages": "38-40"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

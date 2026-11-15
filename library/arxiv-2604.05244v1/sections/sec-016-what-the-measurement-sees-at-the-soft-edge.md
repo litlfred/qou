@@ -10,7 +10,8 @@ source_sha256: a5097e763dd89d06
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.978
-latex_coverage_ratio: 0.989
+latex_coverage_ratio: 0.986
+doc_brief: "Edge universality in Floquet sideband spectra — We show that, for non-interacting fermions under a monochromatic phase drive (Tien– Gordon regime), the outgoing sideband occupations at a sharp Fermi"
 ---
 []{#sec:readout-edge label="sec:readout-edge"} We can now bring the threads of the paper together. The Airy kernel is a property of the outgoing many-body state at fixed central energy $E$ [@TracyWidom1994; @DeanLeDoussal2019], not of the instrument. The role of the detection kernel is to select the coherence order $k$ of the Floquet correlator; it does not by itself isolate the soft edge. Combining the projection identity [\[eq:projection\]](#eq:projection){reference-type="eqref" reference="eq:projection"} with the exact block selection of Lemma [\[lem:block\]](#lem:block){reference-type="ref" reference="lem:block"}, one sees that an integer-period gate and analysis frequency $\omega_0=k\Omega$ give access to a $\mathcal G$-weighted, $E$-integrated sum over the $k$-th off-diagonal of $C$ (Eq. [\[eq:u0-block\]](#eq:u0-block){reference-type="eqref" reference="eq:u0-block"}). To probe the edge specifically, one needs an observable whose coupling is concentrated near $\nu=n-m_F(E)\sim A$.
 

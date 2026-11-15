@@ -1,0 +1,1 @@
+It is reasonable to hope that the action of the Tannaka group on the mixed motivic periods of M should be correspondingly rich and should generate a large class of new periods suitable for applications in arithmetic and theoretical physics.

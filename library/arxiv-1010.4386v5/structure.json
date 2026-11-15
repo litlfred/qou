@@ -7,10 +7,17 @@
   "bytes": 425915,
   "pages": 33,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 19,
+    "reason": "12 of 370 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -25,13 +32,21 @@
   "title_lines": [
    "ON THE HOMOLOGY OF COMPLETION AND TORSION"
   ],
-  "abstract": "Let A be a commutative ring, and a a weakly proregular ideal in A. This includes the noetherian case: if A is noetherian then any ideal in it is weakly proregular; but there are other interesting e xamples. In this paper we prove the MGM equivalence , which is an equivalence between the category of cohomologically a-adically complete complexes and the category of cohomologically a-torsion complexes . These are triangulated subcategories of the derived category of A-modules. Our work extends earlier work by Alonso- Jeremias-Lipman, Schenzel and Dwyer-Greenlees.",
+  "abstract": "Let A be a commutative ring, and a a weakly proregular ideal in A. This includes the noetherian case: if A is noetherian then any ideal in it is weakly proregular; but there are other interesting examples. In this paper we prove the MGM equivalence, which is an equivalence between the category of cohomologically a-adically complete complexes and the category of cohomologically a-torsion complexes. These are triangulated subcategories of the derived category of A-modules. Our work extends earlier work by Alonso- Jeremias-Lipman, Schenzel and Dwyer-Greenlees.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181029022750-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20181029022750-04'00'"
+  },
+  "title_raw": "ON THE HOMOLOGY OF COMPLETION AND TORSION",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "ON THE HOMOLOGY OF COMPLETION AND TORSION Contents Introduction Preliminaries on Homological Algebra The Derived Completion and Torsion Functors Koszul Complexes and Weak Proregularity The Telescope Complex Permanence of Weak Proregularity MGM Equivalence Derived Localization References 0. Introduct",
+   "outline": "0. Introduction",
+   "text": "ON THE HOMOLOGY OF COMPLETION AND TORSION",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -40,67 +55,341 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "0"
+   "number": "0",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Preliminaries on Homological Algebra",
    "page": 4,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The Derived Completion and Torsion Functors",
    "page": 7,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Koszul Complexes and Weak Proregularity",
    "page": 10,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The Telescope Complex",
    "page": 16,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Permanence of Weak Proregularity",
    "page": 22,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "MGM Equivalence",
    "page": 24,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Derived Localization",
    "page": 28,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 32,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 711,
+   "n_words": 106,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-0-introduction",
    "number": "0",
@@ -108,8 +397,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 8168,
-   "n_words": 1429
+   "n_chars": 8164,
+   "n_words": 1412,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-1-preliminaries-on-homological-algebra",
@@ -118,8 +409,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 7,
-   "n_chars": 8735,
-   "n_words": 1650
+   "n_chars": 7250,
+   "n_words": 1335,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-2-the-derived-completion-and-torsion-functors",
@@ -128,8 +421,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 10,
-   "n_chars": 5726,
-   "n_words": 1054
+   "n_chars": 7185,
+   "n_words": 1343,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-3-koszul-complexes-and-weak-proregularity",
@@ -138,8 +433,10 @@
    "level": 1,
    "page_start": 10,
    "page_end": 16,
-   "n_chars": 13702,
-   "n_words": 2609
+   "n_chars": 13805,
+   "n_words": 2757,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-4-the-telescope-complex",
@@ -148,8 +445,10 @@
    "level": 1,
    "page_start": 16,
    "page_end": 22,
-   "n_chars": 12705,
-   "n_words": 2486
+   "n_chars": 12531,
+   "n_words": 2463,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-5-permanence-of-weak-proregularity",
@@ -158,8 +457,10 @@
    "level": 1,
    "page_start": 22,
    "page_end": 24,
-   "n_chars": 5235,
-   "n_words": 1005
+   "n_chars": 5286,
+   "n_words": 1056,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-6-mgm-equivalence",
@@ -168,8 +469,10 @@
    "level": 1,
    "page_start": 24,
    "page_end": 28,
-   "n_chars": 9736,
-   "n_words": 1821
+   "n_chars": 9690,
+   "n_words": 1775,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-007-7-derived-localization",
@@ -178,8 +481,10 @@
    "level": 1,
    "page_start": 28,
    "page_end": 32,
-   "n_chars": 8787,
-   "n_words": 1668
+   "n_chars": 8808,
+   "n_words": 1689,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-008-references",
@@ -188,16 +493,29 @@
    "level": 1,
    "page_start": 32,
    "page_end": 33,
-   "n_chars": 3112,
-   "n_words": 460
+   "n_chars": 3087,
+   "n_words": 435,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 9,
-  "sections": 9,
-  "chars_total": 75906,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 10,
+  "chars_total": 76517,
+  "furniture_lines_stripped": 0,
+  "pages_read_in_print_order": [
+   7
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -210,66 +528,71 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-0-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.907,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-1-preliminaries-on-homological-algebra",
      "title": "Preliminaries on Homological Algebra",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.891,
+     "coverage_ratio": 0.943,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-2-the-derived-completion-and-torsion-functors",
      "title": "The Derived Completion and Torsion Functors",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.769,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-003-3-koszul-complexes-and-weak-proregularity",
      "title": "Koszul Complexes and Weak Proregularity",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-004-4-the-telescope-complex",
      "title": "The Telescope Complex",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.952,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-005-5-permanence-of-weak-proregularity",
      "title": "Permanence of Weak Proregularity",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.932,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-006-6-mgm-equivalence",
      "title": "MGM Equivalence",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.96,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-007-7-derived-localization",
      "title": "Derived Localization",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.95,
      "result": "overlaid",
      "converter": "latex"
     },

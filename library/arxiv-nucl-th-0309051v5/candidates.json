@@ -1,0 +1,46 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-nucl-th-0309051v5",
+ "source": {
+  "structure_sha256": "f7ede32125662908f6b09a68c0035d68903aa891b41502b61807c7fbd3a090f3",
+  "file": "0309051v5.pdf"
+ },
+ "provenance": {
+  "title": "Reinterpretation of Faddeev-Niemi Knot in Skyrme Theory",
+  "authors": "Y. M. Cho\u2217",
+  "arxiv": {
+   "id": "nucl-th/0309051",
+   "version": "5",
+   "primary_class": null,
+   "stamp_date": "24 Sep 2004"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "recommendation": 1
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Now it must be clear that the supercurrent moving along the knot generates an angular momentum around the z- axis which provides the centrifugal force preventing the vortex ring to collapse.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-reinterpretation-of-faddeev-niemi-knot-in-skyrme.md",
+   "section_title": "Reinterpretation of Faddeev-Niemi Knot in Skyrme Theory",
+   "pages": "1-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

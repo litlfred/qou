@@ -6,10 +6,12 @@
   "sha256": "ad7a020e7e92b788c3344cb1910ded6fda534908c9d08c1c44096e796d737234",
   "bytes": 162253,
   "pages": 12,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,20 +21,30 @@
    "stamp_date": "12 Dec 2018"
   },
   "doi": null,
-  "title": "The second largest eigenvalues of some Cayley graphs on alternating groups \u2217",
-  "authors_raw": "Xueyi Huang, Qiongxiang Huang \u2020",
-  "abstract": "Let An denote the alternating group of degree n with n \u2265 3. The al- ternating group graph AGn, extended alternating group graph EAGn and complete alternating group graph CAG n are the Cayley graphs Cay( An, T1), Cay( An, T2) and Cay( An, T3), respectively, where T1 = {(1, 2, i), (1, i, 2) | 3 \u2264 i \u2264 n}, T2 = {(1, i, j), (1, j, i) | 2 \u2264 i < j \u2264 n} and T3 = {(i, j, k), (i, k, j) | 1 \u2264 i < j < k \u2264 n}. In this paper, we determine the second largest eigenvalues of AGn, EAGn and CAG n.",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181212223024-05'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  },
+  "title": "The second largest eigenvalues of some Cayley graphs on alternating groups ∗",
+  "authors_raw": "Xueyi Huang",
   "title_lines": [
    "The second largest eigenvalues of some Cayley",
-   "graphs on alternating groups \u2217"
-  ]
+   "graphs on alternating groups∗"
+  ],
+  "abstract": "Let An denote the alternating group of degree n with n ≥3. The al- ternating group graph AGn, extended alternating group graph EAGn and complete alternating group graph CAGn are the Cayley graphs Cay(An, T1), Cay(An, T2) and Cay(An, T3), respectively, where T1 = {(1, 2, i), (1, i, 2) | 3 ≤i ≤n}, T2 = {(1, i, j), (1, j, i) | 2 ≤i < j ≤n} and T3 = {(i, j, k), (i, k, j) | 1 ≤i < j < k ≤n}. In this paper, we determine the second largest eigenvalues of AGn, EAGn and CAGn.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181212223024-05'00'"
+  },
+  "title_raw": "The second largest eigenvalues of some Cayley graphs on alternating groups∗",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "The second largest eigenvalues of some Cayley graphs on alternating groups ∗",
+   "outline": "1 Introduction",
+   "text": "The second largest eigenvalues of some Cayley graphs on alternating groups∗",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -40,25 +52,158 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "The second largest eigenvalue of AGn",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "The second largest eigenvalues of EAGn and CAGn",
    "page": 7,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 832,
+   "n_words": 146,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -66,8 +211,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 5836,
-   "n_words": 1204
+   "n_chars": 5699,
+   "n_words": 1069,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-001-2-the-second-largest-eigenvalue-of-agn",
@@ -75,22 +222,44 @@
    "title": "The second largest eigenvalue of AGn",
    "level": 1,
    "page_start": 3,
+   "page_end": 7,
+   "n_chars": 7797,
+   "n_words": 1836,
+   "label_start": "3",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-002-3-the-second-largest-eigenvalues-of-eagn-and-cag",
+   "number": "3",
+   "title": "The second largest eigenvalues of EAGn and CAGn",
+   "level": 1,
+   "page_start": 7,
    "page_end": 12,
-   "n_chars": 20220,
-   "n_words": 4950
+   "n_chars": 11574,
+   "n_words": 2329,
+   "label_start": "7",
+   "label_end": "12"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 3,
-  "sections": 2,
-  "chars_total": 26056,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 4,
+  "chars_total": 25902,
+  "furniture_lines_stripped": 12,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 4,
-   "overlaid": 2,
+   "overlaid": 3,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -98,18 +267,31 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.69,
-     "coverage_ratio": 0.99,
+     "prose_ratio": 0.68,
+     "coverage_ratio": 0.926,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-the-second-largest-eigenvalue-of-agn",
      "title": "The second largest eigenvalue of AGn",
+     "prose_ratio": 0.622,
+     "coverage_ratio": 0.595,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-the-second-largest-eigenvalues-of-eagn-and-cag",
+     "title": "The second largest eigenvalues of EAGn and CAGn",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.514,
+     "coverage_ratio": 0.61,
      "result": "overlaid",
      "converter": "pandoc"
     }

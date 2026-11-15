@@ -1,0 +1,68 @@
+next
+show poincare-distance x’ z' = poincare-distance x z
+using xy yz betw
+using poincare-between-sum-distances|of x y 2]
+using poincare-between-sum-distances|of x’ y’ z'|
+using in-disc in-disc’
+by auto
+next
+show poincare-between x’ y' (M z)
+using M
+using in-disc betw
+unfolding unit-disc-fix-f-def
+by auto
+qed fact+
+thus ?thesis
+using <unit-disc-fiz-f M»
+using in-disc in-disc’
+(Mu=u’
+unfolding unit-disc-fix-f-def
+by auto
+qed
+
+11.4 Upper dimension axiom
+
+lemma upper-dimension-axiom:
+assumes in-disc: x € unit-disc y € unit-disc z € unit-disc u € unit-disc v € unit-disc
+assumes poincare-distance x u = poincare-distance x v
+poincare-distance y u = poincare-distance y v
+poincare-distance z u = poincare-distance z v
+uZxu
+shows poincare-between x y z V poincare-between y z x V poincare-between z x y
+proof (cases z= yVy=zV 4= 2)
+case True
+thus ?thesis
+using in-disc
+by auto
+next
+case False
+hencex Ayr A#zyF#z
+by auto
+let ?cong = \ a b a’ b’. poincare-distance a b = poincare-distance a’ b’
+have V zuv. z € unit-disc \ u € unit-disc A v € unit-disc \
+?congzuxu A ?congyuyudA econgzuzv Aufxv—+
+poincare-collinear {x, y, z} (is ?P x y)
+proof (rule wlog-positive-x-azis[;where P=?P])
+fix x
+assume 2: is-real tr 0 < Rex Rex < 1
+hence z 4 0
+by auto
+have 0), € circline-set z-axis
+by simp
+show ?P 0p (of-complex x)
+proof safe
+fix zuv
+assume in-disc: z € unit-disc u € unit-disc v € unit-disc
+then obtain z’ u’ v'! where zuv: z = of-compler z' u = of-complex u' v = of-complex v'
+using inf-or-of-complez|of z| inf-or-of-complex|of u] inf-or-of-complez(of v]
+by auto
+
+assume cong: ?cong On u 0; v ?cong (of-complex x) u (of-complex x) v ?congzuzuvufx#u
+
+let ?r0 = poincare-distance 0, u and
+’rxz = poincare-distance (of-complex x) u
+
+have ?r0 > 0 ?ra > 0
+using in-disc cong
+
+141

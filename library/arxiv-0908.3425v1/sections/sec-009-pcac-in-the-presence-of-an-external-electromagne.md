@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0908.3425v1
-doc_title: "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer"
+doc_title: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector"
 section_id: sec-009-pcac-in-the-presence-of-an-external-electromagne
 section_title: "PCAC in the presence of an external electromagnetic field"
 section_number: null
 pages: 15-16
 source_pdf: 0908.3425v1.pdf
 source_sha256: 5e88d45bbc1c1b9b
-doc_brief: "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer — We provide an introduction to the basic concepts of chiral pe rturbation theory and discuss some"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.957
-latex_coverage_ratio: 0.984
+latex_coverage_ratio: 0.974
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 []{#subsec_pcacpeef label="subsec_pcacpeef"} Finally, the technique of coupling the QCD Lagrangian to external fields also allows us to determine the current divergences for rigid external fields, i.e., fields which are *not* simultaneously transformed. For the sake of simplicity we restrict ourselves to the two-flavor sector. (The generalization to the three-flavor case is straightforward.)
 

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-math-0409593v1
-doc_title: "CATEGORIFICATION OF THE BRAID GROUPS RAPHAËL ROUQUIER 1. Introduction Actions of braid groups on triangulated categories are quite widesp read. They arise for instance in represent"
+doc_title: "Categorification of sl_2 and braid groups"
 section_id: sec-001-2-self-equivalences
 section_title: "Self-equivalences"
 section_number: 2
-pages: 1-2
+pages: 2-2
 source_pdf: 0409593v1.pdf
 source_sha256: ad965f5c80838824
-doc_brief: "CATEGORIFICATION OF THE BRAID GROUPS RAPHAËL ROUQUIER 1. Introduction Actions of braid groups on triangulated categories are quite widesp read. They arise for instance in representation theory, for co"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.517
+latex_coverage_ratio: 0.99
+doc_brief: "Categorification of sl_2 and braid groups — 20 sections: Front matter; Introduction; Self-equivalences"
 ---
 We describe a categorification of the notion of reflection with respect to a subspace. The ambient space is $K_0$ of a triangulated category, the subspace is another triangulated category and the embeddings and projections are given by functors. We actually allow an automorphism of the "subspace" category, which allows to categorify the $q$-analog of a reflection.
 

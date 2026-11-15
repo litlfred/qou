@@ -1,0 +1,67 @@
+thus perpendicular-to-x-azis-cmat H =
+(cos-angle-cmat (of-circline-cmat x-axis-cmat) (of-circline-cmat H) = 0)
+using cmod-square|of B] cmod-square[of A]
+by simp
+qed
+
+lemma perpendicular-to-x-axis-y-avis:
+assumes perpendicular-to-x-axis (poincare-line 0; (of-complex z)) z # 0
+shows is-imag z
+using assms
+by (transfer, transfer, simp)
+
+lemma wlog-perpendicular-azes:
+assumes in-disc: u € unit-disc v € unit-disc z € unit-disc
+assumes perpendicular: is-poincare-line H1 is-poincare-line H2 perpendicular H1 H2
+assumes z € circline-set H1 ™ circline-set H2 u € circline-set H1 v € circline-set H2
+assumes azes: /\ x y. [is-real x; 0 < Re x; Re x < 1; is-imag y; 0 < Im y; Imy < 1] => P On» (of-complex z)
+(of-complex y)
+assumes mocbius: \ M uv w. [unit-disc-fiz M; u € unit-disc; v € unit-disc; w € unit-disc; P (moebius-pt M u)
+(moebius-pt M v) (moebius-pt Mw) ] => Puvw
+assumes conjugate: /\ uv w. [lu € unit-disc; v € unit-disc; w € unit-disc; P (conjugate u) (conjugate v) (conjugate
+w) |= Puvw
+shows Pzuv
+proof—
+have V v H1 H2. is-poincare-line H1 A is-poincare-line H2 \ perpendicular H1 H2 \
+z € circline-set H1 Q circline-set H2 \ u € circline-set H1 A v € circline-set H2 \ v € unit-disc —> P
+zuu (is ?P zu)
+proof (rule wlog-z-axis;where P=?P})
+fix x
+assume z: is-realz Rex > 0 Rex < 1
+have of-complex x € unit-disc
+using x
+by (simp add: cmod-eq-Re)
+
+show ?P 0), (of-complex x)
+proof safe
+fix v H1 H2
+assume v € unit-disc
+then obtain y where y: v = of-complex y
+using inf-or-of-complez{of v|
+by auto
+
+assume 1: is-poincare-line H1 is-poincare-line H2 perpendicular H1 H2
+assume 2: 0» € circline-set H1 On € circline-set H2 of-complex x € circline-set H1 v € circline-set H2
+
+show P 0», (of-complez x) v
+proof (cases of-complex x = On)
+case True
+show P 0), (of-complez x) v
+proof (cases v = 0p)
+case True
+thus ?thesis
+using <of-complez x = On»
+using azes[of 0 0]
+by simp
+next
+case False
+show ?thesis
+proof (rule wlog-rotation-to-positive-y-azis)
+show v € unit-disc v # On
+by fact+
+next
+fix y
+assume is-imag y 0 < InyImy <1
+thus P 0), (of-complex x) (of-complex y)
+
+115

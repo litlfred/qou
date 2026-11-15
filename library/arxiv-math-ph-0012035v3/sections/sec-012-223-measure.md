@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-math-ph-0012035v3
-doc_title: "arXiv:math-ph/0012035v3 16 Jan 2002"
+doc_title: "Non-Abelian Stokes theorem in action"
 section_id: sec-012-223-measure
 section_title: "Measure"
 section_number: 2.2.3
-pages: 27-30
+pages: 28-30
 source_pdf: 0012035v3.pdf
 source_sha256: 06a4c8096c8ebb10
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.647
+latex_coverage_ratio: 0.983
+doc_brief: "Non-Abelian Stokes theorem in action — In this short review main issues related to the non-Abelian Stokes theorem have been addressed."
 ---
 The described theory possesses the following "topological" gauge symmetry: $$\delta  z(x)=\theta(x), \qquad
     \delta\bar{z} (x)=\bar{\theta}(x),

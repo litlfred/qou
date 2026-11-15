@@ -1,0 +1,62 @@
+The map 7 is a symmetrising form on H,(W, L), and the elements (T,,-1)wew form a basis of Hy(W, L)
+dual to the standard basis with respect to 7 (that is, 7(T,,-1 Tw) = bw,w’) Proposition 8.1.1]. The
+map T is called the canonical symmetrising form on Hq(W,L), because it specialises to the canonical
+symmetrising form on the group algebra Z[W] when q+> 1.
+
+Now, the map 7 can be extended to K(q)H,(W, L) by extension of scalars. By Tits’s deformation
+theorem, the specialisation q ++ 1 induces a bijection between the set of irreducible representations
+Inr(K (q)H,(W, L)) of K(q)H,(W, L) and the set of irreducible representations Irr(W) of W. For E €
+lrr(W), we will denote by V” the corresponding irreducible representation of K(q)H,(W, L) and by sz
+the Schur element of H,(W, L) associated with V". We have sz € Zk |q,q7‘] for all E € Irr(W), where
+Zx denotes the integral closure of Z in K.
+
+Example 2.4 The irreducible representations of the symmetric group G,, are parametrised by the par-
+titions of n. For W = Gs, there are three irreducible representations. Let E@), E?) and E11 denote
+respectively the trivial, reflection and sign representation of G3. Using again the notation of Example
+we have
+suo = (G+ Yq" +g" +1), spay = +1 49g, spaay = (G+ IG“ +g +1).
+We can define the functions a: Irr(W) > Z and A: Irr(W) — Z by setting
+a(E) := —valuationg(s~) and A(E) := —degree, (sz).
+Note that both functions depend on L. For brevity, we will write ag for a(E) and Ag for A(E).
+Example 2.5 Following Example [2.4] for W = G3, we have
+@p) = 0, Aga.) = 21, @gaay =6l and Agu) = —-6l, Ages) = —21, Agaaa =0.
+
+The Schur elements of H,(W, L) have been explicitly calculated for all finite Coxeter groups:
+
+e for type A, by Steinberg [Stl],
+
+e for type B, by Hoefsmit [Ho],
+
+e for type D,, by Benson and Gay (it derives from type B, with the use of Clifford theory),
+
+e for dihedral groups I2(m) by Kilmoyer and Solomon [KiSo},
+
+e for F;, by Lusztig [Eni],
+
+e for Eg and E7 by Surowski ;
+
+e for Eg by Benson [Be],
+
+e for H3 by Lusztig [Lu2],
+
+e for Hy by Alvis and Lusztig [AlLul.
+
+There have been other subsequent proofs of the above results. For example, Iwahori—Hecke algebras of
+types A, and B,, are special cases of Ariki-Koike algeb: whose Schur elements have been independently
+obtained by Geck—Iancu-Malle [GIM] and Mathas
+
+A case-by-case analysis shows that the Schur elements of H,(W, L) can be written in the form
+
+sp =fng “” Il &(q"**) (2.2)
+
+beCycp
+
+where €¢ € Zz, nz, € Zyo and Cycg is a family of K-cyclotomic polynomials (see Chapters 10
+& 11), Theorem 4.2.5 & Proposition 4.3.5]).
+
+Example 2.6 Following Example [2.4] for W = G3, we have
+808) = B2(q"')O3(q"), Seen = 71O3(G"), Span = q-'O2(q"!)O3(q"),
+
+where ®,, denotes the n-th Q-cyclotomic polynomial.
+
+19

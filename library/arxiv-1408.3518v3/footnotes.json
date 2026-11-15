@@ -1,0 +1,843 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1408.3518v3",
+ "status": "determined",
+ "pages_unread": [
+  8
+ ],
+ "body_size": 11.0,
+ "footnotes": [],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "d",
+   "context": "whereA ∈Z"
+  },
+  {
+   "page": 2,
+   "mark": "d",
+   "context": "whereA ∈Zd×n,b ∈Z"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "whereA ∈Zd×n,b ∈Zd,c ∈Z"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "whereA ∈Zd×n,b ∈Zd,c ∈Zn,andwhereX = R"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "whereA ∈Zd×n,b ∈Zd,c ∈Zn,andwhereX = Rn(LP)orX = Z"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "obtainGraver’soriginalﬁnitesetof⊑-minimalelementsinker(A) ∩Z"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "ty: every (integer vector) z ∈ker(A) can be written as z =Pα"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": ": every (integer vector) z ∈ker(A) can be written as z =Pαig"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "withgi ∈G(A),α"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "withgi ∈G(A),αi > 0,α"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "withgi ∈G(A),αi > 0,αi ∈Z,andα"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "vector z ∈ker(A) can be written as z =Pα"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "vector z ∈ker(A) can be written as z =Pαig"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "vector z ∈ker(A) can be written as z =Pαigi, with g"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "ector z ∈ker(A) can be written as z =Pαigi, with gi ∈C(A), α"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": " ∈ker(A) can be written as z =Pαigi, with gi ∈C(A), αi ≥0, α"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "LetA ∈Z"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "LetA ∈Zd×n,b ∈Z"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "LetA ∈Zd×n,b ∈Zdandc ∈Z"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "min{c⊺x:Ax = b,0 ≤x ≤u,x ∈Z"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "entdirection (which could be any applicable direction from Z"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "LetA ∈Z"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "LetA ∈Zd×n,b ∈Z"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "LetA ∈Zd×n,b ∈Zdandc ∈Z"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "min{c⊺x:Ax = b,0 ≤x ≤u,x ∈R"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "x0isnomorethan2n"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "entdirection (which could be any applicable direction from R"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n withinthesmallestfaceofthepolyhedron{x:Ax = b,0 ≤x ≤u,x ∈R"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Forthepure0/1ILPmin{c⊺x: Ax = b,0 ≤x ≤1,x ∈Z"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "neededtosolvemin{c⊺x : Ax = b,0 ≤x ≤u,x ∈R"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "mentationsneededtosolvemin{c⊺x : Ax = b,0 ≤x ≤u,x ∈Z"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "mentationsneededtosolvemin{c⊺x : Ax = b,0 ≤x ≤u,x ∈Z"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "d"
+  },
+  {
+   "page": 7,
+   "mark": "5",
+   "context": "d3."
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "ondingN-foldILPscouldbesolvedintimepolynomialinN,infactinO(N"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "Notethatsign-compatibilityoftherepresentationxmin −x"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "Notethatsign-compatibilityoftherepresentationxmin −xk =Pα"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "Notethatsign-compatibilityoftherepresentationxmin −xk =Pαig"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "vectorsx"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "vectorsxk+ α"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "vectorsxk+ αigiandxmin −α"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "representations xmin −x"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "representations xmin −xk =Pα"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "representations xmin −xk =Pαig"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "representations xmin −xk =Pαigiwemusthavec⊺g"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "s xmin −xk =Pαigiwemusthavec⊺gi ≤0foralli,asotherwisexmin −α"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "xmin −xk =Pαigiwemusthavec⊺gi ≤0foralli,asotherwisexmin −αig"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "be a feasible solution with c⊺(xmin −α"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "be a feasible solution with c⊺(xmin −αigi) = c⊺xmin −α"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "0 > c⊺(xmin −x"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "α"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "α"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "∆≥c⊺(x"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "c⊺(xk −xk+1) = −αc⊺z = ∆≥c⊺(x"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "0 > c⊺(xmin −x"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "α"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "α"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "∆0 ≥c⊺(x"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "c⊺(xk −xk+1) = −αc⊺z = α∆0 ≥∆0 ≥c⊺(x"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "≥c⊺(x"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "Proof.Thereisasign-compatiblerepresentationz =Pα"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "Proof.Thereisasign-compatiblerepresentationz =Pαig"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "of.Thereisasign-compatiblerepresentationz =Pαigiviaelementsg"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "that due to the sign-compatible representation, x"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "that due to the sign-compatible representation, xk +α"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "ofx"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "ofxk + α"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "ofxk + αigiliebetweenthoseofx"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "ofxk + αigiliebetweenthoseofxkandx"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "ofxk + αigiliebetweenthoseofxkandxk + z,implyingthat0 ≤x"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "fxk + αigiliebetweenthoseofxkandxk + z,implyingthat0 ≤xk + α"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "allα"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "allαigiareapplicableaugmentationsatx"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "wemusthave−c⊺z"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "∥z"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "∥z1∥1=−c⊺z"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "∥z"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "−c⊺\u0010P"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "=P"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i=1α"
+  },
+  {
+   "page": 11,
+   "mark": "z",
+   "context": "i=1αi"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i=1αiz"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i=1α"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i=1αi∥z"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "=P"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i=1α"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i=1αi∥z"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "\u0010P"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i=1α"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i=1αi∥z"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "P"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i=1α"
+  },
+  {
+   "page": 11,
+   "mark": "z",
+   "context": "i=1αi"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i=1αiz"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "∥z"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "−c⊺\u0010P"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i=1α"
+  },
+  {
+   "page": 11,
+   "mark": "z",
+   "context": "i=1αi"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i=1αiz"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": ">−c⊺z"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "∥P"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i=1α"
+  },
+  {
+   "page": 11,
+   "mark": "z",
+   "context": "i=1αi"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i=1αiz"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "AsbyassumptionP"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i=1α"
+  },
+  {
+   "page": 11,
+   "mark": "z",
+   "context": "i=1αi"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i=1αiz"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "i=1αiziisan applicable augmentation at"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "i=1αiziisan applicable augmentation atx"
+  },
+  {
+   "page": 11,
+   "mark": "z",
+   "context": " applicable augmentation atxk.This contradicts the fact that"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "pplicable augmentation atxk.This contradicts the fact that z"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "betweenthecomponentsofx"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "betweenthecomponentsofxkandx"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "betweenthecomponentsofxkandxk+P"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i=1α"
+  },
+  {
+   "page": 11,
+   "mark": "z",
+   "context": "i=1αi"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i=1αiz"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "i=1αiziandthereforealsobetween"
+  },
+  {
+   "page": 11,
+   "mark": "u",
+   "context": "i=1αiziandthereforealsobetween0and"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "withα"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "withαi > 0andwithα"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "withαi > 0andwithαigi ⊑xmin −x"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "x"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "xk =Pα"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "xk =Pαig"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "xk =Pαigiimpliesthatforallithevectorsx"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "xk =Pαigiimpliesthatforallithevectorsxk + α"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "xk =Pαigiimpliesthatforallithevectorsxk + αig"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "xk =Pαigiimpliesthatforallithevectorsxk + αigiandxmin −α"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "xk =Pαigiimpliesthatforallithevectorsxk + αigiandxmin −αig"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "0 > c⊺(xmin −x"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "α"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "α"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "∆≥c⊺(x"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "c⊺(xk −xk+1) = −αc⊺z = ∆≥c⊺(x"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "0 > c⊺(xmin −x"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "α"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "α"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "∆0 ≥c⊺(x"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "δZ"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "δZn.As"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "δZn.Asx"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "δ"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "δ2 Z"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "δ∆0 ≥c⊺(x"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "≥c⊺(x"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "ǫ = 1/δthenyieldsthedesiredboundonthenumberofaugmentations2n"
+  },
+  {
+   "page": 13,
+   "mark": "g",
+   "context": "\u0013\f\fG \u0000[A,B](g(A,B))\u0001\f\f ∈O \u0000N"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "I"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "IdB−I"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "I"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "IdB−I"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "I"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "IdB−I"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "AI"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "AIdA−I"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "AI"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "AIdA−I"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "AI"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "AIdA−I"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "\u0000AI"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "\u0000AIdA−I"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "\u0000BOOI"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "\u0000BOOIdB−I"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "O(N"
+  }
+ ]
+}

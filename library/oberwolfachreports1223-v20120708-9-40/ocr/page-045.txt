@@ -1,0 +1,56 @@
+Invariants in Low-Dimensional Topology and Knot Theory 45
+
+Theorem 1. The isomorphism class of the cochain complex C,,(D) is an invariant
+of the colored framed link T.
+
+To obtain a cohomology theory we apply a functor to switch from the geometric
+picture to an algebraic one. Specifically, we employ the Bar-Natan type functor F
+constructed in the si(2) foam cohomology theory, switching from the category of
+foams (rel. local relations) to the category of R-modules. This yields an ordinary
+complex FC;,(D), and we can take its cohomology. The isomorphism class of
+the cohomology group H,(D) := H(FC;,(D)) is a triply-graded invariant of the
+colored framed tangle T. Moreover, if the tangle T is a knot, the total graded
+Euler characteristic of FC,,(D) is the colored Jones polynomial of the knot.
+
+‘We consider now two colored tangle diagrams D; and D2, whose components are
+colored by n. Moreover, we suppose that the vertical tangle composition D, o D2
+is defined, and that D1, Dz and D; o Dz have no circle components. Then there
+exists a binary operation * defined on the homotopy category of complexes over
+Kof j,, such that Cy(D1) * Cn(D2) = Cn(D1 © D2).
+
+Denote by (C’, 6") := Cn(D1) * Cn(D2). Then Ct = Ba ({D1,s] @r [D2,s])
+
+s,p(s)=i
+and
+
+¢' (v1 @ v2) = S7[51,](1) ® [$2,e](v2), for all vy ® v2 € [Dis] @r [Do,s]
+
+where the latter sum is over all edges e with tail s. The formal tensor product
+here is the “gluing” operation of formal complexes coming from the sl(2) foam
+cohomology.
+
+Theorem 2. (C’,¢') is a cochain complex, and (C',¢') = C,(D1 ° D2), up to
+homotopy.
+
+REFERENCES
+
+[1] D. Bar-Natan, Khovanov’s homology for tangles and cobordisms, Geom. Topol. 9 (2005),
+1443-1499.
+
+[2] A. Beliakova, $. Wehrli, Categorification of the colored Jones polynomial and Rassmussen
+invariant of links, Canad. J. Math. 60 (2008), 1240-1266.
+
+[3] C. Caprau, sl(2) tangle homology with a parameter and singular cobordisms, Algebr. Geom.
+Topol. 8 (2008), 729-756.
+
+[4] C. Caprau, The universal sl(2) cohomology via webs and foam, Topol. and Applications
+156 (2009), 1684-1702.
+
+[5] M. Khovanov, A categorification of the Jones polynomial, Duke Math. J. 101 (2000), no. 3,
+359-426.
+
+[6] M. Khovanov, Categorifications of the colored Jones polynomial, J. Knot Theory Ramifica-
+tions 14 (2005), no. 1, 111-130.
+
+[7] M. Mackaay, P. Turner, Bar-Natan’s Khovanov homology for coloured links, Pacific J. Math.
+229 (2007), no. 2, 429-446.

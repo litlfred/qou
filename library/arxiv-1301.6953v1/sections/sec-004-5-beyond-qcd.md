@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-1301.6953v1
-doc_title: "LU TP 13-03 Januray 2013"
+doc_title: "Chiral Perturbation Theory and Mesons"
 section_id: sec-004-5-beyond-qcd
 section_title: "Beyond QCD"
 section_number: 5
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.967
 latex_coverage_ratio: 0.865
+doc_brief: "Chiral Perturbation Theory and Mesons — 7 sections: Front matter; Chiral Perturbation Theory; Introduction"
 ---
 The methods of effective field theory and in particular ChPT can also be
 used for extensions. A simple extension is to take QCD with $N$ light

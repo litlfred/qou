@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9909027v1
-doc_title: "arXiv:math/9909027v1 [math.QA] 4 Sep 1999"
+doc_title: "Planar Algebras, I"
 section_id: sec-015-43-planar-algebras-give-subfactors
 section_title: "Planar algebras give subfactors"
 section_number: 4.3
@@ -8,6 +8,7 @@ pages: 115-118
 source_pdf: 9909027v1.pdf
 source_sha256: e6cd544cdc141d3b
 toc_source: inferred
+doc_brief: "Planar Algebras, I — We introduce a notion of planar algebra, the simplest example of which is a vector space of tensors, closed under planar contractions."
 ---
 The following theorem relies heavily on a result of Popa [Po2].
 Theorem 4.3.1 Let (P, Φ) be a spherical C∗-planar algebra with invariant

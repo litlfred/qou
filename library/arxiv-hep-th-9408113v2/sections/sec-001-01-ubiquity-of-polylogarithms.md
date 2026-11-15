@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408113v2
-doc_title: "arXiv:hep-th/9408113v2 25 Aug 1994"
+doc_title: "Dilogarithm identities"
 section_id: sec-001-01-ubiquity-of-polylogarithms
 section_title: "Ubiquity of polylogarithms."
 section_number: 0.1
@@ -8,6 +8,7 @@ pages: 2-3
 source_pdf: 9408113v2.pdf
 source_sha256: dadd96e1155e820f
 toc_source: inferred
+doc_brief: "Dilogarithm identities — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
 ---
 The polylogarithm and hyperlogarithm have many intriguing properties and have ap-
 peared in various branches of mathematics and physics. We mention the following ones:
@@ -36,4 +37,3 @@ J. Murakami, ...)
 — Quantum dilogarithm (L.D. Faddeev, R. Kashaev, A.N. Kirillov, ...)
 See also [Ca], [BGSV], [DS], [Go], [JKS], [Le5], [Mi2], [Mi3], [O], [V], [Za1]-[Za4].
 Dilogarithm identities
-3

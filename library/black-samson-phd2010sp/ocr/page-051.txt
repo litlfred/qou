@@ -1,0 +1,50 @@
+43
+
+then there are two possible resolutions that form states, as illustrated.
+
+\
+0;
+m Be (jo
+r ? te {>
+
+With (¢,,€r41) = (+, —), we calculate the contribution from the two states is
+
+Ir—1) -0" vw fr-l
+
+rom rl
+
+The calculation with (€,,€r41) = (+, —) is analogous and is omitted.
+
+Braid relations. A(o,o,) = A(oso,) when |r — s| > 1. This is a simple calculation only
+using the commutativity of the ring C(v).
+
+A(or0r410r) = A(or41070r41). Let x (resp., y) denote a permutation diagram for
+OrOr419r (LE8P., Or410rOrq41). Again, we organize by cases 7 = (x) = m(y). In Figure V.2,
+the possible permutation diagrams are shown with labels suggesting the possible signs on those
+strands. For example, the label (a,b,b) indicates that possible signs are (+,+,—), (+,-,+),
+(-,+,—-), or (~,-, +). Permutations are named by how they act on strands r, r+ 1, and r+ 2.
+Notice that for 7 = (3 2 1), there are no ways to assign signs, as each pair of strands crosses.
+
+We illustrate one calculation (of twenty): m = 1 and (é,,€r41,€r42) = (—,-, +). These
+
+signs match each of the patterns except (a,@,c), so it suffices to verify that the following equation
+
+holds:
+r+ r+ rt r
+-1)¥ ~1 v -1)? ir+2)v" [rl
+_ _ 0= _ —_
+Ce pe +9= Fag Jes sare
+This is equivalent to showing that v™~}[r + 1] = -v?*t! + u"[r + 2], which follows from Lemma
+V.2.3. i)
+
+V.2.. Markov Moves
+
+Now that we have established that A : 8B — C(v) is well-defined, we check that A is
+
+invariant under the Markov moves.
+
+Lemma V.2.1. The state-sum formula in (IV.11) descends to a well-defined link invariant:
+
+A(a) = A(8) if a and 6 are related by the Markov moves.
+
+Proof. In order to show invariance under the cyclic move (II.2), note that there is a bijection

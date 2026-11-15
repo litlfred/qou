@@ -6,10 +6,18 @@
   "sha256": "b6c0d7f50b6407f1159cf3b6b97dc2180b39100ef7e2c5a64454cdc6d05af324",
   "bytes": 296025,
   "pages": 20,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 14,
+    "reason": "17 of 438 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,18 +28,26 @@
   },
   "doi": null,
   "title": "RESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES",
-  "authors_raw": "SAMUEL CREW, VERONICA FANTINI, ANKUSH GOSW AMI, ROBERT OSBURN",
-  "abstract": "We prove resurgence properties for the Borel transform of a f ormal power series associated to elements in the Habiro ring that come from radi al limits of partial theta series via strange identities. As an application, we prove a conjectur e in quantum topology due to Costin and Garoufalidis for two families of torus knots.",
-  "docinfo": {
-   "Producer": "GPL Ghostscript 10.01.2",
-   "CreationDate": "D:20250413200902-04'00'",
-   "Creator": "LaTeX with hyperref",
-   "Title": "",
-   "Author": ""
-  },
+  "authors_raw": "SAMUEL CREW, VERONICA FANTINI, ANKUSH GOSWAMI, ROBERT OSBURN",
   "title_lines": [
    "RESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES"
-  ]
+  ],
+  "abstract": "We prove resurgence properties for the Borel transform of a formal power series associated to elements in the Habiro ring that come from radial limits of partial theta series via strange identities. As an application, we prove a conjecture in quantum topology due to Costin and Garoufalidis for two families of torus knots.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20250413200902-04'00'"
+  },
+  "title_raw": "RESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "RESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES 1. Introduction The modern theory of resurgence began with the voluminous works of ´ Ecalle in 1981 [ 16 , 17 ] and 1985 [ 18 ]. This theory now plays a vital rˆole in a remarkable number of diverse areas, to name just a few examples: nonlinear syst",
+   "outline": "1. Introduction",
+   "text": "RESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -39,46 +55,273 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Proof of Theorem 1.2",
    "page": 7,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Proof of Theorem 1.4 and Corollary 1.5",
    "page": 13,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Concluding Remarks",
    "page": 17,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Acknowledgements",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 18,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "A singularity set N ⊂C and the contours γl and γr. Following [13, Sections 4.2–4.3], the median resummation of F is given by",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Contour deformation of γR −γ Now, we consider the poles of g1,f(s). Note that there is no pole at s = 0. By (2.4), they are",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Branch cut of (1 + pα)3/2. On the left for ℜ(α) < 0 and on the right",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The Hankel contour C for the discontinuity disc0(x). with S±",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 510,
+   "n_words": 76,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -86,8 +329,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 7,
-   "n_chars": 12293,
-   "n_words": 2495
+   "n_chars": 12129,
+   "n_words": 2330,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-proof-of-theorem-12",
@@ -96,8 +341,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 13,
-   "n_chars": 8481,
-   "n_words": 2218
+   "n_chars": 8235,
+   "n_words": 1958,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-3-proof-of-theorem-14-and-corollary-15",
@@ -106,8 +353,10 @@
    "level": 1,
    "page_start": 13,
    "page_end": 17,
-   "n_chars": 7880,
-   "n_words": 1698
+   "n_chars": 7745,
+   "n_words": 1613,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-4-concluding-remarks",
@@ -116,8 +365,10 @@
    "level": 1,
    "page_start": 17,
    "page_end": 17,
-   "n_chars": 778,
-   "n_words": 140
+   "n_chars": 767,
+   "n_words": 129,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-acknowledgements",
@@ -126,8 +377,10 @@
    "level": 1,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 1282,
-   "n_words": 223
+   "n_chars": 1266,
+   "n_words": 207,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-references",
@@ -136,16 +389,26 @@
    "level": 1,
    "page_start": 18,
    "page_end": 20,
-   "n_chars": 9184,
-   "n_words": 1471
+   "n_chars": 9072,
+   "n_words": 1359,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 6,
-  "sections": 6,
-  "chars_total": 39898,
+  "toc_inferred_entries": 0,
+  "figure_entries": 4,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 7,
+  "chars_total": 39724,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -158,10 +421,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.752,
-     "coverage_ratio": 0.987,
+     "prose_ratio": 0.71,
+     "coverage_ratio": 0.967,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -178,8 +446,8 @@
     {
      "id": "sec-003-4-concluding-remarks",
      "title": "Concluding Remarks",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.971,
+     "prose_ratio": 0.889,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -187,7 +455,7 @@
      "id": "sec-004-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.927,
      "result": "overlaid",
      "converter": "pandoc"
     },

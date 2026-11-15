@@ -1,0 +1,59 @@
+33 Page 30 of 47 S. Jansen, L. Kolesnikov
+
+(and therefore some open e-ball B, in which the snippet is contained). Since all the objects
+Y are translates of S, we can choose the same radius r > 0 for all of the infinitely many
+disjoint objects Y intersecting E, such that Y = x + S C B,(x). Naturally, every such
+r-ball must intersect B, and therefore their union is again a bounded Borel subset of R@. But
+— by our assumptions on the shape S—every Y € X has the same fixed, strictly positive
+Lebesgue measure, thus their disjoint union must have infinite Lebesgue measure, which is
+a contradiction to its boundedness.
+
+For k < N, we drop the indicator that Y3,..., Y, are disjoint and find that the integral is
+bounded by
+
+ven [ Ayineizer( [ Wyn er4a, rrni=0)h2(d¥2))Ac(AY1).
+x x
+
+The inner integral is bounded by Ce because of (4.9), the outer integral gives an additional
+factor V(£ ). Altogether, the left-hand side of (4.8) is bounded by
+
+ace eX VDE) -VDI-VEDI(2Ly (D' UE) — V(D) Jee"
+
+N
++Ce > zk VE 1et¥).,
+k=2
+Proceeding as in the proof of Theorem 4.2, but taking into account the strict inequality from
+assumption (4.7), we find that there exist a > 0 such that
+
+etl V(D'UE)-V(P)-VEDI TY (D! U Ey) — V(D) Jet) < eelVDUED)-VD)I 4,
+
+compare to (4.5). Therefore, picking ¢ small enough, we see that (4.8), hence also condition
+(i) in Theorem 2.6 is satisfied and all T(D; z), D € Dg, are absolutely convergent. The claim
+of the theorem follows immediately. Oo
+
+4.3 Multi-Type Hard Spheres in R?
+
+Let (rn)nen be an increasing sequence of positive real numbers and let B,., (0) C R4, neéN,
+be the family of d-dimensional closed balls around 0 with the corresponding radii. To the
+sequence (In )neN Of radii is associated the sequence of non-negative activities (Z;)neN such
+that the ball B,, has the activity z;. In the setup of hard-core systems in the continuum from
+Sect. 2.3, let X be given by all possible translates of these objects. Notice that the closed
+balls are compact convex sets that are non-empty and regular closed. We refer to this special
+case of a hard-core system as a system of multi-type hard spheres in R¢. We will show a
+new sufficient condition for absolute convergence of the activity expansions in these types
+of models.
+For an integrable function h : X > R we write
+
+h(Z)A(dZ) = h(x + B,,(0))dx.
+[nae ) Sf, (x + By, (O))dx
+
+1
+
+We define the family of functions (V,),+0 by setting for Borel sets D C Rd
+V,(D) := I, Ix+B,(0))nD4e)dx, (4.11)
+R
+
+where B,(0) is the d-dimensional closed ball of radius r > 0 around 0. Naturally, the map
+V, coincides with the map V from (4.6) for the grain S given by the closed ball B,.(0) and
+
+D Springer

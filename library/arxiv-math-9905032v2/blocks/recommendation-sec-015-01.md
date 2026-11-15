@@ -1,0 +1,1 @@
+In the proof of Theorem [\[t3\]](#t3){reference-type="ref" reference="t3"}, we shall follow the strategy explained in Section [\[s15\]](#s15){reference-type="ref" reference="s15"} of the Introduction.

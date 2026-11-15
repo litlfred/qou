@@ -1,0 +1,983 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-1312.3086v1",
+  "figures": [
+    {
+      "id": "vfig-p003",
+      "file": "figures/vfig-p003.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 3
+      },
+      "page": 3,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": [
+        54.0,
+        52.15,
+        309.1,
+        392.28
+      ],
+      "assembly": {
+        "drawings": 128,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              54.0,
+              52.15,
+              309.1,
+              392.28
+            ],
+            "drawings": 128,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "Blockade radius",
+              "Na atoms",
+              "a+,a-",
+              "s",
+              "R1",
+              "L2",
+              "R2",
+              "L3",
+              "R3",
+              "LN",
+              "(1)",
+              "(1)",
+              "(1)",
+              "(1)",
+              "(2)",
+              "(2)",
+              "(3)",
+              "(3)",
+              "(3)",
+              "(3)",
+              "a)",
+              "b)",
+              "c)",
+              "L0",
+              "0L",
+              "j-",
+              "D+",
+              "j+",
+              "D-",
+              "r-",
+              "s-",
+              "s+",
+              "g-",
+              "g+",
+              "W+",
+              "W-",
+              "r+",
+              "1L",
+              "0R",
+              "1R",
+              "0A",
+              "1A",
+              "jA",
+              "rA"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              54.0,
+              52.15,
+              309.1,
+              392.28
+            ],
+            "parent": null,
+            "labels": [
+              "Blockade radius",
+              "Na atoms",
+              "a+,a-",
+              "s",
+              "R1",
+              "LN",
+              "(1)",
+              "(1)",
+              "(1)",
+              "(1)",
+              "(2)",
+              "(2)",
+              "(3)",
+              "(3)",
+              "(3)",
+              "(3)",
+              "a)",
+              "b)",
+              "c)",
+              "L0",
+              "0L",
+              "j-",
+              "D+",
+              "j+",
+              "D-",
+              "r-",
+              "g+",
+              "W+",
+              "W-",
+              "r+",
+              "1L",
+              "0R",
+              "1R",
+              "0A",
+              "1A",
+              "jA",
+              "rA"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              189.59,
+              342.01,
+              235.12,
+              371.48
+            ],
+            "parent": "b0",
+            "labels": [
+              "L3",
+              "R3"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              138.69,
+              342.01,
+              184.23,
+              371.48
+            ],
+            "parent": "b0",
+            "labels": [
+              "L2",
+              "R2"
+            ]
+          },
+          {
+            "id": "b3",
+            "bbox": [
+              129.68,
+              231.48,
+              150.44,
+              266.99
+            ],
+            "parent": "b0",
+            "labels": [
+              "g-"
+            ]
+          },
+          {
+            "id": "b4",
+            "bbox": [
+              129.01,
+              244.88,
+              142.4,
+              258.27
+            ],
+            "parent": "b0",
+            "labels": [
+              "s-"
+            ]
+          },
+          {
+            "id": "b5",
+            "bbox": [
+              104.9,
+              245.22,
+              118.29,
+              258.61
+            ],
+            "parent": "b0",
+            "labels": [
+              "s+"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 53,
+        "connectors": [
+          {
+            "from": "b0",
+            "to": "b3",
+            "bbox": [
+              113.09,
+              266.99,
+              137.04,
+              266.99
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b2",
+            "bbox": [
+              136.13,
+              329.23,
+              151.36,
+              350.13
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b2",
+            "bbox": [
+              157.56,
+              329.23,
+              172.79,
+              350.13
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b1",
+            "bbox": [
+              187.02,
+              329.23,
+              202.26,
+              350.13
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b1",
+            "bbox": [
+              208.45,
+              329.23,
+              223.68,
+              350.13
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 96
+      }
+    },
+    {
+      "id": "vfig-p007",
+      "file": "figures/vfig-p007.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 7
+      },
+      "page": 7,
+      "rotation": 0,
+      "captionLabels": [
+        "2"
+      ],
+      "region": [
+        138.5,
+        65.04,
+        477.41,
+        319.22
+      ],
+      "assembly": {
+        "drawings": 148,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              138.5,
+              65.04,
+              477.41,
+              319.22
+            ],
+            "drawings": 148,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "ns1/2",
+              "!BB",
+              "mj = !1/2",
+              "mj = 1/2",
+              "mI = ! 7/2",
+              "mI = 7/2",
+              "mI = ! 7/2",
+              "mI = 7/2",
+              "r!!",
+              "r+!",
+              "7/2",
+              "m = 7/2",
+              "\" !",
+              "rA!",
+              "# \" 0.5 MHz",
+              "$",
+              "$",
+              "12p1/2",
+              "mj = !1/2",
+              "mj = 1/2",
+              "mI = ! 7/2",
+              "mI = 7/2",
+              "mI = ! 7/2",
+              "mI = 7/2",
+              "\"+!",
+              "%!",
+              "%+",
+              "!BB",
+              "3",
+              "\"!!",
+              "\"A!",
+              "B",
+              "50 G",
+              "# \" 2$×80 kHz",
+              "&",
+              "mF = 4",
+              "!BB",
+              "B = 50 G",
+              "BB",
+              "2!×70 MHz",
+              "!\" \"",
+              "!#L\"",
+              "!$\"",
+              "%&",
+              "%'",
+              "F = 4",
+              "mF = ! 4",
+              "(Ehf 9.2 GHz",
+              "!#A\"",
+              "!\"L\"",
+              "\"",
+              "6s1/2",
+              "mF = 3",
+              "B",
+              "!",
+              "F = 3",
+              "mF = ! 3",
+              "!BB",
+              "s!",
+              "A!",
+              "R!",
+              "\"R!"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              138.5,
+              65.04,
+              477.41,
+              96.81
+            ],
+            "parent": null,
+            "labels": [
+              "ns1/2",
+              "!BB",
+              "mj = !1/2",
+              "mj = 1/2",
+              "mI = ! 7/2",
+              "mI = 7/2",
+              "mI = ! 7/2",
+              "mI = 7/2",
+              "r!!",
+              "r+!"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              385.36,
+              95.99,
+              404.03,
+              114.6
+            ],
+            "parent": null,
+            "labels": [
+              "$"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              138.5,
+              96.81,
+              477.41,
+              128.58
+            ],
+            "parent": null,
+            "labels": [
+              "m = 7/2",
+              "rA!",
+              "# \" 0.5 MHz"
+            ]
+          },
+          {
+            "id": "b3",
+            "bbox": [
+              241.25,
+              114.74,
+              259.91,
+              133.35
+            ],
+            "parent": null,
+            "labels": [
+              "$"
+            ]
+          },
+          {
+            "id": "b4",
+            "bbox": [
+              138.5,
+              128.55,
+              477.41,
+              160.35
+            ],
+            "parent": null,
+            "labels": [
+              "7/2",
+              "\" !",
+              "12p1/2",
+              "mj = !1/2",
+              "mj = 1/2",
+              "mI = ! 7/2",
+              "mI = 7/2",
+              "mI = ! 7/2",
+              "mI = 7/2",
+              "\"+!",
+              "%!",
+              "%+"
+            ]
+          },
+          {
+            "id": "b5",
+            "bbox": [
+              253.5,
+              146.77,
+              295.7,
+              298.88
+            ],
+            "parent": null,
+            "labels": [
+              "!\" \"",
+              "!\"L\""
+            ]
+          },
+          {
+            "id": "b6",
+            "bbox": [
+              138.5,
+              160.33,
+              477.41,
+              192.13
+            ],
+            "parent": null,
+            "labels": [
+              "!BB",
+              "3",
+              "\"!!",
+              "\"A!",
+              "# \" 2$×80 kHz"
+            ]
+          },
+          {
+            "id": "b7",
+            "bbox": [
+              160.95,
+              183.91,
+              212.13,
+              216.39
+            ],
+            "parent": null,
+            "labels": [
+              "B",
+              "50 G",
+              "B = 50 G",
+              "BB",
+              "2!×70 MHz"
+            ]
+          },
+          {
+            "id": "b8",
+            "bbox": [
+              355.99,
+              184.08,
+              377.34,
+              205.43
+            ],
+            "parent": null,
+            "labels": [
+              "&",
+              "%'"
+            ]
+          },
+          {
+            "id": "b9",
+            "bbox": [
+              138.5,
+              192.1,
+              477.41,
+              223.9
+            ],
+            "parent": null,
+            "labels": [
+              "mF = 4",
+              "!BB",
+              "!#L\"",
+              "!$\"",
+              "\""
+            ]
+          },
+          {
+            "id": "b10",
+            "bbox": [
+              259.91,
+              194.75,
+              281.26,
+              216.1
+            ],
+            "parent": "b5",
+            "labels": [
+              "%&"
+            ]
+          },
+          {
+            "id": "b11",
+            "bbox": [
+              138.5,
+              223.87,
+              477.41,
+              255.67
+            ],
+            "parent": null,
+            "labels": [
+              "F = 4",
+              "mF = ! 4",
+              "!#A\""
+            ]
+          },
+          {
+            "id": "b12",
+            "bbox": [
+              281.26,
+              237.51,
+              337.33,
+              251.21
+            ],
+            "parent": "b11",
+            "labels": [
+              "(Ehf 9.2 GHz"
+            ]
+          },
+          {
+            "id": "b13",
+            "bbox": [
+              138.5,
+              255.64,
+              477.41,
+              287.44
+            ],
+            "parent": null,
+            "labels": [
+              "6s1/2",
+              "mF = 3"
+            ]
+          },
+          {
+            "id": "b14",
+            "bbox": [
+              138.5,
+              287.42,
+              477.41,
+              319.22
+            ],
+            "parent": null,
+            "labels": [
+              "B",
+              "!",
+              "F = 3",
+              "mF = ! 3",
+              "!BB",
+              "s!",
+              "A!",
+              "R!",
+              "\"R!"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 133,
+        "connectors": [],
+        "between": [],
+        "outside": 91
+      }
+    },
+    {
+      "id": "vfig-p008",
+      "file": "figures/vfig-p008.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 8
+      },
+      "page": 8,
+      "rotation": 0,
+      "captionLabels": [
+        "3"
+      ],
+      "region": [
+        304.76,
+        73.0,
+        509.75,
+        181.14
+      ],
+      "assembly": {
+        "drawings": 11,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              304.76,
+              73.0,
+              509.75,
+              181.14
+            ],
+            "drawings": 11,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "600",
+              "800",
+              "1000",
+              "-4",
+              "-2",
+              "2"
+            ]
+          }
+        ],
+        "boxes": [],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              304.76,
+              124.74,
+              509.75,
+              181.14
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              313.67,
+              126.86,
+              509.75,
+              181.14
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              345.4,
+              73.0,
+              387.76,
+              181.14
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              393.11,
+              103.64,
+              393.11,
+              105.71
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              431.99,
+              103.64,
+              431.99,
+              105.71
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              470.87,
+              103.64,
+              470.87,
+              105.71
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              334.79,
+              105.71,
+              509.75,
+              105.71
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              354.23,
+              149.39,
+              356.31,
+              149.39
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              354.23,
+              127.55,
+              356.31,
+              127.55
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              354.23,
+              83.87,
+              356.31,
+              83.87
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              354.23,
+              73.0,
+              354.23,
+              181.14
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 102
+      }
+    },
+    {
+      "id": "vfig-p009",
+      "file": "figures/vfig-p009.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 9
+      },
+      "page": 9,
+      "rotation": 0,
+      "captionLabels": [
+        "4",
+        "5"
+      ],
+      "region": [
+        368.23,
+        335.62,
+        528.1,
+        655.88
+      ],
+      "assembly": {
+        "drawings": 20,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              392.61,
+              335.62,
+              528.1,
+              357.34
+            ],
+            "drawings": 3,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "1000 2000",
+              "3000"
+            ]
+          },
+          {
+            "bbox": [
+              368.23,
+              632.7,
+              522.96,
+              655.88
+            ],
+            "drawings": 3,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "1000 2000 3000"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              392.61,
+              335.62,
+              443.42,
+              357.34
+            ],
+            "parent": null,
+            "labels": [
+              "1000 2000"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              477.29,
+              335.62,
+              528.1,
+              357.34
+            ],
+            "parent": null,
+            "labels": [
+              "3000"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              416.47,
+              632.7,
+              474.74,
+              655.88
+            ],
+            "parent": null,
+            "labels": [
+              "1000 2000 3000"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 9,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              351.99,
+              211.19,
+              358.77,
+              211.19
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              452.63,
+              495.17,
+              460.66,
+              495.17
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              470.97,
+              507.95,
+              474.92,
+              594.95
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              467.01,
+              508.49,
+              470.89,
+              577.43
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              465.49,
+              509.23,
+              466.69,
+              519.31
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              507.26,
+              527.42,
+              512.89,
+              607.67
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              507.27,
+              583.65,
+              508.87,
+              607.67
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              503.94,
+              601.46,
+              504.86,
+              607.67
+            ]
+          }
+        ],
+        "between": [
+          "Figure 4: (Color online) a) Generic behaviour of the prob-",
+          "ability pK (n) for K = 1000 and three diﬀerent values of",
+          "P0 = 0.1, 0.2, 0.3. The probability is a peaked curve around",
+          "K",
+          ". b) Behaviour of ¯n (P0, N) as a function",
+          "of N for three diﬀerent values of P0 = 0.1, 0.2, 0.3.",
+          "P0 = 0.1",
+          "P0 = 0.2",
+          "P0 = 0.3",
+          "n(P0,N)",
+          "2nN/2",
+          "max"
+        ],
+        "outside": 105
+      }
+    }
+  ]
+}

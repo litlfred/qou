@@ -1,0 +1,6665 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "amc-2730",
+  "pages": [
+    {
+      "page": 6,
+      "rotation": 0,
+      "drawings": 155,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1: The simple walks A and B shown as arcs with zebra stripes for the braid σ´1"
+      ],
+      "labels": [
+        {
+          "text": "6",
+          "bbox": [
+            45.35,
+            29.89,
+            49.84,
+            38.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Ars Math. Contemp. 23 (2023) #P1.10",
+          "bbox": [
+            158.75,
+            29.89,
+            296.63,
+            38.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Once the local weights have been put into the preferred order at each crossing, The-",
+          "bbox": [
+            60.3,
+            59.1,
+            405.35,
+            69.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "orem 2.2 and Lemma 2.3 can be applied locally at each crossing to compute the colored",
+          "bbox": [
+            45.35,
+            71.06,
+            405.35,
+            81.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Jones polynomial.",
+          "bbox": [
+            45.35,
+            83.01,
+            117.86,
+            92.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The computation is simplified by the observation that only simple walks contribute to",
+          "bbox": [
+            60.3,
+            96.35,
+            405.35,
+            106.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the colored Jones polynomial [2, Lemma 2.5(a)]. Here, a walk is said to be simple if no two",
+          "bbox": [
+            45.35,
+            108.3,
+            405.36,
+            118.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "paths intersect in the walk, otherwise it is non-simple. It turns out that non-simple walks",
+          "bbox": [
+            45.35,
+            120.26,
+            405.36,
+            130.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "occur in cancelling pairs, so for the purpose of computing JN,Kpqq, it is enough to consider",
+          "bbox": [
+            45.35,
+            132.39,
+            405.35,
+            143.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "only simple walks.",
+          "bbox": [
+            45.35,
+            144.34,
+            120.25,
+            154.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The computation is further simplified by the fact that, for any stack of walks, the evalu-",
+          "bbox": [
+            60.3,
+            157.86,
+            405.35,
+            167.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ation of its weights will vanish if the walks in the stack traverse the same arc on N or more",
+          "bbox": [
+            45.35,
+            169.81,
+            405.35,
+            179.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "different levels [2, Lemma 2.5(b)]. This is extremely useful because it reduces the com-",
+          "bbox": [
+            45.35,
+            181.77,
+            405.35,
+            191.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "plexity of the computation and guarantees that only finitely many terms of ř8",
+          "bbox": [
+            45.35,
+            183.84,
+            361.31,
+            203.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7",
+            "TeX-mathx10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n“0 ENpP nq",
+          "bbox": [
+            354.42,
+            192.43,
+            405.36,
+            213.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "CMSY10",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "contribute to the N-th colored Jones polynomial. In particular, for a fixed N, there will",
+          "bbox": [
+            45.35,
+            205.68,
+            405.36,
+            215.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "always be an upper bound to the integers n which need to be considered in the infinite sum",
+          "bbox": [
+            45.35,
+            217.63,
+            405.36,
+            227.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of Equation (1). In practice, this bound can be determined by comparing the arcs traversed",
+          "bbox": [
+            45.35,
+            229.59,
+            405.35,
+            239.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "by the set of all simple walks for a given braid word.",
+          "bbox": [
+            45.35,
+            241.54,
+            255.05,
+            251.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            45.35,
+            267.38,
+            51.33,
+            279.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The colored Jones polynomial in closed form",
+          "bbox": [
+            63.29,
+            267.38,
+            290.41,
+            279.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "In this section, we apply Theorem 2.2 and Lemma 2.3 to compute JN,Kpqq, the colored",
+          "bbox": [
+            45.35,
+            288.49,
+            405.35,
+            299.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Jones polynomial, for the knots 52, 61 and 72. This is achieved by choosing favorable braid",
+          "bbox": [
+            45.35,
+            300.45,
+            405.36,
+            311.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "representatives, namely those with only a few simple walks.",
+          "bbox": [
+            45.35,
+            312.4,
+            284.23,
+            322.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In [22], Masbaum uses skein theory to compute the colored Jones polynomial for all",
+          "bbox": [
+            60.3,
+            325.92,
+            405.35,
+            335.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "twist knots, a class which includes 52, 61, and 72. More general calculations of the colored",
+          "bbox": [
+            45.35,
+            337.87,
+            405.35,
+            348.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Jones polynomial for the double twist knots can be found in [20, 21].",
+          "bbox": [
+            45.35,
+            349.83,
+            320.41,
+            359.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 1: The simple walks A and B shown as arcs with zebra stripes for the braid",
+          "bbox": [
+            45.35,
+            525.91,
+            405.36,
+            535.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "σ´1",
+          "bbox": [
+            45.35,
+            535.99,
+            61.49,
+            547.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 σ1σ3",
+          "bbox": [
+            51.05,
+            536.58,
+            82.18,
+            550.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2σ1 with closure the knot 52.",
+          "bbox": [
+            77.84,
+            537.87,
+            193.6,
+            549.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Example 3.1. The braid word σ´1",
+          "bbox": [
+            45.35,
+            552.86,
+            183.15,
+            564.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "NimbusRomNo9L-Medi",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 σ1σ3",
+          "bbox": [
+            172.71,
+            553.44,
+            203.84,
+            567.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2σ1 represents the knot 52 and has two simple walks",
+          "bbox": [
+            199.5,
+            554.73,
+            405.36,
+            566.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "with J Ď t2, 3u. They are A “ qa1,´c3,`a4,`b5,` and B “ q3b1,´c1,´c2,`c3,`a4,`",
+          "bbox": [
+            45.35,
+            565.4,
+            404.86,
+            578.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "b5,`b6,` (see Figure 1). Notice that A has J “ t3u and B has J “ t2, 3u. Since the walks",
+          "bbox": [
+            45.35,
+            578.64,
+            405.35,
+            590.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A and B both traverse the third strand at top and bottom, stacks only need to be considered",
+          "bbox": [
+            45.35,
+            590.6,
+            405.35,
+            600.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "up to level N ´ 1.",
+          "bbox": [
+            45.35,
+            602.55,
+            118.25,
+            613.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Using Theorem 2.2, we can write the colored Jones polynomial as the following:",
+          "bbox": [
+            60.3,
+            616.07,
+            382.13,
+            626.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "rotation": 0,
+      "drawings": 670,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2: The simple walks A, B and C shown as arcs with zebra stripes for the braid σ1σ2σ1",
+        "Figure 3: The simple walks A, B and C as arcs with zebra stripes on the braid σ1σ2σ3"
+      ],
+      "labels": [
+        {
+          "text": "8",
+          "bbox": [
+            45.35,
+            29.89,
+            49.84,
+            38.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Ars Math. Contemp. 23 (2023) #P1.10",
+          "bbox": [
+            158.65,
+            29.89,
+            296.54,
+            38.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Figure 2:",
+          "bbox": [
+            45.35,
+            215.23,
+            84.71,
+            225.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The simple walks A, B and C shown as arcs with zebra stripes for the braid",
+          "bbox": [
+            93.99,
+            215.78,
+            405.35,
+            224.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI9",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "´1σ3",
+          "bbox": [
+            73.62,
+            225.26,
+            92.28,
+            236.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI9",
+            "CMR6",
+            "TeX-matha6"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "´1σ2σ3",
+          "bbox": [
+            92.78,
+            225.26,
+            120.86,
+            236.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI9",
+            "CMR6",
+            "TeX-matha6"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "´1σ1 with closure the knot 61.",
+          "bbox": [
+            121.36,
+            225.26,
+            231.46,
+            236.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI9",
+            "CMR6",
+            "CMR9",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha6"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "σ1σ2σ1",
+          "bbox": [
+            45.35,
+            226.74,
+            73.12,
+            236.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI9",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "Using Theorem 2.2, the colored Jones polynomial for 61 can be written as",
+          "bbox": [
+            60.3,
+            261.51,
+            355.3,
+            272.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ÿ",
+          "bbox": [
+            156.82,
+            282.63,
+            167.89,
+            292.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeX-mathx10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "N´1",
+          "bbox": [
+            153.78,
+            284.87,
+            170.93,
+            292.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "JN,Kpqq “ qp1´Nq",
+          "bbox": [
+            75.41,
+            292.71,
+            151.62,
+            305.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "EN ppA ` B ` Cqnq ,",
+          "bbox": [
+            172.58,
+            292.71,
+            260.12,
+            311.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMSY10",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n“0",
+          "bbox": [
+            154.85,
+            307.96,
+            169.86,
+            315.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "ÿ",
+          "bbox": [
+            156.82,
+            316.46,
+            167.89,
+            326.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeX-mathx10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "`",
+          "bbox": [
+            187.06,
+            317.75,
+            191.62,
+            327.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeX-mathx10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "N´1",
+          "bbox": [
+            153.78,
+            318.7,
+            170.93,
+            325.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "“ qp1´Nq",
+          "bbox": [
+            112.93,
+            326.54,
+            151.62,
+            338.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "pqa4,´a6,´ ` q3c2,`a3,´a4,´b5,`b6,´c6,´",
+          "bbox": [
+            191.62,
+            326.54,
+            363.09,
+            340.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "EN",
+          "bbox": [
+            172.58,
+            328.17,
+            184.15,
+            345.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n“0",
+          "bbox": [
+            154.85,
+            341.79,
+            169.86,
+            349.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "` q5c1,`c2,`b3,´c3,´a4,´b5,`b6,´c6,´b7,`qn˘",
+          "bbox": [
+            181.05,
+            342.48,
+            370.86,
+            364.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "TeX-matha10",
+            "TeX-matha7",
+            "TeX-mathx10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            372.53,
+            353.14,
+            375.3,
+            363.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We use the q-multinomial theorem to expand the terms pA ` B ` Cqn, and to that end",
+          "bbox": [
+            60.3,
+            376.91,
+            405.36,
+            388.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "we recall the definition of the q-multinomial coefficients.",
+          "bbox": [
+            45.35,
+            390.15,
+            272.38,
+            400.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 3:",
+          "bbox": [
+            45.35,
+            600.53,
+            84.65,
+            610.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The simple walks A, B and C as arcs with zebra stripes on the braid",
+          "bbox": [
+            93.82,
+            600.53,
+            405.36,
+            610.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "3σ´1",
+          "bbox": [
+            71.37,
+            610.6,
+            92.34,
+            624.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1 σ2σ1σ´1",
+          "bbox": [
+            81.89,
+            610.6,
+            129.3,
+            625.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "σ1σ2σ3",
+          "bbox": [
+            45.35,
+            611.19,
+            75.7,
+            623.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "with closure the knot 72.",
+          "bbox": [
+            132.28,
+            612.48,
+            230.56,
+            623.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            118.85,
+            617.46,
+            122.82,
+            624.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 11,
+      "rotation": 0,
+      "drawings": 39,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4: The Markov moves."
+      ],
+      "labels": [
+        {
+          "text": "H. U. Boden and M. Shimoda: Braid representatives minimizing the number of simple walks",
+          "bbox": [
+            71.64,
+            29.89,
+            401.88,
+            39.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "11",
+          "bbox": [
+            413.4,
+            29.89,
+            422.36,
+            38.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "alter the braid word without changing its representative knot. These operations include",
+          "bbox": [
+            62.36,
+            59.1,
+            422.36,
+            69.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "reflection, rotation, and cyclic permutation of the braid word, and each of them can be used",
+          "bbox": [
+            62.36,
+            71.06,
+            422.36,
+            81.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to reduce the number of simple walks. We begin with a review of some standard material",
+          "bbox": [
+            62.36,
+            83.01,
+            422.36,
+            92.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "on representing knots as braids (see also [5]).",
+          "bbox": [
+            62.36,
+            94.97,
+            242.75,
+            104.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "· · ·",
+          "bbox": [
+            166.18,
+            158.3,
+            174.32,
+            170.4
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "· · ·",
+          "bbox": [
+            247.78,
+            176.16,
+            255.91,
+            188.26
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "· · ·",
+          "bbox": [
+            317.23,
+            176.16,
+            325.36,
+            188.26
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "· · ·",
+          "bbox": [
+            376.75,
+            176.16,
+            384.89,
+            188.26
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "α",
+          "bbox": [
+            167.17,
+            177.27,
+            171.63,
+            184.25
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "· · ·",
+          "bbox": [
+            86.81,
+            182.11,
+            94.95,
+            194.21
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "β",
+          "bbox": [
+            248.77,
+            196.37,
+            252.72,
+            203.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "β",
+          "bbox": [
+            318.22,
+            196.37,
+            322.16,
+            203.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "β",
+          "bbox": [
+            377.74,
+            196.37,
+            381.69,
+            203.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "β",
+          "bbox": [
+            87.8,
+            201.33,
+            91.75,
+            208.3
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "β",
+          "bbox": [
+            167.17,
+            201.33,
+            171.12,
+            208.3
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "· · ·",
+          "bbox": [
+            247.78,
+            215.84,
+            255.91,
+            227.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "· · ·",
+          "bbox": [
+            317.23,
+            215.84,
+            325.36,
+            227.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "· · ·",
+          "bbox": [
+            376.75,
+            215.84,
+            384.89,
+            227.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "· · ·",
+          "bbox": [
+            86.81,
+            219.81,
+            94.95,
+            231.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "α−1",
+          "bbox": [
+            165.18,
+            225.12,
+            176.81,
+            233.58
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.88,
+            6.97
+          ]
+        },
+        {
+          "text": "· · ·",
+          "bbox": [
+            166.18,
+            243.62,
+            174.32,
+            255.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Stabilization",
+          "bbox": [
+            298.2,
+            243.9,
+            343.54,
+            252.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Conjugation",
+          "bbox": [
+            103.22,
+            260.74,
+            147.51,
+            269.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Figure 4: The Markov moves.",
+          "bbox": [
+            182.71,
+            289.97,
+            302.02,
+            299.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Given a braid β, its closure is denoted pβ and is the knot or link obtained by connect-",
+          "bbox": [
+            77.31,
+            311.28,
+            422.36,
+            326.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu",
+            "TeX-mathx10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ing the strands on top with the corresponding strands on bottom without introducing any",
+          "bbox": [
+            62.36,
+            328.27,
+            422.36,
+            338.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "additional crossings.",
+          "bbox": [
+            62.36,
+            340.23,
+            144.27,
+            350.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The next result is called Alexander’s theorem and was first proved in 1923, see [1].",
+          "bbox": [
+            77.31,
+            352.18,
+            407.53,
+            362.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 4.1. Every oriented knot or link is equivalent to the closure pβ for some braid",
+          "bbox": [
+            62.36,
+            368.07,
+            422.36,
+            383.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Medi",
+            "NimbusRomNo9L-ReguItal",
+            "TeX-mathx10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "β P Bm.",
+          "bbox": [
+            62.36,
+            384.89,
+            96.93,
+            395.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "NimbusRomNo9L-ReguItal",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Definition 4.2. The Markov moves include conjugation and stabilization (see Figure 4).",
+          "bbox": [
+            62.36,
+            404.79,
+            422.37,
+            414.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Given a braid β P Bm, conjugation involves replacing it with αβα´1 for some α P Bm.",
+          "bbox": [
+            62.36,
+            413.31,
+            422.36,
+            427.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Stabilization involves replacing β with either βσm or βσ´1",
+          "bbox": [
+            62.36,
+            427.59,
+            306.27,
+            440.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "m . Note that conjugation pre-",
+          "bbox": [
+            295.82,
+            428.88,
+            422.36,
+            441.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "serves the braid width and stabilization increases it by one.",
+          "bbox": [
+            62.36,
+            440.84,
+            296.85,
+            450.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The next result is attributed to Markov. For a proof, see [5, Theorem 2.3].",
+          "bbox": [
+            77.31,
+            460.74,
+            370.36,
+            470.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 4.3. Two braids have equivalent link closures if and only if they are related by a",
+          "bbox": [
+            62.36,
+            480.47,
+            422.36,
+            490.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "sequence of Markov moves.",
+          "bbox": [
+            62.36,
+            492.42,
+            172.17,
+            502.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Let β P Bm, and let",
+          "bbox": [
+            77.31,
+            512.51,
+            156.97,
+            523.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "SWβ “ tW | W is a simple walk on β with J Ď t2, . . . , muu",
+          "bbox": [
+            118.04,
+            534.4,
+            366.68,
+            546.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(4)",
+          "bbox": [
+            410.75,
+            534.4,
+            422.36,
+            544.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "be the set of simple walks on the braid β.",
+          "bbox": [
+            62.36,
+            556.29,
+            226.7,
+            566.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Given a knot, we are interested in finding the braid representative that minimizes the",
+          "bbox": [
+            77.31,
+            568.25,
+            422.36,
+            578.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "number of simple walks. Of course, the set of simple walks depends on the braid represen-",
+          "bbox": [
+            62.36,
+            580.2,
+            422.36,
+            590.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tative chosen. In fact, it depends on the braid word since it is not preserved under insertion",
+          "bbox": [
+            62.36,
+            592.16,
+            422.36,
+            602.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(or deletion) of σiσ´1",
+          "bbox": [
+            62.36,
+            602.23,
+            149.79,
+            614.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "or σ´1",
+          "bbox": [
+            152.6,
+            602.23,
+            179.36,
+            614.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "σi into the braid word. This is the analogue, for braids, of the",
+          "bbox": [
+            179.85,
+            604.11,
+            422.36,
+            615.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i",
+          "bbox": [
+            139.34,
+            609.21,
+            142.16,
+            616.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "i",
+          "bbox": [
+            168.91,
+            609.21,
+            171.73,
+            616.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Reidemeister II move. We explain this important point next.",
+          "bbox": [
+            62.36,
+            616.07,
+            301.75,
+            626.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 13,
+      "rotation": 0,
+      "drawings": 96,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 5: A braid β representing the knot 52 and its reflection β˚, rotation β:, and reversal βr."
+      ],
+      "labels": [
+        {
+          "text": "H. U. Boden and M. Shimoda: Braid representatives minimizing the number of simple walks",
+          "bbox": [
+            71.64,
+            29.89,
+            401.88,
+            39.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "13",
+          "bbox": [
+            413.4,
+            29.89,
+            422.36,
+            38.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "In addition, one can apply symmetry operations to alter the braid word without chang-",
+          "bbox": [
+            77.31,
+            59.1,
+            422.36,
+            69.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ing its knot or link closure. We will use these operations to find braid representatives that",
+          "bbox": [
+            62.36,
+            71.06,
+            422.36,
+            81.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "minimize the number of simple walks. The three operations we will consider are called",
+          "bbox": [
+            62.36,
+            83.01,
+            422.36,
+            92.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "reflection, rotation, and reversal, and we introduce them next.",
+          "bbox": [
+            62.36,
+            94.97,
+            306.95,
+            104.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "For a given braid β, its reflection is denoted β˚ and is obtained by switching all the",
+          "bbox": [
+            77.31,
+            103.31,
+            422.36,
+            116.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "crossings of β. If β represents the knot K, then β˚ represents its mirror image K˚. If",
+          "bbox": [
+            62.36,
+            115.26,
+            422.36,
+            128.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "iℓ, then its reflection is the braid word given by β˚ “ σ´ε1",
+          "bbox": [
+            119.86,
+            127.8,
+            367.13,
+            143.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR5",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i1 ¨ ¨ ¨ σεℓ",
+          "bbox": [
+            90.71,
+            128.67,
+            126.95,
+            145.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR5",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "¨ ¨ ¨ σ´εℓ",
+          "bbox": [
+            369.78,
+            128.67,
+            401.97,
+            141.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "β “ σε1",
+          "bbox": [
+            62.36,
+            128.73,
+            98.23,
+            141.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR5",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(see",
+          "bbox": [
+            406.32,
+            130.83,
+            422.36,
+            140.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "i1",
+          "bbox": [
+            353.5,
+            135.93,
+            359.71,
+            143.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "iℓ",
+          "bbox": [
+            388.76,
+            135.93,
+            394.55,
+            143.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "Figure 5).",
+          "bbox": [
+            62.36,
+            142.79,
+            101.65,
+            152.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "For the purposes of computing the colored Jones polynomial, one can use either β or",
+          "bbox": [
+            77.31,
+            154.74,
+            422.36,
+            164.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "β˚, since the invariants are related by the simple formula JN,Kpqq “ JN,K˚pq´1q. The",
+          "bbox": [
+            62.36,
+            165.41,
+            422.36,
+            177.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha5",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "two braids will have completely different sets of simple walks. In fact, as we shall see",
+          "bbox": [
+            62.36,
+            178.65,
+            422.36,
+            188.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "in the next section, the simple walks on β and β˚ are disjoint and complementary to one",
+          "bbox": [
+            62.36,
+            186.99,
+            422.36,
+            200.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "another. There is an obvious computational advantage to working with the braid having",
+          "bbox": [
+            62.36,
+            202.56,
+            422.36,
+            212.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "fewer simple walks.",
+          "bbox": [
+            62.36,
+            214.52,
+            141.97,
+            224.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In fact, there are other symmetries that can be applied to get a new braid representative",
+          "bbox": [
+            77.31,
+            226.47,
+            422.36,
+            236.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "for a knot (or its mirror image). For example, given a braid word β representing a knot, if",
+          "bbox": [
+            62.36,
+            238.43,
+            422.36,
+            248.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "one rotates it 1800 in the plane, one obtains a new braid word representing the same knot.",
+          "bbox": [
+            62.36,
+            246.77,
+            422.36,
+            260.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "iℓ, then the rotated braid word is denoted β: and is given by",
+          "bbox": [
+            178.67,
+            258.72,
+            422.36,
+            274.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i1 ¨ ¨ ¨ σεℓ",
+          "bbox": [
+            149.52,
+            260.17,
+            185.76,
+            276.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR5",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Specifically, if β “ σε1",
+          "bbox": [
+            62.36,
+            260.24,
+            157.04,
+            272.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR5",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "β: “ σεℓ",
+          "bbox": [
+            62.36,
+            272.58,
+            98.63,
+            286.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "m´iℓ¨ ¨ ¨ σε1",
+          "bbox": [
+            91.54,
+            273.51,
+            139.66,
+            288.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR5",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "m´i1 (see Figure 5).",
+          "bbox": [
+            132.14,
+            275.61,
+            212.85,
+            289.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR5",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Another example is braid reversal, which is given by reversing the order of the braid",
+          "bbox": [
+            77.31,
+            287.56,
+            422.36,
+            297.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "i1 ¨ ¨ ¨ σεℓ",
+          "bbox": [
+            316.64,
+            297.35,
+            352.88,
+            313.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR5",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "word. Again, the new braid represents the same knot. If β “ σε1",
+          "bbox": [
+            62.36,
+            297.42,
+            324.16,
+            310.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR5",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "iℓ, then its reversal",
+          "bbox": [
+            345.79,
+            299.52,
+            422.36,
+            312.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "is denoted βr and is given by βr “ σεℓ",
+          "bbox": [
+            62.36,
+            307.86,
+            221.42,
+            322.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i1 (see Figure 5). Notice that βr is the braid",
+          "bbox": [
+            243.05,
+            307.86,
+            422.36,
+            325.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR5",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "iℓ¨ ¨ ¨ σε1",
+          "bbox": [
+            214.32,
+            309.37,
+            250.56,
+            323.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR5",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "obtained from β by rotating it 1800 around a horizontal line in the plane.",
+          "bbox": [
+            62.36,
+            319.81,
+            351.06,
+            333.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "There is a one-to-one correspondence between the sets of simple walks on β and βr.",
+          "bbox": [
+            77.31,
+            334.09,
+            422.36,
+            345.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Under the correspondence, the walks have the same set of active crossings, and the weights",
+          "bbox": [
+            62.36,
+            347.34,
+            422.36,
+            357.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "for the over- and undercrossings pbi,˘, ci,˘q are switched. In fact, as we shall see, a simple",
+          "bbox": [
+            62.36,
+            359.29,
+            422.36,
+            370.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "walk is completely determined by its set of active crossings, and it follows that |SWβ| “",
+          "bbox": [
+            62.36,
+            371.25,
+            422.37,
+            382.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "|SWβr|.",
+          "bbox": [
+            62.36,
+            383.29,
+            96.15,
+            394.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "β∗",
+          "bbox": [
+            204.75,
+            531.29,
+            214.99,
+            543.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "β†",
+          "bbox": [
+            271.8,
+            531.29,
+            281.62,
+            543.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "βr",
+          "bbox": [
+            338.85,
+            531.51,
+            348.71,
+            542.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "β",
+          "bbox": [
+            137.7,
+            532.89,
+            143.34,
+            542.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 5: A braid β representing the knot 52 and its reflection β˚, rotation β:, and reversal",
+          "bbox": [
+            62.36,
+            552.12,
+            422.36,
+            564.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "βr.",
+          "bbox": [
+            62.36,
+            563.79,
+            75.43,
+            575.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Given a braid word for a knot, applying reflection, rotation, or cyclic permutation will",
+          "bbox": [
+            77.31,
+            580.2,
+            422.36,
+            590.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "alter its set of simple walks. Since the computation of the colored Jones polynomial is",
+          "bbox": [
+            62.36,
+            592.16,
+            422.36,
+            602.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "exponential in the number of simple walks, it is advantageous to choose the braid represen-",
+          "bbox": [
+            62.36,
+            604.11,
+            422.36,
+            614.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tative that minimizes the number of simple walks.",
+          "bbox": [
+            62.36,
+            616.07,
+            261.11,
+            626.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 14,
+      "rotation": 0,
+      "drawings": 13,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 6: An active crossing and its oriented smoothing for σi and σ´1"
+      ],
+      "labels": [
+        {
+          "text": "14",
+          "bbox": [
+            45.35,
+            29.89,
+            54.32,
+            38.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Ars Math. Contemp. 23 (2023) #P1.10",
+          "bbox": [
+            160.9,
+            29.89,
+            298.78,
+            38.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            45.35,
+            57.48,
+            51.33,
+            69.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Semi-simple walks and cyclic permutation",
+          "bbox": [
+            63.29,
+            57.48,
+            278.48,
+            69.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The main result in this section is an invariance property which asserts that under the cyclic",
+          "bbox": [
+            45.35,
+            77.14,
+            405.35,
+            87.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "permutation, the total number of simple walks on a braid β and its reflection β˚ does not",
+          "bbox": [
+            45.35,
+            85.48,
+            405.35,
+            99.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "change. To see this, we introduce the notion of semi-simple walks and study their behavior",
+          "bbox": [
+            45.35,
+            101.05,
+            405.35,
+            111.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "under reflection.",
+          "bbox": [
+            45.35,
+            113.0,
+            110.65,
+            122.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Recall the definition of SWβ in Equation (4). Previously, we identified walks W with",
+          "bbox": [
+            60.3,
+            125.07,
+            405.35,
+            136.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "their weights, given by the ordered product of operators tai,˘, bi,˘, ci,˘u for each crossing",
+          "bbox": [
+            45.35,
+            137.02,
+            405.36,
+            148.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "traversed. However, it will be more convenient to record W using only the operators ai,˘,",
+          "bbox": [
+            45.35,
+            148.98,
+            405.35,
+            160.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and we can do so with no loss of information. In the following, we write ai instead of ai,˘;",
+          "bbox": [
+            45.35,
+            160.93,
+            405.35,
+            172.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "it is notationally more compact and the sign ˘ can be recovered from the braid word. Thus,",
+          "bbox": [
+            45.35,
+            172.89,
+            405.36,
+            183.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "there is a one-to-one correspondence between simple walks on β and (certain) monomials",
+          "bbox": [
+            45.35,
+            184.84,
+            405.36,
+            194.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "in ta1, . . . , aℓu, as we shall now explain.",
+          "bbox": [
+            45.35,
+            196.8,
+            207.68,
+            207.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Given a simple walk W, recall that the active crossings are where the walk jumps",
+          "bbox": [
+            60.3,
+            208.86,
+            405.35,
+            218.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "down from the overcrossing arc to the undercrossing arc. If the i-th crossing is active, we",
+          "bbox": [
+            45.35,
+            220.81,
+            405.35,
+            230.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "record this with ai. As usual, the crossings are labeled 1, 2, . . . , ℓfrom top to bottom of",
+          "bbox": [
+            45.35,
+            232.77,
+            405.35,
+            243.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the braid. The collection of active crossings of W determines a monomial in ta1, . . . , aℓu,",
+          "bbox": [
+            45.35,
+            244.72,
+            405.35,
+            255.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and thus we see that a simple walk determines a monomial. Conversely, the monomial in",
+          "bbox": [
+            45.35,
+            256.68,
+            405.35,
+            266.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ta1, . . . , aℓu uniquely determines the simple walk W. We will explain this below, but be-",
+          "bbox": [
+            45.35,
+            268.63,
+            405.35,
+            279.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "fore we do, notice that not every monomial corresponds to a simple walk. For example, the",
+          "bbox": [
+            45.35,
+            280.59,
+            405.35,
+            290.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1 has three crossings and so there are 23 “ 8 possible monomials. However,",
+          "bbox": [
+            100.95,
+            289.51,
+            405.35,
+            304.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "trefoil braid σ3",
+          "bbox": [
+            45.35,
+            291.25,
+            105.29,
+            302.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "it has only one simple walk corresponding to the monomial a2.",
+          "bbox": [
+            45.35,
+            304.5,
+            296.57,
+            315.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Suppose then that ai1 ¨ ¨ ¨ aik is a monomial, indicating that crossings i1, . . . , ik are",
+          "bbox": [
+            60.3,
+            316.56,
+            405.35,
+            329.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR5",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "active. We perform an oriented smoothing at each active crossing. Since the walk jumps",
+          "bbox": [
+            45.35,
+            328.52,
+            405.35,
+            338.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "down there, the crossing type determines which of the arcs are active and which are not.",
+          "bbox": [
+            45.35,
+            340.47,
+            405.35,
+            350.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Specifically, if the crossing is positive, the active arc is the one on the left, and if the",
+          "bbox": [
+            45.35,
+            352.43,
+            405.35,
+            362.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "crossing is negative, the active arc is the one on the right (see Figure 6). At each active",
+          "bbox": [
+            45.35,
+            364.38,
+            405.35,
+            374.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "crossing, we mark the active arc using some marking scheme. (In all figures, the active",
+          "bbox": [
+            45.35,
+            376.34,
+            405.35,
+            386.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "arcs have zebra stripes.) We then extend the marking along the arc through any inactive",
+          "bbox": [
+            45.35,
+            388.29,
+            405.35,
+            398.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "crossings and around the back of the braid closure, continuing again through the braid and",
+          "bbox": [
+            45.35,
+            400.25,
+            405.35,
+            410.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "around the back as many times as necessary, until reaching another active crossing.",
+          "bbox": [
+            45.35,
+            412.2,
+            376.17,
+            422.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "σ−1",
+          "bbox": [
+            266.6,
+            484.05,
+            278.79,
+            493.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            5.23,
+            7.47
+          ]
+        },
+        {
+          "text": "σi",
+          "bbox": [
+            110.6,
+            484.54,
+            116.99,
+            492.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7"
+          ],
+          "sizes": [
+            5.23,
+            7.47
+          ]
+        },
+        {
+          "text": "i",
+          "bbox": [
+            270.87,
+            489.5,
+            272.99,
+            494.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            5.23
+          ]
+        },
+        {
+          "text": "Figure 6: An active crossing and its oriented smoothing for σi and σ´1",
+          "bbox": [
+            45.35,
+            502.91,
+            327.61,
+            516.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ". The active arc has",
+          "bbox": [
+            328.1,
+            504.79,
+            405.35,
+            514.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "i",
+          "bbox": [
+            317.16,
+            509.89,
+            319.98,
+            516.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "zebra stripes and the inactive arc is solid.",
+          "bbox": [
+            45.35,
+            516.74,
+            208.75,
+            526.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "One of two things will happen at this active crossing. Either the extended marking is",
+          "bbox": [
+            60.3,
+            542.29,
+            405.35,
+            552.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "on an inactive arc, in which case the monomial does not correspond to a valid simple walk,",
+          "bbox": [
+            45.35,
+            554.25,
+            405.35,
+            564.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "or it is on the active arc. If the second case holds for all extended arcs, then this is a valid",
+          "bbox": [
+            45.35,
+            566.2,
+            405.35,
+            576.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "simple walk. Notice that, in that case, every arc of the partial smoothing of the braid closure",
+          "bbox": [
+            45.35,
+            578.16,
+            405.35,
+            588.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "is connected to either an active or an inactive arc. To see that we argue by contradiction. If",
+          "bbox": [
+            45.35,
+            590.11,
+            405.35,
+            600.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the partial smoothing of pβ contains an arc that is not connected to an active or an inactive",
+          "bbox": [
+            45.35,
+            598.05,
+            405.35,
+            613.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu",
+            "TeX-mathx10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "arc, then we can follow it along pβ and it will only pass through inactive crossings before",
+          "bbox": [
+            45.35,
+            611.03,
+            405.35,
+            626.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu",
+            "TeX-mathx10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 17,
+      "rotation": 0,
+      "drawings": 59,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 7: Extending simple walks from βn´1 and βn´2 to βn."
+      ],
+      "labels": [
+        {
+          "text": "H. U. Boden and M. Shimoda: Braid representatives minimizing the number of simple walks",
+          "bbox": [
+            71.47,
+            29.89,
+            401.72,
+            39.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "17",
+          "bbox": [
+            413.06,
+            29.89,
+            422.03,
+            38.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "stripes.) Then extend the markings around the braid closure. Since ai1 . . . aik corresponds",
+          "bbox": [
+            62.36,
+            59.1,
+            422.36,
+            71.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR5",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "to a semi-simple walk, the markings on the active and inactive arcs will not coincide.",
+          "bbox": [
+            62.36,
+            71.06,
+            400.7,
+            81.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The same will be true for β:, provided one follows the same procedures at the corre-",
+          "bbox": [
+            77.31,
+            82.0,
+            422.36,
+            93.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "sponding crossings. Since β: is obtained by a 1800 rotation which interchanges the first",
+          "bbox": [
+            62.36,
+            91.35,
+            422.36,
+            105.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and last strands of the braid, this will not preserve SWβ since the new walk may not satisfy",
+          "bbox": [
+            62.36,
+            106.92,
+            422.37,
+            118.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "J Ď t2, . . . , mu. Nevertheless, the semi-simple walks of β and β: are preserved. This",
+          "bbox": [
+            62.36,
+            115.26,
+            422.36,
+            129.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "completes the proof.",
+          "bbox": [
+            62.36,
+            130.83,
+            143.99,
+            140.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Simple walks on p2, nq torus braids",
+          "bbox": [
+            80.29,
+            154.95,
+            261.88,
+            167.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMMIB10",
+            "NimbusRomNo9L-Medi",
+            "TeX-matha12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            62.36,
+            155.11,
+            68.34,
+            167.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "In this section, we show that the number of simple walks on the braid βn with closure",
+          "bbox": [
+            62.36,
+            174.67,
+            422.36,
+            186.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the p2, nq torus link is given by the n-th term in the Fibonacci sequence 1, 2, 3, 5, 8, 13,",
+          "bbox": [
+            62.36,
+            186.62,
+            422.36,
+            197.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "21, 34, 55, 89, 144, . . . We will find a closed form solution for the number of simple walks",
+          "bbox": [
+            62.36,
+            198.58,
+            422.36,
+            208.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "and use it to show they grow exponentially in n.",
+          "bbox": [
+            62.36,
+            210.53,
+            254.05,
+            220.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "For n ě 1 let βn “ σ´n",
+          "bbox": [
+            77.31,
+            220.61,
+            175.57,
+            234.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1 . The closure of βn is the p2, nq torus knot if n is odd and the",
+          "bbox": [
+            164.18,
+            222.49,
+            422.37,
+            235.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "p2, nq torus link if n is even. For that reason, we refer to βn as the (negative) p2, nq torus",
+          "bbox": [
+            62.36,
+            234.44,
+            422.36,
+            245.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "braid.",
+          "bbox": [
+            62.36,
+            246.4,
+            85.33,
+            256.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proposition 6.1. Let fpnq be the number of simple walks on the p2, nq torus braid βn.",
+          "bbox": [
+            62.36,
+            263.76,
+            422.36,
+            274.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "NimbusRomNo9L-Medi",
+            "NimbusRomNo9L-ReguItal",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Then",
+          "bbox": [
+            62.36,
+            275.72,
+            82.29,
+            285.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ˆ 5 `",
+          "bbox": [
+            143.49,
+            276.62,
+            168.62,
+            296.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "TeX-matha10",
+            "TeX-mathx10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "˙ ˆ 1 `",
+          "bbox": [
+            185.31,
+            276.62,
+            221.1,
+            296.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "TeX-matha10",
+            "TeX-mathx10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "˙n",
+          "bbox": [
+            237.79,
+            276.62,
+            250.04,
+            289.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "TeX-mathx10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ˆ 5 ´",
+          "bbox": [
+            262.71,
+            276.62,
+            287.85,
+            296.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "TeX-matha10",
+            "TeX-mathx10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "˙ ˆ 1 ´",
+          "bbox": [
+            304.54,
+            276.62,
+            340.32,
+            296.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "TeX-matha10",
+            "TeX-mathx10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "˙n",
+          "bbox": [
+            357.01,
+            276.62,
+            369.26,
+            289.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "TeX-mathx10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "?",
+          "bbox": [
+            170.83,
+            278.73,
+            179.13,
+            288.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeX-matha10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "?",
+          "bbox": [
+            223.31,
+            278.74,
+            231.61,
+            288.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeX-matha10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "?",
+          "bbox": [
+            290.06,
+            278.74,
+            298.36,
+            288.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeX-matha10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "?",
+          "bbox": [
+            342.53,
+            278.74,
+            350.83,
+            288.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeX-matha10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            179.13,
+            286.52,
+            184.12,
+            296.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            231.61,
+            286.52,
+            236.59,
+            296.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            298.36,
+            286.52,
+            303.34,
+            296.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            350.83,
+            286.52,
+            355.81,
+            296.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "fpnq “",
+          "bbox": [
+            110.53,
+            293.26,
+            140.73,
+            303.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            371.42,
+            293.26,
+            374.19,
+            303.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "`",
+          "bbox": [
+            252.75,
+            293.77,
+            260.5,
+            303.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeX-matha10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            163.92,
+            300.1,
+            173.88,
+            310.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            218.88,
+            300.1,
+            223.86,
+            310.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            283.14,
+            300.1,
+            293.1,
+            310.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            338.1,
+            300.1,
+            343.09,
+            310.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proof. The first step is to show that the simple walks on βn satisfy the Fibonacci recurrence",
+          "bbox": [
+            62.36,
+            315.97,
+            422.36,
+            327.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "relation",
+          "bbox": [
+            62.36,
+            328.1,
+            92.8,
+            338.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(5)",
+          "bbox": [
+            410.75,
+            340.06,
+            422.36,
+            350.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "fpnq “ fpn ´ 1q ` fpn ´ 2q.",
+          "bbox": [
+            181.58,
+            340.14,
+            303.15,
+            350.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "To do this, we establish a bijective correspondence between the set of simple walks on",
+          "bbox": [
+            77.31,
+            356.2,
+            422.36,
+            366.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "βn and the union of the sets of simple walks on βn´1 and βn´2. This is accomplished by",
+          "bbox": [
+            62.36,
+            368.16,
+            422.36,
+            379.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "extending simple walks on βn´1 and βn´2 to simple walks on βn.",
+          "bbox": [
+            62.36,
+            380.11,
+            326.23,
+            391.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "In the following, we identify simple walks with their weights, which we write as mono-",
+          "bbox": [
+            77.31,
+            392.07,
+            422.36,
+            402.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "mials in tai, bi, ci | i “ 1, . . . , nu. Notice that all simple walks under consideration will",
+          "bbox": [
+            62.36,
+            404.02,
+            422.36,
+            416.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "have J “ t2u.",
+          "bbox": [
+            62.36,
+            415.98,
+            119.68,
+            426.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Given a simple walk w1 on βn´1, set w “ w1an. Then w is a simple walk on βn. See",
+          "bbox": [
+            77.31,
+            424.32,
+            422.36,
+            439.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 7 (left). Since J “ t2u, this is actually the only way to extend w1 to a simple walk",
+          "bbox": [
+            62.36,
+            436.27,
+            422.36,
+            450.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "on βn .",
+          "bbox": [
+            62.36,
+            451.84,
+            90.85,
+            463.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Similarly, given a simple walk w1 on βn´2, set w “ w1bn´1cn. Then w is again a",
+          "bbox": [
+            77.31,
+            460.18,
+            422.36,
+            474.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "simple walk on βn. See Figure 7 (right). This is the only way to extend w1 to a simple walk",
+          "bbox": [
+            62.36,
+            472.14,
+            422.36,
+            486.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "on βn which avoids simple walks extended from βn´1.",
+          "bbox": [
+            62.36,
+            487.71,
+            282.08,
+            499.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 7: Extending simple walks from βn´1 and βn´2 to βn.",
+          "bbox": [
+            118.72,
+            580.07,
+            366.0,
+            591.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The two sets of simple walks are disjoint. This can be verified by noting that they",
+          "bbox": [
+            77.31,
+            604.11,
+            422.36,
+            614.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "traverse different strands between the pn ´ 1q-st and n-th crossings. Equivalently, one can",
+          "bbox": [
+            62.36,
+            616.07,
+            422.36,
+            626.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 20,
+      "rotation": 0,
+      "drawings": 243,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 8: Extending simple walks from γn´1 to γn.",
+        "Figure 9: Extending simple walks from γn´2 to γn."
+      ],
+      "labels": [
+        {
+          "text": "20",
+          "bbox": [
+            45.35,
+            29.89,
+            54.32,
+            38.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Ars Math. Contemp. 23 (2023) #P1.10",
+          "bbox": [
+            160.9,
+            29.89,
+            298.78,
+            38.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "J = {2}",
+          "bbox": [
+            129.44,
+            57.01,
+            150.29,
+            67.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "J = {3}",
+          "bbox": [
+            213.54,
+            74.36,
+            234.39,
+            84.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "J = {2, 3}",
+          "bbox": [
+            297.64,
+            74.69,
+            324.14,
+            85.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "Figure 8: Extending simple walks from γn´1 to γn.",
+          "bbox": [
+            122.45,
+            157.75,
+            328.26,
+            169.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "J = {2, 3}",
+          "bbox": [
+            297.64,
+            197.23,
+            324.14,
+            207.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "J = {3}",
+          "bbox": [
+            213.54,
+            197.29,
+            234.39,
+            207.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "J = {2}",
+          "bbox": [
+            129.44,
+            197.34,
+            150.29,
+            207.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "Figure 9: Extending simple walks from γn´2 to γn.",
+          "bbox": [
+            122.45,
+            314.43,
+            328.26,
+            325.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "In a similar way, we can extend simple walks on γn´2. Let w1 be a simple walk on",
+          "bbox": [
+            60.3,
+            344.57,
+            405.35,
+            359.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "γn´2. If J “ t2u, then we set w “ w1a2n´3c2n´2b2n. If J “ t3u, then we set w “",
+          "bbox": [
+            45.35,
+            359.13,
+            405.36,
+            371.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "w1b2n´2a2n´1c2n. If J “ t2, 3u, then we set w “ w1a2n´2b2n ¨ b2n´3c2n´1c2n. In this",
+          "bbox": [
+            45.35,
+            371.08,
+            405.35,
+            384.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "last case, notice that the paths become inverted. Figure 9 shows how the simple walks are",
+          "bbox": [
+            45.35,
+            384.05,
+            405.35,
+            394.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "extended. In all three cases, it is clear that w is a simple walk on γn.",
+          "bbox": [
+            45.35,
+            396.0,
+            317.13,
+            406.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Lastly, let w1 be a simple walk on γn´3. Then since γn “ γn´3pσ´1",
+          "bbox": [
+            60.3,
+            408.55,
+            358.01,
+            424.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 q3 with",
+          "bbox": [
+            364.2,
+            408.55,
+            405.35,
+            425.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1 σ´1",
+          "bbox": [
+            347.56,
+            410.29,
+            374.64,
+            424.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 q3 inducing the identity permutation, we can extend w1 to a simple walk on γn",
+          "bbox": [
+            71.55,
+            420.5,
+            404.85,
+            437.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "pσ´1",
+          "bbox": [
+            45.35,
+            422.24,
+            65.37,
+            434.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1 σ´1",
+          "bbox": [
+            54.92,
+            422.24,
+            82.0,
+            436.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "by remaining on the same strands. If J “ t2u, then we set w “ w1b2n´5c2n´3c2n´2b2n.",
+          "bbox": [
+            45.35,
+            435.07,
+            405.36,
+            447.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "If J “ t3u, then we set w “ w1b2n´4b2n´3c2n´1c2n. If J “ t2, 3u, then we set w “",
+          "bbox": [
+            45.35,
+            447.02,
+            405.36,
+            459.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "w1b2n´5c2n´3c2n´2b2n ¨ b2n´4b2n´3c2n´1c2n. Figure 10 shows how the simple walks are",
+          "bbox": [
+            45.35,
+            458.98,
+            405.35,
+            472.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "extended. In all three cases, it is clear that w is a simple walk on γn.",
+          "bbox": [
+            45.35,
+            471.94,
+            317.13,
+            482.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "It is not difficult to see that the sets of extended simple walks from γn´1, γn´2, and",
+          "bbox": [
+            60.3,
+            488.1,
+            405.35,
+            499.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "γn´3 are all disjoint. For instance, this follows by comparing their weights, and noting",
+          "bbox": [
+            45.35,
+            500.06,
+            405.36,
+            511.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "they are pairwise unequal.",
+          "bbox": [
+            45.35,
+            512.01,
+            149.78,
+            521.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The last step is to show that this accounts for all simple walks on γn. We will see that",
+          "bbox": [
+            60.3,
+            528.17,
+            405.36,
+            538.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "every simple walk on γn is an extension of a simple walk on γn´1, γn´2 or γn´3.",
+          "bbox": [
+            45.35,
+            540.13,
+            371.2,
+            551.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Suppose w is a simple walk on γn. If J “ t2u, then it must traverse the understrand",
+          "bbox": [
+            60.3,
+            556.29,
+            405.35,
+            567.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "at the 2n-th crossing and is on the overstrand just below the p2n ´ 2q-nd crossing. If it",
+          "bbox": [
+            45.35,
+            568.25,
+            405.36,
+            578.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "jumps down at the p2n ´ 2q-nd crossing, then w “ w2a2n´2b2n, and w is the extension of",
+          "bbox": [
+            45.35,
+            579.2,
+            405.36,
+            591.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the simple walk w1 “ w2n2n´2 on γn´1. Otherwise, if it remains on the overstrand at the",
+          "bbox": [
+            45.35,
+            589.13,
+            405.35,
+            603.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "p2n ´ 2q-nd crossing, then either w “ w1a2n´3c2n´2b2n for w1 a simple walk on γn´2, or",
+          "bbox": [
+            45.35,
+            600.5,
+            405.35,
+            615.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "w “ w1b2n´5c2n´3c2n´2b2n for w1 a simple walk on γn´3.",
+          "bbox": [
+            45.35,
+            612.45,
+            283.67,
+            627.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 21,
+      "rotation": 0,
+      "drawings": 170,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 10: Extending simple walks from γn´3 to γn."
+      ],
+      "labels": [
+        {
+          "text": "H. U. Boden and M. Shimoda: Braid representatives minimizing the number of simple walks",
+          "bbox": [
+            71.64,
+            29.89,
+            401.88,
+            39.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "21",
+          "bbox": [
+            413.4,
+            29.89,
+            422.36,
+            38.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "J = {2}",
+          "bbox": [
+            147.29,
+            56.89,
+            167.95,
+            67.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.93
+          ]
+        },
+        {
+          "text": "J = {3}",
+          "bbox": [
+            230.64,
+            57.05,
+            251.31,
+            67.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.93
+          ]
+        },
+        {
+          "text": "J = {2, 3}",
+          "bbox": [
+            314.0,
+            57.21,
+            340.27,
+            67.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.93
+          ]
+        },
+        {
+          "text": "Figure 10: Extending simple walks from γn´3 to γn.",
+          "bbox": [
+            136.97,
+            210.42,
+            347.76,
+            221.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "If instead J “ t3u, then it is on the overstrand just below the p2nq-th crossing. If it",
+          "bbox": [
+            77.31,
+            255.73,
+            422.36,
+            266.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "jumps down at the p2nq-th crossing, then w “ w1a2n for w1 a simple walk on γn´1. Other-",
+          "bbox": [
+            62.36,
+            264.07,
+            422.36,
+            279.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "wise, if it remains on the overstrand at the p2nq-th crossing, then either w",
+          "bbox": [
+            62.36,
+            279.64,
+            404.68,
+            290.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "“",
+          "bbox": [
+            414.61,
+            280.23,
+            422.37,
+            290.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeX-matha10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "w1b2n´2a2n´1c2n for w1 a simple walk on γn´2, or w “ w1b2n´4b2n´3c2n´1c2n for w1 a",
+          "bbox": [
+            62.36,
+            287.98,
+            422.36,
+            303.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "simple walk on γn´3.",
+          "bbox": [
+            62.36,
+            303.55,
+            148.79,
+            314.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Lastly, suppose J “ t2, 3u. Then w consists of two paths, ends with b2nc2n, and is on",
+          "bbox": [
+            77.31,
+            321.42,
+            422.36,
+            332.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the overstrand below the p2n ´ 1q-st crossing. If it jumps down at the p2n ´ 1q-st crossing,",
+          "bbox": [
+            62.36,
+            333.38,
+            422.36,
+            343.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "then w “ w1b2n ¨ a2n´1c2n for w1 a simple walk on γn´1. If it remains on the overstrand",
+          "bbox": [
+            62.36,
+            341.72,
+            422.37,
+            357.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "at the p2n ´ 1q-st crossing, then it is also on the overstrand at the p2n ´ 2q-nd crossing. If",
+          "bbox": [
+            62.36,
+            357.29,
+            422.36,
+            367.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "it jumps down at the p2n ´ 2q-nd crossing, then w “ w1a2n´2b2n ¨ b2n´3c2n´1c2n for w1",
+          "bbox": [
+            62.36,
+            368.23,
+            421.86,
+            381.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "a simple walk on γn´2. If it remains on the overstrand at the p2n ´ 2q-nd crossing, then it",
+          "bbox": [
+            62.36,
+            381.2,
+            422.36,
+            392.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "approaches the p2n ´ 4q-th and p2n ´ 5q-th crossings on understrands, and it follows that",
+          "bbox": [
+            62.36,
+            393.15,
+            422.37,
+            403.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "w “ w1b2n´5c2n´3c2n´2b2n ¨ b2n´4b2n´3c2n´1c2n for w1 a simple walk on γn´3.",
+          "bbox": [
+            62.36,
+            401.49,
+            392.88,
+            417.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "This shows that every simple walk on γn is obtained by extending a simple walk on",
+          "bbox": [
+            77.31,
+            422.98,
+            422.36,
+            434.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "γn´1, γn´2 or γn´3. It follows that there is a bijection correspondence between the set",
+          "bbox": [
+            62.36,
+            434.93,
+            422.36,
+            446.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of simple walks on γn and the union of the simple walks on γn´1, γn´2 and γn´3. The",
+          "bbox": [
+            62.36,
+            446.89,
+            422.36,
+            458.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "bijective correspondence implies that the sequence gpnq of simple walks on γn satisfy the",
+          "bbox": [
+            62.36,
+            458.84,
+            422.36,
+            470.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "recurrence Relation (6).",
+          "bbox": [
+            62.36,
+            470.8,
+            157.25,
+            480.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "8",
+          "bbox": [
+            62.36,
+            501.0,
+            68.34,
+            512.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Minimal braid representatives",
+          "bbox": [
+            80.29,
+            501.0,
+            235.03,
+            512.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "In Table 5, we list knots up to 9 crossings with the braid representatives giving minimal",
+          "bbox": [
+            62.36,
+            526.46,
+            422.37,
+            536.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "numbers of simple walks. More extensive tables of knots up to 13 crossings and braid",
+          "bbox": [
+            62.36,
+            538.42,
+            422.36,
+            548.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "representatives for them can be found online at [7]. (In [7] and Table 1 below, we use the",
+          "bbox": [
+            62.36,
+            550.38,
+            422.36,
+            560.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "notation for braid words from sagemath, meaning that a braid word σε1",
+          "bbox": [
+            62.36,
+            561.04,
+            348.61,
+            572.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR5",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "a1 ¨ ¨ ¨ σεℓ",
+          "bbox": [
+            341.09,
+            561.04,
+            377.53,
+            576.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR5",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "aℓis denoted",
+          "bbox": [
+            370.43,
+            562.33,
+            422.36,
+            574.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "by rε1a1, . . . , εℓaℓs. Tables 4 and 5 use even more compactified notation similar to that at",
+          "bbox": [
+            62.36,
+            574.29,
+            422.36,
+            585.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "NimbusRomNo9L-Regu",
+            "TeX-matha10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the end of [16].)",
+          "bbox": [
+            62.36,
+            586.24,
+            127.1,
+            596.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "These results are empirical. The braid words listed in Table 5 and [7] are the output of",
+          "bbox": [
+            77.31,
+            604.11,
+            422.36,
+            614.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a sagemath program developed by the second author. It takes as input braid representatives",
+          "bbox": [
+            62.36,
+            616.07,
+            422.36,
+            626.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

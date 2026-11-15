@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2205.06874v2
-doc_title: "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg"
+doc_title: "State sum models with defects based on spherical fusion categories"
 section_id: sec-016-projections-and-inclusions-for-simple-objects
 section_title: "Projections and inclusions for simple objects"
 section_number: null
 pages: 24-26
 source_pdf: 2205.06874v2.pdf
 source_sha256: 9b41365160c17ab4
-doc_brief: "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg — We define a"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.919
-latex_coverage_ratio: 0.814
+latex_coverage_ratio: 0.858
+doc_brief: "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects."
 ---
 Let $\mam$ a finite semisimple  $\C$-linear category, equipped with a trace $\theta$ in the sense of Definition \ref{def:moduletrace} and let $I$ be a set of representatives of the isomorphism classes of its simple objects. 
 Then  every object $x$ in $\mam$ can be expressed as a direct sum $x\cong \oplus_{m\in I} m^{\oplus n_{xm}}$ with multiplicities $n_{xm}=\dim_\C \Hom_\mam(m,x)\in\mathbb N_0$. 

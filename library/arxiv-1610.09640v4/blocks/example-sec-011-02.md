@@ -1,1 +1,0 @@
-In Set, ∅ is an initial object, and every singleton is a terminal

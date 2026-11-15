@@ -1,0 +1,1 @@
+Using [\[def:qHodgeFiltration\]](#def:qHodgeFiltration){reference-type="ref" reference="def:qHodgeFiltration"}[\[enum:qHodgeRationalpComplete\]](#enum:qHodgeRationalpComplete){reference-type="ref" reference="enum:qHodgeRationalpComplete"}, we see that $\widetilde{\gamma}_q$ must also be contained in the ideal $(x,q-1)^p$ after completed rationalisation.

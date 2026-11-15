@@ -1,0 +1,1 @@
+The right-hand side can be interpreted as follows: we sum over all ways of matching the forward difference operator ∆with one of the factors Pi(r) on its right; this factor is removed and every term Pj on the right of Pi(r) should be replaced by Pj+1.

@@ -1,0 +1,30 @@
+21. The second term on the LHS of the Key Lemma.
+Now, just as we did for the first term, we want to express the second term
+~ Vy {V(x) # Vx (cos & )}
+
+as a linear combination of the orthonormal basis vectors E, , E, and E;3 for TS .
+We keep in mind that x = (1,0,0,0) and that V(x) = X; = (0,1,0,0).
+
+To begin,
+
+Vx(cosa ») = (cosa )' Vx ao
+
+= (cosa o)' (—I/sin a) (yi X1 + yo X2 + y3 X3).
+Then taking the dot product of this with V(x) = X, yields
+V(x) ¢ Vx (cosa ») = (cosa )' (—I/sin a) y;
+= (-o'cosa/sina + d)y.
+
+Thus
+
+— Vy {V@)¢ Vx (cosa o)} = Vy {(p' cosa/sina — o)}y.
+To calculate this, recall that
+
+Vy a = (1/sin &) (yi E; + y2 Eo + y3 Es),
+
+and note that
+
+Vyy = Tdyi = T {81 — (yi/C + yo)) (1 81 + y2 82 + ys O3)}
+
+= E; — (yi/(1 + yo)) Qi Ei + yo Ex + ys Es).
+
+50

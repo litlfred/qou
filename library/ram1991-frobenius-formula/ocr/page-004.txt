@@ -1,36 +1,52 @@
 464 A. Ram
-To each minimal idempotent pe CS, there is one and only one a  f such that
-pza = p. A partition of unity is a set of minimal idempotents (pä), af,
-The Hecke algebra H,
-Let C(q) be the field of rational functions in the variable q. The Hecke algebra H, is
-the C(q) algebra given by generators 1, 91, 92, : . : , 9f-1 and relations
-(B1) ij = gjgi， if li-jl>1,
-(B2) 9i9i+19i = 9i+19ii+1 
-(H) g? = (q - 1)gi + q .
-For each e Sf, the symmetric group, let T  gingiz . . . gi where o = Si, Siz . . . Si
-is a reduced decomposition of o. T. is well defined since only the relations (B1) and
+To each minimal idempotent pe CS, there is one and only one At f such that
+
+p. A partition of unity is a set of minimal idempotents {p/}, Arf,
+SiS d,(p}z, = p}) such that pp? = 0 unless A = pandi=jand1=),) ip}.
+
+The Hecke algebra Hy
+
+Let €(q) be the field of rational functions in the variable q. The Hecke algebra H, is
+
+the C(q) algebra given by generators 1, 91, g2,..-,gy-1 and relations
+(B1) 99j= 99 Hli-—jl>1,
+
+(B2) GiGi+1Gi = Gi+i1GiGiri »
+
+(H) g =(q— git.
+
+For each o€S,, the symmetric group, let J, = gi,g;,... gi, where o = 8;,5;,.. . Si,
+is a reduced decomposition of a. T; is well defined since only the relations (B1) and
 (B2) are necessary to prove that two reduced decompositions of w are equal [Bou].
-The T. form a basis of Hf. If we specialize g = 1, then the relation (H) is the same as
+The 7; form a basis of H,. If we specialize gq = 1, then the relation (H) is the same as
+
 relation (S) above.
-Remark. Although here we have chosen to work over the field C(g) of rational
+
+Remark. Although here we have chosen to work over the field C(q) of rational
 functions everything goes through in exactly the same fashion if we work over
-a field k of characteristic O and let qe k such that 1 + q + q? + . : . + q" + Ofor any
-r  1, 2, . : :,f, see [Bou].
-A character of H, is a C(q) linear functional x: H, -→ C(q) such that for all
-h1, h2eHf,
-x(hih2) = x(hzh1) .
+a field k of characteristic 0 and let gek such that 1 + q+q?+...+q" + Oforany
+r=1,2,...,f, see [Bou].
+
+A character of Hy is a C(q) linear functional y: Hy > C(q) such that for all
+hy, hneHy,
+
+x(Ayhg) = x(h2hy) -
+
 H, is a semisimple C(q) algebra [Bou, H, Wz1]. The irreducible representations of
-H, are indexed by partitions of f. For each a f the dimension of the irreducible
-representation indexed by a is da as in the case of Sf, and determines an irreducible
-character x~ of Hf.
-2 Remarks on the quantum group U.(sl(n)) and the solutions
+H, are indexed by partitions of f/ For each Af the dimension of the irreducible
+representation indexed by A is d, as in the case of S,, and determines an irreducible
+character x’ of Hy.
+
+2 Remarks on the quantum group U,(s/(n)) and the solutions
 of the quantum Yang-Baxter equation
+
 The purpose of this section is to describe the algebraic motivation behind the
 approach to the characters of the Hecke algebra given in this paper.
-In [Jil M. Jimbo describes a reciprocity between, in his notation, the quantum
-group U(gl(N + 1)) and the Hecke algebra. In view of the fact that the “modern'
+
+In [Ji] M. Jimbo describes a reciprocity between, in his notation, the quantum
+group U(gl(N + 1)) and the Hecke algebra. In view of the fact that the “modern”
 approach to the theory (and notation) of quantum groups and the quantum
-Yang-Baxter equation is slightly different from that used in Jimbo's original paper,
+Yang-Baxter equation is slightly different from that used in Jimbo’s original paper,
 I shall endeavor to give a short summary explaining how this reciprocity comes
 about. The excellent (and dense) papers [Dr] and [Ji2] contain further information
 on quantum groups and the quantum Yang-Baxter equation.

@@ -1,13 +1,15 @@
 ---
 doc_id: 1992evansberger
-doc_title: "A HIERARCHY OF LINKING INTEGRALS"
+doc_title: "A Hierarchy of Linking Integrals"
 section_id: page-003
 section_title: "Page 3"
-section_number: null
 pages: 3-3
+pdf_page: 3
 source_pdf: 1992EvansBerger.pdf
 source_sha256: 6f100e931a1e5f22
-toc_source: undetermined
+text_source: ocr
+granularity: page
+doc_brief: "A Hierarchy of Linking Integrals — 12 sections: Page 1; Page 2; Page 3"
 ---
 3
 

@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0203194v1/sections/sec-067",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Local monodromy of $p$-adic differential equations. Outline of Christol-Mebkhout theory.",
+  "pageStart": 148,
+  "pageEnd": 150,
+  "contains": [
+    "library/arxiv-math-0203194v1/blocks/prose-sec-067",
+    "library/arxiv-math-0203194v1/blocks/recommendation-sec-067-01",
+    "library/arxiv-math-0203194v1/blocks/recommendation-sec-067-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203194v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203194v1",
+  "provenance": "ingested"
+}

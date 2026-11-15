@@ -1,0 +1,1 @@
+\vspace{10pt}\par We shall leave the closer analysis of this kind of $p$-adic differential equations with global monodromy until later chapters, where we show how they arise in the context of period mappings.

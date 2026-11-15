@@ -1,0 +1,1975 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1901.01312v1",
+  "pages": [
+    {
+      "page": 3,
+      "rotation": 0,
+      "drawings": 2,
+      "rasterImagesOnPage": 2,
+      "captionCandidates": [
+        "Figure 1. Quaternion multiplication I2 = J2 = K2 = IJK = −1, and octonion multiplication represented using a Fano plane."
+      ],
+      "labels": [
+        {
+          "text": "Figure 1. Quaternion multiplication I2 = J2 = K2 = IJK = −1, and octonion multiplication",
+          "bbox": [
+            70.87,
+            235.06,
+            524.45,
+            249.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "represented using a Fano plane.",
+          "bbox": [
+            70.87,
+            251.97,
+            221.83,
+            262.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Finally, in moving to the octonions O one no longer has associativity. An excellent introduction",
+          "bbox": [
+            70.87,
+            283.15,
+            524.45,
+            296.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "to the octonions is given by Baez [21]. The octonions are spanned by the identity 1 = e0 and",
+          "bbox": [
+            70.87,
+            298.48,
+            524.42,
+            311.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "seven ei satisfying",
+          "bbox": [
+            70.87,
+            311.44,
+            157.09,
+            323.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "eie0 = e0ei = ei, e2",
+          "bbox": [
+            306.74,
+            329.88,
+            398.03,
+            344.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "eiej = −δije0 + ϵijkek,",
+          "bbox": [
+            149.44,
+            331.95,
+            255.2,
+            344.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "where",
+          "bbox": [
+            267.92,
+            332.09,
+            295.83,
+            343.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "0 = e0,",
+          "bbox": [
+            393.79,
+            332.09,
+            425.92,
+            345.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(2)",
+          "bbox": [
+            510.47,
+            332.09,
+            524.41,
+            343.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "and ϵijk is a completely antisymmetric tensor with value +1 when ijk = 123, 145, 176, 246, 257,",
+          "bbox": [
+            70.87,
+            352.74,
+            522.93,
+            365.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "347, 365. The multiplication of quaternions and octonions is shown in Figure 1.",
+          "bbox": [
+            70.87,
+            365.69,
+            453.2,
+            376.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2.1. Cliﬀord and Lie algebras from Hurwitz algebras",
+          "bbox": [
+            70.87,
+            393.34,
+            319.62,
+            404.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Unlike Lie and Cliﬀord algebras, there are only a ﬁnite number of Hurwitz algebras4. These",
+          "bbox": [
+            70.87,
+            404.63,
+            524.4,
+            417.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "algebras are very generative. Given a Hurwitz algebra identiﬁed with a spinor space, one acts on",
+          "bbox": [
+            70.87,
+            419.24,
+            524.46,
+            430.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "this spinor space with the algebra itself, from the left, right, or from both sides. Sometimes this",
+          "bbox": [
+            70.87,
+            432.19,
+            524.46,
+            443.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "does not make a diﬀerence, and sometimes it does. Considering all the repeated nested actions",
+          "bbox": [
+            70.87,
+            445.14,
+            524.4,
+            456.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "generate the adjoint algebras, which are speciﬁc Cliﬀord algebras. The bivectors of a Cliﬀord",
+          "bbox": [
+            70.87,
+            458.09,
+            524.44,
+            469.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "algebra close under commutation, providing a representation of the Lie algebra that preserves",
+          "bbox": [
+            70.87,
+            471.04,
+            524.46,
+            481.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the metric of the associated pseudo-orthogonal space.",
+          "bbox": [
+            70.87,
+            484.0,
+            326.32,
+            494.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The small set of Hurwitz algebras thus provide a means of selecting (or rather a mechanism for",
+          "bbox": [
+            85.04,
+            496.95,
+            524.42,
+            507.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "generating) very speciﬁc Cliﬀord and Lie algebras from an otherwise inﬁnite sets. Particularly",
+          "bbox": [
+            70.87,
+            509.9,
+            524.46,
+            520.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "interesting is the case of the complex octonions. Although this algebra is not associative, the",
+          "bbox": [
+            70.87,
+            522.85,
+            524.43,
+            533.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "adjoint algebras Cℓ(7, 0) ∼= Cl(6) are.",
+          "bbox": [
+            70.87,
+            532.65,
+            249.49,
+            547.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "3. Unbroken fermion symmetries from Hurwitz algebras",
+          "bbox": [
+            70.87,
+            563.44,
+            380.64,
+            574.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "3.1. Primitive idempotents and orthogonal subspaces",
+          "bbox": [
+            70.87,
+            576.4,
+            321.37,
+            587.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The extensive works of Dixon [12, 13, 14] focus on deriving the SM from tensor products of",
+          "bbox": [
+            70.87,
+            589.35,
+            524.47,
+            600.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Hurwitz algebra.",
+          "bbox": [
+            70.87,
+            602.3,
+            152.37,
+            613.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The approach is to reduce spinor spaces of Hurwitz algebras (as well as",
+          "bbox": [
+            162.43,
+            602.3,
+            524.42,
+            613.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "their associated action algebras) into sets of orthogonal subspaces. This is achieved by ﬁnding",
+          "bbox": [
+            70.87,
+            615.25,
+            524.44,
+            626.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "projection operators within the algebras, corresponding to primitive idempotents obtained from",
+          "bbox": [
+            70.87,
+            628.2,
+            524.48,
+            639.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "a resolution of the identity. In the case of C ⊗O the projectors can be used to split the algebra",
+          "bbox": [
+            70.87,
+            638.77,
+            524.43,
+            652.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "into four orthogonal subspaces, each a SU(3) multiplet. This is because the automorphism group",
+          "bbox": [
+            70.87,
+            654.11,
+            524.43,
+            665.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "that keeps e7 ﬁxed is SU(3). Each spinor in C ⊗O is resolved into 1 ⊕3 ⊕3 ⊕1 with respect",
+          "bbox": [
+            70.87,
+            664.67,
+            524.4,
+            679.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "to this chosen SU(3) automorphism group[12]. The same algebra admits a U(1) generator that",
+          "bbox": [
+            70.87,
+            680.01,
+            524.42,
+            690.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "produces the correct hypercharges.",
+          "bbox": [
+            70.87,
+            692.96,
+            236.9,
+            703.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "4 We use the term Hurwitz algebra here instead of normed division algebra because, the reduction of spinor",
+          "bbox": [
+            70.87,
+            710.7,
+            524.45,
+            723.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6",
+            "CMR9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "spaces considered by Dixon [12], and the construction of minimal ideals considered by Furey [15] depend on the",
+          "bbox": [
+            70.87,
+            725.47,
+            524.46,
+            734.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "existence of nilpotents and primitive idempotents. These do not exist in normed division algebras, but do in their",
+          "bbox": [
+            70.87,
+            736.43,
+            524.48,
+            745.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "split algebra cousins. For example, when working in C ⊗H or C ⊗O one uses a primitive idempotent to select a",
+          "bbox": [
+            70.87,
+            745.43,
+            524.44,
+            756.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9",
+            "CMSY9",
+            "MSBM10"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "split basis to work with.",
+          "bbox": [
+            70.87,
+            758.35,
+            168.33,
+            767.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "rotation": 0,
+      "drawings": 16,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 2. The Helon model of Bilson-Thompson in which the ﬁrst generation SM fermions are represented as braids of three (possibly twisted) ribbons. The right hand side of the ﬁgure shows the left-handed particles and right-handed antiparticles partaking in the weak interaction. Used with permission. Source, [3]."
+      ],
+      "labels": [
+        {
+          "text": "Figure 2. The Helon model of Bilson-Thompson in which the ﬁrst generation SM fermions are",
+          "bbox": [
+            70.87,
+            249.27,
+            524.45,
+            260.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "represented as braids of three (possibly twisted) ribbons. The right hand side of the ﬁgure shows",
+          "bbox": [
+            70.87,
+            262.23,
+            524.47,
+            273.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the left-handed particles and right-handed antiparticles partaking in the weak interaction. Used",
+          "bbox": [
+            70.87,
+            275.18,
+            524.49,
+            286.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "with permission. Source, [3].",
+          "bbox": [
+            70.87,
+            288.13,
+            207.13,
+            299.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The braid groups Bn are an extension of the symmetric groups Sn with the condition that the",
+          "bbox": [
+            70.87,
+            321.5,
+            524.44,
+            334.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "square of each generator being equal to one lifted. It can be shown that Cliﬀord algebras admit",
+          "bbox": [
+            70.87,
+            334.45,
+            524.46,
+            345.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "representations of certain braid groups [23].",
+          "bbox": [
+            70.87,
+            347.41,
+            279.12,
+            358.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "For a Cliﬀord algebra Cℓ(n, 0) over the real numbers generated by linearly independent",
+          "bbox": [
+            85.04,
+            360.36,
+            524.45,
+            371.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "elements {e1, e2, ..., en} with e2",
+          "bbox": [
+            70.87,
+            371.65,
+            219.47,
+            385.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "k = 1 for all k and ekel = −elek for k̸ = l, the algebra elements",
+          "bbox": [
+            215.24,
+            373.17,
+            524.41,
+            387.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2(1 + ek+1ek) form a representation of the circular5 Artin braid group Bc",
+          "bbox": [
+            105.89,
+            382.3,
+            459.39,
+            401.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            102.36,
+            384.26,
+            106.59,
+            392.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "σk =",
+          "bbox": [
+            70.87,
+            386.26,
+            94.17,
+            398.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "n. This means",
+          "bbox": [
+            455.18,
+            386.26,
+            524.41,
+            399.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            98.83,
+            387.1,
+            105.89,
+            395.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "that the set of braid generators {σ1, σ2, ..., σn}, where",
+          "bbox": [
+            70.87,
+            401.55,
+            327.03,
+            413.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            155.53,
+            418.76,
+            160.99,
+            429.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            389.43,
+            418.76,
+            394.88,
+            429.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            150.99,
+            425.67,
+            160.08,
+            436.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            384.89,
+            425.67,
+            393.97,
+            436.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2(1 + ek+1ek), whenever 1 ≤k < n,",
+          "bbox": [
+            160.08,
+            426.0,
+            330.56,
+            445.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "σk =",
+          "bbox": [
+            123.89,
+            426.14,
+            146.76,
+            438.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "σn =",
+          "bbox": [
+            357.28,
+            426.14,
+            380.66,
+            438.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2(1 + e1en),",
+          "bbox": [
+            393.98,
+            426.14,
+            451.46,
+            445.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(8)",
+          "bbox": [
+            510.47,
+            426.14,
+            524.41,
+            437.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "satisfy the braid relations (7). Although [23] assumes that e2",
+          "bbox": [
+            70.87,
+            451.02,
+            367.2,
+            463.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "k = 1 for all k, the proof likewise",
+          "bbox": [
+            362.96,
+            452.69,
+            524.41,
+            466.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "holds when e2",
+          "bbox": [
+            70.87,
+            463.98,
+            137.21,
+            476.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "k = −1, as is easily checked.",
+          "bbox": [
+            132.98,
+            465.5,
+            267.05,
+            479.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "4.3. Braid group representations from Hurwitz algebras",
+          "bbox": [
+            70.87,
+            493.09,
+            333.83,
+            504.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Using known isomorphisms between division algebras and Cliﬀord algebras, one can investigate",
+          "bbox": [
+            70.87,
+            506.05,
+            524.44,
+            516.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The complex number algebra C is",
+          "bbox": [
+            352.6,
+            516.61,
+            524.41,
+            529.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the braid content of (hyper)complex division algebras.",
+          "bbox": [
+            70.87,
+            519.0,
+            341.8,
+            529.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "isomorphic to the real Cliﬀord algebras Cℓ(0, 1) ∼= Cℓ+(2, 0), where the + indicates the even",
+          "bbox": [
+            70.87,
+            528.8,
+            524.41,
+            543.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "subalgebra of a Cliﬀord algebra. A representation of B2 in terms of C is given by",
+          "bbox": [
+            70.87,
+            542.52,
+            459.46,
+            557.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            225.57,
+            561.36,
+            231.02,
+            572.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            335.78,
+            561.36,
+            341.23,
+            572.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "σ−1",
+          "bbox": [
+            297.55,
+            566.34,
+            314.99,
+            579.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            221.02,
+            568.27,
+            230.11,
+            579.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            331.23,
+            568.27,
+            340.32,
+            579.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2(1 −i),",
+          "bbox": [
+            340.32,
+            568.6,
+            381.04,
+            588.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "σ1 =",
+          "bbox": [
+            194.32,
+            568.74,
+            216.8,
+            581.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2(1 + i),",
+          "bbox": [
+            230.11,
+            568.74,
+            270.83,
+            588.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            318.52,
+            568.74,
+            327.01,
+            579.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(9)",
+          "bbox": [
+            510.47,
+            568.74,
+            524.41,
+            579.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            303.78,
+            574.16,
+            308.01,
+            582.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "This representation is not faithful, with the order of the single generator (and its inverse) being",
+          "bbox": [
+            70.87,
+            594.37,
+            524.48,
+            605.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "eight. The inverse generator is simply the complex conjugate.",
+          "bbox": [
+            70.87,
+            607.32,
+            365.39,
+            618.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Moving on to the quaternions H, one can use the isomorphism H ∼= Cℓ(0, 2) ∼= Cℓ+(3, 0) to",
+          "bbox": [
+            85.04,
+            617.13,
+            524.41,
+            631.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "ﬁnd a quaternionic representation of the braid group Bc",
+          "bbox": [
+            70.87,
+            631.56,
+            339.02,
+            644.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            334.81,
+            638.45,
+            339.04,
+            646.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            202.84,
+            650.49,
+            207.07,
+            658.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            285.86,
+            650.49,
+            290.1,
+            658.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            370.34,
+            650.49,
+            374.57,
+            658.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "σ1",
+          "bbox": [
+            165.67,
+            652.49,
+            176.14,
+            664.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            186.6,
+            652.49,
+            195.09,
+            663.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2(1 + I), σ2 =",
+          "bbox": [
+            206.37,
+            652.49,
+            278.11,
+            668.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2(1 + J), σ3 =",
+          "bbox": [
+            289.39,
+            652.49,
+            362.59,
+            668.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2(1 + K).",
+          "bbox": [
+            373.87,
+            652.49,
+            419.65,
+            668.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(10)",
+          "bbox": [
+            505.02,
+            652.49,
+            524.41,
+            663.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            199.31,
+            653.33,
+            206.36,
+            661.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            282.33,
+            653.33,
+            289.39,
+            661.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            366.81,
+            653.33,
+            373.86,
+            661.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "The inverse braid generators are obtained via the quaternions conjugate.",
+          "bbox": [
+            70.87,
+            673.63,
+            418.55,
+            684.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The octonions are not associative and therefore they are not isomorphic to any Cliﬀord",
+          "bbox": [
+            85.04,
+            686.58,
+            524.45,
+            697.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "algebra. The algebra is however alternative, and so any two basis elements ea do generate an",
+          "bbox": [
+            70.87,
+            699.53,
+            524.42,
+            712.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "associative algebra isomorphic to a quaternion subalgebra of O. Thus, within O one ﬁnds seven",
+          "bbox": [
+            70.87,
+            710.1,
+            524.41,
+            723.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "distinct copies of Bc",
+          "bbox": [
+            70.87,
+            723.77,
+            167.42,
+            736.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "3 (as well as seven distinct copies of B2 generated from ea).",
+          "bbox": [
+            163.2,
+            725.43,
+            447.44,
+            739.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "5 A circular braid on n strings has n strings attached to the outer edges of two circles which lie in parallel planes",
+          "bbox": [
+            70.87,
+            743.58,
+            524.45,
+            756.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI9",
+            "CMR6",
+            "CMR9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "in R3.",
+          "bbox": [
+            70.87,
+            756.87,
+            95.37,
+            767.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI9",
+            "CMR6",
+            "CMR9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        }
+      ]
+    }
+  ]
+}

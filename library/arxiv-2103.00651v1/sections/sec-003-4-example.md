@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2103.00651v1
-doc_title: "On Concentration Inequalities for Vector-Valued Lipschit z Functions Dimitrios Katselis katselis@illinois.edu"
+doc_title: "On Concentration Inequalities for Vector-Valued Lipschitz Functions"
 section_id: sec-003-4-example
 section_title: "Example"
 section_number: 4
 pages: 5-9
 source_pdf: 2103.00651v1.pdf
 source_sha256: c5505d3e4891168e
-doc_brief: "On Concentration Inequalities for Vector-Valued Lipschit z Functions Dimitrios Katselis katselis@illinois.edu — We derive two upper bounds for the probability of deviation of a vect or-valued"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.98
-latex_coverage_ratio: 0.991
+latex_prose_ratio: 0.985
+latex_coverage_ratio: 0.614
+doc_brief: "On Concentration Inequalities for Vector-Valued Lipschitz Functions — We derive two upper bounds for the probability of deviation of a vector-valued Lipschitz function of a collection of random"
 ---
 Consider a sample $X_{0:n-1}=\{X_0,X_1,\ldots, X_{n-1}\}$ of size $n$ drawn from an ergodic, discrete-time, finite-state Markov chain $(X_k)_{k\geq 0}$ with state space $\mathbb{E}=[K]=\{1,2,\ldots, K\}$, transition matrix $\mathrm{P}=[\mathrm{P}_{ij}]$ and $X_0\sim \varrho$, where $\varrho$ denotes the initial measure of the chain. We denote such a Markov chain by $(\mathrm{P},\varrho)$ and the corresponding stationary chain by $(\mathrm{P},\pi)$, where $\pi$ is the underlying invariant measure. Let the chain be $r$-contractive with Dobrushin coefficient $r<1$. Consider the natural plug-in estimators for the stationary probabilities: $$\hat{\pi}_i(X_{0:n-1})=\frac{1}{n}\sum_{k=0}^{n-1}\mathbbm{1}(X_k=i).$$ By the Ergodic Theorem for Markov chains [@b13], $\hat{\pi}_i\rightarrow \pi_i, \forall i\in \mathbb{E}$ with probability $1$ as $n\rightarrow \infty$ for any initial measure $\varrho$.
 

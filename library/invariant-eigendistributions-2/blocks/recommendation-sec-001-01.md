@@ -1,0 +1,1 @@
+The core of the paper is logically self-contained, except for reference to the Integral Formula and some basic facts about ﬂag manifolds and conormal varieties, but factually indebted to many sources, as I shall point out where appropriate.

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1808.02836v2
-doc_title: "On minimal ideal triangulations of cusped hyperbolic 3–manifolds"
+doc_title: "On minimal ideal triangulations of cusped hyperbolic 3–manifolds Introduction"
 section_id: sec-017-4-quadrilateral-surfaces-and-minimal-ideal-trian
 section_title: "Quadrilateral surfaces and minimal ideal triangulations"
 section_number: 4
 pages: 19-28
 source_pdf: 1808.02836v2.pdf
 source_sha256: 0224a296253122a2
-doc_brief: "On minimal ideal triangulations of cusped hyperbolic 3–manifolds — Previous work of the authors studies minimal triangulations of closed 3–manifolds using a characterisation of low degree edges"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.996
-latex_coverage_ratio: 0.978
+latex_prose_ratio: 0.977
+latex_coverage_ratio: 0.994
+doc_brief: "On minimal ideal triangulations of cusped hyperbolic 3–manifolds Introduction — Previous work of the authors studies minimal triangulations of closed 3–manifolds using a characterisation of low"
 ---
 []{#sec:quadsurfs label="sec:quadsurfs"}
 

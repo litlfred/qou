@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/agt-v12-n2-p04-s/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Statement of the result",
+  "pageStart": 8,
+  "pageEnd": 13,
+  "contains": [
+    "library/agt-v12-n2-p04-s/blocks/prose-sec-005"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/agt-v12-n2-p04-s",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/agt-v12-n2-p04-s",
+  "provenance": "ingested"
+}

@@ -1,0 +1,59 @@
+33 Page 24 of 47 S. Jansen, L. Kolesnikov
+
+This completes the inductive proof of (3.11). Passing to the limit N — oo, we get T(D;z) <
+exp(a(D)) < oo.
+
+To prove the converse implication (ii) = (i), suppose that T (D; z) is absolutely convergent
+for all finite subsets D. Then T(D; z) < 00 and Proposition 3.12 yields
+
+T(DU{x}sz)=T(Ds2+ YQ wY)TDUY; 2).
+
+Yx,
+YND=S
+
+Set a(D) := log T (D; z). Then a(D) > 0 because T(D; z) > 1, moreover
+
+et (DU(x}) = ga(D) Y (vet)
+
+Yax,
+YND=S
+
+and the inequality (2.18) follows. Oo
+
+Notice that the preceeding results of Sect. 3.4 can be generalized by proving a more general
+version of Lemma 3.1 1—a direct analogue of Lemma 3.9, where we consider two arbitrary
+finite subsets Dp C Z4 and D, C Z4, instead of the special case where one of the subsets is
+a monomer. Naturally, one can view configurations of polymers not only as configurations
+of monomers but as configurations of disjoint snippets of arbitrary shape and derive from the
+generalized version of Lemma 3.11 a system of Kirkwood-Salsburg equations different from
+the one in Proposition 3.12, equations which involve terms of higher order in the activity z.
+Those equations in turn lead to the following alternative for Theorem 2.7:
+
+Theorem 3.13 Let (z(X))xex be a non-negative activity. The following two conditions are
+equivalent:
+
+(i) There exists a function a(-) from the finite subsets of Z4 to [0, 00) such that a(@) = Oand
+the following system of inequalities is satisfied: For all finite, non-empty subsets D C Zé
+there exists a subset Do C D such that—setting D, := D\{ Do} — we have
+
+Y Y 2(¥1) .-. z(Yg jet PIM) —a(D) < ef(PiUDo)—a(Di) _
+kE1{Y,..., YaJCX
+
+where the sum runs over sets of mutually disjoint polymers {Y,,..., Yx} C X such that
+¥; 1 Do 4 Sand ¥,0 Dy = @ foralli € {1...,k}.
+(ii) T(D; z) is absolutely convergent for all finite subsets D C ZA.
+
+Moreover, if one of the equivalent conditions (hence, both) holds true, then, for all finite
+subsets DC Zé, we have
+
+2
+1
+logsTID:D/< > YI Manxinveo|oh(¥1.---. Yid|e(Z1) ++ 20%) < aD).
+k=l (¥4,...,¥x)eX*
+
+The details of the proof are left for the reader as an exercise. Notice that the sufficient condition
+for convergence given by Theorem 3.13 is more general than the one given by Theorem 2.7.
+However, all the proofs of sufficient conditions for systems of subset polymers in Sect. 4 are
+using the special case of Theorem 2.7.
+
+D Springer

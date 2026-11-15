@@ -1,0 +1,2639 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-0806.2317v1",
+ "status": "determined",
+ "pages_unread": [
+  9,
+  23
+ ],
+ "body_size": 10.9,
+ "footnotes": [],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "Gm,ndenotethesetofm-dimensionalsubspacesofC"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "Usually,wewillrepresentasubspaceabyitsn × nprojectionmatrixP"
+  },
+  {
+   "page": 2,
+   "mark": "b",
+   "context": "aP"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "m −tr(P"
+  },
+  {
+   "page": 2,
+   "mark": "b",
+   "context": "m −tr(PaP"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "A = {tr(P"
+  },
+  {
+   "page": 2,
+   "mark": "b",
+   "context": "A = {tr(PaP"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "ofU(n)asthebasisforasubspaceaofdimensionminC"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "U(n)andP"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "U: P"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "U: Pa7→UP"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "GivenaandbinGm,n,theprincipalanglesθ"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "GivenaandbinGm,n,theprincipalanglesθ1, . . . , θ"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "unitvectorsa"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "unitvectorsa1∈aandb"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "1"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "1b"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "1and"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "1andb"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "1.Similarlydeﬁne θ"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "1.Similarlydeﬁne θ3, . . . , θ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "{cos"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "{cos2θ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "{cos2θ1, . . . , cos"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "{cos2θ1, . . . , cos2θ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "paperwesimplyrefertotheeigenvaluesyi:=cos"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "θ"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "SupposeU∈U(n)mapsprojectionmatricesP"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "SupposeU∈U(n)mapsprojectionmatricesPaandP"
+  },
+  {
+   "page": 4,
+   "mark": "c",
+   "context": "SupposeU∈U(n)mapsprojectionmatricesPaandPbtoP"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "SupposeU∈U(n)mapsprojectionmatricesPaandPbtoPcandP"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "LetM"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "LetMabeann × mmatrixwhosecolumns[a"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "LetMabeann × mmatrixwhosecolumns[a1, . . . , a"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "a=P"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "aM"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "aM"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "aM"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "aMb= D,whereDis"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "a=I−P"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "aN"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "aM"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "aM"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "aM"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "aM"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "\u0012I"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "IfPaPbhaseigenvaluescos"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "aM"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "aMb=Dhassingularvaluescos θ"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "\u0012I"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "M"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "M"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "Sinceanypair(Ma, Mb)withprincipalanglescos"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "someﬁxeda∈Gm,n.NowletL"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "ItfollowsthatL"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "occursmorethanonceinL"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "λ = (λ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "λ = (λ1, . . . , λ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "λ = (λ1, . . . , λn) : λ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "λ = (λ1, . . . , λn) : λ1≥λ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "λ = (λ1, . . . , λn) : λ1≥λ2≥. . . ≥λ"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "λ = (λ1, . . . , λn) : λ1≥λ2≥. . . ≥λn, λ"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "λ"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "λi −λ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "diag(d"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "diag(d1, . . . , d"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "dλ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "compositionofL"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "Lets"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "form(x, y)7→x∗s"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "form(x, y)7→x∗sny:thatis,U(n, s"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "sotheﬁxedpointsetinGL"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "sotheﬁxedpointsetinGLn(C)isisomorphictoGL"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "sotheﬁxedpointsetinGLn(C)isisomorphictoGLm(C) × GL"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "nalwithrespecttotheform(x, y) 7→x∗s"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "decomposingC"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "decomposingCnintoV+ ⊕V−,wehavethatKisthesetofpointsinU(n, s"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "K∼= U(V+, s"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "K∼= U(V+, sn|V+) × U(V−, s"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "toL"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Vλof Gwithrespect toK.Then L"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "L"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "T:= {diag(a"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "T:= {diag(a1, . . . , a"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "T:= {diag(a1, . . . , am, c"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "T:= {diag(a1, . . . , am, cm+1, . . . , c"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "T:= {diag(a1, . . . , am, cm+1, . . . , cn−m, a"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "T:= {diag(a1, . . . , am, cm+1, . . . , cn−m, am, . . . , a"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "iag(a1, . . . , am, cm+1, . . . , cn−m, am, . . . , a1) : |a"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "weightsλ=(λ"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "weightsλ=(λ1, . . . , λ"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "weightsλ=(λ1, . . . , λn),whereλ"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "weightsλ=(λ1, . . . , λn),whereλi≥λ"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "weightsλ=(λ1, . . . , λn),whereλi≥λi+1andλ"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "(2, 1, 0, . . .)has size3andlength2.ThenforﬁxedGm,n,deﬁne H"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": " 1, 0, . . .)has size3andlength2.ThenforﬁxedGm,n,deﬁne Hk= H"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "bothzand¯zontheunitsphereinC"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "Wealso let Hom"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "Wealso let Homk(n) ⊆L"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "ofa∈Gm,n.SincetheconstantfunctionP"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "ofa∈Gm,n.SincetheconstantfunctionPa7→tr(P"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "ofa∈Gm,n.SincetheconstantfunctionPa7→tr(Pa)=misinHom"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "thedistancefunctionP"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "thedistancefunctionPa7→tr(P"
+  },
+  {
+   "page": 10,
+   "mark": "b",
+   "context": "thedistancefunctionPa7→tr(PaP"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "thedistancefunctionPa7→tr(PaPb)isinHom"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "ofL"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "iff(x) =P"
+  },
+  {
+   "page": 10,
+   "mark": "f",
+   "context": "i=0"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "i=0f"
+  },
+  {
+   "page": 10,
+   "mark": "x",
+   "context": "i=0fi"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "i=0fix"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "fi tr(PaPb)"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "Delsarte bounds.Let Hµ be an irreducible representation in L"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "⟨e"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "⟨ei, Zµ,a⟩e"
+  },
+  {
+   "page": 12,
+   "mark": "s",
+   "context": "Xσ(y) :=det(y"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "Xσ(y) :=det(ys"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "det(y"
+  },
+  {
+   "page": 12,
+   "mark": "s",
+   "context": "(a)"
+  },
+  {
+   "page": 12,
+   "mark": "s",
+   "context": "(a −i + 1)"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "(a −i + 1)s"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "(s"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "(s1, . . . , s"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "(s1, . . . , sm) ≤(k"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "(s1, . . . , sm) ≤(k1, . . . , k"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "(s1, . . . , sm) ≤(k1, . . . , kl)ifandonlyifs"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "(s1, . . . , sm) ≤(k1, . . . , kl)ifandonlyifsi≤k"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "s"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "si(s"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "\u0015 \u0014σ"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "(−1)"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "y"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "Z1,"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "Z"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "\u0012n"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "m"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(m+1)"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "2(n+1)+(m−1)"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "m"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "m"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "α <m"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "α + β≤2(m"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "α + β≤2(m2"
+  },
+  {
+   "page": 14,
+   "mark": "m",
+   "context": "α + β≤2(m2n −4"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "m"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "m2<m"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "m2<m2"
+  },
+  {
+   "page": 14,
+   "mark": "m",
+   "context": "m2<m2n −2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": " A-code is a collection Sof subspaces in Gm,n such that tr(P"
+  },
+  {
+   "page": 14,
+   "mark": "b",
+   "context": "-code is a collection Sof subspaces in Gm,n such that tr(PaP"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "IfA = {α"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "IfA = {α1, . . . , α"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "(x −α"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "ThesigniﬁcanceoftheannihilatoristhatannA(tr(P"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "ThesigniﬁcanceoftheannihilatoristhatannA(tr(PaP"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "subspacessuchthatf(tr(P"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "subspacessuchthatf(tr(Pa))̸ = 0andf(tr(P"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "subspacessuchthatf(tr(Pa))̸ = 0andf(tr(PaP"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "\u0012n"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "|S| ≤dim(Hom"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "|S| ≤dim(Hom"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "Considerthezonalpolynomialsf"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "Considerthezonalpolynomialsfa(b):=f(tr(P"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "Considerthezonalpolynomialsfa(b):=f(tr(PaP"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "f"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "fa(b) = 0 for every b ∈Sexcept a, and f"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "fa(b) = 0 for every b ∈Sexcept a, and fa(a)̸ = 0, the set {f"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "ry6.2.Let Sbe a collectionof subspaces in Gm,nsuch that tr(P"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "6.2.Let Sbe a collectionof subspaces in Gm,nsuch that tr(PaP"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "|S| ≤n"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "|S| ≤dim(H"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "Theorem6.4.Letf(y"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "Theorem6.4.Letf(y1, . . . , y"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "Theorem6.4.Letf(y1, . . . , ym)∈R[y"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "Theorem6.4.Letf(y1, . . . , ym)∈R[y1, . . . , y"
+  },
+  {
+   "page": 16,
+   "mark": "c",
+   "context": "µ"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "µcµZµ,whereZµis"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "cµ≥0.Furtherassumethatc"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "Gm,nsuchthatf"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "Gm,nsuchthatfa(b):=f(y"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "Gm,nsuchthatfa(b):=f(y1(a, b), . . . , y"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "Sincef"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "f"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "fa(b) ≤f"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "|S|c"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "= c"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "Equalityholdsifandonlyiff"
+  },
+  {
+   "page": 16,
+   "mark": "9",
+   "context": "a∈SZµ,a= 0.(WewillseeinSection"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "Corollary6.5.LetSbeasubsetofGm,nsuchthattr(P"
+  },
+  {
+   "page": 16,
+   "mark": "b",
+   "context": "Corollary6.5.LetSbeasubsetofGm,nsuchthattr(PaP"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "inS,andα < m"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "m"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "normalization) Z"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "normalization) Z1(y) =P"
+  },
+  {
+   "page": 16,
+   "mark": "y",
+   "context": "i=1"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "i=1y"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "i=1yi−m"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "f"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "fa(b) = tr(P"
+  },
+  {
+   "page": 16,
+   "mark": "b",
+   "context": "fa(b) = tr(PaP"
+  },
+  {
+   "page": 16,
+   "mark": "b",
+   "context": "fa(b) = tr(PaPb) −α tr(P"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "y"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "y"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "\u0012m"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "m"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "Corollary6.6.LetSbeasubsetofGm,nsuchthattr(P"
+  },
+  {
+   "page": 17,
+   "mark": "b",
+   "context": "Corollary6.6.LetSbeasubsetofGm,nsuchthattr(PaP"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "α + β≤2(m"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "α + β≤2(m2"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "α + β≤2(m2n −4"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "m"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "m2<m"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "m2<m2"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "m2<m2n −2"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(m+1)"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2(n+1)+(m−1)"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "m"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "m"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "forlinesincomplexprojectivespaceCP"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "RecallthatifP"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "RecallthatifPabethen × nprojectionmatrixfora∈Gm,n,thenP"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "a=P"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "a=Pa−mI/nliesin"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "m(1 −m/n)inR"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "m(1 −m/n)inRn"
+  },
+  {
+   "page": 18,
+   "mark": "c",
+   "context": "d"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "dc(a, b)"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "dc(a, b)2= m −tr(P"
+  },
+  {
+   "page": 18,
+   "mark": "b",
+   "context": "dc(a, b)2= m −tr(PaP"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "2||P"
+  },
+  {
+   "page": 18,
+   "mark": "b",
+   "context": "2||Pa −P"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": " distance,the Grassmannians are isometricallyembedded into R"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "distance,the Grassmannians are isometricallyembedded into Rn"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "α ≥m"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "Equalityrequires|S|≤n"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "equatorialsimplexinR"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "equatorialsimplexinRn"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "equatorialsimplexinRn2−1.For|S| > n"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "β≥m"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "andequalityrequires|S|≤2(n"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "2(n"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "2(n2−1)verticesofaregularorthoplexinR"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "2(n2−1)verticesofaregularorthoplexinRn"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "boundinCorollary6.5.Moreover,if|S|=n"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "Ontheotherhand,ifSisa{0, m"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "|S| ≤2(n"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "particular,theupperboundfor{α}-codesinCP"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "particular,theupperboundfor{α}-codesinCPn−1isn"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "G"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "(Corollary6.6),Shassizeatmost2(n"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "Theorem8.1.LetX1, . . . , Xn"
+  },
+  {
+   "page": 20,
+   "mark": "k",
+   "context": "Theorem8.1.LetX1, . . . , Xn2−1bethePaulimatricesofordern=2"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "2(I+ X"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "Then∪n"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "i=1{M"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "i=1{Mi, I−M"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "i=1{Mi, I−Mi}isthesetofprojectionmatricesfor"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "ofsize2(n"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "existsa{0, n/4}-codeofsize2(n"
+  },
+  {
+   "page": 20,
+   "mark": "q",
+   "context": "q,where"
+  },
+  {
+   "page": 20,
+   "mark": "k",
+   "context": "q,whereq=p"
+  },
+  {
+   "page": 20,
+   "mark": "p",
+   "context": "q,whereq=pkand"
+  },
+  {
+   "page": 20,
+   "mark": "v",
+   "context": "q,whereq=pkandpisanoddprime,andlet{e"
+  },
+  {
+   "page": 20,
+   "mark": "v",
+   "context": "q,whereq=pkandpisanoddprime,andlet{ev:"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "LetV:=F"
+  },
+  {
+   "page": 20,
+   "mark": "q",
+   "context": "thestandardbasisforC"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "thestandardbasisforCq"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "thestandardbasisforCqn.Thendeﬁnetheq"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "thestandardbasisforCqn.Thendeﬁnetheqn× q"
+  },
+  {
+   "page": 20,
+   "mark": "v",
+   "context": "X(a) : e"
+  },
+  {
+   "page": 20,
+   "mark": "v",
+   "context": "X(a) : ev7→e"
+  },
+  {
+   "page": 20,
+   "mark": "v",
+   "context": "Y (a) : e"
+  },
+  {
+   "page": 20,
+   "mark": "v",
+   "context": "Y (a) : ev7→ωtr(aT"
+  },
+  {
+   "page": 20,
+   "mark": "v",
+   "context": "Y (a) : ev7→ωtr(aT v)e"
+  },
+  {
+   "page": 20,
+   "mark": "v",
+   "context": "aωtr(aT"
+  },
+  {
+   "page": 20,
+   "mark": "e",
+   "context": "aωtr(aT v)"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "aωtr(aT v)e"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "PauligroupEtobegeneratedbyallX(a), Y (a),andωI;ithaspq"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "all of the form ω"
+  },
+  {
+   "page": 21,
+   "mark": "p",
+   "context": "all of the form ωiX(a)Y (b),for i ∈Z"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "E:=E/Z(E)isAbelianandthereforeavectorspaceisomorphictoV"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "ThespaceV"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "⟨(a"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "⟨(a1, b"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "⟨(a1, b1), (a"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "⟨(a1, b1), (a2, b"
+  },
+  {
+   "page": 21,
+   "mark": "b",
+   "context": "1"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "1b"
+  },
+  {
+   "page": 21,
+   "mark": "b",
+   "context": "2"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "2b"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "ItisnotdiﬃculttocheckthattwoelementsinE,sayw"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "w"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "⟨(a"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "⟨(a1, b"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "⟨(a1, b1), (a"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "⟨(a1, b1), (a2, b"
+  },
+  {
+   "page": 21,
+   "mark": "q",
+   "context": "WenowusecharactersofsubgroupsofEtodeﬁneelementsofG"
+  },
+  {
+   "page": 21,
+   "mark": "k",
+   "context": "WenowusecharactersofsubgroupsofEtodeﬁneelementsofGq"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "WenowusecharactersofsubgroupsofEtodeﬁneelementsofGqk,q"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "χ′(ω"
+  },
+  {
+   "page": 21,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 21,
+   "mark": "q",
+   "context": "qk-dimensionalsubspaceofC"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "qk-dimensionalsubspaceofCq"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "It is not diﬃcult to checkthat Πχis Hermitianand Π"
+  },
+  {
+   "page": 21,
+   "mark": "p",
+   "context": "notdiﬃculttocheckthatΠχvisaneigenvectorofg∈Wforanyv∈C"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "notdiﬃculttocheckthatΠχvisaneigenvectorofg∈Wforanyv∈Cp"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "ω−itr(ω"
+  },
+  {
+   "page": 21,
+   "mark": "k",
+   "context": "ω−itr(ωiI) = q"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "pq"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "g=ω"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": ":=(q"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": ":=(qn −1) . . . (q"
+  },
+  {
+   "page": 21,
+   "mark": "m",
+   "context": "(q"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "Theorem8.4.For0 ≤k≤n −1,letSbe thesetofallq"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "distancesetinG"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "distancesetinGq"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "distancesetinGqk,q"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "(q"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "W"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "W j,andletΠ"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "1(g"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "2(g"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "2(g2) tr(g"
+  },
+  {
+   "page": 22,
+   "mark": "g",
+   "context": "2(g2) tr(g1"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "2(g2) tr(g1g"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "|W"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "|W1||W"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "1(g"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "2(g"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "2(g2) tr(ω"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "|W"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "|W1||W"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "g2=ω"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "=pq"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "=pqn|W"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "=pqn|W1 ∩W"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "|W"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "|W1||W"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "=q"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "W"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "W1 ∩W"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "W"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "W"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "W"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "W"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "W1 ∩W"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "W"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "W1 ∩W"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "(q"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "andthennotethateachisotropicsubspaceproducesq"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "Inthecasek=n −1,Theorem8.4producesa2-distancesetinG"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "Inthecasek=n −1,Theorem8.4producesa2-distancesetinGq"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "Inthecasek=n −1,Theorem8.4producesa2-distancesetinGqn−1,q"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "ofsize"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "ofsizeq(q"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "ofsizeq(q2"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": ".Theinnerproductvaluesthatoccurareα=0andβ=q"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "P"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "Pa ⊗P"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "P"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "Pa ⊗P"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "can be evaluated explicitly.Writing P"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "can be evaluated explicitly.Writing Pa=P"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "i=1"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "i=1a"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "i=1ai"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "{a"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "{ai}ofa,andlettingTdenotethe“swap”operatorT:e"
+  },
+  {
+   "page": 24,
+   "mark": "j",
+   "context": "{ai}ofa,andlettingTdenotethe“swap”operatorT:ei ⊗e"
+  },
+  {
+   "page": 24,
+   "mark": "j",
+   "context": "{ai}ofa,andlettingTdenotethe“swap”operatorT:ei ⊗ej7→e"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "{ai}ofa,andlettingTdenotethe“swap”operatorT:ei ⊗ej7→ej⊗e"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "P"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "Pa ⊗P"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "n(n"
+  },
+  {
+   "page": 24,
+   "mark": "t",
+   "context": "WeprovethelemmabyshowingthatH"
+  },
+  {
+   "page": 24,
+   "mark": "t",
+   "context": "WeprovethelemmabyshowingthatHt=Hom"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "resultthenfollowsbyconsideringthepolynomialsoftheforma7→(P"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "Hom"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "Hom1anda 7→(P"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "Hom1anda 7→(Pa)ij(P"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "Hom1anda 7→(Pa)ij(Pa)klinHom"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "spaces are equal.When t = 1, we have dim(H1) = dim(Hom1) = n"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "\u0000n"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "\u0000n"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "P"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "Pa7→m tr(AP"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "a) −tr(P"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "a) −tr(Pa) tr(AP"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "isidenticallyzeroforeveryA.Therearen"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "\u0012n"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "\u0012n"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "−n"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "Let{e"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "Let{e1, . . . , eN}beanorthonormalbasisforH⌊t/2⌋.Sincee"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "decompositionofL"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "⟨e"
+  },
+  {
+   "page": 25,
+   "mark": "j",
+   "context": "⟨ei, e"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 25,
+   "mark": "j",
+   "context": "eie"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 25,
+   "mark": "j",
+   "context": "eie"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "eiej⟩S= ⟨e"
+  },
+  {
+   "page": 25,
+   "mark": "j",
+   "context": "eiej⟩S= ⟨ei, e"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "whenceitfollowsthat{e"
+  },
+  {
+   "page": 25,
+   "mark": "l",
+   "context": "whenceitfollowsthat{e1, . . . , e"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "Theorem9.3.Letf(x"
+  },
+  {
+   "page": 25,
+   "mark": "m",
+   "context": "Theorem9.3.Letf(x1, . . . , x"
+  },
+  {
+   "page": 25,
+   "mark": "c",
+   "context": "µ"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "µcµZµ,whereZµis"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "f(y"
+  },
+  {
+   "page": 25,
+   "mark": "m",
+   "context": "f(y1(a, b), . . . , y"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "Letf"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "Letfabethezonalpolynomialoffata,sothatf"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "|S| ⟨1, f"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "|S| ⟨1, fa⟩S≥f"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "⟨1, f"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "f(1) ≤c"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "⟨1, Z"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "= c"
+  },
+  {
+   "page": 26,
+   "mark": "c",
+   "context": "µ"
+  },
+  {
+   "page": 26,
+   "mark": "c",
+   "context": "µcµZµ,where"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "|S| =f(1,"
+  },
+  {
+   "page": 26,
+   "mark": "t",
+   "context": "This polynomial satisﬁes ⟨Zt,a, f⟩= f(a) for every f∈H"
+  },
+  {
+   "page": 26,
+   "mark": "t",
+   "context": "al satisﬁes ⟨Zt,a, f⟩= f(a) for every f∈Ht(m, n).Taking f= Z"
+  },
+  {
+   "page": 26,
+   "mark": "t",
+   "context": "|S| = dim(H"
+  },
+  {
+   "page": 26,
+   "mark": "t",
+   "context": "•|S| = dim(H"
+  },
+  {
+   "page": 26,
+   "mark": "t",
+   "context": "SupposeSisaf-codewith|S|=dim(H"
+  },
+  {
+   "page": 26,
+   "mark": "b",
+   "context": "⟨Zt,a, f"
+  },
+  {
+   "page": 26,
+   "mark": "b",
+   "context": "⟨Zt,a, fb⟩= f"
+  },
+  {
+   "page": 27,
+   "mark": "t",
+   "context": "Thus{Zt,a}isadualbasisforH"
+  },
+  {
+   "page": 27,
+   "mark": "b",
+   "context": "considertheaverages⟨Zt,a, f"
+  },
+  {
+   "page": 27,
+   "mark": "a",
+   "context": "considertheaverages⟨Zt,a, fb⟩S:sincef"
+  },
+  {
+   "page": 27,
+   "mark": "b",
+   "context": "⟨Zt,a, f"
+  },
+  {
+   "page": 27,
+   "mark": "b",
+   "context": "⟨1, Zt,af"
+  },
+  {
+   "page": 27,
+   "mark": "b",
+   "context": "= ⟨1, Zt,af"
+  },
+  {
+   "page": 27,
+   "mark": "b",
+   "context": "forthebases{Zt,a}and{f"
+  },
+  {
+   "page": 27,
+   "mark": "b",
+   "context": "forthebases{Zt,a}and{fb}.Buttheset{Zt,af"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "forthebases{Zt,a}and{fb}.Buttheset{Zt,afb}spansH"
+  },
+  {
+   "page": 27,
+   "mark": "t",
+   "context": "forthebases{Zt,a}and{fb}.Buttheset{Zt,afb}spansH2"
+  },
+  {
+   "page": 27,
+   "mark": "t",
+   "context": "Conversely, suppose S is a 2t-design with |S| = dim(H"
+  },
+  {
+   "page": 27,
+   "mark": "t",
+   "context": "oftheanglesetofA.SinceH"
+  },
+  {
+   "page": 27,
+   "mark": "a",
+   "context": "oftheanglesetofA.SinceHtspansthefunctionson|S|,eachf"
+  },
+  {
+   "page": 27,
+   "mark": "t",
+   "context": "oftheanglesetofA.SinceHtspansthefunctionson|S|,eachfaisinH"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "distancesetanda2-designofsizen"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "the annihilatorof"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "y= (y"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "y= (y1, . . . , y"
+  },
+  {
+   "page": 27,
+   "mark": "y",
+   "context": "EachA"
+  },
+  {
+   "page": 27,
+   "mark": "y",
+   "context": "y∈YA"
+  },
+  {
+   "page": 27,
+   "mark": "y",
+   "context": "y∈YAy=J,whereJistheall-onesmatrix.If"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "y∈YAy=J,whereJistheall-onesmatrix.Ify"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "(1, . . . , 1)denotes the trivial principal anglesset,then A"
+  },
+  {
+   "page": 27,
+   "mark": "y",
+   "context": " . . , 1)denotes the trivial principal anglesset,then A0:= A"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": ". . , 1)denotes the trivial principal anglesset,then A0:= Ay"
+  },
+  {
+   "page": 28,
+   "mark": "y",
+   "context": "EachEµisalsosymmetricandinthespanof{A"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "In particular,E"
+  },
+  {
+   "page": 28,
+   "mark": "y",
+   "context": "In particular,E0is ascalarmultipleof J.When {A"
+  },
+  {
+   "page": 28,
+   "mark": "y",
+   "context": "independent, and clearly the matrices {A"
+  },
+  {
+   "page": 28,
+   "mark": "y",
+   "context": "spanof{A"
+  },
+  {
+   "page": 28,
+   "mark": "y",
+   "context": "multiplication,sotooisthespanof{A"
+  },
+  {
+   "page": 28,
+   "mark": "y",
+   "context": "then{A"
+  },
+  {
+   "page": 29,
+   "mark": "y",
+   "context": "Then{Eµ}|µ|≤t,len(µ)≤maretheidempotentsofthescheme{A"
+  },
+  {
+   "page": 29,
+   "mark": "y",
+   "context": "y∈YZµ(y)A"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "therefore invertible.It follows that for eachy"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "Nowwriteg"
+  },
+  {
+   "page": 29,
+   "mark": "c",
+   "context": "|λ|≤t"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "2, . . . ,"
+  },
+  {
+   "page": 30,
+   "mark": "y",
+   "context": "{A"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "y∈Y:Py"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "m= A"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "i(a, b)=(Z"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "i(a, b)=(Zi(a, b)−Z"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "i:"
+  },
+  {
+   "page": 30,
+   "mark": "a",
+   "context": "i:i≤t}is"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "i:"
+  },
+  {
+   "page": 30,
+   "mark": "y",
+   "context": "iis in the span of {A"
+  },
+  {
+   "page": 30,
+   "mark": "y",
+   "context": "iis in the span of {Ay:"
+  },
+  {
+   "page": 30,
+   "mark": "y",
+   "context": "i"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "iy"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "α: α ∈A}.IfZ"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "and Z"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "|A|=t,andZ"
+  },
+  {
+   "page": 31,
+   "mark": "0",
+   "context": "i:"
+  },
+  {
+   "page": 31,
+   "mark": "0",
+   "context": "i:"
+  },
+  {
+   "page": 31,
+   "mark": "t",
+   "context": "i:0≤i≤t −1}.For,ifI=P"
+  },
+  {
+   "page": 31,
+   "mark": "c",
+   "context": "i=0"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "i=0c"
+  },
+  {
+   "page": 31,
+   "mark": "y",
+   "context": "j"
+  },
+  {
+   "page": 31,
+   "mark": "j",
+   "context": "jy"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "c"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "ci(Z"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "ci(Zi(y) −Z"
+  },
+  {
+   "page": 31,
+   "mark": "y",
+   "context": "i"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "iy"
+  },
+  {
+   "page": 31,
+   "mark": "a",
+   "context": "iyi,"
+  },
+  {
+   "page": 31,
+   "mark": "a",
+   "context": "productsetA={tr(P"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "productsetA={tr(PaP"
+  },
+  {
+   "page": 31,
+   "mark": "a",
+   "context": "α: α ∈A ∪{m}}is"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "|A| = tandZ"
+  },
+  {
+   "page": 31,
+   "mark": "t",
+   "context": "t−1,andJ−P"
+  },
+  {
+   "page": 31,
+   "mark": "0",
+   "context": "LetfαdenotetheannihilatorpolynomialofA\\{α"
+  },
+  {
+   "page": 31,
+   "mark": "y",
+   "context": "i"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "iy"
+  },
+  {
+   "page": 31,
+   "mark": "t",
+   "context": "correspondingzonalpolynomialfα,aisinH"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "correspondingzonalpolynomialfα,aisinHt−1(n).WritingP"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "correspondingzonalpolynomialfα,aisinHt−1(n).WritingPi:= Z"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "orrespondingzonalpolynomialfα,aisinHt−1(n).WritingPi:= Zi −Z"
+  },
+  {
+   "page": 31,
+   "mark": "c",
+   "context": "i"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "icα,iP"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "= cα,iP"
+  },
+  {
+   "page": 31,
+   "mark": "a",
+   "context": "= cα,iPi(tr(P"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "= cα,iPi(tr(PaP"
+  }
+ ]
+}

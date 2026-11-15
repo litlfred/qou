@@ -1,1 +1,0 @@
-Let ⋆be some boundedness condition (namely b, + or−).

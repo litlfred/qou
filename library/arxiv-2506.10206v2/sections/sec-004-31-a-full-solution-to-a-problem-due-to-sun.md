@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.931
 latex_coverage_ratio: 1.0
+doc_brief: "Analytic Dilogarithm Identities — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations"
 ---
 As it turns out, the $u = \frac{1}{\sqrt{3}}$ case Theorem [\[maintheorem\]](#maintheorem){reference-type="ref" reference="maintheorem"} can be used to formulate a full solution to a problem due to Sun [@Sun2021; @Sun2015] that was partially solved by Campbell [@Campbell2023], as later explained.
 

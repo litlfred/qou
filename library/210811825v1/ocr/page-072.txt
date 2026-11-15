@@ -1,0 +1,69 @@
+Total [Table[
+
+2 pli], {i, 2 (27(1/4) — 1)/146,
+
+144 (27(1/4) - 1)/146, (27(1/4) - 1)/73}]],
+Total [Table [
+
+4 pli], {i, (27(1/4) - 1)/146,
+
+145 (2>(1/4) — 1)/146, (2>(1/4) — 1)/73}]]}15
+
+This constant P is correct to with 106~°. We get an upper and lower bound bound on
+
+(pis Y2):
+9662 9660
+
+~Too0000 < ‘P *2 < ~Fo90000"
+We have already seen the lower bound on ||yi||?, and we can easily obtain an upper bound
+
+from our knowledge of the error. We get
+28089 <lleill? < 28091
+1000000 1000000
+Therefore we get can bound the projection coefficient from above and below by
+9662 (¥1, Y2) 9660
+~ 28089 ~ gill? ~~: 28091"
+
+We will also need to consider terms involving the square of the projection coefficient, so
+
+we include now the relevant bounds:
+
+93315600 (v1, ¥2)\? _ 93354244
+789104281 Weal? 788991921
+
+We are now ready to bound the L? norm of 2 from below. We have
+
+pete) 1 (4 tou vs) tors ve)
+? _ g iP: 2 at (Se) +) dydx
+lel? = f Loe a (+ gh A ron + (SE) ot) ty
+cate
+ye 9660 93315600
+> dy +2 en h(x) ) de.
+>[ (fe (2) ut (root)? P(e) + sear ogagr *() J de
+
+As before, we can integrate
+co(@) 2
+[ G)
+J ci (a) y
+
+explicitly using the following line of code in Mathematica, where the output defines a
+
+function c(z):
+
+a = Saqrt[3 + 2 Saqrt[2] — 2 Sqrt[4 + 3 Sart [2]]];
+
+v[x_, y_] = (11 y/2 — ((11 y/2)73)/3! + ((11 y/2)75)/
+5! — ((11 y/2)*7)/7! + ((11 y/2)79)/9! -— ((11 y/2)711)/11!) GQ -
+x*2/100);
+
+Integrate [(v[x, y] v[x, y])/y72, {y, Sart[q72 — x72],
+Sqrt [Csc[Pi/8]~2 — (x + Cot[Pi/8])~2]}]
+
+We now use Simpson’s rule to approximate
+
+a 9660 93315600
+o(x) +2 h(x) ) de. dl
+[ (cor) + (=e) P(®) + FeoT9aD8I ) * (3.1)
+
+62
+

@@ -1,0 +1,45 @@
+Burgess bounds for short character sums evaluated at forms 1945
+
+Given p, p’ and an integer 5, for each fixed index i there is at most one way to choose a;, a with
+0 <a; < p, 0 <a; < p’ such that a; p’ — a; p = 5. Thus
+
+> M(p, p') K#{p#p' EP, u= (uy, ..., Un), [Ui] <12P : Mi(p!— p) =u; (modl;), i=1,...,n}.
+p#p'eP
+Now we use the fact that /; { Mj. Thus for a fixed i, the condition Mj(p’ — p) = u; (mod /;) determines
+p’ — p uniquely modulo J;, and hence uniquely in Z, as long as P < 1;, which is guaranteed by the
+assumption P < q/H;j, that is PH; <q. In particular, there is at most one value for the difference p’ — p
+that will satisfy all n conditions. So we may choose p freely and then p’ is determined. As a result, after
+counting up the possible choices for uw, we conclude that
+
+y M(p, p') « Pt!
+DFp'eP
+
+Applying this in (7-11), we conclude that
+
+> Aan)? « |LHIIP. g
+
+Proof of Lemma 6.4. We may restrict our attention to permutations that map {1,..., M} to itself, or
+equivalently, we may suppose going forward that M =n. For indeed, any indices i that occur in the sums
+such that i < M but o(i) > M, clearly contribute no more to the left-hand side than to the right-hand side,
+since t; < To(i)-
+
+Now let o be the permutation that minimizes
+Atay + +++ + ante ny; (7-12)
+
+if there is more than one such permutation, we choose o to be the one with the greatest number of
+fixed points. We will show that o is the identity. For suppose otherwise, and let i be the smallest index
+such that o (i) £i. Then o(i) > i and hence f,(;) > t;. Furthermore, denoting by k the index such that
+o(k) =i, we must also have that k > i and hence a, < a;. We then see that (f, (3) — t;)(a; — ax) = 0, or
+equivalently, t, (ia; + tia > tia; + to()ax. Define a new permutation o’ by o’(u) =u foru=1,...,i,
+o’(k) = o(i), and o/(u) = o(u) for all the remaining u € {i + 1,...,}\ {k}. Then we see that
+te (i) i + to (k)Ak = to'(iyGi + to'(kyak 8O that (7-12) does not increase in value if we replace o by o’, and o’
+must also be a minimizer. Yet o’ has one more fixed point than o, which is a contradiction. We conclude
+
+that o is the identity. oO
+Proof of Lemma 7.1. By the definition of the 6;, the sum over j = 0, 1,...,—1 takes the form
+n-1 6 n—2 ; n-1
+14 ogi? KR H14 So giP RK ge PR <1 4 Gl? KM)! (7-13)
+j=l j=l j=l
+in which 6; = |(r — 1)/(n — 1)]. Here we have used the fact that for j = n—1, 0,-) =r—1>
+
+(n— 1I)L@ — 1)/(n — 1] = (2 — 11). Now we see from the right-most expression that under the

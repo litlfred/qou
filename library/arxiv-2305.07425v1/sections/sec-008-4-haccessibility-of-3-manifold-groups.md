@@ -7,10 +7,11 @@ section_number: 4
 pages: 10-12
 source_pdf: 2305.07425v1.pdf
 source_sha256: 2f7d2ac5818b6af4
-doc_brief: "LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS — The set of equivalence classes of cobounded actions of a grou p G on diﬀerent hyperbolic metric spaces carries a natural partial order."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.974
-latex_coverage_ratio: 0.988
+latex_prose_ratio: 0.969
+latex_coverage_ratio: 0.995
+doc_brief: "LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS — The set of equivalence classes of cobounded actions of a group G on diﬀerent hyperbolic metric spaces carries a natural partial order."
 ---
 []{#sec:NPC label="sec:NPC"}
 
@@ -58,26 +59,4 @@ We now turn to the proof of Lemma [\[lem:RHG\]](#lem:RHG){reference-type="ref" 
 Since $P$ satisfies the hypotheses of Lemma [\[lem:key\]](#lem:key){reference-type="ref" reference="lem:key"} by assumption, there are commuting elements $a,b\in P$ and isometric actions $P \curvearrowright X$ and $P \curvearrowright Y$ on hyperbolic spaces such that $a$ and $b$ act loxodromically and elliptically, respectively, in the action $P \curvearrowright X$, and $b$ acts loxodromically in the action $P \curvearrowright Y$. For all $Q\in \mathbb P\setminus \{P\}$, fix the trivial action of $Q$ on a point. By [@AHO Corollary 4.11(a)], there exist hyperbolic spaces $Z_X,Z_Y$ on which $G$ acts by isometries, associated to the collection of actions $\{Q\curvearrowright * \mid Q\in \mathbb P\setminus \{P\}\}\cup \{P\curvearrowright X\}$ and the collection of actions $\{Q\curvearrowright * \mid Q\in \mathbb P\setminus \{P\}\}\cup \{P\curvearrowright Y\}$, respectively. Moreover, there are coarsely $P$--equivariant quasi-isometric embeddings $X\to Z_X$ and $Y\to Z_Y$. Therefore, $a$ acts loxodromically and $b$ acts elliptically in the action $G\curvearrowright Z_X$, while $b$ acts loxodromically in the action $G\curvearrowright Z_Y$. This completes the proof. ◻
 :::
 
-In light of Lemmas [\[lem:RHmfld\]](#lem:RHmfld){reference-type="ref" reference="lem:RHmfld"} and [\[lem:RHG\]](#lem:RHG){reference-type="ref" reference="lem:RHG"}, to prove the $\mathcal H$--inaccessibility of $\pi_1(M)$, it suffices to understand its peripheral subgroups. In Section [0.1](#subsec:SF){reference-type="ref" reference="subsec:SF"}, we analyze the fundamental groups of the Seifert fibered pieces. The more difficult subgroups to understand are the fundamental groups of the maximal graph manifold components. We consider these in Section [\[sec:NPCgraph\]](#sec:NPCgraph){reference-type="ref" reference="sec:NPCgraph"} and give conditions under which they satisfy Lemma [\[lem:key\]](#lem:key){reference-type="ref" reference="lem:key"}; see Proposition [\[prop:NPCgraph\]](#prop:NPCgraph){reference-type="ref" reference="prop:NPCgraph"}. In Section [\[sec:mixedmanifolds\]](#sec:mixedmanifolds){reference-type="ref" reference="sec:mixedmanifolds"}, we put these results together and prove Theorem [\[thm:NPCmld\]](#thm:NPCmld){reference-type="ref" reference="thm:NPCmld"}. Up to this point, we have been assuming that $M$ has empty or toroidal boundary. Finally, in Section [\[sec:Boundary\]](#sec:Boundary){reference-type="ref" reference="sec:Boundary"}, we consider $3$-manifolds with higher genus boundary components.
-
-## Seifert fibered manifolds {#subsec:SF}
-
-In this section, we analyze Seifert fibered pieces.
-
-::: lem
-[]{#lem:centralextension label="lem:centralextension"} Let $1 \to \mathbb{Z} \xrightarrow{i} G \xrightarrow{\pi} H \to 1$ be a short exact sequence where $\mathbb{Z}$ is central in $G$ and $H$ is a non-elementary hyperbolic group. Then $G$ is $\mathcal{H}$--inaccessible.
-:::
-
-::: proof
-*Proof.* Choose a finite generating set $J$ of $H$ and consider the hyperbolic action $G \curvearrowright \mathop{\mathrm{Cay}}(H, J)$. Let $a$ be a generator of the group $\mathbb{Z}$, and let $b$ be an element of $G$ such that $\pi(b)$ is loxodromic in $H \curvearrowright \mathop{\mathrm{Cay}}(H, J)$. The element $b$ is thus loxodromic in the action $G \curvearrowright \mathop{\mathrm{Cay}}(H, J)$, as well, while the element $a$ is elliptic (in fact, trivial) in this action.
-
-Since every integral cohomology class of a hyperbolic group is bounded (see [@Min01]), the central extension $\mathbb{Z}\to G \to H$ corresponds to a bounded element of $H^{2}(H, \mathbb{Z})$. Hence [@HRSS22 Lemma 4.1] provides a quasi-morphism $\phi \colon G \to \mathbb{Z}$ which is unbounded on $i(\mathbb{Z})$. By [@ABO19 Lemma 4.15], there exists a generating set $S$ for $G$ such that $L\vcentcolon = \mathop{\mathrm{Cay}}(G, S)$ is a quasi-line and the inclusion $\mathbb{Z}\to L$ induced by $i$ is a $\mathbb{Z}$--equivariant quasi-isometry. We thus obtain a hyperbolic action $G \curvearrowright L$ for which $a$ is loxodromic. Since $a \in Z(G)$, the elements $a$ and $b$ commute. By Lemma [\[lem:key\]](#lem:key){reference-type="ref" reference="lem:key"}, $G$ is $\mathcal{H}$--inaccessible. ◻
-:::
-
-::: cor
-[]{#cor:SF label="cor:SF"} Let $M$ be a non-elementary Seifert fibered manifold. Then $\pi_1(M)$ is $\mathcal{H}$--inaccessible.
-:::
-
-::: proof
-*Proof.* Let $\varphi \colon M \to \Sigma$ be a Seifert fibration. Since $S^1 \to M \to \Sigma$ is a circle bundle over $\Sigma$, there is a short exact sequence $$1 \to \mathbb{Z}\to \pi_1(M) \to \pi_1(\Sigma) \to 1,$$ where $\mathbb{Z}$ is the normal cyclic subgroup of $\pi_1(M)$ generated by a fiber. The group $\mathbb{Z}$ is central in $\pi_1(M)$ since $\Sigma$ is orientable (see, e.g., [@Mar Proposition 10.4.4]). By Lemma [\[lem:centralextension\]](#lem:centralextension){reference-type="ref" reference="lem:centralextension"}, the group $\pi_1(M)$ is $\mathcal{H}$--inaccessible. ◻
-:::
+In light of Lemmas [\[lem:RHmfld\]](#lem:RHmfld){reference-type="ref" reference="lem:RHmfld"} and [\[lem:RHG\]](#lem:RHG){reference-type="ref" reference="lem:RHG"}, to prove the $\mathcal H$--inaccessibility of $\pi_1(M)$, it suffices to understand its peripheral subgroups. In Section [\[subsec:SF\]](#subsec:SF){reference-type="ref" reference="subsec:SF"}, we analyze the fundamental groups of the Seifert fibered pieces. The more difficult subgroups to understand are the fundamental groups of the maximal graph manifold components. We consider these in Section [\[sec:NPCgraph\]](#sec:NPCgraph){reference-type="ref" reference="sec:NPCgraph"} and give conditions under which they satisfy Lemma [\[lem:key\]](#lem:key){reference-type="ref" reference="lem:key"}; see Proposition [\[prop:NPCgraph\]](#prop:NPCgraph){reference-type="ref" reference="prop:NPCgraph"}. In Section [\[sec:mixedmanifolds\]](#sec:mixedmanifolds){reference-type="ref" reference="sec:mixedmanifolds"}, we put these results together and prove Theorem [\[thm:NPCmld\]](#thm:NPCmld){reference-type="ref" reference="thm:NPCmld"}. Up to this point, we have been assuming that $M$ has empty or toroidal boundary. Finally, in Section [\[sec:Boundary\]](#sec:Boundary){reference-type="ref" reference="sec:Boundary"}, we consider $3$-manifolds with higher genus boundary components.

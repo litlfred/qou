@@ -1,0 +1,58 @@
+A representation theoretic explanation... 1371
+
+4.1 Polar derivatives
+
+Acrucial tool of classical stability theory is the polar derivative. In particular, this notion leads
+to Laguerre’s theorem (Proposition 4.6), which is the main lemma toward Grace’s theorem.
+By passing to homogeneous polynomials the polar derivative becomes conceptually simpler,
+and this in turn sheds further light on the general connection to SL2(C)-invariance and the
+D map. One example of this, as we will see below, is that the polar derivative can be defined
+as the conjugation of 0, by some SL2(C) action.
+
+Given some “pole” x9 € C, the polar derivative with respect to xo of f € C"[x] is
+classically defined as follows.
+
+(diy f(x) = nf (x) — & = x0) fC)
+
+Noticing that the term of degree n cancels out, the resulting polynomial is of degree n — 1.
+It is typically said that this operator generalizes the ordinary derivative in the sense that
+lim yy 00 Xo dry f(x) = f(x). However, this operator also generalizes the ordinary deriva-
+tive in more natural way, which we see by passing to V(n).
+
+Fix any ¢ = € SL2(C). Define the pole of ¢ to be (—d : c) € CP!. For p € V(n),
+
+a
+cd
+we then define the polar derivative with respect to ¢ as follows.
+
+dgp := (b 'axb)p = —(—ddx + cdy)p
+
+Notice that dg depends only on go! (9) = (). With this, the pole of ¢@ should be interpreted
+as the element of CP! that ¢ sends to co = (—1: 0).
+
+This definition of the polar derivative with respect to @ is at very least a natural one, as
+it can be simply described as the conjugation of 0, by the action of @. The following result
+then shows that this is actually the correct definition.
+
+Proposition 4.1 Fix ¢ = : ‘| € SL2(C) with pole (—d : c), and define x9 := xd (for
+c #0). Then:
+
+dg o Hmg,, = Hmg,,_; o(—c - dyy)
+
+That is, the polar derivative dg on V (n) is the homogenization of the classical polar derivative
+dx, on C"[x] (up to scalar).
+
+Proof Straightforward computation. Oo
+
+As mentioned above, dg depends only on (—d : c), the pole of ¢. So given any pole in
+CP!, we can actually choose @ € SL2(C) to be a rotation of the Riemann sphere (i.e., CP!).
+This then gives the following intuitive description of the polar derivative.
+
+Remark 4.2 Fix a rotation @ € SL2(C) with pole (—d : c). The polar derivative dg then
+acts on p € V(n) in the following way. First, consider the zeros of p as being placed in the
+Riemann sphere via stereographic projection. Next, rotate the sphere via ¢, which moves
+(—d : c) to infinity at the top of the sphere. Apply the derivative to the new polynomial given
+by the new locations of the zeros. Finally, undo the original rotation via ¢~!, which moves
+infinity back to the pole (—d : c).
+
+D Springer

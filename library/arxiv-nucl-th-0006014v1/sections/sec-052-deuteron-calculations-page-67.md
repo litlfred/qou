@@ -1,0 +1,80 @@
+---
+doc_id: arxiv-nucl-th-0006014v1
+doc_title: "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn)"
+section_id: sec-052-deuteron-calculations-page-67
+section_title: "Deuteron calculations (page 67)"
+section_number: null
+pages: 67-67
+source_pdf: 0006014v1.pdf
+source_sha256: 208c7a6aaf628b30
+toc_source: inferred
+doc_brief: "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn) — 56 sections: Front matter; Introduction; The model"
+---
+-6
+-4
+-2
+0
+Phase Shift (deg)
+0
+100
+200
+300
+Lab. Energy (MeV)
+ 1F3
+-3
+-2
+-1
+0
+Phase Shift (deg)
+0
+100
+200
+300
+Lab. Energy (MeV)
+ 3F3
+0
+2
+4
+6
+Phase Shift (deg)
+0
+100
+200
+300
+Lab. Energy (MeV)
+ 3D3
+-4
+-2
+0
+Phase Shift (deg)
+0
+100
+200
+300
+Lab. Energy (MeV)
+ 3G3
+0
+2
+4
+6
+8
+Mixing Parameter (deg)
+0
+100
+200
+300
+Lab. Energy (MeV)
+ε3
+0
+0.5
+1
+1.5
+2
+Phase Shift (deg)
+0
+100
+200
+300
+Lab. Energy (MeV)
+ 1G4
+Fig. 7 continued.

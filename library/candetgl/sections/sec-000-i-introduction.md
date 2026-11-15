@@ -8,6 +8,7 @@ pages: 2-3
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
 toc_source: inferred
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 27 sections: Front matter; INTRODUCTION; PRELIMINARIES"
 ---
 Let V be a compact domain with smooth boundary in 3-space, and let VF~V! be the space of
 smooth vector ﬁelds on V with the L2 inner product ^V,W&5*VV•Wd(vol). By ‘‘smooth,’’
@@ -30,8 +31,6 @@ FEBRUARY 2001
 876
 0022-2488/2001/42(2)/876/30/$18.00
 © 2001 American Institute of Physics
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 It is well known that curl is a left inverse to the Biot–Savart operator when the input ﬁeld V
 is divergence-free and tangent to the boundary. The new information is that this result holds in no
 other cases. The impact of this is that eigenvalue problems for the Biot–Savart operator, which are

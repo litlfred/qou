@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0105186v2",
  "source_sha256": "e1552ceb6c82c27c",
- "brief": "Along exact sequence for symplectic Floer cohomology Paul Seidel — 45 sections: Introduction; Dehn twists, and all that; Exact symplectic geometry and ﬁbra",
- "extended": "**Along exact sequence for symplectic Floer cohomology Paul Seidel**\n\n*Revised version, May 2002*\n\n71 pp, 45 sections.\n\n**Outline.** Introduction; 1 Dehn twists, and all that; 1.1 Exact symplectic geometry and ﬁbrations; 1.2 The local model; 16 (||g′||t−1; 1.3 Vanishing cycles; 1.6 These can be chosen such that in a neighbo; 2 Pseudo-holomorphic sections; 2.1 A simple invariant; 2 (Du +J◦Du◦j), and the zero set Muniv = ( ¯∂u; 2 (L ˜XJ)◦Du◦j where ˜X is any section of TEv,; 2 (∇XJ)◦Du◦j, (2.5); 2.4 Moreover, Lemma 2.5 says that for suitably; 2.2 Horizontality; 0 If ∇u has nonnegative curvature, the convers; 2.3 A vanishing theorem; 4 (r′−sk)im(d¯z∧dz) +; 2 (r′−sk) + 0 = π(1 + r′\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: Let L be an exact Lagrangian sphere in M together with a pre-\n- Proposition 1.11: Let (L, [f ]) be a framed exact Lagrangian sphere in M . Fix\n- Proposition 1.15: Letc be a path satisfying (1.22), and l the loop in S\\Scrit\n- Proposition 2.7: Assume that Jk∈ Jreg (Ek,πk,Qk,jk) for k = 1, 2, and that\n- Proposition 2.13: Φ 1(EL,πL,QL) = 0 for all M and L.\n- Proposition 2.22: For ﬁxed J 1,J 2, if one chooses σ to be suﬃciently large,",
+ "brief": "A long exact sequence for symplectic Floer cohomology — 17 sections: Front matter; Introduction; Dehn twists, and all that",
+ "extended": "**A long exact sequence for symplectic Floer cohomology**\n\n*Paul Seidel*\n\n71 pp, 17 sections.\n\n**Outline.** Front matter; Introduction; 1 Dehn twists, and all that; 1.1 Exact symplectic geometry and fibrations; 1.2 The local model; 1.3 Vanishing cycles; 2 Pseudo-holomorphic sections; 2.1 A simple invariant; 2.2 Horizontality; 2.3 A vanishing theorem; 2.4 Relative invariants; 2.5 Horizontality and relative invariants; 3 Wrapping it up; 3.1 Preliminaries; 3.2 The first map; 3.3 The second map; 3.4 The homotopy",
  "tokens": {
-  "brief": 38,
-  "extended": 295
+  "brief": 30,
+  "extended": 128
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
@@ -20,8 +25,8 @@
    "pages": "4-4"
   },
   {
-   "id": "sec-002-11-exact-symplectic-geometry-and-ﬁbrations",
-   "title": "Exact symplectic geometry and ﬁbrations",
+   "id": "sec-002-11-exact-symplectic-geometry-and-fibrations",
+   "title": "Exact symplectic geometry and fibrations",
    "pages": "4-10"
   },
   {
@@ -30,216 +35,70 @@
    "pages": "10-17"
   },
   {
-   "id": "sec-004-16-gt1",
-   "title": "(||g′||t−1",
-   "pages": "17-17"
-  },
-  {
-   "id": "sec-005-13-vanishing-cycles",
+   "id": "sec-004-13-vanishing-cycles",
    "title": "Vanishing cycles",
-   "pages": "17-20"
+   "pages": "17-22"
   },
   {
-   "id": "sec-006-16-these-can-be-chosen-such-that-in-a-neighbourh",
-   "title": "These can be chosen such that in a neighbourhood of Ec(a), Ω µ = Ω and",
-   "pages": "20-22"
-  },
-  {
-   "id": "sec-007-2-pseudo-holomorphic-sections",
+   "id": "sec-005-2-pseudo-holomorphic-sections",
    "title": "Pseudo-holomorphic sections",
    "pages": "22-22"
   },
   {
-   "id": "sec-008-21-a-simple-invariant",
+   "id": "sec-006-21-a-simple-invariant",
    "title": "A simple invariant",
-   "pages": "22-24"
+   "pages": "22-29"
   },
   {
-   "id": "sec-009-2-du-jduj-and-the-zero-set-muniv-univ10",
-   "title": "(Du +J◦Du◦j), and the zero set Muniv = ( ¯∂univ)−1(0)",
-   "pages": "24-24"
-  },
-  {
-   "id": "sec-010-2-l-xjduj-where-x-is-any-section-of-tev-deﬁned-o",
-   "title": "(L ˜XJ)◦Du◦j where ˜X is any section of TEv, deﬁned on a neigh-",
-   "pages": "24-24"
-  },
-  {
-   "id": "sec-011-2-xjduj-25",
-   "title": "(∇XJ)◦Du◦j, (2.5)",
-   "pages": "24-28"
-  },
-  {
-   "id": "sec-012-24-moreover-lemma-25-says-that-for-suitably-chos",
-   "title": "Moreover, Lemma 2.5 says that for suitably chosen Jk, the evaluation maps",
-   "pages": "28-29"
-  },
-  {
-   "id": "sec-013-22-horizontality",
+   "id": "sec-007-22-horizontality",
    "title": "Horizontality",
-   "pages": "29-31"
+   "pages": "29-32"
   },
   {
-   "id": "sec-014-0-if-u-has-nonnegative-curvature-the-converse-al",
-   "title": "If ∇u has nonnegative curvature, the converse also holds, since t he second",
-   "pages": "31-32"
-  },
-  {
-   "id": "sec-015-23-a-vanishing-theorem",
+   "id": "sec-008-23-a-vanishing-theorem",
    "title": "A vanishing theorem",
-   "pages": "32-36"
+   "pages": "32-38"
   },
   {
-   "id": "sec-016-4-rskimdzdz",
-   "title": "(r′−sk)im(d¯z∧dz) +",
-   "pages": "36-36"
-  },
-  {
-   "id": "sec-017-2-rsk-0-π1-r",
-   "title": "(r′−sk) + 0 = π(1 + r′",
-   "pages": "36-38"
-  },
-  {
-   "id": "sec-018-24-relative-invariants",
+   "id": "sec-009-24-relative-invariants",
    "title": "Relative invariants",
-   "pages": "38-39"
+   "pages": "38-45"
   },
   {
-   "id": "sec-019-0-eπq",
-   "title": "(E,π,Q ) :",
-   "pages": "39-42"
-  },
-  {
-   "id": "sec-020-0-eπqj",
-   "title": "(E,π,Q,J ) :",
-   "pages": "42-42"
-  },
-  {
-   "id": "sec-021-0-eπqj",
-   "title": "(E,π,Q,J )(⊗",
-   "pages": "42-42"
-  },
-  {
-   "id": "sec-022-0-eπqj-is-a-chain-map-the",
-   "title": "(E,π,Q,J ) is a chain map. The",
-   "pages": "42-43"
-  },
-  {
-   "id": "sec-023-0-eπqj-0-and-cφ-rel",
-   "title": "(E,π,Q,J 0) and CΦ rel",
-   "pages": "43-43"
-  },
-  {
-   "id": "sec-024-0-eπqj-1-the-same",
-   "title": "(E,π,Q,J 1). The same",
-   "pages": "43-43"
-  },
-  {
-   "id": "sec-025-0-eπq-remains-invariant-under-de",
-   "title": "(E,π,Q ) remains invariant under de-",
-   "pages": "43-45"
-  },
-  {
-   "id": "sec-026-0-ekπkqkjk-we-require-that-the-jek-jreg-ml-0l-1",
-   "title": "(Ek,πk,Qk,Jk). We require that the Jek∈ Jreg (M,L 0,L 1) on",
-   "pages": "45-45"
-  },
-  {
-   "id": "sec-027-0-eπqj-cφ-rel",
-   "title": "(E,π,Q,J ) = CΦ rel",
-   "pages": "45-45"
-  },
-  {
-   "id": "sec-028-0-e1π-1q-1j-1cφ-rel",
-   "title": "(E1,π 1,Q 1,J 1)◦CΦ rel",
-   "pages": "45-45"
-  },
-  {
-   "id": "sec-029-0-e2π-2q-2j-2-230",
-   "title": "(E2,π 2,Q 2,J 2), (2.30)",
-   "pages": "45-45"
-  },
-  {
-   "id": "sec-030-25-horizontality-and-relative-invariants",
+   "id": "sec-010-25-horizontality-and-relative-invariants",
    "title": "Horizontality and relative invariants",
-   "pages": "45-48"
+   "pages": "45-51"
   },
   {
-   "id": "sec-031-0-eπqj-φcφ-rel",
-   "title": "(E,π,Q,J ) = φ+(CΦ rel",
-   "pages": "48-48"
-  },
-  {
-   "id": "sec-032-0-eπqj-φ",
-   "title": "(E,π,Q,J )−φ),",
-   "pages": "48-51"
-  },
-  {
-   "id": "sec-033-3-wrapping-it-up",
+   "id": "sec-011-3-wrapping-it-up",
    "title": "Wrapping it up",
    "pages": "51-51"
   },
   {
-   "id": "sec-034-31-preliminaries",
+   "id": "sec-012-31-preliminaries",
    "title": "Preliminaries",
    "pages": "51-55"
   },
   {
-   "id": "sec-035-32-the-ﬁrst-map",
-   "title": "The ﬁrst map",
-   "pages": "55-57"
+   "id": "sec-013-32-the-first-map",
+   "title": "The first map",
+   "pages": "55-60"
   },
   {
-   "id": "sec-036-0-eπqj-φ-cφ-rel",
-   "title": "(E,π,Q,J ) = φ + (CΦ rel",
-   "pages": "57-60"
-  },
-  {
-   "id": "sec-037-0-eπqj-4-cc-for-the-relative-invariant-on-the-co",
-   "title": "(E,π,Q,J (4)) : C′→C for the relative invariant on the cochain",
-   "pages": "60-60"
-  },
-  {
-   "id": "sec-038-33-the-second-map",
+   "id": "sec-014-33-the-second-map",
    "title": "The second map",
-   "pages": "60-63"
+   "pages": "60-64"
   },
   {
-   "id": "sec-039-0-eπqj-6-cc",
-   "title": "(E,π,Q,J (6)) : C−→C′′",
-   "pages": "63-64"
-  },
-  {
-   "id": "sec-040-34-the-homotopy",
+   "id": "sec-015-34-the-homotopy",
    "title": "The homotopy",
-   "pages": "64-65"
-  },
-  {
-   "id": "sec-041-0-ebcπbcqbcj-cc",
-   "title": "(Ebc,πbc,Qbc,J ) : C′−→C′′",
-   "pages": "65-67"
-  },
-  {
-   "id": "sec-042-0-eπqj-cc",
-   "title": "(E,π,Q,J ) : C′−→C′′",
-   "pages": "67-68"
-  },
-  {
-   "id": "sec-043-0-ebcπbcqbcj-will-be-homotopic-to-zero-by-a-chai",
-   "title": "(Ebc,πbc,Qbc,J ) will be homotopic to zero by a chain homotopy",
-   "pages": "68-68"
-  },
-  {
-   "id": "sec-044-references",
-   "title": "References",
-   "pages": "68-71"
+   "pages": "64-71"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

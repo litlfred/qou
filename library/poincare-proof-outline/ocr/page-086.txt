@@ -1,0 +1,77 @@
+using (7 (« = 0 Vy = 0 V z = 0)» is-real-inversion|of cor y]
+using inf-or-of-complez|of inversion ?y]
+by (auto simp del: inversion-of-complex)
+
+hence is-real (to-complex ?cr)
+using four-points-on-circline-iff-cross-ratio-real[OF distinct]
+by auto
+
+ultimately
+
+show ?lhs
+using distinct
+unfolding poincare-between-def Let-def
+by auto
+
+qed
+qed
+qed
+
+7.1.5 H-betweenness and h-collinearity
+
+For three h-collinear points at least one of the three possible h-betweeness relations must hold.
+
+lemma poincare-collinear3-between:
+assumes u € unit-disc and v € unit-disc and w € unit-disc
+assumes poincare-collinear {u, v, w}
+shows poincare-between uv w V poincare-between u wv V poincare-between v uw (is ?P’ uv w)
+proof (cases u=v)
+case True
+thus ?thesis
+using assms
+by auto
+next
+case False
+have V w. w € unit-dise A poincare-collinear {u, v, w} —+ ?P' wv w (is ?P uv)
+proof (rule wlog-positive-x-azis[;where P=?P])
+fix x
+assume 2: is-real tr 0 < Rex Rex < 1
+hence z 4 0
+using complez.expand[of x 0]
+by auto
+hence *: poincare-line 0; (of-complex x) = x-axis
+using 2 poincare-line-0-real-is-x-axis|of of-complex «|
+unfolding circline-set-x-axis
+by auto
+have of-complex x € unit-disc
+using x
+by (auto simp add: cmod-eq-Re)
+have of-complex x # On
+
+using <x # 0>
+
+by auto
+show ?P 0), (of-complex x)
+proof safe
+
+fix w
+
+assume w € unit-disc
+assume poincare-collinear {0;,, of-complex x, w}
+hence w € circline-set x-axis
+using * wnique-poincare-line[of 0), of-complex x] <of-complex x € unit-discy «x # 0» <of-complex x # On>
+unfolding poincare-collinear-def
+by auto
+then obtain w’ where w’: w = of-complez w’ is-real w!'
+using (w € unit-disc»
+using inf-or-of-complez|of w]
+unfolding circline-set-x-azxis
+by auto
+hence —1 < Rew’ Rew' < 1
+using (w € unit-disc»
+by (auto simp add: cmod-eq-Re)
+assume 1: — poincare-between (of-complex x) On w
+hence w 4 0, w' # 0
+using w’
+
+86

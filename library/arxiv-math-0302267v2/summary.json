@@ -3,419 +3,63 @@
  "doc_id": "arxiv-math-0302267v2",
  "source_sha256": "c09c8cabd5f9d8e6",
  "brief": "Groupes fondamentaux motiviques de Tate mixte — We deﬁne the category of mixed Tate motives over the ring of S-integers of a number ﬁeld.",
- "extended": "**Groupes fondamentaux motiviques de Tate mixte**\n\n84 pp, 80 sections.\n\n**Abstract.** We deﬁne the category of mixed Tate motives over the ring of S-integers of a number ﬁeld. We deﬁne the motivic fundamental group (made unipotent) of a unirational variet y over a number ﬁeld. We apply this to the study of the motivic fundamental group of the projective line punctured at zero, inﬁnity and all N -th roots of unity. ∗ Research partially supported by NSF Grant DMS-0099390\n\n**Outline.** 0 Introduction 1; 1 Motifs de Tate mixte sur l’anneau des S-enti; 2 Le point de vue tannakien 13; 3 Cohomologie et groupe fondamental 25; 4 Le groupe fondamental unipotent motivique d’; 5 Le groupe fondamental motivique du compl´ em; 6 Profondeur 67; 1.2 Pour M un motif de Tate mixte, le sous-quo; 2 On a gagn´ e que F ′ = W−2(n+1)(F ′). Un arg; 2.1 Soient k un corps de nombres et S un ensem; 2.4 Mise en garde. On ne dispose pas d’un rel`; 2.8 Certaines des constructions 2.1–2.5 sont m; 2.9 La r´ ealisation de de Rham MDR de M dans ; 2.11 Pour C une clˆ oture alg´ ebrique deR et ; 2.13 Appelons “syst` eme de r´ ealisations de ; 2.15 V ariantes. (i) Puisque MT( OS) est une s; 2.16 Pour k′ une extension ﬁnie de k, on dispo; 2.17 Par 2.16, les cat´ egories tannakiennes M\n\n**Extracted claims (proposals, not verified).**\n- Proposition 1.3: La coaction eM est fonctorielle en M et compatible au produit tensoriel.\n- Proposition 1.7: Soit ℓ un nombre premier distinct de la caract´ eristique r´ esiduelle de v.\n- Proposition 1.9: Soit Γ un sous-espace vectoriel de Ext1(Q(0), Q(1)).\n- Proposition 2.2: (i) L’alg` ebre de Lie gradu´ ee ugr\n- Proposition 2.10: Le foncteur ﬁbre DR sur MT(k) est canoniquement isomorphe au\n- Proposition 2.12: Il existe aσ dans Gω(C) tel que",
+ "extended": "**Groupes fondamentaux motiviques de Tate mixte**\n\n84 pp, 9 sections.\n\n**Abstract.** We deﬁne the category of mixed Tate motives over the ring of S-integers of a number ﬁeld. We deﬁne the motivic fundamental group (made unipotent) of a unirational variety over a number ﬁeld. We apply this to the study of the motivic fundamental group of the projective line punctured at zero, inﬁnity and all N-th roots of unity. ∗Research partially supported by NSF Grant DMS-0099390\n\n**Outline.** Front matter; Bibliographie; 0 Introduction; 1 Motifs de Tate mixte sur l’anneau des S-enti; 2 Le point de vue tannakien; 3 Cohomologie et groupe fondamental; 4 Le groupe fondamental unipotent motivique d’; 5 Le groupe fondamental motivique du compl´eme; 6 Profondeur",
  "tokens": {
   "brief": 34,
-  "extended": 440
+  "extended": 187
  },
  "sections": [
   {
-   "id": "sec-000-0-introduction-1",
-   "title": "Introduction 1",
-   "pages": "2-2"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
   },
   {
-   "id": "sec-001-1-motifs-de-tate-mixte-sur-lanneau-des-s-entiers",
-   "title": "Motifs de Tate mixte sur l’anneau des S-entiers de k 3",
-   "pages": "2-2"
+   "id": "sec-000-bibliographie",
+   "title": "Bibliographie",
+   "pages": "2-3"
   },
   {
-   "id": "sec-002-2-le-point-de-vue-tannakien-13",
-   "title": "Le point de vue tannakien 13",
-   "pages": "2-2"
+   "id": "sec-001-0-introduction",
+   "title": "Introduction",
+   "pages": "3-5"
   },
   {
-   "id": "sec-003-3-cohomologie-et-groupe-fondamental-25",
-   "title": "Cohomologie et groupe fondamental 25",
-   "pages": "2-2"
+   "id": "sec-002-1-motifs-de-tate-mixte-sur-lanneau-des-s-entiers",
+   "title": "Motifs de Tate mixte sur l’anneau des S-entiers de k",
+   "pages": "5-15"
   },
   {
-   "id": "sec-004-4-le-groupe-fondamental-unipotent-motivique-dune",
-   "title": "Le groupe fondamental unipotent motivique d’une",
-   "pages": "2-2"
+   "id": "sec-003-2-le-point-de-vue-tannakien",
+   "title": "Le point de vue tannakien",
+   "pages": "15-28"
   },
   {
-   "id": "sec-005-5-le-groupe-fondamental-motivique-du-compl-ement",
-   "title": "Le groupe fondamental motivique du compl´ ement,",
-   "pages": "2-2"
+   "id": "sec-004-3-cohomologie-et-groupe-fondamental",
+   "title": "Cohomologie et groupe fondamental",
+   "pages": "28-43"
   },
   {
-   "id": "sec-006-6-profondeur-67",
-   "title": "Profondeur 67",
-   "pages": "2-7"
+   "id": "sec-005-4-le-groupe-fondamental-unipotent-motivique-dune",
+   "title": "Le groupe fondamental unipotent motivique d’une vari´et´e rationnelle",
+   "pages": "43-53"
   },
   {
-   "id": "sec-007-12-pour-m-un-motif-de-tate-mixte-le-sous-quotien",
-   "title": "Pour M un motif de Tate mixte, le sous-quotient W−2n(M )/W−2(n+2)(M ) de M est",
-   "pages": "7-14"
+   "id": "sec-006-5-le-groupe-fondamental-motivique-du-complement",
+   "title": "Le groupe fondamental motivique du compl´ement, dans P1, de 0, ∞et µN",
+   "pages": "53-70"
   },
   {
-   "id": "sec-008-2-on-a-gagn-e-que-f-w2n1f-un-argument-dual-perme",
-   "title": "On a gagn´ e que F ′ = W−2(n+1)(F ′). Un argument dual permet",
-   "pages": "14-15"
-  },
-  {
-   "id": "sec-009-21-soient-k-un-corps-de-nombres-et-s-un-ensemble",
-   "title": "Soient k un corps de nombres et S un ensemble ﬁni de places ﬁnies de k. Le foncteur",
-   "pages": "15-16"
-  },
-  {
-   "id": "sec-010-24-mise-en-garde-on-ne-dispose-pas-dun-rel-eveme",
-   "title": "Mise en garde. On ne dispose pas d’un rel` evement canonique de ( ugr",
-   "pages": "16-18"
-  },
-  {
-   "id": "sec-011-28-certaines-des-constructions-2125-sont-motiviq",
-   "title": "Certaines des constructions 2.1–2.5 sont motiviques, i.e. l’image par ω de construc-",
-   "pages": "18-18"
-  },
-  {
-   "id": "sec-012-29-la-r-ealisation-de-de-rham-mdr-de-m-dans-mt-k",
-   "title": "La r´ ealisation de de Rham MDR de M dans MT( k) est un k-espace vectoriel, muni",
-   "pages": "18-19"
-  },
-  {
-   "id": "sec-013-211-pour-c-une-clˆ-oture-alg-ebrique-der-et-σ-un",
-   "title": "Pour C une clˆ oture alg´ ebrique deR et σ un plongement de k dans C, ` a la th´ eorie",
-   "pages": "19-21"
-  },
-  {
-   "id": "sec-014-213-appelons-syst-eme-de-r-ealisations-de-hodge",
-   "title": "Appelons “syst` eme de r´ ealisations de Hodge de Tate mixte” (sur k) la donn´ ee",
-   "pages": "21-22"
-  },
-  {
-   "id": "sec-015-215-v-ariantes-i-puisque-mt-os-est-une-sous-cat",
-   "title": "V ariantes. (i) Puisque MT( OS) est une sous-cat´ egorie pleine de MT( k) stable par",
-   "pages": "22-23"
-  },
-  {
-   "id": "sec-016-216-pour-k-une-extension-ﬁnie-de-k-on-dispose-du",
-   "title": "Pour k′ une extension ﬁnie de k, on dispose d’un ⊗-foncteur “extension du corps de",
-   "pages": "23-24"
-  },
-  {
-   "id": "sec-017-217-par-216-les-cat-egories-tannakiennes-mtk-pou",
-   "title": "Par 2.16, les cat´ egories tannakiennes MT(k), pour k variable, forment un pr´ echamp",
-   "pages": "24-28"
-  },
-  {
-   "id": "sec-018-31-soit-x-un-espace-topologique-s-epar-e-et-conn",
-   "title": "Soit X un espace topologique s´ epar´ e et connexe. On notebPa l’ensemble des classes",
-   "pages": "28-28"
-  },
-  {
-   "id": "sec-019-32-dans-ce-qui-suit-nous-laisserons-de-nombreux",
-   "title": "Dans ce qui suit, nous laisserons de nombreux signes ambigus . Plusieurs conventions",
-   "pages": "28-31"
-  },
-  {
-   "id": "sec-020-1-lextension-e-est",
-   "title": "L’extension E est",
-   "pages": "31-32"
-  },
-  {
-   "id": "sec-021-0-la-suite-spectrale-pour-rγ-x-et-fil-donne-donc",
-   "title": "La suite spectrale pour RΓ( X, ) et Fil donne donc",
-   "pages": "32-33"
-  },
-  {
-   "id": "sec-022-35-remarque-dans-cette-identiﬁcation-de-kbpa-λ-λ",
-   "title": "Remarque. Dans cette identiﬁcation de ( k[bPa] ⊗Λ Λ /I n+1)∨ avec le groupe des",
-   "pages": "33-33"
-  },
-  {
-   "id": "sec-023-36-nous-regarderons-un-objet-simplicial-tantˆ-ot",
-   "title": "Nous regarderons un objet simplicial tantˆ ot comme un fonct eur contravariant sur",
-   "pages": "33-35"
-  },
-  {
-   "id": "sec-024-37-choisissons-des-complexes-s",
-   "title": "Choisissons des complexes S∗",
-   "pages": "35-35"
-  },
-  {
-   "id": "sec-025-38-exemple-prenons-pour-s",
-   "title": "Exemple: prenons pour S∗",
-   "pages": "35-36"
-  },
-  {
-   "id": "sec-026-0-0-n-soit-1-s0-le-complexe-des-cha-ˆ-ınes-sin",
-   "title": "(∆ 0) ⊂ ∆ n soit 1 ∈ S0, le complexe des cha ˆ ınes sin-",
-   "pages": "36-41"
-  },
-  {
-   "id": "sec-027-312-soit-x-une-vari-et-e-alg-ebrique-lisse-conne",
-   "title": "Soit X une vari´ et´ e alg´ ebrique lisse connexe sur un corpsK et a, b ∈ X(K). Comme",
-   "pages": "41-42"
-  },
-  {
-   "id": "sec-028-313-prenons-pour-x-le-compl-ement-dans-une-droit",
-   "title": "Prenons pour X le compl´ ement, dans une droite projective P sur K, d’un ensemble",
-   "pages": "42-43"
-  },
-  {
-   "id": "sec-029-41-soient-k-un-corps-de-nombres-p-une-droite-pro",
-   "title": "Soient k un corps de nombres, P une droite projective sur k, X le compl´ ement d’un",
-   "pages": "43-43"
-  },
-  {
-   "id": "sec-030-1-x-x-p-hℓ",
-   "title": "(X, x) := P H+ℓ",
-   "pages": "43-43"
-  },
-  {
-   "id": "sec-031-1-x-x",
-   "title": "(X, x),",
-   "pages": "43-43"
-  },
-  {
-   "id": "sec-032-1-x-y-un-πhℓ",
-   "title": "(X, y): un ( πH+ℓ",
-   "pages": "43-43"
-  },
-  {
-   "id": "sec-033-1-x-x-πhℓ",
-   "title": "(X, x), πH+ℓ",
-   "pages": "43-43"
-  },
-  {
-   "id": "sec-034-1-x-y-bitorseur-pour-σ-un-plongement",
-   "title": "(X, y))-bitorseur. Pour σ un plongement",
-   "pages": "43-43"
-  },
-  {
-   "id": "sec-035-1-x-x-est-lenveloppe",
-   "title": "(X, x) est l’enveloppe",
-   "pages": "43-43"
-  },
-  {
-   "id": "sec-036-42-soit-ahℓ",
-   "title": "Soit AH+ℓ",
-   "pages": "43-43"
-  },
-  {
-   "id": "sec-037-215-ii-le-produit-ahℓ",
-   "title": "(ii), le produit AH+ℓ",
-   "pages": "43-43"
-  },
-  {
-   "id": "sec-038-1-x-x-ou-simplement",
-   "title": "(X, x) ou simplement",
-   "pages": "43-43"
-  },
-  {
-   "id": "sec-039-43-appelons-point-base-de-x-soit-un-point-ration",
-   "title": "Appelons “point base de X” soit un point rationnel de X = P − S, soit un vecteur",
-   "pages": "43-44"
-  },
-  {
-   "id": "sec-040-1-x-x-identiﬁant-ho",
-   "title": "(X, x). Identiﬁant ho-",
-   "pages": "44-44"
-  },
-  {
-   "id": "sec-041-1-x-x-est-une-pro-alg-ebre-de",
-   "title": "(X, x) est une pro-alg` ebre de",
-   "pages": "44-44"
-  },
-  {
-   "id": "sec-042-1-x-xzn-pour-z-la-s-erie-centrale-descendante-et",
-   "title": "(X, x)/ZN ), pour Z la s´ erie centrale descendante), et on d´ eﬁnitZ comme ´ etant",
-   "pages": "44-44"
-  },
-  {
-   "id": "sec-043-1-t",
-   "title": "(T ∗",
-   "pages": "44-45"
-  },
-  {
-   "id": "sec-044-1-x-y-πhℓ",
-   "title": "(X, y) → πH+ℓ",
-   "pages": "45-45"
-  },
-  {
-   "id": "sec-045-1-x-y-agit-par-composition-a-gauche-sur-p-hℓ",
-   "title": "(X, y) agit par composition ` a gauche sur P H+ℓ",
-   "pages": "45-45"
-  },
-  {
-   "id": "sec-046-1-x-y-on-d-eﬁnit",
-   "title": "(X, y), on d´ eﬁnit",
-   "pages": "45-47"
-  },
-  {
-   "id": "sec-047-1-gm-x-q1-tx-k-d-eﬁnit-une-extension-deq0-par-q1",
-   "title": "(Gm, x) = Q(1), t/x ∈ k∗ d´ eﬁnit une extension deQ(0) par Q(1), donc",
-   "pages": "47-47"
-  },
-  {
-   "id": "sec-048-411-pour-ﬁnir-la-preuve-de-44-il-reste-compte-te",
-   "title": "Pour ﬁnir la preuve de 4.4 il reste, compte tenu de ce que P H+ℓ",
-   "pages": "47-47"
-  },
-  {
-   "id": "sec-049-1-xz-p-hℓ",
-   "title": "(X,z) P H+ℓ",
-   "pages": "47-48"
-  },
-  {
-   "id": "sec-050-412-soit-x-une-vari-et-e-alg-ebrique-lisse-sur-u",
-   "title": "Soit X une vari´ et´ e alg´ ebrique lisse sur un corps de nombresk, et x, y ∈ X(k). On",
-   "pages": "48-48"
-  },
-  {
-   "id": "sec-051-1-x-d-x-πreal",
-   "title": "(X ∩ D, x) → πreal",
-   "pages": "48-48"
-  },
-  {
-   "id": "sec-052-1-x-x",
-   "title": "(X, x)",
-   "pages": "48-48"
-  },
-  {
-   "id": "sec-053-1-x-d-x-est-dans-rhℓ-et-dapr-es-44-motivique-r-e",
-   "title": "(X ∩ D, x) est dans RH+ℓ et, d’apr` es 4.4, motivique, r´ ealisation de πmot",
-   "pages": "48-48"
-  },
-  {
-   "id": "sec-054-1-x-x-est-une-sous-alg-ebre-de-celle-de-πreal",
-   "title": "(X, x) est une sous-alg` ebre de celle de πreal",
-   "pages": "48-48"
-  },
-  {
-   "id": "sec-055-1-x-d-x",
-   "title": "(X ∩ D, x),",
-   "pages": "48-48"
-  },
-  {
-   "id": "sec-056-1-xk-x-dans-m-tk-fonctoriel-en-k-ie-πmot",
-   "title": "(Xk′, x) dans M T(k′), fonctoriel en k′, i.e. πmot",
-   "pages": "48-49"
-  },
-  {
-   "id": "sec-057-1-x-x-torseurs-p-mot",
-   "title": "(X, x)-torseurs P mot",
-   "pages": "49-49"
-  },
-  {
-   "id": "sec-058-1-x-x-que-nous-savons-d-ej-a",
-   "title": "(X, x), que nous savons d´ ej` a",
-   "pages": "49-51"
-  },
-  {
-   "id": "sec-059-420-soit-σ-un-plongement-de-k-dans-une-clˆ-oture",
-   "title": "Soit σ un plongement de k dans une clˆ oture alg´ ebriqueC de R. Pour M dans",
-   "pages": "51-51"
-  },
-  {
-   "id": "sec-060-1-x-x-sur-le-motif-de-r-ealisation",
-   "title": "(X, x) sur le motif de r´ ealisation",
-   "pages": "51-51"
-  },
-  {
-   "id": "sec-061-423-remarque-soit-q-une-clˆ-oture-alg-ebrique-de",
-   "title": "Remarque. Soit ¯Q une clˆ oture alg´ ebrique deQ et d´ eﬁnissons MT(¯Q) comme la",
-   "pages": "51-53"
-  },
-  {
-   "id": "sec-062-52-si-x-et-y-sont-deux-points-base-43-de-x-lespa",
-   "title": "Si x et y sont deux points-base (4.3) de X, l’espace de chemins motivique Py,x est",
-   "pages": "53-53"
-  },
-  {
-   "id": "sec-063-53-pour-z-dans-p1",
-   "title": "Pour z dans P1",
-   "pages": "53-54"
-  },
-  {
-   "id": "sec-064-54-soient-t-une-droite-sch-ema-vectoriel-de-dime",
-   "title": "Soient T une droite (sch´ ema vectoriel de dimension un) et T ∗ = T − { 0}. Le π1",
-   "pages": "54-54"
-  },
-  {
-   "id": "sec-065-55-on-dispose-sur-le-syst-eme-des-mt-o1n-sch-ema",
-   "title": "On dispose sur le syst` eme des MT( O[1/N])-sch´ emasPy,x (x, y ∈ S := {0, ∞} ∪ µN )",
-   "pages": "54-56"
-  },
-  {
-   "id": "sec-066-58-prenons-pour-foncteur-ﬁbre-le-foncteur-ﬁbre-ω",
-   "title": "Prenons pour foncteur ﬁbre le foncteur ﬁbre ω, et d´ ecrivons la structure d’esp` ece",
-   "pages": "56-59"
-  },
-  {
-   "id": "sec-067-512-si-on-transporte-a-la-copie",
-   "title": "Si on transporte ` a la copie ∏",
-   "pages": "59-60"
-  },
-  {
-   "id": "sec-068-514-remarque-i-on-a",
-   "title": "Remarque. (i) On a",
-   "pages": "60-63"
-  },
-  {
-   "id": "sec-069-519-notons-encore-aσ-un-el-ement-de-gω-mto1n-ima",
-   "title": "Notons encore aσ un ´ el´ ement de Gω ⟨MT(O[1/N])⟩ image d’un ´ el´ ement",
-   "pages": "63-64"
-  },
-  {
-   "id": "sec-070-520-supposons-que-n-1-on-a-k-q-σ-est-unique-choi",
-   "title": "Supposons que N = 1. On a k = Q; σ est unique. Choisissons a0",
-   "pages": "64-65"
-  },
-  {
-   "id": "sec-071-522-pour-n-3-k-est-totalement-complexe-le-coeﬃci",
-   "title": "Pour N ≥ 3, k est totalement complexe. Le coeﬃcient de eζ dans dch(σ) est − log(1−",
-   "pages": "65-66"
-  },
-  {
-   "id": "sec-072-523-permettons-a-nouveau-a-n-dˆ-etre-un-quelconq",
-   "title": "Permettons ` a nouveau ` a N d’ˆ etre un quelconque entier ≥ 1. Puisque dch( σ) est",
-   "pages": "66-67"
-  },
-  {
-   "id": "sec-073-527-la-conjonction-de-a-toute-relation-q-lin-eai",
-   "title": "La conjonction de (a) toute relation Q-lin´ eaire entre les coeﬃcients de dch( σ) est",
-   "pages": "67-70"
-  },
-  {
-   "id": "sec-074-61-avec-les-notations-de-51-pour-tout-point-base",
-   "title": "Avec les notations de 5.1, pour tout point base x, l’inclusion de X dans A∗ induit un",
-   "pages": "70-70"
-  },
-  {
-   "id": "sec-075-62-en-r-ealisationω-lalg-ebre-de-lie-de-π1x-x-es",
-   "title": "En r´ ealisationω, l’alg` ebre de Lie de π1(X, x) est L",
-   "pages": "70-71"
-  },
-  {
-   "id": "sec-076-63-le-mt-o1n-sch-ema-en-groupe-v-de-515-agit-sur",
-   "title": "Le MT( O[1/N])-sch´ ema en groupe V de 5.15 agit sur P0,0 et P1,0. On d´ eﬁnit la",
-   "pages": "71-74"
-  },
-  {
-   "id": "sec-077-610-preuve-de-68-pour-σ-un-plongement-complexe-d",
-   "title": "Preuve de 6.8. Pour σ un plongement complexe de k, posons",
-   "pages": "74-84"
-  },
-  {
-   "id": "sec-078-v-voevodsky-triangulated-categories-of-motives-o",
-   "title": "Voevodsky. Triangulated categories of motives over a ﬁeld , in: Cycles, transfer and",
-   "pages": "84-84"
-  },
-  {
-   "id": "sec-079-l-c-washington-introduction-to-cyclotomic-ﬁelds",
-   "title": "C. Washington. Introduction to cyclotomic ﬁelds – graduate texts in Math. 81, Springer",
-   "pages": "84-84"
+   "id": "sec-007-6-profondeur",
+   "title": "Profondeur",
+   "pages": "70-84"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

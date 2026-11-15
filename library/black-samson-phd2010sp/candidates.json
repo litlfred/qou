@@ -1,0 +1,176 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "black-samson-phd2010sp",
+ "source": {
+  "structure_sha256": "c16799b0bd54ff292132f4ce777fae56d016b42a2673c5dd237277b15e301d9d",
+  "file": "Black_Samson_phd2010sp.pdf"
+ },
+ "provenance": {
+  "title": "REPRESENTATIONS OF HECKE",
+  "authors": "ALGEBRAS AND THE",
+  "arxiv": null,
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 10,
+  "by_kind": {
+   "recommendation": 10
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "But, first we must generalize Schur-Weyl duality is several ways.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-iii-schur-weyl-duality-and-quotients-of-the-heck.md",
+   "section_title": "SCHUR-WEYL DUALITY AND QUOTIENTS OF THE HECKE ALGEBRA",
+   "pages": "29-30",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "However, we shall only consider the cases (min) = (210) in connection to the Jones polynomial and (Ill) in connection to the Alexander polynomial.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-iii-schur-weyl-duality-and-quotients-of-the-heck.md",
+   "section_title": "SCHUR-WEYL DUALITY AND QUOTIENTS OF THE HECKE ALGEBRA",
+   "pages": "29-30",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This multiplication satisfies the axioms of a superbracket, namely for homogeneous elements X, Y, Z with IXI = i, fYl = j, IZI = k, [X, Y] + (-l)ij [y, X] = 0 (_l)ki[X, [Y, Z]] + (-l)ij [Y, [Z, X]] + (-l)jk[Z, [X, Y]] = 0 (super-skew commutativity) (super-Jacobi), (III.24) III.4,2, The Quantum Supergroup Uv(gl(111)) In the sequel, we shall only be interested in the quantum supergroup associated to the Lie superalgebra 9 = gl(111).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-008-ilia-the-quantum-supergroup-uv-g111.md",
+   "section_title": "IlIA. The Quantum Supergroup Uv (g[(111))",
+   "pages": "36-42",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "H,-:I on Xc from Theorem IV.1.3 are pictured in (IV.14). r r+1 Cr Cr+l C,'+I Cr a,,(c) I + br(c) X Cr cr+l Cr cr+l (IV.14) Cr c,'+1 cr+1 C\" ar(c) I + br(c) X Cr C,'+I Cr Cr+l Moreover, if r = 1, the second term on the right hand side should be omitted.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-010-iv-2-construction-of-the-state-sum.md",
+   "section_title": "2. Construction of the State-sum",
+   "pages": "45-48",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Since the function A is defined on the set of words in the braid generators, we must show that A is well- defined on the braid group.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-012-v-combinatorial-proof.md",
+   "section_title": "COMBINATORIAL PROOF",
+   "pages": "49-49",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We must show that A7T ((Jr(J;I) = 1 when 7r = 1 and 0 otherwise.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-013-vl-braid-group-invariance.md",
+   "section_title": "V.l. Braid Group Invariance",
+   "pages": "49-51",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "To prove invariance under the stabilization move (II.3), observe that the crossing ad must be resolved straight through in order to form an admissible permutation diagram.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-014-v2-markov-jvloves.md",
+   "section_title": "V.2. Markov JVloves",
+   "pages": "51-58",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "If 7r = 1, so x is admissible, then Y\u00b1 must be resolved straight through to form states.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-014-v2-markov-jvloves.md",
+   "section_title": "V.2. Markov JVloves",
+   "pages": "51-58",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Any state for aO'; 1 must have y \u00b1 with a crossing of strands rand r + 1.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-014-v2-markov-jvloves.md",
+   "section_title": "V.2. Markov JVloves",
+   "pages": "51-58",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "And, of course, I must acknowledge all the help and camaraderie provided by my office mates past and present: Chad, Aaron, and Jonathan, thank you.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

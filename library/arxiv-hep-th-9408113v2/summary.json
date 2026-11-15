@@ -3,419 +3,88 @@
  "doc_id": "arxiv-hep-th-9408113v2",
  "source_sha256": "dadd96e1155e820f",
  "brief": "Dilogarithm identities — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view.",
- "extended": "**Dilogarithm identities**\n\n*Department of Mathematical Sciences, University of Tokyo*\n\n96 pp, 80 sections.\n\n**Abstract.** We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view. We prove that a lot of dilogarithm identities (hypothetically all!) can be obtained by using the ﬁve-term relation only. Amon g those the Coxeter, Lewin, Loxton and Browkin ones are contained. Accessibility of Lewin’s one v ariable and Ray’s multivariable (here for n≤ 2 only) functional equations is given. For odd levels the ˆsl2 case of Kuniba-Nakanishi’s dilogarithm conjecture is proven and additional results about remainder term are obtained. The connections between dilogarithm identities and Rogers-Ramanujan-Andrews-Gordon type partition identities via their asymp- totic behavior are discussed. Some new results about the string functions for levelk vacuum representation of the aﬃne Lie algebra ˆsln are obtained.\n\n**Outline.** 2 Anatol N. Kirillov; Abstract; V Kac, D. Peterson, M. Wakimoto, B. Feigin, D.; 4 Anatol N. Kirillov; 6 Anatol N. Kirillov; 1 L(x) +L(1−x) = π2; 2 L(x) +L(y) = L(xy) +L; 8 Anatol N. Kirillov; 10 Anatol N. Kirillov; 2 (3−; 12 Anatol N. Kirillov; 14 Anatol N. Kirillov; 16 Anatol N. Kirillov; 7 L(1), 2L(γ) +L(γ2) = 8; 5 L(1), j = 0, 1. (1.17); 7 L(1). (1.18); 18 Anatol N. Kirillov; L Lewin [Le2] who observed the parallel with W\n\n**Extracted claims (proposals, not verified).**\n- Theorem: A (W. Spence (1809), N. Abel (1830), C. Hill (1830), E. Kummer ( 1840)).\n- Theorem: B (Cf. [Ro], Section 4) Let f (x) be a function of class C3((0, 1)) which\n- Theorem 1: The following single–variable functional equations (1.13 ), (1.14) and\n- Theorem 3: Let r be an odd positive integer and j be an integer such that\n- Theorem 4: Let r and j be the positive integers such that r≥ 2j + (−1)j+1 and\n- Theorem 5: i) (Duality) If 0 ≤s≤j− 3, then ~bj(s) +~bj(j− 3−s) =",
+ "extended": "**Dilogarithm identities**\n\n*ANATOL N. KIRILLOV*\n\n96 pp, 14 sections.\n\n**Abstract.** We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view. We prove that a lot of dilogarithm identities (hypothetically all!) can be obtained by using the ﬁve-term relation only. Among those the Coxeter, Lewin, Loxton and Browkin ones are contained. Accessibility of Lewin’s one variable and Ray’s multivariable (here for n ≤2 only) functional equations is given. For odd levels the c sl2 case of Kuniba-Nakanishi’s dilogarithm conjecture is proven and additional results about remainder term are obtained. The connections between dilogarithm identities and Rogers-Ramanujan-Andrews-Gordon type partition identities via their asymp- totic behavior are discussed. Some new results about the string functions for level k vacuum representation of the aﬃne Lie algebra c sln are obtained.\n\n**Outline.** Front matter; 0 Introduction.; 0.1 Ubiquity of polylogarithms.; 0.2 Dilogarithm.; 1.2 Accessible dilogarithm relations.; 1.3 Dilogarithm identities and conformal weigh; 1.4 Kuniba-Nakanishi’s dilogarithm conjecture.; 1.6 Exercises to Section 1.; 2.1 Dilogarithm and partitions.; 2.2 Dilogarithm and characters of the aﬃne Kac; 2.4 Connection with crystal basis.; 2.5 Quantum dilogarithm.; References*; E K.Lloyd), London Math. Soc., Lecture Note Se",
  "tokens": {
   "brief": 42,
-  "extended": 490
+  "extended": 355
  },
  "sections": [
   {
-   "id": "sec-000-2-anatol-n-kirillov",
-   "title": "Anatol N. Kirillov",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-abstract",
-   "title": "Abstract",
+   "id": "sec-000-0-introduction",
+   "title": "Introduction.",
    "pages": "1-2"
   },
   {
-   "id": "sec-002-v-kac-d-peterson-m-wakimoto-b-feigin-d-fuchs-e-f",
-   "title": "Kac, D. Peterson, M. Wakimoto, B. Feigin, D. Fuchs, E. Fren kel,... )",
-   "pages": "2-4"
+   "id": "sec-001-01-ubiquity-of-polylogarithms",
+   "title": "Ubiquity of polylogarithms.",
+   "pages": "2-3"
   },
   {
-   "id": "sec-003-4-anatol-n-kirillov",
-   "title": "Anatol N. Kirillov",
-   "pages": "4-6"
+   "id": "sec-002-02-dilogarithm",
+   "title": "Dilogarithm.",
+   "pages": "3-10"
   },
   {
-   "id": "sec-004-6-anatol-n-kirillov",
-   "title": "Anatol N. Kirillov",
-   "pages": "6-6"
+   "id": "sec-003-12-accessible-dilogarithm-relations",
+   "title": "Accessible dilogarithm relations.",
+   "pages": "10-23"
   },
   {
-   "id": "sec-005-1-lx-l1x-π2",
-   "title": "L(x) +L(1−x) = π2",
-   "pages": "6-6"
+   "id": "sec-004-13-dilogarithm-identities-and-conformal-weights",
+   "title": "Dilogarithm identities and conformal weights.",
+   "pages": "23-26"
   },
   {
-   "id": "sec-006-2-lx-ly-lxy-l",
-   "title": "L(x) +L(y) = L(xy) +L",
-   "pages": "6-8"
+   "id": "sec-005-14-kuniba-nakanishis-dilogarithm-conjecture",
+   "title": "Kuniba-Nakanishi’s dilogarithm conjecture.",
+   "pages": "26-31"
   },
   {
-   "id": "sec-007-8-anatol-n-kirillov",
-   "title": "Anatol N. Kirillov",
-   "pages": "8-10"
+   "id": "sec-006-16-exercises-to-section-1",
+   "title": "Exercises to Section 1.",
+   "pages": "31-34"
   },
   {
-   "id": "sec-008-10-anatol-n-kirillov",
-   "title": "Anatol N. Kirillov",
-   "pages": "10-10"
+   "id": "sec-007-21-dilogarithm-and-partitions",
+   "title": "Dilogarithm and partitions.",
+   "pages": "34-53"
   },
   {
-   "id": "sec-009-2-3",
-   "title": "(3−",
-   "pages": "10-12"
+   "id": "sec-008-22-dilogarithm-and-characters-of-the-aﬃne-kac-mo",
+   "title": "Dilogarithm and characters of the aﬃne Kac-Moody algebras.",
+   "pages": "53-60"
   },
   {
-   "id": "sec-010-12-anatol-n-kirillov",
-   "title": "Anatol N. Kirillov",
-   "pages": "12-14"
+   "id": "sec-009-24-connection-with-crystal-basis",
+   "title": "Connection with crystal basis.",
+   "pages": "60-79"
   },
   {
-   "id": "sec-011-14-anatol-n-kirillov",
-   "title": "Anatol N. Kirillov",
-   "pages": "14-16"
+   "id": "sec-010-25-quantum-dilogarithm",
+   "title": "Quantum dilogarithm.",
+   "pages": "79-89"
   },
   {
-   "id": "sec-012-16-anatol-n-kirillov",
-   "title": "Anatol N. Kirillov",
-   "pages": "16-16"
+   "id": "sec-011-references",
+   "title": "References*",
+   "pages": "89-95"
   },
   {
-   "id": "sec-013-7-l1-2lγ-lγ2-8",
-   "title": "L(1), 2L(γ) +L(γ2) = 8",
-   "pages": "16-16"
-  },
-  {
-   "id": "sec-014-5-l1-j-0-1-117",
-   "title": "L(1), j = 0, 1. (1.17)",
-   "pages": "16-17"
-  },
-  {
-   "id": "sec-015-7-l1-118",
-   "title": "L(1). (1.18)",
-   "pages": "17-18"
-  },
-  {
-   "id": "sec-016-18-anatol-n-kirillov",
-   "title": "Anatol N. Kirillov",
-   "pages": "18-18"
-  },
-  {
-   "id": "sec-017-l-lewin-le2-who-observed-the-parallel-with-watso",
-   "title": "Lewin [Le2] who observed the parallel with Watson’s three identities and conjectured",
-   "pages": "18-19"
-  },
-  {
-   "id": "sec-018-3-l1-2",
-   "title": "L(1) = 2",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-019-3-ly-6l1-6l1-16",
-   "title": "L(y) + 6L(1) = 6L(1)− 16",
-   "pages": "19-20"
-  },
-  {
-   "id": "sec-020-20-anatol-n-kirillov",
-   "title": "Anatol N. Kirillov",
-   "pages": "20-20"
-  },
-  {
-   "id": "sec-021-3-ly-lz-2",
-   "title": "(L(y) +L(z)) = 2",
-   "pages": "20-20"
-  },
-  {
-   "id": "sec-022-123-lewins-dilogarithm-identity-related-with-x-1",
-   "title": "Lewin’s dilogarithm identity related with x = 1",
-   "pages": "20-22"
-  },
-  {
-   "id": "sec-023-22-anatol-n-kirillov",
-   "title": "Anatol N. Kirillov",
-   "pages": "22-24"
-  },
-  {
-   "id": "sec-024-24-anatol-n-kirillov",
-   "title": "Anatol N. Kirillov",
-   "pages": "24-24"
-  },
-  {
-   "id": "sec-025-2-level---rank-duality",
-   "title": "(Level - rank duality)",
-   "pages": "24-26"
-  },
-  {
-   "id": "sec-026-26-anatol-n-kirillov",
-   "title": "Anatol N. Kirillov",
-   "pages": "26-28"
-  },
-  {
-   "id": "sec-027-28-anatol-n-kirillov",
-   "title": "Anatol N. Kirillov",
-   "pages": "28-30"
-  },
-  {
-   "id": "sec-028-30-anatol-n-kirillov",
-   "title": "Anatol N. Kirillov",
-   "pages": "30-31"
-  },
-  {
-   "id": "sec-029-1-using-the-integral-representation-11-for-the-e",
-   "title": "Using the integral representation (1.1) for the Euler dilog arithm Li 2(x), prove the",
-   "pages": "31-31"
-  },
-  {
-   "id": "sec-030-2-li2z2",
-   "title": "Li2(z2),",
-   "pages": "31-31"
-  },
-  {
-   "id": "sec-031-2-prove-the-following-ﬁve-term-two-variable-func",
-   "title": "Prove the following ﬁve-term, two-variable functional equ ations",
-   "pages": "31-31"
-  },
-  {
-   "id": "sec-032-3-prove-the-following-nine-term-three-variable-f",
-   "title": "Prove the following nine-term, three-variable functional equations",
-   "pages": "31-31"
-  },
-  {
-   "id": "sec-033-4-prove-lrθ-relreiθ-rθ-r",
-   "title": "Prove (L(r,θ ) := ReL(reiθ), r,θ∈ R)",
-   "pages": "31-32"
-  },
-  {
-   "id": "sec-034-6-prove-the-accessibility-of-the-following-dilog",
-   "title": "Prove the accessibility of the following dilogarithm ident ities",
-   "pages": "32-32"
-  },
-  {
-   "id": "sec-035-8-prove-the-coxeter-and-lewin-relations-111-and",
-   "title": "Prove the Coxeter and Lewin relations (1.11) and (1.12) usin g the Ray multivariable",
-   "pages": "32-33"
-  },
-  {
-   "id": "sec-036-11-we-use-the-notation-of-section-15-let-us-deﬁn",
-   "title": "(We use the notation of Section 1.5). Let us deﬁne for a given p ositive rational",
-   "pages": "33-33"
-  },
-  {
-   "id": "sec-037-12-let-us-deﬁne-rogers-trilogarithm-as",
-   "title": "Let us deﬁne Rogers’ trilogarithm as",
-   "pages": "33-34"
-  },
-  {
-   "id": "sec-038-2-5",
-   "title": "(5−",
-   "pages": "34-34"
-  },
-  {
-   "id": "sec-039-211-rogers-ramanujan-and-gordon-andrews-identiti",
-   "title": "Rogers-Ramanujan and Gordon-Andrews identities",
-   "pages": "34-35"
-  },
-  {
-   "id": "sec-040-10-reduction-to-ﬁnite-dimensional-polynomial-cas",
-   "title": "Reduction to ﬁnite dimensional (polynomial) case. Note th at it is suﬃcient to",
-   "pages": "35-35"
-  },
-  {
-   "id": "sec-041-2-2k3m2m",
-   "title": "((2k+3)m2+m)",
-   "pages": "35-35"
-  },
-  {
-   "id": "sec-042-20-generalization-it-is-clear-that-one-can-deduc",
-   "title": "Generalization. It is clear that one can deduce (2 .3)N from the more general",
-   "pages": "35-41"
-  },
-  {
-   "id": "sec-043-1-using-the-jacobi-triple-product-identity-prove",
-   "title": "Using the Jacobi triple product identity, prove",
-   "pages": "41-41"
-  },
-  {
-   "id": "sec-044-2-prove-a-q-analog-of-the-binomial-series",
-   "title": "Prove a q-analog of the binomial series",
-   "pages": "41-42"
-  },
-  {
-   "id": "sec-045-3-using-the-result-of-exercise-2-prove-the-raman",
-   "title": "Using the result of Exercise 2, prove the Ramanujan 1ψ1 summation formula",
-   "pages": "42-42"
-  },
-  {
-   "id": "sec-046-4-deduce-from-ramanujans-1ψ1-summation-formula-t",
-   "title": "Deduce from Ramanujan’s 1ψ1-summation formula the following identities",
-   "pages": "42-42"
-  },
-  {
-   "id": "sec-047-5-let-x-denote-the-largest-integer-x-prove",
-   "title": "Let [x] denote the largest integer ≤x. Prove",
-   "pages": "42-42"
-  },
-  {
-   "id": "sec-048-2-n-5k-a",
-   "title": "(N− 5k) +a",
-   "pages": "42-43"
-  },
-  {
-   "id": "sec-049-6-deduce-from-exercise-5-the-rogers-ramanujan-id",
-   "title": "Deduce from Exercise 5 the Rogers-Ramanujan identities ( a = 0 or 1)",
-   "pages": "43-44"
-  },
-  {
-   "id": "sec-050-2-2l3mm1l2jm",
-   "title": "(2l+3)m(m+1)−(l+2+j)m",
-   "pages": "44-47"
-  },
-  {
-   "id": "sec-051-2-bn1",
-   "title": "B(N−1)",
-   "pages": "47-50"
-  },
-  {
-   "id": "sec-052-8-prove-the-following-generalizations-of-the-gor",
-   "title": "Prove the following generalizations of the Gordon-Andrews identity (2.1):",
-   "pages": "50-50"
-  },
-  {
-   "id": "sec-053-9-prove-the-following-identity",
-   "title": "Prove the following identity",
-   "pages": "50-51"
-  },
-  {
-   "id": "sec-054-11-prove-the-following-polynomial-identities-a-0",
-   "title": "Prove the following polynomial identities ( a = 0, 1)",
-   "pages": "51-51"
-  },
-  {
-   "id": "sec-055-2-1aq2iaqij1q1",
-   "title": "(1−aq2i)(aq)i+j−1(q)−1",
-   "pages": "51-52"
-  },
-  {
-   "id": "sec-056-2-1aq2nan",
-   "title": "(1−aq2n)(a)n",
-   "pages": "52-55"
-  },
-  {
-   "id": "sec-057-23-dilogarithm-identities-and-algebraic-k-theory",
-   "title": "Dilogarithm identities and algebraic K-theory (A. Suslin, S. Bloch,",
-   "pages": "55-58"
-  },
-  {
-   "id": "sec-058-3-ck-24hj",
-   "title": "(ck− 24h(j)",
-   "pages": "58-60"
-  },
-  {
-   "id": "sec-059-3-cn",
-   "title": "(c(n)",
-   "pages": "60-60"
-  },
-  {
-   "id": "sec-060-3-f-the-indecomposable-part-of",
-   "title": "(F ) (the indecomposable part of",
-   "pages": "60-63"
-  },
-  {
-   "id": "sec-061-2-kλn-1λ-n-q-qnλ",
-   "title": "KλN ,(1|λ N |)(q) = qn(λ′)",
-   "pages": "63-63"
-  },
-  {
-   "id": "sec-062-2-m2",
-   "title": "(m2",
-   "pages": "63-63"
-  },
-  {
-   "id": "sec-063-v-kac-kac-141210-for-the-inﬁnite-rank-aﬃne-algeb",
-   "title": "Kac ([Kac], (14.12.10)): for the inﬁnite rank aﬃne algebr a of type A∞",
-   "pages": "63-68"
-  },
-  {
-   "id": "sec-064-2-ls1",
-   "title": "L+S+1",
-   "pages": "68-70"
-  },
-  {
-   "id": "sec-065-243-levelk-vacuum-representation-kλ-0-of-the-aﬃn",
-   "title": "Levelk vacuum representation kΛ 0 of the aﬃne Lie algebra ˆsl2",
-   "pages": "70-70"
-  },
-  {
-   "id": "sec-066-2-nµn-244µ",
-   "title": "(n(µ′)−N). (2.44)µ",
-   "pages": "70-71"
-  },
-  {
-   "id": "sec-067-2-nq",
-   "title": "Nq",
-   "pages": "71-76"
-  },
-  {
-   "id": "sec-068-1-let-µ-be-a-composition-lµ-n-consider-the-set",
-   "title": "Let µ be a composition, l(µ) = n. Consider the set",
-   "pages": "76-77"
-  },
-  {
-   "id": "sec-069-3-given-two-partitions-λ-and-µλ-µ-and-a-natural",
-   "title": "Given two partitions λ and µ,|λ| =|µ|, and a natural number k. Let us consider",
-   "pages": "77-78"
-  },
-  {
-   "id": "sec-070-4-prove-the-following-relations",
-   "title": "Prove the following relations",
-   "pages": "78-80"
-  },
-  {
-   "id": "sec-071-2-f-n-f-m",
-   "title": "(f (N ) +f (M )) +",
-   "pages": "80-82"
-  },
-  {
-   "id": "sec-072-1-let-us-consider-a-function-ϕa",
-   "title": "Let us consider a function ϕ(a)",
-   "pages": "82-83"
-  },
-  {
-   "id": "sec-073-2-let-us-consider-the-theta-function-θa-ϕaϕa11-s",
-   "title": "Let us consider the theta-function θ(a) := [ϕ(a)ϕ(a−1)]−1. Show that",
-   "pages": "83-83"
-  },
-  {
-   "id": "sec-074-3-let-us-consider-a-function-f-a-f-za-ϕzaϕa-show",
-   "title": "Let us consider a function f (a) := f (z,a ) = ϕ(za)/ϕ(a). Show that",
-   "pages": "83-83"
-  },
-  {
-   "id": "sec-075-4-let-us-consider-a-function-πa-πza-ϕzaϕza1-show",
-   "title": "Let us consider a function π(a) := π(z,a ) = ϕ(za)ϕ(za−1). Show that",
-   "pages": "83-85"
-  },
-  {
-   "id": "sec-076-6-let-us-consider-a-function-cf-fv-rza-θaπza-sho",
-   "title": "Let us consider a function (cf. [FV]) r(z,a ) = θ(a)π(z,a ). Show that",
-   "pages": "85-85"
-  },
-  {
-   "id": "sec-077-7-let-wq-be-the-algebra-over-the-ﬁeld-of-rationa",
-   "title": "Let Wq be the algebra over the ﬁeld of rational functions C(q) generated by a and",
-   "pages": "85-86"
-  },
-  {
-   "id": "sec-078-8-consider-an-element-f-ab",
-   "title": "Consider an element f (a,b ) =",
-   "pages": "86-86"
-  },
-  {
-   "id": "sec-079-9-quantum-polylogarithm-let-us-deﬁne-the-quantum",
-   "title": "(Quantum polylogarithm). Let us deﬁne the quantum polyloga rithm as the following",
-   "pages": "86-96"
+   "id": "sec-012-e-klloyd-london-math-soc-lecture-note-series-no8",
+   "title": "K.Lloyd), London Math. Soc., Lecture Note Series, No.82, Cambridge University",
+   "pages": "95-96"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

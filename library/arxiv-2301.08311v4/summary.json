@@ -2,22 +2,27 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2301.08311v4",
  "source_sha256": "385139c69e18f5b0",
- "brief": "FLOER COHOMOLOGY AND HIGHER MUTATIONS SOHAM CHANDA — We extend the construction of higher mutation as introduced in [PT20] to local higher mutation, which is applicable to a larger class of monotone",
- "extended": "**FLOER COHOMOLOGY AND HIGHER MUTATIONS SOHAM CHANDA**\n\n73 pp, 8 sections.\n\n**Abstract.** We extend the construction of higher mutation as introduced in [PT20] to local higher mutation, which is applicable to a larger class of monotone Lagrangians. In two-dimensional Lagrangians, local higher mutation is the same as performing a Lagrangian anti-surgery in the sense of [Hau20] followed by a Lagrangian surgery. We prove that up to a change of local systems, the Lagrangian intersection Floer cohomology of a pair of Lagrangians is invariant under local mutation. This result generalizes the wall-crossing formula in [PT20]. For two-dimensional Lagrangians, this result agrees with the invariance result in [PW19].\n\n**Outline.** 1 Introduction; 2 Local Mutation; 3 SFT Compactness; 4 Constructing Moduli Space of Broken Maps; 5 Regularity; 6 Classifying Rigid Broken Maps; 7 Floer Cohomology and Mutations; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3.3: of [PT20] if the symplectic form is rational and the Lagrangian L satisfies certain\n- Theorem 1.2: Let M,L,K be manifolds as described in C[1-9].\n- Theorem 60.26: in [FOOO07] and Proposition 5.13 in [PW19].\n- Theorem 3.5: For any δ∈ (0,i Λ) and holomorphic strip u : [0,∞)×\n- Theorem 3.1: and 3.2 the exponential convergence of finite energy strips with boundary on clean\n- Theorem 3.2: in [Sch16] we get, for some vertical v∈T∞CP1,→Tq∞N , s0> 0 and any δ∈ (0,i Λ),",
+ "brief": "FLOER COHOMOLOGY AND HIGHER MUTATIONS — We extend the construction of higher mutation as introduced in [PT20] to local higher mutation, which is applicable to a larger class of monotone Lagrangians.",
+ "extended": "**FLOER COHOMOLOGY AND HIGHER MUTATIONS**\n\n*SOHAM CHANDA*\n\n73 pp, 9 sections.\n\n**Abstract.** We extend the construction of higher mutation as introduced in [PT20] to local higher mutation, which is applicable to a larger class of monotone Lagrangians. In two-dimensional Lagrangians, local higher mutation is the same as performing a Lagrangian anti-surgery in the sense of [Hau20] followed by a Lagrangian surgery. We prove that up to a change of local systems, the Lagrangian intersection Floer cohomology of a pair of Lagrangians is invariant under local mutation. This result generalizes the wall-crossing formula in [PT20]. For two-dimensional Lagrangians, this result agrees with the invariance result in [PW19].\n\n**Outline.** Front matter; 1 Introduction; 2 Local Mutation; 3 SFT Compactness; 4 Constructing Moduli Space of Broken Maps; 5 Regularity; 6 Classifying Rigid Broken Maps; 7 Floer Cohomology and Mutations; References",
  "tokens": {
   "brief": 49,
-  "extended": 362
+  "extended": 233
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-6"
+   "pages": "1-7"
   },
   {
    "id": "sec-001-2-local-mutation",
    "title": "Local Mutation",
-   "pages": "6-14"
+   "pages": "7-14"
   },
   {
    "id": "sec-002-3-sft-compactness",
@@ -27,12 +32,12 @@
   {
    "id": "sec-003-4-constructing-moduli-space-of-broken-maps",
    "title": "Constructing Moduli Space of Broken Maps",
-   "pages": "30-43"
+   "pages": "30-44"
   },
   {
    "id": "sec-004-5-regularity",
    "title": "Regularity",
-   "pages": "43-54"
+   "pages": "44-54"
   },
   {
    "id": "sec-005-6-classifying-rigid-broken-maps",
@@ -54,8 +59,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

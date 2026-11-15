@@ -8,8 +8,9 @@ pages: 1-8
 source_pdf: ant-v14-n7-s-p03.pdf
 source_sha256: e32fde16c3ce0940
 toc_source: inferred
+doc_brief: "Nouvelles cohomologies de Weil en caractéristique positive — periods” admitting an explicit description by generators and relations."
 ---
-1747
+Introduction
 2.
 Motifs algébriques et motifs rigides
 1754

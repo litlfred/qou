@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES — This work forms a foundational study of factorization homology, or topological chiral homology, at the generality of stratiﬁed spaces with tangential"
 ---
 In this section we give two classes of examples of homology theories.  
 The first class is quite formal, and depends only on the homotopy type of the tangent classifier, ${\sf Entr}(X)\xra{\tau_X} \cB$, of a $\cB$-manifold.

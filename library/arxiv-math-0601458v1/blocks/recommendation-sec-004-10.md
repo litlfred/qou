@@ -1,0 +1,1 @@
+It should be clear that $A$ acts like differentiation, by seeing how it acts on $Z^n$, since $A ( Z^n )$ is the structure which, to put it on a set, means putting the structure of "being a totally ordered $n$-element set" on $S \cup \{ \star \}$.

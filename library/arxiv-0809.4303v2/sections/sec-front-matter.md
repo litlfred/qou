@@ -8,6 +8,7 @@ pages: 1-10
 source_pdf: 0809.4303v2.pdf
 source_sha256: 21e28259b9c8542f
 toc_source: inferred
+doc_brief: "Exact vortex solutions in an extended Skyrme-Faddeev model — We construct exact vortex solutions in 3 + 1 dimensions to a theory which is an extension, due to Gies, of the Skyrme-Faddeev model, and"
 ---
 arXiv:0809.4303v2  [hep-th]  5 May 2009
 Exact vortex solutions in an extended Skyrme-Faddeev model
@@ -70,7 +71,6 @@ action for the SU(2) Yang-Mills theory obtained in [11]. Despite of that signatu
 solutions belong to a sector of the theory where the energy is positive deﬁnite. Solutions
 for the conformally invariant version of the model, namely the theory (1) without the ﬁrst
 term (M = 0), have been constructed and will be given in a separate paper [13].
-1
 The solutions we construct in this paper can be best explained by using the stereo-
 graphic projection of S2 in terms of a complex scalar ﬁeld u, i.e.⃗
 n =
@@ -141,7 +141,6 @@ e2
 (9)
 2Notice that this theory has a set of trivial plane wave solutions given by u = Aei kµ xµ, with the
 wave vector satisfying either k2 = 0 or k2 = −(1+A2)
-2
 4 A2
 M2
 β . Plane wave solutions for the SF model were
@@ -194,7 +193,6 @@ deﬁned by the equations (∂µu)2 = 0, and ∂2u = 0, together with the condit
 fact, the ﬁrst equation in (13) correspond to the Bogomolny equation, or equivalently the
 3We are grateful to Prof. D. Fairlie for pointing to us that a large class of implicit solutions for the
 wave equation and the constraint (7) is given in [18], and that they are related to the solutions (14).
-3
 Cauchy-Riemann equations, leading to static solutions of that model in 2 + 1 dimensions
 [20]. The relation between the Bogomolny equation and the constraint (7) was already
 pointed out in [16] when the generalization of the zero curvature condition was applied
@@ -246,7 +244,6 @@ Hc
 (1+ | u |2)2
 h
 | ∂1u + iε1∂2u |2 + | ∂3u + ε2∂0u |2
-4
 +
 iε1 (∂1u∂2u∗−∂2u∂1u∗) −ε2 (∂3u∂0u∗+ ∂0u∂3u∗)]
 ≥
@@ -319,7 +316,6 @@ non-vanishing is that the ﬁeld u should be time dependent. Therefore, all the 
 (ρ/a)−2 n
 (1+(ρ/a)−2 n)
 2
-5
 associated to (8) vanish when evaluated on the static vortex solutions (16). However,
 the vortices (17), with waves travelling along them, are time dependent solutions and so
 can have non-vanishing charges associated to (8). Consequently that inﬁnite number of
@@ -359,7 +355,6 @@ One of them is that associated to the symmetry u →eiα u, discussed above. How
 when the contraint (7) is imposed the reduced model gets an inﬁnite number of conserved
 currents given by (8). Such currents can not be of the Noether type5 because the reduced
 5Except for those three currents associated to the global SO(3) symmetry of (1), contained in (8).
-6
 system of equations, namely ∂2u = 0 and (∂µu)2 = 0, does not possess a Lagrangian
 and so the Noether theorem does not apply. Such currents can be understood as hidden
 symmetries of the reduced model by constructing them using a zero curvature represen-
@@ -396,7 +391,6 @@ have opposite signs. We are then in a situation which diﬀers from that conside
 where the signs of the three terms in (1) were chosen to give positive contributions to the
 static energy. See also [25] for a discussion on solutions of that type of model. We are
 however in agreement with the situation in [11]. Indeed, consider the action (1) in four
-7
 dimensional Euclidean space and take β and e2 to be negative. We then have the same
 sign structure of the eﬀective action given in eq. (14) of [11]. In fact, the condition (11)
 corresponds to the following relation among the parameters of [11]
@@ -419,4 +413,3 @@ and the hospitality at their institutions where part of this work was done. He i
 very grateful to Prof. H. Gies (Jena Univ.), Prof. J. Sanchez Guill´en (Univ. Santiago
 de Compostela), and Prof. W.J. Zakrzewski (Univ. of Durham) for suggestions and a
 careful reading of the manuscript.
-8

@@ -7,10 +7,11 @@ section_number: 1.2
 pages: 8-9
 source_pdf: 1504.07260v3.pdf
 source_sha256: 707cb014400a3f05
-doc_brief: "Fricke S-duality in CHL models — We consider four dimensional CHL models with sixteen spacetime supersym- metries obtained from orbifolds of type IIA superstring on K3×T 2 by aZN symmetry acting"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.977
-latex_coverage_ratio: 0.938
+latex_coverage_ratio: 0.983
+doc_brief: "Fricke S-duality in CHL models — We consider four dimensional CHL models with sixteen spacetime supersym- metries obtained from orbifolds of type IIA superstring on K3×T 2 by a ZN symmetry acting"
 ---
 The counting of BPS-states in CHL models have lead to deep insights into the quantum properties of certain black holes. In this paper we shall focus on 1/2 BPS-states which in the heterotic picture correspond to Dabholkar-Harvey states [@Dabholkar:1990yf], i.e. with zero excitations in the right-moving sector but arbitrary excitations in the left-moving sector. In the type IIA picture these are electrically charged black holes with zero classical entropy (so called 'small black holes'). In the non-orbifold situation the degeneracy $\Omega(Q)$ of 1/2 BPS-states with electric charge vector $Q\in \Gamma^{6,22}$ are famously counted by the Fourier coefficients of the discriminant function $$\frac{1}{\Delta(\tau)}=\frac{1}{\eta(\tau)^{24}} = \sum_{n\in \mathbb{Z}} c(n) q^{n},$$ via the relation: $$\Omega(Q) = c(Q^2/2),
 \label{1/2BPS}$$ where $Q^2$ is the $SO(6,22;\mathbb{Z})$-invariant inner product on $\Gamma^{6,22}$. More generally, the 1/2 BPS-states in CHL models associated with orbifolds of some symmetry $g$ are captured by the *fourth helicity supertrace* [@Kiritsis:1997hj] $$B^{\text{CHL}[g]}_4:= \text{Tr}_g(-1)^F J_3^4 q^{L_0} \bar{q}^{\bar{L}_0},$$ where $J_3$ is the third component of the massive little group in 4 dimensions. This can be viewed as a generating function of the 1/2-BPS index.

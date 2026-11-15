@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0806.2317v1
-doc_title: "Bounds for codes and designs in complex subspaces Aidan Roy ∗"
+doc_title: "Bounds for codes and designs in complex subspaces"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
 pages: 1-3
 source_pdf: 0806.2317v1.pdf
 source_sha256: c54e80d460413a5e
-doc_brief: "Bounds for codes and designs in complex subspaces Aidan Roy ∗ — We introduce the concepts of complex Grassmannian codes and designs."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.983
+latex_coverage_ratio: 0.979
+doc_brief: "Bounds for codes and designs in complex subspaces — We introduce the concepts of complex Grassmannian codes and designs."
 ---
 In this paper, we introduce the concept of complex Grassmannian codes and designs: codes and designs in the collection of fixed-rank subspaces of a complex vector space.
 

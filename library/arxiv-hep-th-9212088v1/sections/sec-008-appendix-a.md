@@ -8,6 +8,7 @@ pages: 14-16
 source_pdf: 9212088v1.pdf
 source_sha256: ecb2c02ec6fe11bd
 toc_source: inferred
+doc_brief: "arXiv:hep-th/9212088v1 14 Dec 1992 — We construct a random matrix model that, in the large N limit, reduces to the low energy limit of the QCD partition function put forward by Leutwyler and Smilga."
 ---
 In this appendix we derive the sum rules (4.12) and (4.13) for one ﬂavor without
 relying on a saddle point approximation. For N+ = N−= N/2 and Nf = 1 the partition
@@ -35,7 +36,6 @@ N ) + · · · .
 (A.2)
 It should be noted that no approximations have been made. On the other hand, the
 fermion determinant can be written as a product over the eigenvalues which leads to the
-14
 expansion
 Z(m)
 Z(0) = 1 + m2
@@ -63,4 +63,3 @@ are reproduced by keeping only the leading order terms in 1/N. We observe that t
 ﬁrst sum rule is valid for any value of N. The second sum rule is modiﬁed by the factor
 (1−2/N). For N = 2 we ﬁnd zero which is correct because in this case there are no terms
 that contribute to the sum n′̸ = n in (A.3).
-15

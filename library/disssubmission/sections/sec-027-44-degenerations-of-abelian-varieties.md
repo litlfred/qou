@@ -1,6 +1,6 @@
 ---
 doc_id: disssubmission
-doc_title: "I NAUGURAL -D ISSERTATION T ANNAKIAN C ATEGORIES OF P ERVERSE S HEAVES ON A BELIAN V ARIETIES"
+doc_title: "Tannakian categories of perverse sheaves on abelian varieties"
 section_id: sec-027-44-degenerations-of-abelian-varieties
 section_title: "Degenerations of abelian varieties"
 section_number: 4.4
@@ -8,6 +8,7 @@ pages: 87-93
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
 toc_source: inferred
+doc_brief: "Tannakian categories of perverse sheaves on abelian varieties — 52 sections: Front matter; Introduction; Some commonly used notations"
 ---
 79
 where Yη and Ys denote the generic resp. special ﬁbres of ˜f. Note that Ys

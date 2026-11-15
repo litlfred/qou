@@ -6,7 +6,9 @@
   "sha256": "a33d2771c873a97e4f7c23b5cbab2ad55fa313e5d4b062f2338bdaf3ad639ec6",
   "bytes": 621973,
   "pages": 40,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -19,18 +21,26 @@
   },
   "doi": null,
   "title": "QUANTUM HYPERBOLIC GEOMETRY",
-  "authors_raw": "STÉPHANE BASEILHAC 1 AND RICCARDO BENEDETTI 2",
-  "abstract": "W e construct a new family, indexed by the odd integers N ≥ 1, of (2 + 1)-dimensional quantum ﬁeld theories called quantum hyperbolic ﬁeld theories (QHFT), and we study its main structural properties. The QHFT are deﬁned for (marked) (2 + 1)-bordisms supported by compact oriented 3-manifolds Y with a properly embedded framed tangle LF and an arbitrary P SL(2, C)- character ρ of Y \\ LF (covering, for example, the case of hyperbolic cone manifol ds). The marking of QHFT bordisms includes a speciﬁc set of parameters for the sp ace of pleated hyperbolic structures on punctured surfaces. Each QHFT associates in a constructi ve way to any triple ( Y, L F , ρ ) with marked boundary components a tensor built on the matrix dilo garithms, which is holomorphic in the boundary parameters. W e establish surgery formulas for QHFT partitions functions and describe their relations with the quantum hyperbolic invariants of [4, 5] (either deﬁned for unframed links in closed manifolds and characters trivial at the link meridia ns, or hyperbolic cusped 3-manifolds). For every P SL(2, C)-character of a punctured surface, we produce new families of conjugacy classes of “moderately projective” representations of the mapping cl ass groups. 1",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20210913112621-04'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  },
+  "authors_raw": "STÉPHANE BASEILHAC1 AND RICCARDO BENEDETTI2",
   "title_lines": [
    "QUANTUM HYPERBOLIC GEOMETRY"
-  ]
+  ],
+  "abstract": "We construct a new family, indexed by the odd integers N ≥1, of (2 + 1)-dimensional quantum ﬁeld theories called quantum hyperbolic ﬁeld theories (QHFT), and we study its main structural properties. The QHFT are deﬁned for (marked) (2 + 1)-bordisms supported by compact oriented 3-manifolds Y with a properly embedded framed tangle LF and an arbitrary P SL(2, C)- character ρ of Y \\LF (covering, for example, the case of hyperbolic cone manifolds). The marking of QHFT bordisms includes a speciﬁc set of parameters for the space of pleated hyperbolic structures on punctured surfaces. Each QHFT associates in a constructive way to any triple (Y, LF, ρ) with marked boundary components a tensor built on the matrix dilogarithms, which is holomorphic in the boundary parameters. We establish surgery formulas for QHFT partitions functions and describe their relations with the quantum hyperbolic invariants of [4, 5] (either deﬁned for unframed links in closed manifolds and characters trivial at the link meridians, or hyperbolic cusped 3-manifolds). For every P SL(2, C)-character of a punctured surface, we produce new families of conjugacy classes of “moderately projective” representations of the mapping class groups.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20210913112621-04'00'"
+  },
+  "title_raw": "QUANTUM HYPERBOLIC GEOMETRY",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "QUANTUM HYPERBOLIC GEOMETRY 1 Universit´e Grenoble I, Institut Joseph Fourier, UMR CNRS 5582, 100 rue des Maths, B.P. 74, 38402 Saint Martin d’H`eres Cedex, FRANCE 2 Dipartimento di Matematica, Universit`a di Pisa, Largo Bruno Pontecorvo 5, I-56127 Pisa, ITALY Emails: stephane.baseilhac@ujf-grenoble",
+   "outline": "1. Introduction",
+   "text": "QUANTUM HYPERBOLIC GEOMETRY",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -38,191 +48,843 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Universal QHG",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Building blocks",
    "page": 4,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "QHG triangulated pseudomanifolds",
    "page": 7,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "QHG universal functor",
    "page": 9,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Towards geometric specializations",
    "page": 10,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 1,
    "title": "Parameters for PSL(2,C)-characters of surfaces",
    "page": 12,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Efficient triangulations",
    "page": 13,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Cocycle parameters",
    "page": 14,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Cross-ratio parameters",
    "page": 16,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 1,
    "title": "The QHFT bordism category",
    "page": 20,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "Marked topological bordisms",
    "page": 20,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "Boundary structures",
    "page": 21,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 1,
    "title": "The QHFT functor",
    "page": 22,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "From QHFT bordisms to QHG-triangulated pseudomanifolds",
    "page": 22,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "Amplitudes",
    "page": 24,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "QHFT variants",
    "page": 26,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "Mapping class group representations",
    "page": 26,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "Tunneling the (+)/(-) states",
    "page": 27,
    "source": "outline",
-   "number": "5.5"
+   "number": "5.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Partition functions",
    "page": 28,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
   },
   {
    "level": 2,
    "title": "QHFT vs QHFT0 partition functions",
    "page": 29,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 2,
    "title": "Invariants of cusped manifolds and surgery formulas",
    "page": 29,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 2,
    "title": "Manifolds that fiber over S1 - Examples",
    "page": 35,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "35"
   },
   {
    "level": 1,
    "title": "References",
    "page": 40,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "I-tetrahedra and dual encoding",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "A diagonal exchange",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The pentagon relation",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The moves on naked singular triangulations",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "A 2 ↔3 QHG move (x1 = y/x, x2 = y(1 −x)/x(1 −y), and x3 =",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "The ﬂips with marked corners",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "The branched triangulated cell sv",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "The recipe for reading oﬀholonomies from exponential I-parameters",
+   "page": 18,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "More economic e-triangulation",
+   "page": 20,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "20"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "Notations for Log-I-parameters",
+   "page": 22,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "An I-cusp",
+   "page": 23,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "Pasting opposite vertical sides yields an instance of C(T, b) for the once-punctured torus S, based on an economic triangulation of S as in Remark 3.12",
+   "page": 28,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "28"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "A special admissible triangulation of B",
+   "page": 29,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "29"
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "An instance of double cone on a disc",
+   "page": 33,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "15",
+   "title": "A normal path a in Link(v) running parallel to a blowing-up curve C",
+   "page": 34,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "16",
+   "title": "Flat/charge corrections for a Dehn ﬁlling",
+   "page": 35,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "35"
+  },
+  {
+   "kind": "figure",
+   "number": "17",
+   "title": "Lifts to e-triangulations (economic ones - see Remark 3.12 - at the ﬁrst row) of ﬂip moves on the corresponding ideal triangulations near marked corners",
+   "page": 35,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "35"
+  },
+  {
+   "kind": "figure",
+   "number": "18",
+   "title": "The composition of ﬂip transformations for the monodromy of S3 \\ K",
+   "page": 37,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "19",
+   "title": "The face and edge identiﬁcations for the canonical geodesic ideal trian-",
+   "page": 37,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2649,
+   "n_words": 389,
+   "label_start": null,
+   "label_end": "2"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
-   "page_end": 3,
-   "n_chars": 9211,
-   "n_words": 1526
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 9061,
+   "n_words": 1484,
+   "label_start": "2",
+   "label_end": "4"
   },
   {
    "id": "sec-001-2-universal-qhg",
    "number": "2",
    "title": "Universal QHG",
    "level": 1,
-   "page_start": 3,
+   "page_start": 4,
    "page_end": 4,
-   "n_chars": 2077,
-   "n_words": 364
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
    "id": "sec-002-21-building-blocks",
@@ -231,8 +893,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 7,
-   "n_chars": 9913,
-   "n_words": 1956
+   "n_chars": 9910,
+   "n_words": 1955,
+   "label_start": "4",
+   "label_end": "7"
   },
   {
    "id": "sec-003-22-qhg-triangulated-pseudomanifolds",
@@ -241,8 +905,10 @@
    "level": 2,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 3890,
-   "n_words": 756
+   "n_chars": 3861,
+   "n_words": 730,
+   "label_start": "7",
+   "label_end": "9"
   },
   {
    "id": "sec-004-23-qhg-universal-functor",
@@ -250,137 +916,259 @@
    "title": "QHG universal functor",
    "level": 2,
    "page_start": 9,
-   "page_end": 14,
-   "n_chars": 19054,
-   "n_words": 3557
+   "page_end": 10,
+   "n_chars": 2635,
+   "n_words": 467,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
-   "id": "sec-005-32-cocycle-parameters",
+   "id": "sec-005-24-towards-geometric-specializations",
+   "number": "2.4",
+   "title": "Towards geometric specializations",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 10725,
+   "n_words": 1922,
+   "label_start": "10",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-006-3-parameters-for-psl2c-characters-of-surfaces",
+   "number": "3",
+   "title": "Parameters for PSL(2,C)-characters of surfaces",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 2033,
+   "n_words": 355,
+   "label_start": "12",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-007-31-efficient-triangulations",
+   "number": "3.1",
+   "title": "Efficient triangulations",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 3347,
+   "n_words": 665,
+   "label_start": "13",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-008-32-cocycle-parameters",
    "number": "3.2",
    "title": "Cocycle parameters",
    "level": 2,
    "page_start": 14,
    "page_end": 16,
-   "n_chars": 6956,
-   "n_words": 1360
+   "n_chars": 6948,
+   "n_words": 1352,
+   "label_start": "14",
+   "label_end": "16"
   },
   {
-   "id": "sec-006-33-cross-ratio-parameters",
+   "id": "sec-009-33-cross-ratio-parameters",
    "number": "3.3",
    "title": "Cross-ratio parameters",
    "level": 2,
    "page_start": 16,
    "page_end": 20,
-   "n_chars": 15415,
-   "n_words": 2936
+   "n_chars": 15340,
+   "n_words": 2863,
+   "label_start": "16",
+   "label_end": "20"
   },
   {
-   "id": "sec-007-4-the-qhft-bordism-category",
+   "id": "sec-010-4-the-qhft-bordism-category",
    "number": "4",
    "title": "The QHFT bordism category",
    "level": 1,
    "page_start": 20,
    "page_end": 20,
-   "n_chars": 148,
-   "n_words": 25
+   "n_chars": 147,
+   "n_words": 24,
+   "label_start": "20",
+   "label_end": "20"
   },
   {
-   "id": "sec-008-41-marked-topological-bordisms",
+   "id": "sec-011-41-marked-topological-bordisms",
    "number": "4.1",
    "title": "Marked topological bordisms",
    "level": 2,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 3873,
-   "n_words": 762
+   "n_chars": 3848,
+   "n_words": 737,
+   "label_start": "20",
+   "label_end": "21"
   },
   {
-   "id": "sec-009-42-boundary-structures",
+   "id": "sec-012-42-boundary-structures",
    "number": "4.2",
    "title": "Boundary structures",
    "level": 2,
    "page_start": 21,
    "page_end": 22,
-   "n_chars": 4091,
-   "n_words": 822
+   "n_chars": 4071,
+   "n_words": 802,
+   "label_start": "21",
+   "label_end": "22"
   },
   {
-   "id": "sec-010-5-the-qhft-functor",
+   "id": "sec-013-5-the-qhft-functor",
    "number": "5",
    "title": "The QHFT functor",
    "level": 1,
    "page_start": 22,
-   "page_end": 24,
-   "n_chars": 6435,
-   "n_words": 1161
+   "page_end": 22,
+   "n_chars": 474,
+   "n_words": 89,
+   "label_start": "22",
+   "label_end": "22"
   },
   {
-   "id": "sec-011-52-amplitudes",
+   "id": "sec-014-51-from-qhft-bordisms-to-qhg-triangulated-pseudo",
+   "number": "5.1",
+   "title": "From QHFT bordisms to QHG-triangulated pseudomanifolds",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 24,
+   "n_chars": 5850,
+   "n_words": 1035,
+   "label_start": "22",
+   "label_end": null
+  },
+  {
+   "id": "sec-015-52-amplitudes",
    "number": "5.2",
    "title": "Amplitudes",
    "level": 2,
    "page_start": 24,
    "page_end": 26,
-   "n_chars": 7495,
-   "n_words": 1427
+   "n_chars": 7417,
+   "n_words": 1349,
+   "label_start": null,
+   "label_end": "26"
   },
   {
-   "id": "sec-012-53-qhft-variants",
+   "id": "sec-016-53-qhft-variants",
    "number": "5.3",
    "title": "QHFT variants",
    "level": 2,
    "page_start": 26,
    "page_end": 26,
-   "n_chars": 2241,
-   "n_words": 412
+   "n_chars": 2228,
+   "n_words": 399,
+   "label_start": "26",
+   "label_end": "26"
   },
   {
-   "id": "sec-013-54-mapping-class-group-representations",
+   "id": "sec-017-54-mapping-class-group-representations",
    "number": "5.4",
    "title": "Mapping class group representations",
    "level": 2,
    "page_start": 26,
    "page_end": 28,
-   "n_chars": 7265,
-   "n_words": 1375
+   "n_chars": 7213,
+   "n_words": 1295,
+   "label_start": "26",
+   "label_end": "28"
   },
   {
-   "id": "sec-014-6-partition-functions",
+   "id": "sec-018-6-partition-functions",
    "number": "6",
    "title": "Partition functions",
    "level": 1,
    "page_start": 28,
    "page_end": 29,
-   "n_chars": 3300,
-   "n_words": 617
+   "n_chars": 1269,
+   "n_words": 247,
+   "label_start": "28",
+   "label_end": "29"
   },
   {
-   "id": "sec-015-62-invariants-of-cusped-manifolds-and-surgery-fo",
+   "id": "sec-019-61-qhft-vs-qhft0-partition-functions",
+   "number": "6.1",
+   "title": "QHFT vs QHFT0 partition functions",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 1939,
+   "n_words": 348,
+   "label_start": "29",
+   "label_end": "29"
+  },
+  {
+   "id": "sec-020-62-invariants-of-cusped-manifolds-and-surgery-fo",
    "number": "6.2",
    "title": "Invariants of cusped manifolds and surgery formulas",
    "level": 2,
    "page_start": 29,
-   "page_end": 40,
-   "n_chars": 35367,
-   "n_words": 7137
+   "page_end": 35,
+   "n_chars": 21091,
+   "n_words": 4084,
+   "label_start": "29",
+   "label_end": "35"
   },
   {
-   "id": "sec-016-references",
+   "id": "sec-021-63-manifolds-that-fiber-over-s1---examples",
+   "number": "6.3",
+   "title": "Manifolds that fiber over S1 - Examples",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 40,
+   "n_chars": 13893,
+   "n_words": 2773,
+   "label_start": "35",
+   "label_end": "40"
+  },
+  {
+   "id": "sec-022-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 40,
    "page_end": 40,
-   "n_chars": 4020,
-   "n_words": 591
+   "n_chars": 3991,
+   "n_words": 562,
+   "label_start": "40",
+   "label_end": "40"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 24,
-  "sections": 17,
-  "chars_total": 140751
+  "toc_inferred_entries": 0,
+  "figure_entries": 19,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "Amplitudes"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 24,
+  "chars_total": 139940,
+  "furniture_lines_stripped": 20
  },
  "duplicate_of": "agt-v7-n2-p13-s",
  "duplicate_note": "Same work as library/agt-v7-n2-p13-s/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted — existing citations may point here — but skipped by the ranking and the summary index so one work is not counted twice."

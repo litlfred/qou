@@ -1,0 +1,7350 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "2018sorus020",
+  "pages": [
+    {
+      "page": 13,
+      "rotation": 0,
+      "drawings": 14,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1 – Incompressible surfaces in the complement of the knot 5.2. The surface Σ1 is the orientation covering of the non oriented surface here colored on the left, that can be thought as the boundary of a tubular neighborhood of this non orientable surface. The surface Σ2 is again the orientation covering of the surface colored on the right, that can be obtained as follows : consider two parallel copies of each twisted bands above and below the square in the middle, and plumb them along this square. The result is connected because the bands below have an odd number of twists, and this is our surface Σ2"
+      ],
+      "labels": [
+        {
+          "text": "ˇΣ2",
+          "bbox": [
+            339.62,
+            145.14,
+            352.31,
+            161.04
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "ˇΣ1",
+          "bbox": [
+            151.21,
+            161.18,
+            163.9,
+            177.08
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 1 – Incompressible surfaces in the complement of the knot 5.2. The surface",
+          "bbox": [
+            85.04,
+            297.27,
+            510.24,
+            311.85
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFCC1200",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Σ1 is the orientation covering of the non oriented surface here colored on the left,",
+          "bbox": [
+            85.04,
+            314.33,
+            510.38,
+            328.09
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "that can be thought as the boundary of a tubular neighborhood of this non orientable",
+          "bbox": [
+            85.04,
+            328.79,
+            510.44,
+            340.74
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "surface. The surface Σ2 is again the orientation covering of the surface colored on the",
+          "bbox": [
+            85.04,
+            343.22,
+            510.36,
+            356.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "right, that can be obtained as follows : consider two parallel copies of each twisted",
+          "bbox": [
+            85.04,
+            357.68,
+            510.38,
+            369.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "bands above and below the square in the middle, and plumb them along this square.",
+          "bbox": [
+            85.04,
+            372.13,
+            510.39,
+            384.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The result is connected because the bands below have an odd number of twists, and",
+          "bbox": [
+            85.04,
+            386.57,
+            510.36,
+            398.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "this is our surface Σ2",
+          "bbox": [
+            85.04,
+            401.0,
+            192.52,
+            413.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "From Theorem 2.0.1, it is so on the aﬃne part of ¯X(M). Yet the torsion could",
+          "bbox": [
+            85.04,
+            446.44,
+            510.28,
+            461.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "have a pole at inﬁnity. In fact, examples of torus knots (p, q) provide such a case :",
+          "bbox": [
+            85.04,
+            467.39,
+            510.27,
+            479.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "each component of the character variety is isomorphic to C with an unique ideal",
+          "bbox": [
+            85.04,
+            482.71,
+            510.27,
+            497.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "point, which corresponds to an essential annulus in the knot complement. Although",
+          "bbox": [
+            85.04,
+            503.26,
+            510.39,
+            515.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Theorem 2.0.2 cannot apply since the fundamental group of an annulus have no",
+          "bbox": [
+            85.04,
+            521.17,
+            510.37,
+            533.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "non abelian representations, one can compute directly that the torsion has a pole of",
+          "bbox": [
+            85.04,
+            539.12,
+            510.41,
+            551.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "order one at those points.",
+          "bbox": [
+            85.04,
+            557.04,
+            216.56,
+            569.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Further work could concern reducible characters that are limits of irreducible cha-",
+          "bbox": [
+            85.04,
+            575.89,
+            510.37,
+            587.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "racters, such as in Theorem 2.0.1, item 2. It is most likely that one could eventually",
+          "bbox": [
+            85.04,
+            593.82,
+            510.38,
+            605.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "weaken the hypothesis of this theorem. But this requires a better understanding of",
+          "bbox": [
+            85.04,
+            611.74,
+            510.37,
+            623.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the relation between the ﬁrst twisted cohomology group and the tangent space at",
+          "bbox": [
+            85.04,
+            629.67,
+            510.41,
+            641.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "this point. This complex problem is partially answered in [FK91, HPSP01].",
+          "bbox": [
+            85.04,
+            647.6,
+            471.13,
+            659.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The standard torsion",
+          "bbox": [
+            85.04,
+            687.91,
+            209.13,
+            699.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFBX1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "In Chapter 3, we focus on the standard torsion, and present the results of the",
+          "bbox": [
+            85.04,
+            715.42,
+            510.37,
+            727.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "upcoming article [Ben17]. The standard torsion tor(M, ρ) is deﬁned as a non zero",
+          "bbox": [
+            85.04,
+            733.33,
+            510.27,
+            745.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "12",
+          "bbox": [
+            291.79,
+            763.24,
+            303.5,
+            775.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 21,
+      "rotation": 0,
+      "drawings": 7,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1.1 – Kauﬀman skein relations. The indicated moves are performed locally, the rest of the link remains unchanged. The strands are supposed to depict bands of the framed links."
+      ],
+      "labels": [
+        {
+          "text": "+A−1",
+          "bbox": [
+            339.78,
+            134.56,
+            368.48,
+            147.84
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            256.31,
+            135.89,
+            265.42,
+            147.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            285.75,
+            136.23,
+            294.52,
+            148.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "−A2 −A−2[∅]",
+          "bbox": [
+            305.49,
+            210.36,
+            375.48,
+            226.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            267.39,
+            213.81,
+            276.5,
+            225.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 1.1 – Kauﬀman skein relations. The indicated moves are performed locally,",
+          "bbox": [
+            85.04,
+            292.06,
+            510.38,
+            306.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFCC1200",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the rest of the link remains unchanged. The strands are supposed to depict bands",
+          "bbox": [
+            85.04,
+            309.13,
+            510.37,
+            321.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of the framed links.",
+          "bbox": [
+            85.04,
+            323.57,
+            184.94,
+            335.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1.1.4",
+          "bbox": [
+            85.04,
+            367.95,
+            117.49,
+            382.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFBX1440"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Characters, reducibility and irreducibility",
+          "bbox": [
+            133.27,
+            367.95,
+            421.86,
+            382.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFBX1440"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "From the previous deﬁnition of the character variety through trace functions, we",
+          "bbox": [
+            85.04,
+            396.91,
+            510.39,
+            408.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "have the following deﬁnition of points of the character variety, which enlightens on",
+          "bbox": [
+            85.04,
+            414.84,
+            510.39,
+            426.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the terminology.",
+          "bbox": [
+            85.04,
+            432.77,
+            168.31,
+            444.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Deﬁnition 1.1.12. A k-character is a k-point of the character variety in the sense",
+          "bbox": [
+            85.04,
+            464.18,
+            510.31,
+            476.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFBX1200",
+            "SFRM1200",
+            "SFTI1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of algebraic geometry, that means a morphism χ : B[Γ] →k. Any representation",
+          "bbox": [
+            85.04,
+            481.96,
+            510.28,
+            494.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ρ : Γ →SL2(k) induces a character χρ : B[Γ] →k that sends Yγ to Tr(ρ(γ)).",
+          "bbox": [
+            85.04,
+            499.88,
+            475.03,
+            513.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Remark 1.1.13. This deﬁnition generalizes to R-characters for any k-algebra R.",
+          "bbox": [
+            85.04,
+            531.47,
+            502.88,
+            543.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFBX1200",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Deﬁnition 1.1.14. A representation ρ : Γ →SL2(k) is reducible if there exists an",
+          "bbox": [
+            85.04,
+            562.75,
+            510.26,
+            575.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFBX1200",
+            "SFRM1200",
+            "SFTI1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "invariant line in k2, and irreducible if not.",
+          "bbox": [
+            85.04,
+            579.61,
+            299.29,
+            592.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8",
+            "SFRM1200",
+            "SFTI1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "The following standard lemma tells us that this notion can be deﬁned at the level",
+          "bbox": [
+            85.04,
+            612.28,
+            510.38,
+            624.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of characters. For any elements α, β ∈Γ, we will denote the commutator αβα−1β−1",
+          "bbox": [
+            85.04,
+            628.86,
+            509.74,
+            642.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "by [α, β].",
+          "bbox": [
+            85.04,
+            648.12,
+            131.09,
+            660.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Lemma 1.1.15. Let k ⊂K be a ﬁeld extension (we take K to be either k, either",
+          "bbox": [
+            85.04,
+            676.94,
+            510.23,
+            691.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY10",
+            "MSBM10",
+            "SFBX1200",
+            "SFTI1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "a transcendental extension of k). A representation ρ : Γ →SL2(K) is absolutely",
+          "bbox": [
+            85.04,
+            694.87,
+            510.25,
+            710.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "MSBM10",
+            "SFTI1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "irreducible (irreducible in an algebraic closure) iﬀthere exists α, β ∈Γ such that",
+          "bbox": [
+            85.04,
+            715.25,
+            510.24,
+            727.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "SFTI1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Tr(ρ(αβα−1β−1))̸ = 2.",
+          "bbox": [
+            85.04,
+            732.01,
+            198.73,
+            745.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "SFTI1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "20",
+          "bbox": [
+            291.79,
+            763.24,
+            303.5,
+            775.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 22,
+      "rotation": 0,
+      "drawings": 24,
+      "rasterImagesOnPage": 2,
+      "captionCandidates": [
+        "Figure 1.2 –"
+      ],
+      "labels": [
+        {
+          "text": "γ",
+          "bbox": [
+            182.89,
+            134.85,
+            188.97,
+            146.8
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "δ",
+          "bbox": [
+            225.83,
+            135.89,
+            231.02,
+            147.84
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "γ",
+          "bbox": [
+            271.95,
+            136.79,
+            278.02,
+            148.75
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "δ",
+          "bbox": [
+            323.62,
+            137.28,
+            328.81,
+            149.24
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "= −",
+          "bbox": [
+            244.88,
+            137.81,
+            266.61,
+            149.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "δ",
+          "bbox": [
+            413.25,
+            138.27,
+            418.44,
+            150.22
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "γ",
+          "bbox": [
+            363.54,
+            138.51,
+            369.61,
+            150.47
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            337.34,
+            138.85,
+            346.64,
+            150.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "−Yγδ",
+          "bbox": [
+            197.09,
+            175.91,
+            221.76,
+            188.94
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Yγδ−1",
+          "bbox": [
+            382.03,
+            176.75,
+            407.11,
+            189.84
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR6",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "−YγYδ",
+          "bbox": [
+            302.72,
+            177.29,
+            334.68,
+            190.32
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "δ",
+          "bbox": [
+            410.2,
+            204.12,
+            415.39,
+            216.08
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "δ",
+          "bbox": [
+            318.43,
+            207.59,
+            323.61,
+            219.54
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "γ",
+          "bbox": [
+            268.49,
+            224.41,
+            274.56,
+            236.37
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "γ",
+          "bbox": [
+            361.65,
+            225.45,
+            367.72,
+            237.41
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "γ",
+          "bbox": [
+            177.7,
+            226.62,
+            183.77,
+            238.58
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "= −",
+          "bbox": [
+            244.19,
+            228.54,
+            265.92,
+            240.65
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            336.99,
+            228.54,
+            346.29,
+            240.5
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "δ",
+          "bbox": [
+            222.37,
+            233.55,
+            227.56,
+            245.5
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Yγδ−1",
+          "bbox": [
+            272.93,
+            264.37,
+            298.01,
+            277.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR6",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "YγYδ",
+          "bbox": [
+            201.25,
+            264.72,
+            223.91,
+            277.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Yγδ",
+          "bbox": [
+            380.64,
+            264.72,
+            396.01,
+            277.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 1.2 –",
+          "bbox": [
+            260.86,
+            292.06,
+            330.53,
+            306.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFCC1200",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Proof. If ρ is reducible on ¯K, then one can write ρ as a subgroup of SL2(¯K) with",
+          "bbox": [
+            85.04,
+            339.75,
+            510.24,
+            355.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "MSBM10",
+            "SFRM1200",
+            "SFTI1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "every element of Γ mapped to an upper-triangular matrix. It is clear thus that the",
+          "bbox": [
+            85.04,
+            360.77,
+            510.36,
+            372.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "commutator of any two elements have trace equal to 2. Conversely, if any commu-",
+          "bbox": [
+            85.04,
+            378.71,
+            510.39,
+            390.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "tator’s trace is 2, then any commutator ﬁxes a non trivial subspace of ¯K2. Assume",
+          "bbox": [
+            85.04,
+            393.54,
+            510.24,
+            408.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8",
+            "MSBM10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "[α, β] and [δ, γ] have two distinct ﬁxed lines, they provide a basis of ¯K2 such that",
+          "bbox": [
+            85.04,
+            410.23,
+            510.26,
+            426.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "MSBM10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0000 1 0",
+          "bbox": [
+            248.68,
+            425.91,
+            268.11,
+            443.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "for some non-zero x, y ∈¯K. Now we compute",
+          "bbox": [
+            279.42,
+            429.39,
+            510.25,
+            444.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "MSBM10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            270.1,
+            431.39,
+            275.57,
+            443.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ρ([α, β]) = ( 1 x",
+          "bbox": [
+            85.04,
+            431.77,
+            161.26,
+            444.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "0 1 ) and ρ([δ, γ]) =",
+          "bbox": [
+            149.01,
+            432.48,
+            245.37,
+            447.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "y 1",
+          "bbox": [
+            256.15,
+            437.8,
+            268.11,
+            445.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Tr(ρ([[α, β], [δ, γ]])) = 2+(xy)2, a contradiction. Hence the image of the commutator",
+          "bbox": [
+            85.04,
+            449.18,
+            510.35,
+            462.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "subgroup has an invariant subspace in ¯K2. We prove that it implies that ρ is redu-",
+          "bbox": [
+            85.04,
+            465.24,
+            510.24,
+            480.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "MSBM10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "cible ; denote by F the invariant subspace of [Γ, Γ], let α ∈Γ \\ [Γ, Γ] and β ∈[Γ, Γ]",
+          "bbox": [
+            85.04,
+            486.11,
+            510.24,
+            498.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "with ρ(β)̸ = Id. Then [ρ(β)−1, ρ(α)−1].F = F and ρ(β).F = F, hence ρ(β) stabilizes",
+          "bbox": [
+            85.04,
+            502.86,
+            510.25,
+            516.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "ρ(α).F, and ρ(α).F = F.",
+          "bbox": [
+            85.04,
+            522.11,
+            213.39,
+            534.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Deﬁnition 1.1.16.",
+          "bbox": [
+            85.04,
+            568.34,
+            185.85,
+            580.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFBX1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "— For any α, β ∈Γ, we denote by ∆α,β ∈B[Γ] the function Y 2",
+          "bbox": [
+            102.59,
+            588.69,
+            435.38,
+            603.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "α + Y 2",
+          "bbox": [
+            428.55,
+            588.69,
+            464.54,
+            604.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "β + Y 2",
+          "bbox": [
+            457.71,
+            588.69,
+            493.71,
+            604.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "αβ −",
+          "bbox": [
+            486.87,
+            589.76,
+            510.24,
+            604.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "YαYβYαβ −4 = Y[α,β]−2. For any k-algebra R, we will say that an R-character",
+          "bbox": [
+            120.15,
+            607.69,
+            510.26,
+            621.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "χ is irreducible if there exists α, β ∈Γ such that χ(∆α,β)̸ = 0. If not, we say",
+          "bbox": [
+            120.15,
+            625.62,
+            510.25,
+            638.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10",
+            "SFRM1200",
+            "SFTI1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "that it is reducible. A character χ will be said central if χ(Yγ)2 = 4 for any",
+          "bbox": [
+            120.15,
+            639.36,
+            510.26,
+            656.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "SFRM1200",
+            "SFTI1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "γ ∈Γ.",
+          "bbox": [
+            120.15,
+            661.47,
+            152.05,
+            673.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "— Since being reducible is a Zariski closed condition, any irreducible component",
+          "bbox": [
+            102.59,
+            679.57,
+            510.36,
+            691.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "X ⊂X(Γ) that contains only reducible characters will be said of reducible",
+          "bbox": [
+            120.15,
+            697.32,
+            510.24,
+            709.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "SFRM1200",
+            "SFTI1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "type. A component that contains an irreducible character (equivalently, a",
+          "bbox": [
+            120.15,
+            715.42,
+            510.37,
+            727.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200",
+            "SFTI1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "dense open subset of irreducible characters) will be said of irreducible type.",
+          "bbox": [
+            120.15,
+            733.35,
+            503.89,
+            745.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200",
+            "SFTI1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "21",
+          "bbox": [
+            291.79,
+            763.24,
+            303.5,
+            775.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 37,
+      "rotation": 0,
+      "drawings": 26,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1.3 – The splitting M = M1 ∪V (Σ) M2."
+      ],
+      "labels": [
+        {
+          "text": "splits M into two handlebodies M = M1 ∪Σi M2. Consider V (Σ) a neighborhood of",
+          "bbox": [
+            85.04,
+            101.67,
+            510.29,
+            116.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Σ homeomorphic to Σ1 × [0, 1], and we consider the splitting M = M1 ∪V (Σ) M2. We",
+          "bbox": [
+            85.04,
+            119.6,
+            510.24,
+            133.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "ﬁx a basepoint p ∈Σ1, and we will denote by π1(Σ) the fundamental group of Σ1",
+          "bbox": [
+            85.04,
+            137.52,
+            509.74,
+            150.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "based in p. We identify π1(V (Σ)) to π1(Σ), and the Seifert-Van Kampen Theorem",
+          "bbox": [
+            85.04,
+            155.61,
+            510.29,
+            168.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "provides the amalgamated product π1(M) = π1(M1)∗π1(Σ)π1(M2). A sketchy picture",
+          "bbox": [
+            85.04,
+            173.38,
+            510.26,
+            187.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "is drafted in Figure 1.3.",
+          "bbox": [
+            85.04,
+            191.48,
+            206.24,
+            203.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            229.59,
+            225.19,
+            235.46,
+            237.15
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "M1",
+          "bbox": [
+            175.1,
+            247.84,
+            190.65,
+            260.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "M2",
+          "bbox": [
+            406.75,
+            249.61,
+            422.3,
+            262.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "V (Σ)",
+          "bbox": [
+            273.36,
+            259.05,
+            300.35,
+            271.01
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Σn",
+          "bbox": [
+            369.57,
+            268.2,
+            383.16,
+            281.08
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Σ1",
+          "bbox": [
+            222.02,
+            269.97,
+            234.7,
+            282.85
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 1.3 – The splitting M = M1 ∪V (Σ) M2.",
+          "bbox": [
+            175.27,
+            312.63,
+            420.0,
+            329.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFCC1200",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Lemma 1.3.15. One can chose a conjugate of the tautological representation ρ :",
+          "bbox": [
+            85.04,
+            371.7,
+            510.24,
+            383.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFBX1200",
+            "SFTI1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Γ →SL2(k(X)) that restricts to representations ρ1 and ρ2 from π1(M1), π1(M2) to",
+          "bbox": [
+            85.04,
+            389.47,
+            510.24,
+            403.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFTI1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "SL2(k(X)) respectively ; such that ρ1 is convergent and that ρΣ, its restriction to",
+          "bbox": [
+            85.04,
+            407.55,
+            510.24,
+            421.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "SFTI1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "π1(Σ), is residually reducible. Moreover, there is a convergent representation ρ′",
+          "bbox": [
+            85.04,
+            424.15,
+            499.17,
+            438.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY8",
+            "SFTI1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2 :",
+          "bbox": [
+            496.88,
+            425.48,
+            510.24,
+            440.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "n , with Un = ( tn 0",
+          "bbox": [
+            295.76,
+            440.01,
+            393.08,
+            458.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "SFTI1200"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "π1(M2) →SL2(Ov) such that ρ2 = Unρ′",
+          "bbox": [
+            85.04,
+            442.08,
+            285.37,
+            457.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "SFTI1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2U −1",
+          "bbox": [
+            283.07,
+            442.08,
+            307.82,
+            457.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "0 1 ).",
+          "bbox": [
+            379.33,
+            443.4,
+            403.21,
+            458.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8",
+            "SFTI1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Proof. Let s1 ∈Tv be a vertex in the Bass-Serre tree that is ﬁxed by π1(M1),",
+          "bbox": [
+            85.04,
+            471.22,
+            510.24,
+            485.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200",
+            "SFTI1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "and ﬁx a basis such that it corresponds to the lattice O2",
+          "bbox": [
+            85.04,
+            488.07,
+            384.6,
+            501.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "v. Then there is a vertex",
+          "bbox": [
+            380.04,
+            489.31,
+            510.27,
+            503.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "s2 ∈T, ﬁxed by π1(M2), such that d(s1, s2) = n. Moreover, assume that in this",
+          "bbox": [
+            85.04,
+            507.07,
+            510.29,
+            520.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "basis s2 has a representative of the form tnOv ⊕Ov. The ﬁrst observation is that",
+          "bbox": [
+            85.04,
+            523.93,
+            510.3,
+            538.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "ρ1(π1(M1)) ⊂SL2(Ov) because it stabilizes O2",
+          "bbox": [
+            85.04,
+            541.86,
+            325.49,
+            555.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "v. Since ρΣ ﬁxes the ﬁrst edge of the",
+          "bbox": [
+            320.92,
+            543.08,
+            510.27,
+            557.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "segment [s1s2], in this basis it ﬁxes the lattices O2",
+          "bbox": [
+            85.04,
+            559.78,
+            355.92,
+            573.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "v and tOv ⊕Ov, hence for all",
+          "bbox": [
+            351.35,
+            560.85,
+            510.26,
+            575.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0010",
+          "bbox": [
+            186.68,
+            574.26,
+            193.82,
+            586.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0011",
+          "bbox": [
+            232.75,
+            574.26,
+            239.89,
+            586.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "a(γ) b(γ)",
+          "bbox": [
+            195.81,
+            576.23,
+            230.39,
+            584.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "γ ∈π1(Σ), ρΣ(γ) =",
+          "bbox": [
+            85.04,
+            578.78,
+            183.37,
+            591.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": ", with c(γ) ∈(t), hence ¯ρΣ is reducible.",
+          "bbox": [
+            239.89,
+            578.78,
+            439.91,
+            592.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "c(γ) d(γ)",
+          "bbox": [
+            196.23,
+            585.87,
+            230.76,
+            593.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Let ρ′",
+          "bbox": [
+            85.04,
+            595.55,
+            113.94,
+            608.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2 = U −1",
+          "bbox": [
+            111.65,
+            595.55,
+            152.14,
+            611.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "n ρ2Un, then ρ′",
+          "bbox": [
+            140.08,
+            595.55,
+            218.35,
+            611.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR8",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2 · s1 = U −1",
+          "bbox": [
+            216.05,
+            595.55,
+            273.81,
+            611.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "n ρ2 · s2 = U −1",
+          "bbox": [
+            261.74,
+            595.55,
+            338.11,
+            611.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "n · s2 = s1 and we have proved that",
+          "bbox": [
+            326.04,
+            596.72,
+            510.29,
+            611.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "the representation ρ′",
+          "bbox": [
+            85.04,
+            613.48,
+            189.99,
+            626.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2 converges.",
+          "bbox": [
+            187.69,
+            614.82,
+            248.11,
+            629.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "1.3.7",
+          "bbox": [
+            85.04,
+            652.02,
+            117.49,
+            666.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFBX1440"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "The non-split case",
+          "bbox": [
+            133.27,
+            652.02,
+            259.6,
+            666.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFBX1440"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Let S be an incompressible surface associated to an ideal point v ∈ˆX which is,",
+          "bbox": [
+            85.04,
+            676.53,
+            510.24,
+            691.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "again, union of n parallel copies S = S1 ∪. . . ∪Sn, and we assume now that M \\ Si",
+          "bbox": [
+            85.04,
+            697.32,
+            509.74,
+            711.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "is connected. Hence [Si] = 0 ∈H2(M; ∂M), and in particular ∂Si is a homological",
+          "bbox": [
+            85.04,
+            715.25,
+            510.28,
+            729.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "longitude. We say that Si is a Seifert surface in M. Let V (Si) be a neighborhood of",
+          "bbox": [
+            85.04,
+            733.33,
+            510.28,
+            747.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "SFRM1200",
+            "SFTI1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "36",
+          "bbox": [
+            291.79,
+            763.24,
+            303.5,
+            775.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 67,
+      "rotation": 0,
+      "drawings": 12,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2.1 – On the left, the classical diagram of a trefoil knot, with an incompres- sible Möbius band in its complement. On the right, the red curve is an embedding of the trefoil knot in a torus T. The complement of a tubular neighborhood of this curve in this torus is an incompressible annulus, which is the orientation covering of the Möbius band on the left."
+      ],
+      "labels": [
+        {
+          "text": "Figure 2.1 – On the left, the classical diagram of a trefoil knot, with an incompres-",
+          "bbox": [
+            85.04,
+            412.31,
+            510.37,
+            426.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFCC1200",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "sible Möbius band in its complement. On the right, the red curve is an embedding",
+          "bbox": [
+            85.04,
+            429.39,
+            510.35,
+            441.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of the trefoil knot in a torus T. The complement of a tubular neighborhood of this",
+          "bbox": [
+            85.04,
+            443.82,
+            510.34,
+            455.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "curve in this torus is an incompressible annulus, which is the orientation covering of",
+          "bbox": [
+            85.04,
+            458.28,
+            510.38,
+            470.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the Möbius band on the left.",
+          "bbox": [
+            85.04,
+            472.72,
+            232.09,
+            484.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1. If the upper-right entry of ρ(a) was 0, then again ρ would be reducible, hence we",
+          "bbox": [
+            85.04,
+            525.24,
+            510.26,
+            537.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "can ﬁx, up to conjugacy that preserves the diagonal matrix ρ(b), this entry to be 1.",
+          "bbox": [
+            85.04,
+            543.17,
+            510.24,
+            555.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Now observe that the Cayley-Hamilton identity ρ(a)2−Tr(ρ(a))ρ(a)+Id = 0 implies",
+          "bbox": [
+            85.04,
+            559.87,
+            510.24,
+            573.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Tr(ρ(a)) = 0, and the identity det(ρ(a)) = 1 leads us to the following expression of",
+          "bbox": [
+            85.04,
+            579.02,
+            510.3,
+            590.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ρ : π1(M) →SL2(C(t)) :",
+          "bbox": [
+            85.04,
+            594.34,
+            209.39,
+            609.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "MSBM10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            298.54,
+            624.84,
+            308.01,
+            636.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            404.89,
+            624.84,
+            414.36,
+            636.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "−j",
+          "bbox": [
+            360.57,
+            628.17,
+            374.71,
+            640.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "t",
+          "bbox": [
+            249.12,
+            628.32,
+            253.35,
+            640.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            288.85,
+            628.32,
+            294.71,
+            640.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            392.19,
+            628.32,
+            398.05,
+            640.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ρ(a) =",
+          "bbox": [
+            180.92,
+            636.69,
+            214.64,
+            648.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": ", ρ(b) =",
+          "bbox": [
+            309.99,
+            636.69,
+            347.8,
+            648.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "−(t2 + 1)",
+          "bbox": [
+            227.42,
+            641.91,
+            275.06,
+            658.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "−j2",
+          "bbox": [
+            385.35,
+            645.03,
+            404.39,
+            658.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "−t",
+          "bbox": [
+            285.01,
+            646.1,
+            298.54,
+            658.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            365.05,
+            646.25,
+            370.91,
+            658.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "In particular X is a rational curve, parametrized by t.",
+          "bbox": [
+            85.04,
+            675.7,
+            362.33,
+            687.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The aim of the present section is to compute \"by hand\" the order of the Reidemeister",
+          "bbox": [
+            85.04,
+            697.49,
+            510.36,
+            709.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "torsion form when t goes to inﬁnity, that is the asymptotic of the torsion of the",
+          "bbox": [
+            85.04,
+            715.41,
+            510.36,
+            727.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "complex C0(M, Ad ◦ρ) →C1(M, Ad ◦ρ) →C2(M, Ad ◦ρ).",
+          "bbox": [
+            85.04,
+            732.11,
+            379.9,
+            745.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "66",
+          "bbox": [
+            291.79,
+            763.24,
+            303.5,
+            775.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 69,
+      "rotation": 0,
+      "drawings": 30,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2.2 – This represents a cellular decompositon of M with one 0-cell e, three 1- cells a, b and u corresponding to generators of π1(M1), π1(M2) and π1(A) respectively and two 2-cells D1 and D2 representing the relations a2 = u = b3. The 1-cells are oriented from the bottom to the top, and 2-cells clockwise."
+      ],
+      "labels": [
+        {
+          "text": "α2",
+          "bbox": [
+            282.56,
+            130.88,
+            291.65,
+            139.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "δ2",
+          "bbox": [
+            363.97,
+            130.88,
+            371.37,
+            139.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "0 →H1(M1, Adρ) ⊕H1(M2, Adρ)",
+          "bbox": [
+            105.84,
+            132.77,
+            276.65,
+            147.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "−→H1(A, Adρ)",
+          "bbox": [
+            279.97,
+            132.77,
+            358.06,
+            147.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "−→H2(M, Adρ) →0",
+          "bbox": [
+            361.38,
+            132.77,
+            465.38,
+            147.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(2.9)",
+          "bbox": [
+            486.18,
+            134.6,
+            510.26,
+            146.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "As we identify H1(M, Adρ) to the Zariski tangent space, we pick as a basis the vector",
+          "bbox": [
+            85.04,
+            166.63,
+            510.34,
+            180.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0000 −t",
+          "bbox": [
+            308.18,
+            179.11,
+            329.49,
+            196.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "dt|t=0(ρ)ρ−1 that sends a to the matrix",
+          "bbox": [
+            113.04,
+            181.46,
+            305.15,
+            201.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            336.93,
+            183.38,
+            347.75,
+            191.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "∂t = d",
+          "bbox": [
+            85.04,
+            184.19,
+            118.93,
+            197.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            349.75,
+            184.7,
+            355.22,
+            196.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "and b to 0. On the other hand,",
+          "bbox": [
+            358.29,
+            185.79,
+            510.27,
+            197.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "t2−1",
+          "bbox": [
+            315.65,
+            191.39,
+            333.68,
+            200.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR6",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "t",
+          "bbox": [
+            340.82,
+            192.65,
+            343.88,
+            200.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "α1(ζ1, ζ2) = ζ1 −ζ2 and we compute the map δ1 by a \"diagram chasing\" :",
+          "bbox": [
+            85.04,
+            203.56,
+            460.53,
+            217.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "j0",
+          "bbox": [
+            385.31,
+            232.44,
+            394.39,
+            245.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "i0",
+          "bbox": [
+            201.6,
+            232.97,
+            209.83,
+            245.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "C0(M, Adρ)",
+          "bbox": [
+            125.73,
+            240.71,
+            186.08,
+            254.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "C0(M1, Adρ) ⊕C0(M2, Adρ)",
+          "bbox": [
+            225.85,
+            240.71,
+            369.43,
+            254.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "C0(A, Adρ)",
+          "bbox": [
+            410.77,
+            240.71,
+            467.97,
+            254.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            96.29,
+            242.72,
+            102.14,
+            254.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            493.14,
+            242.72,
+            498.99,
+            254.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "d",
+          "bbox": [
+            160.01,
+            271.36,
+            166.09,
+            283.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "d",
+          "bbox": [
+            301.74,
+            271.36,
+            307.82,
+            283.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "d",
+          "bbox": [
+            443.47,
+            271.36,
+            449.56,
+            283.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "j1",
+          "bbox": [
+            384.5,
+            289.13,
+            393.57,
+            302.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "i1",
+          "bbox": [
+            202.41,
+            289.66,
+            210.64,
+            302.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "C1(M, Adρ)",
+          "bbox": [
+            125.73,
+            297.4,
+            186.08,
+            311.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "C1(M1 Adρ) ⊕C1(M2, Adρ)",
+          "bbox": [
+            227.47,
+            297.4,
+            367.81,
+            312.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "C1(A, Adρ)",
+          "bbox": [
+            410.77,
+            297.4,
+            467.97,
+            311.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            96.29,
+            299.41,
+            102.14,
+            311.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            493.14,
+            299.41,
+            498.99,
+            311.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "We need to represent the system (A, M1 ∪M2, M) as a CW-complex to describe",
+          "bbox": [
+            85.04,
+            336.13,
+            510.27,
+            349.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "explicitly the maps involved in the previous diagram :",
+          "bbox": [
+            85.04,
+            354.23,
+            361.6,
+            366.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "u",
+          "bbox": [
+            282.14,
+            451.73,
+            288.8,
+            463.68
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "D2",
+          "bbox": [
+            330.59,
+            456.76,
+            344.54,
+            469.64
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "D1",
+          "bbox": [
+            237.57,
+            458.7,
+            251.52,
+            471.58
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "a",
+          "bbox": [
+            218.19,
+            504.83,
+            224.33,
+            516.78
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "b",
+          "bbox": [
+            339.89,
+            531.57,
+            344.87,
+            543.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "e",
+          "bbox": [
+            295.32,
+            545.52,
+            300.75,
+            557.48
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 2.2 – This represents a cellular decompositon of M with one 0-cell e, three 1-",
+          "bbox": [
+            85.04,
+            568.32,
+            510.24,
+            582.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFCC1200",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "cells a, b and u corresponding to generators of π1(M1), π1(M2) and π1(A) respectively",
+          "bbox": [
+            85.04,
+            585.37,
+            510.25,
+            598.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "and two 2-cells D1 and D2 representing the relations a2 = u = b3. The 1-cells are",
+          "bbox": [
+            85.04,
+            595.48,
+            510.24,
+            613.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "oriented from the bottom to the top, and 2-cells clockwise.",
+          "bbox": [
+            85.04,
+            614.27,
+            386.2,
+            626.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Then C0(M, Adρ) ≃C0(Mi, Adρ) ≃C0(A, Adρ) ≃sl2(C(t)) generated by the unique",
+          "bbox": [
+            85.04,
+            659.01,
+            510.28,
+            674.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "MSBM10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "0-cell e ; C1(M, Adρ) ≃sl2(C(t)) · a ⊕sl2(C(t)) · b ⊕sl2(C(t)) · z, C1(Mi, Adρ) ≃",
+          "bbox": [
+            85.04,
+            676.94,
+            510.24,
+            692.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "MSBM10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "sl2(C(t))2 generated by a and z (resp. by b and z), and C1(A, Adρ) ≃sl2(C(t)) · z.",
+          "bbox": [
+            85.04,
+            693.16,
+            510.24,
+            710.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "MSBM10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Finally, i1(ζa, ζb, ζz) = (ζa, ζz)⊕(ζb, ζz) and j1((ζa, ζz)⊕(ξb, ξz)) = ζz −ξz. The degree",
+          "bbox": [
+            85.04,
+            715.25,
+            510.25,
+            729.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "zero maps are deﬁned as usual.",
+          "bbox": [
+            85.04,
+            733.35,
+            244.58,
+            745.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "68",
+          "bbox": [
+            291.79,
+            763.24,
+            303.5,
+            775.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 71,
+      "rotation": 0,
+      "drawings": 7,
+      "rasterImagesOnPage": 10,
+      "captionCandidates": [
+        "Figure 2.3 – Here is depicted a cellular decomposition of the boundary of M. The e’s denote 0-cells, a’s,b’s and u’s are 1-cells and 2-cells are denoted using capital letters. Cells denoted identically are identiﬁed.",
+        "Figure 2.4 – An other picture of the trefoil in a 2-torus"
+      ],
+      "labels": [
+        {
+          "text": "H2(M, Adρ), we need to compute the map H2(M, Adρ) →H2(∂M, Adρ), using the",
+          "bbox": [
+            85.04,
+            100.6,
+            510.25,
+            114.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "following cellular decomposition of ∂M. We shall furnish some explanations on how",
+          "bbox": [
+            85.04,
+            119.75,
+            510.31,
+            131.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "e0",
+          "bbox": [
+            250.46,
+            147.69,
+            260.12,
+            160.57
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "e1",
+          "bbox": [
+            339.06,
+            151.94,
+            348.72,
+            164.82
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "b2",
+          "bbox": [
+            355.74,
+            155.54,
+            364.95,
+            168.42
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "b3",
+          "bbox": [
+            230.38,
+            156.69,
+            239.59,
+            169.57
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "a2",
+          "bbox": [
+            282.55,
+            159.93,
+            292.93,
+            172.8
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "a1",
+          "bbox": [
+            308.64,
+            160.85,
+            319.02,
+            173.73
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "e1",
+          "bbox": [
+            217.45,
+            163.85,
+            227.11,
+            176.73
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "e2",
+          "bbox": [
+            368.61,
+            166.02,
+            378.27,
+            178.9
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "u′",
+          "bbox": [
+            331.5,
+            187.69,
+            340.46,
+            200.97
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "u",
+          "bbox": [
+            250.23,
+            189.02,
+            256.89,
+            200.97
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "b1",
+          "bbox": [
+            377.22,
+            189.25,
+            386.42,
+            202.12
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "C",
+          "bbox": [
+            320.19,
+            189.71,
+            328.57,
+            201.66
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "b2",
+          "bbox": [
+            210.29,
+            189.94,
+            219.5,
+            202.82
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "D",
+          "bbox": [
+            354.59,
+            189.94,
+            364.31,
+            201.89
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "e1",
+          "bbox": [
+            283.94,
+            190.17,
+            293.6,
+            203.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "e0",
+          "bbox": [
+            304.31,
+            190.31,
+            313.97,
+            203.19
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "B",
+          "bbox": [
+            266.39,
+            190.4,
+            275.29,
+            202.36
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            232.92,
+            190.86,
+            241.69,
+            202.82
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "e0",
+          "bbox": [
+            370.06,
+            214.64,
+            379.72,
+            227.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "e2",
+          "bbox": [
+            221.37,
+            219.26,
+            231.03,
+            232.14
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "a1",
+          "bbox": [
+            282.09,
+            219.26,
+            292.47,
+            232.14
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "a2",
+          "bbox": [
+            310.95,
+            222.95,
+            321.33,
+            235.83
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "b1",
+          "bbox": [
+            236.84,
+            225.96,
+            246.05,
+            238.83
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "b3",
+          "bbox": [
+            353.2,
+            228.03,
+            362.41,
+            240.91
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "e0",
+          "bbox": [
+            256.7,
+            230.11,
+            266.35,
+            242.99
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "e1",
+          "bbox": [
+            337.27,
+            232.42,
+            346.93,
+            245.3
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 2.3 – Here is depicted a cellular decomposition of the boundary of M. The",
+          "bbox": [
+            85.04,
+            278.0,
+            510.24,
+            292.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFCC1200",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "e’s denote 0-cells, a’s,b’s and u’s are 1-cells and 2-cells are denoted using capital",
+          "bbox": [
+            85.04,
+            295.06,
+            510.28,
+            307.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "letters. Cells denoted identically are identiﬁed.",
+          "bbox": [
+            85.04,
+            309.52,
+            323.52,
+            321.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "we produce such a cellular decomposition : the ﬁrst point is to recall that the trefoil",
+          "bbox": [
+            85.04,
+            354.26,
+            510.38,
+            366.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "can be drawn lying on a 2-torus embedded in the 3-sphere in the usual way, as in",
+          "bbox": [
+            85.04,
+            372.17,
+            510.27,
+            384.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "picture 2.1. Another way to draw it, more schematically, is the following depicted",
+          "bbox": [
+            85.04,
+            390.12,
+            510.38,
+            402.07
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "in Figure 2.4.",
+          "bbox": [
+            85.04,
+            408.04,
+            153.83,
+            420.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 2.4 – An other picture of the trefoil in a 2-torus",
+          "bbox": [
+            152.74,
+            596.34,
+            442.64,
+            610.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFCC1200",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The torus that holds the knot splits the 3-sphere into two solid tori T1 and T2. A",
+          "bbox": [
+            85.04,
+            643.7,
+            510.23,
+            657.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "slice of each of those tori is depicted on the ﬁgure 2.5, with red points corresponding",
+          "bbox": [
+            85.04,
+            661.64,
+            510.38,
+            673.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "to the knot crossing the boundary of the disk. \"Flowing\" those points toward the",
+          "bbox": [
+            85.04,
+            679.57,
+            510.42,
+            691.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "center retracts the slice of the knot complement on a graph, as shown here. Now we",
+          "bbox": [
+            85.04,
+            697.49,
+            510.37,
+            709.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "˜",
+          "bbox": [
+            310.7,
+            712.25,
+            316.56,
+            724.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "∂M →˜",
+          "bbox": [
+            303.93,
+            712.38,
+            353.13,
+            727.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "can deﬁne an equivariant cellular map φ :",
+          "bbox": [
+            85.04,
+            715.41,
+            300.1,
+            727.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "M between lifts of those cellular",
+          "bbox": [
+            342.93,
+            715.41,
+            510.27,
+            727.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "decompositions to universal covers : φ(˜e0) = ˜e, φ(˜e1) = a · ˜e, φ(˜e2) = b · ˜e, φ(˜a1) =",
+          "bbox": [
+            85.04,
+            733.18,
+            510.25,
+            746.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "70",
+          "bbox": [
+            291.79,
+            763.24,
+            303.5,
+            775.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 72,
+      "rotation": 0,
+      "drawings": 13,
+      "rasterImagesOnPage": 17,
+      "captionCandidates": [
+        "Figure 2.5 – The complement M of the knot K retracts on the union of the red radial segments. The boundary ∂M, in green on the ﬁgure, can be seen as foliating the disks A, B, C and D of ﬁgure 2.3 by half-segments from ai or bi to u or u′."
+      ],
+      "labels": [
+        {
+          "text": "K",
+          "bbox": [
+            209.93,
+            135.43,
+            219.89,
+            147.38
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "u′ u",
+          "bbox": [
+            387.06,
+            149.46,
+            411.27,
+            165.75
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "D",
+          "bbox": [
+            392.37,
+            186.85,
+            402.09,
+            198.81
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            404.61,
+            188.49,
+            413.39,
+            200.44
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "∂M",
+          "bbox": [
+            252.38,
+            202.77,
+            270.53,
+            214.73
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "b1",
+          "bbox": [
+            381.35,
+            221.13,
+            390.56,
+            234.01
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "u′",
+          "bbox": [
+            108.3,
+            223.49,
+            117.26,
+            236.77
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "a1",
+          "bbox": [
+            192.79,
+            224.81,
+            203.17,
+            237.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "u",
+          "bbox": [
+            287.48,
+            227.26,
+            294.14,
+            239.21
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "b2",
+          "bbox": [
+            408.29,
+            227.26,
+            417.5,
+            240.14
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "C",
+          "bbox": [
+            142.18,
+            228.49,
+            150.56,
+            240.44
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "B",
+          "bbox": [
+            237.27,
+            228.89,
+            246.17,
+            240.85
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "u′",
+          "bbox": [
+            287.07,
+            239.4,
+            296.03,
+            252.68
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "u",
+          "bbox": [
+            108.3,
+            239.91,
+            114.96,
+            251.87
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "B",
+          "bbox": [
+            143.0,
+            239.91,
+            151.89,
+            251.87
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "C",
+          "bbox": [
+            238.09,
+            240.73,
+            246.47,
+            252.68
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "b3",
+          "bbox": [
+            393.6,
+            243.17,
+            402.8,
+            256.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "a2",
+          "bbox": [
+            191.16,
+            247.66,
+            201.53,
+            260.54
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "D",
+          "bbox": [
+            438.08,
+            252.56,
+            447.8,
+            264.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            362.98,
+            254.2,
+            371.76,
+            266.15
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            431.14,
+            260.72,
+            439.92,
+            272.68
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "D",
+          "bbox": [
+            370.33,
+            261.13,
+            380.05,
+            273.09
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "u′",
+          "bbox": [
+            477.26,
+            276.95,
+            486.22,
+            290.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "u",
+          "bbox": [
+            320.13,
+            278.68,
+            326.79,
+            290.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "M",
+          "bbox": [
+            306.66,
+            290.11,
+            317.98,
+            302.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "u′",
+          "bbox": [
+            327.07,
+            290.82,
+            336.03,
+            304.11
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "u",
+          "bbox": [
+            469.51,
+            292.15,
+            476.17,
+            304.11
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 2.5 – The complement M of the knot K retracts on the union of the red",
+          "bbox": [
+            85.04,
+            412.31,
+            510.29,
+            426.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFCC1200",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "radial segments. The boundary ∂M, in green on the ﬁgure, can be seen as foliating",
+          "bbox": [
+            85.04,
+            429.37,
+            510.31,
+            441.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the disks A, B, C and D of ﬁgure 2.3 by half-segments from ai or bi to u or u′.",
+          "bbox": [
+            85.04,
+            442.49,
+            486.26,
+            457.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "˜a, φ(˜a2) = a · ˜a, φ(˜b1) = ˜b, φ(˜b2) = b · ˜b, φ(˜b3) = b2 · ˜b, φ( ˜A) = ˜D2, φ( ˜B) = ˜D1, φ( ˜C) =",
+          "bbox": [
+            85.04,
+            494.61,
+            510.25,
+            511.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "a · ˜D1, φ( ˜D) = b2 · ˜D2.",
+          "bbox": [
+            85.04,
+            512.54,
+            197.38,
+            529.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Then",
+          "bbox": [
+            85.04,
+            539.04,
+            111.7,
+            550.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "φ∗: H2(M, Adρ) →H2(∂M, Adρ)",
+          "bbox": [
+            162.71,
+            569.86,
+            333.17,
+            584.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(ζD1, ζD2) 7→(ζD2, ζD1, Adρ(a) ·ζD1, Adρ(b2) ·ζD2)",
+          "bbox": [
+            198.23,
+            592.55,
+            432.57,
+            606.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Now we claim that (F, 0) ∈H2(M, Adρ) is dual to the choice of basis ρ(ab−1)0 ∈",
+          "bbox": [
+            85.04,
+            624.14,
+            510.24,
+            639.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "H0(∂M), we the evaluation against the vector [A + B + C + D] ⊗ρ(ab−1) ∈",
+          "bbox": [
+            85.04,
+            642.06,
+            510.24,
+            655.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "H2(∂M, Adρ) :",
+          "bbox": [
+            85.04,
+            661.32,
+            159.84,
+            674.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Tr(φ∗(F, 0)((A + B + C + D) ⊗ρ(ab−1)0)) = Tr((F + Adρ(a) ·F)ρ(ab−1)0)",
+          "bbox": [
+            85.35,
+            692.16,
+            459.83,
+            707.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            395.77,
+            712.52,
+            416.7,
+            724.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            500.46,
+            712.52,
+            509.93,
+            724.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "−t",
+          "bbox": [
+            349.27,
+            715.85,
+            362.81,
+            727.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            380.61,
+            715.85,
+            395.77,
+            727.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "−j",
+          "bbox": [
+            480.44,
+            715.85,
+            494.58,
+            727.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "t/2",
+          "bbox": [
+            433.01,
+            716.0,
+            448.95,
+            727.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "= Tr",
+          "bbox": [
+            305.51,
+            724.37,
+            329.97,
+            736.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "t2 + 1",
+          "bbox": [
+            341.42,
+            729.59,
+            370.66,
+            745.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(t2 + 1)j2",
+          "bbox": [
+            416.69,
+            729.59,
+            464.77,
+            745.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "−t/2",
+          "bbox": [
+            475.23,
+            733.77,
+            500.47,
+            745.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "t",
+          "bbox": [
+            386.08,
+            733.93,
+            390.31,
+            745.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "71",
+          "bbox": [
+            291.79,
+            763.24,
+            303.5,
+            775.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 89,
+      "rotation": 0,
+      "drawings": 9,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3.1 – A diagram of the Whitehead link. a, b and λ are depicted generators of the fundamental group, and µ is a counter-clockwise oriented longitude of the circle component."
+      ],
+      "labels": [
+        {
+          "text": "b",
+          "bbox": [
+            396.42,
+            99.34,
+            401.4,
+            111.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "a",
+          "bbox": [
+            178.17,
+            113.39,
+            184.32,
+            125.35
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "µ",
+          "bbox": [
+            304.04,
+            261.38,
+            311.08,
+            273.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "λ",
+          "bbox": [
+            251.11,
+            338.22,
+            257.94,
+            350.17
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 3.1 – A diagram of the Whitehead link. a, b and λ are depicted generators",
+          "bbox": [
+            85.04,
+            368.11,
+            510.29,
+            382.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFCC1200",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of the fundamental group, and µ is a counter-clockwise oriented longitude of the",
+          "bbox": [
+            85.04,
+            385.16,
+            510.31,
+            397.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "circle component.",
+          "bbox": [
+            85.04,
+            399.62,
+            174.79,
+            411.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the Whitehead link can be computed to be",
+          "bbox": [
+            85.04,
+            461.24,
+            305.52,
+            473.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1) = ⟨a, b, λ| b = λaλ−1, [λ−1, a−1][λ−1, a][λ, a][λ, a−1] = 1⟩",
+          "bbox": [
+            165.32,
+            492.06,
+            458.08,
+            509.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR6",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "π1(L52",
+          "bbox": [
+            137.2,
+            493.99,
+            168.98,
+            507.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "The J(2, 2n)-twists knots, n ∈Z, are obtained as",
+          "bbox": [
+            85.04,
+            531.37,
+            346.97,
+            545.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "MSBM10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            353.54,
+            532.39,
+            357.78,
+            540.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "n Dehn ﬁlling along the circle",
+          "bbox": [
+            353.09,
+            533.99,
+            510.28,
+            550.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "component. The additional relation is thus µn = λ, where µ = ba−1b−1a. Notice",
+          "bbox": [
+            85.04,
+            547.57,
+            510.25,
+            563.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "that the second relation in the presentation above is [λ, µ] = 1, hence is redondant",
+          "bbox": [
+            85.04,
+            569.83,
+            510.26,
+            581.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "whence µn = λ. Figure 3.2 shows positive and negative twist knots, for n = ±1.",
+          "bbox": [
+            85.04,
+            583.42,
+            510.24,
+            599.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Hence we obtain the following presentation of twist knot group π1(J(2, 2n)) =",
+          "bbox": [
+            85.04,
+            605.69,
+            510.25,
+            618.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "⟨a, b|(ba−1b−1a)na = b(ba−1b−1a)n⟩, or ⟨a, λ|µn = λ⟩where the curve µ is the curve",
+          "bbox": [
+            85.04,
+            619.28,
+            510.24,
+            635.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "ba−1b−1a = [λ, a][λ, a−1].",
+          "bbox": [
+            85.04,
+            640.21,
+            209.68,
+            653.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "We deﬁne a tautological representation of the character variety X(2, 2n) of the twist",
+          "bbox": [
+            85.04,
+            666.7,
+            510.26,
+            678.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "knots J(2, 2n) by",
+          "bbox": [
+            85.04,
+            684.62,
+            173.52,
+            696.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            256.85,
+            712.52,
+            266.31,
+            724.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            408.11,
+            712.52,
+            417.58,
+            724.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "s",
+          "bbox": [
+            224.37,
+            716.0,
+            229.88,
+            727.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            245.5,
+            716.0,
+            251.36,
+            727.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "s",
+          "bbox": [
+            347.34,
+            716.0,
+            352.85,
+            727.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            396.77,
+            716.0,
+            402.63,
+            727.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ρ(a) =",
+          "bbox": [
+            177.7,
+            724.37,
+            211.42,
+            736.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": ", ρ(b) =",
+          "bbox": [
+            268.3,
+            724.37,
+            306.1,
+            736.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "y −s2 −s−2",
+          "bbox": [
+            318.88,
+            729.43,
+            380.82,
+            745.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "s−1",
+          "bbox": [
+            240.01,
+            732.6,
+            256.35,
+            745.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "s−1",
+          "bbox": [
+            391.28,
+            732.6,
+            407.61,
+            745.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            224.2,
+            733.93,
+            230.06,
+            745.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "88",
+          "bbox": [
+            291.79,
+            763.24,
+            303.5,
+            775.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 90,
+      "rotation": 0,
+      "drawings": 10,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3.2 – The diagram above if J(2, 2), the trefoil knot. The one below is J(2, −2), the ﬁgure-eight knot."
+      ],
+      "labels": [
+        {
+          "text": "b",
+          "bbox": [
+            411.51,
+            107.3,
+            416.48,
+            119.26
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "a",
+          "bbox": [
+            165.73,
+            121.56,
+            171.87,
+            133.51
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "b",
+          "bbox": [
+            406.24,
+            448.34,
+            411.21,
+            460.3
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "a",
+          "bbox": [
+            160.47,
+            462.6,
+            166.61,
+            474.55
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 3.2 – The diagram above if J(2, 2), the trefoil knot. The one below is",
+          "bbox": [
+            85.04,
+            692.41,
+            510.29,
+            706.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFCC1200",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "J(2, −2), the ﬁgure-eight knot.",
+          "bbox": [
+            85.04,
+            709.31,
+            243.1,
+            721.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "89",
+          "bbox": [
+            291.79,
+            763.24,
+            303.5,
+            775.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 93,
+      "rotation": 0,
+      "drawings": 14,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3.3 – The ﬁgure-eight knot, with a non orientable checkerboard surface ˇΣ, and generating loops u, v of its fundamental group"
+      ],
+      "labels": [
+        {
+          "text": "u",
+          "bbox": [
+            395.54,
+            158.52,
+            402.2,
+            170.48
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "v",
+          "bbox": [
+            268.21,
+            161.94,
+            273.87,
+            173.9
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ˇΣ",
+          "bbox": [
+            215.3,
+            210.08,
+            223.75,
+            225.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 3.3 – The ﬁgure-eight knot, with a non orientable checkerboard surface ˇΣ,",
+          "bbox": [
+            85.04,
+            373.9,
+            510.24,
+            388.89
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12",
+            "SFCC1200",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "and generating loops u, v of its fundamental group",
+          "bbox": [
+            85.04,
+            391.37,
+            343.79,
+            403.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Notation. Since we have picked a base point p ∈Σ1 in Section 1.3.6, we will abuse",
+          "bbox": [
+            85.04,
+            435.51,
+            510.28,
+            449.43
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFBX1200",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "of the notation π1(Σ) to designate π1(Σ1). In the same way, we denote by C∗(Σ, ρΣ)",
+          "bbox": [
+            85.04,
+            452.26,
+            510.24,
+            466.47
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "the twisted cohomological complex of Σ1.",
+          "bbox": [
+            85.04,
+            471.52,
+            296.92,
+            484.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Lemma 3.3.2. One has the following isomorphism of k(X)-vector spaces :",
+          "bbox": [
+            85.04,
+            495.12,
+            470.5,
+            507.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFBX1200",
+            "SFTI1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "∼−→H1(Σ, ρΣ)",
+          "bbox": [
+            337.47,
+            524.11,
+            404.78,
+            540.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "d : H1(M1, ρ1) ⊕H1(M2, ρ2)",
+          "bbox": [
+            190.5,
+            526.06,
+            334.15,
+            540.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Proof. Recall that C∗(M, ρ) is acyclic and Hj(Mi, ρi) = {0} for any j ≥2, i = 1, 2",
+          "bbox": [
+            85.04,
+            559.32,
+            510.24,
+            573.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10",
+            "CMSY8",
+            "SFRM1200",
+            "SFTI1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "because Mi have the same homotopy type that a one-dimensional CW complex.",
+          "bbox": [
+            85.04,
+            578.57,
+            510.36,
+            592.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Now ¯ρi are irreducible by Lemma 1.3.15, hence ρi are irreducible and in particular",
+          "bbox": [
+            85.04,
+            596.5,
+            510.3,
+            610.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "there is γi ∈π1(Mi) such that Tr(ρi(γi))̸ = 2. Thus H0(Mi, ρi) = {0}. The lemma",
+          "bbox": [
+            85.04,
+            613.2,
+            510.25,
+            628.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "follows now from the Mayer-Vietoris sequence.",
+          "bbox": [
+            85.04,
+            632.37,
+            323.26,
+            644.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Lemma 3.3.3. The Ov-modules H1(M1, ρ1)v, H1(M2, ρ′",
+          "bbox": [
+            85.04,
+            654.63,
+            377.44,
+            668.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "SFBX1200",
+            "SFTI1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2)v, H1(Σ, ρΣ)v are free of",
+          "bbox": [
+            375.15,
+            654.73,
+            510.23,
+            669.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "SFTI1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "rank −χ(Σ1), −χ(Σ1) and −2χ(Σ1) respectively.",
+          "bbox": [
+            85.04,
+            673.72,
+            333.47,
+            686.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFTI1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Proof. The Mayer-Vietoris sequence of Lemma 3.3.2 implies that H0(Σ, ρΣ) = {0}",
+          "bbox": [
+            85.04,
+            696.26,
+            510.24,
+            710.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200",
+            "SFTI1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "since H0(Mi, ρi) = H0(M, ρ) = {0}, and similarly H2(Σ, ρ) = {0}. Now H1(Σ, ρΣ)v",
+          "bbox": [
+            85.04,
+            714.18,
+            509.45,
+            728.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "is free of rank −2χ(Σ), and the lemma follows.",
+          "bbox": [
+            85.04,
+            733.18,
+            325.18,
+            745.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "92",
+          "bbox": [
+            291.79,
+            763.24,
+            303.5,
+            775.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    }
+  ]
+}

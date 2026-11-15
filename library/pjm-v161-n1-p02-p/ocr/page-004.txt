@@ -1,0 +1,47 @@
+STUDYING LINKS VIA CLOSED BRAIDS III 27
+
+are closed 3-braids follows immediately, as there are several known
+algorithmic solutions to the conjugacy problem in B; ({SC], [G], [X]),
+each yielding unique normal forms for conjugacy classes.
+
+By the work of Yamada [Y] links which are defined by closed n-
+braids have an alternative interpretation as links which are defined by
+diagrams with n Seifert circles. A computer program is now available
+[F] which begins with an arbitrary link diagram with n Seifert circles
+and produces from it a closed n-braid representative (in fact, for n =
+3 the program gives a 3-braid which is defined by the special generators
+@,, 4, a3 which are introduced in this paper). We also have a second
+program which yields normal forms for conjugacy classes in B;. Thus
+our results are very concrete.
+
+Two other special cases of Markov’s theorem without stabilization
+are proved in [B-M, IVj (which is a study of the n-braid representa-
+tives of split links and composite links) and [B-M, V] (where the n-
+braid representatives of the r-component unlink are studied for fixed
+n>r). The pathologies which are investigated in the three papers [B-
+M, III], [B-M, IV] and [B-M, V], all come into play if one attempts
+to generalize the results of this paper to higher braid index.
+
+To state our result, let a, and o) be the standard elementary braids
+which generate the 3-string braid group B;. The central result in this
+paper may be stated in the following way:
+
+THE CLASSIFICATION THEOREM (Version 1). A link & which is rep-
+resented by a closed 3-braid admits a unique conjugacy class of 3-braid
+representatives, with the following exceptions:
+
+(i) & is the unknot, which has three conjugacy classes of 3-braid
+representatives, namely the classes of 0,02, o,'0;' and oo;'.
+
+(ii) LY isa type (2, k) torus link, k # +1, which has two conju-
+gacy classes of 3-braid representatives, namely the classes of ok a2 and
+akas!.
+
+(iii) L& is one of a special class of links of braid index 3 which have
+3-braid representatives which admit “braid-preserving flypes”. These
+links have at most two conjugacy classes of 3-braid representatives,
+namely the classes of aPagatas and afagatas, where p, q, r are
+distinct integers having absolute value at least 2 and where 6 = +1.
+
+The exceptional cases (i) and (ii) are the expected ones, but (iii)
+was not previously recognized except in special cases (see [Mu]). It is

@@ -1,0 +1,3291 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1409.2799v2",
+ "status": "determined",
+ "pages_unread": [
+  16,
+  29,
+  33
+ ],
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "1",
+   "text": "If not otherwise stated:modules in this paper are assumed to be ﬁnite-dimensional. There are only few exceptions in this paper, e.g. Tq(∞) from Deﬁnition 2.25. We hope it is clear from the context.",
+   "marks": [
+    {
+     "page": 2,
+     "context": "groups.FixasimplecomplexLiealgebrag.Thentheﬁnite-dimensional"
+    }
+   ],
+   "block": "library/arxiv-1409.2799v2/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p003-1",
+   "page": 3,
+   "mark": "2",
+   "text": "Around the same time this quiver algebra was considered independently by Braden in [10]. We stay with Khovanov and Seidel’s formulation (but write Qm instead of Am as they do) because the functors they considered on the category of representations of this algebra are closely connected to translation functors in our context.",
+   "marks": [
+    {
+     "page": 3,
+     "context": "d Seidel introduced in [36] in their study of Floer homology"
+    }
+   ],
+   "block": "library/arxiv-1409.2799v2/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "3",
+   "text": "We like to work over the cyclotomic ﬁeld Q(q), but any ﬁeld of characteristic zero containing q would work.",
+   "marks": [
+    {
+     "page": 5,
+     "context": "enveloping algebra"
+    }
+   ],
+   "block": "library/arxiv-1409.2799v2/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "4",
+   "text": "The square is only important for roots of unity of even order, but not for roots of unity of odd order (for these the order of q2 is the same as the order of q), e.g. we have l = 3 for third as well as for sixth roots of unity.",
+   "marks": [
+    {
+     "page": 6,
+     "context": "3.Fix a root of unity q∈Q(q), q̸=±1 and denote by lthe order"
+    }
+   ],
+   "block": "library/arxiv-1409.2799v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p012-1",
+   "page": 12,
+   "mark": "5",
+   "text": "We point out that this fails in general. An explicit counterexample can be found for example in [4, Section 5].",
+   "marks": [
+    {
+     "page": 12,
+     "context": "ups over arbitrary ﬁelds, see [5, Corollary 7.4].In addition"
+    }
+   ],
+   "block": "library/arxiv-1409.2799v2/blocks/prose-sec-007"
+  },
+  {
+   "id": "fn-p017-1",
+   "page": 17,
+   "mark": "6",
+   "text": "Weuserightmodules in this section and read from right to left:wethink of thepaths in thequiver as applying morphisms/functors. The reason for this will become clear in Subsection 3.4.",
+   "marks": [
+    {
+     "page": 17,
+     "context": "Inthepresentsection"
+    }
+   ],
+   "block": "library/arxiv-1409.2799v2/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p017-2",
+   "page": 17,
+   "mark": "7",
+   "text": "NotethatKhovanov andSeidelusefreeZ-modulesinsteadofQ(q)-vectorspaces.Inordertoavoidtoomany different overlapping notations, we only use the Q(q)-vector space version, but it is not a big problem to work over Z.",
+   "marks": [
+    {
+     "page": 17,
+     "context": "jfor all i, j∈Z.The path algebra Pm is a graded Q(q)-algebra"
+    }
+   ],
+   "block": "library/arxiv-1409.2799v2/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p019-1",
+   "page": 19,
+   "mark": "8",
+   "text": "In our convention a positive number shifts the degree up.",
+   "marks": [
+    {
+     "page": 19,
+     "context": "The endofunctor ·⟨s⟩:Modgr-A →Modgr-A, called shift"
+    }
+   ],
+   "block": "library/arxiv-1409.2799v2/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p020-1",
+   "page": 20,
+   "mark": "9",
+   "text": "Note that we use a different convention than Khovanov and Seidel for the gradings by shiftingiPdown by one.",
+   "marks": [
+    {
+     "page": 20,
+     "context": "3.3.Endofunctors on pModgr-Qm and pModgr-Q∞.Set"
+    }
+   ],
+   "block": "library/arxiv-1409.2799v2/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p031-1",
+   "page": 31,
+   "mark": "11",
+   "text": "The parameter q in the notation of Bernstein-Frenkel-Khovanov comes from the grading.",
+   "marks": [
+    {
+     "page": 31,
+     "context": "maxgives"
+    }
+   ],
+   "block": "library/arxiv-1409.2799v2/blocks/prose-sec-012"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "m",
+   "context": "The quiver algebras Q"
+  },
+  {
+   "page": 1,
+   "mark": "m",
+   "context": "Combinatorics of the graded, right Q"
+  },
+  {
+   "page": 1,
+   "mark": "m",
+   "context": "Endofunctors on pModgr-Q"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "0(U(sl"
+  },
+  {
+   "page": 4,
+   "mark": "v",
+   "context": "ble forthispaper:Elias’categoriﬁcationD(∞)oftheHeckealgebraH"
+  },
+  {
+   "page": 4,
+   "mark": "l",
+   "context": " are the two reﬂections that generate the afﬁne Weyl group W"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "o reﬂections that generate the afﬁne Weyl group Wl∼= D∞of sl"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "λand its category of (graded) projective endofunctors"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "a diagrammatic description as well.And, since W"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "λand"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "[a] =v"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "v −v−1= v"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "v −v−1= va−1 + v"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "KE= v"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "E(j)=E"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "F(j)=F"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": " a root of unity q∈Q(q), q̸=±1 and denote by lthe order4of q"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "Moreover, note that [j]=0∈Uqiff l|j.This implies E"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": ", note that [j]=0∈Uqiff l|j.This implies El=[l]!E(l)=0 and F"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "is also true that K"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "is also true that K2"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "Kmk= q"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "Kmk= qi−2"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "m"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "q"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "Kacts on ∆q(i) via the eigenvalues q−i, q−i+2, . . . , q"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "Proof.This follows from L"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "Proof.This follows from Lq(i)∼= (L"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "Corollary 2.10.The set {L"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "such that for all i = 0, 1 . . .we have F"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "such that for all i = 0, 1 . . .we have Fi/F"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "such that for all i = 0, 1 . . .we have F"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "such that for all i = 0, 1 . . .we have Fi+1/F"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "Deﬁne, using Propositions 2.7 and 2.16 and (4), a family (T"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "e, using Propositions 2.7 and 2.16 and (4), a family (Tq(i))"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "Denote by (T:∆q(i))∈Z≥0the ﬁltration multiplicity for an U"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "exists an i ∈Z≥0 such that M∼= T"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "q"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "q"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "We call A"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "ntal alcove.Any other alcove in Z≥−1is clearly of the form A"
+  },
+  {
+   "page": 11,
+   "mark": "l",
+   "context": "Note that W"
+  },
+  {
+   "page": 11,
+   "mark": "l",
+   "context": "t Wlis isomorphic to the inﬁnite dihedral group D∞:we have W"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "(with Z/2Z being the Weyl group of sl"
+  },
+  {
+   "page": 11,
+   "mark": "l",
+   "context": "WedenotebyW"
+  },
+  {
+   "page": 11,
+   "mark": "l",
+   "context": "Wesayi∈Z≥0islinkedtoi′∈Z≥0ifthereexistsw∈W"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "for each i ∈Z≥0.Suppose λ ∈A"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "n 2.25.(The tilting generator) Let m ∈Z≥0 ∪{∞}.We call the U"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "Tλ ⊕T−1 ⊕T"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "λ∈A"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "with semisimple categories T−1and T"
+  },
+  {
+   "page": 12,
+   "mark": "v",
+   "context": "mple categories T−1and Tl−1equivalent to the corresponding U"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "We have for all λ ∈A"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "We have for all λ ∈A0 (similar for T−1 and T"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "posable tilting in Tλ is of the form T"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": " tilting in Tλ is of the form Tq(i) for some i ∈Z≥0 and i ∈W"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "mbination of Theorem 2.23 and Lemma 2.18.Note that T−1 and T"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "they are T"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "y are Tq(i) for i = 1, 3, 7, . . . .The two blocks T−1 and T"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "q,seeforexample[5,Section1].Thereis"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "q,seeforexample[5,Section1].Thereisacharacterχ"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "q,seeforexample[5,Section1].Thereisacharacterχi :U"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "qU"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "HomU"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "HomUq(∆q(i), M)∼= {m ∈M"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "where Mi={m∈M|um=χi(u)m,u∈U"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "q} is the"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "i, down"
+  },
+  {
+   "page": 12,
+   "mark": "u",
+   "context": "i(or simply"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i(or simply u"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i(or simply ui, d"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i(or simply ui, di and ε"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "i:T"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i:Tq(λ"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "i:Tq(λi) →T"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i:Tq(λi) →Tq(λ"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i:Tq(λi) →Tq(λi+1),"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "i:Tq(λi) →Tq(λi+1),i = 0,"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "i:T"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i:Tq(λ"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "i:Tq(λi) →T"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i:Tq(λi) →Tq(λ"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i:Tq(λi) →Tq(λi−1),"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "i:Tq(λi) →Tq(λi−1),i = 1,"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i+1,"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "i+1,i = 1,"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i,"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "i,i = 1,"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i= 0,"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "i= 0,i = 1,"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "L"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "Lq(λ"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "L"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "Lq(λ"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "L"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "Lq(λ"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "L"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "Lq(λ"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "areexchanged.Moreover,notethatthemorphismfrom∇q(λ"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "areexchanged.Moreover,notethatthemorphismfrom∇q(λi)to∆q(λ"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "nged.Moreover,notethatthemorphismfrom∇q(λi)to∆q(λi)usesonlyL"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "d.Moreover,notethatthemorphismfrom∇q(λi)to∆q(λi)usesonlyLq(λ"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "∆q(λ"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "∆q(λi) are the “same” as morphisms from ∆q(λ"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "∆q(λi) are the “same” as morphisms from ∆q(λi−1) to ∇q(λ"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "iand down"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "∆q(λ"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "∆q(λ"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "∆q(λ"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "T"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "Tq(λ"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "∆q(λ"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "T"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "Tq(λ"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "∆q(λ"
+  },
+  {
+   "page": 13,
+   "mark": "u",
+   "context": "ito be the composite cba.Similar for"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "ianddown"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "i−1=0and"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "T"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "Tq(λ"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "∆q(λ"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "L"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "Lq(λ"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "Lq(λi−1)→L"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "Lq(λi−1)→Lq(λ"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "L"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "Lq(λ"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "Lq(λi−1)→L"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "Lq(λi−1)→Lq(λ"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "∇q(λ"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "T"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "Tq(λ"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "iis an up to scalars unique non-zero U"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "iis an up to scalars unique non-zero Uq-morphism T"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "iis an up to scalars unique non-zero Uq-morphism Tq(λ"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "iis an up to scalars unique non-zero Uq-morphism Tq(λi) to T"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": " an up to scalars unique non-zero Uq-morphism Tq(λi) to Tq(λ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "where Q(q)[ε]∼= Q(q)[X]/(X"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "λ:Tλ→Tµ,M7→pµ(M⊗Q(q) T"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "µ:Tµ→Tλ,M7→pλ(M⊗Q(q)T"
+  },
+  {
+   "page": 14,
+   "mark": "l",
+   "context": "l−1◦T"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "µare well-deﬁned (their deﬁnition gives U"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "T"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "Tq(µ"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "Tq(µi−1) ⊕T"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "Tq(µi−1) ⊕Tq(µ"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "λ(T"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "λ(Tq(λ"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "µ(T"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "µ(Tq(µ"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "s(T"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "s(Tq(λ"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "s(T"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "s(Tq(λ"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "s(Tq(λ1)) ∼= T"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "s(Tq(λ1)) ∼= Tq(λ"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "t(T"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "t(Tq(λ"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "t(Tq(λ0)) ∼= T"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "t(Tq(λ0)) ∼= Tq(λ"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "T"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "Tq(λ"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "Tq(λi−1) ⊕T"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "Tq(λi−1) ⊕Tq(λ"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "s or t(T"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "s or t(Tq(λ"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "Here we set T"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "Here we set Tq(−1) = T"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "Here we set Tq(−1) = Tq(λ−1) = T"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "k−tstdenotes an alternating composition of length"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "multiplicities m"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "t)T"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "t)Tq(λ"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "t)Tq(λi) ∼= T"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "t)Tq(λi) ∼= Tq(λ"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "k−tstT"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "k−tstTq(λ"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "Tq(λj)⊕m"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "t)T"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "t)Tq(λ"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "t)Tq(λi) ∼= T"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "t)Tq(λi) ∼= Tq(λ"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "k−tstT"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "k−tstTq(λ"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "Tq(λj)⊕m"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "µ(T"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "µ(Tq(µ"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "Here p"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "Hom"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "tare objects in"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "Θλ,"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "Θλ,2"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "Θλ,"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "Θλ,2"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "i∈Z≥0Tλ,"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "i∈Z≥0Tλ,2"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "i∈Z≥0Tλ,"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "i∈Z≥0Tλ,2"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "s or t.This follows from (8) and Proposition 2.39.We call"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "3.1.The quiver algebras Q"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "Q(q)-algebra A (or simply graded) is a Q(q)-algebra A =⊕i∈ZA"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "that A"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "that AiA"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "that AiAj⊂A"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "with P"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "m= {All paths in P"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "m= {All paths in Pmof length"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "P"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "since we clearly have P"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "m◦P"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "m⊂P"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "u"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "ui ◦u"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "ui ◦ui−1= 0 = d"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "ui ◦ui−1= 0 = di ◦d"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "d"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "di+1 ◦u"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "di+1 ◦ui= u"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "di+1 ◦ui= ui−1 ◦d"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "Moreover,wedenote for i=1, . . . , m byε"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "Moreover,wedenote for i=1, . . . , m byεi=u"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "Moreover,wedenote for i=1, . . . , m byεi=ui−1d"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "i=1, . . . , m byεi=ui−1dithe loop thatstartsatiandgoesvia d"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "toi −1andthenbackviau"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "toi −1andthenbackviaui−1.Notethattherelationsimplythatε"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "toi −1andthenbackviaui−1.Notethattherelationsimplythatεi=d"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "i −1andthenbackviaui−1.Notethattherelationsimplythatεi=di+1u"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "phism of graded algebras, if f(A"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "phism of graded algebras, if f(Ak) ⊂B"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "ι"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "Q"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Q"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "Q"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "−→Q"
+  },
+  {
+   "page": 19,
+   "mark": "l",
+   "context": "InordertobeabletoalsoconsiderthesemisimpleblocksT−1andT"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "For convenience we set u"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "For convenience we set um= d"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "For convenience we set um= d0= ε"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "For convenience we set um= d0= ε0= 0 for all Q"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "For convenience we set um= d0= ε0= 0 for all Qm and d"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "For convenience we set um= d0= ε0= 0 for all Qm and d0= ε"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "3.2.Combinatorics of the graded, right Q"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "M"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "Mk· A"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "Mk· Ak′⊂M"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "M"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "if f(M"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "if f(Mk) ⊂N"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "f(Mk) ⊂Nkfor all k∈Z and homogeneous (of degree d ∈Z) if f(M"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": " ⊂Nkfor all k∈Z and homogeneous (of degree d ∈Z) if f(Mk) ⊂N"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "of a module to the k-th of the shift M⟨s⟩, that is, M⟨s⟩k= M"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "iP= Q(q)"
+  },
+  {
+   "page": 19,
+   "mark": "u",
+   "context": "iP= Q(q)i ⊕Q(q)"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "iP= Q(q)i ⊕Q(q)u"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "iP= Q(q)i ⊕Q(q)ui−1⊕Q(q)"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "iP= Q(q)i ⊕Q(q)ui−1⊕Q(q)d"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "iP= Q(q)i ⊕Q(q)ui−1⊕Q(q)di+1⊕Q(q)ε"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "tivelyu"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "tivelyui−1,d"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "tivelyui−1,di+1andε"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "ecomposable right Q∞-modules are, up to a shift, of the form"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "3.3.Endofunctors on pModgr-Q"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "3.3.Endofunctors on pModgr-Qm and pModgr-Q∞.Set9B"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "3.3.Endofunctors on pModgr-Qm and pModgr-Q∞.Set9Bi= P"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "3.3.Endofunctors on pModgr-Qm and pModgr-Q∞.Set9Bi= Pi ⊗Q(q)"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "U"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "Ui :pModgr-Q"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "Ui :pModgr-Qm→pModgr-Q"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "Ui :pModgr-Qm→pModgr-Qm,U"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "Ui :pModgr-Qm→pModgr-Qm,Ui= · ⊗QmB"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "i′P⊗QmP"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "m-module where the action of"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "m-modulesconcentratedindegrees"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "m-modulesconcentratedindegrees0,"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "m-modulesconcentratedindegrees0, 1,"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "m-modulesconcentratedindegrees0, 1, 1and"
+  },
+  {
+   "page": 21,
+   "mark": "u",
+   "context": "m-modules, Q(q)"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "m-modules, Q(q)u"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "m-modules, Q(q)ui∼= Q(q)"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "m-modules, Q(q)ui∼= Q(q)i⟨+1⟩, Q(q)"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "m-modules, Q(q)ui∼= Q(q)i⟨+1⟩, Q(q)d"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "m-modules, Q(q)ui∼= Q(q)i⟨+1⟩, Q(q)di∼= Q(q)"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "m-modules, Q(q)ui∼= Q(q)i⟨+1⟩, Q(q)di∼= Q(q)i⟨+1⟩and Q(q)ε"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "les, Q(q)ui∼= Q(q)i⟨+1⟩, Q(q)di∼= Q(q)i⟨+1⟩and Q(q)εi∼= Q(q)"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "ItisclearthatwecaneasilyadaptthedeﬁnitionoftheU"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "oddcompletely analogously by taking the direct sum over all"
+  },
+  {
+   "page": 21,
+   "mark": "t",
+   "context": "m.To be precise, we deﬁne U"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "iand U"
+  },
+  {
+   "page": 21,
+   "mark": "m",
+   "context": "i:Modgr-Q"
+  },
+  {
+   "page": 21,
+   "mark": "t",
+   "context": "U"
+  },
+  {
+   "page": 21,
+   "mark": "t",
+   "context": "m,U"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i= · ⊗QmP"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "→Modgr-Qm,U"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "U"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "t= · ⊗Q(q)"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "It is immediate that Ui= U"
+  },
+  {
+   "page": 21,
+   "mark": "t",
+   "context": "t◦U"
+  },
+  {
+   "page": 21,
+   "mark": "t",
+   "context": "where we use U"
+  },
+  {
+   "page": 21,
+   "mark": "t",
+   "context": "Lemma 3.8.As graded functors: U"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i⟨+1⟩is the right adjoint of U"
+  },
+  {
+   "page": 21,
+   "mark": "t",
+   "context": "t, U"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "iis the left adjoint of U"
+  },
+  {
+   "page": 21,
+   "mark": "p",
+   "context": "iP→i′Pgiven by left multiplication (post-composition) with"
+  },
+  {
+   "page": 22,
+   "mark": "t",
+   "context": "We only prove that U"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i⟨+1⟩is the right adjoint of U"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "t(Q(q)"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "t(Q(q)i),"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "t(Q(q)i), i′P) ∼= Hom"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "HompModgr-Qm(U"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "m(Q(q)"
+  },
+  {
+   "page": 22,
+   "mark": "t",
+   "context": "m(Q(q)i, U"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "Thus, we have an adjoint pair (U"
+  },
+  {
+   "page": 22,
+   "mark": "t",
+   "context": "t, U"
+  },
+  {
+   "page": 22,
+   "mark": "t",
+   "context": "EndUq(Tq(≤m)"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "The morphisms of EndU"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "The morphisms of EndUq(T"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "i,i′∈Z≥0"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i,i′∈Z≥0f"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "i,i′∈Z≥0fi′iwith"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i,i′∈Z≥0fi′iwithf"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "i,i′∈Z≥0fi′iwithfi′i :T"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "i,i′∈Z≥0fi′iwithfi′i :Tq(i)→T"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "Uq(T"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "Uq(Tq(∞)) should be the (non-unital) subalgebra of EndUq(T"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "Uq(T"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "Uq(T"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "HomU"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "HomUq(T"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "HomUq(Tq(i), T"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "Uq(T"
+  },
+  {
+   "page": 23,
+   "mark": "t",
+   "context": "Uq(Tq(∞)"
+  },
+  {
+   "page": 23,
+   "mark": "t",
+   "context": "HomUq(Tq(i)"
+  },
+  {
+   "page": 23,
+   "mark": "t",
+   "context": "HomUq(Tq(i)t, Tq(i′)"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "Uq(T"
+  },
+  {
+   "page": 23,
+   "mark": "f",
+   "context": "Uq(Tq(∞))fromaboveweseethat,foreach"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "Uq(T"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "existssomem∈Z≥0suchthatf"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "Uq(T"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "−→EndU"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "−→EndUq(T"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "Uq(T"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "−→Q"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "We are now able to relate Tλ(≤m) to pMod-Q"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "Uq(T"
+  },
+  {
+   "page": 23,
+   "mark": "t",
+   "context": "0.Similarly for the walls µ where we indicate the functors T"
+  },
+  {
+   "page": 23,
+   "mark": "t",
+   "context": "mand T"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "superscripts t.We note that the hom-spaces above are right Q"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "e denote these restrictions, by abuse of notation, also by Θ"
+  },
+  {
+   "page": 23,
+   "mark": "t",
+   "context": "note these restrictions, by abuse of notation, also by Θs, Θ"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "the notation Θ"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "s or tfor"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "s or tfor i ∈Z>0 which are deﬁned via (p"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "s or tfor i ∈Z>0 which are deﬁned via (pi projects to the T"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "Θ"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "T"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "Θ"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "U"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "T"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "T"
+  },
+  {
+   "page": 24,
+   "mark": "t",
+   "context": " same as in (a)+(b) works for the walls µ as well by using T"
+  },
+  {
+   "page": 24,
+   "mark": "l",
+   "context": "T"
+  },
+  {
+   "page": 24,
+   "mark": "t",
+   "context": "U"
+  },
+  {
+   "page": 24,
+   "mark": "t",
+   "context": "U"
+  },
+  {
+   "page": 24,
+   "mark": "l",
+   "context": "T"
+  },
+  {
+   "page": 24,
+   "mark": "t",
+   "context": "T"
+  },
+  {
+   "page": 24,
+   "mark": "t",
+   "context": "T"
+  },
+  {
+   "page": 24,
+   "mark": "t",
+   "context": "T"
+  },
+  {
+   "page": 24,
+   "mark": "t",
+   "context": "T"
+  },
+  {
+   "page": 24,
+   "mark": "l",
+   "context": "T"
+  },
+  {
+   "page": 24,
+   "mark": "q",
+   "context": "msendsT"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "msendsTq(i)toQ(q)"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "msendsTq(i)toQ(q)i⊕Q(q)ε"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "msendsTq(i)toQ(q)i⊕Q(q)εiforeven"
+  },
+  {
+   "page": 24,
+   "mark": "u",
+   "context": "msendsTq(i)toQ(q)i⊕Q(q)εiforeveniandQ(q)"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "msendsTq(i)toQ(q)i⊕Q(q)εiforeveniandQ(q)u"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "msendsTq(i)toQ(q)i⊕Q(q)εiforeveniandQ(q)ui−1⊕Q(q)"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "msendsTq(i)toQ(q)i⊕Q(q)εiforeveniandQ(q)ui−1⊕Q(q)d"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "msendsTq(i)toQ(q)i⊕Q(q)εiforeveniandQ(q)ui−1⊕Q(q)di+1forodd"
+  },
+  {
+   "page": 24,
+   "mark": "t",
+   "context": "T"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "m-modulestoQ(q)"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "m-modulestoQ(q)i ⊕Q(q)"
+  },
+  {
+   "page": 24,
+   "mark": "q",
+   "context": "or to T"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "or to Tq(µ"
+  },
+  {
+   "page": 24,
+   "mark": "q",
+   "context": "or to Tq(µi−1)⊕T"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "or to Tq(µi−1)⊕Tq(µ"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "Θ"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": " same as in (a)+(b) works for the walls µ as well by using T"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": "U"
+  },
+  {
+   "page": 25,
+   "mark": "l",
+   "context": "T"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": "U"
+  },
+  {
+   "page": 25,
+   "mark": "l",
+   "context": "T"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": "T"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": "T"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": "T"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": "T"
+  },
+  {
+   "page": 25,
+   "mark": "l",
+   "context": "T"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "mand"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "u"
+  },
+  {
+   "page": 26,
+   "mark": "q",
+   "context": "u0:T"
+  },
+  {
+   "page": 26,
+   "mark": "q",
+   "context": "u0:Tq(0)→T"
+  },
+  {
+   "page": 26,
+   "mark": "t",
+   "context": "u0:Tq(0)→Tq(1),we cancompute Θ"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "u0:Tq(0)→Tq(1),we cancompute Θt(u"
+  },
+  {
+   "page": 26,
+   "mark": "t",
+   "context": "q(0)→Tq(1),we cancompute Θt(u0) asfollows.Firstnote that T∞Θ"
+  },
+  {
+   "page": 26,
+   "mark": "q",
+   "context": ")→Tq(1),we cancompute Θt(u0) asfollows.Firstnote that T∞Θt(T"
+  },
+  {
+   "page": 26,
+   "mark": "t",
+   "context": "T∞Θ"
+  },
+  {
+   "page": 26,
+   "mark": "q",
+   "context": "T∞Θt(T"
+  },
+  {
+   "page": 26,
+   "mark": "m",
+   "context": "Remark 3.16.Let g=sl"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "Remark 3.16.Let g=slm+1and p=p"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "6.Let g=slm+1and p=p1be a maximal parabolic subalgebra for S"
+  },
+  {
+   "page": 26,
+   "mark": "m",
+   "context": " g=slm+1and p=p1be a maximal parabolic subalgebra for S1 × S"
+  },
+  {
+   "page": 26,
+   "mark": "p",
+   "context": "a deﬁnition see for example [24, Chapter 9]).Denote by O"
+  },
+  {
+   "page": 26,
+   "mark": "p",
+   "context": "nandsomepropertiesseee.g.[24,Section9.3]).Moreover,denotebyO"
+  },
+  {
+   "page": 26,
+   "mark": "p",
+   "context": "categoriesO"
+  },
+  {
+   "page": 26,
+   "mark": "m",
+   "context": "0∼=Mod-Q"
+  },
+  {
+   "page": 26,
+   "mark": "p",
+   "context": "0∼=Mod-Qm.Thus,byTheorems3.11and3.12,weseethatTλgovernsO"
+  },
+  {
+   "page": 26,
+   "mark": "t",
+   "context": "byi=1, . . . , m).Moreover,U"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "icorrespondstothetranslationontoandU"
+  },
+  {
+   "page": 26,
+   "mark": "m",
+   "context": "ovanovandSeidel’squiverisalsorelatedtoKhovanov’s arcalgebraH"
+  },
+  {
+   "page": 26,
+   "mark": "m",
+   "context": "seen as the quasi-hereditary cover of H"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "of these cobordisms. As explained in [16, Section 3], the A"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "isomorphic to Qm.Thus, we see that T governs A"
+  },
+  {
+   "page": 26,
+   "mark": "m",
+   "context": "certain subquotients of the sln generalizations of H"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "are isomorphic to subcategories of pMod-Q"
+  },
+  {
+   "page": 27,
+   "mark": "q",
+   "context": "Deﬁnition3.18.Wecalla(left)U"
+  },
+  {
+   "page": 27,
+   "mark": "q",
+   "context": "ableviewedasa(right)Q∞-module.WecallaU"
+  },
+  {
+   "page": 27,
+   "mark": "p",
+   "context": "gory O"
+  },
+  {
+   "page": 27,
+   "mark": "q",
+   "context": "case) we see that T∞(T"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "e see that T∞(Tq(i))∼=iP.As discussed in Subsection 3.2, the"
+  },
+  {
+   "page": 27,
+   "mark": "q",
+   "context": "simpleT∞(T"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "simpleT∞(Tq(µ"
+  },
+  {
+   "page": 27,
+   "mark": "q",
+   "context": "simpleT∞(Tq(µi))adegreebydemandingthatallelementsofT∞(T"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "simpleT∞(Tq(µi))adegreebydemandingthatallelementsofT∞(Tq(µ"
+  },
+  {
+   "page": 28,
+   "mark": "q",
+   "context": "weknowthattheT"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "weknowthattheTq(i)’swillbe,underthefunctorT∞,mappedto"
+  },
+  {
+   "page": 28,
+   "mark": "m",
+   "context": "in cobordism category associated to Khovanov’s arc algebra H"
+  },
+  {
+   "page": 30,
+   "mark": "q",
+   "context": "a T"
+  },
+  {
+   "page": 30,
+   "mark": "q",
+   "context": "In order to state the proposition, we write T∞F(T"
+  },
+  {
+   "page": 30,
+   "mark": "q",
+   "context": "iT∞F(T"
+  },
+  {
+   "page": 30,
+   "mark": "q",
+   "context": "Q∞-pModgr-Q∞(T∞F(T"
+  },
+  {
+   "page": 30,
+   "mark": "q",
+   "context": "Q∞-pModgr-Q∞(T∞F(Tq(∞)), T∞F ′(T"
+  },
+  {
+   "page": 30,
+   "mark": "t",
+   "context": "s of generality, we only discuss the “even” case, that is, U"
+  },
+  {
+   "page": 30,
+   "mark": "t",
+   "context": "for U"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "i, U"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "tand U"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "tand Uifor"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "tand Uifor i>0 even.Fix"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "tand Uifor i>0 even.Fix i and assume that"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "haveshownin[36,Proposition2.9]thatpMod-QmandO"
+  },
+  {
+   "page": 30,
+   "mark": "m",
+   "context": "0forsl"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "0forslm+1andparabolic"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "S"
+  },
+  {
+   "page": 30,
+   "mark": "m",
+   "context": "S1 × S"
+  },
+  {
+   "page": 30,
+   "mark": "t",
+   "context": "ivalent.Moreover,asthey explain below [36,Proposition 2.9],U"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "i,U"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "tand U"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "Note now that the same holds for the graded version of O"
+  },
+  {
+   "page": 30,
+   "mark": "q",
+   "context": "otQ∞itselfbecausetheendomorphismringfromProposition3.10isasU"
+  },
+  {
+   "page": 31,
+   "mark": "m",
+   "context": "λ(≤m))∼=B"
+  },
+  {
+   "page": 31,
+   "mark": "m",
+   "context": "Remark3.30.Fixsl"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "Remark3.30.Fixslm+1anddenotebyp"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "Remark3.30.Fixslm+1anddenotebypitheparabolicforS"
+  },
+  {
+   "page": 31,
+   "mark": "m",
+   "context": "Remark3.30.Fixslm+1anddenotebypitheparabolicforSi× S"
+  },
+  {
+   "page": 31,
+   "mark": "m",
+   "context": "max=L"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "byO"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "i=0O"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "i=0Op"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "tures 1-4] and Stroppel proved in [56], parabolic category O"
+  },
+  {
+   "page": 31,
+   "mark": "m",
+   "context": "maxfor sl"
+  },
+  {
+   "page": 31,
+   "mark": "v",
+   "context": "sed to categorify the m + 1-strand Temperley-Lieb algebra TL"
+  },
+  {
+   "page": 31,
+   "mark": "v",
+   "context": "maxgives11 TL"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "0of the category of projective endofunctors on O"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "0(pEnd(O"
+  },
+  {
+   "page": 31,
+   "mark": "v",
+   "context": "TL"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "0(pEnd(O"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "Thus,pEnd(O"
+  },
+  {
+   "page": 31,
+   "mark": "a",
+   "context": "1)gives"
+  },
+  {
+   "page": 31,
+   "mark": "v",
+   "context": "m+1ofTL"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "i=1O"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "i=1Oi with O"
+  },
+  {
+   "page": 32,
+   "mark": "k",
+   "context": "k=1O"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "is a N× N′matrix F= (f"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "is a N× N′matrix F= (fi′i) consisting of morphisms f"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": " a N× N′matrix F= (fi′i) consisting of morphisms fi′i∈HomC(O"
+  },
+  {
+   "page": 34,
+   "mark": "f",
+   "context": "Moreover,weusethefollowingconvention:wecallelementsofHomD(∞)"
+  },
+  {
+   "page": 35,
+   "mark": "r",
+   "context": "Corollary 4.9.We have Q(q)[b"
+  },
+  {
+   "page": 35,
+   "mark": "g",
+   "context": "Corollary 4.9.We have Q(q)[br, b"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "Deﬁnition4.12.(Jones-Wenzlprojectors)Denotebyx"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "eﬁnition4.12.(Jones-Wenzlprojectors)Denotebyxk−tstasequencex"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": ".12.(Jones-Wenzlprojectors)Denotebyxk−tstasequencexk . . . x"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "2.(Jones-Wenzlprojectors)Denotebyxk−tstasequencexk . . . x2x"
+  },
+  {
+   "page": 35,
+   "mark": "g",
+   "context": "We deﬁne for eachi≥0 the i-thgreen Jones Wenzl projector JW"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "of EndD(∞)(x"
+  },
+  {
+   "page": 35,
+   "mark": "g",
+   "context": "of EndD(∞)(xi−tst) obtained via the convention that JW"
+  },
+  {
+   "page": 35,
+   "mark": "0",
+   "context": "0is"
+  },
+  {
+   "page": 35,
+   "mark": "g",
+   "context": "0is 0:∅→∅, JW"
+  },
+  {
+   "page": 35,
+   "mark": "g",
+   "context": "1is id:"
+  },
+  {
+   "page": 35,
+   "mark": "g",
+   "context": "1is id:g→g, JW"
+  },
+  {
+   "page": 36,
+   "mark": "g",
+   "context": "JW"
+  },
+  {
+   "page": 36,
+   "mark": "g",
+   "context": "JW"
+  },
+  {
+   "page": 36,
+   "mark": "g",
+   "context": "JW"
+  },
+  {
+   "page": 36,
+   "mark": "g",
+   "context": "JW"
+  },
+  {
+   "page": 36,
+   "mark": "g",
+   "context": "JW"
+  },
+  {
+   "page": 36,
+   "mark": "r",
+   "context": " the case for odd i.Similar for even i and red projectors JW"
+  },
+  {
+   "page": 36,
+   "mark": "g",
+   "context": "JW"
+  },
+  {
+   "page": 36,
+   "mark": "g",
+   "context": "JW"
+  },
+  {
+   "page": 36,
+   "mark": "g",
+   "context": "JW"
+  },
+  {
+   "page": 36,
+   "mark": "g",
+   "context": "JW"
+  },
+  {
+   "page": 36,
+   "mark": "g",
+   "context": "agreenalternatingi′-pitchfork(herei′=7).WedenoteitbyP"
+  },
+  {
+   "page": 36,
+   "mark": "r",
+   "context": "i′andsimilarlyforP"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "i′)consistof"
+  },
+  {
+   "page": 36,
+   "mark": "g",
+   "context": "isthei′-thredalternating pitchfork.Wenotethatb(P"
+  },
+  {
+   "page": 36,
+   "mark": "b",
+   "context": "i′)aswellas"
+  },
+  {
+   "page": 36,
+   "mark": "r",
+   "context": "i′)aswellasb(P"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "i′) for a bigger diagram with"
+  },
+  {
+   "page": 36,
+   "mark": "g",
+   "context": "Moreover, we write Di(P"
+  },
+  {
+   "page": 36,
+   "mark": "g",
+   "context": "Di(P"
+  },
+  {
+   "page": 36,
+   "mark": "x",
+   "context": "i′) = D ◦(id"
+  },
+  {
+   "page": 36,
+   "mark": "g",
+   "context": "i′) = D ◦(idx P"
+  },
+  {
+   "page": 36,
+   "mark": "x",
+   "context": "i′ id"
+  },
+  {
+   "page": 36,
+   "mark": "g",
+   "context": "Lemma 4.14.Let i ≥i′> 2.Then Di(P"
+  },
+  {
+   "page": 36,
+   "mark": "g",
+   "context": "i′) ◦JW"
+  },
+  {
+   "page": 36,
+   "mark": "g",
+   "context": "ollows recursively.To see the ﬁrst step i=i′=3, we compose P"
+  },
+  {
+   "page": 36,
+   "mark": "g",
+   "context": "termof JW"
+  },
+  {
+   "page": 36,
+   "mark": "g",
+   "context": "giving minus the composition of P"
+  },
+  {
+   "page": 36,
+   "mark": "g",
+   "context": "3with the ﬁrst term of JW"
+  },
+  {
+   "page": 36,
+   "mark": "3",
+   "context": "3.Thus, D"
+  },
+  {
+   "page": 36,
+   "mark": "g",
+   "context": "3.Thus, D3(P"
+  },
+  {
+   "page": 36,
+   "mark": "g",
+   "context": "3) ◦JW"
+  },
+  {
+   "page": 37,
+   "mark": "g",
+   "context": "Now we use induction on i and ﬁx i′=3.If i>3 and Di(P"
+  },
+  {
+   "page": 37,
+   "mark": "x",
+   "context": "3) has"
+  },
+  {
+   "page": 37,
+   "mark": "g",
+   "context": "n use a similar argument as above.Hence, we always have Di(P"
+  },
+  {
+   "page": 37,
+   "mark": "g",
+   "context": "3) ◦JW"
+  },
+  {
+   "page": 37,
+   "mark": "i",
+   "context": "idempotents of x"
+  },
+  {
+   "page": 37,
+   "mark": "i",
+   "context": "idempotents of xi−tstand x"
+  },
+  {
+   "page": 37,
+   "mark": "f",
+   "context": "•Thehom-space HomQD(∞)"
+  },
+  {
+   "page": 37,
+   "mark": "f",
+   "context": "•Thehom-space HomQD(∞)f (x, x′)forx, x′∈Ob(QD(∞)"
+  },
+  {
+   "page": 37,
+   "mark": "f",
+   "context": "•The morphisms in HomQD(∞)"
+  },
+  {
+   "page": 37,
+   "mark": "f",
+   "context": "•The spaces HomQD(∞)"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": "QD(∞))(x"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": "QD(∞))(xi−tst, x"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": "2"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": ",u"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": "2"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": "ofdegreel(i)=0,l(u"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": "ofdegreel(i)=0,l(ui)=l(d"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": "ofdegreel(i)=0,l(ui)=l(di)=1andl(ε"
+  },
+  {
+   "page": 40,
+   "mark": "0",
+   "context": "QD(∞))(∅, ∅)∼=Q(q)"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": "u"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": "ui ◦u"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": "ui ◦ui−1= 0 = d"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": "ui ◦ui−1= 0 = di ◦d"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": "d"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": "di+1 ◦u"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": "di+1 ◦ui= ε"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": "di+1 ◦ui= εi= u"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": "di+1 ◦ui= εi= ui−1 ◦d"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "Proof.The relation d"
+  },
+  {
+   "page": 41,
+   "mark": "0",
+   "context": "Proof.The relation d1 ◦u"
+  },
+  {
+   "page": 41,
+   "mark": "i",
+   "context": "Proof.The relation d1 ◦u0 is DE2 (23).For u"
+  },
+  {
+   "page": 41,
+   "mark": "i",
+   "context": "Proof.The relation d1 ◦u0 is DE2 (23).For ui ◦u"
+  },
+  {
+   "page": 41,
+   "mark": "i",
+   "context": "The relation d"
+  },
+  {
+   "page": 41,
+   "mark": "i",
+   "context": "The relation di ◦d"
+  },
+  {
+   "page": 41,
+   "mark": "i",
+   "context": "The relation di ◦di+1= 0 follows similar and u"
+  },
+  {
+   "page": 41,
+   "mark": "i",
+   "context": "The relation di ◦di+1= 0 follows similar and ui−1 ◦d"
+  },
+  {
+   "page": 41,
+   "mark": "i",
+   "context": "The relation di ◦di+1= 0 follows similar and ui−1 ◦di= ε"
+  },
+  {
+   "page": 41,
+   "mark": "i",
+   "context": "2"
+  },
+  {
+   "page": 41,
+   "mark": "i",
+   "context": "2"
+  },
+  {
+   "page": 41,
+   "mark": "i",
+   "context": "2"
+  },
+  {
+   "page": 41,
+   "mark": "i",
+   "context": "2"
+  },
+  {
+   "page": 41,
+   "mark": "i",
+   "context": "2"
+  },
+  {
+   "page": 41,
+   "mark": "q",
+   "context": "D∞(x) = pT"
+  },
+  {
+   "page": 41,
+   "mark": "x",
+   "context": "D∞(x) = pTq(λ˜ℓ(x)) ◦Θ"
+  },
+  {
+   "page": 41,
+   "mark": "i",
+   "context": "D∞(x) = pTq(λ˜ℓ(x)) ◦Θx"
+  },
+  {
+   "page": 41,
+   "mark": "x",
+   "context": "D∞(x) = pTq(λ˜ℓ(x)) ◦Θxi ◦· · · ◦Θ"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "D∞(x) = pTq(λ˜ℓ(x)) ◦Θxi ◦· · · ◦Θx"
+  },
+  {
+   "page": 41,
+   "mark": "x",
+   "context": "D∞(x) = pTq(λ˜ℓ(x)) ◦Θxi ◦· · · ◦Θx2 ◦Θ"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "D∞(x) = pTq(λ˜ℓ(x)) ◦Θxi ◦· · · ◦Θx2 ◦Θx"
+  },
+  {
+   "page": 41,
+   "mark": "q",
+   "context": "D∞(x) = pTq(λ˜ℓ(x)) ◦Θxi ◦· · · ◦Θx2 ◦Θx1T"
+  },
+  {
+   "page": 41,
+   "mark": "q",
+   "context": "where we use the convention r= s, g= t and pT"
+  },
+  {
+   "page": 41,
+   "mark": "q",
+   "context": " the convention r= s, g= t and pTq(λ˜ℓ(x)) projects to the T"
+  },
+  {
+   "page": 41,
+   "mark": "k",
+   "context": "D∞(D):M"
+  },
+  {
+   "page": 41,
+   "mark": "k",
+   "context": "D∞(D):Mk→M"
+  },
+  {
+   "page": 41,
+   "mark": "k",
+   "context": "D∞(D):Mk→Mk(with D∞(x)∼= M"
+  },
+  {
+   "page": 42,
+   "mark": "k",
+   "context": " the up dotted edge we assign (recalling the rescaling˜εk= 2"
+  },
+  {
+   "page": 42,
+   "mark": "k",
+   "context": "he down dotted edge we assign (recalling the rescaling˜dk= 2"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "u"
+  },
+  {
+   "page": 45,
+   "mark": "i",
+   "context": " our construction andpart(b) of Corollary2.35,wesee thatD∞(x"
+  },
+  {
+   "page": 45,
+   "mark": "q",
+   "context": "truction andpart(b) of Corollary2.35,wesee thatD∞(xi−tst)∼=T"
+  },
+  {
+   "page": 45,
+   "mark": "i",
+   "context": "holdsasgradedQ(q)-vectorspacesforalternatingsequencesx=x"
+  },
+  {
+   "page": 45,
+   "mark": "a",
+   "context": "λ∼=Tλeverymoduledecomposesinto"
+  },
+  {
+   "page": 46,
+   "mark": "q",
+   "context": "U"
+  },
+  {
+   "page": 46,
+   "mark": "q",
+   "context": "Uq(T"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "r.Wethinkof analternating sequence(oflengthi≥0)of theformerx"
+  },
+  {
+   "page": 46,
+   "mark": "x",
+   "context": "Θ"
+  },
+  {
+   "page": 46,
+   "mark": "x",
+   "context": "Θx=Θ"
+  },
+  {
+   "page": 46,
+   "mark": "x",
+   "context": "Θx=Θxi◦· · · ◦Θ"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "We deﬁne⃗∞to be the sequence of alternating x"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "∞= (. . . , rgrg, grg, rg, g, ∅),⃗∞i= x"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "x ·⃗∞= (. . . , xrgrg, xgrg, xrg, xg, x),(x ·⃗∞)"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "x ·⃗∞= (. . . , xrgrg, xgrg, xrg, xg, x),(x ·⃗∞)i= xx"
+  },
+  {
+   "page": 46,
+   "mark": "m",
+   "context": "x"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "xm"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "xx"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "i′−grg⟨s"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "ofCorollary3.25(fromwherewealsogettheshiftss"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "ofCorollary3.25(fromwherewealsogettheshiftssi′).Thus,weseexx"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "QD(∞))).Note that xx"
+  },
+  {
+   "page": 46,
+   "mark": "s",
+   "context": "QD(∞))).Note that xx0−grg= 0 if x starts with r because of Θ"
+  },
+  {
+   "page": 46,
+   "mark": "q",
+   "context": "∞))).Note that xx0−grg= 0 if x starts with r because of Θs(T"
+  },
+  {
+   "page": 46,
+   "mark": "k",
+   "context": "F= (F"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "•The diagonal part of Fconsists of matrices F"
+  },
+  {
+   "page": 47,
+   "mark": "p",
+   "context": "λ) the full subcategory of"
+  },
+  {
+   "page": 47,
+   "mark": "c",
+   "context": "QD(∞))"
+  },
+  {
+   "page": 47,
+   "mark": "q",
+   "context": "existsanU"
+  },
+  {
+   "page": 47,
+   "mark": "i",
+   "context": "existsanUq-intertwinerf :M→M′withD∞(G"
+  },
+  {
+   "page": 47,
+   "mark": "x",
+   "context": "existsanUq-intertwinerf :M→M′withD∞(Gi′i)=Θ"
+  },
+  {
+   "page": 47,
+   "mark": "x",
+   "context": "i′i)=Θ"
+  },
+  {
+   "page": 47,
+   "mark": "x",
+   "context": "η:Θ"
+  },
+  {
+   "page": 47,
+   "mark": "x",
+   "context": "η:Θx→Θ"
+  },
+  {
+   "page": 47,
+   "mark": "q",
+   "context": "η:Θx→Θx′,ηT"
+  },
+  {
+   "page": 47,
+   "mark": "x",
+   "context": "η:Θx→Θx′,ηTq(i):Θ"
+  },
+  {
+   "page": 47,
+   "mark": "q",
+   "context": "η:Θx→Θx′,ηTq(i):ΘxT"
+  },
+  {
+   "page": 47,
+   "mark": "x",
+   "context": "η:Θx→Θx′,ηTq(i):ΘxTq(i) →Θ"
+  },
+  {
+   "page": 47,
+   "mark": "q",
+   "context": "η:Θx→Θx′,ηTq(i):ΘxTq(i) →Θx′T"
+  },
+  {
+   "page": 47,
+   "mark": "i",
+   "context": "η:Θx→Θx′,ηTq(i):ΘxTq(i) →Θx′Tq(i) 7→diag(F) = (F"
+  },
+  {
+   "page": 47,
+   "mark": "i",
+   "context": "η:Θx→Θx′,ηTq(i):ΘxTq(i) →Θx′Tq(i) 7→diag(F) = (Fi)"
+  },
+  {
+   "page": 47,
+   "mark": "i",
+   "context": "wherediag(F)isadiagonalmatrixconsistingofthevariousF"
+  },
+  {
+   "page": 47,
+   "mark": "i",
+   "context": "marked Soergel diagrams F"
+  },
+  {
+   "page": 47,
+   "mark": "x",
+   "context": "Θ"
+  }
+ ]
+}

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9909027v1
-doc_title: "arXiv:math/9909027v1 [math.QA] 4 Sep 1999"
+doc_title: "Planar Algebras, I"
 section_id: sec-007-32-duality
 section_title: "Duality"
 section_number: 3.2
@@ -8,6 +8,7 @@ pages: 74-77
 source_pdf: 9909027v1.pdf
 source_sha256: e6cd544cdc141d3b
 toc_source: inferred
+doc_brief: "Planar Algebras, I — We introduce a notion of planar algebra, the simplest example of which is a vector space of tensors, closed under planar contractions."
 ---
 If P = ∪kPk is a planar algebra, the ﬁltered algebras λn(P), where
 λn(P)k = Pn,n+k, for ﬁxed n, have natural planar algebra structures. For

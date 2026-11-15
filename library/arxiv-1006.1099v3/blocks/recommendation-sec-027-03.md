@@ -1,0 +1,1 @@
+In this local picture, the triangle product must be non-vanishing, just because the Lagrangian disks are actually isomorphic in the Fukaya category of the Lefschetz ﬁbration, both being the unique Lefschetz thimble.

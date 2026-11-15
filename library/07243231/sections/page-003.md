@@ -8,6 +8,7 @@ pages: 3-3
 source_pdf: 07243231.pdf
 source_sha256: e3880af88c7d91a3
 toc_source: none
+doc_brief: "Elias, Ben; Makisumi, Shotaro; Thiel, Ulrich; Williamson, Geordie — 5 sections: Page 1; Page 2; Page 3"
 ---
 diagrammatic descriptions of two diﬀerent bases for these bimodules.
 Part III Historical Context: Category O and the Kazhdan-Lusztig Conjectures
@@ -61,5 +62,3 @@ Chapter 20 Proof of the Hard Lefschetz Theorem
 This chapter completes the induction outlined in Chapter 18, thereby showing that the characters of the
 indecomposable Soergel bimodules are given by the Kazhdan-Lusztig polynomials.
 Edited by FIZ Karlsruhe, the European Mathematical Society and the Heidelberg Academy of Sciences and Humanities
-© 2023 FIZ Karlsruhe GmbH
-Page 3

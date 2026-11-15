@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408113v2
-doc_title: "arXiv:hep-th/9408113v2 25 Aug 1994"
+doc_title: "Dilogarithm identities"
 section_id: sec-008-22-dilogarithm-and-characters-of-the-aﬃne-kac-mo
 section_title: "Dilogarithm and characters of the aﬃne Kac-Moody algebras."
 section_number: 2.2
@@ -8,6 +8,7 @@ pages: 53-60
 source_pdf: 9408113v2.pdf
 source_sha256: dadd96e1155e820f
 toc_source: inferred
+doc_brief: "Dilogarithm identities — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
 ---
 Theorem E (Kac-Wakimoto [KW2]). Let chV k
 r be the character of level k represen-

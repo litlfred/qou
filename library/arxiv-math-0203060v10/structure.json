@@ -7,10 +7,11 @@
   "bytes": 616484,
   "pages": 50,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,17 +22,25 @@
   },
   "doi": null,
   "title": "ON FUSION CATEGORIES",
-  "authors_raw": "PA VEL ETINGOF, DMITRI NIKSHYCH, AND VIKTOR OSTRIK",
+  "authors_raw": "PAVEL ETINGOF, DMITRI NIKSHYCH, AND VIKTOR OSTRIK",
   "title_lines": [
    "ON FUSION CATEGORIES"
   ],
-  "abstract": "Using a variety of methods developed in the literature (in pa rtic- ular, the theory of weak Hopf algebras), we prove a number of g eneral results about fusion categories in characteristic zero. W e show tha t the global dimen- sion of a fusion category is always positive, and that the S-m atrix of any (not necessarily hermitian) modular category is unitary. W e als o show that the cate- gory of module functors between two module categories over a fusion category is semisimple, and that fusion categories and tensor functo rs between them are undeformable (generalized Ocneanu rigidity). In parti cular the number of such categories (functors) realizing a given fusion datum i s \ufb01nite. Finally, we develop the theory of Frobenius-Perron dimensions in an arb itrary fusion cat- egory. At the end of the paper we generalize some of these resu lts to positive characteristic.",
+  "abstract": "Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in characteristic zero. We show that the global dimen- sion of a fusion category is always positive, and that the S-matrix of any (not necessarily hermitian) modular category is unitary. We also show that the cate- gory of module functors between two module categories over a fusion category is semisimple, and that fusion categories and tensor functors between them are undeformable (generalized Ocneanu rigidity). In particular the number of such categories (functors) realizing a given fusion datum is ﬁnite. Finally, we develop the theory of Frobenius-Perron dimensions in an arbitrary fusion cat- egory. At the end of the paper we generalize some of these results to positive characteristic.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20220407195703-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20220407195703-04'00'"
+  },
+  "title_raw": "ON FUSION CATEGORIES",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "ON FUSION CATEGORIES 1. Introduction Throughout this paper (except for Section 9), k denotes an algebraically closed By a fusion category C over k we mean a k -linear ﬁeld of characteristic zero. semisimple rigid tensor (=monoidal) category with ﬁnitely many simple objects and ﬁnite dimensional spac",
+   "outline": "1. Introduction",
+   "text": "ON FUSION CATEGORIES",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -40,403 +49,940 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Results on squared norms, global dimensions, weak Hopf algebras, and Ocneanu rigidity",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Squared norms and global dimensions",
    "page": 4,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Results on pivotal, spherical, and modular categories",
    "page": 5,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Module categories, the dual category, the Drinfeld center",
    "page": 6,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Multi-fusion categories",
    "page": 7,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Results on weak Hopf algebras",
    "page": 7,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Vanishing of the Yetter cohomology",
    "page": 9,
    "source": "outline",
-   "number": "2.6"
+   "number": "2.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Ocneanu rigidity",
    "page": 9,
    "source": "outline",
-   "number": "2.7"
+   "number": "2.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Fusion categories over C",
    "page": 10,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Proof of Theorem 2.3",
    "page": 10,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Proof of Proposition 2.9",
    "page": 12,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Proof of Proposition 2.12 and properties of modular categories",
    "page": 12,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Weak Hopf algebras and their integrals",
    "page": 13,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Definition of a weak Hopf algebra",
    "page": 13,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Integrals",
    "page": 15,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Proof of Theorem 2.6",
    "page": 16,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Canonical integrals",
    "page": 16,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Sufficient conditions for semisimplicity",
    "page": 17,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Tr(S2) and the global dimension",
    "page": 18,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Proof of Theorem 2.24",
    "page": 18,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Proof of Theorem 2.15",
    "page": 19,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Proof of Theorem 2.16",
    "page": 19,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "A refinement of Theorem 2.24",
    "page": 19,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Proof of Proposition 2.17",
    "page": 20,
    "source": "outline",
-   "number": "5.5"
+   "number": "5.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Proof of Theorem 2.18",
    "page": 20,
    "source": "outline",
-   "number": "5.6"
+   "number": "5.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Surjective and injective functors",
    "page": 20,
    "source": "outline",
-   "number": "5.7"
+   "number": "5.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The induction functor and the class equation for fusion categories",
    "page": 21,
    "source": "outline",
-   "number": "5.8"
+   "number": "5.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Graded categories",
    "page": 22,
    "source": "outline",
-   "number": "5.9"
+   "number": "5.9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Deformations of weak Hopf algebras",
    "page": 22,
    "source": "outline",
-   "number": "5.10"
+   "number": "5.10",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Sphericity of pivotalization",
    "page": 22,
    "source": "outline",
-   "number": "5.11"
+   "number": "5.11",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The co-Hochschild complex of a cosemisimple unimodular weak Hopf algebra and its subcomplex of invariants",
    "page": 24,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The definition",
    "page": 24,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The vanishing theorem for cohomology",
    "page": 25,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The Yetter cohomology of a tensor category and Ocneanu rigidity",
    "page": 27,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The definition",
    "page": 27,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Comparison of two complexes",
    "page": 28,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Proof of Theorem 2.27 and Theorem 2.30",
    "page": 28,
    "source": "outline",
-   "number": "7.3"
+   "number": "7.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Frobenius-Perron dimensions",
    "page": 29,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Definition of the Frobenius-Perron dimensions",
    "page": 29,
    "source": "outline",
-   "number": "8.1"
+   "number": "8.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Frobenius-Perron dimension of a fusion category",
    "page": 31,
    "source": "outline",
-   "number": "8.2"
+   "number": "8.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Comparison of the global and Frobenius-Perron dimensions",
    "page": 34,
    "source": "outline",
-   "number": "8.3"
+   "number": "8.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Pseudo-unitary categories",
    "page": 34,
    "source": "outline",
-   "number": "8.4"
+   "number": "8.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Fusion categories with integer Frobenius-Perron dimension",
    "page": 35,
    "source": "outline",
-   "number": "8.5"
+   "number": "8.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Fusion categories of Frobenius-Perron dimension pn",
    "page": 36,
    "source": "outline",
-   "number": "8.6"
+   "number": "8.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Categories with integer Frobenius-Perron dimensions of simple objects",
    "page": 37,
    "source": "outline",
-   "number": "8.7"
+   "number": "8.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Group-theoretical fusion categories",
    "page": 39,
    "source": "outline",
-   "number": "8.8"
+   "number": "8.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "A question",
    "page": 40,
    "source": "outline",
-   "number": "8.9"
+   "number": "8.9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Cyclotomicity of dimension functions",
    "page": 41,
    "source": "outline",
-   "number": "8.10"
+   "number": "8.10",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Module categories over products",
    "page": 42,
    "source": "outline",
-   "number": "8.11"
+   "number": "8.11",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Fusion categories in positive characteristic",
    "page": 43,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "List of modifications",
    "page": 43,
    "source": "outline",
-   "number": "9.1"
+   "number": "9.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Lifting theorems",
    "page": 44,
    "source": "outline",
-   "number": "9.2"
+   "number": "9.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Faithfulness of lifting",
    "page": 45,
    "source": "outline",
-   "number": "9.3"
+   "number": "9.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Some applications of lifting",
    "page": 47,
    "source": "outline",
-   "number": "9.4"
+   "number": "9.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Appendix: Galois properties of S-matrix",
    "page": 47,
    "source": "outline",
-   "number": "10"
+   "number": "10",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 48,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 48,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 49,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 50,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 991,
+   "n_words": 152,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -444,8 +990,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 6801,
-   "n_words": 1161
+   "n_chars": 6742,
+   "n_words": 1102,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-results-on-squared-norms-global-dimensions-wea",
@@ -454,8 +1002,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 2163,
-   "n_words": 366
+   "n_chars": 2165,
+   "n_words": 368,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-21-squared-norms-and-global-dimensions",
@@ -464,8 +1014,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 3876,
-   "n_words": 772
+   "n_chars": 3844,
+   "n_words": 740,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-22-results-on-pivotal-spherical-and-modular-cate",
@@ -473,412 +1025,671 @@
    "title": "Results on pivotal, spherical, and modular categories",
    "level": 2,
    "page_start": 5,
-   "page_end": 7,
-   "n_chars": 4378,
-   "n_words": 798
+   "page_end": 6,
+   "n_chars": 2742,
+   "n_words": 492,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-24-multi-fusion-categories",
+   "id": "sec-004-23-module-categories-the-dual-category-the-drinf",
+   "number": "2.3",
+   "title": "Module categories, the dual category, the Drinfeld center",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1547,
+   "n_words": 278,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-24-multi-fusion-categories",
    "number": "2.4",
    "title": "Multi-fusion categories",
    "level": 2,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 1852,
-   "n_words": 357
+   "n_chars": 1915,
+   "n_words": 352,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-25-results-on-weak-hopf-algebras",
+   "id": "sec-006-25-results-on-weak-hopf-algebras",
    "number": "2.5",
    "title": "Results on weak Hopf algebras",
    "level": 2,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 5227,
-   "n_words": 936
+   "n_chars": 4060,
+   "n_words": 701,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-27-ocneanu-rigidity",
+   "id": "sec-007-26-vanishing-of-the-yetter-cohomology",
+   "number": "2.6",
+   "title": "Vanishing of the Yetter cohomology",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1129,
+   "n_words": 199,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-27-ocneanu-rigidity",
    "number": "2.7",
    "title": "Ocneanu rigidity",
    "level": 2,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 2203,
-   "n_words": 355
+   "n_chars": 2192,
+   "n_words": 344,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-31-proof-of-theorem-23",
+   "id": "sec-009-31-proof-of-theorem-23",
    "number": "3.1",
    "title": "Proof of Theorem 2.3",
    "level": 2,
    "page_start": 10,
    "page_end": 10,
-   "n_chars": 1259,
-   "n_words": 229
+   "n_chars": 1248,
+   "n_words": 218,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-3-fusion-categories-over-c",
+   "id": "sec-010-3-fusion-categories-over-c",
    "number": "3",
    "title": "Fusion categories over C",
    "level": 1,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 4491,
-   "n_words": 964
+   "n_chars": 4468,
+   "n_words": 941,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-009-32-proof-of-proposition-29",
+   "id": "sec-011-32-proof-of-proposition-29",
    "number": "3.2",
    "title": "Proof of Proposition 2.9",
    "level": 2,
    "page_start": 12,
    "page_end": 12,
-   "n_chars": 398,
-   "n_words": 75
+   "n_chars": 396,
+   "n_words": 73,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-010-33-proof-of-proposition-212-and-properties-of-mo",
+   "id": "sec-012-33-proof-of-proposition-212-and-properties-of-mo",
    "number": "3.3",
    "title": "Proof of Proposition 2.12 and properties of modular categories",
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 3343,
-   "n_words": 629
+   "n_chars": 3328,
+   "n_words": 614,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-011-4-weak-hopf-algebras-and-their-integrals",
+   "id": "sec-013-4-weak-hopf-algebras-and-their-integrals",
    "number": "4",
    "title": "Weak Hopf algebras and their integrals",
    "level": 1,
    "page_start": 13,
-   "page_end": 15,
-   "n_chars": 4672,
-   "n_words": 889
+   "page_end": 13,
+   "n_chars": 74,
+   "n_words": 12,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-012-42-integrals",
+   "id": "sec-014-41-definition-of-a-weak-hopf-algebra",
+   "number": "4.1",
+   "title": "Definition of a weak Hopf algebra",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 4548,
+   "n_words": 860,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-015-42-integrals",
    "number": "4.2",
    "title": "Integrals",
    "level": 2,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 3024,
-   "n_words": 563
+   "n_chars": 3005,
+   "n_words": 544,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-013-43-proof-of-theorem-26",
+   "id": "sec-016-43-proof-of-theorem-26",
    "number": "4.3",
    "title": "Proof of Theorem 2.6",
    "level": 2,
    "page_start": 16,
    "page_end": 16,
-   "n_chars": 482,
-   "n_words": 89
+   "n_chars": 477,
+   "n_words": 84,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-014-44-canonical-integrals",
+   "id": "sec-017-44-canonical-integrals",
    "number": "4.4",
    "title": "Canonical integrals",
    "level": 2,
    "page_start": 16,
-   "page_end": 18,
-   "n_chars": 3731,
-   "n_words": 697
+   "page_end": 17,
+   "n_chars": 1045,
+   "n_words": 189,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-015-5-trs2-and-the-global-dimension",
+   "id": "sec-018-45-sufficient-conditions-for-semisimplicity",
+   "number": "4.5",
+   "title": "Sufficient conditions for semisimplicity",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 2592,
+   "n_words": 482,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-019-5-trs2-and-the-global-dimension",
    "number": "5",
    "title": "Tr(S2) and the global dimension",
    "level": 1,
    "page_start": 18,
    "page_end": 18,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-016-51-proof-of-theorem-224",
+   "id": "sec-020-51-proof-of-theorem-224",
    "number": "5.1",
    "title": "Proof of Theorem 2.24",
    "level": 2,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 1417,
-   "n_words": 277
+   "n_chars": 1409,
+   "n_words": 269,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-017-52-proof-of-theorem-215",
+   "id": "sec-021-52-proof-of-theorem-215",
    "number": "5.2",
    "title": "Proof of Theorem 2.15",
    "level": 2,
    "page_start": 19,
    "page_end": 19,
-   "n_chars": 771,
-   "n_words": 145
+   "n_chars": 766,
+   "n_words": 140,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-018-53-proof-of-theorem-216",
+   "id": "sec-022-53-proof-of-theorem-216",
    "number": "5.3",
    "title": "Proof of Theorem 2.16",
    "level": 2,
    "page_start": 19,
-   "page_end": 20,
-   "n_chars": 2215,
-   "n_words": 423
+   "page_end": 19,
+   "n_chars": 552,
+   "n_words": 105,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-019-55-proof-of-proposition-217",
+   "id": "sec-023-54-a-refinement-of-theorem-224",
+   "number": "5.4",
+   "title": "A refinement of Theorem 2.24",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 1565,
+   "n_words": 283,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-024-55-proof-of-proposition-217",
    "number": "5.5",
    "title": "Proof of Proposition 2.17",
    "level": 2,
    "page_start": 20,
    "page_end": 20,
-   "n_chars": 727,
-   "n_words": 137
+   "n_chars": 718,
+   "n_words": 128,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-020-56-proof-of-theorem-218",
+   "id": "sec-025-56-proof-of-theorem-218",
    "number": "5.6",
    "title": "Proof of Theorem 2.18",
    "level": 2,
    "page_start": 20,
    "page_end": 20,
-   "n_chars": 496,
-   "n_words": 85
+   "n_chars": 494,
+   "n_words": 83,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-021-57-surjective-and-injective-functors",
+   "id": "sec-026-57-surjective-and-injective-functors",
    "number": "5.7",
    "title": "Surjective and injective functors",
    "level": 2,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 1577,
-   "n_words": 316
+   "n_chars": 1560,
+   "n_words": 299,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-022-58-the-induction-functor-and-the-class-equation",
+   "id": "sec-027-58-the-induction-functor-and-the-class-equation",
    "number": "5.8",
    "title": "The induction functor and the class equation for fusion categories",
    "level": 2,
    "page_start": 21,
    "page_end": 22,
-   "n_chars": 2792,
-   "n_words": 548
+   "n_chars": 2768,
+   "n_words": 524,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-023-59-graded-categories",
+   "id": "sec-028-59-graded-categories",
    "number": "5.9",
    "title": "Graded categories",
    "level": 2,
    "page_start": 22,
    "page_end": 22,
-   "n_chars": 973,
-   "n_words": 202
+   "n_chars": 960,
+   "n_words": 189,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-024-510-deformations-of-weak-hopf-algebras",
+   "id": "sec-029-510-deformations-of-weak-hopf-algebras",
    "number": "5.10",
    "title": "Deformations of weak Hopf algebras",
    "level": 2,
    "page_start": 22,
    "page_end": 22,
-   "n_chars": 950,
-   "n_words": 178
+   "n_chars": 944,
+   "n_words": 172,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-025-511-sphericity-of-pivotalization",
+   "id": "sec-030-511-sphericity-of-pivotalization",
    "number": "5.11",
    "title": "Sphericity of pivotalization",
    "level": 2,
    "page_start": 22,
    "page_end": 24,
-   "n_chars": 3985,
-   "n_words": 739
+   "n_chars": 3980,
+   "n_words": 734,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-026-6-the-co-hochschild-complex-of-a-cosemisimple-un",
+   "id": "sec-031-6-the-co-hochschild-complex-of-a-cosemisimple-un",
    "number": "6",
    "title": "The co-Hochschild complex of a cosemisimple unimodular weak Hopf algebra and its subcomplex of invariants",
    "level": 1,
    "page_start": 24,
-   "page_end": 25,
-   "n_chars": 2149,
-   "n_words": 455
+   "page_end": 24,
+   "n_chars": 45,
+   "n_words": 7,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-027-62-the-vanishing-theorem-for-cohomology",
+   "id": "sec-032-61-the-definition",
+   "number": "6.1",
+   "title": "The definition",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 1977,
+   "n_words": 381,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-033-62-the-vanishing-theorem-for-cohomology",
    "number": "6.2",
    "title": "The vanishing theorem for cohomology",
    "level": 2,
    "page_start": 25,
    "page_end": 27,
-   "n_chars": 3880,
-   "n_words": 850
+   "n_chars": 3458,
+   "n_words": 683,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-028-7-the-yetter-cohomology-of-a-tensor-category-and",
+   "id": "sec-034-71-the-definition",
+   "number": "7.1",
+   "title": "The definition",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 239,
+   "n_words": 49,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-035-7-the-yetter-cohomology-of-a-tensor-category-and",
    "number": "7",
    "title": "The Yetter cohomology of a tensor category and Ocneanu rigidity",
    "level": 1,
    "page_start": 27,
    "page_end": 28,
-   "n_chars": 3366,
-   "n_words": 616
+   "n_chars": 3338,
+   "n_words": 588,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-029-72-comparison-of-two-complexes",
+   "id": "sec-036-72-comparison-of-two-complexes",
    "number": "7.2",
    "title": "Comparison of two complexes",
    "level": 2,
    "page_start": 28,
    "page_end": 28,
-   "n_chars": 1719,
-   "n_words": 345
+   "n_chars": 1712,
+   "n_words": 338,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-030-73-proof-of-theorem-227-and-theorem-230",
+   "id": "sec-037-73-proof-of-theorem-227-and-theorem-230",
    "number": "7.3",
    "title": "Proof of Theorem 2.27 and Theorem 2.30",
    "level": 2,
    "page_start": 28,
    "page_end": 29,
-   "n_chars": 2643,
-   "n_words": 488
+   "n_chars": 2627,
+   "n_words": 472,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-031-8-frobenius-perron-dimensions",
+   "id": "sec-038-8-frobenius-perron-dimensions",
    "number": "8",
    "title": "Frobenius-Perron dimensions",
    "level": 1,
    "page_start": 29,
-   "page_end": 34,
-   "n_chars": 15330,
-   "n_words": 2827
+   "page_end": 29,
+   "n_chars": 146,
+   "n_words": 24,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-032-84-pseudo-unitary-categories",
+   "id": "sec-039-81-definition-of-the-frobenius-perron-dimensions",
+   "number": "8.1",
+   "title": "Definition of the Frobenius-Perron dimensions",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 4717,
+   "n_words": 852,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-040-82-frobenius-perron-dimension-of-a-fusion-catego",
+   "number": "8.2",
+   "title": "Frobenius-Perron dimension of a fusion category",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 34,
+   "n_chars": 7870,
+   "n_words": 1392,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-041-83-comparison-of-the-global-and-frobenius-perron",
+   "number": "8.3",
+   "title": "Comparison of the global and Frobenius-Perron dimensions",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 2286,
+   "n_words": 429,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-042-84-pseudo-unitary-categories",
    "number": "8.4",
    "title": "Pseudo-unitary categories",
    "level": 2,
    "page_start": 34,
-   "page_end": 39,
-   "n_chars": 14352,
-   "n_words": 2636
+   "page_end": 35,
+   "n_chars": 1727,
+   "n_words": 311,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-033-87-categories-with-integer-frobenius-perron-dime",
+   "id": "sec-043-85-fusion-categories-with-integer-frobenius-perr",
+   "number": "8.5",
+   "title": "Fusion categories with integer Frobenius-Perron dimension",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 3357,
+   "n_words": 606,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-044-86-fusion-categories-of-frobenius-perron-dimensi",
+   "number": "8.6",
+   "title": "Fusion categories of Frobenius-Perron dimension pn",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 4595,
+   "n_words": 847,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-045-87-categories-with-integer-frobenius-perron-dime",
    "number": "8.7",
    "title": "Categories with integer Frobenius-Perron dimensions of simple objects",
    "level": 2,
-   "page_start": 39,
+   "page_start": 37,
    "page_end": 39,
-   "n_chars": 1304,
-   "n_words": 226
+   "n_chars": 5754,
+   "n_words": 974,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-034-88-group-theoretical-fusion-categories",
+   "id": "sec-046-88-group-theoretical-fusion-categories",
    "number": "8.8",
    "title": "Group-theoretical fusion categories",
    "level": 2,
    "page_start": 39,
    "page_end": 40,
-   "n_chars": 4031,
-   "n_words": 735
+   "n_chars": 1608,
+   "n_words": 292,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-035-89-a-question",
+   "id": "sec-047-89-a-question",
    "number": "8.9",
    "title": "A question",
    "level": 2,
    "page_start": 40,
    "page_end": 41,
-   "n_chars": 2081,
-   "n_words": 376
+   "n_chars": 4482,
+   "n_words": 797,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-036-810-cyclotomicity-of-dimension-functions",
+   "id": "sec-048-810-cyclotomicity-of-dimension-functions",
    "number": "8.10",
    "title": "Cyclotomicity of dimension functions",
    "level": 2,
    "page_start": 41,
    "page_end": 42,
-   "n_chars": 3036,
-   "n_words": 597
+   "n_chars": 3013,
+   "n_words": 574,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-037-811-module-categories-over-products",
+   "id": "sec-049-811-module-categories-over-products",
    "number": "8.11",
    "title": "Module categories over products",
    "level": 2,
    "page_start": 42,
    "page_end": 43,
-   "n_chars": 1776,
-   "n_words": 335
+   "n_chars": 1764,
+   "n_words": 323,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-038-9-fusion-categories-in-positive-characteristic",
+   "id": "sec-050-9-fusion-categories-in-positive-characteristic",
    "number": "9",
    "title": "Fusion categories in positive characteristic",
    "level": 1,
    "page_start": 43,
-   "page_end": 44,
-   "n_chars": 3946,
-   "n_words": 668
+   "page_end": 43,
+   "n_chars": 259,
+   "n_words": 43,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-039-92-lifting-theorems",
+   "id": "sec-051-91-list-of-modifications",
+   "number": "9.1",
+   "title": "List of modifications",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 44,
+   "n_chars": 3578,
+   "n_words": 588,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-052-92-lifting-theorems",
    "number": "9.2",
    "title": "Lifting theorems",
    "level": 2,
    "page_start": 44,
-   "page_end": 47,
-   "n_chars": 9858,
-   "n_words": 1868
+   "page_end": 45,
+   "n_chars": 3213,
+   "n_words": 557,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-040-94-some-applications-of-lifting",
+   "id": "sec-053-93-faithfulness-of-lifting",
+   "number": "9.3",
+   "title": "Faithfulness of lifting",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 47,
+   "n_chars": 6460,
+   "n_words": 1199,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-054-94-some-applications-of-lifting",
    "number": "9.4",
    "title": "Some applications of lifting",
    "level": 2,
    "page_start": 47,
    "page_end": 47,
-   "n_chars": 1503,
-   "n_words": 280
+   "n_chars": 1495,
+   "n_words": 272,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-041-10-appendix-galois-properties-of-s-matrix",
+   "id": "sec-055-10-appendix-galois-properties-of-s-matrix",
    "number": "10",
    "title": "Appendix: Galois properties of S-matrix",
    "level": 1,
    "page_start": 47,
    "page_end": 48,
-   "n_chars": 1936,
-   "n_words": 364
+   "n_chars": 1928,
+   "n_words": 356,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-042-references",
+   "id": "sec-056-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 48,
    "page_end": 50,
-   "n_chars": 6540,
-   "n_words": 999
+   "n_chars": 6467,
+   "n_words": 926,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 57,
-  "sections": 43,
-  "chars_total": 143253,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 58,
+  "chars_total": 142339,
+  "furniture_lines_stripped": 0,
+  "pages_read_in_print_order": [
+   40
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 52,
-   "overlaid": 27,
+   "overlaid": 38,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -886,10 +1697,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.996,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -897,7 +1713,7 @@
      "id": "sec-001-2-results-on-squared-norms-global-dimensions-wea",
      "title": "Results on squared norms, global dimensions, weak Hopf algebras, and Ocneanu rigidity",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.884,
+     "coverage_ratio": 0.895,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -905,7 +1721,7 @@
      "id": "sec-002-21-squared-norms-and-global-dimensions",
      "title": "Squared norms and global dimensions",
      "prose_ratio": 0.981,
-     "coverage_ratio": 0.981,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -913,12 +1729,20 @@
      "id": "sec-003-22-results-on-pivotal-spherical-and-modular-cate",
      "title": "Results on pivotal, spherical, and modular categories",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.962,
+     "coverage_ratio": 0.956,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-24-multi-fusion-categories",
+     "id": "sec-004-23-module-categories-the-dual-category-the-drinf",
+     "title": "Module categories, the dual category, the Drinfeld center",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-24-multi-fusion-categories",
      "title": "Multi-fusion categories",
      "prose_ratio": 0.988,
      "coverage_ratio": 0.977,
@@ -926,37 +1750,45 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-25-results-on-weak-hopf-algebras",
+     "id": "sec-006-25-results-on-weak-hopf-algebras",
      "title": "Results on weak Hopf algebras",
-     "prose_ratio": 0.989,
-     "coverage_ratio": 0.949,
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.935,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-27-ocneanu-rigidity",
+     "id": "sec-007-26-vanishing-of-the-yetter-cohomology",
+     "title": "Vanishing of the Yetter cohomology",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-27-ocneanu-rigidity",
      "title": "Ocneanu rigidity",
      "prose_ratio": 0.736,
-     "coverage_ratio": 0.956,
+     "coverage_ratio": 0.947,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-31-proof-of-theorem-23",
+     "id": "sec-009-31-proof-of-theorem-23",
      "title": "Proof of Theorem 2.3",
      "prose_ratio": 0.307,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-008-3-fusion-categories-over-c",
+     "id": "sec-010-3-fusion-categories-over-c",
      "title": "Fusion categories over C",
      "prose_ratio": 0.981,
-     "coverage_ratio": 0.919,
+     "coverage_ratio": 0.939,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-32-proof-of-proposition-29",
+     "id": "sec-011-32-proof-of-proposition-29",
      "title": "Proof of Proposition 2.9",
      "prose_ratio": 0.931,
      "coverage_ratio": 0.962,
@@ -964,18 +1796,28 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-33-proof-of-proposition-212-and-properties-of-mo",
+     "id": "sec-012-33-proof-of-proposition-212-and-properties-of-mo",
      "title": "Proof of Proposition 2.12 and properties of modular categories",
-     "prose_ratio": 0.555,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.925,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-011-4-weak-hopf-algebras-and-their-integrals",
+     "id": "sec-013-4-weak-hopf-algebras-and-their-integrals",
      "title": "Weak Hopf algebras and their integrals",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-012-42-integrals",
+     "id": "sec-014-41-definition-of-a-weak-hopf-algebra",
+     "title": "Definition of a weak Hopf algebra",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.933,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-42-integrals",
      "title": "Integrals",
      "prose_ratio": 0.817,
      "coverage_ratio": 0.927,
@@ -983,57 +1825,66 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-43-proof-of-theorem-26",
+     "id": "sec-016-43-proof-of-theorem-26",
      "title": "Proof of Theorem 2.6",
      "prose_ratio": 0.173,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-014-44-canonical-integrals",
+     "id": "sec-017-44-canonical-integrals",
      "title": "Canonical integrals",
-     "prose_ratio": 0.653,
-     "coverage_ratio": 0.909,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-015-5-trs2-and-the-global-dimension",
-     "title": "Tr(S2) and the global dimension",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-016-51-proof-of-theorem-224",
-     "title": "Proof of Theorem 2.24",
-     "prose_ratio": 0.244,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-017-52-proof-of-theorem-215",
-     "title": "Proof of Theorem 2.15",
-     "prose_ratio": 0.291,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-018-53-proof-of-theorem-216",
-     "title": "Proof of Theorem 2.16",
-     "prose_ratio": 0.701,
-     "coverage_ratio": 0.861,
+     "prose_ratio": 0.898,
+     "coverage_ratio": 0.918,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-019-55-proof-of-proposition-217",
+     "id": "sec-018-45-sufficient-conditions-for-semisimplicity",
+     "title": "Sufficient conditions for semisimplicity",
+     "prose_ratio": 0.568,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-019-5-trs2-and-the-global-dimension",
+     "title": "Tr(S2) and the global dimension",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-51-proof-of-theorem-224",
+     "title": "Proof of Theorem 2.24",
+     "prose_ratio": 0.244,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-021-52-proof-of-theorem-215",
+     "title": "Proof of Theorem 2.15",
+     "prose_ratio": 0.291,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-022-53-proof-of-theorem-216",
+     "title": "Proof of Theorem 2.16",
+     "prose_ratio": 0.307,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-023-54-a-refinement-of-theorem-224",
+     "title": "A refinement of Theorem 2.24",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-55-proof-of-proposition-217",
      "title": "Proof of Proposition 2.17",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-020-56-proof-of-theorem-218",
+     "id": "sec-025-56-proof-of-theorem-218",
      "title": "Proof of Theorem 2.18",
      "prose_ratio": 0.291,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-021-57-surjective-and-injective-functors",
+     "id": "sec-026-57-surjective-and-injective-functors",
      "title": "Surjective and injective functors",
      "prose_ratio": 0.986,
      "coverage_ratio": 0.986,
@@ -1041,23 +1892,23 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-022-58-the-induction-functor-and-the-class-equation",
+     "id": "sec-027-58-the-induction-functor-and-the-class-equation",
      "title": "The induction functor and the class equation for fusion categories",
      "prose_ratio": 0.95,
-     "coverage_ratio": 0.925,
+     "coverage_ratio": 0.917,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-023-59-graded-categories",
+     "id": "sec-028-59-graded-categories",
      "title": "Graded categories",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.98,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-024-510-deformations-of-weak-hopf-algebras",
+     "id": "sec-029-510-deformations-of-weak-hopf-algebras",
      "title": "Deformations of weak Hopf algebras",
      "prose_ratio": 0.968,
      "coverage_ratio": 1.0,
@@ -1065,88 +1916,142 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-025-511-sphericity-of-pivotalization",
+     "id": "sec-030-511-sphericity-of-pivotalization",
      "title": "Sphericity of pivotalization",
-     "prose_ratio": 0.715,
-     "coverage_ratio": 0.931,
+     "prose_ratio": 0.897,
+     "coverage_ratio": 0.949,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-026-6-the-co-hochschild-complex-of-a-cosemisimple-un",
+     "id": "sec-031-6-the-co-hochschild-complex-of-a-cosemisimple-un",
      "title": "The co-Hochschild complex of a cosemisimple unimodular weak Hopf algebra and its subcomplex of invariants",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-027-62-the-vanishing-theorem-for-cohomology",
-     "title": "The vanishing theorem for cohomology",
-     "prose_ratio": 0.431,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-032-61-the-definition",
+     "title": "The definition",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-028-7-the-yetter-cohomology-of-a-tensor-category-and",
+     "id": "sec-033-62-the-vanishing-theorem-for-cohomology",
+     "title": "The vanishing theorem for cohomology",
+     "prose_ratio": 0.394,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-034-71-the-definition",
+     "title": "The definition",
+     "prose_ratio": 0.098,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-035-7-the-yetter-cohomology-of-a-tensor-category-and",
      "title": "The Yetter cohomology of a tensor category and Ocneanu rigidity",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-029-72-comparison-of-two-complexes",
+     "id": "sec-036-72-comparison-of-two-complexes",
      "title": "Comparison of two complexes",
      "prose_ratio": 0.454,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-030-73-proof-of-theorem-227-and-theorem-230",
+     "id": "sec-037-73-proof-of-theorem-227-and-theorem-230",
      "title": "Proof of Theorem 2.27 and Theorem 2.30",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-031-8-frobenius-perron-dimensions",
+     "id": "sec-038-8-frobenius-perron-dimensions",
      "title": "Frobenius-Perron dimensions",
-     "prose_ratio": 0.981,
-     "coverage_ratio": 0.92,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-032-84-pseudo-unitary-categories",
-     "title": "Pseudo-unitary categories",
-     "prose_ratio": 0.978,
-     "coverage_ratio": 0.803,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-033-87-categories-with-integer-frobenius-perron-dime",
-     "title": "Categories with integer Frobenius-Perron dimensions of simple objects",
-     "prose_ratio": 0.367,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-034-88-group-theoretical-fusion-categories",
-     "title": "Group-theoretical fusion categories",
-     "prose_ratio": 0.963,
-     "coverage_ratio": 0.96,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-035-89-a-question",
-     "title": "A question",
-     "prose_ratio": 0.968,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-036-810-cyclotomicity-of-dimension-functions",
-     "title": "Cyclotomicity of dimension functions",
-     "prose_ratio": 0.983,
-     "coverage_ratio": 0.945,
+     "id": "sec-039-81-definition-of-the-frobenius-perron-dimensions",
+     "title": "Definition of the Frobenius-Perron dimensions",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.894,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-037-811-module-categories-over-products",
+     "id": "sec-040-82-frobenius-perron-dimension-of-a-fusion-catego",
+     "title": "Frobenius-Perron dimension of a fusion category",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-041-83-comparison-of-the-global-and-frobenius-perron",
+     "title": "Comparison of the global and Frobenius-Perron dimensions",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-042-84-pseudo-unitary-categories",
+     "title": "Pseudo-unitary categories",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-043-85-fusion-categories-with-integer-frobenius-perr",
+     "title": "Fusion categories with integer Frobenius-Perron dimension",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-044-86-fusion-categories-of-frobenius-perron-dimensi",
+     "title": "Fusion categories of Frobenius-Perron dimension pn",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-045-87-categories-with-integer-frobenius-perron-dime",
+     "title": "Categories with integer Frobenius-Perron dimensions of simple objects",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-046-88-group-theoretical-fusion-categories",
+     "title": "Group-theoretical fusion categories",
+     "prose_ratio": 0.537,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-047-89-a-question",
+     "title": "A question",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.628,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-048-810-cyclotomicity-of-dimension-functions",
+     "title": "Cyclotomicity of dimension functions",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-049-811-module-categories-over-products",
      "title": "Module categories over products",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.988,
@@ -1154,39 +2059,55 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-038-9-fusion-categories-in-positive-characteristic",
+     "id": "sec-050-9-fusion-categories-in-positive-characteristic",
      "title": "Fusion categories in positive characteristic",
-     "prose_ratio": 0.915,
-     "coverage_ratio": 0.97,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-039-92-lifting-theorems",
+     "id": "sec-051-91-list-of-modifications",
+     "title": "List of modifications",
+     "prose_ratio": 0.908,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-052-92-lifting-theorems",
      "title": "Lifting theorems",
-     "prose_ratio": 0.983,
-     "coverage_ratio": 0.972,
+     "prose_ratio": 0.979,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-040-94-some-applications-of-lifting",
+     "id": "sec-053-93-faithfulness-of-lifting",
+     "title": "Faithfulness of lifting",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-054-94-some-applications-of-lifting",
      "title": "Some applications of lifting",
      "prose_ratio": 0.938,
-     "coverage_ratio": 0.984,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-041-10-appendix-galois-properties-of-s-matrix",
+     "id": "sec-055-10-appendix-galois-properties-of-s-matrix",
      "title": "Appendix: Galois properties of S-matrix",
      "prose_ratio": 0.986,
-     "coverage_ratio": 0.988,
+     "coverage_ratio": 0.901,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-042-references",
+     "id": "sec-056-references",
      "title": "References",
      "result": "no matching \\section"
     }

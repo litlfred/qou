@@ -1,0 +1,1 @@
+If K ⊂V is compact, ie has a compact intersection with each tetrahedron ∆i, then γ must eventually exit K (if not, the γ(T −1/n) accumulate at some point p of some tetrahedron, but centered at p there is a small embedded hyperbolic ball: absurd).

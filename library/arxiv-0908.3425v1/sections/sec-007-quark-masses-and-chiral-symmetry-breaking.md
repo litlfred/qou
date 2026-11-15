@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0908.3425v1
-doc_title: "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer"
+doc_title: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector"
 section_id: sec-007-quark-masses-and-chiral-symmetry-breaking
 section_title: "Quark masses and chiral symmetry breaking"
 section_number: null
 pages: 8-9
 source_pdf: 0908.3425v1.pdf
 source_sha256: 5e88d45bbc1c1b9b
-doc_brief: "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer — We provide an introduction to the basic concepts of chiral pe rturbation theory and discuss some"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.958
-latex_coverage_ratio: 0.967
+latex_coverage_ratio: 0.979
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 []{#subsec_csbdqm label="subsec_csbdqm"} So far, we have discussed an idealized world with massless light quarks. The finite $u$-, $d$-, and $s$-quark masses explicitly break the chiral symmetry and generate divergences of the symmetry currents. As a consequence, the charge operators are, in general, no longer time independent. However, as first pointed out by Gell-Mann [@Gell-Mann:xb:3:5], the equal-time commutation relations still play an important role even if the symmetry is explicitly broken.
 

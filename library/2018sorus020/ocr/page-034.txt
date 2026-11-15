@@ -1,0 +1,46 @@
+where the set of valuations is endowed with the cofinite topology.
+
+Remark 1.3.8. When the context will be clear, a curve X being given, we will
+
+often denote by v a point in the smooth projective model Xx.
+
+Definition 1.3.9. Let v € X bea point in the projective model of X. We will call
+it an ideal point if v is not defined at v, equivalently the function ring k[X] is not a
+
+subring of O,. Otherwise we will call v a finite point.
+
+Example 1.3.10. Let X be the plane curve {x?—y* = 0} in C?. It is a singular affine
+curve, with function ring CLX] = C[U,V]/(U? — V*). The map C[X] > C[T] that
+maps U to T? and V to T? induces an isomorphism between of fields Frac(C[X]) ~
+C(T). Moreover, it defines a birational map v : CP! > X c C? by t & (#,#?).
+Hence the smooth projective model of X is isomorphic to CP! (remark that the
+singular point (0,0) is "smoothed" through v), and the ideal point is 00. As a map
+CP! + CP’, v sends 00 to [1 : 0: 0], the curve X U {oo} C CP? is a (non smooth)
+
+compactification of X.
+
+1.3.5 Group acting on a tree and splitting
+
+Let X be an irreducible component of irreducible type of X(I‘), which is reduced
+and one dimensional, and let p : T + SL2(k(X)) be the tautological representation.
+Let v € X a point in the smooth projective model of X, the pair (k(X),v) is a
+k-valuated field, and we denote by JT, the Bass-Serre tree described above. The
+group L acts simplicially on T, as a subgroup of SL2(k(X)) through the tautological
+representation p. Although the representation p is defined up to conjugation, the
+
+action on the Bass-Serre tree is well-defined.
+
+Proposition 1.3.11. The action of on T, is trivial if and only if v € X is a finite
+
+point.
+
+Proof. By definition, for v € X a finite point, the ring k[X] is included in O,, which
+means that v(Y,) > 0 for any y € T. Equivalently, Tr(p(7)) € O, for any y € T,
+and we want to prove that it is equivalent to p(y) to be conjugated to an element
+of SL2(O,). It is clear if p(y) = +1d, if not there exists a vector e € k(X)? such
+that {e,p(y)e} is a basis of the two dimensional vector space k(X)?, and in this
+basis p(y) acts as the matrix ( a antoty)) ) € SL2(O,). Hence we have proved that v
+is a finite point iff Vy € T, p(y) € SLe(O,), and the proposition follows now from
+Lemma [L.3.7] im
+
+33

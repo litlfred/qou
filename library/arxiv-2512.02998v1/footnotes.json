@@ -1,0 +1,5341 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2512.02998v1",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "1",
+   "text": "ForaproofinthesimplersettingoftheC2-categorysee[26,Chapter8].",
+   "marks": [
+    {
+     "page": 1,
+     "context": "category,andinthesettingoffractionalSobolevregularitybelowC"
+    },
+    {
+     "page": 2,
+     "context": "TheoremA(C"
+    },
+    {
+     "page": 2,
+     "context": "mersedembeddedcurveγ∈C"
+    },
+    {
+     "page": 2,
+     "context": "η∈C"
+    },
+    {
+     "page": 2,
+     "context": "η∈C1(R/Z, R3)with∥γ −η∥C"
+    },
+    {
+     "page": 2,
+     "context": "ThisresultalsofollowsfromthefactthatanyC"
+    },
+    {
+     "page": 2,
+     "context": "y in arbitrary dimensions and co-dimensions which was proven"
+    },
+    {
+     "page": 2,
+     "context": "The C"
+    },
+    {
+     "page": 2,
+     "context": "theunderlyingenergyspacesdonotembedintoC"
+    },
+    {
+     "page": 2,
+     "context": "minimizingsequencesfortheseenergiessubconvergeinC"
+    }
+   ],
+   "block": "library/arxiv-2512.02998v1/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p002-2",
+   "page": 2,
+   "mark": "2",
+   "text": "Inadditiontoscale-invariancetheM¨obiusenergyisalsoinvariantunderM¨obiustransformationsofthe ambient Euclidean space [21, Theorem 2.1], which lent this energy that name.",
+   "marks": [
+    {
+     "page": 1,
+     "context": "actnesstheoremofknotequivalenceclasseswithrespecttoweakW3/2,"
+    },
+    {
+     "page": 2,
+     "context": "ing scale-invariant knot energies such as the M¨obius energy"
+    }
+   ],
+   "block": "library/arxiv-2512.02998v1/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "3",
+   "text": "For arclength parametrized embedded curves, W",
+   "marks": [
+    {
+     "page": 5,
+     "context": "classKcontainsaknotwithfiniteM¨obiusenergyor,equivalently,aW"
+    },
+    {
+     "page": 5,
+     "context": "thenthereexistsanarclengthparametrizedknotγ∈Cω(R/Z, R"
+    },
+    {
+     "page": 5,
+     "context": "2,2(R/Z, R"
+    },
+    {
+     "page": 5,
+     "context": "R"
+    },
+    {
+     "page": 6,
+     "context": "2,2-regularity"
+    }
+   ],
+   "block": "library/arxiv-2512.02998v1/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p006-2",
+   "page": 6,
+   "mark": "2",
+   "text": ",2-regularity is equivalent to finite M¨obius energy according to [2]. Due to [21, Corollary 1.3], such a curve has a local bilipschitz constant (cf. Footnote 9), arbitrarily close to 1. However, replacing a subarc of a curve by a line is likely to produce sharp corners at its endpoints which results in a bilipschitz constant strictly larger than 1.",
+   "marks": [
+    {
+     "page": 5,
+     "context": "sKcontainsaknotwithfiniteM¨obiusenergyor,equivalently,aW3/2,"
+    },
+    {
+     "page": 5,
+     "context": "2,"
+    },
+    {
+     "page": 5,
+     "context": "2,"
+    },
+    {
+     "page": 5,
+     "context": "2,"
+    },
+    {
+     "page": 6,
+     "context": "2,"
+    },
+    {
+     "page": 6,
+     "context": "2,"
+    },
+    {
+     "page": 6,
+     "context": "2,"
+    },
+    {
+     "page": 6,
+     "context": "2,"
+    },
+    {
+     "page": 6,
+     "context": "2,"
+    }
+   ],
+   "block": "library/arxiv-2512.02998v1/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p008-1",
+   "page": 8,
+   "mark": "2",
+   "text": "ex",
+   "marks": [
+    {
+     "page": 7,
+     "context": "|x−z1|,x−z"
+    },
+    {
+     "page": 7,
+     "context": "+ |x −z"
+    },
+    {
+     "page": 7,
+     "context": "|x−z1|−x−z"
+    },
+    {
+     "page": 7,
+     "context": "δ(M, rM) ≥dM(z1,z"
+    },
+    {
+     "page": 8,
+     "context": "B(1+σ)dy(y) ⊂B[(1+σ)"
+    }
+   ],
+   "block": "library/arxiv-2512.02998v1/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p008-2",
+   "page": 8,
+   "mark": "4",
+   "text": "ThisispossiblesinceeachsubsetofRnisametricspacewiththeinheritedEuclideanmetric,andtherefore paracompact.",
+   "marks": [
+    {
+     "page": 8,
+     "context": "x∈U0Bσ0(α,εx)dx(x)wechoose"
+    }
+   ],
+   "block": "library/arxiv-2512.02998v1/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p010-1",
+   "page": 10,
+   "mark": "5",
+   "text": "“⊂”followsbyKx⊂Mand(∗).“⊃”followsby(∗)anddist(y, M) ≤∆x,soanyz∈Mwithdist(y, M) = |y −z| satisfies z ∈B∆x(y) ⊂B∆x(Hx).",
+   "marks": [
+    {
+     "page": 10,
+     "context": "=Hx."
+    }
+   ],
+   "block": "library/arxiv-2512.02998v1/blocks/prose-sec-007"
+  },
+  {
+   "id": "fn-p012-1",
+   "page": 12,
+   "mark": "6",
+   "text": "Wechoosetheobviousnotation[·]itoindicateequivalenceclassesofclosedloopsintherespectivefunda- mental group π1(Rn \\ Mi) for i = 1, 2.",
+   "marks": [
+    {
+     "page": 12,
+     "context": "for any closed curve c in Rn\\M1 representing the equivalence"
+    }
+   ],
+   "block": "library/arxiv-2512.02998v1/blocks/prose-sec-007"
+  },
+  {
+   "id": "fn-p014-1",
+   "page": 14,
+   "mark": "7",
+   "text": "ThisfunctionwastheoneusedforthedefinitionoftheisomorphismJin(4.4).",
+   "marks": [
+    {
+     "page": 14,
+     "context": "M1:Rn \\ M1→Rn \\ M1bethesmoothfunction"
+    }
+   ],
+   "block": "library/arxiv-2512.02998v1/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p015-1",
+   "page": 15,
+   "mark": "8",
+   "text": "Theonlyprerequisitefortheestimate(4.7)wasthat˜cisaloopinRn \\ M2whichwehaveinthepresent context as well.",
+   "marks": [
+    {
+     "page": 15,
+     "context": "π1(Rn\\ M1)byProposition4.3.Exactly"
+    }
+   ],
+   "block": "library/arxiv-2512.02998v1/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p016-1",
+   "page": 16,
+   "mark": "9",
+   "text": "In[21]abilipschitzconstantisdefinedasanynumberL>0suchthatL−1dγ(u, v)|≤|γ(u) −γ(v)|≤ Ldγ(u, v) holds for all u, v ∈R/Z. If γ is parametrized by arclength then the infimum of those L is biLipI(γ)−1.",
+   "marks": [
+    {
+     "page": 16,
+     "context": "letuspointoutthatboundingthebilipschitzconstant"
+    }
+   ],
+   "block": "library/arxiv-2512.02998v1/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p018-1",
+   "page": 18,
+   "mark": "2",
+   "text": "r",
+   "marks": [
+    {
+     "page": 17,
+     "context": "2,"
+    },
+    {
+     "page": 17,
+     "context": "2,"
+    },
+    {
+     "page": 17,
+     "context": "≥v"
+    },
+    {
+     "page": 17,
+     "context": "v"
+    },
+    {
+     "page": 17,
+     "context": "2,"
+    },
+    {
+     "page": 17,
+     "context": "2,"
+    },
+    {
+     "page": 17,
+     "context": "2,"
+    },
+    {
+     "page": 17,
+     "context": "2,"
+    },
+    {
+     "page": 17,
+     "context": "2,"
+    },
+    {
+     "page": 17,
+     "context": "2,"
+    },
+    {
+     "page": 17,
+     "context": "2,"
+    },
+    {
+     "page": 17,
+     "context": "2,"
+    },
+    {
+     "page": 17,
+     "context": "2,"
+    },
+    {
+     "page": 17,
+     "context": "2,"
+    },
+    {
+     "page": 17,
+     "context": "2,"
+    },
+    {
+     "page": 17,
+     "context": "2,"
+    },
+    {
+     "page": 18,
+     "context": "2,"
+    },
+    {
+     "page": 18,
+     "context": "2,"
+    },
+    {
+     "page": 18,
+     "context": "2,"
+    },
+    {
+     "page": 18,
+     "context": "2,"
+    },
+    {
+     "page": 18,
+     "context": "4r"
+    },
+    {
+     "page": 18,
+     "context": "4r2(1−θ)"
+    },
+    {
+     "page": 18,
+     "context": "(1−θ)"
+    },
+    {
+     "page": 18,
+     "context": "(1−θ)"
+    }
+   ],
+   "block": "library/arxiv-2512.02998v1/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p024-1",
+   "page": 24,
+   "mark": "n",
+   "text": "(u)−γ′",
+   "marks": [
+    {
+     "page": 23,
+     "context": "γ"
+    },
+    {
+     "page": 23,
+     "context": "n|=1a.e.onR/Zand|γ"
+    },
+    {
+     "page": 23,
+     "context": "∥γ"
+    },
+    {
+     "page": 24,
+     "context": "plim"
+    },
+    {
+     "page": 24,
+     "context": "plimn→∞γ"
+    }
+   ],
+   "block": "library/arxiv-2512.02998v1/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p024-3",
+   "page": 24,
+   "mark": "10",
+   "text": "suitablyextendedtoanoutermeasure;see,e.g.,[42,pp.13,14].",
+   "marks": [
+    {
+     "page": 24,
+     "context": "anddefinetheRadonmeasures"
+    }
+   ],
+   "block": "library/arxiv-2512.02998v1/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p027-1",
+   "page": 27,
+   "mark": "i",
+   "text": "=1[xi −,xi",
+   "marks": [
+    {
+     "page": 26,
+     "context": "4min{|x"
+    },
+    {
+     "page": 26,
+     "context": "4min{|xi −xk| :"
+    },
+    {
+     "page": 27,
+     "context": "knotγn0ineachballB¯r(x"
+    },
+    {
+     "page": 27,
+     "context": "knotγn0ineachballB¯r(xi)⊂R/Z,x"
+    },
+    {
+     "page": 27,
+     "context": "dothatasin(6.16)bychoosingsuitabletruncationpointsx"
+    },
+    {
+     "page": 27,
+     "context": "±∈G"
+    },
+    {
+     "page": 27,
+     "context": "±:= G±(x"
+    },
+    {
+     "page": 27,
+     "context": "±aredefinedasin(6.12)forx:=x"
+    },
+    {
+     "page": 27,
+     "context": "setsG"
+    },
+    {
+     "page": 27,
+     "context": "z−x"
+    },
+    {
+     "page": 27,
+     "context": "γn0(x"
+    },
+    {
+     "page": 27,
+     "context": "γn0(x"
+    },
+    {
+     "page": 27,
+     "context": "+) −γn0(x"
+    },
+    {
+     "page": 27,
+     "context": "forz∈[x"
+    },
+    {
+     "page": 27,
+     "context": "−, x"
+    },
+    {
+     "page": 27,
+     "context": "x"
+    },
+    {
+     "page": 27,
+     "context": "+−x"
+    },
+    {
+     "page": 27,
+     "context": "i=1[x"
+    },
+    {
+     "page": 27,
+     "context": "−, x"
+    },
+    {
+     "page": 27,
+     "context": "γn0(x"
+    },
+    {
+     "page": 27,
+     "context": "+)−γn0(x"
+    },
+    {
+     "page": 27,
+     "context": "the subarcs γn0([x"
+    },
+    {
+     "page": 27,
+     "context": "−, x"
+    },
+    {
+     "page": 27,
+     "context": "n0(x"
+    },
+    {
+     "page": 27,
+     "context": "x"
+    },
+    {
+     "page": 27,
+     "context": "+−x"
+    },
+    {
+     "page": 27,
+     "context": "+]obtainingNopenpolygonallineswithendpoints˜γn0(x"
+    },
+    {
+     "page": 27,
+     "context": "±),"
+    }
+   ],
+   "block": "library/arxiv-2512.02998v1/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p027-2",
+   "page": 27,
+   "mark": "11",
+   "text": "although˜γn0isingeneralnotinW",
+   "marks": [
+    {
+     "page": 27,
+     "context": "showthatthemodifiedcurve˜γn0isstilltame"
+    }
+   ],
+   "block": "library/arxiv-2512.02998v1/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p027-4",
+   "page": 27,
+   "mark": "12",
+   "text": "Hereitisimportanttoletm = biLip η=˜L(notjustL)in[14,Eq.(6),p.149].",
+   "marks": [
+    {
+     "page": 27,
+     "context": "1-curve ηis tame.In our situation we proceed in the same way"
+    }
+   ],
+   "block": "library/arxiv-2512.02998v1/blocks/prose-sec-011"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p018-2",
+   "page": 18,
+   "mark": "2",
+   "text": "r",
+   "block": "library/arxiv-2512.02998v1/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p018-3",
+   "page": 18,
+   "mark": "2",
+   "text": "r(1−θ)",
+   "block": "library/arxiv-2512.02998v1/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p018-4",
+   "page": 18,
+   "mark": "2",
+   "text": "r",
+   "block": "library/arxiv-2512.02998v1/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p018-5",
+   "page": 18,
+   "mark": "2",
+   "text": "r (6.7)",
+   "block": "library/arxiv-2512.02998v1/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p024-2",
+   "page": 24,
+   "mark": "n",
+   "text": "(v)|2",
+   "block": "library/arxiv-2512.02998v1/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p027-3",
+   "page": 27,
+   "mark": "2",
+   "text": ",2(R/Z, R3)anymorebecauseoftheharmonicsubstitution;cf.Foot- note 3.",
+   "block": "library/arxiv-2512.02998v1/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p028-1",
+   "page": 28,
+   "mark": "8",
+   "text": "¯r(ξ) y̸=z",
+   "block": "library/arxiv-2512.02998v1/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p028-2",
+   "page": 28,
+   "mark": "2",
+   "text": ",2,B 3",
+   "block": "library/arxiv-2512.02998v1/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p029-1",
+   "page": 29,
+   "mark": "13",
+   "text": "seeversion2in[22,Lemma4.6]forthecorrectedproof.",
+   "block": "library/arxiv-2512.02998v1/blocks/prose-sec-011"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "subsetofR"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "compactnesstheoremofknotequivalenceclasseswithrespecttoweakW"
+  },
+  {
+   "page": 1,
+   "mark": "0",
+   "context": "knotsγ1, γ2∈C"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "knotsγ1, γ2∈C0(R/Z, R"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "homeomorphismh : R"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "homeomorphismh : R3→R"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "mersedembeddedcurveγ∈C1(R/Z, R"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "η∈C1(R/Z, R"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "Two knots γ1, γ2∈C"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "Two knots γ1, γ2∈C0(R/Z, R"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "isahomeomorphismh : R"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "isahomeomorphismh : R3→R"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "R"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "oremB(Knotequivalenceviaknotcomplements[24, 43]).Letγ1, γ2∈C"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "otequivalenceviaknotcomplements[24, 43]).Letγ1, γ2∈C0(R/Z, R"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "(i)IftheircomplementsR"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "(ii)Ifγ1, γ2areprimeandtheirknot groupsπ1(R"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "(iii)Iftheknotgroupsπ1(R"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "RecallthatforasetM⊂R"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "RecallthatforasetM⊂Rnwithpath-connectedcomplementR"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "c1, c2∈C"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "c1, c2∈C0(R/Z, R"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "π1(R"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "atenation of closed loops containing a fixed base point in R"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "PM⊂π1(R"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "sionofGromov’sdistortion[25].Foraclosed,path-connectedsetM⊂R"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "Moreover,anynon-trivialtameknotγ∈C"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "Moreover,anynon-trivialtameknotγ∈C0(R/Z, R"
+  },
+  {
+   "page": 3,
+   "mark": "5",
+   "context": "distortionatleast"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "Definition1.1.Foranonemptyclosed,path-connectedsetM⊂R"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "ult on fundamental groups is stated for general subsets of R"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "8as"
+  },
+  {
+   "page": 3,
+   "mark": "g",
+   "context": "27"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "27g∞equalsthedistortionofonethirdof"
+  },
+  {
+   "page": 3,
+   "mark": "g",
+   "context": "27g∞equalsthedistortionofonethirdofacircle,whereas"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "connectedsetsMi⊂R"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "connectedsetsMi⊂Rnwithpath-connectedcomplementsR"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "belowg"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "4 min{rM"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "4 min{rM1, rM"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "thenthereexistsanisomorphismJ:π1(R"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "thenthereexistsanisomorphismJ:π1(Rn\\ M1)→π1(R"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "theperipheralsubgroupPM1⊂π"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "theperipheralsubgroupPM1⊂π1(R"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "theperipheralsubgroupPM1⊂π1(Rn\\ M"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "ripheralsubgroupPM1⊂π1(Rn\\ M1)mapsPM1isomorphicallyontoPM2⊂π"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "heralsubgroupPM1⊂π1(Rn\\ M1)mapsPM1isomorphicallyontoPM2⊂π1(R"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "lsubgroupPM1⊂π1(Rn\\ M1)mapsPM1isomorphicallyontoPM2⊂π1(Rn\\ M"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "y1.3(Knot equivalence via local distortion).Twotameknotsγi∈C"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "t equivalence via local distortion).Twotameknotsγi∈C0(R/Z, R"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "localdistortionδ(γ"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "localdistortionδ(γi(R/Z), rγi) < g"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "tionδ(γi(R/Z), rγi) < g3atscalesrγi> 0fori = 1, 2,anddistH(γ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "R/Z), rγi) < g3atscalesrγi> 0fori = 1, 2,anddistH(γ1(R/Z), γ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "4min{rγ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "4min{rγ1, rγ"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "Corollary1.4(Lipschitzstabilityofknotequivalence).Letγ:R/Z→R"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "h∈C"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "h∈C0,"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "h∈C0,1(R/Z, R"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "ForC"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "ButwewillproveherethatafractionalSobolevregularity(belowC"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "2,2(R/Z, R"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "2,2(R/Z, R"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "2,2(R/Z, R"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "dγ(γ(s), γ(t))"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "Indeed,anarclengthparametrizedcurveγ:R/Z→R"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "2,2(R/Z, R"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "energyspacesdoembedintoC"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "bemoreprecise,forp ∈N,p ≥2,wecallacurveγ∈C"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "bemoreprecise,forp ∈N,p ≥2,wecallacurveγ∈C0(R/Z, R"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "Σp(K) := {η∈C"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "Σp(K) := {η∈C0,"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "Σp(K) := {η∈C0,1(R/Z, R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "iononlocaldistortionongeneralclosed,path-connectedsubsetsM⊂R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "threspecttothisvectorfieldtodefinehomotopiesinthecomplementR"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "π1(R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "π1(Rn\\ M1)andπ1(R"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Let M⊂R"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "sin(x/2)is strictly increasing on [0, π] with lim"
+  },
+  {
+   "page": 6,
+   "mark": "g",
+   "context": "sin(x/2)is strictly increasing on [0, π] with limx↘0"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "8> 1 for all"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "8> 1 for all n ∈N, n ≥3, there exist unique angles 0 < αM< β"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "2> g"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "rfirstlemmaboundsthesetofdirectionsgeneratedbyagivenpointx∈R"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "⊂S"
+  },
+  {
+   "page": 6,
+   "mark": "z",
+   "context": "|x −z|:"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "|x −z|: z∈B(1+ϵ)"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "|x −z|: z∈B(1+ϵ)d"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Lemma2.1(Diameterboundonsetofdirections).LetM⊂R"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "diamS"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "forallϵ ∈(0, ϵ0),x ∈B"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "findsforeachα ∈(αM, βn)andϵ ∈(0, ϵ0(α))andforeveryx ∈B"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "ex∈S"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "ex∈Sn−1suchthatΣϵ(x)iscontainedinthegeodesicballonS"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "|x −z|, e"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "suchthatforanyϵ0∈(0, 1)wemayfindsomeϵ∈(0, ε0)andsomex∈B"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "thatdiamS"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "\u0000x−z"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "|x−z1|,"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "containedinR"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "L(c) ≥H"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "L(c) ≥H1(c([0, 1]) ≥H"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "L(c) ≥H1(c([0, 1]) ≥H1(P"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "where Pdx(z) := x+dx(z −x)/|z −x| for z∈R"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "1onR"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "+ |x −z"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "x−z"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "2+ 2ϵd"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "2+ 2ϵdx≤2(1 + ϵ)"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "2+ 2ϵdx≤2(1 + ϵ)d"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "2+ 2ϵdx≤2(1 + ϵ)dx< 2"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "δ(M, rM) ≥dM(z"
+  },
+  {
+   "page": 7,
+   "mark": "s",
+   "context": "sin"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "1+ϵ(M) \\ M"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "1+ϵ(M) \\ Macommondirection"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "1+ϵ(M) \\ Macommondirectione"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "1+ϵ(M) \\ Macommondirectionex∈S"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "InCorollary2.2weestablishedforeveryx∈B"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Corollary2.3(Locallyuniformcommondirection).LetM⊂R"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "1+ϵ(M) \\ Mthereexists"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "1+ϵ(M) \\ Mthereexistse"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "1+ϵ(M) \\ Mthereexistsex∈S"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "thatthefollowingholds:Forallϵ∈(0, ϵ0)andx∈B"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "|y −z|, e"
+  },
+  {
+   "page": 8,
+   "mark": "r",
+   "context": "1+ϵ"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "|x−z|< 2σd"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "|y−z|, e"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "|x−z|, e"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "|y−z|, e"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "ng and a partition of unity we can use the unit vectors ex∈S"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "connectedsetM⊂R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "C∞(R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "C∞(Rn, R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "2(αM+ β"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "2(αM+ βn)∈(αM, β"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "2(αM+ βn)∈(αM, βn),whereβ"
+  },
+  {
+   "page": 8,
+   "mark": "r",
+   "context": "B"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "BrM(M) \\ Mthereexistsε"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "BrM(M) \\ Mthereexistsεx∈(0, ϵ"
+  },
+  {
+   "page": 8,
+   "mark": "r",
+   "context": "BrM(M) \\ Mthereexistsεx∈(0, ϵ0(α))suchthatx∈Uεx:=B"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Corollary2.3thereexistsex∈S"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "x∈U0Bσ"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "x∈U0Bσ0(α,ε"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "x∈U0Bσ0(α,εx)"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "x∈U0Bσ0(α,εx)d"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "x∈U0Bσ0(α,εx)dx(x)wechoose4"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "ForthecoveringU"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "x∈ZW(x)=U"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "x∈ZW(x)=U0,whereforeach"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "x∈ZW(x)=U0,whereforeachx∈Z⊂U"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "x∈ZW(x)=U0,whereforeachx∈Z⊂U0thesetW(x)⊂Bσ"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "x∈ZW(x)=U0,whereforeachx∈Z⊂U0thesetW(x)⊂Bσ0(α,ε"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "x∈ZW(x)=U0,whereforeachx∈Z⊂U0thesetW(x)⊂Bσ0(α,εx)"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "x∈ZW(x)=U0,whereforeachx∈Z⊂U0thesetW(x)⊂Bσ0(α,εx)d"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "containsx.SinceU0⊂R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "callyfiniteopencoveringW,i.e.,therearefunctions(ξx)x∈Z⊂C∞(R"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "supp ξ"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "x∈Zξ"
+  },
+  {
+   "page": 8,
+   "mark": "y",
+   "context": "x∈Zξx(y)=1forall"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "x∈Zξx(y)=1forally∈U"
+  },
+  {
+   "page": 8,
+   "mark": "y",
+   "context": "x∈Zξx(y)=1forally∈U0,and,finally,foreach"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "x∈Zξx(y)=1forally∈U0,and,finally,foreachy∈U"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "lydefinedvectorfieldVconstructedinProposition2.4forthesetM⊂R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "thelocaldistortionboundinducesgeometricflowsonthecomplementR"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "M: R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Rn\\ Mtakeacut-offfunctionφ ∈C∞(R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "onR"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "onR"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "forsomeρ ∈(0,"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "2rMφ · V∈C∞(R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "2rMφ · V∈C∞(Rn, R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "forx ∈R"
+  },
+  {
+   "page": 9,
+   "mark": "h",
+   "context": "dt"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "M∈C∞(R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "M∈C∞(Rn \\ M× [0, 1], R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Theorem3.1(Distance-increasingflow).LetM⊂R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "M∈C∞(R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "M∈C∞(Rn\\ M× [0, 1], R"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Thenforeveryρ∈(0,"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "2rM)thereis"
+  },
+  {
+   "page": 9,
+   "mark": "h",
+   "context": "2rM)thereisafunction"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "M(R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "M(Rn \\ M× [0, 1]) ⊂R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "M(·, 0) = IdR"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "M(R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "M(Rn \\ M, 1) ⊂R"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "M(Rn \\ M, 1) ⊂Rn \\ B"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "M(·, t)|R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "2rM(M)= IdR"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "2rM(M)= IdRn\\B"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "2rM(M)forall"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "M(·, t):R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "M(·, t):Rn\\ M→R"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "M(·, t):Rn\\ M→Rnisanembeddingforevery"
+  },
+  {
+   "page": 9,
+   "mark": "x",
+   "context": "M(x, t), M)isnon-decreasingon[0, 1]foreach"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "M(x, t), M)isnon-decreasingon[0, 1]foreachx ∈R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "M(·, t):R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "M(·, t):Rn\\ M→R"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "M(·, t):Rn\\ M→Rnisanembeddingforeach"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "eprescribedinitialvaluein(3.3)guaranteescondition(1+).Forx∈R"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "foreachx∈R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "M(R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "M(Rn\\M×[0, 1])⊂R"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "M(x, [0, 1]) ⊂R"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 9,
+   "mark": "z",
+   "context": "|y−z|:"
+  },
+  {
+   "page": 9,
+   "mark": "x",
+   "context": "|y−z|: z∈ΓK"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "whereconv(A)denotestheconvexhullofasetA⊂R"
+  },
+  {
+   "page": 10,
+   "mark": "h",
+   "context": "dt|t=u"
+  },
+  {
+   "page": 10,
+   "mark": "x",
+   "context": "M(x, u) ∈H"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "M(x, u) ∈Hx \\ Mandα∈∂(dist(y, M))wecanrepresentαas"
+  },
+  {
+   "page": 10,
+   "mark": "u",
+   "context": "α =PJ"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "|y−z"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "|y−zi|,λ"
+  },
+  {
+   "page": 10,
+   "mark": "u",
+   "context": "|y−zi|,λi∈[0, 1]∀i = 1, . . . , J"
+  },
+  {
+   "page": 10,
+   "mark": "u",
+   "context": "|y−zi|,λi∈[0, 1]∀i = 1, . . . , Ju,PJ"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "i=1λ"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "i=1λ"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "y−z"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "y−z"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "⟨α, ζ⟩R"
+  },
+  {
+   "page": 10,
+   "mark": "u",
+   "context": "⟨α, ζ⟩Rn=PJ"
+  },
+  {
+   "page": 10,
+   "mark": "u",
+   "context": "=PJ"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "|y−zi|,"
+  },
+  {
+   "page": 10,
+   "mark": "h",
+   "context": "dt|t=u"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "i=1λ"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "i=1λ"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "y−z"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "u",
+   "context": "2rMφ(y) PJ"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "i=1λ"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "M(x, u)∈B"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "M(x, u)∈BrM(M) \\ M,whichiscertainlythecaseif"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "M(x, u)∈BrM(M) \\ M,whichiscertainlythecaseift"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "M(x, 0)=x∈B"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "u",
+   "context": "2rM min"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "2rM minu∈[t"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "2rM minu∈[t1,t"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "M(x, u))(t"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "M(x, u))(t2 −t"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "M(x, u))(t"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "M(x, u))(t2 −t"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "M(x, [0, t"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "M(x, [0, t2]) ⊂B"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "M(x, t)∈B"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "2rM−ρforsome"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "s",
+   "context": "M(x, s)) = 1forall"
+  },
+  {
+   "page": 10,
+   "mark": "s",
+   "context": "M(x, s)) = 1foralls ∈[0, 1)(evenfor"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "M(x, ·)),andwecanapply(3.10)toall"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "M(x, ·)),andwecanapply(3.10)toall0<t"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "M(x, ·)),andwecanapply(3.10)toall0<t1<t"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "t1:= σandt2:= 1 −σforanyσ∈(0,"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "M).LetM⊂R"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "M).LetM⊂Rnbe"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "connectedsetwithδ(M, rM)<gnatsomescalerM>0,andsupposeasetA⊂R"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "forsomeρ ∈(0,"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "M(R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "M(Rn \\ M, 1) ⊂R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "oof.Property(2+)inTheorem3.1impliesbymeansof(3.11)forallx ∈R"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "Theorem 3.3 (Distance-decreasing flow).If M⊂R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "M∈C∞(R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "M∈C∞(Rn \\ M× [0, 1], R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "M(R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "M(Rn \\ M× [0, 1]) ⊂R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "M(·, 0) = IdR"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "2ρ(M)\\M)∪(R"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "2ρ(M)\\M)∪(Rn\\BrM (M))= Id(B"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "2ρ(M)\\M)∪(R"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "2ρ(M)\\M)∪(Rn\\BrM (M))forall"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "M(·, t) : R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "M(·, t) : Rn\\M→R"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "M(·, t) : Rn\\M→Rnis an embedding for every"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "M(x, t), M)isnon-increasingon[0, 1]foreach"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "M(x, t), M)isnon-increasingon[0, 1]foreachx ∈R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "2ρ(M) ∪(R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "Proof.Chooseacut-offfunctionψ∈C∞(R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "Proof.Chooseacut-offfunctionψ∈C∞(Rn)withψ≥0onR"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": ",andψ≡1onBδ(M) \\ Bρ(M).Wetaketheuniquesmoothsolutionh ∈C∞((R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "M)×R, R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "with the vector field˜Vreplaced by˜W:= −rMψ·V , where V∈C∞(R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": " the vector field˜Vreplaced by˜W:= −rMψ·V , where V∈C∞(Rn, R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "M∈C∞(R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "M∈C∞(Rn \\ M× [0, 1], R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "M(·, t) : R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "M(·, t) : Rn\\M→R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "2ρ(M)∪(R"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "2ρ(M)∪(Rn \\B"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "M(R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "M(Rn \\ M× [0, 1]) ⊂R"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "2ρ(M)sinceforallother"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "2ρ(M)sinceforallotherx∈R"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "x∈BrM(M) \\ B"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "dt|t=u"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "y−z"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "y−z"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "⟨α, ζ⟩R"
+  },
+  {
+   "page": 11,
+   "mark": "u",
+   "context": "⟨α, ζ⟩Rn=PJ"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 11,
+   "mark": "u",
+   "context": "Rn= −rMψ(y) PJ"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i=1λ"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i=1λ"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "whereλ"
+  },
+  {
+   "page": 11,
+   "mark": "u",
+   "context": "whereλi∈[0, 1],PJ"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i=1λ"
+  },
+  {
+   "page": 11,
+   "mark": "z",
+   "context": "i=1λi= 1,"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i=1λi= 1,z"
+  },
+  {
+   "page": 11,
+   "mark": "d",
+   "context": "i=1λi= 1,zi∈Msuchthat"
+  },
+  {
+   "page": 11,
+   "mark": "y",
+   "context": "i=1λi= 1,zi∈Msuchthatd"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i=1λi= 1,zi∈Msuchthatdy= dist(y, M) = |y −z"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i=1λi= 1,zi∈Msuchthatdy= dist(y, M) = |y −zi|forall"
+  },
+  {
+   "page": 11,
+   "mark": "u",
+   "context": "1,zi∈Msuchthatdy= dist(y, M) = |y −zi|foralli = 1, . . . , J"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "M(x, u) ∈B"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "M(x, u) ∈BrM(M) \\ M,whichholdstrueforsufficientlysmall"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "M(x, u) ∈BrM(M) \\ M,whichholdstrueforsufficientlysmallt"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "M(x, u))(t"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "M(x, u))(t2 −t"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "M(x, u))(t2 −t1) ≤D(t"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "M(x, [0, t"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "M(x, [0, t2])⊂B"
+  },
+  {
+   "page": 12,
+   "mark": "s",
+   "context": "M(x, s))=1forall"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "t1:= σ,t2:= 1 −σ,σ∈(0,"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "connectedsetswithpath-connectedcomplementR"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "4 min{rM"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "4 min{rM1, rM"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "4"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "4r∗−distH(M"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "4r∗−distH(M1, M"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "4 min{rM"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "4 min{rM1, rM"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "4 min{rM1, rM2} −distH(M"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "4 min{rM1, rM2} −distH(M1, M"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "M1:R"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "M1:Rn \\ M"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "M1:Rn \\ M1 × [0, 1]→R"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "M1:Rn \\ M1 × [0, 1]→Rn \\ M"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "listedinthattheorem.DefinethegrouphomomorphismJ:π1(R"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "tedinthattheorem.DefinethegrouphomomorphismJ:π1(Rn\\ M1)→π1(R"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "for any closed curve c in R"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "urve c in Rn\\M1 representing the equivalence6class [c]1∈π1(R"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "h1(R"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "h1(Rn\\ M1, 1) ⊂R"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "4"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "mappingJdefinedin(4.4)actuallymapsintoπ1(R"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "definitiondoesnotdependontheparticularchoiceoftheloopcinR"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "otherrepresentativeloop˜cinR"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "ψ∈C"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "ψ∈C0(R/Z×[0, 1], R"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "themaph1(·, 1) ◦ψisahomotopyinR"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "Lemma4.1(Jinjective).ThelinearmappingJ:π1(R"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "Lemma4.1(Jinjective).ThelinearmappingJ:π1(Rn\\ M1)→π1(R"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "Proof.Itsufficestoshowthatforanynull-homotopicloopinR"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "equivalenceclassunderJonlycontainsnull-homotopicloopsinR"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "[c]1∈ker J⊂π1(R"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "1∈ker J⊂π1(Rn\\M1), which means that there is a homotopy Ψ ∈C"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "1), which means that there is a homotopy Ψ ∈C0(R/Z×[0, 1], R"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "M2∈C∞((R"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "M2∈C∞((Rn \\ M"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "M2∈C∞((Rn \\ M2) × [0, 1], R"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "M2∈C∞((Rn \\ M2) × [0, 1], Rn \\ M"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "h2(R"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "h2(Rn\\ M2, 1) ⊂R"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "Consequently,themapping(s, t) 7→h2(Ψ(s, t), 1)isahomotopyinR"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "ofthemonotonicityoft7→dist(h2(x, t), M2)foranyx∈R"
+  },
+  {
+   "page": 13,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 13,
+   "mark": "r",
+   "context": "4"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": " the mapping (s, t) 7→h2(Ψ(s, 0), t) is also a homotopy in R"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "Lemma4.2(Jissurjective).TheinjectivelinearmappingJ: π1(R"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "(Jissurjective).TheinjectivelinearmappingJ: π1(Rn\\ M1) →π1(R"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "Proof.For a given closed curve ˜c in R"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": ".For a given closed curve ˜c in Rn\\M2representing [˜c]2∈π1(R"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "MifromTheorem3.1forM:= M"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "MifromTheorem3.1forM:= Mi,"
+  },
+  {
+   "page": 13,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 13,
+   "mark": "r",
+   "context": "4"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "inferthatthemapping(s, t)7→h1(h2(˜c(s), 1), t)isahomotopyinR"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "Theorem3.3toderiveaquantifiedsufficientconditionforloopsc ∈R"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "togenerateelements[c]intheperipheralsubgroupofπ1(R"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "Proposition4.3(Elements of peripheral subgroups).LetM⊂R"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "path-connectedsetwithpath-connectedcomplementR"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "elementoftheperipheralsubgroupPMofπ1(R"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "Proof.Fixaloopc∈C"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "Proof.Fixaloopc∈C0(R/Z, R"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "M:R"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "M:Rn\\ M× [0, 1]→R"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "themap(s, t)7→h(c(s), t)=h(·, t)◦c(s)definesahomotopyinR"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "ThemappingJ:π1(R"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "ThemappingJ:π1(Rn\\ M1)→π1(R"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "peripheral subgroup PM1⊂π"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "peripheral subgroup PM1⊂π1(R"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "peripheral subgroup PM1⊂π1(Rn\\M"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "PM2ofπ"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "PM2ofπ1(R"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "PM2ofπ1(Rn\\ M"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "“⊂”:Forp ∈PM1takearepresentativeloopcinR"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "“⊂”:Forp ∈PM1takearepresentativeloopcinRn\\ M"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "2min{rM"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "2min{rM1, rM"
+  },
+  {
+   "page": 14,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "M1:R"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "M1:Rn \\ M"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "M1:Rn \\ M1→R"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "M1:Rn \\ M1→Rn \\ M"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "ofTheorem3.1forM:=M"
+  },
+  {
+   "page": 14,
+   "mark": "r",
+   "context": "4"
+  },
+  {
+   "page": 14,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 14,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 14,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 14,
+   "mark": "h",
+   "context": "2r∗thenbycontinuityof"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "2r∗thenbycontinuityofh"
+  },
+  {
+   "page": 14,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "2r∗= dist(h"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "2r∗= dist(h1(c(s), t∗), M"
+  },
+  {
+   "page": 14,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "h1(R"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "h1(Rn\\ M1, 1) ⊂R"
+  },
+  {
+   "page": 14,
+   "mark": "r",
+   "context": "4"
+  },
+  {
+   "page": 14,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "Corollary 3.2 is satisfied.In particular, h1(c(R/Z), 1) ⊂R"
+  },
+  {
+   "page": 14,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "4min{rM"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "4min{rM1, rM"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "4min{rM"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "4min{rM1, rM"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "4min{rM1, rM2} < rM"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "foralls ∈R/Z.Therefore,h"
+  },
+  {
+   "page": 14,
+   "mark": "r",
+   "context": "foralls ∈R/Z.Therefore,h1(c(R/Z), 1) ⊂B"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "foralls ∈R/Z.Therefore,h1(c(R/Z), 1) ⊂BrM2(M"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "foralls ∈R/Z.Therefore,h1(c(R/Z), 1) ⊂BrM2(M2) \\ M"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "=[h"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "=[h1(·, 1) ◦c]2∈PM2⊂π"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "=[h1(·, 1) ◦c]2∈PM2⊂π1(R"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "=[h1(·, 1) ◦c]2∈PM2⊂π1(Rn\\ M"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "˜c : R/Z →R"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "˜c : R/Z →Rn\\ M"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "˜c : R/Z →Rn\\ M2with[˜c]2= qandsups∈R/Z dist(˜c(s), M"
+  },
+  {
+   "page": 15,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "appliedtoM:=M"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "M2:R"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "M2:Rn \\ M"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "M2:Rn \\ M2→R"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "M2:Rn \\ M2→Rn \\ M"
+  },
+  {
+   "page": 15,
+   "mark": "r",
+   "context": "4"
+  },
+  {
+   "page": 15,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 15,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "h2(R"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "h2(Rn\\ M2, 1) ⊂R"
+  },
+  {
+   "page": 15,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 15,
+   "mark": "r",
+   "context": "4"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "4min{rM"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "4min{rM1, rM"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "4min{rM1, rM2} < rM"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "henceh"
+  },
+  {
+   "page": 15,
+   "mark": "r",
+   "context": "henceh2(˜c(R/Z), 1)⊂B"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "henceh2(˜c(R/Z), 1)⊂BrM1(M"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "henceh2(˜c(R/Z), 1)⊂BrM1(M1)\\M"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "henceh2(˜c(R/Z), 1)⊂BrM1(M1)\\M1,whichleadsustosetp:=[h"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "c(R/Z), 1)⊂BrM1(M1)\\M1,whichleadsustosetp:=[h2(·, 1)◦˜c]1∈PM"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "π1(R"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "mapping (s, t) 7→h1(h2(˜c(s), 1), t) defines a homotopy in R"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "inR"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "Theequivalenceoftwotameknotsγ1, γ2∈C"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "Theequivalenceoftwotameknotsγ1, γ2∈C0(R/Z, R"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "ofaknotη∈C"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "ofaknotη∈C0(R/Z, R"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "ProofofCorollary1.4.Byassumptionthereisascalerγ∈(0,"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "2)suchthatδ(γ, rγ)<g"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "Ouraimistoshowthatforagivenfunctionh∈C"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Ouraimistoshowthatforagivenfunctionh∈C0,"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "Ouraimistoshowthatforagivenfunctionh∈C0,1(R/Z, R"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "2,so"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "1−|ϵ|∥h′∥L∞δ(γ,rγ)< g"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "2rγwe infer |γ(y)−γ(x)| ≤2"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "2rγwe infer |γ(y)−γ(x)| ≤2rγ, so δ(γϵ, ˆ"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "4min{rγ, ˆ"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Lemma5.1.LetI⊂Rbeanintervalandγ:I→R"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "v"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "2,2(I, R"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "s⟨γ′(σ), γ′(τ)⟩R"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "fractionalseminormthereisaradiusρ=ρ(γ)∈(0,"
+  },
+  {
+   "page": 17,
+   "mark": "x",
+   "context": "4]suchthatsup"
+  },
+  {
+   "page": 17,
+   "mark": "x",
+   "context": "2,2,Bρ(x)≤sup"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "2,2(R/Z, R"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "2"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "2"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "2,2(R/Z, R"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "σγ:= inf{|γ(t) −γ(s)| : dγ(s, t) = |t −s|R/Z≥2ρ} ∈(0,"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "2,2(R/Z, R"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "2,2(R/Z, R"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "16CE}.Therefore,foralls, t ∈R/Zwith"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "3< g"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "2,2(R/Z, R"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "2,2(R/Z, R"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "2,2(R/Z, R"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "/Z, Rn)thereisaparameterx ∈R/Zandthereexistconstantsθ, r∈(0,"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "8inaddition,then|(η′)B"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "ν≡νBr(x):=(η′)B"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "|(η′)Br(x)|∈S"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "sinceθ∈(0,"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "Defineforafixedparameterx∈R/Zandconstantsr∈(0,"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "2)andθ∈(0,"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "whereν≡νB=νBr(x)∈S"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "t∥eB∥L"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "≤6"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "≥|B"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "∩B"
+  },
+  {
+   "page": 19,
+   "mark": "4",
+   "context": "144"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "∩B"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "2) ⊂B"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "unitvectorν= νBr(x)∈S"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "2,2(R/Z, R"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "forsomex ∈R/Z,θ∈(0, θ1)andr∈(0,"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "Dη(y) −η(x"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "\u0010η(y) −η(x"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "projectionofR"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "projectionofRnontoalinearsubspaceV⊂R"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "η(y)−η(x"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "x0⟨ν −η′(u), ν⟩R"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "[x0,y]|eB"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "B|y−x0|(x"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "B|y−x0|(x0)|eB"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "B|y−x0|(x"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "B|y−x0|(x0)|eB"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "(1 + ⟨ζ, ν⟩)(1 −⟨ζ, ν⟩) ≤2(1 −⟨ζ, ν⟩)forallζ∈B1(0) ⊂R"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "ν⟩) ≤2(1 −⟨ζ, ν⟩)forallζ∈B1(0) ⊂Rn(whereweabbreviated⟨·, ·⟩R"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "Givenacurveη:R/Z→R"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "and good sets G"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "±:= G±(x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "±:= G±(xi, θ, r) as defined in (6.12) for"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "±∈G"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "±, we replace the Nsubarcs η([x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "−, x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "z−x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "η(x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "η(x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "+) −η(x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "forz∈[x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "−, x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "+−x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "i=1[x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "−, x"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "2,2(R/Z, R"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "2,2,Ar,θ(x"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "forfinitelymanydistinctparametersx1, . . . , xN∈R/Zwithr∈(0,"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "y,z∈[xi−r,x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "y,z∈[x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "firstinequalityin(6.14)fory:=x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "+∈G"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "+⊂B"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "+⊂Br(x"
+  },
+  {
+   "page": 20,
+   "mark": "x",
+   "context": "+⊂Br(xi)and"
+  },
+  {
+   "page": 20,
+   "mark": "0",
+   "context": "+⊂Br(xi)andx"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "+⊂Br(xi)andx0:=x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "−∈G"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "η(x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "+)−η(x"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "i ∈{1, . . . , N}impliesforνi:= νBr(xi)∈S"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "∈B1(0) ⊂R"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "+−x"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "1 −⟨νi, ∆i⟩R"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "|νi −∆i|2= 1 + |∆i|2−2⟨νi, ∆i⟩R"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "Therefore,byvirtueof(6.5)inLemma6.1forν:= νi,x := xi,andz∈[x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "−, x"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "+] ⊂B"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "+] ⊂Br(x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "|η(z) −η(x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "−) + ˜η(x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "Br(xi)|η′(u) −ν"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "whichprovesthefirstinequalityin(6.18),sincez∈[x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "−, x"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "8"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "η(x"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "+)−η(x"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "∈B1(0) ⊂R"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "∈B1(0) ⊂Rnandνi:= νBr(xi)∈S"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "x"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "+−x"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "≤|ν"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "|ν"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i=1(x"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "−, x"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "forallz∈(x"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "−, x"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "8"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "8"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "Fixi∈{1, . . . , N},abbreviatex:=xi,x±:=x"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "8"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "CaseII.For(y, z)∈A×Bandν:=νBr(x)∈S"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "|˜η(z) −˜η(y)| ≥⟨˜η(z) −˜η(y), ν⟩R"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "|˜η(z) −˜η(y)| ≥⟨˜η(z) −˜η(y), ν⟩Rn= ⟨˜η(x−) −˜η(y), ν⟩R"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "η(z) −˜η(y), ν⟩Rn= ⟨˜η(x−) −˜η(y), ν⟩Rn+ ⟨˜η(z) −˜η(x−), ν⟩R"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "⟨˜η(x−) −˜η(y), ν⟩R"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "x+−x−⟨η(x+) −η(x−), ν⟩R"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "2,2(R/Z, R"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "R/Zwithr∈(0,"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "4)asin(6.15)andθ∈(0, θ"
+  },
+  {
+   "page": 22,
+   "mark": "24",
+   "context": "4"
+  },
+  {
+   "page": 22,
+   "mark": "8",
+   "context": "424L"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "I.y, z∈[xi −r, x"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "+](ory, z∈[x"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "−, x"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "−, xi+ r])forsome"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i=1[x"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "−, x"
+  },
+  {
+   "page": 22,
+   "mark": "z",
+   "context": "+],"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "+],z∈R/Z \\ [x"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "+],z∈R/Z \\ [xi−r, x"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "+],z∈R/Z \\ [xi−r, xi+ r]forsome"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "III.y∈[x"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "−, x"
+  },
+  {
+   "page": 22,
+   "mark": "d",
+   "context": "1025"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "forally, z∈[xi −r, x"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "+](or[x"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "−, x"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i=1[x"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "−, x"
+  },
+  {
+   "page": 22,
+   "mark": "d",
+   "context": "+]wehavebymeansof(6.20)"
+  },
+  {
+   "page": 22,
+   "mark": "d",
+   "context": "L"
+  },
+  {
+   "page": 22,
+   "mark": "d",
+   "context": "L"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "CaseIII.For y∈[x"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "−, x"
+  },
+  {
+   "page": 23,
+   "mark": "z",
+   "context": "+] and"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "+] and z/∈[x"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "+] and z/∈[xi−r, x"
+  },
+  {
+   "page": 23,
+   "mark": "r",
+   "context": "8"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "since|y −z|R/Z≥|z −x|R/Z −max{|x −x"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "−|, |x −x"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "2,2(R/Z, R"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "2,2(R/Z, R"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "anysequence(γn)n⊂Fp,L,R(K) ∩C"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "anysequence(γn)n⊂Fp,L,R(K) ∩C1(R/Z, R"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "2,2(R/Z, R"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "2,2(R/Z, R"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "2,2is"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "2,2(R/Z, R"
+  },
+  {
+   "page": 23,
+   "mark": "f",
+   "context": "R/Z"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "2,2(R/Z, R"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "2,2,→C"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "2,2,→W"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "2,2,→W1,"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "inC"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "p) = R"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "yieldsanumberργ∈(0,"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "4)suchthatfor"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "|γ(s)−γ(t)|: s, t ∈R/Z,"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "Supposewehadδ(γ"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "Supposewehadδ(γm, rγm)<g"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "4min{rγ, rγ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "2,2as"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "assumptionsγn∈C"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "assumptionsγn∈C1(R/Z, R"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "π"
+  },
+  {
+   "page": 25,
+   "mark": "r",
+   "context": "4|x −y|R/Z,onehas|u −v|≥|x −y| −2"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "· 4(2r)"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "R/Z· r"
+  },
+  {
+   "page": 25,
+   "mark": "j",
+   "context": "ε · j<P"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "k(z"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "k(zk) × B"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "k(z"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "2forall"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "2forallk≥k"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "k≥max{k0,"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "k(z"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "forallr> 0,k≥max{k0,"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "k(z"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "k(zk) × B"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "k(z"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "Case2.Ifz"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "Case2.Ifz0∈Vε,thenwrite{z"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "Case2.Ifz0∈Vε,thenwrite{z0} × {z"
+  },
+  {
+   "page": 26,
+   "mark": "r",
+   "context": "r>0(B"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "r>0(Br(z"
+  },
+  {
+   "page": 26,
+   "mark": "r",
+   "context": "r>0(Br(z0) × B"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "r>0(Br(z0) × Br(z"
+  },
+  {
+   "page": 26,
+   "mark": "r",
+   "context": "r>0(B"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "r>0(Br(z"
+  },
+  {
+   "page": 26,
+   "mark": "r",
+   "context": "r>0(Br(z0) × B"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "r>0(Br(z0) × Br(z"
+  },
+  {
+   "page": 26,
+   "mark": "r",
+   "context": "ε⌉wefindradii"
+  },
+  {
+   "page": 26,
+   "mark": "l",
+   "context": "ε⌉wefindradiir"
+  },
+  {
+   "page": 26,
+   "mark": "x",
+   "context": "ε⌉wefindradiirl:= r"
+  },
+  {
+   "page": 26,
+   "mark": "l",
+   "context": "ε⌉wefindradiirl:= rx"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "ρµ, r1, . . . , rN, rγ,"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "4p,"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "4min{|xi −x"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "4¯r(y"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "8¯r(y"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "2¯r(y"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "2¯r(yk) × B"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "k=1,...,Kµ"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "k=1,...,Kµn"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "2¯r(y"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "n→∞µ"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "2¯r(y"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "2¯r(yk) × B"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "2¯r(y"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "2¯r(y"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "2¯r(yk) × B"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "2¯r(y"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "4¯r(y"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "4¯r(yk) × B"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "4¯r(y"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "4¯r(y"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "4¯r(yk) × B"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "4¯r(y"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "2(y"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "2(y"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "∥γ"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "Step5.Cuttingoutconcentrationsofγ"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "knotγ"
+  },
+  {
+   "page": 27,
+   "mark": "x",
+   "context": "±aredefinedasin(6.12)for"
+  },
+  {
+   "page": 27,
+   "mark": "r",
+   "context": "±aredefinedasin(6.12)forx:=xi,"
+  },
+  {
+   "page": 27,
+   "mark": "4",
+   "context": "±aredefinedasin(6.12)forx:=xi,r:=¯r,andθ:=θ"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "±aredefinedasin(6.12)forx:=xi,r:=¯r,andθ:=θ4<θ"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "+) −γ"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "IfVε= ∅thensimplyset˜γ"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "IfVε= ∅thensimplyset˜γn0:= γ"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "IfVε= ∅thensimplyset˜γn0:= γn0.WeinferfrombiLip(γ"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "L(sinceγ"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "L(sinceγn"
+  },
+  {
+   "page": 27,
+   "mark": "d",
+   "context": "˜L"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "˜Ld˜γ"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "Thus,˜γ"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "Thus,˜γn0isembedded.Sinceγ"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "Thus,˜γn0isembedded.Sinceγn0isassumedtobeofclassC"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "Thus,˜γn0isembedded.Sinceγn0isassumedtobeofclassC1(R/Z, R"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "γ"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "+)−γ"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "showthatthemodifiedcurve˜γ"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "ForagivenarclengthparametrizedC"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "a homeomorphism of R"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "conclude that any such C"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "+]obtainingNopenpolygonallineswithendpoints˜γ"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "+]obtainingNopenpolygonallineswithendpoints˜γn"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "topreventintersectionsofanysegment˜γn0([x"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "−, x"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "γ"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "γn"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "γn0(x"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "±+s)−γ"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "±+s)−γn0(x"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "n0(x"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "n0(x"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "±), ν"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "±), ν"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "±), νi⟩R"
+  },
+  {
+   "page": 28,
+   "mark": "s",
+   "context": "±), νi⟩R3= lim"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "R"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "γ"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "γn"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "γn0(x"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "+) −γ"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "+) −γn0(x"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "+−x"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "\u0000γ"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "\u0000γn"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "\u0000γn0(x"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "+)−γ"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "+)−γn0(x"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "−)|, ν"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "R"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "|γ"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "|γn0(x"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "+)−γ"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "+)−γn0(x"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "+−x"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "|γn0(x"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "+) −γ"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "+) −γn0(x"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "ordertoshowthatnosegment˜γn0([x"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "−, x"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "NoticethatifVε̸=∅withsomepointξ"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "NoticethatifVε̸=∅withsomepointξ1∈Vε,thenbysymmetryofγ"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "i, x"
+  },
+  {
+   "page": 28,
+   "mark": "d",
+   "context": "L"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "Ldγ"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "Ldγn0(z, ξ) ≤|γ"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "Ldγn0(z, ξ) ≤|γn"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "Ldγn0(z, ξ) ≤|γn0(z) −γ"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "Ldγn0(z, ξ) ≤|γn0(z) −γn"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "Ldγn0(z, ξ) ≤|γn0(z) −γn0(ξ)| ≤|˜γ"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "Ldγn0(z, ξ) ≤|γn0(z) −γn0(ξ)| ≤|˜γn"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "Ldγn0(z, ξ) ≤|γn0(z) −γn0(ξ)| ≤|˜γn0(ξ) −γ"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "Ldγn0(z, ξ) ≤|γn0(z) −γn0(ξ)| ≤|˜γn0(ξ) −γn"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "Ldγn0(z, ξ) ≤|γn0(z) −γn0(ξ)| ≤|˜γn0(ξ) −γn0(ξ)| ≤∥˜γ"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "Ldγn0(z, ξ) ≤|γn0(z) −γn0(ξ)| ≤|˜γn0(ξ) −γn0(ξ)| ≤∥˜γn"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "Ldγn0(z, ξ) ≤|γn0(z) −γn0(ξ)| ≤|˜γn0(ξ) −γn0(ξ)| ≤∥˜γn0−γ"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "Ldγn0(z, ξ) ≤|γn0(z) −γn0(ξ)| ≤|˜γn0(ξ) −γn0(ξ)| ≤∥˜γn0−γn"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "n0(z, ξ) ≤|γn0(z) −γn0(ξ)| ≤|˜γn0(ξ) −γn0(ξ)| ≤∥˜γn0−γn0∥≤6θ"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "3L·6θ"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "ofthesubarcsγn0([x"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "−, x"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "symmetry of γ"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "two such non-trivially knotted subarcs, which implies that γ"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "contradicting our assumption.Consequently,the subarcs γn0([x"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "−, x"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "straightsegments˜γn0([x"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "−, x"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "+]),whichimpliesthatγ"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "+]),whichimpliesthatγn0isequivalentto˜γ"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "+]),whichimpliesthatγn0isequivalentto˜γn0,i.e.,[γ"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "+]),whichimpliesthatγn0isequivalentto˜γn0,i.e.,[γn0] = [˜γ"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "4¯r(Vε),inwhichcasethereexists"
+  },
+  {
+   "page": 28,
+   "mark": "x",
+   "context": "4¯r(Vε),inwhichcasethereexistsi ∈{1, . . . , N}with"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "4¯r(Vε),inwhichcasethereexistsi ∈{1, . . . , N}withx"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "8¯r(ξ) ⊂B¯r(x"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "4¯r(y"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "8¯r(ξ) ⊂B"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "8¯r(y"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "8¯r(ξ) is either contained in the interval [x"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "8¯r(ξ) is either contained in the interval [xi−¯r, x"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "+] or in [x"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "−, x"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "8< g"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "whichwecombinewith(5.10)inCorollary5.2forγ:= γ"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "8< g"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "|˜γ"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "|˜γn0(y)−˜γ"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "|γ"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "|γn0(y)−γ"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "3< g"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "4¯r< d˜γ"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "4¯r< d˜γn0(y, z) ≤˜L|˜γ"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "4¯r< d˜γn0(y, z) ≤˜L|˜γn"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "4¯r< d˜γn0(y, z) ≤˜L|˜γn0(y) −˜γ"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "4¯r< d˜γn0(y, z) ≤˜L|˜γn0(y) −˜γn"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "4¯r< d˜γn0(y, z) ≤˜L|˜γn0(y) −˜γn0(z)| ≤2L|˜γ"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "4¯r< d˜γn0(y, z) ≤˜L|˜γn0(y) −˜γn0(z)| ≤2L|˜γn"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "4¯r< d˜γn0(y, z) ≤˜L|˜γn0(y) −˜γn0(z)| ≤2L|˜γn0(y) −˜γ"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "4¯r< d˜γn0(y, z) ≤˜L|˜γn0(y) −˜γn0(z)| ≤2L|˜γn0(y) −˜γn"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "δ(˜γ"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "δ(˜γn0, r˜γ"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "8< g"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "atscaler˜γ"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "16L¯r.InordertoapplyCorollary1.3toγ"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "16L¯r.InordertoapplyCorollary1.3toγ1:=γandγ"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "16L¯r.InordertoapplyCorollary1.3toγ1:=γandγ2:=˜γ"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "16L¯r.InordertoapplyCorollary1.3toγ1:=γandγ2:=˜γn"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "∥γ −γ"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "∥γ −γn0∥L∞+ ∥γ"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "∥γ −γn0∥L∞+ ∥γn0−˜γ"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "4min{rγ, r˜γ"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "m|=1a.e.onR/Zforall"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "γm,ϵm∈C∞(R/Z, R"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "γm,ϵm∈C∞(R/Z, R3),ϵ"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "reparametrizeˆγm,ϵmtoarclengthtoobtainΓ"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "reparametrizeˆγm,ϵmtoarclengthtoobtainΓm∈C∞(R/Z, R"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "EM¨ob)thatΓm(0) = 0 ∈R"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 30,
+   "mark": "m",
+   "context": "m→∞EM¨ob(Γ"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "thenΓ∈Cω(R/Z, R"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "atδ(Γ, rΓ) < g3.Wesymmetrizeanyvariationalvectorh ∈C∞(R/Z, R"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "hsym(u) :=P"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "p) = Rot"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "p) + ϵRot"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "=Γ(u) + ϵP"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "p) = Γ(u) + ϵ P"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "0 = δEM¨ob(Γ, hsym) =P"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "0 =P"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "2,"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "2,2(R/Z, R"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "[3]S.Blatt.CurvesbetweenLipschitzandC"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "[35]Ph.Reiter.AllcurvesinaC"
+  }
+ ]
+}

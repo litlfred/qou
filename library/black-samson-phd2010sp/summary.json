@@ -2,107 +2,92 @@
  "_schema": "library-summary/v1",
  "doc_id": "black-samson-phd2010sp",
  "source_sha256": "c16799b0bd54ff29",
- "brief": "REPRESENTATIONS OF HECKE — 19 sections: Acknowledgments; INTRODUCTION 1; SCHUR-WEYL DUALITY AND QUOTIENTS O",
- "extended": "**REPRESENTATIONS OF HECKE**\n\n*ALGEBRAS AND THE*\n\n58 pp, 19 sections.\n\n**Outline.** Acknowledgments; I INTRODUCTION 1; III SCHUR-WEYL DUALITY AND QUOTIENTS OF THE HE; V COMBINATORIAL PROOF; 1.1 The Conway skein relation: '\\7(L+) - '\\7(L; 11.4 The five Temperley-Lieb diagrams on 3 str; Introduction; 1.1 Historical Background; 1.2 Summary of Thesis; 11.3 The Temperley-Lieb Algebra; 2 As a (G L( n), Sd) -bimodule, tensor space d; 1 The standard basis for Hd consists of the el; 2 Multiplication in this basis is; 4 Hd is semi-simple. Hence, we have the isomor; 6 (F) = F 129 1 + K 129 F,; 6 (i) = (6129 Id®i-l) 06 (i-I). Then, Pd = p®d; 2 As a (U, (-{d)-bimodule, tensor space decomp; 2 As a (U, 'Hd)-bimodule, tensor space decompo",
+ "brief": "REPRESENTATIONS OF HECKE — 16 sections: Front matter; INTRODUCTION; ILL Links and Braids",
+ "extended": "**REPRESENTATIONS OF HECKE**\n\n*ALGEBRAS AND THE*\n\n58 pp, 16 sections.\n\n**Outline.** Front matter; I INTRODUCTION; ILL Links and Braids; II 2. Representations of the Braid Group and t; II 3. The Temperley-Lieb Algebra; IIA. Diagram Algebras; III SCHUR-WEYL DUALITY AND QUOTIENTS OF THE HE; III 2. Representations of the Iwahori-Hecke Al; IlI.3. The Quantum Group Uv (.6'[(2)); IlIA. The Quantum Supergroup Uv (g[(111)); IV A STATE-SUM FORMULA FOR THE ALEXANDER POLYN; IV 2. Construction of the State-sum; IV 3. An Example; V COMBINATORIAL PROOF; V.l. Braid Group Invariance; V.2. Markov JVloves",
  "tokens": {
-  "brief": 26,
-  "extended": 183
+  "brief": 22,
+  "extended": 148
  },
  "sections": [
   {
-   "id": "sec-000-acknowledgments",
-   "title": "Acknowledgments",
-   "pages": "5-7"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-9"
   },
   {
-   "id": "sec-001-i-introduction-1",
-   "title": "INTRODUCTION 1",
-   "pages": "7-7"
+   "id": "sec-000-i-introduction",
+   "title": "INTRODUCTION",
+   "pages": "9-14"
   },
   {
-   "id": "sec-002-iii-schur-weyl-duality-and-quotients-of-the-heck",
-   "title": "SCHUR-WEYL DUALITY AND QUOTIENTS OF THE HECKE ALGEBRA 21",
-   "pages": "7-7"
+   "id": "sec-001-ill-links-and-braids",
+   "title": "ILL Links and Braids",
+   "pages": "14-17"
   },
   {
-   "id": "sec-003-v-combinatorial-proof",
+   "id": "sec-002-ii-2-representations-of-the-braid-group-and-the",
+   "title": "2. Representations of the Braid Group and the Iwahori-Hecke Algebra",
+   "pages": "17-22"
+  },
+  {
+   "id": "sec-003-ii-3-the-temperley-lieb-algebra",
+   "title": "3. The Temperley-Lieb Algebra",
+   "pages": "22-24"
+  },
+  {
+   "id": "sec-004-iia-diagram-algebras",
+   "title": "IIA. Diagram Algebras",
+   "pages": "24-29"
+  },
+  {
+   "id": "sec-005-iii-schur-weyl-duality-and-quotients-of-the-heck",
+   "title": "SCHUR-WEYL DUALITY AND QUOTIENTS OF THE HECKE ALGEBRA",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-006-iii-2-representations-of-the-iwahori-hecke-algeb",
+   "title": "2. Representations of the Iwahori-Hecke Algebra",
+   "pages": "30-32"
+  },
+  {
+   "id": "sec-007-ili3-the-quantum-group-uv-62",
+   "title": "IlI.3. The Quantum Group Uv (.6'[(2))",
+   "pages": "32-36"
+  },
+  {
+   "id": "sec-008-ilia-the-quantum-supergroup-uv-g111",
+   "title": "IlIA. The Quantum Supergroup Uv (g[(111))",
+   "pages": "36-42"
+  },
+  {
+   "id": "sec-009-iv-a-state-sum-formula-for-the-alexander-polynom",
+   "title": "A STATE-SUM FORMULA FOR THE ALEXANDER POLYNOMIAL",
+   "pages": "42-45"
+  },
+  {
+   "id": "sec-010-iv-2-construction-of-the-state-sum",
+   "title": "2. Construction of the State-sum",
+   "pages": "45-48"
+  },
+  {
+   "id": "sec-011-iv-3-an-example",
+   "title": "3. An Example",
+   "pages": "48-49"
+  },
+  {
+   "id": "sec-012-v-combinatorial-proof",
    "title": "COMBINATORIAL PROOF",
-   "pages": "7-8"
+   "pages": "49-49"
   },
   {
-   "id": "sec-004-11-the-conway-skein-relation-7l---7l-z-7lo",
-   "title": "The Conway skein relation: '\\7(L+) - '\\7(L_) = z '\\7(Lo)",
-   "pages": "8-8"
+   "id": "sec-013-vl-braid-group-invariance",
+   "title": "V.l. Braid Group Invariance",
+   "pages": "49-51"
   },
   {
-   "id": "sec-005-114-the-five-temperley-lieb-diagrams-on-3-strand",
-   "title": "The five Temperley-Lieb diagrams on 3 strands. .,",
-   "pages": "8-9"
-  },
-  {
-   "id": "sec-006-introduction",
-   "title": "Introduction",
-   "pages": "9-9"
-  },
-  {
-   "id": "sec-007-11-historical-background",
-   "title": "Historical Background",
-   "pages": "9-11"
-  },
-  {
-   "id": "sec-008-12-summary-of-thesis",
-   "title": "Summary of Thesis",
-   "pages": "11-22"
-  },
-  {
-   "id": "sec-009-113-the-temperley-lieb-algebra",
-   "title": "The Temperley-Lieb Algebra",
-   "pages": "22-30"
-  },
-  {
-   "id": "sec-010-2-as-a-g-l-n-sd--bimodule-tensor-space-decompose",
-   "title": "As a (G L( n), Sd) -bimodule, tensor space decomposes into simples",
-   "pages": "30-31"
-  },
-  {
-   "id": "sec-011-1-the-standard-basis-for-hd-consists-of-the-elem",
-   "title": "The standard basis for Hd consists of the elements H w , where w E Sd. In terms of the",
-   "pages": "31-31"
-  },
-  {
-   "id": "sec-012-2-multiplication-in-this-basis-is",
-   "title": "Multiplication in this basis is",
-   "pages": "31-31"
-  },
-  {
-   "id": "sec-013-4-hd-is-semi-simple-hence-we-have-the-isomorphis",
-   "title": "Hd is semi-simple. Hence, we have the isomorphisms of algebras",
-   "pages": "31-33"
-  },
-  {
-   "id": "sec-014-6-f-f-129-1-k-129-f",
-   "title": "(F) = F 129 1 + K 129 F,",
-   "pages": "33-33"
-  },
-  {
-   "id": "sec-015-6-i-6129-idi-l-06-i-i-then-pd-pd-06-d-l-producin",
-   "title": "(i) = (6129 Id®i-l) 06 (i-I). Then, Pd = p®d 06 (d-l), producing the formulae:",
-   "pages": "33-34"
-  },
-  {
-   "id": "sec-016-2-as-a-u--d-bimodule-tensor-space-decomposes-int",
-   "title": "As a (U, (-{d)-bimodule, tensor space decomposes into simples",
-   "pages": "34-38"
-  },
-  {
-   "id": "sec-017-2-as-a-u-hd-bimodule-tensor-space-decomposes-int",
-   "title": "As a (U, 'Hd)-bimodule, tensor space decomposes into simples",
-   "pages": "38-56"
-  },
-  {
-   "id": "sec-018-references",
-   "title": "References",
-   "pages": "56-58"
+   "id": "sec-014-v2-markov-jvloves",
+   "title": "V.2. Markov JVloves",
+   "pages": "51-58"
   }
  ],
  "provenance": {

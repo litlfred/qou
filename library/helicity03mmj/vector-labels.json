@@ -1,0 +1,2348 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "helicity03mmj",
+  "pages": [
+    {
+      "page": 4,
+      "rotation": 0,
+      "drawings": 33,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. The long segments of the trajectories are closed by the “short paths”"
+      ],
+      "labels": [
+        {
+          "text": "992",
+          "bbox": [
+            118.31,
+            138.53,
+            130.22,
+            145.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "B. KHESIN",
+          "bbox": [
+            277.14,
+            138.53,
+            318.14,
+            145.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Γτ1(x1)",
+          "bbox": [
+            327.76,
+            160.55,
+            356.77,
+            173.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "N13",
+            "N16",
+            "N19",
+            "N22"
+          ],
+          "sizes": [
+            4.78,
+            7.17,
+            10.33
+          ]
+        },
+        {
+          "text": "x1",
+          "bbox": [
+            252.6,
+            172.97,
+            261.86,
+            184.59
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "N16",
+            "N22"
+          ],
+          "sizes": [
+            7.17,
+            10.33
+          ]
+        },
+        {
+          "text": "Γτ2(x2)",
+          "bbox": [
+            345.25,
+            193.62,
+            374.26,
+            206.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "N13",
+            "N16",
+            "N19",
+            "N22"
+          ],
+          "sizes": [
+            4.78,
+            7.17,
+            10.33
+          ]
+        },
+        {
+          "text": "x2",
+          "bbox": [
+            221.56,
+            199.96,
+            230.82,
+            211.59
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "N16",
+            "N22"
+          ],
+          "sizes": [
+            7.17,
+            10.33
+          ]
+        },
+        {
+          "text": "Figure 1. The long segments of the trajectories are closed by the",
+          "bbox": [
+            154.18,
+            271.64,
+            441.1,
+            283.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "“short paths”",
+          "bbox": [
+            154.18,
+            285.77,
+            213.54,
+            295.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "linking” of the trajectories of the ﬂow {gt} passing through these points. Given",
+          "bbox": [
+            118.31,
+            312.68,
+            476.97,
+            323.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "any two points x1, x2 in M and two large numbers T1 and T2, we consider “long",
+          "bbox": [
+            118.31,
+            325.91,
+            476.96,
+            337.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "segments” gtx1 (0 ≤t ≤T1) and gtx2 (0 ≤t ≤T2) of the trajectories of ξ issuing",
+          "bbox": [
+            118.31,
+            336.59,
+            476.96,
+            349.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "from x1 and x2. Close up these long pieces by the shortest geodesics between gTkxk",
+          "bbox": [
+            118.31,
+            348.54,
+            476.3,
+            361.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and xk. We obtain two closed curves, ΓT1(x1) and ΓT2(x2); see Fig.1. Assume that",
+          "bbox": [
+            118.31,
+            361.78,
+            476.97,
+            373.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "these curves do not intersect (which is true for almost all pairs x1, x2 and for almost",
+          "bbox": [
+            118.31,
+            373.73,
+            476.97,
+            385.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "all T1, T2). Then the linking number lkξ(x1, x2; T1, T2) := lk(ΓT1(x1), ΓT2(x2)) of",
+          "bbox": [
+            118.31,
+            385.69,
+            476.97,
+            397.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the curves ΓT1(x1) and ΓT2(x2) is well-deﬁned.",
+          "bbox": [
+            118.31,
+            397.64,
+            322.45,
+            409.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁnition 2.4. The asymptotic linking number of the pair of trajectories gtx1 and",
+          "bbox": [
+            118.31,
+            414.7,
+            476.97,
+            427.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "gtx2 (x1, x2 ∈M) of the ﬁeld ξ is deﬁned as the limit",
+          "bbox": [
+            118.31,
+            426.65,
+            353.25,
+            439.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "lkξ(x1, x2; T1, T2)",
+          "bbox": [
+            303.13,
+            443.78,
+            382.44,
+            454.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "λξ(x1, x2) =",
+          "bbox": [
+            207.21,
+            450.52,
+            262.07,
+            461.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "lim",
+          "bbox": [
+            275.63,
+            450.52,
+            289.47,
+            460.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            383.63,
+            450.52,
+            386.4,
+            460.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "T1 · T2",
+          "bbox": [
+            328.89,
+            457.22,
+            356.17,
+            468.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "T1,T2→∞",
+          "bbox": [
+            264.83,
+            459.19,
+            300.27,
+            466.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "where T1 and T2 are to vary so that ΓT1(x1) and ΓT2(x2) do not intersect.",
+          "bbox": [
+            118.31,
+            472.65,
+            442.19,
+            484.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "It turns out that this limit exists (as an element of the space L1(M × M) of",
+          "bbox": [
+            130.26,
+            489.71,
+            476.97,
+            500.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the Lebesgue-integrable functions on M × M) and is independent of the system of",
+          "bbox": [
+            118.31,
+            502.81,
+            476.97,
+            512.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "geodesics (i. e., of the Riemannian metric), see Remark 2.6 below.",
+          "bbox": [
+            118.31,
+            514.9,
+            404.69,
+            524.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 2.5 [1]. Helicity of a divergence-free vector ﬁeld ξ on a simply connected",
+          "bbox": [
+            118.31,
+            533.23,
+            476.97,
+            543.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "manifold M with a volume element µ is equal to the average pairwise linking of tra-",
+          "bbox": [
+            118.31,
+            545.19,
+            476.97,
+            555.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "jectories of this ﬁeld, i. e., to the asymptotic linking number λξ(x1, x2) of trajectory",
+          "bbox": [
+            118.31,
+            557.14,
+            476.97,
+            567.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "pairs integrated over M × M:",
+          "bbox": [
+            118.31,
+            568.97,
+            246.8,
+            579.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Z",
+          "bbox": [
+            263.92,
+            584.08,
+            269.46,
+            594.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Z",
+          "bbox": [
+            279.96,
+            584.08,
+            285.5,
+            594.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "H(ξ) =",
+          "bbox": [
+            229.57,
+            590.35,
+            261.16,
+            600.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "λξ(x1, x2) µ1µ2.",
+          "bbox": [
+            296.0,
+            590.48,
+            365.71,
+            601.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "M",
+          "bbox": [
+            269.46,
+            601.89,
+            277.05,
+            608.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "M",
+          "bbox": [
+            285.5,
+            601.89,
+            293.09,
+            608.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Remark 2.6. In the original paper [1], instead of segments of shortest geodesics,",
+          "bbox": [
+            118.31,
+            614.4,
+            476.97,
+            624.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "one considered “systems of short paths” between every two points of the manifold",
+          "bbox": [
+            118.31,
+            626.36,
+            476.97,
+            636.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "M.",
+          "bbox": [
+            118.31,
+            638.31,
+            131.83,
+            648.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "These systems have to satisfy some conditions to provide the existence of",
+          "bbox": [
+            140.72,
+            638.31,
+            476.97,
+            648.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "λξ(x1, x2) almost everywhere as a pointwise limit as T1, T2 →∞. Such a system",
+          "bbox": [
+            118.31,
+            650.14,
+            476.96,
+            661.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of “short paths” would, generally speaking, depend on a vector ﬁeld. In [25] T. Vogel",
+          "bbox": [
+            118.31,
+            662.22,
+            476.97,
+            672.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "suggested to use the L1-convergence, rather than the pointwise one, and showed",
+          "bbox": [
+            118.31,
+            672.9,
+            476.97,
+            684.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "that in the L1-approach it is suﬃcient to use the system of shortest geodesics for any",
+          "bbox": [
+            118.31,
+            684.86,
+            476.96,
+            696.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "vector ﬁeld, see Section 3.4. His approach settled in a universal way the existence",
+          "bbox": [
+            118.31,
+            698.09,
+            476.96,
+            708.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 17,
+      "rotation": 0,
+      "drawings": 14,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2. Brownian trajectories on leaves"
+      ],
+      "labels": [
+        {
+          "text": "GEOMETRY OF HIGHER HELICITIES",
+          "bbox": [
+            224.41,
+            138.53,
+            370.87,
+            145.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "1005",
+          "bbox": [
+            461.08,
+            138.53,
+            476.96,
+            145.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "z",
+          "bbox": [
+            318.51,
+            174.98,
+            323.94,
+            186.94
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "N21"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "x",
+          "bbox": [
+            291.53,
+            179.48,
+            298.17,
+            191.43
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "N21"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "R",
+          "bbox": [
+            239.99,
+            195.44,
+            248.9,
+            207.39
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "N21"
+          ],
+          "sizes": [
+            11.95
+          ]
+        },
+        {
+          "text": "Figure 2. Brownian trajectories on leaves",
+          "bbox": [
+            203.6,
+            261.88,
+            391.68,
+            274.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2) Let ν be a ﬁnite harmonic measure. Then the ergodic theorem holds, using",
+          "bbox": [
+            130.26,
+            290.09,
+            476.97,
+            300.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the leaf diﬀusion operators D(t) as follows: For any ν-integrable function f there",
+          "bbox": [
+            118.31,
+            302.05,
+            476.97,
+            312.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "exists an ν-integrable Brownian average ˜f which is constant along the leaves and",
+          "bbox": [
+            118.31,
+            312.19,
+            470.01,
+            324.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⟨˜f, ν⟩= ⟨f, ν⟩.",
+          "bbox": [
+            264.55,
+            328.59,
+            330.73,
+            341.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "This theorem allows one to interpret ergodically the above integrals (5) by con-",
+          "bbox": [
+            130.26,
+            348.77,
+            476.96,
+            358.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "sidering a Brownian motion along the leaves of the foliations and evaluating a",
+          "bbox": [
+            118.31,
+            360.72,
+            476.97,
+            370.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "certain linking form along this motion. As we will see, the corresponding number",
+          "bbox": [
+            118.31,
+            372.68,
+            476.97,
+            382.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "measuring the mutual linking of the leaves of the two foliations coincides with the",
+          "bbox": [
+            118.31,
+            384.63,
+            476.96,
+            394.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Hopf-type integral.",
+          "bbox": [
+            118.31,
+            396.59,
+            200.81,
+            406.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁne a Brownian average linking of two foliation leaves as follows.",
+          "bbox": [
+            130.26,
+            408.54,
+            450.45,
+            418.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Let",
+          "bbox": [
+            462.44,
+            408.54,
+            476.97,
+            418.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(M, F1, F2) be a compact Riemannian manifold with two foliations of linking di-",
+          "bbox": [
+            118.31,
+            420.37,
+            476.96,
+            431.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "mensions k and l. Given a volume-form µ on M, these foliations Fj can be deﬁned",
+          "bbox": [
+            118.31,
+            432.32,
+            476.97,
+            443.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "by (generalized) polyvector ﬁelds (which we denote by the same letters), such that",
+          "bbox": [
+            118.31,
+            444.41,
+            476.97,
+            454.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "iFjµ = βj.",
+          "bbox": [
+            118.31,
+            456.36,
+            163.56,
+            467.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁnition 5.6. The Brownian linking of the leaves of foliations F1 and F2 passing",
+          "bbox": [
+            118.31,
+            473.78,
+            476.97,
+            485.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "through the two points x, y in M with respect to the measure µ is the Brownian",
+          "bbox": [
+            118.31,
+            485.86,
+            476.97,
+            495.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "average ˜f(x, y) of the function",
+          "bbox": [
+            118.31,
+            495.45,
+            252.29,
+            508.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "f(x, y) := iF(x,y)LF(x, y)",
+          "bbox": [
+            240.71,
+            514.22,
+            354.57,
+            525.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "on M × M along the leaf of the foliation F(x, y) = F1(x) × F2(y) passing through",
+          "bbox": [
+            118.31,
+            530.29,
+            476.97,
+            541.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(x, y) ∈M × M.",
+          "bbox": [
+            118.31,
+            542.24,
+            191.71,
+            552.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The Brownian average function ˜f(x, y) is constant along the leaves of F =",
+          "bbox": [
+            130.26,
+            558.1,
+            476.97,
+            570.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "F1 × F2, i. e., on any given pair of leaves of F1 and F2. Note also that the function",
+          "bbox": [
+            118.31,
+            572.56,
+            476.97,
+            584.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "f measures the linking of the foliations F1 and F2 just like in the case of linking",
+          "bbox": [
+            118.31,
+            584.51,
+            476.96,
+            596.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of compact submanifolds. (If the measures βi, i = 1, 2, are supported on closed",
+          "bbox": [
+            118.31,
+            596.6,
+            476.97,
+            607.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "non-intersecting surfaces Ni ⊂M, this is exactly their mutual linking number",
+          "bbox": [
+            118.31,
+            608.42,
+            476.97,
+            619.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "RR",
+          "bbox": [
+            178.4,
+            619.65,
+            188.09,
+            629.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "lk(N1, N2) =",
+          "bbox": [
+            118.31,
+            620.51,
+            175.64,
+            631.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "iN1(x)×N2(y)LF(x, y), cf. Deﬁnition 3.13.)",
+          "bbox": [
+            191.69,
+            620.51,
+            373.21,
+            632.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 5.7. Consider a pair of foliations F1 and F2 of linking dimensions k and",
+          "bbox": [
+            118.31,
+            637.92,
+            476.96,
+            649.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR7",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "l in a compact manifold M. Let ν be a harmonic measure on M×M for the foliation",
+          "bbox": [
+            118.31,
+            649.88,
+            476.96,
+            659.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "F = F1×F2 for any Riemannian metric on M. Then the space average over M×M",
+          "bbox": [
+            118.31,
+            661.83,
+            475.88,
+            673.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "for the Brownian ergodic average ˜f of the function f(x, y) := iF(x,y)LF(x, y) with",
+          "bbox": [
+            118.31,
+            671.55,
+            476.96,
+            685.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "respect to the measure ν does not depend on the Riemannian metric on M and is",
+          "bbox": [
+            118.31,
+            686.13,
+            476.97,
+            696.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "equal to the cross-helicity H(F1, F2) of the foliations.",
+          "bbox": [
+            118.31,
+            697.96,
+            352.2,
+            708.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 19,
+      "rotation": 0,
+      "drawings": 50,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3. The linking of three surfaces A, B, and C in a four-sphere"
+      ],
+      "labels": [
+        {
+          "text": "GEOMETRY OF HIGHER HELICITIES",
+          "bbox": [
+            224.41,
+            138.53,
+            370.87,
+            145.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "1007",
+          "bbox": [
+            461.08,
+            138.53,
+            476.96,
+            145.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "∂−1B",
+          "bbox": [
+            248.82,
+            157.55,
+            271.73,
+            168.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "N18",
+            "N21",
+            "N25"
+          ],
+          "sizes": [
+            7.17,
+            10.33
+          ]
+        },
+        {
+          "text": "U",
+          "bbox": [
+            310.97,
+            173.2,
+            317.84,
+            183.53
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "N18"
+          ],
+          "sizes": [
+            10.33
+          ]
+        },
+        {
+          "text": "B",
+          "bbox": [
+            226.56,
+            178.6,
+            234.24,
+            188.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "N18"
+          ],
+          "sizes": [
+            10.33
+          ]
+        },
+        {
+          "text": "∂−1C",
+          "bbox": [
+            327.47,
+            180.46,
+            349.94,
+            191.68
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "N18",
+            "N21",
+            "N25"
+          ],
+          "sizes": [
+            7.17,
+            10.33
+          ]
+        },
+        {
+          "text": "C",
+          "bbox": [
+            352.06,
+            209.02,
+            359.3,
+            219.35
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "N18"
+          ],
+          "sizes": [
+            10.33
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            359.46,
+            236.11,
+            367.04,
+            246.45
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "N18"
+          ],
+          "sizes": [
+            10.33
+          ]
+        },
+        {
+          "text": "Figure 3. The linking of three surfaces A, B, and C in a four-sphere",
+          "bbox": [
+            144.62,
+            273.38,
+            450.66,
+            285.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Remark 6.2. Consider the foliations A and B in S4 deﬁned by the kernel subspaces",
+          "bbox": [
+            118.31,
+            303.78,
+            476.96,
+            317.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of the 2-forms α and β. The conditions α ∧α = β ∧β = 0 on the pair α, β give the",
+          "bbox": [
+            118.31,
+            319.22,
+            476.96,
+            329.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "restrictions on the rank of the forms: rk(α), rk(β) ≤2, so that they deﬁne kernel",
+          "bbox": [
+            118.31,
+            331.18,
+            476.97,
+            341.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "foliations of dimension 2 in S4. The third condition α ∧β = 0 ensures that these",
+          "bbox": [
+            118.31,
+            341.98,
+            476.96,
+            353.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "kernel foliations have non-transversal intersection. Namely, their leaves at generic",
+          "bbox": [
+            118.31,
+            355.22,
+            476.96,
+            365.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "points form a 1-dimensional foliation. Moreover, the distribution spanned by the",
+          "bbox": [
+            118.31,
+            367.17,
+            476.96,
+            377.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "sum of the kernels of α and β is integrable and deﬁnes a 3-dimensional foliation",
+          "bbox": [
+            118.31,
+            379.13,
+            476.97,
+            389.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "[1]. In [16] the integrals above were given an ergodic interpretation in terms of",
+          "bbox": [
+            118.31,
+            391.08,
+            476.97,
+            401.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a generalized (non-generic) linking numbers of the corresponding foliations in the",
+          "bbox": [
+            118.31,
+            403.04,
+            476.96,
+            413.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "spirit of Section 4.3 (see also [17]).",
+          "bbox": [
+            118.31,
+            414.99,
+            268.78,
+            424.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Here we take a somewhat diﬀerent point of view, inspired by the paper [22].",
+          "bbox": [
+            130.27,
+            426.95,
+            476.97,
+            436.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We discuss below the higher linking numbers related to these integrals, while a",
+          "bbox": [
+            118.31,
+            438.9,
+            476.97,
+            448.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Brownian-type ergodic interpretation in terms of linking of the corresponding foli-",
+          "bbox": [
+            118.31,
+            450.86,
+            476.96,
+            460.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ations is achieved by applying the Brownian ergodic theorem [13] discussed in the",
+          "bbox": [
+            118.31,
+            462.81,
+            476.96,
+            472.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "preceding Section.",
+          "bbox": [
+            118.31,
+            474.77,
+            197.49,
+            484.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "More generally, consider the topological meaning of the integral",
+          "bbox": [
+            130.27,
+            494.2,
+            408.28,
+            504.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Z",
+          "bbox": [
+            280.72,
+            511.11,
+            286.26,
+            521.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "S4 α ∧d−1β ∧d−1γ.",
+          "bbox": [
+            286.26,
+            515.63,
+            372.53,
+            535.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR5",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "J(α; β, γ) =",
+          "bbox": [
+            222.75,
+            517.5,
+            277.96,
+            527.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "for a triple of exact 2-forms α, β and γ in S4, such that α∧β = α∧γ = 0, providing",
+          "bbox": [
+            118.31,
+            541.21,
+            476.97,
+            552.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "that it does not depend on the choices of the potential forms d−1β and d−1γ.",
+          "bbox": [
+            118.31,
+            553.08,
+            456.32,
+            564.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁnition 6.3. Let A, B, and C be two-dimensional surfaces in S4, such that A",
+          "bbox": [
+            118.31,
+            572.6,
+            476.97,
+            583.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "is disjoint with B and C. Then there is the mutual linking number of such a triple:",
+          "bbox": [
+            118.31,
+            585.83,
+            476.97,
+            595.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "lk(A; B, C) := # A ∩∂−1B ∩∂−1C,",
+          "bbox": [
+            217.75,
+            602.73,
+            375.87,
+            614.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i. e., the intersection number of A with 3-dimensional ﬁlms spanning B and C, see",
+          "bbox": [
+            118.31,
+            623.36,
+            476.96,
+            633.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Fig. 3.",
+          "bbox": [
+            118.31,
+            635.32,
+            146.41,
+            645.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "This deﬁnition makes sense for any homological 4-sphere M 4 with H1(M) =",
+          "bbox": [
+            130.26,
+            651.13,
+            476.97,
+            665.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "H2(M) = 0. In R4 there exists also a Gauss-type formula for this linking number.",
+          "bbox": [
+            118.31,
+            663.09,
+            475.57,
+            677.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁnition 6.4 [22]. Consider a 6-dimensional manifold Σ6 := A×B ×C ⊂(R4)3.",
+          "bbox": [
+            118.31,
+            682.52,
+            476.97,
+            696.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Choose points x ∈A, y ∈B and z ∈C and normalize the vectors x −y and x −z",
+          "bbox": [
+            118.31,
+            697.96,
+            476.53,
+            708.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

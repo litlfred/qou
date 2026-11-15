@@ -1,0 +1,4674 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "ant-v14-n7-s-p08",
+ "status": "determined",
+ "pages_unread": [
+  14
+ ],
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "1",
+   "text": "After the writing of this paper, Petrow and Young [2019] posted a preprint proving a Weyl-strength subconvex estimate for all Dirichlet L-functions, without a restriction on the modulus q. This breakthrough result also implies a small improvement on the classical Burgess upper bound (1-1) for the cases r = 2, 3 but not for larger r.",
+   "marks": [
+    {
+     "page": 4,
+     "context": "forced into an ever shorter range near q"
+    },
+    {
+     "page": 4,
+     "context": " H)| = on,r,1,D(∥H∥)forallH= (H1, . . . , Hn)withHminHmax< q"
+    },
+    {
+     "page": 5,
+     "context": "|S(N, H)| ≪q"
+    },
+    {
+     "page": 5,
+     "context": "rovides a nontrivial upper bound for |S(N, H)| as long asH≫q"
+    },
+    {
+     "page": 5,
+     "context": "strong as |S(0, H)| ≪εH"
+    },
+    {
+     "page": 5,
+     "context": "bound forH≫q"
+    },
+    {
+     "page": 5,
+     "context": "The q"
+    },
+    {
+     "page": 5,
+     "context": "\u0001\f\f ≪t,ε q"
+    },
+    {
+     "page": 5,
+     "context": "\u0001\f\f ≪ε (|t|q)"
+    },
+    {
+     "page": 5,
+     "context": "better Weyl-strength subconvex estimate of size q"
+    },
+    {
+     "page": 5,
+     "context": "h subconvex estimate of size q1/6for all cube-free moduli q."
+    },
+    {
+     "page": 5,
+     "context": "\u0001\f\f ≪g,ε q"
+    }
+   ],
+   "block": "library/ant-v14-n7-s-p08/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p017-1",
+   "page": 17,
+   "mark": "2",
+   "text": "r",
+   "marks": [
+    {
+     "page": 16,
+     "context": "A"
+    },
+    {
+     "page": 16,
+     "context": "(3)for all (x(1), . . . , x(2r)) ∈A"
+    },
+    {
+     "page": 16,
+     "context": "to a count for the number of points (x(1), . . . , x(2r)) ∈A"
+    },
+    {
+     "page": 16,
+     "context": "(k1 · · · kn/2)"
+    },
+    {
+     "page": 16,
+     "context": "(k1 · · · k(n−1)/2)"
+    },
+    {
+     "page": 17,
+     "context": "i=1be subsets of κ such that 1≤|M1|≤|M"
+    },
+    {
+     "page": 17,
+     "context": "(x(1), . . . , x(2r)) ∈M"
+    }
+   ],
+   "block": "library/ant-v14-n7-s-p08/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p019-1",
+   "page": 19,
+   "mark": "2",
+   "text": "s",
+   "marks": [
+    {
+     "page": 18,
+     "context": "recall from Theorem A thatXnis a subscheme of A"
+    },
+    {
+     "page": 18,
+     "context": "such that for all (x(1), . . . , x(2r)) ∈A"
+    },
+    {
+     "page": 18,
+     "context": "k/κand(x(1), . . . , x(2r))∈A"
+    },
+    {
+     "page": 19,
+     "context": "|S(x(1), . . . , x(2r))| ≤(#κ)"
+    },
+    {
+     "page": 19,
+     "context": "|S(x(1), . . . , x(2r))| ≤(#κ)2nr= q"
+    },
+    {
+     "page": 19,
+     "context": "|S(x(1), . . . , x(2r))| ≤(#κ)2nr= q2nr≤D"
+    },
+    {
+     "page": 19,
+     "context": ", so that upon enlarging C′if necessary so that C′≥D"
+    },
+    {
+     "page": 19,
+     "context": "for all (x(1), . . . , x(2r)) ∈A"
+    },
+    {
+     "page": 19,
+     "context": "write the trivial upper bound C′∥M∥2r≤C′q"
+    },
+    {
+     "page": 19,
+     "context": "by C′′(n,r, 1, D) = max{C′, q"
+    },
+    {
+     "page": 19,
+     "context": "To be precise, recall that for any (x(1), . . . , x(2r)) ∈κ"
+    },
+    {
+     "page": 19,
+     "context": "We also deﬁne for any tuple (m(1), . . . , m(2s)) ∈κ"
+    }
+   ],
+   "block": "library/ant-v14-n7-s-p08/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p024-1",
+   "page": 24,
+   "mark": "2",
+   "text": "r",
+   "marks": [
+    {
+     "page": 23,
+     "context": "S(W( j1)∩W( j"
+    },
+    {
+     "page": 23,
+     "context": "2"
+    },
+    {
+     "page": 24,
+     "context": "|S(F; N, H)| ≤|P|−12"
+    },
+    {
+     "page": 24,
+     "context": "A(m)"
+    },
+    {
+     "page": 24,
+     "context": "A(m)"
+    }
+   ],
+   "block": "library/ant-v14-n7-s-p08/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p029-1",
+   "page": 29,
+   "mark": "2",
+   "text": "r−1−2n,i<0",
+   "marks": [
+    {
+     "page": 28,
+     "context": "k≤K|S(F; m, k)|2r≪n,r,D,1 T"
+    },
+    {
+     "page": 28,
+     "context": "= T"
+    },
+    {
+     "page": 28,
+     "context": "= T"
+    },
+    {
+     "page": 28,
+     "context": "≤T"
+    },
+    {
+     "page": 28,
+     "context": "Once we apply this lemma to (6-6), upon noting that T"
+    },
+    {
+     "page": 28,
+     "context": "Once we apply this lemma to (6-6), upon noting that T2r≤2"
+    },
+    {
+     "page": 28,
+     "context": "pply this lemma to (6-6), upon noting that T2r≤22nr(log2 Kn)"
+    },
+    {
+     "page": 28,
+     "context": "mma to (6-6), upon noting that T2r≤22nr(log2 Kn)2nr≪(log Kn)"
+    },
+    {
+     "page": 28,
+     "context": "and forj = nwe haveBn,r( j; k) = (k1 · · · kn/2)"
+    },
+    {
+     "page": 28,
+     "context": " · · kn/2)2rif nis even andBn,r( j; k) = (k1 · · · k(n−1)/2)"
+    }
+   ],
+   "block": "library/ant-v14-n7-s-p08/blocks/prose-sec-005"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p015-1",
+   "page": 15,
+   "mark": "2",
+   "text": "r",
+   "block": "library/ant-v14-n7-s-p08/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p019-2",
+   "page": 19,
+   "mark": "2",
+   "text": "r",
+   "block": "library/ant-v14-n7-s-p08/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p029-2",
+   "page": 29,
+   "mark": "2",
+   "text": "r−1−2n,i≥0 n n",
+   "block": "library/ant-v14-n7-s-p08/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p029-3",
+   "page": 29,
+   "mark": "2",
+   "text": "r−1−2n,i<0",
+   "block": "library/ant-v14-n7-s-p08/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p029-4",
+   "page": 29,
+   "mark": "2",
+   "text": "r−1−2n,i≥0",
+   "block": "library/ant-v14-n7-s-p08/blocks/prose-sec-005"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "|S(N, H)| ≪rH"
+  },
+  {
+   "page": 1,
+   "mark": "r",
+   "context": "|S(N, H)| ≪rH1−1/rq(r+1)/4"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "|S(N, H)| ≪rH1−1/rq(r+1)/4r"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "atS(N, H) admits a nontrivial bound o(H) forHas small asH= q"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "of degreeD.For anyN= (N1, . . . , Nn) ∈R"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "egreeD.For anyN= (N1, . . . , Nn) ∈Rn,H= (H1, . . . , Hn) ∈R"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "x∈Z"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": " work of this paper, when the lengthsHiare short, that is ≪q"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "∥H∥Hmin ≫q"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "H= qβ"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "n] is (1, q)-admissible if the following holds.Factorizef= g"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "is a ﬁxed integer, any formF∈Z[x1, . . . , xn] such thatF= G"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "LetH= (H1, . . . , Hn) ∈R"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "HmaxHmin < q"
+  },
+  {
+   "page": 2,
+   "mark": "r",
+   "context": "|S(F; N, H)| ≪∥H∥1−(1/2"
+  },
+  {
+   "page": 2,
+   "mark": "r",
+   "context": "|S(F; N, H)| ≪∥H∥1−(1/2r)H−1/2"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "q(n"
+  },
+  {
+   "page": 2,
+   "mark": "r",
+   "context": "q(n2+1)/4"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "q(n2+1)/4r"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "q(n2+1)/4r2(log q)"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "tional functionF=f1/f2if it is appropriately regarded asf1 f"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "S(F; N, H) for suitable formsFwhenHi≫q"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "the theorem is compatible with our interest in the rangeHi≪q"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "heses of Theorem 1.1. Suppose H =(H, H, . . . , H) with H <q"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "|S(F; N, H)| ≪H"
+  },
+  {
+   "page": 3,
+   "mark": "r",
+   "context": "|S(F; N, H)| ≪Hn−(n+1)/2"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "|S(F; N, H)| ≪Hn−(n+1)/2rq(n"
+  },
+  {
+   "page": 3,
+   "mark": "r",
+   "context": "|S(F; N, H)| ≪Hn−(n+1)/2rq(n2+1)/4"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "|S(F; N, H)| ≪Hn−(n+1)/2rq(n2+1)/4r"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "|S(F; N, H)| ≪Hn−(n+1)/2rq(n2+1)/4r2(log q)"
+  },
+  {
+   "page": 3,
+   "mark": "r",
+   "context": "(x(1), . . . , x(2"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "For example, in Burgess’s original result, ifH= q"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "upper bound |S(N, H)| ≪Hq−δwhere δ = (4κr −1)/(4r"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": " nearest integer to 1/(2κ) we may obtain the best value δ ≈κ"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "ForH= qβ"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "ForH= qβn+κfor small κ, we obtain a nontrivial bound ∥H∥q−δ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "δn≈(n + 1)"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "4(n −1)κ"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "oneormoreofthelengthsHitobesmallerthanqβ"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "min;thusweassumethatHisproportionate,inthesensethatHmin≥∥H∥c"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "= on,r,1,D(∥H∥)forallH= (H1, . . . , Hn)withHminHmax< q1+1/2"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "long asHmin ≥∥H∥c"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "∥H∥Hmin ≫q"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "for some small κ.As κ→0 we obtain a nontrivial bound ∥H∥q−δ"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "δn≈(n + c"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "δn≈(n + c0)"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "4(n −1) κ"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "rangeH≫ε q"
+  },
+  {
+   "page": 5,
+   "mark": "g",
+   "context": "2+ it,"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "and a certain δ = δ(κ) > 0 as long asH= qβ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "asH= q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "t and Lewis [1963] on analogues of the Burgess bound over Fq"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "a nontrivial upper bound forS(F, N, H) for qprime andHi> q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "r bound forS(F, N, H) for qprime andHi> q1/3+κ(that isHi> qβ"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "2with"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "2with a"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "2with a2̸≡4"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "2with a2̸≡4b (mod"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "F(x1, x2) = x"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "1+ ax"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "1+ ax1"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1+ ax1x"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1+ ax1x2 + bx"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "H1, H2 > q"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "ng open question to boundS(F; N, H), with allHias short as q"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "qnfor"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n) = ω1x1 + · · · + ωnxnfor ω1, . . . , ωna ﬁxed basis of Fq"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "O(∥H∥q−δ) for some δ = δ(κ) whereHi> qβ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "binaryquadraticformx"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "1+ ax"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "1+ ax1"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "1+ ax1x"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "1+ ax1x2 + bx"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "2overF"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "2overFq,inwhichcaseχ(F(x"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "2overFq,inwhichcaseχ(F(x1,"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "2overFq,inwhichcaseχ(F(x1, x"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "2overFq,inwhichcaseχ(F(x1, x2))is"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "2overFq,inwhichcaseχ(F(x1, x2))isacharacter(mod"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "2"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "Hi> q"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "n≥5)byprovinganontrivialboundassoonas∥H∥> q"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n≥5)byprovinganontrivialboundassoonas∥H∥> q2"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "dimension n = 2 Chang [2009, Theorem 5] proved thatHi≫q"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "for such multivariate sums in the regimeHi≫q"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i(N"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i(Ni, N"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i(Ni, Ni + H"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "iH"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "iHifor any tupleH.We will write"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "iHifor any tupleH.We will writea"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "lengthatleastH≫q"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "lengthatleastH≫q1/2+ε(seeSectionA.3).WhenH≪q"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "k≤2H/P|S(m,"
+  },
+  {
+   "page": 8,
+   "mark": "r",
+   "context": "k≤2H/P|S(m, k)|2"
+  },
+  {
+   "page": 8,
+   "mark": "r",
+   "context": "|S(m, k)|2"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "inwhichF{x}(m)=(m+ x1)(m+ x2)"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "inwhichF{x}(m)=(m+ x1)(m+ x2)1−1· · · (m+ x2r)"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "moduloq,thentheWeilboundO(q"
+  },
+  {
+   "page": 8,
+   "mark": "r",
+   "context": "\u00131/(2"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "|S(F; N, H)| ≪(log P)P"
+  },
+  {
+   "page": 8,
+   "mark": "r",
+   "context": "|S(F; N, H)| ≪(log P)Pn−1/2"
+  },
+  {
+   "page": 8,
+   "mark": "r",
+   "context": "|S(F; N, H)| ≪(log P)Pn−1/2r∥H∥−1/2"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "k≤2H/P|S(F;"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "k≤2H/P|S(F; m,"
+  },
+  {
+   "page": 8,
+   "mark": "r",
+   "context": "k≤2H/P|S(F; m, k)|2"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "|S(F; m, k)|2"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "x(1),...,x(2"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "where we deﬁne for each collection {x} = {x(1), . . . , x(2"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "e for each collection {x} = {x(1), . . . , x(2r)} withx(i)∈Z"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "cancellation, that is anO(q"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": " well as the two extremal cases in which the sum (2-7) isO(q"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "orO(q"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "partition the {x(1), . . . , x(2"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "partition the {x(1), . . . , x(2r)} ∈(0, k]2"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "≤Cq"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "|S(F; m, k)|2"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "|S(F; m, k)|2r≤C|Good(k)|q"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "Certainly|Good(k)| ≤∥k∥2"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "4.4forthefullsetting).Letk= (k, k, . . . , k)beaﬁxedtupleinZ"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "k≥1.Wewillconsidertuplesx∈Z"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "{x} = {x(1), . . . , x(2"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "{x} = {x(1), . . . , x(2r)} ∈(0, k]2"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "k"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "k4"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "{x(1), . . . , x(2"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "{x(1), . . . , x(2r)} ∈(0, k]2"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "k"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "k3"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "k"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "k2"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "box (0, k]2"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "box (0, k]2r⊂Z"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "box (0, k]2r⊂Z2nris k"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "box (0, k]2r⊂Z2nris k4"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "box (0, k]2r⊂Z2nris k4r.Whenj= 1, we see that at mostO(k"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "box (0, k]2r⊂Z2nris k4r.Whenj= 1, we see that at mostO(k3"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "{x(1), . . . , x(2"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "degrees of its irreducible components.Given subsetsM"
+  },
+  {
+   "page": 10,
+   "mark": "q",
+   "context": "degrees of its irreducible components.Given subsetsMi⊂F"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "i=1M"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "i=1|M"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "F= cF"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "F= cFa"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "1F"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "1Fa"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "2· · · F"
+  },
+  {
+   "page": 11,
+   "mark": "c",
+   "context": "ℓwith"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "ℓwith c ∈k×, all"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "ℓwith c ∈k×, all a"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "ℓwith c ∈k×, all ai< dand allF"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "ℓwith c ∈k×, all ai< dand allFi∈k[x"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "ℓwith c ∈k×, all ai< dand allFi∈k[x1, . . . ,"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "ℓwith c ∈k×, all ai< dand allFi∈k[x1, . . . , x"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": "Lemma3.1.Letkbeaﬁeldandk"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": "Lemma3.1.Letkbeaﬁeldandksitsseparablealgebraicclosure,sok"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": "tive constant) if and only ifFis a perfect d-th power over k"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": "over kif and only ifFis d-th power-free over k"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": "with the second claim.Certainly ifFis d-th power-free over k"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "other direction, writeF= cF"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "other direction, writeF= cFa"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "1F"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "1Fa"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "2· · · F"
+  },
+  {
+   "page": 11,
+   "mark": "c",
+   "context": "ℓwith"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "ℓwith c ∈k×, all"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "ℓwith c ∈k×, all a"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "ℓwith c ∈k×, all ai< dand allF"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "ℓwith c ∈k×, all ai< dand allFi∈k[x"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "ℓwith c ∈k×, all ai< dand allFi∈k[x1, . . . ,"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "ℓwith c ∈k×, all ai< dand allFi∈k[x1, . . . , x"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": "ible over kimplies thatFiis square-free as a polynomial in k"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "factoringF"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": "factoringFiover k"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "factoringFiover kswe haveF"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "factoringFiover kswe haveFi= G"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "factoringFiover kswe haveFi= Gi,"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "factoringFiover kswe haveFi= Gi,1G"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "factoringFiover kswe haveFi= Gi,1Gi,"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "factoringFiover kswe haveFi= Gi,1Gi,2 · · · G"
+  },
+  {
+   "page": 11,
+   "mark": "b",
+   "context": "factoringFiover kswe haveFi= Gi,1Gi,2 · · · Gi,"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "oringFiover kswe haveFi= Gi,1Gi,2 · · · Gi,biin which each G"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "ingFiover kswe haveFi= Gi,1Gi,2 · · · Gi,biin which each Gi,"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": "= Gi,1Gi,2 · · · Gi,biin which each Gi, jis irreducible in k"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": " jare pairwise nonassociate.Thus the factorization ofFover k"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "c(G"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "c(Ga"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "1,1G"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "1,1Ga"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "1,2· · · G"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "1,2· · · Ga"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "1,b1)(G"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "1,b1)(Ga"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "2,1G"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "2,1Ga"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "2,2· · · G"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "2,2· · · Ga"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "2,b2) · · · (G"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "ℓ,1G"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "ℓ,2· · · G"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": "polynomials,thenFiandFi′havenocommonfactorsink"
+  },
+  {
+   "page": 12,
+   "mark": "s",
+   "context": "nonassociate over k"
+  },
+  {
+   "page": 12,
+   "mark": "s",
+   "context": "nonassociate over ks, so thatFremains d-th power-free over k"
+  },
+  {
+   "page": 12,
+   "mark": "s",
+   "context": "lly, ifFis a perfect d-th power over kthen it also is over k"
+  },
+  {
+   "page": 12,
+   "mark": "s",
+   "context": "d-th power over k"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "asF= cG"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "asF= cGdwith G = F"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "asF= cGdwith G = Fa"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "· · · F"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(1)FisinvariantundersomenontrivialtranslationinQ"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "antundersomenontrivialtranslationinQn,i.e.,thereexists0̸=m∈Q"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(2)FisinvariantundersomenontrivialtranslationinZ"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "antundersomenontrivialtranslationinZn,i.e.,thereexists0̸=m∈Z"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "Z→A"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(4)When viewed as a morphism A"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "Z→A"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "Z,Ffactors through a linear map A"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "under some nontrivial translation in F"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "translation in F"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(1)Fisinvariantundersomenontrivialtranslationink"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "antundersomenontrivialtranslationinkn,i.e.,thereexists0̸=m∈k"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(2)Fisinvariantundersomenontrivialtranslationink"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "antundersomenontrivialtranslationinkn,i.e.,thereexists0̸=m∈k"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "k→A"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "(4)When viewed as a morphism A"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "k→A"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "k,Ffactors through a linear map A"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "roof of Lemma 3.3.(1) =⇒(2):Let 0̸ = m = (m1, . . . , mn) ∈k"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "thepositivecharacteristiccase,welearnthattchar"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "we assumed that k is perfect.(For u ∈E"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "m1̸ =0, we see that also TrE/k(tm/m1)∈k"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "(2) =⇒(3):Let 0̸ = m = (m1, . . . , mn) ∈k"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "2, . . . , xn)∈k[x2, . . . , xn].Ifchar k>0,welearnthatxchar"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "A.Note that GLn(k) acts transitively on nonzero vectors in k"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "such vector is an element in a basis for k"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "TFi:= {m ∈κ"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "(3)for all (x(1), . . . , x(2"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "|S(x(1), . . . , x(2"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "by (4r(D +1)+1)"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "m A into a count for the number of points (x(1), . . . , x(2"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "(later denoted as collections {x(1), . . . , x(2"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "2r)}) such that a given upper bound for |S(x(1), . . . , x(2"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "1= k"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "kθ"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "= k"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "(k1 · · · kn/2)2"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "(k1 · · · k(n−1)/2)2"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "(k1 · · · k(n−1)/2)2rk"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "LetF"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "LetFi∈κ(x"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "LetFi∈κ(x1, . . . , x"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "LetFi∈κ(x1, . . . , xn) be a d"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "i=1be subsets of κ such that"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "i=1be subsets of κ such that 1≤|M"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "i=1be subsets of κ such that 1≤|M1|≤|M2|≤· · ·≤|M"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "ets of κ such that 1≤|M1|≤|M2|≤· · ·≤|Mn|<∞, and deﬁne M :=Q"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "i=1M"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "i=1Mi ⊂κ"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "and ∥M∥:=Q"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "i=1|M"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "i=1|Mi|.Then whenever char κ/∈S,for each"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "(x(1), . . . , x(2"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "(x(1), . . . , x(2r)) ∈M2"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "(x(1), . . . , x(2r)) ∈M2r: |S(x(1), . . . , x(2"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "≤C′∥M∥2"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "for each 1 ≤i≤2r, the formF"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "for each 1 ≤i≤2r, the formFiis d"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "each 1 ≤i≤2r, the formF"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "each 1 ≤i≤2r, the formFiis d"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "Thenforevery1≤j≤n,foreverytuplek=(k1, . . . , kn)∈Z"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "(x(1), . . . , x(2"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "(x(1), . . . , x(2r)) ∈(0, k]2"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "≤C′′∥k∥2"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "Remark.Note that the trivial upper bound in (4-7) is ∥k∥2"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "isthatitshowsthatgenericallyamong{x} ∈(0, k]2"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "nBn,r(1; k) is strictly positive, the number of {x} ∈(0, k]2"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "isO(∥k∥2"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "1), which sufﬁces for our claim, as long as"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "1), which sufﬁces for our claim, as long as k"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "∥k∥2"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "such that for all (x(1), . . . , x(2"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "|S(x(1), . . . , x(2"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "|S(x(1), . . . , x(2r))|≤C(#κ)"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "\\Xn(k),itholdsthat|Sk(x(1), . . . , x(2"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "\\Xn(k),itholdsthat|Sk(x(1), . . . , x(2r))|≤C(#k)"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "k/κand(x(1), . . . , x(2"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "deﬁned analogously toSbut summing overm ∈k"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "(x(1), . . . , x(2"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "(x(1), . . . , x(2r))suchthat|Sk(x(1), . . . , x(2"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "(x(1), . . . , x(2r))suchthat|Sk(x(1), . . . , x(2r))|>C(#k)"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "θn≤nr).To see this, we consider any tuple (x(1), . . . , x(2"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "|Sk(x(1), . . . , x(2"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "|Sk(x(1), . . . , x(2r))|=(#k)"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "|Sk(x(1), . . . , x(2r))|=(#k)n.This is >C(#k)"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "|S(x(1), . . . , x(2"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "for all (x(1), . . . , x(2"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "write the trivial upper bound C′∥M∥2"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "Fi= G"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "Fi= Gd"
+  },
+  {
+   "page": 19,
+   "mark": "e",
+   "context": "i"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "ieF"
+  },
+  {
+   "page": 19,
+   "mark": "e",
+   "context": "ieFiin which"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "ieFiin whicheF"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "ieFiin whicheFiis"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "ieFiin whicheFiis d"
+  },
+  {
+   "page": 19,
+   "mark": "e",
+   "context": "ieFiin whicheFiis di-th power-free, and has T"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "ieFiin whicheFiis di-th power-free, and has TeF"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "F"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "Fimodulo qis (d"
+  },
+  {
+   "page": 19,
+   "mark": "e",
+   "context": "missible, and then at a key moment in the proof we work with"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "ssible, and then at a key moment in the proof we work witheF"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "then at a key moment in the proof we work witheFiinstead ofF"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "To be precise, recall that for any (x(1), . . . , x(2"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "S(x(1), . . . , x(2"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "m∈κ"
+  },
+  {
+   "page": 19,
+   "mark": "s",
+   "context": "We also deﬁne for any tuple (m(1), . . . , m(2"
+  },
+  {
+   "page": 19,
+   "mark": "s",
+   "context": "Ti(m(1), . . . , m(2"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "x∈κ"
+  },
+  {
+   "page": 20,
+   "mark": "s",
+   "context": "e-root strength) for the number of tuples (m(1), . . . , m(2"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": " strength) for the number of tuples (m(1), . . . , m(2s)) ∈k"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "factor of (#k)"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "factor of (#k)1/2off the trivial bound (#k)"
+  },
+  {
+   "page": 20,
+   "mark": "s",
+   "context": "(m(1), . . . , m(2"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "(m(1), . . . , m(2s)) ∈k"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "χi(Nk/κ(Fi,{m}(x)) = O((#k)"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "x∈k"
+  },
+  {
+   "page": 20,
+   "mark": "s",
+   "context": "(m(1), . . . , m(2"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "(m(1), . . . , m(2s)) ∈k"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "ossible exceptional choices, a trivial upper bound of O((#k)"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "argument utilized the assumption that eachF"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "argument utilized the assumption that eachFiis d"
+  },
+  {
+   "page": 20,
+   "mark": "s",
+   "context": "thenumberof(m(1), . . . , m(2"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "thenumberof(m(1), . . . , m(2s))∈k"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "is(d, q)-admissible.WriteF= G"
+  },
+  {
+   "page": 21,
+   "mark": "e",
+   "context": "is(d, q)-admissible.WriteF= Gd"
+  },
+  {
+   "page": 21,
+   "mark": "e",
+   "context": "is(d, q)-admissible.WriteF= Gd eFinwhichG,"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "is(d, q)-admissible.WriteF= Gd eFinwhichG,eF∈κ(x"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "is(d, q)-admissible.WriteF= Gd eFinwhichG,eF∈κ(x1, . . . , x"
+  },
+  {
+   "page": 21,
+   "mark": "e",
+   "context": " q)-admissible.WriteF= Gd eFinwhichG,eF∈κ(x1, . . . , xn)and"
+  },
+  {
+   "page": 21,
+   "mark": "e",
+   "context": "deg"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "there is no linear change of variables A∈GL"
+  },
+  {
+   "page": 21,
+   "mark": "q",
+   "context": "there is no linear change of variables A∈GLn(F"
+  },
+  {
+   "page": 21,
+   "mark": "e",
+   "context": "there is no linear change of variables A∈GLn(Fq) such that"
+  },
+  {
+   "page": 21,
+   "mark": "q",
+   "context": "s no linear change of variables A∈GLn(Fq) such thateF(x A)∈F"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "o linear change of variables A∈GLn(Fq) such thateF(x A)∈Fq[x"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "nge of variables A∈GLn(Fq) such thateF(x A)∈Fq[x2, . . . , x"
+  },
+  {
+   "page": 21,
+   "mark": "e",
+   "context": "(which we may apply since deg"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "(which we may apply since degeF <q), the only value of m∈κ"
+  },
+  {
+   "page": 21,
+   "mark": "e",
+   "context": "e may apply since degeF <q), the only value of m∈κnsuch that"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "TeF:= {m ∈κ"
+  },
+  {
+   "page": 21,
+   "mark": "e",
+   "context": "iscertainlyﬁnite.Thuswemayapplythefollowinglemmato"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "TH= {m ∈κ"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "is ﬁnite.For any ﬁnite extension k/κand {ai}2"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "i=1⊂Z such that gcd(d,"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i=1⊂Z such that gcd(d, a"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "i=1⊂Z such that gcd(d, ai) = 1 for each"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "i=1⊂Z such that gcd(d, ai) = 1 for each 1 ≤i≤2"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "be the collection of tuples (m(1), . . . , m(2"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "be the collection of tuples (m(1), . . . , m(2r)) ∈k"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": " (m(1), . . . , m(2r)) ∈k2nrsuch that the rational functionQ"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "(m(1), . . . , m(2r)) ∈k2nrsuch that the rational functionQ2"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "i=1H(x + m(i))"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i=1H(x + m(i))a"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "#PH≤C0(#k)nr(#TH)"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "i=1, we have that Q"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "i=1, we have that Q2"
+  },
+  {
+   "page": 21,
+   "mark": "e",
+   "context": "i=1"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "i=1eF(x + m(i))"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i=1eF(x + m(i))a"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "i=1eF(x + m(i))aiis a perfect"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "Now note that for any such set of exponents {ai}2"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "\u00122"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "F(x + m(i))"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "F(x + m(i))a"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "eF(x + m(i))"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "eF(x + m(i))a"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "G(x + m(i))"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "G(x + m(i))a"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "tivelyPeF, to be the collection of tuples (m(1), . . . , m(2"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "PeF, to be the collection of tuples (m(1), . . . , m(2r)) ∈k"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "that the rational functionQ"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "that the rational functionQ2"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "i=1F(x + m(i))"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i=1F(x + m(i))a"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "i=1F(x + m(i))aiis a perfect"
+  },
+  {
+   "page": 21,
+   "mark": "e",
+   "context": "x + m(i))aiis a perfect d-th power over κ(or analogously for"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "#PF= #PeF≤C"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "modulop by writingx = qa + pm with a, m ∈Z"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i= (N"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i= (Ni −a"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "i= (Ni −ai"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i= H"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "Lemma 5.1.FixM ∈R"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "Lemma 5.1.FixM ∈RnandL ∈R"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "|S(F; M, K)| ≤2"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "|S(F; M, K)| ≤22"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "k≤2L|S(F;"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "k≤2L|S(F; m,"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "iδ"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "|S(F; M, K)| ≤2"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "k≤2L|S(F;"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "k≤2L|S(F; m,"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "S(F; M, K) has a range of summation over the box W:=Q"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i=1(M"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i=1(Mi, M"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i=1(Mi, Mi + K"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "Suppose m ≤Mis ﬁxed.Let W∗be the larger box W∗:=Q"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i=1(m"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i=1(mi, M"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i=1(mi, Mi + K"
+  },
+  {
+   "page": 23,
+   "mark": "j",
+   "context": "i=1(mi, Mi + Ki].For each"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "i=1(mi, Mi + Ki].For eachj = 1, . . . ,"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "box Wof interest is W=T"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "S(W( j"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "S(W( j1)∩W( j2)) + · · · + (−1)"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "S(F; m, M −m + (1 −δ) · K) is preciselyS(W( j"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "S(F; m, M −m + (1 −δ) · K) is preciselyS(W( j1)∩· · · ∩W( j"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "identity above.In each case, the signs (−1)σ(δ)= (−1)"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "22"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "22n∥H∥−1P"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "k≤2H/P|S(F;"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "k≤2H/P|S(F; m,"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "|S(F; N, H)| ≤|P|−122"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "|S(F; N, H)| ≤|P|−122n∥H∥−1P"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "k≤2H/P|S(F;"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "k≤2H/P|S(F; m,"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "a, p : p ∈P, a = (a1, . . . , an), 0 ≤ai < p:N"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "a, p : p ∈P, a = (a1, . . . , an), 0 ≤ai < p:Ni −a"
+  },
+  {
+   "page": 24,
+   "mark": "q",
+   "context": "a, p : p ∈P, a = (a1, . . . , an), 0 ≤ai < p:Ni −ai"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "P< m"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "P< mi ≤N"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "P< mi ≤Ni −a"
+  },
+  {
+   "page": 24,
+   "mark": "q",
+   "context": "P< mi ≤Ni −ai"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "−H"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "\u00131/(2"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "\u00131/(2"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "≪|P|−1∥H∥−1P"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "k≤2H/P|S(F;"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "k≤2H/P|S(F; m,"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "k≤2H/P|S(F; m, k)|2"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "\u00131/(2"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "|S(F; N, H)| ≪(log P)P"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "|S(F; N, H)| ≪(log P)Pn−1/2"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "|S(F; N, H)| ≪(log P)Pn−1/2r∥H∥−1/2"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "k≤2H/P|S(F;"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "k≤2H/P|S(F; m,"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "k≤2H/P|S(F; m, k)|2"
+  },
+  {
+   "page": 25,
+   "mark": "r",
+   "context": "{x} ∈(0, k]2"
+  },
+  {
+   "page": 25,
+   "mark": "r",
+   "context": "(0, k]2"
+  },
+  {
+   "page": 25,
+   "mark": "r",
+   "context": "0, k]2r=: Y0 ⊃Y1 ⊃Y2 ⊃· · · ⊃Yn ⊃Yn+1 := ∅, and #Y j≤C′′∥k∥2"
+  },
+  {
+   "page": 25,
+   "mark": "r",
+   "context": "decomposition (0, k]2"
+  },
+  {
+   "page": 25,
+   "mark": "j",
+   "context": "j=0Y"
+  },
+  {
+   "page": 25,
+   "mark": "j",
+   "context": "j=0Y j \\ Y"
+  },
+  {
+   "page": 25,
+   "mark": "r",
+   "context": "|S(F; m, k)|2"
+  },
+  {
+   "page": 25,
+   "mark": "r",
+   "context": "≤C · C′′∥k∥2"
+  },
+  {
+   "page": 25,
+   "mark": "r",
+   "context": "|S(F; m, k)|2"
+  },
+  {
+   "page": 25,
+   "mark": "r",
+   "context": "|S(F; m, k)|2r≪n,r,D,1 ∥k∥2"
+  },
+  {
+   "page": 26,
+   "mark": "m",
+   "context": "k≤K|S(F;"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "k≤K|S(F; m,"
+  },
+  {
+   "page": 26,
+   "mark": "r",
+   "context": "k≤K|S(F; m, k)|2"
+  },
+  {
+   "page": 26,
+   "mark": "r",
+   "context": "k≤K|S(F; m, k)|2r≪n,"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "k≤K|S(F; m, k)|2r≪n,r,D,"
+  },
+  {
+   "page": 26,
+   "mark": "r",
+   "context": "k≤K|S(F; m, k)|2r≪n,r,D,1 ∥K∥2"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "k≤K|S(F; m, k)|2r≪n,r,D,1 ∥K∥2r(log K"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "k≤K|S(F; m, k)|2r≪n,r,D,1 ∥K∥2r(log Kn)"
+  },
+  {
+   "page": 26,
+   "mark": "e",
+   "context": "q(n+ j)/2"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "q(n+ j)/2eB"
+  },
+  {
+   "page": 26,
+   "mark": "r",
+   "context": "q(n+ j)/2eBn,"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "eB"
+  },
+  {
+   "page": 26,
+   "mark": "r",
+   "context": "eBn,"
+  },
+  {
+   "page": 26,
+   "mark": "r",
+   "context": "(K1 · · · Kn/2)(2"
+  },
+  {
+   "page": 26,
+   "mark": "r",
+   "context": "(K1 · · · K(n−1)/2)(2"
+  },
+  {
+   "page": 26,
+   "mark": "r",
+   "context": "(K1 · · · K(n−1)/2)(2r−1)(K(n+1)/2)"
+  },
+  {
+   "page": 26,
+   "mark": "e",
+   "context": "Note that"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "Note thateB"
+  },
+  {
+   "page": 26,
+   "mark": "r",
+   "context": "Note thateBn,"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "Note thateBn,r(n; K)−1loses one power in decay compared toB"
+  },
+  {
+   "page": 26,
+   "mark": "r",
+   "context": "ote thateBn,r(n; K)−1loses one power in decay compared toBn,"
+  },
+  {
+   "page": 26,
+   "mark": "t",
+   "context": "is a power of 2, say Ki = 2"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "is a power of 2, say Ki = 2t"
+  },
+  {
+   "page": 26,
+   "mark": "t",
+   "context": "2"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "2t"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "2ti−δ"
+  },
+  {
+   "page": 26,
+   "mark": "t",
+   "context": "for each i.Lett= (t1, . . . , tn) and deﬁne the notation 2"
+  },
+  {
+   "page": 26,
+   "mark": "t",
+   "context": "ach i.Lett= (t1, . . . , tn) and deﬁne the notation 2t−δ= (2"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "ch i.Lett= (t1, . . . , tn) and deﬁne the notation 2t−δ= (2t"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "i.Lett= (t1, . . . , tn) and deﬁne the notation 2t−δ= (2t1−δ"
+  },
+  {
+   "page": 26,
+   "mark": "t",
+   "context": " . . . , tn) and deﬁne the notation 2t−δ= (2t1−δ1, . . . , 2"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": ". . . , tn) and deﬁne the notation 2t−δ= (2t1−δ1, . . . , 2t"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": " . , tn) and deﬁne the notation 2t−δ= (2t1−δ1, . . . , 2tn−δ"
+  },
+  {
+   "page": 26,
+   "mark": "t",
+   "context": "deﬁne 2"
+  },
+  {
+   "page": 26,
+   "mark": "t",
+   "context": "deﬁne 2t−δ◦v = (2"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "deﬁne 2t−δ◦v = (2t"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "deﬁne 2t−δ◦v = (2t1−δ"
+  },
+  {
+   "page": 26,
+   "mark": "t",
+   "context": "deﬁne 2t−δ◦v = (2t1−δ1v1, . . . , 2"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "deﬁne 2t−δ◦v = (2t1−δ1v1, . . . , 2t"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "deﬁne 2t−δ◦v = (2t1−δ1v1, . . . , 2tn−δ"
+  },
+  {
+   "page": 26,
+   "mark": "t",
+   "context": "entry is (Vm,δ)i= 2"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "entry is (Vm,δ)i= 2t"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "entry is (Vm,δ)i= 2ti−δ"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "2δ"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "2δi−e"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "2δi−ei< 2δ"
+  },
+  {
+   "page": 26,
+   "mark": "t",
+   "context": "S(F; m + Vm,δ, 2"
+  },
+  {
+   "page": 27,
+   "mark": "t",
+   "context": "|S(F; m + Vm,δ, 2"
+  },
+  {
+   "page": 27,
+   "mark": "r",
+   "context": "\u00132"
+  },
+  {
+   "page": 27,
+   "mark": "r",
+   "context": "|S(F; m, k)|2"
+  },
+  {
+   "page": 27,
+   "mark": "t",
+   "context": "|S(F; m + 2"
+  },
+  {
+   "page": 27,
+   "mark": "t",
+   "context": "|S(F; m + 2t−δ◦v, 2"
+  },
+  {
+   "page": 27,
+   "mark": "r",
+   "context": "|S(F; m + 2t−δ◦v, 2t−δ)|2"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "0≤vi<2δ"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": " side by summing over all possible values for vm,δ,iup to 2δ"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "k≤K|S(F;"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "k≤K|S(F; m,"
+  },
+  {
+   "page": 27,
+   "mark": "r",
+   "context": "k≤K|S(F; m, k)|2"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "k≤K|S(F; m, k)|2r≤T"
+  },
+  {
+   "page": 27,
+   "mark": "r",
+   "context": "k≤K|S(F; m, k)|2r≤T 2"
+  },
+  {
+   "page": 27,
+   "mark": "t",
+   "context": "|S(F; m + 2"
+  },
+  {
+   "page": 27,
+   "mark": "t",
+   "context": "|S(F; m + 2t−δ◦v, 2"
+  },
+  {
+   "page": 27,
+   "mark": "r",
+   "context": "|S(F; m + 2t−δ◦v, 2t−δ)|2"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "0≤vi<2δ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "≪T"
+  },
+  {
+   "page": 27,
+   "mark": "r",
+   "context": "≪T2"
+  },
+  {
+   "page": 27,
+   "mark": "t",
+   "context": "|S(F; m, 2"
+  },
+  {
+   "page": 27,
+   "mark": "r",
+   "context": "|S(F; m, 2t−δ)|2"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "where T:=Q"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "i=1(t"
+  },
+  {
+   "page": 27,
+   "mark": "t",
+   "context": "Given an n-tuplex,letxσ= (xσ(1), xσ(2), . . . , xσ(n)),and 2"
+  },
+  {
+   "page": 27,
+   "mark": "t",
+   "context": "-tuplex,letxσ= (xσ(1), xσ(2), . . . , xσ(n)),and 2tσ −δσ= (2"
+  },
+  {
+   "page": 27,
+   "mark": "t",
+   "context": " xσ(2), . . . , xσ(n)),and 2tσ −δσ= (2tσ(1)−δσ(1), . . . , 2"
+  },
+  {
+   "page": 27,
+   "mark": "t",
+   "context": "S(F; m, 2"
+  },
+  {
+   "page": 27,
+   "mark": "t",
+   "context": "χ(Fσ −1(xσ)) = S(Fσ −1; mσ, 2"
+  },
+  {
+   "page": 27,
+   "mark": "t",
+   "context": "x∈(m,m+2"
+  },
+  {
+   "page": 27,
+   "mark": "t",
+   "context": "xσ ∈(mσ ,mσ +2"
+  },
+  {
+   "page": 27,
+   "mark": "t",
+   "context": "S(Fσ −1; mσ, 2"
+  },
+  {
+   "page": 28,
+   "mark": "t",
+   "context": "We may conclude (using the fact that ∥2"
+  },
+  {
+   "page": 28,
+   "mark": "t",
+   "context": "We may conclude (using the fact that ∥2tσ −δσ∥= ∥2"
+  },
+  {
+   "page": 28,
+   "mark": "t",
+   "context": "We may conclude (using the fact that ∥2tσ −δσ∥= ∥2t−δ∥= ∥2"
+  },
+  {
+   "page": 28,
+   "mark": "m",
+   "context": "k≤K|S(F;"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "k≤K|S(F; m,"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "k≤K|S(F; m, k)|2"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "k≤K|S(F; m, k)|2r≪n,"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "k≤K|S(F; m, k)|2r≪n,r,D,"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "k≤K|S(F; m, k)|2r≪n,r,D,1 T 2"
+  },
+  {
+   "page": 28,
+   "mark": "t",
+   "context": "∥2δ∥∥2"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "∥2δ∥∥2tσ −δσ∥2"
+  },
+  {
+   "page": 28,
+   "mark": "t",
+   "context": "q(n+ j)/2Bn,r( j; 2"
+  },
+  {
+   "page": 28,
+   "mark": "t",
+   "context": "q(n+ j)/2Bn,r( j; 2"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "= T2"
+  },
+  {
+   "page": 28,
+   "mark": "t",
+   "context": "∥2"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "∥2t∥2"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "∥2t∥2r∥2δ∥−(2"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "= T2"
+  },
+  {
+   "page": 28,
+   "mark": "t",
+   "context": "= T2r−1∥2"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "= T2r−1∥2t∥2"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "∥2δ∥−(2"
+  },
+  {
+   "page": 28,
+   "mark": "t",
+   "context": "∥2δ∥−(2r−1)Bn,r( j; 2"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "∥2δ∥−(2"
+  },
+  {
+   "page": 28,
+   "mark": "t",
+   "context": "∥2δ∥−(2r−1)Bn,r( j; 2"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "≤T2"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "≤T2r∥K∥2"
+  },
+  {
+   "page": 28,
+   "mark": "t",
+   "context": "Here we recall that ∥2"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "qn/22−δ(2"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "qn/22−δ(2r−1)+ q"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "qn/22−δ(2r−1)+ qn2−δ(2"
+  },
+  {
+   "page": 28,
+   "mark": "t",
+   "context": "qn/22−δ(2r−1)+ qn2−δ(2r−1)(2"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "qn/22−δ(2r−1)+ qn2−δ(2r−1)(2t−δ)−r≤q"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "qn/22−δ(2r−1)+ qn2−δ(2r−1)(2t−δ)−r≤qn/2+ q"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "qn/22−δ(2r−1)+ qn2−δ(2r−1)(2t−δ)−r≤qn/2+ qn2−rt= q"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "qn/22−δ(2r−1)+ qn2−δ(2r−1)(2t−δ)−r≤qn/2+ qn2−rt= qn/2+ q"
+  },
+  {
+   "page": 28,
+   "mark": "t",
+   "context": "Now in general for n ≥2 we must reinterpretBn,r( j; 2"
+  },
+  {
+   "page": 28,
+   "mark": "t",
+   "context": "terpretBn,r( j; 2tσ −δσ)−1in terms of the coordinates ofK= 2"
+  },
+  {
+   "page": 28,
+   "mark": "t",
+   "context": "Lemma 6.3.ForK = 2"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "∥2δ∥−(2"
+  },
+  {
+   "page": 28,
+   "mark": "t",
+   "context": "∥2δ∥−(2r−1)Bn,r( j; 2"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "(K1 · · · Kn/2)−(2"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "(K1 · · · K(n−1)/2)−(2"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "Once we apply this lemma to (6-6), upon noting that T2"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": " apply this lemma to (6-6), upon noting that T2r≤22nr(log2 K"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "lemma to (6-6), upon noting that T2r≤22nr(log2 Kn)2nr≪(log K"
+  },
+  {
+   "page": 28,
+   "mark": "j",
+   "context": "1for"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "1forj =1, . . . ,"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "and forj = nwe haveBn,r( j; k) = (k1 · · · kn/2)2"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "· · kn/2)2rif nis even andBn,r( j; k) = (k1 · · · k(n−1)/2)2"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "· kn/2)2rif nis even andBn,r( j; k) = (k1 · · · k(n−1)/2)2rk"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "∥2δ∥−(2"
+  },
+  {
+   "page": 28,
+   "mark": "t",
+   "context": "∥2δ∥−(2r−1)Bn,r( j; 2"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "∥2δ∥−(2r−1)Bn,r( j; 2tσ −δσ)−1= ∥2δ∥−(2"
+  },
+  {
+   "page": 29,
+   "mark": "r",
+   "context": "∥2δ∥(2"
+  },
+  {
+   "page": 29,
+   "mark": "t",
+   "context": "∥2δ∥(2r−1)Bn,r( j; 2"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "iδ"
+  },
+  {
+   "page": 29,
+   "mark": "r",
+   "context": "∥2δ∥(2"
+  },
+  {
+   "page": 29,
+   "mark": "t",
+   "context": "∥2δ∥(2r−1)Bn,r( j; 2"
+  },
+  {
+   "page": 29,
+   "mark": "r",
+   "context": "∥2δ∥−(2"
+  },
+  {
+   "page": 29,
+   "mark": "t",
+   "context": "∥2δ∥−(2r−1)Bn,r( j; 2"
+  },
+  {
+   "page": 29,
+   "mark": "j",
+   "context": "∥2δ∥−(2r−1)Bn,r( j; 2tσ −δσ)−1≤2−θ"
+  },
+  {
+   "page": 29,
+   "mark": "t",
+   "context": "∥2δ∥−(2r−1)Bn,r( j; 2tσ −δσ)−1≤2−θ j"
+  },
+  {
+   "page": 29,
+   "mark": "j",
+   "context": "∥2δ∥−(2r−1)Bn,r( j; 2tσ −δσ)−1≤2−θ jtσ(1)≤2−θ"
+  },
+  {
+   "page": 29,
+   "mark": "t",
+   "context": "∥2δ∥−(2r−1)Bn,r( j; 2tσ −δσ)−1≤2−θ jtσ(1)≤2−θ j"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "∥2δ∥−(2r−1)Bn,r( j; 2tσ −δσ)−1≤2−θ jtσ(1)≤2−θ jt"
+  },
+  {
+   "page": 29,
+   "mark": "r",
+   "context": "∥2δ∥(2"
+  },
+  {
+   "page": 29,
+   "mark": "t",
+   "context": "∥2δ∥(2r−1)Bn,r( j; 2"
+  },
+  {
+   "page": 29,
+   "mark": "r",
+   "context": "∥2δ∥(2"
+  },
+  {
+   "page": 29,
+   "mark": "t",
+   "context": "∥2δ∥(2r−1)Bn,r( j; 2"
+  },
+  {
+   "page": 30,
+   "mark": "r",
+   "context": "∥2δ∥(2"
+  },
+  {
+   "page": 30,
+   "mark": "t",
+   "context": "∥2δ∥(2r−1)Bn,r( j; 2"
+  },
+  {
+   "page": 30,
+   "mark": "r",
+   "context": "∥2δ∥−(2"
+  },
+  {
+   "page": 30,
+   "mark": "t",
+   "context": "∥2δ∥−(2r−1)Bn,r( j; 2"
+  },
+  {
+   "page": 30,
+   "mark": "t",
+   "context": "∥2δ∥−(2r−1)Bn,r( j; 2tσ −δσ)−1≤(2"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "∥2δ∥−(2r−1)Bn,r( j; 2tσ −δσ)−1≤(2t"
+  },
+  {
+   "page": 30,
+   "mark": "t",
+   "context": "∥2δ∥−(2r−1)Bn,r( j; 2tσ −δσ)−1≤(2t1· · · 2"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "∥2δ∥−(2r−1)Bn,r( j; 2tσ −δσ)−1≤(2t1· · · 2t"
+  },
+  {
+   "page": 30,
+   "mark": "r",
+   "context": "∥2δ∥−(2r−1)Bn,r( j; 2tσ −δσ)−1≤(2t1· · · 2tn/2)−(2"
+  },
+  {
+   "page": 30,
+   "mark": "r",
+   "context": "r( j; 2tσ −δσ)−1≤(2t1· · · 2tn/2)−(2r−1)= (K1 · · · Kn/2)−(2"
+  },
+  {
+   "page": 30,
+   "mark": "r",
+   "context": "∥2δ∥(2"
+  },
+  {
+   "page": 30,
+   "mark": "t",
+   "context": "∥2δ∥(2r−1)Bn,r( j; 2"
+  },
+  {
+   "page": 30,
+   "mark": "r",
+   "context": "∥2δ∥(2"
+  },
+  {
+   "page": 30,
+   "mark": "t",
+   "context": "∥2δ∥(2r−1)Bn,r( j; 2"
+  },
+  {
+   "page": 30,
+   "mark": "r",
+   "context": "∥2δ∥(2"
+  },
+  {
+   "page": 30,
+   "mark": "t",
+   "context": "∥2δ∥(2r−1)Bn,r( j; 2"
+  },
+  {
+   "page": 30,
+   "mark": "r",
+   "context": "∥2δ∥−(2"
+  },
+  {
+   "page": 30,
+   "mark": "t",
+   "context": "∥2δ∥−(2r−1)Bn,r( j; 2"
+  },
+  {
+   "page": 30,
+   "mark": "t",
+   "context": "∥2δ∥−(2r−1)Bn,r( j; 2tσ −δσ)−1≤(2"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "∥2δ∥−(2r−1)Bn,r( j; 2tσ −δσ)−1≤(2t"
+  },
+  {
+   "page": 30,
+   "mark": "t",
+   "context": "∥2δ∥−(2r−1)Bn,r( j; 2tσ −δσ)−1≤(2t1· · · 2"
+  },
+  {
+   "page": 30,
+   "mark": "r",
+   "context": "∥2δ∥−(2r−1)Bn,r( j; 2tσ −δσ)−1≤(2t1· · · 2t(n−1)/2)−(2"
+  },
+  {
+   "page": 30,
+   "mark": "t",
+   "context": "∥2δ∥−(2r−1)Bn,r( j; 2tσ −δσ)−1≤(2t1· · · 2t(n−1)/2)−(2r−1)(2"
+  },
+  {
+   "page": 30,
+   "mark": "r",
+   "context": "· · · 2t(n−1)/2)−(2r−1)(2t(n+1)/2)−r= (K1 · · · K(n−1)/2)−(2"
+  },
+  {
+   "page": 31,
+   "mark": "r",
+   "context": "\u00132"
+  },
+  {
+   "page": 31,
+   "mark": "r",
+   "context": "|S(F; N, H)|2"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "|S(F; N, H)|2r≪n,r,1,D (log q)"
+  },
+  {
+   "page": 31,
+   "mark": "r",
+   "context": "|S(F; N, H)|2r≪n,r,1,D (log q)2"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "|S(F; N, H)|2r≪n,r,1,D (log q)2r(n+1)P"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "q(n+ j)/2"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "q(n+ j)/2eB"
+  },
+  {
+   "page": 31,
+   "mark": "r",
+   "context": "q(n+ j)/2eBn,"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "P"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "= (log q)"
+  },
+  {
+   "page": 31,
+   "mark": "r",
+   "context": "= (log q)2"
+  },
+  {
+   "page": 31,
+   "mark": "r",
+   "context": "= (log q)2r(n+1)∥H∥2"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "= (log q)2r(n+1)∥H∥2r−1P−1q"
+  },
+  {
+   "page": 31,
+   "mark": "j",
+   "context": "q"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "qj/2"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "qj/2eB"
+  },
+  {
+   "page": 31,
+   "mark": "r",
+   "context": "qj/2eBn,"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "in which we recall the deﬁnition of the function"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "in which we recall the deﬁnition of the functioneB"
+  },
+  {
+   "page": 31,
+   "mark": "r",
+   "context": "in which we recall the deﬁnition of the functioneBn,"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "θ1 = r, so that the sum overj∈{0, 1} contributes (1 + q"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "2H"
+  },
+  {
+   "page": 31,
+   "mark": "q",
+   "context": "2H1"
+  },
+  {
+   "page": 31,
+   "mark": "r",
+   "context": "2H1q−1/(2"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "2H1q−1/(2r) ≤P≤H"
+  },
+  {
+   "page": 31,
+   "mark": "q",
+   "context": "2H1q−1/(2r) ≤P≤H1"
+  },
+  {
+   "page": 31,
+   "mark": "r",
+   "context": "2H1q−1/(2r) ≤P≤H1q−1/(2"
+  },
+  {
+   "page": 31,
+   "mark": "r",
+   "context": "|S(F; N, H)| ≪∥H∥1−1/rq(r+1)/4"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "|S(F; N, H)| ≪∥H∥1−1/rq(r+1)/4r"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "|S(F; N, H)| ≪∥H∥1−1/rq(r+1)/4r2(log q)"
+  },
+  {
+   "page": 31,
+   "mark": "j",
+   "context": "q"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "qj/2"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "qj/2eB"
+  },
+  {
+   "page": 31,
+   "mark": "r",
+   "context": "qj/2eBn,"
+  },
+  {
+   "page": 31,
+   "mark": "r",
+   "context": "qj/2eBn,r( j; K)−1≪n,"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "q"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "q1/2K−θ"
+  },
+  {
+   "page": 31,
+   "mark": "r",
+   "context": "|S(F; N, H)|2"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "|S(F; N, H)|2r≪n,r,1,D (log q)"
+  },
+  {
+   "page": 31,
+   "mark": "r",
+   "context": "|S(F; N, H)|2r≪n,r,1,D (log q)2"
+  },
+  {
+   "page": 31,
+   "mark": "r",
+   "context": "|S(F; N, H)|2r≪n,r,1,D (log q)2r(n+1)∥H∥2"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "|S(F; N, H)|2r≪n,r,1,D (log q)2r(n+1)∥H∥2r−1P−1q"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "|S(F; N, H)|2r≪n,r,1,D (log q)2r(n+1)∥H∥2r−1P−1qn/2(1 + q"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": " H)|2r≪n,r,1,D (log q)2r(n+1)∥H∥2r−1P−1qn/2(1 + q1/2(H1/P)−θ"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "2q"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "2q1/(2θ"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "q"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "q1/(2θ"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "verify as long as we assumeHn H1 < q"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "verify as long as we assumeHn H1 < q1+1/(2θ"
+  },
+  {
+   "page": 32,
+   "mark": "r",
+   "context": "|S(F; N, H)|2"
+  },
+  {
+   "page": 32,
+   "mark": "r",
+   "context": "|S(F; N, H)|2r≪n,r,1,D ∥H∥2"
+  },
+  {
+   "page": 32,
+   "mark": "q",
+   "context": "1"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "1q"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "1qn/2+1/(2θ"
+  },
+  {
+   "page": 32,
+   "mark": "q",
+   "context": "1qn/2+1/(2θ1)(log"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "1qn/2+1/(2θ1)(log q)"
+  },
+  {
+   "page": 32,
+   "mark": "r",
+   "context": "1qn/2+1/(2θ1)(log q)2"
+  },
+  {
+   "page": 32,
+   "mark": "r",
+   "context": "|S(F; N, H)| ≪n,r,1,D ∥H∥1−1/(2"
+  },
+  {
+   "page": 32,
+   "mark": "r",
+   "context": "|S(F; N, H)| ≪n,r,1,D ∥H∥1−1/(2r)H−1/(2"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "q(nθ"
+  },
+  {
+   "page": 32,
+   "mark": "r",
+   "context": "q(nθ1+1)/4"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "q(nθ1+1)/4rθ"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "q(nθ1+1)/4rθ1(log q)"
+  },
+  {
+   "page": 32,
+   "mark": "r",
+   "context": "|S(F; N, H)| ≪∥H∥1−1/(2"
+  },
+  {
+   "page": 32,
+   "mark": "r",
+   "context": "|S(F; N, H)| ≪∥H∥1−1/(2r)H−1/(2"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "q(n"
+  },
+  {
+   "page": 32,
+   "mark": "r",
+   "context": "q(n2+1)/4"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "q(n2+1)/4r"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "q(n2+1)/4r2(log q)"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "is o(∥H∥), under the assumption that ∥H∥1/n= qβandHmin ≫∥H∥c"
+  },
+  {
+   "page": 32,
+   "mark": "c",
+   "context": "H∥), under the assumption that ∥H∥1/n= qβandHmin ≫∥H∥c0/n= q"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "∥), under the assumption that ∥H∥1/n= qβandHmin ≫∥H∥c0/n= qc"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2rβ + n"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "nβ −c"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "δ =n + c"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "β −n"
+  },
+  {
+   "page": 33,
+   "mark": "0",
+   "context": "a =(n + c"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "(a −c)"
+  },
+  {
+   "page": 33,
+   "mark": "0",
+   "context": "δ = δn(κ) :=n + c"
+  },
+  {
+   "page": 33,
+   "mark": "0",
+   "context": "δn(κ) ≈(n + c"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "δn(κ) ≈(n + c0)"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "4(n −1) κ"
+  },
+  {
+   "page": 33,
+   "mark": "0",
+   "context": "∥H∥Hmin ≫∥H∥1+c"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "∥H∥Hmin ≫∥H∥1+c0/n≫(q"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "∥H∥Hmin ≫∥H∥1+c0/n≫(qnβ)"
+  },
+  {
+   "page": 33,
+   "mark": "0",
+   "context": "∥H∥Hmin ≫∥H∥1+c0/n≫(qnβ)1+c"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "∥H∥Hmin ≫q"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "A(m)"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "< mi + Hi/P, mi≤N"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "p, p′, a, a′: mi≤N"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "p, p′, a, a′: mi≤Ni −a"
+  },
+  {
+   "page": 34,
+   "mark": "q",
+   "context": "p, p′, a, a′: mi≤Ni −ai"
+  },
+  {
+   "page": 34,
+   "mark": "q",
+   "context": "i"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "A(m)"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "−N"
+  },
+  {
+   "page": 34,
+   "mark": "q",
+   "context": "i"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "≤H"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "−N"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "≤H"
+  },
+  {
+   "page": 34,
+   "mark": "q",
+   "context": "i"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "i<p′ :"
+  },
+  {
+   "page": 34,
+   "mark": "q",
+   "context": "i"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "iq)| ≤p(H"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "iq)| ≤p(Hi/P) ≤2H"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "iq)| ≤p(Hi/P) ≤2Hi,"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "iq)| ≤p(Hi/P) ≤2Hi,i= 1, . . . ,"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "i| ≤2H"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "i| ≤2Hi/q < 2,"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "i| ≤2Hi/q < 2,i= 1, . . . ,"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "sedHi< q.This shows that onceais chosen, there are at most 3"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "M(p, p) ≪P"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "p=p′∈PM(p,"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "p=p′∈PM(p, p′) ≪P"
+  },
+  {
+   "page": 34,
+   "mark": "q",
+   "context": "< li≤2"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "−qM"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "−qMi/l"
+  },
+  {
+   "page": 34,
+   "mark": "q",
+   "context": "i"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "≤H"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "li p′ ,"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "li p′ ,i= 1, . . . ,"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "i"
+  },
+  {
+   "page": 34,
+   "mark": "l",
+   "context": "ip)"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "ip)l"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "ip)li| ≤12P,"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "ip)li| ≤12P,i= 1, . . . ,"
+  },
+  {
+   "page": 35,
+   "mark": "a",
+   "context": "i<p′such that"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "i<p′such that a"
+  },
+  {
+   "page": 35,
+   "mark": "p",
+   "context": "i<p′such that ai"
+  },
+  {
+   "page": 35,
+   "mark": "p",
+   "context": "i"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "M(p, p′) ≪P"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "A(m)"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": "q"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "qj/2K−jθ"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "(q"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "(q1/2K−θ"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": "q"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": ")"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 36,
+   "mark": "r",
+   "context": "qn/2(K1 · · · Kn/2)−(2"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "qn/2(K1 · · · Kn/2)−(2r−1)≤q"
+  },
+  {
+   "page": 36,
+   "mark": "r",
+   "context": "qn/2(K1 · · · Kn/2)−(2r−1)≤qn/2K−(2"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "qn/2(K1 · · · Kn/2)−(2r−1)≤qn/2K−(2r−1)"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "≤(q"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "≤(q1/2K−θ"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": ")"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "(n+1)/2≤q"
+  },
+  {
+   "page": 36,
+   "mark": "r",
+   "context": "(n+1)/2≤qn/2K −{(2"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "≤(q"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "≤(q1/2K−θ"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 36,
+   "mark": "r",
+   "context": "qn/2(K1 · · · K(n−1)/2)−(2"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": ")"
+  },
+  {
+   "page": 36,
+   "mark": "r",
+   "context": "ﬁcation intoX2, . . . , Xn.Then for those (x(1), . . . , x(2"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "n intoX2, . . . , Xn.Then for those (x(1), . . . , x(2r)) ∈A"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "Fq\\ X"
+  },
+  {
+   "page": 36,
+   "mark": "q",
+   "context": "Fq\\ X1(F"
+  },
+  {
+   "page": 36,
+   "mark": "r",
+   "context": "|S(x(1), . . . , x(2"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "|S(x(1), . . . , x(2r))| ≤Cq"
+  },
+  {
+   "page": 36,
+   "mark": "r",
+   "context": "but for those (x(1), . . . , x(2"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "Fq) we could have an upper bound as bad as the trivial (#Fq)"
+  },
+  {
+   "page": 36,
+   "mark": "r",
+   "context": "{x} ∈(0, k]2"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "> Cq"
+  },
+  {
+   "page": 36,
+   "mark": "r",
+   "context": "≤C′′∥k∥2"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "≤C′′∥k∥2rk−θ"
+  },
+  {
+   "page": 36,
+   "mark": "r",
+   "context": "|S(F; m, k)|2"
+  },
+  {
+   "page": 36,
+   "mark": "r",
+   "context": "{x}∈(0,k]2"
+  },
+  {
+   "page": 36,
+   "mark": "r",
+   "context": "{x}∈(0,k]2"
+  },
+  {
+   "page": 36,
+   "mark": "r",
+   "context": "≪∥k∥2"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "≪∥k∥2rCq"
+  },
+  {
+   "page": 36,
+   "mark": "r",
+   "context": "≪∥k∥2rCqn/2+ C′′∥k∥2"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "≪∥k∥2rCqn/2+ C′′∥k∥2rq"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "≪∥k∥2rCqn/2+ C′′∥k∥2rqnk−θ"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "Thesecondtermhastheworstgrowthq"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "eworstgrowthqnappearingin(6-2)combinedwiththeleastsavingsk−θ"
+  },
+  {
+   "page": 36,
+   "mark": "r",
+   "context": "|S(F; N, H)|2"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "|S(F; N, H)|2r≪(log q)"
+  },
+  {
+   "page": 36,
+   "mark": "r",
+   "context": "|S(F; N, H)|2r≪(log q)2"
+  },
+  {
+   "page": 36,
+   "mark": "r",
+   "context": "|S(F; N, H)|2r≪(log q)2r(n+1)∥H∥2"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "|S(F; N, H)|2r≪(log q)2r(n+1)∥H∥2r−1P−1q"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "|S(F; N, H)|2r≪(log q)2r(n+1)∥H∥2r−1P−1qn/2(1 + q"
+  },
+  {
+   "page": 36,
+   "mark": "e",
+   "context": "|S(F; N, H)|2r≪(log q)2r(n+1)∥H∥2r−1P−1qn/2(1 + qn/2"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "|S(F; N, H)|2r≪(log q)2r(n+1)∥H∥2r−1P−1qn/2(1 + qn/2eB"
+  },
+  {
+   "page": 36,
+   "mark": "r",
+   "context": "|S(F; N, H)|2r≪(log q)2r(n+1)∥H∥2r−1P−1qn/2(1 + qn/2eBn,"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "The last factor is 1 + q"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "The last factor is 1 + qn/2(H1/P)−θ"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": " 1 + qn/2(H1/P)−θ1, which we balance by choosingP= H1q−n/(2θ"
+  },
+  {
+   "page": 37,
+   "mark": "r",
+   "context": "|S(F; N, H)| ≪∥H∥1−1/2"
+  },
+  {
+   "page": 37,
+   "mark": "r",
+   "context": "|S(F; N, H)| ≪∥H∥1−1/2rH−1/2"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "q(nθ"
+  },
+  {
+   "page": 37,
+   "mark": "r",
+   "context": "q(nθ1+n)/4"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "q(nθ1+n)/4rθ"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "q(nθ1+n)/4rθ1(log q)"
+  },
+  {
+   "page": 37,
+   "mark": "r",
+   "context": "This is worse than our main theorem by a factor of q(n−1)/4"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "his is worse than our main theorem by a factor of q(n−1)/4rθ"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "n,r( j;"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "n,r( j;"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "(k1 · · · k j/2)"
+  },
+  {
+   "page": 37,
+   "mark": "r",
+   "context": "(k1 · · · k j/2)2"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "(k1 · · · k( j−1)/2)"
+  },
+  {
+   "page": 37,
+   "mark": "r",
+   "context": "(k1 · · · k( j−1)/2)2"
+  },
+  {
+   "page": 37,
+   "mark": "r",
+   "context": "(k1 · · · k( j−1)/2)2rk"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "n,r( j;"
+  },
+  {
+   "page": 37,
+   "mark": "r",
+   "context": "|S(F; N, H)|2"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "|S(F; N, H)|2r≪n,r,1,D (log q)"
+  },
+  {
+   "page": 37,
+   "mark": "r",
+   "context": "|S(F; N, H)|2r≪n,r,1,D (log q)2"
+  },
+  {
+   "page": 37,
+   "mark": "r",
+   "context": "|S(F; N, H)|2r≪n,r,1,D (log q)2r(n+1)∥H∥2"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "|S(F; N, H)|2r≪n,r,1,D (log q)2r(n+1)∥H∥2r−1P−1q"
+  },
+  {
+   "page": 37,
+   "mark": "j",
+   "context": "q"
+  },
+  {
+   "page": 37,
+   "mark": "e",
+   "context": "qj/2"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "(k1 · · · k j/2)"
+  },
+  {
+   "page": 37,
+   "mark": "r",
+   "context": "(k1 · · · k j/2)2"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "n,r( j;"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "(k1 · · · k( j−1)/2)"
+  },
+  {
+   "page": 37,
+   "mark": "r",
+   "context": "(k1 · · · k( j−1)/2)2"
+  },
+  {
+   "page": 37,
+   "mark": "r",
+   "context": "(k1 · · · k( j−1)/2)2r−1k"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "2q"
+  },
+  {
+   "page": 38,
+   "mark": "r",
+   "context": "2q1/(2"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "q"
+  },
+  {
+   "page": 38,
+   "mark": "r",
+   "context": "q1/(2"
+  },
+  {
+   "page": 38,
+   "mark": "j",
+   "context": "q"
+  },
+  {
+   "page": 38,
+   "mark": "e",
+   "context": "qj/2"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "upon using the fact thatH"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "upon using the fact thatH1 ≤H"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "upon using the fact thatH1 ≤H2 ≤. . . ≤H"
+  },
+  {
+   "page": 38,
+   "mark": "e",
+   "context": " fact thatH1 ≤H2 ≤. . . ≤Hnand the deﬁnition of the function"
+  },
+  {
+   "page": 38,
+   "mark": "r",
+   "context": "|S(F; N, H)| ≪n,r,1,D ∥H∥1−(1/2"
+  },
+  {
+   "page": 38,
+   "mark": "r",
+   "context": "|S(F; N, H)| ≪n,r,1,D ∥H∥1−(1/2r)H−1/2"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "q(n"
+  },
+  {
+   "page": 38,
+   "mark": "r",
+   "context": "q(n2♯+1)/4"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "q(n2♯+1)/4r"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "q(n2♯+1)/4r2♯(log q)"
+  },
+  {
+   "page": 38,
+   "mark": "r",
+   "context": "2♯=2"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "4r"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "δ ≈(n + 1)"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "κ"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "ums that are not short.Roughly speaking, the threshold Hi ≤q"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "ible, for appropriateF.To boundS(F; N, H) in cases whereHi≫q"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "x∈Z"
+  },
+  {
+   "page": 39,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 39,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 39,
+   "mark": "n",
+   "context": "a Weil bound applies so that the internal sum overaisO(q"
+  },
+  {
+   "page": 39,
+   "mark": "n",
+   "context": " is then expected to be roughly on the order of O(q−n/2∥H∥+q"
+  },
+  {
+   "page": 39,
+   "mark": "n",
+   "context": "xpected to be roughly on the order of O(q−n/2∥H∥+qn/2(log q)"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "o(∥H∥) in the case thatHi ≫q"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "is paper.In a hybrid case, in which someHiare smaller than q"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "[Chang 2009]M.-C. Chang, “Burgess inequality in Fp"
+  },
+  {
+   "page": 41,
+   "mark": "n",
+   "context": "as-León 2006]A. Rojas-León, “Purity of exponential sums on A"
+  }
+ ]
+}

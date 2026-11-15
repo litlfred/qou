@@ -1,0 +1,78 @@
+CL)
+
+and the pentagon in Appendix C, it is possible to add a Dirichlet condition to one or
+more of its sides.
+
+int n = 30;
+
+int nev=100;
+
+string fnm="237—Eigenvalues—n30—nev100.txt"; //file name for saving
+
+real c = 2.012192172612278;
+
+real r 1.74611492735219;
+
+border Gl (t=0,0.2660772452600879) { x=t; y=0;};
+border G2 (t=0.3007426187463789,0) { x=cos(pi/7)*t; y=t*sin(pi/7);};
+border G3 (t=pi,3.066792828504322) { x=ctr*cos(t); y=rxsin(t);};
+
+plot (G1(n)+G2(n)+G3(n));
+mesh Th=buildmesh (G1(n)+G2(n)+G3(n));
+plot (Th);
+
+fespace Vh(Th,P2);
+
+Vh ul, u2;
+real sigma = 0.0005;
+
+varf op(ul,u2)= int2d(Th)(dx(ul)*dx(u2)+ dy(ul)*dy(u2)— sigma*(4*ul*u2)/(1—x*2—y~2)~2);
+varf b([ul] ,[u2]) = int2d(Th)((4*ul*u2)/(1—x*2-y~2)>2);
+
+matrix OP= op(Vh,Vh, solver=Crout , factorize=1);
+matrix B=b(Vh, Vh, solver=CG, eps=le —20);
+
+real[int] ev(nev);
+
+Vh[int] eV(nev);
+
+int k=EigenValue (OP,B,sym=true , sigma=sigma , value=ev , vector=eV, tol=le—10,maxit=0,ncv=0);
+for (int ji<k;it+) {
+
+ul=eV [i];
+
+real gg = int2d(Th)(dx(ul)*dx(ul) + dy(ul)*dy(ul)); real mm= int2d(Th)(ul*ul) ;
+
+ofstream Eva(fnm, append);
+
+Eva << ev[i] << "\n";
+
+’ LJ
+Next, we include the code for the surface M3 in [72]:
+
+int n = 30;
+
+int nev = 100;
+
+string fnm="m3-Eigenvalues—n30—nev100.txt"; //file name for saving
+
+real cx = 1.0122;
+real cy = 0.1566;
+real r = 0.2214;
+
+real s = 0.8045;
+real theta = 0.1238;
+
+real x01 = sxcos(theta);
+
+real y0Ol = sxsin(theta);
+
+real x02 = sxcos(pi/6—theta);
+real y02 = s*sin(pi/6—theta);
+real x03 = sxcos(pi/6+theta);
+real y03 = sxsin(pi/6+theta);
+real x04 = s*cos(2*pi/6—theta);
+real y04 = s*sin(2*pi/6—theta);
+real x05 = sxcos(2*pi/6+theta);
+
+122

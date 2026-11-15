@@ -7,10 +7,11 @@ section_number: 1.2
 pages: 7-10
 source_pdf: 1108.1048v3.pdf
 source_sha256: 6f2b83450ba923d0
-doc_brief: "CONSTRUCTION OF IRREDUCIBLE REPRESENTATIONS OVER KHOVANOV-LAUDA-ROUQUIER ALGEBRAS — We give an explicit construction of irreducible modules ove r Khovanov-Lauda- Rouquier algebras R and their"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.969
-latex_coverage_ratio: 0.917
+latex_coverage_ratio: 0.91
+doc_brief: "CONSTRUCTION OF IRREDUCIBLE REPRESENTATIONS OVER KHOVANOV-LAUDA-ROUQUIER ALGEBRAS — We give an explicit construction of irreducible modules over Khovanov-Lauda- Rouquier algebras R and their"
 ---
 For $\alpha \in \mathsf{Q}^+$ with $|\alpha|=m$, we define $I^\alpha = \{ {\bf i}=(i_1,\ldots,i_m) \in I^{m} \mid \sum_{k=1}^{m} \alpha_{i_k}=\alpha \}.$ Given $\mathbf{i}=(i_1,\ldots,i_m) \in I^\alpha$ and $\mathbf{j}=(j_1,\ldots,j_{m'}) \in I^\beta$, let ${\bf i}*{\bf j}$ denote the concatenation of ${\bf i}$ and ${\bf j}$: ${\bf i}*{\bf j}=(i_1,\ldots,i_m,j_1,\ldots,j_{m'}) \in I^{\alpha+\beta}.$ Let $S_m$ be the symmetric group on $m$ letters with simple transpositions $\sigma_i\  (i=1,\ldots,m-1)$. Then $S_m$ acts on $I^m$ in a natural way. For $d_1,\ldots,d_n \in \mathbb{Z}_{\ge 0}$, we denote by $S_{d_1+\cdots +d_n} /S_{d_1} \times \cdots \times S_{d_n}$ the set of minimal left coset representatives of $S_{d_1} \times \cdots \times S_{d_n}$ in $S_{d_1+\cdots +d_n}$.
 

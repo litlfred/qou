@@ -1,0 +1,1 @@
+We shall limit ourselves to the integral slope case: the category ${\mathcal{E}}_{form,int}$ (or equivalently of the category ${\mathcal{E}}_{p,1}^{(0)}$ of pure meromorphic modules with integral slopes, cf. below).

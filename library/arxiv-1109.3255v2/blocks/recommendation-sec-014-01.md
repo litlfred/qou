@@ -1,0 +1,1 @@
+Transversality can be achieved using such structures because all intersection points lie in $\image (\iota)$, and hence any pseudo-holomorphic section must also pass through $\image (\iota)$, where we are free to perturb $J$ as usual.

@@ -1,0 +1,1 @@
+Indeed, within this formalism, we should be able to construct an Hamiltonian constraint relating Turaev-Viro and LQG [55], and we should be able to understand what is the relevant phase space for LQG, the space of curved twisted geometries [49].

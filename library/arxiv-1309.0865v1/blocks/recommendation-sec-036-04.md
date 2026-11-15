@@ -1,0 +1,1 @@
+\begin{remark} Proposition \ref{homspaceprop} is a special case of Theorem \ref{homspacetheorem}, because when ${\un{y}}=\emptyset$ we must have $w=e$, and $\oLL_{{\un{y}}}$ is the empty diagram.\end{remark}

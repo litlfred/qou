@@ -2,76 +2,91 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-hep-th-9310164v2",
  "source_sha256": "e0972e04667ccc47",
- "brief": "SPHERICAL CATEGORIES — This paper is a study of monoidal categories with duals where th e ten- sor product need not be commutative.",
- "extended": "**SPHERICAL CATEGORIES**\n\n*John W. Barrett & Bruce W. Westbury*\n\n16 pp, 13 sections.\n\n**Abstract.** This paper is a study of monoidal categories with duals where th e ten- sor product need not be commutative. The motivating examples are categories of representations of Hopf algebras. We introduce the new notion of a spherical cate- gory. In the ﬁrst section we prove a coherence theorem for a monoida l category with duals following [MacLane 1963]. In the second section we giv e the deﬁnition of a spherical category, and construct a natural quotient which is al so spherical. In the third section we deﬁne spherical Hopf algebras so that the categ ory of representations is spherical. Examples of spherical Hopf algebras are involutory Hopf algebras and ribbon Hopf algebras. Finally we study the natural quotient in t hese cases and show it is semisimple.\n\n**Outline.** 2 JOHN W. BARRETT & BRUCE W. WESTBURY; 1 Monoidal categories with duals; 3 Spherical Hopf algebras; 0 Introduction; 2 Spherical categories; 4 JOHN W. BARRETT & BRUCE W. WESTBURY; 6 JOHN W. BARRETT & BRUCE W. WESTBURY; 8 JOHN W. BARRETT & BRUCE W. WESTBURY; 10 JOHN W. BARRETT & BRUCE W. WESTBURY; 12 JOHN W. BARRETT & BRUCE W. WESTBURY; 14 JOHN W. BARRETT & BRUCE W. WESTBURY; References; 16 JOHN W. BARRETT & BRUCE W. WESTBURY",
+ "brief": "SPHERICAL CATEGORIES — This paper is a study of monoidal categories with duals where the ten- sor product need not be commutative.",
+ "extended": "**SPHERICAL CATEGORIES**\n\n*John W. Barrett & Bruce W. Westbury*\n\n16 pp, 16 sections.\n\n**Abstract.** This paper is a study of monoidal categories with duals where the ten- sor product need not be commutative. The motivating examples are categories of representations of Hopf algebras. We introduce the new notion of a spherical cate- gory. In the ﬁrst section we prove a coherence theorem for a monoidal category with duals following [MacLane 1963]. In the second section we give the deﬁnition of a spherical category, and construct a natural quotient which is also spherical. In the third section we deﬁne spherical Hopf algebras so that the category of representations is spherical. Examples of spherical Hopf algebras are involutory Hopf algebras and ribbon Hopf algebras. Finally we study the natural quotient in these cases and show it is semisimple.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13; Page 14; Page 15; Page 16",
  "tokens": {
   "brief": 32,
-  "extended": 325
+  "extended": 250
  },
  "sections": [
   {
-   "id": "sec-000-2-john-w-barrett-bruce-w-westbury",
-   "title": "JOHN W. BARRETT & BRUCE W. WESTBURY",
+   "id": "page-001",
+   "title": "Page 1",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-1-monoidal-categories-with-duals",
-   "title": "Monoidal categories with duals",
-   "pages": "1-1"
+   "id": "page-002",
+   "title": "Page 2",
+   "pages": "2-2"
   },
   {
-   "id": "sec-002-3-spherical-hopf-algebras",
-   "title": "Spherical Hopf algebras",
-   "pages": "1-1"
+   "id": "page-003",
+   "title": "Page 3",
+   "pages": "3-3"
   },
   {
-   "id": "sec-003-0-introduction",
-   "title": "Introduction",
-   "pages": "1-1"
+   "id": "page-004",
+   "title": "Page 4",
+   "pages": "4-4"
   },
   {
-   "id": "sec-004-2-spherical-categories",
-   "title": "Spherical categories",
-   "pages": "1-4"
+   "id": "page-005",
+   "title": "Page 5",
+   "pages": "5-5"
   },
   {
-   "id": "sec-005-4-john-w-barrett-bruce-w-westbury",
-   "title": "JOHN W. BARRETT & BRUCE W. WESTBURY",
-   "pages": "4-6"
+   "id": "page-006",
+   "title": "Page 6",
+   "pages": "6-6"
   },
   {
-   "id": "sec-006-6-john-w-barrett-bruce-w-westbury",
-   "title": "JOHN W. BARRETT & BRUCE W. WESTBURY",
-   "pages": "6-8"
+   "id": "page-007",
+   "title": "Page 7",
+   "pages": "7-7"
   },
   {
-   "id": "sec-007-8-john-w-barrett-bruce-w-westbury",
-   "title": "JOHN W. BARRETT & BRUCE W. WESTBURY",
-   "pages": "8-10"
+   "id": "page-008",
+   "title": "Page 8",
+   "pages": "8-8"
   },
   {
-   "id": "sec-008-10-john-w-barrett-bruce-w-westbury",
-   "title": "JOHN W. BARRETT & BRUCE W. WESTBURY",
-   "pages": "10-12"
+   "id": "page-009",
+   "title": "Page 9",
+   "pages": "9-9"
   },
   {
-   "id": "sec-009-12-john-w-barrett-bruce-w-westbury",
-   "title": "JOHN W. BARRETT & BRUCE W. WESTBURY",
-   "pages": "12-14"
+   "id": "page-010",
+   "title": "Page 10",
+   "pages": "10-10"
   },
   {
-   "id": "sec-010-14-john-w-barrett-bruce-w-westbury",
-   "title": "JOHN W. BARRETT & BRUCE W. WESTBURY",
-   "pages": "14-15"
+   "id": "page-011",
+   "title": "Page 11",
+   "pages": "11-11"
   },
   {
-   "id": "sec-011-references",
-   "title": "References",
-   "pages": "15-16"
+   "id": "page-012",
+   "title": "Page 12",
+   "pages": "12-12"
   },
   {
-   "id": "sec-012-16-john-w-barrett-bruce-w-westbury",
-   "title": "JOHN W. BARRETT & BRUCE W. WESTBURY",
+   "id": "page-013",
+   "title": "Page 13",
+   "pages": "13-13"
+  },
+  {
+   "id": "page-014",
+   "title": "Page 14",
+   "pages": "14-14"
+  },
+  {
+   "id": "page-015",
+   "title": "Page 15",
+   "pages": "15-15"
+  },
+  {
+   "id": "page-016",
+   "title": "Page 16",
    "pages": "16-16"
   }
  ],

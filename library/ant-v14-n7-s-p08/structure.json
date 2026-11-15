@@ -8,9 +8,15 @@
   "pages": 42,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:18Z",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 14,
+    "reason": "14 of 673 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
@@ -81,7 +87,7 @@
   },
   {
    "level": 1,
-   "title": "The strati\ufb01cation of complete character sums",
+   "title": "The stratiﬁcation of complete character sums",
    "page": 15,
    "source": "inferred",
    "number": "4",
@@ -109,7 +115,7 @@
   },
   {
    "level": 1,
-   "title": "Strati\ufb01cation and a Menshov\u2013Rademacher argument",
+   "title": "Stratiﬁcation and a Menshov–Rademacher argument",
    "page": 25,
    "source": "inferred",
    "number": "6",
@@ -579,8 +585,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 8,
-   "n_chars": 19613,
-   "n_words": 3712,
+   "n_chars": 19608,
+   "n_words": 3711,
    "label_start": "1911",
    "label_end": "1918"
   },
@@ -603,15 +609,15 @@
    "level": 1,
    "page_start": 11,
    "page_end": 15,
-   "n_chars": 11673,
-   "n_words": 2418,
+   "n_chars": 11649,
+   "n_words": 2381,
    "label_start": "1921",
    "label_end": "1925"
   },
   {
-   "id": "sec-003-4-the-strati\ufb01cation-of-complete-character-sums",
+   "id": "sec-003-4-the-stratiﬁcation-of-complete-character-sums",
    "number": "4",
-   "title": "The strati\ufb01cation of complete character sums",
+   "title": "The stratiﬁcation of complete character sums",
    "level": 1,
    "page_start": 15,
    "page_end": 21,
@@ -633,9 +639,9 @@
    "label_end": "1935"
   },
   {
-   "id": "sec-005-6-strati\ufb01cation-and-a-menshovrademacher-argument",
+   "id": "sec-005-6-stratiﬁcation-and-a-menshovrademacher-argument",
    "number": "6",
-   "title": "Strati\ufb01cation and a Menshov\u2013Rademacher argument",
+   "title": "Stratiﬁcation and a Menshov–Rademacher argument",
    "level": 1,
    "page_start": 25,
    "page_end": 31,
@@ -708,6 +714,7 @@
    "items": []
   },
   "sections": 11,
-  "chars_total": 102461
+  "chars_total": 102432,
+  "furniture_lines_stripped": 1
  }
 }

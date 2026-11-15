@@ -1,0 +1,560 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "eps-hep2019-615",
+ "status": "determined",
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "1",
+   "text": "It is worth mentioning that a similar approach, using Cℓ(6) as a starting point, was concurrently developed in [11], which is also consistent with [1]. Those works include a copy of the quaternion algebra, recovering the full SM gauge group from the algebra T = R ⊗C ⊗H ⊗O. The quaternionic factor in T is responsible for the broken SU(2) chiral symmetry.",
+   "marks": [
+    {
+     "page": 2,
+     "context": "ns and quarks under the unbroken electrocolor SU(3)c ⊗U(1)em"
+    },
+    {
+     "page": 2,
+     "context": "2(−e3 +ie"
+    },
+    {
+     "page": 2,
+     "context": "2(e3 +ie"
+    }
+   ],
+   "block": "library/eps-hep2019-615/blocks/prose-page-002"
+  },
+  {
+   "id": "fn-p002-2",
+   "page": 2,
+   "mark": "2",
+   "text": "following the convention of [2].",
+   "marks": [
+    {
+     "page": 2,
+     "context": "eie0 = e0ei = ei,e"
+    },
+    {
+     "page": 2,
+     "context": "as"
+    },
+    {
+     "page": 2,
+     "context": "2(−e6 +ie"
+    },
+    {
+     "page": 2,
+     "context": "2(e6 +ie"
+    }
+   ],
+   "block": "library/eps-hep2019-615/blocks/prose-page-002"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "†",
+   "text": "This work is supported by the Natural Science Foundation of the Jiangsu Higher Education Institutions of China Programme grant 19KJB140018 and XJTLU REF-18-02-03 grant. The author wishes to thank Carlos Castro Perelman, Geoffrey Dixon, Cohl Furey, and Adam Gillard for many insightful discussions. ⃝Copyright owned by the author(s) under the terms of the Creative Commons c https://pos.sissa.it/ Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0).",
+   "block": "library/eps-hep2019-615/blocks/prose-page-001"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "0= e"
+  },
+  {
+   "page": 2,
+   "mark": "5",
+   "context": "2(−e"
+  },
+  {
+   "page": 2,
+   "mark": "4",
+   "context": "2(−e5 +ie"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "2(−e"
+  },
+  {
+   "page": 2,
+   "mark": "6",
+   "context": "2(−e"
+  },
+  {
+   "page": 2,
+   "mark": "†",
+   "context": "α"
+  },
+  {
+   "page": 2,
+   "mark": "†",
+   "context": "α"
+  },
+  {
+   "page": 2,
+   "mark": "†",
+   "context": "α"
+  },
+  {
+   "page": 2,
+   "mark": "5",
+   "context": "2(e"
+  },
+  {
+   "page": 2,
+   "mark": "4",
+   "context": "2(e5 +ie"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "2(e"
+  },
+  {
+   "page": 2,
+   "mark": "6",
+   "context": "2(e"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "α"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "i,α"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "α"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "i,α"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "theconstructionofaprimitiveidempotentωω"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "theconstructionofaprimitiveidempotentωω†= α1α2α3α"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "3α"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "2α"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "1whichdeﬁnes"
+  },
+  {
+   "page": 3,
+   "mark": "u",
+   "context": "ideal S"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "ideal Su≡Cℓ(6)ωω"
+  },
+  {
+   "page": 3,
+   "mark": "u",
+   "context": "S"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "νωω"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "1ωω"
+  },
+  {
+   "page": 3,
+   "mark": "g",
+   "context": "1ωω†+¯d"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "1ωω†+¯dgα"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "2ωω"
+  },
+  {
+   "page": 3,
+   "mark": "b",
+   "context": "2ωω† +¯d"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "2ωω† +¯dbα"
+  },
+  {
+   "page": 3,
+   "mark": "r",
+   "context": "¯d"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "¯drα"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "3ωω"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "2ωω"
+  },
+  {
+   "page": 3,
+   "mark": "g",
+   "context": "2ωω†+u"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "2ωω†+ugα"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "3ωω"
+  },
+  {
+   "page": 3,
+   "mark": "b",
+   "context": "3ωω† +u"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "3ωω† +ubα"
+  },
+  {
+   "page": 3,
+   "mark": "r",
+   "context": "u"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "urα"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "3α"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "1α"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "2α"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "1ωω"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "+e+α"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "3α"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "2α"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "1ωω"
+  },
+  {
+   "page": 3,
+   "mark": "r",
+   "context": "where ν,¯d"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "1,2,...,7oftheform"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "2(−e"
+  },
+  {
+   "page": 3,
+   "mark": "15",
+   "context": "2(−ea + ie"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "2(−ea + ie15−a)where"
+  },
+  {
+   "page": 3,
+   "mark": "7",
+   "context": "2(−ea + ie15−a)wherea ∈5,"
+  },
+  {
+   "page": 3,
+   "mark": "13",
+   "context": "2(−ea + ie15−a)wherea ∈5,7,"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "2(−ea + ie15−a)wherea ∈5,7,13,"
+  },
+  {
+   "page": 3,
+   "mark": "4",
+   "context": "2(−ea + ie15−a)wherea ∈5,7,13,1,"
+  },
+  {
+   "page": 3,
+   "mark": "6",
+   "context": "2(−ea + ie15−a)wherea ∈5,7,13,1,4,"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "conjugates η"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "iof the form"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "2(e"
+  },
+  {
+   "page": 3,
+   "mark": "15",
+   "context": "2(ea +ie"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "η"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "i,η"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "η"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "i,η"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "These ηi and η"
+  },
+  {
+   "page": 3,
+   "mark": "5",
+   "context": "2(−e"
+  },
+  {
+   "page": 3,
+   "mark": "10",
+   "context": "2(−e5 +ie"
+  },
+  {
+   "page": 3,
+   "mark": "7",
+   "context": "2(−e"
+  },
+  {
+   "page": 3,
+   "mark": "8",
+   "context": "2(−e7 +ie"
+  },
+  {
+   "page": 3,
+   "mark": "13",
+   "context": "2(−e"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "2(−e13 +ie"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "2(−e"
+  },
+  {
+   "page": 3,
+   "mark": "14",
+   "context": "2(−e1 +ie"
+  },
+  {
+   "page": 3,
+   "mark": "4",
+   "context": "2(−e"
+  },
+  {
+   "page": 3,
+   "mark": "11",
+   "context": "2(−e4 +ie"
+  },
+  {
+   "page": 3,
+   "mark": "6",
+   "context": "2(−e"
+  },
+  {
+   "page": 3,
+   "mark": "9",
+   "context": "2(−e6 +ie"
+  },
+  {
+   "page": 3,
+   "mark": "12",
+   "context": "2(−e"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "2(−e12 +ie"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "togetherwiththeirconjugates.Thesets{α"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "i,α"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "i,αi},{β"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "i,β"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "i,βi},and{γ"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "i,γ"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "i,γi}eachindividuallyform"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "1,β"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "1,β"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "1,γ"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "1,γ"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "1= −(α"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "2α"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "2α1+α"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "1α"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "OP"
+  }
+ ]
+}

@@ -8,7 +8,7 @@
   "pages": 19,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:18Z",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -22,12 +22,12 @@
   },
   "doi": null,
   "title": "CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV INVARIANTS",
-  "authors_raw": "ALAIN BRUGUI\u00c8RES AND ALEXIS VIRELIZIER",
+  "authors_raw": "ALAIN BRUGUIÈRES AND ALEXIS VIRELIZIER",
   "title_lines": [
    "CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV",
    "INVARIANTS"
   ],
-  "abstract": "A theorem of M\u00a8uger asserts that the center Z(C) of a spherical k-linear category C is a modular category if k is an algebraically closed \ufb01eld and the dimension of C is invertible. We generalize this result to the case where k is an arbitrary commutative ring, without restriction on the dimension of the category. Moreover we construct the analogue of the Reshetikhin-Turaev invariant associated to Z(C) and give an algorithm for computing this invari- ant in terms of certain explicit morphisms in the category C. Our approach is based on (a) Lyubashenko\u2019s construction of the Reshetikhin-Turaev invari- ant in terms of the coend of a ribbon category; (b) an explicit algorithm for computing this invariant via Hopf diagrams; (c) an algebraic interpretation of the center of C as the category of modules over a certain Hopf monad Z on the category C; (d) a generalization of the classical notion of Drinfeld double to Hopf monads, which, applied to the Hopf monad Z, provides an explicit description of the coend of Z(C) in terms of the category C.",
+  "abstract": "A theorem of M¨uger asserts that the center Z(C) of a spherical k-linear category C is a modular category if k is an algebraically closed ﬁeld and the dimension of C is invertible. We generalize this result to the case where k is an arbitrary commutative ring, without restriction on the dimension of the category. Moreover we construct the analogue of the Reshetikhin-Turaev invariant associated to Z(C) and give an algorithm for computing this invari- ant in terms of certain explicit morphisms in the category C. Our approach is based on (a) Lyubashenko’s construction of the Reshetikhin-Turaev invari- ant in terms of the coend of a ribbon category; (b) an explicit algorithm for computing this invariant via Hopf diagrams; (c) an algebraic interpretation of the center of C as the category of modules over a certain Hopf monad Z on the category C; (d) a generalization of the classical notion of Drinfeld double to Hopf monads, which, applied to the Hopf monad Z, provides an explicit description of the coend of Z(C) in terms of the category C.",
   "docinfo": {
    "Title": "arXiv:0812.2426v1  [math.QA]  12 Dec 2008",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
@@ -39,7 +39,7 @@
   "title_verified": false,
   "title_evidence": {
    "metadata": "arXiv:0812.2426v1 [math.QA] 12 Dec 2008",
-   "heading": "CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV INVARIANTS Contents Introduction Conventions and notations Quantum invariants and Hopf diagrams Hopf monads Quantum double of Hopf monads Reshetikhin-Turaev invariants from categorical centers References Introduction In the early 90\u2019s, two new \u2018quantum\u2019 inv",
+   "heading": "CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV INVARIANTS Contents Introduction Conventions and notations Quantum invariants and Hopf diagrams Hopf monads Quantum double of Hopf monads Reshetikhin-Turaev invariants from categorical centers References Introduction In the early 90’s, two new ‘quantum’ inv",
    "text": "CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV INVARIANTS",
    "corroborated_by": [],
    "browser_print": false
@@ -725,8 +725,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 4,
-   "n_words": 2,
+   "n_chars": 0,
+   "n_words": 0,
    "label_start": null,
    "label_end": null
   },
@@ -737,8 +737,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 5564,
-   "n_words": 925,
+   "n_chars": 5590,
+   "n_words": 928,
    "label_start": null,
    "label_end": null
   },
@@ -809,8 +809,8 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 467,
-   "n_words": 95,
+   "n_chars": 465,
+   "n_words": 94,
    "label_start": null,
    "label_end": null
   },
@@ -821,8 +821,8 @@
    "level": 2,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 347,
-   "n_words": 63,
+   "n_chars": 423,
+   "n_words": 75,
    "label_start": null,
    "label_end": null
   },
@@ -941,8 +941,8 @@
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 1477,
-   "n_words": 266,
+   "n_chars": 1474,
+   "n_words": 265,
    "label_start": null,
    "label_end": null
   },
@@ -953,8 +953,8 @@
    "level": 2,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 594,
-   "n_words": 103,
+   "n_chars": 664,
+   "n_words": 116,
    "label_start": null,
    "label_end": null
   },
@@ -1094,7 +1094,8 @@
    "items": []
   },
   "sections": 31,
-  "chars_total": 46656,
+  "chars_total": 46819,
+  "furniture_lines_stripped": 1,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "brug-vir.tex",
@@ -1115,58 +1116,58 @@
      "id": "sec-000-introduction",
      "title": "Introduction",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-001-1-conventions-and-notations",
      "title": "Conventions and notations",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-002-11-autonomous-categories",
      "title": "Autonomous categories",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.297,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-003-12-sovereign-categories",
      "title": "Sovereign categories",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.781,
+     "coverage_ratio": 0.821,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-13-braided-categories",
      "title": "Braided categories",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.846,
+     "prose_ratio": 0.6,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-14-ribbon-categories",
      "title": "Ribbon categories",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.893,
+     "prose_ratio": 0.957,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-006-15-coends",
      "title": "Coends",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.912,
+     "prose_ratio": 0.929,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-007-16-coends-of-autonomous-categories",
      "title": "Coends of autonomous categories",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.886,
+     "prose_ratio": 0.885,
+     "coverage_ratio": 0.793,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1181,15 +1182,15 @@
     {
      "id": "sec-009-18-fusion-categories",
      "title": "Fusion categories",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.925,
+     "prose_ratio": 0.921,
+     "coverage_ratio": 0.919,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-010-2-quantum-invariants-and-hopf-diagrams",
      "title": "Quantum invariants and Hopf diagrams",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.941,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
@@ -1197,24 +1198,24 @@
     {
      "id": "sec-011-21-constructing-quantum-invariants",
      "title": "Constructing quantum invariants",
-     "prose_ratio": 0.988,
-     "coverage_ratio": 0.901,
+     "prose_ratio": 0.902,
+     "coverage_ratio": 0.961,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-012-22-kirby-elements-and-quantum-invariants",
      "title": "Kirby elements and quantum invariants",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.964,
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.932,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-013-23-hopf-diagrams",
      "title": "Hopf diagrams",
-     "prose_ratio": 0.959,
-     "coverage_ratio": 0.937,
+     "prose_ratio": 0.883,
+     "coverage_ratio": 0.933,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1222,7 +1223,7 @@
      "id": "sec-014-3-hopf-monads",
      "title": "Hopf monads",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.917,
+     "coverage_ratio": 0.882,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1230,13 +1231,13 @@
      "id": "sec-015-32-modules-over-a-monad",
      "title": "Modules over a monad",
      "prose_ratio": 0.591,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-016-33-the-philosophy",
      "title": "The philosophy",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.886,
+     "prose_ratio": 0.923,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1244,25 +1245,25 @@
      "id": "sec-017-34-bimonads",
      "title": "Bimonads",
      "prose_ratio": 0.226,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-018-35-antipodes",
      "title": "Antipodes",
      "prose_ratio": 0.582,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-019-36-hopf-monads",
      "title": "Hopf monads",
-     "prose_ratio": 0.3,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.333,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-020-37-quasitriangular-hopf-monads",
      "title": "Quasitriangular Hopf monads",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.867,
+     "prose_ratio": 0.952,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1270,15 +1271,15 @@
      "id": "sec-021-38-ribbon-hopf-monads",
      "title": "Ribbon Hopf monads",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.892,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-022-39-relations-with-modules",
      "title": "Relations with modules",
-     "prose_ratio": 0.966,
-     "coverage_ratio": 0.899,
+     "prose_ratio": 0.931,
+     "coverage_ratio": 0.917,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1286,26 +1287,26 @@
      "id": "sec-023-4-quantum-double-of-hopf-monads",
      "title": "Quantum double of Hopf monads",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-024-42-the-double-of-a-hopf-monad",
      "title": "The double of a Hopf monad",
      "prose_ratio": 0.025,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-025-41-the-center-of-an-monoidal-category-category",
      "title": "The center of an monoidal category category",
      "prose_ratio": 0.971,
      "coverage_ratio": 0.259,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-026-43-the-coend-of-a-category-of-modules-over-a-hop",
      "title": "The coend of a category of modules over a Hopf monad",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.877,
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.961,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1313,23 +1314,23 @@
      "id": "sec-027-5-reshetikhin-turaev-invariants-from-categorical",
      "title": "Reshetikhin-Turaev invariants from categorical centers",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.957,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-028-51-on-the-center-of-a-fusion-category",
      "title": "On the center of a fusion category",
-     "prose_ratio": 0.915,
-     "coverage_ratio": 0.86,
+     "prose_ratio": 0.854,
+     "coverage_ratio": 0.917,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-029-52-the-coend-of-the-center-of-a-fusion-category",
      "title": "The coend of the center of a fusion category",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.918,
+     "prose_ratio": 0.904,
+     "coverage_ratio": 0.538,
      "result": "overlaid",
      "converter": "pandoc"
     }

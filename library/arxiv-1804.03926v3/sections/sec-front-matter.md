@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1804.03926v3.pdf
 source_sha256: 8ad8e2d5a8881a5b
 toc_source: outline
+doc_brief: "Weighted Poincaré inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one — We investigate links between the so-called Stein’s density approach in dimension"
 ---
 arXiv:1804.03926v3  [math.PR]  23 Nov 2018
 Weighted Poincar´e inequalities, concentration inequalities and tail
@@ -31,4 +32,3 @@ a general lemma for bounding the Laplace transform of a random variable, that sh
 many other contexts when deriving concentration inequalities. Finally, we provide density and tail
 formulas as well as tail bounds, generalizing previous results that where obtained in the context
 of Malliavin calculus.
-1

@@ -1,0 +1,1 @@
+It should also be stressed that the matching conditions (24) are free from the renormalization scale ambiguity in con- trast with the previous tree level analysis of the resonance eﬀect to Gasser–Leutwyler parameters[10].

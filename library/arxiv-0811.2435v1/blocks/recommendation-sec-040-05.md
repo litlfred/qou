@@ -1,0 +1,1 @@
+We expect that the well-known relationship "GW=DT\" (see [@MaNOP]) should be a statement about the equality of the above-discussed counting functions (assuming positive answer to the above question). :::

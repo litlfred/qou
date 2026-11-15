@@ -1,0 +1,1 @@
+(Ideally, we should be able to extract both partition functions from the system, and the formal transform of step (2) should interchange them.) An abstract system should consist at least of the following data: 22

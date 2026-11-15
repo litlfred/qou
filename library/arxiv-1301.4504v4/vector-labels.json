@@ -1,0 +1,3693 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1301.4504v4",
+  "pages": [
+    {
+      "page": 12,
+      "rotation": 0,
+      "drawings": 8,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. Alice’s quantum mechanics, compared to Charlie’s. The world inside her horizon is drawn in blue and the time slice she quantizes on is in red. For reference Charlie’s world is in yellow, and the overlap is green. We’ve chosen Charlie’s black slice to coincide closely with Alice’s near B and R."
+      ],
+      "labels": [
+        {
+          "text": "B",
+          "bbox": [
+            281.33,
+            167.57,
+            285.85,
+            175.14
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            6.79
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            269.08,
+            167.65,
+            273.6,
+            175.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            6.79
+          ]
+        },
+        {
+          "text": "R",
+          "bbox": [
+            315.9,
+            173.48,
+            320.8,
+            181.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            6.79
+          ]
+        },
+        {
+          "text": "Figure 1. Alice’s quantum mechanics, compared to Charlie’s. The world inside her horizon",
+          "bbox": [
+            85.68,
+            335.27,
+            526.35,
+            346.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "is drawn in blue and the time slice she quantizes on is in red. For reference Charlie’s world",
+          "bbox": [
+            85.68,
+            350.17,
+            526.36,
+            361.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "is in yellow, and the overlap is green. We’ve chosen Charlie’s black slice to coincide closely",
+          "bbox": [
+            85.68,
+            365.08,
+            526.33,
+            375.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "with Alice’s near B and R.",
+          "bbox": [
+            85.68,
+            379.98,
+            214.78,
+            390.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of Charlie. We argued that for an old black hole Charlie should see B being close",
+          "bbox": [
+            85.68,
+            411.04,
+            526.32,
+            423.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "to maximally entangled with RB, and by the third assumption about Alice this must",
+          "bbox": [
+            85.68,
+            426.93,
+            526.35,
+            439.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "also be true for her. But entanglement in quantum mechanics is monogamous: such",
+          "bbox": [
+            85.68,
+            442.83,
+            526.36,
+            454.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "entanglement prevents B from also being entangled with A as in (2.6). One way to",
+          "bbox": [
+            85.68,
+            458.72,
+            526.36,
+            470.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "see this more precisely, again following AMPS, who themselves were motivated by a",
+          "bbox": [
+            85.68,
+            474.61,
+            526.35,
+            486.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "similar argument due to Mathur [37], is to note that strong subadditivity [38] requires",
+          "bbox": [
+            85.68,
+            490.5,
+            526.41,
+            502.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "SABRB + SB ≤SAB + SBRB.",
+          "bbox": [
+            233.99,
+            518.19,
+            378.01,
+            533.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(2.7)",
+          "bbox": [
+            502.26,
+            518.34,
+            526.34,
+            530.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "By construction we have SBRB = 0, which also implies (for example by the Araki-Lieb",
+          "bbox": [
+            85.68,
+            546.19,
+            526.35,
+            561.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "triangle inequality) that SABRB = SA. For (2.7) to be consistent with the subadditivity",
+          "bbox": [
+            85.68,
+            562.08,
+            526.36,
+            577.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "inequality SA + SB ≥SAB we then must have",
+          "bbox": [
+            85.68,
+            577.81,
+            319.57,
+            591.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "IAB ≡SA + SB −SAB = 0.",
+          "bbox": [
+            237.03,
+            605.66,
+            374.97,
+            619.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(2.8)",
+          "bbox": [
+            502.26,
+            605.81,
+            526.34,
+            617.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "IAB is called the mutual information between A and B, and it is zero if and only if",
+          "bbox": [
+            85.68,
+            633.66,
+            526.34,
+            647.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "the density matrix ρAB is actually a product ρA ⊗ρB. This is clearly inconsistent with",
+          "bbox": [
+            85.68,
+            649.4,
+            526.32,
+            663.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "A and B being close to the highly entangled state (2.6). This concludes the AMPS",
+          "bbox": [
+            85.68,
+            665.44,
+            526.35,
+            677.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "– 11 –",
+          "bbox": [
+            290.39,
+            725.21,
+            321.63,
+            737.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 16,
+      "rotation": 0,
+      "drawings": 7,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2. What the computer does. The connecting lines at the top and bottom indicate entanglement, and time goes up. The subsystem H goes along for the ride, and after the computation its puriﬁcation is split between R and C in some complicated way."
+      ],
+      "labels": [
+        {
+          "text": "C",
+          "bbox": [
+            354.52,
+            136.6,
+            362.35,
+            148.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            10.84
+          ]
+        },
+        {
+          "text": "R",
+          "bbox": [
+            321.1,
+            137.49,
+            328.93,
+            149.59
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            10.84
+          ]
+        },
+        {
+          "text": "U",
+          "bbox": [
+            321.1,
+            161.21,
+            328.93,
+            173.31
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            10.84
+          ]
+        },
+        {
+          "text": "comp",
+          "bbox": [
+            327.88,
+            164.89,
+            344.45,
+            172.45
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            6.78
+          ]
+        },
+        {
+          "text": "B",
+          "bbox": [
+            253.34,
+            205.25,
+            260.56,
+            217.35
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            10.84
+          ]
+        },
+        {
+          "text": "R",
+          "bbox": [
+            321.09,
+            205.25,
+            328.92,
+            217.35
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            10.84
+          ]
+        },
+        {
+          "text": "C",
+          "bbox": [
+            354.97,
+            205.25,
+            362.8,
+            217.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            10.84
+          ]
+        },
+        {
+          "text": "Figure 2. What the computer does. The connecting lines at the top and bottom indicate",
+          "bbox": [
+            85.68,
+            278.58,
+            526.36,
+            289.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "entanglement, and time goes up. The subsystem H goes along for the ride, and after the",
+          "bbox": [
+            85.68,
+            293.48,
+            526.35,
+            304.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "computation its puriﬁcation is split between R and C in some complicated way.",
+          "bbox": [
+            85.68,
+            308.38,
+            466.83,
+            319.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "If both states are pure then the trace norm of their diﬀerence has a simple inter-",
+          "bbox": [
+            106.75,
+            341.57,
+            526.34,
+            353.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "pretation. For any two pure states |Ψ1⟩and Ψ2 we can write that",
+          "bbox": [
+            85.68,
+            357.3,
+            422.4,
+            371.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0012p",
+          "bbox": [
+            264.34,
+            382.47,
+            285.1,
+            400.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            387.41,
+            382.47,
+            396.21,
+            394.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1 −δ2/4|Ψ1⟩+ δ",
+          "bbox": [
+            285.1,
+            382.65,
+            370.35,
+            403.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "|Ψ2⟩= eiα",
+          "bbox": [
+            210.55,
+            388.91,
+            261.85,
+            403.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2|χ⟩",
+          "bbox": [
+            365.05,
+            390.58,
+            387.41,
+            410.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            398.2,
+            390.73,
+            401.45,
+            402.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(3.6)",
+          "bbox": [
+            502.26,
+            390.73,
+            526.34,
+            402.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "where |χ⟩is orthogonal to |Ψ1⟩, α is real, and δ is real and positive. A simple calculation",
+          "bbox": [
+            85.68,
+            423.85,
+            526.34,
+            436.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "then shows that",
+          "bbox": [
+            85.68,
+            439.9,
+            167.43,
+            451.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "|| |Ψ2⟩⟨Ψ2| −|Ψ1⟩⟨Ψ1| ||1 = δ.",
+          "bbox": [
+            232.09,
+            455.64,
+            379.91,
+            469.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(3.7)",
+          "bbox": [
+            502.26,
+            455.79,
+            526.34,
+            467.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "3.1",
+          "bbox": [
+            85.68,
+            483.52,
+            102.88,
+            495.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Quantum Computing is Hard",
+          "bbox": [
+            116.33,
+            483.52,
+            289.79,
+            495.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "We begin with a rather formal discussion of Alice’s computation to illustrate some basic",
+          "bbox": [
+            85.68,
+            505.59,
+            526.36,
+            517.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "limitations on what is possible; we will take a more standard approach in the following",
+          "bbox": [
+            85.68,
+            521.48,
+            526.38,
+            533.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "subsection. In order to do her computation Alice needs to adjoin the radiation to some",
+          "bbox": [
+            85.68,
+            537.37,
+            526.38,
+            549.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "computer, whose initial state lives in a new Hilbert space HC, and then wait for the",
+          "bbox": [
+            85.68,
+            553.1,
+            526.34,
+            566.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "natural unitary evolution Ucomp on HR ⊗HC to undo UR and put the bits which are",
+          "bbox": [
+            85.68,
+            568.99,
+            526.33,
+            582.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "entangled with B into an easily accessible form, let’s say the ﬁrst k qubits of the memory",
+          "bbox": [
+            85.68,
+            585.04,
+            526.33,
+            596.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of the computer. We show this pictorially in ﬁgure 2. For most of this subsection we",
+          "bbox": [
+            85.68,
+            600.93,
+            526.36,
+            612.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "will ﬁx the amount of time that the computer runs for, meaning that we will take Ucomp",
+          "bbox": [
+            85.68,
+            616.82,
+            525.83,
+            629.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "to be determined by the laws of physics and thus unchangeable. The only way Alice",
+          "bbox": [
+            85.68,
+            632.71,
+            526.34,
+            644.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "has any hope of getting the computer to do what she wants is by carefully choosing",
+          "bbox": [
+            85.68,
+            648.6,
+            526.37,
+            660.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "its initial state. Without loss of generality she can take this initial state to be pure,",
+          "bbox": [
+            85.68,
+            664.49,
+            526.37,
+            676.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "– 15 –",
+          "bbox": [
+            290.39,
+            725.21,
+            321.63,
+            737.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 21,
+      "rotation": 0,
+      "drawings": 20,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3. The standard representations of the three gates described in the text, as well as a simple circuit that maps the product basis |b1, b2⟩to a basis each element of which has the two qubits maximally entangled. In the CNOT gate the addition is done at the hollow circle."
+      ],
+      "labels": [
+        {
+          "text": "14",
+          "bbox": [
+            244.03,
+            123.89,
+            252.17,
+            134.57
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            7.04
+          ]
+        },
+        {
+          "text": "Z",
+          "bbox": [
+            234.87,
+            127.38,
+            243.46,
+            143.1
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            14.09
+          ]
+        },
+        {
+          "text": "H",
+          "bbox": [
+            167.26,
+            128.08,
+            177.43,
+            143.8
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            14.09
+          ]
+        },
+        {
+          "text": "H",
+          "bbox": [
+            394.25,
+            154.1,
+            400.35,
+            163.53
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            8.45
+          ]
+        },
+        {
+          "text": "Figure 3. The standard representations of the three gates described in the text, as well as",
+          "bbox": [
+            85.68,
+            221.88,
+            526.33,
+            232.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "a simple circuit that maps the product basis |b1, b2⟩to a basis each element of which has the",
+          "bbox": [
+            85.68,
+            236.65,
+            526.32,
+            248.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "two qubits maximally entangled. In the CNOT gate the addition is done at the hollow circle.",
+          "bbox": [
+            85.68,
+            251.69,
+            526.37,
+            262.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "To proceed further we need some basic idea of size and distance for the unitary",
+          "bbox": [
+            106.75,
+            283.38,
+            526.33,
+            295.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "group. The unitary group on n qubits is a compact manifold of dimension 22n, and we",
+          "bbox": [
+            85.68,
+            298.04,
+            526.33,
+            311.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "can parametrize its elements as",
+          "bbox": [
+            85.68,
+            315.16,
+            246.19,
+            327.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "U = ei P22n",
+          "bbox": [
+            266.83,
+            336.33,
+            322.35,
+            354.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX8",
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR12",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "a=1 cata.",
+          "bbox": [
+            310.44,
+            339.54,
+            345.17,
+            354.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(3.18)",
+          "bbox": [
+            496.41,
+            342.62,
+            526.34,
+            354.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Here ta are generators of the Lie algebra of U(2n), and we can very roughly think of",
+          "bbox": [
+            85.68,
+            363.5,
+            526.35,
+            379.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "the ca’s as parametrizing a unit cube in R22n. Also roughly we can think of linear",
+          "bbox": [
+            85.68,
+            381.12,
+            526.35,
+            396.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "distance in this unit cube as a measure of distance between the unitaries. For example",
+          "bbox": [
+            85.68,
+            399.62,
+            526.34,
+            411.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "say we wish to compute the diﬀerence between acting on some pure state |Ψ⟩with two",
+          "bbox": [
+            85.68,
+            415.36,
+            526.32,
+            427.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "diﬀerent unitary matrices U1 and U2 and then projecting onto some other state χ:",
+          "bbox": [
+            85.68,
+            431.4,
+            506.5,
+            445.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0010",
+          "bbox": [
+            240.01,
+            453.13,
+            247.14,
+            465.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0011",
+          "bbox": [
+            294.0,
+            453.13,
+            301.14,
+            465.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            379.42,
+            455.04,
+            396.68,
+            466.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "I −U2U †",
+          "bbox": [
+            247.15,
+            455.14,
+            293.5,
+            470.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "δcataU1|Ψ⟩.",
+          "bbox": [
+            398.68,
+            455.98,
+            456.58,
+            470.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "⟨χ|(U1 −U2)|Ψ⟩= ⟨χ|",
+          "bbox": [
+            125.5,
+            457.65,
+            238.02,
+            471.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "U1|Ψ⟩≈−i⟨χ|",
+          "bbox": [
+            303.14,
+            457.65,
+            377.43,
+            470.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(3.19)",
+          "bbox": [
+            496.41,
+            457.8,
+            526.34,
+            469.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            288.49,
+            463.85,
+            292.73,
+            471.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "a",
+          "bbox": [
+            385.81,
+            474.66,
+            390.3,
+            482.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "If the sum of the squares of the δca’s is less than ϵ2, the right hand side will be at most",
+          "bbox": [
+            85.68,
+            491.32,
+            526.34,
+            505.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "some low order polynomial in 2n times ϵ. This polynomial is irrelevant as we now see.",
+          "bbox": [
+            85.68,
+            504.1,
+            525.98,
+            520.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Around each of our (n2f)T circuits we can imagine a ball of radius ϵ in R22n. The",
+          "bbox": [
+            106.75,
+            519.99,
+            526.32,
+            536.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "volume of all the balls together will be of order the full volume of the unitary group",
+          "bbox": [
+            85.68,
+            540.22,
+            526.38,
+            552.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "when",
+          "bbox": [
+            85.68,
+            556.11,
+            112.34,
+            568.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(n2f)Tϵ22n ≈1.",
+          "bbox": [
+            267.13,
+            564.09,
+            344.87,
+            583.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(3.20)",
+          "bbox": [
+            496.41,
+            572.0,
+            526.34,
+            583.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Thus we see that in order to be able to make generic elements of U(2n) we need at least",
+          "bbox": [
+            85.68,
+            592.02,
+            526.33,
+            605.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u00121",
+          "bbox": [
+            322.71,
+            615.63,
+            338.56,
+            627.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            339.75,
+            615.63,
+            348.55,
+            627.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "T ∼22n log",
+          "bbox": [
+            263.45,
+            618.95,
+            320.56,
+            635.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(3.21)",
+          "bbox": [
+            496.4,
+            623.89,
+            526.34,
+            635.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ϵ",
+          "bbox": [
+            333.27,
+            632.09,
+            337.99,
+            644.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "gates, where we have kept only the leading dependence on n and ϵ.",
+          "bbox": [
+            85.68,
+            653.87,
+            448.29,
+            665.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "As promised,",
+          "bbox": [
+            458.02,
+            653.87,
+            526.32,
+            665.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "because ϵ appears inside a logarithm the crude nature of our deﬁnition of distance has",
+          "bbox": [
+            85.68,
+            669.76,
+            526.37,
+            681.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "– 20 –",
+          "bbox": [
+            290.39,
+            725.21,
+            321.63,
+            737.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 24,
+      "rotation": 0,
+      "drawings": 34,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4. The black hole dynamics for a 7-bit black hole. With each step the subfactor we interpret as the radiation gets larger."
+      ],
+      "labels": [
+        {
+          "text": "Figure 4. The black hole dynamics for a 7-bit black hole. With each step the subfactor we",
+          "bbox": [
+            85.68,
+            250.23,
+            526.35,
+            261.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "interpret as the radiation gets larger.",
+          "bbox": [
+            85.68,
+            265.13,
+            262.65,
+            276.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "So this equation tells us something about UR, whose complexity we are interested",
+          "bbox": [
+            106.75,
+            298.32,
+            526.32,
+            311.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "in understanding. To proceed further we need to make some sort of assumption about",
+          "bbox": [
+            85.68,
+            314.21,
+            526.36,
+            326.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Udyn.",
+          "bbox": [
+            85.68,
+            330.1,
+            111.35,
+            342.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "This is a question about the dynamics of quantum gravity so we can’t say",
+          "bbox": [
+            122.15,
+            330.1,
+            526.37,
+            342.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "anything too precise, but for those black holes which are well understood in matrix",
+          "bbox": [
+            85.68,
+            345.99,
+            526.37,
+            357.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "theory [44] or AdS/CFT [24, 45, 46] the dynamics are always some matrix quantum",
+          "bbox": [
+            85.68,
+            361.88,
+            526.41,
+            373.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "mechanics or matrix ﬁeld theory. Theories of this type can usually be simulated by",
+          "bbox": [
+            85.68,
+            377.77,
+            526.35,
+            389.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "polynomial-sized quantum circuits [47–50], so it seems quite reasonable to assume that",
+          "bbox": [
+            85.68,
+            393.66,
+            526.37,
+            405.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Udyn can be generated by a polynomial number of gates.22 Such circuits are usually",
+          "bbox": [
+            85.68,
+            405.21,
+            526.33,
+            423.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "called “small”, so more precisely we want to know the following: does the existence of a",
+          "bbox": [
+            85.68,
+            425.44,
+            526.36,
+            437.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "small circuit for Udyn imply the existence of a small circuit for UR? If the answer is yes,",
+          "bbox": [
+            85.68,
+            441.33,
+            526.3,
+            455.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "then our model would imply that Alice can decode RB out of the Hawking radiation",
+          "bbox": [
+            85.68,
+            457.22,
+            526.36,
+            470.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "fairly easily.",
+          "bbox": [
+            85.68,
+            473.11,
+            146.89,
+            485.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "It is clear that acting on the state |00000⟩init we can easily decompose Udyn into",
+          "bbox": [
+            106.75,
+            488.85,
+            526.33,
+            502.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "URUmix, where Umix is a simple circuit that entangles the ﬁrst four subfactors in",
+          "bbox": [
+            85.68,
+            504.89,
+            526.34,
+            518.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "|00000⟩init:",
+          "bbox": [
+            85.68,
+            520.63,
+            140.63,
+            533.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            298.6,
+            532.47,
+            304.46,
+            544.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            327.4,
+            537.8,
+            344.66,
+            549.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Umix|00000⟩init =",
+          "bbox": [
+            186.62,
+            540.41,
+            274.34,
+            554.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "|b⟩B|h⟩H|bh0⟩R.",
+          "bbox": [
+            346.66,
+            540.41,
+            425.38,
+            553.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(3.25)",
+          "bbox": [
+            496.41,
+            540.56,
+            526.34,
+            552.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            278.85,
+            548.8,
+            290.81,
+            560.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "|B||H|",
+          "bbox": [
+            290.81,
+            550.27,
+            324.21,
+            562.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "b,h",
+          "bbox": [
+            330.6,
+            557.78,
+            341.46,
+            565.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Umix is very easy to implement, we can just use the circuit on the right in ﬁgure 3",
+          "bbox": [
+            85.68,
+            573.18,
+            526.34,
+            586.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "22Technically this also assumes that the mapping from the “microscopic” degrees of freedom on",
+          "bbox": [
+            95.17,
+            594.91,
+            526.33,
+            606.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "which the quantum mechanics looks simple to the “macroscopic” basis (3.1) is relatively simple. For",
+          "bbox": [
+            85.68,
+            609.34,
+            526.33,
+            619.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "low energy ﬁelds outside the horizon this seems plausible to us, for example in AdS/CFT the well-",
+          "bbox": [
+            85.68,
+            622.5,
+            526.35,
+            632.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "known construction of [51] seems to accomplish this in a straightforward way for operators outside the",
+          "bbox": [
+            85.68,
+            635.65,
+            526.37,
+            645.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "horizon. We discuss this more in section (6) below.",
+          "bbox": [
+            85.68,
+            648.8,
+            308.51,
+            658.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "– 23 –",
+          "bbox": [
+            290.39,
+            725.21,
+            321.63,
+            737.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 28,
+      "rotation": 0,
+      "drawings": 11,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 5. Quantum error correction. Here S is the system whose state we want to restore, E is the environment it becomes entangled with via the interaction Unoise, and A is the ancilla it interacts with via Ucorrect. At the end the environment is entangled with the ancilla and the system S is in the same quantum state it started in."
+      ],
+      "labels": [
+        {
+          "text": "U",
+          "bbox": [
+            309.4,
+            132.35,
+            317.69,
+            145.18
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            11.49
+          ]
+        },
+        {
+          "text": "correct",
+          "bbox": [
+            317.49,
+            138.49,
+            337.99,
+            145.97
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            6.7
+          ]
+        },
+        {
+          "text": "U",
+          "bbox": [
+            289.24,
+            179.17,
+            297.54,
+            192.0
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            11.49
+          ]
+        },
+        {
+          "text": "noise",
+          "bbox": [
+            296.42,
+            184.94,
+            312.45,
+            192.42
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            6.7
+          ]
+        },
+        {
+          "text": "E",
+          "bbox": [
+            272.48,
+            203.11,
+            280.13,
+            215.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            11.49
+          ]
+        },
+        {
+          "text": "S",
+          "bbox": [
+            296.41,
+            203.11,
+            304.06,
+            215.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            11.49
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            320.37,
+            203.11,
+            328.02,
+            215.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            11.49
+          ]
+        },
+        {
+          "text": "Figure 5. Quantum error correction. Here S is the system whose state we want to restore, E",
+          "bbox": [
+            85.68,
+            250.23,
+            525.69,
+            261.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "is the environment it becomes entangled with via the interaction Unoise, and A is the ancilla",
+          "bbox": [
+            85.68,
+            265.13,
+            526.33,
+            277.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "it interacts with via Ucorrect. At the end the environment is entangled with the ancilla and",
+          "bbox": [
+            85.68,
+            280.04,
+            526.37,
+            291.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "the system S is in the same quantum state it started in.",
+          "bbox": [
+            85.68,
+            294.94,
+            354.32,
+            305.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the environment from the system whose state we want to restore to the ancillary system.",
+          "bbox": [
+            85.68,
+            328.04,
+            526.36,
+            339.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "We show this pictorially in ﬁgure 5.",
+          "bbox": [
+            85.68,
+            343.93,
+            268.57,
+            355.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Error correction is not always possible. For example, say that the transformation",
+          "bbox": [
+            106.75,
+            359.82,
+            526.4,
+            371.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Unoise from ﬁgure 5 is such that it results in the system S being maximally entangled",
+          "bbox": [
+            85.68,
+            375.71,
+            526.34,
+            389.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "with the environment E. There is no information about its initial state remaining in",
+          "bbox": [
+            85.68,
+            391.6,
+            526.37,
+            403.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "S, and no choice of Ucorrect will allow recovery. What is perhaps surprising is that",
+          "bbox": [
+            85.68,
+            407.49,
+            526.35,
+            421.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "it is ever possible to restore the initial state after a nontrivial Unoise has acted. To",
+          "bbox": [
+            85.68,
+            423.38,
+            526.33,
+            437.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "see that this can be done, following Shor [53] we consider an arbitrary superposition",
+          "bbox": [
+            85.68,
+            439.27,
+            526.38,
+            451.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "|Ψ⟩= a+|+⟩+ a−|−⟩of the following two nine-qubit states:",
+          "bbox": [
+            85.68,
+            455.01,
+            391.57,
+            468.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            201.91,
+            478.66,
+            207.76,
+            490.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "|±⟩≡",
+          "bbox": [
+            160.9,
+            486.59,
+            190.8,
+            498.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "23/2 (|000⟩± |111⟩) (|000⟩± |111⟩) (|000⟩± |111⟩) .",
+          "bbox": [
+            195.3,
+            486.59,
+            451.1,
+            506.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(4.1)",
+          "bbox": [
+            502.26,
+            486.74,
+            526.34,
+            498.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "As a crude model of interaction with the environment, we can imagine that the state",
+          "bbox": [
+            85.68,
+            516.05,
+            526.36,
+            528.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "|Ψ⟩will be acted on randomly by a single Pauli operator X, Y , or Z on one of its",
+          "bbox": [
+            85.68,
+            531.78,
+            526.33,
+            543.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "nine qubits. After this can we restore the state |Ψ⟩without destroying it? As Shor",
+          "bbox": [
+            85.68,
+            547.67,
+            526.34,
+            559.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "explained in [53], we can. The idea is to measure the following set of eight “check”",
+          "bbox": [
+            85.68,
+            563.72,
+            526.35,
+            575.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "operators:",
+          "bbox": [
+            85.68,
+            579.61,
+            136.81,
+            591.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Z1Z2,",
+          "bbox": [
+            157.26,
+            607.3,
+            186.0,
+            620.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Z2Z3,",
+          "bbox": [
+            209.41,
+            607.3,
+            238.16,
+            620.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Z4Z5,",
+          "bbox": [
+            263.56,
+            607.3,
+            292.3,
+            620.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Z5Z6,",
+          "bbox": [
+            317.71,
+            607.3,
+            346.45,
+            620.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Z7Z8,",
+          "bbox": [
+            371.85,
+            607.3,
+            400.59,
+            620.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Z8Z9,",
+          "bbox": [
+            426.0,
+            607.3,
+            454.74,
+            620.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "X1X2X3X4X5X6,",
+          "bbox": [
+            186.0,
+            626.18,
+            275.94,
+            639.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "and",
+          "bbox": [
+            301.34,
+            626.18,
+            320.21,
+            638.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "X4X5X6X7X8X9.",
+          "bbox": [
+            343.62,
+            626.18,
+            433.55,
+            639.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(4.2)",
+          "bbox": [
+            502.26,
+            626.18,
+            526.34,
+            638.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Since the states |±⟩are both eigenstates of eigenvalue one for all eight of these operators,",
+          "bbox": [
+            85.68,
+            653.72,
+            526.37,
+            665.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "this measurement will do nothing to the state Ψ. Let’s say however that interaction",
+          "bbox": [
+            85.68,
+            669.76,
+            526.38,
+            681.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "– 27 –",
+          "bbox": [
+            290.39,
+            725.21,
+            321.63,
+            737.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 57,
+      "rotation": 0,
+      "drawings": 10,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 6. The construction of bulk operators by Kabat, Lifschytz, and Lowe for an AdS black hole. Here the yellow region is a lightcone ending on the operator and extending out to the boundary, and the operator is constructed by integrating a CFT operator over the boundary of the yellow region against a kernel that depends on the position of the operator. Note that as the operator approaches the horizon the operator becomes sensitive to the entire history on the boundary and thus to the details of the quantum state."
+      ],
+      "labels": [
+        {
+          "text": "Figure 6. The construction of bulk operators by Kabat, Lifschytz, and Lowe for an AdS",
+          "bbox": [
+            85.68,
+            250.23,
+            526.39,
+            261.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "black hole. Here the yellow region is a lightcone ending on the operator and extending out",
+          "bbox": [
+            85.68,
+            265.13,
+            526.39,
+            276.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "to the boundary, and the operator is constructed by integrating a CFT operator over the",
+          "bbox": [
+            85.68,
+            280.04,
+            526.4,
+            290.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "boundary of the yellow region against a kernel that depends on the position of the operator.",
+          "bbox": [
+            85.68,
+            294.94,
+            526.41,
+            305.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Note that as the operator approaches the horizon the operator becomes sensitive to the entire",
+          "bbox": [
+            85.68,
+            309.85,
+            526.33,
+            320.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "history on the boundary and thus to the details of the quantum state.",
+          "bbox": [
+            85.68,
+            324.75,
+            420.91,
+            335.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "from measurements that are not precisely well-deﬁned. Without such an embedding,",
+          "bbox": [
+            85.68,
+            357.93,
+            526.34,
+            369.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "it would seem like strong complementarity would amount to a step backwards; even in",
+          "bbox": [
+            85.68,
+            373.82,
+            526.37,
+            385.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "AdS space the CFT would not be a complete description of the physics of an infalling",
+          "bbox": [
+            85.68,
+            389.72,
+            526.34,
+            401.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "observer.47",
+          "bbox": [
+            85.68,
+            404.38,
+            139.73,
+            417.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "As we discussed above this embedding has been called A = RB in the",
+          "bbox": [
+            149.58,
+            405.61,
+            526.32,
+            419.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "context of ﬁrewalls; in the remainder of this section we sketch a basic proposal for how",
+          "bbox": [
+            85.68,
+            421.5,
+            526.36,
+            433.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "it could work more precisely.",
+          "bbox": [
+            85.68,
+            437.39,
+            232.73,
+            449.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "We imagine that there is a single Hilbert space H, which we will think of as the",
+          "bbox": [
+            106.75,
+            453.12,
+            526.32,
+            465.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "CFT Hilbert space in an AdS setup to be concrete. To understand Charlie’s physics on",
+          "bbox": [
+            85.68,
+            469.17,
+            526.32,
+            481.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "some spatial slice like the black one in ﬁgure 1, we need to compute expectation values",
+          "bbox": [
+            85.68,
+            485.06,
+            526.35,
+            497.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of some set of operators Cn, which approximately commute.48 Indeed there is a fairly",
+          "bbox": [
+            85.68,
+            496.61,
+            526.32,
+            513.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "well-known construction [51] for constructing these operators in some cases, which we",
+          "bbox": [
+            85.68,
+            516.84,
+            526.35,
+            528.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "illustrate in ﬁgure 6.",
+          "bbox": [
+            85.68,
+            532.73,
+            190.47,
+            544.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Our proposal for the interior is then that there is another set of operators, which",
+          "bbox": [
+            106.75,
+            548.62,
+            526.39,
+            560.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "we will call An’s, which are also mutually commuting with each other and whose expec-",
+          "bbox": [
+            85.68,
+            564.51,
+            526.34,
+            577.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "tation values in the same (Heisenberg picture) state used by Charlie describe Alice’s",
+          "bbox": [
+            85.68,
+            580.4,
+            526.32,
+            592.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "experience on the red slice in ﬁgure 1. Some of the An’s are interpreted by Alice as",
+          "bbox": [
+            85.68,
+            596.29,
+            526.33,
+            609.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "47The point of view of that follows here is in some respects close to that of [16], although we disagree",
+          "bbox": [
+            95.17,
+            618.02,
+            526.33,
+            629.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "with their assertion that their construction by itself addresses the argument of AMPS.",
+          "bbox": [
+            85.68,
+            632.45,
+            463.06,
+            642.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "48It is interesting to ask whether approximately commute means up to powers in N −1 or up to",
+          "bbox": [
+            95.17,
+            641.15,
+            526.34,
+            654.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "exponentially small terms in N. We are agnostic about this here.",
+          "bbox": [
+            85.68,
+            657.92,
+            370.45,
+            667.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "– 56 –",
+          "bbox": [
+            290.39,
+            725.21,
+            321.63,
+            737.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    }
+  ]
+}
