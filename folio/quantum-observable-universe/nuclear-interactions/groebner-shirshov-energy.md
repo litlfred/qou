@@ -1,4 +1,4 @@
-The Gröbner--Shirshov basis theory gives a stronger result than uniqueness: the energy of the nuclear braid word is a topological invariant, computed with no path dependence.
+The Gröbner--Shirshov basis theory gives a stronger result than uniqueness: the energy of the nuclear braid word is a topological invariant, computed with no path dependence. The invariance holds for a fixed word; it does not say that the word selected for a nucleus is independent of the order in which it was assembled.
 
 **Theorem.**
 Define the energy functional on $H_A(q)$ by

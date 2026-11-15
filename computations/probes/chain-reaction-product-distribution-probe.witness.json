@@ -1,0 +1,6693 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-15T14:51:57.473307+00:00",
+  "commitSha": "f011993335b906931f93f35b3fe0ec3486c1a72c",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 671262,
+  "computation": "chain-reaction-product-distribution-probe",
+  "scriptFile": "chain_reaction_product_distribution_probe.py",
+  "scriptHash": "7bb3faa1f6e0",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "mpmath": "1.4.1",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/chain_reaction_product_distribution_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/chain_reaction_product_distribution_probe.py"
+  },
+  "description": "Stable states and pathway end states of the bonded three-particle gamma-gamma chain under reading 3 per bonded group (convention D, proton pin); lexicographic (violation, crossings) energy is a stated choice. Counts reachable products, no rates.",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "dps": 40,
+    "kmax": 6,
+    "mmax": 3
+  },
+  "data": {
+    "stable_states": [
+      {
+        "state": [
+          1,
+          2,
+          3,
+          1,
+          2
+        ],
+        "viol": "0.0",
+        "cost": 24,
+        "feasible": true
+      },
+      {
+        "state": [
+          1,
+          3,
+          2,
+          2,
+          2
+        ],
+        "viol": "0.0",
+        "cost": 28,
+        "feasible": true
+      },
+      {
+        "state": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "viol": "0.0",
+        "cost": 26,
+        "feasible": true
+      },
+      {
+        "state": [
+          1,
+          4,
+          5,
+          1,
+          1
+        ],
+        "viol": "1.06919154641651104316333440436169586007803769203039833859563",
+        "cost": 28,
+        "feasible": false
+      },
+      {
+        "state": [
+          2,
+          1,
+          3,
+          2,
+          2
+        ],
+        "viol": "0.0",
+        "cost": 28,
+        "feasible": true
+      },
+      {
+        "state": [
+          2,
+          3,
+          1,
+          2,
+          2
+        ],
+        "viol": "0.0",
+        "cost": 28,
+        "feasible": true
+      },
+      {
+        "state": [
+          2,
+          4,
+          1,
+          1,
+          1
+        ],
+        "viol": "1.10359679531079536856192692794195858981794633681605220158401",
+        "cost": 22,
+        "feasible": false
+      },
+      {
+        "state": [
+          3,
+          1,
+          2,
+          2,
+          1
+        ],
+        "viol": "0.0",
+        "cost": 24,
+        "feasible": true
+      },
+      {
+        "state": [
+          3,
+          2,
+          1,
+          2,
+          2
+        ],
+        "viol": "0.0",
+        "cost": 28,
+        "feasible": true
+      },
+      {
+        "state": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "viol": "0.0",
+        "cost": 30,
+        "feasible": true
+      },
+      {
+        "state": [
+          5,
+          1,
+          5,
+          1,
+          2
+        ],
+        "viol": "0.763109694864037117787391087440290190424682288313787083784696",
+        "cost": 34,
+        "feasible": false
+      }
+    ],
+    "global_optimum": {
+      "state": [
+        1,
+        2,
+        3,
+        1,
+        2
+      ],
+      "viol": "0.0",
+      "cost": 24,
+      "feasible": true
+    },
+    "pathways": [
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k0",
+          "k1",
+          "k2",
+          "m0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k0",
+          "k1",
+          "k2",
+          "m1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k0",
+          "k1",
+          "m0",
+          "k2",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k0",
+          "k1",
+          "m0",
+          "m1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k0",
+          "k1",
+          "m1",
+          "k2",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k0",
+          "k1",
+          "m1",
+          "m0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k0",
+          "k2",
+          "k1",
+          "m0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k0",
+          "k2",
+          "k1",
+          "m1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k0",
+          "k2",
+          "m0",
+          "k1",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k0",
+          "k2",
+          "m0",
+          "m1",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k0",
+          "k2",
+          "m1",
+          "k1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k0",
+          "k2",
+          "m1",
+          "m0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k0",
+          "m0",
+          "k1",
+          "k2",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k0",
+          "m0",
+          "k1",
+          "m1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k0",
+          "m0",
+          "k2",
+          "k1",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k0",
+          "m0",
+          "k2",
+          "m1",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k0",
+          "m0",
+          "m1",
+          "k1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k0",
+          "m0",
+          "m1",
+          "k2",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k0",
+          "m1",
+          "k1",
+          "k2",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k0",
+          "m1",
+          "k1",
+          "m0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k0",
+          "m1",
+          "k2",
+          "k1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k0",
+          "m1",
+          "k2",
+          "m0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k0",
+          "m1",
+          "m0",
+          "k1",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k0",
+          "m1",
+          "m0",
+          "k2",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k1",
+          "k0",
+          "k2",
+          "m0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k1",
+          "k0",
+          "k2",
+          "m1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k1",
+          "k0",
+          "m0",
+          "k2",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k1",
+          "k0",
+          "m0",
+          "m1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k1",
+          "k0",
+          "m1",
+          "k2",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k1",
+          "k0",
+          "m1",
+          "m0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k1",
+          "k2",
+          "k0",
+          "m0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k1",
+          "k2",
+          "k0",
+          "m1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k1",
+          "k2",
+          "m0",
+          "k0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k1",
+          "k2",
+          "m0",
+          "m1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k1",
+          "k2",
+          "m1",
+          "k0",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k1",
+          "k2",
+          "m1",
+          "m0",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k1",
+          "m0",
+          "k0",
+          "k2",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k1",
+          "m0",
+          "k0",
+          "m1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k1",
+          "m0",
+          "k2",
+          "k0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k1",
+          "m0",
+          "k2",
+          "m1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k1",
+          "m0",
+          "m1",
+          "k0",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k1",
+          "m0",
+          "m1",
+          "k2",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k1",
+          "m1",
+          "k0",
+          "k2",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k1",
+          "m1",
+          "k0",
+          "m0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k1",
+          "m1",
+          "k2",
+          "k0",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k1",
+          "m1",
+          "k2",
+          "m0",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k1",
+          "m1",
+          "m0",
+          "k0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k1",
+          "m1",
+          "m0",
+          "k2",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k2",
+          "k0",
+          "k1",
+          "m0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k2",
+          "k0",
+          "k1",
+          "m1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k2",
+          "k0",
+          "m0",
+          "k1",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k2",
+          "k0",
+          "m0",
+          "m1",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k2",
+          "k0",
+          "m1",
+          "k1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k2",
+          "k0",
+          "m1",
+          "m0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k2",
+          "k1",
+          "k0",
+          "m0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k2",
+          "k1",
+          "k0",
+          "m1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k2",
+          "k1",
+          "m0",
+          "k0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k2",
+          "k1",
+          "m0",
+          "m1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k2",
+          "k1",
+          "m1",
+          "k0",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k2",
+          "k1",
+          "m1",
+          "m0",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k2",
+          "m0",
+          "k0",
+          "k1",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k2",
+          "m0",
+          "k0",
+          "m1",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k2",
+          "m0",
+          "k1",
+          "k0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k2",
+          "m0",
+          "k1",
+          "m1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k2",
+          "m0",
+          "m1",
+          "k0",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k2",
+          "m0",
+          "m1",
+          "k1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k2",
+          "m1",
+          "k0",
+          "k1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k2",
+          "m1",
+          "k0",
+          "m0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k2",
+          "m1",
+          "k1",
+          "k0",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k2",
+          "m1",
+          "k1",
+          "m0",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k2",
+          "m1",
+          "m0",
+          "k0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "k2",
+          "m1",
+          "m0",
+          "k1",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m0",
+          "k0",
+          "k1",
+          "k2",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m0",
+          "k0",
+          "k1",
+          "m1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m0",
+          "k0",
+          "k2",
+          "k1",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m0",
+          "k0",
+          "k2",
+          "m1",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m0",
+          "k0",
+          "m1",
+          "k1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m0",
+          "k0",
+          "m1",
+          "k2",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m0",
+          "k1",
+          "k0",
+          "k2",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m0",
+          "k1",
+          "k0",
+          "m1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m0",
+          "k1",
+          "k2",
+          "k0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m0",
+          "k1",
+          "k2",
+          "m1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m0",
+          "k1",
+          "m1",
+          "k0",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m0",
+          "k1",
+          "m1",
+          "k2",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m0",
+          "k2",
+          "k0",
+          "k1",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m0",
+          "k2",
+          "k0",
+          "m1",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m0",
+          "k2",
+          "k1",
+          "k0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m0",
+          "k2",
+          "k1",
+          "m1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m0",
+          "k2",
+          "m1",
+          "k0",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m0",
+          "k2",
+          "m1",
+          "k1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m0",
+          "m1",
+          "k0",
+          "k1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m0",
+          "m1",
+          "k0",
+          "k2",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m0",
+          "m1",
+          "k1",
+          "k0",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m0",
+          "m1",
+          "k1",
+          "k2",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m0",
+          "m1",
+          "k2",
+          "k0",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m0",
+          "m1",
+          "k2",
+          "k1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m1",
+          "k0",
+          "k1",
+          "k2",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m1",
+          "k0",
+          "k1",
+          "m0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m1",
+          "k0",
+          "k2",
+          "k1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m1",
+          "k0",
+          "k2",
+          "m0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m1",
+          "k0",
+          "m0",
+          "k1",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m1",
+          "k0",
+          "m0",
+          "k2",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m1",
+          "k1",
+          "k0",
+          "k2",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m1",
+          "k1",
+          "k0",
+          "m0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m1",
+          "k1",
+          "k2",
+          "k0",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m1",
+          "k1",
+          "k2",
+          "m0",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m1",
+          "k1",
+          "m0",
+          "k0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m1",
+          "k1",
+          "m0",
+          "k2",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m1",
+          "k2",
+          "k0",
+          "k1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m1",
+          "k2",
+          "k0",
+          "m0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m1",
+          "k2",
+          "k1",
+          "k0",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m1",
+          "k2",
+          "k1",
+          "m0",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m1",
+          "k2",
+          "m0",
+          "k0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m1",
+          "k2",
+          "m0",
+          "k1",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m1",
+          "m0",
+          "k0",
+          "k1",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m1",
+          "m0",
+          "k0",
+          "k2",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m1",
+          "m0",
+          "k1",
+          "k0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m1",
+          "m0",
+          "k1",
+          "k2",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m1",
+          "m0",
+          "k2",
+          "k0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond0_then_bond1",
+        "sweep_order": [
+          "m1",
+          "m0",
+          "k2",
+          "k1",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k0",
+          "k1",
+          "k2",
+          "m0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k0",
+          "k1",
+          "k2",
+          "m1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k0",
+          "k1",
+          "m0",
+          "k2",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k0",
+          "k1",
+          "m0",
+          "m1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k0",
+          "k1",
+          "m1",
+          "k2",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k0",
+          "k1",
+          "m1",
+          "m0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k0",
+          "k2",
+          "k1",
+          "m0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k0",
+          "k2",
+          "k1",
+          "m1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k0",
+          "k2",
+          "m0",
+          "k1",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k0",
+          "k2",
+          "m0",
+          "m1",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k0",
+          "k2",
+          "m1",
+          "k1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k0",
+          "k2",
+          "m1",
+          "m0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k0",
+          "m0",
+          "k1",
+          "k2",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k0",
+          "m0",
+          "k1",
+          "m1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k0",
+          "m0",
+          "k2",
+          "k1",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k0",
+          "m0",
+          "k2",
+          "m1",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k0",
+          "m0",
+          "m1",
+          "k1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k0",
+          "m0",
+          "m1",
+          "k2",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k0",
+          "m1",
+          "k1",
+          "k2",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k0",
+          "m1",
+          "k1",
+          "m0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k0",
+          "m1",
+          "k2",
+          "k1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k0",
+          "m1",
+          "k2",
+          "m0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k0",
+          "m1",
+          "m0",
+          "k1",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k0",
+          "m1",
+          "m0",
+          "k2",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k1",
+          "k0",
+          "k2",
+          "m0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k1",
+          "k0",
+          "k2",
+          "m1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k1",
+          "k0",
+          "m0",
+          "k2",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k1",
+          "k0",
+          "m0",
+          "m1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k1",
+          "k0",
+          "m1",
+          "k2",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k1",
+          "k0",
+          "m1",
+          "m0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k1",
+          "k2",
+          "k0",
+          "m0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k1",
+          "k2",
+          "k0",
+          "m1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k1",
+          "k2",
+          "m0",
+          "k0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k1",
+          "k2",
+          "m0",
+          "m1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k1",
+          "k2",
+          "m1",
+          "k0",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k1",
+          "k2",
+          "m1",
+          "m0",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k1",
+          "m0",
+          "k0",
+          "k2",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k1",
+          "m0",
+          "k0",
+          "m1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k1",
+          "m0",
+          "k2",
+          "k0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k1",
+          "m0",
+          "k2",
+          "m1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k1",
+          "m0",
+          "m1",
+          "k0",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k1",
+          "m0",
+          "m1",
+          "k2",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k1",
+          "m1",
+          "k0",
+          "k2",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k1",
+          "m1",
+          "k0",
+          "m0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k1",
+          "m1",
+          "k2",
+          "k0",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k1",
+          "m1",
+          "k2",
+          "m0",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k1",
+          "m1",
+          "m0",
+          "k0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k1",
+          "m1",
+          "m0",
+          "k2",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k2",
+          "k0",
+          "k1",
+          "m0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k2",
+          "k0",
+          "k1",
+          "m1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k2",
+          "k0",
+          "m0",
+          "k1",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k2",
+          "k0",
+          "m0",
+          "m1",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k2",
+          "k0",
+          "m1",
+          "k1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k2",
+          "k0",
+          "m1",
+          "m0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k2",
+          "k1",
+          "k0",
+          "m0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k2",
+          "k1",
+          "k0",
+          "m1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k2",
+          "k1",
+          "m0",
+          "k0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k2",
+          "k1",
+          "m0",
+          "m1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k2",
+          "k1",
+          "m1",
+          "k0",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k2",
+          "k1",
+          "m1",
+          "m0",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k2",
+          "m0",
+          "k0",
+          "k1",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k2",
+          "m0",
+          "k0",
+          "m1",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k2",
+          "m0",
+          "k1",
+          "k0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k2",
+          "m0",
+          "k1",
+          "m1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k2",
+          "m0",
+          "m1",
+          "k0",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k2",
+          "m0",
+          "m1",
+          "k1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k2",
+          "m1",
+          "k0",
+          "k1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k2",
+          "m1",
+          "k0",
+          "m0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k2",
+          "m1",
+          "k1",
+          "k0",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k2",
+          "m1",
+          "k1",
+          "m0",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k2",
+          "m1",
+          "m0",
+          "k0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "k2",
+          "m1",
+          "m0",
+          "k1",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m0",
+          "k0",
+          "k1",
+          "k2",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m0",
+          "k0",
+          "k1",
+          "m1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m0",
+          "k0",
+          "k2",
+          "k1",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m0",
+          "k0",
+          "k2",
+          "m1",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m0",
+          "k0",
+          "m1",
+          "k1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m0",
+          "k0",
+          "m1",
+          "k2",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m0",
+          "k1",
+          "k0",
+          "k2",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m0",
+          "k1",
+          "k0",
+          "m1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m0",
+          "k1",
+          "k2",
+          "k0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m0",
+          "k1",
+          "k2",
+          "m1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m0",
+          "k1",
+          "m1",
+          "k0",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m0",
+          "k1",
+          "m1",
+          "k2",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m0",
+          "k2",
+          "k0",
+          "k1",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m0",
+          "k2",
+          "k0",
+          "m1",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m0",
+          "k2",
+          "k1",
+          "k0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m0",
+          "k2",
+          "k1",
+          "m1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m0",
+          "k2",
+          "m1",
+          "k0",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m0",
+          "k2",
+          "m1",
+          "k1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m0",
+          "m1",
+          "k0",
+          "k1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m0",
+          "m1",
+          "k0",
+          "k2",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m0",
+          "m1",
+          "k1",
+          "k0",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m0",
+          "m1",
+          "k1",
+          "k2",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m0",
+          "m1",
+          "k2",
+          "k0",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m0",
+          "m1",
+          "k2",
+          "k1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m1",
+          "k0",
+          "k1",
+          "k2",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m1",
+          "k0",
+          "k1",
+          "m0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m1",
+          "k0",
+          "k2",
+          "k1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m1",
+          "k0",
+          "k2",
+          "m0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m1",
+          "k0",
+          "m0",
+          "k1",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m1",
+          "k0",
+          "m0",
+          "k2",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m1",
+          "k1",
+          "k0",
+          "k2",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m1",
+          "k1",
+          "k0",
+          "m0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m1",
+          "k1",
+          "k2",
+          "k0",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m1",
+          "k1",
+          "k2",
+          "m0",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m1",
+          "k1",
+          "m0",
+          "k0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m1",
+          "k1",
+          "m0",
+          "k2",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m1",
+          "k2",
+          "k0",
+          "k1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m1",
+          "k2",
+          "k0",
+          "m0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m1",
+          "k2",
+          "k1",
+          "k0",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m1",
+          "k2",
+          "k1",
+          "m0",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m1",
+          "k2",
+          "m0",
+          "k0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m1",
+          "k2",
+          "m0",
+          "k1",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m1",
+          "m0",
+          "k0",
+          "k1",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m1",
+          "m0",
+          "k0",
+          "k2",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m1",
+          "m0",
+          "k1",
+          "k0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m1",
+          "m0",
+          "k1",
+          "k2",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m1",
+          "m0",
+          "k2",
+          "k0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "bond1_then_bond0",
+        "sweep_order": [
+          "m1",
+          "m0",
+          "k2",
+          "k1",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k0",
+          "k1",
+          "k2",
+          "m0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k0",
+          "k1",
+          "k2",
+          "m1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k0",
+          "k1",
+          "m0",
+          "k2",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k0",
+          "k1",
+          "m0",
+          "m1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k0",
+          "k1",
+          "m1",
+          "k2",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k0",
+          "k1",
+          "m1",
+          "m0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k0",
+          "k2",
+          "k1",
+          "m0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k0",
+          "k2",
+          "k1",
+          "m1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k0",
+          "k2",
+          "m0",
+          "k1",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k0",
+          "k2",
+          "m0",
+          "m1",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k0",
+          "k2",
+          "m1",
+          "k1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k0",
+          "k2",
+          "m1",
+          "m0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k0",
+          "m0",
+          "k1",
+          "k2",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k0",
+          "m0",
+          "k1",
+          "m1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k0",
+          "m0",
+          "k2",
+          "k1",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k0",
+          "m0",
+          "k2",
+          "m1",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k0",
+          "m0",
+          "m1",
+          "k1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k0",
+          "m0",
+          "m1",
+          "k2",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k0",
+          "m1",
+          "k1",
+          "k2",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k0",
+          "m1",
+          "k1",
+          "m0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k0",
+          "m1",
+          "k2",
+          "k1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k0",
+          "m1",
+          "k2",
+          "m0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k0",
+          "m1",
+          "m0",
+          "k1",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k0",
+          "m1",
+          "m0",
+          "k2",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k1",
+          "k0",
+          "k2",
+          "m0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k1",
+          "k0",
+          "k2",
+          "m1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k1",
+          "k0",
+          "m0",
+          "k2",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k1",
+          "k0",
+          "m0",
+          "m1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k1",
+          "k0",
+          "m1",
+          "k2",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k1",
+          "k0",
+          "m1",
+          "m0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k1",
+          "k2",
+          "k0",
+          "m0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k1",
+          "k2",
+          "k0",
+          "m1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k1",
+          "k2",
+          "m0",
+          "k0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k1",
+          "k2",
+          "m0",
+          "m1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k1",
+          "k2",
+          "m1",
+          "k0",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k1",
+          "k2",
+          "m1",
+          "m0",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k1",
+          "m0",
+          "k0",
+          "k2",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k1",
+          "m0",
+          "k0",
+          "m1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k1",
+          "m0",
+          "k2",
+          "k0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k1",
+          "m0",
+          "k2",
+          "m1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k1",
+          "m0",
+          "m1",
+          "k0",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k1",
+          "m0",
+          "m1",
+          "k2",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k1",
+          "m1",
+          "k0",
+          "k2",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k1",
+          "m1",
+          "k0",
+          "m0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k1",
+          "m1",
+          "k2",
+          "k0",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k1",
+          "m1",
+          "k2",
+          "m0",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k1",
+          "m1",
+          "m0",
+          "k0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k1",
+          "m1",
+          "m0",
+          "k2",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k2",
+          "k0",
+          "k1",
+          "m0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k2",
+          "k0",
+          "k1",
+          "m1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 5
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k2",
+          "k0",
+          "m0",
+          "k1",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k2",
+          "k0",
+          "m0",
+          "m1",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k2",
+          "k0",
+          "m1",
+          "k1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k2",
+          "k0",
+          "m1",
+          "m0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k2",
+          "k1",
+          "k0",
+          "m0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k2",
+          "k1",
+          "k0",
+          "m1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 3
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k2",
+          "k1",
+          "m0",
+          "k0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k2",
+          "k1",
+          "m0",
+          "m1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k2",
+          "k1",
+          "m1",
+          "k0",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k2",
+          "k1",
+          "m1",
+          "m0",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k2",
+          "m0",
+          "k0",
+          "k1",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k2",
+          "m0",
+          "k0",
+          "m1",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k2",
+          "m0",
+          "k1",
+          "k0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k2",
+          "m0",
+          "k1",
+          "m1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k2",
+          "m0",
+          "m1",
+          "k0",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k2",
+          "m0",
+          "m1",
+          "k1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k2",
+          "m1",
+          "k0",
+          "k1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k2",
+          "m1",
+          "k0",
+          "m0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k2",
+          "m1",
+          "k1",
+          "k0",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k2",
+          "m1",
+          "k1",
+          "m0",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k2",
+          "m1",
+          "m0",
+          "k0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "k2",
+          "m1",
+          "m0",
+          "k1",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m0",
+          "k0",
+          "k1",
+          "k2",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m0",
+          "k0",
+          "k1",
+          "m1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m0",
+          "k0",
+          "k2",
+          "k1",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m0",
+          "k0",
+          "k2",
+          "m1",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m0",
+          "k0",
+          "m1",
+          "k1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m0",
+          "k0",
+          "m1",
+          "k2",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m0",
+          "k1",
+          "k0",
+          "k2",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m0",
+          "k1",
+          "k0",
+          "m1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m0",
+          "k1",
+          "k2",
+          "k0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m0",
+          "k1",
+          "k2",
+          "m1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m0",
+          "k1",
+          "m1",
+          "k0",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m0",
+          "k1",
+          "m1",
+          "k2",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m0",
+          "k2",
+          "k0",
+          "k1",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m0",
+          "k2",
+          "k0",
+          "m1",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m0",
+          "k2",
+          "k1",
+          "k0",
+          "m1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m0",
+          "k2",
+          "k1",
+          "m1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m0",
+          "k2",
+          "m1",
+          "k0",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m0",
+          "k2",
+          "m1",
+          "k1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m0",
+          "m1",
+          "k0",
+          "k1",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m0",
+          "m1",
+          "k0",
+          "k2",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m0",
+          "m1",
+          "k1",
+          "k0",
+          "k2"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m0",
+          "m1",
+          "k1",
+          "k2",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m0",
+          "m1",
+          "k2",
+          "k0",
+          "k1"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m0",
+          "m1",
+          "k2",
+          "k1",
+          "k0"
+        ],
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "moves": 2
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m1",
+          "k0",
+          "k1",
+          "k2",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m1",
+          "k0",
+          "k1",
+          "m0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m1",
+          "k0",
+          "k2",
+          "k1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m1",
+          "k0",
+          "k2",
+          "m0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m1",
+          "k0",
+          "m0",
+          "k1",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m1",
+          "k0",
+          "m0",
+          "k2",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m1",
+          "k1",
+          "k0",
+          "k2",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m1",
+          "k1",
+          "k0",
+          "m0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m1",
+          "k1",
+          "k2",
+          "k0",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m1",
+          "k1",
+          "k2",
+          "m0",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m1",
+          "k1",
+          "m0",
+          "k0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m1",
+          "k1",
+          "m0",
+          "k2",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m1",
+          "k2",
+          "k0",
+          "k1",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m1",
+          "k2",
+          "k0",
+          "m0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m1",
+          "k2",
+          "k1",
+          "k0",
+          "m0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m1",
+          "k2",
+          "k1",
+          "m0",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m1",
+          "k2",
+          "m0",
+          "k0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m1",
+          "k2",
+          "m0",
+          "k1",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m1",
+          "m0",
+          "k0",
+          "k1",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m1",
+          "m0",
+          "k0",
+          "k2",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m1",
+          "m0",
+          "k1",
+          "k0",
+          "k2"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m1",
+          "m0",
+          "k1",
+          "k2",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m1",
+          "m0",
+          "k2",
+          "k0",
+          "k1"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      },
+      {
+        "bond_order": "both_at_once",
+        "sweep_order": [
+          "m1",
+          "m0",
+          "k2",
+          "k1",
+          "k0"
+        ],
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "moves": 1
+      }
+    ],
+    "product_counts": [
+      {
+        "end": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "pathways": 180
+      },
+      {
+        "end": [
+          3,
+          3,
+          3,
+          1,
+          2
+        ],
+        "pathways": 180
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
