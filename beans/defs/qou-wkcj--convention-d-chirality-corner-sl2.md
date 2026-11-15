@@ -39,3 +39,12 @@ exit 0, no sorryAx); probes corner_sl2_weighted_persistence_probe.py and
 corner_sl2_parity_probe.py (all pass); audit §7 and §8.
 Open: the remark is NOT machine-validated (folio-assistant clone fetch timed out; manual render
 battery only). Stays in-progress: the chirality identification (scope a) is open.
+
+## 2026-11-15 validator run (platform pin 82b389982)
+
+`bun run scripts/run-validate.ts folio/quantum-observable-universe` on branch head 1d067551b:
+"16 issue(s)" — the same count the pin note records as the baseline at this platform; none of
+the 16 names rem:convention-d-chirality-side (its interprets/uses/cites all resolved). All 16
+are pre-existing (unresolved cites faddeev1996/manuscript/bokut1978/milnor1950, unlisted blocks,
+deferred simulators, one missing Lean decl). The earlier attempt filled the disk via the
+folio-assistant clone; re-run with a disk guard succeeded at 14 GB free.
