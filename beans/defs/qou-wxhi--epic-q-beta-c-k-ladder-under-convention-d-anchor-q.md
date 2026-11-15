@@ -5,7 +5,7 @@ status: todo
 type: epic
 priority: high
 created_at: 2026-11-15T17:33:01Z
-updated_at: 2026-11-15T17:33:56Z
+updated_at: 2026-11-15T17:34:40Z
 parent: qou-10v9
 ---
 
@@ -41,3 +41,7 @@ beans listed as "blocked on cds1" in the 2026-11-15 Q_beta verification CSV.
 
 
 Tracking issue: litlfred/qou#7939.
+
+
+
+Correction from the Q_beta thread (2026-11-15): the -18.5 % is the all-pairs strand reading in level1-qvalues.py; the adjacent-crossing reading gives -2.9 % under D. Which reading is intended is an open owner card in the Q_beta thread. Both are diagnostics only.
