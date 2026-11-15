@@ -42,8 +42,8 @@ doc.
 |---|---|---|---|
 | 1. Cat action | `ρ_n: B_n → Aut_C(V^⊗n)` | ✅ proved | — (settled) |
 | 2. Stokes → Hecke | `σ_i²=(q−q⁻¹)σ_i+1` | 🟡 **algebra proved, GEOMETRY ASSERTED** — since 2026-09-06 carried as the §3b class `QOU.Mass.HeckeMonodromy`; its `q = 1` shadow (a reflection) is **derived** from the colour cubic's branch-point monodromy (`HeckeQuadraticClassicalShadow.lean`, `colour_cubic_branch_monodromy_probe.py`); plan and the real-`q` KZ prune in [`2026-09-06-step-2-plan-hecke-monodromy.md`](audits/2026-09-06-step-2-plan-hecke-monodromy.md) | the curvature 2-form is *defined* to be the Hecke quadratic (see §2a below) |
-| 3. Alexander+Markov | unique `tr_M` | 🟢 derived (Lean: **0 sorries**; 2 cited external-proof **axioms** — `markov_trace_unique_axiom` in `QOU/Hecke/MarkovTrace.lean`, `jones_markov_trace_exists` in `jones-markov-trace.lean`, both `-- Ref: [jones1987]`; verified 2026-07-02) | discharge needs a cross-level M3 class field + a reduced-words basis lemma for `H_n(q)` (research-grade — uniqueness is not provable from the current generator-level class) |
-| 4. Bring χ=−6 | 6 ↔ torus knots | 🟢 derived | — (settled) |
+| 3. Alexander+Markov | unique `tr_M` (canonical convention D: `z_D = q³/(q²+1)`) | 🟢 derived (Lean: **0 sorries**; 2 cited external-proof **axioms** — `markov_trace_unique_axiom` in `QOU/Hecke/MarkovTrace.lean`, `jones_markov_trace_exists` in `jones-markov-trace.lean`, both `-- Ref: [jones1987]`; verified 2026-07-02) | discharge needs a cross-level M3 class field + a reduced-words basis lemma for `H_n(q)` (research-grade — uniqueness is not provable from the current generator-level class) |
+| 4. Bring `χ_eu(M₀)=−6` (`g(M₀)=4`) | `6 = |S₃| = dim H₃(q)` ↔ torus knots; topological `χ_eu(M₀) = 2 − 2g(M₀) = −6` separated from sheaf `χ(M₀, 𝒱)` and rigid `dim_q` (§10.1 A); global surface Euler class `NS(A) = e(ξ) ∈ H²(𝒮, ℤ)` (#7982) | 🟢 derived | — (settled) |
 | 5. Wedderburn / partitions | `H_n(q)≅⊕_λ M_{d_λ}`, `tr_M=Σ y_λ χ^λ` | 🟢 derived (Wenzl) | — (the per-block frame; everything downstream rides on it) |
 | 6. Frobenius pairing + self-duality | `⟨a,b⟩_F`, `Ψ=S²=id` | ✅ proved (D3/D23) | partition-respecting audit (§9 below) |
 | 7. GB filtration | `J^•`-graded, `E_1` collapse | 🟢 derived | which `J^•` is **open** — `qou-sw8n` |
@@ -130,6 +130,22 @@ per [`vol-usage-audit`](audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md
 >
 > — the `c_q² = 1/ℏ_q²` belongs in the **muon** anchor `Vol(4₁)`, then dressed by the *dimensionless* `F_Bor`. Route every absolute nucleon/atom mass through the [`canonical_mass.py`](../computations/canonical_mass.py) facade. `vol_density_borromean` / `mass_vol_density` / `linking_weight_family_a` (λ_A) are **deprecated for absolute mass** (emit `DeprecationWarning`); `vol_density_per_block` stays valid for **binding ratios only** (the scale cancels). The per-knot `VolDensity(K)` framing above survives as the **binding-side** per-knot density question (the 9b ρ/Δ_λ leg). Read first: [`canonical-mass-formula-guardrail.md`](canonical-mass-formula-guardrail.md); λ_A excision: [`coordination/2026-06-24-lambda-a-fit-excised-per-knot-density.md`](coordination/2026-06-24-lambda-a-fit-excised-per-knot-density.md).
 
+### 0.1 Notation Disambiguation Table (`qou-6tdg` currency pass, 2026-09-15)
+
+To prevent symbol conflation across §§1–10 (enacted in PR #7426 and #7982; see §10.1 Decisions A–D and [`notation/notation-collisions.md`](../folio/quantum-observable-universe/notation/notation-collisions.md)), the following symbols are strictly separated throughout the corpus:
+
+| Symbol | Name & Domain | Canonical Definition / Value | Where Formalized / Audited |
+|---|---|---|---|
+| $\chi^\lambda$ (or $\chi_\lambda$) | **Hecke irreducible character** on $H_n(q)$ ($\lambda \vdash n$) | $\chi^\lambda(T_w) = \operatorname{tr}\bigl(\rho_\lambda(T_w)\bigr) \in \mathbb{Q}(q)$ on the Hoefsmit seminormal module $V_\lambda$ of dimension $d_\lambda = f^\lambda$ | `computations/hecke/hecke_characters.py`, `QOU/Machinery/DerivedCharacterCatalogue.lean` |
+| $\chi_{\mathrm{eu}}(M_0)$ | **Topological Euler characteristic** of Bring's curve $M_0$ | $\chi_{\mathrm{eu}}(M_0) = 2 - 2g(M_0) = -6$, where $g(M_0) = 4$ is the Descartes genus condition (alternating sum of Hochschild homology of $M_0$) | `rem:three-euler-characteristics`, `lem:brings-euler-characteristic`, `QOU/Information/EulerCharacteristicOfHochschild.lean` (`hhEuler_bring = -6`) |
+| $\chi(M_0, \mathcal{V})$ | **Holomorphic sheaf Euler characteristic** on $M_0$ | $\chi(M_0, \mathcal{V}) = h^0(M_0, \mathcal{V}) - h^1(M_0, \mathcal{V}) = \deg \mathcal{V} + \operatorname{rk}\mathcal{V}\cdot(1 - g(M_0))$ (Riemann–Roch) | `rem:chern-character-and-riemann-roch`, `notation/notation-collisions.md` |
+| $\operatorname{tr}$ | **Ordinary matrix / vector-space trace** | Standard linear-algebraic trace $\operatorname{tr} : \operatorname{End}_k(V) \to k$ on a finite-dimensional module or Wedderburn block $M_{d_\lambda}$ | `rem:trace-ledger` |
+| $\operatorname{tr}_M$ | **Normalized Markov trace** on $H_n(q)$ | $\operatorname{tr}_M(\beta) = \sum_{\lambda \vdash n} y_\lambda(q)\,\chi^\lambda(\beta)$ with $\operatorname{tr}_M(1) = 1$; under canonical **convention D**, the single-generator Markov parameter is $z_D = \frac{q^3}{q^2+1}$ (excising convention C's $z_C = \frac{1}{q^{1/2}+q^{-1/2}}$) | `QOU/Hecke/MarkovTrace.lean`, `QOU/QBeta/ConventionDAdmissibleRoots.lean`, `rem:categorical-trace-is-the-markov-trace` |
+| $\dim_q(X)$ | **Quantum / categorical rigid dimension** | $\dim_q(X) = \operatorname{tr}_C(\mathrm{id}_X) = (\mathrm{ev} \circ \mathrm{ch})([X])$, $q$-dependent and positive on simple objects (e.g. $\dim_q(V_m) = [m+1]_q$; for the regular representation $\mathcal{O}_q(\mathrm{SU}(2))$, $\sum [m]_q^2$ is divergent — §10.1 D) | `QOU/GrothendieckChern.lean` (`dimQK0_eq_evDimQ_chernCharacter`), `QOU/Information/DimqRegularisationIdentities.lean` |
+| $\mathrm{NS}(A) = e(\xi)$ | **Global surface Néron–Severi / contact Euler class** | $\mathrm{NS}(A) = e(\xi) \in H^2(\mathcal{S}, \mathbb{Z})$ on the global surface $\mathcal{S}$ (#7982), paired with the Wigner obstruction class $w(A)$ (`conj:wigner-axiom`, $\dim \mathrm{Obs} = 1$) | `QOU/AlgebraicSubstrate/WignerAxiom.lean`, `QOU/Brings/WignerTargetEquivariance.lean`, PR #7982 |
+| $q_0$ (proton pin) | **Canonical archimedean substrate pin** | $q_0 = 1.10997858275138080759\dots$ (50-dps proton pin from $m_p/m_e$ via `substrate.q_parameter.Q_50_DIGIT_STR`; owner directive 2026-08-15 retires frozen muon literals) | `computations/substrate/q_parameter.py`, bean `qou-1c4y` |
+| $\beta_{\mathrm{Bor}}$ | **Canonical Borromean intra-nucleon braid word** | Alternating 3-strand closure $\beta_{\mathrm{Bor}} = (\sigma_1 \sigma_2^{-1})^3 \in B_3$ with $\operatorname{tr}_M(\beta_{\mathrm{Bor}}) = \frac{4 + h^2 - 3h^4 - h^6}{h^2 + 4}$ | `QOU/BraidKnot/BorromeanMarkovTrace.lean` |
+
 ---
 
 ## 1. The chain in one diagram
@@ -142,7 +158,7 @@ per [`vol-usage-audit`](audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md
             │   P_avg^π ──── pion-sector bar-even channel (CAL-3, h³)       │
             │   proxies: m_e, m_μ/m_e (Q_β=P_skew^β), m_π     │
             └──────────────────────────────────────────────┘
-            (phys-obs precision anchor: q_0 on m_p/m_e, re-pin 2026-05-28)
+            (phys-obs precision anchor: q_0 on m_p/m_e via Q_50_DIGIT_STR, re-pin 2026-05-28; owner directive 2026-08-15)
                             │
    step 1. Cat action  ↓  ρ_n : B_n → Aut_𝐂(V^⊗n) via R-matrix
                             │
@@ -151,9 +167,9 @@ per [`vol-usage-audit`](audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md
                             ▼
                        𝐇_n(q)  ─── Iwahori-Hecke algebra
                             │
-   step 3. Alexander+Markov  ↓  knot ⇄ braid closure, unique trace tr_M
+   step 3. Alexander+Markov  ↓  knot ⇄ braid closure, unique trace tr_M (convention D: z_D = q³/(q²+1))
                             │
-   step 4. Bring χ=−6  ↓  6 basis elements ↔ 6 torus knots ↔ particle content
+   step 4. Bring χ_eu(M₀)=−6  ↓  6 basis elements ↔ 6 torus knots ↔ particle content (g(M₀)=4; NS(A)=e(ξ))
                             │
    step 5. Wedderburn  ↓  𝐇_n(q) ≅ ⊕_{λ⊢n} M_{d_λ}(ℚ(q)),  Σ-rep over partitions
                             │
@@ -263,8 +279,8 @@ Every arrow lives in $\mathbb{Q}(q)$ until the Archimedean functor in step 9. No
 > conditional on it. What was wrong was this document's status column, not that file's
 > self-description.
 
-| **3. Alexander+Markov** | Unique trace $\mathrm{tr}_M$ invariant under braid + stabilization moves; $J_K(q) = \mathrm{tr}_M(\beta)$ | `thm:jones-markov-trace`, [jones1987] | `hecke/hecke_characters.chi_lambda_braid`; `pyhecke_native` (Rust) | per-witness. $\mathrm{tr}_M(\beta_{\mathrm{Bor}})$ closed form **Lean-proved** (`BorromeanMarkovTrace.lean`, modulo cited $V$). **Cross-method checkpoint:** the *narrative-only* per-rep $\chi^\lambda(\beta_{\mathrm{Bor}})$ ($\chi^{(3)}{=}\chi^{(1^3)}{=}1$, $\chi^{(2,1)}{=}2{-}3h^4{-}h^6$) confirmed numerically to $\le 4\mathrm{e}{-}50$ by the skein-validated seminormal engine (`borromean-chi-independent-crosscheck`; proof-status audit [`2026-06-07`](audits/2026-06-07-borromean-chi-crossmethod-proof-status.md)) |
-| **4. Bring χ=−6** | $\dim H_3(q) = 6 = $ # embeddable torus knots in $\Sigma_4$; particle content fixed | `prop:x5-bring-weight-identification`, `prop:spectral-sequence-h3-explicit` | `hecke_core._PROTON_G0/G1`, `_NEUTRON_G0/G1` (canonical H_3 chains) | — |
+| **3. Alexander+Markov** | Unique trace $\mathrm{tr}_M$ invariant under braid + stabilization moves (canonical convention D: $z_D = q^3/(q^2+1)$); $J_K(q) = \mathrm{tr}_M(\beta)$ | `thm:jones-markov-trace`, [jones1987] | `hecke/hecke_characters.chi_lambda_braid`; `pyhecke_native` (Rust) | per-witness. $\mathrm{tr}_M(\beta_{\mathrm{Bor}})$ closed form **Lean-proved** (`BorromeanMarkovTrace.lean`, modulo cited $V$). **Cross-method checkpoint:** the *narrative-only* per-rep $\chi^\lambda(\beta_{\mathrm{Bor}})$ ($\chi^{(3)}{=}\chi^{(1^3)}{=}1$, $\chi^{(2,1)}{=}2{-}3h^4{-}h^6$) confirmed numerically to $\le 4\mathrm{e}{-}50$ by the skein-validated seminormal engine (`borromean-chi-independent-crosscheck`; proof-status audit [`2026-06-07`](audits/2026-06-07-borromean-chi-crossmethod-proof-status.md)) |
+| **4. Bring $\chi_{\mathrm{eu}}(M_0)=-6$** | $\dim H_3(q) = 6 = $ # embeddable torus knots in $\Sigma_4$ ($g(M_0)=4$, $\chi_{\mathrm{eu}}(M_0) = 2-2g(M_0) = -6$, separated from sheaf $\chi(M_0,\mathcal{V})$ and rigid $\dim_q$ per §0.1 / §10.1 A; global surface $\mathrm{NS}(A)=e(\xi)$); particle content fixed | `prop:x5-bring-weight-identification`, `prop:spectral-sequence-h3-explicit`, `rem:three-euler-characteristics` | `hecke_core._PROTON_G0/G1`, `_NEUTRON_G0/G1` (canonical H_3 chains) | — |
 | **5. Wedderburn + partitions** | $H_n(q) \cong \bigoplus_{\lambda \vdash n} M_{d_\lambda}(\mathbb{Q}(q))$; $\mathrm{tr}_M = \sum y_\lambda \chi^\lambda$ | `prop:alpha-k-derivation-procedure`, [wenzl1988] §1 | `y_lambda_wenzl_bridge.py` (numeric + symbolic); **3-axis (K, λ, A) derived-χ catalogue** [`derived_chi_catalogue_sweep.py`](../computations/derived_chi_catalogue_sweep.py) (PR #1952) — pre-emits $\chi^\lambda(\beta_K)(q)$ as exact q-Laurent for every production atom × every partition; backed by `pyhecke_native.chi_q_via_gp` (Rust Geck-Pfeiffer, GIL-released v0.9.0) | `y-lambda-at-q0.witness.json`; `derived-chi-catalogue.witness.json` |
 | **6. Frobenius pairing** | $\langle a, b \rangle_F = \int_A(a \cdot b)$; $\Psi = S^2 = \mathrm{id}_A$ (symmetric); chirality $a_K = 1 + w(K)·h + O(h^2)$ | `def:frobenius-hopf-substrate`, `prop:chirality-writhe-ribbon-derivation` | `chi_lambda_braid` + `tau_M_*` family | various |
 | **7. GB filtration** | Filtration $J^\bullet(q)$; spectral sequence collapses at $E_1$. **🛑 Corrected 2026-09-14 on owner instruction — this row disagreed with both carriers it cites.** It read *"Filtration by Coxeter length $\ell(w)$ … collapses at $E_2$"*. (a) **Page:** `prop:spectral-sequence-collapse` says $E_1$ in its own first line, and $E_1$ collapse is *strictly stronger*, so the row **understated its own carrier** — a direction that reads as a weaker result rather than an error, so nothing flagged it. (b) **Filtration:** the Coxeter-length reading is excluded at **every** $n \geq 2$ (`QOU.BraidKnot.shift_cannot_fill_a_gap`, sorry-free; [audit](audits/2026-08-26-no-shift-rescues-the-word-partition-bridge.md)), as are the ideal-power and rewrite-depth readings ([audit](audits/2026-08-16-three-gb-filtrations-one-name.md)) and the whole GS-definable class ([audit](audits/2026-08-26-the-unit-coefficient-excludes-gs-definable-filtrations.md)). Meanwhile `prop:gb-spectral-sequence` itself cites a **fourth** object — the *confinement* filtration of `def:confinement-level`, indexed by Wedderburn-block energy — which no audit has examined and which evades both exclusion routes (its unit sits at the **top**, and it is block-indexed rather than monomial in $\{T_w\}$). **So which $J^\bullet$ this row means is OPEN: bean `qou-sw8n`.** The decisive test is to compute $E(\lambda, q_0)$ — the confinement-LP duals, i.e. **step 10** — and compare its strata to `gbDepth`'s. | `prop:gb-spectral-sequence`, `prop:spectral-sequence-collapse` | `derivation_chain.py` (GB-NF tracker) | per-chain |
@@ -280,7 +296,7 @@ Every arrow lives in $\mathbb{Q}(q)$ until the Archimedean functor in step 9. No
 | Phase | Finding | Status | Impact |
 |---|---|---|---|
 | **5b** | $\alpha \approx [3]_q^2 \cdot \cosh(h)$ at single-block $|\Delta_\lambda^*|$ level (0.022 % rel.err. at $q_0$) | conjecture, §3b-cond axiomatized | Z-step factor at single-block level |
-| **5c.1** | Interface knot factor: $\mathrm{tr}_M(\mathcal{B}_K) / \mathrm{tr}_M(\mathcal{B}_K^{\mathrm{vac}}) = z^{p_+(K)} \cdot (z-h)^{p_-(K)}$ exactly | **PROVED sorry-free** in PR #819 | exact closed form for interface contribution |
+| **5c.1** | Interface knot factor: $\mathrm{tr}_M(\mathcal{B}_K) / \mathrm{tr}_M(\mathcal{B}_K^{\mathrm{vac}}) = z^{p_+(K)} \cdot (z-h)^{p_-(K)}$ exactly (with $z = z_D = q^3/(q^2+1)$ under canonical convention D; historically recorded at $z_C = 1/(q^{1/2}+q^{-1/2})$) | **PROVED sorry-free** in PR #819 | exact closed form for interface contribution |
 | **5g** | Constit-side per-Z step matches $(2q - 1)$ to 0.033 % at $q_0$ | **falsified globally** (PR #842 / #854) — coincidence, not identity | bridge to 5l |
 | **5k.1** | Residual against $(2q-1)$ matches $h^5(q_0)$ with c≈1.016 | **falsified globally** (PR #854) — numerical accident at $q_0$ | bridge to 5l |
 | **5l** | $\rho_Z^{\mathrm{constit}}(q) = \mathrm{tr}_M^3(\mathcal{B}_p, q)$ exactly | **STRUCTURAL IDENTITY** (PR #854) — mpfr-50-dps precision; derivable from Wenzl §1.7 disjoint multiplicativity | constit-side closure |
@@ -294,7 +310,7 @@ Every arrow lives in $\mathbb{Q}(q)$ until the Archimedean functor in step 9. No
 
 $$\frac{\mathrm{tr}_M(\mathcal{B}_K^{Z+1, N})}{\mathrm{tr}_M(\mathcal{B}_K^{Z, N})} \;=\; z(q) \cdot \mathrm{tr}_M^3(\mathcal{B}_p, q)$$
 
-— exact, no residuals. (`z = 1/(q^{1/2} + q^{-1/2})` from Markov axiom; `tr_M^3(B_p)` from Wenzl disjoint multiplicativity.)
+— exact, no residuals. (`z_D = q^3/(q^2 + 1)` under canonical **convention D**, per 2026-08-15 owner ruling R1; historical Phase-5 record used convention C's `z_C = 1/(q^{1/2} + q^{-1/2})` from the C-frame Markov normalization; `tr_M^3(B_p)` from Wenzl disjoint multiplicativity.)
 
 > **🛑 CONVENTION LABEL (added 2026-09-15, bean `qou-6tdg`):** the `z` in the line above is `√q/(q+1)`, **convention C**. The 2026-08-15 owner ruling (R1) makes convention D, `z_D = q³/(q²+1)`, canonical and excises C; the Phase-5 identities in this section are correct **for C** and are kept as recorded — they need scoping, not correction (AGENTS.md, the `c_k` banner and §R1). Under D the Z-step factor is `z_D · tr_M^3(𝓑_p, q)` with the D-frame traces, which the live producers (`bond_factors_are_z_plus_d_probe`, `binding_canonical`) already use; `rem:categorical-trace-is-the-markov-trace` identifies `z_D` as the normalised rigid trace of one generator. Do not substitute `z_D` into a C-frame identity by hand (`decayLadder_zC_threeRow_ne_zero`).
 
@@ -477,7 +493,7 @@ The forward work has shifted from §5 mechanics to scientific closure:
 | Quantum dilogarithm Φ_q (compact q-dilog) | `[faddeev1996]` |
 | Rogers q-dilogarithm Li_2^q | `[kashaev1995]`, `[kirillov1995]` |
 | Macdonald-Schur polynomials | `[macdonald1995]` |
-| Bring surface χ = −6 | `[bring1786]`, `[klein1884]` (historical) |
+| Bring surface $\chi_{\mathrm{eu}}(M_0) = 2 - 2g(M_0) = -6$ ($g(M_0)=4$) | `[bring1786]`, `[klein1884]` (historical); `rem:three-euler-characteristics` |
 | Gröbner-Shirshov basis (general) | `[bokut2007]`, `[chenhongbo2010]` |
 
 ---
@@ -980,7 +996,7 @@ discharged). Proof-watcher: route under the proof-integration-watcher queue.
 Step 4 of the canonical chain establishes **6 H_3(q) basis elements**:
 
 ```
-{ 1, σ_1, σ_2, σ_1σ_2, σ_2σ_1, σ_1σ_2σ_1 = σ_2σ_1σ_2 }   ← Bring χ = −6
+{ 1, σ_1, σ_2, σ_1σ_2, σ_2σ_1, σ_1σ_2σ_1 = σ_2σ_1σ_2 }   ← Bring χ_eu(M₀) = 2 − 2g(M₀) = −6
 ```
 
 A recurrent agent confusion is reading "6 basis elements" as **6 independent
@@ -1139,11 +1155,11 @@ choice.
 
 Owner ask (queued 2026-09-15): make this sheet reflect every decision of that day, and name the specific open gaps rather than gesturing at them. Each row below names the artifact a reader checks; none of the numbers here is new — they are the day's results collected in one place.
 
-### 10.1 Decisions enacted on PR #7426 (owner selections A, B, C; "both, distinct symbols"; "go with your recommendations")
+### 10.1 Decisions enacted on PR #7426 and #7982 (owner selections A, B, C; "both, distinct symbols"; "go with your recommendations")
 
 | decision | what changed | where to read it |
 |---|---|---|
-| **A — the four "Euler characteristics" separated by name.** `χ_eu(M₀) = 2 − 2g = −6` (topological, the alternating sum of the base curve's Hochschild homology); `χ(M₀, V) = deg V + rk V·(1 − g)` (sheaf, Riemann–Roch); `dim_q(X) = tr(id_X)` (rigid trace, $q$-dependent, positive); `w(A)` (the Wigner obstruction class). The Descartes condition is restated as `g(M₀) = 4`. | `rem:three-euler-characteristics`, `rem:chern-character-and-riemann-roch`, `lem:brings-euler-characteristic` (restated), `notation/notation-collisions.md`; Lean `QOU/Information/EulerCharacteristicOfHochschild.lean` (`hhEuler_bring = −6`), `QOU/Brings/S5CharactersOnBringDeformations.lean` |
+| **A — the four "Euler characteristics" separated by name.** `χ_eu(M₀) = 2 − 2g = −6` (topological, the alternating sum of the base curve's Hochschild homology); `χ(M₀, V) = deg V + rk V·(1 − g)` (sheaf, Riemann–Roch); `dim_q(X) = tr(id_X)` (rigid trace, $q$-dependent, positive); `w(A)` (the Wigner obstruction class) and the global surface contact Euler class `NS(A) = e(ξ) ∈ H²(𝒮, ℤ)` (#7982). The Descartes condition is restated as `g(M₀) = 4`. | `rem:three-euler-characteristics`, `rem:chern-character-and-riemann-roch`, `lem:brings-euler-characteristic` (restated), `notation/notation-collisions.md`; Lean `QOU/Information/EulerCharacteristicOfHochschild.lean` (`hhEuler_bring = −6`), `QOU/Brings/S5CharactersOnBringDeformations.lean` |
 | **B — the explicit `K₀ → HH₀ → R` layer.** `def:hochschild-homology`, `def:grothendieck-group-of-a-qou`, `def:chern-character`, and **`dim_q = ev ∘ ch`** proved (`QOU/GrothendieckChern.lean`, `dimQK0_eq_evDimQ_chernCharacter`); `ex:su2-characters-and-quantum-dimension` shows the two evaluations `n+1` and `[n+1]_q` of one character. `rem:categorical-trace-is-the-markov-trace`: the normalised rigid trace of `V^{⊗n}` *is* `tr_M` at `z_D` (`qtrace_rHecke_div` for one generator; the weights `[n−2k+1]_q/[2]_q^n` are quantum Schur–Weyl). `rem:hkr-theorem` states HKR with its hypotheses (commutative, smooth, char 0) — it says nothing about `HH²(𝒰_q, Ad)`. | chapter 1 (quantum-universes) and mass-theory; `rem:trace-ledger` |
 | **C — the `HH²` scalar cut from the χ chain; one-dimensionality is the Wigner axiom.** `conj:wigner-axiom` (W1: `dim Obs = 1`; W2: the generator realises `e(TM₀) ∈ H²(M₀; k)`), cited to Wigner's Courant lecture (`wigner1960`); class `QOU.AlgebraicSubstrate.WignerAxiom`. Why it is an axiom and not a theorem: Brown–Zhang duality is cohomology-to-*homology* with a Nakayama twist; a deformation direction lives in `HH²`, not `HH¹`; and at `q = 1` Whitehead's lemmas make the space **zero** (`rem:classical-shadow-of-the-substrate`). Equivariance forces the target into `H²(M₀; k)`: the `S₅`-invariant Hochschild ledger of the base is `k` in `HH⁰`, `k²` in `HH₀`, `0` in `HH², HH¹, HH_{±1}` (`QOU/Brings/WignerTargetEquivariance.lean`). `thm:qou-obstruction-reduction` is conditional on the axiom. | stochastic-mechanics; `docs/audits/2026-09-15-chi-as-a-component-of-the-chern-character.md` §2.4, §12 |
 | **D — the regularisation negative recorded, none selected.** `dim_q(A)` for `A = 𝒪_q(SU(2))` is the divergent Peter–Weyl sum `Σ[m]_q²`; ζ-regularised `0`, Hadamard `−1/(q−q⁻¹)²`; `= −6` only at `u² = 1/6` (`QOU/Information/DimqRegularisationIdentities.lean`; probe `dimq_regularisation_schemes_probe.py` 16/16). | `rem:euler-characteristic-of-the-regular-representation` |
