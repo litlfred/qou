@@ -31,7 +31,7 @@ identifies the Strutinsky shell correction $\delta E_{\mathrm{shell}}$
 with the Gröbner–Shirshov residue sum, and *"Magic-number enhancements
 arise algebraically when $\lambda$ reaches a rectangular shape and
 $H_q(\lambda)$ factorises"*
-([`prop:shell-schur-weyl-self-duality`](../mass-theory/shell-schur-weyl-self-duality.md)).
+([`prop:shell-schur-weyl-self-duality`](../knots-particles-confinement/shell-schur-weyl-self-duality.md)).
 The doubly-magic case is exactly this rectangular-spike limit.
 
 ## $\rho_F$ for $^4_2\mathrm{He}$
@@ -50,5 +50,5 @@ the canonical formalism
 emits a comparison witness showing the alpha-shift vs.
 magic-A predictions side-by-side for $A \in \{2, 3, 4\}$. The
 output JSON
-[`binding-alpha-shift-witness.witness.json`](../../computations/binding-alpha-shift-witness.witness.json)
+[`binding-alpha-shift-witness.witness.json`](../../../computations/binding-alpha-shift-witness.witness.json)
 quantifies the 80$\times$ gap closure for $^4_2\mathrm{He}$.

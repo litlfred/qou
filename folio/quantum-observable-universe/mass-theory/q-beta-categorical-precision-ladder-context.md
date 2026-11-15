@@ -5,7 +5,7 @@
 > useful when the closed form was unknown; now that the Habiro
 > identification is established, the exact evaluation is used
 > (no rung-by-rung truncation). See
-> [`prop:habiro-precision-ladder-equivalence`](../../braids-and-knots/habiro-precision-ladder-equivalence.md).
+> [`prop:habiro-precision-ladder-equivalence`](habiro-precision-ladder-equivalence.md).
 >
 > The content below is retained for HISTORICAL reference and for the
 > derivation narrative (it shows how the pattern was discovered).

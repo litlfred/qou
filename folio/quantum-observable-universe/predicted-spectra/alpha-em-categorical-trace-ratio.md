@@ -68,7 +68,7 @@ Evaluation at $q_0 \approx 1.1099786$ yields an exact match to within $10^{-12}$
 > substitution.
 
 Reproduce the table with
-[`two_blocks_publish_the_two_sides_of_one_identity_at_different_pins_probe.py`](computations/probes/two_blocks_publish_the_two_sides_of_one_identity_at_different_pins_probe.py).
+[`two_blocks_publish_the_two_sides_of_one_identity_at_different_pins_probe.py`](../../../computations/probes/two_blocks_publish_the_two_sides_of_one_identity_at_different_pins_probe.py).
 
 > **Corrected 2026-09-05.** This section previously read *"The witness assertion
 > validates this match: `delta-q-decoration.witness.json`."* That witness

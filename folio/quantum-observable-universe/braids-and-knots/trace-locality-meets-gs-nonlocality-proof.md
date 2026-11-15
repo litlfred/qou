@@ -65,7 +65,7 @@ Specifically, Wenzl 1988 establishes:
   is the canonical proportionality constant, where $c(x)$ and $h(x)$
   are the content and hook length of the cell $x$ and
   $z_{-} = z - (q - q^{-1})$
-  ([witness](computations/markov-trace-weights-wenzl.witness.json);
+  ([witness](../../../computations/markov-trace-weights-wenzl.witness.json);
   exact for every $\lambda \vdash n \leq 5$).
 - Each vertex volume $\widehat{V}_i(q)$ depends only on the
   Bratteli-diagram path traced by the normal-form generator $e_{j_i}$

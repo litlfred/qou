@@ -6,7 +6,7 @@ A handful of common letters carry overloaded meanings in the literature. We enfo
 - **$E$** alone = not used for an exceptional divisor, energy, or elliptic curve. We use $\mathcal{S}_p$, $\mathfrak{E}$, or $\mathcal{E}_q$ respectively. $E_{\mathfrak{H}}$ (with hadron subscript) is allowed for crossing energy.
 - **$\mathfrak{E}_0$ vs $Q_\beta(n)$** — two distinct hadronic-sector scalars historically conflated in Python compute scripts (see [`computations/binding_canonical.py`](../../../computations/binding_canonical.py) history). They are not interchangeable:
     - $\mathfrak{E}_0$ = hadronic energy scale. We derive this as $\mathfrak{E}_0^{(N=0)} = m_e/(q_0(q_0-1)) \approx 4.186$ MeV (CAL-1 and CAL-2 only). The tower-summed form is $\mathfrak{E}_0^{\text{full}} = \mathfrak{E}_0^{(N=0)}/(1-\hbar_q^2) \approx 4.228$ MeV. It sets the MeV-per-dimensionless-trace-unit conversion for hadronic predictions.
-    - $Q_\beta(n) = 0.78233341\,\text{MeV}$ = the free-neutron $\beta$-decay Q-value. We derive this from CAL-2 ($P_{\mathrm{skew}}^{\beta}$). We use it as the binding-energy-scale multiplier in [`prop:categorical-mass-markov`](../braids-and-knots/categorical-mass-markov.md)'s explicit binding formula $B = Q_\beta(n) \cdot (|\mathrm{tr}_M(W_{\text{free}})| - |\mathrm{tr}_M(W_{\text{atom}})|)$.
+    - $Q_\beta(n) = 0.78233341\,\text{MeV}$ = the free-neutron $\beta$-decay Q-value. We derive this from CAL-2 ($P_{\mathrm{skew}}^{\beta}$). We use it as the binding-energy-scale multiplier in [`prop:categorical-mass-markov`](../mass-endomorphism/categorical-mass-markov.md)'s explicit binding formula $B = Q_\beta(n) \cdot (|\mathrm{tr}_M(W_{\text{free}})| - |\mathrm{tr}_M(W_{\text{atom}})|)$.
   The ratio is $\mathfrak{E}_0/Q_\beta(n) = 1/|\Delta(\mathrm{net})| \approx 5.31$ (the dimensionless Hecke NF reduction). Code must name the parameter for the actual quantity it carries. Using `E_0` for a $Q_\beta$-valued binding-scale variable is a registered notation violation.
 - **$\gamma$** = three reserved meanings, all standard, disambiguated by context: (i) the photon (default reading in particle / QED contexts: pair production $\gamma\gamma \to e^+ e^-$, photonic channels, Breit–Wheeler vertices); (ii) the Euler–Mascheroni constant (only inside zeta-value identities, e.g. $\zeta'(0) = -\tfrac{1}{2}\log(2\pi)$, $\gamma = \lim(H_n - \log n)$); (iii) Dirac matrices $\gamma^\mu$ (always with an explicit Lorentz index). We never use $\gamma$ for a vortex or closed cycle — the vortex morphism is $\varrho$.
 - **$c_k$ vs $\mathrm{cl}_k$** — the letter $c$ carried **three** distinct coefficient families, two of them within ~12% of each other numerically, which is how they stayed conflated. We now split them:
@@ -120,7 +120,7 @@ A handful of common letters carry overloaded meanings in the literature. We enfo
 
 **Base ring convention (Lean).** In Lean source, the generic ground ring is $R$ with the weakest typeclass that admits the construction (`[CommRing R]`, `[Field R]`, `[GroupWithZero R]`, etc.). We use the real numbers $\mathbb{R}$ only past the archimedean wall — specifically, when the declaration genuinely needs `Real.sqrt`, `Real.rpow`, `Real.cos`, `Real.exp`, `Real.log`, an ordering predicate (`0 < q`), `linarith`, or a CODATA / experimental numerical value. Categorical content, algebraic identities, q-deformation combinatorics, and Wenzl / Hecke / Hoefsmit structural data all live over generic $R$. The narrative side mirrors this. We write $q \in R$ for the substrate parameter when only the algebraic structure matters, and $q \in \mathbb{R}$ only when an archimedean evaluation is under discussion.
 
-**Non-degeneracy of $q$.** The pre-Archimedean substrate's non-degeneracy condition on the parameter is $\lvert q \rvert > 1$. This is sufficient to make $q$ a unit on any commutative ring with a norm, in particular $R = \mathbb{C}$ (see [`prop:q-zero-complex-extension`](../braids-and-knots/q-zero-complex-extension.md)). When writing substrate-level statements (pre-$\tau$, categorical / algebraic content), we prefer $\lvert q \rvert > 1$. We reserve $q > 1$ for post-$\tau$ content that genuinely needs the real ordering (Hoefsmit seminormal orthogonality, `Real.sqrt`-bearing identities, CODATA comparisons).
+**Non-degeneracy of $q$.** The pre-Archimedean substrate's non-degeneracy condition on the parameter is $\lvert q \rvert > 1$. This is sufficient to make $q$ a unit on any commutative ring with a norm, in particular $R = \mathbb{C}$ (see [`prop:q-zero-complex-extension`](../mass-theory/q-zero-complex-extension.md)). When writing substrate-level statements (pre-$\tau$, categorical / algebraic content), we prefer $\lvert q \rvert > 1$. We reserve $q > 1$ for post-$\tau$ content that genuinely needs the real ordering (Hoefsmit seminormal orthogonality, `Real.sqrt`-bearing identities, CODATA comparisons).
 
 **Decay width $\mathfrak{D}$ vs lifetime $\tau$ vs sheaf sections $\Gamma$.** Three standard physics/math symbols collide in this paper:
 
@@ -266,7 +266,7 @@ strand** and represents the neutrino. The closure of the photon's identity
 word on $n$ strands is $n$ disjoint unknots; describing that *closure* as
 disjoint unknots is correct, but assigning the single unknot $0_1$ to the
 photon as its knot identity is a canon violation. Authoritative statements:
-[`two-photon-pair-production.md`](../particle-interactions/two-photon-pair-production.md)
+[`two-photon-pair-production.md`](../nuclear-interactions/two-photon-pair-production.md)
 ("the photon $\gamma$ is the empty knot $\varnothing$ … distinct from the
 unknot $0_1$ representing the neutrino") and the atlas registry
 ([`recursive-atom-knot-atlas-registry.md`](../appendix-knot-periodic-table/recursive-atom-knot-atlas-registry.md):
@@ -298,7 +298,7 @@ called **mirror-even** / **mirror-odd**, never "bar-". Which grading is meant:
 | **A** | the Laurent scalar $\mathfrak{E}_{\mathrm{cross}}$ into $\cosh\lambda$ / $\sinh\lambda$ | coefficient half | [`obs:crossing-energy-decomposition`](../observations/crossing-energy-decomposition.md) |
 | **B** | the Hecke module into $e_+$ / $e_-$ by eigenvalue $q$ / $-q^{-1}$ | **neither** — the full involution *fixes* both idempotents | [`prop:em-coupling-projection`](../predicted-spectra/em-coupling-projection.md) |
 | **C** | the knot, by the mirror; the channel totals $E_{\mathrm{sym}}$ / $E_{\mathrm{asym}}$ | diagram half | same block as A, item 2 |
-| **D** | the algebra $A = A_+ \oplus A_-$ by the spin involution | coefficient half | [`def:spin-involution`](../mass-theory/spin-involution.md) |
+| **D** | the algebra $A = A_+ \oplus A_-$ by the spin involution | coefficient half | [`def:spin-involution`](../knots-particles-confinement/spin-involution.md) |
 
 **A and D are the same grading.** On the symmetric/alternating Hecke block the
 spin involution acts as the eigenvalue swap $q^{2k} \leftrightarrow q^{-2k}$,

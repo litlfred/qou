@@ -159,7 +159,7 @@ $\mathrm{Re}\,q > 1/2$, and the Apollonius circle above lies entirely in
 that half-plane: its centre is $1.0099145$ and its radius $0.1000641$, so
 its leftmost point is $0.9098504$ — closed forms $1/(1-k^2)$, $k/(1-k^2)$ and
 $1/(1+k)$ with $k^2 = \mathrm{Vol}(4_1)/(m_\mu/m_e)$, reproduced by
-[`the_apollonius_circle_from_cal2_reproduces_exactly_probe.py`](computations/probes/the_apollonius_circle_from_cal2_reproduces_exactly_probe.py)
+[`the_apollonius_circle_from_cal2_reproduces_exactly_probe.py`](../../../computations/probes/the_apollonius_circle_from_cal2_reproduces_exactly_probe.py)
 (4/4), which also records that **no $q_0$ enters**: CAL-2 is the equation that
 *defines* $q_0$, so neither the anchor question nor the CODATA vintage reaches
 these three numbers. Only the two real intersections survive,
@@ -217,7 +217,7 @@ directly. The candidate roles are all in **non-mass observables**.
   — the canonical lepton-mass formula is Im(q)-robust (modulus projection
   invariance); F_ℓ does NOT distinguish the three candidate Im(q) roles.
   Hence the F_ℓ conjecture is consistent with ALL three candidates.
-- [`prop:rho-k-pair-gen-canonical-form`](conj-rho-k-pair-gen-canonical-form.md) —
+- [`prop:rho-k-pair-gen-canonical-form`](../mass-endomorphism/conj-rho-k-pair-gen-canonical-form.md) —
   similarly Im(q)-robust at LO.
 - The complex-q machinery is **decoupled** from the mass-formula closure;
   closing the $\mathfrak{Q}_\beta$ residual or deriving F_ℓ does **not** require resolving
@@ -247,6 +247,6 @@ canonical choice is **$\mathrm{Im}(q_0) = 0$** (real q). This is:
 - [`prop:q-zero-complex-extension`](q-zero-complex-extension.md) — substrate polymorphism
 - [`prop:lusztig-vs-hermitian-bar`](lusztig-vs-hermitian-bar.md) — involution split for complex q
 - [`rem:im-q-vs-p-skew`](rem-im-q-vs-p-skew.md) — the distinction from P_skew
-- [`prop:categorical-mass-markov`](categorical-mass-markov.md) — modulus projection
+- [`prop:categorical-mass-markov`](../mass-endomorphism/categorical-mass-markov.md) — modulus projection
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

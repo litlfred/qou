@@ -19,7 +19,7 @@ The proton braid has 11 typed crossings: 7 pure $\sigma_0$, 4 pure $\sigma_1$, 1
 
 By combinatorial counting, the predicted averaging-resonance rungs are those $k$ for which $\binom{2}{2} \cdot (\text{combinatorial weight})$ peaks. The first is $k = 5$; subsequent peaks are predicted at $k = 8, 11, \ldots$ (every 3 rungs).
 
-This is testable by extending SDP-$T_\beta$ extraction to $k \geq 8$ and checking whether $c_8$ has a $1/2$ fingerprint. The extraction is set up in [`computations/qbeta/qbeta_decay_sdp_extended_ck.py`](../../computations/qbeta/qbeta_decay_sdp_extended_ck.py).
+This is testable by extending SDP-$T_\beta$ extraction to $k \geq 8$ and checking whether $c_8$ has a $1/2$ fingerprint. The extraction is set up in [`computations/qbeta/qbeta_decay_sdp_extended_ck.py`](../../../computations/qbeta/qbeta_decay_sdp_extended_ck.py).
 
 ## Discussion
 

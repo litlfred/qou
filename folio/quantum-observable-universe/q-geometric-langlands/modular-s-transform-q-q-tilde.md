@@ -115,6 +115,6 @@ parameter manifold:
 - The complex-$q$ lift: blocks `prop:q-zero-complex-extension` +
   `prop:lusztig-vs-hermitian-bar`
 - Volume Conjecture: [`conj:kashaev-volume-conjecture`](#conj:kashaev-volume-conjecture)
-- The Bloch-group route: [`conj:borromean-bloch-group-element`](borromean-bloch-group-element.md)
+- The Bloch-group route: [`conj:borromean-bloch-group-element`](../mass-theory/borromean-bloch-group-element.md)
 
 **Archimedean specialisation.** Modular convergence is an archimedean statement: the estimates use $\mathrm{Im}\,\tau$ and $\exp$ over $\mathbb{R}$, so it sits on the archimedean side of the substrate wall.

@@ -10,7 +10,7 @@
 
 > **Refreshed to the live muon pin, 2026-09-05** (`qou-i229`, owner-approved).
 > All seven rows moved together. Producer:
-> [`retired_q0_refresh_to_live_muon_pin_probe.py`](computations/probes/retired_q0_refresh_to_live_muon_pin_probe.py)
+> [`retired_q0_refresh_to_live_muon_pin_probe.py`](../../../computations/probes/retired_q0_refresh_to_live_muon_pin_probe.py)
 > (5/5).
 >
 > The table previously read

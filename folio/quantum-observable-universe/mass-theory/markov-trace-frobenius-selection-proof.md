@@ -76,7 +76,7 @@ $x$ and $z_{-} = z - (q - q^{-1})$ is the negative-crossing loop
 value ([Markov axioms](#rem:markov-axioms-primitive)). This is the
 Ocneanu weight formula at framing ratio $a^2 = z/z_{-}$, verified
 exactly for every $\lambda \vdash n \leq 5$
-([witness](computations/markov-trace-weights-wenzl.witness.json) —
+([witness](../../../computations/markov-trace-weights-wenzl.witness.json) —
 note that that witness was computed at **convention C**,
 $z = 1/(q^{1/2}+q^{-1/2})$, per its own `description` field; what it
 certifies is the hook–content *formula*, which is

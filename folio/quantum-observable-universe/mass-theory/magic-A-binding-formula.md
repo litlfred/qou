@@ -1,5 +1,5 @@
-**Theorem (conditional on [`conj:magic-numbers-bring`](../quantum-observable-universes/magic-numbers-bring.md),
-[`prop:gravity-spectral-prefactor`](gravity-spectral-prefactor.md),
+**Theorem (conditional on [`conj:magic-numbers-bring`](../observations/magic-numbers-bring.md),
+[`prop:gravity-spectral-prefactor`](../observations/gravity-spectral-prefactor.md),
 and [`conj:diagrammatic-double-magic-lr-fusion`](../observations/diagrammatic-double-magic-lr-fusion.md)).**
 *For a light nucleus $^A_Z\mathfrak{X}$ that is doubly magic
 (both $Z \in \mathfrak{M}$ and $N \in \mathfrak{M}$, with
@@ -12,7 +12,7 @@ $$
 
 *where $G$ is Catalan's constant, $8G = \mathrm{Vol}(L6a4) =
 \mathrm{Vol}(\mathrm{Borromean})$ is the universal residue prefactor
-([`prop:gravity-spectral-prefactor`](gravity-spectral-prefactor.md)),
+([`prop:gravity-spectral-prefactor`](../observations/gravity-spectral-prefactor.md)),
 and $\rho_F \in \mathbb{R}$ is the substrate-determined structural
 prefactor for the doubly-magic regime.*
 
