@@ -246,3 +246,64 @@ mulNF via the basis words [], [0], [1], [1,0], [0,1], [0,1,0].
 **Next step for whoever picks this up:** write
 `computations/qbeta/qbeta_isospin_module_map_probe.py` to the plan above, starting with the
 corner-dimension check.
+
+## 11. RESULT: D-I1 = (A), isospin as a module map on H₃·P₊ (2026-11-15, thread "Test isospin as a module map")
+
+Probe: [`computations/qbeta/qbeta_isospin_module_map_probe.py`](../../computations/qbeta/qbeta_isospin_module_map_probe.py),
+**11/11 checks PASS**, exact over ℚ(q) (sympy `DomainMatrix` over `QQ(q)`), every product
+through the corpus table `hecke_core_symbolic.hm_sym`. No witness, no Q_β value, no word
+changed. States and candidates are exactly the §10 lists, enumerated before any test.
+
+**Verdict.** At n = 3, no module map on the chirality ideal that commutes with the core and the
+gluon turns the proton state into the neutron state, except in 4 degenerate settings where the
+two states are already the same up to the number q⁻². No candidate from the fixed list does
+it at all. This is an H₃ result; the Furey-type question moves to n ≥ 4.
+
+**0. Structure (measured, then explained).**
+* P₊(σ_g) H₃ P₊(σ_g) is **2-dimensional and commutative** for g = 0, 1 (the §10 hypothesis holds).
+  Reason (Wedderburn, generic q): H₃ ≅ ℚ(q) ⊕ M₂(ℚ(q)) ⊕ ℚ(q) over the blocks (3), (2,1), (1³);
+  P₊ is 1 on (3), rank 1 on (2,1), 0 on (1³). So the corner is ℚ(q) ⊕ ℚ(q), and there is
+  **no τ_j / sl₂ in the corner at n = 3**. Scope (b), invariant = the block decomposition.
+* The left ideal H₃·P₊ is **3-dimensional**: the (3) line plus one column V ≅ ℚ(q)² of the (2,1) block.
+* The centre of H₃ is 3-dimensional, and **the centraliser of {core, gluon} equals the centre**
+  (dim 3). Alone, each of core and gluon has a 4-dim centraliser; together they generate all of M₂
+  on the (2,1) block. So any operator commuting with both acts on H₃·P₊ by one scalar on the (3)
+  line and one scalar on V. It cannot rotate inside V. Scope (b) for "commutes with core and gluon".
+
+**1–3. State family × idempotent × candidate = 20 × 2 × 14 = 560 settings.**
+
+| test | result |
+|---|---|
+| X ψ_p = ψ_n exactly, X in the fixed list | **0 of 560** |
+| X ψ_p ∥ ψ_n (up to a scalar) | **0 of 560** |
+| X² scalar (J, W_L, W_R) | 6 of 14 candidates; none commutes with the core |
+| [X, core] = 0 | **0 of 14** |
+| [X, gluon] = 0 | 7 of 14 (the σ₀ family: the gluon is σ₀²) |
+| some x in the centraliser with x ψ_p = ψ_n | **4 of 40** settings; 36 none |
+| some x anywhere in H₃ with x ψ_p = ψ_n | 40 of 40, always a 3-dim affine family (context: the ideal is cyclic, so this carries no information) |
+
+**The 4 centraliser hits are degenerate.** They are the D2 orders p ∈ {(d,u,u), (u,d,u)},
+n ∈ {(d,u,d), (u,d,d)}, no gluon, idempotent g = 1. In each, ψ_n = **q⁻² ψ_p** exactly, for
+two reasons that are identities, not findings about isospin:
+* the two σ₀ letters are u and d, and σ₀⁻¹σ₀ = σ₀σ₀⁻¹ = 1, so their order is invisible;
+* the last letter is on σ₁, and P₊(σ₁) absorbs it as an eigenvalue: σ₁P₊ = qP₊, σ₁⁻¹P₊ = q⁻¹P₊.
+
+So the p ↦ n "map" there is the number q⁻², not an operator. The chirality projector erases the
+flavour of the letter next to it. This is the letter-level statement "flavour = orientation of
+the letter" seen from the ideal, and it does not survive the census gluon (σ₀² between the tail and
+P₊(σ₁)): all 20 gluon settings miss.
+
+**What this does and does not say.**
+* Scope (b): at n = 3, no isospin on H₃·P₊ commuting with core and gluon is more than a scalar. Invariant: the centraliser equals the centre (measured exactly), plus Wedderburn.
+* Scope (a): the 14 fixed candidates do not work. A different state rule, or dropping the
+  commutation requirement, is not excluded. Without the commutation requirement, existence is trivial and the operator is not fixed, which is the fitting this test was set up to avoid.
+* Not touched: n ≥ 4. Stream 11's n = 4 corner sl₂ (#7867, not one-sided from n = 5, bias [3]_q : 1) is the only place a Furey-type su(2) can live. The Stream 11 thread is checking whether that corner's multiplicity space is flavour (σ₃ ↦ σ₃⁻¹); that result decides whether an H₄ version of this test is worth building.
+* No Lean was written. The corner fact is Wedderburn at generic q and the rest are finite exact
+  linear algebra; a Lean lemma "centraliser of {core, gluon} in H₃ is the centre" is a possible
+  follow-up.
+
+**Side note (not changed: the ask-first rule).** `hecke_core_symbolic.NF_BASIS` lists index 3 as
+(0,1) and index 4 as (1,0), but the `hm_sym` table it ships with sends 1·σ₁·σ₀ to index 3 and
+1·σ₀·σ₁ to index 4. Measured here: with the table's order the basis words reduce to unit vectors;
+with `NF_BASIS` order they do not. Both have length 2, so trace weights (z² for both) are unaffected.
+Only a reader taking the `NF_NAMES` labels L₊ / L₋ literally is affected.
