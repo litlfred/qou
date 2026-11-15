@@ -1,0 +1,346 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-15T22:56:51.856902+00:00",
+  "commitSha": "e64d29fd528da4ac01f27fb6d8bd9e3ab7452c6d",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 132335,
+  "computation": "collider-particle-probe",
+  "scriptFile": "collider_particle_probe.py",
+  "scriptHash": "996f1addc93c",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "mpmath": "1.4.1",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/collider_particle_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/collider_particle_probe.py"
+  },
+  "description": "Reachable products of three gamma-gamma particles when the collision energy is carried by a fourth, unbonded collider particle with conserved crossings. Under reading 3 per particle the collider moves only between V^6 and V^3, so it exchanges energy in steps of 3V = 6 crossings. Model units; no rates.",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "dps": 40,
+    "quantum_crossings": 6,
+    "start": {
+      "stage": "chain",
+      "k": [
+        3,
+        3,
+        3
+      ],
+      "m": [
+        2,
+        1
+      ],
+      "cost": 30
+    },
+    "bond_cost": "local 4m"
+  },
+  "data": {
+    "collider_alone_feasible_k": [
+      3,
+      6
+    ],
+    "reachable": [
+      {
+        "stage": "chain",
+        "k": [
+          3,
+          3,
+          3
+        ],
+        "m": [
+          1,
+          2
+        ],
+        "cost": 30
+      },
+      {
+        "stage": "chain",
+        "k": [
+          3,
+          3,
+          3
+        ],
+        "m": [
+          2,
+          1
+        ],
+        "cost": 30
+      },
+      {
+        "stage": "chain",
+        "k": [
+          3,
+          3,
+          3
+        ],
+        "m": [
+          2,
+          2
+        ],
+        "cost": 34
+      },
+      {
+        "stage": "ring",
+        "k": [
+          3,
+          3,
+          3
+        ],
+        "m": [
+          1,
+          2,
+          1
+        ],
+        "cost": 34
+      },
+      {
+        "stage": "ring",
+        "k": [
+          3,
+          3,
+          3
+        ],
+        "m": [
+          2,
+          1,
+          1
+        ],
+        "cost": 34
+      },
+      {
+        "stage": "chain",
+        "k": [
+          3,
+          3,
+          6
+        ],
+        "m": [
+          1,
+          2
+        ],
+        "cost": 36
+      },
+      {
+        "stage": "chain",
+        "k": [
+          3,
+          3,
+          6
+        ],
+        "m": [
+          2,
+          1
+        ],
+        "cost": 36
+      },
+      {
+        "stage": "chain",
+        "k": [
+          3,
+          6,
+          3
+        ],
+        "m": [
+          1,
+          2
+        ],
+        "cost": 36
+      },
+      {
+        "stage": "chain",
+        "k": [
+          3,
+          6,
+          3
+        ],
+        "m": [
+          2,
+          1
+        ],
+        "cost": 36
+      },
+      {
+        "stage": "chain",
+        "k": [
+          6,
+          3,
+          3
+        ],
+        "m": [
+          1,
+          2
+        ],
+        "cost": 36
+      },
+      {
+        "stage": "chain",
+        "k": [
+          6,
+          3,
+          3
+        ],
+        "m": [
+          2,
+          1
+        ],
+        "cost": 36
+      }
+    ],
+    "holding_quantum": [
+      {
+        "stage": "chain",
+        "k": [
+          3,
+          3,
+          6
+        ],
+        "m": [
+          1,
+          2
+        ],
+        "cost": 36
+      },
+      {
+        "stage": "chain",
+        "k": [
+          3,
+          3,
+          6
+        ],
+        "m": [
+          2,
+          1
+        ],
+        "cost": 36
+      },
+      {
+        "stage": "chain",
+        "k": [
+          3,
+          6,
+          3
+        ],
+        "m": [
+          1,
+          2
+        ],
+        "cost": 36
+      },
+      {
+        "stage": "chain",
+        "k": [
+          3,
+          6,
+          3
+        ],
+        "m": [
+          2,
+          1
+        ],
+        "cost": 36
+      },
+      {
+        "stage": "chain",
+        "k": [
+          6,
+          3,
+          3
+        ],
+        "m": [
+          1,
+          2
+        ],
+        "cost": 36
+      },
+      {
+        "stage": "chain",
+        "k": [
+          6,
+          3,
+          3
+        ],
+        "m": [
+          2,
+          1
+        ],
+        "cost": 36
+      }
+    ],
+    "can_return_quantum": [
+      {
+        "stage": "chain",
+        "k": [
+          3,
+          3,
+          3
+        ],
+        "m": [
+          1,
+          2
+        ],
+        "cost": 30
+      },
+      {
+        "stage": "chain",
+        "k": [
+          3,
+          3,
+          3
+        ],
+        "m": [
+          2,
+          1
+        ],
+        "cost": 30
+      }
+    ],
+    "mirror_reachable": true,
+    "ring_reachable": [
+      {
+        "stage": "ring",
+        "k": [
+          3,
+          3,
+          3
+        ],
+        "m": [
+          1,
+          2,
+          1
+        ],
+        "cost": 34
+      },
+      {
+        "stage": "ring",
+        "k": [
+          3,
+          3,
+          3
+        ],
+        "m": [
+          2,
+          1,
+          1
+        ],
+        "cost": 34
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
