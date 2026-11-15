@@ -1,0 +1,61 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0610591v3",
+ "source": {
+  "structure_sha256": "187a84c35624b1713db2f1b4e581ac4938a5bb0e12f2d99f26f4da834014184a",
+  "file": "arxiv-math-0610591v3.pdf"
+ },
+ "provenance": {
+  "title": "SCHUR\u2013WEYL DUALITY IN POSITIVE CHARACTERISTIC",
+  "authors": "STEPHEN DOTY",
+  "arxiv": {
+   "id": "math/0610591",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "28 Aug 2008"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "recommendation": 2
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Since \u03a8(C\u0393) = EndSr((Cn)\u2297r) it follows that dimK \u03a8(K\u0393) = dimK EndSr((Kn)\u2297r) for any in\ufb01nite \ufb01eld K, and thus by comparison of dimensions the \ufb01rst inclusion in (1.2) must be an equality.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-2-surjectivity-of.md",
+   "section_title": "Surjectivity of",
+   "pages": "2-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Since \u03a6(CSr) = EndGLn(C)((Cn)\u2297r) it follows that dimK \u03a6(KSr) = dimK EndGLn(K)((Kn)\u2297r) for any in\ufb01nite \ufb01eld K, and thus by comparison of dimensions the second inclusion in (1.2) must be an equality.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-3-surjectivity-of.md",
+   "section_title": "Surjectivity of",
+   "pages": "7-16",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}
