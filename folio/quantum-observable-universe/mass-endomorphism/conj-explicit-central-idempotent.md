@@ -38,17 +38,8 @@ projector $\pi_T$ for each, and three properties —
 Cross-check 2 is then **derived**: $e_\lambda^2 = \sum_T \sum_{T'} \pi_T
 \pi_{T'} = \sum_T \pi_T^2 = \sum_T \pi_T = e_\lambda$.
 
-**This replaces an earlier encoding that violated AGENTS.md §3b-cond item 5.**
-Until 2026-09-04 the class had a single field whose type *was*
-[`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent)'s
-conclusion, discharged by a bare projection `exact hi.idempotent lam h` — so
-the "conditional theorem" proved nothing modulo the class. Caught by the
-`--item5` mode of `scripts/conditional-on-class-hypothesis-audit.ts`; the fix
-was to axiomatise what interpolation actually supplies and let the theorem
-compose it.
 
 Cross-checks 1, 3 and 4 (sum-to-identity, self-adjointness, bar-pairing) are
 stated above but are still not encoded — they have no downstream consumer yet.
 Orthogonality is now encoded, at the projector level, because idempotency needs
-it. Per §3b-tax **no instance of the class exists**, which is the correct
-representation of an unproved primary conjecture.
+it. The class has **no instance**: the conjecture is open.

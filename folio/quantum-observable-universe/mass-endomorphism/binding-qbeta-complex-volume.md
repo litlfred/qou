@@ -172,9 +172,7 @@ $S(\text{muon}) > 0 > S(\text{proton})$ *were one present*. The surviving
 necessary condition is that $u(q_0)$ must cross the diagonal
 $|\mathrm{Re}\,u| = |\mathrm{Im}\,u|$ between the anchors; $u(q_0)$ itself
 stays open. The measured values live in the probe witness, never in the
-Lean, and — per the O2 analysis
-(`docs/audits/2026-08-14-aomega-to-S-bridge-refuted-O2-negative.md`) —
-the individual anchor signs are not resolved by the data; the resolved
+Lean, and the individual anchor signs are not resolved by the data; the resolved
 target is the swing $S(\text{muon}) - S(\text{proton})$, and the onward
 identification of this channel with the resurgent monodromy datum
 $A_\omega$ is unsupported (no literature; integrality) and not carried.
@@ -205,7 +203,7 @@ ring $R$ with the **bar-involution** $\sigma$ (the structural setting —
 *not* $\mathbb{C}$) descends to **both** the bar-even
 (binding) and bar-odd ($\mathfrak{Q}_\beta$) parts from a single proof,
 because the projections $x \mapsto x\pm\sigma x$ act additively. Formalised
-sorry-free in [`QOU.MassEndomorphism`](binding-qbeta-complex-volume.lean):
+in [`QOU.MassEndomorphism`](binding-qbeta-complex-volume.lean):
 `invol_descent` (one ring identity $\Rightarrow$ both parity identities)
 and `recurrence_invol_descent` (a three-term $\mathfrak{V}$-recurrence with
 a bar-even multiplier $c$, $\sigma c = c$, yields the binding and
