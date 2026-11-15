@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:qbeta-c-k-closed-forms",
+export default conjecture({
+  label: "conj:qbeta-c-k-closed-forms",
   lean: {
     ref: "qou:QOU.BraidKnot.QBetaCKClosedForms",
     validation: "not_checked",
