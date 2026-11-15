@@ -230,5 +230,6 @@
     "Silver-ratio closed forms at k=8, 9, 10 use natural pattern continuation: c_8 = c_3²·b⁴, c_9 = c_3³·b², c_10 = c_3²·b⁶. These are conjectural — the canonical c_k closed forms beyond k=7 are not yet derived from the SDP-T_β / Hoefsmit-N=3 framework."
   ],
   "q0Anchor": "muon",
-  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
+  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
+  "straddleNote": "Anchor straddle (owner ruling Q-AVTQ-1 = 1, bean qou-5wuz): top-level q0Anchor ('muon'), q0Value, and parameters.q_0_50dps (1.109978595642739046681795129380001752700065561029) are the CODATA-2022 muon pin, while parameters.hbar_q_sq_50dps (0.0098171864542750738105690571795642528890492845754014) and parameters.hoefsmit_b_50dps (0.86758406696525115565116289153605239570497937739431) were read from the proton-pinned upstream q-beta-operator-valued-N3.witness.json (q = 1.1099785827513808074799915684402849658272397296993). All c_k_extracted_50dps and c_k_extracted_float entries (c_2..c_10) are drained to null (qou-p77d); witness retained in place for provenance."
 }
