@@ -25,7 +25,7 @@ inclusion into an identification.
 `WtraceRadicalTwoRow`'s docstring, bean `qou-s7z2` and PR #7460's body all recorded
 ⊆ as blocked on Wenzl's theorem: it needs the ≤2-row Ocneanu weights **nonzero**,
 and the corpus's only statement of that was conditional on
-`QBeta.IsOcneanuWeightSystem`, a class with no instance.
+`QBeta.IsOcneanuWeightSystem`, a class with no instance (deleted 2026-11-15, bean `qou-gld2`; the weights are now a theorem, `SchurWeyl.JimboGL.markov_tr_blockE`).
 
 That reasoning went through the wrong object.  `IsOcneanuWeightSystem` relates an
 **opaque** weight family to `schurPrincipal`; `ocneanuWeight` is a **closed form**, so

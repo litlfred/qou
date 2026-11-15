@@ -32,7 +32,7 @@ exact coranks; this is the carrier-level inclusion, unconditional.
 This section said the ⊆ direction needed the ≤2-row Ocneanu weights to be
 nonzero, that the only corpus statement of that fact was
 `conventionD_ocneanuWeight_eq_zero_iff_of_wenzl`, and that it is **conditional on
-the class `IsOcneanuWeightSystem`, which has no instance** — hence a §3b-cond
+the class `IsOcneanuWeightSystem`, which has no instance** (deleted 2026-11-15, bean `qou-gld2`; the weights are now a theorem, `SchurWeyl.JimboGL.markov_tr_blockE`) — hence a §3b-cond
 premise nobody has established. The same claim went into bean `qou-s7z2` and
 PR #7460's body.
 

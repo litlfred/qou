@@ -27,12 +27,9 @@ character formula for the multiplicity spaces, proved from the trace identificat
 * Wenzl's weights are here a **theorem about the tensor representation**: the `K`-graded
   multiplicities are `s_λ(1, q², …)`, unnormalised; the normalised Markov weight is
   `s_λ / [d]_{q²}^{|λ|}`.
-* `QBeta.WenzlWeight.IsOcneanuWeightSystem` asks for a **single** normaliser `Z` for all sizes.
-  The normalised weights cannot satisfy it (`SchurWeyl.not_isOcneanuWeightSystem`, at `d = 2`); the
-  unnormalised ones satisfy it with `Z = 1`, which is already
-  `QBeta.WenzlWeight.isOcneanuWeightSystem_schurPrincipal`.  So this file
-  does not change which `[IsOcneanuWeightSystem]` hypotheses can be dropped; the class's
-  normalisation is an authoring question (see the PR).
+* The former class `QBeta.WenzlWeight.IsOcneanuWeightSystem` asked for a **single** normaliser
+  `Z` for all sizes, which no normalised family can satisfy.  It was deleted on 2026-11-15 (bean
+  `qou-gld2`); the size-indexed normalisation is proved below (`normaliser_eq`).
 * Surjectivity onto the `U_q(gl_d)` commutant is not used and not proved.
 
 ## Base ring (§7c)
