@@ -214,6 +214,10 @@ accept `workdps` at module scope). Sweep re-run: 440 fields moved, max rel
 8.78e-49; baseline arm reproduced the committed witness with 0 moved. The
 GENERAL trap stands: any module-scope `set_compute_dps(N)` in a LIBRARY
 module is this bug — grep for it before trusting a caller's declared dps.
+Second live instance, measured 2026-11-15: `chi_free_via_lr` calls
+`set_compute_dps()` (-> 70) at module scope and is imported lazily inside
+`tr_m_atom_zn`, so `binding_canonical` printed its 50-digit traces at 70 via
+`nstr(x, mp.mp.dps)`. **Serialize at the value's own width, never at ambient dps.**
 The `qou-mass/_internal/` mirror still carries the old line until a
 `sync-qou-mass-vendor.py --apply` (12 modules already drifted on main).
 
