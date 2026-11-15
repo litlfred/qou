@@ -8,7 +8,7 @@ tags:
     - quark-state
     - schur-weyl
 created_at: 2026-11-15T10:10:00Z
-updated_at: 2026-11-15T10:10:00Z
+updated_at: 2026-11-15T11:45:00Z
 parent: qou-gld3
 ---
 
@@ -19,3 +19,6 @@ Owner ruling 2026-11-15 ("G3: add infra"): build the highest-weight theory that 
 2026-11-15 (q-Schur sibling, PR #7864): scoping done. Mathlib has no bicommutant or Jacobson density, and the Dipper–James/Du/Green generation proof would take weeks, so that route is not recommended. Cheaper route: lowerOp = raiseOpᵀ ⇒ B is transpose-closed ⇒ complete reducibility over an ordered field; V = B·N; dim B' ≤ Σ(dim N_μ)². G3.4 then reduces to (★): N_μ = 0 for non-dominant μ, dim N_λ ≤ f^λ (7a). P1–P3 are about 3 PRs, pending the coordinator's go. Still open.
 
 2026-11-15 (PR #7864, merged on owner decision "Merge now, scoped wording"): `QuantumGLCommutant.range_jimbo_eq_commutant` proves, over a linearly ordered field with q not a root of unity and with no hypothesis left ((★) = `hstar_occWeights`, #7873), that the Jimbo image of H_{m+1}(q) equals the commutant of `uqGens` = {E_i = raiseOp, lowerOp, Cartan elements, weight projectors}. Verified by the old Stream 14 session: library sweep 217/217, `lean -DautoImplicit=false -s 65536` exit 0, axioms propext/Classical.choice/Quot.sound only, no sorry. STILL OPEN before it may be called the U_q(gl_d) commutant (do not close this bean on #7864): (1) weight projectors are polynomials in the Cartan elements at generic q; (2) lowerOp vs the standard Δ(F) of U_q(gl_d) (expected: a Cartan factor times F, unchecked); (3) optional, Stream 16: drop the ordered-field hypothesis (only isCompl_dotPerp uses it). Citation for the U_q(gl_n) → q-Schur surjectivity side: Du 1995 (uploads/weylweb.pdf, not yet ingested).
+
+## 2026-11-15 follow-up 1 done (session_01Qmmkt9G83BWVJD2uM6cPfq, owner "1y")
+`QOU/SchurWeyl/QuantumGLCartanProj.lean`: `weightProj_mem_adjoin_cartan` (any field, q ≠ 0 not a root of unity: weightProj μ = ∏_x ∏_{t≤n, t≠μx} (q^{μx}−q^t)⁻¹(K_x − q^t)); `commutant_uqGens_eq_cartan`; `range_jimbo_eq_commutant_cartan` (G3.4 for {E_i, lowerOp, Cartan}, ordered field). lean-direct exit 0; axioms propext/choice/Quot.sound. Remaining: follow-up 2 (lowerOp vs Δ(F)) and the any-field extension (#7874).
