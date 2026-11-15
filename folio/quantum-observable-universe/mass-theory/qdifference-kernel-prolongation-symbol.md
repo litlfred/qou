@@ -6,6 +6,8 @@ the symbol of the jet-prolongation operator** $J^{n}E\to J^{n+1}E$ of the
 Seiberg--Witten connection
 ([`prop:mi-sw-abelianisation`](#prop:mi-sw-abelianisation)).
 
+For jet spaces, their prolongations and the Cartan distribution, see \cite[\S1.1--1.2]{pugliese2023}. For linear $q$-difference modules, fundamental solution matrices at $0$ and $\infty$, the $q$-Borel and $q$-Laplace transforms and the resulting connection matrices, see \cite[\S2.2--2.3]{garoufalidis-wheeler-modular}.
+
 Its carrier is the rank-$2$ $q$-difference module $\mathcal{K}$ of the
 **binding $q$-lift recurrence**
 $$

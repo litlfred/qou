@@ -15,6 +15,7 @@ export default remark({
     "turing-machine",
     "information-flow",
   ],
+  cites: ["arxiv-1301.4504v4"],
   uses: [
     "rem:hawking-radiation",
     "def:big-bang-state",

@@ -1,13 +1,13 @@
 ---
 # qou-2i16
 title: Cite 1906.12122v2.pdf at rem:feynman-qou-comparison
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:53Z
-updated_at: 2026-10-04T15:17:14Z
+updated_at: 2026-11-15T14:10:00Z
 parent: qou-19m0
 ---
 
@@ -28,3 +28,5 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   Nuclear effective field theory: status and perspectives
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [hammer2019] as the citation key when you do it.
+
+DONE 2026-11-15 on branch claude/exposition-cite-queue-2026-11-15 (thread "Polish the paper's exposition"). Citation added with a locator checked against the held library text; wording scoped to what the source proves.

@@ -7,6 +7,7 @@ export default proposition({
     validation: "validated",
   },
   title: "The Seiberg–Witten period is an algebraic residue sum",
+  cites: ["donagi1997"],
   uses: [
     "prop:mi-sw-abelianisation",
     "rem:brings-smoothness",

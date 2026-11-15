@@ -16,6 +16,7 @@ export default remark({
   ],
   uses: ["rem:atom-mass-full-hecke"],
   cites: [
+    "hammer2019",
     "jones1985",
   ],
 });

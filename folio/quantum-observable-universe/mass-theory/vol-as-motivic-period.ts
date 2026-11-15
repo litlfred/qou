@@ -7,6 +7,7 @@ export default remark({
     "$\\mathrm{Vol}(K)$ as a motivic period: the Bloch--Wigner regulator reading of $\\tau_{\\mathrm{arch}}$",
   uses: ["def:quantum-bloch-group"],
   cites: [
+    "brown-motivic-p1-three-points",
     "zagier1986",
     "neumann-zagier1985",
     "kontsevich1995",
