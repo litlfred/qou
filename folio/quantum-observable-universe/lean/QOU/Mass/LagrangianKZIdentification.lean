@@ -1,6 +1,9 @@
 import Mathlib.Tactic
 import Mathlib.Algebra.Polynomial.Roots
 import Mathlib.LinearAlgebra.Dual.Lemmas
+import Mathlib.Data.Matrix.Basic
+import Mathlib.RingTheory.MvPolynomial.Basic
+import Mathlib.Algebra.MvPolynomial.Polynomial
 
 /-!
 # Bridge A, step A2 — the Lagrangian's connection and the KZ connection
@@ -61,6 +64,14 @@ in a fixed trivialisation, on every diagonal, already force the gauge class is n
 connection is its monodromy: that is the Riemann–Hilbert correspondence (Deligne). It is the one
 analytic proposition here and it enters only as the hypothesis structure `RiemannHilbertInput`;
 `gauge_equiv_kz_iff_monodromy` is the consequence used downstream.
+
+## Parts V–VI — deriving the postulates
+
+* `schurWeyl_two` (P3): a pair residue on `K^N ⊗ K^N` commuting with the diagonal `𝔤𝔩_N` is
+  `α + β·P`. With permutation symmetry, `arnoldForm_split` writes the form as an abelian part plus
+  the KZ form with `ℏ = β`.
+* `eval_const_of_dilation_invariant` (P2, key step): a polynomial residue invariant under the
+  Euler dilation is constant.
 
 ## What this does not do
 
@@ -394,6 +405,180 @@ theorem arnold_euler (h2 : (2 : K) ≠ 0) {M : Fin n → Fin n → A} (hM : ∀ 
   · rw [if_neg hij, div_self (sub_ne_zero.mpr (hz.ne hij)), one_smul]
 
 end Arnold
+
+
+/-! ## Part V — deriving P3: the pair residue from equivariance (`schurWeyl_two`)
+
+The corpus makes `∇` a morphism in `C` (`categorical-dirac-operator-exists-proof`), so its pair
+residue `X ∈ End(V ⊗ V)` commutes with the symmetry. For `V = K^N` (the fundamental of `𝔤𝔩_N`)
+we prove Schur–Weyl at `n = 2` directly: if `X` commutes with every coproduct
+`E_{ab} ⊗ 1 + 1 ⊗ E_{ab}` then `X = α · 1 + β · P` with `P` the flip. Hence, with permutation
+symmetry, every pair residue is `α + β s_{ij}` with the same `α, β` (`arnoldForm_split`): an
+abelian part plus KZ with `ℏ = β`. Characteristic zero, `N ≥ 2`. -/
+
+section SchurWeylTwo
+
+variable {K : Type*} [Field K] {N : ℕ}
+
+/-- The diagonal action of `E_{ab}` on `V ⊗ V`, `V = K^N`, as a matrix on `Fin N × Fin N`. -/
+def coprodE (a b : Fin N) : Matrix (Fin N × Fin N) (Fin N × Fin N) K :=
+  fun p q => (if p.1 = a ∧ q.1 = b ∧ p.2 = q.2 then 1 else 0) +
+    (if p.1 = q.1 ∧ p.2 = a ∧ q.2 = b then 1 else 0)
+
+/-- The flip `P : u ⊗ v ↦ v ⊗ u`. -/
+def swapM : Matrix (Fin N × Fin N) (Fin N × Fin N) K :=
+  fun p q => if p.1 = q.2 ∧ p.2 = q.1 then 1 else 0
+
+theorem coprod_rel {X : Matrix (Fin N × Fin N) (Fin N × Fin N) K} {a b : Fin N}
+    (h : Commute X (coprodE a b)) (i j k l : Fin N) :
+    (if b = k then X (i, j) (a, l) else 0) + (if b = l then X (i, j) (k, a) else 0) =
+      (if a = i then X (b, j) (k, l) else 0) + (if a = j then X (i, b) (k, l) else 0) := by
+  have := congrFun (congrFun h.eq (i, j)) (k, l)
+  simp only [Matrix.mul_apply, coprodE, Fintype.sum_prod_type, mul_add, add_mul, mul_ite,
+    ite_mul, mul_one, one_mul, mul_zero, zero_mul, Finset.sum_add_distrib, ite_and] at this
+  simpa [Finset.sum_ite_eq, eq_comm] using this
+
+theorem coprod_weight [CharZero K] {X : Matrix (Fin N × Fin N) (Fin N × Fin N) K}
+    (h : ∀ a b, Commute X (coprodE a b)) (i j k l : Fin N)
+    (hne : ¬ ((k = i ∧ l = j) ∨ (k = j ∧ l = i))) : X (i, j) (k, l) = 0 := by
+  by_contra hx
+  have h1 := coprod_rel (h k k) i j k l
+  have h2 := coprod_rel (h l l) i j k l
+  by_cases hki : k = i <;> by_cases hkj : k = j <;> by_cases hli : l = i <;>
+    by_cases hlj : l = j <;> by_cases hkl : k = l <;>
+    simp_all [eq_comm, ← two_mul]
+
+theorem schurWeyl_two [CharZero K] (hN : 2 ≤ N) {X : Matrix (Fin N × Fin N) (Fin N × Fin N) K}
+    (h : ∀ a b, Commute X (coprodE a b)) :
+    ∃ α β : K, X = α • (1 : Matrix (Fin N × Fin N) (Fin N × Fin N) K) + β • swapM := by
+  -- pair relations
+  have E1 : ∀ a b : Fin N, a ≠ b → X (a, b) (a, b) + X (a, b) (b, a) = X (b, b) (b, b) := by
+    intro a b hab; have := coprod_rel (h a b) a b b b; simpa [hab, Ne.symm hab] using this
+  have E2 : ∀ a b : Fin N, a ≠ b → X (b, a) (a, b) + X (b, a) (b, a) = X (b, b) (b, b) := by
+    intro a b hab; have := coprod_rel (h a b) b a b b; simpa [hab, Ne.symm hab] using this
+  have E3 : ∀ a b : Fin N, a ≠ b → X (a, a) (a, a) = X (b, a) (b, a) + X (a, b) (b, a) := by
+    intro a b hab; have := coprod_rel (h a b) a a b a; simpa [Ne.symm hab] using this
+  have E4 : ∀ a b : Fin N, a ≠ b → X (a, a) (a, a) = X (b, a) (a, b) + X (a, b) (a, b) := by
+    intro a b hab; have := coprod_rel (h a b) a a a b; simpa [Ne.symm hab] using this
+  have E5 : ∀ a b j : Fin N, a ≠ b → j ≠ a → j ≠ b → X (a, j) (a, j) = X (b, j) (b, j) := by
+    intro a b j hab hja hjb; have := coprod_rel (h a b) a j b j
+    simpa [Ne.symm hjb, hja, Ne.symm hja] using this
+  have E6 : ∀ a b j : Fin N, a ≠ b → j ≠ a → j ≠ b → X (a, j) (j, a) = X (b, j) (j, b) := by
+    intro a b j hab hja hjb; have := coprod_rel (h a b) a j j b
+    simpa [Ne.symm hjb, hja, Ne.symm hja] using this
+  have two : (2 : K) ≠ 0 := two_ne_zero
+  -- symmetry of p and r
+  have Sp : ∀ a b : Fin N, a ≠ b → X (a, b) (a, b) = X (b, a) (b, a) := by
+    intro a b hab
+    have e1 := E1 a b hab; have e2 := E2 a b hab; have e3 := E3 a b hab; have e4 := E4 a b hab
+    have : (2 : K) * (X (a, b) (a, b) - X (b, a) (b, a)) = 0 := by linear_combination e1 - e2 + e3 - e4
+    exact sub_eq_zero.mp ((mul_eq_zero.mp this).resolve_left two)
+  have Sr : ∀ a b : Fin N, a ≠ b → X (a, b) (b, a) = X (b, a) (a, b) := by
+    intro a b hab
+    have e1 := E1 a b hab; have e2 := E2 a b hab; have := Sp a b hab
+    linear_combination e1 - e2 - this
+  set z : Fin N := ⟨0, by omega⟩
+  set o : Fin N := ⟨1, by omega⟩
+  have hzo : z ≠ o := by simp [z, o, Fin.ext_iff]
+  refine ⟨X (z, o) (z, o), X (z, o) (o, z), ?_⟩
+  -- every pair has the same p and r
+  have P0 : ∀ y, y ≠ z → X (z, y) (z, y) = X (z, o) (z, o) ∧
+      X (z, y) (y, z) = X (z, o) (o, z) := by
+    intro y hy
+    by_cases hyo : y = o
+    · subst hyo; exact ⟨rfl, rfl⟩
+    · refine ⟨?_, ?_⟩
+      · rw [Sp z y (Ne.symm hy), E5 y o z hyo (Ne.symm hy) hzo, Sp o z (Ne.symm hzo)]
+      · rw [Sr z y (Ne.symm hy), E6 y o z hyo (Ne.symm hy) hzo, Sr o z (Ne.symm hzo)]
+  have Pall : ∀ x y, x ≠ y → X (x, y) (x, y) = X (z, o) (z, o) ∧
+      X (x, y) (y, x) = X (z, o) (o, z) := by
+    intro x y hxy
+    by_cases hx : x = z
+    · rw [hx] at hxy ⊢; exact P0 y (Ne.symm hxy)
+    · by_cases hy : y = z
+      · rw [hy] at hxy ⊢
+        rw [Sp x z hxy, Sr x z hxy]; exact P0 x hx
+      · rw [E5 x z y hx (Ne.symm hxy) hy, E6 x z y hx (Ne.symm hxy) hy]
+        exact P0 y hy
+  ext ⟨i, j⟩ ⟨k, l⟩
+  simp only [Matrix.add_apply, Matrix.smul_apply, Matrix.one_apply, swapM, Prod.mk.injEq,
+    smul_eq_mul]
+  by_cases hc : (k = i ∧ l = j) ∨ (k = j ∧ l = i)
+  · by_cases hij : i = j
+    · have hk : k = i ∧ l = i := by rcases hc with h | h <;> rw [← hij] at * <;> exact h
+      rw [hk.1, hk.2, ← hij]
+      have hy : ∃ y, y ≠ i := ⟨if i = z then o else z, by
+        by_cases hiz : i = z
+        · rw [if_pos hiz, hiz]; exact Ne.symm hzo
+        · rw [if_neg hiz]; exact Ne.symm hiz⟩
+      obtain ⟨y, hyi⟩ := hy
+      have e := E1 y i hyi
+      obtain ⟨p1, p2⟩ := Pall y i hyi
+      simp only [and_self, if_true, mul_one]
+      rw [← e, p1, p2]
+    · rcases hc with ⟨hk, hl⟩ | ⟨hk, hl⟩
+      · rw [hk, hl]
+        obtain ⟨p1, _⟩ := Pall i j hij
+        simp [hij, p1]
+      · rw [hk, hl]
+        obtain ⟨_, p2⟩ := Pall i j hij
+        simp [hij, Ne.symm hij, p2]
+  · rw [coprod_weight h i j k l hc]
+    push_neg at hc
+    have h1 : ¬ (i = k ∧ j = l) := fun ⟨a, b⟩ => hc.1 a.symm b.symm
+    have h2 : ¬ (i = l ∧ j = k) := fun ⟨a, b⟩ => hc.2 b.symm a.symm
+    simp [h1, h2]
+
+end SchurWeylTwo
+
+section Split
+
+variable {K : Type*} [Field K] {A : Type*} [Ring A] [Algebra K A] {n : ℕ}
+
+/-- With pair residues `α + β S_{ij}`, the Arnold form is an abelian part plus a KZ form. -/
+theorem arnoldForm_split (α β : K) (S : Fin n → Fin n → A) (z u : Fin n → K) :
+    arnoldForm (fun i j => α • (1 : A) + β • S i j) z u =
+      α • arnoldForm (fun _ _ => (1 : A)) z u + kzForm β S z u := by
+  unfold kzForm arnoldForm arnoldCoeff
+  simp only [smul_add, Finset.sum_add_distrib, Finset.smul_sum, smul_comm α]
+
+end Split
+
+/-! ## Part VI — deriving P2: dilation invariance makes a regular residue constant
+
+The partial-fraction step (written proof in the audit note) reduces two-body locality to: the
+residue along a diagonal is a polynomial function that is invariant under the Euler (Reeb)
+dilation. `eval_const_of_dilation_invariant` shows such a function is constant. -/
+
+section Dilation
+
+open Polynomial in
+theorem eval_aeval_line {K : Type*} [Field K] {σ : Type*} (x : σ → K) (c : K)
+    (R : MvPolynomial σ K) :
+    (MvPolynomial.aeval (fun i => C (x i) * X) R).eval c = MvPolynomial.eval (c • x) R := by
+  induction R using MvPolynomial.induction_on with
+  | C a => simp
+  | add f g hf hg => simp only [map_add, eval_add, hf, hg]
+  | mul_X f i hf => simp only [map_mul, eval_mul, hf, MvPolynomial.aeval_X, eval_C, eval_X,
+      MvPolynomial.eval_X, Pi.smul_apply, smul_eq_mul]; ring
+
+open Polynomial in
+theorem eval_const_of_dilation_invariant {K : Type*} [Field K] [Infinite K] {σ : Type*}
+    (R : MvPolynomial σ K) (h : ∀ c : K, c ≠ 0 → ∀ x : σ → K,
+      MvPolynomial.eval (c • x) R = MvPolynomial.eval x R) (x : σ → K) :
+    MvPolynomial.eval x R = MvPolynomial.eval 0 R := by
+  set p : K[X] := MvPolynomial.aeval (fun i => C (x i) * X) R with hp
+  have hev : ∀ c : K, p.eval c = MvPolynomial.eval (c • x) R := fun c => eval_aeval_line x c R
+  have hconst : p = C (MvPolynomial.eval x R) := by
+    apply Polynomial.eq_of_infinite_eval_eq
+    refine Set.Infinite.mono (s := ({0} : Set K)ᶜ) (fun c hc => ?_) (Set.finite_singleton 0).infinite_compl
+    simp only [Set.mem_setOf_eq, eval_C, hev]
+    exact h c hc x
+  have := hev 0
+  rw [hconst, eval_C, zero_smul] at this
+  exact this
+
+end Dilation
 
 /-! ## Part IV — the Riemann–Hilbert input, isolated -/
 
