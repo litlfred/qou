@@ -170,8 +170,18 @@ as a live discrepancy.
 
 ## 6. Verification
 
-- **Lean.** `ColourChannelSpinStatistics.lean`, a library file importing Mathlib only. Status:
-  *pending lean-direct verification*; this line is updated in the PR when the run completes.
+- **Lean.** `ColourChannelSpinStatistics.lean` is a library file that imports Mathlib only.
+  - **Command:** `lean -DautoImplicit=false -s 65536` exits **0** against the restored Mathlib
+    snapshot `lake-cache/qou-v4-24-0` at `a792c46d01b` (Mathlib rev `f897ebc`).
+  - **Axioms:** all six theorems use only `[propext, Classical.choice, Quot.sound]`.
+  - **No escape hatches:** no `sorry`, `native_decide` or `axiom`.
+  - **One edit:** an added import `Mathlib.Tactic.DeriveFintype`, needed for `deriving Fintype`. No
+    proof or statement changed.
+  - **Control that `decide` really evaluates:** `gram .mixed .mixed = 7` is rejected by `decide`.
+  - **Control that `autoImplicit` is off:** an unbound identifier errors.
+  - **Limits:** this was not run through `scripts/lean-library-sweep.py`, and nothing else checks it,
+    since CI runs only when dispatched by hand. Because the file imports no QOU module, the hazard of
+    a stale snapshot against current QOU source does not apply.
 - **Hand checks.** The S₃ multiplicities in §2 were computed by hand from the character table
   (3 classes, sizes 1/3/2), as independent confirmation of the Lean statements. The dimension
   identities in §1 were checked by hand.

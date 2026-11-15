@@ -1,6 +1,7 @@
 import Mathlib.GroupTheory.Perm.Sign
 import Mathlib.GroupTheory.Perm.Fin
 import Mathlib.Data.Fintype.Perm
+import Mathlib.Tactic.DeriveFintype
 
 /-!
 # QOU.SchurWeyl.ColourChannelSpinStatistics — which `S₃` channel colour can occupy
