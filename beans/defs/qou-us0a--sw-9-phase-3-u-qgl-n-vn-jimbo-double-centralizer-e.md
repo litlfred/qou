@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-02T19:33:08Z
-updated_at: 2026-10-04T15:24:39Z
+updated_at: 2026-11-15T13:40:00Z
 parent: qou-59vq
 blocked_by:
     - qou-0h5k
@@ -59,3 +59,7 @@ two things this bean still needs are unchanged:
 the kernel is `ker(H_n ↠ TL_n)`, dimension `n! − Catalan(n)` (1, 10, 78, 588,
 4611, 38890 at n = 3…8). So a `Fin 2` attempt proves the Temperley–Lieb
 statement, not the general one; the general one wants `N ≥ n`.
+
+## Re-scoped 2026-11-15 (owner tap, E1 bean triage)
+
+Generic q over an ordered field is done: `range_jimbo_eq_commutant` / `_cartan` (#7864), plus the Jantzen coproduct identification (#7898). **Still open:** the any-field case, tracked as issue #7874 (O2–O6). This bean now tracks only that.
