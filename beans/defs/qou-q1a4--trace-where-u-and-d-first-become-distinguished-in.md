@@ -8,7 +8,7 @@ tags:
     - needs-owner
     - convention-d
 created_at: 2026-11-15T18:54:18Z
-updated_at: 2026-11-15T19:42:37Z
+updated_at: 2026-11-15T19:49:43Z
 parent: qou-avtq
 ---
 
@@ -56,3 +56,6 @@ A grep of folio/ content and Lean for an isospin orientation convention (e₁ = 
 
 
 **2026-11-15 §18 (e7e9b93deb2).** Derivation attempt with the corpus's derived scale E₀ = m_e/(q(q−1)), tower-summed, used linearly on the D trace restricted to the γγ nucleon V³: 0.3254 MeV (−74.8 %), and V⁶ agrees to 0.6 %. The log form with E₀ gives −31.8 %, but the log form has no corpus support. The derivation does not close. Proposed wording for the n–p block (Option A: named hypothesis H_α; Option B: demote to conjecture) is at qou-np-splitting/proposed-np-block-wording.md, not applied.
+
+
+2026-11-15 (§19 + H_α applied): Route 1 done. Φ = Σ log|V̂ᵢ| is a log of algebraic quantum-volume factors, not a hyperbolic volume; the γγ nucleon V³ closes to the Borromean rings for p and n alike, so ΔVol = 0 (scope-(a) negative for the 'Φ is a volume' route). Option A applied (6baace0e793): statement now assumes (H_α). Route 4 done (dc79a1c9153): Lean class ScaleHypothesis + splitting_of_scaleHypothesis, sorry-free, tautological rfl def removed. Route 2 (n–p = Q_β + m_e from the derived Q_β route) next. STAYS OPEN: H_α is an open conjecture.
