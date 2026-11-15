@@ -63,10 +63,11 @@ class HeckeRational:
         self.q = Fraction(p_num, p_den)
         self.q_inv = Fraction(p_den, p_num)
         self.ha = self.q - self.q_inv
-        # z = 1/(q^{1/2} + q^{-1/2}) — approximate as rational
-        # For exact: z = 4993/10000 at q=111/100
-        # Better: use the exact value from q^{1/2} ≈ 1053/1000
-        self.z = Fraction(4993, 10000)
+        # Convention-D Markov parameter z = q^3/(q^2+1), exact in Q for
+        # rational q (owner rulings 2026-08-15 and 2026-11-15: replace the
+        # convention-C value with convention D).  Previously the rounded
+        # convention-C z = 4993/10000 (~ sqrt(q)/(q+1)).
+        self.z = self.q ** 3 / (self.q ** 2 + 1)
 
     def crossing(self, ti, tj):
         """Returns (c, d) where crossing = c σ + d."""
@@ -361,7 +362,7 @@ def main():
         witness = {
             "computation": "hecke-engine",
             "q": "111/100",
-            "z": "4993/10000",
+            "z": str(HeckeRational().z),
             "results": [asdict(r) for r in results],
         }
         out = Path(_HERE_W.parent / "hecke-engine.witness.json")
