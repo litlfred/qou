@@ -119,6 +119,8 @@ export default chapter({
         "brings-smoothness-resolution",
         "brings-smoothness-chart-regularity",
         "brings-smoothness",
+        "colour-ratio-mobius-matrix",
+        "colour-ratio-branch-point",
         "approach-to-exceptional-divisor",
         "thurston-relaxation",
         "briggs-klein-chart",
