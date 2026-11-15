@@ -8,7 +8,8 @@ prediction of m_p and m_n from (m_e, m_μ, q_0) at MPFR 50 dps.
    m_p = 2 · m_μ · |tr_M(β_Bor, q_0)| · [3]_q! / q_0^3  −  12 · m_e
 
    m_n = m_p + Q_β + m_e   with Q_β the parameter-free Kashiwara b² truncation
-                           (derived_masses.q_beta_kashiwara_n2_mev; ~+1 ppb on m_n).
+                           (derived_masses.q_beta_kashiwara_n2_mev; +501 ppb on m_n under
+                           convention D, see below).
                            The flavor-split X = (q-1)²(1 - q^{-4})/3 is retained
                            as a SECONDARY diagnostic ratio (−1.76 ppm), not the route.
 
@@ -56,10 +57,11 @@ At q_0 = 1.1099785955573347... (50 dps, m_p-pinned re-pin #1422):
                                           round-trip, not a prediction)
   m_μ_pred  = 105.65840 MeV   vs CODATA 105.65838  →  +0.21 ppm   (9.5σ
                                           PREDICTION — the μ-p tension)
-  m_n_pred  = 939.56542 MeV   vs CODATA 939.56542  →  +1.0 ppb   (n→p+e+ν̄  # noqa: P31 — docstring; prediction-vs-CODATA table
+  m_n_pred  = 939.56589 MeV   vs CODATA 939.56542  →  +501 ppb   (n→p+e+ν̄  # noqa: P31 — docstring; prediction-vs-CODATA table
                                           chain; Kashiwara b² Q_β, near-match)
-  Q_β_pred  = 0.78233 MeV     vs CODATA 0.78233    →  +1.25 ppm on Q_β  # noqa: P31 — docstring; prediction-vs-CODATA table
-                                          (only ~+1 ppb on m_n; gated on s5bb)
+  Q_β_pred  = 0.78280 MeV     vs CODATA 0.78233    →  +602 ppm on Q_β  # noqa: P31 — docstring; prediction-vs-CODATA table
+                                          (convention-D α; the +1.25 ppm / ~1 ppb
+                                          figures were convention C, excised)
 
 Class-A acknowledged-anchor banner (per Workplan-0b): m_e, m_μ are
 CAL-1/CAL-2 anchors (CODATA inputs). q_0 is the substrate parameter
@@ -279,7 +281,8 @@ def main():
     m_p_pred = 2 * m_mu * F - 12 * m_e
     # Canonical neutron: n → p + e⁻ + ν̄, with Q_β the parameter-free
     # Kashiwara b² truncation (q_0-only; derived_masses.q_beta_kashiwara_n2_mev).
-    # Q_β is ~0.083 % of m_n, so its +1.25 ppm lands m_n at ~+1 ppb.
+    # Q_β is ~0.083 % of m_n; under convention D its +602 ppm lands m_n at
+    # +501 ppb (the earlier +1.25 ppm / ~1 ppb were convention C).
     # TIER: near-match; exact Q_β gated on the s5bb Habiro keystone.
     Q_beta_pred = q_beta_kashiwara_n2_mev()            # absolute MeV (no E_0 scaling)
     Delta_m_pred = Q_beta_pred + m_e                   # = m_n − m_p, computed directly
@@ -369,7 +372,7 @@ def main():
         "(m_e, m_μ, q_0) using Lean-proved closed forms for |tr_M(β_Bor)| "
         "and [3]_q!. The neutron uses the 3-input chain m_n = m_p + Q_β + m_e "
         "with Q_β the parameter-free Kashiwara b² truncation (near-match, "
-        "~+1 ppb on m_n); the Hecke-skein flavor-split is a secondary ratio. "
+        "+501 ppb on m_n under convention D); the Hecke-skein flavor-split is a secondary ratio. "
         "CAL-3 (Q_β) is NOT used as input — Q_β becomes a DERIVED quantity. "
         "Substrate identity: m_p = 2·m_μ·|tr_M|·[3]_q!/q^3 - 12·m_e where "
         "the '12' is the Ocneanu cancellation reciprocal."
@@ -486,8 +489,9 @@ def main():
         unit="ppb",
         source=(
             "m_n via the parameter-free Kashiwara b² Q_β (n→p+e+ν̄) should "
-            "match CODATA m_n within 10 ppb — observed ~1 ppb. TIER: "
-            "near-match; exact Q_β gated on the s5bb Habiro keystone."
+            "match CODATA m_n within 10 ppb. Under convention D it does not: "
+            "+501 ppb (the ~1 ppb once recorded was convention C, excised). "
+            "TIER: near-match; exact Q_β gated on the s5bb Habiro keystone."
         ),
     )
 

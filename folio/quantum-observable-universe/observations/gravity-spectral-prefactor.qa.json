@@ -1293,6 +1293,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e2de02373cb1",
+          "ts": "32169795b0b4",
+          "lean": "9adff8608757",
+          "lean_statement": "5392e07a6770"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:00:14.506Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "[sidecar review 2026-11-15, issue #8030] Lean `gravity_spectral_prefactor` is a tautology: `tailSpectralRatio U` is defined as `α/(8 m_e)`, and the theorem `α = m_e·8·tailSpectralRatio U` follows by `field_simp`. The limit expression for G_q and the identification α = m_e·8·Catalan are absent; the second is taken as hypothesis `h` in `tailSpectralRatio_eq_of_borromean`. Checked: 8G = 7.32772 = Vol(Borromean complement) (two regular ideal octahedra, 4G each) ✓. **prf contradicts the statement's own scope.** The statement uses G for Catalan's constant and says \"no comparison against a measured gravitational coupling is offered … relation to Newton's constant is open\". The prf then says \"α = m_e·8G by the Planck-unit convention\", and Corollaries 1–2 say \"the gravitational constant G is not an independent parameter\" and \"at q₀ the universal residue must reproduce the empirical Newton constant\". So the prf reads G as Newton's …"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2796,6 +2814,6 @@
       }
     ]
   },
-  "updated_at": "2026-09-14T21:45:17.731Z",
+  "updated_at": "2026-11-15T22:00:14.506Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

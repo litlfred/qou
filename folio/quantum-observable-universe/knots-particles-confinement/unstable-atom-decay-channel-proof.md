@@ -1,3 +1,5 @@
+**Scope (2026-11-15).** This proof was written for an earlier, existential form of [stability](#def:stable-atom), under which an atom was stable when *some* $x \in \mathbb{Z}_{\geq 0}^N$ satisfied $\mathrm{G}(q)\,x \geq 0$. That form holds for every atom ($x = 0$), so under it no atom is unstable and the argument below is vacuous. Under the current definition, the violated constraint is read off directly as $\arg\min_\gamma (\mathrm{G}(q)\,x(K, q))_\gamma$ at the coefficient vector of $T_w$, when that vector is a non-negative integer vector. The case where it is not, and the uniqueness argument, are open.
+
 *Proof.*
 *Since $K$ is unstable, the ILP $\{x \in \mathbb{Z}_{\geq 0}^N : \mathrm{G}(q) x \geq 0\}$ has no solution within the confinement filtration $J^{\ell(K, q)}(q)$.*
 

@@ -2850,7 +2850,7 @@
         "prop:markov-trace-recursive-reducer"
       ]
     },
-    "prop:qbeta-c-k-closed-forms": {
+    "conj:qbeta-c-k-closed-forms": {
       "derived": [
         "conj:kazhdan-lusztig-classical-limit",
         "prop:q-beta-categorical-precision-ladder"
@@ -5373,7 +5373,7 @@
         "prop:q-beta-c-k-recursion-from-habiro-q-difference",
         "prop:q-beta-direction-sanity-gate",
         "prop:q-beta-q-eq-one-shadow-gate",
-        "prop:q-beta-radius-of-convergence-gate",
+        "conj:q-beta-radius-of-convergence-gate",
         "prop:qbeta-c8-c10-silver-rationals",
         "prop:qbeta-z-recursion-to-ck-recursion-bridge"
       ],
@@ -5385,7 +5385,7 @@
         "prop:q-beta-c-k-recursion-from-habiro-q-difference",
         "prop:q-beta-direction-sanity-gate",
         "prop:q-beta-q-eq-one-shadow-gate",
-        "prop:q-beta-radius-of-convergence-gate",
+        "conj:q-beta-radius-of-convergence-gate",
         "prop:qbeta-c8-c10-silver-rationals",
         "prop:qbeta-z-recursion-to-ck-recursion-bridge"
       ]

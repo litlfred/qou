@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T11:06:01.894087+00:00",
-  "commitSha": "766a531446726071965fd29785f076e1780bc036",
+  "computedAt": "2026-11-15T22:05:18.838229+00:00",
+  "commitSha": "b2b349f3607b14633db66340b2e643563a868ddf",
   "assertions": [
     {
       "name": "m_p_matches_codata_within_1ppm",
-      "computed": "0.000002851770081180650411597989082673147553577069893547453740433924754438904",
+      "computed": "0.000002851787521128885851270994254155494197045191587521683853869159611414295",
       "expected": 0.0,
       "passed": true,
       "tolerance": 1.0,
@@ -15,20 +15,20 @@
     },
     {
       "name": "m_n_matches_codata_within_10ppb",
-      "computed": "501.4316328051656071123342958476165381650237915658254389662523487981405",
+      "computed": "501.4316327877401803316635910708273218008129439157289562765830380455309",
       "expected": 0.0,
       "passed": false,
       "tolerance": 10.0,
       "unit": "ppb",
-      "source": "m_n via the parameter-free Kashiwara b² Q_β (n→p+e+ν̄) should match CODATA m_n within 10 ppb — observed ~1 ppb. TIER: near-match; exact Q_β gated on the s5bb Habiro keystone."
+      "source": "m_n via the parameter-free Kashiwara b² Q_β (n→p+e+ν̄) should match CODATA m_n within 10 ppb. Under convention D it does not: +501 ppb (the ~1 ppb once recorded was convention C, excised). TIER: near-match; exact Q_β gated on the s5bb Habiro keystone."
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 2,
   "computation": "m-p-substrate-identity-50dps",
   "scriptFile": "m_p_substrate_identity_50dps.py",
-  "scriptHash": "d4e739a31ca7",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptHash": "53079b79c6a8",
+  "scriptCommitSha": "547b78208f6bb667ec8b3580f16390a74dbb9ce4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,14 +36,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "24ca776b0ad05497"
   },
   "invocation": {
     "argv": [
@@ -51,13 +52,13 @@
     ],
     "reproduce": "python3 -u computations/m_p_substrate_identity_50dps.py"
   },
-  "description": "Production substrate-categorical prediction of m_p and m_n from (m_e, m_μ, q_0) using Lean-proved closed forms for |tr_M(β_Bor)| and [3]_q!. The neutron uses the 3-input chain m_n = m_p + Q_β + m_e with Q_β the parameter-free Kashiwara b² truncation (near-match, ~+1 ppb on m_n); the Hecke-skein flavor-split is a secondary ratio. CAL-3 (Q_β) is NOT used as input — Q_β becomes a DERIVED quantity. Substrate identity: m_p = 2·m_μ·|tr_M|·[3]_q!/q^3 - 12·m_e where the '12' is the Ocneanu cancellation reciprocal.",
+  "description": "Production substrate-categorical prediction of m_p and m_n from (m_e, m_μ, q_0) using Lean-proved closed forms for |tr_M(β_Bor)| and [3]_q!. The neutron uses the 3-input chain m_n = m_p + Q_β + m_e with Q_β the parameter-free Kashiwara b² truncation (near-match, +501 ppb on m_n under convention D); the Hecke-skein flavor-split is a secondary ratio. CAL-3 (Q_β) is NOT used as input — Q_β becomes a DERIVED quantity. Substrate identity: m_p = 2·m_μ·|tr_M|·[3]_q!/q^3 - 12·m_e where the '12' is the Ocneanu cancellation reciprocal.",
   "contentBlock": "prop:proton-mass-substrate-identity",
   "auditOnly": "docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md",
   "parameters": {
     "q0": "1.109978582751380807591669",
-    "m_e_MeV": "0.510998950690000009",
-    "m_mu_MeV": "105.658397811341816",
+    "m_e_MeV": "0.51099895069",
+    "m_mu_MeV": "105.658397811341814",
     "m_mu_over_m_e": "206.76832637067389"
   },
   "data": {
@@ -69,36 +70,36 @@
       "flavor_split_X": "0.001375710807027096008551109"
     },
     "predictions": {
-      "m_p_MeV": "938.2720894273242637273567",
-      "m_n_MeV": "939.5658930678236506485695",
-      "M_N_MeV": "938.9189912475739571879631",
+      "m_p_MeV": "938.27208942732424736394",
+      "m_n_MeV": "939.565893067823634276241",
+      "M_N_MeV": "938.9189912475739408200905",
       "Q_beta_MeV": "0.7828046898093869123009924",
-      "Delta_m_pn_MeV": "1.293803640499386921212788"
+      "Delta_m_pn_MeV": "1.293803640499386912300992"
     },
     "predictions_pathC": {
-      "m_n_MeV": "939.5658930678236506485695",
-      "m_n_residual_ppm": "0.501431632805",
-      "Delta_m_pn_MeV": "1.293803640499386921212788",
-      "Delta_m_pn_ppb": "364276.391217384",
+      "m_n_MeV": "939.565893067823634276241",
+      "m_n_residual_ppm": "0.501431632788",
+      "Delta_m_pn_MeV": "1.293803640499386912300992",
+      "Delta_m_pn_ppb": "364276.3912173771",
       "Q_beta_N3_MeV": "0.7828046898093869123009924",
       "derivation": "m_n = m_p + Q_β(Kashiwara b², parameter-free) + m_e"
     },
     "neutron_diagnostics": {
-      "m_n_flavor_split_MeV": "939.563768969433975657439",
-      "m_n_flavor_split_residual_ppm": "-1.75929267662",
-      "Delta_m_pn_flavor_split_MeV": "1.291679542109711930082327",
+      "m_n_flavor_split_MeV": "939.5637689694339592714955",
+      "m_n_flavor_split_residual_ppm": "-1.75929267664",
+      "Delta_m_pn_flavor_split_MeV": "1.291679542109711907555503",
       "flavor_split_note": "flavor-split is a derived u↔d RATIO (prop:flavor-split-substrate), −1.76 ppm on m_n; NOT the production neutron route.",
-      "roundtrip_check_experimental_qbeta_MeV": "939.5654219373242637362685",
+      "roundtrip_check_experimental_qbeta_MeV": "939.56542193732424736394",
       "roundtrip_note": "m_p + Q_AME(experimental) + m_e recovers CODATA m_n BY CONSTRUCTION — circular, NOT a prediction (3-input over-count)."
     },
     "codata_comparison": {
       "m_p_codata_MeV": "938.27208943",
-      "m_p_residual_ppm": "-2.85177008118e-6",
+      "m_p_residual_ppm": "-2.85178752113e-6",
       "m_n_codata_MeV": "939.56542194",
-      "m_n_residual_ppm": "0.501431632805",
+      "m_n_residual_ppm": "0.501431632788",
       "M_N_codata_MeV": "938.918755685",
-      "M_N_residual_ppm": "0.25088706827",
-      "Q_beta_codata_MeV": "0.7823335593099999910882048",
+      "M_N_residual_ppm": "0.250887068252",
+      "Q_beta_codata_MeV": "0.78233355931",
       "Q_beta_residual_ppm": "602.211797999"
     },
     "lean_uniqueness_ref": {
@@ -107,7 +108,7 @@
       "deuteron": "qou:QOU.BraidKnot.deuteron_uniqueness_closed",
       "tritium": "qou:QOU.BraidKnot.tritium_uniqueness_closed",
       "helium3": "qou:QOU.BraidKnot.helium3_uniqueness_closed",
-      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "framework_doc": "folio/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
       "note": "These theorems certify T_w uniqueness at the abstract empty-constraint SDP level. The real per-nucleus SDP (multi-term cost from this mass-identity formula + non-empty constraints) is per-nucleus substantive open work; see docs/coordination/2026-05-30-sdp-uniqueness-status.md."
     },
     "upstream_witness_hashes": [

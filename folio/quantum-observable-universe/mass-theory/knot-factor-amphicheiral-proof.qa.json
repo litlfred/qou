@@ -237,6 +237,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "37e07d7e231e",
+          "ts": "a65e1d5b5547"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:35.371Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "knot-factor-amphicheiral-proof.md:14-21 'Direct computation ... at the substrate q₀ gives: (2,1) | −1'; exact value (q⁸−2q⁶+q⁴−2q²+1)/q⁴ = −0.9106 at q=111/100; :23-24 conjugacy inferred from character equality",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: binding"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1140,7 +1156,7 @@
           "in_degree": 0,
           "cone_size": 229,
           "depth": 52,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1358,7 +1374,7 @@
         "reviewed_at": "2026-08-15T10:31:00.441Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
-        "evidence": "1 negation-contrast construction(s): \", not an identity.\" \u2014 state the positive claim directly"
+        "evidence": "1 negation-contrast construction(s): \", not an identity.\" — state the positive claim directly"
       },
       {
         "field_hash": {
@@ -1704,6 +1720,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T21:29:12.190Z",
+  "updated_at": "2026-11-15T21:57:35.371Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

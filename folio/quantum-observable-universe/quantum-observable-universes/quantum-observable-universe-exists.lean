@@ -86,7 +86,7 @@ class QuantumObservableUniverseExistsContext (R : Type w) [CommRing R] (q qinv :
     (hcasimir : IsUnit (q - qinv))
     (hsix : IsUnit (6 : R))
     (hgeneric : ∀ k : ℕ, 2 ≤ k → q ^ k ≠ 1) where
-  exists_instance : Nonempty (QuantumObservableUniverse.{w + 1, w, w, w, w} R)
+  exists_instance : Nonempty (QuantumObservableUniverse.{w + 1, w, w, w} R)
 
 -- Ref: [kassel1995] Quantum Groups (Springer GTM 155), §IX (quantum SU(2))
 theorem QuantumObservableUniverse.exists_instance
@@ -96,7 +96,7 @@ theorem QuantumObservableUniverse.exists_instance
     (hsix : IsUnit (6 : R))
     (hgeneric : ∀ k : ℕ, 2 ≤ k → q ^ k ≠ 1)
     [ctx : QuantumObservableUniverseExistsContext R q qinv hq hcasimir hsix hgeneric] :
-    Nonempty (QuantumObservableUniverse.{w + 1, w, w, w, w} R) :=
+    Nonempty (QuantumObservableUniverse.{w + 1, w, w, w} R) :=
   ctx.exists_instance
 
 end QOU

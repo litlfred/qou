@@ -11,7 +11,6 @@ export default proposition({
   uses: [
     "prop:q-beta-bar-even-kernel-invariant",
     "prop:q-beta-bar-even-kernel-typeclass",
-    "prop:q-beta-radius-of-convergence-gate",
     "prop:q-beta-q-eq-one-shadow-gate",
     "prop:q-beta-direction-sanity-gate",
   ],

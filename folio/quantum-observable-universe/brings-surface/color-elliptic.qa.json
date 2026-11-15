@@ -1328,6 +1328,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "08db53ac84e0",
+          "ts": "9da0df7b86b8",
+          "lean": "34ed65da4a69",
+          "lean_statement": "1be8232da3c7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:00:11.169Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "[sidecar review 2026-11-15, issue #8030] Library `color_elliptic` is a `def … : Prop` naming the cubic. `colorCubic_key_identity` ((X−z)·cubic = P(X)−P(z), P(t)=t⁴+t³+t²+t) and `color_elliptic_of_powerSum` are genuine. But the md claim \"for generic z this cubic defines an elliptic curve 𝓔_z\" is wrong as stated: at fixed z it is a cubic in one variable X, so it cuts out 3 points, not a curve. Read in (X,z) jointly it is a plane quartic-type relation, not shown to be genus 1. The j-invariant and the monodromy = holonomy H₁,H₂ claims are not encoded. The statement also uses X both for the triple (x₂,x₃,x₄) and a scalar. prf: a 6-line sketch (\"reducing by Newton identities yields the cubic\") with an unspecified constant C; never computes the cubic, the curve, j, or the monodromy."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2530,6 +2548,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T22:00:11.169Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

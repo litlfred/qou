@@ -237,6 +237,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "dd7fa46959d3",
+          "ts": "29a3cee24de0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:34.150Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "cyclotomic-depth3-dimension-synthesis.md:1 'bounds unconditionally as: dim = (K−3)/2'; proof.md:79 only ≤; :86 'conditional on Beilinson'; :26-29 '(?)' / 'Wait —'",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: other"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1141,7 +1157,7 @@
           "in_degree": 0,
           "cone_size": 193,
           "depth": 52,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1427,7 +1443,7 @@
         "reviewed_at": "2026-08-15T10:31:00.828Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
-        "evidence": "5 stylistic spaced dashes in 376 words (1.33/100w) \u2014 restructure into sentences"
+        "evidence": "5 stylistic spaced dashes in 376 words (1.33/100w) — restructure into sentences"
       },
       {
         "field_hash": {
@@ -1708,6 +1724,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T14:58:12.789Z",
+  "updated_at": "2026-11-15T21:57:34.150Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -249,6 +249,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9a22acaf39a5",
+          "ts": "b581a2e34412"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:03.081Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "(S↔P column of prop:hecke-baer-star-generic row) Main: ref `…HeckeBaerStarGeneric.hecke_baer_star_generic` names no declaration (library file is \"intentionally empty\"; the sibling has `hecke_baer_star_generic_sketch`), and that sketch rests on axioms. Under open PR #7915: the PR proves `matrix_algebra_baer_right`, removes the false axiom `hecke_baer_star_generic_sketch_axiom` (refuted over 𝔽₂ with transpose) and repoints the ref to the refutation `not_hecke_baer_star_generic_sketch` — so after merge the statement is still unbacked (the PR's own note says the positive-star version is open). Proof/statement errors the PR does not touch: (1) Step 1 is false: bar(e_(2)) = e_(2), not e_(1,1). In H₂, e_(2) = (σ+q⁻¹)/(q+q⁻¹) and e_(1,1) = (q−σ)/(q+q⁻¹) are each bar-fixed (sympy, using σ⁻¹ = σ − (q−q⁻¹)). (2) The boxed failure locus is wrong both ways. It includes q = ±1 (q⁴ = 1), where H_n(±1) is semisimple in char 0. It also says \"equivalently primitive 2k-th roots\", which drops q = ζ₃: there [3]_q = ζ₃⁻²+1+ζ₃² = 0, so H₃(ζ₃) is not semisimple, yet ζ₃ is not a primitive 2k-th root for any k. (3) Step 3, \"every idempotent is similar to a self-adjoint one\", needs a positive (proper) involution. The bar involution is not shown to be one, and PR #7915's 𝔽₂ counterexample shows the step fails without it. (4) For an arbitrary char-0 field R there is no antilinear q ↦ q⁻¹ (e.g. R = ℚ, q = 2). (5) The converse (\"fails exactly where non-semisimple\") is not proved"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1851,6 +1867,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-29T15:52:33.383Z",
+  "updated_at": "2026-11-15T21:56:03.081Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

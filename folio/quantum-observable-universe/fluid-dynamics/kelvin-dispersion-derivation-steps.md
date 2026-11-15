@@ -20,15 +20,13 @@ $$
   f_k(s + L) = f_k(s).
 $$
 
-For the classical Laplacian ($q = 1$), the eigenfunctions resolve as $e^{2\pi i k s / L}$ with corresponding eigenvalues $\mu_k = (2\pi k/L)^2$. The $q$-Laplacian replaces the integer $k$ with the $q$-integer $[k]_q = (q^k - q^{-k})/(q - q^{-1})$:
-
+For the classical Laplacian ($q = 1$) in arc length $s$, the eigenfunctions are $e^{2\pi i k s / L}$ with eigenvalues $\mu_k = (2\pi k/L)^2$. The $q$-Laplacian replaces the integer $k$ with the $q$-integer $[k]_q = (q^k - q^{-k})/(q - q^{-1})$. The derivation below works in the variable $z = e^{2\pi i s / L}$, where the eigenvalue is the dimensionless
 $$
   \mu_k^{(q)}
   = 
-  \left(\frac{2\pi[k]_q}{L_q}\right)^2,
+  [k]_q^2 .
 $$
-
-where $L_q = L \cdot [1]_q / 1 = L$ (since $[1]_q = 1$ unconditionally).
+The arc-length factor $(2\pi/L)^2$ is a change of unit, not part of the algebraic operator. All units are restored at once by the single factor $\hbar_q / L_q^2$ below. So $L_q$ is the length in that normalisation: matching $\hbar_q$ times the arc-length eigenvalue $(2\pi[k]_q/L)^2$ would mean $L_q = L/(2\pi)$. (An earlier version wrote $\mu_k^{(q)} = (2\pi[k]_q/L_q)^2$ with $L_q = L$, which disagrees with the result below by the factor $4\pi^2/\hbar_q$; corrected 2026-11-15, issue #8053.)
 
 **Derivation.**
 The $q$-derivative operators define the $q$-Laplacian. Assign $z = e^{2\pi i s / L}$ for a function $f$ on the circle. Then:

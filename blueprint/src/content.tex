@@ -281,11 +281,13 @@
 
 
 \chapter{Core Algebraic Structures (Glossary)}
+% The \lean{} targets below point at the live declarations.  The old
+% QOU.Glossary stubs they used to name were removed (issue #8012).
 
 % ── Frobenius-Hopf Object ──────────────────────────────────────────
 \begin{definition}[Frobenius-Hopf Object]
   \label{def:frobenius-hopf}
-  \lean{QOU.Glossary.FrobeniusHopfObject}
+  \lean{QOU.FrobeniusHopfData}
   An object $A$ in a rigid monoidal category equipped with a Hopf
   algebra structure $(\mu, \eta, \Delta, \varepsilon, S)$ and a
   Frobenius form $\lambda : A \to \mathbf{1}$ satisfying non-degeneracy.
@@ -294,7 +296,6 @@
 % ── Quantum Deformation Parameter ─────────────────────────────────
 \begin{definition}[Quantum Deformation Parameter]
   \label{def:quantum-parameter}
-  \lean{QOU.Glossary.quantumParameter}
   \uses{def:frobenius-hopf}
   The parameter $q \in k^\times$ governing the Hopf algebra structure.
   At $q = 1$ we recover the classical cocommutative case.
@@ -303,7 +304,7 @@
 % ── Fibre Functor ──────────────────────────────────────────────────
 \begin{definition}[Fibre Functor]
   \label{def:fibre-functor}
-  \lean{QOU.Glossary.FibreFunctor}
+  \lean{QOU.BraidsKnots.FibreFunctor}
   An exact faithful $k$-linear monoidal functor
   $\omega : \mathcal{C} \to \mathrm{Vect}_k$ used in Tannaka-Krein
   reconstruction.
@@ -312,7 +313,7 @@
 % ── Quantum Gauge Group ───────────────────────────────────────────
 \begin{definition}[Quantum Gauge Group]
   \label{def:quantum-gauge-group}
-  \lean{QOU.Glossary.QuantumGaugeGroup}
+  \lean{QOU.QuantumGaugeGroup}
   \uses{def:fibre-functor, def:quantum-parameter}
   The quantum group $G_q = \mathrm{Aut}^{\otimes}(\omega)$ reconstructed
   via Tannaka-Krein duality from the fibre functor.
@@ -321,7 +322,6 @@
 % ── CR Manifold ────────────────────────────────────────────────────
 \begin{definition}[CR Manifold Structure]
   \label{def:cr-manifold}
-  \lean{QOU.Glossary.CRManifold}
   A pseudo-Hermitian structure with Levi distribution, Reeb vector
   field, and Webster metric.
 \end{definition}
@@ -329,7 +329,7 @@
 % ── Bring's Surface ───────────────────────────────────────────────
 \begin{definition}[Bring's Surface]
   \label{def:brings-surface}
-  \lean{QOU.Glossary.BringsSurface}
+  \lean{QOU.BringsSurface.BringsSurface}
   \uses{def:cr-manifold}
   The maximally symmetric curve of genus 4, with Euler
   characteristic $\chi = -6$, defined by $\sum_{j=0}^{4} x_j^k = 0$ for
@@ -340,7 +340,7 @@
 % ── Substrate Parameter ───────────────────────────────────────────
 \begin{definition}[Substrate Parameter]
   \label{def:substrate-parameter}
-  \lean{QOU.Glossary.substrateParameter}
+  \lean{QOU.SubstrateParameter}
   \uses{def:brings-surface, def:quantum-parameter}
   $q(p) = 1 + |\langle L_\varTheta, F_A^+\rangle|(p)$ --- couples
   chiral curvature to contact geometry on Bring's surface.
@@ -349,7 +349,7 @@
 % ── Jet Prolongation ──────────────────────────────────────────────
 \begin{definition}[Jet Prolongation]
   \label{def:jet-prolongation}
-  \lean{QOU.Glossary.JetProlongation}
+  \lean{QOU.Torsion.JetProlongation}
   The first jet bundle $J^1 \mathcal{S}$ represented categorically by
   $A \otimes \Omega^1(A)$.
 \end{definition}
@@ -357,7 +357,7 @@
 % ── Kähler Differentials ──────────────────────────────────────────
 \begin{definition}[Kähler Differentials]
   \label{def:kahler-differentials}
-  \lean{QOU.Glossary.KahlerDifferentials}
+  \lean{QOU.MathlibExt.UniversalDifferentials.Ω1}
   \uses{def:jet-prolongation}
   $\Omega^1(A) = \ker(m : A \otimes A \to A)$, the universal
   first-order differential calculus.
@@ -366,7 +366,7 @@
 % ── Braid Group ───────────────────────────────────────────────────
 \begin{definition}[Braid Group $B_3$]
   \label{def:braid-group}
-  \lean{QOU.Glossary.BraidGroup}
+  \lean{QOU.MathlibExt.Braid.BraidGroup}
   The braid group on 3 strands: $\langle \sigma_1, \sigma_2 \mid
   \sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2 \rangle$.
 \end{definition}
@@ -374,7 +374,7 @@
 % ── Binary Dihedral Group ─────────────────────────────────────────
 \begin{definition}[Binary Dihedral Group]
   \label{def:binary-dihedral}
-  \lean{QOU.Glossary.BinaryDihedralGroup}
+  \lean{QuaternionGroup}
   \uses{def:braid-group}
   $\mathrm{Dic}_3 \subset \mathrm{SU}(2)$ of order 12, lifting $S_3$
   via the double cover $\mathrm{SU}(2) \to \mathrm{SO}(3)$.
@@ -383,7 +383,7 @@
 % ── F-Isocrystal ──────────────────────────────────────────────────
 \begin{definition}[F-Isocrystal]
   \label{def:f-isocrystal}
-  \lean{QOU.Glossary.FIsocrystal}
+  \lean{WittVector.Isocrystal}
   A module over the Dieudonné ring $\mathbb{Q}_p\langle F, V\rangle
   / (FV - p)$.
 \end{definition}

@@ -15,4 +15,4 @@ $$
 $$
 The remainder decays geometrically with ratio $q^{-2} < 1$.
 
-**Mechanism.** High-wavenumber Reeb modes suffer exponential damping. For any fixed mode $k$, the $\hbar_q^{2n} \sim (q - q^{-1})^{-2n}$ prefactor dominates. The geometric series converges because $q^{-2}\hbar_q^2 < 1$.
+**Mechanism.** High-wavenumber Reeb modes suffer exponential damping. For any fixed mode $k$, the prefactor $\hbar_q^{2n}$ (with $\hbar_q^2 \approx 0.0098$ at $q_0$) outweighs the growth $(\lambda_k^{(q)})^n$ of the iterated Laplacian as long as $\hbar_q^2 \lambda_k^{(q)} < 1$. The geometric series converges because $q^{-2}\hbar_q^2 < 1$.

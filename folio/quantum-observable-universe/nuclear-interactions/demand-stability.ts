@@ -14,9 +14,9 @@ export default proposition({
   ],
   uses: ["def:derived-atom", "def:demand-profile"],
   computation: {
-    engine: "python",
-    script: "computations/all_nuclides_sdp_admissibility.py",
-    witness: "computations/all-nuclides-sdp-admissibility.witness.json",
+    engine: "python+mpmath",
+    script: "computations/all_nuclides_sdp_admissibility_mp.py",
+    witness: "computations/all-nuclides-sdp-admissibility-mp.witness.json",
     status: "verified",
   },
 });

@@ -20,6 +20,22 @@ export default definition({
   authorNotes: [
     {
       kind: "status",
+      date: "2026-11-15",
+      body:
+        "**Holonomy product and Temperley–Lieb state sum (owner decision Q-YWYQ-1, options 1 and 3; bean qou-puwe).** " +
+        "(1) In `QOU/Torsion/MassTraceIdentity.lean`, a word $w$ of transports is multiplied first in the non-abelian " +
+        "convolution monoid $\\mathrm{Hom}(\\mathbf{1}, A)$ via `hol` (`hol_append`, `leftMul_hol_append`), and then evaluated " +
+        "under the Frobenius mass functional (`frobeniusForm_massIntegrand_hol`, `frobeniusForm_massIntegrand_hol_of_frobeniusForm_eq_counit`) " +
+        "or the left-multiplication trace (`massTrace_eq_functional_hol`). The sibling `mass-identity.lean` now exposes " +
+        "`cycleFrobeniusEval` and `cycleMassTrace` directly on `MassTraceIdentity.hol`. " +
+        "(3) In `QOU/Torsion/MassTraceMarkov.lean` and `QOU/Torsion/MassTraceMarkovClass.lean`, each crossing transport " +
+        "$T(a, \\varepsilon) = c(\\varepsilon)\\cdot 1 - e_a$ (`transport_eq_lead_sub_tlProjector`, `tlProjector_sq`) expands " +
+        "the ordered holonomy `hol q qi ℓs` (`hol_eq_tlStateSum`), the Markov trace (`braidTrace_wordBraid_eq_tlStateSum`), " +
+        "and the braid-class mass (`massClass_wordBraid_eq_tlStateSum`) as a state sum over $s \\colon \\mathrm{Fin}\\,\\ell s.\\mathrm{length} \\to \\mathrm{Bool}$, " +
+        "with the $s \\equiv \\mathrm{false}$ state recovering the per-crossing scalar product (`braidTrace_wordBraid_eq_leadProd_add_tlStates`).",
+    },
+    {
+      kind: "status",
       date: "2026-10-12",
       body:
         "**Braid classes (owner decision 1c, 2026-10-12; bean qou-ywyq).** The mass identity is stated on " +

@@ -237,6 +237,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "af626976a39b",
+          "ts": "36995374fdf2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:29.166Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "statement .md:5 'Φ₂ and Φ₃ carry the S-eigenvalues +1 and −1' (unconditional); proof.md:90-100 'The argument is for chains of bar-homogeneous factors … It is not a property of Φ₃ on all of the Hecke algebra … X = σ + 1 … −(q+1)²/(q−1)² ≠ ±1' — statement claims more than proved (scope hypothesis missing)",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: binding"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1140,7 +1156,7 @@
           "in_degree": 0,
           "cone_size": 5,
           "depth": 5,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1372,7 +1388,7 @@
         },
         "reviewed_at": "2026-08-21T15:53:59.800Z",
         "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
-        "evidence": "'The unsymmetrised standard character is not an S-eigenvector in general' is the fact that motivates the symmetrisation \u2014 substantive."
+        "evidence": "'The unsymmetrised standard character is not an S-eigenvector in general' is the fact that motivates the symmetrisation — substantive."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1661,7 +1677,7 @@
         "reviewed_at": "2026-08-21T15:55:40.473Z",
         "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
         "evidence": "'the unique source of S-odd contribution' is supported by the eigenvalue decomposition just proved. S-action algebra re-derived and correct: D = q^4+4q^2+1 -> q^{-4}D; W_sym = q^2/D and W_std = (q^2+1)^2/D both invariant (and they sum to 1 with W_alt, verified); [3]_q = q^2+1+q^{-2} invariant; h_A -> -h_A; Phi_3 spot-check exact (S(1,0) = (1,-h_A) gives chi_sym = q^{-1}, chi_alt = -q). Vol(B_3) = 8G = 7.32772475342 = 2 Vol(oct), correct.",
-        "notes": "MATH ERROR FOUND (sympy-verified, three independent ways). The block states 'The Frobenius antipode maps the primitive factor (c, d) to (c, d - c h_A)'. That map is NOT an involution and does NOT preserve det T, so it cannot be an antipode of an order-2 action and cannot support the block's own claim 'For each primitive the determinant is S-invariant': det T(c, d - c h_A) - det T(c,d) = -2 c d h_A, and applying it twice to (1,0) gives (1,-2h_A), not (1,0). It also contradicts Table 3, which lists S(1,-h_A) = (1,0) with det -1 \u2014 under the block's rule S(1,-h_A) = (1,-2h_A) with det 2h_A^2 - 1. The correct map, which is involutive, leaves det T identically invariant, and reproduces all three Table-3 rows exactly, is (c,d) -> (c, -c h_A - d). It agrees with the block's rule on (1,0) only, which is why the Phi_3 spot-check still came out right. Fix: replace 'to (c, d - c h_A)' with 'to (c, -c h_A - d)'. NOT applied inline: this is math, not prose."
+        "notes": "MATH ERROR FOUND (sympy-verified, three independent ways). The block states 'The Frobenius antipode maps the primitive factor (c, d) to (c, d - c h_A)'. That map is NOT an involution and does NOT preserve det T, so it cannot be an antipode of an order-2 action and cannot support the block's own claim 'For each primitive the determinant is S-invariant': det T(c, d - c h_A) - det T(c,d) = -2 c d h_A, and applying it twice to (1,0) gives (1,-2h_A), not (1,0). It also contradicts Table 3, which lists S(1,-h_A) = (1,0) with det -1 — under the block's rule S(1,-h_A) = (1,-2h_A) with det 2h_A^2 - 1. The correct map, which is involutive, leaves det T identically invariant, and reproduces all three Table-3 rows exactly, is (c,d) -> (c, -c h_A - d). It agrees with the block's rule on (1,0) only, which is why the Phi_3 spot-check still came out right. Fix: replace 'to (c, d - c h_A)' with 'to (c, -c h_A - d)'. NOT applied inline: this is math, not prose."
       }
     ],
     "trap-nonspeakable": [
@@ -1696,8 +1712,8 @@
         "reviewed_at": "2026-08-21T15:54:00.144Z",
         "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
         "severity": "minor",
-        "evidence": "Two sentences are unreadable because token substitution has replaced words with 'canonical' / 'the formal derivation': (i) '...S-odd contribution to the categorical mass.  canonical, since $S$ maps the proton braid (uud)...' \u2014 a sentence beginning with a bare adjective; (ii) '**Witness**: the formal derivation verifies the eigenvalue assignments canonical at $q_0$'.",
-        "notes": "SWEEP DAMAGE, not fixed inline (restoring words the sweep deleted is content restoration): 'canonical, since $S$ maps' -> 'Physically, since $S$ maps'; 'verifies the eigenvalue assignments canonical at $q_0$' -> 'verifies the eigenvalue assignments numerically at $q_0$' (the documented 'canonical' <- 'numerical(ly)' substitution class); 'the formal derivation' -> the actual producer script name. A third likely instance in the same block: 'are real canonical constants unaffected by the algebraic action' -> 'are real numerical constants'. CONVENTION FLAG (separate, verified): the block defines $z = 1/(q^{1/2}+q^{-1/2})$, which equals sqrt(q)/(q+1) = 0.4993203342 at q_0 \u2014 this is the EXCISED convention C, not the canonical convention D z = q^3/(q^2+1) = 0.6126880371. It is written in the reciprocal-of-sum spelling that the detector-blindness taxonomy records as detector-invisible, and it survives inside content/ after the 2026-08-10 content-only drain. NOTATION FLAG: 'the average $\\Phi_1 := \\tfrac12(\\Phi_1(\\beta)+\\Phi_1(S(\\beta)))$' defines Phi_1 in terms of itself; it needs a distinct name (e.g. Phi_1^{even})."
+        "evidence": "Two sentences are unreadable because token substitution has replaced words with 'canonical' / 'the formal derivation': (i) '...S-odd contribution to the categorical mass.  canonical, since $S$ maps the proton braid (uud)...' — a sentence beginning with a bare adjective; (ii) '**Witness**: the formal derivation verifies the eigenvalue assignments canonical at $q_0$'.",
+        "notes": "SWEEP DAMAGE, not fixed inline (restoring words the sweep deleted is content restoration): 'canonical, since $S$ maps' -> 'Physically, since $S$ maps'; 'verifies the eigenvalue assignments canonical at $q_0$' -> 'verifies the eigenvalue assignments numerically at $q_0$' (the documented 'canonical' <- 'numerical(ly)' substitution class); 'the formal derivation' -> the actual producer script name. A third likely instance in the same block: 'are real canonical constants unaffected by the algebraic action' -> 'are real numerical constants'. CONVENTION FLAG (separate, verified): the block defines $z = 1/(q^{1/2}+q^{-1/2})$, which equals sqrt(q)/(q+1) = 0.4993203342 at q_0 — this is the EXCISED convention C, not the canonical convention D z = q^3/(q^2+1) = 0.6126880371. It is written in the reciprocal-of-sum spelling that the detector-blindness taxonomy records as detector-invisible, and it survives inside content/ after the 2026-08-10 content-only drain. NOTATION FLAG: 'the average $\\Phi_1 := \\tfrac12(\\Phi_1(\\beta)+\\Phi_1(S(\\beta)))$' defines Phi_1 in terms of itself; it needs a distinct name (e.g. Phi_1^{even})."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1720,6 +1736,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T15:55:40.473Z",
+  "updated_at": "2026-11-15T21:57:29.166Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

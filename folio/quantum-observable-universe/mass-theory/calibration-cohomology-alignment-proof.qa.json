@@ -612,7 +612,7 @@
           "in_degree": 0,
           "cone_size": 112,
           "depth": 28,
-          "pagerank": 7.6e-05,
+          "pagerank": 0.000076,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -826,7 +826,7 @@
         },
         "reviewed_at": "2026-06-28T10:58:49.996Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "No false claims identified in 'Proof of the calibration\u2013cohomology alignment'; the algebraic relation involving $S_5$ is mathematically consistent.",
+        "notes": "No false claims identified in 'Proof of the calibration–cohomology alignment'; the algebraic relation involving $S_5$ is mathematically consistent.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/mass-theory/calibration-cohomology-alignment-proof.ts:1"
       }
@@ -845,7 +845,7 @@
         },
         "reviewed_at": "2026-06-28T10:58:50.003Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The block 'Proof of the calibration\u2013cohomology alignment' presents substantial mathematical content, establishing relation $S_5$.",
+        "notes": "The block 'Proof of the calibration–cohomology alignment' presents substantial mathematical content, establishing relation $S_5$.",
         "severity": "minor"
       }
     ],
@@ -863,7 +863,7 @@
         },
         "reviewed_at": "2026-06-28T10:58:50.009Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "No circular reasoning or self-assuming definitions detected in 'Proof of the calibration\u2013cohomology alignment'. The construction is derived from prop:calibration-cohomology-alignment, prop:meson-scale-independence.",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Proof of the calibration–cohomology alignment'. The construction is derived from prop:calibration-cohomology-alignment, prop:meson-scale-independence.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/mass-theory/calibration-cohomology-alignment-proof.ts:1"
       }
@@ -882,7 +882,7 @@
         },
         "reviewed_at": "2026-06-28T10:58:50.015Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "No overclaims: the scope of 'Proof of the calibration\u2013cohomology alignment' is appropriately qualified and constrained.",
+        "notes": "No overclaims: the scope of 'Proof of the calibration–cohomology alignment' is appropriately qualified and constrained.",
         "severity": "minor"
       }
     ],
@@ -900,7 +900,7 @@
         },
         "reviewed_at": "2026-06-28T10:58:50.021Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Proof of the calibration\u2013cohomology alignment'. All constants are canonically derived.",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Proof of the calibration–cohomology alignment'. All constants are canonically derived.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/mass-theory/calibration-cohomology-alignment-proof.ts:1"
       }
@@ -919,9 +919,25 @@
         },
         "reviewed_at": "2026-06-28T10:58:50.027Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The argument flow in 'Proof of the calibration\u2013cohomology alignment' is logically sound, mapping onto the cited dependencies: prop:calibration-cohomology-alignment, prop:meson-scale-independence.",
+        "notes": "The argument flow in 'Proof of the calibration–cohomology alignment' is logically sound, mapping onto the cited dependencies: prop:calibration-cohomology-alignment, prop:meson-scale-independence.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/mass-theory/calibration-cohomology-alignment-proof.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "4195015caa55",
+          "ts": "da88462c1b1d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:24.099Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "proof:14-21 'The scale of the W-plane is the n=0 period a_D = m_e ... meson-sector scale is m_π' asserts the alignment with calibrated (empirical) inputs without derivation; proof:7-9 'its normalisation and its SL_2 trace τ, since det B = 1' (det 1 fixes the normalisation); md:13 meson scale is not part of H¹(Bring)",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: exposition"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -956,7 +972,7 @@
         },
         "reviewed_at": "2026-06-28T10:58:50.039Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "No citations are present in 'Proof of the calibration\u2013cohomology alignment', hence no citation misuse is possible.",
+        "notes": "No citations are present in 'Proof of the calibration–cohomology alignment', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/mass-theory/calibration-cohomology-alignment-proof.ts:1"
       }
@@ -975,7 +991,7 @@
         },
         "reviewed_at": "2026-06-28T10:58:50.045Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "Key terms and symbols (including $S_5$) in 'Proof of the calibration\u2013cohomology alignment' are mathematically defined and unambiguous.",
+        "notes": "Key terms and symbols (including $S_5$) in 'Proof of the calibration–cohomology alignment' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/mass-theory/calibration-cohomology-alignment-proof.ts:1"
       }
@@ -994,7 +1010,7 @@
         },
         "reviewed_at": "2026-06-28T10:58:50.051Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The algebraic and logical relations in 'Proof of the calibration\u2013cohomology alignment' are independent of empirical tuning parameters.",
+        "notes": "The algebraic and logical relations in 'Proof of the calibration–cohomology alignment' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/mass-theory/calibration-cohomology-alignment-proof.ts:1"
       }
@@ -1013,7 +1029,7 @@
         },
         "reviewed_at": "2026-06-28T10:58:50.057Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The physical concepts described in 'Proof of the calibration\u2013cohomology alignment' are consistent with quantum observable mechanics.",
+        "notes": "The physical concepts described in 'Proof of the calibration–cohomology alignment' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/mass-theory/calibration-cohomology-alignment-proof.ts:1"
       }
@@ -1032,7 +1048,7 @@
         },
         "reviewed_at": "2026-06-28T10:58:50.063Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The derivation steps and formal definitions in 'Proof of the calibration\u2013cohomology alignment' are reproducible.",
+        "notes": "The derivation steps and formal definitions in 'Proof of the calibration–cohomology alignment' are reproducible.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/mass-theory/calibration-cohomology-alignment-proof.ts:1"
       }
@@ -1054,7 +1070,7 @@
         "notes": "Referee verdict: clean.",
         "severity": "minor",
         "verdict": "clean",
-        "referee_argument": "No significant objections; the mathematical claims in 'Proof of the calibration\u2013cohomology alignment' are consistent."
+        "referee_argument": "No significant objections; the mathematical claims in 'Proof of the calibration–cohomology alignment' are consistent."
       }
     ],
     "voice-probe-narrative": [
@@ -1557,6 +1573,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-23T15:51:39.412Z",
+  "updated_at": "2026-11-15T21:57:24.099Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -47,20 +47,20 @@ $$
   \;=\;
   \sum_{n=2}^{\infty} \hbar_q^{2n} \, \Delta^{(n)}(\rho).
 $$
-We bound each $\Delta^{(n)}$ as in Step 3 against the $L^2$-norm of $\rho$:
+On the leading mode Step 3 is an equality, $\langle e_1, \Delta^{(n)} e_1\rangle = \lambda_1^n$ with $\lambda_1 = \lambda_1^{(q)} = \hbar_q / L_q^2$. The [uniform bound on $\Delta^{(n)}$](#prop:delta-max-uniform-bound) makes $\lambda_1^n$ bounded in $n$, and a bounded sequence of powers has $\lambda_1 \leq 1$ (Lean `QOU.QBeta.lam_le_one_of_pow_bounded`). Therefore
 $$
   \bigl| T(\rho) - \hbar_q^2 \,\Delta^{(1)}(\rho) \bigr|
   \;\leq\;
   \|\rho\|_{L^2}
   \cdot
-  \sum_{n=2}^{\infty} \hbar_q^{2n} \cdot C^n q^{2n}.
-$$
-The sum on the right is a tail of the geometric series in $\hbar_q^2 C q^2$. We equate it to
-$$
-  \frac{(\hbar_q^2 C q^2)^2}{1 - \hbar_q^2 C q^2}
+  \sum_{n=2}^{\infty} \hbar_q^{2n} \lambda_1^{n}
   \;\leq\;
-  \hbar_q^4 \cdot \frac{q^{-2}}{1 - q^{-2}}
+  \|\rho\|_{L^2}
+  \cdot
+  \frac{\hbar_q^4}{1 - \hbar_q^2}.
 $$
-using the additional constant absorption $C q^2 \leq q^{-2}$, valid in the substrate window. This yields the displayed bound.
+Finally $\frac{1}{1 - \hbar_q^2} \leq \frac{q^{-2}}{1 - q^{-2}}$ on $1 < q \leq q_*$. With $x = q^{-1}$ and $\hbar_q = 1 - x$, this reads $1 - x^2 \leq 2x^3 - x^4$. The difference $f(x) = 2x^3 - x^4 + x^2 - 1$ has $f'(x) = 2x(1 + 3x - 2x^2) > 0$ on $(0, 1]$ and $f(1/1.2) > 0$, so it holds on $[1/1.2, 1]$. This yields the displayed bound.
+
+*Correction (2026-11-15, issue #8053).* An earlier version of this step bounded the tail through the constant $C$ of Step 1 and the absorption $C q^2 \leq q^{-2}$. That absorption holds only for $L_q \geq q^2 \sqrt{\hbar_q}/(q - q^{-1}) \approx 1.855$ at $q_0$. It fails at the corpus value $L_q = \sqrt{\hbar_q}$ (the value with $\lambda_1 = 1$), where $C q^2 = q^2/(q - q^{-1})^2 \approx 28.2$. The argument above uses the exact leading eigenvalue instead of $C$, so it needs no condition on $L_q$ beyond the uniform bound.
 
 **Sharpness.** At $q_0 \approx 1.110$, we have $\hbar_q \approx 0.099$ and $q^{-2} \approx 0.812$. Therefore, the geometric ratio $q^{-2} \hbar_q^2 \approx 0.008 \ll 1$. The single-jet term dominates the tower at the $\approx 1\%$ level. Three jet levels suffice for sub-ppm precision, justifying the truncations applied elsewhere in the mass-formula derivations. $\square$

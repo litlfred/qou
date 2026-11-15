@@ -551,7 +551,7 @@
           "in_degree": 0,
           "cone_size": 48,
           "depth": 21,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1241,12 +1241,30 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "33e1f3081638",
+          "ts": "5a21dad5cca8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:04.061Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "(S↔P column of prop:quantum-dilogarithm-volume row) Sibling `.lean:66` (ref resolves only there): `bindingEnergy q fs = quantumDilogarithmVolume fs / hbarQ q ^ 2` by `unfold; rfl`, where `bindingEnergy` is defined as exactly that (the claimed identity taken as the definition). No Markov trace, no a_i, b_i, z. Derivation block (`quantum-dilogarithm-volume-derivation.md`, prf:3-5) asserts that \"each transient trace contribution evaluates to the quantum dilogarithm\" and that Φ_q = Σ log\\ | V̂ᵢ\\ | , citing other blocks; nothing is derived. The q=1 claims (md:19) are unproved, and at q=1 ℏ_q = 0 so E_bind = Φ_q/ℏ_q² is undefined (Lean's x/0 = 0 hides this; `classical_limit_no_binding : hbarQ 1 = 0`). \"At q>1 … a nonzero Φ_q, binding the nucleus\" has no argument (sign or nonvanishing)"
+      }
     ]
   },
   "source_hashes": {
     "md": "33e1f3081638",
     "ts": "5a21dad5cca8"
   },
-  "updated_at": "2026-08-22T05:01:22.889Z",
+  "updated_at": "2026-11-15T21:56:04.061Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
