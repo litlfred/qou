@@ -46,3 +46,15 @@ observable.
 
 Proposed (not adopted): quark = single letter σ_g^ε, supplied by the word-degree-1 coordinates of
 NF(γγ); (2,1) = the nucleon built from three of them. This is the owner's call.
+
+## 2026-11-15: owner decisions D1–D3 implemented (relayed by the coordinator; D4, the merge, is HELD)
+
+- **D1 = (b), per letter:** `quarkState g ε := hPart 1 (quarkLetter g ε)` over R[X], with h formal.
+  It equals flavourShift ε · 1. Note that it lies in word degree 0.
+- **D2:** `nucleonState` / `nucleonStateOfQuarks` is the (2,1) image of the core times three letters.
+  The γγ projection is renamed `pairChannelState`.
+- **D3:** the L₊ label is an ORIENTATION trap (correcting my earlier "coordinate 3 is σ₁σ₀"). gram uses left
+  multiplication with concatenation; mulNF is the opposite product; no value moves.
+
+Verified with lean-direct: exit 0; MarkovTraceOnHecke, HeckeH3AlgebraLaws and HeckeH3AlgebraInstance all
+recompile; #print axioms is clean on 21 checked theorems.

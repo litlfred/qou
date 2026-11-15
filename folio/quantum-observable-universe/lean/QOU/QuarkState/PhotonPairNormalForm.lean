@@ -49,6 +49,21 @@ With the reduced-Burau `(2,1)` representation `ρ` of the probe
 * `template_SplusAVG_proton` : the corpus template's character is
   `(q − 1)·g(q)` with `g(1) = −1` — flavour is decided at order `t¹`.
 
+## Owner decisions 2026-11-15 (D1–D3), implemented
+
+* **D1** — the quark state is the `h¹` part of a SINGLE LETTER, with `h` a
+  formal variable (`R[X]`, `h := X`): `quarkState g ε := hPart 1 (quarkLetter g ε)`.
+  It equals `flavourShift ε • 1` (`quarkState_eq`), separates the flavours
+  (`quarkState_flavour_ne`), has `h⁰` part = the bare generator for both flavours
+  (`quarkLetter_order_zero`), and the letter has no `h^{≥2}` part. On γγ the `h¹`
+  part is `N₁` (`hPart_one_pairNF`).
+* **D2** — the `(2,1)` projection is the NUCLEON state (`nucleonState`,
+  `nucleonStateOfQuarks`), built from three single letters; `rho_letter` identifies
+  each letter's `(2,1)` image with the word's factor. The γγ projection is renamed
+  `pairChannelState` and retired as "quark state".
+* **D3** — the `L₊` orientation trap is documented on `mulNF`
+  (`MarkovTraceOnHecke.lean`) and `H3A.v`.
+
 Base ring (§7c): the NF algebra is over generic `[CommRing R]`; the `(2,1)`
 representation needs `q⁻¹` and is over `[Field R]` with `q ≠ 0`. No `ℝ`.
 
@@ -59,6 +74,7 @@ import Mathlib.LinearAlgebra.Matrix.Trace
 import Mathlib.Data.Matrix.Mul
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.LinearCombination
+import Mathlib.Algebra.Polynomial.Coeff
 
 namespace QOU.QuarkState
 
@@ -213,6 +229,91 @@ theorem connected_eq_mulNF (h a0 a1 a2 b0 b1 b2 : R) :
   funext i; fin_cases i <;>
     simp [connected, mulNF, mulσ₀, mulσ₁, e0] <;> ring
 
+
+open Polynomial
+
+/-! ## The quark state (owner decision D1, 2026-11-15): the `h¹` part of a letter
+
+`h` is a formal variable: we work in `Fin 6 → R[X]` with `h := X`. The Hecke
+relation `σ² = hσ + 1` involves only `h`, so every normal-form coefficient is a
+polynomial in `h` whose coefficients are `q`-independent labels. The order-`k`
+part is the coefficient of `X^k`, read off BEFORE any value of `q` is inserted.
+A single letter is `σ_g` (flavour bit `true`) or `σ_g⁻¹ = σ_g − h`
+(`false`). -/
+
+/-- A single-letter quark: generator `g` (`true` = `σ₀`, `false` = `σ₁`) and
+flavour bit `ε` (`true` = `σ`, `false` = `σ⁻¹ = σ − h`), with `h` formal. -/
+noncomputable def quarkLetter (g ε : Bool) : Fin 6 → R[X] :=
+  (if g then s0 else s1) + (if ε then (0 : R[X]) else -X) • e0
+
+/-- The order-`h^k` part of an NF vector with polynomial coefficients. -/
+noncomputable def hPart (k : ℕ) (v : Fin 6 → R[X]) : Fin 6 → R := fun i => (v i).coeff k
+
+/-- **The quark state**: the `h¹` part of a single letter. -/
+noncomputable def quarkState (g ε : Bool) : Fin 6 → R := hPart 1 (quarkLetter (R := R) g ε)
+
+/-- The flavour shift: `0` for `σ`, `−1` for `σ⁻¹`. -/
+def flavourShift (ε : Bool) : R := if ε then 0 else -1
+
+/-- `σ⁻¹ = σ − h` holds in the NF algebra over `R[X]`: the two flavours of a
+letter are mutually inverse. -/
+theorem quarkLetter_inverse (g : Bool) :
+    mulNF (X : R[X]) (quarkLetter g true) (quarkLetter g false) = (e0 : Fin 6 → R[X]) := by
+  cases g <;> (funext i; fin_cases i <;> simp [quarkLetter, mulNF, mulσ₀, mulσ₁, e0, s0, s1])
+
+/-- Order 0: a letter's `h⁰` part is its bare generator, the same for both
+flavours (flavour is invisible). -/
+theorem quarkLetter_order_zero (g ε : Bool) :
+    hPart 0 (quarkLetter (R := R) g ε) = (if g then s0 else s1) := by
+  cases g <;> cases ε <;> (funext i; fin_cases i <;> simp [hPart, quarkLetter, e0, s0, s1])
+
+/-- The quark state is the flavour shift on the unit. NOTE: it sits in word
+degree 0. -/
+theorem quarkState_eq (g ε : Bool) :
+    quarkState (R := R) g ε = flavourShift (R := R) ε • (e0 : Fin 6 → R) := by
+  cases g <;> cases ε <;>
+    (funext i; fin_cases i <;> simp [quarkState, hPart, quarkLetter, flavourShift, e0, s0, s1, Polynomial.coeff_one])
+
+/-- Orders `≥ 2` vanish: a letter is exactly affine in `h`. -/
+theorem quarkLetter_order_ge_two (g ε : Bool) (k : ℕ) (hk : 2 ≤ k) :
+    hPart k (quarkLetter (R := R) g ε) = 0 := by
+  have h1 : k ≠ 1 := by omega
+  have h0 : k ≠ 0 := by omega
+  cases g <;> cases ε <;>
+    (funext i; fin_cases i <;>
+      simp [hPart, quarkLetter, e0, s0, s1, Polynomial.coeff_X, Polynomial.coeff_one, h0, h1,
+        Ne.symm h1, Ne.symm h0])
+
+/-- The quark state distinguishes the flavours (non-vacuity). -/
+theorem quarkState_flavour_ne [Nontrivial R] (g : Bool) :
+    quarkState (R := R) g true ≠ quarkState g false := by
+  rw [quarkState_eq, quarkState_eq]
+  intro h; have := congrFun h 0; simp [flavourShift, e0] at this
+
+/-- The two flavours of a letter differ by exactly `−h·1`: `σ⁻¹ − σ = −h`. The
+difference is purely order `h¹` and sits in word degree 0. (The bar involution
+`q ↦ q⁻¹` sends `h ↦ −h`; a bar-parity statement about the quark state is NOT
+proved here.) -/
+theorem quarkLetter_flavour_difference (g : Bool) :
+    quarkLetter (R := R) g false - quarkLetter g true = (-X : R[X]) • (e0 : Fin 6 → R[X]) := by
+  cases g <;> (funext i; fin_cases i <;> simp [quarkLetter, e0, s0, s1])
+
+/-- The `h¹` part of the photon pair product is `N₁`, now as a statement about
+the formal variable (labels are constants `C aᵢ`). -/
+theorem pairNF_formal (a0 a1 a2 b0 b1 b2 : R) (i : Fin 6) :
+    pairNF (X : R[X]) (C a0) (C a1) (C a2) (C b0) (C b1) (C b2) i =
+      C (pairNF 0 a0 a1 a2 b0 b1 b2 i) + C (N1 a0 a1 a2 b0 b1 b2 i) * X := by
+  rw [pairNF_eq, pairNF_eq]
+  fin_cases i <;> simp only [N1, map_add, map_mul, map_one, map_zero] <;> simp <;> ring
+
+/-- The `h¹` part of the photon pair product is `N₁`, now as a statement about
+the formal variable (the labels are constants `C aᵢ`). -/
+theorem hPart_one_pairNF (a0 a1 a2 b0 b1 b2 : R) :
+    hPart 1 (pairNF (X : R[X]) (C a0) (C a1) (C a2) (C b0) (C b1) (C b2)) =
+      N1 a0 a1 a2 b0 b1 b2 := by
+  funext i
+  simp [hPart, pairNF_formal, Polynomial.coeff_C]
+
 end Generic
 
 /-! ## The `(2,1)` channel -/
@@ -242,19 +343,22 @@ theorem rho_mul (q : R) (hq : q ≠ 0) (u v : Fin 6 → R) :
 
 theorem rho_unit (q : R) : rho q e0 = 1 := by simp [rho, e0]
 
-/-- The quark state of the hypothesis: the `(2,1)` projection of the word-degree
-≥ 1 part of `NF(γ(φ)γ(ψ))`. A DEFINITION under test, not an adopted one. -/
-def quarkState (q a0 a1 a2 b0 b1 b2 : R) : Matrix (Fin 2) (Fin 2) R :=
+/-- The `(2,1)` projection of the word-degree ≥ 1 part of `NF(γ(φ)γ(ψ))`.
+This was the agent's original "quark state" hypothesis. The owner RETIRED it as
+the quark state on 2026-11-15 (D1/D2): at level 2 the `(2,1)` channel is a
+three-strand, isospin-½, nucleon-type channel. It is kept under a neutral name
+because the theorems about it still hold. -/
+def pairChannelState (q a0 a1 a2 b0 b1 b2 : R) : Matrix (Fin 2) (Fin 2) R :=
   rho q (degPos (pairNF (q - q⁻¹) a0 a1 a2 b0 b1 b2))
 
 /-- The γγ product's `(2,1)` image splits as the degree-0 scalar plus the
 quark state. -/
 theorem rho_pairNF_split (q a0 a1 a2 b0 b1 b2 : R) :
     rho q (pairNF (q - q⁻¹) a0 a1 a2 b0 b1 b2) =
-      (1 + a0 * b0 + a1 * b1) • 1 + quarkState q a0 a1 a2 b0 b1 b2 := by
+      (1 + a0 * b0 + a1 * b1) • 1 + pairChannelState q a0 a1 a2 b0 b1 b2 := by
   have : pairNF (q - q⁻¹) a0 a1 a2 b0 b1 b2 0 = 1 + a0 * b0 + a1 * b1 := by
     simp [pairNF_eq]
-  simp only [quarkState, degPos, this]
+  simp only [pairChannelState, degPos, this]
   ext i j; fin_cases i <;> fin_cases j <;> simp [rho, e0] <;> ring
 
 /-! ### `results.md:9-13` as theorems
@@ -275,16 +379,32 @@ theorem lA_eq (q c : R) : lA q c = rA q + (c * (q - q⁻¹)) • 1 := by
 theorem lB_eq (q c : R) : lB q c = rB q + (c * (q - q⁻¹)) • 1 := by
   ext i j; fin_cases i <;> fin_cases j <;> simp [lB, rB]
 
-/-- The core-plus-quarks word `(σ₀σ₁⁻¹)³ · ℓ₀(c₁) ℓ₀(c₂) ℓ₁(c₃)`. -/
-def nucleonWord (q c1 c2 c3 : R) : Matrix (Fin 2) (Fin 2) R :=
+/-- **The nucleon state** (owner decision D2, 2026-11-15): the `(2,1)` image of
+the core-plus-quarks word `(σ₀σ₁⁻¹)³ · ℓ₀(c₁) ℓ₀(c₂) ℓ₁(c₃)`. With
+`cᵢ = flavourShift εᵢ` it is built from three single-letter quark states
+(`nucleonStateOfQuarks`). The corpus `AVG` pair rule gives `c = −½`, which is
+a pair AVERAGE and NOT a single letter. -/
+def nucleonState (q c1 c2 c3 : R) : Matrix (Fin 2) (Fin 2) R :=
   lA q 0 * lB q (-1) * lA q 0 * lB q (-1) * lA q 0 * lB q (-1)
     * lA q c1 * lA q c2 * lB q c3
+
+/-- The nucleon state built from three single-letter quark states. -/
+def nucleonStateOfQuarks (q : R) (ε₁ ε₂ ε₃ : Bool) : Matrix (Fin 2) (Fin 2) R :=
+  nucleonState q (flavourShift ε₁) (flavourShift ε₂) (flavourShift ε₃)
+
+/-- A letter's `(2,1)` image IS the nucleon-word factor: evaluating `h` at
+`q − q⁻¹` and applying `ρ` to `σ_g + c·h·1` gives `lA`/`lB`. -/
+theorem rho_letter (q c : R) :
+    rho q (s0 + (c * (q - q⁻¹)) • e0) = lA q c ∧
+    rho q (s1 + (c * (q - q⁻¹)) • e0) = lB q c := by
+  constructor <;>
+    (ext i j; fin_cases i <;> fin_cases j <;> simp [rho, rA, rB, lA, lB, s0, s1, e0] <;> ring)
 
 /-- **Order `t⁰`: flavour is invisible.** At `q = 1` the `(2,1)` character of
 the nucleon word is `0` for EVERY choice of quark shifts. -/
 theorem template_order_zero (c1 c2 c3 : R) :
-    (nucleonWord (1 : R) c1 c2 c3).trace = 0 := by
-  simp only [nucleonWord, lA, lB, Matrix.mul_fin_two, Matrix.trace_fin_two,
+    (nucleonState (1 : R) c1 c2 c3).trace = 0 := by
+  simp only [nucleonState, lA, lB, Matrix.mul_fin_two, Matrix.trace_fin_two,
     Matrix.of_apply, Matrix.cons_val', Matrix.cons_val_zero, Matrix.cons_val_one,
     Matrix.head_cons, Matrix.empty_val', Matrix.cons_val_fin_one, Matrix.head_fin_const,
     inv_one]
@@ -294,8 +414,8 @@ set_option maxHeartbeats 4000000 in
 /-- The flavour-blind template `S0` (all quark letters `σ`): character
 identically `0`. -/
 theorem template_S0_zero (q : R) (hq : q ≠ 0) :
-    (nucleonWord q 0 0 0).trace = 0 := by
-  simp only [nucleonWord, lA, lB, Matrix.mul_fin_two, Matrix.trace_fin_two,
+    (nucleonState q 0 0 0).trace = 0 := by
+  simp only [nucleonState, lA, lB, Matrix.mul_fin_two, Matrix.trace_fin_two,
     Matrix.of_apply, Matrix.cons_val', Matrix.cons_val_zero, Matrix.cons_val_one,
     Matrix.head_cons, Matrix.empty_val', Matrix.cons_val_fin_one, Matrix.head_fin_const]
   field_simp
@@ -311,11 +431,11 @@ set_option maxHeartbeats 4000000 in
 /-- **Order `t¹`: flavour is decided.** For the corpus template `S+ AVG` on the
 proton (shifts `0, −½, −½`) the `(2,1)` character is `(q − 1)·g(q)`. -/
 theorem template_SplusAVG_proton (q : R) (hq : q ≠ 0) (h2 : (2 : R) ≠ 0) :
-    (nucleonWord q 0 (-1 / 2) (-1 / 2)).trace = (q - 1) * gSplus q := by
+    (nucleonState q 0 (-1 / 2) (-1 / 2)).trace = (q - 1) * gSplus q := by
   have h4 : (4 : R) ≠ 0 := by
     have : (4 : R) = 2 * 2 := by norm_num
     rw [this]; exact mul_ne_zero h2 h2
-  simp only [nucleonWord, lA, lB, gSplus, Matrix.mul_fin_two, Matrix.trace_fin_two,
+  simp only [nucleonState, lA, lB, gSplus, Matrix.mul_fin_two, Matrix.trace_fin_two,
     Matrix.of_apply, Matrix.cons_val', Matrix.cons_val_zero, Matrix.cons_val_one,
     Matrix.head_cons, Matrix.empty_val', Matrix.cons_val_fin_one, Matrix.head_fin_const]
   field_simp

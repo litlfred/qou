@@ -110,12 +110,38 @@ This question is prior to D1, and the hypothesis as stated answers it in a way t
   reading the theorems already proved need no change. Only the names `quarkState` / `rho_pairNF_split`
   would move to a nucleon-level name. Nothing is redefined here. This is the owner's call (D1/D2).
 
+## 4b. Owner decisions D1–D3 (2026-11-15), implemented
+
+- **D1 = (b), per letter.** `quarkState g ε := hPart 1 (quarkLetter g ε)` over `R[X]`, with h = X formal.
+  - Proved: `quarkState_eq` (= flavourShift ε · 1), `quarkState_flavour_ne`, `quarkLetter_order_zero`,
+    `quarkLetter_order_ge_two`, `quarkLetter_inverse` (σ·(σ − h) = 1), and `hPart_one_pairNF` (on γγ, the
+    h¹ part is N₁).
+  - **Observation:** the per-letter quark state lies in **word degree 0**. It is a multiple of the unit. This
+    is the same mechanism as `flavour_reaches_deg0` (§3).
+- **Why "formal h".** Every NF coefficient is a polynomial in h whose coefficients are q-independent labels,
+  because the Hecke relation σ² = hσ + 1 involves only h. The h-order split exists for the polynomial, not for
+  a number at a fixed q. It is valid for all q, and evaluating at q₀ gives the observable. Caveats:
+  - the labels must be q-independent;
+  - the h¹ part must be taken *before* the (2,1) projection, whose matrices contain q and q⁻¹;
+  - h² and higher terms are not part of the quark state.
+- **D2 = rename.** `nucleonState` / `nucleonStateOfQuarks` is the (2,1) image of core × three single letters.
+  `rho_letter` identifies each letter's image with the word's factor. The γγ projection is renamed
+  `pairChannelState` and retired as "quark state". Caveat: the corpus S+ AVG template uses pair-averaged
+  shifts (−½), which are not single letters. LO and HI are single letters.
+- **D3 = fix.** The `L₊` label is an **orientation** trap, which corrects my earlier statement that coordinate
+  3 "is σ₁σ₀":
+  - `gram.hm` is left multiplication with concatenation, so `gram`'s coordinate 3 is σ₀σ₁ = L₊;
+  - `mulNF` is the opposite product, so in the `H3A` ring coordinate 3 is σ₁·σ₀;
+  - no value moves, because H₃ ≅ H₃ᵒᵖ by word reversal and TRM is z² on both coordinates.
+
+  Documented on `mulNF` and `H3A.v`.
+
 ## 5. Verification
 
 `lean -DautoImplicit=false -s 65536` against the restored `cat/folio-assistant-sci/lake-cache/qou-v4-24-0`
 Mathlib oleans. `MarkovTraceOnHecke` was recompiled from current source, not taken from the
 snapshot. Result: exit 0. `#print axioms` on every exported theorem shows
-[propext, Classical.choice, Quot.sound] only, with no `sorryAx`.
+[propext, Classical.choice, Quot.sound] only, with no `sorryAx`. Re-verified after D1–D3: 20/20 checked theorems are clean.
 
 ## 6. Decisions for the owner
 
