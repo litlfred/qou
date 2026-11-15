@@ -8,7 +8,7 @@ tags:
     - needs-owner
     - convention-d
 created_at: 2026-11-15T18:54:18Z
-updated_at: 2026-11-15T19:26:47Z
+updated_at: 2026-11-15T19:35:23Z
 parent: qou-avtq
 ---
 
@@ -50,3 +50,6 @@ A grep of folio/ content and Lean for an isospin orientation convention (e₁ = 
 
 
 **2026-11-15 §16.** Step 4: PR #7971 (draft, weak-vertex thread) proves that under D a crossing is a pure swap iff the over strand carries K = q. With corpus conventions (lower strand over in σᵢ; u over d) this gives u = e₁ = T³ = +½. Then n/p = q⁻², which makes the neutron heavier (correct sign). The sign is derived, conditional on #7971 landing. The magnitude is still open (the scale, §15). Keep open.
+
+
+**2026-11-15 §17.** Lean NucleonWeightSpaceTraces.lean (sorry-free): an explicit intertwiner shows every braid word has equal plain trace on the p and n weight spaces, so level-2 n/p = q^{∓2} is word-independent and proved. Scale: Φ = Σ log V̂ᵢ, and α = m_e·∏V̂ᵢ(B₃) is built from the same object. The asserted α·ΔΦ multiplies a volume by a log-volume, whereas the corpus scale block is linear in the volume. Still open.
