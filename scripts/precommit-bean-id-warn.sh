@@ -46,9 +46,11 @@
 # Bean: qou-ut5r.
 set -uo pipefail
 
-# Only speak when the tool call is a commit that touches beans/defs/.
+# Only speak when the tool call WRITES beans: a commit (while beans/ is still
+# tracked) or, since the cutover to the `cat/cat-harness/beans` branch (issue
+# #7642), the push of the mounted copy (`branch-store.ts push --id beans`).
 case "${1:-}${*:-}" in
-  *"git commit"*|*"git add"*) ;;
+  *"git commit"*|*"git add"*|*"branch-store"*"push"*) ;;
   *) exit 0 ;;
 esac
 
@@ -56,9 +58,14 @@ ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || exit 0
 cd "$ROOT" || exit 0
 [ -d beans/defs ] || exit 0
 
-# Cheap relevance gate: nothing staged or changed under beans/defs/ ⇒ silent.
-if ! git status --porcelain -- beans/defs 2>/dev/null | grep -q .; then
-  exit 0
+# Cheap relevance gate: nothing changed under beans/defs/ ⇒ silent. While
+# beans/ is tracked that is `git status`; once it is a gitignored branch mount,
+# git status cannot see it at all (which would make this hook silently inert),
+# so a push of the mount is always checked.
+if git ls-files --error-unmatch beans/defs >/dev/null 2>&1; then
+  if ! git status --porcelain -- beans/defs 2>/dev/null | grep -q .; then
+    exit 0
+  fi
 fi
 
 dups=$(grep -m1 -H '^# ' beans/defs/*.md 2>/dev/null \
