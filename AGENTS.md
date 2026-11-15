@@ -2919,6 +2919,14 @@ discipline review will catch it. Full framing:
 >   `+1.0443`. Audit: `docs/audits/2026-09-12-ursell-partition-function-for-b3.md`,
 >   beans `qou-rwhv` / `qou-rraz`.
 >
+>   🛑 **Those two magnitudes, and the chain bonds `μ_e` they come from, are on a
+>   SUPERSEDED word (owner, 2026-11-15).** The γγ rule now covers the nuclear bond
+>   letters, so the single-crossing interface letters `g_{3k+2} + d_k` of
+>   `atom_braid_word_3A` are not canonical. The figures stay as records; the Lean
+>   theorems above take generic bond weights and still stand. Redo waits on a
+>   γγ-selected word per nucleus (#7876). Record:
+>   `docs/audits/2026-11-15-gg-rule-rescopes-old-letter-binding.md`.
+>
 >   🛑 **"A bond factor above 1" is NECESSARY, NOT SUFFICIENT — do not read the
 >   sentence above as "find an attractive letter and the sign follows"** (owner
 >   ruling 2026-09-12, PR #7226, bean `qou-q8vl`). The production `A = 3` word is

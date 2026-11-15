@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-13T09:23:58Z
-updated_at: 2026-10-04T15:14:35Z
+updated_at: 2026-11-15T17:10:00Z
 parent: qou-v2om
 ---
 
@@ -875,3 +875,7 @@ still binds — **nothing was regenerated here.**
 How many other committed witnesses are still on the grouped word is unknown to me;
 `qou-92u9` sized it for the six chi caches only. That is a real question for
 `qou-gjkv`'s sweep and would need a value-level discriminator, not a grep.
+
+## 2026-11-15 — re-scoped by the γγ rule
+
+The owner ruled that the γγ selection rule also covers the nuclear bond letters. Any number in this bean computed on the single-crossing interface letters of `atom_braid_word_3A` (`d_k`, `μ_e`, the chain law `∏(z_D + d_k)`, the `b₃` magnitudes −1.2277 / −0.7973 MeV, or a sign map on that word) is now a record of a superseded word, not a current result. Lean results stated for generic bond weights are unaffected. The redo waits on a γγ-selected word per nucleus (PR #7876). Record: `docs/audits/2026-11-15-gg-rule-rescopes-old-letter-binding.md`. The bean stays open.
