@@ -211,3 +211,47 @@ The commutator signs came out as computed in integer arithmetic beforehand:
 - No `lean-library-sweep`.
 - No drop-one hypothesis check.
 - The real-form (compact vs split) fact of §0 is not formalised.
+
+## 8. Option C probe: a q-deformed colour stabilizer inside U_q(g₂) (owner choice "q2c", scope (a))
+
+**Question.** Is there a q-analogue of `su3 e ⊂ Der 𝕆` that meets the tower's Jimbo `Ř` at `q₀ ≠ 1`?
+The natural candidate is the long-root `U_q(sl₃)` inside `U_q(g₂)`, acting on the 7-dimensional module
+`V₇`, which deforms `Im 𝕆 = 1 ⊕ 3 ⊕ 3̄`.
+
+**Producer.**
+[`computations/eightfold/quantum_g2_colour_stabilizer_probe.py`](../../computations/eightfold/quantum_g2_colour_stabilizer_probe.py)
+and its witness `quantum-g2-colour-stabilizer-probe.witness.json`.
+- Arithmetic is `fractions.Fraction` only, evaluated at exact rational points q ∈ {1, 2, 3, 5/2}; it is not symbolic in q.
+- Conventions are Jantzen's: α₁ is short (q₁ = q), α₂ is long (q₂ = q³), and Δ(E) = E⊗1 + K⊗E.
+- **Module check (M):** every `U_q(g₂)` relation holds exactly on `V₇` at q = 2, 3, 5/2. This covers K–E, K–F and [E,F], plus both quantum Serre relations; the Serre relation with exponent 4 uses q-binomials.
+
+| check | q = 1 | q ∈ {2, 3, 5/2} |
+|---|---|---|
+| **A** Restriction to `1 ⊕ 3 ⊕ 3̄` | holds (by weights alone) | holds (by weights alone). The long-root Cartan acts through **q³**, so the colour sl₃ inside g₂ is deformed at `q_long = q³`, not q. |
+| **B** Elements of weight 3α₁+α₂ in `U_q(n⁺)` (a 4-dimensional space) whose coproduct maps `3⊗3` into `3⊗3` | exactly one, `ad_{E₁}³ E₂`, i.e. the classical root vector | **none** (kernel dimension 0) |
+| **C** `Hom(V₇⊗V₇, V₇)` (the q-cross-product) | 1-dimensional. L_e = +1 on the 3 and −1 on the 3̄; R_e = −L_e | 1-dimensional. The eigenvalues of L_e are **(1, q⁻⁴, q⁻⁴) on the 3** and **(−q⁻⁶, −q⁻², −q⁻²) on the 3̄**, up to one overall scale. The ratio R_e/L_e on the 3 is (−q⁻⁶, −q², −q²) |
+
+**Reading.**
+- **(a) Yes, at the module level only.** The decomposition `V₇ = 1 ⊕ 3 ⊕ 3̄` survives, because it is forced by weights. The induced colour deformation parameter is q³. Matching it to the tower's Jimbo `U_q(gl₃)` at q₀ would therefore need `q_{g₂} = q₀^{1/3}`, which is one more choice (a cube root).
+- **(b) No at the coproduct level, within the searched space.**
+  - No weight-(3α₁+α₂) element of `U_q(n⁺)` has a coproduct that preserves `3⊗3` once q ≠ 1. So the triplet is not a sub-object of `V₇ ⊗ V₇`, and Jimbo's Ř on `3⊗3` cannot be the restriction of the g₂ braiding along it.
+  - This is the quantum shadow of a known structural fact: sl₃ ⊂ g₂ is a maximal-rank subalgebra but **not a Levi subalgebra**. Only Levi subalgebras give Hopf subalgebras `U_q(l) ⊂ U_q(g)`.
+  - Nor is sl₃ the fixed-point subalgebra of an involution, since G₂/SU(3) = S⁶ is not a symmetric space. So the quantum-symmetric-pair (coideal) framework does not apply directly either.
+  - Combined with `primitive_commute_rCheckN_iff` (§3), neither the primitive coproduct (classical su₃ e) nor the U_q(g₂) coproduct (quantum G₂) carries the colour triplet onto the tower's Ř at q ≠ 1.
+- **(c) The octonion product deforms to the unique U_q(g₂)-equivariant q-cross-product.**
+  - The product no longer pairs e with the triplet by a scalar. L_e is not constant on the 3, so it **does not commute** with the long-root operators, which mix the three weight lines. The q-analogue of `su3_comp_Le_eq_Le_comp` fails at q ≠ 1.
+  - Left and right multiplication by e differ by powers of q, not by a sign. That is braided antisymmetry, not alternativity.
+  - The 3 ↔ 3̄ bit **survives**: L_e is positive on the 3 and negative on the 3̄ for every q > 0, and the sign of the normalisation (equivalently e ↦ −e) flips which is which.
+  - Note the classical baseline here is the **split** form (L_e² = +1 on 3 ⊕ 3̄, para-complex), because U_q(g₂) over ℚ(q) is split. The compact form's L_e² = −1 is recovered only after complexification, consistent with §2's complexification requirement.
+
+**Scope (a), stated precisely.**
+- Exact at four rational points, not proved symbolically in q.
+- B searches `U_q(n⁺)` (Cartan twists are irrelevant to leakage) with one coproduct convention. The opposite coproduct is related by the flip, which preserves 3⊗3. B does **not** search q-deformed embeddings of the triplet other than the weight subspace, nor elements outside `U_q(n⁺)·U⁰`.
+- Nothing in this section is a bridge or a refutation of one. It records what the obvious q-analogue does and does not do.
+- No Lean was written for this section: the facts are 49×49 matrix computations, and the small sorry-free pieces (weights) are trivial.
+
+**Literature (path 5 + ocr).** None of the following is held in `library/`; the matches found were bibliography entries only. For stream 13:
+- Kuperberg, *The quantum G₂ link invariant*, Int. J. Math. 5 (1994). This is the G₂ spider: the q-cross-product as a trivalent vertex, with its relations replacing octonion identities.
+- Kuperberg, *Spiders for rank 2 Lie algebras*, CMP 180 (1996), arXiv q-alg/9712003.
+- Albuquerque & Majid, *Quasialgebra structure of the octonions*, J. Algebra 220 (1999), arXiv math/9802116. It is already a bib key `albuquerque-majid1999` cited in `OctonionCocycle.lean`, but the text is not held. Its deformation is a sign 3-cocycle on (ℤ/2)³ (q = −1-type), not a continuous q, so it does not by itself answer the q₀ question.
+- A standard source for PBW root vectors and their coproducts in U_q(g₂) (Jantzen, *Lectures on Quantum Groups*, or Lusztig's book) would let B be stated symbolically.
