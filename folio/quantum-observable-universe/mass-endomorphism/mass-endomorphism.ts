@@ -130,6 +130,7 @@ export default chapter({
         "atomic-mass-gb-nf",
         "atomic-mass-gb-nf-interpretation",
         "rho-k-graded-expansion",
+        "rho-k-graded-expansion-accuracy",
         "rho-k-graded-expansion-table2-data",
         "rho-k-graded-expansion-table1-data",
         "conj-rho-k-pair-gen-canonical-form",
