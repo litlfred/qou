@@ -22,3 +22,10 @@ from gg_two_orientations (restriction must agree).
 ## Expectation (may fail)
 E1: pass is no longer a function of length alone, because level 4 sees how vertices on
 different sites interleave.
+
+## Amendment before any readout (crash on first run)
+On 4 strands the generators are σ₀, σ₁, σ₂, so a vertex σ_sσ_{s+1}^{±} has s ∈ {0, 1} only
+(4 vertex types, not 6). The first run crashed on s = 2 before any readout was computed.
+Lengths are extended to m = 1..6 (4 + 16 + 64 + 256 + 1024 + 4096 = 5460 words) so that
+m = 3 and m = 6 are both covered. R3 becomes "passing words using both sites". Everything
+else is unchanged.
