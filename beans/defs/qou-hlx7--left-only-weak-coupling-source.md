@@ -127,3 +127,21 @@ defines P as σᵢ ↦ σᵢ⁻¹ with q held FIXED. no_linear_flip proves no K-
 H_n(q) does that unless q² = 1. So that P is well defined on the braid group B_n but does not
 descend to H_n(q) at fixed q. The block also calls the bar involution "composite CPT", whereas
 §10 finds the C/CT profile for the mirror.
+
+## 2026-11-15 D-H3 derivation attempt (stream 9a, continued as a project thread)
+
+Owner D-H3: record "weak vertex ∝ left projector" as an open conjecture AND try to derive
+it. Branch claude/weak-vertex-left-projector-2026-11-15. Audit:
+docs/audits/2026-11-15-weak-vertex-left-projector.md.
+
+- DERIVED, one crossing (WeakVertexLeftProjector.lean): weakVertex − σ = −(q − q⁻¹)·leftLine
+  (weakVertex_sub_letter), both regimes. Inside the letter algebra, killing the right line ⇔
+  ∝ leftLine (one_sided_iff_smul_leftLine). Label-free skein form: weighting the positive
+  crossing by its own eigenvalue of modulus > 1 gives (t − t⁻¹)(t + t⁻¹)·leftLine
+  (skein_dominant_root), which closes the "which crossing carries q is a convention" caveat
+  of force-knot-identification §III under the leftLine ruling. Relative to the ruled
+  leftLine and the corpus weakVertex; no new input.
+- EXACT NEGATIVE, weak knot (weak_knot_left_line_split_probe.py): τ_D((σ₁σ₂)⁵ P_R) =
+  −q²/(q²+1)³ ≠ 0; right-line share −9.33 % at q₀. T(3,N): period 3, never zero.
+- Owner asked (decision card) how to record: proposition + negative (recommended) /
+  conjecture / audit only. No PR without the owner's go.
