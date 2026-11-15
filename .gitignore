@@ -295,3 +295,5 @@ folio/*/lean/blocks-shadow/
 # would be a second, diverging copy. `/**`, not `/fsh-guts/`, matching the
 # platform's rule so branch-store still sees the mount's files.
 /fsh-guts/**
+# Kept on cat/cat-harness/beans; mounted here by state:mount, never committed to main
+/beans/**
