@@ -34,4 +34,10 @@ export default conjecture({
     "no-second-su2",
     "open-problem",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Before `qCG_self_square`, only the $q = 1$ integer specialisation $\\sum_{\\ell<n}(2\\ell+1) = n^2$ was formalised; the $q$-deformed statement had been checked symbolically for $n = 1,\\ldots,8$ in `computations/shell_capacity_chebyshev_bridge.py`.",
+    },
+  ],
 });
