@@ -1,0 +1,48 @@
+366 JULIANA ERLIJMAN AND HANS WENZL
+
+The induction-restriction graph for our system of bimodules is the bipartite
+graph whose (say) odd vertices are labeled by the elements in {H,}, and whose
+even vertices are labeled by the elements in {K,},. A vertex labeled by Hy is
+connected with a vertex labeled by K,, by L} edges, where LY is the multiplicity
+of H, in K,, viewed as an N—% bimodule. By Frobenius reciprocity (see [Bisch
+1997, Theorem 1.18], for example), this number coincides with the multiplicity of
+Ky in M@y Ay.
+
+Proposition 1.8. Let ({Hy},,{Ky},) be a system of N-B- and M-R-bimodules
+which is closed under induction and restriction.
+
+(a) If {Hj}, contains a bimodule Ho which is weakly reduced from the trivial
+N-N-bimodule N, then the principal graph for N C M is given by the con-
+nected component of the induction- restriction graph for ({H)}2, {Kv}v) which
+contains Ho.
+
+(b) If {Ky}, contains a bimodule Ky which is weakly reduced from the trivial
+M-M-bimodule M, then the dual principal graph for N C M is given by the
+connected component of the induction- restriction graph for ({H)},, {Kv}v)
+which contains Ko.
+
+(c) If: B— B is an endomorphism of the I, factor B and p € ¢(B)' NB such
+that [pBp : po(B)] = 1, then L?(B, tr) p, with action by .£p.by = bEpd (by)
+for by, by € RB, & € L?(R, tr) is weakly reduced from the trivial B-B bimodule
+L?(R, tr).
+
+Proof. Part (a) follows from Proposition 1.6 and Proposition 1.7(b). Similarly, part
+(b) follows from Proposition 1.6 and Proposition 1.7(c). Part (c) follows almost
+immediately from Definition 1.4, using the fact that p%p = o(B) p. Oo
+
+Remark 1.9. In the setting of Proposition 1.8(a), there may be more than one
+bimodule H, which is weakly reduced from the trivial N—N-bimodule N’. Which
+of those will correspond to the trivial N—N’-bimodule NV will depend on the choice
+of the automorphism between pV p and &. The resulting graph will be independent
+of this choice. A similar phenomenon may also occur in part (b).
+
+Let H be an A-% bimodule. We define ind(H) to be equal to the index [p(B)’:
+A(A)] =[A(SA)’: p(B)]. In the following lemma, (H)), and (K,), are bimodules as
+in the last proposition, where we now assume for simplicity that they only denote
+the bimodules which label the vertices of a given principal graph. Moreover, we
+also assume the subfactor to be of finite depth, meaning that both sets only contain
+finitely many bimodules.
+
+Lemma 1.10. With notations as above, we have:
+
+(a) Do, ind(Ky) = >>, ind(A,).

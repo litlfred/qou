@@ -1,0 +1,106 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-9802116v1",
+ "source": {
+  "structure_sha256": "be7999751ffb6db38d57c4bafc589c9a8683a59a0554df9adb28cecb3f4370bf",
+  "file": "9802116v1.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:math/9802116v1 [math.QA] 25 Feb 1998",
+  "authors": "Helena Albuquerque1",
+  "arxiv": {
+   "id": "math/9802116",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "25 Feb 1998"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "recommendation": 5
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "However, v \u00b7 v = \u03b11 according to the stated product, so one should think of the construction as a generalisation of the idea of complexi\ufb01cation when \u03b1 = \u22121.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-4-cayley-algebras.md",
+   "section_title": "Cayley algebras",
+   "pages": "15-19",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Proof The only features to be checked for a cochain are that \u00afF should be pointwise invertible (which is clear from invertibility of s, F) and \u00afF(e, vx) = s(e)F(e, x) = 1 and \u00afF(vx, e) = F(e, x) = 1.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-4-cayley-algebras.md",
+   "section_title": "Cayley algebras",
+   "pages": "15-19",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In the remainder of this section we suppose that the quasialgebra kF G is admits a diagonal involution \u03c3(x) = s(x)x in the basis G and we shall denote by k \u00afF \u00afG the generalized Cayley- Dickson extension with respect to this (with general \u03b1\u0338 = 0).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-iii-the-octonion-algebra-is-of-this-form-with.md",
+   "section_title": "The octonion algebra is of this form with",
+   "pages": "19-20",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Proof The de\ufb01nition of the coaction is consistent with the relations of A: \u03b2(ei \u00b7 ej) = \u03b2(ei)\u03b2(ej) = ea \u00b7 eb \u2297tai \u00b7 tbj = cabkek \u2297tai \u00b7 tbj = cijaek \u2297tka = \u03b2(cijaea) in virtue of the relations of M1. \u2294\u2293 In fact, it should be clear from the proof that the relations of M are the minimum relations such that a coaction of this form extends as an algebra map.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-007-6-automorphism-quasi-hopf-algebras.md",
+   "section_title": "Automorphism quasi-Hopf algebras",
+   "pages": "24-30",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Since M0(R) is universal among commutative bialgebras coacting on H, it follows that, it must project onto the group coordinate ring of the classical automorphism group.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-007-6-automorphism-quasi-hopf-algebras.md",
+   "section_title": "Automorphism quasi-Hopf algebras",
+   "pages": "24-30",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/erlijman-wenzl-pjm-231-2/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The multisided construction",
+  "pageStart": 13,
+  "pageEnd": 20,
+  "contains": [
+    "library/erlijman-wenzl-pjm-231-2/blocks/prose-sec-002",
+    "library/erlijman-wenzl-pjm-231-2/blocks/recommendation-sec-002-01",
+    "library/erlijman-wenzl-pjm-231-2/blocks/recommendation-sec-002-02",
+    "library/erlijman-wenzl-pjm-231-2/blocks/recommendation-sec-002-03",
+    "library/erlijman-wenzl-pjm-231-2/blocks/recommendation-sec-002-04",
+    "library/erlijman-wenzl-pjm-231-2/blocks/recommendation-sec-002-05",
+    "library/erlijman-wenzl-pjm-231-2/blocks/recommendation-sec-002-06"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/erlijman-wenzl-pjm-231-2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/erlijman-wenzl-pjm-231-2",
+  "provenance": "ingested"
+}
