@@ -1234,6 +1234,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "3ea23a62b53b",
+          "ts": "9be23f032cb8",
+          "lean": "5c49b81491ce",
+          "lean_statement": "34448c5c4fc7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:00:14.432Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "minor",
+        "evidence": "[sidecar review 2026-11-15, issue #8030] Sibling `QOU.Braiding` (matches the ref) proves items 1–4 and the bridge identities: split, both mirror laws, ratio = tanh for m = 0, the general (p+m)/(p−m) factor and a counterexample `ratio_two_one_ne_tanh`. All genuine. I re-derived each identity by hand (p(c+s) − m(c−s) = (p−m)c + (p+m)s, etc.); all correct. Warn for: (a) \"mirror σ\" reuses σ, the Hecke generator (register §7a); (b) the \"symmetric\" channel is the one that is odd under the mirror; the md says so, but the names invite the wrong reading; (c) \"the N → ∞ limit of the coloured Jones polynomial integrates these lengths into the knot volume\" is the volume conjecture stated as fact, unencoded."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2257,6 +2275,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-23T01:23:38.959Z",
+  "updated_at": "2026-11-15T22:00:14.432Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

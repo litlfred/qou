@@ -36,6 +36,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "field_hash": {
+          "md": "32d23cb14154",
+          "ts": "7853d8720884"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:00:14.336Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "[sidecar review 2026-11-15, issue #8030] Item (1) computes Q from assigned charges +2/3, −1/3, −1/3, while the cited definition Q = ½(n₊ − n₋) only takes values in ½ℤ. The statement's own \"Open\" note already says these are two different quantities sharing a symbol; the prf proves the wrong one. Item (2) uses \"𝔈 = strong + Q(q−q⁻¹)\", which differs from the decomposition the statement cites ((p−m)coshλ + (p+m)sinhλ). (It agrees with the statement's formula only when p = m.) Item (3) takes crossing counts 5 and 3 from the lepton-descent partners, while the statement's note says the quark braid element is a single generator."
       }
     ],
     "bib-cite-resolves": [
@@ -940,7 +956,7 @@
           "in_degree": 0,
           "cone_size": 1,
           "depth": 1,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1529,6 +1545,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T22:00:14.336Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
