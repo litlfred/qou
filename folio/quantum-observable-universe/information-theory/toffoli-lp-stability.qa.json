@@ -1173,6 +1173,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "96d85535344f",
+          "ts": "cc4bffbb32f6",
+          "lean": "b66a79f0d780"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:09.897Z",
+        "reviewed_sha": "9eadb3469d2a5f65d0a3a82e57e332a81ca29d22",
+        "severity": "major",
+        "evidence": "Lean ref `toffoli_lp_stable` is about the retired convention-C diagonal q + √q − 1 (its own docstring says it \"must not be cited\"). Statement keeps item 3's bound with κ = λ_max/\\|λ_min\\|while saying the Gram is singular, so the claim is undefined; the proof states its reduction step is open. Exact checks (sympy): (G t)₅ = z² + 2hz + 3h²z² + h³z + h⁴z² ✓; the degree-4 relation ✓; the alternative representative ✓; P₆,₇ + P₇,₆ = q(q−1)²(q+1)²/(2(q²+1)) ✓; positive root of the numerator 0.894480292911 ✓. Warn: the block is a long research log (probe scripts, measurements) inside a proposition",
+        "notes": "Hand review 2026-11-15 (statement vs Lean); issue #8020. "
       }
     ],
     "proof-statement-integrity": [
@@ -2344,6 +2362,6 @@
       }
     ]
   },
-  "updated_at": "2026-09-03T09:14:31.569Z",
+  "updated_at": "2026-11-15T21:55:09.897Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -79,6 +79,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "073c520815a1",
+          "ts": "6dd84e902117",
+          "lean": "8c97ea105a51"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:09.500Z",
+        "reviewed_sha": "9eadb3469d2a5f65d0a3a82e57e332a81ca29d22",
+        "severity": "minor",
+        "evidence": "Lean: ring identity 2(q²a + q⁻²b) = (q²+q⁻²)(a+b) + (q²−q⁻²)(a−b), exact; idempotents and σ₁² = q²e₊ + q⁻²e₋ not encoded. Checked by hand: bar(e₊) = e₊ (since σ⁻¹ = σ − h), so the cosh/sinh parts are bar-even/odd as claimed",
+        "notes": "Hand review 2026-11-15 (statement vs Lean); issue #8020. "
       }
     ],
     "proof-statement-integrity": [
@@ -2117,6 +2135,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T21:55:09.500Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
