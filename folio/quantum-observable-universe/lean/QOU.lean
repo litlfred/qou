@@ -139,6 +139,7 @@ import QOU.MathlibExt.QPlancherel
 import QOU.MathlibExt.MonoidalCalcVar
 import QOU.MathlibExt.QGaussianBinomialPascal
 import QOU.MathlibExt.DerivationRankNullity
+import QOU.MathlibExt.Dolbeault
 import QOU.MathlibExt.OctonionDerivations
 import QOU.MathlibExt.OctonionDerivationsBound
 import QOU.MathlibExt.OctonionDerivationsUpperBound
