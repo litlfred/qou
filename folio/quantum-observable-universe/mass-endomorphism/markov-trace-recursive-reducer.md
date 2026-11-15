@@ -75,6 +75,9 @@ by induction on $\ell(\beta)$. The recursive algorithm realises this property au
 
 ## Which axioms the disjoint product actually needs
 
+> **Scope note (2026-11-15).** The sentence below that "induction from the right gives $z^{\ell(\beta)}$ on both sides" is false as a general statement: $\mathrm{tr}(\sigma_1^2) = hz + 1 \neq z^2 = z^{\ell(\sigma_1^2)}$. The induction gives $z^{\ell}$ only for words in which every generator occurs once. The disjoint-product argument must be restricted to that case or redone with the quadratic relation.
+
+
 The argument above is stated in terms of the Markov axiom and cyclicity, but it
 uses two further properties silently, and both are named in the correctness
 section: **normalisation** $\mathrm{tr}_M(1) = 1$, and **stability under the

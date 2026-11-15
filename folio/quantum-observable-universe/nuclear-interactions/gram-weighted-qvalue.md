@@ -1,3 +1,5 @@
+> **Scope note (2026-11-15).** Three claims in this block are stated without proof: that $\Delta_k > 0$, that the Gram weights favour boundary neutrons, and that $G$ is indefinite. Treat them as open.
+
 *Let $\mathcal{G}_{\mathrm{par}} = \mathcal{G}(t_0, \ldots, t_{A-1})$ be the typed Garside element of the parent nucleus in $H_A(q)$. Let $G$ be the Gram matrix $G_{ij} = \mathrm{tr}_M(b_i \cdot b_j)$ restricted to the NF subspace spanned by $\mathcal{G}_{\mathrm{par}}$ and all conversion daughters. The $Q$-value for $\beta^-$ decay is:*
 
 ```tex
@@ -59,7 +61,7 @@
 
 The $Q$-value contains three factors:
 
-- **$\Delta_k$** (NF reduction cost). This measures how much algebraic complexity the nucleus sheds when neutron $k$ converts. The daughter has fewer $nn$ crossings. Thus $\lVert \mathcal{G}_{\mathrm{dau}}^{(k)} \rVert_1 < \lVert \mathcal{G}_{\mathrm{par}} \rVert_1$ and $\Delta_k > 0$.
+- **$\Delta_k$** (NF reduction cost). This measures how much algebraic complexity the nucleus sheds when neutron $k$ converts. The daughter has fewer $nn$ crossings. The claim $\lVert \mathcal{G}_{\mathrm{dau}}^{(k)} \rVert_1 < \lVert \mathcal{G}_{\mathrm{par}} \rVert_1$, hence $\Delta_k > 0$, is expected but not proved here.
 - **$w_k^G$** (Gram weight). The Frobenius norm of $\delta_k$ measures how far the parent sits from each daughter. Boundary neutrons produce larger $\lVert \delta_k \rVert_F$ than interior neutrons. This gives them higher weight. The weights sum to $1$.
 - **$N$** (neutron count). This is the coherent sum over all conversion channels.
 
