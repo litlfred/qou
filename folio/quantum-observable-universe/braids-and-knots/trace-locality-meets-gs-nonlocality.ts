@@ -2,8 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:trace-locality-meets-gs-non-locality",
-  title:
-    "Reconciliation: Markov locality of single generators vs. Gröbner-Shirshov non-locality of composite braids",
+  title: "Markov locality of single Hecke crossings",
   lean: {
     ref: "qou:QOU.Observations.TraceLocalityMeetsGsNonLocality.HasReconciliation",
     validation: "not_checked",
@@ -26,6 +25,12 @@ export default proposition({
       date: "2026-11-15",
       body:
         "Part (3), the product factorisation of the Markov trace over the Gröbner–Shirshov normal form, was removed from the statement on owner ruling (2026-11-15) and moved to `rem:trace-locality-product-factorisation-check`. Its proof left the vertex volumes undefined and relied on multiplicativity of the trace, which does not hold; what survives is a finite check of the Wedderburn block weights for n ≤ 5. The Lean class `HasReconciliation` still carries a `productFactorisation` field, so it now assumes more than this statement says; that is for the Lean-foundations work to rescope.",
+    },
+    {
+      kind: "refined-framing",
+      date: "2026-11-15",
+      body:
+        "Part (2), Gröbner–Shirshov non-locality, had no precise statement and was moved to `rem:trace-locality-gs-non-locality` on owner ruling (2026-11-15). The statement now carries Markov locality only. The Lean class `HasReconciliation` still names the reconciliation; that is for the Lean-foundations work to rescope.",
     },
   ],
 });
