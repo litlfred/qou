@@ -8,7 +8,7 @@ tags:
     - needs-owner
     - convention-d
 created_at: 2026-11-15T18:54:18Z
-updated_at: 2026-11-15T18:56:18Z
+updated_at: 2026-11-15T18:59:22Z
 parent: qou-avtq
 ---
 
@@ -32,3 +32,6 @@ Next: find independent corpus input that fixes the orientation (e.g. the charge/
 
 ## 2026-11-15 step 4 (orientation), partial
 A grep of folio/ content and Lean for an isospin orientation convention (e₁ = u, highest-weight = up, etc.) found none. That is the surface searched, not a full six-path check. Note that the published splitting formula Δm = α·|ΔΦ| uses an absolute value, so the 2 ln q magnitude does not depend on the orientation. The orientation only matters for the claim 'n heavier than p', which needs a monotone mass ↔ trace relation the corpus does not state in this formula.
+
+
+- Lead checked (from the weak-vertex thread): g-action-on-substrate-table1-data.md assigns gauge components A^(W±) = (1,0)|_{T±} and A^(Z) = (1,0)|_{(T³,Y)}. It names the generators but does not identify the gl₂ Schur–Weyl V = C² with the quark isospin doublet, and does not say which basis vector has T³ = +½. So it does not fix the orientation as it stands.
