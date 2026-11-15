@@ -66,6 +66,7 @@ export default chapter({
             "trace-locality-meets-gs-nonlocality",
             "trace-locality-gs-reconciliation",
             "trace-locality-meets-gs-nonlocality-proof",
+            "trace-locality-gs-non-locality",
             "trace-locality-nc-probability-reading",
             "trace-locality-product-factorisation-check",
             "jones-markov-trace",
@@ -115,6 +116,7 @@ export default chapter({
           blocks: [
             "knot-eigenbasis-complete",
             "knot-eigenbasis-complete-proof",
+            "knot-eigenbasis-complete-reading",
             "knot-exhaustiveness",
             "feynman-eigenbasis",
           ],
