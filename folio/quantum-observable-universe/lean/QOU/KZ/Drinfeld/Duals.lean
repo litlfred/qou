@@ -18,7 +18,7 @@ noncomputable section
 
 namespace QOU.KZ.Drinfeld
 
-open CategoryTheory MonoidalCategory Finset QOU.KZ.FuchsianFormal QOU.KZ.BlockResidues
+open QOU.KZ.DrinfeldAssociator CategoryTheory MonoidalCategory Finset QOU.KZ.FuchsianFormal QOU.KZ.BlockResidues
   QOU.KZ.KZPentagon QOU.KZ.GLnKZ QOU.KZ.ZigZag Obj
 
 attribute [local instance] Matrix.linftyOpNormedRing Matrix.linftyOpNormedAlgebra
@@ -49,30 +49,30 @@ theorem e3_blkZ : (blkZ V V V).map e3L.toEmbedding = {2} := by
 variable {c : ℂ}
 
 theorem ΦB_fin3 (hc : Transcendental ℚ c) (hs : ‖c‖ < 1 / 2) :
-    ΦB hc ({0} : Finset (Fin 3)) {1} {2} = assoc hs :=
+    ΦB kz hc ({0} : Finset (Fin 3)) {1} {2} = assoc hs :=
   KZShiftPhi.Φ_congr (by rw [tB_single]) (by rw [tB_single]) _ _ _ _
 
 /-- The associator on `(V ⊗ V) ⊗ V` is `ZigZag.assoc`, relabelled. -/
 theorem αmat_VVV (hc : Transcendental ℚ c) (hs : ‖c‖ < 1 / 2) :
-    αmat hc V V V = reidx (assocLegs V V V) * (reidx e3L.symm * assoc hs * reidx e3L) := by
-  have h := reidx_ΦB hc e3L (blkX V V V) (blkY V V V) (blkZ V V V)
+    αmat kz hc V V V = reidx (assocLegs V V V) * (reidx e3L.symm * assoc hs * reidx e3L) := by
+  have h := reidx_ΦB kz hc e3L (blkX V V V) (blkY V V V) (blkZ V V V)
   rw [e3_blkX, e3_blkY, e3_blkZ, ΦB_fin3 hc hs] at h
-  have hΦ : ΦB hc (blkX V V V) (blkY V V V) (blkZ V V V) =
+  have hΦ : ΦB kz hc (blkX V V V) (blkY V V V) (blkZ V V V) =
       reidx e3L.symm * (assoc hs * reidx e3L) := by
     rw [← h, ← Matrix.mul_assoc, reidx_mul, Equiv.self_trans_symm, reidx_refl, Matrix.one_mul]
   rw [αmat, hΦ, Matrix.mul_assoc (reidx e3L.symm)]
 
 theorem αinv_VVV (hc : Transcendental ℚ c) (hs : ‖c‖ < 1 / 2) :
-    αinv hc V V V = reidx e3L.symm * assocInv hs * reidx e3L * reidx (assocLegs V V V).symm := by
+    αinv kz hc V V V = reidx e3L.symm * assocInv hs * reidx e3L * reidx (assocLegs V V V).symm := by
   set R := reidx e3L.symm * assocInv hs * reidx e3L * reidx (assocLegs V V V).symm
-  have hR : αmat hc V V V * R = 1 := by
+  have hR : αmat kz hc V V V * R = 1 := by
     rw [αmat_VVV hc hs]
     simp only [R, Matrix.mul_assoc]
     rw [← Matrix.mul_assoc (reidx e3L) (reidx e3L.symm), reidx_mul, Equiv.symm_trans_self,
       reidx_refl, Matrix.one_mul, ← Matrix.mul_assoc (assoc hs), (assoc_mul_assocInv hs).1,
       Matrix.one_mul, ← Matrix.mul_assoc (reidx e3L.symm) (reidx e3L), reidx_mul, Equiv.self_trans_symm,
       reidx_refl, Matrix.one_mul, reidx_mul, Equiv.symm_trans_self, reidx_refl]
-  calc αinv hc V V V = αinv hc V V V * (αmat hc V V V * R) := by rw [hR, Matrix.mul_one]
+  calc αinv kz hc V V V = αinv kz hc V V V * (αmat kz hc V V V * R) := by rw [hR, Matrix.mul_one]
     _ = R := by rw [← Matrix.mul_assoc, αinv_mul_αmat, Matrix.one_mul]
 
 /-! ### The pairing matrices -/
@@ -177,7 +177,7 @@ theorem equivariant_epsL (r : ℂ) : Equivariant (X := tensor V V) (Y := unit) (
 def νV (hs : ‖c‖ < 1 / 2) : ℂ := zig (assoc hs) 0 0
 
 theorem zig_mat (hc : Transcendental ℚ c) (hs : ‖c‖ < 1 / 2) (hν : νV hs ≠ 0) :
-    kron (1 : EndL (Leaves V)) (epsL (νV hs)⁻¹) * αmat hc V V V *
+    kron (1 : EndL (Leaves V)) (epsL (νV hs)⁻¹) * αmat kz hc V V V *
         kron etaL (1 : EndL (Leaves V)) =
       reidx (rightLegs V).symm * reidx (leftLegs V) := by
   rw [αmat_VVV hc hs, ← Uout_mul_Uin]
@@ -195,7 +195,7 @@ theorem zig_mat (hc : Transcendental ℚ c) (hs : ‖c‖ < 1 / 2) (hν : νV hs
           Matrix.smul_mul, smul_smul, inv_mul_cancel₀ hν, one_smul, Matrix.mul_one]
 
 theorem zag_mat (hc : Transcendental ℚ c) (hs : ‖c‖ < 1 / 2) (hν : νV hs ≠ 0) :
-    kron (epsL (νV hs)⁻¹) (1 : EndL (Leaves V)) * αinv hc V V V *
+    kron (epsL (νV hs)⁻¹) (1 : EndL (Leaves V)) * αinv kz hc V V V *
         kron (1 : EndL (Leaves V)) etaL =
       reidx (leftLegs V).symm * reidx (rightLegs V) := by
   rw [αinv_VVV hc hs, ← Uin'_mul_Uout']
@@ -223,17 +223,17 @@ variable (c) [hc : Fact (Transcendental ℚ c)] [hsm : Fact (‖c‖ ≤ 1 / 12)
 
 /-- **`V` is self-dual in `D_ℏ`** for `ℏ` transcendental with `‖ℏ‖ ≤ 1/12`:
 `η = e₀ ⊗ e₁ − e₁ ⊗ e₀`, `ε' = ν⁻¹ ε`, `ν = zig(Φ)₀₀ ≠ 0`. -/
-instance exactPairingV : ExactPairing (C := DH c) Obj.V Obj.V where
+instance exactPairingV : ExactPairing (C := DH kz c) Obj.V Obj.V where
   coevaluation' := ⟨etaL, equivariant_etaL⟩
   evaluation' := ⟨epsL (νV (c := c) (by linarith [hsm.out]))⁻¹, equivariant_epsL _⟩
   coevaluation_evaluation' := hom_ext (by
     show kron (epsL (νV (c := c) (by linarith [hsm.out]))⁻¹) (1 : EndL (Leaves V)) *
-        αinv hc.out V V V * kron (1 : EndL (Leaves V)) etaL =
+        αinv kz hc.out V V V * kron (1 : EndL (Leaves V)) etaL =
       reidx (leftLegs V).symm * reidx (rightLegs V)
     exact zag_mat hc.out _ (νV_ne_zero hsm.out))
   evaluation_coevaluation' := hom_ext (by
     show kron (1 : EndL (Leaves V)) (epsL (νV (c := c) (by linarith [hsm.out]))⁻¹) *
-        αmat hc.out V V V * kron etaL (1 : EndL (Leaves V)) =
+        αmat kz hc.out V V V * kron etaL (1 : EndL (Leaves V)) =
       reidx (rightLegs V).symm * reidx (leftLegs V)
     exact zig_mat hc.out _ (νV_ne_zero hsm.out))
 
@@ -244,16 +244,16 @@ def dualObj : Obj → Obj
   | .tensor X Y => .tensor (dualObj Y) (dualObj X)
 
 /-- The exact pairing `(X, Xᘁ)`, built from `(V, V)` by `tensorExactPairing`. -/
-def pairing : (X : Obj) → ExactPairing (C := DH c) X (dualObj X)
-  | .unit => (exactPairingUnit : ExactPairing (C := DH c) (𝟙_ (DH c)) (𝟙_ (DH c)))
+def pairing : (X : Obj) → ExactPairing (C := DH kz c) X (dualObj X)
+  | .unit => (exactPairingUnit : ExactPairing (C := DH kz c) (𝟙_ (DH kz c)) (𝟙_ (DH kz c)))
   | .V => exactPairingV c
   | .tensor X Y =>
-      @QOU.MathlibExt.tensorExactPairing (DH c) _ _ X (dualObj X) Y (dualObj Y)
+      @QOU.MathlibExt.tensorExactPairing (DH kz c) _ _ X (dualObj X) Y (dualObj Y)
         (pairing X) (pairing Y)
 
 /-- **`D_ℏ` is right rigid** for `ℏ` transcendental with `‖ℏ‖ ≤ 1/12`. -/
-instance rightRigid : RightRigidCategory (DH c) where
-  rightDual X := ({ rightDual := (dualObj X : DH c), exact := pairing c X } : HasRightDual (C := DH c) X)
+instance rightRigid : RightRigidCategory (DH kz c) where
+  rightDual X := ({ rightDual := (dualObj X : DH kz c), exact := pairing c X } : HasRightDual (C := DH kz c) X)
 
 end Pairing
 

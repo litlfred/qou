@@ -32,7 +32,7 @@ noncomputable section
 
 namespace QOU.KZ.Drinfeld
 
-open CategoryTheory MonoidalCategory QOU.Mass.BraidedStrands
+open QOU.KZ.DrinfeldAssociator CategoryTheory MonoidalCategory QOU.Mass.BraidedStrands
 
 variable (c : ℂ) [hc : Fact (Transcendental ℚ c)]
 
