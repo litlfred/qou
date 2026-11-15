@@ -363,9 +363,27 @@
         "reviewed_at": "2026-08-15T21:15:41.696Z",
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "78bfa52fa0f7",
+          "ts": "02e3160da048",
+          "lean": "828f32062afe",
+          "lean_statement": "69a7ba32e99a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:01.569Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T21:56:01.569Z",
   "paths": {
     "ts": "folio/quantum-observable-universe/knots-particles-confinement/pairwise-interaction-decomposition.ts",
     "md": "folio/quantum-observable-universe/knots-particles-confinement/pairwise-interaction-decomposition.md",

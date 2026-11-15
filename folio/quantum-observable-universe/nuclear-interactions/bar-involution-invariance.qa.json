@@ -1288,6 +1288,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "8fadd615f1e9",
+          "ts": "7e95c99df3e0",
+          "lean": "e36e3cef9fcc",
+          "lean_statement": "309739a8a62e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:02.152Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "The ref covers parts 1–2 only, over `axiom Partition/hookLengths/partitionTranspose/hookLengths_transpose`, with w_λ defined as (∏[h]⁻¹)². Part 3 is a class-field projection. w_λ undefined in the md. Part 2 is false for convention-D Markov weights (they vanish on ℓ(λ)≥3, not on the transposes). Part 3 states T̄_w=T_w per normal form; the proof (`:7`) shows only that a sum of two bar-conjugates is invariant; T̄_w=T_w is false for w≠e. \"Conditional\" names no hypothesis"
       }
     ],
     "proof-no-axiom-growth": [
@@ -2781,6 +2799,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T02:52:38.156Z",
+  "updated_at": "2026-11-15T21:56:02.152Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

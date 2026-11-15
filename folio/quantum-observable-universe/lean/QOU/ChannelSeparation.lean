@@ -3,6 +3,7 @@ import QOU.QuantumObservableUniverse.Instanton
 import QOU.Torsion.JetProlongation
 import QOU.GradedFrobeniusHopf
 import Mathlib.CategoryTheory.Monoidal.Category
+import QOU.MathlibExt.UniversalDifferentials
 
 /-!
 # Channel Separation: Jet Prolongation ↔ Hecke Grading
@@ -128,31 +129,27 @@ structure HeckeJetCorrespondence where
   /-- Each jet level k corresponds to Hecke elements of word length ≤ k. -/
   level_to_degree : ℕ → ℕ := id
 
-/-- **Proposition**: the Kähler differentials `Ω¹(A)` of the Frobenius--Hopf
-    object have no symmetric (degree-0) component.
+/-- **Proposition**: the universal one-forms `Ω¹(A) = ker(μ : A ⊗ A → A)`
+    have no component along the unit section `A ⊗ 1`.
 
-    In the Hecke realisation: `Ω¹(A) = ker(μ : A ⊗ A → A)`.
-    The symmetric component of `A ⊗ A` maps surjectively onto `A^{sym}`
-    via `μ`, so `ker(μ)^{sym} = 0`.
+    Precisely, `Ω¹(A)` and `A ⊗ 1` are complementary in `A ⊗ A`
+    (`isCompl_Ω1_range_unitSection`), so they meet only in `0`.  This is the
+    algebraic content of "`d(𝟏) = 0`": the degree-0 piece of `A ⊗ A`, the
+    one `μ` maps isomorphically onto `A`, carries no differential forms.
 
-    This is a reformulation of the fact that `d(𝟏) = 0` — the differential
-    of the identity element vanishes, so the degree-0 piece of the
-    differential forms is trivial. -/
+    Stated for any algebra `A` over a commutative ring `R`, commutative or
+    not, so it covers the Hecke realisation.  What is NOT formalised here is
+    the representation-theoretic reading in `H₃(q)`, where the summand `A ⊗ 1`
+    is identified with the symmetric (trivial-representation) channel. -/
 -- Ref: [kock2004]
--- Restated 2026-08-22 (vacuity ledger, `proof-no-trivial-true`).  The
--- statement was `(0 : ℕ) = 0 := rfl`, a reflexive tautology asserting nothing
--- about the differential forms.  It now carries the actual dimension count:
--- the symmetric channel of `A` is the 1-dimensional trivial representation, and
--- `μ` restricted to that channel is surjective onto `A^{sym}` (also dim 1), so
--- the symmetric part of `Ω¹(A) = ker(μ)` has dimension `1 - 1 = 0`.  A `rfl`
--- here would reduce, but the source form is a genuine complement identity
--- (false for any input/image dimensions that did not coincide), so it is not a
--- reflexive tautology.
-theorem kahler_differentials_no_sym_component :
-    -- dim (Ω¹(A))^{sym} = dim A^{sym} − dim (im μ)^{sym} = 1 − 1 = 0.
-    -- In H₃(q) the symmetric channel is the 1-dim trivial rep; `μ` is
-    -- surjective on it, so the symmetric kernel vanishes.
-    (1 : ℕ) - 1 = 0 := by norm_num
+-- Restated 2026-11-15 (issue #8012).  The statement was `(1 : ℕ) - 1 = 0`,
+-- a dimension count that mentioned no differential form; before that it was
+-- `(0 : ℕ) = 0 := rfl`.  It now concerns `Ω¹(A)` itself.
+theorem kahler_differentials_no_sym_component
+    {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A] :
+    Disjoint (QOU.MathlibExt.UniversalDifferentials.Ω1 R A)
+      (LinearMap.range (QOU.MathlibExt.UniversalDifferentials.unitSection R A)) :=
+  (QOU.MathlibExt.UniversalDifferentials.isCompl_Ω1_range_unitSection R A).disjoint
 
 /- **Corollary**: per-generator channel separation is trivial, but
     multi-generator channel separation is non-trivial.

@@ -1343,6 +1343,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5015d6f4706c",
+          "ts": "befda4d6e2a6",
+          "lean": "991c006af635",
+          "lean_statement": "b478e4142b09"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:00:11.322Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "minor",
+        "evidence": "[sidecar review 2026-11-15, issue #8030] Lean genuinely proves that every coprime (m,n), 2 ≤ m < n, with ⌊(m−1)(n−1)/2⌋ ≤ 4 lies in {(2,3),(2,5),(2,7),(2,9),(3,4),(3,5)}. I checked the count by hand: six pairs, so the arithmetic is right. Not encoded: \"exactly six\" (only containment), | 𝒢"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2771,6 +2789,6 @@
       }
     ]
   },
-  "updated_at": "2026-09-15T21:54:18.071Z",
+  "updated_at": "2026-11-15T22:00:11.322Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -1,3 +1,5 @@
 import { prose } from "../../schema/builders";
 
-export default prose();
+export default prose({
+  label: "prose:intro-particles-as-knots",
+});
