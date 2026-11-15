@@ -269,8 +269,19 @@ Written to
 [`computations/probes/large-a-trace-network-extension.witness.json`](../../computations/probes/large-a-trace-network-extension.witness.json)
 by `mode_extend`. This uses the same element and the same `tr_markov_d`
 normalisation (÷ 2^pn) as the two-row tower witness. ¹⁷O is cross-checked
-against Rust (§3); the other rows have only the network computation behind
-them.
+against Rust (§3).
+
+**Cross-check against the two-row tower, added 2026-11-15.** Seven rows also
+have a Rust two-row tower value in `markov-trace-two-row-tower-rust.witness.json`
+(#7800): ¹⁷F, ¹⁸F, ¹⁹F, ¹⁷Ne, ¹⁸Ne, ¹⁹Ne and ²⁰Ne. All seven are **identical
+in all 60 serialised digits** (|difference| = 0 when both strings are read at
+80 dps). ¹⁹F and ²⁰Ne have a third method as well, the column-wise tower of
+#7775. ¹⁸O–²⁰O, ²⁰F and ²¹Ne have only the network computation behind them so
+far; a tower run for ²¹Ne is in progress.
+
+²¹Ne was added on 2026-11-15 by the same producer
+(`extend --chains 10:11:11`). Its wall time is not comparable with the other
+rows, because it shared four cores with another job.
 
 | isotope | Z | N | A | tr_markov_d (first 40 digits) | wall (s) |
 |---|---|---|---|---|---|
@@ -286,6 +297,7 @@ them.
 | 18ne | 10 | 8 | 18 | 0.000067152681484991843799942083531522172793 | 52.4 |
 | 19ne | 10 | 9 | 19 | 0.000148746379488971517025899906709594433874 | 154.5 |
 | 20ne | 10 | 10 | 20 | -0.00001121972109603442494693384247311459215 | 254.4 |
+| 21ne | 10 | 11 | 21 | -0.00000111369018222330944886508394912425428 | 426.6 |
 
 Wall times are single-threaded pure-Python mpmath (no gmpy backend); they grow by about 2× per strand, as a 2^A state predicts. The rows printed here are the first digits of the 60-digit serialised values.
 
