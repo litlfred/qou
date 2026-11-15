@@ -204,3 +204,45 @@ invariance, uniqueness of a left multiplier by an invertible matrix) are standar
 
 **Default if nothing is said: (B).** **Recommendation (judgement): (A).** It is the only
 admissible class left (§6), and it reuses the derived P₊ rather than inventing a map.
+
+## 10. HANDOFF: D-I1 = (A) received, work NOT started beyond the rule read (WIP, 2026-11-15)
+
+The owner answered D-I1 with (A): test isospin as a module map on the chirality ideal H·P₊
+(Furey-style). The stream was stood down before any computation, so **nothing below is a
+result**. It records what was read and the planned test.
+
+**State rule (step 1, read and not yet coded).** Two rules are on record, and neither fixes the
+slot order uniquely, so the whole family must be tested:
+* **D2**, `QOU/QuarkState/PhotonPairNormalForm.lean`, `nucleonState q c1 c2 c3`:
+  * the word is ρ_{(2,1)}((σ₀σ₁⁻¹)³ · ℓ₀(c₁) ℓ₀(c₂) ℓ₁(c₃)), **with no gluon**;
+  * cᵢ = flavourShift εᵢ, so u ↦ 0 and d ↦ −1 (`nucleonStateOfQuarks`);
+  * the quark-to-slot order is not fixed, giving p ∈ perms of (0,0,−1) and n ∈ perms of (0,−1,−1), i.e. 3 × 3 pairs.
+* **The census AVG pair rule** (`nuc11_interleaved`, the ruled Q_β element): p = (0, −½, −½), n = (−½, −½, −1), followed by the gluon σ₀².
+  The docstring of `nucleonState` says the AVG c = −½ "is a pair AVERAGE and NOT a single letter".
+* **The γγ rule** (bean `qou-ales`; `GammaGammaSelectorH3.lean`) fixes only the core (σ₀σ₁⁻¹)^k inside H₃. It does not fix the quark letters.
+* So the planned family is {AVG, D2 × 9 orders} × {with gluon, without gluon} = **20 (p, n) state pairs**.
+  The chirality idempotent is P₊(σ_g) with g ∈ {0, 1}, giving 40 settings.
+  The state is ψ = N·P₊(σ_g) in H₃ (6-dim NF over ℚ(q)).
+* The word must not change. The gluon σ₀² is census-picked and carries the bar obstruction (#7860).
+
+**Candidates (step 2, enumerated in advance and drawn only from existing structure):**
+* for g ∈ {0, 1}: σ_g, σ_g⁻¹, P₊,g, P₋,g, J_g, W_L = q⁻¹J_g and W_R = qJ_g (#7844);
+* the centraliser of {core, gluon} in H₃: compute it, then test whether a **unique** element maps ψ_p to ψ_n. A forced element is a result; a choice from a family is not.
+
+**Structural point to verify first.** At n = 3 the corner P₊(σ₀)H₃P₊(σ₀) should be **2-dim and
+commutative**: rank 1 in each of the (3) and (2,1) blocks, 0 in (1³). If that holds, the
+corner carries no τ_j / sl₂ at n = 3, and the Furey-type corner sl₂ (stream 11, #7867) needs
+n ≥ 4, i.e. a word outside H₃. Measure this before relying on it. It is a candidate for a
+small Lean lemma.
+
+**Tests (step 3)** for each (state pair, idempotent, candidate):
+* X·ψ_p = ψ_n exactly, and separately up to a scalar;
+* X² = 1 or X² scalar;
+* [X, core] = 0 and [X, gluon] = 0.
+
+Report every hit and miss. Arithmetic is exact in ℚ(q): census `hm` right-multiplication and
+mulNF via the basis words [], [0], [1], [1,0], [0,1], [0,1,0].
+
+**Next step for whoever picks this up:** write
+`computations/qbeta/qbeta_isospin_module_map_probe.py` to the plan above, starting with the
+corner-dimension check.
