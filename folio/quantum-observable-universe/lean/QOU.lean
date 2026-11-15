@@ -1049,6 +1049,7 @@ import QOU.Machinery.HeckeH4Wedderburn
 import QOU.Machinery.HeckeH4Semisimple
 import QOU.Machinery.HeckeTowerBasicConstruction
 import QOU.Machinery.QuantumTorus
+import QOU.Machinery.QuantumTorusQDifference
 import QOU.Machinery.QuantumTorusAJ
 import QOU.Machinery.QuantumTorusDivision
 import QOU.Machinery.QuantumTorusSymbol
