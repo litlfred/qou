@@ -13,6 +13,11 @@ export default proposition({
   ],
   authorNotes: [
     {
+      kind: "refined-framing",
+      date: "2026-11-15",
+      body: "Restated on owner approval from the Molien critical analysis: normalisation is shared by every Markov trace, so the distinguishing property is the z = 0 symmetrising trace; the κ-forcing scan over c ∈ [−3,3] replaced by the n = 2 argument; the n ≤ 9 Féray–Méliot check replaced by the hook-sum identity; the unreproduced \"≈ 0.457 at n = 6\" replaced by measured values (0.922 at q₀, 0.061 at q = 2, balanced convention); \"Molien\" disambiguated; Wenzl-family remark added. Steinberg's coinvariant theorem is named in prose; no bibliography key exists for it yet.",
+    },
+    {
       kind: "note",
       body: "An earlier version of the citation-caution paragraph wrote the Molien weight without the q^{-κ_λ} factor.",
     },
