@@ -151,8 +151,8 @@ theorem continuous_lagr (c : ι → ℝ) (x : ι → Fin m → ℝ) (j : ι) :
     Continuous (fun ν : Fin m → ℝ => c j - ν ⬝ᵥ x j) :=
   continuous_const.sub (continuous_id.dotProduct continuous_const)
 
-/-- **Cells are open.** -/
 omit [Nonempty ι] in
+/-- **Cells are open.** -/
 theorem isOpen_cell (c : ι → ℝ) (x : ι → Fin m → ℝ) (i : ι) : IsOpen (cell c x i) := by
   have : cell c x i = ⋂ j, {ν | j ≠ i → c i - ν ⬝ᵥ x i < c j - ν ⬝ᵥ x j} := by
     ext ν; simp [cell]
