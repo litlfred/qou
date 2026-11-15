@@ -314,6 +314,24 @@ theorem belt_eq (m m' : ℕ) (hint : ∀ k < rOrder m m', qint (s ^ 2) (k + 1) �
   rw [beltOp_eq_smul_one s hs hq2 m m' hint hstr, smul_smul, beltOp_top,
     belt_value s hs hq2 m m']
 
+include hq2 in
+/-- **The twist (Zheng's `T`).** On the string `Δ(F)^i w_{m−n}` generating the summand
+`V_{2n+1} ⊂ V_{m+1} ⊗ V_{m+1}`, the full twist `M = Ř′Ř`, corrected to zero framing by the factor
+`q^{m(m+2)} = θ_{V_{m+1}}²`, acts by `q^{2n(n+1)} = θ_{V_{2n+1}}`. With `m = N−1` and `t = q²`
+this is `T(n,t) = t^{n(n+1)}`, the framing factor being `t^{(N²−1)/2}`. -/
+theorem twist_eq (m n i : ℕ) (hn : n ≤ m) (hint : ∀ k < rOrder m m, qint (s ^ 2) (k + 1) ≠ 0)
+    (hint1 : ∀ p < m - n, qint (s ^ 2) (m - p) ≠ 0) :
+    (s ^ 2) ^ ((m : ℤ) * (m + 2)) • (mono s hs m m *ᵥ
+        (deltaF (s ^ 2) m m ^ i *ᵥ hwVec (s ^ 2) m m (m - n)))
+      = (s ^ 2) ^ (2 * (n : ℤ) * (n + 1)) •
+        (deltaF (s ^ 2) m m ^ i *ᵥ hwVec (s ^ 2) m m (m - n)) := by
+  unfold mono
+  rw [monodromy_deltaF_pow_hwVec s hs hq2 m m (m - n) i (by omega) (by omega) hint hint1 hint1,
+    smul_smul, ← zpow_add₀ (pow_ne_zero 2 hs)]
+  congr 2
+  push_cast [Nat.cast_sub hn]
+  ring
+
 end Belt
 
 end QOU.Mass.QuantumSl2
