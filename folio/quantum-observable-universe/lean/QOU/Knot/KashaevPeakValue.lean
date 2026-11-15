@@ -30,8 +30,8 @@
   the constant `c_σ` is only visible after the `√N` from the Gaussian window is
   divided out.
 
-  -- Ref: [manuscript] QOU/Knot/KashaevAsymptotic.lean
-  -- Ref: [manuscript] QOU/Knot/LobTaylorSaddle.lean
+  -- Ref: [leitner2026] QOU/Knot/KashaevAsymptotic.lean
+  -- Ref: [leitner2026] QOU/Knot/LobTaylorSaddle.lean
 -/
 import QOU.Knot.KashaevAsymptotic
 import QOU.Knot.FigureEightVolumeSaddle

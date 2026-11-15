@@ -30,7 +30,7 @@ channels of the single complex-volume object `𝔙`.
 
 Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-06-28-wlambda-identity-i-rescope-no-hlf.md §"Finding 3"
+-- Ref: [leitner2026] docs/audits/2026-06-28-wlambda-identity-i-rescope-no-hlf.md §"Finding 3"
 -/
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 import Mathlib.Tactic

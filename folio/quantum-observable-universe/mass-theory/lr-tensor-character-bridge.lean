@@ -176,7 +176,7 @@ attribute [instance] LRTensorCharacterBridge.tupleFintype
     coefficient because summing a constant over `Fin c` gives `c • x`.
     The corollary's content is exactly that step: `c^ν_{λ_1,…,λ_k}` is a
     *count* of copies, not a weight put in by hand. -/
--- Ref: [manuscript] cor:lr-tensor-character-bridge
+-- Ref: [leitner2026] cor:lr-tensor-character-bridge
 -- Ref: [wenzl1988] Wenzl, Invent. Math. 92 (1988) — semisimplicity of H_n(q)
 -- Ref: [ram1991] Ram, Invent. Math. 106 (1991) — Frobenius character formula
 theorem lr_tensor_character_bridge

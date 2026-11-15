@@ -52,7 +52,7 @@ stratum into a
     the `ChiralityResidueMassTermContext` fields (§3b-cond conditional) —
     `rw [mass_sum_strata]; congr; ext; exact mass_stratum_decomp`; the
     conjectural content lives in those class fields, not in a `sorry`. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/chirality-residue-mass-term.ts
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/chirality-residue-mass-term.ts
 def chirality_residue_mass_term [ctx : ChiralityResidueMassTermContext] :
     ctx.mass = (Finset.range ctx.n_strata).sum
       (fun s => ctx.mass_achiral s + ctx.mass_chiral s) := by

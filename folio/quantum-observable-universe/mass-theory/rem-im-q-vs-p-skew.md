@@ -6,7 +6,7 @@ be kept separate**:
 
 ### Mechanism 1 — bar projection (real-q phenomenon)
 
-Per [bar-involution.md](bar-involution.md), every Hecke-algebra
+Per [bar-involution.md](../braids-and-knots/bar-involution.md), every Hecke-algebra
 element decomposes as $x = P_{\mathrm{avg}}(x) + P_{\mathrm{skew}}(x)$
 under the bar involution $q \mapsto q^{-1}$ (equivalently
 $\eta = \log q \mapsto -\eta$). The framework's **canonical
@@ -26,7 +26,7 @@ canonical projection.
 
 ### Mechanism 2 — modulus projection (complex-q phenomenon)
 
-Per [`prop:categorical-mass-markov`](categorical-mass-markov.md),
+Per [`prop:categorical-mass-markov`](../mass-endomorphism/categorical-mass-markov.md),
 the categorical mass formula is
 
 $$\mathfrak{m}_{q, \mathcal{K}} = \mathrm{tr}_M(\rho(\beta_\mathcal{K})).$$
@@ -83,6 +83,6 @@ Quantitative consequences differ between the two mechanisms:
 
 - [`prop:lusztig-vs-hermitian-bar`](lusztig-vs-hermitian-bar.md) — bar vs Hermitian * involutions; this remark interprets/refines its complex-q discussion
 - [`prop:q-zero-complex-extension`](q-zero-complex-extension.md) — substrate polymorphism (admits complex q)
-- [`prop:categorical-mass-markov`](categorical-mass-markov.md) — modulus projection definition
-- [`bar-involution.md`](bar-involution.md) — bar projection definition
+- [`prop:categorical-mass-markov`](../mass-endomorphism/categorical-mass-markov.md) — modulus projection definition
+- [`bar-involution.md`](../braids-and-knots/bar-involution.md) — bar projection definition
 - [`crossing-energy-interpretation.md`](../observations/crossing-energy-interpretation.md) — `sinh(log q)` = Coulomb channel identification

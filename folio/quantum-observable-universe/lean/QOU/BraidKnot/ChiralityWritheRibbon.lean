@@ -48,7 +48,7 @@ LaTeX label: `prop:chirality-writhe-ribbon-derivation`
 - [jones1987] https://doi.org/10.2307/1971403
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 - [mathas1999] https://doi.org/10.1090/ulect/015
-- [manuscript] braids-and-knots / chirality-writhe-ribbon-derivation
+- [leitner2026] braids-and-knots / chirality-writhe-ribbon-derivation
 -/
 
 namespace QOU.BraidKnot.ChiralityWritheRibbon
@@ -194,7 +194,7 @@ private theorem sum_zipWith_const_mul {A B : Type*} (c : ℝ) (f : A → B → �
 -- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
 --      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
 --      DOI: 10.1007/978-1-4612-0783-2
--- Ref: [manuscript] braids-and-knots / chirality-writhe-ribbon-derivation
+-- Ref: [leitner2026] braids-and-knots / chirality-writhe-ribbon-derivation
 theorem chirality_writhe_ribbon
     (q : ℝ) [RT : RibbonTwistEigenvalue q]
     (writhe : ℤ)
@@ -269,7 +269,7 @@ theorem chirality_writhe_ribbon
     When writhe `w = 0`, the linearisation gives `a_K = 1 + O(h²)`.
     The chirality correction is second-order, consistent with
     `a_{4_1} = 1 - h²` for the amphichiral figure-eight knot. -/
--- Ref: [manuscript] braids-and-knots / six-term-mass-formula-complete
+-- Ref: [leitner2026] braids-and-knots / six-term-mass-formula-complete
 theorem chirality_writhe_zero
     (q : ℝ) [RT : RibbonTwistEigenvalue q]
     (channels : List WedderburnChannel)
@@ -308,7 +308,7 @@ structure PNCrossing where
     and is left open. The most structurally natural origin is the
     spin-½ braiding eigenvalue of `U_q(𝔰𝔩₂)` on the symmetric
     component of `V₁ ⊗ V₁`. -/
--- Ref: [manuscript] braids-and-knots / chirality-writhe-ribbon-derivation
+-- Ref: [leitner2026] braids-and-knots / chirality-writhe-ribbon-derivation
 class PNCrossingRule (q : ℝ) where
   /-- `q > 0` (substrate regime). -/
   q_pos : 0 < q

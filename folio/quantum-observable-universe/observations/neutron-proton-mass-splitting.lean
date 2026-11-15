@@ -18,7 +18,7 @@ The numeric constants in [`quarkPhi`](#QOU.NeutronProtonSplitting.quarkPhi) are
 its rounded evaluations at `q₀`.  Provenance + symbolic derivation:
 `docs/audits/2026-07-11-quark-volume-provenance.md`.
 
--- Ref: [manuscript] prop:neutron-proton-mass-splitting
+-- Ref: [leitner2026] prop:neutron-proton-mass-splitting
 -/
 
 namespace QOU.NeutronProtonSplitting

@@ -59,7 +59,7 @@ structure CategoricalLeg (T_w : Type*) where
     (Yekutieli finite slice + `E_2` collapse + Wenzl + `q`-MN) is the
     open categorical input.
 
-    Ref: [manuscript] prop:gb-spectral-sequence +
+    Ref: [leitner2026] prop:gb-spectral-sequence +
          prop:spectral-sequence-collapse +
          prop:e-infinity-page-identifications. -/
 def categorical_leg_to_markov_trace {T_w : Type*} (L : CategoricalLeg T_w) : Prop :=
@@ -90,7 +90,7 @@ structure ArchimedeanRealization (T_w : Type*) where
 
     Named as the `Prop` relating the realised mass `B` to the
     electron scale, the SDP multiplicity, and the realified trace
-    (pattern C).  Ref: [manuscript] prop:archimedean-realization-functor. -/
+    (pattern C).  Ref: [leitner2026] prop:archimedean-realization-functor. -/
 def archimedean_realization_to_mev {T_w : Type*}
     (A : ArchimedeanRealization T_w) : Prop :=
   A.B = A.m_e * (A.ρ : ℝ) * A.traceAtQ0

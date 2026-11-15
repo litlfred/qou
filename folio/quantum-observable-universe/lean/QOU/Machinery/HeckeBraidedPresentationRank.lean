@@ -400,7 +400,7 @@ is independently available. The genuine ascent question — does semisimplicity
 ascend along a *nondegenerate Markov trace*, at a carrier where the conclusion is
 NOT already known — is untouched here and stays open (bean `qou-s7z2`).
 
--- Ref: [manuscript] beans qou-s7z2, qou-0cyu.
+-- Ref: [leitner2026] beans qou-s7z2, qou-0cyu.
 -/
 
 /-- **`WenzlTowerStep` is free wherever its conclusion already holds.**

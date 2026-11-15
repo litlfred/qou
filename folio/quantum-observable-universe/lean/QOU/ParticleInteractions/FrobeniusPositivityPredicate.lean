@@ -55,9 +55,9 @@ an order is, a completion is not).  It does **not** supply `G(q)` for `H_3`,
 which is what evaluating stability for a nucleon still requires.  Nothing here
 selects a gluon count or adjudicates any `net` value.
 
--- Ref: [manuscript] folio/quantum-observable-universe/knots-particles-confinement/stable-atom.md
--- Ref: [manuscript] folio/quantum-observable-universe/knots-particles-confinement/ilp-solution-count-unwrap.md
--- Ref: [manuscript] folio/quantum-observable-universe/knots-particles-confinement/categorical-proton-properties.md
+-- Ref: [leitner2026] folio/quantum-observable-universe/knots-particles-confinement/stable-atom.md
+-- Ref: [leitner2026] folio/quantum-observable-universe/knots-particles-confinement/ilp-solution-count-unwrap.md
+-- Ref: [leitner2026] folio/quantum-observable-universe/knots-particles-confinement/categorical-proton-properties.md
 -/
 
 namespace QOU.ParticleInteractions

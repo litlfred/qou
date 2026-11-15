@@ -22,7 +22,7 @@ namespace QOU.Brings
     the color tube coordinates are the shifts r = w₂ − z, g = w₃ − z,
     b = w₄ − z, together with the space-like shift σ = w₁ − z.
 
-    Ref: [manuscript] Chapter 5, §Color tube coordinates -/
+    Ref: [leitner2026] Chapter 5, §Color tube coordinates -/
 structure ColorTubeCoordinates (R : Type*) [Ring R] where
   /-- Spacetime ratio z = x₀/x₁. -/
   z : R
@@ -52,21 +52,21 @@ structure ColorTubeCoordinates (R : Type*) [Ring R] where
   σ_eq : σ = w₁ - z
 
 /-- The color vector is the triple (r, g, b). -/
--- Ref: [manuscript] Chapter 5, §Color tube coordinates
+-- Ref: [leitner2026] Chapter 5, §Color tube coordinates
 def ColorTubeCoordinates.colorVector {R : Type*} [Ring R]
     (c : ColorTubeCoordinates R) : R × R × R :=
   (c.r, c.g, c.b)
 
 /-- The color tube coordinates recover the resolvents from z:
     wₖ = cₖ + z for each color coordinate. -/
--- Ref: [manuscript] Chapter 5, §Color tube coordinates
+-- Ref: [leitner2026] Chapter 5, §Color tube coordinates
 theorem color_recovers_resolvent {R : Type*} [CommRing R]
     (c : ColorTubeCoordinates R) :
     c.r + c.z = c.w₂ ∧ c.g + c.z = c.w₃ ∧ c.b + c.z = c.w₄ := by
   refine ⟨?_, ?_, ?_⟩ <;> simp [c.r_eq, c.g_eq, c.b_eq] <;> ring
 
 /-- The sum of all four shifted coordinates equals (w₁ + w₂ + w₃ + w₄) − 4z. -/
--- Ref: [manuscript] Chapter 5, §Color tube coordinates
+-- Ref: [leitner2026] Chapter 5, §Color tube coordinates
 theorem shifted_sum {R : Type*} [CommRing R] (c : ColorTubeCoordinates R) :
     c.σ + c.r + c.g + c.b = (c.w₁ + c.w₂ + c.w₃ + c.w₄) - 4 * c.z := by
   rw [c.σ_eq, c.r_eq, c.g_eq, c.b_eq]
@@ -101,7 +101,7 @@ def ColorTubeCoordinates.h3 {R : Type*} [CommRing R]
 /-- **Spacetime recovery** (`eq:spacetime-recovery`). The Lagrange `z = S/D`
     relation `z·(χ_ζ − z) = p₁(c) + 4z` rearranges to the quadratic
     `z² − (χ_ζ − 4)·z + p₁(c) = 0` determining the spacetime coordinate. -/
--- Ref: [manuscript] Chapter 5, §Color tube constraints
+-- Ref: [leitner2026] Chapter 5, §Color tube constraints
 theorem spacetime_recovery {R : Type*} [CommRing R]
     (c : ColorTubeCoordinates R) (χ : R)
     (h : c.z * (χ - c.z) = c.p1 + 4 * c.z) :
@@ -110,7 +110,7 @@ theorem spacetime_recovery {R : Type*} [CommRing R]
 
 /-- **Shifted quadric — equivalent forms** (`eq:shifted-quadric`).
     `h₂(c) + z·p₁(c) + 2z² = 0` iff `σ·b + r·g = −z(σ+r+g+b) − 2z²`. -/
--- Ref: [manuscript] Chapter 5, §Color tube constraints
+-- Ref: [leitner2026] Chapter 5, §Color tube constraints
 theorem shifted_quadric_iff {R : Type*} [CommRing R]
     (c : ColorTubeCoordinates R) :
     c.h2 + c.z * c.p1 + 2 * c.z ^ 2 = 0 ↔
@@ -124,7 +124,7 @@ theorem shifted_quadric_iff {R : Type*} [CommRing R]
     `h₃ + z(p₁² − 2h₂) + 3z²p₁ + 4z³ = 0` into
     `h₃ + z·p₁² + 5z²p₁ + 8z³ = 0`. The elimination is the ring combination
     `reduced = shifted_cubic + 2z·shifted_quadric`. -/
--- Ref: [manuscript] Chapter 5, §Color tube constraints
+-- Ref: [leitner2026] Chapter 5, §Color tube constraints
 theorem reduced_cubic_of_shifted {R : Type*} [CommRing R]
     (c : ColorTubeCoordinates R)
     (hquad : c.h2 + c.z * c.p1 + 2 * c.z ^ 2 = 0)

@@ -65,7 +65,7 @@ Archimedean (ℝ): `‖·‖`, ordering — §7c.
   -- Ref: [thurston1978] Ch. 2 §2.3 p. 12 (geodesics), §2.1 p. 10 (two-planes)
   -- Ref: [ratcliffe] §4.6–4.7 (geodesics and totally-geodesic surfaces of `H³`)
   -- Ref: [benedetti-petronio] §A ; [milnor1982] Appendix
-  -- Ref: [manuscript] beans qou-473l (T2 C3), qou-idvt (T2), qou-r111 (the
+  -- Ref: [leitner2026] beans qou-473l (T2 C3), qou-idvt (T2), qou-r111 (the
   --   geodesic-uniqueness wall)
 -/
 

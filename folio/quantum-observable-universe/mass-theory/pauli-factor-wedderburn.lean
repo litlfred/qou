@@ -11,7 +11,7 @@ LaTeX label: `prop:pauli-factor-wedderburn`
 
 ## References
 
-- [manuscript] §3/pauli-factor-wedderburn
+- [leitner2026] §3/pauli-factor-wedderburn
 - [jones1987] https://doi.org/10.2307/1971403
 -/
 
@@ -31,7 +31,7 @@ noncomputable def pauliFactor (W : WedderburnTraces) : ℝ :=
 
     The Pauli statistical weight is the ratio of alternating to
     symmetric Wedderburn-block traces. -/
--- Ref: [manuscript] §3/pauli-factor-wedderburn
+-- Ref: [leitner2026] §3/pauli-factor-wedderburn
 theorem pauli_factor_wedderburn (W : WedderburnTraces) :
     pauliFactor W * W.trSym = W.trAlt := by
   unfold pauliFactor

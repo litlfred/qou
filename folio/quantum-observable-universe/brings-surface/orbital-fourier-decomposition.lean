@@ -3,7 +3,7 @@ import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Tactic
 import QOU.MathlibExt.QIntegerCanonical
 
--- Ref: [manuscript] Ch. 2
+-- Ref: [leitner2026] Ch. 2
 -- Quantum numbers from Fourier decomposition of normal-bundle sections.
 -- The orbital space at shell n is the space of sections of the normal
 -- bundle with q-Laplacian eigenvalue ≤ [n-1]_q[n]_q.
@@ -176,7 +176,7 @@ capacity `2n²` — using the unconditional `orbital_dim_eq_square`. -/
 
     `sorry`/no-instance is understood as **conjecture**, not missing proof
     (AGENTS.md §3b). -/
--- Ref: [manuscript] Ch. 2, conj:borromean-quark
+-- Ref: [leitner2026] Ch. 2, conj:borromean-quark
 class BorromeanQuark where
   /-- The orbital-space dimension at shell `n`. -/
   orbitalDim : ℕ → ℕ
@@ -193,7 +193,7 @@ class BorromeanQuark where
 
     Derived from `decomposition_law` (the class field) and the
     unconditional `orbital_dim_eq_square` — a real equation, not `True`. -/
--- Ref: [manuscript] Ch. 2, conj:orbital-fourier-decomposition
+-- Ref: [leitner2026] Ch. 2, conj:orbital-fourier-decomposition
 theorem orbital_fourier_decomposition [inst : BorromeanQuark] (n : ℕ) :
     inst.orbitalDim n = n ^ 2 ∧ 2 * inst.orbitalDim n = 2 * n ^ 2 := by
   have h : inst.orbitalDim n = n ^ 2 := by

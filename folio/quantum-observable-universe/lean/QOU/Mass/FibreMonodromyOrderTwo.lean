@@ -63,7 +63,7 @@ Nothing here constructs `D_q`; this removes a reading of a route. No fit, nothin
 Ground ring: `[Field K] [CharZero K]` (§7c). Characteristic zero is used only to know
 `15 ≠ 0` and `12 ≠ 0`; nothing archimedean appears.
 
--- Ref: [manuscript] docs/audits/2026-09-05-w1-dilation-does-not-lift-to-sigma.md (W1 route 1, all three charts)
+-- Ref: [leitner2026] docs/audits/2026-09-05-w1-dilation-does-not-lift-to-sigma.md (W1 route 1, all three charts)
 -/
 
 namespace QOU.Mass.FibreMonodromyOrderTwo

@@ -60,7 +60,7 @@ LaTeX label: `prop:explicit-alpha-k-h3`
 
 ## References
 
-- [manuscript] Ch. Braids and Knots, §α_k at H_3
+- [leitner2026] Ch. Braids and Knots, §α_k at H_3
 - [jones1987] https://doi.org/10.2307/1971403
 -/
 
@@ -88,7 +88,7 @@ structure HeckeQ (R : Type u) [CommRing R] where
 /-- **Proposition (explicit α_k at H_3)**.
 
     `α_0 = 1`, `α_1 = 0`, `α_2 = z²`, `α_3 = h · z² + z`. -/
--- Ref: [manuscript] Ch. Braids and Knots, §α_k at H_3
+-- Ref: [leitner2026] Ch. Braids and Knots, §α_k at H_3
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the

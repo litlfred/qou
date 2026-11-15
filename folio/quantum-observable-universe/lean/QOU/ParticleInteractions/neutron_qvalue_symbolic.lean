@@ -26,7 +26,7 @@ Given these inputs, the symbolic difference `Δ(net) = (h² − 2h)/2` and the
 closed form `Q_β = m_e·(2−h)·h / (2q(q−1))` are **derived by algebra** —
 this is a rigorous §3b-cond conditional, not a self-projection.
 
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md
 -/
 
 namespace QOU.ParticleInteractions
@@ -80,7 +80,7 @@ theorem borromeanQuark_denom_ne_zero [inst : BorromeanQuark] :
 /-- **Symbolic `Δ(net)` (derived).**  The NF difference
     `net(n) − net(p) = (h² − 2h)/2` follows from the conjectural single-wrap
     NF nets by ring algebra — not a projection of a class field. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md
 theorem neutron_delta_net [inst : BorromeanQuark] :
     inst.net_n - inst.net_p = (inst.h ^ 2 - 2 * inst.h) / 2 := by
   rw [inst.proton_net, inst.neutron_net]; ring
@@ -95,7 +95,7 @@ theorem neutron_delta_net [inst : BorromeanQuark] :
     The proof *derives* this from `qvalue_ansatz` by substituting the NF nets
     (via `neutron_delta_net`) and clearing the denominator — it is NOT a
     read-back of a stored conclusion. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md
 theorem neutron_qvalue_symbolic [inst : BorromeanQuark] :
     inst.Q_β = inst.m_e * (2 - inst.h) * inst.h / (2 * inst.q * (inst.q - 1)) := by
   have hden : inst.q * (inst.q - 1) ≠ 0 := borromeanQuark_denom_ne_zero

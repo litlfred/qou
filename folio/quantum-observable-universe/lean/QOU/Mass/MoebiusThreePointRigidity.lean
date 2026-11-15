@@ -60,7 +60,7 @@ finite point, which is where the branch locus lives (`D(0) = 16 ≠ 0`, and `D` 
 cancellation would do; `Field` is kept only because the two subtractions divide by the
 differences of the roots. Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-09-08-w1-palindromic-involution-lifts-and-is-elliptic.md
+-- Ref: [leitner2026] docs/audits/2026-09-08-w1-palindromic-involution-lifts-and-is-elliptic.md
 -/
 import Mathlib.Tactic
 

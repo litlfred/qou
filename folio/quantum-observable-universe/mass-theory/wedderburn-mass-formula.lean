@@ -18,7 +18,7 @@ the Archimedean realisation and is performed downstream in
 `docs/audits/2026-05-03-pre-archimedean-proof-audit.md` §1
 (Step 9) for the wall-discipline rationale.
 
--- Ref: [manuscript] thm:wedderburn-mass-formula
+-- Ref: [leitner2026] thm:wedderburn-mass-formula
 -/
 
 namespace QOU.WedderburnMass
@@ -93,7 +93,7 @@ def beta2 {R : Type u} [CommRing R]
     but the three extremal invariants capture the dominant physics.
     The interior partitions (hooks) contribute subdominant corrections
     identifiable with meson exchange channels. -/
--- Ref: [manuscript] prop:three-parameters-wedderburn
+-- Ref: [leitner2026] prop:three-parameters-wedderburn
 -- Ref: [kazhdan-lusztig1979] Kazhdan & Lusztig, "Representations of Coxeter groups and Hecke algebras," Invent. Math. 53 (1979)
 theorem extremal_irreps_count :
     ∀ (n : ℕ), n ≥ 3 →

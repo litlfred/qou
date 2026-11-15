@@ -31,7 +31,7 @@
   without invoking standard normalisation.  Pinning the canonical
   Bring color-tube weight function is the remaining open math.
 
-  Ref: [manuscript] prop:pn-averaging-uniqueness
+  Ref: [leitner2026] prop:pn-averaging-uniqueness
        [audit] docs/canonical-derivation-cheat-sheet.md Phase 5q
 -/
 import Mathlib.Algebra.Ring.Basic

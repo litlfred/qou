@@ -34,7 +34,7 @@
   `4 · coeff = −3` (exactly as `BorromeanMarkovTrace` avoids division over a
   CommRing).  No field, no ordering, no archimedean construct.
 
-  -- Ref: [manuscript] conj:pachner-pentagon-borromean
+  -- Ref: [leitner2026] conj:pachner-pentagon-borromean
   -- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
   -- Ref: [kashaev1997] https://doi.org/10.1007/BF00768318
 -/

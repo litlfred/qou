@@ -12,7 +12,7 @@ generated per f_q-iteration in natural units (nats).
 LaTeX label: `def:operational-entropy`
 
 ## References
-- [manuscript] §9/operational-entropy
+- [leitner2026] §9/operational-entropy
 -/
 
 namespace QOU.Information
@@ -28,21 +28,21 @@ substrate `q_0` happens downstream by instantiating `k := ℝ`. -/
     η_q := (2q - 1) · q⁻³
 
     Measures the information generated per f_q-iteration in nats. -/
--- Ref: [manuscript] §9/operational-entropy
+-- Ref: [leitner2026] §9/operational-entropy
 def operationalEntropy {k : Type*} [CommRing k] (q : kˣ) : k :=
   (2 * (q : k) - 1) * ((↑q⁻¹ : k) * (↑q⁻¹ : k) * (↑q⁻¹ : k))
 
 /-- The q-deformed Hausdorff dimension d_{H,q} = η_q / χ_q = (2q-1)² · q⁻³. -/
--- Ref: [manuscript] §9/operational-entropy
+-- Ref: [leitner2026] §9/operational-entropy
 def qHausdorffDimension {k : Type*} [CommRing k] (q : kˣ) : k :=
   (2 * (q : k) - 1) ^ 2 * ((↑q⁻¹ : k) * (↑q⁻¹ : k) * (↑q⁻¹ : k))
 
 /-- Operational entropy relates to Hausdorff dimension via
     d_{H,q} = η_q · (2q - 1). -/
--- Ref: [manuscript] §9/operational-entropy
+-- Ref: [leitner2026] §9/operational-entropy
 theorem hausdorff_eq_entropy_mul_lyapunov {k : Type*} [CommRing k] (q : kˣ) :
     qHausdorffDimension q = operationalEntropy q * (2 * (q : k) - 1) := by
-  -- Ref: [manuscript] §9/operational-entropy
+  -- Ref: [leitner2026] §9/operational-entropy
   -- d_{H,q} = (2q-1)²·q⁻³ = ((2q-1)·q⁻³) · (2q-1) = η_q · (2q-1)
   unfold qHausdorffDimension operationalEntropy
   ring

@@ -35,7 +35,7 @@ subtraction and is therefore NOT fold-invariant. This is the
 order-of-operations discipline behind `prop:neutron-qvalue-symbolic`
 (`Q_β = |Δ(net)|·𝔈₀`, delta-then-archimedean) and the binding tower.
 
--- Ref: [manuscript] prop:neutron-qvalue-symbolic
+-- Ref: [leitner2026] prop:neutron-qvalue-symbolic
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -/
 

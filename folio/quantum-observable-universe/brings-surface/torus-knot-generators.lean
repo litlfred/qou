@@ -21,14 +21,14 @@ def seifertGenus (m n : ℕ) : ℕ := (m - 1) * (n - 1) / 2
 /-- The torus knot T_{m,n} embeds in a surface of genus g iff
     its Seifert genus ≤ g. For Bring's surface (g = 4),
     the constraint (m-1)(n-1) ≤ 8 selects a finite set. -/
--- Ref: [manuscript] Ch. 5, §torus-knot-generators
+-- Ref: [leitner2026] Ch. 5, §torus-knot-generators
 -- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 theorem torus_knot_generators_finite
     (g : ℕ) (hg : g = 4)
     : ∃ (S : Finset (ℕ × ℕ)),
         ∀ m n, m ≥ 2 → n > m → Nat.Coprime m n →
           seifertGenus m n ≤ g → (m, n) ∈ S := by
-  -- Ref: [manuscript] Ch. 5, §torus-knot-generators
+  -- Ref: [leitner2026] Ch. 5, §torus-knot-generators
   -- Any finite set containing the 6 solutions suffices as a witness.
   subst hg
   exact ⟨{(2,3), (2,5), (2,7), (2,9), (3,4), (3,5)}, fun m n hm hmn hcop hg => by

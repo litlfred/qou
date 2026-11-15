@@ -29,7 +29,7 @@ The Lean encoding gives the definition of the transform on
 `Fin n → ℂ` and discharges item (i) as the `σ`-equivariance claim;
 item (ii) is recorded abstractly.
 
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.md
 -/
 
 namespace QOU.BringsSurface
@@ -68,7 +68,7 @@ class LagrangeResolventEquivarianceAxiom : Prop where
     `w_k(σ x) = ζ^{-k} · w_k(x)`.
 
     Conditional on `[LagrangeResolventEquivarianceAxiom]` (§3b-cond). -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.md
 theorem lagrange_resolvent_transform_equivariance
     [ax : LagrangeResolventEquivarianceAxiom]
     (n : ℕ) (h_n_pos : 0 < n) (x : Fin n → ℂ) (k : Fin n) :
@@ -80,7 +80,7 @@ theorem lagrange_resolvent_transform_equivariance
 
     Bundles the equivariance claim as the main statement; item (ii)
     on `C_n`-invariant polynomials is recorded in the docstring. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.md
 theorem lagrange_resolvent_transform
     [LagrangeResolventEquivarianceAxiom]
     (n : ℕ) (h_n_pos : 0 < n) (x : Fin n → ℂ) (k : Fin n) :

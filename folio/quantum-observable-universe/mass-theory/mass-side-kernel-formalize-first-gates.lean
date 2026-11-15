@@ -82,7 +82,7 @@ noncomputable def directionThreshold : ℝ := 10
     computed by a sympy probe as `|w(q_μ) - w(q_p)| / |w(q_p)|`).
     Instantiation requires the swing to be within the 1 ppm fibre-level
     tolerance. -/
--- Ref: [manuscript] prop:mass-side-kernel-formalize-first-gates
+-- Ref: [leitner2026] prop:mass-side-kernel-formalize-first-gates
 class MassAnchorStableGateClass (swing : ℝ) : Prop where
   /-- The candidate's cross-anchor swing is within the 1 ppm
       fibre-level tolerance (PR #1727). -/
@@ -91,7 +91,7 @@ class MassAnchorStableGateClass (swing : ℝ) : Prop where
 
 /-- **Gate theorem (forward, §4(a)):** under the class, the swing is
     bounded. -/
--- Ref: [manuscript] prop:mass-side-kernel-formalize-first-gates
+-- Ref: [leitner2026] prop:mass-side-kernel-formalize-first-gates
 theorem mass_anchor_stable_forward
     (swing : ℝ) [hC : MassAnchorStableGateClass swing] :
     swing ≤ anchorTolerance :=
@@ -99,7 +99,7 @@ theorem mass_anchor_stable_forward
 
 /-- **Gate theorem (refute, §4(a)):** if the swing exceeds the
     tolerance, the class cannot be instantiated. -/
--- Ref: [manuscript] prop:mass-side-kernel-formalize-first-gates
+-- Ref: [leitner2026] prop:mass-side-kernel-formalize-first-gates
 theorem mass_anchor_stable_reject
     (swing : ℝ) (h_swing_too_large : swing > anchorTolerance) :
     ¬ MassAnchorStableGateClass swing := by
@@ -122,7 +122,7 @@ theorem mass_anchor_stable_reject
     This enables FUTURE candidates (e.g. PR #1899's Σ f^λ/4 = 5/2
     finding = #involutions(S_4)/4) to be evaluated against the
     hypothetical anchor `some (5/2)`. -/
--- Ref: [manuscript] prop:mass-side-kernel-formalize-first-gates
+-- Ref: [leitner2026] prop:mass-side-kernel-formalize-first-gates
 -- Ref: https://github.com/litlfred/qou/pull/1896
 -- Ref: https://github.com/litlfred/qou/pull/1899
 class MassQOneShadowGateClass
@@ -133,7 +133,7 @@ class MassQOneShadowGateClass
 
 /-- **Gate theorem (forward, §4(c)):** under the class with a
     registered anchor, the candidate's q=1 limit matches. -/
--- Ref: [manuscript] prop:mass-side-kernel-formalize-first-gates
+-- Ref: [leitner2026] prop:mass-side-kernel-formalize-first-gates
 theorem mass_q_one_shadow_forward
     (w : ℝ → ℝ) (a : ℝ)
     [hC : MassQOneShadowGateClass w (some a)] :
@@ -142,7 +142,7 @@ theorem mass_q_one_shadow_forward
 
 /-- **Gate theorem (refute, §4(c)):** if a registered anchor exists
     and the candidate's q=1 limit disagrees, the class is rejected. -/
--- Ref: [manuscript] prop:mass-side-kernel-formalize-first-gates
+-- Ref: [leitner2026] prop:mass-side-kernel-formalize-first-gates
 theorem mass_q_one_shadow_reject
     (w : ℝ → ℝ) (a : ℝ) (h_candidate : w 1 ≠ a) :
     ¬ MassQOneShadowGateClass w (some a) := by
@@ -164,7 +164,7 @@ theorem mass_q_one_shadow_reject
     side abstract scaffold that admits both variants as instances
     (a multiplicative-passing candidate also satisfies the additive
     form within the same threshold magnitude). -/
--- Ref: [manuscript] prop:mass-side-kernel-formalize-first-gates
+-- Ref: [leitner2026] prop:mass-side-kernel-formalize-first-gates
 class MassDirectionSanityGateClass (m_candidate : ℝ) : Prop where
   /-- Additive bound: |m_candidate - target| ≤ threshold · target. -/
   magnitude_within_threshold :
@@ -173,7 +173,7 @@ class MassDirectionSanityGateClass (m_candidate : ℝ) : Prop where
 
 /-- **Gate theorem (forward, §4(d)):** under the class, the magnitude
     is bounded. -/
--- Ref: [manuscript] prop:mass-side-kernel-formalize-first-gates
+-- Ref: [leitner2026] prop:mass-side-kernel-formalize-first-gates
 theorem mass_direction_sanity_forward
     (m_candidate : ℝ)
     [hC : MassDirectionSanityGateClass m_candidate] :
@@ -183,7 +183,7 @@ theorem mass_direction_sanity_forward
 
 /-- **Gate theorem (refute, §4(d)):** if the magnitude exceeds the
     threshold, the class cannot be instantiated. -/
--- Ref: [manuscript] prop:mass-side-kernel-formalize-first-gates
+-- Ref: [leitner2026] prop:mass-side-kernel-formalize-first-gates
 theorem mass_direction_sanity_reject
     (m_candidate : ℝ)
     (h_mismatch :
@@ -215,7 +215,7 @@ theorem mass_direction_sanity_reject
 
     The §4(b) bar-even invariant is automatic for substrate-derived
     candidates via the Q_β CommRing R lemma (PR #1875). -/
--- Ref: [manuscript] prop:mass-side-kernel-formalize-first-gates
+-- Ref: [leitner2026] prop:mass-side-kernel-formalize-first-gates
 class MassSideKernel
     (w : ℝ → ℝ) (swing : ℝ) (anchor : Option ℝ) (magnitude : ℝ)
     extends MassAnchorStableGateClass swing,
@@ -225,7 +225,7 @@ class MassSideKernel
 /-! ## Lifting lemmas (via inherited field projections) -/
 
 /-- **§4(a) lifting**: from the bundle, the anchor-stability gate holds. -/
--- Ref: [manuscript] prop:mass-side-kernel-formalize-first-gates
+-- Ref: [leitner2026] prop:mass-side-kernel-formalize-first-gates
 theorem mass_side_kernel_implies_anchor_stable
     (w : ℝ → ℝ) (swing : ℝ) (anchor : Option ℝ) (magnitude : ℝ)
     [hK : MassSideKernel w swing anchor magnitude] :
@@ -233,7 +233,7 @@ theorem mass_side_kernel_implies_anchor_stable
   hK.swing_within_tolerance
 
 /-- **§4(d) lifting**: from the bundle, the direction-sanity gate holds. -/
--- Ref: [manuscript] prop:mass-side-kernel-formalize-first-gates
+-- Ref: [leitner2026] prop:mass-side-kernel-formalize-first-gates
 theorem mass_side_kernel_implies_direction_sanity
     (w : ℝ → ℝ) (swing : ℝ) (anchor : Option ℝ) (magnitude : ℝ)
     [hK : MassSideKernel w swing anchor magnitude] :
@@ -243,7 +243,7 @@ theorem mass_side_kernel_implies_direction_sanity
 
 /-- **§4(c) lifting (when registered)**: from the bundle with a
     registered anchor, the q=1 shadow holds. -/
--- Ref: [manuscript] prop:mass-side-kernel-formalize-first-gates
+-- Ref: [leitner2026] prop:mass-side-kernel-formalize-first-gates
 theorem mass_side_kernel_implies_q_one_shadow
     (w : ℝ → ℝ) (swing : ℝ) (a : ℝ) (magnitude : ℝ)
     [hK : MassSideKernel w swing (some a) magnitude] :
@@ -265,7 +265,7 @@ theorem mass_side_kernel_implies_q_one_shadow
     §4(b), the bar-even invariant, is deliberately not a parent class here (it
     is the Q_β `CommRing R` structural identity and holds for any kernel), so
     "all four gates" is these three plus that external one. -/
--- Ref: [manuscript] prop:mass-side-kernel-formalize-first-gates
+-- Ref: [leitner2026] prop:mass-side-kernel-formalize-first-gates
 theorem massSideKernel_iff
     (w : ℝ → ℝ) (swing : ℝ) (anchor : Option ℝ) (magnitude : ℝ) :
     MassSideKernel w swing anchor magnitude ↔
@@ -288,7 +288,7 @@ theorem massSideKernel_iff
     Concrete rejection lemma for the most common failure mode
     (cross-anchor swing too large). Analogous rejection lemmas exist
     per-field via the parametric gate classes above. -/
--- Ref: [manuscript] prop:mass-side-kernel-formalize-first-gates
+-- Ref: [leitner2026] prop:mass-side-kernel-formalize-first-gates
 theorem mass_side_kernel_reject_anchor_too_large
     (w : ℝ → ℝ) (swing : ℝ) (anchor : Option ℝ) (magnitude : ℝ)
     (h_swing : swing > anchorTolerance) :
@@ -297,7 +297,7 @@ theorem mass_side_kernel_reject_anchor_too_large
   exact absurd hK.swing_within_tolerance (not_le.mpr h_swing)
 
 /-- **Threshold positivity helper**: the direction threshold is > 0. -/
--- Ref: [manuscript] prop:mass-side-kernel-formalize-first-gates
+-- Ref: [leitner2026] prop:mass-side-kernel-formalize-first-gates
 theorem mass_direction_threshold_positive :
     directionThreshold > 0 := by
   unfold directionThreshold

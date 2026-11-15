@@ -94,7 +94,7 @@ needs only `Field`.
 
 -- @conjecture: primary
 
--- Ref: [manuscript] predicted-spectra, conj:schwinger-measure-computational-time;
+-- Ref: [leitner2026] predicted-spectra, conj:schwinger-measure-computational-time;
 --      information-theory, def:information-theoretic-time;
 --      lifting-and-descent, prop:ordering-jet-compatibility;
 --      docs/audits/2026-07-25-substrate-clock-uniqueness-reduction.md;
@@ -163,7 +163,7 @@ Planck step, `rem:discrete-planck-step`, currently prose-only). An
 unproved primary conjecture is honestly represented by this
 content-bearing class with no instance; creating an instance without
 proving the substrate monoid's rank-one structure would be laundering. -/
--- Ref: [manuscript] docs/audits/2026-07-25-substrate-clock-uniqueness-reduction.md
+-- Ref: [leitner2026] docs/audits/2026-07-25-substrate-clock-uniqueness-reduction.md
 class SubstrateClockUniqueness (M : Type*) [AddCommMonoid M]
     (K : Type*) [Field K] [CharZero K] : Prop where
   /-- Any two clocks differ by a nonzero scale: the substrate's

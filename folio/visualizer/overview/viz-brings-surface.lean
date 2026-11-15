@@ -29,5 +29,5 @@ These fields mirror the TypeScript `VizState` schema in
 so a URL-encoded viewport can be losslessly round-tripped between
 the React renderer and the Lean / OCaml back-end.
 
--- Ref: [manuscript] folio/visualizer/overview/viz-brings-surface.md
+-- Ref: [leitner2026] folio/visualizer/overview/viz-brings-surface.md
 -/

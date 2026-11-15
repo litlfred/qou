@@ -75,7 +75,7 @@ def R3OrthogonalToLowerDepthsH4 : Prop :=
 
     Coefficient sum: -0.30556 + 1.45407 - 0.61269 - 1.55928
     + 1.00000 ≈ -0.02346, |-0.02346| ≤ 1. -/
--- Ref: [manuscript] explicit-alpha-k-h4.md; wedderburn-orthogonal-r-3-h4.witness.json
+-- Ref: [leitner2026] explicit-alpha-k-h4.md; wedderburn-orthogonal-r-3-h4.witness.json
 theorem r_3_orthogonal_to_lower_depths : R3OrthogonalToLowerDepthsH4 := by
   unfold R3OrthogonalToLowerDepthsH4 r_3_h4_coefficient
   norm_num
@@ -93,7 +93,7 @@ def Alpha3H4MarkovPairing : Prop :=
 /-- Markov pairing inequality for the explicit depth-3 element `r_3`
     in `H_4`. Both sides evaluate to ~+0.003463 at q_0 ≈ 1.110;
     `0 < 0.0034625204 < 0.01`. -/
--- Ref: [manuscript] explicit-alpha-k-h4.md; central-character expansion + lower-depth orthogonality
+-- Ref: [leitner2026] explicit-alpha-k-h4.md; central-character expansion + lower-depth orthogonality
 theorem alpha_3_H4_markov_pairing : Alpha3H4MarkovPairing := by
   refine ⟨?_, ?_⟩
   · show (0 : ℝ) < 0.0034625204
@@ -108,7 +108,7 @@ theorem alpha_3_H4_markov_pairing : Alpha3H4MarkovPairing := by
     `ε ≤ 10⁻¹⁰` witnesses the conclusion; we take ε = 10⁻¹¹. -/
 theorem alpha_3_H4_value_at_q0_approx :
     ∃ ε : ℝ, abs (alpha_3_H4 - 0.0034625204) < ε ∧ ε < 1e-10 := by
-  -- Ref: [manuscript] wedderburn-orthogonal-r-3-h4.witness.json (machine-precision)
+  -- Ref: [leitner2026] wedderburn-orthogonal-r-3-h4.witness.json (machine-precision)
   refine ⟨1e-11, ?_, ?_⟩
   · show abs (alpha_3_H4 - 0.0034625204) < 1e-11
     unfold alpha_3_H4

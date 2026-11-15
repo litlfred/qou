@@ -49,7 +49,7 @@ Three checks pin it down:
 
   one `q`-binomial per orbit. At `q = 1` each factor is `2` and this is `2^{c(σ)}`.
 
--- Ref: [manuscript] bean qou-uyb4; the weighted permutation character on a tensor
+-- Ref: [leitner2026] bean qou-uyb4; the weighted permutation character on a tensor
 -- power is classical, and the per-orbit product is its standard form.
 -/
 

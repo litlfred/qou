@@ -86,7 +86,7 @@ class BraneTowerQLaplacianDecayContext where
     the manuscript's geometric-series tail. Not a restatement of a class
     field. -/
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01393695
--- Ref: [manuscript] quantum-observable-universe/observations/brane-tower-q-laplacian-decay.md
+-- Ref: [leitner2026] quantum-observable-universe/observations/brane-tower-q-laplacian-decay.md
 theorem brane_tower_q_laplacian_decay [ctx : BraneTowerQLaplacianDecayContext] :
     |ctx.T_rho - ctx.hbar_q ^ 2 * ctx.delta1_rho|
       ≤ ctx.hbar_q ^ 4 * ctx.rho_L2 *

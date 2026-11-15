@@ -35,7 +35,7 @@ Markov trace is a coefficient vector against a basis.
 Base ring (§7c): generic `[CommRing R]`. No archimedean construct, no ordering,
 no `ℝ`.
 
--- Ref: [manuscript] bean `qou-x64l`, step 4 (retire the ASCII H₄ Gram chain).
+-- Ref: [leitner2026] bean `qou-x64l`, step 4 (retire the ASCII H₄ Gram chain).
 -/
 
 namespace QOU.Machinery.BilinearTrace

@@ -65,8 +65,8 @@ instantiated, with the hypothesis `q − q⁻¹ ≠ 0` that `[1]_q = 1` needs.
 
 ## References
 
-- [manuscript] docs/audits/2026-07-20-zgeometric-prolongation-symbol-scoping.md
-- [manuscript] docs/audits/2026-09-03-ramified-shift-calculus-w1-prune.md
+- [leitner2026] docs/audits/2026-07-20-zgeometric-prolongation-symbol-scoping.md
+- [leitner2026] docs/audits/2026-09-03-ramified-shift-calculus-w1-prune.md
 
 LaTeX label: (library module — no content block)
 -/

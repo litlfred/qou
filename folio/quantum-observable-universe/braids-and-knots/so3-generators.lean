@@ -15,7 +15,7 @@ LaTeX label: `def:so3-generators`
 
 ## References
 
-- [manuscript] Chapter 4, §SU(2)–SO(3)
+- [leitner2026] Chapter 4, §SU(2)–SO(3)
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical
@@ -32,7 +32,7 @@ noncomputable def q_param : R_q := LaurentPolynomial.T 1
 noncomputable def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **SO(3) generator data**: rotation matrices from the adjoint map. -/
--- Ref: [manuscript] Chapter 4
+-- Ref: [leitner2026] Chapter 4
 structure So3Generators where
   /-- R_α: rotation by 2π/3 about e₃. -/
   R_alpha : Matrix (Fin 3) (Fin 3) R_q
@@ -44,12 +44,12 @@ structure So3Generators where
   R_beta_sq : R_beta * R_beta = 1
 
 /-- R_β is the π-rotation about e₁: diag(1, -1, -1). -/
--- Ref: [manuscript] Chapter 4
+-- Ref: [leitner2026] Chapter 4
 noncomputable def R_beta_matrix : Matrix (Fin 3) (Fin 3) R_q :=
   !![1, 0, 0; 0, -1, 0; 0, 0, -1]
 
 /-- R_β² = I by direct computation. -/
--- Ref: [manuscript] Chapter 4
+-- Ref: [leitner2026] Chapter 4
 theorem R_beta_involution :
     R_beta_matrix * R_beta_matrix = 1 := by
   ext i j

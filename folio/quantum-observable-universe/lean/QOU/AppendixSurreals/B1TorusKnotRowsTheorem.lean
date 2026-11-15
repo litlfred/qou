@@ -31,7 +31,7 @@ class B1TorusKnotRowsContext where
     Nat.Coprime r s → 2 ≤ r → 2 ≤ s → b1_holds r s
 
 /-- **Proposition (`prop:b1-torus-knot-rows-theorem`).** -/
--- Ref: [manuscript] quantum-observable-universe/appendix-surreals/b1-torus-knot-rows-theorem.md
+-- Ref: [leitner2026] quantum-observable-universe/appendix-surreals/b1-torus-knot-rows-theorem.md
 theorem b1_torus_knot_rows [ctx : B1TorusKnotRowsContext] :
     ∀ r s : ℕ, Nat.Coprime r s → 2 ≤ r → 2 ≤ s → ctx.b1_holds r s :=
   ctx.b1_from_tate_rationality ctx.h_bloch_suslin ctx.h_garoufalidis_le

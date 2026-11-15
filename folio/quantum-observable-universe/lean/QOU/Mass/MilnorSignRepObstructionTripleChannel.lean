@@ -85,7 +85,7 @@ AGENTS.md forbids.
 2-torsion hypothesis is carried explicitly (the cancellation `v + v = 0 → v = 0` is
 false in characteristic 2).
 
--- Ref: [manuscript] docs/audits/2026-07-13-mirror-split-s3-em-functional-attempt.md §D2
+-- Ref: [leitner2026] docs/audits/2026-07-13-mirror-split-s3-em-functional-attempt.md §D2
 -- Ref: [milnor1954] https://doi.org/10.2307/1969685
 -/
 

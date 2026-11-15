@@ -127,7 +127,7 @@ written with explicit parenthesisation and so needs no associativity — the add
 multiplicative realisations are then both instances, and requiring less makes the transport
 theorem stronger.
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory/dim-master-pentagon.ts
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/dim-master-pentagon.ts
 -/
 
 namespace QOU.BraidsAndKnots
@@ -223,7 +223,7 @@ is the part of D17 that stays unformalised; see the header.
 **No instance is provided.** Downstream results consume this as
 `[DimMasterPentagon master flavour]` and are genuinely conditional on it.
 
--- Ref: [manuscript] conj:dim-master-pentagon -/
+-- Ref: [leitner2026] conj:dim-master-pentagon -/
 class DimMasterPentagon {F : Type uF} (master : PentagonDatum.{uA, uO})
     (flavour : F → PentagonDatum.{uA, uO}) : Prop where
   /-- **The master identity.** The group-like assignment satisfies the pentagon word. -/

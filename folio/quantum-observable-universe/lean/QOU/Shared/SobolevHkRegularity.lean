@@ -20,7 +20,7 @@ class MyFluidClaim extends QOU.Shared.SobolevHkRegularityContext where
   claim_smoothness : ∀ t ≥ 0, ContinuousV t  -- block-specific
 ```
 
--- Ref: [manuscript] fluid-dynamics/q-ns-wellposedness.md (shared)
+-- Ref: [leitner2026] fluid-dynamics/q-ns-wellposedness.md (shared)
 -/
 
 namespace QOU.Shared

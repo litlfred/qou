@@ -46,7 +46,7 @@ LaTeX label: `prop:binding-recurrence-extensive` (interprets
 `prop:binding-genfun-qdifference`).
 
 ## References
-- [manuscript] §mass-theory/binding-genfun-qdifference
+- [leitner2026] §mass-theory/binding-genfun-qdifference
 -/
 
 namespace QOU.Mass

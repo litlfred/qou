@@ -30,7 +30,7 @@ LaTeX label: `lem:degree-one-braid-trivial-volume`
   Markov trace).
 - [kashaev1997] https://doi.org/10.1023/A:1007364912784 (volume of a
   non-hyperbolic link is zero by convention).
-- [manuscript] braids-and-knots / degree-one-braid-trivial-volume
+- [leitner2026] braids-and-knots / degree-one-braid-trivial-volume
 -/
 
 namespace QOU.Photon
@@ -84,7 +84,7 @@ noncomputable def degreeOne (V : VolumeInterface) : V.carrier :=
     Proof: `vol` is an `AddMonoidHom`, so commutes with sums; both
     `vol V.one = 0` and `vol (V.term i) = 0` are part of the interface.
 -/
--- Ref: [manuscript] lem:degree-one-braid-trivial-volume
+-- Ref: [leitner2026] lem:degree-one-braid-trivial-volume
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the

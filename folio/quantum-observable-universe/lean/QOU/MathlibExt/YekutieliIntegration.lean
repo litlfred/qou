@@ -33,7 +33,7 @@ holonomy* / discrete curvature of a square loop.
 
 - Ref: [yekutieli2015] https://doi.org/10.1142/9537 — non-abelian
   multiplicative integration and Stokes' theorem on surfaces.
-- Ref: [manuscript] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient.md
+- Ref: [leitner2026] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient.md
 
 **Base ring (§7c).** Purely algebraic: a generic non-commutative `Monoid` /
 `Group` `G`. No `ℝ`, no ordering, no `Real.*` — the discrete holonomy is an

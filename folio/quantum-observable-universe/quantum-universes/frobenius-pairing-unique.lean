@@ -34,7 +34,7 @@ library.
 
 ## References
 
-- [manuscript] §1-quantum-universes/frobenius-pairing-unique
+- [leitner2026] §1-quantum-universes/frobenius-pairing-unique
 - [kock2004] Frobenius Algebras and 2D Topological Quantum Field
   Theories (Cambridge LMS 59), Ch 2
 -/

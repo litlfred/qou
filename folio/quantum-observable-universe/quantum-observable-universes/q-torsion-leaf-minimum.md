@@ -1,1 +1,1 @@
-A $q$-torsion leaf $L$ is a local minimum of $\lVert\Omega_q\rVert$ restricted to the horizontal distribution. The Reeb-flow invariance forces the first variation of $\lVert\Omega_q|_L\rVert$ to vanish, situating $L$ inside a $q$-curvature well.
+A $q$-torsion leaf $L$ is a local minimum, on the horizontal distribution, of the curvature norm $\lVert\nabla_q^2\rVert$ of the [$q$-deformed connection](#def:categorical-q-connection) $\nabla_q$. The Reeb-flow invariance forces the first variation of $\lVert\nabla_q^2|_L\rVert$ to vanish, situating $L$ inside a $q$-curvature well.

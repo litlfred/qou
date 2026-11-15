@@ -35,7 +35,7 @@ exponent data; no archimedean input — `exp`, reality and positivity of dual co
 stay wall-side and are NOT formalized here, per the audit's honest gap
 list).
 
--- Ref: [manuscript] docs/audits/2026-08-01-ksel3-modular-double-covariance.md §2;
+-- Ref: [leitner2026] docs/audits/2026-08-01-ksel3-modular-double-covariance.md §2;
 --      docs/audits/2026-08-01-rep-jackson-identification.md §3;
 --      predicted-spectra, conj:schwinger-measure-computational-time.
 -/

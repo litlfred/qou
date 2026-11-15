@@ -28,7 +28,7 @@ machinery is not yet in Lean, so the substantive equalities are stated
 faithfully here and discharged by `sorry`; only the definitional construction
 counts (`3` pair productions, `4`-term photon content) are proved.
 
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/four-term-pair-nucleon.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/four-term-pair-nucleon.md
 -/
 
 namespace QOU.ParticleInteractions

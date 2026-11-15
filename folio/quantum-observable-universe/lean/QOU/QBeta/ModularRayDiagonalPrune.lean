@@ -45,7 +45,7 @@ open link (`qou-82w7`).
 
 - [neumann-zagier1985] Neumann & Zagier, "Volumes of hyperbolic
   three-manifolds," Topology 24 (1985). https://doi.org/10.1016/0040-9383(85)90004-7
-- [manuscript] QOU/QBeta/OhtsukiTowerBarParity.lean (the imaginary-substrate bridge);
+- [leitner2026] QOU/QBeta/OhtsukiTowerBarParity.lean (the imaginary-substrate bridge);
   docs/audits/2026-07-26-sdeformed-channel-signflip.md (the corrected leading form).
 -/
 

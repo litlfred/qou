@@ -14,8 +14,8 @@
 
   Sorry-free. All theorems proved by norm_num.
 
-  -- Ref: [manuscript] docs/coordination/udeform-spin-part-derivation.md
-  -- Ref: [manuscript] docs/coordination/ck-dk-canonical-registry.md §3 (c₃ row)
+  -- Ref: [leitner2026] docs/coordination/udeform-spin-part-derivation.md
+  -- Ref: [leitner2026] docs/coordination/ck-dk-canonical-registry.md §3 (c₃ row)
 -/
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring

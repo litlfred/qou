@@ -27,7 +27,7 @@ No violations of the `-- Ref:` rule. Most common references:
 - `[turaev2010]` (3) -- knot volume tower decomposition
 - `[yekutieli2010]` (2) -- nonabelian multiplicative integration
 - `[murphy1992]` (2) -- symmetric group representations
-- `[manuscript]` (2) -- paper-internal references
+- `[leitner2026]` (2) -- paper-internal references
 
 ### 4 axiom declarations (all justified)
 

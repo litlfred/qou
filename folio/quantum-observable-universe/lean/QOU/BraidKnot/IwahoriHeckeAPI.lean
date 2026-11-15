@@ -241,8 +241,8 @@ def IsGeneric (n : ℕ) (q : R) : Prop :=
     open part (`prop:wedderburn-weight-canonical`, `prop:hoefsmit-seminormal-form`).
     Replaces the previous `: True := trivial` (vacuous) projection. -/
 -- Ref: [kassel1995] §V.5 — Iwahori–Hecke algebra structure theorem at generic q.
--- Ref: [manuscript] §prop:wedderburn-weight-canonical
--- Ref: [manuscript] §prop:hoefsmit-seminormal-form
+-- Ref: [leitner2026] §prop:wedderburn-weight-canonical
+-- Ref: [leitner2026] §prop:hoefsmit-seminormal-form
 def wedderburn_decomposition_generic
     (H : IwahoriHeckeAlgebra n R q h_unit)
     (_h_gen : IsGeneric n q) (parts : List (List ℕ)) : Prop :=

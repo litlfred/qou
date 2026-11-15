@@ -34,7 +34,7 @@ projection.
 ## References
 Springer, Invent. Math. 36 (1976) 173–207; Invent. Math. 44 (1978) 279–293.
 Shoji, arXiv:1909.06744.  Rossmann, *Invariant eigendistributions … II*.
--- Ref: [manuscript] docs/audits/2026-08-02-rossmann-cc-bridge-deltalambda-realization.md
+-- Ref: [leitner2026] docs/audits/2026-08-02-rossmann-cc-bridge-deltalambda-realization.md
 -/
 
 namespace QOU.BraidsAndKnots

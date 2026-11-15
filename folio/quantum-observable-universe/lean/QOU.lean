@@ -1103,6 +1103,7 @@ import QOU.Archimedean.InvariantFormTransport
 import QOU.Archimedean.GaugeGroupThreeScale
 import QOU.Archimedean.GramDetRatioCongruence
 import QOU.Archimedean.SchwingerMeasureShape
+import QOU.Molecular.KnotConvolutedTensor
 import QOU.Molecular.PalindromicityOrbitalType
 import QOU.Molecular.ShellCapacitySelfSquare
 import QOU.Molecular.ShellClosureNfTermCount
@@ -1679,3 +1680,11 @@ import QOU.MassTheory.BlockMeasureBindingFormArchimedean
 import QOU.MassTheory.InterfaceLetterCrossingMixture
 import QOU.MassTheory.CompositionFeasibilityProgram
 import QOU.MassTheory.RelativeReebDatum
+import QOU.MassTheory.SegmentCollisionDatum
+import QOU.MassTheory.ConvolutionFlowParity
+import QOU.MassTheory.ConvolutionFlowFibre
+import QOU.MassTheory.BringResidueEnergy
+import QOU.Brings.BringConjugationChirality
+import QOU.Brings.BringCoverTower
+import QOU.Brings.BringDescendingTower
+import QOU.Brings.BringUTContactChirality

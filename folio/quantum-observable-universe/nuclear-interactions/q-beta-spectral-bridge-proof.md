@@ -66,4 +66,4 @@ The residual lies within the $O(h^2)$ Taylor bound. The MeV-level discrepancy be
 
 ## Lean formalization
 
-The companion Lean repository records the bridge identities (`polynomial_bridge_identity`, `leading_order_ratio_identity`, `bridge_first_order_remainder`). We defer the `Real.log` steps via `sorry` (`-- Ref: [manuscript]`).
+The companion Lean repository records the bridge identities (`polynomial_bridge_identity`, `leading_order_ratio_identity`, `bridge_first_order_remainder`). We defer the `Real.log` steps via `sorry` (`-- Ref: [leitner2026]`).

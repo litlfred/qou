@@ -31,7 +31,7 @@ is the subject of `QOU.IwahoriHecke.JonesNormalisation`, where both constants ar
 exactly these two numbers.
 
 -- Ref: [jones1987] Hecke algebra representations of braid groups and link polynomials
--- Ref: [manuscript] bean qou-k4oq
+-- Ref: [leitner2026] bean qou-k4oq
 -/
 
 namespace QOU.IwahoriHecke.NegativePeel

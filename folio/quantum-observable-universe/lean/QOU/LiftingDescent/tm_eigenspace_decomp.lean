@@ -73,7 +73,7 @@ additivity over orthogonal direct sums gives
 
 The proof rewrites `α` by the *proved* jet-chain decomposition and then
 applies the additivity law at the orthogonality hypothesis. -/
--- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.ts
+-- Ref: [leitner2026] quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.ts
 theorem tm_eigenspace_decomp
     {R : Type u} [CommRing R]
     {EndAlg : ℕ → Type v}

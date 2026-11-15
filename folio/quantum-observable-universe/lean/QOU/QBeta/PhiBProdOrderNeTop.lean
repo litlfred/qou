@@ -26,7 +26,7 @@ together leave only input 3 (same divisor) + the shared open analytic input
 
 Verified `lean`-direct against the pinned Meromorphic cone + `PhiBProd`. Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-07-25-faddeev-uniqueness-keystone-state.md
+-- Ref: [leitner2026] docs/audits/2026-07-25-faddeev-uniqueness-keystone-state.md
 -/
 
 open Set

@@ -32,7 +32,7 @@ refactor.)
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/categorical-laplace-transform-unique
+- [leitner2026] §2-quantum-observable-universes/categorical-laplace-transform-unique
 - [kassel1995] Quantum Groups, §IV
 -/
 

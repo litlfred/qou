@@ -47,7 +47,7 @@ the tensor power itself.
 Schur–Weyl at `q ≠ 1`. Bean `qou-mpq5` scoped that as a multi-week gap and refused to
 fake it; nothing in this arc bears on it.
 
--- Ref: [manuscript] bean qou-uinl; the monomial basis of a tensor power is classical.
+-- Ref: [leitner2026] bean qou-uinl; the monomial basis of a tensor power is classical.
 -/
 
 open scoped TensorProduct

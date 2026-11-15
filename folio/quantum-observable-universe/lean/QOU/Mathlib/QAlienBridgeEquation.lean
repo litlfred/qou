@@ -71,7 +71,7 @@ ordering and no `ℝ`. Sorry-free.
 -- Ref: [ramis-sauloy-zhang2013] https://arxiv.org/abs/0903.0853
 -- Ref: [ramis-sauloy2006] https://arxiv.org/abs/math/0611521 (Prop. 2.5, Thm 3.5–3.6: the q-alien derivations)
 -- Ref: [vanderput2006] https://arxiv.org/abs/math/0612592 (§5 (1), (2), (5): the local q-difference Galois group)
--- Ref: [manuscript] docs/audits/2026-08-08-rsz-c1-infinity-route-closed.md
+-- Ref: [leitner2026] docs/audits/2026-08-08-rsz-c1-infinity-route-closed.md
 -/
 import Mathlib.RingTheory.Derivation.Basic
 import Mathlib.Tactic

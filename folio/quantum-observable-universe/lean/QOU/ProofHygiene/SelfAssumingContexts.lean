@@ -92,7 +92,7 @@ and thereby collapses to `C`.
 Mathlib-only; no QOU imports, so this is citable from anywhere in the tree. §7c: no ring,
 no archimedean construct — pure propositional logic. Sorry-free.
 
--- Ref: [manuscript] docs/audits/lean-vacuity-review-ledger.json (`proof-decoy-hypothesis`)
+-- Ref: [leitner2026] docs/audits/lean-vacuity-review-ledger.json (`proof-decoy-hypothesis`)
 -/
 import Mathlib.Tactic
 

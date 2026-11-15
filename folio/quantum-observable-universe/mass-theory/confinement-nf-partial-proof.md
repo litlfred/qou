@@ -26,7 +26,7 @@ The three claims $T_1, T_2, T_3$ decompose and are discharged as follows.
    **Reduced to Sub-lemma 2.1** (Hecke-branching block-decomposition
    of $\rho_\lambda(I)$ — scalar form proved;
    operator-valued form closed conditional on
-   [`conj:crystal-graph-realization`](crystal-graph-realization.md)
+   [`conj:crystal-graph-realization`](../knots-particles-confinement/crystal-graph-realization.md)
    via the combinatorial $R$-matrix on $B_\mu \otimes B_\nu$ at
    $q \to 0$).
 

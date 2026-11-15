@@ -40,7 +40,7 @@ conjecture itself (`qcz7` A1) and is **not** claimed.
 
 ## Ref
 
--- Ref: [manuscript] Appendix (surreals), q-Collatz arc; the arithmetic is
+-- Ref: [leitner2026] Appendix (surreals), q-Collatz arc; the arithmetic is
 -- checked independently in `computations/qcollatz_backward_tree_structure_probe.py`.
 -/
 

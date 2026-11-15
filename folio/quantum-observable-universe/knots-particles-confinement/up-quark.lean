@@ -15,7 +15,7 @@ LaTeX label: `def:up-quark`
 
 ## References
 - [jones1987] https://doi.org/10.2307/1971403
-- [manuscript] Ch. 5, §up-quark
+- [leitner2026] Ch. 5, §up-quark
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical
@@ -40,12 +40,12 @@ theorem up_quark_is_unknot :
     ({} : UpQuark).genus = 0 := ⟨rfl, rfl⟩
 
 /-- The up quark has positive crossing orientation. -/
--- Ref: [manuscript] Ch. 5, §up-quark
+-- Ref: [leitner2026] Ch. 5, §up-quark
 theorem up_quark_positive_orientation :
     ({} : UpQuark).crossing_orientation = 1 := rfl
 
 /-- The up quark is color-confined. -/
--- Ref: [manuscript] Ch. 5, §up-quark
+-- Ref: [leitner2026] Ch. 5, §up-quark
 theorem up_quark_confined : ({} : UpQuark).confined = true := rfl
 
 end

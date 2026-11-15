@@ -92,7 +92,7 @@ The `[K : KazhdanLusztigClassicalLimit R q]` binder is the dependency the block'
 own title declares and the previous carrier's type did not have. -/
 -- Ref: [kazhdan-lusztig1979] Kazhdan, Lusztig, "Representations of Coxeter groups and Hecke algebras"
 -- Ref: [lusztig1990] Lusztig, "Canonical bases arising from quantized enveloping algebras"
--- Ref: [manuscript] conj:lusztig-canonical-basis-q-eq-1
+-- Ref: [leitner2026] conj:lusztig-canonical-basis-q-eq-1
 class LusztigCanonicalBasisQEq1 (R : Type u) [CommRing R] (q : R)
     [H : HeckeAnyonicSubstrate R q]
     [C : CrystalGraphRealization R q]

@@ -31,7 +31,7 @@ polynomial $\mathrm{net}(t)$ has $[2]_t^2 \cdot [3]_t = 2^2 \cdot 3 = 12$
 terms in $\mathbb{Z}[t, t^{-1}]$.  The combinatorial count and magic
 numbers are discharged by computation; the empirical Pauli factor is the
 single conjectural input carried by `[Witness4HePauli]`. -/
--- Ref: [manuscript] quantum-observable-universe/appendix-nf-witnesses/witness-4he.ts
+-- Ref: [leitner2026] quantum-observable-universe/appendix-nf-witnesses/witness-4he.ts
 theorem witness_4He [pauli : Witness4HePauli] :
     (2 : ℕ) = 2 ∧ (2 : ℕ) = 2 ∧ (2 ^ 2 * 3 : ℕ) = 12 ∧
     |pauli.F_Pauli - 0.812| < 0.005 :=

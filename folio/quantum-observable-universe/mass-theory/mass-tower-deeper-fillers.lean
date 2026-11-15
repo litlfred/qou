@@ -38,11 +38,11 @@ scaffolding for the four open mass-tower problems and the BlochGroup
 gap. None inhabits the full upstream mathematical content, but each
 provides a concrete Lean handle for downstream usage.
 
--- Ref: [manuscript] prop:crystal-basis-resolves-mass-tower-open-problems
--- Ref: [manuscript] conj:shell-correction-term-seven
--- Ref: [manuscript] conj:kazhdan-lusztig-classical-limit
--- Ref: [manuscript] prop:archimedean-functor-uniqueness
--- Ref: [manuscript] AGENTS.md §7b "Symmetric-crystal techniques"
+-- Ref: [leitner2026] prop:crystal-basis-resolves-mass-tower-open-problems
+-- Ref: [leitner2026] conj:shell-correction-term-seven
+-- Ref: [leitner2026] conj:kazhdan-lusztig-classical-limit
+-- Ref: [leitner2026] prop:archimedean-functor-uniqueness
+-- Ref: [leitner2026] AGENTS.md §7b "Symmetric-crystal techniques"
 -- Ref: [borel1974], [bloch2000], [suslin1991]
 -/
 
@@ -54,7 +54,7 @@ namespace QOU.Archimedean.DeeperFillers
     positive parts, with **height** = number of parts. We restrict
     to partitions of height exactly 6 — the level-5 GS-filtration
     diagnostic from `conj:shell-correction-term-seven`. -/
--- Ref: [manuscript] conj:shell-correction-term-seven
+-- Ref: [leitner2026] conj:shell-correction-term-seven
 structure HeightSixPartition (n : ℕ) where
   parts : List ℕ
   height_eq_six : parts.length = 6
@@ -105,7 +105,7 @@ class IsDemazureSubCrystal
     `Real.*`. It was previously typed `ℝ → ℝ`, which mislabelled a
     substrate-side operation as archimedean; `CommRing` is the §7c
     class for the intended instance `ℤ[q, q⁻¹]`. -/
--- Ref: [manuscript] conj:kazhdan-lusztig-classical-limit
+-- Ref: [leitner2026] conj:kazhdan-lusztig-classical-limit
 def KLClassicalLimit {R : Type*} [CommRing R] (f : R → R) : R := f 1
 
 /-- Trivial property of the classical-limit functor: applied to

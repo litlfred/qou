@@ -36,8 +36,8 @@
   Base ring: a generic `Field R` (§7c).  Nothing here is archimedean — no
   ordering, no `Real.sqrt`, no substrate value of `q` is used or needed.
 
-  -- Ref: [manuscript] AGENTS.md §7a (Hecke–Skein convention)
-  -- Ref: [manuscript] docs/audits/2026-08-25-atom-mass-complete-wedderburn-witness-recovered.md
+  -- Ref: [leitner2026] AGENTS.md §7a (Hecke–Skein convention)
+  -- Ref: [leitner2026] docs/audits/2026-08-25-atom-mass-complete-wedderburn-witness-recovered.md
 -/
 
 import QOU.MathlibExt.QIntegerCanonical

@@ -26,7 +26,7 @@ Structural reading (observation tier, not wired — Δ_λ gate): the mysterious
 of the smoothed crossing pair `{1, 1−h}` (from `σ⁻¹ = σ − h`) at the
 deuteron's single p–n interface.
 
--- Ref: [manuscript] quantum-observable-universe — CAL-2 proxy cheat-sheet (step 11)
+-- Ref: [leitner2026] quantum-observable-universe — CAL-2 proxy cheat-sheet (step 11)
 -/
 
 namespace QOU.Mass.QBetaProxyHReduction

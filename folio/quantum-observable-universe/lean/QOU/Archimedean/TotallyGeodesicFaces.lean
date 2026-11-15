@@ -33,7 +33,7 @@ Archimedean (ℝ): `‖·‖`, inner product, `dist` — §7c.
   --   totally-geodesic surfaces of `H³`)
   -- Ref: [ratcliffe] §4.6–4.7 (totally-geodesic surfaces of the upper half-space)
   -- Ref: [milnor1982] §1 (reflections and boundary inversions)
-  -- Ref: [manuscript] beans qou-473l (T2), qou-idvt (T2), qou-r111 (the geodesic-
+  -- Ref: [leitner2026] beans qou-473l (T2), qou-idvt (T2), qou-r111 (the geodesic-
   --   uniqueness wall), qou-322e (metric-axiom walls)
 -/
 

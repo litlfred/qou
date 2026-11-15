@@ -41,7 +41,7 @@ LaTeX label: `def:reeb-epsilon`.
 ## References
 
 - [conway1976] Conway, *On Numbers and Games*, Academic Press.
-- [manuscript] Chapter 8 §5 (Classical Limit and Macroscopic Continuum).
+- [leitner2026] Chapter 8 §5 (Classical Limit and Macroscopic Continuum).
 -/
 
 open CategoryTheory MonoidalCategory
@@ -65,7 +65,7 @@ universe u v
 
     LaTeX: `\label{def:reeb-epsilon}` -/
 -- Ref: [conway1976] On Numbers and Games
--- Ref: [manuscript] Chapter 8 §5 (Classical Limit)
+-- Ref: [leitner2026] Chapter 8 §5 (Classical Limit)
 structure ReebEpsilon (C : Type u) [Category.{v} C] [MonoidalCategory C]
     where
   /-- The substrate object `A`. -/
@@ -91,7 +91,7 @@ structure ReebEpsilon (C : Type u) [Category.{v} C] [MonoidalCategory C]
     No instance is supplied: this is the honest open state of the
     positivity conjecture. -/
 -- Ref: [conway1976] On Numbers and Games §0 (positive infinitesimal)
--- Ref: [manuscript] Chapter 8 §5 (Classical Limit)
+-- Ref: [leitner2026] Chapter 8 §5 (Classical Limit)
 class ReebPositive {C : Type u} [Category.{v} C] [MonoidalCategory C]
     (R : ReebEpsilon C) : Prop where
   /-- For every non-zero state-norm `nv`, the Frobenius-pairing value
@@ -115,7 +115,7 @@ class ReebPositive {C : Type u} [Category.{v} C] [MonoidalCategory C]
     `𝐍𝐨` under `ε ↦ 1/ω`.  No instance is supplied: this is the
     honest open state of the archimedean-smallness conjecture. -/
 -- Ref: [conway1976] On Numbers and Games §0 (Archimedean property)
--- Ref: [manuscript] Chapter 8 §5 (Classical Limit)
+-- Ref: [leitner2026] Chapter 8 §5 (Classical Limit)
 class ArchimedeanInfinitesimal {C : Type u} [Category.{v} C]
     [MonoidalCategory C] (R : ReebEpsilon C) : Prop where
   /-- For every standard real `λ > 0` and every `n : ℕ`, the

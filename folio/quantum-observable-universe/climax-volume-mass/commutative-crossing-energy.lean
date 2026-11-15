@@ -54,10 +54,10 @@ is a follow-up — adding it requires updating `QOU.lean`'s
 import list and re-running `lake build` from the root workspace.
 -/
 
--- Ref: [manuscript] prop:commutative-crossing-energy
--- Ref: [manuscript] §Caveat (updated 2026-05-09)
--- Ref: [manuscript] computations/per_irrep_pole_atom.py
--- Ref: [manuscript] computations/rho-k-pair-gen-v2-wedderburn.witness.json
+-- Ref: [leitner2026] prop:commutative-crossing-energy
+-- Ref: [leitner2026] §Caveat (updated 2026-05-09)
+-- Ref: [leitner2026] computations/per_irrep_pole_atom.py
+-- Ref: [leitner2026] computations/rho-k-pair-gen-v2-wedderburn.witness.json
 
 namespace QOU.BraidKnot.CommutativeCrossingEnergy
 

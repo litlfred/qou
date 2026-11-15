@@ -125,7 +125,7 @@ $$
 […truncated; see manuscript for remainder…]
 
     The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). As of C10 the Kummer-removability half is no longer a raw axiom — it is derived from the universal obstruction-reduction (`obstruction_removable_of_even_chi` above); a full derivation of the remaining substrate primitive — the `κ₀ = χ(A)` trace-gap input inherited from `QouObstructionReductionContext` — remains pending, but is now LOCALISED rather than merely named: `QOU.AlgebraicSubstrate.ObstructionResidualGap` proves (i) that in the presence of `trace_pairing_cast` the three trace fields are equivalent to the single equation `κ₀ = χ(A)`, so the apparatus around it is decorative and `hattori_stallings` is the sole audit target; and (ii) that the two literature inputs (`vdb_duality`, `drinfeld_rigidity`) cannot reach it — an explicit structural core satisfies both while `κ₀ ≠ χ(A)` — although they do still force conclusion (a), `dim HH² = 1`. So closing this requires an actual Hochschild computation; no rearrangement of the existing fields will do it. -/
--- Ref: [manuscript] quantum-observable-universe/appendix-surreals/collatz-contact-boundary.ts
+-- Ref: [leitner2026] quantum-observable-universe/appendix-surreals/collatz-contact-boundary.ts
 theorem collatz_contact_boundary {R : Type*} [CommRing R]
     [ctx : CollatzContactBoundaryContext R] :
     (ctx.q_int_2 = 0 → kummer_obstruction_removable R) ∧

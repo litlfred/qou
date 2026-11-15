@@ -13,7 +13,7 @@ namespace QOU.Archimedean.PauliWitness
 
 /-- Pauli witness for ${}^{12}\\mathrm{C}$ (exact in $q$) -/
 def witness_12C   :=
-  -- Ref: [manuscript] def:witness-12c
+  -- Ref: [leitner2026] def:witness-12c
   trivial
 
 end QOU.Archimedean.PauliWitness

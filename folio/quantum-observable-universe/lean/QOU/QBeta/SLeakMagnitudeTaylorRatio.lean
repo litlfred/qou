@@ -48,7 +48,7 @@ OPEN; here `q*` is any simple zero, obtained numerically in the probe.
 
 Archimedean field arithmetic (division on `ℝ`), so `ℝ` per §7c.
 
--- Ref: [manuscript] docs/audits/2026-08-01-bring-embedding-magnitude.md
+-- Ref: [leitner2026] docs/audits/2026-08-01-bring-embedding-magnitude.md
 -/
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.FieldSimp

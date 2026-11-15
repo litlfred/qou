@@ -58,7 +58,7 @@ the weight, and it agrees with the permutation character where they meet. It is 
 a Markov trace, and this file does not call it one.
 
 -- Ref: [jones1987] Hecke algebra representations of braid groups and link polynomials
--- Ref: [jimbo1986]; [manuscript] bean qou-k4oq
+-- Ref: [jimbo1986]; [leitner2026] bean qou-k4oq
 -/
 
 namespace QOU.IwahoriHecke.QuantumTrace

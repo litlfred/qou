@@ -40,7 +40,7 @@ the absolute anchor, which no ratio sees) and wires nothing to production. It fo
 
 Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-07-17-mu-p-pin-sensitivity-map.md
+-- Ref: [leitner2026] docs/audits/2026-07-17-mu-p-pin-sensitivity-map.md
 -- Ref: [murakami-murakami2001] https://doi.org/10.1007/BF02392716
 -/
 import Mathlib.Analysis.Calculus.LogDeriv

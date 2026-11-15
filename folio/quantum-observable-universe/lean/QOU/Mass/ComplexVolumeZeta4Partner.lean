@@ -18,7 +18,7 @@ This is a structural advance on the descent, **not** a closure: the full descent
 binding and Q_β observables from a single fibre `𝔙` remains the open keystone (gated on the Q_β
 `c_k` Habiro element / SW-residue derivation; see the audit). Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-06-28-frakV-descent-zeta4-partner.md
+-- Ref: [leitner2026] docs/audits/2026-06-28-frakV-descent-zeta4-partner.md
 -/
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 import Mathlib.Tactic

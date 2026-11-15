@@ -71,13 +71,13 @@
 
   Sorry-free. No `axiom`, no conditional class, no `native_decide`.
 
-  -- Ref: [manuscript] QOU/MobiusEnergy.lean  (prop:mobius-energy, the target)
-  -- Ref: [manuscript] QOU/Mass/GammaGammaWordSelection.lean  (the cost socket)
-  -- Ref: [manuscript] QOU/QBeta/LetterSumBlindness.lean  (the exclusion this escapes)
-  -- Ref: [manuscript] computations/confinement_lp_braid_gram_probe.py
+  -- Ref: [leitner2026] QOU/MobiusEnergy.lean  (prop:mobius-energy, the target)
+  -- Ref: [leitner2026] QOU/Mass/GammaGammaWordSelection.lean  (the cost socket)
+  -- Ref: [leitner2026] QOU/QBeta/LetterSumBlindness.lean  (the exclusion this escapes)
+  -- Ref: [leitner2026] computations/confinement_lp_braid_gram_probe.py
   --      ("a surviving formulation has to break (a): change the objective,
   --        not the Gram")
-  -- Ref: [manuscript] .beans/qou-pzsi , .beans/qou-99qc
+  -- Ref: [leitner2026] .beans/qou-pzsi , .beans/qou-99qc
 -/
 import Mathlib.Algebra.Module.LinearMap.Basic
 import Mathlib.MeasureTheory.Integral.Bochner.Basic

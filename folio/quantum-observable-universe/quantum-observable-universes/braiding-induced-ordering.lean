@@ -16,14 +16,14 @@ categorical structure, not an axiom.
 LaTeX label: `prop:braiding-induced-ordering`
 
 ## References
-- [manuscript] §2/braiding-induced-ordering
+- [leitner2026] §2/braiding-induced-ordering
 -/
 
 namespace QOU
 
 /-- The degree-lex relation on `List α`: first compare lengths,
     then compare lexicographically at equal length. -/
--- Ref: [manuscript] §2/braiding-induced-ordering
+-- Ref: [leitner2026] §2/braiding-induced-ordering
 def DegLex {α : Type*} [LT α] (w w' : List α) : Prop :=
   w.length < w'.length ∨
   (w.length = w'.length ∧ List.Lex (· < ·) w w')
@@ -95,7 +95,7 @@ theorem encode_lt_of_lex {n : ℕ} {w w' : List (Fin n)}
     (see `encode_lt_of_lex`), so the route could not be repaired by fixing a
     name — the second component has to be replaced by something that really
     is well-founded, which is what `encode` provides. -/
--- Ref: [manuscript] §2/braiding-induced-ordering
+-- Ref: [leitner2026] §2/braiding-induced-ordering
 theorem degLex_wellOrdered (n : ℕ) :
     WellFounded (DegLex (α := Fin n)) := by
   have hwf : WellFounded
@@ -112,7 +112,7 @@ theorem degLex_wellOrdered (n : ℕ) :
 
 /-- Admissibility (length component): concatenation preserves
     the length ordering. -/
--- Ref: [manuscript] §2/braiding-induced-ordering
+-- Ref: [leitner2026] §2/braiding-induced-ordering
 theorem degLex_admissible_length {α : Type*} [LT α]
     (u v w w' : List α) (h : w.length < w'.length) :
     (u ++ w ++ v).length < (u ++ w' ++ v).length := by
@@ -130,7 +130,7 @@ theorem degLex_admissible_length {α : Type*} [LT α]
     the `Lex.nil` constructor forces `w = []` and `w' ≠ []`, which
     contradicts `hlen`.  The remaining two constructors carry the suffix
     through unchanged. -/
--- Ref: [manuscript] §2/braiding-induced-ordering
+-- Ref: [leitner2026] §2/braiding-induced-ordering
 theorem lex_append_suffix {α : Type*} {R : α → α → Prop} :
     ∀ {w w' : List α}, List.Lex R w w' → w.length = w'.length →
       ∀ v : List α, List.Lex R (w ++ v) (w' ++ v)
@@ -141,7 +141,7 @@ theorem lex_append_suffix {α : Type*} {R : α → α → Prop} :
 
 /-- Admissibility (lex component): concatenation with a common
     prefix and a common suffix preserves the lex ordering. -/
--- Ref: [manuscript] §2/braiding-induced-ordering
+-- Ref: [leitner2026] §2/braiding-induced-ordering
 theorem degLex_admissible_lex {α : Type*} [LT α]
     (u v w w' : List α) (h : List.Lex (· < ·) w w')
     (hlen : w.length = w'.length) :
@@ -156,8 +156,8 @@ theorem degLex_admissible_lex {α : Type*} [LT α]
 
 /-- Full admissibility: DegLex is preserved under concatenation
     with common prefix and suffix. -/
--- Ref: [manuscript] §2/braiding-induced-ordering
--- Ref: [manuscript] unital-groebner-bases/admissible-system
+-- Ref: [leitner2026] §2/braiding-induced-ordering
+-- Ref: [leitner2026] unital-groebner-bases/admissible-system
 theorem degLex_admissible {n : ℕ} (u v w w' : List (Fin n))
     (h : DegLex w w') :
     DegLex (u ++ w ++ v) (u ++ w' ++ v) := by
@@ -169,7 +169,7 @@ theorem degLex_admissible {n : ℕ} (u v w w' : List (Fin n))
            degLex_admissible_lex u v w w' h_lex h_eq⟩
 
 /-- Top-level alias matching the manifest declaration. -/
--- Ref: [manuscript] §2/braiding-induced-ordering
+-- Ref: [leitner2026] §2/braiding-induced-ordering
 def braiding_induced_ordering : Prop :=
   ∀ n : ℕ, WellFounded (DegLex (α := Fin n))
 

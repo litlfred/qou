@@ -43,8 +43,8 @@
   Yukawa-range insight, upgrading the audit's (a) from
   corpus-identification-composition to a §3b-cond conditional result.
 
-  -- Ref: [manuscript] docs/audits/2026-07-13-pion-radius-and-vol-to-radius-gaps.md §GAP 1 (a)
-  -- Ref: [manuscript] docs/coordination/binding-scale-is-hyperbolic-volume.md
+  -- Ref: [leitner2026] docs/audits/2026-07-13-pion-radius-and-vol-to-radius-gaps.md §GAP 1 (a)
+  -- Ref: [leitner2026] docs/coordination/binding-scale-is-hyperbolic-volume.md
 -/
 
 import Mathlib.Algebra.Ring.Defs
@@ -131,7 +131,7 @@ end BondChannelModel
     identification, AGENTS.md §Axiomatization is NOT a Proof).
 
     -- @conjecture: primary
-    -- Ref: [manuscript] docs/coordination/binding-scale-is-hyperbolic-volume.md -/
+    -- Ref: [leitner2026] docs/coordination/binding-scale-is-hyperbolic-volume.md -/
 class BindingVolumeLedger (R : Type*) [CommRing R]
     (M : BondChannelModel R) : Prop where
   /-- CAL-1 supports the bond channel only through the W-plane term. -/

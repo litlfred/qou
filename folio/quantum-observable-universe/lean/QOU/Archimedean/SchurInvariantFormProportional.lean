@@ -32,7 +32,7 @@ or register a `TauRhoHodgeLift` instance. The scalar-commutant hypothesis is the
 Schur/absolute-irreducibility of `std`, a *separate* provable input, taken here as a
 named hypothesis, not fabricated. `1/(8π)` stays a phase-4 identification.
 
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
 -- Ref: [serre1977] Linear Representations of Finite Groups (Schur's lemma)
 -/
 import Mathlib.LinearAlgebra.Matrix.NonsingularInverse

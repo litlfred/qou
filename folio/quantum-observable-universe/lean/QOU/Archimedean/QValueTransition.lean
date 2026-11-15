@@ -51,7 +51,7 @@ structure QValueTransition where
   /-- `Q = M(Z,N) − M(Z+1,N−1)`. -/
   Q_def : ∀ Z N : ℤ, Q Z N = M Z N - M (Z + 1) (N - 1)
 
--- Ref: [manuscript] quantum-observable-universe/predicted-spectra/q-value-transition.ts
+-- Ref: [leitner2026] quantum-observable-universe/predicted-spectra/q-value-transition.ts
 
 /-- Expanding the masses, the `Q`-value is the neutron–proton–electron mass
     gap plus the change in binding energy:

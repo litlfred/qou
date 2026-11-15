@@ -46,7 +46,7 @@ structure QuaternionicSpectralResolvents where
   /-- The four spectral resolvents `ω₀,…,ω₃` (as elements of `H`). -/
   ω : Fin 4 → H
 
--- Ref: [manuscript] quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.ts
+-- Ref: [leitner2026] quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.ts
 
 namespace QuaternionicSpectralResolvents
 

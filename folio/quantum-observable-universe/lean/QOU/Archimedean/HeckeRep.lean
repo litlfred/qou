@@ -304,7 +304,7 @@ noncomputable def signRep (n : ℕ) : HeckeRep n 1 where
     each of which is a polynomial identity in `R_t = ℤ[t, t⁻¹]`
     closable by `ring` after `Matrix.mul_apply` + `Fin.sum_univ_two`
     + `Matrix.cons_val_*` unfold the `Matrix.cons` normal form. -/
--- Ref: [manuscript] §transfer-matrix-commutativity
+-- Ref: [leitner2026] §transfer-matrix-commutativity
 set_option maxHeartbeats 800000 in
 theorem transferMatrix_comm (a b c d : R_t) :
     transferMatrix a b * transferMatrix c d =

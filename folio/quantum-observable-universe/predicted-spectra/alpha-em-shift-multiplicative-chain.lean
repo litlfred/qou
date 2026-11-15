@@ -60,9 +60,9 @@ This is a *theorem* (no conjecture beyond the witness-backed class
 instances): every step is a named identity composed with another
 named identity.
 
--- Ref: [manuscript] prop:em-coupling-projection (the bare 1/α formula)
--- Ref: [manuscript] prop:alpha-shift-torus-knot (the closed-form α_shift)
--- Ref: [manuscript] prop:force-carrier-bring-uniqueness (the basis is exactly two knots)
+-- Ref: [leitner2026] prop:em-coupling-projection (the bare 1/α formula)
+-- Ref: [leitner2026] prop:alpha-shift-torus-knot (the closed-form α_shift)
+-- Ref: [leitner2026] prop:force-carrier-bring-uniqueness (the basis is exactly two knots)
 -/
 theorem alpha_em_shift_chain
     [HasAlphaShiftTorus 2 9] [HasAlphaShiftTorus 3 5] :

@@ -25,11 +25,11 @@ self-paired part of $\langle c \rangle_\beta$ vanish; the
 non-trivial part is the imbalance between $\chi^\lambda(\beta)$
 and $\chi^{\lambda^T}(\beta)$ along the Demazure components.
 
--- Ref: [manuscript] prop:crystal-basis-resolves-mass-tower-open-problems
--- Ref: [manuscript] prop:chirality-writhe-ribbon-derivation
+-- Ref: [leitner2026] prop:crystal-basis-resolves-mass-tower-open-problems
+-- Ref: [leitner2026] prop:chirality-writhe-ribbon-derivation
 -- Ref: [kashiwara1991] DOI 10.1215/S0012-7094-91-06321-0
 -- Ref: [brundankleshchev2009] DOI 10.1007/s00222-009-0204-8
--- Ref: [manuscript] AGENTS.md §7b "Symmetric-crystal techniques"
+-- Ref: [leitner2026] AGENTS.md §7b "Symmetric-crystal techniques"
 -/
 
 namespace QOU.Archimedean.TypeBCrystal
@@ -87,7 +87,7 @@ def PartitionWithCells.transpose (P : PartitionWithCells) :
     This is the partition-level lift of `Cell.content_plus_transpose_content_eq_zero`:
     every cell's content cancels with the transpose-image cell's
     content, so the two list-sums sum to zero. -/
--- Ref: [manuscript] AGENTS.md §7b "Type B folding ⇒ symmetric crystal,
+-- Ref: [leitner2026] AGENTS.md §7b "Type B folding ⇒ symmetric crystal,
 -- bar-involution invariant by construction"
 theorem PartitionWithCells.content_sum_plus_transpose_content_sum_eq_zero
     (P : PartitionWithCells) :

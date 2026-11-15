@@ -24,7 +24,7 @@ LaTeX label: `prop:binding-genfun-qdifference`.
 
 ## References
 
-- [manuscript] §mass-theory/binding-genfun-qdifference
+- [leitner2026] §mass-theory/binding-genfun-qdifference
 
 **Ground ring**: `ℝ` (kernel evaluated at the substrate `q₀`).
 See `GroundRingAnnotations.lean`.
@@ -68,7 +68,7 @@ structure BindingQDifferenceRecurrence where
     annihilation identity `∑_{j≤d} c_j B_{n+j} = 0` and solve for `B_{n+d}`
     (`c_d ≠ 0`). The kernel `a_j = -c_j / c_d` is thus an output of `R`, not
     a fit — the q-holonomic ⟹ P-recursive passage. -/
--- Ref: [manuscript] §mass-theory/binding-genfun-qdifference
+-- Ref: [leitner2026] §mass-theory/binding-genfun-qdifference
 theorem binding_qdifference_recurrence (S : BindingQDifferenceRecurrence) (n : ℕ) :
     S.term (n + S.depth)
       = ∑ j ∈ Finset.range S.depth,

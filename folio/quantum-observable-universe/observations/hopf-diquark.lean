@@ -13,7 +13,7 @@ arises from the linking number orientation.
 ## References
 
 - [alford1999] https://doi.org/10.1016/S0550-3213(98)00668-3
-- [manuscript] Ch. 7, §Strangelet Stability
+- [leitner2026] Ch. 7, §Strangelet Stability
 
 **Ground ring**: `ℝ` (archimedean realisation).
 Evaluates formal results at q₀ ≈ 1.1098 for comparison with
@@ -74,14 +74,14 @@ def hopf_linking_number : Int :=
   1
 
 /-- Hopf link volume is zero (torus link, not hyperbolic). -/
--- Ref: [manuscript] Ch. 4
+-- Ref: [leitner2026] Ch. 4
 def hopf_link_volume : ℝ :=
   0
 
 /-- Crossing energy of the Hopf link at substrate parameter q.
     The Hopf link T_{2,2} has braid word σ₁², contributing
     2 positive crossings. -/
--- Ref: [manuscript] Ch. 7
+-- Ref: [leitner2026] Ch. 7
 def hopf_crossing_energy (q : ℝ) : ℝ := q + q⁻¹
 
 /-- The CFL gap: energy to break a single Hopf diquark. -/
@@ -89,7 +89,7 @@ def hopf_crossing_energy (q : ℝ) : ℝ := q + q⁻¹
 def cfl_gap (q : ℝ) : ℝ := hopf_crossing_energy q
 
 /-- At q = 1.1097, the CFL gap is approximately 2.011 Skein units. -/
--- Ref: [manuscript] Ch. 7
+-- Ref: [leitner2026] Ch. 7
 theorem cfl_gap_approx :
     cfl_gap 1.1097 > 2 ∧ cfl_gap 1.1097 < 2.1 := by
   unfold cfl_gap hopf_crossing_energy
@@ -97,18 +97,18 @@ theorem cfl_gap_approx :
 
 /-- Borromean binding per baryon number at substrate parameter q.
     Uses the topological mass formula with V_B = 7.32772. -/
--- Ref: [manuscript] Ch. 7
+-- Ref: [leitner2026] Ch. 7
 def borromean_binding_per_baryon (q : ℝ) (hq : q > 1) : ℝ :=
   7.32772 / ((q - 1) / q) ^ 2
 
 /-- Hopf diquark binding per baryon number.
     Three diquark pairs per two baryon-number units. -/
--- Ref: [manuscript] Ch. 7
+-- Ref: [leitner2026] Ch. 7
 def diquark_binding_per_baryon (q : ℝ) : ℝ :=
   (3 / 2) * (q + q⁻¹)
 
 /-- At q = 1.1097, Borromean binding vastly exceeds diquark binding. -/
--- Ref: [manuscript] Ch. 7
+-- Ref: [leitner2026] Ch. 7
 theorem borromean_dominates_diquark :
     diquark_binding_per_baryon 1.1097 < 4 := by
   unfold diquark_binding_per_baryon

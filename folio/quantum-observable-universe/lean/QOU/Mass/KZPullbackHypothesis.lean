@@ -35,7 +35,7 @@ not held in `library/`.
 
 -- Ref: [kohno1987] Kohno, Ann. Inst. Fourier 37 (1987) — KZ monodromy factors through `H_n(q)`.
 -- Ref: [drinfeld1985] Drinfeld — quasi-Hopf / R-matrix side of the Kohno–Drinfeld theorem.
--- Ref: [manuscript] computations/probes/colour_cubic_braid_monodromy_probe.py
+-- Ref: [leitner2026] computations/probes/colour_cubic_braid_monodromy_probe.py
 -/
 
 namespace QOU.Mass

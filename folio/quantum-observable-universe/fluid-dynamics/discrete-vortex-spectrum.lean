@@ -32,7 +32,7 @@ copy under `QOU/FluidDynamics/discrete_vortex_spectrum.lean`. The
 and the classical limit is modelled by `q = 1 → ∀ k, qInt k = k`.
 
 ## References
-- [manuscript] §Fluid dynamics / Discrete vortex spectrum,
+- [leitner2026] §Fluid dynamics / Discrete vortex spectrum,
   prop:discrete-vortex-spectrum
 -/
 
@@ -87,7 +87,7 @@ class DiscreteVortexSpectrumContext where
     (4) the classical limit `q → 1`, `[k]_q → k`. All four md bullets are
     bundled here so the `lean.ref` target states the complete proposition,
     not just the eigenvalue spectrum. -/
--- Ref: [manuscript] prop:discrete-vortex-spectrum
+-- Ref: [leitner2026] prop:discrete-vortex-spectrum
 def discrete_vortex_spectrum [ctx : DiscreteVortexSpectrumContext] :
     (∀ k, ctx.lam k = (ctx.qInt k) ^ 2 * ctx.hbar / ctx.Lq ^ 2) ∧
     (∀ n, ctx.energy n = ctx.hbar / (2 * ctx.Iq) * (ctx.qInt n * ctx.qInt (n + 1))) ∧
@@ -98,14 +98,14 @@ def discrete_vortex_spectrum [ctx : DiscreteVortexSpectrumContext] :
 /-- **Eigenvalue spectrum** (md item (1), projection of
     `discrete_vortex_spectrum`). The eigenvalues of the `q`-Laplacian on the
     filament are `λ_k = [k]_q² · ℏ_q / L_q²`. -/
--- Ref: [manuscript] prop:discrete-vortex-spectrum
+-- Ref: [leitner2026] prop:discrete-vortex-spectrum
 theorem discrete_vortex_eigenvalues [ctx : DiscreteVortexSpectrumContext]
     (k : ℕ) :
     ctx.lam k = (ctx.qInt k) ^ 2 * ctx.hbar / ctx.Lq ^ 2 :=
   ctx.spectrum k
 
 /-- **Intensity energy levels.** `E_j = ℏ_q/(2 I_q) · [j]_q [j+1]_q`. -/
--- Ref: [manuscript] prop:discrete-vortex-spectrum
+-- Ref: [leitner2026] prop:discrete-vortex-spectrum
 theorem discrete_vortex_energy_levels [ctx : DiscreteVortexSpectrumContext]
     (n : ℕ) :
     ctx.energy n = ctx.hbar / (2 * ctx.Iq) * (ctx.qInt n * ctx.qInt (n + 1)) :=
@@ -114,7 +114,7 @@ theorem discrete_vortex_energy_levels [ctx : DiscreteVortexSpectrumContext]
 /-- **Transition energy** `ΔE_{j→j'} = E_{j'} − E_j`, the energy released
     or absorbed in a ladder transition (md formula (3)), obtained by
     differencing the level energies. -/
--- Ref: [manuscript] prop:discrete-vortex-spectrum
+-- Ref: [leitner2026] prop:discrete-vortex-spectrum
 theorem discrete_vortex_transition_energy
     [ctx : DiscreteVortexSpectrumContext] (n m : ℕ) :
     ctx.energy m - ctx.energy n
@@ -125,7 +125,7 @@ theorem discrete_vortex_transition_energy
 /-- **Ladder selection rule** (md item (3)): for adjacent intensity levels
     (`|j − j'| = 1`, i.e. `n+1 = m` or `m+1 = n`) the transition energy is the
     level-energy difference, with the closed form below. -/
--- Ref: [manuscript] prop:discrete-vortex-spectrum
+-- Ref: [leitner2026] prop:discrete-vortex-spectrum
 theorem discrete_vortex_ladder_rule
     [ctx : DiscreteVortexSpectrumContext] (n m : ℕ)
     (h : n + 1 = m ∨ m + 1 = n) :
@@ -136,7 +136,7 @@ theorem discrete_vortex_ladder_rule
 
 /-- **Classical limit** (md item (4)): at `q = 1` the `q`-integer collapses to
     the ordinary integer `[k]_q → k`, recovering the Kelvin-wave spectrum. -/
--- Ref: [manuscript] prop:discrete-vortex-spectrum
+-- Ref: [leitner2026] prop:discrete-vortex-spectrum
 theorem discrete_vortex_classical_limit
     [ctx : DiscreteVortexSpectrumContext] (hq : ctx.q = 1) (k : ℕ) :
     ctx.qInt k = (k : ℝ) :=

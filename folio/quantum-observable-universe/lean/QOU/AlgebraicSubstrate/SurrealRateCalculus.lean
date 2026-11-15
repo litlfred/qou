@@ -50,7 +50,7 @@ universe u
     `E(δ)·ε = δ²` holds for every `δ : F`; the `Ow = 1`
     interpretation requires `δ ≠ 0`). -/
 -- Ref: [conway1976] On Numbers and Games §III
--- Ref: [manuscript] Chapter 8 §5 (Surreal rate calculus)
+-- Ref: [leitner2026] Chapter 8 §5 (Surreal rate calculus)
 class SurrealRateCalculus (F : Type u) [CommRing F] where
   /-- The Reeb infinitesimal embedded in `F`.  Non-zero (forced
       by `reebPeriod_order : reebPeriod · epsilon = 1` below). -/
@@ -160,7 +160,7 @@ def surrealRateCalculus_classicalLimit (F : Type u) [CommRing F] :
     `.md` banner, which states it.  What is proved here is what the proof
     actually uses: the rate equations and the archimedean smallness of `ε`. -/
 -- Ref: [conway1976] On Numbers and Games §III
--- Ref: [manuscript] Chapter 8 §5 (Surreal rate calculus)
+-- Ref: [leitner2026] Chapter 8 §5 (Surreal rate calculus)
 theorem surreal_rate_calculus_conditional
     {F : Type u} [Field F] [LinearOrder F] [IsStrictOrderedRing F]
     [S : SurrealRateCalculus F]

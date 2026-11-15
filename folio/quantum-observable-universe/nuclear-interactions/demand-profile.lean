@@ -12,7 +12,7 @@ absolute values.
 LaTeX label: `def:demand-profile`
 
 ## References
-- [manuscript] §4/demand-profile
+- [leitner2026] §4/demand-profile
 -/
 
 namespace QOU.ParticleInteractions
@@ -23,13 +23,13 @@ abbrev NormalForm := List (ℕ × ℝ)
 
 /-- The **demand profile** of a derived atom: the sublist of NF entries
     whose coefficient is strictly negative. -/
--- Ref: [manuscript] §4/demand-profile
+-- Ref: [leitner2026] §4/demand-profile
 noncomputable def demandProfile (a : NormalForm) : NormalForm :=
   a.filter (fun wc => wc.2 < 0)
 
 /-- The **demand magnitude** `|dem|`: the sum of absolute values of the
     negative coefficients. -/
--- Ref: [manuscript] §4/demand-profile
+-- Ref: [leitner2026] §4/demand-profile
 noncomputable def demandMagnitude (a : NormalForm) : ℝ :=
   ((demandProfile a).map (fun wc => |wc.2|)).sum
 

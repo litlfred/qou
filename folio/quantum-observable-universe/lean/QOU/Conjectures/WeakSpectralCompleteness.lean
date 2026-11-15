@@ -31,7 +31,7 @@ LaTeX label: `conj:weak-spectral-completeness`
 
 ## References
 
-- [manuscript] §"Weak-sector spectral completeness — Hoefsmit n=6 form"
+- [leitner2026] §"Weak-sector spectral completeness — Hoefsmit n=6 form"
 -/
 
 namespace QOU.Conjectures

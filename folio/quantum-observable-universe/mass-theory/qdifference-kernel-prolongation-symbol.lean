@@ -18,7 +18,7 @@ LaTeX label: `conj:qdifference-kernel-prolongation-symbol`.
 
 ## References
 
-- [manuscript] §mass-theory/qdifference-kernel-prolongation-symbol
+- [leitner2026] §mass-theory/qdifference-kernel-prolongation-symbol
 - [seiberg1994] https://doi.org/10.1016/0550-3213(94)90124-4
 
 **Ground ring**: generic `[CommRing R]` (the kernel/symbol coefficients).

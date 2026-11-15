@@ -36,7 +36,7 @@ namespace QOU.Molecular
     sub-states in shell `n` is the sum of the sub-shell multiplicities `2ℓ+1`
     over `ℓ = 0, …, n-1` — the sum of the first `n` odd numbers.  This is the
     `q → 1` value of the angular `q`-dimension self-square `[n]_q²`. -/
--- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-capacity-self-square.md
+-- Ref: [leitner2026] quantum-observable-universe/molecular-construction/shell-capacity-self-square.md
 theorem orbital_n_squared (n : ℕ) :
     ∑ l ∈ Finset.range n, (2 * l + 1) = n ^ 2 := by
   induction n with
@@ -48,7 +48,7 @@ theorem orbital_n_squared (n : ℕ) :
     `n² = ∑_{ℓ<n} (2ℓ+1)`.  Equivalently the bar-even self-square `2[n]_q²`
     evaluated at `q = 1`.  The doubling is the self-fusion of one angular object,
     not a product of two `SU(2)` factors. -/
--- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-capacity-self-square.md
+-- Ref: [leitner2026] quantum-observable-universe/molecular-construction/shell-capacity-self-square.md
 theorem shell_capacity_self_square (n : ℕ) :
     ∑ l ∈ Finset.range n, 2 * (2 * l + 1) = 2 * n ^ 2 := by
   induction n with

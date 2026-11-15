@@ -16,7 +16,7 @@ archimedean realisation (char 0 only).
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/q-exponential
+- [leitner2026] §2-quantum-observable-universes/q-exponential
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]`.  The existence of e_q as an
 abstract grouplike is base-ring independent.  The series
@@ -34,7 +34,7 @@ abbrev R_q := LaurentPolynomial ℤ
 
     Encoded as a structure with the coproduct-diagonal and
     counit-unit axioms, plus the flow-invariance condition.  -/
--- Ref: [manuscript] §2
+-- Ref: [leitner2026] §2
 structure QExponential (H : Type*) where
   /-- The grouplike element e_q ∈ H. -/
   e_q : H

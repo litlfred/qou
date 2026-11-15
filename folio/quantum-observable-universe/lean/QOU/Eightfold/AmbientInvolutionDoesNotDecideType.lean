@@ -58,7 +58,7 @@ ordering, no archimedean content.
 
 -- Ref: [fulton-harris1991] §11 (Frobenius–Schur indicator; the real /
 -- complex / quaternionic trichotomy).
--- Ref: [manuscript] `docs/audits/2026-08-04-pgl3-higher-teichmuller-assessment.md`
+-- Ref: [leitner2026] `docs/audits/2026-08-04-pgl3-higher-teichmuller-assessment.md`
 -- §2c (the claim screened here); `eightfold-open-problems.md` item 1.
 -/
 

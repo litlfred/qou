@@ -84,8 +84,8 @@ specialisation and is *not* performed here; indeed the value is
 
 ## References
 
-- [manuscript] brings-surface/brings-euler-characteristic.md.
-- [manuscript] lifting-and-descent/euler-char-stability-proof.md
+- [leitner2026] brings-surface/brings-euler-characteristic.md.
+- [leitner2026] lifting-and-descent/euler-char-stability-proof.md
   (`prop:euler-char-stability` — proves *stability* of the Euler
   characteristic across tower levels; the super-trace value computed
   here is independent of it).
@@ -154,7 +154,7 @@ variable {R : Type*} [CommRing R]
     The first conjunct is the geometric input; the second is the
     definition of `chi_A`; the third is **derived** by `norm_num`
     after substituting `g = 4`. -/
--- Ref: [manuscript] brings-surface/brings-euler-characteristic.md
+-- Ref: [leitner2026] brings-surface/brings-euler-characteristic.md
 theorem brings_euler_characteristic [ctx : BringsEulerCharacteristicContext R] :
     ctx.g = 4
     ∧ (BringsEulerCharacteristicContext.chi_A (R := R)) = 2 - 2 * (ctx.g : ℤ)
@@ -171,7 +171,7 @@ theorem brings_euler_characteristic [ctx : BringsEulerCharacteristicContext R] :
     Derived, not assumed: `dim_q 𝟙 = 1` (`qdimUnit`, the `q`-family
     constant) reduces the super-trace to the alternating Betti sum
     `1 − 2g + 1 = 2 − 2g` by `ring`. -/
--- Ref: [manuscript] quantum-observable-universe/brings-surface/brings-euler-characteristic.md
+-- Ref: [leitner2026] quantum-observable-universe/brings-surface/brings-euler-characteristic.md
 theorem categorical_trace_eq_euler [ctx : BringsEulerCharacteristicContext R] (q : R) :
     BringsEulerCharacteristicContext.categoricalTrace (R := R) q = 2 - 2 * (ctx.g : R) := by
   unfold BringsEulerCharacteristicContext.categoricalTrace BringsEulerCharacteristicContext.qdimUnit
@@ -182,7 +182,7 @@ theorem categorical_trace_eq_euler [ctx : BringsEulerCharacteristicContext R] (q
     not a fit — the `q`-dependence cancels because the cohomology modules
     are quantum-trivial and the alternating sum returns the classical
     Euler characteristic. -/
--- Ref: [manuscript] quantum-observable-universe/brings-surface/brings-euler-characteristic.md
+-- Ref: [leitner2026] quantum-observable-universe/brings-surface/brings-euler-characteristic.md
 theorem categorical_trace_q_independent
     [ctx : BringsEulerCharacteristicContext R] (q q' : R) :
     BringsEulerCharacteristicContext.categoricalTrace (R := R) q
@@ -196,7 +196,7 @@ theorem categorical_trace_q_independent
     Derived from the super-trace over the cohomology
     (`categorical_trace_eq_euler`) plus the genus fact `g = 4` — never
     read back from a class field asserting `−6`. -/
--- Ref: [manuscript] quantum-observable-universe/brings-surface/brings-euler-characteristic.md
+-- Ref: [leitner2026] quantum-observable-universe/brings-surface/brings-euler-characteristic.md
 theorem categorical_trace_eq_neg_six
     [ctx : BringsEulerCharacteristicContext R] (q : R) :
     BringsEulerCharacteristicContext.categoricalTrace (R := R) q = -6 := by
@@ -215,7 +215,7 @@ theorem categorical_trace_eq_neg_six
     No upstream value-assumption and no axiom are used; the only inputs
     are the surface's Betti numbers `(1, 2g, 1)`, `dim_q 𝟙 = 1`, and the
     genus `g = 4`. -/
--- Ref: [manuscript] quantum-observable-universe/brings-surface/brings-euler-characteristic.md
+-- Ref: [leitner2026] quantum-observable-universe/brings-surface/brings-euler-characteristic.md
 theorem quantum_dimension_recovers_chi [ctx : BringsEulerCharacteristicContext R] :
     BringsEulerCharacteristicContext.categoricalTrace (R := R) ctx.q0
       = ((BringsEulerCharacteristicContext.chi_A (R := R) : ℤ) : R) := by

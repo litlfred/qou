@@ -55,7 +55,7 @@ No derived driver fixes `m`; nothing is wired; `free_parameters = 0`.
 Base ring (§7c): `ℝ` throughout — archimedean (ordering, `Real.log`), inherited from
 `A4InterfaceMagnitude`.
 
--- Ref: [manuscript] computations/deltalambda/b4-nonsaturating-mstar-diagnostic.witness.json
+-- Ref: [leitner2026] computations/deltalambda/b4-nonsaturating-mstar-diagnostic.witness.json
    (required m*, forward derived-constant table, the straddle bracket; 0-fit, nothing wired).
 -- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors", Invent. Math. 92 (1988) 349-383.
 -/

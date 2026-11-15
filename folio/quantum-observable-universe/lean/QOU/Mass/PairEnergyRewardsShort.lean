@@ -45,9 +45,9 @@
 
   Sorry-free. No `axiom`, no conditional class, no `native_decide`.
 
-  -- Ref: [manuscript] computations/qbeta/qbeta_knot_operator_ilp_ohara_cost_probe.py
-  -- Ref: [manuscript] computations/qbeta/qbeta_ecat_pair_kernel_probe.py
-  -- Ref: [manuscript] QOU/QBeta/LetterSumBlindness.lean
+  -- Ref: [leitner2026] computations/qbeta/qbeta_knot_operator_ilp_ohara_cost_probe.py
+  -- Ref: [leitner2026] computations/qbeta/qbeta_ecat_pair_kernel_probe.py
+  -- Ref: [leitner2026] QOU/QBeta/LetterSumBlindness.lean
 -/
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Linarith

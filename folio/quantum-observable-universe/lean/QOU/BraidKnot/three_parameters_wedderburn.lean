@@ -16,7 +16,7 @@ of `3`.*
 The Lean encoding records the counting identity
 `#(calibration inputs) = 3 = #(Partition 3)`.
 
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/three-parameters-wedderburn.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/three-parameters-wedderburn.md
 -/
 
 namespace QOU.BraidKnot
@@ -29,7 +29,7 @@ def partitionCountOfThree : ℕ := 3
 
     The number of calibration parameters equals the number of
     irreducible representations of `H₃(R, q)`, which equals 3. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/three-parameters-wedderburn.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/three-parameters-wedderburn.md
 theorem three_parameters_wedderburn :
     partitionCountOfThree = 3 := by
   -- The three partitions of 3 are [3], [2,1], [1,1,1].

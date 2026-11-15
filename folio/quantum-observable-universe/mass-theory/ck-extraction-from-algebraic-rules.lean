@@ -36,7 +36,7 @@ LaTeX label: `rem:ck-extraction-from-algebraic-rules`
 -- Sibling-chapter dependency: `hoefsmit_sigma{0,1}`,
 -- `hoefsmit_sigma{0,1}_hecke_quadratic` from the Hoefsmit module
 -- discharge Rules 1+3 below at n=3 on V_(2,1).
--- Ref: [manuscript] prop:hoefsmit-V21-cos-symmetrization
+-- Ref: [leitner2026] prop:hoefsmit-V21-cos-symmetrization
 
 namespace QOU.BraidKnot
 
@@ -159,26 +159,26 @@ The extraction reproduces the per-rung coefficients used inside
 `N1_factor`, …, `N4_factor` of
 `prop:q-beta-categorical-precision-ladder`. -/
 
--- Ref: [manuscript] rem:ck-extraction-from-algebraic-rules
+-- Ref: [leitner2026] rem:ck-extraction-from-algebraic-rules
 -- Ref: [kashiwara1990-duke] Duke Math. J. 71 (1993) 839–858 (DOI 10.1215/S0012-7094-93-07131-1 — distinct from kashiwara1990 = CMP BF02097367)
 /-- `c_1 = b` (Kashiwara `f̃_1` matrix element on `V_(2,1)`). -/
 theorem ckFromReduction_eq_c1 (q : ℝ) :
     ckFromReduction q 1 = hoefsmitB_local q := rfl
 
--- Ref: [manuscript] rem:ck-extraction-from-algebraic-rules
+-- Ref: [leitner2026] rem:ck-extraction-from-algebraic-rules
 -- Ref: [hoefsmit1974] (Hoefsmit's PhD thesis, seminormal form)
 /-- `c_2 = b²` (Kashiwara `f̃_1† f̃_1` return amplitude on `V_(2,1)`). -/
 theorem ckFromReduction_eq_c2 (q : ℝ) :
     ckFromReduction q 2 = (hoefsmitB_local q)^2 := rfl
 
--- Ref: [manuscript] rem:ck-extraction-from-algebraic-rules
+-- Ref: [leitner2026] rem:ck-extraction-from-algebraic-rules
 -- Ref: [jones1985] doi:10.2307/1971403
 /-- `c_3 = -2 = J_Hopf(q=1)` (classical-limit Hopf-link Jones value
     at the 3-fold Markov closure, via KL decategorification). -/
 theorem ckFromReduction_eq_c3 (q : ℝ) :
     ckFromReduction q 3 = jonesHopfLocal := rfl
 
--- Ref: [manuscript] rem:ck-extraction-from-algebraic-rules
+-- Ref: [leitner2026] rem:ck-extraction-from-algebraic-rules
 -- Ref: [jones1985] doi:10.2307/1971403
 /-- `c_4 = b² + 1/2` (mixed intra/inter-block, Kashiwara `b²` plus
     Hopf-half rational offset). -/
@@ -293,7 +293,7 @@ theorem sigma0_hecke_quad_bottomright (q : ℝ) (hq : q ≠ 0) :
 
 /-! ## Synthesis theorem -/
 
--- Ref: [manuscript] rem:ck-extraction-from-algebraic-rules §"synthesis"
+-- Ref: [leitner2026] rem:ck-extraction-from-algebraic-rules §"synthesis"
 -- Ref: [kashiwara1990-duke] Duke Math. J. 71 (1993) 839–858 (DOI 10.1215/S0012-7094-93-07131-1 — distinct from kashiwara1990 = CMP BF02097367)
 -- Ref: [jones1985] doi:10.2307/1971403
 -- Ref: [hoefsmit1974] (Hoefsmit's PhD thesis, seminormal form)

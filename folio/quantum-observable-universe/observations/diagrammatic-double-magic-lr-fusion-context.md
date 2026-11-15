@@ -38,7 +38,7 @@ The combinatorial barrier at $k \geq 12$ prevents Hoefsmit matrix-evaluation for
 
 ## Discussion
 
-This conjecture is conditional on [`prop:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md) and [`prop:homological-shell-condensation`](../lifting-and-descent/homological-shell-condensation.md). A proof proceeds in two steps: (1) the upstream conjectures force self-conjugate support of $\Phi_Z$ and $\Phi_N$; (2) a self-conjugacy and content-sum LR rigidity lemma (provable Hecke fragment) collapses the LR product to a single $\nu$.
+This conjecture is conditional on [`prop:categorical-neutrality-saturated-shells`](../mass-endomorphism/categorical-neutrality-saturated-shells.md) and [`prop:homological-shell-condensation`](../mass-endomorphism/homological-shell-condensation.md). A proof proceeds in two steps: (1) the upstream conjectures force self-conjugate support of $\Phi_Z$ and $\Phi_N$; (2) a self-conjugacy and content-sum LR rigidity lemma (provable Hecke fragment) collapses the LR product to a single $\nu$.
 
 Step 2 is plausibly provable in pure Hecke combinatorics. It is not attempted here.
 

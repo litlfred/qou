@@ -19,8 +19,8 @@ LaTeX label: `prop:skein-bar-antisymmetry`
 
 ## References
 
-- [manuscript] §5/skein-bar-antisymmetry
-- [manuscript] §5/iwahori-hecke-algebra
+- [leitner2026] §5/skein-bar-antisymmetry
+- [leitner2026] §5/iwahori-hecke-algebra
 -/
 
 namespace QOU.BraidsAndKnots.SkeinBarAntisymmetry
@@ -36,7 +36,7 @@ def SkeinRel (q Lp Lm L0 : R) (qInv : R) (hq : q * qInv = 1) : Prop :=
 
     Substituting (Lp, Lm, q, qInv) ↦ (Lm, Lp, qInv, q) into the
     Skein relation yields the negation of the original relation. -/
--- Ref: [manuscript] §5/skein-bar-antisymmetry
+-- Ref: [leitner2026] §5/skein-bar-antisymmetry
 theorem skein_bar_antisymmetry
     (q Lp Lm L0 qInv : R) (hq : q * qInv = 1)
     (h : SkeinRel q Lp Lm L0 qInv hq) :
@@ -46,17 +46,17 @@ theorem skein_bar_antisymmetry
   linear_combination -h
 
 /-- **Sign-flip identity**: the bar-image of (q − q⁻¹) is −(q − q⁻¹). -/
--- Ref: [manuscript] §5/skein-bar-antisymmetry
+-- Ref: [leitner2026] §5/skein-bar-antisymmetry
 theorem bar_q_minus_qInv (q qInv : R) : qInv - q = -(q - qInv) := by ring
 
 /-- **Sign-flip identity**: the bar-image of (Lp − Lm) is −(Lp − Lm). -/
--- Ref: [manuscript] §5/skein-bar-antisymmetry
+-- Ref: [leitner2026] §5/skein-bar-antisymmetry
 theorem bar_Lp_minus_Lm (Lp Lm : R) : Lm - Lp = -(Lp - Lm) := by ring
 
 /-- **Both sides flip together**: applying bar to the Skein relation
     multiplies both sides by −1, leaving the equation unchanged
     (consistency of bar-antisymmetry). -/
--- Ref: [manuscript] §5/skein-bar-antisymmetry
+-- Ref: [leitner2026] §5/skein-bar-antisymmetry
 theorem skein_bar_consistent
     (q Lp Lm L0 qInv : R) (hq : q * qInv = 1) :
     SkeinRel q Lp Lm L0 qInv hq ↔
@@ -71,7 +71,7 @@ theorem skein_bar_consistent
     The Skein relation in any commutative ring is antisymmetric
     under simultaneous swap of (L_+, L_-) and (q, q⁻¹), and the
     bar-image relation is logically equivalent to the original. -/
--- Ref: [manuscript] §5/skein-bar-antisymmetry
+-- Ref: [leitner2026] §5/skein-bar-antisymmetry
 theorem skein_bar_antisymmetry_full
     (q Lp Lm L0 qInv : R) (hq : q * qInv = 1) :
     (SkeinRel q Lp Lm L0 qInv hq →

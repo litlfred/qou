@@ -18,7 +18,7 @@ LaTeX label: `prop:categorical-dq-squared`
 
 ## References
 
-- [manuscript] §1-quantum-observable-universe/categorical-dq-squared
+- [leitner2026] §1-quantum-observable-universe/categorical-dq-squared
 
 **Base ring** (AGENTS.md §7c): the obstruction formula
 `q⁻¹(1 - q⁻¹) · [ξ, α]` needs `q` invertible, so `q` is carried as a
@@ -47,7 +47,7 @@ namespace QOU
 
 /-- **dq² obstruction data**: the substrate `q` (as a unit of the ground
     ring) and the Reeb-bracket value `[ξ, α]`. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 structure DqSquaredObstruction (R : Type*) [CommRing R] where
   /-- The substrate parameter q, carried as a unit — algebraic
       invertibility (the old `q ≠ 0`), not the archimedean `0 < q`. -/
@@ -60,12 +60,12 @@ variable {R : Type*} [CommRing R]
 /-- The dq² obstruction: `dq²(α) = q⁻¹(1 - q⁻¹) · [ξ, α]`.
     Defined as a function of the data so the vanishing theorems below are
     non-vacuous. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 def DqSquaredObstruction.obstruction (obs : DqSquaredObstruction R) : R :=
   ((obs.q⁻¹ : Rˣ) : R) * (1 - ((obs.q⁻¹ : Rˣ) : R)) * obs.reeb_bracket
 
 /-- dq² vanishes iff q = 1 or the form is Reeb-invariant. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 theorem dq_squared_vanishes_iff [IsDomain R] (obs : DqSquaredObstruction R) :
     obs.obstruction = 0 ↔ (obs.q = 1 ∨ obs.reeb_bracket = 0) := by
   unfold DqSquaredObstruction.obstruction
@@ -91,20 +91,20 @@ theorem dq_squared_vanishes_iff [IsDomain R] (obs : DqSquaredObstruction R) :
     obstruction is nonzero on any non-Reeb-invariant form, so the
     q-deformed de Rham complex is *not* a cochain complex. This is the
     decl named by the content block's `lean.ref`. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 theorem categorical_dq_squared [IsDomain R] (obs : DqSquaredObstruction R) :
     obs.obstruction = 0 ↔ (obs.q = 1 ∨ obs.reeb_bracket = 0) :=
   dq_squared_vanishes_iff obs
 
 /-- On Reeb-invariant forms, dq is a cochain differential (dq² = 0). -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 theorem dq_squared_zero_on_invariant (obs : DqSquaredObstruction R)
     (h_inv : obs.reeb_bracket = 0) : obs.obstruction = 0 := by
   unfold DqSquaredObstruction.obstruction
   rw [h_inv]; ring
 
 /-- For q ≠ 1, dq² ≠ 0 on generic (non-Reeb-invariant) forms. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 theorem dq_squared_nonzero_generic [IsDomain R] (obs : DqSquaredObstruction R)
     (hq : obs.q ≠ 1) (h_gen : obs.reeb_bracket ≠ 0) :
     obs.obstruction ≠ 0 := by

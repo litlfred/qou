@@ -65,7 +65,7 @@ $30 \in R^{\times}$).  The five sub-claims:
 Only the degree condition behind sub-claim (iii) is assumed; (i), (ii), (iv), (v) are discharged by
 `norm_num` / `rfl`.  In particular `χ(A) = -6` is *derived* from
 `χ(A) = 2 - 2·4`, not asserted independently. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/brings-is-qou.ts
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/brings-is-qou.ts
 theorem brings_is_qou [obs : BringsObstruction] :
     (2 : ℕ) = 2 ∧
     (0 : ℕ) = 0 ∧

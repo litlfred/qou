@@ -56,7 +56,7 @@ unchanged — the only witness has a constant filtration, and
 `towerSpan_of_constant` shows such a witness satisfies `TowerSpan` for reasons
 that have nothing to do with any of this.
 
--- Ref: [manuscript] bean qou-301d; Kassel–Turaev, *Braid Groups*, ch. 4.
+-- Ref: [leitner2026] bean qou-301d; Kassel–Turaev, *Braid Groups*, ch. 4.
 -/
 
 namespace QOU.MathlibExt.TowerSpanReduction

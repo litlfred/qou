@@ -93,7 +93,7 @@ derivation status per term.
     type of `def e_infinity_identifications` and derives it from the
     `EInfinityIdentificationsContext` fields (§3b-cond conditional); the
     conjectural content lives in those class fields, not in a `sorry`. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/e-infinity-page-identifications.ts
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/e-infinity-page-identifications.ts
 def e_infinity_identifications {wenzlBridgeCorrection : Prop}
     [ctx : EInfinityIdentificationsContext wenzlBridgeCorrection] :
     ctx.m_total =

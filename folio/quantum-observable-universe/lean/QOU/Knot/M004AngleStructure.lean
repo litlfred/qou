@@ -72,7 +72,7 @@
 
   Archimedean (ℝ): genuinely archimedean — ordering and `min` over `ℝ` (§7c).
 
-  -- Ref: [manuscript] computations/probes/qbeta_sdp_angle_offset_theta_probe.py
+  -- Ref: [leitner2026] computations/probes/qbeta_sdp_angle_offset_theta_probe.py
   -- Ref: [garoufalidis2012] arXiv:1208.1663 §2.2–2.3 (generalised angle structures)
 -/
 

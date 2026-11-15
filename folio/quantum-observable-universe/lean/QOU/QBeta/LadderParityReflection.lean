@@ -45,8 +45,8 @@ Two scope pins, both load-bearing:
 Base ring is `ℂ` by necessity (§7c archimedean side): conjugation and the `Im`
 projection are the content. No `sorry`.
 
--- Ref: [manuscript] docs/audits/2026-08-15-kc21-parity-convention-immunity-audit.md
--- Ref: [manuscript] conj:im-q-physical-role
+-- Ref: [leitner2026] docs/audits/2026-08-15-kc21-parity-convention-immunity-audit.md
+-- Ref: [leitner2026] conj:im-q-physical-role
 -/
 
 -- Declarations here are nested one namespace deeper than the module's

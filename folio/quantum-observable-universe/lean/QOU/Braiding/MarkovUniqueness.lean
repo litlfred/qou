@@ -72,8 +72,8 @@ AGENTS.md §7c. No `Real`, no ordering, no `q > 0`.
 
 ## References
 
-- [manuscript] climax-volume-mass/jones-mobius-diagonal
-- [manuscript] braids-and-knots/jones-markov-trace
+- [leitner2026] climax-volume-mass/jones-mobius-diagonal
+- [leitner2026] braids-and-knots/jones-markov-trace
 -/
 
 namespace QOU.Braiding.MarkovUniqueness

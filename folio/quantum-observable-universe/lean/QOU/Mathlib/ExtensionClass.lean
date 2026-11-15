@@ -83,7 +83,7 @@ which is why the Hecke splitting needs no wall-crossing.
 complements are not automatic over a ring, which is why `Ext¹` can be nonzero
 somewhere. It is just not nonzero here.
 
--- Ref: [manuscript] quantum-observable-universe/information-theory
+-- Ref: [leitner2026] quantum-observable-universe/information-theory
 -/
 
 namespace QOU.Mathlib.ExtensionClass

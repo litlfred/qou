@@ -58,7 +58,7 @@ structure SkewPoissonIntegration where
     The basis provides a canonical set of generators and relations for
     the universal enveloping algebra U(Lie(H)) deformed by π_<.
 
-    Ref: [manuscript] Chapter 6, §Skew-Poisson integration -/
+    Ref: [leitner2026] Chapter 6, §Skew-Poisson integration -/
 structure GrobnerShirshovBasis where
   /-- Number of generators of the enveloping algebra. -/
   numGenerators : ℕ
@@ -89,12 +89,12 @@ theorem integration_requires_good_prime (p : ℕ) (hp : Nat.Prime p)
     At the level of ℤ-modules, this encodes that the comultiplication
     is an algebra map. We verify the dimensional identity:
     if V has dimension d, then V ⊗ V has dimension d². -/
--- Ref: [manuscript] Chapter 6, §Skew-Poisson integration
+-- Ref: [leitner2026] Chapter 6, §Skew-Poisson integration
 theorem tensor_dimension (d : ℕ) : d * d = d ^ 2 := by ring
 
 /-- For the QOU application, the formal group has dimension related
     to the genus: dim = 2g = 8 when g = 4 (Descartes condition). -/
--- Ref: [manuscript] Chapter 6, §Skew-Poisson integration
+-- Ref: [leitner2026] Chapter 6, §Skew-Poisson integration
 theorem formal_group_dim_from_genus (g : ℕ) (hg : g = 4) :
     2 * g = 8 := by
   subst hg; norm_num

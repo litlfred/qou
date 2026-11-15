@@ -20,8 +20,8 @@ LaTeX label: `prop:q-heat-kernel-peter-weyl`
 
 ## References
 
-- [manuscript] §9-information-theory/q-heat-kernel-peter-weyl
-- [manuscript] §2-quantum-observable-universes/q-laplacian-expansion
+- [leitner2026] §9-information-theory/q-heat-kernel-peter-weyl
+- [leitner2026] §2-quantum-observable-universes/q-laplacian-expansion
 
 **Char 0 only**: archimedean realisation needs convergent heat-kernel sum.
 -/
@@ -32,22 +32,22 @@ noncomputable section
 open Finset
 
 /-- Jackson integer [k]_q = (1 - q^k)/(1 - q) over ℝ (q ≠ 1). -/
--- Ref: [manuscript] §9
+-- Ref: [leitner2026] §9
 def jacksonInt (q : ℝ) (k : ℤ) : ℝ :=
   if q = 1 then (k : ℝ)
   else (1 - q^k) / (1 - q)
 
 /-- Quantum Planck constant ℏ_q = (q - 1)/q. -/
--- Ref: [manuscript] §9
+-- Ref: [leitner2026] §9
 def hbarQ (q : ℝ) : ℝ := 1 - q⁻¹
 
 /-- Classical content-sum for a partition: Σ c(c+1). -/
--- Ref: [manuscript] §9
+-- Ref: [leitner2026] §9
 def contentSumClassical (lam : YoungDiagram) : ℤ :=
   ∑ cell ∈ lam.cells, (cell.2 - cell.1) * (cell.2 - cell.1 + 1)
 
 /-- q-Casimir content-sum for a partition: Σ [c]_q [c+1]_q. -/
--- Ref: [manuscript] §9
+-- Ref: [leitner2026] §9
 def contentSumQCasimir (q : ℝ) (lam : YoungDiagram) : ℝ :=
   ∑ cell ∈ lam.cells,
     jacksonInt q (cell.2 - cell.1) * jacksonInt q (cell.2 - cell.1 + 1)
@@ -58,13 +58,13 @@ def contentSumQCasimir (q : ℝ) (lam : YoungDiagram) : ℝ :=
 
     The base-manifold eigenvalue q⁻² |k|² is separate and depends
     on the spatial mode, not on the partition λ. -/
--- Ref: [manuscript] §9
+-- Ref: [leitner2026] §9
 def muLambda (q : ℝ) (lam : YoungDiagram) : ℝ :=
   (hbarQ q)^2 * contentSumQCasimir q lam
 
 /-- **At q = 1** (classical limit): μ_λ reduces to the classical
     content sum (the spin term vanishes because ℏ_q = 0). -/
--- Ref: [manuscript] §9
+-- Ref: [leitner2026] §9
 theorem muLambda_classical (lam : YoungDiagram) :
     muLambda 1 lam = 0 := by
   unfold muLambda hbarQ
@@ -72,7 +72,7 @@ theorem muLambda_classical (lam : YoungDiagram) :
 
 /-- The single-cell Young diagram λ = (1), i.e. cells `{(0,0)}`. The
     singleton is a lower set because `(0,0)` is the minimum of `ℕ × ℕ`. -/
--- Ref: [manuscript] §9
+-- Ref: [leitner2026] §9
 def singleCellDiagram : YoungDiagram where
   cells := {(0, 0)}
   isLowerSet := by
@@ -84,7 +84,7 @@ def singleCellDiagram : YoungDiagram where
     exact Prod.ext_iff.mpr ⟨by omega, by omega⟩
 
 /-- **Single-cell partition** λ = (1) has μ_λ = 0. -/
--- Ref: [manuscript] §9
+-- Ref: [leitner2026] §9
 theorem muLambda_single (q : ℝ) (hq : q ≠ 0) :
     muLambda q singleCellDiagram = 0 := by
   unfold muLambda contentSumQCasimir singleCellDiagram
@@ -100,7 +100,7 @@ theorem muLambda_single (q : ℝ) (hq : q ≠ 0) :
     The q-weighted form is the correct bridge between `contentSumQCasimir`
     (which sums `[c]_q[c+1]_q`) and the squared-bracket form `[c]_q²`
     from the bar-symmetrised JM cosh sum. -/
--- Ref: [manuscript] §9
+-- Ref: [leitner2026] §9
 theorem jacksonInt_mul_succ (q : ℝ) (k : ℤ) (hq : q ≠ 1) (hq0 : q ≠ 0) :
     jacksonInt q k * jacksonInt q (k + 1) =
     q * jacksonInt q k ^ 2 + jacksonInt q k := by
@@ -131,7 +131,7 @@ theorem jacksonInt_mul_succ (q : ℝ) (k : ℤ) (hq : q ≠ 1) (hq0 : q ≠ 0) :
 
     Both `Σ [c]_q²` and `Σ [c]_q` are determined by the shape λ;
     no free parameter remains. -/
--- Ref: [manuscript] §9; QJucysMurphy.lean barSymJMSum eigenvalue
+-- Ref: [leitner2026] §9; QJucysMurphy.lean barSymJMSum eigenvalue
 theorem muLambda_from_sq_bracket (q : ℝ) (lam : YoungDiagram)
     (hq : q ≠ 1) (hq0 : q ≠ 0) :
     muLambda q lam =
@@ -161,7 +161,7 @@ theorem muLambda_from_sq_bracket (q : ℝ) (lam : YoungDiagram)
     we **name** the conditional conjecture as a `Prop` rather than fake a
     proof. The carrier asserts the real `Summable` claim — there is no
     instance / proof term, the honest open state. -/
--- Ref: [manuscript] §9
+-- Ref: [leitner2026] §9
 def qHeatKernelPeterWeyl (q t : ℝ) (dLambda : YoungDiagram → ℝ)
     (_hq : 0 < q) (_hq1 : q ≠ 1) (_ht : 0 < t) : Prop :=
   Summable (fun lam : YoungDiagram => dLambda lam * Real.exp (-(muLambda q lam) * t))

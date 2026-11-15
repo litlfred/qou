@@ -11,7 +11,7 @@ three legs as `Fin 3`, the matrix `ZigZag.assoc = Φ_KZ(ℏ P₁₂, ℏ P₂₃
 zigzag composites of `(η, ν⁻¹ ε)` become `ZigZag.zigzag_identities`, so for
 `ℏ` transcendental with `‖ℏ‖ ≤ 1/12` the object `V` is self-dual in `D_ℏ`. Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S4)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S4)
 -/
 
 noncomputable section

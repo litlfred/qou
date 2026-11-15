@@ -17,7 +17,7 @@ LaTeX label: `prop:orbital-space-normal-bundle`
 
 ## References
 
-- [manuscript] Ch. 6, §3
+- [leitner2026] Ch. 6, §3
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
@@ -116,7 +116,7 @@ theorem orbital_dim_eq_square (n : ℕ) :
 
     Steps 1–3 are standard harmonic analysis; step 4 is the
     geometry specific to the QOU framework. -/
--- Ref: [manuscript] Ch. 6, §3 — "The critical step"
+-- Ref: [leitner2026] Ch. 6, §3 — "The critical step"
 -- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 theorem mode_is_so3_irrep :
   ∀ (ℓ : ℕ), ∃ (V : Type) (acg : AddCommGroup V) (mod : @Module R_q V _ acg.toAddCommMonoid),
@@ -200,7 +200,7 @@ namespace QOU.OrbitalSpaceNormalBundle.ConditionalAudit
       over the admitted modes `ℓ = 0, …, n-1` of the SO(3)-irrep dimensions
       `2ℓ+1`.  This is the Borromean-anchor / SO(3) claim, not the
       conclusion `n²` (which is *derived* below). -/
--- Ref: [manuscript] Ch. 6, §3 — "The critical step", conj:borromean-quark
+-- Ref: [leitner2026] Ch. 6, §3 — "The critical step", conj:borromean-quark
 class BorromeanQuark where
   /-- The dimension of the orbital space at shell `n`. -/
   orbitalDim : ℕ → ℕ
@@ -219,7 +219,7 @@ class BorromeanQuark where
     Derived from the class field `so3_decomposition` (the conjectural
     input) and the unconditional arithmetic identity `orbital_space_dim`
     proved above — a genuine equation, not `True`. -/
--- Ref: [manuscript] Ch. 6, §3, conj:orbital-space-normal-bundle, conj:borromean-quark
+-- Ref: [leitner2026] Ch. 6, §3, conj:orbital-space-normal-bundle, conj:borromean-quark
 theorem orbital_space_normal_bundle_conditional [inst : BorromeanQuark]
     (n : ℕ) : inst.orbitalDim n = n ^ 2 := by
   rw [inst.so3_decomposition, QOU.orbital_space_dim]

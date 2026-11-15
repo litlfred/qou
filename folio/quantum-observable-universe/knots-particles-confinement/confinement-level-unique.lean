@@ -23,7 +23,7 @@ namespace QOU.BraidKnot
 
 -- Witness that the canonical uniqueness theorem is in scope (no re-declaration).
 -- canonical decl: QOU.BraidKnot.ConfinementLevel.unique
--- Ref: [manuscript] braids-and-knots/confinement-level
+-- Ref: [leitner2026] braids-and-knots/confinement-level
 example (R : Type) [CommRing R] (valid : BraidDatum R → ℕ → Prop)
     (d : BraidDatum R) (L₁ L₂ : ConfinementLevel valid d) :
     L₁.level = L₂.level :=

@@ -34,8 +34,8 @@ root-of-unity structure the bar-odd phase channel accumulates in.
 Generic field, §7c. No `c_k` wired; no archimedean evaluation.
 
 -- Ref: [neumann-zagier1985] https://doi.org/10.1016/0040-9383(85)90004-7
--- Ref: [manuscript] conj:algebraic-geometric-dilog-equivalence
--- Ref: [manuscript] docs/audits/2026-07-11-qbeta-c3-barodd-nz-deformation-gap.md
+-- Ref: [leitner2026] conj:algebraic-geometric-dilog-equivalence
+-- Ref: [leitner2026] docs/audits/2026-07-11-qbeta-c3-barodd-nz-deformation-gap.md
 -/
 
 namespace QOU.QBeta.CuspShapeBarParity
@@ -131,7 +131,7 @@ the seed (the phase `φ(q₀)`) moves the special coordinate from the real `√5
 imaginary `√−3`, i.e. turns on the CS = bar-odd `S`. The phase is precisely the
 branch selector, and no real datum can supply it.
 
--- Ref: [manuscript] docs/audits/2026-07-11-qbeta-c3-pole-cusp-phase-tractability.md
+-- Ref: [leitner2026] docs/audits/2026-07-11-qbeta-c3-pole-cusp-phase-tractability.md
 -/
 
 /-- The degenerate (golden-ratio) branch: `ω² − ω − 1 = 0`, real root `φ=(1+√5)/2`. -/

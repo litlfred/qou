@@ -34,7 +34,7 @@ from Mathlib today. The smart-constructor pattern records the
 structural identification at the categorical level; the equality is
 then a one-line `Subgroup.ext` argument.
 
--- Ref: [manuscript] prop:reeb-u1-chart-swap
+-- Ref: [leitner2026] prop:reeb-u1-chart-swap
 -- Ref: [woronowicz1989] Woronowicz, "Differential calculus on compact matrix pseudogroups (quantum groups)," Commun. Math. Phys. 122 (1989)
 -/
 
@@ -66,7 +66,7 @@ structure ChartSwapReebData (G : Type u) [Group G] where
     abstract identification data `d : ChartSwapReebData G`, the
     chart-swap and Reeb subgroups of `G` coincide. The proof is the
     one-line transitivity through the maximal torus `T_q`. -/
--- Ref: [manuscript] prop:reeb-u1-chart-swap
+-- Ref: [leitner2026] prop:reeb-u1-chart-swap
 theorem eqReeb {G : Type u} [Group G] (d : ChartSwapReebData G) :
     d.chartSwap = d.reebFlow := by
   rw [d.chartSwap_eq_torus, d.reebFlow_eq_torus]

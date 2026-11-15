@@ -54,7 +54,7 @@ Refs:
 - [humphreys1990] §7.4, type-A Hecke
 - [kashiwara1991] DOI 10.1215/S0012-7094-91-06321-0
 - [lusztig1990] DOI 10.2307/2152736 (canonical basis)
-- [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md
+- [leitner2026] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md
 -/
 
 

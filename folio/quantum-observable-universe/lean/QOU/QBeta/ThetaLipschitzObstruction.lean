@@ -106,8 +106,8 @@
 
   Archimedean (ℝ): absolute values and ordering — §7c.
 
-  -- Ref: [manuscript] bean qou-8vt2; docs/coordination/ck-dk-canonical-registry.md §c_3
-  -- Ref: [manuscript] docs/audits/2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md
+  -- Ref: [leitner2026] bean qou-8vt2; docs/coordination/ck-dk-canonical-registry.md §c_3
+  -- Ref: [leitner2026] docs/audits/2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md
 -/
 
 import Mathlib.Tactic

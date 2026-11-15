@@ -27,7 +27,7 @@ class MyLPClaim extends QOU.Shared.OperatorSelectionLPContext where
     (Finset.filter (fun i => 0 < y_star i) Finset.univ).card = 3
 ```
 
--- Ref: [manuscript] particle-interactions/operator-selection-lp.md (shared)
+-- Ref: [leitner2026] particle-interactions/operator-selection-lp.md (shared)
 -/
 
 namespace QOU.Shared

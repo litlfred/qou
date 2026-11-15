@@ -25,7 +25,7 @@ LaTeX label: `ex:hadron-half-life-verification`
 ## References
 
 - NNDC/ENSDF nuclear data sheets (Brookhaven National Laboratory)
-- [manuscript] §6/hadron-half-life-verification
+- [leitner2026] §6/hadron-half-life-verification
 
 **Ground ring**: `ℝ` (archimedean realisation).
 Evaluates formal results at q₀ ≈ 1.1098 for comparison with
@@ -100,27 +100,27 @@ noncomputable def obs_bismuth210 : ℝ := 5.012 * sec_per_day
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- ³H predicted half-life: ~13 yr. -/
--- Ref: [manuscript] §6/hadron-half-life-verification
+-- Ref: [leitner2026] §6/hadron-half-life-verification
 noncomputable def pred_tritium : ℝ := 13.0 * sec_per_yr
 
 /-- ¹⁴C predicted half-life: ~6800 yr. -/
--- Ref: [manuscript] §6/hadron-half-life-verification
+-- Ref: [leitner2026] §6/hadron-half-life-verification
 noncomputable def pred_carbon14 : ℝ := 6800 * sec_per_yr
 
 /-- ⁶⁰Co predicted half-life: ~6.2 yr. -/
--- Ref: [manuscript] §6/hadron-half-life-verification
+-- Ref: [leitner2026] §6/hadron-half-life-verification
 noncomputable def pred_cobalt60 : ℝ := 6.2 * sec_per_yr
 
 /-- ⁹⁰Sr predicted half-life: ~32 yr. -/
--- Ref: [manuscript] §6/hadron-half-life-verification
+-- Ref: [leitner2026] §6/hadron-half-life-verification
 noncomputable def pred_strontium90 : ℝ := 32.0 * sec_per_yr
 
 /-- ¹³⁷Cs predicted half-life: ~33 yr. -/
--- Ref: [manuscript] §6/hadron-half-life-verification
+-- Ref: [leitner2026] §6/hadron-half-life-verification
 noncomputable def pred_cesium137 : ℝ := 33.0 * sec_per_yr
 
 /-- ²¹⁰Bi predicted half-life: ~5.8 d. -/
--- Ref: [manuscript] §6/hadron-half-life-verification
+-- Ref: [leitner2026] §6/hadron-half-life-verification
 noncomputable def pred_bismuth210 : ℝ := 5.8 * sec_per_day
 
 -- ═══════════════════════════════════════════════════════════════════
@@ -133,27 +133,27 @@ noncomputable def pred_bismuth210 : ℝ := 5.8 * sec_per_day
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- ³H corrected half-life: ~12.4 yr (largest correction: A=3). -/
--- Ref: [manuscript] §6/hadron-half-life-verification
+-- Ref: [leitner2026] §6/hadron-half-life-verification
 noncomputable def corr_tritium : ℝ := 12.4 * sec_per_yr
 
 /-- ¹⁴C corrected half-life: ~6690 yr. -/
--- Ref: [manuscript] §6/hadron-half-life-verification
+-- Ref: [leitner2026] §6/hadron-half-life-verification
 noncomputable def corr_carbon14 : ℝ := 6690 * sec_per_yr
 
 /-- ⁶⁰Co corrected half-life: ~6.17 yr. -/
--- Ref: [manuscript] §6/hadron-half-life-verification
+-- Ref: [leitner2026] §6/hadron-half-life-verification
 noncomputable def corr_cobalt60 : ℝ := 6.17 * sec_per_yr
 
 /-- ⁹⁰Sr corrected half-life: ~31.9 yr. -/
--- Ref: [manuscript] §6/hadron-half-life-verification
+-- Ref: [leitner2026] §6/hadron-half-life-verification
 noncomputable def corr_strontium90 : ℝ := 31.9 * sec_per_yr
 
 /-- ¹³⁷Cs corrected half-life: ~32.9 yr. -/
--- Ref: [manuscript] §6/hadron-half-life-verification
+-- Ref: [leitner2026] §6/hadron-half-life-verification
 noncomputable def corr_cesium137 : ℝ := 32.9 * sec_per_yr
 
 /-- ²¹⁰Bi corrected half-life: ~5.79 d. -/
--- Ref: [manuscript] §6/hadron-half-life-verification
+-- Ref: [leitner2026] §6/hadron-half-life-verification
 noncomputable def corr_bismuth210 : ℝ := 5.79 * sec_per_day
 
 -- ═══════════════════════════════════════════════════════════════════
@@ -161,7 +161,7 @@ noncomputable def corr_bismuth210 : ℝ := 5.79 * sec_per_day
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- ³H corrected: ratio 1.01 (self-deformation nearly eliminates bias). -/
--- Ref: NNDC/ENSDF, [manuscript] §6/hadron-half-life-verification
+-- Ref: NNDC/ENSDF, [leitner2026] §6/hadron-half-life-verification
 theorem tritium_corr_ratio_upper :
     corr_tritium / obs_tritium < 1.02 := by
   unfold corr_tritium obs_tritium
@@ -175,7 +175,7 @@ theorem tritium_corr_ratio_lower :
   norm_num
 
 /-- ¹⁴C corrected: ratio 1.17 (Fermi Coulomb enhancement not yet included). -/
--- Ref: NNDC/ENSDF, [manuscript] §6/hadron-half-life-verification
+-- Ref: NNDC/ENSDF, [leitner2026] §6/hadron-half-life-verification
 theorem carbon14_corr_ratio_upper :
     corr_carbon14 / obs_carbon14 < 1.20 := by
   unfold corr_carbon14 obs_carbon14
@@ -189,7 +189,7 @@ theorem carbon14_corr_ratio_lower :
   norm_num
 
 /-- ⁶⁰Co corrected: ratio 1.17 (Fermi Coulomb enhancement not yet included). -/
--- Ref: NNDC/ENSDF, [manuscript] §6/hadron-half-life-verification
+-- Ref: NNDC/ENSDF, [leitner2026] §6/hadron-half-life-verification
 theorem cobalt60_corr_ratio_upper :
     corr_cobalt60 / obs_cobalt60 < 1.20 := by
   unfold corr_cobalt60 obs_cobalt60
@@ -203,7 +203,7 @@ theorem cobalt60_corr_ratio_lower :
   norm_num
 
 /-- ⁹⁰Sr corrected: ratio 1.11 (systematic overshoot from missing Coulomb). -/
--- Ref: NNDC/ENSDF, [manuscript] §6/hadron-half-life-verification
+-- Ref: NNDC/ENSDF, [leitner2026] §6/hadron-half-life-verification
 theorem strontium90_corr_ratio_upper :
     corr_strontium90 / obs_strontium90 < 1.12 := by
   unfold corr_strontium90 obs_strontium90
@@ -217,7 +217,7 @@ theorem strontium90_corr_ratio_lower :
   norm_num
 
 /-- ¹³⁷Cs corrected: ratio 1.09 (best heavy-nucleus agreement). -/
--- Ref: NNDC/ENSDF, [manuscript] §6/hadron-half-life-verification
+-- Ref: NNDC/ENSDF, [leitner2026] §6/hadron-half-life-verification
 theorem cesium137_corr_ratio_upper :
     corr_cesium137 / obs_cesium137 < 1.10 := by
   unfold corr_cesium137 obs_cesium137
@@ -231,7 +231,7 @@ theorem cesium137_corr_ratio_lower :
   norm_num
 
 /-- ²¹⁰Bi corrected: ratio 1.16 (Coulomb enhancement significant for Z=83). -/
--- Ref: NNDC/ENSDF, [manuscript] §6/hadron-half-life-verification
+-- Ref: NNDC/ENSDF, [leitner2026] §6/hadron-half-life-verification
 theorem bismuth210_corr_ratio_upper :
     corr_bismuth210 / obs_bismuth210 < 1.20 := by
   unfold corr_bismuth210 obs_bismuth210
@@ -251,7 +251,7 @@ theorem bismuth210_corr_ratio_lower :
 /-- A half-life prediction compared with observation.
     Agreement is expressed as a ratio bound: both pred/obs and obs/pred
     are less than the tolerance factor (e.g. 1.25 for 25% agreement). -/
--- Ref: [manuscript] §6/hadron-half-life-verification
+-- Ref: [leitner2026] §6/hadron-half-life-verification
 structure HalfLifePrediction where
   /-- Name of the nucleus. -/
   nucleus : String
@@ -279,7 +279,7 @@ structure HalfLifePrediction where
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- ³H: predicted 13 yr vs observed 12.32 yr, ratio < 1.06. -/
--- Ref: NNDC/ENSDF, [manuscript] §6/hadron-half-life-verification
+-- Ref: NNDC/ENSDF, [leitner2026] §6/hadron-half-life-verification
 theorem tritium_ratio_upper :
     pred_tritium / obs_tritium < 1.25 := by
   unfold pred_tritium obs_tritium
@@ -293,7 +293,7 @@ theorem tritium_ratio_lower :
   norm_num
 
 /-- ¹⁴C: predicted 6800 yr vs observed 5730 yr, ratio < 1.19. -/
--- Ref: NNDC/ENSDF, [manuscript] §6/hadron-half-life-verification
+-- Ref: NNDC/ENSDF, [leitner2026] §6/hadron-half-life-verification
 theorem carbon14_ratio_upper :
     pred_carbon14 / obs_carbon14 < 1.25 := by
   unfold pred_carbon14 obs_carbon14
@@ -307,7 +307,7 @@ theorem carbon14_ratio_lower :
   norm_num
 
 /-- ⁶⁰Co: predicted 6.2 yr vs observed 5.2714 yr, ratio < 1.18. -/
--- Ref: NNDC/ENSDF, [manuscript] §6/hadron-half-life-verification
+-- Ref: NNDC/ENSDF, [leitner2026] §6/hadron-half-life-verification
 theorem cobalt60_ratio_upper :
     pred_cobalt60 / obs_cobalt60 < 1.25 := by
   unfold pred_cobalt60 obs_cobalt60
@@ -321,7 +321,7 @@ theorem cobalt60_ratio_lower :
   norm_num
 
 /-- ⁹⁰Sr: predicted 32 yr vs observed 28.79 yr, ratio < 1.12. -/
--- Ref: NNDC/ENSDF, [manuscript] §6/hadron-half-life-verification
+-- Ref: NNDC/ENSDF, [leitner2026] §6/hadron-half-life-verification
 theorem strontium90_ratio_upper :
     pred_strontium90 / obs_strontium90 < 1.25 := by
   unfold pred_strontium90 obs_strontium90
@@ -335,7 +335,7 @@ theorem strontium90_ratio_lower :
   norm_num
 
 /-- ¹³⁷Cs: predicted 33 yr vs observed 30.17 yr, ratio < 1.10. -/
--- Ref: NNDC/ENSDF, [manuscript] §6/hadron-half-life-verification
+-- Ref: NNDC/ENSDF, [leitner2026] §6/hadron-half-life-verification
 theorem cesium137_ratio_upper :
     pred_cesium137 / obs_cesium137 < 1.25 := by
   unfold pred_cesium137 obs_cesium137
@@ -349,7 +349,7 @@ theorem cesium137_ratio_lower :
   norm_num
 
 /-- ²¹⁰Bi: predicted 5.8 d vs observed 5.012 d, ratio < 1.16. -/
--- Ref: NNDC/ENSDF, [manuscript] §6/hadron-half-life-verification
+-- Ref: NNDC/ENSDF, [leitner2026] §6/hadron-half-life-verification
 theorem bismuth210_ratio_upper :
     pred_bismuth210 / obs_bismuth210 < 1.25 := by
   unfold pred_bismuth210 obs_bismuth210
@@ -367,7 +367,7 @@ theorem bismuth210_ratio_lower :
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- Tritium (³H → ³He + e⁻ + ν̄ₑ). -/
--- Ref: NNDC/ENSDF, [manuscript] §6/hadron-half-life-verification
+-- Ref: NNDC/ENSDF, [leitner2026] §6/hadron-half-life-verification
 noncomputable def tritium_prediction : HalfLifePrediction where
   nucleus := "³H"
   A := 3
@@ -382,7 +382,7 @@ noncomputable def tritium_prediction : HalfLifePrediction where
   ratio_lower := tritium_ratio_lower
 
 /-- Carbon-14 (¹⁴C → ¹⁴N + e⁻ + ν̄ₑ). -/
--- Ref: NNDC/ENSDF, [manuscript] §6/hadron-half-life-verification
+-- Ref: NNDC/ENSDF, [leitner2026] §6/hadron-half-life-verification
 noncomputable def carbon14_prediction : HalfLifePrediction where
   nucleus := "¹⁴C"
   A := 14
@@ -397,7 +397,7 @@ noncomputable def carbon14_prediction : HalfLifePrediction where
   ratio_lower := carbon14_ratio_lower
 
 /-- Cobalt-60 (⁶⁰Co → ⁶⁰Ni + e⁻ + ν̄ₑ). -/
--- Ref: NNDC/ENSDF, [manuscript] §6/hadron-half-life-verification
+-- Ref: NNDC/ENSDF, [leitner2026] §6/hadron-half-life-verification
 noncomputable def cobalt60_prediction : HalfLifePrediction where
   nucleus := "⁶⁰Co"
   A := 60
@@ -412,7 +412,7 @@ noncomputable def cobalt60_prediction : HalfLifePrediction where
   ratio_lower := cobalt60_ratio_lower
 
 /-- Strontium-90 (⁹⁰Sr → ⁹⁰Y + e⁻ + ν̄ₑ). -/
--- Ref: NNDC/ENSDF, [manuscript] §6/hadron-half-life-verification
+-- Ref: NNDC/ENSDF, [leitner2026] §6/hadron-half-life-verification
 noncomputable def strontium90_prediction : HalfLifePrediction where
   nucleus := "⁹⁰Sr"
   A := 90
@@ -427,7 +427,7 @@ noncomputable def strontium90_prediction : HalfLifePrediction where
   ratio_lower := strontium90_ratio_lower
 
 /-- Cesium-137 (¹³⁷Cs → ¹³⁷Ba + e⁻ + ν̄ₑ). -/
--- Ref: NNDC/ENSDF, [manuscript] §6/hadron-half-life-verification
+-- Ref: NNDC/ENSDF, [leitner2026] §6/hadron-half-life-verification
 noncomputable def cesium137_prediction : HalfLifePrediction where
   nucleus := "¹³⁷Cs"
   A := 137
@@ -442,7 +442,7 @@ noncomputable def cesium137_prediction : HalfLifePrediction where
   ratio_lower := cesium137_ratio_lower
 
 /-- Bismuth-210 (²¹⁰Bi → ²¹⁰Po + e⁻ + ν̄ₑ). -/
--- Ref: NNDC/ENSDF, [manuscript] §6/hadron-half-life-verification
+-- Ref: NNDC/ENSDF, [leitner2026] §6/hadron-half-life-verification
 noncomputable def bismuth210_prediction : HalfLifePrediction where
   nucleus := "²¹⁰Bi"
   A := 210
@@ -465,7 +465,7 @@ noncomputable def bismuth210_prediction : HalfLifePrediction where
     μ₀ (dimensional unit choice), and the standard-physics value
     of G_F² m_e⁵ (which decomposes into q-dependent factors times
     μ₀, pending derivation of the weak-scale crossing count N_v). -/
--- Ref: NNDC/ENSDF, [manuscript] §6/hadron-half-life-verification
+-- Ref: NNDC/ENSDF, [leitner2026] §6/hadron-half-life-verification
 theorem all_six_agree :
     tritium_prediction.predicted / tritium_prediction.observed < 1.25 ∧
     tritium_prediction.observed / tritium_prediction.predicted < 1.25 ∧
@@ -496,7 +496,7 @@ theorem all_six_agree :
     all heavier nuclei.  Remaining systematic overshoot (10–17%)
     is attributed to the Skein Coulomb enhancement (Fermi function)
     not yet included. -/
--- Ref: NNDC/ENSDF, [manuscript] §6/hadron-half-life-verification
+-- Ref: NNDC/ENSDF, [leitner2026] §6/hadron-half-life-verification
 theorem all_six_corrected_agree :
     corr_tritium / obs_tritium < 1.02 ∧
     obs_tritium / corr_tritium < 1.02 ∧
@@ -523,28 +523,28 @@ theorem all_six_corrected_agree :
 
 /-- Substrate parameter q = 1/(1 - √(Vol(4₁)/m_μ/m_e)) ≈ 1.110.
     Source: q_parameter.py witness (CODATA 2022 + SnapPy 3.3.2). -/
--- Ref: [manuscript] §6/hadron-half-life-verification
+-- Ref: [leitner2026] §6/hadron-half-life-verification
 noncomputable def q_substrate : ℝ := 1.10997
 
 /-- ℏ_q² = Vol(4₁)/(m_μ/m_e) ≈ 0.009816. -/
--- Ref: [manuscript] §6/hadron-half-life-verification
+-- Ref: [leitner2026] §6/hadron-half-life-verification
 noncomputable def hbarQSq : ℝ := (1 - q_substrate⁻¹) ^ 2
 
 /-- Crossing energy E_× = ½(q - q⁻¹) ≈ 0.10452. -/
--- Ref: [manuscript] §6/hadron-half-life-verification
+-- Ref: [leitner2026] §6/hadron-half-life-verification
 noncomputable def E_cross : ℝ := 0.10452
 
 /-- Dimensional scale μ₀ ≈ 1.6296 MeV/Skein. -/
--- Ref: [manuscript] §6/hadron-half-life-verification
+-- Ref: [leitner2026] §6/hadron-half-life-verification
 noncomputable def mu_0 : ℝ := 1.6296
 
 /-- Sensitivity: 1% shift in q changes decay rate by ~48%.
     Formula: (q²-1)/(q²+1) + 5(q²+1)/(q²-1). -/
--- Ref: [manuscript] beta-decay-from-q.witness.json
+-- Ref: [leitner2026] beta-decay-from-q.witness.json
 noncomputable def sensitivity : ℝ := 48.2
 
 /-- Sensitivity > 40 (the decay rate is highly sensitive to q). -/
--- Ref: [manuscript] beta-decay-from-q.witness.json
+-- Ref: [leitner2026] beta-decay-from-q.witness.json
 theorem sensitivity_large : 40 < sensitivity := by
   unfold sensitivity; norm_num
 
