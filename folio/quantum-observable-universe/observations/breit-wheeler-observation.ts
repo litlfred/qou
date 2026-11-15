@@ -10,7 +10,7 @@ export default remark({
   ],
   tags: [
     "breit-wheeler", "pair-creation", "polarisation",
-    "STAR", "ATLAS", "testable", "first-testable",
+    "STAR", "ATLAS",
     "cos2phi", "azimuthal-asymmetry",
   ],
   cites: ["star2021bw", "atlas2021bw"],
@@ -23,8 +23,8 @@ export default remark({
         "was consistent with, and followed from, the Hecke selection rule, quoted a cos(2φ) amplitude of 10–15 %, and said " +
         "E₀ ≈ 2.27 MeV equals 2m_e plus ℏ_q ≈ 1.25 MeV. STAR (arXiv:1910.12400) reports cos 4Δφ = (16.8 ± 2.5) %, reproduced " +
         "by lowest-order QED (16.5 %), and QED gives nonzero parallel-polarisation pair production; ℏ_q = (q−1)/q ≈ 0.0991 " +
-        "is dimensionless. The ATLAS sentence was not re-checked against the paper. The `testable` tags are retained " +
-        "pending owner review. The bibliography title of `star2021bw` may not match PRL 127, 052302; not changed here.",
+        "is dimensionless. The ATLAS sentence was not re-checked against the paper. The `testable` / `first-testable` tags " +
+        "were dropped (owner H3). The bibliography title of `star2021bw` may not match PRL 127, 052302; not changed here.",
     },
   ],
 });

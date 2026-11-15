@@ -75,7 +75,7 @@ We take equal color in both generators, $\varphi_0 = \varphi_1 = \psi_0 = \psi_1
 - $L_+$: $\phi^2$
 - $L_-$: $\phi^2$
 
-The equal Hopf link content ($L_+ = L_- = \phi^2$) implies zero chirality. The net valuation is $(1 + 2\phi)^2 + 2\phi^2 h$. Setting $E_{\mathrm{pair}} = 2m_e$ fixes $\phi = 0.0487$.
+The equal Hopf link content ($L_+ = L_- = \phi^2$) implies zero chirality. The net valuation is $(1 + 2\phi)^2 + 2\phi^2 h$. Fitting this to $E_{\mathrm{pair}} = 2m_e$ gives $\phi = 0.0487$. This value is a fit to the measured electron mass, not a derivation.
 
 **Circular (orthogonal) polarization:**
 We take orthogonal polarization, $\varphi_0 = s$, $\varphi_1 = 0$, $\psi_0 = 0$, $\psi_1 = s$.
@@ -85,9 +85,9 @@ We take orthogonal polarization, $\varphi_0 = s$, $\varphi_1 = 0$, $\psi_0 = 0$,
 - $L_+$: $s^2$
 - $L_-$: $0$
 
-Only $L_+$ appears ($L_- = 0$). This produces maximally chiral Hopf content. The Hecke self-energy vanishes ($\varphi_0\psi_0 = \varphi_1\psi_1 = 0$). The net valuation is $(1 + s)^2$. Setting $E_{\mathrm{pair}} = 2m_e$ fixes $s = 0.0978$.
+Only $L_+$ appears ($L_- = 0$). This produces maximally chiral Hopf content. The Hecke self-energy vanishes ($\varphi_0\psi_0 = \varphi_1\psi_1 = 0$). The net valuation is $(1 + s)^2$. Fitting this to $E_{\mathrm{pair}} = 2m_e$ gives $s = 0.0978$. This value is a fit, not a derivation.
 
-Both models close the $1.6\%$ energy gap. The color weight generates Hopf link content $L_\pm$ that supplies the missing pair production energy. The asymmetry $L_+ \neq L_-$ in the circular model acts as the categorical expression of photon helicity.
+Both fits close the $1.6\%$ energy gap by construction, so closing it is not evidence for either model. The color weight generates Hopf link content $L_\pm$ that supplies the missing pair production energy. The asymmetry $L_+ \neq L_-$ in the circular model acts as the categorical expression of photon helicity.
 
 #### Four-term extension
 
