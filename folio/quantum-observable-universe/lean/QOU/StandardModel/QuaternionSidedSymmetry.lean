@@ -73,8 +73,7 @@ theorem comm_unitI_iff (h2 : ∀ x : R, 2 * x = 0 → x = 0) (b : BringCone R) :
   constructor
   · rintro ⟨hj, hk⟩
     refine ⟨h2 _ ?_, h2 _ ?_⟩ <;>
-      first | linear_combination hj | linear_combination -hj
-        | linear_combination hk | linear_combination -hk
+      first | linear_combination hj | linear_combination -hj | linear_combination hk | linear_combination -hk
   · rintro ⟨hj, hk⟩
     simp [hj, hk]
 
@@ -112,13 +111,13 @@ theorem star_reeb (x : BringCone R) : star (reebM_i x) = -(unitI * star x) := by
 theorem leftMul_comm_chiralGammaU_iff (a u : BringCone R) :
     (∀ p : BringCone R, a * chiralGammaU u p = chiralGammaU u (a * p)) ↔
       a * u = u * a := by
-  simp only [chiralGammaU, leftMul, reebM_i_eq_mul_unitI]
+  simp only [chiralGammaU, QOU.Tetraplectic.leftMul, reebM_i_eq_mul_unitI]
   constructor
   · intro h
     have h1 := congrArg (· * -unitI) (h 1)
     simp only [one_mul, mul_one] at h1
-    simpa [mul_assoc, unitI_mul_neg_unitI] using h1
+    simpa [mul_assoc, unitI_mul_neg_unitI, unitI_mul_unitI] using h1
   · intro h p
-    rw [← mul_assoc, h, mul_assoc, mul_assoc, mul_assoc]
+    rw [← mul_assoc, h, mul_assoc, mul_assoc]
 
 end QOU.StandardModel.QuaternionSidedSymmetry

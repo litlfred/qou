@@ -89,9 +89,9 @@ theorem flip_neg_inv : flip (-q⁻¹) s = flip q s := by
 /-- Relabelling the root swaps the lines: `P₊(−q⁻¹) = P₋(q)`. -/
 theorem Pp_neg_inv : Pp (-q⁻¹) s = Pm q s := by
   unfold Pp Pm
-  rw [bracket_neg_inv, inv_neg, inv_inv, neg_smul, ← smul_neg]
+  rw [bracket_neg_inv, inv_neg, inv_neg, inv_inv, neg_smul, ← smul_neg]
   congr 1
-  rw [neg_add, neg_neg, neg_smul, add_comm]
+  rw [neg_smul]
   abel
 
 /-- `P₋(−q⁻¹) = P₊(q)`. -/
@@ -143,7 +143,8 @@ theorem oneSidedL_eq_oneSidedR_iff (hq : q ≠ 0) (hq2 : q + q⁻¹ ≠ 0) (hs :
     by_contra hne
     exact one_ne_zero ((smul_eq_zero.mp h2).resolve_left hne)
   · intro h
-    rw [show q = q⁻¹ from sub_eq_zero.mp h, inv_inv]
+    have e : q⁻¹ = q := (sub_eq_zero.mp h).symm
+    exact congrArg (· • grading q s) e
 
 end Collapse
 
@@ -206,7 +207,8 @@ theorem signLine_flip (hq : 0 < q) : signLine q⁻¹ (flip q s) = signLine q s :
 
 /-- **The modulus selector is flavour-covariant**: for `s⁻¹` it is the other line. -/
 theorem modLine_flip (h : 1 < |q|) : modLine q⁻¹ (flip q s) = Pm q s := by
-  have hq : q ≠ 0 := by rintro rfl; simp at h
+  have hq : q ≠ 0 := by
+    rintro rfl; rw [abs_zero] at h; exact absurd h (not_lt.mpr zero_le_one)
   unfold modLine
   have : ¬ 1 < |q⁻¹| := by
     rw [abs_inv]; exact not_lt.mpr (inv_lt_one_of_one_lt₀ h).le
@@ -240,7 +242,7 @@ theorem pow_eq (hq : q ≠ 0) (hq2 : q + q⁻¹ ≠ 0) (hs : IsLetter q s) (N : 
   | zero => simp [Pp_add_Pm hq2]
   | succ n ih =>
     rw [pow_succ', ih, mul_add, mul_smul_comm, mul_smul_comm, eigen_plus hq hs,
-      eigen_minus hq hs, smul_smul, smul_smul, pow_succ', pow_succ']
+      eigen_minus hq hs, smul_smul, smul_smul, pow_succ, pow_succ]
 
 /-- `q^{−N} s^N = P₊ + (−q⁻²)^N P₋`. -/
 theorem normalised_pow_eq (hq : q ≠ 0) (hq2 : q + q⁻¹ ≠ 0) (hs : IsLetter q s) (N : ℕ) :
@@ -266,7 +268,7 @@ variable {q : ℝ} {s : A}
 
 theorem ratio_tendsto (h : 1 < |q|) :
     Tendsto (fun N : ℕ => (-(q ^ 2)⁻¹) ^ N) atTop (𝓝 0) := by
-  apply tendsto_pow_atTop_nhds_zero_of_abs_lt_one
+  apply tendsto_pow_atTop_nhds_zero_iff.mpr
   rw [abs_neg, abs_inv, abs_pow]
   have : 1 < |q| ^ 2 := one_lt_pow₀ h two_ne_zero
   exact inv_lt_one_of_one_lt₀ this
@@ -275,7 +277,8 @@ theorem ratio_tendsto (h : 1 < |q|) :
 `q`-line, which is the dominant (modulus `> 1`) line. -/
 theorem tendsto_normalised_pow (h : 1 < |q|) (hq2 : q + q⁻¹ ≠ 0) (hs : IsLetter q s) :
     Tendsto (fun N : ℕ => (q ^ N)⁻¹ • s ^ N) atTop (𝓝 (Pp q s)) := by
-  have hq : q ≠ 0 := by rintro rfl; simp at h
+  have hq : q ≠ 0 := by
+    rintro rfl; rw [abs_zero] at h; exact absurd h (not_lt.mpr zero_le_one)
   have e : (fun N : ℕ => (q ^ N)⁻¹ • s ^ N)
       = fun N : ℕ => Pp q s + (-(q ^ 2)⁻¹) ^ N • Pm q s := by
     funext N; exact normalised_pow_eq hq hq2 hs N
