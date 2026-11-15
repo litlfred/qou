@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-10-11T12:58:59Z
+updated_at: 2026-11-15T22:34:04Z
 parent: qou-10v9
 ---
 
@@ -3419,3 +3419,9 @@ Handed over by the c_k thread (owner card 22:30Z). Exact sympy on (C²)^⊗3, Ji
 1. **Derived identity:** Δ_S = (h²/2)·1 − (h/2)(σ₁+σ₂) = −(q·h·[2]/4)·(W₁ + W₂), with W_i = q⁻¹J_i the corpus weak vertex on crossing i (prop:weak-vertex-left-projector). So the Q_β element is already the weak vertex summed over the two crossings. Since W ∈ span{1,σ} commutes with E, F, K, every trace ε(Δ_S) is T³-blind, consistent with PR #7975.
 2. **Candidate ε_B (emission reading B, #7998):** replace each W_i by its Ř coefficient b = 2/(q[2]), the W⁻ emission amplitude from coev pair creation (#7973, #7977). Then ε_B(Δ_S) = −(q h [2]/4)·2b = −h exactly. Q = h·E₀·m_e = m_e(q+1)/q² = 0.875123 MeV at q₀, +11.861 % vs CODATA. Factor over the z_D base: F = 2q(q²+1)/(q⁴+1) = 1.96789 (required 1.75924 order-zero E₀).
 **Contamination:** I found ε_B analytically and saw its value before writing this note; it was not pre-registered. Choices inside it: reading B (open on qou-g0jn), the W ansatz plus the owner's definition of left, and the existing Δ_S. It does not see the nucleon word (V³) and does not separate n from p. Scope (a). Not a selection; scoring is diagnostic only.
+
+
+## PRE-REGISTRATION ε-W1 (2026-11-15 22:36Z, before computing) — word-level ε from the emission process
+Requested by the c_k thread; owner card on the weak-vertex thread pending (recommended 'both, word-level first'). Space (C²)^⊗3 ⊗ V ⊗ V* as in #7981. Jimbo Ř 'std', K = diag(q, q⁻¹), u = e₁. Initial state N ⊗ coev₄₅ (plain coev Σᵢ eᵢ⊗eᵢ), with N ∈ {|udd⟩; |udd⟩+|dud⟩+|ddu⟩ (T³ = −½ weight space, equal K weights)}. Apply X on quark strands, then the emission crossing Ř on strands (3,4) (#7973 arm A). A(X) = sum of components on {two u, one d on 1–3} ⊗ (d on 4, u on 5).
+Quantities: A(Δ_S·V³), A(V³), and ε_W := A(Δ_S·V³)/A(V³) (per-emission normalisation). Q = |ε_W|·E₀·m_e, E₀ = 1/(q(q−1)). Also the same with V⁶. Reported exactly and at q₀.
+Prediction (stated before running, no number): if ε_W = −h for both N and both words, reading B's word-blindness holds at word level and the candidate is just ε_B again. Any other value is reported as found. Not a selector; scored as a diagnostic only. Not scored against the required factor for choosing between variants.
