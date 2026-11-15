@@ -317,7 +317,7 @@ def main() -> int:
             "Constants and experimental inputs are deliberately NOT refreshed: "
             "2/(3pi), CODATA 1/alpha = 137.035999177(21), Q_beta^CODATA. A refresh "
             "that moved them would be a different and wrong change.")
-        print(f"\nWitness: {wb.save()}")
+        print(f"\nWitness: {wb.save(extra={"q0Anchor": "ambiguous", "q0AnchorReason": 'compares two pins on purpose: the retired CODATA-2018 muon pin 1.10997859555418... and the live muon pin 1.10997859564273...; it recomputes each published figure at both, so no single pin applies'})}")
     except Exception as e:  # pragma: no cover
         print(f"\n(witness emit skipped: {e})")
 
