@@ -3,6 +3,8 @@ import QOU.Archimedean.MassTowerOpenProblemsClasses
 import QOU.Archimedean.TypeBFoldedCrystalCombinatorics
 import QOU.Archimedean.ClausenFunctionMathlibFiller
 import QOU.Archimedean.BlochWignerMathlibFiller
+import QOU.Archimedean.BlochWignerLobachevsky
+import QOU.Knot.CatalanValueBounds
 
 
 /-!
@@ -189,5 +191,32 @@ class DeeperMathlibFillers
 theorem Cl_2_zero_consistent_with_pentagon
     (F : Type*) [DeeperMathlibFillers F] :
     Cl_2 0 = 0 := Cl_2_zero
+
+/-- **`Cl_2_PentagonIdentity` is FALSE, so the class has no instance.**
+
+    Its field quantifies over *all* `α β γ : ℝ`.  At `α = π/2`, `β = γ = 0`
+    the five terms are `Cl₂(π/2) − 0 + Cl₂(−π/2) − Cl₂(π/2) + 0 = Cl₂(−π/2)`,
+    and `Cl₂(−π/2) = −Cl₂(π/2) = −G < 0` (oddness, `Cl_2_neg`; positivity of
+    Catalan's constant, `Cl_2_pi_div_two_pos`).  The genuine five-term
+    relation holds only on the pentagon closure locus, which the field omits
+    (compare `Cl_2_PentagonHolds.closure` in
+    `QOU.Archimedean.ThreeSubstantiveMathlibFillers`).
+
+    Recorded 2026-11-15 (bean `qou-6qbv`).  The class is left as it stands:
+    restating it is a change to the remark's content and waits for the owner. -/
+theorem not_cl_2_pentagonIdentity : ¬ Cl_2_PentagonIdentity := by
+  intro h
+  have e := h.pentagon_holds_modulo_2pi (Real.pi / 2) 0 0
+  have hneg := QOU.Archimedean.Cl_2_neg (Real.pi / 2)
+  have hpos := QOU.Knot.Cl_2_pi_div_two_pos
+  simp only [sub_zero, zero_sub, Cl_2_zero] at e
+  linarith
+
+/-- Consequently `DeeperMathlibFillers F` has no instance for any `F`, and
+    every theorem with a `[DeeperMathlibFillers F]` hypothesis (here
+    `Cl_2_zero_consistent_with_pentagon`) is vacuously true, not evidence
+    that the fillers are consistent. -/
+theorem not_deeperMathlibFillers (F : Type*) : ¬ DeeperMathlibFillers F :=
+  fun h => not_cl_2_pentagonIdentity h.pentagon_identity
 
 end QOU.Archimedean.DeeperFillers
