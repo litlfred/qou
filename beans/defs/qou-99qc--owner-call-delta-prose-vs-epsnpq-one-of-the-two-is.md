@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-15T22:43:32Z
+updated_at: 2026-11-15T22:44:40Z
 parent: qou-10v9
 ---
 
@@ -3437,3 +3437,15 @@ Setup: same as ε-W1 (computations/probes/word_level_epsilon_probe.py). n→p: s
 Report for each word and state pair: ε_np, ε_pn, ratio ε_pn/ε_np (exact), plus check whether ε_pn(q) = ε_np(q⁻¹) (the u↔d flip).
 Prediction (H0): ε_pn = ε_np exactly (no asymmetry from emission). Alternative H1: they are related by q→q⁻¹ only. Anything else is reported as found.
 Scope: structural only. There is no measured p→n width to score against, so nothing is compared to data and no row is selected.
+
+
+### PRE-REGISTRATION ε-TW1 (2026-11-15 22:46Z, owner: 'ΔS followed by something like 1⊗twist ... like the involution?')
+Same process as ε-NP1. The new element is X·Δ_S, where X is applied after Δ_S and before the emission crossing (X is in the numerator only): ε_X = A(X·Δ_S·V^k)/A(V^k).
+X candidates, all fixed before computing:
+(1) T23 = Ř² on quark strands 2,3 (the ribbon twist on V⊗V, without the θ_V² scalar);
+(2) J23 = P₊ − P₋ on strands 2,3 (the involution, J² = 1);
+(3) F3 = the u↔d flip on quark strand 3 (the emitting strand);
+(4) Fall = the u↔d flip on all three quark strands;
+(5) F4 = the u↔d flip on the emitted strand 4, applied after the crossing.
+Words V³ and V⁶; both state choices; both n→p and p→n.
+No numerical prediction. Nothing is selected by closeness to −h or to CODATA. Q at q₀ is shown for display only.
