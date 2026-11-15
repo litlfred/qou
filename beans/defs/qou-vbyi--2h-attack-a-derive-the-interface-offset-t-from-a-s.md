@@ -93,3 +93,42 @@ PR #7192 carries the measurement above.
 
 
 ## 2026-09-12 — PR #7192 merged to main (6a593ed858). The diproton-sign measurement above is now on main (gamma_gamma_h3_psd_selector_probe.py, 8/8; audit 2026-09-11-gamma-gamma-word-selection-step3.md). Scope-(a) stands; the bond that unbinds the diproton is the SELECTED gamma-gamma bond G^3 = (sigma_2 sigma_3^-1)^3 under the form/Frobenius readings, and at q = 1 that bond is the identity (the 3-cycle cubed), which is why the effect is 4.5 keV. Bean stays open: which PSD reading is canonical is an owner call (qou-ales).
+
+
+## 2026-08-31 — the concrete construction target (NOT a new refutation)
+
+Following the factor-form prune (#6351), the next question was "what in the
+Hecke data could carry a non-separable (S, L) coupling at all". Answer, from the
+word builders' signatures on main `4d87afd3f2d`:
+
+    atom_canonical_crossings(Z, N, *, include_inter, m_pp, m_pn, m_nn)
+    canonical_word_for(Z, N)
+    atom_braid_word_3A(Z, N, *, m_pp, m_pn, m_nn, include_inter,
+                       pn_convention, q, allow_float64)
+
+**No S, no T, no L, no channel argument anywhere.** Every channel-relevant knob
+is keyed on nucleon content: m_pp/m_pn/m_nn on the unordered species pair,
+pn_convention a global string.
+
+**This is NOT a new refutation, and must not be recorded as one.**
+`docs/audits/2026-08-09-two-nucleon-channels-isospin-not-crossing-count.md`
+already makes the argument, in those words: *"Any interface assigned from the
+unordered pair of species -- which is precisely what a multiplicity
+m_pp / m_pn / m_nn is -- is a function of that content, so it must give the two
+pn rows the same energy."* That is `content_keyed_interface_refuted`, and it is
+the corpus's, not mine.
+
+**What the signature adds is a construction target, not an argument.** For a
+coupling to exist at all, the word builders' SIGNATURE has to change: something
+channel-valued must reach `atom_canonical_crossings`. Today nothing can, so
+"add a coupling" is not a small edit to an existing knob -- there is no knob.
+That is worth knowing before scoping the work, and it is checkable in one grep.
+
+Blast radius if attempted: `atom_braid_word_3A` has **685 call sites across 382
+files** (recorded in its own docstring, where a rename was considered and
+rejected on exactly that count). A channel argument would have to default to the
+present behaviour or every one of those moves.
+
+**Still open, unchanged:** whether anything in the categorical data DERIVES a
+channel label to pass in. Without that, a channel argument is two free
+parameters wearing a signature, which `qou-h7mh` forbids.
