@@ -18,3 +18,11 @@ Goal: an instance of ColourStabilizerActionOnSU3 e V induced by construction on 
 
 Work: PR (draft) on branch claude/colour-stabilizer-bridge-2026-11-15; audit docs/audits/2026-11-15-colour-stabilizer-bridge.md; Lean QOU/StandardModel/ColourBridgeObstructions.lean, QOU/IwahoriHecke/JimboClassicalLimit.lean.
 Related: qou-ni4b (Hecke-side instantiation), qou-abtu (furey2016 citation), qou-qs4c.
+
+## 2026-11-15 — q2c probe (option C) done, scope (a); A+B NOT started (stand-down)
+Exact probe `computations/eightfold/quantum_g2_colour_stabilizer_probe.py`, audit §8.
+- V7 = 1+3+3bar under the long-root operators of U_q(g2); colour deformed at q^3.
+- At q != 1, no weight-(3a1+a2) element of U_q(n+) has a coproduct preserving 3(x)3 (at q=1 there is exactly one).
+- The q-cross-product's L_e is not scalar on the 3, so it does not commute with the long-root operators; the 3/3bar sign survives.
+The coordinator relayed owner "Q2 A B C explor" (A: strengthen the class with J, the Lie hom and a q=1 Ř field; B: a scoping
+paragraph in authorNotes). Neither is started, because a stand-down from session_01Qmmkt6dCyH72NJwcLGW2sF arrived first. Still open.
