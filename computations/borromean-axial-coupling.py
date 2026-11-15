@@ -77,6 +77,8 @@ from pyhecke.gram import (  # noqa: E402
     TR_M,
 )
 import mpmath as _mp  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()  # the LP gap certificate below was evaluated at mpmath's default 15
 from lp_dual_solver import (  # noqa: E402
     provenance,
     solve_operator_selection_lp,
