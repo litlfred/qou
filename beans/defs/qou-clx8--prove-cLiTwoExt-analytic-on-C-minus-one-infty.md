@@ -1,7 +1,7 @@
 ---
 # qou-clx8
 title: Prove cLiTwoExt analytic on ℂ ∖ [1,∞) — closes the last Route 5 plumbing link
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
@@ -11,7 +11,7 @@ tags:
     - mathlib-gap
     - reorg-2026-10-04
 created_at: 2026-08-07T15:20:00Z
-updated_at: 2026-10-04T15:13:32Z
+updated_at: 2026-11-15T13:50:00Z
 parent: qou-n4nr
 ---
 
@@ -421,3 +421,7 @@ self-contradiction. It is decidable without judgement — the discriminator is
 the bean asserting *its own* openness, not merely mentioning something open.
 
 Re-close it when the work its body names is actually done.
+
+## 2026-11-15 — closed (branch `claude/volume-dilog-bricks-2026-11-15`)
+
+Already proved on main: `analyticOnNhd_cLiTwoExt`, `differentiableOn_cLiTwoExt` in `QOU/MathlibExt/ComplexDilogarithmDeriv.lean` (2026-08-08); re-verified lean-direct exit 0, standard axioms only.

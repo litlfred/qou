@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-03T14:28:26Z
-updated_at: 2026-10-04T15:11:42Z
+updated_at: 2026-11-15T13:50:00Z
 parent: qou-r9ih
 ---
 
@@ -1133,3 +1133,7 @@ over the `c^m` orbits (46→47, 153→154). Anything reducing to an ordinary
 Bloch-group computation is blind here for the reason in G4.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+## 2026-11-15 — update (branch `claude/volume-dilog-bricks-2026-11-15`)
+
+PROOF (modulo one cited step) — doc https://claude.ai/artifact/9xU2nSF4sTbGnNEPRtUf19. The cubic is y²=(1−y)³, the NZ equation of H=(2 3). Galois-invariant flattening 2u=3v ⇒ ξⱼ=3[uⱼ,vⱼ]∈B̂(ℂ), Im 3ℒ₁=Vol(5₂). Step A (Lean, `FiveTwoStepALogAlgebra.lean`, sorry-free): Vⱼ−3ℒⱼ = (21,21,−3)·π²/6 in real part. Step B (cited: Zickert 2015 B̂(F)≅K₃^ind(F) natural in embeddings; Quillen transfer; K₃^ind(ℚ)=ℤ/24): Σ3ℒⱼ∈(π²/6)ℤ. Step C: Arb certifies Σ3ℒⱼ=−48·π²/6 (±3e-7). Hence ΣRe Vⱼ=−9·π²/6=−3π²/2. Also: `hrefl` discharged at the three roots (`FiveTwoReflectionDischarged.lean`, `fiveTwo_sum_reflection`). STAYS OPEN (rule 13a) until the Zickert step is checked against the source.

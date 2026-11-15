@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T10:30:00Z
-updated_at: 2026-10-04T15:14:07Z
+updated_at: 2026-11-15T13:50:00Z
 parent: qou-r9ih
 ---
 
@@ -1489,3 +1489,7 @@ and its parent `qou-0yqu` are closed by this route.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-09 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-15 — update (branch `claude/volume-dilog-bricks-2026-11-15`)
+
+Route resolved in qou-0yqu note of 2026-11-15: the right flattening is the Galois-INVARIANT one (ν=0, i.e. 2u=3v), not the branch data ε; with it each 3[u,v] is in B̂(ℂ) and the Galois sum is −48·π²/6. Quantisation unit π²/6 = 4π²/|K₃^ind(ℚ)|. Same mechanism checked on 9 trinomials y^A=(1−y)^B (all integer multiples).
