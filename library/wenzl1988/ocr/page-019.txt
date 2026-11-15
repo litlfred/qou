@@ -1,0 +1,60 @@
+Hecke algebras of type A, and subfactors 367
+
+(d) If to€T,, and r=to, p,, can be computed inductively by
+
+Pr &n-1 Pr—4a, Pr
+Po= TI Ee tari iy wher
+
+v=r,ttto 9a, — Fay
+
+(e) Pro &n Pto = 94, Pro-
+
+We remark here that for q=1, these idempotents do not specialize to the
+well known Young idempotents but to a different class of minimal idempotents
+belonging to Young’s seminormal (or orthogonal) representations (see [KJ],
+Theorem 3.2.14).
+
+If q is a primitive /-th root of unity, a,(q) is not well-defined. We can, however,
+still define representations of the same type as above for special classes of Young
+diagrams.
+
+Definition 2.4. Let k, JEN with k<]—1. A Young diagram A is called a (k, J)
+diagram if it has at most k rows and 4,—4,S1—k. Let A“ denote the set
+of all (k, 1) diagrams with n nodes.
+
+Similarly as in the general case, we define for a (k, J) diagram A the set
+TX <T,, consisting of tableaux teT, such that t’eT{* for a (k, )) diagram
+TeAeh,
+
+Let V{*) be the subspace of V, with basis {¢,, te T{*”}. If q is a primitive
+l-th root of unity, we define the linear map 7,(e) as in (2.4) for all vectors
+3, for which d, ; ;4, is not divisible by |. The restriction of this map to V{*”
+will be denoted by x%:(e;), i.e. we have for te T;"” as in (2.3)
+
+nt (e,) B=, i641 8 +A), i414, i4 1,9"? Bg, (2.9)
+
+It remains to show that these linear maps are well-defined for each te T{*:”.
+
+For i<n—1 note that as in (2.6)
+
+nr oe (2.10)
+
+ved
+
+So by induction assumption x (e,) is well-defined.
+For i=n—1 observe first that for any (k, J) tableau teT, belonging to the
+(k,1) diagram 2
+dion tonlSAy —Ap+k—-1<L. (2.11)
+
+Hence the coefficients occuring in the definition of x (e,_ ,) 8, are well-defined
+for each te T(A)™.
+
+To show that x“: is a representation, we first prove that V{*” is an invariant
+Subspace of V,. So let t be a (k,/) tableau such that g,-,(t) is standard but
+not a (k,1) tableau. By (2.11) this can only happen if the 2 boxes containing
+n~1 and n are in the first and in the last row respectively and if d,,»-1,,=1—I.
+But in this case dg, ,(,n—1.n= 4-1 =0 and n&%e,_ .) 6, =a,_, 5, =%,.
+
+To be able to use the computation for checking (H 1) before Theorem 2.2,
+we have to make sure that all coefficients there are well-defined even if some
+of the tableaux occurring there are not (k, /) tableaux. Again by (2.10), we only

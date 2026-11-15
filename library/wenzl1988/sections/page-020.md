@@ -1,0 +1,72 @@
+---
+doc_id: wenzl1988
+doc_title: "Hecke algebras of type A_n and subfactors"
+section_id: page-020
+section_title: "Page 20"
+pages: 20-20
+pdf_page: 20
+source_pdf: wenzl1988.pdf
+source_sha256: 5e62357250683cd6
+text_source: ocr
+granularity: page
+doc_brief: "Wenzl, Hecke algebras of type A_n and subfactors (Invent. Math. 92, 349–383, 1988) — semisimple quotients of H_n(q) at q = e^{2πi/l} labelled by (k,l) Young diagrams, and the subfactors with trivial relative commutant they give."
+---
+368 H. Wenzl
+
+need to consider the case with e,_, and e,_,. By (2.11) the only problem could
+oceur if |d,,,-2,,1=/. But as A(t’) is also a (k, [) diagram, this could only happen
+if the box containing n—2 is in the last row next to the last box there and
+the box containing n is at the end of the first row. But then it is easy to see
+that t'’” would no longer be a (k, /) tableau.
+
+With this observation the proof that 2” is a representation is the same
+as for the regular case. We thus obtain
+
+Corollary 2.5. Let q be a primitive I-th root of unity with 1=4 and let A denote
+the collection of all (k,l) diagrams for k=1,2, ...1-1. Then there exists for every
+A€ A a semisimple irreducible representation ® of H,(q). If 2 is a (k, 1) diagram
+for some keN,k<1—1, x coincides with n* ) as defined in (2.9). So we obtain
+a in general not faithful, semisimple representation
+
+™®: xeH,(g—> @D x(x).
+ae Ay
+
+Representations belonging to different (I) diagrams are not equivalent.
+
+Proof. We have already shown that x is a representation. Assume that a Young
+diagram AeA, is both a (k,,1) and a (k2,/) diagram with k, >k,. Then A,,=0
+by definition of (k,, 1) diagram. It follows that 1, <!—k, <l—k,. Hence in partic-
+ular, any subdiagram of 4 is both a (k,, J) and a (k,,/) diagram. But then
+1+) — 22.) by (2.10) and induction assumption for H,,_ ,(q).
+
+The irreducibility can be shown as in Theorem 2.2 by observing that
+4, i1+1(4) 9%,1+1,:(9) #0 for all te Tf such that also g,(t)e Ts. The fact that
+representations belonging to different (k, 1) diagrams are not equivalent is also
+shown as in Theorem 2.2 using Lemma 2.11 at the end of this section. O
+
+Let us denote the minimal central projections of x“ (H,,(q)) by 2@ with AeA”.
+Similarly as in (2.7), we define minimal idempotents p” of 7 (H, (q)), labelled
+by the elements of 7,” by
+
+1) Do A Gj
+Py=1 and pO =z%, p?.
+
+Note that these idempotents are only defined for the image of H,,(g) under
+the representation x. As this representation is not faithful in general, there
+is no obvious interpretation for them in H,(q) itsself. Otherwise we can prove
+for these idempotents the same properties (with exponent added to p,, I
+and z,) as stated for the p,’s in corollary (2.3).
+
+Let us fix k, lEN with 1= 4 and 1S/—1 and let for q=e?!"
+
+B= @® x*(H,(9)- (2.12)
+
+de Aged
+
+By definition of the xs, the restriction of this representation to H,-1(‘)
+is isomorphic to B,_,. With this identification we can define the representation
+nxn): H,(q) > B., of the corresponding inductive limites by
+
+nO x)= GB x(x) for xeH,(q). (2.13)
+
+Ae AGED

@@ -1,0 +1,55 @@
+366 H. Wenzl
+
+2. It can be checked by straightforward computations that relations
+(H1)—(H3) also hold for 1—e; instead of e; for i=1,2,...,n—1. Using the
+same inductive procedure as in the proof of the last theorem, we can show
+that the representation e;++7,(1—e,) is equivalent to 2,+, where 1* is obtained
+from A by interchanging rows with columns (e.g. [1"]* =[n]).
+
+As a first consequence of theorem (2.2) we can inductively compute special
+minimal idempotents of H,(q). Let us denote the diagram belonging to the
+tableau ¢ by A(t). Then with z, the minimal central idempotent belonging to
+7,(H,(q)), we define for each standard tableau te T, elements p, inductively by
+
+Pay=1 and p= Za Pr (2.7)
+
+It follows from (2.6) and induction that if to¢T,, 7,(p,,) is a rank 1 projection
+with
+Ten (Pro) YX a, B= oe Bey.
+
+teTn
+
+Let reT,,_,. It follows similarly from this and (2.6) that
+TAP) DY %H)= Yo mb.
+
+teT, teT,, =r
+
+Let us abbreviate d,,-,,, by d,. We obtain from (2.3) and (2.6) that
+Ten(Pr Cn—1 Pr) B= ag, 0, if t'=r. (2.8)
+
+To apply this formula we will first show that if t,, t,¢ 7, such that t, =r=(
+and if q is n-regular, then a4, (4) = 44,,(9) only if t;=t,. Assume that r belongs
+to the Young diagram A=[/,, ...A,JeA,-, and let t,, t, be obtained by adding
+the box with n in the i,-th and in the i,-th row of r respectively. Then we
+have
+
+ld, —4,,1=|4;,—4i, +2 -i, |S 41 tk-2 <n.
+
+Hence a, ,(q)+ 4,,(q) by lemma (2.1), (vi) for q n-regular.
+
+So we can compute z,(p,) as the spectral projection of 1,(p, e,—1 Pr) COTTE
+sponding to the eigenvalue a,,. This already shows part (d) of the following
+corollary by the faithfulness of z,. Part (e) follows similarly from (2.8) while
+part (a) is a consequence of the formula after (2.7). The rest of the corollary
+can be shown by induction using (2.7). It follows
+
+Corollary 2.3. Let q be n-regular and let for each standard tableau teT, the
+minimal idempotent p, be defined as in (2.7). Then we have
+
+(a) PpPi=PrP.=0 if th.
+
+(bo) XY pz.
+teT,
+(c) y P=.
+
+teTn

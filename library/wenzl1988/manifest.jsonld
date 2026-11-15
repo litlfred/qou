@@ -1,0 +1,64 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/wenzl1988",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "wenzl1988",
+  "contains": [
+    "library/wenzl1988/sections/page-001",
+    "library/wenzl1988/sections/page-002",
+    "library/wenzl1988/sections/page-003",
+    "library/wenzl1988/sections/page-004",
+    "library/wenzl1988/sections/page-005",
+    "library/wenzl1988/sections/page-006",
+    "library/wenzl1988/sections/page-007",
+    "library/wenzl1988/sections/page-008",
+    "library/wenzl1988/sections/page-009",
+    "library/wenzl1988/sections/page-010",
+    "library/wenzl1988/sections/page-011",
+    "library/wenzl1988/sections/page-012",
+    "library/wenzl1988/sections/page-013",
+    "library/wenzl1988/sections/page-014",
+    "library/wenzl1988/sections/page-015",
+    "library/wenzl1988/sections/page-016",
+    "library/wenzl1988/sections/page-017",
+    "library/wenzl1988/sections/page-018",
+    "library/wenzl1988/sections/page-019",
+    "library/wenzl1988/sections/page-020",
+    "library/wenzl1988/sections/page-021",
+    "library/wenzl1988/sections/page-022",
+    "library/wenzl1988/sections/page-023",
+    "library/wenzl1988/sections/page-024",
+    "library/wenzl1988/sections/page-025",
+    "library/wenzl1988/sections/page-026",
+    "library/wenzl1988/sections/page-027",
+    "library/wenzl1988/sections/page-028",
+    "library/wenzl1988/sections/page-029",
+    "library/wenzl1988/sections/page-030",
+    "library/wenzl1988/sections/page-031",
+    "library/wenzl1988/sections/page-032",
+    "library/wenzl1988/sections/page-033",
+    "library/wenzl1988/sections/page-034",
+    "library/wenzl1988/sections/page-035"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "wenzl1988",
+    "title_source": "slug",
+    "source_file": "wenzl1988.pdf",
+    "source_sha256": "5e62357250683cd69a5fd40cad7310b84458800d1dd769f1cacc89e479dfeb92",
+    "pages": 35,
+    "arxiv": null,
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

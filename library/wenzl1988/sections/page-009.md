@@ -1,0 +1,71 @@
+---
+doc_id: wenzl1988
+doc_title: "Hecke algebras of type A_n and subfactors"
+section_id: page-009
+section_title: "Page 9"
+pages: 9-9
+pdf_page: 9
+source_pdf: wenzl1988.pdf
+source_sha256: 5e62357250683cd6
+text_source: ocr
+granularity: page
+doc_brief: "Wenzl, Hecke algebras of type A_n and subfactors (Invent. Math. 92, 349–383, 1988) — semisimple quotients of H_n(q) at q = e^{2πi/l} labelled by (k,l) Young diagrams, and the subfactors with trivial relative commutant they give."
+---
+Hecke algebras of type A, and subfactors 357
+
+We are, of course, mainly interested in constructing proper subfactors of
+B. This can not be expected in general even if A, is a proper subalgebra of
+B, for all neN. We therefore need the following additional condition (see also
+[PP1]):
+
+(iii) Let &,,,, &4, and ég, be the trace preserving conditional expectations
+onto A,4,, A, and B, respectively. Then we will require
+
+&4,.,€8,=€, forall neN.
+
+It can be shown easily by induction on k (see also the proof of [PP1], Prop.
+(2.6), that this implies ¢,, ,, &3,=&, for all keN and in the limit
+
+&4 Ep, = €4,,-
+
+So whenever we write (A,) <(B,), we will mean sequences of finite dimensional
+C* algebras with a trace tr for which the just described properties (i)}{iii) hold.
+The inclusion matrix for A,<B, will be denoted by G,, the weight vectors
+of the restrictions of tr to A, and B, by §, and f, and their dimension vectors
+by d, and 6, respectively.
+
+Let e, be the projection coming from the basic construction for Ac B. Then
+e4be4=€4(b) e4=€4,(b) e, for any beB,. Hence it follows from Theorem 1.1
+that
+
+<B,,€4>=Q,0K,, with Q,=<B,, &,,>-
+
+K,, is isomorphic to a subalgebra of B,.
+
+Let z, be the central projection for Q,. Then, again by Theorem 1.1, z,
+is the central support of e, in <B,, e4>. Hence, as the union of the <B,, e,>
+is weakly dense in the factor <B, e,>, the z,’s are an increasing sequence converg-
+ing to 1 weakly. By (1.2) and (1.3), the weight vector of Tr on Q, is equal
+to 1/[B: A] &,. So, with <.,.> the usual scalar product, we have
+
+Tr(z,)=<G, Gi d,, 1/[B: A] s,>. (1.9)
+
+We will be mainly concerned with the case when the sequences (A,)<(B,)
+have periodic Bratteli diagrams. Let us recall first that a real quadratic matrix
+D with nonnegative entries is called primitive if D' has only positive entries
+for some IeN. We will say that the sequence (A,) is periodic with period k
+if there is an nyéN such that for all n>ng the inclusion matrix for A,4,CAn+net
+is the same (after a possible relabeling of the central projections) as the one
+for A,<A,4,. We include in our definition here the additional condition that
+the inclusion matrix for A, A,+, is primitive, as this is the only interesting
+case for us.
+
+We will say that (A,)<(B,) is periodic if both (A,) and (B,) are periodic
+with same period k and if also the inclusion matrices for A, .,¢B,+, and A, ¢ B,
+
+te the same. Hereby we assume the same identification of central projections
+of A, and A,+, and of B, and B, 4, as for the periodicity of (A,) and (B,).
+
+It is easy to see that we can always make a periodic sequence with period
+
+k a periodic sequence with period 1 by omitting algebras in between and by

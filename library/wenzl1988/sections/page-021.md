@@ -1,0 +1,69 @@
+---
+doc_id: wenzl1988
+doc_title: "Hecke algebras of type A_n and subfactors"
+section_id: page-021
+section_title: "Page 21"
+pages: 21-21
+pdf_page: 21
+source_pdf: wenzl1988.pdf
+source_sha256: 5e62357250683cd6
+text_source: ocr
+granularity: page
+doc_brief: "Wenzl, Hecke algebras of type A_n and subfactors (Invent. Math. 92, 349–383, 1988) — semisimple quotients of H_n(q) at q = e^{2πi/l} labelled by (k,l) Young diagrams, and the subfactors with trivial relative commutant they give."
+---
+Hecke algebras of type A, and subfactors 369
+
+Let n<mand let G,, ,, be the inclusion matrix for B, ¢ B,,. By (2.10), the inclusion
+matrix G,-1,,=(8,,,), Where 2’c A®”, is given by
+
+1 if a<a
+gram{g if ved (2.14)
+
+It is easy to show by induction on m—n that for we A, and Ae A,, the entry
+8,,2 iS positive if and only if p<. Our aim is to show that the inclusion diagrams
+for the B,’s eventually become periodic with period k. To do so, we first need
+some combinatorial results.
+
+Lemma 2.6. Let F: () A*?— (|) A®? be the map that adds a column of k
+
+neN neN
+nodes on the left hand side of a (k,l) diagram (eg. for k=3 we have
+F({21])=[321)).
+
+(i) If AceA® and n>(I—1)(k—1)+sk, then 4, 2=5+1.
+(ii) If n=ny=(I—k—1)(k—1), then F restricted to A*” is a bijection between
+A®) and A%2.
+(iii) F preserves the inclusion pattern, i.e. F (A')< F(A) if and only if 2'<A.
+(iv) If s>21, we A? and AE A%2,, then <a.
+
+Proof. (i) Assume A,<s. As A is a (k,]) diagram, 2, <s+/—k and hence also
+4,<s+l—k for r=2, 3,...k—1. But then n<(st+I—k)(k—1)+s=(I—A)(k—1)
+tsk.
+
+(ii) Obviously F is injective. Moreover, as n+k2(l—k—1)(k—1)+k
+=(I—k)(k—1)+1, each AeA) has at least one node in its last row, ie.
+heF(A&),
+
+(iii) This is clear.
+
+(iv) It is enough to show that 4,2 y,. If this were not the case, 4,SA,+1—1
+<py,+1—-1 and
+
+ApSAy<my tl—-1S,42(I-1) for r=1,2,3,...,k.
+But then sk<2k(I—1).
+
+Corollary 2.7. Let B, be as in (2.12) and let ny be as in Lemma 2.6 (i). Then
+there exists a primitive matrix D such that if n>1o, Gyn+r.=D" for all reN.
+
+Proof. By Lemma 2.6 (ii), F induces a bijection between the minimal central
+Projections of B, and B, , and between the minimal central projections of
+B41 and Bys,41. By (2.14) and (iii), g4,4=8 ay, ra for Ve Am and 2EAG.
+Hence Grn+1 can be identified with Gy+in+e+1 under F. As Gynse
+= Gynt Grtt,n42++-Gn+k—1,n+k (See remarks after (1.4)) and as a similar compu-
+tation holds for Gyik.n+2%> We can also identify G,,,+, and Gysx.n+24 in the
+same way. As n2no, D=G,,,+4 is a square matrix which has only nonnegative
+entries and G,,,+,.=D". By the remark after (2.14) and (iv) D°=G,,,4,% only
+has positive entries for s>2I. Hence D is primitive.
+
+For our considerations so far we could have used the semi-orthogonal repre-
+Sentations as well. This would have had the advantage of not having to use

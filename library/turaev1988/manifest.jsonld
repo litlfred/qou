@@ -1,0 +1,56 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/turaev1988",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "turaev1988",
+  "contains": [
+    "library/turaev1988/sections/page-001",
+    "library/turaev1988/sections/page-002",
+    "library/turaev1988/sections/page-003",
+    "library/turaev1988/sections/page-004",
+    "library/turaev1988/sections/page-005",
+    "library/turaev1988/sections/page-006",
+    "library/turaev1988/sections/page-007",
+    "library/turaev1988/sections/page-008",
+    "library/turaev1988/sections/page-009",
+    "library/turaev1988/sections/page-010",
+    "library/turaev1988/sections/page-011",
+    "library/turaev1988/sections/page-012",
+    "library/turaev1988/sections/page-013",
+    "library/turaev1988/sections/page-014",
+    "library/turaev1988/sections/page-015",
+    "library/turaev1988/sections/page-016",
+    "library/turaev1988/sections/page-017",
+    "library/turaev1988/sections/page-018",
+    "library/turaev1988/sections/page-019",
+    "library/turaev1988/sections/page-020",
+    "library/turaev1988/sections/page-021",
+    "library/turaev1988/sections/page-022",
+    "library/turaev1988/sections/page-023",
+    "library/turaev1988/sections/page-024",
+    "library/turaev1988/sections/page-025",
+    "library/turaev1988/sections/page-026",
+    "library/turaev1988/sections/page-027"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "turaev1988",
+    "title_source": "slug",
+    "source_file": "turaev1988.pdf",
+    "source_sha256": "3ccc9e1ee4f9548011a97a7b52d20a7502900366e516011666bcc922468885ed",
+    "pages": 27,
+    "arxiv": null,
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

@@ -1,0 +1,67 @@
+---
+doc_id: wenzl1988
+doc_title: "Hecke algebras of type A_n and subfactors"
+section_id: page-003
+section_title: "Page 3"
+pages: 3-3
+pdf_page: 3
+source_pdf: wenzl1988.pdf
+source_sha256: 5e62357250683cd6
+text_source: ocr
+granularity: page
+doc_brief: "Wenzl, Hecke algebras of type A_n and subfactors (Invent. Math. 92, 349–383, 1988) — semisimple quotients of H_n(q) at q = e^{2πi/l} labelled by (k,l) Young diagrams, and the subfactors with trivial relative commutant they give."
+---
+Hecke algebras of type A, and subfactors 351
+
+In the following section we will consider a special class of traces tr on H,,(q)
+which we will call Markov traces. They are defined inductively by tr(1)=1
+and by tr(g,, w)=ztr(w), where zeC is a fixed number and weH,(q). They were
+first studied for the full Hecke algebra by A. Ocneanu who used them to general-
+ize Jones’ link polynomial (see [J-3] and [O]). Markov traces are important
+for our purposes, because whenever they factor over a C* representation p
+of H,.(q) on which they are faithful and positive, the condition of the first
+section is satisfied for A4,=p((g», 83, -.-8,-1>) and B,=p(H,(q)). We will give
+complete proofs of the classification of positive Markov traces which was
+anounced in [O]. If g=e*?**", we have exactly one positive Markov trace for
+each k, k=1, 2, ..., 1—1. The representations coming from the GNS construction
+with respect to these traces correspond to the representations x” mentioned
+in the last paragraph. Having all these data available, the results of the first
+section can be applied for the following situation:
+
+Let meN and let A be the subfactor n™"((gn41, 2m42--->)” of the factor
+B=n(H,,(q))’. Then the relative commutant A’n B is equal to x (H,,(q)).
+So if m=1, the relative commutant is trivial. In this case the index is equal
+to sin?(kx/)/sin?(x/l). For m>1, we get subfactors with trivial relative commu-
+tant by reducing by a minimal projection peA’™B. So we obtain for each
+(k, ) diagram A with m boxes a subfactor A,c B, with trivial relative commutant
+
+di
+and index (B,:AJ= T] sin?((A,—A,+s—r) x/l)
+we - icresse sin? ((s—r) n/l)
+
+If! oo the index values tend to the square of the dimension of the irreducible
+representation of SU(k) corresponding to A.
+
+This relationship to irreducible representations of SU (k) will be studied again
+in a subsequent paper using M. Jimbo’s solutions of the quantum Yang-Baxter
+equations. This approach will also enable us to compute the higher relative
+commutants of our examples of subfactors. Moreover, we will also show that
+the subfactors coming from the Hecke algebra approach for real and positive
+parameters have nontrivial relative commutants except for q=1. The corre-
+sponding subfactors for g=1 have been studied by A. Wassermann, who com-
+puted their indices and higher relative commutants.
+
+Acknowledgements. This paper is a slightly expanded version of my Ph.D. thesis at University of
+Pennsylvania. I would like to thank my adviser Vaughan Jones for useful suggestions and for making
+1 possible for me to stay at MSRI, Berkeley during the special year for operator algebras. Special
+thanks are going to Adrian Ocneanu for telling me his formula for the weights of the Markov
+traces and for useful discussions about the representations of the Hecke algebras. Part of the work
+on this paper was done at University of Ottawa. I would like to thank David Handelman for
+his invitation and hospitality. Finally, it is a pleasure to thank Dan Voiculescu and Antony Wasser-
+mann for useful comments and references.
+
+81. Construction of subfactors by AF algebras
+
+The goal of this section is to provide tools for the construction of subfactors
+of the hyperfinite II, factor by AF algebras and for computing their invariants.
+€ will first recall some basic results about subfactors (see [J-1], §3 and §4).

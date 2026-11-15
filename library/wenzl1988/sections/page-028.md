@@ -1,0 +1,75 @@
+---
+doc_id: wenzl1988
+doc_title: "Hecke algebras of type A_n and subfactors"
+section_id: page-028
+section_title: "Page 28"
+pages: 28-28
+pdf_page: 28
+source_pdf: wenzl1988.pdf
+source_sha256: 5e62357250683cd6
+text_source: ocr
+granularity: page
+doc_brief: "Wenzl, Hecke algebras of type A_n and subfactors (Invent. Math. 92, 349–383, 1988) — semisimple quotients of H_n(q) at q = e^{2πi/l} labelled by (k,l) Young diagrams, and the subfactors with trivial relative commutant they give."
+---
+376 H. Wenzl
+
+j-th column of A. It follows from [Mc], I. §3, Ex. 3 (following [L], p. 125) that
+
+a—bqii
+
+s, (a,b, =a" Il 1—gh@a’
+
+(Dea
+
+(3.5)
+
+where n(d)= ) (i—1) 4; and A(i,)=A,-i+A4*—j+1 is the length of the hook
+i2z1
+through (i, j). For the special choice a=1—n(1+q) and b=q—n(1+q) we have
+
+—q@-)-(1 1—qi-?
+sing=a J] (q—-4 Ser) q an (36)
+
+Gi, er
+
+Let yw be the Young diagram obtained from / by removing the box (i, 4).
+Observe that y;=A;—1, w{,=i—1=A},—1 and otherwise A;=y,; and A¥=p}.
+So the hooklengths of a box (j,, j2) are the same in / and in yp except if j, =i
+
+or j2=A,+ 1. Using this we obtain from (3.5)
+
+Sa j-14—bq*' Ay 1—ghéa-t i-1 Lagi to-1
+
+Sy 1-q jea 1—qh@d aa 1—qhis40
+_a-bgi aj 1—qgibd-? i-1 Lag Gantt G 1
+a 1—giéd 1—g han * ,
+q jl q j=l q
+
+Lemma 3.4, Let we A, -, and let s,(n, q) be as in (3.5). Moreover let reT,. Then
+
+a—b
+xy (1+q) Qtn-1,0n Siy=
+
+Ss
+a>
+teTy,t'=r 1—q
+
+where A(t) is the Young diagram belonging to t. For the special choice of parameters
+in (3.4) we have
+DY Ae n-1,n San D=N5, (0, g)-
+
+teTy,t’ =r
+
+Proof. Let A=[A,, ..-4m] and let igeN, 1SigSm. We will modify 4 such that
+our claim can be reduced to the special case of the Littlewood-Richardson
+rule in (3.4). Let A“) be the Young diagram defined by
+
+MO=A+AL for i<ig
+
+and
+MOH Asa for iZig.
+Note that this implies
+(AGF =AF—1 for iSA,,
+and
+
+(Aioyt= ae, for i>Aj,.

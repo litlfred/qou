@@ -1,0 +1,67 @@
+---
+doc_id: turaev1988
+doc_title: "The Yang-Baxter equation and invariants of links"
+section_id: page-020
+section_title: "Page 20"
+pages: 20-20
+pdf_page: 20
+source_pdf: turaev1988.pdf
+source_sha256: 3ccc9e1ee4f95480
+text_source: ocr
+granularity: page
+doc_brief: "Turaev, The Yang–Baxter equation and invariants of links (Invent. Math. 92, 527–553, 1988) — enhanced Yang–Baxter operators give link invariants via braid closure; the HOMFLY (P) and Kauffman (F) polynomials arise this way, with state models."
+---
+546 V.G. Turaey
+
+diag(A?, 23, ..., 42) where 2,, ..., 4m€K*. Assume also that the following holds
+true:
+
+(6.1.1). Ay=Ajz* for any i=1, ..., m (where i’ =m+1—i);
+
+(6.1.2). For any i, j, k, le {1, 2, ..., m}
+
+Re = Ris. (20)
+(6.1.3). If RE}+0, then A; A;= A, A).
+
+In this setting we shall modify definitions of §5 to make them applicable
+to non-oriented link diagrams.
+
+Let E be a non-oriented link diagram. The graph I, R? and the set VertE
+are defined as in Sect.5.1. By an oriented edge of E we shall mean a pair
+(an edge of E, an orientation of this edge). The set of oriented edges of E
+is denoted by Edg E. For an edge acEdgE we denote by a’ the same edge
+with the opposite orientation. A state of E (with respect to S) is a mapping
+f: Edg E- {1,2,...,m} such that f(a')=(f(@)) for all acEdg E. Denote the
+set of states of E by St(E).
+
+With each state f of E and each vertex u of E we associate 1,(f)eK: If
+a, b, c, d are oriented edges of E incident to u as in Fig. 7 (i) then 2, (f)= RIO 49.
+Correctness of this definition follows from (20). For a state f of E define II(f)
+by the formula (14). A state f of E is called contributing if 2,(f)+0 for all
+ue Vert E. The set of contributing states of E is denoted by CSt(E).
+
+Let us flatten J, in a small neighbourhood of VertE in the way depicted
+in Fig. 13. It is important to note that this flattening depends not only on
+the graph I, but on the diagram E itself. Note also that this flattening differs
+from the one used in § 5.
+
+Denote the planar graph obtained by this flattening by [* =J;,*. As in
+Sect. 5.3 the set of oriented edges of '* is identified with EdgE. Denote by
+A the Gauss mapping '* > RP! which associates with a point xeI'* the line
+in R? tangent to r’’ in x.
+
+Let f be a contributing state of E. Provide every edge of ’” with an orienta-
+tion and consider the sum Y=ZA,(q, a where a runs through this family of
+oriented edges. Conditions 6.1.1 and 6.1.3 imply that £ is a cycle in ['* with
+coefficients in K* and that its class in H,(['*%; K*) does not depend on the
+choice of orientation in the edges of E. Denote by f f the image of this class
+
+E
+under the homomorphism 4,:H,(['*; K*)>H,(RP!; K*)=K*. Here the
+isomorphism H,(RP!; K*)— K* is induced by the orientation of RP’ corte-
+sponding to the clockwise rotation of a line in R.
+
+\
+(+
+
+Fig. 13

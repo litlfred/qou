@@ -1,0 +1,70 @@
+---
+doc_id: wenzl1988
+doc_title: "Hecke algebras of type A_n and subfactors"
+section_id: page-031
+section_title: "Page 31"
+pages: 31-31
+pdf_page: 31
+source_pdf: wenzl1988.pdf
+source_sha256: 5e62357250683cd6
+text_source: ocr
+granularity: page
+doc_brief: "Wenzl, Hecke algebras of type A_n and subfactors (Invent. Math. 92, 349–383, 1988) — semisimple quotients of H_n(q) at q = e^{2πi/l} labelled by (k,l) Young diagrams, and the subfactors with trivial relative commutant they give."
+---
+Hecke algebras of type A, and subfactors 379
+
+(a) I(1+4)SnSq/(1+q) or
+(B) n=a,(q), keZ\{O}.
+
+If 0<q<1, the same statements hold except that one has to reverse the “<”
+sign in (a). The traces are faithful in case (a). In case (B), they are nonzero
+exactly on those representations of H,(q) which belong to Young diagrams with
+at most k columns for k>0 and with at most |k| rows for k <0.
+
+(b) If q=e*?""", there is a Markov trace factoring over a C* representation
+of H(q) if and only if ke{1,2,....-1} and n=a_,(Q=(1—q7** (1+)
+(1—q~"). In this case, the representation corresponding to the GNS construction
+with respect to this trace is equivalent to x“ as defined in (2.13). The weight
+vector for the restriction of tr to H,(q) is given by the vector (Wa)acauen With
+
+W,=5,,x(q) (see (3.8).
+
+Proof. (a) Let the weight vector of the restriction of tr to H,(q) be defined
+as in the statement. Note that s,1)(y,q)=1 for any choice of 4 and q. So tr
+is defined consistently on H.,(q) by (3.4) and (1.5) and it is a Markov trace
+with tr(e,)=n by Proposition 3.3 and Lemma 3.4.
+
+For positivity, we only need to check for which values of 4 w,20 for all
+Young diagrams J. Observe that all numerators in the product in (3.6) are
+of the form (1 +4)(1—q")n—(q—q") and if g>1, all denominators are negative.
+So w,>0 for all Young diagrams if
+
+n>(q-qh)/1+q(—4)=a_,(q) for keN
+and
+
+n<(q—q'\/+q)(1—q')=a_,(q) for —keN.
+
+By Lemma 2.1 (vi), this happens if 1/(1+q)SnSq/(1+4).
+
+If y=(q—qh/1+q)(1—¢"), s,(n, q)=0 for any Young diagram / containing
+the box (1,k+1). If a Young diagram / has at most k columns, j—i<k for
+all boxes (i, j)e 4. So s,(n, q)>0 as all factors in (3.6) are so.
+
+On the other hand let 1 > q/(1+ q) (the case y < 1/(1 +) can be treated similar-
+ly). Then again by Lemma 2.1, there is a smallest keN such that n2(q-4/
+(1+q)(1—q"). If we have a proper inequality, it is easy to see that all factors
+of Ste+1)(4, q) in (3.6) are nonnegative except the one belonging to the box
+(1,k+1). So, as T +1) is a one dimensional representation, we obtain tr(zp. 4 1))
+Huse 11=5e+1)(1, q)<0. Hence tr can not be positive, which shows the only
+part.
+
+(b) Using Proposition 3.3 (b), (3.4) and Lemma 3.5 (c), it can be checked
+easily as in (a) that the traces defined by the given weight vectors are well-defined
+and have Markov property. The positivity statement (and faithfulness on
+x) (H.(q))) follows from Lemma 3.5 (d).
+
+On the other hand, assume that tr is a Markov trace factoring over a
+C* representation of H «(q). Observe that all Young diagrams with </—1 boxes
+are (J) diagrams. Hence there exists a faithful C* representation of H,_,(q) and
+the idempotents p, as in Corollary 2.3 are well-defined for all te T;_ ,. In particu-
+lar, it follows as in (a) that the weights of a Markov trace, restricted to H,_ ,(q),

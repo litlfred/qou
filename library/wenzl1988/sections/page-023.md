@@ -1,0 +1,71 @@
+---
+doc_id: wenzl1988
+doc_title: "Hecke algebras of type A_n and subfactors"
+section_id: page-023
+section_title: "Page 23"
+pages: 23-23
+pdf_page: 23
+source_pdf: wenzl1988.pdf
+source_sha256: 5e62357250683cd6
+text_source: ocr
+granularity: page
+doc_brief: "Wenzl, Hecke algebras of type A_n and subfactors (Invent. Math. 92, 349–383, 1988) — semisimple quotients of H_n(q) at q = e^{2πi/l} labelled by (k,l) Young diagrams, and the subfactors with trivial relative commutant they give."
+---
+Hecke algebras of type A, and subfactors 371
+
+To show the statement for the second case, we proceed by induction on
+n. By induction assumption, p(H,,- ,(q)) decomposes into a direct sum of irreduc-
+ible C* representations of H,-,(q) which are isomorphic to representations
+labeled by m-diagrams with n—1 boxes. Let A€A,_, be such a diagram and
+let reT, with p, as in (2.7). Again by corollary (2.3), the spectral values of
+the positive element p(p,e,-,p,) are contained in the set {a,,,-1,,, t€T,,
+=r} U {0}.
+
+Now every tableau t with t/=r belongs to an (m+ 1)-diagram yp. As m—1
+<x<m,q=e?"* can not be an /-th root of unity for |l|Sm+1. Hence p, is
+well-defined for all te7,, by Lemma 2.1 (vi) and Corollary 2.3 and hence also
+z,. If w is not an m-diagram, there is a tableau teT, such that d,,,-1,,=m.
+But then p(P; @n—1 P)=4m(q) p(p,) and p((p, en—1 Pd)” =4m(4) P(P: en—1 P,) By lem-
+ma (2.1), (v) a,,(q)<0. Hence p(p,) can only be positive if p(p,)=0. But then
+also the well-defined central idempotent z, is in the kernel of p.
+
+It is not hard to see that for any n>((m+1)/2)? and any nontrivial Young
+diagram 2eA, with k=2 rows we have 1, +k2m+2. 0
+
+Together with the results of the last proposition the following proposition
+gives a complete classification of all irreducible C* representations of H,,(q)
+except for g=e*?*#' with leN, 124 and for q=0.
+
+Proposition 2.10. If q is real and positive, there is a faithful C* representation
+of H,(q) for all neN. If q=e?™'* with |x|<1/2 and meN with m<|1/x|<m+1,
+m, is a C* representation for all m-diagrams Ae A,. If q=e*?"""' for leN with
+124, x is a C* representation for all (1) diagrams /.
+
+In particular, there exist nontrivial C* representations of H,,(q) if q is real
+and positive of if g=e?*'" with leN, 1=4.
+
+Proof. It is enough to check that the matrix blocks given in (2.4) are selfadjoint.
+It is easy to see that this happens if and only if both a,=0 and a_,20. This
+is always the case if q is real and positive. If q=e*?*'* with |x|<1/2 and meN
+with m<|1/x|<m+1, the positivity condition holds if |d|/<Sm by Lemma 2.1.
+If 4 is an m-diagram, this is the case for any teT, and d=d,;;4, for
+i=1,2,...,n—1.
+
+The same argument goes through for q=e and t belonging to a (k,))
+tableau by definition of the representations x). If teT{*” and g,(t) is not in
+Ti), n&(e) 8,=vé, with ve {0, 1}. So also in this case we obtain a self-adjoint
+matrix. 1
+
+£2ni/l
+
+The following lemma proves several simple combinatorial results which are
+needed in the proofs of Theorem 2.2 and Corollary 2.5.
+
+rare 2.11. (a) Let teT,, be a standard tableau and let 1 Si,j <n. If 0<|i—j|S<2,
+then d,,;,;+0.
+_ (b) Let A and Z be 2 distinct Young diagrams with n boxes, n=3. Then there
+is for at least one of them a subdiagram with n—1 boxes which is not a subdiagram
+of the other one. The same statement is true if the given diagrams are (k, l) diagrams
+with 1>5 and if we also require the subdiagram to be a (k, 1) diagram.
+
+(c) Representations belonging to different (4) diagrams are not isomorphic.

@@ -1,0 +1,70 @@
+---
+doc_id: wenzl1988
+doc_title: "Hecke algebras of type A_n and subfactors"
+section_id: page-017
+section_title: "Page 17"
+pages: 17-17
+pdf_page: 17
+source_pdf: wenzl1988.pdf
+source_sha256: 5e62357250683cd6
+text_source: ocr
+granularity: page
+doc_brief: "Wenzl, Hecke algebras of type A_n and subfactors (Invent. Math. 92, 349–383, 1988) — semisimple quotients of H_n(q) at q = e^{2πi/l} labelled by (k,l) Young diagrams, and the subfactors with trivial relative commutant they give."
+---
+Hecke algebras of type A, and subfactors 365
+
+We can now determine the structure of H,(q) for all but finitely many values
+of q. For similar results see [Bou], p. 54, 55 and 56, [H] and [O].
+
+Theorem 2.2. Let qeC be n-regular, i.e. q+0 and q is not an I-th root of unity
+for 1=2,3, ...,n. Then 1, as defined in (2.3) is an irreducible representation of
+H,(q) on V, for all 24€A,. If ue A,, 7, is isomorphic to n, if and only if A=p.
+
+The map
+T,: X€H, (gr @ 1, (x)
+
+Re An
+
+defines a faithful representation of H,(q). In particular, H,(q)=C S,.
+
+Proof. By induction assumption, H,-;(q) is a semisimple algebra with minimal
+central idempotents z,,, labeled by Young diagrams /’€A,_,. Let OF WoV,
+be an H,(q) module. As V, decomposes as an H,_,(q) module into the direct
+sum of irreducible modules V,, by (2.5), there exists a 2’€A,_,, A’<A such that
+V,< W. Let 72’ be another Young diagram with n—1 boxes such that 7’</.
+There is exactly one 2”€A,_, contained in both i’ and 7’. Let teT, be such
+that t’'€T,, and t”eT;,,. Then (g, _ ; (t))'€ T(7’) and therefore
+
+13 (24) Ty (Cn 1) 8 = (aga)? 5,1 Var>
+
+where d=d, ,-1,,. AS 1¢{q*~', q*, q**"}, aga_, is well-defined and nonzero.
+Hence the irreducible H,,_ ,(q) module Vj,, is contained in W. As 7’ was arbitrary,
+W> @ V,=%,.
+
+<A
+
+Next we show that the V,’s are mutually nonisomorphic H,(q) modules.
+This is obvious for n=1 and follows for n=2 from ;(e,)=1+0=m12;(e1).
+Ifn>2 and A, Ze A, with 1+7, one of these diagrams has a subdiagram which
+is not a subdiagram of the other one (see Lemma 2.11 at the end of this section).
+Hence, by (2.5) V, and V, differ already as H,,_ , (q) modules.
+
+Let p, be the representation of the symmetric group S,, over C corresponding
+to 4. It is well-known that p,ls,_,~ @ pz. So dim(p,)=dim(z,) by (2.6) and
+
+induction. Hence usa
+
+dim( @ 7, (H,(q))=dim CS, =n!.
+
+Ae An
+
+This shows that z, is faithful. 0
+
+Remarks, 1. If q=1, the representations defined above coincide with Young’s
+orthogonal representations. So we can refer to them as the orthogonal represen-
+tations for H,,(q). The disadvantage of having square roots in this representation
+can be avoided by replacing them by semi-orthogonal representations in analogy
+to Young (see [H]). This can be used to show that the Hecke algebra H,(q)
+of type A,_, over an arbitrary field k has the same matrix decomposition as
+ne group algebra of S, in characteristic 0 provided that 1+q+q?+...+q'+0
+Orr=1,2,...,n.
