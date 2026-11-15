@@ -102,3 +102,8 @@ Owner choice 2026-11-15: record (this note) + Lean the exclusion (PR) + then the
 ## 2026-11-15: sign structure (continue, option 1)
 
 - χ_λ(σ^ε) = ε·f·h/2 + c₁·[2]/2 but E(σ^ε) = ε·[2]/2 + h/2: in a trace the sign rides on the dimension term, in E on the writhe term; related by q ↦ iq. E uses the two eigenvalues of σ (symmetric channel for +, antisymmetric for −), not those of σ⁻¹. No new Lean (all one-line ring facts). PR #8005 ready; merge blocked by auto mode pending owner wording.
+
+## 2026-11-15: options 2 and 3 of "continue"
+
+- 3: Markov measure μ_λ = y_λ f^λ at z_D equals f^λ[n−2k+1]/[2]^n on two-row λ (exact, n = 2..6): the quantum-dimension share of spin sector k in (C²)^⊗n; denominator [2]^n = 𝔪(unlink). Sector entropy grows ~ (1/2) ln n vs ln 𝔪 = n ln[2]. Not an energy. Project file result-entropy.md.
+- 2: Lean HeckeEigenSplit (PR #8005): det/trace of any Hecke generator matrix from its two eigenvalue multiplicities; c₁ = (2tr − dim h)/[2]. The q=1 identification with χ^λ(s) still cites Tits deformation.
