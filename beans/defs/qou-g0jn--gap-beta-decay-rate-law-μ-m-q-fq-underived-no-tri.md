@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-15T19:00:22Z
-updated_at: 2026-11-15T19:41:46Z
+updated_at: 2026-11-15T19:49:44Z
 ---
 
 Opened 2026-11-15 from owner question on a decay trigger and translating ILP/SDP likelihood into a rate; owner chose 'bean both gaps, then probe'. prop:hadron-half-life: Γ_β = |W|²μ₀/(2π³)·[2]_q·|M_q|²·f(Q). W(q) has a D closed form (qou-egvf); μ₀, |M_q|² (prop:trace-ratio-observable, proportionality only) and f(Q) do not. def:beta-decay-skein says WHAT, not WHEN. LP/SDP shadow prices are used only for shell binding from measured Q-values. Candidate to test, pre-registered: per-step probability = trace weight of the channel where the insertion reduces to the daughter. half-life-as-q-probe states environmental predictions (neutron-star q ≫ q₀; 1e-9 per metre) with no derivation — scope (a). Neutron lifetime not derived.
@@ -28,3 +28,6 @@ RESULT 2026-11-15 (PR #7973, d4ba09a0b0). Arm A gives a W⁻ coefficient of 1 (p
 
 ## PRE-REGISTRATION 2 (2026-11-15 19:43Z): flavour-changing vertex, written before computing
 Fact used: Hom_{U_q}(V, V⊗V⊗V*) ≅ End_{U_q}(V⊗V) = span{1, Ř}, so every equivariant one-quark vertex is (a·1 + b·Ř) ⊗ id after coev. Check: the coefficient of u⊗(d ūbar) (W⁻), as an exact function of q, for the vertex built from P₊ = (Ř+q⁻¹)/[2] (left line, |eig| = q > 1), from P₋ = (q−Ř)/[2] (right line), and from the weak vertex W = σP_R + σ⁻¹P_L (corpus). Compare left with right: is |amplitude| different? I predict the same magnitude 1/[2] on both lines, opposite sign. If so, the magnitude cannot carry chirality at one crossing.
+
+
+RESULT 2 (PR #7977, a6c632fc1f): the prediction held. The W⁻ amplitude b is +1/[2] on the left line and −1/[2] on the right, the same magnitude. Chirality is only in the non-emitting part a, as a ratio of q². The corpus W gives b = 2/(q²+1). So at one crossing the emission rate cannot see chirality. Next candidate: chirality enters through what follows the vertex (W⁻ → e⁻ ν̄ on the lepton strands), or across several crossings.
