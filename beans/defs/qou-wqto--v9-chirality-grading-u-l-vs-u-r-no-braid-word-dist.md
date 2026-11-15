@@ -9,7 +9,7 @@ tags:
     - 8f-gen
     - 8f-open
 created_at: 2026-08-10T18:57:48Z
-updated_at: 2026-10-13T12:00:00Z
+updated_at: 2026-11-15T12:00:00Z
 parent: qou-8lxd
 ---
 
@@ -445,5 +445,17 @@ So on the model cone the choice of `u` is inessential up to triad-commuting auto
 **Not attempted, by the owner's ordering:** (b) moving the Reeb involution onto Bring's own cone (link `UT(Σ₄)`, `qou-rydq`), and (c) a `Gen1Quark` → rays map. Note for whoever picks up (b): on Bring's cone the analogue of "a point of the Hopf base" would be a point (or section) over `Σ₄`, and the Euler number −6 of the link fibration (vs −1 for Hopf) is the known obstruction to a global quaternionic triad there.
 
 Stays `todo` (rule 13a).
+
+Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
+
+## 2026-11-15 — does Bring's S₅ single out `u`? No (owner ruling, option 2; PR #7818)
+
+Preregistered before measuring: `docs/audits/2026-11-15-bring-s5-distinguished-unit-preregistration.md` (commit `5b76d41e08`; results in §5, rules unchanged).
+
+- **Action leg — outcome (iii).** The corpus has no action of Bring's `S₅` or `A₅` on the model cone or its admissible units. Its `A₅`'s act on Klein's `ℙ(V)` and on `Σ₄`; the `S²` of `u` is the Hopf base of the model (`qou-rydq`). `S₅` has no faithful real 3-dim rep, so only `A₅` could act, and its two icosahedral embeddings (Galois `√5 ↦ −√5`, measured to have different characters) are swapped by `S₅`'s odd coset.
+- **Assuming the action through `2I` by left multiplication** (the only triad-respecting linear shape): it acts on `u` by conjugation (`leftMul_conj_chiralGammaU`). No `u` is fixed (R0 empty; Lean via `i, j ∈ 2I`, and exact compute). The maximal-stabiliser rule picks one orbit: the **12 vertex directions** (6 axes, stabiliser `C₅`); the other exceptional orbits are 20 (`C₃`) and 30 (`C₂`).
+- **And it cannot fix a handedness.** Each exceptional orbit contains `−u` for every `u` (moved there by 5 / 3 / 2 perpendicular half-turns), and `leftMul_flips_chiralGammaU` shows such a half-turn carries `Γ_u` to `−Γ_u`. So the `A₅` symmetry identifies L with R. The orbit also moves with the placement of `2I` inside the unit quaternions, which the triad does not fix.
+
+Lean: `QOU/BringConeIcosahedral.lean`, 7 decls, sorry-free, lean-direct (`-DautoImplicit=false -s 65536`) exit 0, axioms ⊆ propext / Classical.choice / Quot.sound. Probe: `computations/probes/bring_cone_icosahedral_unit_orbits_probe.py` (exact ℚ(√5), 12/12). Gap opened as `qou-b5ic`. Stays `todo` (rule 13a).
 
 Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
