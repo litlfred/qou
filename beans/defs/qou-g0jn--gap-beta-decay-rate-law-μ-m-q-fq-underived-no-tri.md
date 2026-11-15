@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-15T19:00:22Z
-updated_at: 2026-11-15T20:13:09Z
+updated_at: 2026-11-15T20:15:24Z
 ---
 
 Opened 2026-11-15 from owner question on a decay trigger and translating ILP/SDP likelihood into a rate; owner chose 'bean both gaps, then probe'. prop:hadron-half-life: Γ_β = |W|²μ₀/(2π³)·[2]_q·|M_q|²·f(Q). W(q) has a D closed form (qou-egvf); μ₀, |M_q|² (prop:trace-ratio-observable, proportionality only) and f(Q) do not. def:beta-decay-skein says WHAT, not WHEN. LP/SDP shadow prices are used only for shell binding from measured Q-values. Candidate to test, pre-registered: per-step probability = trace weight of the channel where the insertion reduces to the daughter. half-life-as-q-probe states environmental predictions (neutron-star q ≫ q₀; 1e-9 per metre) with no derivation — scope (a). Neutron lifetime not derived.
@@ -57,3 +57,8 @@ RESULT 5 (PR #7981, 4439872c62): the expectation held; the magnitudes differ for
 
 ## PRE-REGISTRATION 6 (2026-11-15 20:15Z): closed-trace amplitude, written before computing
 The 'both, closed trace first' route was chosen. M_w = Σ_k (word w with letter k replaced by δ_k) on (C²)^⊗3, for the corpus vertex and for its mirror. Close the spectator strands 1 and 2 with the D Markov weights (partial quantum trace with K⊗K, K = diag(q, q⁻¹)), leaving a 2×2 operator T_w on strand 3, the converting strand. The emission amplitude (#7973 arm A) is the d→d entry T_w[d,d]. Report T_corpus[d,d], T_mirror[d,d] and the squared ratio, exact in q, for V³ = (s1 s2⁻¹)³, s1 s2⁻¹, s1⁴, (s1 s2)⁵. Also report whether T_w is a scalar (Markov). No direction is predicted. Whatever comes out gets reported. Then the corpus audit of W's P_L/P_R.
+
+
+## RESULT 6 (2026-11-15) — closed trace, and where W came from
+Closed partial quantum trace over strands 1,2 (K-weighted), read on the d line. Emission ratio |T_corpus|²/|T_mirror|² at q₀: V³ 0.6266 (mirror still wins), s1s2⁻¹ 0.0081, s1⁴ 32.4 (T scalar only here), (s1s2)⁵ 44.9. Probe computations/probes/closed_trace_chirality_probe.py, exact sympy.
+Provenance of W (answer to owner's 'what chose corpus vertex?'): W = σP_R + σ⁻¹P_L = (one-sided-flip ANSATZ, OneSidedWeakVertex.lean, not derived) + (owner ruling: left = |eigenvalue|>1 line, LeftLineDefinition.lean) + (uniqueness eq_of_eigen_action). As whole elements W_L = q⁻¹J and W_R = qJ differ only by the scalar q². The V³ tension exists only under the 'emission = W − letter' reading (−hP_L vs +hP_R). Open: whether that reading is the right one.
