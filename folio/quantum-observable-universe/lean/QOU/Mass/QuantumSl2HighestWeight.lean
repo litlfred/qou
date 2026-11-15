@@ -301,4 +301,114 @@ theorem braidEigen_eq (s : 𝕜) (hs : s ≠ 0) (m j : ℕ) (hj : j ≤ m)
   congr 2
   unfold wt; push_cast; ring
 
+/-! ### The double braiding (monodromy) `Ř′Ř` -/
+
+/-- Reflection of the hook product: `Π_{i<j} [m−j+i+1] = Π_{i<j} [m−i]` for `j ≤ m`. -/
+theorem prod_qint_reflect (q : 𝕜) (m j : ℕ) (hj : j ≤ m) :
+    ∏ i ∈ Finset.range j, qint q (m - j + i + 1) = ∏ i ∈ Finset.range j, qint q (m - i) := by
+  rw [← Finset.prod_range_reflect]
+  refine Finset.prod_congr rfl fun i hi => ?_
+  have := Finset.mem_range.mp hi
+  congr 1; omega
+
+/-- `Σ_{i<j} (m − 2(j−1−i)) = j m − j (j − 1)`. -/
+theorem sum_wt_reflect (m j : ℕ) :
+    ∑ i ∈ Finset.range j, wt m (j - 1 - i) = (j : ℤ) * m - (j : ℤ) * ((j : ℤ) - 1) := by
+  rw [← sum_wt_range]
+  exact Finset.sum_range_reflect (fun i => wt m i) j
+
+/-- **Product of the two top coefficients:** `a_j(m,m') a_j(m',m) = q^{−j(m+m') + 2j(j−1)}`. -/
+theorem hwCoef_pair (q : 𝕜) (hq : q ≠ 0) (m m' j : ℕ) (hjm : j ≤ m) (hjm' : j ≤ m')
+    (h1 : ∀ i < j, qint q (m - i) ≠ 0) (h2 : ∀ i < j, qint q (m' - i) ≠ 0) :
+    hwCoef q m m' j j * hwCoef q m' m j j
+      = q ^ (-(j : ℤ) * (m + m') + 2 * j * ((j : ℤ) - 1)) := by
+  have P1 : ∏ i ∈ Finset.range j, qint q (m - i) ≠ 0 :=
+    Finset.prod_ne_zero_iff.mpr fun i hi => h1 i (Finset.mem_range.mp hi)
+  have P2 : ∏ i ∈ Finset.range j, qint q (m' - i) ≠ 0 :=
+    Finset.prod_ne_zero_iff.mpr fun i hi => h2 i (Finset.mem_range.mp hi)
+  have c1 := hwCoef_mul_prod q hq m m' j j h1
+  have c2 := hwCoef_mul_prod q hq m' m j j h2
+  rw [prod_qint_reflect q m' j hjm', sum_wt_reflect] at c1
+  rw [prod_qint_reflect q m j hjm, sum_wt_reflect] at c2
+  apply mul_right_cancel₀ (mul_ne_zero P1 P2)
+  calc hwCoef q m m' j j * hwCoef q m' m j j
+        * ((∏ i ∈ Finset.range j, qint q (m - i)) * ∏ i ∈ Finset.range j, qint q (m' - i))
+      = (hwCoef q m m' j j * ∏ i ∈ Finset.range j, qint q (m - i))
+        * (hwCoef q m' m j j * ∏ i ∈ Finset.range j, qint q (m' - i)) := by ring
+    _ = ((-1) ^ j * (-1) ^ j) * (q ^ (-((j : ℤ) * m' - j * (j - 1)))
+          * q ^ (-((j : ℤ) * m - j * (j - 1))))
+        * ((∏ i ∈ Finset.range j, qint q (m - i)) * ∏ i ∈ Finset.range j, qint q (m' - i)) := by
+          rw [c1, c2]; ring
+    _ = _ := by
+          rw [← mul_pow, show ((-1 : 𝕜) * -1) = 1 by ring, one_pow, one_mul, ← zpow_add₀ hq]
+          congr 2; ring
+
+section Monodromy
+
+variable (s : 𝕜) (hs : s ≠ 0)
+
+/-- **The braiding** `Ř = P ∘ R : V_{m+1} ⊗ V_{m'+1} → V_{m'+1} ⊗ V_{m+1}` as a matrix. -/
+def rCheckMat (m m' : ℕ) : Matrix (Fin (m' + 1) × Fin (m + 1)) (Fin (m + 1) × Fin (m' + 1)) 𝕜 :=
+  (rMat s hs m m').submatrix Prod.swap id
+
+theorem rCheckMat_mulVec (m m' : ℕ) (v : Fin (m + 1) × Fin (m' + 1) → 𝕜) :
+    rCheckMat s hs m m' *ᵥ v = fun y => (rMat s hs m m' *ᵥ v) y.swap := rfl
+
+/-- The coproduct `Δ(F) = K⁻¹ ⊗ F + F ⊗ 1` on `V_{m+1} ⊗ V_{m'+1}`. -/
+def deltaF (q : 𝕜) (m m' : ℕ) : Matrix (Fin (m + 1) × Fin (m' + 1)) (Fin (m + 1) × Fin (m' + 1)) 𝕜 :=
+  irrepKm q m ⊗ₖ irrepF q m' + irrepF q m ⊗ₖ 1
+
+variable (hq2 : s ^ 2 - (s ^ 2)⁻¹ ≠ 0)
+
+include hq2 in
+/-- **`Ř` is a module map for `F`:** `Ř Δ(F) = Δ(F) Ř`. -/
+theorem rCheckMat_deltaF (m m' : ℕ) (hint : ∀ k < rOrder m m', qint (s ^ 2) (k + 1) ≠ 0) :
+    rCheckMat s hs m m' * deltaF (s ^ 2) m m' = deltaF (s ^ 2) m' m * rCheckMat s hs m m' := by
+  unfold rCheckMat deltaF
+  rw [← submatrix_id_id (irrepKm (s ^ 2) m ⊗ₖ irrepF (s ^ 2) m' + irrepF (s ^ 2) m ⊗ₖ 1),
+    ← submatrix_mul _ _ _ _ _ Function.bijective_id, rMat_F s hs hq2 m m' hint,
+    submatrix_mul _ _ _ Prod.swap _ Prod.swap_bijective]
+  congr 1
+  ext x y
+  simp only [submatrix_apply, Prod.swap, add_apply, kroneckerMap_apply, one_apply]
+  ring
+
+include hq2 in
+/-- **The monodromy `Ř′Ř` commutes with `Δ(F)`.** -/
+theorem monodromy_deltaF (m m' : ℕ) (hint : ∀ k < rOrder m m', qint (s ^ 2) (k + 1) ≠ 0) :
+    (rCheckMat s hs m' m * rCheckMat s hs m m') * deltaF (s ^ 2) m m'
+      = deltaF (s ^ 2) m m' * (rCheckMat s hs m' m * rCheckMat s hs m m') := by
+  have hint' : ∀ k < rOrder m' m, qint (s ^ 2) (k + 1) ≠ 0 := by
+    intro k hk; exact hint k (by unfold rOrder at *; omega)
+  rw [Matrix.mul_assoc, rCheckMat_deltaF s hs hq2 m m' hint, ← Matrix.mul_assoc,
+    rCheckMat_deltaF s hs hq2 m' m hint', Matrix.mul_assoc]
+
+include hq2 in
+/-- **The monodromy scalar on highest-weight vectors:**
+`Ř′Ř w_j = q^{m m' − 2j(m+m') + 2j(j−1)} w_j`, `q = s²`. -/
+theorem monodromy_hwVec (m m' j : ℕ) (hjm : j ≤ m) (hjm' : j ≤ m')
+    (hint : ∀ k < rOrder m m', qint (s ^ 2) (k + 1) ≠ 0)
+    (hint1 : ∀ p < j, qint (s ^ 2) (m - p) ≠ 0) (hint2 : ∀ p < j, qint (s ^ 2) (m' - p) ≠ 0) :
+    (rCheckMat s hs m' m * rCheckMat s hs m m') *ᵥ hwVec (s ^ 2) m m' j
+      = (s ^ 2) ^ ((m : ℤ) * m' - 2 * j * (m + m') + 2 * j * ((j : ℤ) - 1))
+          • hwVec (s ^ 2) m m' j := by
+  have hint' : ∀ k < rOrder m' m, qint (s ^ 2) (k + 1) ≠ 0 := by
+    intro k hk; exact hint k (by unfold rOrder at *; omega)
+  rw [← mulVec_mulVec, rCheckMat_mulVec s hs m m',
+    rCheck_hwVec s hs hq2 m m' j hjm hjm' hint hint1 hint2,
+    mulVec_smul, rCheckMat_mulVec s hs m' m, rCheck_hwVec s hs hq2 m' m j hjm' hjm hint' hint2 hint1,
+    smul_smul]
+  congr 1
+  have hp := hwCoef_pair (s ^ 2) (pow_ne_zero 2 hs) m m' j hjm hjm' hint1 hint2
+  calc s ^ (wt m j * wt m' 0) * hwCoef (s ^ 2) m m' j j
+        * (s ^ (wt m' j * wt m 0) * hwCoef (s ^ 2) m' m j j)
+      = (s ^ (wt m' j * wt m 0) * s ^ (wt m j * wt m' 0))
+        * (hwCoef (s ^ 2) m m' j j * hwCoef (s ^ 2) m' m j j) := by ring
+    _ = _ := by
+      rw [hp, ← zpow_add₀ hs, ← zpow_natCast s 2, ← zpow_mul, ← zpow_mul, ← zpow_add₀ hs]
+      congr 1
+      unfold wt; push_cast; ring
+
+end Monodromy
+
 end QOU.Mass.QuantumSl2
