@@ -7,8 +7,10 @@ import QOU.Archimedean.GroundRing
 Formalizes the 5-step categorical construction of an atom from
 γγ pair production. All operations are symbolic in q.
 
-The key theorem: `confinement_universality` — the nucleon NF
-is independent of photon polarization parameters.
+`confinement_universality` records that the crossing coefficients do not depend on the
+photon polarization parameters. This is true by definition: `crossingCoeffsWithPol`
+discards its polarization argument (definitional reading of
+`prop:confinement-universality`, owner E1 = (a), 2026-11-15).
 
 ## References
 
@@ -114,8 +116,8 @@ theorem ne_identity : crossingCoeffs .ne = (0, 1) := by rfl
 /-- **Photon polarization parameters** `(φ₀, φ₁, φ₀₁)`.
 
     In the γγ → pair-production step, the two photons carry polarization
-    parameters.  The confinement universality theorem asserts that these
-    parameters do not affect the nucleon normal form. -/
+    parameters.  In the definitional reading of confinement universality they do
+    not enter the confinement stage, which takes only the quark flavours. -/
 structure PolarizationParams where
   /-- First photon polarization. -/
   φ₀  : ℝ
@@ -138,15 +140,13 @@ noncomputable def crossingCoeffsWithPol
     (ct : CrossingType) (_ : PolarizationParams) : R_q × R_q :=
   crossingCoeffs ct
 
-/-- **Confinement universality.**
+/-- **Confinement universality (definitional reading).**
 
-    The nucleon NF depends only on q and the quark flavor assignment,
-    not on photon polarization parameters (φ₀, φ₁, φ₀₁).
-
-    Proof: `crossingCoeffsWithPol` is defined to be `crossingCoeffs`
-    regardless of the polarization argument; the crossing coefficients
-    are determined entirely by the crossing type (discrete quark-flavor
-    data), which is independent of the continuous photon parameters. -/
+    The crossing coefficients depend only on the crossing type (discrete
+    quark-flavour data), not on the photon polarization parameters
+    (φ₀, φ₁, φ₀₁). This holds by definition: `crossingCoeffsWithPol`
+    discards its polarization argument. It is not a derived physical
+    decoupling. -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the

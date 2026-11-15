@@ -2,7 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:confinement-universality",
-  title: "Confinement universality: nucleon NF independent of photon polarization",
+  title: "Confinement universality: the confinement stage depends only on the flavours",
   tags: [
     "confinement",
     "universality",
@@ -16,6 +16,16 @@ export default proposition({
   },
   uses: ["prop:four-term-pair-nucleon"],
   authorNotes: [
+    {
+      kind: "refined-framing",
+      date: "2026-11-15",
+      body:
+        "**Definitional reading adopted (owner E1 = (a), bean `qou-qs2u`).** The statement now takes the quark " +
+        "flavours as an input and is true by construction: the confinement word contains no photon coefficient. " +
+        "The previous framing, a derived decoupling and the categorical expression of asymptotic freedom, is " +
+        "withdrawn. The substantive reading (universality over the photon states that produce the nucleon " +
+        "flavours) is tracked as a bean, conditional on the flavour map.",
+    },
     {
       kind: "note",
       date: "2026-08-08",
