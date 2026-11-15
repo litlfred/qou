@@ -76,7 +76,7 @@ CORPUS, and it is wrong at corpus level.**
 The file-level evidence stands and is re-verified: `electron_sigma_f_chain.py`
 uses `3A + Z` as the confinement-SDP normalisation `tr Φ = n_target`, sweeps
 `Z = 0…8`, and never imports or calls `atom_braid_word_3A`. But
-`content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.md:3`
+`folio/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.md:3`
 — a **content block** — asserts *"atomic braid $\mathcal{B}_K \in B_{n}$, where
 $n = 3A + Z$"*. `B_n` is the braid group. So it is a third count **and** a third
 braid, and my sentence would have sent the next agent past the block that has it.

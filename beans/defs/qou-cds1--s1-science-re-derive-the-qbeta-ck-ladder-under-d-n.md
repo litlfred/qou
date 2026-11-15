@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-10-10T12:20:00Z
+updated_at: 2026-11-15T11:47:03Z
 parent: qou-avtq
 ---
 
@@ -2791,7 +2791,7 @@ Consistent with the corpus already treating this as unresolved: `qbeta_utils.py`
 
 Step 3 above flagged the `tr_M(1)` reading as unproved and said settling it would decide the path. **Settled, and it goes the other way.**
 
-`content/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.md:21`:
+`folio/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.md:21`:
 
 > `α = (z−1)h/2` is the single-wrap **eigenphase on V_(2,1)** (per `prop:q-beta-spectral-bridge`)
 
@@ -3370,7 +3370,7 @@ the invariant `u*Vhat` (4) can absorb `h^2/2` — i.e. whether an instrument
 exists that reaches it.
 ## Step 9 (2026-08-30) — Steps 6-8 are now LEAN-PROVED, sorry-free
 
-`content/quantum-observable-universe/lean/QOU/QBeta/DFrameBarAction.lean`. Eleven theorems, `lean`-direct **exit 0**, `#print axioms` clean on all eleven (`propext, Classical.choice, Quot.sound`; **zero sorryAx**). No `sorry`, no `axiom`, no `native_decide`, no `: True`.
+`folio/quantum-observable-universe/lean/QOU/QBeta/DFrameBarAction.lean`. Eleven theorems, `lean`-direct **exit 0**, `#print axioms` clean on all eleven (`propext, Classical.choice, Quot.sound`; **zero sorryAx**). No `sorry`, no `axiom`, no `native_decide`, no `: True`.
 
 Stated over a generic `Field K` per §7c — no `ℝ`, no `Real.sqrt`. Convention C is carried in the square-root variable `u` (`q = u²`), which keeps it algebraic in the same generic setting.
 
@@ -3920,7 +3920,7 @@ correct result.
 Scope (a). No `c_k` produced, proposed or fitted; Q_β stays at 1279 ppb.
 ## Entry 10d — entries 10/10b/10c are now LEAN-PROVED (8 theorems, sorry-free)
 
-`content/quantum-observable-universe/lean/QOU/QBeta/N1FactorUniqueness.lean`.
+`folio/quantum-observable-universe/lean/QOU/QBeta/N1FactorUniqueness.lean`.
 `lean`-direct exit 0; `#print axioms` clean on all 8; zero sorryAx.
 
 **No new mathematics.** The functional-equation argument is entry 10c's (PR
@@ -5897,7 +5897,7 @@ small enough.
 **Artifacts.**
 [`qbeta_discriminant_curve_in_q_probe.py`](../computations/qbeta/qbeta_discriminant_curve_in_q_probe.py)
 (8/8) ·
-[`QOU/QBeta/DiscriminantCurveInQ.lean`](../content/quantum-observable-universe/lean/QOU/QBeta/DiscriminantCurveInQ.lean)
+[`QOU/QBeta/DiscriminantCurveInQ.lean`](../folio/quantum-observable-universe/lean/QOU/QBeta/DiscriminantCurveInQ.lean)
 (15 theorems, sorry-free) ·
 [audit](../docs/audits/2026-08-31-qbeta-discriminant-curve-in-q.md).
 
@@ -5996,7 +5996,7 @@ Step 25: not a reading, but a construction the corpus does not have.
 **Artifacts.**
 [`qbeta_level_k_binding_operator_probe.py`](../computations/qbeta/qbeta_level_k_binding_operator_probe.py)
 (8/8) ·
-[`QOU/QBeta/TraceBlindSector.lean`](../content/quantum-observable-universe/lean/QOU/QBeta/TraceBlindSector.lean)
+[`QOU/QBeta/TraceBlindSector.lean`](../folio/quantum-observable-universe/lean/QOU/QBeta/TraceBlindSector.lean)
 (8 theorems, sorry-free) ·
 [audit](../docs/audits/2026-09-01-qbeta-level-k-binding-operator.md).
 
@@ -6088,7 +6088,7 @@ anything but a coincidence.
 **Artifacts.**
 [`qbeta_bond_decay_rates_from_transfer_spectrum_probe.py`](../computations/qbeta/qbeta_bond_decay_rates_from_transfer_spectrum_probe.py)
 (5/5) ·
-[`QOU/QBeta/BondDecayRates.lean`](../content/quantum-observable-universe/lean/QOU/QBeta/BondDecayRates.lean)
+[`QOU/QBeta/BondDecayRates.lean`](../folio/quantum-observable-universe/lean/QOU/QBeta/BondDecayRates.lean)
 (sorry-free) ·
 [audit](../docs/audits/2026-09-01-qbeta-bond-decay-rates-from-transfer-spectrum.md).
 
@@ -6782,7 +6782,7 @@ Not exact against **any** of them — including the target it was swept to.
 
 ### The promised formal derivation is `X = X`
 
-`content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaWenzlDecomposition.lean`:
+`folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaWenzlDecomposition.lean`:
 
 ```lean
 noncomputable def q_beta_c3_wenzl_coefficient (q : ℝ) : ℝ :=
@@ -6917,7 +6917,7 @@ individual `quantumInt` values; the general statement is what is missing."*
 grepping, immediately after an entry whose whole subject is a claim asserted
 without checking.
 
-**What IS present** — `content/quantum-observable-universe/braids-and-knots/bar-involution.lean`,
+**What IS present** — `folio/quantum-observable-universe/braids-and-knots/bar-involution.lean`,
 sorry-free, generic over `[CommRing R] [BarInvolution R]`:
 
     IsBarSymmetric / IsBarAntiSymmetric        (both, as first-class predicates)
@@ -6962,7 +6962,7 @@ Not attempted here.
 
 ## 2026-09-02, S1 — LEAN: every symmetric q-integer is bar-symmetric, for all n
 
-`content/quantum-observable-universe/lean/QOU/BraidKnot/QuantumIntBarSymmetric.lean`
+`folio/quantum-observable-universe/lean/QOU/BraidKnot/QuantumIntBarSymmetric.lean`
 — `lean`-direct **exit 0**, no errors, no warnings; `#print axioms` on all seven
 declarations gives `[propext, Classical.choice, Quot.sound]`, **no `sorryAx`**.
 
@@ -7034,7 +7034,7 @@ experimental error bar on `c_3` and was about to record it as an S1 finding.
 **The corpus already has it**, and the corpus-grep caught me one step before
 writing it up.
 
-[`mass-theory/rem-qstar-decay-sector-q0.md:43`](../content/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0.md)
+[`mass-theory/rem-qstar-decay-sector-q0.md:43`](../folio/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0.md)
 states it exactly:
 
 > "The extractor amplifies the experimental Q_β uncertainty by `1/u³`, giving
@@ -8745,3 +8745,17 @@ Checked read-only against qou `main` at `aa914b606a`, mpmath 1.3.0. Full write-u
 ## 2026-10-11 owner ruling (decision card): gluon tail ALLOWED
 
 Asked: does the 2026-08-30 "no gluon" ruling exclude the 2-letter gluon tail in γγ nucleon words? Owner answer: **allowed** (it does not exclude it). Consequence recorded earlier on this bean: the gluon family stays in the candidate set, so the family straddles the required factor and the selection must come from elsewhere (qou-99qc / O'Hara routes). Thread: Continue fourth session.
+
+<!-- ported 2026-11-15 from PR #7603 (branch predates the beans/defs and folio/ moves) -->
+
+## 2026-10-10 (3) — `χ_(2,1)(Δ_S) = 0` is now a sorry-free Lean theorem
+
+`QOU/QBeta/DeltaSTwoRowCharacterVanishes.lean` turns the exact half of entry (2) into a theorem over an arbitrary field. It compiles with `lean`-direct exit 0 and no warnings, and `#print axioms` gives `[propext, Classical.choice, Quot.sound]` on all six results.
+
+- **`trace_deltaS_eq_zero`:** for ANY `A B : Matrix (Fin 2) (Fin 2) K` with `tr A = tr B = h`, `tr((h²/2)·1 − (h/2)(A+B)) = 0`. This is basis-free.
+- **`s1_quadratic`, `s2_quadratic`, `braid`:** an explicit two-row representation with `σ₁ = diag(q, −q⁻¹)` and `σ₂ = [[h − z_D, 1], [b², z_D]]`. It satisfies `(σ − q)(σ + q⁻¹) = 0` and the braid relation, and each generator has trace `h`. Its entries are the corpus's own objects: `z_D = q³/(q²+1)`, Hoefsmit `b²`, and `h − z_D = −1/(q(q²+1))` (`h_sub_zD`).
+- **`chi21_deltaS_eq_zero`:** the composition.
+
+**Consequence, as entry (2) stated.** Every convention-D functional on `Δ_S` is `a_(3)·χ_(3)(Δ_S)`, so the functional side of "what supplies a factor above 1" reduces to the trivial-block weight `{y_(3), 1}`.
+
+**Scope.** That this representation IS the `(2,1)` irreducible for generic `q` is the standard Hoefsmit fact and is not re-proved. The basis-free theorem does not need it. Nothing numerical enters.

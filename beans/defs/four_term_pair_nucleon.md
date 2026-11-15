@@ -11,7 +11,7 @@ updated_at: 2026-10-04T15:26:45Z
 parent: qou-uot9
 ---
 
-File: `content/quantum-observable-universe/lean/QOU/ParticleInteractions/four_term_pair_nucleon.lean`
+File: `folio/quantum-observable-universe/lean/QOU/ParticleInteractions/four_term_pair_nucleon.lean`
 The `four_term_pair_nucleon` theorem is unprovable. `FourTermPairNucleonContext` provides `confinedNet` as a free function without constraining its evaluations at q_0 for proton and neutron to actually equal the targets 0.999 and 0.811.
 
 

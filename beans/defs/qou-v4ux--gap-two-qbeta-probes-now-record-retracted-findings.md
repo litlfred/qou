@@ -29,7 +29,7 @@ assertions:
 
 Both are now **false**. Commit `272ea9b009` ("QOU: withdraw the nucleon LP
 instability") rewrote
-`content/quantum-observable-universe/knots-particles-confinement/categorical-neutron-properties.md`,
+`folio/quantum-observable-universe/knots-particles-confinement/categorical-neutron-properties.md`,
 which now reads:
 
 > for a total of **11 crossings** (6 from B_3, 3 from quarks, 2 from gluons)

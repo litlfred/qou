@@ -1,6 +1,6 @@
 ---
 # qou-l5kl
-title: Remark interpreting 0906.1500v4.pdf at content/quantum-observable-universe/lean/QOU/OneLoopEdgeLa…
+title: Remark interpreting 0906.1500v4.pdf at folio/quantum-observable-universe/lean/QOU/OneLoopEdgeLa…
 status: todo
 type: task
 priority: normal

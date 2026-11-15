@@ -1,13 +1,13 @@
 ---
 # qou-udeg
 title: 'GAP: float64 upstream of a discrete decision is invisible to all four float64 detectors'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-26T11:57:46Z
-updated_at: 2026-10-04T15:20:00Z
+updated_at: 2026-11-15T13:40:00Z
 parent: qou-9nnz
 ---
 
@@ -107,3 +107,7 @@ the log-ratio in `binding_log_free_energy.py`), and its committed witness is
 stale in a way that INVERTS its verdict (B_T 7.515 -> 1.795, bond ordering
 flipped) through import-cone drift in `mass_at_3A_proper.atom_braid_word_3A`
 that a `git diff <producer>` cannot see.
+
+## Closed 2026-11-15 (owner tap, precision epic triage)
+
+The candidate list is fully triaged and its last survivor was a false positive (the casts cannot flip the verdict, value -0.0785 MeV). The two real defects it found moved to qou-7xa5 (in progress).

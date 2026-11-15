@@ -13,7 +13,7 @@ parent: qou-n4nr
 
 ROUTE D of epic qou-2q85. TEMPLATE, NOT AN ANSWER - and its naive form is already EXCLUDED.
 
-EXCLUDED: content/quantum-observable-universe/lean/QOU/Eightfold/ConnectedSumAnnihilator.lean (6 theorems, sorry-free, lean-direct exit 0) proves the naive map A_{K1} x A_{K2} -> A_{K1#K2} does not exist. Mechanism: the colour shift L is FULLY multiplicative on a pointwise product, L(f*g) = (Lf)(Lg), while M passes to ONE factor, M(f*g) = (Mf)*g. So an L-built operator never sees a tensor product. annihilator_not_monotone: f=1, g=2^n, P=L-1 gives P in A_f but P NOT in A_{f*g}, residual nonzero at EVERY colour.
+EXCLUDED: folio/quantum-observable-universe/lean/QOU/Eightfold/ConnectedSumAnnihilator.lean (6 theorems, sorry-free, lean-direct exit 0) proves the naive map A_{K1} x A_{K2} -> A_{K1#K2} does not exist. Mechanism: the colour shift L is FULLY multiplicative on a pointwise product, L(f*g) = (Lf)(Lg), while M passes to ONE factor, M(f*g) = (Mf)*g. So an L-built operator never sees a tensor product. annihilator_not_monotone: f=1, g=2^n, P=L-1 gives P in A_f but P NOT in A_{f*g}, residual nonzero at EVERY colour.
 
 WHAT SURVIVES: the Hadamard-product / creative-telescoping closure property - the pointwise product of two holonomic sequences is holonomic, with an annihilator of order at most n1*n2. That is a construction on OPERATORS, not a map of ideals, and it raises the ORDER multiplicatively.
 

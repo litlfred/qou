@@ -16,7 +16,7 @@ parent: qou-aabg
 ---
 
 **File:** `QOU/ParticleInteractions/mass_categorical_descent.lean` (QOU)  ·  1 cited sorry(s)
-**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/content/quantum-observable-universe/lean/QOU/ParticleInteractions/mass_categorical_descent.lean
+**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/folio/quantum-observable-universe/lean/QOU/ParticleInteractions/mass_categorical_descent.lean
 
 ### `mass_categorical_descent`  —  line 76  ·  tier **P** (repo-infra-dependent)
 - **Proposition:** `theorem mass_categorical_descent [ctx : MassCategoricalDescentContext] : ctx.B = ctx.B_desc + ctx.B_trans `

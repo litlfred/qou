@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T14:12:30Z
-updated_at: 2026-10-10T07:01:38Z
+updated_at: 2026-11-15T12:00:00Z
 parent: qou-5p7n
 ---
 
@@ -89,7 +89,7 @@ them. That is per-block mathematics, not a sweep.
 
 ### 1. `cor:knot-factor-borromean-composite` — CONFIRMED
 
-`content/quantum-observable-universe/mass-theory/knot-factor-borromean-composite.lean`
+`folio/quantum-observable-universe/mass-theory/knot-factor-borromean-composite.lean`
 
     structure BrunnianDecoupling (k : ℕ) (component_factor : ℝ)
         (composite_factor : ℝ) : Prop where
@@ -127,8 +127,8 @@ and the theorem projects one of its fields.
 
 `GBResidueSpectralSum` is declared **twice**, both in `namespace QOU.BraidKnot`:
 
-- `content/quantum-observable-universe/mass-theory/gb-residue-spectral-sum.lean` (block sibling)
-- `content/quantum-observable-universe/lean/QOU/BraidKnot/GBResidueSpectralSum.lean` (library)
+- `folio/quantum-observable-universe/mass-theory/gb-residue-spectral-sum.lean` (block sibling)
+- `folio/quantum-observable-universe/lean/QOU/BraidKnot/GBResidueSpectralSum.lean` (library)
 
 i.e. two declarations of `QOU.BraidKnot.GBResidueSpectralSum`. This is the
 sibling/library divergence hazard from `qou-e7xv` / PR #6540 §"A cost of this
@@ -337,3 +337,14 @@ one change, covering a whole surface — and separately diagnosing the
 ## 2026-10-10 — pointer
 
 Tracked under related carrier M10 of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
+
+## 2026-11-15 — PR #6681 ported onto main (owner decision), branch `claude/q-rh-item5-port-2026-11-15`
+
+Owner chose "port #6681" in the project thread "Settle open-problem leftovers". #6681 was 4421 commits behind and predates the `content/ → folio/` move, so its block diffs were re-applied 3-way at the new paths.
+
+**Ported (seven of the eight item-5 blocks):** `knot-factor-borromean-composite`, `lr-tensor-character-bridge`, `atom-knot-mass-derivation`, `markov-trace-recursive-reducer`, `rho-k-h3a-refinement`, `hecke-branching-trace-decomposition`, `gb-residue-spectral-sum` (restores the non-vacuous `spectral_sum_finite`; main still had the `Or.inr` form). Plus `docs/audits/2026-09-04-item5-detector-gate-instrumented.md`, `scripts/qa-stale-agent-verdicts.py`, beans `qou-rj0m`, `qou-vstf`, `qou-rdg8`.
+
+**Not ported, main already moved on:**
+- `sigma-shell-from-beta-chain-derivation`: main demoted it to a conjecture with no instance and proved `sigma_shell_staircase_vanishes_conventionD`. Merging #6681's re-encoding into that is tied to the open owner question on whether σ_shell is 0 under convention D. Left as main has it.
+- Library files from the `qou-tsnp` / `qou-u3wb` side work (`MetallicLPIdentities`, `MetallicPiecewise`, `IwahoriHecke/Tw`, `AlphaShiftTorusKnot`, `shell-closure-nf-term-count`): main fixed the same carriers independently (`tsnp` scrapped as duplicate of `qou-hprp`). Main's versions kept.
+- `.qa.json` sidecars and the vacuity witness: to be regenerated, not hand-merged.

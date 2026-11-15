@@ -76,8 +76,11 @@ A non-trivial substrate satisfies **neither**.  The second is the sharper
 statement, because `ε(1) = 1` is a *normalisation* rather than a structural
 compatibility — it is assumed without comment of every coalgebra with a unit in
 sight, and it is excluded here by the antipode axiom the definition now carries.
-The other two bimonoid axioms (`mul_comul`, `mul_counit`) need a braiding to
-state and are not addressed.
+Of the other two bimonoid axioms, `mul_comul` needs a braiding to state and is
+not addressed here. `mul_counit` (`μ ≫ ε = (ε ⊗ ε) ≫ λ_`) does **not** need a
+braiding, and it is excluded too, with no antipode:
+`MultiplicativeCounitCollapse.eq_counit_smul_one` proves that a multiplicative
+counit forces `x = ε(x) • 1` for every `x` (bean `qou-aj49`).
 
 ## Why none of this is a defect in the definition
 

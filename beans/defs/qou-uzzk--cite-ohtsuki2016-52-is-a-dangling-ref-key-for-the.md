@@ -14,7 +14,7 @@ parent: qou-mub3
 **Class M — a one-character-class fix: a `-- Ref:` key with a suffix the registry
 does not have, over a source that IS held.**
 
-`content/quantum-observable-universe/lean/QOU/Archimedean/FiveTwoOhtsukiBridge.lean:161`:
+`folio/quantum-observable-universe/lean/QOU/Archimedean/FiveTwoOhtsukiBridge.lean:161`:
 
 ```
 -- Ref: [ohtsuki2016-52] doi:10.4171/QT/83

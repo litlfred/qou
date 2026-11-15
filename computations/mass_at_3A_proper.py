@@ -132,7 +132,7 @@ Z_MARKOV = Q0_PROTON**3 / (Q0_PROTON**2 + 1)
 # Falls back to Plancherel w_λ = d_q²/[n]_q! for comparison audits.
 
 def jones_wenzl_weight(shape: tuple[int, ...],
-                        q=Q0_PROTON, z=Z_MARKOV):
+                        q=None, z=None):
     """Ocneanu/Markov weight w_lam(q, z) for the H_n(q) Markov trace.
 
         w_lam = prod_{(i,j) in lam} [ q^{2i}(q^2 - 1 - q z) + q^{2j+1} z ]
@@ -177,8 +177,19 @@ def jones_wenzl_weight(shape: tuple[int, ...],
     n = sum(shape)
     if n == 0:
         return mpf(1)
-    qm = q if isinstance(q, mpf) else mpf(q)
-    zm = z if isinstance(z, mpf) else mpf(z)
+    # Default to the mpf proton pin, and derive z in mpf from that same q.
+    # The defaults used to be the float64 `Q0_PROTON` / `Z_MARKOV`, so the
+    # returned mpf carried only a double's worth of q, and the normalisation
+    # sum_lam d_lam w_lam = 1 held only to ~1e-16 (bean qou-bsec).
+    if q is None:
+        from qou_substrate.constants import Q_MP as _q_mp
+        qm = _q_mp
+    else:
+        qm = q if isinstance(q, mpf) else mpf(q)
+    if z is None:
+        zm = qm ** 3 / (qm ** 2 + 1)
+    else:
+        zm = z if isinstance(z, mpf) else mpf(z)
     cells: list[tuple[int, int]] = []
     for i, r in enumerate(shape):
         for j in range(r):
@@ -200,7 +211,7 @@ def jones_wenzl_weight(shape: tuple[int, ...],
     return numer / denom
 
 
-def ocneanu_weights_3A(A: int, *, q: float = Q0_PROTON, z: float = Z_MARKOV):
+def ocneanu_weights_3A(A: int, *, q=None, z=None):
     """Return list of (λ, ω_λ) for all λ ⊢ 3A; Jones–Wenzl normalized."""
     return [(shape, jones_wenzl_weight(shape, q=q, z=z))
              for shape in partitions_of(3 * A)]

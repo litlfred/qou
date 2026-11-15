@@ -4,11 +4,9 @@ title: The hook length formula at general n is what blocks finrank(H_n/rad) = ca
 status: todo
 type: task
 priority: normal
-tags:
-    - reorg-2026-10-04
 created_at: 2026-09-27T05:30:10Z
 updated_at: 2026-10-04T15:24:55Z
-parent: qou-rtxm
+parent: qou-weeq
 ---
 
 Found while extending PR #7470 (branch claude/tl-quotient-ringcon-lift-2026-09-26).
@@ -283,3 +281,101 @@ both owner decisions, and closing the bean would bury them:
 2. `TemperleyLiebWedderburn.lean:69` pairs key jones1985 with jones1987's DOI, and
    jones1987 -- the Annals paper holding the TL-quotient + Markov-trace
    construction -- carries no `library:` field, i.e. is not ingested.
+
+
+## 2026-09-27 — ITEM 1's residual over-claim is now REPAIRED, not scoped. Bean still open on item 2.
+
+Commit bca720d676 on claude/two-row-count-eq-dimhlf-2026-09-27 (PR #7481).
+
+This bean's item 1 recorded that `QOU/Mathlib/TwoRowDimCatalan.lean`'s docstring
+calls `dimHLF_two_row_sq_sum` "a statement about actual standard-Young-tableau
+counts", and noted the over-claim had become REPAIRABLE rather than merely
+flaggable once `numSYT_twoRow_eq_ballot` landed. That repair is done.
+
+The missing tie, now proved:
+
+    numSYT_twoRow_eq_dimHLF (m k) (h : k <= m) :
+      (numStandardYoungTableaux (twoRow m k h) : Z) = (dimHLF [m, k] : N)
+
+sorry-free, general m and k, [propext, Classical.choice, Quot.sound], no sorryAx.
+Four lines: compose `dimHLF_two_row_eq_ballot` (August, formula <-> ballot) with
+`numSYT_twoRow_eq_ballot` (#7470, count <-> ballot), taking n = m + k so that
+n - k = m and 2k <= n reduces to k <= m. NO Frame-Robinson-Thrall, which stays
+absent from Mathlib and proved here only for n <= 4 (decide) plus n = 5.
+
+Placed in TwoRowSYTBallot.lean, which already owns the count<->ballot half; that
+file gains `import QOU.Mathlib.TwoRowDimCatalan`. No cycle -- TwoRowDimCatalan
+imports only BallotNumbers + SYTBranching2Row, neither of which reaches back.
+
+### A total-function wrapper was deliberately NOT added
+
+The tempting stronger form is a sum-of-squares over actual counts, which needs a
+total `(m,k) -> count`. `twoRowDim` already is one, and reusing it would have been
+WRONG here: it lives in QOU.SchurWeyl.TwoRowIdxReindex, which imports
+WtraceRadicalSemisimple and so pulls R into a purely combinatorial statement.
+Duplicating it in the Mathlib layer would put two spellings of one notion in the
+corpus. The single bridging theorem needs neither, and check-sidecars confirms
+both touched files remain "no R, generic OK".
+
+### The docstring says MORE than it used to, not less
+
+It now states the formula-vs-count distinction explicitly, cites the theorem, and
+records that the counts reading is a COMPOSITION rather than something that file
+proves. The old sentence's actual failure mode was inviting a reader to take the
+counts reading as TwoRowDimCatalan's own result; scoping the sentence down would
+have removed the claim but not that misreading.
+
+### Scope
+
+Exemption 2 of the 2026-09-07 ask-first override: the corpus fixes the answer (a
+sorry-free theorem on main), so a reviewer checks the edit against that artifact
+rather than against my reasoning. Two files, one theorem, one docstring -- not a
+sweep.
+
+### THIS BEAN STAYS OPEN (rule 13a)
+
+Item 2 is untouched and is an owner judgement: TemperleyLiebWedderburn.lean:69
+pairs key jones1985 with jones1987's DOI (10.2307/1971403) -- two different papers
+(references.ts :3059 vs :2187) -- and jones1987, the Annals paper carrying the
+TL-quotient + Markov-trace construction, has NO `library:` field, i.e. is not
+ingested. Subject matter wants jones1987, but which half is the typo is not mine
+to decide, and the ingestion is a separate uploads/ -> library/ step.
+
+
+## 2026-09-27 — item 2, first half: the citation is fixed. The mismatch is a POPULATION.
+
+Commit c42263ad9b (PR #7481).
+
+references.ts decides it, and the DOI was the correct half:
+
+  jones1985 = Bull. AMS 12(1) 103-111, "A polynomial invariant for knots via von
+              Neumann algebras", DOI 10.1090/S0273-0979-1985-15304-2 -- and it IS
+              ingested: library/s0273-0979-1985-15304-2/
+  jones1987 = Annals 126(2) 335-388, "Hecke algebra representations of braid groups
+              and link polynomials", DOI 10.2307/1971403 -- NO library: field
+
+TemperleyLiebWedderburn.lean is about the TL Wedderburn decomposition, so its subject
+is the Annals paper: the KEY was wrong. Fixed to jones1987 with the reasoning inline.
+
+### 🛑 It is 55 sites, not one -- and a blanket swap would be WRONG at >= 10
+
+Measured over content/ and docs/: 55 lines pair jones1985 with jones1987's DOI (57
+counting beans), plus 1 the other way. Classified by same-line subject keyword:
+
+  1987-subject (the KEY is the wrong half)   19
+  1985-subject (the DOI is the wrong half)   10
+  both                                        2
+  ambiguous on same-line evidence            24
+
+A key-swap corrupts the 10 and is undetermined at the 24. This is the qou-6moa shape
+verbatim -- "the handed-down reversal is TWO classes, not one". Only the one scoped
+site is touched. The other 55 need a scoping decision plus a per-site subject
+determination; the same-line keyword split above is a triage aid, NOT a verdict.
+
+### The ingestion half is BLOCKED ON INPUT, not on work
+
+jones1987 -- the Annals paper carrying the TL-quotient + Markov-trace construction --
+is in NEITHER library/ NOR uploads/. Checked: the two jones-named library dirs are
+colored-Jones papers, a different subject. So that half cannot be done from the
+container at all; it needs the PDF supplied. Recorded so a future agent does not
+spend a session looking for it.

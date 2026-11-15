@@ -12,7 +12,7 @@ parent: qou-r9ih
 ---
 
 Run the recentring + theta-limit machinery of
-[`AwZeroLocalization`](../content/quantum-observable-universe/lean/QOU/Archimedean/AwZeroLocalization.lean)
+[`AwZeroLocalization`](../folio/quantum-observable-universe/lean/QOU/Archimedean/AwZeroLocalization.lean)
 / [`2026-08-01-awzero-asymptotics.md`](../docs/audits/2026-08-01-awzero-asymptotics.md)
 on the **balanced** family's D-function, to link the balanced extremal
 supports to the balanced tropical roots. Combined with the exact E-transport

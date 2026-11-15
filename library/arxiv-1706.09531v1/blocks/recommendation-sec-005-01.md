@@ -1,0 +1,1 @@
+The spontaneous breaking of SU(4)-color at high energies to SU(3)c×U(1)B−L was then suggested to explain the observed distinction between quarks and leptons at low energies, as regards their response to strong interactions; such a distinction must then disappear at suﬃciently high energies.

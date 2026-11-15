@@ -2720,6 +2720,16 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "kuperberg1991g2" },
   { id: "kuperberg1996spiders" },
   { id: "erlijman-wenzl-2007" },
+  // 2026-11-15: arXiv sources ingested into library/ (epic qou-s4ws).
+  { id: "chamseddine-connes-2008-why-sm" },
+  { id: "chamseddine-connes-marcolli-2007" },
+  { id: "furey2018" },
+  { id: "li-zhou-zhou-2019" },
+  { id: "zhao-tang-wan-2021" },
+  { id: "zhao-wu-ababekri-2023" },
+  { id: "senjanovic2011" },
+  { id: "pati2017" },
+  { id: "rosso1988" },
 ];
 
 export const references: Reference[] = assemble(ORDER);

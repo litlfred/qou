@@ -44,7 +44,7 @@ principle, any winding number, any complex residue (every `residue` hit is
 ## 2026-08-07 — step 1 done: `θ_P` is holomorphic on `ℂ*`
 
 `differentiableOn_qThetaC (P : ℝ) (hP : 1 < P) : DifferentiableOn ℂ (qThetaC P) {(0:ℂ)}ᶜ`
-in `content/quantum-observable-universe/lean/QOU/QBeta/C1ConnectionPoles.lean`.
+in `folio/quantum-observable-universe/lean/QOU/QBeta/C1ConnectionPoles.lean`.
 Sorry-free, axioms `[propext, Classical.choice, Quot.sound]`.
 
 Shape of the proof, and the three places it had to route around Mathlib:
@@ -185,7 +185,7 @@ prior corpus note. Nothing to revise.
 
 ## 2026-08-07 — row 3 done: both series converge where they are used
 
-New file `content/quantum-observable-universe/lean/QOU/QBeta/C1SeriesConvergence.lean`,
+New file `folio/quantum-observable-universe/lean/QOU/QBeta/C1SeriesConvergence.lean`,
 namespace `QOU.QBeta.C1Series`. Five theorems, sorry-free,
 `[propext, Classical.choice, Quot.sound]`.
 

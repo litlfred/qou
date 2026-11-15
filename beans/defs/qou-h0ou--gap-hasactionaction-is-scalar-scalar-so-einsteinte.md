@@ -39,7 +39,7 @@ instance (`:130`) proves all three EOM by `rfl` because `vd` is DEFINED as
 `Fact` hypotheses, i.e. assumes them.
 
 ### What was formalized — NEW FILE, sorry-free
-`content/quantum-observable-universe/lean/QOU/FrobeniusHopfData/PairingVariationalDerivative.lean`,
+`folio/quantum-observable-universe/lean/QOU/FrobeniusHopfData/PairingVariationalDerivative.lean`,
 namespace `QOU.Variational`. Built on the carrier the corpus already holds,
 `FrobeniusPairingData` (`FrobeniusPairingCategorical.lean:51`).
 

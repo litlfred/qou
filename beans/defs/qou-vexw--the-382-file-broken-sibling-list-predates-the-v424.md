@@ -12,7 +12,7 @@ parent: qou-trd0
 ---
 
 Found while trying to verify an appended section in
-`content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean`
+`folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean`
 (PR on branch claude/agent-discussions-queue-gibk4e).
 
 That file does not parse under the pinned toolchain, on `main`, unmodified:
@@ -63,7 +63,7 @@ workflow is `workflow_dispatch`-only anyway.
 ```bash
 export PATH="$HOME/.elan/bin:$PATH"; export ELAN_TOOLCHAIN=lean-v4.24.0
 export LEAN_PATH=$(ls -d $PWD/.lake/packages/*/.lake/build/lib/lean | tr '\n' ':')
-lean content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean
+lean folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean
 ```
 
 Note the olean dirs end in `.lake/build/lib/lean`, not `.lake/build/lib` — the

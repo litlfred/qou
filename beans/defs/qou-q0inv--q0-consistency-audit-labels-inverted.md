@@ -1,13 +1,13 @@
 ---
 # qou-q0inv
 title: q0_consistency_audit labels the LIVE canonical q0 as "stale" — and contradicts itself
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T17:25:00Z
-updated_at: 2026-10-04T15:22:55Z
+updated_at: 2026-11-15T13:40:00Z
 parent: qou-5vkl
 ---
 
@@ -222,3 +222,7 @@ needs a per-tool re-run and diff.
 Three tools have now needed the same one-line guard. A shared
 `resolve_producer(name)` helper — excluding `_deprecated`, `.claude`, `.git`,
 `node_modules` — would end the recurrence. Not attempted here.
+
+## Closed 2026-11-15 (owner tap, precision epic triage)
+
+Both misresolving audits were fixed and checked to resolve the live copy. Follow-up idea, not a defect: a shared resolve_producer(name) helper that excludes _deprecated, .claude, .git and node_modules, so the one-line guard stops being re-applied per tool.

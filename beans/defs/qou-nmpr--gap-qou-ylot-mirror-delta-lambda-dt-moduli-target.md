@@ -44,7 +44,7 @@ Delta_lambda (concentration is essential); then test whether the confinement SDP
 / canonical T_w forces the top-degree projection. If yes -> derivation closes;
 if no -> substrate under-determines the realization and the DT home is an avatar.
 
-Lean: content/quantum-observable-universe/lean/QOU/BraidsAndKnots/DeltaLambdaDTModuliUnderdetermined.lean
+Lean: folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/DeltaLambdaDTModuliUnderdetermined.lean
 Audit: docs/audits/2026-08-01-deltalambda-dt-substrate-derivation.md
 Discipline: 0 free params; Delta_lambda/AME/CODATA/q0 never inverted; no instance fabricated.
 

@@ -217,7 +217,7 @@ from scratch. Compiling is not landing. Commit before moving to the next file.
 
 THE DOWNSTREAM CONSUMER, found 2026-08-24. The spectral-collapse work is not decorative — the exactness of every binding energy in the corpus rests on it.
 
-`prop:atom-knot-mass-derivation` (content/quantum-observable-universe/mass-theory/):
+`prop:atom-knot-mass-derivation` (folio/quantum-observable-universe/mass-theory/):
 
     M(H) = nu_SDP * [ tr_M(T_w) + tower(T_w) + tr_M(C_dimq) ]
     B(H) = m_e * M(H) |_{q=q0}

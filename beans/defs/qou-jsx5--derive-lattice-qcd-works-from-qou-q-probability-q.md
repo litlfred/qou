@@ -24,15 +24,15 @@ statistical mechanics and q-CLT."
 ## Corpus state (grep done — ingredients present)
 
 - **Non-commutative probability layer** is already built:
-  [`non-comm-probability-intro`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/content/quantum-observable-universe/observations/non-comm-probability-intro.md),
-  [`hecke-satisfies-blitvic-hypothesis`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/content/quantum-observable-universe/braids-and-knots/hecke-satisfies-blitvic-hypothesis.md)
+  [`non-comm-probability-intro`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/folio/quantum-observable-universe/observations/non-comm-probability-intro.md),
+  [`hecke-satisfies-blitvic-hypothesis`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/folio/quantum-observable-universe/braids-and-knots/hecke-satisfies-blitvic-hypothesis.md)
   (Hecke algebra + Markov trace as a q-probability space),
-  [`centered-hecke-variance-positive-interpretation`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/content/quantum-observable-universe/observations/centered-hecke-variance-positive-interpretation.md).
+  [`centered-hecke-variance-positive-interpretation`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/folio/quantum-observable-universe/observations/centered-hecke-variance-positive-interpretation.md).
 - **q-CLT**: the Blitvić hypothesis + centered-variance-positive give the
   q-deformed central limit — the classical (Gaussian) limit is the
   KLR→KL decategorification (AGENTS.md §7b item 2).
 - **Algebraic independence of observables**:
-  [`observables-algebraic-independence`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/content/quantum-observable-universe/observations/observables-algebraic-independence.md)
+  [`observables-algebraic-independence`](https://github.com/litlfred/qou/blob/claude/agent-task-662242-vag458/folio/quantum-observable-universe/observations/observables-algebraic-independence.md)
   already discusses lattice-QCD comparison.
 - **Wick rotation** (bean: categorical Wick) supplies the
   Euclidean↔Lorentzian bridge (partition function $Z=\mathrm{tr}\,e^{-\beta H}$

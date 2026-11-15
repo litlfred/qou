@@ -37,7 +37,7 @@ OPEN (why this bean stays open):
 1. `ground-state-ordering.qa.json` is now STALE -- the .md source hash moved
    and qa-sweep could not be run here (folio-assistant clone absent, disk 97%).
    Needs: bun run folio-assistant/content/pipeline/qa-sweep.ts
-          content/quantum-observable-universe/mass-theory/ground-state-ordering
+          folio/quantum-observable-universe/mass-theory/ground-state-ordering
 2. The .md edit is NOT machine-render-validated. Grep battery + expository pass
    only, per the documented fallback.
 3. check-sidecars flags the Lean file as "MIXED generic + archimedean" (§7c).

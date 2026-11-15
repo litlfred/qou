@@ -11,7 +11,7 @@ updated_at: 2026-10-04T15:26:46Z
 parent: qou-uot9
 ---
 
-File: `content/quantum-observable-universe/lean/QOU/BraidsKnots/mobius_frobenius_kernel.lean`
+File: `folio/quantum-observable-universe/lean/QOU/BraidsKnots/mobius_frobenius_kernel.lean`
 The `mobius_frobenius_kernel` theorem is unprovable. Its class lacks constraints on the data fields and has `*_unconstrained_false` lemmas proving that the conclusion is independent and refutable from the provided data alone.
 
 

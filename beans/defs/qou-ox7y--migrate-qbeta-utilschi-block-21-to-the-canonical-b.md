@@ -1,13 +1,13 @@
 ---
 # qou-ox7y
 title: Migrate qbeta_utils.chi_block_21 to the canonical borromean form
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T08:08:28Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-11-15T13:30:28Z
 parent: qou-avtq
 ---
 
@@ -113,3 +113,11 @@ Evidence: Commit `f1291a048a` (2026-09-07) is on main. `computations/qbeta/qbeta
 
 Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+## Closed 2026-11-15 (owner tap, bean triage)
+
+Status set to `completed`: the 2026-10-10 re-audit verdict was DONE, and on `main` (`0d4e4a005e`) `computations/qbeta/qbeta_utils.py::chi_block_21` defaults to the canonical `borromean` form (landed in `f1291a048a`).
+
+## 2026-11-15 closed (owner card, E3 bean triage)
+
+Verified done against main 0d4e4a005: Migration landed (f1291a048a); intra_order="borromean" is live in computations/qbeta/qbeta_utils.py; re-verified 2026-10-10 and again today. Not an open conjecture.

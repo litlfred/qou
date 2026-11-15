@@ -1,13 +1,13 @@
 ---
 # qou-4rhu
 title: S3 Conform to the folio_init layout; QA results to the cat-harness qa-reports branch
-status: in-progress
+status: todo
 type: feature
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T15:10:15Z
-updated_at: 2026-10-05T13:38:45Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-n4r9
 ---
 
@@ -37,3 +37,7 @@ Remaining in S3: part 4, folio_init layout conformance.
 
 
 2026-10-05 — owner: 'fix all', taking the recommendation on the one table that exists only in .tex ('[appendix-surreals] #12', an 11-row development history): LEAVE IT. It is a status-history table, probably dropped on purpose, and it stays recoverable from b7accffcbc:qou-all-tables.tex. Nothing restored. qou-all-tables.tex is treated as derived output.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

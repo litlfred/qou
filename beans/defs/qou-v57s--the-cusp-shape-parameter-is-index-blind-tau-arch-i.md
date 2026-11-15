@@ -1,10 +1,11 @@
 ---
 # qou-v57s
 title: 'The cusp shape parameter is INDEX-BLIND: tau_arch is not a function of the algebraic seed (scope-(b), pigeonhole)'
-status: in-progress
+status: todo
 type: task
 created_at: 2026-10-10T12:34:17Z
-updated_at: 2026-10-10T13:25:00Z
+updated_at: 2026-11-15T13:30:00Z
+parent: qou-n4nr
 ---
 
 Measured 2026-10-10 (PR #7586, issue #7585) while working `qou-3kni`'s cusp
@@ -345,3 +346,10 @@ machine-render-validated (`render-latex.ts` absent at that path here).
 
 **Status: `in-progress`.** The conjecture is open.
 
+## Parented 2026-11-15 (owner-approved bean triage)
+
+Parent `(none)` → `qou-n4nr`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

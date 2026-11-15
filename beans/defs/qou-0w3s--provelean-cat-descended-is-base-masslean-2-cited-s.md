@@ -16,7 +16,7 @@ parent: qou-aabg
 ---
 
 **File:** `QOU/TopologicalMass/cat_descended_is_base_mass.lean` (QOU)  ·  2 cited sorry(s)
-**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/content/quantum-observable-universe/lean/QOU/TopologicalMass/cat_descended_is_base_mass.lean
+**GitHub:** https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/folio/quantum-observable-universe/lean/QOU/TopologicalMass/cat_descended_is_base_mass.lean
 
 ### `descended_trace_is_base_trace`  —  line 79  ·  tier **P** (repo-infra-dependent)
 - **Proposition:** `theorem descended_trace_is_base_trace : trFrob (tauHat alpha) = baseTrace `

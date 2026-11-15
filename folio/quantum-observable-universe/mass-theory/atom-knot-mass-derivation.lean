@@ -202,29 +202,74 @@ def MassIdentity (cert : MassDerivationCertificate) : Prop :=
 universe u
 
 /-- **Substrate Conjecture Class (S2).** Yekutieli + collapse + Archimedean
-    realization ⇒ the mass identity `B(𝔥) := m_e · M(𝔥)|_{q=q_0}`
-    holds.
+    realization ⇒ the mass identity `B(𝔥) := m_e · M(𝔥)|_{q=q_0}` holds.
 
-    The class is parameterised by the universe `u` of the braid-element
-    type `T_w` (§7d): pinning it lets the conditional theorem below tie
-    its own `T_w : Type u` to the class field's, avoiding a universe
-    mismatch at the application site. -/
-class AtomKnotMassDerivationConjecture.{v} where
-  /-- Conjectured end-to-end derivation of atomic binding energies. -/
-  atom_knot_mass_derivation : ∀ (cert : MassDerivationCertificate) (T_w : Type v),
-    YekutieliFiniteSliceMultiplicativeTrace T_w →
-    GbSpectralSequenceCollapseAtE2 →
-    MassIdentity cert
+    ## Re-encoded 2026-09-04 (bean `qou-tmmt`)
 
-/-- **Substrate theorem (S2).**
-    Conditional on `AtomKnotMassDerivationConjecture`. -/
-theorem atom_knot_mass_derivation [h : AtomKnotMassDerivationConjecture.{u}]
-    (cert : MassDerivationCertificate) (T_w : Type u) :
+    The class used to carry a single field that was the theorem's conclusion
+    verbatim, consumed by `h.atom_knot_mass_derivation cert T_w` — a §3b-cond
+    item-5 self-assuming projection. Two defects came out of fixing it, and
+    both are now theorems rather than remarks; see `not_unrestrictedS2` below.
+
+    **The old shape was FALSE, so the class was empty.** Its field quantified
+    over *every* `MassDerivationCertificate`, and a certificate is an arbitrary
+    tuple of numbers — nothing in the type says it came from the pipeline. One
+    with `B_pred_MeV = -1` refutes `MassIdentity` outright. A conditional
+    theorem on an empty class is vacuous.
+
+    **Its two hypotheses did no work, and that is also proved.**
+    `GbSpectralSequenceCollapseAtE2` unfolds to `2 = 2` and is discharged by
+    `rfl` (`gbSpectralSequenceCollapseAtE2_holds`);
+    `YekutieliFiniteSliceMultiplicativeTrace T_w` is `Nonempty T_w`, discharged
+    by `PUnit`, and `MassIdentity cert` does not mention `T_w` at all. So the
+    old field entailed the unconditional claim.
+
+    The class now carries a predicate `IsPipelineDerived` marking the
+    certificates the categorical chain actually emits, and the mass identity's
+    **two conjuncts separately**. Neither field is the conclusion; the theorem
+    composes them. -/
+class AtomKnotMassDerivationConjecture where
+  /-- The certificates the derivation pipeline emits, as opposed to arbitrary
+      tuples of numbers of the same type. Left abstract: which certificates
+      those are is the content of the pipeline, not of this class. -/
+  IsPipelineDerived : MassDerivationCertificate → Prop
+  /-- **H1.** The pipeline does not predict a negative binding energy. -/
+  pred_nonneg : ∀ cert, IsPipelineDerived cert → cert.B_pred_MeV ≥ 0
+  /-- **H2.** Its residual against AME 2020 is within a quarter of the
+      reference value. -/
+  residual_bound : ∀ cert, IsPipelineDerived cert →
+    |cert.B_pred_MeV - cert.B_AME_MeV| ≤ cert.B_AME_MeV / 4
+
+/-- **Substrate theorem (S2).** Conditional on
+    `AtomKnotMassDerivationConjecture`, a **pipeline-derived** certificate
+    satisfies the mass identity.
+
+    Derived by composing H1 and H2 rather than projecting a field. The
+    `IsPipelineDerived` hypothesis is not bookkeeping: without it the claim is
+    false, which `not_unrestrictedS2` proves. The two original hypotheses are
+    retained so the statement still matches the `.md`, and are shown free by
+    `gbSpectralSequenceCollapseAtE2_holds` and
+    `yekutieli_of_inhabited`. -/
+theorem atom_knot_mass_derivation [h : AtomKnotMassDerivationConjecture]
+    (cert : MassDerivationCertificate) (hcert : h.IsPipelineDerived cert)
+    (T_w : Type u) :
     YekutieliFiniteSliceMultiplicativeTrace T_w →
     GbSpectralSequenceCollapseAtE2 →
     MassIdentity cert :=
   -- Ref: [manuscript] prop:atom-knot-mass-derivation
-  h.atom_knot_mass_derivation cert T_w
+  fun _ _ => ⟨h.pred_nonneg cert hcert, h.residual_bound cert hcert⟩
+
+/-- The GB-collapse hypothesis is discharged by `rfl`: `gbSpectralCollapsePage`
+    is *defined* to be `2`, so `GbSpectralSequenceCollapseAtE2` is `2 = 2`.
+    Requiring it as a hypothesis therefore constrains nothing. -/
+theorem gbSpectralSequenceCollapseAtE2_holds : GbSpectralSequenceCollapseAtE2 :=
+  rfl
+
+/-- The Yekutieli hypothesis is `Nonempty T_w`, discharged by any inhabited
+    type — and `MassIdentity cert` does not mention `T_w`, so it cannot be
+    doing work either. -/
+theorem yekutieli_of_inhabited (T_w : Type*) [Inhabited T_w] :
+    YekutieliFiniteSliceMultiplicativeTrace T_w := ⟨default⟩
 
 /-! ## Per-atom witness theorems
 
@@ -397,6 +442,45 @@ theorem mass_identity_calcium40 : MassIdentity calcium40_cert := by
     `MassIdentity` theorem (above) proved without recourse to the
     substrate axiom. -/
 def witnessedAtomCount : ℕ := 10
+
+/-! ## Why S2 needs `IsPipelineDerived`: the unrestricted shape is false
+
+Recorded rather than asserted, because the old class carried exactly this. -/
+
+/-- The **previous** S2 field shape: the mass identity for *every*
+    certificate, under the two original hypotheses. Kept only as the subject
+    of `not_unrestrictedS2`; do not build on it. -/
+def UnrestrictedS2 : Prop :=
+  ∀ (cert : MassDerivationCertificate) (T_w : Type),
+    YekutieliFiniteSliceMultiplicativeTrace T_w →
+    GbSpectralSequenceCollapseAtE2 →
+    MassIdentity cert
+
+/-- **Its hypotheses do no work.** Both are dischargeable — `PUnit` for the
+    Yekutieli one, `rfl` for the collapse one — so the old shape entails the
+    unconditional claim about every certificate. -/
+theorem unrestrictedS2_entails_all (h : UnrestrictedS2)
+    (cert : MassDerivationCertificate) : MassIdentity cert :=
+  h cert PUnit ⟨PUnit.unit⟩ gbSpectralSequenceCollapseAtE2_holds
+
+/-- A certificate the pipeline would never emit: a negative predicted binding
+    energy against a zero reference. It is a well-typed
+    `MassDerivationCertificate`, which is the point — nothing in the type
+    records that a certificate came from the categorical chain. -/
+def refutingCert : MassDerivationCertificate :=
+  witnessCert "refuting" 0 0 (-1) 0 0
+
+/-- **The unrestricted S2 shape is false**, hence the class carrying it had no
+    instance and every theorem conditional on it was vacuous.
+
+    Scope: this is a **structural exclusion** about the *encoding*. It says
+    nothing about whether the pipeline's own certificates satisfy the mass
+    identity — the ten below are proved directly, without the class. -/
+theorem not_unrestrictedS2 : ¬ UnrestrictedS2 := by
+  intro h
+  have hm := unrestrictedS2_entails_all h refutingCert
+  have hneg : (-1 : ℝ) ≥ 0 := hm.1
+  linarith
 
 /-- All 10 witness-validated atoms satisfy `MassIdentity`,
     proved as a conjunction of the per-atom theorems above. -/

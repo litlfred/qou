@@ -18,7 +18,7 @@ this exact shape.
 
 ## The defect
 
-`content/quantum-observable-universe/lean/QOU/Torsion/skein_generation.lean`:
+`folio/quantum-observable-universe/lean/QOU/Torsion/skein_generation.lean`:
 
 ```lean
 class SkeinGenerationContext (R Skein FundamentalKnotIndex : Type*) … where

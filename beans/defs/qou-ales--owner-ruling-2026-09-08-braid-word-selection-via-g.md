@@ -1,13 +1,13 @@
 ---
 # qou-ales
 title: 'OWNER RULING 2026-09-08: braid-word selection via gamma-gamma production + confinement SDP at q0 — no census'
-status: in-progress
+status: todo
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-08T07:40:02Z
-updated_at: 2026-10-11T12:58:59Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-v2om
 ---
 
@@ -267,3 +267,7 @@ A derivation of the sign map must therefore fix each produced line's through par
 - No rule fixes the placement.
 
 The gap is a flavour-to-line dictionary, possibly from a construction above three strands. Nothing adopted; the bean stays open (rule 13a). Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
+
+## Claim reset 2026-11-15
+
+Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.

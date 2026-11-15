@@ -19,7 +19,7 @@ Found while working `qou-mtcx` (PR #4756). **Pre-existing on `main`** — not
 introduced by that PR, and deliberately not fixed there (a base-ring re-typing
 is the wrong vehicle for a proof-integrity decision).
 
-File: [`QOU/WedderburnMass/confinement_categorical.lean`](../content/quantum-observable-universe/lean/QOU/WedderburnMass/confinement_categorical.lean)
+File: [`QOU/WedderburnMass/confinement_categorical.lean`](../folio/quantum-observable-universe/lean/QOU/WedderburnMass/confinement_categorical.lean)
 
 ## The docstring makes two claims; both are false of the code beneath it
 

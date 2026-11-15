@@ -236,7 +236,7 @@ Having recorded that `μ̄₁₂₃` is closed, I read `QOU/Mass/MilnorSignRepOb
 
 **What this arc needs is a different target.** `CrossingModelPairLocality.tripleMutual(i,j,k) = w3 ijk + w3 ikj + w3 jki` sums over **all three** pairs, so it is a **scalar**, invariant under relabelling the components — the **trivial** rep, not `trivial ⊕ standard`. No instance of the existing theorem has it as a target. So between the corpus's two `μ̄` refutations there was a gap: `MilnorCarriesOrderNotMagnitude` argues about **size** and is silent on sign; `MilnorSignRepObstruction` argues about **symmetry** but only into the pair channel. **Neither says a symmetric scalar channel cannot be linear in `μ̄`.**
 
-**Closed:** [`QOU/Mass/MilnorSignRepObstructionTripleChannel.lean`](../content/quantum-observable-universe/lean/QOU/Mass/MilnorSignRepObstructionTripleChannel.lean), six declarations, **`lean -DautoImplicit=false -s 65536` exit 0**, `#print axioms` on all six showing only `propext` / `Classical.choice` / `Quot.sound` — **no `sorryAx`**.
+**Closed:** [`QOU/Mass/MilnorSignRepObstructionTripleChannel.lean`](../folio/quantum-observable-universe/lean/QOU/Mass/MilnorSignRepObstructionTripleChannel.lean), six declarations, **`lean -DautoImplicit=false -s 65536` exit 0**, `#print axioms` on all six showing only `propext` / `Classical.choice` / `Quot.sound` — **no `sorryAx`**.
 
 - `sign_equivariant_scalar_eq_zero` — a transposition has `signR = −1`, so `signR g · c = c` forces `c + c = 0`.
 - `equivariant_linearMap_to_trivial_eq_zero` — the companion of `equivariant_linearMap_eq_zero` with the target changed to a scalar carrying the trivial action.

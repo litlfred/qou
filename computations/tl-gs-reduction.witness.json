@@ -1,0 +1,181 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-15T11:49:34.920461+00:00",
+  "commitSha": "ae53fd53cb95ae96f025aa66f181274d45e55416",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 683,
+  "computation": "tl-gs-reduction",
+  "scriptFile": "tl_gs_reduction_probe.py",
+  "scriptHash": "aff68fefa179",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/tl_gs_reduction_probe.py"
+    ],
+    "reproduce": "python3 -u computations/tl_gs_reduction_probe.py"
+  },
+  "description": "The Temperley-Lieb Gröbner-Shirshov reduction of Kim-Lee Prop. 3.1 (quoting Kang-Lee-Lee-Oh 2002 Prop. 6.2), checked against this folio's planar-diagram ground truth. Corrects tl_closure_rule_probe's claim that the (I',J') rule was unidentified: it was already in references.ts:10450, read 2026-08-09. Exact integer arithmetic; no floating point.",
+  "bean": "qou-cds1",
+  "source": {
+    "citation_key": "kimlee2018",
+    "statement": "Prop. 3.1, quoting Kang-Lee-Lee-Oh, J. Algebra 252 (2002) 258-292, Prop. 6.2",
+    "pdf": "library/fd58d8e182edda805fed0946606c5ab82f81/",
+    "primary_not_held": "qou-qspu"
+  },
+  "rules": [
+    "E_i E_i -> delta E_i",
+    "E_i E_j -> E_j E_i   (i > j+1)",
+    "E_{i,j} E_i -> E_{i-2,j} E_i   (i > j)",
+    "E_j E_{i,j} -> E_j E_{i,j+2}   (i > j)"
+  ],
+  "checks": {
+    "products_vs_diagrams": {
+      "rows": [
+        {
+          "n": 2,
+          "products": 2,
+          "mismatches": 0
+        },
+        {
+          "n": 3,
+          "products": 10,
+          "mismatches": 0
+        },
+        {
+          "n": 4,
+          "products": 42,
+          "mismatches": 0
+        },
+        {
+          "n": 5,
+          "products": 168,
+          "mismatches": 0
+        },
+        {
+          "n": 6,
+          "products": 660,
+          "mismatches": 0
+        },
+        {
+          "n": 7,
+          "products": 2574,
+          "mismatches": 0
+        }
+      ],
+      "products": 3456,
+      "mismatches": 0,
+      "pass": true
+    },
+    "closure_on_pairs": {
+      "rows": [
+        {
+          "n": 2,
+          "pairs": 4,
+          "non_standard": 0
+        },
+        {
+          "n": 3,
+          "pairs": 25,
+          "non_standard": 0
+        },
+        {
+          "n": 4,
+          "pairs": 196,
+          "non_standard": 0
+        },
+        {
+          "n": 5,
+          "pairs": 1764,
+          "non_standard": 0
+        },
+        {
+          "n": 6,
+          "pairs": 17424,
+          "non_standard": 0
+        }
+      ],
+      "pairs": 19413,
+      "non_standard": 0,
+      "pass": true
+    },
+    "confluence": {
+      "rows": [
+        {
+          "n": 3,
+          "words": 200,
+          "divergent": 0
+        },
+        {
+          "n": 4,
+          "words": 200,
+          "divergent": 0
+        },
+        {
+          "n": 5,
+          "words": 200,
+          "divergent": 0
+        },
+        {
+          "n": 6,
+          "words": 200,
+          "divergent": 0
+        },
+        {
+          "n": 7,
+          "words": 200,
+          "divergent": 0
+        }
+      ],
+      "words": 1000,
+      "orders_per_word": 9,
+      "divergent": 0,
+      "pass": true
+    },
+    "paper_examples": {
+      "a3_standard_monomials": [
+        "1",
+        "E1",
+        "E1E2",
+        "E1E2E3",
+        "E1E3",
+        "E1E3,2",
+        "E2",
+        "E2,1",
+        "E2,1E3",
+        "E2,1E3,2",
+        "E2E3",
+        "E3",
+        "E3,1",
+        "E3,2"
+      ],
+      "a3_matches_example_3_2": true,
+      "remark_1_lhs": "(E1E2)(E2,1E3,2)",
+      "remark_1_result": "E1E3,2",
+      "remark_1_delta_power": 1,
+      "remark_1_matches_paper": true,
+      "remark_2_lhs": "E2,1E3,1",
+      "remark_2_result": "E2,1E3",
+      "remark_2_delta_power": 0,
+      "remark_2_matches_paper": true,
+      "pass": true
+    }
+  },
+  "all_pass": true,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Pure Temperley-Lieb combinatorics: normal-form words, planar diagrams and set/tuple indices, over exact integers. No substrate q0 is read on any path, and delta appears only as a symbolic exponent count, never as a number."
+}

@@ -38,13 +38,13 @@ That paragraph is precisely:
 - the **(2,4,5)** datum the Lean uses without citation.
 
 **Where it bites.**
-`content/quantum-observable-universe/lean/QOU/Archimedean/EmCouplingBringZeroMode.lean`
+`folio/quantum-observable-universe/lean/QOU/Archimedean/EmCouplingBringZeroMode.lean`
 (sorry-free): `bringFundamentalTriangleArea` (`:90`, the π/20 angle defect),
 `bringSurfaceArea` (`:94`, `240 ×` that), `bringTilingFaces := 240` (docstring
 `:195-199`), `bringSurfaceArea_eq_gaussBonnet` (`:132`). Its `-- Ref:` lines
 (`:57-62`) are `[manuscript]`, `[suslin1991]`, `[bloch2000]`, `[thurston1978]` —
 **the dilogarithm leg, not the geometry**. Narrative twin
-`content/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.md:20`;
+`folio/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.md:20`;
 its `.ts` `cites: ["jones1987", "kassel1995", "suslin1991", "bloch2000"]` — same gap.
 
 `references.ts:9037` registers the paper for its **period matrix** (`Z = τ₀·C`,

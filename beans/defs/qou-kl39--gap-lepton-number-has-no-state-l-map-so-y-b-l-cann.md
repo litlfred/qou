@@ -15,7 +15,7 @@ parent: qou-20sx
 Found 2026-08-09 while checking whether the corpus's existing lepton number closes
 the L half of Y = B - L (proved requirement: HyperchargeBatteryReduction.lean).
 
-WHAT EXISTS (content/quantum-observable-universe/predicted-spectra/lepton-number-categorical.*):
+WHAT EXISTS (folio/quantum-observable-universe/predicted-spectra/lepton-number-categorical.*):
   - .md: L := count of Skein smoothings on the nuclear normal form; prose table
     assigning L to e-, e+, nu_e, nubar_e; 'hadrons carry L = 0' as prose.
   - .lean: structure LeptonNumber { L : Int }  -- a one-field wrapper, computes nothing

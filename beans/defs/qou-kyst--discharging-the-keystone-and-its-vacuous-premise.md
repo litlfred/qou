@@ -16,7 +16,7 @@ neglect. Beaned so they are not mistaken for oversights.
 
 ## 1. `conj:qdifference-kernel-prolongation-symbol` — class with no instance
 
-`content/quantum-observable-universe/mass-theory/qdifference-kernel-prolongation-symbol.lean`
+`folio/quantum-observable-universe/mass-theory/qdifference-kernel-prolongation-symbol.lean`
 declares `class QDifferenceKernelIsProlongationSymbol (R) [CommRing R]` and
 proves `kernel_is_prolongation_symbol` **from the class field**. There is no
 instance anywhere. That is the honest open state for a `conjecture` block

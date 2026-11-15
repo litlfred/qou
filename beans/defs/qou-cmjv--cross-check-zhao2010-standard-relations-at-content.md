@@ -1,6 +1,6 @@
 ---
 # qou-cmjv
-title: Cross-check [zhao2010-standard-relations] at content/quantum-observable-universe/mass-theory/cl3-…
+title: Cross-check [zhao2010-standard-relations] at folio/quantum-observable-universe/mass-theory/cl3-…
 status: todo
 type: task
 priority: normal

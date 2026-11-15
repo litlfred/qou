@@ -1,6 +1,6 @@
 ---
 # qou-30vq
-title: Remark interpreting [yekutieli2015] at content/quantum-observable-universe/quantum-observable-uni…
+title: Remark interpreting [yekutieli2015] at folio/quantum-observable-universe/quantum-observable-uni…
 status: todo
 type: task
 priority: normal

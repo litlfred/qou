@@ -77,7 +77,7 @@ see L-V2).
 ## WRONG WHEN RECORDED — retracted, with the correction
 
 **W1. [it-b3] "FALSE `sigma_i^{-1} = sigma_i` mod Hecke in q-game-of-life-proof". RETRACTED.**
-`content/quantum-observable-universe/information-theory/q-game-of-life-proof.md`
+`folio/quantum-observable-universe/information-theory/q-game-of-life-proof.md`
 carries no such claim, and did not on 2026-08-15 (`git log -S` shows the file
 untouched since `230cdd113`). What it actually says, verbatim:
 
@@ -253,7 +253,7 @@ times q^{2k} (`[k]_q² → q^{2k}/(q−q⁻¹)²`). Two of the sixteen were wors
 
 `\xid`, `\xiZ`, `\xiA` were commented as *"Reeb vector field variants used
 in contact/brane geometry"*. No such notation is registered anywhere under
-`content/quantum-observable-universe/notation/`. The comment documents three
+`folio/quantum-observable-universe/notation/`. The comment documents three
 typos as though they were notation, which is how a typo acquires a citation.
 
 All 16 stubs removed (`7d1a616ae`) from the three preambles carrying them,
@@ -852,7 +852,7 @@ series verified, no bad q₀ strings.*
 
 **C1. [it-b0/b1] `composite-crossing-sublimation` → `composite-crossing-sublimation-criteria`.**
 The block now lives at
-`content/quantum-observable-universe/information-theory/composite-crossing-sublimation-criteria.md`.
+`folio/quantum-observable-universe/information-theory/composite-crossing-sublimation-criteria.md`.
 The PRIOR-SWEEP-DAMAGE finding still applies; re-target the path.
 
 **C2. [q15] "complementary-subgroups non-cancellation argument fails in
@@ -3068,7 +3068,7 @@ question into the Lean tree (`qou-hey2`), and **not** a new open item — the
 `observations/dressed-quark-numerology-at-q0` names the concern in its own
 title. What follows is measurement to attach to those.
 
-[`knots-particles-confinement/knot-particle-generation.lean`](../content/quantum-observable-universe/knots-particles-confinement/knot-particle-generation.lean)
+[`knots-particles-confinement/knot-particle-generation.lean`](../folio/quantum-observable-universe/knots-particles-confinement/knot-particle-generation.lean)
 defines
 
 ```lean
@@ -4206,7 +4206,7 @@ defects** — the "nothing has been fixed" headline no longer holds for that
 class. Environment note: Lean LSP + folio-assistant pipeline MCP were down this
 session, so all edits are HAND render-QA'd (grep battery), NOT machine-validated.
 
-**Re-scanned corpus-wide (content/quantum-observable-universe), now DRAINED:**
+**Re-scanned corpus-wide (folio/quantum-observable-universe), now DRAINED:**
 - `\operatorname` (L-V55): 1 hit left, and it is in the **generated**
   `index-of-definitions/definition-index.md` — fix belongs in the generator,
   not the content. All the L-V55 hand-authored sites (mobius-surreal-*,

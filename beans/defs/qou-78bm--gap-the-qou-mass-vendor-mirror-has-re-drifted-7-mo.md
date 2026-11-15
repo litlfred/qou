@@ -4,10 +4,8 @@ title: 'GAP: the qou-mass vendor mirror has RE-DRIFTED (7 modules, 2026-09-26) â
 status: scrapped
 type: task
 priority: normal
-tags:
-    - reorg-2026-10-04
 created_at: 2026-09-26T21:22:59Z
-updated_at: 2026-10-04T15:20:27Z
+updated_at: 2026-11-15T13:30:00Z
 parent: qou-weeq
 ---
 
@@ -66,8 +64,58 @@ inside a prose PR is scope-widening. **`wedderburn_jones_markov` is in that PR's
 cone**, which is why I looked rather than ignoring it.
 
 
+## 2026-09-27 â€” DRAINED. 7 drifted + 1 missing; exactly 7 files moved.
+
+Commit 5c6ed636b6 on claude/two-row-count-eq-dimhlf-2026-09-27 (PR #7481), its own
+scoped commit so it can be reverted alone. Bean stays open (rule 13a) -- see bottom.
+
+  BEFORE  MISSING 1: binding-canonical.witness.json
+          DRIFTED 7: canonical_trm_reference, closed_form_tau_M, codata_2022_source,
+                     experimental_constants, mass_at_3A_proper,
+                     wedderburn_jones_markov, y_lambda_wenzl_bridge
+  AFTER   "vendored copies are in sync (51 modules, 26 witness JSON,
+           122 package-data witness JSON)"
+
+### The bean's own warning, measured
+
+This bean warns `--apply` regenerates ALL 51 modules and so sweeps in pre-existing
+drift. Measured: exactly SEVEN files moved -- the seven named -- plus the one missing
+witness added. The other 44 were already in sync and are byte-unchanged. So the
+warning is about the MECHANISM, not about a realised blast radius here.
+
+### No number moves
+
+The mirror is a generated copy of `computations/` into a package that is NOT published
+(PyPI 404, no dist/, no publish step) with 5 in-repo importers. Two spot-checks confirm
+the regenerated copies ARE their sources: wedderburn_jones_markov 24369 B -> 24264 B,
+closed_form_tau_M 28299 -> 28194, each with the source's tail verbatim in the mirror;
+the ~105 B delta is the path bootstrap the vendoring strips.
+
+Worth noting one drift was a live hazard rather than cosmetic: a `-> mp.mpf`
+annotation that FEEDS a gate via `mpf_mixed_arithmetic_audit`.
+
+`canonical_braid_marshalling` reads "not in cone" before AND after -- pre-existing,
+untouched.
+
+### WHY THIS BEAN STAYS OPEN
+
+The drain is done; the RECURRENCE is the bean's subject and nothing here prevents it.
+The mirror re-drifted once already, which is what this bean records. The standing
+recommendation -- wire `sync-qou-mass-vendor.py --check` into the warn-only
+pre-commit hook so drift is caught at the commit that causes it -- is UNTOUCHED and
+is an owner decision (it changes a hook, not a number, so neither exemption applies).
+
+
 
 ## Reasons for Scrapping
 
 Duplicate of `qou-a0j7` (work-plan reorganisation 2026-10-04). Evidence: recurring "qou-mass vendor mirror red/re-drifted" observations of the same missing sync; 1 main commits
 Content is untouched; only this work item is closed.
+
+<!-- 2026-11-15 port note -->
+
+Port note, 2026-11-15: the entry above was ported from PR #7481, but the qou-mass mirror drain it describes (commit 5c6ed636b) was **not** ported. On `main` `0d3ee898f`, `scripts/sync-qou-mass-vendor.py --check` reports 1 missing and 13 drifted modules, so that drain is still owed. It is tracked by `qou-a0j7`, the bean this one was scrapped into.
+
+## Closed 2026-11-15 (owner tap, bean triage)
+
+Status set to `scrapped`: its body already records it as scrapped, a duplicate of `qou-a0j7` (reorganisation 2026-10-04), but the status field still said todo. The qou-mass mirror drain it describes is owed under `qou-a0j7`.

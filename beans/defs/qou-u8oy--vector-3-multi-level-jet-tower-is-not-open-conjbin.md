@@ -26,15 +26,15 @@ WHAT IS ALREADY THERE.
   conj:binding-manybody-eq-jet-filtration
       Lean qou:QOU.Mass.BindingManyBodyJetFiltration.
       B(K) = Sum_n m_e a_D^(n). This IS the multi-level jet tower.
-  content/quantum-observable-universe/mass-theory/jet-filtration-binding-extensive.md
+  folio/quantum-observable-universe/mass-theory/jet-filtration-binding-extensive.md
       Proposition, PROVED: the body-order binding is monotone non-decreasing in
       the cutoff A, and strictly increasing when a new order contributes. This
       is the qualitative extensivity -- exactly what the intensive
       rotation-phase reading theta_lambda = arccos(chi/d) structurally lacked.
-  content/quantum-observable-universe/mass-theory/binding-genfun-qdifference.md
+  folio/quantum-observable-universe/mass-theory/binding-genfun-qdifference.md
       Proposition, conditional: q-difference recurrence of the binding
       generating function.
-  content/quantum-observable-universe/mass-theory/binding-closure-conditional.md
+  folio/quantum-observable-universe/mass-theory/binding-closure-conditional.md
       Theorem, conditional on the conjecture.
 
 Also found and NOT to be rebuilt: content/.../quantum-universes/categorical-jet.md,
