@@ -4,6 +4,8 @@ import Mathlib.Data.Matrix.Mul
 import Mathlib.LinearAlgebra.Matrix.ConjTranspose
 import Mathlib.Algebra.Module.Basic
 import Mathlib.LinearAlgebra.Matrix.ToLin
+import Mathlib.LinearAlgebra.Basis.VectorSpace
+import Mathlib.LinearAlgebra.Projection
 
 
 /-!
@@ -53,27 +55,71 @@ variable {K : Type*} [Field K]
     rows or columns) has a complementary projection `p` such that
     annihilator pattern matches.
     -/
-/-- **External axiom (Kassel 1995 §I): right annihilators in
-    `M_n(K)` are principal idempotent-generated ideals.**
+open Matrix in
+/-- **Right annihilators in `M_n(K)` are idempotent-generated.** Was the axiom
+    `matrix_algebra_baer_right_axiom`; proved 2026-11-15 (bean `qou-n2un`).
 
-    Standard linear algebra (complementary projection to column-span
-    of S); axiomatised pending the Mathlib matrix-algebra Baer-*
-    formalisation. -/
+    Let `W ⊆ Kⁿ` be the span of the columns of the matrices in `S`, pick a
+    complement `U`, and let `p` be the matrix of the projection onto `U`
+    along `W`. Then `x` kills every `s ∈ S` iff `x` kills `W` iff `x = x p`. -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 §I
-axiom matrix_algebra_baer_right_axiom :
-    ∀ {K : Type*} [Field K] (n : ℕ) (S : Set (Matrix (Fin n) (Fin n) K)),
-      ∃ p : Matrix (Fin n) (Fin n) K,
-        IsIdempotentElem p ∧
-          (∀ x : Matrix (Fin n) (Fin n) K,
-            (∀ s ∈ S, x * s = 0) ↔ ∃ y : Matrix (Fin n) (Fin n) K, x = y * p)
-
 theorem matrix_algebra_baer_right
     (n : ℕ) (S : Set (Matrix (Fin n) (Fin n) K)) :
     ∃ p : Matrix (Fin n) (Fin n) K,
       IsIdempotentElem p ∧
         (∀ x : Matrix (Fin n) (Fin n) K,
-          (∀ s ∈ S, x * s = 0) ↔ ∃ y : Matrix (Fin n) (Fin n) K, x = y * p) :=
-  matrix_algebra_baer_right_axiom n S
+          (∀ s ∈ S, x * s = 0) ↔ ∃ y : Matrix (Fin n) (Fin n) K, x = y * p) := by
+  classical
+  -- W = span of the columns of the matrices in S
+  let W : Submodule K (Fin n → K) :=
+    Submodule.span K {v | ∃ s ∈ S, ∃ j, v = fun i => s i j}
+  obtain ⟨U, hc⟩ := Submodule.exists_isCompl W
+  let P : (Fin n → K) →ₗ[K] (Fin n → K) :=
+    U.subtype ∘ₗ Submodule.linearProjOfIsCompl U W hc.symm
+  have hPU : ∀ v, P (P v) = P v := fun v => by
+    simp only [P, LinearMap.comp_apply, Submodule.coe_subtype]
+    rw [Submodule.linearProjOfIsCompl_apply_left]
+  have hPW : ∀ w ∈ W, P w = 0 := fun w hw => by
+    simp only [P, LinearMap.comp_apply, Submodule.coe_subtype]
+    have := Submodule.linearProjOfIsCompl_apply_right (p := U) hc.symm ⟨w, hw⟩
+    rw [show w = ((⟨w, hw⟩ : W) : Fin n → K) from rfl, this]; rfl
+  have hsubW : ∀ v, v - P v ∈ W := fun v => by
+    have := Submodule.linearProjOfIsCompl_add_linearProjOfIsCompl_eq_self hc.symm v
+    rw [show v - P v = _ from (eq_sub_of_add_eq' this).symm]
+    exact Submodule.coe_mem _
+  refine ⟨LinearMap.toMatrix' P, ?_, ?_⟩
+  · rw [IsIdempotentElem, ← LinearMap.toMatrix'_comp]
+    congr 1
+    exact LinearMap.ext hPU
+  · -- x kills W iff x kills S
+    have kill : ∀ x : Matrix (Fin n) (Fin n) K, (∀ s ∈ S, x * s = 0) →
+        ∀ w ∈ W, x *ᵥ w = 0 := by
+      intro x hx w hw
+      induction hw using Submodule.span_induction with
+      | mem v hv =>
+        obtain ⟨s, hs, j, rfl⟩ := hv
+        funext i
+        have := congrFun (congrFun (hx s hs) i) j
+        simpa [Matrix.mul_apply, Matrix.mulVec, dotProduct] using this
+      | zero => simp
+      | add a b _ _ ha hb => rw [Matrix.mulVec_add, ha, hb, add_zero]
+      | smul c a _ ha => rw [Matrix.mulVec_smul, ha, smul_zero]
+    intro x
+    constructor
+    · intro hx
+      refine ⟨x, ?_⟩
+      ext i k
+      have h := congrFun (kill x hx _ (hsubW (Pi.single k 1))) i
+      rw [Matrix.mulVec_sub, ← LinearMap.toMatrix'_mulVec P, Matrix.mulVec_mulVec,
+        Matrix.mulVec_single_one, Matrix.mulVec_single_one] at h
+      simpa [sub_eq_zero] using h
+    · rintro ⟨y, rfl⟩ s hs
+      have hps : LinearMap.toMatrix' P * s = 0 := by
+        ext i j
+        have := congrFun (LinearMap.toMatrix'_mulVec P (fun i => s i j)) i
+        rw [hPW _ (Submodule.subset_span ⟨s, hs, j, rfl⟩)] at this
+        simpa [Matrix.mul_apply, Matrix.mulVec, dotProduct] using this
+      rw [Matrix.mul_assoc, hps, Matrix.mul_zero]
 
 /-! ## Step 2: Bar involution acts on idempotents by partition transpose -/
 
