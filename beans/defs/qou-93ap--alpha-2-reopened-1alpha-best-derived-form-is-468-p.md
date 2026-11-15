@@ -1,13 +1,13 @@
 ---
 # qou-93ap
 title: 'ALPHA-2 reopened: 1/alpha best derived form is -468 ppb, not resolved at 6.7'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T15:13:57Z
-updated_at: 2026-10-04T15:16:19Z
+updated_at: 2026-11-15T14:00:00Z
 parent: qou-3l2l
 ---
 
@@ -98,3 +98,11 @@ muon-pinned figures against the superseded edition; current is
 `137.0359350939756` / **468 ppb** / CODATA-2022. Correcting them is a
 content-block edit — `qa-sweep` + the render-QA gate apply — and it changes
 numbers inside a proposition, so it is not an idle-pass fix.
+
+## 2026-11-15 — completed (verified against main 828885d7e)
+
+Both carriers now read the current figures: `em-coupling-chern-simons.md` quotes
+`137.0359351` / −468 ppb / CODATA-2022, and `DERIVATION-STATUS.md` line 314 marks
+ALPHA-2 OPEN at −468 ppb. The bean's task (correct the stale 399 ppb / CODATA-2018
+figures) is done. The open gap itself (no derived 1/α within target) is NOT closed;
+it stays tracked in `qou-gwio`. Closed on owner instruction (decision card, 2026-11-15).

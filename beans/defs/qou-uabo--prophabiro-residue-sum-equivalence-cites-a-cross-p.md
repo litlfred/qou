@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T23:12:20Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-11-15T14:30:00Z
 parent: qou-avtq
 ---
 
@@ -178,3 +178,14 @@ Evidence: The block `folio/.../mass-theory/habiro-residue-sum-equivalence.md` (l
 
 Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+## 2026-11-15 — Lean half done; witness half still open
+
+On owner decision, `protonExample_archimedean_agreement_axiom` and the `protonExample`
+instance are removed from `habiro-residue-sum-equivalence.lean`. That axiom wrote the
+witness decimal `2.1225825095` into a formal premise. The proton case stays the open
+conjecture `conj:gs-archimedean-agreement-residue`, which has no instance. The prose
+now calls the table numerical evidence, not proof.
+Lean-direct check: exit 0. Axioms are standard only.
+**Still open (this bean's subject):** the agreement table cites
+`markov-pipeline-cross-validation.witness.json`, which does not exist. Status stays todo.
