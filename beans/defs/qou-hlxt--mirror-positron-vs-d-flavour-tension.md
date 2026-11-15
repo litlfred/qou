@@ -10,7 +10,7 @@ tags:
     - charge-conjugation
 parent: qou-qs0e
 created_at: 2026-11-15T10:00:00Z
-updated_at: 2026-11-15T10:00:00Z
+updated_at: 2026-11-15T18:20:00Z
 ---
 
 Owner, relayed by coordinator 2026-11-15: open this bean and frame it; do NOT resolve it by
@@ -61,3 +61,19 @@ the tension.
 **Recommendation (judgement):** check (4) first against `conj:c-from-color-flavor-swap` in
 Lean, because it uses only existing corpus objects. No reading is chosen by reproducing a
 label or a number.
+
+## 2026-11-15 what the colour-tube sign rule already says (PR #7952, issue #7951)
+
+A third corpus source bears on the tension. `conj:inter-nucleon-channel-color-tube` gives
+each colour-sheet contact a sign: +1 (σ) for the same flavour, −1 (σ⁻¹) for a flavour
+against its antiflavour, and 0 (the averaged crossing ½(σ+σ⁻¹)) for mixed flavours.
+`ColourTubeMirrorReading.lean` (sorry-free) proves from that rule:
+- σ⁻¹ occurs exactly at f against f̄, and never between two matter flavours;
+- a u–d contact gets the averaged crossing, not σ⁻¹;
+- proton and neutron contacts never carry σ⁻¹.
+
+So two sources (Breit–Wheeler, colour tube) read σ⁻¹ as the antiparticle contact, and only
+stream 6a's `quarkLetter` reads it as d. The colour tube's u–d element is the one #7948
+showed the weak vertex is a scalar multiple of. Caveat: the sign rule is stated data of the
+upstream conjecture (its open question 2), so this counts sources and does not derive a
+reading. Option (1) gains corroboration; nothing is chosen. Status stays todo.
