@@ -36,7 +36,9 @@ model and records which parts survive. All of it is algebra over generic `[CommR
   Bring's surface group `Γ₄ ⊂ SL(2,ℝ)` contains `i` and `j` would follow from Borel
   density of a cocompact lattice (it is Zariski dense, so it spans `M₂(ℝ)`). Borel density
   is not in the corpus or in the library, so `commutes_span_scalar` takes the spanning as a
-  hypothesis.
+  hypothesis. `QOU.BringLatticeSpan` replaces Borel density by an algebraic argument
+  (`bring_left_mul_scalar`). The hypothesis that remains there is that `Γ₄` has finite index
+  in a lift of the `(2,5,4)` triangle group, which is cited, not formalised.
 * **States, not vectors.** These are statements about the `R`-module `M₂(R)` and its
   rays. Points of the link are elements of `SL(2,ℝ)/Γ₄`, and right multiplication by `j`
   or `k` (reduced norm `−1`) does not preserve `SL(2)`, so `M_j` is not a point map on the
