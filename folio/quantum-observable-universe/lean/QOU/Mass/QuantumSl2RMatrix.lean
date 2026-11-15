@@ -127,4 +127,104 @@ theorem cartanTheta_one_F (s : 𝕜) (hs : s ≠ 0) (m m' : ℕ) :
     · simp [h2]
   · simp [h1]
 
+
+/-! ### The polynomial part `S = Σ c_n Eⁿ ⊗ Fⁿ` and its commutation with `Δ(E)` -/
+
+/-- The quantum factorial `[n]! = [1][2]⋯[n]`. -/
+def qfact (q : 𝕜) (n : ℕ) : 𝕜 := ∏ k ∈ Finset.range n, qint q (k + 1)
+
+/-- The R-matrix coefficient `c_n = q^{n(n−1)/2} (q − q⁻¹)ⁿ / [n]!`, with `q = s²`. -/
+def rcoef (s : 𝕜) (n : ℕ) : 𝕜 := s ^ (n * (n - 1)) * (s ^ 2 - (s ^ 2)⁻¹) ^ n / qfact (s ^ 2) n
+
+/-- `c_{n+1} [n+1] = c_n q^n (q − q⁻¹)`, whenever `[n+1] ≠ 0`. -/
+theorem rcoef_succ (s : 𝕜) (n : ℕ) (hn : qint (s ^ 2) (n + 1) ≠ 0) :
+    rcoef s (n + 1) * qint (s ^ 2) (n + 1) = rcoef s n * (s ^ 2) ^ n * (s ^ 2 - (s ^ 2)⁻¹) := by
+  unfold rcoef qfact
+  rw [Finset.prod_range_succ]
+  by_cases h0 : ∏ k ∈ Finset.range n, qint (s ^ 2) (k + 1) = 0
+  · simp [h0]
+  have e : (n + 1) * (n + 1 - 1) = n * (n - 1) + 2 * n := by
+    cases n with
+    | zero => rfl
+    | succ k => simp only [Nat.add_sub_cancel]; ring
+  rw [e, pow_add, pow_succ, ← pow_mul]
+  field_simp
+
+namespace Rep
+
+variable {q : 𝕜} {ι κ : Type*} [Fintype ι] [DecidableEq ι] [Fintype κ] [DecidableEq κ]
+
+/-- `K⁻¹ Fⁿ = q^{2n} Fⁿ K⁻¹`. -/
+theorem Km_F_pow (hq : q ≠ 0) (ρ : Rep q ι) (n : ℕ) :
+    ρ.Km * ρ.F ^ n = (q ^ 2) ^ n • (ρ.F ^ n * ρ.Km) := by
+  induction n with
+  | zero => simp
+  | succ n ih =>
+    rw [pow_succ, ← mul_assoc, ih, smul_mul_assoc, mul_assoc, Km_F hq, mul_smul_comm, smul_smul,
+      ← mul_assoc]
+    congr 1
+    rw [pow_succ (q ^ 2)]
+
+/-- The truncated polynomial part `S = Σ_{n ≤ M} c_n Eⁿ ⊗ Fⁿ` on `V ⊗ W`. -/
+def rSum (s : 𝕜) (ρ : Rep (s ^ 2) ι) (σ : Rep (s ^ 2) κ) (M : ℕ) :
+    Matrix (ι × κ) (ι × κ) 𝕜 :=
+  ∑ n ∈ Finset.range (M + 1), rcoef s n • ((ρ.E ^ n) ⊗ₖ (σ.F ^ n))
+
+/-- The termwise identity `c_{k+1} [k+1] Fᵏ D_k = c_k (Fᵏ K − K⁻¹ Fᵏ)`. -/
+theorem rcoef_term (s : 𝕜) (hs : s ≠ 0) (hq2 : s ^ 2 - (s ^ 2)⁻¹ ≠ 0) (σ : Rep (s ^ 2) κ)
+    (k : ℕ) (hk : qint (s ^ 2) (k + 1) ≠ 0) :
+    rcoef s (k + 1) • qint (s ^ 2) (k + 1) • (σ.F ^ k * σ.Dk k)
+      = rcoef s k • (σ.F ^ k * σ.Kp - σ.Km * σ.F ^ k) := by
+  have hq : s ^ 2 ≠ 0 := pow_ne_zero 2 hs
+  have hc := rcoef_succ s k hk
+  rw [Km_F_pow hq, smul_smul, hc]
+  unfold Dk
+  have h4 : s ^ 4 - 1 ≠ 0 := by
+    intro h; apply hq2; field_simp; linear_combination h
+  simp only [mul_sub, mul_smul_comm]
+  match_scalars
+  · field_simp
+    rw [mul_assoc, ← mul_pow, mul_one_div_cancel (pow_ne_zero 2 hs), one_pow, mul_one]
+  · field_simp
+    ring
+
+/-- **`S Δ(E) = Δ'(E) S`** with `Δ(E) = E⊗K + 1⊗E` and `Δ'(E) = 1⊗E + E⊗K⁻¹`, whenever
+`E^{M+1} = 0` on the first factor and `[k] ≠ 0` for `1 ≤ k ≤ M`. -/
+theorem rSum_E (s : 𝕜) (hs : s ≠ 0) (hq2 : s ^ 2 - (s ^ 2)⁻¹ ≠ 0)
+    (ρ : Rep (s ^ 2) ι) (σ : Rep (s ^ 2) κ) (M : ℕ) (hE : ρ.E ^ (M + 1) = 0)
+    (hint : ∀ k < M, qint (s ^ 2) (k + 1) ≠ 0) :
+    rSum s ρ σ M * (ρ.E ⊗ₖ σ.Kp + 1 ⊗ₖ σ.E)
+      = (1 ⊗ₖ σ.E + ρ.E ⊗ₖ σ.Km) * rSum s ρ σ M := by
+  have hq : s ^ 2 ≠ 0 := pow_ne_zero 2 hs
+  have hB : rSum s ρ σ M * (ρ.E ⊗ₖ σ.Kp) - (ρ.E ⊗ₖ σ.Km) * rSum s ρ σ M
+      = ∑ k ∈ Finset.range M,
+          rcoef s k • ((ρ.E ^ (k + 1)) ⊗ₖ (σ.F ^ k * σ.Kp - σ.Km * σ.F ^ k)) := by
+    simp only [rSum, Finset.sum_mul, Finset.mul_sum, ← Finset.sum_sub_distrib]
+    rw [Finset.sum_range_succ]
+    rw [smul_mul_assoc, mul_smul_comm, ← mul_kronecker_mul, ← mul_kronecker_mul, ← pow_succ,
+      ← pow_succ', hE, zero_kronecker, zero_kronecker, smul_zero, sub_self, add_zero]
+    refine Finset.sum_congr rfl fun k _ => ?_
+    rw [smul_mul_assoc, mul_smul_comm, ← mul_kronecker_mul, ← mul_kronecker_mul, ← pow_succ,
+      ← pow_succ', ← smul_sub, kronecker_sub']
+  have hA : (1 ⊗ₖ σ.E) * rSum s ρ σ M - rSum s ρ σ M * (1 ⊗ₖ σ.E)
+      = ∑ k ∈ Finset.range M,
+          rcoef s (k + 1) • ((ρ.E ^ (k + 1)) ⊗ₖ (σ.E * σ.F ^ (k + 1) - σ.F ^ (k + 1) * σ.E)) := by
+    simp only [rSum, Finset.sum_mul, Finset.mul_sum, ← Finset.sum_sub_distrib]
+    rw [Finset.sum_range_succ']
+    simp only [smul_mul_assoc, mul_smul_comm, ← mul_kronecker_mul, pow_zero, one_mul, mul_one,
+      sub_self, add_zero]
+    refine Finset.sum_congr rfl fun k _ => ?_
+    rw [kronecker_sub', smul_sub]
+  have key : rSum s ρ σ M * (ρ.E ⊗ₖ σ.Kp) - (ρ.E ⊗ₖ σ.Km) * rSum s ρ σ M
+      = (1 ⊗ₖ σ.E) * rSum s ρ σ M - rSum s ρ σ M * (1 ⊗ₖ σ.E) := by
+    rw [hA, hB]
+    refine Finset.sum_congr rfl fun k hk => ?_
+    rw [E_F_pow hq hq2]
+    simp only [← kronecker_smul]
+    rw [rcoef_term s hs hq2 σ k (hint k (Finset.mem_range.mp hk))]
+  rw [mul_add, add_mul]
+  exact sub_eq_sub_iff_add_eq_add.mp key
+
+end Rep
+
 end QOU.Mass.QuantumSl2
