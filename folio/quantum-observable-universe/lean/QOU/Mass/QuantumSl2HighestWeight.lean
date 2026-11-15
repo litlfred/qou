@@ -61,7 +61,7 @@ theorem hwVec_E (q : 𝕜) (hq : q ≠ 0) (m m' j : ℕ) (hjm : j ≤ m) (hjm' :
   funext ⟨⟨p, hp⟩, ⟨r, hr⟩⟩
   simp only [mulVec, dotProduct, Fintype.sum_prod_type, Matrix.add_apply, kroneckerMap_apply,
     add_mul, Finset.sum_add_distrib, irrepE, irrepKp, diagonal_apply, one_apply, ite_mul,
-    zero_mul, mul_ite, mul_zero, Finset.sum_ite_eq, Finset.sum_ite_eq',
+    zero_mul, mul_ite, mul_zero, Finset.sum_ite_eq,
     Finset.mem_univ, if_true, Pi.zero_apply]
   rw [Finset.sum_comm]
   simp only [Finset.sum_ite_irrel, Finset.sum_const_zero, Finset.sum_ite_eq, Finset.mem_univ,
@@ -71,7 +71,7 @@ theorem hwVec_E (q : 𝕜) (hq : q ≠ 0) (m m' j : ℕ) (hjm : j ≤ m) (hjm' :
   by_cases hj : p + r + 1 = j
   · subst hj
     rw [dif_pos (by omega), dif_pos (by omega)]
-    simp only [Fin.val_mk, if_pos (show p + 1 + r = p + r + 1 by omega),
+    simp only [if_pos (show p + 1 + r = p + r + 1 by omega),
       if_pos (show p + (r + 1) = p + r + 1 by omega)]
     have hmp : qint q (m - p) ≠ 0 := hint p (by omega)
     rw [hwCoef, show m - (p + 1) + 1 = m - p by omega, show m' - (p + r + 1) + p + 1 = m' - r by omega,
@@ -91,7 +91,7 @@ theorem dE_apply (q : 𝕜) (hq : q ≠ 0) (m m' : ℕ) (u : Fin (m + 1) × Fin 
         + (if h : r + 1 < m' + 1 then qint q (m' - r) * u (⟨p, hp⟩, ⟨r + 1, h⟩) else 0) := by
   simp only [mulVec, dotProduct, Fintype.sum_prod_type, Matrix.add_apply, kroneckerMap_apply,
     add_mul, Finset.sum_add_distrib, irrepE, irrepKp, diagonal_apply, one_apply, ite_mul,
-    zero_mul, mul_ite, mul_zero, Finset.sum_ite_eq, Finset.sum_ite_eq', Finset.mem_univ,
+    zero_mul, mul_ite, mul_zero, Finset.sum_ite_eq, Finset.mem_univ,
     if_true]
   rw [Finset.sum_comm]
   simp only [Finset.sum_ite_irrel, Finset.sum_const_zero, Finset.sum_ite_eq, Finset.mem_univ,
@@ -99,16 +99,16 @@ theorem dE_apply (q : 𝕜) (hq : q ≠ 0) (m m' : ℕ) (u : Fin (m + 1) × Fin 
   rw [sum_fin_succ_ite, sum_fin_succ_ite]
   congr 1
   · split_ifs with h
-    · simp only [Fin.val_mk, show m - (p + 1) + 1 = m - p by omega,
+    · simp only [show m - (p + 1) + 1 = m - p by omega,
         kp_eq_zpow q hq (by omega : r ≤ m')]
     · rfl
   · split_ifs with h
-    · simp only [Fin.val_mk, show m' - (r + 1) + 1 = m' - r by omega]
+    · simp only [show m' - (r + 1) + 1 = m' - r by omega]
     · rfl
 
 /-- **Uniqueness of the highest-weight vector.** A vector of weight `m+m'−2j` killed by `Δ(E)`
 is a multiple of `w_j`. -/
-theorem hw_unique (q : 𝕜) (hq : q ≠ 0) (m m' j : ℕ) (hjm : j ≤ m) (hjm' : j ≤ m')
+theorem hw_unique (q : 𝕜) (hq : q ≠ 0) (m m' j : ℕ) (hjm' : j ≤ m')
     (hint : ∀ p < j, qint q (m - p) ≠ 0) (u : Fin (m + 1) × Fin (m' + 1) → 𝕜)
     (hsupp : ∀ x : Fin (m + 1) × Fin (m' + 1), (x.1 : ℕ) + x.2 ≠ j → u x = 0)
     (hE : (irrepE q m ⊗ₖ irrepKp q m' + 1 ⊗ₖ irrepE q m') *ᵥ u = 0) :
@@ -143,5 +143,103 @@ theorem hw_unique (q : 𝕜) (hq : q ≠ 0) (m m' j : ℕ) (hjm : j ≤ m) (hjm'
     congr 3; omega
   · rw [if_neg hpr, mul_zero]
     exact hsupp _ hpr
+
+/-! ### The braiding on highest-weight vectors -/
+
+/-- Swapping tensor factors: `(B⊗A)(v∘swap) = ((A⊗B) v)∘swap`. -/
+theorem kron_mulVec_swap {ι κ : Type*} [Fintype ι] [Fintype κ] (A : Matrix ι ι 𝕜)
+    (B : Matrix κ κ 𝕜) (v : ι × κ → 𝕜) :
+    (B ⊗ₖ A) *ᵥ (fun y : κ × ι => v y.swap) = fun y => ((A ⊗ₖ B) *ᵥ v) y.swap := by
+  funext y
+  simp only [mulVec, dotProduct, Fintype.sum_prod_type, kroneckerMap_apply, Prod.swap]
+  rw [Finset.sum_comm]
+  refine Finset.sum_congr rfl fun a _ => Finset.sum_congr rfl fun b _ => ?_
+  ring
+
+section Braiding
+
+variable (s : 𝕜) (hs : s ≠ 0)
+
+/-- `S` preserves the grading `p + r`. -/
+theorem rSum_apply_grade (m m' M : ℕ) (x y : Fin (m + 1) × Fin (m' + 1))
+    (h : (x.1 : ℕ) + x.2 ≠ y.1 + y.2) :
+    Rep.rSum s (irrep (pow_ne_zero 2 hs) m) (irrep (pow_ne_zero 2 hs) m') M x y = 0 := by
+  unfold Rep.rSum
+  rw [Matrix.sum_apply]
+  refine Finset.sum_eq_zero fun n _ => ?_
+  rw [Matrix.smul_apply, kroneckerMap_apply]
+  by_cases h1 : (x.1 : ℕ) + n = y.1
+  · rw [show (irrep (pow_ne_zero 2 hs) m').F = irrepF (s ^ 2) m' from rfl,
+      irrepF_pow_apply (s ^ 2) m' n x.2 y.2 (by omega), mul_zero, smul_zero]
+  · rw [show (irrep (pow_ne_zero 2 hs) m).E = irrepE (s ^ 2) m from rfl,
+      irrepE_pow_apply (s ^ 2) m n x.1 y.1 h1, zero_mul, smul_zero]
+
+/-- The row of `S` at `v_j ⊗ v_0` is the unit row. -/
+theorem rSum_apply_top (m m' M j : ℕ) (hj : j < m + 1) (y : Fin (m + 1) × Fin (m' + 1)) :
+    Rep.rSum s (irrep (pow_ne_zero 2 hs) m) (irrep (pow_ne_zero 2 hs) m') M
+      (⟨j, hj⟩, ⟨0, by omega⟩) y = if y = (⟨j, hj⟩, ⟨0, by omega⟩) then 1 else 0 := by
+  unfold Rep.rSum
+  rw [Matrix.sum_apply, Finset.sum_eq_single 0]
+  · simp only [Matrix.smul_apply, kroneckerMap_apply, pow_zero, one_apply, smul_eq_mul]
+    have hc : rcoef s 0 = 1 := by simp [rcoef, qfact]
+    rw [hc, one_mul]
+    by_cases hy : y = (⟨j, hj⟩, ⟨0, by omega⟩)
+    · subst hy; simp
+    · rw [if_neg hy]
+      by_cases h1 : (⟨j, hj⟩ : Fin (m + 1)) = y.1
+      · have h2 : (⟨0, by omega⟩ : Fin (m' + 1)) ≠ y.2 := by
+          intro h2; apply hy; ext <;> simp [← h1, ← h2]
+        rw [if_neg h2, mul_zero]
+      · rw [if_neg h1, zero_mul]
+  · intro n _ hn
+    rw [Matrix.smul_apply, kroneckerMap_apply,
+      show (irrep (pow_ne_zero 2 hs) m').F = irrepF (s ^ 2) m' from rfl,
+      irrepF_pow_apply (s ^ 2) m' n _ y.2 (by simp; omega), mul_zero, smul_zero]
+  · simp
+
+variable (hq2 : s ^ 2 - (s ^ 2)⁻¹ ≠ 0)
+
+include hq2 in
+/-- **The braiding on highest-weight vectors.** `Ř = P∘R` sends `w_j ∈ V_{m+1}⊗V_{m'+1}` to
+`λ_j w'_j ∈ V_{m'+1}⊗V_{m+1}`, with `λ_j = s^{(m−2j)m'} a_j`. -/
+theorem rCheck_hwVec (m m' j : ℕ) (hjm : j ≤ m) (hjm' : j ≤ m')
+    (hint : ∀ k < rOrder m m', qint (s ^ 2) (k + 1) ≠ 0)
+    (hint1 : ∀ p < j, qint (s ^ 2) (m - p) ≠ 0) (hint2 : ∀ p < j, qint (s ^ 2) (m' - p) ≠ 0) :
+    (fun y : Fin (m' + 1) × Fin (m + 1) => (rMat s hs m m' *ᵥ hwVec (s ^ 2) m m' j) y.swap)
+      = (s ^ (wt m j * wt m' 0) * hwCoef (s ^ 2) m m' j j) • hwVec (s ^ 2) m' m j := by
+  have hq : s ^ 2 ≠ 0 := pow_ne_zero 2 hs
+  set w := hwVec (s ^ 2) m m' j with hw
+  set u : Fin (m' + 1) × Fin (m + 1) → 𝕜 := fun y => (rMat s hs m m' *ᵥ w) y.swap with hu
+  -- `u` is killed by `Δ(E)` on `V_{m'+1}⊗V_{m+1}`.
+  have hRw : (irrepKp (s ^ 2) m ⊗ₖ irrepE (s ^ 2) m' + irrepE (s ^ 2) m ⊗ₖ 1) *ᵥ
+      (rMat s hs m m' *ᵥ w) = 0 := by
+    rw [mulVec_mulVec, ← rMat_E s hs hq2 m m' hint, ← mulVec_mulVec,
+      hwVec_E (s ^ 2) hq m m' j hjm hjm' hint1, mulVec_zero]
+  have hE : (irrepE (s ^ 2) m' ⊗ₖ irrepKp (s ^ 2) m + 1 ⊗ₖ irrepE (s ^ 2) m) *ᵥ u = 0 := by
+    rw [add_mulVec, hu, kron_mulVec_swap, kron_mulVec_swap]
+    funext y
+    have := congrFun hRw y.swap
+    rw [add_mulVec, Pi.add_apply] at this
+    simpa using this
+  -- `u` has weight `m+m'−2j`.
+  have hsupp : ∀ y : Fin (m' + 1) × Fin (m + 1), (y.1 : ℕ) + y.2 ≠ j → u y = 0 := by
+    intro y hy
+    simp only [hu, rMat, ← mulVec_mulVec, cartanTheta, mulVec_diagonal]
+    rw [mulVec, dotProduct, Finset.sum_eq_zero, mul_zero]
+    intro z _
+    by_cases hz : (z.1 : ℕ) + z.2 = j
+    · rw [rSum_apply_grade s hs m m' _ _ _ (by simp [Prod.swap]; omega), zero_mul]
+    · rw [hw, hwVec, if_neg hz, mul_zero]
+  rw [hw, hw] at *
+  rw [hw] at hu
+  refine (hw_unique (s ^ 2) hq m' m j hjm hint2 u hsupp hE).trans ?_
+  congr 1
+  simp only [hu, Prod.swap, rMat, ← mulVec_mulVec, cartanTheta, mulVec_diagonal]
+  rw [mulVec, dotProduct]
+  simp only [rSum_apply_top s hs m m' _ j (by omega), ite_mul, one_mul, zero_mul,
+    Finset.sum_ite_eq', Finset.mem_univ, if_true, hwVec]
+  rw [if_pos (by simp)]
+
+end Braiding
 
 end QOU.Mass.QuantumSl2
