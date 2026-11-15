@@ -174,7 +174,7 @@ answer requires — from the **skein resolution tree**.  A `c`-crossing link has
 **non-torsion** substrate `q₀` the Hecke algebra is semisimple, so **no paths
 cancel**: the full `3^c` tree survives (corpus `nontorsion_full_tree`).  The
 `NP`-complete boundary family uses `c_N = 3N` crossings
-(`prop:p-vs-np-boundary`), so extracting the degree-0 answer for instance
+(`conj:p-vs-np-boundary`), so extracting the degree-0 answer for instance
 size `n` requires the whole surviving tree, `info(n) = 3^{3n}`.
 -/
 
