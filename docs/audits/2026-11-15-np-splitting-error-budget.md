@@ -239,3 +239,8 @@ Pre-registered probe `np_scale_candidates_probe.py`. Each candidate scale was ta
 - `positive_crossing_markov_iff`, `negative_crossing_markov_iff`: tr₂((1⊗K)Ř) and tr₂((1⊗K)Ř⁻¹) are scalars iff a = b q², the same condition for both crossing signs (`same_condition_both_signs`).
 - `markov_normalised`: with ab = 1 this gives a² = q².
 - `adjacent_weight_ratio`: the K-weights of adjacent basis vectors differ by q² at every level. The equality of the plain traces on permuted weight spaces (the permutation-module half) is **not** formalised.
+
+## §16 Sign from the over-strand result (draft PR #7971, weak-vertex thread)
+PR #7971 (`QOU/QuarkState/OverStrandWeight.lean`, sorry-free, still a draft) proves this. Under D, a crossing is a pure transposition iff its over strand carries the K = q vector. That holds for σ and σ⁻¹ and for both R conventions. Add two corpus conventions: in σᵢ the lower strand passes over, and def:down-quark says u passes over d. Together these give **u = e₁ = T³ = +½**. That is derived from the corpus conventions; the orientation was not chosen by the result.
+
+Consequence here: p = uud carries K^{⊗3} = q, n = udd carries q⁻¹. So **n/p = q⁻², Φ_n − Φ_p = −2 ln q**. Under the proof's reading (a more negative Φ is more confinement), the **neutron is heavier, which is the correct sign**. Sign: derived, conditional on #7971 landing. Magnitude: unchanged, 0.7814 MeV (−39.58 %), still conditional on the asserted scale α (§15).
