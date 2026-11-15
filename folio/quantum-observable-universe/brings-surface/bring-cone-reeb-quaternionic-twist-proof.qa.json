@@ -910,7 +910,24 @@
         "reviewed_sha": "fbc2be0054ae0bbc25ef80999af93c64a9dfb13f",
         "notes": "criterion applies to dak; block kind \"proof\" is paper"
       }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "5d5c6c44e81b",
+          "ts": "e49e84b58ba9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:00:10.584Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "[sidecar review 2026-11-15, issue #8030] Checked: with [M_x,M_y] := M_y∘M_x − M_x∘M_y and right multiplication, the bracket is p(xy−yx) = 2p(xy), so [M_i,M_j] = 2M_k etc. Split quaternions (i² = −1, j² = k² = 1, jk = −i) give [M_j,M_k] = −2M_i, matching the md. The link Euler number −deg K = −6 = χ(Σ₄) and the 3-Sasakian / qc exclusions are correct."
+      }
     ]
   },
-  "updated_at": "2026-08-29T19:40:47.852Z"
+  "updated_at": "2026-11-15T22:00:10.584Z"
 }
