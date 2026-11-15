@@ -11,7 +11,7 @@ tags:
     - 8f-open
     - lean
 created_at: 2026-09-03T09:08:30Z
-updated_at: 2026-11-15T18:49:23Z
+updated_at: 2026-11-15T18:52:39Z
 parent: qou-8lxd
 ---
 
@@ -50,3 +50,8 @@ The owner chose to give `BlochWigner_unit_circle` its documented body `Cl_2`, so
 
 ## 2026-11-15 analysis (thread on #7942; not yet acted on, owner card pending)
 (1) Restate: the real claim is a Bloch-group element xi = sum n_i [z_i], z_i algebraic (Q(zeta_15)), with sum n_i D(z_i) = 2/(3pi); falsifiable and stateable in Lean now. (2) T(2,9), T(3,5) are torus knots: Seifert fibred, simplicial volume 0, so by |vol rho| <= v3 ||M|| every Bloch class from them has D = 0 (scope (b), cited invariant). (3) For algebraic z_i, D(z_i) is a period, so the identity would make 1/pi a rational multiple of a period; Kontsevich-Zagier predicts not. Expected outcome: false; unconditional proof is a transcendence problem, out of reach. Keep open.
+
+
+
+## 2026-11-15, owner chose 'restate + record negative' (PR #7946, commit dc49a51dd9)
+Field is now: exists finite s in C, n : C -> Z, all z algebraic with Im z > 0, sum n z * BlochWigner_lob z = 2/(3pi). Cocycle condition not imposed. No instance. Negative recorded in the docstring (period conjecture; torus knots give D = 0). Stays OPEN: the claim is now falsifiable but neither proved nor refuted.
