@@ -1,13 +1,13 @@
 ---
 # qou-29pv
 title: 'Two knot-factor Lean files do not compile: HeckeExpansion genericisation dropped Mathlib.Data.Real.Basic'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T21:58:32Z
-updated_at: 2026-10-04T15:25:14Z
+updated_at: 2026-11-15T13:40:00Z
 parent: qou-5vkl
 ---
 
@@ -77,3 +77,7 @@ every `lean.ref` target is the check that would have caught all three.
 - [ ] Fix (1) — add the import, recompile, confirm the 6 errors go.
 - [ ] Decide the base ring for (2), then repair the signatures.
 - [ ] Consider a gate: compile every file named by a `lean.ref`.
+
+## Closed 2026-11-15 (owner tap, E1 bean triage)
+
+All four files now compile with lean-direct, exit 0, on main 0d4e4a005e: `KnotFactorAmphicheiral`, `KnotFactorSpectralDerivation`, `knot-factor-borromean-composite` and `knot-factor-shell-closed`. The optional lean.ref compile-gate idea is left to the ops epic.
