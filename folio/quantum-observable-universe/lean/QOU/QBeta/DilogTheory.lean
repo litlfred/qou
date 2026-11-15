@@ -14,11 +14,11 @@ names the class it needs.
   `(17, 5, −1)` for **every** instance. `rogers` (in `DilogTheoryArchimedean`, split per §7c) is the real instance; its analytic content is
   exactly `rogersL_reflection` and `rogersL_fiveTerm`.
 * **Part B, `SuslinDilogTheory F A`** (`F` any field, `A` any abelian group): oddness under
-  `z ↦ 1/z` and `z ↦ 1 − z` plus Suslin's five-term relation, in the orientation of PR #7946
+  `z ↦ 1/z` plus Suslin's five-term relation, in the orientation of PR #7946
   (the corpus's `PentagonCoherent` uses the inverted orientation and forces `D = 0`).
   `SuslinDilogTheory.anharmonic` derives the whole anharmonic orbit (including the Landen-type
-  `D(z/(z−1)) = −D z`) by algebra. **No instance is given**: the five-term relation for the
-  Bloch–Wigner `D` is the subject of #7946 and is not yet proved in Lean.
+  `D(z/(z−1)) = −D z`) by algebra, given reflection oddness. The Bloch–Wigner instance and the
+  rigidity of continuous instances over `ℂ` are in `DilogTheoryArchimedean`.
 
 -- Ref: [leitner2026] /mnt/project-files/qou-categorify-audit/analytic-steps-ranked-2026-11-15.md item 1
 -/
@@ -79,28 +79,29 @@ theorem RogersDilogTheory.numerators (T : RogersDilogTheory K) {x : K}
 /-! ## Part B — Bloch–Wigner-type theories on a field (Suslin orientation) -/
 
 /-- **A Bloch–Wigner-type dilogarithm theory** on a field `F` with values in an abelian
-group `A`: oddness under `z ↦ 1/z` and `z ↦ 1 − z`, and Suslin's five-term relation
-(the orientation of `/mnt/project-files/qou-bloch-rigidity/proof-sketch.md` and PR #7946). -/
+group `A`: oddness under `z ↦ 1/z` and Suslin's five-term relation, in the orientation of
+`QOU.Archimedean.SuslinFiveTerm` (PR #7946). The corpus's `PentagonCoherent` uses the inverted
+orientation and forces `D = 0`. -/
 structure SuslinDilogTheory (F : Type*) [Field F] (A : Type*) [AddCommGroup A] where
   D : F → A
   inv_odd : ∀ z : F, z ≠ 0 → D (1 / z) = -D z
-  refl_odd : ∀ z : F, D (1 - z) = -D z
   five : ∀ x y : F, x ≠ 0 → x ≠ 1 → y ≠ 0 → y ≠ 1 → x ≠ y →
     D x - D y + D (y / x) - D ((1 - x⁻¹) / (1 - y⁻¹)) + D ((1 - x) / (1 - y)) = 0
 
 variable {F : Type*} [Field F] {A : Type*} [AddCommGroup A]
 
-/-- **The anharmonic orbit**: the six cross-ratio images of `z` carry `±D z`. Pure algebra
-from the two oddness fields; for the analytic `D` each of these was a separate proof. -/
-theorem SuslinDilogTheory.anharmonic (T : SuslinDilogTheory F A) {z : F} (hz0 : z ≠ 0)
-    (hz1 : z ≠ 1) :
+/-- **The anharmonic orbit**, given reflection oddness `D(1 − z) = −D z`: the six cross-ratio
+images of `z` carry `±D z`. Pure algebra. Reflection is a hypothesis here, not a field: it is
+not yet proved in Lean for the Bloch–Wigner instance. -/
+theorem SuslinDilogTheory.anharmonic (T : SuslinDilogTheory F A)
+    (hrefl : ∀ z : F, T.D (1 - z) = -T.D z) {z : F} (hz0 : z ≠ 0) (hz1 : z ≠ 1) :
     T.D (1 / (1 - z)) = T.D z ∧ T.D ((z - 1) / z) = T.D z ∧ T.D (z / (z - 1)) = -T.D z := by
   have h1z : (1 : F) - z ≠ 0 := sub_ne_zero.mpr (Ne.symm hz1)
   have hA : T.D (1 / (1 - z)) = T.D z := by
-    rw [T.inv_odd _ h1z, T.refl_odd, neg_neg]
+    rw [T.inv_odd _ h1z, hrefl, neg_neg]
   have hB : T.D ((z - 1) / z) = T.D z := by
     have : (z - 1) / z = 1 - 1 / z := by field_simp
-    rw [this, T.refl_odd, T.inv_odd _ hz0, neg_neg]
+    rw [this, hrefl, T.inv_odd _ hz0, neg_neg]
   refine ⟨hA, hB, ?_⟩
   have hne : (z - 1) / z ≠ 0 := div_ne_zero (sub_ne_zero.mpr hz1) hz0
   have : z / (z - 1) = 1 / ((z - 1) / z) := by

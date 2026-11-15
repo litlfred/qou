@@ -1,11 +1,16 @@
 import QOU.QBeta.DilogTheory
 import QOU.QBeta.FiveTwoAbelFiveTerm
+import QOU.Archimedean.BlochRigidity.Instance
 
 /-!
 # The Rogers instance of `RogersDilogTheory` (archimedean half of `DilogTheory`, split per §7c)
 
 The analysis is exactly Euler reflection (`rogersL_reflection`) and Abel's relation
 (`rogersL_fiveTerm`). Everything downstream is `RogersDilogTheory.numerators`.
+
+Part B: the Bloch–Wigner function `blochD` of PR #7946 is a `SuslinDilogTheory ℂ ℝ`, and by
+#7946's rigidity theorem every continuous, conjugation-odd instance over `ℂ` is a real multiple
+of it. So the class has a one-dimensional space of "archimedean" instances.
 -/
 
 namespace QOU.QBeta.DilogTheory
@@ -23,5 +28,23 @@ noncomputable def rogers : RogersDilogTheory ℝ where
 `RogersDilogTheory.numerators`. -/
 example {x : ℝ} (hx : x ^ 3 - 2 * x ^ 2 - x + 1 = 0) (hlo : 1 / 2 < x) (hhi : x < 1) :=
   rogers.numerators hx hlo hhi
+
+open QOU.Archimedean in
+/-- **The Bloch–Wigner instance.** The analysis is `blochD_inv` and the five-term relation
+`blochWignerFiveTerm_blochD` (PR #7946). -/
+noncomputable def blochWigner : SuslinDilogTheory ℂ ℝ where
+  D := FiveTermProof.blochD
+  inv_odd z _ := by rw [one_div]; exact FiveTermProof.blochD_inv
+  five := blochWignerFiveTerm_blochD.five_term
+
+open QOU.Archimedean in
+/-- **Rigidity of the archimedean instances.** A `SuslinDilogTheory ℂ ℝ` that is continuous
+off `{0,1}` and odd under conjugation is a real multiple of Bloch–Wigner. This is PR #7946's
+`BlochSuslinRigidity` instance, read as a statement about the class. -/
+theorem SuslinDilogTheory.eq_mul_blochWigner (T : SuslinDilogTheory ℂ ℝ)
+    (hc : ContinuousOn T.D {0, 1}ᶜ) (hconj : ∀ z, T.D ((starRingEnd ℂ) z) = -T.D z) :
+    ∃ c : ℝ, ∀ z : ℂ, z ≠ 0 → z ≠ 1 → T.D z = c * FiveTermProof.blochD z :=
+  BlochSuslinRigidity.uniqueness (D := FiveTermProof.blochD) T.D hc
+    ⟨fun z h0 _ => by rw [← one_div]; exact T.inv_odd z h0, hconj⟩ T.five
 
 end QOU.QBeta.DilogTheory
