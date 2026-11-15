@@ -101,9 +101,116 @@
   "components_T35_closure": 1,
   "rhs_min_components_p_trefoil_unknot": 5
  },
+ "C4_over_under_transmission": [
+  {
+   "h_slot": "std",
+   "sign": "+",
+   "over_strand_carries": "e1",
+   "K_on_over_strand": "q",
+   "pure_transposition": true,
+   "exchange_term": [
+    "0",
+    "0",
+    "0",
+    "0"
+   ]
+  },
+  {
+   "h_slot": "std",
+   "sign": "+",
+   "over_strand_carries": "e2",
+   "K_on_over_strand": "q^-1",
+   "pure_transposition": false,
+   "exchange_term": [
+    "0",
+    "0",
+    "q - 1/q",
+    "0"
+   ]
+  },
+  {
+   "h_slot": "std",
+   "sign": "-",
+   "over_strand_carries": "e1",
+   "K_on_over_strand": "q",
+   "pure_transposition": true,
+   "exchange_term": [
+    "0",
+    "0",
+    "0",
+    "0"
+   ]
+  },
+  {
+   "h_slot": "std",
+   "sign": "-",
+   "over_strand_carries": "e2",
+   "K_on_over_strand": "q^-1",
+   "pure_transposition": false,
+   "exchange_term": [
+    "0",
+    "-q + 1/q",
+    "0",
+    "0"
+   ]
+  },
+  {
+   "h_slot": "swp",
+   "sign": "+",
+   "over_strand_carries": "e1",
+   "K_on_over_strand": "q^-1",
+   "pure_transposition": false,
+   "exchange_term": [
+    "0",
+    "q - 1/q",
+    "0",
+    "0"
+   ]
+  },
+  {
+   "h_slot": "swp",
+   "sign": "+",
+   "over_strand_carries": "e2",
+   "K_on_over_strand": "q",
+   "pure_transposition": true,
+   "exchange_term": [
+    "0",
+    "0",
+    "0",
+    "0"
+   ]
+  },
+  {
+   "h_slot": "swp",
+   "sign": "-",
+   "over_strand_carries": "e1",
+   "K_on_over_strand": "q^-1",
+   "pure_transposition": false,
+   "exchange_term": [
+    "0",
+    "0",
+    "-q + 1/q",
+    "0"
+   ]
+  },
+  {
+   "h_slot": "swp",
+   "sign": "-",
+   "over_strand_carries": "e2",
+   "K_on_over_strand": "q",
+   "pure_transposition": true,
+   "exchange_term": [
+    "0",
+    "0",
+    "0",
+    "0"
+   ]
+  }
+ ],
  "checks": {
   "C1": true,
   "C2": true,
-  "C3": true
+  "C3": true,
+  "C4": true
  }
 }
