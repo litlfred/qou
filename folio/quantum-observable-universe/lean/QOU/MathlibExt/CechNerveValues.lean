@@ -29,8 +29,8 @@ layer of `CechNerveTetrahedron`.
 ## What this does NOT do
 
 It is the bookkeeping layer only. It does not compare `H²` of two covers; that
-is the split lemma (step P2), and the colimit statement `HemiComputesCech`
-stays an open conjecture. Bean `qou-skn4`.
+is the split lemma (step P2). The colimit statement `HemiComputesCech` is
+proved in `CechSphereGood`.
 
 -- Ref: [manuscript] lifting-and-descent, route R3, surface step C2
 -/
