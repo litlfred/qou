@@ -215,3 +215,77 @@ missing Mathlib olean. That is about the cache, not the source.
 
 **Default if nothing is said: (no).** **Recommendation (judgement): (no) for now.** §4 shows
 the swap does not produce integer flavours from γγ either, so adding it buys no reachability.
+
+## 8. Follow-up `qou-hlx7`: the corpus's parity mechanism IS eigenline-selective
+
+The question was where a left-only weak coupling could come from, given D-H2 = no and given
+that no single letter does it (`no_one_sided_letter`). The first candidate is the corpus's own
+parity-violation mechanism. `predicted-spectra/force-knot-identification.md:63` locates parity
+violation in the asymmetry of the q-weighted crossing difference q[L₊] − q⁻¹[L₋]. The check
+named in the bean was: does that asymmetry select an **eigenline**, or only a **crossing
+sign**?
+
+**It selects an eigenline, exactly.** Read in the algebra before any trace, with L₊ = s and
+L₋ = s⁻¹:
+
+$$
+q\,s - q^{-1} s^{-1} \;=\; (q - q^{-1})(q + q^{-1})\,P_+ \;=\; (q^2 - q^{-2})\,P_+ .
+$$
+
+| theorem | statement |
+|---|---|
+| `skein_asym_eq` | q·s − q⁻¹·s⁻¹ = h·[2]_q·P₊ |
+| `skein_asym_mul_Pm` | it annihilates the (−q⁻¹)-line |
+| `skein_asym_mul_Pp` | it acts on the q-line by q² − q⁻² |
+| `skein_mirror_eq` | the mirror weighting q⁻¹·s − q·s⁻¹ = h·[2]_q·P₋ |
+| `skein_asym_swap` | the swapped letter's skein difference is h·[2]_q·P₋ |
+| `skein_asym_zero_of_h` | it vanishes when h = 0 (q = ±1) |
+| `skein_asym_bar_odd` | it is odd under the orientation flip; P₊ is even, so the sign sits in h |
+
+All are sorry-free, lean-direct exit 0, with standard axioms only.
+
+### What this establishes
+
+* The q-weighted skein difference is a scalar multiple of the **left projector**, under the
+  D-H1 = A labelling. It is not merely sensitive to crossing sign.
+* It is **not a letter**: it is h·[2]_q times an idempotent. That is consistent with
+  `no_one_sided_letter`, and it is the escape that theorem leaves open: a chirality-selective
+  operator does exist in K[s], just not as a Hecke letter.
+* It is a **q ≠ 1 effect**: the prefactor is h·[2]_q = q² − q⁻². The corpus's "parity
+  violation at q ≠ 1" then follows algebraically, from the identity alone.
+* Which line it picks is fixed by which crossing carries the weight q. Weight q on L₊ gives
+  P₊; the mirror weighting gives P₋.
+
+### What this does NOT establish (scope (a))
+
+* That the weak coupling **is** h·[2]_q·P₊. That would be an identification, and it is not
+  made here or written into content.
+* A charged current would also have to change flavour. The flavour flip s ↦ s⁻¹ is
+  chirality-blind (§3). How a flip composes with P₊ into one vertex is not derived.
+* The relation as written in the content block, q[L₊] − q⁻¹[L₋] = (q^{1/2} − q^{−1/2})[L₀],
+  **cannot hold as an identity in the Hecke algebra**: by `skein_asym_eq` the left side is
+  h·[2]_q·P₊, which is not a scalar whenever P₊ ≠ 0, 1. It reads like the Jones-polynomial
+  skein relation for the invariant after trace and framing normalization. That is the agent's
+  reading and has not been checked against the content's normalization. The content block is
+  not edited (owner gate).
+
+### Owner decision D-H3: should "weak vertex ∝ q-weighted skein difference = h·[2]_q·P₊" become a working hypothesis?
+
+* **(yes)**
+  - *Means:* a child bean that tries to *derive* the charged-current vertex from the skein
+    difference composed with the flavour flip, inside the (2,1) block.
+  - *Costs:* new Lean in this file's frame plus one probe; hours, no long compute.
+  - *Risks:* the left/right choice reduces to "which crossing carries q", which could turn out
+    to be a convention rather than a derivation. That would be a scope-(a) negative, but
+    informative.
+  - *Commits to:* a candidate source for V−A inside the letter algebra.
+* **(no)**
+  - *Means:* record the identity and leave `qou-hlx7` open with the candidate noted.
+  - *Costs:* none.
+* **Also, separately:** should the Hecke-vs-Jones normalization of the skein equation in
+  `force-knot-identification.md:63` be checked and, if needed, corrected? This is a content
+  edit, so it needs the owner's go.
+
+**Default if nothing is said: (no), and content is untouched.** **Recommendation (judgement):
+(yes).** The identity is exact and parameter-free, so testing it is cheap. The risk named
+above is exactly what the test would measure.

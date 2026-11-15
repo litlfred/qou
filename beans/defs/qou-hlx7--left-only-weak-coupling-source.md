@@ -1,7 +1,7 @@
 ---
 # qou-hlx7
 title: 'GAP: source of the left-only weak coupling (V-A) — not a single Hecke letter'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -33,3 +33,14 @@ Candidates to examine (not adopted):
 - A non-letter operator on the (2,1) block, or structure at higher tower depth.
 - The cone-side coupling of u (6b, #7825) to the letter's eigenlines.
 Related: qou-qs4c (lists "weak isospin acts on L only" as a relation), qou-tdrd (T3 grading).
+
+## 2026-11-15 result: the corpus parity mechanism is eigenline-selective (proved)
+
+q·s − q⁻¹·s⁻¹ = (q − q⁻¹)(q + q⁻¹)·P₊ exactly (skein_asym_eq, HelicityCommonSource.lean). It
+kills the (−q⁻¹)-line, acts by q² − q⁻² on the q-line, vanishes at h = 0, and is bar-odd. The
+mirror weighting and the swapped letter give P₋. It is h·[2]·(idempotent), not a letter, which
+is the escape no_one_sided_letter leaves. NOT established: that the weak coupling IS this
+(scope (a)), or how it composes with the flavour flip. Also noted: the content's skein
+equation (RHS (q^{1/2}−q^{−1/2})[L0]) cannot be an identity in H_n(q); it reads as the Jones
+skein after trace. Not edited. Owner decision D-H3 is framed in audit §8. Stays in-progress
+pending D-H3.

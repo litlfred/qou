@@ -31,6 +31,12 @@ invariant is the bar-invariance of the idempotents, `flip_Pp`).
 (`x P₊ = q⁻¹ P₊`, `x P₋ = −q⁻¹ P₋`) is a Hecke letter at ANY parameter `p`, unless
 `q² = 1`. So a chirality-selective flavour flip is not a letter.
 
+**The skein difference is a chirality projector** (bean `qou-hlx7`):
+`q·s − q⁻¹·s⁻¹ = (q − q⁻¹)(q + q⁻¹)·P₊` (`skein_asym_eq`). It kills the `(−q⁻¹)`-line
+(`skein_asym_mul_Pm`), vanishes at `h = 0` (`skein_asym_zero_of_h`), is bar-odd
+(`skein_asym_bar_odd`), and the mirror weighting / the swapped letter give `P₋`
+(`skein_mirror_eq`, `skein_asym_swap`). It is a multiple of an idempotent, not a letter.
+
 On the NF algebra `H₃(q)` with formal `h` (6a's `netFlavour`):
 `netFlavour` of `σ`, `σ⁻¹`, `−σ⁻¹` is `0`, `−1`, `+1` (`netFlavour_swapLetter`). The two
 corpus flavours `σ`, `σ⁻¹` have the same projector pair (`corpus_flavours_same_lines`)
@@ -212,6 +218,58 @@ theorem no_one_sided_letter (h2 : (2 : K) ≠ 0) (hq : q ≠ 0)
     linear_combination this
   have : q ^ 2 = (q * q⁻¹) ^ 2 * q ^ 2 := by rw [mul_inv_cancel₀ hq]; ring
   rw [this]; field_simp at hqi ⊢; linear_combination -hqi
+
+/-! ### The `q`-weighted skein difference (bean `qou-hlx7`)
+
+`force-knot-identification.md` locates parity violation in the asymmetry of the
+`q`-weighted crossing difference `q[L₊] − q⁻¹[L₋]`. Read in the algebra (before any trace),
+with `L₊ = s` and `L₋ = s⁻¹`, this difference is EXACTLY `h·[2]_q` times the eigenvalue-`q`
+projector: it kills the other line. The mirror weighting gives the other projector. -/
+
+/-- `q·s − q⁻¹·s⁻¹ = (q − q⁻¹)(q + q⁻¹)·P₊`. -/
+theorem skein_asym_eq (hq2 : q + q⁻¹ ≠ 0) :
+    q • s - q⁻¹ • flip q s = (q - q⁻¹) • ((q + q⁻¹) • Pp q s) := by
+  unfold Pp flip
+  rw [smul_smul (q + q⁻¹), mul_inv_cancel₀ hq2, one_smul]
+  module
+
+/-- The mirror weighting: `q⁻¹·s − q·s⁻¹ = (q − q⁻¹)(q + q⁻¹)·P₋`. -/
+theorem skein_mirror_eq (hq2 : q + q⁻¹ ≠ 0) :
+    q⁻¹ • s - q • flip q s = (q - q⁻¹) • ((q + q⁻¹) • Pm q s) := by
+  unfold Pm flip
+  rw [smul_smul (q + q⁻¹), mul_inv_cancel₀ hq2, one_smul]
+  module
+
+/-- **The skein difference annihilates the `(−q⁻¹)`-line.** -/
+theorem skein_asym_mul_Pm (hq : q ≠ 0) (hq2 : q + q⁻¹ ≠ 0) (hs : IsLetter q s) :
+    (q • s - q⁻¹ • flip q s) * Pm q s = 0 := by
+  rw [skein_asym_eq hq2, smul_mul_assoc, smul_mul_assoc, Pp_mul_Pm hq hs, smul_zero, smul_zero]
+
+/-- … and acts on the `q`-line by the scalar `(q − q⁻¹)(q + q⁻¹) = q² − q⁻²`. -/
+theorem skein_asym_mul_Pp (hq : q ≠ 0) (hq2 : q + q⁻¹ ≠ 0) (hs : IsLetter q s) :
+    (q • s - q⁻¹ • flip q s) * Pp q s = ((q - q⁻¹) * (q + q⁻¹)) • Pp q s := by
+  rw [skein_asym_eq hq2, smul_mul_assoc, smul_mul_assoc, Pp_idem hq hq2 hs, smul_smul]
+
+/-- The eigenline swap exchanges the two weightings: the skein difference of the swapped
+letter is the mirror projector `(q − q⁻¹)(q + q⁻¹)·P₋`. -/
+theorem skein_asym_swap (hq2 : q + q⁻¹ ≠ 0) :
+    q • swap q s - q⁻¹ • flip q (swap q s) = (q - q⁻¹) • ((q + q⁻¹) • Pm q s) := by
+  unfold Pm flip swap
+  rw [smul_smul (q + q⁻¹), mul_inv_cancel₀ hq2, one_smul]
+  module
+
+/-- At `h = q − q⁻¹ = 0` the skein difference vanishes: no asymmetry at `q = ±1`. -/
+theorem skein_asym_zero_of_h (hq2 : q + q⁻¹ ≠ 0) (hh : q - q⁻¹ = 0) :
+    q • s - q⁻¹ • flip q s = 0 := by
+  rw [skein_asym_eq hq2, hh, zero_smul]
+
+/-- **The skein difference is bar-odd**: the orientation flip (`q ↦ q⁻¹`, `s ↦ s⁻¹`) sends
+it to its negative, while `P₊` is bar-even (`flip_Pp`) — the sign sits in `h`. -/
+theorem skein_asym_bar_odd :
+    q⁻¹ • flip q s - q⁻¹⁻¹ • flip q⁻¹ (flip q s) = -(q • s - q⁻¹ • flip q s) := by
+  unfold flip
+  rw [inv_inv]
+  module
 
 end Abstract
 
