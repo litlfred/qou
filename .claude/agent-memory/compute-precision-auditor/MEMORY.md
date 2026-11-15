@@ -697,3 +697,10 @@ TRAPs.
   * **Two agents "contradicting" each other can both be right about different FILES**:
     "the chi-cache gives 0.152" (proton witness) vs "0.575" (`-muon` witness, built 2026-08-30,
     before the ordering ruling). Resolve by naming the file, then measure.
+- 2026-11-15 (`hadron_knot_table`, branch `claude/precision-hadron-table-2026-11-15`): manifest
+  `ideal_muon` -> `physical_proton`; producer now mpf end to end (mpf NF twin cross-checked
+  against the float64 builder, worst 2.5e-14 at fe56). BASELINE, kernel live (pyhecke_native
+  built from source, maturin 6 min), NO cvxpy, proton pin: A=1 atoms 0 s; ²H 726 s, ³H 1026 s,
+  ³He 883 s, ⁴He 1363 s — 66.6 min for 7/19, so the table cannot finish in a session. Stopped,
+  witness restored; q0 flip + drift gates stay red on the old witness until a full run lands.
+  Without cvxpy B(²H) = -15.8142 (SDP leg 0.0) — producer now stamps `cvxpy_available`.
