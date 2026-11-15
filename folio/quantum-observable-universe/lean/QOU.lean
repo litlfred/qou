@@ -543,6 +543,7 @@ import QOU.SchurWeyl.QJucysMurphy
 import QOU.SchurWeyl.ContentCasimir
 import QOU.SchurWeyl.QJucysMurphyEigen
 import QOU.SchurWeyl.SeminormalContentCasimir
+import QOU.SchurWeyl.QSchurUpperBound
 import QOU.SchurWeyl.AxialDistanceBound
 import QOU.SchurWeyl.MatRepEquiv
 import QOU.SchurWeyl.SeminormalInequivalence
