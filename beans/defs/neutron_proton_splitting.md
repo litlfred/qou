@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-11T00:00:00Z
-updated_at: 2026-11-15T14:30:00Z
+updated_at: 2026-11-15T18:11:00Z
 ---
 
 File: `folio/quantum-observable-universe/lean/QOU/Torsion/neutron_proton_splitting.lean`
@@ -53,3 +53,14 @@ The C figure (+0.65 %) is kept only as a labelled historical comparison.
 hecke_engine.HeckeRational.z is now exact convention-D q^3/(q^2+1).
 The adjacent-crossing reading (pn_splitting_proof_provenance_probe.py) gives -2.875 %
 under D but does not reproduce the old neutron C value; not adopted.
+
+## Error budget under convention D (2026-11-15)
+Report: /mnt/project-files/qou-np-splitting/np-splitting-error-budget.md. Diagnostic only; no CODATA number enters any formal statement.
+
+**Where the −18.5 % sits.** Almost entirely in the inner H₂ factor tr σ⁻¹ / tr ½(σ+σ⁻¹) = 2/(q⁴+1): C→D change −0.077 in |ΔΦ|; the outer H₃ factor gains back +0.011. Closed form under D: e^{ΔΦ} = (q²+1)³/(q²(q⁴+1)(q⁴+q²+2)). The construction matches CODATA only at z ≈ 0.502 (≈ z_C).
+
+**Ruled out:** α (0.012 %); input rounding; higher-order tail ((r−1)/ℏ_q² = 23); other orderings; trace weights (fixed by the D Markov property; V̂_full has z_eff = 0.4445 ≠ z_D); the u–d crossing (weak vertex up to a scalar, PR #7948 `weakVertex_eq_midpoint_of_one_lt`; the scalar cancels).
+
+**Readings under D:** suffix-inclusive −2.9 % (mislabels a crossing); adjacent +20.8 %; genuine half twist −69.6 %; full twist −39.6 % (ratio q⁻²).
+
+**See also** bean qou-jwl8 on the traced_volume product ∏ᵢ∏_{j>i}(σᵢ+dᵢⱼ) vs the half-twist trace.
