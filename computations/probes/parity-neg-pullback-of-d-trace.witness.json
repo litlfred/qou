@@ -64,5 +64,7 @@
     "pullback_kills_symmetriser_n3": true,
     "pullback_keeps_antisymmetriser_n3": true
   },
-  "exact": true
+  "exact": true,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "exact symbolic computation over Q(q) in sympy; q stays a symbol and no q0 pin is ever read"
 }

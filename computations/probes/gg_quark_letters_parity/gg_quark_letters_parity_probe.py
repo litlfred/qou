@@ -238,7 +238,8 @@ def survivor(W, pair, side):
 
 def main():
     checks, out = {}, {"recipe": "computations/probes/gg_quark_letters_parity/preregistration.md (74045a7695d)",
-                       "issue": 7777, "q0_pin": "proton", "q0": Q_50_DIGIT_STR}
+                       "issue": 7777, "q0_pin": "proton", "q0": Q_50_DIGIT_STR,
+                       "q0Anchor": "proton", "q0Value": Q_50_DIGIT_STR}
 
     # P0 reproduce step 2
     ref = json.loads((ROOT / "computations/probes/gg_quark_letters_tl/gg-quark-letters-tl.witness.json").read_text())

@@ -253,7 +253,7 @@ def main() -> int:
         wb.add_caveat(
             "Says nothing about the reality argument that empties the branches -- "
             "that is what the block's 68 declaring witnesses do, and it is untouched.")
-        print(f"\nWitness: {wb.save()}")
+        print(f"\nWitness: {wb.save(extra={"q0Anchor": "ambiguous", "q0AnchorReason": 'compares two vintages of the CAL-2 muon calibration on purpose: k^2 = Vol(4_1)/(m_mu/m_e) at CODATA 2018 (206.7682830) and CODATA 2022 (206.7682827); no q0 pin is read directly, and the result is the vintage comparison'})}")
     except Exception as e:  # pragma: no cover
         print(f"\n(witness emit skipped: {e})")
 
