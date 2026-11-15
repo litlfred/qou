@@ -284,6 +284,13 @@ def main() -> int:
                 "[6]": "1.94844848",
             },
             "classification": "y_lambda weight-table regeneration",
+            "q0Anchor": "ambiguous",
+            "q0AnchorReason": (
+                "provenance audit across pins: reads recorded values from the "
+                "proton-anchored chi-*-at-q0-50dps and y-lambda-mpfr-proton "
+                "witnesses AND from the muon-stamped y-lambda-mpfr-witness "
+                "(whose recorded q0 is the retired frozen pin A), and compares "
+                "them; it evaluates nothing at q0 itself"),
             "ruled_out": [
                 "mu-p pin swap (11.5 ppb, three orders too small)",
                 "convention C->D (z identical either side of the move)",

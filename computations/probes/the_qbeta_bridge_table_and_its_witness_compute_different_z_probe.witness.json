@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T16:00:40.284764+00:00",
-  "commitSha": "74a11ad874c23506ac53725592818460d001a686",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-15T20:11:04.568022+00:00",
+  "commitSha": "6898a93de88af7d81d0c34b80d3a9160e6ba9680",
   "assertions": [
     {
       "name": "h^2 IS (h)^2 to 1e-16 — my 'already internally inconsistent, h^2 != (h)^2' claim is withdrawn",
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 55,
   "computation": "the_qbeta_bridge_table_and_its_witness_compute_different_z_probe",
   "scriptFile": "the_qbeta_bridge_table_and_its_witness_compute_different_z_probe.py",
-  "scriptHash": "73c09ba8b6ef",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "2449dc87b1df",
+  "scriptCommitSha": "547b78208f6bb667ec8b3580f16390a74dbb9ce4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,11 +54,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "24ca776b0ad05497"
   },
   "invocation": {
     "argv": [
@@ -79,5 +83,7 @@
   "caveats": [
     "Does NOT rule on which z is correct. The proposition defines one and the producer computes the other; whether the definition or the compute moved is an authoring question, and the Q_beta MeV figures differ by ~0.05 MeV between them.",
     "Neither the producer, the proposition, nor the table's values are changed here — only the block's false provenance sentence."
-  ]
+  ],
+  "q0Anchor": "ambiguous",
+  "q0AnchorReason": "comparison by design: tests the block's published values at the block's own quoted pin 1.109978595557335 (retired frozen muon pin A) against the witness's declared proton pin 1.10997858275138..."
 }

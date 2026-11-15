@@ -701,3 +701,11 @@ TRAPs.
   * **Two agents "contradicting" each other can both be right about different FILES**:
     "the chi-cache gives 0.152" (proton witness) vs "0.575" (`-muon` witness, built 2026-08-30,
     before the ordering ruling). Resolve by naming the file, then measure.
+- 2026-11-15 (q0Anchor refill slice, branch `claude/precision-anchor-refill-c-2026-11-15`). Two TRAPs:
+  * **A manifest `physical_proton` entry is INERT for a producer whose payload records two pins.**
+    `build()` stamps payload-first; a payload carrying both a proton and a muon `q` resolves
+    `ambiguous`, and only muon/proton are stamped, so the witness stays unstamped. Check with
+    `resolve_q0_anchor_payload_first(w, script, require_declared=True)` before choosing the manifest;
+    for a two-pin payload stamp `ambiguous` + reason via `save(extra=...)`.
+  * **`git checkout -- computations/` after `precision-gates.sh` also reverts UNCOMMITTED producer
+    edits.** Commit producer changes before running the gate family, then revert.

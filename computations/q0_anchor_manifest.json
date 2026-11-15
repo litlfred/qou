@@ -1019,7 +1019,8 @@
     "qbeta_ck_basis_constrained_pslq",
     "qbeta_ck_qholonomic_recurrence_test",
     "qbeta_habiro_integrality_kill_test",
-    "tau_dictionary_fricke_spin_probe"
+    "tau_dictionary_fricke_spin_probe",
+    "qbeta_zd_rescore_price_probe"
   ],
   "_schema": "q0-anchor-manifest/v1",
   "_convention": "ideal=muon (CAL-2 𝔇_β); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides."

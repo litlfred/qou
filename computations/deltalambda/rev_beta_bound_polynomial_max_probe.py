@@ -473,6 +473,10 @@ def main() -> int:
         "bean": "qou-hok7",
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "q0_anchor": "physical_proton",
+        # Top-level stamp read by the q0-anchor audits (hand-rolled dump, so the
+        # manifest cannot reach it). q0 enters via Q0 = Q_50_DIGIT_STR (ln q0).
+        "q0Anchor": "proton",
+        "q0Value": Q_50_DIGIT_STR,
         "dps": mp.dps,
         "relaxation": ("M_n <= max_(l,W) [ l*C - J(l,W) - F(n) - (Hhat(n,l,W) - H_min(n)) ln q0 ], "
                        "with 2*Hhat = min over admissible lambda_1 of "

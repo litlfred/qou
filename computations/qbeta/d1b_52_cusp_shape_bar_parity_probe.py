@@ -384,7 +384,8 @@ def main() -> int:
     for ok, name, detail in checks:
         wb.add_assertion(name, computed="PASS" if ok else "FAIL",
                          expected="PASS", tolerance="exact", source=detail)
-    wb.save()
+    wb.save(extra={"q0Anchor": "independent", "q0AnchorReason": (
+            "exact 5_2 gluing-equation algebra over Q-bar plus mpmath cusp shapes of the hyperbolic structure; neither depends on q, q0 is never read")})
 
     n_ok = sum(1 for ok, _, _ in checks if ok)
     print(f"\n  {n_ok}/{len(checks)} checks passed")
