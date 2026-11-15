@@ -183,4 +183,99 @@ theorem affineInvariant_iff {X : Type*} (f : (Fin (n + 2) → K) → X) :
 
 end Affine
 
+/-! ## Part IV — a colliding cluster acts as one object (input 2, the monoidal side)
+
+Let a cluster `S` of points collide: `z_p = c + ε w_p` for `p ∈ S`, the other points fixed, and
+move along the collision direction `u = w` on `S`, `0` elsewhere. Then
+`ε · ω_M(z)(u) = ½ Σ_{p ≠ q ∈ S} M_{pq} + ε · (terms regular at ε = 0)`
+(`cluster_residue`). So on the blow-up of the collision locus the exceptional divisor carries the
+residue `Σ_{p<q ∈ S} M_{pq}`, the pair residues of the cluster added up, and the pairs that leave
+the cluster contribute nothing singular. With `M_{pq} = Ω_{pq}` this is the Casimir of the cluster
+viewed as one object `V_{p₁} ⊗ … ⊗ V_{p_k}`, minus the Casimirs of its factors: the monoidal
+structure, read off at the collision. -/
+
+section Cluster
+
+variable {K : Type*} [Field K] {A : Type*} [Ring A] [Algebra K A] {n : ℕ}
+
+/-- The configuration where the cluster `S` sits at `c + ε w` and the others stay at `z`. -/
+def clusterConfig (S : Finset (Fin n)) (c ε : K) (w z : Fin n → K) : Fin n → K :=
+  fun p => if p ∈ S then c + ε * w p else z p
+
+/-- The collision direction: `w` on the cluster, `0` outside. -/
+def clusterDir (S : Finset (Fin n)) (w : Fin n → K) : Fin n → K :=
+  fun p => if p ∈ S then w p else 0
+
+/-- **Residue of a colliding cluster.** For symmetric residues, distinct positions `w` inside the
+cluster and `ε ≠ 0`, the form along the collision direction is `ε⁻¹` times half the sum of the
+cluster's pair residues, plus a term that stays regular as `ε → 0` whenever `c` differs from
+every outside point. -/
+theorem cluster_residue (h2 : (2 : K) ≠ 0) {M : Fin n → Fin n → A} (hM : ∀ i j, M i j = M j i)
+    (S : Finset (Fin n)) {c ε : K} (hε : ε ≠ 0) {w : Fin n → K}
+    (hw : ∀ p ∈ S, ∀ q ∈ S, p ≠ q → w p ≠ w q) (z : Fin n → K) :
+    ε • arnoldForm M (clusterConfig S c ε w z) (clusterDir S w) =
+      (2 : K)⁻¹ • ∑ p ∈ S, ∑ q ∈ S, (if p = q then (0 : A) else M p q) +
+      ε • ∑ p ∈ S, ∑ q ∈ Finset.univ \ S,
+        (w p * (c + ε * w p - z q)⁻¹) • M p q := by
+  classical
+  -- restrict the outer sum to the cluster
+  have hout : arnoldForm M (clusterConfig S c ε w z) (clusterDir S w) =
+      ∑ p ∈ S, w p • arnoldCoeff M (clusterConfig S c ε w z) p := by
+    unfold arnoldForm
+    rw [← Finset.sum_subset (Finset.subset_univ S) (fun p _ hp => by
+      simp [clusterDir, hp])]
+    exact Finset.sum_congr rfl fun p hp => by simp [clusterDir, hp]
+  -- split each coefficient into inside and outside partners
+  have hsplit : ∀ p ∈ S, arnoldCoeff M (clusterConfig S c ε w z) p =
+      ∑ q ∈ S, (ε * (w p - w q))⁻¹ • M p q +
+        ∑ q ∈ Finset.univ \ S, (c + ε * w p - z q)⁻¹ • M p q := by
+    intro p hp
+    unfold arnoldCoeff
+    rw [← Finset.sum_sdiff (Finset.subset_univ S), add_comm]
+    congr 1
+    · refine Finset.sum_congr rfl fun q hq => ?_
+      simp only [clusterConfig, if_pos hp, if_pos hq]
+      congr 1; ring_nf
+    · refine Finset.sum_congr rfl fun q hq => ?_
+      have hq' : q ∉ S := (Finset.mem_sdiff.mp hq).2
+      simp only [clusterConfig, if_pos hp, if_neg hq']
+  -- the inside part: Σ w_p/(w_p − w_q) M_pq = ½ Σ_{p≠q} M_pq
+  have hin : ∑ p ∈ S, ∑ q ∈ S, (w p / (w p - w q)) • M p q =
+      (2 : K)⁻¹ • ∑ p ∈ S, ∑ q ∈ S, (if p = q then (0 : A) else M p q) := by
+    have hswap : ∑ p ∈ S, ∑ q ∈ S, (w q / (w p - w q)) • M p q =
+        -∑ p ∈ S, ∑ q ∈ S, (w p / (w p - w q)) • M p q := by
+      rw [Finset.sum_comm, ← Finset.sum_neg_distrib]
+      refine Finset.sum_congr rfl fun p _ => ?_
+      rw [← Finset.sum_neg_distrib]
+      refine Finset.sum_congr rfl fun q _ => ?_
+      rw [hM q p, ← neg_sub (w p) (w q), div_neg, neg_smul]
+    have hone : ∑ p ∈ S, ∑ q ∈ S, ((w p - w q) / (w p - w q)) • M p q =
+        ∑ p ∈ S, ∑ q ∈ S, (if p = q then (0 : A) else M p q) := by
+      refine Finset.sum_congr rfl fun p hp => Finset.sum_congr rfl fun q hq => ?_
+      by_cases hpq : p = q
+      · subst hpq; simp
+      · rw [if_neg hpq, div_self (sub_ne_zero.mpr (hw p hp q hq hpq)), one_smul]
+    have hdiff : ∑ p ∈ S, ∑ q ∈ S, ((w p - w q) / (w p - w q)) • M p q =
+        ∑ p ∈ S, ∑ q ∈ S, (w p / (w p - w q)) • M p q -
+          ∑ p ∈ S, ∑ q ∈ S, (w q / (w p - w q)) • M p q := by
+      rw [← Finset.sum_sub_distrib]; refine Finset.sum_congr rfl fun p _ => ?_
+      rw [← Finset.sum_sub_distrib]; refine Finset.sum_congr rfl fun q _ => ?_
+      rw [sub_div, sub_smul]
+    rw [hswap, sub_neg_eq_add, ← two_smul K] at hdiff
+    rw [← hone, hdiff, smul_smul, inv_mul_cancel₀ h2, one_smul]
+  rw [hout, Finset.smul_sum, ← hin, Finset.smul_sum, ← Finset.sum_add_distrib]
+  refine Finset.sum_congr rfl fun p hp => ?_
+  rw [hsplit p hp, smul_add, smul_add, Finset.smul_sum, Finset.smul_sum, Finset.smul_sum,
+    Finset.smul_sum, Finset.smul_sum]
+  congr 1
+  · refine Finset.sum_congr rfl fun q _ => ?_
+    rw [smul_smul, smul_smul, mul_inv, div_eq_mul_inv]
+    by_cases hpq : w p - w q = 0
+    · simp [hpq]
+    · field_simp
+  · refine Finset.sum_congr rfl fun q _ => ?_
+    rw [smul_smul, smul_smul, smul_smul]; ring_nf
+
+end Cluster
+
 end QOU.Mass.LagrangianKZ
