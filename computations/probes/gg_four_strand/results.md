@@ -96,3 +96,27 @@ explains the 3-strand result (V^m pure iff 3 | m) and the orientation blindness.
 
 Open: a uniform bound that makes this a theorem ("pure γγ words of length m pass for 1 ≤ q ≤ 1 + c/m"),
 and whether pure ⟺ pass persists for m > 6.
+
+## Amendment 3: q-threshold of reading 3 on pure γγ words (pre-registered)
+
+`gg_four_strand_pure_threshold_probe.py`, independent Hoefsmit seminormal representation of H₄(q) at
+variable q (mpmath 40 dps). H₄ relations hold to 1e-40 at q₀, and T2 passes: it reproduces passes_alone and
+min_char of the first run on all 5460 words. q*(w) = first q > 1 where some level character goes negative
+(grid 1e-3 on [1, 2], then bisection).
+
+| m | pure words | mode | q*_min | m·(q*_min − 1) | first failing character | minimiser |
+|---|---|---|---|---|---|---|
+| 3 | 16 | all | 1.39567 | 1.187 | level 2, (1,1) | B0.B0.B0 |
+| 4 | 32 | all | 1.52956 | 2.118 | level 2, (1,1) | V0.B1.V0.B1 |
+| 5 | 0 | all | — | — | — | — |
+| 6 | 512 | all | 1.21061 | 1.264 | level 2, (1,1) | B0.B0.V0.V0.B0.B0 |
+| 9 | 2000 | sample, seed 0 | 1.18815 | 1.693 | level 2, (1,1) | B0.B0.B1.B1.V1.V1.B1.B1.B0 |
+| 12 | 2000 | sample, seed 0 | 1.14589 | 1.751 | level 2, (1,1) | B0.B0.V0.V0.B0.B0.B1.V1.B1.V0.V0.B0 |
+
+Reading (scope a):
+- Hypothesis H survives on this data: m·(q*_min − 1) ≥ 1.187 on every length tested, with the minimum at m = 3.
+  m = 9 and 12 are samples, so their minima are upper bounds on the true minima.
+- The first failure is always the level-2 sign character χ_(1,1), never level 4.
+- A bound of the form 1 + c/m with c ≈ 1.19 reaches q₀ ≈ 1.10998 only for m ≤ 10. So such a theorem
+  cannot by itself say that every pure word passes at q₀; whether long pure words fail at q₀ is open
+  (at m = 12 the sampled minimum, 1.146, is still above q₀).
