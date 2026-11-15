@@ -3535,3 +3535,19 @@ Questions:
 - (v) Does a = 1/N give Y = 1/3 for the quark doublet in the ε-EM1 convention Q = T³ + Y/2? Or does that need Y = B − L, which brings in lepton-sector input?
 Prediction: (i) only c·a² is fixed; (ii) it is the same constraint; (iii) a lattice normalisation "the baryon Λ^N V has unit charge" is needed. So the route gives the RATIO quark : baryon = 1 : N categorically, while Y = B for quarks stays an identification.
 No value of Y is compared to data. The δε numbers at Y = 1/3 are reported only as consequences.
+
+
+### RESULT ε-Y1 (2026-11-16 00:15Z), colour_hypercharge_y1_probe.py (exact sympy, N = 2, 3)
+- Every prediction held.
+- (i) The u1 factor of gl_N over sl_N on V⊗V is q^(1/N) per crossing. In a U(1) braiding q^(c·a·b) this fixes only c·a² = 1/N, not a.
+- (ii) The gl_N monodromy of V around Λ^N V is q² (computed for N = 2, 3, matching qou-sl3f). Given (i), it is REDUNDANT: 2c·a·(N a) = 2N·c a² = 2. So it adds no constraint.
+- (iii) Both constraints keep the scale freedom (a, c) → (λa, c/λ²). So a = 1/N needs one more input: the lattice normalisation "Λ^N V carries unit charge".
+- (iv) That input is a normalisation convention (the primitive generator of the charge lattice), not data. Colour does derive the RATIO quark : baryon = 1 : N.
+- (v) Reaching Y = 1/3 in ε-EM1's convention Q = T³ + Y/2 needs two things that are not derived:
+  - that this colour u1 IS hypercharge;
+  - Y = B − L with L = 0 for quarks (lepton-sector input).
+- So the hypothesis in qou-sl3f is confirmed only as "baryon number 1/N given unit-charge normalisation". Y stays OPEN (scope a).
+- Consequence only, not a prediction: at Y = 1/3, ε-EM1 gives δε/ε = −7/9 (n→p) and −1/9 (p→n), with asymmetry 2/3. These are O(1) because X carries no coupling constant. They are not physical magnitudes.
+- Next honest options:
+  - (a) derive the u1 ↔ hypercharge identification, e.g. from the strand-twist datum or the anomaly-free trace condition, without importing lepton charges;
+  - (b) use only the colour-fixed ratio and accept Y as a labelled open input.
