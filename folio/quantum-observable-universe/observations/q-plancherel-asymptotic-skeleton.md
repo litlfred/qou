@@ -42,7 +42,7 @@ verified in exact rational arithmetic for every partition of $n = 1,\dots,9$ ([`
 
 **The exponent $\kappa_\lambda$ is forced, not chosen.** Substituting $Q = q^2$ into the display above leaves $q^{2n(\lambda) - \sum_\square h(\square) + n}$, which collapses to $q^{-\kappa_\lambda}$ by two identities — $\sum_\square h(\square) = n(\lambda) + n(\lambda') + n$ and $\kappa_\lambda = n(\lambda') - n(\lambda)$ — each verified independently over all partitions of $n \leq 10$ in the same probe. Without them the identity would be an agreement at $96$ sample points; with them it is a derivation.
 
-This also explains a coincidence the corpus carried without comment: `molienSum_eq_qFactorial` (Lean, sorry-free) says $\sum_\lambda f^\lambda q^{-\kappa_\lambda}\dim_q(\lambda) = [n]_q!$, and $\mathbb{M}_{n,q}$ is a probability measure by construction. Those are the same theorem.
+This also explains a coincidence the corpus carried without comment: `molienSum_eq_qFactorial` (Lean) says $\sum_\lambda f^\lambda q^{-\kappa_\lambda}\dim_q(\lambda) = [n]_q!$, and $\mathbb{M}_{n,q}$ is a probability measure by construction. Those are the same theorem.
 
 ## The substrate sits at $q > 1$, and that costs an orientation, not the theorem
 

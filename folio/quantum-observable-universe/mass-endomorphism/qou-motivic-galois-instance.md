@@ -35,7 +35,7 @@ and a declaration that exist nowhere in the Lake tree.
 
 What does exist is
 `lean/QOU/LiftingDescent/MotivicPerpetualObstructionFromTrace.lean`
-(Route A: prime-ideal-collapse, $C = a_0(-1) + 2 a_1(-1)$, sorry-free),
+(Route A: prime-ideal-collapse, $C = a_0(-1) + 2 a_1(-1)$),
 and it is a *different* result: it proves statements about the
 obstruction, and constructs no `MotivicGaloisCharacter`. The 2026-08-12
 note here read as though it were the replacement.

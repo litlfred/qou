@@ -6,7 +6,7 @@ strand count. The **real per-nucleus SDP** (with non-empty
 constraints from the mass formula and multi-term cost) is
 per-nucleus substantive open work.
 
-Within that scope, each atlas entry has a corresponding sorry-free
+Within that scope, each atlas entry has a corresponding
 SDP-uniqueness theorem on the Lean side. Take $^4$He: with mass
 number $A = 4$ the strand count is $n = 3A = 12$, and the canonical
 $T_w$ knot operator's uniqueness at the empty-constraint SDP

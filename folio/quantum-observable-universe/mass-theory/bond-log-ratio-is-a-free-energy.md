@@ -42,7 +42,7 @@ three constants are closed forms:
 | $pn$ | $d_{pn}$ | $0.508229789377$ | $0.676821592386$ |
 
 with $L_{pp} = -\log z$, $L_{nn} = \log\bigl(q(q^2+1)\bigr)$ and
-$L_{pp} + L_{nn} = 2\log[2]_q$ (all in `QOU.Mass.ChainTraceFactor`, sorry-free).
+$L_{pp} + L_{nn} = 2\log[2]_q$ (all in `QOU.Mass.ChainTraceFactor`).
 
 One caveat belongs with the identification: the observable is **signed**, since
 the $(1,1)$ eigenvalue $-q^{-1}$ is negative. So this is the free energy of a
@@ -136,7 +136,7 @@ $(\lambda_+ + d_{pn}) + (\lambda_- + d_{pn}) = h + 2d_{pn} = h\delta/2 =
 the near-null vector of the unweighted block sum, and survives in $z+d$ only
 because $w_+ \neq w_-$.
 
-`QOU.Mass.FreeEnergyReadingIsSigned` (sorry-free) proves the general statements:
+`QOU.Mass.FreeEnergyReadingIsSigned` proves the general statements:
 `minusSummand_neg`, `no_real_energy_for_minus_block`,
 `positivity_would_need_d_gt_inv_q`, `admissible_letters_nonpos`, the
 positive-but-signed pairing at each of the three letters, and

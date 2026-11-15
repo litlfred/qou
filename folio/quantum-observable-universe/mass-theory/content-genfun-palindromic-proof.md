@@ -26,7 +26,7 @@ is the classical identity counting involutions by RSK shape. $\blacksquare$
 **Machine verification.** The two structural steps — reindexing by an anti-invariant
 involution for palindromy, and the vanishing first moment for bar-evenness — are proved
 for arbitrary finite index sets in `QOU.AntiInvolutionPalindrome`
-(`palindromic_sum_of_antiInvolution`, `first_moment_zero_of_antiInvolution`), sorry-free.
+(`palindromic_sum_of_antiInvolution`, `first_moment_zero_of_antiInvolution`).
 The Lean sibling checks the $n=4$ instance concretely
 (`C4_palindromic`, `C4_first_moment_zero`). Exact symbolic verification of the closed
 form, palindromy, $C_n(1)=I(n)$ and the second-order rigidity for $n \leq 8$ is recorded

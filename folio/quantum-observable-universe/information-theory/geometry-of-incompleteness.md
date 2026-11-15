@@ -11,4 +11,4 @@ These are **two witnesses of one phenomenon** — the vanishing of degree-0 sect
 
 ## Lean structure
 
-The end of the chain is `QOU.Information.geometry_of_incompleteness` (sorry-free): from a Gödel datum with $\neg\,\text{formallyProvable}$ and a boundary datum whose bandwidth-$B$ extractor reads the full $3^{3n}$ tree, both are `Inaccessible`, and `horizon_nonempty` derives $\exists\, d,\ \text{Inaccessible}\ d$. The physical leg is discharged by `qou_physical_intractability_unconditional`; the exponential-domination fact it rests on is proved (`superPoly_two_pow`).
+The end of the chain is `QOU.Information.geometry_of_incompleteness`: from a Gödel datum with $\neg\,\text{formallyProvable}$ and a boundary datum whose bandwidth-$B$ extractor reads the full $3^{3n}$ tree, both are `Inaccessible`, and `horizon_nonempty` derives $\exists\, d,\ \text{Inaccessible}\ d$. The physical leg is discharged by `qou_physical_intractability_unconditional`; the exponential-domination fact it rests on is proved (`superPoly_two_pow`).

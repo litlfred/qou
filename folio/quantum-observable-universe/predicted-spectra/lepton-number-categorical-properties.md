@@ -21,7 +21,7 @@ Every process expressed as a sequence of Skein relations and Hecke reductions co
 An earlier version of this section asserted that the Skein module
 $\mathcal{K}(S^3; q)$ admits a natural $\mathbb{Z}$-grading by the smoothing
 count, with the nuclear sector in grade $0$ and each smoothing shifting the
-grade by $+1$. **That is false**, and the obstruction is proved sorry-free in
+grade by $+1$. **That is false**, and the obstruction is proved in
 `QOU/StandardModel/LeptonNumberGradingObstruction.lean`.
 
 The skein relation is *inhomogeneous* for such a grading. Writing it as

@@ -12,26 +12,26 @@ the list cannot silently break the pointers.
 |---|---|---|
 | $H_3(q)$ has Coxeter type $A_2$; $W(A_2) \cong S_3$ | standard, and true by construction ($B_n$ has type $A_{n-1}$) | [$A_2$ from three strands](#prop:a2-from-three-strands) |
 | $A_2$ Cartan datum is independent of $q$ under Drinfeld--Jimbo quantisation | **standard** (Lusztig/Kashiwara), cited and *not* formalised here | [$q$-deformation](#rem:q-deformation-weight-lattice) |
-| Serre exponent; root-angle ratio; the "two $2$s" separation (the Serre coefficient $[2]_q$ *moves* with $q$ while the Cartan datum does not) | proved (Lean, sorry-free) | `WeylInvarianceQDeformation.lean` |
+| Serre exponent; root-angle ratio; the "two $2$s" separation (the Serre coefficient $[2]_q$ *moves* with $q$ while the Cartan datum does not) | proved (Lean) | `WeylInvarianceQDeformation.lean` |
 | Root/weight lattices, Weyl group, Kazhdan–Lusztig multiplicities are $q$-independent | standard (Drinfeld–Jimbo), not formalised here | [$q$-deformation](#rem:q-deformation-weight-lattice) |
 | Quantum Schur–Weyl duality $\mathcal{U}_q(\mathfrak{gl}_N) \leftrightarrow H_n(q)$ | standard \cite{jimbo1986}; the duality itself is not formalised, only its row-cap consequence | [Schur–Weyl](#prop:schur-weyl-eightfold) |
 | $\mathbf{3} \otimes \bar{\mathbf{3}} = \mathbf{8} \oplus \mathbf{1}$; decuplet dimension $\binom{5}{3} = 10$; weight tables | standard $\mathrm{SU}(3)$ representation theory, **conditional on $N = 3$** | [meson octet](#prop:meson-octet-decomposition), [decuplet](#prop:borromean-decuplet) |
-| $N = 2$ cannot host the eightfold-way decomposition | **standard**, with a sorry-free machine-checked *arithmetic* instance: the Lean defines $\dim V_{(1^3)} := \binom{N}{3}$ and proves $\binom{N}{3} = 0 \iff N < 3$. The hook-content formula and the row cap $\ell(\lambda) \le N$ are cited, not formalised — same caveat as `WeylInvariance` | `RowCapObstruction.lean` |
+| $N = 2$ cannot host the eightfold-way decomposition | **standard**, with a machine-checked *arithmetic* instance: the Lean defines $\dim V_{(1^3)} := \binom{N}{3}$ and proves $\binom{N}{3} = 0 \iff N < 3$. The hook-content formula and the row cap $\ell(\lambda) \le N$ are cited, not formalised — same caveat as `WeylInvariance` | `RowCapObstruction.lean` |
 | $\dim V = N = 3$ for the flavour fundamental | **open**: framework supplies $\dim V = 2$; no $q$ raises the row cap. The *obstruction* is proved; the *construction* is missing | item *The $N = 3$ problem* |
-| No object of the single-fibre category reaches $\dim W = 3$ through the $\mathrm{Sym}^2$ gate | **proved** (Lean, sorry-free), and at *object* level rather than only for irreducible summands: the Frobenius--Schur count forces a passing $W$ to be a sum of pairwise *distinct* even-dimensional irreps, so $\dim W$ is even, and $3$ is odd | `Sym2GateMultiplicity.lean` |
-| Inequivalent fibre functors of the single-fibre category | **standard** \cite{bichon2003}: they exist at every dimension $n \ge 2$ and are real at $q_0$; and **proved** (Lean, sorry-free) that none of them supplies a one-dimensional summand of $V^{\otimes 3}$ --- the spin-$0$ object is absent by Clebsch--Gordan parity, so the fusion rules, which every fibre functor preserves, exclude $\mathbf{10} \oplus \mathbf{8} \oplus \mathbf{8} \oplus \mathbf{1}$ at every $n$ | `FibreFunctorDimensionNotCategorical.lean` |
+| No object of the single-fibre category reaches $\dim W = 3$ through the $\mathrm{Sym}^2$ gate | **proved** (Lean), and at *object* level rather than only for irreducible summands: the Frobenius--Schur count forces a passing $W$ to be a sum of pairwise *distinct* even-dimensional irreps, so $\dim W$ is even, and $3$ is odd | `Sym2GateMultiplicity.lean` |
+| Inequivalent fibre functors of the single-fibre category | **standard** \cite{bichon2003}: they exist at every dimension $n \ge 2$ and are real at $q_0$; and **proved** (Lean) that none of them supplies a one-dimensional summand of $V^{\otimes 3}$ --- the spin-$0$ object is absent by Clebsch--Gordan parity, so the fusion rules, which every fibre functor preserves, exclude $\mathbf{10} \oplus \mathbf{8} \oplus \mathbf{8} \oplus \mathbf{1}$ at every $n$ | `FibreFunctorDimensionNotCategorical.lean` |
 | Writhe-to-isospin map $w \mapsto I_3$ on the nucleon doublet | derived, scale-free, no fitted parameters | [flavour charges](#rem:flavor-charge-assignments) |
 | Hypercharge $Y$ | **open**: writhe map falsified ($p$, $n$ share $Y = +1$, writhes differ); missing a second crossing invariant | item *Hypercharge $Y$* |
-| The baryon octet's weight map is non-injective | **proved** (Lean, sorry-free): $\Lambda$ and $\Sigma^0$ share $(2I_3, Y) = (0,0)$, so a weight-only mass formula predicts $m_\Lambda = m_{\Sigma^0}$ and is excluded at $\approx 7\%$ | [baryon octet](#prop:baryon-octet-decomposition) |
+| The baryon octet's weight map is non-injective | **proved** (Lean): $\Lambda$ and $\Sigma^0$ share $(2I_3, Y) = (0,0)$, so a weight-only mass formula predicts $m_\Lambda = m_{\Sigma^0}$ and is excluded at $\approx 7\%$ | [baryon octet](#prop:baryon-octet-decomposition) |
 | $\mathrm{PSL}(2,7) \cong \mathrm{GL}(3,\mathbb{F}_2)$, order $168$, irreps $\{1,3,\bar 3,6,7,8\}$ | standard; machine-verified numerically (`psl27_irrep_verification.py`) | [colour from $G_2$](#prop:color-su3-from-g2) |
 | $S_4$ bridge: transitive on local Fano lines | verified numerically (`s4_fano_action.py`) | [colour from $G_2$](#prop:color-su3-from-g2) |
 | The $S_4$ bridge selects the Klein quartic | **refuted** (machine-verified), and not narrowly: the $S_4$-invariant quartics form a pencil, so *infinitely many* pairwise non-isomorphic genus-3 curves admit $S_4$ (Fermat is the member $t = 0$ of the pencil, $t$ being the pencil parameter, not a partition). The datum has essentially no separating power | `s4_genus3_competitor_fermat.py`, `s4_genus3_pencil_infinite_family.py` |
 | Bring $\to$ Klein-quartic genus degeneration | **excluded** under its own three premises (scope-(b)): the pinch supplies an $S_4$-stable pair of marked points, and $S_4$ has *no orbit of size $\le 2$* on $\mathbb{P}^2$, since the $3$-dimensional representation and its restriction to $A_4$ are both absolutely irreducible. No smooth plane quartic carries such a pair, and Klein is not hyperelliptic. Rescue requires explicitly dropping one premise: hyperelliptic target, multi-node/separating pinch, or non-faithful $S_4$ | `s4_marked_pair_obstruction.py` |
-| Octonionic $\mathbf{3}$ not excluded by the $\mathrm{Sym}^2$ gate | literature decomposition: at dimension three, passing the gate forces a complex-type summand (**proved**, Lean, sorry-free), and that the Günaydin--Gürsey triple is complex type is the cited $\mathrm{SU}(3)_{\mathrm{c}}$-irreducibility input, not a formalised one | `Sym2GateFSTrichotomy.lean` |
+| Octonionic $\mathbf{3}$ not excluded by the $\mathrm{Sym}^2$ gate | literature decomposition: at dimension three, passing the gate forces a complex-type summand (**proved**, Lean), and that the Günaydin--Gürsey triple is complex type is the cited $\mathrm{SU}(3)_{\mathrm{c}}$-irreducibility input, not a formalised one | `Sym2GateFSTrichotomy.lean` |
 | The octonion algebra $\mathbb{O}$ and $G_2 = \mathrm{Aut}(\mathbb{O})$ | **closed** 2026-08-29: [definition](#def:octonion-algebra) authored in [the colour-algebra section](#sec:color-algebra). The row previously read "never defined … no definition to point at", which invited a hunt for a missing source; the gap was **exposition only**. The citation side was already closed (\cite{baez2002}, with $\mathrm{Der}(\mathbb{O}) = \mathfrak{g}_2$ recorded) and so was the Lean side (nine `QOU/MathlibExt/Octonion*.lean` files, including the concrete Baez-convention `octMul`). What was missing was a content block for them to point at | `QOU.MathlibExt.OctonionDerivations` |
 | Continuous $G_2$ completion ($S^6 = G_2/\mathrm{SU}(3)_{\mathrm{c}}$) | **open**: Mathlib gap (no `Octonion` type, no $G_2$ Lie group) — infrastructure, not structural | item *Continuous $G_2$ completion* |
 | Flavour vs. colour ($\mathrm{SU}(3)_{\mathrm{f}}$ vs. $\mathrm{SU}(3)_{\mathrm{c}}$) | **open**: whether same, different, or groupoid-dual | item *Flavour versus colour separation* |
-| Gell-Mann–Okubo has no discriminating power | **proved** (Lean, sorry-free): $4m_K^2 - 3m_\eta^2 - m_\pi^2 = 0$ identically for *any* first-order octet breaking | `GellMannOkuboIdentity.lean` |
+| Gell-Mann–Okubo has no discriminating power | **proved** (Lean): $4m_K^2 - 3m_\eta^2 - m_\pi^2 = 0$ identically for *any* first-order octet breaking | `GellMannOkuboIdentity.lean` |
 | Meson mass splitting; the GMO **deviation** | **open**: the $\approx 6\%$ deviation is the only testable content; no second-order term derived, so the framework predicts $0$ | item *The Gell-Mann--Okubo deviation* |
 | Spin–flavour–colour selection of the Young symmetriser | **open**: decuplet identification currently matches dimensions and weights only | item *Spin--flavour--colour selection rule* |
 | Truncation ("freeze-out") mechanism | **open**: heuristic, no derivation | item *Truncation mechanism* |
@@ -51,7 +51,7 @@ Gell-Mann--Nishijima relation cannot be closed.
    single-fibre tower has $\dim V = 2$ (the standard single-fibre
    construction; the Descartes condition $\chi(\mathcal{A}) = -6$ is
    compatible with but does not uniquely force $N = 2$).  That $N = 2$
-   *cannot* host the decomposition is now proved sorry-free
+   *cannot* host the decomposition is now proved
    (`RowCapObstruction.lean`: the alternating channel
    $\binom{N}{3}$ vanishes iff $N < 3$, and the decuplet dimension forces
    $N = 3$) --- so the obstruction is settled and only the construction is
@@ -67,7 +67,7 @@ Gell-Mann--Nishijima relation cannot be closed.
 
    **What such a construction must supply is now a theorem, and it is one
    property rather than a list.**  `SelfDualSectorConfinement.lean`
-   (sorry-free) puts the two halves together: a three-dimensional object
+   puts the two halves together: a three-dimensional object
    passing the gate must contain a complex-type irrep
    (`gate_forces_complex_of_dim_three`), and a category all of whose irreps
    are self-dual contains none — which is precisely the single-fibre case,
@@ -109,7 +109,7 @@ Gell-Mann--Nishijima relation cannot be closed.
    irreducible --- $W = V_{1/2} \oplus V_0$ has dimension $3$, sits in the
    tensor category generated by the fibre, and is not an irrep, so that
    criterion does not reach it.  The multiplicity form
-   (`Sym2GateMultiplicity.lean`, sorry-free) closes the case: counting
+   (`Sym2GateMultiplicity.lean`) closes the case: counting
    singlets by Frobenius--Schur type, a passing $W$ must be a sum of
    pairwise *distinct* even-dimensional irreps, hence $\dim W$ is even.
    Since $3$ is odd, **no** three-dimensional object of the single-fibre
@@ -134,7 +134,7 @@ Gell-Mann--Nishijima relation cannot be closed.
    ($\mathrm{FS} = 0$, $\mathbf{3} \not\cong \bar{\mathbf{3}}$) pairs to a
    singlet only against its conjugate, so one whose conjugate is *absent*
    from the object passes the gate at any dimension, odd included ---
-   `Sym2GateComplexType.lean`, sorry-free, exhibits such an object at
+   `Sym2GateComplexType.lean`, exhibits such an object at
    dimension exactly $3$.  So `dimOfMult_ne_three_of_gate` is a scope-(b)
    exclusion **within the self-dual sector** and is silent, not negative,
    outside it.  This is the same non-self-duality that
@@ -154,7 +154,7 @@ Gell-Mann--Nishijima relation cannot be closed.
    functor of any dimension the spin-$0$ summand the decomposition
    $\mathbf{10} \oplus \mathbf{8} \oplus \mathbf{8} \oplus \mathbf{1}$
    requires is absent from $V^{\otimes 3}$ by parity
-   (`FibreFunctorDimensionNotCategorical.lean`, sorry-free).  Dimension is a
+   (`FibreFunctorDimensionNotCategorical.lean`).  Dimension is a
    property of the fibre functor; the multiplet structure is a property of
    the category.  This closes the single-fibre reading of Route A --- the
    question *does the category admit inequivalent fibre functors?* is
@@ -311,7 +311,7 @@ Gell-Mann--Nishijima relation cannot be closed.
 8. **The Gell-Mann--Okubo deviation.**
    The relation $4m_K^2 = 3m_\eta^2 + m_\pi^2$ is *not* a target
    for derivation: it holds identically for any first-order octet
-   breaking, whatever the mechanism, proved sorry-free in
+   breaking, whatever the mechanism, proved in
    `GellMannOkuboIdentity.lean`.  Reproducing it would therefore
    be no evidence for the framework.  *Open:* the $\approx 6\%$
    *deviation*, which measures the failure of first-order breaking

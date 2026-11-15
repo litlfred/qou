@@ -16,7 +16,7 @@ for an isotope knot $K$, consumed by Step 9b
 
 ### Status: value proved, magnitude external
 
-**The per-partition value is PROVED, sorry-free, general-$n$:**
+**The per-partition value is PROVED, general-$n$:**
 $\Delta_\lambda = (-1)^{n(\lambda)}\dim V_\lambda$
 (`QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional`;
 value + chirality sign, no $n \le 5$ restriction). The sign leg is the

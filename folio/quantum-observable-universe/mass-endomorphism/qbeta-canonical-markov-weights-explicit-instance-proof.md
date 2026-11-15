@@ -24,7 +24,7 @@ It does not establish:
 
 ## The canonical inhabitant, identified
 
-**`QOU.BraidKnot.CanonicalMarkovWeightsH3.canonicalInstance`**, sorry-free, carries the production trace's own weights:
+**`QOU.BraidKnot.CanonicalMarkovWeightsH3.canonicalInstance`**, carries the production trace's own weights:
 
 $$
   y_{(3)} = \frac{[4]_q}{[2]_q^{3}} = \frac{q^4+1}{(q^2+1)^2},

@@ -23,7 +23,7 @@ compute, not two.
 > It is gone because the selection turned out to be **forced**:
 > `lem:feynman-eigenbasis-decomposition` already puts the row cap
 > $\ell(\lambda) \leq 2$ in the mass channel's decomposition, giving
-> $y_{(1^3)} = 0$, and `markovWeights_eq_jones_of_threeRow_eq_zero` (sorry-free)
+> $y_{(1^3)} = 0$, and `markovWeights_eq_jones_of_threeRow_eq_zero`
 > then makes $z = q^3/(q^2+1)$ the unique faithful normalised Markov trace.
 >
 > **Not decided by experimental match, and the numbers say so.** Switching the
