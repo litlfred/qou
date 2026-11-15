@@ -1,4 +1,5 @@
 import QOU.Mass.QuantumSl2Fundamental
+import Mathlib.Tactic.Module
 
 /-!
 # The `(m+1)`-dimensional irreducible representation of `U_q(sl₂)`
@@ -166,5 +167,54 @@ theorem irrep_one_eq_fund' (hq : q ≠ 0) (hq2 : q - q⁻¹ ≠ 0) :
   have h1 : qint q 1 = 1 := by unfold qint; simp [div_self hq2]
   refine ⟨?_, ?_, ?_, ?_⟩ <;> ext i j <;> fin_cases i <;> fin_cases j <;>
     simp [irrep, fund', irrepE, irrepF, irrepKp, irrepKm, h1]
+
+
+/-! ### `[E, Fⁿ]` in any representation (Kassel, Lemma VI.1.3) -/
+
+namespace Rep
+
+variable {ι : Type*} [Fintype ι] [DecidableEq ι]
+
+/-- `D_n = (q^{−n} K − q^{n} K⁻¹)/(q − q⁻¹)`. -/
+def Dk (ρ : Rep q ι) (n : ℕ) : Matrix ι ι 𝕜 :=
+  (q - q⁻¹)⁻¹ • (q⁻¹ ^ n • ρ.Kp - q ^ n • ρ.Km)
+
+/-- `K⁻¹ F = q² F K⁻¹`. -/
+theorem Km_F (hq : q ≠ 0) (ρ : Rep q ι) : ρ.Km * ρ.F = q ^ 2 • (ρ.F * ρ.Km) := by
+  have h : ρ.Km * (ρ.Kp * ρ.F * ρ.Km) = ρ.Km * (q⁻¹ ^ 2 • ρ.F) := by rw [ρ.KF]
+  rw [← mul_assoc, ← mul_assoc, ρ.Km_Kp, one_mul, mul_smul_comm] at h
+  rw [h, smul_smul, ← mul_pow, mul_inv_cancel₀ hq, one_pow, one_smul]
+
+/-- `D_n F = F D_{n+2}`. -/
+theorem Dk_F (hq : q ≠ 0) (ρ : Rep q ι) (n : ℕ) : ρ.Dk n * ρ.F = ρ.F * ρ.Dk (n + 2) := by
+  unfold Dk
+  rw [smul_mul_assoc, mul_smul_comm, sub_mul, mul_sub, smul_mul_assoc, smul_mul_assoc,
+    mul_smul_comm, mul_smul_comm, Kp_F, Km_F hq, smul_smul, smul_smul]
+  congr 2 <;> rw [← pow_add]
+
+/-- The scalar recursion `[n+1] D_{n+2} + D_0 = [n+2] D_{n+1}`. -/
+theorem Dk_comb (hq : q ≠ 0) (ρ : Rep q ι) (n : ℕ) :
+    qint q (n + 1) • ρ.Dk (n + 2) + ρ.Dk 0 = qint q (n + 2) • ρ.Dk (n + 1) := by
+  unfold Dk qint
+  match_scalars <;> (simp only [inv_pow, pow_succ, pow_zero]; field_simp; ring)
+
+/-- **`[E, F^{n+1}] = [n+1] F^n D_n`** (Kassel, Lemma VI.1.3). -/
+theorem E_F_pow (hq : q ≠ 0) (hq2 : q - q⁻¹ ≠ 0) (ρ : Rep q ι) (n : ℕ) :
+    ρ.E * ρ.F ^ (n + 1) - ρ.F ^ (n + 1) * ρ.E = qint q (n + 1) • (ρ.F ^ n * ρ.Dk n) := by
+  induction n with
+  | zero =>
+    have h1 : qint q 1 = 1 := by unfold qint; simp [div_self hq2]
+    simp only [zero_add, pow_one, pow_zero, one_mul, h1, one_smul, Dk, ρ.EF]
+  | succ n ih =>
+    have hsplit : ρ.E * ρ.F ^ (n + 1 + 1) - ρ.F ^ (n + 1 + 1) * ρ.E
+        = (ρ.E * ρ.F ^ (n + 1) - ρ.F ^ (n + 1) * ρ.E) * ρ.F
+          + ρ.F ^ (n + 1) * (ρ.E * ρ.F - ρ.F * ρ.E) := by
+      rw [pow_succ ρ.F (n + 1), sub_mul, mul_sub, ← mul_assoc, ← mul_assoc, mul_assoc _ ρ.F ρ.E]
+      abel
+    rw [hsplit, ih, ρ.EF, smul_mul_assoc, mul_assoc, Dk_F hq, ← mul_assoc, ← pow_succ]
+    have h0 : (q - q⁻¹)⁻¹ • (ρ.Kp - ρ.Km) = ρ.Dk 0 := by simp [Dk]
+    rw [h0, ← mul_smul_comm, ← mul_add, Dk_comb hq ρ n, mul_smul_comm]
+
+end Rep
 
 end QOU.Mass.QuantumSl2
