@@ -61,3 +61,8 @@ Takeover: thread "Map SM and eightfold way, probe option C" (session_01Qmmkt9BEc
 - One-rule cell (no p–e letter, no junction letter), with reading 3 at EVERY level by top closing. Pre-registered 4ff6d8d594d; results 3a88b14ab5c (4/4 checks). Outcome (ii): the bare x fails at level 3 in all 4 cells, because of the production proton block's (2,1) character (−0.08436 for T_w0, −0.04773 for the trefoil electron). So the bond is UNDECIDED until the atom is γγ-derived (re-audit decision C).
 - Observation: V³ never adds a failing level beyond the atom's. V and V² do (levels 7–12). At n = 12 only, V had looked feasible.
 Status: open. It waits on re-audit decisions A, B and C.
+
+## 2026-11-15: owner rulings A and B
+- A: the one γγ rule also covers nuclear bond letters (g+d_k). The binding thread is notified.
+- B: trace drop is a RESULT, not a selection clause. Bonds are selected by γγ + reading 3 (every level). tr(xK) < tr(x) is reported. prop:ilp-covalent-bond still lists it as a clause; the rewording will be put to the owner before any edit.
+- C (origin of the 3-letter quark block) is still open.
