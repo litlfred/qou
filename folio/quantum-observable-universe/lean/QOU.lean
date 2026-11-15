@@ -1065,6 +1065,7 @@ import QOU.Archimedean.ArchimedeanLimitDomain
 import QOU.Archimedean.BlochSuslinComplex
 import QOU.Archimedean.BlochWignerFiveTermInstance
 import QOU.Archimedean.BlochRigidity.Algebra
+import QOU.Archimedean.BlochRigidity.Abstract
 import QOU.Archimedean.BlochRigidity.ComplexAlgebra
 import QOU.Archimedean.BlochRigidity.Derivative
 import QOU.Archimedean.BlochRigidity.Growth
