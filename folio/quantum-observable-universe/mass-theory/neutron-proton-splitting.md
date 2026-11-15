@@ -1,8 +1,8 @@
 *The model neutron-proton mass splitting derives from the quantum dilogarithm volumes:*
 
 $$
-  \Delta m := \alpha \cdot \lvert \Phi(\mathfrak{u}\mathfrak{d}\mathfrak{d})
-    - \Phi(\mathfrak{u}\mathfrak{u}\mathfrak{d}) \rvert
+  \Delta m := \alpha \cdot \lvert \Phi(\mathfrak{u}\mathfrak{d}\mathfrak{d}) -
+    \Phi(\mathfrak{u}\mathfrak{u}\mathfrak{d}) \rvert
   \approx 1.302 \; \mathrm{MeV}
 $$
 
