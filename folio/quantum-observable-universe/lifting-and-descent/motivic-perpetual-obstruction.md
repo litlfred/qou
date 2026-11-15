@@ -12,7 +12,7 @@ We apply [QU-to-QOU](#thm:qu-to-qou) to identify $\kappa_0$ with the Euler class
 $\square$
 
 **Subsumption of prior arguments.**
-This theorem subsumes every prior argument for the non-vanishing of $\kappa_n$ in the brane tower. In particular:
+This theorem subsumes every prior argument for the non-vanishing of $\kappa_n$ at the Kummer levels $n \nmid \chi(A)$; it does not give non-vanishing at every level, and at $n \mid \chi(A)$ the obstruction vanishes (item 3 of [QU-to-QOU](#thm:qu-to-qou)). In particular:
 - [`rem:kummer-tower`](#rem:kummer-tower) summary item 6
 - [`ex:archimedean-yekutieli`](#ex:archimedean-yekutieli) "Motivic-Galois reading"
 - [`ex:chi-minus-six-derivation`](#ex:chi-minus-six-derivation) Step 8

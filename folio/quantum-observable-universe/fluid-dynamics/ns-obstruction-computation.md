@@ -58,7 +58,7 @@ Fusing (a) and (b), the exact NS obstruction resting on the collision locus clea
 1. **Topological**: $\mathrm{lk} \cdot e(\xi)|_p$. This term avoids zero if and only if the Reeb field zeroes out at $p$ (which occurs if and only if the contact structure structurally degenerates).
 2. **Analytic**: $\delta_n|_\Sigma$. This term avoids zero universally whenever the $n$-th jet of the operative velocity field cleanly diverges (holding for all $n \geq 1$ under the anti-parallel configuration).
 
-The topological and analytic components map exactly into mathematically complementary subgroups inside $H^2(\mathcal{S}, \mathcal{B})$ (governed by the perpetual obstruction mechanism, [QU-to-QOU](#thm:qu-to-qou) item 3).
+The topological and analytic components map exactly into mathematically complementary subgroups inside $H^2(\mathcal{S}, \mathcal{B})$ (this used to be justified by the perpetual obstruction mechanism of [QU-to-QOU](#thm:qu-to-qou) item 3; that complementary-subgroup argument is withdrawn, item 3 now being the Kummer degree condition, so the splitting below is a hypothesis, not a consequence of item 3).
 Consequently:
 
 - If the Reeb field fundamentally **lacks a zero** at $p$ ($\deg_p(\xi) = 0$): the topological component cleanly vanishes, but the analytic component $\delta_n|_\Sigma \neq 0$ stubbornly persists. The surviving obstruction becomes **purely analytic** while the contact structure avoids degeneracy. This explicitly describes the **NS-singular** (blowup) condition.
