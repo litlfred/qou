@@ -1,7 +1,7 @@
 ---
 # qou-0qds
 title: Cite 0302267v2.pdf at conj:gb-depth-period-correspondence
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
@@ -28,3 +28,6 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   Groupes fondamentaux motiviques de Tate mixte
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [deligne-goncharov2005] as the citation key when you do it.
+
+
+2026-11-15: DONE in acffb7b9d (PR #7922). Cited deligne-goncharov2005 §6.1 after the conjecture statement, with the §6.2 omega-realisation caveat; added to cites. Statement unchanged.
