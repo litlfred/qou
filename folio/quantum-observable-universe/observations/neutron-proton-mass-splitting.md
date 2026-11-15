@@ -1,4 +1,4 @@
-*The model neutron--proton mass difference is*
+*Assume $(\mathrm{H}_\alpha)$: a change of the quark-ordering traced volume $\Phi$ is converted to energy by the nuclear binding scale $\alpha = m_e \times 8G$, as $\alpha\,\lvert\Delta\Phi\rvert$. Under $(\mathrm{H}_\alpha)$, the model neutron--proton mass difference is*
 
 $$
   \Delta m

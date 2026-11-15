@@ -74,6 +74,8 @@ noncomputable def massSplitting (α : ℝ) : ℝ :=
   α * abs (quarkPhi "udd" - quarkPhi "uud")
 
 /-- At `α = 3.7445`: `Δm ≈ 1.0541` (MeV units), convention D.
+    Conditional on (H_α): that `α = m_e·8G` converts `|ΔΦ|` to energy is an
+    assumption of the block, not derived; this theorem is arithmetic only.
     Model value only; the comparison with the measured splitting is an
     empirical claim and lives in the block prose.  Under the retired
     convention C this goal read `|Δm − 1.302| < 0.001`. -/
@@ -81,11 +83,5 @@ theorem splitting_value :
     abs (massSplitting 3.7445 - 1.0541) < 0.001 := by
   unfold massSplitting quarkPhi
   norm_num [show ("udd" = "uud") = False by decide, show ("udd" = "udd") = True by decide]
-
-/-- The same binding scale α appears at quark (confinement)
-    and nuclear (binding) levels. -/
-def same_scale_both_levels (m_e : ℝ) (volB3 : ℝ)
-    (h : volB3 = 8 * 0.9159655941772190) :
-    m_e * volB3 = m_e * volB3 := rfl
 
 end QOU.NeutronProtonSplitting
