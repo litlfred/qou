@@ -271,6 +271,20 @@ theorem skein_asym_bar_odd :
   rw [inv_inv]
   module
 
+/-- The swap is an involution. -/
+theorem swap_swap : swap q (swap q s) = s := by
+  unfold swap; abel
+
+/-- **On a three-letter word the L↔R relabelling is minus the mirror.** Applying the swap to
+every letter of `a·b·a` gives `−(a⁻¹·b⁻¹·a⁻¹)`: the knot mirror times `(−1)^{length}`. -/
+theorem swap_word3 (a b : A) :
+    swap q a * swap q b * swap q a = -(flip q a * flip q b * flip q a) := by
+  simp only [swap_eq_neg_flip, neg_mul, mul_neg, neg_neg]
+
+/-- On a two-letter word the relabelling IS the mirror (even length, no sign). -/
+theorem swap_word2 (a b : A) : swap q a * swap q b = flip q a * flip q b := by
+  simp only [swap_eq_neg_flip, neg_mul, mul_neg, neg_neg]
+
 end Abstract
 
 /-! ## On the NF algebra `H₃(q)`: the corpus letters -/
@@ -301,6 +315,65 @@ theorem corpus_flavours_same_lines (q : K) :
     (Pp q⁻¹ (flip q (sig0 q)) = Pp q (sig0 q) ∧ Pm q⁻¹ (flip q (sig0 q)) = Pm q (sig0 q)) ∧
     (Pp q⁻¹ (flip q (sig1 q)) = Pp q (sig1 q) ∧ Pm q⁻¹ (flip q (sig1 q)) = Pm q (sig1 q)) :=
   ⟨⟨flip_Pp, flip_Pm⟩, ⟨flip_Pp, flip_Pm⟩⟩
+
+/-! ### The electron and the L↔R relabelling (coordinator question 2, bean `qou-hlx7`)
+
+`breit-wheeler-vertex.md:34-36`: `e⁻ = σ₀σ₁σ₀`, and `e⁺` is the mirror
+`σ₀⁻¹σ₁⁻¹σ₀⁻¹`. The L↔R relabelling replaces every letter `σ` by the other Hecke letter at
+the SAME parameter, `−σ⁻¹`. -/
+
+/-- The electron `σ₀σ₁σ₀`. -/
+def electron (q : K) : H3A K (q - q⁻¹) := sig0 q * sig1 q * sig0 q
+
+/-- The positron, the mirror word `σ₀⁻¹σ₁⁻¹σ₀⁻¹`. -/
+def positron (q : K) : H3A K (q - q⁻¹) := flip q (sig0 q) * flip q (sig1 q) * flip q (sig0 q)
+
+theorem flip_sig0_v (q : K) : (flip q (sig0 q)).v = ![-(q - q⁻¹), 1, 0, 0, 0, 0] := by
+  funext i; fin_cases i <;> simp [flip, sig0, H3A.smul_v, H3A.one_v, s0, unitNF,
+    show ∀ x y : H3A K (q - q⁻¹), (x - y).v = x.v - y.v from fun _ _ => rfl]
+
+theorem flip_sig1_v (q : K) : (flip q (sig1 q)).v = ![-(q - q⁻¹), 0, 1, 0, 0, 0] := by
+  funext i; fin_cases i <;> simp [flip, sig1, H3A.smul_v, H3A.one_v, s1, unitNF,
+    show ∀ x y : H3A K (q - q⁻¹), (x - y).v = x.v - y.v from fun _ _ => rfl]
+
+/-- The mirrored letters satisfy the braid relation. -/
+theorem flip_braid (q : K) :
+    flip q (sig0 q) * flip q (sig1 q) * flip q (sig0 q) =
+      flip q (sig1 q) * flip q (sig0 q) * flip q (sig1 q) := by
+  ext i
+  simp only [H3A.mul_v, flip_sig0_v, flip_sig1_v]
+  fin_cases i <;> simp [mulNF, mulσ₀, mulσ₁] <;> ring
+
+/-- The relabelled letters still satisfy the braid relation, so relabelling every letter
+is a consistent presentation of the same algebra. -/
+theorem swap_braid (q : K) :
+    swap q (sig0 q) * swap q (sig1 q) * swap q (sig0 q) =
+      swap q (sig1 q) * swap q (sig0 q) * swap q (sig1 q) := by
+  rw [swap_word3, swap_word3, flip_braid]
+
+/-- **The relabelling sends the electron to MINUS the positron.** -/
+theorem swap_electron (q : K) :
+    swap q (sig0 q) * swap q (sig1 q) * swap q (sig0 q) = -positron q :=
+  swap_word3 _ _
+
+/-- The top coordinate (`σ₀σ₁σ₀`) of the electron is `1`. -/
+theorem electron_top (q : K) : (electron q).v 5 = 1 := by
+  simp [electron, sig0, sig1, H3A.mul_v, mulNF, mulσ₀, mulσ₁, s0, s1]
+
+/-- … and of the positron also `1`. -/
+theorem positron_top (q : K) : (positron q).v 5 = 1 := by
+  simp only [positron, H3A.mul_v, flip_sig0_v, flip_sig1_v]
+  simp [mulNF, mulσ₀, mulσ₁]
+
+/-- **The relabelling does not fix the electron** (char ≠ 2): the electron is a positive word
+in exactly one of the two letter systems at parameter `q`. -/
+theorem electron_ne_swap (q : K) (h2 : (2 : K) ≠ 0) :
+    electron q ≠ swap q (sig0 q) * swap q (sig1 q) * swap q (sig0 q) := by
+  rw [swap_electron]
+  intro he
+  have := congrArg (fun x => x.v 5) he
+  simp only [H3A.neg_v, Pi.neg_apply, electron_top, positron_top] at this
+  apply h2; linear_combination this
 
 end NF
 

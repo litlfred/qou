@@ -289,3 +289,94 @@ All are sorry-free, lean-direct exit 0, with standard axioms only.
 **Default if nothing is said: (no), and content is untouched.** **Recommendation (judgement):
 (yes).** The identity is exact and parameter-free, so testing it is cheap. The risk named
 above is exactly what the test would measure.
+
+## 9. Coordinator question 2: does knot chirality (e⁻ as the left trefoil) fix the L/R labelling?
+
+The setup is from `breit-wheeler-vertex.md:34-36`: e⁻ = σ₀σ₁σ₀, and e⁺ is the mirror word
+σ₀⁻¹σ₁⁻¹σ₀⁻¹. Stream 3 showed that u ↦ −u only relabels L/R. The question is whether fixing
+the electron removes that freedom. A caution applies throughout: knot chirality is not field
+chirality, and no identification is made here.
+
+### Two maps, made precise
+
+* **Knot mirror** = the flip σ ↦ σ⁻¹ on every letter. By §1 this is the bar involution, and
+  it **preserves both eigenlines**. So knot chirality is the *orientation* bit (6a's flavour
+  bit), not the eigenline bit.
+* **L↔R relabelling** = replace every letter σ by the other Hecke letter at the same
+  parameter, −σ⁻¹.
+  - `swap_hecke`: each relabelled letter satisfies the Hecke relation at q.
+  - `swap_braid`: the relabelled letters satisfy the braid relation.
+  - `swap_swap`: the relabelling is an involution.
+  - So it is a re-presentation of the same algebra. By the presentation it extends to an
+    algebra automorphism; that extension is not formalised as an `AlgHom` here.
+
+### The link between them, proved
+
+| word length | relabelling vs mirror | theorem |
+|---|---|---|
+| even (e.g. L₊ = σ₀σ₁) | relabelling = mirror | `swap_word2` |
+| odd (e.g. e⁻ = σ₀σ₁σ₀) | relabelling = −mirror | `swap_word3` |
+
+Consequences:
+* `swap_electron`: the relabelling sends **e⁻ ↦ −e⁺**.
+* `electron_ne_swap`: when char ≠ 2, that image is not e⁻. The top coordinates are +1 for e⁻
+  (`electron_top`) and −1 for −e⁺ (`positron_top`).
+* So the electron is a positive word in exactly one of the two letter systems at parameter q.
+
+### Verdict
+
+1. **Relationally, yes.** Once the electron is fixed as the algebra element σ₀σ₁σ₀, written
+   as a positive word with coefficient +1, the letter system is fixed. So, under D-H1 = A,
+   which eigenline of each letter is L is fixed too.
+2. **Intrinsically, no (scope (b)).** The relabelling respects every defining relation, so it
+   carries the whole structure (labelling, electron) to (other labelling, −e⁺). A
+   construction that uses only the algebra's relations is invariant under it, and therefore
+   cannot single out one labelling. The invariant is the automorphism given by `swap_hecke` +
+   `swap_braid`.
+   - Fixing "the electron is σ₀σ₁σ₀ rather than −e⁺" is the **same** choice as fixing L. The
+     choice is moved, not removed.
+   - So knot chirality does not break the u ↦ −u freedom. It is tied to that freedom by a
+     sign.
+3. **The tie is a sign, and it is length parity.** On odd words the relabelling differs from
+   the mirror by (−1)^ℓ. For the electron the relabelled image is −e⁺, not e⁺. So the L/R
+   relabelling is not exactly the e⁻ ↔ e⁺ exchange; the two agree up to that sign. Whether the
+   sign is observable (it flips the sign of any trace) is not settled here.
+
+### Relation to `conj:type-b-folding-cpt` — a finding about content (scope (a))
+
+`nuclear-interactions/type-b-folding-cpt.md` lists "P (braid mirror)", i.e. it realises
+parity as σ ↔ σ⁻¹. By §1 the braid mirror **preserves** the eigenlines that the BW block calls
+left and right circular. Physical parity exchanges the two helicities. So under D-H1 = A the
+block's P is chirality-blind at letter level. It is the orientation/flavour bit of this audit.
+The map that does exchange the eigenlines is the relabelling −σ⁻¹, which equals the mirror only
+on even-length words.
+
+**Content fix to report (not made; content edits need the owner's go):**
+`type-b-folding-cpt.md` should either say that its P exchanges crossing orientation and not
+letter eigenlines, or realise P as σ ↦ −σ⁻¹ (equal to the mirror on even words, minus the
+mirror on odd ones). The same question applies wherever the corpus reads braid mirror as
+parity.
+
+By contrast, `force-knot-identification.md`'s skein asymmetry is **eigenline-selective**
+(§8). It does not conflate the two. Its only issue is the Hecke-vs-Jones normalization noted
+in §8.
+
+### Owner decision D-H4: how should parity be realised?
+
+* **(A) Keep P = braid mirror and add the scoping sentence.**
+  - *Means:* parity is the orientation flip, and it is chirality-blind at letter level.
+  - *Costs:* one sentence in `type-b-folding-cpt.md`.
+  - *Risks:* it states openly that the corpus's P does not exchange helicities, which a
+    physics referee will notice.
+  - *Commits to:* parity and chirality being different letter-level operations.
+* **(B) Re-realise P as the relabelling σ ↦ −σ⁻¹.**
+  - *Means:* P exchanges the L/R eigenlines and agrees with the mirror on even words.
+  - *Costs:* edits to the CPT block and its Lean sibling, plus a check of every place
+    "mirror = P" is used.
+  - *Risks:* on odd words, e.g. the electron, P(e⁻) = −e⁺, which carries a sign the current
+    CPT story does not have.
+  - *Commits to:* a sign-carrying parity.
+* **Default if nothing is said:** nothing changes, and the finding stays recorded here and in
+  `qou-hlx7`.
+* **Recommendation (judgement): (A) now, and (B) as a separate investigation.** The scoping
+  sentence is cheap and true. Whether the sign in (B) is physical needs its own derivation.

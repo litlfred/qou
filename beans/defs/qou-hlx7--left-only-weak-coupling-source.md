@@ -44,3 +44,18 @@ is the escape no_one_sided_letter leaves. NOT established: that the weak couplin
 equation (RHS (q^{1/2}−q^{−1/2})[L0]) cannot be an identity in H_n(q); it reads as the Jones
 skein after trace. Not edited. Owner decision D-H3 is framed in audit §8. Stays in-progress
 pending D-H3.
+
+## 2026-11-15 coordinator Q2: does knot chirality fix the L/R labelling? (audit §9)
+
+The knot mirror is the flip σ ↦ σ⁻¹ on every letter, which preserves the eigenlines. The L↔R
+relabelling σ ↦ −σ⁻¹ satisfies the Hecke and braid relations (swap_hecke, swap_braid), so it
+is a re-presentation of the algebra. It equals the mirror on even words (swap_word2) and
+−mirror on odd words (swap_word3). It sends e⁻ ↦ −e⁺ ≠ e⁻ (swap_electron, electron_ne_swap).
+
+Verdict: fixing e⁻ as the positive word σ₀σ₁σ₀ fixes the labelling relationally. But the pair
+(labelling, electron) is moved together by the relabelling, so nothing intrinsic selects it
+(scope b): the choice is moved, not removed.
+
+Content finding, reported and not edited: type-b-folding-cpt.md realises P as the braid
+mirror, which is chirality-blind at letter level (scope a). Owner decision D-H4 is framed in
+audit §9.
