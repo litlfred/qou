@@ -28,7 +28,8 @@ cascade started from the isolated optimum k = (3,...,3) after the bonds are
 added, sequential and synchronous; (3) the brute-force optimum over all k; (4)
 a perturbation run: A = 3 settled with one bond, then the second bond added,
 recording which particles move in which synchronous round (the light cone, Lean
-light_cone).  Mathematics only; no physical value.  mpmath only.
+light_cone); (5) A = 3 with the bond powers as players too: bond word
+(V_right.V_left)^m, m in 1..3, cost 4m crossings.  Mathematics only; no physical value.  mpmath only.
 """
 from __future__ import annotations
 
@@ -94,12 +95,60 @@ def joint(k, bonds, h):
     return w
 
 
-def energy(C, k, bonds, h):
-    ch = C.chi(joint(k, bonds, h), (tuple(k), tuple(bonds)))
+def energy(C, k, bonds, h, m=None):
+    """m: optional bond powers (one per bond); the bond word is then (V_right.V_left)^m."""
+    w = joint(k, [], h)
+    for j, b in enumerate(bonds):
+        w += bond(b, h) * (1 if m is None else m[j])
+    ch = C.chi(w, (tuple(k), tuple(bonds), None if m is None else tuple(m)))
     viol = mp.fsum(max(mp.mpf(0), -c) for c in ch)
     if viol < TOL:
         viol = mp.mpf(0)
-    return (viol, 2 * sum(k)), ch
+    return (viol, 2 * sum(k) + (0 if m is None else 4 * sum(m))), ch
+
+
+MMAX = 3
+
+
+def joint_bond_cascade(C, A, h, log):
+    """Bond powers are players too: state (k_0..k_{A-1}, m_0..m_{A-2}), bond word
+    (V_right.V_left)^m costs 4m crossings.  Sequential best response from
+    k = 3, m = 1, and the brute-force optimum."""
+    bonds = list(range(A - 1))
+
+    def E(s):
+        return energy(C, s[:A], bonds, h, s[A:])[0]
+
+    s = [3] * A + [1] * (A - 1)
+    path = [list(s)]
+    for _ in range(50):
+        moved = False
+        for i in range(len(s)):
+            rng = range(1, (KMAX if i < A else MMAX) + 1)
+            best, bc = E(s), s[i]
+            for c in rng:
+                t = list(s)
+                t[i] = c
+                e = E(t)
+                if better(e, best):
+                    best, bc = e, c
+            if bc != s[i]:
+                s[i] = bc
+                moved = True
+                path.append(list(s))
+        if not moved:
+            break
+    es = E(s)
+    best, arg, nfeas = None, None, 0
+    for st in product(*([range(1, KMAX + 1)] * A + [range(1, MMAX + 1)] * (A - 1))):
+        e = E(list(st))
+        nfeas += e[0] == 0
+        if best is None or better(e, best):
+            best, arg = e, list(st)
+    log(f"    bond powers as players: path {path} -> stable {s} (viol {mp.nstr(es[0], 5)}, cost {es[1]}); "
+        f"global optimum {arg} (viol {mp.nstr(best[0], 5)}, cost {best[1]}); {nfeas} feasible states")
+    return {"path": path, "stable": s, "stable_viol": fmt(es[0]), "stable_cost": es[1],
+            "optimum": arg, "optimum_viol": fmt(best[0]), "optimum_cost": best[1], "n_feasible": int(nfeas)}
 
 
 def better(e1, e2):
@@ -212,6 +261,7 @@ def main() -> int:
             seq1 = cascade_sequential(C, [3, 3, 3], [0], h, log)
             pert = cascade_sync(C, seq1["stable"], [0, 1], h, log, " after adding bond 1")
             res["perturbation"] = {"optimum_bond0": a1, "settle_bond0": seq1, "after_bond1": pert}
+            res["bond_powers_as_players"] = joint_bond_cascade(C, A, h, log)
         out[f"A{A}"] = res
     log(f"\nwall {time.time() - t0:.0f} s")
 

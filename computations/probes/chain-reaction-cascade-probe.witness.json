@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-15T14:08:33.593827+00:00",
-  "commitSha": "8d813d4da40c6460255216b06d75cbc90d87a970",
+  "computedAt": "2026-11-15T14:30:16.622405+00:00",
+  "commitSha": "afe2c986437cc3429cc9384e019daed0bd02c75a",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 104233,
+  "durationMs": 733945,
   "computation": "chain-reaction-cascade-probe",
   "scriptFile": "chain_reaction_cascade_probe.py",
-  "scriptHash": "9a452548bc40",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "aba578f8a026",
+  "scriptCommitSha": "afe2c986437cc3429cc9384e019daed0bd02c75a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -769,6 +769,71 @@
           "viol": "0.0739828819863217055622029498133941808630262585646724856118512",
           "cost": 30
         }
+      },
+      "bond_powers_as_players": {
+        "path": [
+          [
+            3,
+            3,
+            3,
+            1,
+            1
+          ],
+          [
+            6,
+            3,
+            3,
+            1,
+            1
+          ],
+          [
+            6,
+            6,
+            3,
+            1,
+            1
+          ],
+          [
+            6,
+            6,
+            3,
+            2,
+            1
+          ],
+          [
+            1,
+            6,
+            3,
+            2,
+            1
+          ],
+          [
+            1,
+            3,
+            3,
+            2,
+            1
+          ]
+        ],
+        "stable": [
+          1,
+          3,
+          3,
+          2,
+          1
+        ],
+        "stable_viol": "0.0",
+        "stable_cost": 26,
+        "optimum": [
+          1,
+          2,
+          3,
+          1,
+          2
+        ],
+        "optimum_viol": "0.0",
+        "optimum_cost": 24,
+        "n_feasible": 176
       }
     }
   },
