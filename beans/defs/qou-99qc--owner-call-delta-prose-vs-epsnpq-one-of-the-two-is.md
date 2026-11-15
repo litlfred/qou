@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-15T22:41:39Z
+updated_at: 2026-11-15T22:43:32Z
 parent: qou-10v9
 ---
 
@@ -3429,3 +3429,11 @@ Prediction (stated before running, no number): if ε_W = −h for both N and bot
 
 ## RESULT ε-W1 (2026-11-15 22:45Z)
 Identity check passes: Δ_S = −(q h [2]/4)(W₁+W₂) (8×8, exact). ε_W = A(Δ_S·Vᵏ)/A(Vᵏ) at q₀: V³ |udd⟩ −0.209475 (Q 0.876858 MeV, +12.08 %); V³ T³=−½ sum −0.204726 (0.856981, +9.54 %); V⁶ |udd⟩ −0.221471 (0.927074, +18.50 %); V⁶ sum −0.205606 (0.860665, +10.01 %). −h = −0.209061. Prediction (ε_W = −h everywhere) FAILED: the emission step sees the word and the state. The neutron-state choice moves Q by up to 8 %, and nothing in the corpus fixes it, so no row is selectable. Probe computations/probes/word_level_epsilon_probe.py. Diagnostic only.
+
+
+### PRE-REGISTRATION ε-NP1 (2026-11-15 22:45Z, owner pick 'Both, compare first')
+Question: does the emission step break n↔p symmetry? Δ_S = −(q h [2]/4)(W₁+W₂) is T³-blind inside H₃, so any asymmetry must come from the state plus the emission crossing.
+Setup: same as ε-W1 (computations/probes/word_level_epsilon_probe.py). n→p: start |udd⟩ or the T³=−½ sum, project onto (two u, one d) ⊗ (d on 4, u on 5). p→n mirror: start |uud⟩ or the T³=+½ sum, project onto (one u, two d) ⊗ (u on 4, d on 5). Words V³ and V⁶; same Δ_S; same Ř on (3,4).
+Report for each word and state pair: ε_np, ε_pn, ratio ε_pn/ε_np (exact), plus check whether ε_pn(q) = ε_np(q⁻¹) (the u↔d flip).
+Prediction (H0): ε_pn = ε_np exactly (no asymmetry from emission). Alternative H1: they are related by q→q⁻¹ only. Anything else is reported as found.
+Scope: structural only. There is no measured p→n width to score against, so nothing is compared to data and no row is selected.
