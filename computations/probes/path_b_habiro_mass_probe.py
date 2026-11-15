@@ -93,6 +93,7 @@ from codata_constants import M_E_MEV as _M_E_MEV_MP
 from codata_constants import (
     M_P_MEV_VALIDATION as M_P_MEV,
     M_N_MEV_VALIDATION as M_N_MEV,
+    M_H1_MEV_VALIDATION as _M_H1_MEV_MP,
 )
 from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
@@ -103,7 +104,7 @@ G_CATALAN = mp.catalan
 
 # AME 2020 atomic masses (MeV)
 AME_ATOMIC = {
-    "p": ("p (proton, A=1)", mp.mpf("938.78308711")),  # H-1 atomic
+    "p": ("p (proton, A=1)", _M_H1_MEV_MP),  # H-1 atomic, from the registry (the typed 938.78308711 was 1.4e-5 MeV off)
     "n": ("n (neutron, A=1)", float(M_N_MEV)),
     "D": ("D (deuteron, A=2)", mp.mpf("1876.12393")),
     "T": ("T (tritium, A=3)", mp.mpf("2809.43215")),
