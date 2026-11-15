@@ -1,0 +1,18 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prose-intro-markov-axioms-braid-link",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "prose:intro-markov-axioms-braid-link",
+  "kind": "prose",
+  "text": "intro-markov-axioms-braid-link.md",
+  "provenance": "authored"
+}
