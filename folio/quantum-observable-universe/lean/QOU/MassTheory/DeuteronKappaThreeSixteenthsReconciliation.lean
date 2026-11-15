@@ -99,8 +99,7 @@ theorem route1_deuteron_c1_reconciliation :
     QOU.MassTheory.c1_pn = (1 / 3) * kappa_borromean ∧
     QOU.MassTheory.c1_pp = (2 / 3) * kappa_borromean := by
   refine ⟨QOU.MassTheory.c1_from_letters.2.1, ?_, ?_, ?_⟩ <;>
-    · unfold QOU.MassTheory.c1_pn QOU.MassTheory.c1_pp kappa_borromean
-      norm_num
+    · norm_num [QOU.MassTheory.c1_pn, QOU.MassTheory.c1_pp, kappa_borromean]
 
 /-- Why `3/16` appears in the Borromean pairwise sum: for arbitrary per-nucleon letter weights
 `(a, b)`, the three `A = 2` pair coefficients sum to `3(a + b)/16` (`pairSum_of_letters`); at the
