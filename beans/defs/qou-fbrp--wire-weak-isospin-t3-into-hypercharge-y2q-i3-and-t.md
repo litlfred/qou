@@ -8,7 +8,10 @@ tags:
     - reorg-2026-10-04
     - 8f-ew
 created_at: 2026-08-02T19:10:32Z
-updated_at: 2026-10-10T07:15:59Z
-parent: qou-8lxd
+updated_at: 2026-10-10T18:10:00Z
+parent: qou-20sx
 ---
 
+## 2026-10-10 — reparented under qou-20sx
+
+Owner decision 7b (ofri, 2026-10-10): the electroweak (`8f-ew`) beans are grouped under `qou-20sx`, the electroweak front's node, instead of directly under the epic `qou-8lxd`. Only the parent changed. Status, scope and body are untouched.

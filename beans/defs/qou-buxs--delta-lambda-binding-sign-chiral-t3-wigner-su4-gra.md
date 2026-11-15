@@ -8,8 +8,8 @@ tags:
     - reorg-2026-10-04
     - 8f-ew
 created_at: 2026-08-02T19:31:44Z
-updated_at: 2026-10-10T07:16:00Z
-parent: qou-8lxd
+updated_at: 2026-10-10T18:10:00Z
+parent: qou-20sx
 ---
 
 RESOLVED 2026-08-29 (PR #6019, session 01JBMtTn). The proposed identification does NOT hold, and the reason is which SU(2) the sign grades.
@@ -30,3 +30,7 @@ FRAME NOTE. I first computed this in the SU(4) frame and got a scope-(b) refutat
 SCOPE. Corpus-status finding, not a proof that no bridge could exist. An SU_q(2)-fundamental <-> isospin-doublet bridge would have to be stated explicitly; nothing currently implies it. Anyone reviving this bean should start there rather than with the sign pattern.
 
 BLOCKED INPUT, unchanged: this bean's own stated test still cannot run -- its input, the derived T3 of qou-tdrd, is status todo.
+
+## 2026-10-10 — reparented under qou-20sx
+
+Owner decision 7b (ofri, 2026-10-10): the electroweak (`8f-ew`) beans are grouped under `qou-20sx`, the electroweak front's node, instead of directly under the epic `qou-8lxd`. Only the parent changed. Status, scope and body are untouched.

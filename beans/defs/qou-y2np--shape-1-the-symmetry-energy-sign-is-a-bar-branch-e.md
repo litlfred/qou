@@ -209,3 +209,17 @@ between two labels.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-10-11 — quark template tracked order by order in q (reading 3)
+
+Probe `computations/probes/quark_template/` (pre-registered at 6b9dd5d172; exact over Q(q); 4/4 checks).
+
+- **Flavour is invisible at order t⁰** (t = q − 1): since σ⁻¹ = σ − h, every quark letter equals σ at q = 1, all 8 template variants give the same element, and χ_(2,1) = 0 there. So reading 3 holds with equality at order zero for every template. The verdict is decided at order t¹ (where the sign bits enter), or at t³ when t¹ cancels. No verdict flips between truncation orders t¹…t⁶ or across the sub-interval of (1, ∞) containing q₀.
+- **k = 0, builder placement:** the corpus template (u = σ, d = σ⁻¹, ud = average) FAILS reading 3 for both nucleons (χ_(2,1) = −0.09198 p, −0.18200 n). Its sign changes exactly at q*² + q*⁻² = 1 + 2cos(2π/7), q* = 1.27890, above q₀. Every bar-swapped template (u = σ⁻¹, d = σ) passes for both nucleons, under every pair rule. The two flavour-blind templates also pass.
+- **With the gluon pair σ₀σ₀:** no template passes for both nucleons.
+- **Placement varied too:** the corpus template has 4/8 admissible placements per nucleon; the builder's is not one of them. So reading 3 constrains sign map and placement jointly, not the template alone.
+- **Tension, unresolved:** this bean's 2026-09-05 "swap refuted" rests on a comparison with measured binding data, which cannot select under the no-fitting rule. Reading 3, the ruled derived test, points to the swap at k = 0 and the builder placement. This is an owner decision. The bean stays open.
+
+## 🟧 OWNER RULING 2026-10-12 — quark sign map: option 4, derive it, do not pick it
+
+Asked in the six-part frame on PR #7718 (comment 6130340849). The four options were: 1 keep S+ (status quo); 2 adopt the swap S− (u = σ⁻¹, d = σ), which passes reading 3 at the builder placement; 3 keep S+ and move the letters to placement 011 or 100; 4 pick nothing by hand. **The owner chose 4.** The quark sign map and the letter placement must be outputs of the γγ construction plus reading 3 at every tower level (`qou-ales`), not a template choice. The template stays open and nothing is re-scored. The dashboard knowingly keeps scoring an element that reading 3 rejects until a derivation lands. The 2026-09-05 data-based "swap refuted" in `qou-y2np` is a comparison with data, so it counts as a selection neither way. This bean stays open (rule 13a). Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB

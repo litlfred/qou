@@ -228,3 +228,10 @@ independent second proof.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-03 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Note 2026-10-10 (independent route, not a closure)
+
+An independent second route to the nonnegativity of `[n]_Q!/c_λ` now exists:
+`QOU.Mathlib.MajFormula.qFactorial_eq_schurElt_mul_fmaj` writes it as `Σ_{T∈SYT(λ)} Q^{maj T}`
+(`coeff_fmaj_nonneg`), and `QOU.Mathlib.MajSYTBridge.fmaj_eval_one` ties the count at `Q = 1` to
+`numStandardYoungTableaux`. Status of this bean is left unchanged (not this thread's arc).

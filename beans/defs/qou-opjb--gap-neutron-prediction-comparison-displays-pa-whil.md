@@ -1,7 +1,7 @@
 ---
 # qou-opjb
 title: 'GAP: neutron-prediction-comparison displays p*(A) while naming n_pred(p), and its c = 0.01497 traces to an SEMF ratio, not to a definition in the corpus'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - split-from-6766
     - 8f-decide
 created_at: 2026-10-10T08:12:47Z
-updated_at: 2026-10-10T10:19:41Z
+updated_at: 2026-10-11T06:45:00Z
 parent: qou-8lxd
 ---
 
@@ -244,3 +244,55 @@ quote the `a_asym = 23.50663` MeV vs SEMF `a_A = 23.69` MeV agreement (0.77 %)
 as evidence for the framework — `a_asym` is a chosen monomial in q-integers, so
 that is a postdiction of an empirical constant by an assignment, which is
 exactly the comparison §NO FITTING says to rank below a derivation.
+- 2026-10-11 (after #7652 merged): measured the source of `tbl:stability-cubic-plot-table-data`. Tried p = A/(2 + k·c·A^{2/3}) for k ∈ {1/2, 1, 2, 4} at both c (mpmath, 30 dps). Best is k = 1 (the probe's inversion), total |ΔN| over the 14 rows = 24 (old c) / 26 (new c). No variant gives N = 20 for Ca (all give 22–38), while the table's N_pred column equals its N_obs column in 10 of 14 rows. So N_pred is not produced by this c under any of these normalisations, and the block's "ΔN is zero up to iron, at most 2 everywhere" is not reproducible. Owner decision pending.
+
+
+## 2026-10-10 — owner decision 1b ENACTED: `c = λ_C/(2·a_asym) ≈ 0.01452` published, labelled "assigned, not derived"
+
+Ruling (ofri): option (b). Done on branch `claude/opjb-neutron-constant-2026-10-10`.
+
+- **Constant.** `c = (q₀−q₀⁻¹)[6]_{q₀} / (6[2]_{q₀}[7]_{q₀}) = 0.0145158337165852716…` at the proton pin
+  (`qou_substrate.constants.q_at`), balanced q-integers, `m_e` cancels. Prose says it is
+  "fixed by the q-integer coefficient assignments of Ch 11 §8, not derived".
+- **New producer** (the table never had one):
+  `computations/observations/neutron_prediction_comparison_probe.py` + witness
+  (`q0Anchor: proton`), mpmath 60 dps. It also states the observation rule for the
+  first time: `n_obs(p)` = N of the most abundant isotope (NUBASE2020 `IS=`, parsed from
+  `library/kondev-2021-…/sections/`), else the longest-lived ground state.
+- **Result, reported as it came out:** mean `|Δn|` **1.7 → 1.8155 (worse)**, max **8 → 7**
+  (now at p = 52, Te; ¹³⁰Te is far on the neutron-rich side). Bins 0/1/2/3/4/5–7 =
+  16/34/25/16/8/4 (sum 103). Under the same observation rule the OLD c gives 1.7961, max 8
+  at p = 102, so the published 1.7 also depended on an unstated observation table, not
+  only on the constant. (That old table was inconsistent anyway: its `5–8` row listed 7
+  elements against a count of 4.)
+- **Still carry 0.01497, outside this ruling's scope:** `observations/stability-cubic-plot.md`,
+  `predicted-spectra/elliptic-stability-locus.md` (its erbium `p ≈ 67.8` estimate), and the
+  Lean sibling `neutron-prediction-comparison.lean` (`asymmetry_coeff`; its
+  `predicted_mass_number` uses yet another inversion). Leaving them is an owner call.
+- Display mismatch (first section): already resolved in the prior entry.
+
+## 2026-10-10 follow-up (owner picks "1 2")
+
+- New c ≈ 0.0145158337 now in `observations/stability-cubic-plot.md` and the Lean sibling `observations/neutron-prediction-comparison.lean` (`asymmetry_coeff`; docstrings now quote the probe witness: mean 1.8155, max 7 at p = 52). lean-direct `-DautoImplicit=false -s 65536` exit 0.
+- NOT changed: `predicted-spectra/elliptic-stability-locus.md`. Its claim "p ≈ 67.8 (erbium)" does not follow from its own equation p² = (1−c)/(4c³) at either c: 270.93 (c = 0.01497), 283.81 (new c). The elimination step itself is also off: with z = −(2cp+1), z²+1 = 4c²p²+4cp+2, not 4c²p²+1; the corrected condition 4c³p² + 4c²p + 2c − 1 = 0 gives p ≈ 237.5 at the old c. No reading gives 67.8. Owner decision pending.
+- Also measured: the stated cubic t³ = 2p(1+ct²) does not reproduce `tbl:stability-cubic-plot-table-data` at either c (U: 218 vs 144 in the table). The inversion A = 2p + c·p·A^{2/3} comes closer but still misses (U: 145 old c, 143 new c, vs 144). The table's source is untraced. Not fixed.
+- 2026-10-10 19:16Z owner picked "Correct it" for `elliptic-stability-locus.md`: elimination step corrected to 4c³p² + 4c²p + 2c = 1; the block now states p ≈ 249.4 at the new c (237.5 at 0.01497) and that this matches no observed nucleus; erbium sentence removed; `uses` gains prop:neutron-prediction-comparison. The conjecture itself is unchanged and still open. Still unfixed: item 2 of the conjecture writes z(p) = −1/(2cp), while the coefficient match gives z = −(2cp+1); and the stability-cubic table's source is untraced.
+- 2026-10-11 owner picked 1: `tbl:stability-cubic-plot-table-data` regenerated from the probe witness by `computations/observations/stability_cubic_table_from_probe.py` (no new compute; reads the witness rows). The block now shows the prop:beta-stability cubic t³ = p(2 + ct²) at the new c and states the measured spread (14 rows: max 5 at Ba, mean 31/14; all p ≤ 103: mean 1.8155, max 7 at Te). NEW, not fixed: rem:diophantine-valley writes t³ = 2p(1 + ct²), twice the ct² term of prop:beta-stability, and the elliptic-stability-locus derivation uses that doubled form.
+- 2026-10-11 owner picked 1+2 on the factor-of-2: resolved by deriving from the energy. Minimising a_C p²/A^{1/3} + a_A(A−2p)²/A gives p* = A/(2 + cA^{2/3}), c = a_C/(2a_A) = prop:beta-stability. integer-stability had a_A for 4a_A (and a_C = (q−q⁻¹)λ_C, double factor); diophantine-valley had 2c for c; elliptic-stability-locus inherited 2c. All three now follow beta-stability, with caveat authorNotes. Elliptic coefficient match now c³p² + 2c²p + 2c = 2, p ≈ 736.8. Provenance of 0.01497 found: computations/elliptic-stability.json carries a_C = 0.697, a_A = 23.29 (SEMF-type values), and 0.697/(2·23.29) = 0.01496. Still open in the elliptic block: z(p) = −1/(cp) vs match z = −(cp+1); pairing coefficient 2λ_P/a_A untraced.
+- 2026-10-11: (D) in elliptic-stability-locus derived from integer-stability energy + pairing ∓λ_P/A^{1/2} (equal energy of ee (p,A) and oo (p+1,A)); result t³ − c p̄ t² − 2p̄ = (λ_P/(2a_A)) t^{3/2}, p̄ = p + 1/2 (sympy). Old coefficient 2λ_P/a_A was 4× too large. Open: z(p) = −1/(cp) vs match z = −(cp+1), owner decision.
+
+## 2026-10-11 — conjecture restated at z(p) = -(cp+1) (owner pick 1, PR #7675)
+
+Under X = t only the X^2 coefficient agrees; the X^1 coefficient c^2p^2+cp+1 never agrees for real cp; X^0 agrees only at p ~ 736.8 (checked with sympy). Upstream: item 2 now cites the color elliptic cubic (C), not the color-tube cubic; the Descartes discriminant -18.95 became -303.17 (standard -16(4a^3+27b^2), recomputed at the proton q0; j = 129.86 unchanged; see qou-3nva); the "shares algebraic origin (exact)" bullet was replaced. Downstream: the modular-s-transform-q-q-tilde link for prop:descartes-elliptic-curve now points at the right file; two Lean docstrings cited a conj: label and now cite rem:. The conjecture itself stays open.
+
+## 2026-10-11 — affine obstruction proved (owner picks 2+1, PR #7675)
+
+J = 4P^3/(4P^3+27Q^2) of the depressed cubic is invariant under X -> aX+b. J_C > 0 for every real z (P_C = (2z^2+z+2)/3 > 0); J_S < 0 for real p != 0, c > 0 (P_S = -c^2p^2/3, 4P^3+27Q^2 = 4p^2(54c^3p^2+729)/27). So no affine substitution carries (S) to (C) at real z. Lean: QOU.EllipticStabilityLocus.no_affine_match, sorry-free, lean-direct exit 0. Block drops the vacuous "up to Möbius"; item 2 rests on the isogeny alone. Conjecture remains open.
+
+## 2026-10-11 — closed (owner pick 1)
+
+Both defects in the title are fixed: the block displays p*(A) and derives
+n_pred(p) from the fixed point of A* = p(2 + c A*^{2/3}); c is now
+lambda_C/(2 a_asym) ~= 0.0145158337, not the SEMF ratio 0.01497. The remaining
+question, deriving the [6]_q and 3[2]_q[7]_q assignments, is a separate gap and
+moves to `qou-nxvg`.

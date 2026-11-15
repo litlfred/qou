@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T10:16:41Z
-updated_at: 2026-10-04T15:20:53Z
+updated_at: 2026-10-10T18:11:06Z
 parent: qou-mub3
 ---
 
@@ -77,3 +77,8 @@ then `document-intake` (`uploads/` → `library/<doc-id>/`) +
 entry in `references.ts` in the shape `faddeev1995` uses. Drinfeld 1985 (Soviet
 Math. Dokl. 32, 254–258) has no open-access copy and should be recorded
 cited-only regardless of egress.
+
+## 2026-10-10 — citation correction + owner note (PR #7632, session_01HjpvdM6z2jkKWYbBfwkCZG)
+- The Drinfeld half of Drinfeld–Kohno is **Drinfeld, *Quasi-Hopf algebras*, Leningrad Math. J. 1 (1990) 1419–1457**, not the 1985 Doklady note. `drinfeld1990` added to references.ts on PR #7632 and used at the categorical-mass-markov-proof cite; `drinfeld1985` (PLACEHOLDER) left in place for the 8 Lean docstrings that cite it — retargeting them is a separate change.
+- Owner (2026-10-10): Kassel *Quantum Groups* (GTM 155, which contains a textbook proof) is not open access. Kohno 1987 (open, NUMDAM) stays the one obtainable source; still blocked by egress here, so it needs an owner upload.
+- Status stays `todo`.

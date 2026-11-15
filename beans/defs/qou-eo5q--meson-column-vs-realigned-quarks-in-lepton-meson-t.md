@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - 8f-decide
 created_at: 2026-08-01T22:05:55Z
-updated_at: 2026-10-10T10:19:12Z
+updated_at: 2026-10-10T18:14:38Z
 parent: qou-8lxd
 ---
 
@@ -145,3 +145,33 @@ runs, including one repeating the batch's exact ordering, report 0; the
 attestation store holds no `detangler` criterion, so it is not
 cache-suppression. Unreproducible, on a file this branch does not touch; not
 claimed clean, not claimed broken.
+
+
+## 2026-10-10 (later) — owner ruled 3a + "try compute 14"; Υ computed, scope-(a) negative
+
+Owner (ofri): keep the relabel, do not put Υ in the table, but try the
+14-crossing Υ entry with the same construction. Done in
+`computations/eightfold/upsilon_14_crossing_probe.py` (witness 5/5, proton pin,
+70 dps). Audit: `docs/audits/2026-10-10-upsilon-14-crossing-probe.md`.
+
+- **Construction:** `m_X/m_π = χ^(2,1)(σ₁ⁿ)·(V_S(T(2,n))/V_S(T(2,3)))²`, the
+  formula of `prop:meson-kaon-pion-hecke-seifert` / `prop:gen3-meson-phi-hecke-seifert`.
+  `n` is the row's torus knot, not the crossing total. Controls reproduce:
+  K −290 ppm, φ +0.22 %.
+- **n = 7 (generation index, zero new choices):** 7.32011 against PDG
+  `m_Υ/m_π = 67.7816(19)`, which is **−89.2 %**. The value is identical to the φ slot,
+  because the construction cannot separate φ from Υ.
+- **n = 14 (crossing count):** χ(σ¹⁴) = q¹⁴+q⁻¹⁴ is defined. **Missing choice:**
+  V_S of the 2-component LINK T(2,14); the corpus defines V_S only for odd-n
+  knots. The diagnostics are not adopted: literal π(n−2)/n gives −55.7 %, and the link-base
+  orbifold Euler number gives +77.2 %.
+- **New finding, deliberately not edited (owner said keep the relabel):** the
+  header "Meson at 2n crossings" holds only in row 1. K is 8 crossings, not 10;
+  φ is 10, not 14. The column follows n+3. Taken literally, the header's rule would put Υ
+  in row 7. Options: (i) say "the next rung of the 6, 8, 10 ladder"
+  instead of "2n", a one-phrase edit; (ii) leave as is (the default). Agent
+  judgement: (i), because the header currently states a rule its own rows break.
+
+Status left `completed`: the bean's task (the column disposition) is done. The
+open question raised here is the header wording, which is an owner call and is
+recorded above, not opened as a conjecture.

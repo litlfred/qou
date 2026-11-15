@@ -1,11 +1,11 @@
 ---
 # qou-za3q
 title: magnus-Omega2 probes call the Plancherel weight y_lambda; 91% of their work is on shapes tr_M annihilates
-status: completed
+status: todo
 type: task
 priority: normal
 created_at: 2026-09-06T10:49:41Z
-updated_at: 2026-09-13T16:19:37Z
+updated_at: 2026-10-12T19:30:00Z
 parent: qou-x631
 ---
 
@@ -583,3 +583,15 @@ Already aligned: all three sign probes declare `headline_pairing:
 `y_lambda` column, and the naming rule has a blocking detector
 (`computations/audits/y_lambda_conflation_audit.py`). Option A landed the
 mechanics; this ruling makes them principled rather than provisional.
+
+## 2026-10-12 — REOPENED per owner ruling relayed for qou-uir6 ("still leave issue open")
+
+Owner ruled (ii)+(iii): the faithful-window scan of the Wenzl/Ocneanu pairing `P(z)`, `0 ≤ z ≤ h`, is
+THE result; the convention-D values in this bean's tables and the three sign witnesses are a
+**two-row (Temperley–Lieb) diagnostic** — `z_D ≈ 2.93h` lies outside the faithful window, where every
+three-row weight vanishes. No number in this bean is changed.
+
+Rebuilt scan (bean `qou-uir6`): (−,−,−) over A = 2,3,4 on 98.998 % of the window; (−,−,+) on 0.620 %;
+(−,+,+) only for `z < 0.0038h` at the Molien (z = 0) end. So the decision-1 conclusion above — no sign
+change at the production weight — holds across essentially the whole faithful window, not only at z_D.
+Status set back to `todo` per the ruling.

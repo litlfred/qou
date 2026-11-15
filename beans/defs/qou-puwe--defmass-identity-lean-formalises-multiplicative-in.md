@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T02:47:59Z
-updated_at: 2026-10-10T14:43:06Z
+updated_at: 2026-10-10T16:42:20Z
 parent: qou-ywyq
 ---
 
@@ -196,4 +196,21 @@ Verified lean-direct (-DautoImplicit=false -s 65536, fresh oleans): MassIdentity
 
 Not closeable: defect 1 is an open owner decision.
 
+## 2026-10-10 — defect 1: the trace–integral identity, typed and proved (branch claude/mass-trace-identity-2026-10-10)
+
+New library file `QOU/Torsion/MassTraceIdentity.lean`, sorry-free, axioms `propext, Classical.choice, Quot.sound` only, over any braided monoidal `C`, using only the `FrobeniusHopfData` axioms. Verified with `scripts/lean-library-sweep.py --only-exact QOU.Torsion` (37 ok, 0 red; 5 stale deps rebuilt in a shadow, including `CategoricalFoundations`, whose restored olean predates its `one_mul`/`counit_comul` fields).
+
+- Typing fix: the cycle `x : 𝟙 ⟶ A` enters as `L_x = λ⁻¹ ≫ (x ▷ A) ≫ μ`; mass endomorphism `L_x ≫ Ψ`, `Ψ = (∫_A ⊗ id) ∘ Δ`.
+- `massIntegrand_eq_leftMul_density`: `Ψ = L_u`, `u = Ψ ∘ η` (unit law + Frobenius relation only).
+- `density_eq_unit_of_frobeniusForm_eq_counit`: `∫_A = ε ⇒ Ψ = id`. This is the counit law; `categorical-mass-markov-proof` Step 2 attributes `Ψ = id` to the Nakayama automorphism / `S² = id`, which is not the reason.
+- `leftTrace_leftMul`: `tr(L_y) = ∫_A(y · c)`, `c = μ ∘ coev`.
+- `massTrace_eq_functional_hol`: `tr(L_{hol w} ≫ Ψ) = ∫_A(u · hol w · c)`, where `hol w` is the ordered product (discrete multiplicative integral) in the monoid `Hom(𝟙, A)` (`conv_assoc`, `unit_conv`, `conv_unit`, `hol_append` proved).
+
+Open, recorded not fixed: the functional `x ↦ ∫_A(u x c)` is the categorical trace of `A` on itself; in free `R`-modules it is the regular trace `Tr_A(L_{ux})`, which is not a Markov trace. Exact check (sympy over ℚ(q), scratch probe): normalised regular trace on `H_3(q)` gives `tr(σ₁σ₂) = h²/6` against `tr(σ₁)² = h²/4`, `h = q − q⁻¹`. So `categorical-mass-markov-proof` Step 1 ("categorical trace descends to the Jones–Markov trace") fails for the trace of `A`; the Markov trace is the quantum trace of `V^{⊗n}` (already stated in `MassLeftMulEndomorphism.lean`). Also: the corpus form `m = ‖Hol‖` would make every unitary SU(2) holonomy have mass 1; the trace form above is the one that carries content.
+
 2026-10-10: reparented under owner GOAL #1 milestone qou-ywyq (defect 1 is the subject of that goal).
+
+## 2026-10-10 — PR #7632 (session_01HjpvdM6z2jkKWYbBfwkCZG)
+- PROVED (sorry-free, library sweep 15/15): `QOU.Torsion.MassTraceMarkov.braidTrace_wordBraid` — tr_M(β_ℓ) = wi^{m+1}·Tr(K^{⊗(m+1)}·Hol(ℓ)), Hol = ordered product of R-matrix transports (Ř for +, Ř⁻¹ for −); `jonesFn_wordBraid` is the framing-corrected form.
+- `def:mass-identity` retyped: m(ϱ)=‖∫_A Ψ ϱ‖, Ψ=(∫_A⊗id)Δ = id when ∫=ε (counit law).
+- STILL OPEN (bean stays open): Markov's theorem (link invariance); qou-0fmb abstract Ocneanu trace; H_n/rad ≅ TL_n; ∫=ε for the actual data; continuous KZ holonomy (Drinfeld–Kohno cited only).

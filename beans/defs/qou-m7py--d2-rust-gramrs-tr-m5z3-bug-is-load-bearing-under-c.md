@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-14T16:21:57Z
-updated_at: 2026-10-10T07:47:11Z
+updated_at: 2026-10-10T13:20:00Z
 parent: qou-cdx1
 ---
 
@@ -345,3 +345,200 @@ called this one satisfied off a single grepped line and retracted it within
 the hour.
 
 Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.
+
+
+## 2026-10-10 — the wheel was built and measured; items 1–3 hold, item 4 is the only live part
+
+This bean's standing caveat was that `pyhecke_native` had never been present in
+the container that judged it, so the live split was "not observable here". It is
+now observed. Built with `bash scripts/build-pyhecke-native.sh` on `main`
+`fbc1f5f580` (pyhecke-native 0.9.0, Python 3.13), then compared at the proton
+pin `q0 = pyhecke.gram.q0`:
+
+| check | result |
+|---|---|
+| `markov_z(q0)` native vs registry D | `0.6126880371464652`, diff `0.0` |
+| `max|trace_weights − TR_M|` | `0.0` |
+| `TR_M[5]` native | `0.6911664783584446` = `h·z² + z`, not `z³` |
+| `max|gram_matrix − G|` | `0.0` |
+| `max|gram_quotient_inverse − G_PINV|` | `4.44e-16` (f64 floor) |
+| `gram_determinant(q0)` | `0.0` |
+| `pyhecke.gram._native_ok()` | `True` — the self-check passes, native path ENABLED |
+| `tools/pyhecke/tests/test_gram_values.py` | 24 passed, 1 skipped (the wheel-absent test, by design) |
+| `cargo test --release gram` (hecke-engine) | 22 passed |
+
+The test file needs `computations/substrate` on `PYTHONPATH` for `hecke_core`;
+without it three tests fail with `ModuleNotFoundError`, which is an environment
+fact, not a defect.
+
+So Remaining items 1–3 of the 2026-08-15 (3) list are done and now verified
+against a real wheel: the trace flip landed, consumers moved to the quotient
+inverse under a new key, and the old refusal guard was replaced by a runtime
+convergence self-check that a correct wheel passes. Note the self-check compares
+in f64 at `atol 1e-9`; it cannot see a divergence below that.
+
+**Live remainder: the 51 `tools/hecke-engine/certificate-*.json`** (the bean
+says 53; 51 is the hecke-engine set, the other 2 are under `_deprecated/`). Their
+`*_f64` fields were evaluated at the literal `1.10998` (1277 ppb from proton).
+`scripts/reanchor_certificates.py` dry run, same commit:
+
+- 22 re-anchorable (exact Laurent polynomial in the file; the stored f64
+  reproduces from it, then re-evaluates at proton),
+- 12 blocked (`tr_markov_f64` has no exact source; a partial write would leave a
+  file on two anchors),
+- 1 keep (v9 used MPFR, committed value is the accurate one),
+- 16 skipped (no exact polynomial; these need their generator re-run).
+
+Writing the 22 is not done. It needs the owner's sign-off per the
+mass-regeneration posture (`tnjb`), and it is the only thing keeping this bean
+open. Consumers found by grep are the v9/v10/v11 binaries and `_deprecated/`
+scripts only, so no paper-facing number reads these fields.
+
+
+## 2026-10-10 — after #7606 merged: the 12 BLOCK files are convention C
+
+The 22 re-anchorable certificates landed on `main` (574778dcd2). Of the 29
+left (12 BLOCK, 1 KEEP, 16 SKIP), the 12 BLOCK carry a `tr_markov_f64` the
+script called "no exact source". Measured: `v9.rs` computes it as
+`Σ_ℓ jets[ℓ]·z^ℓ / 2^pn_count` with `z = 1/(t+t⁻¹)`, `t = √q`, i.e.
+`z_C = √q/(q+1)`. The exact `jets` reproduce the committed value at
+`q = 1.10998` to ~12 digits on 4H (0.34245912352), 5He, 5Li, 8Be, 8Li; the
+ill-conditioned files differ by float64 cancellation only (40Ar's jets are
+65 entries, 1 non-empty, so there `tr_markov_cleared` is the source).
+
+So these 12 values are **convention-C**, not merely un-anchored; re-anchoring
+gives C at the proton pin. A D value needs a re-derivation, not a z-swap.
+Consumers: `fsh-guts/deprecated/computations/{certificate-to-mass,
+atom_mass_integrated,isotope-mass-table}.py` only. `v9.rs` is a Rust
+convention-C site that the `.py`-only detectors cannot see. Disposition put
+to the owner on a decision card (record / strip / re-derive / leave);
+data unchanged. Bean stays open: the 12 + 16 are not resolved.
+
+## 2026-10-11 — convention-D derivation done (owner: "do fresh conv D derivation")
+
+**Correction to the 2026-10-10 entry.** v9's `tr_markov_f64 = Σ_w c_w z^len(w)`
+is not a Markov trace in any convention, not merely "convention C": the trace
+is not multiplicative in length (`tr(σ₀σ₁σ₀) = h·z² + z`, not `z³` — the
+`gram.rs` `TR_M[5]` defect, at every length). Matching the committed value
+under that rule identifies the formula; it does not make it a trace.
+
+**Second finding.** 34 of the 35 v9 certificates (all stamped at eight
+2026-04-05 commits, `62d305e` …) were built with the pre-fix n-n crossing
+`t⁴σ + t − t³`, which is not ∝ `σ⁻¹ = σ − h` under v9's own `σ² = hσ + 1`.
+Their exact polynomials carry odd t-powers; the current crossing gives none.
+Only 40Ar (`1b1b1d5`) is on the fixed crossing. So the 22 fields re-anchored
+in #7606 evaluate a mis-built element. Consumers: `fsh-guts` deprecated only.
+
+**Derivation.** `computations/probes/v9_markov_trace_convention_d_probe.py`
+builds the full crossing product exactly in the T_w basis of H_A(q), takes the
+Ocneanu trace with z formal, then sets `z = q³/(q²+1)` at the proton pin, ÷2^pn.
+Independent check: equals v9's own per-word dump (new `V9_DUMP_ELEM` env var)
+coefficient for coefficient for 4H, 5He, 5Li, 8Be, 8Li.
+
+| nucleus | tr_M^D / 2^pn |
+|---|---|
+| 4H | 0.18985120016031935518 |
+| 5He | 0.04540796648400091477 |
+| 5Li | 0.09459886467903922151 |
+| 8Be | 0.01175448834274849400 |
+| 8Li | 0.00499350907470217024 |
+| 10B | 0.02426288147931621954 |
+| 10Be | 0.01524043161227817558 |
+
+Not computed: 12B (T_w-basis product exceeded container memory); every
+A > 12 certificate and v9's own 10B/10Be/12B runs strip mid-construction,
+so the stored object is not a product. No certificate data changed; what to
+do with the corpus is put to the owner.
+
+## 2026-10-11 (2) — v9 computes the trace; the 35 are regenerated (#7686, merged)
+
+Owner picks on #7685: delete `tr_markov_f64`, keep the old version on
+fsh-guts, and have v9 compute the real trace. Done, and merged as 33d54fd71b.
+
+- `tr_markov_f64` / `tr_markov_cleared` / `tr_markov_denom_power` are gone from
+  v9 and `certificate.rs`. The removed code and every certificate's old values
+  (before and after regeneration) are on `cat/cat-harness/fsh-guts` at
+  4b5f1247f9, `fsh-guts/deprecated/tools/hecke-engine/v9-tr-markov-zlen/`.
+- v9 now writes `tr_markov_d`: the element is re-expanded in the T_w basis and
+  traced exactly by `tr(x T_{n−1} y) = z·tr(xy)`, as a polynomial in z over
+  ℤ[t, t⁻¹]; then `z = q³/(q²+1)` at the 50-digit proton pin, ÷ 2^pn,
+  60 digits, with the exact terms. A runtime self-check asserts
+  `tr(σ₀σ₁σ₀) = h z² + z`.
+- It is computed only when nothing was stripped mid-construction: **12 of 35**
+  (4H 5H 5He 5Li 6H 7Be 7H 7He 8Be 8H 8He 8Li). All 12 agree with the Python
+  probe to 1e-60 relative. The other 23 record why (stripped, so not the
+  product).
+- All 35 v9 certificates are regenerated with the current crossing at the
+  proton pin. F_Pauli moved by up to three orders of magnitude (8H 0.81 → 1397);
+  word counts grew from A to as many as 23263 (13N). So the 22 fields #7606
+  re-anchored are superseded.
+
+**Still open, so the bean stays `todo`:** the 16 non-v9 certificates
+(`hecke-crt`, `hecke-modular`) that `reanchor_certificates.py` SKIPs still carry
+`*_f64` fields at the 5-digit `1.10998` anchor, and have no exact polynomial to
+re-anchor from; they need their own generators re-run. And 23 v9 nuclei have no
+trace, because v9 strips them; a strip-free build of A ≥ 9 did not fit in memory
+here (12B).
+
+## 2026-10-11 (3) — the other 16 certificates, and the trace past A = 8
+
+- `hecke-modular` (v11) evaluated at a local literal `1.10998` while recording
+  `gram::Q_0`. Fixed, and all 15 hecke-crt / hecke-modular certificates are
+  regenerated at the proton pin (`4he-crt` carries residues only). Issue #7717.
+- **Finding:** for builds that strip words mid-construction, `f_pauli`
+  depends on the strip threshold, not only on the nucleus. Measured on 11B:
+  0.31 / 0.89 / 2.92 / 2.80 / 9.25 / 31.9 / 81.4 at thresholds
+  1e3 / 5e3 / 1e4 / 2e4 / 5e4 / 1e5 / 2e5. The old 11B/12C/14N/16O
+  certificates recorded no argv, so their threshold cannot be recovered.
+- **Trace for A ≥ 9:** `computations/probes/markov_trace_two_row_tower_probe.py`.
+  Under convention D only two-row shapes carry weight,
+  `y_(n-k,k) = [n-2k+1]_q / [2]_q^n`, so the trace is a sum of two-row
+  seminormal characters built up the Hecke tower (Gelfand–Tsetlin basis,
+  each level embedded block-diagonally into the next). It agrees with v9's
+  `tr_markov_d` to all 60 printed digits on all 12 nuclei v9 could do. 63
+  isotopes computed (Z = 1…8, A ≤ 16), covering every certificate nucleus
+  with 9 ≤ A ≤ 16. Cost grows like Catalan(A): A = 14 takes about 3 min,
+  A = 16 about 48 min, in Python. 19F, 20Ne, 40Ar, 40Ca and 60Co are still
+  out of reach.
+- 2026-10-12 (owner "1 2 3"): the tower values are written into 49
+  certificates' `tr_markov_d` by `tools/hecke-engine/scripts/attach_tower_trace.py`
+  (textual splice, so nothing else in a file changes; pn checked against
+  `pn_count`). Each value now carries `method`: v9's own trace, or the tower
+  probe's. A Rust port (for 19F/20Ne) and a structure search for A = 40 are
+  under way.
+
+## 2026-10-12 (stream 4, session_01PmZzY27QHceKGXwNivRt64) — Rust/MPFR port of the tower trace
+
+`tools/hecke-engine/src/bin/two_row_tower_trace.rs` (`two-row-tower-trace <Z> <N>`). Same element,
+same convention-D two-row weights, same seminormal basis as the Python probe, but computed
+**column by column**: `chi(E) = Σ_j (E e_j)_j`, each `E e_j` by applying the sparse factors
+`a + bσ_i` to one vector in reverse order. Memory O(d) per thread instead of O(Catalan(A)),
+which is what makes A = 19, 20 possible at all (Catalan(20) ≈ 6.6e9 entries). rug/MPFR at 300
+bits, q0 from its 50-digit string, rayon over columns (4 threads). Self-checks as the probe
+(worst residual 1.2e-89).
+
+Validated against the Python witness, all 60 printed digits identical: 6Li, 9Be, 12C, 16O.
+16O: 71 s wall (Python: ~48 min). Throughput ~6e7 factor-applications/s on 4 threads;
+projected 19F ≈ 1.4 h, 20Ne ≈ 6 h. Runs launched; results to follow.
+
+## 2026-10-12 — follow-up (3): Yang–Baxter / R-matrix structure for A = 40. FINDINGS ONLY, no result.
+
+Probe `computations/probes/v9_element_ybe_structure_probe.py`, 5/5, exact sympy over Q(q), no float.
+
+- **B1 Baxterisation (holds).** All three v9 factors are the Jones-Baxterised R-matrix
+  `R(x) = xσ − x⁻¹σ⁻¹` up to scalars: pp = lim x⁻¹R(x) (x→∞), nn = lim −xR(x) (x→0), pn = −iR(i).
+- **B2 YBE (holds).** `R₁(x)R₂(xy)R₁(y) = R₂(y)R₁(xy)R₂(x)` on every irrep of H₃.
+- **B3 — but no difference-type spectral parameters fit.** A vertex-model reading needs
+  `x_ik = u_i/u_k`; pp would need `R(1)`, and `R(1) = h·1` is a scalar, not σ. (A product form
+  `x_ik = u_i u_k` fits only in the degenerate limit u_p→∞, u_n = i/u_p→0.)
+- **B4 — and the labels are by POSITION, not strand.** At A = 6, 13 of 15 crossings carry an (i,k)
+  label that is not the pair of strands actually meeting there. So the v9 element is not a vertex-model
+  partition function on its own braid diagram, and commuting-transfer-matrix / Bethe-ansatz
+  integrability does not apply to it as defined.
+- **B5 — the one exact reduction:** the last factor is the only use of σ_{A−2}, so
+  `tr(E) = (a + b z_D)·tr(E')` (Markov). It does not iterate (σ_{A−3} is used twice).
+
+**Cost wall for A = 40.** The irrep decomposition is already optimal for this element:
+column work `L·Catalan(A)` ≈ 780 × 2.6e21. No route to A = 40 was found. Scope (a): this is about the
+v9 element *as constructed*; whether a strand-labelled element (a modelling change, owner's call)
+would be integrable is untested.
