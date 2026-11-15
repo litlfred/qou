@@ -113,3 +113,6 @@ So H₂ cannot select the electron. Still OPEN (owner card pending): which obser
 
 ## 2026-11-15 owner ruling (thread 'Map SM and eightfold way', decision card): D-H2 restated at the pair level
 D-H2 = no stays for single letters (flip_ne_swap). Added: on γγ pairs the swap ι: σ ↦ −σ⁻¹ sends V = σᵢσᵢ₊₁⁻¹ to V̄ = σᵢ⁻¹σᵢ₊₁ (signs cancel on even words), so the pair orientation bit V/V̄ IS the chirality mirror. Flavour must come from elsewhere (n ≥ 4 lead, qou-wkcd). Lean lemma ι(V)=V̄ not yet written. Evidence: PR #7741 gg_two_orientations (03b13f15561), gg_decay (6ff2aaaa8bf).
+
+## 2026-11-15 — 4-strand γγ grammar (branch claude/gg-four-strand-2026-11-15, 1d8f88a737c)
+Reading 3 on H₄, vertices V/V̄ at sites 0,1, m=1..6. Pass counts 0/4, 0/16, 16/64, 32/256, 0/1024, 518/4096. Passing is fixed by the SITE PATTERN (000,111; 0101,1010; rotations of 000111) and is nearly blind to V/V̄ orientation; six mixed-site m=6 words are the exception. Site pattern is a new binary label beyond the pair bit; its relation to the σ₃-eigenline flavour (qou-wkcd) is untested. Scope (a).
