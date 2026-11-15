@@ -234,6 +234,9 @@ _wit = {
     "computation": {"script": "computations/deltalambda/rev_e_infinity_xbot_join_probe.py"},
     "bean": "qou-as81",
     "anchor": "physical_proton",
+    # Canonical anchor key read by the q0 audits/ratchet (the "anchor" key
+    # above is a near-miss spelling they cannot see).
+    "q0Anchor": "proton",
     "q0Value": Q_50_DIGIT_STR,
     "description": (
         "Per-sum upper bound on the bottom edge, Xbot(s) <= h(mu) + mu s, with h(mu) the "
