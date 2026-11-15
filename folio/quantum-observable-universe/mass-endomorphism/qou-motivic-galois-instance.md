@@ -15,7 +15,7 @@ downstream consumers, and cross-prime coherence are recorded in
 the per-cell $\mathrm{Frob}_p$ data appears in
 [the accompanying example](#ex:qou-motivic-galois-instance-per-cell).
 
-**Why this is stated as a conjecture (2026-08-23).** The formula above
+**Why this is stated as a conjecture.** The formula above
 specifies $\mathrm{Frob}_p$ in $\mathbb{Z}[\zeta_{2p}]$, one prime at a
 time. What [`def:motivic-galois-character`](#def:motivic-galois-character)
 asks for is a single $\mathrm{frobenius\_at} \colon \mathrm{Primes} \to
@@ -23,19 +23,10 @@ asks for is a single $\mathrm{frobenius\_at} \colon \mathrm{Primes} \to
 evaluations *cohere* into one $\widehat{M}$-valued function. The
 follow-on remark argues that coherence structurally from the Habiro
 theorem; it is neither proved nor formalised. Calling this a definition
-asserted the construction was already in hand.
+would assert the construction was already in hand.
 
-**Lean status (2026-08-23).** There is no Lean formalization of this
-instance. The co-located `.lean` file — which contained a bare `axiom`
-laundering the perpetual obstruction into the `MotivicGaloisCharacter`
-class — was deleted on 2026-08-12 and has no replacement. The
-`lean.ref` this block carried until today,
-`QOU.LiftingDescent.QOUInstance.qouMotivicGaloisChar`, named a module
-and a declaration that exist nowhere in the Lake tree.
-
-What does exist is
-`lean/QOU/LiftingDescent/MotivicPerpetualObstructionFromTrace.lean`
-(Route A: prime-ideal-collapse, $C = a_0(-1) + 2 a_1(-1)$),
-and it is a *different* result: it proves statements about the
-obstruction, and constructs no `MotivicGaloisCharacter`. The 2026-08-12
-note here read as though it were the replacement.
+**Lean status.** There is no Lean formalization of this instance. The
+module `QOU.LiftingDescent.MotivicPerpetualObstructionFromTrace`
+(prime-ideal collapse, $C = a_0(-1) + 2 a_1(-1)$) proves statements
+about the perpetual obstruction and constructs no
+`MotivicGaloisCharacter`; it is a different result.
