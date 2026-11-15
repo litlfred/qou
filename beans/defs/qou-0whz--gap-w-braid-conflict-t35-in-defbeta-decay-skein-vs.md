@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-15T19:00:22Z
-updated_at: 2026-11-15T19:09:34Z
+updated_at: 2026-11-15T19:26:06Z
 ---
 
 Opened 2026-11-15 (thread 'Derive the left-projector weak vertex'; owner: 'bean to reconcile W braids. explore it now.'). Two blocks assign different braids to the W: def:beta-decay-skein inserts T(3,5)=(σ₁σ₂)⁵ at the converting d quark, reducing to daughter ⊔ T(2,3) ⊔ unknot; conj weak-spectral-completeness / thm:hoefsmit-ew-cell-content assign W ↔ σ₁⁴=T(2,4), W⁻ = alt block. Both are topological assignments, neither derived. Structural constraint (Schur–Weyl, level 2 / convention D): every Hecke element commutes with U_q(gl₂) incl. K, so NO braid word changes flavour; the flavour changer is E/F (matches g-action table W± on T±). So a W braid can only supply a vertex weight/amplitude. T(3,5) trace is not left-supported (−9.33 % at q₀, PR #7887). Open: what (if anything) each braid is, decided structurally — never by selecting against Q_β or τ_n. Do not close while open.
@@ -17,3 +17,6 @@ Opened 2026-11-15 (thread 'Derive the left-projector weak vertex'; owner: 'bean 
 - C2: σ₁, σ₂, T(3,5), σ₁⁴ commute with Δ(K),Δ(E),Δ(F) on (C²)^⊗3 → no braid word changes flavour; flavour changers are E/F.
 - C3: 3-strand closure ≤ 3 components; p ⊔ T(2,3) ⊔ unknot ≥ 5 → def:beta-decay-skein reduction cannot be a link equality; lepton emission needs strand creation (coevaluation), not a braid.
 Scope (a): excludes a braid as the W *process*, not as amplitude/form factor. Still open: which (if either) is the W form factor; what the W morphism is (E/F ⊗ creation?).
+
+
+2026-11-15: C4 + Lean (PR #7971, 828605716e). Over/under rule: a crossing is a pure transposition iff its over strand carries the K = q vector (both R conventions, both signs). With corpus conventions (lower strand over in σ_i; def:down-quark), u = K = q weight, T³ = +½. Lean QOU/QuarkState/OverStrandWeight.lean, sorry-free. Bean stays open: the W process (E/F + lepton creation) is not settled.
