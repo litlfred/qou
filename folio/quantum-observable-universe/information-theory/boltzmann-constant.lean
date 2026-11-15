@@ -27,7 +27,7 @@ noncomputable section
     The product k_B · T_phys in classical physics corresponds to ℏ_q
     in QOU. Since k_B = 1 in natural units, the thermal energy IS
     the quantum temperature: thermalEnergy = T_q = ℏ_q.
-    Label: prop:boltzmann-constant -/
+    Label: def:boltzmann-constant -/
 noncomputable def thermalEnergy {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) : ℝ :=
   quantumPlanckConstant sp p

@@ -1,4 +1,4 @@
-The single Hecke algebra $H_n(q)$ of [`prop:composite-crossing-parity`](#prop:composite-crossing-parity) governs the phase behaviour through the following criteria.
+The single Hecke algebra $H_n(q)$ of [`conj:composite-crossing-parity`](#conj:composite-crossing-parity) governs the phase behaviour through the following criteria.
 
 **Sublimation criterion.**
 There is no split/non-split dichotomy to state this criterion in. At a substrate parameter that is not a root of unity $H_n(q)$ is semisimple, so every short exact sequence of $H_n(q)$-modules splits and $\mathrm{Ext}^1_{H_n(q)}$ vanishes on every pair of modules ([`prop:phase-transition-boundary`](#prop:phase-transition-boundary)); the $S_\lambda$ are irreducible summands of $V^{\otimes n}$ ([`prop:knot-eigenbasis-complete`](#prop:knot-eigenbasis-complete)(1)), and an irreducible module is not an extension of anything by anything.

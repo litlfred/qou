@@ -405,7 +405,7 @@
 | [prop:isovector-chiral-residue](#prop:isovector-chiral-residue) | Binding isovector coefficient as the $W_\lambda$ chiral residue (conditional) | Mass and Binding Algorithms | `qou:QOU.BraidKnot.binding_isovector_mirror_from_chiral` |
 | [prop:binding-error-amplification](#prop:binding-error-amplification) | Binding-energy error amplification: $\mathcal{A} = M_{\mathrm{atom}}/B$ | Ch 12 | `qou:QOU.MassTheory.BindingErrorAmplification.binding_rel_error` |
 | [prop:blowup-yekutieli](#prop:blowup-yekutieli) | Blowup mechanism as Yekutieli lifting obstruction in the brane tower | Ch 4 | `qou:QOU.FluidDynamics.BlowupYekutieli` |
-| [prop:boltzmann-constant](#prop:boltzmann-constant) | Boltzmann constant is unity in QOU natural units | Ch 20 | `qou:QOU.Information.thermalEnergy` |
+| [def:boltzmann-constant](#def:boltzmann-constant) | Boltzmann constant is unity in QOU natural units | Ch 20 | `qou:QOU.Information.thermalEnergy` |
 | [prop:bond-order-le-three](#prop:bond-order-le-three) | Bond order bounded by spatial dimension | Ch 16 | `qou:QOU.Molecular.orthogonal_channels_le_dim` |
 | [prop:borel-partial-resolution](#prop:borel-partial-resolution) | Borel's theorem partially discharges the depth correspondence's sharpness target — explicit dimensions | Ch 25 | `qou:QOU.AppendixSurreals.BorelPartialResolution.borel_partial` |
 | [prop:borromean-h4-categorical-derivation](#prop:borromean-h4-categorical-derivation) | Borromean $h^4 = -3/4$ derived as $(-3) \cdot (1/4)$ via R-matrix + Markov normalisation | Ch 12 | `qou:QOU.BraidsAndKnots.borromean_h4_numeric_factorisation` |
@@ -795,7 +795,7 @@
 | [prop:strangelet-double-beta](#prop:strangelet-double-beta) | Strangelet interactions descend from the degree-2 fiber via double beta decay | Ch 15 | `qou:QOU.Archimedean.strangelet_double_beta` |
 | [prop:coxeter-strong-exchange](#prop:coxeter-strong-exchange) | Strong exchange for Coxeter systems, via the reflection cocycle | Ch 5 | `qou:QOU.Machinery.CoxeterParabolic.strong_exchange` |
 | [prop:brane-boundary](#prop:brane-boundary) | Structure of the defining boundary | Ch 4 | `qou:QOU.Torsion.brane_boundary_structure` |
-| [prop:composite-crossing-parity](#prop:composite-crossing-parity) | Sublimation from shell-filling representation theory | Ch 20 | `qou:QOU.Information.crossing_parity_eq_Z` |
+| [conj:composite-crossing-parity](#conj:composite-crossing-parity) | Sublimation from shell-filling representation theory | Ch 20 | `qou:QOU.Information.crossing_parity_eq_Z` |
 | [prop:subset-cumulant-recursion](#prop:subset-cumulant-recursion) | Subset cumulants of the bond model: reconstruction, the $c_k$-only recursion, and vanishing across a split | Ch 12 | `qou:QOU.Mass.SubsetCumulantRecursion.cum_eq_sizeCum` |
 | [prop:proton-mass-substrate-identity](#prop:proton-mass-substrate-identity) | Substrate evaluation: $m_p = 2 \cdot m_\mu \cdot F_{\mathrm{Bor}}(q_0) - 12 \cdot m_e$ to $0.24\,\mathrm{ppm}$ at $q = q_0$ | Ch 24 | `qou:QOU.AppendixQValues.ProtonBorromeanAssembly.proton_mass_substrate_identity` |
 | [prop:substrate-radial-coordinate](#prop:substrate-radial-coordinate) | Substrate parameter as the radial coordinate | Ch 2 | `qou:QOU.substrate_radial_coordinate` |
