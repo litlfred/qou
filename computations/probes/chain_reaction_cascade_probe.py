@@ -29,7 +29,10 @@ added, sequential and synchronous; (3) the brute-force optimum over all k; (4)
 a perturbation run: A = 3 settled with one bond, then the second bond added,
 recording which particles move in which synchronous round (the light cone, Lean
 light_cone); (5) A = 3 with the bond powers as players too: bond word
-(V_right.V_left)^m, m in 1..3, cost 4m crossings.  Mathematics only; no physical value.  mpmath only.
+(V_right.V_left)^m, m in 1..3, cost 4m crossings; (6) the same under the
+owner's rule of 2026-11-15: reading 3 per bonded group (each bonded group
+tested on its own word, unbonded particles alone).  Fully bonded chains are a
+single group, so (2)-(5) for them are the same under both rules.  Mathematics only; no physical value.  mpmath only.
 """
 from __future__ import annotations
 
@@ -95,8 +98,35 @@ def joint(k, bonds, h):
     return w
 
 
+def components(A, bonds):
+    """Bonded groups: maximal runs of windows joined by bonds b (b joins b, b+1)."""
+    comps, cur = [], [0]
+    for i in range(1, A):
+        if (i - 1) in bonds:
+            cur.append(i)
+        else:
+            comps.append(cur)
+            cur = [i]
+    comps.append(cur)
+    return comps
+
+
 def energy(C, k, bonds, h, m=None):
-    """m: optional bond powers (one per bond); the bond word is then (V_right.V_left)^m."""
+    """m: optional bond powers (one per bond); the bond word is then (V_right.V_left)^m.
+
+    C is either one Chars on H_{3A} (rule "whole joined word") or a dict
+    {size: Chars on H_{3 size}} (rule "per bonded group", owner 2026-11-15):
+    each bonded group is tested on its own word, unbonded particles alone."""
+    if isinstance(C, dict):
+        viol, chs = mp.mpf(0), []
+        for comp in components(len(k), bonds):
+            a = comp[0]
+            sub_b = [b - a for b in bonds if b in comp and b + 1 in comp]
+            sub_m = None if m is None else [m[j] for j, b in enumerate(bonds) if b in comp and b + 1 in comp]
+            e, ch = energy(C[len(comp)], k[a:a + len(comp)], sub_b, h, sub_m)
+            viol += e[0]
+            chs += ch
+        return (viol, 2 * sum(k) + (0 if m is None else 4 * sum(m))), chs
     w = joint(k, [], h)
     for j, b in enumerate(bonds):
         w += bond(b, h) * (1 if m is None else m[j])
@@ -263,6 +293,28 @@ def main() -> int:
             res["perturbation"] = {"optimum_bond0": a1, "settle_bond0": seq1, "after_bond1": pert}
             res["bond_powers_as_players"] = joint_bond_cascade(C, A, h, log)
         out[f"A{A}"] = res
+    # Owner ruling 2026-11-15: reading 3 per bonded group.  Fully bonded chains
+    # are one group, so their rows above are unchanged; re-run what differs.
+    log(f"\nRULE: reading 3 per bonded group (owner 2026-11-15), wall {time.time() - t0:.0f} s")
+    Cs = {s: Chars(3 * s, q) for s in (1, 2, 3)}
+    grp = {}
+    for A in (2, 3):
+        r = {}
+        for label, bonds in (("unbonded", []), ("bonded", list(range(A - 1)))):
+            best, arg, feas = brute(Cs, A, bonds, h)
+            log(f"  A={A} {label}: optimum {arg} (viol {mp.nstr(best[0], 5)}, cost {best[1]}); "
+                f"{len(feas)} feasible of {KMAX ** A}")
+            r[label] = {"optimum": arg, "optimum_viol": fmt(best[0]), "optimum_cost": best[1],
+                        "n_feasible": len(feas)}
+        if A == 3:
+            _, a1, f1 = brute(Cs, A, [0], h)
+            log(f"  A=3 bond 0 only: optimum {a1}, {len(f1)} feasible")
+            seq1 = cascade_sequential(Cs, [3, 3, 3], [0], h, log)
+            pert = cascade_sync(Cs, seq1["stable"], [0, 1], h, log, " after adding bond 1")
+            r["perturbation"] = {"optimum_bond0": a1, "n_feasible_bond0": len(f1),
+                                 "settle_bond0": seq1, "after_bond1": pert}
+        grp[f"A{A}"] = r
+    out["per_bonded_group"] = grp
     log(f"\nwall {time.time() - t0:.0f} s")
 
     from qou_substrate.witness import WitnessBuilder  # noqa: PLC0415

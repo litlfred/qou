@@ -65,6 +65,24 @@ theorem no_infinite_cascade (step : S → S → Prop) (E : S → ℕ)
   have := potential_drop step E hE f hf (E (f 0) + 1)
   omega
 
+/-- A product of a start state: a stable state reachable from it by improving
+moves.  Two distinct products of the same start are two outcomes of the same
+reactants along different pathways (the cascade's isomers). -/
+def IsProduct (step : S → S → Prop) (s t : S) : Prop :=
+  Relation.ReflTransGen step s t ∧ Stable step t
+
+/-- Every start state has at least one product. -/
+theorem exists_product (step : S → S → Prop) (E : S → ℕ)
+    (hE : ∀ s t, step s t → E t < E s) (s : S) : ∃ t, IsProduct step s t :=
+  exists_stable_of_potential step E hE s
+
+/-- A stable start state is its own only product: nothing moves. -/
+theorem isProduct_of_stable {step : S → S → Prop} {s t : S} (hs : Stable step s)
+    (h : IsProduct step s t) : t = s := by
+  rcases h.1.cases_head with h' | ⟨u, hu, _⟩
+  · exact h'.symm
+  · exact absurd hu (hs u)
+
 end Termination
 
 section LightCone

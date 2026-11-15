@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-15T14:30:16.622405+00:00",
-  "commitSha": "afe2c986437cc3429cc9384e019daed0bd02c75a",
+  "computedAt": "2026-11-15T14:52:11.873704+00:00",
+  "commitSha": "f011993335b906931f93f35b3fe0ec3486c1a72c",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 733945,
+  "durationMs": 781152,
   "computation": "chain-reaction-cascade-probe",
   "scriptFile": "chain_reaction_cascade_probe.py",
-  "scriptHash": "aba578f8a026",
-  "scriptCommitSha": "afe2c986437cc3429cc9384e019daed0bd02c75a",
+  "scriptHash": "1ada4a354449",
+  "scriptCommitSha": "f011993335b906931f93f35b3fe0ec3486c1a72c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -834,6 +834,109 @@
         "optimum_viol": "0.0",
         "optimum_cost": 24,
         "n_feasible": 176
+      }
+    },
+    "per_bonded_group": {
+      "A2": {
+        "unbonded": {
+          "optimum": [
+            3,
+            3
+          ],
+          "optimum_viol": "0.0",
+          "optimum_cost": 12,
+          "n_feasible": 4
+        },
+        "bonded": {
+          "optimum": [
+            3,
+            3
+          ],
+          "optimum_viol": "0.0",
+          "optimum_cost": 12,
+          "n_feasible": 4
+        }
+      },
+      "A3": {
+        "unbonded": {
+          "optimum": [
+            3,
+            3,
+            3
+          ],
+          "optimum_viol": "0.0",
+          "optimum_cost": 18,
+          "n_feasible": 8
+        },
+        "bonded": {
+          "optimum": [
+            6,
+            6,
+            3
+          ],
+          "optimum_viol": "0.0739828819863217055622029498133941808630262585646724856118512",
+          "optimum_cost": 30,
+          "n_feasible": 0
+        },
+        "perturbation": {
+          "optimum_bond0": [
+            3,
+            3,
+            3
+          ],
+          "n_feasible_bond0": 8,
+          "settle_bond0": {
+            "path": [
+              [
+                3,
+                3,
+                3
+              ]
+            ],
+            "stable": [
+              3,
+              3,
+              3
+            ],
+            "viol": "0.0",
+            "cost": 18
+          },
+          "after_bond1": {
+            "rounds": [
+              [
+                3,
+                3,
+                3
+              ],
+              [
+                6,
+                3,
+                3
+              ],
+              [
+                6,
+                6,
+                3
+              ]
+            ],
+            "movers": [
+              [
+                0
+              ],
+              [
+                1
+              ]
+            ],
+            "cycled": false,
+            "end": [
+              6,
+              6,
+              3
+            ],
+            "viol": "0.0739828819863217055622029498133941808630262585646724856118512",
+            "cost": 30
+          }
+        }
       }
     }
   },
