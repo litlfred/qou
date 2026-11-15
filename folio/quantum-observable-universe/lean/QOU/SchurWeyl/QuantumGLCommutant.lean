@@ -3,6 +3,7 @@ Copyright (c) 2026 QOU contributors. All rights reserved.
 Released under Apache 2.0 license.
 -/
 import QOU.SchurWeyl.QuantumGLWeights
+import QOU.SchurWeyl.QuantumGLHWBound
 import Mathlib.LinearAlgebra.BilinearForm.Orthogonal
 import Mathlib.LinearAlgebra.Matrix.DotProduct
 import Mathlib.LinearAlgebra.FreeModule.Finite.Matrix
@@ -203,14 +204,8 @@ theorem weightProj_mem_uqGens (q : K) (m : ℕ) (μ : Fin d → ℕ) :
     weightProj μ ∈ uqGens (d := d) q m :=
   Or.inr (Or.inr ⟨μ, rfl⟩)
 
-/-- The weights occurring in `(K^d)^{⊗(m+1)}`: contents of index words. Definitionally the
-`occWeights` of `QuantumGLHWBound` (sibling PR #7873); kept local so the two modules can be
-imported together. -/
-def occW (d m : ℕ) : Finset (Fin d → ℕ) :=
-  Finset.univ.image (fun a : Fin (m + 1) → Fin d => content a)
-
 theorem sum_weightProj (m : ℕ) :
-    ∑ μ ∈ occW d m, (weightProj μ : Matrix (Fin (m + 1) → Fin d) _ K) = 1 := by
+    ∑ μ ∈ occWeights d m, (weightProj μ : Matrix (Fin (m + 1) → Fin d) _ K) = 1 := by
   classical
   ext a b
   rw [Matrix.sum_apply, Matrix.one_apply]
@@ -219,10 +214,10 @@ theorem sum_weightProj (m : ℕ) :
   · subst hab
     simp only [if_true]
     rw [Finset.sum_ite_eq]
-    simp [occW]
+    simp [occWeights]
   · simp [hab]
 
-theorem weightProj_eq_zero_of_not_mem {m : ℕ} {μ : Fin d → ℕ} (hμ : μ ∉ occW d m) :
+theorem weightProj_eq_zero_of_not_mem {m : ℕ} {μ : Fin d → ℕ} (hμ : μ ∉ occWeights d m) :
     (weightProj μ : Matrix (Fin (m + 1) → Fin d) _ K) = 0 := by
   ext a b
   simp only [weightProj, Matrix.diagonal_apply, Matrix.zero_apply]
@@ -273,14 +268,14 @@ theorem exists_ne_zero_mem_hwSpace (q : L) (m : ℕ) {W : Submodule L ((Fin (m +
     ∃ μ, ∃ v ∈ W, v ≠ 0 ∧ v ∈ hwSpace q m μ := by
   classical
   -- weights carrying a nonzero vector of `W`
-  set T := (occW d m).filter
+  set T := (occWeights d m).filter
     (fun μ => ∃ v ∈ W, v ≠ 0 ∧ weightProj μ *ᵥ v = v) with hT
   have hTne : T.Nonempty := by
     obtain ⟨v, hvW, hv0⟩ := Submodule.exists_mem_ne_zero_of_ne_bot hne
     by_contra hemp
     rw [Finset.not_nonempty_iff_eq_empty] at hemp
     apply hv0
-    have hsplit : v = ∑ μ ∈ occW d m, weightProj μ *ᵥ v := by
+    have hsplit : v = ∑ μ ∈ occWeights d m, weightProj μ *ᵥ v := by
       rw [← Matrix.sum_mulVec, sum_weightProj, one_mulVec]
     rw [hsplit]
     refine Finset.sum_eq_zero fun μ hμ => ?_
@@ -295,7 +290,7 @@ theorem exists_ne_zero_mem_hwSpace (q : L) (m : ℕ) {W : Submodule L ((Fin (m +
   refine ⟨μ, v, hvW, hv0, hvμ, fun i j hij => ?_⟩
   set u := raiseOp q q⁻¹ i j *ᵥ v with hu
   have huW : u ∈ W := hW _ (raiseOp_mem_uqGens q m hij) v hvW
-  rw [show u = ∑ ν ∈ occW d m, weightProj ν *ᵥ u by
+  rw [show u = ∑ ν ∈ occWeights d m, weightProj ν *ᵥ u by
     rw [← Matrix.sum_mulVec, sum_weightProj, one_mulVec]]
   refine Finset.sum_eq_zero fun ν hν => ?_
   by_cases hshift : ν j = μ j + 1 ∧ ν i + 1 = μ i ∧ ∀ x, x ≠ i → x ≠ j → ν x = μ x
@@ -347,7 +342,7 @@ theorem mulVec_mem_hwSpace {q : L} {m : ℕ} {Y : Matrix (Fin (m + 1) → Fin d)
 /-- Restriction of a commutant element to the highest-weight spaces. -/
 def resHW (q : L) (m : ℕ) :
     commutant (uqGens (d := d) q m) →ₗ[L]
-      ((μ : occW d m) → (hwSpace q m μ.1 →ₗ[L] hwSpace q m μ.1)) where
+      ((μ : occWeights d m) → (hwSpace q m μ.1 →ₗ[L] hwSpace q m μ.1)) where
   toFun Y μ := (Matrix.mulVecLin Y.1).restrict fun _ hv => mulVec_mem_hwSpace Y.2 hv
   map_add' Y Y' := by
     funext μ; ext v
@@ -366,7 +361,7 @@ theorem resHW_injective [LinearOrder L] [IsStrictOrderedRing L] (q : L) (m : ℕ
     refine Submodule.iSup_induction (motive := fun v => Y.1 *ᵥ v = 0)
       (fun μ => hwSpace q m μ) hv (fun μ w hw => ?_)
       (mulVec_zero _) (fun x y hx hy => by simp only at hx hy ⊢; rw [mulVec_add, hx, hy, add_zero])
-    by_cases hμ : μ ∈ occW d m
+    by_cases hμ : μ ∈ occWeights d m
     · have := congrArg (fun f => ((f ⟨μ, hμ⟩) ⟨w, hw⟩ : (Fin (m + 1) → Fin d) → L)) hY
       simpa [resHW] using this
     · show Y.1 *ᵥ w = 0
@@ -381,23 +376,22 @@ theorem resHW_injective [LinearOrder L] [IsStrictOrderedRing L] (q : L) (m : ℕ
 /-- **F3: `dim B' ≤ Σ_μ (dim N_μ)²`.** -/
 theorem finrank_commutant_le [LinearOrder L] [IsStrictOrderedRing L] (q : L) (m : ℕ) :
     Module.finrank L (commutant (uqGens (d := d) q m))
-      ≤ ∑ μ ∈ occW d m, Module.finrank L (hwSpace q m μ) ^ 2 := by
+      ≤ ∑ μ ∈ occWeights d m, Module.finrank L (hwSpace q m μ) ^ 2 := by
   have h := LinearMap.finrank_le_finrank_of_injective (resHW_injective (d := d) q m)
   rw [Module.finrank_pi_fintype] at h
   refine h.trans (le_of_eq ?_)
-  rw [← Finset.sum_coe_sort (occW d m)]
+  rw [← Finset.sum_coe_sort (occWeights d m)]
   refine Finset.sum_congr rfl fun μ _ => ?_
   rw [Module.finrank_linearMap, sq]
 
 open YoungDiagram QOU.Mathlib
 
-/-- **G3.4, conditional on (★)**: the Jimbo image of `H_{m+1}(q)` is the full commutant of the
-`U_q(gl_d)` operators on `(L^d)^{⊗(m+1)}`. The hypothesis `hstar` is the bound (★) of the scoping
-audit; it is a hypothesis of the theorem, not an axiom. -/
-theorem range_jimbo_eq_commutant [LinearOrder L] [IsStrictOrderedRing L] [NeZero d]
+/-- **G3.4 from (★)**: the Jimbo image is the full commutant, given the bound (★) as the
+hypothesis `hstar`. `range_jimbo_eq_commutant` discharges it with `hstar_occWeights`. -/
+theorem range_jimbo_eq_commutant_of_hstar [LinearOrder L] [IsStrictOrderedRing L] [NeZero d]
     (q : L) (hq : q ≠ 0)
     (hq2 : GenericParameter.NotRootOfUnity q) (m : ℕ)
-    (hstar : ∑ μ ∈ occW d m, Module.finrank L (hwSpace q m μ) ^ 2
+    (hstar : ∑ μ ∈ occWeights d m, Module.finrank L (hwSpace q m μ) ^ 2
       ≤ ∑ lam : RowCapIdx d m,
           Fintype.card (StandardYoungTableau (partitionShape lam.1)) ^ 2) :
     LinearMap.range (jimbo d q hq m).toLinearMap = commutant (uqGens q m) := by
@@ -407,6 +401,24 @@ theorem range_jimbo_eq_commutant [LinearOrder L] [IsStrictOrderedRing L] [NeZero
   refine Submodule.eq_of_le_of_finrank_le hle ?_
   rw [finrank_range_jimbo q hq hq2 m]
   exact (finrank_commutant_le q m).trans hstar
+
+theorem sub_inv_ne_zero_of_notRootOfUnity {q : L} (hq : q ≠ 0)
+    (hq2 : GenericParameter.NotRootOfUnity q) : q - q⁻¹ ≠ 0 := by
+  intro h
+  have h1 : q = q⁻¹ := sub_eq_zero.mp h
+  apply hq2 2 two_pos
+  rw [sq]
+  nth_rewrite 2 [h1]
+  exact mul_inv_cancel₀ hq
+
+/-- **G3.4**: over a linearly ordered field and for `q` not a root of unity, the image of
+`H_{m+1}(q)` under the `gl_d` Jimbo action is exactly the commutant of the `U_q(gl_d)` operators
+(`E_i`, `F_i`, Cartan elements, weight projectors) on `(L^d)^{⊗(m+1)}`. -/
+theorem range_jimbo_eq_commutant [LinearOrder L] [IsStrictOrderedRing L] [NeZero d]
+    (q : L) (hq : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (m : ℕ) :
+    LinearMap.range (jimbo d q hq m).toLinearMap = commutant (uqGens q m) :=
+  range_jimbo_eq_commutant_of_hstar q hq hq2 m
+    (hstar_occWeights q hq (sub_inv_ne_zero_of_notRootOfUnity hq hq2) hq2 m)
 
 end Bound
 
