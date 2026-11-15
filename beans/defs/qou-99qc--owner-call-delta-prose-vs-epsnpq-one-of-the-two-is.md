@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-15T23:06:51Z
+updated_at: 2026-11-15T23:09:05Z
 parent: qou-10v9
 ---
 
@@ -3471,3 +3471,15 @@ Step 2: compute the T = ½ subspace at T³ = −½ exactly, as the kernel of the
 Step 3: grep the corpus for a construction that fixes the multiplicity vector (γγ pair creation; seminormal basis; diquark channel). If one is found, cite it and evaluate. If none is found, report the family and say the choice is open.
 Prediction: ε_np depends on the multiplicity coordinate (it is not constant on the 2-dim space).
 **ε-J1: why does J give ε_pn/ε_np ≈ q?** Compute the J23-dressed ratio for words V⁰ (none), V¹ and V² as well as V³ and V⁶, on the same (pre-registered, |udd⟩/|uud⟩ and sum) states. Prediction: with no word (V⁰) the ratio is exactly q, and the (q−1)⁵ deviation comes from the word. If V⁰ is not exactly q, report as found.
+
+
+### RESULT ε-N1 and ε-J1 (2026-11-15 23:25Z), neutron_vector_epsilon_probe.py
+**ε-N1.** The T=½ neutron space at T³=−½ is ker F (Δ(F) = F⊗1 + K⁻¹⊗F, which commutes with Ř std). It is spanned by n_A = [ud]₁₂⊗d and n_B = d⊗[ud]₂₃. The old states |udd⟩ and the symmetric sum are NOT in it (checked). Prediction (ε depends on the multiplicity coordinate t) CONFIRMED, and strongly so. ε_np at q₀, with no extra element:
+
+| | n_A (t=0) | n_B | t=1 | t=−1 |
+|---|---|---|---|---|
+| V³ | −6.390 | −0.0184 | −0.114 | +0.080 |
+| V⁶ | +1.423 | −0.0261 | −0.125 | +0.061 |
+
+It even changes sign and changes with the word. Conclusion: the word-level ratio ε = A(Δ_S·Vᵏn)/A(Vᵏn) is not a stable functional on T=½ neutron states. The ≈ −h values of ε-W1 belonged to non-isospin states. A quick corpus grep (QuarkState/, eightfold, h3 idempotents) found no construction that fixes t, so the choice is OPEN, and that is a shallow grep, not a full corpus-grep.
+**ε-J1.** Prediction CONFIRMED: with no word (V⁰), on the symmetric sum states, ε_pn/ε_np = q exactly. ε_np = −(q−1)(q+1)⁴/(4q²(q²+1)) and ε_pn = q·ε_np. The single state has a zero amplitude at V⁰. For V¹ and V² the ratio departs from q at FIRST order (ratio − q = −(3/2)(q−1) + …), so ≈ q is not generic. V³ and V⁶ return to agreement through (q−1)⁴. Mechanism at V⁰: the p→n channel has one more power of q from the K-weights of the emitted pair, and J does not change it. The return at V³ and V⁶ is unexplained (it may be because the word length is a multiple of 3).
