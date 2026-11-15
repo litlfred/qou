@@ -60,7 +60,7 @@ The battery has been run over all $10{,}000$ helon-style assignments (3
 strands per fermion, per-strand twist in $\{-1, 0, +1\}$), of which $4$
 survive. That ratio must not be read as a $2500\!:\!1$ filter: the battery
 collapses to a single linear equation per flavour, and the surviving count
-is multiset counting. Proved sorry-free in
+is multiset counting. Proved in
 `QOU/StandardModel/TwistBatteryVacuity.lean`:
 
 1. **The spectrum battery is exactly $T = 3Q$.** Both the candidate

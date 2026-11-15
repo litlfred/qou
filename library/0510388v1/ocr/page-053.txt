@@ -1,0 +1,28 @@
+23. Maxwell's equation on s?.
+We now apply the Key Lemma to the proof of Maxwell's equation
+V XB = V + OE/at
+on S°. In the Key Lemma, we use the kernel function
+(a) = (—1/4n’) (w— a) esc o,
+which, as we noted earlier, is a fundamental solution of the shifted Laplacian on 3 5
+Ad —o =8.
+
+With this choice of kernel function, we have that
+
+(cos &) (a) = bo(a) = (—1/4n”) (wn a) cot a,
+which is the fundamental solution of the Laplacian on Ss ;
+
+Ado = 8 — I(r’).
+With these choices, the Key Lemma reads
+Vy X {Px V(x) XV} — Vy {V(x) * Vo}
+= &(x, y) (V(x) — < VQ), y>y)-
+
+Keeping these choices of kernel functions, we now define the Biot-Savart operator
+by formula (2) of Theorem 2,
+
+BS(V)(y) = Iss Pye V(x) XVy (x, y) dx.
+Then we integrate the Key Lemma over S° and get
+J Vy X{PxVoy XVyo} dx — Jigs Vy {V(x) © Vx bo} dx
+
+= Jss Sy) (V(X) — < VOX), y>y) dx.
+
+53

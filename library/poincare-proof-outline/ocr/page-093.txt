@@ -1,0 +1,66 @@
+qed
+
+lemma poincare-between-sum-distances:
+assumes u € unit-disc and v € unit-disc and w € unit-disc
+shows poincare-between uv w <->
+poincare-distance uv + poincare-distance v w = poincare-distance uw (is ?P’ uv w)
+proof (cases u = v)
+case True
+thus ?thesis
+using assms
+by simp
+next
+case False
+have V w. w € unit-disc —+ (poincare-between uv w <—> poincare-distance uv + poincare-distance v w = poincare-distance
+uw) (is ?P uv)
+proof (rule wlog-positive-z-azis)
+fix x
+assume is-real x 0 < Rex Rex < 1
+have of-complex x € circline-set x-axis
+using <is-real x»
+by (auto simp add: circline-set-x-azis)
+
+have of-complex x € unit-disc
+using <is-real z) (0 < Rex» (Rex < 1>
+by (simp add: cmod-eq-Re)
+
+have « # 0
+using <is-real z» «Re x > 0»
+by auto
+
+show ?P (of-complez x) On
+proof (rule alll, rule imp!)
+fix w
+assume w € unit-disc
+then obtain w’ where w = of-complez w'
+using inf-or-of-complez|of w]
+by auto
+
+show ?P’ (of-complex x) 0, w
+proof (cases w = 0;)
+case True
+thus ?thesis
+by simp
+next
+case False
+hence w’ 4 0
+using <w = of-complez w’>
+by auto
+
+show ?thesis
+using <is-real 2» (x # 0> «w = of-complez wy «w' 4 0»
+using <of-complex x € unit-discy «w € unit-discy
+apply simp
+apply (subst poincare-between-a-axis-u0v, simp-all)
+apply (subst poincare-between-sum-distances-z-axis-u0v, simp-all)
+done
+qed
+qed
+next
+show v € unit-disc u € unit-disc
+using assms
+by auto
+next
+show v 4 u
+using <u 4 v)
+by simp

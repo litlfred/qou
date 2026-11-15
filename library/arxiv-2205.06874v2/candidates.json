@@ -1,0 +1,196 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2205.06874v2",
+ "source": {
+  "structure_sha256": "9b41365160c17ab40701fe1d39f9ca238e3ae2293707642c0546545a0d17cb54",
+  "file": "2205.06874v2.pdf"
+ },
+ "provenance": {
+  "title": "State sum models with defects based on spherical fusion categories",
+  "authors": "Catherine Meusburger",
+  "arxiv": {
+   "id": "2205.06874",
+   "version": "2",
+   "primary_class": "math.QA",
+   "stamp_date": "15 Jun 2023"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 11,
+  "by_kind": {
+   "recommendation": 11
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This means that the objects labeling the regions and the 1-morphisms labeling lines of the diagrams must coincide, while the 2-morphisms at the vertices are composed with the (co)evaluations of the 1-morphisms at the incident lines.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-diagrams-for-pivotal-2-categories.md",
+   "section_title": "Diagrams for pivotal 2-categories",
+   "pages": "13-14",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It must be sufficiently refined to resolve all defect surfaces and must intersect the defect surfaces generically.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-019-triangulated-3-manifolds-with-defects.md",
+   "section_title": "Triangulated 3-manifolds with defects",
+   "pages": "28-29",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The only additional restriction is that the defect surfaces must meet the cut transversally and all pieces must be generic and transversal.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-022-state-sum-model-with-defects.md",
+   "section_title": "State sum model with defects",
+   "pages": "37-39",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In particular, any fine neighbourhood of $D$ must have topology $[0,1]\\times D$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-025-neighbourhoods-of-defect-surfaces.md",
+   "section_title": "Neighbourhoods of defect surfaces",
+   "pages": "41-44",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The moves for tetrahedra that also involve defect lines and defect vertices are analogous, but with the additional conditions that defect vertices must not lie on faces and defect edges must not intersect edges of the tetrahedra.",
+   "strength": "must-not",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-026-state-sums-with-defect-discs.md",
+   "section_title": "State sums with defect discs",
+   "pages": "44-48",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The only difference to Proposition \\ref{th:topological invariance} is that $D$ is no longer a disc and the resulting diagram on $D$ must be cut along the triangulation to obtain a polygon diagram.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-027-triangulation-independence.md",
+   "section_title": "Triangulation independence",
+   "pages": "48-51",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Similarly, for any triangle with labeled elements of $G$ or $G'$, the oriented product of the group elements must be trivial by \\eqref{homvecg0}.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-029-state-sums-with-defect-surfaces.md",
+   "section_title": "State sums with defect surfaces",
+   "pages": "51-59",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "They should be thought of as defects with additional structure, according to the authors.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-030-ribbon-invariants-from-line-defects.md",
+   "section_title": "Ribbon invariants from line defects",
+   "pages": "59-68",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "With the results by Balsam and Kirillov \\cite{BK,Kr} on the relation between Turaev-Viro-Barrett-Westbury state sums, Levin-Wen models \\cite{LW} and Kitaev's quantum double models \\cite{Kit}, it should also be possible to apply our state sums with defects to those models and to make contact with the work \\cite{KK} by Kitaev and Kong.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-030-ribbon-invariants-from-line-defects.md",
+   "section_title": "Ribbon invariants from line defects",
+   "pages": "59-68",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "However, the categorical defect data in [LY20] differs from the data in the other publications and should be thought of as additional structure, as pointed out in [LY20].",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Defect vertices must be in the interior of tetrahedra and defect edges must intersect their faces transversally in the interior.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

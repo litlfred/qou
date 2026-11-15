@@ -1,0 +1,121 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1609.08719v1",
+ "source": {
+  "structure_sha256": "f61ff2111e9a97f9e87191e3936bfc998db9efad44cec9d4fc485f5c65145efa",
+  "file": "1609.08719v1.pdf"
+ },
+ "provenance": {
+  "title": "AN EXPERIMENTAL INVESTIGATION OF NEUMANN\u2019S CONJECTURE",
+  "authors": "STEPHEN GILLES AND PETER HUSTON",
+  "arxiv": {
+   "id": "1609.08719",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "28 Sep 2016"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "recommendation": 6
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Since the meridian and the longitude of a torus are homotopically circles, it should be possible to require that any path following a meridian or longitude winds exactly once.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-24-gluing-equations.md",
+   "section_title": "Gluing Equations",
+   "pages": "4-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In other words, it should be possible to construct a system of equations, with variables representing various angles of each $\\Delta_i$, such that certain sums are $2 \\pi$.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-24-gluing-equations.md",
+   "section_title": "Gluing Equations",
+   "pages": "4-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "For every consecutive pair of edges that $p$ crosses, those edges must meet at an angle, which is associated to some $z_i$, $\\frac{z_i - 1}{z_i}$, or $\\frac{1}{1-z_i}$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-24-gluing-equations.md",
+   "section_title": "Gluing Equations",
+   "pages": "4-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "If two triangulations of $M$ are both composed of non-degenerate, geometrically viable simplices, by Mostow rigidity they must yield the same volume.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-24-gluing-equations.md",
+   "section_title": "Gluing Equations",
+   "pages": "4-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This also includes some degree $2$ polynomials such as $x^2 + 13$, $x^2 + 22$, and $x^2 - x + 17$, even though it is known that all fields with one complex place must be exhibited by some manifold.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-018-51-examples-of-missing-fields.md",
+   "section_title": "Examples of missing fields",
+   "pages": "12-12",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "For the concrete number field associated to root $0.850\\dotsc \\pm 0.654\\dotsc i$, we only observed one volume: $9.054\\dotsc$, though the lattice should be of dimension $2$.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-018-51-examples-of-missing-fields.md",
+   "section_title": "Examples of missing fields",
+   "pages": "12-12",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

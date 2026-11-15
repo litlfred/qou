@@ -7,10 +7,11 @@
   "bytes": 1401648,
   "pages": 70,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,19 +21,32 @@
    "stamp_date": "30 Apr 2011"
   },
   "doi": null,
-  "title": "E-mail: meliot@phare.normalesup.org",
+  "title": "A central limit theorem for the characters of the infinite symmetric group and of the infinite Hecke algebra",
   "authors_raw": null,
   "title_lines": [
    "E-mail: meliot@phare.normalesup.org"
   ],
-  "abstract": "In this paper, we review the representation theory of the in\ufb01nite symmetric group, and we extend the works of Kerov and Vershik by proving that the irreducible characters ofS\u221e always satisfy a central limit theorem. Hence, for any point of the Thoma simplex, the corresponding measures on the levels Yn of the Young graph have a property of gaussian concentration. By using the Robinson-Schensted-Knuth algorithm and the theory of Pitman operators, we relate these results to the properties of certain random per- mutations obtained by ri\ufb04e shu\ufb04es, and to the behaviour of random walks conditioned to stay in a Weyl chamber.",
+  "abstract": "In this paper, we review the representation theory of the inﬁnite symmetric group, and we extend the works of Kerov and Vershik by proving that the irreducible characters of S∞always satisfy a central limit theorem. Hence, for any point of the Thoma simplex, the corresponding measures on the levels Yn of the Young graph have a property of gaussian concentration. By using the Robinson-Schensted-Knuth algorithm and the theory of Pitman operators, we relate these results to the properties of certain random per- mutations obtained by riﬄe shuﬄes, and to the behaviour of random walks conditioned to stay in a Weyl chamber.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20181022184659Z",
-   "Creator": "LaTeX with hyperref package",
+   "Title": "A central limit theorem for the characters of the infinite symmetric group and of the infinite Hecke algebra",
    "Producer": "pdfTeX-1.40.10",
-   "Title": "A central limit theorem for the characters of the infinite symmetric group and of the infinite Hecke algebra"
-  }
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181022184659Z"
+  },
+  "title_raw": "E-mail: meliot@phare.normalesup.org",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "A central limit theorem for the characters of the infinite symmetric group and of the infinite Hecke algebra",
+   "heading": "E-mail: meliot@phare.normalesup.org Abstract In this paper, we review the representation theory of the inﬁnite symmetric group, and we extend the works of Kerov and Vershik by proving that the irreducible characters of S ∞ always satisfy a central limit theorem. Hence, for any point of the Thoma sim",
+   "outline": "1 Representation theory of the infinite symmetric group",
+   "text": "E-mail: meliot@phare.normalesup.org",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "E-mail: meliot@phare.normalesup.org"
  },
  "toc": [
   {
@@ -40,125 +54,822 @@
    "title": "Representation theory of the infinite symmetric group",
    "page": 4,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "Quasi-symmetric functions and a link with random permutations",
    "page": 12,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "Observables of Young diagrams and their cumulants",
    "page": 22,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 1,
    "title": "Kerov-Vershik law of large numbers",
    "page": 31,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   },
   {
    "level": 1,
    "title": "Central limit theorems for characters and for partitions",
    "page": 36,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 1,
    "title": "Pitman operators and a link with conditioned random walks and brownian matrices",
    "page": 42,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "42"
   },
   {
    "level": 1,
    "title": "Jones-Ocneanu traces of Hecke algebras and (q,t)-Plancherel measures",
    "page": 57,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "57"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "64",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "69",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "70",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-2-quasi-symmetric-functions-and-a-link-with-rand",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 6213,
+   "n_words": 1057,
+   "label_start": null,
+   "label_end": "4"
+  },
+  {
+   "id": "sec-000-1-representation-theory-of-the-infinite-symmetri",
+   "number": "1",
+   "title": "Representation theory of the infinite symmetric group",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 12,
+   "n_chars": 16127,
+   "n_words": 3173,
+   "label_start": "4",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-001-2-quasi-symmetric-functions-and-a-link-with-rand",
    "number": "2",
    "title": "Quasi-symmetric functions and a link with random permutations",
    "level": 1,
    "page_start": 12,
    "page_end": 22,
-   "n_chars": 18716,
-   "n_words": 3370
+   "n_chars": 19194,
+   "n_words": 3850,
+   "label_start": "12",
+   "label_end": "22"
   },
   {
-   "id": "sec-001-3-observables-of-young-diagrams-and-their-cumula",
+   "id": "sec-002-3-observables-of-young-diagrams-and-their-cumula",
    "number": "3",
    "title": "Observables of Young diagrams and their cumulants",
    "level": 1,
    "page_start": 22,
    "page_end": 31,
-   "n_chars": 15600,
-   "n_words": 2754
+   "n_chars": 16089,
+   "n_words": 3248,
+   "label_start": "22",
+   "label_end": "31"
   },
   {
-   "id": "sec-002-4-kerov-vershik-law-of-large-numbers",
+   "id": "sec-003-4-kerov-vershik-law-of-large-numbers",
    "number": "4",
    "title": "Kerov-Vershik law of large numbers",
    "level": 1,
    "page_start": 31,
    "page_end": 36,
-   "n_chars": 9944,
-   "n_words": 1788
+   "n_chars": 10234,
+   "n_words": 2050,
+   "label_start": "31",
+   "label_end": "36"
   },
   {
-   "id": "sec-003-5-central-limit-theorems-for-characters-and-for",
+   "id": "sec-004-5-central-limit-theorems-for-characters-and-for",
    "number": "5",
    "title": "Central limit theorems for characters and for partitions",
    "level": 1,
    "page_start": 36,
    "page_end": 42,
-   "n_chars": 8852,
-   "n_words": 1414
+   "n_chars": 9146,
+   "n_words": 1709,
+   "label_start": "36",
+   "label_end": "42"
   },
   {
-   "id": "sec-004-6-pitman-operators-and-a-link-with-conditioned-r",
+   "id": "sec-005-6-pitman-operators-and-a-link-with-conditioned-r",
    "number": "6",
    "title": "Pitman operators and a link with conditioned random walks and brownian matrices",
    "level": 1,
    "page_start": 42,
    "page_end": 57,
-   "n_chars": 27512,
-   "n_words": 5001
+   "n_chars": 28473,
+   "n_words": 5966,
+   "label_start": "42",
+   "label_end": "57"
   },
   {
-   "id": "sec-005-7-jones-ocneanu-traces-of-hecke-algebras-and-qt",
+   "id": "sec-006-7-jones-ocneanu-traces-of-hecke-algebras-and-qt",
    "number": "7",
    "title": "Jones-Ocneanu traces of Hecke algebras and (q,t)-Plancherel measures",
    "level": 1,
    "page_start": 57,
    "page_end": 70,
-   "n_chars": 28757,
-   "n_words": 4529
+   "n_chars": 29226,
+   "n_words": 5001,
+   "label_start": "57",
+   "label_end": "70"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 7,
-  "sections": 6,
-  "chars_total": 109381,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 134702,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "cltinfinity.tex",
    "tex_sections": 27,
-   "overlaid": 6,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -166,50 +877,63 @@
    },
    "sections": [
     {
-     "id": "sec-000-2-quasi-symmetric-functions-and-a-link-with-rand",
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-representation-theory-of-the-infinite-symmetri",
+     "title": "Representation theory of the infinite symmetric group",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-quasi-symmetric-functions-and-a-link-with-rand",
      "title": "Quasi-symmetric functions and a link with random permutations",
-     "prose_ratio": 0.996,
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-observables-of-young-diagrams-and-their-cumula",
+     "title": "Observables of Young diagrams and their cumulants",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-4-kerov-vershik-law-of-large-numbers",
+     "title": "Kerov-Vershik law of large numbers",
+     "prose_ratio": 0.962,
      "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-3-observables-of-young-diagrams-and-their-cumula",
-     "title": "Observables of Young diagrams and their cumulants",
-     "prose_ratio": 0.989,
-     "coverage_ratio": 0.988,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-002-4-kerov-vershik-law-of-large-numbers",
-     "title": "Kerov-Vershik law of large numbers",
-     "prose_ratio": 0.997,
-     "coverage_ratio": 0.964,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-003-5-central-limit-theorems-for-characters-and-for",
+     "id": "sec-004-5-central-limit-theorems-for-characters-and-for",
      "title": "Central limit theorems for characters and for partitions",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.958,
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-6-pitman-operators-and-a-link-with-conditioned-r",
+     "id": "sec-005-6-pitman-operators-and-a-link-with-conditioned-r",
      "title": "Pitman operators and a link with conditioned random walks and brownian matrices",
-     "prose_ratio": 0.995,
-     "coverage_ratio": 0.979,
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-7-jones-ocneanu-traces-of-hecke-algebras-and-qt",
+     "id": "sec-006-7-jones-ocneanu-traces-of-hecke-algebras-and-qt",
      "title": "Jones-Ocneanu traces of Hecke algebras and (q,t)-Plancherel measures",
-     "prose_ratio": 0.806,
-     "coverage_ratio": 0.966,
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.695,
      "result": "overlaid",
      "converter": "pandoc"
     }

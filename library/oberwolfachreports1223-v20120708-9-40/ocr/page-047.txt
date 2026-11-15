@@ -1,0 +1,52 @@
+Invariants in Low-Dimensional Topology and Knot Theory 47
+
+Theorem 1. Let S = 1+ker{e: Z[A| + Z}. If H is para-G, then;
+(1) The coordinate rings of G and H are isomorphic.
+(2) S(G,G] = S-1[H, H]
+
+Definition 2. We say that a finitely generated, residually nilpotent, metabelian
+group H is para-equivalent to G if H is para-G and G is para-H.
+
+We think of the coordinate ring Rg of G and the Rg-module S~1[G, G] as the
+primary invariants of the para-equivalence class of G.
+
+Our secondary invariant is our telescope of G.
+
+To define this, suppose G is a metabelian group, classified by the second coho-
+mology class
+
+k(G@) € H? (Gap; @, G)).
+We define G, our telescope of G, to be the group determined by the element
+k(G) € H? (Gas; S""[@, G])
+where the latter is the image of k(G) under the coefficient induced homomorphism
+[G,G] + SG, G].
+We emphasize that the telescope of G is not new, and is a version of a well
+known construction due to J. P. Levine that he called the algebraic closure of G.
+
+Theorem 2 (Telescope Theorem). There is a filtration by subgroups
+
+G=G C G2 C++» CURGE =G
+such that;
+(1) Each group G;, = G.
+(2) The inclusion of any G;, C Ge is a para-equivalence, k < é.
+(3) H is para-G if and only if G =H.
+This has many corollaries, a few enumerated below.
+
+Corollary 3. If H is para-G and finitely generated, then H and G are para-
+equivalent and G is finitely generated.
+
+Corollary 4. If G is poly-cyclic and H is para-G then G and H are para-
+equivalent. Furthermore, G contains an isomorph of H of finite index, and H
+contains an isomorph of G of finite index.
+
+Corollary 5. Suppose G = M ™Z. If the coordinate ring of G is a principal ideal
+domain, then every finitely generated para-G group is isomorphic to G.
+
+The Lamplighter group is among numerous examples covered by this last corol-
+lary.
+
+We prove a classifying theorem for para-equivalence of finitely generated, resid-
+ually nilpotent, metabelian groups.
+
+Definition 3. We call a submodule M C sa, G] an S-fractional submodule if
+this inclusion induces an isomorphism S~'M = S~"|G,G]

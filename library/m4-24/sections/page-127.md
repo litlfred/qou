@@ -1,0 +1,63 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-127
+section_title: "Page 127"
+section_number: null
+pages: 127-127
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+Problems on invariants of knots and 3-manifolds 499
+
+(3) Determine the structure of the vy lim ) and in how far they have lifts
+from F,, to Z, analogous to the Ohtsuki invariants for closed 3-manifolds.
+
+(4) Find a universal TQFT that combines all Vp, at least perturbatively, into
+one.
+
+In the case of p = 5 the program for items (1)—(3) has been mostly carried
+out in [213], for primes p > 7 not much is known though. Some explicit bases
+have been found for genus g = 1 by Gilmer, but the situation for higher genera
+g > 3 is unknown. An immediate application of item (2) is that the quantum
+order, as introduced in [92], is also an upper bound for the cut-number of a
+3-manifold. A closely related statement for (2) would also yield a very different
+proof for the fact that the Ohtsuki invariants are of finite type. In item (3) the
+“lift” must depend on p since the dimensions of the vector spaces do, and must
+also involve further quotients that arise since the irreducible TQFT’s over Z
+do not match the required dimensions either, but they become reducible when
+reduced to F,,. Item (4) is rather vague at this point, indicating for some sort
+of infinite filtered space with finite graded components.
+
+Any TQFT V : Cob — R-mod implies a sequence of representation Vj,) : Ty >
+GLr(V(X,)) of the mapping class groups. We say that a TQFT is homological
+if each of these representations factors through the quotient ['g—» Sp(2g, Z)
+(given by the action on Hi(X,)), and we say it is strictly homological if each
+of the Sp(2g, Z)-representations is algebraic, i.e. either faithful or zero. A par-
+ticular example of strictly homological TQFT’s over R = Z are the Lefschetz
+components VY“) of the Frohman-Nicas TQFT, see [128, 214]. From these we
+can generate a larger family Q° of such TQFT’s by taking all direct sums of
+Y's, For example all the TQFT’s constructed in [110] lie in Q°. An even
+larger family Q* is found by taking also tensor products and their irreducible
+summands.
+
+Problem 8.13 (T. Kerler) [Homological TQFT’s]
+
+(1) Find the irreducible components and ring structure (w.r.t @ and @) of
+Q*.
+
+(2) Determine whether all strictly homological TQFT’s lie in Q*.
+
+(3) Identify the homological TQFT’s that arise from the gauge theory of
+
+higher rank groups (such as PSU(n) in [129]) with elements in Q*.
+
+(4) Identify the irreducible factors of the constant orders yh! of the cyclo-
+
+tomic integer expansion of the Reshetikhin-Turaev theory with elements
+
+in O*.
+
+Geometry & Topology Monographs, Volume 4 (2002)

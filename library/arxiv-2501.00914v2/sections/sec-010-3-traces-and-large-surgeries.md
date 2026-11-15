@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2501.00914v2
-doc_title: "L-SPACES AND KNOT TRACES"
+doc_title: "L-spaces and knot traces"
 section_id: sec-010-3-traces-and-large-surgeries
 section_title: "Traces and large surgeries"
 section_number: 3
 pages: 13-14
 source_pdf: 2501.00914v2.pdf
 source_sha256: d94bd6edf8544d4a
-doc_brief: "L-SPACES AND KNOT TRACES — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.939
-latex_coverage_ratio: 0.808
+latex_coverage_ratio: 0.926
+doc_brief: "L-spaces and knot traces — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries."
 ---
 \label{sec:large-surgeries}
 

@@ -1,6 +1,6 @@
 ---
 doc_id: 0510388v1
-doc_title: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck"
+doc_title: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space"
 section_id: sec-012-10-the-calculus-of-vector-convolutions-in-s3
 section_title: "The calculus of vector convolutions in S3 ."
 section_number: 10
@@ -8,6 +8,7 @@ pages: 27-30
 source_pdf: 0510388v1.pdf
 source_sha256: c83c0f6a2eaa74f3
 toc_source: inferred
+doc_brief: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space — 64 sections: Front matter; ORGANIZATION; STATEMENTS OF RESULTS"
 ---
 We turn now to the calculus of vector convolutions in  S3 .  Our specific goal is to 
 prove Theorem 3, formula (1). 
@@ -59,7 +60,6 @@ We begin with the first formula,
                          =  ∫S3  (∇y × Lyx—1 V(x)) ϕ(x, y)  —  Lyx—1 V(x) × ∇y ϕ(x, y)  dx . 
  
  
-28 
  
  
  
@@ -101,7 +101,6 @@ as claimed, since  ∇y × ∇y ϕ(x, y)  =  0 .
  
  
  
-29 
  
  
 Proof of Proposition 2. 
@@ -148,7 +147,4 @@ Finally,
  
                               =  G(V, ∆ϕ) , 
  
-completing the proof of Proposition 2. 
- 
- 
-30
+completing the proof of Proposition 2.

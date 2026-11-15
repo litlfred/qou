@@ -6,10 +6,12 @@
   "sha256": "b6e7c795cd1a7cd21e9acb848ea35289a5a60b8863bf09d093c47ac18df3597f",
   "bytes": 636055,
   "pages": 71,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,19 +22,27 @@
   },
   "doi": null,
   "title": "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS",
-  "authors_raw": "MACIEJ DO\u0141 \u02db EGA AND VALENTIN F\u00c9RAY",
-  "abstract": "In this paper, we consider a deformation of Plancherel meas ure linked to Jack polynomials. Our main result is the descripti on of the \ufb01rst and second-order asymptotics of the bulk of a random Young diagram under this dis- tribution, which extends celebrated results of Vershik-Ke rov and Logan-Shepp (for the \ufb01rst order asymptotics) and Kerov (for the second or der asymptotics). This gives more evidence of the connection with Gaussian \u03b2 -ensemble, already suggested by some work of Matsumoto. Our main tool is a polynomiality result for the structure con stant of some quantities that we call Jack characters, recently introduced by Lassalle. We be- lieve that this result is also interested in itself and we give several other applica- tions of it. 1. I NTRODUCTION 1.1. Jack deformation of Plancherel measure and random matrices. Random partitions occur in mathematics and physics in a wide variety of contexts, in partic- ular in the Gromov-Witten and Seiberg-Witten theories, see [Oko03] for an intro- duction to the subject. Another aspect which makes them attractive is the link with random matrices. Namely, some classical models of random matrices have random partition counterparts, which display the same kind of asymptotic behaviour. In this paper, we consider the following probability measure on the set of parti- tions (or equivalently, Young diagrams) of sizen: (1) P(\u03b1) n (\u03bb) = \u03b1nn! j(\u03b1) \u03bb , where j(\u03b1) \u03bb is a deformation of the square of the hook products: j(\u03b1) \u03bb = \u220f \u25a1 \u2208\u03bb ( \u03b1a(\u25a1 ) + \u2113(\u25a1 ) + 1 )( \u03b1a(\u25a1 ) + \u2113(\u25a1 ) + \u03b1 ) . Here, a(\u25a1 ) := \u03bbj \u2212 i and \u2113(\u25a1 ) := \u03bb\u2032 i \u2212 j are respectively the arm and leg length of the box \u25a1 = (i, j) (the same de\ufb01nitions as in [Mac95, Chapter I]).",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20180227163830-05'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  },
+  "authors_raw": "MACIEJ DOŁ ˛EGA AND VALENTIN FÉRAY",
   "title_lines": [
    "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND",
    "STRUCTURE CONSTANTS OF JACK CHARACTERS"
-  ]
+  ],
+  "abstract": "In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials. Our main result is the description of the ﬁrst and second-order asymptotics of the bulk of a random Young diagram under this dis- tribution, which extends celebrated results of Vershik-Kerov and Logan-Shepp (for the ﬁrst order asymptotics) and Kerov (for the second order asymptotics). This gives more evidence of the connection with Gaussian β-ensemble, already suggested by some work of Matsumoto. Our main tool is a polynomiality result for the structure constant of some quantities that we call Jack characters, recently introduced by Lassalle. We be- lieve that this result is also interested in itself and we give several other applica- tions of it.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20180227163830-05'00'"
+  },
+  "title_raw": "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS 1. I NTRODUCTION 1.1. Jack deformation of Plancherel measure and random matrices. Random partitions occur in mathematics and physics in a wide variety of contexts, in particular in the Gromov-Witten and Seiberg-Witten",
+   "outline": "1. Introduction",
+   "text": "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -40,771 +50,1752 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Jack deformation of Plancherel measure and random matrices",
    "page": 1,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Main result",
    "page": 5,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Jack polynomials and Jack measure",
    "page": 5,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Ingredients of the proof",
    "page": 7,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Second main result: polynomiality of structure constants of Jack characters",
    "page": 9,
    "source": "outline",
-   "number": "1.5"
+   "number": "1.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "An open problem: edge fluctuations of Jack measure",
    "page": 12,
    "source": "outline",
-   "number": "1.6"
+   "number": "1.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Outline of the paper",
    "page": 12,
    "source": "outline",
-   "number": "1.7"
+   "number": "1.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Jack characters and Kerov polynomials",
    "page": 12,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Polynomial functions on the set of Young diagrams",
    "page": 12,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Transition measure and free cumulants",
    "page": 14,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Generalized Young diagrams",
    "page": 15,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Continuous Young diagrams",
    "page": 17,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "-polynomial functions",
    "page": 17,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Polynomiality in Kerov's expansion",
    "page": 19,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Notations",
    "page": 19,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "How to compute Jack character polynomials?",
    "page": 19,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "A triangular subsystem",
    "page": 22,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "A first bound on the degree",
    "page": 24,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "A second bound on degrees",
    "page": 26,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Polynomiality of ()",
    "page": 27,
    "source": "outline",
-   "number": "3.6"
+   "number": "3.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Yet another gradation and bound on degrees",
    "page": 27,
    "source": "outline",
-   "number": "3.7"
+   "number": "3.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Gradations and characters",
    "page": 30,
    "source": "outline",
-   "number": "3.8"
+   "number": "3.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Polynomiality of structure constants of Jack characters",
    "page": 31,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Structure constants are polynomials in",
    "page": 31,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Projection on functions on Young diagrams of size n",
    "page": 32,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "Special values of  and polynomial interpolation",
+   "title": "Special values of and polynomial interpolation",
    "page": 33,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Case =1: symmetric group algebra",
    "page": 33,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Case =2: Hecke algebra of (S2n,Hn)",
    "page": 34,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "A technical lemma obtained by polynomial interpolation",
    "page": 37,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Jack measure: law of large numbers",
    "page": 38,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Convergence of polynomial functions",
    "page": 39,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Shape convergence",
    "page": 40,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Jack measure: central limit theorem for Jack characters",
    "page": 40,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Multivariate Stein's method",
    "page": 40,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "An exchangeable pair",
    "page": 41,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Checking hypotheses",
    "page": 43,
    "source": "outline",
-   "number": "7.3"
+   "number": "7.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Error term",
    "page": 45,
    "source": "outline",
-   "number": "7.4"
+   "number": "7.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Proof of the central limit theorem",
    "page": 50,
    "source": "outline",
-   "number": "7.5"
+   "number": "7.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Speed in convergence",
    "page": 51,
    "source": "outline",
-   "number": "7.6"
+   "number": "7.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Fluctuations of other polynomial functions",
    "page": 53,
    "source": "outline",
-   "number": "7.7"
+   "number": "7.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Jack measure: central limit theorems for Young diagrams and transition measures",
    "page": 53,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Extended algebra of polynomial functions and gradations",
    "page": 54,
    "source": "outline",
-   "number": "8.1"
+   "number": "8.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Proof of Theorem 8.1",
    "page": 56,
    "source": "outline",
-   "number": "8.2"
+   "number": "8.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Informal reformulation of Theorem 8.1",
    "page": 58,
    "source": "outline",
-   "number": "8.3"
+   "number": "8.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Appendix A. Kerov polynomials",
    "page": 59,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "A.1. Comparison with Lassalle's normalizations",
    "page": 59,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "A.2. Linear terms in Kerov polynomials",
    "page": 60,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "A.3. High degree terms of Kerov polynomials for deg1",
    "page": 62,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Appendix B. Other consequences of the second main result",
    "page": 63,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "B.1. Recovering a recent result of Vassilieva",
    "page": 63,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "B.2. Goulden's and Jackson's b-conjecture",
    "page": 64,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "B.3. Symmetric functions of contents",
    "page": 65,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Acknowledgments",
    "page": 68,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 68,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Young diagram λ = (4, 3, 1) and the graph of the",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "A Young diagram with its inner and outer corners",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "A generalized Young diagram L with the correspond-",
+   "page": 16,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Example of a Young diagram λ on the left and a",
+   "page": 16,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 48,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 49,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 50,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 51,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 52,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 53,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 54,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 55,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 56,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 57,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 58,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 59,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 60,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 61,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 62,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 63,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 64,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 65,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 66,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 67,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 68,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 69,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 70,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 71,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-11-jack-deformation-of-plancherel-measure-and-ra",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 915,
+   "n_words": 141,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-11-jack-deformation-of-plancherel-measure-and-ra",
    "number": "1.1",
    "title": "Jack deformation of Plancherel measure and random matrices",
    "level": 2,
    "page_start": 1,
-   "page_end": 4,
-   "n_chars": 8334,
-   "n_words": 1538
+   "page_end": 5,
+   "n_chars": 8505,
+   "n_words": 1508,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-12-main-result",
+   "id": "sec-002-12-main-result",
    "number": "1.2",
    "title": "Main result",
    "level": 2,
-   "page_start": 4,
+   "page_start": 5,
    "page_end": 5,
-   "n_chars": 2150,
-   "n_words": 406
+   "n_chars": 1970,
+   "n_words": 361,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-13-jack-polynomials-and-jack-measure",
+   "id": "sec-003-13-jack-polynomials-and-jack-measure",
    "number": "1.3",
    "title": "Jack polynomials and Jack measure",
    "level": 2,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 4888,
-   "n_words": 888
+   "n_chars": 4851,
+   "n_words": 852,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-14-ingredients-of-the-proof",
+   "id": "sec-004-14-ingredients-of-the-proof",
    "number": "1.4",
    "title": "Ingredients of the proof",
    "level": 2,
    "page_start": 7,
    "page_end": 10,
-   "n_chars": 5664,
-   "n_words": 1036
+   "n_chars": 5627,
+   "n_words": 999,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-15-second-main-result-polynomiality-of-structure",
+   "id": "sec-005-15-second-main-result-polynomiality-of-structure",
    "number": "1.5",
    "title": "Second main result: polynomiality of structure constants of Jack characters",
    "level": 2,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 6572,
-   "n_words": 1137
+   "n_chars": 5064,
+   "n_words": 854,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-17-outline-of-the-paper",
+   "id": "sec-006-16-an-open-problem-edge-fluctuations-of-jack-mea",
+   "number": "1.6",
+   "title": "An open problem: edge fluctuations of Jack measure",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1404,
+   "n_words": 241,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-17-outline-of-the-paper",
    "number": "1.7",
    "title": "Outline of the paper",
    "level": 2,
    "page_start": 12,
    "page_end": 12,
-   "n_chars": 898,
-   "n_words": 145
+   "n_chars": 851,
+   "n_words": 133,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-21-polynomial-functions-on-the-set-of-young-diag",
+   "id": "sec-008-2-jack-characters-and-kerov-polynomials",
+   "number": "2",
+   "title": "Jack characters and Kerov polynomials",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-21-polynomial-functions-on-the-set-of-young-diag",
    "number": "2.1",
    "title": "Polynomial functions on the set of Young diagrams",
    "level": 2,
    "page_start": 12,
    "page_end": 14,
-   "n_chars": 3132,
-   "n_words": 646
+   "n_chars": 3101,
+   "n_words": 615,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-22-transition-measure-and-free-cumulants",
+   "id": "sec-010-22-transition-measure-and-free-cumulants",
    "number": "2.2",
    "title": "Transition measure and free cumulants",
    "level": 2,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 1995,
-   "n_words": 413
+   "n_chars": 1973,
+   "n_words": 391,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-23-generalized-young-diagrams",
+   "id": "sec-011-23-generalized-young-diagrams",
    "number": "2.3",
    "title": "Generalized Young diagrams",
    "level": 2,
    "page_start": 15,
    "page_end": 17,
-   "n_chars": 2759,
-   "n_words": 537
+   "n_chars": 2740,
+   "n_words": 518,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-009-24-continuous-young-diagrams",
+   "id": "sec-012-24-continuous-young-diagrams",
    "number": "2.4",
    "title": "Continuous Young diagrams",
    "level": 2,
    "page_start": 17,
    "page_end": 17,
-   "n_chars": 1297,
-   "n_words": 240
+   "n_chars": 1287,
+   "n_words": 230,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-010-25--polynomial-functions",
+   "id": "sec-013-25--polynomial-functions",
    "number": "2.5",
    "title": "-polynomial functions",
    "level": 2,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 4136,
-   "n_words": 839
+   "n_chars": 4048,
+   "n_words": 784,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-011-31-notations",
+   "id": "sec-014-3-polynomiality-in-kerovs-expansion",
+   "number": "3",
+   "title": "Polynomiality in Kerov's expansion",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-015-31-notations",
    "number": "3.1",
    "title": "Notations",
    "level": 2,
    "page_start": 19,
    "page_end": 19,
-   "n_chars": 642,
-   "n_words": 133
+   "n_chars": 634,
+   "n_words": 125,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-012-32-how-to-compute-jack-character-polynomials",
+   "id": "sec-016-32-how-to-compute-jack-character-polynomials",
    "number": "3.2",
    "title": "How to compute Jack character polynomials?",
    "level": 2,
    "page_start": 19,
    "page_end": 22,
-   "n_chars": 3775,
-   "n_words": 775
+   "n_chars": 3734,
+   "n_words": 734,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-013-33-a-triangular-subsystem",
+   "id": "sec-017-33-a-triangular-subsystem",
    "number": "3.3",
    "title": "A triangular subsystem",
    "level": 2,
    "page_start": 22,
-   "page_end": 26,
-   "n_chars": 8618,
-   "n_words": 1813
+   "page_end": 24,
+   "n_chars": 4248,
+   "n_words": 858,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-014-35-a-second-bound-on-degrees",
+   "id": "sec-018-34-a-first-bound-on-the-degree",
+   "number": "3.4",
+   "title": "A first bound on the degree",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 4195,
+   "n_words": 844,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-019-35-a-second-bound-on-degrees",
    "number": "3.5",
    "title": "A second bound on degrees",
    "level": 2,
    "page_start": 26,
    "page_end": 27,
-   "n_chars": 3509,
-   "n_words": 683
+   "n_chars": 3464,
+   "n_words": 638,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-015-37-yet-another-gradation-and-bound-on-degrees",
+   "id": "sec-020-37-yet-another-gradation-and-bound-on-degrees",
    "number": "3.7",
    "title": "Yet another gradation and bound on degrees",
    "level": 2,
    "page_start": 27,
    "page_end": 30,
-   "n_chars": 4671,
-   "n_words": 1042
+   "n_chars": 4556,
+   "n_words": 927,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-016-38-gradations-and-characters",
+   "id": "sec-021-38-gradations-and-characters",
    "number": "3.8",
    "title": "Gradations and characters",
    "level": 2,
    "page_start": 30,
    "page_end": 31,
-   "n_chars": 1313,
-   "n_words": 254
+   "n_chars": 1239,
+   "n_words": 233,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-017-41-structure-constants-are-polynomials-in",
+   "id": "sec-022-4-polynomiality-of-structure-constants-of-jack-c",
+   "number": "4",
+   "title": "Polynomiality of structure constants of Jack characters",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 58,
+   "n_words": 8,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-023-41-structure-constants-are-polynomials-in",
    "number": "4.1",
    "title": "Structure constants are polynomials in",
    "level": 2,
    "page_start": 31,
    "page_end": 32,
-   "n_chars": 2532,
-   "n_words": 489
+   "n_chars": 2508,
+   "n_words": 465,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-018-42-projection-on-functions-on-young-diagrams-of",
+   "id": "sec-024-42-projection-on-functions-on-young-diagrams-of",
    "number": "4.2",
    "title": "Projection on functions on Young diagrams of size n",
    "level": 2,
    "page_start": 32,
-   "page_end": 37,
-   "n_chars": 10284,
-   "n_words": 2023
+   "page_end": 33,
+   "n_chars": 2504,
+   "n_words": 480,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-019-53-a-technical-lemma-obtained-by-polynomial-inte",
+   "id": "sec-025-5-special-values-of-and-polynomial-interpolation",
+   "number": "5",
+   "title": "Special values of and polynomial interpolation",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 37,
+   "n_chars": 7641,
+   "n_words": 1451,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-026-53-a-technical-lemma-obtained-by-polynomial-inte",
    "number": "5.3",
    "title": "A technical lemma obtained by polynomial interpolation",
    "level": 2,
    "page_start": 37,
    "page_end": 38,
-   "n_chars": 3507,
-   "n_words": 761
+   "n_chars": 3434,
+   "n_words": 717,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-020-61-convergence-of-polynomial-functions",
+   "id": "sec-027-6-jack-measure-law-of-large-numbers",
+   "number": "6",
+   "title": "Jack measure: law of large numbers",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 172,
+   "n_words": 29,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-028-61-convergence-of-polynomial-functions",
    "number": "6.1",
    "title": "Convergence of polynomial functions",
    "level": 2,
-   "page_start": 38,
+   "page_start": 39,
    "page_end": 40,
-   "n_chars": 2090,
-   "n_words": 443
+   "n_chars": 2007,
+   "n_words": 396,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-021-62-shape-convergence",
+   "id": "sec-029-62-shape-convergence",
    "number": "6.2",
    "title": "Shape convergence",
    "level": 2,
    "page_start": 40,
-   "page_end": 41,
-   "n_chars": 2779,
-   "n_words": 567
+   "page_end": 40,
+   "n_chars": 701,
+   "n_words": 135,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-022-72-an-exchangeable-pair",
+   "id": "sec-030-7-jack-measure-central-limit-theorem-for-jack-ch",
+   "number": "7",
+   "title": "Jack measure: central limit theorem for Jack characters",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 41,
+   "n_chars": 1953,
+   "n_words": 366,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-031-72-an-exchangeable-pair",
    "number": "7.2",
    "title": "An exchangeable pair",
    "level": 2,
    "page_start": 41,
    "page_end": 43,
-   "n_chars": 3135,
-   "n_words": 650
+   "n_chars": 3077,
+   "n_words": 592,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-023-73-checking-hypotheses",
+   "id": "sec-032-73-checking-hypotheses",
    "number": "7.3",
    "title": "Checking hypotheses",
    "level": 2,
    "page_start": 43,
    "page_end": 45,
-   "n_chars": 3597,
-   "n_words": 782
+   "n_chars": 3560,
+   "n_words": 745,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-024-74-error-term",
+   "id": "sec-033-74-error-term",
    "number": "7.4",
    "title": "Error term",
    "level": 2,
    "page_start": 45,
    "page_end": 50,
-   "n_chars": 8691,
-   "n_words": 1985
+   "n_chars": 8492,
+   "n_words": 1802,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-025-75-proof-of-the-central-limit-theorem",
+   "id": "sec-034-75-proof-of-the-central-limit-theorem",
    "number": "7.5",
    "title": "Proof of the central limit theorem",
    "level": 2,
    "page_start": 50,
    "page_end": 51,
-   "n_chars": 1252,
-   "n_words": 308
+   "n_chars": 1177,
+   "n_words": 248,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-026-76-speed-in-convergence",
+   "id": "sec-035-76-speed-in-convergence",
    "number": "7.6",
    "title": "Speed in convergence",
    "level": 2,
    "page_start": 51,
    "page_end": 53,
-   "n_chars": 2654,
-   "n_words": 579
+   "n_chars": 2589,
+   "n_words": 527,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-027-77-fluctuations-of-other-polynomial-functions",
+   "id": "sec-036-77-fluctuations-of-other-polynomial-functions",
    "number": "7.7",
    "title": "Fluctuations of other polynomial functions",
    "level": 2,
    "page_start": 53,
-   "page_end": 54,
-   "n_chars": 3685,
-   "n_words": 715
+   "page_end": 53,
+   "n_chars": 654,
+   "n_words": 111,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-028-81-extended-algebra-of-polynomial-functions-and",
+   "id": "sec-037-8-jack-measure-central-limit-theorems-for-young",
+   "number": "8",
+   "title": "Jack measure: central limit theorems for Young diagrams and transition measures",
+   "level": 1,
+   "page_start": 53,
+   "page_end": 54,
+   "n_chars": 2993,
+   "n_words": 554,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-038-81-extended-algebra-of-polynomial-functions-and",
    "number": "8.1",
    "title": "Extended algebra of polynomial functions and gradations",
    "level": 2,
    "page_start": 54,
    "page_end": 56,
-   "n_chars": 2948,
-   "n_words": 635
+   "n_chars": 2911,
+   "n_words": 598,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-029-82-proof-of-theorem-81",
+   "id": "sec-039-82-proof-of-theorem-81",
    "number": "8.2",
    "title": "Proof of Theorem 8.1",
    "level": 2,
    "page_start": 56,
    "page_end": 58,
-   "n_chars": 3912,
-   "n_words": 806
+   "n_chars": 3859,
+   "n_words": 753,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-030-83-informal-reformulation-of-theorem-81",
+   "id": "sec-040-83-informal-reformulation-of-theorem-81",
    "number": "8.3",
    "title": "Informal reformulation of Theorem 8.1",
    "level": 2,
    "page_start": 58,
-   "page_end": 60,
-   "n_chars": 3131,
-   "n_words": 624
+   "page_end": 59,
+   "n_chars": 1149,
+   "n_words": 223,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-031-a2-linear-terms-in-kerov-polynomials",
+   "id": "sec-041-appendix-a-kerov-polynomials",
+   "number": null,
+   "title": "Appendix A. Kerov polynomials",
+   "level": 1,
+   "page_start": 59,
+   "page_end": 59,
+   "n_chars": 312,
+   "n_words": 55,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-042-a1-comparison-with-lassalles-normalizations",
+   "number": null,
+   "title": "A.1. Comparison with Lassalle's normalizations",
+   "level": 2,
+   "page_start": 59,
+   "page_end": 60,
+   "n_chars": 1511,
+   "n_words": 284,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-043-a2-linear-terms-in-kerov-polynomials",
    "number": null,
    "title": "A.2. Linear terms in Kerov polynomials",
    "level": 2,
    "page_start": 60,
    "page_end": 62,
-   "n_chars": 2451,
-   "n_words": 615
+   "n_chars": 2376,
+   "n_words": 540,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-032-a3-high-degree-terms-of-kerov-polynomials-for-de",
+   "id": "sec-044-a3-high-degree-terms-of-kerov-polynomials-for-de",
    "number": null,
    "title": "A.3. High degree terms of Kerov polynomials for deg1",
    "level": 2,
    "page_start": 62,
    "page_end": 63,
-   "n_chars": 1795,
-   "n_words": 356
+   "n_chars": 1439,
+   "n_words": 286,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-033-b1-recovering-a-recent-result-of-vassilieva",
+   "id": "sec-045-appendix-b-other-consequences-of-the-second-main",
+   "number": null,
+   "title": "Appendix B. Other consequences of the second main result",
+   "level": 1,
+   "page_start": 63,
+   "page_end": 63,
+   "n_chars": 281,
+   "n_words": 44,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-046-b1-recovering-a-recent-result-of-vassilieva",
    "number": null,
    "title": "B.1. Recovering a recent result of Vassilieva",
    "level": 2,
    "page_start": 63,
-   "page_end": 65,
-   "n_chars": 4009,
-   "n_words": 764
+   "page_end": 64,
+   "n_chars": 1816,
+   "n_words": 337,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-034-b3-symmetric-functions-of-contents",
+   "id": "sec-047-b2-gouldens-and-jacksons-b-conjecture",
+   "number": null,
+   "title": "B.2. Goulden's and Jackson's b-conjecture",
+   "level": 2,
+   "page_start": 64,
+   "page_end": 65,
+   "n_chars": 2075,
+   "n_words": 378,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-048-b3-symmetric-functions-of-contents",
    "number": null,
    "title": "B.3. Symmetric functions of contents",
    "level": 2,
    "page_start": 65,
    "page_end": 68,
-   "n_chars": 5253,
-   "n_words": 1073
+   "n_chars": 5161,
+   "n_words": 981,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-035-acknowledgments",
+   "id": "sec-049-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 1,
    "page_start": 68,
    "page_end": 68,
    "n_chars": 143,
-   "n_words": 24
+   "n_words": 24,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-036-references",
+   "id": "sec-050-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 68,
    "page_end": 71,
-   "n_chars": 10886,
-   "n_words": 1607
+   "n_chars": 10790,
+   "n_words": 1511,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 55,
-  "sections": 37,
-  "chars_total": 143087,
+  "toc_inferred_entries": 0,
+  "figure_entries": 4,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 52,
+  "chars_total": 141749,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "TopComponent.tex",
    "tex_sections": 55,
-   "overlaid": 25,
+   "overlaid": 31,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -812,46 +1803,65 @@
    },
    "sections": [
     {
-     "id": "sec-000-11-jack-deformation-of-plancherel-measure-and-ra",
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-jack-deformation-of-plancherel-measure-and-ra",
      "title": "Jack deformation of Plancherel measure and random matrices",
-     "prose_ratio": 0.865,
-     "coverage_ratio": 0.936,
+     "prose_ratio": 0.879,
+     "coverage_ratio": 0.945,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-12-main-result",
+     "id": "sec-002-12-main-result",
      "title": "Main result",
      "prose_ratio": 0.962,
-     "coverage_ratio": 0.907,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-13-jack-polynomials-and-jack-measure",
+     "id": "sec-003-13-jack-polynomials-and-jack-measure",
      "title": "Jack polynomials and Jack measure",
      "prose_ratio": 0.961,
-     "coverage_ratio": 0.983,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-14-ingredients-of-the-proof",
+     "id": "sec-004-14-ingredients-of-the-proof",
      "title": "Ingredients of the proof",
      "prose_ratio": 0.976,
      "coverage_ratio": 0.189,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-004-15-second-main-result-polynomiality-of-structure",
+     "id": "sec-005-15-second-main-result-polynomiality-of-structure",
      "title": "Second main result: polynomiality of structure constants of Jack characters",
-     "prose_ratio": 0.925,
-     "coverage_ratio": 0.994,
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-17-outline-of-the-paper",
+     "id": "sec-006-16-an-open-problem-edge-fluctuations-of-jack-mea",
+     "title": "An open problem: edge fluctuations of Jack measure",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-17-outline-of-the-paper",
      "title": "Outline of the paper",
      "prose_ratio": 0.903,
      "coverage_ratio": 1.0,
@@ -859,43 +1869,55 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-21-polynomial-functions-on-the-set-of-young-diag",
+     "id": "sec-008-2-jack-characters-and-kerov-polynomials",
+     "title": "Jack characters and Kerov polynomials",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-21-polynomial-functions-on-the-set-of-young-diag",
      "title": "Polynomial functions on the set of Young diagrams",
      "prose_ratio": 0.885,
-     "coverage_ratio": 0.971,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-22-transition-measure-and-free-cumulants",
+     "id": "sec-010-22-transition-measure-and-free-cumulants",
      "title": "Transition measure and free cumulants",
      "prose_ratio": 0.905,
-     "coverage_ratio": 0.967,
+     "coverage_ratio": 0.966,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-23-generalized-young-diagrams",
+     "id": "sec-011-23-generalized-young-diagrams",
      "title": "Generalized Young diagrams",
      "prose_ratio": 0.858,
-     "coverage_ratio": 0.959,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-24-continuous-young-diagrams",
+     "id": "sec-012-24-continuous-young-diagrams",
      "title": "Continuous Young diagrams",
-     "prose_ratio": 0.346,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.351,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-010-25--polynomial-functions",
+     "id": "sec-013-25--polynomial-functions",
      "title": "-polynomial functions",
-     "prose_ratio": 0.33,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.326,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-011-31-notations",
+     "id": "sec-014-3-polynomiality-in-kerovs-expansion",
+     "title": "Polynomiality in Kerov's expansion",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-015-31-notations",
      "title": "Notations",
      "prose_ratio": 0.878,
      "coverage_ratio": 1.0,
@@ -903,31 +1925,39 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-32-how-to-compute-jack-character-polynomials",
+     "id": "sec-016-32-how-to-compute-jack-character-polynomials",
      "title": "How to compute Jack character polynomials?",
      "prose_ratio": 0.936,
-     "coverage_ratio": 0.972,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-33-a-triangular-subsystem",
+     "id": "sec-017-33-a-triangular-subsystem",
      "title": "A triangular subsystem",
-     "prose_ratio": 0.964,
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-34-a-first-bound-on-the-degree",
+     "title": "A first bound on the degree",
+     "prose_ratio": 0.936,
      "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-35-a-second-bound-on-degrees",
+     "id": "sec-019-35-a-second-bound-on-degrees",
      "title": "A second bound on degrees",
      "prose_ratio": 0.931,
-     "coverage_ratio": 0.957,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-37-yet-another-gradation-and-bound-on-degrees",
+     "id": "sec-020-37-yet-another-gradation-and-bound-on-degrees",
      "title": "Yet another gradation and bound on degrees",
      "prose_ratio": 0.94,
      "coverage_ratio": 0.973,
@@ -935,15 +1965,21 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-38-gradations-and-characters",
+     "id": "sec-021-38-gradations-and-characters",
      "title": "Gradations and characters",
-     "prose_ratio": 0.9,
-     "coverage_ratio": 0.979,
+     "prose_ratio": 0.905,
+     "coverage_ratio": 0.967,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-41-structure-constants-are-polynomials-in",
+     "id": "sec-022-4-polynomiality-of-structure-constants-of-jack-c",
+     "title": "Polynomiality of structure constants of Jack characters",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-023-41-structure-constants-are-polynomials-in",
      "title": "Structure constants are polynomials in",
      "prose_ratio": 0.947,
      "coverage_ratio": 0.991,
@@ -951,63 +1987,87 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-018-42-projection-on-functions-on-young-diagrams-of",
+     "id": "sec-024-42-projection-on-functions-on-young-diagrams-of",
      "title": "Projection on functions on Young diagrams of size n",
-     "prose_ratio": 0.944,
-     "coverage_ratio": 0.983,
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-019-53-a-technical-lemma-obtained-by-polynomial-inte",
+     "id": "sec-025-5-special-values-of-and-polynomial-interpolation",
+     "title": "Special values of and polynomial interpolation",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-026-53-a-technical-lemma-obtained-by-polynomial-inte",
      "title": "A technical lemma obtained by polynomial interpolation",
-     "prose_ratio": 0.928,
+     "prose_ratio": 0.961,
      "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-020-61-convergence-of-polynomial-functions",
+     "id": "sec-027-6-jack-measure-law-of-large-numbers",
+     "title": "Jack measure: law of large numbers",
+     "prose_ratio": 0.786,
+     "coverage_ratio": 0.692,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-028-61-convergence-of-polynomial-functions",
      "title": "Convergence of polynomial functions",
      "prose_ratio": 0.897,
-     "coverage_ratio": 0.924,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-021-62-shape-convergence",
+     "id": "sec-029-62-shape-convergence",
      "title": "Shape convergence",
-     "prose_ratio": 0.91,
-     "coverage_ratio": 0.96,
+     "prose_ratio": 0.827,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-022-72-an-exchangeable-pair",
+     "id": "sec-030-7-jack-measure-central-limit-theorem-for-jack-ch",
+     "title": "Jack measure: central limit theorem for Jack characters",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-031-72-an-exchangeable-pair",
      "title": "An exchangeable pair",
      "prose_ratio": 0.972,
-     "coverage_ratio": 0.974,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-023-73-checking-hypotheses",
+     "id": "sec-032-73-checking-hypotheses",
      "title": "Checking hypotheses",
      "prose_ratio": 0.905,
-     "coverage_ratio": 0.959,
+     "coverage_ratio": 0.967,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-024-74-error-term",
+     "id": "sec-033-74-error-term",
      "title": "Error term",
      "prose_ratio": 0.895,
-     "coverage_ratio": 0.963,
+     "coverage_ratio": 0.968,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-025-75-proof-of-the-central-limit-theorem",
+     "id": "sec-034-75-proof-of-the-central-limit-theorem",
      "title": "Proof of the central limit theorem",
      "prose_ratio": 0.796,
      "coverage_ratio": 0.902,
@@ -1015,64 +2075,92 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-026-76-speed-in-convergence",
+     "id": "sec-035-76-speed-in-convergence",
      "title": "Speed in convergence",
      "prose_ratio": 0.888,
-     "coverage_ratio": 0.963,
+     "coverage_ratio": 0.962,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-027-77-fluctuations-of-other-polynomial-functions",
+     "id": "sec-036-77-fluctuations-of-other-polynomial-functions",
      "title": "Fluctuations of other polynomial functions",
-     "prose_ratio": 0.927,
+     "prose_ratio": 0.889,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-037-8-jack-measure-central-limit-theorems-for-young",
+     "title": "Jack measure: central limit theorems for Young diagrams and transition measures",
+     "prose_ratio": 0.943,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-028-81-extended-algebra-of-polynomial-functions-and",
+     "id": "sec-038-81-extended-algebra-of-polynomial-functions-and",
      "title": "Extended algebra of polynomial functions and gradations",
      "prose_ratio": 0.524,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-029-82-proof-of-theorem-81",
+     "id": "sec-039-82-proof-of-theorem-81",
      "title": "Proof of Theorem 8.1",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-030-83-informal-reformulation-of-theorem-81",
+     "id": "sec-040-83-informal-reformulation-of-theorem-81",
      "title": "Informal reformulation of Theorem 8.1",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-031-a2-linear-terms-in-kerov-polynomials",
+     "id": "sec-041-appendix-a-kerov-polynomials",
+     "title": "Appendix A. Kerov polynomials",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-042-a1-comparison-with-lassalles-normalizations",
+     "title": "A.1. Comparison with Lassalle's normalizations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-043-a2-linear-terms-in-kerov-polynomials",
      "title": "A.2. Linear terms in Kerov polynomials",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-032-a3-high-degree-terms-of-kerov-polynomials-for-de",
+     "id": "sec-044-a3-high-degree-terms-of-kerov-polynomials-for-de",
      "title": "A.3. High degree terms of Kerov polynomials for deg1",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-033-b1-recovering-a-recent-result-of-vassilieva",
+     "id": "sec-045-appendix-b-other-consequences-of-the-second-main",
+     "title": "Appendix B. Other consequences of the second main result",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-046-b1-recovering-a-recent-result-of-vassilieva",
      "title": "B.1. Recovering a recent result of Vassilieva",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-034-b3-symmetric-functions-of-contents",
+     "id": "sec-047-b2-gouldens-and-jacksons-b-conjecture",
+     "title": "B.2. Goulden's and Jackson's b-conjecture",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-048-b3-symmetric-functions-of-contents",
      "title": "B.3. Symmetric functions of contents",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-035-acknowledgments",
+     "id": "sec-049-acknowledgments",
      "title": "Acknowledgments",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-036-references",
+     "id": "sec-050-references",
      "title": "References",
      "result": "no matching \\section"
     }

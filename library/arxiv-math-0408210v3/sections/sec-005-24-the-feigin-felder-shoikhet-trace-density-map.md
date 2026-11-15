@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0408210v3
-doc_title: "arXiv:math/0408210v3 [math.QA] 7 May 2005"
+doc_title: "A simple algebraic proof of the algebraic index theorem"
 section_id: sec-005-24-the-feigin-felder-shoikhet-trace-density-map
 section_title: "The Feigin-Felder-Shoikhet trace density map."
 section_number: 2.4
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.98
 latex_coverage_ratio: 0.98
+doc_brief: "A simple algebraic proof of the algebraic index theorem — In math.QA/0311303 B. Feigin, G. Felder, and B."
 ---
 Let as above $V$ be a vector bundle of rank $N$ over the symplectic manifold ${\cal M}$ and $*$ be a star-product ([\[star\]](#star){reference-type="ref" reference="star"}) in the algebra $End_V(({\hbar}))$ . Then,
 

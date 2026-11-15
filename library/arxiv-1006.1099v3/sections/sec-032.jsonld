@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1006.1099v3/sections/sec-032",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Thimbles",
+  "pageStart": 54,
+  "pageEnd": 56,
+  "contains": [
+    "library/arxiv-1006.1099v3/blocks/prose-sec-032",
+    "library/arxiv-1006.1099v3/blocks/recommendation-sec-032-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1006.1099v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1006.1099v3",
+  "provenance": "ingested"
+}

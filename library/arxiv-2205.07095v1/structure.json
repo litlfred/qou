@@ -7,10 +7,11 @@
   "bytes": 178970,
   "pages": 14,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,21 +21,32 @@
    "stamp_date": "14 May 2022"
   },
   "doi": null,
-  "title": "Virial Expansions for Correlation Functions in Canonical Ensemble A. L. Rebenko",
-  "authors_raw": "Institute of Mathematics, Ukrainian National Academy of Sciences , Kyiv, Ukraine",
+  "title": "Virial Expansions for Correlation Functions in Canonical Ensemble",
+  "authors_raw": "Institute of Mathematics, Ukrainian National Academy of Sciences, Kyiv, Ukraine",
   "title_lines": [
    "Virial Expansions for Correlation Functions in",
    "Canonical Ensemble",
    "A. L. Rebenko"
   ],
-  "abstract": "The in\ufb01nite set of coupled integral nonlinear equations for correlation func- tions in the case of classical canonical ensemble is conside red. Some kind of graph expansions of correlation functions in the density parameter are constructed. Existing of unique solutions for small value o f density and high temperature is discussed.",
+  "abstract": "The inﬁnite set of coupled integral nonlinear equations for correlation func- tions in the case of classical canonical ensemble is considered. Some kind of graph expansions of correlation functions in the density parameter are constructed. Existing of unique solutions for small value of density and high temperature is discussed.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20220516211650-04'00'",
    "Creator": "LaTeX with hyperref",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20220516211650-04'00'"
+  },
+  "title_raw": "Virial Expansions for Correlation Functions in Canonical Ensemble A. L. Rebenko",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Virial Expansions for Correlation Functions in Canonical Ensemble",
+   "outline": "1 Introduction",
+   "text": "Virial Expansions for Correlation Functions in Canonical Ensemble A. L. Rebenko",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Virial Expansions for Correlation Functions in Canonical Ensemble A. L. Rebenko"
  },
  "toc": [
   {
@@ -42,81 +54,256 @@
    "title": "Introduction.",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "On some mathematical concepts",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Configuration spaces and Lebesgue-Poisson measure.",
    "page": 3,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Algebra of generating functionals.",
    "page": 4,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "Description of the system of interacting particles in the canonical ensemble.",
    "page": 5,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Interaction between particles",
    "page": 5,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Derivation of equations for correlation functions.",
    "page": 6,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
-   "title": "Construction of expansion for correlation functions in the density parameter  .",
+   "title": "Construction of expansion for correlation functions in the density parameter .",
    "page": 8,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Solution of equations for correlation functions.",
    "page": 8,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Graphic interpretation of solutions.",
    "page": 10,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Conclusion on the convergence of the expansion.",
    "page": 13,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 668,
+   "n_words": 89,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -124,8 +311,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 4077,
-   "n_words": 691
+   "n_chars": 4048,
+   "n_words": 650,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-001-2-on-some-mathematical-concepts",
@@ -133,97 +322,135 @@
    "title": "On some mathematical concepts",
    "level": 1,
    "page_start": 3,
-   "page_end": 4,
-   "n_chars": 2428,
-   "n_words": 489
+   "page_end": 3,
+   "n_chars": 29,
+   "n_words": 4,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
-   "id": "sec-002-22-algebra-of-generating-functionals",
+   "id": "sec-002-21-configuration-spaces-and-lebesgue-poisson-mea",
+   "number": "2.1",
+   "title": "Configuration spaces and Lebesgue-Poisson measure.",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2398,
+   "n_words": 463,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-003-22-algebra-of-generating-functionals",
    "number": "2.2",
    "title": "Algebra of generating functionals.",
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 817,
-   "n_words": 153
+   "n_chars": 850,
+   "n_words": 156,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
-   "id": "sec-003-3-description-of-the-system-of-interacting-parti",
+   "id": "sec-004-3-description-of-the-system-of-interacting-parti",
    "number": "3",
    "title": "Description of the system of interacting particles in the canonical ensemble.",
    "level": 1,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 14,
-   "n_words": 2
+   "n_chars": 79,
+   "n_words": 12,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
-   "id": "sec-004-31-interaction-between-particles",
+   "id": "sec-005-31-interaction-between-particles",
    "number": "3.1",
    "title": "Interaction between particles",
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 549,
-   "n_words": 115
+   "n_chars": 562,
+   "n_words": 102,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
-   "id": "sec-005-32-derivation-of-equations-for-correlation-funct",
+   "id": "sec-006-32-derivation-of-equations-for-correlation-funct",
    "number": "3.2",
    "title": "Derivation of equations for correlation functions.",
    "level": 2,
    "page_start": 6,
    "page_end": 8,
-   "n_chars": 2419,
-   "n_words": 543
+   "n_chars": 2411,
+   "n_words": 494,
+   "label_start": "6",
+   "label_end": "8"
   },
   {
-   "id": "sec-006-4-construction-of-expansion-for-correlation-func",
+   "id": "sec-007-4-construction-of-expansion-for-correlation-func",
    "number": "4",
-   "title": "Construction of expansion for correlation functions in the density parameter  .",
+   "title": "Construction of expansion for correlation functions in the density parameter .",
    "level": 1,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 491,
-   "n_words": 79
+   "n_chars": 548,
+   "n_words": 85,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
-   "id": "sec-007-41-solution-of-equations-for-correlation-functio",
+   "id": "sec-008-41-solution-of-equations-for-correlation-functio",
    "number": "4.1",
    "title": "Solution of equations for correlation functions.",
    "level": 2,
    "page_start": 8,
    "page_end": 10,
-   "n_chars": 2501,
-   "n_words": 467
+   "n_chars": 2541,
+   "n_words": 468,
+   "label_start": "8",
+   "label_end": "10"
   },
   {
-   "id": "sec-008-42-graphic-interpretation-of-solutions",
+   "id": "sec-009-42-graphic-interpretation-of-solutions",
    "number": "4.2",
    "title": "Graphic interpretation of solutions.",
    "level": 2,
    "page_start": 10,
    "page_end": 13,
-   "n_chars": 4516,
-   "n_words": 849
+   "n_chars": 4519,
+   "n_words": 825,
+   "label_start": "10",
+   "label_end": "13"
   },
   {
-   "id": "sec-009-43-conclusion-on-the-convergence-of-the-expansio",
+   "id": "sec-010-43-conclusion-on-the-convergence-of-the-expansio",
    "number": "4.3",
    "title": "Conclusion on the convergence of the expansion.",
    "level": 2,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 4891,
-   "n_words": 763
+   "n_chars": 4881,
+   "n_words": 725,
+   "label_start": "13",
+   "label_end": "14"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 11,
-  "sections": 10,
-  "chars_total": 22703,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 12,
+  "chars_total": 23534,
+  "furniture_lines_stripped": 17,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -236,9 +463,14 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction.",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.982,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
@@ -246,13 +478,19 @@
     {
      "id": "sec-001-2-on-some-mathematical-concepts",
      "title": "On some mathematical concepts",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.772,
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-21-configuration-spaces-and-lebesgue-poisson-mea",
+     "title": "Configuration spaces and Lebesgue-Poisson measure.",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-22-algebra-of-generating-functionals",
+     "id": "sec-003-22-algebra-of-generating-functionals",
      "title": "Algebra of generating functionals.",
      "prose_ratio": 0.971,
      "coverage_ratio": 1.0,
@@ -260,13 +498,13 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-3-description-of-the-system-of-interacting-parti",
+     "id": "sec-004-3-description-of-the-system-of-interacting-parti",
      "title": "Description of the system of interacting particles in the canonical ensemble.",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-004-31-interaction-between-particles",
+     "id": "sec-005-31-interaction-between-particles",
      "title": "Interaction between particles",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -274,43 +512,43 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-32-derivation-of-equations-for-correlation-funct",
+     "id": "sec-006-32-derivation-of-equations-for-correlation-funct",
      "title": "Derivation of equations for correlation functions.",
      "prose_ratio": 0.98,
-     "coverage_ratio": 0.981,
+     "coverage_ratio": 0.961,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-4-construction-of-expansion-for-correlation-func",
-     "title": "Construction of expansion for correlation functions in the density parameter  .",
+     "id": "sec-007-4-construction-of-expansion-for-correlation-func",
+     "title": "Construction of expansion for correlation functions in the density parameter .",
      "prose_ratio": 0.935,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.968,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-41-solution-of-equations-for-correlation-functio",
+     "id": "sec-008-41-solution-of-equations-for-correlation-functio",
      "title": "Solution of equations for correlation functions.",
      "prose_ratio": 0.945,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-42-graphic-interpretation-of-solutions",
+     "id": "sec-009-42-graphic-interpretation-of-solutions",
      "title": "Graphic interpretation of solutions.",
      "prose_ratio": 0.982,
-     "coverage_ratio": 0.989,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-43-conclusion-on-the-convergence-of-the-expansio",
+     "id": "sec-010-43-conclusion-on-the-convergence-of-the-expansio",
      "title": "Conclusion on the convergence of the expansion.",
      "prose_ratio": 0.967,
-     "coverage_ratio": 0.302,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.288,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

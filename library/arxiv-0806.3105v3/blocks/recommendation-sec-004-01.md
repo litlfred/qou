@@ -1,0 +1,1 @@
+Since the $a$ and $\bar a$ particles are charged $(\pm e/3)$ one should expect their electroproduction according to \[ e^++e^- \rightarrow a+\bar a + \ldots \] at sufficiently high energies of a colliding $(e^+,e^-)$ pair.

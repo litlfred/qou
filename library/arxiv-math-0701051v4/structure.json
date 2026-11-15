@@ -7,10 +7,11 @@
   "bytes": 212629,
   "pages": 20,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,31 @@
    "stamp_date": "21 Mar 2011"
   },
   "doi": null,
-  "title": "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA",
-  "authors_raw": "VALENTIN F\u00c9RAY AND PIOTR\u015aNIADY",
+  "title": "VALENTIN FÉRAY AND PIOTR ŚNIADY Tr ρλ(π) a max Tr ρλ(e)",
+  "authors_raw": null,
   "title_lines": [
-   "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS",
-   "RELATED TO STANLEY CHARACTER FORMULA"
+   "VALENTIN FÉRAY AND PIOTR ŚNIADY",
+   "Tr ρλ(π)",
+   "a max",
+   "Tr ρλ(e)"
   ],
-  "abstract": "We prove an upper bound for characters of the symmetric groups. Namely, we show that there exists a constant a > 0 with a property that for every Young diagram \u03bb with n boxes, r(\u03bb) rows and c(\u03bb) columns \u23d0 \u23d0 \u23d0 \u23d0 Tr\u03c1\u03bb (\u03c0 ) Tr\u03c1\u03bb (e) \u23d0 \u23d0 \u23d0 \u23d0 \u2264 [ a max ( r(\u03bb) n , c(\u03bb) n , |\u03c0 | n )] |\u03c0 | , where |\u03c0 | is the minimal number of factors needed to write \u03c0 \u2208 Sn as a product of transpositions. We also give uniform estimates f or the error term in the Vershik-Kerov\u2019s and Biane\u2019s character formulas and give a new formula for free cumulants of the transition measure. 1. I NTRODUCTION 1.1. Normalized characters. For a Young diagram \u03bb having n boxes and a permutation \u03c0 \u2208 Sl (where l \u2264 n) we de\ufb01ne the normalized character (1) \u03a3 \u03bb(\u03c0) = ( n)l \u03c7\u03bb(\u03c0), where (n)l = n(n \u2212 1) \u00b7 \u00b7 \u00b7(n \u2212 l + 1) denotes the falling power and where \u03c7\u03bb(\u03c0) = Tr\u03c1\u03bb(\u03c0) Tr\u03c1\u03bb(e) is the character rescaled in such a way that \u03c7\u03bb(e) = 1 . 1.2. Short history of the problem. Unfortunately, the canonical tool for calculating characters, the Murnaghan\u2013Nakayama rule, qui ckly becomes cumbersome and hence intractable for computing characters corresponding to large Young diagrams. Nevertheless Roichman [Roi96] showed that it is possible to use it to \ufb01nd an upper bound for characters, namel y he proved that there exist constants 0 < q < 1 and b > 0 such that (2) |\u03c7\u03bb(\u03c0)| \u2264 [ max ( r(\u03bb) n , c(\u03bb) n , q )] b | supp \u03c0| , where r(\u03bb), c(\u03bb) denote the numbers of rows and columns of \u03bb and supp \u03c0 denotes the support of a permutation \u03c0 (the set of its non-\ufb01xed points). In- equality (2) is not satisfactory for many practical purposes (such as [MR\u00b4S07]) 1",
+  "abstract": "We prove an upper bound for characters of the symmetric groups. Namely, we show that there exists a constant a > 0 with a property that for every Young diagram λ with n boxes, r(λ) rows and c(λ) columns \u0013\u0015|π| \u0012r(λ) n , |π| n , c(λ) , n where |π| is the minimal number of factors needed to write π ∈Sn as a product of transpositions. We also give uniform estimates for the error term in the Vershik-Kerov’s and Biane’s character formulas and give a new formula for free cumulants of the transition measure. 1.1. Normalized characters. For a Young diagram λ having n boxes and a permutation π ∈Sl (where l ≤n) we deﬁne the normalized character where (n)l = n(n −1) · · ·(n −l + 1) denotes the falling power and where Tr ρλ(e) 1.2. Short history of the problem. Unfortunately, the canonical tool for calculating characters, the Murnaghan–Nakayama rule, quickly becomes cumbersome and hence intractable for computing characters corresponding to large Young diagrams. Nevertheless Roichman [Roi96] showed that it is possible to use it to ﬁnd an upper bound for characters, namely he proved that there exist constants 0 < q < 1 and b > 0 such that \u0013\u0015b | supp π| n , c(λ) n , q , where r(λ), c(λ) denote the numbers of rows and columns of λ and supp π denotes the support of a permutation π (the set of its non-ﬁxed points). In- equality (2) is not satisfactory for many practical purposes (such as [MR´S07])",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20180124150328-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20180124150328-05'00'"
+  },
+  "title_raw": "VALENTIN FÉRAY AND PIOTR ŚNIADY Tr ρλ(π) a max Tr ρλ(e)",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA 1. I NTRODUCTION 1.1. Normalized characters. For a Young diagram λ having n boxes and a permutation π ∈ S l (where l ≤ n ) we deﬁne the normalized character where ( n ) l = n ( n − 1) · · · ( n − l + 1) denotes the fa",
+   "outline": "1. Introduction",
+   "text": "VALENTIN FÉRAY AND PIOTR ŚNIADY Tr ρλ(π) a max Tr ρλ(e)",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA"
  },
  "toc": [
   {
@@ -41,208 +53,459 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Normalized characters",
    "page": 1,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Short history of the problem",
    "page": 1,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The main result",
    "page": 2,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Young diagrams",
    "page": 3,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The main tool: reformulation of Stanley character formula",
    "page": 3,
    "source": "outline",
-   "number": "1.5"
+   "number": "1.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Overview of the paper",
    "page": 4,
    "source": "outline",
-   "number": "1.6"
+   "number": "1.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Stanley character formula",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Young symmetrizer",
    "page": 5,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Forgetting injectivity",
    "page": 7,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Generalization to Young diagrams on R+2",
    "page": 8,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Characters of symmetric groups, random matrices and free probability",
    "page": 8,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Stanley character formula and random matrices",
    "page": 8,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Free cumulants of the transition measure",
    "page": 10,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Generalized circular operators",
    "page": 11,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Technical estimates",
    "page": 12,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Estimates for the number of colorings N(1,2)",
    "page": 12,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Estimates for the number of factorizations",
    "page": 13,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Asymptotics of characters",
    "page": 15,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Upper bound for characters: proof of Theorem ??",
    "page": 15,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Error term for balanced Young diagrams",
    "page": 16,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Characters of symmetric groups related to Thoma characters",
    "page": 17,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Concluding remarks",
    "page": 19,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Acknowledgments",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Bipartite graph associated to the factorization",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-11-normalized-characters",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 107,
+   "n_words": 18,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 723,
+   "n_words": 135,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-11-normalized-characters",
    "number": "1.1",
    "title": "Normalized characters",
    "level": 2,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 250,
-   "n_words": 57
+   "n_chars": 148,
+   "n_words": 31,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-12-short-history-of-the-problem",
+   "id": "sec-002-12-short-history-of-the-problem",
    "number": "1.2",
    "title": "Short history of the problem",
    "level": 2,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2529,
-   "n_words": 460
-  },
-  {
-   "id": "sec-002-14-young-diagrams",
-   "number": "1.4",
-   "title": "Young diagrams",
-   "level": 2,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 124,
-   "n_words": 25
+   "n_chars": 668,
+   "n_words": 120,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-13-the-main-result",
@@ -251,171 +514,287 @@
    "level": 2,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 902,
-   "n_words": 197
+   "n_chars": 2573,
+   "n_words": 467,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-15-the-main-tool-reformulation-of-stanley-charac",
+   "id": "sec-004-14-young-diagrams",
+   "number": "1.4",
+   "title": "Young diagrams",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 263,
+   "n_words": 65,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-15-the-main-tool-reformulation-of-stanley-charac",
    "number": "1.5",
    "title": "The main tool: reformulation of Stanley character formula",
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 1933,
-   "n_words": 408
+   "n_chars": 1883,
+   "n_words": 376,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-16-overview-of-the-paper",
+   "id": "sec-006-16-overview-of-the-paper",
    "number": "1.6",
    "title": "Overview of the paper",
    "level": 2,
    "page_start": 4,
-   "page_end": 5,
-   "n_chars": 869,
-   "n_words": 149
+   "page_end": 4,
+   "n_chars": 418,
+   "n_words": 68,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-21-young-symmetrizer",
+   "id": "sec-007-2-stanley-character-formula",
+   "number": "2",
+   "title": "Stanley character formula",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 399,
+   "n_words": 68,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-21-young-symmetrizer",
    "number": "2.1",
    "title": "Young symmetrizer",
    "level": 2,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 4252,
-   "n_words": 908
+   "n_chars": 4244,
+   "n_words": 841,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-22-forgetting-injectivity",
+   "id": "sec-009-22-forgetting-injectivity",
    "number": "2.2",
    "title": "Forgetting injectivity",
    "level": 2,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 3064,
-   "n_words": 652
+   "n_chars": 1762,
+   "n_words": 368,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-31-stanley-character-formula-and-random-matrices",
+   "id": "sec-010-23-generalization-to-young-diagrams-on-r2",
+   "number": "2.3",
+   "title": "Generalization to Young diagrams on R+2",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1148,
+   "n_words": 230,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-011-3-characters-of-symmetric-groups-random-matrices",
+   "number": "3",
+   "title": "Characters of symmetric groups, random matrices and free probability",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 16,
+   "n_words": 2,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-012-31-stanley-character-formula-and-random-matrices",
    "number": "3.1",
    "title": "Stanley character formula and random matrices",
    "level": 2,
    "page_start": 8,
    "page_end": 10,
-   "n_chars": 3128,
-   "n_words": 670
+   "n_chars": 3076,
+   "n_words": 617,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-009-32-free-cumulants-of-the-transition-measure",
+   "id": "sec-013-32-free-cumulants-of-the-transition-measure",
    "number": "3.2",
    "title": "Free cumulants of the transition measure",
    "level": 2,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 1582,
-   "n_words": 318
+   "n_chars": 1576,
+   "n_words": 312,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-010-33-generalized-circular-operators",
+   "id": "sec-014-33-generalized-circular-operators",
    "number": "3.3",
    "title": "Generalized circular operators",
    "level": 2,
    "page_start": 11,
-   "page_end": 13,
-   "n_chars": 4031,
-   "n_words": 828
+   "page_end": 12,
+   "n_chars": 1599,
+   "n_words": 318,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-011-42-estimates-for-the-number-of-factorizations",
+   "id": "sec-015-4-technical-estimates",
+   "number": "4",
+   "title": "Technical estimates",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-016-41-estimates-for-the-number-of-colorings-n12",
+   "number": "4.1",
+   "title": "Estimates for the number of colorings N(1,2)",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 2285,
+   "n_words": 441,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-017-42-estimates-for-the-number-of-factorizations",
    "number": "4.2",
    "title": "Estimates for the number of factorizations",
    "level": 2,
    "page_start": 13,
    "page_end": 15,
-   "n_chars": 3703,
-   "n_words": 822
+   "n_chars": 3677,
+   "n_words": 795,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-012-5-asymptotics-of-characters",
+   "id": "sec-018-5-asymptotics-of-characters",
    "number": "5",
    "title": "Asymptotics of characters",
    "level": 1,
    "page_start": 15,
    "page_end": 15,
-   "n_chars": 1481,
-   "n_words": 326
+   "n_chars": 1464,
+   "n_words": 307,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-013-51-upper-bound-for-characters-proof-of-theorem",
+   "id": "sec-019-51-upper-bound-for-characters-proof-of-theorem",
    "number": "5.1",
    "title": "Upper bound for characters: proof of Theorem ??",
    "level": 2,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 1214,
-   "n_words": 266
+   "n_chars": 1194,
+   "n_words": 246,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-014-52-error-term-for-balanced-young-diagrams",
+   "id": "sec-020-52-error-term-for-balanced-young-diagrams",
    "number": "5.2",
    "title": "Error term for balanced Young diagrams",
    "level": 2,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 1858,
-   "n_words": 407
+   "n_chars": 1802,
+   "n_words": 364,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-015-53-characters-of-symmetric-groups-related-to-tho",
+   "id": "sec-021-53-characters-of-symmetric-groups-related-to-tho",
    "number": "5.3",
    "title": "Characters of symmetric groups related to Thoma characters",
    "level": 2,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 2387,
-   "n_words": 624
+   "n_chars": 2283,
+   "n_words": 551,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-016-54-concluding-remarks",
+   "id": "sec-022-54-concluding-remarks",
    "number": "5.4",
    "title": "Concluding remarks",
    "level": 2,
    "page_start": 19,
    "page_end": 19,
-   "n_chars": 497,
-   "n_words": 89
+   "n_chars": 563,
+   "n_words": 97,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-017-acknowledgments",
+   "id": "sec-023-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 1,
    "page_start": 19,
    "page_end": 19,
-   "n_chars": 453,
-   "n_words": 72
+   "n_chars": 452,
+   "n_words": 71,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-018-references",
+   "id": "sec-024-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 3850,
-   "n_words": 564
+   "n_chars": 3814,
+   "n_words": 528,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 25,
-  "sections": 19,
-  "chars_total": 38107,
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 26,
+  "chars_total": 38137,
+  "furniture_lines_stripped": 0,
+  "pages_read_in_print_order": [
+   1,
+   2
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "stanley-feray01.tex",
    "tex_sections": 25,
-   "overlaid": 16,
+   "overlaid": 17,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -423,77 +802,107 @@
    },
    "sections": [
     {
-     "id": "sec-000-11-normalized-characters",
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-normalized-characters",
      "title": "Normalized characters",
-     "prose_ratio": 0.647,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.471,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-001-12-short-history-of-the-problem",
+     "id": "sec-002-12-short-history-of-the-problem",
      "title": "Short history of the problem",
-     "prose_ratio": 0.927,
-     "coverage_ratio": 0.98,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-002-14-young-diagrams",
-     "title": "Young diagrams",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.338,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-003-13-the-main-result",
      "title": "The main result",
-     "prose_ratio": 0.844,
-     "coverage_ratio": 0.725,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.867,
+     "coverage_ratio": 0.307,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-004-15-the-main-tool-reformulation-of-stanley-charac",
-     "title": "The main tool: reformulation of Stanley character formula",
-     "prose_ratio": 0.958,
-     "coverage_ratio": 0.959,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-005-16-overview-of-the-paper",
-     "title": "Overview of the paper",
-     "prose_ratio": 0.898,
+     "id": "sec-004-14-young-diagrams",
+     "title": "Young diagrams",
+     "prose_ratio": 0.722,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-21-young-symmetrizer",
+     "id": "sec-005-15-the-main-tool-reformulation-of-stanley-charac",
+     "title": "The main tool: reformulation of Stanley character formula",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-16-overview-of-the-paper",
+     "title": "Overview of the paper",
+     "prose_ratio": 0.795,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-2-stanley-character-formula",
+     "title": "Stanley character formula",
+     "prose_ratio": 0.875,
+     "coverage_ratio": 0.871,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-21-young-symmetrizer",
      "title": "Young symmetrizer",
-     "prose_ratio": 0.97,
-     "coverage_ratio": 0.965,
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.958,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-22-forgetting-injectivity",
+     "id": "sec-009-22-forgetting-injectivity",
      "title": "Forgetting injectivity",
-     "prose_ratio": 0.97,
-     "coverage_ratio": 0.985,
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-31-stanley-character-formula-and-random-matrices",
+     "id": "sec-010-23-generalization-to-young-diagrams-on-r2",
+     "title": "Generalization to Young diagrams on R+2",
+     "prose_ratio": 0.959,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-3-characters-of-symmetric-groups-random-matrices",
+     "title": "Characters of symmetric groups, random matrices and free probability",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-31-stanley-character-formula-and-random-matrices",
      "title": "Stanley character formula and random matrices",
      "prose_ratio": 0.977,
-     "coverage_ratio": 0.963,
+     "coverage_ratio": 0.962,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-32-free-cumulants-of-the-transition-measure",
+     "id": "sec-013-32-free-cumulants-of-the-transition-measure",
      "title": "Free cumulants of the transition measure",
      "prose_ratio": 0.96,
      "coverage_ratio": 0.987,
@@ -501,30 +910,44 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-33-generalized-circular-operators",
+     "id": "sec-014-33-generalized-circular-operators",
      "title": "Generalized circular operators",
-     "prose_ratio": 0.943,
-     "coverage_ratio": 0.942,
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.964,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-42-estimates-for-the-number-of-factorizations",
+     "id": "sec-015-4-technical-estimates",
+     "title": "Technical estimates",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-016-41-estimates-for-the-number-of-colorings-n12",
+     "title": "Estimates for the number of colorings N(1,2)",
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-42-estimates-for-the-number-of-factorizations",
      "title": "Estimates for the number of factorizations",
      "prose_ratio": 0.814,
-     "coverage_ratio": 0.973,
+     "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-5-asymptotics-of-characters",
+     "id": "sec-018-5-asymptotics-of-characters",
      "title": "Asymptotics of characters",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.027,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.028,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-013-51-upper-bound-for-characters-proof-of-theorem",
+     "id": "sec-019-51-upper-bound-for-characters-proof-of-theorem",
      "title": "Upper bound for characters: proof of Theorem ??",
      "prose_ratio": 0.883,
      "coverage_ratio": 0.945,
@@ -532,7 +955,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-52-error-term-for-balanced-young-diagrams",
+     "id": "sec-020-52-error-term-for-balanced-young-diagrams",
      "title": "Error term for balanced Young diagrams",
      "prose_ratio": 0.899,
      "coverage_ratio": 0.946,
@@ -540,23 +963,23 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-53-characters-of-symmetric-groups-related-to-tho",
+     "id": "sec-021-53-characters-of-symmetric-groups-related-to-tho",
      "title": "Characters of symmetric groups related to Thoma characters",
      "prose_ratio": 0.628,
-     "coverage_ratio": 0.947,
+     "coverage_ratio": 0.968,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-54-concluding-remarks",
+     "id": "sec-022-54-concluding-remarks",
      "title": "Concluding remarks",
-     "prose_ratio": 0.976,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.957,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-acknowledgments",
+     "id": "sec-023-acknowledgments",
      "title": "Acknowledgments",
      "prose_ratio": 0.97,
      "coverage_ratio": 1.0,
@@ -564,7 +987,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-018-references",
+     "id": "sec-024-references",
      "title": "References",
      "result": "no matching \\section"
     }

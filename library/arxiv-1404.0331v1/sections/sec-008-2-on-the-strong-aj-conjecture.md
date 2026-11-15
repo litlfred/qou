@@ -4,13 +4,14 @@ doc_title: "THE STRONG AJ CONJECTURE FOR CABLES OF TORUS KNOTS"
 section_id: sec-008-2-on-the-strong-aj-conjecture
 section_title: "On the strong AJ conjecture"
 section_number: 2
-pages: 4-9
+pages: 4-6
 source_pdf: 1404.0331v1.pdf
 source_sha256: 53d7ce3afaf405e1
-doc_brief: "THE STRONG AJ CONJECTURE FOR CABLES OF TORUS KNOTS — The AJ conjecture, formulated by Garoufalidis, relates the A-poly nomial and the colored Jones polynomial of a knot in the 3-sphere."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.854
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.84
+latex_coverage_ratio: 0.919
+doc_brief: "THE STRONG AJ CONJECTURE FOR CABLES OF TORUS KNOTS — The AJ conjecture, formulated by Garoufalidis, relates the A-polynomial and the colored Jones polynomial of a knot in the 3-sphere."
 ---
 \label{general}
 
@@ -189,65 +190,3 @@ The proof for $G_2$ is similar.
 \end{proof}
 
 By applying Proposition \ref{P_1P_2q_2}, we can show that $\fp \subset \sqrt{\ve(\CA_C^{\sigma})}$ as in Section \ref{q>2}.
-
-
-\section{Case $s>2$ is even}
-
-\label{s>2}
-
-\begin{proposition}
-\label{prop.11}
-When $s$ is even, one has 
-\begin{eqnarray*}
-(LM^{pqs^2}+L^{-1}M^{-pqs^2}-t^{2r-pqs(s+2)}-t^{-2r+pqs(3s+2)}) G_1 &\in& \CR[ M^{\pm 1}],\\
-(LM^{pqs^2}+L^{-1}M^{-pqs^2}-t^{-2r-pqs(s-2)}-t^{2r+pqs(3s-2)}) G_2 &\in& \CR[ M^{\pm 1}].
-\end{eqnarray*}
-\end{proposition}
-
-\begin{proof} From Lemma \ref{J_T} we have 
-$$J_{T}(s(n+2)+1)-t^{-pqs(2sn+3s+2)}J_{T}(s(n+1)+1) \in \CR[t^{\pm 2n}].$$
-It follows that $G_1(n+1)-t^{2r-pqs(2sn+3s+2)}G_1(n) \in \CR[t^{\pm 2n}]$. Hence $$(L-t^{2r-pqs(3s+2)}M^{-pqs^2})G_1 \in \CR[M^{\pm 1}],$$
-which implies that $(LM^{pqs^2}-t^{2r-pqs(s+2)})G_1 \in \CR[M^{\pm 1}]$. Hence
-$$(1-t^{-2r+2pq(s+2)}L^{-1}M^{-2ps^2})(LM^{pqs^2}-t^{2r-pqs(s+2)}) G_1 \in \CR[M^{\pm 1}].$$
-The proof for $G_2$ is similar.
-\end{proof}
-
-By applying Proposition \ref{prop.11}, we can show that $\fp \subset \sqrt{\ve(\CA_C^{\sigma})}$ as in Section \ref{q>2}.
-
-
-\section{Case $s=2$}
-
-\label{s=2}
-
-In the case $s=2$ we let $G(n)=J_K(2n+1)$. Then, by Lemma \ref{J_Cs_2}, we have 
-\begin{equation}
-\label{f}
-M^r(L+t^{-2r}M^{-2r})J_{C} = G.
-\end{equation}
-
-\begin{proposition}
-\label{ff}
-One has
-$$(LM^{4pq}+L^{-1}M^{-4pq}-1-t^{8pq})G \in  \CR[M^{\pm 1}].$$
-\end{proposition}
-
-\begin{proof} From \cite[Lemma 1.1]{Tr} we have 
-$$J_{T}(2n+3)-t^{-8pq(n+1)}J_{T}(2n+1) \in \CR[t^{\pm 2n}],$$
-i.e. $(L-t^{-8pq}M^{-4pq})G \in \CR[M^{\pm 1}].$ It follows that $(LM^{4pq}-1)G \in \CR[M^{\pm 1}]$. Hence
-$$(1-L^{-1}M^{-4pq})(LM^{4pq}-1)G \in \CR[M^{\pm 1}].$$
-The proposition follows.
-\end{proof}
-
-Let $P=LM^{4pq}+L^{-1}M^{-4pq}-1-t^{8pq}$. Note that $\sigma(P)=P$. By Proposition \ref{ff} we have $PG \in  \CR[ M^{\pm 1}]$. By Lemma \ref{tM}, we can choose $Q \in \CR[L^{\pm 1}]$ such that $\sigma(Q)=Q$, $\ve(Q)=(L+L^{-1}-2)^m$ for some $m \ge 1$, and $Q(PG)=0$. Eq. \eqref{f} then implies that $QPM^r(L+t^{-2r}M^{-2r})J_{C}=0.$ Let
-$$R := M^{r}QPM^r(L+t^{-2r}M^{-2r})+M^{-r}QPM^{-r}(L^{-1}+t^{-2r}M^{2r}).$$
-Then $\sigma(R)=R$. Since $\CA_C$ is invariant under $\sigma$, we have $RJ_{C}=0$. Note that
-\begin{eqnarray*}
-\ve(R) &=& (LM^{2r}+L^{-1}M^{-2r}-2)(LM^{4pq}+L^{-1}M^{-4pq}-2)(L+L^{-1}-2)^m.
-\end{eqnarray*}
-Let $S:=(LM^{2r}+L^{-1}M^{-2r}-2)^{m-1}(LM^{4pq}+L^{-1}M^{-4pq}-2)^{m-1}.$ We have $\sigma(S)=S$ and 
-\begin{eqnarray*}
-\ve(SR) &=& \left( (LM^{2r}+L^{-1}M^{-2r}+2)(LM^{4pq}+L^{-1}M^{-4pq}-2)(L+L^{-1}-2) \right)^m \\
-        &=& M^{2(r+2pq)m} L^{-3m} \left( (L-1)(L+M^{-2r})(L-M^{-4pq}) \right)^{2m}.
-\end{eqnarray*}
-
-Since $SR \in \CA^{\sigma}_C$ and $\ve(SR)=M^{2(r+2pq)m} L^{-3m} (A_C)^{2m}$, Lemma \ref{AJ0} implies that $\fp \subset \sqrt{\ve(\CA_C^{\sigma})}$. This proves Theorem \ref{th2} in the case $s=2$.

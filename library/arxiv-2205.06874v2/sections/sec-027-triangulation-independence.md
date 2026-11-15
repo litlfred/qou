@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2205.06874v2
-doc_title: "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg"
+doc_title: "State sum models with defects based on spherical fusion categories"
 section_id: sec-027-triangulation-independence
 section_title: "Triangulation independence"
 section_number: null
 pages: 48-51
 source_pdf: 2205.06874v2.pdf
 source_sha256: 9b41365160c17ab4
-doc_brief: "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg — We define a"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.951
-latex_coverage_ratio: 0.877
+latex_coverage_ratio: 0.994
+doc_brief: "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects."
 ---
 In this section we  show  that  any two generic transversal triangulations of a  3-manifold with defect data yield the same state sum if they agree at its boundary. 
 Note that this does not follow directly from  Corollary \ref{cor:pachner}, because it is not guaranteed a priori  that such triangulations are related by \emph{generic  transversal} bistellar moves. 

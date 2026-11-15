@@ -1,0 +1,91 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1208.3475v2",
+ "source": {
+  "structure_sha256": "d53fc4eefa070ba38b1651b3d2bc999133159ceb12fd79de25d4fed3e8fe55eb",
+  "file": "1208.3475v2.pdf"
+ },
+ "provenance": {
+  "title": "Poisson - Random Matrix transition in the QCD Dirac spectrum",
+  "authors": "Tam\u00e1s G. Kov\u00e1cs",
+  "arxiv": {
+   "id": "1208.3475",
+   "version": "2",
+   "primary_class": "hep-lat",
+   "stamp_date": "12 Sep 2012"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 4,
+  "by_kind": {
+   "recommendation": 4
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The only solid piece of information above the finite temperature cross-over is that since chiral symmetry is restored there the spectral density of the Dirac operator should vanish at zero.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "If there is a sharp transition in the thermodynamic limit then non-analytic behavior should appear in all these quantities at a given point, $\\lambda_c$, in the spectrum.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-004-32-second-moment-of-the-unfolded-level-spacing-d.md",
+   "section_title": "Second moment of the unfolded level spacing distribution",
+   "pages": "4-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "For this reason we expect $\\lambda_c$ to be renormalized in exactly the same way as the quark mass and the ratio of $\\lambda_c a$ to the bare light quark mass $m\\ensuremath _{\\mbox{\\scriptsize ud}} a$ should have a proper continuum limit.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-008-42-renormalization-and-temperature-dependence-of.md",
+   "section_title": "Renormalization and temperature dependence of $\\lambda_c$",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The splitting between members of the doublets, however, does not depend appreciably on the volume while the separation of the doublets (eventually quartets) should be inversely proportional to the spectral density and thus to the volume.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-008-42-renormalization-and-temperature-dependence-of.md",
+   "section_title": "Renormalization and temperature dependence of $\\lambda_c$",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

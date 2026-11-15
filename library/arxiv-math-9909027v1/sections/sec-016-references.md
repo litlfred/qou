@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9909027v1
-doc_title: "arXiv:math/9909027v1 [math.QA] 4 Sep 1999"
+doc_title: "Planar Algebras, I"
 section_id: sec-016-references
 section_title: "References"
 section_number: null
@@ -8,6 +8,7 @@ pages: 118-122
 source_pdf: 9909027v1.pdf
 source_sha256: e6cd544cdc141d3b
 toc_source: inferred
+doc_brief: "Planar Algebras, I — We introduce a notion of planar algebra, the simplest example of which is a vector space of tensors, closed under planar contractions."
 ---
 [A] V. Arnold, Remarks on the enumeration of plane curves.
 Amer. Math. Soc. Transl. 173(1996), 17–32.

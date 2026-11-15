@@ -2,47 +2,52 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2104.04941v2",
  "source_sha256": "84426ed37754aa78",
- "brief": "FOCK–GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS S. GILLES — Fock and Goncharov [FG06b] introduced cluster ensembles, p roviding a framework for coordi- nates on varieties of surface",
- "extended": "**FOCK–GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS S. GILLES**\n\n55 pp, 28 sections.\n\n**Abstract.** Fock and Goncharov [FG06b] introduced cluster ensembles, p roviding a framework for coordi- nates on varieties of surface representations into Lie grou ps, as well as a complete construction for groups of type An. Later, Zickert [Zic19], Le [Le16b], [Le16a], and Ip [Ip18] described, using diﬀering methods, how to apply this framework for other Lie group types. Zicker t also showed that this framework applies to triangulated 3-manifolds. W e present a complete, general construction, b ased on work of Fomin and Zelevinsky. In particular, we complete the picture for the r emaining cases: Lie groups of types F4, E6, E7, and E8.\n\n**Outline.** Acknowledgements; 1 Introduction; 1.2 Cluster ensemble structures; 1.3 Higher Teichmüller spaces; 1.4 Results; 1.5 Historical context; 2.3 Coxeter elements; 2 Ingredients; 2.4 Generalized minors; 2.1 Root spaces and Weyl groups; 2.2 Unipotent subgroups; 2.5 Factorization coordinates; 2.6 Quivers; 2.7 Cluster ensembles; 3 Key identities; 3.2 Grid exchange relations; 4 Coordinates on generically-decorated represe; 4.4 Regarding 3-manifolds",
+ "brief": "Fock–Goncharov Coordinates for Semisimple Lie Groups — Fock and Goncharov [FG06b] introduced cluster ensembles, providing a framework for coordi- nates on varieties of surface representations into",
+ "extended": "**Fock–Goncharov Coordinates for Semisimple Lie Groups**\n\n*S. GILLES*\n\n55 pp, 35 sections.\n\n**Abstract.** Fock and Goncharov [FG06b] introduced cluster ensembles, providing a framework for coordi- nates on varieties of surface representations into Lie groups, as well as a complete construction for groups of type An. Later, Zickert [Zic19], Le [Le16b], [Le16a], and Ip [Ip18] described, using diﬀering methods, how to apply this framework for other Lie group types. Zickert also showed that this framework applies to triangulated 3-manifolds. We present a complete, general construction, based on work of Fomin and Zelevinsky. In particular, we complete the picture for the remaining cases: Lie groups of types F4, E6, E7, and E8.\n\n**Outline.** Front matter; Acknowledgements; 1 Introduction; 1.1 Classical Teichmüller space; 1.2 Cluster ensemble structures; 1.3 Higher Teichmüller spaces; 1.4 Results; 1.5 Historical context; 2 Ingredients; 2.1 Root spaces and Weyl groups; 2.2 Unipotent subgroups; 2.3 Coxeter elements; 2.4 Generalized minors; 2.5 Factorization coordinates; 2.6 Quivers; 2.7 Cluster ensembles; 3 Key identities; 3.2 Grid exchange relations",
  "tokens": {
-  "brief": 46,
-  "extended": 297
+  "brief": 49,
+  "extended": 289
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-acknowledgements",
    "title": "Acknowledgements",
-   "pages": "1-1"
+   "pages": "2-2"
   },
   {
    "id": "sec-001-1-introduction",
    "title": "Introduction",
-   "pages": "1-4"
+   "pages": "2-3"
   },
   {
-   "id": "sec-002-12-cluster-ensemble-structures",
+   "id": "sec-002-11-classical-teichmüller-space",
+   "title": "Classical Teichmüller space",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-003-12-cluster-ensemble-structures",
    "title": "Cluster ensemble structures",
    "pages": "4-5"
   },
   {
-   "id": "sec-003-13-higher-teichmüller-spaces",
+   "id": "sec-004-13-higher-teichmüller-spaces",
    "title": "Higher Teichmüller spaces",
    "pages": "5-6"
   },
   {
-   "id": "sec-004-14-results",
+   "id": "sec-005-14-results",
    "title": "Results",
    "pages": "6-7"
   },
   {
-   "id": "sec-005-15-historical-context",
+   "id": "sec-006-15-historical-context",
    "title": "Historical context",
    "pages": "7-8"
-  },
-  {
-   "id": "sec-006-23-coxeter-elements",
-   "title": "Coxeter elements",
-   "pages": "8-8"
   },
   {
    "id": "sec-007-2-ingredients",
@@ -50,102 +55,132 @@
    "pages": "8-8"
   },
   {
-   "id": "sec-008-24-generalized-minors",
-   "title": "Generalized minors",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-009-21-root-spaces-and-weyl-groups",
+   "id": "sec-008-21-root-spaces-and-weyl-groups",
    "title": "Root spaces and Weyl groups",
    "pages": "8-9"
   },
   {
-   "id": "sec-010-22-unipotent-subgroups",
+   "id": "sec-009-22-unipotent-subgroups",
    "title": "Unipotent subgroups",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-010-23-coxeter-elements",
+   "title": "Coxeter elements",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-011-24-generalized-minors",
+   "title": "Generalized minors",
    "pages": "9-11"
   },
   {
-   "id": "sec-011-25-factorization-coordinates",
+   "id": "sec-012-25-factorization-coordinates",
    "title": "Factorization coordinates",
    "pages": "11-11"
   },
   {
-   "id": "sec-012-26-quivers",
+   "id": "sec-013-26-quivers",
    "title": "Quivers",
    "pages": "11-12"
   },
   {
-   "id": "sec-013-27-cluster-ensembles",
+   "id": "sec-014-27-cluster-ensembles",
    "title": "Cluster ensembles",
    "pages": "12-13"
   },
   {
-   "id": "sec-014-3-key-identities",
+   "id": "sec-015-3-key-identities",
    "title": "Key identities",
    "pages": "13-14"
   },
   {
-   "id": "sec-015-32-grid-exchange-relations",
+   "id": "sec-016-32-grid-exchange-relations",
    "title": "Grid exchange relations",
    "pages": "14-15"
   },
   {
-   "id": "sec-016-4-coordinates-on-generically-decorated-represent",
+   "id": "sec-017-4-coordinates-on-generically-decorated-represent",
    "title": "Coordinates on generically-decorated representations",
-   "pages": "15-23"
+   "pages": "15-16"
   },
   {
-   "id": "sec-017-44-regarding-3-manifolds",
+   "id": "sec-018-41-configurations-and-gluings",
+   "title": "Configurations and gluings",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-019-42-triangular-quivers-and-fockgoncharov-coordina",
+   "title": "Triangular quivers and Fock–Goncharov coordinate structures",
+   "pages": "17-21"
+  },
+  {
+   "id": "sec-020-43-from-coordinates-to-representations",
+   "title": "From coordinates to representations",
+   "pages": "21-23"
+  },
+  {
+   "id": "sec-021-44-regarding-3-manifolds",
    "title": "Regarding 3-manifolds",
    "pages": "23-23"
   },
   {
-   "id": "sec-018-5-main-result-fockgoncharov-coordinate-structure",
+   "id": "sec-022-5-main-result-fockgoncharov-coordinate-structure",
    "title": "Main Result: Fock–Goncharov coordinate structures for non-A_n",
    "pages": "23-23"
   },
   {
-   "id": "sec-019-51-overview",
+   "id": "sec-023-51-overview",
    "title": "Overview",
    "pages": "23-24"
   },
   {
-   "id": "sec-020-52-building-the-rectangle-q0",
+   "id": "sec-024-52-building-the-rectangle-q0",
    "title": "Building the rectangle Q0",
    "pages": "24-29"
   },
   {
-   "id": "sec-021-56-the-map-m",
+   "id": "sec-025-56-the-map-m",
    "title": "The map M",
-   "pages": "29-33"
+   "pages": "29-31"
   },
   {
-   "id": "sec-022-71-overview",
+   "id": "sec-026-57-the-significance-of-the-twisting-mutations",
+   "title": "The significance of the ``twisting'' mutations",
+   "pages": "31-32"
+  },
+  {
+   "id": "sec-027-6-construction-for-a-n",
+   "title": "Construction for A_n",
+   "pages": "32-33"
+  },
+  {
+   "id": "sec-028-71-overview",
    "title": "Overview",
    "pages": "33-34"
   },
   {
-   "id": "sec-023-72-ordering-mutations",
+   "id": "sec-029-72-ordering-mutations",
    "title": "Ordering mutations",
    "pages": "34-36"
   },
   {
-   "id": "sec-024-73-rotation-mutations",
+   "id": "sec-030-73-rotation-mutations",
    "title": "Rotation mutations",
    "pages": "36-40"
   },
   {
-   "id": "sec-025-74-flip-mutations",
+   "id": "sec-031-74-flip-mutations",
    "title": "Flip mutations",
    "pages": "40-44"
   },
   {
-   "id": "sec-026-9-examples",
+   "id": "sec-032-9-examples",
    "title": "Examples",
    "pages": "44-53"
   },
   {
-   "id": "sec-027-references",
+   "id": "sec-033-references",
    "title": "References",
    "pages": "53-55"
   }

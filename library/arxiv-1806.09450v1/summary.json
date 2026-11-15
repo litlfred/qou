@@ -3,34 +3,49 @@
  "doc_id": "arxiv-1806.09450v1",
  "source_sha256": "8556b67d97856446",
  "brief": "Deducing the symmetry of the standard model from the automorphism and structure groups of the exceptional Jordan algebra ∗ — We continue the study undertaken in [DV] of the exceptional Jordan algebra",
- "extended": "**Deducing the symmetry of the standard model from the automorphism and structure groups of the exceptional Jordan algebra ∗**\n\n*Ivan Todorov1, Michel Dubois-Violette 2*\n\n16 pp, 5 sections.\n\n**Abstract.** We continue the study undertaken in [DV] of the exceptional Jordan algebra J = J 8 3 as (part of) the ﬁnite-dimensional quantum algebra in an almost classical space-time approach to particle physics. Along with reviewing known properties of J and of the associated exceptional Lie groups we argue that the symmetry of the model can be deduced from the Borel-de Siebenthal theory of maximal connected subgroups of simple compact Lie groups. ∗Updated version of IHES/P/17/03 with minor corrections. 1 arXiv:1806.09450v1 [hep-th] 17 Jun 2018\n\n**Outline.** 1 Introduction; 3.1 The automorphism group F4 of the exception; 3.2 The magic square; 3.3 The exceptional Lie groups E6 and E7; 4 Borel-de Siebenthal theory and intersections",
+ "extended": "**Deducing the symmetry of the standard model from the automorphism and structure groups of the exceptional Jordan algebra ∗**\n\n*Ivan Todorov1, Michel Dubois-Violette2*\n\n16 pp, 8 sections.\n\n**Abstract.** We continue the study undertaken in [DV] of the exceptional Jordan algebra J = J8 3 as (part of) the ﬁnite-dimensional quantum algebra in an almost classical space-time approach to particle physics. Along with reviewing known properties of J and of the associated exceptional Lie groups we argue that the symmetry of the model can be deduced from the Borel-de Siebenthal theory of maximal connected subgroups of simple compact Lie groups. ∗Updated version of IHES/P/17/03 with minor corrections. 1 arXiv:1806.09450v1 [hep-th] 17 Jun 2018\n\n**Outline.** Front matter; 1 Introduction; 2 Exceptional finite quantum geometry; 3 The Lie algebra of derivations of J and its ; 3.1 The automorphism group F4 of the exception; 3.2 The magic square; 3.3 The exceptional Lie groups E6 and E7; 4 Borel-de Siebenthal theory and intersections",
  "tokens": {
   "brief": 49,
-  "extended": 233
+  "extended": 257
  },
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "title": "Introduction",
-   "pages": "2-6"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
   },
   {
-   "id": "sec-001-31-the-automorphism-group-f4-of-the-exceptional",
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-001-2-exceptional-finite-quantum-geometry",
+   "title": "Exceptional finite quantum geometry",
+   "pages": "3-6"
+  },
+  {
+   "id": "sec-002-3-the-lie-algebra-of-derivations-of-j-and-its-ex",
+   "title": "The Lie algebra of derivations of J and its extensions: the structure and the conformal algebras",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-003-31-the-automorphism-group-f4-of-the-exceptional",
    "title": "The automorphism group F4 of the exceptional Jordan algebra and its Lie algebra f4",
    "pages": "6-8"
   },
   {
-   "id": "sec-002-32-the-magic-square",
+   "id": "sec-004-32-the-magic-square",
    "title": "The magic square",
    "pages": "8-10"
   },
   {
-   "id": "sec-003-33-the-exceptional-lie-groups-e6-and-e7",
+   "id": "sec-005-33-the-exceptional-lie-groups-e6-and-e7",
    "title": "The exceptional Lie groups E6 and E7",
    "pages": "10-12"
   },
   {
-   "id": "sec-004-4-borel-de-siebenthal-theory-and-intersections-o",
+   "id": "sec-006-4-borel-de-siebenthal-theory-and-intersections-o",
    "title": "Borel-de Siebenthal theory and intersections of maximal subgroups of compact exceptional Lie groups",
    "pages": "12-16"
   }

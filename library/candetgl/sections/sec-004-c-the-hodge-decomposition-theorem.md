@@ -8,6 +8,7 @@ pages: 5-7
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
 toc_source: inferred
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 27 sections: Front matter; INTRODUCTION; PRELIMINARIES"
 ---
 In this section we present the Hodge Decomposition Theorem for vector ﬁelds on bounded
 domains in R3, which we will use throughout the paper. Although we state it below for the space
@@ -42,8 +43,6 @@ V"n50 indicates that the vector ﬁeld V is tangent to the boundary of V.
 879
 J. Math. Phys., Vol. 42, No. 2, February 2001
 The Biot–Savart operator
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 Let S stand generically for any smooth surface in V with ]S,]V. Earlier, when commenting
 on the statement of Theorem C, we indicated this by writing (S,]S),(V,]V). Now, orient S by
 picking one of its two unit normal vector ﬁelds n. Then, for any vector ﬁeld V on V, we can deﬁne
@@ -98,8 +97,6 @@ is self-explanatory.
 880
 J. Math. Phys., Vol. 42, No. 2, February 2001
 Cantarella, DeTurck, and Gluck
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 A vector ﬁeld V belongs to the subspace HG % GG of VF~V! if and only if it is the gradient
 of a smooth function w on V which is constant on each component of ]V, or equivalently, is a
 gradient vector ﬁeld which is orthogonal to ]V. Theorem B asserts that these vector ﬁelds form the

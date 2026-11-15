@@ -6,10 +6,12 @@
   "sha256": "92a7651c81b799b393123a235a0275531f55b77881894a33d8d5e43e28b24780",
   "bytes": 920222,
   "pages": 46,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,24 +22,29 @@
   },
   "doi": null,
   "title": "Resurgence in complex Chern-Simons theory at generic levels",
-  "authors_raw": null,
-  "abstract": "In this note we study the resurgent structure of sl(2, C) Chern-Simons state integral model on knot complements S3\\41,S 3\\52 with generic discrete level k\u2265 1 and with small boundary holonomy deformation. The coe\ufb03cients of the saddle point expansions are in the trace \ufb01eld of the knot extended by the holonomy parameter. Despite increasing complication of the asymptotic series as the level k increases, the resurgent structure of the asymptotic series is universal: both the distribution of Borel plane singularities and the associated Stokes constants are independent of the level k.",
-  "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20230209014119Z",
-   "Creator": "LaTeX with hyperref",
-   "Producer": "medialab",
-   "Title": ""
-  },
-  "title_prev": "Resurgence in complex Chern-Simons theory at generic levels Zhihao Duana Jie Gub aKorea Institute for Advanced Study 85 Hoegiro, Dongdaemun-gu, Seoul 02455, Korea bSchool of Phyiscs and Shing-Tung Yau Center",
+  "authors_raw": "Zhihao Duana Jie Gub",
   "title_lines": [
    "Resurgence in complex Chern-Simons theory at",
-   "generic levels",
-   "Zhihao Duana Jie Gub",
-   "aKorea Institute for Advanced Study",
-   "85 Hoegiro, Dongdaemun-gu, Seoul 02455, Korea",
-   "bSchool of Phyiscs and Shing-Tung Yau Center"
-  ]
+   "generic levels"
+  ],
+  "abstract": "In this note we study the resurgent structure of sl(2, C) Chern-Simons state integral model on knot complements S3\\41, S3\\52 with generic discrete level k ≥1 and with small boundary holonomy deformation. The coeﬃcients of the saddle point expansions are in the trace ﬁeld of the knot extended by the holonomy parameter. Despite increasing complication of the asymptotic series as the level k increases, the resurgent structure of the asymptotic series is universal: both the distribution of Borel plane singularities and the associated Stokes constants are independent of the level k.",
+  "docinfo": {
+   "Producer": "medialab",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20230209014119Z"
+  },
+  "title_raw": "Resurgence in complex Chern-Simons theory at generic levels",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Resurgence in complex Chern-Simons theory at generic levels",
+   "outline": "1 Introduction",
+   "text": "Resurgence in complex Chern-Simons theory at generic levels",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -45,158 +52,881 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Resurgent structure of complex Chern-Simons theory at generic level",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Perturbative complex Chern-Simons theory at generic level",
    "page": 4,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Resurgent structure of complex Chern-Simons theory",
    "page": 10,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Stokes constants and BPS invariants",
    "page": 15,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "Figure eight",
    "page": 16,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Asymptotic series",
    "page": 16,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Holomorphic blocks",
    "page": 19,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Resurgent structure",
    "page": 21,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 1,
    "title": "Three twists",
    "page": 24,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "Asymptotic series",
    "page": 24,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "Holomorphic blocks",
    "page": 30,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 2,
    "title": "Resurgent structure",
    "page": 32,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   },
   {
    "level": 1,
    "title": "Conclusion and discussion",
    "page": 34,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 1,
    "title": "A Tetrahedron partition function at level k",
    "page": 38,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "37"
   },
   {
    "level": 2,
    "title": "A.1 Fundamental properties",
    "page": 39,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   },
   {
    "level": 2,
    "title": "A.2 Zeros and poles",
    "page": 39,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   },
   {
    "level": 2,
    "title": "A.3 Integral identities",
    "page": 40,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 2,
    "title": "A.4 Semi-classical limit",
    "page": 40,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 1,
    "title": "B Power series of state integrals at different levels",
    "page": 40,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 2,
    "title": "B.1 Knot 41",
    "page": 40,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 2,
    "title": "B.2 Knot 52",
    "page": 42,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Demonstration of resurgent structure",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Singular points of the Borel transform of the vector of trans-series of the sl(2, C) Chern-Simons theory at level k = 1 on the complement of the knot 41",
+   "page": 21,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "20"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The distribution of poles of the Pad´e approximant for (a) : ϕ(k=2,σ1)",
+   "page": 23,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The distribution of poles of the Pad´e approximant for (a) : ϕ(k=2,σ1)",
+   "page": 23,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "We perform the numerical Borel resummation for Φ(k=2)",
+   "page": 24,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "23"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "We perform numerical Borel resummation for Φ(k=2)",
+   "page": 25,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "24"
+  },
+  {
+   "kind": "table",
+   "number": "3",
+   "title": "We perform numerical Borel resummation for Φ(k=3)",
+   "page": 26,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "25"
+  },
+  {
+   "kind": "table",
+   "number": "4",
+   "title": "We perform numerical Borel resummation for Φ(k=3)",
+   "page": 27,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "26"
+  },
+  {
+   "kind": "table",
+   "number": "5",
+   "title": "We perform numerical Borel resummation for Φ(k=3)",
+   "page": 28,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "27"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Singular points of the Borel transform of the vector of trans-series of the sl(2, C) Chern-Simons theory at level k = 1 on the complement of the knot 52",
+   "page": 32,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "31"
+  },
+  {
+   "kind": "figure",
+   "number": "6b",
+   "title": "The relative error is still much smaller than a ˜x±1 correction, although it does not preclude a potential ˜q−1 correction. The latter, however, is not possible. Fig. 6b indicates that Φ(k=2,σ2)",
+   "page": 34,
+   "confidence": 0.7,
+   "evidence": [
+    "referenced"
+   ],
+   "page_label": "33"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "The distribution of poles of the Pad´e approximant for (a) : Φ(k=2,σ1)",
+   "page": 35,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "34"
+  },
+  {
+   "kind": "table",
+   "number": "6",
+   "title": "We perform the numerical Borel resummation for Φ(k=2)",
+   "page": 36,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "35"
+  },
+  {
+   "kind": "table",
+   "number": "7",
+   "title": "We perform the numerical Borel resummation for Φ(k=2)",
+   "page": 37,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "36"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "0",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "9",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "14",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "15",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "18",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "20",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "23",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "29",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "31",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "33",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "37",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "38",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "39",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1065,
+   "n_words": 150,
+   "label_start": "0",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -204,8 +934,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 4,
-   "n_chars": 6146,
-   "n_words": 998
+   "n_chars": 6168,
+   "n_words": 1007,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-001-2-resurgent-structure-of-complex-chern-simons-th",
@@ -214,8 +946,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 67,
+   "n_words": 9,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
    "id": "sec-002-21-perturbative-complex-chern-simons-theory-at-g",
@@ -224,8 +958,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 10,
-   "n_chars": 12860,
-   "n_words": 2361
+   "n_chars": 12780,
+   "n_words": 2495,
+   "label_start": "3",
+   "label_end": "9"
   },
   {
    "id": "sec-003-22-resurgent-structure-of-complex-chern-simons-t",
@@ -234,8 +970,10 @@
    "level": 2,
    "page_start": 10,
    "page_end": 15,
-   "n_chars": 11020,
-   "n_words": 1893
+   "n_chars": 11147,
+   "n_words": 1976,
+   "label_start": "9",
+   "label_end": "14"
   },
   {
    "id": "sec-004-23-stokes-constants-and-bps-invariants",
@@ -244,8 +982,10 @@
    "level": 2,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 1571,
-   "n_words": 263
+   "n_chars": 1615,
+   "n_words": 276,
+   "label_start": "14",
+   "label_end": "15"
   },
   {
    "id": "sec-005-3-figure-eight",
@@ -254,8 +994,10 @@
    "level": 1,
    "page_start": 16,
    "page_end": 16,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 12,
+   "n_words": 2,
+   "label_start": "15",
+   "label_end": "15"
   },
   {
    "id": "sec-006-31-asymptotic-series",
@@ -264,8 +1006,10 @@
    "level": 2,
    "page_start": 16,
    "page_end": 19,
-   "n_chars": 5183,
-   "n_words": 980
+   "n_chars": 5272,
+   "n_words": 1053,
+   "label_start": "15",
+   "label_end": "18"
   },
   {
    "id": "sec-007-32-holomorphic-blocks",
@@ -274,8 +1018,10 @@
    "level": 2,
    "page_start": 19,
    "page_end": 21,
-   "n_chars": 3640,
-   "n_words": 639
+   "n_chars": 3745,
+   "n_words": 723,
+   "label_start": "18",
+   "label_end": "20"
   },
   {
    "id": "sec-008-33-resurgent-structure",
@@ -284,8 +1030,10 @@
    "level": 2,
    "page_start": 21,
    "page_end": 24,
-   "n_chars": 6814,
-   "n_words": 1264
+   "n_chars": 6874,
+   "n_words": 1294,
+   "label_start": "20",
+   "label_end": "23"
   },
   {
    "id": "sec-009-4-three-twists",
@@ -294,8 +1042,10 @@
    "level": 1,
    "page_start": 24,
    "page_end": 24,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 12,
+   "n_words": 2,
+   "label_start": "23",
+   "label_end": "23"
   },
   {
    "id": "sec-010-41-asymptotic-series",
@@ -304,8 +1054,10 @@
    "level": 2,
    "page_start": 24,
    "page_end": 30,
-   "n_chars": 9759,
-   "n_words": 1846
+   "n_chars": 9875,
+   "n_words": 1949,
+   "label_start": "23",
+   "label_end": "29"
   },
   {
    "id": "sec-011-42-holomorphic-blocks",
@@ -314,8 +1066,10 @@
    "level": 2,
    "page_start": 30,
    "page_end": 32,
-   "n_chars": 2404,
-   "n_words": 402
+   "n_chars": 2521,
+   "n_words": 502,
+   "label_start": "29",
+   "label_end": "31"
   },
   {
    "id": "sec-012-43-resurgent-structure",
@@ -324,8 +1078,10 @@
    "level": 2,
    "page_start": 32,
    "page_end": 34,
-   "n_chars": 5630,
-   "n_words": 1043
+   "n_chars": 5705,
+   "n_words": 1100,
+   "label_start": "31",
+   "label_end": "33"
   },
   {
    "id": "sec-013-5-conclusion-and-discussion",
@@ -334,8 +1090,10 @@
    "level": 1,
    "page_start": 34,
    "page_end": 38,
-   "n_chars": 8141,
-   "n_words": 1426
+   "n_chars": 8202,
+   "n_words": 1464,
+   "label_start": "33",
+   "label_end": "37"
   },
   {
    "id": "sec-014-a-tetrahedron-partition-function-at-level-k",
@@ -344,8 +1102,10 @@
    "level": 1,
    "page_start": 38,
    "page_end": 39,
-   "n_chars": 782,
-   "n_words": 168
+   "n_chars": 837,
+   "n_words": 187,
+   "label_start": "37",
+   "label_end": "38"
   },
   {
    "id": "sec-015-a1-fundamental-properties",
@@ -354,8 +1114,10 @@
    "level": 2,
    "page_start": 39,
    "page_end": 39,
-   "n_chars": 539,
-   "n_words": 116
+   "n_chars": 571,
+   "n_words": 127,
+   "label_start": "38",
+   "label_end": "38"
   },
   {
    "id": "sec-016-a2-zeros-and-poles",
@@ -364,8 +1126,10 @@
    "level": 2,
    "page_start": 39,
    "page_end": 40,
-   "n_chars": 267,
-   "n_words": 57
+   "n_chars": 296,
+   "n_words": 73,
+   "label_start": "38",
+   "label_end": "39"
   },
   {
    "id": "sec-017-a3-integral-identities",
@@ -374,8 +1138,10 @@
    "level": 2,
    "page_start": 40,
    "page_end": 40,
-   "n_chars": 209,
-   "n_words": 34
+   "n_chars": 231,
+   "n_words": 38,
+   "label_start": "39",
+   "label_end": "39"
   },
   {
    "id": "sec-018-a4-semi-classical-limit",
@@ -383,17 +1149,79 @@
    "title": "A.4 Semi-classical limit",
    "level": 2,
    "page_start": 40,
+   "page_end": 40,
+   "n_chars": 507,
+   "n_words": 104,
+   "label_start": "39",
+   "label_end": "39"
+  },
+  {
+   "id": "sec-019-b-power-series-of-state-integrals-at-different-l",
+   "number": null,
+   "title": "B Power series of state integrals at different levels",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 40,
+   "n_chars": 50,
+   "n_words": 8,
+   "label_start": "39",
+   "label_end": "39"
+  },
+  {
+   "id": "sec-020-b1-knot-41",
+   "number": null,
+   "title": "B.1 Knot 41",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 42,
+   "n_chars": 2858,
+   "n_words": 551,
+   "label_start": "39",
+   "label_end": "41"
+  },
+  {
+   "id": "sec-021-b2-knot-52",
+   "number": null,
+   "title": "B.2 Knot 52",
+   "level": 2,
+   "page_start": 42,
    "page_end": 46,
-   "n_chars": 15740,
-   "n_words": 2488
+   "n_chars": 12329,
+   "n_words": 1820,
+   "label_start": "41",
+   "label_end": "45"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 22,
-  "sections": 19,
-  "chars_total": 90705,
+  "toc_inferred_entries": 0,
+  "figure_entries": 14,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "Introduction"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 23,
+  "chars_total": 92739,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "DG_genlevel_22v2.tex",
@@ -406,24 +1234,30 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.943,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-resurgent-structure-of-complex-chern-simons-th",
      "title": "Resurgent structure of complex Chern-Simons theory at generic level",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.0,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-002-21-perturbative-complex-chern-simons-theory-at-g",
      "title": "Perturbative complex Chern-Simons theory at generic level",
      "prose_ratio": 0.972,
-     "coverage_ratio": 0.911,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -431,7 +1265,7 @@
      "id": "sec-003-22-resurgent-structure-of-complex-chern-simons-t",
      "title": "Resurgent structure of complex Chern-Simons theory",
      "prose_ratio": 0.959,
-     "coverage_ratio": 0.974,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -439,7 +1273,7 @@
      "id": "sec-004-23-stokes-constants-and-bps-invariants",
      "title": "Stokes constants and BPS invariants",
      "prose_ratio": 0.881,
-     "coverage_ratio": 0.957,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -447,13 +1281,13 @@
      "id": "sec-005-3-figure-eight",
      "title": "Figure eight",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-006-31-asymptotic-series",
      "title": "Asymptotic series",
      "prose_ratio": 0.956,
-     "coverage_ratio": 0.912,
+     "coverage_ratio": 0.918,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -461,14 +1295,14 @@
      "id": "sec-007-32-holomorphic-blocks",
      "title": "Holomorphic blocks",
      "prose_ratio": 0.956,
-     "coverage_ratio": 0.917,
+     "coverage_ratio": 0.943,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-008-33-resurgent-structure",
      "title": "Resurgent structure",
-     "prose_ratio": 0.926,
+     "prose_ratio": 0.93,
      "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "latex"
@@ -476,14 +1310,14 @@
     {
      "id": "sec-009-4-three-twists",
      "title": "Three twists",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.003,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-010-41-asymptotic-series",
      "title": "Asymptotic series",
      "prose_ratio": 0.762,
-     "coverage_ratio": 0.801,
+     "coverage_ratio": 0.806,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -491,21 +1325,21 @@
      "id": "sec-011-42-holomorphic-blocks",
      "title": "Holomorphic blocks",
      "prose_ratio": 0.474,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-012-43-resurgent-structure",
      "title": "Resurgent structure",
-     "prose_ratio": 0.691,
-     "coverage_ratio": 0.807,
+     "prose_ratio": 0.7,
+     "coverage_ratio": 0.812,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-013-5-conclusion-and-discussion",
      "title": "Conclusion and discussion",
-     "prose_ratio": 0.888,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.902,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -532,6 +1366,21 @@
     {
      "id": "sec-018-a4-semi-classical-limit",
      "title": "A.4 Semi-classical limit",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-b-power-series-of-state-integrals-at-different-l",
+     "title": "B Power series of state integrals at different levels",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-b1-knot-41",
+     "title": "B.1 Knot 41",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-b2-knot-52",
+     "title": "B.2 Knot 52",
      "result": "no matching \\section"
     }
    ]

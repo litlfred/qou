@@ -1,0 +1,50 @@
+2.1. The setting 25
+
+object in the sense that the morphism evx is an isomorphism. Over a base
+field k of characteristic zero every invertible object has this form, indeed
+from the Kiinneth formula [7, exp. XVII, sect. 5.4]
+
+H*(X,K«L) © H*(X,K)@, H"(X,L)
+
+one easily checks that every invertible object has Euler characteristic one,
+so proposition 1.6 (b) applies. In what follows, if we want to stress the rigid
+symmetric monoidal structure on D?(X, A) we write (D?(X,A),*).
+
+The most prominent examples of rigid symmetric monoidal categories
+are the abelian categories (Vect, , ®) of finite-dimensional vector spaces and
+more generally the abelian categories (Rep,(G),®) of representations of
+an affine group scheme G over A. Indeed, at the heart of the Tannakian
+formalism lies the fact that a rigid symmetric monoidal A-linear abelian
+category (C,*) with Endc(1) = A is of the form (Rep,(G),®) provided
+that it admits a fibre functor, by which we mean a faithful exact A-linear
+functor
+
+@: (C,*) —> (Vect,,®)
+which is a tensor functor ACU in the sense that it is compatible with the
+symmetric monoidal structures on both sides [33, th. 2.11].
+
+Now the A-linear rigid symmetric monoidal category D(X, A) is not
+an abelian category but only triangulated; on the other hand, its full abelian
+subcategory Perv(X,A) does not inherit the structure of a rigid symmetric
+monoidal category since in general the convolution of two perverse sheaves
+is no longer perverse. However, for the full subcategory D C D}(X, A) of all
+direct sums of degree shifts of semisimple perverse sheaves, we will obtain
+in section 2.4 by a general quotient construction due to André and Kahn [1]
+a symmetric monoidal quotient category D which is indeed a semisimple
+abelian category. Under the quotient morphism
+
+D—D
+
+an sheaf complex K € D becomes isomorphic to zero in D iff all its simple
+constituents have Euler characteristic zero. Over k = C the classification
+in proposition 1.6 shows that this is the case if and only if H*(X,Ky) =0
+for most characters 7. Furthermore, via a characterization of semisimple
+rigid symmetric A-linear abelian categories given by Deligne [30] we will
+see in section 2.5 that the category D is a limit of representation categories
+of reductive algebraic super groups over A.
+
+It then turns out that the non-perversity of convolution products can be
+controlled by central characters of these groups. This will imply via an
+argument from representation theory that the semisimple perverse sheaves
+define a full subcategory of D that is stable under convolution. So for any
+semisimple perverse sheaf P and r € N the convolution powers P*" split

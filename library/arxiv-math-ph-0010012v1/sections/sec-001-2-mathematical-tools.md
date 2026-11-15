@@ -11,5 +11,6 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.944
+doc_brief: "arXiv:math-ph/0010012v1 10 Oct 2000 — We review some recent results on random polynomials and their generalizations in complex and symplectic geometry."
 ---
 We give a quick summary of some basic tools and methods that are used below. We will concentrate on general ideas and refer to [@SZ1; @SZ2; @BSZ3] for detailed expositions.

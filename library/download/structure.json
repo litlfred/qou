@@ -7,15 +7,22 @@
   "bytes": 283481,
   "pages": 30,
   "text_source": "embedded",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 15,
+    "reason": "10 of 368 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.3150/10-BEJ254",
   "title": "Concentration of empirical distribution functions with applications to non-i.i.d. models",
-  "authors_raw": "S.G. BOBKOV 1 and F. G\u00d6TZE 2",
+  "authors_raw": "S.G. BOBKOV1 and F. GÖTZE2",
   "title_lines": [
    "Concentration of empirical distribution",
    "functions with applications",
@@ -23,11 +30,26 @@
   ],
   "abstract": null,
   "docinfo": {
-   "CreationDate": "D:20101116142629+02'00'",
+   "Title": "Concentration of empirical distribution functions with applications to non-i.i.d. models",
    "Author": "S.G. Bobkov, F. Gotze",
-   "Creator": "LaTeX2e",
    "Producer": "Acrobat Distiller 7.0.5 (Windows)",
-   "Title": "Concentration of empirical distribution functions with applications to non-i.i.d. models"
+   "Creator": "LaTeX2e",
+   "CreationDate": "D:20101116142629+02'00'"
+  },
+  "title_raw": "Concentration of empirical distribution functions with applications to non-i.i.d. models",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Concentration of empirical distribution functions with applications to non-i.i.d. models",
+   "heading": "Concentration of empirical distribution functions with applications to non-i.i.d. models",
+   "outline": "Introduction",
+   "text": "Concentration of empirical distribution functions with applications to non-i.i.d. models",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -36,81 +58,429 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1385"
   },
   {
    "level": 1,
-   "title": "Empirical Poincar\u00e9 inequalities",
+   "title": "Empirical Poincaré inequalities",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1389"
   },
   {
    "level": 1,
    "title": "Proof of Theorem 1.1",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1391"
   },
   {
    "level": 1,
    "title": "Large deviations above the mean",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1394"
   },
   {
    "level": 1,
    "title": "Empirical log-Sobolev inequalities",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1398"
   },
   {
    "level": 1,
    "title": "Local behavior of empirical distributions",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1400"
   },
   {
    "level": 1,
    "title": "Bounds on the Kolmogorov distance. Proof of Theorem 1.2",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1404"
   },
   {
    "level": 1,
    "title": "High-dimensional random matrices",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1407"
   },
   {
    "level": 1,
    "title": "Appendix",
    "page": 26,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1410"
   },
   {
    "level": 1,
    "title": "Acknowledgements",
    "page": 28,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1412"
   },
   {
    "level": 1,
    "title": "References",
    "page": 28,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1412"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1385",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "1386",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "1387",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "1388",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "1389",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "1390",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "1391",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "1392",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "1393",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "1394",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "1395",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "1396",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "1397",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "1398",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "1399",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "1400",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "1401",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "1402",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "1403",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "1404",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "1405",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "1406",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "1407",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "1408",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "1409",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "1410",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "1411",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "1412",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "1413",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "1414",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 884,
+   "n_words": 100,
+   "label_start": "1385",
+   "label_end": "1385"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -118,18 +488,22 @@
    "level": 1,
    "page_start": 1,
    "page_end": 5,
-   "n_chars": 10672,
-   "n_words": 1999
+   "n_chars": 10394,
+   "n_words": 1867,
+   "label_start": "1385",
+   "label_end": "1389"
   },
   {
-   "id": "sec-001-empirical-poincar\u00e9-inequalities",
+   "id": "sec-001-empirical-poincaré-inequalities",
    "number": null,
-   "title": "Empirical Poincar\u00e9 inequalities",
+   "title": "Empirical Poincaré inequalities",
    "level": 1,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 3643,
-   "n_words": 745
+   "n_chars": 3529,
+   "n_words": 704,
+   "label_start": "1389",
+   "label_end": "1391"
   },
   {
    "id": "sec-002-proof-of-theorem-11",
@@ -138,8 +512,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 10,
-   "n_chars": 4596,
-   "n_words": 1033
+   "n_chars": 4190,
+   "n_words": 893,
+   "label_start": "1391",
+   "label_end": "1394"
   },
   {
    "id": "sec-003-large-deviations-above-the-mean",
@@ -148,8 +524,10 @@
    "level": 1,
    "page_start": 10,
    "page_end": 14,
-   "n_chars": 7611,
-   "n_words": 1450
+   "n_chars": 7249,
+   "n_words": 1356,
+   "label_start": "1394",
+   "label_end": "1398"
   },
   {
    "id": "sec-004-empirical-log-sobolev-inequalities",
@@ -158,8 +536,10 @@
    "level": 1,
    "page_start": 14,
    "page_end": 16,
-   "n_chars": 5551,
-   "n_words": 1014
+   "n_chars": 5459,
+   "n_words": 954,
+   "label_start": "1398",
+   "label_end": "1400"
   },
   {
    "id": "sec-005-local-behavior-of-empirical-distributions",
@@ -168,8 +548,10 @@
    "level": 1,
    "page_start": 16,
    "page_end": 20,
-   "n_chars": 7035,
-   "n_words": 1379
+   "n_chars": 6745,
+   "n_words": 1236,
+   "label_start": "1400",
+   "label_end": "1404"
   },
   {
    "id": "sec-006-bounds-on-the-kolmogorov-distance-proof-of-theor",
@@ -178,8 +560,10 @@
    "level": 1,
    "page_start": 20,
    "page_end": 23,
-   "n_chars": 4912,
-   "n_words": 1053
+   "n_chars": 4683,
+   "n_words": 945,
+   "label_start": "1404",
+   "label_end": "1407"
   },
   {
    "id": "sec-007-high-dimensional-random-matrices",
@@ -188,8 +572,10 @@
    "level": 1,
    "page_start": 23,
    "page_end": 26,
-   "n_chars": 6522,
-   "n_words": 1343
+   "n_chars": 6303,
+   "n_words": 1231,
+   "label_start": "1407",
+   "label_end": "1410"
   },
   {
    "id": "sec-008-appendix",
@@ -198,8 +584,10 @@
    "level": 1,
    "page_start": 26,
    "page_end": 28,
-   "n_chars": 3988,
-   "n_words": 719
+   "n_chars": 3871,
+   "n_words": 675,
+   "label_start": "1410",
+   "label_end": "1412"
   },
   {
    "id": "sec-009-acknowledgements",
@@ -209,7 +597,9 @@
    "page_start": 28,
    "page_end": 28,
    "n_chars": 67,
-   "n_words": 11
+   "n_words": 11,
+   "label_start": "1412",
+   "label_end": "1412"
   },
   {
    "id": "sec-010-references",
@@ -218,15 +608,25 @@
    "level": 1,
    "page_start": 28,
    "page_end": 30,
-   "n_chars": 6749,
-   "n_words": 954
+   "n_chars": 6673,
+   "n_words": 951,
+   "label_start": "1412",
+   "label_end": "1414"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 11,
-  "sections": 11,
-  "chars_total": 61346
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 12,
+  "chars_total": 60047,
+  "furniture_lines_stripped": 56
  }
 }

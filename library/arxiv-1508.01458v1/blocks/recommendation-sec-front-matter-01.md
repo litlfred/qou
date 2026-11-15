@@ -1,0 +1,1 @@
+It is the purpose of this Letter to outline the main fea- tures of this mechanism and discuss the necessary prop- erties that a ﬂux tube network must exhibit in order to yield a successful inﬂationary model in three dimensions.

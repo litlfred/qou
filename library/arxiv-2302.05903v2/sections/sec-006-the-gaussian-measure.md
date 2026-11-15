@@ -7,10 +7,11 @@ section_number: null
 pages: 7-7
 source_pdf: 2302.05903v2.pdf
 source_sha256: 9a17abd36cc8a317
-doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials — We elaborate on the recent suggestion to consider averaging of Cauchy identities"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.964
 latex_coverage_ratio: 1.0
+doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials — We elaborate on the recent suggestion to consider averaging of Cauchy identities"
 ---
 The main Gaussian measure ([\[Gm\]](#Gm){reference-type="ref" reference="Gm"}) itself enjoys a curious property: it can be expanded into a simple sum over the Schur functions containing only self-conjugated Young diagrams: $$\begin{aligned}
 \label{Gmex}

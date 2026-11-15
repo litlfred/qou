@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.993
 latex_coverage_ratio: 0.956
+doc_brief: "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES — This work forms a foundational study of factorization homology, or topological chiral homology, at the generality of stratiﬁed spaces with tangential"
 ---
 When the target symmetric monoidal $\oo$-category $\cV$ is $\m_\Bbbk^\ot$, the category of $\Bbbk$-modules for some commutative algebra $\Bbbk$, then factorization homology of closed 1-manifolds gives variants of Hochschild homology.
 

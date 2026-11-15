@@ -11,11 +11,22 @@
   ],
   "title": "PII: 0040-9383(87)90009-7",
   "contains": [
-    "library/1-s20-0040938387900097-main/sections/sec-front-matter",
-    "library/1-s20-0040938387900097-main/sections/sec-000"
+    "library/1-s20-0040938387900097-main/sections/page-001",
+    "library/1-s20-0040938387900097-main/sections/page-002",
+    "library/1-s20-0040938387900097-main/sections/page-003",
+    "library/1-s20-0040938387900097-main/sections/page-004",
+    "library/1-s20-0040938387900097-main/sections/page-005",
+    "library/1-s20-0040938387900097-main/sections/page-006",
+    "library/1-s20-0040938387900097-main/sections/page-007",
+    "library/1-s20-0040938387900097-main/sections/page-008",
+    "library/1-s20-0040938387900097-main/sections/page-009",
+    "library/1-s20-0040938387900097-main/sections/page-010",
+    "library/1-s20-0040938387900097-main/sections/page-011",
+    "library/1-s20-0040938387900097-main/sections/page-012",
+    "library/1-s20-0040938387900097-main/sections/page-013"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "1-s20-0040938387900097-main",
     "title_source": "pdf-info",
@@ -25,8 +36,8 @@
     "pages": 13,
     "arxiv": null,
     "doi": null,
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

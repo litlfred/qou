@@ -1,0 +1,1 @@
+The author believes this would give a rich combinatorial basis of the Hecke algebra, and a very natural set of Soergel bimodules that in our dreams should play a role in the understanding of the $p$-canonical basis[^1]. :::

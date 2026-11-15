@@ -1,0 +1,2380 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-0806.4741v1",
+  "pages": [
+    {
+      "page": 8,
+      "rotation": 0,
+      "drawings": 16,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1: Contraction of the Kaehler orbit into a non-metric hyperbolic cylinder."
+      ],
+      "labels": [
+        {
+          "text": "2.3",
+          "bbox": [
+            72.0,
+            72.62,
+            89.2,
+            84.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Admissible functions on symplectic symmetric surfaces",
+          "bbox": [
+            102.65,
+            72.62,
+            426.77,
+            84.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "In [33], Alan Weinstein conjectures the relevance of a certain three-point function, here denoted SW , as the",
+          "bbox": [
+            72.0,
+            92.57,
+            539.99,
+            104.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "essential constituent of the phase of an oscillatory kernel deﬁning an invariant star product on the hyperbolic",
+          "bbox": [
+            72.0,
+            104.52,
+            540.08,
+            114.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "plane D or more generally on any (reasonable) symplectic symmetric space O = G/K. Essentially, when",
+          "bbox": [
+            72.0,
+            114.3,
+            540.02,
+            126.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "three points x, y and z in O are close enough to one another, Weinstein function SW = SW (x, y, z) is deﬁned",
+          "bbox": [
+            72.0,
+            128.3,
+            540.01,
+            139.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "as the symplectic area of the geodesic (deﬁned by the Loos connection) triangle in O admitting points x, y, z",
+          "bbox": [
+            72.0,
+            140.26,
+            539.57,
+            150.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "as mid-points of its geodesic edges.",
+          "bbox": [
+            72.0,
+            152.34,
+            224.48,
+            162.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "contraction",
+          "bbox": [
+            291.25,
+            238.35,
+            379.28,
+            267.49
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica-Oblique"
+          ],
+          "sizes": [
+            18.0
+          ]
+        },
+        {
+          "text": "DI",
+          "bbox": [
+            181.92,
+            356.42,
+            199.9,
+            402.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LucidaGrande"
+          ],
+          "sizes": [
+            24.0
+          ]
+        },
+        {
+          "text": "M",
+          "bbox": [
+            480.77,
+            356.42,
+            501.43,
+            402.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LucidaGrande"
+          ],
+          "sizes": [
+            24.0
+          ]
+        },
+        {
+          "text": "Figure 1: Contraction of the Kaehler orbit into a non-metric hyperbolic cylinder.",
+          "bbox": [
+            129.13,
+            416.15,
+            482.93,
+            426.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Additionally to its invariance under the symmetries, the three-point function SW (when deﬁned) has been",
+          "bbox": [
+            72.0,
+            440.06,
+            540.01,
+            451.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "shown in [38] to satisfy the following so-called admissibility condition (36).",
+          "bbox": [
+            72.0,
+            452.02,
+            398.11,
+            461.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A three-point function S ∈C∞(O ×O ×O, R) is called admissible if it is invariant under the diagonal action",
+          "bbox": [
+            72.0,
+            461.8,
+            540.05,
+            473.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSL10",
+            "CMSY10",
+            "CMSY7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of the symmetries on O × O × O, is totally skewsymmetric, and if it satisﬁes the following property:",
+          "bbox": [
+            72.0,
+            475.8,
+            510.11,
+            485.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "S(x, y, z) = −S(x, sxy, z) .",
+          "bbox": [
+            248.58,
+            497.72,
+            363.42,
+            508.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(36)",
+          "bbox": [
+            522.29,
+            497.84,
+            540.0,
+            507.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "As it will appear, the above condition is in fact the crucial one regarding star-products.",
+          "bbox": [
+            72.0,
+            519.76,
+            454.34,
+            529.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In the case of a symplectic symmetric surface, every such (regular) admissible function turns out to coincide",
+          "bbox": [
+            72.0,
+            531.72,
+            540.01,
+            541.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "with an odd function of a canonical admissible function.",
+          "bbox": [
+            72.0,
+            543.67,
+            327.0,
+            553.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSL10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The latter function denoted hereafter Scan is",
+          "bbox": [
+            335.05,
+            543.67,
+            540.0,
+            555.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "deﬁned in terms of the co-adjoint orbit realization of the symplectic symmetric surface at hand. We now",
+          "bbox": [
+            72.0,
+            555.63,
+            540.03,
+            565.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "explain how to deﬁne it.",
+          "bbox": [
+            72.0,
+            567.58,
+            177.73,
+            577.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Locally, every geodesic line starting at the base point o := K and ending at x can be realized as the",
+          "bbox": [
+            72.0,
+            579.54,
+            540.0,
+            589.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(parametrized) orbit of o by a one-parameter subgroup exp(tX) of G with X ∈p ( see e.g. [37] ). An",
+          "bbox": [
+            72.0,
+            591.36,
+            540.0,
+            601.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "EUFM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "invariant totally skewsymmetric smooth function S ∈C∞(O3) will be called regular admissible if S(o, x, y) =",
+          "bbox": [
+            72.0,
+            602.08,
+            540.01,
+            613.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSL10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "S(o, x, exp(tX).y), for all t ∈R and y ∈O. Observe that regular admissibility implies admissibility as a",
+          "bbox": [
+            72.0,
+            613.23,
+            540.03,
+            625.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "consequence of the following classical identity:",
+          "bbox": [
+            72.0,
+            627.36,
+            273.36,
+            637.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2 X) ◦so",
+          "bbox": [
+            302.03,
+            649.15,
+            338.64,
+            664.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR5",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(X ∈p)",
+          "bbox": [
+            359.06,
+            649.15,
+            393.01,
+            659.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "EUFM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "exp(X) = sExpo( 1",
+          "bbox": [
+            220.66,
+            649.28,
+            305.42,
+            663.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMR10",
+            "CMR5",
+            "CMR7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(37)",
+          "bbox": [
+            522.29,
+            649.28,
+            540.0,
+            659.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "where Expo denotes the exponential mapping at point o with respect to the canonical connection. The",
+          "bbox": [
+            72.0,
+            672.97,
+            540.0,
+            685.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "inclusion p ⊂g induces a linear projection Π : g⋆→p⋆. The dual space p⋆naturally carries a (constant)",
+          "bbox": [
+            72.0,
+            683.64,
+            540.02,
+            694.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "EUFM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "symplectic 2-form here denoted again by Ω. Identifying points with vectors in p⋆, given two points ξ and",
+          "bbox": [
+            72.0,
+            695.6,
+            540.01,
+            706.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "EUFM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "η, the quantity Ω(ξ, η) therefore represents the ﬂat symplectic area of the (ﬂat) Euclidean triangle in p⋆",
+          "bbox": [
+            72.0,
+            707.55,
+            539.5,
+            718.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "EUFM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "8",
+          "bbox": [
+            303.51,
+            742.1,
+            308.49,
+            752.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 9,
+      "rotation": 0,
+      "drawings": 21,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2: The canonical three-point phase obtained from projecting the orbit."
+      ],
+      "labels": [
+        {
+          "text": "admitting points 0, ξ and η as vertices. By transversality, the restriction of the projection Π to the co-",
+          "bbox": [
+            72.0,
+            74.18,
+            540.02,
+            84.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "adjoint orbit O ⊂g⋆is locally (around o) a diﬀeomorphism. Denoting by x",
+          "bbox": [
+            72.0,
+            84.54,
+            412.8,
+            96.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "EUFM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 the unique point in a small",
+          "bbox": [
+            408.56,
+            86.13,
+            540.02,
+            99.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "neighbourhood of o such that s x",
+          "bbox": [
+            72.0,
+            98.09,
+            213.47,
+            108.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMR10"
+          ],
+          "sizes": [
+            4.98,
+            9.96
+          ]
+        },
+        {
+          "text": "2 o = x, the following formula:",
+          "bbox": [
+            209.8,
+            98.09,
+            340.31,
+            111.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            9.96
+          ]
+        },
+        {
+          "text": "Scan(x, y, z) := Ω( Π(s x",
+          "bbox": [
+            215.49,
+            118.67,
+            325.13,
+            130.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMR10"
+          ],
+          "sizes": [
+            4.98,
+            9.96
+          ]
+        },
+        {
+          "text": "2 (y)) , Π(s x",
+          "bbox": [
+            321.46,
+            118.67,
+            372.59,
+            132.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMR10",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            9.96
+          ]
+        },
+        {
+          "text": "2 (z)) )",
+          "bbox": [
+            368.92,
+            118.67,
+            396.52,
+            132.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            9.96
+          ]
+        },
+        {
+          "text": "deﬁnes a (local) regular admissible function on O. In the case where the surface O is of group type, the",
+          "bbox": [
+            72.0,
+            139.12,
+            540.02,
+            149.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "function Scan is globally deﬁned and smooth. Moreover every regular admissible function is an odd function",
+          "bbox": [
+            72.0,
+            151.21,
+            540.07,
+            162.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of Scan.",
+          "bbox": [
+            72.0,
+            163.16,
+            107.67,
+            174.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "O",
+          "bbox": [
+            429.23,
+            247.78,
+            444.23,
+            275.83
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "SchoolHouseCursiveB"
+          ],
+          "sizes": [
+            24.0
+          ]
+        },
+        {
+          "text": "y",
+          "bbox": [
+            393.9,
+            249.37,
+            399.9,
+            268.8
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica-Oblique"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "x",
+          "bbox": [
+            293.9,
+            262.04,
+            299.9,
+            281.47
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica-Oblique"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "o",
+          "bbox": [
+            334.9,
+            277.04,
+            341.57,
+            296.47
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica-Oblique"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "∏",
+          "bbox": [
+            438.92,
+            309.46,
+            453.18,
+            328.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "∏(x)",
+          "bbox": [
+            253.25,
+            369.71,
+            278.44,
+            389.14
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica",
+            "Helvetica-Oblique"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "∏(y)",
+          "bbox": [
+            400.25,
+            376.27,
+            425.44,
+            395.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica",
+            "Helvetica-Oblique"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "P *",
+          "bbox": [
+            188.57,
+            386.79,
+            209.61,
+            415.97
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MonotypeCorsiva",
+            "SchoolHouseCursiveB"
+          ],
+          "sizes": [
+            12.0,
+            24.0
+          ]
+        },
+        {
+          "text": "s  (o,x,y)",
+          "bbox": [
+            263.57,
+            391.38,
+            309.57,
+            410.8
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica-Oblique"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "can",
+          "bbox": [
+            266.9,
+            402.2,
+            276.57,
+            411.92
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica-Oblique"
+          ],
+          "sizes": [
+            6.0
+          ]
+        },
+        {
+          "text": "Figure 2: The canonical three-point phase obtained from projecting the orbit.",
+          "bbox": [
+            136.05,
+            439.0,
+            476.01,
+            448.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The proof essentially relies in the fact that the Π-projected exp(tX)-orbits in O exactly coincide with",
+          "bbox": [
+            72.0,
+            462.69,
+            540.0,
+            472.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "straight lines in p⋆.",
+          "bbox": [
+            72.0,
+            473.49,
+            159.23,
+            484.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMSL10",
+            "EUFM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Indeed, we ﬁrst observe that the diﬀeomorphism Π establishes a bijection between",
+          "bbox": [
+            167.29,
+            474.77,
+            540.0,
+            484.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the exp(tX)-orbits (X ∈p) in O and the straight lines in p⋆. Indeed, for x ∈O and X ∈p, one has",
+          "bbox": [
+            72.0,
+            485.45,
+            540.01,
+            496.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "EUFM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "< Ad⋆(exp(tX))x−x, X >= 0, where Ad⋆denotes the co-adjoint action. Which means that the x-translated",
+          "bbox": [
+            72.0,
+            496.56,
+            540.0,
+            508.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "exp(tX)-orbit of x lies in the plane in g⋆orthodual to X ∈p. This plane is generated by the kernel k⋆of",
+          "bbox": [
+            72.0,
+            509.36,
+            540.0,
+            520.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "EUFM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the projection Π : g⋆→p⋆and an element X⊥of p⋆orthodual to X. In particular, it projects onto the",
+          "bbox": [
+            72.0,
+            521.22,
+            540.03,
+            532.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7",
+            "EUFM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "line directed by X⊥. Now consider the two-point function κ(x, y) := S(o, x, y) on M induced by the data",
+          "bbox": [
+            72.0,
+            533.18,
+            540.02,
+            544.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of an admissible function S on M. This function corresponds to a two-point function κ0 on p⋆via the",
+          "bbox": [
+            72.0,
+            542.89,
+            540.0,
+            556.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "EUFM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "diﬀeomorphism Π. By admissibility and the above observation, one has κ0(ξ, η) = κ0(ξ, η + tξ) for all t ∈R.",
+          "bbox": [
+            72.0,
+            556.28,
+            540.0,
+            568.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Which is precisely the property of admissibility for a two-point function with respect to the ﬂat structure",
+          "bbox": [
+            72.0,
+            570.41,
+            540.06,
+            580.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "on p⋆. The rest then follows from Proposition 3.3 in [38].",
+          "bbox": [
+            72.0,
+            581.09,
+            321.1,
+            592.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "EUFM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "It is remarkable that in the case of Poincar´e orbit M the equation sxsyszt = t admits a unique solution t for",
+          "bbox": [
+            72.0,
+            600.65,
+            540.01,
+            613.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "all data of three points x, y and z in M. Moreover, the ‘double triangle’ mapping2:",
+          "bbox": [
+            72.0,
+            612.61,
+            432.76,
+            624.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Φ : M × M × M →M × M × M : (x, y, z) 7→(t, szt, syszt)",
+          "bbox": [
+            182.03,
+            633.19,
+            429.97,
+            646.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "is a global diﬀeomorphism whose jacobian determinant equals",
+          "bbox": [
+            72.0,
+            655.95,
+            341.84,
+            665.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "JacΦ(x0, x1, x2) = 16 cosh(2(a0 −a1)) cosh(2(a1 −a2)) cosh(2(a2 −a0)) .",
+          "bbox": [
+            143.46,
+            676.4,
+            468.55,
+            687.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 Within A. Weinstein terminology.",
+          "bbox": [
+            83.09,
+            710.96,
+            215.2,
+            721.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "9",
+          "bbox": [
+            303.51,
+            742.1,
+            308.49,
+            752.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 10,
+      "rotation": 0,
+      "drawings": 19,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3: The double geoedesic triangle."
+      ],
+      "labels": [
+        {
+          "text": "s s (t)=t",
+          "bbox": [
+            348.5,
+            71.24,
+            388.84,
+            90.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica-Oblique"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "y    z",
+          "bbox": [
+            353.83,
+            80.73,
+            366.51,
+            90.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica-Oblique"
+          ],
+          "sizes": [
+            6.0
+          ]
+        },
+        {
+          "text": "x",
+          "bbox": [
+            273.17,
+            122.57,
+            279.17,
+            142.0
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica-Oblique"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "y",
+          "bbox": [
+            427.17,
+            169.57,
+            433.17,
+            189.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica-Oblique"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "s s s (t)=t",
+          "bbox": [
+            178.5,
+            199.9,
+            228.18,
+            219.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica-Oblique"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "x    y    z",
+          "bbox": [
+            183.83,
+            209.4,
+            206.18,
+            219.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica-Oblique"
+          ],
+          "sizes": [
+            6.0
+          ]
+        },
+        {
+          "text": "z",
+          "bbox": [
+            308.83,
+            213.24,
+            314.83,
+            232.67
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica-Oblique"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "s (t)=t",
+          "bbox": [
+            394.5,
+            283.57,
+            425.51,
+            303.0
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica-Oblique"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "z",
+          "bbox": [
+            399.83,
+            293.07,
+            402.83,
+            302.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica-Oblique"
+          ],
+          "sizes": [
+            6.0
+          ]
+        },
+        {
+          "text": "Figure 3: The double geoedesic triangle.",
+          "bbox": [
+            218.15,
+            317.13,
+            393.86,
+            327.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "This is a straightforward computation based on the following formulas for the symmetries:",
+          "bbox": [
+            86.94,
+            347.17,
+            481.9,
+            357.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(a,ℓ)(a′, ℓ′) = ( 2a −a′ , 2 cosh(2(a −a′))ℓ−ℓ′ ) ,",
+          "bbox": [
+            201.6,
+            362.74,
+            415.07,
+            378.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "sM",
+          "bbox": [
+            196.93,
+            363.56,
+            208.19,
+            376.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "MSBM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(38)",
+          "bbox": [
+            522.29,
+            366.86,
+            540.0,
+            376.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "as well as for the mid-point map:",
+          "bbox": [
+            72.0,
+            386.54,
+            216.61,
+            396.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0012 1",
+          "bbox": [
+            294.15,
+            397.6,
+            310.43,
+            414.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            468.33,
+            404.77,
+            475.66,
+            414.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2(ax + ay) , 1",
+          "bbox": [
+            305.45,
+            404.91,
+            368.03,
+            428.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "m : M × M →M : (x, y) 7→m(x, y) =",
+          "bbox": [
+            129.15,
+            409.48,
+            291.39,
+            421.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2(ℓx + ℓy)sech(ax −ay)",
+          "bbox": [
+            363.04,
+            411.52,
+            465.56,
+            428.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            480.09,
+            411.65,
+            482.86,
+            421.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(39)",
+          "bbox": [
+            522.29,
+            411.65,
+            540.0,
+            421.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "deﬁned by the relation",
+          "bbox": [
+            72.0,
+            436.76,
+            170.57,
+            446.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "sM",
+          "bbox": [
+            266.34,
+            453.15,
+            277.59,
+            466.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "MSBM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "m(x,y)x = y .",
+          "bbox": [
+            271.01,
+            456.45,
+            325.74,
+            468.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "One has",
+          "bbox": [
+            72.0,
+            476.13,
+            107.48,
+            486.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Φ−1(x, y, z) = (m(x, y), m(y, z), m(z, x)) ;",
+          "bbox": [
+            215.64,
+            486.22,
+            396.36,
+            498.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and a computation yields",
+          "bbox": [
+            72.0,
+            504.68,
+            182.5,
+            514.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "JacΦ−1(x0, x1, x2) = 1",
+          "bbox": [
+            167.09,
+            521.77,
+            266.14,
+            539.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "16sech(a0 −a1)sech(a1 −a2)sech(a2 −a0).",
+          "bbox": [
+            258.66,
+            528.38,
+            444.91,
+            545.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "One then obtains the announced formula by using the relation: JacΦ = (Φ⋆JacΦ−1)−1.",
+          "bbox": [
+            72.0,
+            550.81,
+            448.66,
+            563.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "At last, the canonical admissible three-point function, in this particular situation of M, exactly coincides",
+          "bbox": [
+            72.0,
+            561.96,
+            540.0,
+            574.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "with Weinstein’s function:",
+          "bbox": [
+            72.0,
+            576.09,
+            185.87,
+            586.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "S(M)",
+          "bbox": [
+            215.34,
+            583.68,
+            234.83,
+            598.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "MSBM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Symplectic Area of Φ = S(M)",
+          "bbox": [
+            259.03,
+            583.68,
+            390.63,
+            598.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "MSBM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "can =",
+          "bbox": [
+            221.45,
+            588.04,
+            250.17,
+            600.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            393.9,
+            588.04,
+            396.67,
+            598.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "W",
+          "bbox": [
+            377.24,
+            593.31,
+            384.73,
+            600.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "In coordinates, one has",
+          "bbox": [
+            72.0,
+            604.64,
+            172.88,
+            614.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "S(M)",
+          "bbox": [
+            125.4,
+            621.34,
+            144.9,
+            635.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "MSBM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "can(x0, x1, x2) = sinh(2(a0 −a1)) ℓ2 + sinh(2(a2 −a0)) ℓ1 + sinh(2(a1 −a2)) ℓ0 .",
+          "bbox": [
+            131.51,
+            625.58,
+            486.6,
+            638.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "In the hyperbolic plane case, however, the situation is not as nice. Indeed, a bit of reﬂection leads to the fact",
+          "bbox": [
+            72.0,
+            653.89,
+            540.04,
+            663.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "that Weinstein’s function is not well-deﬁned for every triple of points x, y and z in D. In particular, since",
+          "bbox": [
+            72.0,
+            663.67,
+            540.01,
+            675.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "by construction S(D)",
+          "bbox": [
+            72.0,
+            674.83,
+            160.78,
+            689.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "MSBM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "can is smooth it must diﬀer from S(D)",
+          "bbox": [
+            148.94,
+            674.83,
+            314.51,
+            691.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "MSBM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "W . Nevertheless, as proven above, they should locally",
+          "bbox": [
+            302.67,
+            679.19,
+            540.01,
+            692.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "be odd functions of each other. Precisely, one has the relation:",
+          "bbox": [
+            72.0,
+            691.14,
+            345.02,
+            701.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "S(D)",
+          "bbox": [
+            244.2,
+            707.85,
+            262.14,
+            722.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "MSBM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "= π −2 arccos(S(D)",
+          "bbox": [
+            268.18,
+            707.85,
+            354.78,
+            722.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "can) .",
+          "bbox": [
+            342.95,
+            712.21,
+            367.8,
+            724.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "W",
+          "bbox": [
+            250.31,
+            717.48,
+            257.8,
+            724.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            301.02,
+            742.1,
+            310.98,
+            752.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

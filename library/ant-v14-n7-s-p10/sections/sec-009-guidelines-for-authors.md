@@ -8,6 +8,7 @@ pages: 21-22
 source_pdf: ant-v14-n7-s-p10.pdf
 source_sha256: 8d3e47aa779ad9c7
 toc_source: inferred
+doc_brief: "Abelian extensions in dynamical Galois theory — 11 sections: Front matter; Introduction; Some algebraic lemmas"
 ---
 Authors may submit manuscripts in PDF format on-line at the Submission page at the ANT website.
 Originality. Submission of a manuscript acknowledges that the manuscript is original and and is not,

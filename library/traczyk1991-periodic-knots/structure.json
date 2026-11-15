@@ -1,35 +1,24 @@
 {
- "_schema": "pdf-structure/v1",
- "doc_id": "traczyk1991-periodic-knots",
  "source": {
   "file": "traczyk1991-periodic-knots.pdf",
   "sha256": "2e9236877cec46044e45476754b2a1a854f5f41d52190ad97b620bc4d09f80d9",
   "bytes": 1110440,
+  "mtime": "2026-11-15T11:07:55Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "pages": 12,
   "text_source": "ocr",
-  "extractor": "pymupdf",
-  "mtime": "2026-10-10T19:16:47Z",
-  "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "runContext": {
+   "sha256": "bf071e6588c433f660b632aa468dfeadc4ed51110b13bab6028f16a25757ba4a"
+  }
  },
  "metadata": {
-  "arxiv": null,
-  "doi": null,
   "title": "Periodic knots and the skein polynomial",
-  "authors_raw": "Paweł Traczyk",
-  "title_lines": [
-   "Invent. Math. 106, 73-84 (1991)",
-   "Inventiones",
-   "mathematicae",
-   "C Springer-Verlag 1991"
-  ],
-  "abstract": null,
   "docinfo": {},
-  "title_raw": "Invent. Math. 106, 73-84 (1991) Inventiones mathematicae C Springer-Verlag 1991",
-  "title_source": "text",
+  "title_raw": null,
+  "title_source": "filename",
   "title_verified": false,
   "title_evidence": {
-   "text": "Invent. Math. 106, 73-84 (1991) Inventiones mathematicae C Springer-Verlag 1991",
    "corroborated_by": [],
    "browser_print": false
   },
@@ -37,115 +26,134 @@
   "rights_note": "Cut from the Göttingen State and University Library (SUB/GDZ) digitisation of Inventiones Mathematicae vol. 106 (1991), WerkId PPN356556735_0106. The GDZ Terms and Conditions on page 1 of that volume file state that access is provided 'strictly for noncommercial educational, research and private purposes', that 'each copy of any part of this document must contain these Terms and Conditions', and that 'Reproductions of material on the web site may not be made for or donated to other repositories, nor may be further reproduced without written permission from the Goettingen State- and University Library.' The volume file itself is NOT held in this repository; this per-article cut does not carry the GDZ cover page. Owner decision whether to keep this copy.",
   "journal_ref": "Invent. Math. 106 (1991) 73-84",
   "volume_pdf_pages": "80-91",
-  "journal_page_offset": 72
+  "journal_page_offset": 72,
+  "title_prev": "Periodic knots and the skein polynomial"
  },
- "toc": [
-  {
-   "level": 1,
-   "title": "Introduction",
-   "page": 1,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Reduction to torus knots",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "P_0 polynomial for torus knots",
-   "page": 4,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "An application involving satellites",
-   "page": 10,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 12,
-   "source": "inferred",
-   "number": null
-  }
- ],
- "toc_source": "inferred",
+ "_schema": "pdf-structure/v1",
+ "doc_id": "traczyk1991-periodic-knots",
+ "toc_source": "none",
+ "granularity": "page",
  "sections": [
   {
-   "id": "sec-front-matter",
+   "id": "page-001",
    "number": null,
-   "title": "Front matter",
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 291,
-   "n_words": 39
+   "n_chars": 2376,
+   "n_words": 410
   },
   {
-   "id": "sec-000-1-introduction",
-   "number": "1",
-   "title": "Introduction",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 2,
-   "n_chars": 3704,
-   "n_words": 653
-  },
-  {
-   "id": "sec-001-2-reduction-to-torus-knots",
-   "number": "2",
-   "title": "Reduction to torus knots",
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
    "level": 1,
    "page_start": 2,
-   "page_end": 4,
-   "n_chars": 5302,
-   "n_words": 973
+   "page_end": 2,
+   "n_chars": 2496,
+   "n_words": 429
   },
   {
-   "id": "sec-002-3-p-0-polynomial-for-torus-knots",
-   "number": "3",
-   "title": "P_0 polynomial for torus knots",
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 2865,
+   "n_words": 526
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
    "level": 1,
    "page_start": 4,
-   "page_end": 10,
-   "n_chars": 11498,
-   "n_words": 2200
+   "page_end": 4,
+   "n_chars": 2838,
+   "n_words": 510
   },
   {
-   "id": "sec-003-4-an-application-involving-satellites",
-   "number": "4",
-   "title": "An application involving satellites",
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 2549,
+   "n_words": 442
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1940,
+   "n_words": 401
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 2756,
+   "n_words": 528
+  },
+  {
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 2862,
+   "n_words": 506
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1383,
+   "n_words": 256
+  },
+  {
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
    "level": 1,
    "page_start": 10,
-   "page_end": 12,
-   "n_chars": 2426,
-   "n_words": 431
+   "page_end": 10,
+   "n_chars": 1591,
+   "n_words": 291
   },
   {
-   "id": "sec-004-references",
+   "id": "page-011",
    "number": null,
-   "title": "References",
+   "title": "Page 11",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 1875,
+   "n_words": 326
+  },
+  {
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
    "level": 1,
    "page_start": 12,
    "page_end": 12,
-   "n_chars": 1067,
-   "n_words": 167
+   "n_chars": 1177,
+   "n_words": 184
   }
  ],
- "diagnostics": {
-  "pages_without_text": 0,
-  "likely_scanned": true,
-  "toc_entries": 5,
-  "toc_inferred_entries": 5,
-  "sections": 6,
-  "chars_total": 24288
- },
- "structure_note": "Sectioning: split by hand at the OCR'd numbered section headings (journal pages from the printed contents / running heads)."
+ "structure_note": "Ingested at PAGE granularity by scripts/pdf-pages.py. This PDF carries no embedded outline and its inferred chapter structure was measurably wrong (bean 6xaz), so no chapter tree is claimed. A page is a determined division; an inferred chapter was not."
 }

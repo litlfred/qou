@@ -64,7 +64,7 @@ serpenoid picture that prompted this result becomes exact.)
 
 ## What is formalised, what is checked, what is cited
 
-`QOU.Mass.TorusKnotPages` (sorry-free) carries the algebra: the Seifert form
+`QOU.Mass.TorusKnotPages` carries the algebra: the Seifert form
 of $T(2,n)$ is unimodular for every odd $n$; the continuant of $V - X V^{\mathsf T}$
 satisfies $(X+1) D_{2g} = X^{2g+1} + 1$, so the Alexander polynomial is
 $(X^n+1)/(X+1)$ and divides $X^{2n}-1$; the floor $2A+1 \le b \le 3A$ is

@@ -8,7 +8,9 @@ pages: 21-29
 source_pdf: Zhao_standard_2010.pdf
 source_sha256: 94a70847c2937ba7
 toc_source: inferred
+doc_brief: "Standard Relations of Multiple Polylogarithm Values at Roots of Unity — Let N be a positive integer."
 ---
+Computational results in weight two
 In this section we combine the analysis in the previous sections and the theory
 developed by Deligne and Goncharov [17] to present a detailed computation in
 weight two and level N ≤169.
@@ -1358,4 +1360,3 @@ d(2, p3) ≤5p6 −2p5 −29p4 + 74p3 −48p2 + 24
 .
 (b) The standard relations produce all the linear relations and the upper bound
 in (a) is sharp.
-9

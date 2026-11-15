@@ -1,0 +1,127 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "0603022v2",
+ "status": "determined",
+ "body_size": 9.4,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "†",
+   "text": "Electronic address:fmarkopoulou@perimeterinstitute.ca",
+   "marks": [
+    {
+     "page": 1,
+     "context": "FotiniMarkopoulou"
+    }
+   ],
+   "block": "library/0603022v2/blocks/prose-page-001"
+  },
+  {
+   "id": "fn-p001-2",
+   "page": 1,
+   "mark": "‡",
+   "text": "Electronic address:lsmolin@perimeterinstitute.ca",
+   "marks": [
+    {
+     "page": 1,
+     "context": "FotiniMarkopoulou†andLeeSmolin"
+    }
+   ],
+   "block": "library/0603022v2/blocks/prose-page-001"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p003-1",
+   "page": 3,
+   "mark": "6",
+   "text": "π",
+   "block": "library/0603022v2/blocks/prose-page-003"
+  },
+  {
+   "id": "fn-p011-1",
+   "page": 11,
+   "mark": "381",
+   "text": "(2004); J.A.Holbrook, D.W.Kribs, [15] C. Rovelli and L. Smolin, Phys. Rev. Lett 61(1988)1155; R.Laﬂamme and D.Poulin, Integral Eqnts. & Operator Nucl. Phys. B331(1990)80-152. Thy, 51, 215 (2005). [16] Another approach to the emergence of matter in spin [5] The application of NSs to constrained hamiltonian sys- foam models is S. Alexander, L. Crane, M. D. Sheppeard, tems like quantum gravity is discussed in T. Konopka, F. gr-qc/0306079. Markopoulou, gr-qc/0601028. In this approach the envi- [17] A. Perez, C. Rovell. gr-qc/0505081;Lay Nam Chang, ronment is the gauge degrees of freedom and the noise- Chopin Soo, hep-th/0303147, Class.Quant.Grav.",
+   "block": "library/0603022v2/blocks/prose-page-011"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "A evol= {1, A"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "t∈ΓH"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "t∈ΓH"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "t∈ΓHbwhereH"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "Then we can deﬁne an operator"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "servedbytheevolutionmoves,wededucethat"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "Thisimpliesthatgiventheconsistentsplitting,"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "chiralityisodd,becauseitwillbetruethatP"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "1"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "gives rise to 2 × 3"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "Let us call this space of states V"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "V"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "[22]Note that the subscript i on m"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "sequence, while the subscripts on b"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "sequence, while the subscripts on biand t"
+  }
+ ]
+}

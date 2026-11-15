@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0203194v1
-doc_title: "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry"
+doc_title: "Period mappings and differential equations. From C to Cp"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-5
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
 toc_source: inferred
+doc_brief: "Period mappings and differential equations. From C to Cp — 101 sections: Front matter; Purpose of this book.; Contents of this book."
 ---
 arXiv:math/0203194v1  [math.NT]  19 Mar 2002
 Period mappings and diﬀerential

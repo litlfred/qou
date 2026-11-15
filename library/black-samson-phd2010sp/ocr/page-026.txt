@@ -1,0 +1,37 @@
+18
+
+Theorem II.4.5. The map 6: TLa(5) — TLi,(6) defined on generators by @(U;) = [Uj] is an
+
+isomorphism of C(v)-algebras.
+
+Proof. Showing that @ is well-defined amounts to finding planar isotopies between the two diagrams
+corresponding to the relations (I1.15)-(11.17). The most interesting relation is illustrated below.
+Note that these pictures are meant to represent TL diagrams on d strands, where the remaining
+
+vertical strands are supressed.
+
+QW
+QW
+~ (11.25)
+_
+co
+By Lemma 11.4.4, every diagram D is isotopic to [Uj,]---[Uj,] = @(Ui, ---Ui,) for some sequence
+
+(i1,...,%¢) of indices. Therefore, 0 is surjective. Since dim TLg(5) < Ca = dim TL/(5), we conclude
+
+that @ is an isomorphism. oO
+
+Corollary 11.4.6. The set of words in Lemma II.8.2 forms a basis for TLa(6). Hence,
+dim TLq(5) = Ca. (11.26)
+
+From now on, we use the isomorphism @ to identify TLa and TL.
+
+11.4.2. Evaluation of Jones via Temperley-Lieb
+
+Here we set 6 = [2] = v+u !. Let (P| denote the closure of an element of TL, by
+connecting the ith vertex at the top of the diagram D to the ith vertex at the bottom of D by a
+simple curve for each 7 = 1,...,d. The result is a disjoint union of circles, each of which can be
+
+replaced by [2] = v +7! € C(v), as in the definition of multiplication in TL‘. See Figure II.7.
+
+Figure II.7: An example of the closure operation on arc diagrams.

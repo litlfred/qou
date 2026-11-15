@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0806.2317v1
-doc_title: "Bounds for codes and designs in complex subspaces Aidan Roy ∗"
+doc_title: "Bounds for codes and designs in complex subspaces"
 section_id: sec-007-examples
 section_title: "Examples"
 section_number: null
 pages: 19-23
 source_pdf: 0806.2317v1.pdf
 source_sha256: c54e80d460413a5e
-doc_brief: "Bounds for codes and designs in complex subspaces Aidan Roy ∗ — We introduce the concepts of complex Grassmannian codes and designs."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
+latex_prose_ratio: 0.936
 latex_coverage_ratio: 1.0
+doc_brief: "Bounds for codes and designs in complex subspaces — We introduce the concepts of complex Grassmannian codes and designs."
 ---
 \label{sec:examples}
 

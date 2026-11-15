@@ -7,10 +7,21 @@
   "bytes": 736390,
   "pages": 68,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 10,
+    "reason": "11 of 527 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 62,
+    "reason": "13 of 468 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +31,30 @@
    "stamp_date": "19 Jan 2006"
   },
   "doi": null,
-  "title": "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS JEFFREY MORTON",
-  "authors_raw": null,
+  "title": "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS",
+  "authors_raw": "JEFFREY MORTON",
   "title_lines": [
-   "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS",
-   "JEFFREY MORTON"
+   "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS"
   ],
-  "abstract": "Interest in combinatorial interpretations of mathematica l entities stems from the convenience of the concrete models they provi de. Finding a bijective proof of a seemingly obscure identity can reveal u nsuspected signi\ufb01- cance to it. Finding a combinatorial model for some mathemat ical entity is a particular instance of the process called \u201ccategori\ufb01catio n\u201d. Examples include the interpretation of /C6 as the Burnside rig of the category of \ufb01nite sets with product and coproduct, and the interpretation of /C6 [x] as the category of com- binatorial species. This has interesting applications to q uantum mechanics, and in particular the quantum harmonic oscillator, via Joya l\u2019s \u201cspecies\u201d, a new generalization called \u201cstu\ufb00 types\u201d, and operators betw een these, which can be represented as rudimentary Feynman diagrams for the o scillator. In quantum mechanics, we want to represent states in an algebra over the com- plex numbers, and also want our Feynman diagrams to carry mor e structure than these \u201cstu\ufb00 operators\u201d can do, and these turn out to be cl osely related. W e will show how to construct a combinatorial model for the qu antum har- monic oscillator in which the group of phases, U (1), plays a special role. W e describe a general notion of \u201c M -Stu\ufb00 Types\u201d for any monoid M , and see that the case M = U (1) provides an interpretation of time evolution in the comb i- natorial setting, as well as other quantum mechanical featu res of the harmonic oscillator. 1",
+  "abstract": "Interest in combinatorial interpretations of mathematical entities stems from the convenience of the concrete models they provide. Finding a bijective proof of a seemingly obscure identity can reveal unsuspected signiﬁ- cance to it. Finding a combinatorial model for some mathematical entity is a particular instance of the process called “categoriﬁcation”. Examples include the interpretation of N as the Burnside rig of the category of ﬁnite sets with product and coproduct, and the interpretation of N[x] as the category of com- binatorial species. This has interesting applications to quantum mechanics, and in particular the quantum harmonic oscillator, via Joyal’s “species”, a new generalization called “stuﬀtypes”, and operators between these, which can be represented as rudimentary Feynman diagrams for the oscillator. In quantum mechanics, we want to represent states in an algebra over the com- plex numbers, and also want our Feynman diagrams to carry more structure than these “stuﬀoperators” can do, and these turn out to be closely related. We will show how to construct a combinatorial model for the quantum har- monic oscillator in which the group of phases, U(1), plays a special role. We describe a general notion of “M-StuﬀTypes” for any monoid M, and see that the case M = U(1) provides an interpretation of time evolution in the combi- natorial setting, as well as other quantum mechanical features of the harmonic oscillator. 1",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181030043431-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20181030043431-04'00'"
+  },
+  "title_raw": "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS",
+   "outline": "1. Introduction",
+   "text": "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS JEFFREY MORTON"
  },
  "toc": [
   {
@@ -41,372 +62,1472 @@
    "title": "Introduction",
    "page": 3,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Structure Types",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Categorification of N and N [[z]]",
    "page": 4,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "Structure Types and the Harmonic Oscillator",
    "page": 8,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "The Quantum Harmonic Oscillator",
    "page": 9,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Structure Types and the Weyl Algebra",
    "page": 11,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "Stuff Types",
    "page": 14,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Groupoids",
    "page": 14,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Stuff Types as a Generalization of Structure Types",
    "page": 20,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "Stuff Types As Power Series",
    "page": 24,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 2,
    "title": "Forgetful Functors: Properties, Structure, and Stuff",
    "page": 27,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 1,
    "title": "Stuff Types And Quantum Mechanics",
    "page": 30,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 2,
    "title": "Inner Product of Stuff Types",
    "page": 30,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 2,
    "title": "Stuff Operators",
    "page": 34,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "34"
   },
   {
    "level": 2,
    "title": "Feynman Diagrams and Stuff Operators",
    "page": 38,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   },
   {
    "level": 1,
    "title": "M-Stuff Types And Quantum Mechanics",
    "page": 43,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
   },
   {
    "level": 2,
    "title": "M-Stuff Types",
    "page": 44,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "44"
   },
   {
    "level": 2,
    "title": "Quantum Mechanics: M=U(1)",
    "page": 50,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "50"
   },
   {
    "level": 1,
    "title": "Conclusions",
    "page": 56,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "56"
   },
   {
    "level": 2,
    "title": "Categorified Quantum Mechanics",
    "page": 56,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "56"
   },
   {
    "level": 2,
    "title": "Other Generalizations",
    "page": 58,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "58"
   },
   {
    "level": 1,
    "title": "Acknowledgements",
    "page": 60,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "60"
   },
   {
    "level": 1,
    "title": "Appendix A. A Little Higher-Dimensional Algebra",
    "page": 61,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "61"
   },
   {
    "level": 1,
    "title": "Appendix B. Slice Categories and 2-Categories",
    "page": 62,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "62"
   },
   {
    "level": 2,
    "title": "B.1. 2-Categories of Stuff Types and Stuff Operators",
    "page": 62,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "62"
   },
   {
    "level": 1,
    "title": "Appendix C. Categorical Approaches to Generalizing Species",
    "page": 66,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "66"
   },
   {
    "level": 2,
    "title": "C.1. Generalized Species",
    "page": 66,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "66"
   },
   {
    "level": 1,
    "title": "References",
    "page": 68,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "68"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Some Binary Trees with n Leaves This highlights the close relationship between structure types and power series, since solving this recursive formula directly (for instance, by repeated substitution",
+   "page": 8,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "A Z0-Coloured Set Morphisms of Z0-coloured sets can be seen as bijections α of the underlying sets where “strands” of the bijections are labelled by morphisms of Z0 between the",
+   "page": 17,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "A Morphism of G-Coloured Sets",
+   "page": 17,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Example Object of a StuﬀType Ψ If Ψ is a structure type, this label can be seen as some structure put on the set Ψ(x), but in general this will not be the case - the label could, for example, be other sets in a tuple of which Ψ(x) is one part (this is example 12). To be general, we will not specify",
+   "page": 22,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Morphism In the Groupoid of StuﬀType Ψ",
+   "page": 22,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "An Object in a Composite StuﬀType We can describe what we get here as a type which, evaluated at Z0, gives “Fstuﬀed G(Z0)-labelled ﬁnite sets”. This has objects (as shown in ﬁgure 6) which consist of ﬁnite sets equipped with F-stuﬀ(say F : X →S). The elements of F are labelled by objects of G(Z0): t",
+   "page": 26,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "A Morphism in a Composite StuﬀType",
+   "page": 27,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "27"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Object of an Inner Product (Pullback) Groupoid A morphism between two such objects includes morphisms of the form (32) between the objects of Ψ and Φ; this gives bijections between the underlying sets which must be compatible with those which are part of the ⟨Ψ, Φ⟩objects (of the form (45)) themselv",
+   "page": 33,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "A Morphism in an Inner Product (Pullback) Groupoid also happen to be structure types. The stuﬀtype (in fact, structure type) Zn is the type of total orders on an n-element set, or “being a totally ordered n-element set”",
+   "page": 34,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "34"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "Object in the Groupoid of StuﬀOperator T",
+   "page": 36,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "Object of StuﬀType T Ψ Since this is to be an object of T Ψ, we should see it as a stuﬀtype it its own right, over the copy of FinSet0 mapped to under the projection p1 from T . That",
+   "page": 37,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "Object of StuﬀType T T ′ The construction we have described for stuﬀoperators is an example of a “span”: in particular, as morphisms from FinSet0 to itself. The composition we have described above, as well as being analogous to matrix multiplication of linear operators, satisﬁes the axioms for compo",
+   "page": 38,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "38"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "Object of Groupoid ⟨Ψ, T Φ⟩",
+   "page": 39,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "Example Objects in the Categoriﬁed Field Operator In our categoriﬁed setting, this is written nearly the same way,",
+   "page": 40,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "15",
+   "title": "Example Object From Φ4",
+   "page": 41,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "16",
+   "title": "Example Object From Φ4 (Alternate Style)",
+   "page": 41,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "17",
+   "title": "Example Object in Φ4//S4 Now, diagrams like this give vertices with k incidences. Taking polynomials in the operators which give such diagrams gives operators which can be interpreted in terms of diagrams having several such vertices. Such a diagram is shown in ﬁgure 18 - note that here we continue",
+   "page": 42,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "18",
+   "title": "An Object in",
+   "page": 42,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "19",
+   "title": "Example Object in",
+   "page": 43,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "43"
+  },
+  {
+   "kind": "figure",
+   "number": "20",
+   "title": "A Morphism in the Groupoid of an M-StuﬀType",
+   "page": 48,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "21",
+   "title": "An Object In the Inner Product of two M-StuﬀTypes Similar changes apply to the other constructions deﬁned using the weak pullback, so that we have nearly identical categorical diagrams deﬁnining morphisms in the inner product, as well as the action of an M-stuﬀoperator on an M-stuﬀtype and the compo",
+   "page": 49,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "22",
+   "title": "An Object in The U(1)-StuﬀOperator ET Any object in ET has two projections - each to an underlying set of the same size",
+   "page": 53,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "23",
+   "title": "An Object in The U(1)-StuﬀType ET Ψ The object in the groupoid of ET Ψ is the entire ensemble associated to the ﬁnite set p2(t). It includes the object t ∈ET itself, as well as x ∈X, their underlying sets",
+   "page": 53,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 48,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 49,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 52,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 53,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 54,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 55,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 58,
+   "label": "58",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 60,
+   "label": "60",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "61",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "62",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 64,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 65,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 66,
+   "label": "66",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 68,
+   "label": "68",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 2628,
+   "n_words": 400,
+   "label_start": null,
+   "label_end": "3"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 2,
-   "page_end": 3,
-   "n_chars": 2771,
-   "n_words": 456
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 5572,
+   "n_words": 911,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-001-2-structure-types",
    "number": "2",
    "title": "Structure Types",
    "level": 1,
-   "page_start": 3,
-   "page_end": 8,
-   "n_chars": 14914,
-   "n_words": 2754
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
-   "id": "sec-002-3-structure-types-and-the-harmonic-oscillator",
+   "id": "sec-002-21-categorification-of-n-and-n-z",
+   "number": "2.1",
+   "title": "Categorification of N and N [[z]]",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 8,
+   "n_chars": 10998,
+   "n_words": 2057,
+   "label_start": "4",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-003-3-structure-types-and-the-harmonic-oscillator",
    "number": "3",
    "title": "Structure Types and the Harmonic Oscillator",
    "level": 1,
    "page_start": 8,
-   "page_end": 8,
-   "n_chars": 637,
-   "n_words": 119
+   "page_end": 9,
+   "n_chars": 889,
+   "n_words": 157,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
-   "id": "sec-003-31-the-quantum-harmonic-oscillator",
+   "id": "sec-004-31-the-quantum-harmonic-oscillator",
    "number": "3.1",
    "title": "The Quantum Harmonic Oscillator",
    "level": 2,
-   "page_start": 8,
+   "page_start": 9,
    "page_end": 11,
-   "n_chars": 8764,
-   "n_words": 1543
+   "n_chars": 8461,
+   "n_words": 1445,
+   "label_start": "9",
+   "label_end": "11"
   },
   {
-   "id": "sec-004-32-structure-types-and-the-weyl-algebra",
+   "id": "sec-005-32-structure-types-and-the-weyl-algebra",
    "number": "3.2",
    "title": "Structure Types and the Weyl Algebra",
    "level": 2,
    "page_start": 11,
    "page_end": 14,
-   "n_chars": 7398,
-   "n_words": 1374
+   "n_chars": 7353,
+   "n_words": 1329,
+   "label_start": "11",
+   "label_end": null
   },
   {
-   "id": "sec-005-4-stuff-types",
+   "id": "sec-006-4-stuff-types",
    "number": "4",
    "title": "Stuff Types",
    "level": 1,
    "page_start": 14,
    "page_end": 14,
-   "n_chars": 1835,
-   "n_words": 361
+   "n_chars": 1823,
+   "n_words": 349,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-41-groupoids",
+   "id": "sec-007-41-groupoids",
    "number": "4.1",
    "title": "Groupoids",
    "level": 2,
    "page_start": 14,
-   "page_end": 30,
-   "n_chars": 40800,
-   "n_words": 7511
+   "page_end": 20,
+   "n_chars": 14727,
+   "n_words": 2776,
+   "label_start": null,
+   "label_end": "20"
   },
   {
-   "id": "sec-007-5-stuff-types-and-quantum-mechanics",
+   "id": "sec-008-42-stuff-types-as-a-generalization-of-structure",
+   "number": "4.2",
+   "title": "Stuff Types as a Generalization of Structure Types",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 24,
+   "n_chars": 9514,
+   "n_words": 1750,
+   "label_start": "20",
+   "label_end": "24"
+  },
+  {
+   "id": "sec-009-43-stuff-types-as-power-series",
+   "number": "4.3",
+   "title": "Stuff Types As Power Series",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 27,
+   "n_chars": 7993,
+   "n_words": 1463,
+   "label_start": "24",
+   "label_end": "27"
+  },
+  {
+   "id": "sec-010-44-forgetful-functors-properties-structure-and-s",
+   "number": "4.4",
+   "title": "Forgetful Functors: Properties, Structure, and Stuff",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 30,
+   "n_chars": 7791,
+   "n_words": 1309,
+   "label_start": "27",
+   "label_end": "30"
+  },
+  {
+   "id": "sec-011-5-stuff-types-and-quantum-mechanics",
    "number": "5",
    "title": "Stuff Types And Quantum Mechanics",
    "level": 1,
    "page_start": 30,
-   "page_end": 56,
-   "n_chars": 66847,
-   "n_words": 12199
+   "page_end": 30,
+   "n_chars": 1592,
+   "n_words": 272,
+   "label_start": "30",
+   "label_end": "30"
   },
   {
-   "id": "sec-008-7-conclusions",
+   "id": "sec-012-51-inner-product-of-stuff-types",
+   "number": "5.1",
+   "title": "Inner Product of Stuff Types",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 34,
+   "n_chars": 9483,
+   "n_words": 1807,
+   "label_start": "30",
+   "label_end": "34"
+  },
+  {
+   "id": "sec-013-52-stuff-operators",
+   "number": "5.2",
+   "title": "Stuff Operators",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 38,
+   "n_chars": 8838,
+   "n_words": 1726,
+   "label_start": "34",
+   "label_end": "38"
+  },
+  {
+   "id": "sec-014-53-feynman-diagrams-and-stuff-operators",
+   "number": "5.3",
+   "title": "Feynman Diagrams and Stuff Operators",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 43,
+   "n_chars": 10375,
+   "n_words": 1891,
+   "label_start": "38",
+   "label_end": "43"
+  },
+  {
+   "id": "sec-015-6-m-stuff-types-and-quantum-mechanics",
+   "number": "6",
+   "title": "M-Stuff Types And Quantum Mechanics",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 44,
+   "n_chars": 1150,
+   "n_words": 184,
+   "label_start": "43",
+   "label_end": "44"
+  },
+  {
+   "id": "sec-016-61-m-stuff-types",
+   "number": "6.1",
+   "title": "M-Stuff Types",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 50,
+   "n_chars": 15343,
+   "n_words": 2865,
+   "label_start": "44",
+   "label_end": "50"
+  },
+  {
+   "id": "sec-017-62-quantum-mechanics-mu1",
+   "number": "6.2",
+   "title": "Quantum Mechanics: M=U(1)",
+   "level": 2,
+   "page_start": 50,
+   "page_end": 56,
+   "n_chars": 17052,
+   "n_words": 3001,
+   "label_start": "50",
+   "label_end": "56"
+  },
+  {
+   "id": "sec-018-7-conclusions",
    "number": "7",
    "title": "Conclusions",
    "level": 1,
    "page_start": 56,
-   "page_end": 58,
-   "n_chars": 7910,
-   "n_words": 1381
+   "page_end": 56,
+   "n_chars": 105,
+   "n_words": 18,
+   "label_start": "56",
+   "label_end": "56"
   },
   {
-   "id": "sec-009-72-other-generalizations",
+   "id": "sec-019-71-categorified-quantum-mechanics",
+   "number": "7.1",
+   "title": "Categorified Quantum Mechanics",
+   "level": 2,
+   "page_start": 56,
+   "page_end": 58,
+   "n_chars": 5690,
+   "n_words": 935,
+   "label_start": "56",
+   "label_end": "58"
+  },
+  {
+   "id": "sec-020-72-other-generalizations",
    "number": "7.2",
    "title": "Other Generalizations",
    "level": 2,
    "page_start": 58,
    "page_end": 60,
-   "n_chars": 6332,
-   "n_words": 1110
+   "n_chars": 8213,
+   "n_words": 1390,
+   "label_start": "58",
+   "label_end": "60"
   },
   {
-   "id": "sec-010-8-acknowledgements",
+   "id": "sec-021-8-acknowledgements",
    "number": "8",
    "title": "Acknowledgements",
    "level": 1,
    "page_start": 60,
    "page_end": 61,
-   "n_chars": 485,
-   "n_words": 78
+   "n_chars": 479,
+   "n_words": 74,
+   "label_start": "60",
+   "label_end": "61"
   },
   {
-   "id": "sec-011-appendix-a-a-little-higher-dimensional-algebra",
+   "id": "sec-022-appendix-a-a-little-higher-dimensional-algebra",
    "number": null,
    "title": "Appendix A. A Little Higher-Dimensional Algebra",
    "level": 1,
    "page_start": 61,
    "page_end": 62,
-   "n_chars": 2649,
-   "n_words": 490
+   "n_chars": 2725,
+   "n_words": 524,
+   "label_start": "61",
+   "label_end": "62"
   },
   {
-   "id": "sec-012-appendix-b-slice-categories-and-2-categories",
+   "id": "sec-023-appendix-b-slice-categories-and-2-categories",
    "number": null,
    "title": "Appendix B. Slice Categories and 2-Categories",
    "level": 1,
    "page_start": 62,
-   "page_end": 66,
-   "n_chars": 9273,
-   "n_words": 1546
+   "page_end": 62,
+   "n_chars": 2012,
+   "n_words": 350,
+   "label_start": "62",
+   "label_end": "62"
   },
   {
-   "id": "sec-013-appendix-c-categorical-approaches-to-generalizin",
+   "id": "sec-024-b1-2-categories-of-stuff-types-and-stuff-operato",
+   "number": null,
+   "title": "B.1. 2-Categories of Stuff Types and Stuff Operators",
+   "level": 2,
+   "page_start": 62,
+   "page_end": 66,
+   "n_chars": 6703,
+   "n_words": 1154,
+   "label_start": "62",
+   "label_end": "66"
+  },
+  {
+   "id": "sec-025-appendix-c-categorical-approaches-to-generalizin",
    "number": null,
    "title": "Appendix C. Categorical Approaches to Generalizing Species",
    "level": 1,
    "page_start": 66,
    "page_end": 66,
-   "n_chars": 884,
-   "n_words": 149
+   "n_chars": 876,
+   "n_words": 141,
+   "label_start": "66",
+   "label_end": "66"
   },
   {
-   "id": "sec-014-c1-generalized-species",
+   "id": "sec-026-c1-generalized-species",
    "number": null,
    "title": "C.1. Generalized Species",
    "level": 2,
    "page_start": 66,
    "page_end": 68,
-   "n_chars": 3713,
-   "n_words": 689
+   "n_chars": 3567,
+   "n_words": 641,
+   "label_start": "66",
+   "label_end": "68"
   },
   {
-   "id": "sec-015-references",
+   "id": "sec-027-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 68,
    "page_end": 68,
-   "n_chars": 2266,
-   "n_words": 304
+   "n_chars": 2241,
+   "n_words": 279,
+   "label_start": "68",
+   "label_end": "68"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 28,
-  "sections": 16,
-  "chars_total": 177478,
+  "toc_inferred_entries": 0,
+  "figure_entries": 23,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "StuﬀTypes"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 1,
+    "items": [
+     "Groupoids: listed p14, found p67"
+    ]
+   }
+  },
+  "sections": 29,
+  "chars_total": 174193,
+  "furniture_lines_stripped": 0,
+  "pages_read_in_print_order": [
+   58
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Mstuff.tex",
    "tex_sections": 49,
-   "overlaid": 8,
+   "overlaid": 18,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -414,10 +1535,17 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.298,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-001-2-structure-types",
@@ -425,28 +1553,36 @@
      "result": "no matching \\section"
     },
     {
-     "id": "sec-002-3-structure-types-and-the-harmonic-oscillator",
-     "title": "Structure Types and the Harmonic Oscillator",
-     "prose_ratio": 0.787,
+     "id": "sec-002-21-categorification-of-n-and-n-z",
+     "title": "Categorification of N and N [[z]]",
+     "prose_ratio": 0.988,
      "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-31-the-quantum-harmonic-oscillator",
-     "title": "The Quantum Harmonic Oscillator",
-     "prose_ratio": 0.71,
-     "coverage_ratio": 0.971,
+     "id": "sec-003-3-structure-types-and-the-harmonic-oscillator",
+     "title": "Structure Types and the Harmonic Oscillator",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-32-structure-types-and-the-weyl-algebra",
+     "id": "sec-004-31-the-quantum-harmonic-oscillator",
+     "title": "The Quantum Harmonic Oscillator",
+     "prose_ratio": 0.705,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-32-structure-types-and-the-weyl-algebra",
      "title": "Structure Types and the Weyl Algebra",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-005-4-stuff-types",
+     "id": "sec-006-4-stuff-types",
      "title": "Stuff Types",
      "prose_ratio": 0.98,
      "coverage_ratio": 0.99,
@@ -454,67 +1590,149 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-41-groupoids",
+     "id": "sec-007-41-groupoids",
      "title": "Groupoids",
-     "prose_ratio": 0.98,
-     "coverage_ratio": 0.983,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-007-5-stuff-types-and-quantum-mechanics",
-     "title": "Stuff Types And Quantum Mechanics",
-     "prose_ratio": 0.744,
+     "prose_ratio": 0.984,
      "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-7-conclusions",
+     "id": "sec-008-42-stuff-types-as-a-generalization-of-structure",
+     "title": "Stuff Types as a Generalization of Structure Types",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-43-stuff-types-as-power-series",
+     "title": "Stuff Types As Power Series",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-44-forgetful-functors-properties-structure-and-s",
+     "title": "Forgetful Functors: Properties, Structure, and Stuff",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-5-stuff-types-and-quantum-mechanics",
+     "title": "Stuff Types And Quantum Mechanics",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-51-inner-product-of-stuff-types",
+     "title": "Inner Product of Stuff Types",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-52-stuff-operators",
+     "title": "Stuff Operators",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-53-feynman-diagrams-and-stuff-operators",
+     "title": "Feynman Diagrams and Stuff Operators",
+     "prose_ratio": 0.601,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-6-m-stuff-types-and-quantum-mechanics",
+     "title": "M-Stuff Types And Quantum Mechanics",
+     "prose_ratio": 0.23,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-016-61-m-stuff-types",
+     "title": "M-Stuff Types",
+     "prose_ratio": 0.723,
+     "coverage_ratio": 0.215,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-017-62-quantum-mechanics-mu1",
+     "title": "Quantum Mechanics: M=U(1)",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-7-conclusions",
      "title": "Conclusions",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.705,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-009-72-other-generalizations",
-     "title": "Other Generalizations",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.989,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-010-8-acknowledgements",
-     "title": "Acknowledgements",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-appendix-a-a-little-higher-dimensional-algebra",
+     "id": "sec-019-71-categorified-quantum-mechanics",
+     "title": "Categorified Quantum Mechanics",
+     "prose_ratio": 0.857,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-72-other-generalizations",
+     "title": "Other Generalizations",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.822,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-8-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.935,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-022-appendix-a-a-little-higher-dimensional-algebra",
      "title": "Appendix A. A Little Higher-Dimensional Algebra",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-012-appendix-b-slice-categories-and-2-categories",
+     "id": "sec-023-appendix-b-slice-categories-and-2-categories",
      "title": "Appendix B. Slice Categories and 2-Categories",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-013-appendix-c-categorical-approaches-to-generalizin",
+     "id": "sec-024-b1-2-categories-of-stuff-types-and-stuff-operato",
+     "title": "B.1. 2-Categories of Stuff Types and Stuff Operators",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-appendix-c-categorical-approaches-to-generalizin",
      "title": "Appendix C. Categorical Approaches to Generalizing Species",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-014-c1-generalized-species",
+     "id": "sec-026-c1-generalized-species",
      "title": "C.1. Generalized Species",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-015-references",
+     "id": "sec-027-references",
      "title": "References",
      "result": "no matching \\section"
     }

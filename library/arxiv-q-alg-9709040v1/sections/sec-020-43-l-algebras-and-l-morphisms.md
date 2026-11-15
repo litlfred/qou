@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-020-43-l-algebras-and-l-morphisms
 section_title: "L∞-algebras and L∞-morphisms"
 section_number: 4.3
@@ -8,6 +8,7 @@ pages: 11-13
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
 Suppose that we have an odd vector ﬁeld Q of degree +1 on formal graded manifold (g[1]formal, 0) such
 that the Taylor series for coeﬃcients of Q has terms of degree 1 and 2 only. The ﬁrst Taylor coeﬃcient Q1

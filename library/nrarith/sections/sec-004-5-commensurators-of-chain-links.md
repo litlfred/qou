@@ -8,6 +8,7 @@ pages: 15-19
 source_pdf: nrarith.pdf
 source_sha256: 085ec9541ddc6cd4
 toc_source: inferred
+doc_brief: "Arithmetic of hyperbolic manifolds (Neumann–Reid) — survey of arithmetic Kleinian groups: an arithmetic M = H³/Γ is determined up to commensurability by its invariant trace field and quaternion…"
 ---
 Let C(p, s) denote the complement of the link in S3 consisting of a p-link chain
 with s left half-twists (if s is negative we mean −s right half-twists, cf. Fig. 1 for
@@ -33,8 +34,6 @@ s) and is commensurable with C(p, s) with reversed orientation if (p′ + s′, 
 (ii)
 C(p, s) has a hyperbolic structure (complete of ﬁnite volume) if and only if
 {|p + s|, |s|}̸ ⊂{0, 1, 2}.
-288
-Walter D. Neumann and Alan W. Reid
 (iii) C(p, s) is arithmetic (and hence has inﬁnitely many hidden symmetries) if and only if
 (|p+s|, |s|) or (|s|, |p+s|) is in (3, 0), (3, 1), (3, 2), (3, 3), (4, 0), (4, 2), (4, 4),
 (6, 0). The ﬁeld of deﬁnition k(C(p, s)) is then Q(
@@ -71,8 +70,6 @@ Let τ be the involution on T 2 which acts by multiplication by −1 on H1(T 2)
 (points with cone angle π ). The involution τ extends to any solid torus D2 × S1 that
 T 2 bounds and (D2 × S1)/τ is the orbifold Q of Fig. 4 with ∂Q = P . Thus, given a
 3-orbifold M with an end homeomorphic to P × [0, ∞), and a chosen homology basis
-Arithmetic of Hyperbolic Manifolds
-289
 2
 2
 2
@@ -101,8 +98,6 @@ symmetry about its vertical axis and reﬂection symmetries across appropriate v
 planes.
 Let W ′′(p, s) be the corresponding quotient of W ′(p, s) (so W ′′(p, s) results by
 (p, s) Dehn ﬁlling one end of W ′ —the end is ﬁlled by the orbifold of Fig. 4). By drawing
-290
-Walter D. Neumann and Alan W. Reid
 2
 Figure 6
 2
@@ -118,8 +113,6 @@ Figure 7
 Figure 8
 the curves killed by the Dehn ﬁlling (or by a homological calculation) it is not hard to see
 that the rotational symmetry of W ′′ takes (p, s) Dehn ﬁlling to (p + 2s, −p −s) Dehn
-Arithmetic of Hyperbolic Manifolds
-291
 ﬁlling, so W ′′(p, s) ∼= W ′′(p+2s, −p−s). Note that (p, s) and (−p, −s) Dehn ﬁlling
 mean the same thing, and (p′, s′) = (p+2s, −p−s) implies (p′ +s′, s′) = (s, −p−s),
 so the orientation preserving commensurability of the theorem is proved. The reﬂection

@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0411647v2/sections/sec-019",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Admissible and pushing sequences",
+  "pageStart": 42,
+  "pageEnd": 46,
+  "contains": [
+    "library/arxiv-math-0411647v2/blocks/prose-sec-019",
+    "library/arxiv-math-0411647v2/blocks/recommendation-sec-019-01",
+    "library/arxiv-math-0411647v2/blocks/recommendation-sec-019-02",
+    "library/arxiv-math-0411647v2/blocks/recommendation-sec-019-03",
+    "library/arxiv-math-0411647v2/blocks/recommendation-sec-019-04"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0411647v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0411647v2",
+  "provenance": "ingested"
+}

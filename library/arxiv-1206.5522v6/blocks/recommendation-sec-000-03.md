@@ -1,0 +1,1 @@
+The reader uncomfortable with this language can substitute the words "topological category\" for "$\mathop{\mathrm{\infty}}$-category\" wherever they occur in this paper to obtain the correct sense of the results, but they should then bear in mind the proviso that technical difficulties may then abound in making the statements literally true.

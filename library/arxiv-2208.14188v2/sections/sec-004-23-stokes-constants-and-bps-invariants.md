@@ -7,10 +7,11 @@ section_number: 2.3
 pages: 15-16
 source_pdf: 2208.14188v2.pdf
 source_sha256: 92a7651c81b799b3
-doc_brief: "Resurgence in complex Chern-Simons theory at generic levels — In this note we study the resurgent structure of sl(2, C) Chern-Simons state integral model on knot complements S3\41,S 3\52 with generic"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.881
-latex_coverage_ratio: 0.957
+latex_coverage_ratio: 0.989
+doc_brief: "Resurgence in complex Chern-Simons theory at generic levels — In this note we study the resurgent structure of sl(2, C) Chern-Simons state integral model on knot complements S3\41, S3\52 with generic"
 ---
 An interesting discovery concerning the Stokes constants extracted
 from the Stokes automorphisms $\mf{S}_{\pm}^{(k=1)}(\tx,\tq)$ was made

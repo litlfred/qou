@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0907.4143v1
-doc_title: "Soft and Supersoft X-ray Sources in Symbiotic Stars1"
+doc_title: "Soft and Supersoft X-ray Sources in Symbiotic Stars 1"
 section_id: sec-003-x-ray-sources
 section_title: "X-ray sources"
 section_number: null
 pages: 4-5
 source_pdf: 0907.4143v1.pdf
 source_sha256: a2090d1e574b27db
-doc_brief: "Soft and Supersoft X-ray Sources in Symbiotic Stars1 — Assuming that soft X-ray sources in symbiotic stars result from strong thermonu- clear runaways, and supersoft X-ray sources from weak"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.775
-latex_coverage_ratio: 0.935
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.937
+doc_brief: "Soft and Supersoft X-ray Sources in Symbiotic Stars 1 — Assuming that soft X-ray sources in symbiotic stars result from strong thermonu- clear runaways, and supersoft X-ray sources from weak"
 ---
 \cite{v92} explained super-soft X-ray
 emissions by steady nuclear burning of hydrogen accreted onto WD.

@@ -1,0 +1,1135 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "ant-v14-n7-s-p07",
+ "status": "determined",
+ "pages_unread": [
+  1,
+  6
+ ],
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "1",
+   "text": "Results in [Bui and Florea 2018] and [Soundararajan 2000] were stated at point s =1",
+   "marks": [
+    {
+     "page": 2,
+     "context": "ctions over Z, we refer to the work of Soundararajan [2000]."
+    }
+   ],
+   "block": "library/ant-v14-n7-s-p07/blocks/prose-page-002"
+  },
+  {
+   "id": "fn-p008-1",
+   "page": 8,
+   "mark": "2",
+   "text": "n−1",
+   "marks": [
+    {
+     "page": 7,
+     "context": " the smooth completion of the hyperelliptic curve deﬁned byy"
+    },
+    {
+     "page": 7,
+     "context": "with the ℓ"
+    },
+    {
+     "page": 8,
+     "context": "Tr(Frobq| H"
+    },
+    {
+     "page": 8,
+     "context": "dim H"
+    },
+    {
+     "page": 8,
+     "context": "the sum of a geometric series which converges for all q > B"
+    },
+    {
+     "page": 8,
+     "context": "So if we takeQℓ= 4B"
+    }
+   ],
+   "block": "library/ant-v14-n7-s-p07/blocks/prose-page-008"
+  },
+  {
+   "id": "fn-p013-1",
+   "page": 13,
+   "mark": "3",
+   "text": "What if r= 1?This isn’t possible.If πis an m-cycle, then the coefﬁcients of the Fq-rational divisorD must all be equal to the same constant a, which means am is congruent to 0 mod ℓ, which means m is a multiple of ℓ; but by hypothesis no cycle has length a multiple of ℓ.",
+   "marks": [
+    {
+     "page": 13,
+     "context": "ndenotes the nontrivial n’th roots of unity."
+    }
+   ],
+   "block": "library/ant-v14-n7-s-p07/blocks/prose-page-013"
+  },
+  {
+   "id": "fn-p015-1",
+   "page": 15,
+   "mark": "2",
+   "text": "”, Ann. of Math. (2) 152:2 (2000), 447–488. MR Zbl Communicated by Andrew Granville Received 2019-02-22 Revised 2019-12-18 Accepted 2020-02-06 ellenber@math.wisc.edu Department of Mathematics, University of Wisconsin, Madison, WI, United States wanleen@gmail.com Department of Mathematics, MIT, Cambridge, MA, United States mshusterman@wisc.edu Department of Mathematics, University of Wisconsin, Madison, WI, United States",
+   "marks": [
+    {
+     "page": 14,
+     "context": "≥((n −1)!!)"
+    }
+   ],
+   "block": "library/ant-v14-n7-s-p07/blocks/prose-page-015"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p002-2",
+   "page": 2,
+   "mark": "2",
+   "text": "but the methods can be extended to prove the statement for any point on the critical line.",
+   "block": "library/ant-v14-n7-s-p07/blocks/prose-page-002"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "m",
+   "context": "f∈Fq"
+  },
+  {
+   "page": 2,
+   "mark": "m",
+   "context": "f∈Fqm[x],denotebyA fthequadratictwistofA⊗Fq"
+  },
+  {
+   "page": 2,
+   "mark": "m",
+   "context": "Fq"
+  },
+  {
+   "page": 2,
+   "mark": "m",
+   "context": "q"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "rgument allows us to handle the case of cyclic ℓ-covers of P"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "rem 1.7.Let ℓbe an odd prime and let Cbe a (Z/ℓZ)-cover of P"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "me and let Cbe a (Z/ℓZ)-cover of P1/Fqbranched at a set S ⊂P"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "•There is no isuch that qκ"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": " Theorem 1.5 above, provides a set of size on orderX/ log(X)"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "X"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "2is ≫X/(log X)"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "y"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "ofJ f .LetQ"
+  },
+  {
+   "page": 4,
+   "mark": "f",
+   "context": "n,qbe the set of squarefree polynomials"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "n,qbe the set of squarefree polynomialsfover F"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "n,qbe the set of squarefree polynomialsfover Fqof degree"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "he set of squarefree polynomialsfover Fqof degree nsuch that"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": " set of squarefree polynomialsfover Fqof degree nsuch that m"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "n,q| ≤|Q"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "over y"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "f ∈Qn,q"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "f ∈Qn,qm"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "f ∈Qn,q"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "f ∈Qn,qm"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "f ∈Qn,qma( f ) can be interpreted as the number of F"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "c be a conjugacy-closed subset of G\\e.By a tame G-cover of P"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "•f: X→P"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "Herebyanisomorphismbetweentwocoversf:X→P"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "Herebyanisomorphismbetweentwocoversf:X→P1andf′:X′→P"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "=f , not a pair (ψ, ι) with ι a nontrivial automorphism of P"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "In other words, our P"
+  },
+  {
+   "page": 5,
+   "mark": "c",
+   "context": "Wewers [2006]), there is a scheme Hn"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "G,nover Z[1/|G|] whose"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "G,nover Z[1/|G|] whose k-points (as long as"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "bijection with the isomorphism classes of tame G-covers of P"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "Proof.A point ofX"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "n(F"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n(Fq) is a point ofX"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "n(Fq) is a point ofXn(F"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "n(Fq) is a point ofXn(Fq) such that Frob"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": " h, and thus such a C, we now consider the set of points ofX"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "n(F"
+  },
+  {
+   "page": 7,
+   "mark": "h",
+   "context": "n(Fq) lying over this"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "First of all, the choices of (g, φ) such that (g, φ, h) ∈X"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "n(F"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n(Fq) = X"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "n(Fq) = Xn(F"
+  },
+  {
+   "page": 7,
+   "mark": "h",
+   "context": "n(Fq) = Xn(Fq) for a speciﬁed"
+  },
+  {
+   "page": 7,
+   "mark": "g",
+   "context": "with the ℓ2"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "n(F"
+  },
+  {
+   "page": 7,
+   "mark": "s",
+   "context": "n(Fq)) if and only if"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "is, are parametrized by the same point ofX"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "urjections sends sto a−1Frobq s; so sdescends to a point ofX"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "n(F"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "n(Fq) if and only if Frob"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "We conclude that the number of points ofX"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "n(F"
+  },
+  {
+   "page": 7,
+   "mark": "h",
+   "context": "n(Fq) lying over"
+  },
+  {
+   "page": 7,
+   "mark": "f",
+   "context": "qandsomemonicF.ThecurveC"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "(ma( f ) + m−a( f )) = (q −1)|X"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "n(F"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "ma( f ) = (q −1)|X"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "n(F"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Since |Qn,q| = (q −1)(q"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Since |Qn,q| = (q −1)(qn−q"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "|q−n|X"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "n(F"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "n(Fq)| −1| ≤Cℓ"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "(−1)"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "(−1)iTr(Frobq| H"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "|X"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "n(F"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "c,ét((X"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "ote that the étale cohomology is that of the base change ofX"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "nto F"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Tr(Frobq| H2"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "c,ét((X"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "n)Fq; Qλ) = q"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "n)Fq∼= (X"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "n)Fq∼= (Xn)Fqis irreducible.When"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "This follows immediately from the fact that (X"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "rgue as follows.The map fromXnto the conﬁguration space Conf"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "ue as follows.The map fromXnto the conﬁguration space ConfnA"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "d subvariety of the base.So writeZfor the subvariety of Conf"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "subvariety of the base.So writeZfor the subvariety of ConfnA"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "those conﬁgurations containing some speciﬁed pointp0 ∈P"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "An automorphism of P"
+  },
+  {
+   "page": 8,
+   "mark": "c",
+   "context": "An automorphism of P1takingp0to ∞now identiﬁes Ywith Hn"
+  },
+  {
+   "page": 8,
+   "mark": "c",
+   "context": " term.The moduli spaceXnis a closed and open subscheme of Hn"
+  },
+  {
+   "page": 8,
+   "mark": "c",
+   "context": "Betti numbers are bounded by those of Hn"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "dim H2"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "c,ét((X"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "n)Fq; Qλ) ≤Kℓ(Bℓ)"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "UsingtheDelignebound[1980],theeigenvalueofFrobeniusonH"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "c,ét((X"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "absolute value by q"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "KℓBℓq−1/2(1 −Bℓq−1/2)−1q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "ℓand"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "Proof.Write δfor the quantity |Qn,q|−1|Q"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "|Q"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "|Qn,"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "ma( f ) ≥|Qn,q|−1(ℓ−1)|Q"
+  },
+  {
+   "page": 9,
+   "mark": "138",
+   "context": "ℓ= 2(ℓ−1)−1(4ℓ)"
+  },
+  {
+   "page": 9,
+   "mark": "156",
+   "context": "ℓ= 2(ℓ−1)−1(4ℓ)138 andQℓ= 4 · (4ℓ)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "osition 2.1.Moreover, we may take Cℓto be 2KℓBℓandQℓto be 4B"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "dim H"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "ét((X"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "n)Fq; Qλ) ≤Kℓ(Bℓ)"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "dim H"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "ét((X"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "n)Fq; Qλ) = dim H"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "ét((X"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "dim H"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "ét((X"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "n)Fq; Qλ) ≤(4ℓ)"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "dim H"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "ét((X"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "in G.The set of n-tuples of involutions (τ1, . . . , τn) ∈G"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "Mgoverning theH"
+  },
+  {
+   "page": 10,
+   "mark": "78",
+   "context": "Bℓ= (4ℓ)"
+  },
+  {
+   "page": 10,
+   "mark": "60",
+   "context": "Bℓ= (4ℓ)78andKℓ= (4ℓ)"
+  },
+  {
+   "page": 10,
+   "mark": "156",
+   "context": "Bℓ= (4ℓ)78andKℓ= (4ℓ)60.So we haveQℓ= 4 · (4ℓ)"
+  },
+  {
+   "page": 10,
+   "mark": "138",
+   "context": "ℓ= 2(ℓ−1)−1(4ℓ)"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": "L(s, χ f ) can vanish only at a point ssuch that q"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "conductorf .Let Cbe the hyperelliptic curve deﬁned byy"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": "only ifP(q"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "the hyperelliptic curve deﬁned byy"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "(x).Thus, the set { f∈Qn,q | L(s, χ f ) = 0} is the same asQ"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": "x).Thus, the set { f∈Qn,q | L(s, χ f ) = 0} is the same asQq"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": "mod which gp"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": "mod which gps, the minimal polynomial ofp"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": " polynomial ofps, splits completely.Let a ∈Z/lZ such that gp"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "If q =p"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "If q =pt, then anyfwithL(χ f , s) = 0 has ma"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "|Q"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": "|Qq"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "|Q"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "|Qa"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "|Q"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": "|Qq"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "ℓ"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "f∈Qn,q"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "f∈Qn,qm,denote byA fthe quadratic twist ofA ×FqFq"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "uadratic twist ofA ×FqFqm(x) byf .LetRn,mbe the set { f∈Qn,q"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "|Qn,q"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "P a"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "P aix"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "P aixiwith P a"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "P aixiwith P ai= 0 surjects ontoJ(C)[2].Note also thatx"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "th P ai= 0 surjects ontoJ(C)[2].Note also thatx1 + · · · + x"
+  },
+  {
+   "page": 12,
+   "mark": "g",
+   "context": "h P ai= 0 surjects ontoJ(C)[2].Note also thatx1 + · · · + x2"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "ects ontoJ(C)[2].Note also thatx1 + · · · + x2g+2 −(2g + 2)x"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "ThisidentiﬁesJ(C)[2]withanexplicitsubquotientofF"
+  },
+  {
+   "page": 12,
+   "mark": "g",
+   "context": "ThisidentiﬁesJ(C)[2]withanexplicitsubquotientofF2"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "subspace (a"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "subspace (a1, . . . , a"
+  },
+  {
+   "page": 12,
+   "mark": "g",
+   "context": "subspace (a1, . . . , a2"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "subspace (a1, . . . , a2g+2) :Pa"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "nditionsonπgiveninTheorem1.5areequivalenttotheconditionthatπ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "two disjoint odd cycles.Thus, the action of π"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "es.Thus, the action of π2in its permutation representation F"
+  },
+  {
+   "page": 12,
+   "mark": "g",
+   "context": "s.Thus, the action of π2in its permutation representation F2"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "eigenspaces of ρ(π"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "ces of ρ(π2) with the eigenvalue 1.So the eigenvalues ofFrob"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "ndenotes the nontrivial"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "nontrivial n-th roots of unity.We see in particular that ρ(π"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "e 1 as an eigenvalue.But if the zeta functionZChad a zero at"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "value on C, which would mean that qwas an eigenvalue of Frob"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "an that qwas an eigenvalue of Frob2; we have shown that Frob"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "2g+2−kcontains any eigenvalue at most twice, and if (k,"
+  },
+  {
+   "page": 12,
+   "mark": "g",
+   "context": "2g+2−kcontains any eigenvalue at most twice, and if (k, 2"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "C/Fq"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "n, Frobenius acts on the set of Weierstrass points of C f: y"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "2and so behavesL(s, χ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "For anyX= q"
+  },
+  {
+   "page": 13,
+   "mark": "g",
+   "context": "For anyX= q2"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "most nis ≫q"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": ". . . , xmbe the ramiﬁcation points of the (Z/ℓZ)-cover of P"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "groupofdivisorsoftheformPa"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "groupofdivisorsoftheformPaix"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "groupofdivisorsoftheformPaixiwithPa"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "the principal divisor associated toyisPa"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "the principal divisor associated toyisPaix"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "the principal divisor associated toyisPaixiwhere a"
+  },
+  {
+   "page": 13,
+   "mark": "x",
+   "context": "the principal divisor associated toyisPaixiwhere ai= ord"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "the principal divisor associated toyisPaixiwhere ai= ordx"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "an explicit subquotient of F"
+  },
+  {
+   "page": 13,
+   "mark": "r",
+   "context": "ℓare the union (as multisets) S"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "So the eigenvalues of πin its action on F"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "j=1µ"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "factors of F"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "dimensional representation onto which F"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "he eigenvalues of πin its action onJ(C)[λ] are the multisetS"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "ndenotes the nontrivial"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "If the zeta functionZChad a zero at"
+  },
+  {
+   "page": 13,
+   "mark": "r",
+   "context": "ℓand r= 2, this is ruled out by the fact that r −2 = 0 andS"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "k jcontains no copy of 1.If"
+  },
+  {
+   "page": 13,
+   "mark": "r",
+   "context": "congruent to 1 mod ℓ, then√qcannot be contained inS"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "k jbecause of our hypothesis on"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "k jbecause of our hypothesis on qκ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "If k"
+  },
+  {
+   "page": 14,
+   "mark": "r",
+   "context": "If k1, . . . , k"
+  },
+  {
+   "page": 14,
+   "mark": "r",
+   "context": "If k1, . . . , krare mutually coprime, thenS"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": " conductorfand orderℓ.Such a curve C fadmits aZ/ℓZ cover ofP"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "none of its factor has degree divisible by dis ≫(Td(n)/n!)(q"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "e of its factor has degree divisible by dis ≫(Td(n)/n!)(qn−q"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "n"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "tands for double factorial and Cis a nonzero constant.AsX= q"
+  }
+ ]
+}

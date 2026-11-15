@@ -1,0 +1,76 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0606222v2",
+ "source": {
+  "structure_sha256": "5c2a45596d04dd07859d65fb200db8cacad17d1ef95b2d278997a79600e358f5",
+  "file": "0606222v2.pdf"
+ },
+ "provenance": {
+  "title": "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS",
+  "authors": "URI ONN AND JASPER V. STOKMAN",
+  "arxiv": {
+   "id": "math/0606222",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "8 Nov 2006"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 3,
+  "by_kind": {
+   "recommendation": 3
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In each case there is a natural explicit labeling of the irreducible $\\mathcal{M}_{\\mathbb{F}}$-spherical $\\mathcal{K}_{\\mathbb{F}}$-representations $V_\\lambda^{\\mathbb{F}}$ by partitions $\\lambda\\in\\Lambda_n$ which we shall describe in detail.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Using the identification of right $\\mathbb{C}_q(\\mathcal{K})$-comodules and left $\\mathcal{U}_q$-modules, the subspace of $\\mathbb{C}_q(\\mathcal{M})$-invariant elements in $V$ coincides with the subspace of $\\mathcal{U}_q(\\mathfrak{m}^{\\mathbb{C}})$-invariant elements in $V$, $$V^{\\mathbb{C}_q(\\mathcal{M})}=\\{v\\in V \\,\\, | \\,\\, Xv=\\epsilon(X)v\\quad \\forall X\\in \\mathcal{U}_q(\\mathfrak{m}^{\\mathbb{C}}) \\}.$$ In translating the general [CQG ]{.sans-serif}algebra theory from right $\\mathbb{C}_q(\\mathcal{K})$-modules to left $\\mathcal{U}_q$-representations, we shall refer to $\\mathbb{C}_q(\\mathcal{K})$-spherical representations as $\\mathcal{U}_q(\\mathfrak{m}^{\\mathbb{C}})$-spherical representations.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-52-the-quantum-grassmann-representation.md",
+   "section_title": "The quantum Grassmann representation",
+   "pages": "19-20",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Similarly as for the Koornwinder polynomials and the multivariable little $q$-Jacobi polynomials, the multivariable big $q$-Jacobi polynomials can be characterized by a second-order difference equation they should satisfy, or in terms of suitable orthogonality properties, see [@S0].",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-014-63-multivariable-big-q-jacobi-polynomials.md",
+   "section_title": "Multivariable big q-Jacobi polynomials",
+   "pages": "27-29",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

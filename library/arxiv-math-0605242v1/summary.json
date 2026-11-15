@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0605242v1",
  "source_sha256": "65fac7285e4a77f4",
- "brief": "N-Fold Integer Programming Jesús A. De Loera∗ Raymond Hemmecke † Shmuel Onn ‡ Robert Weismantel § — In this article we study a broad class of integer programming problem s in variable dimension.",
- "extended": "**N-Fold Integer Programming Jesús A. De Loera∗ Raymond Hemmecke † Shmuel Onn ‡ Robert Weismantel §**\n\n16 pp, 7 sections.\n\n**Abstract.** In this article we study a broad class of integer programming problem s in variable dimension. We show that these so-termed n-fold integer programming problems are polynomial time solvable. Our proof involves two heavy ingredients discovered recently: the equivalence of linear optimization and so-called directed augmentation, and the stabilization of certa in Graver bases. We discuss several applications of our algorithm to multiway transpo rtation problems and to packing problems. One important consequence of our results is a po lynomial time algorithm for the d-dimensional integer transportation problem for long multiway table s. Another interesting application is a new algorithm for the classical cutting stock problem.\n\n**Outline.** Introduction; Applications; High dimensional transportation problems; Some packing problems; Graver bases and directed augmentation; Graver bases of n-fold matrices; The polynomial time algorithm for n-fold integ",
+ "brief": "N-Fold Integer Programming — In this article we study a broad class of integer programming problems in variable dimension.",
+ "extended": "**N-Fold Integer Programming**\n\n16 pp, 8 sections.\n\n**Abstract.** In this article we study a broad class of integer programming problems in variable dimension. We show that these so-termed n-fold integer programming problems are polynomial time solvable. Our proof involves two heavy ingredients discovered recently: the equivalence of linear optimization and so-called directed augmentation, and the stabilization of certain Graver bases. We discuss several applications of our algorithm to multiway transportation problems and to packing problems. One important consequence of our results is a polynomial time algorithm for the d-dimensional integer transportation problem for long multiway tables. Another interesting application is a new algorithm for the classical cutting stock problem.\n\n**Outline.** Front matter; Introduction; Applications; High dimensional transportation problems; Some packing problems; Graver bases and directed augmentation; Graver bases of n-fold matrices; The polynomial time algorithm for n-fold integ",
  "tokens": {
-  "brief": 48,
-  "extended": 273
+  "brief": 30,
+  "extended": 258
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",

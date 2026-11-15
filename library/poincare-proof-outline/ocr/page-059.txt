@@ -1,0 +1,73 @@
+using poincare-distance-eq-0-iff|of On of-complex x| <of-complex x € unit-disc»
+using poincare-distance-ge0[of 0, of-complex x]
+by auto
+then obtain M where M: unit-disc-fix M moebius-pt M u' = 0n moebius-pt M v' € positive-a-azis
+using ex-unit-disc-fiz-to-zero-positive-z-azis[of u’ v'| in-disc
+by auto
+
+then obtain Mv’ where Mv’: moebius-pt M v' = of-complex Mv’
+using inf-or-of-complez|{of moebius-pt M v'| in-disc unit-disc-fiz-iff[of M]
+by (metis image-eqI inf-notin-unit-disc)
+
+have moebius-pt M v' € unit-disc
+using M(1) «v' € unit-disc»
+by auto
+
+have Re Mv’ > 0 is-real Mv’ Re Mv’ < 1
+using M Mv’ of-complex-inj «moebius-pt M v' € unit-disey
+unfolding positive-x-axis-def circline-set-x-axis
+using cmod-eq-Re
+by auto fastforce
+
+have poincare-distance 0}, (moebius-pt M v') = poincare-distance u' v’
+using M(1)
+using in-disc
+by (subst M(2)[symmetric], simp)
+
+have Mv’ = 2
+
+using <poincare-distance 0, (moebius-pt M v’) = poincare-distance u' v'» Mv’
+
+using <poincare-distance 0, (of-compler x) = poincare-distance u’ v'y
+
+using unique-z-axis-poincare-distance-positive|of poincare-distance u’ v'|
+<poincare-distance u' v' > 0»
+
+using (Re Mv’ > 0» «Re Mv’ < 1» <is-real Mv’
+
+using <is-real x) (Rex > 0» (Rea < 1»
+
+unfolding positive-x-azis-def
+
+by auto
+
+thus ?P’ wu’ v' On (of-complez x)
+using M Mv’
+by auto
+qed
+next
+show u € unit-disc v € unit-disc u A v
+by fact+
+next
+fix Muv
+let ?Mu = moebius-pt Mu and ?Mv = moebius-pt M v
+assume 1: unit-disc-fiz M u € unit-disc v € unit-disc u # v
+hence 2: ?Mu # ?Mv ?Mu € unit-disc ?Mv € unit-disc
+by auto
+assume 3: ?P (moebius-pt M u) (moebius-pt M v)
+show ?P uv
+proof safe
+fix u’ v’
+assume 4: u’ € unit-disc v' € unit-disc poincare-distance uv = poincare-distance u' v'
+hence poincare-distance ?Mu ?Mv = poincare-distance u v
+using /
+by simp
+then obtain M' where 5: unit-disc-fix M' moebius-pt M' u' = ?Mu moebius-pt M' v' = ?Mv
+using 2 3 4
+by auto
+let ?M = (—M) + M’
+have unit-disc-fix ?M A moebius-pt ?M u’ = u A moebius-pt ?M v' = v
+using 5 <unit-disc-fix M»
+using unit-disc-fiz-moebius-comp[of —M M"|
+using unit-disc-fiz-moebius-inv|[of M]
+by simp

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-ph-9502366v1
-doc_title: "arXiv:hep-ph/9502366v1 22 Feb 1995"
+doc_title: "Chiral Perturbation Theory"
 section_id: sec-019-11-interactions-of-a-light-higgs
 section_title: "Interactions of a light Higgs"
 section_number: 11
@@ -8,6 +8,7 @@ pages: 46-47
 source_pdf: 9502366v1.pdf
 source_sha256: 56df064956ca03f8
 toc_source: inferred
+doc_brief: "Chiral Perturbation Theory — An introduction to the basic ideas and methods of Chiral Perturbation Theory is presented."
 ---
 An hypothetical light Higgs particle provides a good example of the broad range
 of application of the chiral techniques. Its hadronic couplings are ﬁxed by low-energy
@@ -52,8 +53,6 @@ v Ga
 µνGµν
 a .
 (11.3)
-Chiral Perturbation Theory
-47
 Here, nd = 1 and nu = 2 are the number of heavy quarks of type down and up
 respectively. The operator Ga
 µνGµν

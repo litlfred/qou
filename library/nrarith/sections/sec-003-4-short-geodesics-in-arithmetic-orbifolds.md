@@ -8,6 +8,7 @@ pages: 9-15
 source_pdf: nrarith.pdf
 source_sha256: 085ec9541ddc6cd4
 toc_source: inferred
+doc_brief: "Arithmetic of hyperbolic manifolds (Neumann–Reid) — survey of arithmetic Kleinian groups: an arithmetic M = H³/Γ is determined up to commensurability by its invariant trace field and quaternion…"
 ---
 The main results of this section are Theorem 4.6 and its Corollary, which set strong limits
 on the possible lengths of short geodesics in arithmetic cusped hyperbolic orbifolds,
@@ -29,8 +30,6 @@ in O. The complex place k ,→C induces an embedding ρ: A ,→M2(C) which restr
 to ρ: O1 ,→SL2C. Then Pρ(O1) is a Kleinian group of ﬁnite covolume. An arithmetic
 Kleinian group is one commensurable with a group of the type Pρ(O1). We say it is
 derived from a quaternion algebra if it is actually a subgroup of some Pρ(O1). We call
-282
-Walter D. Neumann and Alan W. Reid
 M = H3/Γ arithmetic or derived from a quaternion algebra if Γ is arithmetic or derived
 from a quaternion algebra.
 The ﬁeld k and quaternion algebra A associated as above with an arithmetic Kleinian
@@ -81,8 +80,6 @@ contains a geodesic of length less than arccosh 3
 2 = 0.9624236501. . . then Γ is com-
 mensurable with PSL2Od with d ∈{1, 2, 3, 7, 11, 15, 19} and the geodesic has length
 one-half a value listed in Table 1.
-Arithmetic of Hyperbolic Manifolds
-283
 Moreover, if Γ is derived from a quaternion algebra, then the above can be improved
 by a factor of 2: a geodesic of length less than 2 arccosh 3
 2 = 1.9248473002. . . has
@@ -152,8 +149,6 @@ Notation. The length of the geodesic in M determined by γ is 2 log |λ| and wil
 denoted by ℓ0(γ).
 It is the real part of the “complex length" ℓ(γ) = 2 log λ whose
 imaginary part is the holonomy of the geodesic determined by γ.
-284
-Walter D. Neumann and Alan W. Reid
 Note that, with γ as above, tr γ = ±2 cosh ℓ(γ)
 2 , so
 | tr γ| =
@@ -228,8 +223,6 @@ part of which is implicit in [R1] and [Tak].
 Lemma 4.9. Let Γ be a Kleinian (or Fuchsian) group derived from a quaternion algebra.
 Let γ ∈Γ be a loxodromic or hyperbolic element, and write tr γ = u+u−1 with |u| > 1.
 Then u is an algebraic integer and u−1 is a conjugate of u. Moreover,
-Arithmetic of Hyperbolic Manifolds
-285
 (a) if γ is loxodromic, then u is not real, and exactly four conjugates of u lie off the
 unit circle;
 (b) if γ is hyperbolic, then u is real, and exactly two conjugates of u lie off the unit
@@ -279,8 +272,6 @@ Theorem 4.11. Suppose Γ is a Kleinian or Fuchsian group which is derived from a
 quaternion algebra and γ ∈Γ is a loxodromic or hyperbolic element. Then there is a
 group Γ0 commensurable with Γ containing an element γ0 with γ2
 0 = γ in PSL2C.
-286
-Walter D. Neumann and Alan W. Reid
 Proof of Lemma 4.10. As in the proof of Lemma 4.9 we deal with the Kleinian group
 case; the Fuchsian case is analogous. Thus assume that u is not real and has exactly
 four conjugates off the unit circle. Since u−1 is assumed to be a conjugate of u, the
@@ -333,8 +324,6 @@ and u0Pν. Since the building is a tree, u0 ﬁxes the mid-point Tν of the shor
 between these vertices. (Note that Tν is either a vertex or a midpoint of an edge.) From
 Borel’s description ([Bo, Prop. 4.4]) of the maximal elements in the commensurability
 class of Γ, there is a group Γ0 in this commensurability class consisting of precisely
-Arithmetic of Hyperbolic Manifolds
-287
 those elements of A∗/k∗which locally ﬁx the same points as described above for u0 on
 Bruhat-Tits buildings, i.e., they ﬁx Pν (resp. Tν ) if ν is a ﬁnite place not in Rf ∪S
 (resp. in S −Rf ).

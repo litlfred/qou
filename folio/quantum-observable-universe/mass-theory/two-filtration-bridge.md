@@ -14,8 +14,7 @@ two distinct filtrations:*
   [stratified $\Phi_q$](#prop:quantum-dilogarithm-stratified) — but the
   first stratifies by the curvature rank of **words** and supplies no
   partition-indexed filtration, so this conjecture **presupposes** the very
-  word-to-partition step that is unestablished; see
-  [`docs/audits/2026-08-16-three-gb-filtrations-one-name.md`](../../../docs/audits/2026-08-16-three-gb-filtrations-one-name.md)),
+  word-to-partition step that is unestablished),
   $Z^{(0)}(A) \subseteq Z^{(1)}(A) \subseteq \cdots$ where
   $\mathrm{depth}_{\mathrm{GB}}(\lambda) = \max_\square h(\square)$.*
 

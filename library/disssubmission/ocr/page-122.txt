@@ -1,0 +1,51 @@
+114 Chapter 5 — A family of surfaces
+
+If 1 ¢ H°(Y,Z) denotes the unit element of the cohomology ring of Y, the
+fundamental cohomology class of Y in X is i)(1) = [Y] € H*(X,Z). So the
+projection formula shows
+
+i@*(y)) = HHUA) = yA) = yUlY]
+
+for all cohomology classes y € H*(X,Z). This being said, it follows from
+the commutative diagram
+
+H2(X,Z) x H2(X,Z) H4(x,Z) —". n8(x,z)
+
+bo
+
+d
+H?(Y,Z) x H2(Y,Z) HA(Y,Z) al
+
+that the intersection form on H?(Y,Z) restricts on the subspace H?(X,Z) to
+the bilinear form
+b: H?(X,Z) x H?(X,Z) — Z, (a,B) > degy(a@UBUIY)).
+
+We want to compute this bilinear form. Since the intersection product in
+homology corresponds to the cup product in cohomology, the fundamental
+class of Y in cohomology is
+
+[Y] = [ON®,] = [@|U[®,] = (OP.
+
+To compute this class explicitly, we choose a basis of the cohomology ring
+of X as follows. The principal polarization on X is given by an alternating
+bilinear form on H\(X,Z). Take an integral basis
+
+Aiye-e Ads Hi,---Ha € Hi(X,Z) = Z
+with respect to which this alternating form is given by (Aj, Ax) = (Li, Ux) =
+and (Aj, Uz) = —(Lx, Az) = Sx for all i, k, and denote by
+X1,-065%4,V1,.-.,94 € H'(X,Z) = Hom(H\(X,Z),Z)
+
+the dual basis. Since the Chern class [0] = c;(@x(@)) defines the principal
+polarization, it follows that in the exterior algebra H* (X,Z) = A*(H!(X,Z))
+this class is given by
+
+4
+= PV xiAy; € H?(X,Z).
+i=l
+
+The cup product in cohomology corresponds to the wedge product in the
+exterior algebra, so we get
+
+n= 108 = (Bunn)a(Zainn) = 22, anni
+
+1<i<j<4

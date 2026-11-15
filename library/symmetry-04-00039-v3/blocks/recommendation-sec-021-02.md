@@ -1,0 +1,1 @@
+The key feature here is that of symmetrical interconnectivity of capital letter labels; if we impose that as a requirement for the incorporation of additional flavors it implies, to quote [1] “that the associated geometrical edifice must be regular.

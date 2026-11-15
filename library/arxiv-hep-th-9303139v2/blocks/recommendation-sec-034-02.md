@@ -1,0 +1,1 @@
+The next natural step, when approached from this side should be generalization of conventional integrable hierarchies, which would lift the restriction to level $k=1$ simply-laced Kac-Moody algebras and unitary representations.

@@ -1,1 +1,0 @@
-Acloseddiﬀerentiablemanifold M hasanowhere-vanishing

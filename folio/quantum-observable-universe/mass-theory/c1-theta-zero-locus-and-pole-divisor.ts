@@ -9,6 +9,7 @@ export default proposition({
   title:
     "The connection matrix of the ramified binding operator is p-elliptic and " +
     "its poles are theta zeros; the q-theta vanishes exactly on −p^ℤ",
+  cites: ["sauloy2000"],
   uses: [
     "conj:qdifference-kernel-prolongation-symbol",
   ],

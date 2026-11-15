@@ -1,0 +1,62 @@
+---
+doc_id: schechtman-varchenko1991-arrangements
+doc_title: "Arrangements of hyperplanes and Lie algebra homology"
+section_id: page-031
+section_title: "Page 31"
+pages: 31-31
+pdf_page: 31
+source_pdf: schechtman-varchenko1991-arrangements.pdf
+source_sha256: 0100fd32438740f0
+text_source: ocr
+granularity: page
+doc_brief: "Arrangements of hyperplanes and Lie algebra homology — 56 sections: Page 1; Page 2; Page 3"
+---
+Arrangements of hyperplanes and Lie algebra homology 169
+
+Namely, let us assign to every flag Fe F N~?(@,,y) an element Y’(F)e C,(n, (Un)®"),
+of the form
+
+(5.8.17) P(F)=(— 1g Ag pp A oes AQ] @X,® -.- @Xy
+
+where all g; are commutators, and x; are products of commutators. This element
+will have the property: if J;=|g;|, and I;=set of f7s contained in x,, then the
+last edge of Fis Ly. syste
+
+We'll construct ¥’(F) by induction on N —p. Put
+
+(5.8.18) Y (O)=fyAfy-1 4 - Afi @1@1®@...@1.
+
+Now let F=(P>...>1%~?), F’=(P>...51N~?7}); IN-Pl
+Ly, tye iiTiserty: Hf EY”? is obtained from LY~?~' by connecting two islands
+
+Jj, and Jj, (i; <j2) (resp., J;, 1), then put
+
+(5.8.19) WY (F)=(— 1) "20, ,.(W'(F')
+(resp.,
+(5.8.20) Y'(F)=(—1) "1 (Y(F')).
+
+One verifies, using (5.6.4), that these rules correctly define maps
+(5.8.21) YW: FX "(6 qy) > Con, (Un)®"),.
+
+By 5.8.15 they are inverse to Y. So we get
+
+5.9 Theorem. Suppose that A=(1, 1, ..., 1). The maps ¥ (5.8.16) define isomorph-
+isms of complexes .
+
+P: C(n,(Un)9"), > F"~ (6,9).
+
+5.10 Remark. In the previous considerations we can readily put N=oo, n to
+be the free Lie algebra on f,, fo,...; 2=(I, 1,...). We get the isomorphism
+
+Cy (1, UN)®"), => F (6 y.)
+
+5.11 Now let A=(k,, ..., k,)EN” be arbitrary, N=|/|. Introduce a free Lie alge-
+bra fi with generators f,, ..., fy. The inclusion 2,0 Zy defined in 5.5 induces
+the action of Z, on fi by permutation of fs, whence the action of Z, on C,(ii,
+(Uf)®").
+
+Define the map of Lie algebras n — ft by putting
+
+ky
+(5.11.1) fit YD hew+s
+j=l

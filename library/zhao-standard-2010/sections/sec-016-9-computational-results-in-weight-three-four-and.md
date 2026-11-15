@@ -8,7 +8,9 @@ pages: 29-34
 source_pdf: Zhao_standard_2010.pdf
 source_sha256: 94a70847c2937ba7
 toc_source: inferred
+doc_brief: "Standard Relations of Multiple Polylogarithm Values at Roots of Unity — Let N be a positive integer."
 ---
+Computational results in weight three, four and five
 In this last section we brieﬂy discuss our results in weight three, four and ﬁve.
 Since the computational complexity increases exponentially with the weight we
 cannot do as many cases as we have done in weight two.

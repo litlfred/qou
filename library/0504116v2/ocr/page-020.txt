@@ -1,0 +1,42 @@
+454 Roberto Frigerio
+
+The following proposition will prove useful in the last subsection.
+
+Proposition 3.4 Let X be any smooth manifold and let g: Q(T) — X be a smooth
+map. Suppose that there exists a small neighbourhood U of xo in Q(T) such that for
+all x,x’ € UNIQ(Z) with d(x) = —d(x’) we have g(x) = g(x’). Then dg,, = 0.
+
+Proof Since d: U => Th, S? defines a chart around x9, it is sufficient to observe
+that UN IQ(T) accumulates to x9 along any direction in T,,Q(Z). im
+
+3.2 Infinitesimal deformations of compact tetrahedra
+
+We know from Mostow’s rigidity Theorem that compact hyperbolic 3—manifolds do
+not admit deformations. The following results seem to suggest that in the non-compact
+case deformations take place mostly near the cusps: even if it has to be affected by
+any non-trivial deformation, the compact core offers resistance to changing its shape.
+More precisely, we now show that deformations of T near the complete structure affect
+compact tetrahedra only at the second order.
+
+Let f be any compact internal edge of T. For x € Q(T) we denote by f(x) the
+length of f with respect to the metric structure defined by x. By Lemma 1.4 the map
+ff: Q(T) = R is smooth.
+
+Proposition 3.5 We have dl, =0.
+
+Proof Let x,x € UM IQ(T) be such that d(x) = —d(x’). Then the identity of N
+extends to a homeomorphism between N(x) and N(x’). By Mostow—Prasad’s rigidity
+Theorem, such a homeomorphism is homotopic to an isometry w: N(x) WN (x’) viaa
+homotopy which preserves the geodesic boundary (see eg, [4]). For y€ UN IMQ(T)
+let f(y) C NG) C No) be the geodesic segment corresponding to f. From the
+above discussion it follows that ~(f(x)) is homotopic to f(x’) relatively to ONG! ).
+Since both wW(f(x)) and f(x’) intersect ON(’) perpendicularly, this easily implies
+that W(f(~)) = f0’), whence &(x) = &(’). Now the conclusion follows from
+Proposition 3.4. oO
+
+The lengths of the boundary edges of a compact lateral hexagon smoothly depend on the
+lengths of its internal edges, and the dihedral angles of a compact truncated tetrahedron
+smoothly depend on the lengths of its internal edges. Thus Proposition 3.5 implies the
+following results.
+
+Algebraic & Geometric Topology 6 (2006)

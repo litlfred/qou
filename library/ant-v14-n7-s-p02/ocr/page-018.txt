@@ -1,0 +1,62 @@
+1728 David Jarossay
+
+2A3. Fixed point equation for the harmonic Frobenius. We can now deduce from Section 2A1, via
+Section 2A2, an expression of the iterated harmonic Frobenius of integrals at (1, 0) as a function of its
+number of iterations, whose coefficients are expressed in terms of the fixed point of the Frobenius at
+(1, 0); this is (0-3).
+
+By Proposition 2B.1, we have t(q%)®g,oo of 0 ®, 4 = Pg,oo. By definition, the inverse of By oo for of 0
+is ®g —oo thus the inverse of t(q%)(®q, oo) is Tg" )(®,, —oo). Whence ®, 4 = =1(q*)®q, 99 of 1.0 00. By
+applying Ad(e1), we deduce Ade, ,(e1) = t(q% *) Ado, _.(e1) oft Adg,,,.(e1), whence S Ado, ; (e1) =
+S(t(q®) Ade, _,(€1) ong! Ade, (et). BY the commutative diagram in Definition 2A.3, this amounts
+to S Ado, ; (e1) = T(q*) Ado, _.. (e1) of S Ado, ,.(e1)). By (1-19), we have S$ Ado, ,(e1) = hary,¢ and
+S Ade, (e:)) = = harg oo. Whence (0-3).
+
+Remark 2A.8. The power series expansion of any harya ((nj)a; (&)a41) in terms of q*, given by (0-3)
+have coefficients of degrees in {1,..., minj<j<qnj — 1} equal to 0. This follows from of) [eo] =0
+
+q.-~%
+which implies Ad (ez) = ee + terms of depth > 2, for all € € un(K).
+
+(&)
+Fo
+
+Example 2A.9. In depth one and two and for P! \ {0, 1, oo}, we have
+
+foe}
+harya (m1) = hargx(m) + > (g%)" Ado, elegy e125" ‘ei.
+
+n=n|
+
+1 -1
+harya (ny, 2) = hary~ (ny, 2) + > (q*)" Ado,_.(evleg "Perey? e1eg' er]
+n=n|+n2
+nl
+
++> > (q%)" Ado, (eleg "2 "e192 ‘ere! harg (m1 — 1)
+ry=0 n=n2+1r)
+no—1
+
++ SoG” Ado, _..(erlejereg’ er] hargs(n2 — 72).
+r2=0
+
+2B. Iteration equation of the harmonic Frobenius of integrals at (1, 0). We are now going to reexpress
+the iterated harmonic Frobenius of integrals at (1, 0) as a function of the number of iterations, in a different
+way, without involving the fixed point.
+2B1. Iteration on the Frobenius at (1,0). As in Section 2A2, the first step is to describe the iterated
+Frobenius at base-points (1, 0) as a function of its number of iterations, this time without involving the
+fixed point but, instead, the map of iteration of the weighted Ihara action (Definition 1B.6).
+
+Proposition 2B.1. For all ao, a@ € N* such that a | &, we have
+
+S10
+
+yg = iter ay (Pguip) and qa = Oya “Mo,
+
+‘cy .q°0
+More generally, for alla € N*, we have ®p 4 = Pp 1 of 1.0 T(A)o(Pp 1) -- oft. t(A% ge! (®p-1)
+and ®p «= =Op4 M0.
+
+Proof. This follows from (1-3), (1-4), and Definition 1B.3. oO
+
+This generalizes a statement appearing in [Furusho 2007, proof of Proposition 3.1].

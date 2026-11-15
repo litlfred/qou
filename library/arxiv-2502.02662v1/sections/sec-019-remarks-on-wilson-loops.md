@@ -7,10 +7,11 @@ section_number: null
 pages: 24-25
 source_pdf: 2502.02662v1.pdf
 source_sha256: 3f87983ce379a8d6
-doc_brief: "The String Dual to Two-dimensional Yang-Mills Theory Revisited — We propose that chiral two-dimensional Yang-Mills theory on a Riemann surface X is dual to a deformed stationary subsector of the"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.976
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.984
+latex_coverage_ratio: 0.992
+doc_brief: "The String Dual to Two-dimensional Yang-Mills Theory Revisited — We propose that chiral two-dimensional Yang-Mills theory on a Riemann surface X is dual to a deformed stationary subsector of the"
 ---
 []{#WilsonLoops label="WilsonLoops"} In the previous subsections, we have studied partition functions of the chiral Yang-Mills theory. We have shown that in the absence of boundaries, the partition functions are reproduced by a deformed Gromov-Witten theory of the target space. Furthermore, we have argued that boundaries with prescribed holonomies may be thought of as operator insertions, and that their correlation functions match the corresponding Gromov-Witten correlators. In this subsection, we study correlators of Wilson lines in chiral Yang-Mills theory. As an opening remark, we observe that the expectation value of a Wilson loop depends on the area it encloses. Therefore, the area deformation of the Gromov-Witten theory of the target space must be patch-dependent: we view the parameter $t$ as an operator which associates its area to the patch under consideration.
 

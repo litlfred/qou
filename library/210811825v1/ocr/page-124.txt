@@ -1,0 +1,89 @@
+real y06=s*sin (3% pi/3—theta );
+
+real x07=s*cos(3*pi/3+theta);
+
+real y07=s*sin(3*pi/3+theta);
+
+real x08=s*cos (4 pi/3—theta );
+
+real y08=s*sin (4% pi/3—theta );
+
+real x09=s*cos(4* pi/3+theta );
+
+real y09=s*sin (4* pi/3+theta);
+
+real x10=s*cos(5* pi/3—theta);
+
+real yl0=s*sin(5* pi/3—theta);
+
+real xll=s*cos(5*pi/3+theta);
+
+real yll=s*sin(5*pi/3+theta);
+
+real x12=s*cos(—theta);
+
+real yl2=s*sin(—theta);
+
+border Gl (t=4*pi/3,pi) { x=cx+r*cos(t); y=cy+r*sin(t);};
+
+border G2 (t=pi,2*pi/3) { x=cos(pi/3)*(cx+r*cos(t))—sin(pi/3)*(—cy+r*sin(t));
+y=sin (pi/3)*(cx+r*cos(t))+cos(pi/3)*(—cy+tr*sin(t));};
+
+border G3 (t=4*pi/3,pi) { x=cos(pi/3)*(cxtr*cos(t))—sin(pi/3)*(cy+r*sin(t));
+y=sin (pi/3)*(cx+r*cos(t))+cos(pi/3)*(cy+r*sin(t));}3
+
+border G4 (t=pi,2*pi/3) { x=cos(2*pi/3)*(cx+r*cos(t))—sin(2* pi/3)*(—cy+r«sin(t));
+y=sin (2* pi /3)*(cx+r*cos(t))+cos(2* pi/3)*(—cyt+r*sin(t));};
+
+border G5 (t=4*pi/3,pi) { x=cos(2*pi/3)*(cx+r*cos(t))—sin(2« pi/3)*(cy+r*sin(t));
+y=sin (2* pi/3)*(cx+r*cos(t))+cos(2* pi/3)*(cyt+r*sin(t));};
+
+border G6 (t=pi,2*pi/3) { x=cos(3*pi/3)*(cx+r«*cos(t))—sin(3*pi/3)*(—cy+r*sin(t));
+y=sin (3* pi/3)*(cx+r*cos(t))+cos(3* pi/3)*(—cyt+r*sin(t));};
+
+border G7 (t=4*pi/3,pi) { x=cos(3*pi/3)*(cx+r*cos(t))—sin(3«pi/3)*(cy+r*sin(t));
+y=sin (3* pi/3)*(cx+r*cos(t))+cos(3* pi/3)*(cyt+r*sin(t));};
+
+border G8 (t=pi,2*pi/3) { x=cos(4*pi/3)*(cx+r*cos(t))—sin (4% pi/3)*(—cy+r«sin(t));
+y=sin (4* pi/3)*(cx+r*cos(t))+cos(4* pi/3)*(—cy+r*sin(t));};
+
+border G9 (t=4*pi/3,pi) { x=cos(4*pi/3)*(cx+r*cos(t))—sin(4* pi/3)*(cy+r*sin(t));
+y=sin (4* pi/3)*(cxt+r*cos(t))+cos(4* pi/3)*(cyt+r*sin(t));};
+
+border G10 (t=pi,2*pi/3) { x=cos(5*pi/3)*(cx+r*cos(t))—sin(5* pi/3)*(—cy+r*sin(t));
+y=sin (5* pi/3)*(cx+r*cos(t))+cos(5* pi/3)*(—cyt+r*sin(t));};
+
+border Gll (t=4*pi/3,pi) { x=cos(5*pi/3)*(cx+r*cos(t))—sin(5*pi/3)*(cy+r*sin(t));
+y=sin (5* pi/3)*(cxt+r*cos(t))+cos(5* pi/3)*(cyt+r*sin(t));};
+
+border G12 (t=pi,2*pi/3) { x=cx+r*cos(t); y=-cy+tr*sin(t);};
+
+plot (G1(n)+G2(n)+G3(n)+G4(n)+G5(n)+G6(n)+G7(n)+G8(n)+G9(n)+G10(n)+G11(n)+G12(n));
+
+mesh Th=buildmesh (G1(n)+G2(n)+G3(n)+G4(n)+G5(n)+G6(n)+G7(n)+G8(n)+G9(n)+G10(n)+G11(n)
++G12(n) , fixeborder=true );
+
+plot (Th, wait=true, fill=true);
+
+fespace Vh(Th,P2, periodic =[[2,(cos(pi/6))*(y—y02)—(sin (pi /6))*(x-x02)],
+[5 ,(cos(—pi/6))*(y—y05)—(sin(—pi/6))*(x-x05)],
+[4,(cos(pi/2))*(y-y04)—(sin (pi /2))*(x-x04)] ,
+
+[7 ,(cos (pi /6))*(y-y07)—(sin (pi /6))*(x-x07)] ,
+
+[6 ,(cos(—7*pi /6))*(y—y06)—(sin(—7*pi/6))*(x—x06)] ,
+[9 ,(cos(pi/2))*(y-y09)—(sin (pi /2))*(x-x09)] ,
+
+[8 ,(cos (pi /6))*(y-y08)—(sin (pi /6))*(x-x08)] ,
+
+[11 ,(cos (pi /6))*(y-yl1)—(sin(—pi/6))*(x-x11)],
+
+[10 ,( cos (pi/2))*(y-yl0)—(sin (pi /2))*(x-x10)],
+
+[1 (cos (pi/6))*(y-y01)—(sin (pi /6))*(x-x01)] ,
+
+[12 ,(cos(pi/6))*(y-yl2)—(sin(—pi/6))*(x-x12)],
+
+[3 ,(cos(—pi/2))*(y-y03)—(sin(—pi /2))*(x—x03 )]]);
+
+114

@@ -1,0 +1,1 @@
+The starting point and the basic example is provided by the integral FV,n{L} ≡ Z n×n dXe−trV (X)+trLX (2.35) over n × n Hermitean matrix, which we shall further refer to as ”Kontsevich integral”, keeping in mind its most important application (though this obvi- ous quantity has been of course considered by many other people).

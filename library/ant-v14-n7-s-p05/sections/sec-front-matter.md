@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: ant-v14-n7-s-p05.pdf
 source_sha256: 1c8e94ff62a8d920
 toc_source: inferred
+doc_brief: "Motivic Gauss–Bonnet formulas — 12 sections: Front matter; Introduction; X+ ∈SH(k) is dualizable. In partic"
 ---
 msp
 ALGEBRA AND NUMBER THEORY 14:7 (2020)
@@ -21,4 +22,3 @@ this Euler characteristic to pushforwards of Euler classes in motivic cohomology
 formula to SL-oriented motivic cohomology theories to obtain explicit characterizations of this Euler
 characteristic. The main new input is a uniqueness result for pushforward maps in SL-oriented theories,
 identifying these maps concretely in examples of interest.
-1.

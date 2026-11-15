@@ -1,0 +1,71 @@
+---
+doc_id: ds15v1-2008
+doc_title: "Rogers-Ramanujan-Slater Type Identities"
+section_id: page-042
+section_title: "Page 42"
+pages: 42-42
+pdf_page: 42
+source_pdf: ds15v1-2008.pdf
+source_sha256: aef155a324c6fdf4
+text_source: ocr
+granularity: page
+doc_brief: "Rogers-Ramanujan-Slater Type Identities — In this survey article, we present an expanded version of Lucy Slater’s famous list of identities of the Rogers-Ramanujan type, including identities of"
+---
+(3n? +n)/2q2n
+
+S (@54)nd _ (0G: Q)0 5! =a; ng? (ag) (6.1.21)
+— (9; @)n —AaY;, q)o0 “= (49,9 @)n
+
+Some of the identities above are derived from other identities above, as limiting cases.
+However, we list them explicitly to have the available for what follows below. Several
+follow from identities in Andrews’ two papers [1], [2] and some also follow from identities
+in Ramanujan’s notebooks.
+
+The transformation at (6.1.2) is a limiting case of a g-analogue of the Kummer-
+Thomae-Whipple formula (see [22], page 72, equation 3.2.7), which in turn is a limiting
+case of Sear’s 43 transformation formula, [40].
+
+The identity at (6.1.3) is found in Ramanujan’s lost notebook [35] and a proof can be
+found in the recent book by Andrews and Berndt [9]. Equation 6.1.4 follows from 6.1.3
+upon letting b > 0. The identity at (6.1.5), which follows upon setting b = —ay in (6.1.3),
+is also found in Ramanujan’s notebooks (see [15], Chapter 27, Entry 1, page 262). This
+identity is also equivalent to a result found in Andrews [3], where Andrews attributes it
+to Cauchy.
+
+Proofs of (6.1.6), (6.1.7), (6.1.8) and (6.1.9) can be found in [24], and alternative proofs
+can be found in [16]. Identities (6.1.7), (6.1.8) and (6.1.9) were also stated by Ramanujan
+in the lost notebook (see Entries 1.5.1 and 1.5.2 in [10]). Proofs of (6.1.10), (6.1.11) and
+(6.1.12) also are to be found in [24]. Transformation 6.1.11 was also stated by Ramanujan
+(see Entry 2.24 of [10]).
+
+The transformation at (6.1.13) is a limiting case of Jackson’s transformation, [27] (see
+also [22], page 14).
+
+A limiting case of a transformation due to Andrews [1] leads to the identity at (6.1.14),
+which was also given by Ramanujan in the lost notebook (see [10], Entry 1.4.12).
+
+Identity 6.1.15 can be found in Ramanujan’s lost notebook, and a proof is given in
+[10], Entry 1.6.5. Likewise, (6.1.16) is also from Ramanujan’s lost notebook (see [10],
+Entry 1.7.3).
+
+The transformation at (6.1.17) follows from a series transformation relating two gd7’s
+in [22] ( (3.5.4) on pages 77-78, after replacing c with agq/c, then letting a > 0 and finally
+letting b — oo). The identity at (6.1.18) follows from that at (6.1.17), upon letting d — 00
+and then replacing c with a.
+
+The identity at (6.1.19) follows from a result of Andrews in [2] (see also Corollary 1.2.3
+of [10], where it follows after replacing t by t/b, then letting b > oo and finally replacing
+t by b).
+
+A special case of Watson’s transformation [45] of a terminating very-well-poised gd7
+yields (6.1.20) (see also [22], page 43, where the transformation follows upon letting
+n — oo, replacing a by a’, setting c = a, d = —a and finally letting e — 00). The
+transformation at (6.1.21) follows from that at (6.1.20), after letting b — oo.
+
+Several identities on Slater’s list follow directly from some of the transformations
+above, in that particular values of the parameters make one of the series identically equal
+to 1, so that what remains is a “series = product” identity. We list such identities, along
+with the transformations from which they derive in Table 2. Series-equivalent identities
+are listed in Table 3.
+
+THE ELECTRONIC JOURNAL OF COMBINATORICS 15 (2008), #DS15 42

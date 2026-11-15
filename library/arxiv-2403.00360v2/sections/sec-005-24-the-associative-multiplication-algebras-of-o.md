@@ -7,10 +7,11 @@ section_number: 2.4
 pages: 7-8
 source_pdf: 2403.00360v2.pdf
 source_sha256: b0764ca18a83a84f
-doc_brief: "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.944
 latex_coverage_ratio: 0.784
+doc_brief: "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular"
 ---
 The non-associativity of $\mathbb{O}$ means that the algebra is not representable as a matrix algebra (with the standard matrix product). The algebra generated from the composition of left (and/or right) actions of $\mathbb{O}$ on itself, however, is associative, since each such left (right) action corresponds to a linear operator (endomorphism). Suppose that $a,x$ are elements of some algebra $\mathbb{A}$, and define: $$L_a[x]:=ax,\quad R_a[x]:=xa,\quad \forall a,x\in  \mathbb{A} \:.$$ It is clear that $L_a$ and $R_a$ denote linear operator corresponding to left and right multiplication of $x\in \mathbb{A}$ by $a\in \mathbb{A}$, respectively. These maps send the element $x\in\mathbb{A}$ to some other element $y\in\mathbb{A}$, and thus $L_a$ and $R_a\in \text{End}(\mathbb{A)}$. The mappings $a\mapsto L_a$ and $a\mapsto R_a$ do not correspond to algebra homomorphisms. Instead, via composition each generates an associative algebra referred to as the *associative multiplication algebra*.
 

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1010.5321v3
-doc_title: "Formulas on hyperbolic volume"
+doc_title: "Formulas on hyperbolic volume ∗"
 section_id: sec-004-22-volume-in-the-poincare-half-space-model
 section_title: "Volume in the Poincare half-space model"
 section_number: 2.2
 pages: 3-4
 source_pdf: 1010.5321v3.pdf
 source_sha256: c6bb20926b1f291f
-doc_brief: "Formulas on hyperbolic volume — This paper collects some important formulas on hyperbolic volume."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.939
-latex_coverage_ratio: 0.97
+latex_coverage_ratio: 1.0
+doc_brief: "Formulas on hyperbolic volume ∗ — This paper collects some important formulas on hyperbolic volume."
 ---
 ![Coordinate system in the half-space model.](vol2.eps)
 

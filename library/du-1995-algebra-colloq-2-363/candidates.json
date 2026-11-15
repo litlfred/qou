@@ -1,0 +1,86 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "du-1995-algebra-colloq-2-363",
+ "source": {
+  "structure_sha256": "d19081c4f214b7036b2e84420e01590c67aee007256385c9b30b93130544c361",
+  "file": "du-1995-algebra-colloq-2-363.pdf"
+ },
+ "provenance": {
+  "title": "A NOTE ON QUANTIZED WEYL",
+  "authors": "RECIPROCITY AT ROOTS OF UNITY",
+  "arxiv": null,
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 4,
+  "by_kind": {
+   "recommendation": 4
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall use the explicit construction ([BLM]) of a surjective map \u03b1r from U to the q-Schur algebra Sn,r over the \ufb01eld Q(v).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-002.md",
+   "section_title": "Page 2",
+   "pages": "2-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall see that U contains \u2032U and is free over \u2032U.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-002.md",
+   "section_title": "Page 2",
+   "pages": "2-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall regard E = E \u2297A as a U-module via the representation \u03c1 : U \u2192End(E) de\ufb01ned by \u03c1(Eij)eh = \u03b4jhei if |i\u2212j| = 1, and Kjeh = v\u03b4jheh.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-003.md",
+   "section_title": "Page 3",
+   "pages": "3-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall prove that the latter is surjective in (3.4), and consequently, so is the former as \u03c1r = \u03b2r \u25e6\u03b1r by (1.5.a-b).",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-009.md",
+   "section_title": "Page 9",
+   "pages": "9-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

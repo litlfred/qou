@@ -1,0 +1,75 @@
+---
+doc_id: springer-1976-invent-36-173
+doc_title: "springer-1976-invent-36-173"
+section_id: page-010
+section_title: "Page 10"
+pages: 10-10
+pdf_page: 10
+source_pdf: springer-1976-invent-36-173.pdf
+source_sha256: dc3217946960a8e0
+text_source: ocr
+granularity: page
+doc_brief: "Trigonometric Sums, Green Functions of Finite Groups and Representations of Weyl Groups — 35 sections: Page 1; Page 2; Page 3"
+---
+182 T.A. Springer
+
+we have U,,,¢Q. Now write u= [] u, with u,¢U,. The order of the « occuring
+
+a>0
+wa<0
+
+in this product is taken to be compatible with decreasing height. It then follows
+by induction on the height of «, using the strong regularity of A’, that for all «
+such that u,+1 we have U,,<Q. Consequently, P=ad(g)Q=ad(n,')Q and
+oP:
+
+3. The Trigonometric Sums S°(A, A’): A Reduction Theorem
+
+3.1. We assume the situation of 1.4. Let T be an F-stable maximal torus of G.
+We use the notations of 2.1. Let t, be the set of strongly regular elements of t’.
+Assume that ty + (by 2.5 (i) this is so, for example, if p +2). to is an irreducible
+k-subvariety of t’, stable for the action of the Weyl group W on t’.
+
+Fix an element Aeg’. Let Y¥f = be the k-subvariety of A’ x G/T x ty
+consisting of the (x, gT, A’) such that
+
+x1—x=<A, Ad’ (g) A’).
+
+The projection x: Y > ty is a morphism of k-varieties. By 2.10 (i) the fibre 2! 4’
+is isomorphic to the variety Y{ ,, of 1.4, if A’e(g’)’. So we have put these varieties,
+with A fixed, in an algebraic family.
+
+W acts on Y by
+
+w(x, gT, A')=(X,gn,'T,w- A’),
+
+and z commutes with the actions of W on Y and t’. Also, Facts on W and we have.
+on Y,
+
+F-w=Fw-F. (1)
+
+Finally, k acts on Y, as in 1.2, and if we let it act trivially on t’ then x commutes
+with k.
+
+3.2. Let B° be the variety of Borel subgroups of G. It is a projective k-variety
+of dimension d=d(G), where |®|=2d. Denote by @§% the subvariety of B® formed
+by the Borel subgroups whose Lie algebra contains A.
+
+Let A=A,+A, be the Jordan decomposition of A, then A,, A,ég". Denote
+by H=Z,(A,)° the connected centralizer of A,. This is a reductive subgroup
+of G, containing a maximal torus of G.
+
+Fix a Borel subgroup B>T.
+
+3.3. Proposition. (i) If B,¢@§_ then B, OH is a Borel subgroup of H, whose
+Lie algebra is the intersection b, Nb;
+
+(ii) Any B,e BS, is of the form ad (g) B with t(B,)=(Ad g)"' A,et;
+(iii) t is a surjective map of BG, onto the set of conjugates of A, in t, its fibers
+are the irreducible components of BG, ;
+
+(iv) H acts transitively on each irreducible component Z of B¢,. The map
+B,++B, OH defines an isomorphism of BF OZ onto BY ;
+
+(v) The connected components of B§ are the intersections of BG with the irre-
+ducible components of B§, .

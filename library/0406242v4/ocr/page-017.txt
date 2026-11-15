@@ -1,0 +1,43 @@
+Canonical triangulations 1255
+
+structure, can only be injective, because the $—-geodesic joining two distinct points of U
+is sent to a geodesic of C); so there is an isometry U ~ C. The metric g lifts from U
+to the torus at infinity of V., and its tessellation A, producing a geometric realization of
+A and of Figure 4 in C (Euclidean plane tiling). Above each triangle of the universal
+cover of A now sits one ideal tetrahedron with vertex at infinity: the tetrahedron is the
+hyperbolic convex hull of oo and the vertices of the triangle. Note that these tetrahedra
+fill H* completely above a certain height.
+
+To make sure that the pasted metric on the union V = V, of all ideal tetrahedra is
+now complete, assume a geodesic 7(f) in V hits infinity at time T < oo. If K C V is
+compact, ie has a compact intersection with each tetrahedron Aj, then 7 must eventually
+exit K (if not, the y(T — 1/n) accumulate at some point p of some tetrahedron, but
+centered at p there is a small embedded hyperbolic ball: absurd). So for ¢ sufficiently
+close to T, there is a lift of 7(¢) arbitrarily high above the tessellation A (embedded in
+C in the upper half space model). But at sufficiently great height, the tetrahedra above
+A fill H? completely, so geodesics are defined for long times (eg times larger than 1):
+a contradiction. The first implication of Lemma 6.2 is proved.
+
+To prove the converse, it is enough to show that if the gluing of the tetrahedra yields
+a complete hyperbolic metric, then the gluing of their vertex links yields a geometric
+realization of A, ie of Figure 4 (checking 0V/0w; = 0 then amounts to a rerun of
+the two computations in Sublemma 6.4, distinguishing whether i is a hinge index or
+not). But the latter is clear: given a complete hyperbolic metric, consider a triangulated
+universal cover H? — V,, and send (a lift of) the cusp to infinity in the upper half
+space model. It is a classic argument that deck transformations of H? which fix infinity
+must be parabolic, so the link of infinity has two translational periods and provides a
+Euclidean realization of A (and of Figure 4). im
+
+6.3 Behavior of the volume functional
+
+As a consequence of Lemma 6.2, to prove Theorem 1.1 we only need to find a critical
+point of the volume functional Y in the open polyhedron P of cyclic sequences (w;)
+satisfying the conditions (3). A few more facts about the volume of ideal hyperbolic
+tetrahedra will be needed.
+
+By Proposition 6.1, the volume functional V continuously extends to the (compact)
+closure P of the polyhedron P (the space P is defined by turning the conditions
+(3) to weak inequalities, or taking the limits in R” of sequences of P). Then V has
+well-defined extrema on P, which are automatically critical if they belong to P. Because
+
+Geometry & Topology 10 (2006)

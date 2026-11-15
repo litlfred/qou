@@ -1,0 +1,73 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 231
+
+be either time-independent (changes of temperature, pressure, solvents, etc.) or time-dependent (sample spinning, pulsed
+radio-frequency fields). In the later context, the concept of average Hamiltonian provides an elegant description of the effects
+of a time-dependent perturbation applied to the system. It was originally introduced in NMR by Waugh [24,25] to explain
+the effects of multiple-pulse sequences.
+
+The basic idea of average Hamiltonian theory, for a system governed by H(t), consists of describing the effective evolution
+within a fixed time interval by an average Hamiltonian H. The theory states that this is always possible provided H(t) is
+periodic. The average Hamiltonian depends, however, on the beginning and the end of the time interval observed. It is
+precisely the average Hamiltonian H which is obtained by means of the ME.
+
+When the total Hamiltonian splits in a time-independent and a time-dependent piece, H(t) = Ho + Hy(t), with H,(t)
+periodic, an interesting new picture is used, labeled toggling frame. It certainly recalls the Interaction Picture defined in Eq.
+(91) but is rather different. In (89) the operator G(t) associated to the toggling frame is given by the time-ordered expression
+
+t
+Gt) =T (cx [ fists) (354)
+0
+
+and the key point here is whether the formal time-ordering is solvable.
+
+As already mentioned, the interplay between NMR and ME has been fruitful along the years and acted in both directions.
+To prove that it is still alive, we quote two recent papers directly dealing with that mutual interaction. In [212] the relevance
+of ME through NMR for the new field of quantum information processing and computing is envisaged. The authors of [213]
+have recently explored the fourth and sixth order of ME to design a software package for the simulation of NMR experiments.
+Although their results are not yet conclusive their work shows the vitality of the ME.
+
+7.3. Quantum field theory and high energy physics
+
+The starting point of any quantum field theory (QFT) calculation is again Eq. (4) which is conventionally treated by time-
+dependent perturbation theory. So the first question which arises is the connection between ME and Dyson-type series.
+This has already been dealt with in Section 2.4. The main advantage of the first one is, as has already been repeatedly
+pointed out, that the unitary character of the evolution operator is preserved at all orders of approximation. In the historical
+development of QFT it was, however, the Dyson approach which was followed. The lost of unitarity was not thought to be of
+great relevance, considering the problems presented by the infinities appearing all over the place. Once the renormalization
+idea was introduced, this awful aspect of the theory was also put under control. The results were, from the point of view
+of the calculation of observable magnitudes, an unprecedented success: the agreement between experimental results and
+their theoretical counterparts was impressive.
+
+So no wonder that alternatives to Dyson series, such as ME, did not see popular acceptance. However, during the years,
+there have been interesting developments involving ME in the context of field theory. In particular, its use has been shown to
+imply a re-ordering of terms in the calculations in such a way that some infinities do not appear, and so make the introduction
+of counterterms in the Hamiltonian unnecessary. This is what happens, for example, in [214] where models are built in which
+ultraviolet divergence appears neither in the Hamiltonian nor in the S-matrix. In principle, the results are valid for relativistic
+field theories with any particle content, and with minimal assumptions about the form of the interaction.
+
+ME as an alternative to conventional perturbation theory for quantum fields, has also been studied in [215] where normal
+products, Wick theorem and the like, are used to deduce graphical rules d la Feynman for the terms 92; for any value of
+i. This has proved helpful in the treatment of infrared divergences for some QED processes such as the scattering of an
+electron on an external potential, or the bremsstrahlung of one hard photon, both cases accompanied by the emission of
+an arbitrary number of soft photons [216]. An interesting feature of the ME based approach is that the theory is free from
+infrared and mass divergences, as a consequence of the unitary character of the approximate time-evolution operator [26,
+216]. The method is simpler than previous techniques based on re-summation of the perturbation series, to get rid of
+those divergences. Furthermore, in contrast with the usual treatment, the resolution of the detector is not an infrared
+regularization parameter. An application to Bhabha scattering (elastic electron-positron scattering) is developed in [217].
+The difficulties of extending the results to Quantum Chromodynamics are commented on in [215].
+
+Recently, an extension of the Magnus expansion has also been used in the context of Connes-Kreimer’s Hopf algebra
+approach to perturbative renormalization of quantum field theory [218,219]. In particular, in [220], it is shown that this
+generalized ME allows one to solve the Bogoliubov—-Atkinson recursion in this setting.
+
+In the field of high energy physics, ME has also found applications. Next we just quote two instances: one referring to
+heavy ion collisions, and the other to elementary particle physics.
+
+In collision problems, the unitarity of the time evolution operator imposes some bound on the experimentally observable
+cross sections. When these magnitudes are theoretically calculated, one usually keeps only the lowest orders in conventional
+perturbation theory. This may be harmless at relatively low energies, but it may lead to unitarity bounds violation as the
+energy increases. The use of a manifestly unitary approximation scheme is then necessary. ME provides such a scheme. In
+heavy ion collision at sufficiently high energy and given kinematic configuration (small impact parameter), that violation
+is produced for ete~ when analyzed in the lowest-order time-dependent perturbation theory. In [221] a remedy for this
+situation was advanced by the use of first order ME. It is discussed how most theoretical approaches are based on either
+lowest-order time-dependent perturbation theory or on the Fermi-Weizsdker-Williams method of virtual photons. These

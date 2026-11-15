@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2412.02281v1
-doc_title: "u + A"
+doc_title: "Explicit evaluation of the q -Stokes matrices for certain conﬂuent hypergeometric q -diﬀerence equations"
 section_id: sec-008-diagonalization-of-the-upper-left-submatrix-of-a
 section_title: "Diagonalization of the Upper Left Submatrix of A"
 section_number: null
 pages: 11-12
 source_pdf: 2412.02281v1.pdf
 source_sha256: ac4127cf4994b2ba
-doc_brief: "Explicit evaluation of the q-Stokes matrices for certain confluent hypergeometric q-difference equations — We prove a connection formula for the basic hypergeomtric fu nction nϕn−1 (a1,...,a n−1"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.947
-latex_coverage_ratio: 0.921
+latex_coverage_ratio: 0.919
+doc_brief: "Explicit evaluation of the q -Stokes matrices for certain conﬂuent hypergeometric q -diﬀerence equations — We prove a connection formula for the basic hypergeomtric function nϕn−1 (a1, ..., an−1, 0"
 ---
 \label{sec:diag}
  We first introduce a diagonalized system under   the   conditions:

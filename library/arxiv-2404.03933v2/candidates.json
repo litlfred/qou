@@ -1,0 +1,76 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2404.03933v2",
+ "source": {
+  "structure_sha256": "48aff6e97e1f126731c0e133d99d6b8616275d9de5f2f0e9b16ee251d1cc4dc0",
+  "file": "2404.03933v2.pdf"
+ },
+ "provenance": {
+  "title": "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2) AT EVEN ROOTS OF UNITY",
+  "authors": "ANNA LACHOWSKA, OLGA POSTNOVA, NICOLAI RESHETIKHIN, AND DMITRY SOLOVYEV",
+  "arxiv": {
+   "id": "2404.03933",
+   "version": "2",
+   "primary_class": "math.RT",
+   "stamp_date": "29 Jul 2024"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 3,
+  "by_kind": {
+   "recommendation": 3
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Following the classical framework via a suitable version of Schur-Weyl duality this study should have implications for the representation theory of Hecke and Brauer algebras, as outlined in e.g. [@AST].",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Since identities in the system don\u2019t depend on N, we see that when n0 is fixed formula (20) should hold for N\u2032 \u2265N, which concludes the proof of the lemma. \u25a1 Now let us prove the induction step.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-011-appendix-b-proof-of-theorem-63.md",
+   "section_title": "Appendix B. Proof of Theorem 6.3",
+   "pages": "31-38",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We should prove that the induction assumption (20) implies the identity (24) n X k=0 \u0000k2F (N+2l) m\u2212l\u22122kl + (k + 1)2F (N+2l) m+l+2kl \u0001 + (n + 1)2F (N+2l) m\u2212l\u22122nl = n+1 X j=1 M2j (m+(2j\u22121)l,N+2l).",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-011-appendix-b-proof-of-theorem-63.md",
+   "section_title": "Appendix B. Proof of Theorem 6.3",
+   "pages": "31-38",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

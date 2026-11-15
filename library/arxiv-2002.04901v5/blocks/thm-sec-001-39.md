@@ -1,1 +1,0 @@
-Let𝐴bearingandlet a 𝐴beanideal. Thefollowingtwoconditionsare

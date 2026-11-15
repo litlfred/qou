@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2501.03424v1",
  "source_sha256": "53e00a30fd850a5b",
- "brief": "Soergel bimodules and Kazhdan-Lusztig polynomials ethan eugene wynner — This paper presents an exposition of Soergel bimodules, the categ oriﬁcation of Hecke alge- bras, and their applications to",
- "extended": "**Soergel bimodules and Kazhdan-Lusztig polynomials ethan eugene wynner**\n\n*University of California, Berkeley*\n\n23 pp, 37 sections.\n\n**Abstract.** This paper presents an exposition of Soergel bimodules, the categ oriﬁcation of Hecke alge- bras, and their applications to various topics in Kazhdan-Lusztig th eory. We ultimately exposit a few of Soergel’s main results, which allowed him to give alternative pro ofs, using his theory, of the Kazhdan-Lusztig conjectures. This paper should be viewed as a (very) condensed exposition following the work of primarily Elias, Makisumi, Thiel, and Williamson in their lo vely book Intro- duction to Soergel Bimodules 2. It is also important to note that much of Soergel’s theory has bee n omitted from this paper in light of brevity, as well as the depth of pro ofs and lead-up information. Many proofs concerning covered material are left out of this pape r, again, due to their length, as well as their residence in many of the texts listed in the references s ection. 5 1\n\n**Outline.** Coxeter Systems, Hecke algebras, and Kazhdan-L; Remark:; Example; Kazhdan-Lusztig polynomials, and a basis for t; Lemma:; Soergel Bimodules; Easing into it; Bott-Samelson bimodules; Example of Soergel bimodule; Lemma; Remark; Important Remark; Historical Interlude: The Kazhdan-Lusztig conj; Back to Kazhdan-Lusztig; Theorem; Theorem (Polo); More on positivity; Flag and Schubert varieties",
+ "brief": "Soergel bimodules and Kazhdan-Lusztig polynomials — This paper presents an exposition of Soergel bimodules, the categoriﬁcation of Hecke alge- bras, and their applications to various topics in",
+ "extended": "**Soergel bimodules and Kazhdan-Lusztig polynomials**\n\n*University of California, Berkeley*\n\n23 pp, 55 sections.\n\n**Abstract.** This paper presents an exposition of Soergel bimodules, the categoriﬁcation of Hecke alge- bras, and their applications to various topics in Kazhdan-Lusztig theory. We ultimately exposit a few of Soergel’s main results, which allowed him to give alternative proofs, using his theory, of the Kazhdan-Lusztig conjectures. This paper should be viewed as a (very) condensed exposition following the work of primarily Elias, Makisumi, Thiel, and Williamson in their lovely book Intro- duction to Soergel Bimodules2. It is also important to note that much of Soergel’s theory has been omitted from this paper in light of brevity, as well as the depth of proofs and lead-up information. Many proofs concerning covered material are left out of this paper, again, due to their length, as well as their residence in many of the texts listed in the references section. 5 1\n\n**Outline.** Front matter; Coxeter Systems, Hecke algebras, and Kazhdan-L; Remark:; Example; Kazhdan-Lusztig polynomials, and a basis for t; Lemma:; Soergel Bimodules; Easing into it; Theorem (Chevalley-Shephard-Todd); Example; Bott-Samelson bimodules; Example of Soergel bimodule; Lemma; Remark; Grothendieck groups, Soergel's categorization; Definition; Soergel's Categorification theorem; Soergel's Hom formula",
  "tokens": {
   "brief": 48,
-  "extended": 355
+  "extended": 351
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-4"
+  },
   {
    "id": "sec-000-coxeter-systems-hecke-algebras-and-kazhdan-luszt",
    "title": "Coxeter Systems, Hecke algebras, and Kazhdan-Lusztig preliminaries",
@@ -45,152 +50,237 @@
    "pages": "6-6"
   },
   {
-   "id": "sec-007-bott-samelson-bimodules",
+   "id": "sec-007-theorem-chevalley-shephard-todd",
+   "title": "Theorem (Chevalley-Shephard-Todd)",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-008-example",
+   "title": "Example",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-009-bott-samelson-bimodules",
    "title": "Bott-Samelson bimodules",
    "pages": "6-7"
   },
   {
-   "id": "sec-008-example-of-soergel-bimodule",
+   "id": "sec-010-example-of-soergel-bimodule",
    "title": "Example of Soergel bimodule",
    "pages": "7-8"
   },
   {
-   "id": "sec-009-lemma",
+   "id": "sec-011-lemma",
    "title": "Lemma",
    "pages": "8-8"
   },
   {
-   "id": "sec-010-remark",
+   "id": "sec-012-remark",
    "title": "Remark",
-   "pages": "8-10"
+   "pages": "8-9"
   },
   {
-   "id": "sec-011-important-remark",
+   "id": "sec-013-grothendieck-groups-soergels-categorization",
+   "title": "Grothendieck groups, Soergel's categorization",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-014-definition",
+   "title": "Definition",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-015-soergels-categorification-theorem",
+   "title": "Soergel's Categorification theorem",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-016-soergels-hom-formula",
+   "title": "Soergel's Hom formula",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-017-soergels-conjecture",
+   "title": "Soergel's conjecture",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-018-important-remark",
    "title": "Important Remark",
    "pages": "10-11"
   },
   {
-   "id": "sec-012-historical-interlude-the-kazhdan-lusztig-conject",
+   "id": "sec-019-historical-interlude-the-kazhdan-lusztig-conject",
    "title": "Historical Interlude: The Kazhdan-Lusztig conjectures",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-020-briefly-recognizing-some-lie-theory",
+   "title": "Briefly recognizing some Lie theory",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-021-definition-category-o",
+   "title": "Definition: Category O",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-022-definition-soergel-module",
+   "title": "Definition: Soergel module",
    "pages": "11-12"
   },
   {
-   "id": "sec-013-back-to-kazhdan-lusztig",
+   "id": "sec-023-back-to-kazhdan-lusztig",
    "title": "Back to Kazhdan-Lusztig",
    "pages": "12-12"
   },
   {
-   "id": "sec-014-theorem",
+   "id": "sec-024-theorem",
    "title": "Theorem",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-025-the-kazhdan-lusztig-conjecture",
+   "title": "The Kazhdan-Lusztig conjecture",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-026-kazhdan-lusztig-inversion-formula",
+   "title": "Kazhdan-Lusztig Inversion Formula",
    "pages": "12-13"
   },
   {
-   "id": "sec-015-theorem-polo",
+   "id": "sec-027-theorem-polo",
    "title": "Theorem (Polo)",
    "pages": "13-13"
   },
   {
-   "id": "sec-016-more-on-positivity",
+   "id": "sec-028-more-on-positivity",
    "title": "More on positivity",
    "pages": "13-13"
   },
   {
-   "id": "sec-017-flag-and-schubert-varieties",
+   "id": "sec-029-flag-and-schubert-varieties",
    "title": "Flag and Schubert varieties",
    "pages": "13-13"
   },
   {
-   "id": "sec-018-the-v-functor",
+   "id": "sec-030-soergels-proof-of-the-kazhdan-lusztig-conjecture",
+   "title": "Soergel's Proof of the Kazhdan-Lusztig conjecture",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-031-the-v-functor",
    "title": "The V-functor",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-032-definition",
+   "title": "Definition",
    "pages": "13-14"
   },
   {
-   "id": "sec-019-translation-functors",
+   "id": "sec-033-theorem",
+   "title": "Theorem",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-034-translation-functors",
    "title": "Translation functors",
    "pages": "14-15"
   },
   {
-   "id": "sec-020-lemma",
+   "id": "sec-035-lemma",
    "title": "Lemma",
    "pages": "15-16"
   },
   {
-   "id": "sec-021-corollary",
+   "id": "sec-036-corollary",
    "title": "Corollary",
    "pages": "16-16"
   },
   {
-   "id": "sec-022-projectives",
+   "id": "sec-037-projectives",
    "title": "Projectives",
    "pages": "16-16"
   },
   {
-   "id": "sec-023-proposition",
+   "id": "sec-038-proposition",
    "title": "Proposition",
    "pages": "16-16"
   },
   {
-   "id": "sec-024-recontextualizing-soergel-modules-from-bott-same",
+   "id": "sec-039-recontextualizing-soergel-modules-from-bott-same",
    "title": "Recontextualizing Soergel modules from Bott-Samelson modules",
    "pages": "16-17"
   },
   {
-   "id": "sec-025-proposition",
+   "id": "sec-040-definition",
+   "title": "Definition",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-041-proposition",
    "title": "Proposition",
    "pages": "17-18"
   },
   {
-   "id": "sec-026-proving-the-kazhdan-lusztig-conjecture",
+   "id": "sec-042-proving-the-kazhdan-lusztig-conjecture",
    "title": "Proving the Kazhdan-Lusztig conjecture",
    "pages": "18-18"
   },
   {
-   "id": "sec-027-restating-the-conjecture",
+   "id": "sec-043-restating-the-conjecture",
    "title": "Restating the conjecture",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-044-proposition",
+   "title": "Proposition",
    "pages": "18-20"
   },
   {
-   "id": "sec-028-references",
+   "id": "sec-045-references",
    "title": "References",
    "pages": "20-21"
   },
   {
-   "id": "sec-029-appendic-miscellany",
+   "id": "sec-046-appendic-miscellany",
    "title": "Appendic Miscellany",
    "pages": "21-21"
   },
   {
-   "id": "sec-030-computation-of",
+   "id": "sec-047-computation-of",
    "title": "Computation of",
    "pages": "21-21"
   },
   {
-   "id": "sec-031-geometric-representation-of-a-coxeter-system",
+   "id": "sec-048-geometric-representation-of-a-coxeter-system",
    "title": "Geometric representation of a Coxeter system",
    "pages": "21-21"
   },
   {
-   "id": "sec-032-a-fun-but-ancillary-category",
+   "id": "sec-049-a-fun-but-ancillary-category",
    "title": "A fun but ancillary category",
    "pages": "21-22"
   },
   {
-   "id": "sec-033-in-aid-of-lemma-423",
+   "id": "sec-050-in-aid-of-lemma-423",
    "title": "In aid of lemma 4.2.3,",
    "pages": "22-22"
   },
   {
-   "id": "sec-034-proposition",
+   "id": "sec-051-proposition",
    "title": "Proposition",
    "pages": "22-23"
   },
   {
-   "id": "sec-035-berstein-gelfand-gelfand-reciprocity",
+   "id": "sec-052-berstein-gelfand-gelfand-reciprocity",
    "title": "Berstein-Gelfand-Gelfand Reciprocity",
    "pages": "23-23"
   },
   {
-   "id": "sec-036-bgg-reciprocity",
+   "id": "sec-053-bgg-reciprocity",
    "title": "BGG Reciprocity",
    "pages": "23-23"
   }

@@ -8,6 +8,7 @@ pages: 1-6
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
 toc_source: inferred
+doc_brief: "Reidemeister torsion on character varieties — 52 sections: Front matter; Introduction; Character varieties and Reidemeist"
 ---
 HAL Id: tel-02108892
 https://theses.hal.science/tel-02108892v1

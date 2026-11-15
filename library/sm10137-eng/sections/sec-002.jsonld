@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/sm10137-eng/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "§3 Structure of the paper",
+  "pageStart": 5,
+  "pageEnd": 6,
+  "contains": [
+    "library/sm10137-eng/blocks/prose-sec-002"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/sm10137-eng",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/sm10137-eng",
+  "provenance": "ingested"
+}

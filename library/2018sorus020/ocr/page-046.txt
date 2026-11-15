@@ -1,0 +1,38 @@
+Chapitre 2
+The adjoint torsion
+
+Let X be a component of irreducible type of the augmented character variety X(M)
+
+and k(X) its function field. In this chapter we will study the action of the funda-
+mental group 7(M) on the Lie algebra slyo(k(X)), and the Reidemeister torsion of
+the twisted complex C*(M, Ad op) for this action. It is what we will call the adjoint
+torsion. First we will define it as a rational differential form over Y, the smooth
+projective model of X, and then we will study its poles and zeros, in particular we
+will observe that the torsion is regular on the affine part X of the Riemann surface
+Y. We will deduce a "genus formula" that gives a relation between the topology
+of the augmented character variety and the Euler characteristic of incompressible
+surfaces in M produced through the Culler-Shalen theory. This chapter contains the
+
+results of the article [Ben16].
+
+Notation. The convention that we follow here for the torsion is convenient to ex-
+press it as a differential form on the character variety. Many authors use the opposite
+convention, for instance in Section we use some computations of Jerome Du-
+
+bois with the other convention. On the other hand, it is the convention taken in
+
+GKZ94\ Appendix A].
+The results of this chapter are summarized in the following theorems :
+
+Theorem 2.0.1. Let X be a component of irreducible type of the augmented cha-
+racter variety, and let x be a point in X, with corresponding valuation v. Then the
+adjoint torsion tor(M,Adop) vanishes at v with order given by the length of the
+torsion part of the O,-module H,(M, Adop),. In particular tor(M, Ad op) is regular
+
+on X, and does not vanish if v projects onto a smooth point of X(M).
+
+The striking point of this theorem, and the more simple to state, is that the torsion
+
+defines a regular differential form on X, which was not expected from the definition.
+
+45

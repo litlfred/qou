@@ -8,7 +8,7 @@
   "pages": 31,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,7 +20,7 @@
    "stamp_date": "18 Jun 2002"
   },
   "doi": null,
-  "title": "arXiv:hep-th/0206161v1 18 Jun 2002",
+  "title": "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING",
   "authors_raw": "Institut des Hautes Etudes Scientifiques, Le Bois-Marie, Bures-sur-Yvette, F-91440 France",
   "title_lines": [
    "SEIBERG-WITTEN PREPOTENTIAL",
@@ -45,7 +45,8 @@
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:hep-th/0206161v1 18 Jun 2002"
  },
  "toc": [
   {
@@ -218,7 +219,7 @@
   },
   {
    "level": 2,
-   "title": "Classi\ufb01cation of the residues",
+   "title": "Classiﬁcation of the residues",
    "page": 19,
    "source": "inferred",
    "number": "3.5",
@@ -232,7 +233,7 @@
   },
   {
    "level": 2,
-   "title": "Residues and \ufb01xed points",
+   "title": "Residues and ﬁxed points",
    "page": 19,
    "source": "inferred",
    "number": "3.6",
@@ -246,7 +247,7 @@
   },
   {
    "level": 2,
-   "title": "The \ufb01rst three nonabelian instantons",
+   "title": "The ﬁrst three nonabelian instantons",
    "page": 21,
    "source": "inferred",
    "number": "3.7",
@@ -260,7 +261,7 @@
   },
   {
    "level": 2,
-   "title": "Four and \ufb01ve instantons",
+   "title": "Four and ﬁve instantons",
    "page": 22,
    "source": "inferred",
    "number": "3.8",
@@ -708,14 +709,26 @@
    "title": "Supersymmetries and twisted supersymmetries",
    "level": 2,
    "page_start": 8,
+   "page_end": 8,
+   "n_chars": 424,
+   "n_words": 74,
+   "label_start": "7",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-004-field",
+   "number": null,
+   "title": "Field",
+   "level": 1,
+   "page_start": 8,
    "page_end": 9,
-   "n_chars": 1989,
-   "n_words": 355,
+   "n_chars": 1558,
+   "n_words": 280,
    "label_start": "7",
    "label_end": "8"
   },
   {
-   "id": "sec-004-22-good-observables-uv",
+   "id": "sec-005-22-good-observables-uv",
    "number": "2.2",
    "title": "Good observables: UV",
    "level": 2,
@@ -727,7 +740,7 @@
    "label_end": "11"
   },
   {
-   "id": "sec-005-23-good-observables-ir",
+   "id": "sec-006-23-good-observables-ir",
    "number": "2.3",
    "title": "Good observables: IR",
    "level": 2,
@@ -739,7 +752,7 @@
    "label_end": "12"
   },
   {
-   "id": "sec-006-3-instanton-measure-and-its-localization",
+   "id": "sec-007-3-instanton-measure-and-its-localization",
    "number": "3",
    "title": "Instanton measure and its localization",
    "level": 1,
@@ -751,19 +764,31 @@
    "label_end": "12"
   },
   {
-   "id": "sec-007-31-adhm-data",
+   "id": "sec-008-31-adhm-data",
    "number": "3.1",
    "title": "ADHM data",
    "level": 2,
    "page_start": 13,
-   "page_end": 15,
-   "n_chars": 3848,
-   "n_words": 681,
+   "page_end": 14,
+   "n_chars": 2034,
+   "n_words": 373,
    "label_start": "12",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-009-32-instanton-measure",
+   "number": "3.2",
+   "title": "Instanton measure",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 1790,
+   "n_words": 305,
+   "label_start": "13",
    "label_end": "14"
   },
   {
-   "id": "sec-008-33-curing-non-compactness",
+   "id": "sec-010-33-curing-non-compactness",
    "number": "3.3",
    "title": "Curing non-compactness",
    "level": 2,
@@ -775,7 +800,7 @@
    "label_end": "15"
   },
   {
-   "id": "sec-009-34-reduction-to-contour-integrals",
+   "id": "sec-011-34-reduction-to-contour-integrals",
    "number": "3.4",
    "title": "Reduction to contour integrals",
    "level": 2,
@@ -787,9 +812,9 @@
    "label_end": "18"
   },
   {
-   "id": "sec-010-35-classi\ufb01cation-of-the-residues",
+   "id": "sec-012-35-classiﬁcation-of-the-residues",
    "number": "3.5",
-   "title": "Classi\ufb01cation of the residues",
+   "title": "Classiﬁcation of the residues",
    "level": 2,
    "page_start": 19,
    "page_end": 19,
@@ -799,9 +824,9 @@
    "label_end": "18"
   },
   {
-   "id": "sec-011-36-residues-and-\ufb01xed-points",
+   "id": "sec-013-36-residues-and-ﬁxed-points",
    "number": "3.6",
-   "title": "Residues and \ufb01xed points",
+   "title": "Residues and ﬁxed points",
    "level": 2,
    "page_start": 19,
    "page_end": 21,
@@ -811,9 +836,9 @@
    "label_end": "20"
   },
   {
-   "id": "sec-012-37-the-\ufb01rst-three-nonabelian-instantons",
+   "id": "sec-014-37-the-ﬁrst-three-nonabelian-instantons",
    "number": "3.7",
-   "title": "The \ufb01rst three nonabelian instantons",
+   "title": "The ﬁrst three nonabelian instantons",
    "level": 2,
    "page_start": 21,
    "page_end": 22,
@@ -823,9 +848,9 @@
    "label_end": "21"
   },
   {
-   "id": "sec-013-38-four-and-\ufb01ve-instantons",
+   "id": "sec-015-38-four-and-ﬁve-instantons",
    "number": "3.8",
-   "title": "Four and \ufb01ve instantons",
+   "title": "Four and ﬁve instantons",
    "level": 2,
    "page_start": 22,
    "page_end": 22,
@@ -835,7 +860,7 @@
    "label_end": "21"
   },
   {
-   "id": "sec-014-39-adjoint-matter-and-other-matters",
+   "id": "sec-016-39-adjoint-matter-and-other-matters",
    "number": "3.9",
    "title": "Adjoint matter and other matters",
    "level": 2,
@@ -847,7 +872,7 @@
    "label_end": "22"
   },
   {
-   "id": "sec-015-310-perturbative-part",
+   "id": "sec-017-310-perturbative-part",
    "number": "3.10",
    "title": "Perturbative part",
    "level": 2,
@@ -859,7 +884,7 @@
    "label_end": "23"
   },
   {
-   "id": "sec-016-4-m--and-k-theory-inspired-conjectures",
+   "id": "sec-018-4-m--and-k-theory-inspired-conjectures",
    "number": "4",
    "title": "M- and K-theory inspired conjectures",
    "level": 1,
@@ -871,7 +896,7 @@
    "label_end": "24"
   },
   {
-   "id": "sec-017-41-five-dimensional-viewpoint",
+   "id": "sec-019-41-five-dimensional-viewpoint",
    "number": "4.1",
    "title": "Five dimensional viewpoint",
    "level": 2,
@@ -883,7 +908,7 @@
    "label_end": "26"
   },
   {
-   "id": "sec-018-42-k-theory-viewpoint",
+   "id": "sec-020-42-k-theory-viewpoint",
    "number": "4.2",
    "title": "K-theory viewpoint",
    "level": 2,
@@ -895,7 +920,7 @@
    "label_end": "26"
   },
   {
-   "id": "sec-019-43-chiral-fermions-and-m5-brane",
+   "id": "sec-021-43-chiral-fermions-and-m5-brane",
    "number": "4.3",
    "title": "Chiral fermions and M5 brane",
    "level": 2,
@@ -907,7 +932,7 @@
    "label_end": "29"
   },
   {
-   "id": "sec-020-references",
+   "id": "sec-022-references",
    "number": null,
    "title": "References",
    "level": 1,
@@ -925,7 +950,7 @@
   "toc_entries": 23,
   "toc_inferred_entries": 23,
   "toc_inferred_mean_confidence": 0.741,
-  "toc_inferred_empty_share": 0.048,
+  "toc_inferred_empty_share": 0.043,
   "toc_inferred_method": "font",
   "figure_entries": 0,
   "figure_sequence_gaps": [],
@@ -933,7 +958,8 @@
    "count": 0,
    "items": []
   },
-  "sections": 22,
-  "chars_total": 56244
+  "sections": 24,
+  "chars_total": 56213,
+  "furniture_lines_stripped": 0
  }
 }

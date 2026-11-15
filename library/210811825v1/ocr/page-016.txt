@@ -1,0 +1,40 @@
+@)
+
+<>
+
+Figure 1.3: Domain monotonicity for a torus with a disk removed
+
+Remark 1.7 (Domain monotonicity, Dirichlet data) Unless otherwise stated, “do-
+main” refers to an open, connected subset in M with compact closure. Ideally, when Q is
+a subset of a compact Riemann surface, its boundary OQ will be a smooth curve. In prac-
+tice, this is not always the case; some of the domains we wish to consider have piecewise
+smooth boundary, by which we mean that the boundary is formed as the finite union of
+
+smooth curves. Let
+
+be pairwise disjoint domains with piecewise smooth boundary and compact closure in M.
+
+If M has boundary—the boundary of Q;, 1 = 1,...,m, meets OM tranversally. For
+example, in Figure 1.8, M is a torus with a disk removed, OM is a circle, and we have
+three pairwise disjoint domains. For i = 1,...,m, consider the Dirichlet eigenvalue
+problem on 00; M (where OM 4 0, we do not impose a constraint on OQ; M). We
+
+arrange all the eigenvalues of these domains into the increasing sequence
+
+0<u<nH<
+
+repeated according to multiplicity. Then for Ay, in the Laplace spectrum of M, we have
+Nb SVE
+
+for allk EN.
+A useful corollary of this is that for a Dirichlet eigenvalue problem on QC M and any
+
+eigenvalue problem on M, we have
+
+Ak(Q) > An(M)
+
+for alk EN. For example, in Figuret-3the first (and indeed k*") Dirichlet eigenvalues
+of Q1, Q2, and Q3 will all be larger than the first (respectively k'") eigenvalue of the
+manifold in which they are contained, that is, the torus with a disk removed, where we
+
+impose Dirichlet conditions on the boundary circle.

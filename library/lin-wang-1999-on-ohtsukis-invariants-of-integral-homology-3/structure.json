@@ -6,7 +6,9 @@
   "sha256": "3fb38d4cfd20d4fbff6a7299b83ece8d136a044fcce94dac4cb0a07845123f82",
   "bytes": 1057784,
   "pages": 24,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -14,456 +16,849 @@
   "arxiv": null,
   "doi": null,
   "title": "On Ohtsuki's invariants of integral homology 3-spheres",
-  "authors_raw": "Sinica, English Series",
-  "abstract": "We provide some more explicit formulae to facilitate the computation of Ohtsuki's rational invariants ,k,~ of integral homology 3-spheres extracted from Reshetikhin-Turaev SU(2) quantum invari- ants. Several interesting consequences will follow from our computation of A2. One of them says that A2 is always an integer divisible by 3. It seems interesting to compare this result with the fact shown by Murakami that )u is 6 times the Casson invariant. Other consequences include some general criteria for distinguishing homology 3-spheres obtained from surgery on knots by using the Jones polynomial.",
-  "docinfo": {
-   "CreationDate": "D:20070423164914+07'00'",
-   "Title": "On ohtsuki&#x2019;s invariants of integral homology 3-spheres",
-   "Author": "",
-   "Creator": "0438.TIF",
-   "Producer": "PageGenie PDFGenerator"
-  },
+  "authors_raw": "Acta Mathematica",
   "title_lines": [
    "Acta Mathematica Sinica, English Series",
-   "1999, July, Vol.15, No.3, p. 293-316 Acta Mathematica"
+   "1999, July, Vol.15, No.3, p. 293-316"
   ],
-  "title_prev": "Acta Mathematica Sinica, English Series 1999, July, Vol.15, No.3, p. 293-316 Acta Mathematica"
+  "abstract": "We provide some more explicit formulae to facilitate the computation of Ohtsuki's rational invariants ,k,~ of integral homology 3-spheres extracted from Reshetikhin-Turaev SU(2) quantum invari- ants. Several interesting consequences will follow from our computation of A2. One of them says that A2 is always an integer divisible by 3. It seems interesting to compare this result with the fact shown by Murakami that )u is 6 times the Casson invariant. Other consequences include some general criteria for distinguishing homology 3-spheres obtained from surgery on knots by using the Jones polynomial.",
+  "docinfo": {
+   "Title": "On ohtsuki&#x2019;s invariants of integral homology 3-spheres",
+   "Producer": "PageGenie PDFGenerator",
+   "Creator": "0438.TIF",
+   "CreationDate": "D:20070423164914+07'00'"
+  },
+  "title_raw": "Acta Mathematica Sinica, English Series 1999, July, Vol.15, No.3, p. 293-316",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "metadata": "On ohtsuki&#x2019;s invariants of integral homology 3-spheres",
+   "heading": "Acta Mathematica Sinica, English Series On Ohtsuki's Invariants of Integral Homology 3-Spheres",
+   "text": "Acta Mathematica Sinica, English Series 1999, July, Vol.15, No.3, p. 293-316",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "Acta Mathematica Sinica, English Series 1999, July, Vol.15, No.3, p. 293-316"
  },
  "toc": [
   {
    "level": 1,
-   "title": "Introduction",
-   "page": 1,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Using",
-   "page": 2,
-   "source": "inferred",
-   "number": "9"
-  },
-  {
-   "level": 1,
-   "title": "Fermat Functions and Their Residues",
+   "title": "Suppose that f and g are Fermat functions. Then",
    "page": 3,
    "source": "inferred",
-   "number": "2"
+   "number": "2.2",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "295"
   },
   {
    "level": 1,
    "title": "For rational numbers a and/3, af +/3g is a Fermat function whose residue is o~Res(f) +",
    "page": 3,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "295"
   },
   {
    "level": 2,
-   "title": "To see Formula (2.5) for m > 1, we only need to notice that",
-   "page": 6,
+   "title": "Dk(r)-- (~=~)!",
+   "page": 4,
    "source": "inferred",
-   "number": "2.1"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "296"
   },
   {
    "level": 1,
-   "title": "(-\u000189 -l)",
-   "page": 6,
-   "source": "inferred",
-   "number": "9"
-  },
-  {
-   "level": 1,
-   "title": "Fermat Limits and Ohtsuki's Invariants",
-   "page": 6,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "For R = Z or Z(r), O((q - 1)k;R) stands for a complex number of the form u(q - 1) k",
-   "page": 6,
-   "source": "inferred",
-   "number": "9"
-  },
-  {
-   "level": 1,
-   "title": "(H. Murakami) Tr(M) e Z[q];",
+   "title": "(H. Murakami) Ao = 1, and A1 = 6)~c, where )~c is the Casson invariant.",
    "page": 7,
    "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(T. Ohtsuki) f-limTr(M) = ~--~,~--0 An(t- 1) n, and/~n E ~(2n+2)~\"",
-   "page": 7,
-   "source": "inferred",
-   "number": "2"
+   "number": "3",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "299"
   },
   {
    "level": 1,
    "title": "Invariants of Links",
    "page": 7,
    "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "It will be useful to note that X(L; t), O(L; t) E Z[t, t -1, t--~]-",
-   "page": 7,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "The Second Invariant A2",
-   "page": 10,
-   "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "A2(M) e 3Z[\u000189",
-   "page": 11,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "We certainly have At(M) = 0. Therefore, A2/3 - Ac mod 2. This raises the",
-   "page": 13,
-   "source": "inferred",
-   "number": "9"
-  },
-  {
-   "level": 1,
-   "title": "The Formula for A n",
-   "page": 13,
-   "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "Then",
-   "page": 13,
-   "source": "inferred",
-   "number": "9"
-  },
-  {
-   "level": 1,
-   "title": "So the only non-trivial contribution",
-   "page": 15,
-   "source": "inferred",
-   "number": "9"
-  },
-  {
-   "level": 1,
-   "title": "(q- 1) r~a-'+m +O((q-- 1)'-l-t;Z(.))",
-   "page": 16,
-   "source": "inferred",
-   "number": "9"
-  },
-  {
-   "level": 1,
-   "title": "L r----2",
-   "page": 17,
-   "source": "inferred",
-   "number": "9"
-  },
-  {
-   "level": 1,
-   "title": "E gl',m'(t- 1)m'-t'--i-l+l;t- 1)",
-   "page": 18,
-   "source": "inferred",
-   "number": "9"
+   "number": "4",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "299"
   },
   {
    "level": 2,
-   "title": "Using the values of v/,0,0, and vf,l,o, we get",
+   "title": "(#LWi)!",
+   "page": 8,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "300"
+  },
+  {
+   "level": 2,
+   "title": "Let n be an ASL link. Then 1",
+   "page": 9,
+   "source": "inferred",
+   "number": "4.1",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "301"
+  },
+  {
+   "level": 1,
+   "title": "Ifv2(K) # O, then S3,1/,~ and S3K,1/m are distinct as unoriented 3-manifolds.",
+   "page": 12,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "304"
+  },
+  {
+   "level": 2,
+   "title": "-f~ ~ hl~,q,~(q-l) ~",
+   "page": 13,
+   "source": "inferred",
+   "number": "9",
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "305"
+  },
+  {
+   "level": 2,
+   "title": "Coe~ ~",
+   "page": 14,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "306"
+  },
+  {
+   "level": 3,
+   "title": "The knot invariant 0,~ induced by ~,~ is defined to be",
+   "page": 14,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "306"
+  },
+  {
+   "level": 1,
+   "title": "With respect to l(r) = r@, we have f-lim (z~-!)!'G2'(q) = ~m=o+~ gz,m( -- 1) m'",
+   "page": 15,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.7,
+   "evidence": [
+    "style",
+    "numbered-style"
+   ],
+   "page_label": "307"
+  },
+  {
+   "level": 2,
+   "title": "L r----2 +q-/~f'F~j([2])(-2)tq-\u000189163 (:l)fV",
+   "page": 17,
+   "source": "inferred",
+   "number": "9",
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "309"
+  },
+  {
+   "level": 2,
+   "title": "L r----2 +q-/~f'F~j([2])(-2)tq-\u000189163 (:l)fV gu,m(q - 1) m-''-'-l+'",
+   "page": 17,
+   "source": "inferred",
+   "number": "9",
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "309"
+  },
+  {
+   "level": 2,
+   "title": "\"~,~1 (:l')fe m=o",
+   "page": 17,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "309"
+  },
+  {
+   "level": 1,
+   "title": "(t+ l)iFi,t(t~ +t-\u000189",
+   "page": 18,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "310"
+  },
+  {
+   "level": 2,
+   "title": "Let M be an oriented integral homology 3-sphere. Then )~,~(M) E Z(~+U.",
+   "page": 18,
+   "source": "inferred",
+   "number": "6.3",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "310"
+  },
+  {
+   "level": 2,
+   "title": "II 2 II",
    "page": 19,
    "source": "inferred",
-   "number": "6.1"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "311"
   },
   {
-   "level": 1,
-   "title": "Integrality of ,k,~",
+   "level": 2,
+   "title": "Let M be a homology 3-sphere. Then )~2(M) E 3Z.",
    "page": 19,
    "source": "inferred",
-   "number": "7"
+   "number": "7.1",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "311"
   },
   {
-   "level": 1,
-   "title": "Epilogue",
-   "page": 22,
+   "level": 2,
+   "title": "Z/rZ stabilizes an a fixed integer for all sufficiently large",
+   "page": 19,
    "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 23,
-   "source": "inferred",
-   "number": null
+   "number": "E",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "311"
   }
  ],
  "toc_source": "inferred",
- "sections": [
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
   {
-   "id": "sec-000-9-using",
-   "number": "9",
-   "title": "Using",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 113,
-   "n_words": 14
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "id": "sec-001-1-introduction",
-   "number": "1",
-   "title": "Introduction",
+   "physical": 2,
+   "label": "294",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "295",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "296",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "297",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "298",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "299",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "300",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "301",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "302",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "303",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "304",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "305",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "306",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "307",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "308",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "309",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "310",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "311",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "312",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "313",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "314",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "315",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "316",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 4132,
-   "n_words": 675
+   "n_chars": 7297,
+   "n_words": 1224,
+   "label_start": null,
+   "label_end": "295"
   },
   {
-   "id": "sec-002-2-fermat-functions-and-their-residues",
-   "number": "2",
-   "title": "Fermat Functions and Their Residues",
+   "id": "sec-000-22-suppose-that-f-and-g-are-fermat-functions-the",
+   "number": "2.2",
+   "title": "Suppose that f and g are Fermat functions. Then",
    "level": 1,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 1855,
-   "n_words": 372
+   "n_chars": 47,
+   "n_words": 9,
+   "label_start": "295",
+   "label_end": "295"
   },
   {
-   "id": "sec-003-1-for-rational-numbers-a-and3-af-3g-is-a-fermat",
+   "id": "sec-001-1-for-rational-numbers-a-and3-af-3g-is-a-fermat",
    "number": "1",
    "title": "For rational numbers a and/3, af +/3g is a Fermat function whose residue is o~Res(f) +",
    "level": 1,
    "page_start": 3,
-   "page_end": 6,
-   "n_chars": 3564,
-   "n_words": 709
+   "page_end": 4,
+   "n_chars": 912,
+   "n_words": 160,
+   "label_start": "295",
+   "label_end": "296"
   },
   {
-   "id": "sec-004-21-to-see-formula-25-for-m-1-we-only-need-to-not",
-   "number": "2.1",
-   "title": "To see Formula (2.5) for m > 1, we only need to notice that",
+   "id": "sec-002-dkr",
+   "number": null,
+   "title": "Dk(r)-- (~=~)!",
    "level": 2,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 5,
-   "n_words": 1
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 5344,
+   "n_words": 1055,
+   "label_start": "296",
+   "label_end": "299"
   },
   {
-   "id": "sec-005-9--89--l",
-   "number": "9",
-   "title": "(-\u000189 -l)",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 69,
-   "n_words": 15
-  },
-  {
-   "id": "sec-006-3-fermat-limits-and-ohtsukis-invariants",
+   "id": "sec-003-3-h-murakami-ao-1-and-a1-6c-where-c-is-the-casso",
    "number": "3",
-   "title": "Fermat Limits and Ohtsuki's Invariants",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 203,
-   "n_words": 44
-  },
-  {
-   "id": "sec-007-9-for-r-z-or-zr-oq---1kr-stands-for-a-complex-nu",
-   "number": "9",
-   "title": "For R = Z or Z(r), O((q - 1)k;R) stands for a complex number of the form u(q - 1) k",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 7,
-   "n_chars": 1910,
-   "n_words": 365
-  },
-  {
-   "id": "sec-008-1-h-murakami-trm-e-zq",
-   "number": "1",
-   "title": "(H. Murakami) Tr(M) e Z[q];",
+   "title": "(H. Murakami) Ao = 1, and A1 = 6)~c, where )~c is the Casson invariant.",
    "level": 1,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 279,
+   "n_words": 48,
+   "label_start": "299",
+   "label_end": "299"
   },
   {
-   "id": "sec-009-2-t-ohtsuki-f-limtrm-----0-ant--1-n-andn-e-2n2",
-   "number": "2",
-   "title": "(T. Ohtsuki) f-limTr(M) = ~--~,~--0 An(t- 1) n, and/~n E ~(2n+2)~\"",
-   "level": 1,
-   "page_start": 7,
-   "page_end": 7,
-   "n_chars": 281,
-   "n_words": 49
-  },
-  {
-   "id": "sec-010-4-invariants-of-links",
+   "id": "sec-004-4-invariants-of-links",
    "number": "4",
    "title": "Invariants of Links",
    "level": 1,
    "page_start": 7,
-   "page_end": 7,
-   "n_chars": 1445,
-   "n_words": 284
+   "page_end": 8,
+   "n_chars": 2020,
+   "n_words": 396,
+   "label_start": "299",
+   "label_end": "300"
   },
   {
-   "id": "sec-011-1-it-will-be-useful-to-note-that-xl-t-ol-t-e-zt",
-   "number": "1",
-   "title": "It will be useful to note that X(L; t), O(L; t) E Z[t, t -1, t--~]-",
-   "level": 1,
-   "page_start": 7,
-   "page_end": 10,
-   "n_chars": 5033,
-   "n_words": 1020
+   "id": "sec-005-lwi",
+   "number": null,
+   "title": "(#LWi)!",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 3363,
+   "n_words": 678,
+   "label_start": "300",
+   "label_end": "301"
   },
   {
-   "id": "sec-012-5-the-second-invariant-a2",
-   "number": "5",
-   "title": "The Second Invariant A2",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 11,
-   "n_chars": 1441,
-   "n_words": 292
-  },
-  {
-   "id": "sec-013-2-a2m-e-3z89",
-   "number": "2",
-   "title": "A2(M) e 3Z[\u000189",
-   "level": 1,
-   "page_start": 11,
+   "id": "sec-006-41-let-n-be-an-asl-link-then-1",
+   "number": "4.1",
+   "title": "Let n be an ASL link. Then 1",
+   "level": 2,
+   "page_start": 9,
    "page_end": 12,
-   "n_chars": 2827,
-   "n_words": 550
+   "n_chars": 6292,
+   "n_words": 1238,
+   "label_start": "301",
+   "label_end": "304"
   },
   {
-   "id": "sec-014-9-then",
-   "number": "9",
-   "title": "Then",
+   "id": "sec-007-1-ifv2k-o-then-s31-and-s3k1m-are-distinct-as-uno",
+   "number": "1",
+   "title": "Ifv2(K) # O, then S3,1/,~ and S3K,1/m are distinct as unoriented 3-manifolds.",
    "level": 1,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 1927,
-   "n_words": 351
+   "n_chars": 2103,
+   "n_words": 378,
+   "label_start": "304",
+   "label_end": "305"
   },
   {
-   "id": "sec-015-9-we-certainly-have-atm-0-therefore-a23---ac-mod",
+   "id": "sec-008-9--f-hlqq-l",
    "number": "9",
-   "title": "We certainly have At(M) = 0. Therefore, A2/3 - Ac mod 2. This raises the",
-   "level": 1,
+   "title": "-f~ ~ hl~,q,~(q-l) ~",
+   "level": 2,
    "page_start": 13,
-   "page_end": 13,
-   "n_chars": 495,
-   "n_words": 87
+   "page_end": 14,
+   "n_chars": 1057,
+   "n_words": 194,
+   "label_start": "305",
+   "label_end": "306"
   },
   {
-   "id": "sec-016-6-the-formula-for-a-n",
-   "number": "6",
-   "title": "The Formula for A n",
-   "level": 1,
-   "page_start": 13,
+   "id": "sec-009-coe",
+   "number": null,
+   "title": "Coe~ ~",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 251,
+   "n_words": 49,
+   "label_start": "306",
+   "label_end": "306"
+  },
+  {
+   "id": "sec-010-the-knot-invariant-0-induced-by-is-defined-to-be",
+   "number": null,
+   "title": "The knot invariant 0,~ induced by ~,~ is defined to be",
+   "level": 3,
+   "page_start": 14,
    "page_end": 15,
-   "n_chars": 4356,
-   "n_words": 848
+   "n_chars": 1370,
+   "n_words": 262,
+   "label_start": "306",
+   "label_end": "307"
   },
   {
-   "id": "sec-017-9-so-the-only-non-trivial-contribution",
-   "number": "9",
-   "title": "So the only non-trivial contribution",
+   "id": "sec-011-with-respect-to-lr-r-we-have-f-lim-z-g2q-mo-gzm",
+   "number": null,
+   "title": "With respect to l(r) = r@, we have f-lim (z~-!)!'G2'(q) = ~m=o+~ gz,m( -- 1) m'",
    "level": 1,
    "page_start": 15,
-   "page_end": 16,
-   "n_chars": 388,
-   "n_words": 91
-  },
-  {
-   "id": "sec-018-9-q--1-ra-m-oq---1-l-tz",
-   "number": "9",
-   "title": "(q- 1) r~a-'+m +O((q-- 1)'-l-t;Z(.))",
-   "level": 1,
-   "page_start": 16,
    "page_end": 17,
-   "n_chars": 1580,
-   "n_words": 315
+   "n_chars": 3457,
+   "n_words": 680,
+   "label_start": "307",
+   "label_end": "309"
   },
   {
-   "id": "sec-019-9-l-r----2",
+   "id": "sec-012-9-l-r----2-q-ffj2-2tq-89163-lfv",
    "number": "9",
-   "title": "L r----2",
-   "level": 1,
+   "title": "L r----2 +q-/~f'F~j([2])(-2)tq-\u000189163 (:l)fV",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 488,
+   "n_words": 97,
+   "label_start": "309",
+   "label_end": "309"
+  },
+  {
+   "id": "sec-013-2-1-lfe-mo",
+   "number": "2",
+   "title": "\"~,~1 (:l')fe m=o",
+   "level": 2,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 1773,
-   "n_words": 351
+   "n_chars": 1288,
+   "n_words": 247,
+   "label_start": "309",
+   "label_end": "310"
   },
   {
-   "id": "sec-020-9-e-glmt--1m-t--i-llt--1",
-   "number": "9",
-   "title": "E gl',m'(t- 1)m'-t'--i-l+l;t- 1)",
+   "id": "sec-014-2-t-lifitt-t-89",
+   "number": "2",
+   "title": "(t+ l)iFi,t(t~ +t-\u000189",
    "level": 1,
    "page_start": 18,
-   "page_end": 19,
-   "n_chars": 1428,
-   "n_words": 315
+   "page_end": 18,
+   "n_chars": 315,
+   "n_words": 58,
+   "label_start": "310",
+   "label_end": "310"
   },
   {
-   "id": "sec-021-61-using-the-values-of-v00-and-vflo-we-get",
-   "number": "6.1",
-   "title": "Using the values of v/,0,0, and vf,l,o, we get",
+   "id": "sec-015-63-let-m-be-an-oriented-integral-homology-3-sphe",
+   "number": "6.3",
+   "title": "Let M be an oriented integral homology 3-sphere. Then )~,~(M) E Z(~+U.",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 1527,
+   "n_words": 344,
+   "label_start": "310",
+   "label_end": "311"
+  },
+  {
+   "id": "sec-016-ii-2-ii",
+   "number": null,
+   "title": "II 2 II",
    "level": 2,
    "page_start": 19,
    "page_end": 19,
-   "n_chars": 333,
-   "n_words": 81
+   "n_chars": 365,
+   "n_words": 65,
+   "label_start": "311",
+   "label_end": "311"
   },
   {
-   "id": "sec-022-7-integrality-of-k",
-   "number": "7",
-   "title": "Integrality of ,k,~",
-   "level": 1,
+   "id": "sec-017-71-let-m-be-a-homology-3-sphere-then-2m-e-3z",
+   "number": "7.1",
+   "title": "Let M be a homology 3-sphere. Then )~2(M) E 3Z.",
+   "level": 2,
    "page_start": 19,
-   "page_end": 22,
-   "n_chars": 5306,
-   "n_words": 1116
+   "page_end": 19,
+   "n_chars": 290,
+   "n_words": 61,
+   "label_start": "311",
+   "label_end": "311"
   },
   {
-   "id": "sec-023-8-epilogue",
-   "number": "8",
-   "title": "Epilogue",
-   "level": 1,
-   "page_start": 22,
-   "page_end": 23,
-   "n_chars": 2658,
-   "n_words": 449
-  },
-  {
-   "id": "sec-024-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 23,
+   "id": "sec-018-e-zrz-stabilizes-an-a-fixed-integer-for-all-suff",
+   "number": "E",
+   "title": "Z/rZ stabilizes an a fixed integer for all sufficiently large",
+   "level": 2,
+   "page_start": 19,
    "page_end": 24,
-   "n_chars": 3620,
-   "n_words": 533
+   "n_chars": 11064,
+   "n_words": 1978,
+   "label_start": "311",
+   "label_end": "316"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 25,
-  "sections": 25,
-  "chars_total": 46742
+  "toc_entries": 20,
+  "toc_inferred_entries": 27,
+  "toc_inferred_mean_confidence": 0.73,
+  "toc_inferred_empty_share": 0.111,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 20,
+  "chars_total": 49129,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": "i=oJ+ 1-i",
+    "page": 4,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "Cr'~ ,",
+    "page": 5,
+    "action": "dropped",
+    "why": "ends with a comma"
+   },
+   {
+    "title": "hl~,q,~(q-l) ~",
+    "page": 13,
+    "action": "rejoined",
+    "as": "-f~ ~ hl~,q,~(q-l) ~",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "s~'f'i(q) = (f) \"q~f-\u000189 \" (q- l)i+lGo(q)",
+    "page": 14,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "gl,kgo,m-k",
+    "page": 16,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "+q-/~f'F~j([2])(-2)tq-\u000189163 (:l)fV",
+    "page": 17,
+    "action": "rejoined",
+    "as": "L r----2 +q-/~f'F~j([2])(-2)tq-\u000189163 (:l)fV",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "gu,m(q - 1) m-''-'-l+'",
+    "page": 17,
+    "action": "rejoined",
+    "as": "L r----2 +q-/~f'F~j([2])(-2)tq-\u000189163 (:l)fV gu,m(q - 1) m-''-'-l+'",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "\"~,~1 (:l')fe m=o",
+    "page": 17,
+    "action": "rejoined",
+    "as": "\"~,~1 (:l')fe m=o",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "ft+t' (-2)t (/)",
+    "page": 17,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "(q+ i)iFiJ([21)",
+    "page": 17,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "(t+ l)iFi,t(t~ +t-\u000189",
+    "page": 18,
+    "action": "rejoined",
+    "as": "(t+ l)iFi,t(t~ +t-\u000189",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "II",
+    "page": 19,
+    "action": "dropped",
+    "why": "a single short word"
+   }
+  ]
  }
 }

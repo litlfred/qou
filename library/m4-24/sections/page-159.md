@@ -1,0 +1,59 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-159
+section_title: "Page 159"
+section_number: null
+pages: 159-159
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+Problems on invariants of knots and 3-manifolds 531
+
+find in [380] examples where fj o f3 is not surjective and Legendrian finite type
+invariants can eventually distinguish some Legendrian knots which are isotopic
+as framed knots. In fact one can realize that for these examples f> is already
+not surjective and that (pL)-finite type invariants can eventually distinguish
+some (pL)-knots which are isotopic as framed knots. The following conjecture
+is not in contradiction with all these known results on the subject.
+
+Conjecture 12.2 (R. Benedetti) For every W, for every (pL)-class a1 as
+above, f{ is an isomorphism. This means, in particular, that finite type invari-
+ants of Legendrian knots should be definitely not sensitive to geometric (rigid)
+properties of the contact structures like “tightness”.
+
+See also [50] for a more detailed discussion and related questions.
+
+12.2 Knots and finite groups
+
+Knot groups are known to be residually finite, that is, any non-trivial element
+can be detected by a homomorphism to some finite group.
+
+Now by Dehn’s lemma and the loop theorem a knot is trivial if and only if
+its longitude represents the trivial element of the knot group. Consequently
+for each non-trivial knot there is a homomorphism to some finite group which
+carries the longitude to a non-trivial element.
+
+Problem 12.3 (H.R. Morton) From a knot diagram find an explicit such
+homomorphism to some permutation group or establish that the knot is trivial.
+
+Refinements.
+
+(1) Give an upper bound in terms of the diagram for the order of the permu-
+tation groups which need to be considered.
+
+(2) See what happens if the meridians (which are all conjugate) are restricted
+to map to permutations of some specified cycle type, for example, single trans-
+positions.
+
+Remark Every finite group is the subgroup of a permutation group, so no
+restrictions are implied here.
+
+The language of quandles could be adopted for 2 when referring to the chosen
+meridian conjugacy class.
+
+Section 12.2 was written by H.R. Morton.
+
+Geometry & Topology Monographs, Volume 4 (2002)

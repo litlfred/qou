@@ -8,7 +8,7 @@
   "pages": 6,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -22,7 +22,7 @@
   },
   "doi": null,
   "title": "A topological model of composite preons",
-  "authors_raw": "Sundance O. Bilson-Thompson\u2217",
+  "authors_raw": "Sundance O. Bilson-Thompson∗",
   "title_lines": [
    "A topological model of composite preons"
   ],
@@ -130,7 +130,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "The fermions formed by adding zero, one, two or three charges to a neutral braid. Charged fermions come in two handedness states each, while \u03bd and",
+   "title": "The fermions formed by adding zero, one, two or three charges to a neutral braid. Charged fermions come in two handedness states each, while ν and",
    "page": 3,
    "confidence": 0.9,
    "evidence": [
@@ -143,7 +143,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "A representation of the decay \u00b5 \u2192\u03bd\u00b5+e\u2212+",
+   "title": "A representation of the decay µ →νµ+e−+",
    "page": 3,
    "confidence": 0.7,
    "evidence": [
@@ -241,8 +241,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1258,
-   "n_words": 185,
+   "n_chars": 1255,
+   "n_words": 184,
    "label_start": null,
    "label_end": null
   },
@@ -253,8 +253,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 3291,
-   "n_words": 521,
+   "n_chars": 3304,
+   "n_words": 522,
    "label_start": null,
    "label_end": null
   },
@@ -264,45 +264,57 @@
    "title": "The Helon model",
    "level": 1,
    "page_start": 1,
-   "page_end": 5,
-   "n_chars": 18979,
-   "n_words": 3319,
+   "page_end": 2,
+   "n_chars": 5434,
+   "n_words": 918,
    "label_start": null,
+   "label_end": "2"
+  },
+  {
+   "id": "sec-002-3-phenomenology-of-the-helon-model",
+   "number": "3",
+   "title": "Phenomenology of the helon model",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 5,
+   "n_chars": 13505,
+   "n_words": 2392,
+   "label_start": "2",
    "label_end": "5"
   },
   {
-   "id": "sec-002-4-unresolved-issues",
+   "id": "sec-003-4-unresolved-issues",
    "number": "4",
    "title": "Unresolved issues",
    "level": 1,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 1834,
-   "n_words": 314,
+   "n_chars": 1850,
+   "n_words": 315,
    "label_start": "5",
    "label_end": "6"
   },
   {
-   "id": "sec-003-5-discussion",
+   "id": "sec-004-5-discussion",
    "number": "5",
    "title": "Discussion",
    "level": 1,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 3871,
-   "n_words": 616,
+   "n_chars": 3867,
+   "n_words": 615,
    "label_start": "6",
    "label_end": "6"
   },
   {
-   "id": "sec-004-6-acknowledgements",
+   "id": "sec-005-6-acknowledgements",
    "number": "6",
    "title": "Acknowledgements",
    "level": 1,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 1464,
-   "n_words": 251,
+   "n_chars": 1481,
+   "n_words": 252,
    "label_start": "6",
    "label_end": "6"
   }
@@ -321,13 +333,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 6,
-  "chars_total": 30697,
+  "sections": 7,
+  "chars_total": 30696,
+  "furniture_lines_stripped": 5,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Helon4-3.tex",
    "tex_sections": 6,
-   "overlaid": 4,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -350,21 +363,29 @@
     {
      "id": "sec-001-2-the-helon-model",
      "title": "The Helon model",
-     "prose_ratio": 0.968,
-     "coverage_ratio": 0.979,
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.948,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-4-unresolved-issues",
-     "title": "Unresolved issues",
-     "prose_ratio": 0.873,
+     "id": "sec-002-3-phenomenology-of-the-helon-model",
+     "title": "Phenomenology of the helon model",
+     "prose_ratio": 0.975,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-5-discussion",
+     "id": "sec-003-4-unresolved-issues",
+     "title": "Unresolved issues",
+     "prose_ratio": 0.873,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-5-discussion",
      "title": "Discussion",
      "prose_ratio": 0.991,
      "coverage_ratio": 0.942,
@@ -372,11 +393,11 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-6-acknowledgements",
+     "id": "sec-005-6-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.18,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.178,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

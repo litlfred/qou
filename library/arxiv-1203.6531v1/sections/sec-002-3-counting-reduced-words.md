@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-1203.6531v1
-doc_title: "AMERICAN MATHEMATICAL SOCIETY S 0002-9947(XX)0000-0"
+doc_title: "Groebner-Shirshov basis and reduced words for affine Weyl group A_n"
 section_id: sec-002-3-counting-reduced-words
 section_title: "Counting Reduced Words"
 section_number: 3
@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.979
 latex_coverage_ratio: 0.905
+doc_brief: "Groebner-Shirshov basis and reduced words for affine Weyl group A_n — Using Buchberger-Shirshov Algorithm and Composition-Diamond lemma we obtain the reduced Gr¨obner-Shirshov bases of f An and"
 ---
 ::: thm
 []{#reduced label="reduced"} Let $\widehat{w}=a_{i_{s}}a_{i_{s-1}}\ldots a_{i_{1}}v^{(b_t)}$ where $a_{i_{j}}=r_{0}r_{nk_{j}}r_{nl_{j}}$.Then $a_{i_{j}}$'s are marked components of an arranged word $w=uv^{(b_t)}$ where $b_t=r_0r_{np}r_{1q}$ if and only if $k_{s}<k_{s-1}<\ldots<k_{1}<p$ and $q<l_{1}<l_{2}<\ldots<l_{s}<n$

@@ -1,0 +1,54 @@
+Concentration of empirical distribution functions 1395
+
+1
+
+ne
+
+x, x’ € R", let 0 be the discrete measure on the pairs (x;, xf), 1 <i <n, with point masses
+Therefore, by Cauchy’s inequality,
+
+1 1 1/2
+wi(Tx.Tx')< [ —u'| da wy=-) ;—x:|< — y i— xi .
+(Tx, Tx’) < | |u—uw'| dou, u’) n 2h «lS 2's x; |
+
+This proves Lemma 4.1.
+Thus, the map 7:R” — Z, has the Lipschitz seminorm |T||Lip < w As a consequence,
+
+given a probability measure jz on R”, this map transports many potential properties of jz, such
+as concentration, to the space Z1, equipped with the Borel probability measure A = .T~!. Note
+that it is supported on the set of all probability measures with at most n atoms. In particular, if
+satisfies a concentration inequality of the form
+
+1— p(A") <a(h), h>0, (4.1)
+
+in the class of all Borel sets A in R” with measure (A) > 5 (where A’ denotes an open Euclid-
+ean h-neighborhood of A), then A satisfies a similar (and in fact stronger) property
+
+1— A(B") <a(hvn), h>0,
+
+in the class of all Borel sets B in Z; with measure A(B) > 3 (with respect to the Kantorovich—
+Rubinstein distance). In other words, an optimal so-called concentration function w = a, in (4.1)
+for the measure ju is related to the concentration function of A by
+
+aa(h) <a,(hvn), h>0. (4.2)
+Now, in general, the concentration function has a simple functional description as
+a, (h) = sup u{g — m(g) = h},
+
+where the sup is taken over all Lipschitz functions g on R” with ||g||Lip < 1 and where m(g)
+stands for a median of g under yw. (Actually, this holds for abstract metric spaces.) The concen-
+tration function may therefore be controlled by Poincaré-type inequalities in terms of o (the
+Gromov—Milman theorem). Indeed, since the quantity g — m(g) is translation invariant, one may
+assume that g has mean zero. By Lemma 2.2 with t = 1, we get p{g < —oh} <3e" < i pro-
+vided that h > log6, which means that any median of g satisfies m(g) > —o log 6. Therefore,
+
+again by Lemma 2.2, for any h > log 6,
+
+h
+
+ug —m(g) > oh} < lg > o(h —log6)} <3-6-e"
+so that
+a, (oh) < 18e~". (4.3)
+
+The latter also automatically holds in the interval 0 < h < log 6. In fact, by a more careful appli-
+cation of the Poincaré-type inequality, the concentration bound (4.3) may be further improved to
+ay(oh) < Ce~2h (see [3]), but this is not crucial for our purposes.

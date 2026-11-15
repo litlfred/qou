@@ -1,0 +1,1 @@
+The idea is that even in the cases when behaviour of the system seems absolutely haotic from any naive point of view (like in the cases of turbulence or quantum gravity), one can and should introduce new variables (which can be very complicated functions of original ones), which have smooth and well defined correlation functions.

@@ -1,0 +1,1 @@
+::: remark There is an explicit regular map from each (triangulation dependent) Ptolemy variety to the gluing equation variety, but we shall not need this here (see e.g. [@GaroufalidisThurstonZickert; @GaroufalidisGoernerZickert; @ZickertEnhancedPtolemy]). :::

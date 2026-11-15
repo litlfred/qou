@@ -1,0 +1,30 @@
+Section 2.1 Ribbon Fusion Categories
+
+Figure 2.4: f* (Left) and *f (Right)
+
+Proposition 2.1.7 The assignment A > A*, f +> f* defines a monoidal functor
+(-)* € —+ C?"", Similarly, “(-) :C —+ C®"® sending A to*A and f to *f is also a
+
+monoidal functor.
+
+Since (Cer) °P" — C, (-)* and “*(-) are both monoidal functors from C to itself.
+
+2.1.3 Fusion Categories
+
+An abelian category is C-linear if the morphism spaces are vector spaces over C and
+compositions of morphisms are C-bilinear. A functor from a C-linear abelian category
+to a C-linear abelian category is C-linear if it is a C-linear map restricted on morphism
+spaces. All functors on between C-linear abelian categories are assumed to be C-linear.
+
+An object A in a C-linear abelian category is simple if Hom(A, A) ~ C. It can be
+shown that if A, B are simple objects that are not isomorphic, then Hom(A, B) = 0. An
+abelian category is semi-simple if every object is isomorphic to a direct sum of simple
+objects.
+
+If C is semi-simple, denote by L(C) the set of isomorphism classes of simple objects.
+
+Definition 2.1.8 A fusion category is a semi-simple C-linear rigid monoidal category C
+
+such that 1 is simple and L(C) is finite.
+
+15

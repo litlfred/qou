@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "li-braid-closures",
+  "title": "Knot polynomials on braid closures",
   "contains": [
+    "library/li-braid-closures/sections/sec-front-matter",
     "library/li-braid-closures/sections/sec-000",
     "library/li-braid-closures/sections/sec-001",
     "library/li-braid-closures/sections/sec-002",
@@ -20,13 +21,16 @@
     "library/li-braid-closures/sections/sec-006",
     "library/li-braid-closures/sections/sec-007",
     "library/li-braid-closures/sections/sec-008",
-    "library/li-braid-closures/sections/sec-009"
+    "library/li-braid-closures/sections/sec-009",
+    "library/li-braid-closures/sections/sec-010"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "li-braid-closures",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "Li-braid-closures.pdf",
     "source_sha256": "f7410e7be5bc187e038f6354fe46bdada6fccf4bbc7810344a29ce54bb8d07d6",
     "pages": 16,

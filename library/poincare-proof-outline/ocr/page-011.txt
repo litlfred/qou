@@ -1,0 +1,69 @@
+then obtain n where n 4 hn #4 mn ¥F fn F inversion fn € circline-set H
+using ez-is-poincare-line-points'[of h H m f] * «m € circline-set H» «h € unit-circle-sety «m # hy
+by auto
+hence n ¢ unit-circle-set
+using « (H # unit-circle> unique-circline-set|of m n h]
+using «m # h> «m © unit-circle-set> <h € unit-circle-set> «m € circline-set H»
+unfolding unit-circle-set-def
+by auto
+
+thus ?thesis
+using * <n € circline-set Hy in # f> «n & inversion f»
+by auto
+qed
+qed
+qed
+qed
+then obtain a b where ab: a # b a F inversion b a € circline-set H b € circline-set H a ¢ unit-circle-set b ¢
+unit-circle-set
+by blast
+have V x. x € circline-set H A x ¢ unit-circle-set —> (J 2’. x’ € circline-set H M unit-disc A (e' = 2 V x! =
+inversion 2))
+proof safe
+fix x
+assume z: x € circline-set H x ¢ unit-circle-set
+show J 2’. x’ € circline-set H M unit-disc A (’ = « V x’ = inversion x)
+proof (cases x € unit-disc)
+case True
+thus ?thesis
+using x
+by auto
+next
+case False
+hence x € unit-disc-compl
+using x in-on-out-univ[of ounit-circle]
+unfolding unit-circle-set-def unit-disc-def unit-disc-compl-def
+by auto
+hence inversion x € unit-disc
+using inversion-unit-disc-compl
+by blast
+thus ?thesis
+using is-poincare-line-inverse-point|OF assms, of t] «
+by auto
+qed
+qed
+then obtain a’ b’ where
+«x: a’ € circline-set H a’ € unit-disc b' € circline-set H b' € unit-disc and
+xe: a’ = a V a’ = inversion a b' = b V b! = inversion b
+using ab
+by blast
+have a’ 4 b’
+using (a 4 by (a # inversion by *x *
+by (metis inversion-involution)
+thus ?thesis
+using *
+by auto
+qed
+qed
+
+4.1.5 H-line uniqueness
+
+There is no more than one h-line that contains two different h-points (in the disc).
+
+lemma unique-is-poincare-line:
+assumes in-disc: u € unit-disc v € unit-disc u # v
+assumes pl: is-poincare-line l1 is-poincare-line 12
+assumes on-l: {u, v} C circline-set l1 M circline-set 12
+shows I] = 12
+
+11

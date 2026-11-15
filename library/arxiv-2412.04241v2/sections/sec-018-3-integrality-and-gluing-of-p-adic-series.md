@@ -1,13 +1,14 @@
 ---
 doc_id: arxiv-2412.04241v2
-doc_title: "THE HABIRO RING OF A NUMBER FIELD"
+doc_title: "The Habiro ring of a number field"
 section_id: sec-018-3-integrality-and-gluing-of-p-adic-series
 section_title: "Integrality and gluing of p-adic series"
 section_number: 3
 pages: 37-37
 source_pdf: 2412.04241v2.pdf
 source_sha256: 308d1dd1c42bd979
-doc_brief: "THE HABIRO RING OF A NUMBER FIELD — We introduce the Habiro ring of a number field K and modules over it graded by K3(K)."
+toc_source: outline
+doc_brief: "The Habiro ring of a number field — We introduce the Habiro ring of a number field K and modules over it graded by K3(K)."
 ---
 In this section we will combine the previous sections to prove our main results. Firstly, we
 study the K-theory of local fields and its image under the p-adic regulator map. Then we

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-hep-th-0001202v2
-doc_title: "arXiv:hep-th/0001202v2 29 Jan 2000"
+doc_title: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees"
 section_id: sec-005-51-general-inequalities
 section_title: "General inequalities"
 section_number: 5.1
-pages: 7-9
+pages: 8-9
 source_pdf: 0001202v2.pdf
 source_sha256: b2e3e22ea3d51c0b
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.989
 latex_coverage_ratio: 0.959
+doc_brief: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees — The renormalization of quantum ﬁeld theory twists the antipode of a non- cocommutative Hopf algebra"
 ---
 Let ${\cal H}$ be a commutative graded Hopf algebra with unit $e$. Let ${\rm deg}$ be the grading, with ${\rm deg}(X)\in {\Nb}$ for all $X\in{\cal H}$ and ${\rm deg}(e)=0$. We assume that ${\cal H}$ is reduced to scalars by the counit $\bar{e}$.
 

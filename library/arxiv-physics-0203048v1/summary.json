@@ -2,26 +2,31 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-physics-0203048v1",
  "source_sha256": "47204f32280e91a3",
- "brief": "Towards a third-order topological invariant for magnetic fields — An expression for a third-order link integral of three magne tic ﬁelds is presented.",
- "extended": "**Towards a third-order topological invariant for magnetic fields**\n\n*Gunnar Hornig and Christoph Mayer*\n\n14 pp, 10 sections.\n\n**Abstract.** An expression for a third-order link integral of three magne tic ﬁelds is presented. It is a topological invariant and therefore an in variant of ideal magnetohydrodynamics. The integral generalizes existing expressions for third- order invariants which are obtained from the Massey triple p roduct, where the three ﬁelds are restricted to isolated ﬂux tubes. The deriva tion and interpretation of the invariant shows a close relationship with the well-kn own magnetic helicity, which is a second-order topological invariant. Using gauge ﬁelds with an SU (2) symmetry, helicity and the new third-order invariant origi nate from the same identity, an identity which relates the second Chern class a nd the Chern-Simons three-form. W e present an explicit example of three magneti c ﬁelds with non- disjunct support.\n\n**Outline.** 1 Introduction; 2 Magnetic helicity; 3 A third-order invariant from the Chern-Simon; 4 Interpretation of the invariant; 5 Example of three magnetic ﬁelds with a third; 5.1 Yang-Mills potentials of a vacuum ﬁeld wit; 5.2 Magnetic ﬁelds constructed from Yang-Mills; 6 Conclusions; Acknowledgments; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem: Let B1, B2 and B3 be three magnetic ﬁelds with potentials Ai satisfying",
+ "brief": "Towards a third-order topological invariant for magnetic fields — An expression for a third-order link integral of three magnetic ﬁelds is presented.",
+ "extended": "**Towards a third-order topological invariant for magnetic fields**\n\n*Gunnar Hornig and Christoph Mayer*\n\n14 pp, 13 sections.\n\n**Abstract.** An expression for a third-order link integral of three magnetic ﬁelds is presented. It is a topological invariant and therefore an invariant of ideal magnetohydrodynamics. The integral generalizes existing expressions for third- order invariants which are obtained from the Massey triple product, where the three ﬁelds are restricted to isolated ﬂux tubes. The derivation and interpretation of the invariant shows a close relationship with the well-known magnetic helicity, which is a second-order topological invariant. Using gauge ﬁelds with an SU(2) symmetry, helicity and the new third-order invariant originate from the same identity, an identity which relates the second Chern class and the Chern-Simons three-form. We present an explicit example of three magnetic ﬁelds with non- disjunct support.\n\n**Outline.** Front matter; 1 Introduction; 2 Magnetic helicity; 3 A third-order invariant from the Chern-Simon; 4 Interpretation of the invariant; 5 Example of three magnetic fields with a thir; 5.1 Yang-Mills potentials of a vacuum field wi; 5.2 Magnetic fields constructed from Yang-Mill; 6 Conclusions; A Equivalence of boundary conditions; B Gauge invariance of the third-order invarian; C Equivalence of the link integrals for disjun; References",
  "tokens": {
   "brief": 37,
-  "extended": 352
+  "extended": 349
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-2"
+   "pages": "1-3"
   },
   {
    "id": "sec-001-2-magnetic-helicity",
    "title": "Magnetic helicity",
-   "pages": "2-4"
+   "pages": "3-4"
   },
   {
    "id": "sec-002-3-a-third-order-invariant-from-the-chern-simons",
-   "title": "A third-order invariant from the Chern-Simons three-for m",
+   "title": "A third-order invariant from the Chern-Simons three-form",
    "pages": "4-6"
   },
   {
@@ -30,18 +35,18 @@
    "pages": "6-7"
   },
   {
-   "id": "sec-004-5-example-of-three-magnetic-ﬁelds-with-a-third-o",
-   "title": "Example of three magnetic ﬁelds with a third-order linkag e",
+   "id": "sec-004-5-example-of-three-magnetic-fields-with-a-third",
+   "title": "Example of three magnetic fields with a third-order linkage",
    "pages": "7-7"
   },
   {
-   "id": "sec-005-51-yang-mills-potentials-of-a-vacuum-ﬁeld-with-n",
-   "title": "Yang-Mills potentials of a vacuum ﬁeld with non-vanish ing winding number",
+   "id": "sec-005-51-yang-mills-potentials-of-a-vacuum-field-with",
+   "title": "Yang-Mills potentials of a vacuum field with non-vanishing winding number",
    "pages": "7-8"
   },
   {
-   "id": "sec-006-52-magnetic-ﬁelds-constructed-from-yang-mills-po",
-   "title": "Magnetic ﬁelds constructed from Yang-Mills potential s",
+   "id": "sec-006-52-magnetic-fields-constructed-from-yang-mills-p",
+   "title": "Magnetic fields constructed from Yang-Mills potentials",
    "pages": "8-11"
   },
   {
@@ -50,12 +55,22 @@
    "pages": "11-11"
   },
   {
-   "id": "sec-008-acknowledgments",
-   "title": "Acknowledgments",
-   "pages": "11-14"
+   "id": "sec-008-a-equivalence-of-boundary-conditions",
+   "title": "Equivalence of boundary conditions",
+   "pages": "11-12"
   },
   {
-   "id": "sec-009-references",
+   "id": "sec-009-b-gauge-invariance-of-the-third-order-invariant",
+   "title": "Gauge invariance of the third-order invariant $H^{(3)}$",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-010-c-equivalence-of-the-link-integrals-for-disjunct",
+   "title": "Equivalence of the link integrals for disjunct flux tubes",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-011-references",
    "title": "References",
    "pages": "14-14"
   }
@@ -64,8 +79,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

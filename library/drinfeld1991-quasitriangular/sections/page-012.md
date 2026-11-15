@@ -1,0 +1,127 @@
+---
+doc_id: drinfeld1991-quasitriangular
+doc_title: "On quasitriangular quasi-Hopf algebras and a group closely connected with Gal(Q̄/Q)"
+section_id: page-012
+section_title: "Page 12"
+pages: 12-12
+pdf_page: 12
+source_pdf: drinfeld1991-quasitriangular.pdf
+source_sha256: 1a1d279e92445fdc
+text_source: ocr
+granularity: page
+doc_brief: "On quasitriangular quasi-Hopf algebras and a group closely connected with Gal(Q̄/Q) — 17 sections: Page 1; Page 2; Page 3"
+---
+850 V. G. DRINFEL'D
+
+Suppose we have already proved that Q(A, B) = 1moddegn (ie., Q(A, B) =
+1+ terms of degree n and higher). If Q(A, B) = 1+ 4(A, B)moddeg(n +1),
+where g is homogeneous of degree 7, then the left-hand side of (5.10) is con-
+gruent to n-q(A, B) mod deg(n+1). Since e%e6 = e 4? Q(A, C)e~4”O(A, B) :
+we find, denoting by a, 8, and y the residue classes of A, B— (A, B),
+and C — 4(A, C)moddeg(n + 1), that e*e%e” = 1. Therefore (5.6) holds,
+with s = 1. Hence the right-hand side of (5.10) is congruent to (4, B) +
+q(A, C)moddeg(n + 1). From the definition of Q it follows that g(A, C) =
+q(B, A). Thus, g(B, A) = (n-1)-q(A, B). Therefore, g = 0 (for n =2,
+this follows from the fact that q(A, B) is a Lie polynomial and therefore pro-
+portional to [4, B]).
+
+It remains to prove (2.13). Denote the left-hand side of (2.13) by f, and the
+right by g. Suppose we have already proved that f = gmoddegn. To prove
+that f = gmod deg(n + 1), it suffices to show that
+
+-1 d
+AEP KE ERIK XE dy
+
+-1 d
+= (x, x80) 1 atk", tX?,...)|,_, moddeg(n +1),
+
+t=1
+
+ie., that
+
+wa, B)+ wy, 6) = yA, d)+ y(u,v)+y(a,4) moddeg(n+1), (5.11)
+where
+
+a= Xx, Ba=f- (xP 4x4. f, yo XP 4 x?
+b= 9(X 4 x7, xy! Xo XP 4 x? x*),
+
+A= o(X", 5 onan Gt 16 aa x),
+
+wa 9(X?, XB) 1X? 4 XBox? x),
+
+v =9(X", Xe tox? a x, x4 eH
+
+x (X74 4 xox? 4 xX, x a(x”, x),
+
+Using (2.12), (5.3), and the congruence f = gmoddegn, we construct (see
+the proof of Proposition 5.1) a homomorphism h: K,(k) > exp(ai /T), where
+I={ae ay | a = Omod deg(n + 1)}. Then in (5.7) putting yj = MA(x,,),
+where the x,, are defined by (4.6), we obtain (5.11). @
+
+PROPOSITION 5.3. M,(k) #2.
+
+Proor. Since M,(C) 4 © (see §2), the sequence (5.8) is exact for k = C.
+This implies (5.8) is exact for k =Q. Therefore M,(Q) 4 © (see Proposition
+5.2) and, so much the more, M|(k) #@. Another version of the proof: since
+the composite of the homomorphism Gal(Q/Q) — GT(Q,) (see §4) and the
+homomorphism v: GT(Q,) > Q is the homomorphism /: Gal(@/Q) - Zy
+defined by the relation o~'(C) = cf | where fain , o € Gal(Q/Q), it follows
+that the image of vy is infinite, the sequence (5.8) is exact for kK =Q,, etc. ©
+
+Thus, Theorem A” (see §1) is proved.
+
+QUASITRIANGULAR QUASI-HOPF ALGEBRAS 851
+
+Proposition 5.4. The set Mi (k) = {g € M,(k) | o(-A, —B) = 9(A, B)} is
+nonempty. It is acted on by the group GT*(k) = {(4, f) € GT(k) | f(x, ¥4)
+= f(X, ¥)}, and the action on Mj (k) by the subgroup GT*(k) N GT, (k) is
+free and transitive.
+
+Proor. M/'(k) is the set of o-invariant elements of M,(k), where a €
+GT(k) is the involution corresponding to 4 = —-1, f = 1. Since (5.8) has a
+g-invariant splitting, we have My (k) #@. The rest is obvious. @
+
+REMARK. 9,7(—A, —B) # Qxz(A, B) (see (2.15), (2.17), or (2.18)).
+
+The above proof of Proposition 5.3 is nonconstructive. Our next objective is
+to prove Proposition 5.8, which will show that constructing elements of A4,(k)
+by successive approximations presents no problems. For this we introduce the
+following modification GRT(k) of the group GT(k). We denote by GRT,(k)
+the set of all g € Fr,(A, B) such that
+
+g(B, A)=8(A, B)', (5.12)
+g(C, A)g(B, C)g(A, B)=1 ford+B+C=0, (5.13)
+
+A+ 9(A, B)'Bg(A, B)+8(A, C)'Cg(4, C) =0
+
+(5.14)
+forA+B+C=0,
+
+ex”, x3 4 xo x3 4 x8, x4
+= (x2, xy ex2 4 x3, x4 4 xox? x73), (5.15)
+
+where the X“/ satisfy (5.1). GRT,(k) is a group with the operation
+(8, ° &)(A, B) = 8;(8,(4, B)Ag,(A, B)', B)-8,(A, B). (5.16)
+
+On GRT, (k) there is an action of k”, given by (A, B) = g(c!A,c'B), ce
+k* . The semidirect product of k*” and GRT,(k) we denote by GRT(k). The
+Lie algebra gvt,(k) of the group GRT,(k) consists of the series y € fr,(A, B)
+such that
+
+y(B, A)=—y(A, B), (5.17)
+
+wiC, A)+y(B,C)+W(A, B)=0 forA+B+C=0, (5.18)
+[B, w(A, B]+IC, w(A, C)]=0 for A+B+C=0, (5.19)
+
+wx, x3 4 x) 4 wx 4 x, x4)
+= W(X, x) 4 w(x? 4x8 x 4) 4 W(X", X”), (5.20)
+
+where the X” satisfy (5.1). A commutator (, ) in gtt,(k) is of the form
+(Wy > Yo) =[Yy> lt Dy (Wy) — Dy (YW) (5.21)
+where [y,, Y] is the commutator in fr,(4, B) and D, is the derivation of
+jt,(A, B) given by D,(A) = [y, A], D,(B) = 0. The algebra gtt,(k) is
+graded, and the Lie algebra gtt(k) of the group GRT(k) is the semidirect
+sum of the 1-dimensional algebra k and gtt,(k), where k acts on gtt,(k) as
+
+follows: 1 € k takes a homogeneous element w € gtt,(k) of degree n into
+—ny.

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2205.06874v2
-doc_title: "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg"
+doc_title: "State sum models with defects based on spherical fusion categories"
 section_id: sec-008-diagrams-for-2-categories
 section_title: "Diagrams for 2-categories"
 section_number: null
 pages: 12-13
 source_pdf: 2205.06874v2.pdf
 source_sha256: 9b41365160c17ab4
-doc_brief: "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg — We define a"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.991
-latex_coverage_ratio: 0.941
+latex_coverage_ratio: 1.0
+doc_brief: "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects."
 ---
 A {\bf 2-category diagram} for a 2-category $\mac$  is a direct generalisation of a diagram for a monoidal category. It is a PL stratification $\emptyset\subset X^0\subset X^1\subset X^2=[0,1]^2$ of  the unit square. Elements of $X^0$ are called {\bf vertices}, connected components of $X^1\setminus X^0$ {\bf lines} and connected components of $X^2\setminus X^1$ {\bf regions} of the diagram.  Lines may end at the top and bottom of the square only and all vertices are  in the interior. A diagram is called  {\bf progressive}, if its horizontal projection is regular, i.e.~its restriction to each line is a PL isomorphism onto the image. It is called {\bf generic}, if no two vertices are at the same height.  In pictures, we often omit the  unit square that borders  the diagram for better legibility.
 

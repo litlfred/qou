@@ -1,0 +1,76 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 171
+
+the e-plane joining ¢ = 0 with e = €p, and (b) the number of equal terms in log p1(€o), log p2(E0), ..., log p)(€o) such that
+Pr(Eo) = po, k = 1,..., Lis less than the maximum dimension of the elementary Jordan block corresponding to po, then
+the radius of convergence of the series 2;(€) = Mer EK Qe p verifying exp 92;(€) = Y;(e) is precisely r = |eo|. An analysis
+along the same line has been carried out in[77].
+
+When this criterion is applied to Example 1, it gives, as the radius of convergence of the Magnus series corresponding to
+Eq. (70) for a fixed t,
+
+00
+28) = Vek Qe, (79)
+k=1
+the value
+20
+r=|e| = —. 80
+lel= 3 (80)
+
+To get the actual convergence domain of the usual Magnus expansion we have to take ¢ = 1, and so, from (80), we get
+2m /(3t) = 1, or equivalently t = 27/3, i.e., the result achieved from the analysis of the exact solution.
+With respect to Example 2, one gets [31]
+
+is
+|e| = ———_.
+lal(t— 1)
+If we now fix ¢ = 1, the actual t-domain of convergence of the Magnus series is
+ca
+t=14+—.
+la|
+
+Observe that, when t = 2, we get |a| = z and thus the previous result is recovered: the Magnus series converges only for
+lal <z.
+
+It should also be mentioned that the case of a diagonal matrix A(t) is compatible with this alternative
+characterization [31].
+
+2.8. Magnus expansion and the BCH formula
+
+The Magnus expansion can also be used to explicitly obtain the terms of the series Z in
+Z = log(e™! e%2),
+X, and X2 being two non commuting indeterminate variables. As it is well known [41],
+
+00
+
+Z =X, +X + D> GAG, X2), (81)
+
+n=2
+where G,,(X1, X2) is a homogeneous Lie polynomial in X; and X2 of grade n; in other words, G, can be expressed in terms
+of X; and X2 by addition, multiplication by rational numbers and nested commutators. This result is often known as the
+Baker-Campbell-Hausdorff (BCH) theorem and proves to be very useful in various fields of mathematics (theory of linear
+differential equations [4], Lie group theory [78], numerical analysis [79]) and theoretical physics (perturbation theory,
+transformation theory, Quantum Mechanics and Statistical Mechanics [19,80,81]). In particular, in the theory of Lie groups,
+with this theorem one can explicitly write the operation of multiplication in a Lie group in canonical coordinates in terms
+of the Lie bracket operation in its algebra and also prove the existence of a local Lie group with a given Lie algebra [78].
+If X; and X2 are matrices and one considers the piecewise constant matrix-valued function
+
+_ fx. O<t<1
+AO = tk 1<t<2 (82)
+then the exact solution of (30) at t = 2 is Y(2) = e*! e*2. By computing Y(2) = e®) with recursion (51) one gets for the
+first terms
+2\(2) =X +X
+
+1
+
+22(2) = 7X1. Xa] (83)
+1 1
+
+23(2) = prince [X1, X2]] — pranch [X1, X2]]
+
+1
+24(2) = Pyne [X2, [Xo, Xi]]]-
+
+In general, each G,(X1, X2) is a linear combination of the commutators of the form [Vj, [V2,...,[Vn—1, Va]..-J] with
+Vi © {X1,X2} for 1 < i < n, the coefficients being universal rational constants. This is perhaps one of the reasons why
+the Magnus expansion is often referred to in the literature as the continuous analogue of the BCH formula. As a matter of
+fact, Magnus proposed a different method for obtaining the first terms in the series (40) based on (81) [4].

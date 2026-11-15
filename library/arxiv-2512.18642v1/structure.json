@@ -7,10 +7,11 @@
   "bytes": 468429,
   "pages": 20,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,18 +21,35 @@
    "stamp_date": "21 Dec 2025"
   },
   "doi": null,
-  "title": "A Hidden Quantum Markov model framework for",
-  "authors_raw": "Entanglement and Topological Order in the AKLT Chain",
+  "title": "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain",
+  "authors_raw": "Abdessatar Souissi",
   "title_lines": [
-   "A Hidden Quantum Markov model framework for"
+   "A Hidden Quantum Markov model framework for",
+   "Entanglement and Topological Order in the AKLT Chain"
   ],
-  "abstract": "This paper introduces a hidden quantum Markov models (HQMMs) framework to the Af- fleck\u2013Kennedy\u2013Lieb\u2013Tasaki (AKLT) state\u2014a cornerstone example of a symmetry-protected topological (SPT) phase. The model\u2019s observation system is the physical spin-1 chain, which emerges from a hidden spin-\u00bdlayer through well-defined quantum emission operation. We show that the underlying Markov dynamics caputure maximal entanglement through the use of significant channels relevant to the AKLT state. We also show that SPT order induces a covariance on the observation decoding channels. This establishes an additional bridge between the quantum Machine learning and many-body physics, with promising implication in topological order and quantum information. KeywordsAKLT, Hidden Markov Model, SPT Order, Quantum Theory, Entanglement",
+  "abstract": "This paper introduces a hidden quantum Markov models (HQMMs) framework to the Af- fleck–Kennedy–Lieb–Tasaki (AKLT) state—a cornerstone example of a symmetry-protected topological (SPT) phase. The model’s observation system is the physical spin-1 chain, which emerges from a hidden spin-½ layer through well-defined quantum emission operation. We show that the underlying Markov dynamics caputure maximal entanglement through the use of significant channels relevant to the AKLT state. We also show that SPT order induces a covariance on the observation decoding channels. This establishes an additional bridge between the quantum Machine learning and many-body physics, with promising implication in topological order and quantum information.",
   "docinfo": {
+   "Title": "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain",
    "Author": "Abdessatar Souissi; Amenallah Andolsi",
-   "Creator": "arXiv GenPDF (tex2pdf:57610bf)",
    "Producer": "pikepdf 8.15.1",
-   "Title": "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain"
-  }
+   "Creator": "arXiv GenPDF (tex2pdf:57610bf)"
+  },
+  "title_raw": "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain",
+   "heading": "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain",
+   "outline": "Introduction",
+   "text": "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "A Hidden Quantum Markov model framework for"
  },
  "toc": [
   {
@@ -39,60 +57,294 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Preliminaries",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Hidden Quantum Markov Models",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "The AKLT State and its SPT Order",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "HQMM Structure of the AKLT State",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "Entanglement Dynamics in Hidden Markov Channel",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "SPT order on the AKLT,s HQMMs",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 1,
    "title": "Conclusion",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Schematic diagram with eight qubits on the top row, grouped pairwise into singlet states (dashed ellipses), and projected downward into three spin-1 triplet nodes on the lower row",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1259,
+   "n_words": 168,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -100,8 +352,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 6750,
-   "n_words": 976
+   "n_chars": 6777,
+   "n_words": 1013,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-001-preliminaries",
@@ -110,8 +364,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 13,
+   "n_words": 1,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
    "id": "sec-002-hidden-quantum-markov-models",
@@ -120,8 +376,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 2459,
-   "n_words": 347
+   "n_chars": 2552,
+   "n_words": 416,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-003-the-aklt-state-and-its-spt-order",
@@ -130,8 +388,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 6379,
-   "n_words": 1015
+   "n_chars": 6533,
+   "n_words": 1140,
+   "label_start": "4",
+   "label_end": "6"
   },
   {
    "id": "sec-004-hqmm-structure-of-the-aklt-state",
@@ -140,8 +400,10 @@
    "level": 1,
    "page_start": 6,
    "page_end": 12,
-   "n_chars": 13735,
-   "n_words": 2234
+   "n_chars": 14106,
+   "n_words": 2587,
+   "label_start": "6",
+   "label_end": "12"
   },
   {
    "id": "sec-005-entanglement-dynamics-in-hidden-markov-channel",
@@ -150,8 +412,10 @@
    "level": 1,
    "page_start": 12,
    "page_end": 15,
-   "n_chars": 4804,
-   "n_words": 791
+   "n_chars": 4944,
+   "n_words": 914,
+   "label_start": "12",
+   "label_end": "15"
   },
   {
    "id": "sec-006-spt-order-on-the-aklts-hqmms",
@@ -160,8 +424,10 @@
    "level": 1,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 3852,
-   "n_words": 585
+   "n_chars": 3933,
+   "n_words": 645,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
    "id": "sec-007-conclusion",
@@ -170,16 +436,26 @@
    "level": 1,
    "page_start": 16,
    "page_end": 20,
-   "n_chars": 10792,
-   "n_words": 1532
+   "n_chars": 10780,
+   "n_words": 1529,
+   "label_start": "16",
+   "label_end": "20"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 8,
-  "sections": 8,
-  "chars_total": 48771,
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 9,
+  "chars_total": 50897,
+  "furniture_lines_stripped": 20,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "HQMM_associated_with_AKLT.tex",
@@ -192,24 +468,29 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.997,
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.5,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-002-hidden-quantum-markov-models",
      "title": "Hidden Quantum Markov Models",
      "prose_ratio": 0.984,
-     "coverage_ratio": 0.85,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -217,40 +498,40 @@
      "id": "sec-003-the-aklt-state-and-its-spt-order",
      "title": "The AKLT State and its SPT Order",
      "prose_ratio": 0.945,
-     "coverage_ratio": 0.899,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-hqmm-structure-of-the-aklt-state",
      "title": "HQMM Structure of the AKLT State",
-     "prose_ratio": 0.921,
-     "coverage_ratio": 0.995,
+     "prose_ratio": 0.898,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-entanglement-dynamics-in-hidden-markov-channel",
      "title": "Entanglement Dynamics in Hidden Markov Channel",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.969,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-006-spt-order-on-the-aklts-hqmms",
      "title": "SPT order on the AKLT,s HQMMs",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.989,
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-007-conclusion",
      "title": "Conclusion",
-     "prose_ratio": 0.962,
+     "prose_ratio": 0.969,
      "coverage_ratio": 0.365,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

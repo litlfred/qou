@@ -8,7 +8,7 @@
   "pages": 91,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:21Z",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -26,7 +26,7 @@
   "title_lines": [
    "MONOIDAL CATEGORIFICATION OF CLUSTER ALGEBRAS"
   ],
-  "abstract": "We prove that the quantum cluster algebra structure of a unipotent quantum coordinate ring Aq(n(w)), associated with a symmetric Kac-Moody algebra and its Weyl group element w, admits a monoidal categori\ufb01cation via the representa- tions of symmetric Khovanov-Lauda- Rouquier algebras. In order to achieve this goal, we give a formulation of monoidal categori\ufb01cations of quantum cluster algebras and provide a criterion for a monoidal category of \ufb01nite-dimensional graded R-modules to become a monoidal categori\ufb01cation, where R is a symmetric Khovanov-Lauda- Rouquier algebra. Roughly speaking, this criterion asserts that a quantum monoidal seed can be mutated successively in all the directions, once the \ufb01rst-step mutations are possible. Then, we show the existence of a quantum monoidal seed of Aq(n(w)) which admits the \ufb01rst-step mutations in all the directions. As a consequence, we prove the conjecture that any cluster monomial is a member of the upper global basis up to a power of q1/2. In the course of our investigation, we also give a proof of a conjecture of Leclerc on the product of upper global basis elements.",
+  "abstract": "We prove that the quantum cluster algebra structure of a unipotent quantum coordinate ring Aq(n(w)), associated with a symmetric Kac-Moody algebra and its Weyl group element w, admits a monoidal categoriﬁcation via the representa- tions of symmetric Khovanov-Lauda- Rouquier algebras. In order to achieve this goal, we give a formulation of monoidal categoriﬁcations of quantum cluster algebras and provide a criterion for a monoidal category of ﬁnite-dimensional graded R-modules to become a monoidal categoriﬁcation, where R is a symmetric Khovanov-Lauda- Rouquier algebra. Roughly speaking, this criterion asserts that a quantum monoidal seed can be mutated successively in all the directions, once the ﬁrst-step mutations are possible. Then, we show the existence of a quantum monoidal seed of Aq(n(w)) which admits the ﬁrst-step mutations in all the directions. As a consequence, we prove the conjecture that any cluster monomial is a member of the upper global basis up to a power of q1/2. In the course of our investigation, we also give a proof of a conjecture of Leclerc on the product of upper global basis elements.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref package",
@@ -105,18 +105,6 @@
    "evidence": [
     "latex",
     "body"
-   ],
-   "page_label": "12"
-  },
-  {
-   "level": 1,
-   "title": "and R-matrices",
-   "page": 12,
-   "source": "inferred",
-   "number": "2",
-   "confidence": 0.5,
-   "evidence": [
-    "latex"
    ],
    "page_label": "12"
   },
@@ -1278,8 +1266,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 3591,
-   "n_words": 548,
+   "n_chars": 3589,
+   "n_words": 547,
    "label_start": null,
    "label_end": "3"
   },
@@ -1289,26 +1277,14 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 3,
-   "page_end": 8,
-   "n_chars": 15676,
-   "n_words": 2692,
-   "label_start": "3",
-   "label_end": null
-  },
-  {
-   "id": "sec-001-11-quantum-groups",
-   "number": "1.1",
-   "title": "Quantum groups",
-   "level": 2,
-   "page_start": 8,
    "page_end": 9,
-   "n_chars": 2272,
-   "n_words": 375,
-   "label_start": null,
+   "n_chars": 18047,
+   "n_words": 3080,
+   "label_start": "3",
    "label_end": "9"
   },
   {
-   "id": "sec-002-1-quantum-groups-and-global-bases",
+   "id": "sec-001-1-quantum-groups-and-global-bases",
    "number": "1",
    "title": "Quantum groups and global bases",
    "level": 1,
@@ -1320,7 +1296,7 @@
    "label_end": "11"
   },
   {
-   "id": "sec-003-12-integrable-representations",
+   "id": "sec-002-12-integrable-representations",
    "number": "1.2",
    "title": "Integrable representations",
    "level": 2,
@@ -1332,7 +1308,7 @@
    "label_end": "12"
   },
   {
-   "id": "sec-004-13-crystal-bases-and-global-bases",
+   "id": "sec-003-13-crystal-bases-and-global-bases",
    "number": "1.3",
    "title": "Crystal bases and global bases",
    "level": 2,
@@ -1344,7 +1320,7 @@
    "label_end": "18"
   },
   {
-   "id": "sec-005-22-r-matrices-for",
+   "id": "sec-004-22-r-matrices-for",
    "number": "2.2",
    "title": "R-matrices for",
    "level": 2,
@@ -1356,7 +1332,7 @@
    "label_end": "20"
   },
   {
-   "id": "sec-006-3-simplicity-of-heads-and-socles-of-convolution",
+   "id": "sec-005-3-simplicity-of-heads-and-socles-of-convolution",
    "number": "3",
    "title": "Simplicity of heads and socles of convolution products",
    "level": 1,
@@ -1368,19 +1344,43 @@
    "label_end": "20"
   },
   {
-   "id": "sec-007-31-homogeneous-degrees-of-r-matrices",
+   "id": "sec-006-31-homogeneous-degrees-of-r-matrices",
    "number": "3.1",
    "title": "Homogeneous degrees of R-matrices",
    "level": 2,
    "page_start": 20,
-   "page_end": 35,
-   "n_chars": 22052,
-   "n_words": 4597,
+   "page_end": 22,
+   "n_chars": 2380,
+   "n_words": 476,
    "label_start": "20",
+   "label_end": null
+  },
+  {
+   "id": "sec-007-32-properties-of-tlmn-and-demn",
+   "number": "3.2",
+   "title": "Properties of $\\tL(M,N)$ and $\\de(M,N)$",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 31,
+   "n_chars": 14970,
+   "n_words": 3141,
+   "label_start": null,
+   "label_end": "31"
+  },
+  {
+   "id": "sec-008-4-leclercs-conjecture",
+   "number": "4",
+   "title": "Leclerc's conjecture",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 35,
+   "n_chars": 4635,
+   "n_words": 969,
+   "label_start": "31",
    "label_end": "35"
   },
   {
-   "id": "sec-008-42-geometric-results",
+   "id": "sec-009-42-geometric-results",
    "number": "4.2",
    "title": "Geometric results",
    "level": 2,
@@ -1392,7 +1392,7 @@
    "label_end": null
   },
   {
-   "id": "sec-009-43-proof-of-theorem",
+   "id": "sec-010-43-proof-of-theorem",
    "number": "4.3",
    "title": "Proof of Theorem",
    "level": 2,
@@ -1404,7 +1404,7 @@
    "label_end": "37"
   },
   {
-   "id": "sec-010-5-quantum-cluster-algebras",
+   "id": "sec-011-5-quantum-cluster-algebras",
    "number": "5",
    "title": "Quantum cluster algebras",
    "level": 1,
@@ -1416,27 +1416,15 @@
    "label_end": "38"
   },
   {
-   "id": "sec-011-51-quantum-seeds",
+   "id": "sec-012-51-quantum-seeds",
    "number": "5.1",
    "title": "Quantum seeds",
    "level": 2,
    "page_start": 38,
    "page_end": 39,
-   "n_chars": 1816,
-   "n_words": 368,
+   "n_chars": 2412,
+   "n_words": 478,
    "label_start": "38",
-   "label_end": null
-  },
-  {
-   "id": "sec-012-6-monoidal-categorification-of-cluster-algebras",
-   "number": "6",
-   "title": "Monoidal categorification of cluster algebras",
-   "level": 1,
-   "page_start": 39,
-   "page_end": 39,
-   "n_chars": 549,
-   "n_words": 105,
-   "label_start": null,
    "label_end": null
   },
   {
@@ -1446,25 +1434,49 @@
    "level": 2,
    "page_start": 39,
    "page_end": 40,
-   "n_chars": 2439,
-   "n_words": 539,
+   "n_chars": 1798,
+   "n_words": 419,
    "label_start": null,
    "label_end": "40"
   },
   {
-   "id": "sec-014-61-ungraded-cases",
+   "id": "sec-014-6-monoidal-categorification-of-cluster-algebras",
+   "number": "6",
+   "title": "Monoidal categorification of cluster algebras",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 40,
+   "n_chars": 591,
+   "n_words": 114,
+   "label_start": "40",
+   "label_end": "40"
+  },
+  {
+   "id": "sec-015-61-ungraded-cases",
    "number": "6.1",
    "title": "Ungraded cases",
    "level": 2,
    "page_start": 40,
-   "page_end": 45,
-   "n_chars": 7723,
-   "n_words": 1645,
+   "page_end": 41,
+   "n_chars": 1698,
+   "n_words": 333,
    "label_start": "40",
+   "label_end": "41"
+  },
+  {
+   "id": "sec-016-62-graded-cases",
+   "number": "6.2",
+   "title": "Graded cases",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 45,
+   "n_chars": 5940,
+   "n_words": 1297,
+   "label_start": "41",
    "label_end": "45"
   },
   {
-   "id": "sec-015-7-monoidal-categorification-via-modules-over-klr",
+   "id": "sec-017-7-monoidal-categorification-via-modules-over-klr",
    "number": "7",
    "title": "Monoidal categorification via modules over KLR algebras",
    "level": 1,
@@ -1476,7 +1488,7 @@
    "label_end": "45"
   },
   {
-   "id": "sec-016-71-admissible-pair",
+   "id": "sec-018-71-admissible-pair",
    "number": "7.1",
    "title": "Admissible pair",
    "level": 2,
@@ -1488,7 +1500,7 @@
    "label_end": "54"
   },
   {
-   "id": "sec-017-8-quantum-coordinate-rings-and-modified-quantize",
+   "id": "sec-019-8-quantum-coordinate-rings-and-modified-quantize",
    "number": "8",
    "title": "Quantum coordinate rings and modified quantized enveloping algebras",
    "level": 1,
@@ -1500,19 +1512,31 @@
    "label_end": "58"
   },
   {
-   "id": "sec-018-82-unipotent-quantum-coordinate-ring",
+   "id": "sec-020-82-unipotent-quantum-coordinate-ring",
    "number": "8.2",
    "title": "Unipotent quantum coordinate ring",
    "level": 2,
    "page_start": 58,
-   "page_end": 66,
-   "n_chars": 12753,
-   "n_words": 2418,
+   "page_end": 60,
+   "n_chars": 3214,
+   "n_words": 605,
    "label_start": "58",
+   "label_end": "60"
+  },
+  {
+   "id": "sec-021-83-modified-quantum-enveloping-algebra",
+   "number": "8.3",
+   "title": "Modified quantum enveloping algebra",
+   "level": 2,
+   "page_start": 60,
+   "page_end": 66,
+   "n_chars": 9463,
+   "n_words": 1802,
+   "label_start": "60",
    "label_end": "66"
   },
   {
-   "id": "sec-019-9-quantum-minors-and-t-systems",
+   "id": "sec-022-9-quantum-minors-and-t-systems",
    "number": "9",
    "title": "Quantum minors and T-systems",
    "level": 1,
@@ -1524,7 +1548,7 @@
    "label_end": "70"
   },
   {
-   "id": "sec-020-92-t-system",
+   "id": "sec-023-92-t-system",
    "number": "9.2",
    "title": "T-system",
    "level": 2,
@@ -1536,7 +1560,7 @@
    "label_end": "70"
   },
   {
-   "id": "sec-021-93-revisit-of-crystal-bases-and-global-bases",
+   "id": "sec-024-93-revisit-of-crystal-bases-and-global-bases",
    "number": "9.3",
    "title": "Revisit of crystal bases and global bases",
    "level": 2,
@@ -1548,7 +1572,7 @@
    "label_end": "74"
   },
   {
-   "id": "sec-022-94-generalized-t-system",
+   "id": "sec-025-94-generalized-t-system",
    "number": "9.4",
    "title": "Generalized T-system",
    "level": 2,
@@ -1560,7 +1584,7 @@
    "label_end": "75"
   },
   {
-   "id": "sec-023-10-klr-algebras-and-their-modules",
+   "id": "sec-026-10-klr-algebras-and-their-modules",
    "number": "10",
    "title": "KLR algebras and their modules",
    "level": 1,
@@ -1572,7 +1596,7 @@
    "label_end": "75"
   },
   {
-   "id": "sec-024-101-chevalley-and-kashiwara-operators",
+   "id": "sec-027-101-chevalley-and-kashiwara-operators",
    "number": "10.1",
    "title": "Chevalley and Kashiwara operators",
    "level": 2,
@@ -1584,7 +1608,7 @@
    "label_end": "80"
   },
   {
-   "id": "sec-025-102-determinantial-modules-and-t-system",
+   "id": "sec-028-102-determinantial-modules-and-t-system",
    "number": "10.2",
    "title": "Determinantial modules and T-system",
    "level": 2,
@@ -1596,25 +1620,61 @@
    "label_end": "81"
   },
   {
-   "id": "sec-026-103-generalized-t-system-on-determinantial-modul",
+   "id": "sec-029-103-generalized-t-system-on-determinantial-modul",
    "number": "10.3",
    "title": "Generalized T-system on determinantial module",
    "level": 2,
    "page_start": 81,
-   "page_end": 91,
-   "n_chars": 18643,
-   "n_words": 3507,
+   "page_end": 84,
+   "n_chars": 3989,
+   "n_words": 856,
    "label_start": "81",
+   "label_end": "84"
+  },
+  {
+   "id": "sec-030-11-monoidal-categorification-of-a-qmathfraknw",
+   "number": "11",
+   "title": "Monoidal categorification of $A_q(\\mathfrak{n}(w))$",
+   "level": 1,
+   "page_start": 84,
+   "page_end": 84,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "84",
+   "label_end": "84"
+  },
+  {
+   "id": "sec-031-111-quantum-cluster-algebra-structure-on-a-qmath",
+   "number": "11.1",
+   "title": "Quantum cluster algebra structure on $A_q(\\mathfrak{n}(w))$",
+   "level": 2,
+   "page_start": 84,
+   "page_end": 85,
+   "n_chars": 2819,
+   "n_words": 594,
+   "label_start": "84",
+   "label_end": "85"
+  },
+  {
+   "id": "sec-032-112-admissible-seeds-in-the-monoidal-category-sh",
+   "number": "11.2",
+   "title": "Admissible seeds in the monoidal category $\\shc_w$",
+   "level": 2,
+   "page_start": 85,
+   "page_end": 91,
+   "n_chars": 11640,
+   "n_words": 2026,
+   "label_start": "85",
    "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 41,
+  "toc_entries": 40,
   "toc_inferred_entries": 41,
   "toc_inferred_mean_confidence": 0.939,
-  "toc_inferred_empty_share": 0.074,
+  "toc_inferred_empty_share": 0.091,
   "toc_inferred_method": "latex",
   "figure_entries": 0,
   "figure_sequence_gaps": [],
@@ -1639,13 +1699,22 @@
     "items": []
    }
   },
-  "sections": 28,
-  "chars_total": 155167,
+  "sections": 34,
+  "chars_total": 154838,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": "and R-matrices",
+    "page": 12,
+    "action": "dropped",
+    "why": "opens in lower case"
+   }
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 42,
-   "overlaid": 20,
+   "overlaid": 27,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1660,26 +1729,21 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.883,
-     "coverage_ratio": 0.991,
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-001-11-quantum-groups",
-     "title": "Quantum groups",
-     "prose_ratio": 0.221,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-002-1-quantum-groups-and-global-bases",
+     "id": "sec-001-1-quantum-groups-and-global-bases",
      "title": "Quantum groups and global bases",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.157,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.843,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-003-12-integrable-representations",
+     "id": "sec-002-12-integrable-representations",
      "title": "Integrable representations",
      "prose_ratio": 0.984,
      "coverage_ratio": 0.942,
@@ -1687,7 +1751,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-004-13-crystal-bases-and-global-bases",
+     "id": "sec-003-13-crystal-bases-and-global-bases",
      "title": "Crystal bases and global bases",
      "prose_ratio": 0.956,
      "coverage_ratio": 0.94,
@@ -1695,7 +1759,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-005-22-r-matrices-for",
+     "id": "sec-004-22-r-matrices-for",
      "title": "R-matrices for",
      "prose_ratio": 0.958,
      "coverage_ratio": 0.921,
@@ -1703,7 +1767,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-006-3-simplicity-of-heads-and-socles-of-convolution",
+     "id": "sec-005-3-simplicity-of-heads-and-socles-of-convolution",
      "title": "Simplicity of heads and socles of convolution products",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -1711,26 +1775,42 @@
      "converter": "latex"
     },
     {
-     "id": "sec-007-31-homogeneous-degrees-of-r-matrices",
+     "id": "sec-006-31-homogeneous-degrees-of-r-matrices",
      "title": "Homogeneous degrees of R-matrices",
-     "prose_ratio": 0.94,
-     "coverage_ratio": 0.952,
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.873,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-008-42-geometric-results",
-     "title": "Geometric results",
-     "prose_ratio": 0.466,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-007-32-properties-of-tlmn-and-demn",
+     "title": "Properties of $\\tL(M,N)$ and $\\de(M,N)$",
+     "prose_ratio": 0.936,
+     "coverage_ratio": 0.941,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-009-43-proof-of-theorem",
+     "id": "sec-008-4-leclercs-conjecture",
+     "title": "Leclerc's conjecture",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.935,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-42-geometric-results",
+     "title": "Geometric results",
+     "prose_ratio": 0.466,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-43-proof-of-theorem",
      "title": "Proof of Theorem",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-010-5-quantum-cluster-algebras",
+     "id": "sec-011-5-quantum-cluster-algebras",
      "title": "Quantum cluster algebras",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.833,
@@ -1738,43 +1818,53 @@
      "converter": "latex"
     },
     {
-     "id": "sec-011-51-quantum-seeds",
+     "id": "sec-012-51-quantum-seeds",
      "title": "Quantum seeds",
-     "prose_ratio": 0.795,
-     "coverage_ratio": 0.889,
+     "prose_ratio": 0.936,
+     "coverage_ratio": 0.862,
      "result": "overlaid",
      "converter": "latex"
-    },
-    {
-     "id": "sec-012-6-monoidal-categorification-of-cluster-algebras",
-     "title": "Monoidal categorification of cluster algebras",
-     "prose_ratio": 0.1,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-013-52-mutation",
      "title": "Mutation",
      "prose_ratio": 0.978,
-     "coverage_ratio": 0.577,
+     "coverage_ratio": 0.938,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-014-61-ungraded-cases",
+     "id": "sec-014-6-monoidal-categorification-of-cluster-algebras",
+     "title": "Monoidal categorification of cluster algebras",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-61-ungraded-cases",
      "title": "Ungraded cases",
-     "prose_ratio": 0.97,
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-62-graded-cases",
+     "title": "Graded cases",
+     "prose_ratio": 0.945,
      "coverage_ratio": 0.904,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-015-7-monoidal-categorification-via-modules-over-klr",
+     "id": "sec-017-7-monoidal-categorification-via-modules-over-klr",
      "title": "Monoidal categorification via modules over KLR algebras",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-016-71-admissible-pair",
+     "id": "sec-018-71-admissible-pair",
      "title": "Admissible pair",
      "prose_ratio": 0.887,
      "coverage_ratio": 0.957,
@@ -1782,7 +1872,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-017-8-quantum-coordinate-rings-and-modified-quantize",
+     "id": "sec-019-8-quantum-coordinate-rings-and-modified-quantize",
      "title": "Quantum coordinate rings and modified quantized enveloping algebras",
      "prose_ratio": 0.953,
      "coverage_ratio": 0.902,
@@ -1790,15 +1880,23 @@
      "converter": "latex"
     },
     {
-     "id": "sec-018-82-unipotent-quantum-coordinate-ring",
+     "id": "sec-020-82-unipotent-quantum-coordinate-ring",
      "title": "Unipotent quantum coordinate ring",
-     "prose_ratio": 0.939,
-     "coverage_ratio": 0.944,
+     "prose_ratio": 0.932,
+     "coverage_ratio": 0.92,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-019-9-quantum-minors-and-t-systems",
+     "id": "sec-021-83-modified-quantum-enveloping-algebra",
+     "title": "Modified quantum enveloping algebra",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.928,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-022-9-quantum-minors-and-t-systems",
      "title": "Quantum minors and T-systems",
      "prose_ratio": 0.884,
      "coverage_ratio": 0.917,
@@ -1806,7 +1904,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-020-92-t-system",
+     "id": "sec-023-92-t-system",
      "title": "T-system",
      "prose_ratio": 0.8,
      "coverage_ratio": 1.0,
@@ -1814,7 +1912,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-021-93-revisit-of-crystal-bases-and-global-bases",
+     "id": "sec-024-93-revisit-of-crystal-bases-and-global-bases",
      "title": "Revisit of crystal bases and global bases",
      "prose_ratio": 0.902,
      "coverage_ratio": 0.915,
@@ -1822,7 +1920,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-022-94-generalized-t-system",
+     "id": "sec-025-94-generalized-t-system",
      "title": "Generalized T-system",
      "prose_ratio": 0.91,
      "coverage_ratio": 0.939,
@@ -1830,13 +1928,13 @@
      "converter": "latex"
     },
     {
-     "id": "sec-023-10-klr-algebras-and-their-modules",
+     "id": "sec-026-10-klr-algebras-and-their-modules",
      "title": "KLR algebras and their modules",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-024-101-chevalley-and-kashiwara-operators",
+     "id": "sec-027-101-chevalley-and-kashiwara-operators",
      "title": "Chevalley and Kashiwara operators",
      "prose_ratio": 0.951,
      "coverage_ratio": 0.927,
@@ -1844,7 +1942,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-025-102-determinantial-modules-and-t-system",
+     "id": "sec-028-102-determinantial-modules-and-t-system",
      "title": "Determinantial modules and T-system",
      "prose_ratio": 0.825,
      "coverage_ratio": 0.957,
@@ -1852,12 +1950,33 @@
      "converter": "latex"
     },
     {
-     "id": "sec-026-103-generalized-t-system-on-determinantial-modul",
+     "id": "sec-029-103-generalized-t-system-on-determinantial-modul",
      "title": "Generalized T-system on determinantial module",
-     "prose_ratio": 0.931,
-     "coverage_ratio": 0.584,
+     "prose_ratio": 0.857,
+     "coverage_ratio": 0.885,
      "result": "overlaid",
      "converter": "latex"
+    },
+    {
+     "id": "sec-030-11-monoidal-categorification-of-a-qmathfraknw",
+     "title": "Monoidal categorification of $A_q(\\mathfrak{n}(w))$",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-031-111-quantum-cluster-algebra-structure-on-a-qmath",
+     "title": "Quantum cluster algebra structure on $A_q(\\mathfrak{n}(w))$",
+     "prose_ratio": 0.893,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-032-112-admissible-seeds-in-the-monoidal-category-sh",
+     "title": "Admissible seeds in the monoidal category $\\shc_w$",
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.481,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

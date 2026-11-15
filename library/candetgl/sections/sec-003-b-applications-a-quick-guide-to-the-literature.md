@@ -8,6 +8,7 @@ pages: 4-5
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
 toc_source: inferred
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 27 sections: Front matter; INTRODUCTION; PRELIMINARIES"
 ---
 For a glance at the prehistory of the writhing number, see Gauss’s half-page note7 ~1833! on
 an integral formula for the linking number of two disjoint closed curves in 3-space. Rewrite his
@@ -40,8 +41,6 @@ Giga.34
 878
 J. Math. Phys., Vol. 42, No. 2, February 2001
 Cantarella, DeTurck, and Gluck
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 For the connection between this spectral theory and plasma physics, see Yoshida.35
 For a study of magnetic ﬁeld generation in electrically conducting ﬂuids, see the book by
 Moffatt.36

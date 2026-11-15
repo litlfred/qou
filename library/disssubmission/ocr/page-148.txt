@@ -1,0 +1,52 @@
+140 Chapter 6 — The generic rank of Brill-Noether sheaves
+
+cohomology unless otherwise stated, so we put H*(—) = H*(—,Q). Fixing
+a point p € C(C) we have embeddings {p} CGC) 4 ---GCy_-1 0 Ca
+given by addition of p. Via the last embedding, let
+
+x = [Ca-1] € H? (Cy)
+
+be the fundamental class of Cy_;. Since the cup product in cohomology
+corresponds to the intersection of cycles, we have x” = [Cy_a] in H7“(Cy)
+for a= 1,...,d. We also put
+
+6 = hi [©] € H?(Cu)
+
+where [@] € H?(X) denotes the class of a theta divisor @ C X. Since [0]
+is a principal polarization, the integral cohomology H!(X,Z) C H!(X,Q)
+admits a symplectic basis A),...,Ag, i.e. a basis such that using the cup
+product on H*(X) we have
+
+&
+= V de Agi-
+i=1
+
+Note that the construction of Jacobian varieties and the Kiinneth theorem
+provide natural isomorphisms H!(X) & H!(C) ~ H!(Cq). So in the sequel
+we will not distinguish notationally between the classes A),..., lag € H!(X)
+and their images inside H!(C) or H! (Cy).
+
+For any complex variety Z we denote by deg; : H?4im(Z)(Z) —+ Q
+the degree isomorphism given by evaluation on the fundamental homology
+class of Z. For example, the classes
+
+Ni = Aj Acs for l<i<g
+
+satisfy degy(11--- Ne) = degy ([O]8/g!) = 1 by the Poincaré formula. In
+what follows it will be convenient to use the shorthand notation
+
+m= Ni Nic
+for subsets J = {ij,...,i¢} C {1,...,g} of cardinality |J| = c, noting that
+
+the ordering of the factors does not matter for nN; since the cup product is
+commutative in even degrees.
+
+LEMMA 6.4. Let a,b,c € No with a+b+c=d, and let n € H**(Cy)
+
+be a monomial in the classes \y,...,A2g. Then
+8°) -b! ifn = nr for some I,
+di 4.95.) = (%') , ,
+“8c (¥ ”) { 0 otherwise.
+Proof. Since H'(Cq) & H'(X), any monomial in A1,...,A2g € H!(Cq)
+
+can be written as the pull-back 7 = h%() of some cohomology class [

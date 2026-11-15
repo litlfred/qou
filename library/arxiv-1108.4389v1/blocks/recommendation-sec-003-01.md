@@ -1,0 +1,1 @@
+In order for the hyperbolic metric on $M$ resulting from such a gluing to be smooth, one must impose that the total dihedral angle around every internal edge of the triangulation is $2\pi$, and that the hyperbolic torsion vanishes.

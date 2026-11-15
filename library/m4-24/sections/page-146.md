@@ -1,0 +1,53 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-146
+section_title: "Page 146"
+section_number: null
+pages: 146-146
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+518 T. Ohtsuki (Editor)
+
+called a finite type invariant of F?*-degree d (resp. F>-degree d, or FX -degree
+d) if v vanishes on Fi§ (RM) (resp. FP, (RM), or F7,,(RM)). It is known
+[141] that
+3d(QM) = F34_1(QM) = F57_2(QM)
+and that there is an isomorphism
+AO; Q) — FR5(QM)/F5i43(OM)
+between vector spaces [141, 244]. It is known [137] that
+Fi(ZM) > Fya(ZM), ga(ZM) > F3y(ZM),
+Fga(RM) = F2 (RM) = F24(RM),
+Fya—1(RM) = F2q(RM)
+if 1/2ER.
+
+10.2.1 Torsion and finite type invariants
+
+Conjecture 10.7 F38(ZM)/Fi ,(ZM) (resp. F?(ZM)/FP, ,(ZM)) is torsion
+free for each d.
+
+Remark (K. Habiro) The group F/(ZM)/F{,,(ZM) has 2-torsion for each
+d>0.
+
+Conjecture 10.8 A(@;Z) is torsion free.
+10.2.2 Do finite type invariants distinguish homology 3-spheres?
+
+Conjecture 10.9 Finite type invariants distinguish integral homology
+3-spheres. (See Conjecture 11.2.)
+
+10.2.3 Dimensions of spaces of finite type invariants
+
+A finite type invariant v is called primitive if v(M,#M2) = v(M,) + v(M2) for
+any integral homology 3-spheres M, and M2. We denote by A(0;R)conn the
+submodule of A(@;R) spanned by Jacobi diagrams with connected trivalent
+graphs. As a graded vector space A(@;Q) is isomorphic to the symmetric
+tensor algebra of A(0;Q)conn-
+
+Problem 10.10 Determine the dimension of the space of primitive finite type
+invariants of integral homology 3-spheres of each degree d. Equivalently, deter-
+mine the dimension of the space A(0;Q)®, for each d.
+
+Geometry & Topology Monographs, Volume 4 (2002)

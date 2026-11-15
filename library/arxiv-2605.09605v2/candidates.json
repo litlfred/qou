@@ -1,0 +1,61 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2605.09605v2",
+ "source": {
+  "structure_sha256": "24496fb444a2b5587e28d86f6190c592c54d705939aab80dcc6c415ccacf9f38",
+  "file": "2605.09605v2.pdf"
+ },
+ "provenance": {
+  "title": "Cocycle Actions on Hidden Quantum Markov Models: Symmetry Protection and Topological Order",
+  "authors": "Abdessatar Souissi",
+  "arxiv": {
+   "id": "2605.09605",
+   "version": "2",
+   "primary_class": "math-ph",
+   "stamp_date": "26 May 2026"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "recommendation": 2
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "This holds automatically only when $\\omega$ is a coboundary or $G$ has special properties; otherwise, the equivariance must be twisted.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-cocycle-actions-and-symmetry-protection-in-hqmms.md",
+   "section_title": "Cocycle Actions and Symmetry Protection in HQMMs",
+   "pages": "3-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In the generic case where $[\\omega]$ has order greater than $1$, this condition forces a refinement of the equivariance structure, typically implemented by a $2$-cocycle on the map itself, leading to the notion of *twisted equivariance* that we shall explore in subsequent sections.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-cocycle-actions-and-symmetry-protection-in-hqmms.md",
+   "section_title": "Cocycle Actions and Symmetry Protection in HQMMs",
+   "pages": "3-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

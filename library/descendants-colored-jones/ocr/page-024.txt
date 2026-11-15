@@ -1,0 +1,42 @@
+2330 Stavros Garoufalidis and Rinat Kashaev
+
+The above is a sum over (Z/NZ)’ and it is not clear how to simplify
+to sum in fewer variables. Numerical calculations suggest that (K) yn is a
+multiple of the identity matrix.
+
+3.5. A conjecture
+
+When n = —1, Equation (43) implies that the invariant of a long knot K is a
+multiple of the identity N x N matrix, and the multiple is the specialization
+of the N-colored Jones polynomial that enters the Volume Conjecture [Kas95,
+Kas97]. When n € Z/NZ is arbitrary, we conjecture the following.
+
+Conjecture 3.2. For all knots K, strictly positive integers N and n, and a
+primitive N-th root of unity ¢, we have
+
+(62) (Ky nn = IK (Q)Ly
+where 1y denotes the identity N x N matrix.
+
+In particular, (A) v9 = 1y is a trivial invariant coming from a nontrivial
+r-matrix over an N-dimensional vector space.
+
+Acknowledgements
+
+The authors wish to thank Jie Gu, Marcos Mariio, Campbell Wheeler and
+Don Zagier for many enlightening conversations, and the International Math
+Center in SUSTech and the University of Geneva for their hospitality.
+
+R. K. wishes to thank Jerome Dubois, Michael Heusener, Martin Palmer,
+Cristina Palmer-Anghel and Louis-Hadrien Robert for useful conversations.
+The work of R. K. is partially supported by the Swiss National Science Foun-
+dation research program NCCR The Mathematics of Physics (SwissMAP),
+the ERC Synergy grant Recursive and Exact New Quantum Theory (Re-
+New Quantum), by the Swiss National Science Foundation, the subsidies
+no 200020192081 and no 200020_ 200400, and the Russian Science Foun-
+dation, the subsidy no 21-41-00018.
+
+References
+[ADO92] YAsunIRO AkuTsU, TETSUO DEGUCHI, and TOMOTADA OHT-
+
+SUKI, Invariants of colored links, J. Knot Theory Ramifications 1
+(1992), no. 2, 161-184. MR1164114

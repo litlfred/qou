@@ -8,6 +8,7 @@ pages: 32-34
 source_pdf: 0406276v1.pdf
 source_sha256: 8fdf4b5950e8b5f5
 toc_source: inferred
+doc_brief: "The GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE — 16 sections: Front matter; Linking integrals in S3 and H3 .; Historical background."
 ---
 Let  Ω  be a compact, smoothly bounded subdomain of  R3 ,  S3  or  H3 ,  and  V  a 
 smooth vector field defined on  Ω .  Thinking of  V as a current flow, its magnetic 
@@ -46,7 +47,6 @@ product
  
 and associated energy  < V , V >  and norm  |V|  =  < V , V > 1/2  . 
  
-33
 We seek a bound for the energy or norm of the output magnetic field  BS(V)  on  Ω  in 
 terms of that of the input current flow  V .  Or to put it another way, we seek an 
 upper bound for the L2 operator norm of the Biot-Savart operator,  
@@ -88,6 +88,4 @@ cube root of the volume  (4/3)πR3  of  Ω .
 grows like the square root of the volume  2π(sinh R  cosh R  —  R)  of  Ω . 
  
 ∙  In  S3 ,  the overestimate  N(π)  =  4/π  for the norm of  BS  on the entire 3-sphere 
-can be compared with the known exact value,  |BS|  =  1/2 . 
- 
-34
+can be compared with the known exact value,  |BS|  =  1/2 .

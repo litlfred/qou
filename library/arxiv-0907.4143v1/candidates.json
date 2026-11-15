@@ -1,0 +1,61 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0907.4143v1",
+ "source": {
+  "structure_sha256": "a2090d1e574b27dbd479637a4057c31e4a46e23696fbb431c9a30d31e5db87dd",
+  "file": "0907.4143v1.pdf"
+ },
+ "provenance": {
+  "title": "Soft and Supersoft X-ray Sources in Symbiotic Stars 1",
+  "authors": "Chunhua Zhua,b, Guoliang L\u00fcb, Zhaojun Wanga,b and",
+  "arxiv": {
+   "id": "0907.4143",
+   "version": "1",
+   "primary_class": "astro-ph.SR",
+   "stamp_date": "23 Jul 2009"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "recommendation": 2
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "One should note that $t_{\\rm 3bol}$ and $t_{\\rm ml}$ are only a zero-order approximation.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-003-x-ray-sources.md",
+   "section_title": "X-ray sources",
+   "pages": "4-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "On comparing our results with observations, one should note that the number of X-ray sources depends greatly on the lifetime of the thermonuclear runaways as X-ray sources.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-006-population-of-x-ray-sources.md",
+   "section_title": "Population of X-ray sources",
+   "pages": "6-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

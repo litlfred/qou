@@ -1,0 +1,1 @@
+Moreover one could easily imagine various small perturbations of the statement of Problem \ref{dtsect}, and it will require further work to decide for sure exactly what the correct conditions should be.

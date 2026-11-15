@@ -8,6 +8,7 @@ pages: 28-30
 source_pdf: 0406276v1.pdf
 source_sha256: 8fdf4b5950e8b5f5
 toc_source: inferred
+doc_brief: "The GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE — 16 sections: Front matter; Linking integrals in S3 and H3 .; Historical background."
 ---
 In spirit, our proof of Theorem 5 for ribbons in  S3  and  H3  follows Calugareanu's 
 original proof in  R3 :  we begin with the linking integrals given in Theorem 1 for 
@@ -49,7 +50,6 @@ F0(s, t)  =  (1/(4π2)) dx/ds  ∙  Px(s)x(t)(dx/dt  ×  ∇x(t) ϕ(α(x(s), x(t
  
 where   ϕ(α)  =  (π  —  α) csc α . 
  
-29
 Then the linking number of  K  and  Kε  is given by 
  
                                          Lk(K, Kε)  =  ∫∫0 ≤ s,t ≤ L  Fε(s, t)  ds dt , 
@@ -91,6 +91,4 @@ Hence
 That is, the remaining portion of the linking integral converges to the entire 
 twisting integral.  In this way, we see that 
  
-Lk(K, Kε)  =  TwP(V)  +  WrP(K) . 
- 
-30
+Lk(K, Kε)  =  TwP(V)  +  WrP(K) .

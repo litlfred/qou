@@ -1,0 +1,33 @@
+1252 Francois Guéritaud and David Futer
+
+so o acts as a translation on B. Define B’ = B/o and A’ = A/o. Let t bea
+triangle of A’, eo an oriented edge of fo and xo an interior point of fo. The group of
+orientation-preserving similarities of the Euclidean plane C is C* x C.
+
+Definition 6.3 For a given (w;) in P, the holonomy function is the representation
+p: ™(B',x0) = C* x C
+
+defined as follows. Given an element a of 7)(B’, xo), view a as a cyclic sequence
+of triangles fo, t1,...,ts = to of A’, such that any two consecutive f;’s share an edge.
+Then, draw an oriented copy 79 of fo in the plane C, with angles specified by (w;), by
+making the image of the oriented edge €9 coincide with (0, 1). Sharing an edge with
+7, draw a copy 7 of f;, also with angles specified by (w;). Then draw a copy 72 of tp
+adjacent to 7), etc. By definition, p(a) is the orientation-preserving similarity mapping
+the copy of the oriented edge €9 in 7 to the copy of €9 in 7,. The reduced holonomy
+function y+ 7(B',xo) = C* is defined as the projection of p on the first factor.
+
+It is a simple exercise to check that p is well-defined, and is a representation (the
+concatenation rule being that a3 denotes the path a followed by the path 3). Note that
+w, having a commutative target, factors through a representation wy: H)(B’,Z) > C*.
+
+Sublemma 6.4 Let a be an element of H\(B’,Z) represented by a curve around
+a 4—-valent vertex of A’, and let 3 be represented by a curve that follows a “grey”
+(hinge) level in A’ (Figure 7). If (w;) is critical for the volume functional V, then
+wa) = W(B) = 1.
+
+Figure 7
+
+Proof We already know that 7(a), (3) belong to R°,, since the angle conditions (1)
+defining P impose oriented parallelism. It remains to prove that |¢(a)| = |w(3)| = 1.
+
+Geometry & Topology 10 (2006)

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-0001202v2
-doc_title: "arXiv:hep-th/0001202v2 29 Jan 2000"
+doc_title: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees"
 section_id: sec-008-54-natural-growth-by-appending-sums-of-forests
 section_title: "Natural growth by appending sums of forests"
 section_number: 5.4
@@ -10,7 +10,8 @@ source_sha256: b2e3e22ea3d51c0b
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.993
-latex_coverage_ratio: 0.936
+latex_coverage_ratio: 0.93
+doc_brief: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees — The renormalization of quantum ﬁeld theory twists the antipode of a non- cocommutative Hopf algebra"
 ---
 Let $F$ be a forest. We define $N_F(X)$ to be the sum of forests obtained by appending $F$ to every node of $X$, in turn. To append $F=\prod_j t_j$ to a particular node, one connects the roots of all the $t_j$ to that node. We note that $N_F$ obeys a Leibniz rule, with $N_F(e)=0$ and $N_F(l_1)=B_+(F)$. We have already encountered two examples, namely the grading operator $Y:=N_{e}$, which merely counts nodes, and the simplest natural growth operator $N:=N_{l_1}$, which appends a single node. Finally, with $Z=F_1+F_2$, we make $N_Z:=N_{F_1}+N_{F_2}$ linear in its subscript, as well as its argument.
 

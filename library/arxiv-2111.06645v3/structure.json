@@ -6,10 +6,12 @@
   "sha256": "2a4826bd1c2f0823c99f8e3cccfd835c5044d70d30eb20b36fea38dcb8dd83de",
   "bytes": 1560237,
   "pages": 87,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,18 +22,29 @@
   },
   "doi": "10.3842/SIGMA.2024.055",
   "title": "Knots, Perturbative Series and Quantum Modularity",
-  "authors_raw": "Stavros GAROUFALIDIS a and Don ZAGIER bc",
-  "abstract": "We introduce an invariant of a hyperbolic knot which is a map \u03b17\u2192 \u03a6\u03b1(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns indexed by the boundary parabolic SL 2(C) representations of the fundamental group of the knot. These matrix invariants have a rich structure: (a) their (\u03c30,\u03c3 1) entry, where\u03c30 is the trivial and\u03c31 the geometric representation, is the power series expansion of the Kashaev invariant of the knot around the root of unity e 2\u03c0i\u03b1 as an element of the Habiro ring, and the remaining entries belong to generalized Habiro rings of number fields; (b) the first column is given by the perturbative power series of Dimofte\u2013Garoufalidis; (c) the columns of \u03a6 are fundamental solutions of a linear q-difference equation; (d) the matrix defines an SL 2(Z)-cocycle W\u03b3 in matrix-valued functions on Q that conjecturally extends to a smooth function on R and even to holomorphic functions on suitable complex cut planes, lifting the factorially divergent series \u03a6(h) to actual functions. The two invariants \u03a6 and W\u03b3 are related by a refined quantum modularity conjecture which we illustrate in detail for the three simplest hyperbolic knots, the 4 1, 5 2 and (\u22122, 3, 7) pretzel knots. This paper has two sequels, one giving a different realization of our invariant as a matrix of convergent q-series with integer coefficients and the other studying its Habiro-like arithmetic properties in more depth.",
-  "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20240625010158Z",
-   "Creator": "LaTeX with hyperref",
-   "Producer": "pdfTeX-1.40.25",
-   "Title": ""
-  },
+  "authors_raw": "SIGMA 20 (2024), 055, 87 pages",
   "title_lines": [
-   "Knots, Perturbative Series and Quantum Modularity"
-  ]
+   "Symmetry, Integrability and Geometry: Methods and Applications"
+  ],
+  "abstract": "We introduce an invariant of a hyperbolic knot which is a map α 7→Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns indexed by the boundary parabolic SL2(C) representations of the fundamental group of the knot. These matrix invariants have a rich structure: (a) their (σ0, σ1) entry, where σ0 is the trivial and σ1 the geometric representation, is the power series expansion of the Kashaev invariant of the knot around the root of unity e2πiα as an element of the Habiro ring, and the remaining entries belong to generalized Habiro rings of number fields; (b) the first column is given by the perturbative power series of Dimofte–Garoufalidis; (c) the columns of Φ are fundamental solutions of a linear q-difference equation; (d) the matrix defines an SL2(Z)-cocycle Wγ in matrix-valued functions on Q that conjecturally extends to a smooth function on R and even to holomorphic functions on suitable complex cut planes, lifting the factorially divergent series Φ(h) to actual functions. The two invariants Φ and Wγ are related by a refined quantum modularity conjecture which we illustrate in detail for the three simplest hyperbolic knots, the 41, 52 and (−2, 3, 7) pretzel knots. This paper has two sequels, one giving a different realization of our invariant as a matrix of convergent q-series with integer coefficients and the other studying its Habiro-like arithmetic properties in more depth.",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.25",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20240625010158Z"
+  },
+  "title_raw": "Symmetry, Integrability and Geometry: Methods and Applications",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Part 0: Introduction and overview",
+   "outline": "Part 0: Introduction and overview",
+   "text": "Symmetry, Integrability and Geometry: Methods and Applications",
+   "corroborated_by": [
+    "outline"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Part 0: Introduction and overview"
  },
  "toc": [
   {
@@ -39,347 +52,1356 @@
    "title": "Part 0: Introduction and overview",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Part I: The main story",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "The original quantum modularity conjecture",
    "page": 9,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "A collection of formal power series",
    "page": 11,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "The indexing set P_K",
    "page": 11,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Four constructions of the power series Phi^{(K,s)}_a(h)",
    "page": 12,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "Interrelations among the power series Phi_a^{(s)}(h)",
    "page": 15,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "The generalized quantum modularity conjecture",
    "page": 15,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Lifting the QMC from constant terms to power series",
    "page": 16,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Quadratic relations",
    "page": 18,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Asymptotics of the coefficients",
    "page": 20,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 1,
    "title": "Refining the quantum modularity conjecture",
    "page": 22,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "Improving the quantum modularity conjecture: optimal truncation",
    "page": 22,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "New elements of the Habiro ring",
    "page": 23,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "Smoothed optimal truncation",
    "page": 25,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 2,
    "title": "Strengthening the generalized quantum modularity conjecture",
    "page": 27,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 2,
    "title": "The refined quantum modularity conjecture",
    "page": 28,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
   },
   {
    "level": 1,
    "title": "The matrix-valued cocycle associated to a knot",
    "page": 30,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 2,
    "title": "The Habiro-like matrix and the perturbative matrix",
    "page": 31,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   },
   {
    "level": 2,
    "title": "Smoothness",
    "page": 34,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "34"
   },
   {
    "level": 2,
    "title": "``Functions near Q''",
    "page": 37,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "37"
   },
   {
    "level": 2,
    "title": "Analyticity",
    "page": 40,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   },
   {
    "level": 2,
    "title": "The non-hyperbolic case",
    "page": 42,
    "source": "outline",
-   "number": "5.5"
+   "number": "5.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "42"
   },
   {
    "level": 1,
    "title": "Part II. Complements",
    "page": 43,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
   },
   {
    "level": 1,
    "title": "Half-symplectic matrices and their perturbative series",
    "page": 43,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
   },
   {
    "level": 2,
    "title": "Half-symplectic matrices and the Bloch group",
    "page": 43,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
   },
   {
    "level": 2,
-   "title": "Ideal triangulations and the Neumann\u2013Zagier equations",
+   "title": "Ideal triangulations and the Neumann–Zagier equations",
    "page": 47,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "47"
   },
   {
    "level": 2,
    "title": "Nahm sums and the perturbative definition of the Phi-series",
    "page": 49,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "49"
   },
   {
    "level": 1,
    "title": "Two q-holonomic modules",
    "page": 51,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "51"
   },
   {
    "level": 2,
    "title": "Descendant Habiro-like functions",
    "page": 52,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "52"
   },
   {
    "level": 2,
    "title": "The J-matrix for the 5_2 knot",
    "page": 54,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "54"
   },
   {
    "level": 2,
    "title": "State-sums",
    "page": 55,
    "source": "outline",
-   "number": "7.3"
+   "number": "7.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "55"
   },
   {
    "level": 2,
    "title": "The q-holonomic module of formal power series",
    "page": 57,
    "source": "outline",
-   "number": "7.4"
+   "number": "7.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "57"
   },
   {
    "level": 1,
    "title": "Proof of the modularity conjecture for the 4_1 knot",
    "page": 58,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "58"
   },
   {
    "level": 2,
    "title": "The case of a=0",
    "page": 59,
    "source": "outline",
-   "number": "8.1"
+   "number": "8.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "59"
   },
   {
    "level": 2,
    "title": "The general case",
    "page": 60,
    "source": "outline",
-   "number": "8.2"
+   "number": "8.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "60"
   },
   {
    "level": 1,
    "title": "Arithmetic aspects",
    "page": 63,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "63"
   },
   {
    "level": 2,
    "title": "Algebraic number theory aspects",
    "page": 63,
    "source": "outline",
-   "number": "9.1"
+   "number": "9.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "63"
   },
   {
    "level": 2,
    "title": "Denominators and integrality properties",
    "page": 65,
    "source": "outline",
-   "number": "9.2"
+   "number": "9.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "65"
   },
   {
    "level": 1,
    "title": "Numerical aspects",
    "page": 71,
    "source": "outline",
-   "number": "10"
+   "number": "10",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "71"
   },
   {
    "level": 2,
    "title": "Computing the power series Phi_a^{(K,s)}(h)",
    "page": 71,
    "source": "outline",
-   "number": "10.1"
+   "number": "10.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "71"
   },
   {
    "level": 2,
    "title": "Optimal truncation and smoothed optimal truncation",
    "page": 74,
    "source": "outline",
-   "number": "10.2"
+   "number": "10.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "74"
   },
   {
    "level": 1,
    "title": "A Numerical data for five sample knots",
    "page": 75,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "75"
   },
   {
    "level": 2,
    "title": "A.1 The figure eight knot",
    "page": 75,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "75"
   },
   {
    "level": 2,
    "title": "A.2 The sister of the figure eight knot",
    "page": 77,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "77"
   },
   {
    "level": 2,
    "title": "A.3 The 5_2 knot",
    "page": 78,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "78"
   },
   {
    "level": 2,
    "title": "A.4 The (-2,3,7) pretzel knot",
    "page": 81,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "81"
   },
   {
    "level": 2,
    "title": "A.5 The 6_1 knot",
    "page": 82,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "82"
   },
   {
    "level": 1,
    "title": "References",
    "page": 84,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "84"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The functions log(J(x)) and log(J(x)/J(−1/x)) for the 41 knot",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Plots of the six nontrivial entries (rescaled) of the matrix W (41)",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The Witten cylinder",
+   "page": 8,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Plots of the six nontrivial entries of the matrix WS(x) for the 41 knot",
+   "page": 34,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "34"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "A tetrahedron with shape parameters",
+   "page": 47,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "47"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "64",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "69",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "70",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "71",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "72",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "73",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": "74",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": "75",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": "76",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 77,
+   "label": "77",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 78,
+   "label": "78",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 79,
+   "label": "79",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 80,
+   "label": "80",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 81,
+   "label": "81",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 82,
+   "label": "82",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 83,
+   "label": "83",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 84,
+   "label": "84",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 85,
+   "label": "85",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 86,
+   "label": "86",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 87,
+   "label": "87",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 2576,
+   "n_words": 364,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-part-0-introduction-and-overview",
    "number": null,
@@ -387,8 +1409,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 9,
-   "n_chars": 29596,
-   "n_words": 4975
+   "n_chars": 29282,
+   "n_words": 4945,
+   "label_start": null,
+   "label_end": "9"
   },
   {
    "id": "sec-001-part-i-the-main-story",
@@ -398,7 +1422,9 @@
    "page_start": 9,
    "page_end": 9,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "9",
+   "label_end": "9"
   },
   {
    "id": "sec-002-1-the-original-quantum-modularity-conjecture",
@@ -407,8 +1433,10 @@
    "level": 1,
    "page_start": 9,
    "page_end": 11,
-   "n_chars": 7519,
-   "n_words": 1398
+   "n_chars": 7510,
+   "n_words": 1424,
+   "label_start": "9",
+   "label_end": "11"
   },
   {
    "id": "sec-003-2-a-collection-of-formal-power-series",
@@ -416,378 +1444,559 @@
    "title": "A collection of formal power series",
    "level": 1,
    "page_start": 11,
-   "page_end": 15,
-   "n_chars": 12888,
-   "n_words": 2382
+   "page_end": 11,
+   "n_chars": 39,
+   "n_words": 7,
+   "label_start": "11",
+   "label_end": "11"
   },
   {
-   "id": "sec-004-31-the-generalized-quantum-modularity-conjecture",
+   "id": "sec-004-21-the-indexing-set-p-k",
+   "number": "2.1",
+   "title": "The indexing set P_K",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 4978,
+   "n_words": 925,
+   "label_start": "11",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-005-22-four-constructions-of-the-power-series-phiks",
+   "number": "2.2",
+   "title": "Four constructions of the power series Phi^{(K,s)}_a(h)",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 7518,
+   "n_words": 1444,
+   "label_start": "12",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-006-3-interrelations-among-the-power-series-phi-ash",
+   "number": "3",
+   "title": "Interrelations among the power series Phi_a^{(s)}(h)",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 161,
+   "n_words": 25,
+   "label_start": "15",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-007-31-the-generalized-quantum-modularity-conjecture",
    "number": "3.1",
    "title": "The generalized quantum modularity conjecture",
    "level": 2,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 4652,
-   "n_words": 839
+   "n_chars": 4701,
+   "n_words": 874,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
-   "id": "sec-005-32-lifting-the-qmc-from-constant-terms-to-power",
+   "id": "sec-008-32-lifting-the-qmc-from-constant-terms-to-power",
    "number": "3.2",
    "title": "Lifting the QMC from constant terms to power series",
    "level": 2,
    "page_start": 16,
    "page_end": 18,
-   "n_chars": 4711,
-   "n_words": 863
+   "n_chars": 4696,
+   "n_words": 878,
+   "label_start": "16",
+   "label_end": "18"
   },
   {
-   "id": "sec-006-33-quadratic-relations",
+   "id": "sec-009-33-quadratic-relations",
    "number": "3.3",
    "title": "Quadratic relations",
    "level": 2,
    "page_start": 18,
    "page_end": 20,
-   "n_chars": 5010,
-   "n_words": 930
+   "n_chars": 4980,
+   "n_words": 955,
+   "label_start": "18",
+   "label_end": "20"
   },
   {
-   "id": "sec-007-34-asymptotics-of-the-coefficients",
+   "id": "sec-010-34-asymptotics-of-the-coefficients",
    "number": "3.4",
    "title": "Asymptotics of the coefficients",
    "level": 2,
    "page_start": 20,
    "page_end": 22,
-   "n_chars": 7734,
-   "n_words": 1452
+   "n_chars": 7733,
+   "n_words": 1496,
+   "label_start": "20",
+   "label_end": "22"
   },
   {
-   "id": "sec-008-4-refining-the-quantum-modularity-conjecture",
+   "id": "sec-011-4-refining-the-quantum-modularity-conjecture",
    "number": "4",
    "title": "Refining the quantum modularity conjecture",
    "level": 1,
    "page_start": 22,
    "page_end": 22,
-   "n_chars": 524,
-   "n_words": 86
+   "n_chars": 567,
+   "n_words": 91,
+   "label_start": "22",
+   "label_end": "22"
   },
   {
-   "id": "sec-009-41-improving-the-quantum-modularity-conjecture-o",
+   "id": "sec-012-41-improving-the-quantum-modularity-conjecture-o",
    "number": "4.1",
    "title": "Improving the quantum modularity conjecture: optimal truncation",
    "level": 2,
    "page_start": 22,
    "page_end": 23,
-   "n_chars": 5454,
-   "n_words": 981
+   "n_chars": 5480,
+   "n_words": 996,
+   "label_start": "22",
+   "label_end": "23"
   },
   {
-   "id": "sec-010-42-new-elements-of-the-habiro-ring",
+   "id": "sec-013-42-new-elements-of-the-habiro-ring",
    "number": "4.2",
    "title": "New elements of the Habiro ring",
    "level": 2,
    "page_start": 23,
    "page_end": 25,
-   "n_chars": 6789,
-   "n_words": 1269
+   "n_chars": 6755,
+   "n_words": 1282,
+   "label_start": "23",
+   "label_end": "25"
   },
   {
-   "id": "sec-011-43-smoothed-optimal-truncation",
+   "id": "sec-014-43-smoothed-optimal-truncation",
    "number": "4.3",
    "title": "Smoothed optimal truncation",
    "level": 2,
    "page_start": 25,
    "page_end": 27,
-   "n_chars": 4452,
-   "n_words": 824
+   "n_chars": 4406,
+   "n_words": 826,
+   "label_start": "25",
+   "label_end": "27"
   },
   {
-   "id": "sec-012-44-strengthening-the-generalized-quantum-modular",
+   "id": "sec-015-44-strengthening-the-generalized-quantum-modular",
    "number": "4.4",
    "title": "Strengthening the generalized quantum modularity conjecture",
    "level": 2,
    "page_start": 27,
    "page_end": 28,
-   "n_chars": 3989,
-   "n_words": 709
+   "n_chars": 4042,
+   "n_words": 735,
+   "label_start": "27",
+   "label_end": "28"
   },
   {
-   "id": "sec-013-45-the-refined-quantum-modularity-conjecture",
+   "id": "sec-016-45-the-refined-quantum-modularity-conjecture",
    "number": "4.5",
    "title": "The refined quantum modularity conjecture",
    "level": 2,
    "page_start": 28,
    "page_end": 30,
-   "n_chars": 6275,
-   "n_words": 1080
+   "n_chars": 6247,
+   "n_words": 1088,
+   "label_start": "28",
+   "label_end": "30"
   },
   {
-   "id": "sec-014-5-the-matrix-valued-cocycle-associated-to-a-knot",
+   "id": "sec-017-5-the-matrix-valued-cocycle-associated-to-a-knot",
    "number": "5",
    "title": "The matrix-valued cocycle associated to a knot",
    "level": 1,
    "page_start": 30,
    "page_end": 31,
-   "n_chars": 2562,
-   "n_words": 421
+   "n_chars": 2561,
+   "n_words": 426,
+   "label_start": "30",
+   "label_end": "31"
   },
   {
-   "id": "sec-015-51-the-habiro-like-matrix-and-the-perturbative-m",
+   "id": "sec-018-51-the-habiro-like-matrix-and-the-perturbative-m",
    "number": "5.1",
    "title": "The Habiro-like matrix and the perturbative matrix",
    "level": 2,
    "page_start": 31,
    "page_end": 34,
-   "n_chars": 9606,
-   "n_words": 1699
+   "n_chars": 9571,
+   "n_words": 1720,
+   "label_start": "31",
+   "label_end": "34"
   },
   {
-   "id": "sec-016-52-smoothness",
+   "id": "sec-019-52-smoothness",
    "number": "5.2",
    "title": "Smoothness",
    "level": 2,
    "page_start": 34,
-   "page_end": 40,
-   "n_chars": 24316,
-   "n_words": 4404
+   "page_end": 37,
+   "n_chars": 11245,
+   "n_words": 2126,
+   "label_start": "34",
+   "label_end": "37"
   },
   {
-   "id": "sec-017-54-analyticity",
+   "id": "sec-020-53-functions-near-q",
+   "number": "5.3",
+   "title": "``Functions near Q''",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 40,
+   "n_chars": 12883,
+   "n_words": 2316,
+   "label_start": "37",
+   "label_end": "40"
+  },
+  {
+   "id": "sec-021-54-analyticity",
    "number": "5.4",
    "title": "Analyticity",
    "level": 2,
    "page_start": 40,
    "page_end": 42,
-   "n_chars": 9556,
-   "n_words": 1666
+   "n_chars": 9481,
+   "n_words": 1653,
+   "label_start": "40",
+   "label_end": "42"
   },
   {
-   "id": "sec-018-55-the-non-hyperbolic-case",
+   "id": "sec-022-55-the-non-hyperbolic-case",
    "number": "5.5",
    "title": "The non-hyperbolic case",
    "level": 2,
    "page_start": 42,
    "page_end": 43,
-   "n_chars": 1983,
-   "n_words": 324
+   "n_chars": 1956,
+   "n_words": 322,
+   "label_start": "42",
+   "label_end": "43"
   },
   {
-   "id": "sec-019-part-ii-complements",
+   "id": "sec-023-part-ii-complements",
    "number": null,
    "title": "Part II. Complements",
    "level": 1,
    "page_start": 43,
    "page_end": 43,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "43",
+   "label_end": "43"
   },
   {
-   "id": "sec-020-6-half-symplectic-matrices-and-their-perturbativ",
+   "id": "sec-024-6-half-symplectic-matrices-and-their-perturbativ",
    "number": "6",
    "title": "Half-symplectic matrices and their perturbative series",
    "level": 1,
    "page_start": 43,
    "page_end": 43,
-   "n_chars": 907,
-   "n_words": 160
+   "n_chars": 962,
+   "n_words": 166,
+   "label_start": "43",
+   "label_end": "43"
   },
   {
-   "id": "sec-021-61-half-symplectic-matrices-and-the-bloch-group",
+   "id": "sec-025-61-half-symplectic-matrices-and-the-bloch-group",
    "number": "6.1",
    "title": "Half-symplectic matrices and the Bloch group",
    "level": 2,
    "page_start": 43,
    "page_end": 47,
-   "n_chars": 15523,
-   "n_words": 2922
+   "n_chars": 15493,
+   "n_words": 3000,
+   "label_start": "43",
+   "label_end": "47"
   },
   {
-   "id": "sec-022-62-ideal-triangulations-and-the-neumannzagier-eq",
+   "id": "sec-026-62-ideal-triangulations-and-the-neumannzagier-eq",
    "number": "6.2",
-   "title": "Ideal triangulations and the Neumann\u2013Zagier equations",
+   "title": "Ideal triangulations and the Neumann–Zagier equations",
    "level": 2,
    "page_start": 47,
    "page_end": 49,
-   "n_chars": 8425,
-   "n_words": 1433
+   "n_chars": 8396,
+   "n_words": 1429,
+   "label_start": "47",
+   "label_end": "49"
   },
   {
-   "id": "sec-023-63-nahm-sums-and-the-perturbative-definition-of",
+   "id": "sec-027-63-nahm-sums-and-the-perturbative-definition-of",
    "number": "6.3",
    "title": "Nahm sums and the perturbative definition of the Phi-series",
    "level": 2,
    "page_start": 49,
    "page_end": 51,
-   "n_chars": 8497,
-   "n_words": 1583
+   "n_chars": 8500,
+   "n_words": 1610,
+   "label_start": "49",
+   "label_end": "51"
   },
   {
-   "id": "sec-024-7-two-q-holonomic-modules",
+   "id": "sec-028-7-two-q-holonomic-modules",
    "number": "7",
    "title": "Two q-holonomic modules",
    "level": 1,
    "page_start": 51,
    "page_end": 52,
-   "n_chars": 1837,
-   "n_words": 317
+   "n_chars": 1825,
+   "n_words": 311,
+   "label_start": "51",
+   "label_end": "52"
   },
   {
-   "id": "sec-025-71-descendant-habiro-like-functions",
+   "id": "sec-029-71-descendant-habiro-like-functions",
    "number": "7.1",
    "title": "Descendant Habiro-like functions",
    "level": 2,
    "page_start": 52,
-   "page_end": 55,
-   "n_chars": 9378,
-   "n_words": 1739
+   "page_end": 54,
+   "n_chars": 6005,
+   "n_words": 1164,
+   "label_start": "52",
+   "label_end": "54"
   },
   {
-   "id": "sec-026-73-state-sums",
+   "id": "sec-030-72-the-j-matrix-for-the-5-2-knot",
+   "number": "7.2",
+   "title": "The J-matrix for the 5_2 knot",
+   "level": 2,
+   "page_start": 54,
+   "page_end": 55,
+   "n_chars": 3310,
+   "n_words": 625,
+   "label_start": "54",
+   "label_end": "55"
+  },
+  {
+   "id": "sec-031-73-state-sums",
    "number": "7.3",
    "title": "State-sums",
    "level": 2,
    "page_start": 55,
    "page_end": 57,
-   "n_chars": 5573,
-   "n_words": 988
+   "n_chars": 5560,
+   "n_words": 1038,
+   "label_start": "55",
+   "label_end": "57"
   },
   {
-   "id": "sec-027-74-the-q-holonomic-module-of-formal-power-series",
+   "id": "sec-032-74-the-q-holonomic-module-of-formal-power-series",
    "number": "7.4",
    "title": "The q-holonomic module of formal power series",
    "level": 2,
    "page_start": 57,
    "page_end": 58,
-   "n_chars": 4642,
-   "n_words": 789
+   "n_chars": 4672,
+   "n_words": 807,
+   "label_start": "57",
+   "label_end": "58"
   },
   {
-   "id": "sec-028-8-proof-of-the-modularity-conjecture-for-the-4-1",
+   "id": "sec-033-8-proof-of-the-modularity-conjecture-for-the-4-1",
    "number": "8",
    "title": "Proof of the modularity conjecture for the 4_1 knot",
    "level": 1,
    "page_start": 58,
-   "page_end": 60,
-   "n_chars": 5393,
-   "n_words": 1126
+   "page_end": 59,
+   "n_chars": 1106,
+   "n_words": 221,
+   "label_start": "58",
+   "label_end": "59"
   },
   {
-   "id": "sec-029-82-the-general-case",
+   "id": "sec-034-81-the-case-of-a0",
+   "number": "8.1",
+   "title": "The case of a=0",
+   "level": 2,
+   "page_start": 59,
+   "page_end": 60,
+   "n_chars": 4258,
+   "n_words": 920,
+   "label_start": "59",
+   "label_end": "60"
+  },
+  {
+   "id": "sec-035-82-the-general-case",
    "number": "8.2",
    "title": "The general case",
    "level": 2,
    "page_start": 60,
    "page_end": 63,
-   "n_chars": 6398,
-   "n_words": 1310
+   "n_chars": 6319,
+   "n_words": 1336,
+   "label_start": "60",
+   "label_end": "63"
   },
   {
-   "id": "sec-030-9-arithmetic-aspects",
+   "id": "sec-036-9-arithmetic-aspects",
    "number": "9",
    "title": "Arithmetic aspects",
    "level": 1,
    "page_start": 63,
    "page_end": 63,
-   "n_chars": 228,
-   "n_words": 36
+   "n_chars": 246,
+   "n_words": 37,
+   "label_start": "63",
+   "label_end": "63"
   },
   {
-   "id": "sec-031-91-algebraic-number-theory-aspects",
+   "id": "sec-037-91-algebraic-number-theory-aspects",
    "number": "9.1",
    "title": "Algebraic number theory aspects",
    "level": 2,
    "page_start": 63,
    "page_end": 65,
-   "n_chars": 5968,
-   "n_words": 1124
+   "n_chars": 5917,
+   "n_words": 1118,
+   "label_start": "63",
+   "label_end": "65"
   },
   {
-   "id": "sec-032-92-denominators-and-integrality-properties",
+   "id": "sec-038-92-denominators-and-integrality-properties",
    "number": "9.2",
    "title": "Denominators and integrality properties",
    "level": 2,
    "page_start": 65,
    "page_end": 71,
-   "n_chars": 18983,
-   "n_words": 3688
+   "n_chars": 18860,
+   "n_words": 3745,
+   "label_start": "65",
+   "label_end": "71"
   },
   {
-   "id": "sec-033-10-numerical-aspects",
+   "id": "sec-039-10-numerical-aspects",
    "number": "10",
    "title": "Numerical aspects",
    "level": 1,
    "page_start": 71,
-   "page_end": 74,
-   "n_chars": 11700,
-   "n_words": 2022
+   "page_end": 71,
+   "n_chars": 632,
+   "n_words": 99,
+   "label_start": "71",
+   "label_end": "71"
   },
   {
-   "id": "sec-034-102-optimal-truncation-and-smoothed-optimal-trun",
+   "id": "sec-040-101-computing-the-power-series-phi-aksh",
+   "number": "10.1",
+   "title": "Computing the power series Phi_a^{(K,s)}(h)",
+   "level": 2,
+   "page_start": 71,
+   "page_end": 74,
+   "n_chars": 10977,
+   "n_words": 1949,
+   "label_start": "71",
+   "label_end": "74"
+  },
+  {
+   "id": "sec-041-102-optimal-truncation-and-smoothed-optimal-trun",
    "number": "10.2",
    "title": "Optimal truncation and smoothed optimal truncation",
    "level": 2,
    "page_start": 74,
    "page_end": 75,
-   "n_chars": 2808,
-   "n_words": 483
+   "n_chars": 2813,
+   "n_words": 489,
+   "label_start": "74",
+   "label_end": "75"
   },
   {
-   "id": "sec-035-a-numerical-data-for-five-sample-knots",
+   "id": "sec-042-a-numerical-data-for-five-sample-knots",
    "number": null,
    "title": "A Numerical data for five sample knots",
    "level": 1,
    "page_start": 75,
    "page_end": 75,
-   "n_chars": 2339,
-   "n_words": 419
+   "n_chars": 2374,
+   "n_words": 423,
+   "label_start": "75",
+   "label_end": "75"
   },
   {
-   "id": "sec-036-a1-the-figure-eight-knot",
+   "id": "sec-043-a1-the-figure-eight-knot",
    "number": null,
    "title": "A.1 The figure eight knot",
    "level": 2,
    "page_start": 75,
    "page_end": 77,
-   "n_chars": 5810,
-   "n_words": 912
+   "n_chars": 5806,
+   "n_words": 963,
+   "label_start": "75",
+   "label_end": "77"
   },
   {
-   "id": "sec-037-a2-the-sister-of-the-figure-eight-knot",
+   "id": "sec-044-a2-the-sister-of-the-figure-eight-knot",
    "number": null,
    "title": "A.2 The sister of the figure eight knot",
    "level": 2,
    "page_start": 77,
-   "page_end": 84,
-   "n_chars": 16896,
-   "n_words": 2866
+   "page_end": 81,
+   "n_chars": 8018,
+   "n_words": 1397,
+   "label_start": "77",
+   "label_end": "81"
   },
   {
-   "id": "sec-038-references",
+   "id": "sec-045-a4-the--237-pretzel-knot",
+   "number": null,
+   "title": "A.4 The (-2,3,7) pretzel knot",
+   "level": 2,
+   "page_start": 81,
+   "page_end": 84,
+   "n_chars": 8681,
+   "n_words": 1512,
+   "label_start": "81",
+   "label_end": "84"
+  },
+  {
+   "id": "sec-046-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 84,
    "page_end": 87,
-   "n_chars": 12461,
-   "n_words": 1730
+   "n_chars": 12305,
+   "n_words": 1693,
+   "label_start": "84",
+   "label_end": "87"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 49,
-  "sections": 39,
-  "chars_total": 291382,
+  "toc_inferred_entries": 0,
+  "figure_entries": 5,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 48,
+  "chars_total": 292403,
+  "furniture_lines_stripped": 172,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "sigma24-055.tex",
    "tex_sections": 39,
-   "overlaid": 32,
+   "overlaid": 34,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
     "coverage": 0.5
    },
    "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
     {
      "id": "sec-000-part-0-introduction-and-overview",
      "title": "Part 0: Introduction and overview",
@@ -801,281 +2010,330 @@
     {
      "id": "sec-002-1-the-original-quantum-modularity-conjecture",
      "title": "The original quantum modularity conjecture",
-     "prose_ratio": 0.993,
-     "coverage_ratio": 0.956,
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-2-a-collection-of-formal-power-series",
      "title": "A collection of formal power series",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.974,
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-21-the-indexing-set-p-k",
+     "title": "The indexing set P_K",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-31-the-generalized-quantum-modularity-conjecture",
-     "title": "The generalized quantum modularity conjecture",
+     "id": "sec-005-22-four-constructions-of-the-power-series-phiks",
+     "title": "Four constructions of the power series Phi^{(K,s)}_a(h)",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-3-interrelations-among-the-power-series-phi-ash",
+     "title": "Interrelations among the power series Phi_a^{(s)}(h)",
      "prose_ratio": 0.947,
-     "coverage_ratio": 0.973,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-005-32-lifting-the-qmc-from-constant-terms-to-power",
-     "title": "Lifting the QMC from constant terms to power series",
-     "prose_ratio": 0.949,
-     "coverage_ratio": 0.958,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-006-33-quadratic-relations",
-     "title": "Quadratic relations",
-     "prose_ratio": 0.963,
-     "coverage_ratio": 0.968,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-007-34-asymptotics-of-the-coefficients",
-     "title": "Asymptotics of the coefficients",
-     "prose_ratio": 0.96,
-     "coverage_ratio": 0.955,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-008-4-refining-the-quantum-modularity-conjecture",
-     "title": "Refining the quantum modularity conjecture",
-     "prose_ratio": 0.917,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-41-improving-the-quantum-modularity-conjecture-o",
+     "id": "sec-007-31-the-generalized-quantum-modularity-conjecture",
+     "title": "The generalized quantum modularity conjecture",
+     "prose_ratio": 0.947,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-32-lifting-the-qmc-from-constant-terms-to-power",
+     "title": "Lifting the QMC from constant terms to power series",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-33-quadratic-relations",
+     "title": "Quadratic relations",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-34-asymptotics-of-the-coefficients",
+     "title": "Asymptotics of the coefficients",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-4-refining-the-quantum-modularity-conjecture",
+     "title": "Refining the quantum modularity conjecture",
+     "prose_ratio": 0.917,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-41-improving-the-quantum-modularity-conjecture-o",
      "title": "Improving the quantum modularity conjecture: optimal truncation",
      "prose_ratio": 0.979,
-     "coverage_ratio": 0.959,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-010-42-new-elements-of-the-habiro-ring",
-     "title": "New elements of the Habiro ring",
-     "prose_ratio": 0.97,
-     "coverage_ratio": 0.959,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-011-43-smoothed-optimal-truncation",
-     "title": "Smoothed optimal truncation",
-     "prose_ratio": 0.957,
-     "coverage_ratio": 0.957,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-012-44-strengthening-the-generalized-quantum-modular",
-     "title": "Strengthening the generalized quantum modularity conjecture",
-     "prose_ratio": 0.939,
-     "coverage_ratio": 0.956,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-013-45-the-refined-quantum-modularity-conjecture",
-     "title": "The refined quantum modularity conjecture",
-     "prose_ratio": 0.96,
-     "coverage_ratio": 0.978,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-014-5-the-matrix-valued-cocycle-associated-to-a-knot",
-     "title": "The matrix-valued cocycle associated to a knot",
-     "prose_ratio": 0.959,
      "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-51-the-habiro-like-matrix-and-the-perturbative-m",
+     "id": "sec-013-42-new-elements-of-the-habiro-ring",
+     "title": "New elements of the Habiro ring",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-43-smoothed-optimal-truncation",
+     "title": "Smoothed optimal truncation",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-44-strengthening-the-generalized-quantum-modular",
+     "title": "Strengthening the generalized quantum modularity conjecture",
+     "prose_ratio": 0.939,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-45-the-refined-quantum-modularity-conjecture",
+     "title": "The refined quantum modularity conjecture",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-5-the-matrix-valued-cocycle-associated-to-a-knot",
+     "title": "The matrix-valued cocycle associated to a knot",
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-51-the-habiro-like-matrix-and-the-perturbative-m",
      "title": "The Habiro-like matrix and the perturbative matrix",
      "prose_ratio": 0.95,
-     "coverage_ratio": 0.946,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-52-smoothness",
+     "id": "sec-019-52-smoothness",
      "title": "Smoothness",
-     "prose_ratio": 0.961,
-     "coverage_ratio": 0.983,
+     "prose_ratio": 0.959,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-54-analyticity",
+     "id": "sec-020-53-functions-near-q",
+     "title": "``Functions near Q''",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-54-analyticity",
      "title": "Analyticity",
      "prose_ratio": 0.98,
-     "coverage_ratio": 0.972,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-018-55-the-non-hyperbolic-case",
+     "id": "sec-022-55-the-non-hyperbolic-case",
      "title": "The non-hyperbolic case",
      "prose_ratio": 0.984,
-     "coverage_ratio": 0.961,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-019-part-ii-complements",
+     "id": "sec-023-part-ii-complements",
      "title": "Part II. Complements",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-020-6-half-symplectic-matrices-and-their-perturbativ",
+     "id": "sec-024-6-half-symplectic-matrices-and-their-perturbativ",
      "title": "Half-symplectic matrices and their perturbative series",
      "prose_ratio": 0.953,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.953,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-021-61-half-symplectic-matrices-and-the-bloch-group",
+     "id": "sec-025-61-half-symplectic-matrices-and-the-bloch-group",
      "title": "Half-symplectic matrices and the Bloch group",
      "prose_ratio": 0.979,
-     "coverage_ratio": 0.92,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-022-62-ideal-triangulations-and-the-neumannzagier-eq",
-     "title": "Ideal triangulations and the Neumann\u2013Zagier equations",
+     "id": "sec-026-62-ideal-triangulations-and-the-neumannzagier-eq",
+     "title": "Ideal triangulations and the Neumann–Zagier equations",
      "prose_ratio": 0.973,
-     "coverage_ratio": 0.983,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-023-63-nahm-sums-and-the-perturbative-definition-of",
+     "id": "sec-027-63-nahm-sums-and-the-perturbative-definition-of",
      "title": "Nahm sums and the perturbative definition of the Phi-series",
      "prose_ratio": 0.985,
-     "coverage_ratio": 0.952,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-024-7-two-q-holonomic-modules",
+     "id": "sec-028-7-two-q-holonomic-modules",
      "title": "Two q-holonomic modules",
      "prose_ratio": 0.951,
-     "coverage_ratio": 0.975,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-025-71-descendant-habiro-like-functions",
+     "id": "sec-029-71-descendant-habiro-like-functions",
      "title": "Descendant Habiro-like functions",
-     "prose_ratio": 0.971,
-     "coverage_ratio": 0.968,
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-026-73-state-sums",
-     "title": "State-sums",
-     "prose_ratio": 0.975,
-     "coverage_ratio": 0.985,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-027-74-the-q-holonomic-module-of-formal-power-series",
-     "title": "The q-holonomic module of formal power series",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.965,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-028-8-proof-of-the-modularity-conjecture-for-the-4-1",
-     "title": "Proof of the modularity conjecture for the 4_1 knot",
-     "prose_ratio": 0.99,
-     "coverage_ratio": 0.614,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-029-82-the-general-case",
-     "title": "The general case",
-     "prose_ratio": 0.991,
-     "coverage_ratio": 0.946,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-030-9-arithmetic-aspects",
-     "title": "Arithmetic aspects",
-     "prose_ratio": 1.0,
+     "id": "sec-030-72-the-j-matrix-for-the-5-2-knot",
+     "title": "The J-matrix for the 5_2 knot",
+     "prose_ratio": 0.958,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-031-91-algebraic-number-theory-aspects",
+     "id": "sec-031-73-state-sums",
+     "title": "State-sums",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-032-74-the-q-holonomic-module-of-formal-power-series",
+     "title": "The q-holonomic module of formal power series",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-033-8-proof-of-the-modularity-conjecture-for-the-4-1",
+     "title": "Proof of the modularity conjecture for the 4_1 knot",
+     "prose_ratio": 0.343,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-034-81-the-case-of-a0",
+     "title": "The case of a=0",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-035-82-the-general-case",
+     "title": "The general case",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-036-9-arithmetic-aspects",
+     "title": "Arithmetic aspects",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.941,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-037-91-algebraic-number-theory-aspects",
      "title": "Algebraic number theory aspects",
      "prose_ratio": 0.979,
-     "coverage_ratio": 0.968,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-032-92-denominators-and-integrality-properties",
+     "id": "sec-038-92-denominators-and-integrality-properties",
      "title": "Denominators and integrality properties",
      "prose_ratio": 0.974,
-     "coverage_ratio": 0.954,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-033-10-numerical-aspects",
+     "id": "sec-039-10-numerical-aspects",
      "title": "Numerical aspects",
-     "prose_ratio": 0.995,
-     "coverage_ratio": 0.828,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.143,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-034-102-optimal-truncation-and-smoothed-optimal-trun",
+     "id": "sec-040-101-computing-the-power-series-phi-aksh",
+     "title": "Computing the power series Phi_a^{(K,s)}(h)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-041-102-optimal-truncation-and-smoothed-optimal-trun",
      "title": "Optimal truncation and smoothed optimal truncation",
      "prose_ratio": 0.973,
-     "coverage_ratio": 0.967,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-035-a-numerical-data-for-five-sample-knots",
+     "id": "sec-042-a-numerical-data-for-five-sample-knots",
      "title": "A Numerical data for five sample knots",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-036-a1-the-figure-eight-knot",
+     "id": "sec-043-a1-the-figure-eight-knot",
      "title": "A.1 The figure eight knot",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-037-a2-the-sister-of-the-figure-eight-knot",
+     "id": "sec-044-a2-the-sister-of-the-figure-eight-knot",
      "title": "A.2 The sister of the figure eight knot",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-038-references",
+     "id": "sec-045-a4-the--237-pretzel-knot",
+     "title": "A.4 The (-2,3,7) pretzel knot",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-046-references",
      "title": "References",
      "result": "no matching \\section"
     }

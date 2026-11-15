@@ -1,5 +1,7 @@
 # The three-way wrong sign on `b₃` is one root — and the escape hatch as written is not sufficient
 
+> **2026-11-15 scoping note.** The magnitudes below are computed on the single-crossing interface letters of `atom_braid_word_3A`, which the γγ rule (owner, 2026-11-15) no longer treats as canonical. They stay as a record. The Lean theorems take generic bond weights and still stand. See [`2026-11-15-gg-rule-rescopes-old-letter-binding.md`](2026-11-15-gg-rule-rescopes-old-letter-binding.md).
+
 **Date.** 2026-09-12
 **Bean.** `qou-q8vl`; parents `qou-brng`, `qou-rwhv`, `qou-ix0x`, `qou-m8f3`.
 **Branch / PR.** `claude/b3-sign-one-root-2026-09-12`, #7226.

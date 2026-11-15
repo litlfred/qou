@@ -63,7 +63,7 @@ does not yet reproduce `chi_block_*`, which are characters of the specific
 nucleon word difference `beta_n - beta_p`. Bridging that is separate and is NOT
 claimed here.
 
-Ref: library/arxiv-2504.18825v2/sections/sec-010-murnaghan-nakayama-rule-for-the-cyclotomic-hecke.md
+Ref: library/arxiv-2504.18825v2/sections/sec-002-3-murnaghannakayama-rule-for-the-cyclotomic-heck.md
 Ref: library/9511222v1/ (Halverson-Ram; superseded for completeness, see qou-avt2)
 """
 

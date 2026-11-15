@@ -11,7 +11,7 @@ $$
 
 The per-component rule states $\mathrm{lw}(c) = (1/(c+1)) \sum_{\lambda \vdash (c+1)} \dim_q V_\lambda$. It is anchored at c=1 (muon, $\mathrm{lw}=1$ exactly $\forall q$) and c=3 (proton, $\mathrm{lw} = 5/2 + (3/4)h^2$ via Family-A). The c=2 case provides the **first testable prediction** of the rule beyond the two known anchors.
 
-This proposition Lean-formalises the closed form for c=2 *from the hook-length formula itself*: [`QOU.Mass.selection_rule_c2_real`](../lean/QOU/Mass/QHookDimension.lean) states the sum over `dimQ` of the three partitions of 3, with `dim_q V_{(2,1)} = [2]_q` derived from the hook multiset `[3,1,1]` rather than asserted. It shares the same provenance as its anchors, which are now derived the same way (bean `qou-lx7k`). Any independent determination of a 2-component link's linking_weight—such as a Hopf-link or gluon EM-linking application—can be tested against this exact formula.
+This proposition Lean-formalises the closed form for c=2 *from the hook-length formula itself*: [`QOU.Mass.selection_rule_c2_real`](../lean/QOU/Mass/QHookDimension.lean) states the sum over `dimQ` of the three partitions of 3, with `dim_q V_{(2,1)} = [2]_q` derived from the hook multiset `[3,1,1]` rather than asserted. Its anchors are derived the same way. Any independent determination of a 2-component link's linking_weight—such as a Hopf-link or gluon EM-linking application—can be tested against this exact formula.
 
 ## Lean proof structure
 

@@ -1,0 +1,45 @@
+168 J.J. Graham and G.I. Lehrer
+
+(ii) If (s,N) and (V,E) correspond under this bijection (recall that
+V comes with its grading), the variety On above is isomorphic to the
+Gy-orbit of E in Ny.
+
+We next give a parametrisation of the Gy-orbits on Ny. By (7.9)(i),
+as the pair (V, E) varies, V being an J-grading of C" and E € Ny, these
+orbits will index the standard modules of H#(q) in (7.9), and by (7.3)
+and (7.9)(ii), the geometry of any orbit determines the decomposition
+of the corresponding standard module. Take E € Ny. Since E is a
+nilpotent endomorphism of V, it corresponds to a partition AX = 1 >
+Az > +++ > Apia) > 0 of n (we refer to p(A) as the number of parts
+of the partition 4 and to n as its size). Of course in general \ does
+not determine the Gy-class of EF. To describe the latter, we require the
+following description of the indecomposable nilpotent representations of
+Q.; an arbitrary nilpotent representation is uniquely (up to order of
+the summands) expessible a sum of nilpotent indecomposables. The
+nilpotent indecomposables are parametrised by pairs (i,£), i € I,£ €
+Zy0; denote the corresponding representation of Q. by M(i;£). If 2=
+ae +b, (a,b € Z>0,0 < b < e), the graded vector space V = @j¢7V; has
+
+forj =i,14+1,---,i+b-1
+(7.10) d; = at+1 org 1,¢+1, ytt
+a otherwise.
+If V; has basis {v;,1,--- , ;,a; }, the homomorphisms EF; : Vj41 — V; are
+
+described by
+
+b Vj,c if 7 Fa
+(7.11) Uj41,¢ > Vj,c41 if j = 4
+where vj,- is defined to be 0 if c > dj.
+
+The pair (7; 2) may be identified with the sequence (i,+1,--- ,i+—1)
+of elements of J, and so is sometimes referred to as a segment. Note that
+the total dimension of M(i; £) is @. Any nilpotent representation M of Q.
+of total degree n is equivalent to asum M = M(i1; 41) ®---® M(ip; £p),
+where yj £; =n. The multiset {(i;,2;) | j = 1,---,p} is uniquely
+determined by the isomorphism class of M and conversely; hence the
+isomorphism classes are often referred to as “multisegments”. If the
+segments are ordered so that the £; are in weakly decreasing order, the
+sequences corresponding to the (i;, 2;) may be written in an array, which
+may be thought of as a Young diagram whose boxes are labelled with
+elements of J, which increase by one across the rows. The dimension
+vector of the representation M is d = (do,--- ,de_1), where d; is the

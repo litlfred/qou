@@ -1,0 +1,52 @@
+1398 S.G. Bobkov and F. Gétze
+5. Empirical log-Sobolev inequalities
+
+As before, let (X1,..., Xn) be a random vector in R” with joint distribution yw. Similarly to
+Proposition 2.1, now using a log-Sobolev inequality for jz, we arrive at the following ‘empirical’
+log-Sobolev inequality.
+
+Proposition 5.1. Under LSI(c7), for any bounded, smooth function f on R,
+
+2
+en, ( [ raf.) ]<% | rer.
+
+In analogy with Poincaré-type inequalities, one may also develop refined applications to the
+rate of growth of moments and to large deviations of various functionals of empirical measures.
+In particular, we have the following proposition.
+
+Proposition 5.2. Under LSI(o*), for any smooth function f on R such that f' belongs to
+
+L?(R, dF), p> 2,
+b|[ rar, — [rar
+
+In addition, if | f'| < 1, then, for all h > 0,
+
+of| f sane f rar
+
+The proof of the second bound, (5.2), which was already noticed in [24] in the context of
+random matrices, follows the standard Herbst’s argument; see [29] and [6]. The first family of
+moment inequalities, (5.1), can be sharpened by one inequality on the Laplace transform, such
+
+as
+Beol [fore [ rar| =eew{ firPars|.
+
+The proof is immediate, by [6], Theorem 1.2.
+
+However, a major weak point in both Poincaré and log-Sobolev inequalities, including their
+direct consequences, as in Proposition 5.2, is that they may not be applied to indicator and other
+non-smooth functions. In particular, we cannot estimate directly at fixed points the variance
+Var(F,(x)) or other similar quantities like the higher moments of | F,(x) — F(x)|. Therefore,
+we need another family of analytic inequalities. Fortunately, the so-called infimum-convolution
+operator and associated relations concerning arbitrary measurable functions perfectly fit our pur-
+poses. Moreover, some of the important relations hold true and may be controlled in terms of the
+constant involved in the logarithmic Sobolev inequalities.
+
+Let us now turn to the important concept of infimum- and supremum-convolution inequalities.
+They were proposed in 1991 by Maurey [33] as a functional approach to some of Talagrand’s
+
+p )
+< vp) firirar: (5.1)
+
+—  npl2
+
+> uf < 270/207 (5.2)

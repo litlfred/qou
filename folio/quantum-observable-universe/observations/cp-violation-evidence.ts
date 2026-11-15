@@ -13,4 +13,10 @@ export default prose({
     "matter-antimatter", "experimental",
   ],
   cites: ["christenson1964", "aubert2001"],
+  authorNotes: [
+    {
+      kind: "refined-framing",
+      body: "This block previously set θ_res ∼ tanh(ln r)·α_EM ≈ 7.5866e-4 and reported an asymmetry of order 1e-3 matching the kaon ε ≈ 2e-3 (ratio ≈ 0.38). With the phase removed the value is larger by exactly 1/α_EM, and the kaon agreement is lost. The correction was recorded because it is what the identity gives, not because it improves the comparison.",
+    },
+  ],
 });

@@ -3,16 +3,21 @@
  "doc_id": "arxiv-1604.02688v1",
  "source_sha256": "bdcafe379519287c",
  "brief": "THE 3D-INDEX AND NORMAL SURFACES — Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index, associated to a suitable ideal triangulation of a 3-manifold with torus boundary",
- "extended": "**THE 3D-INDEX AND NORMAL SURFACES**\n\n*STAVROS GAROUFALIDIS, CRAIG D. HODGSON, NEIL R. HOFFMAN*\n\n57 pp, 29 sections.\n\n**Abstract.** Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index, associated to a suitable ideal triangulation of a 3-manifold with torus boundary components. The 3D-index is a collection of formal power series inq1/2 with integer coeﬃcients. Our goal is to explain how the 3D-index is a generating series of normal surfaces associated to the ideal triangulation. This shows a connection of the 3D-index with classical normal surface theory, and fulﬁlls a dream of constructing topological invariants of 3-manifolds using normal surfaces.\n\n**Outline.** 1 Introduction; Acknowledgements; 2 The tetrahedral index; 3 Notation and conventions for triangulated 3-; 3.1 Gluing equations; 3.2 Generalised angle structures; 4 The 3D-index of an ideal triangulation; 5 Dependence on the choice of triangulation; 6.1 Construction of spun normal surfaces; 6.2 Geometric generators for Q-normal classes; 7 Combinatorics of ideal triangulations and in; 7.1 Geometric generators for integer Q-normal ; 8.1 Convergence of the index sum; 10 Generalised normal surfaces; 10.1 Generalised normal and spun normal surfac; 10.2 Degrees of index terms; 10.3 Normalisation and barriers; 11.1 Solid torus\n\n**Extracted claims (proposals, not verified).**\n- Theorem 5.2: [GHRS15, Theorem 1.2] The sum deﬁningIT([γ]) converges for all [γ]∈\n- Theorem 5.3: If T and T′ are related by a 2-3 move\n- Theorem 5.4: [GHRS15, Theorem 5.1]If T and T′ are ideal triangulations related by a 0-2\n- Theorem 2.1: ] (also see Luo-Tillmann [LT08, §2]) shows that the space˜N(T; R)⊂ R7n of all\n- Theorem 8.8: If T is 1-eﬃcient, thenIa\n- Theorem 8.9: If T is spun 1-eﬃcient, i.e. contains no embedded spun normal surfaceS⁄= 0",
+ "extended": "**THE 3D-INDEX AND NORMAL SURFACES**\n\n*STAVROS GAROUFALIDIS, CRAIG D. HODGSON, NEIL R. HOFFMAN*\n\n57 pp, 35 sections.\n\n**Abstract.** Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index, associated to a suitable ideal triangulation of a 3-manifold with torus boundary components. The 3D-index is a collection of formal power series in q1/2 with integer coeﬃcients. Our goal is to explain how the 3D-index is a generating series of normal surfaces associated to the ideal triangulation. This shows a connection of the 3D-index with classical normal surface theory, and fulﬁlls a dream of constructing topological invariants of 3-manifolds using normal surfaces.\n\n**Outline.** Front matter; 1 Introduction; Acknowledgements; 2 The tetrahedral index; 3 Notation and conventions for triangulated 3-; 3.1 Gluing equations; 3.2 Generalised angle structures; 4 The 3D-index of an ideal triangulation; 5 Dependence on the choice of triangulation; 6 Some Q-normal surface theory; 6.1 Construction of spun normal surfaces; 6.2 Geometric generators for Q-normal classes; 7 Combinatorics of ideal triangulations and in; 7.1 Geometric generators for integer Q-normal ; 8 The 3D-index via normal surfaces; 8.1 Convergence of the index sum; 8.2 Non 1-efficient ideal triangulations; 9 Invariance under 2-3 and 0-2 moves",
  "tokens": {
   "brief": 47,
-  "extended": 454
+  "extended": 330
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-3"
+   "pages": "2-3"
   },
   {
    "id": "sec-001-acknowledgements",
@@ -47,110 +52,135 @@
   {
    "id": "sec-007-5-dependence-on-the-choice-of-triangulation",
    "title": "Dependence on the choice of triangulation",
-   "pages": "8-11"
+   "pages": "8-10"
   },
   {
-   "id": "sec-008-61-construction-of-spun-normal-surfaces",
+   "id": "sec-008-6-some-q-normal-surface-theory",
+   "title": "Some Q-normal surface theory",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-009-61-construction-of-spun-normal-surfaces",
    "title": "Construction of spun normal surfaces",
    "pages": "11-13"
   },
   {
-   "id": "sec-009-62-geometric-generators-for-q-normal-classes",
+   "id": "sec-010-62-geometric-generators-for-q-normal-classes",
    "title": "Geometric generators for Q-normal classes",
    "pages": "13-16"
   },
   {
-   "id": "sec-010-7-combinatorics-of-ideal-triangulations-and-inte",
+   "id": "sec-011-7-combinatorics-of-ideal-triangulations-and-inte",
    "title": "Combinatorics of ideal triangulations and integer normal surface theory",
    "pages": "16-19"
   },
   {
-   "id": "sec-011-71-geometric-generators-for-integer-q-normal-cla",
+   "id": "sec-012-71-geometric-generators-for-integer-q-normal-cla",
    "title": "Geometric generators for integer Q-normal classes",
-   "pages": "19-21"
+   "pages": "19-20"
   },
   {
-   "id": "sec-012-81-convergence-of-the-index-sum",
+   "id": "sec-013-8-the-3d-index-via-normal-surfaces",
+   "title": "The 3D-index via normal surfaces",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-014-81-convergence-of-the-index-sum",
    "title": "Convergence of the index sum",
-   "pages": "21-27"
+   "pages": "21-24"
   },
   {
-   "id": "sec-013-10-generalised-normal-surfaces",
+   "id": "sec-015-82-non-1-efficient-ideal-triangulations",
+   "title": "Non 1-efficient ideal triangulations",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-016-9-invariance-under-2-3-and-0-2-moves",
+   "title": "Invariance under 2-3 and 0-2 moves",
+   "pages": "25-27"
+  },
+  {
+   "id": "sec-017-10-generalised-normal-surfaces",
    "title": "Generalised normal surfaces",
    "pages": "27-27"
   },
   {
-   "id": "sec-014-101-generalised-normal-and-spun-normal-surfaces",
+   "id": "sec-018-101-generalised-normal-and-spun-normal-surfaces",
    "title": "Generalised normal and spun normal surfaces",
    "pages": "27-29"
   },
   {
-   "id": "sec-015-102-degrees-of-index-terms",
+   "id": "sec-019-102-degrees-of-index-terms",
    "title": "Degrees of index terms",
    "pages": "29-30"
   },
   {
-   "id": "sec-016-103-normalisation-and-barriers",
+   "id": "sec-020-103-normalisation-and-barriers",
    "title": "Normalisation and barriers",
-   "pages": "30-34"
+   "pages": "30-35"
   },
   {
-   "id": "sec-017-111-solid-torus",
-   "title": "Solid torus",
-   "pages": "34-35"
-  },
-  {
-   "id": "sec-018-11-some-examples",
+   "id": "sec-021-11-some-examples",
    "title": "Some examples",
    "pages": "35-35"
   },
   {
-   "id": "sec-019-112-trefoil-complement",
+   "id": "sec-022-111-solid-torus",
+   "title": "Solid torus",
+   "pages": "35-35"
+  },
+  {
+   "id": "sec-023-112-trefoil-complement",
    "title": "Trefoil complement",
    "pages": "35-36"
   },
   {
-   "id": "sec-020-114-a-toroidal-example",
+   "id": "sec-024-114-a-toroidal-example",
    "title": "A toroidal example",
    "pages": "36-37"
   },
   {
-   "id": "sec-021-115-m009",
+   "id": "sec-025-115-m009",
    "title": "m009",
    "pages": "37-39"
   },
   {
-   "id": "sec-022-12-notes-on-connectedness-of-the-1-efficient-pac",
+   "id": "sec-026-12-notes-on-connectedness-of-the-1-efficient-pac",
    "title": "Notes on connectedness of the 1-efficient Pachner Graph",
    "pages": "39-41"
   },
   {
-   "id": "sec-023-121-a-census-of-ideal-triangulations",
+   "id": "sec-027-121-a-census-of-ideal-triangulations",
    "title": "A census of ideal triangulations",
    "pages": "41-42"
   },
   {
-   "id": "sec-024-122-two-tetrahedron-ideal-triangulations",
+   "id": "sec-028-122-two-tetrahedron-ideal-triangulations",
    "title": "Two tetrahedron ideal triangulations",
-   "pages": "42-45"
+   "pages": "42-44"
   },
   {
-   "id": "sec-025-124-connected-components-of-normal-surfaces",
+   "id": "sec-029-123-angle-structures-1-efficiency-and-pachner-mo",
+   "title": "Angle Structures, 1-efficiency and Pachner moves",
+   "pages": "44-45"
+  },
+  {
+   "id": "sec-030-124-connected-components-of-normal-surfaces",
    "title": "Connected components of normal surfaces",
    "pages": "45-50"
   },
   {
-   "id": "sec-026-appendix-a-generalised-angle-structures-and-the",
+   "id": "sec-031-appendix-a-generalised-angle-structures-and-the",
    "title": "Appendix A. Generalised angle structures and the Euler characteristic",
    "pages": "50-51"
   },
   {
-   "id": "sec-027-a1-euler-characteristic-from-generalised-angle-s",
+   "id": "sec-032-a1-euler-characteristic-from-generalised-angle-s",
    "title": "A.1. Euler characteristic from generalised angle structures",
    "pages": "51-55"
   },
   {
-   "id": "sec-028-references",
+   "id": "sec-033-references",
    "title": "References",
    "pages": "55-57"
   }
@@ -159,8 +189,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

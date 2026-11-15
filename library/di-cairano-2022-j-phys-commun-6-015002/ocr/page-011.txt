@@ -1,0 +1,69 @@
+IOP Publishing
+
+J. Phys. Commun. 6 (2022) 015002 LDiCairano
+
+whereas
+N
+Sx(t — 7) = )ou7 sin(wi(t — 7))ej ® e. (57)
+i=1
+Therefore, the kernel matrix reduces
+N 7
+L(t— 7) = > 5 cos(wi(t — 7))e; ®@ ej, (58)
+i=1 Vi
+
+whose trace coincides with the ¢z function (15) in the Zwanzig’s result [3 1]. However, now, the continuum limit
+can be computed. We conclude this section discussing the importance of including all the parameters
+representing the interactions (in this case 1;) directly in the definitions of the kernel matrix and noise terms In
+particular, this can be appreciated as soon as one computes the continuum limit of the friction matrix, which
+consists in assuming that the set of heat bath frequencies = {w;}, becomes acontinuum set Y C R
+together with a distribution function g(w) of frequencies which depends on the specific interactions we
+considered.
+
+In this limit, one replaces the sum over the frequencies with an integral [31]:
+
+N
+
+Sn i; nw) g(w)dw,
+
+i=1
+
+where {17;}_, is any set of coefficients and 1(w) is the associated frequency-dependent function in the continuum
+limit.
+
+Now, if the kernel function is defined as in equation (17), i.e., without including the parameters 7; the
+continuum limit, which reads:
+
+&(t-—T) — I w* cos(w(t — T))g(w)dw,
+
+cannot provide a bounded continuous kernel function.
+Conversely, including the coefficients +; in the kernel as in (18), one assumes that the set {7;}., becomes a
+continuous function 7(w) of the frequency variable, so that the continuum limit can be applied
+
+(t-n— i COCR 2g (we) de, (59)
+choosing such that it remains bounded as w — 00.
+
+The degree of freedom represented by the 7 function can be fixed for requiring the boundedness of the kernel
+function. In practice, the remaining effort consists in providing the correct modeling, depending on the
+interaction nature, of the function J(w) = YF w)gw) even called density function. with the existing techniques
+already introduced in the literature [19].
+
+3. Conclusion
+
+We have showed that in order to obtain a kernel matrix which contains the parameters of the interactions and,
+thereby, that admits a thermodynamics limit as proposed by Zwanzig, we have to pay attention to the definition of
+equilibrium map a which plays a fundamental role.
+
+In fact, its mathematical structure needs to be specified somehow so to distinguish the contributions given
+by the interaction parameters and the functional dependence on X. In so doing, one obtains a nonlinear
+generalized Langevin equation (see equation (45)) where the kernel matrix and noise vector explicitly depend on
+the parameters 7); ;which is impossible to obtain if we followed Zwanzig’s procedure as we have shown in the
+introductory section. Finally, with these definitions, we can proceed in computing the continuum limit without
+introducing further assumptions for making the kernel function bounded.
+
+Such a derivation could seem a matter of little consequence if we just have a heavy particle linearly
+interacting with a single heat bath system. In this case, it is always possible to understand how to readjust the
+kernel function definition (9) in order to include the parameters. However, if we had different kinds of heat
+baths which interact in a nonlinear way with the heavy particle, the adjustment previously mentioned cannot be
+applied anymore but a different derivation as that proposed in this paper should be considered.
+
+10

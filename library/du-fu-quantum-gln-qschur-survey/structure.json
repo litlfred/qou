@@ -1,0 +1,558 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "du-fu-quantum-gln-qschur-survey",
+ "source": {
+  "file": "du-fu-quantum-gln-qschur-survey.pdf",
+  "sha256": "6852134eaffb31376226d2f7c6d0c1b1f43fb44d37c1ccb95cb55875ae064cb6",
+  "bytes": 316824,
+  "pages": 23,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:22:14Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Quantum gl_n, q-Schur algebras and their infinite/infinitesimal counterparts",
+  "authors_raw": "INFINITE/INFINITESIMAL COUNTERPARTS",
+  "title_lines": [
+   "QUANTUM gln, q-SCHUR ALGEBRAS AND THEIR"
+  ],
+  "abstract": "We present a survey of recent developments of the Beilinson–Lusztig–MacPherson approach in the study of quantum gln, inﬁnitesimal quantum gln, quantum gl∞and their associated q-Schur algebras, little q-Schur algebras and inﬁnite q-Schur algebras. We also use the relationship between quantum gl∞and inﬁnite q-Schur algebras to discuss their representations.",
+  "docinfo": {
+   "Title": "nagoyaProcPaper_rr.dvi",
+   "Producer": "AFPL Ghostscript 8.14",
+   "Creator": "dvips(k) 5.90a Copyright 2002 Radical Eye Software",
+   "CreationDate": "D:20071012164140"
+  },
+  "title_raw": "QUANTUM gln, q-SCHUR ALGEBRAS AND THEIR",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "metadata": "nagoyaProcPaper_rr.dvi",
+   "heading": "QUANTUM gl n , q -SCHUR ALGEBRAS AND THEIR INFINITE/INFINITESIMAL COUNTERPARTS 1. Introduction Almost at the same time when C.M. Ringel discovered the Hall algebra realization [24] of the positive part of the quantum enveloping algebras associated with ﬁnite dimensional semisimple complex Lie algebr",
+   "text": "QUANTUM gln, q-SCHUR ALGEBRAS AND THEIR",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_correction": {
+   "title": "Quantum gl_n, q-Schur algebras and their infinite/infinitesimal counterparts",
+   "basis": "Printed title on page 1 (J. Du and Q. Fu); the extracted title was cut at a line break",
+   "extracted_title": "QUANTUM gln, q-SCHUR ALGEBRAS AND THEIR",
+   "corrected_on": "2026-11-15"
+  }
+ },
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "13 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (13 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed): one section per page.",
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "page-001",
+   "number": null,
+   "title": "Page 1",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 2953,
+   "n_words": 466,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 2437,
+   "n_words": 482,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 2057,
+   "n_words": 400,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1776,
+   "n_words": 368,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 2359,
+   "n_words": 507,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 2204,
+   "n_words": 444,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 2481,
+   "n_words": 502,
+   "label_start": "7",
+   "label_end": "7"
+  },
+  {
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 2446,
+   "n_words": 496,
+   "label_start": "8",
+   "label_end": "8"
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1872,
+   "n_words": 365,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1968,
+   "n_words": 417,
+   "label_start": "10",
+   "label_end": "10"
+  },
+  {
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 1625,
+   "n_words": 381,
+   "label_start": "11",
+   "label_end": "11"
+  },
+  {
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1956,
+   "n_words": 457,
+   "label_start": "12",
+   "label_end": "12"
+  },
+  {
+   "id": "page-013",
+   "number": null,
+   "title": "Page 13",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 2141,
+   "n_words": 434,
+   "label_start": "13",
+   "label_end": "13"
+  },
+  {
+   "id": "page-014",
+   "number": null,
+   "title": "Page 14",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 2313,
+   "n_words": 523,
+   "label_start": "14",
+   "label_end": "14"
+  },
+  {
+   "id": "page-015",
+   "number": null,
+   "title": "Page 15",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 2578,
+   "n_words": 512,
+   "label_start": "15",
+   "label_end": "15"
+  },
+  {
+   "id": "page-016",
+   "number": null,
+   "title": "Page 16",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 2188,
+   "n_words": 442,
+   "label_start": "16",
+   "label_end": "16"
+  },
+  {
+   "id": "page-017",
+   "number": null,
+   "title": "Page 17",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 2402,
+   "n_words": 450,
+   "label_start": "17",
+   "label_end": "17"
+  },
+  {
+   "id": "page-018",
+   "number": null,
+   "title": "Page 18",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 2762,
+   "n_words": 562,
+   "label_start": "18",
+   "label_end": "18"
+  },
+  {
+   "id": "page-019",
+   "number": null,
+   "title": "Page 19",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 2453,
+   "n_words": 457,
+   "label_start": "19",
+   "label_end": "19"
+  },
+  {
+   "id": "page-020",
+   "number": null,
+   "title": "Page 20",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 2988,
+   "n_words": 529,
+   "label_start": "20",
+   "label_end": "20"
+  },
+  {
+   "id": "page-021",
+   "number": null,
+   "title": "Page 21",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 2881,
+   "n_words": 532,
+   "label_start": "21",
+   "label_end": "21"
+  },
+  {
+   "id": "page-022",
+   "number": null,
+   "title": "Page 22",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 3455,
+   "n_words": 530,
+   "label_start": "22",
+   "label_end": "22"
+  },
+  {
+   "id": "page-023",
+   "number": null,
+   "title": "Page 23",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 388,
+   "n_words": 50,
+   "label_start": "23",
+   "label_end": "23"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 0,
+  "toc_inferred_entries": 13,
+  "toc_inferred_mean_confidence": 0.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "regex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 23,
+  "chars_total": 52683,
+  "furniture_lines_stripped": 0
+ }
+}

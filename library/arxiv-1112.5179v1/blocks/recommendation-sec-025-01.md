@@ -1,0 +1,1 @@
+We can then guess what the appropriate symplectic action on $(\mathcal{P},\omega_{0,s})$ should be by combining holomorphic and antiholomorphic copies of [\[SpSL\]](#SpSL){reference-type="eqref" reference="SpSL"}.

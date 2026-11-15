@@ -1,6 +1,6 @@
 ---
 doc_id: 1172-4
-doc_title: "Notes on Construction of the Knot Invariant from $\mathrm{O}\mathrm{u}\mathrm{a}\mathrm{n}\mathrm{t}\mathrm{u}\sim \mathrm{m}$ Dilogarithm Function 東京大学大学院裡掌野研究科物裡学專攻"
+doc_title: "Notes on Construction of the Knot Invariant from Quantum Dilogarithm Function"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
@@ -8,7 +8,9 @@ pages: 1-9
 source_pdf: 1172-4.pdf
 source_sha256: ffc47732ce0138e9
 toc_source: inferred
+doc_brief: "Hikami, Notes on construction of the knot invariant from the quantum dilogarithm function (RIMS Kôkyûroku) — knot invariants built from Faddeev's quantum dilogarithm."
 ---
+Introduction
 Since the discovery of the Jones polynomial [15], the quantum
 $\mathrm{g}\mathrm{r}o$up has
 $\dot{\mathrm{b}}\mathrm{e}\mathrm{e}\mathrm{n}$ used to
@@ -43,7 +45,6 @@ $To\varphi o$ I 13-0033,
 $\int \mathrm{a}p\partial n$.
 数理解析研究所講究録
 1172 巻2000 年44-69
-44
 This Note is organized as follows. We ﬁrst review several relations for the diloga-
 rithm function. See Ref. 25 and references therein for topics of the dilogarithm function.
 We then deﬁne the quantum dilogarithm function as a
@@ -80,7 +81,6 @@ dilogarithm function $L(x)$ , which is given by
 $L(x)=Li_{2}(x)+ \frac{1}{2}\log x\cdot\log(1-X)$
 $=- \frac{1}{2}\int_{0}^{x}(\frac{\log(1-S)}{s}+\frac{\log s}{1-s})\mathrm{d}s$ .
 (2.2)
-45
 This function satisﬁes following relations;
 $L(x)+L(1-x)= \frac{\pi^{2}}{6}$ ,
 (2.3)
@@ -125,7 +125,6 @@ $=1+ \sum_{k=1}^{\infty}\frac{(-1)^{k}q^{\frac{k.(k-1)}{2}}w^{k}}{(q-q^{-1})\cdo
 $= \exp(\sum_{k=1}^{\infty}\frac{(-1)^{k}w^{k}}{k(q^{kk}-q^{-})})$ .
 (3.1C)
 $\uparrow \mathrm{i}\equiv\sqrt{-1}$
-46
 These identities can be proved by the fact that each expression satisﬁes following diﬀer-
 ence equation and an initial condition;
 $\frac{S_{q}(qw)}{S_{q}(q^{-1}w)}=\frac{1}{1+w}$
@@ -166,7 +165,6 @@ $=S_{q}(\hat{a})s_{q}(q-1\hat{a}\hat{b}+\hat{b})$
 $=S_{q}$ (\^a)
 $s_{q}(q^{-}\hat{a}\hat{b}1)S_{q}(\hat{b})$ .
 (3.5d)
-47
 Proof is as follows. As we have
 $S_{q}(\hat{b})\cdot$ \^a $\cdot(S_{q}(\hat{b}))-1=\hat{a}\cdot s_{q}(q-2\hat{b})\cdot(S_{q}(\hat{b}))-1(=\hat{a}\cdot 1+q-1\hat{b})$ ,
 we obtain the ﬁrst equality;
@@ -206,7 +204,6 @@ To close this section, we note that we can solve a non-constant solution of the 
 Baxter equation in terms of $S_{q}(w)[8,10, 12,38]$ , and it was shown [1] that the universal
 $R$-matrix with a
 $q$-oscillator representation reduces to this solution.
-48
 4
 Quantum Dilogarithm Function II
 In the case of the $|q|=1$ we should modify the deﬁnition (3.1a) of the quantum diloga-
@@ -249,7 +246,6 @@ $\gammaarrow 0$ , we have a nontrivial identity for the Euler dilogarithm functi
 $Li_{2}(- \mathrm{e}^{\varphi})+Li_{2}(-\mathrm{e}^{-\varphi})+\frac{\varphi^{2}}{2}+\frac{\pi^{2}}{6}=0$ .
 (4.5)
 We can check that the integral (4.2) satisﬁes the diﬀerence equations. We ﬁnd by
-49
 direct computation that
 $\frac{\Phi_{\gamma}(\varphi+\mathrm{i}\gamma)}{\Phi_{\gamma}(\varphi-\mathrm{i}\gamma)}=\frac{1}{1+\mathrm{e}^{\varphi}}$
 (4.6a)
@@ -297,7 +293,6 @@ commutativity of two algebras, we also have the pentagon relation for the integr
 $\Phi_{\gamma}$ ,
 $\Phi_{\gamma}(\hat{p})\Phi_{\gamma}(\hat{q})=\Phi_{\gamma}(\hat{q})\Phi\gamma(\hat{p}+\hat{q})\Phi_{\gamma}(\hat{p})$,
 (4.8)
-50
 where we have used
 $\mathrm{e}^{\hat{q}}\mathrm{e}^{\hat{p}}=\mathrm{e}^{\hat{p}\hat{q}+\mathrm{i}\gamma}+$.
 We rewrite the pentagon relation (4.8) in a simple form. We introduce the S-operator
@@ -347,7 +342,6 @@ $P$ is a permutation operator, we ﬁnd that the operator R. is a solution of th
 relation,
 $(\mathrm{R}\otimes 1)(1\otimes \mathrm{R})(\mathrm{R}\otimes 1)=(1\otimes \mathrm{R})(\mathrm{R}\otimes 1)(1\otimes \mathrm{R})$ .
 (4.14)
-51
 For our later convention, we deﬁne other operato
 $\mathrm{r}\mathrm{s}Y$ and
 $Z$ ;
@@ -382,4 +376,3 @@ $\mathrm{D}\otimes \mathrm{D}\cdot \mathrm{R}=\mathrm{R}\cdot \mathrm{D}\otimes 
 (4.20)
 $\tilde{\mathrm{D}}\otimes\tilde{\mathrm{D}}\cdot \mathrm{R}=\mathrm{R}\cdot\tilde{\mathrm{D}}\otimes\tilde{\mathrm{D}}$.
 (4.21)
-5

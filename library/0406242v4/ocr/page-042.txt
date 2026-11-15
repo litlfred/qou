@@ -1,0 +1,40 @@
+1280 Francois Guéritaud and David Futer
+
+monotonicity of volume under Ricci flow with surgery. By contrast, the lower bound in
+Theorem B.3 only relies on the explicit study of angled triangulations.
+
+-
+
+Figure 21: A flype in a diagram of a two-bridge link. The shaded rectangle P is a pillowcase of
+the braid.
+
+Proof First, we claim that it suffices to consider a diagram D like the one in Fig-
+ure 13, constructed from an alternating braid with one free strand. By the Menasco—
+Thistlethwaite flyping theorem [16], any pair of reduced alternating diagrams of K are
+related by a sequence of flypes, as in Figure 21. It is easy to check that the twist number
+of a diagram is invariant under flypes. Thus the number of syllables of the word 2) is
+the twist number of any reduced alternating diagram of K.
+
+Lower bound Suppose that the link is defined by the word Q = R“'L® --- R® (the
+parity of n = tw(D) and the letter of the first and last syllables are unimportant). As in
+the proof of Theorem B.1, we explicitly choose a point w = (F,wi,...,We-1, 5) of P.
+However, the concavity condition of (3) does not allow us to set w; = $ when i is too
+close to 0 or c. Instead, we proceed as follows. We let w; = $ for all ay <i < c—ady.
+For the indices of the first and last fans, we interpolate linearly between 5 and 7. As
+before, it is easy to check that these values of the parameters make all tetrahedron angles
+
+nonnegative, and give us a point of P.
+
+When i is a hinge and a; < i < c— 4p, the two tetrahedra of A; have all dihedral angles
+3, and volume v3. For n > 3, there are exactly n — 3 hinge indices of this type. When
+i =a, or i=c — ay, we can compute from Figure 5 that the three angles of A; are
+Tv Tv Tv Tv
+3 + ti, 37 t; and 3? where t; = |wi41 — wi-1| < é
+By Proposition 6.6, the volume defined by these angles is smallest at the extreme value
+of t; = &, when the three angles are 4, 4, @. Still assuming n > 3, by Formula (4) the
+four tetrahedra in the two terminal hinge layers each have volume at least 0.84578...
+Putting it all together gives
+
+Vw) > 2v3(tw(D) — 3) + 4 x 0.84578 > 23 tw(D) — 2.7066.
+
+Geometry & Topology 10 (2006)

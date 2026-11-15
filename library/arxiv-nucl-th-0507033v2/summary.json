@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-nucl-th-0507033v2",
  "source_sha256": "57509b3ce5f9f8cc",
- "brief": "Cluster Formation and The Virial Equation of State of Low-De nsity Nuclear Matter — 19 sections: Front matter; INTRODUCTION; FORMALISM",
- "extended": "**Cluster Formation and The Virial Equation of State of Low-De nsity Nuclear Matter**\n\n*C.J. Horowitz ∗ and A. Schwenk †*\n\n15 pp, 19 sections.\n\n**Outline.** Front matter; I INTRODUCTION; II FORMALISM; 2 QnQp; 2 Qα Qp; 2 Qα Qn; C Virial Coeﬃcients; 2 QnQp) , (9); 2 Qα Qn) ≈ λ3; 2 Qα Qp) , (10); III RESULTS; 2 P − nα Eα + 2T 2; 4 MeV. In addition, we give xα for Yp = 1/2 an; C Pressure; 8 T λ3nb(bpn − 2T b′; 4 T λ3nb(bpn − bn) , (40); 4 MeV. Also shown are virial results without α; IV CONCLUSIONS",
+ "brief": "Cluster Formation and The Virial Equation of State of Low-Density Nuclear Matter — 15 sections: Front matter; Introduction; Formalism",
+ "extended": "**Cluster Formation and The Virial Equation of State of Low-Density Nuclear Matter**\n\n*C.J. Horowitz∗and A. Schwenk†*\n\n15 pp, 15 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Formalism; 2.1 Nuclear Statistical Equilibrium; 2.2 Virial Equation of State; 2.3 Virial Coefficients; 3 Results; 3.1 Virial Coefficients; 2.4 Entropy and Energy; 3.2 Composition; 3.3 Pressure; 3.4 Entropy and Energy; 3.5 Symmetry Energy; 4 Conclusions; Acknowledgements",
  "tokens": {
   "brief": 33,
-  "extended": 124
+  "extended": 113
  },
  "sections": [
   {
@@ -15,92 +15,72 @@
    "pages": "1-1"
   },
   {
-   "id": "sec-000-i-introduction",
-   "title": "INTRODUCTION",
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
    "pages": "1-2"
   },
   {
-   "id": "sec-001-ii-formalism",
-   "title": "FORMALISM",
+   "id": "sec-001-2-formalism",
+   "title": "Formalism",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-002-21-nuclear-statistical-equilibrium",
+   "title": "Nuclear Statistical Equilibrium",
    "pages": "2-3"
   },
   {
-   "id": "sec-002-2-qnqp",
-   "title": "QnQp",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-003-2-qα-qp",
-   "title": "Qα Qp",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-004-2-qα-qn",
-   "title": "Qα Qn",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-005-c-virial-coeﬃcients",
-   "title": "Virial Coeﬃcients",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-006-2-qnqp-9",
-   "title": "QnQp) , (9)",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-007-2-qα-qn-λ3",
-   "title": "Qα Qn) ≈ λ3",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-008-2-qα-qp-10",
-   "title": "Qα Qp) , (10)",
+   "id": "sec-003-22-virial-equation-of-state",
+   "title": "Virial Equation of State",
    "pages": "3-4"
   },
   {
-   "id": "sec-009-iii-results",
-   "title": "RESULTS",
+   "id": "sec-004-23-virial-coefficients",
+   "title": "Virial Coefficients",
    "pages": "4-5"
   },
   {
-   "id": "sec-010-2-p-nα-eα-2t-2",
-   "title": "P − nα Eα + 2T 2",
-   "pages": "5-8"
+   "id": "sec-005-3-results",
+   "title": "Results",
+   "pages": "5-5"
   },
   {
-   "id": "sec-011-4-mev-in-addition-we-give-xα-for-yp-12-and-a-ran",
-   "title": "MeV. In addition, we give xα for Yp = 1/2 and a range",
-   "pages": "8-10"
+   "id": "sec-006-31-virial-coefficients",
+   "title": "Virial Coefficients",
+   "pages": "5-5"
   },
   {
-   "id": "sec-012-c-pressure",
+   "id": "sec-007-24-entropy-and-energy",
+   "title": "Entropy and Energy",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-008-32-composition",
+   "title": "Composition",
+   "pages": "7-10"
+  },
+  {
+   "id": "sec-009-33-pressure",
    "title": "Pressure",
-   "pages": "10-12"
+   "pages": "10-11"
   },
   {
-   "id": "sec-013-8-t-λ3nbbpn-2t-b",
-   "title": "T λ3nb(bpn − 2T b′",
-   "pages": "12-12"
+   "id": "sec-010-34-entropy-and-energy",
+   "title": "Entropy and Energy",
+   "pages": "11-12"
   },
   {
-   "id": "sec-014-4-t-λ3nbbpn-bn-40",
-   "title": "T λ3nb(bpn − bn) , (40)",
+   "id": "sec-011-35-symmetry-energy",
+   "title": "Symmetry Energy",
    "pages": "12-13"
   },
   {
-   "id": "sec-015-4-mev-also-shown-are-virial-results-without-α-pa",
-   "title": "MeV. Also shown are virial results without α particles (zα =",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-016-iv-conclusions",
-   "title": "CONCLUSIONS",
+   "id": "sec-012-4-conclusions",
+   "title": "Conclusions",
    "pages": "13-14"
   },
   {
-   "id": "sec-017-acknowledgements",
+   "id": "sec-013-acknowledgements",
    "title": "Acknowledgements",
    "pages": "14-15"
   }

@@ -3,99 +3,139 @@
  "doc_id": "arxiv-0911.1038v2",
  "source_sha256": "3bc566efaefd44c6",
  "brief": "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS — We study asymptotics of characters of the symmetric groups on a ﬁxed conjugacy class.",
- "extended": "**ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS**\n\n*MACIEJ DOŁ ˛ EGA AND PIOTRŚNIADY*\n\n26 pp, 18 sections.\n\n**Abstract.** We study asymptotics of characters of the symmetric groups on a ﬁxed conjugacy class. It was proved by Kerov that such a character can be expressed as a polynomial in free cumulants of the Youn g dia- gram (certain functionals describing the shape of the Young diagram). We show that for each genus there exists a universal symmetric polyno- mial which gives the coefﬁcients of the part of Kerov charact er polyno- mials with the prescribed homogeneous degree. The existenc e of such symmetric polynomials was conjectured by Lassalle. 1. I NTRODUCTION 1.1. Asymptotic representation theory of symmetric groups. What can we say about the representations of the symmetric groups S(n) in the limit n → ∞ ? This very general question is the subject of investigations of the asymptotic representation theory of the symmetric groups.\n\n**Outline.** 1.1 Asymptotic representation theory of symmet; 1.2 Asymptotic shape of Young diagrams; 1.3 How to normalize the characters?; 1.6 Kerov character polynomials; 1.4 How to describe the shape of a Young diagr; 1.5 Free cumulants; 1.7 Genus expansion; 1.8 The main result: proof of some conjectures; 1.9 General idea of the proof; 2.3 Goulden-Rattan formula; 3.1 Implications of divisibility; 3.2 Divisibility; 3.3 Proof of the main result; 4 Technical lemmas; 4.1 Identities on symmetric functions; 4.3 Arithmetic properties of Kerov polynomials; Acknowledgments; References",
+ "extended": "**ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS**\n\n*MACIEJ DOŁ ˛EGA AND PIOTR ŚNIADY*\n\n26 pp, 26 sections.\n\n**Abstract.** We study asymptotics of characters of the symmetric groups on a ﬁxed conjugacy class. It was proved by Kerov that such a character can be expressed as a polynomial in free cumulants of the Young dia- gram (certain functionals describing the shape of the Young diagram). We show that for each genus there exists a universal symmetric polyno- mial which gives the coefﬁcients of the part of Kerov character polyno- mials with the prescribed homogeneous degree. The existence of such symmetric polynomials was conjectured by Lassalle.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Asymptotic representation theory of symmet; 1.2 Asymptotic shape of Young diagrams; 1.3 How to normalize the characters?; 1.4 How to describe the shape of a Young diagr; 1.5 Free cumulants; 1.6 Kerov character polynomials; 1.7 Genus expansion; 1.8 The main result: proof of some conjectures; 1.9 General idea of the proof; 2 Goulden-Rattan formula and existence of symm; 2.1 Power series P; 2.2 Polynomial structure of coefficients of P; 2.3 Goulden-Rattan formula; 2.4 Proof of Proposition ??; 3 Divisibility of polynomials; 3.1 Implications of divisibility",
  "tokens": {
   "brief": 43,
-  "extended": 394
+  "extended": 325
  },
  "sections": [
   {
-   "id": "sec-000-11-asymptotic-representation-theory-of-symmetric",
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-11-asymptotic-representation-theory-of-symmetric",
    "title": "Asymptotic representation theory of symmetric groups",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-12-asymptotic-shape-of-young-diagrams",
+   "id": "sec-002-12-asymptotic-shape-of-young-diagrams",
    "title": "Asymptotic shape of Young diagrams",
    "pages": "1-2"
   },
   {
-   "id": "sec-002-13-how-to-normalize-the-characters",
+   "id": "sec-003-13-how-to-normalize-the-characters",
    "title": "How to normalize the characters?",
    "pages": "2-3"
   },
   {
-   "id": "sec-003-16-kerov-character-polynomials",
-   "title": "Kerov character polynomials",
-   "pages": "3-3"
-  },
-  {
    "id": "sec-004-14-how-to-describe-the-shape-of-a-young-diagram",
    "title": "How to describe the shape of a Young diagram?",
-   "pages": "3-3"
+   "pages": "3-4"
   },
   {
    "id": "sec-005-15-free-cumulants",
    "title": "Free cumulants",
-   "pages": "3-5"
+   "pages": "4-4"
   },
   {
-   "id": "sec-006-17-genus-expansion",
+   "id": "sec-006-16-kerov-character-polynomials",
+   "title": "Kerov character polynomials",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-007-17-genus-expansion",
    "title": "Genus expansion",
    "pages": "5-6"
   },
   {
-   "id": "sec-007-18-the-main-result-proof-of-some-conjectures-of",
+   "id": "sec-008-18-the-main-result-proof-of-some-conjectures-of",
    "title": "The main result: proof of some conjectures of Lassalle",
    "pages": "6-7"
   },
   {
-   "id": "sec-008-19-general-idea-of-the-proof",
+   "id": "sec-009-19-general-idea-of-the-proof",
    "title": "General idea of the proof",
-   "pages": "7-12"
+   "pages": "7-8"
   },
   {
-   "id": "sec-009-23-goulden-rattan-formula",
+   "id": "sec-010-2-goulden-rattan-formula-and-existence-of-symmet",
+   "title": "Goulden-Rattan formula and existence of symmetric polynomials",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-011-21-power-series-p",
+   "title": "Power series P",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-012-22-polynomial-structure-of-coefficients-of-p",
+   "title": "Polynomial structure of coefficients of P",
+   "pages": "9-12"
+  },
+  {
+   "id": "sec-013-23-goulden-rattan-formula",
    "title": "Goulden-Rattan formula",
    "pages": "12-12"
   },
   {
-   "id": "sec-010-31-implications-of-divisibility",
+   "id": "sec-014-24-proof-of-proposition",
+   "title": "Proof of Proposition ??",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-015-3-divisibility-of-polynomials",
+   "title": "Divisibility of polynomials",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-016-31-implications-of-divisibility",
    "title": "Implications of divisibility",
    "pages": "12-16"
   },
   {
-   "id": "sec-011-32-divisibility",
-   "title": "Divisibility",
+   "id": "sec-017-33-proof-of-the-main-result",
+   "title": "Proof of the main result",
    "pages": "16-16"
   },
   {
-   "id": "sec-012-33-proof-of-the-main-result",
-   "title": "Proof of the main result",
+   "id": "sec-018-32-divisibility",
+   "title": "Divisibility",
    "pages": "16-18"
   },
   {
-   "id": "sec-013-4-technical-lemmas",
+   "id": "sec-019-4-technical-lemmas",
    "title": "Technical lemmas",
    "pages": "18-18"
   },
   {
-   "id": "sec-014-41-identities-on-symmetric-functions",
+   "id": "sec-020-41-identities-on-symmetric-functions",
    "title": "Identities on symmetric functions",
-   "pages": "18-21"
+   "pages": "18-20"
   },
   {
-   "id": "sec-015-43-arithmetic-properties-of-kerov-polynomials",
+   "id": "sec-021-42-proof-of-lemma",
+   "title": "Proof of Lemma ??",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-022-43-arithmetic-properties-of-kerov-polynomials",
    "title": "Arithmetic properties of Kerov polynomials",
    "pages": "21-25"
   },
   {
-   "id": "sec-016-acknowledgments",
+   "id": "sec-023-acknowledgments",
    "title": "Acknowledgments",
    "pages": "25-25"
   },
   {
-   "id": "sec-017-references",
+   "id": "sec-024-references",
    "title": "References",
    "pages": "25-26"
   }

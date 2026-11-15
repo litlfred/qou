@@ -1,0 +1,41 @@
+Canonical triangulations 1281
+
+(As a special case, if n = 2, V(w) > 2 x 0.84578 also satisfies the theorem.)
+
+To prove that this bound is asymptotically sharp, let © = (RL), for large k. Then
+tw(D) = 2k, and the triangulation of K(Q) consists of 2(tw(D) — 1) tetrahedra, all
+of them hinges. Since the volume of an ideal tetrahedron is bounded above by v3,
+Vol(S?\K) < 2v3(tw(D) — 1), a value whose ratio to the lower bound of the theorem
+approaches | as tw(D) gets large.
+
+OO CF 0
+3) () Od
+
+Figure 22: The construction of an augmented 2-bridge link L. When tw(D) = 2, L is the
+Borromean rings.
+
+Upper bound The proof of the upper bound uses the same surgery argument that
+Lackenby, Agol, and Thurston used for general alternating links [14], and the improved
+estimate comes from the special structure of 2—bridge links.
+
+Let D be a diagram as in Figure 13. Recall that each syllable of (2 corresponds to a
+twist region where two strands of the braid wrap around each other. For every twist
+region, we add an extra link component (called a crossing circle) encircling the two
+strands of K, obtaining a hyperbolic link J [14]. (See Figure 22.) Every crossing
+circle of J bounds a crossing disk that is punctured by the two strands of K. Because
+twice-punctured disks are totally geodesic [1], we can untwist all the crossings in the
+twist region and obtain a new link L, called an augmented link, whose volume is equal
+to that of J.
+
+When K is a two-bridge link, L has the following alternate description. Start with
+(tw(D) — 1) copies of the Borromean rings, cut each one along a crossing disk, and
+glue the copies together in a linear fashion. Volume is additive under this operation
+[1]. Thus Vol(S?\L) = 2vg(tw(D) — 1), since the Borromean rings have volume 2yg.
+Since K is obtained by Dehn filling the crossing circles of J, we have
+
+Vol(S3\K) < Vol(S3\J) = Vol(S?\L) = 2vg(tw(D) — 1).
+
+By choosing a link with many crossings in each twist region, one can get Vol(S?\K)
+arbitrarily close to this upper bound. a
+
+Geometry & Topology 10 (2006)

@@ -8,7 +8,7 @@
   "pages": 15,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": null,
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -171,7 +171,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "MPO representation of the current operator J\u2113. Horizontal lines represent virtual indices of dimension \u2113+ 2. We",
+   "title": "MPO representation of the current operator Jℓ. Horizontal lines represent virtual indices of dimension ℓ+ 2. We",
    "page": 6,
    "confidence": 0.9,
    "evidence": [
@@ -184,7 +184,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "Runtime for computing the characters \u03c7\u03bb(g) for permutations g \u2208Sn composed of n/2 length-2 cycles and all irreps",
+   "title": "Runtime for computing the characters χλ(g) for permutations g ∈Sn composed of n/2 length-2 cycles and all irreps",
    "page": 7,
    "confidence": 0.9,
    "evidence": [
@@ -210,7 +210,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "MPO representation of the noncommuting complete symmetric polynomial \u02c6hk. Horizontal lines represent virtual",
+   "title": "MPO representation of the noncommuting complete symmetric polynomial ˆhk. Horizontal lines represent virtual",
    "page": 13,
    "confidence": 0.9,
    "evidence": [
@@ -223,7 +223,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "Runtime for computing Kostka numbers K\u03bb,\u03bc. Each runtime is, \ufb01xing a random \u03bc, for computing the set {K\u03bb,\u03bc}\u03bb",
+   "title": "Runtime for computing Kostka numbers Kλ,μ. Each runtime is, ﬁxing a random μ, for computing the set {Kλ,μ}λ",
    "page": 14,
    "confidence": 0.9,
    "evidence": [
@@ -373,15 +373,147 @@
  ],
  "sections": [
   {
-   "id": "sec-000-document",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Document",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 15,
-   "n_chars": 62146,
-   "n_words": 11068,
+   "page_end": 1,
+   "n_chars": 1628,
+   "n_words": 243,
    "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-000-i-introduction",
+   "number": null,
+   "title": "I.. INTRODUCTION",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 9412,
+   "n_words": 1518,
+   "label_start": "1",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-001-ii-group-theory-refresher",
+   "number": null,
+   "title": "II.. GROUP THEORY REFRESHER",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 2271,
+   "n_words": 447,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-002-iii-building-the-character",
+   "number": null,
+   "title": "III.. BUILDING THE CHARACTER",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 7174,
+   "n_words": 1498,
+   "label_start": "3",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-003-iv-classical-mps-algorithms",
+   "number": null,
+   "title": "IV.. CLASSICAL MPS ALGORITHMS",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 5917,
+   "n_words": 1083,
+   "label_start": "5",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-004-v-quantum-algorithm",
+   "number": null,
+   "title": "V.. QUANTUM ALGORITHM",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 8426,
+   "n_words": 1693,
+   "label_start": "7",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-005-vi-classical-complexity-of-sampling",
+   "number": null,
+   "title": "VI.. CLASSICAL COMPLEXITY OF SAMPLING",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 257,
+   "n_words": 43,
+   "label_start": "10",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-006-a-granularity-and-quantum-advantage",
+   "number": null,
+   "title": "A.. Granularity and quantum advantage",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 5921,
+   "n_words": 1049,
+   "label_start": "10",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-007-b-row-and-column-sampling",
+   "number": null,
+   "title": "B.. Row and column sampling",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 5553,
+   "n_words": 1021,
+   "label_start": "11",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-008-vii-classical-mps-algorithm-for-kostka-numbers",
+   "number": null,
+   "title": "VII.. CLASSICAL MPS ALGORITHM FOR KOSTKA NUMBERS",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 6027,
+   "n_words": 1055,
+   "label_start": "12",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-009-acknowledgments",
+   "number": null,
+   "title": ". ACKNOWLEDGMENTS",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 499,
+   "n_words": 74,
+   "label_start": "14",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-010-data-availability",
+   "number": null,
+   "title": ". DATA AVAILABILITY",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 7747,
+   "n_words": 1142,
+   "label_start": "14",
    "label_end": "15"
   }
  ],
@@ -396,7 +528,8 @@
    "count": 0,
    "items": []
   },
-  "sections": 1,
-  "chars_total": 62146
+  "sections": 12,
+  "chars_total": 60832,
+  "furniture_lines_stripped": 43
  }
 }

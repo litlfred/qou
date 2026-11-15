@@ -47,10 +47,11 @@
     "library/arxiv-0710.4310v2/sections/sec-032",
     "library/arxiv-0710.4310v2/sections/sec-033",
     "library/arxiv-0710.4310v2/sections/sec-034",
-    "library/arxiv-0710.4310v2/sections/sec-035"
+    "library/arxiv-0710.4310v2/sections/sec-035",
+    "library/arxiv-0710.4310v2/sections/sec-036"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -73,8 +74,8 @@
       "stamp_date": "20 Jul 2008"
     },
     "doi": null,
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

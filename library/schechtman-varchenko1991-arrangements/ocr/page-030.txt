@@ -1,34 +1,58 @@
 168 V.V. Schechtman and A.N. Varchenko
-where all gi are commutators, t(gi)=ti, Igil= Ji. Let (fir, ...,fin) be the list
-of fi's in z read from right to left. Define o(z)e Zn by o(z)(j) =ij. Put
-(5.8.9) 1=1
-...  Fn(fin)o F(g1)o...  F(gp).
-5.8.10 Example. (n= 1). Yr(fn ^fn-1 ^ ... ^fk+1 @ffk-1 ...fi)= F(H1, ..., Hk)
+
+where all g; are commutators, ¢(g)=¢,, |g|=Jj. Let {/i,. --
+
+«sfiy} be the list
+of fs in z read from right to left. Define o(z)eXy by o(z)(j)=
+
+jj Put
+
+(5.89) ¥,(2)=(— yes WY PLCf, Jo FA(fy,)o...
+1-9 F'( fig) °F (gy)2---° FG)
+
+5.8.10 Example. (n=1). W(fy \fy—1 A --) Af 1 Of fe-1-- A= F(A, ..., Hp).
 5.8.11 Lemma. The rule (5.8.9) correctly defines maps
-, : C,(n,(Un)@m), →gN-P(n;N).
-Proof. We have to verify that Y, respects the Jacobi identity and skew commutati-
-vity in gi. This follows from relations 5.6.4(b) and 5.6.4(a) respectively. 
-The next lemma will explain rather combersome choice of the sign in (5.8.9)
+¥: C,(n,(Un)®"), > FX ?(@,,)-
+
+Proof. We have to verify that 7, respects the Jacobi identity and skew commutati-
+vity in g;. This follows from relations 5.6.4(b) and 5.6.4(a) respectively. ©
+
+The next lemma will explain rather combersome choice of the sign in (5.8.9).
 Let us introduce operators
-Ojij2, 0j: Cp(n,(Un)n) -→Cp-1 (n,(Un)@n)
-1≤ji<j2≤p; ；1≤j≤p;1≤i≤n: for z=gp^... ^g1xn@...@xi.
-(5.8.12) 0jnj?(z)=gp^ ... ^giz ^... ^gii ^...g1 ^[gj2,gji]@xn@... @x1,
-(5.8.13) 0j(z)=gp^ ... ^g;^ ... ^g1@xn...@g; x;@...@x1
-. So,
-(5.8.14) d(z)= Z (-1)ji+jzjij2(z)+Z(-1)j-1aj(z)
-ji<j2 i,j
-(cf. (5.4.2).
- d-(z) (z)(z)s()=(z)   (88')    z 
-the codimension 1 subedge of'L(z) obtained by 'the connection of islands Jj
-and Jjz (resp., J; and I) (see 5.6). Let Ojnj2 F l(z) (0j F l(z) denote the flag obtained
-by adding to F l(z) the edge Qjnj2 L(z) (0, L(z); put Qjnj2 Y(z)=(- 1)s(z) Qjnjz F l(z),
-oj (z) =(- 1)s(2) aj F l(z).
-5.8.15 Lemma. (i) Y(fn ^fn - 1 ^ ... ^fi @ 1 @ ... @ 1) = .
-(ii) For z of the form (5.8.8) and all j1, j2, j, i
-P(Ojj2(z)=(-1)i+j2 jji2 Y(z);
-P(o;(z)=(- 1)j-1 aj (z).
-Proof. Direct check.
-5.8.16 Corollary. Y.=(Yp) defines the map of complexes Y.: C.(n, (Un)n)a
-→gN-'(n;N).
-Conversely, properties 5.8.15(i) and (i) determine the map  uniquely, and
+
+Gj, jn> Oj: Cp(n, (Un)®") > C,_1(n, (Un)®),
+1Sj,<joSp; 1SjSp; 1SiSn: for z=g,r... Ag, @x,@...@X,.
+
+(S.8.12)  0;,;,(2=Bpr --- ABA ABA 81 ALB), 8j,] @Xn®@-.. OX,
+(5.8.13) Oi(z)=Bp_A ABA N81 OX. OBjXi®-.. OX.
+-So,
+(5.8.14) a(2)= YY (= 19796; +L (IY 1 (2)
+ii<in ii
+
+(cf. (5.4.2)).
+
+Let z be as in (5.8.8). By definition, ¥(z)=(— 1) Fl(z), Fl(z)eFIN~”. The
+last edge of Fl(z) is Ly... sy:t......tn= L(2). Let 6;,;, L(z) (resp., di L(z)) denote
+the codimension 1 subedge of L(z) obtained by the connection of islands Jj,
+and Jj, (resp., J; and I)) (see 5.6). Let 4;, ;, F(z) (i Fl(z)) denote the flag obtained
+by adding to F'l(z) the edge 4,, ;, L(z) (0; L(z)); put 4;,;, ¥(z)=(— 1) dj, ;, FI@),
+GP (z)=(— 1) 44 F(z).
+
+5.8.15 Lemma. (i) ¥(fyAfy-1A Af, @1@...@V)=D.
+(ii) For z of the form (5.8.8) and all j,,j2, j,i
+
+aJ2 1J2
+
+P(6;,.,)=(— 1) *20
+¥ (G2)
+
+nin P(2)5
+(-1)"!a! ¥(),
+
+Proof. Direct check. 1
+
+5.8.16 Corollary. Y,=(¥,) defines the map of complexes ¥,: C,(n, (Un)®"),
++ FN" nn)-
+
+Conversely, properties 5.8.15(i) and (ii) determine the map Y uniquely, and
 allow to define the inverse map.

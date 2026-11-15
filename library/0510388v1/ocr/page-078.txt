@@ -1,0 +1,30 @@
+38. The method of moving frames in H’.
+
+The computations which lead to the various integral formulas in H’® in parallel
+transport format will be carried out using "moving frames" which are obtained
+via parallel transport from a single orthonormal frame, just as they were on Ss,
+as follows.
+
+Let x = (1,0,0,0) in H’ c R', and let X,, Xz, X3 be the usual
+orthonormal basis for the tangent space T,H® to H® at x.
+
+For each point y = (yo, ¥;,¥2,Y3) € H’, we parallel transport this orthonormal
+basis for T,H° along the unique geodesic from x to y to obtain an orthonormal
+basis
+E, = PX) > E, = PyxX> , E; = PyX3
+for TH’.
+Using the formula for PyxV , we calculate that
+Ei: = (yi, 1 + yr/(1 + yo), yiye/(1 + yo), yrys/(1 + yo))
+E> = (yo, yiy2/(1 + yo), 1 + yo" + yo), yays/(1 + yo)
+E3 = (ys, yrys(1 + yo), yays/(1 + yo), 1 + ys/(1 + yo)) -
+Next, let 6, , 82, 83 denote the 1-forms on H’ which are dual to E,, Ey, E;,
+in the sense that 0(V) = E;e V = —<E;,, V> forall vectors V and for
+i= 1,2,3.
+We can write
+8, = —yi dyo + (1 + yr/(1 +yo)) dy: + yiy2/(1 + yo) dy2 + yiys/(1 + yo) dys
+82 = —y2dyo + yiya/(1 + yo) dy: + (1 + yoM(1 + yo)) dy2 + yays/(1 + yo) dys
+03 = —ysdyo + yiys(1 + yo) dy: + yoys/(1 + yo) dy2 + (1 + yx /(1 + yo)) dys,
+
+where we understand the right hand sides as restricted to H°.
+
+78

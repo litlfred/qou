@@ -7,10 +7,11 @@ section_number: null
 pages: 4-5
 source_pdf: 2507.13873v1.pdf
 source_sha256: fa1d38d08dc4976a
-doc_brief: "Probing the singularity at the holographic screen via q-holography — We study the emergence ofq-deformed spacetime in a lower-dimensional gravitational system whose asymptotic region geometrizes the"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.985
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.971
+doc_brief: "Probing the singularity at the holographic screen via q-holography — We study the emergence of q-deformed spacetime in a lower-dimensional gravitational system whose asymptotic region geometrizes the"
 ---
 []{#s:qward label="s:qward"} We first remind the reader of the conventional CFT story. Correlation functions of primary operators in a conformal field theory are strongly constrained by the Ward identities of the corresponding global conformal subgroup. For a 2d CFT, holomorphic (quasi)primary operators with weight $\Delta$ transform under a global conformal PSL$(2)$ Möbius transformation $$z\rightarrow \frac{az+c}{bz+d},$$ as $$\begin{aligned}
 \label{eq:quasiprimarytransf}

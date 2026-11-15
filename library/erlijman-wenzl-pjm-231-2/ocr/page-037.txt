@@ -1,0 +1,46 @@
+SUBFACTORS FROM BRAIDED C* TENSOR CATEGORIES 395
+
+define from this a C*-tensor category, with the objects being the projections in Ap.
+Most of this has already been done in [Wenzl 1993], Section 2, without mentioning
+categories. We shall not do this here. We just remark that the constructions of this
+paper will work in this setting without explicitly exhibiting the category; this has
+already been done in [Erlijman 2001]. In particular, this can be applied to the Jones
+subfactors as well as to the Hecke algebra and BCD type subfactors.
+
+(3) Let Ujg be the Drinfeld—Jimbo deformation of the universal enveloping algebra
+Ug of a semisimple Lie algebra g. It is well-known that the category of its finite-
+dimensional representations has a braiding structure. It can not be unitarized except
+for q = 1. If qg is a root of unity ¥ 1, one can define a special class of represen-
+tations called tilting modules which again forms a braided tensor category. It can
+be shown that the category of tilting modules has a semisimple quotient with only
+finitely many simple modules up to equivalence; this is often referred to as a fusion
+category (see [Andersen 1992],[Andersen and Paradowski 1995]). Moreover, for
+q being certain roots of unity (usually of the form g = e*?*'/! for suitable integers
+1 (see [Wenz] 1998] for precise values), this quotient can be unitarized. This yields
+a large and important class of C* tensor categories. Using the one-sided subfactor
+construction, one obtains the Jones subfactors for X being the U,slz-analog of
+the 2-dimensional representation of s/z. Similarly, Hecke algebra subfactors and
+BCD type subfactors can be obtained from fusion categories of quantum groups of
+classical Lie types.
+
+These C*-fusion categories can also be obtained by a completely different con-
+struction using the category of positive energy representation of a loop group. The
+difficulty in this construction comes from the fact that one can not use the usual
+tensor product for representations; instead one has to define a new, so-called fusion
+tensor product (see [Wassermann 1998]).
+
+(4) Let N C M be an inclusion of II, factors with finite index and finite depth.
+Then the category of N—N bimodules obtained as direct sums of summands of the
+bimodules
+
+M®"=M®nM®@n---@nM
+
+(n times), n € N defines a C*-tensor category which may or may not be braided.
+One can similarly also define the C*-tensor category of M-M bimodules generated
+by M®".
+
+If these categories are not braided, one can apply a general construction, called
+the categorical quantum double construction to construct from our category of bi-
+modules a larger braided C* tensor category. It was shown that this category is
+equivalent to the category of —.((-bimodules for the asymptotic inclusion NC
+derived from N C M; see [Miiger 2003]. If the original category already was

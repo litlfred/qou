@@ -1,0 +1,49 @@
+21 Page 12 of 19 Algorithmica (2026) 88:21
+
+additional exponent 1/k. As a result, we can follow the original proof of the Chernoff
+bound to show that
+
+Pry Fi(XP;) = (po + €)n] < exp(—D(po + €l| po) -n/k),
+which was our desired result. Oo
+
+Corollary 3.5 Let X,..., Xm be 1-negatively associated random variables. Suppose
+that Sj(Xp,) for j € [n] are a read-k family, where fj : {0, Pi — [0,1] are
+submodular functions. If we let po = (1/n) Vi- ELf; (Xp) denote the averaged
+expectation when the underlying random variables are independent, we have
+
+Pr[doins fj(XP)) S (Po — ©)n] S exp(—D(po — || po) -0/k).
+
+Proof Define gj := 1 — fj, where g; : {0, 1}?7 — [0, 1] are supermodular. Then
+1— po = (1/n) Vin E[g; (Xp,)1- Applying Theorem 3.4, we have:
+
+Pri jar 8j(XP,) = U—(po-€))n] < (1— po +)n] < exp(—DU — po + €||1— po)-n/k).
+The property of Kullback—Leibler divergence D(1 — p||1 — ¢) = D(p||q) implies
+
+Prey Si(XP,;) < (po - on) = Prin &j(Xp)) = (l— (po - ©))n]
+< exp(—D(po — €|| Po) -2/k),
+
+which concludes the proof. Oo
+Acknowledgements We thank the ITCS 2025 reviewers for their thoughtful comments.
+
+Author Contributions All five authors participated in discussion of the proofs, reviewed and approved the
+final version of the manuscript.
+
+Funding All authors were supported in part by NSF award number CCF-1918749.
+
+Data Availability No datasets were generated or analysed during the current study.
+
+Declarations
+
+Competing interests Funding: All authors were supported in part by NSF award number CCF-1918749.
+Employment: Affiliation with University of Maryland, College Park, and Carnegie Mellon University
+
+OpenAccess This article is licensed under a Creative Commons Attribution 4.0 International License, which
+permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give
+appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence,
+and indicate if changes were made. The images or other third party material in this article are included
+in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If
+material is not included in the article’s Creative Commons licence and your intended use is not permitted
+by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the
+copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/.
+
+aN Springer

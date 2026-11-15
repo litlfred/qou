@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9601025v2
-doc_title: "arXiv:q-alg/9601025v2 25 Mar 1996"
+doc_title: "The hyperbolic volume of knots from the quantum dilogarithm"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 9601025v2.pdf
 source_sha256: 369b0a1a92ce67a8
 toc_source: inferred
+doc_brief: "The hyperbolic volume of knots from the quantum dilogarithm — The invariant of a link in three-sphere, associated with the cyclic quantum dilogarithm, depends on a natural number N."
 ---
 arXiv:q-alg/9601025v2  25 Mar 1996
 The hyperbolic volume of knots from quantum
@@ -30,5 +31,4 @@ ENSLAPP-L-577/96
 Fontanka 27, St. Petersburg 191011, RUSSIA
 †URA 14-36 du CNRS, associ´ee `a l’E.N.S. de Lyon, au LAPP d’Annecy et `a l’Universit`e
 de Savoie
-1
 1

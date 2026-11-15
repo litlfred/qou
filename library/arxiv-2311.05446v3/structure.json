@@ -7,11 +7,11 @@
   "bytes": 531012,
   "pages": 32,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,19 +21,34 @@
    "stamp_date": "20 Mar 2026"
   },
   "doi": null,
-  "title": "NEW BRUNN\u2013MINKOWSKI AND FUNCTIONAL INEQUALITIES VIA CONVEXITY OF ENTROPY",
+  "title": "New Brunn--Minkowski and functional inequalities via convexity of entropy",
   "authors_raw": "GAUTAM AISHWARYA AND LIRAN ROTEM",
   "title_lines": [
-   "NEW BRUNN\u2013MINKOWSKI AND FUNCTIONAL",
+   "NEW BRUNN–MINKOWSKI AND FUNCTIONAL",
    "INEQUALITIES VIA CONVEXITY OF ENTROPY"
   ],
-  "abstract": "We study the connection between the concavity properties of a measure\u03bdand the convexity properties of the associated relative entropyD(\u00b7\u2225\u03bd) along optimal transport. As a corollary we prove a new dimensional Brunn\u2013Minkowski inequality for centered star-shaped bod- ies, when the measure\u03bdis log-concave with a p-homogeneous potential (such as the Gaussian measure). Our method allows us to go beyond the usual convexity assumption on the sets that is fundamentally essential for the standard differential-geometric technique in this area. We then take a finer look at the convexity properties of the Gauss- ian relative entropy, which yields new functional inequalities. First we obtain curvature and dimensional reinforcements to Otto\u2013Villani\u2019s HWI inequality in Gauss space, when restricted to even strongly log-concave measures. As corollaries, we obtain improved versions of Gross\u2019 Loga- rithmic Sobolev inequality and Talagrand\u2019s transportation cost inequal- ity in this setting. 1.Introduction 1.1.Improved Brunn\u2013Minkowski inequalities.Let\u03bdbe a Borel mea- sure onR n. We say that\u03bdsatisfies a Brunn\u2013Minkowski inequality with exponentaif for all Borel setsK 0,K 1\u2286R n satisfying\u03bd(K 0),\u03bd(K 1)>0 and every 0\u2264t\u22641 we have \u03bd((1\u2212t)K 0 +tK 1)\u2265((1\u2212t)\u03bd(K 0)a +t\u03bd(K 1)a)1/a.(1) Here (1\u2212t)K 0 +tK1 ={(1\u2212t)x+ty:x\u2208K 0, y\u2208K 1}is thet-Minkowski averageof the setsK 0 andK 1. Note that the inequality becomes stronger asaincreases. The prototypical example is the classical Brunn\u2013Minkowski inequality, which states that the Lebesgue measure satisfies ((1)) with ex- ponenta= 1 n (see e.g. [25] for a survey on the Brunn\u2013Minkowski inequality and its importance). When\u03bdis not the Lebesgue measure, inequalities such as (1) are sometimes called weighted Brunn\u2013Minkowski inequalities. More generally, from the works of Borell ([11], [10]) and Brascamp\u2013Lieb ([14]), a characterization of all measures\u03bdwhich satisfy ((1)) for some ex- ponentais known: Theorem 1.1.Let\u03bdbe a Borel measure onR n with density\u03d5with respect t",
+  "abstract": "We study the connection between the concavity properties of a measure ν and the convexity properties of the associated relative entropy D(·∥ν) along optimal transport. As a corollary we prove a new dimensional Brunn–Minkowski inequality for centered star-shaped bod- ies, when the measure ν is log-concave with a p-homogeneous potential (such as the Gaussian measure). Our method allows us to go beyond the usual convexity assumption on the sets that is fundamentally essential for the standard differential-geometric technique in this area. We then take a finer look at the convexity properties of the Gauss- ian relative entropy, which yields new functional inequalities. First we obtain curvature and dimensional reinforcements to Otto–Villani’s HWI inequality in Gauss space, when restricted to even strongly log-concave measures. As corollaries, we obtain improved versions of Gross’ Loga- rithmic Sobolev inequality and Talagrand’s transportation cost inequal- ity in this setting.",
   "docinfo": {
+   "Title": "New Brunn--Minkowski and functional inequalities via convexity of entropy",
    "Author": "Gautam Aishwarya; Liran Rotem",
-   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
    "Producer": "pikepdf 8.15.1",
-   "Title": "New Brunn--Minkowski and functional inequalities via convexity of entropy"
-  }
+   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)"
+  },
+  "title_raw": "NEW BRUNN–MINKOWSKI AND FUNCTIONAL INEQUALITIES VIA CONVEXITY OF ENTROPY",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "New Brunn--Minkowski and functional inequalities via convexity of entropy",
+   "heading": "NEW BRUNN–MINKOWSKI AND FUNCTIONAL INEQUALITIES VIA CONVEXITY OF ENTROPY 1. Introduction 1.1. Improved Brunn–Minkowski inequalities. Let ν be a Borel measure on R n . We say that ν satisfies a Brunn–Minkowski inequality with exponent a if for all Borel sets K 0 , K 1 ⊆ R n satisfying ν ( K 0 ) , ν (",
+   "outline": "1. Introduction",
+   "text": "NEW BRUNN–MINKOWSKI AND FUNCTIONAL INEQUALITIES VIA CONVEXITY OF ENTROPY",
+   "corroborated_by": [
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "NEW BRUNN–MINKOWSKI AND FUNCTIONAL INEQUALITIES VIA CONVEXITY OF ENTROPY"
  },
  "toc": [
   {
@@ -41,80 +56,341 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Improved Brunn\u2013Minkowski inequalities",
+   "title": "Improved Brunn–Minkowski inequalities",
    "page": 1,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Weighted Brunn\u2013Minkowski inequalities for star bodies",
+   "title": "Weighted Brunn–Minkowski inequalities for star bodies",
    "page": 3,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Towards the best possible exponent in the entropy inequality",
    "page": 5,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Functional Inequalities",
    "page": 6,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Some notation and conventions:",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Optimal transport, entropy, and an overview of our method",
    "page": 8,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Dimensional convexity properties of relative entropy for log-concave measures with homogeneous potential",
    "page": 13,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Dimensional convexity properties of the Gaussian relative entropy",
    "page": 18,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Applications to functional inequalities",
    "page": 25,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 29,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -123,8 +399,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1097,
-   "n_words": 153
+   "n_chars": 1103,
+   "n_words": 159,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-000-1-introduction",
@@ -134,47 +412,57 @@
    "page_start": 1,
    "page_end": 1,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-11-improved-brunnminkowski-inequalities",
    "number": "1.1",
-   "title": "Improved Brunn\u2013Minkowski inequalities",
+   "title": "Improved Brunn–Minkowski inequalities",
    "level": 2,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 4998,
-   "n_words": 791
+   "n_chars": 5137,
+   "n_words": 930,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-12-weighted-brunnminkowski-inequalities-for-star",
    "number": "1.2",
-   "title": "Weighted Brunn\u2013Minkowski inequalities for star bodies",
+   "title": "Weighted Brunn–Minkowski inequalities for star bodies",
    "level": 2,
    "page_start": 3,
    "page_end": 5,
-   "n_chars": 3985,
-   "n_words": 634
+   "n_chars": 4469,
+   "n_words": 791,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-14-functional-inequalities",
-   "number": "1.4",
-   "title": "Functional Inequalities",
-   "level": 2,
-   "page_start": 5,
-   "page_end": 5,
-   "n_chars": 338,
-   "n_words": 56
-  },
-  {
-   "id": "sec-004-13-towards-the-best-possible-exponent-in-the-ent",
+   "id": "sec-003-13-towards-the-best-possible-exponent-in-the-ent",
    "number": "1.3",
    "title": "Towards the best possible exponent in the entropy inequality",
    "level": 2,
    "page_start": 5,
+   "page_end": 6,
+   "n_chars": 3446,
+   "n_words": 577,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-14-functional-inequalities",
+   "number": "1.4",
+   "title": "Functional Inequalities",
+   "level": 2,
+   "page_start": 6,
    "page_end": 8,
-   "n_chars": 7747,
-   "n_words": 1212
+   "n_chars": 4316,
+   "n_words": 714,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-some-notation-and-conventions",
@@ -183,8 +471,10 @@
    "level": 2,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 1224,
-   "n_words": 190
+   "n_chars": 1268,
+   "n_words": 234,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-2-optimal-transport-entropy-and-an-overview-of-o",
@@ -193,8 +483,10 @@
    "level": 1,
    "page_start": 8,
    "page_end": 13,
-   "n_chars": 11820,
-   "n_words": 1829
+   "n_chars": 12042,
+   "n_words": 2051,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-007-3-dimensional-convexity-properties-of-relative-e",
@@ -203,8 +495,10 @@
    "level": 1,
    "page_start": 13,
    "page_end": 18,
-   "n_chars": 10553,
-   "n_words": 1713
+   "n_chars": 10956,
+   "n_words": 2116,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-008-4-dimensional-convexity-properties-of-the-gaussi",
@@ -213,8 +507,10 @@
    "level": 1,
    "page_start": 18,
    "page_end": 25,
-   "n_chars": 13013,
-   "n_words": 2221
+   "n_chars": 11776,
+   "n_words": 2246,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-009-5-applications-to-functional-inequalities",
@@ -223,8 +519,10 @@
    "level": 1,
    "page_start": 25,
    "page_end": 29,
-   "n_chars": 9047,
-   "n_words": 1449
+   "n_chars": 10783,
+   "n_words": 1888,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-010-references",
@@ -233,21 +531,34 @@
    "level": 1,
    "page_start": 29,
    "page_end": 32,
-   "n_chars": 8540,
-   "n_words": 1175
+   "n_chars": 8649,
+   "n_words": 1284,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 11,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
   "sections": 12,
-  "chars_total": 72362,
+  "chars_total": 73945,
+  "furniture_lines_stripped": 0,
+  "pages_read_in_print_order": [
+   25
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
    "tex_sections": 10,
-   "overlaid": 8,
+   "overlaid": 9,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -263,35 +574,37 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-001-11-improved-brunnminkowski-inequalities",
-     "title": "Improved Brunn\u2013Minkowski inequalities",
+     "title": "Improved Brunn–Minkowski inequalities",
      "prose_ratio": 0.937,
-     "coverage_ratio": 0.882,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-12-weighted-brunnminkowski-inequalities-for-star",
-     "title": "Weighted Brunn\u2013Minkowski inequalities for star bodies",
-     "prose_ratio": 0.911,
-     "coverage_ratio": 0.908,
+     "title": "Weighted Brunn–Minkowski inequalities for star bodies",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.968,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-14-functional-inequalities",
-     "title": "Functional Inequalities",
-     "prose_ratio": 0.049,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-003-13-towards-the-best-possible-exponent-in-the-ent",
+     "title": "Towards the best possible exponent in the entropy inequality",
+     "prose_ratio": 0.926,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-004-13-towards-the-best-possible-exponent-in-the-ent",
-     "title": "Towards the best possible exponent in the entropy inequality",
-     "prose_ratio": 0.942,
-     "coverage_ratio": 0.552,
+     "id": "sec-004-14-functional-inequalities",
+     "title": "Functional Inequalities",
+     "prose_ratio": 0.898,
+     "coverage_ratio": 0.967,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -299,39 +612,39 @@
      "id": "sec-005-some-notation-and-conventions",
      "title": "Some notation and conventions:",
      "prose_ratio": 0.985,
-     "coverage_ratio": 0.808,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-006-2-optimal-transport-entropy-and-an-overview-of-o",
      "title": "Optimal transport, entropy, and an overview of our method",
-     "prose_ratio": 0.998,
-     "coverage_ratio": 0.991,
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-007-3-dimensional-convexity-properties-of-relative-e",
      "title": "Dimensional convexity properties of relative entropy for log-concave measures with homogeneous potential",
-     "prose_ratio": 0.997,
-     "coverage_ratio": 0.983,
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.963,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-008-4-dimensional-convexity-properties-of-the-gaussi",
      "title": "Dimensional convexity properties of the Gaussian relative entropy",
-     "prose_ratio": 0.941,
-     "coverage_ratio": 0.984,
+     "prose_ratio": 0.857,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-009-5-applications-to-functional-inequalities",
      "title": "Applications to functional inequalities",
-     "prose_ratio": 0.937,
-     "coverage_ratio": 0.988,
+     "prose_ratio": 0.89,
+     "coverage_ratio": 0.891,
      "result": "overlaid",
      "converter": "pandoc"
     },

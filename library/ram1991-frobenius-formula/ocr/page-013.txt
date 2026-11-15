@@ -1,32 +1,53 @@
 A Frobenius formula for the characters of the Hecke algebras 473
-The following expansions of 2(X Y(1 -- t)) follow from the expansions in [Mac
-Chapter I, $4].
-2(X Y(1 - t)) = Z sa(X)sa(Y(1 -- t))
-= Z ha(X(1 - t)ma(Y) (4.10)
-pa(1
-pa(X)pa(Y) ,
-where a? is given by (1.1).
-Chapter III of [MacJ is devoted to the study of Hall-Littlewood symmetric
-functions. In particular the Hall-Littlewood symmetric function qr(x1, : . : , Xn; t) is
+
+The following expansions of Q(X Y(1 — t)) follow from the expansions in [Mac,
+Chapter I, §4].
+
+AX YUL — 9) =F sal (y(1 —9)
+= YA(X(1 — d)m,(Y) (4.10)
+a
+= 5 20),
+
+A
+
+where A? is given by (1.1).
+Chapter III of [Mac] is devoted to the study of Hall-Littlewood symmetric
+
+functions. In particular the Hall-Littlewood symmetric function q,(x1,..., Xn} t) is
 defined by
-qo(x; t) = 1 ,
-qr(x; t) = (1 - t)  x II Xi txj (r ≥ 1) .
-i=1 ji Xi— Xj
-For a partition μ,
-t(μ)
-qμ(x; t) = II qu(x; t) .
+g(x =1,
+uw tx;
+q(x; t) = (1 — t) HIPS GS
+ue au Xi Xj
+
+For a partition p,
+
+e(u)
+
+aulxs t) = TT dui(xs 8) -
 i=1
-The generating function for the qr(x; t) is ([Mac, Chapter III (2.10)J)
- txiy
-Z qr(x; t)y" = II (4.11)
-r=0   Xiy
-Expressions for tr(DTyr)
-(4.12) Lemma. Let t be a variable and a  f. Then, in 2-ring notation,
-[(1 - t)(- t)s-m, if α = (1}-mm) for some m ≥ 1 ;
-Sa(1
-otherwise .
+
+The generating function for the q,(x; t) is ([Mac, Chapter III (2.10)])
+
+= =
+oo 4.11
+Eaesoy TS ary
+
+Expressions for tr(DT,,)
+
+(4.12) Lemma. Let t be a variable and A+ f. Then, in 4-ring notation,
+
+one (-—p(-pf-", fA=(14~"m) for some m2 1 ;
+si(l — = 0, otherwise .
+
 Proof. By the addition formula
-(1-)ns()"s  = (μ- l)"s
-Su(1) = O unless μ = (k) for some k. Using duality,
-S(- t)-k, if a/(k) is a vertical strip,
-Sa/(k)(- t) = (- 1) -ks(a/(k)(t)  if a/(k) is not a vertical strip .
+
+sl —t= Y s,(1)say(— t)-
+
+usd
+s,(1) = 0 unless = (k) for some k. Using duality,
+
+(—t/~*, if A/(k) is a vertical strip,
+
+—p)=(—1f-* A(t) =
+Saran 9) = (= IY" Saranr \o if A/(k) is not a vertical strip .

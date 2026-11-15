@@ -1,0 +1,52 @@
+Concentration of empirical distribution functions 1393
+
+derivative w/(x) = RO 2 , therefore y is decreasing on (0, xo] and is increasing on [x9, +00),
+
+where xo = (2c)?/3, Hence, if c < 1 we have
+
+inf WN) =W(D=l4+ce<14cl
+
+Ifc> 3 , then the argmin lies in [1, +00). Choose N = [xo] + 1 = [(2c)?/3] +1 so that N > 2
+and N— 1<xo < N <xo9+ 1. Hence, we get
+
+3
+WN) < (Vx0 + 1) + Salt weo)=1 + ape’.
+
+Thus, in both cases, infy w(N) < 1+ scl < <1+ 3( a= 4 aie and we arrive at the following
+corollary.
+
+Corollary 3.2. Under PI(o?), for alla <b,
+
+b b-a\'
+ef [ra(s) — Fopias < i 43(2=4) |
+
+The next step is to extend the above inequality to the whole real line. Here, we shall use the
+exponential integrability of the measure F.
+
+Proof of Theorem 1.1. Recall that the measure jz is controlled by using two independent para-
+meters: the constant a? and A, defined by
+
+|EX; -EXj;|<Ao, 9 1<i,j<n.
+
+One may assume, without loss of generality, that —-Ao < EX; < Ao foralli <n.
+Lemma 2.2 with g(x) = x;, t = 1 and Chebyshev’s inequality give, for all h > 0,
+
+P{X; —EX;>h}<3e"/%, — P{X; —EX; <—h} <3e7"/".
+Therefore, whenever h > Ao,
+P(X; > h} <3e0 4-4/2, P(X; < —h} <3e7 4-4/2,
+
+Averaging over all i’s, we obtain similar bounds for the measure F, that is, 1 — F(h) <
+3e—("-A2)/o and F(-h) < 3e—(h-Ao)/o | After integration, we get
+
++00 wh
+i] (1 — F(x) dx < 3007492, il F(x) dx <3a0e7%-49)/2 ,
+h _
+
+CO
+
+Using | Fn(x) — F(x)| < (I — Fx(x)) +  — F(x)) so that E| F, (x) — F(x)| < 201 — F(x)), we
+get that
+
++00
+e | | Fy (x) — F(x)| dx < 60071 -40)/%
+h

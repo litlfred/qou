@@ -8,10 +8,10 @@
   "pages": 15,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:21Z",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
-  "math_source": "text-layer"
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -22,7 +22,7 @@
   },
   "doi": null,
   "title": "Braided matter interactions in quantum gravity via 1 -handle attachment",
-  "authors_raw": "Niels Gresnigt,1, \u2217Antonino Marcian\u00f2,2, 3, \u2020 and Emanuele Zappala4, \u2021",
+  "authors_raw": "Niels Gresnigt,1, ∗Antonino Marcianò,2, 3, † and Emanuele Zappala4, ‡",
   "title_lines": [
    "Braided matter interactions in quantum gravity via 1-handle attachment"
   ],
@@ -443,14 +443,158 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 15,
-   "n_chars": 61831,
-   "n_words": 10068,
+   "page_end": 1,
+   "n_chars": 2042,
+   "n_words": 297,
    "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-i-introduction",
+   "number": null,
+   "title": "I Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 8372,
+   "n_words": 1261,
+   "label_start": null,
+   "label_end": "3"
+  },
+  {
+   "id": "sec-001-ii-a-topological-model-of-composite-preons",
+   "number": null,
+   "title": "II A topological model of composite preons",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 3255,
+   "n_words": 519,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-002-iii-theories-on-ribbon-graphs",
+   "number": null,
+   "title": "III Theories on ribbon graphs",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1572,
+   "n_words": 281,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-003-a-the-evolution-algebra",
+   "number": null,
+   "title": "A The evolution algebra",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1445,
+   "n_words": 248,
+   "label_start": "4",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-004-iv-leptons-and-quarks-as-topological-excitations",
+   "number": null,
+   "title": "IV Leptons and quarks as topological excitations",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 2,
+   "n_words": 1,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-005-a-the-trivalent-scheme",
+   "number": null,
+   "title": "A The trivalent scheme",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 3593,
+   "n_words": 563,
+   "label_start": "5",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-006-v-ribbon-networks-embedded-into-3-manifolds",
+   "number": null,
+   "title": "V Ribbon networks embedded into 3-manifolds",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 6607,
+   "n_words": 1075,
+   "label_start": "6",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-007-a-surgery-on-3-manifolds",
+   "number": null,
+   "title": "A Surgery on 3-manifolds",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 3103,
+   "n_words": 595,
+   "label_start": "8",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-008-b-braid-dynamics-via-surgery",
+   "number": null,
+   "title": "B Braid dynamics via surgery",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 5822,
+   "n_words": 973,
+   "label_start": "9",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-009-vi-isotopy-invariants-of-braided-networks",
+   "number": null,
+   "title": "VI Isotopy invariants of braided networks",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 8829,
+   "n_words": 1501,
+   "label_start": "10",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-010-a-examples-and-computations",
+   "number": null,
+   "title": "A Examples and Computations",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 7919,
+   "n_words": 1360,
+   "label_start": "11",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-011-vii-possible-pre-geometric-unification-of-matter",
+   "number": null,
+   "title": "VII Possible pre-geometric unification of matter and gravity",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 8842,
+   "n_words": 1330,
+   "label_start": "13",
    "label_end": "15"
   },
   {
-   "id": "sec-000-acknowledgement",
+   "id": "sec-012-acknowledgement",
    "number": null,
    "title": "Acknowledgement",
    "level": 1,
@@ -473,13 +617,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 2,
-  "chars_total": 66234,
+  "sections": 14,
+  "chars_total": 65806,
+  "furniture_lines_stripped": 14,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Braided_matter_final.tex",
    "tex_sections": 15,
-   "overlaid": 0,
+   "overlaid": 11,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -492,11 +637,105 @@
      "result": "no matching \\section"
     },
     {
-     "id": "sec-000-acknowledgement",
+     "id": "sec-000-i-introduction",
+     "title": "I Introduction",
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-ii-a-topological-model-of-composite-preons",
+     "title": "II A topological model of composite preons",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-iii-theories-on-ribbon-graphs",
+     "title": "III Theories on ribbon graphs",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-a-the-evolution-algebra",
+     "title": "A The evolution algebra",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-iv-leptons-and-quarks-as-topological-excitations",
+     "title": "IV Leptons and quarks as topological excitations",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-a-the-trivalent-scheme",
+     "title": "A The trivalent scheme",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-v-ribbon-networks-embedded-into-3-manifolds",
+     "title": "V Ribbon networks embedded into 3-manifolds",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-a-surgery-on-3-manifolds",
+     "title": "A Surgery on 3-manifolds",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-b-braid-dynamics-via-surgery",
+     "title": "B Braid dynamics via surgery",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-vi-isotopy-invariants-of-braided-networks",
+     "title": "VI Isotopy invariants of braided networks",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-a-examples-and-computations",
+     "title": "A Examples and Computations",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-vii-possible-pre-geometric-unification-of-matter",
+     "title": "VII Possible pre-geometric unification of matter and gravity",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.998,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-acknowledgement",
      "title": "Acknowledgement",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.161,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

@@ -1,0 +1,41 @@
+142 G Kuperberg
+
+where v(A) is defined as 0 for A¢A4, because similar relations hold in the
+Grothendieck ring. (Note that we cannot argue from an a priori hypothesis that
+Z[A,.] is the Grothendieck ring of a category, because such a construction assumes
+the existence of internal clasps, which in turn depends on Theorem 6.1.) In terms
+of webs, the first relation states that if c and d are two segregated clasps, then
+B(cd) is empty unless c = d*, in which case it has one element. This follows from
+Lemma 6.5 or from arguments similar to those of Lemma 6.8. Similarly, the other
+relations are equivalent to Lemma 6.8. O
+
+6.2. The By and G2 cases
+
+Theorem 6.9. Let C be a By clasp sequence and let wt C be the corresponding
+sequence of weights. Then the vector spaces W(C) and Inv(V(wt C)) have the
+same dimension.
+
+Theorem 6.10. Let C be an G clasp sequence and let wt C be the corresponding
+sequence of weights. Then the vector spaces W(C) and Inv(V(wt C)) have the
+same dimension.
+
+To establish these two results we mainly need to alter various technical defini-
+tions given for the Az case; most of the lemmas leading up to Theorem 6.2 and
+the proof of the theorem then carry over word-for-word. An H-web in the Bz or G2
+
+spider is the web:
+
+In both the By and G2 spiders, one can define an H-move on a basis web w with
+two adjacent endpoints labelled 1 and 2. An H-move at two such endpoints consists
+of attaching an H-web to w, provided that this operation does not create an elliptic
+face, and then replacing an internal double edge by a tetravalent vertex in the B,
+spider or by a perpendicular single edge in the G2 spider:
+
+>< _ x (B, case) ,
+» < — LL (G, case) . (7)
+
+If attaching an H-web would result in an elliptic face, then there are two alternatives:
+Either an H-web can be removed (possibly after introducing an internal type 2 strand
+by the above operations), or the two endpoints make a “Y:”
+
+A — x

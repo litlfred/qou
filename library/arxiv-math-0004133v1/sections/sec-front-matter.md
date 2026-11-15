@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0004133v1
-doc_title: "arXiv:math/0004133v1 [math.QA] 20 Apr 2000"
+doc_title: "From Finite Sets to Feynman Diagrams"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0004133v1.pdf
 source_sha256: 687de8249639c7f2
 toc_source: inferred
+doc_brief: "From Finite Sets to Feynman Diagrams — ‘Categoriﬁcation’ is the process of replacing equations by isomor- phisms."
 ---
 arXiv:math/0004133v1  [math.QA]  20 Apr 2000
 From Finite Sets to Feynman Diagrams
@@ -36,4 +37,3 @@ an inner product of stuﬀtypes that makes the category of stuﬀtypes
 into a categoriﬁed version of the Hilbert space of the quantized har-
 monic oscillator. We conclude by sketching how this idea gives a nice
 explanation of the combinatorics of Feynman diagrams.
-1

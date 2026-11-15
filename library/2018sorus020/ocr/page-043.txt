@@ -1,0 +1,47 @@
+becomes a presentation matrix for H;(M, \”). Since the latter is non trivial,
+we deduce that Aj,;(A”), which is the greatest common divisor of the (n — 1)
+minors of the matrix A(X”), is zero, and the theorem is proved.
+
+oO
+
+Example 1.4.8. 1. For the trefoil knot, we recall that the tautological repre-
+sentation is p : aH (cen) 1) ibe ( ’.). It is residually reducible
+when ¢? = —1. The curve ab“! € T is a meridian (that is its abelianization
+is 1), and at the reducible characters p(ab~!) has eigenvalue \ = +777, thus
+
+d? = —j, which is a root of the Alexander polynomial Ayj(t) = t? —¢+1.
+
+2. For the figure-eight knot, the component of irreducible type and the com-
+
+ponent of reducible type intersect when the trace of the meridian is +/5.
+
+3iV5
+
+Thus the square of the eigenvalues are =}
+
+lynomial Ajy;(t) = ¢? — 3t +1.
+
+, the roots of the Alexander po-
+
+1.5 The Reidemeister torsion
+
+In this section we give various definitions used for the Redemeister torsion. Refe-
+rences are [Mil66], Appendix A], Chapitre 0]. We stress out the fact
+that we use a convention (namely, how we take the alternating sum in the definition
+of the determinant of a complex) that corresponds to [GKZ94], but not to [Mil66}.
+
+1.5.1 First definition
+
+Given a finite complex C* of k-vector spaces
+
+Co Sol Sy. Sy en
+
+fix {c}i-0..n and {h'};~0..n families of basis of the C’’s and the H’’s, one can define
+the torsion of the based complex tor(C*, {c'}, {h’}) to be the alternating product
+of the determinants of the base change induced by this choices. More precisely, we
+
+have the exact sequences
+03 Z7'=C'> B50
+039 B37 5H 0
+
+42

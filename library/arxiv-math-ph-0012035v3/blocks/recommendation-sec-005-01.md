@@ -1,0 +1,1 @@
+Therefore we should consider the holonomy [\[Pexp\]](#Pexp){reference-type="ref" reference="Pexp"} around a closed curve $C$, $${\rm P}\exp \left( i\oint_C A_i dx^i \right) .$$ The holonomy represents a parallel-transport operator around $C$ assuming values in a non-Abelian Lie group $G$.

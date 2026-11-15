@@ -1,0 +1,161 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "72-4-841",
+ "source": {
+  "structure_sha256": "c852d7d7dcc2662c1d724ccd0f62b33d09a557904f666a680b987c702eca3c33",
+  "file": "72-4-841.pdf"
+ },
+ "provenance": {
+  "title": "Progress of Theoretical Physics, Vol. 72, No.4, October 1984 Euclidean Quantum Gravity on a Flat Lattice",
+  "authors": "Kei-ichi KONDO",
+  "arxiv": null,
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 9,
+  "by_kind": {
+   "recommendation": 9
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "If we interpret vierbeins components also as gauge fields, we should write the theory in terms of the combined form epaPa+ApabSab.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-3-reflection-positivity.md",
+   "section_title": "\u00a7 3. Reflection positivity",
+   "pages": "6-12",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Therefore, the link variable should be defined by Downloaded from academic.oup.com/ptp/article/72/4/841/1853443 by guest on 29 August 2026 850 K.-L Kondo (5-1) Here both the vierbein ep and the connection AI' are defined on a link b=(n; fJ.) originat- ing at site n and extending in the positive fJ. direction.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-3-reflection-positivity.md",
+   "section_title": "\u00a7 3. Reflection positivity",
+   "pages": "6-12",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "From the above arguments by Kibble, vierbein fields should be treated as gauge fields corresponding to the local translation invariance.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-3-reflection-positivity.md",
+   "section_title": "\u00a7 3. Reflection positivity",
+   "pages": "6-12",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In order for the theory to be Poincare invariant, the algebra (5'3) (5-4) also must be satisfied.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-3-reflection-positivity.md",
+   "section_title": "\u00a7 3. Reflection positivity",
+   "pages": "6-12",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Translation invariance implies that the expectation value of G( n; fl.))) must be independent of space-time and hence we will have, in the continuum limit, (gp,.;(x \u00bb=lim(G(na; fl.)) \u00bb=A6'pII a~o (5-7) for some constant A.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-3-reflection-positivity.md",
+   "section_title": "\u00a7 3. Reflection positivity",
+   "pages": "6-12",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "In order to get a non- trivial background metric, we must consider the spontaneous breakdown of translational invariance.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-3-reflection-positivity.md",
+   "section_title": "\u00a7 3. Reflection positivity",
+   "pages": "6-12",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "From this point of view, we should have considered the higher derivative quantum gravity5),6) because the theory is known to be renormalizable6) and asymptotically free7} and 'hence more analogies to lattice gauge theory are expected.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Since there is no experimental fact that the higher derivative theory should be so preferred, we restrict our attention to the lattice Einstein-Cartan gravity.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Thus we must choose a consistent universal orienta- tion of the plaquettes, as we have adopted in Fig.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

@@ -1,0 +1,211 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2012.12159v3",
+ "source": {
+  "structure_sha256": "473ec6959e82cd98d539a6658ade5bd4342682f2cd5e5f822e080a887926c7e8",
+  "file": "2012.12159v3.pdf"
+ },
+ "provenance": {
+  "title": "A FUNK PERSPECTIVE ON BILLIARDS, PROJECTIVE GEOMETRY AND MAHLER VOLUME",
+  "authors": "DMITRY FAIFMAN",
+  "arxiv": {
+   "id": "2012.12159",
+   "version": "3",
+   "primary_class": "math.DG",
+   "stamp_date": "22 Apr 2021"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 12,
+  "by_kind": {
+   "recommendation": 12
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We shall pursue this idea along several paths.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-001-11-funk-and-hilbert-metrics.md",
+   "section_title": "Funk and Hilbert metrics",
+   "pages": "2-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The Rogers-Shephard inequality becomes an equality when $L$ is a simplex, while the Brunn-Minkowski inequality above gives equality for symmetric bodies, that is $(K^o)^z$ must have antipodal symmetry (with respect to some point) for every $z\\in L^o$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-011-32-the-volume-in-funk-geometry.md",
+   "section_title": "The volume in Funk geometry",
+   "pages": "11-13",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "By [@kelly_straus Theorem 9-3.], we conclude that $K^\\vee$, and therefore $K$, must be a convex quadric, that is an ellipsoid.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-011-32-the-volume-in-funk-geometry.md",
+   "section_title": "The volume in Funk geometry",
+   "pages": "11-13",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "As it is a non-reversible Finsler structure, some care should be taken, however the results we need go through unaltered.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-012-4-funk-billiards-and-duality.md",
+   "section_title": "Funk billiards and duality",
+   "pages": "13-18",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "For uniqueness, it remains to show that any $H$-invariant non-trivial pairing $\\psi:x^\\perp\\otimes \\xi^\\perp\\to \\mathbb{R}$ must be a multiple of $\\eta^{-1}$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-012-4-funk-billiards-and-duality.md",
+   "section_title": "Funk billiards and duality",
+   "pages": "13-18",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "By Remark [\\[rem:proper\\]](#rem:proper){reference-type=\"ref\" reference=\"rem:proper\"}, it can only arrive to $\\partial K\\times\\partial L^\\vee$ transversally, and so the reflection law translates to simply switching from one integral curve to another, which similarly must also be transversal to $\\partial K\\times\\partial L^\\vee$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-012-4-funk-billiards-and-duality.md",
+   "section_title": "Funk billiards and duality",
+   "pages": "13-18",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Both are anti-symmetric $2\\times 2$ matrices, and so that must be the case.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-013-5-integrability-of-funk-billiard-in-conics.md",
+   "section_title": "Integrability of Funk billiard in conics",
+   "pages": "18-21",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "If $K=-K$ then $M_r(K, q)=M_r(K, -q)$, and so $q=0$ must be a minimum.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-015-7-mahler-volumes-of-every-funk-scale.md",
+   "section_title": "Mahler volumes of every Funk scale",
+   "pages": "22-26",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "To this end, we must expand our discussion to include log-concave functions.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-016-8-maximizing-the-funk-mahler-volume.md",
+   "section_title": "Maximizing the Funk-Mahler volume",
+   "pages": "26-34",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "For equality, we must have an equality at each application of Prekopa-Leindler, which is characterized in [@dubuc].",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-016-8-maximizing-the-funk-mahler-volume.md",
+   "section_title": "Maximizing the Funk-Mahler volume",
+   "pages": "26-34",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "For the last inequality, we should show that $$\\sum_{j=0}^\\infty\\frac{(2j)!!^2}{(2j+1)!}\\rho^{2j+1}=\\sum_{j=0}^\\infty\\frac{(2j)!!}{(2j+1)!!}\\rho^{2j+1}=\\frac{1}{\\sqrt{1-\\rho^2}}\\arctan\\frac{\\rho}{\\sqrt{1-\\rho^2}}.$$ This can be done by observing that $$\\frac{(2j)!!}{(2j+1)!!}=\\int_0^{\\pi/2}\\sin^{2j}tdt,$$ and so $$\\begin{aligned} \\sum_{j=0}^\\infty\\frac{(2j)!!}{(2j+1)!!}\\rho^{2j+1}&=\\int_{0}^{\\frac \\pi 2}(\\rho\\sin t)^{2j+1}dt=\\int_0^{\\frac \\pi 2}\\frac{\\rho \\sin t}{1-\\rho^2\\sin^2t}dt\\\\&=\\int_0^1 \\frac{2\\rho ds}{s^2+2(1-2\\rho^2)s +1}\\\\&=\\frac{1}{\\sqrt{1-\\rho^2}}\\left(\\arctan \\frac{\\sqrt{1-\\rho^2}}{\\rho}-\\arctan \\frac{1-2\\rho^2}{2\\rho \\sqrt{1-\\rho^2}}\\right)\\\\&=\\frac{1}{\\sqrt{1-\\rho^2}}\\arctan \\frac{\\rho}{\\sqrt{1-\\rho^2}}. \\end{aligned}$$ Equality cases are settled using [@dubuc] as in Theorem [\\[thm:functional_unconditional\\]](#thm:functional_unconditional){reference-type=\"ref\" reference=\"thm:functional_unconditional\"}.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-016-8-maximizing-the-funk-mahler-volume.md",
+   "section_title": "Maximizing the Funk-Mahler volume",
+   "pages": "26-34",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We should find an $\\mathbb{R}^3$-valued $\\mathop{\\mathrm{Stab}}(x)=\\mathop{\\mathrm{SO}}(2)$-equivariant $1$-form $\\eta_z$ on $S^2_\\xi$ with $$\\label{eqn:eta_differential}d_\\xi\\eta_z=\\frac{1-\\langle x,\\xi\\rangle^{z+1}}{1-\\langle x,\\xi\\rangle^2} \\sigma_\\xi \\xi,$$ whence we may take $\\omega_z= \\frac{1}{z+1} \\langle x\\times dx, \\eta_z\\rangle$.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-017-9-regularizing-the-total-funk-volume.md",
+   "section_title": "Regularizing the total Funk volume",
+   "pages": "34-41",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

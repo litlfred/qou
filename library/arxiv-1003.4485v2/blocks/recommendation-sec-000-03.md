@@ -1,0 +1,1 @@
+We shall do this starting with a bare minimum of prerequisites: manifolds, differential forms, Lie groups, Lie algebras, and the traditional theory of parallel transport in terms of bundles and connections.

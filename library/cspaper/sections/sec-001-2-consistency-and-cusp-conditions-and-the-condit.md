@@ -8,6 +8,7 @@ pages: 4-8
 source_pdf: cspaper.pdf
 source_sha256: 1910c380cf79bf42
 toc_source: inferred
+doc_brief: "Combinatorics of Triangulations and the Chern-Simons Invariant for Hyperbolic 3-Manifolds — 7 sections: Front matter; Introduction; Consistency and cusp conditions, a"
 ---
 An ideal hyperbolic structure on a tetrahedron ∆is speciﬁed by assigning a complex
 number with positive imaginary part to each edge, these numbers being related as in
@@ -29,8 +30,6 @@ M = ∆1 ∪. . . ∪∆n.
 (2.1)
 Choose a labelling ej, j = 1, . . . , 6, of the edges of each ∆ν as above. Let zν be the
 parameter for ∆ν with respect to the edge e1 of ∆ν. We do not assume the hyperbolic
-Combinatorics of Triangulations and the Chern-Simons Invariant for Hyperbolic 3-Manifolds
-247
 1– 1
 z
 1–z
@@ -72,8 +71,6 @@ r′
 for some integer d(E) and integers r′
 ν(E) and r′′
 ν(E), (ν = 1, . . . , n).
-248
-Walter D. Neumann
 We can describe the integer d(E) as follows. Associate an integer ϵi(∆ν) to the i-th
 edge of ∆ν as follows:
 ϵ1(∆ν) = ϵ4(∆ν) = 0,
@@ -138,8 +135,6 @@ r′
 for some integer d(C) and integers r′
 ν(C) and r′′
 ν(C), (ν = 1, . . . , n).
-Combinatorics of Triangulations and the Chern-Simons Invariant for Hyperbolic 3-Manifolds
-249
 It is not hard to see (cf. Sect. 6 or [NZ]) that, given the consistency conditions, µ(C)
 only depends on the homology class of C in T and µ gives a homomorphism from
 H1(T) to C. In fact, µ(C) = 2 log λ(H(C)), where λ(H(C)) is an eigenvalue of the
@@ -224,8 +219,6 @@ Proof. Replace log(z0
 ν) by c′′
 ν in the proofs of Lemmas 2.1 and
 2.2.
-250
-Walter D. Neumann
 The parity conditions.
 We consider an integral vector c ∈Z2n. Thus, the ηj(∆ν)
 deﬁned above are integers. Let C be any closed path in M which is in general position

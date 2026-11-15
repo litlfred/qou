@@ -8,7 +8,7 @@
   "pages": 41,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:19Z",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -26,7 +26,7 @@
   "title_lines": [
    "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS"
   ],
-  "abstract": "We consider the q-analytic functions on a given planar domain \u2126, square integrable with respect to a weight. This gives us a q-analytic Bergman kernel, which we use to extend the Bergman metric to this context. We recall that f is q-analytic if \u00af\u2202q f = 0 for the given positive integer q. We also obtain asymptotic formulae for the q-analytic Bergman kernel in the setting of de- generating power weights e\u22122mQ, as the positive real parameter m tends to in\ufb01nity. This is only known for q = 1 in view of the work of Tian, Yau, Zelditch, and Catlin. We remark here that since a q-analytic function may be identi\ufb01ed with a vector-valued holomorphic function, the Bergman space of q-analytic functions may be understood as a vector-valued holomorphic Bergman space supplied with a certain singular local metric on the vectors. Finally, we apply the obtained asymptotics for q = 2 to the bianalytic Bergman metrics, and after suitable blow-up, the result is independent of Q for a wide class of potentials Q. We interpret this as an instance of geometric universality. 1. Overview In Section 2, we de\ufb01ne, in the one-variable context, the weighted Bergman spaces and their polyanalytic extensions, and in Section 3, we consider the various possible rami\ufb01cations for Bergman metrics. It should be remarked that the polyanalytic Bergman spaces can be understood as vector-valued (analytic) Bergman spaces with singular local inner product matrix. Generally speaking, Bergman kernels are di\ufb03cult to obtain in explicit form. However, it is sometimes possible to obtain an asymptotic expansion for them, for instance as the weight degenerates in a power fashion. In Sections 5\u20139, we extend the asymptotic expansion to the polyanalytic context. Our analysis is based on the microlocal PDE approach of Berman, Berndtsson, Sj\u00f6strand [8]. We focus mainly on the biholomorphic (bianalytic) case, and obtain the explicit form of the \ufb01rst few terms of the expansion. In Section 4, we estimate the norm of point evaluat",
+  "abstract": "We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight. This gives us a q-analytic Bergman kernel, which we use to extend the Bergman metric to this context. We recall that f is q-analytic if ¯∂q f = 0 for the given positive integer q. We also obtain asymptotic formulae for the q-analytic Bergman kernel in the setting of de- generating power weights e−2mQ, as the positive real parameter m tends to inﬁnity. This is only known for q = 1 in view of the work of Tian, Yau, Zelditch, and Catlin. We remark here that since a q-analytic function may be identiﬁed with a vector-valued holomorphic function, the Bergman space of q-analytic functions may be understood as a vector-valued holomorphic Bergman space supplied with a certain singular local metric on the vectors. Finally, we apply the obtained asymptotics for q = 2 to the bianalytic Bergman metrics, and after suitable blow-up, the result is independent of Q for a wide class of potentials Q. We interpret this as an instance of geometric universality. 1. Overview In Section 2, we deﬁne, in the one-variable context, the weighted Bergman spaces and their polyanalytic extensions, and in Section 3, we consider the various possible ramiﬁcations for Bergman metrics. It should be remarked that the polyanalytic Bergman spaces can be understood as vector-valued (analytic) Bergman spaces with singular local inner product matrix. Generally speaking, Bergman kernels are diﬃcult to obtain in explicit form. However, it is sometimes possible to obtain an asymptotic expansion for them, for instance as the weight degenerates in a power fashion. In Sections 5–9, we extend the asymptotic expansion to the polyanalytic context. Our analysis is based on the microlocal PDE approach of Berman, Berndtsson, Sjöstrand [8]. We focus mainly on the biholomorphic (bianalytic) case, and obtain the explicit form of the ﬁrst few terms of the expansion. In Section 4, we estimate the norm of point evaluat",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref package",
@@ -36,7 +36,7 @@
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS 1. O verview In Section 2, we de\ufb01ne, in the one-variable context, the weighted Bergman spaces and their polyanalytic extensions, and in Section 3, we consider the various possible rami\ufb01cations for Bergman metrics. It should be remarked that the po",
+   "heading": "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS 1. O verview In Section 2, we deﬁne, in the one-variable context, the weighted Bergman spaces and their polyanalytic extensions, and in Section 3, we consider the various possible ramiﬁcations for Bergman metrics. It should be remarked that the po",
    "outline": "1. Overview",
    "text": "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS",
    "corroborated_by": [],
@@ -276,7 +276,7 @@
   },
   {
    "level": 1,
-   "title": "Tools from the approach of Berman-Berndtsson-Sj\u00f6strand",
+   "title": "Tools from the approach of Berman-Berndtsson-Sjöstrand",
    "page": 13,
    "source": "outline",
    "number": "6",
@@ -526,7 +526,7 @@
   },
   {
    "level": 2,
-   "title": "Digression on H\u00f6rmander-type estimates and an obstacle problem",
+   "title": "Digression on Hörmander-type estimates and an obstacle problem",
    "page": 35,
    "source": "outline",
    "number": "9.5",
@@ -1047,25 +1047,49 @@
    "level": 2,
    "page_start": 2,
    "page_end": 4,
-   "n_chars": 4415,
-   "n_words": 860,
+   "n_chars": 3560,
+   "n_words": 674,
    "label_start": "2",
    "label_end": "4"
   },
   {
-   "id": "sec-005-3-musings-on-polyanalytic-bergman-metrics",
+   "id": "sec-005-24-the-polyanalytic-bergman-space-in-the-model-c",
+   "number": "2.4",
+   "title": "The polyanalytic Bergman space in the model case of the unit disk with constant weight",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 763,
+   "n_words": 172,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-006-3-musings-on-polyanalytic-bergman-metrics",
    "number": "3",
    "title": "Musings on polyanalytic Bergman metrics",
    "level": 1,
    "page_start": 4,
-   "page_end": 6,
-   "n_chars": 4363,
-   "n_words": 789,
+   "page_end": 5,
+   "n_chars": 2050,
+   "n_words": 352,
    "label_start": "4",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-007-33-the-first-polyanalytic-bergman-metric",
+   "number": "3.3",
+   "title": "The first polyanalytic Bergman metric",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 2220,
+   "n_words": 423,
+   "label_start": "5",
    "label_end": "6"
   },
   {
-   "id": "sec-006-34-the-second-polyanalytic-bergman-metric",
+   "id": "sec-008-34-the-second-polyanalytic-bergman-metric",
    "number": "3.4",
    "title": "The second polyanalytic Bergman metric",
    "level": 2,
@@ -1077,7 +1101,7 @@
    "label_end": "6"
   },
   {
-   "id": "sec-007-35-the-two-polyanalytic-bergman-metrics-in-the-m",
+   "id": "sec-009-35-the-two-polyanalytic-bergman-metrics-in-the-m",
    "number": "3.5",
    "title": "The two polyanalytic Bergman metrics in the model case of the unit disk with constant weight",
    "level": 2,
@@ -1089,7 +1113,7 @@
    "label_end": "7"
   },
   {
-   "id": "sec-008-4-interlude-a-priori-control-on-point-evaluation",
+   "id": "sec-010-4-interlude-a-priori-control-on-point-evaluation",
    "number": "4",
    "title": "Interlude: a priori control on point evaluations",
    "level": 1,
@@ -1101,7 +1125,7 @@
    "label_end": "7"
   },
   {
-   "id": "sec-009-41-introductory-comments",
+   "id": "sec-011-41-introductory-comments",
    "number": "4.1",
    "title": "Introductory comments",
    "level": 2,
@@ -1113,7 +1137,7 @@
    "label_end": "7"
   },
   {
-   "id": "sec-010-42-the-basic-estimate",
+   "id": "sec-012-42-the-basic-estimate",
    "number": "4.2",
    "title": "The basic estimate",
    "level": 2,
@@ -1125,31 +1149,43 @@
    "label_end": "8"
   },
   {
-   "id": "sec-011-43-applications-of-the-basic-estimate",
+   "id": "sec-013-43-applications-of-the-basic-estimate",
    "number": "4.3",
    "title": "Applications of the basic estimate",
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 405,
-   "n_words": 79,
+   "n_chars": 1704,
+   "n_words": 339,
    "label_start": "8",
    "label_end": "9"
   },
   {
-   "id": "sec-012-5-asymptotic-expansion-of-polyanalytic-bergman-k",
-   "number": "5",
-   "title": "Asymptotic expansion of polyanalytic Bergman kernels",
-   "level": 1,
+   "id": "sec-014-44-the-effective-estimate-of-the-point-evaluatio",
+   "number": "4.4",
+   "title": "The effective estimate of the point evaluation",
+   "level": 2,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 3026,
-   "n_words": 583,
+   "n_chars": 1633,
+   "n_words": 307,
    "label_start": "9",
    "label_end": "10"
   },
   {
-   "id": "sec-013-51-the-weighted-polyanalytic-bergman-space-and-k",
+   "id": "sec-015-5-asymptotic-expansion-of-polyanalytic-bergman-k",
+   "number": "5",
+   "title": "Asymptotic expansion of polyanalytic Bergman kernels",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "10",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-016-51-the-weighted-polyanalytic-bergman-space-and-k",
    "number": "5.1",
    "title": "The weighted polyanalytic Bergman space and kernel for power weights",
    "level": 2,
@@ -1161,7 +1197,7 @@
    "label_end": "10"
   },
   {
-   "id": "sec-014-52-weighted-bergman-kernel-expansions-for-power",
+   "id": "sec-017-52-weighted-bergman-kernel-expansions-for-power",
    "number": "5.2",
    "title": "Weighted Bergman kernel expansions for power weights",
    "level": 2,
@@ -1173,7 +1209,7 @@
    "label_end": "11"
   },
   {
-   "id": "sec-015-53-the-connection-with-random-normal-matrix-theo",
+   "id": "sec-018-53-the-connection-with-random-normal-matrix-theo",
    "number": "5.3",
    "title": "The connection with random normal matrix theory",
    "level": 2,
@@ -1185,7 +1221,7 @@
    "label_end": "11"
   },
   {
-   "id": "sec-016-54-the-polyanalytic-bergman-spaces-and-landau-le",
+   "id": "sec-019-54-the-polyanalytic-bergman-spaces-and-landau-le",
    "number": "5.4",
    "title": "The polyanalytic Bergman spaces and Landau levels",
    "level": 2,
@@ -1197,67 +1233,91 @@
    "label_end": "12"
   },
   {
-   "id": "sec-017-55-asymptotic-analysis-of-weighted-polyanalytic",
+   "id": "sec-020-55-asymptotic-analysis-of-weighted-polyanalytic",
    "number": "5.5",
    "title": "Asymptotic analysis of weighted polyanalytic Bergman kernels",
    "level": 2,
    "page_start": 12,
-   "page_end": 12,
-   "n_chars": 89,
-   "n_words": 12,
-   "label_start": "12",
-   "label_end": "12"
-  },
-  {
-   "id": "sec-018-61-assumptions-on-the-potential",
-   "number": "6.1",
-   "title": "Assumptions on the potential",
-   "level": 2,
-   "page_start": 12,
    "page_end": 13,
-   "n_chars": 4082,
-   "n_words": 713,
+   "n_chars": 4266,
+   "n_words": 741,
    "label_start": "12",
    "label_end": "13"
   },
   {
-   "id": "sec-019-6-tools-from-the-approach-of-berman-berndtsson-s",
+   "id": "sec-021-6-tools-from-the-approach-of-berman-berndtsson-s",
    "number": "6",
-   "title": "Tools from the approach of Berman-Berndtsson-Sj\u00f6strand",
+   "title": "Tools from the approach of Berman-Berndtsson-Sjöstrand",
    "level": 1,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 1127,
-   "n_words": 204,
+   "n_chars": 146,
+   "n_words": 25,
    "label_start": "13",
    "label_end": "13"
   },
   {
-   "id": "sec-020-62-the-phase-function",
-   "number": "6.2",
-   "title": "The phase function",
+   "id": "sec-022-61-assumptions-on-the-potential",
+   "number": "6.1",
+   "title": "Assumptions on the potential",
    "level": 2,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 1047,
-   "n_words": 220,
+   "n_chars": 1203,
+   "n_words": 227,
    "label_start": "13",
    "label_end": "14"
   },
   {
-   "id": "sec-021-63-approximate-local-reproducing-and-bergman-ker",
+   "id": "sec-023-62-the-phase-function",
+   "number": "6.2",
+   "title": "The phase function",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 752,
+   "n_words": 162,
+   "label_start": "14",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-024-63-approximate-local-reproducing-and-bergman-ker",
    "number": "6.3",
    "title": "Approximate local reproducing and Bergman kernels",
    "level": 2,
    "page_start": 14,
-   "page_end": 18,
-   "n_chars": 9562,
-   "n_words": 1681,
+   "page_end": 16,
+   "n_chars": 3776,
+   "n_words": 654,
    "label_start": "14",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-025-64-a-differential-operator-and-negligible-amplit",
+   "number": "6.4",
+   "title": "A differential operator and negligible amplitudes",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 1386,
+   "n_words": 232,
+   "label_start": "16",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-026-65-a-formal-diffusion-operator-and-the-character",
+   "number": "6.5",
+   "title": "A formal diffusion operator and the characterization of negligible amplitudes",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 4214,
+   "n_words": 771,
+   "label_start": "16",
    "label_end": "18"
   },
   {
-   "id": "sec-022-66-the-local-asymptotics-for-the-weighted-bergma",
+   "id": "sec-027-66-the-local-asymptotics-for-the-weighted-bergma",
    "number": "6.6",
    "title": "The local asymptotics for the weighted Bergman kernel: the corrective algorithm",
    "level": 2,
@@ -1269,7 +1329,7 @@
    "label_end": "20"
   },
   {
-   "id": "sec-023-7-the-kernel-expansion-algorithm-for-bianalytic",
+   "id": "sec-028-7-the-kernel-expansion-algorithm-for-bianalytic",
    "number": "7",
    "title": "The kernel expansion algorithm for bianalytic functions",
    "level": 1,
@@ -1281,7 +1341,7 @@
    "label_end": "20"
   },
   {
-   "id": "sec-024-71-the-local-ring-and-module",
+   "id": "sec-029-71-the-local-ring-and-module",
    "number": "7.1",
    "title": "The local ring and module",
    "level": 2,
@@ -1293,7 +1353,7 @@
    "label_end": "20"
   },
   {
-   "id": "sec-025-72-the-initial-approximate-local-bi-reproducing",
+   "id": "sec-030-72-the-initial-approximate-local-bi-reproducing",
    "number": "7.2",
    "title": "The initial approximate local bi-reproducing kernel",
    "level": 2,
@@ -1305,7 +1365,7 @@
    "label_end": "22"
   },
   {
-   "id": "sec-026-73-approximate-local-kernels",
+   "id": "sec-031-73-approximate-local-kernels",
    "number": "7.3",
    "title": "Approximate local kernels",
    "level": 2,
@@ -1317,7 +1377,7 @@
    "label_end": "22"
   },
   {
-   "id": "sec-027-74-bi-negligible-amplitudes",
+   "id": "sec-032-74-bi-negligible-amplitudes",
    "number": "7.4",
    "title": "Bi-negligible amplitudes",
    "level": 2,
@@ -1329,7 +1389,7 @@
    "label_end": "23"
   },
   {
-   "id": "sec-028-75-the-characterization-of-bi-negligible-amplitu",
+   "id": "sec-033-75-the-characterization-of-bi-negligible-amplitu",
    "number": "7.5",
    "title": "The characterization of bi-negligible amplitudes",
    "level": 2,
@@ -1341,43 +1401,55 @@
    "label_end": "24"
   },
   {
-   "id": "sec-029-76-the-local-uniqueness-criterion-for-bianalytic",
+   "id": "sec-034-76-the-local-uniqueness-criterion-for-bianalytic",
    "number": "7.6",
    "title": "The local uniqueness criterion for bianalytic kernels",
    "level": 2,
    "page_start": 24,
    "page_end": 25,
-   "n_chars": 1467,
-   "n_words": 294,
+   "n_chars": 1464,
+   "n_words": 293,
    "label_start": "24",
    "label_end": "25"
   },
   {
-   "id": "sec-030-77-the-local-asymptotics-for-the-weighted-bianal",
+   "id": "sec-035-77-the-local-asymptotics-for-the-weighted-bianal",
    "number": "7.7",
    "title": "The local asymptotics for the weighted bianalytic Bergman kernel: the corrective algorithm I",
    "level": 2,
    "page_start": 25,
    "page_end": 28,
-   "n_chars": 7140,
-   "n_words": 1419,
+   "n_chars": 7232,
+   "n_words": 1432,
    "label_start": "25",
    "label_end": "28"
   },
   {
-   "id": "sec-031-78-the-local-asymptotics-for-the-weighted-bianal",
+   "id": "sec-036-78-the-local-asymptotics-for-the-weighted-bianal",
    "number": "7.8",
    "title": "The local asymptotics for the weighted bianalytic Bergman kernel: the corrective algorithm II",
    "level": 2,
    "page_start": 28,
-   "page_end": 31,
-   "n_chars": 6143,
-   "n_words": 1331,
+   "page_end": 29,
+   "n_chars": 986,
+   "n_words": 200,
    "label_start": "28",
+   "label_end": "29"
+  },
+  {
+   "id": "sec-037-79-the-local-asymptotics-for-the-weighted-bianal",
+   "number": "7.9",
+   "title": "The local asymptotics for the weighted bianalytic Bergman kernel: the corrective algorithm III",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 5153,
+   "n_words": 1130,
+   "label_start": "29",
    "label_end": "31"
   },
   {
-   "id": "sec-032-8-a-priori-diagonal-estimates-of-weighted-bergma",
+   "id": "sec-038-8-a-priori-diagonal-estimates-of-weighted-bergma",
    "number": "8",
    "title": "A priori diagonal estimates of weighted Bergman kernels",
    "level": 1,
@@ -1389,31 +1461,31 @@
    "label_end": "31"
   },
   {
-   "id": "sec-033-81-estimation-of-point-evaluations-for-local-wei",
+   "id": "sec-039-81-estimation-of-point-evaluations-for-local-wei",
    "number": "8.1",
    "title": "Estimation of point evaluations for local weighted Bergman spaces",
    "level": 2,
    "page_start": 31,
    "page_end": 33,
-   "n_chars": 1937,
-   "n_words": 327,
+   "n_chars": 1934,
+   "n_words": 326,
    "label_start": "31",
    "label_end": "33"
   },
   {
-   "id": "sec-034-82-estimation-of-the-weighted-bergman-kernel-on",
+   "id": "sec-040-82-estimation-of-the-weighted-bergman-kernel-on",
    "number": "8.2",
    "title": "Estimation of the weighted Bergman kernel on the diagonal",
    "level": 2,
    "page_start": 33,
    "page_end": 33,
-   "n_chars": 583,
-   "n_words": 101,
+   "n_chars": 666,
+   "n_words": 115,
    "label_start": "33",
    "label_end": "33"
   },
   {
-   "id": "sec-035-9-bergman-kernels-from-local-to-global",
+   "id": "sec-041-9-bergman-kernels-from-local-to-global",
    "number": "9",
    "title": "Bergman kernels: from local to global",
    "level": 1,
@@ -1425,7 +1497,7 @@
    "label_end": "33"
   },
   {
-   "id": "sec-036-91-purpose-of-the-section",
+   "id": "sec-042-91-purpose-of-the-section",
    "number": "9.1",
    "title": "Purpose of the section",
    "level": 2,
@@ -1437,19 +1509,31 @@
    "label_end": "33"
   },
   {
-   "id": "sec-037-92-the-basic-pointwise-estimate",
+   "id": "sec-043-92-the-basic-pointwise-estimate",
    "number": "9.2",
    "title": "The basic pointwise estimate",
    "level": 2,
    "page_start": 33,
-   "page_end": 35,
-   "n_chars": 4291,
-   "n_words": 748,
+   "page_end": 34,
+   "n_chars": 1402,
+   "n_words": 244,
    "label_start": "33",
+   "label_end": "34"
+  },
+  {
+   "id": "sec-044-93-analysis-of-the-first-term-in-the-pointwise-e",
+   "number": "9.3",
+   "title": "Analysis of the first term in the pointwise estimate",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 35,
+   "n_chars": 2792,
+   "n_words": 486,
+   "label_start": "34",
    "label_end": "35"
   },
   {
-   "id": "sec-038-94-analysis-of-the-second-term-in-the-pointwise",
+   "id": "sec-045-94-analysis-of-the-second-term-in-the-pointwise",
    "number": "9.4",
    "title": "Analysis of the second term in the pointwise estimate I",
    "level": 2,
@@ -1461,31 +1545,55 @@
    "label_end": "35"
   },
   {
-   "id": "sec-039-95-digression-on-h\u00f6rmander-type-estimates-and-an",
+   "id": "sec-046-95-digression-on-hörmander-type-estimates-and-an",
    "number": "9.5",
-   "title": "Digression on H\u00f6rmander-type estimates and an obstacle problem",
+   "title": "Digression on Hörmander-type estimates and an obstacle problem",
    "level": 2,
    "page_start": 35,
-   "page_end": 37,
-   "n_chars": 3332,
-   "n_words": 598,
+   "page_end": 36,
+   "n_chars": 1381,
+   "n_words": 257,
    "label_start": "35",
+   "label_end": "36"
+  },
+  {
+   "id": "sec-047-96-analysis-of-the-second-term-in-the-pointwise",
+   "number": "9.6",
+   "title": "Analysis of the second term in the pointwise estimate II",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 1859,
+   "n_words": 325,
+   "label_start": "36",
    "label_end": "37"
   },
   {
-   "id": "sec-040-97-the-pointwise-distance-to-the-weighted-bergma",
+   "id": "sec-048-97-the-pointwise-distance-to-the-weighted-bergma",
    "number": "9.7",
    "title": "The pointwise distance to the weighted Bergman kernel",
    "level": 2,
    "page_start": 37,
    "page_end": 37,
-   "n_chars": 1543,
-   "n_words": 287,
+   "n_chars": 1472,
+   "n_words": 278,
    "label_start": "37",
    "label_end": "37"
   },
   {
-   "id": "sec-041-101-purpose-of-the-section",
+   "id": "sec-049-10-bianalytic-extensions-of-bergmans-metrics-and",
+   "number": "10",
+   "title": "Bianalytic extensions of Bergman's metrics and asymptotic analysis",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "37",
+   "label_end": "37"
+  },
+  {
+   "id": "sec-050-101-purpose-of-the-section",
    "number": "10.1",
    "title": "Purpose of the section",
    "level": 2,
@@ -1497,7 +1605,7 @@
    "label_end": "40"
   },
   {
-   "id": "sec-042-references",
+   "id": "sec-051-references",
    "number": null,
    "title": "References",
    "level": 1,
@@ -1520,13 +1628,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 44,
-  "chars_total": 95749,
+  "sections": 53,
+  "chars_total": 95211,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 55,
-   "overlaid": 30,
+   "overlaid": 43,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1550,7 +1659,7 @@
      "id": "sec-001-2-weighted-polyanalytic-bergman-spaces-and-kerne",
      "title": "Weighted polyanalytic Bergman spaces and kernels",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-002-21-basic-notation",
@@ -1571,21 +1680,37 @@
     {
      "id": "sec-004-23-the-weighted-polyanalytic-bergman-spaces-and",
      "title": "The weighted polyanalytic Bergman spaces and kernels",
-     "prose_ratio": 0.957,
-     "coverage_ratio": 0.957,
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.952,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-3-musings-on-polyanalytic-bergman-metrics",
+     "id": "sec-005-24-the-polyanalytic-bergman-space-in-the-model-c",
+     "title": "The polyanalytic Bergman space in the model case of the unit disk with constant weight",
+     "prose_ratio": 0.913,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-3-musings-on-polyanalytic-bergman-metrics",
      "title": "Musings on polyanalytic Bergman metrics",
-     "prose_ratio": 0.987,
-     "coverage_ratio": 0.957,
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.955,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-34-the-second-polyanalytic-bergman-metric",
+     "id": "sec-007-33-the-first-polyanalytic-bergman-metric",
+     "title": "The first polyanalytic Bergman metric",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-34-the-second-polyanalytic-bergman-metric",
      "title": "The second polyanalytic Bergman metric",
      "prose_ratio": 0.961,
      "coverage_ratio": 0.98,
@@ -1593,7 +1718,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-35-the-two-polyanalytic-bergman-metrics-in-the-m",
+     "id": "sec-009-35-the-two-polyanalytic-bergman-metrics-in-the-m",
      "title": "The two polyanalytic Bergman metrics in the model case of the unit disk with constant weight",
      "prose_ratio": 0.961,
      "coverage_ratio": 0.925,
@@ -1601,13 +1726,13 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-4-interlude-a-priori-control-on-point-evaluation",
+     "id": "sec-010-4-interlude-a-priori-control-on-point-evaluation",
      "title": "Interlude: a priori control on point evaluations",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-009-41-introductory-comments",
+     "id": "sec-011-41-introductory-comments",
      "title": "Introductory comments",
      "prose_ratio": 0.914,
      "coverage_ratio": 1.0,
@@ -1615,7 +1740,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-42-the-basic-estimate",
+     "id": "sec-012-42-the-basic-estimate",
      "title": "The basic estimate",
      "prose_ratio": 0.967,
      "coverage_ratio": 0.935,
@@ -1623,19 +1748,29 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-43-applications-of-the-basic-estimate",
+     "id": "sec-013-43-applications-of-the-basic-estimate",
      "title": "Applications of the basic estimate",
-     "prose_ratio": 0.208,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.898,
+     "coverage_ratio": 0.898,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-012-5-asymptotic-expansion-of-polyanalytic-bergman-k",
+     "id": "sec-014-44-the-effective-estimate-of-the-point-evaluatio",
+     "title": "The effective estimate of the point evaluation",
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.923,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-5-asymptotic-expansion-of-polyanalytic-bergman-k",
      "title": "Asymptotic expansion of polyanalytic Bergman kernels",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-013-51-the-weighted-polyanalytic-bergman-space-and-k",
+     "id": "sec-016-51-the-weighted-polyanalytic-bergman-space-and-k",
      "title": "The weighted polyanalytic Bergman space and kernel for power weights",
      "prose_ratio": 0.952,
      "coverage_ratio": 1.0,
@@ -1643,7 +1778,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-52-weighted-bergman-kernel-expansions-for-power",
+     "id": "sec-017-52-weighted-bergman-kernel-expansions-for-power",
      "title": "Weighted Bergman kernel expansions for power weights",
      "prose_ratio": 0.959,
      "coverage_ratio": 0.993,
@@ -1651,7 +1786,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-53-the-connection-with-random-normal-matrix-theo",
+     "id": "sec-018-53-the-connection-with-random-normal-matrix-theo",
      "title": "The connection with random normal matrix theory",
      "prose_ratio": 0.969,
      "coverage_ratio": 0.984,
@@ -1659,7 +1794,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-54-the-polyanalytic-bergman-spaces-and-landau-le",
+     "id": "sec-019-54-the-polyanalytic-bergman-spaces-and-landau-le",
      "title": "The polyanalytic Bergman spaces and Landau levels",
      "prose_ratio": 0.945,
      "coverage_ratio": 0.933,
@@ -1667,42 +1802,63 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-55-asymptotic-analysis-of-weighted-polyanalytic",
+     "id": "sec-020-55-asymptotic-analysis-of-weighted-polyanalytic",
      "title": "Asymptotic analysis of weighted polyanalytic Bergman kernels",
-     "prose_ratio": 0.046,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-018-61-assumptions-on-the-potential",
-     "title": "Assumptions on the potential",
-     "prose_ratio": 0.565,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-019-6-tools-from-the-approach-of-berman-berndtsson-s",
-     "title": "Tools from the approach of Berman-Berndtsson-Sj\u00f6strand",
+     "id": "sec-021-6-tools-from-the-approach-of-berman-berndtsson-s",
+     "title": "Tools from the approach of Berman-Berndtsson-Sjöstrand",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.183,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-020-62-the-phase-function",
+     "id": "sec-022-61-assumptions-on-the-potential",
+     "title": "Assumptions on the potential",
+     "prose_ratio": 0.903,
+     "coverage_ratio": 0.933,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-62-the-phase-function",
      "title": "The phase function",
-     "prose_ratio": 0.966,
-     "coverage_ratio": 0.8,
+     "prose_ratio": 0.931,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-021-63-approximate-local-reproducing-and-bergman-ker",
+     "id": "sec-024-63-approximate-local-reproducing-and-bergman-ker",
      "title": "Approximate local reproducing and Bergman kernels",
-     "prose_ratio": 0.955,
-     "coverage_ratio": 0.968,
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.929,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-022-66-the-local-asymptotics-for-the-weighted-bergma",
+     "id": "sec-025-64-a-differential-operator-and-negligible-amplit",
+     "title": "A differential operator and negligible amplitudes",
+     "prose_ratio": 0.897,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-026-65-a-formal-diffusion-operator-and-the-character",
+     "title": "A formal diffusion operator and the characterization of negligible amplitudes",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.954,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-027-66-the-local-asymptotics-for-the-weighted-bergma",
      "title": "The local asymptotics for the weighted Bergman kernel: the corrective algorithm",
      "prose_ratio": 0.966,
      "coverage_ratio": 0.958,
@@ -1710,13 +1866,13 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-023-7-the-kernel-expansion-algorithm-for-bianalytic",
+     "id": "sec-028-7-the-kernel-expansion-algorithm-for-bianalytic",
      "title": "The kernel expansion algorithm for bianalytic functions",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-024-71-the-local-ring-and-module",
+     "id": "sec-029-71-the-local-ring-and-module",
      "title": "The local ring and module",
      "prose_ratio": 0.882,
      "coverage_ratio": 1.0,
@@ -1724,7 +1880,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-025-72-the-initial-approximate-local-bi-reproducing",
+     "id": "sec-030-72-the-initial-approximate-local-bi-reproducing",
      "title": "The initial approximate local bi-reproducing kernel",
      "prose_ratio": 0.943,
      "coverage_ratio": 0.907,
@@ -1732,7 +1888,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-026-73-approximate-local-kernels",
+     "id": "sec-031-73-approximate-local-kernels",
      "title": "Approximate local kernels",
      "prose_ratio": 0.894,
      "coverage_ratio": 0.957,
@@ -1740,7 +1896,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-027-74-bi-negligible-amplitudes",
+     "id": "sec-032-74-bi-negligible-amplitudes",
      "title": "Bi-negligible amplitudes",
      "prose_ratio": 0.873,
      "coverage_ratio": 0.889,
@@ -1748,7 +1904,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-028-75-the-characterization-of-bi-negligible-amplitu",
+     "id": "sec-033-75-the-characterization-of-bi-negligible-amplitu",
      "title": "The characterization of bi-negligible amplitudes",
      "prose_ratio": 0.945,
      "coverage_ratio": 0.96,
@@ -1756,7 +1912,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-029-76-the-local-uniqueness-criterion-for-bianalytic",
+     "id": "sec-034-76-the-local-uniqueness-criterion-for-bianalytic",
      "title": "The local uniqueness criterion for bianalytic kernels",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.895,
@@ -1764,29 +1920,37 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-030-77-the-local-asymptotics-for-the-weighted-bianal",
+     "id": "sec-035-77-the-local-asymptotics-for-the-weighted-bianal",
      "title": "The local asymptotics for the weighted bianalytic Bergman kernel: the corrective algorithm I",
      "prose_ratio": 0.944,
-     "coverage_ratio": 0.962,
+     "coverage_ratio": 0.956,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-031-78-the-local-asymptotics-for-the-weighted-bianal",
+     "id": "sec-036-78-the-local-asymptotics-for-the-weighted-bianal",
      "title": "The local asymptotics for the weighted bianalytic Bergman kernel: the corrective algorithm II",
-     "prose_ratio": 0.977,
-     "coverage_ratio": 0.949,
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.867,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-032-8-a-priori-diagonal-estimates-of-weighted-bergma",
+     "id": "sec-037-79-the-local-asymptotics-for-the-weighted-bianal",
+     "title": "The local asymptotics for the weighted bianalytic Bergman kernel: the corrective algorithm III",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.87,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-038-8-a-priori-diagonal-estimates-of-weighted-bergma",
      "title": "A priori diagonal estimates of weighted Bergman kernels",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-033-81-estimation-of-point-evaluations-for-local-wei",
+     "id": "sec-039-81-estimation-of-point-evaluations-for-local-wei",
      "title": "Estimation of point evaluations for local weighted Bergman spaces",
      "prose_ratio": 0.932,
      "coverage_ratio": 0.859,
@@ -1794,21 +1958,21 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-034-82-estimation-of-the-weighted-bergman-kernel-on",
+     "id": "sec-040-82-estimation-of-the-weighted-bergman-kernel-on",
      "title": "Estimation of the weighted Bergman kernel on the diagonal",
-     "prose_ratio": 0.949,
-     "coverage_ratio": 0.949,
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.905,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-035-9-bergman-kernels-from-local-to-global",
+     "id": "sec-041-9-bergman-kernels-from-local-to-global",
      "title": "Bergman kernels: from local to global",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-036-91-purpose-of-the-section",
+     "id": "sec-042-91-purpose-of-the-section",
      "title": "Purpose of the section",
      "prose_ratio": 0.688,
      "coverage_ratio": 0.909,
@@ -1816,15 +1980,23 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-037-92-the-basic-pointwise-estimate",
+     "id": "sec-043-92-the-basic-pointwise-estimate",
      "title": "The basic pointwise estimate",
-     "prose_ratio": 0.929,
-     "coverage_ratio": 0.949,
+     "prose_ratio": 0.939,
+     "coverage_ratio": 0.938,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-038-94-analysis-of-the-second-term-in-the-pointwise",
+     "id": "sec-044-93-analysis-of-the-first-term-in-the-pointwise-e",
+     "title": "Analysis of the first term in the pointwise estimate",
+     "prose_ratio": 0.892,
+     "coverage_ratio": 0.953,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-045-94-analysis-of-the-second-term-in-the-pointwise",
      "title": "Analysis of the second term in the pointwise estimate I",
      "prose_ratio": 0.919,
      "coverage_ratio": 0.983,
@@ -1832,28 +2004,44 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-039-95-digression-on-h\u00f6rmander-type-estimates-and-an",
-     "title": "Digression on H\u00f6rmander-type estimates and an obstacle problem",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.933,
+     "id": "sec-046-95-digression-on-hörmander-type-estimates-and-an",
+     "title": "Digression on Hörmander-type estimates and an obstacle problem",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.95,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-040-97-the-pointwise-distance-to-the-weighted-bergma",
-     "title": "The pointwise distance to the weighted Bergman kernel",
-     "prose_ratio": 0.404,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-047-96-analysis-of-the-second-term-in-the-pointwise",
+     "title": "Analysis of the second term in the pointwise estimate II",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.889,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-041-101-purpose-of-the-section",
+     "id": "sec-048-97-the-pointwise-distance-to-the-weighted-bergma",
+     "title": "The pointwise distance to the weighted Bergman kernel",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-049-10-bianalytic-extensions-of-bergmans-metrics-and",
+     "title": "Bianalytic extensions of Bergman's metrics and asymptotic analysis",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-050-101-purpose-of-the-section",
      "title": "Purpose of the section",
      "prose_ratio": 0.688,
      "coverage_ratio": 0.071,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-042-references",
+     "id": "sec-051-references",
      "title": "References",
      "result": "no matching \\section"
     }

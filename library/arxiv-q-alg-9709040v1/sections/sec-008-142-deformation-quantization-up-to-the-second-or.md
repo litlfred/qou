@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-008-142-deformation-quantization-up-to-the-second-or
 section_title: "Deformation quantization up to the second order"
 section_number: 1.4.2
@@ -8,6 +8,7 @@ pages: 4-4
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
 Let α = P
 i,j αij∂i ∧∂j be a Poisson bracket with variable coeﬃcients in an open domain of Rd (i.e.

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-nucl-th-0006014v1
-doc_title: "arXiv:nucl-th/0006014v1 9 Jun 2000"
+doc_title: "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn)"
 section_id: sec-007-6-conclusions
 section_title: "Conclusions"
 section_number: 6
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.993
 latex_coverage_ratio: 1.0
+doc_brief: "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn) — 56 sections: Front matter; Introduction; The model"
 ---
 We have constructed charge-dependent $NN$ potentials, that fit the world proton-proton data below 350 MeV (2932 data) with a $\chi^2$/datum of 1.01 and the corresponding neutron-proton data (3058 data) with $\chi^2$/datum $= 1.02$. This reproduction of the $NN$ data is more accurate than by any other known $NN$ potential or phase-shift analysis. A particular challenge are the $pp$ spin correlation parameters that were recently measured at the IUCF Cooler Ring with very high precision (1126 data below 350 MeV). Our $pp$ potential reproduces these data with $\chi^2$/datum $= 1.03$, while the high-quality Nijmegen analysis [@Sto93] and the Argonne $V_{18}$ potential [@WSS95] produce $\chi^2$/datum of 1.24 and 1.74, respectively, for these data.
 

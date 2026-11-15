@@ -1,0 +1,1 @@
+For example, quantities like the superconformal index of $T_M$ or the partition function on $S^3$ should map to interesting three-manifold invariants, as summarized in Table [1](#tab:dict){reference-type="ref" reference="tab:dict"}.

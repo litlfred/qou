@@ -1,0 +1,1 @@
+It follows that there is an element of $\rho_2\setminus\pi^2_1$, namely $c$, which is connected by $\sigma$ with $a\in\pi_1^1$, and the latter element must be connected by $\sigma$ with the elements of $\pi^2_1$.

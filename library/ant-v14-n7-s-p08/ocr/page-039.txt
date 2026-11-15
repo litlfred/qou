@@ -1,0 +1,64 @@
+Burgess bounds for short character sums evaluated at forms 1949
+
+One then expands the sum over x using
+1
+
+1x =a (mod q) = 7
+
+So eg(k- (x -a))
+k (mod q)
+
+so that 1
+ra Yo YE x @Yeq(-k a) B1(a1/q) ++ BnGn/q).
+
+k (mod q) a (mod q)
+
+S(F;N,H)=
+
+in which (a) = min{H;, ||a||~!}, where ||a|| denotes the distance from a to the nearest integer. One then
+aims to show that under appropriate assumptions on the smoothness of F € Fy[x1,..-, Xn], for generic k
+a Weil bound applies so that the internal sum over a is O(q"/?). (Note that this does require the deep
+input of a Weil-strength bound for a multi-dimensional mixed character sum; see, e.g., [Katz 2006].) The
+resulting sum over k is then expected to be roughly on the order of O(q~"/?|| H|| +.q"/? log q)"), which is
+o(|| H||) in the case that H; >> g!/? log qg for eachi=1,...,n, that is, the setting that is complementary to
+
+1/2
+
+that of this paper. In a hybrid case, in which some H; are smaller than q*/~ and some are larger, one could
+
+adopt a hybrid strategy; this regime is closely related to [Pierce 2006; Heath-Brown and Pierce 2012].
+
+Acknowledgements
+
+The authors thank D. R. Heath-Brown and M. Larsen for helpful advice on this project; the authors
+also thank the referee for helpful suggestions. Pierce is partially supported by NSF CAREER grant
+DMS- 1652173, a Sloan Research Fellowship and the AMS Joan and Joseph Birman Fellowship. Xu has
+been partially supported by NSF DMS-1702152.
+
+References
+
+[Aggarwal et al. 2018] K. Aggarwal, R. Holowinsky, Y. Lin, and Q. Sun, “The Burgess bound via a trivial delta method”, 2018.
+To appear in Ramanujan J. arXiv
+
+[Banks and Guo 2017] W. D. Banks and V. Z. Guo, “Quadratic nonresidues below the Burgess bound”, Int. J. Number Theory
+13:3 (2017), 751-759. MR Zbl
+
+[Barban et al. 1964] M. B. Barban, Y. V. Linnik, and N. G. Tshudakov, “On prime numbers in an arithmetic progression with a
+prime-power difference”, Acta Arith. 9 (1964), 375-390. MR Zbl
+
+[Blomer and Harcos 2008] V. Blomer and G. Harcos, “Hybrid bounds for twisted L-functions”, J. Reine Angew. Math. 621
+(2008), 53-79. MR Zbl
+
+[Bourgain and Chang 2010] J. Bourgain and M.-C. Chang, “On a multilinear character sum of Burgess”, C. R. Math. Acad. Sci.
+Paris 348:3-4 (2010), 115-120. MR Zbl
+
+[Burgess 1957] D. A. Burgess, “The distribution of quadratic residues and non-residues”, Mathematika 4 (1957), 106-112. MR
+Zbl
+
+[Burgess 1962] D. A. Burgess, “On character sums and L-series”, Proc. Lond. Math. Soc. (3) 12 (1962), 193-206. MR Zbl
+[Burgess 1963] D. A. Burgess, “On character sums and L-series, II”, Proc. Lond. Math. Soc. (3) 13 (1963), 524-536. MR Zbl
+
+[Burgess 1967a] D. A. Burgess, “Character sums and primitive roots in finite fields”, Proc. Lond. Math. Soc. (3) 17 (1967),
+11-25. MR Zbl
+
+[Burgess 1967b] D. A. Burgess, “On the quadratic character of a polynomial”, J. Lond. Math. Soc. 42 (1967), 73-80. MR Zbl

@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1202.0067v3/sections/sec-010",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Proof of Theorem 1.5",
+  "pageStart": 14,
+  "pageEnd": 18,
+  "contains": [
+    "library/arxiv-1202.0067v3/blocks/prose-sec-010",
+    "library/arxiv-1202.0067v3/blocks/recommendation-sec-010-01",
+    "library/arxiv-1202.0067v3/blocks/recommendation-sec-010-02",
+    "library/arxiv-1202.0067v3/blocks/recommendation-sec-010-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1202.0067v3",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1202.0067v3",
+  "provenance": "ingested"
+}

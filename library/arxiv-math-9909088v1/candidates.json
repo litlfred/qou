@@ -1,14 +1,12 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-9909088v1",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "52cfb568951f195f96ca14a0048063be4fbe3af24a99164b053a7d5883010f2e",
   "file": "9909088v1.pdf"
  },
  "provenance": {
-  "title": "THE GAUSS MAP AND A NONCOMP ACT RIEMANN-ROCH FORMULA FOR CONSTRUCTIBLE SHEA VES ON SEMIABELIAN V ARIETIES",
+  "title": "arXiv:math/9909088v1 [math.AG] 15 Sep 1999",
   "authors": "J. Franecki, M. Kapranov",
   "arxiv": {
    "id": "math/9909088",
@@ -18,41 +16,46 @@
   },
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
   "candidates": 2,
   "by_kind": {
-   "corollary": 1,
-   "theorem": 1
+   "recommendation": 2
   },
-  "formalization_candidates": 2
+  "formalization_candidates": 0
  },
  "candidates": [
   {
-   "kind": "corollary",
-   "source_kind": "corollary",
-   "number": "1.4",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "for G = (C\u2217)n was proven by Loeser-Sabbah [12] and given a di\ufb00er-",
-   "section_file": "sections/sec-001-1-introduction-and-statement-of-results.md",
-   "section_title": "Introduction and statement of results",
-   "pages": "1-3",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "statement": "Nevertheless, we believe that there should exist generalizations of Theorem 1.3 which involve some particular classes of constructible sheaves and complexes.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-003.md",
+   "section_title": "Page 3",
+   "pages": "3-3",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   },
   {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "6.3",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "reduces to our statement.",
-   "section_file": "sections/sec-004-3-characteristic-cycle-of-an-open-embedding.md",
-   "section_title": "Characteristic cycle of an open embedding",
-   "pages": "4-5",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "statement": "Then we should take fi = z(\u03bd) i , i \u2208{0, . . . , n} \\ {\u03bd} and consider the 1-forms \u03c9(\u03bd) s\u2032 = X i\u0338=\u03bd s\u2032 i d log z(\u03bd) i , s\u2032 \u2208(C\u2217){0,...,n}\\{\u03bd}.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/page-006.md",
+   "section_title": "Page 6",
+   "pages": "6-6",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   }
  ]
 }

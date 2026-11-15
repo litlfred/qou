@@ -8,7 +8,7 @@
   "pages": 8,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,7 +21,7 @@
    "stamp_date": "7 Jun 2000"
   },
   "doi": null,
-  "title": "arXiv:math/0006051v1 [math.NT] 7 Jun 2000",
+  "title": "Finite and p-adic polylogarithms",
   "authors_raw": "AMNON BESSER",
   "title_lines": [
    "FINITE AND p-ADIC POLYLOGARITHMS"
@@ -38,13 +38,14 @@
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:math/0006051v1 [math.NT] 7 Jun 2000",
-   "heading": "FINITE AND p -ADIC POLYLOGARITHMS 1. Introduction The \ufb01nite logarithm was introduced by Kontsevich (under the name \u201cThe 1 1 logarithm\u201d) in [Kon]. The \ufb01nite logarithm is the case n = 1 of the n -th polylogarithm li n \u2208 Z /p [ z ] de\ufb01ned by li n ( z ) = P p \u2212 1 k =1 z k /k n . In loc. cit. Kontsevich",
+   "heading": "FINITE AND p -ADIC POLYLOGARITHMS 1. Introduction The ﬁnite logarithm was introduced by Kontsevich (under the name “The 1 1 logarithm”) in [Kon]. The ﬁnite logarithm is the case n = 1 of the n -th polylogarithm li n ∈ Z /p [ z ] deﬁned by li n ( z ) = P p − 1 k =1 z k /k n . In loc. cit. Kontsevich",
    "text": "FINITE AND p-ADIC POLYLOGARITHMS",
    "corroborated_by": [
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:math/0006051v1 [math.NT] 7 Jun 2000"
  },
  "toc": [
   {
@@ -214,6 +215,7 @@
   },
   "sections": 4,
   "chars_total": 13538,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",

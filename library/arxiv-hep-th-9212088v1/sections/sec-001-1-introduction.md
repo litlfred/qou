@@ -8,6 +8,7 @@ pages: 2-3
 source_pdf: 9212088v1.pdf
 source_sha256: ecb2c02ec6fe11bd
 toc_source: inferred
+doc_brief: "arXiv:hep-th/9212088v1 14 Dec 1992 — We construct a random matrix model that, in the large N limit, reduces to the low energy limit of the QCD partition function put forward by Leutwyler and Smilga."
 ---
 Since our main understanding of nonperturbative phenomena in QCD comes from
 numerical simulations analytical results in this direction are most welcome [1, 2].
@@ -41,5 +42,4 @@ random matrix ensembles [7]. The appropriate ensemble will be constructed in sec
 and with the help of mathematical techniques developed in the framework of Anderson
 localization and compound nucleus scattering [8, 9] we are able to derive the partition
 function that was obtained by Leutwyler and Smilga (see section 3). Sum rules for one
-2
 and two ﬂavors are derived in section 4.

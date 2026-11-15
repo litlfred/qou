@@ -1,41 +1,57 @@
 428 I. Cherednik
-satisfy relations (1.5) for y* with the constants h; above, where p. are from Theorem
-=     ! ()'s sn 1     =[(ix)o ('s)  
-(α, α*) = (s;(α), α*). Similarly,
-Vo(si) vo(xi)vo(si) - K;(pi + Vo(si) p;Vo(si) - 1) = Z Ke(α, Si;(α*)) (pα - 1/2) .
-α>0
-Here we have used that s; does not change the terms μdα; in α for j + i and therefore
-takes O < α + α; to some positive root. Hence, (3.1O) results in
-SiXi - Z (s(α*), αu)x )s = - Ki, 1≤i≤n,
-(k=1
-which is (1.5) for xi = y* and h = - (αi, αi)Ki/2, 1 ≤ i ≤ n.
-The commutativity relations [xi, xj] -- O are valid because the set (p.} is an
-r-matrix. For (x?} (without g) reasoning is the same. One can deduce the general
+
+satisfy relations (1.5) for y* with the constants h; above, where p, are from Theorem
+3.4. Indeed, [vo(s;), vo(x:)] = 0 for j +i because s,(«) > 0 if ui +0, where pi=
+(a, a*) = (s;(a), a). Similarly,
+
+Vo(Si) Vo(%i) Vo(Si) — Ki(Pi + Vo(Si) P:Vo(si) — 1) = x Kq(2, Si(a*)) (Pa — 1/2).
+a>O
+Here we have used that s; does not change the terms pa, in « for j + iand therefore
+takes 0 < a + a; to some positive root. Hence, (3.10) results in
+
+a
+SiXji — ( ¥ Ger), oa) =-K, 1SiSn,
+k=1
+
+which is (1.5) for x; = y* and h; = — (a;, «;)«,/2, 1 Sign.
+
+The commutativity relations [x;, x;] = 0 are valid because the set {p,} is an
+r-matrix. For {x?} (without g) reasoning is the same. One can deduce the general
 statement (without g) from this partial results, but the direct calculation of the
-commutativity is a more natural way and is not dificult. As for the introduction of
-g, it is due to the relations μa[ra, y*］ + μdly*, ra] = O. This proves the required
-commutativity. 
+commutativity is a more natural way and is not difficult. As for the introduction of
+g, it is due to the relations yi[r,, y¥] + wiL y*,r.] = 0. This proves the required
+commutativity. 0
+
 Now we are in a position to explain the main theorem of this section. Later on,
-A =- Endc V. Let us introduce partial derivatives ou, ue Cw, on Vo - C( Y)c V or
-= C(y)@c V (see Sect. 2 and Lemma 3.5) by
-Qu(Yα) = (u, α)Yα, Qu(yα) = (u, α), Qu(V) = O , (3.21)
-where αe E. In particular, O; = Oα*(1 ≤ i, j ≤ n). One has
-Oau+βu = αQu + βOu, wOuw-1 = Ow(u) (3.22)
-for u, u'eCn, α, βeC, we W.
+A = End, V. Let us introduce partial derivatives 6,,ueC”, on V° = C(Y)@¢V or
+= C(y)@cV (see Sect. 2 and Lemma 3.5) by
+
+Ou( Ya) = (U; ®) Yar Ou( Ya) = (u, &), O,(V) = 0, (3.21)
+where a¢ Z. In particular, 0; = 0,»(1 S i, j Sn). One has
+
+Bau+ pur = CO, + Boy, WOW * = Aww (3.22)
+for u, u’eC", a, BEC, we W.
+
 Theorem 3.7 Put
-Vu= Ou + Du, Du=  (u, αi)Di, ueCn (3.23)
-i= 1
-where D; are from (3.19) or (3.20). Then Vu, ueCn, form a commutative family of
-operators in Endc Vo for arbitrary k', k", S', S", g. For (D;} of type (3.20) or in the case
-" = O = S" one has: Do(w)Duvo(w)-1 = Dw(u), where vo is from (3.9), ue Cn, we W.
-Proof. Let us check the identities [Oi, μdra] = [oj, μra] for 1 ≤ i,j ≤ n, αe E+. By
-(3.22) μio; - μd, = Qu, where u = μiα* - μα . Hence, ou(Y - 1) = (u, α)Y = 0
- Qu(y) and [ou, 1 -- Sas.]  Sa(Ou -- Osa(u)) -- 0.
-We will discuss now some particular cases. Let us consider first the “rational"
-case of C(y) with x? = O for all i. If S' = O = ", g = O, then one arrives at the
-generalized Knizhnik-Zamolodchikov equation from [Ch 1, Ch 2]. The Dunkl
-operators (see [Du, He2]) can be obtained for V = Cand ' -- 1 =- S", g = 0. In this
+
+Vi = 0, + Dy, Du = ¥, (u, a4); weC", (3.23)
+i=1
+
+where D; are from (3.19) or (3.20). Then V,, ueC", form a commutative family of
+operators in End, V° for arbitrary x’, x", 6’, 5", g. For {D,} of type (3.20) or in the case
+6’ =0 = 6” one has: o(w)D,¥o(w)~* = Dy, where Vo is from (3.9), ueC", we W.
+
+Proof. Let us check the identities [4,, wiry] = [6;, uir,]for 1 <i,j<n,wed,. By
+(3.22) uid, — wid; = 0,, where u = plo¥ — phat. Hence, 0,(Y, — 1) = (u, a) Y, =0
+= (Ya) and [8y, 1 — b452] = Sa(Au — Os.) = 9.
+
+We will discuss now some particular cases. Let us consider first the “rational”
+case of C(y) with x? = 0 for all i. If 6’ = 0 = 6”, g =0, then one arrives at the
+generalized Knizhnik-Zamolodchikov equation from [Ch1, Ch2]. The Dunkl
+operators (see [Du, He2]) can be obtained for V = Cand 6’ = 1 = 6",g = 0. In this
 case
-rα= Ky1(1 - Ss), αeE+. (3.24)
-The Lusztig-Lascoux-Schitzenberger operators give a natural proof of the com-
-mutativity of the corresponding family (3.23)
+
+Ty =Kyyg (1-5), wEXs. (3.24)
+
+The Lusztig-Lascoux-Schiitzenberger operators give a natural proof of the com-
+mutativity of the corresponding family (3.23).

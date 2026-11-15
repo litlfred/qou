@@ -1,32 +1,53 @@
 472 A. Ram
-For each r ≥ O define the homogeneous symmetric function hr(X) to be the
-coefficient of tr in 2(Xt), i.e.
-2(Xt) = Z  hr(X)tr. (4.4)
-r≥0
-For a partition μ = (μ1, μ2, . . ., μk) define
-hu(X) = hui(X)hμz2(X). . . huk(X) 
-For any partition a  (a1, 22, : : . ), the Schur function Sa(X)in the alphabet X can
+
+For each r20 define the homogeneous symmetric function h,(X) to be the
+coefficient of t” in Q(Xt), ie.
+
+Q(Xt) = z, A(X)t" . (4.4)
+
+For a partition w= (141, H2,..., Hy) define
+h,(X) = hy, (X)hy,(X) . : hy, (X) :
+
+For any partition A = (A,, A2,...), the Schur function s,(X) in the alphabet X can
 be given by
-Sa(X) = det(hat-i+j(X)1≤i,j≤n 
-where n ≥ t(), and hr(X) = 0 for any r < 0.
+
+8,(X) = det(hy,-i+(X))isijsn>
+
+where n = ¢(A), and h,(X) = 0 for any r <0.
 Let X, Y be two alphabets. The addition formula for Schur functions is
-Sa(X + Y) = Z Su(X)sa/u(Y) . (4.5)
+
+s(X + Y)= ¥ s,(X)say,(Y). (4.5)
+
+usd
+
 The duality formula for Schur functions is
-sa(- X) =(- 1)lalsα(X) (4.6)
-where a' denotes the conjugate partition to a.
-For a brief moment let Sa, Su, S, denote the irreducible representations of the
-symmetric group S, corresponding to the partitions a, μ, v f respectively. Set
-Caμv to be the multiplicity of the representation Sa in the Kronecker product of
-symmetric group representations Su  S,. The numbers cauv are symmetric with
+si(— X) = (— 1!4!s,(X) (4.6)
+
+where 2’ denotes the conjugate partition to 2.
+
+For a brief moment let S,,S,, 5, denote the irreducible representations of the
+symmetric group S, corresponding to the partitions A, uy, vt f respectively. Set
+Cayy to be the multiplicity of the representation S, in the Kronecker product of
+symmetric group representations S, ® S,. The numbers c,,, are symmetric with
+respect to all three partitions A, u,v. This given, the product formula for Schur
 functions is
-sa(XY) = Z cauvsu(X)ss(Y) . (4.7)
-u,y
-Let ma(X) be the monomial symmetric function in the alphabet X. For any
+
+si(XY) = ¥. ciyS,(X)s\(Y) « (4.7)
+
+ay
+
+Let m,(X) be the monomial symmetric function in the alphabet X. For any
 alphabet X,
-hu(X) = sa(X)Kau, 8 and
-Sa(X) = Z Kaumμ(X) , (4.8)
-where Kau is the Kostka number, the number of column strict fillings of the shape
- with weight u.
-For alphabets X = xi +. . . + xn, Y= y1 +... + yn and a variable t,
-2(XY(1 - t))  1 - txiyj (4.9)
-1≤ij≤n 1 - xiyj
+h,(X) = ¥ s,(X)Ky,, and
+a
+
+5i(X) = Y) Kiym,(X) , (4.8)
+H
+
+where K,, is the Kostka number, the number of column strict fillings of the shape
+A with weight py.
+For alphabets X = x, +...+%, Y=y, +...+ y, and a variable t,
+
+qxyi- = TT tebe (49)
+
+isijsn | — Xi;

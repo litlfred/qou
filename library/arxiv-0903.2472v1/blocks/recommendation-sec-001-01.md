@@ -1,0 +1,1 @@
+However, in some cases (which include Chern-Simons gauge theory), the coupling constant must obey certain quantization conditions, which, therefore, can lead to a "preferred" normalization of $\hbar$ up to irrelevant $\mathbb{Q}$-valued factors.

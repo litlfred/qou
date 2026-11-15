@@ -1,0 +1,1 @@
+The crucial property from the viewpoint of physical significance is Einstein causality, which states the principle that spacelike separated quantum observables must commute and hence there is not uncertainty between them.

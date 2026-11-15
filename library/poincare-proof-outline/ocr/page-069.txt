@@ -1,0 +1,71 @@
+thus ?thesis
+using k
+by (simp add: field-simps)
+qed
+hence cmod z' / k + cz * sqrt(R*(R+1))/k< 1
+using «k > 1>
+unfolding add-divide-distrib|symmetric]
+by simp
+hence cmod (z' / k) + cz * sqrt(R * (R+1))/k<1
+using «k > 1>
+by simp
+hence cmod ?ze + ?re < 1
+using k cz (R = ?R> z'
+by simp
+
+moreover
+
+have cz * sqrt(R * (R+1))/k>0
+using (cz > 0) (R> 0) «k > I>
+by auto
+
+hence ?re > 0
+using k cz (R = ?R> z'
+by simp
+
+moreover
+
+have cmod ?ze < 1
+using <cmod ?ze + ?re < 1» <?re > 0»
+by simp
+
+moreover
+
+have ze = ?ze re = ?re
+using <(ze, re) = poincare-circle-euclidean z r>
+unfolding poincare-circle-euclidean-def Let-def
+by simp-all
+
+moreover
+
+have V a € circle ze re. cmod x < cmod ze + re
+using norm-triangle-ineg2 [of - ze]
+unfolding circle-def
+by (smt mem-Collect-eq)
+
+ultimately
+
+show cmod ze < 1 re > 0V « € circle ze re. cmod & < 1
+by auto
+qed
+
+The connection between the points on the h-circle and its corresponding Euclidean circle.
+
+lemma poincare-circle-is-euclidean-circle:
+assumes z € unit-disc and r > 0
+shows let (Ze, Re) = poincare-circle-euclidean z r
+in of-complex ‘ (circle Ze Re) = poincare-circle zr
+proof—
+{
+fix x
+let ?z = to-complex z
+
+from assms obtain z’ where z’: z = of-complex z' cmod z' < 1
+using inf-or-of-complez[of z|
+by auto
+
+have *: (x. cmod t < 1 => 1 — (emod x)? > 0
+
+by (metis less-iff-diff-less-O0 minus-diff-eq mult. left-neutral neg-less-0-iff-less norm-mult-less norm-power power2-eq-square)
+
+69

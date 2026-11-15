@@ -2,65 +2,90 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-0908.4305v3",
  "source_sha256": "ab8d2b335b026a36",
- "brief": "Higher Dimensional Algebra VII: Groupoidification — Groupoidiﬁcation is a form of categoriﬁcation in which vect or spaces are replaced by groupoids and linear operators are replaced by spans of",
- "extended": "**Higher Dimensional Algebra VII: Groupoidification**\n\n*John C. Baez, Alexander E. Hoffnung, and Christopher D. Walker*\n\n67 pp, 11 sections.\n\n**Abstract.** Groupoidiﬁcation is a form of categoriﬁcation in which vect or spaces are replaced by groupoids and linear operators are replaced by spans of groupoids. We introduce this idea with a detailed exposit ion of ‘de- groupoidiﬁcation’: a systematic process that turns groupo ids and spans into vector spaces and linear operators. Then we present thr ee appli- cations of groupoidiﬁcation. The ﬁrst is to Feynman diagram s. The Hilbert space for the quantum harmonic oscillator arises na turally from degroupoidifying the groupoid of ﬁnite sets and bijections . This allows for a purely combinatorial interpretation of creation and anni hilation oper- ators, their commutation relations, ﬁeld operators, their normal-ordered powers, and ﬁnally Feynman diagrams. The second applicatio n is to Hecke algebras.\n\n**Outline.** 1 Introduction; 3 Homology versus Cohomology; 4.1 Feynman Diagrams; 4.2 Hecke Algebras; 4.3 Hall Algebras; 5 Degroupoidifying a Tame Span; 5.1 Tame Spans Give Operators; 5.2 An Explicit Formula; 6.1 Scalar Multiplication; 6.3 Inner Products and Adjoints; A Review of Groupoids\n\n**Extracted claims (proposals, not verified).**\n- Theorem 36: provides an explicit criterion for when a span is tame. This\n- Theorem: Given a groupoid X, there is a unique inner product ⟨·, ·⟩ on the\n- Theorem 34: Given a tame span of groupoids\n- Theorem 41: Degroupoidiﬁcation is a functor from the category of groupo ids\n- Theorem 45: Given a groupoid X, there is a unique inner product ⟨·, ·⟩ on the\n- Proposition: Given tame groupoids Φ and Ψ over X,",
+ "brief": "Higher Dimensional Algebra VII: Groupoidiﬁcation — Groupoidiﬁcation is a form of categoriﬁcation in which vector spaces are replaced by groupoids and linear operators are replaced by spans of",
+ "extended": "**Higher Dimensional Algebra VII: Groupoidiﬁcation**\n\n*John C. Baez, Alexander E. Hoffnung, and Christopher D. Walker*\n\n67 pp, 16 sections.\n\n**Abstract.** Groupoidiﬁcation is a form of categoriﬁcation in which vector spaces are replaced by groupoids and linear operators are replaced by spans of groupoids. We introduce this idea with a detailed exposition of ‘de- groupoidiﬁcation’: a systematic process that turns groupoids and spans into vector spaces and linear operators. Then we present three appli- cations of groupoidiﬁcation. The ﬁrst is to Feynman diagrams. The Hilbert space for the quantum harmonic oscillator arises naturally from degroupoidifying the groupoid of ﬁnite sets and bijections. This allows for a purely combinatorial interpretation of creation and annihilation oper- ators, their commutation relations, ﬁeld operators, their normal-ordered powers, and ﬁnally Feynman diagrams. The second application is to Hecke algebras.\n\n**Outline.** Front matter; 1 Introduction; 2 Degroupoidification; 3 Homology versus Cohomology; 4 Groupoidification; 4.1 Feynman Diagrams; 4.2 Hecke Algebras; 4.3 Hall Algebras; 5 Degroupoidifying a Tame Span; 5.1 Tame Spans Give Operators; 5.2 An Explicit Formula; 6 Properties of Degroupoidification; 6.1 Scalar Multiplication; 6.2 Functoriality of Degroupoidification; 6.3 Inner Products and Adjoints; A Review of Groupoids",
  "tokens": {
-  "brief": 48,
-  "extended": 426
+  "brief": 47,
+  "extended": 343
  },
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "title": "Introduction",
-   "pages": "1-25"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
   },
   {
-   "id": "sec-001-3-homology-versus-cohomology",
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-8"
+  },
+  {
+   "id": "sec-001-2-degroupoidification",
+   "title": "Degroupoidification",
+   "pages": "8-25"
+  },
+  {
+   "id": "sec-002-3-homology-versus-cohomology",
    "title": "Homology versus Cohomology",
    "pages": "25-29"
   },
   {
-   "id": "sec-002-41-feynman-diagrams",
+   "id": "sec-003-4-groupoidification",
+   "title": "Groupoidification",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-004-41-feynman-diagrams",
    "title": "Feynman Diagrams",
    "pages": "29-36"
   },
   {
-   "id": "sec-003-42-hecke-algebras",
+   "id": "sec-005-42-hecke-algebras",
    "title": "Hecke Algebras",
    "pages": "36-41"
   },
   {
-   "id": "sec-004-43-hall-algebras",
+   "id": "sec-006-43-hall-algebras",
    "title": "Hall Algebras",
    "pages": "41-45"
   },
   {
-   "id": "sec-005-5-degroupoidifying-a-tame-span",
+   "id": "sec-007-5-degroupoidifying-a-tame-span",
    "title": "Degroupoidifying a Tame Span",
    "pages": "45-45"
   },
   {
-   "id": "sec-006-51-tame-spans-give-operators",
+   "id": "sec-008-51-tame-spans-give-operators",
    "title": "Tame Spans Give Operators",
    "pages": "45-50"
   },
   {
-   "id": "sec-007-52-an-explicit-formula",
+   "id": "sec-009-52-an-explicit-formula",
    "title": "An Explicit Formula",
    "pages": "50-52"
   },
   {
-   "id": "sec-008-61-scalar-multiplication",
-   "title": "Scalar Multiplication",
-   "pages": "52-56"
+   "id": "sec-010-6-properties-of-degroupoidification",
+   "title": "Properties of Degroupoidification",
+   "pages": "52-52"
   },
   {
-   "id": "sec-009-63-inner-products-and-adjoints",
+   "id": "sec-011-61-scalar-multiplication",
+   "title": "Scalar Multiplication",
+   "pages": "52-53"
+  },
+  {
+   "id": "sec-012-62-functoriality-of-degroupoidification",
+   "title": "Functoriality of Degroupoidification",
+   "pages": "53-56"
+  },
+  {
+   "id": "sec-013-63-inner-products-and-adjoints",
    "title": "Inner Products and Adjoints",
    "pages": "56-58"
   },
   {
-   "id": "sec-010-a-review-of-groupoids",
+   "id": "sec-014-a-review-of-groupoids",
    "title": "A Review of Groupoids",
    "pages": "58-67"
   }
@@ -69,8 +94,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

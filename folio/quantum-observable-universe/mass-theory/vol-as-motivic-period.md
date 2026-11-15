@@ -7,7 +7,7 @@ $$
   \sum_{i=1}^{k} D(z_i),
 $$
 
-where $D$ is the Bloch-Wigner dilogarithm. Each $D(z_i)$ is a Kontsevich-Zagier period.
+where $D$ is the Bloch-Wigner dilogarithm. Each $D(z_i)$ is a Kontsevich-Zagier period. For motivic periods and the action of the motivic Galois group on them, in the basic case of the motivic fundamental group of $\mathbb{P}^1 \setminus \{0, 1, \infty\}$, whose periods are the multiple zeta values, see \cite[\S1]{brown-motivic-p1-three-points}.
 
 **Regulator interpretation.**
 The shape parameters define a class $[K] \in \mathcal{B}(\overline{\mathbb{Q}})$ in the pre-Bloch group, yielding:

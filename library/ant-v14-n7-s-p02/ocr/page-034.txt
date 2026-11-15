@@ -1,0 +1,50 @@
+1744 David Jarossay
+
+In [Jarossay 2019, Section 4], we have showed an expression of each Li}, lw] as a linear combination
+of regularized p-adic iterated integrals over the ring of p-adic cyclotomic multiple zeta values ¢) (w’).
+Combining these facts with the results of Sections | and 2 on how ¢,,g and har,z depend on a, we
+deduce the result. oO
+
+Appendix: A Poisson bracket corresponding to the pro-unipotent harmonic action
+of integrals at (1, 0)
+
+We have seen that, by their definitions, the pro-unipotent harmonic actions (Section 1D and Definition 2A.3)
+are connected to the Ihara product (1-1). However, often in the literature, what is used is not the Ihara
+product but the corresponding Lie bracket, called the Ihara bracket, which is a Poisson bracket. In
+this section we explain that the pro-unipotent harmonic action of integrals at (1, 0) (Definition 2A.3)
+corresponds naturally to a Poisson Lie bracket.
+
+A.1. The Ihara bracket and the adjoint analogue. Let V® be the group of automorphisms defined in
+[Deligne and Goncharov 2005, Section 5.10]. The Ihara bracket is the Lie bracket of Lie(V®), regarded
+via the isomorphism Lie(V®) ~ Lie(IT;.9), ut v({To); namely, it is given by the following formula
+[loc. cit, Section 5.12—5.13]:
+
+{fg} = Lf. glt+ Dr(g)+ De(f),
+
+where Dy is the derivation which sends eg +> 0 and eg t= [f®, eg] for any € € wy(K). The Ihara
+bracket is a Poisson bracket; namely it satisfies the equality {fg,h}={f, h}g + f{g, h}.
+
+Let V® be the preimage of Tho by the isomorphism V® —> IT,,9, vt v(i To).
+
+We have defined in [Jarossay 2015, Definition 1.1.3] the adjoint Ihara product ((1-6)) and we have
+proved in [loc. cit., Proposition 1.1.4] that Ad(e;) is an isomorphism of groups from (T11,0(K), of 1.0) >
+(Ada, «cx (€1): oft,
+
+We have viewed Lie(V®) as a subset of K (equ, )) and we can again view Lie(Ady,,(e1)) as a subset
+of K (eouyy)- The derivative of f > f‘e,f, the map f +> [e,, f] is the isomorphism of Lie algebras
+defined by Lie(V°) ~> Lie(Adg..(e1)).
+
+Proposition A.1.1. The Lie bracket of Lie(Ady.(e1)) is {f, g}aa = Ap (9) — dg(f) where dy is the
+derivation sending eg +> 0, eg > f ©) for all€ € wy (K).
+
+Let the product s on Ada wi be defined by (g~'e1g). ita le f) = (gf) —e1(gf), and its
+Lie version be [g, e1] x. a Lf e1l=Ief, er).
+
+Loy ae
+
+Then, {+,+}aa isa Poisson bracket, namely, it satisfies {ai?b, c} = {a, chen, q (9, c}.
+
+Proof. Let us proceed as in the proof of Proposition 5.13 in [Deligne and Goncharov 2005]. We write
+g =1+ae. When € — 0, we have (1 +. ae) oft ° f = f tedg(f) + O(€?). Thus, the action of Lie(V)
+on Ad(I1,9)(e1) by oft is by g +> dg. This map is injective. By the injectivity of d, we only have to
+show that [d¢, dg] = da,(g)—a,(f)- Since they are derivations, it is sufficient to prove that these two maps

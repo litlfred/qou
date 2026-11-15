@@ -8,6 +8,7 @@ pages: 8-8
 source_pdf: 2603.25236v1.pdf
 source_sha256: fba6853d6e544e19
 toc_source: inferred
+doc_brief: "A Concentration of Measure Phenomenon in Lattice Yang-Mills — We demonstrate that the pushforward of the product of Haar measures by the lattice Yang-Mills action concentrates as a Gaussian."
 ---
 [1] M. Ledoux, “The concentration of measure phenomenon”, Math. Surveys
 Monogr., 89, American Mathematical Society, Providence, 2001.

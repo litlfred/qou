@@ -1,0 +1,231 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-ph-0210230v2",
+ "source": {
+  "file": "0210230v2.pdf",
+  "sha256": "22ef0025652cf016e253a7e22b2f924ab2bba5a582471177aa4975c47fcfb91d",
+  "bytes": 125718,
+  "pages": 5,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:22:14Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-ph/0210230",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "3 Jan 2003"
+  },
+  "doi": null,
+  "title": "The Minimal Left-Right Symmetric Model and Radiative Corrections to the Muon Decay",
+  "authors_raw": "M. Czakona, J. Gluzab, J. Hejczykc",
+  "title_lines": [
+   "The Minimal Left-Right Symmetric Model and Radiative Corrections to",
+   "the Muon Decay"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Title": "arXiv:hep-ph/0210230v2  3 Jan 2003",
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20220324160845-04'00'"
+  },
+  "title_raw": "The Minimal Left-Right Symmetric Model and Radiative Corrections to the Muon Decay",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:hep-ph/0210230v2 3 Jan 2003",
+   "heading": "The Minimal Left-Right Symmetric Model and Radiative Corrections to the Muon Decay",
+   "text": "The Minimal Left-Right Symmetric Model and Radiative Corrections to the Muon Decay",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_correction": {
+   "title": "The Minimal Left-Right Symmetric Model and Radiative Corrections to the Muon Decay",
+   "basis": "Printed title on page 1; the extracted title was the arXiv stamp",
+   "extracted_title": "arXiv:hep-ph/0210230v2 3 Jan 2003",
+   "corrected_on": "2026-11-15"
+  }
+ },
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "6 inferred entries, 67% of them starting on page(s) 1, 5 of 5 — a list found ON a page, not the document's structure",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (6 inferred entries, 67% of them starting on page(s) 1, 5 of 5 — a list found ON a page, not the document's structure): one section per page.",
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "90 % C.L. region for the allowed βξ2 and ∆r parameters",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "∆r as function of vR for diﬀerent heavy neutrino masses. Higgs masses are chosen according to Eq. 13. The (a) line is for (three heavy neutrinos) mN = 100 GeV; (b) is for mN = 500 GeV; (c) is for mN = 2 TeV. Line (d) shows the results when heavy neutrino masses follow from",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "∆r as function of vR. Sets with and without primes show results for three heavy neutrino masses with mN = 100 GeV and mN = 2 TeV respectively. The lines describe diﬀerent values of Higgs scalar masses: (a) is for all Higgs masses MH = 1 TeV; (b) is for MH = 5 TeV; (c)",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The contribution of the third quark family to ∆r as function of vR for diﬀerent top quark masses",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "page-001",
+   "number": null,
+   "title": "Page 1",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 3507,
+   "n_words": 570,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 2949,
+   "n_words": 585,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 2118,
+   "n_words": 439,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 2284,
+   "n_words": 473,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 3650,
+   "n_words": 648,
+   "label_start": null,
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 0,
+  "toc_inferred_entries": 6,
+  "toc_inferred_mean_confidence": 0.733,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 4,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 5,
+  "chars_total": 14508,
+  "furniture_lines_stripped": 0
+ }
+}

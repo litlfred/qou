@@ -1,0 +1,54 @@
+6.5 Summary and outlook
+
+NLO N2LO
+
+ACy ACy Cap Cp Car
+[x1o-9] | [x1073] | [x1073] | [x1074] | [<1077]
+1.973 | —8.79793 | —9.09089 | 1.04056 | 7.16271 | 1.43521
+1.715 | -7.55226 | —7.72824 | 1.11585 | 4.55222 | 1.23930
+1.315 | -5.67790 | —5.75996 | 0.97610 | 2.41371 | 0.93898
+0.986 | —4.19286 | —4.23347 | 0.64741 | 1.41280 | 0.69463
+0.789 | —3.32409 | —3.34855 | 0.43540 | 0.98669 | 0.54967
+0.659 | -2.75375 | -2.77014 | 0.30594 | 0.75364 | 0.45367
+0.563 | —2.35055 | —2.36231 | 0.22429 | 0.60773 | 0.38527
+0.438 | -1.81824 | -1.82514 | 0.13387 | 0.43622 | 0.29366
+0.373 | -1.53939 | —1.54429 | 0.09575 | 0.35513 | 0.24475
+0.303 | -1.25151 | -1.25473 | 0.06429 | 0.27726 | 0.19161
+0.282 | -1.16105 | -1.16381 | 0.05604 | 0.25397 | 0.17423
+0.246 | -1.01441 | -1.01650 | 0.04444 | 0.21731 | 0.14466
+0.164 | -0.67394 | —0.67486 | 0.02664 | 0.13771 | 0.06049
+0.098 | -0.40326 | —0.40360 | 0.02427 | 0.08263 | 0.03280
+
+a [fm]
+
+Table 6.2: Low-energy coupling constants for NLO and N2LO. All constants are in lattice units.
+
+number of bosons, and this is likely responsible for some systematic errors in our fitted values for bg in
+the five-boson system.
+
+The lattice results for the effective two-boson mass at LO and NLO are shown Fig. 6.6 as well as the
+best fits using Eq. (6.21). We omit the N2LO results since they are directly fit to the continuum-limit
+results. As shown in row nine of Table 6.1, the values for bg for each case is about 3. This is consistent
+with our perturbative analysis for the dependence on the total momentum. We found that the function
+B,(a) in Eq. (6.10) scales as O(a’).
+
+In Fig. 6.7 we show the two-boson inverse scattering length 1/a, at LO and NLO. The difference
+between the lattice scattering length at N2LO and the continuum value is so small that residual errors
+such as finite-volume effects get in the way of a systematic analysis of lattice spacing dependence. The
+dotted vertical lines give the upper limits of the fit range. As shown in row ten of Table 6.1, the values for
+bo are about | at LO and about 3 at NLO. These are consistent with our O(a') estimate of errors at LO
+and O(a°) estimate of errors at NLO. In Fig. 6.8 we show the dimer-boson inverse scattering length at
+LO, NLO, N2LO. The dotted vertical lines give the upper limits of the fit range. As shown in row eleven
+of Table 6.1, the values for bg is about 3 at LO, 3 at NLO, and 4 at N2LO. These are consistent with our
+O(a’) estimate of errors at NLO and Oca’) estimate of errors at N2LO. The smaller than expected errors
+at LO can be understood from the fixed-point behavior of the dimer-boson inverse scattering length 1/a3.
+As can be seen in Eq. (6.9), 1/a3 remains zero independent of the value of 1/a,. As a result the Oca’)
+error in 1/a3 vanishes, and the LO errors start only at O(a’).
+
+6.5 Summary and outlook
+In this chapter we have applied the Symanzik lattice improvement program to lattice calculations of
+
+zero-range bosons in one spatial dimensions. We have considered up to five-boson bound states and
+computed bound-state energies, root-mean-square radii, effective masses, and inverse scattering lengths
+
+75

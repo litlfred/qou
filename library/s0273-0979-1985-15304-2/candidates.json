@@ -1,23 +1,86 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "s0273-0979-1985-15304-2",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "bcae6367fee9babd50989066ebe22af3ac776c26eba38061fdd5799390ff9408",
   "file": "S0273-0979-1985-15304-2.pdf"
  },
  "provenance": {
-  "title": "BULLETIN (New Series) OF THE AMERICAN MATHEMATICAL SOCIETY",
-  "authors": "Volume 12, Number 1, January 1985",
+  "title": "BULLETIN (New Series) OF THE",
+  "authors": "AMERICAN MATHEMATICAL SOCIETY",
   "arxiv": null,
   "doi": null
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
+  "candidates": 4,
+  "by_kind": {
+   "recommendation": 4
+  },
   "formalization_candidates": 0
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "JONES a b b\u00ab FIGURE l While investigating the index of a subfactor of a type IIi factor, the author was led to analyze certain finite-dimensional von Neumann algebras An gen- erated by an identity 1 and n projections, which we shall call ei,e2,... ,en.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "However, it must be pointed out that for positive t and the relevant roots of unity, the presence of positivity gives a powerful method of proof.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "For n > 4 there should be no simple relation with the Alexander poly- nomial, since the other direct summands of rt look less and less like Burau representations.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "A single example should serve to explain how to read the tables.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
 }

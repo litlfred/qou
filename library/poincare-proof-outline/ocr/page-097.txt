@@ -1,0 +1,68 @@
+qed
+thus poincare-between u 0, v = (Arg (to-complex u) * Arg (to-complex v) < 0)
+using poincare-between-u0v[of uv] * <u # On cv # On» ww
+by simp
+qed
+next
+fix az
+assume 1: is-real a cmod a < 1 z € unit-disc
+assume 2: ?P (moebius-pt (blaschke a) z)
+show ?P z
+proof ((rule all[)+, rule impI, (erule conjE)+)
+fix uv
+let ?M = moebius-pt (blaschke a)
+let ?Mu = ?Mu
+let ?Mv = ?Mv
+assume *: u € unit-disc v € unit-disc u # v u € circline-set x-axis v ¢ circline-set x-axis
+hence u 4 oon, v # On
+by auto
+
+have ««: \ xy: real. x x y < 0 <> sgn (x xy) <0
+by simp
+
+assume z € circline-set (poincare-line u v) M circline-set x-axis
+thus poincare-between uz v = (Arg (to-complex u) * Arg (to-complez v) < 0)
+using * 1 2[rule-format, of ?Mu ?Mv| «cmod a < 1) ¢is-real ay blaschke-unit-disc-fix|of a]
+using inversion-noteg-unit-disc|of of-complex a u] «u # n>
+using inversion-noteg-unit-disc|of of-complex a v| «v # On?
+apply auto
+apply (subst (asm) **, subst **x, subst (asm) sgn-mult, subst sgn-mult, simp)
+apply (subst (asm) **, subst (asm) **, subst (asm) sgn-mult, subst (asm) sgn-mult, simp)
+done
+qed
+next
+show z € unit-disc by fact
+next
+show is-real (to-complex z)
+using assms inf-or-of-complex|of 2]
+by (auto simp add: circline-set-x-azis)
+qed
+thus ?thesis
+using assms
+by simp
+qed
+
+8.2 Check if an h-line intersects the x-axis
+
+lemma z-azis-intersection-equation:
+assumes
+H = mk-circline A B C D and
+(A, B, C, D) € hermitean-nonzero
+shows of-complex z € circline-set x-axis M circline-set H <—+
+Axz? + 2xRe Bez + D = 0 A is-real z (is ?lhs <> ?rhs)
+proof—
+have ?lhs <> Axz* + (B+ cnj B)xzx + D=0 A z= cnjz
+using assms
+using circline-equation-x-axis| of z]
+using circline-cquation|of H A B C D z|
+using hermitean-elems
+by (auto simp add: power2-eq-square field-simps)
+thus ?thesis
+using eq-cnj-iff-reallof 2]
+using hermitean-elems|of A B C D|
+by (simp add: complex-add-cnj complex-eq-if-Re-eq)
+qed
+
+Check if an h-line intersects x-axis within the unit disc - this could be generalized to checking if an arbitrary
+
+97

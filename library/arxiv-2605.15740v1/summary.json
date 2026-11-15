@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2605.15740v1",
  "source_sha256": "aa7f99d6633113c6",
- "brief": "BAILEY PAIRS, EICHLER INTEGRALS AND UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANTS — In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´ e homology",
- "extended": "**BAILEY PAIRS, EICHLER INTEGRALS AND UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANTS**\n\n*JEREMY LOVEJOY, ROBERT OSBURN, AND MATTHIAS STORZER*\n\n26 pp, 11 sections.\n\n**Abstract.** In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´ e homology sphere as the limiting value of the Eichler integral of a weight 3/2 modular form. Habiro’s construction of the unified WRT invariant subsequently recast this result as an identity for aq-hypergeometric series at roots of unity. This motivated Hikami to prove analogousq-series identities involving the unified WRT invariants of certain Brieskorn homology spheres. Hikami also made several conjectures of a similar type forq- series with no apparent connection to quantum invariants. In this paper we use the Bailey pair machinery and a novel relation between incomplete quadratic Gauss sums with periodic coefficients to construct infinite families of identities betweenq-multisums at roots of unity and limiting values of Eichler integrals of weight 3/2 modular forms.\n\n**Outline.** 1 Introduction; 2 Bailey pairs and key identities; 2.1 Preliminaries and auxiliary results; 2.2 An arsenal of Bailey pairs; 2.3 The key results; 3 Incomplete quadratic Gauss sums; 3.1 Properties for incomplete quadratic Gauss ; 3.2 Relations between incomplete quadratic Gau; 4 Proof of Theorem 1.2; Acknowledgements; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.2: LetMandNbe coprime positive integers. Forp≥2, we have\n- Theorem 2.7: Let(α k,βk)denote the Bailey pair in(2.16). Then forp≥1andqany primitive\n- Theorem 2.8: Let(α k,βk)denote the Bailey pair in(2.17). Then forp≥1andqany primitive\n- Theorem 2.9: Let(α k,βk)denote the Bailey pair in(2.18). Then forp≥1andqany primitive\n- Theorem 2.10: Let(α k,βk)denote the Bailey pair in(2.19). Then forp≥1andqany\n- Theorem 2.11: Let(α k,βk)denote the Bailey pair in(2.20). Then forp≥1andqany",
+ "brief": "Bailey pairs, Eichler integrals and unified Witten-Reshetikhin-Turaev invariants — In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´e homology",
+ "extended": "**Bailey pairs, Eichler integrals and unified Witten-Reshetikhin-Turaev invariants**\n\n*WITTEN-RESHETIKHIN-TURAEV INVARIANTS*\n\n26 pp, 12 sections.\n\n**Abstract.** In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´e homology sphere as the limiting value of the Eichler integral of a weight 3/2 modular form. Habiro’s construction of the unified WRT invariant subsequently recast this result as an identity for a q-hypergeometric series at roots of unity. This motivated Hikami to prove analogous q-series identities involving the unified WRT invariants of certain Brieskorn homology spheres. Hikami also made several conjectures of a similar type for q- series with no apparent connection to quantum invariants. In this paper we use the Bailey pair machinery and a novel relation between incomplete quadratic Gauss sums with periodic coefficients to construct infinite families of identities between q-multisums at roots of unity and limiting values of Eichler integrals of weight 3/2 modular forms.\n\n**Outline.** Front matter; 1 Introduction; 2 Bailey pairs and key identities; 2.1 Preliminaries and auxiliary results; 2.2 An arsenal of Bailey pairs; 2.3 The key results; 3 Incomplete quadratic Gauss sums; 3.1 Properties for incomplete quadratic Gauss ; 3.2 Relations between incomplete quadratic Gau; 4 Proof of Theorem 1.2; Acknowledgements; References",
  "tokens": {
   "brief": 48,
-  "extended": 485
+  "extended": 350
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -69,8 +74,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

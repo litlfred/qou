@@ -1,0 +1,3518 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-2201.05665v1",
+  "pages": [
+    {
+      "page": 2,
+      "rotation": 0,
+      "drawings": 6,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 1. The eigenvalues of a large (2000 × 2000) GUE matrix. The full point process sits on the bottom of the ﬁgure, and the histogram records the density of points (approximating the Wigner semi-circle). Inlaid is a zoom-in of the point process. As the size of the GUE matrix goes to inﬁnity, this converges to β = 2 sine process whose gap probabilities are discussed here."
+      ],
+      "labels": [
+        {
+          "text": "2",
+          "bbox": [
+            86.4,
+            73.74,
+            90.63,
+            81.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "IVAN Z. CORWIN, PERCY A. DEIFT, AND ALEXANDER R. ITS",
+          "bbox": [
+            176.13,
+            73.74,
+            433.08,
+            81.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "2. The sine-kernel determinant",
+          "bbox": [
+            217.68,
+            92.97,
+            394.31,
+            106.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "k=0(ak, bk) be a union of n + 1 disjoint intervals in R. Consider the",
+          "bbox": [
+            198.83,
+            112.4,
+            525.6,
+            128.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Let J = ∪n",
+          "bbox": [
+            98.35,
+            113.12,
+            153.7,
+            125.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "k=0Jk = ∪n",
+          "bbox": [
+            148.56,
+            113.12,
+            203.97,
+            128.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Fredholm determinant",
+          "bbox": [
+            86.4,
+            127.73,
+            192.99,
+            138.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Px = det (1 −Ksine) ,",
+          "bbox": [
+            256.08,
+            146.86,
+            355.92,
+            159.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\u0010",
+          "bbox": [
+            297.03,
+            167.59,
+            303.54,
+            178.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0011",
+          "bbox": [
+            326.72,
+            167.59,
+            333.23,
+            178.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "where Ksine is the trace class operator in L2",
+          "bbox": [
+            86.4,
+            171.86,
+            296.53,
+            184.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "J; dz",
+          "bbox": [
+            303.54,
+            171.86,
+            326.24,
+            182.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "with kernel",
+          "bbox": [
+            336.87,
+            171.86,
+            390.24,
+            182.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Ksine(z, z′) = sin x(z −z′)",
+          "bbox": [
+            241.85,
+            197.42,
+            365.92,
+            218.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "π(z −z′) .",
+          "bbox": [
+            316.17,
+            206.56,
+            370.15,
+            224.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "The determinant Px plays a central role in random matrix theory. Indeed, it is the proba-",
+          "bbox": [
+            86.4,
+            236.19,
+            525.66,
+            248.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\u0010",
+          "bbox": [
+            409.96,
+            247.59,
+            416.47,
+            258.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0011",
+          "bbox": [
+            452.91,
+            247.59,
+            459.42,
+            258.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "xak",
+          "bbox": [
+            417.67,
+            249.37,
+            430.89,
+            258.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "π , xbk",
+          "bbox": [
+            422.02,
+            249.37,
+            451.09,
+            266.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI6",
+            "CMMI8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "bility of ﬁnding no eigenvalues in the union of intervals xJ",
+          "bbox": [
+            86.4,
+            249.86,
+            365.0,
+            262.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "π := ∪n",
+          "bbox": [
+            358.11,
+            250.2,
+            397.34,
+            266.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "for a random",
+          "bbox": [
+            463.18,
+            251.86,
+            525.62,
+            262.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "k=0",
+          "bbox": [
+            392.2,
+            257.48,
+            407.64,
+            265.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "π",
+          "bbox": [
+            442.65,
+            257.92,
+            447.52,
+            265.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Hermitian matrix chosen from the Gaussian Unitary Ensemble (GUE), in the bulk scaling",
+          "bbox": [
+            86.4,
+            268.13,
+            525.67,
+            279.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "limit with mean spacing 1 (see [Meh] and Figure 2). Moreover, in the one interval case, the",
+          "bbox": [
+            86.4,
+            281.08,
+            525.63,
+            291.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "second derivative of Px describes the distribution of normalized spacings of eigenvalues of",
+          "bbox": [
+            86.4,
+            294.03,
+            525.63,
+            306.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "large random GUE matrices (see, e.g. [Dei1]). The determinant Px also appears in quantum",
+          "bbox": [
+            86.4,
+            306.98,
+            525.62,
+            319.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "and statistical mechanics. For instance, it describes the emptiness formation probability in",
+          "bbox": [
+            86.4,
+            319.93,
+            525.63,
+            330.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the one-dimensional impenetrable Bose gas [Len] and the gap probability in the one dimen-",
+          "bbox": [
+            86.4,
+            332.88,
+            525.64,
+            343.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "sional Coulomb gas, at inverse temperature β = 2 (see, e.g. [Dys1]). The key analytical issue",
+          "bbox": [
+            86.4,
+            345.83,
+            525.6,
+            356.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "related to Px is its large x behavior, i.e., the “large gap asymptotics”. Harold Widom made",
+          "bbox": [
+            86.4,
+            358.79,
+            525.63,
+            371.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "major contributions to the resolution of this question.",
+          "bbox": [
+            86.4,
+            371.74,
+            343.76,
+            382.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 1. The eigenvalues of a large (2000 × 2000) GUE matrix. The full point",
+          "bbox": [
+            108.36,
+            574.78,
+            503.67,
+            588.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "process sits on the bottom of the ﬁgure, and the histogram records the density of",
+          "bbox": [
+            108.36,
+            590.12,
+            503.67,
+            601.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "points (approximating the Wigner semi-circle).",
+          "bbox": [
+            108.36,
+            603.07,
+            337.9,
+            613.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Inlaid is a zoom-in of the point",
+          "bbox": [
+            346.77,
+            603.07,
+            503.68,
+            613.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "process. As the size of the GUE matrix goes to inﬁnity, this converges to β = 2 sine",
+          "bbox": [
+            108.36,
+            616.02,
+            503.64,
+            626.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "process whose gap probabilities are discussed here.",
+          "bbox": [
+            108.36,
+            628.97,
+            350.42,
+            639.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "In the one interval case, n = 0, after rescaling and translation, we may assume J = (−1, 1).",
+          "bbox": [
+            98.36,
+            663.83,
+            525.6,
+            674.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "For this case, in 1973, des Cloizeaux and Mehta [dCM] showed that as x →∞,",
+          "bbox": [
+            86.4,
+            676.78,
+            464.03,
+            687.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ln Px = −x2",
+          "bbox": [
+            227.87,
+            698.93,
+            285.74,
+            720.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2 −1",
+          "bbox": [
+            278.03,
+            700.6,
+            307.42,
+            726.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "4 ln x + c0 + o(1),",
+          "bbox": [
+            301.96,
+            707.98,
+            385.95,
+            726.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(2.1)",
+          "bbox": [
+            503.18,
+            707.98,
+            525.61,
+            718.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 7,
+      "rotation": 0,
+      "drawings": 1,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 2. Harold and his wife, Linda Larkin, at Lake Sonoma in 2013. Photo courtesy of Craig Tracy."
+      ],
+      "labels": [
+        {
+          "text": "HAROLD WIDOM’S WORK IN RANDOM MATRIX THEORY",
+          "bbox": [
+            182.29,
+            73.74,
+            429.72,
+            81.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "7",
+          "bbox": [
+            521.38,
+            73.74,
+            525.61,
+            81.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Figure 2. Harold and his wife, Linda Larkin, at Lake Sonoma in 2013. Photo",
+          "bbox": [
+            108.36,
+            344.03,
+            503.71,
+            357.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "courtesy of Craig Tracy.",
+          "bbox": [
+            108.36,
+            359.36,
+            223.36,
+            370.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "4.1. General invariant ensembles and the Wigner ensembles. The GUE, GOE and",
+          "bbox": [
+            86.4,
+            391.08,
+            525.63,
+            401.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "GSE ensembles are respectively particular examples of unitary (UE), orthogonal (OE) and",
+          "bbox": [
+            86.4,
+            404.03,
+            525.67,
+            414.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "symplectic (SE) ensembles of random matrix theory. The joint probability density of the",
+          "bbox": [
+            86.4,
+            416.98,
+            525.67,
+            427.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "eigenvalues for these ensembles are given by (cf. (3.1))",
+          "bbox": [
+            86.4,
+            429.94,
+            347.01,
+            440.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "PN",
+          "bbox": [
+            314.55,
+            447.8,
+            329.27,
+            457.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX8",
+            "CMMI6"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "Nβ e−ηβ",
+          "bbox": [
+            277.2,
+            449.65,
+            312.33,
+            466.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI6",
+            "CMMI8",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "j=1 V (λj) Y",
+          "bbox": [
+            323.49,
+            449.75,
+            377.12,
+            466.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "PNβ(λ1, ..., λN) = Z−1",
+          "bbox": [
+            182.17,
+            449.89,
+            288.8,
+            464.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "|λj −λk|β,",
+          "bbox": [
+            379.52,
+            450.08,
+            429.83,
+            464.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(4.1)",
+          "bbox": [
+            503.18,
+            452.28,
+            525.61,
+            463.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "j<k",
+          "bbox": [
+            362.61,
+            467.93,
+            377.49,
+            475.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "where η1 = 1, η2 = 1, η4 = 2 (this reﬂects the fact that the eigenvalues of self-dual Hermitian",
+          "bbox": [
+            86.4,
+            483.65,
+            525.62,
+            496.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "matrices come in pairs), and the potential V (λ) is a polynomial with even leading term,",
+          "bbox": [
+            86.4,
+            496.61,
+            507.3,
+            507.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2m",
+          "bbox": [
+            280.57,
+            515.05,
+            292.3,
+            523.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            278.56,
+            523.87,
+            294.31,
+            534.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "tkλk,",
+          "bbox": [
+            296.13,
+            524.18,
+            319.71,
+            538.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "V (λ) =",
+          "bbox": [
+            240.38,
+            526.39,
+            275.53,
+            537.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "t2m > 0.",
+          "bbox": [
+            332.44,
+            526.39,
+            371.63,
+            538.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(4.2)",
+          "bbox": [
+            503.18,
+            526.39,
+            525.61,
+            537.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "k=1",
+          "bbox": [
+            278.71,
+            542.04,
+            294.15,
+            550.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "(More general potential functions are also allowed.) GUE, GOE and GSE correspond to",
+          "bbox": [
+            86.4,
+            556.21,
+            525.68,
+            567.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the choice V (λ) = λ2. Consider again the upper edge ﬂuctuations of the spectrum. Edge-",
+          "bbox": [
+            86.4,
+            567.5,
+            525.6,
+            580.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "universality states that for a given polynomial potential V (λ) there exist scalars z(β)",
+          "bbox": [
+            86.4,
+            581.16,
+            483.92,
+            595.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "and s(β)",
+          "bbox": [
+            487.54,
+            581.16,
+            525.1,
+            595.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "N",
+          "bbox": [
+            471.69,
+            590.35,
+            478.41,
+            598.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "N",
+          "bbox": [
+            513.35,
+            590.35,
+            520.07,
+            598.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "such that",
+          "bbox": [
+            86.4,
+            597.57,
+            131.01,
+            608.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "λmax −z(β)",
+          "bbox": [
+            276.04,
+            608.5,
+            329.29,
+            624.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            349.47,
+            608.83,
+            358.11,
+            619.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "N",
+          "bbox": [
+            317.07,
+            617.69,
+            323.79,
+            625.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "≤t",
+          "bbox": [
+            334.02,
+            619.5,
+            349.47,
+            630.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "N→∞Prob",
+          "bbox": [
+            213.03,
+            619.65,
+            262.58,
+            637.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "lim",
+          "bbox": [
+            217.71,
+            619.65,
+            232.86,
+            630.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "= Fβ(t),",
+          "bbox": [
+            361.14,
+            619.65,
+            400.79,
+            631.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(4.3)",
+          "bbox": [
+            503.18,
+            619.65,
+            525.61,
+            630.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "s(N)",
+          "bbox": [
+            293.03,
+            626.72,
+            312.3,
+            641.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "N",
+          "bbox": [
+            298.15,
+            635.9,
+            304.86,
+            643.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "where Fβ(t), β = 1, 2, 4 are exactly the same Tracy-Widom distribution functions as in",
+          "bbox": [
+            86.4,
+            646.72,
+            525.63,
+            658.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(3.2).",
+          "bbox": [
+            86.4,
+            659.67,
+            111.86,
+            670.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "For β = 2 this result was obtained in [DKMVZ1, DKMVZ2] and for β = 1, 4 in",
+          "bbox": [
+            120.93,
+            659.67,
+            525.61,
+            670.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "[DeGi1, DeGi2]. It should be noted that the authors of [DeGi1, DeGi2] based their analysis",
+          "bbox": [
+            86.4,
+            672.62,
+            525.67,
+            683.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "on Widom’s papers [11, 12] where important relations between symplectic, orthogonal and",
+          "bbox": [
+            86.4,
+            685.57,
+            525.64,
+            696.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "unitary ensembles were established for ﬁnite N.",
+          "bbox": [
+            86.4,
+            698.52,
+            324.86,
+            709.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "These relations allowed the authors of",
+          "bbox": [
+            335.01,
+            698.52,
+            525.61,
+            709.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "[DeGi1, DeGi2] to use, in the symplectic and orthogonal cases, the asymptotic estimates",
+          "bbox": [
+            86.4,
+            711.47,
+            525.6,
+            722.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 11,
+      "rotation": 0,
+      "drawings": 3,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 3. In the ASEP, particles jump left and right according to exponential clocks with rates q and p. All jumps are independent, and those that would lead to collisions are excluded (the grey ×)."
+      ],
+      "labels": [
+        {
+          "text": "HAROLD WIDOM’S WORK IN RANDOM MATRIX THEORY",
+          "bbox": [
+            182.29,
+            73.74,
+            429.72,
+            81.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "11",
+          "bbox": [
+            517.15,
+            73.74,
+            525.61,
+            81.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Figure 3. In the ASEP, particles jump left and right according to exponential",
+          "bbox": [
+            108.36,
+            133.13,
+            503.72,
+            146.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "clocks with rates q and p. All jumps are independent, and those that would lead to",
+          "bbox": [
+            108.36,
+            148.47,
+            503.7,
+            159.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "collisions are excluded (the grey ×).",
+          "bbox": [
+            108.36,
+            161.27,
+            280.67,
+            172.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ensemble was discovered. Relying on tools from random matrix theory (namely, orthogonal",
+          "bbox": [
+            86.4,
+            189.22,
+            525.64,
+            200.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "polynomials and Fredholm determinants) [Joh2] shows that the limiting particle distribution",
+          "bbox": [
+            86.4,
+            202.17,
+            525.69,
+            213.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "in TASEP is given by the Tracy-Widom β = 2 distribution (see also [PrSp]). The decade",
+          "bbox": [
+            86.4,
+            215.12,
+            525.63,
+            226.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "after [BDJ] saw incredible developments in the analysis of models like TASEP and the longest",
+          "bbox": [
+            86.4,
+            228.07,
+            525.64,
+            238.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "increasing subsequence whose analysis reduces to studying asymptotics of determinants (these",
+          "bbox": [
+            86.4,
+            241.02,
+            525.6,
+            251.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "models are called “determinantal”, see [Bor1]).",
+          "bbox": [
+            86.4,
+            253.98,
+            310.1,
+            264.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The extension of this result to ASEP when q̸ = p > 0 posed an enormous challenge",
+          "bbox": [
+            98.36,
+            266.79,
+            525.61,
+            277.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "since ASEP, as opposed to TASEP, is not determinantal and a direct relationship to random",
+          "bbox": [
+            86.4,
+            279.88,
+            525.68,
+            290.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "matrices is no longer available. The extraordinary series of papers [15, 16, 17], nevertheless",
+          "bbox": [
+            86.4,
+            292.83,
+            525.62,
+            303.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "provides this extension by building on the relationship between ASEP and the Heisenberg",
+          "bbox": [
+            86.4,
+            305.78,
+            525.68,
+            316.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "XXZ spin chain and exploiting the ideas of the coordinate Bethe Ansatz8. These works broke",
+          "bbox": [
+            86.4,
+            316.8,
+            525.6,
+            329.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "new ground as the ﬁrst instance of a non-determinantal model for which the Tracy-Widom",
+          "bbox": [
+            86.4,
+            331.68,
+            525.64,
+            342.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "distributions was demonstrated.",
+          "bbox": [
+            86.4,
+            344.64,
+            239.15,
+            355.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The starting point for Tracy and Widom’s work on ASEP is an exact formula for the",
+          "bbox": [
+            98.35,
+            357.59,
+            525.68,
+            368.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "transition probability of the N-particle ASEP. For N ∈N, consider a system of N particles",
+          "bbox": [
+            86.4,
+            368.16,
+            525.6,
+            381.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "on Z. For two vectors of ordered integers,⃗x = {x1 < · · · < xN}, and⃗y = {y1 < · · · < yN},",
+          "bbox": [
+            86.4,
+            381.11,
+            525.6,
+            396.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "let P⃗y(⃗x; t) denote the probability that ASEP starts in state⃗y at time zero, and is in state",
+          "bbox": [
+            86.4,
+            396.44,
+            525.6,
+            408.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "x at time t. This function solves the “Master equation” (or Kolmogorov forward equation).",
+          "bbox": [
+            86.4,
+            409.39,
+            525.66,
+            420.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "When N = 1, this equation reads",
+          "bbox": [
+            86.4,
+            422.34,
+            245.62,
+            433.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "d",
+          "bbox": [
+            199.87,
+            437.57,
+            205.55,
+            448.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "dtPy(x; t) = ∆p,qPy(x; t),",
+          "bbox": [
+            197.9,
+            444.95,
+            317.52,
+            463.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Py(x; 0) = 1x=y",
+          "bbox": [
+            341.16,
+            444.95,
+            414.51,
+            456.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "where ∆p,q acts in the x variable as ∆p,qf(x) = pf(x −1) + qf(x + 1) −f(x). This equation",
+          "bbox": [
+            86.4,
+            466.0,
+            525.62,
+            478.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "can be solved explicitly using the Fourier transform, yielding",
+          "bbox": [
+            86.4,
+            479.1,
+            376.91,
+            490.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            225.92,
+            494.22,
+            231.37,
+            505.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Z",
+          "bbox": [
+            239.57,
+            494.59,
+            245.64,
+            505.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ϵ(ξ) = pξ−1 + qξ −1",
+          "bbox": [
+            345.03,
+            497.09,
+            442.49,
+            512.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "ξx−y−1eϵ(ξ)tdξ,",
+          "bbox": [
+            252.3,
+            499.28,
+            321.39,
+            512.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Py(x; t) =",
+          "bbox": [
+            169.51,
+            501.6,
+            216.51,
+            513.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2πi",
+          "bbox": [
+            220.74,
+            509.08,
+            236.56,
+            519.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "where ξ is integrated along the complex unit circle centered at 0.",
+          "bbox": [
+            86.4,
+            524.09,
+            397.02,
+            535.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "When N ≥2, the Master equation becomes more complicated. When the xi are well-",
+          "bbox": [
+            98.36,
+            536.9,
+            525.59,
+            549.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "spaced (at least distance two apart), the right-hand side becomes the sum of N terms, each",
+          "bbox": [
+            86.4,
+            550.0,
+            525.6,
+            560.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "involving ∆p,q acting on each of the xi variables. However, when the xi neighbor each other,",
+          "bbox": [
+            86.4,
+            562.95,
+            525.62,
+            575.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "certain terms need to be excluded (corresponding to the excluded jumps in ASEP). Thus,",
+          "bbox": [
+            86.4,
+            575.9,
+            525.65,
+            586.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the system becomes non-constant coeﬃcient and non-separable and so there is no a priori",
+          "bbox": [
+            86.4,
+            588.85,
+            525.6,
+            599.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "reason to expect such a simple contour integral formula as above.",
+          "bbox": [
+            86.4,
+            601.8,
+            399.21,
+            612.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "There is hope, however. The generator of ASEP (the operator on the right-hand side of the",
+          "bbox": [
+            98.36,
+            614.75,
+            525.66,
+            625.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Master equation) is related by a similarity transform to the Hamiltonian of the XXZ quantum",
+          "bbox": [
+            86.4,
+            627.71,
+            525.67,
+            638.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "spin chain, itself a special limit of the six-vertex model. These models have a long history in",
+          "bbox": [
+            86.4,
+            640.66,
+            525.63,
+            651.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the realm of exactly solvable models in statistical mechanics, e.g. [Bax], and it was known",
+          "bbox": [
+            86.4,
+            653.61,
+            525.61,
+            664.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "since [Lieb] that the coordinate Bethe ansatz can be used to diagonalize the six-vertex model",
+          "bbox": [
+            86.4,
+            666.56,
+            525.61,
+            677.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "transfer matrix. For the six-vertex model and XXZ spin chain, one has to assume boundary",
+          "bbox": [
+            86.4,
+            679.51,
+            525.65,
+            690.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "8This method dates back to 1931 work of Hans Bethe [Bet] in studying the Heisenberg XXX spin chain",
+          "bbox": [
+            98.36,
+            699.34,
+            525.64,
+            711.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8",
+            "CMR9"
+          ],
+          "sizes": [
+            7.97,
+            8.97
+          ]
+        },
+        {
+          "text": "[Hei].",
+          "bbox": [
+            86.4,
+            712.99,
+            107.67,
+            721.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 12,
+      "rotation": 0,
+      "drawings": 3,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 4. Harold Widom with his long-time collaborator, Craig Tracy at Ober- wolfach in May 2009. Seen on the blackboard is calculations related to their work on ASEP. Photo courtesy of the Archives of the Mathematisches Forschungsinstitut Oberwolfach."
+      ],
+      "labels": [
+        {
+          "text": "12",
+          "bbox": [
+            86.4,
+            73.74,
+            94.86,
+            81.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "IVAN Z. CORWIN, PERCY A. DEIFT, AND ALEXANDER R. ITS",
+          "bbox": [
+            176.13,
+            73.74,
+            433.08,
+            81.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "conditions (e.g. work on a torus). However, since the generator of ASEP is stochastic, one",
+          "bbox": [
+            86.4,
+            95.35,
+            525.63,
+            106.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "can work directly on the full space Z. This actually leads to a signiﬁcant simpliﬁcation to the",
+          "bbox": [
+            86.4,
+            105.92,
+            525.63,
+            119.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Bethe ansatz—there are no longer complicated Bethe equations! Instead, one has to develop",
+          "bbox": [
+            86.4,
+            121.26,
+            525.61,
+            132.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "an analog of the classical Plancherel theory, now for the Bethe ansatz eigenfunctions. This",
+          "bbox": [
+            86.4,
+            134.21,
+            525.63,
+            145.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "is essentially accomplished by [15] as well as [BCPS].",
+          "bbox": [
+            86.4,
+            147.16,
+            339.19,
+            158.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 4. Harold Widom with his long-time collaborator, Craig Tracy at Ober-",
+          "bbox": [
+            108.36,
+            375.37,
+            503.68,
+            388.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "wolfach in May 2009. Seen on the blackboard is calculations related to their work",
+          "bbox": [
+            108.36,
+            390.7,
+            503.7,
+            401.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "on ASEP. Photo courtesy of the Archives of the Mathematisches Forschungsinstitut",
+          "bbox": [
+            108.36,
+            403.65,
+            503.68,
+            414.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Oberwolfach.",
+          "bbox": [
+            108.36,
+            416.61,
+            170.83,
+            427.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The following formula was proved in [15]. The N = 2 case had previously appeared in",
+          "bbox": [
+            98.35,
+            445.55,
+            525.62,
+            456.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "work of R´akos and Sch¨utz [RaSc]. Provided p̸ = 0,",
+          "bbox": [
+            86.4,
+            458.36,
+            327.62,
+            469.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "N",
+          "bbox": [
+            337.59,
+            477.78,
+            344.31,
+            485.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            256.47,
+            481.74,
+            261.93,
+            492.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Z",
+          "bbox": [
+            278.4,
+            482.12,
+            284.47,
+            493.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Z",
+          "bbox": [
+            305.67,
+            482.12,
+            311.74,
+            493.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "xj−yσ(j)−1",
+          "bbox": [
+            355.82,
+            484.32,
+            400.24,
+            493.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            220.7,
+            486.6,
+            236.45,
+            497.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Y",
+          "bbox": [
+            334.41,
+            486.6,
+            348.35,
+            497.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "eϵ(ξj)tdξj.",
+          "bbox": [
+            400.74,
+            486.91,
+            444.88,
+            501.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI6",
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "· · ·",
+          "bbox": [
+            291.13,
+            488.98,
+            303.86,
+            499.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "P⃗y(⃗x; t) =",
+          "bbox": [
+            167.13,
+            489.12,
+            214.13,
+            501.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Aσ",
+          "bbox": [
+            318.4,
+            489.12,
+            331.42,
+            501.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "ξ",
+          "bbox": [
+            350.55,
+            489.12,
+            355.33,
+            500.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(5.1)",
+          "bbox": [
+            503.18,
+            489.12,
+            525.61,
+            500.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "σ(j)",
+          "bbox": [
+            355.32,
+            495.38,
+            370.91,
+            503.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "(2πi)N",
+          "bbox": [
+            243.01,
+            495.75,
+            274.04,
+            507.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "j=1",
+          "bbox": [
+            334.03,
+            504.5,
+            348.72,
+            512.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "σ∈SN",
+          "bbox": [
+            217.15,
+            504.58,
+            238.85,
+            513.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "Here, the sum σ ∈SN is taken over all permutations σ on N elements; the ξj variables are",
+          "bbox": [
+            86.4,
+            520.0,
+            525.61,
+            532.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "complex and integrated over contours which are assumed to be circles around the origin with",
+          "bbox": [
+            86.4,
+            533.09,
+            525.64,
+            544.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "radii small enough so as not to contain any poles of the Aσ term; this Aσ term is given by",
+          "bbox": [
+            86.4,
+            546.04,
+            525.6,
+            558.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "the formula",
+          "bbox": [
+            86.4,
+            558.99,
+            141.59,
+            569.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Sαβ = −p + qξαξβ −ξα",
+          "bbox": [
+            365.53,
+            574.14,
+            476.31,
+            594.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Y",
+          "bbox": [
+            159.32,
+            579.35,
+            173.26,
+            590.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "{Sαβ : {α, β} is an inversion of σ} ,",
+          "bbox": [
+            175.08,
+            581.72,
+            341.89,
+            594.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Aσ =",
+          "bbox": [
+            130.97,
+            581.87,
+            156.29,
+            594.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            478.0,
+            581.87,
+            481.04,
+            592.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "p + qξαξβ −ξβ",
+          "bbox": [
+            407.68,
+            589.21,
+            475.76,
+            601.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "where the product is of terms Sαβ over all pairs 1 ≤α < β ≤N such that σ(α) > σ(β).",
+          "bbox": [
+            86.4,
+            608.43,
+            504.41,
+            621.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "This sum over the symmetric group may seem reminiscent of the expansion formula for",
+          "bbox": [
+            98.36,
+            621.52,
+            525.61,
+            632.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "determinants. In the special case when p = 1 (which is the same at taking p = 0, up to some",
+          "bbox": [
+            86.4,
+            634.48,
+            525.6,
+            645.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "symmetry), there is factorization and Aσ = (−1)σ QN",
+          "bbox": [
+            86.4,
+            645.94,
+            348.68,
+            663.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "j=1(1 −ξσ(j))σ(j)−j. This implies that",
+          "bbox": [
+            341.96,
+            646.91,
+            525.61,
+            662.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "for p = 1,",
+          "bbox": [
+            86.4,
+            662.02,
+            131.62,
+            672.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0012 1",
+          "bbox": [
+            246.16,
+            670.05,
+            266.03,
+            688.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0013N",
+          "bbox": [
+            404.36,
+            675.07,
+            419.11,
+            688.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Z",
+          "bbox": [
+            274.23,
+            678.43,
+            280.29,
+            689.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(1 −ξ)j−iξxi−yj−1eϵ(ξ)tdξ",
+          "bbox": [
+            285.14,
+            683.12,
+            403.87,
+            696.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI6",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "P⃗y(⃗x; t) = det",
+          "bbox": [
+            179.17,
+            685.43,
+            244.35,
+            697.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2πi",
+          "bbox": [
+            255.39,
+            692.92,
+            271.22,
+            703.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "i,j=1",
+          "bbox": [
+            412.39,
+            698.59,
+            432.33,
+            706.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "which recovers one aspect of the determinantal structure for TASEP, see [Sch].",
+          "bbox": [
+            86.4,
+            711.47,
+            462.92,
+            722.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    }
+  ]
+}

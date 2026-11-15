@@ -1,0 +1,45 @@
+Algorithmica (2026) 88:21 Page9of19 21
+
+Corollary 3.2 Let X1,..., X, be I-negatively associated random variables and let
+X},..., Xj be independent random variables with the same marginal distributions.
+
+e If f is a supermodular non-increasing function and 4 > 0, we have Elexp(aA
+
+f(X1,...,Xn))] < ElexpQ f(Xf, ..., XA)
+e If f is a submodular non-decreasing function and x < 0, we have Efexp(a
+f(X1, +--+, Xn))] S ElexpQ f (Xf, ..., XD)
+
+Proof This follows from the fact that the composition of a non-decreasing convex
+function with a non-increasing supermodular function is supermodular, which allows
+us to apply Lemma 3.1. The second claim follows by observing that f is submodular
+if and only if — f is supermodular. Oo
+
+Now, we will complete the proof of our main result. Combining the theorem below
+with Claims A.4 and A.5 immediately gives a proof of Theorem 1.1. Here, our proof
+will rely heavily on the proof of the Chernoff bound for submodular functions under
+independence given in Chekuri et al. [2].
+
+Theorem 3.3 Let X,,..., X, be binary random variables with mean x), ... , Xp Satis-
+fying 1-negative association. Let f be a non-negative monotone submodular function
+with marginal values in [O, 1] and let F be the multilinear extension of f. If we let,
+
+Mo = F(x1,...,Xn), then for any 6 € (0, 1) we have:
+
+Pri f(X1, +++, Xn) < (8) + Hol < exp(—H05/2).
+Proof Let X},..., Xj; be independent random variables with the same respective
+marginals as X},..., X, andletA < 0 bea parameter to be set later. Let us decompose
+
+F(X}... XP) = V7, VY, where
+Y* = f(X%,...,X%,0,...,0) — f(X%,..., X%4,0,...,0).
+
+Let us denote E[Y;*] = @; and wo = 1 o = El f (Xf, ..., X4)]. By the convexity
+of the exponential and the fact that Y* € [0, 1], we have that
+
+Elexp(a-¥;*)] < wj-exp(A)+(1—@;) = 1+[exp(a)—1]-@; < exp[(exp(a)—1)-a;].
+
+Combining the above with Lemma C.1 from [2], we have that
+
+Elexp(a- f(X7,..., X)] = ElexpQa - 7, ¥*)] < TT}, Elexp(@a- ¥**)]
+< exp[(exp(A) — 1) - ol. (3)
+
+cay Springer

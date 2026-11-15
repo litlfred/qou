@@ -6,10 +6,18 @@
   "sha256": "9b356a9d716a0d3e8e2dfe0c4ba1283a28ed85e5c78d18072484030e71377fbc",
   "bytes": 367310,
   "pages": 38,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 13,
+    "reason": "12 of 461 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,21 +28,30 @@
   },
   "doi": null,
   "title": "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds",
-  "authors_raw": "September 14, 2021",
-  "abstract": "Let W be a compact manifold and let \u03c1 be a representation of its fundamental group into PSL(2 , C). Then the volume of \u03c1 is de\ufb01ned by taking any \u03c1-equivariant map from the universal cover ~W to H3 and then by integrating the pull-back of the hyperbolic volu me form on a fundamental domain. It turns out that such a volume does n ot depend on the choice of the equivariant map. Dun\ufb01eld extende d this construction to the case of a non-compact (cusped) manifold M , but he did not prove the volume is well-de\ufb01ned in all cases. We prove here that the volume of a representation is always we ll- de\ufb01ned and depends only on the representation. Moreover, we show that this volume can be easily computed by straightening any ideal triangulation of M . We show that the volume of a representation is bounded from above by the relative simplicial volume of M . Finally, we prove a rigidity theorem for representations of the fundamental gr oup of a hyperbolic manifold. Namely, we prove that if M is hyperbolic and vol(\u03c1) = vol( M ) then \u03c1 is discrete and faithful.",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20210917155636-04'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  },
+  "authors_raw": "Stefano Francaviglia12",
   "title_lines": [
    "Hyperbolic volume of representations of fundamental",
-   "groups of cusped 3-manifolds",
-   "Stefano Francaviglia12"
+   "groups of cusped 3-manifolds"
   ],
-  "title_prev": "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds Stefano Francaviglia12"
+  "abstract": "Let W be a compact manifold and let ρ be a representation of its fundamental group into PSL(2, C). Then the volume of ρ is deﬁned by taking any ρ-equivariant map from the universal cover f W to H3 and then by integrating the pull-back of the hyperbolic volume form on a fundamental domain. It turns out that such a volume does not depend on the choice of the equivariant map. Dunﬁeld extended this construction to the case of a non-compact (cusped) manifold M, but he did not prove the volume is well-deﬁned in all cases. We prove here that the volume of a representation is always well- deﬁned and depends only on the representation. Moreover, we show that this volume can be easily computed by straightening any ideal triangulation of M. We show that the volume of a representation is bounded from above by the relative simplicial volume of M. Finally, we prove a rigidity theorem for representations of the fundamental group of a hyperbolic manifold. Namely, we prove that if M is hyperbolic and vol(ρ) = vol(M) then ρ is discrete and faithful.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20210917155636-04'00'"
+  },
+  "title_raw": "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds Introduction",
+   "outline": "Introduction",
+   "text": "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds Introduction"
  },
  "toc": [
   {
@@ -42,125 +59,460 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "General definitions",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The straightening",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Volume of representations",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Comparison with simplicial volume",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Rigidity of representations",
    "page": 21,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Corollaries",
    "page": 34,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1224,
+   "n_words": 206,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 6,
-   "n_chars": 11035,
-   "n_words": 2081
+   "page_end": 3,
+   "n_chars": 4155,
+   "n_words": 709,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-the-straightening",
+   "id": "sec-001-general-definitions",
+   "number": null,
+   "title": "General definitions",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 6849,
+   "n_words": 1331,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-the-straightening",
    "number": null,
    "title": "The straightening",
    "level": 1,
    "page_start": 6,
    "page_end": 9,
-   "n_chars": 6432,
-   "n_words": 1267
+   "n_chars": 6402,
+   "n_words": 1221,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-volume-of-representations",
+   "id": "sec-003-volume-of-representations",
    "number": null,
    "title": "Volume of representations",
    "level": 1,
    "page_start": 9,
    "page_end": 15,
-   "n_chars": 11496,
-   "n_words": 2311
+   "n_chars": 11473,
+   "n_words": 2253,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-comparison-with-simplicial-volume",
+   "id": "sec-004-comparison-with-simplicial-volume",
    "number": null,
    "title": "Comparison with simplicial volume",
    "level": 1,
    "page_start": 15,
    "page_end": 21,
-   "n_chars": 10019,
-   "n_words": 2113
+   "n_chars": 9946,
+   "n_words": 2010,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-rigidity-of-representations",
+   "id": "sec-005-rigidity-of-representations",
    "number": null,
    "title": "Rigidity of representations",
    "level": 1,
    "page_start": 21,
    "page_end": 34,
-   "n_chars": 21623,
-   "n_words": 4574
+   "n_chars": 21531,
+   "n_words": 4468,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-corollaries",
+   "id": "sec-006-corollaries",
    "number": null,
    "title": "Corollaries",
    "level": 1,
    "page_start": 34,
    "page_end": 38,
-   "n_chars": 7822,
-   "n_words": 1402
+   "n_chars": 7773,
+   "n_words": 1342,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 7,
-  "sections": 6,
-  "chars_total": 68427,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 69353,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 7,
-   "overlaid": 5,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -168,48 +520,63 @@
    },
    "sections": [
     {
-     "id": "sec-000-introduction",
-     "title": "Introduction",
-     "prose_ratio": 0.549,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
     },
     {
-     "id": "sec-001-the-straightening",
-     "title": "The straightening",
-     "prose_ratio": 0.995,
-     "coverage_ratio": 0.969,
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.875,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-volume-of-representations",
+     "id": "sec-001-general-definitions",
+     "title": "General definitions",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-the-straightening",
+     "title": "The straightening",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-volume-of-representations",
      "title": "Volume of representations",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-comparison-with-simplicial-volume",
+     "title": "Comparison with simplicial volume",
+     "prose_ratio": 0.975,
      "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-comparison-with-simplicial-volume",
-     "title": "Comparison with simplicial volume",
-     "prose_ratio": 0.992,
-     "coverage_ratio": 0.978,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-004-rigidity-of-representations",
+     "id": "sec-005-rigidity-of-representations",
      "title": "Rigidity of representations",
-     "prose_ratio": 0.995,
-     "coverage_ratio": 0.977,
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-corollaries",
+     "id": "sec-006-corollaries",
      "title": "Corollaries",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.694,
      "result": "overlaid",
      "converter": "latex"
     }

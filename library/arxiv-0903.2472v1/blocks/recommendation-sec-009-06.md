@@ -1,0 +1,1 @@
+The former depends on the total number of tetrahedra, $N$, in the triangulation of $M$ and therefore must be cancelled (at least partially) since the total integral [\[statesumdef\]](#statesumdef){reference-type="eqref" reference="statesumdef"} is a topological invariant and cannot depend on $N$.

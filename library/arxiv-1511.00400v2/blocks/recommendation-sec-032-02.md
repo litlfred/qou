@@ -1,0 +1,1 @@
+Secondly, the variety of characters is not a variety but a scheme: the defining polynomial ideal may be not reduced, thus we must consider the Zariski tangent space of the scheme, perhaps not reduced.

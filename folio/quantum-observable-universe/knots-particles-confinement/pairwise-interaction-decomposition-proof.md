@@ -36,4 +36,4 @@ Parts 1 and 2 are inherited from Mathlib's braided-category library: `composite_
 
 Part 3 is proved from scratch. The locality step is `AdjSwap.eq_of_reverses`, the per-letter bound is `card_crossedPairs_step`, the induction is `card_crossedPairs_le_length`, and the conclusion is `card_allPairs_le_length`; the pair count $|P| = \binom{n}{2}$ is `card_allPairs`. The three-strand instance is `three_crossings_needed`.
 
-Every declaration is sorry-free and depends only on `propext`, `Classical.choice`, and `Quot.sound`.
+Every declaration depends only on `propext`, `Classical.choice`, and `Quot.sound`.

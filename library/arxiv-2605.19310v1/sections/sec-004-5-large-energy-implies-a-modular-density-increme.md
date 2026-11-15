@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.99
 latex_coverage_ratio: 0.927
+doc_brief: "A Fourier-Free Density-Increment Proof of Roth's Theorem — We give an elementary, Fourier-free proof of Roth’s theorem."
 ---
 Our next goal is to find a long modular progression on which $f$ has positive average. For an integer $1\leq \ell<m/2$ and a step $d\in\mathbb{Z}_m$, set $$S_d(x):=\sum_{i=0}^{\ell-1}f(x+id),\qquad V_d:=\sum_{x\in\mathbb{Z}_m}\lvert S_d(x)\rvert^2.$$ Thus $S_d(x)$ is the sum of $f$ on the length-$\ell$ modular progression starting at $x$ with step $d$, and $V_d$ is the second moment of these sums as $x$ varies.
 

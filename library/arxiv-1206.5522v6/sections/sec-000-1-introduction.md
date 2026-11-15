@@ -4,13 +4,14 @@ doc_title: "FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
-pages: 1-6
+pages: 2-6
 source_pdf: 1206.5522v6.pdf
 source_sha256: 6e992242435b5e9f
 toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.981
-latex_coverage_ratio: 0.936
+latex_prose_ratio: 0.979
+latex_coverage_ratio: 0.975
+doc_brief: "FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS — Factorization homology theories of topological manifolds, after Beilinson, Drinfeld and Lurie, are homology-type theories for topological n-manifolds"
 ---
 Factorization homology takes an algebraic input, either an $n$-disk algebra or more generally a stack over $n$-disk algebras, and outputs a homology-type theory for $n$-dimensional manifolds. In the case where the input coefficients are an $n$-disk algebra, this factorization homology -- the topological chiral homology introduced by Lurie [@dag] -- satisfies an analogue of the axioms of Eilenberg and Steenrod. This work proves this statement and some consequences afforded by this point of view.
 

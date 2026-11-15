@@ -1,0 +1,465 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-0801.3233v4",
+  "pages": [
+    {
+      "page": 8,
+      "rotation": 0,
+      "drawings": 2,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 1."
+      ],
+      "labels": [
+        {
+          "text": "8",
+          "bbox": [
+            126.67,
+            96.66,
+            130.64,
+            103.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "AMNON YEKUTIELI",
+          "bbox": [
+            266.73,
+            96.66,
+            345.27,
+            103.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Figure 1.",
+          "bbox": [
+            280.2,
+            361.59,
+            326.82,
+            371.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRomanCaps10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Indeed, there is a geometric Morita theory, which says that twisted associative",
+          "bbox": [
+            144.6,
+            393.64,
+            485.5,
+            403.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "deformations of OX are the same as deformations of Coh OX. This is explained in",
+          "bbox": [
+            126.67,
+            405.46,
+            485.38,
+            417.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular",
+            "LMSans10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the last chapter of the book [KS1] by Kashiwara and Schapira.",
+          "bbox": [
+            126.67,
+            417.55,
+            403.97,
+            427.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Bold",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We do not know of a similar interpretation of twisted Poisson deformations.",
+          "bbox": [
+            144.61,
+            429.51,
+            476.25,
+            439.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "6. Twisted Deformation Quantization",
+          "bbox": [
+            211.6,
+            457.27,
+            400.43,
+            467.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Bold"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Just as in the case of usual deformations, given a twisted (associative or Poisson)",
+          "bbox": [
+            144.61,
+            475.2,
+            485.51,
+            485.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "deformation A of OX, we can deﬁne the ﬁrst order bracket {−, −}A on OX. The",
+          "bbox": [
+            126.67,
+            487.01,
+            485.34,
+            498.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Bold",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Bold",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ﬁrst order bracket is invariant under twisted gauge equivalence.",
+          "bbox": [
+            126.67,
+            499.11,
+            403.62,
+            509.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Let A be a twisted Poisson deformation, and let B be a twisted associative",
+          "bbox": [
+            144.61,
+            510.92,
+            485.38,
+            521.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Bold",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "deformation. We say that B is a twisted quantization of A if",
+          "bbox": [
+            126.67,
+            522.87,
+            390.76,
+            532.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols10-Bold",
+            "LMRoman10-Italic",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "{−, −}B = {−, −}A.",
+          "bbox": [
+            260.97,
+            541.61,
+            351.03,
+            553.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathSymbols10-Regular",
+            "LMMathSymbols7-Bold",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The next theorem is inﬂuenced by ideas of Kontsevich (from [Ko3] and private",
+          "bbox": [
+            144.61,
+            560.5,
+            485.36,
+            570.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Bold",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "communications).",
+          "bbox": [
+            126.67,
+            572.45,
+            203.41,
+            582.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 6.1 ([Ye5]). Let K be a ﬁeld containing R, and let X be a smooth",
+          "bbox": [
+            126.67,
+            589.68,
+            485.32,
+            601.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman10-Bold",
+            "LMRoman10-Italic",
+            "LMRoman10-Regular",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "algebraic variety over K. There is a canonical bijection",
+          "bbox": [
+            126.67,
+            601.64,
+            366.88,
+            613.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Italic",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tw.quant : {twisted Poisson deformations of OX}",
+          "bbox": [
+            187.72,
+            620.87,
+            402.76,
+            637.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "twisted gauge equivalence",
+          "bbox": [
+            264.85,
+            634.59,
+            377.05,
+            644.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−→{twisted associative deformations of OX}",
+          "bbox": [
+            219.37,
+            647.84,
+            423.64,
+            664.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic7-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "≃",
+          "bbox": [
+            224.29,
+            651.31,
+            230.51,
+            658.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathSymbols7-Regular"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            424.84,
+            654.71,
+            427.61,
+            664.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "twisted gauge equivalence",
+          "bbox": [
+            278.89,
+            661.56,
+            391.09,
+            671.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "called the twisted quantization map, which is a twisted quantization in the sense",
+          "bbox": [
+            126.67,
+            678.14,
+            485.34,
+            688.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Italic",
+            "LMRoman10-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "above.",
+          "bbox": [
+            126.67,
+            690.09,
+            153.15,
+            700.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman10-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

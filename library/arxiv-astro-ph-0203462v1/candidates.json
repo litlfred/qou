@@ -1,0 +1,136 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-astro-ph-0203462v1",
+ "source": {
+  "structure_sha256": "337c24b051365f0a82ddc7b26c93c78288687e1d7cda1eae85fc872cee3fa7f5",
+  "file": "0203462v1.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:astro-ph/0203462v1 26 Mar 2002",
+  "authors": "The extreme r-element rich, iron-poor halo giant CS 31082-001",
+  "arxiv": {
+   "id": "astro-ph/0203462",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "26 Mar 2002"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 7,
+  "by_kind": {
+   "recommendation": 7
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Therefore, the true potassium abundance in CS 31082-001 should be around \\[K/Fe\\]=+0.3 dex.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-004-32-abundances-of-light-and-iron-peak-elements.md",
+   "section_title": "Abundances of light and iron-peak elements",
+   "pages": "5-7",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The second should be negligible, given the very high quality of our data.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-007-42-error-budget.md",
+   "section_title": "Error budget",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "However, in a star as metal-poor as CS 31082-001 , it is expected that the s-process contribution should be negligible, both from a theoretical point of view (the main s-process takes place in AGBs, where the contribution depends on metallicity via the abundances of both seed nuclei and neutron sources, e.g.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-008-43-the-lighter-elements-38leqzleq48.md",
+   "section_title": "The lighter elements, 38$\\leq$Z$\\leq$48",
+   "pages": "8-10",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Thus, all these elements should represent r-process material produced in the early Galaxy.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-008-43-the-lighter-elements-38leqzleq48.md",
+   "section_title": "The lighter elements, 38$\\leq$Z$\\leq$48",
+   "pages": "8-10",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "The Van der waals broadening factor was taken from Barklem et al. \\cite{barklem2}, and the oscillator strength was increased by 0.1 dex with respect to the VALD2 recommended value to give a best fit to the observed line Fe~I 3859.9~\\AA.",
+   "strength": null,
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-010-45-the-third-peak-elements-and-the-actinides-76l.md",
+   "section_title": "The third-peak elements and the actinides, 76$\\leq$Z$\\leq$92",
+   "pages": "11-13",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Second, the initial production ratio of the neighboring nuclides $^{238}$U and $^{232}$Th should be far less sensitive to variations in the poorly-known characteristics of the neutron exposure(s) occurring in the explosion of progenitor than the ratios of nuclides more widely separated in mass, such as $^{232}$Th and $^{151-153}$Eu (Goriely & Clerbaux [@goriely99]).",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-011-5-is-the-r-process-universal.md",
+   "section_title": "Is the r-process universal ?",
+   "pages": "13-16",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "However, the computed actinide production ratios should be veri\ufb01ed by observations of daughter elements such as Pb and Bi in the same star, which are independent of the subsequent history of star formation and nucelosynthesis in the Galaxy.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

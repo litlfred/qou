@@ -1,0 +1,1 @@
+Programs in HOL are simply sets of recursion equations, i.e.\ pure logic. \item The programming language contained in the logic must be efficiently executable and such executions must count as proofs.

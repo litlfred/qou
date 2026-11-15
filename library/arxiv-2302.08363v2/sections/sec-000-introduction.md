@@ -1,33 +1,66 @@
 ---
 doc_id: arxiv-2302.08363v2
-doc_title: "Prepared for submission to JHEP On the structure of trans-series in quantum field theory"
+doc_title: "On the structure of trans-series in quantum field theory"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
 pages: 2-3
 source_pdf: 2302.08363v2.pdf
 source_sha256: c2244e03b17048fb
+toc_source: outline
 doc_brief: "On the structure of trans-series in quantum field theory — Many observables in quantum field theory can be expressed in terms of trans-series, in which one adds to the perturbative series a typically"
 ---
-2 T rans-series and their structure 2
-3 The large N sigma model, revisited 4
-4 Complex Chern–Simons theory 8
-5 Integrable models 10
-5.1 The free energy of integrable models 10
-5.2 Bosonic models 13
-5.2.1 Trans-series computation 14
-5.2.2 Numerical analysis 19
-5.3 The Gross–Neveu model 23
-5.3.1 Summary of the recursive problem 24
-5.3.2 Leading orders in ˜ α 27
-5.3.3 Numerical analysis 28
-5.3.4 Large N solution 30
-6 Conclusions and open problems 30
-1 Introduction
+Introduction
+1
+2
+Trans-series and their structure
+2
+3
+The large N sigma model, revisited
+4
+4
+Complex Chern–Simons theory
+8
+5
+Integrable models
+10
+5.1
+The free energy of integrable models
+10
+5.2
+Bosonic models
+13
+5.2.1
+Trans-series computation
+14
+5.2.2
+Numerical analysis
+19
+5.3
+The Gross–Neveu model
+23
+5.3.1
+Summary of the recursive problem
+24
+5.3.2
+Leading orders in ˜α
+27
+5.3.3
+Numerical analysis
+28
+5.3.4
+Large N solution
+30
+6
+Conclusions and open problems
+30
+1
+Introduction
 It is widely believed that renormalized perturbation theory gives the asymptotic expansions of
 observables in quantum field theory (QFT), when the coupling is small. The perturbative series
 obtained in this way are typically factorially divergent, therefore they can only give approximate
-results for the observables. However, there are many situations in mathematics and physics
+results for the observables.
+However, there are many situations in mathematics and physics
 where perturbative series can be upgraded to trans-series, which provide exponentially small
 corrections to the perturbative series. These trans-series then lead to exact results by using Borel
 resummation. An example where this happens is the theory of non-linear ODEs developed by
@@ -59,9 +92,9 @@ small corrections
 In this paper we want to explore a property of trans-series, inspired by the theory of non-
 linear ODEs, which provides indirect evidence for the convergence (or not) of the trans-series.
 In a trans-series expansion we have typically two small expansion parameters: the coupling
-constant g, and an appropriate exponential thereof e −A/g. At a given order in the exponential,
+constant g, and an appropriate exponential thereof e−A/g. At a given order in the exponential,
 the resulting series in g is typically factorially divergent. However, one can consider the opposite
-regime: at each order in g, one has a series in e −A/g, which we will simply call partial series.
+regime: at each order in g, one has a series in e−A/g, which we will simply call partial series.
 In the theory of non-linear ODEs, it can be proved [4] that all the partial series are convergent,
 and with the same radius of convergence. We will call this property the convergence property of
 partial series. This property also holds in the trans-series appearing naturally in the exact WKB

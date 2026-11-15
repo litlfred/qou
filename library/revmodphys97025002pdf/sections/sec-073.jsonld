@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/revmodphys97025002pdf/sections/sec-073",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Importance of theory",
+  "pageStart": 54,
+  "pageEnd": 55,
+  "contains": [
+    "library/revmodphys97025002pdf/blocks/prose-sec-073",
+    "library/revmodphys97025002pdf/blocks/recommendation-sec-073-01",
+    "library/revmodphys97025002pdf/blocks/recommendation-sec-073-02",
+    "library/revmodphys97025002pdf/blocks/recommendation-sec-073-03",
+    "library/revmodphys97025002pdf/blocks/recommendation-sec-073-04"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/revmodphys97025002pdf",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/revmodphys97025002pdf",
+  "provenance": "ingested"
+}

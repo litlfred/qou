@@ -1,0 +1,56 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-013
+section_title: "Page 13"
+section_number: null
+pages: 13-13
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+Problems on invariants of knots and 3-manifolds 385
+
+which are the obvious special values), it might be worth considering whether
+Jones polynomials at prime powers q = p®* have any special properties.
+
+Ideally one could try to find a topological definition of the Jones polynomial
+(perhaps only at such values) which involves finite fields. The coloured Jones
+polynomials of the unknot are quantum integers, which count the numbers of
+points in projective spaces defined over finite fields; might those for arbitrary
+knots in $® count points in other varieties? Instead of counting counting points,
+one could consider Poincaré polynomials, as the two things are closely related
+by the Weil conjectures.
+
+One obvious construction involving finite fields is to count representations of a
+fundamental group into a finite group of Lie type, such as SL(n, Fy). Very much
+in this vein, Jeffrey Sink [369] associated to a knot a zeta-function formed from
+the counts of representations into SL(2,Fps), for fixed p and varying s. His
+hope, motivated by the Weil conjectures, was the idea that the SU(2) Casson
+invariant might be related to such counting. For such an idea to work, it is
+probably necessary to find some way of counting representations with signs, or
+at least to enhance the counting in some way. Perhaps the kind of twisting used
+in the Dijkgraaf-Witten theory [108] could be used.
+
+Problem 1.7 (J. Roberts) Define the Jones polynomial intrinsically using
+homology of local systems.
+
+Remark (J. Roberts) The Alexander polynomial of a knot can be defined
+using the twisted homology of the complement. In the case of the Jones poly-
+nomial, no similar direct construction is known, but the approach of Bigelow
+[55] is tantalising. He shows how to construct a representation of the braid
+group Bg, on the twisted homology of the configuration space of n points in
+the 2n-punctured disc, and how to use a certain “matrix element” of this rep-
+resentation to obtain the Jones polynomial of a knot presented as a plait. Is
+there any way to write the same calculation directly in terms of configuration
+spaces of n points in the knot complement, for example?
+
+Problem 1.8 (J. Roberts) Study the relation between the Jones polynomial
+and Gromov- Witten theory.
+
+Remark (J. Roberts) The theory of pseudo-holomorphic curves or “Gromov-
+Witten invariants” has been growing steadily since around 1985, in parallel
+with the theory of quantum invariants in three dimensional topology. During
+
+Geometry & Topology Monographs, Volume 4 (2002)

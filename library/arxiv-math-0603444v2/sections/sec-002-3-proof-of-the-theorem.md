@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-math-0603444v2
-doc_title: "QUASIHOMOGENEITY OF ISOLATED HYPERSURF ACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY"
+doc_title: "QUASIHOMOGENEITY OF ISOLATED HYPERSURFACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY"
 section_id: sec-002-3-proof-of-the-theorem
 section_title: "Proof of the theorem"
 section_number: 3
 pages: 2-5
 source_pdf: 0603444v2.pdf
 source_sha256: 46edfcddca963d08
-doc_brief: "QUASIHOMOGENEITY OF ISOLATED HYPERSURF ACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY — W e characterize quasihomogeneity of isolated hypersurfac e singu- larities by the injectivity of the map induced"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.992
-latex_coverage_ratio: 0.944
+latex_coverage_ratio: 0.931
+doc_brief: "QUASIHOMOGENEITY OF ISOLATED HYPERSURFACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY — We characterize quasihomogeneity of isolated hypersurface singu- larities by the injectivity of the map induced by"
 ---
 We denote the $n$th local cohomology module of $\mathcal{O}$ supported at the origin by $$H:=H_0^n(\mathcal{O})
 =H^{n-1}(\mathbb{C}^n\smallsetminus\{0\},\mathcal{O})

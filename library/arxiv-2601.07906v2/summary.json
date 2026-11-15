@@ -2,22 +2,27 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2601.07906v2",
  "source_sha256": "e69b1bf37f2c75b0",
- "brief": "March 2026 A universal sum over topologies in 3d gravity — We explore the sum over topologies in AdS 3 quantum gravity and its relationship with the statistical interpretation of the boundary theory.",
- "extended": "**March 2026 A universal sum over topologies in 3d gravity**\n\n*Alexandre Belin 1,2, Scott Collier 3,4, Lorenz Eberhardt 5, Diego Liska 6,7, Boris*\n\n117 pp, 31 sections.\n\n**Abstract.** We explore the sum over topologies in AdS 3 quantum gravity and its relationship with the statistical interpretation of the boundary theory. We formulate a statistical version of the conformal bootstrap that systematizes the universal sta- tistical properties of high-energy CFT 2 data. We identify a series of surgery moves on bulk manifolds that precisely reflect the requirements of typicality and crossing symmetry of the boundary ensemble. These surgery moves generate a large num- ber of bulk manifolds that have to be included in any reasonable definition of the gravitational path integral. We show that this procedure generates only on-shell (hyperbolic) manifolds, although it does not produce all of them. These proofs rely on structure theorems of 3-manifolds, which non-trivially interact with the require- ments of the statistical boundary ensemble.\n\n**Outline.** Introduction; The statistical bootstrap; Kinematic constraints; Crossing symmetry and modular invariance; Typicality and index contractions; Spectral statistics; Summing over handlebodies; The mapping class group; Handlebodies as conformal blocks; The handlebody sum is crossing symmetric; Minimal completion of the handlebody sum; Handlebodies are not sufficient; The gravitational machine; The gravitational machine is hyperbolic; What 3-manifolds are generated?; The gravitational machine at work; Euclidean wormholes; Handlebody-knots",
+ "brief": "A universal sum over topologies in 3d gravity — We explore the sum over topologies in AdS3 quantum gravity and its relationship with the statistical interpretation of the boundary theory.",
+ "extended": "**A universal sum over topologies in 3d gravity**\n\n*Alexandre Belin1,2, Scott Collier3,4, Lorenz Eberhardt5, Diego Liska6,7, Boris*\n\n117 pp, 34 sections.\n\n**Abstract.** We explore the sum over topologies in AdS3 quantum gravity and its relationship with the statistical interpretation of the boundary theory. We formulate a statistical version of the conformal bootstrap that systematizes the universal sta- tistical properties of high-energy CFT2 data. We identify a series of surgery moves on bulk manifolds that precisely reflect the requirements of typicality and crossing symmetry of the boundary ensemble. These surgery moves generate a large num- ber of bulk manifolds that have to be included in any reasonable definition of the gravitational path integral. We show that this procedure generates only on-shell (hyperbolic) manifolds, although it does not produce all of them. These proofs rely on structure theorems of 3-manifolds, which non-trivially interact with the require- ments of the statistical boundary ensemble.\n\n**Outline.** Front matter; Introduction; The statistical bootstrap; Kinematic constraints; Crossing symmetry and modular invariance; Typicality and index contractions; Spectral statistics; Summing over handlebodies; The mapping class group; Handlebodies as conformal blocks; Fixed-P partition functions; The handlebody sum is crossing symmetric; Minimal completion of the handlebody sum; Handlebodies are not sufficient; The gravitational machine; The gravitational machine is hyperbolic; What 3-manifolds are generated?; The gravitational machine at work",
  "tokens": {
-  "brief": 49,
-  "extended": 400
+  "brief": 46,
+  "extended": 396
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-4"
+  },
+  {
    "id": "sec-000-introduction",
    "title": "Introduction",
-   "pages": "4-9"
+   "pages": "4-10"
   },
   {
    "id": "sec-001-the-statistical-bootstrap",
    "title": "The statistical bootstrap",
-   "pages": "9-11"
+   "pages": "10-11"
   },
   {
    "id": "sec-002-kinematic-constraints",
@@ -52,115 +57,125 @@
   {
    "id": "sec-008-handlebodies-as-conformal-blocks",
    "title": "Handlebodies as conformal blocks",
-   "pages": "24-34"
+   "pages": "24-27"
   },
   {
-   "id": "sec-009-the-handlebody-sum-is-crossing-symmetric",
+   "id": "sec-009-fixed-p-partition-functions",
+   "title": "Fixed-P partition functions",
+   "pages": "27-34"
+  },
+  {
+   "id": "sec-010-the-handlebody-sum-is-crossing-symmetric",
    "title": "The handlebody sum is crossing symmetric",
    "pages": "34-41"
   },
   {
-   "id": "sec-010-minimal-completion-of-the-handlebody-sum",
+   "id": "sec-011-minimal-completion-of-the-handlebody-sum",
    "title": "Minimal completion of the handlebody sum",
    "pages": "41-41"
   },
   {
-   "id": "sec-011-handlebodies-are-not-sufficient",
+   "id": "sec-012-handlebodies-are-not-sufficient",
    "title": "Handlebodies are not sufficient",
    "pages": "41-46"
   },
   {
-   "id": "sec-012-the-gravitational-machine",
+   "id": "sec-013-the-gravitational-machine",
    "title": "The gravitational machine",
    "pages": "46-52"
   },
   {
-   "id": "sec-013-the-gravitational-machine-is-hyperbolic",
+   "id": "sec-014-the-gravitational-machine-is-hyperbolic",
    "title": "The gravitational machine is hyperbolic",
    "pages": "52-58"
   },
   {
-   "id": "sec-014-what-3-manifolds-are-generated",
+   "id": "sec-015-what-3-manifolds-are-generated",
    "title": "What 3-manifolds are generated?",
    "pages": "58-62"
   },
   {
-   "id": "sec-015-the-gravitational-machine-at-work",
+   "id": "sec-016-the-gravitational-machine-at-work",
    "title": "The gravitational machine at work",
    "pages": "62-63"
   },
   {
-   "id": "sec-016-euclidean-wormholes",
+   "id": "sec-017-euclidean-wormholes",
    "title": "Euclidean wormholes",
-   "pages": "63-65"
+   "pages": "63-64"
   },
   {
-   "id": "sec-017-handlebody-knots",
+   "id": "sec-018-twisted-i-bundles",
+   "title": "Twisted I-bundles",
+   "pages": "64-65"
+  },
+  {
+   "id": "sec-019-handlebody-knots",
    "title": "Handlebody-knots",
    "pages": "65-73"
   },
   {
-   "id": "sec-018-discussion",
+   "id": "sec-020-discussion",
    "title": "Discussion",
    "pages": "73-79"
   },
   {
-   "id": "sec-019-3-manifold-technology",
+   "id": "sec-021-3-manifold-technology",
    "title": "3-manifold technology",
    "pages": "79-79"
   },
   {
-   "id": "sec-020-incompressible-surfaces-in-3-manifolds",
+   "id": "sec-022-incompressible-surfaces-in-3-manifolds",
    "title": "(In)compressible surfaces in 3-manifolds",
    "pages": "79-81"
   },
   {
-   "id": "sec-021-wirtinger-presentation-of-fundamental-groups",
+   "id": "sec-023-wirtinger-presentation-of-fundamental-groups",
    "title": "Wirtinger presentation of fundamental groups",
    "pages": "81-85"
   },
   {
-   "id": "sec-022-tricolorability-and-handlebodyness",
+   "id": "sec-024-tricolorability-and-handlebodyness",
    "title": "Tricolorability and handlebodyness",
    "pages": "85-87"
   },
   {
-   "id": "sec-023-the-fundamental-group-of-the-gravitational-machi",
+   "id": "sec-025-the-fundamental-group-of-the-gravitational-machi",
    "title": "The fundamental group of the gravitational machine",
    "pages": "87-87"
   },
   {
-   "id": "sec-024-what-is-bass-serre-theory",
+   "id": "sec-026-what-is-bass-serre-theory",
    "title": "What is Bass-Serre theory?",
    "pages": "87-89"
   },
   {
-   "id": "sec-025-groups-acting-on-trees",
+   "id": "sec-027-groups-acting-on-trees",
    "title": "Groups acting on trees",
    "pages": "89-91"
   },
   {
-   "id": "sec-026-fundamental-theorem-of-bass-serre-theory",
+   "id": "sec-028-fundamental-theorem-of-bass-serre-theory",
    "title": "Fundamental theorem of Bass-Serre theory",
    "pages": "91-93"
   },
   {
-   "id": "sec-027-application-to-the-gravitational-machine",
+   "id": "sec-029-application-to-the-gravitational-machine",
    "title": "Application to the gravitational machine",
    "pages": "93-98"
   },
   {
-   "id": "sec-028-vtqft-technology",
+   "id": "sec-030-vtqft-technology",
    "title": "VTQFT technology",
    "pages": "98-98"
   },
   {
-   "id": "sec-029-virasoro-tqft-identities",
+   "id": "sec-031-virasoro-tqft-identities",
    "title": "Virasoro TQFT identities",
    "pages": "98-106"
   },
   {
-   "id": "sec-030-kirby-calculus",
+   "id": "sec-032-kirby-calculus",
    "title": "Kirby calculus",
    "pages": "106-117"
   }

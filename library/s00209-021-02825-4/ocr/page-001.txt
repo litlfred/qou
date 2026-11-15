@@ -1,0 +1,56 @@
+Mathematische Zeitschrift (2022) 300:1359-1400
+
+https://doi.org/10.1007/s00209-021-02825-4 Mathematische Zeitschrift
+®
+
+Check for
+updates.
+
+A representation theoretic explanation of the
+Borcea—Brandén characterization
+
+Jonathan Leake!
+
+Received: 17 August 2020 / Accepted: 28 June 2021 / Published online: 9 August 2021
+© The Author(s) 2021
+
+Abstract
+
+In 2009, Borcea and Brandén characterized all linear operators on multivariate polynomials
+which preserve the property of being non-vanishing (stable) on products of prescribed open
+circular regions. We give a representation theoretic interpretation of their findings, which
+generalizes and simplifies their result and leads to a conceptual unification of many related
+results in polynomial stability theory. At the heart of this unification is a generalized Grace’s
+theorem which addresses polynomials whose roots are all contained in some real interval
+or ray. This generalization allows us to extend the Borcea—Brindén result to characterize a
+certain subclass of the linear operators which preserve such polynomials.
+
+1 Introduction
+
+In 1914, Polya and Schur [14] characterized the set of diagonal linear operators on polyno-
+mials which preserve real-rootedness. Since this seminal paper, much work has been done in
+extending this characterization to other classes of linear operators. This program in essence
+came to a close in 2009 with a paper of Borcea and Brindén [1], which gave a complete
+characterization of linear operators on polynomials which preserve real-rootedness.
+
+Their real-rootedness preservation characterization is derived from a more general
+result pertaining to stable polynomials. Given Q C C’”, we say that a polynomial f €
+C[x1,..., Xm] is Q-stable if f does not vanish in Q. Further, f is real stable if it has
+real coefficients and is 7('!-stable, where 4 C C is the open upper half-plane. (We also
+denote the open lower half-plane by H_ C C.) We additionally use the terms weakly Q-
+stable and weakly real stable if we allow f = 0. Finally, we write f € Clr, .... Xm] for
+A= (Aj,...,Am) if f is of degree at most A, in xz. We are then led to the following problems
+for K € {C, R}, generalized from the Pélya-Schur characterization:
+
+Problem 1 Characterize linear operators T : K*[x1,..., Xm] > Ky,..., Xm] preserving
+weak Q-stability.
+
+Problem 2 Characterize linear operators T : K[x1,...,%m] > Klx,..., Xm] preserving
+weak Q-stability.
+
+GS Jonathan Leake
+jonathan @jleake.com
+
+1 Technische Universitit Berlin, Berlin, Germany
+
+D Springer

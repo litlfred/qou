@@ -7,10 +7,11 @@ section_number: null
 pages: 9-10
 source_pdf: 0811.2435v1.pdf
 source_sha256: 615b04eca83bcade
-doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.993
-latex_coverage_ratio: 0.974
+latex_coverage_ratio: 0.993
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 51 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 Recall that a non-commutative Calabi-Yau variety of dimension $d$ (a.k.a Calabi-Yau category of dimension $d$) is given by an $Ext$-finite triangulated $\A$-category ${\cal C}$ which carries a functorial non-degenerate pairing $$(\bullet, \bullet): \op{Hom}^\bullet_{\CC}(E,F)\otimes \op{Hom}^\bullet_{\CC}(F,E)\to \k[-d]$$ (see e.g. [@KoSo3], [@So1], [@Laz]), such that the polylinear forms $(m_n(f_0,\dots,f_n),f_{n+1})$ defined on $\otimes_{0\le i\le n+1}\op{Hom}^\bullet_{\CC}(E_i,E_{i+1})$ by higher compositions $m_n$ are cyclically invariant. We will discuss mainly the case $d=3$ and assume that our non-commutative $3d$ Calabi-Yau variety is ind-constructible and endowed with polarization.
 

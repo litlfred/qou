@@ -2,22 +2,52 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1912.13486v2",
  "source_sha256": "9a8dbc1a143f7448",
- "brief": "Index for a Model of 3d-3d Correspondence for Plumbed 3-Manifolds — We consider theS2×qS1 supersymmetric index of a 3dN = 2 theory T [M3] when M3 is a plumbed 3-manifold.",
- "extended": "**Index for a Model of 3d-3d Correspondence for Plumbed 3-Manifolds**\n\n*Yau Mathematical Sciences Center, Tsinghua University, Beijing 100084, China*\n\n21 pp, 2 sections.\n\n**Abstract.** We consider theS2×qS1 supersymmetric index of a 3dN = 2 theory T [M3] when M3 is a plumbed 3-manifold. We engineer an eﬀective description of T [M3] from the expression of the homological block for plumbed 3-manifolds as a D2×qS1 partition function of a 3d N = 2 theory T [M3] with a boundary condition. We check that the supersymmetric index for such a T [M3] is invariant under the 3d Kirby moves. arXiv:1912.13486v2 [hep-th] 22 Mar 2021\n\n**Outline.** 1 Introduction; 2.2 Analysis on homological block and index of",
+ "brief": "Index for a Model of 3d-3d Correspondence for Plumbed 3-Manifolds — We consider the S2 ×q S1 supersymmetric index of a 3d N = 2 theory T[M3] when M3 is a plumbed 3-manifold.",
+ "extended": "**Index for a Model of 3d-3d Correspondence for Plumbed 3-Manifolds**\n\n*Hee-Joong Chung*\n\n21 pp, 8 sections.\n\n**Abstract.** We consider the S2 ×q S1 supersymmetric index of a 3d N = 2 theory T[M3] when M3 is a plumbed 3-manifold. We engineer an eﬀective description of T[M3] from the expression of the homological block for plumbed 3-manifolds as a D2 ×q S1 partition function of a 3d N = 2 theory T[M3] with a boundary condition. We check that the supersymmetric index for such a T[M3] is invariant under the 3d Kirby moves. arXiv:1912.13486v2 [hep-th] 22 Mar 2021\n\n**Outline.** Front matter; 1 Introduction; 2 Supersymmetric index on S2 q S1 and factoriz; 2.1 Supersymmetric index, factorization, and D; 2.2 Analysis on homological block and index of; 3 Supersymmetric index of a 3d N=2 theory on S; 3.1 Engineering a 3d N=2 theory T[M3] from hom; 3.2 Index for an effective description of T[M3",
  "tokens": {
-  "brief": 42,
-  "extended": 175
+  "brief": 43,
+  "extended": 224
  },
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "title": "Introduction",
-   "pages": "2-9"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
   },
   {
-   "id": "sec-001-22-analysis-on-homological-block-and-index-of-le",
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-001-2-supersymmetric-index-on-s2-q-s1-and-factorizat",
+   "title": "Supersymmetric index on S2 q S1 and factorization",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-21-supersymmetric-index-factorization-and-d2-q-s",
+   "title": "Supersymmetric index, factorization, and D2 q S1 partition function",
+   "pages": "3-9"
+  },
+  {
+   "id": "sec-003-22-analysis-on-homological-block-and-index-of-le",
    "title": "Analysis on homological block and index of lens space theory",
-   "pages": "9-21"
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-004-3-supersymmetric-index-of-a-3d-n2-theory-on-s2-q",
+   "title": "Supersymmetric index of a 3d N=2 theory on S2 q S1 for plumbed 3-manifolds",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-005-31-engineering-a-3d-n2-theory-tm3-from-homologic",
+   "title": "Engineering a 3d N=2 theory T[M3] from homological blocks",
+   "pages": "11-14"
+  },
+  {
+   "id": "sec-006-32-index-for-an-effective-description-of-tm3",
+   "title": "Index for an effective description of T[M3]",
+   "pages": "14-21"
   }
  ],
  "provenance": {

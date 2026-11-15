@@ -2,95 +2,35 @@
  "_schema": "library-summary/v1",
  "doc_id": "kmj-48-2-255",
  "source_sha256": "720279042c6d762b",
- "brief": "A formula for the colored Jones polynomial of 2-bridge knots — We derive a formula for the colored Jones polynomial of 2-bridge knots.",
- "extended": "**A formula for the colored Jones polynomial of 2-bridge knots**\n\n*Department of Mathematics, Faculty of Science, Niigata University, Niigata 950-*\n\n26 pp, 17 sections.\n\n**Abstract.** We derive a formula for the colored Jones polynomial of 2-bridge knots. For a twist knot, a more explicit formula is given and it leads to a relation between the degree of the colored Jones polynomial and the crossing number.\n\n**Outline.** 1 Introduction; 2 (σp′ + 1)mp′ −; 2 (σik − σik′ )(mik − mik−1)(mik′ − mik′ −1); 2 Proof of Theorem 1; 5 The corresponding enhanced Gauss diagram wit; 2 (−lik ),; 2 (σik − σik′ )lik lik′; 2 (−lik ); 2 (σik − σik′ )lik lik′ ,; 2 (σik − σik′ )lik lik′ }; 2 (n−mj −1)q; 2 (σp′ + σ1)mp′ −; 3 Results for a twist knot; 2 (k+b+1) =; 2 (k+b+1−2j)),; 2 (2n − 1 − m2p1+1)m2p1+1 ≥ − 1; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: A formula for the n-colored Jones polynomial of the 2-bridge knot\n- Theorem 2: A formula for the n-colored Jones polynomial of a 0-framed knot\n- Corollary 10: For K = S(4p1 + 1, 2p1 + 1),\n- Lemma 3: (1) σjc = σja = (−1)[(2j−1)t/p], and σjd = σjb = (−1)[2jt/p].\n- Lemma 7: (1) σik + σip′+1−k = 0. (2) σj+1 + σp′+1−j = (−2)j.\n- Lemma 8: It follows that (1) σj = (−1)j−1, and",
+ "brief": "A Formula for the Colored Jones Polynomial of 2-Bridge Knots — We derive a formula for the colored Jones polynomial of 2-bridge knots.",
+ "extended": "**A Formula for the Colored Jones Polynomial of 2-Bridge Knots**\n\n*Toshie Takata*\n\n26 pp, 5 sections.\n\n**Abstract.** We derive a formula for the colored Jones polynomial of 2-bridge knots. For a twist knot, a more explicit formula is given and it leads to a relation between the degree of the colored Jones polynomial and the crossing number.\n\n**Outline.** Front matter; 1 Introduction; 2 Proof of Theorem 1; 3 Results for a twist knot; References",
  "tokens": {
   "brief": 33,
-  "extended": 311
+  "extended": 111
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
    "pages": "1-3"
   },
   {
-   "id": "sec-001-2-σp-1mp",
-   "title": "(σp′ + 1)mp′ −",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-002-2-σik-σik-mik-mik1mik-mik-1",
-   "title": "(σik − σik′ )(mik − mik−1)(mik′ − mik′ −1)",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-003-2-proof-of-theorem-1",
+   "id": "sec-001-2-proof-of-theorem-1",
    "title": "Proof of Theorem 1",
-   "pages": "3-5"
+   "pages": "3-19"
   },
   {
-   "id": "sec-004-5-the-corresponding-enhanced-gauss-diagram-witho",
-   "title": "The corresponding enhanced Gauss diagram without blobs and chords can be",
-   "pages": "5-10"
-  },
-  {
-   "id": "sec-005-2-lik",
-   "title": "(−lik ),",
-   "pages": "10-11"
-  },
-  {
-   "id": "sec-006-2-σik-σik-lik-lik",
-   "title": "(σik − σik′ )lik lik′",
-   "pages": "11-13"
-  },
-  {
-   "id": "sec-007-2-lik",
-   "title": "(−lik )",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-008-2-σik-σik-lik-lik",
-   "title": "(σik − σik′ )lik lik′ ,",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-009-2-σik-σik-lik-lik",
-   "title": "(σik − σik′ )lik lik′ }",
-   "pages": "13-15"
-  },
-  {
-   "id": "sec-010-2-nmj-1q",
-   "title": "(n−mj −1)q",
-   "pages": "15-16"
-  },
-  {
-   "id": "sec-011-2-σp-σ1mp",
-   "title": "(σp′ + σ1)mp′ −",
-   "pages": "16-19"
-  },
-  {
-   "id": "sec-012-3-results-for-a-twist-knot",
+   "id": "sec-002-3-results-for-a-twist-knot",
    "title": "Results for a twist knot",
-   "pages": "19-24"
+   "pages": "19-26"
   },
   {
-   "id": "sec-013-2-kb1",
-   "title": "(k+b+1) =",
-   "pages": "24-24"
-  },
-  {
-   "id": "sec-014-2-kb12j",
-   "title": "(k+b+1−2j)),",
-   "pages": "24-25"
-  },
-  {
-   "id": "sec-015-2-2n-1-m2p11m2p11-1",
-   "title": "(2n − 1 − m2p1+1)m2p1+1 ≥ − 1",
-   "pages": "25-26"
-  },
-  {
-   "id": "sec-016-references",
+   "id": "sec-003-references",
    "title": "References",
    "pages": "26-26"
   }
@@ -99,8 +39,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

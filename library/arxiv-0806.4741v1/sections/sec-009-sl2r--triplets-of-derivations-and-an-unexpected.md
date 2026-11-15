@@ -10,7 +10,8 @@ source_sha256: 5e7ad85a99fb3552
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.955
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.984
+doc_brief: "The deformation quantizations of the hyperbolic plane — We describe the space of (all) invariant deformation quantizations on the hyperbolic plane D as solutions of the evolution of a second order"
 ---
 \noindent Let us now consider {\sl any} Poincar\'e invariant formal star $\star$ product on the contracted plane $\MM$. Denote
 by $\Der(\star)$ its algebra of derivations. Note that from formal equivalence with Moyal, every derivation is interior.

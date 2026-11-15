@@ -1,0 +1,55 @@
+6.3. Computations in the symmetric product 139
+
+In this case the vanishing rg = rs, = 0 can again be checked directly,
+using the observation that
+
+660551 = 76, *?d5 = Sy, * d_wy,
+
+must be supported on the two-dimensional closed subset W; — W; C X. The
+values r42 = 5 and r33 = 51 are less obvious from a geometric point of
+view, but notice that they are one less than the generic ranks of the local
+systems V+ in chapter 5, in accordance with part (b) of proposition 5.24.
+
+More numerical values for partitions of small degree can be found in
+section 6.6 below. After these examples, let us now come to the proof of
+the recursion formula in theorem 6.1. Consider the stalk cohomology of the
+convolution product 5% = 64, *---*64,. For eachi€ {1,2,...,n} the Specht
+module og, is the trivial representation of the symmetric group Gg,, hence it
+follows from equation (x) above and from the construction of Brill-Noether
+sheaves in section 6.1 that
+
+5% = @ Kea: 5p _— P§* @°§*
+
+>
+where Bea
+
+PEe = <>) Kga-?5p and °§% = D Kpa°“Sg-
+
+Bra Bra
+
+The stalk cohomology of a perverse sheaf at a general point x € X(C) is
+concentrated in degree —g, so to prove theorem 6.1 we can replace the
+generic rank by (—1)8 times the Euler characteristic of the generic stalk
+cohomology. Thus it will suffice to show that for general x € X(C),
+
+Lm saimct5)0) = Eaten TLC)
+
+meZ Cp sen 20 k=1
+cy teten=8
+n
+: 2(g—1—
+y (—1)"*8 dime (7 (“5 ) x) _ Lo Il ( er).
+meZ cpescn20 k=1
+cy teten=8
+
+The first of these equalities will follow from theorem 6.6 below since by
+base change #*(5%), is equal to the cohomology of the fibre F = fy!(x)
+of the Abel-Jacobi morphism fg : Cy, x --- x Cy, + X. The second equality
+rests on a computation of Betti polynomials, see corollary 6.8.
+
+6.3. Computations in the symmetric product
+
+In this section we compute some intersection numbers of cycle classes
+in the cohomology ring of the symmetric products of C that will be needed
+in the proof of theorem 6.6 below. For d € N consider the Abel-Jacobi
+morphism hg : Cg — X = JC as before. We will always work with rational

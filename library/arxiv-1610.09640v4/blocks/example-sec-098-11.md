@@ -1,1 +1,0 @@
-Let A :=K[x1,...,xn], the commutative polynomial ring in

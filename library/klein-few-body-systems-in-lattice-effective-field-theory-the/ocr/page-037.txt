@@ -1,0 +1,59 @@
+3.6 The auxiliary field partition function
+
+3.6 The auxiliary field partition function
+
+Generally, we use three different methods to extract physical observables. While we use the Hamiltonian
+formalism and the transfer matrix formalism for the exact calculations, we use a Grassmann path integral
+formalism with auxiliary fields in the case of Monte Carlo simulations. In the following we will show
+that all formalisms are equivalent up to higher order lattice artifacts. In the current and the subsequent
+section we follow [97, 98]. For the proof we consider a system of two fermions with spin T and | and a
+simple contact interaction « C. On the one hand, the corresponding path integral reads
+
+Z= i De* exp[-S (c,c*)], (3.41)
+with the action
+S (c,c°) = S free (c,€") + Ca, » cy (i, n,) €y (it,n,) €} (i, n,) cy Gi, n,). (3.42)
+jin,
+
+Here, a, is the ratio of the spatial and temporal lattice spacings, a, = a/a,. The free part reads
+
+Siee(cey= > | [c$ (ri.m,)¢; (itm, + 1) — (1 ~ 6h)e} (it,n,) ¢; (.n,)]
+
+fin, i=Td G43)
+
++ » [e i (i, n)e;( (#+8n,) +6 (fi, n,) c ‘(if -tnl.
+
+1=1,2,3
+
+with h = a,/(2m) . Eq. (3.43) represents the most simple discretization of the free action. On the other
+hand, the discrete Hamiltonian reads
+
+n= ¥ [2a ea0n-z ¥ loleoaleer)alona tn]
+
+iti=td 1-123 (3.44)
+
++C » a (it )a,()a\ (7 Jay (i).
+it
+
+Using the general properties of Grassman variables and anticommutation relations (see App. A.3 for
+details), one can proof the following identity
+
+Tr: f(a‘,a) ‘| = f de (0) de* (0) exp {c* (0) [e (0) — c(1)]} f [e* (0) .c (0)], (3.45)
+
+where the antiperiodic boundary condition in time direction is realized by c(1) = —c(0).
+
+The previous equation shows the connection only for one time slice, but it is extendable to the general
+identity,
+
+Tr{: F,|a) (#’).a,(#)| = -..: Fo[ai (a’).a,(@)] : }
+il (3.46)
+
+L, L
+= [r Dc* on |5) Mile * (i, n,) ¢; (i, n,) — ¢; (it, + oh} Fi, [ce (i’.n,) c(i, n,)| .
+
+n=0 ni =0
+
+=
+
+1
+
+31

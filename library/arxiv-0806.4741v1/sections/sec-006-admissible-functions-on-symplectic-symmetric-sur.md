@@ -10,7 +10,8 @@ source_sha256: 5e7ad85a99fb3552
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.98
-latex_coverage_ratio: 0.988
+latex_coverage_ratio: 0.985
+doc_brief: "The deformation quantizations of the hyperbolic plane — We describe the space of (all) invariant deformation quantizations on the hyperbolic plane D as solutions of the evolution of a second order"
 ---
 In \cite{WeinsteinTr}, Alan Weinstein conjectures the relevance of a certain three-point function, here denoted
 $S_W$, as the essential constituent of the phase of an oscillatory kernel defining an invariant star product

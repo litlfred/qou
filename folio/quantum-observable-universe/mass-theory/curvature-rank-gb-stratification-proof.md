@@ -32,13 +32,12 @@ form.*
 > $\pi : \mathbb{C}\langle\sigma_i\rangle \twoheadrightarrow H_n(R,q)$,
 > so $\pi(I) = 0$ and therefore $\pi(I^\ell) = 0$ for every
 > $\ell \geq 1$ — the ideal-power filtration is identically zero above
-> degree $0$, and cannot stratify anything. Proved sorry-free as
+> degree $0$, and cannot stratify anything. Proved as
 > `QOU.BraidKnot.WordFiltration.map_pow_eq_bot`.
 >
 > **Step 3 below reads $J^\bullet$ this way, so Step 3 is incomplete as
 > it stands.** Two further readings of $J^\bullet$ present elsewhere in
-> the corpus also fail — see
-> [`docs/audits/2026-08-16-three-gb-filtrations-one-name.md`](../../../docs/audits/2026-08-16-three-gb-filtrations-one-name.md).
+> the corpus also fail.
 
 **Step 3: $F^{\,r}$ measures rewrite depth.**
 *By the Leibniz rule and Step 1, $F^{\,r}(T_w) \in I^r$ but

@@ -1,0 +1,46 @@
+Recall that any finitely generated k-algebra A is the quotient of an algebra of poly-
+nomials, in other words there is an exact sequence 0 > I + k[X1,...,Xn] > A 0.
+By Hilbert’s basis theorem, the ideal J is finitely generated, hence A defines an al-
+gebraic set V(I) C k", namely the zero-locus of any generating set of polynomials
+for J. Up to isomorphism, this set does not depend on the presentation of A, hence
+
+we denote by Spec(A) the affine algebraic variety defined by A.
+
+Remark 1.1.3. In general, the use of the term variety is reserved to irreducible
+and reduced algebraic sets. An irreducible set is a set which is not a reunion of two
+proper closed subsets. An irreducible component is a maximal irreducible subset.
+Given a ring R, Spec(R) is said to be reduced if R does not contain any nilpotent
+element. In particular, by mean of an irreducible component we will assume it to be
+reduced. We will call many algebraic objects varieties despite they have no reason
+
+to be irreducible, nor reduced.
+
+Definition 1.1.4. We define the character variety X(T) = R(L)//SLo(k) as the
+spectrum Spec(k[R(L)|$%) of the sub-algebra of invariants.
+
+It is usually called the algebro-geometric quotient of R([) by SLo(k), let us list
+without proof some of its properties :
+
+— It comes with a projection map 7: R(T) + X(L) that satisfies the following
+universal property : for any SLo-invariant morphism f : R(T) > Y, with
+Y an algebraic variety, there is an unique map f’ : X([) > Y such that
+f= flor.
+
+— The k-points of this quotient are in bijection with the closed orbits of SL2(k)
+acting on R(L), or with conjugacy classes of semi-simple (or completely redu-
+cible) representations of P into SL2(k). In other words, orbits whose closure
+intersect in R(T) are identified in X(L).
+
+— It is the biggest Hausdorff quotient of the topological quotient R(T) / SL2(k).
+
+Example 1.1.5. Back to [ = Z, recall that the SLo(k)-orbit of p; : 1+ (1011)
+contains the trivial representation po in its closure. We are going to see how the
+theory of algebraic quotients solves this problem.
+
+Since the variety R(Z) is isomorphic to SL2(k), what we want is to compute the
+subalgebra of invariant of the algebra k{SLa] = *IX'X7?,X?7,X??)/( x41 x2.2_x1.2x21_1),
+Assume f € k[SL] is an invariant. Then for any diagonalizable A € SLo(k), there
+is some A € k* and g € SLa(k) such that A = g(? 1) g7! hence f(A) = p(A)
+for some polynomial p € k[t,¢~+] that does not depend on A. Moreover, the matrix
+
+17

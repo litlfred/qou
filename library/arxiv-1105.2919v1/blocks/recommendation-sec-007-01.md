@@ -1,0 +1,1 @@
+Since the interactions of Goldstone bosons must vanish at zero momentum transfer and in the chiral limit ($m_\pi \rightarrow 0$), the low-energy expansion of the Lagrangian is arranged in powers of derivatives and pion masses.

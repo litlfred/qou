@@ -1,0 +1,1 @@
+In principle, a general extrapolation formula which suits a wide range of $\Delta \tau$ should have the same form as Eq.([\[PIMCUSdetail\]](#PIMCUSdetail){reference-type="ref" reference="PIMCUSdetail"}).

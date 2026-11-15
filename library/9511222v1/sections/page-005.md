@@ -1,0 +1,70 @@
+---
+doc_id: 9511222v1
+doc_title: "Murnaghan–Nakayama rules for characters of Iwahori–Hecke algebras of classical type"
+section_id: page-005
+section_title: "Page 5"
+pages: 5-5
+pdf_page: 5
+source_pdf: 9511222v1.pdf
+source_sha256: 2870b5b709d1f358
+text_source: ocr
+granularity: page
+doc_brief: "Murnaghan–Nakayama rules for characters of Iwahori–Hecke algebras of classical type — 26 sections: Page 1; Page 2; Page 3"
+---
+CHARACTERS OF IWARORLHROBRE ALGER DRAS OF G(r, p,m)
+
+Proposition 2.12. Let f= (41,...,m) be an Sy-sequence and i= (415... 5%m)
+
+be a Z,-sequence, and let L be a standard tableau of size n. Let T or, denote
+
+the coefficient of vy, in Tivr. Then
+
+Thor), = AVP (DAV, (LAP yo, (D).
+
+In particular, for given sequences € and z, the value Ti. Lop depends only on the
+
+positions and the linear order of the boxes in L.
+
+Proof. This follows from the definition of the action of H,,, on standard tableaux
+and the fact (2.3) that when T; acts on a standard tableau L it affects only the
+positions of Z containing 7 and z— 1. The result follows, since t; acts as a scalar
+(Prop. 2.7), and Ti otherwise is a product (from right to left) of a decreasing
+sequence of generators T;. OO
+
+Characters.
+
+If ZL is a standard tableau (of any shape, possibly of skew shape) with n boxes,
+define
+AOL) = AVL), (2.13)
+
+and for any shape A (possibly skew), define
+
+AMY) = YS AML). (2.14)
+LEL(A)
+
+In making these definitions, the actual values in the boxes of E do not matter,
+only their positions and their order relative to one another are relevant. Thus, the
+definitions make sense when the standard tableaux have values that form a subset
+of {1,2,...} (with the usual linear order).
+
+For an r-partition A, let Xe a denote the character of the irreducible H,,,-
+
+representation V> determined in Theorem 2.4. The following theorem is our ana-
+logue of the Murnaghan-Nakayama rule.
+
+Theorem 2.15. Let f = (41,.-.,lm) be an S,-sequence, _ (t1,.-.,%m) bea
+Z,-sequence, and suppose that \ is an r-partition of size n. Then
+(T= ae WEDV AL WILD) AGED Jl"),
+
+d= pO Ch Ce CuermM=r
+
+where the sum is over all sequences of shapes = pp! C pS) C.-C pO =X such
+that ju [uS-Y| = |G.
+
+Proof. By Proposition 2.12 the character Vin. , is given by
+Mie (T) = YI Teel, = YE A DIA (EB) AE eg (E)
+LEL(2) LEL(\)
+
+The result follows by collecting terms according to the positions occupied by the
+various segments of the numbers {1,2,....4:}, {41 + 1,....€o}, ..., {€ma1 +
+1,...,4m}. O

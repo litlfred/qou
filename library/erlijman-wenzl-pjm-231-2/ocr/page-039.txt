@@ -1,0 +1,48 @@
+SUBFACTORS FROM BRAIDED C* TENSOR CATEGORIES 397
+
+We give a brief description of this category. Up to isomorphism, we have exactly
+1—1 simple objects in , which are denoted by [i], 1 <i </—1. The decomposition
+of tensor products is given by
+
+(6-1) 1@(I=0i-s/l+ USLi-j| +3] 8--- lm],
+
+where m is the minimum of i + j — 1 and 2/ — 1—i — j. One sees easily that
+[1] corresponds to the trivial object. It follows from the tensor product rules by
+induction on n that all simple objects in [2]®” are labeled by even numbers if is
+odd, and by odd numbers if n is even. Hence k = 2 and the simple objects of €’ are
+labeled by odd numbers. This explicitly describes the principal graph for N C At,
+constructed with X = [2], by Theorem 4.6.
+
+Observe that [i] ® [/ — 1] = [/ — i] for all 1 <i </. Hence the objects [1] and
+[7 — 1] together with the operation ® form a group G which is isomorphic to Z/2Z.
+Moreover, the S matrix is well-known to be of the form S = (sin(ijz//)), up to a
+scalar.
+
+It is very easy to check that if / is even, then sin(@i(/ — 1)z/1) = sin(iz/1) for
+any oddi = 1,3,...,/— 1. Hence the category J contains at least the objects [1]
+and [/— 1]. It contains no more simple objects as obviously sin(im/1) = sin(ij2/1)
+for | < j </ only if j =/—1. So the conditions at the beginning of Section 5B
+are satisfied with |G| = 2 =k. We have shown most of the following
+
+Proposition 6.1. Let N C A be the subfactor constructed from the s-sided inclusion
+from the Jones subfactor at an |-th root of unity, with | even. Then we have
+
+(a) The even vertices of the principal graph are labeled by all s-tuples of odd
+positive numbers less than | and the odd vertices are labeled by all odd pos-
+itive numbers less than 1. The number of edges between two vertices can be
+computed from the tensor product rule stated in (6-1).
+
+(b) Each s-tuple of positive integers less than | whose sum is even and which con-
+tains the number 1/2 at most once labels an even vertex of the dual principal
+graph; the number of edges emanating from such a vertex can be computed as
+in (a). The MM bimodules M; labeled by an s-tuple d containing the number
+1/2 exactly r > | times satisfies dim(End(M; )) = art
+
+Proof. Part (a) follows from Theorem 4.6 and our explicit description of the simple
+objects of ’. For part (b), we have already checked the conditions stated at the
+beginning of Section 5B. It remains to calculate Stabg: i for any 2. A®. Recall that
+the action of the nontrivial element of G on our labeling set is given by i +> 1 —i.
+Obviously, the only fixed point is //2 for / odd. It is now not hard to show that
+2 € A® has a nontrivial stabilizer in G* if and only if r > 2 of its components
+are equal to //2, and that in this case the stabilizer has exactly 2’~! elements.
+Statement (b) now follows from Theorem 5.9. Oo

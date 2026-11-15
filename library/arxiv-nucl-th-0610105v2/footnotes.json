@@ -1,0 +1,401 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-nucl-th-0610105v2",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "†",
+   "text": "Electronicaddress:lplatter@phy.ohiou.edu",
+   "marks": [
+    {
+     "page": 1,
+     "context": "L.Platter"
+    }
+   ],
+   "block": "library/arxiv-nucl-th-0610105v2/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "1",
+   "text": "ThecurvesforthetrimerbindingenergiesinFig.1actuallycorrespondtoplottingH1/4 sin ξversus H1/4 cos ξ. This eﬀectively reduces the discrete symmetry factor 22.7 down to 22.71/4 = 2.2, allowing a greater range of a−1 and K to be shown in the Figure.",
+   "marks": [
+    {
+     "page": 7,
+     "context": "4)"
+    },
+    {
+     "page": 7,
+     "context": "theheavylinesbelowthethreshold."
+    }
+   ],
+   "block": "library/arxiv-nucl-th-0610105v2/blocks/prose-sec-004"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p013-1",
+   "page": 13,
+   "mark": "444",
+   "text": "(1999) [arXiv:nucl-th/9811046]. [8] R.F. Mohr, R.J. Furnstahl, R.J. Perry, K.G. Wilson and H.-W. Hammer, Ann. Phys. 321,",
+   "block": "library/arxiv-nucl-th-0610105v2/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p013-2",
+   "page": 13,
+   "mark": "225",
+   "text": "(2006) [arXiv:nucl-th/0509076]. [9] I. R. Afnan and D. R. Phillips, Phys. Rev. C 69, 034010 (2004) [arXiv:nucl-th/0312021]. [10] L. Platter and D.R. Phillips, Few Body Syst. 40, 35 (2006) [arXiv:cond-mat/0604255]. [11] L. Platter, Phys. Rev. C 74, 037001 (2006) [arXiv:nucl-th/0606006]. [12] L. Platter, H.-W. Hammer, and Ulf-G. Meißner, Phys. Rev. A 70, 052101 (2004) [arXiv:cond-mat/0404313]. [13] G. P. Lepage, arXiv:nucl-th/9706029.",
+   "block": "library/arxiv-nucl-th-0610105v2/blocks/prose-sec-008"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "B"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "B2= ¯h"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "B2= ¯h2/(ma"
+  },
+  {
+   "page": 2,
+   "mark": "4",
+   "context": "recentcalculationsforthefour-bodysystemof"
+  },
+  {
+   "page": 3,
+   "mark": "4",
+   "context": "the"
+  },
+  {
+   "page": 3,
+   "mark": "4",
+   "context": "to a Feshbachresonance.The results of Ref. [12] for the"
+  },
+  {
+   "page": 3,
+   "mark": "4",
+   "context": "der.Theyarguedthatfour-body systemsof"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "⟨k′|V |k⟩= λ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "⟨k′|V |k⟩= λ2 + λ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "⟨k′|V |k⟩= λ2 + λ2,"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "⟨k′|V |k⟩= λ2 + λ2,2(k"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "exp[−(k"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "exp[−(k2+ k′2)/Λ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "selvestoleadingorderintheexpansioninl/|a|andincludeonly theλ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "includedtogetherwithλ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "system,nonewparameterentersatleadingorderinl/|a|andonlyλ"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "ystem,nonewparameterentersatleadingorderinl/|a|andonlyλ2andλ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "⟨p|V |q⟩= ⟨p|g⟩λ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "⟨p|g⟩≡g(p) = exp(−p"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "⟨p|g⟩≡g(p) = exp(−p2/Λ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "g(q)"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "dq q"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "1/λ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "mE −q"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "E= −B"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "E= −B2.Thusfora > 0,thetwo-bodycouplingconstantλ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "E= −B2.Thusfora > 0,thetwo-bodycouplingconstantλ2(B"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "V"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "V3= |ξ⟩λ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "−(u"
+  },
+  {
+   "page": 5,
+   "mark": "u",
+   "context": "1+ 3"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "1+ 3u"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "2/4)/Λ"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "⟨u"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "⟨u1, u"
+  },
+  {
+   "page": 5,
+   "mark": "4",
+   "context": "The dimensionlesscoupling constant Λ"
+  },
+  {
+   "page": 5,
+   "mark": "4",
+   "context": "valuesofthecutoﬀΛ,Λ"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "valuesofthecutoﬀΛ,Λ4λ"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "sin(s"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "sin(s0 ln(Λ/L"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "sin(s0 ln(Λ/L3) −arctan(1/s"
+  },
+  {
+   "page": 5,
+   "mark": "4",
+   "context": "Λ"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "where s"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "exp(nπ/s"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "exp(nπ/s0)≈(22.7)"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "exp(nπ/s0)≈(22.7)nwithnaninteger,thethree-bodycouplingλ"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": ")≈(22.7)nwithnaninteger,thethree-bodycouplingλ3isunchanged.L"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "3(1 + G"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "3(1 + G0"
+  },
+  {
+   "page": 6,
+   "mark": "12",
+   "context": "3(1 + G0t"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "3(1 + G0t12)G"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "3(1 + G0t12)G0V"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "InRef.[23],itwaspointedoutthatthecalculationof[12]forthe"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "issimplyarescalingoftheradialvariable:H→exp(nπ/s"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "order1/(ml"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "discrete scaling factor exp(nπ/s"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "discrete scaling factor exp(nπ/s0) ≈(22.7)"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "K/L"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "apply.With momenta of order 1/l(or energies of order 1/(ml"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "B"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(triangles)inunitsof1/(ma"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "discussedin[12]fortherangeofbindingenergiesrelevantto"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "≈200/(ma"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "te all the way down to the three-body threshold at B3= 1/(ma"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "B"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "(triangles)inunitsof1/(ma"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "linthosesystems.Withmomentaoforder1/l(orenergiesoforder1/(ml"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "shownthatourresultscanbeappliedtothe"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "energyfour-bodyobservablesuptocorrectionsoforder(l/|a|)"
+  }
+ ]
+}

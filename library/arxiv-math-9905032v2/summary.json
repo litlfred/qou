@@ -2,227 +2,127 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-9905032v2",
  "source_sha256": "ba933d4cb484964b",
- "brief": "ASYMPTOTICS OF PLANCHEREL MEASURES FOR SYMMETRIC GROUPS — We consider the asymptotics of the Plancherel mea- sures on partitions of n as n goes to inﬁnity.",
- "extended": "**ASYMPTOTICS OF PLANCHEREL MEASURES FOR SYMMETRIC GROUPS**\n\n*ALEXEI BORODIN, ANDREI OKOUNKOV, AND GRIGORI OLSHANSKI*\n\n43 pp, 43 sections.\n\n**Abstract.** We consider the asymptotics of the Plancherel mea- sures on partitions of n as n goes to inﬁnity. We prove that the local structure of a Plancherel typical partition in the mid dle of the limit shape converges to a determinantal point process w ith the discrete sine kernel. On the edges of the limit shape, we prove that the joint distri - bution of suitably scaled 1st, 2nd, and so on rows of a Planche rel typical diagram converges to the corresponding distributi on for eigenvalues of random Hermitian matrices (given by the Airy ker- nel). This proves a conjecture due to Baik, Deift, and Johans son by methods diﬀerent from the Riemann-Hilbert techniques us ed in their original papers [2, 3] and from the combinatorial proo f given in [23].\n\n**Outline.** 1 Introduction; 1.1 Plancherel measures. Given a ﬁnite group G; 2 A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI; 4 A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI; 1.2 Poissonization and correlation functions. ; 6 A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI; 1.3 Asymptotics in the bulk of the spectrum. G; 8 A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI; 1.4 Behavior near the edge of the spectrum and; 10 A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI; 1.5 Poissonization and depoissonization. We ob; 1.6 Organization of the paper. Section 2 conta; 1.7 Acknowledgements. In many diﬀerent ways, o; 2 Correlation functions of the measures M θ; 2.1 Proof of Theorem 1. As noted above, Theore; 12 A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI; 2 Introduce the following kernel L; 14 A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
+ "brief": "Asymptotics of Plancherel measures for symmetric groups — We consider the asymptotics of the Plancherel mea- sures on partitions of n as n goes to inﬁnity.",
+ "extended": "**Asymptotics of Plancherel measures for symmetric groups**\n\n*SYMMETRIC GROUPS*\n\n43 pp, 23 sections.\n\n**Abstract.** We consider the asymptotics of the Plancherel mea- sures on partitions of n as n goes to inﬁnity. We prove that the local structure of a Plancherel typical partition in the middle of the limit shape converges to a determinantal point process with the discrete sine kernel. On the edges of the limit shape, we prove that the joint distri- bution of suitably scaled 1st, 2nd, and so on rows of a Plancherel typical diagram converges to the corresponding distribution for eigenvalues of random Hermitian matrices (given by the Airy ker- nel). This proves a conjecture due to Baik, Deift, and Johansson by methods diﬀerent from the Riemann-Hilbert techniques used in their original papers [2, 3] and from the combinatorial proof given in [23].\n\n**Outline.** 1.1 Plancherel measures; 1 Introduction; 1.2 Poissonization and correlation functions; 1.3 Asymptotics in the bulk of the spectrum; 1.4 Behavior near the edge of the spectrum and; 1.5 Poissonization and depoissonization; 1.6 Organization of the paper; 1.7 Acknowledgements; 2 Correlation functions of the measures $M^\\th; 2.1 Proof of Theorem; 2.2 Proof of Theorem; 2.4 Commuting difference operator; 3 Correlation functions in the bulk of the spe; 3.1 Proof of Theorem; 4 Edge of the spectrum: convergence to the Air; 4.1 Results and strategy of proof; 4.2 Proof of Theorem; 4.3 Depoissonization and proof of Theorem",
  "tokens": {
   "brief": 38,
-  "extended": 428
+  "extended": 371
  },
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "title": "Introduction",
+   "id": "sec-000-11-plancherel-measures",
+   "title": "Plancherel measures",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-11-plancherel-measures-given-a-ﬁnite-group-g-by",
-   "title": "Plancherel measures. Given a ﬁnite group G, by the corre-",
-   "pages": "1-2"
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
   },
   {
-   "id": "sec-002-2-a-borodin-a-okounkov-and-g-olshanski",
-   "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
-   "pages": "2-4"
-  },
-  {
-   "id": "sec-003-4-a-borodin-a-okounkov-and-g-olshanski",
-   "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-004-12-poissonization-and-correlation-functions-for",
-   "title": "Poissonization and correlation functions. For θ > 0, con-",
+   "id": "sec-002-12-poissonization-and-correlation-functions",
+   "title": "Poissonization and correlation functions",
    "pages": "4-6"
   },
   {
-   "id": "sec-005-6-a-borodin-a-okounkov-and-g-olshanski",
-   "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-006-13-asymptotics-in-the-bulk-of-the-spectrum-given",
-   "title": "Asymptotics in the bulk of the spectrum. Given a sequence",
+   "id": "sec-003-13-asymptotics-in-the-bulk-of-the-spectrum",
+   "title": "Asymptotics in the bulk of the spectrum",
    "pages": "6-8"
   },
   {
-   "id": "sec-007-8-a-borodin-a-okounkov-and-g-olshanski",
-   "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-008-14-behavior-near-the-edge-of-the-spectrum-and-th",
-   "title": "Behavior near the edge of the spectrum and the Airy en-",
+   "id": "sec-004-14-behavior-near-the-edge-of-the-spectrum-and-th",
+   "title": "Behavior near the edge of the spectrum and the Airy ensemble",
    "pages": "8-10"
   },
   {
-   "id": "sec-009-10-a-borodin-a-okounkov-and-g-olshanski",
-   "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
-   "pages": "10-10"
-  },
-  {
-   "id": "sec-010-15-poissonization-and-depoissonization-we-obtain",
-   "title": "Poissonization and depoissonization. We obtain Theorems 3",
+   "id": "sec-005-15-poissonization-and-depoissonization",
+   "title": "Poissonization and depoissonization",
    "pages": "10-11"
   },
   {
-   "id": "sec-011-16-organization-of-the-paper-section-2-contains",
-   "title": "Organization of the paper. Section 2 contains the proof of",
+   "id": "sec-006-16-organization-of-the-paper",
+   "title": "Organization of the paper",
    "pages": "11-11"
   },
   {
-   "id": "sec-012-17-acknowledgements-in-many-diﬀerent-ways-our-wo",
-   "title": "Acknowledgements. In many diﬀerent ways, our work was in-",
+   "id": "sec-007-17-acknowledgements",
+   "title": "Acknowledgements",
    "pages": "11-11"
   },
   {
-   "id": "sec-013-2-correlation-functions-of-the-measures-m-θ",
-   "title": "Correlation functions of the measures M θ",
+   "id": "sec-008-2-correlation-functions-of-the-measures-mtheta",
+   "title": "Correlation functions of the measures $M^\\theta$",
    "pages": "11-11"
   },
   {
-   "id": "sec-014-21-proof-of-theorem-1-as-noted-above-theorem-1-i",
-   "title": "Proof of Theorem 1. As noted above, Theorem 1 is a limit",
-   "pages": "11-12"
+   "id": "sec-009-21-proof-of-theorem",
+   "title": "Proof of Theorem",
+   "pages": "11-15"
   },
   {
-   "id": "sec-015-12-a-borodin-a-okounkov-and-g-olshanski",
-   "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
-   "pages": "12-12"
+   "id": "sec-010-22-proof-of-theorem",
+   "title": "Proof of Theorem",
+   "pages": "15-17"
   },
   {
-   "id": "sec-016-2-introduce-the-following-kernel-l",
-   "title": "Introduce the following kernel L",
-   "pages": "12-14"
-  },
-  {
-   "id": "sec-017-14-a-borodin-a-okounkov-and-g-olshanski",
-   "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
-   "pages": "14-16"
-  },
-  {
-   "id": "sec-018-16-a-borodin-a-okounkov-and-g-olshanski",
-   "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
-   "pages": "16-16"
-  },
-  {
-   "id": "sec-019-23-various-formulas-for-the-kernel-j-recall-that",
-   "title": "Various formulas for the kernel J. Recall that since Jx is an",
-   "pages": "16-17"
-  },
-  {
-   "id": "sec-020-24-commuting-diﬀerence-operator-consider-the-diﬀ",
-   "title": "Commuting diﬀerence operator. Consider the diﬀerence op-",
+   "id": "sec-011-24-commuting-difference-operator",
+   "title": "Commuting difference operator",
    "pages": "17-18"
   },
   {
-   "id": "sec-021-18-a-borodin-a-okounkov-and-g-olshanski",
-   "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
-   "pages": "18-18"
-  },
-  {
-   "id": "sec-022-3-correlation-functions-in-the-bulk-of-the-spect",
+   "id": "sec-012-3-correlation-functions-in-the-bulk-of-the-spect",
    "title": "Correlation functions in the bulk of the spectrum",
    "pages": "18-18"
   },
   {
-   "id": "sec-023-31-proof-of-theorem-3-we-refer-the-reader-to-sec",
-   "title": "Proof of Theorem 3. We refer the reader to Section 1.3 of the",
-   "pages": "18-20"
+   "id": "sec-013-31-proof-of-theorem",
+   "title": "Proof of Theorem",
+   "pages": "18-24"
   },
   {
-   "id": "sec-024-20-a-borodin-a-okounkov-and-g-olshanski",
-   "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
-   "pages": "20-21"
-  },
-  {
-   "id": "sec-025-2-u-ω-u-h-u-π",
-   "title": "(u − Ω( u)) , H (u) = π",
-   "pages": "21-22"
-  },
-  {
-   "id": "sec-026-22-a-borodin-a-okounkov-and-g-olshanski",
-   "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
-   "pages": "22-23"
-  },
-  {
-   "id": "sec-027-2-from-39-it-is-obvious-that-θ-is-entire-therefo",
-   "title": "From (3.9) it is obvious that ̺θ is entire. Therefore, we can apply",
-   "pages": "23-24"
-  },
-  {
-   "id": "sec-028-24-a-borodin-a-okounkov-and-g-olshanski",
-   "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
+   "id": "sec-014-4-edge-of-the-spectrum-convergence-to-the-airy-e",
+   "title": "Edge of the spectrum: convergence to the Airy ensemble",
    "pages": "24-24"
   },
   {
-   "id": "sec-029-32-asymptotics-of-ρn-x-recall-that-the-correlati",
-   "title": "Asymptotics of ρ(n, X). Recall that the correlation functions",
-   "pages": "24-24"
-  },
-  {
-   "id": "sec-030-2-x-y",
-   "title": "(x + y)",
-   "pages": "24-24"
-  },
-  {
-   "id": "sec-031-4-edge-of-the-spectrum-convergence-to-the-airy",
-   "title": "Edge of the spectrum: convergence to the Airy",
-   "pages": "24-24"
-  },
-  {
-   "id": "sec-032-41-results-and-strategy-of-proof-in-this-section",
-   "title": "Results and strategy of proof. In this section we prove Theo-",
+   "id": "sec-015-41-results-and-strategy-of-proof",
+   "title": "Results and strategy of proof",
    "pages": "24-26"
   },
   {
-   "id": "sec-033-26-a-borodin-a-okounkov-and-g-olshanski",
-   "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
-   "pages": "26-26"
+   "id": "sec-016-42-proof-of-theorem",
+   "title": "Proof of Theorem",
+   "pages": "26-33"
   },
   {
-   "id": "sec-034-42-proof-of-theorem-5-suppose-we-have-a-point-pr",
-   "title": "Proof of Theorem 5. Suppose we have a point process on R",
-   "pages": "26-28"
+   "id": "sec-017-43-depoissonization-and-proof-of-theorem",
+   "title": "Depoissonization and proof of Theorem",
+   "pages": "33-35"
   },
   {
-   "id": "sec-035-28-a-borodin-a-okounkov-and-g-olshanski",
-   "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
-   "pages": "28-28"
+   "id": "sec-018-a-general-properties-of-determinantal-point-proc",
+   "title": "General properties of determinantal point processes",
+   "pages": "35-36"
   },
   {
-   "id": "sec-036-3-k-1",
-   "title": "K 1",
-   "pages": "28-28"
+   "id": "sec-019-a1-fredholm-determinants-and-determinantal-proce",
+   "title": "Fredholm determinants and determinantal processes",
+   "pages": "36-38"
   },
   {
-   "id": "sec-037-3-j2rxr",
-   "title": "J2r+xr",
-   "pages": "28-30"
+   "id": "sec-020-a2-correlation-functions-of-determinantal-proces",
+   "title": "Correlation functions of determinantal processes",
+   "pages": "38-39"
   },
   {
-   "id": "sec-038-30-a-borodin-a-okounkov-and-g-olshanski",
-   "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
-   "pages": "30-33"
+   "id": "sec-021-a3-complementation-principle",
+   "title": "Complementation principle",
+   "pages": "39-40"
   },
   {
-   "id": "sec-039-43-depoissonization-and-proof-of-theorem-4-fix-s",
-   "title": "Depoissonization and proof of Theorem 4. Fix some m =",
-   "pages": "33-36"
-  },
-  {
-   "id": "sec-040-0-a",
-   "title": "A+−",
-   "pages": "36-36"
-  },
-  {
-   "id": "sec-041-0-a",
-   "title": "A−−",
-   "pages": "36-41"
-  },
-  {
-   "id": "sec-042-references",
-   "title": "References",
-   "pages": "41-43"
+   "id": "sec-022-a4-convergence-of-trace-class-operators",
+   "title": "Convergence of trace class operators",
+   "pages": "40-43"
   }
  ],
  "provenance": {

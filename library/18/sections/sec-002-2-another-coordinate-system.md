@@ -1,6 +1,6 @@
 ---
 doc_id: 18
-doc_title: "Mathematical Research Letters 3, 51–60 (1996)"
+doc_title: "Combinatorial scalar curvature and rigidity of ball packings"
 section_id: sec-002-2-another-coordinate-system
 section_title: "Another coordinate system"
 section_number: 2
@@ -8,6 +8,7 @@ pages: 4-5
 source_pdf: 18.pdf
 source_sha256: 0b7bf055085cb04b
 toc_source: inferred
+doc_brief: "Combinatorial scalar curvature and rigidity of ball packings — 11 sections: Front matter; Introduction; Conformal simplices"
 ---
 While the radii ri are a natural set of coordinates for the space of confor-
 mal simplices, it turns out that, in many ways, the curvatures of the spheres
@@ -51,4 +52,3 @@ when i̸ = j. In particular, Hij is positive for i̸ = j, by the proof of Lemma
 complete the proof of Lemma 2.2.
 □
 COMBINATORIAL SCALAR CURVATURE
-55

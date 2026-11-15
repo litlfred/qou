@@ -10,7 +10,8 @@ source_sha256: b7ed2a9e85264568
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.92
-latex_coverage_ratio: 0.973
+latex_coverage_ratio: 0.969
+doc_brief: "MOD-φ CONVERGENCE, I: NORMALITY ZONES AND PRECISE DEVIATIONS — In this paper, we use the framework of mod-φ convergence to prove pre- cise large or moderate deviations for quite general sequences of"
 ---
 The previous paragraph has described in the lattice case the fluctuations of $(X_n)_{n \in \N}$ in the regime $O(t_n)$, with a result akin to large deviations. In this section, we establish in the same setting an extended central limit theorem, for fluctuations of order up to $o(t_n)$. In particular, for fluctuations of order $o((t_n)^{2/3})$, we obtain the usual central limit theorem. Hence, we describe the panorama of fluctuations drawn on Figure \ref{fig:panoramalattice}.
 

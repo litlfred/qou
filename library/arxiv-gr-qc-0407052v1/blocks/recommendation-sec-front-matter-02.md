@@ -1,0 +1,1 @@
+5 It is easy to prove that all the complex zeroes (i.e. poles of P(s)) with nonva- nishing imaginary part must have smaller real part than ˜γM so in comparison to the leading behaviour (22) they give exponentially small (and rapidly os- cillating) contribution to N(a).

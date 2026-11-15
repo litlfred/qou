@@ -1,0 +1,57 @@
+33 Page 2 of 47 S. Jansen, L. Kolesnikov
+
+presented a rigorous mathematical formalism in order to provide convergent cluster expan-
+sions for this model. Instead of the logarithm of the partition function, they considered the
+correlation functions of the system and derived convergent activity expansions by using a
+system of integral equations, the so-called Kirkwood-Salsburg equations, and solving the
+corresponding fixed point equation on a suitable Banach space. However, in the following
+years less analytical appoaches were favoured by researchers: Combinatorial proofs such
+as in [3], relying on tree-graph identities [23], and inductive proofs following the idea by
+Kotecky and Preiss [18] and its development in [4] by Dobrushin. The inductive method was
+presented in the more general setup of abstract polymers (where the underlying space is not
+necessarily a lattice, nor are the polymers necessarily given by geometric objects). Notice
+that abstract polymer models are universal in the sense that a large class of classical models
+can be represented as polymer models due to the combinatorial structure of the correspond-
+ing partition functions (see, e.g., [11] for an application to the Ising model). Moreover, an
+interesting connection with probability theory was pointed out by Scott and Sokal in [29]:
+Convergence of cluster expansions in abstract polymer models is related to the Lovasz Local
+Lemma—better sufficient conditions can provide refinements of the latter (see, e.g., [2]).
+
+In 2008, Fernandez and Procacci proved a new sufficient criterion in the setup of abstract
+polymers improving on the result by Kotecky and Preiss. The initial proof [8] relies on
+combinatorial arguments, an alternative proof via an induction a la Dobrushin [10] appeared
+recently (finally, in this paper we provide an analytical proof in the spirit of Gruber—Kunz).
+
+Overall, in the last two decades, a notable effort was made to generalize classical suf-
+ficient conditions in the abstract polymer setup (including the condition by Fernandez and
+Procacci) to hold in continuous spaces and for systems with soft-core (or even more general)
+interactions, see [5, 14, 22, 24, 32].
+
+We want to go further by employing a Kirkwood-Salsburg approach in the rather general
+setup of Gibbs point processes (or, in terms of statistical mechanics, grand-canonical Gibbs
+measures) defined via pairwise interactions. It is well-known that—under mild additional
+moment conditions, which are automatically satisfied for non-negative pair potentials—there
+is a one-to-one correspondence between the set of those Gibbs measures and the associated
+families of correlation functions (also known as factorial moment densities). In the special
+case of a discrete space and hard-core interactions, the value of the n-point correlation function
+is given simply by the probability to see n particles at the prescribed positions in the random
+configuration of particles. The correlation functions can be expanded as power series in the
+activity parameter z, i.e., in the intensity of the underlying Poisson process. We denote the
+Taylor expansion for the n-point correlation function in z around zero by p, and write p
+for the family of those expansions. In general, the series p need not to be convergent at all;
+we are, however, interested in conditions which ensure pointwise convergence (towards the
+correlation functions). Furthermore, we want to consider the more general case where the
+underlying Poisson point process is inhomogeneous, i.e., where a different intensity value
+may be assigned to every point in the space, the activity z is a function and the expansions
+p are multivariate power series in z. For a rigorous introduction of Gibbs point processes
+and corresponding correlation functions, see [14], but notice that here we do not assume the
+interaction potential to be non-negative (unless explicitly stated).
+
+The starting point of the paper and the central quantity to investigate are the activity
+expansions p which we consider independently of their interpretation in term of the cor-
+relation functions. Let us outline the main ideas present in the paper. The coefficients of
+the multivariate power series p are defined in terms of a certain family of rooted graphs
+to which we refer as multi-rooted graphs (see [14, 30]). Using the terminology from [6],
+the activity expansions p are given by the exponential generating functions of the coloured
+
+D Springer

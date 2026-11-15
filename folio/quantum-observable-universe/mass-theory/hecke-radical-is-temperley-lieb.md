@@ -60,7 +60,7 @@ finite-precision evaluation can establish. The Specht dimensions are cross-check
 by two independent routes (ballot and hook-length), and the table above is
 reproduced rather than cited.
 
-**What is now proved in Lean, at general $n$ and sorry-free.** Four statements,
+**What is now proved in Lean, at general $n$.** Four statements,
 none of which is the isomorphism:
 
 - $\sum_\lambda \dim_\lambda\, y_\lambda = 1$ --- the normalisation

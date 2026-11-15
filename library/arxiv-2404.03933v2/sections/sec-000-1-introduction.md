@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2404.03933v2
-doc_title: "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2) AT EVEN ROOTS OF UNITY"
+doc_title: "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2)"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-4
 source_pdf: 2404.03933v2.pdf
 source_sha256: 48aff6e97e1f1267
-doc_brief: "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2) AT EVEN ROOTS OF UNITY — We study the decomposition of tensor powers of two dimensional irreducible rep- resentations of quantum sl2 at even roots of"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.964
+latex_coverage_ratio: 0.958
+doc_brief: "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2) — We study the decomposition of tensor powers of two dimensional irreducible rep- resentations of quantum sl2 at even roots of unity into direct sums"
 ---
 ## 
 

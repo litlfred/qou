@@ -31,10 +31,11 @@
     "library/arxiv-math-ph-0012035v3/sections/sec-016",
     "library/arxiv-math-ph-0012035v3/sections/sec-017",
     "library/arxiv-math-ph-0012035v3/sections/sec-018",
-    "library/arxiv-math-ph-0012035v3/sections/sec-019"
+    "library/arxiv-math-ph-0012035v3/sections/sec-019",
+    "library/arxiv-math-ph-0012035v3/sections/sec-020"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",
@@ -55,8 +56,8 @@
       "stamp_date": "16 Jan 2002"
     },
     "doi": null,
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

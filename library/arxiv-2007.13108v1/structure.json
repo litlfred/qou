@@ -7,10 +7,11 @@
   "bytes": 208743,
   "pages": 17,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,18 +22,28 @@
   },
   "doi": null,
   "title": "Log concavity and concentration of Lipschitz functions on the Boolean hypercube",
-  "authors_raw": "Ronen Eldan\u2217 and Omer Shamir \u2020",
+  "authors_raw": "Ronen Eldan∗and Omer Shamir†",
   "title_lines": [
    "Log concavity and concentration of Lipschitz",
    "functions on the Boolean hypercube"
   ],
-  "abstract": "It is well-known that measures whose density is the form e\u2212V where V is a uniformly convex potential on Rn attain strong concentration properties. In search of a noti on of log-concavity on the discrete hypercube, we consider measu res on {\u22121, 1}n whose multi- linear extension f satis\ufb01es log \u22072f (x) \u227c \u03b2 In, for \u03b2 \u2265 0, which we refer to as \u03b2 -semi-log- concave. We prove that these measures satisfy a nontrivial c oncentration bound, namely, any Hamming Lipchitz test function \u03d5 satis\ufb01es Var\u03bd[\u03d5 ] \u2264 n2\u2212C\u03b2 for C\u03b2 > 0. As a corol- lary, we prove a concentration bound for measures which exhi bit the so-called Rayleigh property. Namely, we show that for measures such that under a ny external \ufb01eld (or ex- ponential tilt), the correlation between any two coordinat es is non-positive, Hamming- Lipschitz functions admit nontrivial concentration.",
+  "abstract": "It is well-known that measures whose density is the form e−V where V is a uniformly convex potential on Rn attain strong concentration properties. In search of a notion of log-concavity on the discrete hypercube, we consider measures on {−1, 1}n whose multi- linear extension f satisﬁes log ∇2f(x) ⪯βIn, for β ≥0, which we refer to as β-semi-log- concave. We prove that these measures satisfy a nontrivial concentration bound, namely, any Hamming Lipchitz test function ϕ satisﬁes Varν[ϕ] ≤n2−Cβ for Cβ > 0. As a corol- lary, we prove a concentration bound for measures which exhibit the so-called Rayleigh property. Namely, we show that for measures such that under any external ﬁeld (or ex- ponential tilt), the correlation between any two coordinates is non-positive, Hamming- Lipschitz functions admit nontrivial concentration.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20200727210949-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20200727210949-04'00'"
+  },
+  "title_raw": "Log concavity and concentration of Lipschitz functions on the Boolean hypercube",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Log concavity and concentration of Lipschitz functions on the Boolean hypercube",
+   "outline": "1 Introduction",
+   "text": "Log concavity and concentration of Lipschitz functions on the Boolean hypercube",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -41,88 +52,293 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "A lower bound on the entropy",
    "page": 3,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "An application: Concentration of negatively dependent random variables",
    "page": 3,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Relation to the works of Anari, Liu, Oveis-Gharan and Vinzant",
    "page": 5,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Preliminaries and a stochastic construction",
    "page": 6,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Some preliminary definitions",
    "page": 6,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Stochastic localization",
    "page": 7,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Proof of Theorem 2",
    "page": 9,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Estimating the variance in terms of the transportation distance between tilts",
    "page": 9,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Proof of Proposition 13: The stochastic coupling",
    "page": 11,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "Proof of Fact 3",
    "page": 14,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "Proof of Theorem 5",
    "page": 15,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1006,
+   "n_words": 155,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -130,8 +346,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 4569,
-   "n_words": 866
+   "n_chars": 4497,
+   "n_words": 795,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-001-11-a-lower-bound-on-the-entropy",
@@ -140,8 +358,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 969,
-   "n_words": 183
+   "n_chars": 985,
+   "n_words": 176,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
    "id": "sec-002-12-an-application-concentration-of-negatively-de",
@@ -150,8 +370,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 5,
-   "n_chars": 4272,
-   "n_words": 808
+   "n_chars": 4260,
+   "n_words": 739,
+   "label_start": "3",
+   "label_end": "5"
   },
   {
    "id": "sec-003-13-relation-to-the-works-of-anari-liu-oveis-ghar",
@@ -160,8 +382,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 3304,
-   "n_words": 593
+   "n_chars": 3332,
+   "n_words": 570,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
    "id": "sec-004-2-preliminaries-and-a-stochastic-construction",
@@ -169,82 +393,116 @@
    "title": "Preliminaries and a stochastic construction",
    "level": 1,
    "page_start": 6,
-   "page_end": 7,
-   "n_chars": 582,
-   "n_words": 111
+   "page_end": 6,
+   "n_chars": 145,
+   "n_words": 25,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
-   "id": "sec-005-22-stochastic-localization",
+   "id": "sec-005-21-some-preliminary-definitions",
+   "number": "2.1",
+   "title": "Some preliminary definitions",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 464,
+   "n_words": 79,
+   "label_start": "6",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-006-22-stochastic-localization",
    "number": "2.2",
    "title": "Stochastic localization",
    "level": 2,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 3438,
-   "n_words": 712
+   "n_chars": 3390,
+   "n_words": 644,
+   "label_start": "7",
+   "label_end": "9"
   },
   {
-   "id": "sec-006-3-proof-of-theorem-2",
+   "id": "sec-007-3-proof-of-theorem-2",
    "number": "3",
    "title": "Proof of Theorem 2",
    "level": 1,
    "page_start": 9,
    "page_end": 9,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 18,
+   "n_words": 4,
+   "label_start": "9",
+   "label_end": "9"
   },
   {
-   "id": "sec-007-31-estimating-the-variance-in-terms-of-the-trans",
+   "id": "sec-008-31-estimating-the-variance-in-terms-of-the-trans",
    "number": "3.1",
    "title": "Estimating the variance in terms of the transportation distance between tilts",
    "level": 2,
    "page_start": 9,
    "page_end": 11,
-   "n_chars": 3725,
-   "n_words": 812
+   "n_chars": 3602,
+   "n_words": 698,
+   "label_start": "9",
+   "label_end": "11"
   },
   {
-   "id": "sec-008-32-proof-of-proposition-13-the-stochastic-coupli",
+   "id": "sec-009-32-proof-of-proposition-13-the-stochastic-coupli",
    "number": "3.2",
    "title": "Proof of Proposition 13: The stochastic coupling",
    "level": 2,
    "page_start": 11,
    "page_end": 14,
-   "n_chars": 4863,
-   "n_words": 1117
+   "n_chars": 4706,
+   "n_words": 951,
+   "label_start": "11",
+   "label_end": "14"
   },
   {
-   "id": "sec-009-4-proof-of-fact-3",
+   "id": "sec-010-4-proof-of-fact-3",
    "number": "4",
    "title": "Proof of Fact 3",
    "level": 1,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 756,
-   "n_words": 157
+   "n_chars": 747,
+   "n_words": 143,
+   "label_start": "14",
+   "label_end": "15"
   },
   {
-   "id": "sec-010-5-proof-of-theorem-5",
+   "id": "sec-011-5-proof-of-theorem-5",
    "number": "5",
    "title": "Proof of Theorem 5",
    "level": 1,
    "page_start": 15,
    "page_end": 17,
-   "n_chars": 4072,
-   "n_words": 693
+   "n_chars": 4028,
+   "n_words": 640,
+   "label_start": "15",
+   "label_end": "17"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 12,
-  "sections": 11,
-  "chars_total": 30550,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 13,
+  "chars_total": 31180,
+  "furniture_lines_stripped": 17,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "EldanShamir20-arxiv.tex",
    "tex_sections": 13,
-   "overlaid": 6,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -252,10 +510,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.989,
-     "coverage_ratio": 0.936,
+     "coverage_ratio": 0.943,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -263,7 +526,7 @@
      "id": "sec-001-11-a-lower-bound-on-the-entropy",
      "title": "A lower bound on the entropy",
      "prose_ratio": 0.964,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -287,12 +550,20 @@
      "id": "sec-004-2-preliminaries-and-a-stochastic-construction",
      "title": "Preliminaries and a stochastic construction",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.727,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-005-22-stochastic-localization",
+     "id": "sec-005-21-some-preliminary-definitions",
+     "title": "Some preliminary definitions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.88,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-22-stochastic-localization",
      "title": "Stochastic localization",
      "prose_ratio": 0.944,
      "coverage_ratio": 0.976,
@@ -300,28 +571,28 @@
      "converter": "latex"
     },
     {
-     "id": "sec-006-3-proof-of-theorem-2",
+     "id": "sec-007-3-proof-of-theorem-2",
      "title": "Proof of Theorem 2",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-007-31-estimating-the-variance-in-terms-of-the-trans",
+     "id": "sec-008-31-estimating-the-variance-in-terms-of-the-trans",
      "title": "Estimating the variance in terms of the transportation distance between tilts",
      "prose_ratio": 0.488,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-008-32-proof-of-proposition-13-the-stochastic-coupli",
+     "id": "sec-009-32-proof-of-proposition-13-the-stochastic-coupli",
      "title": "Proof of Proposition 13: The stochastic coupling",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-009-4-proof-of-fact-3",
+     "id": "sec-010-4-proof-of-fact-3",
      "title": "Proof of Fact 3",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-010-5-proof-of-theorem-5",
+     "id": "sec-011-5-proof-of-theorem-5",
      "title": "Proof of Theorem 5",
      "result": "no matching \\section"
     }

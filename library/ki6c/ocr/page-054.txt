@@ -1,0 +1,49 @@
+Proof. By Lemma 5.4, it is sufficient to show that the Hesse matrix of f is positive definite
+at any (X,Y, Z) € R®. Similarly as in the proof of Lemma 4.5, we have that
+
+of 2 1 af
+
+—*_ = QI - = 2rI
+
+ax? mim (7 1 z) OX OY a
+
+Of 2 1 1 Of
+
+— = 2rI - - ; = -271
+
+mz = arin ( I-y poe +7—7) OY oz wm yTe
+
+os = anim (> +529):
+
+where a = e2*™V-MHXVAD) oy = @2"V-1(5t¥V—)) and z = eV (“+2ZV-D)_ Hence, the Hesse
+
+matrix is presented by
+
+ay +b, —b; 0
+Qn} —b) agtbj+b, —be |},
+0 —by a3 + bg
+where we put
+2 —2 2 -1
+a =Im7—, @ = In: a3 = Im>—_, d= Ima: bo = Ima
+
+noting that these numbers are positive since (t,s,u) € A’. Since the above matrix is
+equivalent as a quadratic form to the following matrix,
+
+ay + by 0 0
+b 3b:
+20 0 ag + SA + ah 0 ;
+0 0 a3 + be
+the Hesse matrix of f is positive definite, as required. Oo
+
+The following lemma is used in the proof of Lemma 5.3.
+Lemma 5.4. For each (t,s,u) € A’, f(X,Y,Z) 3 0 as X°74+-Y? 4+ 22>.
+
+Proof. From the definition of f, we have that
+
+2rV—-1
+— 2Liy (e2tVTst¥ VD) + Liy (erv-t (s-u)+2m(Z—Y)) 42 Lig(e"¥T-zv))
+
+F(X,Y,Z) = Re 1 (2 Lin(e2"V LXVD) _ Lig (e2?¥1 (its) H20(Y-X))
+
+1 1 1
+- Qn (t - 5x + Qn(s - s)Y - Qn(u - 54 <>.

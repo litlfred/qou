@@ -1,0 +1,2456 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2605.22763v1",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "1",
+   "text": "†Equal contributions.The first three authors are in random order.Correspondence to pushmeet@google. com and swarat@google.com. © 2026 Google DeepMind. All rights reserved",
+   "marks": [
+    {
+     "page": 1,
+     "context": "George Tsoukalas"
+    },
+    {
+     "page": 1,
+     "context": "George Tsoukalas1†, Anton Kovsharov"
+    },
+    {
+     "page": 1,
+     "context": "George Tsoukalas1†, Anton Kovsharov1†, Sergey Shirobokov"
+    },
+    {
+     "page": 1,
+     "context": "kalas1†, Anton Kovsharov1†, Sergey Shirobokov1†, Anja Surina"
+    },
+    {
+     "page": 1,
+     "context": "harov1†, Sergey Shirobokov1†, Anja Surina1, Moritz Firsching"
+    },
+    {
+     "page": 1,
+     "context": "Bérczi2, Francisco J. R. Ruiz"
+    },
+    {
+     "page": 1,
+     "context": "Bérczi2, Francisco J. R. Ruiz1, Arun Suggala"
+    },
+    {
+     "page": 1,
+     "context": "zi2, Francisco J. R. Ruiz1, Arun Suggala1, Adam Zsolt Wagner"
+    },
+    {
+     "page": 1,
+     "context": " J. R. Ruiz1, Arun Suggala1, Adam Zsolt Wagner1, Eric Wieser"
+    },
+    {
+     "page": 1,
+     "context": "iz1, Arun Suggala1, Adam Zsolt Wagner1, Eric Wieser1, Lei Yu"
+    },
+    {
+     "page": 1,
+     "context": "ggala1, Adam Zsolt Wagner1, Eric Wieser1, Lei Yu1, Aja Huang"
+    },
+    {
+     "page": 1,
+     "context": "Z. Horváth"
+    },
+    {
+     "page": 1,
+     "context": "Z. Horváth1, Andrew Ferrauiolo"
+    },
+    {
+     "page": 1,
+     "context": "Z. Horváth1, Andrew Ferrauiolo1, Henryk Michalewski"
+    },
+    {
+     "page": 1,
+     "context": "rrauiolo1, Henryk Michalewski1, Codrut Grosu3, Thomas Hubert"
+    },
+    {
+     "page": 1,
+     "context": "ryk Michalewski1, Codrut Grosu3, Thomas Hubert1, Matej Balog"
+    },
+    {
+     "page": 1,
+     "context": "Pushmeet Kohli"
+    },
+    {
+     "page": 1,
+     "context": "Pushmeet Kohli1and Swarat Chaudhuri"
+    },
+    {
+     "page": 1,
+     "context": "1Google DeepMind"
+    }
+   ],
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p044-1",
+   "page": 44,
+   "mark": "2",
+   "text": "𝑛",
+   "marks": [
+    {
+     "page": 44,
+     "context": "𝑘"
+    },
+    {
+     "page": 44,
+     "context": "𝑛"
+    },
+    {
+     "page": 44,
+     "context": "where𝑃(𝑛)= 𝑛5+ 𝑛4+ 3𝑛3+ 13𝑛"
+    },
+    {
+     "page": 44,
+     "context": "𝐴(𝑥)= −4683𝑥5+ 13586𝑥4−19540𝑥3+ 15356𝑥"
+    }
+   ],
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-023"
+  },
+  {
+   "id": "fn-p045-1",
+   "page": 45,
+   "mark": "2",
+   "text": "𝑘",
+   "marks": [
+    {
+     "page": 45,
+     "context": "𝑛"
+    },
+    {
+     "page": 45,
+     "context": "𝑛=0𝑎𝑛𝑥𝑛=1 + 48𝑥+ 161856𝑥"
+    }
+   ],
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-023"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p024-1",
+   "page": 24,
+   "mark": "*",
+   "text": "Briefly summarize the approach taken in each sketch. **2. Comparative Analysis**",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p024-2",
+   "page": 24,
+   "mark": "*",
+   "text": "**Scalability:** [...]?",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p024-3",
+   "page": 24,
+   "mark": "*",
+   "text": "**Decomposition Quality:** [...]",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p024-4",
+   "page": 24,
+   "mark": "*",
+   "text": "**Logical Soundness:** [...]",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p024-5",
+   "page": 24,
+   "mark": "*",
+   "text": "**Strategic Approach:** [...]",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p024-6",
+   "page": 24,
+   "mark": "*",
+   "text": "**Progress & Feasibility:** [...] **3. Final Judgment**",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p024-7",
+   "page": 24,
+   "mark": "*",
+   "text": "**Ranking:** Provide a ranking of the sketches from best to worst, using ’>’ for ’better than’ and ’=’ for ’equal in quality’.",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p024-8",
+   "page": 24,
+   "mark": "*",
+   "text": "**Rationale:** Provide a concluding paragraph that crisply summarizes the primary reasons for your ranking, focusing on the most significant differences in quality based on the judging criteria. Provide a complete rank the sketches from best to worst using ’>’ for ’better than’ and ’=’ for ’equal in quality’. Your output must contain the final ranking in the format ’<decision>2 > 1 = 3</decision>’, containing a ranking of all players presented.",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p025-1",
+   "page": 25,
+   "mark": "**",
+   "text": "No Imports:** The execution environment imports ‘Mathlib‘ by default. Do **not** add any ‘import‘ statements in your proof. # Current proof This is the proof to be modified in your session. {code} Make sure that you only propose changes inside sections enclosed by ‘-- EVOLVE-BLOCK-START‘ and ‘-- EVOLVE-BLOCK-END‘, or ‘-- EVOLVE-VALUE-START‘ and ‘-- EVOLVE-VALUE-END‘ comments.",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p028-1",
+   "page": 28,
+   "mark": "0",
+   "text": "2",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p028-2",
+   "page": 28,
+   "mark": "0",
+   "text": "2",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p028-3",
+   "page": 28,
+   "mark": "0",
+   "text": "2",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p028-4",
+   "page": 28,
+   "mark": "0",
+   "text": "0",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p028-5",
+   "page": 28,
+   "mark": "0",
+   "text": "0",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p028-6",
+   "page": 28,
+   "mark": "0",
+   "text": "0",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p028-7",
+   "page": 28,
+   "mark": "5",
+   "text": "0",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p028-8",
+   "page": 28,
+   "mark": "7",
+   "text": "5",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p028-9",
+   "page": 28,
+   "mark": "10",
+   "text": "0",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p028-10",
+   "page": 28,
+   "mark": "12",
+   "text": "5",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p028-11",
+   "page": 28,
+   "mark": "15",
+   "text": "0",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p028-12",
+   "page": 28,
+   "mark": "17",
+   "text": "5",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p028-13",
+   "page": 28,
+   "mark": "20",
+   "text": "0",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p028-14",
+   "page": 28,
+   "mark": "22",
+   "text": "5",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p044-2",
+   "page": 44,
+   "mark": "2",
+   "text": "𝑛+1",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-023"
+  },
+  {
+   "id": "fn-p044-3",
+   "page": 44,
+   "mark": "2",
+   "text": "𝑛+1",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-023"
+  },
+  {
+   "id": "fn-p044-4",
+   "page": 44,
+   "mark": "2",
+   "text": "𝑛",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-023"
+  },
+  {
+   "id": "fn-p044-5",
+   "page": 44,
+   "mark": "2",
+   "text": "𝑛+1",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-023"
+  },
+  {
+   "id": "fn-p044-6",
+   "page": 44,
+   "mark": "2",
+   "text": "𝑛+1",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-023"
+  },
+  {
+   "id": "fn-p045-2",
+   "page": 45,
+   "mark": "2",
+   "text": "𝑘",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-023"
+  },
+  {
+   "id": "fn-p045-3",
+   "page": 45,
+   "mark": "2",
+   "text": "𝑘",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-023"
+  },
+  {
+   "id": "fn-p045-4",
+   "page": 45,
+   "mark": "2",
+   "text": "𝑘",
+   "block": "library/arxiv-2605.22763v1/blocks/prose-sec-023"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "†",
+   "context": "George Tsoukalas1"
+  },
+  {
+   "page": 1,
+   "mark": "†",
+   "context": "George Tsoukalas1†, Anton Kovsharov1"
+  },
+  {
+   "page": 1,
+   "mark": "†",
+   "context": "George Tsoukalas1†, Anton Kovsharov1†, Sergey Shirobokov1"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "Bérczi"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "váth1, Andrew Ferrauiolo1, Henryk Michalewski1, Codrut Grosu"
+  },
+  {
+   "page": 1,
+   "mark": "†",
+   "context": "Pushmeet Kohli1and Swarat Chaudhuri1"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "1Google DeepMind1,"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "1Google DeepMind1,2Aarhus University,"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "with|𝐴∩[1, 𝑁]|≫𝑁"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "exists a decomposition𝐴=𝐴"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "exists a decomposition𝐴=𝐴1 ⊔𝐴"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "exists a decomposition𝐴=𝐴1 ⊔𝐴2s.t.𝐴"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "𝐴"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "𝐴1, 𝐴"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "𝐴1, 𝐴2 +𝐴"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "𝐴"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "𝐴1 +𝐴"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "𝐴1 +𝐴1,𝐴"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "𝐴1 +𝐴1,𝐴2 +𝐴"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "all𝐴"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "all𝐴1, 𝐴"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "all𝐴1, 𝐴2such that𝐴=𝐴"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "all𝐴1, 𝐴2such that𝐴=𝐴1 ⊔𝐴"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "{𝑖,𝑗}↦→(𝑥𝑖+𝑥𝑗, 𝑥"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "𝑖+𝑥𝑖𝑥𝑗+𝑥"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "26∗,"
+  },
+  {
+   "page": 21,
+   "mark": "10",
+   "context": "Elo𝑠= 1200 + 400 log"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "𝑁"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "•𝑌𝑖= 3(𝑖+20)"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "𝑘= (𝑖+ 20)"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "Observethat𝑃𝑖+1≤11𝑉𝑖+1𝑌𝑖+1≤11·2(𝑖+4)"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "Observethat𝑃𝑖+1≤11𝑉𝑖+1𝑌𝑖+1≤11·2(𝑖+4)2·3(𝑖+21)"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "Thisisasymptoticallystrictlysmallerthan4𝑘=4(𝑖+20)"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "inequality 11 · 2(𝑖+4)"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "inequality 11 · 2(𝑖+4)2· 3(𝑖+21)"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "inequality 11 · 2(𝑖+4)2· 3(𝑖+21)3≤4(𝑖+20)"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "𝑁"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "|𝐴∩{1, . . . , 𝑁}|≥𝑁"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "|𝐴∩{1, . . . , 𝑁}|<𝑁"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "𝑖=0𝑃𝑖.As before, we have 𝐿𝑘≤4(𝑘+2)"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "Choose an integer 𝑚≥2 satisfying 𝑚>(2𝑚+1)"
+  },
+  {
+   "page": 32,
+   "mark": "4",
+   "context": " satisfying 𝑚>(2𝑚+1)1−𝑐/2and define the dimension 𝑉𝑘= (𝑘+10)"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "ns.Consider the grid of vectors {1, . . . , 𝑚}𝑉𝑘−1.Let 𝑣= (𝑣"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2takes integer values in the range[𝑉𝑘−1, (𝑉𝑘−1)𝑚"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2=𝐾}|≥𝑚𝑉𝑘−1/(𝑉𝑘𝑚"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "𝑣"
+  },
+  {
+   "page": 32,
+   "mark": "4",
+   "context": "Because the dimension 𝑉𝑘+1= (𝑘+ 11)"
+  },
+  {
+   "page": 32,
+   "mark": "4",
+   "context": "nsion 𝑉𝑘+1= (𝑘+ 11)4is significantly larger than 𝑉𝑘= (𝑘+ 10)"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "Wenowshowthat|𝐴∩{1, . . . , 𝑁}|≥𝑁"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "|𝐴𝑘|≥(max(𝐴𝑘+1))"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "satisfy𝑚>(2𝑚+ 1)"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "(2𝑚+ 1)"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "𝑉𝑘𝑚"
+  },
+  {
+   "page": 33,
+   "mark": "4",
+   "context": "the left hand side, the exponent is(1 −𝑐/2)(𝑉𝑘−1)= (1 −𝑐/2)𝑘"
+  },
+  {
+   "page": 33,
+   "mark": "3",
+   "context": "ft hand side, the exponent is(1 −𝑐/2)(𝑉𝑘−1)= (1 −𝑐/2)𝑘4+ 𝑂(𝑘"
+  },
+  {
+   "page": 33,
+   "mark": "4",
+   "context": "ght hand side, the exponent is(1 −𝑐)(𝑉𝑘+1 −1)= (1 −𝑐)(𝑘+ 11)"
+  },
+  {
+   "page": 33,
+   "mark": "4",
+   "context": "ide, the exponent is(1 −𝑐)(𝑉𝑘+1 −1)= (1 −𝑐)(𝑘+ 11)4= (1 −𝑐)𝑘"
+  },
+  {
+   "page": 33,
+   "mark": "3",
+   "context": "𝑂(𝑘"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "The contribution of the running product𝐿𝑘+1≤4(𝑘+3)"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "hand side is only 𝑂(𝑘"
+  },
+  {
+   "page": 33,
+   "mark": "3",
+   "context": "nd side is only 𝑂(𝑘2), which is safely absorbed into the 𝑂(𝑘"
+  },
+  {
+   "page": 33,
+   "mark": "4",
+   "context": "the𝑘"
+  },
+  {
+   "page": 33,
+   "mark": "4",
+   "context": "t on the left hand side(1 −𝑐/2)is strictly greater than the𝑘"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "𝑎∈𝐴"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "density of𝐴+ 𝐵up to a large scale, we define a threshold𝑀· 𝑁"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "𝑥<𝑀· 𝑁"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "Furthermore, because𝑥<3𝑘𝑁"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "Furthermore, because𝑥<3𝑘𝑁0, we must have𝑦<𝑁"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "e𝑥<3𝑘𝑁0, we must have𝑦<𝑁0, which in turn dictates that𝑏𝑡𝑜𝑝≤𝑁"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "value 𝐶, defined as 𝐶= |4𝑚−3𝑘|𝑁"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "This shows that any valid sum𝑥<𝑀· 𝑁"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "𝑦∈(𝐴+ 𝐵) ∩[0, 𝑁"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "𝐴+ 𝐵strictly less than𝑀· 𝑁"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "e number of choices for𝑐.Dividing by the interval length𝑀· 𝑁"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "the density at this new scale:the density up to𝑀· 𝑁"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "to𝑁"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "we can find a larger scale𝑁"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "we can find a larger scale𝑁1= 𝑀"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "we can find a larger scale𝑁1= 𝑀1𝑁"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "𝐴=𝐴"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "𝐴=𝐴1 ⊔𝐴"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "𝐴=𝐴1 ⊔𝐴2such that𝐴"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "𝐴=𝐴1 ⊔𝐴2such that𝐴1 +𝐴"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "𝐴=𝐴1 ⊔𝐴2such that𝐴1 +𝐴1and𝐴"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "𝐴=𝐴1 ⊔𝐴2such that𝐴1 +𝐴1and𝐴2 +𝐴"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "growing sequence𝑀"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "growing sequence𝑀0<𝑀"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "growing sequence𝑀0<𝑀1<𝑀"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "𝐴"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "(𝑀"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "(𝑀2𝑘, 𝑀"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "𝐴"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "𝐴2=𝐴\\𝐴"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "In odd-indexed intervals(𝑀"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "In odd-indexed intervals(𝑀2𝑘, 𝑀"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "dd-indexed intervals(𝑀2𝑘, 𝑀2𝑘+1], all elements of𝐴belong to𝐴"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "vals(𝑀"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "vals(𝑀2𝑘+1, 𝑀"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "vals(𝑀2𝑘+1, 𝑀2𝑘+2],they all belong to𝐴"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "ock contains all the “fresh” elements of𝐴, looking at scale𝑀"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "that𝐴"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "that𝐴1haspositiveupperdensity,andlookingatscale𝑀"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "spositiveupperdensity,andlookingatscale𝑀2𝑘+2showsthesamefor𝐴"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "The key ingredient is a combinatorial sumset bound:if𝐴=𝐴"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "The key ingredient is a combinatorial sumset bound:if𝐴=𝐴1 ∪𝐴"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "a combinatorial sumset bound:if𝐴=𝐴1 ∪𝐴2and every element of𝐴"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "|(𝐴+𝐴) ∩[1, 𝑁]|≤|(𝐴"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "|(𝐴+𝐴) ∩[1, 𝑁]|≤|(𝐴1 +𝐴"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "•Atscale𝑁=𝑀"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "•Atscale𝑁=𝑀2𝑘+1:allelementsof𝐴"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "•Atscale𝑁=𝑀2𝑘+1:allelementsof𝐴2in[1, 𝑁]liebelow𝑀"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "𝐾= 𝑀"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "𝐾= 𝑀2𝑘gives|(𝐴"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "𝐾= 𝑀2𝑘gives|(𝐴1 +𝐴"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "•At scale𝑁= 𝑀"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "•At scale𝑁= 𝑀2𝑘+2:symmetrically, all elements of𝐴"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "e𝑁= 𝑀2𝑘+2:symmetrically, all elements of𝐴1in[1, 𝑁]lie below𝑀"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "|(𝐴"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "|(𝐴2 +𝐴"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "Question.Is there a basis𝐴of order 2 such that if𝐴=𝐴"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "Question.Is there a basis𝐴of order 2 such that if𝐴=𝐴1 ⊔𝐴"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "estion.Is there a basis𝐴of order 2 such that if𝐴=𝐴1 ⊔𝐴2then𝐴"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "on.Is there a basis𝐴of order 2 such that if𝐴=𝐴1 ⊔𝐴2then𝐴1 +𝐴"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": " there a basis𝐴of order 2 such that if𝐴=𝐴1 ⊔𝐴2then𝐴1 +𝐴1and𝐴"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "re a basis𝐴of order 2 such that if𝐴=𝐴1 ⊔𝐴2then𝐴1 +𝐴1and𝐴2 +𝐴"
+  },
+  {
+   "page": 37,
+   "mark": "11",
+   "context": "from"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "Step3:Nosyndeticpartitionexists.Suppose𝐴=𝐴"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "Step3:Nosyndeticpartitionexists.Suppose𝐴=𝐴1⊔𝐴"
+  },
+  {
+   "page": 37,
+   "mark": "11",
+   "context": "2𝑃𝑘,"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "𝐴"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "𝐴1 + 𝐴"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "𝐴1 + 𝐴1can cover the interval[11𝑃𝑘, 11𝑃𝑘+ 𝑘]using𝑥𝑘, but𝐴"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": " + 𝐴1can cover the interval[11𝑃𝑘, 11𝑃𝑘+ 𝑘]using𝑥𝑘, but𝐴2 + 𝐴"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "any element in that interval.This leaves a gap of length𝑘in𝐴"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "element in that interval.This leaves a gap of length𝑘in𝐴2 +𝐴"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "𝑖∈ℕ"
+  },
+  {
+   "page": 38,
+   "mark": "a",
+   "context": "𝑗=1be"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "𝑗=1beastrictlyincreasingsequenceofprimessatisfying𝑞"
+  },
+  {
+   "page": 38,
+   "mark": "0",
+   "context": "𝑚=0recursively, starting with𝐽"
+  },
+  {
+   "page": 38,
+   "mark": "10",
+   "context": "First, define the step size𝑃𝑚=Î"
+  },
+  {
+   "page": 38,
+   "mark": "a",
+   "context": "𝑅𝑚+𝑥𝑃𝑚diverges.Thus,wecancompute"
+  },
+  {
+   "page": 38,
+   "mark": "0",
+   "context": "below 3/4.Let𝑚"
+  },
+  {
+   "page": 38,
+   "mark": "0",
+   "context": "10𝐽𝑚"
+  },
+  {
+   "page": 38,
+   "mark": "0",
+   "context": "10𝐽𝑚0≤𝑘< 10𝐽𝑚"
+  },
+  {
+   "page": 38,
+   "mark": "0",
+   "context": "𝐽𝑚"
+  },
+  {
+   "page": 38,
+   "mark": "0",
+   "context": "𝐽𝑚"
+  },
+  {
+   "page": 38,
+   "mark": "0",
+   "context": "𝑘=𝐽𝑚"
+  },
+  {
+   "page": 38,
+   "mark": "0",
+   "context": "𝑑(M({𝐴(𝑖) + 𝑘|𝑖<𝐽𝑚"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "•(Case 2:𝐽𝑚"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "•(Case 2:𝐽𝑚0≤𝑖<𝐽𝑚"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "𝐽𝑚"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "𝐽𝑚"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "𝐴(𝑖)≤0."
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "𝑑(M({𝐴(𝑖) + 𝑘|𝐽𝑚"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "𝑑(M({𝐴(𝑖) + 𝑘|𝐽𝑚0≤𝑖<𝐽𝑚"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "•(Case 3:𝑖≥𝐽𝑚"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "1) Consider any element𝐴(𝑖) where 𝑖belongs to some block 𝑚≥𝑚"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "meaning 10𝐽𝑚≥10𝐽𝑚"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "𝑑(M({𝐴(𝑖) + 𝑘|𝑖≥𝐽𝑚"
+  },
+  {
+   "page": 39,
+   "mark": "334",
+   "context": "29≈0."
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "Theorem.Let𝐴⊂ℝ"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "Proof.We will show that there exists an infinite set𝐴⊂ℝ"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "Let𝐾∞bethecountablyinfinitecompletegraphwithvertexset𝑉={𝑥"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "et𝐾∞bethecountablyinfinitecompletegraphwithvertexset𝑉={𝑥1, 𝑥"
+  },
+  {
+   "page": 40,
+   "mark": "4",
+   "context": "𝑥𝑛= 100"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "We construct our point set𝐴⊂ℝ"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "𝑃𝑒= (𝑥𝑖+ 𝑥𝑗, 𝑥"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "𝑖+ 𝑥𝑖𝑥𝑗+ 𝑥"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "𝑃𝑎𝑏= (𝑎+ 𝑏, 𝑎"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "𝑃𝑎𝑏= (𝑎+ 𝑏, 𝑎2+ 𝑎𝑏+ 𝑏"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "𝑃𝑏𝑐= (𝑏+ 𝑐, 𝑏"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "𝑃𝑏𝑐= (𝑏+ 𝑐, 𝑏2+ 𝑏𝑐+ 𝑐"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "𝑃𝑐𝑎= (𝑐+ 𝑎, 𝑐"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "𝑃𝑐𝑎= (𝑐+ 𝑎, 𝑐2+ 𝑐𝑎+ 𝑎"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "𝑚=(𝑏"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "𝑚=(𝑏2 + 𝑏𝑐+ 𝑐"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "𝑚=(𝑏2 + 𝑏𝑐+ 𝑐2) −(𝑎"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "𝑚=(𝑏2 + 𝑏𝑐+ 𝑐2) −(𝑎2 + 𝑎𝑏+ 𝑏"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "=𝑐"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "=𝑐2 −𝑎"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "Sidon sets of size𝑛.Then𝑓(𝑛)≥(𝑛"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "16 · 𝐼(𝐴+𝐴) + 100𝑛+ 16 ≥𝑛"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "𝑉"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "1.𝐼(𝑋) + 2𝑁"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "1.𝐼(𝑋) + 2𝑁1(𝑋)= |𝑋| + 𝑉"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "2.4𝑁"
+  },
+  {
+   "page": 41,
+   "mark": "3",
+   "context": "2.4𝑁1(𝑋) + 𝑁"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "2.4𝑁1(𝑋) + 𝑁3(𝑋)≤3|𝑋| +2𝑁"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "𝑥∈ℤ"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "𝑥∈ℤ1𝑋(𝑥)"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "3.2𝑁"
+  },
+  {
+   "page": 41,
+   "mark": "3",
+   "context": "3.2𝑁2(𝑋)≤𝑁"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "3.2𝑁2(𝑋)≤𝑁3(𝑋) + 2𝑉"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": ".2𝑁2(𝑋)≤𝑁3(𝑋) + 2𝑉2(𝑋) + 2𝐼(𝑋).Consider each pair(𝑥, 𝑥+ 2)∈𝑋"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "counted exactly by 𝑉"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "counted exactly by 𝑉2, so𝑁"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "counted exactly by 𝑉2, so𝑁2(𝑋)= 𝑉"
+  },
+  {
+   "page": 41,
+   "mark": "3",
+   "context": "•If𝑥−1 ∈𝑋, then(𝑥−1, 𝑥+ 2)is a pair counted in𝑁"
+  },
+  {
+   "page": 41,
+   "mark": "3",
+   "context": "•If𝑥+ 3 ∈𝑋, then(𝑥, 𝑥+ 3)is a pair counted in𝑁"
+  },
+  {
+   "page": 42,
+   "mark": "3",
+   "context": "distinct in this construction, we have 2|𝐺|≤𝑁"
+  },
+  {
+   "page": 42,
+   "mark": "4",
+   "context": "Next, for each𝑘≥1, count quadruples(𝑎, 𝑏, 𝑐, 𝑑)∈𝐴"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "4𝑁"
+  },
+  {
+   "page": 42,
+   "mark": "3",
+   "context": "4𝑁1(𝐷) + 𝑁"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "4𝑁1(𝐷) + 𝑁3(𝐷)≤3|𝐷| + 2𝑁"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "16𝑁"
+  },
+  {
+   "page": 42,
+   "mark": "3",
+   "context": "16𝑁1(𝑆) + 4𝑁"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "16𝑁1(𝑆) + 4𝑁3(𝑆)≤3|𝐷| + 8𝑁"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "16𝑁"
+  },
+  {
+   "page": 42,
+   "mark": "3",
+   "context": "16𝑁1(𝑆) + 4𝑁"
+  },
+  {
+   "page": 42,
+   "mark": "3",
+   "context": "16𝑁1(𝑆) + 4𝑁3(𝑆)≤3|𝐷| + (4𝑁"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "16𝑁1(𝑆) + 4𝑁3(𝑆)≤3|𝐷| + (4𝑁3(𝑆) + 8𝑉"
+  },
+  {
+   "page": 42,
+   "mark": "3",
+   "context": "and notice that the 4𝑁"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "(8|𝑆| + 8𝑉"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "(8|𝑆| + 8𝑉2(𝑆) −8𝐼(𝑆))≤3|𝐷| + 8𝑉"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "and see that the 8𝑉"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "The standard Sidon estimates |𝑆|≥𝑛"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "The standard Sidon estimates |𝑆|≥𝑛2/2 and |𝐷|≤𝑛"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": " Sidon estimates |𝑆|≥𝑛2/2 and |𝐷|≤𝑛2then give 16𝐼(𝑆)+100𝑛≥4𝑛"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "on estimates |𝑆|≥𝑛2/2 and |𝐷|≤𝑛2then give 16𝐼(𝑆)+100𝑛≥4𝑛2−3𝑛"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "stimates |𝑆|≥𝑛2/2 and |𝐷|≤𝑛2then give 16𝐼(𝑆)+100𝑛≥4𝑛2−3𝑛2= 𝑛"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "𝑛"
+  },
+  {
+   "page": 42,
+   "mark": "3",
+   "context": "𝑛"
+  },
+  {
+   "page": 42,
+   "mark": "4",
+   "context": "𝑛"
+  },
+  {
+   "page": 42,
+   "mark": "5",
+   "context": "𝑛"
+  },
+  {
+   "page": 42,
+   "mark": "5",
+   "context": "𝑛"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": ".By the standard orthogonality relation, the sum"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "ipal term corresponding to𝑗= 0, which evaluates trivially to"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": "𝑛"
+  },
+  {
+   "page": 44,
+   "mark": "4",
+   "context": "𝑛"
+  },
+  {
+   "page": 44,
+   "mark": "5",
+   "context": "𝑛"
+  },
+  {
+   "page": 44,
+   "mark": "6",
+   "context": "𝑛"
+  },
+  {
+   "page": 44,
+   "mark": "5",
+   "context": "where𝑃(𝑛)= 𝑛"
+  },
+  {
+   "page": 44,
+   "mark": "4",
+   "context": "where𝑃(𝑛)= 𝑛5+ 𝑛"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": "where𝑃(𝑛)= 𝑛5+ 𝑛4+ 3𝑛"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "Bytelescopingsummation,𝑆𝑛−𝑓𝑛=𝑆"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "Bytelescopingsummation,𝑆𝑛−𝑓𝑛=𝑆1−𝑓"
+  },
+  {
+   "page": 44,
+   "mark": "6",
+   "context": "2𝑃( 𝑗)( 𝑗−1)"
+  },
+  {
+   "page": 44,
+   "mark": "6",
+   "context": "2𝑃( 𝑗)( 𝑗−1)6−𝑃( 𝑗−1) 𝑗"
+  },
+  {
+   "page": 44,
+   "mark": "5",
+   "context": "2𝑃( 𝑗)( 𝑗−1)6−𝑃( 𝑗−1) 𝑗6−𝑗"
+  },
+  {
+   "page": 44,
+   "mark": "6",
+   "context": "2𝑃( 𝑗)( 𝑗−1)6−𝑃( 𝑗−1) 𝑗6−𝑗5( 𝑗−1)"
+  },
+  {
+   "page": 44,
+   "mark": "6",
+   "context": "𝑗"
+  },
+  {
+   "page": 44,
+   "mark": "6",
+   "context": "𝑗6( 𝑗−1)"
+  },
+  {
+   "page": 44,
+   "mark": "6",
+   "context": "Let𝐴(𝑥)= 2𝑃(𝑥)(𝑥−1)"
+  },
+  {
+   "page": 44,
+   "mark": "6",
+   "context": "Let𝐴(𝑥)= 2𝑃(𝑥)(𝑥−1)6−𝑃(𝑥−1)𝑥"
+  },
+  {
+   "page": 44,
+   "mark": "5",
+   "context": "Let𝐴(𝑥)= 2𝑃(𝑥)(𝑥−1)6−𝑃(𝑥−1)𝑥6−𝑥"
+  },
+  {
+   "page": 44,
+   "mark": "6",
+   "context": "Let𝐴(𝑥)= 2𝑃(𝑥)(𝑥−1)6−𝑃(𝑥−1)𝑥6−𝑥5(𝑥−1)"
+  },
+  {
+   "page": 44,
+   "mark": "5",
+   "context": "𝐴(𝑥)= −4683𝑥"
+  },
+  {
+   "page": 44,
+   "mark": "4",
+   "context": "𝐴(𝑥)= −4683𝑥5+ 13586𝑥"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": "𝐴(𝑥)= −4683𝑥5+ 13586𝑥4−19540𝑥"
+  },
+  {
+   "page": 44,
+   "mark": "5",
+   "context": "In particular, it is easy to show that|𝐴( 𝑗)|≤100000𝑗"
+  },
+  {
+   "page": 44,
+   "mark": "7",
+   "context": "𝑗"
+  },
+  {
+   "page": 45,
+   "mark": "6",
+   "context": "𝑛"
+  },
+  {
+   "page": 45,
+   "mark": "3",
+   "context": "𝑛"
+  },
+  {
+   "page": 45,
+   "mark": "4",
+   "context": "𝑛"
+  },
+  {
+   "page": 45,
+   "mark": "5",
+   "context": "𝑛"
+  },
+  {
+   "page": 45,
+   "mark": "6",
+   "context": "𝑛"
+  },
+  {
+   "page": 45,
+   "mark": "5",
+   "context": "𝑛"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "denote the ordinary generating function of𝑎𝑛.Then𝐴(𝑥/3)"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "𝑠"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "𝑠1 + 𝑠"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "𝑠"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "𝑠2 + 𝑠"
+  },
+  {
+   "page": 46,
+   "mark": "3",
+   "context": "𝑠"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "𝑠3 + 𝑠"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "𝑠"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "𝑠2 −𝑠"
+  },
+  {
+   "page": 46,
+   "mark": "3",
+   "context": "𝑠"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "𝑠3 −𝑠"
+  },
+  {
+   "page": 46,
+   "mark": "4",
+   "context": "𝑠"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "𝑠4 −𝑠"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "𝑠𝑛−(−1)𝑛𝑠"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "𝑠𝑛+1 −(−1)𝑛𝑠"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "𝑠𝑛+2 −(−1)𝑛𝑠"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "𝑠"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "𝑖,"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "𝑠"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "𝑠1 −𝑠"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "𝑠"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "𝑠2 −𝑠"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "𝑠"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "𝑠2 −𝑠"
+  },
+  {
+   "page": 46,
+   "mark": "3",
+   "context": "𝑠"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "𝑠3 −𝑠"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "combine these divisibility properties.We explicitly compute𝑎"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "the coefficients of this series.Since𝑎"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "the coefficients of this series.Since𝑎0= 1, we have𝑏"
+  },
+  {
+   "page": 46,
+   "mark": "a",
+   "context": "𝑛=1𝑦𝑛𝑥𝑛is"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "Finally, we construct the eighth root𝐶(𝑥)=𝐴(𝑥/3)"
+  },
+  {
+   "page": 46,
+   "mark": "8",
+   "context": "(1 + 2𝑋(𝑥))"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "(1 + 2𝑋(𝑥))8= 1 + 16𝑋(𝑥) + 112𝑋(𝑥)"
+  },
+  {
+   "page": 46,
+   "mark": "3",
+   "context": "(1 + 2𝑋(𝑥))8= 1 + 16𝑋(𝑥) + 112𝑋(𝑥)2+ 448𝑋(𝑥)"
+  },
+  {
+   "page": 46,
+   "mark": "4",
+   "context": "(1 + 2𝑋(𝑥))8= 1 + 16𝑋(𝑥) + 112𝑋(𝑥)2+ 448𝑋(𝑥)3+ 1120𝑋(𝑥)"
+  },
+  {
+   "page": 46,
+   "mark": "5",
+   "context": "+ 1792𝑋(𝑥)"
+  },
+  {
+   "page": 46,
+   "mark": "6",
+   "context": "+ 1792𝑋(𝑥)5+ 1792𝑋(𝑥)"
+  },
+  {
+   "page": 46,
+   "mark": "7",
+   "context": "+ 1792𝑋(𝑥)5+ 1792𝑋(𝑥)6+ 1024𝑋(𝑥)"
+  },
+  {
+   "page": 46,
+   "mark": "8",
+   "context": "+ 1792𝑋(𝑥)5+ 1792𝑋(𝑥)6+ 1024𝑋(𝑥)7+ 256𝑋(𝑥)"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "𝑃(𝑋)= 7𝑋"
+  },
+  {
+   "page": 46,
+   "mark": "3",
+   "context": "𝑃(𝑋)= 7𝑋2+ 28𝑋"
+  },
+  {
+   "page": 46,
+   "mark": "4",
+   "context": "𝑃(𝑋)= 7𝑋2+ 28𝑋3+ 70𝑋"
+  },
+  {
+   "page": 46,
+   "mark": "5",
+   "context": "𝑃(𝑋)= 7𝑋2+ 28𝑋3+ 70𝑋4+ 112𝑋"
+  },
+  {
+   "page": 46,
+   "mark": "6",
+   "context": "𝑃(𝑋)= 7𝑋2+ 28𝑋3+ 70𝑋4+ 112𝑋5+ 112𝑋"
+  },
+  {
+   "page": 46,
+   "mark": "7",
+   "context": "𝑃(𝑋)= 7𝑋2+ 28𝑋3+ 70𝑋4+ 112𝑋5+ 112𝑋6+ 64𝑋"
+  },
+  {
+   "page": 46,
+   "mark": "8",
+   "context": "𝑃(𝑋)= 7𝑋2+ 28𝑋3+ 70𝑋4+ 112𝑋5+ 112𝑋6+ 64𝑋7+ 16𝑋"
+  },
+  {
+   "page": 47,
+   "mark": "8",
+   "context": "Thus,(1 + 2𝑋(𝑥))"
+  },
+  {
+   "page": 47,
+   "mark": "8",
+   "context": "Thus,(1 + 2𝑋(𝑥))8= 1 + 16(𝑋(𝑥) + 𝑃(𝑋(𝑥))).To satisfy 𝐶(𝑥)"
+  },
+  {
+   "page": 47,
+   "mark": "0",
+   "context": "𝑛=1𝑥𝑛𝑥𝑛inductively.We set𝑥"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "coefficient of𝑃(𝑋(𝑥))depends only on the terms𝑥"
+  },
+  {
+   "page": 47,
+   "mark": "8",
+   "context": "expansionyields(1 + 2𝑋(𝑥))"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "he existence of the desired integer power series 𝐶(𝑥)=𝐴(𝑥/3)"
+  },
+  {
+   "page": 50,
+   "mark": "1",
+   "context": "coordinate𝑡"
+  },
+  {
+   "page": 51,
+   "mark": "3",
+   "context": "vector𝑚=(𝑚(0), 𝑚(1), 𝑚(2))∈ℕ"
+  },
+  {
+   "page": 51,
+   "mark": "3",
+   "context": "= 𝑚(0) + 𝑚(1) + 𝑚(2)for total degree.A finite order idealΓ⊂ℕ"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "ℎΓ(𝑖−1)ℎΓ(𝑖+ 1)≤ℎΓ(𝑖)"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "monomialsare𝑚"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "monomialsare𝑚1≠𝑚"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "monomialsare𝑚1≠𝑚2.SinceΓispure,|𝑚"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "monomialsare𝑚1≠𝑚2.SinceΓispure,|𝑚1|=|𝑚"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "Γ = {𝑢: 𝑢≤𝑚"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "Γ = {𝑢: 𝑢≤𝑚1} ∪{𝑢: 𝑢≤𝑚"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "After possibly interchanging𝑚"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "After possibly interchanging𝑚1and𝑚"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "𝑚"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "𝑚2(𝑥)>𝑚"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "𝑚"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "𝑚2(𝑦)≤𝑚"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "Indeed,the three integers𝑚"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "Indeed,the three integers𝑚1(𝑖) −𝑚"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "Let𝑐= 𝑚"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "𝑚"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "𝑚2(𝑥) −𝑚"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "𝑚"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "Then|𝑀red|= 𝑒−𝑐.For 𝑢≤𝑚"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "𝑢̸ ≤𝑚"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "If𝑑≥𝑐, the map 𝑢↦→𝑢−𝑐𝑒𝑥bijects{𝑢≤𝑚"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "𝐻(𝑑):= ℎΓ(𝑑)= ℎ𝑚"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "We need to prove that𝐻(𝑑−1)𝐻(𝑑+ 1)≤𝐻(𝑑)"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "Δ"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "Δ"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "Δ"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "In particular, Δ"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "econd difference of the principal sequence of𝑀red.ThereforeΔ"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": " (3) also implies the following useful dichotomy.If𝑡> 0 andΔ"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "Nowfix0<𝑑<𝑒=|𝑚"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "Nowfix0<𝑑<𝑒=|𝑚1|=|𝑚"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "Δ𝐻(𝑑) + Δ"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "𝐻(𝑑)"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "𝐻(𝑑)2−𝐻(𝑑−1)𝐻(𝑑+ 1)= (Δ𝐻(𝑑))"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "𝐻(𝑑)2−𝐻(𝑑−1)𝐻(𝑑+ 1)= (Δ𝐻(𝑑))2−𝐻(𝑑−1)Δ"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "Since𝐻(𝑑−1)≥0 andΔ"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "Δ"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "𝐻(𝑑−1)≤(Δ𝐻(𝑑))"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "Δ"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "2𝐻(𝑑−1)≤(Δ𝐻(𝑑))"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "Indeed,ifΔ"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "Write𝑓(𝑡)=ℎ𝑚"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "Write𝑓(𝑡)=ℎ𝑚1(𝑡)and𝑔(𝑡)=1𝑡≥𝑐ℎ𝑀red(𝑡−𝑐),sothat𝐻=𝑓+𝑔.SinceΔ"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "Δ"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "Δ2𝑔≤1, ifΔ"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "Δ"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "Δ"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "Δ"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "Δ"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "IfΔ"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "Δ"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "Δ2𝑓(𝑑+ 1)= Δ"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "for𝑓with𝑡= 𝑑+ 1.Then in particular𝑑+ 1≤𝑚"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "𝐻(𝑑−1)=𝑓(𝑑−1)≤(𝑑+ 1)"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "𝐻(𝑑−1)=𝑓(𝑑−1)≤(𝑑+ 1)2= (Δ 𝑓(𝑑))"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "𝐻(𝑑−1)=𝑓(𝑑−1)≤(𝑑+ 1)2= (Δ 𝑓(𝑑))2= (Δ𝐻(𝑑))"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "𝑑≥𝑚"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "𝑑≥𝑚1(𝑥) + 𝑚"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "𝑑≥𝑚"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "𝑑≥𝑚1(𝑥) + 𝑚"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "2𝑑≥2𝑚"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "2𝑑≥2𝑚1(𝑥) + 𝑚"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "2𝑑≥2𝑚1(𝑥) + 𝑚1(𝑦) + 𝑚"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "2𝑑≥2𝑚1(𝑥) + 𝑚1(𝑦) + 𝑚1(𝑧) + 2 = 𝑒+ 𝑚"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "Since𝑐=𝑚"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "Forthetwocaseswhen(B)holds,thatisΔ"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "Δ"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "𝐻(𝑑+ 1)≤(Δ𝐻(𝑑+ 1))"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "𝐻(𝑑−1)≤(Δ𝐻(𝑑))"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "𝐻(𝑑−1)=𝐻(𝑑+ 1) −2Δ𝐻(𝑑+ 1) + 1 ≤(Δ𝐻(𝑑+ 1))"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "=𝐻(𝑑+ 1) −2Δ𝐻(𝑑+ 1) + 1 ≤(Δ𝐻(𝑑+ 1))2−2Δ𝐻(𝑑+ 1) + 1 = (Δ𝐻(𝑑))"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "𝑔with𝑡= 𝑑+ 1.Let𝐷= 𝑑+ 1.SinceΔ"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "𝑔with𝑡= 𝑑+ 1.Let𝐷= 𝑑+ 1.SinceΔ2𝑔(𝐷)= 1, necessarily𝐷≥𝑐, andΔ"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "First, since Δ"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "𝐷≤𝑚"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "𝐷≤𝑚1(0) + 𝑚"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "𝐷≤𝑚"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "𝐷≤𝑚1(1) + 𝑚"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "𝐷≤𝑚"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "𝐷≤𝑚1(0) + 𝑚"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "air inequalities involving𝑥follow directly from𝐷−𝑐≤𝑀red(𝑦)≤𝑚"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "two single indicators would be zero; since𝐷≥𝑐= 𝑚"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "the right-hand side of (3) would be negative, contradictingΔ"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "SinceΔ"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "𝑥-single indicator is zero, because𝐷≥𝑚"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "Δ"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "𝐴= 𝑚"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "𝐵= 𝑚"
+  },
+  {
+   "page": 56,
+   "mark": "1",
+   "context": "and recall𝑐= 𝑚"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "onnegative becauseΔ 𝑓(𝐷)≥𝑐and𝐷−𝑐+ 1 ≥1.Therefore𝐻(𝐷)≤(Δ𝐻(𝐷))"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "By midpoint monotonicity (9), applied to𝑓= ℎ𝑚"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "giving the desired𝐻(𝐷)≤(Δ𝐻(𝐷))"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "CaseC:(C)holds.So hereΔ"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "CaseC:(C)holds.So hereΔ2𝐻(𝑑+ 1)= 2 and henceΔ"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "CaseC:(C)holds.So hereΔ2𝐻(𝑑+ 1)= 2 and henceΔ2𝑓(𝑑+ 1)=Δ"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "Δ"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "because it would imply𝑑+ 1≤𝑚"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "𝑑+ 1 ≤𝑚"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "𝑑+ 1 ≤𝑚1(𝑥) + 1 + 𝑀red(𝑦)= 𝑚"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "𝑑+ 1 ≤𝑚1(𝑥) + 1 + 𝑀red(𝑦)= 𝑚1(𝑥) + 1 + 𝑚"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "𝑑+ 1 ≤𝑚1(𝑥) + 1 + 𝑀red(𝑦)= 𝑚1(𝑥) + 1 + 𝑚2(𝑦)≤𝑚"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "𝑑+ 1 ≤𝑚1(𝑥) + 1 + 𝑀red(𝑦)= 𝑚1(𝑥) + 1 + 𝑚2(𝑦)≤𝑚1(𝑥) + 1 + 𝑚"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "But the upper alternative for𝑓gives𝑑+ 1 ≥𝑚"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "But the upper alternative for𝑓gives𝑑+ 1 ≥𝑚1(𝑥) + 𝑚"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "(Δ𝐻(𝑑))"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "(Δ𝐻(𝑑))2−2𝐻(𝑑−1)= 4(𝜌+ 2)"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "1)𝐻(𝑑+ 1)≤𝐻(𝑑)"
+  }
+ ]
+}

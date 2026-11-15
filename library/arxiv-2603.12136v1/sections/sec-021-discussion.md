@@ -7,10 +7,11 @@ section_number: null
 pages: 60-69
 source_pdf: 2603.12136v1.pdf
 source_sha256: e9c50616344b24e0
-doc_brief: "Folding Mixed-Integer Linear Programs and Reflection Symmetries — For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.994
+latex_prose_ratio: 0.992
+latex_coverage_ratio: 0.626
+doc_brief: "Folding Mixed-Integer Linear Programs and Reflection Symmetries — For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the"
 ---
 We will follow the structure of the paper, and first evaluate the extension to reflection symmetries for linear programming and then the extension to mixed-integer linear programs.\
 In [\[sec_reflection_symmetry\]](#sec_reflection_symmetry){reference-type="ref" reference="sec_reflection_symmetry"}, we extended DRCR to reflection symmetries of linear programs. There are several ways in which the current work can still be extended. First of all, we note that it is possible to extend the detection of reflection symmetries to not just use a primal affine offset $\delta$ but to also introduce a *dual offset*. Such a dual offset alters the objective by subtracting a weighted linear combination of the rows from the objective. One hopes that doing so will lead to a coarser equitable partition by having more similar entries in the objective. Similar to the choice of $\delta$, there are infinitely many possibilities to do so. However, unlike the primal variables, the dual variables of linear programming models are typically not explicitly bounded by the user, so there is no 'obvious choice' at the center of the dual variable domains like for the primal offset. Thus, one would need to come up with some method to choose a sensible dual offset.\

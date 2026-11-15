@@ -1,0 +1,106 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2011.12932v2",
+ "source": {
+  "structure_sha256": "23709542c5652a295267b45764c1bf95a1b6f9e78cf73baeb5936b58aee93c9c",
+  "file": "2011.12932v2.pdf"
+ },
+ "provenance": {
+  "title": "MODULAR CATEGORIES AND TQFTS BEYOND SEMISIMPLICITY",
+  "authors": "CHRISTIAN BLANCHET AND MARCO DERENZI",
+  "arxiv": {
+   "id": "2011.12932",
+   "version": "2",
+   "primary_class": "math.GT",
+   "stamp_date": "22 May 2021"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "recommendation": 5
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It should be remarked, however, that the renormalization process changes the underlying 3-manifold invariants drastically.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-renormalized-non-semisimple-constructions.md",
+   "section_title": "Renormalized non-semisimple constructions",
+   "pages": "4-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "It should be noted that these constraints also affect cobordism categories.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-005-renormalized-non-semisimple-constructions.md",
+   "section_title": "Renormalized non-semisimple constructions",
+   "pages": "4-5",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We should think of $\\Sigma_g$ as being identified with the boundary of a regular neighborhood of $\\calG_g$.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-007-4-semisimple-quantum-invariants-and-tqfts.md",
+   "section_title": "Semisimple quantum invariants and TQFTs",
+   "pages": "7-9",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "We should point out that, dually, every finite ribbon category $\\calC$ also admits an \\textit{end} \\[ \\calE = \\int_{X \\in \\calC} X \\otimes X^*, \\] which is similarly defined as a universal dinatural transformation, see Appendix \\ref{A:end} for details.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-6-lyubashenkos-notion-of-modular-category.md",
+   "section_title": "Lyubashenko's notion of modular category",
+   "pages": "12-16",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Then, the idea behind bichrome graphs is essentially the following: on the one hand, the red part of the graph should be interpreted as prescribing surgery instructions, and it has to be processed through Lyubashenko's algorithm, that is, invoking the universal property \\eqref{E:univ_prop_coend} of the coend $\\calL$, in order to extract a morphism of $\\calC$ (red minima of diagrams translate to the integral $\\Lambda$ under this correspondence); on the other hand, the blue part supports the standard graphical calculus implemented by the Reshetikhin--Turaev functor.",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-010-7-non-semisimple-quantum-invariants-and-tqfts.md",
+   "section_title": "Non-semisimple quantum invariants and TQFTs",
+   "pages": "16-18",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

@@ -7,10 +7,11 @@ section_number: 4
 pages: 13-18
 source_pdf: 2012.12159v3.pdf
 source_sha256: 473ec6959e82cd98
-doc_brief: "A FUNK PERSPECTIVE ON BILLIARDS, PROJECTIVE GEOMETRY AND MAHLER VOLUME — We explore connections furnished by the Funk metric, a relative of the Hilbert metric, between projective geometry, billiards"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.975
+latex_prose_ratio: 0.983
+latex_coverage_ratio: 0.981
+doc_brief: "A FUNK PERSPECTIVE ON BILLIARDS, PROJECTIVE GEOMETRY AND MAHLER VOLUME — We explore connections furnished by the Funk metric, a relative of the Hilbert metric, between projective geometry, billiards"
 ---
 []{#sec:billiards label="sec:billiards"}
 

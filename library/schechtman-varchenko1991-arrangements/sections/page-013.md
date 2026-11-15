@@ -1,0 +1,65 @@
+---
+doc_id: schechtman-varchenko1991-arrangements
+doc_title: "Arrangements of hyperplanes and Lie algebra homology"
+section_id: page-013
+section_title: "Page 13"
+pages: 13-13
+pdf_page: 13
+source_pdf: schechtman-varchenko1991-arrangements.pdf
+source_sha256: 0100fd32438740f0
+text_source: ocr
+granularity: page
+doc_brief: "Arrangements of hyperplanes and Lie algebra homology — 56 sections: Page 1; Page 2; Page 3"
+---
+Arrangements of hyperplanes and Lie algebra homology 154
+Let @ be arbitrary, © a framing of @. Denote by F/?(@) the set of all flags
+
+(DP >...> LP) with Lie Oy _ ; (see 1.6).
+
+2.9.2 Theorem. The set F l?(©) forms the base of the free abelian group F(@).
+
+Proof. This is deduced from 2.8.1 in the same way as 1.6.5 from 1.5.2.
+
+3 Contravariant form
+
+We save the assumptions of §§ 1, 2.
+
+3.0 From now on up to the end of the paper we'll change slightly notations:
+A (€), F (€) will be denoted by L"(@)z, F (@)z, and L(G), F (@) will denote
+the complexifications /°(@)¢= I (@)z @z€, F (@)e=F (G)z @z€.
+
+3.1 Let @ be an arrangement. Suppose that a map a: @->C is given. We'll
+call such a map a collection of exponents for @. For an edge L put
+
+(3.1.1) a(L)= > a(H).
+H>L,
+He€
+Put
+(3.1.2) w=a(a)= ¥ a(H)Hesl'(@).
+He€
+
+Define differentials d=d? =d?(a): of?(@) > *'(@) by the rule
+(3.1.3) d(x)=a(a)-x.
+It is clear that d? =0.
+3.2 Define maps
+(3.2.1) S=S?=S"(a): F?(€)> I*()
+as follows. For Le@' put
+
+(3.2.2) S(L)= Y a(H)Hes'(@);
+H>L,
+He€
+
+for a flag F=(D>L'3...>1?)eFl?(@) put
+
+(3.2.3) S(F)=S(L')-S(L2)-...-S(L?).
+
+In other words,
+
+(3.2.4) S(F)=S.a(H,) a(H,)...a(H,) Hy -...-Hps
+
+the sum is taken over all p-tuples (H,, ..., H,) such that H;,> L, H,e@, 1SiSp.
+One easily verifies that (3.2.4) correctly defines maps (3.2.1).
+
+3.2.5 Lemma. S° defines the map of complexes S’=S'(a): (F'(@), d)>(#(®),
+
+d(a)).

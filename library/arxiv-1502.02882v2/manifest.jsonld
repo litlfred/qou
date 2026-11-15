@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1502.02882v2",
+  "title": "Fusion categories via string diagrams",
   "contains": [
+    "library/arxiv-1502.02882v2/sections/sec-front-matter",
     "library/arxiv-1502.02882v2/sections/sec-000",
     "library/arxiv-1502.02882v2/sections/sec-001",
     "library/arxiv-1502.02882v2/sections/sec-002",
@@ -36,7 +37,7 @@
     "library/arxiv-1502.02882v2/sections/sec-022"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -46,7 +47,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1502.02882v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1502.02882v2.pdf",
     "source_sha256": "43641c6f3aed63dd287a423ba8abcda0b4d36b3df9bdd585fed35339436d8f01",
     "pages": 36,

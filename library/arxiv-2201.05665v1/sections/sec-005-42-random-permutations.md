@@ -7,10 +7,11 @@ section_number: 4.2
 pages: 9-10
 source_pdf: 2201.05665v1.pdf
 source_sha256: bad7bde03d199a73
-doc_brief: "HAROLD WIDOM’S WORK IN RANDOM MATRIX THEORY — This is a survey of Harold Widom’s work in random matrices."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.979
 latex_coverage_ratio: 0.965
+doc_brief: "HAROLD WIDOM’S WORK IN RANDOM MATRIX THEORY — This is a survey of Harold Widom’s work in random matrices."
 ---
 Let $\pi = (\pi(1), \pi(2), ..., \pi(N))$ be a permutation of the numbers $1, 2, ..., N$. If $1 \leq i_1 <  i_2 < ... < i_k \leq N$ and $\pi( i_1) < \pi( i_2) < ... < \pi(i_k)$, we say that $\pi( i_1), \pi( i_2), ...,\pi(i_k)$ is an *increasing subsequence* in $\pi$ of length $k$. Denote by $l_{N}(\pi)$ the maximal length of all of the increasing subsequences in $\pi$. Suppose that the permutations are random and uniformly distributed. The principal interest is in the limiting statistics of the random variable $l_{N}(\pi)$. This is a subject with a long history (see e.g. [@AD]) which started in the early 60's with "Ulam's problem": prove that the following limit exists $$\label{ulam}
 \lim_{N\to \infty}\frac{{\Bbb E}(l_N)}{\sqrt{N}} = c,$$ where ${\Bbb E (\cdot)}$ means mathematical expectation, and compute $c$. The proof of this result was obtained independently in [@VK] and [@logan]: It turns out that $c=2$. Further progress was obtained only after 22 years in [@BDJ], where it was shown that the random variable $\chi_{N} := \frac{l_N - 2\sqrt{N}}{N^{1/6}}$ converges in distribution to the *second Tracy-Widom distribution $F_2(x)$*, i.e. $$\label{bdj}

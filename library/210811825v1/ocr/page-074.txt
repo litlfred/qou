@@ -1,0 +1,68 @@
+gradv2zero =
+1/47439344237055551266766192640000
+(42733474853681838723362084401119381839 +
+30216456180729532565343854445094502400 Sqrt [2] —
+14884598099207334170365080185497190400 Sqrt[4 + 3 Sqrt[2]] —
+10524501996471252904537914913220198400 Sqrt[8 + 6 Sqrt[2]] —
+14701142201104864428066135243859376480655624 Sart [
+
+6 +4 Saqrt[2] — 4 Sqrt[4 + 3 Sart [2]]] —
+20790554698446527074663610993142635407996047 Sart [
+3 +2 Sqrt[2] — 2 Sqrt[4 + 3 Sart [2]]] +
+7241572618891368984131337252583167797784996 Sart [
+24 + 17 Sart[2] — 8 Sqrt[4 + 3 Sart [2]] -
+
+6 Sqrt[8 + 6 Sqrt[2]]] +
+5120565152731139523888774472702071524171224 Sqrt[
+2 (24 + 17 Sart [2] — 8 Saqrt[4 + 3 Sart [2]] —
+
+6 Sqrt[8 + 6 Sart [2]])]);
+GradV = ((2°(1/4) — 1)/(3 192)) Total[{gradv2zero ,
+
+gradv2[27(1/4) — 1],
+Total [Table[
+
+2 gradv2[i], {i, 2 (2°(1/4) — 1)/192,
+
+190 (27(1/4) — 1)/192, (27(1/4) — 1)/96}]],
+Total [Table[
+
+4 gradv2[i], {i, (2°7(1/4) — 1)/192,
+
+191 (27(1/4) — 1)/192, (27(1/4) — 1)/96}]]}]
+
+The upshot of this is that we now have the upper bound we were seeking, namely,
+
+1408244
+1000000’
+
+and thus, an upper bound on the second positive eigenvalue of the Bolza surface:
+
+1408244
+rg < R(G —— v5. .
+2 < R(ge2) < 252552 5.57606
+
+If a Dirichlet boundary problem corresponding to an irreducible representation gives a
+
+IV gal? <
+
+lower bound in the Faber-Krahn inequality that is greater than R()), it cannot appear in
+€,. We aim to prove that there are only two irreducible representations that allow a lower
+bound that is less than R(y1). One will be the trivial representation, which corresponds
+to the trivial eigenspace €, the other to €;. We will use the notation A; (xi) to denote
+
+the first positive eigenvalue of the i*”
+
+irreducible representation, and the notation 0; to
+denote the boundary of the subspace of B corresponding to boundary conditions coming
+from the i” irreducible representation. We will then show that the trivial representation
+
+cannot appear.
+
+3.4 First eigenspace of the Bolza surface
+
+Theorem 3.9 The dimension of the first eigenspace E, of A is 3, and the irreducible
+
+representation appearing in this eigenspace is x8.
+
+64

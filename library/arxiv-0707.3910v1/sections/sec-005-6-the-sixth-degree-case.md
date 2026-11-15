@@ -7,10 +7,11 @@ section_number: 6
 pages: 10-11
 source_pdf: 0707.3910v1.pdf
 source_sha256: ad31f3cba16c4ea4
-doc_brief: "LANDEN TRANSFORMATIONS AND THE INTEGRATION OF RATIONAL FUNCTIONS — We present a rational version of the classical Landen transfor- mation for elliptic integrals."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.973
+latex_coverage_ratio: 0.991
+doc_brief: "LANDEN TRANSFORMATIONS AND THE INTEGRATION OF RATIONAL FUNCTIONS — We present a rational version of the classical Landen transfor- mation for elliptic integrals."
 ---
 \label{sec-degree6}
 \setcounter{equation}{0}

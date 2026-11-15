@@ -1,0 +1,48 @@
+ISSN 1472-2739 (on-line) 1472-2747 (printed) 537
+
+Algebraic & Geometric Topology
+Volume 3 (2003) 537-556 Alc
+
+Published: 16 June 2003
+
+Skein-theoretical derivation
+of some formulas of Habiro
+
+GREGOR MASBAUM
+
+Abstract We use skein theory to compute the coefficients of certain power
+series considered by Habiro in his theory of slz invariants of integral homol-
+ogy 3-spheres. Habiro originally derived these formulas using the quantum
+group Ujslz. As an application, we give a formula for the colored Jones
+polynomial of twist knots, generalizing formulas of Habiro and Le for the
+trefoil and the figure eight knot.
+
+AMS Classification 57M25; 57M27
+
+Keywords Colored Jones polynomial, skein theory, twist knots
+
+Introduction
+
+In a talk at the Mittag-Leffler Institute in May 1999, K. Habiro announced a
+new approach to computing the colored Jones polynomial of knots and quantum
+slg invariants of integral homology 3-spheres. For an exposition, see his paper
+[H2] (some results are already announced in [H1]). His invariant for homology
+spheres recovers both the slz2 Reshetikhin-Turaev invariants at roots of unity,
+and Ohtsuki’s power series invariants. Later, Habiro and T.Q.T. Le generalized
+this to all quantum invariants associated to simple Lie algebras.
+
+In the slz case, quantum invariants can be expressed in terms of skein theory,
+using the Jones polynomial or the Kauffman bracket. Habiro’s invariant for
+homology spheres can be constructed using certain skein elements w = w, and
+
+w ! = w_ such that circling an even number of strands with w, (resp. w_)
+induces a positive (resp. negative) full twist:
+Leven | Leven
+
+“sp °
+
+More precisely, w4 and w_ are not skein elements, but infinite sums (i.e. power
+series) of such. But as long as they encircle an even number of strands (cor-
+responding to a strand colored by an integer-spin representation of sl), the
+
+© Geometry & Topology Publications

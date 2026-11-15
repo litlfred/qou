@@ -1,0 +1,68 @@
+---
+doc_id: lect-mathematical-ideas-notions-qft-2002
+doc_title: "Mathematical ideas and notions of quantum field theory"
+section_id: page-036
+section_title: "Page 36"
+pages: 36-36
+pdf_page: 36
+source_pdf: lect-mathematical-ideas-notions-qft-2002.pdf
+source_sha256: 95cac1ccd6c80226
+text_source: ocr
+granularity: page
+doc_brief: "Mathematical ideas and notions of quantum field theory — 78 sections: Page 1; Page 2; Page 3"
+---
+36 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY
+
+5.5. Computation of ¥,,(—1)r tage. Now it remains to compute the sum on
+the right hand side. To do this, we will need to link Ag(n) with €g(n), which has
+already been computed. This is accomplished by the following lemma.
+
+Lemma 5.5. One has
+
+ext) = (72) nol =
+
+a
+
+tig(n) = > (") dg (n — i).
+
+i
+Proof. Proof of the first equation. Let o be a gluing of a 2n-gon A with labeled
+vertices. If there is a pair of consequtive edges that are glued, we can glue them
+to obtain a 2n — 2-gon. Proceeding like this as long as we can, we will arrive at
+a 2n — 2i-gon A,, with a gluing o’ of its sides which satisfies condition (A). Note
+that A, and o’ do not depend on the order in which neighboring edges were glued
+to each other, and A, has a canonical labeling by 1,...,2n — 2i, in the increasing
+order of the “old” labels. Now, we claim that each (A,,0') is obtained in exactly
+
+ways; this implies the required statement.
+
+Indeed, let us consider vertices of A that ended up in the interior of A,. They
+have mapped to i points in the interior (each gluing of a pair of edges produces a
+new point). Let us call these points wy, ...,w;, and let v; be the smallest label of a
+vertex of A that goes to wj;. Then 1,...,; is a subset of {1,...,2n}. This subset
+completely determines the gluing o if (A,,o’) are given: namely, we should choose
+v; such that v; + 16 1% for any k, and glue the two edges adjacent to v;; then
+relabel by 1,...,2n — 2 the remaining vertices (in increasing order of “old” labels),
+and continue the step again, and so on. From this it is also seen that any set of v;
+may arise. This proves the claim.
+
+Proof of the second equation. Let o be a gluing of A (with labeled edges) which
+satisfies condition (A) but not necessarily (B). If a1, a2 are consecutive edges that
+are glued to consequtive edges b2, b; in the opposite order, then we may unite a1, a2
+into a single edge a, and b2,b; into b, and obtain a 2n — 2-gon with a gluing.
+Continuing so as long as we can, we will arrive at a 2n — 2i-gon A, with a new
+gluing o’, which satisfies conditions (A) and (B). In A,, each (j-th) pair of edges
+is obtained for mj + 1 pairs of edges in A. Thus, )/"' mj = i. Furthermore, for
+any (A,,o') the collection of numbers mj, ...,7™,_; defines (A,o) uniquely, up to
+deciding which of the m:+1 edges constituting the first edge of A, shold be labeled
+by 1. Thus, each (A,,o’) arises in the number of ways given by the formula
+
+> (m, + 1).
+
+My yy My 4 Mj =I
+
+It is easy to show (check!) that this number is equal to ("): The second equation
+is proved. Oo
+
+The completion of the proof of Theorem 5.1 depends now on the following com-
+putational lemma.

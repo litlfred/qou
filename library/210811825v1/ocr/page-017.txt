@@ -1,0 +1,51 @@
+CL)
+
+Our survey of spectral theory in Section 2.1 will focus on the “Dirichlet Laplacian’,
+that is, the Laplace operator associated with the above problem. Another important type
+
+of boundary condition is the Neumann problem.
+
+Definition 1.8 (Neumann eigenvalue problem) For 0M #40, M compact and con-
+nected, find all \ € R such that
+
+Ad — Ao = 0
+has nontrivial solutions @ € C?(M)NC1(M) that satisfy the boundary condition
+
+db _
+
+an 0
+
+on OM, where 2 is the outward unit normal vector field on OM.
+
+Remark 1.9 (Domain monotonicity, Neumann data) Let
+
+be as above. Considering now the Neumann eigenvalue problem, where the normal deriva-
+tive of the eigenfunction is required to be 0 on OQNM, we arrange all the eigenvalues of
+
+these domains into the increasing sequence
+O< py <fo dc...
+repeated according to multiplicity. Then for Ay, in the Laplace spectrum of M, we have
+Hk < Ak
+for allk EN.
+
+Finally, it is possible to have a boundary value problem that requires both Dirichlet
+
+and Neumann conditions.
+
+Definition 1.10 (Mixed eigenvalue problem) For 0M #4 0, M compact and con-
+nected compact and connected, N an open submanifold of OM, find all X € R such that
+
+Ad — Ao = 0
+
+has nontrivial solutions 6 € C?(M)NCl(MUN)NC°(M) that satisfy the boundary
+
+conditions a
+a9 =O0onN.
+n
+
+¢=0 o0ondM —-N,
+
+Using the symmetry group of a hyperbolic surface, we can reduce the closed problem
+on the surface to a simpler Dirichlet, Neumann or mixed problem on a fundamental
+
+domain of the group action on the surface. Useful to this approach is the concept of

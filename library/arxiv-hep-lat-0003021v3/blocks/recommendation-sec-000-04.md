@@ -1,0 +1,1 @@
+This is a general problem with staggered fermions that also we must face here: at finite lattice spacing, the index theorem is not valid for staggered fermions, and gauge field topology (whichever way one defines it on a discrete lattice) does not give rise to exact zero modes of the staggered Dirac operator.

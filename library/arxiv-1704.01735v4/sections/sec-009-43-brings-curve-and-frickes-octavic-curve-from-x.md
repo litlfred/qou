@@ -8,6 +8,7 @@ pages: 33-35
 source_pdf: 1704.01735v4.pdf
 source_sha256: 3935747ae9291f76
 toc_source: inferred
+doc_brief: "Modular curves, invariant theory and E 8 — The E8 root lattice can be constructed from the modular curve X(13) by the invariant theory for the simple group PSL(2, 13)."
 ---
 In this section, we will construct both Bring’s curve and Fricke’s octavic
 curve from the modular curve X(13) by the method of transversal linear

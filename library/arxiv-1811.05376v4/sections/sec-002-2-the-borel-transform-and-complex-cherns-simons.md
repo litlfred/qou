@@ -7,10 +7,11 @@ section_number: 2
 pages: 15-17
 source_pdf: 1811.05376v4.pdf
 source_sha256: a486709d0a78d19c
-doc_brief: "Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres — For a Seifert ﬁbered homology sphereX we show that the q-series invariant ˆZ0(X;q) introduced by Gukov-Pei-Putrov-Vafa"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.93
-latex_coverage_ratio: 0.845
+latex_coverage_ratio: 0.985
+doc_brief: "Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres — For a Seifert ﬁbered homology sphere X we show that the q-series invariant ˆZ0(X; q) introduced by"
 ---
 []{#sec:BOREL label="sec:BOREL"}
 

@@ -1,0 +1,1 @@
+Lassalle, the system obtained that way has a unique solution (we shall see another explanation of that in the next paragraph) and thus, one can compute the coefficients $a^\mu_\rho$ by induction over $|\mu|$.

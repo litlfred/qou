@@ -1,0 +1,1 @@
+First notice that the entries of the $T$-matrix (see below) for $Z(\cH_0^p(\Complex))$ generate $\Rational(\zeta_{39})$ so if there is a complete rational form over a field $k$ as a ribbon category, then $k$ must contain $\zeta_{39}$.

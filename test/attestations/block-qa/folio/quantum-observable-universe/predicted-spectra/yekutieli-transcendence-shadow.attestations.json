@@ -1,0 +1,483 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/yekutieli-transcendence-shadow",
+    "path": "folio/quantum-observable-universe/predicted-spectra/yekutieli-transcendence-shadow"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "1247137fc0d2",
+          "ts": "3a71db4e6559"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "1247137fc0d2",
+          "ts": "3a71db4e6559"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:52:23.000Z",
+        "reviewed_sha": "09a739f5edede9b14cc5bef20266c6cd9ebbcf93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:52:23.000Z",
+        "reviewed_sha": "09a739f5edede9b14cc5bef20266c6cd9ebbcf93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:52:23.000Z",
+        "reviewed_sha": "09a739f5edede9b14cc5bef20266c6cd9ebbcf93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:52:23.000Z",
+        "reviewed_sha": "09a739f5edede9b14cc5bef20266c6cd9ebbcf93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:52:23.000Z",
+        "reviewed_sha": "09a739f5edede9b14cc5bef20266c6cd9ebbcf93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:52:23.000Z",
+        "reviewed_sha": "09a739f5edede9b14cc5bef20266c6cd9ebbcf93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:52:23.000Z",
+        "reviewed_sha": "09a739f5edede9b14cc5bef20266c6cd9ebbcf93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:52:23.000Z",
+        "reviewed_sha": "09a739f5edede9b14cc5bef20266c6cd9ebbcf93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:52:23.000Z",
+        "reviewed_sha": "09a739f5edede9b14cc5bef20266c6cd9ebbcf93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:52:23.000Z",
+        "reviewed_sha": "09a739f5edede9b14cc5bef20266c6cd9ebbcf93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:52:23.000Z",
+        "reviewed_sha": "09a739f5edede9b14cc5bef20266c6cd9ebbcf93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:52:23.000Z",
+        "reviewed_sha": "09a739f5edede9b14cc5bef20266c6cd9ebbcf93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:52:23.000Z",
+        "reviewed_sha": "09a739f5edede9b14cc5bef20266c6cd9ebbcf93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:52:23.000Z",
+        "reviewed_sha": "09a739f5edede9b14cc5bef20266c6cd9ebbcf93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:52:23.000Z",
+        "reviewed_sha": "09a739f5edede9b14cc5bef20266c6cd9ebbcf93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1247137fc0d2",
+          "ts": "3a71db4e6559"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.279Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 4 paragraphs, ~2.1kB). Honest closing scope paragraph ('Rigorous proof requires controlling the arithmetic of the quantum dilogarithm at every tower level'). Two substantive problems reported as anomalies: three inequivalent non-vanishing claims about kappa_n presented interchangeably, and a probable misattribution of the E-function algebraic-independence result to Nesterenko."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1247137fc0d2",
+          "ts": "3a71db4e6559"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.315Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 4 paragraphs, ~2.1kB). Honest closing scope paragraph ('Rigorous proof requires controlling the arithmetic of the quantum dilogarithm at every tower level'). Two substantive problems reported as anomalies: three inequivalent non-vanishing claims about kappa_n presented interchangeably, and a probable misattribution of the E-function algebraic-independence result to Nesterenko."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1247137fc0d2",
+          "ts": "3a71db4e6559"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.351Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 4 paragraphs, ~2.1kB). Honest closing scope paragraph ('Rigorous proof requires controlling the arithmetic of the quantum dilogarithm at every tower level'). Two substantive problems reported as anomalies: three inequivalent non-vanishing claims about kappa_n presented interchangeably, and a probable misattribution of the E-function algebraic-independence result to Nesterenko."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1247137fc0d2",
+          "ts": "3a71db4e6559"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.389Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 4 paragraphs, ~2.1kB). Honest closing scope paragraph ('Rigorous proof requires controlling the arithmetic of the quantum dilogarithm at every tower level'). Two substantive problems reported as anomalies: three inequivalent non-vanishing claims about kappa_n presented interchangeably, and a probable misattribution of the E-function algebraic-independence result to Nesterenko."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1247137fc0d2",
+          "ts": "3a71db4e6559"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.425Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "major",
+        "evidence": "Paragraph 3 ends on the paired epigram 'The tower never terminates. No polynomial envelope binds the resulting volumes.' - two short quotable clauses restating what the paragraph has already asserted twice ('The cosimplicial structure theorem guarantees an infinite tower', 'The algebraic independence of the volumes is the transcendence shadow ...').",
+        "notes": "proposed: delete both sentences; the paragraph's claim is complete at 'the transcendence shadow of the non-vanishing motivic Galois character'."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1247137fc0d2",
+          "ts": "3a71db4e6559"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.460Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 4 paragraphs, ~2.1kB). Honest closing scope paragraph ('Rigorous proof requires controlling the arithmetic of the quantum dilogarithm at every tower level'). Two substantive problems reported as anomalies: three inequivalent non-vanishing claims about kappa_n presented interchangeably, and a probable misattribution of the E-function algebraic-independence result to Nesterenko."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1247137fc0d2",
+          "ts": "3a71db4e6559"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.497Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 4 paragraphs, ~2.1kB). Honest closing scope paragraph ('Rigorous proof requires controlling the arithmetic of the quantum dilogarithm at every tower level'). Two substantive problems reported as anomalies: three inequivalent non-vanishing claims about kappa_n presented interchangeably, and a probable misattribution of the E-function algebraic-independence result to Nesterenko."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1247137fc0d2",
+          "ts": "3a71db4e6559"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.533Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 4 paragraphs, ~2.1kB). Honest closing scope paragraph ('Rigorous proof requires controlling the arithmetic of the quantum dilogarithm at every tower level'). Two substantive problems reported as anomalies: three inequivalent non-vanishing claims about kappa_n presented interchangeably, and a probable misattribution of the E-function algebraic-independence result to Nesterenko."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1247137fc0d2",
+          "ts": "3a71db4e6559"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.568Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "minor",
+        "evidence": "'The classes kappa_n never vanish' (para 1), 'The obstruction classes kappa_n never simultaneously vanish' (para 3) and 'kappa_n cannot vanish at the corresponding cyclotomic levels' (para 3) are three DIFFERENT claims - universal, joint, and level-restricted - stated in the same unqualified register as if interchangeable. The strongest is asserted first and never supported.",
+        "notes": "proposed: pick the claim the corpus actually supports (the level-restricted one) and state it once. Not applied - choosing among the three is a mathematical decision, and it is also reported as an anomaly."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1247137fc0d2",
+          "ts": "3a71db4e6559"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.607Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 4 paragraphs, ~2.1kB). Honest closing scope paragraph ('Rigorous proof requires controlling the arithmetic of the quantum dilogarithm at every tower level'). Two substantive problems reported as anomalies: three inequivalent non-vanishing claims about kappa_n presented interchangeably, and a probable misattribution of the E-function algebraic-independence result to Nesterenko."
+      }
+    ]
+  }
+}

@@ -156,4 +156,15 @@ export default remark({
     "per-element",
     "appendix",
   ],
+  authorNotes: [
+    {
+      kind: "deprecated",
+      date: "2026-09-05",
+      body: "The census-assigned binding column was retired as a live binding route on 2026-09-05; see `docs/audits/2026-09-05-binding-route-consolidation-no-knot-selection.md`.",
+    },
+    {
+      kind: "note",
+      body: "The `pn` row of the interface table previously read $\\sigma + (-h/2)\\cdot\\mathbf{1}$ with wire-format `averaged`, the $\\delta = 0$ form, which the producer never emits at generator $3k+2$.",
+    },
+  ],
 });

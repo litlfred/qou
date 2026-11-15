@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: ant-v14-n7-s-p10.pdf
 source_sha256: 8d3e47aa779ad9c7
 toc_source: inferred
+doc_brief: "Abelian extensions in dynamical Galois theory — 11 sections: Front matter; Introduction; Some algebraic lemmas"
 ---
 msp
 ALGEBRA AND NUMBER THEORY 14:7 (2020)

@@ -1,0 +1,1 @@
+In fact, it is easily seen that the subdominant terms are not affected by $\Phi_N$ either, thanks to the commutation relations that define the Weyl algebra: for every $p$ participating in the ultraproduct decomposition, after one raises to the $p$-th power one should perform a reordering within the monomials -- a procedure which degrades the cardinality $|I|$ by an even number.

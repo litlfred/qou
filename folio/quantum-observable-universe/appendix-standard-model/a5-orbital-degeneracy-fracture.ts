@@ -14,6 +14,10 @@ export default remark({
   uses: ["conj:sm-gauge-truncation"],
   authorNotes: [
     {
+      kind: "refined-framing",
+      body: "An earlier version of this block rested its stated value on a falsifiability claim (differing from SO(3) \"at some resolution\"); the claim was withdrawn.",
+    },
+    {
       kind: "note",
       date: "2026-08-01",
       body:

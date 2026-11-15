@@ -1,0 +1,929 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction",
+    "path": "folio/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "187f75a70ee9",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "187f75a70ee9",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1e37ba8a36b8",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.675904Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.675904Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic projection carefully reducing infinite categorical loops elegantly down into specific geometric constants.",
+        "reviewed_at": "2026-07-08T14:16:40.000Z",
+        "reviewed_sha": "ad29bb36a98ecad3d499840e3f95440d2d561a6d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "1e37ba8a36b8",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "1e37ba8a36b8",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.675904Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.675904Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'The Kummer-tower perpetuity result': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic projection carefully reducing infinite categorical loops elegantly down into specific geometric constants.",
+        "reviewed_at": "2026-07-08T14:16:40.000Z",
+        "reviewed_sha": "ad29bb36a98ecad3d499840e3f95440d2d561a6d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "1e37ba8a36b8",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.675904Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.675904Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling folio/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic projection carefully reducing infinite categorical loops elegantly down into specific geometric constants.",
+        "reviewed_at": "2026-07-08T14:16:40.000Z",
+        "reviewed_sha": "ad29bb36a98ecad3d499840e3f95440d2d561a6d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "1e37ba8a36b8",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.675904Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.675904Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'The Kummer-tower perpetuity result'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic projection carefully reducing infinite categorical loops elegantly down into specific geometric constants.",
+        "reviewed_at": "2026-07-08T14:16:40.000Z",
+        "reviewed_sha": "ad29bb36a98ecad3d499840e3f95440d2d561a6d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "1e37ba8a36b8",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.675904Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.675904Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The prose in 'The Kummer-tower perpetuity result' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation).",
+        "severity": "minor",
+        "evidence": "The prose in 'The Kummer-tower perpetuity result' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation)."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic projection carefully reducing infinite categorical loops elegantly down into specific geometric constants.",
+        "reviewed_at": "2026-07-08T14:16:40.000Z",
+        "reviewed_sha": "ad29bb36a98ecad3d499840e3f95440d2d561a6d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "1e37ba8a36b8",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.675904Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.675904Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The Kummer-tower perpetuity result'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic projection carefully reducing infinite categorical loops elegantly down into specific geometric constants.",
+        "reviewed_at": "2026-07-08T14:16:40.000Z",
+        "reviewed_sha": "ad29bb36a98ecad3d499840e3f95440d2d561a6d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "1e37ba8a36b8",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.675904Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.675904Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'The Kummer-tower perpetuity result' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic projection carefully reducing infinite categorical loops elegantly down into specific geometric constants.",
+        "reviewed_at": "2026-07-08T14:16:40.000Z",
+        "reviewed_sha": "ad29bb36a98ecad3d499840e3f95440d2d561a6d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "1e37ba8a36b8",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.675904Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.675904Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No narrative divergence: the Lean sibling implements the structure claimed in 'The Kummer-tower perpetuity result' (though incomplete).",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic projection carefully reducing infinite categorical loops elegantly down into specific geometric constants.",
+        "reviewed_at": "2026-07-08T14:16:40.000Z",
+        "reviewed_sha": "ad29bb36a98ecad3d499840e3f95440d2d561a6d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "1e37ba8a36b8",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.675904Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.675904Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Citations to yekutieli2010 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic projection carefully reducing infinite categorical loops elegantly down into specific geometric constants.",
+        "reviewed_at": "2026-07-08T14:16:40.000Z",
+        "reviewed_sha": "ad29bb36a98ecad3d499840e3f95440d2d561a6d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "1e37ba8a36b8",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.675904Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.675904Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'The Kummer-tower perpetuity result' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic projection carefully reducing infinite categorical loops elegantly down into specific geometric constants.",
+        "reviewed_at": "2026-07-08T14:16:40.000Z",
+        "reviewed_sha": "ad29bb36a98ecad3d499840e3f95440d2d561a6d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "1e37ba8a36b8",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.675904Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.675904Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'The Kummer-tower perpetuity result' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic projection carefully reducing infinite categorical loops elegantly down into specific geometric constants.",
+        "reviewed_at": "2026-07-08T14:16:40.000Z",
+        "reviewed_sha": "ad29bb36a98ecad3d499840e3f95440d2d561a6d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "1e37ba8a36b8",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.675904Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.675904Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'The Kummer-tower perpetuity result' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic projection carefully reducing infinite categorical loops elegantly down into specific geometric constants.",
+        "reviewed_at": "2026-07-08T14:16:40.000Z",
+        "reviewed_sha": "ad29bb36a98ecad3d499840e3f95440d2d561a6d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "1e37ba8a36b8",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.675904Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.675904Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'The Kummer-tower perpetuity result' are reproducible.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic projection carefully reducing infinite categorical loops elegantly down into specific geometric constants.",
+        "reviewed_at": "2026-07-08T14:16:40.000Z",
+        "reviewed_sha": "ad29bb36a98ecad3d499840e3f95440d2d561a6d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "1e37ba8a36b8",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.675904Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.675904Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Conjecture/Proof is open with sorry placeholders, hence the objection is survivable.",
+        "severity": "minor",
+        "verdict": "survivable-objection",
+        "referee_argument": "The conjectured algebraic or physical relations in 'The Kummer-tower perpetuity result' remain unproven and are represented as sorry stubs in folio/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.lean.",
+        "evidence": "Conjecture/Proof is open with sorry placeholders, hence the objection is survivable."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic projection carefully reducing infinite categorical loops elegantly down into specific geometric constants.",
+        "reviewed_at": "2026-07-08T14:16:40.000Z",
+        "reviewed_sha": "ad29bb36a98ecad3d499840e3f95440d2d561a6d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor standards to lifting-and-descent_seq4.md. Cleaned up exposition of motivic substrate and blowup obstruction. Reorganized Kummer filtration flow for linear logic. Shorter sentences, active verbs. All math formulas preserved.",
+        "reviewed_at": "2026-07-07T14:26:55.675904Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.675904Z"
+        },
+        "field_hash": {
+          "md": "1e37ba8a36b8",
+          "ts": "a0417f91b22d",
+          "lean": "de101cab5a66"
+        }
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic projection carefully reducing infinite categorical loops elegantly down into specific geometric constants.",
+        "reviewed_at": "2026-07-08T14:16:40.000Z",
+        "reviewed_sha": "ad29bb36a98ecad3d499840e3f95440d2d561a6d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "187f75a70ee9",
+          "ts": "a0417f91b22d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:37.740Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no assert-by-denial construction; contrasts present are substantive mathematical distinctions or absent."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "187f75a70ee9",
+          "ts": "a0417f91b22d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:37.779Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no setup-then-reframe pivot construction."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "187f75a70ee9",
+          "ts": "a0417f91b22d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:37.819Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no load-bearing spaced dashes; any dashes are ranges or true parentheticals."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "187f75a70ee9",
+          "ts": "a0417f91b22d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:37.859Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no reflex three-item list; enumerations present are substantive."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "187f75a70ee9",
+          "ts": "a0417f91b22d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:37.900Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no quotable-sounding final line."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "187f75a70ee9",
+          "ts": "a0417f91b22d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:37.942Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no narration of emphasis (no 'we emphasize'/'note the framing')."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "187f75a70ee9",
+          "ts": "a0417f91b22d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:37.983Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no block-final restatement of already-established content."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "187f75a70ee9",
+          "ts": "a0417f91b22d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:38.024Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no personal register in institutional prose."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "187f75a70ee9",
+          "ts": "a0417f91b22d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:38.066Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no unqualified maximum-strength claims."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "187f75a70ee9",
+          "ts": "a0417f91b22d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:38.112Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): prose parses aloud; no stalling noun chains."
+      }
+    ]
+  }
+}

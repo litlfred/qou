@@ -1,0 +1,69 @@
+---
+doc_id: lect-mathematical-ideas-notions-qft-2002
+doc_title: "Mathematical ideas and notions of quantum field theory"
+section_id: page-026
+section_title: "Page 26"
+pages: 26-26
+pdf_page: 26
+source_pdf: lect-mathematical-ideas-notions-qft-2002.pdf
+source_sha256: 95cac1ccd6c80226
+text_source: ocr
+granularity: page
+doc_brief: "Mathematical ideas and notions of quantum field theory — 78 sections: Page 1; Page 2; Page 3"
+---
+26 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY
+
+representation of Sp(2N). Compare to the case of real symmetric matrices, where
+the relevant representation is S?V for O(N), and the case of complex Hermitian
+matrices, where it is V ® V* for GL(N).
+
+4.4. Application to a counting problem. Matrix integrals are so rich that even
+the simplest possible example reduces to a nontrivial counting problem. Namely,
+consider the matrix integral Zy over complex Hermitian matrices in the case
+(A) = Tr(A?)/2 — sTr(A?™)/2m, where s? = 0 (i.e. we work over the ring
+C[s]/(s)). In this case we can set h = 1. Then from Theorem 4.4 we get
+
+| Tr(A?™)e“ MAY? GA = Py (N),
+bn
+where P,, (NV) is a polynomial, given by the formula P(N) = Dgso Eg(m)N™8,
+and €,(m) is the number of ways to glue a surface of genus g from a 2m-gon with
+labeled sides by gluing sides preserving the orientation. Indeed, in this case we
+have only one fat flower of valency 2m, which has to be glued with itself; so a direct
+application of our Feynman rules leads to counting ways to glue a surface of a given
+genus from a polygon.
+The value of this integral is given by the following non-trivial theorem.
+
+Theorem 4.7. (Harer-Zagier, 1986)
+
+(2m)! CX /m a(x —1)...(a@—p)
+Py (x) = 2?
+* (7)
+
+2m! (p +1)!
+
+The theorem is proved in the next subsections.
+Looking at the leading coefficient of Pm, we get.
+
+Corollary 4.8. The number of ways to glue a sphere of a 2m-gon is the Catalan
+ber C,, = 2m
+number Cm = at (mm
+
+Corollary 4.8 actually has another (elementary combinatorial) proof, which is as
+follows. For each pairing o on the set of sides of the 2m-gon, let us connect the
+midpoints of the sides that are paired by straight lines (Fig.14). It is geometrically
+evident that if these lines don’t intersect then the gluing will give a sphere. We
+claim that the converse is true as well. Indeed, we can assume that the statement
+is known for the 2m — 2-gon. Let o be a gluing of the 2m-gon that gives a sphere.
+If there is a connection between two adjacent sides, we may glue them and go from
+a 2m-gon to a 2m — 2-gon (Fig. 15). Thus, it is sufficient to consider the case when
+adjacent sides are never connected. Then there exist adjacent sides a and b whose
+lines (connecting them to some c,d) intersect with each other. Let us now replace
+o by another pairing o', whose only difference from o is that a is connected to b
+and c to d (Fig. 16). One sees by inspection (check it!) that this does not decrease
+the number of boundary components of the resulting surface. Therefore, since o
+gives a sphere, so does a’. But a’ has adjacent sides connected, the case considered
+before, hence the claim.
+
+Now it remains to count the number of ways to connect midpoints of sides with
+lines without intersections. Suppose we draw one such line, such that the number
+of sides on the left of it is 2k and on the right is 21 (so that k+1 = m-—1). Then we

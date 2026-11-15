@@ -7,10 +7,11 @@ section_number: 2.2
 pages: 11-13
 source_pdf: 1301.4504v4.pdf
 source_sha256: 201acc5bb1d4b6a0
-doc_brief: "Quantum Computation vs. Firewalls — In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.977
-latex_coverage_ratio: 0.945
+latex_coverage_ratio: 0.986
+doc_brief: "Quantum Computation vs. Firewalls — In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue"
 ---
 We now consider Alice the infalling observer's point of view. As mentioned in the introduction, it may be possible to "embed" Alice's quantum mechanics into Charlie's via some sort of nontrivial operator mapping. We will discuss this eventually but for the moment will just treat Alice's theory as an independent construction. Here are the basic assumptions about it:
 

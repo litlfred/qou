@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2605.22763v1/sections/sec-027",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Written on the Wall, Conjecture 2",
+  "pageStart": 58,
+  "pageEnd": 59,
+  "contains": [
+    "library/arxiv-2605.22763v1/blocks/prose-sec-027",
+    "library/arxiv-2605.22763v1/blocks/recommendation-sec-027-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2605.22763v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2605.22763v1",
+  "provenance": "ingested"
+}

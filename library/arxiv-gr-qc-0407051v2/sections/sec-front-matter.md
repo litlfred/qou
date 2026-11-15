@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-gr-qc-0407051v2
-doc_title: "arXiv:gr-qc/0407051v2 23 Aug 2004"
+doc_title: "Black hole entropy from quantum geometry"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 0407051v2.pdf
 source_sha256: 2de07e909b17c5a5
 toc_source: inferred
+doc_brief: "Black hole entropy from quantum geometry — Quantum Geometry (the modern Loop Quantum Gravity using graphs and spin-networks instead of the loops) provides microscopic degrees of freedom that account"
 ---
 arXiv:gr-qc/0407051v2  23 Aug 2004
 Black hole entropy from Quantum Geometry

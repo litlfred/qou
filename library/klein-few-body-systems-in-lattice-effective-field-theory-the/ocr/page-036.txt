@@ -1,0 +1,54 @@
+Chapter 3 Nuclear Lattice Effective Field Theory
+
+Rewriting the S-matrix in terms of A, B gives
+S=[B AYA By. (3.37)
+
+where S is defined according to the Stapp parametrization of Eq. (2.53). Then again, the phase shifts as
+well as the mixing angles are fitted to Eq. (3.37).
+
+In this thesis we calculate the nucleon-nucleon phase shift and mixing angle in the following manner.
+At LO, we use the spherical projection method for the determination of phase shifts and mixing angles
+while we use only the energy information for the perturbative inclusion of NLO and N2LO potentials in
+the calculation of the phase shift. As we cannot solve the mixing angle perturbatively for higher orders,
+we use again the spherical projection for these calculations.
+
+3.5 Exact methods
+
+As long as we consider only systems with a few particles, we can use the Lanczos/ Arnoldi algorithm [95,
+96] for sparse matrices to solve the eigenvalue problem. Afterward, we have the energy and the wave
+function of the system and use this information for the calculation of binding energies and phase shifts.
+The Lanczos algorithm works as the following.
+A general eigenvalue problem reads
+A-v=A+-0, (3.38)
+
+where A is an X n matrix, 2 is the eigenvalue and v is the eigenvector which can be rewritten in the basis
+of the power-iterated subspace,
+2, 43
+{a.4q.4°¢.A°g,...}, (3.39)
+
+where g is an arbitrary starting vector. Hence, we could use a finite number of m vectors based
+on Eq. (3.39) to orthogonally transform the matrix A into a Hessenberg matrix H,,, from which the
+eigenvalues and -vectors are calculated faster than for a general matrix. Admittedly, the aforementioned
+arguments of Eq. (3.39) do not have to be orthogonal. After orthogonalization, the basis is given by
+P\.-++> Pm and applied to the general matrix A, we get the m x m Hessenberg matrix, where all entries
+below the first subdiagonal are equal to zero. It is of the form
+
+hy) hy te him
+hy) hy tee hom
+= 0 hg tee I3.m
+Hn=lq 6 hep (3.40)
+h
+
+mm.
+
+and it is an similarity transformation of the original matrix A in the first m arguments. In the case of a
+real symmetric matrix A, Eq. (3.40) reduces to a tridiagonal matrix which can be evaluated even faster.
+As we work with finite m, the eigenvectors and -values are only an approximation of the exact solution,
+making it necessary to iterate the procedure until the desired precision is reached. Generally, we only
+have to perform a matrix-vector multiplication and we have to store the vectors p,,..., P,, aS well as
+the matrix H,,,. This is particularly efficient for very sparse matrices, where most of the entries are zero
+and as such do not contribute to the calculation. Using a large enough basis and enough iterations it is
+also possible to calculate more than one eigenvalue which is particularly important for the calculation of
+phase shifts where one needs eigenvalues corresponding to a large range of energy.
+
+30

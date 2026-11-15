@@ -1,0 +1,76 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1108.0687v3",
+ "source": {
+  "structure_sha256": "66ba88e13a429a0a3d01f1a7a2b0a8c5fdfd52b816427d94d0b95d09b6791499",
+  "file": "1108.0687v3.pdf"
+ },
+ "provenance": {
+  "title": "Concentration of Lipschitz functionals of determinantal and other strong Rayleigh measures",
+  "authors": "Robin Pemantle1, 2 and Yuval Peres3",
+  "arxiv": {
+   "id": "1108.0687",
+   "version": "3",
+   "primary_class": "math.PR",
+   "stamp_date": "28 Jul 2013"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 3,
+  "by_kind": {
+   "recommendation": 3
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "To see why the exponent must be weakened consider the example of Bernoulli random variables $X_1 , \\ldots , X_n$ with $n$ even, $\\{ X_1 , \\ldots , X_{n/2} \\}$ independent with mean $1/2$, and $X_{n/2 + j} = 1 - X_j$ for $1 \\leq j \\leq n/2$.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-002-12-generalizations.md",
+   "section_title": "Generalizations",
+   "pages": "3-4",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "As pointed out at the beginning of Section 3 of [BBL09], such a polynomial with real coe\ufb03cients must have all its roots real.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-008-43-proof-of-theorem.md",
+   "section_title": "Proof of Theorem ??",
+   "pages": "11-14",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "Some speculation has been given to the most natural class of matroids for which negative correlation or negative association must hold.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-010-51-matroids.md",
+   "section_title": "Matroids",
+   "pages": "14-16",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

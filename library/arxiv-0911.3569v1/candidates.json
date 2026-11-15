@@ -1,0 +1,61 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0911.3569v1",
+ "source": {
+  "structure_sha256": "4e7c15c9724fb453894cc98728345c4be09627ba9701186cf240d83c83fc1030",
+  "file": "0911.3569v1.pdf"
+ },
+ "provenance": {
+  "title": "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS",
+  "authors": "DAVID G. WAGNER",
+  "arxiv": {
+   "id": "0911.3569",
+   "version": "1",
+   "primary_class": "math.CV",
+   "stamp_date": "18 Nov 2009"
+  },
+  "doi": null
+ },
+ "aspects": [
+  "requirements"
+ ],
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "recommendation": 2
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "For the full story and the history and context of the subject one must go to the references cited, the references they cite, and so on.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction.",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  },
+  {
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
+   "name": null,
+   "statement": "By GWS, any circular region containing all the red dots must contain at least one of the black dots.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-009-4-the-grace-walsh-szego-coincidence-theorem.md",
+   "section_title": "The Grace-Walsh-Szego Coincidence Theorem.",
+   "pages": "11-11",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
+  }
+ ]
+}

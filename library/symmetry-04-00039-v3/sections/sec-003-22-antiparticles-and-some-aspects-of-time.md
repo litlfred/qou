@@ -8,6 +8,7 @@ pages: 12-17
 source_pdf: symmetry-04-00039-v3.pdf
 source_sha256: 1aa8a81916887f8e
 toc_source: inferred
+doc_brief: "Knots on a Torus: A Model of the Elementary Particles — Two knots; just two rudimentary knots, the unknot and the trefoil."
 ---
 To discuss composites we need one more definition: associated with each of the four fermions in 
 Figure 6 is an antifermion, an example of which is the one associated with fermion C and labeled C* in 

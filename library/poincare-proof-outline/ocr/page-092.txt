@@ -1,0 +1,70 @@
+show ?thesis
+proof
+assume «: Re u’ « Re v' < 0
+show |In ?a1| + |ln ?a2| = |In 2a3|
+proof (cases Re u' > 0)
+case True
+hence Re v' < 0
+using *
+by (smt mult-nonneg-nonneg)
+show ?thesis
+using 1 23 «(Re u'> 0) «Re v' < 0»
+using (Re u’ < 1) (Re u’ > —1)> <is-real uy
+using (Re v’ < 1) «Rev! > —1> ¢is-real v’>
+using complex-is-Real-iff
+using In-div In-mult
+by simp
+next
+case False
+hence Re v’ > 0 Re u'’ < 0
+using *
+by (smt zero-le-mult-iff )+
+show ?thesis
+using 1 23 «Re u' < 0) ‘Rev’ > 0»
+using (Re u’ < 1> (Re u’ > —1> <is-real uy
+using ‘Re v’ < 1) (Re v’ > —1» <is-real v’»
+using complex-is-Real-iff
+using In-div In-mult
+by simp
+qed
+next
+assume «: |In ?a1| + |In ?a2| = |In ?a3|
+{
+assume Re u’ > 0 Re v' > 0
+hence False
+using « 123
+using (Re u’ < 1) «Re u’ > —1» <is-real u’
+using (Re v’ < 1) «Rev! > —1> ¢is-real v’>
+using complex-is-Real-iff
+using In-mult In-div
+by (cases Re v' < Re u’) auto
+
+}
+
+moreover
+{
+assume Re u’ < 0 Re v' < 0
+hence False
+using « 123
+using (Re u’ < 1> (Re u’ > —1> <is-real uy
+using ‘Re v’ < 1) (Re v’ > —1» <is-real v’»
+using complex-is-Real-iff
+using In-mult In-div
+by (cases Re v' < Re u’) auto
+}
+ultimately
+show Re u’* Rev’ < 0
+using (Re u’ 4 0) ‘Re v' # 0»
+by (smt divisors-zero mult-le-0-iff)
+qed
+qed
+thus ?thesis
+using assms
+apply (subst poincare-distance-sym, simp, simp)
+apply (subst poincare-distance-zero-x-axis, simp, simp add: circline-set-x-axis)
+apply (subst poincare-distance-zero-x-axis, simp, simp add: circline-set-x-axis)
+apply (subst poincare-distance-x-axis-x-axis, simp, simp, simp add: circline-set-x-axis, simp add: circline-set-x-axis)
+apply simp
+done
+
+92

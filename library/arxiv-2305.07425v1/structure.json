@@ -7,10 +7,11 @@
   "bytes": 300103,
   "pages": 20,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,18 +21,26 @@
    "stamp_date": "12 May 2023"
   },
   "doi": null,
-  "title": "LARGEST HYPERBOLIC ACTIONS OF 3\u2013MANIFOLD GROUPS",
+  "title": "LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS",
   "authors_raw": "CAROLYNABBOTT, HOANG THANH NGUYEN, AND ALEXANDER J. RASMUSSEN",
   "title_lines": [
-   "LARGEST HYPERBOLIC ACTIONS OF 3\u2013MANIFOLD GROUPS"
+   "LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS"
   ],
-  "abstract": "The set of equivalence classes of cobounded actions of a grou p G on di\ufb00erent hyperbolic metric spaces carries a natural partial order. F ollowing Abbott\u2013Balasubramanya\u2013 Osin, the group G is H\u2013accessible if the resulting poset has a largest element. In this paper, w e prove that every non-geometric 3-manifold has a \ufb01nite cover with H\u2013inaccessible fundamental group and give conditions under which the fundamental group of the original manifold is H\u2013 inaccessible. We also prove that every Croke-Kleiner admis sible group (a class of graphs of groups that generalizes fundamental groups of 3\u2013dimension al graph manifolds) has a \ufb01nite index subgroup that is H\u2013inaccessible.",
+  "abstract": "The set of equivalence classes of cobounded actions of a group G on diﬀerent hyperbolic metric spaces carries a natural partial order. Following Abbott–Balasubramanya– Osin, the group G is H–accessible if the resulting poset has a largest element. In this paper, we prove that every non-geometric 3-manifold has a ﬁnite cover with H–inaccessible fundamental group and give conditions under which the fundamental group of the original manifold is H– inaccessible. We also prove that every Croke-Kleiner admissible group (a class of graphs of groups that generalizes fundamental groups of 3–dimensional graph manifolds) has a ﬁnite index subgroup that is H–inaccessible.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20230514204042-04'00'",
    "Creator": "LaTeX with hyperref",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20230514204042-04'00'"
+  },
+  "title_raw": "LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS 1. Introduction A ﬁxed group G will admit many diﬀerent cobounded actions on diﬀerent hyperbolic metric spaces. Abbott, Balasubramanya, and Osin in [ABO19] show that the set of equivalence classes of cobounded hyperbolic actions of a group G carries a",
+   "outline": "1. Introduction",
+   "text": "LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -40,102 +49,340 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Acknowledgments",
    "page": 3,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Preliminaries",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
-   "title": "H\u2013accessibility",
+   "title": "H–accessibility",
    "page": 4,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Projection axioms",
    "page": 5,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Croke-Kleiner admissible groups",
    "page": 6,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
-   "title": "Croke-Kleiner admissible groups and H\u2013inaccessibility",
+   "title": "Croke-Kleiner admissible groups and H–inaccessibility",
    "page": 8,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Construction of group actions",
    "page": 8,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
-   "title": "H\u2013accessibility of 3-manifold groups",
+   "title": "H–accessibility of 3-manifold groups",
    "page": 10,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Seifert fibered manifolds",
    "page": 12,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
-   "title": "H\u2013accessibility of non-elementary graph manifolds",
+   "title": "H–accessibility of non-elementary graph manifolds",
    "page": 12,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Theorem 1.1",
    "page": 16,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
-   "title": "H\u2013accessibility of finitely generated 3-manifold groups",
+   "title": "H–accessibility of finitely generated 3-manifold groups",
    "page": 17,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 1,
    "title": "References",
    "page": 18,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 832,
+   "n_words": 121,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -143,38 +390,46 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 6374,
-   "n_words": 1039
+   "n_chars": 8914,
+   "n_words": 1386,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
-   "id": "sec-001-21-haccessibility",
-   "number": "2.1",
-   "title": "H\u2013accessibility",
-   "level": 2,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 2515,
-   "n_words": 403
-  },
-  {
-   "id": "sec-002-11-acknowledgments",
+   "id": "sec-001-11-acknowledgments",
    "number": "1.1",
    "title": "Acknowledgments",
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 294,
-   "n_words": 42
+   "n_chars": 289,
+   "n_words": 38,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
-   "id": "sec-003-2-preliminaries",
+   "id": "sec-002-2-preliminaries",
    "number": "2",
    "title": "Preliminaries",
    "level": 1,
    "page_start": 4,
+   "page_end": 4,
+   "n_chars": 16,
+   "n_words": 2,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-003-21-haccessibility",
+   "number": "2.1",
+   "title": "H–accessibility",
+   "level": 2,
+   "page_start": 4,
    "page_end": 5,
-   "n_chars": 2788,
-   "n_words": 563
+   "n_chars": 2650,
+   "n_words": 506,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-004-22-projection-axioms",
@@ -183,8 +438,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 3076,
-   "n_words": 624
+   "n_chars": 3167,
+   "n_words": 640,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
    "id": "sec-005-23-croke-kleiner-admissible-groups",
@@ -193,18 +450,22 @@
    "level": 2,
    "page_start": 6,
    "page_end": 8,
-   "n_chars": 6886,
-   "n_words": 1336
+   "n_chars": 6947,
+   "n_words": 1320,
+   "label_start": "6",
+   "label_end": "8"
   },
   {
    "id": "sec-006-3-croke-kleiner-admissible-groups-and-hinaccessi",
    "number": "3",
-   "title": "Croke-Kleiner admissible groups and H\u2013inaccessibility",
+   "title": "Croke-Kleiner admissible groups and H–inaccessibility",
    "level": 1,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 1046,
-   "n_words": 202
+   "n_chars": 1043,
+   "n_words": 199,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
    "id": "sec-007-31-construction-of-group-actions",
@@ -213,61 +474,103 @@
    "level": 2,
    "page_start": 8,
    "page_end": 10,
-   "n_chars": 6919,
-   "n_words": 1403
+   "n_chars": 6860,
+   "n_words": 1344,
+   "label_start": "8",
+   "label_end": "10"
   },
   {
    "id": "sec-008-4-haccessibility-of-3-manifold-groups",
    "number": "4",
-   "title": "H\u2013accessibility of 3-manifold groups",
+   "title": "H–accessibility of 3-manifold groups",
    "level": 1,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 6959,
-   "n_words": 1260
+   "n_chars": 5295,
+   "n_words": 897,
+   "label_start": "10",
+   "label_end": "12"
   },
   {
-   "id": "sec-009-42-haccessibility-of-non-elementary-graph-manifo",
+   "id": "sec-009-41-seifert-fibered-manifolds",
+   "number": "4.1",
+   "title": "Seifert fibered manifolds",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1516,
+   "n_words": 286,
+   "label_start": "12",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-010-42-haccessibility-of-non-elementary-graph-manifo",
    "number": "4.2",
-   "title": "H\u2013accessibility of non-elementary graph manifolds",
+   "title": "H–accessibility of non-elementary graph manifolds",
    "level": 2,
    "page_start": 12,
    "page_end": 16,
-   "n_chars": 11714,
-   "n_words": 2320
+   "n_chars": 11623,
+   "n_words": 2229,
+   "label_start": "12",
+   "label_end": "16"
   },
   {
-   "id": "sec-010-43-theorem-11",
+   "id": "sec-011-43-theorem-11",
    "number": "4.3",
    "title": "Theorem 1.1",
    "level": 2,
    "page_start": 16,
-   "page_end": 18,
-   "n_chars": 7011,
-   "n_words": 1241
+   "page_end": 17,
+   "n_chars": 2098,
+   "n_words": 373,
+   "label_start": "16",
+   "label_end": "17"
   },
   {
-   "id": "sec-011-references",
+   "id": "sec-012-44-haccessibility-of-finitely-generated-3-manifo",
+   "number": "4.4",
+   "title": "H–accessibility of finitely generated 3-manifold groups",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 4784,
+   "n_words": 813,
+   "label_start": "17",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-013-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 18,
    "page_end": 20,
-   "n_chars": 4708,
-   "n_words": 637
+   "n_chars": 4670,
+   "n_words": 599,
+   "label_start": "18",
+   "label_end": "20"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 14,
-  "sections": 12,
-  "chars_total": 60290,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 15,
+  "chars_total": 60704,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 13,
-   "overlaid": 8,
+   "overlaid": 11,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -275,54 +578,61 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.997,
-     "coverage_ratio": 0.947,
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-21-haccessibility",
-     "title": "H\u2013accessibility",
-     "prose_ratio": 0.305,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-002-11-acknowledgments",
+     "id": "sec-001-11-acknowledgments",
      "title": "Acknowledgments",
      "prose_ratio": 0.933,
-     "coverage_ratio": 0.737,
+     "coverage_ratio": 0.75,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-2-preliminaries",
+     "id": "sec-002-2-preliminaries",
      "title": "Preliminaries",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-21-haccessibility",
+     "title": "H–accessibility",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-22-projection-axioms",
      "title": "Projection axioms",
-     "prose_ratio": 0.947,
-     "coverage_ratio": 0.932,
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.969,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-23-croke-kleiner-admissible-groups",
      "title": "Croke-Kleiner admissible groups",
-     "prose_ratio": 0.945,
-     "coverage_ratio": 0.96,
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-006-3-croke-kleiner-admissible-groups-and-hinaccessi",
-     "title": "Croke-Kleiner admissible groups and H\u2013inaccessibility",
+     "title": "Croke-Kleiner admissible groups and H–inaccessibility",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.951,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -330,33 +640,49 @@
      "id": "sec-007-31-construction-of-group-actions",
      "title": "Construction of group actions",
      "prose_ratio": 0.962,
-     "coverage_ratio": 0.962,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-008-4-haccessibility-of-3-manifold-groups",
-     "title": "H\u2013accessibility of 3-manifold groups",
-     "prose_ratio": 0.974,
-     "coverage_ratio": 0.988,
+     "title": "H–accessibility of 3-manifold groups",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-42-haccessibility-of-non-elementary-graph-manifo",
-     "title": "H\u2013accessibility of non-elementary graph manifolds",
-     "prose_ratio": 0.759,
-     "coverage_ratio": 0.978,
+     "id": "sec-009-41-seifert-fibered-manifolds",
+     "title": "Seifert fibered manifolds",
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-43-theorem-11",
+     "id": "sec-010-42-haccessibility-of-non-elementary-graph-manifo",
+     "title": "H–accessibility of non-elementary graph manifolds",
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-43-theorem-11",
      "title": "Theorem 1.1",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-011-references",
+     "id": "sec-012-44-haccessibility-of-finitely-generated-3-manifo",
+     "title": "H–accessibility of finitely generated 3-manifold groups",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-references",
      "title": "References",
      "result": "no matching \\section"
     }

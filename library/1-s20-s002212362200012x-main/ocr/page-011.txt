@@ -1,0 +1,41 @@
+R. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392 11
+
+where Z; is an It6 process that does not depend on x (here we used the fact that |a|? is
+constant on C,,). Therefore,
+
+log Fi (x) = (x, we) + ce
+
+where c; is some It6 process and w; = B, + fo a,ds. The above display and the fact that
+1, is a probability measure, implies that
+
+MY = Tw, (14)
+
+and therefore also
+
+a = / rdy(x) = / adry,v(x) = ay(wz).
+
+mn Cn
+The process w; thus satisfies the equation
+
+wo =0, dw, = dB, + a,(w;)dt. (15)
+The above equation gives an alternative construction for the process defined in (10). Due
+to the Markov property of the measure-valued process 1, the above discussion leads to
+
+the following result.
+
+Proposition 11. Given a measure v and a vector v € R", consider the process defined by
+the equation
+
+Ug =v, du, = dB, + a, (u)dt.
+Then X = limy-.00 Gy (uz) exists and is a point in C, almost surely, and has the law Tyv.
+
+Proof. Consider the measure / = T,y and let w; be the process constructed as above
+with v replaced by / in equation (10). Observe that by definition
+
+a,(x) =a,(a+v), Va ER".
+
+In light of (15) and by the uniqueness of the solution to the above SDE, we have that
+w,+v = uz almost surely, for all t. The result now follows from part 3 of Proposition 10
+and the fact that
+
+a, = ap(wr) =ar(w).

@@ -98,7 +98,7 @@ suffice.  The module therefore verifies in a container with no olean tree at all
   Theorem 2, which *completes* Laing & Singerman's Theorem 15.
 * **Laing & Singerman**, Theorem 15 — quoted as Theorem 3.4 of
   `[braden-disney-hogg-2022]`
-  (`library/s40879-023-00706-0/sections/sec-006-31-weierstrass-points.md`).
+  (`library/s40879-023-00706-0/sections/sec-008-31-weierstrass-points.md`).
   **Not separately held**; §3 below is deliberately independent of it.
 * **Total Weierstrass weight `g³ − g`; maximum weight `g(g−1)/2`, attained
   exactly at hyperelliptic Weierstrass points** — classical (Hurwitz 1893).

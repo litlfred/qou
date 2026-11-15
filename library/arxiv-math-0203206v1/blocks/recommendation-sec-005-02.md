@@ -1,0 +1,1 @@
+Since a compact group $G$ is amenable, $C_r^* (G)$ coincides with the universal group C\*-algebra $C^* (G)$, and therefore, as we shall see very explicitly in the next section, the representation theory of a discrete cocommutative aqg coincides with that of $G$.

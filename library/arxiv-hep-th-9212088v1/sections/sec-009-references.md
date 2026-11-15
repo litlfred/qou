@@ -8,6 +8,7 @@ pages: 16-18
 source_pdf: 9212088v1.pdf
 source_sha256: ecb2c02ec6fe11bd
 toc_source: inferred
+doc_brief: "arXiv:hep-th/9212088v1 14 Dec 1992 — We construct a random matrix model that, in the large N limit, reduces to the low energy limit of the QCD partition function put forward by Leutwyler and Smilga."
 ---
 [1] P. van Baal, Nucl. Phys. B351 (1991) 183.
 [2] H. Leutwyler and A. Smilga, Phys. Rev. D (1992) (in press).
@@ -31,13 +32,11 @@ vacuum, Stony Brook preprint NTG-93 (1993).
 [19] L. Hua, Harmonic Analysis of Functions of Several Complex Variables in the Classical
 Domain, tr. L. Ebner and A. Kor´ani, American Mathematical Society, Providence,
 RI, 1963.
-16
 [20] A. Yung, Nucl. Phys. B297 (1988) 47.
 [21] J. Verbaarschot, Nucl. Phys. B362 (1991) 33.
 [22] E. Shuryak and J. Verbaarschot, Phys. Rev. Lett. 68 (1992) 2576.
 [23] T. Brody et al., Rev. Mod. Phys. 53 (1981) 385.
 [24] M. Mehta, Random Matrices, Academic Press, San Diego, 1991.
-17
 Nf = 1
 Nf = 2
 Nf = 3
@@ -81,4 +80,3 @@ Table 1. Numerical results for the spectral properties of the Dirac operator in 
 and the 7th and 8th rows we conclude that the Leutwyler-Smilga sum rules are observed
 by this model. For the deﬁnition and further discussion of the observable, we refer to
 section 5.
-18

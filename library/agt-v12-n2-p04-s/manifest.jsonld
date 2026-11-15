@@ -11,14 +11,17 @@
   ],
   "title": "The twisted Alexander polynomial for finite abelian covers over three manifolds with boundary",
   "contains": [
+    "library/agt-v12-n2-p04-s/sections/sec-front-matter",
     "library/agt-v12-n2-p04-s/sections/sec-000",
     "library/agt-v12-n2-p04-s/sections/sec-001",
     "library/agt-v12-n2-p04-s/sections/sec-002",
     "library/agt-v12-n2-p04-s/sections/sec-003",
-    "library/agt-v12-n2-p04-s/sections/sec-004"
+    "library/agt-v12-n2-p04-s/sections/sec-004",
+    "library/agt-v12-n2-p04-s/sections/sec-005",
+    "library/agt-v12-n2-p04-s/sections/sec-006"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "agt-v12-n2-p04-s",
     "title_source": "pdf-info",
@@ -28,8 +31,8 @@
     "pages": 14,
     "arxiv": null,
     "doi": "10.2140/agt.2012.12.791",
-    "document_class": "math",
-    "extractor_validated": true,
-    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
   }
 }

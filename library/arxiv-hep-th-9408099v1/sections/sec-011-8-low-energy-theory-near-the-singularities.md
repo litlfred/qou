@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408099v1
-doc_title: "arXiv:hep-th/9408099v1 17 Aug 1994"
+doc_title: "Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD"
 section_id: sec-011-8-low-energy-theory-near-the-singularities
 section_title: "Low energy theory near the singularities"
 section_number: 8
@@ -8,6 +8,7 @@ pages: 28-37
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
 toc_source: inferred
+doc_brief: "Seiberg–Witten, Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD (1994) — exact metric on the moduli space of quantum vacua and exact stable-state spectrum for SU(2) with…"
 ---
 In this section we study the low energy eﬀective ﬁeld theory near the singularities.
 For simplicity, we will focus on the massless theories. It is straightforward to extend our

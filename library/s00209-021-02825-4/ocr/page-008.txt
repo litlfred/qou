@@ -1,0 +1,55 @@
+1366 J. Leake
+
+polynomials to be in (cP!y™. given the following equality. Defining p := Hmg,(f) for a
+given polynomial f € C*[x1,..., Xm], we have:
+
+POX. Y) = POL Vises ms Ym) = TL veh Oa / yt tm/ Ym) = y* + fO/y)
+k
+
+Finally, we give an important definition which will essentially replace the notion of a monic
+polynomial for homogeneous polynomials.
+
+Definition 2.1 Given p € V(A), we say that p is top-degree monic if the coefficient of x* in
+p equals 1. In particular, if p € V(n) is top-degree monic, then p has no roots at infinity.
+
+3 Homogeneous polynomials as representations
+
+In this section, we will discuss some basic representation theory of SL2(C) and show how the
+apolarity form and the notion of the symbol of an operator arise naturally in the representation
+theoretic context. Most of the representation theory we use in this section is very basic. There
+are a number of references which discuss the theory in full detail, albeit with different goals
+in mind. Typically this is done via the theory of Lie groups and algebras, as in [6] and in [10].
+
+As a note, most of the content of this section is less relevant to the analytic questions
+associated to polynomials. Rather, it serves as the foundational structure for a new approach
+to Grace’s theorem and results concerning stability-preserving operators. For this reason,
+we believe it worthwhile to explicate key aspects of this foundation and their connection
+to analytic results. Pushing further into this connection may lead to new results beyond the
+scope of this paper.
+
+3.1 The action of SL2(C)
+
+Given (a: B) € ce! and @ € SL2(C), we define the usual action of SL2(C) on ce! viag-(a:
+B):= (5). That is, @ acts by matrix multiplication on the vector (;). Equivalently, ¢ acts as
+
+its corresponding Mobius transformation on CP!. Note that, as with Mobius transformations,
+SL»2(C) acts transitively on circular regions in ce!.
+
+This then induces an action on V(n) by acting on the roots (in CP!) of polynomials in
+V(n). Given p € V(n) and @ € SL2(C), this action is defined via:
+
+(@: p(x, y) := Pp (o'(\)) = (poo, y)
+
+We can define a similar action of (SL2(C))” on V(A), for A € N@. Specifically, given
+p€V(A) and (gj,..., dm) € SL2(C)", this action is defined via:
+
+((b1, <5 4m) + p) GE, Ye <6-sXms Ym) = P (o'("), -osdnl(*"))
+
+These actions turn V(n) and V(A) into representations of SL2(C) and (SL2(C))’”, respec-
+tively. These are precisely the finite dimensional irreducible representations of SL2(C) and
+(SL2(C))” (see Lecture 11 of [6]), and so they are the basic building blocks of the SL2(C)
+representation theory. Actions on V(n) and V (A) can be extended to tensor products in the
+usual way, and in this paper we will make use of both inner and outer tensor products. We
+now briefly discuss tensor product actions for those less familiar.
+
+D Springer

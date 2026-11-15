@@ -1,0 +1,55 @@
+6.2 Bosons in one dimension
+
+2 2
+
+Figure 6.1: One-loop diagram J, involving two bosons in the initial and the final state.
+
+Bethe ansatz, these effective range functions are known exactly [156],
+
+ptand, = J-mE?, (6.8)
+
+2
+4p
+3
+
+ptand3 = -4-4~,—.,
+349p -2
+
+(6.9)
+
+where ER is the two-boson bound state energy and a, = —2/(mCp) is the two-boson scattering length.
+When implemented on a spatial lattice, this theory will be modified by the lattice momentum cutoff scale
+A =2/a. In order to study the size of the lattice errors, we must know the dependence of the Green’s
+functions upon the cutoff momentum. For this analysis we use perturbation theory and determine the
+cutoff dependence of individual Feynman diagrams. In some cases there can be non-perturbative effects
+that arise from correlations that modify the ultraviolet properties of the Green’s functions. However,
+perturbation theory is still a good starting point, and the cutoff error estimates can then be verified by
+numerical calculations. For our one-dimensional system of bosons, all diagrams are ultraviolet finite and
+so all of the cutoff effects will be of residual dependences that vanish in the continuum limit.*
+
+The Feynman diagram with the highest degree of divergence (albeit negative) is the one-loop diagram
+I, involving two bosons as shown in Fig. 6.1. Let the energies and momenta of the incoming particles be
+(E,, p,) and (E5, p>), and the energies and momenta of the outgoing particles be (Ej, p) and (E4, p4).
+We write AJ, for the difference between the continuum-limit amplitudes and the lattice amplitudes at
+lattice spacing a. We expand in powers of momenta and energies and get
+
+Al, = Ax(a) + (py + Pa) Bola) + mE, + E5)Cy(a) + O(p’), (6.10)
+
+where O(p*) is shorthand for terms with more powers of momentum or energy. From dimensional
+analysis we find that A,(a) ~ Oca'), while B,(a) ~ O(a’) and C,(a) ~ O(a’). All even expansion terms
+vanish in the integral calculation, and thus terms with higher powers of momentum or energy start at
+O(a). The dependence on the total momentum, p, + po, is a result of the fact that the lattice regulator
+breaks Galilean invariance and so the residual amplitude AJ, can depend on the frame of reference.
+The diagram with the next highest degree of divergence is the one-loop diagram 7 involving three
+bosons as shown in Fig. 6.2. Let the energies and momenta of the incoming particles be (Ey, p;), (E>, Po),
+(E3, p3) and the energies and momenta of the outgoing particles be (E, p'), (E>, p>), (E3, p3). We let Al;
+be the difference between the continuum-limit and lattice amplitudes. Expanding in powers of momenta
+and energies gives
+Al, = A(a) + O(p”). (6.11)
+
+From dimensional analysis we conclude that A3(a) ~ O(a’) and the terms with higher powers of
+momentum or energy start at O(a°). Our analysis thus far might give the false impression that all other
+
+* The case of non-perturbative regularization in the two-body sector is given in App. E.
+
+71

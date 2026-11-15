@@ -7,216 +7,1150 @@
   "bytes": 933348,
   "pages": 84,
   "text_source": "embedded",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "ANNALES DE L\u2019INSTITUT FOURIER Universit\u00e9 Grenoble Alpes Les Annales de l\u2019institut Fourier sont membres du Centre Mersenne pour l\u2019\u00e9dition scientifique ouverte www.centre-mersenne.org",
-  "authors_raw": "Reda C/h.sc/h.sc/a.sc/i.sc/b.sc/i.sc, F/r.sc/e.sc/d.sc/d.sc/y.sc D/e.sc/l.sc/b.sc/a.sc/e.sc/n.sc",
+  "title": "ANNALES DE L’INSTITUT FOURIER",
+  "authors_raw": "L’INSTITUT FOURIER",
   "title_lines": [
-   "ANNALES DE",
-   "L\u2019INSTITUT FOURIER",
-   "Universit\u00e9 Grenoble Alpes",
-   "Les Annales de l\u2019institut Fourier sont membres du",
-   "Centre Mersenne pour l\u2019\u00e9dition scientifique ouverte",
-   "www.centre-mersenne.org"
+   "ANNALES DE"
   ],
   "abstract": null,
   "docinfo": {
-   "Producer": "PyPDF2",
    "Title": "Mod-$\\phi $ convergence: Approximation of discrete measures and harmonic analysis on the torus",
-   "Author": "Reda Chhaibi, Freddy Delbaen, Pierre-Lo\u00efc M\u00e9liot, Ashkan Nikeghbali"
-  }
+   "Author": "Reda Chhaibi, Freddy Delbaen, Pierre-Loïc Méliot, Ashkan Nikeghbali",
+   "Producer": "PyPDF2"
+  },
+  "title_raw": "ANNALES DE",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Mod-$\\phi $ convergence: Approximation of discrete measures and harmonic analysis on the torus",
+   "heading": "ANNALES DE L’INSTITUT FOURIER",
+   "outline": "1. Introduction",
+   "text": "ANNALES DE",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "ANNALES DE L’INSTITUT FOURIER Université Grenoble Alpes Les Annales de l’institut Fourier sont membres du Centre Mersenne pour l’édition scientifique ouverte www.centre-mersenne.org"
  },
  "toc": [
   {
    "level": 1,
    "title": "Introduction",
-   "page": null,
+   "page": 3,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1116"
   },
   {
    "level": 2,
    "title": "Poisson approximation of lattice-valued random variables",
-   "page": null,
+   "page": 3,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1116"
   },
   {
    "level": 2,
    "title": "Infinitely divisible distributions and distances between probability measures",
-   "page": 2,
+   "page": 5,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1118"
   },
   {
    "level": 2,
    "title": "Mod-phi convergent sequences of random variables",
-   "page": 5,
+   "page": 8,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1121"
   },
   {
    "level": 2,
    "title": "The Wiener algebra and the general scheme of approximation",
-   "page": 7,
+   "page": 10,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1123"
   },
   {
    "level": 2,
    "title": "Outline of the paper",
-   "page": 11,
+   "page": 14,
    "source": "outline",
-   "number": "1.5"
+   "number": "1.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1127"
   },
   {
    "level": 1,
    "title": "Concentration inequalities in the Wiener algebra",
-   "page": 12,
+   "page": 15,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1128"
   },
   {
    "level": 2,
    "title": "Deconvolution residues in the Wiener algebra",
-   "page": 13,
+   "page": 16,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1129"
   },
   {
    "level": 2,
    "title": "Estimates of norms in the Wiener algebra",
-   "page": 15,
+   "page": 18,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1131"
   },
   {
    "level": 1,
    "title": "Asymptotics of distances for a general scheme of approximation",
-   "page": 20,
+   "page": 23,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1136"
   },
   {
    "level": 2,
    "title": "The local distance",
-   "page": 21,
+   "page": 24,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1137"
   },
   {
    "level": 2,
    "title": "The Kolmogorov distance",
-   "page": 24,
+   "page": 27,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1140"
   },
   {
    "level": 2,
    "title": "The total variation distance",
-   "page": 26,
+   "page": 29,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1142"
   },
   {
    "level": 2,
    "title": "Derived scheme of approximation with constant residue",
-   "page": 32,
+   "page": 35,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1148"
   },
   {
    "level": 1,
    "title": "One-dimensional applications",
-   "page": 35,
+   "page": 38,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1151"
   },
   {
    "level": 2,
    "title": "Poisson approximation of a sum of independent Bernoulli variables",
-   "page": 35,
+   "page": 38,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1151"
   },
   {
    "level": 2,
    "title": "Poisson approximation schemes and formal alphabets",
-   "page": 38,
+   "page": 41,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1154"
   },
   {
    "level": 2,
    "title": "Number of disjoint cycles of a random permutation",
-   "page": 42,
+   "page": 45,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1158"
   },
   {
    "level": 2,
    "title": "Mod-Poisson convergence and algebraico-logarithmic singularities",
-   "page": 45,
+   "page": 48,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1161"
   },
   {
    "level": 2,
    "title": "Number of distinct prime divisors of a random integer",
-   "page": 53,
+   "page": 56,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1169"
   },
   {
    "level": 1,
    "title": "The multi-dimensional case",
-   "page": 55,
+   "page": 58,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1171"
   },
   {
    "level": 2,
    "title": "The multi-dimensional Wiener algebra",
-   "page": 57,
+   "page": 60,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1173"
   },
   {
    "level": 2,
    "title": "Asymptotics of distances in the multi-dimensional setting",
-   "page": 66,
+   "page": 69,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1182"
   },
   {
    "level": 2,
    "title": "Cycle-type of random coloured permutations",
-   "page": 69,
+   "page": 72,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1185"
   },
   {
    "level": 2,
    "title": "Distinct prime divisors counted according to their residue classes",
-   "page": 75,
+   "page": 78,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1191"
   },
   {
    "level": 1,
    "title": "Bibliography",
-   "page": 79,
+   "page": 82,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1195"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "2.1",
+   "title": "The cut-function c(ξ)",
+   "page": 19,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "1132"
+  },
+  {
+   "kind": "figure",
+   "number": "3.1",
+   "title": "The Hermite function G9; it attains its global extremas at the smallest zeroes of H10",
+   "page": 26,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "1139"
+  },
+  {
+   "kind": "table",
+   "number": "4.1",
+   "title": "Formal alphabets associated to the mod-Poisson convergent sequences",
+   "page": 44,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "1157"
+  },
+  {
+   "kind": "figure",
+   "number": "4.1",
+   "title": "Domain of analyticity of the generating series gΘ(z)",
+   "page": 47,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "1160"
+  },
+  {
+   "kind": "figure",
+   "number": "4.2",
+   "title": "The functional graph associated to the function f",
+   "page": 50,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "1163"
+  },
+  {
+   "kind": "figure",
+   "number": "5.1",
+   "title": "The function e−x2+y2",
+   "page": 77,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "1190"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": "1116",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "1117",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "1118",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "1119",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "1120",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "1121",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "1122",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "1123",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "1124",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "1125",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "1126",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "1127",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "1128",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "1129",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "1130",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "1131",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "1132",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "1133",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "1134",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "1135",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "1136",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "1137",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "1138",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "1139",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "1140",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "1141",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "1142",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "1143",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "1144",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "1145",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "1146",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "1147",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "1148",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "1149",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "1150",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "1151",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "1152",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "1153",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "1154",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "1155",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "1156",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "1157",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "1158",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "1159",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "1160",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "1161",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "1162",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "1163",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "1164",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "1165",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "1166",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "1167",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "1168",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "1169",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "1170",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "1171",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "1172",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "1173",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "1174",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "1175",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "1176",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "1177",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "1178",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "1179",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "1180",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "1181",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "1182",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "1183",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "1184",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "1185",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "1186",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": "1187",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": "1188",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": "1189",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 77,
+   "label": "1190",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 78,
+   "label": "1191",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 79,
+   "label": "1192",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 80,
+   "label": "1193",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 81,
+   "label": "1194",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 82,
+   "label": "1195",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 83,
+   "label": "1196",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 84,
+   "label": "1197",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 3154,
+   "n_words": 441,
+   "label_start": null,
+   "label_end": "1116"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -225,7 +1159,9 @@
    "page_start": 3,
    "page_end": 3,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "1116",
+   "label_end": "1116"
   },
   {
    "id": "sec-001-11-poisson-approximation-of-lattice-valued-rando",
@@ -233,16 +1169,314 @@
    "title": "Poisson approximation of lattice-valued random variables",
    "level": 2,
    "page_start": 3,
+   "page_end": 5,
+   "n_chars": 5829,
+   "n_words": 991,
+   "label_start": "1116",
+   "label_end": "1118"
+  },
+  {
+   "id": "sec-002-12-infinitely-divisible-distributions-and-distan",
+   "number": "1.2",
+   "title": "Infinitely divisible distributions and distances between probability measures",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 5582,
+   "n_words": 1045,
+   "label_start": "1118",
+   "label_end": "1121"
+  },
+  {
+   "id": "sec-003-13-mod-phi-convergent-sequences-of-random-variab",
+   "number": "1.3",
+   "title": "Mod-phi convergent sequences of random variables",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 4025,
+   "n_words": 748,
+   "label_start": "1121",
+   "label_end": "1123"
+  },
+  {
+   "id": "sec-004-14-the-wiener-algebra-and-the-general-scheme-of",
+   "number": "1.4",
+   "title": "The Wiener algebra and the general scheme of approximation",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 14,
+   "n_chars": 6501,
+   "n_words": 1239,
+   "label_start": "1123",
+   "label_end": "1127"
+  },
+  {
+   "id": "sec-005-15-outline-of-the-paper",
+   "number": "1.5",
+   "title": "Outline of the paper",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 3683,
+   "n_words": 580,
+   "label_start": "1127",
+   "label_end": "1128"
+  },
+  {
+   "id": "sec-006-2-concentration-inequalities-in-the-wiener-algeb",
+   "number": "2",
+   "title": "Concentration inequalities in the Wiener algebra",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 766,
+   "n_words": 151,
+   "label_start": "1128",
+   "label_end": "1129"
+  },
+  {
+   "id": "sec-007-21-deconvolution-residues-in-the-wiener-algebra",
+   "number": "2.1",
+   "title": "Deconvolution residues in the Wiener algebra",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 2867,
+   "n_words": 533,
+   "label_start": "1129",
+   "label_end": "1131"
+  },
+  {
+   "id": "sec-008-22-estimates-of-norms-in-the-wiener-algebra",
+   "number": "2.2",
+   "title": "Estimates of norms in the Wiener algebra",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 23,
+   "n_chars": 6478,
+   "n_words": 1569,
+   "label_start": "1131",
+   "label_end": "1136"
+  },
+  {
+   "id": "sec-009-3-asymptotics-of-distances-for-a-general-scheme",
+   "number": "3",
+   "title": "Asymptotics of distances for a general scheme of approximation",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 2268,
+   "n_words": 423,
+   "label_start": "1136",
+   "label_end": "1137"
+  },
+  {
+   "id": "sec-010-31-the-local-distance",
+   "number": "3.1",
+   "title": "The local distance",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 27,
+   "n_chars": 4102,
+   "n_words": 898,
+   "label_start": "1137",
+   "label_end": "1140"
+  },
+  {
+   "id": "sec-011-32-the-kolmogorov-distance",
+   "number": "3.2",
+   "title": "The Kolmogorov distance",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 29,
+   "n_chars": 2798,
+   "n_words": 533,
+   "label_start": "1140",
+   "label_end": "1142"
+  },
+  {
+   "id": "sec-012-33-the-total-variation-distance",
+   "number": "3.3",
+   "title": "The total variation distance",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 35,
+   "n_chars": 9078,
+   "n_words": 1876,
+   "label_start": "1142",
+   "label_end": "1148"
+  },
+  {
+   "id": "sec-013-34-derived-scheme-of-approximation-with-constant",
+   "number": "3.4",
+   "title": "Derived scheme of approximation with constant residue",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 38,
+   "n_chars": 4214,
+   "n_words": 795,
+   "label_start": "1148",
+   "label_end": "1151"
+  },
+  {
+   "id": "sec-014-4-one-dimensional-applications",
+   "number": "4",
+   "title": "One-dimensional applications",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 366,
+   "n_words": 60,
+   "label_start": "1151",
+   "label_end": "1151"
+  },
+  {
+   "id": "sec-015-41-poisson-approximation-of-a-sum-of-independent",
+   "number": "4.1",
+   "title": "Poisson approximation of a sum of independent Bernoulli variables",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 41,
+   "n_chars": 4900,
+   "n_words": 1065,
+   "label_start": "1151",
+   "label_end": "1154"
+  },
+  {
+   "id": "sec-016-42-poisson-approximation-schemes-and-formal-alph",
+   "number": "4.2",
+   "title": "Poisson approximation schemes and formal alphabets",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 45,
+   "n_chars": 5466,
+   "n_words": 1031,
+   "label_start": "1154",
+   "label_end": "1158"
+  },
+  {
+   "id": "sec-017-43-number-of-disjoint-cycles-of-a-random-permuta",
+   "number": "4.3",
+   "title": "Number of disjoint cycles of a random permutation",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 48,
+   "n_chars": 5198,
+   "n_words": 1062,
+   "label_start": "1158",
+   "label_end": "1161"
+  },
+  {
+   "id": "sec-018-44-mod-poisson-convergence-and-algebraico-logari",
+   "number": "4.4",
+   "title": "Mod-Poisson convergence and algebraico-logarithmic singularities",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 56,
+   "n_chars": 11680,
+   "n_words": 2490,
+   "label_start": "1161",
+   "label_end": "1169"
+  },
+  {
+   "id": "sec-019-45-number-of-distinct-prime-divisors-of-a-random",
+   "number": "4.5",
+   "title": "Number of distinct prime divisors of a random integer",
+   "level": 2,
+   "page_start": 56,
+   "page_end": 58,
+   "n_chars": 3433,
+   "n_words": 670,
+   "label_start": "1169",
+   "label_end": "1171"
+  },
+  {
+   "id": "sec-020-5-the-multi-dimensional-case",
+   "number": "5",
+   "title": "The multi-dimensional case",
+   "level": 1,
+   "page_start": 58,
+   "page_end": 60,
+   "n_chars": 3066,
+   "n_words": 553,
+   "label_start": "1171",
+   "label_end": "1173"
+  },
+  {
+   "id": "sec-021-51-the-multi-dimensional-wiener-algebra",
+   "number": "5.1",
+   "title": "The multi-dimensional Wiener algebra",
+   "level": 2,
+   "page_start": 60,
+   "page_end": 69,
+   "n_chars": 11806,
+   "n_words": 2572,
+   "label_start": "1173",
+   "label_end": "1182"
+  },
+  {
+   "id": "sec-022-52-asymptotics-of-distances-in-the-multi-dimensi",
+   "number": "5.2",
+   "title": "Asymptotics of distances in the multi-dimensional setting",
+   "level": 2,
+   "page_start": 69,
+   "page_end": 72,
+   "n_chars": 5310,
+   "n_words": 1055,
+   "label_start": "1182",
+   "label_end": "1185"
+  },
+  {
+   "id": "sec-023-53-cycle-type-of-random-coloured-permutations",
+   "number": "5.3",
+   "title": "Cycle-type of random coloured permutations",
+   "level": 2,
+   "page_start": 72,
+   "page_end": 78,
+   "n_chars": 9966,
+   "n_words": 2122,
+   "label_start": "1185",
+   "label_end": "1191"
+  },
+  {
+   "id": "sec-024-54-distinct-prime-divisors-counted-according-to",
+   "number": "5.4",
+   "title": "Distinct prime divisors counted according to their residue classes",
+   "level": 2,
+   "page_start": 78,
+   "page_end": 82,
+   "n_chars": 6442,
+   "n_words": 1296,
+   "label_start": "1191",
+   "label_end": "1195"
+  },
+  {
+   "id": "sec-025-bibliography",
+   "number": null,
+   "title": "Bibliography",
+   "level": 1,
+   "page_start": 82,
    "page_end": 84,
-   "n_chars": 139123,
-   "n_words": 27356
+   "n_chars": 9009,
+   "n_words": 1350,
+   "label_start": "1195",
+   "label_end": "1197"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 26,
-  "sections": 2,
-  "chars_total": 139123
+  "toc_inferred_entries": 0,
+  "figure_entries": 6,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 27,
+  "chars_total": 137987,
+  "furniture_lines_stripped": 0
  }
 }

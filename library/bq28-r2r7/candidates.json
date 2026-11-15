@@ -1,8 +1,6 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "bq28-r2r7",
- "document_class": "math",
- "validated": true,
  "source": {
   "structure_sha256": "38419a88531ebce78cc3845ce7ae0fca2cc21ae026a719724865c9400bbd20fe",
   "file": "bq28-r2r7.pdf"
@@ -13,146 +11,61 @@
   "arxiv": null,
   "doi": "10.1103/bq28-r2r7"
  },
- "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "aspects": [
+  "requirements"
+ ],
  "summary": {
-  "candidates": 10,
+  "candidates": 3,
   "by_kind": {
-   "lemma": 8,
-   "conjecture": 1,
-   "corollary": 1
+   "recommendation": 3
   },
-  "formalization_candidates": 9
+  "formalization_candidates": 0
  },
  "candidates": [
   {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "1",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "Suppose that x, y \u2208{0, 1}Z are bit strings and",
-   "section_file": "sections/sec-000-document.md",
-   "section_title": "Document",
-   "pages": "1-15",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "2",
-   "name": null,
-   "statement": "The current operator J\u2113is an MPO with bond",
-   "section_file": "sections/sec-000-document.md",
-   "section_title": "Document",
-   "pages": "1-15",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "3",
-   "name": null,
-   "statement": "Let g \u2208Sn be a permutation and Cg \u2286Sn be",
-   "section_file": "sections/sec-000-document.md",
-   "section_title": "Document",
-   "pages": "1-15",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "4",
-   "name": null,
-   "statement": "Suppose that P0 and P1 are probability distri-",
-   "section_file": "sections/sec-000-document.md",
-   "section_title": "Document",
-   "pages": "1-15",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "conjecture",
-   "source_kind": "conjecture",
-   "number": "1",
-   "name": null,
-   "statement": "Assume that the polynomial hierarchy",
-   "section_file": "sections/sec-000-document.md",
-   "section_title": "Document",
-   "pages": "1-15",
+   "statement": "Fur- ther distribution of this work must maintain attribution to the author(s) and the published article\u2019s title, journal citation, and DOI.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-000-i-introduction.md",
+   "section_title": "I.. INTRODUCTION",
+   "pages": "1-3",
    "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   },
   {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "4",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "implies that the conjecture is true if there",
-   "section_file": "sections/sec-000-document.md",
-   "section_title": "Document",
-   "pages": "1-15",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "statement": "Likewise, the probability distribution P should admit a succinct classical description of size poly(n).",
+   "strength": "should",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-006-a-granularity-and-quantum-advantage.md",
+   "section_title": "A.. Granularity and quantum advantage",
+   "pages": "10-11",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   },
   {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "5",
+   "kind": "recommendation",
+   "source_kind": "normative-statement",
+   "number": null,
    "name": null,
-   "statement": "There exists a classical algorithm that takes",
-   "section_file": "sections/sec-000-document.md",
-   "section_title": "Document",
-   "pages": "1-15",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "corollary",
-   "source_kind": "corollary",
-   "number": "1",
-   "name": null,
-   "statement": "There exists a constant B > 0 such that",
-   "section_file": "sections/sec-000-document.md",
-   "section_title": "Document",
-   "pages": "1-15",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "5",
-   "name": null,
-   "statement": "suggests that classically hard instances of the",
-   "section_file": "sections/sec-000-document.md",
-   "section_title": "Document",
-   "pages": "1-15",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "7",
-   "name": null,
-   "statement": "The noncommuting complete symmetric",
-   "section_file": "sections/sec-000-document.md",
-   "section_title": "Document",
-   "pages": "1-15",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "statement": "Here the success probability must be at least 1 \u2212 poly(1/n) for problem instances of size n.",
+   "strength": "must",
+   "strength_list": "rfc2119-requirement-level",
+   "section_file": "sections/sec-006-a-granularity-and-quantum-advantage.md",
+   "section_title": "A.. Granularity and quantum advantage",
+   "pages": "10-11",
+   "formalization_candidate": false,
+   "route_to": "l2-dak-authoring",
+   "aspect": "requirements"
   }
  ]
 }

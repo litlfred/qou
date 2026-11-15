@@ -1,0 +1,1 @@
+We want to look at the action of `chains' of octonions applied at the left, so it is the application of $\sig_1$ twice which we should look at, and due to the non-associativity of the octonions, it is by no means obvious that

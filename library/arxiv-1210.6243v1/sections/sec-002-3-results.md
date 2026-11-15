@@ -7,10 +7,11 @@ section_number: 3
 pages: 3-4
 source_pdf: 1210.6243v1.pdf
 source_sha256: 3ff2f5358b25586e
-doc_brief: "Controlled double-slit electron diffraction — Double-slit diﬀraction is a corner stone of quantum mechanics."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.985
+latex_coverage_ratio: 0.992
+doc_brief: "Controlled double-slit electron diﬀraction — Double-slit diﬀraction is a corner stone of quantum mechanics."
 ---
 The movable mask was placed behind the double-slit, see figure [\[fig1\]](#fig1){reference-type="ref" reference="fig1"}. The mask was moved from one side to the other (figure [\[fig2\]](#fig2){reference-type="ref" reference="fig2"} top to bottom). Initially the majority of the electrons are blocked. As the mask is moved, slit 1 becomes partially, then fully open. When one slit is open, single-slit diffraction can be observed ($\textrm{P}_{1}$ in figure [\[fig2\]](#fig2){reference-type="ref" reference="fig2"} and figure [\[fig1\]](#fig1){reference-type="ref" reference="fig1"}b). Feynman indicates this as the solid black curve $\textrm{P}_{1}$ (figure [\[fig1\]](#fig1){reference-type="ref" reference="fig1"}b), which is just the central order of the single-slit diffraction pattern. Because of the finite separation of the mask and double-slit, weak double-slit diffraction can be seen in the negative first order of the single-slit diffraction pattern (see left edge of $\textrm{P}_{1}$ in figure [\[fig2\]](#fig2){reference-type="ref" reference="fig2"}).
 

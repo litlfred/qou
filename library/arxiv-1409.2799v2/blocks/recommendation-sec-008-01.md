@@ -1,0 +1,1 @@
+Moreover, in the case $\mu=-1$ we have $\mu_i>\lambda_i$ iff $i$ is odd whereas in the case $\mu=l-1$ we have $\mu_i>\lambda_i$ iff $i$ is even as a look at~\eqref{eq-alcove} should convince the reader.
