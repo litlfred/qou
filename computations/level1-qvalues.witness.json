@@ -1,13 +1,12 @@
 {
-  "computedAt": "2026-03-27T21:32:34.201472+00:00",
   "computation": "level1-qvalues",
-  "description": "Level 1 (quark-level) Q-value computation. Each nucleon expanded to 3 quark strands (u,u,d or u,d,d). Uses block ordering — ground-state search not performed.",
-  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
+  "timestamp": "2026-11-15T23:11:40.068259+00:00",
+  "description": "Level 1 (quark-level) Q-value computation. Each nucleon expanded to 3 quark strands (u,u,d or u,d,d). All n neutron positions tested as conversion sites; the site giving negative Q_q with smallest magnitude is selected.",
   "q": 1.1099786,
-  "hbar_q_sq": 0.00981718851347867,
+  "hbar_q_sq": 0.009817186454275078,
   "nuclei": [
     {
-      "name": "³H",
+      "name": "\u00b3H",
       "A": 3,
       "p": 1,
       "n": 2,
@@ -18,14 +17,16 @@
         4
       ],
       "affected_generators": 5,
-      "log_ratio_sum": -0.577312910837804,
-      "Q_q_skein_units": -58.80633849957885,
+      "log_ratio_sum": -0.5959053449472996,
+      "Q_q_skein_units": -60.700216678455924,
       "Q_exp_MeV": 0.0186,
-      "elapsed_s": 0.0006508827209472656,
-      "status": "computed"
+      "elapsed_s": 0.001341104507446289,
+      "status": "computed",
+      "conversion_site": 1,
+      "n_sites_tested": 2
     },
     {
-      "name": "¹⁴C",
+      "name": "\u00b9\u2074C",
       "A": 14,
       "p": 6,
       "n": 8,
@@ -33,17 +34,19 @@
       "crossings_L1": 861,
       "ordering_method": "block",
       "converting_positions": [
-        19
+        31
       ],
-      "affected_generators": 20,
-      "log_ratio_sum": -0.7607026345202486,
-      "Q_q_skein_units": -77.48681136924583,
+      "affected_generators": 32,
+      "log_ratio_sum": -0.40759786463971526,
+      "Q_q_skein_units": -41.5188064867831,
       "Q_exp_MeV": 0.156,
-      "elapsed_s": 0.0251312255859375,
-      "status": "computed"
+      "elapsed_s": 0.03537917137145996,
+      "status": "computed",
+      "conversion_site": 10,
+      "n_sites_tested": 8
     },
     {
-      "name": "⁶⁰Co",
+      "name": "\u2076\u2070Co",
       "A": 60,
       "p": 27,
       "n": 33,
@@ -51,17 +54,19 @@
       "crossings_L1": 16110,
       "ordering_method": "alternating",
       "converting_positions": [
-        4
+        163
       ],
-      "affected_generators": 5,
-      "log_ratio_sum": -0.33527716074258507,
-      "Q_q_skein_units": -34.152054866040395,
+      "affected_generators": 164,
+      "log_ratio_sum": -0.3388770854659309,
+      "Q_q_skein_units": -34.518758204735995,
       "Q_exp_MeV": 0.318,
-      "elapsed_s": 1.6899631023406982,
-      "status": "computed"
+      "elapsed_s": 2.6742258071899414,
+      "status": "computed",
+      "conversion_site": 54,
+      "n_sites_tested": 33
     },
     {
-      "name": "⁹⁰Sr",
+      "name": "\u2079\u2070Sr",
       "A": 90,
       "p": 38,
       "n": 52,
@@ -69,17 +74,19 @@
       "crossings_L1": 36315,
       "ordering_method": "alternating",
       "converting_positions": [
-        4
+        256
       ],
-      "affected_generators": 5,
-      "log_ratio_sum": 0.4559795561207771,
-      "Q_q_skein_units": 46.44706124311787,
+      "affected_generators": 257,
+      "log_ratio_sum": -0.14622793717266624,
+      "Q_q_skein_units": -14.895096253263942,
       "Q_exp_MeV": 0.546,
-      "elapsed_s": 6.179962873458862,
-      "status": "computed"
+      "elapsed_s": 11.431058645248413,
+      "status": "computed",
+      "conversion_site": 85,
+      "n_sites_tested": 52
     },
     {
-      "name": "¹³⁷Cs",
+      "name": "\u00b9\u00b3\u2077Cs",
       "A": 137,
       "p": 55,
       "n": 82,
@@ -87,17 +94,19 @@
       "crossings_L1": 84255,
       "ordering_method": "alternating",
       "converting_positions": [
-        4
+        403
       ],
-      "affected_generators": 5,
-      "log_ratio_sum": 1.7417717249399978,
-      "Q_q_skein_units": 177.42062531941846,
+      "affected_generators": 404,
+      "log_ratio_sum": -0.14793348472060375,
+      "Q_q_skein_units": -15.068827042210586,
       "Q_exp_MeV": 0.514,
-      "elapsed_s": 24.734798669815063,
-      "status": "computed"
+      "elapsed_s": 47.32979989051819,
+      "status": "computed",
+      "conversion_site": 134,
+      "n_sites_tested": 82
     },
     {
-      "name": "²¹⁰Bi",
+      "name": "\u00b2\u00b9\u2070Bi",
       "A": 210,
       "p": 83,
       "n": 127,
@@ -105,26 +114,32 @@
       "crossings_L1": 198135,
       "ordering_method": "alternating",
       "converting_positions": [
-        4
+        622
       ],
-      "affected_generators": 5,
-      "log_ratio_sum": 3.4231922533986605,
-      "Q_q_skein_units": 348.6937475733233,
+      "affected_generators": 623,
+      "log_ratio_sum": 1.533935206683295,
+      "Q_q_skein_units": 156.24998199105346,
       "Q_exp_MeV": 1.163,
-      "elapsed_s": 107.39233183860779,
-      "status": "computed"
+      "elapsed_s": 427.50436329841614,
+      "status": "computed",
+      "conversion_site": 207,
+      "n_sites_tested": 127
     }
   ],
   "notes": [
     "Block ordering [protons first] is NOT the ground state for Level 1.",
     "Ground-state search at Level 1 has binom(3A, total_u) orderings.",
-    "For A=3: binom(9,5) = 126 orderings — feasible.",
-    "For A=14: binom(42,20) ~ 10^11 — needs heuristic.",
+    "For A=3: binom(9,5) = 126 orderings \u2014 feasible.",
+    "For A=14: binom(42,20) ~ 10^11 \u2014 needs heuristic.",
     "The Q_q values here are UPPER BOUNDS (block ordering overestimates)."
   ],
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0,
-  "engine": "python",
   "scriptFile": "level1-qvalues.py",
-  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
+  "scriptHash": "6f4bb9b1339f",
+  "scriptCommitSha": "b61fe5e6fd76b5e2cdf6b7d284570e7cab41c208",
+  "commitSha": "b61fe5e6fd76b5e2cdf6b7d284570e7cab41c208",
+  "engine": "python",
+  "computedAt": "2026-11-15T23:11:40.076491+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
