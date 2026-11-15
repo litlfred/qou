@@ -163,3 +163,61 @@ chose routes **1 + 2** to resolve the knot negative, and added route **4**.
     target.
 - **Route 4, the bias for every n.** In progress. It builds on stream 11's
   `ConventionDLineWeights.lean` and seminormal probes (#7867).
+
+## 7. Route 4: the right-line share of torus words, for every n
+
+Probe: `computations/probes/torus_word_right_line_share_probe.py` (121 checks pass). It is
+exact, with `Fraction` arithmetic at `q = 11/10` and `q = 3/2`, for `n = 2, …, 7`. The
+numbers at `q₀` are mpmath at 70 digits. No witness is written.
+
+The seminormal matrices follow stream 11's `corner_doublet_vs_flavour_probe.py`. The
+probe re-checks the Hecke and braid relations itself.
+
+**Setting.**
+- `c = σ₁σ₂⋯σ_{n−1}`, so the closure of `c^N` is `T(n,N)`.
+- `P_R = (q − σ₁)/[2]_q` is the right line of the first letter, for `q > 1`.
+- Convention D gives weight `y₍ₙ₋ₖ,ₖ₎ = [n−2k+1]_q/[2]_qⁿ` to the two-row shapes and
+  weight 0 to every shape with three or more rows.
+
+**Results.**
+
+| statement | status |
+|---|---|
+| The full twist `cⁿ` acts on block `λ` by `q^{2c(λ)}`, where `c(λ)` is the content sum | checked exactly for n ≤ 7 (a standard fact, cited) |
+| `τ_D(c^{mn+r} P_R) = Σ_λ y_λ q^{2m c(λ)} g_λ(r)`, with `g_λ(r) = tr_λ(c^r P_R)` and `g₍ₙ₎ = 0` | exact, n ≤ 7, m ≤ 2 |
+| `N = 0`: `τ_D(P_L) : τ_D(P_R) = [3]_q : 1` | stream 11's result, reproduced for n ≤ 7 |
+| `N = 1`: the share is `−1/(q²(q² + 1))` for every n | exact, n ≤ 7. It follows from the Markov property: `τ(σ₁P_R · σ₂⋯σ_{n−1}) = τ(σ₁P_R)·z_D^{n−2}` |
+| The right part is nonzero for every `N ≤ 3n` | exact at both rational `q`, n ≤ 7 |
+| `c(n) − c(n−1,1) = n` | arithmetic |
+| The hook term `g₍ₙ₋₁,₁₎(r)` vanishes exactly for `r ∈ {2, …, n−2}` | observed, n ≤ 7, both `q`. Not proved |
+
+**The bias theorem, as far as it is established.** For `q > 1` the right-line share of
+`T(n,N)` under convention D is `O(q^{−2N})`, at every n. The argument has three steps:
+1. The trivial block carries none of `P_R` and has the largest twist, `q^{2c(n)}`.
+2. Among the other shapes, the hook `(n−1,1)` has the largest twist, `n` content units
+   below the trivial block.
+3. So each full twist (`N ↦ N + n`) shrinks the share by at least `q^{−2n}`.
+
+The rate `q^{−2N}` is attained on the residues `r ∈ {0, 1, n−1}`. On the residues where
+the hook term vanishes, the decay is faster. The share is never exactly zero for the `N`
+tested. So:
+- **at N = 0** the bias is `[3]_q : 1` (stream 11);
+- **at N = 1** the share is `−1/(q²(q²+1))`, the same for every n (`−0.36364` at `q₀`);
+- **for long torus words** the bias grows without bound: the words become left-supported
+  only in the limit, at rate `q^{−2}` per power of `c`.
+
+**What rests on what.**
+- The twist eigenvalue `q^{2c(λ)}` and the Wedderburn decomposition are cited. The probe
+  checks the twist exactly for n ≤ 7 but does not prove it for every n.
+- The `O(q^{−2N})` bound is then elementary. Each block's `c` is diagonalisable with
+  eigenvalues of modulus `q^{2c(λ)/n}`, because its minimal polynomial divides `xⁿ − z`.
+- `n = 3` is fully in Lean (`twist`, `tau_torus_PR_periodic`).
+- Nothing here bears on whether any physical quantity is such a long-braid limit. Stream
+  11 §6.2 found that no current observable is (scope a). For T(3,5) at `q₀` the share is
+  still `−9.33 %`.
+
+**Numbers at `q₀`.** These are the right-line shares from the probe; the first entry of
+each row is `N = 0`.
+- n = 3: 0.2473, −0.3636, −0.2131, 0.1718, −0.1488, −0.0933, 0.1093
+- n = 5: 0.2473, −0.3636, −0.1309, −0.0933, −0.1176, 0.1567, …, `N = 10`: 0.0743
+- n = 7, `N = 14`: 0.0413
