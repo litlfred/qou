@@ -5,6 +5,8 @@ Released under Apache 2.0 license.
 import QOU.SchurWeyl.QuantumGLHWBranching
 import QOU.Mathlib.SYTBranchingRule
 import QOU.Mathlib.NumSYTPos
+import QOU.Mathlib.SchenstedPartitionShape
+import QOU.SchurWeyl.JimboGL
 
 /-!
 # `dim HW_λ ≤ f^λ`
@@ -23,7 +25,8 @@ dominant (`isCornerCell_cornerOf`, `eraseCorner_cornerOf`).
 * the weight-sum constraint `hwSpace_eq_bot_of_sum_ne`, and
 * the SYT branching rule `numStandardYoungTableaux_branching`.
 
-This is the inequality `(★)` needed by the double-centraliser argument of G3.4 (PR #7864).
+`sum_sq_finrank_hwSpace_le` packages this as the summed inequality `(★)` consumed by the
+G3.4 double-centraliser argument (PR #7864), against the right side of `finrank_range_jimbo`.
 
 ## Base ring (§7c)
 
@@ -299,5 +302,130 @@ theorem finrank_hwSpace_le_numSYT (q : K) (hq : q ≠ 0) (hq2 : q - q⁻¹ ≠ 0
         rw [Finset.univ_eq_empty, Finset.sum_empty]; exact Nat.zero_le _
 
 end Bound
+
+section Summed
+
+variable {d : ℕ}
+
+theorem card_rowDiagram (μ : Fin d → ℕ) (hμ : IsDom μ) :
+    (rowDiagram μ hμ).cells.card = ∑ y, μ y := by
+  show (rowCells μ).card = _
+  rw [rowCells, Finset.card_biUnion]
+  · refine Finset.sum_congr rfl fun y _ => ?_
+    rw [Finset.card_image_of_injective _ (fun a b h => (Prod.ext_iff.mp h).2), Finset.card_range]
+  · intro y _ z _ hyz
+    rw [Function.onFun, Finset.disjoint_left]
+    intro p hp hq
+    obtain ⟨_, _, rfl⟩ := Finset.mem_image.mp hp
+    obtain ⟨_, _, h⟩ := Finset.mem_image.mp hq
+    have := y.isLt; have := z.isLt
+    exact hyz (Fin.ext (by have := (Prod.ext_iff.mp h).1; simp at this; omega))
+
+theorem colLen_rowDiagram_le (μ : Fin d → ℕ) (hμ : IsDom μ) :
+    (rowDiagram μ hμ).colLen 0 ≤ d := by
+  by_contra h
+  push_neg at h
+  have hmem : (d, 0) ∈ rowDiagram μ hμ := YoungDiagram.mem_iff_lt_colLen.mpr h
+  obtain ⟨y, h1, -⟩ := (mem_rowDiagram μ hμ _).mp hmem
+  have := y.isLt
+  simp at h1; omega
+
+theorem rowDiagram_injective {μ ν : Fin d → ℕ} (hμ : IsDom μ) (hν : IsDom ν)
+    (h : rowDiagram μ hμ = rowDiagram ν hν) : μ = ν := by
+  funext y
+  have key : ∀ c, c < μ y ↔ c < ν y := by
+    intro c
+    have hy := y.isLt
+    have e : ((d - 1 - (y : ℕ), c) ∈ rowDiagram μ hμ) ↔ ((d - 1 - (y : ℕ), c) ∈ rowDiagram ν hν) := by
+      rw [h]
+    rw [mem_rowDiagram, mem_rowDiagram] at e
+    constructor
+    · intro hc
+      obtain ⟨z, h1, h2⟩ := e.mp ⟨y, rfl, hc⟩
+      have := z.isLt
+      have : z = y := Fin.ext (by simp at h1; omega)
+      subst this; exact h2
+    · intro hc
+      obtain ⟨z, h1, h2⟩ := e.mpr ⟨y, rfl, hc⟩
+      have := z.isLt
+      have : z = y := Fin.ext (by simp at h1; omega)
+      subst this; exact h2
+  exact le_antisymm (not_lt.mp fun hl => (lt_irrefl _ ((key _).mp hl)))
+    (not_lt.mp fun hl => (lt_irrefl _ ((key _).mpr hl)))
+
+/-- The row-capped partition of a dominant occurring weight. -/
+noncomputable def toRowCap (m : ℕ) (μ : Fin d → ℕ) (hμ : IsDom μ) (hs : ∑ y, μ y = m + 1) :
+    JimboGL.RowCapIdx d m :=
+  ⟨(partitionShapeEquiv (m + 1)).symm ⟨rowDiagram μ hμ, by rw [card_rowDiagram, hs]⟩, by
+    have : partitionShape ((partitionShapeEquiv (m + 1)).symm ⟨rowDiagram μ hμ, by
+        rw [card_rowDiagram, hs]⟩) = rowDiagram μ hμ := by
+      rw [← partitionShapeEquiv_apply, Equiv.apply_symm_apply]
+    rw [this]; exact colLen_rowDiagram_le μ hμ⟩
+
+theorem partitionShape_toRowCap (m : ℕ) (μ : Fin d → ℕ) (hμ : IsDom μ) (hs : ∑ y, μ y = m + 1) :
+    partitionShape (toRowCap m μ hμ hs).1 = rowDiagram μ hμ := by
+  show partitionShape ((partitionShapeEquiv (m + 1)).symm _) = _
+  rw [← partitionShapeEquiv_apply, Equiv.apply_symm_apply]
+
+variable {L : Type*} [Field L]
+
+/-- **`(★)` in summed form** — the interface of the G3.4 double-centraliser argument (#7864):
+`Σ_{μ occurring} (dim HW_μ)² ≤ Σ_{λ ⊢ m+1, ℓ(λ) ≤ d} (f^λ)²`, the right side being literally the
+one in `finrank_range_jimbo`. -/
+theorem sum_sq_finrank_hwSpace_le (q : L) (hq : q ≠ 0) (hq2 : q - q⁻¹ ≠ 0)
+    (hgen : GenericParameter.NotRootOfUnity q) (m : ℕ) :
+    ∑ μ ∈ Finset.univ.image (fun a : Fin (m + 1) → Fin d => content a),
+        Module.finrank L (hwSpace q m μ) ^ 2
+      ≤ ∑ lam : JimboGL.RowCapIdx d m,
+          Fintype.card (StandardYoungTableau (partitionShape lam.1)) ^ 2 := by
+  classical
+  set S := Finset.univ.image (fun a : Fin (m + 1) → Fin d => content a)
+  have hsumS : ∀ μ ∈ S, ∑ y, μ y = m + 1 := by
+    intro μ hμ
+    obtain ⟨a, -, rfl⟩ := Finset.mem_image.mp hμ
+    exact sum_content a
+  -- each term is bounded by the SYT count of the row-capped partition, or is zero
+  let g : S → ℕ := fun μ =>
+    if h : IsDom μ.1 then
+      Fintype.card (StandardYoungTableau (partitionShape (toRowCap m μ.1 h (hsumS _ μ.2)).1)) ^ 2
+    else 0
+  have hterm : ∀ μ : S, Module.finrank L (hwSpace q m μ.1) ^ 2 ≤ g μ := by
+    intro μ
+    by_cases h : IsDom μ.1
+    · simp only [g, dif_pos h]
+      rw [partitionShape_toRowCap, ← Nat.card_eq_fintype_card]
+      exact Nat.pow_le_pow_left (finrank_hwSpace_le_numSYT q hq hq2 hgen m μ.1 h) 2
+    · simp only [g, dif_neg h]
+      have : hwSpace q m μ.1 = ⊥ := by
+        by_contra hne; exact h (isDom_of_ne_bot q hq hq2 hgen m _ hne)
+      rw [this, finrank_bot]; simp
+  rw [← Finset.sum_coe_sort S]
+  refine (Finset.sum_le_sum fun μ _ => hterm μ).trans ?_
+  -- injectivity of `μ ↦ toRowCap μ` on dominant occurring weights
+  let T : Finset S := Finset.univ.filter fun μ => IsDom μ.1
+  rw [← Finset.sum_filter_add_sum_filter_not Finset.univ (fun μ : S => IsDom μ.1)]
+  have hzero : ∑ μ ∈ Finset.univ.filter (fun μ : S => ¬ IsDom μ.1), g μ = 0 :=
+    Finset.sum_eq_zero fun μ hμ => by
+      simp only [g, dif_neg (Finset.mem_filter.mp hμ).2]
+  rw [hzero, add_zero]
+  let φ : T → JimboGL.RowCapIdx d m := fun μ =>
+    toRowCap m μ.1.1 (Finset.mem_filter.mp μ.2).2 (hsumS _ μ.1.2)
+  have hφ : Function.Injective φ := by
+    intro μ ν h
+    have := congrArg (fun l : JimboGL.RowCapIdx d m => partitionShape l.1) h
+    simp only [φ, partitionShape_toRowCap] at this
+    exact Subtype.ext (Subtype.ext (rowDiagram_injective _ _ this))
+  rw [← Finset.sum_attach T]
+  have hg : ∀ μ ∈ T.attach,
+      g μ.1 = Fintype.card (StandardYoungTableau (partitionShape (φ μ).1)) ^ 2 := by
+    intro μ _
+    simp only [g, φ, dif_pos (Finset.mem_filter.mp μ.2).2]
+  rw [Finset.sum_congr rfl hg,
+    ← Finset.sum_image (f := fun lam : JimboGL.RowCapIdx d m =>
+      Fintype.card (StandardYoungTableau (partitionShape lam.1)) ^ 2)
+      (fun x _ y _ h => hφ h)]
+  exact Finset.sum_le_sum_of_subset (Finset.subset_univ _)
+
+end Summed
 
 end QOU.SchurWeyl.QuantumGL
