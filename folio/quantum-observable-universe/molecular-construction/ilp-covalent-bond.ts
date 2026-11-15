@@ -39,7 +39,7 @@ export default proposition({
         "`axiom` asserting only `∃ E, 0 < E ∧ E < 5`) is replaced. The selection " +
         "data come from the `h2-gg-electron` witness of PR #7741, so #7741 must " +
         "land first for the computation path to resolve. The constituent " +
-        "condition (electron passes reading 3 alone) is an open owner choice.",
+        "condition (electron passes reading 3 alone) was ruled by the owner on 2026-11-15: each particle must pass reading 3 on its own strands, so V^3 is unique.",
     },
   ],
 });
