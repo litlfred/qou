@@ -84,8 +84,9 @@ ATOMS = {"proton": (1, 0), "neutron": (0, 1), "deuteron": (1, 1),
 
 PINS = {
     "proton": str(_c.Q_50_DIGIT_STR),
-    "muon-live": ("1.109978595642739046681795129380001752700065561029011"
-                  "556974045769999095"),
+    # the live CODATA-2022 muon pin, derived rather than typed (the literal
+    # this replaced matched it to all 70 digits; reference-literal ratchet).
+    "muon-live": _c.q_muon_at(70),
 }
 
 #: Sites that pass `intra_order="grouped"` deliberately, with the reason. A hit
