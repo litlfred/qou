@@ -334,3 +334,14 @@ Not formalised in Lean yet. The natural statement is a pair of lemmas on the exp
 **Addendum A (sibling thread, b5941af99; dimensionless, no MeV scale).** `np_fe_ef_relative_shift.py` reports (t_n − t_p)/T_full, with T_full the D trace over all four weight spaces of X·V³. The values are −7.709 % for X = 1, **+18.66 %** for FE and **−29.10 %** for EF at q₀. At q = 1 they are 0, +¼ and −¼. So FE and EF are O(1) in h, not O(h²/[2]²). They make the shift larger and do not supply the ~55× suppression that Bridge B needs (§21). This order in h was reported after the computation, not declared beforehand. The §18 sign correction it also records is §21.
 
 **Addendum B (state-dependent order; raised by the weak-vertex thread; pre-registered in the probe before running).** The candidate: the neutron's virtual loop is FE (go to the proton and come back) and the proton's is EF. Exact result, V³ and V⁶, both assignments: r = t_n(FE·W)/t_p(EF·W) = t_n(EF·W)/t_p(FE·W) = **q⁻² exactly**. As expected from ω, which swaps p ↔ n and FE ↔ EF, the state-dependent order reduces to the symmetric case. It is not a lever. The weak-vertex thread reports that no derived W fixes an E/F order: every derived vertex lies in span{1, Ř} (#7977).
+
+**Lean (§22 formalised).** `QOU/BraidsAndKnots/NucleonWeightSpaceSecondOrder.lean` is sorry-free over a generic field. lean-direct with `-DautoImplicit=false` exits 0, and `#print axioms` shows only the standard three. It states the 3×3 restrictions of FE and EF in the bases of `NucleonWeightSpaceTraces` and proves:
+- `EFp_eq`, `FEn_eq`: the commutator [E,F] acts by +1 on the proton weight space and by −1 on the neutron space.
+- `FEp_comm₁/₂`, `EFn_comm₁/₂`: FE and EF commute with the braid generators.
+- `FEp_sector`, `EFn_sector`: FE and EF are sector scalars, with roots 0 and [3].
+- `intertwine_EF_FE`, `intertwine_FE_EF`: the intertwiner P sends EF on the proton space to FE on the neutron space, and FE to EF.
+- `trace_FEn_eq_EFp`, `trace_EFn_eq_FEp`: the state-swapped trace equalities hold for every braid word.
+- `trace_symmetric_eq`: FE + EF has equal traces on the two spaces, which gives the q⁻²-only result.
+- `trace_FE_differ`: taken alone, the FE traces differ by 3, independent of q.
+
+The 3×3 matrices themselves are computed from the coproduct in the probe and are not derived in Lean. The same holds for A and B in the parent file.
