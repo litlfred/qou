@@ -1,6 +1,8 @@
 import QOU.KZ.KZShiftPhi
 import QOU.KZ.KZFunctorial
 import QOU.KZ.KZHexagonCentral
+import QOU.KZ.KZIntertwine
+import QOU.KZ.BlockResidues
 
 /-!
 # Drinfeld associators as an algebraic class
@@ -24,8 +26,9 @@ the analysis that produced one particular `Φ`. The analysis enters only in the 
 `Associator.kz`, built from the Knizhnik–Zamolodchikov connection: every field there is an
 existing theorem of `QOU/KZ`.
 
-This file is the class and the KZ instance. Rebuilding `D_ℏ` over a general associator is a
-separate step and is not done here.
+The second half of the file restates the `Φ` toolkit that `D_ℏ` uses (`ΦN`, the associator
+with non-resonant arguments) for an arbitrary associator, with the same signatures as the KZ
+lemmas, so that `QOU/KZ/Drinfeld/*` is built over any `Ψ : Associator`.
 -/
 
 universe u
@@ -147,5 +150,238 @@ theorem kz_Φ {R : Type u} [NormedRing R] [NormedAlgebra ℂ R] [CompleteSpace R
     (hA : NonResonant A) (hB : NonResonant B) : kz.Φ A B hA hB = KZPentagon.Φ A B hA hB := rfl
 
 end KZ
+
+/-! ### The toolkit for an arbitrary associator, on non-resonant arguments -/
+
+namespace Associator
+
+variable (Ψ : Associator.{u}) {R : Type u} [NormedRing R] [NormedAlgebra ℂ R] [CompleteSpace R]
+
+/-- `Φ(A, B)` for non-resonant `A, B`. -/
+def ΦN (A B : R) (hA : NonResonant A) (hB : NonResonant B) : R :=
+  Ψ.Φ A B (Ψ.adm_of_nonResonant hA) (Ψ.adm_of_nonResonant hB)
+
+theorem ΦN_congr {A A' B B' : R} (eA : A = A') (eB : B = B') (hA : NonResonant A)
+    (hB : NonResonant B) (hA' : NonResonant A') (hB' : NonResonant B') :
+    Ψ.ΦN A B hA hB = Ψ.ΦN A' B' hA' hB' := by
+  subst eA eB; rfl
+
+theorem ΦN_swap_mul (A B : R) (hA : NonResonant A) (hB : NonResonant B) :
+    Ψ.ΦN B A hB hA * Ψ.ΦN A B hA hB = 1 ∧ Ψ.ΦN A B hA hB * Ψ.ΦN B A hB hA = 1 :=
+  Ψ.swap_mul A B _ _
+
+theorem ΦN_zero_left (B : R) (h0 : NonResonant (0 : R)) (hB : NonResonant B) :
+    Ψ.ΦN 0 B h0 hB = 1 :=
+  Ψ.zero_left B _ _
+
+theorem ΦN_shift_right (A B z : R) (hA : NonResonant A) (hB : NonResonant B)
+    (hBz : NonResonant (B + z)) (hzA : Commute z A) (hzB : Commute z B) :
+    Ψ.ΦN A (B + z) hA hBz = Ψ.ΦN A B hA hB :=
+  Ψ.shift_right A B z _ _ _ hzA hzB
+
+theorem ΦN_shift_left (A B z : R) (hA : NonResonant A) (hB : NonResonant B)
+    (hAz : NonResonant (A + z)) (hzA : Commute z A) (hzB : Commute z B) :
+    Ψ.ΦN (A + z) B hAz hB = Ψ.ΦN A B hA hB :=
+  Ψ.shift_left A B z _ _ _ hzA hzB
+
+theorem commute_ΦN {c A B : R} (hA : NonResonant A) (hB : NonResonant B) (hcA : Commute c A)
+    (hcB : Commute c B) : Commute c (Ψ.ΦN A B hA hB) :=
+  Ψ.commute _ _ hcA hcB
+
+theorem map_ΦN {S : Type u} [NormedRing S] [NormedAlgebra ℂ S] [CompleteSpace S]
+    (f : R →ₐ[ℂ] S) (hf : Continuous f) (A B : R) (hA : NonResonant A) (hB : NonResonant B)
+    (hfA : NonResonant (f A)) (hfB : NonResonant (f B)) :
+    f (Ψ.ΦN A B hA hB) = Ψ.ΦN (f A) (f B) hfA hfB :=
+  Ψ.map f hf A B _ _ _ _
+
+theorem pentagon_drinfeldN (t : Res R) (h : t.Rel) (h12 : NonResonant t.t12)
+    (h23 : NonResonant t.t23) (h34 : NonResonant t.t34) (h123 : NonResonant t.T123)
+    (h234 : NonResonant t.T234) (h1213 : NonResonant (t.t12 + t.t13))
+    (h2434 : NonResonant (t.t24 + t.t34)) (h2324 : NonResonant (t.t23 + t.t24))
+    (h1323 : NonResonant (t.t13 + t.t23)) :
+    Ψ.ΦN t.t23 t.t34 h23 h34 * Ψ.ΦN (t.t12 + t.t13) (t.t24 + t.t34) h1213 h2434 *
+        Ψ.ΦN t.t12 t.t23 h12 h23 =
+      Ψ.ΦN t.t12 (t.t23 + t.t24) h12 h2324 * Ψ.ΦN (t.t13 + t.t23) t.t34 h1323 h34 :=
+  Ψ.pentagon t h _ _ _ (Ψ.adm_of_nonResonant h123) (Ψ.adm_of_nonResonant h234) _ _ _ _
+
+theorem hexagon_centralN (A B C' : R) (hA : NonResonant A) (hB : NonResonant B)
+    (hC' : NonResonant C') (hC : NonResonant (-A - B))
+    (hTA : Commute (A + B + C') A) (hTB : Commute (A + B + C') B)
+    (hTC : Commute (A + B + C') C') :
+    eπ A * Ψ.ΦN C' A hC' hA * eπ C' * Ψ.ΦN B C' hB hC' * eπ B * Ψ.ΦN A B hA hB =
+      eπ (A + B + C') :=
+  Ψ.hexagon A B C' _ _ _ (Ψ.adm_of_nonResonant hC) hTA hTB hTC
+
+open QOU.KZ.KZHexagonCentral in
+/-- The hexagon rearranged, for any associator (as `KZHexagonCentral.hexagon_rearranged`). -/
+theorem hexagon_rearrangedN (A B C : R) (hA : NonResonant A) (hB : NonResonant B)
+    (hC : NonResonant C) (hTA : Commute (A + B + C) A) (hTB : Commute (A + B + C) B)
+    (hTC : Commute (A + B + C) C)
+    (H : eπ A * Ψ.ΦN C A hC hA * eπ C * Ψ.ΦN B C hB hC * eπ B * Ψ.ΦN A B hA hB =
+      eπ (A + B + C)) :
+    Ψ.ΦN B C hB hC * eπ (-(A + C)) * Ψ.ΦN A B hA hB =
+      eπ (-C) * Ψ.ΦN A C hA hC * eπ (-A) := by
+  set T := A + B + C with hT
+  have hBAC : Commute B (A + C) := by
+    have : A + C = T - B := by rw [hT]; abel
+    rw [this]; exact (hTB.symm).sub_right (Commute.refl B)
+  have heB : eπ B = eπ T * eπ (-(A + C)) := by
+    have : T = B + (A + C) := by rw [hT]; abel
+    rw [this, eπ_add hBAC, mul_assoc, eπ_mul_eπ_neg, mul_one]
+  have hinv := (Ψ.ΦN_swap_mul A C hA hC).2
+  have H2 : Ψ.ΦN B C hB hC * eπ B * Ψ.ΦN A B hA hB =
+      eπ (-C) * Ψ.ΦN A C hA hC * eπ (-A) * eπ T := by
+    rw [← H]
+    simp only [mul_assoc]
+    rw [← mul_assoc (eπ (-A)) (eπ A), eπ_neg_mul_eπ, one_mul, ← mul_assoc (Ψ.ΦN A C hA hC),
+      hinv, one_mul, ← mul_assoc (eπ (-C)) (eπ C), eπ_neg_mul_eπ, one_mul]
+  have cT : ∀ {X : R}, Commute T X → Commute (eπ T) X := fun h => (commute_eπ h.symm).symm
+  have c1 : Commute (eπ T) (Ψ.ΦN B C hB hC) := cT (Ψ.commute_ΦN hB hC hTB hTC)
+  have c2 : Commute (eπ T) (eπ (-C)) := cT (commute_eπ hTC.neg_right)
+  have c3 : Commute (eπ T) (Ψ.ΦN A C hA hC) := cT (Ψ.commute_ΦN hA hC hTA hTC)
+  have c4 : Commute (eπ T) (eπ (-A)) := cT (commute_eπ hTA.neg_right)
+  rw [heB] at H2
+  have H3 : eπ T * (Ψ.ΦN B C hB hC * eπ (-(A + C)) * Ψ.ΦN A B hA hB) =
+      eπ T * (eπ (-C) * Ψ.ΦN A C hA hC * eπ (-A)) := by
+    calc eπ T * (Ψ.ΦN B C hB hC * eπ (-(A + C)) * Ψ.ΦN A B hA hB)
+        = Ψ.ΦN B C hB hC * (eπ T * eπ (-(A + C))) * Ψ.ΦN A B hA hB := by
+          rw [← mul_assoc, ← mul_assoc, c1.eq, mul_assoc (Ψ.ΦN B C hB hC)]
+      _ = eπ (-C) * Ψ.ΦN A C hA hC * eπ (-A) * eπ T := by rw [← H2]
+      _ = _ := by
+          rw [mul_assoc (eπ (-C) * Ψ.ΦN A C hA hC), ← c4.eq, ← mul_assoc,
+            mul_assoc (eπ (-C)), ← c3.eq, ← mul_assoc, ← c2.eq]; simp only [mul_assoc]
+  have hu : eπ (-T) * eπ T = 1 := eπ_neg_mul_eπ T
+  calc _ = eπ (-T) * (eπ T * (Ψ.ΦN B C hB hC * eπ (-(A + C)) * Ψ.ΦN A B hA hB)) := by
+        rw [← mul_assoc, hu, one_mul]
+    _ = _ := by rw [H3, ← mul_assoc, hu, one_mul]
+
+section Product
+
+variable {R' : Type u} [NormedRing R'] [NormedAlgebra ℂ R'] [CompleteSpace R']
+
+open QOU.KZ.KZIntertwine in
+theorem ΦN_prod (A B : R) (A' B' : R') (hA : NonResonant A) (hB : NonResonant B)
+    (hA' : NonResonant A') (hB' : NonResonant B') :
+    Ψ.ΦN ((A, A') : R × R') (B, B') (nonResonant_prod hA hA') (nonResonant_prod hB hB') =
+      (Ψ.ΦN A B hA hB, Ψ.ΦN A' B' hA' hB') := by
+  ext
+  · exact Ψ.map_ΦN (AlgHom.fst ℂ R R') continuous_fst ((A, A') : R × R') (B, B')
+      (nonResonant_prod hA hA') (nonResonant_prod hB hB') hA hB
+  · exact Ψ.map_ΦN (AlgHom.snd ℂ R R') continuous_snd ((A, A') : R × R') (B, B')
+      (nonResonant_prod hA hA') (nonResonant_prod hB hB') hA' hB'
+
+end Product
+
+section Blocks
+
+attribute [local instance] Matrix.linftyOpNormedRing Matrix.linftyOpNormedAlgebra
+
+variable {ι ι' : Type u} [Fintype ι] [DecidableEq ι] [Fintype ι'] [DecidableEq ι']
+
+open QOU.KZ.KZIntertwine in
+/-- **The associator intertwines** (as `KZIntertwine.Φ_intertwine`). -/
+theorem ΦN_intertwine (A B : Matrix ι ι ℂ) (A' B' : Matrix ι' ι' ℂ) (T : Matrix ι' ι ℂ)
+    (hTA : T * A = A' * T) (hTB : T * B = B' * T)
+    (hA : NonResonant A) (hB : NonResonant B) (hA' : NonResonant A') (hB' : NonResonant B')
+    (hDA : NonResonant (Matrix.fromBlocks A 0 0 A'))
+    (hDB : NonResonant (Matrix.fromBlocks B 0 0 B')) :
+    T * Ψ.ΦN A B hA hB = Ψ.ΦN A' B' hA' hB' * T := by
+  have hDA' : NonResonant (blockDiag ((A, A') : PR ι ι')) := by
+    rw [blockDiag_apply]; exact hDA
+  have hDB' : NonResonant (blockDiag ((B, B') : PR ι ι')) := by
+    rw [blockDiag_apply]; exact hDB
+  have hmap := Ψ.map_ΦN blockDiag
+    (LinearMap.continuous_of_finiteDimensional blockDiag.toLinearMap) ((A, A') : PR ι ι') (B, B')
+    (nonResonant_prod hA hA') (nonResonant_prod hB hB') hDA' hDB'
+  rw [Ψ.ΦN_prod A B A' B' hA hB hA' hB', blockDiag_apply,
+    Ψ.ΦN_congr (blockDiag_apply _) (blockDiag_apply _) hDA' hDB' hDA hDB] at hmap
+  set Toff : Matrix (ι ⊕ ι') (ι ⊕ ι') ℂ := Matrix.fromBlocks 0 0 T 0
+  have cA : Commute Toff (Matrix.fromBlocks A 0 0 A') := by
+    show Toff * _ = _ * Toff
+    simp [Toff, Matrix.fromBlocks_multiply, hTA]
+  have cB : Commute Toff (Matrix.fromBlocks B 0 0 B') := by
+    show Toff * _ = _ * Toff
+    simp [Toff, Matrix.fromBlocks_multiply, hTB]
+  have hc := (Ψ.commute_ΦN hDA hDB cA cB).eq
+  have e : Ψ.ΦN (Matrix.fromBlocks A 0 0 A') (Matrix.fromBlocks B 0 0 B') hDA hDB =
+      Matrix.fromBlocks (Ψ.ΦN A B hA hB) 0 0 (Ψ.ΦN A' B' hA' hB') := hmap.symm
+  rw [e] at hc
+  simp only [Toff, Matrix.fromBlocks_multiply, Matrix.zero_mul, Matrix.mul_zero, add_zero,
+    zero_add] at hc
+  exact (Matrix.fromBlocks_inj.1 hc).2.2.1
+
+end Blocks
+
+section BlockResidues
+
+open QOU.KZ.BlockResidues
+
+attribute [local instance] Matrix.linftyOpNormedRing Matrix.linftyOpNormedAlgebra
+
+variable {n : ℕ} {L : Type u} [Fintype L] [DecidableEq L] {c : ℂ}
+
+/-- The pentagon for four leg blocks (as `BlockResidues.pentagon_blocks`). -/
+theorem pentagon_blocksN (hc : Transcendental ℚ c) (B : Blocks L) :
+    Ψ.ΦN (blockRes n c B).t23 (blockRes n c B).t34 (nr23 hc B) (nr34 hc B) *
+      Ψ.ΦN ((blockRes n c B).t12 + (blockRes n c B).t13)
+        ((blockRes n c B).t24 + (blockRes n c B).t34) (nr1213 hc B) (nr2434 hc B) *
+      Ψ.ΦN (blockRes n c B).t12 (blockRes n c B).t23 (nr12 hc B) (nr23 hc B) =
+    Ψ.ΦN (blockRes n c B).t12 ((blockRes n c B).t23 + (blockRes n c B).t24)
+        (nr12 hc B) (nr2324 hc B) *
+      Ψ.ΦN ((blockRes n c B).t13 + (blockRes n c B).t23) (blockRes n c B).t34
+        (nr1323 hc B) (nr34 hc B) :=
+  Ψ.pentagon_drinfeldN _ (blockRes_rel n c B) _ _ _ (nr123 hc B) (nr234 hc B) _ _ _ _
+
+/-- The central hexagon for three disjoint leg blocks (as `BlockResidues.hexagon_blocks`). -/
+theorem hexagon_blocksN (hc : Transcendental ℚ c) {X1 X2 X3 : Finset L}
+    (d12 : Disjoint X1 X2) (d13 : Disjoint X1 X3) (d23 : Disjoint X2 X3) :
+    eπ (c • tB ℂ n X1 X2) *
+      Ψ.ΦN (c • tB ℂ n X1 X3) (c • tB ℂ n X1 X2)
+        (by rw [tB_intCast]; exact nonResonant_cast hc _)
+        (by rw [tB_intCast]; exact nonResonant_cast hc _) *
+      eπ (c • tB ℂ n X1 X3) *
+      Ψ.ΦN (c • tB ℂ n X2 X3) (c • tB ℂ n X1 X3)
+        (by rw [tB_intCast]; exact nonResonant_cast hc _)
+        (by rw [tB_intCast]; exact nonResonant_cast hc _) *
+      eπ (c • tB ℂ n X2 X3) *
+      Ψ.ΦN (c • tB ℂ n X1 X2) (c • tB ℂ n X2 X3)
+        (by rw [tB_intCast]; exact nonResonant_cast hc _)
+        (by rw [tB_intCast]; exact nonResonant_cast hc _) =
+    eπ (c • tB ℂ n X1 X2 + c • tB ℂ n X2 X3 + c • tB ℂ n X1 X3) := by
+  have nm := @not_mem_of_disjoint L
+  have smc : ∀ {x y : Matrix (L → Fin n) (L → Fin n) ℂ}, Commute x y →
+      Commute (c • x) (c • y) := fun h => (h.smul_left c).smul_right c
+  have cA : Commute (c • tB ℂ n X1 X2) (c • tB ℂ n X2 X3 + c • tB ℂ n X1 X3) := by
+    rw [← smul_add, add_comm, ← tB_union_left d12]
+    exact smc (commute_tB_tB (fun a ha b hb => by simp [ha, hb])
+      (fun a ha b hb => by simp [nm d13 ha, nm d23 hb]))
+  have cB : Commute (c • tB ℂ n X2 X3) (c • tB ℂ n X1 X2 + c • tB ℂ n X1 X3) := by
+    rw [← smul_add, ← tB_union_right d23]
+    exact smc (commute_tB_tB (fun a ha b hb => by simp [nm d12.symm ha, nm d13.symm hb])
+      (fun a ha b hb => by simp [ha, hb]))
+  have cC : Commute (c • tB ℂ n X1 X3) (c • tB ℂ n X1 X2 + c • tB ℂ n X2 X3) := by
+    rw [← smul_add, tB_comm X1 X2, ← tB_union_right d13]
+    exact smc (commute_tB_tB (fun a ha b hb => by simp [nm d12 ha, nm d23.symm hb])
+      (fun a ha b hb => by simp [ha, hb]))
+  exact Ψ.hexagon_centralN (c • tB ℂ n X1 X2) (c • tB ℂ n X2 X3)
+    (c • tB ℂ n X1 X3) (by rw [tB_intCast]; exact nonResonant_cast hc _)
+    (by rw [tB_intCast]; exact nonResonant_cast hc _)
+    (by rw [tB_intCast]; exact nonResonant_cast hc _)
+    (by
+      have e : -(c • tB ℂ n X1 X2) - c • tB ℂ n X2 X3 =
+          c • (Int.castRingHom ℂ).mapMatrix (-(tBZ n X1 X2 + tBZ n X2 X3)) := by
+        rw [tB_intCast, tB_intCast, map_neg, map_add, smul_neg, smul_add]; abel
+      rw [e]; exact nonResonant_cast hc _)
+    (by rw [add_assoc]; exact ((Commute.refl _).add_right cA).symm)
+    (by rw [add_comm (c • tB ℂ n X1 X2), add_assoc]; exact ((Commute.refl _).add_right cB).symm)
+    (by rw [add_comm _ (c • tB ℂ n X1 X3)]; exact ((Commute.refl _).add_right cC).symm)
+
+end BlockResidues
+
+end Associator
+
+/-- For the KZ associator, `ΦN` is `Φ_KZ`. -/
+theorem kz_ΦN {R : Type u} [NormedRing R] [NormedAlgebra ℂ R] [CompleteSpace R] (A B : R)
+    (hA : NonResonant A) (hB : NonResonant B) : kz.ΦN A B hA hB = KZPentagon.Φ A B hA hB := rfl
 
 end QOU.KZ.DrinfeldAssociator
