@@ -107,3 +107,6 @@ Owner choice 2026-11-15: record (this note) + Lean the exclusion (PR) + then the
 
 - 3: Markov measure μ_λ = y_λ f^λ at z_D equals f^λ[n−2k+1]/[2]^n on two-row λ (exact, n = 2..6): the quantum-dimension share of spin sector k in (C²)^⊗n; denominator [2]^n = 𝔪(unlink). Sector entropy grows ~ (1/2) ln n vs ln 𝔪 = n ln[2]. Not an energy. Project file result-entropy.md.
 - 2: Lean HeckeEigenSplit (PR #8005): det/trace of any Hecke generator matrix from its two eigenvalue multiplicities; c₁ = (2tr − dim h)/[2]. The q=1 identification with χ^λ(s) still cites Tits deformation.
+
+
+2026-11-15: PR #8005 rebase-merged into main at 395ca05e9; issue #8004 closed.
