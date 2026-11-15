@@ -18,7 +18,7 @@ namespace QOU.Information
     - A(A-1) (inter-nucleon Hopf links: 2 per pair × C(A,2))
     - 3Z (electron trefoils)
     - 2Z (electron-nucleus Hopf binding)
-    Label: prop:composite-crossing-parity -/
+    Label: conj:composite-crossing-parity -/
 def compositeCrossingNumber (Z N : ℕ) : ℕ :=
   let A := Z + N
   A * A + 7 * A + 5 * Z

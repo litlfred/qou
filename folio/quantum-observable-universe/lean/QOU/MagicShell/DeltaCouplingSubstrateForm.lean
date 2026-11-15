@@ -11,7 +11,7 @@ Conjectures:
 at magic-shell anchors, where:
   E_0 = m_e / (q_0 (q_0 - 1))   (Hecke energy unit, rem:beta-decay-energy-scale)
   h(q_0) = q_0 - q_0⁻¹           (skein deformation)
-  k_B T_q = ℏ_q = (q_0 - 1)/q_0  (prop:boltzmann-constant)
+  k_B T_q = ℏ_q = (q_0 - 1)/q_0  (def:boltzmann-constant)
   A = Z + N                       (mass number)
 
 The two forms are equivalent by `hecke_log_decomposition`

@@ -201,7 +201,7 @@ section({
         "quantum-ideal-gas-law-interpretation",
         "quantum-ideal-gas-law-interpretation-table-data",
         "boltzmann-constant",
-        "boltzmann-constant-proof",
+        "boltzmann-constant-motivation",
         "gas-constant-derivation",
         "hydrogen-partition-function",
       ],

@@ -27,7 +27,7 @@ export default definition({
   uses: [
     "conj:schwinger-measure-computational-time",
     "prop:horizon-conformal-invariance",
-    "prop:boltzmann-constant",
+    "def:boltzmann-constant",
   ],
   authorNotes: [
     {

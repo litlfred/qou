@@ -41,7 +41,7 @@ export default conjecture({
   },
   uses: [
     "conj:qdifference-kernel-prolongation-symbol",
-    "prop:boltzmann-constant",
+    "def:boltzmann-constant",
     "prop:em-coupling-fixed-point",
   ],
   authorNotes: [
