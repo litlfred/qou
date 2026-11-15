@@ -3,9 +3,9 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:s4-s3-half-symmetric-projection",
   title:
-    "Half-symmetric $H_4$ projection extracts one octahedral cell via $S_4 \\downarrow S_3$ branching",
+    "$S_3$-trivial share of the half-symmetric part of $H_4$ under $S_4 \\downarrow S_3$ branching",
   lean: { ref: "qou:QOU.BraidsAndKnots.s4_s3_half_symmetric_projection" },
-  uses: ["conj:borromean-baryon-mass-formula"],
+  uses: [],
   cites: [
     "adams1985hyperbolic",
     "wenzl1988",
@@ -24,7 +24,6 @@ export default proposition({
     "half-symmetric",
     "S4-S3",
     "bijection",
-    "octahedral-cell",
     "borromean",
     "vol-density-refinement",
   ],

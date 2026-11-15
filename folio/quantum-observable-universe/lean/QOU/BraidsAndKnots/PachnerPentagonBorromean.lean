@@ -60,11 +60,11 @@ class PachnerPentagonBorromean (R : Type*) [CommRing R] where
   /-- **Pachner 2–3 invariance** — STANDARD given the Φ_q pentagon: the state
       sum is constant on 2–3-related triangulations. -/
   pachner_invariant : ∀ {T T' : Tri}, PachnerRelated T T' → stateSum T = stateSum T'
-  /-- The 8-ideal-octahedron decomposition of `S³ ∖ 𝓑₃` (Thurston). -/
+  /-- The decomposition of `S³ ∖ 𝓑₃` into two regular ideal octahedra (Thurston). -/
   borOctahedral : Tri
-  /-- Its 16-ideal-tetrahedron refinement, one 2–3 move away. -/
+  /-- Its 8-ideal-tetrahedron subdivision (four tetrahedra per octahedron). -/
   borTetrahedral : Tri
-  /-- The two canonical Borromean decompositions are 2–3-related. -/
+  /-- The two Borromean decompositions are related by Pachner moves (class field). -/
   borromean_pachner_related : PachnerRelated borOctahedral borTetrahedral
   /-- The `h⁴` coefficient extracted from the Pachner-invariant state sum. -/
   h4_stateSum_coeff : R
@@ -77,8 +77,8 @@ class PachnerPentagonBorromean (R : Type*) [CommRing R] where
 namespace PachnerPentagonBorromean
 variable {R : Type*} [CommRing R] [c : PachnerPentagonBorromean R]
 
-/-- **Consequence (sorry-free given the class).** The 8-octahedron and
-    16-tetrahedron Borromean decompositions yield the SAME Φ_q state sum —
+/-- **Consequence (sorry-free given the class).** The 2-octahedron and
+    8-tetrahedron Borromean decompositions yield the SAME Φ_q state sum —
     triangulation-independence of the Borromean invariant, derived from
     Pachner invariance + their 2–3-relatedness.  This is the content the
     Gemini "flips compose to the identity" picture refers to, made precise. -/
