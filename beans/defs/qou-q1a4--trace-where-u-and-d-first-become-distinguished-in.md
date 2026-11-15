@@ -8,7 +8,7 @@ tags:
     - needs-owner
     - convention-d
 created_at: 2026-11-15T18:54:18Z
-updated_at: 2026-11-15T20:09:57Z
+updated_at: 2026-11-15T20:12:41Z
 parent: qou-avtq
 ---
 
@@ -62,3 +62,6 @@ A grep of folio/ content and Lean for an isospin orientation convention (e₁ = 
 
 
 2026-11-15 §20 (6ae1b559261): route 2 done. n-p = Q_beta + m_e on ruled z_D base: 0.9557 MeV (-26.1 %); tower-summed E0 -25.8 %; nuc11 cell -10.1 % but element fails SDP. Production 1.2938 is fit-tier (Form A, z_C, N chosen by target). Route 2 does not validate H_alpha (linear vs log functional). Next: FE/EF weak term in sibling thread.
+
+
+2026-11-15 CORRECTION (§21): §18's 't_p is negative' was wrong. t_p = +0.40872, t_n = +0.33174 at q0. Under the linear form the neutron is LIGHTER (wrong sign), a scope-(a) negative. Bridge B (derivation-chain thread): a linear map normalised by the electron gives m_p/m_e ~ 1; a weight-space route needs ~55x derived suppression plus a sign flip. FE/EF must pre-register its order in h.
